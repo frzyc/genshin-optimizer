@@ -1,15 +1,15 @@
 {
-  "intro": "The <strong>ultimate</strong> <3><i>Genshin Impact</i></3> calculator, GO will keep track of your artifact/weapon/character inventory, and help you create the best build based on how you play, with what you have.",
+  "intro": "The <strong>ultimate</strong> <3><i>Honkai Star Rail</i></3> calculator, SRO will keep track of your relic/light cone/character inventory, and help you create the best build based on how you play, with what you have.",
   "quickLinksCard": {
     "title": "Quick Links",
     "buttons": {
       "tyGuide": {
         "title": "Youtube Guide Playlist",
-        "tooltip": "Learn how to use Genshin Optimizer"
+        "tooltip": "Learn how to use Star Rail Optimizer"
       },
       "scanners": {
         "title": "Automatic Scanners",
-        "tooltip": "3rd party programs that automatically scan artifacts from the game"
+        "tooltip": "3rd party programs that automatically scan relics from the game"
       },
       "kqm": {
         "title": "Keqing Mains",
@@ -24,13 +24,13 @@
         "tooltip": "Genshin Open Object Descriptor Documentation"
       },
       "patchNotes": {
-        "title": "Genshin Optimizer Patch Notes",
-        "tooltip": "All of GO's patch notes"
+        "title": "Star Rail Optimizer Patch Notes",
+        "tooltip": "All of SRO's patch notes"
       }
     }
   },
   "inventoryCard": {
-    "title": "GO Inventory"
+    "title": "SRO Inventory"
   },
   "vidGuideCard": {
     "title": "Video Guides"

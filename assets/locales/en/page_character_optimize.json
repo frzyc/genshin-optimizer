@@ -22,46 +22,46 @@
     "highlightedBuilds": "Highlighted Builds",
     "buildAlreadyInList": "Build is already in the list"
   },
-  "levelFilter": "Artifact Level Filter",
+  "levelFilter": "Relic Level Filter",
   "excludeArt": {
-    "title_exclude": "Excluded Artifacts",
-    "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
-    "button_txt": "Exclude Artifacts",
-    "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
-    "excNum_one": "<0>{{count}}</0> artifact is excluded",
-    "excNum_other": "<0>{{count}}</0> artifacts are excluded",
-    "addExc": "Add artifact to this character's exclusion list",
-    "selExc": "Select artifact to add to this character's exclusion list",
-    "deSelectExc": "Click on an artifact to remove it from the exclusion list",
-    "includeArtifactTip": "Including an artifact will allow the build generator to use it for this character.",
-    "includeArtifactButton": "Include this artifact in optimization"
+    "title_exclude": "Excluded Relics",
+    "title_tooltip": "Add relics to this character's exclusion list. Relics in the exclusion list will not be considered for build generation.",
+    "button_txt": "Exclude Relics",
+    "usingNum": "Using <1>{{totalStr}}</1> excluded relic(s)",
+    "excNum_one": "<0>{{count}}</0> relic is excluded",
+    "excNum_other": "<0>{{count}}</0> relics are excluded",
+    "addExc": "Add relic to this character's exclusion list",
+    "selExc": "Select relic to add to this character's exclusion list",
+    "deSelectExc": "Click on an relic to remove it from the exclusion list",
+    "includeArtifactTip": "Including an relic will allow the build generator to use it for this character.",
+    "includeArtifactButton": "Include this relic in optimization"
   },
   "excludeChar": {
-    "title": "Equipped Artifact Configuration",
-    "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all artifacts.",
+    "title": "Equipped Relic Configuration",
+    "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped relics, your custom allow list, and using all relics.",
     "modal": {
       "allow_all": "Add all shown characters to the allow list",
       "disallow_All": "Remove all shown characters from the allow list"
     },
-    "allowEquip": "Allow using artifacts from",
-    "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
-    "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters",
+    "allowEquip": "Allow using relics from",
+    "usingNumTot_one": "Using <1>{{arts}}</1> relics from <3>{{count}}</3> character",
+    "usingNumTot_other": "Using <1>{{arts}}</1> relics from <3>{{count}}</3> characters",
     "chars": "Characters",
-    "artis": "Artifacts",
+    "artis": "Relics",
     "states": {
       "unequippedOnly": "Unequipped Only",
       "customList": "Custom List",
-      "all": "All Artifacts"
+      "all": "All Relics"
     },
     "usingState": "Using"
   },
-  "allowPartial": "Allow Partial Builds (<5 artifacts)",
+  "allowPartial": "Allow Partial Builds (<5 relics)",
   "constraintFilter": {
     "title": "Minimum Build Constraints",
     "tooltip": "Set certain minimum requirements that generated builds must conform to; e.g., have at least 140% Energy Recharge."
   },
   "artSetConfig": {
-    "title": "Artifact Set Configuration",
+    "title": "Relic Set Configuration",
     "setEffCond": "Set Effect Conditionals",
     "enabled": "Enabled",
     "allowed": "Allowed",
@@ -76,12 +76,12 @@
     "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow Builds",
     "modal": {
       "setCond": {
-        "title": "Artifact Set Conditional Effects",
+        "title": "Relic Set Conditional Effects",
         "reset": "Reset Conditionals",
-        "text": "Some artifact set effects provide conditional stats. This window allows you to select those effects, so they can contribute stats when a build that satifies a set effect is calculated during optimization."
+        "text": "Some relic set effects provide conditional stats. This window allows you to select those effects, so they can contribute stats when a build that satifies a set effect is calculated during optimization."
       },
       "ArtSetFilter": {
-        "title": "Artifact Sets <1>Allowed<1></1></1> / <3>Excluded<1></1></3>",
+        "title": "Relic Sets <1>Allowed<1></1></1> / <3>Excluded<1></1></3>",
         "intro": "You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(off-set)",
         "2set": "<0><0>Excluding<1></1> 2-Set</0></0> would exclude 2-Set builds: <2><0>AA</0>RRR</2> and <4><0>AAA</0>RR</4>.",
         "4set": "<0><0>Excluding<1></1> 4-Set</0></0> would exclude 4-Set builds: <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
@@ -95,7 +95,7 @@
   },
   "buildDropdownDesc": "Decreasing the number of generated build will decrease build calculation time for large number of builds.",
   "threadDropdownDesc": "Increasing the number of threads will speed up build time, but will use more CPU power.",
-  "noArtis": "Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <1>Artifacts</1> page and add some!",
+  "noArtis": "Oops! It looks like you haven't added any relics to SRO yet! You should go to the <1>Relics</1> page and add some!",
   "build_one": "<0>{{count}}</0> Build",
   "build_other": "<0>{{count}}</0> Builds",
   "thread_one": "<0>{{count}}</0> Thread",
