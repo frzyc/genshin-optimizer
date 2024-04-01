@@ -13,7 +13,7 @@ export function LightConeInventory() {
   const { lightConeIds, totalLightConeNum } = useMemo(() => {
     const lightCones = database.lightCones.values
     const totalLightConeNum = lightCones.length
-    const lightConeIds = lightCones.map((lightCone) => lightCone.id)
+    const lightConeIds = database.lightCones.keys
     return { lightConeIds, totalLightConeNum }
   }, [database])
 

@@ -10,12 +10,16 @@ import {
   Stack,
   StyledEngineProvider,
   ThemeProvider,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from '@mui/material'
 import Character from './Character'
 import CharacterSelector from './CharacterSelector'
 import Database from './Database'
 import Optimize from './Optimize'
 import { theme } from './Theme'
+import { ExpandMore } from '@mui/icons-material'
 
 export default function App() {
   return (
@@ -29,10 +33,20 @@ export default function App() {
               <Stack gap={1} pt={1}>
                 <CharacterSelector />
                 <Character />
+                <Accordion>
+                  <AccordionSummary expandIcon={<ExpandMore />}>
+                    Light Cones
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <LightConeInventory />
+                  </AccordionDetails>
+                </Accordion>
+                {/* <Accordion>
+                  <LightConeInventory />
+                </Accordion> */}
                 <RelicEditor />
                 <Optimize />
                 <Database />
-                <LightConeInventory />
               </Stack>
             </CalcProvider>
           </CharacterProvider>
