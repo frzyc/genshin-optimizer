@@ -5,7 +5,7 @@
     "languageFormat": "Language: {{language}}"
   },
   "sillyCard": {
-    "desc": "We have finally completed work on a hotly anticipated release: Star Rail Optimizer! If you would like to go back to the open world fun of Genshin Optimizer, click the button below. Note: some text won't change",
+    "desc": "We have finally completed work on a hotly anticipated release: Star Rail Optimizer! If you would like to go back to the open world fun of Star Rail Optimizer, click the button below. Note: some text won't change",
     "toggle": {
       "enabled": "Board the Astral Express",
       "disabled": "Board the Astral Express"
@@ -13,8 +13,8 @@
   },
   "count": {
     "chars": "Characters:",
-    "arts": "Artifacts:",
-    "weapons": "Weapons:",
+    "arts": "Relics:",
+    "light cones": "Light Cones:",
     "total": "Total:",
     "new": "New:",
     "updated": "Updated:",
@@ -49,7 +49,7 @@
       "jsonParse": "Unable to parse JSON file.",
       "unknown": "Unknown file format.",
       "monaInvalid": "Invalid Mona-Uranai file format",
-      "goInvalid": "Invalid GO backup file format."
+      "goInvalid": "Invalid SRO backup file format."
     },
     "buttons": {
       "open": "Open",
@@ -57,9 +57,9 @@
       "delNotInImport": "Delete items not in import"
     },
     "tooltip": {
-      "detectdup": "Find upgrades/duplicates in the GO inventory and merge the import into GO.",
-      "ignoreDup": "Do not detect upgrades/duplicates. The import will be added on top of existing GO inventory.",
-      "delNotInImport": "Assume the import is your full inventory. Items in the GO Inventory that don't exist in the import will be deleted.",
+      "detectdup": "Find upgrades/duplicates in the SRO inventory and merge the import into SRO.",
+      "ignoreDup": "Do not detect upgrades/duplicates. The import will be added on top of existing SRO inventory.",
+      "delNotInImport": "Assume the import is your full inventory. Items in the SRO Inventory that don't exist in the import will be deleted.",
       "keepNotInImport": "Assume the import is a partial inventory. Nothing will be deleted."
     }
   }

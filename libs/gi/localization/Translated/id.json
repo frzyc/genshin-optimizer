@@ -1,5 +1,5 @@
 {
-  "artifact": {
+  "relic": {
     "editor": {
       "title": "Editor Artefak",
       "substat": {
@@ -69,8 +69,8 @@
     "info": {
       "title": "Panduan Edit/Manajemen Artefak",
       "section1": "<0>Roll substat</0><1> <1>Jumlah roll</1> yang dimiliki substat ditampilkan di sebelah kanan substat, ditunjukkan dengan jumlah bar. Selain itu, dengan bertambahnya jumlah roll, substat menjadi lebih terang. Selain itu, setiap bilah individu menjadi lebih berwarna saat roll value meningkat:<3></3>.</1><2>Roll Value Substat</2><3>Roll Value (RV) dari substat adalah persentase nilai saat ini di atas nilai 5<1></1> potensial tertinggi. Dari Gambar tersebut, roll value maksimum HP% adalah 5,8%. Di RV: <3>5,3/5,8 ~ 90%.</3></3><4>Roll Value Saat Ini vs. Roll Value Maksimum</4><5>Bila 5<1></1> memiliki 9 (4 base + 5 tambahan) total roll, dengan masing-masing roll memiliki value tertinggi, yang didefinisikan sebagai artefak RV 900%. Namun, sebagian besar artefak tidak seberuntung ini. <3>RV saat ini</3> dari sebuah artefak adalah persentase dari value maksimal artefak tersebut. <5>RV Maksimum</5> adalah kemungkinan RV maksimum yang dapat dicapai artefak, jika sisa artefak roll dari peningkatan adalah value setinggi mungkin.</5>",
-      "section2": "<0>Editor Artefak</0><1>Editor Artefak dengan fitur lengkap yang bisa menerima semua artefak 3<1></1> hingga 5<3></3>. Ketika substat diinput, editor ini bisa menghitung jumlah roll value yang sesuai. Editor ini juga bisa memastikan bahwa jumlah roll yang didapat artefak sesuai dengan levelnya bersama dengan metrik validasi lainnya.</1><2>Scan Screenshot</2><3>Tidak suka menginput secara manual? Kamu bisa memindai artefakmu dengan screenshot! Dalam Artefak Editor, klik tombol <1>Show Me How!</1> untuk mempelajarinya lebih lanjut.</3><4>Pemindai Artefak Otomatis</4><5>Kalau kamu memainkan Genshin di PC, kamu bisa mengunduh alat yang bisa memindai semua artefakmu secara otomatis, lalu kamu bisa mengimpor data tersebut ke dalam <1></1> Database. <3>Tekan di sini</3> untuk melihat daftar pemindai yang kompatibel dengan GO.</5><6>Deteksi Artefak Duplikat/Upgrade</6><7>Tahukah kamu kalau GO bisa mendeteksi jika kamu menambah artefak <1>duplikat</1> yang sudah ada dalam sistem? Editor ini juga bisa mendeteksi apakah artefak yang ditambahkan merupakan <3>upgrade</3> dari artefak yang sudah ada. Ketika duplikasi/upgrade terdeteksi, pratinjau akan muncul agar kamu bisa membandingkan dua artefak tersebut(Lihat Gambar).</7>",
-      "section3": "<0>Tas Artefak</0><1>Semua artefakmu yang telah kamu tambahkan ke GO ditampilkan di sini. Filter di sini memungkinkan kamu untuk lebih menyempurnakan tampilan artefakmu. </1><2>Contoh: Menentukan Artefak Tumbal</2><3>Dengan memanfaatkan filter artefak, dan perhitungan RV artefak, kamu dapat menentukan artefak untuk dijadikan tumbal dengan cepat.</3><4>Sebagai contoh, filter diatur sebagai berikut: </4><5><0><0>Batasi level hingga 0-8.</0><1>Pastikan artefak dalam tas tidak terkunci.</1><2>Hilangkan kontribusi flat HP, flat DEF, dan Energy Recharge untuk perhitungan RV.</2><3>Urutkan dengan menggunakan urutan meningkat untuk RV Substat Maksimum.</3></0></5><6>Ini akan memfilter Tas artefak dari artefak efisiensi terendah, untuk substat yang diinginkan.</6>"
+      "section2": "<0>Editor Artefak</0><1>Editor Artefak dengan fitur lengkap yang bisa menerima semua artefak 3<1></1> hingga 5<3></3>. Ketika substat diinput, editor ini bisa menghitung jumlah roll value yang sesuai. Editor ini juga bisa memastikan bahwa jumlah roll yang didapat artefak sesuai dengan levelnya bersama dengan metrik validasi lainnya.</1><2>Scan Screenshot</2><3>Tidak suka menginput secara manual? Kamu bisa memindai artefakmu dengan screenshot! Dalam Artefak Editor, klik tombol <1>Show Me How!</1> untuk mempelajarinya lebih lanjut.</3><4>Pemindai Artefak Otomatis</4><5>Kalau kamu memainkan Genshin di PC, kamu bisa mengunduh alat yang bisa memindai semua artefakmu secara otomatis, lalu kamu bisa mengimpor data tersebut ke dalam <1></1> Database. <3>Tekan di sini</3> untuk melihat daftar pemindai yang kompatibel dengan SRO.</5><6>Deteksi Artefak Duplikat/Upgrade</6><7>Tahukah kamu kalau SRO bisa mendeteksi jika kamu menambah artefak <1>duplikat</1> yang sudah ada dalam sistem? Editor ini juga bisa mendeteksi apakah artefak yang ditambahkan merupakan <3>upgrade</3> dari artefak yang sudah ada. Ketika duplikasi/upgrade terdeteksi, pratinjau akan muncul agar kamu bisa membandingkan dua artefak tersebut(Lihat Gambar).</7>",
+      "section3": "<0>Tas Artefak</0><1>Semua artefakmu yang telah kamu tambahkan ke SRO ditampilkan di sini. Filter di sini memungkinkan kamu untuk lebih menyempurnakan tampilan artefakmu. </1><2>Contoh: Menentukan Artefak Tumbal</2><3>Dengan memanfaatkan filter artefak, dan perhitungan RV artefak, kamu dapat menentukan artefak untuk dijadikan tumbal dengan cepat.</3><4>Sebagai contoh, filter diatur sebagai berikut: </4><5><0><0>Batasi level hingga 0-8.</0><1>Pastikan artefak dalam tas tidak terkunci.</1><2>Hilangkan kontribusi flat HP, flat DEF, dan Energy Recharge untuk perhitungan RV.</2><3>Urutkan dengan menggunakan urutan meningkat untuk RV Substat Maksimum.</3></0></5><6>Ini akan memfilter Tas artefak dari artefak efisiensi terendah, untuk substat yang diinginkan.</6>"
     },
     "sortMap": {
       "level": "Level",
@@ -133,7 +133,7 @@
         "jsonParse": "Tidak dapat mengurai file JSON.",
         "unknown": "Format file tidak dikenal.",
         "monaInvalid": "Format file Mona-Uranai tidak valid",
-        "goInvalid": "Format file cadangan GO tidak valid."
+        "goInvalid": "Format file cadangan SRO tidak valid."
       },
       "dbSource": "Sumber data:",
       "goodUpload": {
@@ -145,16 +145,16 @@
         "delNotInImport": "Hapus item yang tidak di impor"
       },
       "tooltip": {
-        "detectdup": "Temukan upgrade/duplikat di inventaris GO dan gabungkan impor ke dalam GO.",
-        "ignoreDup": "Jangan deteksi Upgrade/duplikat, impor ditambahkan di atas inventaris GO yang ada.",
-        "delNotInImport": "Asumsikan impor menjadi inventaris penuh.  Item dalam Inventaris GO yang tidak ada dalam impor akan dihapus.",
+        "detectdup": "Temukan upgrade/duplikat di inventaris SRO dan gabungkan impor ke dalam SRO.",
+        "ignoreDup": "Jangan deteksi Upgrade/duplikat, impor ditambahkan di atas inventaris SRO yang ada.",
+        "delNotInImport": "Asumsikan impor menjadi inventaris penuh.  Item dalam Inventaris SRO yang tidak ada dalam impor akan dihapus.",
         "keepNotInImport": "Asumsikan impor adalah inventaris parsial.  Tidak ada yang akan dihapus."
       }
     },
     "count": {
       "chars": "Karakter:",
       "arts": "Artefak:",
-      "weapons": "Senjata:",
+      "light cones": "Senjata:",
       "total": "Total:",
       "new": "Baru:",
       "updated": "Terupdate:",
@@ -178,12 +178,10 @@
     }
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "Star Rail Optimizer",
     "tabs": {
-      "artifacts": "Artefak",
       "characters": "Karakter",
       "tools": "Alat",
-      "weapons": "Senjata",
       "doc": "Docs",
       "setting": "Pengaturan",
       "scanner": "Scanner"
@@ -197,7 +195,7 @@
     "ascending": "Urutkan Naik",
     "descending": "Urutkan Menurun",
     "loading": "Memuat...",
-    "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan HoYoverse",
+    "rightsDisclaimer": "Star Rail Optimizer tidak berafiliasi dengan HoYoverse",
     "appVersion": "$t(pageTitle) Versi: <1>{{version}}</1>",
     "underConstruction": "Sedang Dibangun",
     "error": "Error",
@@ -212,7 +210,6 @@
       "rarity": "Kualitas",
       "efficiency": "RV Saat Ini",
       "mefficiency": "RV Maksimum",
-      "artsetkey": "Set Artefak",
       "probability": "Probabilitas Roll"
     },
     "link": {
@@ -223,7 +220,6 @@
     "delete": "Hapus",
     "locked": "Terkunci",
     "unlocked": "Tidak terkunci",
-    "refinement": "Refinement {{value}}",
     "selectlevel": "Pilih Level",
     "gender": {
       "F": "Perempuan",
@@ -520,13 +516,13 @@
     "c2BurstHeal": "<strong>Nereid's Ascension</strong> Healing Bonus"
   },
   "page_home": {
-    "intro": "Kalkulator <strong>ultimate</strong> <3><i>Genshin Impact</i></3>, GO akan melacak inventaris artefak/senjata/karakter kamu, dan membantu kamu untuk membuat build terbaik berdasarkan cara kamu bermain, dengan apa yang kamu miliki.",
+    "intro": "Kalkulator <strong>ultimate</strong> <3><i>Honkai Star Rail</i></3>, SRO akan melacak inventaris artefak/senjata/karakter kamu, dan membantu kamu untuk membuat build terbaik berdasarkan cara kamu bermain, dengan apa yang kamu miliki.",
     "quickLinksCard": {
       "title": "Link Cepat",
       "buttons": {
         "tyGuide": {
           "title": "Playlist Panduan Youtube",
-          "tooltip": "Pelajari cara menggunakan Genshin Optimizer"
+          "tooltip": "Pelajari cara menggunakan Star Rail Optimizer"
         },
         "scanners": {
           "title": "Scanner Otomatis",
@@ -545,13 +541,13 @@
           "tooltip": "Dokumentasi Deskriptor Objek Terbuka Genshin"
         },
         "patchNotes": {
-          "title": "Genshin Optimizer Patch Notes",
-          "tooltip": "Semua patch notes untuk GO"
+          "title": "Star Rail Optimizer Patch Notes",
+          "tooltip": "Semua patch notes untuk SRO"
         }
       }
     },
     "inventoryCard": {
-      "title": "GO inventori"
+      "title": "SRO inventori"
     },
     "vidGuideCard": {
       "title": "Video Panduan"
@@ -566,14 +562,14 @@
     }
   },
   "page_scanner": {
-    "intro": "<0>Scanner</0><1>Scanner adalah alat Genshin yang dapat secara otomatis memindai data game dari screenshot atau langsung dari game.</1><2>Berikut adalah beberapa scanner yang telah diuji dengan GO.</2 ><3>Untuk mengunggah file yang diekspor, buka laman <1>Pengaturan</1>, dan unggah file kamu di bagian <strong>Unggah Database</strong>.</3>",
+    "intro": "<0>Scanner</0><1>Scanner adalah alat Genshin yang dapat secara otomatis memindai data game dari screenshot atau langsung dari game.</1><2>Berikut adalah beberapa scanner yang telah diuji dengan SRO.</2 ><3>Untuk mengunggah file yang diekspor, buka laman <1>Pengaturan</1>, dan unggah file kamu di bagian <strong>Unggah Database</strong>.</3>",
     "ik": {
       "title": "Inventory Kamera",
       "p1": "Aplikasi ringan ini akan memindai semua karakter + senjata + artefak kamu di inventarismu.  Ikuti instruksi di aplikasi untuk menyiapkannya."
     },
     "am": {
       "title": "「天目」-- Amenoma",
-      "p1": "Scan semua artefak di inventarismu.  Ikuti instruksi untuk menangkap jendela dan scan. Memiliki versi Cina dan Inggris. (Download the <1>_EN.exe</1> version to scan in english). Hanya format <5>GOOD</5> yang diterima di GO."
+      "p1": "Scan semua artefak di inventarismu.  Ikuti instruksi untuk menangkap jendela dan scan. Memiliki versi Cina dan Inggris. (Download the <1>_EN.exe</1> version to scan in english). Hanya format <5>GOOD</5> yang diterima di SRO."
     },
     "as": {
       "title": "AdeptiScanner",
@@ -1053,7 +1049,7 @@
       "title": "Konfigurasi Target Multi-Optimasi",
       "addNewTarget": "Tambah Kustom target Baru",
       "addNewMTarget": "Tambah Kustom Multi-target Baru",
-      "info1": "Catatan: Multi-Optimization Targets kustom buatan komunitas dapat ditemukan dalam <1>GO Discord</1> atau <3>KQM Multi-Opt Guide</3>, namun validitas konfigurasi tersebut tidak dapat dijamin.",
+      "info1": "Catatan: Multi-Optimization Targets kustom buatan komunitas dapat ditemukan dalam <1>SRO Discord</1> atau <3>KQM Multi-Opt Guide</3>, namun validitas konfigurasi tersebut tidak dapat dijamin.",
       "info2": "Pengguna bertanggung jawab untuk mengonfirmasi keakuratan untuk kasus penggunaan mereka sendiri.",
       "description": "Deskripsi",
       "duplicate": "Duplikat",
@@ -1062,7 +1058,7 @@
     },
     "addStats": {
       "title": "Konfigurasi Musuh + Bonus Stats",
-      "info": "Kamu dapat menggunakan kolom ini untuk menambahkan buff/debuff yang tidak didukung secara langsung di GO, seperti buff makanan, kartu abyss, atau Superconduct. Lihat <1>Genshin Impact wiki</1> untuk mengetahui nilai spesifiknya."
+      "info": "Kamu dapat menggunakan kolom ini untuk menambahkan buff/debuff yang tidak didukung secara langsung di SRO, seperti buff makanan, kartu abyss, atau Superconduct. Lihat <1>Honkai Star Rail wiki</1> untuk mengetahui nilai spesifiknya."
     },
     "tabTheorycraft": {
       "substatType": {
@@ -1190,7 +1186,7 @@
     },
     "buildDropdownDesc": "Mengurangi jumlah build yang dihasilkan akan mengurangi waktu perhitungan build untuk build dalam jumlah besar.",
     "threadDropdownDesc": "Meningkatkan jumlah thread akan mempercepat waktu build, tetapi akan menggunakan lebih banyak daya CPU.",
-    "noArtis": "Ups! Sepertinya kamu belum menambahkan artefak ke GO!  Kamu harus membuka halaman <1>Artifacts</1> dan menambahkan beberapa!",
+    "noArtis": "Ups! Sepertinya kamu belum menambahkan artefak ke SRO!  Kamu harus membuka halaman <1>Relics</1> dan menambahkan beberapa!",
     "build_one": "<0>{{count}}</0> Build",
     "build_other": "<0>{{count}}</0> Build",
     "thread_one": "<0>{{count}}</0> Thread",
@@ -1283,11 +1279,11 @@
   },
   "page_newTab": {
     "title": "🛑Tab Optimizer Baru Terdeteksi🛑",
-    "p1": "Sepertinya kamu sudah membuka Genshin Optimizer di tab lain💞.  GO tidak dimaksudkan untuk beroperasi pada banyak tab📵, hal itu dapat mengakibatkan:",
+    "p1": "Sepertinya kamu sudah membuka Star Rail Optimizer di tab lain💞.  SRO tidak dimaksudkan untuk beroperasi pada banyak tab📵, hal itu dapat mengakibatkan:",
     "symptom": {
       "1": "Data antar tab tidak Sinkron🙃.",
       "2": "Database corruption💔.",
-      "3": "Sakit perut🤰 dan Genshin Optimizer Devs yang frustrasi😡.",
+      "3": "Sakit perut🤰 dan Star Rail Optimizer Devs yang frustrasi😡.",
       "4": "Dalam kasus yang jarang terjadi, MATI☠️."
     },
     "p2": "Kami telah mencegah hal ini terjadi dengan menampilkan pesan ini📝 kepadamu. Kamu sekarang memiliki pilihan:",
@@ -1386,12 +1382,12 @@
   },
   "page_error": {
     "title": "🛑Terjadi Kesalahan Tak Terduga🛑",
-    "p1.1": "GO mengalami kesalahan tak terduga. Ini mungkin kesalahan kami, jadi tolong bantu kami membantumu!",
+    "p1.1": "SRO mengalami kesalahan tak terduga. Ini mungkin kesalahan kami, jadi tolong bantu kami membantumu!",
     "p1.2": "Berikut adalah beberapa hal yang dapat kamu coba untuk mengatasi masalah tersebut:",
     "fixes": {
       "1": "Refresh halaman",
       "2": "Nonaktifkan ekstensi apa pun dan refresh kembali",
-      "3": "Unduh Datamu dari bawah dan simpan di tempat yang aman. Klik tombol 'Hapus SEMUA Data GO' dan unggah kembali Datamu"
+      "3": "Unduh Datamu dari bawah dan simpan di tempat yang aman. Klik tombol 'Hapus SEMUA Data SRO' dan unggah kembali Datamu"
     },
     "p2": "Jika kamu melakukan hal di atas dan masih kembali ke sini, kirimkan laporan ke halaman GitHub Issues kami, atau ke channel Bug Reports di Discord kami",
     "report": {
@@ -1402,9 +1398,9 @@
     },
     "refresh": "Refresh Halaman",
     "caption": "Live footage dari teknisi kami yang menyelidiki masalah tersebut",
-    "confirmNuke": "Yakin ingin menghapus SEMUA data GO? Ini tidak dapat diubah!",
-    "finishNuke": "Menghapus semua data GO. Merefresh Halaman.",
-    "nuke": "Hapus SEMUA Data GO"
+    "confirmNuke": "Yakin ingin menghapus SEMUA data SRO? Ini tidak dapat diubah!",
+    "finishNuke": "Menghapus semua data SRO. Merefresh Halaman.",
+    "nuke": "Hapus SEMUA Data SRO"
   },
   "char_Dehya": {
     "inFieldAndTakeDmg": "Setelah karakter aktif menerima damage di dalam Fiery Sanctum",

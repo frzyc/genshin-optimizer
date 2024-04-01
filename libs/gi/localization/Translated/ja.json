@@ -1,5 +1,5 @@
 {
-  "artifact": {
+  "relic": {
     "editor": {
       "title": "聖遺物エディター",
       "substat": {
@@ -72,9 +72,8 @@
     }
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "Star Rail Optimizer",
     "tabs": {
-      "artifacts": "聖遺物",
       "characters": "キャラクター",
       "tools": "ツール"
     },

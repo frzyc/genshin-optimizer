@@ -1,5 +1,5 @@
 {
-  "artifact": {
+  "relic": {
     "editor": {
       "title": "ตัวจัดการอาร์ติแฟกต์",
       "substat": {
@@ -108,7 +108,7 @@
     "count": {
       "chars": "ตัวละคร:",
       "arts": "อาร์ติแฟกต์:",
-      "weapons": "อาวุธ:",
+      "light cones": "อาวุธ:",
       "total": "ทั้งหมด:",
       "new": "มาใหม่:",
       "updated": "อัพเดต:",
@@ -118,12 +118,10 @@
     }
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "Star Rail Optimizer",
     "tabs": {
-      "artifacts": "อาร์ติแฟกต์",
       "characters": "ตัวละคร",
       "tools": "อุปกรณ์",
-      "weapons": "อาวุธ",
       "doc": "เอกสาร"
     },
     "social": {
@@ -135,7 +133,7 @@
     "ascending": "จากน้อยไปมาก",
     "descending": "จากมากไปน้อย",
     "loading": "กำลังโหลด...",
-    "rightsDisclaimer": "Genshin Optimizer ไม่มีส่วนเกี่ยวข้องหรือรับรองโดย miHoYo",
+    "rightsDisclaimer": "Star Rail Optimizer ไม่มีส่วนเกี่ยวข้องหรือรับรองโดย miHoYo",
     "appVersion": "$t(pageTitle) เวอร์ชั่น: <1>{{version}}</1>",
     "underConstruction": "อยู่ระหว่างการปรับปรุง",
     "error": "ผิดพลาด",
@@ -147,7 +145,6 @@
       "name": "ชื่อ",
       "level": "เลเวล",
       "rarity": "จำนวนดาว",
-      "artsetkey": "เซ็ตอาร์ติแฟกต์",
       "probability": "ความน่าจะเป็นของโรล"
     }
   },

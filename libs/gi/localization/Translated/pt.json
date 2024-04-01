@@ -1,5 +1,5 @@
 {
-  "artifact": {
+  "relic": {
     "editor": {
       "title": "Editar Artefato",
       "substat": {
@@ -73,8 +73,8 @@
     "info": {
       "title": "Guia de Edição e Gerenciamento de Artefatos",
       "section1": "<0>Rolls de Atributos Secundários</0><1>O <1>número de Rolls</1> que um atributo possui é mostrado à direita dele e é indicado pelo número de barras. À medida que o número de Rolls aumenta, a cor do atributo fica mais viva:<3></3>.</1><2>Eficiência de Rolls do Atributo</2><3>A Eficiência de Rolls de um atributo é a porcentagem do valor atual sobre o valor máximo potencial em um artefato 5<1></1>. Na imagem, o valor máximo de um Roll de Vida% é de 5,8%. Em Eficiência: <3>5,3/5,8 ≈ 90%.</3></3><4>Eficiência Atual vs. Eficiência Máxima</4><5>Quando um artefato 5<1></1> possui 9 (4 base + 5 adicionais) Rolls totais, e cada um é do maior valor, esse é um artefato com Eficiência 900%. Entretanto, muitos artefatos não têm essa sorte. A <3>Eficiência Atual</3> de um artefato é a porcentagem que ele possui sobre um artefato com Eficiência máxima. A <5>Eficiência Máxima</5> é o máximo de Eficiência que um artefato pode conseguir, se os seus Rolls futuros ao subir de nível forem do maior valor possível.</5><6>Trancando um Artefato</6><7>Bloquear um artefato <1></1> o impedirá de ser escolhido pelo Gerador de Builds para uma Otimização. Artefatos equipados são bloqueados por padrão.</7>",
-      "section2": "<0>Editor de Artefatos</0><1>Um editor de artefatos completo que aceita qualquer artefato de 3<1></1> até 5<3></3>. Quando um atributo secundário é inserido, é possível calcular os valores exatos dos Rolls  e a partir deles, sua eficiência. Ele também garante que você tenha inserido valores corretos no artefato de acordo com o nível e valida também outras informações.</1><2>Digitalize capturas de tela</2><3>Se você não quer realizar a inserção manual, é possível digitalizar artefatos a partir de capturas de tela! No Editor de Artefatos, clique no botão <1>Mostre-me como!</1> para aprender mais.</3><4>Detecção de artefatos Duplicados/Atualizados</4><5>Você sabia que o GO percebe se você insere um artefato <1>duplicado</1>, que já existe no seu inventário? Ele também pode detectar se o artefato sendo editado é uma <3>atualização</3> de um artefato existente também. Assim que um artefato duplicado/atualizado é detectado, uma visualização permitirá que você compare os dois artefatos em questão (veja a imagem).</5>",
-      "section3": "<0>Inventário de Artefatos</0><1>Todos os artefatos que você adicionou ao GO são exibidos aqui. Os filtros permitem que você refine ainda mais a visualização de seus artefatos. </1><2>Exemplo: Encontrando Artefatos para Descarte</2><3>Ao filtrar por Eficiência de Rolls, você pode encontrar rapidamente um item mal-otimizado para usar como experiência para outros artefatos.</3><4>Neste exemplo, os filtros estão definidos desta forma: </4><5><0><0>Nível de 0 a 8</0><1>Artefatos Desbloqueados no Inventário</1><2>Desconsiderando Vida, DEF e ATQ simples ao calcular a Eficiência</2><3>Ordenar de forma Crescente pela Eficiência Máxima de Rolls.</3></0></5><6>Isso filtrará o Inventário de artefatos, mostrando os artefatos com menor Eficiência e com os atributos escolhidos.</6>"
+      "section2": "<0>Editor de Artefatos</0><1>Um editor de artefatos completo que aceita qualquer artefato de 3<1></1> até 5<3></3>. Quando um atributo secundário é inserido, é possível calcular os valores exatos dos Rolls  e a partir deles, sua eficiência. Ele também garante que você tenha inserido valores corretos no artefato de acordo com o nível e valida também outras informações.</1><2>Digitalize capturas de tela</2><3>Se você não quer realizar a inserção manual, é possível digitalizar artefatos a partir de capturas de tela! No Editor de Artefatos, clique no botão <1>Mostre-me como!</1> para aprender mais.</3><4>Detecção de artefatos Duplicados/Atualizados</4><5>Você sabia que o SRO percebe se você insere um artefato <1>duplicado</1>, que já existe no seu inventário? Ele também pode detectar se o artefato sendo editado é uma <3>atualização</3> de um artefato existente também. Assim que um artefato duplicado/atualizado é detectado, uma visualização permitirá que você compare os dois artefatos em questão (veja a imagem).</5>",
+      "section3": "<0>Inventário de Artefatos</0><1>Todos os artefatos que você adicionou ao SRO são exibidos aqui. Os filtros permitem que você refine ainda mais a visualização de seus artefatos. </1><2>Exemplo: Encontrando Artefatos para Descarte</2><3>Ao filtrar por Eficiência de Rolls, você pode encontrar rapidamente um item mal-otimizado para usar como experiência para outros artefatos.</3><4>Neste exemplo, os filtros estão definidos desta forma: </4><5><0><0>Nível de 0 a 8</0><1>Artefatos Desbloqueados no Inventário</1><2>Desconsiderando Vida, DEF e ATQ simples ao calcular a Eficiência</2><3>Ordenar de forma Crescente pela Eficiência Máxima de Rolls.</3></0></5><6>Isso filtrará o Inventário de artefatos, mostrando os artefatos com menor Eficiência e com os atributos escolhidos.</6>"
     },
     "sortMap": {
       "level": "Nível",
@@ -151,7 +151,7 @@
         "jsonParse": "Não foi possível ler o arquivo JSON",
         "unknown": "Formato de arquivo desconhecido.",
         "monaInvalid": "O formato de arquivo Mona-Uranai é inválido",
-        "goInvalid": "O formato do arquivo backup GO é inválido."
+        "goInvalid": "O formato do arquivo backup SRO é inválido."
       },
       "dbSource": "Origem dos dados:",
       "goodUpload": {
@@ -163,16 +163,16 @@
         "delNotInImport": "Excluir itens fora da base de dados"
       },
       "tooltip": {
-        "detectdup": "Detectar itens duplicados ou aprimorados no seu inventário atual e juntar a base de dados importada ao GO.",
+        "detectdup": "Detectar itens duplicados ou aprimorados no seu inventário atual e juntar a base de dados importada ao SRO.",
         "ignoreDup": "Não detectar duplicados ou aprimorados, a base de dados é simplesmente adicionada ao inventário existente.",
-        "delNotInImport": "Entende que a base de dados importada se trata do inventário completo. Itens presentes no seu inventário atual do GO que não estão no inventário importado serão excluído.",
+        "delNotInImport": "Entende que a base de dados importada se trata do inventário completo. Itens presentes no seu inventário atual do SRO que não estão no inventário importado serão excluído.",
         "keepNotInImport": "Entende que a base de dados importada é só parte do seu inventário. Nada será excluído."
       }
     },
     "count": {
       "chars": "Personagens:",
       "arts": "Artefatos:",
-      "weapons": "Armas:",
+      "light cones": "Armas:",
       "total": "Total:",
       "new": "Novo:",
       "updated": "Atualizado:",
@@ -196,12 +196,10 @@
     }
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "Star Rail Optimizer",
     "tabs": {
-      "artifacts": "Artefatos",
       "characters": "Personagens",
       "tools": "Ferramentas",
-      "weapons": "Armas",
       "doc": "Docs",
       "setting": "Ajustes",
       "scanner": "Scanners"
@@ -215,7 +213,7 @@
     "ascending": "Crescente",
     "descending": "Decrescente",
     "loading": "Carregando...",
-    "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado da HoYoverse.",
+    "rightsDisclaimer": "Star Rail Optimizer não é afiliado ou endossado da HoYoverse.",
     "appVersion": "$t(pageTitle) Versão: <1>{{version}}</1>",
     "underConstruction": "Em Construção",
     "error": "Erro",
@@ -230,7 +228,6 @@
       "rarity": "Raridade",
       "efficiency": "RV Atual",
       "mefficiency": "RV Máximo",
-      "artsetkey": "Conjunto de Artefatos",
       "probability": "Probabilidade do Roll"
     },
     "link": {
@@ -241,7 +238,6 @@
     "delete": "Excluir",
     "locked": "Trancado",
     "unlocked": "Destrancado",
-    "refinement": "Refinamento {{value}}",
     "selectlevel": "Selecionar Nível",
     "gender": {
       "F": "Feminino",
@@ -263,8 +259,7 @@
       "base_stat_mod": "Modificação dos Atributos Base",
       "stamina_buffs": "Efeitos de Stamina",
       "misc": "Outros Atributos"
-    },
-    "sillyPageTitle": "Silly Optimizer"
+    }
   },
   "char_Eula": {
     "burstC": {
@@ -593,13 +588,13 @@
     "c2BurstHeal": "Bônus à Cura de <strong>Cerimônia Kaijin</strong>"
   },
   "page_home": {
-    "intro": "A <strong>melhor</strong> calculadora para o <3><i>Genshin Impact</i></3>. O GO lembrará dos seus artefatos, armas e personagens e vai te ajudar a criar a melhor build, baseado no seu estilo de jogo e nos itens que você possui.",
+    "intro": "A <strong>melhor</strong> calculadora para o <3><i>Honkai Star Rail</i></3>. O SRO lembrará dos seus artefatos, armas e personagens e vai te ajudar a criar a melhor build, baseado no seu estilo de jogo e nos itens que você possui.",
     "quickLinksCard": {
       "title": "Links Rápidos",
       "buttons": {
         "tyGuide": {
           "title": "Playlist de Tutoriais no Youtube",
-          "tooltip": "Aprenda a usar o Genshin Optimizer"
+          "tooltip": "Aprenda a usar o Star Rail Optimizer"
         },
         "scanners": {
           "title": "Scanners Automáticos",
@@ -618,13 +613,13 @@
           "tooltip": "Documentação do Genshin Open Object Descriptor"
         },
         "patchNotes": {
-          "title": "Histórico de Versões do Genshin Optimizer",
-          "tooltip": "Todas as Notas de Atualização do GO"
+          "title": "Histórico de Versões do Star Rail Optimizer",
+          "tooltip": "Todas as Notas de Atualização do SRO"
         }
       }
     },
     "inventoryCard": {
-      "title": "Inventário do GO"
+      "title": "Inventário do SRO"
     },
     "vidGuideCard": {
       "title": "Tutoriais em Vídeo"
@@ -642,14 +637,14 @@
     }
   },
   "page_scanner": {
-    "intro": "<0>Scanners</0><1>Scanners são ferramentas para o Genshin que escaneiam automaticamente as informações do seu jogo a partir de capturas de tela ou lendo diretamente do jogo.</1><2>Abaixo estão diversos scanners que foram testados pelo GO.</2><3>Para fazer o upload do arquivo exportado, vá às <1>Configurações</1> e vá à seção de <strong>Upload de Base de Dados</strong>.</3>",
+    "intro": "<0>Scanners</0><1>Scanners são ferramentas para o Genshin que escaneiam automaticamente as informações do seu jogo a partir de capturas de tela ou lendo diretamente do jogo.</1><2>Abaixo estão diversos scanners que foram testados pelo SRO.</2><3>Para fazer o upload do arquivo exportado, vá às <1>Configurações</1> e vá à seção de <strong>Upload de Base de Dados</strong>.</3>",
     "ik": {
       "title": "Inventory Kamera",
       "p1": "Esse aplicativo leve escaneará todos os seus personagens, armas e artefatos e os adicionará aos seus artefatos. Siga as instruções no app para usá-lo."
     },
     "am": {
       "title": "「天目」-- Amenoma",
-      "p1": "Escaneia todos os artefatos no seu inventário. Siga as instruções para capturar a janela e escaneie. Possui versões em Chinês e em Inglês. (Realize o download da versão <1>_EN.exe</1> para escanear em Inglês). Somente o formato <1>GOOD</1> é aceito pelo GO."
+      "p1": "Escaneia todos os artefatos no seu inventário. Siga as instruções para capturar a janela e escaneie. Possui versões em Chinês e em Inglês. (Realize o download da versão <1>_EN.exe</1> para escanear em Inglês). Somente o formato <1>GOOD</1> é aceito pelo SRO."
     },
     "as": {
       "title": "AdeptiScanner",
@@ -665,7 +660,7 @@
       "gameMani": "Controle Automático",
       "materials": "Materiais",
       "characters": "Personagens",
-      "weapons": "Armas",
+      "light cones": "Armas",
       "achievements": "Conquistas"
     },
     "nb": {
@@ -1151,7 +1146,7 @@
       "title": "Configurar Multi-Objetivo",
       "addNewTarget": "Adicionar Objetivo",
       "addNewMTarget": "Criar Multi-Objetivo",
-      "info1": "Nota: Multi-Objetivos de Otimização já prontos podem ser encontrados no <1>Discord do GO</1> ou no <3>Guia de Multi-Otimização da Keqing Mains</3>, porém não podemos garantir que tais configurações serão válidas.",
+      "info1": "Nota: Multi-Objetivos de Otimização já prontos podem ser encontrados no <1>Discord do SRO</1> ou no <3>Guia de Multi-Otimização da Keqing Mains</3>, porém não podemos garantir que tais configurações serão válidas.",
       "info2": "É responsabilidade do usuário confirmar a precisão das configurações em relação ao seu próprio contexto de jogo.",
       "description": "Descrição",
       "duplicate": "Duplicar",
@@ -1164,7 +1159,7 @@
     },
     "addStats": {
       "title": "Ajustes do Inimigo + Atributos Bônus",
-      "info": "Você pode usar esses campos para adicionar buffs/debuffs que o GO não suporta diretamente, tais como efeitos de comida, cartas do Abismo ou Supercondutor. Veja a <1>Genshin Impact wiki</1> para encontrar valores exatos"
+      "info": "Você pode usar esses campos para adicionar buffs/debuffs que o SRO não suporta diretamente, tais como efeitos de comida, cartas do Abismo ou Supercondutor. Veja a <1>Honkai Star Rail wiki</1> para encontrar valores exatos"
     },
     "tabTheorycraft": {
       "substatType": {
@@ -1302,7 +1297,7 @@
     },
     "buildDropdownDesc": "Diminuir o número de Builds geradas diminuirá o tempo de processamento quando há um grande número de Builds.",
     "threadDropdownDesc": "Aumentar o número de threads usadas acelerará a Geração de Builds, mas usará mais processamento da CPU.",
-    "noArtis": "Opa! Parece que você ainda não adicionou nenhum artefato ao GO ainda. Você deveria ir à página <1>Artefatos</1> e adicionar alguns!",
+    "noArtis": "Opa! Parece que você ainda não adicionou nenhum artefato ao SRO ainda. Você deveria ir à página <1>Artefatos</1> e adicionar alguns!",
     "build_one": "<0>{{count}}</0> Build",
     "build_other": "<0>{{count}}</0> Builds",
     "thread_one": "<0>{{count}}</0> Thread",
@@ -1430,11 +1425,11 @@
   },
   "page_newTab": {
     "title": "🛑Detectada Nova Aba do Optimizer🛑",
-    "p1": "Parece que você abriu o Genshin Optimizer em outra aba 💞. O GO não é feito para operar em diversas abas simultaneamente 📵, fazer isso pode resultar em:",
+    "p1": "Parece que você abriu o Star Rail Optimizer em outra aba 💞. O SRO não é feito para operar em diversas abas simultaneamente 📵, fazer isso pode resultar em:",
     "symptom": {
       "1": "Dessincronização de dados entre abas 🙃",
       "2": "Corrupção da Base de Dados 💔",
-      "3": "Dor de barriga 🤰 e Desenvolvedores do GO irritados 😡.",
+      "3": "Dor de barriga 🤰 e Desenvolvedores do SRO irritados 😡.",
       "4": "Raramente, MORTE ☠️"
     },
     "p2": "Impedimos que isso acontecesse te mostrando esta mensagem 📝. Você pode agora:",
@@ -1540,12 +1535,12 @@
   },
   "page_error": {
     "title": "🛑Um Erro Inesperado Ocorreu🛑",
-    "p1.1": "O GO acabou de experienciar um erro inesperado. Isso provavelmente é nossa culpa, então permita-nos ajudá-lo!",
+    "p1.1": "O SRO acabou de experienciar um erro inesperado. Isso provavelmente é nossa culpa, então permita-nos ajudá-lo!",
     "p1.2": "Aqui estão alguns passos que você pode tentar para resolver o problema:",
     "fixes": {
       "1": "Recarregue a página",
       "2": "Desabilite extensões do seu navegador e recarregue a página",
-      "3": "Faça o download da(s) sua(s) Base(s) de Dados e guarde-as com segurança. Clique no botão 'Excluir TODOS os dados do GO' e em seguida faça o upload dela(s) novamente"
+      "3": "Faça o download da(s) sua(s) Base(s) de Dados e guarde-as com segurança. Clique no botão 'Excluir TODOS os dados do SRO' e em seguida faça o upload dela(s) novamente"
     },
     "p2": "Se você seguiu as instruções acima e ainda assim veio parar aqui, por favor reporte um bug na nossa página de Problemas no GitHub, ou no nosso canal de Bug Reports no Discord.",
     "report": {
@@ -1556,9 +1551,9 @@
     },
     "refresh": "Recarregar Página",
     "caption": "Visualização ao vivo dos nossos desenvolvedores investigando o problema.",
-    "confirmNuke": "Tem certeza de que de deseja excluir TODOS os seus dados do GO? Não dá para voltar atrás!",
-    "finishNuke": "Os dados do GO foram excluídos. Recarregando a página",
-    "nuke": "Excluir TODOS os dados do GO"
+    "confirmNuke": "Tem certeza de que de deseja excluir TODOS os seus dados do SRO? Não dá para voltar atrás!",
+    "finishNuke": "Os dados do SRO foram excluídos. Recarregando a página",
+    "nuke": "Excluir TODOS os dados do SRO"
   },
   "char_Dehya": {
     "inFieldAndTakeDmg": "Após um personagem levar dano dentro do campo da Espada Incinerante",
@@ -1666,7 +1661,7 @@
     "passive3": {
       "name": "Iteração de Insônie",
       "description": {
-        "0": "À noite (18:00 - 06:00), aumenta a velocidade do seu tempo de build no Genshin Optimizer em 10%."
+        "0": "À noite (18:00 - 06:00), aumenta a velocidade do seu tempo de build no Star Rail Optimizer em 10%."
       }
     },
     "constellation1": {

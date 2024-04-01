@@ -1,5 +1,5 @@
 {
-  "artifact": {
+  "relic": {
     "editor": {
       "title": "Editor de Artefactos",
       "substat": {
@@ -69,8 +69,8 @@
     "info": {
       "title": "Guía de Edición/Gestión de Artefactos",
       "section1": "<0>Tiradas de substat</0><1>El <1>número de tiradas</1> que posee un substat se muestra a la izquierda del mismo. A medida que el número crece, el substat se vuelve más colorido:<3></3>.</1><2>Valor de Tirada de Substat</2><3>El Valor de Tirada (VdT) de un substat es un porcentaje entre el valor actual sobre el valor potencial de 5<1></1> más alto. En la imagen, el valor máximo de la tirada de Daño CRIT es de 7,8%. En VdT: <3>5,8/7,8 = 69,2%.</3></3><4>Valor de Tirada Actual vs. Valor Máximo de Tirada</4><5>Cuando un 5<1></1> tiene 9(4+5) tiradas totales, cada una de las tiradas teniendo el valor más alto, eso es definido como un artefacto con VdT de 900%. Sin embargo, la mayoría de los artefactos no tienen esa suerte. El <3>VdT Actual</3> de un artefacto es un porcentaje sobre ese artefacto del 100%. El <5>VdT Máximo</5> es el VdT máximo posible que puede alcanzar un artefacto, si las tiradas restantes de mejora del artefacto obtuvieran el valor más alto posible.</5><6>Bloquear un artefacto</6><7>Al bloquear un artefacto <1></1>, Este artefacto no será usado por el generador de builds para su optimización. Un artefacto equipado será bloqueado por defecto.</7>",
-      "section2": "<0>Editor de Artefactos</0><1>Un editor de artefactos completo, que puede aceptar cualquier artefacto de 3<1></1> a 5<3></3>. Cuando se introduce un substat, puede calcular los valores exactos de sus tiradas. También se asegurará de que tienes el número correcto de tiradas en el artefacto según su nivel, junto con otras métricas de validación.</1><2>Escanear capturas de pantalla</2><3>¿La introducción de datos manual no es lo tuyo? ¡Puedes escanear tus artefactos con capturas de pantalla! En el editor de artefactos, haga clic en el botón <1>?</1> para aprender cómo.</3><4>Escáner Automático de Artefactos</4><5>Si juegas Genshin en PC, puedes descargar una herramienta que escanee automáticamente todos tus artefactos, para después importar esos datos en <1></1> Base de datos. <3>Haz click aquí</3> para ver una lista de escáneres compatibles con GO.</5><6>Detección de artefactos duplicados/mejorados</6><7>¿Sabías que GO puede detectar si estás añadiendo un artefacto <1>duplicado</1> ya existente en el sistema? También puede detectar si el artefacto actualmente en el editor es una <3>mejora</3> de un artefacto ya existente. Una vez detectado un duplicado/mejora, la vista previa le permitirá comparar los dos artefactos en cuestión (Ver Imagen).</7>",
-      "section3": "<0>Inventario de Artefactos</0><1>Aquí se muestran todos los artefactos que has añadido a GO. Los filtros aquí te permiten refinar aún más la vista de tus artefactos. </1><2>Ejemplo: Encontrar Artefactos de Relleno</2><3>Usando el filtro de artefactos y el VdT de los artefactos, puedes encontrar rápidamente artefactos para usar como experiencia.</3><4>En este ejemplo, los filtros se establecen así: </4><5><0><0>Nivel límite de 0-8.</0><1>Artefactos desbloqueados del Inventario.</1><2>Quitando la contribución de Vida plana, DEF plana y Recarga de Energía al cálculo de VdT.</2><3>Ordenado por Valor de Tirada Máximo Ascendente.</3></0></5><6>Así puedes filtar el inventario de artefactos para ver aquéllos artefactos con peor VdT, según substats.</6>"
+      "section2": "<0>Editor de Artefactos</0><1>Un editor de artefactos completo, que puede aceptar cualquier artefacto de 3<1></1> a 5<3></3>. Cuando se introduce un substat, puede calcular los valores exactos de sus tiradas. También se asegurará de que tienes el número correcto de tiradas en el artefacto según su nivel, junto con otras métricas de validación.</1><2>Escanear capturas de pantalla</2><3>¿La introducción de datos manual no es lo tuyo? ¡Puedes escanear tus artefactos con capturas de pantalla! En el editor de artefactos, haga clic en el botón <1>?</1> para aprender cómo.</3><4>Escáner Automático de Artefactos</4><5>Si juegas Genshin en PC, puedes descargar una herramienta que escanee automáticamente todos tus artefactos, para después importar esos datos en <1></1> Base de datos. <3>Haz click aquí</3> para ver una lista de escáneres compatibles con SRO.</5><6>Detección de artefactos duplicados/mejorados</6><7>¿Sabías que SRO puede detectar si estás añadiendo un artefacto <1>duplicado</1> ya existente en el sistema? También puede detectar si el artefacto actualmente en el editor es una <3>mejora</3> de un artefacto ya existente. Una vez detectado un duplicado/mejora, la vista previa le permitirá comparar los dos artefactos en cuestión (Ver Imagen).</7>",
+      "section3": "<0>Inventario de Artefactos</0><1>Aquí se muestran todos los artefactos que has añadido a SRO. Los filtros aquí te permiten refinar aún más la vista de tus artefactos. </1><2>Ejemplo: Encontrar Artefactos de Relleno</2><3>Usando el filtro de artefactos y el VdT de los artefactos, puedes encontrar rápidamente artefactos para usar como experiencia.</3><4>En este ejemplo, los filtros se establecen así: </4><5><0><0>Nivel límite de 0-8.</0><1>Artefactos desbloqueados del Inventario.</1><2>Quitando la contribución de Vida plana, DEF plana y Recarga de Energía al cálculo de VdT.</2><3>Ordenado por Valor de Tirada Máximo Ascendente.</3></0></5><6>Así puedes filtar el inventario de artefactos para ver aquéllos artefactos con peor VdT, según substats.</6>"
     },
     "sortMap": {
       "level": "Nivel",
@@ -120,7 +120,7 @@
         "jsonParse": "Incapaz de analizar el archivo JSON.",
         "unknown": "Formato de archivo desconocido.",
         "monaInvalid": "Formato de archivo Mona-Uranai no válido",
-        "goInvalid": "Formato de archivo de copia de seguridad de GO no válido."
+        "goInvalid": "Formato de archivo de copia de seguridad de SRO no válido."
       },
       "dbSource": "Origen de Datos:",
       "goodUpload": {
@@ -130,7 +130,7 @@
     "count": {
       "chars": "Personajes:",
       "arts": "Artefactos:",
-      "weapons": "Armas:",
+      "light cones": "Armas:",
       "total": "Total:",
       "new": "Nuevos:",
       "updated": "Actualizados:",
@@ -151,12 +151,10 @@
     }
   },
   "ui": {
-    "pageTitle": "Genshin Optimizer",
+    "pageTitle": "Star Rail Optimizer",
     "tabs": {
-      "artifacts": "Artefactos",
       "characters": "Personajes",
       "tools": "Herramientas",
-      "weapons": "Armas",
       "doc": "Docs",
       "setting": "Ajustes"
     },
@@ -169,7 +167,7 @@
     "ascending": "Ascendente",
     "descending": "Descendente",
     "loading": "Cargando...",
-    "rightsDisclaimer": "Genshin Optimizer no está afiliado ni respaldado por HoYoverse.",
+    "rightsDisclaimer": "Star Rail Optimizer no está afiliado ni respaldado por HoYoverse.",
     "appVersion": "$t(pageTitle) Versión: {{version}}",
     "underConstruction": "En construcción",
     "error": "Error",
@@ -184,7 +182,6 @@
       "rarity": "Rareza",
       "efficiency": "VdT Actual",
       "mefficiency": "VdT Máximo",
-      "artsetkey": "Conjunto de Artefactos",
       "probability": "Probabilidad de Tirada"
     },
     "link": {
@@ -402,7 +399,7 @@
     "c6": "Tras realizar ataques Normales y Cargados que curan un personaje con un 80% o más de Vida"
   },
   "page_home": {
-    "intro": "<0>¿Qué es Genshin Optimizer?</0><1>Genshin Optimizer (GO) es una página web de código libre hecha por fans del juego RPG de acción gacha <1><strong>Genshin Impact</strong></1>. Está principalmente dirigido a ayudar a los jugadores con un aspecto complejo del juego: la Optimización de Artefactos. Ya que los artefactos son elementos altamente aleatorizados que contribuyen directamente a cómo de efectivos son tus personajes en el juego, GO tratará de encontrar los mejores artefactos para tus personajes basado en tu inventario de artefactos actual.</1><2>GO puede realizar un seguimiento de tus artefactos, permitiendo filtrar/comparar artefactos con más facilidad, sirviendo como herramienta para ayudar a los usuarios a encontrar buenos artefactos en su inventario para subir de nivel, y malos artefactos para usar como relleno.</2><3>Como GO puede replicar las estadísticas exactas de cualquier personaje, junto con los cálculos de todas sus cifras de daño hasta un 1% de precisión, también puede servir como calculadora de Daño, y como herramienta para teorizar.</3>",
+    "intro": "<0>¿Qué es Star Rail Optimizer?</0><1>Star Rail Optimizer (SRO) es una página web de código libre hecha por fans del juego RPG de acción gacha <1><strong>Honkai Star Rail</strong></1>. Está principalmente dirigido a ayudar a los jugadores con un aspecto complejo del juego: la Optimización de Artefactos. Ya que los artefactos son elementos altamente aleatorizados que contribuyen directamente a cómo de efectivos son tus personajes en el juego, SRO tratará de encontrar los mejores artefactos para tus personajes basado en tu inventario de artefactos actual.</1><2>SRO puede realizar un seguimiento de tus artefactos, permitiendo filtrar/comparar artefactos con más facilidad, sirviendo como herramienta para ayudar a los usuarios a encontrar buenos artefactos en su inventario para subir de nivel, y malos artefactos para usar como relleno.</2><3>Como SRO puede replicar las estadísticas exactas de cualquier personaje, junto con los cálculos de todas sus cifras de daño hasta un 1% de precisión, también puede servir como calculadora de Daño, y como herramienta para teorizar.</3>",
     "quickLinksCard": {
       "buttons": {
         "kqm": {
@@ -418,14 +415,14 @@
     }
   },
   "page_scanner": {
-    "intro": "<0>Escáneres Automáticos</0><1>Los Escáneres Automáticos son herramientas para Genshin que pueden escanear datos del juego automáticamente manipulando los movimientos del ratón, tomándo capturas de pantalla del juego, y escaneando información desde ésas capturas. Son herramientas de bajo riesgo que pueden ayudar a automatizar el proceso manual de escanear artefactos para GO. Como cualquier herramienta que indirectamente interactúa con el juego, aunque su uso es virtualmente indetectable, <1>hay todavía un riesgo a la hora de usarlas.</1> Se aconseja discreción por parte del usuario.</1><2>El aspecto más importante de usar éstos escáneres junto a GO es el formato de salida:</2><3><0><0>A partir de <1>v5.21.0</1>, GO puede importar datos de artefactos en el formato <3>mona-uranai</3>. </0><1>A partir de <1>v6.0.0</1>, GO puede importar datos en el formato <3>Genshin Open Object Description (GOOD)</3>.</1></0></3><4>Abajo hay varios escáneres que han sido probados con GO.</4><5>Para cargar el archivo exportado, ve a la página de <1>Base de datos</1>, y carga tu archivo en la sección <strong>Carga Base de Datos</strong>.</5>",
+    "intro": "<0>Escáneres Automáticos</0><1>Los Escáneres Automáticos son herramientas para Genshin que pueden escanear datos del juego automáticamente manipulando los movimientos del ratón, tomándo capturas de pantalla del juego, y escaneando información desde ésas capturas. Son herramientas de bajo riesgo que pueden ayudar a automatizar el proceso manual de escanear artefactos para SRO. Como cualquier herramienta que indirectamente interactúa con el juego, aunque su uso es virtualmente indetectable, <1>hay todavía un riesgo a la hora de usarlas.</1> Se aconseja discreción por parte del usuario.</1><2>El aspecto más importante de usar éstos escáneres junto a SRO es el formato de salida:</2><3><0><0>A partir de <1>v5.21.0</1>, SRO puede importar datos de artefactos en el formato <3>mona-uranai</3>. </0><1>A partir de <1>v6.0.0</1>, SRO puede importar datos en el formato <3>Genshin Open Object Description (GOOD)</3>.</1></0></3><4>Abajo hay varios escáneres que han sido probados con SRO.</4><5>Para cargar el archivo exportado, ve a la página de <1>Base de datos</1>, y carga tu archivo en la sección <strong>Carga Base de Datos</strong>.</5>",
     "ik": {
       "title": "Inventory Kamera",
       "p1": "Esta aplicación ligera escaneará todos tus personajes + armas + artefactos de tu inventario. Sigue las instrucciones de la aplicación para configurarla. Este escáner sólo escanea en inglés."
     },
     "am": {
       "title": "「天目」-- Amenoma",
-      "p1": "Escanea todos los artefactos de tu inventario. Sigue las instrucciones para capturar la ventana y escanear. Tiene versiones en Chino e Inglés. (Descarga la version <1>_EN.exe</1> para escanear en inglés). Tanto el formato <3>mona-uranai</3> y <5>GOOD</5> son aceptados por GO, aunque el formato <7>GOOD</7> es el recomendado."
+      "p1": "Escanea todos los artefactos de tu inventario. Sigue las instrucciones para capturar la ventana y escanear. Tiene versiones en Chino e Inglés. (Descarga la version <1>_EN.exe</1> para escanear en inglés). Tanto el formato <3>mona-uranai</3> y <5>GOOD</5> son aceptados por SRO, aunque el formato <7>GOOD</7> es el recomendado."
     },
     "as": {
       "title": "AdeptiScanner",
