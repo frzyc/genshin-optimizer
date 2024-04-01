@@ -1,11 +1,11 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { ColorText } from '@genshin-optimizer/common/ui'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { artStatPercent } from '@genshin-optimizer/gi/ui'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import ColorText from '../ColoredText'
 
 // Special consideration for artifact stats, by displaying % behind hp_, atk_ and def_.
 export function ArtifactStatWithUnit({

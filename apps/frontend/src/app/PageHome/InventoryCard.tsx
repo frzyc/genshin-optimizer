@@ -8,7 +8,11 @@ import {
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { FlowerIcon, SlotIcon } from '@genshin-optimizer/gi/svgicons'
+import {
+  ElementIcon,
+  FlowerIcon,
+  SlotIcon,
+} from '@genshin-optimizer/gi/svgicons'
 import { BusinessCenter, People } from '@mui/icons-material'
 import {
   CardActionArea,
@@ -27,7 +31,6 @@ import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
-import { ElementIcon } from '../KeyMap/StatIcon'
 
 export default function InventoryCard() {
   const { t } = useTranslation(['page_home', 'ui'])

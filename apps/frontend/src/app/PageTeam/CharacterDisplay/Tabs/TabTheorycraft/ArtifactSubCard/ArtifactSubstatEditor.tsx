@@ -6,13 +6,13 @@ import {
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import { artMaxLevel, type SubstatKey } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { artDisplayValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import InfoIcon from '@mui/icons-material/Info'
 import { Box, Slider, Stack, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import CustomNumberInput from '../../../../../Components/CustomNumberInput'
-import StatIcon from '../../../../../KeyMap/StatIcon'
 import { BuildTcContext } from '../BuildTcContext'
 export function ArtifactSubstatEditor({
   statKey,

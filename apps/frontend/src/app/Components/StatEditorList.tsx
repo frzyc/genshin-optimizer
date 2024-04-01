@@ -2,6 +2,7 @@ import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allMainStatKeys, allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { artStatPercent } from '@genshin-optimizer/gi/ui'
 import type { InputPremodKey } from '@genshin-optimizer/gi/wr'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -17,7 +18,6 @@ import {
 } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import StatIcon from '../KeyMap/StatIcon'
 import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
 } from './CustomNumberInput'

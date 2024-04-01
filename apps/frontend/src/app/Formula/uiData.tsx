@@ -39,7 +39,6 @@ import type {
   UIInput,
 } from '@genshin-optimizer/gi/wr'
 import { allOperations, infoManager, uiInput } from '@genshin-optimizer/gi/wr'
-import type { Palette } from '@mui/material'
 import { useContext } from 'react'
 import { artifactTr } from '../names'
 const shouldWrap = true
@@ -604,7 +603,9 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
     const sourceDisplay = <SourceDisplay source={source} />
     node.name = (
       <>
-        <ColorText color={variant as keyof Palette}>
+        <ColorText
+          color={variant && variant === 'invalid' ? undefined : variant}
+        >
           {prefixDisplay}
           {name}
         </ColorText>

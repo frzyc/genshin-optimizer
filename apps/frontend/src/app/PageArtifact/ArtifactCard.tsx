@@ -1,4 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { ColorText, StarsDisplay } from '@genshin-optimizer/common/ui'
 import { clamp, clamp01, getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type {
@@ -12,7 +13,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
@@ -41,13 +42,10 @@ import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
 import LocationName from '../Components/Character/LocationName'
-import ColorText from '../Components/ColoredText'
 import ConditionalWrapper from '../Components/ConditionalWrapper'
 import InfoTooltip, { InfoTooltipInline } from '../Components/InfoTooltip'
 import PercentBadge from '../Components/PercentBadge'
-import { StarsDisplay } from '../Components/StarDisplay'
 import { getArtSheet } from '../Data/Artifacts'
-import StatIcon from '../KeyMap/StatIcon'
 import type { ArtifactEditorProps } from './ArtifactEditor'
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))

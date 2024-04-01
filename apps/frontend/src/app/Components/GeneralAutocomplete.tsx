@@ -1,3 +1,4 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import type { Variant } from '@genshin-optimizer/gi/wr'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import type {
@@ -16,7 +17,6 @@ import {
   useTheme,
 } from '@mui/material'
 import { Suspense, useMemo } from 'react'
-import ColorText from './ColoredText'
 /**
  * NOTE: the rationale behind toImg/toExlabel/toExItemLabel, is because `options` needs to be serializable, and having JSX in there will disrupt seralizability.
  */

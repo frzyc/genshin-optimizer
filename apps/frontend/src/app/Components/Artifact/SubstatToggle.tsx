@@ -1,7 +1,7 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { Box, ToggleButton } from '@mui/material'
-import StatIcon from '../../KeyMap/StatIcon'
 import { handleMultiSelect } from '../../Util/MultiSelect'
 import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
 import { ArtifactStatWithUnit } from './ArtifactStatKeyDisplay'
