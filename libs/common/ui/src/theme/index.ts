@@ -152,6 +152,7 @@ export const theme = createTheme({
     button: {
       textTransform: 'none',
     },
+    fontFamily: `"Comic Sans MS", "Comic Sans", cursive`,
   },
   components: {
     MuiCssBaseline: {
