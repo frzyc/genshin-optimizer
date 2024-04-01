@@ -125,20 +125,19 @@ export function NodeFieldDisplay({
   const multiDisplay = multi && <span>{multi}&#215;</span>
   const nodeValue = node.value
   let fieldVal = false as ReactNode
+  const { unit, fixed, variant, subVariant } = resolveInfo(node.info)
   if (compareValue !== undefined) {
     const diff = nodeValue - compareValue
-    const pctDiff = valueString(diff / compareValue, '%', node.info.fixed)
+    const pctDiff = valueString(diff / compareValue, '%', fixed)
     fieldVal = (
       <>
-        <span>{valueString(nodeValue, node.info.unit, node.info.fixed)}</span>
+        <span>{valueString(nodeValue, unit, fixed)}</span>
         {Math.abs(diff) > 0.0001 && (
           <BootstrapTooltip
             title={
               <Typography>
                 Compare to{' '}
-                <strong>
-                  {valueString(compareValue, node.info.unit, node.info.fixed)}
-                </strong>
+                <strong>{valueString(compareValue, unit, fixed)}</strong>
               </Typography>
             }
           >
@@ -154,9 +153,9 @@ export function NodeFieldDisplay({
             >
               <span>
                 ({diff > 0 ? '+' : ''}
-                {valueString(diff, node.info.unit, node.info.fixed)})
+                {valueString(diff, unit, fixed)})
               </span>
-              {node.info.unit !== '%' && compareValue !== 0 && (
+              {unit !== '%' && compareValue !== 0 && (
                 <span>
                   ({diff > 0 ? '+' : ''}
                   {pctDiff})
@@ -203,17 +202,13 @@ export function NodeFieldDisplay({
                   <Skeleton variant="rectangular" width={300} height={30} />
                 }
               >
-                {allAmpReactionKeys.includes(node.info.variant as any) && (
+                {allAmpReactionKeys.includes(variant as any) && (
                   <Box sx={{ display: 'inline-flex', gap: 1, mr: 1 }}>
                     <Box>
                       <AmpReactionModeText
-                        reaction={node.info.variant as AmpReactionKey}
+                        reaction={variant as AmpReactionKey}
                         trigger={
-                          node.info.subVariant as
-                            | 'cryo'
-                            | 'pyro'
-                            | 'hydro'
-                            | undefined
+                          subVariant as 'cryo' | 'pyro' | 'hydro' | undefined
                         }
                       />
                     </Box>

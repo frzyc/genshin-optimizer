@@ -56,9 +56,13 @@ export default function LoadoutCard({
             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
               <PersonIcon />
               <Typography>{name}</Typography>
-              <BootstrapTooltip title={<Typography>{description}</Typography>}>
-                <InfoIcon />
-              </BootstrapTooltip>
+              {!!description && (
+                <BootstrapTooltip
+                  title={<Typography>{description}</Typography>}
+                >
+                  <InfoIcon />
+                </BootstrapTooltip>
+              )}
 
               <SettingsIcon sx={{ ml: 'auto' }} />
             </Box>

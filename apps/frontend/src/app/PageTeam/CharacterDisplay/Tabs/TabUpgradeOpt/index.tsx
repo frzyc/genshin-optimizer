@@ -34,6 +34,7 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
+import type { DynStat } from '@genshin-optimizer/gi/solver'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { optimize } from '@genshin-optimizer/gi/wr'
 import {
@@ -51,7 +52,6 @@ import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
-import type { DynStat } from '../../../../Solver/common'
 import { shouldShowDevComponents } from '../../../../Util/Util'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
 import { dynamicData } from '../TabOptimize/foreground'
@@ -67,6 +67,7 @@ import {
 } from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
 import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
 import NoArtWarning from '../../../../Components/NoArtWarning'
+import { resolveInfo } from '../../../../Formula/uiData'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { UpOptBuild } from './upOpt'
 import { UpOptCalculator, toArtifact } from './upOpt'
@@ -235,8 +236,9 @@ export default function TabUpopt() {
             workerData.display ?? {},
             JSON.parse(pathStr)
           )
+          const infoResolved = filterNode.info && resolveInfo(filterNode.info)
           const minimum =
-            filterNode.info?.unit === '%' ? setting.value / 100 : setting.value
+            infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
           return { value: filterNode, minimum }
         })
     )

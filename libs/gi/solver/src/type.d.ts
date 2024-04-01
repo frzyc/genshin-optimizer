@@ -71,7 +71,7 @@ export interface CountResult {
 export interface FinalizeResult {
   resultType: 'finalize'
   builds: SolverBuild[]
-  plotData?: PlotData
+  plotData?: PlotData | undefined
 }
 export interface Interim {
   resultType: 'interim'

@@ -5,7 +5,6 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
 import { optimize, type OptNode } from '@genshin-optimizer/gi/wr'
-import type { Interim, Setup } from '../..'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,
@@ -13,6 +12,7 @@ import type {
   RequestFilter,
 } from '../../common'
 import { countBuilds, filterArts, pruneAll } from '../../common'
+import type { Interim, Setup } from '../../type'
 import type { SplitWorker } from '../BackgroundWorker'
 import { pickSplitKey, splitAtValue, splitOnSet } from './heuristicSplitting'
 import type { Linear } from './linearUB'
@@ -21,7 +21,7 @@ import { linearUB } from './linearUB'
 type Approximation = {
   base: number
   /** optimization target contribution from a given artifact (id) */
-  conts: StrictDict<string, number>
+  conts: Record<string, number>
 }
 type Filter = {
   nodes: OptNode[]

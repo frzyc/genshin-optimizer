@@ -3,7 +3,11 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ModalWrapper,
+  useConstObj,
+} from '@genshin-optimizer/common/ui'
 import {
   notEmpty,
   objKeyMap,
@@ -26,6 +30,8 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
+import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { optimize } from '@genshin-optimizer/gi/wr'
@@ -95,12 +101,9 @@ import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
-import type { UIData } from '../../../../Formula/uiData'
+import { resolveInfo, type UIData } from '../../../../Formula/uiData'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
-import type { OptProblemInput } from '../../../../Solver'
-import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
-import { mergeBuilds, mergePlot } from '../../../../Solver/common'
 import { bulkCatTotal } from '../../../../Util/totalUtils'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
@@ -182,17 +185,20 @@ export default function TabBuild() {
   const buildSetting = useOptConfig(optConfigId)!
   const {
     plotBase,
-    optimizationTarget,
+    optimizationTarget: optimizationTargetDb,
     mainStatAssumptionLevel,
     allowPartial,
     maxBuildsToShow,
     levelLow,
     levelHigh,
-    builds,
+    builds: buildsDb,
     buildDate,
     useTeammateBuild,
     allowLocationsState,
   } = buildSetting
+
+  const builds = useConstObj(buildsDb)
+  const optimizationTarget = useConstObj(optimizationTargetDb)
   const { data } = useContext(DataContext)
   const compareData = useCompareData()
   const optimizationTargetNode =
@@ -396,10 +402,9 @@ export default function TabBuild() {
               workerData.display ?? {},
               JSON.parse(pathStr)
             )
+            const infoResolved = filterNode.info && resolveInfo(filterNode.info)
             const minimum =
-              filterNode.info?.unit === '%'
-                ? setting.value / 100
-                : setting.value // TODO: Conversion
+              infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
             return { value: filterNode, minimum: minimum }
           })
       )
@@ -463,11 +468,14 @@ export default function TabBuild() {
       if (plotBaseNumNode) {
         const plotData = mergePlot(results.map((x) => x.plotData!))
         const solverBuilds = Object.values(plotData)
-        if (targetNode.info?.unit === '%')
+        const targetNodeinfo = targetNode.info && resolveInfo(targetNode.info)
+        const plotBaseNumNodeInfo =
+          plotBaseNumNode.info && resolveInfo(plotBaseNumNode.info)
+        if (targetNodeinfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) => (dataEntry.value = dataEntry.value * 100)
           )
-        if (plotBaseNumNode.info?.unit === '%')
+        if (plotBaseNumNodeInfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) => (dataEntry.plot = (dataEntry.plot ?? 0) * 100)
           )
@@ -580,6 +588,7 @@ export default function TabBuild() {
     [t]
   )
   const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
+
   return (
     <Box display="flex" flexDirection="column" gap={1}>
       {noArtifact && <NoArtWarning />}
@@ -1060,7 +1069,7 @@ const CharacterCard = memo(function CharacterCard({
   )
 })
 
-function BuildList({
+const BuildList = memo(function BuildList({
   builds,
   setBuilds,
   compareData,
@@ -1092,52 +1101,33 @@ function BuildList({
   const {
     teamChar: { key: characterKey },
   } = teamCharacterContextValue
-  // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer optimization times.
-  const list = useMemo(
-    () =>
-      !!teamCharacterContextValue && (
-        <Suspense
-          fallback={
-            <Skeleton variant="rectangular" width="100%" height={600} />
-          }
+  return (
+    <Suspense
+      fallback={<Skeleton variant="rectangular" width="100%" height={600} />}
+    >
+      {builds?.map((build, index) => (
+        <DataContextWrapper
+          key={index + Object.values(build.artifactIds).join()}
+          characterKey={characterKey}
+          build={build}
+          compareData={compareData}
+          mainStatAssumptionLevel={mainStatAssumptionLevel}
         >
-          {builds?.map((build, index) => (
-            <DataContextWrapper
-              key={index + Object.values(build.artifactIds).join()}
-              characterKey={characterKey}
-              build={build}
-              compareData={compareData}
-              mainStatAssumptionLevel={mainStatAssumptionLevel}
-            >
-              <BuildItemWrapper
-                index={index}
-                label={getLabel(index)}
-                build={build}
-                disabled={disabled}
-                deleteBuild={setBuilds ? deleteBuild : undefined}
-                mainStatAssumptionLevel={mainStatAssumptionLevel}
-                allowLocationsState={allowLocationsState}
-              />
-            </DataContextWrapper>
-          ))}
-        </Suspense>
-      ),
-    [
-      teamCharacterContextValue,
-      builds,
-      characterKey,
-      compareData,
-      disabled,
-      getLabel,
-      deleteBuild,
-      setBuilds,
-      mainStatAssumptionLevel,
-      allowLocationsState,
-    ]
+          <BuildItemWrapper
+            index={index}
+            label={getLabel(index)}
+            build={build}
+            disabled={disabled}
+            deleteBuild={setBuilds ? deleteBuild : undefined}
+            mainStatAssumptionLevel={mainStatAssumptionLevel}
+            allowLocationsState={allowLocationsState}
+          />
+        </DataContextWrapper>
+      ))}
+    </Suspense>
   )
-  return list
-}
-function BuildItemWrapper({
+})
+const BuildItemWrapper = memo(function BuildItemWrapper({
   index,
   label,
   build,
@@ -1155,32 +1145,34 @@ function BuildItemWrapper({
   allowLocationsState: AllowLocationsState
 }) {
   const { t } = useTranslation('page_character_optimize')
-
+  const extraButtonsLeft = useMemo(() => {
+    return (
+      <>
+        <CopyTcButton build={build} />
+        <CopyBuildButton build={build} />
+        {deleteBuild && (
+          <Button
+            color="error"
+            size="small"
+            startIcon={<DeleteForever />}
+            onClick={() => deleteBuild(index)}
+          >
+            {t('removeBuildButton')}
+          </Button>
+        )}
+      </>
+    )
+  }, [build, deleteBuild, index, t])
   return (
     <BuildDisplayItem
       label={label}
       disabled={disabled}
-      extraButtonsLeft={
-        <>
-          <CopyTcButton build={build} />
-          <CopyBuildButton build={build} />
-          {deleteBuild && (
-            <Button
-              color="error"
-              size="small"
-              startIcon={<DeleteForever />}
-              onClick={() => deleteBuild(index)}
-            >
-              {t('removeBuildButton')}
-            </Button>
-          )}
-        </>
-      }
+      extraButtonsLeft={extraButtonsLeft}
       mainStatAssumptionLevel={mainStatAssumptionLevel}
       allowLocationsState={allowLocationsState}
     />
   )
-}
+})
 function CopyTcButton({ build }: { build: GeneratedBuild }) {
   const [name, setName] = useState('')
   const [showTcPrompt, onShowTcPrompt, OnHideTcPrompt] = useBoolState()
@@ -1332,7 +1324,7 @@ type Prop = {
   compareData?: UIData
   mainStatAssumptionLevel: number
 }
-function DataContextWrapper({
+const DataContextWrapper = memo(function DataContextWrapper({
   children,
   characterKey,
   build,
@@ -1380,4 +1372,4 @@ function DataContextWrapper({
       {children}
     </DataContext.Provider>
   )
-}
+})

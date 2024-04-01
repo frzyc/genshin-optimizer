@@ -38,11 +38,14 @@ export function pruneAll(
   arts: ArtifactsBySlot,
   numTop: number,
   exclusion: ArtSetExclusion,
-  forced: Dict<MicropassOperation, boolean>
+  forced: Partial<Record<MicropassOperation, boolean>>
 ): { nodes: OptNode[]; arts: ArtifactsBySlot } {
   let should = forced
   /** If `key` makes progress, all operations in `value` should be performed */
-  const deps: StrictDict<MicropassOperation, Dict<MicropassOperation, true>> = {
+  const deps: Record<
+    MicropassOperation,
+    Partial<Record<MicropassOperation, true>>
+  > = {
     pruneOrder: { pruneNodeRange: true },
     pruneArtRange: { pruneNodeRange: true },
     pruneNodeRange: { reaffine: true },
@@ -91,7 +94,7 @@ export function pruneExclusion(
   nodes: OptNode[],
   exclusion: ArtSetExclusion
 ): OptNode[] {
-  const maxValues: Dict<keyof typeof exclusion, number> = {}
+  const maxValues: Partial<Record<keyof typeof exclusion, number>> = {}
   for (const [key, e] of Object.entries(exclusion)) {
     if (!e.includes(4)) continue
     maxValues[key] = e.includes(2) ? 1 : 3
@@ -805,7 +808,7 @@ export function* artSetPerm(
   for (const shape of shapes) yield* check(shape)
 }
 
-export type RequestFilter = StrictDict<
+export type RequestFilter = Record<
   ArtifactSlotKey,
   | { kind: 'required'; sets: Set<ArtifactSetKey> }
   | { kind: 'exclude'; sets: Set<ArtifactSetKey> }
@@ -820,10 +823,10 @@ export type ArtifactBuildData = {
 }
 export type ArtifactsBySlot = {
   base: DynStat
-  values: StrictDict<ArtifactSlotKey, ArtifactBuildData[]>
+  values: Record<ArtifactSlotKey, ArtifactBuildData[]>
 }
 
-export type PlotData = Dict<number, SolverBuild>
+export type PlotData = Partial<Record<number, SolverBuild>>
 export interface SolverBuild {
   value: number
   plot?: number
