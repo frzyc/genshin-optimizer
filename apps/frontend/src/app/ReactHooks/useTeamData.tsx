@@ -11,6 +11,14 @@ import {
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { common } from '@genshin-optimizer/gi/wr'
+import type { CharInfo } from '@genshin-optimizer/gi/wr-ui'
+import {
+  dataObjForArtifact,
+  dataObjForCharacterNew,
+  dataObjForWeapon,
+  mergeData,
+  uiDataForTeam,
+} from '@genshin-optimizer/gi/wr-ui'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
 import { TeamCharacterContext } from '../Context/TeamCharacterContext'
@@ -20,14 +28,6 @@ import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { resonanceData } from '../Data/Resonance'
 import { getWeaponSheet } from '../Data/Weapons'
 import WeaponSheet from '../Data/Weapons/WeaponSheet'
-import type { CharInfo } from '../Formula/api'
-import {
-  dataObjForArtifact,
-  dataObjForCharacterNew,
-  dataObjForWeapon,
-  mergeData,
-  uiDataForTeam,
-} from '../Formula/api'
 import { getArtifactData } from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
 
 type TeamDataBundle = {

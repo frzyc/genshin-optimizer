@@ -25,7 +25,6 @@ import type { ICharacter } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import type {
   Data,
-  DisplaySub,
   Info,
   NumNode,
   ReadNode,
@@ -46,12 +45,11 @@ import {
   sum,
   tally,
 } from '@genshin-optimizer/gi/wr'
-import type { NodeDisplay } from './uiData'
 import { UIData } from './uiData'
 const asConst = true as const,
   pivot = true as const
 
-function inferInfoMut(data: Data, source?: Info['source']): Data {
+export function inferInfoMut(data: Data, source?: Info['source']): Data {
   crawlObject(
     data,
     [],
@@ -76,7 +74,7 @@ function inferInfoMut(data: Data, source?: Info['source']): Data {
 
   return data
 }
-function dataObjForArtifact(
+export function dataObjForArtifact(
   art: ICachedArtifact,
   mainStatAssumptionLevel = 0
 ): Data {
@@ -113,7 +111,7 @@ function dataObjForArtifact(
 /**
  * Only used for calculating character-specific. do not use for team.
  */
-function dataObjForCharacter(char: ICachedCharacter): Data {
+export function dataObjForCharacter(char: ICachedCharacter): Data {
   const result: Data = {
     lvl: constant(char.level),
     constellation: constant(char.constellation),
@@ -186,7 +184,11 @@ export function dataObjForCharacterNew(
       ...objKeyMap(
         allElementWithPhyKeys.map((ele) => `${ele}_res_`),
         (ele) =>
-          percent((enemyOverride[`${ele.slice(0, -5)}_enemyRes_`] ?? 10) / 100)
+          percent(
+            (enemyOverride[
+              `${ele.slice(0, -5)}_enemyRes_` as keyof typeof enemyOverride
+            ] ?? 10) / 100
+          )
       ),
       level: constant(enemyOverride.enemyLevel ?? level),
     },
@@ -198,7 +200,7 @@ export function dataObjForCharacterNew(
   }
 
   for (const [key, value] of Object.entries(bonusStats))
-    result.customBonus![key] = key.endsWith('_')
+    (result.customBonus as any)[key] = key.endsWith('_')
       ? percent(value / 100)
       : constant(value)
 
@@ -215,7 +217,7 @@ export function dataObjForCharacterNew(
   )
 
   if (sheetData?.display) {
-    sheetData.display.custom = {}
+    sheetData.display['custom'] = {}
     customMultiTargets.forEach(({ name, targets }, i) => {
       const targetNodes = targets.map(
         ({ weight, path, hitMode, reaction, infusionAura, bonusStats }) => {
@@ -251,12 +253,12 @@ export function dataObjForCharacterNew(
         name,
         variant: 'invalid',
       })
-      sheetData.display!.custom[i] = multiTargetNode
+      sheetData.display!['custom'][i] = multiTargetNode
     })
   }
   return result
 }
-function dataObjForWeapon(weapon: ICachedWeapon): Data {
+export function dataObjForWeapon(weapon: ICachedWeapon): Data {
   return {
     weapon: {
       id: constant(weapon.id),
@@ -268,7 +270,7 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
 }
 /** These read nodes are very context-specific, and cannot be used anywhere else outside of `uiDataForTeam` */
 const teamBuff = setReadNodeKeys(deepNodeClone(input), ['teamBuff']) // Use ONLY by dataObjForTeam
-function uiDataForTeam(
+export function uiDataForTeam(
   teamData: Partial<Record<CharacterKey, Data[]>>,
   gender: GenderKey,
   activeCharKey?: CharacterKey
@@ -402,7 +404,7 @@ function uiDataForTeam(
         { teamBuff: buff, activeCharKey: constant(activeCharKey) },
       ])
     )
-    targetRef['target'] = targetRef
+    ;(targetRef as any)['target'] = targetRef
   })
   const origin = new UIData(undefined as any, undefined)
   return Object.fromEntries(
@@ -420,7 +422,7 @@ function uiDataForTeam(
     ])
   )
 }
-function mergeData(data: Data[]): Data {
+export function mergeData(data: Data[]): Data {
   function internal(data: any[], path: string[]): any {
     if (data.length <= 1) return data[0]
     if (data[0].operation) {
@@ -432,7 +434,7 @@ function mergeData(data: Data[]): Data {
         {}
       if (accu === undefined) {
         const errMsg = `Multiple entries when merging \`unique\` for key ${path}`
-        if (process.env.NODE_ENV === 'development') throw new Error(errMsg)
+        if (process.env['NODE_ENV'] === 'development') throw new Error(errMsg)
         else console.error(errMsg)
 
         accu = type === 'number' ? 'max' : 'small'
@@ -456,9 +458,11 @@ function mergeData(data: Data[]): Data {
   return data.length ? internal(data, []) : {}
 }
 
-function computeUIData(data: Data[]): UIData {
+export function computeUIData(data: Data[]): UIData {
   return new UIData(mergeData(data), undefined)
 }
+
+/* TODO: not used
 type ComparedNodeDisplay<V = number> = NodeDisplay<V> & { diff: V }
 function compareTeamBuffUIData(uiData1: UIData, uiData2: UIData): any {
   //Input<ComparedNodeDisplay, ComparedNodeDisplay<string>>
@@ -470,6 +474,7 @@ function compareDisplayUIData(
 ): { [key: string]: DisplaySub<ComparedNodeDisplay> } {
   return compareInternal(uiData1.getDisplay(), uiData2.getDisplay())
 }
+
 function compareInternal(data1: any | undefined, data2: any | undefined): any {
   if (data1?.operation || data2?.operation) {
     const d1 = data1 as NodeDisplay | undefined
@@ -505,16 +510,4 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
     )
   }
 }
-
-export {
-  compareDisplayUIData,
-  compareTeamBuffUIData,
-  computeUIData,
-  dataObjForArtifact,
-  dataObjForCharacter,
-  dataObjForWeapon,
-  inferInfoMut,
-  mergeData,
-  uiDataForTeam,
-}
-export type { NodeDisplay, UIData }
+*/

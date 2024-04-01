@@ -18,7 +18,7 @@ import {
   input,
   setReadNodeKeys,
 } from '@genshin-optimizer/gi/wr'
-import { computeUIData } from '../../../../Formula/api'
+import { computeUIData } from '@genshin-optimizer/gi/wr-ui'
 const dynamic = setReadNodeKeys(
   deepClone({ dyn: { ...input.art, ...input.artSet } })
 )

@@ -3,6 +3,12 @@ import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
+import {
+  computeUIData,
+  dataObjForWeapon,
+  nodeVStr,
+  resolveInfo,
+} from '@genshin-optimizer/gi/wr-ui'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'
@@ -25,8 +31,6 @@ import ConditionalWrapper from '../Components/ConditionalWrapper'
 import { StarsDisplay } from '../Components/StarDisplay'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { getWeaponSheet } from '../Data/Weapons'
-import { computeUIData, dataObjForWeapon } from '../Formula/api'
-import { nodeVStr, resolveInfo } from '../Formula/uiData'
 import type { LocationKey } from '../Types/consts'
 
 type WeaponCardProps = {

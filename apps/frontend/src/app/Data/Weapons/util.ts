@@ -10,7 +10,7 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import { inferInfoMut, mergeData } from '../../Formula/api'
+import { inferInfoMut, mergeData } from '@genshin-optimizer/gi/wr-ui'
 
 export function dataObjForWeaponSheet(
   key: WeaponKey,

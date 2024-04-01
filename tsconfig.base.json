@@ -88,6 +88,7 @@
       ],
       "@genshin-optimizer/gi/util": ["libs/gi/util/src/index.ts"],
       "@genshin-optimizer/gi/wr": ["libs/gi/wr/src/index.ts"],
+      "@genshin-optimizer/gi/wr-ui": ["libs/gi/wr-ui/src/index.ts"],
       "@genshin-optimizer/pando/engine": ["libs/pando/engine/src/index.ts"],
       "@genshin-optimizer/sr/assets": ["libs/sr/assets/src/index.ts"],
       "@genshin-optimizer/sr/consts": ["libs/sr/consts/src/index.ts"],

@@ -1,6 +1,6 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
-import { inferInfoMut, mergeData } from '../../Formula/api'
+import { inferInfoMut, mergeData } from '@genshin-optimizer/gi/wr-ui'
 
 export function dataObjForArtifactSheet(
   key: ArtifactSetKey,

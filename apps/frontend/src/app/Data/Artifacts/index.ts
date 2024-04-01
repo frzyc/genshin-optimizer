@@ -6,8 +6,8 @@ import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
 } from '@genshin-optimizer/gi/consts'
-import type { UIData } from '../../Formula/api'
-import { mergeData } from '../../Formula/api'
+import type { UIData } from '@genshin-optimizer/gi/wr-ui'
+import { mergeData } from '@genshin-optimizer/gi/wr-ui'
 import type { SetNum } from '../../Types/consts'
 import type { ArtifactSheet } from './ArtifactSheet'
 

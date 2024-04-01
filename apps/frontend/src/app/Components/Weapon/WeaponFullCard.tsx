@@ -1,18 +1,21 @@
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
+import type { NodeDisplay } from '@genshin-optimizer/gi/wr-ui'
+import {
+  computeUIData,
+  dataObjForWeapon,
+  nodeVStr,
+  resolveInfo,
+} from '@genshin-optimizer/gi/wr-ui'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import { getWeaponSheet } from '../../Data/Weapons'
 import WeaponSheet from '../../Data/Weapons/WeaponSheet'
-import { computeUIData, dataObjForWeapon } from '../../Formula/api'
-import type { NodeDisplay } from '../../Formula/uiData'
-import { nodeVStr, resolveInfo } from '../../Formula/uiData'
-import SqBadge from '../SqBadge'
 export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
   if (!weapon) return null

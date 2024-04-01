@@ -1,0 +1,16 @@
+{
+  "name": "gi-wr-ui",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi/wr-ui/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gi/wr-ui/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

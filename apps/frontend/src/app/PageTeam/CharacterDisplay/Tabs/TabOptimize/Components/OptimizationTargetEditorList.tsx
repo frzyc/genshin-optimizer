@@ -1,5 +1,6 @@
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type { StatFilterSetting, StatFilters } from '@genshin-optimizer/gi/db'
+import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/wr-ui'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -12,7 +13,6 @@ import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
 } from '../../../../../Components/CustomNumberInput'
 import { DataContext } from '../../../../../Context/DataContext'
-import { resolveInfo, type NodeDisplay } from '../../../../../Formula/uiData'
 import OptimizationTargetSelector from './OptimizationTargetSelector'
 
 type OptimizationTargetEditorListProps = {

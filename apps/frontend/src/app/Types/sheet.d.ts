@@ -4,7 +4,7 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import type { NumNode, ReadNode } from '@genshin-optimizer/gi/wr'
-import type { UIData } from '../Formula/uiData'
+import type { UIData } from '@genshin-optimizer/gi/wr-ui'
 import type { IFieldDisplay } from './fieldDisplay'
 
 interface IDocumentBase {

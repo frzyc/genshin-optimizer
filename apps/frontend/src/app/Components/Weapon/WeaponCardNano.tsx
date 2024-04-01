@@ -3,14 +3,18 @@ import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { input } from '@genshin-optimizer/gi/wr'
+import type { NodeDisplay } from '@genshin-optimizer/gi/wr-ui'
+import {
+  computeUIData,
+  dataObjForWeapon,
+  nodeVStr,
+  resolveInfo,
+} from '@genshin-optimizer/gi/wr-ui'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { getWeaponSheet } from '../../Data/Weapons'
 import WeaponSheet from '../../Data/Weapons/WeaponSheet'
-import { computeUIData, dataObjForWeapon } from '../../Formula/api'
-import type { NodeDisplay } from '../../Formula/uiData'
-import { nodeVStr, resolveInfo } from '../../Formula/uiData'
 import BootstrapTooltip from '../BootstrapTooltip'
 import CardDark from '../Card/CardDark'
 import LocationIcon from '../Character/LocationIcon'

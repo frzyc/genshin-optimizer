@@ -15,8 +15,8 @@ import {
   percent,
   precompute,
 } from '@genshin-optimizer/gi/wr'
+import { mergeData } from '@genshin-optimizer/gi/wr-ui'
 import type { TeamData } from '../../../../Context/DataContext'
-import { mergeData } from '../../../../Formula/api'
 import { shouldShowDevComponents } from '../../../../Util/Util'
 import { dynamicData } from '../TabOptimize/foreground'
 

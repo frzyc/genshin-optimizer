@@ -29,7 +29,7 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import { inferInfoMut, mergeData } from '../../Formula/api'
+import { inferInfoMut, mergeData } from '@genshin-optimizer/gi/wr-ui'
 
 const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],

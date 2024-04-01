@@ -1,6 +1,7 @@
 import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/wr-ui'
 import TrackChangesIcon from '@mui/icons-material/TrackChanges'
 import {
   Box,
@@ -14,7 +15,6 @@ import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DataContext } from '../../../Context/DataContext'
 import { getDisplayHeader } from '../../../Formula/DisplayUtil'
-import { resolveInfo, type NodeDisplay } from '../../../Formula/uiData'
 export default function OptimizationTargetDisplay({
   optimizationTarget,
   showEmptyTargets = false,

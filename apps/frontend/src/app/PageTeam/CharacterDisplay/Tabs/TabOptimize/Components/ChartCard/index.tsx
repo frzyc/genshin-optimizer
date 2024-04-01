@@ -9,6 +9,7 @@ import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
 import { useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import type { Info, InfoExtra, NumNode } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
+import { resolveInfo } from '@genshin-optimizer/gi/wr-ui'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -47,7 +48,6 @@ import InfoTooltip from '../../../../../../Components/InfoTooltip'
 import { DataContext } from '../../../../../../Context/DataContext'
 import { GraphContext } from '../../../../../../Context/GraphContext'
 import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
-import { resolveInfo } from '../../../../../../Formula/uiData'
 import OptimizationTargetSelector from '../OptimizationTargetSelector'
 import CustomDot from './CustomDot'
 import CustomTooltip from './CustomTooltip'

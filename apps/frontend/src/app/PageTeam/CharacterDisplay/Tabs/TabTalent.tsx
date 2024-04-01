@@ -4,6 +4,7 @@ import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
+import type { NodeDisplay } from '@genshin-optimizer/gi/wr-ui'
 import {
   Box,
   CardActionArea,
@@ -29,7 +30,6 @@ import {
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
 import type { TalentSheetElementKey } from '../../../Data/Characters/ICharacterSheet'
-import type { NodeDisplay } from '../../../Formula/uiData'
 import type { DocumentSection } from '../../../Types/sheet'
 const talentSpacing = {
   xs: 12,

@@ -14,7 +14,7 @@ import {
   sum,
   target,
 } from '@genshin-optimizer/gi/wr'
-import type { UIData } from '../../../Formula/uiData'
+import type { UIData } from '@genshin-optimizer/gi/wr-ui'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'

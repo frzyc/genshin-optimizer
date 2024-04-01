@@ -36,6 +36,12 @@ import { getCharData } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { optimize } from '@genshin-optimizer/gi/wr'
 import {
+  mergeData,
+  resolveInfo,
+  uiDataForTeam,
+  type UIData,
+} from '@genshin-optimizer/gi/wr-ui'
+import {
   CheckBox,
   CheckBoxOutlineBlank,
   Close,
@@ -100,8 +106,6 @@ import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
-import { mergeData, uiDataForTeam } from '../../../../Formula/api'
-import { resolveInfo, type UIData } from '../../../../Formula/uiData'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import { bulkCatTotal } from '../../../../Util/totalUtils'

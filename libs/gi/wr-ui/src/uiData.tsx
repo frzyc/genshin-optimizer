@@ -19,7 +19,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { Translate } from '@genshin-optimizer/gi/ui'
+import { ArtifactSetName, Translate } from '@genshin-optimizer/gi/ui'
 import { SillyContext } from '@genshin-optimizer/gi/ui/Context/SillyContext'
 import type {
   ComputeNode,
@@ -40,8 +40,8 @@ import type {
 } from '@genshin-optimizer/gi/wr'
 import { allOperations, infoManager, uiInput } from '@genshin-optimizer/gi/wr'
 import type { Palette } from '@mui/material'
+import type { ReactNode } from 'react'
 import { useContext } from 'react'
-import { artifactTr } from '../names'
 const shouldWrap = true
 
 export function nodeVStr(n: NodeDisplay) {
@@ -56,8 +56,8 @@ export interface NodeDisplay<V = number> {
   value: V
   /** Whether the node fails the conditional test (`threshold_add`, `match`, etc.) or consists solely of empty nodes */
   isEmpty: boolean
-  formula?: Displayable
-  formulas: Displayable[]
+  formula?: ReactNode
+  formulas: ReactNode[]
 }
 
 export class UIData {
@@ -372,7 +372,7 @@ export class UIData {
       case 'min':
       case 'max': {
         const identity = allOperations[operation]([])
-        if (process.env.NODE_ENV !== 'development')
+        if (process.env['NODE_ENV'] !== 'development')
           operands = operands.filter((operand) => operand.value !== identity)
         if (!operands.length)
           return Object.values(info).some((x) => x)
@@ -381,7 +381,7 @@ export class UIData {
       }
     }
 
-    let formula: { display: Displayable; dependencies: Displayable[] }
+    let formula: { display: ReactNode; dependencies: ReactNode[] }
     let mayNeedWrapping = false
     switch (operation) {
       case 'max':
@@ -457,9 +457,9 @@ type ContextNodeDisplayList = {
 function fStr(
   strings: TemplateStringsArray,
   ...list: ContextNodeDisplayList[]
-): { display: Displayable; dependencies: Displayable[] } {
-  const dependencies = new Set<Displayable>()
-  const predisplay: Displayable[] = []
+): { display: ReactNode; dependencies: ReactNode[] } {
+  const dependencies = new Set<ReactNode>()
+  const predisplay: ReactNode[] = []
 
   strings.forEach((string, i) => {
     predisplay.push(string)
@@ -468,7 +468,7 @@ function fStr(
     if (key) {
       const { operands, shouldWrap, separator = ', ' } = key
       operands.forEach((item, i, array) => {
-        let itemFormula: Displayable
+        let itemFormula: ReactNode
         if (!item.info.pivot && item.formula) itemFormula = item.formula
         else itemFormula = createFormulaComponent(item)
 
@@ -575,7 +575,7 @@ function keyMapInfo(path: string): InfoExtra & Info {
 }
 function artSetInfo(path: string): InfoExtra {
   if (!allArtifactSetKeys.includes(path as ArtifactSetKey)) return {}
-  return { name: artifactTr(path as ArtifactSetKey) }
+  return { name: <ArtifactSetName setKey={path as ArtifactSetKey} /> }
 }
 export function resolveInfo(info: Info): InfoExtra & Info {
   const mergedInfo: Info & InfoExtra = {
@@ -588,7 +588,7 @@ export function resolveInfo(info: Info): InfoExtra & Info {
 }
 function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
   /**
-   * TODO Fetch these `Displayable` from `node.field` instead
+   * TODO Fetch these `ReactNode` from `node.field` instead
    * In particular, `node.valueDisplay` and `node.name` below
    */
 
@@ -652,7 +652,7 @@ function SourceDisplay({ source }: { source: string | undefined }) {
   return null
 }
 
-function createFormulaComponent(node: ContextNodeDisplay): Displayable {
+function createFormulaComponent(node: ContextNodeDisplay): ReactNode {
   const { name, valueDisplay } = node
   //TODO: change formula size in the formula display element instead
   return name ? (
@@ -663,7 +663,7 @@ function createFormulaComponent(node: ContextNodeDisplay): Displayable {
     valueDisplay!
   )
 }
-function mergeFormulaComponents(components: Displayable[]): Displayable {
+function mergeFormulaComponents(components: ReactNode[]): ReactNode {
   return (
     <>
       {components.map((x, i) => (
@@ -685,15 +685,15 @@ interface ContextNodeDisplay<V = number> {
   empty: boolean
   value: V
 
-  dependencies: Set<Displayable>
+  dependencies: Set<ReactNode>
 
   mayNeedWrapping: boolean // Whether this formula should be parenthesized when it is a part of multiplications/divisions and subtractions' subtrahends
 
   // Don't set these manually outside of `UIData.computeNode`
-  name?: Displayable
-  valueDisplay?: Displayable
-  formula?: Displayable
-  assignment?: Displayable
+  name?: ReactNode
+  valueDisplay?: ReactNode
+  formula?: ReactNode
+  assignment?: ReactNode
 }
 
 const illformed: ContextNodeDisplay = {

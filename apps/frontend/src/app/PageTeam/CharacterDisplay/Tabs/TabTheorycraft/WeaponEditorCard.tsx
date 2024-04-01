@@ -3,6 +3,7 @@ import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
+import { computeUIData, dataObjForWeapon } from '@genshin-optimizer/gi/wr-ui'
 import {
   Box,
   Button,
@@ -23,7 +24,6 @@ import LevelSelect from '../../../../Components/LevelSelect'
 import RefinementDropdown from '../../../../Components/RefinementDropdown'
 import { DataContext } from '../../../../Context/DataContext'
 import { getWeaponSheet } from '../../../../Data/Weapons'
-import { computeUIData, dataObjForWeapon } from '../../../../Formula/api'
 import { BuildTcContext } from './BuildTcContext'
 const WeaponSelectionModal = React.lazy(
   () => import('../../../../Components/Weapon/WeaponSelectionModal')

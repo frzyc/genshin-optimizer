@@ -4,6 +4,7 @@ import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { milestoneLevelsLow } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
+import { computeUIData, dataObjForWeapon } from '@genshin-optimizer/gi/wr-ui'
 import { Lock, LockOpen } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
 import {
@@ -31,7 +32,6 @@ import { StarsDisplay } from '../Components/StarDisplay'
 import { DataContext } from '../Context/DataContext'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { getWeaponSheet } from '../Data/Weapons'
-import { computeUIData, dataObjForWeapon } from '../Formula/api'
 import type { LocationKey } from '../Types/consts'
 const WeaponSelectionModal = React.lazy(
   () => import('../Components/Weapon/WeaponSelectionModal')

@@ -24,9 +24,9 @@ import {
   tally,
   target,
 } from '@genshin-optimizer/gi/wr'
+import type { UIData } from '@genshin-optimizer/gi/wr-ui'
+import { inferInfoMut } from '@genshin-optimizer/gi/wr-ui'
 import ElementCycle from '../Components/ElementCycle'
-import { inferInfoMut } from '../Formula/api'
-import type { UIData } from '../Formula/uiData'
 import type { DocumentSection } from '../Types/sheet'
 import { activeCharBuff, condReadNode, st, stg } from './SheetUtil'
 const tr = (strKey: string) => (

@@ -1,6 +1,7 @@
 import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
+import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/wr-ui'
 import { Masonry } from '@mui/lab'
 import {
   CardContent,
@@ -20,7 +21,6 @@ import {
   getDisplayHeader,
   getDisplaySections,
 } from '../../../../../Formula/DisplayUtil'
-import { resolveInfo, type NodeDisplay } from '../../../../../Formula/uiData'
 
 export interface TargetSelectorModalProps {
   show: boolean
