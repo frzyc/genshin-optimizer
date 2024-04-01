@@ -3,7 +3,6 @@ import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent, sum } from '@genshin-optimizer/gi/wr'
 import ColorText from '../../../Components/ColoredText'
-import KeyMap from '../../../KeyMap'
 import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -17,24 +16,18 @@ const [condElePath, condEle] = cond(key, 'element')
 const set2Nodes = Object.fromEntries(
   allElementKeys.map((ele) => [
     ele,
-    greaterEq(
-      input.artSet.TinyMiracle,
-      2,
-      percent(0.2),
-      KeyMap.info(`${ele}_res_`)
-    ),
+    greaterEq(input.artSet.TinyMiracle, 2, percent(0.2), {
+      path: `${ele}_res_`,
+    }),
   ])
 )
 
 const set4Nodes = Object.fromEntries(
   allElementKeys.map((ele) => [
     ele,
-    greaterEq(
-      input.artSet.TinyMiracle,
-      4,
-      equal(condEle, ele, percent(0.3)),
-      KeyMap.info(`${ele}_res_`)
-    ),
+    greaterEq(input.artSet.TinyMiracle, 4, equal(condEle, ele, percent(0.3)), {
+      path: `${ele}_res_`,
+    }),
   ])
 )
 

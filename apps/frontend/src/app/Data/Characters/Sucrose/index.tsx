@@ -13,7 +13,6 @@ import {
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import ColorText from '../../../Components/ColoredText'
-import KeyMap from '../../../KeyMap'
 import { absorbableEle } from '../../../Types/consts'
 import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -99,7 +98,7 @@ const asc1 = objKeyMap(absorbableEle, (ele) =>
     target.charKey,
     key, // Not applying to Sucrose
     equal(target.charEle, condSwirls[ele], asc1Disp),
-    { ...KeyMap.info('eleMas'), isTeamBuff: true }
+    { ...{ path: 'eleMas' }, isTeamBuff: true }
   )
 ) // And element matches the swirl
 const asc4OptNode = infoMut(
@@ -108,7 +107,7 @@ const asc4OptNode = infoMut(
     4,
     prod(percent(dm.passive2.eleMas_), input.premod.eleMas)
   ),
-  { ...KeyMap.info('eleMas'), isTeamBuff: true }
+  { ...{ path: 'eleMas' }, isTeamBuff: true }
 )
 const asc4Disp = equal('hit', condSkillHitOpponent, asc4OptNode)
 const asc4 = unequal(target.charKey, key, asc4Disp)
@@ -338,7 +337,7 @@ const sheet: ICharacterSheet = {
           fields: [
             {
               node: infoMut(asc1Disp, {
-                ...KeyMap.info('eleMas'),
+                ...{ path: 'eleMas' },
                 isTeamBuff: true,
               }),
             },
@@ -362,7 +361,7 @@ const sheet: ICharacterSheet = {
           hit: {
             fields: [
               {
-                node: infoMut(asc4Disp, KeyMap.info('eleMas')),
+                node: infoMut(asc4Disp, { path: 'eleMas' }),
               },
               {
                 text: stg('duration'),

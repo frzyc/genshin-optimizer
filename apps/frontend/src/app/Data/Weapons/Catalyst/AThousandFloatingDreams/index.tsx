@@ -14,7 +14,6 @@ import {
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../../KeyMap'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -62,7 +61,7 @@ const team_eleMasDisp = equal(
   input.weapon.key,
   key,
   subscript(input.weapon.refinement, team_eleMasArr),
-  { ...KeyMap.info('eleMas'), isTeamBuff: true }
+  { ...{ path: 'eleMas' }, isTeamBuff: true }
 )
 // Apply to non-equipped character
 const team_eleMas = unequal(input.charKey, target.charKey, team_eleMasDisp)

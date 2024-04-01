@@ -14,7 +14,6 @@ import {
   subscript,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -348,10 +347,10 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(teamAtk_, KeyMap.info('atk_')),
+                node: infoMut(teamAtk_, { path: 'atk_' }),
               },
               {
-                node: infoMut(atk_, KeyMap.info('atk_')),
+                node: infoMut(atk_, { path: 'atk_' }),
               },
               {
                 text: stg('duration'),

@@ -10,7 +10,6 @@ import {
   sum,
 } from '@genshin-optimizer/gi/wr'
 import ColorText from '../../../Components/ColoredText'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -102,12 +101,9 @@ const a1NormDmg_ = greaterEq(
 const a1ChargedDmg_ = greaterEq(
   input.asc,
   1,
-  equal(
-    'afterSkill',
-    condAfterSkillA1,
-    percent(dm.passive1.dmg_bonus),
-    KeyMap.info('charged_dmg_')
-  )
+  equal('afterSkill', condAfterSkillA1, percent(dm.passive1.dmg_bonus), {
+    path: 'charged_dmg_',
+  })
 )
 
 const [condAfterApplySprintPath, condAfterApplySprint] = cond(
@@ -132,7 +128,7 @@ const c6ChargedDmg_ = greaterEq(
   input.constellation,
   6,
   equal('c6', condC6, dm.constellation6.charged_bonus),
-  KeyMap.info('charged_dmg_')
+  { path: 'charged_dmg_' }
 )
 
 const dmgFormulas = {

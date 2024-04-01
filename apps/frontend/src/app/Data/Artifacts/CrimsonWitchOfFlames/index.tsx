@@ -9,7 +9,6 @@ import {
   percent,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -19,7 +18,7 @@ const key: ArtifactSetKey = 'CrimsonWitchOfFlames'
 const setHeader = setHeaderTemplate(key)
 
 const [condStackPath, condStack] = cond(key, 'stack')
-const pyro_dmg_info: Info = KeyMap.info('pyro_dmg_')
+const pyro_dmg_info: Info = { path: 'pyro_dmg_' }
 const set2 = greaterEq(
   input.artSet.CrimsonWitchOfFlames,
   2,

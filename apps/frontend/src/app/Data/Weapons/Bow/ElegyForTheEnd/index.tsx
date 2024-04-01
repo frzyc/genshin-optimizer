@@ -1,7 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, input, subscript } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../../KeyMap'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -15,18 +14,14 @@ const eleMasInc2 = [-1, 100, 125, 150, 175, 200]
 const atk_s = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 
 const [condPath, condNode] = cond(key, 'ThePartingRefrain')
-const eleMas = subscript(
-  input.weapon.refinement,
-  eleMasInc,
-  KeyMap.info('eleMas')
-)
+const eleMas = subscript(input.weapon.refinement, eleMasInc, { path: 'eleMas' })
 // TODO: These should not stack, similar to NO. But I don't want to copy NO's
 // solution, since then these nodes won't show in the team buff panel. And it's
 // a bit unlikely people will try to stack this buff
 const eleMas2 = equal(
   condNode,
   'on',
-  subscript(input.weapon.refinement, eleMasInc2, KeyMap.info('eleMas'))
+  subscript(input.weapon.refinement, eleMasInc2, { path: 'eleMas' })
 )
 const atk_ = equal(condNode, 'on', subscript(input.weapon.refinement, atk_s))
 

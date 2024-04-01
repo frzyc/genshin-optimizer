@@ -17,7 +17,6 @@ import {
   sum,
   tally,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -104,23 +103,20 @@ const [condP1Path, condP1] = cond(key, 'passive1')
 const [condC4Path, condC4] = cond(key, 'constellation4')
 
 const nodeSkillHP = prod(
-  subscript(input.total.skillIndex, dm.skill.hp, KeyMap.info('hp_')),
+  subscript(input.total.skillIndex, dm.skill.hp, { path: 'hp_' }),
   input.total.hp
 )
 const nodeBurstAtk = equal(
   condBurst,
   'on',
   prod(
-    subscript(input.total.burstIndex, dm.burst.defConv, KeyMap.info('def_')),
+    subscript(input.total.burstIndex, dm.burst.defConv, { path: 'def_' }),
     input.total.def
   )
 )
-const nodeBurstAtkSpd = equal(
-  condBurst,
-  'on',
-  dm.burst.atkSpd,
-  KeyMap.info('atkSPD_')
-)
+const nodeBurstAtkSpd = equal(condBurst, 'on', dm.burst.atkSpd, {
+  path: 'atkSPD_',
+})
 const allNodeBurstRes = Object.fromEntries(
   allElementWithPhyKeys.map((ele) => [
     `${ele}_res_`,
@@ -145,7 +141,7 @@ const nodeP1AtkSpd = greaterEq(
       ])
     ),
     0,
-    KeyMap.info('atkSPD_')
+    { path: 'atkSPD_' }
   )
 )
 const nodeC2BurstRed = prod(min(tally.geo, 3), dm.constellation2.burstCdRed)

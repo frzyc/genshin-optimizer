@@ -30,7 +30,6 @@ import {
   sum,
 } from '@genshin-optimizer/gi/wr'
 import { inferInfoMut, mergeData } from '../../Formula/api'
-import KeyMap from '../../KeyMap'
 
 const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
@@ -346,7 +345,7 @@ export function dataObjForCharacterSheet(
     if (!list.length) continue
 
     const result = infoMut(list.length === 1 ? list[0] : sum(...list), {
-      ...KeyMap.info(stat),
+      path: stat,
       prefix: 'char',
       asConst: true,
     })

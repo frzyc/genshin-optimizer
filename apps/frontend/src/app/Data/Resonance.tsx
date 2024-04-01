@@ -27,7 +27,6 @@ import {
 import ElementCycle from '../Components/ElementCycle'
 import { inferInfoMut } from '../Formula/api'
 import type { UIData } from '../Formula/uiData'
-import KeyMap from '../KeyMap'
 import type { DocumentSection } from '../Types/sheet'
 import { activeCharBuff, condReadNode, st, stg } from './SheetUtil'
 const tr = (strKey: string) => (
@@ -50,11 +49,9 @@ const teamSize = sum(...allElementKeys.map((ele) => tally[ele]))
 // Protective Canopy
 const pcNodes = objKeyValMap(allElementWithPhyKeys, (e) => [
   `${e}_res_`,
-  activeCharBuff(
-    input.charKey,
-    greaterEq(tally.ele, 4, percent(0.15)),
-    KeyMap.info(`${e}_res_`)
-  ),
+  activeCharBuff(input.charKey, greaterEq(tally.ele, 4, percent(0.15)), {
+    path: `${e}_res_`,
+  }),
 ])
 
 const protectiveCanopy: IResonance = {
@@ -78,7 +75,7 @@ const protectiveCanopy: IResonance = {
 const [ffNodeDisp, ffNode] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.pyro, 2, percent(0.25))),
-  KeyMap.info('atk_')
+  { path: 'atk_' }
 )
 const ferventFlames: IResonance = {
   name: tr('FerventFlames.name'),
@@ -111,7 +108,7 @@ const ferventFlames: IResonance = {
 const [swNodeDisp, swNode] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.hydro, 2, percent(0.25))),
-  KeyMap.info('hp_')
+  { path: 'hp_' }
 )
 const soothingWaters: IResonance = {
   name: tr('SoothingWater.name'),
@@ -150,7 +147,7 @@ const [siNodeDisp, siNode] = activeCharBuff(
     4,
     greaterEq(tally.cryo, 2, equal(condSI, 'on', percent(0.15)))
   ),
-  KeyMap.info('critRate_')
+  { path: 'critRate_' }
 )
 const shatteringIce: IResonance = {
   name: tr('ShatteringIce.name'),
@@ -224,17 +221,17 @@ const highVoltage: IResonance = {
 const [iwNodeStamDisp, iwNodeStam] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(-0.15))),
-  KeyMap.info('staminaDec_')
+  { path: 'staminaDec_' }
 )
 const [iwNodeMoveDisp, iwNodeMove] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(0.1))),
-  KeyMap.info('moveSPD_')
+  { path: 'moveSPD_' }
 )
 const [iwNodeCDDisp, iwNodeCD] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(-0.05))),
-  KeyMap.info('cdRed_')
+  { path: 'cdRed_' }
 )
 const impetuousWinds: IResonance = {
   name: tr('ImpetuousWinds.name'),
@@ -272,7 +269,7 @@ const condERHit = condReadNode(condERHitPath)
 const [erNodeshield_disp, erNodeshield_] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.geo, 2, percent(0.15))),
-  KeyMap.info('shield_')
+  { path: 'shield_' }
 )
 const [erNodeDMG_resonanceDisp, erNodeDMG_resonance] = activeCharBuff(
   input.charKey,
@@ -281,13 +278,11 @@ const [erNodeDMG_resonanceDisp, erNodeDMG_resonance] = activeCharBuff(
     4,
     greaterEq(tally.geo, 2, equal(condERShield, 'on', percent(0.15)))
   ),
-  KeyMap.info('all_dmg_')
+  { path: 'all_dmg_' }
 )
-const [, erNodeDMG_] = activeCharBuff(
-  target.charKey,
-  erNodeDMG_resonance,
-  KeyMap.info('all_dmg_')
-)
+const [, erNodeDMG_] = activeCharBuff(target.charKey, erNodeDMG_resonance, {
+  path: 'all_dmg_',
+})
 const [erNodeRes_disp, erNodeRes_] = activeCharBuff(
   input.charKey,
   greaterEq(
@@ -295,7 +290,7 @@ const [erNodeRes_disp, erNodeRes_] = activeCharBuff(
     4,
     greaterEq(tally.geo, 2, equal(condERHit, 'on', percent(-0.2)))
   ),
-  KeyMap.info('geo_enemyRes_')
+  { path: 'geo_enemyRes_' }
 )
 const enduringRock: IResonance = {
   name: tr('EnduringRock.name'),
@@ -371,7 +366,7 @@ const condSG3ele = condReadNode(condSG3elePath)
 const [sgBase_eleMasDisp, sgBase_eleMas] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 50)),
-  KeyMap.info('eleMas')
+  { path: 'eleMas' }
 )
 const [sg2ele_eleMasDisp, sg2ele_eleMas] = activeCharBuff(
   input.charKey,
@@ -380,7 +375,7 @@ const [sg2ele_eleMasDisp, sg2ele_eleMas] = activeCharBuff(
     4,
     greaterEq(tally.dendro, 2, equal(condSG2ele, 'on', 30))
   ),
-  KeyMap.info('eleMas')
+  { path: 'eleMas' }
 )
 const [sg3ele_eleMasDisp, sg3ele_eleMas] = activeCharBuff(
   input.charKey,
@@ -389,7 +384,7 @@ const [sg3ele_eleMasDisp, sg3ele_eleMas] = activeCharBuff(
     4,
     greaterEq(tally.dendro, 2, equal(condSG3ele, 'on', 20))
   ),
-  KeyMap.info('eleMas')
+  { path: 'eleMas' }
 )
 const sprawlingGreenery: IResonance = {
   name: tr('SprawlingGreenery.name'),

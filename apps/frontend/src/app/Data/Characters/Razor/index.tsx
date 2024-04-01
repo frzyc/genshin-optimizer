@@ -18,7 +18,6 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -118,7 +117,7 @@ const enerRechElectroSigil_ = lookup(
   condElectroSigil,
   objKeyMap(range(1, 3), (i) => prod(i, percent(dm.skill.erBonus))),
   naught,
-  KeyMap.info('enerRech_')
+  { path: 'enerRech_' }
 )
 const electro_res_ = equal(
   'on',
@@ -133,7 +132,7 @@ const atkSPD_ = equal(
 const enerRechA4_ = greaterEq(
   input.asc,
   4,
-  equal('on', condA4, percent(dm.passive2.erInc, KeyMap.info('enerRech_')))
+  equal('on', condA4, percent(dm.passive2.erInc, { path: 'enerRech_' }))
 )
 const all_dmg_ = greaterEq(
   input.constellation,

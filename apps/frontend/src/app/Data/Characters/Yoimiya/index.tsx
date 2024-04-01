@@ -16,7 +16,6 @@ import {
   sum,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import type { INodeFieldDisplay } from '../../../Types/fieldDisplay'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -127,10 +126,9 @@ const pyro_dmg_ = greaterEq(
   equal(
     condSkill,
     'skill',
-    infoMut(
-      prod(percent(dm.passive1.pyro_dmg_), a1Stacks),
-      KeyMap.info('pyro_dmg_')
-    )
+    infoMut(prod(percent(dm.passive1.pyro_dmg_), a1Stacks), {
+      path: 'pyro_dmg_',
+    })
   )
 )
 const atk_ = greaterEq(
@@ -157,12 +155,9 @@ const c1atk_ = greaterEq(
 const c2pyro_dmg_ = greaterEq(
   input.constellation,
   2,
-  equal(
-    condC2,
-    'c2',
-    percent(dm.constellation2.pyro_dmg_),
-    KeyMap.info('pyro_dmg_')
-  )
+  equal(condC2, 'c2', percent(dm.constellation2.pyro_dmg_), {
+    path: 'pyro_dmg_',
+  })
 )
 
 const normalEntries = dm.normal.hitArr.map((arr, i) => [
@@ -442,7 +437,7 @@ const sheet: ICharacterSheet = {
           c1: {
             fields: [
               {
-                node: constant(dm.constellation1.atk_, KeyMap.info('atk_')),
+                node: constant(dm.constellation1.atk_, { path: 'atk_' }),
               },
               {
                 text: stg('duration'),

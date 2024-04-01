@@ -15,7 +15,6 @@ import {
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import ColorText from '../../../Components/ColoredText'
-import KeyMap from '../../../KeyMap'
 import { absorbableEle } from '../../../Types/consts'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -348,10 +347,9 @@ const sheet: ICharacterSheet = {
             name: ct.ch('c2.hit'),
             fields: [
               {
-                node: infoMut(
-                  c2Hit_anemo_enemyRes_,
-                  KeyMap.info('anemo_enemyRes_')
-                ),
+                node: infoMut(c2Hit_anemo_enemyRes_, {
+                  path: 'anemo_enemyRes_',
+                }),
               },
               {
                 node: c2Hit_phys_enemyRes__,
@@ -362,10 +360,9 @@ const sheet: ICharacterSheet = {
             name: ct.ch('c2.launched'),
             fields: [
               {
-                node: infoMut(
-                  c2Hit_anemo_enemyRes_,
-                  KeyMap.info('anemo_enemyRes_')
-                ),
+                node: infoMut(c2Hit_anemo_enemyRes_, {
+                  path: 'anemo_enemyRes_',
+                }),
               },
               {
                 node: c2Hit_phys_enemyRes__,
@@ -444,10 +441,7 @@ const sheet: ICharacterSheet = {
           takeDmg: {
             fields: [
               {
-                node: infoMut(
-                  c6_anemo_enemyRes_,
-                  KeyMap.info('anemo_enemyRes_')
-                ),
+                node: infoMut(c6_anemo_enemyRes_, { path: 'anemo_enemyRes_' }),
               },
             ],
           },

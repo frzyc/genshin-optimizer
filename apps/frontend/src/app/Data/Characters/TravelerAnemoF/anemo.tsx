@@ -17,7 +17,6 @@ import {
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import ColorText from '../../../Components/ColoredText'
-import KeyMap from '../../../KeyMap'
 import { absorbableEle } from '../../../Types/consts'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'
@@ -353,7 +352,7 @@ export default function anemo(
           on: {
             fields: [
               {
-                node: infoMut(nodeC6, KeyMap.info('anemo_enemyRes_')),
+                node: infoMut(nodeC6, { path: 'anemo_enemyRes_' }),
               },
               {
                 text: stg('duration'),

@@ -9,7 +9,6 @@ import {
   subscript,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../../KeyMap'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -66,7 +65,7 @@ const sheet: IWeaponSheet = {
       fields: [
         {
           node: infoMut(teamAtkDisp, {
-            ...KeyMap.info('atk'),
+            ...{ path: 'atk' },
             isTeamBuff: true,
           }),
         },

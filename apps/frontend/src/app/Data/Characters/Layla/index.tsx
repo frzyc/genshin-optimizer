@@ -14,7 +14,6 @@ import {
   sum,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -104,7 +103,7 @@ const a1Shield_disp = greaterEq(
     ),
     naught
   ),
-  { ...KeyMap.info('shield_'), isTeamBuff: true }
+  { ...{ path: 'shield_' }, isTeamBuff: true }
 )
 const a1Shield_ = equal(input.activeCharKey, target.charKey, a1Shield_disp)
 

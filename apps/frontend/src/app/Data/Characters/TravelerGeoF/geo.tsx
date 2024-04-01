@@ -15,7 +15,6 @@ import {
   prod,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
@@ -226,10 +225,7 @@ export default function geo(
           on: {
             fields: [
               {
-                node: infoMut(
-                  c1BurstArea_critRate_Disp,
-                  KeyMap.info('critRate_')
-                ),
+                node: infoMut(c1BurstArea_critRate_Disp, { path: 'critRate_' }),
               },
               {
                 text: st('incInterRes'),

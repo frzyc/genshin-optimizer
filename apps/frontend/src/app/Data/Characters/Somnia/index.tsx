@@ -20,7 +20,6 @@ import {
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import ColorText from '../../../Components/ColoredText'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
@@ -442,16 +441,14 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(
-                  dmgFormulas.skill.normal_dmgInc,
-                  KeyMap.info('normal_dmgInc')
-                ),
+                node: infoMut(dmgFormulas.skill.normal_dmgInc, {
+                  path: 'normal_dmgInc',
+                }),
               },
               {
-                node: infoMut(
-                  dmgFormulas.skill.charged_dmgInc,
-                  KeyMap.info('charged_dmgInc')
-                ),
+                node: infoMut(dmgFormulas.skill.charged_dmgInc, {
+                  path: 'charged_dmgInc',
+                }),
               },
             ],
           },
@@ -466,16 +463,14 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(
-                  dmgFormulas.constellation2.normal_dmgInc,
-                  KeyMap.info('normal_dmgInc')
-                ),
+                node: infoMut(dmgFormulas.constellation2.normal_dmgInc, {
+                  path: 'normal_dmgInc',
+                }),
               },
               {
-                node: infoMut(
-                  dmgFormulas.constellation2.charged_dmgInc,
-                  KeyMap.info('charged_dmgInc')
-                ),
+                node: infoMut(dmgFormulas.constellation2.charged_dmgInc, {
+                  path: 'charged_dmgInc',
+                }),
               },
             ],
           },
@@ -541,7 +536,7 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(dmgFormulas.burst.eleMas, KeyMap.info('eleMas')),
+                node: infoMut(dmgFormulas.burst.eleMas, { path: 'eleMas' }),
               },
             ],
           },
@@ -561,16 +556,14 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(
-                  dmgFormulas.burst.sub_normal_dmgInc,
-                  KeyMap.info('normal_dmgInc')
-                ),
+                node: infoMut(dmgFormulas.burst.sub_normal_dmgInc, {
+                  path: 'normal_dmgInc',
+                }),
               },
               {
-                node: infoMut(
-                  dmgFormulas.burst.sub_charged_dmgInc,
-                  KeyMap.info('charged_dmgInc')
-                ),
+                node: infoMut(dmgFormulas.burst.sub_charged_dmgInc, {
+                  path: 'charged_dmgInc',
+                }),
               },
             ],
           },
@@ -630,7 +623,7 @@ const sheet: ICharacterSheet = {
           name: st('hits', { count: stack }),
           fields: [
             {
-              node: infoMut(dmgFormulas.passive2.eleMas, KeyMap.info('eleMas')),
+              node: infoMut(dmgFormulas.passive2.eleMas, { path: 'eleMas' }),
             },
           ],
         })),

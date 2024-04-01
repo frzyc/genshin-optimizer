@@ -1,7 +1,6 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, sum } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -16,7 +15,7 @@ const [condAfterSkillPath, condAfterSkill] = cond(key, 'afterSkill')
 const afterSkill_geo_dmg_ = greaterEq(
   input.artSet.NighttimeWhispersInTheEchoingWoods,
   4,
-  equal(condAfterSkill, 'on', 0.2, KeyMap.info('geo_dmg_'))
+  equal(condAfterSkill, 'on', 0.2, { path: 'geo_dmg_' })
 )
 
 const [condCrystallizePath, condCrystallize] = cond(key, 'crystallize')
@@ -26,7 +25,7 @@ const crystallize_geo_dmg_ = greaterEq(
   equal(
     condAfterSkill,
     'on',
-    equal(condCrystallize, 'on', 0.2 * 1.5, KeyMap.info('geo_dmg_'))
+    equal(condCrystallize, 'on', 0.2 * 1.5, { path: 'geo_dmg_' })
   )
 )
 

@@ -9,7 +9,6 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../../KeyMap'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -22,16 +21,12 @@ const autoDmgInc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const arrowDmgInc = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 
 const [condPassivePath, condPassive] = cond(key, 'StrongWilled')
-const normal_dmg_ = subscript(
-  input.weapon.refinement,
-  autoDmgInc,
-  KeyMap.info('normal_dmg_')
-)
-const charged_dmg_ = subscript(
-  input.weapon.refinement,
-  autoDmgInc,
-  KeyMap.info('charged_dmg_')
-)
+const normal_dmg_ = subscript(input.weapon.refinement, autoDmgInc, {
+  path: 'normal_dmg_',
+})
+const charged_dmg_ = subscript(input.weapon.refinement, autoDmgInc, {
+  path: 'charged_dmg_',
+})
 
 const dmgInc = subscript(input.weapon.refinement, arrowDmgInc)
 const normal_dmg_arrow_ = lookup(
@@ -40,7 +35,7 @@ const normal_dmg_arrow_ = lookup(
     ...objKeyMap(range(1, 5), (i) => prod(dmgInc, i)),
   },
   naught,
-  KeyMap.info('normal_dmg_')
+  { path: 'normal_dmg_' }
 )
 const charged_dmg_arrow_ = lookup(
   condPassive,
@@ -48,7 +43,7 @@ const charged_dmg_arrow_ = lookup(
     ...objKeyMap(range(1, 5), (i) => prod(dmgInc, i)),
   },
   naught,
-  KeyMap.info('charged_dmg_')
+  { path: 'charged_dmg_' }
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

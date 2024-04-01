@@ -11,7 +11,6 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../../KeyMap'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -50,7 +49,7 @@ const time_normal_dmg_ = equal(
       ])
     ),
     naught,
-    KeyMap.info('normal_dmg_')
+    { path: 'normal_dmg_' }
   )
 )
 
@@ -70,7 +69,7 @@ const hit_normal_dmg_ = equal(
       ])
     ),
     naught,
-    KeyMap.info('normal_dmg_')
+    { path: 'normal_dmg_' }
   )
 )
 

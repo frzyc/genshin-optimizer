@@ -14,7 +14,6 @@ import {
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import ColorText from '../../../Components/ColoredText'
-import KeyMap from '../../../KeyMap'
 import { absorbableEle } from '../../../Types/consts'
 import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -408,10 +407,9 @@ const sheet: ICharacterSheet = {
       ct.headerTem('constellation1', {
         fields: [
           {
-            node: infoMut(
-              greaterEq(input.constellation, 1, percent(0.1)),
-              KeyMap.info('skillCDRed_')
-            ),
+            node: infoMut(greaterEq(input.constellation, 1, percent(0.1)), {
+              path: 'skillCDRed_',
+            }),
           },
           {
             text: ct.ch('c1'),
@@ -499,7 +497,7 @@ const sheet: ICharacterSheet = {
             fields: [
               {
                 node: infoMut(c2PEleMasDisp, {
-                  ...KeyMap.info('eleMas'),
+                  ...{ path: 'eleMas' },
                   isTeamBuff: true,
                 }),
               },

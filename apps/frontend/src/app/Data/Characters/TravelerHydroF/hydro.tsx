@@ -19,7 +19,6 @@ import {
   prod,
   subscript,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'
 import Traveler from '../Traveler'
@@ -314,10 +313,9 @@ export default function dendro(
       ct.headerTem('constellation2', {
         fields: [
           {
-            node: constant(
-              dm.constellation2.movementSpdDec * -100,
-              KeyMap.info('moveSPD_')
-            ),
+            node: constant(dm.constellation2.movementSpdDec * -100, {
+              path: 'moveSPD_',
+            }),
           },
           {
             text: st('durationInc'),

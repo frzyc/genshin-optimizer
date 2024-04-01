@@ -10,7 +10,6 @@ import {
   prod,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -372,10 +371,9 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(
-                  p2Shield_physical_dmg_Disp,
-                  KeyMap.info('physical_dmg_')
-                ),
+                node: infoMut(p2Shield_physical_dmg_Disp, {
+                  path: 'physical_dmg_',
+                }),
               },
             ],
           },

@@ -11,7 +11,6 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../../KeyMap'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
@@ -33,7 +32,7 @@ const base_ele_dmg_ = equal(
 )
 const allEleNoPhysDmgKeys = allElementKeys.map((ele) => `${ele}_dmg_`)
 const afterSkill_all_ele_dmg_map = objKeyMap(allEleNoPhysDmgKeys, (ele_dmg_) =>
-  infoMut({ ...base_ele_dmg_ }, KeyMap.info(ele_dmg_))
+  infoMut({ ...base_ele_dmg_ }, { path: ele_dmg_ })
 )
 
 const hpConsumed = prod(percent(0.24), input.total.hp)
@@ -54,7 +53,7 @@ const bond_all_ele_dmg_ = equal(
   )
 )
 const bond_all_ele_dmg_map = objKeyMap(allEleNoPhysDmgKeys, (ele_dmg_) =>
-  infoMut({ ...bond_all_ele_dmg_ }, KeyMap.info(ele_dmg_))
+  infoMut({ ...bond_all_ele_dmg_ }, { path: ele_dmg_ })
 )
 
 const data = dataObjForWeaponSheet(

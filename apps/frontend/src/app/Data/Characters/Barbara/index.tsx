@@ -7,7 +7,6 @@ import {
   input,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -276,7 +275,7 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(nodeA1Display, KeyMap.info('staminaDec_')),
+                node: infoMut(nodeA1Display, { path: 'staminaDec_' }),
               },
             ],
           },
@@ -296,7 +295,7 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(nodeC2Display, KeyMap.info('hydro_dmg_')),
+                node: infoMut(nodeC2Display, { path: 'hydro_dmg_' }),
               },
             ],
           },
