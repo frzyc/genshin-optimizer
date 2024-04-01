@@ -16,3 +16,12 @@ a {
   font-family: monospace;
   color: white;
 }
+
+.MuiButtonBase-root {
+  transition: 1s ease-in-out;
+  cursor: url('.//app/click.cur'), auto !important;
+}
+
+.MuiButtonBase-root:focus {
+  transform: rotate(360deg);
+}
