@@ -380,9 +380,7 @@ const sheet: ICharacterSheet = {
               },
               ...Object.values(allNodeBurstRes).map((node) => ({ node })),
               {
-                node: infoMut(nodeBurstAtk, {
-                  name: ct.chg(`burst.skillParams.0`),
-                }),
+                node: nodeBurstAtk,
               },
               {
                 text: ct.chg('burst.skillParams.2'),
