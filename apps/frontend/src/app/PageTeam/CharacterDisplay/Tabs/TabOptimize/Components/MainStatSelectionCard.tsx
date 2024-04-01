@@ -9,6 +9,7 @@ import {
   FlowerIcon,
   HpIcon,
   PlumeIcon,
+  SlotIcon,
 } from '@genshin-optimizer/gi/svgicons'
 import {
   Box,
@@ -20,7 +21,6 @@ import {
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
 import SqBadge from '../../../../../Components/SqBadge'
 import { StatColoredWithUnit } from '../../../../../Components/StatDisplay'

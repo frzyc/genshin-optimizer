@@ -1,4 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { ImgIcon } from '@genshin-optimizer/common/ui'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import ClearIcon from '@mui/icons-material/Clear'
 import InfoIcon from '@mui/icons-material/Info'
@@ -8,7 +9,6 @@ import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTo
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
 import CardLight from '../../../../../Components/Card/CardLight'
 import DropdownButton from '../../../../../Components/DropdownMenu/DropdownButton'
-import ImgIcon from '../../../../../Components/Image/ImgIcon'
 import { getArtSheet } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
 import type { SetNum } from '../../../../../Types/consts'

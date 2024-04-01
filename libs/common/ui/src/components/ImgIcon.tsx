@@ -6,7 +6,7 @@ interface ImgIconProps {
 /**
  * An `img` wrapper that automates margin to make sure that the icon is always `1em` tall, no matter what `size` it is.
  */
-const ImgIcon = styled('img', {
+export const ImgIcon = styled('img', {
   name: 'ImgIcon',
   slot: 'Root',
   shouldForwardProp: (pn) =>
@@ -21,5 +21,3 @@ const ImgIcon = styled('img', {
   marginRight: sideMargin ? `${0.5 * (1 - size)}em` : undefined,
   verticalAlign: 'text-bottom',
 }))
-
-export default ImgIcon

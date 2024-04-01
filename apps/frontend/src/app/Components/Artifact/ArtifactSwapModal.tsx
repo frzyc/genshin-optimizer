@@ -3,7 +3,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useInfScroll } from '@genshin-optimizer/common/ui'
+import { ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
@@ -37,7 +37,6 @@ import {
 } from '../../PageArtifact/ArtifactSort'
 import CardDark from '../Card/CardDark'
 import CompareBuildButton from '../CompareBuildButton'
-import ImgIcon from '../Image/ImgIcon'
 import ModalWrapper from '../ModalWrapper'
 import ShowingAndSortOptionSelect from '../ShowingAndSortOptionSelect'
 

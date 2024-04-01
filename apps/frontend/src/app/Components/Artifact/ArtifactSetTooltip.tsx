@@ -1,10 +1,9 @@
+import { BootstrapTooltip, SqBadge } from '@genshin-optimizer/common/ui'
+import { Translate } from '@genshin-optimizer/gi/ui'
 import { Box, Skeleton, Stack, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet'
-import BootstrapTooltip from '../BootstrapTooltip'
-import SqBadge from '../SqBadge'
-import { Translate } from '../Translate'
 
 export default function ArtifactSetTooltip({
   children,

@@ -1,3 +1,4 @@
+import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { charCard } from '@genshin-optimizer/gi/char-cards'
@@ -27,7 +28,6 @@ import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
 import type { TalentSheetElementKey } from '../../Data/Characters/ICharacterSheet'
 import { ElementIcon } from '../../KeyMap/StatIcon'
-import ImgIcon from '../Image/ImgIcon'
 import SqBadge from '../SqBadge'
 import { StarsDisplay } from '../StarDisplay'
 

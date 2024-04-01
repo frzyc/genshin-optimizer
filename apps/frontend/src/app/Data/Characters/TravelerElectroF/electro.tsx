@@ -1,4 +1,8 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterKey,
+  CharacterSheetKey,
+  ElementKey,
+} from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import {
@@ -14,7 +18,6 @@ import {
   target,
 } from '@genshin-optimizer/gi/wr'
 import KeyMap from '../../../KeyMap'
-import type { CharacterSheetKey } from '../../../Types/consts'
 import { cond, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'

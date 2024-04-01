@@ -1,5 +1,10 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ImgIcon,
+  ModalWrapper,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
@@ -18,7 +23,6 @@ import {
   TextField,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
-import ImgIcon from '../../../Components/Image/ImgIcon'
 import { StatWithUnit } from '../../../Components/StatDisplay'
 import { WeaponCardNanoObj } from '../../../Components/Weapon/WeaponCardNano'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'

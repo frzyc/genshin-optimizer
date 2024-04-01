@@ -2,7 +2,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
@@ -48,7 +48,6 @@ import {
   weaponSortMap,
 } from '../../Util/WeaponSort'
 import CompareBuildButton from '../CompareBuildButton'
-import ImgIcon from '../Image/ImgIcon'
 import ModalWrapper from '../ModalWrapper'
 import ShowingAndSortOptionSelect from '../ShowingAndSortOptionSelect'
 import SolidToggleButtonGroup from '../SolidToggleButtonGroup'

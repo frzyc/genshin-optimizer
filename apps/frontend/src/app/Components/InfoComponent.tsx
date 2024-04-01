@@ -1,5 +1,7 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
+import { Translate } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import HelpIcon from '@mui/icons-material/Help'
 import {
@@ -12,9 +14,6 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense, useCallback, useState } from 'react'
-import CardDark from './Card/CardDark'
-import ModalWrapper from './ModalWrapper'
-import { Translate } from './Translate'
 export function initialInfoShownState() {
   return {
     artifactPage: true,
@@ -49,7 +48,7 @@ export default function InfoComponent({
   }, [onFalse, pageKey])
 
   return (
-    <CardDark>
+    <CardThemed>
       <Grid container>
         <Grid item flexGrow={1}>
           <Typography variant="caption" pl={1}>
@@ -73,7 +72,7 @@ export default function InfoComponent({
         open={show}
         onClose={closeModal}
       >
-        <CardDark>
+        <CardThemed>
           <CardContent sx={{ py: 1, display: 'flex' }}>
             <Typography variant="h6">{modalTitle}</Typography>
             <IconButton onClick={closeModal} sx={{ ml: 'auto' }}>
@@ -90,8 +89,8 @@ export default function InfoComponent({
               {children}
             </Suspense>
           </CardContent>
-        </CardDark>
+        </CardThemed>
       </ModalWrapper>
-    </CardDark>
+    </CardThemed>
   )
 }

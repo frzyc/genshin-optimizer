@@ -7,6 +7,7 @@ import type {
 import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi/consts'
 import type { BuildTcArtifactSlot } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
@@ -15,7 +16,6 @@ import {
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'
-import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CustomNumberInput from '../../../../../Components/CustomNumberInput'
 import DropdownButton from '../../../../../Components/DropdownMenu/DropdownButton'

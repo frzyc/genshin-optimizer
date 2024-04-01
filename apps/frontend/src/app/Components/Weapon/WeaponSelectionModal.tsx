@@ -1,3 +1,4 @@
+import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -25,7 +26,6 @@ import type WeaponSheet from '../../Data/Weapons/WeaponSheet'
 import { catTotal } from '../../Util/totalUtils'
 import CardDark from '../Card/CardDark'
 import CardLight from '../Card/CardLight'
-import ImgIcon from '../Image/ImgIcon'
 import ModalWrapper from '../ModalWrapper'
 import { StarsDisplay } from '../StarDisplay'
 import WeaponRarityToggle from '../ToggleButton/WeaponRarityToggle'

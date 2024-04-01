@@ -13,6 +13,7 @@ import {
   HydroIcon,
   PyroIcon,
 } from '@genshin-optimizer/gi/svgicons'
+import { Translate } from '@genshin-optimizer/gi/ui'
 import {
   equal,
   greaterEq,
@@ -24,7 +25,6 @@ import {
   target,
 } from '@genshin-optimizer/gi/wr'
 import ElementCycle from '../Components/ElementCycle'
-import { Translate } from '../Components/Translate'
 import { inferInfoMut } from '../Formula/api'
 import type { UIData } from '../Formula/uiData'
 import KeyMap from '../KeyMap'

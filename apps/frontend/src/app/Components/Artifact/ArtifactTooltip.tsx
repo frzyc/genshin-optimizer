@@ -2,6 +2,7 @@ import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { clamp } from '@genshin-optimizer/common/util'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import type { RollColorKey } from '@genshin-optimizer/gi/ui'
 import { IconStatDisplay, artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import { getMainStatDisplayStr } from '@genshin-optimizer/gi/util'
@@ -14,7 +15,6 @@ import BootstrapTooltip from '../BootstrapTooltip'
 import LocationName from '../Character/LocationName'
 import SqBadge from '../SqBadge'
 import { StarsDisplay } from '../StarDisplay'
-import SlotIcon from './SlotIcon'
 
 export default function ArtifactTooltip({
   art,
