@@ -5,21 +5,21 @@ import {
   LightConeInventory,
   RelicEditor,
 } from '@genshin-optimizer/sr/ui'
+import { ExpandMore } from '@mui/icons-material'
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   CssBaseline,
   Stack,
   StyledEngineProvider,
   ThemeProvider,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
 } from '@mui/material'
 import Character from './Character'
 import CharacterSelector from './CharacterSelector'
 import Database from './Database'
 import Optimize from './Optimize'
 import { theme } from './Theme'
-import { ExpandMore } from '@mui/icons-material'
 
 export default function App() {
   return (
@@ -41,9 +41,6 @@ export default function App() {
                     <LightConeInventory />
                   </AccordionDetails>
                 </Accordion>
-                {/* <Accordion>
-                  <LightConeInventory />
-                </Accordion> */}
                 <RelicEditor />
                 <Optimize />
                 <Database />
