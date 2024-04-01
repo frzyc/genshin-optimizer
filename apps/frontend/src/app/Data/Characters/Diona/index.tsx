@@ -11,7 +11,6 @@ import {
   sum,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -404,7 +403,7 @@ const sheet: ICharacterSheet = {
             name: st('lessEqPercentHP', { percent: 50 }),
             fields: [
               {
-                node: infoMut(nodeC6healing_Disp, KeyMap.info('incHeal_')),
+                node: infoMut(nodeC6healing_Disp, { path: 'incHeal_' }),
               },
             ],
           },
@@ -412,7 +411,7 @@ const sheet: ICharacterSheet = {
             name: st('greaterPercentHP', { percent: 50 }),
             fields: [
               {
-                node: infoMut(nodeC6emDisp, KeyMap.info('eleMas')),
+                node: infoMut(nodeC6emDisp, { path: 'eleMas' }),
               },
             ],
           },

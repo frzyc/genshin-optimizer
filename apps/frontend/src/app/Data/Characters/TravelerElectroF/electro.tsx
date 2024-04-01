@@ -17,7 +17,6 @@ import {
   sum,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
@@ -227,10 +226,7 @@ export default function electro(
           on: {
             fields: [
               {
-                node: infoMut(
-                  skillAmulet_enerRech_Disp,
-                  KeyMap.info('enerRech_')
-                ),
+                node: infoMut(skillAmulet_enerRech_Disp, { path: 'enerRech_' }),
               },
               {
                 text: stg('duration'),

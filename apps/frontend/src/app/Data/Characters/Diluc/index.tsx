@@ -12,7 +12,6 @@ import {
   lookup,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -129,7 +128,7 @@ const nodeC2AtkBonus = greaterEq(
       ])
     ),
     0,
-    KeyMap.info('atk_')
+    { path: 'atk_' }
   )
 )
 const nodeC2SpdBonus = greaterEq(
@@ -144,7 +143,7 @@ const nodeC2SpdBonus = greaterEq(
       ])
     ),
     0,
-    KeyMap.info('atkSPD_')
+    { path: 'atkSPD_' }
   )
 )
 const nodeC6DmgBonus = greaterEq(
@@ -156,7 +155,7 @@ const nodeC6SpdBonus = greaterEq(
   input.constellation,
   6,
   equal(condC6, 'on', dm.constellation6.atkSpdInc),
-  KeyMap.info('atkSPD_')
+  { path: 'atkSPD_' }
 )
 
 const skillAdditional: Data = {

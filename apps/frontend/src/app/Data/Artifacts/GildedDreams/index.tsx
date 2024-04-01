@@ -16,7 +16,6 @@ import {
   unequal,
   zero,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -26,7 +25,7 @@ const key: ArtifactSetKey = 'GildedDreams'
 const setHeader = setHeaderTemplate(key)
 const [, trm] = trans('artifact', key)
 
-const set2 = greaterEq(input.artSet.GildedDreams, 2, 80, KeyMap.info('eleMas'))
+const set2 = greaterEq(input.artSet.GildedDreams, 2, 80, { path: 'eleMas' })
 
 const [condPassivePath, condPassive] = cond(key, 'passive')
 
@@ -74,7 +73,7 @@ const set4_eleMas = greaterEq(
     condPassive,
     'on',
     prod(50, compareEq(overrideOtherNum, -1, autoOtherNum, overrideOtherNum)),
-    KeyMap.info('eleMas')
+    { path: 'eleMas' }
   )
 )
 

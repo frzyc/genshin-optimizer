@@ -14,7 +14,6 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -157,7 +156,7 @@ export const data = dataObjForCharacterSheet(
     teamBuff: {
       premod: {
         hydro_enemyRes_: nodeC2,
-        dmgRed_: infoMut(nodeSkillDmgRed_, KeyMap.info('dmgRed_')),
+        dmgRed_: infoMut(nodeSkillDmgRed_, { path: 'dmgRed_' }),
       },
     },
   }

@@ -11,7 +11,6 @@ import {
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -108,7 +107,7 @@ const nodeA4OptTarget = infoMut(
       percent(dm.passive2.maxBonus)
     )
   ),
-  { ...KeyMap.info('critRate_'), isTeamBuff: true }
+  { ...{ path: 'critRate_' }, isTeamBuff: true }
 )
 const nodeA4CritBonusDisp = equal(condA4, 'on', nodeA4OptTarget)
 const nodeA4CritBonus = unequal(target.charKey, key, nodeA4CritBonusDisp)
@@ -352,7 +351,7 @@ const sheet: ICharacterSheet = {
             fields: [
               {
                 node: infoMut(nodeA4CritBonusDisp, {
-                  ...KeyMap.info('critRate_'),
+                  ...{ path: 'critRate_' },
                   isTeamBuff: true,
                 }),
               },

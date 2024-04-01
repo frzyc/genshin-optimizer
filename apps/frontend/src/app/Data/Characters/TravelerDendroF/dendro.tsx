@@ -18,7 +18,6 @@ import {
   target,
 } from '@genshin-optimizer/gi/wr'
 import ColorText from '../../../Components/ColoredText'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
@@ -82,7 +81,7 @@ export default function dendro(
       ),
       naught
     ),
-    KeyMap.info('eleMas')
+    { path: 'eleMas' }
   )
   const a1_eleMas = equal(input.activeCharKey, target.charKey, a1_eleMas_disp)
 
@@ -262,7 +261,7 @@ export default function dendro(
             fields: [
               {
                 node: infoMut(c6_dendro_dmg_disp, {
-                  ...KeyMap.info('dendro_dmg_'),
+                  ...{ path: 'dendro_dmg_' },
                   isTeamBuff: true,
                 }),
               },
@@ -284,7 +283,7 @@ export default function dendro(
               fields: [
                 {
                   node: infoMut(node, {
-                    ...KeyMap.info(`${ele}_dmg_`),
+                    path: `${ele}_dmg_`,
                     isTeamBuff: true,
                   }),
                 },

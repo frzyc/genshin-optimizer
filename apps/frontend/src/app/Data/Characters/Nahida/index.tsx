@@ -20,7 +20,6 @@ import {
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -185,7 +184,7 @@ const a1InBurst_eleMasDisp = greaterEq(
       )
     )
   ),
-  { ...KeyMap.info('eleMas'), isTeamBuff: true }
+  { ...{ path: 'eleMas' }, isTeamBuff: true }
 )
 const a1InBurst_eleMas = equal(
   input.activeCharKey,

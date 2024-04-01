@@ -19,7 +19,6 @@ import {
   target,
 } from '@genshin-optimizer/gi/wr'
 import ColorText from '../../../Components/ColoredText'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -412,7 +411,7 @@ const sheet: ICharacterSheet = {
             name: ct.ch('c4ConnectedBelowHp'),
             fields: [
               {
-                node: infoMut(c4BelowHp_incHeal_disp, KeyMap.info('incHeal_')),
+                node: infoMut(c4BelowHp_incHeal_disp, { path: 'incHeal_' }),
               },
             ],
           },
@@ -422,10 +421,7 @@ const sheet: ICharacterSheet = {
             name: ct.ch('c4ConnectedBelowEner'),
             fields: [
               {
-                node: infoMut(
-                  c4BelowEner_enerRech_disp,
-                  KeyMap.info('enerRech_')
-                ),
+                node: infoMut(c4BelowEner_enerRech_disp, { path: 'enerRech_' }),
               },
             ],
           },

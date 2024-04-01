@@ -15,7 +15,6 @@ import {
   target,
 } from '@genshin-optimizer/gi/wr'
 import type { UIData } from '../../../Formula/uiData'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -112,7 +111,7 @@ const activeInArea = equal(
   condInArea,
   equal(input.activeCharKey, target.charKey, 1)
 )
-const activeInAreaAtkDisp = infoMut(burstAddlAtk, { ...KeyMap.info('atk') })
+const activeInAreaAtkDisp = infoMut(burstAddlAtk, { ...{ path: 'atk' } })
 const activeInAreaAtk = equal(activeInArea, 1, activeInAreaAtkDisp)
 
 const a1SkillCd = greaterEq(input.asc, 1, dm.passive1.cd_red)
@@ -338,7 +337,7 @@ const sheet: ICharacterSheet = {
       ct.headerTem('passive1', {
         fields: [
           {
-            node: infoMut(a1SkillCd, KeyMap.info('skillCDRed_')),
+            node: infoMut(a1SkillCd, { path: 'skillCDRed_' }),
           },
         ],
       }),
@@ -391,7 +390,7 @@ const sheet: ICharacterSheet = {
       ct.headerTem('passive2', {
         fields: [
           {
-            node: infoMut(activeInAreaA4, KeyMap.info('skillCDRed_')),
+            node: infoMut(activeInAreaA4, { path: 'skillCDRed_' }),
           },
         ],
         canShow: equal(condInArea, 'activeInArea', 1),
@@ -411,10 +410,7 @@ const sheet: ICharacterSheet = {
       ct.headerTem('constellation6', {
         fields: [
           {
-            node: constant(
-              dm.constellation6.pyro_dmg,
-              KeyMap.info('pyro_dmg_')
-            ),
+            node: constant(dm.constellation6.pyro_dmg, { path: 'pyro_dmg_' }),
           },
           {
             text: ct.ch('c6PyroInfusion'),

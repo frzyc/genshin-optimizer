@@ -10,7 +10,6 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../../KeyMap'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -31,11 +30,7 @@ const [condPath, condNode] = cond(key, 'MistsplittersEmblem')
 const passive_dmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_dmg_`,
-    subscript(
-      input.weapon.refinement,
-      passiveRefine,
-      KeyMap.info(`${ele}_dmg_`)
-    ),
+    subscript(input.weapon.refinement, passiveRefine, { path: `${ele}_dmg_` }),
   ])
 )
 const stacks_dmg_ = Object.fromEntries(
@@ -50,7 +45,7 @@ const stacks_dmg_ = Object.fromEntries(
           subscript(input.weapon.refinement, stacksRefine[stack])
         ),
         naught,
-        KeyMap.info(`${ele}_dmg_`)
+        { path: `${ele}_dmg_` }
       )
     ),
   ])

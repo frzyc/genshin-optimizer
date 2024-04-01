@@ -16,7 +16,6 @@ import {
   prod,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -158,7 +157,7 @@ const c4MirrorsConsumed_eleMasDisp = infoMut(
       naught
     )
   ),
-  { ...KeyMap.info('eleMas'), isTeamBuff: true }
+  { ...{ path: 'eleMas' }, isTeamBuff: true }
 )
 const c4MirrorsConsumed_eleMas = unequal(
   input.activeCharKey,
@@ -409,7 +408,7 @@ const sheet: ICharacterSheet = {
       ct.headerTem('passive2', {
         fields: [
           {
-            node: infoMut(a4_burst_dmg_, KeyMap.info('burst_dmg_')),
+            node: infoMut(a4_burst_dmg_, { path: 'burst_dmg_' }),
           },
         ],
       }),

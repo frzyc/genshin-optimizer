@@ -10,7 +10,6 @@ import {
   prod,
   subscript,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -198,7 +197,7 @@ export const data = dataObjForCharacterSheet(
     teamBuff: {
       premod: {
         electro_enemyRes_: nodeBurstElectroResRed_,
-        dmgRed_: infoMut(nodeBurstDmgRed_, KeyMap.info('dmgRed_')),
+        dmgRed_: infoMut(nodeBurstDmgRed_, { path: 'dmgRed_' }),
       },
     },
   }

@@ -13,7 +13,6 @@ import {
   prod,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -363,7 +362,7 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(dmgRed_disp, KeyMap.info('dmgRed_')),
+                node: infoMut(dmgRed_disp, { path: 'dmgRed_' }),
               },
             ],
           },

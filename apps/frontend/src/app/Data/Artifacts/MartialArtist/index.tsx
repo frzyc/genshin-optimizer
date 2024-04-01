@@ -1,7 +1,6 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent, sum } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -11,27 +10,21 @@ const key: ArtifactSetKey = 'MartialArtist'
 const setHeader = setHeaderTemplate(key)
 const [condStatePath, condState] = cond(key, 'state')
 
-const set2NA = greaterEq(
-  input.artSet.MartialArtist,
-  2,
-  percent(0.15),
-  KeyMap.info('normal_dmg_')
-)
-const set2CA = greaterEq(
-  input.artSet.MartialArtist,
-  2,
-  percent(0.15),
-  KeyMap.info('charged_dmg_')
-)
+const set2NA = greaterEq(input.artSet.MartialArtist, 2, percent(0.15), {
+  path: 'normal_dmg_',
+})
+const set2CA = greaterEq(input.artSet.MartialArtist, 2, percent(0.15), {
+  path: 'charged_dmg_',
+})
 const set4NA = greaterEq(
   input.artSet.MartialArtist,
   4,
-  equal('on', condState, percent(0.25), KeyMap.info('normal_dmg_'))
+  equal('on', condState, percent(0.25), { path: 'normal_dmg_' })
 )
 const set4CA = greaterEq(
   input.artSet.MartialArtist,
   4,
-  equal('on', condState, percent(0.25), KeyMap.info('charged_dmg_'))
+  equal('on', condState, percent(0.25), { path: 'charged_dmg_' })
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

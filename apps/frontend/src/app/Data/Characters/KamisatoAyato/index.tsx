@@ -15,7 +15,6 @@ import {
   subscript,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -458,10 +457,7 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(
-                  burst_normal_dmg_Disp,
-                  KeyMap.info('normal_dmg_')
-                ),
+                node: infoMut(burst_normal_dmg_Disp, { path: 'normal_dmg_' }),
               },
             ],
           },

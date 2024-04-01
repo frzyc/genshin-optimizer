@@ -15,7 +15,6 @@ import {
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -308,7 +307,7 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(c4AfterBurst_eleMasDisp, KeyMap.info('eleMas')),
+                node: infoMut(c4AfterBurst_eleMasDisp, { path: 'eleMas' }),
               },
               {
                 text: stg('duration'),

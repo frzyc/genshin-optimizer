@@ -12,7 +12,6 @@ import {
   tally,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -283,14 +282,14 @@ const sheet: ICharacterSheet = {
           inField: {
             fields: [
               {
-                node: infoMut(skill1_defDisp, KeyMap.info('def')),
+                node: infoMut(skill1_defDisp, { path: 'def' }),
               },
               {
                 canShow: (data) => data.get(tally['geo']).value >= 2,
                 text: st('incInterRes'),
               },
               {
-                node: infoMut(skill3_geo_dmg_Disp, KeyMap.info('geo_dmg_')),
+                node: infoMut(skill3_geo_dmg_Disp, { path: 'geo_dmg_' }),
               },
             ],
           },

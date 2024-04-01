@@ -10,7 +10,6 @@ import {
   percent,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -21,7 +20,7 @@ const setHeader = setHeaderTemplate(key)
 
 const [condStackPath, condStack] = cond(key, 'stacks')
 
-const physical_dmg_info: Info = KeyMap.info('physical_dmg_')
+const physical_dmg_info: Info = { path: 'physical_dmg_' }
 const set2 = greaterEq(
   input.artSet.PaleFlame,
   2,

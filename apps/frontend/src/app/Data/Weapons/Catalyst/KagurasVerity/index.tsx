@@ -3,7 +3,6 @@ import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, input, subscript, sum } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../../KeyMap'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -23,7 +22,7 @@ const skill_dmg_s = totems.map((i) =>
       input.weapon.refinement,
       dmg_.map((d) => d * i)
     ),
-    KeyMap.info('skill_dmg_')
+    { path: 'skill_dmg_' }
   )
 )
 const ele_dmg_s = Object.fromEntries(

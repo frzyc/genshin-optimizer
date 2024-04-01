@@ -10,7 +10,6 @@ import {
   prod,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -114,7 +113,7 @@ const c1Explode_dendro_dmg_disp = greaterEq(
   input.constellation,
   1,
   equal(condC1Explode, 'on', dm.constellation1.dendro_dmg_),
-  { ...KeyMap.info('dendro_dmg_'), isTeamBuff: true }
+  { ...{ path: 'dendro_dmg_' }, isTeamBuff: true }
 )
 const c1Explode_dendro_dmg_ = equal(
   input.activeCharKey,

@@ -11,7 +11,6 @@ import {
   subscript,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -87,7 +86,7 @@ const skillTenguAmbush_disp = equal(
   'TenguJuuraiAmbush',
   condSkillTenguAmbush,
   prod(input.base.atk, atkIncRatio),
-  { ...KeyMap.info('atk'), isTeamBuff: true }
+  { ...{ path: 'atk' }, isTeamBuff: true }
 )
 const skillTenguAmbush_ = equal(
   input.activeCharKey,

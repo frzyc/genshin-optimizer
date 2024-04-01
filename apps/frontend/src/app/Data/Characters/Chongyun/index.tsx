@@ -17,7 +17,6 @@ import {
   subscript,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -307,7 +306,7 @@ const sheet: ICharacterSheet = {
         canShow: equal(condSkill, 'activeInArea', 1),
         fields: [
           {
-            node: infoMut(nodeAsc1Disp, KeyMap.info('atkSPD_')),
+            node: infoMut(nodeAsc1Disp, { path: 'atkSPD_' }),
           },
         ],
       }),

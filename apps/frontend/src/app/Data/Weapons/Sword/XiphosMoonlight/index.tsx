@@ -10,7 +10,6 @@ import {
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../../KeyMap'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -74,7 +73,7 @@ const sheet: IWeaponSheet = {
       fields: [
         {
           node: infoMut(teamEnerRech_disp, {
-            ...KeyMap.info('enerRech_'),
+            ...{ path: 'enerRech_' },
             isTeamBuff: true,
           }),
         },

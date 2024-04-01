@@ -16,7 +16,6 @@ import {
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -140,7 +139,7 @@ const skillEyeTeamBurstDmgIncDisp = infoMut(
       unit: '%',
     })
   ),
-  { ...KeyMap.info('burst_dmg_'), isTeamBuff: true }
+  { ...{ path: 'burst_dmg_' }, isTeamBuff: true }
 )
 const skillEyeTeamBurstDmgInc = unequal(
   key,

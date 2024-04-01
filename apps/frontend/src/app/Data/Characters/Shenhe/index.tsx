@@ -12,7 +12,6 @@ import {
   subscript,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -465,7 +464,7 @@ const sheet: ICharacterSheet = {
           field: {
             fields: [
               {
-                node: infoMut(nodeAsc1Disp, KeyMap.info('cryo_dmg_')), // Jank
+                node: infoMut(nodeAsc1Disp, { path: 'cryo_dmg_' }), // Jank
               },
             ],
           },
@@ -479,7 +478,7 @@ const sheet: ICharacterSheet = {
             unit: 's',
           },
           {
-            node: infoMut(nodeC2Disp, KeyMap.info('cryo_critDMG_')),
+            node: infoMut(nodeC2Disp, { path: 'cryo_critDMG_' }),
           },
         ],
         teamBuff: true,

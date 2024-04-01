@@ -16,7 +16,6 @@ import {
   tally,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -392,7 +391,7 @@ const sheet: ICharacterSheet = {
               name: st('seconds', { count: stack }),
               fields: [
                 {
-                  node: infoMut(a4Dmg_Disp, KeyMap.info('all_dmg_')),
+                  node: infoMut(a4Dmg_Disp, { path: 'all_dmg_' }),
                 },
               ],
             },

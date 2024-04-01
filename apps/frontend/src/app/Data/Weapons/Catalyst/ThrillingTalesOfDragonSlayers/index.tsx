@@ -8,7 +8,6 @@ import {
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../../KeyMap'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -52,7 +51,7 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: infoMut(atk_Disp, KeyMap.info('atk_')),
+              node: infoMut(atk_Disp, { path: 'atk_' }),
             },
             {
               text: stg('duration'),

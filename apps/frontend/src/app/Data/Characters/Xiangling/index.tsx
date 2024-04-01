@@ -10,7 +10,6 @@ import {
   prod,
   target,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { activeCharBuff, cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -94,7 +93,7 @@ const [afterChiliDisp, afterChili] = activeCharBuff(
     4,
     equal('afterChili', condAfterChili, percent(dm.passive2.atk_bonus))
   ),
-  KeyMap.info('atk_')
+  { path: 'atk_' }
 )
 
 // C1

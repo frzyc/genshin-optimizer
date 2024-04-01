@@ -9,7 +9,6 @@ import {
   percent,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import KeyMap from '../../../KeyMap'
 import { cond, st, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -20,7 +19,7 @@ const setHeader = setHeaderTemplate(key)
 const [, trm] = trans('artifact', key)
 
 const [condStackPath, condStack] = cond(key, 'stack')
-const def_info: Info = KeyMap.info('def_')
+const def_info: Info = { path: 'def_' }
 const set2 = greaterEq(
   input.artSet.HuskOfOpulentDreams,
   2,
