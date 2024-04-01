@@ -155,7 +155,7 @@
     "count": {
       "chars": "Персонажи:",
       "arts": "Артефакты:",
-      "light cones": "Оружия:",
+      "weapons": "Оружия:",
       "total": "Общая сумма",
       "new": "Новое:",
       "updated": "Обновлено:",
@@ -536,7 +536,7 @@
       "gameMani": "Манипуляции с Игрой",
       "materials": "Материалы",
       "characters": "Персонажи",
-      "light cones": "Оружия",
+      "weapons": "Оружия",
       "achievements": "Достижения"
     },
     "ak": {

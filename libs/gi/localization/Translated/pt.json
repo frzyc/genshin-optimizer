@@ -172,7 +172,7 @@
     "count": {
       "chars": "Personagens:",
       "arts": "Artefatos:",
-      "light cones": "Armas:",
+      "weapons": "Armas:",
       "total": "Total:",
       "new": "Novo:",
       "updated": "Atualizado:",
@@ -660,7 +660,7 @@
       "gameMani": "Controle Automático",
       "materials": "Materiais",
       "characters": "Personagens",
-      "light cones": "Armas",
+      "weapons": "Armas",
       "achievements": "Conquistas"
     },
     "nb": {

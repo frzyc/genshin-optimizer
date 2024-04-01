@@ -154,7 +154,7 @@
     "count": {
       "chars": "角色:",
       "arts": "聖遺物：",
-      "light cones": "武器：",
+      "weapons": "武器：",
       "total": "總計：",
       "new": "已新增：",
       "updated": "已更新：",
@@ -584,7 +584,7 @@
       "gameMani": "Automatic Control",
       "materials": "Materials",
       "characters": "角色",
-      "light cones": "Light Cones",
+      "weapons": "Light Cones",
       "achievements": "Achievements"
     },
     "nb": {

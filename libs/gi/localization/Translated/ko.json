@@ -156,7 +156,7 @@
     "count": {
       "chars": "캐릭터:",
       "arts": "성유물:",
-      "light cones": "무기:",
+      "weapons": "무기:",
       "total": "총:",
       "new": "신규:",
       "updated": "변경됨:",
@@ -613,7 +613,7 @@
       "gameMani": "게임 조작",
       "materials": "재료",
       "characters": "캐릭터",
-      "light cones": "무기",
+      "weapons": "무기",
       "achievements": "업적"
     },
     "nb": {

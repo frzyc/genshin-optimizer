@@ -156,7 +156,7 @@
     "count": {
       "chars": "角色：",
       "arts": "圣遗物：",
-      "light cones": "武器：",
+      "weapons": "武器：",
       "total": "总计：",
       "new": "新的：",
       "updated": "更新的：",
@@ -590,7 +590,7 @@
       "gameMani": "存在游戏操作",
       "materials": "材料",
       "characters": "角色",
-      "light cones": "武器",
+      "weapons": "武器",
       "achievements": "成就"
     },
     "nb": {
