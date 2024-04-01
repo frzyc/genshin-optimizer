@@ -3,7 +3,7 @@ import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { input } from '@genshin-optimizer/gi/wr'
-import { BusinessCenter } from '@mui/icons-material'
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { getWeaponSheet } from '../../Data/Weapons'
@@ -144,7 +144,7 @@ export function WeaponCardNanoObj({
                         )}
                       />
                     ) : (
-                      <BusinessCenter />
+                      <BusinessCenterIcon />
                     )
                   }
                   color={'secondary'}

@@ -1,6 +1,7 @@
 import {
   assertUnreachable,
   crawlObject,
+  getUnitStr,
   layeredAssignment,
   objPathValue,
   valueString,
@@ -554,7 +555,7 @@ const subKeyMap: Record<KeyMapPrefix, string> = {
 function keyMapInfo(path: string): InfoExtra & Info {
   if (!KeyMap.getStr(path)) return {}
   const name = KeyMap.get(path)
-  const unit = KeyMap.unit(path)
+  const unit = getUnitStr(path)
   const variant = KeyMap.getVariant(path)
 
   const icon = (

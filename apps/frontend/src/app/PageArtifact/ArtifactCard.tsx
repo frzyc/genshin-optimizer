@@ -1,5 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { clamp, clamp01 } from '@genshin-optimizer/common/util'
+import { clamp, clamp01, getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactRarity,
@@ -12,9 +12,10 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
+  getArtifactEfficiency,
   getMainStatDisplayStr,
   getSubstatValue,
   getSubstatValuesPercent,
@@ -46,7 +47,6 @@ import InfoTooltip, { InfoTooltipInline } from '../Components/InfoTooltip'
 import PercentBadge from '../Components/PercentBadge'
 import { StarsDisplay } from '../Components/StarDisplay'
 import { getArtSheet } from '../Data/Artifacts'
-import Artifact from '../Data/Artifacts/Artifact'
 import StatIcon from '../KeyMap/StatIcon'
 import type { ArtifactEditorProps } from './ArtifactEditor'
 
@@ -131,14 +131,14 @@ export default function ArtifactCard({
         currentEfficiency_: 0,
         maxEfficiency_: 0,
       }
-    const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(
+    const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
       art,
       effFilter
     )
     const {
       currentEfficiency: currentEfficiency_,
       maxEfficiency: maxEfficiency_,
-    } = Artifact.getArtifactEfficiency(art, new Set(allSubstatKeys))
+    } = getArtifactEfficiency(art, new Set(allSubstatKeys))
     return {
       currentEfficiency,
       maxEfficiency,
@@ -231,7 +231,7 @@ export default function ArtifactCard({
                 <Chip
                   size="small"
                   label={<strong>{` +${level}`}</strong>}
-                  color={Artifact.levelVariant(level)}
+                  color={artifactLevelVariant(level)}
                 />
                 {!slotName && <Skeleton variant="text" width={100} />}
                 {slotName && (
@@ -330,14 +330,14 @@ export default function ArtifactCard({
               >{t`artifact:editor.curSubEff`}</ColorText>
               <PercentBadge
                 value={currentEfficiency}
-                max={900}
+                max={9}
                 valid={artifactValid}
               />
               {currentEfficiency !== currentEfficiency_ && <span>/</span>}
               {currentEfficiency !== currentEfficiency_ && (
                 <PercentBadge
                   value={currentEfficiency_}
-                  max={900}
+                  max={9}
                   valid={artifactValid}
                 />
               )}
@@ -350,14 +350,14 @@ export default function ArtifactCard({
                 >{t`artifact:editor.maxSubEff`}</ColorText>
                 <PercentBadge
                   value={maxEfficiency}
-                  max={900}
+                  max={9}
                   valid={artifactValid}
                 />
                 {maxEfficiency !== maxEfficiency_ && <span>/</span>}
                 {maxEfficiency !== maxEfficiency_ && (
                   <PercentBadge
                     value={maxEfficiency_}
-                    max={900}
+                    max={9}
                     valid={artifactValid}
                   />
                 )}
@@ -460,8 +460,8 @@ function SubstatDisplay({
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
   const efficiency = stat.efficiency ?? 0
   const inFilter = stat.key && effFilter.has(stat.key)
-  const effOpacity = clamp01(0.5 + (efficiency / (100 * 5)) * 0.5) //divide by 6 because an substat can have max 6 rolls
-  const unit = KeyMap.unit(stat.key)
+  const effOpacity = clamp01(0.5 + (efficiency / 5) * 0.5) //divide by 6 because an substat can have max 6 rolls
+  const unit = getUnitStr(stat.key)
   const progresses = useMemo(
     () => (
       <Box
@@ -490,13 +490,13 @@ function SubstatDisplay({
       >
         <StatIcon statKey={stat.key} iconProps={iconInlineProps} />{' '}
         {tk(stat.key)}
-        {`+${artDisplayValue(stat.value, KeyMap.unit(stat.key))}${unit}`}
+        {`+${artDisplayValue(stat.value, getUnitStr(stat.key))}${unit}`}
       </Typography>
       {progresses}
       <Typography
         sx={{ opacity: effOpacity, minWidth: 40, textAlign: 'right' }}
       >
-        {efficiency.toFixed()}%
+        {(efficiency * 100).toFixed()}%
       </Typography>
     </Box>
   )

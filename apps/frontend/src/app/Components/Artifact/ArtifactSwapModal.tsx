@@ -8,7 +8,7 @@ import { filterFunction } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { Add } from '@mui/icons-material'
+import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
@@ -182,7 +182,7 @@ export default function ArtifactSwapModal({
             fullWidth
             onClick={onShowEditor}
             color="info"
-            startIcon={<Add />}
+            startIcon={<AddIcon />}
           >
             {t('artifact:addNew')}
           </Button>

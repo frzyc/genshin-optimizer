@@ -1,4 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { getUnitStr } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   ArtifactSlotKey,
@@ -6,6 +7,7 @@ import type {
 import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi/consts'
 import type { BuildTcArtifactSlot } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
   getMainStatDisplayValue,
@@ -21,7 +23,6 @@ import {
   StatColoredWithUnit,
   StatWithUnit,
 } from '../../../../../Components/StatDisplay'
-import Artifact from '../../../../../Data/Artifacts/Artifact'
 import StatIcon from '../../../../../KeyMap/StatIcon'
 import { BuildTcContext } from '../BuildTcContext'
 
@@ -125,7 +126,7 @@ export function ArtifactMainLevelSlot({
       <CustomNumberInput
         startAdornment="+"
         value={level}
-        color={Artifact.levelVariant(level)}
+        color={artifactLevelVariant(level)}
         onChange={(l) => l !== undefined && setSlot({ level: l })}
         sx={{ borderRadius: 1, pl: 1, my: 0, height: '100%' }}
         inputProps={{ sx: { pl: 0.5, width: '2em' }, max: 20, min: 0 }}
@@ -134,8 +135,8 @@ export function ArtifactMainLevelSlot({
       <CardDark sx={{ height: '100%', minWidth: '4em' }}>
         <Box p={1} textAlign="center">{`${artDisplayValue(
           getMainStatDisplayValue(statKey, rarity, level),
-          KeyMap.unit(statKey)
-        )}${KeyMap.unit(statKey)}`}</Box>
+          getUnitStr(statKey)
+        )}${getUnitStr(statKey)}`}</Box>
       </CardDark>
     </Box>
   )

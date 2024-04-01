@@ -1,4 +1,4 @@
-import { Replay } from '@mui/icons-material'
+import ReplayIcon from '@mui/icons-material/Replay'
 import type { ButtonGroupProps } from '@mui/material'
 import { Button, ButtonGroup, styled } from '@mui/material'
 import type { ReactNode } from 'react'
@@ -61,7 +61,7 @@ export default function StatInput({
         onClick={() => (onReset ? onReset() : onValueChange(defaultValue))}
         disabled={disabled || value === defaultValue}
       >
-        <Replay />
+        <ReplayIcon />
       </Button>
     </FlexButtonGroup>
   )

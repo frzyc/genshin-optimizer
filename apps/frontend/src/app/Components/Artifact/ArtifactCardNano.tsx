@@ -1,14 +1,17 @@
-import { clamp, unit } from '@genshin-optimizer/common/util'
+import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
+import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedSubstat } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
   getMainStatDisplayStr,
 } from '@genshin-optimizer/gi/util'
-import { BusinessCenter } from '@mui/icons-material'
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import {
   Box,
   CardActionArea,
@@ -18,9 +21,6 @@ import {
   useTheme,
 } from '@mui/material'
 import { useCallback } from 'react'
-import Artifact from '../../Data/Artifacts/Artifact'
-import StatIcon from '../../KeyMap/StatIcon'
-import BootstrapTooltip from '../BootstrapTooltip'
 import CardDark from '../Card/CardDark'
 import LocationIcon from '../Character/LocationIcon'
 import ColorText from '../ColoredText'
@@ -122,7 +122,7 @@ export default function ArtifactCardNano({
               <Chip
                 size="small"
                 label={<strong>{` +${level}`}</strong>}
-                color={Artifact.levelVariant(level)}
+                color={artifactLevelVariant(level)}
               />
               {showLocation && (
                 <Chip
@@ -136,7 +136,7 @@ export default function ArtifactCardNano({
                         }
                       />
                     ) : (
-                      <BusinessCenter />
+                      <BusinessCenterIcon />
                     )
                   }
                   color={'secondary'}
@@ -208,7 +208,7 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
   if (!stat.value) return null
   const numRolls = stat.rolls?.length ?? 0
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
-  const statUnit = unit(stat.key)
+  const statUnit = getUnitStr(stat.key)
   return (
     <Box display="flex" gap={1} alignContent="center">
       <Typography

@@ -19,6 +19,7 @@ import { cachedArtifact, validateArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
 import {
+  getArtifactEfficiency,
   getMainStatDisplayStr,
   randomizeArtifact,
 } from '@genshin-optimizer/gi/util'
@@ -77,7 +78,6 @@ import DropdownButton from '../Components/DropdownMenu/DropdownButton'
 import ImgIcon from '../Components/Image/ImgIcon'
 import ModalWrapper from '../Components/ModalWrapper'
 import { getArtSheet } from '../Data/Artifacts'
-import Artifact from '../Data/Artifacts/Artifact'
 import StatIcon from '../KeyMap/StatIcon'
 import { shouldShowDevComponents } from '../Util/Util'
 import ArtifactCard from './ArtifactCard'
@@ -298,7 +298,7 @@ export default function ArtifactEditor({
     return artifact?.slotKey ?? fixedSlotKey ?? 'flower'
   }, [fixedSlotKey, artifact])
   const { currentEfficiency = 0, maxEfficiency = 0 } = cArtifact
-    ? Artifact.getArtifactEfficiency(cArtifact, allSubstatFilter)
+    ? getArtifactEfficiency(cArtifact, allSubstatFilter)
     : {}
   const onClose = useCallback(
     (e) => {

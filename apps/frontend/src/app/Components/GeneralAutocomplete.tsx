@@ -1,5 +1,5 @@
 import type { Variant } from '@genshin-optimizer/gi/wr'
-import { Favorite } from '@mui/icons-material'
+import FavoriteIcon from '@mui/icons-material/Favorite'
 import type {
   AutocompleteProps,
   ChipProps,
@@ -105,7 +105,7 @@ export function GeneralAutocomplete<T extends string>({
               </ColorText>
             </Suspense>
           </ListItemText>
-          {!!option.favorite && <Favorite />}
+          {!!option.favorite && <FavoriteIcon />}
         </MenuItem>
       )}
       filterOptions={(options, { inputValue }) =>
@@ -189,7 +189,7 @@ export function GeneralAutocompleteMulti<T extends string>({
               </ColorText>
             </Suspense>
           </ListItemText>
-          {!!option.favorite && <Favorite />}
+          {!!option.favorite && <FavoriteIcon />}
         </MenuItem>
       )}
       renderTags={(selected, getTagProps) =>

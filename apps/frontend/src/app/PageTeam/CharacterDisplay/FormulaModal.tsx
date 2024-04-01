@@ -1,9 +1,10 @@
+import { CardHeaderCustom } from '@genshin-optimizer/common/ui'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
-import { ExpandMore } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Accordion,
   AccordionDetails,
@@ -28,7 +29,6 @@ import {
 } from 'react'
 import AmpReactionModeText from '../../Components/AmpReactionModeText'
 import CardDark from '../../Components/Card/CardDark'
-import CardHeaderCustom from '../../Components/Card/CardHeaderCustom'
 import CardLight from '../../Components/Card/CardLight'
 import ColorText from '../../Components/ColoredText'
 import ImgIcon from '../../Components/Image/ImgIcon'
@@ -141,7 +141,7 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
       onChange={handleChange}
       ref={scrollRef}
     >
-      <AccordionSummary expandIcon={<ExpandMore />}>
+      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography>
           <ColorText color={variant}>{name}</ColorText>{' '}
           <strong>{nodeVStr(node)}</strong>

@@ -1,6 +1,6 @@
 import { clamp, objMap } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
-import { Check } from '@mui/icons-material'
+import CheckIcon from '@mui/icons-material/Check'
 import {
   Alert,
   Box,
@@ -351,7 +351,7 @@ export default function EXPCalc() {
                 })
               }
               color="success"
-              startIcon={<Check />}
+              startIcon={<CheckIcon />}
               sx={{ height: '100%' }}
             >
               Apply

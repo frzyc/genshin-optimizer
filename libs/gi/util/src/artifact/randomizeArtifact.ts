@@ -1,7 +1,7 @@
 import {
   getRandomElementFromArray,
   getRandomIntInclusive,
-  unit,
+  getUnitStr,
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
@@ -63,7 +63,7 @@ export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
   }
   for (const substat of substats)
     if (substat.key) {
-      const value = artDisplayValue(substat.value, unit(substat.key))
+      const value = artDisplayValue(substat.value, getUnitStr(substat.key))
       substat.value = parseFloat(
         allStats.art.subRollCorrection[rarity]?.[substat.key]?.[value] ?? value
       )

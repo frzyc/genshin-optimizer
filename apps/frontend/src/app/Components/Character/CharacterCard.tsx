@@ -5,7 +5,8 @@ import {
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
-import { Favorite, FavoriteBorder } from '@mui/icons-material'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {
   Box,
   CardActionArea,
@@ -112,7 +113,7 @@ export default function CharacterCard({
               database.charMeta.set(characterKey, { favorite: !favorite })
             }
           >
-            {favorite ? <Favorite /> : <FavoriteBorder />}
+            {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
           </IconButton>
         </Box>
         <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>

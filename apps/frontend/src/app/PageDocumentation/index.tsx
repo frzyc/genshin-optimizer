@@ -7,7 +7,8 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { ArrowRightAlt } from '@mui/icons-material'
+import { artStatPercent } from '@genshin-optimizer/gi/ui'
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import {
   Box,
   CardContent,
@@ -26,7 +27,6 @@ import { Link, Route, Routes, useMatch } from 'react-router-dom'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import SqBadge from '../Components/SqBadge'
-import { artStatPercent } from '../Data/Artifacts/Artifact'
 
 export default function PageDocumentation() {
   // const { t } = useTranslation("documentation")
@@ -266,17 +266,17 @@ function KeyNamingPane() {
         </Typography>
         <Typography>
           <code>Gladiator's Finale</code>{' '}
-          <ArrowRightAlt sx={{ verticalAlign: 'bottom' }} />{' '}
+          <ArrowRightAltIcon sx={{ verticalAlign: 'bottom' }} />{' '}
           <code>GladiatorsFinale</code>
         </Typography>
         <Typography>
           <code>Spirit Locket of Boreas</code>{' '}
-          <ArrowRightAlt sx={{ verticalAlign: 'bottom' }} />{' '}
+          <ArrowRightAltIcon sx={{ verticalAlign: 'bottom' }} />{' '}
           <code>SpiritLocketOfBoreas</code>
         </Typography>
         <Typography>
           <code>"The Catch"</code>{' '}
-          <ArrowRightAlt sx={{ verticalAlign: 'bottom' }} />{' '}
+          <ArrowRightAltIcon sx={{ verticalAlign: 'bottom' }} />{' '}
           <code>TheCatch</code>
         </Typography>
       </CardContent>

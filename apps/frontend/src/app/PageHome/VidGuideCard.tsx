@@ -1,4 +1,4 @@
-import { YouTube } from '@mui/icons-material'
+import YouTubeIcon from '@mui/icons-material/YouTube'
 import {
   Box,
   CardContent,
@@ -29,7 +29,7 @@ export default function VidGuideCard() {
             rel="noopener"
           >{t`vidGuideCard.title`}</Typography>
         }
-        avatar={<YouTube fontSize="large" />}
+        avatar={<YouTubeIcon fontSize="large" />}
       />
       <Divider />
       <CardContent>

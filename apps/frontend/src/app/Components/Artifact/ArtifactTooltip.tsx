@@ -3,13 +3,12 @@ import { clamp } from '@genshin-optimizer/common/util'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import type { RollColorKey } from '@genshin-optimizer/gi/ui'
-import { IconStatDisplay } from '@genshin-optimizer/gi/ui'
+import { IconStatDisplay, artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import { getMainStatDisplayStr } from '@genshin-optimizer/gi/util'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getArtSheet } from '../../Data/Artifacts'
-import Artifact from '../../Data/Artifacts/Artifact'
 import StatIcon from '../../KeyMap/StatIcon'
 import BootstrapTooltip from '../BootstrapTooltip'
 import LocationName from '../Character/LocationName'
@@ -65,7 +64,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
         }}
       >
         <StarsDisplay stars={rarity} />
-        <SqBadge color={Artifact.levelVariant(level)}>+{level}</SqBadge>{' '}
+        <SqBadge color={artifactLevelVariant(level)}>+{level}</SqBadge>{' '}
       </Typography>
       <Box py={1}>
         {substats.map(

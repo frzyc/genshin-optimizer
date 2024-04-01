@@ -8,7 +8,7 @@ import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { Add } from '@mui/icons-material'
+import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
   Button,
@@ -276,7 +276,7 @@ export default function PageWeapon() {
           fullWidth
           onClick={() => setnewWeaponModalShow(true)}
           color="info"
-          startIcon={<Add />}
+          startIcon={<AddIcon />}
         >
           {t('page_weapon:addWeapon')}
         </Button>
