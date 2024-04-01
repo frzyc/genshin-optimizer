@@ -1,5 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { ICachedSroCharacter } from '@genshin-optimizer/sr/db'
+import type { ICachedSroCharacter } from '@genshin-optimizer/sr/db'
 import { CardContent, Stack } from '@mui/material'
 
 export function CharacterCard({
