@@ -250,7 +250,7 @@ export function validateLightCone(obj: unknown = {}): ILightCone | undefined {
   const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
   if (typeof superimpose !== 'number' || superimpose < 1 || superimpose > 5)
     superimpose = 1
-  if (location && !allCharacterLocationKeys.includes(location)) location = ''
+  if (!location || !allCharacterLocationKeys.includes(location)) location = ''
   lock = !!lock
   return { key, level, ascension, superimpose, location, lock }
 }

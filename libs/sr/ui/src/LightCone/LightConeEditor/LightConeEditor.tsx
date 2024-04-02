@@ -1,7 +1,16 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
+import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  DropdownButton,
+  GeneralAutocomplete,
+} from '@genshin-optimizer/common/ui'
 import { clamp, deepClone } from '@genshin-optimizer/common/util'
-import type { LightConeKey, SuperimposeKey } from '@genshin-optimizer/sr/consts'
+import type {
+  AscensionKey,
+  LightConeKey,
+  SuperimposeKey,
+} from '@genshin-optimizer/sr/consts'
 import {
   allLightConeKeys,
   allSuperimposeKeys,
@@ -17,10 +26,10 @@ import {
   Container,
   Grid,
   MenuItem,
-  Select,
+  Skeleton,
   TextField,
 } from '@mui/material'
-import { useCallback, useEffect, useReducer } from 'react'
+import { Suspense, useCallback, useEffect, useMemo, useReducer } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character'
 import { useDatabaseContext } from '../../Context'
@@ -94,9 +103,6 @@ export function LightConeEditor({
           newSheet.superimpose,
           Math.min(...newSheet.superimpose) as SuperimposeKey
         )
-
-        // for some reason, location property not being added (undefined) if no character location is set, so force init
-        newValue.location = newValue.location ?? ''
       }
       if (newValue.level) {
         newValue.level = clamp(newValue.level, 0, lightConeMaxLevel)
@@ -124,46 +130,23 @@ export function LightConeEditor({
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
             {/* name */}
-            <Grid item xs={1} md={true} display="flex">
-              <Select
-                value={lightCone?.key || ''}
-                sx={{ flexGrow: 1 }}
-                onChange={(e) =>
-                  update({ key: e.target.value as LightConeKey })
-                }
-              >
-                {allLightConeKeys.map((lc) => (
-                  <MenuItem key={lc} value={lc}>
-                    {lc}
-                  </MenuItem>
-                ))}
-              </Select>
+            <Grid item xs={1} md={true} display="flex" flexDirection="column">
+              <LightConeAutocomplete
+                lcKey={lightCone?.key ?? ''}
+                setLCKey={(lcKey) => update({ key: lcKey as LightConeKey })}
+                label={lightCone?.key ? '' : t('editor.unknownLightCone')}
+              />
             </Grid>
 
             {/* superimpose */}
             <Grid item xs={true} md="auto" display="flex">
-              <DropdownButton
-                title={
-                  lightCone?.superimpose
-                    ? `Superimposition ${lightCone?.superimpose}`
-                    : 'Superimposition 1'
+              <SuperimpositionDropdown
+                superimpose={lightCone?.superimpose}
+                setSuperimposition={(sk: SuperimposeKey) =>
+                  update({ superimpose: sk })
                 }
-                color="primary"
-                fullWidth={true}
-              >
-                {allSuperimposeKeys.map((sk) => (
-                  <MenuItem
-                    key={sk}
-                    selected={lightCone?.superimpose === sk}
-                    disabled={lightCone?.superimpose === sk}
-                    onClick={() => {
-                      update({ superimpose: sk })
-                    }}
-                  >
-                    Superimposition {sk}
-                  </MenuItem>
-                ))}
-              </DropdownButton>
+                disabled={!lightCone}
+              />
             </Grid>
           </Grid>
           <Grid
@@ -174,36 +157,14 @@ export function LightConeEditor({
           >
             {/* level */}
             <Grid item xs={1} display="flex" flexDirection="row" gap={1}>
-              <DropdownButton
-                title={
-                  lightCone?.level && lightCone?.ascension
-                    ? `Lv. ${lightCone?.level}/${
-                        ascensionMaxLevel[lightCone?.ascension]
-                      }`
-                    : 'Select Level'
-                }
-                color="primary"
-                fullWidth={true}
-              >
-                {milestoneLevels.map(([lv, as]) => (
-                  <MenuItem
-                    key={`${lv}/${as}`}
-                    selected={
-                      lightCone?.level === lv && lightCone?.ascension === as
-                    }
-                    disabled={
-                      lightCone?.level === lv && lightCone?.ascension === as
-                    }
-                    onClick={() => {
-                      update({ level: lv, ascension: as })
-                    }}
-                  >
-                    {lv === ascensionMaxLevel[as]
-                      ? `Lv. ${lv}`
-                      : `Lv. ${lv}/${ascensionMaxLevel[as]}`}
-                  </MenuItem>
-                ))}
-              </DropdownButton>
+              <LevelDropdown
+                level={lightCone?.level}
+                ascension={lightCone?.ascension}
+                setLevelAscension={(lv, as) => {
+                  update({ level: lv, ascension: as })
+                }}
+                disabled={!lightCone}
+              />
             </Grid>
 
             {/* ascension */}
@@ -216,7 +177,7 @@ export function LightConeEditor({
                 size="medium"
                 inputProps={{ readOnly: true }}
                 value={lightCone?.ascension || 0}
-                disabled={!sheet}
+                disabled={!lightCone}
               />
             </Grid>
 
@@ -251,5 +212,131 @@ export function LightConeEditor({
         </CardContent>
       </CardThemed>
     </Container>
+  )
+}
+
+type LightConeAutocompleteProps = {
+  lcKey: LightConeKey | ''
+  setLCKey: (key: LightConeKey | '') => void
+  label?: string
+}
+
+export default function LightConeAutocomplete({
+  lcKey,
+  setLCKey,
+  label = '',
+}: LightConeAutocompleteProps) {
+  const { t } = useTranslation(['lightCone', 'lightConeNames_gen'])
+  label = label ? label : t('lightCone:autocompleteLabels.key')
+
+  const options = useMemo(
+    () =>
+      allLightConeKeys.map(
+        (key): GeneralAutocompleteOption<LightConeKey | ''> => ({
+          key,
+          label: t(`lightConeNames_gen:${key}`),
+        })
+      ),
+    [t]
+  )
+
+  const onChange = useCallback(
+    (k: LightConeKey | '' | null) => setLCKey(k ?? ''),
+    [setLCKey]
+  )
+  return (
+    <Suspense fallback={<Skeleton variant="text" width={100} />}>
+      <GeneralAutocomplete
+        options={options}
+        valueKey={lcKey}
+        onChange={onChange}
+        toImg={() => <> </>} // TODO
+        label={label}
+      />
+    </Suspense>
+  )
+}
+
+type SuperimpositionDropdownProps = {
+  superimpose: SuperimposeKey | undefined
+  setSuperimposition: (superimpose: SuperimposeKey) => void
+  disabled?: boolean
+}
+
+function SuperimpositionDropdown({
+  superimpose,
+  setSuperimposition,
+  disabled = false,
+}: SuperimpositionDropdownProps) {
+  // TODO: i18n
+  // const { t } = useTranslation('ui')
+  return (
+    <DropdownButton
+      // TODO
+      // title={t('superimpose', { value: superimpose })}
+      title={
+        superimpose ? `Superimposition ${superimpose}` : 'Superimposition 1'
+      }
+      color="primary"
+      disabled={disabled}
+      fullWidth={true}
+    >
+      {allSuperimposeKeys.map((sk) => (
+        <MenuItem
+          key={sk}
+          selected={superimpose === sk}
+          disabled={superimpose === sk}
+          onClick={() => setSuperimposition(sk)}
+        >
+          {/* TODO */}
+          {/* {t('superimpose', { value: sk })} */}
+          Superimposition {sk}
+        </MenuItem>
+      ))}
+    </DropdownButton>
+  )
+}
+
+type LevelDropdownProps = {
+  level: number | undefined
+  ascension: AscensionKey | undefined
+  setLevelAscension: (
+    level: number | undefined,
+    ascension: AscensionKey | undefined
+  ) => void
+  disabled?: boolean
+}
+
+function LevelDropdown({
+  level,
+  ascension,
+  setLevelAscension,
+  disabled = false,
+}: LevelDropdownProps) {
+  // TODO: i18n
+  // const { t } = useTranslation('ui')
+
+  return (
+    <DropdownButton
+      title={
+        level ? `Lv. ${level}/${ascensionMaxLevel[ascension!]}` : 'Select Level'
+      }
+      color="primary"
+      disabled={disabled}
+      fullWidth={true}
+    >
+      {milestoneLevels.map(([lv, as]) => (
+        <MenuItem
+          key={`${lv}/${as}`}
+          selected={level === lv && ascension === as}
+          disabled={level === lv && ascension === as}
+          onClick={() => setLevelAscension(lv, as)}
+        >
+          {lv === ascensionMaxLevel[as]
+            ? `Lv. ${lv}`
+            : `Lv. ${lv}/${ascensionMaxLevel[as]}`}
+        </MenuItem>
+      ))}
+    </DropdownButton>
   )
 }

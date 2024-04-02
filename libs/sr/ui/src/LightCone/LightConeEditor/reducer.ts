@@ -1,3 +1,4 @@
+import { validateLightCone } from '@genshin-optimizer/sr/db'
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
 
 type ResetMessage = { type: 'reset' }
@@ -19,7 +20,7 @@ export function lightConeReducer(
         return { ...state!, ...action.lightCone }
     }
   }
-  const rel = handle()
-  if (!rel) return rel
-  return rel // extremely jank, need validation
+  const lc = handle()
+  if (!lc) return lc
+  return validateLightCone(lc)
 }
