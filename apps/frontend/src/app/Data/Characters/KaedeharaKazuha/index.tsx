@@ -497,7 +497,7 @@ const sheet: ICharacterSheet = {
             fields: [
               {
                 node: infoMut(c2PEleMasDisp, {
-                  ...{ path: 'eleMas' },
+                  path: 'eleMas',
                   isTeamBuff: true,
                 }),
               },

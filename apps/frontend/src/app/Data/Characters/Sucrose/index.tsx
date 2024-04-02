@@ -98,7 +98,7 @@ const asc1 = objKeyMap(absorbableEle, (ele) =>
     target.charKey,
     key, // Not applying to Sucrose
     equal(target.charEle, condSwirls[ele], asc1Disp),
-    { ...{ path: 'eleMas' }, isTeamBuff: true }
+    { path: 'eleMas', isTeamBuff: true }
   )
 ) // And element matches the swirl
 const asc4OptNode = infoMut(
@@ -107,7 +107,7 @@ const asc4OptNode = infoMut(
     4,
     prod(percent(dm.passive2.eleMas_), input.premod.eleMas)
   ),
-  { ...{ path: 'eleMas' }, isTeamBuff: true }
+  { path: 'eleMas', isTeamBuff: true }
 )
 const asc4Disp = equal('hit', condSkillHitOpponent, asc4OptNode)
 const asc4 = unequal(target.charKey, key, asc4Disp)
@@ -337,7 +337,7 @@ const sheet: ICharacterSheet = {
           fields: [
             {
               node: infoMut(asc1Disp, {
-                ...{ path: 'eleMas' },
+                path: 'eleMas',
                 isTeamBuff: true,
               }),
             },

@@ -103,7 +103,7 @@ const a1Shield_disp = greaterEq(
     ),
     naught
   ),
-  { ...{ path: 'shield_' }, isTeamBuff: true }
+  { path: 'shield_', isTeamBuff: true }
 )
 const a1Shield_ = equal(input.activeCharKey, target.charKey, a1Shield_disp)
 

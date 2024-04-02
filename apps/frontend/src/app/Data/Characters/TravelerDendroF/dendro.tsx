@@ -262,7 +262,7 @@ export default function dendro(
             fields: [
               {
                 node: infoMut(c6_dendro_dmg_disp, {
-                  ...{ path: 'dendro_dmg_' },
+                  path: 'dendro_dmg_',
                   isTeamBuff: true,
                 }),
               },

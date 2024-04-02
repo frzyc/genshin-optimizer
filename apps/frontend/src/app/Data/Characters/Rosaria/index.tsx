@@ -107,7 +107,7 @@ const nodeA4OptTarget = infoMut(
       percent(dm.passive2.maxBonus)
     )
   ),
-  { ...{ path: 'critRate_' }, isTeamBuff: true }
+  { path: 'critRate_', isTeamBuff: true }
 )
 const nodeA4CritBonusDisp = equal(condA4, 'on', nodeA4OptTarget)
 const nodeA4CritBonus = unequal(target.charKey, key, nodeA4CritBonusDisp)
@@ -351,7 +351,7 @@ const sheet: ICharacterSheet = {
             fields: [
               {
                 node: infoMut(nodeA4CritBonusDisp, {
-                  ...{ path: 'critRate_' },
+                  path: 'critRate_',
                   isTeamBuff: true,
                 }),
               },

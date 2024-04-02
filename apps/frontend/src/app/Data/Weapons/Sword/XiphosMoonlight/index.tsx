@@ -73,7 +73,7 @@ const sheet: IWeaponSheet = {
       fields: [
         {
           node: infoMut(teamEnerRech_disp, {
-            ...{ path: 'enerRech_' },
+            path: 'enerRech_',
             isTeamBuff: true,
           }),
         },

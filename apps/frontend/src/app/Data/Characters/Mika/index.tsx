@@ -90,7 +90,7 @@ const skillInSoulwind_atkSPD_disp = equal(
   condInSoulwind,
   'on',
   subscript(input.total.skillIndex, dm.skill.atkSPD_, {
-    ...{ path: 'atkSPD_' },
+    path: 'atkSPD_',
     isTeamBuff: true,
   })
 )
@@ -124,7 +124,7 @@ const a1DetectorStacks_physical_dmg_disp = greaterEq(
           : prod(stack, percent(dm.passive1.physical_dmg_))
       ),
       naught,
-      { ...{ path: 'physical_dmg_' }, isTeamBuff: true }
+      { path: 'physical_dmg_', isTeamBuff: true }
     )
   )
 )
@@ -141,7 +141,7 @@ const c6InSoulwind_physical_critDMG_disp = greaterEq(
     condInSoulwind,
     'on',
     equal(condC6Crit, 'on', dm.constellation6.physical_critDMG_, {
-      ...{ path: 'physical_critDMG_' },
+      path: 'physical_critDMG_',
       isTeamBuff: true,
     })
   )
