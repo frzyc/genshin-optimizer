@@ -1,5 +1,4 @@
 // This is a generated index file.
-import skill from './Skill_E_PlayerGrass_01.png'
 import burst from './Skill_S_PlayerGrass_01_HD.png'
 import constellation1 from './UI_Talent_S_PlayerGrass_01.png'
 import constellation2 from './UI_Talent_S_PlayerGrass_02.png'
@@ -9,6 +8,7 @@ import constellation5 from './UI_Talent_S_PlayerGrass_05.png'
 import constellation6 from './UI_Talent_S_PlayerGrass_06.png'
 import passive1 from './UI_Talent_U_PlayerGrass_01.png'
 import passive2 from './UI_Talent_U_PlayerGrass_02.png'
+import skill from './Skill_E_PlayerGrass_01.png'
 
 const data = {
   burst,
