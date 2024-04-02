@@ -7,6 +7,8 @@ import {
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import CloseIcon from '@mui/icons-material/Close'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -39,8 +41,6 @@ import ModalWrapper from '../../Components/ModalWrapper'
 import { DataContext } from '../../Context/DataContext'
 import { FormulaDataContext } from '../../Context/FormulaDataContext'
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
-import type { NodeDisplay } from '../../Formula/uiData'
-import { nodeVStr, resolveInfo } from '../../Formula/uiData'
 export default function FormulaModal() {
   const { modalOpen } = useContext(FormulaDataContext)
   const { setFormulaData } = useContext(FormulaDataContext)

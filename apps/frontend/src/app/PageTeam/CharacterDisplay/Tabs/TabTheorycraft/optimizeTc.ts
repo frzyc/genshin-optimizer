@@ -11,12 +11,12 @@ import type { Data, NumNode, OptNode } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   mapFormulas,
+  mergeData,
   optimize,
   percent,
   precompute,
 } from '@genshin-optimizer/gi/wr'
 import type { TeamData } from '../../../../Context/DataContext'
-import { mergeData } from '../../../../Formula/api'
 import { shouldShowDevComponents } from '../../../../Util/Util'
 import { dynamicData } from '../TabOptimize/foreground'
 

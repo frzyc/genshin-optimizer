@@ -13,6 +13,7 @@ import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ISubstat } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import type { RollColorKey } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
   getSubstatSummedRolls,
@@ -35,7 +36,6 @@ import { ArtifactStatWithUnit } from '../../../Components/Artifact/ArtifactStatK
 import CardLight from '../../../Components/Card/CardLight'
 import PercentBadge from '../../../Components/PercentBadge'
 import TextButton from '../../../Components/TextButton'
-import type { RollColorKey } from '../../../Types/consts'
 
 export default function SubstatInput({
   index,

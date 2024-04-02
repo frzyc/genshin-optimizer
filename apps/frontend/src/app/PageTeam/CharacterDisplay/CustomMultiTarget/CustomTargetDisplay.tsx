@@ -15,6 +15,7 @@ import {
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
+import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { allInputPremodKeys } from '@genshin-optimizer/gi/wr'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -27,7 +28,6 @@ import { infusionVals } from '../../../Components/HitModeEditor'
 import StatEditorList from '../../../Components/StatEditorList'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
-import type { NodeDisplay } from '../../../Formula/uiData'
 import {
   allowedAdditiveReactions,
   allowedAmpReactions,

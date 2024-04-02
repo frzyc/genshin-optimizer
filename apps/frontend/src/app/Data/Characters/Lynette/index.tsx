@@ -5,6 +5,7 @@ import type {
   ElementKey,
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
+import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
@@ -19,7 +20,6 @@ import {
   tally,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import { absorbableEle } from '../../../Types/consts'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'

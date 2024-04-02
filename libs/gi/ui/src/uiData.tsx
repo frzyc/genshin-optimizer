@@ -9,7 +9,9 @@ import {
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
+  CharacterKey,
   CharacterSheetKey,
+  GenderKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import {
@@ -19,8 +21,6 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { ArtifactSetName, Translate } from '@genshin-optimizer/gi/ui'
-import { SillyContext } from '@genshin-optimizer/gi/ui/Context/SillyContext'
 import type {
   ComputeNode,
   Data,
@@ -38,9 +38,24 @@ import type {
   ThresholdNode,
   UIInput,
 } from '@genshin-optimizer/gi/wr'
-import { allOperations, infoManager, uiInput } from '@genshin-optimizer/gi/wr'
+import {
+  allOperations,
+  constant,
+  customRead,
+  deepNodeClone,
+  infoManager,
+  input,
+  mergeData,
+  resetData,
+  setReadNodeKeys,
+  tally,
+  uiInput,
+} from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
 import { useContext } from 'react'
+import { ArtifactSetName } from './Artifact'
+import { SillyContext } from './Context'
+import { Translate } from './Translate'
 const shouldWrap = true
 
 export function nodeVStr(n: NodeDisplay) {
@@ -371,7 +386,7 @@ export class UIData {
       case 'min':
       case 'max': {
         const identity = allOperations[operation]([])
-        if (process.env.NODE_ENV !== 'development')
+        if (process.env['NODE_ENV'] !== 'development')
           operands = operands.filter((operand) => operand.value !== identity)
         if (!operands.length)
           return Object.values(info).some((x) => x)
@@ -727,5 +742,214 @@ function makeEmpty(
     empty: true,
     dependencies: new Set(),
     mayNeedWrapping: false,
+  }
+}
+
+const asConst = true as const,
+  pivot = true as const
+
+/** These read nodes are very context-specific, and cannot be used anywhere else outside of `uiDataForTeam` */
+const teamBuff = setReadNodeKeys(deepNodeClone(input), ['teamBuff']) // Use ONLY by dataObjForTeam
+export function uiDataForTeam(
+  teamData: Partial<Record<CharacterKey, Data[]>>,
+  gender: GenderKey,
+  activeCharKey?: CharacterKey
+): Partial<
+  Record<
+    CharacterKey,
+    { target: UIData; buffs: Partial<Record<CharacterKey, UIData>> }
+  >
+> {
+  // May the goddess of wisdom bless any and all souls courageous
+  // enough to attempt for the understanding of this abomination.
+
+  const mergedData = Object.entries(teamData).map(
+    ([key, data]) => [key, { ...mergeData(data) }] as [CharacterKey, Data]
+  )
+  const result = Object.fromEntries(
+    mergedData.map(([key]) => [
+      key,
+      {
+        targetRef: {} as Data,
+        buffs: [] as Data[],
+        calcs: {} as Partial<Record<CharacterKey, Data>>,
+      },
+    ])
+  )
+
+  const customReadNodes = {}
+  function getReadNode(path: readonly string[]): ReadNode<number> {
+    const base =
+      path[0] === 'teamBuff'
+        ? objPathValue(teamBuff, path.slice(1))
+        : objPathValue(input, path)
+    if (base) return base
+    const custom = objPathValue(customReadNodes, path)
+    if (custom) return custom
+    const newNode = customRead(path)
+    if (path[0] === 'teamBuff' && path[1] === 'tally')
+      newNode.accu = objPathValue(tally, path.slice(2))?.accu
+    layeredAssignment(customReadNodes, path, newNode)
+    return newNode
+  }
+
+  Object.values(result).forEach(({ targetRef, buffs, calcs }) =>
+    mergedData.forEach(([sourceKey, source]) => {
+      const sourceKeyWithGender = sourceKey.includes('Traveler')
+        ? `${sourceKey}${gender}`
+        : sourceKey
+      const sourceBuff = source.teamBuff
+      // Create new copy of `calc` as we're mutating it later
+      const buff: Data = {},
+        calc: Data = deepNodeClone({ teamBuff: sourceBuff })
+      buffs.push(buff)
+      calcs[sourceKey] = calc
+
+      // This construction creates a `Data` representing buff
+      // from `source` applying to `target`. It has 3 data:
+      // - `target` contains the reference for the final
+      //   data. It is not populated at this stage,
+      // - `calc` contains the calculation of the buffs,
+      // - `buff` contains read nodes that point to the
+      //   calculation in `calc`.
+
+      crawlObject(
+        sourceBuff,
+        [],
+        (x: any) => x.operation,
+        (x: NumNode | StrNode, path: string[]) => {
+          const info: Info = {
+            ...objPathValue(input, path)?.info,
+            source: sourceKeyWithGender,
+            prefix: undefined,
+            asConst,
+          }
+          layeredAssignment(
+            buff,
+            path,
+            resetData(getReadNode(['teamBuff', ...path]), calc, info)
+          )
+
+          crawlObject(
+            x,
+            [],
+            (x: any) => x?.operation === 'read',
+            (x: ReadNode<number | string>) => {
+              if (x.path[0] === 'targetBuff') return // Ignore teamBuff access
+
+              let readNode: ReadNode<number> | ReadNode<string> | undefined,
+                data: Data
+              if (x.path[0] === 'target') {
+                // Link the node to target data
+                readNode = getReadNode(x.path.slice(1))
+                data = targetRef
+              } else {
+                // Link the node to source data
+                readNode = x
+                data = result[sourceKey].targetRef
+              }
+              layeredAssignment(calc, x.path, resetData(readNode, data))
+            }
+          )
+        }
+      )
+    })
+  )
+  mergedData.forEach(([targetKey, data]) => {
+    delete data.teamBuff
+    const { targetRef, buffs } = result[targetKey]
+    const buff = mergeData(buffs)
+    crawlObject(
+      buff ?? {},
+      [],
+      (x) => (x as any).operation,
+      (x: NumNode, path: string[]) => {
+        // CAUTION
+        // This is safe only because `buff` is created using only `resetData`
+        // and `mergeData`. So every node here is created from either of the
+        // two functions, so the mutation wont't affect existing nodes.
+        x.info = {
+          ...(objPathValue(teamBuff, path) as ReadNode<number> | undefined)
+            ?.info,
+          prefix: 'teamBuff',
+          pivot,
+        }
+      }
+    )
+    Object.assign(
+      targetRef,
+      mergeData([
+        data,
+        buff,
+        { teamBuff: buff, activeCharKey: constant(activeCharKey) },
+      ])
+    )
+    ;(targetRef as any)['target'] = targetRef
+  })
+  const origin = new UIData(undefined as any, undefined)
+  return Object.fromEntries(
+    Object.entries(result).map(([key, value]) => [
+      key,
+      {
+        target: new UIData(value.targetRef, origin),
+        buffs: Object.fromEntries(
+          Object.entries(value.calcs).map(([key, value]) => [
+            key,
+            new UIData(value, origin),
+          ])
+        ),
+      },
+    ])
+  )
+}
+
+export function computeUIData(data: Data[]): UIData {
+  return new UIData(mergeData(data), undefined)
+}
+
+type ComparedNodeDisplay<V = number> = NodeDisplay<V> & { diff: V }
+export function compareTeamBuffUIData(uiData1: UIData, uiData2: UIData): any {
+  //Input<ComparedNodeDisplay, ComparedNodeDisplay<string>>
+  return compareInternal(uiData1.getTeamBuff(), uiData2.getTeamBuff())
+}
+export function compareDisplayUIData(
+  uiData1: UIData,
+  uiData2: UIData
+): { [key: string]: DisplaySub<ComparedNodeDisplay> } {
+  return compareInternal(uiData1.getDisplay(), uiData2.getDisplay())
+}
+function compareInternal(data1: any | undefined, data2: any | undefined): any {
+  if (data1?.operation || data2?.operation) {
+    const d1 = data1 as NodeDisplay | undefined
+    const d2 = data2 as NodeDisplay | undefined
+
+    if ((d1 && !d1.operation) || (d2 && !d2.operation))
+      throw new Error('@genshin-optimizer/gi/ui')
+
+    const result: ComparedNodeDisplay = {
+      info: {},
+      operation: true,
+      value: 0,
+      isEmpty: true,
+      formulas: [],
+      ...d1,
+      diff: (d2?.value ?? 0) - (d1?.value ?? 0),
+    }
+    if (typeof d1?.value === 'string' || typeof d2?.value === 'string') {
+      // In case `string` got involved, just use the other value
+      result.value = d1?.value ?? ('' as any)
+      result.diff = d2?.value ?? ('' as any)
+    }
+    return result
+  }
+
+  if (data1 || data2) {
+    const keys = new Set([
+      ...Object.keys(data1 ?? {}),
+      ...Object.keys(data2 ?? {}),
+    ])
+    return Object.fromEntries(
+      [...keys].map((key) => [key, compareInternal(data1?.[key], data2?.[key])])
+    )
   }
 }

@@ -1,13 +1,14 @@
 import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { characterAsset, imgAssets } from '@genshin-optimizer/gi/assets'
-import type {
-  CharacterKey,
-  CharacterSheetKey,
-  WeaponTypeKey,
+import {
+  travelerFKeys,
+  travelerMKeys,
+  type CharacterKey,
+  type CharacterSheetKey,
+  type WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { greaterEq, input } from '@genshin-optimizer/gi/wr'
-import { travelerFKeys, travelerMKeys } from '../../Types/consts'
 import type {
   DocumentConditional,
   DocumentConditionalBase,

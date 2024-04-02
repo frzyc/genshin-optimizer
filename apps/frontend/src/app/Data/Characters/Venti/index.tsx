@@ -1,4 +1,5 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
+import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
@@ -15,7 +16,6 @@ import {
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import { absorbableEle } from '../../../Types/consts'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
