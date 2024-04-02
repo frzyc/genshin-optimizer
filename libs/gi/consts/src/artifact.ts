@@ -117,26 +117,6 @@ export const artifactCircletStatKeys = [
 ] as const
 export type ArtifactCircletStatKey = (typeof artifactCircletStatKeys)[number]
 
-/**
- * @deprecated use artSlotMainKeys
- */
-export const artSlotsData = {
-  flower: { name: 'Flower of Life', stats: ['hp'] as readonly MainStatKey[] },
-  plume: { name: 'Plume of Death', stats: ['atk'] as readonly MainStatKey[] },
-  sands: {
-    name: 'Sands of Eon',
-    stats: artifactSandsStatKeys as readonly MainStatKey[],
-  },
-  goblet: {
-    name: 'Goblet of Eonothem',
-    stats: artifactGobletStatKeys as readonly MainStatKey[],
-  },
-  circlet: {
-    name: 'Circlet of Logos',
-    stats: artifactCircletStatKeys as readonly MainStatKey[],
-  },
-} as const
-
 export const artSlotMainKeys = {
   flower: ['hp'] as readonly MainStatKey[],
   plume: ['atk'] as readonly MainStatKey[],

@@ -1,6 +1,6 @@
+import { DropdownButton } from '@genshin-optimizer/common/ui'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import DropdownButton from '../../../../../Components/DropdownMenu/DropdownButton'
 
 const levels = [0, 4, 8, 12, 16, 20] as const
 export default function AssumeFullLevelToggle({

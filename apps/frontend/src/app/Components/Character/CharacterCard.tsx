@@ -1,3 +1,4 @@
+import { ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   useCharMeta,
@@ -22,7 +23,6 @@ import { DataContext } from '../../Context/DataContext'
 import { getCharSheet } from '../../Data/Characters'
 import useCharData from '../../ReactHooks/useCharData'
 import CardLight from '../Card/CardLight'
-import ConditionalWrapper from '../ConditionalWrapper'
 import { CharacterCardEquipmentRow } from './CharacterCard/CharacterCardEquipmentRow'
 import {
   CharacterCardHeader,

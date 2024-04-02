@@ -1,4 +1,5 @@
 import {
+  BootstrapTooltip,
   ColorText,
   type CardBackgroundColor,
 } from '@genshin-optimizer/common/ui'
@@ -25,7 +26,6 @@ import type { NodeDisplay } from '../Formula/api'
 import { nodeVStr, resolveInfo } from '../Formula/uiData'
 import type { IBasicFieldDisplay, IFieldDisplay } from '../Types/fieldDisplay'
 import AmpReactionModeText from './AmpReactionModeText'
-import BootstrapTooltip from './BootstrapTooltip'
 
 export default function FieldsDisplay({
   fields,

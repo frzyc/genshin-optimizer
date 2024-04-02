@@ -1,5 +1,9 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  DropdownButton,
+  ImgIcon,
+} from '@genshin-optimizer/common/ui'
 import { clamp, deepClone } from '@genshin-optimizer/common/util'
 import type { Processed } from '@genshin-optimizer/gi/art-scanner'
 import { ScanningQueue } from '@genshin-optimizer/gi/art-scanner'
@@ -75,7 +79,6 @@ import {
 } from '../Components/Artifact/ArtifactStatKeyDisplay'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
 import CustomNumberTextField from '../Components/CustomNumberTextField'
-import DropdownButton from '../Components/DropdownMenu/DropdownButton'
 import ModalWrapper from '../Components/ModalWrapper'
 import { getArtSheet } from '../Data/Artifacts'
 import { shouldShowDevComponents } from '../Util/Util'

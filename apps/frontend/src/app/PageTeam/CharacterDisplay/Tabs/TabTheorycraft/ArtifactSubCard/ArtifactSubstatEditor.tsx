@@ -2,6 +2,7 @@ import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
+  CustomNumberInput,
 } from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import { artMaxLevel, type SubstatKey } from '@genshin-optimizer/gi/consts'
@@ -12,7 +13,6 @@ import InfoIcon from '@mui/icons-material/Info'
 import { Box, Slider, Stack, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import CustomNumberInput from '../../../../../Components/CustomNumberInput'
 import { BuildTcContext } from '../BuildTcContext'
 export function ArtifactSubstatEditor({
   statKey,

@@ -1,4 +1,9 @@
-import { SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  CustomNumberInput,
+  CustomNumberInputButtonGroupWrapper,
+  DropdownButton,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import {
   allSubstatKeys,
@@ -28,10 +33,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { ArtifactStatWithUnit } from '../../../Components/Artifact/ArtifactStatKeyDisplay'
 import CardLight from '../../../Components/Card/CardLight'
-import CustomNumberInput, {
-  CustomNumberInputButtonGroupWrapper,
-} from '../../../Components/CustomNumberInput'
-import DropdownButton from '../../../Components/DropdownMenu/DropdownButton'
 import PercentBadge from '../../../Components/PercentBadge'
 import TextButton from '../../../Components/TextButton'
 import type { RollColorKey } from '../../../Types/consts'

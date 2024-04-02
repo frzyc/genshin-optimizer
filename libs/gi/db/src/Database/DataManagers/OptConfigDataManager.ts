@@ -14,7 +14,7 @@ import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
-  artSlotsData,
+  artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
@@ -141,7 +141,7 @@ export class OptConfigDataManager extends DataManager<
       // make sure the arrays are not empty
       ;(['sands', 'goblet', 'circlet'] as const).forEach((sk) => {
         if (!mainStatKeys[sk].length)
-          mainStatKeys[sk] = [...artSlotsData[sk].stats]
+          mainStatKeys[sk] = [...artSlotMainKeys[sk]]
       })
     }
 
@@ -271,9 +271,9 @@ const initialBuildSettings: OptConfig = deepFreeze({
   useExcludedArts: false,
   statFilters: {},
   mainStatKeys: {
-    sands: [...artSlotsData['sands'].stats],
-    goblet: [...artSlotsData['goblet'].stats],
-    circlet: [...artSlotsData['circlet'].stats],
+    sands: [...artSlotMainKeys['sands']],
+    goblet: [...artSlotMainKeys['goblet']],
+    circlet: [...artSlotMainKeys['circlet']],
   },
   optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,

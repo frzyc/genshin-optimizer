@@ -1,4 +1,4 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -19,7 +19,6 @@ import CardDark from '../../../Components/Card/CardDark'
 import CardLight from '../../../Components/Card/CardLight'
 import ConstellationDropdown from '../../../Components/Character/ConstellationDropdown'
 import TalentDropdown from '../../../Components/Character/TalentDropdown'
-import ConditionalWrapper from '../../../Components/ConditionalWrapper'
 import DocumentDisplay from '../../../Components/DocumentDisplay'
 import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
 import {

@@ -1,4 +1,8 @@
-import { BootstrapTooltip, ColorText } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  ColorText,
+  ConditionalWrapper,
+} from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
@@ -23,7 +27,6 @@ import {
 import { useCallback } from 'react'
 import CardDark from '../Card/CardDark'
 import LocationIcon from '../Character/LocationIcon'
-import ConditionalWrapper from '../ConditionalWrapper'
 import { StatColoredWithUnit } from '../StatDisplay'
 import ArtifactTooltip from './ArtifactTooltip'
 

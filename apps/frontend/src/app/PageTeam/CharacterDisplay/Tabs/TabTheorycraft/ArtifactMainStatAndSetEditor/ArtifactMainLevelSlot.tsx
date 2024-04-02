@@ -1,4 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { CustomNumberInput, DropdownButton } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
@@ -17,8 +18,6 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import CardDark from '../../../../../Components/Card/CardDark'
-import CustomNumberInput from '../../../../../Components/CustomNumberInput'
-import DropdownButton from '../../../../../Components/DropdownMenu/DropdownButton'
 import {
   StatColoredWithUnit,
   StatWithUnit,
