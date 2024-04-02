@@ -418,9 +418,7 @@ const sheet: ICharacterSheet = {
       ct.headerTem('constellation6', {
         fields: [
           {
-            node: infoMut(dmgFormulas.constellation6.vein_dmgInc, {
-              name: ct.ch('c6DmgInc'),
-            }),
+            node: dmgFormulas.constellation6.vein_dmgInc,
           },
         ],
       }),
