@@ -19,7 +19,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { Translate } from '@genshin-optimizer/gi/ui'
+import { ArtifactSetName, Translate } from '@genshin-optimizer/gi/ui'
 import { SillyContext } from '@genshin-optimizer/gi/ui/Context/SillyContext'
 import type {
   ComputeNode,
@@ -40,7 +40,6 @@ import type {
 } from '@genshin-optimizer/gi/wr'
 import { allOperations, infoManager, uiInput } from '@genshin-optimizer/gi/wr'
 import { useContext } from 'react'
-import { artifactTr } from '../names'
 const shouldWrap = true
 
 export function nodeVStr(n: NodeDisplay) {
@@ -574,7 +573,7 @@ function keyMapInfo(path: string): InfoExtra & Info {
 }
 function artSetInfo(path: string): InfoExtra {
   if (!allArtifactSetKeys.includes(path as ArtifactSetKey)) return {}
-  return { name: artifactTr(path as ArtifactSetKey) }
+  return { name: <ArtifactSetName setKey={path as ArtifactSetKey} /> }
 }
 export function resolveInfo(info: Info): InfoExtra & Info {
   const mergedInfo: Info & InfoExtra = {
