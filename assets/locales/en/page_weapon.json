@@ -1,9 +1,9 @@
 {
-  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Light Cone",
-  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Light Cones",
-  "edit": "Edit Light Cone",
-  "weaponName": "Light Cone Name",
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Weapon",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Weapons",
+  "edit": "Edit Weapon",
+  "weaponName": "Weapon Name",
   "removeWeapon": "Are you sure you want to remove {{value}}?",
-  "addWeapon": "Add New Light Cone",
-  "cantDeleteLock": "Cannot delete light cone because it is locked"
+  "addWeapon": "Add New Weapon",
+  "cantDeleteLock": "Cannot delete weapon because it is locked"
 }
