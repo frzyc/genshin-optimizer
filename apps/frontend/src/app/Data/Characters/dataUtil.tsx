@@ -17,10 +17,12 @@ import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   data,
+  inferInfoMut,
   infoMut,
   infusionNode,
   input,
   lookup,
+  mergeData,
   one,
   percent,
   prod,
@@ -29,7 +31,6 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import { inferInfoMut, mergeData } from '../../Formula/api'
 
 const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],

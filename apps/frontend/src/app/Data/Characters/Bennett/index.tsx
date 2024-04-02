@@ -1,5 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import type { UIData } from '@genshin-optimizer/gi/ui'
 import {
   constant,
   equal,
@@ -14,7 +15,6 @@ import {
   sum,
   target,
 } from '@genshin-optimizer/gi/wr'
-import type { UIData } from '../../../Formula/uiData'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'

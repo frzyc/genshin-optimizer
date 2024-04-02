@@ -1,5 +1,6 @@
 import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/ui'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { Masonry } from '@mui/lab'
 import {
@@ -19,7 +20,6 @@ import {
   getDisplayHeader,
   getDisplaySections,
 } from '../../../../../Formula/DisplayUtil'
-import { resolveInfo, type NodeDisplay } from '../../../../../Formula/uiData'
 
 export interface TargetSelectorModalProps {
   show: boolean

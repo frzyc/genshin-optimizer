@@ -19,7 +19,7 @@ import {
   tally,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import { absorbableEle } from '../../../Types/consts'
+import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'

@@ -13,10 +13,12 @@ import {
   HydroIcon,
   PyroIcon,
 } from '@genshin-optimizer/gi/svgicons'
+import type { UIData } from '@genshin-optimizer/gi/ui'
 import { Translate } from '@genshin-optimizer/gi/ui'
 import {
   equal,
   greaterEq,
+  inferInfoMut,
   infoMut,
   input,
   percent,
@@ -25,8 +27,6 @@ import {
   target,
 } from '@genshin-optimizer/gi/wr'
 import ElementCycle from '../Components/ElementCycle'
-import { inferInfoMut } from '../Formula/api'
-import type { UIData } from '../Formula/uiData'
 import type { DocumentSection } from '../Types/sheet'
 import { activeCharBuff, condReadNode, st, stg } from './SheetUtil'
 const tr = (strKey: string) => (

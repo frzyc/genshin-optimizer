@@ -6,11 +6,11 @@ import type {
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import type { UIData } from '@genshin-optimizer/gi/ui'
 import { Translate } from '@genshin-optimizer/gi/ui'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
 import artifactSheets from '.'
-import type { UIData } from '../../Formula/uiData'
 import type { SetNum } from '../../Types/consts'
 import type { IDocumentHeader } from '../../Types/sheet'
 import { st } from '../SheetUtil'

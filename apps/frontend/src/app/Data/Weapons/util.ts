@@ -4,13 +4,14 @@ import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
 import {
   constant,
+  inferInfoMut,
   infoMut,
   input,
+  mergeData,
   prod,
   subscript,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import { inferInfoMut, mergeData } from '../../Formula/api'
 
 export function dataObjForWeaponSheet(
   key: WeaponKey,

@@ -17,7 +17,7 @@ import {
   prod,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import { absorbableEle } from '../../../Types/consts'
+import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'
 import Traveler from '../Traveler'
