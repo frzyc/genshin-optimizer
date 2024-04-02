@@ -1,3 +1,7 @@
+import {
+  BootstrapTooltip,
+  ConditionalWrapper,
+} from '@genshin-optimizer/common/ui'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
@@ -11,10 +15,8 @@ import WeaponSheet from '../../Data/Weapons/WeaponSheet'
 import { computeUIData, dataObjForWeapon } from '../../Formula/api'
 import type { NodeDisplay } from '../../Formula/uiData'
 import { nodeVStr, resolveInfo } from '../../Formula/uiData'
-import BootstrapTooltip from '../BootstrapTooltip'
 import CardDark from '../Card/CardDark'
 import LocationIcon from '../Character/LocationIcon'
-import ConditionalWrapper from '../ConditionalWrapper'
 import WeaponNameTooltip from './WeaponNameTooltip'
 
 type Data = {

@@ -1,5 +1,10 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { ColorText, StarsDisplay } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  ColorText,
+  ConditionalWrapper,
+  StarsDisplay,
+} from '@genshin-optimizer/common/ui'
 import { clamp, clamp01, getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type {
@@ -38,11 +43,9 @@ import {
 import { Suspense, lazy, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArtifactSetTooltipContent } from '../Components/Artifact/ArtifactSetTooltip'
-import BootstrapTooltip from '../Components/BootstrapTooltip'
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
 import LocationName from '../Components/Character/LocationName'
-import ConditionalWrapper from '../Components/ConditionalWrapper'
 import InfoTooltip, { InfoTooltipInline } from '../Components/InfoTooltip'
 import PercentBadge from '../Components/PercentBadge'
 import { getArtSheet } from '../Data/Artifacts'

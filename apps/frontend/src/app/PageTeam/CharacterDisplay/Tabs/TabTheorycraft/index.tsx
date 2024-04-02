@@ -1,4 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { objMap, toPercent } from '@genshin-optimizer/common/util'
 import {
   artSubstatRollData,
@@ -18,7 +19,6 @@ import { Trans, useTranslation } from 'react-i18next'
 import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
 import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
-import CustomNumberInput from '../../../../Components/CustomNumberInput'
 import {
   HitModeToggle,
   ReactionToggle,

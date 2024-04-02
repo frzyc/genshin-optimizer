@@ -1,4 +1,8 @@
-import { StarsDisplay, theme } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  StarsDisplay,
+  theme,
+} from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactRarityKeys,
@@ -21,7 +25,6 @@ import { Trans, useTranslation } from 'react-i18next'
 import type { FilterOption } from '../../PageArtifact/ArtifactSort'
 import { handleMultiSelect } from '../../Util/MultiSelect'
 import { bulkCatTotal } from '../../Util/totalUtils'
-import BootstrapTooltip from '../BootstrapTooltip'
 import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
 import ArtifactLevelSlider from './ArtifactLevelSlider'
 import ArtifactMainStatMultiAutocomplete from './ArtifactMainStatMultiAutocomplete'

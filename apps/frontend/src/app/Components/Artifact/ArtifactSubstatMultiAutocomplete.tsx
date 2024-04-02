@@ -1,3 +1,4 @@
+import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
@@ -5,7 +6,6 @@ import { artStatPercent } from '@genshin-optimizer/gi/ui'
 import { Chip } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { GeneralAutocompleteMulti } from '../GeneralAutocomplete'
 
 export default function ArtifactSubstatMultiAutocomplete({
   substatKeys,

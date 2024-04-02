@@ -1,7 +1,7 @@
+import { CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import { Box, Button, Card, Divider, Slider } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
-import CustomNumberInput from '../CustomNumberInput'
 
 export default function RVSlide({
   rvLow,

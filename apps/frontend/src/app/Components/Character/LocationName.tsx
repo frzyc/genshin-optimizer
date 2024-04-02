@@ -1,12 +1,12 @@
 import type { LocationKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { CharIconSide } from '@genshin-optimizer/gi/ui'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { TypographyProps } from '@mui/material'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getCharSheet } from '../../Data/Characters'
-import CharIconSide from '../Image/CharIconSide'
 
 export default function LocationName({
   location,

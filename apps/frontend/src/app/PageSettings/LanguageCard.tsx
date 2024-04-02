@@ -1,6 +1,6 @@
+import { DropdownButton } from '@genshin-optimizer/common/ui'
 import { MenuItem } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
-import DropdownButton from '../Components/DropdownMenu/DropdownButton'
 import { languageCodeList } from '../i18n'
 
 const nativeLanguages = {

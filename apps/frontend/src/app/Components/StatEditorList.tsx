@@ -1,3 +1,9 @@
+import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
+import {
+  CustomNumberInput,
+  CustomNumberInputButtonGroupWrapper,
+  GeneralAutocomplete,
+} from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allMainStatKeys, allSubstatKeys } from '@genshin-optimizer/gi/consts'
@@ -18,11 +24,6 @@ import {
 } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import CustomNumberInput, {
-  CustomNumberInputButtonGroupWrapper,
-} from './CustomNumberInput'
-import type { GeneralAutocompleteOption } from './GeneralAutocomplete'
-import { GeneralAutocomplete } from './GeneralAutocomplete'
 
 export default function StatEditorList({
   statKeys,

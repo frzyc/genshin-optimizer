@@ -1,4 +1,5 @@
 import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
+import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
 import {
   objKeyMap,
   objPathValue,
@@ -40,7 +41,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../../Components/Card/CardLight'
 import InfoTooltip from '../../../../../../Components/InfoTooltip'

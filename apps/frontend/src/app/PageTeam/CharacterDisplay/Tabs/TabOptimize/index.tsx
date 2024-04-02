@@ -4,7 +4,9 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import {
+  BootstrapTooltip,
   CardThemed,
+  DropdownButton,
   ModalWrapper,
   SqBadge,
   useConstObj,
@@ -34,6 +36,7 @@ import {
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { getCharData } from '@genshin-optimizer/gi/stats'
+import { CharIconSide } from '@genshin-optimizer/gi/ui'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { optimize } from '@genshin-optimizer/gi/wr'
 import {
@@ -79,7 +82,6 @@ import React, {
 import { Trans, useTranslation } from 'react-i18next'
 import ArtifactCardPico from '../../../../Components/Artifact/ArtifactCardPico'
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
-import BootstrapTooltip from '../../../../Components/BootstrapTooltip'
 import CardLight from '../../../../Components/Card/CardLight'
 import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
 import {
@@ -87,12 +89,10 @@ import {
   CharacterCardHeaderContent,
 } from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
 import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
-import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton'
 import {
   HitModeToggle,
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
-import CharIconSide from '../../../../Components/Image/CharIconSide'
 import InfoTooltip from '../../../../Components/InfoTooltip'
 import NoArtWarning from '../../../../Components/NoArtWarning'
 import { CharacterContext } from '../../../../Context/CharacterContext'

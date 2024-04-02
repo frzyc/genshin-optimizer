@@ -1,4 +1,10 @@
-import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
+import {
+  ColorText,
+  CustomNumberInput,
+  CustomNumberInputButtonGroupWrapper,
+  ImgFullwidth,
+  ImgIcon,
+} from '@genshin-optimizer/common/ui'
 import { clamp, objMap } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import CheckIcon from '@mui/icons-material/Check'
@@ -15,10 +21,6 @@ import {
 import { useState } from 'react'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
-import CustomNumberInput, {
-  CustomNumberInputButtonGroupWrapper,
-} from '../Components/CustomNumberInput'
-import ImgFullwidth from '../Components/Image/ImgFullwidth'
 import TextButton from '../Components/TextButton'
 const booksData = {
   advice: {
