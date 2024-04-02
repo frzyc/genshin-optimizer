@@ -3,6 +3,7 @@ import {
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
@@ -55,7 +56,6 @@ import CharacterCardPico from '../../../../../Components/Character/CharacterCard
 import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SolidToggleButtonGroup from '../../../../../Components/SolidToggleButtonGroup'
-import SqBadge from '../../../../../Components/SqBadge'
 import CharacterRarityToggle from '../../../../../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../../../../../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'

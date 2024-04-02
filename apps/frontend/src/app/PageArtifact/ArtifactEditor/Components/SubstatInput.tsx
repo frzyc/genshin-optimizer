@@ -1,3 +1,4 @@
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import {
   allSubstatKeys,
@@ -6,6 +7,7 @@ import {
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ISubstat } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   artDisplayValue,
   getSubstatSummedRolls,
@@ -31,9 +33,7 @@ import CustomNumberInput, {
 } from '../../../Components/CustomNumberInput'
 import DropdownButton from '../../../Components/DropdownMenu/DropdownButton'
 import PercentBadge from '../../../Components/PercentBadge'
-import SqBadge from '../../../Components/SqBadge'
 import TextButton from '../../../Components/TextButton'
-import StatIcon from '../../../KeyMap/StatIcon'
 import type { RollColorKey } from '../../../Types/consts'
 
 export default function SubstatInput({

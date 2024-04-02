@@ -1,4 +1,4 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
+import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { characterAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   CharacterKey,
@@ -7,7 +7,6 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { greaterEq, input } from '@genshin-optimizer/gi/wr'
-import SqBadge from '../../Components/SqBadge'
 import { travelerFKeys, travelerMKeys } from '../../Types/consts'
 import type {
   DocumentConditional,

@@ -1,12 +1,12 @@
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import { Box, Typography } from '@mui/material'
-import StatIcon from '../../KeyMap/StatIcon'
 import CardDark from '../Card/CardDark'
-import SqBadge from '../SqBadge'
 import ArtifactTooltip from './ArtifactTooltip'
 
 export default function ArtifactCardPico({

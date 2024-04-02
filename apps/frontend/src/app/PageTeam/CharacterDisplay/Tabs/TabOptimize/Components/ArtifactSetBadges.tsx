@@ -1,4 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
@@ -8,7 +9,6 @@ import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTooltip'
-import SqBadge from '../../../../../Components/SqBadge'
 import { getArtSheet } from '../../../../../Data/Artifacts'
 
 type ArtifactSetBadgesProps = {

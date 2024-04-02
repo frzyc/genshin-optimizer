@@ -1,4 +1,4 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
+import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
 import { clamp, objMap } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import CheckIcon from '@mui/icons-material/Check'
@@ -15,7 +15,6 @@ import {
 import { useState } from 'react'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
-import ColorText from '../Components/ColoredText'
 import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
 } from '../Components/CustomNumberInput'
@@ -392,7 +391,7 @@ function BookDisplay(props) {
               <Typography>Required:</Typography>
               <Typography>
                 <b>
-                  <ColorText color={required ? 'success' : ''}>
+                  <ColorText color={required ? 'success' : undefined}>
                     {required}
                   </ColorText>
                 </b>

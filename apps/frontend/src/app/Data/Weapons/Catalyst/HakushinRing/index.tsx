@@ -1,3 +1,4 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
@@ -8,7 +9,6 @@ import {
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import ColorText from '../../../../Components/ColoredText'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'

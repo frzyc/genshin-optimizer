@@ -18,6 +18,7 @@ import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { cachedArtifact, validateArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   getArtifactEfficiency,
   getMainStatDisplayStr,
@@ -77,7 +78,6 @@ import CustomNumberTextField from '../Components/CustomNumberTextField'
 import DropdownButton from '../Components/DropdownMenu/DropdownButton'
 import ModalWrapper from '../Components/ModalWrapper'
 import { getArtSheet } from '../Data/Artifacts'
-import StatIcon from '../KeyMap/StatIcon'
 import { shouldShowDevComponents } from '../Util/Util'
 import ArtifactCard from './ArtifactCard'
 import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard'

@@ -1,7 +1,7 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent } from '@genshin-optimizer/gi/wr'
-import ColorText from '../../../Components/ColoredText'
 import { absorbableEle } from '../../../Types/consts'
 import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'

@@ -1,11 +1,13 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
 import type { AdditiveReactionKey } from '@genshin-optimizer/gi/consts'
-import { DendroIcon, ElectroIcon } from '@genshin-optimizer/gi/svgicons'
+import {
+  DendroIcon,
+  ElectroIcon,
+  ElementIcon,
+} from '@genshin-optimizer/gi/svgicons'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import { ElementIcon } from '../KeyMap/StatIcon'
-import ColorText from './ColoredText'
-import SqBadge from './SqBadge'
 
 const sqBadgeStyle = { mx: 0.25, px: 0.25 }
 export default function AdditiveReactionModeText({

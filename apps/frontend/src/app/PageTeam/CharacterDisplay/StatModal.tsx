@@ -1,3 +1,4 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import type { TeamCharacter } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { allEleDmgKeys, allEleResKeys } from '@genshin-optimizer/gi/keymap'
@@ -20,7 +21,6 @@ import { useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
-import ColorText from '../../Components/ColoredText'
 import {
   FieldDisplayList,
   NodeFieldDisplay,
@@ -210,7 +210,13 @@ function MainStatsCards() {
                     >
                       <span>
                         <b>Special:</b>{' '}
-                        <ColorText color={variant}>
+                        <ColorText
+                          color={
+                            variant && variant === 'invalid'
+                              ? undefined
+                              : variant
+                          }
+                        >
                           {icon} {name}
                         </ColorText>
                       </span>

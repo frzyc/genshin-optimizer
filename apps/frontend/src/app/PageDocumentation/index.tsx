@@ -1,4 +1,4 @@
-import { CodeBlock } from '@genshin-optimizer/common/ui'
+import { CodeBlock, SqBadge } from '@genshin-optimizer/common/ui'
 import {
   allArtifactSetKeys,
   allLocationCharacterKeys,
@@ -26,7 +26,6 @@ import { useTranslation } from 'react-i18next'
 import { Link, Route, Routes, useMatch } from 'react-router-dom'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
-import SqBadge from '../Components/SqBadge'
 
 export default function PageDocumentation() {
   // const { t } = useTranslation("documentation")

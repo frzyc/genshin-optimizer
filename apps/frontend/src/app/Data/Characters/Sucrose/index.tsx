@@ -1,3 +1,4 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
@@ -12,7 +13,6 @@ import {
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import ColorText from '../../../Components/ColoredText'
 import { absorbableEle } from '../../../Types/consts'
 import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
