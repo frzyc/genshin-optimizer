@@ -61,7 +61,7 @@ const team_eleMasDisp = equal(
   input.weapon.key,
   key,
   subscript(input.weapon.refinement, team_eleMasArr),
-  { ...{ path: 'eleMas' }, isTeamBuff: true }
+  { path: 'eleMas', isTeamBuff: true }
 )
 // Apply to non-equipped character
 const team_eleMas = unequal(input.charKey, target.charKey, team_eleMasDisp)

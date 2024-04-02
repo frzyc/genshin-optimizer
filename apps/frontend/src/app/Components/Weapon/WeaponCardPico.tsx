@@ -1,3 +1,4 @@
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
@@ -14,7 +15,6 @@ import { useMemo } from 'react'
 import { getWeaponSheet } from '../../Data/Weapons'
 import WeaponSheet from '../../Data/Weapons/WeaponSheet'
 import CardDark from '../Card/CardDark'
-import SqBadge from '../SqBadge'
 import WeaponNameTooltip from './WeaponNameTooltip'
 
 export default function WeaponCardPico({ weaponId }: { weaponId: string }) {

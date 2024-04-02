@@ -1,4 +1,9 @@
-import { CardHeaderCustom, ImgIcon } from '@genshin-optimizer/common/ui'
+import {
+  CardHeaderCustom,
+  ColorText,
+  ImgIcon,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -32,9 +37,7 @@ import {
 import AmpReactionModeText from '../../Components/AmpReactionModeText'
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
-import ColorText from '../../Components/ColoredText'
 import ModalWrapper from '../../Components/ModalWrapper'
-import SqBadge from '../../Components/SqBadge'
 import { DataContext } from '../../Context/DataContext'
 import { FormulaDataContext } from '../../Context/FormulaDataContext'
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
@@ -142,7 +145,11 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
     >
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography>
-          <ColorText color={variant}>{name}</ColorText>{' '}
+          <ColorText
+            color={variant && variant === 'invalid' ? undefined : variant}
+          >
+            {name}
+          </ColorText>{' '}
           <strong>{nodeVStr(node)}</strong>
         </Typography>
         {allAmpReactionKeys.includes(variant as 'vaporize' | 'melt') && (

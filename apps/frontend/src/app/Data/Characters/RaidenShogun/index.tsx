@@ -139,7 +139,7 @@ const skillEyeTeamBurstDmgIncDisp = infoMut(
       unit: '%',
     })
   ),
-  { ...{ path: 'burst_dmg_' }, isTeamBuff: true }
+  { path: 'burst_dmg_', isTeamBuff: true }
 )
 const skillEyeTeamBurstDmgInc = unequal(
   key,

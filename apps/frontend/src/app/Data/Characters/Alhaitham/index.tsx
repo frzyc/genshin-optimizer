@@ -157,7 +157,7 @@ const c4MirrorsConsumed_eleMasDisp = infoMut(
       naught
     )
   ),
-  { ...{ path: 'eleMas' }, isTeamBuff: true }
+  { path: 'eleMas', isTeamBuff: true }
 )
 const c4MirrorsConsumed_eleMas = unequal(
   input.activeCharKey,

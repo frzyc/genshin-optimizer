@@ -115,12 +115,12 @@ const critRateTeam_1Disp = greaterEq(
   input.asc,
   1,
   equal('on', condA1, percent(dm.passive1.critRateInc), {
-    ...{ path: 'critRate_' },
+    path: 'critRate_',
     isTeamBuff: true,
   })
 )
 const critRateTeam_1 = unequal(key, target.charKey, critRateTeam_1Disp, {
-  ...{ path: 'critRate_' },
+  path: 'critRate_',
   isTeamBuff: true,
 })
 const [condA4Path, condA4] = cond(key, 'SanguineRouge')
@@ -135,12 +135,12 @@ const critRateTeam_2Disp = greaterEq(
   input.constellation,
   4,
   equal('on', condC4, percent(dm.constellation4.critRateInc), {
-    ...{ path: 'critRate_' },
+    path: 'critRate_',
     isTeamBuff: true,
   })
 )
 const critRateTeam_2 = unequal(key, target.charKey, critRateTeam_2Disp, {
-  ...{ path: 'critRate_' },
+  path: 'critRate_',
   isTeamBuff: true,
 })
 

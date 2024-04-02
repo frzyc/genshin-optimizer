@@ -6,6 +6,7 @@ import {
 import {
   CardThemed,
   ModalWrapper,
+  SqBadge,
   useConstObj,
 } from '@genshin-optimizer/common/ui'
 import {
@@ -100,7 +101,6 @@ import {
 import CharIconSide from '../../../../Components/Image/CharIconSide'
 import InfoTooltip from '../../../../Components/InfoTooltip'
 import NoArtWarning from '../../../../Components/NoArtWarning'
-import SqBadge from '../../../../Components/SqBadge'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'

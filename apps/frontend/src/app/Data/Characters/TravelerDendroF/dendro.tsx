@@ -1,3 +1,4 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
@@ -17,7 +18,7 @@ import {
   prod,
   target,
 } from '@genshin-optimizer/gi/wr'
-import ColorText from '../../../Components/ColoredText'
+import type { Palette } from '@mui/material'
 import { cond, st, stg } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
@@ -261,7 +262,7 @@ export default function dendro(
             fields: [
               {
                 node: infoMut(c6_dendro_dmg_disp, {
-                  ...{ path: 'dendro_dmg_' },
+                  path: 'dendro_dmg_',
                   isTeamBuff: true,
                 }),
               },
@@ -279,7 +280,11 @@ export default function dendro(
           Object.entries(c6_ele_dmg_disp).map(([ele, node]) => [
             ele,
             {
-              name: <ColorText color={ele}>{stg(`element.${ele}`)}</ColorText>,
+              name: (
+                <ColorText color={ele as keyof Palette}>
+                  {stg(`element.${ele}`)}
+                </ColorText>
+              ),
               fields: [
                 {
                   node: infoMut(node, {

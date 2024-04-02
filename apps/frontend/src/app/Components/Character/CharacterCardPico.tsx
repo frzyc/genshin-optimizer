@@ -2,6 +2,7 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   ConditionalWrapper,
+  SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
@@ -20,7 +21,6 @@ import { useCallback, useContext } from 'react'
 import { getCharSheet } from '../../Data/Characters'
 import { iconAsset } from '../../Util/AssetUtil'
 import CardDark from '../Card/CardDark'
-import SqBadge from '../SqBadge'
 
 export default function CharacterCardPico({
   characterKey,

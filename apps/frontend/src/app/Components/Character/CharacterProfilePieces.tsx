@@ -1,4 +1,4 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
+import { ImgIcon, SqBadge, StarsDisplay } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { charCard } from '@genshin-optimizer/gi/char-cards'
@@ -9,6 +9,7 @@ import {
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
+import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -27,9 +28,6 @@ import { useContext } from 'react'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
 import type { TalentSheetElementKey } from '../../Data/Characters/ICharacterSheet'
-import { ElementIcon } from '../../KeyMap/StatIcon'
-import SqBadge from '../SqBadge'
-import { StarsDisplay } from '../StarDisplay'
 
 export function CharacterCompactTalent() {
   const { characterSheet } = useContext(CharacterContext)

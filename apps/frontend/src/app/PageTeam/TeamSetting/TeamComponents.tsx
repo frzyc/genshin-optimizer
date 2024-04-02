@@ -1,4 +1,9 @@
-import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ColorText,
+  ImgIcon,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
@@ -33,7 +38,6 @@ import {
   CharacterCardHeader,
   CharacterCardHeaderContent,
 } from '../../Components/Character/CharacterCard/CharacterCardHeader'
-import ColorText from '../../Components/ColoredText'
 import DocumentDisplay from '../../Components/DocumentDisplay'
 import { NodeFieldDisplay } from '../../Components/FieldDisplay'
 import { InfoTooltipInline } from '../../Components/InfoTooltip'

@@ -184,7 +184,7 @@ const a1InBurst_eleMasDisp = greaterEq(
       )
     )
   ),
-  { ...{ path: 'eleMas' }, isTeamBuff: true }
+  { path: 'eleMas', isTeamBuff: true }
 )
 const a1InBurst_eleMas = equal(
   input.activeCharKey,

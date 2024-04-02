@@ -18,7 +18,7 @@ const afterSkill_atk_ = equal(
     condAfterSkill,
     'on',
     subscript(input.weapon.refinement, afterSkillAtkArr, {
-      ...{ path: 'atk_' },
+      path: 'atk_',
     })
   )
 )
@@ -32,7 +32,7 @@ const afterDmg_atk_ = equal(
     condAfterDmg,
     'on',
     subscript(input.weapon.refinement, afterDmgAtkArr, {
-      ...{ path: 'atk_' },
+      path: 'atk_',
     })
   )
 )
@@ -46,7 +46,7 @@ const noShield_hp_ = equal(
     condNoShield,
     'on',
     subscript(input.weapon.refinement, noShieldHpArr, {
-      ...{ path: 'hp_' },
+      path: 'hp_',
     })
   )
 )

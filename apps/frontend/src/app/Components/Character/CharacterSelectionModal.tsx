@@ -2,6 +2,7 @@ import {
   useBoolState,
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
+import { SqBadge, StarsDisplay } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
@@ -60,8 +61,6 @@ import CardDark from '../Card/CardDark'
 import CardLight from '../Card/CardLight'
 import ModalWrapper from '../ModalWrapper'
 import SortByButton from '../SortByButton'
-import SqBadge from '../SqBadge'
-import { StarsDisplay } from '../StarDisplay'
 import ElementToggle from '../ToggleButton/ElementToggle'
 import WeaponToggle from '../ToggleButton/WeaponToggle'
 import CharacterCard from './CharacterCard'

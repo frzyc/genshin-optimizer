@@ -7,7 +7,7 @@ import type {
 import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi/consts'
 import type { BuildTcArtifactSlot } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
-import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
@@ -23,7 +23,6 @@ import {
   StatColoredWithUnit,
   StatWithUnit,
 } from '../../../../../Components/StatDisplay'
-import StatIcon from '../../../../../KeyMap/StatIcon'
 import { BuildTcContext } from '../BuildTcContext'
 
 export function ArtifactMainLevelSlot({

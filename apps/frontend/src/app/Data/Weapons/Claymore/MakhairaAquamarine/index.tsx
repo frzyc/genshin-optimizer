@@ -65,7 +65,7 @@ const sheet: IWeaponSheet = {
       fields: [
         {
           node: infoMut(teamAtkDisp, {
-            ...{ path: 'atk' },
+            path: 'atk',
             isTeamBuff: true,
           }),
         },
