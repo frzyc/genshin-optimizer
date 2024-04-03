@@ -3,7 +3,7 @@ import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, sum } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'NighttimeWhispersInTheEchoingWoods'
@@ -36,46 +36,42 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
 })
 
-const sheet: IArtifactSheet = {
-  name: 'Nighttime Whispers In The Echoing Woods',
-  rarity: [4, 5],
-  setEffects: {
-    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          value: condAfterSkill,
-          path: condAfterSkillPath,
-          name: st('hitOp.skill'),
-          states: {
-            on: {
-              fields: [
-                {
-                  node: afterSkill_geo_dmg_,
-                },
-              ],
-            },
+const sheet: SetEffectSheet = {
+  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        value: condAfterSkill,
+        path: condAfterSkillPath,
+        name: st('hitOp.skill'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: afterSkill_geo_dmg_,
+              },
+            ],
           },
         },
-        {
-          header: setHeader(4),
-          value: condCrystallize,
-          path: condCrystallizePath,
-          canShow: equal(condAfterSkill, 'on', 1),
-          name: st('protectedByShieldCrystal'),
-          states: {
-            on: {
-              fields: [
-                {
-                  node: crystallize_geo_dmg_,
-                },
-              ],
-            },
+      },
+      {
+        header: setHeader(4),
+        value: condCrystallize,
+        path: condCrystallizePath,
+        canShow: equal(condAfterSkill, 'on', 1),
+        name: st('protectedByShieldCrystal'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: crystallize_geo_dmg_,
+              },
+            ],
           },
         },
-      ],
-    },
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)

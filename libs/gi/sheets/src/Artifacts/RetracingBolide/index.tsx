@@ -3,7 +3,7 @@ import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'RetracingBolide'
@@ -31,33 +31,29 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
 })
 
-const sheet: IArtifactSheet = {
-  name: 'Retracing Bolide',
-  rarity: [4, 5],
-  setEffects: {
-    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          value: condState,
-          path: condStatePath,
-          name: st('protectedByShield'),
-          states: {
-            on: {
-              fields: [
-                {
-                  node: set4NA,
-                },
-                {
-                  node: set4CA,
-                },
-              ],
-            },
+const sheet: SetEffectSheet = {
+  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        value: condState,
+        path: condStatePath,
+        name: st('protectedByShield'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: set4NA,
+              },
+              {
+                node: set4CA,
+              },
+            ],
           },
         },
-      ],
-    },
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)

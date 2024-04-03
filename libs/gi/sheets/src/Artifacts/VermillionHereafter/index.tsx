@@ -12,7 +12,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'VermillionHereafter'
@@ -51,44 +51,40 @@ export const data: Data = dataObjForArtifactSheet(key, {
     atk_: sum(set2, afterBurstAtk_, stacksAtk_),
   },
 })
-const sheet: IArtifactSheet = {
-  name: 'Vermillion Hereafter',
-  rarity: [4, 5],
-  setEffects: {
-    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          value: condAfterBurst,
-          path: condAfterBurstPath,
-          teamBuff: true,
-          name: st('afterUse.burst'),
-          states: {
-            on: {
-              fields: [{ node: afterBurstAtk_ }],
-            },
+const sheet: SetEffectSheet = {
+  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        value: condAfterBurst,
+        path: condAfterBurstPath,
+        teamBuff: true,
+        name: st('afterUse.burst'),
+        states: {
+          on: {
+            fields: [{ node: afterBurstAtk_ }],
           },
         },
-        {
-          header: setHeader(4),
-          value: condStacks,
-          path: condStacksPath,
-          teamBuff: true,
-          name: st('stacks'),
-          canShow: equal(condAfterBurst, 'on', 1),
-          states: Object.fromEntries(
-            range(1, 4).map((stacks) => [
-              stacks,
-              {
-                name: st('stack', { count: stacks }),
-                fields: [{ node: stacksAtk_ }],
-              },
-            ])
-          ),
-        },
-      ],
-    },
+      },
+      {
+        header: setHeader(4),
+        value: condStacks,
+        path: condStacksPath,
+        teamBuff: true,
+        name: st('stacks'),
+        canShow: equal(condAfterBurst, 'on', 1),
+        states: Object.fromEntries(
+          range(1, 4).map((stacks) => [
+            stacks,
+            {
+              name: st('stack', { count: stacks }),
+              fields: [{ node: stacksAtk_ }],
+            },
+          ])
+        ),
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)

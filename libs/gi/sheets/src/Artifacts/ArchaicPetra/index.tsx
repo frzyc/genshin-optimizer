@@ -5,7 +5,7 @@ import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent } from '@genshin-optimizer/gi/wr'
 import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 const key: ArtifactSetKey = 'ArchaicPetra'
 const setHeader = setHeaderTemplate(key)
@@ -29,40 +29,36 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
 })
 
-const sheet: IArtifactSheet = {
-  name: 'Archaic Petra',
-  rarity: [4, 5],
-  setEffects: {
-    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          path: condPath,
-          value: condNode,
-          teamBuff: true,
-          name: trm('condName'),
-          states: Object.fromEntries(
-            absorbableEle.map((e) => [
-              e,
-              {
-                name: <ColorText color={e}>{stg(`element.${e}`)}</ColorText>,
-                fields: [
-                  {
-                    node: set4Nodes[`${e}_dmg_`],
-                  },
-                  {
-                    text: stg('duration'),
-                    value: 10,
-                    unit: 's',
-                  },
-                ],
-              },
-            ])
-          ),
-        },
-      ],
-    },
+const sheet: SetEffectSheet = {
+  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        path: condPath,
+        value: condNode,
+        teamBuff: true,
+        name: trm('condName'),
+        states: Object.fromEntries(
+          absorbableEle.map((e) => [
+            e,
+            {
+              name: <ColorText color={e}>{stg(`element.${e}`)}</ColorText>,
+              fields: [
+                {
+                  node: set4Nodes[`${e}_dmg_`],
+                },
+                {
+                  text: stg('duration'),
+                  value: 10,
+                  unit: 's',
+                },
+              ],
+            },
+          ])
+        ),
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)
