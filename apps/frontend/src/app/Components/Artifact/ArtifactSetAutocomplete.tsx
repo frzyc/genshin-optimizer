@@ -1,3 +1,9 @@
+import type { GeneralAutocompleteProps } from '@genshin-optimizer/common/ui'
+import {
+  GeneralAutocomplete,
+  ImgIcon,
+  StarsDisplay,
+} from '@genshin-optimizer/common/ui'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
@@ -8,10 +14,6 @@ import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { setKeysByRarities } from '../../Data/Artifacts'
 import { artifactDefIcon } from '../../Data/Artifacts/ArtifactSheet'
-import type { GeneralAutocompleteProps } from '../GeneralAutocomplete'
-import { GeneralAutocomplete } from '../GeneralAutocomplete'
-import ImgIcon from '../Image/ImgIcon'
-import { StarsDisplay } from '../StarDisplay'
 import sortByRarityAndName from './sortByRarityAndName'
 
 export default function ArtifactSetAutocomplete({

@@ -3,7 +3,14 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  DropdownButton,
+  ModalWrapper,
+  SqBadge,
+  useConstObj,
+} from '@genshin-optimizer/common/ui'
 import {
   notEmpty,
   objKeyMap,
@@ -26,7 +33,17 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
+import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { getCharData } from '@genshin-optimizer/gi/stats'
+import {
+  CharIconSide,
+  resolveInfo,
+  uiDataForTeam,
+  type UIData,
+} from '@genshin-optimizer/gi/ui'
+import type { NumNode } from '@genshin-optimizer/gi/wr'
+import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -70,7 +87,6 @@ import React, {
 import { Trans, useTranslation } from 'react-i18next'
 import ArtifactCardPico from '../../../../Components/Artifact/ArtifactCardPico'
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
-import BootstrapTooltip from '../../../../Components/BootstrapTooltip'
 import CardLight from '../../../../Components/Card/CardLight'
 import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
 import {
@@ -78,31 +94,21 @@ import {
   CharacterCardHeaderContent,
 } from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
 import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
-import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton'
 import {
   HitModeToggle,
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
-import CharIconSide from '../../../../Components/Image/CharIconSide'
 import InfoTooltip from '../../../../Components/InfoTooltip'
 import NoArtWarning from '../../../../Components/NoArtWarning'
-import SqBadge from '../../../../Components/SqBadge'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
-import { mergeData, uiDataForTeam } from '../../../../Formula/api'
-import { optimize } from '../../../../Formula/optimization'
-import type { NumNode } from '../../../../Formula/type'
-import type { UIData } from '../../../../Formula/uiData'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
-import type { OptProblemInput } from '../../../../Solver'
-import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
-import { mergeBuilds, mergePlot } from '../../../../Solver/common'
 import { bulkCatTotal } from '../../../../Util/totalUtils'
-import useOldData from '../../../useOldData'
+import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
 import AllowChar from './Components/AllowChar'
 import ArtifactSetConfig from './Components/ArtifactSetConfig'
@@ -185,20 +191,23 @@ export default function TabBuild() {
     allowPartial,
     artExclusion,
     buildDate,
-    builds,
+    builds: buildsDb,
     excludedLocations,
     levelHigh,
     levelLow,
     mainStatAssumptionLevel,
     mainStatKeys,
     maxBuildsToShow,
-    optimizationTarget,
+    optimizationTarget: optimizationTargetDb,
     plotBase,
     useExcludedArts,
     useTeammateBuild,
   } = buildSetting
+
+  const builds = useConstObj(buildsDb)
+  const optimizationTarget = useConstObj(optimizationTargetDb)
   const { data } = useContext(DataContext)
-  const oldData = useOldData()
+  const compareData = useCompareData()
   const optimizationTargetNode =
     optimizationTarget && objPathValue(data?.getDisplay(), optimizationTarget)
   const isSM = ['xs', 'sm'].includes(useMediaQueryUp())
@@ -397,10 +406,9 @@ export default function TabBuild() {
               workerData.display ?? {},
               JSON.parse(pathStr)
             )
+            const infoResolved = filterNode.info && resolveInfo(filterNode.info)
             const minimum =
-              filterNode.info?.unit === '%'
-                ? setting.value / 100
-                : setting.value // TODO: Conversion
+              infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
             return { value: filterNode, minimum: minimum }
           })
       )
@@ -464,11 +472,14 @@ export default function TabBuild() {
       if (plotBaseNumNode) {
         const plotData = mergePlot(results.map((x) => x.plotData!))
         const solverBuilds = Object.values(plotData)
-        if (targetNode.info?.unit === '%')
+        const targetNodeinfo = targetNode.info && resolveInfo(targetNode.info)
+        const plotBaseNumNodeInfo =
+          plotBaseNumNode.info && resolveInfo(plotBaseNumNode.info)
+        if (targetNodeinfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) => (dataEntry.value = dataEntry.value * 100)
           )
-        if (plotBaseNumNode.info?.unit === '%')
+        if (plotBaseNumNodeInfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) => (dataEntry.plot = (dataEntry.plot ?? 0) * 100)
           )
@@ -581,6 +592,7 @@ export default function TabBuild() {
     [t]
   )
   const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
+
   return (
     <Box display="flex" flexDirection="column" gap={1}>
       {noArtifact && <NoArtWarning />}
@@ -958,7 +970,7 @@ export default function TabBuild() {
         {graphBuilds && (
           <BuildList
             builds={graphBuilds}
-            oldData={oldData}
+            compareData={compareData}
             disabled={!!generatingBuilds}
             getLabel={getGraphBuildLabel}
             setBuilds={setGraphBuilds}
@@ -968,7 +980,7 @@ export default function TabBuild() {
         )}
         <BuildList
           builds={builds}
-          oldData={oldData}
+          compareData={compareData}
           disabled={!!generatingBuilds}
           getLabel={getNormBuildLabel}
           mainStatAssumptionLevel={mainStatAssumptionLevel}
@@ -1062,10 +1074,10 @@ const CharacterCard = memo(function CharacterCard({
   )
 })
 
-function BuildList({
+const BuildList = memo(function BuildList({
   builds,
   setBuilds,
-  oldData,
+  compareData,
   disabled,
   getLabel,
   mainStatAssumptionLevel,
@@ -1073,7 +1085,7 @@ function BuildList({
 }: {
   builds: GeneratedBuild[]
   setBuilds?: (builds: GeneratedBuild[] | undefined) => void
-  oldData?: UIData
+  compareData?: UIData
   disabled: boolean
   getLabel: (index: number) => Displayable
   mainStatAssumptionLevel: number
@@ -1094,52 +1106,33 @@ function BuildList({
   const {
     teamChar: { key: characterKey },
   } = teamCharacterContextValue
-  // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer optimization times.
-  const list = useMemo(
-    () =>
-      !!teamCharacterContextValue && (
-        <Suspense
-          fallback={
-            <Skeleton variant="rectangular" width="100%" height={600} />
-          }
+  return (
+    <Suspense
+      fallback={<Skeleton variant="rectangular" width="100%" height={600} />}
+    >
+      {builds?.map((build, index) => (
+        <DataContextWrapper
+          key={index + Object.values(build.artifactIds).join()}
+          characterKey={characterKey}
+          build={build}
+          compareData={compareData}
+          mainStatAssumptionLevel={mainStatAssumptionLevel}
         >
-          {builds?.map((build, index) => (
-            <DataContextWrapper
-              key={index + Object.values(build.artifactIds).join()}
-              characterKey={characterKey}
-              build={build}
-              oldData={oldData}
-              mainStatAssumptionLevel={mainStatAssumptionLevel}
-            >
-              <BuildItemWrapper
-                index={index}
-                label={getLabel(index)}
-                build={build}
-                disabled={disabled}
-                deleteBuild={setBuilds ? deleteBuild : undefined}
-                mainStatAssumptionLevel={mainStatAssumptionLevel}
-                allowLocationsState={allowLocationsState}
-              />
-            </DataContextWrapper>
-          ))}
-        </Suspense>
-      ),
-    [
-      teamCharacterContextValue,
-      builds,
-      characterKey,
-      oldData,
-      disabled,
-      getLabel,
-      deleteBuild,
-      setBuilds,
-      mainStatAssumptionLevel,
-      allowLocationsState,
-    ]
+          <BuildItemWrapper
+            index={index}
+            label={getLabel(index)}
+            build={build}
+            disabled={disabled}
+            deleteBuild={setBuilds ? deleteBuild : undefined}
+            mainStatAssumptionLevel={mainStatAssumptionLevel}
+            allowLocationsState={allowLocationsState}
+          />
+        </DataContextWrapper>
+      ))}
+    </Suspense>
   )
-  return list
-}
-function BuildItemWrapper({
+})
+const BuildItemWrapper = memo(function BuildItemWrapper({
   index,
   label,
   build,
@@ -1157,32 +1150,34 @@ function BuildItemWrapper({
   allowLocationsState: AllowLocationsState
 }) {
   const { t } = useTranslation('page_character_optimize')
-
+  const extraButtonsLeft = useMemo(() => {
+    return (
+      <>
+        <CopyTcButton build={build} />
+        <CopyBuildButton build={build} />
+        {deleteBuild && (
+          <Button
+            color="error"
+            size="small"
+            startIcon={<DeleteForever />}
+            onClick={() => deleteBuild(index)}
+          >
+            {t('removeBuildButton')}
+          </Button>
+        )}
+      </>
+    )
+  }, [build, deleteBuild, index, t])
   return (
     <BuildDisplayItem
       label={label}
       disabled={disabled}
-      extraButtonsLeft={
-        <>
-          <CopyTcButton build={build} />
-          <CopyBuildButton build={build} />
-          {deleteBuild && (
-            <Button
-              color="error"
-              size="small"
-              startIcon={<DeleteForever />}
-              onClick={() => deleteBuild(index)}
-            >
-              {t('removeBuildButton')}
-            </Button>
-          )}
-        </>
-      }
+      extraButtonsLeft={extraButtonsLeft}
       mainStatAssumptionLevel={mainStatAssumptionLevel}
       allowLocationsState={allowLocationsState}
     />
   )
-}
+})
 function CopyTcButton({ build }: { build: GeneratedBuild }) {
   const [name, setName] = useState('')
   const [showTcPrompt, onShowTcPrompt, OnHideTcPrompt] = useBoolState()
@@ -1331,14 +1326,14 @@ type Prop = {
   children: React.ReactNode
   characterKey: CharacterKey
   build: GeneratedBuild
-  oldData?: UIData
+  compareData?: UIData
   mainStatAssumptionLevel: number
 }
-function DataContextWrapper({
+const DataContextWrapper = memo(function DataContextWrapper({
   children,
   characterKey,
   build,
-  oldData,
+  compareData,
   mainStatAssumptionLevel,
 }: Prop) {
   const { artifactIds, weaponId } = build
@@ -1374,12 +1369,12 @@ function DataContextWrapper({
   const providerValue = useMemo(() => {
     const tdc = teamData?.[characterKey]
     if (!tdc) return undefined
-    return { data: tdc.target, teamData, oldData }
-  }, [teamData, oldData, characterKey])
+    return { data: tdc.target, teamData, compareData }
+  }, [teamData, compareData, characterKey])
   if (!providerValue) return null
   return (
     <DataContext.Provider value={providerValue}>
       {children}
     </DataContext.Provider>
   )
-}
+})

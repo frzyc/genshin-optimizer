@@ -1,5 +1,5 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
@@ -10,6 +10,7 @@ import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -20,8 +21,6 @@ import { useNavigate } from 'react-router-dom'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
 import { getCharSheet } from '../../../Data/Characters'
-import { uiInput as input } from '../../../Formula'
-import ImgIcon from '../../Image/ImgIcon'
 import LevelSelect from '../../LevelSelect'
 import { CharacterCardStats } from '../CharacterCard/CharacterCardStats'
 import {

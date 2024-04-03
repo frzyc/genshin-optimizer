@@ -1,8 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
-import { equal, subscript } from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+import { equal, input, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -20,7 +18,7 @@ const atk_ = subscript(input.weapon.refinement, atk_Src, { unit: '%' })
 const atkTeam_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, atkTeam_Src, KeyMap.info('atk_'))
+  subscript(input.weapon.refinement, atkTeam_Src, { path: 'atk_' })
 )
 const atkSPD_ = equal(
   'on',

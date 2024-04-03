@@ -1,15 +1,15 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   percent,
   prod,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -371,10 +371,9 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(
-                  p2Shield_physical_dmg_Disp,
-                  KeyMap.info('physical_dmg_')
-                ),
+                node: infoMut(p2Shield_physical_dmg_Disp, {
+                  path: 'physical_dmg_',
+                }),
               },
             ],
           },

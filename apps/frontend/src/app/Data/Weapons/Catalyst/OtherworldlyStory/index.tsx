@@ -1,7 +1,12 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
-import { equal, infoMut, prod, subscript } from '../../../../Formula/utils'
+import {
+  equal,
+  infoMut,
+  input,
+  prod,
+  subscript,
+} from '@genshin-optimizer/gi/wr'
 import { customHealNode } from '../../../Characters/dataUtil'
 import { st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'

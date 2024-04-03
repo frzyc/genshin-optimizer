@@ -4,13 +4,13 @@ import { range } from '@genshin-optimizer/common/util'
 import { talentLimits } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
+import type { NumNode } from '@genshin-optimizer/gi/wr'
+import { input } from '@genshin-optimizer/gi/wr'
 import { MenuItem } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
-import { input } from '../../Formula'
-import type { NumNode } from '../../Formula/type'
 
 export default function TalentDropdown({
   talentKey,

@@ -1,21 +1,21 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
+import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   percent,
   prod,
   subscript,
   sum,
+  target,
   unequal,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
-import { absorbableEle } from '../../../Types/consts'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -347,10 +347,9 @@ const sheet: ICharacterSheet = {
             name: ct.ch('c2.hit'),
             fields: [
               {
-                node: infoMut(
-                  c2Hit_anemo_enemyRes_,
-                  KeyMap.info('anemo_enemyRes_')
-                ),
+                node: infoMut(c2Hit_anemo_enemyRes_, {
+                  path: 'anemo_enemyRes_',
+                }),
               },
               {
                 node: c2Hit_phys_enemyRes__,
@@ -361,10 +360,9 @@ const sheet: ICharacterSheet = {
             name: ct.ch('c2.launched'),
             fields: [
               {
-                node: infoMut(
-                  c2Hit_anemo_enemyRes_,
-                  KeyMap.info('anemo_enemyRes_')
-                ),
+                node: infoMut(c2Hit_anemo_enemyRes_, {
+                  path: 'anemo_enemyRes_',
+                }),
               },
               {
                 node: c2Hit_phys_enemyRes__,
@@ -443,10 +441,7 @@ const sheet: ICharacterSheet = {
           takeDmg: {
             fields: [
               {
-                node: infoMut(
-                  c6_anemo_enemyRes_,
-                  KeyMap.info('anemo_enemyRes_')
-                ),
+                node: infoMut(c6_anemo_enemyRes_, { path: 'anemo_enemyRes_' }),
               },
             ],
           },

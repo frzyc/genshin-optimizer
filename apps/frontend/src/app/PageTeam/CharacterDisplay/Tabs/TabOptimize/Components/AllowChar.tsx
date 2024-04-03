@@ -3,6 +3,7 @@ import {
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
@@ -21,6 +22,7 @@ import type {
 } from '@genshin-optimizer/gi/db'
 import { allAllowLocationsState } from '@genshin-optimizer/gi/db'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import SettingsIcon from '@mui/icons-material/Settings'
@@ -48,14 +50,12 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
 import CharacterCardPico from '../../../../../Components/Character/CharacterCardPico'
 import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SolidToggleButtonGroup from '../../../../../Components/SolidToggleButtonGroup'
-import SqBadge from '../../../../../Components/SqBadge'
 import CharacterRarityToggle from '../../../../../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../../../../../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'

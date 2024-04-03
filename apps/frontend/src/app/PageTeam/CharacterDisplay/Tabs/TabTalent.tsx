@@ -1,7 +1,10 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
+import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
   CardActionArea,
@@ -17,7 +20,6 @@ import CardDark from '../../../Components/Card/CardDark'
 import CardLight from '../../../Components/Card/CardLight'
 import ConstellationDropdown from '../../../Components/Character/ConstellationDropdown'
 import TalentDropdown from '../../../Components/Character/TalentDropdown'
-import ConditionalWrapper from '../../../Components/ConditionalWrapper'
 import DocumentDisplay from '../../../Components/DocumentDisplay'
 import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
 import {
@@ -27,11 +29,7 @@ import {
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
 import type { TalentSheetElementKey } from '../../../Data/Characters/ICharacterSheet'
-import { uiInput as input } from '../../../Formula'
-import type { NodeDisplay } from '../../../Formula/uiData'
-import useCharacterReducer from '../../../ReactHooks/useCharacterReducer'
 import type { DocumentSection } from '../../../Types/sheet'
-
 const talentSpacing = {
   xs: 12,
   sm: 6,
@@ -40,9 +38,12 @@ const talentSpacing = {
 
 export default function CharacterTalentPane() {
   const { t } = useTranslation('sheet_gen')
-  const { character, characterSheet } = useContext(CharacterContext)
+  const {
+    character: { key: characterKey },
+    characterSheet,
+  } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const characterDispatch = useCharacterReducer(character.key)
+  const database = useDatabase()
   const skillBurstList = [
     ['auto', t('talents.auto')],
     ['skill', t('talents.skill')],
@@ -69,13 +70,13 @@ export default function CharacterTalentPane() {
           talentKey={`constellation${i}` as TalentSheetElementKey}
           subtitle={t('constellationLvl', { level: i })}
           onClickTitle={() =>
-            characterDispatch({
+            database.chars.set(characterKey, {
               constellation: i === constellation ? i - 1 : i,
             })
           }
         />
       )),
-    [t, constellation, characterDispatch]
+    [t, database, characterKey, constellation]
   )
 
   return (

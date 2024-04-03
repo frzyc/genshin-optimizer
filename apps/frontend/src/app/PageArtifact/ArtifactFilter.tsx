@@ -1,5 +1,6 @@
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
@@ -9,8 +10,6 @@ import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material'
 import { Suspense, lazy, useCallback, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
-import SqBadge from '../Components/SqBadge'
-import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
 import type { FilterOption } from './ArtifactSort'
 const ArtifactFilterDisplay = lazy(
   () => import('../Components/Artifact/ArtifactFilterDisplay')

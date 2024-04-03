@@ -4,7 +4,7 @@ import {
   CustomNumberInputButtonGroupWrapper,
   DropdownButton,
 } from '@genshin-optimizer/common/ui'
-import { unit } from '@genshin-optimizer/common/util'
+import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { MinTotalStatKey } from '@genshin-optimizer/gi/db'
 import { minTotalStatKeys } from '@genshin-optimizer/gi/db'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
@@ -85,12 +85,12 @@ function Selector({
   disabled: boolean
 }) {
   const { setBuildTc } = useContext(BuildTcContext)
-  const unitStr = statKey ? unit(statKey) : ' '
+  const unit = statKey ? getUnitStr(statKey) : ' '
   return (
     <ButtonGroup size="small">
       <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
         <CustomNumberInput
-          float={unitStr === '%'}
+          float={unit === '%'}
           value={statKey ? value : undefined}
           onChange={(value) =>
             statKey &&
@@ -100,7 +100,7 @@ function Selector({
           }
           endAdornment={
             <Box width="1em" component="span">
-              {unitStr}
+              {unit}
             </Box>
           }
           startAdornment={

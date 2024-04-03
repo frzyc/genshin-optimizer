@@ -1,6 +1,16 @@
+import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
+import {
+  CustomNumberInput,
+  CustomNumberInputButtonGroupWrapper,
+  GeneralAutocomplete,
+} from '@genshin-optimizer/common/ui'
+import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allMainStatKeys, allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import { artStatPercent } from '@genshin-optimizer/gi/ui'
+import type { InputPremodKey } from '@genshin-optimizer/gi/wr'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,
@@ -14,14 +24,6 @@ import {
 } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { artStatPercent } from '../Data/Artifacts/Artifact'
-import type { InputPremodKey } from '../Formula'
-import StatIcon from '../KeyMap/StatIcon'
-import CustomNumberInput, {
-  CustomNumberInputButtonGroupWrapper,
-} from './CustomNumberInput'
-import type { GeneralAutocompleteOption } from './GeneralAutocomplete'
-import { GeneralAutocomplete } from './GeneralAutocomplete'
 
 export default function StatEditorList({
   statKeys,
@@ -168,7 +170,7 @@ function StatFilterItem({
   const { t } = useTranslation('ui')
   const isThreeCol = useMediaQuery(theme.breakpoints.up('lg'))
   const isOneCol = useMediaQuery(theme.breakpoints.down('md'))
-  const isFloat = statKey ? KeyMap.unit(statKey) === '%' : false
+  const isFloat = statKey ? getUnitStr(statKey) === '%' : false
   const onValueChange = useCallback(
     (value?: number) => statKey && setValue(statKey, value ?? 0),
     [setValue, statKey]
@@ -246,7 +248,7 @@ function StatFilterItem({
           onChange={onValueChange}
           sx={{ px: 1 }}
           inputProps={{ sx: { textAlign: 'right' } }}
-          endAdornment={statKey ? KeyMap.unit(statKey) : undefined}
+          endAdornment={statKey ? getUnitStr(statKey) : undefined}
         />
       </CustomNumberInputButtonGroupWrapper>
       {!!statKey && (

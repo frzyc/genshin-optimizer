@@ -13,23 +13,24 @@ import type {
 import { allMainStatKeys } from '@genshin-optimizer/gi/consts'
 import type { CharacterDataGen } from '@genshin-optimizer/gi/stats'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { infusionNode, input } from '../../Formula'
-import { inferInfoMut, mergeData } from '../../Formula/api'
-import { reactions } from '../../Formula/reaction'
-import type { Data, DisplaySub, NumNode } from '../../Formula/type'
+import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   data,
+  inferInfoMut,
   infoMut,
+  infusionNode,
+  input,
   lookup,
+  mergeData,
   one,
   percent,
   prod,
+  reactions,
   stringPrio,
   subscript,
   sum,
-} from '../../Formula/utils'
-import KeyMap from '../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 
 const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
@@ -345,7 +346,7 @@ export function dataObjForCharacterSheet(
     if (!list.length) continue
 
     const result = infoMut(list.length === 1 ? list[0] : sum(...list), {
-      ...KeyMap.info(stat),
+      path: stat,
       prefix: 'char',
       asConst: true,
     })

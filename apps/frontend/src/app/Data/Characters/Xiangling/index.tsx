@@ -1,15 +1,15 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   percent,
   prod,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { activeCharBuff, cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -93,7 +93,7 @@ const [afterChiliDisp, afterChili] = activeCharBuff(
     4,
     equal('afterChili', condAfterChili, percent(dm.passive2.atk_bonus))
   ),
-  KeyMap.info('atk_')
+  { path: 'atk_' }
 )
 
 // C1

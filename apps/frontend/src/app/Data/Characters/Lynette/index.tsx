@@ -1,24 +1,25 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
+import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input, tally } from '../../../Formula'
 import {
   equal,
   equalStr,
   greaterEq,
   greaterEqStr,
   infoMut,
+  input,
   percent,
   prod,
   subscript,
+  tally,
   unequal,
-} from '../../../Formula/utils'
-import { absorbableEle } from '../../../Types/consts'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'

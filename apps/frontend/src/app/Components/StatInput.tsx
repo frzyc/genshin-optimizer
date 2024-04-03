@@ -1,10 +1,11 @@
-import { Replay } from '@mui/icons-material'
+import {
+  CustomNumberInput,
+  CustomNumberInputButtonGroupWrapper,
+} from '@genshin-optimizer/common/ui'
+import ReplayIcon from '@mui/icons-material/Replay'
 import type { ButtonGroupProps } from '@mui/material'
 import { Button, ButtonGroup, styled } from '@mui/material'
 import type { ReactNode } from 'react'
-import CustomNumberInput, {
-  CustomNumberInputButtonGroupWrapper,
-} from './CustomNumberInput'
 import TextButton from './TextButton'
 
 type StatInputInput = ButtonGroupProps & {
@@ -61,7 +62,7 @@ export default function StatInput({
         onClick={() => (onReset ? onReset() : onValueChange(defaultValue))}
         disabled={disabled || value === defaultValue}
       >
-        <Replay />
+        <ReplayIcon />
       </Button>
     </FlexButtonGroup>
   )

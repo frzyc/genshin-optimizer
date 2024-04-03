@@ -6,8 +6,7 @@ import type {
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import type { Data } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   equal,
@@ -15,6 +14,7 @@ import {
   greaterEq,
   greaterEqStr,
   infoMut,
+  input,
   lookup,
   max,
   min,
@@ -24,8 +24,7 @@ import {
   prod,
   subscript,
   sum,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
@@ -226,15 +225,15 @@ const c6_auto_dmgInc = greaterEq(
 )
 const c6_normal_dmgInc = infoMut(
   { ...c6_auto_dmgInc },
-  KeyMap.info('normal_dmgInc')
+  { path: 'normal_dmgInc' }
 )
 const c6_charged_dmgInc = infoMut(
   { ...c6_auto_dmgInc },
-  KeyMap.info('charged_dmgInc')
+  { path: 'charged_dmgInc' }
 )
 const c6_plunging_dmgInc = infoMut(
   { ...c6_auto_dmgInc },
-  KeyMap.info('plunging_dmgInc')
+  { path: 'plunging_dmgInc' }
 )
 
 const c6Pneuma_auto_dmgInc = greaterEq(
@@ -252,15 +251,15 @@ const c6Pneuma_auto_dmgInc = greaterEq(
 )
 const c6Pneuma_normal_dmgInc = infoMut(
   { ...c6Pneuma_auto_dmgInc },
-  KeyMap.info('normal_dmgInc')
+  { path: 'normal_dmgInc' }
 )
 const c6Pneuma_charged_dmgInc = infoMut(
   { ...c6Pneuma_auto_dmgInc },
-  KeyMap.info('charged_dmgInc')
+  { path: 'charged_dmgInc' }
 )
 const c6Pneuma_plunging_impact_dmgInc = infoMut(
   { ...c6Pneuma_auto_dmgInc },
-  KeyMap.info('plunging_dmgInc')
+  { path: 'plunging_dmgInc' }
 )
 
 const dmgFormulas = {

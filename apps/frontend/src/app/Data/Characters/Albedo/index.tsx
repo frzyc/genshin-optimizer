@@ -1,16 +1,16 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
 import {
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   prod,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
@@ -330,10 +330,7 @@ const sheet: ICharacterSheet = {
           skillInField: {
             fields: [
               {
-                node: infoMut(
-                  c4_plunging_dmg_disp,
-                  KeyMap.info('plunging_dmg_')
-                ),
+                node: infoMut(c4_plunging_dmg_disp, { path: 'plunging_dmg_' }),
               },
             ],
           },
@@ -349,7 +346,7 @@ const sheet: ICharacterSheet = {
           c6Crystallize: {
             fields: [
               {
-                node: infoMut(c6_Crystal_all_dmg_disp, KeyMap.info('all_dmg_')),
+                node: infoMut(c6_Crystal_all_dmg_disp, { path: 'all_dmg_' }),
               },
             ],
           },

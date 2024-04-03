@@ -1,4 +1,9 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  CustomNumberInput,
+  CustomNumberInputButtonGroupWrapper,
+  DropdownButton,
+} from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type {
   AdditiveReactionKey,
@@ -10,6 +15,8 @@ import {
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
+import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import { allInputPremodKeys } from '@genshin-optimizer/gi/wr'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { Box, Button, ButtonGroup, Grid, MenuItem } from '@mui/material'
@@ -17,16 +24,10 @@ import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import AdditiveReactionModeText from '../../../Components/AdditiveReactionModeText'
 import AmpReactionModeText from '../../../Components/AmpReactionModeText'
-import CustomNumberInput, {
-  CustomNumberInputButtonGroupWrapper,
-} from '../../../Components/CustomNumberInput'
-import DropdownButton from '../../../Components/DropdownMenu/DropdownButton'
 import { infusionVals } from '../../../Components/HitModeEditor'
 import StatEditorList from '../../../Components/StatEditorList'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
-import { allInputPremodKeys } from '../../../Formula'
-import type { NodeDisplay } from '../../../Formula/uiData'
 import {
   allowedAdditiveReactions,
   allowedAmpReactions,

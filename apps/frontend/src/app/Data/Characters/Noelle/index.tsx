@@ -1,18 +1,18 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
 import {
   constant,
   equal,
   equalStr,
   greaterEq,
   infoMut,
+  input,
   percent,
   prod,
   subscript,
   sum,
   unequal,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -116,15 +116,12 @@ const nodeBurstAtk = equal(
   )
 )
 
-const nodeSkillHealChanceBase = subscript(
-  input.total.skillIndex,
-  dm.skill.healChance,
+const nodeSkillHealChanceBase = infoMut(
+  subscript(input.total.skillIndex, dm.skill.healChance),
   { name: ct.chg('skill.skillParams.3'), unit: '%' }
 )
-const nodeSkillHealChanceC1BurstOn = equal(
-  'on',
-  condBurst,
-  percent(dm.constellation1.healingChance),
+const nodeSkillHealChanceC1BurstOn = infoMut(
+  equal('on', condBurst, percent(dm.constellation1.healingChance)),
   { name: ct.chg('skill.skillParams.3'), unit: '%' }
 )
 const nodeSkillHealChanceC1BurstOff = unequal(

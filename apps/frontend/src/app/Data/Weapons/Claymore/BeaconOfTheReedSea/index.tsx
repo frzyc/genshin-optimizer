@@ -1,8 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
-import { equal, subscript, sum } from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+import { equal, input, subscript, sum } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -20,7 +18,7 @@ const afterSkill_atk_ = equal(
     condAfterSkill,
     'on',
     subscript(input.weapon.refinement, afterSkillAtkArr, {
-      ...KeyMap.info('atk_'),
+      path: 'atk_',
     })
   )
 )
@@ -34,7 +32,7 @@ const afterDmg_atk_ = equal(
     condAfterDmg,
     'on',
     subscript(input.weapon.refinement, afterDmgAtkArr, {
-      ...KeyMap.info('atk_'),
+      path: 'atk_',
     })
   )
 )
@@ -48,7 +46,7 @@ const noShield_hp_ = equal(
     condNoShield,
     'on',
     subscript(input.weapon.refinement, noShieldHpArr, {
-      ...KeyMap.info('hp_'),
+      path: 'hp_',
     })
   )
 )

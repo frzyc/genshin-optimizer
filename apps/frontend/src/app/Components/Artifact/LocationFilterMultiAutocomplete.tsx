@@ -1,3 +1,5 @@
+import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
+import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
 import type { LocationCharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allLocationCharacterKeys,
@@ -5,14 +7,11 @@ import {
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { SillyContext } from '@genshin-optimizer/gi/ui'
+import { CharIconSide, SillyContext } from '@genshin-optimizer/gi/ui'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getCharSheet } from '../../Data/Characters'
-import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
-import { GeneralAutocompleteMulti } from '../GeneralAutocomplete'
-import CharIconSide from '../Image/CharIconSide'
 
 export default function LocationFilterMultiAutocomplete({
   locations,

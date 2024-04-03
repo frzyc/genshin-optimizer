@@ -1,15 +1,14 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
 import {
   equal,
   infoMut,
+  input,
   percent,
   prod,
   subscript,
   unequal,
-} from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -66,7 +65,7 @@ const sheet: IWeaponSheet = {
       fields: [
         {
           node: infoMut(teamAtkDisp, {
-            ...KeyMap.info('atk'),
+            path: 'atk',
             isTeamBuff: true,
           }),
         },

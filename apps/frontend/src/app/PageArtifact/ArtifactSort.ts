@@ -13,7 +13,7 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import Artifact from '../Data/Artifacts/Artifact'
+import { getArtifactEfficiency } from '@genshin-optimizer/gi/util'
 import { probability } from './RollProbability'
 export const artifactSortKeys = [
   'rarity',
@@ -72,9 +72,9 @@ export function artifactSortConfigs(
     level: (art) => art.level ?? 0,
     artsetkey: (art) => art.setKey ?? '',
     efficiency: (art) =>
-      Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency,
+      getArtifactEfficiency(art, effFilterSet).currentEfficiency,
     mefficiency: (art) =>
-      Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency,
+      getArtifactEfficiency(art, effFilterSet).maxEfficiency,
     probability: (art) => {
       if (!Object.keys(probabilityFilter).length) return 0
       const prob = (art as any).probability
@@ -108,17 +108,23 @@ export function artifactFilterConfigs(
     // When RV is set to 0/900, allow all, just incase someone is doing some teehee haha with negative substats or stupid rolls
     rvLow: (art, filter, filters) => {
       if (filter === 0) return true
+      filter = filter / 100
       const { useMaxRV } = filters
-      const { currentEfficiency, maxEfficiency } =
-        Artifact.getArtifactEfficiency(art, effFilterSet)
+      const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
+        art,
+        effFilterSet
+      )
       const efficiencyToCompare = useMaxRV ? maxEfficiency : currentEfficiency
       return filter <= efficiencyToCompare
     },
     rvHigh: (art, filter, filters) => {
       if (filter === 900) return true
+      filter = filter / 100
       const { useMaxRV } = filters
-      const { currentEfficiency, maxEfficiency } =
-        Artifact.getArtifactEfficiency(art, effFilterSet)
+      const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
+        art,
+        effFilterSet
+      )
       const efficiencyToCompare = useMaxRV ? maxEfficiency : currentEfficiency
       return filter >= efficiencyToCompare
     },

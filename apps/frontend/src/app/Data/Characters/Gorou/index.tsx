@@ -1,16 +1,17 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, tally, target } from '../../../Formula'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   prod,
   subscript,
   sum,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+  tally,
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -281,14 +282,14 @@ const sheet: ICharacterSheet = {
           inField: {
             fields: [
               {
-                node: infoMut(skill1_defDisp, KeyMap.info('def')),
+                node: infoMut(skill1_defDisp, { path: 'def' }),
               },
               {
                 canShow: (data) => data.get(tally['geo']).value >= 2,
                 text: st('incInterRes'),
               },
               {
-                node: infoMut(skill3_geo_dmg_Disp, KeyMap.info('geo_dmg_')),
+                node: infoMut(skill3_geo_dmg_Disp, { path: 'geo_dmg_' }),
               },
             ],
           },

@@ -1,5 +1,13 @@
+import {
+  CardHeaderCustom,
+  ImgIcon,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { objMap } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import type { DisplaySub } from '@genshin-optimizer/gi/wr'
+import { customRead } from '@genshin-optimizer/gi/wr'
 import type { MasonryProps } from '@mui/lab'
 import { Masonry } from '@mui/lab'
 import { Box, Divider, ListItem } from '@mui/material'
@@ -7,14 +15,8 @@ import { useContext, useMemo } from 'react'
 import { DataContext } from '../../Context/DataContext'
 import { OptimizationTargetContext } from '../../Context/OptimizationTargetContext'
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
-import type { DisplaySub } from '../../Formula/type'
-import type { NodeDisplay } from '../../Formula/uiData'
-import { customRead } from '../../Formula/utils'
 import CardDark from '../Card/CardDark'
-import CardHeaderCustom from '../Card/CardHeaderCustom'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
-import ImgIcon from '../Image/ImgIcon'
-import SqBadge from '../SqBadge'
 
 export default function StatDisplayComponent({
   columns = { xs: 1, sm: 2, md: 3, xl: 4 },
@@ -48,7 +50,7 @@ function Section({
   sectionKey: string
 }) {
   const optimizationTarget = useContext(OptimizationTargetContext)
-  const { data, oldData } = useContext(DataContext)
+  const { data, compareData } = useContext(DataContext)
   const database = useDatabase()
   const header = useMemo(
     () => getDisplayHeader(data, sectionKey, database),
@@ -77,8 +79,10 @@ function Section({
           <NodeFieldDisplay
             key={nodeKey}
             node={n}
-            oldValue={
-              oldData ? oldData.get(displayNsReads[nodeKey]!).value : undefined
+            compareValue={
+              compareData
+                ? compareData.get(displayNsReads[nodeKey]!).value
+                : undefined
             }
             component={ListItem}
             emphasize={

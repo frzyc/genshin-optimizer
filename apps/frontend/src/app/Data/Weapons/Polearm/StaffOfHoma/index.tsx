@@ -1,8 +1,13 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
-import { equal, infoMut, prod, subscript, sum } from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+import {
+  equal,
+  infoMut,
+  input,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -30,7 +35,7 @@ const atk2 = equal(
       subscript(input.weapon.refinement, lowHpAtkInc, { unit: '%' }),
       input.premod.hp
     ),
-    KeyMap.info('atk')
+    { path: 'atk' }
   )
 )
 const data = dataObjForWeaponSheet(
@@ -58,7 +63,7 @@ const sheet: IWeaponSheet = {
           node: hp_,
         },
         {
-          node: infoMut(atk1, KeyMap.info('atk')),
+          node: infoMut(atk1, { path: 'atk' }),
         },
       ],
     },
@@ -72,7 +77,7 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: infoMut(atk2, KeyMap.info('atk')),
+              node: infoMut(atk2, { path: 'atk' }),
             },
           ],
         },

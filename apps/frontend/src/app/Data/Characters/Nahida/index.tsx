@@ -1,13 +1,13 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, tally, target } from '../../../Formula'
 import {
   compareEq,
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   max,
   min,
@@ -16,9 +16,10 @@ import {
   prod,
   subscript,
   sum,
+  tally,
+  target,
   unequal,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -183,7 +184,7 @@ const a1InBurst_eleMasDisp = greaterEq(
       )
     )
   ),
-  { ...KeyMap.info('eleMas'), isTeamBuff: true }
+  { path: 'eleMas', isTeamBuff: true }
 )
 const a1InBurst_eleMas = equal(
   input.activeCharKey,

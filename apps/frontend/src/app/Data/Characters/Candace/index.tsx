@@ -1,19 +1,19 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
   equalStr,
   greaterEq,
   infoMut,
+  input,
   lookup,
   percent,
   prod,
   sum,
+  target,
   unequal,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -94,7 +94,7 @@ const normalEle_dmg_ = equal(
   condAfterBurst,
   'on',
   percent(dm.burst.dmg_bonus_),
-  KeyMap.info('normalEle_dmg_')
+  { path: 'normalEle_dmg_' }
 )
 
 const hydroInfusion = equalStr(
@@ -121,7 +121,7 @@ const a4_normalEle_dmg_ = infoMut(
       prod(percent(dm.passive2.normalEle_dmg_), input.total.hp, 1 / 1000)
     )
   ),
-  KeyMap.info('normalEle_dmg_')
+  { path: 'normalEle_dmg_' }
 )
 
 const [condC2AfterSkillHitPath, condC2AfterSkillHit] = cond(

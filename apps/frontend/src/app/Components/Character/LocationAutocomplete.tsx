@@ -1,4 +1,6 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
+import { GeneralAutocomplete } from '@genshin-optimizer/common/ui'
 import type {
   LocationCharacterKey,
   LocationKey,
@@ -10,18 +12,15 @@ import {
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { SillyContext } from '@genshin-optimizer/gi/ui'
-import { BusinessCenter } from '@mui/icons-material'
+import { CharIconSide, SillyContext } from '@genshin-optimizer/gi/ui'
+import type { Variant } from '@genshin-optimizer/gi/wr'
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { AutocompleteProps } from '@mui/material'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getCharSheet } from '../../Data/Characters'
 import type CharacterSheet from '../../Data/Characters/CharacterSheet'
-import type { Variant } from '../../Formula/type'
-import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
-import { GeneralAutocomplete } from '../GeneralAutocomplete'
-import CharIconSide from '../Image/CharIconSide'
 type LocationAutocompleteProps = {
   location: LocationKey
   setLocation: (v: LocationKey) => void
@@ -80,7 +79,7 @@ export function LocationAutocomplete({
   const toImg = useCallback(
     (key: LocationKey) =>
       key === '' ? (
-        <BusinessCenter />
+        <BusinessCenterIcon />
       ) : (
         <Box sx={{ opacity: charInDb.includes(key) ? undefined : 0.7 }}>
           <CharIconSide

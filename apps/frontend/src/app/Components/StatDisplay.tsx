@@ -1,9 +1,10 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { ColorText } from '@genshin-optimizer/common/ui'
+import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/gi/keymap'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { Box } from '@mui/material'
-import StatIcon from '../KeyMap/StatIcon'
-import ColorText from './ColoredText'
 
 export function StatWithUnit({
   statKey,
@@ -19,7 +20,7 @@ export function StatWithUnit({
       )}
       <span>
         {KeyMap.get(statKey)}
-        {KeyMap.unit(statKey)}
+        {getUnitStr(statKey)}
       </span>
     </Box>
   )

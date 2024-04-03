@@ -1,11 +1,14 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, ColorText } from '@genshin-optimizer/common/ui'
 import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { Team } from '@genshin-optimizer/gi/db'
 import { useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
-import { CheckBox, CheckBoxOutlineBlank, ExpandMore } from '@mui/icons-material'
+import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
+import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Box,
   Button,
@@ -17,8 +20,6 @@ import {
   Typography,
 } from '@mui/material'
 import { useCallback, useState } from 'react'
-import { ElementIcon } from '../KeyMap/StatIcon'
-import ColorText from './ColoredText'
 import ExpandButton from './ExpandButton'
 import StatInput from './StatInput'
 // TODO: Translation
@@ -69,7 +70,7 @@ export function EnemyExpandCard({ teamId }: { teamId: string }) {
               size="small"
               sx={{ marginLeft: 0 }}
             >
-              <ExpandMore />
+              <ExpandMoreIcon />
             </ExpandButton>
           </Box>
         </CardContent>
@@ -193,7 +194,11 @@ export function EnemyEditor({
                   })
                 }
                 startIcon={
-                  elementImmunity ? <CheckBox /> : <CheckBoxOutlineBlank />
+                  elementImmunity ? (
+                    <CheckBoxIcon />
+                  ) : (
+                    <CheckBoxOutlineBlankIcon />
+                  )
                 }
               >
                 Immunity

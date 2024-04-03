@@ -1,20 +1,21 @@
+import {
+  BootstrapTooltip,
+  ConditionalWrapper,
+} from '@genshin-optimizer/common/ui'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
-import { BusinessCenter } from '@mui/icons-material'
+import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import { computeUIData, nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
+import { dataObjForWeapon, input } from '@genshin-optimizer/gi/wr'
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { getWeaponSheet } from '../../Data/Weapons'
 import WeaponSheet from '../../Data/Weapons/WeaponSheet'
-import { input } from '../../Formula'
-import { computeUIData, dataObjForWeapon } from '../../Formula/api'
-import type { NodeDisplay } from '../../Formula/uiData'
-import { nodeVStr } from '../../Formula/uiData'
-import BootstrapTooltip from '../BootstrapTooltip'
 import CardDark from '../Card/CardDark'
 import LocationIcon from '../Character/LocationIcon'
-import ConditionalWrapper from '../ConditionalWrapper'
 import WeaponNameTooltip from './WeaponNameTooltip'
 
 type Data = {
@@ -144,7 +145,7 @@ export function WeaponCardNanoObj({
                         )}
                       />
                     ) : (
-                      <BusinessCenter />
+                      <BusinessCenterIcon />
                     )
                   }
                   color={'secondary'}
@@ -188,7 +189,8 @@ export function WeaponCardNanoObj({
   )
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
-  if (!node.info.name) return null
+  const { name, icon } = resolveInfo(node.info)
+  if (!name) return null
   return (
     <Box display="flex" gap={1} alignContent="center">
       <Typography
@@ -197,10 +199,10 @@ function WeaponStat({ node }: { node: NodeDisplay }) {
       >
         <BootstrapTooltip
           placement="top"
-          title={<Typography>{node.info.name}</Typography>}
+          title={<Typography>{name}</Typography>}
           disableInteractive
         >
-          <span>{node.info.icon}</span>
+          <span>{icon}</span>
         </BootstrapTooltip>
         <span>{nodeVStr(node)}</span>
       </Typography>

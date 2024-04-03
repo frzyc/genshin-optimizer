@@ -1,4 +1,5 @@
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
+import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import {
@@ -7,7 +8,11 @@ import {
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
+import {
+  ElementIcon,
+  FlowerIcon,
+  SlotIcon,
+} from '@genshin-optimizer/gi/svgicons'
 import { BusinessCenter, People } from '@mui/icons-material'
 import {
   CardActionArea,
@@ -22,13 +27,10 @@ import {
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
-import SlotIcon from '../Components/Artifact/SlotIcon'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
-import ImgIcon from '../Components/Image/ImgIcon'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
-import { ElementIcon } from '../KeyMap/StatIcon'
 
 export default function InventoryCard() {
   const { t } = useTranslation(['page_home', 'ui'])

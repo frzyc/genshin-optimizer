@@ -14,7 +14,7 @@ import {
 import { cachedRelic } from '@genshin-optimizer/sr/db'
 import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr/util'
-import { Add } from '@mui/icons-material'
+import AddIcon from '@mui/icons-material/Add'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
 import {
@@ -315,7 +315,7 @@ export function RelicEditor({ relicIdToEdit = 'new' }: RelicEditorProps) {
           )}
           <Grid>
             <Button
-              startIcon={<Add />}
+              startIcon={<AddIcon />}
               onClick={() => {
                 database.relics.new(relic!)
                 reset()

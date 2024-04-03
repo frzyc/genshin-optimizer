@@ -1,17 +1,17 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
 import {
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   percent,
   prod,
   subscript,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -464,7 +464,7 @@ const sheet: ICharacterSheet = {
           field: {
             fields: [
               {
-                node: infoMut(nodeAsc1Disp, KeyMap.info('cryo_dmg_')), // Jank
+                node: infoMut(nodeAsc1Disp, { path: 'cryo_dmg_' }), // Jank
               },
             ],
           },
@@ -478,7 +478,7 @@ const sheet: ICharacterSheet = {
             unit: 's',
           },
           {
-            node: infoMut(nodeC2Disp, KeyMap.info('cryo_critDMG_')),
+            node: infoMut(nodeC2Disp, { path: 'cryo_critDMG_' }),
           },
         ],
         teamBuff: true,

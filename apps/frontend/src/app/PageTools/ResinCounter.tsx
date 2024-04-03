@@ -1,3 +1,4 @@
+import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { MINUTE_MS, timeString } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { RESIN_MAX } from '@genshin-optimizer/gi/db'
@@ -13,7 +14,6 @@ import {
 } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
 import CardDark from '../Components/Card/CardDark'
-import ImgIcon from '../Components/Image/ImgIcon'
 
 export const RESIN_RECH_MS = 8 * MINUTE_MS
 

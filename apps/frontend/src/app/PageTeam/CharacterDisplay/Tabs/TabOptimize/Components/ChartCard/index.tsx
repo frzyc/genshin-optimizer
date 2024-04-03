@@ -1,4 +1,5 @@
 import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
+import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
 import {
   objKeyMap,
   objPathValue,
@@ -7,6 +8,9 @@ import {
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
 import { useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import { resolveInfo } from '@genshin-optimizer/gi/ui'
+import type { Info, InfoExtra, NumNode } from '@genshin-optimizer/gi/wr'
+import { input } from '@genshin-optimizer/gi/wr'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -38,15 +42,12 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../../Components/Card/CardLight'
 import InfoTooltip from '../../../../../../Components/InfoTooltip'
 import { DataContext } from '../../../../../../Context/DataContext'
 import { GraphContext } from '../../../../../../Context/GraphContext'
 import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
-import { input } from '../../../../../../Formula'
-import type { NumNode } from '../../../../../../Formula/type'
 import OptimizationTargetSelector from '../OptimizationTargetSelector'
 import CustomDot from './CustomDot'
 import CustomTooltip from './CustomTooltip'
@@ -308,12 +309,12 @@ export default function ChartCard({
               max={sliderMax}
               step={(sliderMax - sliderMin) / 20}
               valueLabelDisplay="auto"
-              valueLabelFormat={(n) =>
-                valueString(
-                  chartData.plotNode.info?.unit === '%' ? n / 100 : n,
-                  chartData.plotNode.info?.unit
-                )
-              }
+              valueLabelFormat={(n) => {
+                const info =
+                  chartData.plotNode.info &&
+                  resolveInfo(chartData.plotNode.info)
+                return valueString(info?.unit === '%' ? n / 100 : n, info?.unit)
+              }}
               sx={{ ml: '6%', width: '93%' }}
             />
           )}
@@ -360,9 +361,10 @@ function Chart({
     [setSelectedPoint, displayData]
   )
 
-  // Below works because character translation should already be loaded
-  const xLabelValue = getLabelFromNode(plotNode, t)
-  const yLabelValue = getLabelFromNode(valueNode, t)
+  const plotNodeInfo = plotNode.info && resolveInfo(plotNode.info)
+  const valueNodeInfo = valueNode.info && resolveInfo(valueNode.info)
+  const xLabelValue = plotNodeInfo && getLabelFromNode(plotNodeInfo, t)
+  const yLabelValue = valueNodeInfo && getLabelFromNode(valueNodeInfo, t)
 
   return (
     <ResponsiveContainer width="100%" height={600}>
@@ -376,7 +378,7 @@ function Chart({
         <XAxis
           dataKey="x"
           scale="linear"
-          unit={plotNode.info?.unit}
+          unit={plotNodeInfo?.unit}
           domain={['auto', 'auto']}
           tick={{ fill: 'white' }}
           type="number"
@@ -391,7 +393,7 @@ function Chart({
         <YAxis
           name="DMG"
           domain={['auto', 'auto']}
-          unit={valueNode.info?.unit}
+          unit={valueNodeInfo?.unit}
           allowDecimals={false}
           tick={{ fill: 'white' }}
           type="number"
@@ -405,10 +407,10 @@ function Chart({
         <Tooltip
           content={
             <CustomTooltip
-              xLabel={xLabelValue}
-              xUnit={plotNode.info?.unit}
-              yLabel={yLabelValue}
-              yUnit={valueNode.info?.unit}
+              xLabel={xLabelValue ?? ''}
+              xUnit={plotNodeInfo?.unit}
+              yLabel={yLabelValue ?? ''}
+              yUnit={valueNodeInfo?.unit}
               selectedPoint={selectedPoint}
               setSelectedPoint={setSelectedPoint}
               addBuildToList={addBuildToList}
@@ -540,10 +542,12 @@ function getNearestPoint(
     : undefined
 }
 
-function getLabelFromNode(node: NumNode, t: TFunction) {
-  return typeof node.info?.name === 'string'
-    ? node.info.name
-    : `${t(`${node.info?.name?.props.ns}:${node.info?.name?.props.key18}`)}${
-        node.info?.textSuffix ? ` ${node.info?.textSuffix}` : ''
+// Should work because character translation should already be loaded
+function getLabelFromNode(info: InfoExtra & Info, t: TFunction) {
+  const { name, textSuffix } = info
+  return typeof name === 'string'
+    ? name
+    : `${t(`${name?.props.ns}:${name?.props.key18}`)}${
+        textSuffix ? ` ${textSuffix}` : ''
       }`
 }

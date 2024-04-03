@@ -2,17 +2,17 @@ import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
+  CustomNumberInput,
 } from '@genshin-optimizer/common/ui'
-import { clamp } from '@genshin-optimizer/common/util'
+import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import { artMaxLevel, type SubstatKey } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { artDisplayValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import InfoIcon from '@mui/icons-material/Info'
 import { Box, Slider, Stack, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import CustomNumberInput from '../../../../../Components/CustomNumberInput'
-import StatIcon from '../../../../../KeyMap/StatIcon'
 import { BuildTcContext } from '../BuildTcContext'
 export function ArtifactSubstatEditor({
   statKey,
@@ -70,7 +70,7 @@ export function ArtifactSubstatEditor({
   const [rolls, setRolls] = useState(() => value / substatValue)
   useEffect(() => setRolls(value / substatValue), [value, substatValue])
 
-  const unit = KeyMap.unit(statKey)
+  const unit = getUnitStr(statKey)
   const displayValue = rolls * substatValue
 
   const rv = ((rolls * substatValue) / getSubstatValue(statKey)) * 100
@@ -96,9 +96,9 @@ export function ArtifactSubstatEditor({
       >
         <CustomNumberInput
           color={displayValue ? 'success' : 'primary'}
-          float={KeyMap.unit(statKey) === '%'}
+          float={getUnitStr(statKey) === '%'}
           endAdornment={
-            KeyMap.unit(statKey) || <Box width="1em" component="span" />
+            getUnitStr(statKey) || <Box width="1em" component="span" />
           }
           value={parseFloat(displayValue.toFixed(2))}
           onChange={(v) => v !== undefined && setValue(v)}
@@ -119,7 +119,7 @@ export function ArtifactSubstatEditor({
         >
           <StatIcon statKey={statKey} iconProps={{ fontSize: 'inherit' }} />
           {KeyMap.getStr(statKey)}
-          {KeyMap.unit(statKey)}
+          {getUnitStr(statKey)}
         </CardThemed>
         <CustomNumberInput
           color={value ? (invalid ? 'warning' : 'success') : 'primary'}

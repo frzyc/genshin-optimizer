@@ -1,16 +1,15 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import { type WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
 import {
   equal,
+  input,
   lookup,
   naught,
   prod,
   subscript,
   sum,
-} from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -29,7 +28,7 @@ const atk_ = equal(
   input.weapon.key,
   key,
   subscript(input.weapon.refinement, atk_arr),
-  KeyMap.info('atk_')
+  { path: 'atk_' }
 )
 
 const [condMelusinesPath, condMelusines] = cond(key, 'melusines')
@@ -41,7 +40,7 @@ const atk_2 = lookup(
     prod(stack, subscript(input.weapon.refinement, atk2_arr, { unit: '%' }))
   ),
   naught,
-  KeyMap.info('atk_')
+  { path: 'atk_' }
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

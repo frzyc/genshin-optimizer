@@ -1,8 +1,12 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
-import { equal, greaterEq, infoMut } from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+import {
+  equal,
+  greaterEq,
+  infoMut,
+  input,
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -70,7 +74,7 @@ const [condC2Path, condC2] = cond(key, 'QiqiC2')
 const nodeA1HealingBonus_disp = greaterEq(
   input.asc,
   1,
-  equal(condA1, 'on', 0.2, KeyMap.info('incHeal_'))
+  equal(condA1, 'on', 0.2, { path: 'incHeal_' })
 )
 const nodeA1HealingBonus = equal(
   input.activeCharKey,

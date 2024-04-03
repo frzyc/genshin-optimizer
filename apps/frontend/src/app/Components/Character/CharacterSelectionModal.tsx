@@ -2,6 +2,7 @@ import {
   useBoolState,
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
+import { SqBadge, StarsDisplay } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
@@ -19,8 +20,9 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
-import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import type { TooltipProps } from '@mui/material'
 import {
   Box,
@@ -59,8 +61,6 @@ import CardDark from '../Card/CardDark'
 import CardLight from '../Card/CardLight'
 import ModalWrapper from '../ModalWrapper'
 import SortByButton from '../SortByButton'
-import SqBadge from '../SqBadge'
-import { StarsDisplay } from '../StarDisplay'
 import ElementToggle from '../ToggleButton/ElementToggle'
 import WeaponToggle from '../ToggleButton/WeaponToggle'
 import CharacterCard from './CharacterCard'
@@ -324,7 +324,7 @@ function SelectionCard({
                 database.charMeta.set(characterKey, { favorite: !favorite })
               }}
             >
-              {favorite ? <Favorite /> : <FavoriteBorder />}
+              {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
             </IconButton>
           </Box>
           <CardActionArea onClick={onClick}>

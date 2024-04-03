@@ -1,8 +1,9 @@
+import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { SECOND_MS } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { RESIN_MAX, timeZones } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { AccessTimeFilled } from '@mui/icons-material'
+import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled'
 import {
   CardActionArea,
   CardContent,
@@ -14,7 +15,6 @@ import { useEffect, useRef, useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
-import ImgIcon from '../Components/Image/ImgIcon'
 import { RESIN_RECH_MS } from '../PageTools/ResinCounter'
 
 export default function ResinCard() {
@@ -87,7 +87,7 @@ export default function ResinCard() {
             {timeZoneKey} {time.toLocaleTimeString([], { timeZone: 'UTC' })}
           </Typography>
         }
-        avatar={<AccessTimeFilled fontSize="large" />}
+        avatar={<AccessTimeFilledIcon fontSize="large" />}
       />
       <Divider />
       <CardContent>

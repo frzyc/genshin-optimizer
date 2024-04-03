@@ -1,10 +1,10 @@
 import type {
   CharacterKey,
+  CharacterSheetKey,
   GenderKey,
   TravelerKey,
 } from '@genshin-optimizer/gi/consts'
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
-import type { CharacterSheetKey } from '../../Types/consts'
 import type CharacterSheet from './CharacterSheet'
 
 import Albedo from './Albedo'

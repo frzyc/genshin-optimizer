@@ -1,9 +1,14 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../../Components/ColoredText'
-import { input, target } from '../../../../Formula'
-import { equal, infoMut, subscript, unequal } from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+import {
+  equal,
+  infoMut,
+  input,
+  subscript,
+  target,
+  unequal,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -60,13 +65,13 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: infoMut(anemo_dmg_disp, {
-                ...KeyMap.info('anemo_dmg_'),
+                path: 'anemo_dmg_',
                 isTeamBuff: true,
               }),
             },
             {
               node: infoMut(electro_dmg_disp, {
-                ...KeyMap.info('electro_dmg_'),
+                path: 'electro_dmg_',
                 isTeamBuff: true,
               }),
             },
@@ -86,13 +91,13 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: infoMut(cryo_dmg_disp, {
-                ...KeyMap.info('cryo_dmg_'),
+                path: 'cryo_dmg_',
                 isTeamBuff: true,
               }),
             },
             {
               node: infoMut(electro_dmg_disp, {
-                ...KeyMap.info('electro_dmg_'),
+                path: 'electro_dmg_',
                 isTeamBuff: true,
               }),
             },
@@ -112,13 +117,13 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: infoMut(geo_dmg_disp, {
-                ...KeyMap.info('geo_dmg_'),
+                path: 'geo_dmg_',
                 isTeamBuff: true,
               }),
             },
             {
               node: infoMut(electro_dmg_disp, {
-                ...KeyMap.info('electro_dmg_'),
+                path: 'electro_dmg_',
                 isTeamBuff: true,
               }),
             },
@@ -138,13 +143,13 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: infoMut(pyro_dmg_disp, {
-                ...KeyMap.info('pyro_dmg_'),
+                path: 'pyro_dmg_',
                 isTeamBuff: true,
               }),
             },
             {
               node: infoMut(electro_dmg_disp, {
-                ...KeyMap.info('electro_dmg_'),
+                path: 'electro_dmg_',
                 isTeamBuff: true,
               }),
             },
@@ -164,13 +169,13 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: infoMut(hydro_dmg_disp, {
-                ...KeyMap.info('hydro_dmg_'),
+                path: 'hydro_dmg_',
                 isTeamBuff: true,
               }),
             },
             {
               node: infoMut(electro_dmg_disp, {
-                ...KeyMap.info('electro_dmg_'),
+                path: 'electro_dmg_',
                 isTeamBuff: true,
               }),
             },
@@ -188,13 +193,13 @@ const sheet: IWeaponSheet = {
           fields: [
             {
               node: infoMut(dendro_dmg_disp, {
-                ...KeyMap.info('dendro_dmg_'),
+                path: 'dendro_dmg_',
                 isTeamBuff: true,
               }),
             },
             {
               node: infoMut(electro_dmg_disp, {
-                ...KeyMap.info('electro_dmg_'),
+                path: 'electro_dmg_',
                 isTeamBuff: true,
               }),
             },

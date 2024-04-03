@@ -1,8 +1,6 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { input } from '../../../Formula'
-import type { Data, Info } from '../../../Formula/type'
-import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+import type { Data, Info } from '@genshin-optimizer/gi/wr'
+import { equal, greaterEq, input, percent, sum } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -11,7 +9,7 @@ import { dataObjForArtifactSheet } from '../dataUtil'
 const key: ArtifactSetKey = 'Berserker'
 const setHeader = setHeaderTemplate(key)
 
-const critRate_info: Info = KeyMap.info('critRate_')
+const critRate_info: Info = { path: 'critRate_' }
 const set2 = greaterEq(input.artSet.Berserker, 2, percent(0.12), critRate_info)
 const [condPath, condNode] = cond(key, 'hp')
 const set4 = greaterEq(

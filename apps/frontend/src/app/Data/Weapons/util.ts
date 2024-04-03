@@ -1,11 +1,17 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import type { WeaponData } from '@genshin-optimizer/gi/stats'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../Formula'
-import { inferInfoMut, mergeData } from '../../Formula/api'
-import type { Data, DisplaySub } from '../../Formula/type'
-import { constant, infoMut, prod, subscript, sum } from '../../Formula/utils'
-import KeyMap from '../../KeyMap'
+import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
+import {
+  constant,
+  inferInfoMut,
+  infoMut,
+  input,
+  mergeData,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/gi/wr'
 
 export function dataObjForWeaponSheet(
   key: WeaponKey,
@@ -43,7 +49,7 @@ export function dataObjForWeaponSheet(
       ),
       subscript(input.weapon.asc, gen.ascensionBonus['atk'] ?? [])
     ),
-    KeyMap.info(mainStat.type)
+    { path: mainStat.type }
   )
   merging.push({
     base: { [mainStat.type]: input.weapon.main },
@@ -62,7 +68,7 @@ export function dataObjForWeaponSheet(
         subStat.base,
         subscript(input.weapon.lvl, allStats.weapon.expCurve[subStat.curve])
       ),
-      KeyMap.info(subStat.type)
+      { path: subStat.type }
     )
     merging.push({
       premod: { [subStat.type]: input.weapon.sub },

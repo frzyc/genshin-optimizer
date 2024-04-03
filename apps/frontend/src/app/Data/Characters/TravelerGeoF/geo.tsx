@@ -1,17 +1,20 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterKey,
+  CharacterSheetKey,
+  ElementKey,
+} from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
-import type { DisplaySub } from '../../../Formula/type'
+import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   percent,
   prod,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
-import type { CharacterSheetKey } from '../../../Types/consts'
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
@@ -222,10 +225,7 @@ export default function geo(
           on: {
             fields: [
               {
-                node: infoMut(
-                  c1BurstArea_critRate_Disp,
-                  KeyMap.info('critRate_')
-                ),
+                node: infoMut(c1BurstArea_critRate_Disp, { path: 'critRate_' }),
               },
               {
                 text: st('incInterRes'),

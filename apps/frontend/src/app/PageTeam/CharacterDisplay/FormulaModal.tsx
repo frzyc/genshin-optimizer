@@ -1,8 +1,17 @@
+import {
+  CardHeaderCustom,
+  ColorText,
+  ImgIcon,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { ExpandMore } from '@mui/icons-material'
+import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
+import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import CloseIcon from '@mui/icons-material/Close'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Accordion,
   AccordionDetails,
@@ -27,18 +36,11 @@ import {
 } from 'react'
 import AmpReactionModeText from '../../Components/AmpReactionModeText'
 import CardDark from '../../Components/Card/CardDark'
-import CardHeaderCustom from '../../Components/Card/CardHeaderCustom'
 import CardLight from '../../Components/Card/CardLight'
-import ColorText from '../../Components/ColoredText'
-import ImgIcon from '../../Components/Image/ImgIcon'
 import ModalWrapper from '../../Components/ModalWrapper'
-import SqBadge from '../../Components/SqBadge'
 import { DataContext } from '../../Context/DataContext'
 import { FormulaDataContext } from '../../Context/FormulaDataContext'
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
-import type { DisplaySub } from '../../Formula/type'
-import type { NodeDisplay } from '../../Formula/uiData'
-import { nodeVStr } from '../../Formula/uiData'
 export default function FormulaModal() {
   const { modalOpen } = useContext(FormulaDataContext)
   const { setFormulaData } = useContext(FormulaDataContext)
@@ -133,6 +135,7 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
       )
   }, [scrollRef, node, contextNode])
 
+  const { variant, name, subVariant } = resolveInfo(node.info)
   return (
     <Accordion
       sx={{ bgcolor: 'contentNormal.main' }}
@@ -140,20 +143,20 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
       onChange={handleChange}
       ref={scrollRef}
     >
-      <AccordionSummary expandIcon={<ExpandMore />}>
+      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography>
-          <ColorText color={node.info.variant}>{node.info.name}</ColorText>{' '}
+          <ColorText
+            color={variant && variant === 'invalid' ? undefined : variant}
+          >
+            {name}
+          </ColorText>{' '}
           <strong>{nodeVStr(node)}</strong>
         </Typography>
-        {allAmpReactionKeys.includes(
-          node.info.variant as 'vaporize' | 'melt'
-        ) && (
+        {allAmpReactionKeys.includes(variant as 'vaporize' | 'melt') && (
           <Box sx={{ display: 'inline-block', ml: 'auto', mr: 2 }}>
             <AmpReactionModeText
-              reaction={node.info.variant as AmpReactionKey}
-              trigger={
-                node.info.subVariant as 'cryo' | 'pyro' | 'hydro' | undefined
-              }
+              reaction={variant as AmpReactionKey}
+              trigger={subVariant as 'cryo' | 'pyro' | 'hydro' | undefined}
             />
           </Box>
         )}

@@ -1,8 +1,6 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
-import { equal, greaterEq, sum } from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+import type { Data } from '@genshin-optimizer/gi/wr'
+import { equal, greaterEq, input, sum } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -11,24 +9,18 @@ import { dataObjForArtifactSheet } from '../dataUtil'
 const key: ArtifactSetKey = 'GoldenTroupe'
 const setHeader = setHeaderTemplate(key)
 
-const set2 = greaterEq(
-  input.artSet.GoldenTroupe,
-  2,
-  0.2,
-  KeyMap.info('skill_dmg_')
-)
+const set2 = greaterEq(input.artSet.GoldenTroupe, 2, 0.2, {
+  path: 'skill_dmg_',
+})
 
-const set4 = greaterEq(
-  input.artSet.GoldenTroupe,
-  4,
-  0.25,
-  KeyMap.info('skill_dmg_')
-)
+const set4 = greaterEq(input.artSet.GoldenTroupe, 4, 0.25, {
+  path: 'skill_dmg_',
+})
 const [condSet4Path, condSet4] = cond(key, 'set4')
 const set4Cond = greaterEq(
   input.artSet.GoldenTroupe,
   4,
-  equal(condSet4, 'on', 0.25, KeyMap.info('skill_dmg_'))
+  equal(condSet4, 'on', 0.25, { path: 'skill_dmg_' })
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

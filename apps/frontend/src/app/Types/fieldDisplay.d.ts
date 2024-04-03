@@ -1,5 +1,5 @@
-import type { NumNode } from '../Formula/type'
-import type { UIData } from '../Formula/uiData'
+import type { UIData } from '@genshin-optimizer/gi/ui'
+import type { NumNode } from '@genshin-optimizer/gi/wr'
 
 export interface IBasicFieldDisplay {
   canShow?: (data: UIData) => boolean

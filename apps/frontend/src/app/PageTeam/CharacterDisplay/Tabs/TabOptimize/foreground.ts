@@ -5,17 +5,12 @@ import {
   artMaxLevel,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import { getMainStatValue } from '@genshin-optimizer/gi/util'
-import { input } from '../../../../Formula'
-import { computeUIData } from '../../../../Formula/api'
-import { formulaString } from '../../../../Formula/debug'
-import type { Data, NumNode } from '../../../../Formula/type'
-import { constant, setReadNodeKeys } from '../../../../Formula/utils'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,
-  DynStat,
-} from '../../../../Solver/common'
+} from '@genshin-optimizer/gi/solver'
+import { getMainStatValue } from '@genshin-optimizer/gi/util'
+import { input, setReadNodeKeys } from '@genshin-optimizer/gi/wr'
 const dynamic = setReadNodeKeys(
   deepClone({ dyn: { ...input.art, ...input.artSet } })
 )
@@ -75,30 +70,30 @@ export function compactArtifacts(
   return result
 }
 
-export function debugCompute(
-  nodes: NumNode[],
-  base: DynStat,
-  arts: ArtifactBuildData[]
-) {
-  const stats = { ...base }
-  for (const art of arts) {
-    for (const [key, value] of Object.entries(art.values)) {
-      stats[key] = (stats[key] ?? 0) + value
-    }
-  }
-  const data = {
-    dyn: Object.fromEntries(
-      Object.entries(stats).map(([key, value]) => [key, constant(value)])
-    ),
-  } as Data
-  const uiData = computeUIData([data])
-  return {
-    base,
-    arts,
-    stats,
-    data,
-    uiData,
-    nodes: nodes.map(formulaString),
-    results: nodes.map((node) => uiData.get(node)),
-  }
-}
+// export function debugCompute(
+//   nodes: NumNode[],
+//   base: DynStat,
+//   arts: ArtifactBuildData[]
+// ) {
+//   const stats = { ...base }
+//   for (const art of arts) {
+//     for (const [key, value] of Object.entries(art.values)) {
+//       stats[key] = (stats[key] ?? 0) + value
+//     }
+//   }
+//   const data = {
+//     dyn: Object.fromEntries(
+//       Object.entries(stats).map(([key, value]) => [key, constant(value)])
+//     ),
+//   } as Data
+//   const uiData = computeUIData([data])
+//   return {
+//     base,
+//     arts,
+//     stats,
+//     data,
+//     uiData,
+//     nodes: nodes.map(formulaString),
+//     results: nodes.map((node) => uiData.get(node)),
+//   }
+// }

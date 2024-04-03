@@ -1,16 +1,17 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, tally } from '../../../Formula'
 import {
   equal,
   greaterEq,
   infoMut,
+  input,
   prod,
   subscript,
   sum,
+  tally,
   unequal,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'

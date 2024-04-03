@@ -1,13 +1,13 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
 import {
   compareEq,
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   one,
   percent,
@@ -15,8 +15,7 @@ import {
   subscript,
   sum,
   unequal,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import type { INodeFieldDisplay } from '../../../Types/fieldDisplay'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -108,7 +107,7 @@ const const5TalentInc = greaterEq(input.constellation, 5, 3)
 const normal_dmgMult = compareEq(
   condSkill,
   'skill',
-  subscript(input.total.skillIndex, dm.skill.dmg_, {
+  infoMut(subscript(input.total.skillIndex, dm.skill.dmg_), {
     name: st('dmgMult.normal'),
     unit: '%',
   }),
@@ -127,10 +126,9 @@ const pyro_dmg_ = greaterEq(
   equal(
     condSkill,
     'skill',
-    infoMut(
-      prod(percent(dm.passive1.pyro_dmg_), a1Stacks),
-      KeyMap.info('pyro_dmg_')
-    )
+    infoMut(prod(percent(dm.passive1.pyro_dmg_), a1Stacks), {
+      path: 'pyro_dmg_',
+    })
   )
 )
 const atk_ = greaterEq(
@@ -157,12 +155,9 @@ const c1atk_ = greaterEq(
 const c2pyro_dmg_ = greaterEq(
   input.constellation,
   2,
-  equal(
-    condC2,
-    'c2',
-    percent(dm.constellation2.pyro_dmg_),
-    KeyMap.info('pyro_dmg_')
-  )
+  equal(condC2, 'c2', percent(dm.constellation2.pyro_dmg_), {
+    path: 'pyro_dmg_',
+  })
 )
 
 const normalEntries = dm.normal.hitArr.map((arr, i) => [
@@ -192,7 +187,7 @@ const kindlingEntries = kindlingArrs.map((arr, i) => [
       customDmgNode(
         prod(
           subscript(input.total.autoIndex, arr, { unit: '%' }),
-          constant(dm.constellation6.dmg_, {
+          infoMut(constant(dm.constellation6.dmg_), {
             name: ct.ch('c6Key_'),
             unit: '%',
           }),
@@ -442,7 +437,7 @@ const sheet: ICharacterSheet = {
           c1: {
             fields: [
               {
-                node: constant(dm.constellation1.atk_, KeyMap.info('atk_')),
+                node: constant(dm.constellation1.atk_, { path: 'atk_' }),
               },
               {
                 text: stg('duration'),

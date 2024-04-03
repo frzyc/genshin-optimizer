@@ -1,6 +1,7 @@
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/ui'
 import TrackChangesIcon from '@mui/icons-material/TrackChanges'
 import {
   Box,
@@ -14,8 +15,6 @@ import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DataContext } from '../../../Context/DataContext'
 import { getDisplayHeader } from '../../../Formula/DisplayUtil'
-import type { NodeDisplay } from '../../../Formula/uiData'
-import ImgIcon from '../../Image/ImgIcon'
 export default function OptimizationTargetDisplay({
   optimizationTarget,
   showEmptyTargets = false,
@@ -47,13 +46,15 @@ export default function OptimizationTargetDisplay({
     !node ||
     // Make sure the opt target is valid, if we are not in multi-target
     (!showEmptyTargets && node.isEmpty)
+  const {
+    variant = invalidTarget ? 'secondary' : undefined,
+    textSuffix,
+    icon: infoIcon,
+    name,
+  } = (node && resolveInfo(node.info)) ?? {}
 
-  const prevariant = invalidTarget ? 'secondary' : node.info.variant
-  const variant = prevariant === 'invalid' ? undefined : prevariant
-
-  const { textSuffix } = node?.info ?? {}
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
-  const iconDisplay = icon ? <ImgIcon src={icon} size={2} /> : node?.info.icon
+  const iconDisplay = icon ? <ImgIcon src={icon} size={2} /> : infoIcon
   return (
     <CardThemed bgt="light">
       <CardHeader
@@ -93,8 +94,11 @@ export default function OptimizationTargetDisplay({
               variant="h6"
               sx={{ display: 'flex', alignItems: 'center' }}
             >
-              <SqBadge color={variant} sx={{ whiteSpace: 'normal' }}>
-                <strong>{node.info.name}</strong>
+              <SqBadge
+                color={variant === 'invalid' ? undefined : variant}
+                sx={{ whiteSpace: 'normal' }}
+              >
+                <strong>{name}</strong>
                 {suffixDisplay}
               </SqBadge>
             </Typography>

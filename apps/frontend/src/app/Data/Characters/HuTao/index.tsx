@@ -1,20 +1,20 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
 import {
   equal,
   equalStr,
   greaterEq,
   infoMut,
+  input,
   min,
   percent,
   prod,
   subscript,
   sum,
+  target,
   unequal,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -115,12 +115,12 @@ const critRateTeam_1Disp = greaterEq(
   input.asc,
   1,
   equal('on', condA1, percent(dm.passive1.critRateInc), {
-    ...KeyMap.info('critRate_'),
+    path: 'critRate_',
     isTeamBuff: true,
   })
 )
 const critRateTeam_1 = unequal(key, target.charKey, critRateTeam_1Disp, {
-  ...KeyMap.info('critRate_'),
+  path: 'critRate_',
   isTeamBuff: true,
 })
 const [condA4Path, condA4] = cond(key, 'SanguineRouge')
@@ -135,12 +135,12 @@ const critRateTeam_2Disp = greaterEq(
   input.constellation,
   4,
   equal('on', condC4, percent(dm.constellation4.critRateInc), {
-    ...KeyMap.info('critRate_'),
+    path: 'critRate_',
     isTeamBuff: true,
   })
 )
 const critRateTeam_2 = unequal(key, target.charKey, critRateTeam_2Disp, {
-  ...KeyMap.info('critRate_'),
+  path: 'critRate_',
   isTeamBuff: true,
 })
 

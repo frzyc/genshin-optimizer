@@ -1,15 +1,15 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
   equalStr,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   one,
@@ -17,9 +17,9 @@ import {
   prod,
   subscript,
   sum,
+  target,
   unequal,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
@@ -441,16 +441,14 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(
-                  dmgFormulas.skill.normal_dmgInc,
-                  KeyMap.info('normal_dmgInc')
-                ),
+                node: infoMut(dmgFormulas.skill.normal_dmgInc, {
+                  path: 'normal_dmgInc',
+                }),
               },
               {
-                node: infoMut(
-                  dmgFormulas.skill.charged_dmgInc,
-                  KeyMap.info('charged_dmgInc')
-                ),
+                node: infoMut(dmgFormulas.skill.charged_dmgInc, {
+                  path: 'charged_dmgInc',
+                }),
               },
             ],
           },
@@ -465,16 +463,14 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(
-                  dmgFormulas.constellation2.normal_dmgInc,
-                  KeyMap.info('normal_dmgInc')
-                ),
+                node: infoMut(dmgFormulas.constellation2.normal_dmgInc, {
+                  path: 'normal_dmgInc',
+                }),
               },
               {
-                node: infoMut(
-                  dmgFormulas.constellation2.charged_dmgInc,
-                  KeyMap.info('charged_dmgInc')
-                ),
+                node: infoMut(dmgFormulas.constellation2.charged_dmgInc, {
+                  path: 'charged_dmgInc',
+                }),
               },
             ],
           },
@@ -540,7 +536,7 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(dmgFormulas.burst.eleMas, KeyMap.info('eleMas')),
+                node: infoMut(dmgFormulas.burst.eleMas, { path: 'eleMas' }),
               },
             ],
           },
@@ -560,16 +556,14 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(
-                  dmgFormulas.burst.sub_normal_dmgInc,
-                  KeyMap.info('normal_dmgInc')
-                ),
+                node: infoMut(dmgFormulas.burst.sub_normal_dmgInc, {
+                  path: 'normal_dmgInc',
+                }),
               },
               {
-                node: infoMut(
-                  dmgFormulas.burst.sub_charged_dmgInc,
-                  KeyMap.info('charged_dmgInc')
-                ),
+                node: infoMut(dmgFormulas.burst.sub_charged_dmgInc, {
+                  path: 'charged_dmgInc',
+                }),
               },
             ],
           },
@@ -629,7 +623,7 @@ const sheet: ICharacterSheet = {
           name: st('hits', { count: stack }),
           fields: [
             {
-              node: infoMut(dmgFormulas.passive2.eleMas, KeyMap.info('eleMas')),
+              node: infoMut(dmgFormulas.passive2.eleMas, { path: 'eleMas' }),
             },
           ],
         })),

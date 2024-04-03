@@ -1,14 +1,13 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { Box, Button, Divider, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import ImgIcon from '../../../../../Components/Image/ImgIcon'
-import SqBadge from '../../../../../Components/SqBadge'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getDisplayHeader } from '../../../../../Formula/DisplayUtil'
-import type { NodeDisplay } from '../../../../../Formula/uiData'
 import type { TargetSelectorModalProps } from './TargetSelectorModal'
 import { TargetSelectorModal } from './TargetSelectorModal'
 
@@ -60,12 +59,15 @@ export default function OptimizationTargetSelector({
     // Make sure the opt target is valid, if we are not in multi-target
     (!showEmptyTargets && node.isEmpty)
 
-  const prevariant = invalidTarget ? 'secondary' : node.info.variant
-  const variant = prevariant === 'invalid' ? undefined : prevariant
+  const {
+    name,
+    textSuffix,
+    icon: nodeIcon,
+    variant = invalidTarget ? 'secondary' : undefined,
+  } = (node?.info && resolveInfo(node?.info)) ?? {}
 
-  const { textSuffix } = node?.info ?? {}
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
-  const iconDisplay = icon ? <ImgIcon src={icon} size={2} /> : node?.info.icon
+  const iconDisplay = icon ? <ImgIcon src={icon} size={2} /> : nodeIcon
   return (
     <>
       <Button
@@ -92,8 +94,11 @@ export default function OptimizationTargetSelector({
               )}
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <SqBadge color={variant} sx={{ whiteSpace: 'normal' }}>
-                <strong>{node.info.name}</strong>
+              <SqBadge
+                color={variant === 'invalid' ? undefined : variant}
+                sx={{ whiteSpace: 'normal' }}
+              >
+                <strong>{name}</strong>
                 {suffixDisplay}
               </SqBadge>
             </Box>

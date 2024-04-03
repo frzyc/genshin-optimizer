@@ -1,9 +1,14 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { input } from '../../../Formula'
-import type { Data, Info } from '../../../Formula/type'
-import { greaterEq, lookup, naught, percent, sum } from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+import type { Data, Info } from '@genshin-optimizer/gi/wr'
+import {
+  greaterEq,
+  input,
+  lookup,
+  naught,
+  percent,
+  sum,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -14,7 +19,7 @@ const setHeader = setHeaderTemplate(key)
 const [, trm] = trans('artifact', key)
 
 const [condStackPath, condStack] = cond(key, 'stack')
-const def_info: Info = KeyMap.info('def_')
+const def_info: Info = { path: 'def_' }
 const set2 = greaterEq(
   input.artSet.HuskOfOpulentDreams,
   2,

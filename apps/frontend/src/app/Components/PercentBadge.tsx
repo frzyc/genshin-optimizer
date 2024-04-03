@@ -1,8 +1,12 @@
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
+import type { RollColorKey } from '@genshin-optimizer/gi/ui'
 import type { ButtonProps } from '@mui/material'
-import type { RollColorKey } from '../Types/consts'
-import SqBadge from './SqBadge'
-
+/**
+ * Note, all inputs should be in decimals, and this component will output percentages.
+ * @param param0
+ * @returns
+ */
 export default function PercentBadge({
   value,
   max = 1,
@@ -20,7 +24,7 @@ export default function PercentBadge({
             1,
             6
           )}` as RollColorKey,
-          value.toFixed() + '%',
+          (value * 100).toFixed() + '%',
         ]
       : ['secondary', value]
   return <SqBadge color={valid ? badgeColor : 'error'}>{text}</SqBadge>

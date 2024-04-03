@@ -1,3 +1,4 @@
+import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type {
   RarityKey,
@@ -7,11 +8,9 @@ import type {
 import type { IWeapon } from '@genshin-optimizer/gi/good'
 import type { WeaponData } from '@genshin-optimizer/gi/stats'
 import { getLevelString } from '@genshin-optimizer/gi/util'
+import type { Data } from '@genshin-optimizer/gi/wr'
+import { input } from '@genshin-optimizer/gi/wr'
 import { displayDataMap } from '.'
-import ImgIcon from '../../Components/Image/ImgIcon'
-import SqBadge from '../../Components/SqBadge'
-import { input } from '../../Formula'
-import type { Data } from '../../Formula/type'
 import type { IDocumentHeader } from '../../Types/sheet'
 import { trans } from '../SheetUtil'
 import type { IWeaponSheet } from './IWeaponSheet'

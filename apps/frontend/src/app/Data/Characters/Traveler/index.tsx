@@ -1,12 +1,12 @@
 import type {
   CharacterKey,
+  CharacterSheetKey,
   ElementKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import type { Data, DisplaySub } from '../../../Formula/type'
-import { infoMut } from '../../../Formula/utils'
-import type { CharacterSheetKey } from '../../../Types/consts'
+import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
+import { infoMut } from '@genshin-optimizer/gi/wr'
 import { stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type {

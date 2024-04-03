@@ -1,3 +1,4 @@
+import { ImgIcon, SqBadge, StarsDisplay } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { charCard } from '@genshin-optimizer/gi/char-cards'
@@ -8,9 +9,12 @@ import {
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
+import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { getLevelString } from '@genshin-optimizer/gi/util'
-import { Favorite, FavoriteBorder } from '@mui/icons-material'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {
   Badge,
   Box,
@@ -24,12 +28,6 @@ import { useContext } from 'react'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
 import type { TalentSheetElementKey } from '../../Data/Characters/ICharacterSheet'
-import { uiInput as input } from '../../Formula'
-import { ElementIcon } from '../../KeyMap/StatIcon'
-import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
-import ImgIcon from '../Image/ImgIcon'
-import SqBadge from '../SqBadge'
-import { StarsDisplay } from '../StarDisplay'
 
 export function CharacterCompactTalent() {
   const { characterSheet } = useContext(CharacterContext)
@@ -87,9 +85,8 @@ export function CharacterCompactConstSelector() {
     characterSheet,
     character: { key: characterKey },
   } = useContext(CharacterContext)
+  const database = useDatabase()
   const { data } = useContext(DataContext)
-  const characterDispatch = useCharacterReducer(characterKey)
-
   const constellation = data.get(input.constellation).value
 
   return (
@@ -98,7 +95,7 @@ export function CharacterCompactConstSelector() {
         <Grid item xs={4} key={i}>
           <CardActionArea
             onClick={() =>
-              characterDispatch({
+              database.chars.set(characterKey, {
                 constellation: i === constellation ? i - 1 : i,
               })
             }
@@ -273,7 +270,7 @@ function FavoriteButton() {
           database.charMeta.set(characterKey, { favorite: !favorite })
         }
       >
-        {favorite ? <Favorite /> : <FavoriteBorder />}
+        {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
       </IconButton>
     </Box>
   )

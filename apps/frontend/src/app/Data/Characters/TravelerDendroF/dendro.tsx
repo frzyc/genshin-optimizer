@@ -1,20 +1,24 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterKey,
+  CharacterSheetKey,
+  ElementKey,
+} from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input, target } from '../../../Formula'
-import type { DisplaySub } from '../../../Formula/type'
+import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import {
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   percent,
   prod,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
-import type { CharacterSheetKey } from '../../../Types/consts'
+  target,
+} from '@genshin-optimizer/gi/wr'
+import type { Palette } from '@mui/material'
 import { cond, st, stg } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
@@ -78,7 +82,7 @@ export default function dendro(
       ),
       naught
     ),
-    KeyMap.info('eleMas')
+    { path: 'eleMas' }
   )
   const a1_eleMas = equal(input.activeCharKey, target.charKey, a1_eleMas_disp)
 
@@ -258,7 +262,7 @@ export default function dendro(
             fields: [
               {
                 node: infoMut(c6_dendro_dmg_disp, {
-                  ...KeyMap.info('dendro_dmg_'),
+                  path: 'dendro_dmg_',
                   isTeamBuff: true,
                 }),
               },
@@ -276,11 +280,15 @@ export default function dendro(
           Object.entries(c6_ele_dmg_disp).map(([ele, node]) => [
             ele,
             {
-              name: <ColorText color={ele}>{stg(`element.${ele}`)}</ColorText>,
+              name: (
+                <ColorText color={ele as keyof Palette}>
+                  {stg(`element.${ele}`)}
+                </ColorText>
+              ),
               fields: [
                 {
                   node: infoMut(node, {
-                    ...KeyMap.info(`${ele}_dmg_`),
+                    path: `${ele}_dmg_`,
                     isTeamBuff: true,
                   }),
                 },

@@ -1,15 +1,14 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import type { Data } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   greaterEq,
+  input,
   lookup,
   naught,
   sum,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -19,12 +18,9 @@ const key: ArtifactSetKey = 'NymphsDream'
 const setHeader = setHeaderTemplate(key)
 const [, trm] = trans('artifact', key)
 
-const set2 = greaterEq(
-  input.artSet.NymphsDream,
-  2,
-  0.15,
-  KeyMap.info('hydro_dmg_')
-)
+const set2 = greaterEq(input.artSet.NymphsDream, 2, 0.15, {
+  path: 'hydro_dmg_',
+})
 
 const [condSet4Path, condSet4] = cond(key, 'set4')
 const stacksArr = range(1, 3)
@@ -47,7 +43,7 @@ const set4_hydro_dmg_ = greaterEq(
     objKeyMap(stacksArr, (stack) => constant(hydro_dmg_arr[stack - 1])),
     naught
   ),
-  KeyMap.info('hydro_dmg_')
+  { path: 'hydro_dmg_' }
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

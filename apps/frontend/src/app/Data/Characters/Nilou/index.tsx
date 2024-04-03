@@ -1,17 +1,18 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, tally } from '../../../Formula/index'
 import {
   equal,
   greaterEq,
   infoMut,
+  input,
   max,
   min,
   percent,
   prod,
   sum,
+  tally,
   unequal,
-} from '../../../Formula/utils'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -134,7 +135,9 @@ const bountifulBloom_dmg_ = greaterEq(
 const c1_illusion_dmg_ = greaterEq(
   input.constellation,
   1,
-  percent(dm.constellation1.illusion_dmg_, { name: ct.ch(`c1.illusion_dmg_`) })
+  infoMut(percent(dm.constellation1.illusion_dmg_), {
+    name: ct.ch(`c1.illusion_dmg_`),
+  })
 )
 
 const [condC2HydroPath, condC2Hydro] = cond(key, 'c2Hydro')

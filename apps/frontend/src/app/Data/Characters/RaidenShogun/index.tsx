@@ -1,21 +1,21 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   one,
   percent,
   prod,
   subscript,
   sum,
+  target,
   unequal,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -104,7 +104,7 @@ const skillEye_ = equal(
   'skillEye',
   condSkillEye,
   prod(
-    constant(dm.burst.enerCost, { name: st('energy') }),
+    infoMut(constant(dm.burst.enerCost), { name: st('energy') }),
     subscript(input.total.skillIndex, dm.skill.burstDmg_bonus, {
       fixed: 2,
       unit: '%',
@@ -129,7 +129,9 @@ const skillEyeTeamBurstDmgIncDisp = infoMut(
   prod(
     lookup(
       condSkillEyeTeam,
-      objKeyMap(energyCosts, (i) => constant(i, { name: st('energy') })),
+      objKeyMap(energyCosts, (i) =>
+        infoMut(constant(i), { name: st('energy') })
+      ),
       0
     ),
     subscript(input.total.skillIndex, dm.skill.burstDmg_bonus, {
@@ -137,7 +139,7 @@ const skillEyeTeamBurstDmgIncDisp = infoMut(
       unit: '%',
     })
   ),
-  { ...KeyMap.info('burst_dmg_'), isTeamBuff: true }
+  { path: 'burst_dmg_', isTeamBuff: true }
 )
 const skillEyeTeamBurstDmgInc = unequal(
   key,
@@ -148,21 +150,23 @@ const skillEyeTeamBurstDmgInc = unequal(
 const resolveStacks = [10, 20, 30, 40, 50, 60]
 const [condResolveStackPath, condResolveStack] = cond(key, 'burstResolve')
 
-const resolveStackNode = lookup(
-  condResolveStack,
-  objKeyMap(resolveStacks, (i) => constant(i)),
-  0,
+const resolveStackNode = infoMut(
+  lookup(
+    condResolveStack,
+    objKeyMap(resolveStacks, (i) => constant(i)),
+    0
+  ),
   { name: ct.ch('burst.resolves') }
 )
 const resolveInitialBonus_ = prod(
-  subscript(input.total.burstIndex, dm.burst.resolveBonus1, {
+  infoMut(subscript(input.total.burstIndex, dm.burst.resolveBonus1), {
     name: ct.ch('burst.resolveInitial_'),
     unit: '%',
   }),
   resolveStackNode
 )
 const resolveInfusedBonus_ = prod(
-  subscript(input.total.burstIndex, dm.burst.resolveBonus2, {
+  infoMut(subscript(input.total.burstIndex, dm.burst.resolveBonus2), {
     name: ct.ch('burst.resolveInfused_'),
     unit: '%',
   }),

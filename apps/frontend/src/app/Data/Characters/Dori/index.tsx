@@ -1,11 +1,10 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import type {
   CharacterKey,
   ElementKey,
   RegionKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
@@ -13,12 +12,13 @@ import {
   greaterEq,
   greaterEqStr,
   infoMut,
+  input,
   min,
   percent,
   prod,
   subscript,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -168,7 +168,7 @@ const dmgFormulas = {
       customDmgNode(
         prod(
           subscript(input.total.skillIndex, dm.skill.shotDmg, { unit: '%' }),
-          percent(dm.constellation2.toopDmg, {
+          infoMut(percent(dm.constellation2.toopDmg), {
             name: ct.ch('c2MultiplierKey_'),
           }),
           input.total.atk
@@ -411,7 +411,7 @@ const sheet: ICharacterSheet = {
             name: ct.ch('c4ConnectedBelowHp'),
             fields: [
               {
-                node: infoMut(c4BelowHp_incHeal_disp, KeyMap.info('incHeal_')),
+                node: infoMut(c4BelowHp_incHeal_disp, { path: 'incHeal_' }),
               },
             ],
           },
@@ -421,10 +421,7 @@ const sheet: ICharacterSheet = {
             name: ct.ch('c4ConnectedBelowEner'),
             fields: [
               {
-                node: infoMut(
-                  c4BelowEner_enerRech_disp,
-                  KeyMap.info('enerRech_')
-                ),
+                node: infoMut(c4BelowEner_enerRech_disp, { path: 'enerRech_' }),
               },
             ],
           },

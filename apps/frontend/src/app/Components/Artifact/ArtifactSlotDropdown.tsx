@@ -1,11 +1,11 @@
+import { DropdownButton } from '@genshin-optimizer/common/ui'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
-import { Replay } from '@mui/icons-material'
+import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
+import ReplayIcon from '@mui/icons-material/Replay'
 import type { ButtonProps } from '@mui/material'
 import { Divider, ListItemIcon, ListItemText, MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import DropdownButton from '../DropdownMenu/DropdownButton'
-import SlotIcon from './SlotIcon'
 
 type ArtifactSlotDropdownProps = ButtonProps & {
   slotKey?: ArtifactSlotKey | ''
@@ -34,7 +34,7 @@ export default function ArtifactSlotDropdown({
           onClick={() => onChange('')}
         >
           <ListItemIcon>
-            <Replay />
+            <ReplayIcon />
           </ListItemIcon>
           <ListItemText>{t`ui:unselect`}</ListItemText>
         </MenuItem>

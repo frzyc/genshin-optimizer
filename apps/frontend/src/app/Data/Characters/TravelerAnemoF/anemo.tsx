@@ -1,21 +1,23 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import { objKeyValMap } from '@genshin-optimizer/common/util'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterKey,
+  CharacterSheetKey,
+  ElementKey,
+} from '@genshin-optimizer/gi/consts'
+import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input } from '../../../Formula'
-import type { Data, DisplaySub } from '../../../Formula/type'
+import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   percent,
   prod,
   unequal,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
-import type { CharacterSheetKey } from '../../../Types/consts'
-import { absorbableEle } from '../../../Types/consts'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'
 import Traveler from '../Traveler'
@@ -350,7 +352,7 @@ export default function anemo(
           on: {
             fields: [
               {
-                node: infoMut(nodeC6, KeyMap.info('anemo_enemyRes_')),
+                node: infoMut(nodeC6, { path: 'anemo_enemyRes_' }),
               },
               {
                 text: stg('duration'),

@@ -1,9 +1,13 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
-import { lookup, naught, percent, subscript } from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+import {
+  input,
+  lookup,
+  naught,
+  percent,
+  subscript,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -20,12 +24,8 @@ const condPassiveStates = ['less', 'more']
 const normal_dmg_ = lookup(
   condPassive,
   {
-    less: subscript(
-      input.weapon.refinement,
-      dmg_arr,
-      KeyMap.info('normal_dmg_')
-    ),
-    more: percent(-0.1, KeyMap.info('normal_dmg_')),
+    less: subscript(input.weapon.refinement, dmg_arr, { path: 'normal_dmg_' }),
+    more: percent(-0.1, { path: 'normal_dmg_' }),
   },
   naught
 )

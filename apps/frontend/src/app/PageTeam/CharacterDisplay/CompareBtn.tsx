@@ -9,7 +9,7 @@ import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 
 /**
  * The UI component that modifies the compare data in a TeamChar.
- * This is used in conjuction with useOldData hook to supply a oldData to the compare UI.
+ * This is used in conjuction with useCompareData hook to supply a compareData to the compare UI.
  */
 
 // TODO: Translation

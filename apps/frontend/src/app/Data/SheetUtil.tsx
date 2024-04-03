@@ -1,20 +1,24 @@
 import type {
   ArtifactSetKey,
   CharacterKey,
+  CharacterSheetKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
-import { SillyContext } from '@genshin-optimizer/gi/ui'
+import { SillyContext, Translate } from '@genshin-optimizer/gi/ui'
+import type { Info, NumNode, ReadNode, StrNode } from '@genshin-optimizer/gi/wr'
+import {
+  customStringRead,
+  equal,
+  infoMut,
+  input,
+} from '@genshin-optimizer/gi/wr'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Translate } from '../Components/Translate'
-import { input } from '../Formula'
-import type { Info, NumNode, ReadNode, StrNode } from '../Formula/type'
-import { customStringRead, equal, infoMut } from '../Formula/utils'
-import type { CharacterSheetKey } from '../Types/consts'
 
-export const st = (strKey: string, values?: object) => (
-  <Translate ns="sheet" key18={strKey} values={values} />
-)
+export const st = (
+  strKey: string,
+  values?: Record<string, string | number>
+) => <Translate ns="sheet" key18={strKey} values={values} />
 export const stg = (strKey: string) => (
   <Translate ns="sheet_gen" key18={strKey} />
 )
@@ -32,7 +36,7 @@ export function cond(
 
 type Translated = [
   trg: (i18key: string) => Displayable,
-  tr: (i18key: string, values?: object) => Displayable
+  tr: (i18key: string, values?: Record<string, string | number>) => Displayable
 ]
 type CharTransKey =
   | CharacterSheetKey
@@ -60,7 +64,7 @@ export function trans(
         key18={strKey}
       />
     ),
-    (strKey: string, values?: object) => (
+    (strKey: string, values?: Record<string, string | number>) => (
       <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />
     ),
   ]

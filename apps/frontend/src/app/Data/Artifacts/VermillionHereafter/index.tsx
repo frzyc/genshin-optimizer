@@ -1,16 +1,15 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import type { Data } from '@genshin-optimizer/gi/wr'
 import {
   equal,
   greaterEq,
+  input,
   lookup,
   naught,
   percent,
   sum,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -19,18 +18,15 @@ import { dataObjForArtifactSheet } from '../dataUtil'
 const key: ArtifactSetKey = 'VermillionHereafter'
 const setHeader = setHeaderTemplate(key)
 
-const set2 = greaterEq(
-  input.artSet.VermillionHereafter,
-  2,
-  percent(0.18),
-  KeyMap.info('atk_')
-)
+const set2 = greaterEq(input.artSet.VermillionHereafter, 2, percent(0.18), {
+  path: 'atk_',
+})
 const [condAfterBurstPath, condAfterBurst] = cond(key, 'afterBurst')
 const afterBurstAtk_ = greaterEq(
   input.artSet.VermillionHereafter,
   4,
   equal(condAfterBurst, 'on', percent(0.08)),
-  KeyMap.info('atk_')
+  { path: 'atk_' }
 )
 const [condStacksPath, condStacks] = cond(key, 'stacks')
 const stacksAtk_ = greaterEq(
@@ -46,7 +42,7 @@ const stacksAtk_ = greaterEq(
       ),
       naught
     ),
-    KeyMap.info('atk_')
+    { path: 'atk_' }
   )
 )
 

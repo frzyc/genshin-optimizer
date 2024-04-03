@@ -4,7 +4,13 @@ import { objMap } from '@genshin-optimizer/common/util'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DifferenceIcon from '@mui/icons-material/Difference'
-import { Button, Skeleton, Tooltip, Typography } from '@mui/material'
+import {
+  Button,
+  IconButton,
+  Skeleton,
+  Tooltip,
+  Typography,
+} from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterContext } from '../Context/CharacterContext'
@@ -73,7 +79,7 @@ function TeamWrapper({ artId, weaponId, onHide }: WrapperProps) {
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
   const { mainStatAssumptionLevel } = useOptConfig(optConfigId)!
-  const { data: oldData } = useContext(DataContext)
+  const { data } = useContext(DataContext)
   const build = useMemo(() => {
     const newArt = database.arts.get(artId ?? '')
     const equippedArtifacts = database.teams.getLoadoutArtifacts(loadoutDatum)
@@ -89,8 +95,12 @@ function TeamWrapper({ artId, weaponId, onHide }: WrapperProps) {
   )
   const dataProviderValue = useMemo(
     () =>
-      teamData && { data: teamData[characterKey]!.target, teamData, oldData },
-    [characterKey, teamData, oldData]
+      teamData && {
+        data: teamData[characterKey]!.target,
+        teamData,
+        compareData: data,
+      },
+    [characterKey, teamData, data]
   )
   if (!dataProviderValue) return null
   return <BuildDisplay dataProviderValue={dataProviderValue} onHide={onHide} />
@@ -101,7 +111,7 @@ function CharacterWrapper({ artId, weaponId, onHide }: WrapperProps) {
   const {
     character: { key: characterKey, equippedArtifacts },
   } = useContext(CharacterContext)
-  const { data: oldData } = useContext(DataContext)
+  const { data: compareData } = useContext(DataContext)
   const build = useMemo(() => {
     const newArt = database.arts.get(artId ?? '')
     const artmap = objMap(equippedArtifacts, (id, slot) =>
@@ -117,8 +127,12 @@ function CharacterWrapper({ artId, weaponId, onHide }: WrapperProps) {
   )
   const dataProviderValue = useMemo(
     () =>
-      teamData && { data: teamData[characterKey]!.target, teamData, oldData },
-    [characterKey, teamData, oldData]
+      teamData && {
+        data: teamData[characterKey]!.target,
+        teamData,
+        compareData,
+      },
+    [characterKey, teamData, compareData]
   )
   if (!dataProviderValue) return
   return <BuildDisplay dataProviderValue={dataProviderValue} onHide={onHide} />
@@ -150,9 +164,9 @@ function BuildDisplay({
               </>
             }
             extraButtonsRight={
-              <Button size="small" color="error" onClick={onHide}>
+              <IconButton onClick={onHide}>
                 <CloseIcon />
-              </Button>
+              </IconButton>
             }
             mainStatAssumptionLevel={mainStatAssumptionLevel}
             allowLocationsState={allowLocationsState}

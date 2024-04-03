@@ -231,3 +231,31 @@ export function travelerElement(element: TravelerElementKey): TravelerKey {
     element.toUpperCase().slice(0, 1) +
     element.slice(1)) as TravelerKey
 }
+
+export const absorbableEle = [
+  'hydro',
+  'pyro',
+  'cryo',
+  'electro',
+] as ElementKey[]
+
+export const travelerFKeys = [
+  'TravelerAnemoF',
+  'TravelerGeoF',
+  'TravelerElectroF',
+  'TravelerDendroF',
+  'TravelerHydroF',
+] as const
+export const travelerMKeys = [
+  'TravelerAnemoM',
+  'TravelerGeoM',
+  'TravelerElectroM',
+  'TravelerDendroM',
+  'TravelerHydroM',
+] as const
+export const allCharacterSheetKeys = [
+  ...nonTravelerCharacterKeys,
+  ...travelerFKeys,
+  ...travelerMKeys,
+]
+export type CharacterSheetKey = (typeof allCharacterSheetKeys)[number]

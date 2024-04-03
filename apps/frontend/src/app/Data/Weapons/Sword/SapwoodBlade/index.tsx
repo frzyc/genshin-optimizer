@@ -1,8 +1,12 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../../Formula'
-import { equal, infoMut, subscript } from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+import {
+  equal,
+  infoMut,
+  input,
+  subscript,
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -40,7 +44,7 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: infoMut(eleMas_disp, KeyMap.info('eleMas')),
+              node: infoMut(eleMas_disp, { path: 'eleMas' }),
             },
             {
               text: stg('duration'),

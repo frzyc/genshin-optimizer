@@ -1,12 +1,12 @@
+import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
 import type { MainStatKey } from '@genshin-optimizer/gi/consts'
 import { allMainStatKeys } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import { artStatPercent } from '@genshin-optimizer/gi/ui'
 import { Chip } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { artStatPercent } from '../../Data/Artifacts/Artifact'
-import StatIcon from '../../KeyMap/StatIcon'
-import { GeneralAutocompleteMulti } from '../GeneralAutocomplete'
 
 export default function ArtifactMainStatMultiAutocomplete({
   mainStatKeys,

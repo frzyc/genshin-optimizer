@@ -1,29 +1,5 @@
-import {
-  useDBMeta,
-  useDatabase,
-  useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
-import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'
-import {
-  Box,
-  Button,
-  CardContent,
-  Grid,
-  Pagination,
-  Skeleton,
-  Typography,
-} from '@mui/material'
-import CardLight from '../../../../Components/Card/CardLight'
-import {
-  HitModeToggle,
-  ReactionToggle,
-} from '../../../../Components/HitModeEditor'
-import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
-import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
-import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
-import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
-
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { clamp, objPathValue } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSlotKey,
@@ -35,6 +11,26 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
+  useDBMeta,
+  useDatabase,
+  useOptConfig,
+} from '@genshin-optimizer/gi/db-ui'
+import type { DynStat } from '@genshin-optimizer/gi/solver'
+import { resolveInfo, uiDataForTeam } from '@genshin-optimizer/gi/ui'
+import type { NumNode } from '@genshin-optimizer/gi/wr'
+import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
+import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'
+import {
+  Box,
+  Button,
+  CardContent,
+  Grid,
+  Pagination,
+  Skeleton,
+  Typography,
+} from '@mui/material'
+import { Stack } from '@mui/system'
+import {
   Suspense,
   useCallback,
   useContext,
@@ -44,30 +40,32 @@ import {
   useState,
 } from 'react'
 import { Trans } from 'react-i18next'
-import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
-import type { dataContextObj } from '../../../../Context/DataContext'
-import { DataContext } from '../../../../Context/DataContext'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
-import { mergeData, uiDataForTeam } from '../../../../Formula/api'
-import { optimize } from '../../../../Formula/optimization'
-import type { NumNode } from '../../../../Formula/type'
-import type { DynStat } from '../../../../Solver/common'
-import { shouldShowDevComponents } from '../../../../Util/Util'
-import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
-import { dynamicData } from '../TabOptimize/foreground'
-import UpgradeOptChartCard from './UpgradeOptChartCard'
-
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { Stack } from '@mui/system'
 import AddArtInfo from '../../../../Components/AddArtInfo'
+import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
+import CardLight from '../../../../Components/Card/CardLight'
 import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
 import {
   CharacterCardHeader,
   CharacterCardHeaderContent,
 } from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
 import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
+import {
+  HitModeToggle,
+  ReactionToggle,
+} from '../../../../Components/HitModeEditor'
 import NoArtWarning from '../../../../Components/NoArtWarning'
+import type { dataContextObj } from '../../../../Context/DataContext'
+import { DataContext } from '../../../../Context/DataContext'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
+import { shouldShowDevComponents } from '../../../../Util/Util'
+import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
+import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
+import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
+import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
+import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
+import { dynamicData } from '../TabOptimize/foreground'
+import UpgradeOptChartCard from './UpgradeOptChartCard'
 import type { UpOptBuild } from './upOpt'
 import { UpOptCalculator, toArtifact } from './upOpt'
 
@@ -235,8 +233,9 @@ export default function TabUpopt() {
             workerData.display ?? {},
             JSON.parse(pathStr)
           )
+          const infoResolved = filterNode.info && resolveInfo(filterNode.info)
           const minimum =
-            filterNode.info?.unit === '%' ? setting.value / 100 : setting.value
+            infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
           return { value: filterNode, minimum }
         })
     )

@@ -1,15 +1,14 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import type { Data } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   greaterEq,
+  input,
   lookup,
   naught,
   sum,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -20,18 +19,12 @@ const setHeader = setHeaderTemplate(key)
 
 const set2 = greaterEq(input.artSet.VourukashasGlow, 2, 0.2)
 
-const set4_skill_dmg_ = greaterEq(
-  input.artSet.VourukashasGlow,
-  4,
-  0.1,
-  KeyMap.info('skill_dmg_')
-)
-const set4_burst_dmg_ = greaterEq(
-  input.artSet.VourukashasGlow,
-  4,
-  0.1,
-  KeyMap.info('burst_dmg_')
-)
+const set4_skill_dmg_ = greaterEq(input.artSet.VourukashasGlow, 4, 0.1, {
+  path: 'skill_dmg_',
+})
+const set4_burst_dmg_ = greaterEq(input.artSet.VourukashasGlow, 4, 0.1, {
+  path: 'burst_dmg_',
+})
 
 const [condSet4Path, condSet4] = cond(key, 'set4')
 const stacksArr = range(1, 5)
@@ -43,7 +36,7 @@ const set4_stacks_skill_dmg_ = greaterEq(
     objKeyMap(stacksArr, (stack) => constant(stack * 0.08)),
     naught
   ),
-  KeyMap.info('skill_dmg_')
+  { path: 'skill_dmg_' }
 )
 const set4_stacks_burst_dmg_ = greaterEq(
   input.artSet.VourukashasGlow,
@@ -53,7 +46,7 @@ const set4_stacks_burst_dmg_ = greaterEq(
     objKeyMap(stacksArr, (stack) => constant(stack * 0.08)),
     naught
   ),
-  KeyMap.info('burst_dmg_')
+  { path: 'burst_dmg_' }
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

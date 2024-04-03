@@ -2,7 +2,11 @@ import {
   useBoolState,
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { objKeyMap, toggleArr } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSlotKey,
@@ -23,6 +27,7 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -39,6 +44,7 @@ import {
 } from '@mui/material'
 import {
   Suspense,
+  memo,
   useCallback,
   useContext,
   useEffect,
@@ -47,7 +53,6 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano'
-import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../../Components/Character/StatDisplayComponent'
@@ -57,7 +62,6 @@ import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { getCharSheet } from '../../../../../Data/Characters'
-import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../../PageWeapon/WeaponCard'
 import EquipBuildModal from '../../../Build/EquipBuildModal'
@@ -77,9 +81,11 @@ type BuildDisplayItemProps = {
   allowLocationsState: AllowLocationsState
 }
 
+export default memo(BuildDisplayItem)
+
 // TODO: Translation for build UI
 //for displaying each artifact build
-export default function BuildDisplayItem({
+function BuildDisplayItem({
   label,
   extraButtonsRight,
   extraButtonsLeft,
@@ -95,7 +101,7 @@ export default function BuildDisplayItem({
     character: { key: characterKey, equippedArtifacts, equippedWeapon },
   } = useContext(CharacterContext)
   const database = useDatabase()
-  const { data, oldData } = useContext(DataContext)
+  const { data, compareData } = useContext(DataContext)
 
   const [dbDirty, setDbDirty] = useForceUpdate()
   // update when a build is changed
@@ -109,10 +115,10 @@ export default function BuildDisplayItem({
   // update when data is recalc'd
   const weaponNewOld = useMemo(
     () => ({
-      oldId: oldData?.get(input.weapon.id)?.value,
+      oldId: compareData?.get(input.weapon.id)?.value,
       newId: data.get(input.weapon.id).value ?? '',
     }),
-    [data, oldData]
+    [data, compareData]
   )
 
   // state for showing weapon compare modal
@@ -122,10 +128,10 @@ export default function BuildDisplayItem({
   const artifactNewOldBySlot: Record<ArtifactSlotKey, NewOld> = useMemo(
     () =>
       objKeyMap(allArtifactSlotKeys, (slotKey) => ({
-        oldId: oldData?.get(input.art[slotKey].id)?.value,
+        oldId: compareData?.get(input.art[slotKey].id)?.value,
         newId: data.get(input.art[slotKey].id).value ?? '',
       })),
-    [data, oldData]
+    [data, compareData]
   )
 
   // state for showing art compare modal

@@ -1,3 +1,4 @@
+import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
 import {
   deepClone,
   deletePropPath,
@@ -5,8 +6,10 @@ import {
   layeredAssignment,
 } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
-import type { ButtonProps } from '@mui/material'
+import { Translate } from '@genshin-optimizer/gi/ui'
+import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
+import type { ButtonProps, Palette } from '@mui/material'
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { DataContext } from '../../Context/DataContext'
@@ -16,9 +19,6 @@ import type {
   IDocumentConditionalExclusive,
   IDocumentConditionalMultiple,
 } from '../../Types/sheet'
-import DropdownButton from '../DropdownMenu/DropdownButton'
-import SqBadge from '../SqBadge'
-import { Translate } from '../Translate'
 
 interface ConditionalSelectorProps {
   conditional: DocumentConditional
@@ -106,7 +106,9 @@ function SimpleConditionalSelector({
       color={conditionalValue ? 'success' : 'primary'}
       onClick={() => setConditional(conditionalValue ? undefined : stateKey)}
       disabled={disabled}
-      startIcon={conditionalValue ? <CheckBox /> : <CheckBoxOutlineBlank />}
+      startIcon={
+        conditionalValue ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
+      }
     >
       {condName} {badge}
     </Button>
@@ -251,7 +253,9 @@ function MultipleConditionalSelector({
                 setConditional(st.path, conditionalValue ? undefined : stateKey)
               }
               size="small"
-              startIcon={isSelected ? <CheckBox /> : <CheckBoxOutlineBlank />}
+              startIcon={
+                isSelected ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
+              }
               sx={{ borderRadius: 0 }}
             >
               {getCondName(st.name)}
@@ -280,7 +284,7 @@ function getStateBadge(stateName: Displayable | undefined): Displayable {
     }
   }
   return (
-    <SqBadge sx={{ ml: 0.5 }} color={badgeColor}>
+    <SqBadge sx={{ ml: 0.5 }} color={badgeColor as keyof Palette}>
       {badgeText}
     </SqBadge>
   )

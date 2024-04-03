@@ -1,5 +1,6 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { ColorText, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { deepClone, objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
@@ -18,6 +19,9 @@ import {
   handleArtSetExclusion,
 } from '@genshin-optimizer/gi/db'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
+import { Translate, UIData } from '@genshin-optimizer/gi/ui'
+import { constant } from '@genshin-optimizer/gi/wr'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import CloseIcon from '@mui/icons-material/Close'
@@ -44,21 +48,14 @@ import {
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
-import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
-import ColorText from '../../../../../Components/ColoredText'
 import { InfoTooltipInline } from '../../../../../Components/InfoTooltip'
-import ModalWrapper from '../../../../../Components/ModalWrapper'
-import SqBadge from '../../../../../Components/SqBadge'
-import { Translate } from '../../../../../Components/Translate'
 import type { dataContextObj } from '../../../../../Context/DataContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
-import { UIData } from '../../../../../Formula/uiData'
-import { constant } from '../../../../../Formula/utils'
 import type { SetNum } from '../../../../../Types/consts'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import SetInclusionButton from './SetInclusionButton'
@@ -480,7 +477,7 @@ export default function ArtifactSetConfig({
                 </CardLight>
               </Grid>
             </Grid>
-            <Grid container spacing={1} columns={{ xs: 2, lg: 3 }}>
+            <Grid container spacing={1} columns={ArtifactSetConfigGridColumns}>
               {artKeys.map((setKey) => (
                 <ArtifactSetCard
                   key={setKey}
@@ -497,6 +494,7 @@ export default function ArtifactSetConfig({
     </>
   )
 }
+const ArtifactSetConfigGridColumns = { xs: 2, lg: 3 } as const
 function AllSetAllowExcludeCard({
   allowTotal,
   setNum,

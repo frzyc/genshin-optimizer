@@ -1,6 +1,6 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import { crawlObject, unit } from '@genshin-optimizer/common/util'
+import { crawlObject, getUnitStr } from '@genshin-optimizer/common/util'
 import type { LoadoutDatum, TeamCharacter } from '@genshin-optimizer/gi/db'
 import {
   useDatabase,
@@ -288,7 +288,7 @@ function BonusStatsCard({
             fields: Object.entries(bonusStats).map(([key, value]) => ({
               text: KeyMap.getStr(key) ?? key,
               value: value,
-              unit: unit(key),
+              unit: getUnitStr(key),
             })),
           },
         ]}

@@ -58,7 +58,7 @@ export function Translate({
 }: {
   ns: string
   key18: string
-  values?: Record<string, string>
+  values?: Record<string, string | number>
   children?: ReactNode
   useBadge?: boolean
 }) {

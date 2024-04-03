@@ -1,16 +1,15 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { input } from '../../../Formula'
-import type { Data, Info } from '../../../Formula/type'
+import type { Data, Info } from '@genshin-optimizer/gi/wr'
 import {
   equal,
   greaterEq,
+  input,
   lookup,
   naught,
   percent,
   sum,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -21,7 +20,7 @@ const setHeader = setHeaderTemplate(key)
 
 const [condStackPath, condStack] = cond(key, 'stacks')
 
-const physical_dmg_info: Info = KeyMap.info('physical_dmg_')
+const physical_dmg_info: Info = { path: 'physical_dmg_' }
 const set2 = greaterEq(
   input.artSet.PaleFlame,
   2,

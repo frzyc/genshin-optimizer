@@ -1,3 +1,4 @@
+import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactRarity,
@@ -5,13 +6,11 @@ import type {
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import type { UIData } from '@genshin-optimizer/gi/ui'
+import { Translate } from '@genshin-optimizer/gi/ui'
+import type { Data } from '@genshin-optimizer/gi/wr'
+import { input } from '@genshin-optimizer/gi/wr'
 import artifactSheets from '.'
-import ImgIcon from '../../Components/Image/ImgIcon'
-import SqBadge from '../../Components/SqBadge'
-import { Translate } from '../../Components/Translate'
-import { input } from '../../Formula'
-import type { Data } from '../../Formula/type'
-import type { UIData } from '../../Formula/uiData'
 import type { SetNum } from '../../Types/consts'
 import type { IDocumentHeader } from '../../Types/sheet'
 import { st } from '../SheetUtil'

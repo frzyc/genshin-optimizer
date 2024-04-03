@@ -1,17 +1,16 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
 import {
   equal,
+  input,
   lookup,
   min,
   naught,
   prod,
   subscript,
   sum,
-} from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -50,7 +49,7 @@ const time_normal_dmg_ = equal(
       ])
     ),
     naught,
-    KeyMap.info('normal_dmg_')
+    { path: 'normal_dmg_' }
   )
 )
 
@@ -70,7 +69,7 @@ const hit_normal_dmg_ = equal(
       ])
     ),
     naught,
-    KeyMap.info('normal_dmg_')
+    { path: 'normal_dmg_' }
   )
 )
 

@@ -2,9 +2,13 @@ import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
-import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+import {
+  input,
+  lookup,
+  naught,
+  prod,
+  subscript,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -21,11 +25,7 @@ const [condPath, condNode] = cond(key, 'HonedFlow')
 const passive_dmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_dmg_`,
-    subscript(
-      input.weapon.refinement,
-      passiveRefine,
-      KeyMap.info(`${ele}_dmg_`)
-    ),
+    subscript(input.weapon.refinement, passiveRefine, { path: `${ele}_dmg_` }),
   ])
 )
 const normal_dmg_ = lookup(

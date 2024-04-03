@@ -1,12 +1,19 @@
-import { clamp } from '@genshin-optimizer/common/util'
+import {
+  CustomNumberInput,
+  CustomNumberInputButtonGroupWrapper,
+  DropdownButton,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
+import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import {
   allSubstatKeys,
   artSubstatRollData,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ISubstat } from '@genshin-optimizer/gi/good'
-import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import type { RollColorKey } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
   getSubstatSummedRolls,
@@ -27,15 +34,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { ArtifactStatWithUnit } from '../../../Components/Artifact/ArtifactStatKeyDisplay'
 import CardLight from '../../../Components/Card/CardLight'
-import CustomNumberInput, {
-  CustomNumberInputButtonGroupWrapper,
-} from '../../../Components/CustomNumberInput'
-import DropdownButton from '../../../Components/DropdownMenu/DropdownButton'
 import PercentBadge from '../../../Components/PercentBadge'
-import SqBadge from '../../../Components/SqBadge'
 import TextButton from '../../../Components/TextButton'
-import StatIcon from '../../../KeyMap/StatIcon'
-import type { RollColorKey } from '../../../Types/consts'
 
 export default function SubstatInput({
   index,
@@ -56,7 +56,7 @@ export default function SubstatInput({
   } = artifact?.substats[index] ?? {}
 
   const accurateValue = rolls.reduce((a, b) => a + b, 0)
-  const unit = KeyMap.unit(key),
+  const unit = getUnitStr(key),
     rollNum = rolls.length
 
   let error = '',
@@ -228,7 +228,7 @@ export default function SubstatInput({
                   {'Efficiency: '}
                   <PercentBadge
                     valid={true}
-                    max={rollNum * 100}
+                    max={rollNum}
                     value={
                       efficiency
                         ? efficiency

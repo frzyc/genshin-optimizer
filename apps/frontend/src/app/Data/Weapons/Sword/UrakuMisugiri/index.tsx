@@ -1,15 +1,14 @@
 import { type WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
 import {
   equal,
   infoMut,
+  input,
   percent,
   prod,
   subscript,
   sum,
-} from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -59,10 +58,10 @@ const sheet: IWeaponSheet = {
           node: def_,
         },
         {
-          node: infoMut(normal_dmg_, KeyMap.info('normal_dmg_')),
+          node: infoMut(normal_dmg_, { path: 'normal_dmg_' }),
         },
         {
-          node: infoMut(skill_dmg_, KeyMap.info('skill_dmg_')),
+          node: infoMut(skill_dmg_, { path: 'skill_dmg_' }),
         },
       ],
     },
@@ -75,10 +74,10 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: infoMut(teamGeo_normal_dmg_, KeyMap.info('normal_dmg_')),
+              node: infoMut(teamGeo_normal_dmg_, { path: 'normal_dmg_' }),
             },
             {
-              node: infoMut(teamGeo_skill_dmg_, KeyMap.info('skill_dmg_')),
+              node: infoMut(teamGeo_skill_dmg_, { path: 'skill_dmg_' }),
             },
             {
               text: stg('duration'),

@@ -1,3 +1,4 @@
+import { ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   useCharMeta,
@@ -5,7 +6,8 @@ import {
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
-import { Favorite, FavoriteBorder } from '@mui/icons-material'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {
   Box,
   CardActionArea,
@@ -20,9 +22,7 @@ import type { dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
 import { getCharSheet } from '../../Data/Characters'
 import useCharData from '../../ReactHooks/useCharData'
-import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
 import CardLight from '../Card/CardLight'
-import ConditionalWrapper from '../ConditionalWrapper'
 import { CharacterCardEquipmentRow } from './CharacterCard/CharacterCardEquipmentRow'
 import {
   CharacterCardHeader,
@@ -49,7 +49,6 @@ export default function CharacterCard({
   const character = useCharacter(characterKey)
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
-  const characterDispatch = useCharacterReducer(characterKey)
   const data = teamData?.[characterKey]?.target
   const onClickHandler = useCallback(
     () => characterKey && onClick?.(characterKey),
@@ -73,9 +72,8 @@ export default function CharacterCard({
       characterSheet && {
         character,
         characterSheet,
-        characterDispatch,
       },
-    [character, characterSheet, characterDispatch]
+    [character, characterSheet]
   )
   const dataContextObj: dataContextObj | undefined = useMemo(
     () =>
@@ -115,7 +113,7 @@ export default function CharacterCard({
               database.charMeta.set(characterKey, { favorite: !favorite })
             }
           >
-            {favorite ? <Favorite /> : <FavoriteBorder />}
+            {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
           </IconButton>
         </Box>
         <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>

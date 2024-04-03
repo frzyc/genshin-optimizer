@@ -1,20 +1,21 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, tally, target } from '../../../Formula'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   percent,
   prod,
   subscript,
   sum,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+  tally,
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -390,7 +391,7 @@ const sheet: ICharacterSheet = {
               name: st('seconds', { count: stack }),
               fields: [
                 {
-                  node: infoMut(a4Dmg_Disp, KeyMap.info('all_dmg_')),
+                  node: infoMut(a4Dmg_Disp, { path: 'all_dmg_' }),
                 },
               ],
             },

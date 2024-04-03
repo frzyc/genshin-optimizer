@@ -4,19 +4,19 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
   equalStr,
   greaterEq,
   infoMut,
+  input,
   lookup,
   percent,
   prod,
   subscript,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -306,7 +306,7 @@ const sheet: ICharacterSheet = {
         canShow: equal(condSkill, 'activeInArea', 1),
         fields: [
           {
-            node: infoMut(nodeAsc1Disp, KeyMap.info('atkSPD_')),
+            node: infoMut(nodeAsc1Disp, { path: 'atkSPD_' }),
           },
         ],
       }),

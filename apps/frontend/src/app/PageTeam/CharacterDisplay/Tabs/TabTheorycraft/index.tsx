@@ -1,4 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { objMap, toPercent } from '@genshin-optimizer/common/util'
 import {
   artSubstatRollData,
@@ -18,7 +19,6 @@ import { Trans, useTranslation } from 'react-i18next'
 import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
 import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
-import CustomNumberInput from '../../../../Components/CustomNumberInput'
 import {
   HitModeToggle,
   ReactionToggle,
@@ -30,7 +30,7 @@ import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { getTeamDataCalc } from '../../../../ReactHooks/useTeamData'
 import { isDev } from '../../../../Util/Util'
 import CharacterProfileCard from '../../../CharProfileCard'
-import useOldData from '../../../useOldData'
+import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
@@ -73,14 +73,15 @@ export default function TabTheorycraft() {
   const weaponTypeKey = getCharData(characterKey).weaponType
 
   const dataContextValue = useContext(DataContext)
-  const oldData = useOldData()
-  const dataContextValueWithOld: dataContextObj | undefined = useMemo(() => {
-    if (!dataContextValue) return undefined
-    return {
-      ...dataContextValue,
-      oldData,
-    }
-  }, [dataContextValue, oldData])
+  const compareData = useCompareData()
+  const dataContextValueWithCompare: dataContextObj | undefined =
+    useMemo(() => {
+      if (!dataContextValue) return undefined
+      return {
+        ...dataContextValue,
+        compareData,
+      }
+    }, [dataContextValue, compareData])
 
   const optimizationTarget = buildTc.optimization.target
   const setOptimizationTarget = useCallback(
@@ -271,8 +272,8 @@ export default function TabTheorycraft() {
             >
               <CardLight sx={{ flexGrow: 1, p: 1 }}>
                 <OptimizationTargetContext.Provider value={optimizationTarget}>
-                  {dataContextValueWithOld ? (
-                    <DataContext.Provider value={dataContextValueWithOld}>
+                  {dataContextValueWithCompare ? (
+                    <DataContext.Provider value={dataContextValueWithCompare}>
                       <StatDisplayComponent
                         columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
                       />

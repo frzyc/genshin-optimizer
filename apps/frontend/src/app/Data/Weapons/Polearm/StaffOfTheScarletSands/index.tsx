@@ -1,16 +1,15 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../../Formula'
 import {
   equal,
+  input,
   lookup,
   naught,
   prod,
   subscript,
   sum,
-} from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -31,7 +30,7 @@ const baseAtk = equal(
     subscript(input.weapon.refinement, baseAtkArr, { unit: '%' }),
     input.premod.eleMas
   ),
-  KeyMap.info('atk')
+  { path: 'atk' }
 )
 const stacksAtk = lookup(
   condStacks,
@@ -46,7 +45,7 @@ const stacksAtk = lookup(
     ])
   ),
   naught,
-  KeyMap.info('atk')
+  { path: 'atk' }
 )
 const atk = equal(input.weapon.key, key, sum(baseAtk, stacksAtk))
 

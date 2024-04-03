@@ -1,19 +1,22 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterKey,
+  CharacterSheetKey,
+  ElementKey,
+} from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../Formula'
-import type { DisplaySub } from '../../../Formula/type'
+import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   percent,
   prod,
   subscript,
   sum,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
-import type { CharacterSheetKey } from '../../../Types/consts'
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { cond, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
@@ -91,9 +94,8 @@ export default function electro(
     skillAmulet_enerRech_Disp
   )
 
-  const burstEnergyRestore = subscript(
-    input.total.burstIndex,
-    dm.burst.energyRestore,
+  const burstEnergyRestore = infoMut(
+    subscript(input.total.burstIndex, dm.burst.energyRestore),
     { name: ct.chg(`burst.skillParmas.2`) }
   )
 
@@ -169,15 +171,21 @@ export default function electro(
           },
           {
             canShow: (data) => data.get(input.constellation).value < 4,
-            node: subscript(input.total.skillIndex, dm.skill.energyRestore, {
-              name: ch(`skill.enerRest.none`),
-            }),
+            node: infoMut(
+              subscript(input.total.skillIndex, dm.skill.energyRestore),
+              {
+                name: ch(`skill.enerRest.none`),
+              }
+            ),
           },
           {
             canShow: (data) => data.get(input.constellation).value >= 4,
-            node: subscript(input.total.skillIndex, dm.skill.energyRestore, {
-              name: ch('skill.enerRest.over35'),
-            }),
+            node: infoMut(
+              subscript(input.total.skillIndex, dm.skill.energyRestore),
+              {
+                name: ch('skill.enerRest.over35'),
+              }
+            ),
           },
           {
             canShow: (data) => data.get(input.constellation).value >= 4,
@@ -218,10 +226,7 @@ export default function electro(
           on: {
             fields: [
               {
-                node: infoMut(
-                  skillAmulet_enerRech_Disp,
-                  KeyMap.info('enerRech_')
-                ),
+                node: infoMut(skillAmulet_enerRech_Disp, { path: 'enerRech_' }),
               },
               {
                 text: stg('duration'),

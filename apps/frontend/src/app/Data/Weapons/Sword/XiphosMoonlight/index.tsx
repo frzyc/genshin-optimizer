@@ -1,15 +1,15 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input, target } from '../../../../Formula'
 import {
   equal,
   infoMut,
+  input,
   percent,
   prod,
   subscript,
+  target,
   unequal,
-} from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -73,7 +73,7 @@ const sheet: IWeaponSheet = {
       fields: [
         {
           node: infoMut(teamEnerRech_disp, {
-            ...KeyMap.info('enerRech_'),
+            path: 'enerRech_',
             isTeamBuff: true,
           }),
         },

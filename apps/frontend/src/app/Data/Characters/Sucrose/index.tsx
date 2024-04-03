@@ -1,19 +1,19 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
+import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import ColorText from '../../../Components/ColoredText'
-import { input, target } from '../../../Formula/index'
 import {
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   percent,
   prod,
   sum,
+  target,
   unequal,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
-import { absorbableEle } from '../../../Types/consts'
+} from '@genshin-optimizer/gi/wr'
 import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -98,7 +98,7 @@ const asc1 = objKeyMap(absorbableEle, (ele) =>
     target.charKey,
     key, // Not applying to Sucrose
     equal(target.charEle, condSwirls[ele], asc1Disp),
-    { ...KeyMap.info('eleMas'), isTeamBuff: true }
+    { path: 'eleMas', isTeamBuff: true }
   )
 ) // And element matches the swirl
 const asc4OptNode = infoMut(
@@ -107,7 +107,7 @@ const asc4OptNode = infoMut(
     4,
     prod(percent(dm.passive2.eleMas_), input.premod.eleMas)
   ),
-  { ...KeyMap.info('eleMas'), isTeamBuff: true }
+  { path: 'eleMas', isTeamBuff: true }
 )
 const asc4Disp = equal('hit', condSkillHitOpponent, asc4OptNode)
 const asc4 = unequal(target.charKey, key, asc4Disp)
@@ -337,7 +337,7 @@ const sheet: ICharacterSheet = {
           fields: [
             {
               node: infoMut(asc1Disp, {
-                ...KeyMap.info('eleMas'),
+                path: 'eleMas',
                 isTeamBuff: true,
               }),
             },
@@ -361,7 +361,7 @@ const sheet: ICharacterSheet = {
           hit: {
             fields: [
               {
-                node: infoMut(asc4Disp, KeyMap.info('eleMas')),
+                node: infoMut(asc4Disp, { path: 'eleMas' }),
               },
               {
                 text: stg('duration'),

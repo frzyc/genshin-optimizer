@@ -1,20 +1,19 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { input } from '../../../Formula'
 import {
   compareEq,
   constant,
   equal,
   greaterEq,
   infoMut,
+  input,
   lookup,
   naught,
   percent,
   subscript,
   unequal,
-} from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
+} from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -259,10 +258,13 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            node: subscript(input.total.skillIndex, dm.skill.atkDecrease, {
-              name: ct.chg(`skill.skillParams.2`),
-              unit: '%',
-            }),
+            node: infoMut(
+              subscript(input.total.skillIndex, dm.skill.atkDecrease),
+              {
+                name: ct.chg(`skill.skillParams.2`),
+                unit: '%',
+              }
+            ),
           },
           {
             text: ct.chg('skill.skillParams.3'),
@@ -345,10 +347,10 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: infoMut(teamAtk_, KeyMap.info('atk_')),
+                node: infoMut(teamAtk_, { path: 'atk_' }),
               },
               {
-                node: infoMut(atk_, KeyMap.info('atk_')),
+                node: infoMut(atk_, { path: 'atk_' }),
               },
               {
                 text: stg('duration'),

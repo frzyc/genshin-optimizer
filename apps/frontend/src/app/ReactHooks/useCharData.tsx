@@ -9,6 +9,15 @@ import type {
 } from '@genshin-optimizer/gi/db'
 import { defaultInitialWeapon } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { uiDataForTeam } from '@genshin-optimizer/gi/ui'
+import type { Data } from '@genshin-optimizer/gi/wr'
+import {
+  common,
+  dataObjForArtifact,
+  dataObjForCharacter,
+  dataObjForWeapon,
+  mergeData,
+} from '@genshin-optimizer/gi/wr'
 import { useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
 import { allArtifactData } from '../Data/Artifacts'
@@ -17,15 +26,6 @@ import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { resonanceData } from '../Data/Resonance'
 import { getWeaponSheet } from '../Data/Weapons'
 import WeaponSheet from '../Data/Weapons/WeaponSheet'
-import { common } from '../Formula'
-import {
-  dataObjForArtifact,
-  dataObjForCharacter,
-  dataObjForWeapon,
-  mergeData,
-  uiDataForTeam,
-} from '../Formula/api'
-import type { Data } from '../Formula/type'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
