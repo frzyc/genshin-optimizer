@@ -5,7 +5,11 @@ import {
   RelicEditor,
   RelicInventory,
 } from '@genshin-optimizer/sr/ui'
+import { ExpandMore } from '@mui/icons-material'
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   CssBaseline,
   Stack,
   StyledEngineProvider,
@@ -29,7 +33,14 @@ export default function App() {
               <Stack gap={1} pt={1}>
                 <CharacterSelector />
                 <Character />
-                <RelicInventory />
+                <Accordion>
+                  <AccordionSummary expandIcon={<ExpandMore />}>
+                    Relics
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <RelicInventory />
+                  </AccordionDetails>
+                </Accordion>
                 <RelicEditor />
                 <Optimize />
                 <Database />
