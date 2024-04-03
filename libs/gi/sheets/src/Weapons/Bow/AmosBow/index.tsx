@@ -1,6 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   input,
   lookup,
@@ -15,7 +14,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'AmosBow'
-const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 const autoDmgInc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const arrowDmgInc = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
@@ -46,7 +44,7 @@ const charged_dmg_arrow_ = lookup(
   { path: 'charged_dmg_' }
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     normal_dmg_: sum(normal_dmg_, normal_dmg_arrow_),
     charged_dmg_: sum(charged_dmg_, charged_dmg_arrow_),
@@ -85,4 +83,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

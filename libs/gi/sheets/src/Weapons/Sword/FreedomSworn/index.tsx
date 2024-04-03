@@ -33,7 +33,7 @@ const normal_dmg_ = equal(
 const charged_dmg_ = { ...normal_dmg_ }
 const plunging_dmg_ = { ...normal_dmg_ }
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     all_dmg_: dmg_,
   },
@@ -84,4 +84,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

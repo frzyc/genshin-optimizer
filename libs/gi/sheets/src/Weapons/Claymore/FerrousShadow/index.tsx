@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, input, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -7,7 +6,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'FerrousShadow'
-const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 // const hpThreshold = [0.7, 0.75, 0.8, 0.85, 0.9]
@@ -18,7 +16,7 @@ const charged_dmg_ = equal(
   condPassive,
   subscript(input.weapon.refinement, bonusInc)
 )
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     charged_dmg_,
   },
@@ -48,4 +46,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

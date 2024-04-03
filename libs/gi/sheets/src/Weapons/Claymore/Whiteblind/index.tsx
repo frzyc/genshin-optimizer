@@ -1,6 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   input,
   lookup,
@@ -14,7 +13,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'Whiteblind'
-const data_gen = allStats.weapon.data[key]
 
 const [condStackPath, condStack] = cond(key, 'stack')
 const bonusInc = [-1, 0.06, 0.075, 0.09, 0.105, 0.12]
@@ -33,7 +31,7 @@ const def_ = lookup(
   naught
 )
 
-export const data = dataObjForWeaponSheet(key, data_gen, {
+export const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
     def_,
@@ -70,4 +68,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

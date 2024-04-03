@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -14,7 +13,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'ThrillingTalesOfDragonSlayers'
-const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const atkSrc = [-1, 0.24, 0.3, 0.36, 0.42, 0.48]
@@ -31,7 +29,7 @@ const atk_ = unequal(
   equal(input.activeCharKey, target.charKey, atk_Disp) // Only apply to active char
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   teamBuff: {
     premod: {
       atk_,
@@ -64,4 +62,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

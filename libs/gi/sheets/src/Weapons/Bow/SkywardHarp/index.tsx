@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
@@ -16,7 +15,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'SkywardHarp'
-const data_gen = allStats.weapon.data[key]
 
 const critd_s = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const dmgPerc = percent(1.25)
@@ -31,7 +29,6 @@ const dmg = equal(
 
 const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       critDMG_,
@@ -58,4 +55,4 @@ const sheet: IWeaponSheet = {
   ],
 }
 
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

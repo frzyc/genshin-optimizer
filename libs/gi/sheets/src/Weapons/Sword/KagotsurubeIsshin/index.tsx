@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
@@ -15,7 +14,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'KagotsurubeIsshin'
-const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'passive')
 const atk_ = equal(condPassive, 'on', percent(0.15)) // No refinement data
@@ -29,7 +27,6 @@ const dmg = equal(
 
 const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       atk_,
@@ -77,4 +74,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

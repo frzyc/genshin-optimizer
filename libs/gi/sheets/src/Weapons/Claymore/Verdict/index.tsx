@@ -42,7 +42,7 @@ const skill_dmg_ = lookup(
   naught
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
     skill_dmg_,
@@ -75,4 +75,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   input,
@@ -13,7 +12,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'Deathmatch'
-const data_gen = allStats.weapon.data[key]
 
 const [, trm] = trans('weapon', key)
 
@@ -34,7 +32,7 @@ const def_ = equal(
   subscript(input.weapon.refinement, atkDefInc, { unit: '%' })
 )
 
-export const data = dataObjForWeaponSheet(key, data_gen, {
+export const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
     def_,
@@ -61,4 +59,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -13,7 +12,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'Moonpiercer'
-const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const [condPassivePath, condPassive] = cond(key, 'passive')
@@ -24,7 +22,7 @@ const atk_disp = equal(
   subscript(input.weapon.refinement, atk_arr, { unit: '%' })
 )
 const atk_ = equal(input.activeCharKey, target.charKey, atk_disp)
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   teamBuff: {
     premod: {
       atk_,
@@ -62,4 +60,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

@@ -1,6 +1,5 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import { allElementKeys, type WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -17,7 +16,6 @@ import { dataObjForWeaponSheet } from '../../util'
 import { headerTemplate, WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'FlowingPurity'
-const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const all_ele_dmg_arr = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
@@ -58,7 +56,6 @@ const bond_all_ele_dmg_map = objKeyMap(allEleNoPhysDmgKeys, (ele_dmg_) =>
 
 const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       ...objKeyMap(allEleNoPhysDmgKeys, (ele_dmg_) =>
@@ -121,4 +118,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

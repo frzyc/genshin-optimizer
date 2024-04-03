@@ -16,7 +16,6 @@ import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'AquilaFavonia'
 const data_gen = allStats.weapon.data[key]
-
 const atkDealt = [-1, 2, 2.3, 2.6, 2.9, 3.2]
 const hpRegen = [-1, 1, 1.15, 1.3, 1.45, 1.6]
 const atk_arr = data_gen.refinementBonus.atk_
@@ -46,7 +45,6 @@ const dmg = equal(
 
 export const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       atk_,
@@ -80,4 +78,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

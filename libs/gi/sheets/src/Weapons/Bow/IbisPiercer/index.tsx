@@ -1,6 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   input,
   lookup,
@@ -14,7 +13,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'IbisPiercer'
-const data_gen = allStats.weapon.data[key]
 
 const stacksArr = range(1, 2)
 const emArr = [-1, 40, 50, 60, 70, 80]
@@ -28,7 +26,7 @@ const eleMas = lookup(
   naught
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     eleMas,
   },
@@ -63,4 +61,4 @@ const sheet: IWeaponSheet = {
   ],
 }
 
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)
