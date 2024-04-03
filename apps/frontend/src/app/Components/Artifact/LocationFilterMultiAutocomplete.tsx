@@ -7,11 +7,11 @@ import {
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { CharIconSide, SillyContext } from '@genshin-optimizer/gi/ui'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { getCharSheet } from '../../Data/Characters'
 
 export default function LocationFilterMultiAutocomplete({
   locations,

@@ -4,13 +4,12 @@ import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
+import { WeaponSheet, getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { computeUIData, nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
-import { getWeaponSheet } from '../../Data/Weapons'
-import WeaponSheet from '../../Data/Weapons/WeaponSheet'
 export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
   if (!weapon) return null

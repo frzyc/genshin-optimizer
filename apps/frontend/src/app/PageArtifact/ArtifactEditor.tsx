@@ -22,6 +22,7 @@ import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { cachedArtifact, validateArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
+import { getArtSheet } from '@genshin-optimizer/gi/sheets'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   getArtifactEfficiency,
@@ -80,7 +81,6 @@ import {
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
 import CustomNumberTextField from '../Components/CustomNumberTextField'
 import ModalWrapper from '../Components/ModalWrapper'
-import { getArtSheet } from '../Data/Artifacts'
 import { shouldShowDevComponents } from '../Util/Util'
 import ArtifactCard from './ArtifactCard'
 import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard'

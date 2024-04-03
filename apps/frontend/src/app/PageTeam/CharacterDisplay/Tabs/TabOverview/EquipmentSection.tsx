@@ -4,6 +4,7 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { dataSetEffects } from '@genshin-optimizer/gi/sheets'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
@@ -23,7 +24,6 @@ import DocumentDisplay from '../../../../Components/DocumentDisplay'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
-import { dataSetEffects } from '../../../../Data/Artifacts'
 
 export default function EquipmentSection() {
   const database = useDatabase()

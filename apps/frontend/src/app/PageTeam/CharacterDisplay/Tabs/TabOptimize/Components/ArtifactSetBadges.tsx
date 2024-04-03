@@ -5,11 +5,11 @@ import type {
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { getArtSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTooltip'
-import { getArtSheet } from '../../../../../Data/Artifacts'
 
 type ArtifactSetBadgesProps = {
   artifacts: ICachedArtifact[]

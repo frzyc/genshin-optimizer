@@ -56,6 +56,9 @@ export function artifactAsset(
     return artifacts[ak].circlet
   else return artifacts[ak][slotKey] ?? ''
 }
+export function artifactDefIcon(setKey: ArtifactSetKey) {
+  return artifactAsset(setKey, 'flower') || artifactAsset(setKey, 'circlet')
+}
 export function weaponAsset(wk: WeaponKey, empowered = true) {
   return (
     weapons[wk][empowered ? 'awakenIcon' : 'icon'] ?? weapons[wk]['icon'] ?? ''

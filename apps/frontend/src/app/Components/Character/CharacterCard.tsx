@@ -6,6 +6,7 @@ import {
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {
@@ -20,7 +21,6 @@ import type { CharacterContextObj } from '../../Context/CharacterContext'
 import { CharacterContext } from '../../Context/CharacterContext'
 import type { dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
-import { getCharSheet } from '../../Data/Characters'
 import useCharData from '../../ReactHooks/useCharData'
 import CardLight from '../Card/CardLight'
 import { CharacterCardEquipmentRow } from './CharacterCard/CharacterCardEquipmentRow'

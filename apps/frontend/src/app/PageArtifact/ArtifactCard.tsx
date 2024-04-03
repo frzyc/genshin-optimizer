@@ -18,6 +18,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { getArtSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import {
@@ -48,7 +49,6 @@ import { LocationAutocomplete } from '../Components/Character/LocationAutocomple
 import LocationName from '../Components/Character/LocationName'
 import InfoTooltip, { InfoTooltipInline } from '../Components/InfoTooltip'
 import PercentBadge from '../Components/PercentBadge'
-import { getArtSheet } from '../Data/Artifacts'
 import type { ArtifactEditorProps } from './ArtifactEditor'
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))

@@ -3,6 +3,10 @@ import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
+import type {
+  DocumentSection,
+  TalentSheetElementKey,
+} from '@genshin-optimizer/gi/sheets'
 import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
@@ -28,8 +32,6 @@ import {
 } from '../../../Components/HitModeEditor'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
-import type { TalentSheetElementKey } from '../../../Data/Characters/ICharacterSheet'
-import type { DocumentSection } from '../../../Types/sheet'
 const talentSpacing = {
   xs: 12,
   sm: 6,

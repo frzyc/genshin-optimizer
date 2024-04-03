@@ -5,6 +5,8 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
+import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
+import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { computeUIData, nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -26,8 +28,6 @@ import { useTranslation } from 'react-i18next'
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
 import LocationName from '../Components/Character/LocationName'
-import type CharacterSheet from '../Data/Characters/CharacterSheet'
-import { getWeaponSheet } from '../Data/Weapons'
 import type { LocationKey } from '../Types/consts'
 
 type WeaponCardProps = {

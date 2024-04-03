@@ -1,19 +1,21 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
-import { weaponAsset } from '@genshin-optimizer/gi/assets'
+import { artifactDefIcon, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSetKey,
   CharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
+import {
+  getArtSheet,
+  getCharSheet,
+  getWeaponSheet,
+} from '@genshin-optimizer/gi/sheets'
 import type { NodeDisplay, UIData } from '@genshin-optimizer/gi/ui'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
-import { getArtSheet } from '../Data/Artifacts'
-import { artifactDefIcon } from '../Data/Artifacts/ArtifactSheet'
-import { getCharSheet } from '../Data/Characters'
-import { getWeaponSheet } from '../Data/Weapons'
+import type { ReactNode } from 'react'
 
 const errHeader = {
   title: <ColorText color="warning">ERROR</ColorText>,
@@ -39,9 +41,9 @@ export function getDisplayHeader(
   sectionKey: string,
   database: ArtCharDatabase
 ): {
-  title: Displayable
+  title: ReactNode
   icon?: string
-  action?: Displayable
+  action?: ReactNode
 } {
   if (!sectionKey) return errHeader
   if (sectionKey === 'basic') return { title: 'Basic Stats' }

@@ -14,6 +14,12 @@ import {
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
+import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
+import {
+  dataSetEffects,
+  getArtSheet,
+  resonanceSheets,
+} from '@genshin-optimizer/gi/sheets'
 import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import { input } from '@genshin-optimizer/gi/wr'
@@ -48,9 +54,6 @@ import type { dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
 import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
-import { dataSetEffects, getArtSheet } from '../../Data/Artifacts'
-import type CharacterSheet from '../../Data/Characters/CharacterSheet'
-import { resonanceSheets } from '../../Data/Resonance'
 
 export function TeamBuffDisplay() {
   const { data, compareData } = useContext(DataContext)

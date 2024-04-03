@@ -5,10 +5,6 @@ import type {
   LocationCharacterKey,
 } from '@genshin-optimizer/gi/consts'
 
-export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
-
-export type SetNum = (typeof allArtifactSetCount)[number]
-
 export const allowedAmpReactions: Dict<ElementKey, AmplifyingReactionKey[]> = {
   pyro: ['vaporize', 'melt'],
   hydro: ['vaporize'],

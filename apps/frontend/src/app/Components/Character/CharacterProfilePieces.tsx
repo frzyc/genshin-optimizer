@@ -8,6 +8,7 @@ import {
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
+import type { TalentSheetElementKey } from '@genshin-optimizer/gi/sheets'
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
 import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
@@ -27,7 +28,6 @@ import {
 import { useContext } from 'react'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
-import type { TalentSheetElementKey } from '../../Data/Characters/ICharacterSheet'
 
 export function CharacterCompactTalent() {
   const { characterSheet } = useContext(CharacterContext)

@@ -7,6 +7,7 @@ import {
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharData } from '@genshin-optimizer/gi/stats'
 import type { RollColorKey } from '@genshin-optimizer/gi/ui'
 import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
@@ -15,7 +16,6 @@ import { input } from '@genshin-optimizer/gi/wr'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { DataContext } from '../../../Context/DataContext'
-import { getCharSheet } from '../../../Data/Characters'
 import { iconAsset } from '../../../Util/AssetUtil'
 
 export function CharacterCardHeader({

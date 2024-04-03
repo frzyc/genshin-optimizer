@@ -163,3 +163,6 @@ export type SubstatKey = (typeof allSubstatKeys)[number]
 // GO currently only support 3-5 star artifacts
 export const allArtifactRarityKeys = [5, 4, 3] as const
 export type ArtifactRarity = (typeof allArtifactRarityKeys)[number]
+
+const allArtifactSetCount = [1, 2, 3, 4, 5] as const
+export type SetNum = (typeof allArtifactSetCount)[number]

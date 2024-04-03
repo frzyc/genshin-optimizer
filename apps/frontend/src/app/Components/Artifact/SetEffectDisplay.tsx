@@ -1,7 +1,6 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+import type { ArtifactSetKey, SetNum } from '@genshin-optimizer/gi/consts'
+import { getArtSheet } from '@genshin-optimizer/gi/sheets'
 import { Box } from '@mui/material'
-import { getArtSheet } from '../../Data/Artifacts'
-import type { SetNum } from '../../Types/consts'
 import DocumentDisplay from '../DocumentDisplay'
 
 type Data = {

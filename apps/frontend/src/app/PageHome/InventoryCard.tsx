@@ -8,6 +8,7 @@ import {
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { getCharSheet, getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {
   ElementIcon,
   FlowerIcon,
@@ -29,8 +30,6 @@ import { useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
-import { getCharSheet } from '../Data/Characters'
-import { getWeaponSheet } from '../Data/Weapons'
 
 export default function InventoryCard() {
   const { t } = useTranslation(['page_home', 'ui'])
