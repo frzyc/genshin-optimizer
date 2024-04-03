@@ -3,8 +3,9 @@ import { BootstrapTooltip, SqBadge } from '@genshin-optimizer/common/ui'
 import {
   allElementWithPhyKeys,
   artSlotMainKeys,
+  type MainStatKey,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   AtkIcon,
   FlowerIcon,
@@ -21,7 +22,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material'
-import { useContext, useMemo } from 'react'
+import { memo, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatColoredWithUnit } from '../../../../../Components/StatDisplay'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
@@ -34,18 +35,31 @@ export const artifactsSlotsToSelectMainStats = [
   'circlet',
 ] as const
 
-export default function MainStatSelectionCard({
+export default memo(
+  MainStatSelectionCard,
+  (prevProps, nextProps) =>
+    JSON.stringify(prevProps) === JSON.stringify(nextProps)
+)
+
+function MainStatSelectionCard({
   disabled = false,
   filteredArtIdMap,
+  mainStatKeys,
 }: {
   disabled?: boolean
   filteredArtIdMap: Record<string, boolean>
+  mainStatKeys: {
+    sands: MainStatKey[]
+    goblet: MainStatKey[]
+    circlet: MainStatKey[]
+    flower?: never
+    plume?: never
+  }
 }) {
   const { t } = useTranslation('artifact')
   const {
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const { mainStatKeys } = useOptConfig(optConfigId)!
   const database = useDatabase()
   const { mainStatSlotTots, slotTots } = useMemo(() => {
     const catKeys = {

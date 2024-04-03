@@ -83,7 +83,7 @@ export default function TabUpopt() {
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
   const buildSetting = useOptConfig(optConfigId)!
-  const { optimizationTarget, levelLow, levelHigh } = buildSetting
+  const { optimizationTarget, levelLow, levelHigh, mainStatKeys } = buildSetting
   const teamData = useTeamData()
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
@@ -491,6 +491,7 @@ export default function TabUpopt() {
                             <MainStatSelectionCard
                               disabled={false}
                               filteredArtIdMap={filteredArtIdMap}
+                              mainStatKeys={mainStatKeys}
                             />
                           </CardContent>
                         </CardLight>

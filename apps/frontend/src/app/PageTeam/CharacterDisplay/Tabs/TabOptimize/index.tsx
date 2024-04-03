@@ -187,17 +187,21 @@ export default function TabBuild() {
 
   const buildSetting = useOptConfig(optConfigId)!
   const {
-    plotBase,
-    optimizationTarget: optimizationTargetDb,
-    mainStatAssumptionLevel,
-    allowPartial,
-    maxBuildsToShow,
-    levelLow,
-    levelHigh,
-    builds: buildsDb,
-    buildDate,
-    useTeammateBuild,
     allowLocationsState,
+    allowPartial,
+    artExclusion,
+    buildDate,
+    builds: buildsDb,
+    excludedLocations,
+    levelHigh,
+    levelLow,
+    mainStatAssumptionLevel,
+    mainStatKeys,
+    maxBuildsToShow,
+    optimizationTarget: optimizationTargetDb,
+    plotBase,
+    useExcludedArts,
+    useTeammateBuild,
   } = buildSetting
 
   const builds = useConstObj(buildsDb)
@@ -234,17 +238,8 @@ export default function TabBuild() {
     [database, loadoutData, teamCharId]
   )
   const filteredArts = useMemo(() => {
-    const {
-      mainStatKeys,
-      excludedLocations,
-      artExclusion,
-      levelLow,
-      levelHigh,
-      allowLocationsState,
-      useExcludedArts,
-      useTeammateBuild,
-    } = deferredArtsDirty && deferredBuildSetting
-
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    deferredArtsDirty
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
       if (!useTeammateBuild && teammateArtifactIds.includes(art.id))
@@ -272,12 +267,18 @@ export default function TabBuild() {
     })
   }, [
     deferredArtsDirty,
-    deferredBuildSetting,
+    mainStatKeys,
+    excludedLocations,
+    artExclusion,
+    levelLow,
+    levelHigh,
+    allowLocationsState,
+    useExcludedArts,
+    useTeammateBuild,
     database,
     teammateArtifactIds,
     characterKey,
   ])
-
   const filteredArtIdMap = useMemo(
     () =>
       objKeyMap(
@@ -663,6 +664,7 @@ export default function TabBuild() {
             <MainStatSelectionCard
               disabled={generatingBuilds}
               filteredArtIdMap={filteredArtIdMap}
+              mainStatKeys={mainStatKeys}
             />
           </CardLight>
         </Grid>
