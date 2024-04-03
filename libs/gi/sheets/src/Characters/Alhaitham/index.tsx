@@ -18,7 +18,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -29,9 +29,8 @@ import {
 
 const key: CharacterKey = 'Alhaitham'
 const elementKey: ElementKey = 'dendro'
-const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponType)
+const ct = charTemplates(key)
 
 let a = -1,
   s = -1,
@@ -235,255 +234,238 @@ const dmgFormulas = {
 const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
 
-export const data = dataObjForCharacterSheet(
-  key,
-  elementKey,
-  'sumeru',
-  data_gen,
-  dmgFormulas,
-  {
-    teamBuff: {
-      premod: {
-        eleMas: c4MirrorsConsumed_eleMas,
-      },
-    },
+export const data = dataObjForCharacterSheet(key, dmgFormulas, {
+  teamBuff: {
     premod: {
-      skillBoost: skillC3,
-      burstBoost: burstC5,
-      dendro_dmg_: c4MirrorsGenerated_dendro_dmg_,
-      eleMas: c2DebateStacks_eleMas,
-      critRate_: c6ExcessMirror_critRate_,
-      critDMG_: c6ExcessMirror_critDMG_,
+      eleMas: c4MirrorsConsumed_eleMas,
     },
-    infusion: {
-      nonOverridableSelf: withMirrorsInfusion,
-    },
-  }
-)
+  },
+  premod: {
+    skillBoost: skillC3,
+    burstBoost: burstC5,
+    dendro_dmg_: c4MirrorsGenerated_dendro_dmg_,
+    eleMas: c2DebateStacks_eleMas,
+    critRate_: c6ExcessMirror_critRate_,
+    critDMG_: c6ExcessMirror_critDMG_,
+  },
+  infusion: {
+    nonOverridableSelf: withMirrorsInfusion,
+  },
+})
 
-const sheet: ICharacterSheet = {
-  key,
-  name: ct.name,
-  rarity: data_gen.rarity,
-  elementKey,
-  weaponTypeKey: data_gen.weaponType,
-  gender: 'M',
-  constellationName: ct.chg('constellationName'),
-  title: ct.chg('title'),
-  talent: {
-    auto: ct.talentTem('auto', [
-      {
-        text: ct.chg('auto.fields.normal'),
-      },
-      {
-        fields: dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], {
-            name: ct.chg(`auto.skillParams.${i}`),
-            multi: i === 2 ? 2 : undefined,
+const sheet: TalentSheet = {
+  auto: ct.talentTem('auto', [
+    {
+      text: ct.chg('auto.fields.normal'),
+    },
+    {
+      fields: dm.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[i], {
+          name: ct.chg(`auto.skillParams.${i}`),
+          multi: i === 2 ? 2 : undefined,
+        }),
+      })),
+    },
+    {
+      text: ct.chg('auto.fields.charged'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.charged.dmg, {
+            name: ct.chg(`auto.skillParams.5`),
+            multi: 2,
           }),
-        })),
-      },
-      {
-        text: ct.chg('auto.fields.charged'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.dmg, {
-              name: ct.chg(`auto.skillParams.5`),
-              multi: 2,
-            }),
-          },
-          {
-            text: ct.chg('auto.skillParams.6'),
-            value: dm.charged.stamina,
-          },
-        ],
-      },
-      {
-        text: ct.chg('auto.fields.plunging'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.plunging.dmg, {
-              name: stg('plunging.dmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.low, {
-              name: stg('plunging.low'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.high, {
-              name: stg('plunging.high'),
-            }),
-          },
-        ],
-      },
-    ]),
-
-    skill: ct.talentTem('skill', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.skill.rushDmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
-          },
-          {
-            text: ct.chg('skill.skillParams.1'),
-            value: dm.skill.atkInterval,
-            unit: 's',
-            fixed: 1,
-          },
-          {
-            node: infoMut(dmgFormulas.skill.mirrorDmg1, {
-              name: ct.ch(`projectionDmg`),
-            }),
-          },
-          {
-            text: ct.chg('skill.skillParams.5'),
-            value: dm.skill.mirrorRemovalInterval,
-            unit: 's',
-          },
-          {
-            text: stg('cd'),
-            value: dm.skill.cd,
-            unit: 's',
-          },
-        ],
-      },
-      ct.condTem('skill', {
-        path: condWithMirrorsPath,
-        value: condWithMirrors,
-        name: ct.ch('withMirrors'),
-        states: {
-          on: {
-            fields: [
-              {
-                text: st('infusion.dendro'),
-                variant: elementKey,
-              },
-            ],
-          },
         },
-      }),
-      ct.headerTem('passive2', {
-        fields: [
-          {
-            node: infoMut(a4_skill_dmg_, {
-              name: ct.ch('projectionAttack_dmg_'),
-              unit: '%',
-            }),
-          },
-        ],
-      }),
-    ]),
+        {
+          text: ct.chg('auto.skillParams.6'),
+          value: dm.charged.stamina,
+        },
+      ],
+    },
+    {
+      text: ct.chg('auto.fields.plunging'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.plunging.dmg, {
+            name: stg('plunging.dmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.low, {
+            name: stg('plunging.low'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.high, {
+            name: stg('plunging.high'),
+          }),
+        },
+      ],
+    },
+  ]),
 
-    burst: ct.talentTem('burst', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.burst.instanceDmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
-          },
-          ...dm.burst.attackInstances.map((instances, i) => ({
-            text: ct.chg(`burst.skillParams.${i + 1}`),
-            value: instances,
-          })),
-          {
-            text: stg('cd'),
-            value: dm.burst.cd,
-            unit: 's',
-          },
-          {
-            text: stg('energyCost'),
-            value: dm.burst.enerCost,
-          },
-        ],
-      },
-      ct.headerTem('passive2', {
-        fields: [
-          {
-            node: infoMut(a4_burst_dmg_, { path: 'burst_dmg_' }),
-          },
-        ],
-      }),
-      ct.condTem('constellation4', {
-        path: condMirrorsConsumedPath,
-        value: condMirrorsConsumed,
-        teamBuff: true,
-        name: ct.ch('mirrorsConsumed'),
-        states: objKeyMap(mirrorsConsumedArr, (count) => ({
-          name: `${count}`,
+  skill: ct.talentTem('skill', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.skill.rushDmg, {
+            name: ct.chg(`skill.skillParams.0`),
+          }),
+        },
+        {
+          text: ct.chg('skill.skillParams.1'),
+          value: dm.skill.atkInterval,
+          unit: 's',
+          fixed: 1,
+        },
+        {
+          node: infoMut(dmgFormulas.skill.mirrorDmg1, {
+            name: ct.ch(`projectionDmg`),
+          }),
+        },
+        {
+          text: ct.chg('skill.skillParams.5'),
+          value: dm.skill.mirrorRemovalInterval,
+          unit: 's',
+        },
+        {
+          text: stg('cd'),
+          value: dm.skill.cd,
+          unit: 's',
+        },
+      ],
+    },
+    ct.condTem('skill', {
+      path: condWithMirrorsPath,
+      value: condWithMirrors,
+      name: ct.ch('withMirrors'),
+      states: {
+        on: {
           fields: [
             {
-              node: c4MirrorsConsumed_eleMasDisp,
+              text: st('infusion.dendro'),
+              variant: elementKey,
+            },
+          ],
+        },
+      },
+    }),
+    ct.headerTem('passive2', {
+      fields: [
+        {
+          node: infoMut(a4_skill_dmg_, {
+            name: ct.ch('projectionAttack_dmg_'),
+            unit: '%',
+          }),
+        },
+      ],
+    }),
+  ]),
+
+  burst: ct.talentTem('burst', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.burst.instanceDmg, {
+            name: ct.chg(`burst.skillParams.0`),
+          }),
+        },
+        ...dm.burst.attackInstances.map((instances, i) => ({
+          text: ct.chg(`burst.skillParams.${i + 1}`),
+          value: instances,
+        })),
+        {
+          text: stg('cd'),
+          value: dm.burst.cd,
+          unit: 's',
+        },
+        {
+          text: stg('energyCost'),
+          value: dm.burst.enerCost,
+        },
+      ],
+    },
+    ct.headerTem('passive2', {
+      fields: [
+        {
+          node: infoMut(a4_burst_dmg_, { path: 'burst_dmg_' }),
+        },
+      ],
+    }),
+    ct.condTem('constellation4', {
+      path: condMirrorsConsumedPath,
+      value: condMirrorsConsumed,
+      teamBuff: true,
+      name: ct.ch('mirrorsConsumed'),
+      states: objKeyMap(mirrorsConsumedArr, (count) => ({
+        name: `${count}`,
+        fields: [
+          {
+            node: c4MirrorsConsumed_eleMasDisp,
+          },
+          {
+            node: c4MirrorsGenerated_dendro_dmg_,
+          },
+          {
+            text: stg('duration'),
+            value: dm.constellation4.eleMasDuration,
+            unit: 's',
+          },
+        ],
+      })),
+    }),
+  ]),
+
+  passive1: ct.talentTem('passive1'),
+  passive2: ct.talentTem('passive2'),
+  passive3: ct.talentTem('passive3'),
+  constellation1: ct.talentTem('constellation1'),
+  constellation2: ct.talentTem('constellation2', [
+    ct.condTem('constellation2', {
+      path: condDebateStacksPath,
+      value: condDebateStacks,
+      name: ct.ch('debateStacks'),
+      teamBuff: true, // For Nahida A1
+      states: objKeyMap(debateStacksArr, (stack) => ({
+        name: st('stack', { count: stack }),
+        fields: [{ node: c2DebateStacks_eleMas }],
+      })),
+    }),
+  ]),
+  constellation3: ct.talentTem('constellation3', [
+    { fields: [{ node: skillC3 }] },
+  ]),
+  constellation4: ct.talentTem('constellation4'),
+  constellation5: ct.talentTem('constellation5', [
+    { fields: [{ node: burstC5 }] },
+  ]),
+  constellation6: ct.talentTem('constellation6', [
+    ct.condTem('constellation6', {
+      path: condExcessMirrorPath,
+      value: condExcessMirror,
+      name: ct.ch('excessMirror'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: c6ExcessMirror_critRate_,
             },
             {
-              node: c4MirrorsGenerated_dendro_dmg_,
+              node: c6ExcessMirror_critDMG_,
             },
             {
               text: stg('duration'),
-              value: dm.constellation4.eleMasDuration,
+              value: dm.constellation6.duration,
               unit: 's',
             },
           ],
-        })),
-      }),
-    ]),
-
-    passive1: ct.talentTem('passive1'),
-    passive2: ct.talentTem('passive2'),
-    passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
-    constellation2: ct.talentTem('constellation2', [
-      ct.condTem('constellation2', {
-        path: condDebateStacksPath,
-        value: condDebateStacks,
-        name: ct.ch('debateStacks'),
-        teamBuff: true, // For Nahida A1
-        states: objKeyMap(debateStacksArr, (stack) => ({
-          name: st('stack', { count: stack }),
-          fields: [{ node: c2DebateStacks_eleMas }],
-        })),
-      }),
-    ]),
-    constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: skillC3 }] },
-    ]),
-    constellation4: ct.talentTem('constellation4'),
-    constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: burstC5 }] },
-    ]),
-    constellation6: ct.talentTem('constellation6', [
-      ct.condTem('constellation6', {
-        path: condExcessMirrorPath,
-        value: condExcessMirror,
-        name: ct.ch('excessMirror'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: c6ExcessMirror_critRate_,
-              },
-              {
-                node: c6ExcessMirror_critDMG_,
-              },
-              {
-                text: stg('duration'),
-                value: dm.constellation6.duration,
-                unit: 's',
-              },
-            ],
-          },
         },
-      }),
-    ]),
-  },
+      },
+    }),
+  ]),
 }
 
 export default new CharacterSheet(sheet, data)

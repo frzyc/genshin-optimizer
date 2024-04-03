@@ -16,7 +16,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -29,9 +29,8 @@ import {
 const key: CharacterKey = 'Layla'
 const elementKey: ElementKey = 'cryo'
 
-const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponType)
+const ct = charTemplates(key)
 
 let a = 0,
   s = 0,
@@ -188,264 +187,247 @@ const dmgFormulas = {
 
 const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
-export const data = dataObjForCharacterSheet(
-  key,
-  elementKey,
-  'sumeru',
-  data_gen,
-  dmgFormulas,
-  {
+export const data = dataObjForCharacterSheet(key, dmgFormulas, {
+  premod: {
+    skillBoost: skillC3,
+    burstBoost: burstC5,
+  },
+  teamBuff: {
     premod: {
-      skillBoost: skillC3,
-      burstBoost: burstC5,
+      shield_: a1Shield_,
+      normal_dmgInc: c4_normal_dmgInc,
+      charged_dmgInc: c4_charged_dmgInc,
     },
-    teamBuff: {
-      premod: {
-        shield_: a1Shield_,
-        normal_dmgInc: c4_normal_dmgInc,
-        charged_dmgInc: c4_charged_dmgInc,
-      },
-    },
-  }
-)
+  },
+})
 
-const sheet: ICharacterSheet = {
-  key,
-  name: ct.name,
-  rarity: data_gen.rarity,
-  elementKey: elementKey,
-  weaponTypeKey: data_gen.weaponType,
-  gender: 'F',
-  constellationName: ct.chg('constellationName'),
-  title: ct.chg('title'),
-  talent: {
-    auto: ct.talentTem('auto', [
-      {
-        text: ct.chg('auto.fields.normal'),
-      },
-      {
-        fields: dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], {
-            name: ct.chg(`auto.skillParams.${i}`),
+const sheet: TalentSheet = {
+  auto: ct.talentTem('auto', [
+    {
+      text: ct.chg('auto.fields.normal'),
+    },
+    {
+      fields: dm.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[i], {
+          name: ct.chg(`auto.skillParams.${i}`),
+        }),
+      })),
+    },
+    {
+      text: ct.chg('auto.fields.charged'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.charged.dmg1, {
+            name: ct.chg(`auto.skillParams.3`),
+            textSuffix: '(1)',
           }),
-        })),
-      },
-      {
-        text: ct.chg('auto.fields.charged'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.dmg1, {
-              name: ct.chg(`auto.skillParams.3`),
-              textSuffix: '(1)',
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.charged.dmg2, {
-              name: ct.chg(`auto.skillParams.3`),
-              textSuffix: '(2)',
-            }),
-          },
-          {
-            text: ct.chg('auto.skillParams.4'),
-            value: dm.charged.stamina,
-          },
-        ],
-      },
-      {
-        text: ct.chg('auto.fields.plunging'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.plunging.dmg, {
-              name: stg('plunging.dmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.low, {
-              name: stg('plunging.low'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.high, {
-              name: stg('plunging.high'),
-            }),
-          },
-        ],
-      },
-    ]),
+        },
+        {
+          node: infoMut(dmgFormulas.charged.dmg2, {
+            name: ct.chg(`auto.skillParams.3`),
+            textSuffix: '(2)',
+          }),
+        },
+        {
+          text: ct.chg('auto.skillParams.4'),
+          value: dm.charged.stamina,
+        },
+      ],
+    },
+    {
+      text: ct.chg('auto.fields.plunging'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.plunging.dmg, {
+            name: stg('plunging.dmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.low, {
+            name: stg('plunging.low'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.high, {
+            name: stg('plunging.high'),
+          }),
+        },
+      ],
+    },
+  ]),
 
-    skill: ct.talentTem('skill', [
-      {
-        fields: [
+  skill: ct.talentTem('skill', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.skill.skillDmg, {
+            name: ct.chg(`skill.skillParams.0`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.starDmg, {
+            name: ct.chg(`skill.skillParams.1`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.skillShield, {
+            name: stg('dmgAbsorption'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.skillCryoShield, {
+            name: st(`dmgAbsorption.${elementKey}`),
+            variant: elementKey,
+          }),
+        },
+        {
+          text: stg('duration'),
+          value: dm.skill.shieldDuration,
+          unit: 's',
+        },
+        {
+          text: stg('cd'),
+          value: dm.skill.cd,
+          unit: 's',
+        },
+      ],
+    },
+    ct.condTem('passive1', {
+      teamBuff: true,
+      path: condA1StacksPath,
+      value: condA1Stacks,
+      name: st('stacks'),
+      states: Object.fromEntries(
+        a1StacksArr.map((stack) => [
+          stack,
           {
-            node: infoMut(dmgFormulas.skill.skillDmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.starDmg, {
-              name: ct.chg(`skill.skillParams.1`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.skillShield, {
-              name: stg('dmgAbsorption'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.skillCryoShield, {
-              name: st(`dmgAbsorption.${elementKey}`),
-              variant: elementKey,
-            }),
-          },
-          {
-            text: stg('duration'),
-            value: dm.skill.shieldDuration,
-            unit: 's',
-          },
-          {
-            text: stg('cd'),
-            value: dm.skill.cd,
-            unit: 's',
-          },
-        ],
-      },
-      ct.condTem('passive1', {
-        teamBuff: true,
-        path: condA1StacksPath,
-        value: condA1Stacks,
-        name: st('stacks'),
-        states: Object.fromEntries(
-          a1StacksArr.map((stack) => [
-            stack,
-            {
-              name: st('stack', { count: stack }),
-              fields: [
-                {
-                  node: a1Shield_disp,
-                },
-              ],
-            },
-          ])
-        ),
-      }),
-      ct.headerTem('passive2', {
-        fields: [
-          {
-            node: a4_starDmgInc,
-          },
-        ],
-      }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            text: st('dmgAbsorption.increase'),
-            value: dm.constellation1.shield_ * 100,
-            unit: '%',
-          },
-        ],
-      }),
-      ct.condTem('constellation4', {
-        teamBuff: true,
-        value: condC4Active,
-        path: condC4ActivePath,
-        name: ct.ch('c4CondKey'),
-        states: {
-          on: {
+            name: st('stack', { count: stack }),
             fields: [
               {
-                node: c4_normal_dmgInc,
-              },
-              {
-                node: c4_charged_dmgInc,
-              },
-              {
-                text: stg('duration'),
-                value: dm.constellation4.effectDuration,
-                unit: 's',
+                node: a1Shield_disp,
               },
             ],
           },
+        ])
+      ),
+    }),
+    ct.headerTem('passive2', {
+      fields: [
+        {
+          node: a4_starDmgInc,
         },
-      }),
-      ct.headerTem('constellation6', {
-        fields: [
-          {
-            node: infoMut(c6_starDmg_, { name: ct.ch(`starDmg_`) }),
-          },
-          {
-            text: ct.ch('starInterval_'),
-            value: -dm.constellation6.starIntervalDec_ * 100,
-            unit: '%',
-          },
-        ],
-      }),
-    ]),
-
-    burst: ct.talentTem('burst', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.burst.slugDmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
-          },
-          {
-            text: stg('duration'),
-            value: dm.burst.duration,
-            unit: 's',
-          },
-          {
-            text: stg('cd'),
-            value: dm.burst.cd,
-            unit: 's',
-          },
-          {
-            text: stg('energyCost'),
-            value: dm.burst.energyCost,
-          },
-        ],
+      ],
+    }),
+    ct.headerTem('constellation1', {
+      fields: [
+        {
+          text: st('dmgAbsorption.increase'),
+          value: dm.constellation1.shield_ * 100,
+          unit: '%',
+        },
+      ],
+    }),
+    ct.condTem('constellation4', {
+      teamBuff: true,
+      value: condC4Active,
+      path: condC4ActivePath,
+      name: ct.ch('c4CondKey'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: c4_normal_dmgInc,
+            },
+            {
+              node: c4_charged_dmgInc,
+            },
+            {
+              text: stg('duration'),
+              value: dm.constellation4.effectDuration,
+              unit: 's',
+            },
+          ],
+        },
       },
-      ct.headerTem('constellation6', {
-        fields: [
-          {
-            node: infoMut(c6_slugDmg_, { name: ct.ch(`slugDmg_`) }),
-          },
-        ],
-      }),
-    ]),
+    }),
+    ct.headerTem('constellation6', {
+      fields: [
+        {
+          node: infoMut(c6_starDmg_, { name: ct.ch(`starDmg_`) }),
+        },
+        {
+          text: ct.ch('starInterval_'),
+          value: -dm.constellation6.starIntervalDec_ * 100,
+          unit: '%',
+        },
+      ],
+    }),
+  ]),
 
-    passive1: ct.talentTem('passive1'),
-    passive2: ct.talentTem('passive2'),
-    constellation1: ct.talentTem('constellation1', [
-      ct.fieldsTem('constellation1', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation1.partyShield, {
-              name: stg('dmgAbsorption'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.constellation1.partyCryoShield, {
-              name: st(`dmgAbsorption.${elementKey}`),
-              variant: elementKey,
-            }),
-          },
-        ],
-      }),
-    ]),
-    constellation2: ct.talentTem('constellation2'),
-    constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: skillC3 }] },
-    ]),
-    constellation4: ct.talentTem('constellation4'),
-    constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: burstC5 }] },
-    ]),
-    constellation6: ct.talentTem('constellation6'),
-  },
+  burst: ct.talentTem('burst', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.burst.slugDmg, {
+            name: ct.chg(`burst.skillParams.0`),
+          }),
+        },
+        {
+          text: stg('duration'),
+          value: dm.burst.duration,
+          unit: 's',
+        },
+        {
+          text: stg('cd'),
+          value: dm.burst.cd,
+          unit: 's',
+        },
+        {
+          text: stg('energyCost'),
+          value: dm.burst.energyCost,
+        },
+      ],
+    },
+    ct.headerTem('constellation6', {
+      fields: [
+        {
+          node: infoMut(c6_slugDmg_, { name: ct.ch(`slugDmg_`) }),
+        },
+      ],
+    }),
+  ]),
+
+  passive1: ct.talentTem('passive1'),
+  passive2: ct.talentTem('passive2'),
+  constellation1: ct.talentTem('constellation1', [
+    ct.fieldsTem('constellation1', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.constellation1.partyShield, {
+            name: stg('dmgAbsorption'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.constellation1.partyCryoShield, {
+            name: st(`dmgAbsorption.${elementKey}`),
+            variant: elementKey,
+          }),
+        },
+      ],
+    }),
+  ]),
+  constellation2: ct.talentTem('constellation2'),
+  constellation3: ct.talentTem('constellation3', [
+    { fields: [{ node: skillC3 }] },
+  ]),
+  constellation4: ct.talentTem('constellation4'),
+  constellation5: ct.talentTem('constellation5', [
+    { fields: [{ node: burstC5 }] },
+  ]),
+  constellation6: ct.talentTem('constellation6'),
 }
 export default new CharacterSheet(sheet, data)

@@ -1,8 +1,4 @@
-import type {
-  CharacterKey,
-  ElementKey,
-  RegionKey,
-} from '@genshin-optimizer/gi/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
@@ -14,7 +10,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -24,11 +20,8 @@ import {
 } from '../dataUtil'
 
 const key: CharacterKey = 'Tartaglia'
-const elementKey: ElementKey = 'hydro'
-const region: RegionKey = 'snezhnaya'
-const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponType)
+const ct = charTemplates(key)
 
 let a = 0,
   s = 0,
@@ -201,264 +194,247 @@ const nodePassive = constant(1)
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
-export const data = dataObjForCharacterSheet(
-  key,
-  elementKey,
-  region,
-  data_gen,
-  dmgFormulas,
-  {
+export const data = dataObjForCharacterSheet(key, dmgFormulas, {
+  premod: {
+    skillBoost: nodeC3,
+    burstBoost: nodeC5,
+  },
+  teamBuff: {
     premod: {
-      skillBoost: nodeC3,
-      burstBoost: nodeC5,
+      autoBoost: nodePassive,
     },
-    teamBuff: {
-      premod: {
-        autoBoost: nodePassive,
-      },
-    },
-  }
-)
+  },
+})
 
-const sheet: ICharacterSheet = {
-  key,
-  name: ct.name,
-  rarity: data_gen.rarity,
-  elementKey,
-  weaponTypeKey: data_gen.weaponType,
-  gender: 'M',
-  constellationName: ct.chg('constellationName'),
-  title: ct.chg('title'),
-  talent: {
-    auto: ct.talentTem('auto', [
-      {
-        text: ct.chg('auto.fields.normal'),
-      },
-      {
-        fields: dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], {
-            name: ct.chg(`auto.skillParams.${i}`),
+const sheet: TalentSheet = {
+  auto: ct.talentTem('auto', [
+    {
+      text: ct.chg('auto.fields.normal'),
+    },
+    {
+      fields: dm.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[i], {
+          name: ct.chg(`auto.skillParams.${i}`),
+        }),
+      })),
+    },
+    {
+      text: ct.chg('auto.fields.charged'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.charged.aimed, {
+            name: ct.chg(`auto.skillParams.6`),
           }),
-        })),
-      },
-      {
-        text: ct.chg('auto.fields.charged'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.aimed, {
-              name: ct.chg(`auto.skillParams.6`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.charged.aimedCharged, {
-              name: ct.chg(`auto.skillParams.7`),
-            }),
-          },
-        ],
-      },
-      {
-        text: ct.chg('auto.fields.riptide'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.flashDmg, {
-              name: ct.chg(`auto.skillParams.8`),
-              multi: 3,
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.charged.burstDmg, {
-              name: ct.chg(`auto.skillParams.9`),
-            }),
-          },
-          {
-            text: ct.chg('auto.skillParams.10'),
-            value: (data) =>
-              data.get(input.asc).value >= 1
-                ? dm.passive1.durationExt + dm.riptideDuration
-                : dm.riptideDuration,
-            unit: 's',
-          },
-        ],
-      },
-      {
-        text: ct.chg('auto.fields.plunging'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.plunging.dmg, {
-              name: stg('plunging.dmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.low, {
-              name: stg('plunging.low'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.high, {
-              name: stg('plunging.high'),
-            }),
-          },
-        ],
-      },
-    ]),
+        },
+        {
+          node: infoMut(dmgFormulas.charged.aimedCharged, {
+            name: ct.chg(`auto.skillParams.7`),
+          }),
+        },
+      ],
+    },
+    {
+      text: ct.chg('auto.fields.riptide'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.charged.flashDmg, {
+            name: ct.chg(`auto.skillParams.8`),
+            multi: 3,
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.charged.burstDmg, {
+            name: ct.chg(`auto.skillParams.9`),
+          }),
+        },
+        {
+          text: ct.chg('auto.skillParams.10'),
+          value: (data) =>
+            data.get(input.asc).value >= 1
+              ? dm.passive1.durationExt + dm.riptideDuration
+              : dm.riptideDuration,
+          unit: 's',
+        },
+      ],
+    },
+    {
+      text: ct.chg('auto.fields.plunging'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.plunging.dmg, {
+            name: stg('plunging.dmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.low, {
+            name: stg('plunging.low'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.high, {
+            name: stg('plunging.high'),
+          }),
+        },
+      ],
+    },
+  ]),
 
-    skill: ct.talentTem('skill', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.skill.stanceDmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.normal1, {
-              name: ct.chg(`skill.skillParams.1`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.normal2, {
-              name: ct.chg(`skill.skillParams.2`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.normal3, {
-              name: ct.chg(`skill.skillParams.3`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.normal4, {
-              name: ct.chg(`skill.skillParams.4`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.normal5, {
-              name: ct.chg(`skill.skillParams.5`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.normal61, {
-              name: ct.chg(`skill.skillParams.6`),
-              textSuffix: '(1)',
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.normal62, {
-              name: ct.chg(`skill.skillParams.6`),
-              textSuffix: '(2)',
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.charged1, {
-              name: ct.chg(`skill.skillParams.7`),
-              textSuffix: '(1)',
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.charged2, {
-              name: ct.chg(`skill.skillParams.7`),
-              textSuffix: '(2)',
-            }),
-          },
-          {
-            node: infoMut(constant(dm.skill.chargedStamina), {
-              name: ct.chg(`skill.skillParams.8`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.riptideSlash, {
-              name: ct.chg(`skill.skillParams.9`),
-            }),
-          },
-          {
-            text: ct.chg('skill.skillParams.10'),
-            value: dm.skill.duration,
-            unit: 's',
-          },
-          {
-            text: ct.chg('skill.skillParams.11'),
-            value: (data) =>
-              data.get(input.constellation).value >= 1
-                ? `${
-                    dm.skill.preemptiveCd1 -
-                    dm.skill.preemptiveCd1 * dm.constellation1.cdRed
-                  }
+  skill: ct.talentTem('skill', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.skill.stanceDmg, {
+            name: ct.chg(`skill.skillParams.0`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.normal1, {
+            name: ct.chg(`skill.skillParams.1`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.normal2, {
+            name: ct.chg(`skill.skillParams.2`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.normal3, {
+            name: ct.chg(`skill.skillParams.3`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.normal4, {
+            name: ct.chg(`skill.skillParams.4`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.normal5, {
+            name: ct.chg(`skill.skillParams.5`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.normal61, {
+            name: ct.chg(`skill.skillParams.6`),
+            textSuffix: '(1)',
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.normal62, {
+            name: ct.chg(`skill.skillParams.6`),
+            textSuffix: '(2)',
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.charged1, {
+            name: ct.chg(`skill.skillParams.7`),
+            textSuffix: '(1)',
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.charged2, {
+            name: ct.chg(`skill.skillParams.7`),
+            textSuffix: '(2)',
+          }),
+        },
+        {
+          node: infoMut(constant(dm.skill.chargedStamina), {
+            name: ct.chg(`skill.skillParams.8`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.riptideSlash, {
+            name: ct.chg(`skill.skillParams.9`),
+          }),
+        },
+        {
+          text: ct.chg('skill.skillParams.10'),
+          value: dm.skill.duration,
+          unit: 's',
+        },
+        {
+          text: ct.chg('skill.skillParams.11'),
+          value: (data) =>
+            data.get(input.constellation).value >= 1
+              ? `${
+                  dm.skill.preemptiveCd1 -
+                  dm.skill.preemptiveCd1 * dm.constellation1.cdRed
+                }
             - ${
               dm.skill.preemptiveCd2 -
               dm.skill.preemptiveCd2 * dm.constellation1.cdRed
             }`
-                : `${dm.skill.preemptiveCd1} - ${dm.skill.preemptiveCd2}`,
-            unit: 's',
-          },
-          {
-            text: ct.chg('skill.skillParams.12'),
-            value: (data) =>
-              data.get(input.constellation).value >= 1
-                ? `${dm.skill.maxCd - dm.skill.maxCd * dm.constellation1.cdRed}`
-                : `${dm.skill.maxCd}`,
-            unit: 's',
-          },
-        ],
-      },
-    ]),
+              : `${dm.skill.preemptiveCd1} - ${dm.skill.preemptiveCd2}`,
+          unit: 's',
+        },
+        {
+          text: ct.chg('skill.skillParams.12'),
+          value: (data) =>
+            data.get(input.constellation).value >= 1
+              ? `${dm.skill.maxCd - dm.skill.maxCd * dm.constellation1.cdRed}`
+              : `${dm.skill.maxCd}`,
+          unit: 's',
+        },
+      ],
+    },
+  ]),
 
-    burst: ct.talentTem('burst', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.burst.meleeDmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.burst.rangedDmg, {
-              name: ct.chg(`burst.skillParams.1`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.burst.riptideBlastDmg, {
-              name: ct.chg(`burst.skillParams.2`),
-            }),
-          },
-          {
-            text: ct.chg('burst.skillParams.4'),
-            value: `${dm.burst.cd}`,
-            unit: 's',
-          },
-          {
-            text: ct.chg('burst.skillParams.5'),
-            value: `${dm.burst.enerCost}`,
-          },
-          {
-            text: ct.chg('burst.skillParams.3'),
-            value: `${dm.burst.enerReturned}`,
-          },
-        ],
-      },
-    ]),
-    passive1: ct.talentTem('passive1'),
-    passive2: ct.talentTem('passive2'),
-    passive3: ct.talentTem('passive3', [
-      ct.headerTem('passive3', {
-        teamBuff: true,
-        fields: [{ node: nodePassive }],
-      }),
-    ]),
-    constellation1: ct.talentTem('constellation1'),
-    constellation2: ct.talentTem('constellation2'),
-    constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: nodeC3 }] },
-    ]),
-    constellation4: ct.talentTem('constellation4'),
-    constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: nodeC5 }] },
-    ]),
-    constellation6: ct.talentTem('constellation6'),
-  },
+  burst: ct.talentTem('burst', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.burst.meleeDmg, {
+            name: ct.chg(`burst.skillParams.0`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.burst.rangedDmg, {
+            name: ct.chg(`burst.skillParams.1`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.burst.riptideBlastDmg, {
+            name: ct.chg(`burst.skillParams.2`),
+          }),
+        },
+        {
+          text: ct.chg('burst.skillParams.4'),
+          value: `${dm.burst.cd}`,
+          unit: 's',
+        },
+        {
+          text: ct.chg('burst.skillParams.5'),
+          value: `${dm.burst.enerCost}`,
+        },
+        {
+          text: ct.chg('burst.skillParams.3'),
+          value: `${dm.burst.enerReturned}`,
+        },
+      ],
+    },
+  ]),
+  passive1: ct.talentTem('passive1'),
+  passive2: ct.talentTem('passive2'),
+  passive3: ct.talentTem('passive3', [
+    ct.headerTem('passive3', {
+      teamBuff: true,
+      fields: [{ node: nodePassive }],
+    }),
+  ]),
+  constellation1: ct.talentTem('constellation1'),
+  constellation2: ct.talentTem('constellation2'),
+  constellation3: ct.talentTem('constellation3', [
+    { fields: [{ node: nodeC3 }] },
+  ]),
+  constellation4: ct.talentTem('constellation4'),
+  constellation5: ct.talentTem('constellation5', [
+    { fields: [{ node: nodeC5 }] },
+  ]),
+  constellation6: ct.talentTem('constellation6'),
 }
 export default new CharacterSheet(sheet, data)

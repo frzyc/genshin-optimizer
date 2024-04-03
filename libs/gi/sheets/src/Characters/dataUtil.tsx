@@ -5,14 +5,12 @@ import {
 } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
-  ElementKey,
   MainStatKey,
-  RegionKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import { allMainStatKeys } from '@genshin-optimizer/gi/consts'
-import type { CharacterDataGen } from '@genshin-optimizer/gi/stats'
-import { allStats } from '@genshin-optimizer/gi/stats'
+import type { CharacterGrowCurveKey } from '@genshin-optimizer/gi/dm'
+import { allStats, getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
 import {
   constant,
@@ -296,31 +294,30 @@ export function healNodeTalent(
 }
 export function dataObjForCharacterSheet(
   key: CharacterKey,
-  element: ElementKey | undefined,
-  region: RegionKey | undefined,
-  gen: CharacterDataGen,
   display: { [key: string]: DisplaySub },
   additional: Data = {}
 ): Data {
-  function curve(base: number, lvlCurve: string): NumNode {
+  function curve(base: number, lvlCurve: CharacterGrowCurveKey): NumNode {
     return prod(
       base,
       subscript<number>(input.lvl, allStats.char.expCurve[lvlCurve])
     )
   }
-  display.basic = { ...commonBasic }
+  const element = getCharEle(key)
+  const { region, weaponType, lvlCurves, ascensionBonus } = getCharStat(key)
+  display['basic'] = { ...commonBasic }
   const data: Data = {
     charKey: constant(key),
     base: {},
-    weaponType: constant(gen.weaponType),
+    weaponType: constant(weaponType),
     premod: {},
     display,
   }
   if (element) {
     data.charEle = constant(element)
     data.teamBuff = { tally: { [element]: constant(1) } }
-    data.display!.basic[`${element}_dmg_`] = input.total[`${element}_dmg_`]
-    data.display!.reaction = reactions[element]
+    data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
+    data.display!['reaction'] = reactions[element]
   }
   if (region)
     layeredAssignment(data, ['teamBuff', 'tally', region], constant(1))
@@ -329,18 +326,18 @@ export function dataObjForCharacterSheet(
     ['teamBuff', 'tally', 'maxEleMas'],
     input.premod.eleMas
   )
-  if (gen.weaponType !== 'catalyst') {
-    if (!data.display!.basic) data.display!.basic = {}
-    data.display!.basic!.physical_dmg_ = input.total.physical_dmg_
+  if (weaponType !== 'catalyst') {
+    if (!data.display!['basic']) data.display!['basic'] = {}
+    data.display!['basic']!['physical_dmg_'] = input.total.physical_dmg_
   }
 
   let foundSpecial: boolean | undefined
   for (const stat of [...allMainStatKeys, 'def' as const]) {
     const list: NumNode[] = []
-    const lvlCurveBase = gen.lvlCurves.find((lc) => lc.key === stat)
+    const lvlCurveBase = lvlCurves.find((lc) => lc.key === stat)
     if (lvlCurveBase) list.push(curve(lvlCurveBase.base, lvlCurveBase.curve))
 
-    const asc = gen.ascensionBonus[stat]
+    const asc = ascensionBonus[stat]
     if (asc) list.push(subscript(input.asc, asc))
 
     if (!list.length) continue

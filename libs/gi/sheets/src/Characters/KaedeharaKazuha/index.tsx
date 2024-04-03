@@ -17,7 +17,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -30,9 +30,8 @@ import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 
 const key: CharacterKey = 'KaedeharaKazuha'
 const elementKey: ElementKey = 'anemo'
-const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponType)
+const ct = charTemplates(key)
 
 let a = 0,
   s = 0,
@@ -227,399 +226,380 @@ const dmgFormulas = {
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
-export const data = dataObjForCharacterSheet(
-  key,
-  'anemo',
-  'inazuma',
-  data_gen,
-  dmgFormulas,
-  {
-    teamBuff: {
-      premod: {
-        staminaSprintDec_: passive,
-        eleMas: c2PEleMas,
-      },
-      total: {
-        // Should be in total, since other character abilities should not scale off this
-        // if those abilities are percentage-based (e.g. XQ skill dmg red.)
-        ...asc4,
-      },
-    },
-    infusion: {
-      overridableSelf: c6infusion,
+export const data = dataObjForCharacterSheet(key, dmgFormulas, {
+  teamBuff: {
+    premod: {
+      staminaSprintDec_: passive,
+      eleMas: c2PEleMas,
     },
     total: {
-      normal_dmg_: c6NormDmg_,
-      charged_dmg_: c6ChargedDmg_,
-      plunging_dmg_: c6PlungingDmg_,
+      // Should be in total, since other character abilities should not scale off this
+      // if those abilities are percentage-based (e.g. XQ skill dmg red.)
+      ...asc4,
     },
-    premod: {
-      skillBoost: nodeC3,
-      burstBoost: nodeC5,
-      eleMas: c2EleMas,
-    },
-  }
-)
+  },
+  infusion: {
+    overridableSelf: c6infusion,
+  },
+  total: {
+    normal_dmg_: c6NormDmg_,
+    charged_dmg_: c6ChargedDmg_,
+    plunging_dmg_: c6PlungingDmg_,
+  },
+  premod: {
+    skillBoost: nodeC3,
+    burstBoost: nodeC5,
+    eleMas: c2EleMas,
+  },
+})
 
-const sheet: ICharacterSheet = {
-  key,
-  name: ct.name,
-  rarity: data_gen.rarity,
-  elementKey,
-  weaponTypeKey: data_gen.weaponType,
-  gender: 'M',
-  constellationName: ct.chg('constellationName'),
-  title: ct.chg('title'),
-  talent: {
-    auto: ct.talentTem('auto', [
-      {
-        text: ct.chg('auto.fields.normal'),
-      },
-      {
-        fields: dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], {
-            name: ct.chg(`auto.skillParams.${i + (i < 3 ? 0 : -1)}`),
-            textSuffix: i === 2 ? '(1)' : i === 3 ? '(2)' : '',
-            multi: i === 5 ? 3 : undefined,
+const sheet: TalentSheet = {
+  auto: ct.talentTem('auto', [
+    {
+      text: ct.chg('auto.fields.normal'),
+    },
+    {
+      fields: dm.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[i], {
+          name: ct.chg(`auto.skillParams.${i + (i < 3 ? 0 : -1)}`),
+          textSuffix: i === 2 ? '(1)' : i === 3 ? '(2)' : '',
+          multi: i === 5 ? 3 : undefined,
+        }),
+      })),
+    },
+    {
+      text: ct.chg('auto.fields.charged'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.charged.dmg1, {
+            name: ct.chg(`auto.skillParams.5`),
+            textSuffix: '(1)',
           }),
-        })),
-      },
-      {
-        text: ct.chg('auto.fields.charged'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.dmg1, {
-              name: ct.chg(`auto.skillParams.5`),
-              textSuffix: '(1)',
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.charged.dmg2, {
-              name: ct.chg(`auto.skillParams.5`),
-              textSuffix: '(2)',
-            }),
-          },
-          {
-            text: ct.chg('auto.skillParams.6'),
-            value: dm.charged.stamina,
-          },
-        ],
-      },
-      {
-        text: ct.chg('auto.fields.plunging'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.plunging.dmg, {
-              name: stg('plunging.dmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.low, {
-              name: stg('plunging.low'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.high, {
-              name: stg('plunging.high'),
-            }),
-          },
-        ],
-      },
-    ]),
-
-    skill: ct.talentTem('skill', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.skill.press, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
-          },
-          {
-            text: ct.chg('skill.skillParams.1'),
-            value: (data) =>
-              data.get(input.constellation).value >= 1
-                ? `${dm.skill.cd} - 10% = ${dm.skill.cd * (1 - 0.1)}`
-                : `${dm.skill.cd}`,
-            unit: 's',
-          },
-          {
-            node: infoMut(dmgFormulas.skill.hold, {
-              name: ct.chg(`skill.skillParams.2`),
-            }),
-          },
-          {
-            text: stg('hold.cd'),
-            value: (data) =>
-              data.get(input.constellation).value >= 1
-                ? `${dm.skill.cdHold} - 10% = ${dm.skill.cdHold * (1 - 0.1)}`
-                : `${dm.skill.cdHold}`,
-            unit: 's',
-          },
-        ],
-      },
-      ct.fieldsTem('skill', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.skill.pdmg, {
-              name: stg('plunging.dmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.plow, {
-              name: stg('plunging.low'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.phigh, {
-              name: stg('plunging.high'),
-            }),
-          },
-        ],
-      }),
-      ct.condTem('passive1', {
-        // Skill Absorption
-        value: condSkillAbsorption,
-        path: condSkillAbsorptionPath,
-        name: st('eleAbsor'),
-        states: Object.fromEntries(
-          absorbableEle.map((eleKey) => [
-            eleKey,
-            {
-              name: (
-                <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>
-              ),
-              fields: [
-                {
-                  node: infoMut(dmgFormulas.passive1.absorb, {
-                    name: stg('addEleDMG'),
-                  }),
-                },
-              ],
-            },
-          ])
-        ),
-      }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            node: infoMut(greaterEq(input.constellation, 1, percent(0.1)), {
-              path: 'skillCDRed_',
-            }),
-          },
-          {
-            text: ct.ch('c1'),
-          },
-        ],
-      }),
-    ]),
-
-    burst: ct.talentTem('burst', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.burst.dmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.burst.dot, {
-              name: ct.chg(`burst.skillParams.1`),
-            }),
-          },
-          {
-            text: ct.chg('burst.skillParams.3'),
-            value: dm.burst.duration,
-            unit: 's',
-          },
-          {
-            text: ct.chg('burst.skillParams.4'),
-            value: dm.burst.cd,
-            unit: 's',
-          },
-          {
-            text: ct.chg('burst.skillParams.5'),
-            value: dm.burst.enerCost,
-          },
-        ],
-      },
-      ct.condTem('burst', {
-        // Burst absorption
-        value: condBurstAbsorption,
-        path: condBurstAbsorptionPath,
-        name: st('eleAbsor'),
-        states: Object.fromEntries(
-          absorbableEle.map((eleKey) => [
-            eleKey,
-            {
-              name: (
-                <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>
-              ),
-              fields: [
-                {
-                  node: infoMut(dmgFormulas.burst.absorb, {
-                    name: ct.chg(`burst.skillParams.2`),
-                  }),
-                },
-              ],
-            },
-          ])
-        ),
-      }),
-      ct.condTem('constellation2', {
-        // C2 self
-        value: condC2,
-        path: condC2Path,
-        name: ct.ch('c2'),
-        states: {
-          c2: {
-            fields: [
-              {
-                node: c2EleMas,
-              },
-            ],
-          },
         },
-      }),
-      ct.condTem('constellation2', {
-        // C2 Party
-        canShow: unequal(input.activeCharKey, key, 1),
-        value: condC2P,
-        path: condC2PPath,
-        teamBuff: true,
-        name: st('activeCharField'),
-        states: {
-          c2p: {
+        {
+          node: infoMut(dmgFormulas.charged.dmg2, {
+            name: ct.chg(`auto.skillParams.5`),
+            textSuffix: '(2)',
+          }),
+        },
+        {
+          text: ct.chg('auto.skillParams.6'),
+          value: dm.charged.stamina,
+        },
+      ],
+    },
+    {
+      text: ct.chg('auto.fields.plunging'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.plunging.dmg, {
+            name: stg('plunging.dmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.low, {
+            name: stg('plunging.low'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.high, {
+            name: stg('plunging.high'),
+          }),
+        },
+      ],
+    },
+  ]),
+
+  skill: ct.talentTem('skill', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.skill.press, {
+            name: ct.chg(`skill.skillParams.0`),
+          }),
+        },
+        {
+          text: ct.chg('skill.skillParams.1'),
+          value: (data) =>
+            data.get(input.constellation).value >= 1
+              ? `${dm.skill.cd} - 10% = ${dm.skill.cd * (1 - 0.1)}`
+              : `${dm.skill.cd}`,
+          unit: 's',
+        },
+        {
+          node: infoMut(dmgFormulas.skill.hold, {
+            name: ct.chg(`skill.skillParams.2`),
+          }),
+        },
+        {
+          text: stg('hold.cd'),
+          value: (data) =>
+            data.get(input.constellation).value >= 1
+              ? `${dm.skill.cdHold} - 10% = ${dm.skill.cdHold * (1 - 0.1)}`
+              : `${dm.skill.cdHold}`,
+          unit: 's',
+        },
+      ],
+    },
+    ct.fieldsTem('skill', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.skill.pdmg, {
+            name: stg('plunging.dmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.plow, {
+            name: stg('plunging.low'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.phigh, {
+            name: stg('plunging.high'),
+          }),
+        },
+      ],
+    }),
+    ct.condTem('passive1', {
+      // Skill Absorption
+      value: condSkillAbsorption,
+      path: condSkillAbsorptionPath,
+      name: st('eleAbsor'),
+      states: Object.fromEntries(
+        absorbableEle.map((eleKey) => [
+          eleKey,
+          {
+            name: (
+              <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>
+            ),
             fields: [
               {
-                node: infoMut(c2PEleMasDisp, {
-                  path: 'eleMas',
-                  isTeamBuff: true,
+                node: infoMut(dmgFormulas.passive1.absorb, {
+                  name: stg('addEleDMG'),
                 }),
               },
             ],
           },
+        ])
+      ),
+    }),
+    ct.headerTem('constellation1', {
+      fields: [
+        {
+          node: infoMut(greaterEq(input.constellation, 1, percent(0.1)), {
+            path: 'skillCDRed_',
+          }),
         },
-      }),
-    ]),
+        {
+          text: ct.ch('c1'),
+        },
+      ],
+    }),
+  ]),
 
-    passive1: ct.talentTem('passive1'),
-    passive2: ct.talentTem('passive2', [
-      ct.condTem('passive2', {
-        // Poetics of Fuubutsu
-        teamBuff: true,
-        states: Object.fromEntries(
-          absorbableEle.map((ele) => [
-            ele,
-            {
-              value: condSwirls[ele],
-              path: condSwirlPaths[ele],
-              name: st(`swirlReaction.${ele}`),
-              fields: [
-                {
-                  node: asc4[`${ele}_dmg_`],
-                },
-                {
-                  text: st(`effectDuration.${ele}`),
-                  value: dm.passive2.duration,
-                  unit: 's',
-                },
-              ],
-            },
-          ])
-        ),
-      }),
-      ct.condTem('constellation2', {
-        // C2 self, in teambuff panel
-        value: condC2,
-        path: condC2Path,
-        // Show C2 self buff if A4 is enabled
-        teamBuff: true,
-        canShow: unequal(
-          input.activeCharKey,
-          key,
-          greaterEq(
-            input.asc,
-            4,
-            sum(
-              ...Object.values(condSwirls).map((val) =>
-                unequal(val, undefined, 1)
-              )
-            )
-          )
-        ),
-        name: ct.ch('c2'),
-        states: {
-          c2: {
+  burst: ct.talentTem('burst', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.burst.dmg, {
+            name: ct.chg(`burst.skillParams.0`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.burst.dot, {
+            name: ct.chg(`burst.skillParams.1`),
+          }),
+        },
+        {
+          text: ct.chg('burst.skillParams.3'),
+          value: dm.burst.duration,
+          unit: 's',
+        },
+        {
+          text: ct.chg('burst.skillParams.4'),
+          value: dm.burst.cd,
+          unit: 's',
+        },
+        {
+          text: ct.chg('burst.skillParams.5'),
+          value: dm.burst.enerCost,
+        },
+      ],
+    },
+    ct.condTem('burst', {
+      // Burst absorption
+      value: condBurstAbsorption,
+      path: condBurstAbsorptionPath,
+      name: st('eleAbsor'),
+      states: Object.fromEntries(
+        absorbableEle.map((eleKey) => [
+          eleKey,
+          {
+            name: (
+              <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>
+            ),
             fields: [
               {
-                node: c2EleMas,
+                node: infoMut(dmgFormulas.burst.absorb, {
+                  name: ct.chg(`burst.skillParams.2`),
+                }),
               },
             ],
           },
+        ])
+      ),
+    }),
+    ct.condTem('constellation2', {
+      // C2 self
+      value: condC2,
+      path: condC2Path,
+      name: ct.ch('c2'),
+      states: {
+        c2: {
+          fields: [
+            {
+              node: c2EleMas,
+            },
+          ],
         },
-      }),
-    ]),
-    passive3: ct.talentTem('passive3', [
-      ct.headerTem('passive3', {
-        teamBuff: true,
-        fields: [
+      },
+    }),
+    ct.condTem('constellation2', {
+      // C2 Party
+      canShow: unequal(input.activeCharKey, key, 1),
+      value: condC2P,
+      path: condC2PPath,
+      teamBuff: true,
+      name: st('activeCharField'),
+      states: {
+        c2p: {
+          fields: [
+            {
+              node: infoMut(c2PEleMasDisp, {
+                path: 'eleMas',
+                isTeamBuff: true,
+              }),
+            },
+          ],
+        },
+      },
+    }),
+  ]),
+
+  passive1: ct.talentTem('passive1'),
+  passive2: ct.talentTem('passive2', [
+    ct.condTem('passive2', {
+      // Poetics of Fuubutsu
+      teamBuff: true,
+      states: Object.fromEntries(
+        absorbableEle.map((ele) => [
+          ele,
           {
-            node: passive,
-          },
-        ],
-      }),
-    ]),
-    constellation1: ct.talentTem('constellation1'),
-    constellation2: ct.talentTem('constellation2'),
-    constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: nodeC3 }] },
-    ]),
-    constellation4: ct.talentTem('constellation4'),
-    constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: nodeC5 }] },
-    ]),
-    constellation6: ct.talentTem('constellation6', [
-      ct.condTem('constellation6', {
-        // Crimson Momiji
-        value: condC6,
-        path: condC6Path,
-        name: ct.ch('c6.after'),
-        states: {
-          c6: {
+            value: condSwirls[ele],
+            path: condSwirlPaths[ele],
+            name: st(`swirlReaction.${ele}`),
             fields: [
               {
-                canShow: (data) => data.get(c6infusion).value === elementKey,
-                text: (
-                  <ColorText color={elementKey}>
-                    {st('infusion.anemo')}
-                  </ColorText>
-                ),
+                node: asc4[`${ele}_dmg_`],
               },
               {
-                node: c6NormDmg_,
-              },
-              {
-                node: c6ChargedDmg_,
-              },
-              {
-                node: c6PlungingDmg_,
-              },
-              {
-                text: stg('duration'),
-                value: dm.constellation6.duration,
+                text: st(`effectDuration.${ele}`),
+                value: dm.passive2.duration,
                 unit: 's',
               },
             ],
           },
+        ])
+      ),
+    }),
+    ct.condTem('constellation2', {
+      // C2 self, in teambuff panel
+      value: condC2,
+      path: condC2Path,
+      // Show C2 self buff if A4 is enabled
+      teamBuff: true,
+      canShow: unequal(
+        input.activeCharKey,
+        key,
+        greaterEq(
+          input.asc,
+          4,
+          sum(
+            ...Object.values(condSwirls).map((val) =>
+              unequal(val, undefined, 1)
+            )
+          )
+        )
+      ),
+      name: ct.ch('c2'),
+      states: {
+        c2: {
+          fields: [
+            {
+              node: c2EleMas,
+            },
+          ],
         },
-      }),
-    ]),
-  },
+      },
+    }),
+  ]),
+  passive3: ct.talentTem('passive3', [
+    ct.headerTem('passive3', {
+      teamBuff: true,
+      fields: [
+        {
+          node: passive,
+        },
+      ],
+    }),
+  ]),
+  constellation1: ct.talentTem('constellation1'),
+  constellation2: ct.talentTem('constellation2'),
+  constellation3: ct.talentTem('constellation3', [
+    { fields: [{ node: nodeC3 }] },
+  ]),
+  constellation4: ct.talentTem('constellation4'),
+  constellation5: ct.talentTem('constellation5', [
+    { fields: [{ node: nodeC5 }] },
+  ]),
+  constellation6: ct.talentTem('constellation6', [
+    ct.condTem('constellation6', {
+      // Crimson Momiji
+      value: condC6,
+      path: condC6Path,
+      name: ct.ch('c6.after'),
+      states: {
+        c6: {
+          fields: [
+            {
+              canShow: (data) => data.get(c6infusion).value === elementKey,
+              text: (
+                <ColorText color={elementKey}>{st('infusion.anemo')}</ColorText>
+              ),
+            },
+            {
+              node: c6NormDmg_,
+            },
+            {
+              node: c6ChargedDmg_,
+            },
+            {
+              node: c6PlungingDmg_,
+            },
+            {
+              text: stg('duration'),
+              value: dm.constellation6.duration,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
+  ]),
 }
 
 export default new CharacterSheet(sheet, data)

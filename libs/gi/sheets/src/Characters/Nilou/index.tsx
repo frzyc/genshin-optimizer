@@ -1,4 +1,4 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
@@ -15,7 +15,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -24,11 +24,8 @@ import {
 } from '../dataUtil'
 
 const key: CharacterKey = 'Nilou'
-const elementKey: ElementKey = 'hydro'
-
-const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponType)
+const ct = charTemplates(key)
 
 let a = 0,
   s = 0,
@@ -219,335 +216,318 @@ export const dmgFormulas = {
 }
 const burstC3 = greaterEq(input.constellation, 3, 3)
 const skillC5 = greaterEq(input.constellation, 5, 3)
-export const data = dataObjForCharacterSheet(
-  key,
-  elementKey,
-  'sumeru',
-  data_gen,
-  dmgFormulas,
-  {
-    teamBuff: {
-      premod: {
-        eleMas: a1AfterSkillAndHit_eleMas,
-        bloom_dmg_: bountifulBloom_dmg_,
-        hydro_enemyRes_: c2_hydro_enemyRes_,
-        dendro_enemyRes_: c2_dendro_enemyRes_,
-      },
-    },
+export const data = dataObjForCharacterSheet(key, dmgFormulas, {
+  teamBuff: {
     premod: {
-      skillBoost: skillC5,
-      burstBoost: burstC3,
-      burst_dmg_: c4_burst_dmg_,
-      critRate_: c6_critRate_,
-      critDMG_: c6_critDMG_,
+      eleMas: a1AfterSkillAndHit_eleMas,
+      bloom_dmg_: bountifulBloom_dmg_,
+      hydro_enemyRes_: c2_hydro_enemyRes_,
+      dendro_enemyRes_: c2_dendro_enemyRes_,
     },
-  }
-)
-
-const sheet: ICharacterSheet = {
-  key,
-  name: ct.name,
-  rarity: data_gen.rarity,
-  elementKey,
-  weaponTypeKey: data_gen.weaponType,
-  gender: 'F',
-  constellationName: ct.chg('constellationName'),
-  title: ct.chg('title'),
-  talent: {
-    auto: ct.talentTem('auto', [
-      {
-        text: ct.chg('auto.fields.normal'),
-      },
-      {
-        fields: dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], {
-            name: ct.chg(`auto.skillParams.${i}`),
-          }),
-        })),
-      },
-      {
-        text: ct.chg('auto.fields.charged'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.dmg1, {
-              name: ct.chg(`auto.skillParams.3`),
-            }),
-            textSuffix: '(1)',
-          },
-          {
-            node: infoMut(dmgFormulas.charged.dmg2, {
-              name: ct.chg(`auto.skillParams.3`),
-            }),
-            textSuffix: '(2)',
-          },
-          {
-            text: ct.chg('auto.skillParams.4'),
-            value: dm.charged.stamina,
-          },
-        ],
-      },
-      {
-        text: ct.chg(`auto.fields.plunging`),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.plunging.dmg, {
-              name: stg('plunging.dmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.low, {
-              name: stg('plunging.low'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.high, {
-              name: stg('plunging.high'),
-            }),
-          },
-        ],
-      },
-    ]),
-
-    skill: ct.talentTem('skill', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.skill.skillDmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.dance1Dmg, {
-              name: ct.ch(`skill.dance1`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.whirl1Dmg, {
-              name: ct.ch(`skill.whirl1`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.dance2Dmg, {
-              name: ct.ch(`skill.dance2`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.whirl2Dmg, {
-              name: ct.ch(`skill.whirl2`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.moonDmg, {
-              name: ct.ch(`skill.illusion`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.wheelDmg, {
-              name: ct.ch(`skill.wheel`),
-            }),
-          },
-          {
-            text: ct.chg('skill.skillParams.4'),
-            value: dm.skill.pirouetteDuration,
-            unit: 's',
-          },
-          {
-            text: ct.chg('skill.skillParams.5'),
-            value: dm.skill.lunarPrayerDuration,
-            unit: 's',
-          },
-          {
-            text: ct.chg('skill.skillParams.6'),
-            value: (data) =>
-              data.get(input.constellation).value >= 1
-                ? `${dm.skill.tranquilityAuraDuration}s + ${
-                    dm.constellation1.durationInc
-                  }s = ${
-                    dm.skill.tranquilityAuraDuration +
-                    dm.constellation1.durationInc
-                  }`
-                : dm.skill.tranquilityAuraDuration,
-            unit: 's',
-          },
-          {
-            text: stg('cd'),
-            value: dm.skill.cd,
-            unit: 's',
-          },
-        ],
-      },
-      ct.condTem('constellation4', {
-        path: condC4AfterPirHitPath,
-        value: condC4AfterPirHit,
-        name: ct.ch('c4.condName'),
-        states: {
-          on: {
-            fields: [
-              {
-                text: stg('energyRegen'),
-                value: dm.constellation4.energyRegen,
-              },
-              {
-                node: c4_burst_dmg_,
-              },
-              {
-                text: stg('duration'),
-                value: dm.constellation4.duration,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      }),
-    ]),
-
-    burst: ct.talentTem('burst', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.burst.skillDmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.burst.aeonDmg, {
-              name: ct.chg(`burst.skillParams.1`),
-            }),
-          },
-          {
-            text: stg('cd'),
-            value: dm.burst.cd,
-            unit: 's',
-          },
-          {
-            text: stg('energyCost'),
-            value: dm.burst.cost,
-          },
-        ],
-      },
-    ]),
-
-    passive1: ct.talentTem('passive1', [
-      ct.fieldsTem('passive1', {
-        teamBuff: true,
-        canShow: unequal(onlyDendroHydroTeam, 1, 1),
-        fields: [
-          {
-            text: ct.ch('passive1.notDendroHydroTeam'),
-          },
-        ],
-      }),
-      ct.condTem('passive1', {
-        path: condA1AfterSkillPath,
-        value: condA1AfterSkill,
-        teamBuff: true,
-        canShow: onlyDendroHydroTeam,
-        name: ct.ch('passive1.underChaliceEffect'),
-        states: {
-          on: {
-            fields: [
-              {
-                text: ct.ch('passive1.bountifulCores'),
-              },
-            ],
-          },
-        },
-      }),
-      ct.condTem('passive1', {
-        path: condA1AfterHitPath,
-        value: condA1AfterHit,
-        name: ct.ch('passive1.condName'),
-        teamBuff: true,
-        canShow: isGoldenChaliceBountyActive,
-        states: {
-          on: {
-            fields: [
-              {
-                node: a1AfterSkillAndHit_eleMas,
-              },
-              {
-                text: stg('duration'),
-                value: dm.passive1.buffDuration,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      }),
-      ct.headerTem('passive2', {
-        canShow: isGoldenChaliceBountyActive,
-        teamBuff: true,
-        fields: [
-          {
-            node: bountifulBloom_dmg_,
-          },
-        ],
-      }),
-      ct.condTem('constellation2', {
-        teamBuff: true,
-        canShow: isGoldenChaliceBountyActive,
-        states: {
-          hydro: {
-            path: condC2HydroPath,
-            value: condC2Hydro,
-            name: st('hitOp.hydro'),
-            fields: [
-              {
-                node: c2_hydro_enemyRes_,
-              },
-              {
-                text: stg('effectDuration.hydro'),
-                value: dm.constellation2.duration,
-                unit: 's',
-              },
-            ],
-          },
-          dendro: {
-            path: condC2DendroPath,
-            value: condC2Dendro,
-            name: st('hitOp.dendro'),
-            fields: [
-              {
-                node: c2_dendro_enemyRes_,
-              },
-              {
-                text: stg('effectDuration.dendro'),
-                value: dm.constellation2.duration,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      }),
-    ]),
-    passive2: ct.talentTem('passive2'),
-    passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
-    constellation2: ct.talentTem('constellation2'),
-    constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: burstC3 }] },
-    ]),
-    constellation4: ct.talentTem('constellation4'),
-    constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: skillC5 }] },
-    ]),
-    constellation6: ct.talentTem('constellation6', [
-      {
-        fields: [
-          {
-            node: c6_critRate_,
-          },
-          {
-            node: c6_critDMG_,
-          },
-        ],
-      },
-    ]),
   },
+  premod: {
+    skillBoost: skillC5,
+    burstBoost: burstC3,
+    burst_dmg_: c4_burst_dmg_,
+    critRate_: c6_critRate_,
+    critDMG_: c6_critDMG_,
+  },
+})
+
+const sheet: TalentSheet = {
+  auto: ct.talentTem('auto', [
+    {
+      text: ct.chg('auto.fields.normal'),
+    },
+    {
+      fields: dm.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[i], {
+          name: ct.chg(`auto.skillParams.${i}`),
+        }),
+      })),
+    },
+    {
+      text: ct.chg('auto.fields.charged'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.charged.dmg1, {
+            name: ct.chg(`auto.skillParams.3`),
+          }),
+          textSuffix: '(1)',
+        },
+        {
+          node: infoMut(dmgFormulas.charged.dmg2, {
+            name: ct.chg(`auto.skillParams.3`),
+          }),
+          textSuffix: '(2)',
+        },
+        {
+          text: ct.chg('auto.skillParams.4'),
+          value: dm.charged.stamina,
+        },
+      ],
+    },
+    {
+      text: ct.chg(`auto.fields.plunging`),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.plunging.dmg, {
+            name: stg('plunging.dmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.low, {
+            name: stg('plunging.low'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.high, {
+            name: stg('plunging.high'),
+          }),
+        },
+      ],
+    },
+  ]),
+
+  skill: ct.talentTem('skill', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.skill.skillDmg, {
+            name: ct.chg(`skill.skillParams.0`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.dance1Dmg, {
+            name: ct.ch(`skill.dance1`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.whirl1Dmg, {
+            name: ct.ch(`skill.whirl1`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.dance2Dmg, {
+            name: ct.ch(`skill.dance2`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.whirl2Dmg, {
+            name: ct.ch(`skill.whirl2`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.moonDmg, {
+            name: ct.ch(`skill.illusion`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.wheelDmg, {
+            name: ct.ch(`skill.wheel`),
+          }),
+        },
+        {
+          text: ct.chg('skill.skillParams.4'),
+          value: dm.skill.pirouetteDuration,
+          unit: 's',
+        },
+        {
+          text: ct.chg('skill.skillParams.5'),
+          value: dm.skill.lunarPrayerDuration,
+          unit: 's',
+        },
+        {
+          text: ct.chg('skill.skillParams.6'),
+          value: (data) =>
+            data.get(input.constellation).value >= 1
+              ? `${dm.skill.tranquilityAuraDuration}s + ${
+                  dm.constellation1.durationInc
+                }s = ${
+                  dm.skill.tranquilityAuraDuration +
+                  dm.constellation1.durationInc
+                }`
+              : dm.skill.tranquilityAuraDuration,
+          unit: 's',
+        },
+        {
+          text: stg('cd'),
+          value: dm.skill.cd,
+          unit: 's',
+        },
+      ],
+    },
+    ct.condTem('constellation4', {
+      path: condC4AfterPirHitPath,
+      value: condC4AfterPirHit,
+      name: ct.ch('c4.condName'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: stg('energyRegen'),
+              value: dm.constellation4.energyRegen,
+            },
+            {
+              node: c4_burst_dmg_,
+            },
+            {
+              text: stg('duration'),
+              value: dm.constellation4.duration,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
+  ]),
+
+  burst: ct.talentTem('burst', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.burst.skillDmg, {
+            name: ct.chg(`burst.skillParams.0`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.burst.aeonDmg, {
+            name: ct.chg(`burst.skillParams.1`),
+          }),
+        },
+        {
+          text: stg('cd'),
+          value: dm.burst.cd,
+          unit: 's',
+        },
+        {
+          text: stg('energyCost'),
+          value: dm.burst.cost,
+        },
+      ],
+    },
+  ]),
+
+  passive1: ct.talentTem('passive1', [
+    ct.fieldsTem('passive1', {
+      teamBuff: true,
+      canShow: unequal(onlyDendroHydroTeam, 1, 1),
+      fields: [
+        {
+          text: ct.ch('passive1.notDendroHydroTeam'),
+        },
+      ],
+    }),
+    ct.condTem('passive1', {
+      path: condA1AfterSkillPath,
+      value: condA1AfterSkill,
+      teamBuff: true,
+      canShow: onlyDendroHydroTeam,
+      name: ct.ch('passive1.underChaliceEffect'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: ct.ch('passive1.bountifulCores'),
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('passive1', {
+      path: condA1AfterHitPath,
+      value: condA1AfterHit,
+      name: ct.ch('passive1.condName'),
+      teamBuff: true,
+      canShow: isGoldenChaliceBountyActive,
+      states: {
+        on: {
+          fields: [
+            {
+              node: a1AfterSkillAndHit_eleMas,
+            },
+            {
+              text: stg('duration'),
+              value: dm.passive1.buffDuration,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
+    ct.headerTem('passive2', {
+      canShow: isGoldenChaliceBountyActive,
+      teamBuff: true,
+      fields: [
+        {
+          node: bountifulBloom_dmg_,
+        },
+      ],
+    }),
+    ct.condTem('constellation2', {
+      teamBuff: true,
+      canShow: isGoldenChaliceBountyActive,
+      states: {
+        hydro: {
+          path: condC2HydroPath,
+          value: condC2Hydro,
+          name: st('hitOp.hydro'),
+          fields: [
+            {
+              node: c2_hydro_enemyRes_,
+            },
+            {
+              text: stg('effectDuration.hydro'),
+              value: dm.constellation2.duration,
+              unit: 's',
+            },
+          ],
+        },
+        dendro: {
+          path: condC2DendroPath,
+          value: condC2Dendro,
+          name: st('hitOp.dendro'),
+          fields: [
+            {
+              node: c2_dendro_enemyRes_,
+            },
+            {
+              text: stg('effectDuration.dendro'),
+              value: dm.constellation2.duration,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
+  ]),
+  passive2: ct.talentTem('passive2'),
+  passive3: ct.talentTem('passive3'),
+  constellation1: ct.talentTem('constellation1'),
+  constellation2: ct.talentTem('constellation2'),
+  constellation3: ct.talentTem('constellation3', [
+    { fields: [{ node: burstC3 }] },
+  ]),
+  constellation4: ct.talentTem('constellation4'),
+  constellation5: ct.talentTem('constellation5', [
+    { fields: [{ node: skillC5 }] },
+  ]),
+  constellation6: ct.talentTem('constellation6', [
+    {
+      fields: [
+        {
+          node: c6_critRate_,
+        },
+        {
+          node: c6_critDMG_,
+        },
+      ],
+    },
+  ]),
 }
 
 export default new CharacterSheet(sheet, data)

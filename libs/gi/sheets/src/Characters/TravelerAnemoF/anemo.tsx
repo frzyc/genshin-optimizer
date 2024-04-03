@@ -20,7 +20,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'
-import Traveler from '../Traveler'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -37,7 +36,7 @@ export default function anemo(
   const elementKey: ElementKey = 'anemo'
   const condCharKey = 'TravelerAnemo'
   const [, ch] = trans('char', condCharKey)
-  const ct = charTemplates(key, Traveler.data_gen.weaponType)
+  const ct = charTemplates(key)
 
   const skillParam_gen = allStats.char.skillParam.TravelerAnemoF
   let s = 0,
@@ -188,26 +187,19 @@ export default function anemo(
 
   const nodeC3 = greaterEq(input.constellation, 3, 3)
   const nodeC5 = greaterEq(input.constellation, 5, 3)
-  const data = dataObjForCharacterSheet(
-    charKey,
-    elementKey,
-    undefined,
-    Traveler.data_gen,
-    dmgFormulas,
-    {
+  const data = dataObjForCharacterSheet(charKey, dmgFormulas, {
+    premod: {
+      skillBoost: nodeC5,
+      burstBoost: nodeC3,
+      enerRech_: nodeC2,
+    },
+    teamBuff: {
       premod: {
-        skillBoost: nodeC5,
-        burstBoost: nodeC3,
-        enerRech_: nodeC2,
+        ...nodesC6,
+        anemo_enemyRes_: nodeC6,
       },
-      teamBuff: {
-        premod: {
-          ...nodesC6,
-          anemo_enemyRes_: nodeC6,
-        },
-      },
-    }
-  )
+    },
+  })
 
   const talent: TalentSheet = {
     skill: ct.talentTem('skill', [
@@ -426,6 +418,5 @@ export default function anemo(
   return {
     talent,
     data,
-    elementKey,
   }
 }
