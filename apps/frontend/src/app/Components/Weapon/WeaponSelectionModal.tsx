@@ -9,6 +9,8 @@ import {
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
+import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+import { WeaponName } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
@@ -71,9 +73,7 @@ export default function WeaponSelectionModal({
     () =>
       allWeaponKeys
         .filter((wKey) => filter(getWeaponSheet(wKey)))
-        .filter((wKey) =>
-          weaponFilter.includes(getWeaponSheet(wKey).weaponType)
-        )
+        .filter((wKey) => weaponFilter.includes(getWeaponStat(wKey).weaponType))
         .filter(
           (wKey) =>
             !deferredSearchTerm ||
@@ -81,8 +81,8 @@ export default function WeaponSelectionModal({
               .toLowerCase()
               .includes(deferredSearchTerm.toLowerCase())
         )
-        .filter((wKey) => rarity.includes(getWeaponSheet(wKey).rarity))
-        .sort((a, b) => getWeaponSheet(b).rarity - getWeaponSheet(a).rarity),
+        .filter((wKey) => rarity.includes(getWeaponStat(wKey).rarity))
+        .sort((a, b) => getWeaponStat(b).rarity - getWeaponStat(a).rarity),
     [deferredSearchTerm, filter, rarity, t, weaponFilter]
   )
 
@@ -90,7 +90,7 @@ export default function WeaponSelectionModal({
     () =>
       catTotal(allWeaponTypeKeys, (ct) =>
         allWeaponKeys.forEach((wk) => {
-          const wtk = getWeaponSheet(wk).weaponType
+          const wtk = getWeaponStat(wk).weaponType
           ct[wtk].total++
           if (weaponIdList.includes(wk)) ct[wtk].current++
         })
@@ -102,7 +102,7 @@ export default function WeaponSelectionModal({
     () =>
       catTotal(allRarityKeys, (ct) =>
         allWeaponKeys.forEach((wk) => {
-          const wr = getWeaponSheet(wk).rarity
+          const wr = getWeaponStat(wk).rarity
           ct[wr].total++
           if (weaponIdList.includes(wk)) ct[wr].current++
         })
@@ -149,7 +149,7 @@ export default function WeaponSelectionModal({
         <CardContent>
           <Grid container spacing={1}>
             {weaponIdList.map((weaponKey) => {
-              const weaponSheet = getWeaponSheet(weaponKey)
+              const weaponStat = getWeaponStat(weaponKey)
               return (
                 <Grid item key={weaponKey} lg={3} md={4}>
                   <CardLight sx={{ height: '100%' }}>
@@ -164,22 +164,20 @@ export default function WeaponSelectionModal({
                         component="img"
                         src={weaponAsset(weaponKey, ascension >= 2)}
                         sx={{ width: 100, height: 'auto' }}
-                        className={` grad-${weaponSheet.rarity}star`}
+                        className={` grad-${weaponStat.rarity}star`}
                       />
                       <Box sx={{ flexGrow: 1, px: 1 }}>
                         <Typography variant="subtitle1">
-                          {weaponSheet.name}
+                          <WeaponName weaponKey={weaponKey} />
                         </Typography>
                         <Typography
                           sx={{ display: 'flex', alignItems: 'baseline' }}
                         >
                           <ImgIcon
                             size={1.5}
-                            src={
-                              imgAssets.weaponTypes?.[weaponSheet.weaponType]
-                            }
+                            src={imgAssets.weaponTypes?.[weaponStat.weaponType]}
                           />
-                          <StarsDisplay stars={weaponSheet.rarity} colored />
+                          <StarsDisplay stars={weaponStat.rarity} colored />
                         </Typography>
                       </Box>
                     </CardActionArea>

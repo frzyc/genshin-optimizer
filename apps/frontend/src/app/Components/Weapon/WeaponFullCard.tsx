@@ -4,9 +4,16 @@ import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
-import { WeaponSheet, getWeaponSheet } from '@genshin-optimizer/gi/sheets'
+import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
+import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
 import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
-import { computeUIData, nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
+import {
+  WeaponName,
+  computeUIData,
+  nodeVStr,
+  resolveInfo,
+} from '@genshin-optimizer/gi/ui'
+import { getLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
@@ -43,7 +50,7 @@ export function WeaponFullCardObj({
           display="flex"
           flexDirection="column"
           alignContent="flex-end"
-          className={`grad-${weaponSheet.rarity}star`}
+          className={`grad-${getWeaponStat(weapon.key).rarity}star`}
         >
           <Box
             component="img"
@@ -55,7 +62,9 @@ export function WeaponFullCardObj({
         </Box>
         <Box flexGrow={1} sx={{ p: 1 }}>
           <Typography variant="body2" gutterBottom>
-            <strong>{weaponSheet?.name}</strong>
+            <strong>
+              <WeaponName weaponKey={weapon.key} />
+            </strong>
           </Typography>
           <Typography
             variant="subtitle1"
@@ -63,9 +72,9 @@ export function WeaponFullCardObj({
             gutterBottom
           >
             <SqBadge color="primary">
-              Lv. {WeaponSheet.getLevelString(weapon as ICachedWeapon)}
+              Lv. {getLevelString(weapon.level, weapon.ascension)}
             </SqBadge>
-            {weaponSheet.hasRefinement && (
+            {weaponHasRefinement(weapon.key) && (
               <SqBadge color="info">R{weapon.refinement}</SqBadge>
             )}
           </Typography>

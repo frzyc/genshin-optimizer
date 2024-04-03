@@ -7,12 +7,14 @@ import {
   percent,
   prod,
 } from '@genshin-optimizer/gi/wr'
+import { trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'OceanHuedClam'
 const setHeader = setHeaderTemplate(key)
+const [, trm] = trans('artifact', key)
 
 const set2 = greaterEq(input.artSet.OceanHuedClam, 2, percent(0.15))
 const heal = greaterEq(
@@ -45,7 +47,7 @@ const sheet: IArtifactSheet = {
           fields: [
             {
               node: infoMut(heal, {
-                name: ArtifactSheet.trm(key)('condName'),
+                name: trm('condName'),
                 variant: 'physical',
               }),
             },

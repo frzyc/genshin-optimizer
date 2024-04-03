@@ -1,13 +1,17 @@
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ArtifactSetKey,
+  CharacterKey,
+  ElementKey,
+  WeaponKey,
+} from '@genshin-optimizer/gi/consts'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import * as allStat_gen from './allStat_gen.json'
-import type { AllStats } from './executors/gen-stats/executor'
+import type { AllStats, CharacterDataGen } from './executors/gen-stats/executor'
 
 // Make sure these are type-only imports/exports.
 // Importing the executor is quite costly.
 export type {
   CharacterDataGen,
-  WeaponData,
   WeaponDataGen,
 } from './executors/gen-stats/executor'
 
@@ -15,7 +19,7 @@ const allStats = allStat_gen as AllStats
 
 export { allStats }
 
-export function getCharEle(ck: CharacterKey) {
+export function getCharEle(ck: CharacterKey): ElementKey {
   switch (ck) {
     case 'TravelerAnemo':
       return 'anemo'
@@ -28,21 +32,33 @@ export function getCharEle(ck: CharacterKey) {
     case 'TravelerHydro':
       return 'hydro'
     default:
-      return allStats.char.data[ck].ele
+      return allStats.char.data[ck].ele!
   }
 }
 
-export function getCharData(ck: CharacterKey) {
+// Omit the ele, should use getCharEle to get char element.
+export function getCharStat(ck: CharacterKey): Omit<CharacterDataGen, 'ele'> {
   const locCharKey = charKeyToLocCharKey(ck)
   return allStats.char.data[locCharKey]
 }
 
 export function isCharMelee(ck: CharacterKey) {
-  const data = getCharData(ck)
-  const weaponTypeKey = data.weaponType
+  const charStat = getCharStat(ck)
+  const weaponTypeKey = charStat.weaponType
   return (
     weaponTypeKey === 'sword' ||
     weaponTypeKey === 'polearm' ||
     weaponTypeKey === 'claymore'
   )
+}
+
+export function getArtSetStat(setKey: ArtifactSetKey) {
+  return allStats.art.data[setKey]
+}
+
+export function getWeaponStat(weaponKey: WeaponKey) {
+  return allStats.weapon.data[weaponKey]
+}
+export function weaponHasRefinement(weaponKey: WeaponKey) {
+  return getWeaponStat(weaponKey).rarity > 2
 }

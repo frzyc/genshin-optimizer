@@ -24,10 +24,11 @@ import type {
 import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi/db'
 import {
   useArtifact,
+  useDBMeta,
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
-import { getCharSheet } from '@genshin-optimizer/gi/sheets'
+import { CharacterName } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
@@ -652,9 +653,8 @@ function ExcludeEquipButton({
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
-  const characterSheet = getCharSheet(
-    database.chars.LocationToCharacterKey(locationKey)
-  )
+  const { gender } = useDBMeta()
+  const characterKey = database.chars.LocationToCharacterKey(locationKey)
   const { excludedLocations } = useOptConfig(optConfigId) ?? {
     excludedLocations: [] as LocationCharacterKey[],
   }
@@ -675,7 +675,10 @@ function ExcludeEquipButton({
       startIcon={excluded ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />}
     >
       <span>
-        {t`excludeChar.allowEquip`} <strong>{characterSheet.name}</strong>
+        {t`excludeChar.allowEquip`}{' '}
+        <strong>
+          <CharacterName characterKey={characterKey} gender={gender} />
+        </strong>
       </span>
     </Button>
   )

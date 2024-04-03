@@ -7,12 +7,13 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import {
-  getArtSheet,
-  getCharSheet,
-  getWeaponSheet,
-} from '@genshin-optimizer/gi/sheets'
-import type { NodeDisplay, UIData } from '@genshin-optimizer/gi/ui'
+  ArtifactSetName,
+  WeaponName,
+  type NodeDisplay,
+  type UIData,
+} from '@genshin-optimizer/gi/ui'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
@@ -53,18 +54,14 @@ export function getDisplayHeader(
   else if (sectionKey.includes(':')) {
     const [namespace, key] = sectionKey.split(':')
     if (namespace === 'artifact') {
-      const sheet = getArtSheet(key as ArtifactSetKey)
-      if (!sheet) return errHeader
       return {
-        title: sheet.name,
+        title: <ArtifactSetName setKey={key as ArtifactSetKey} />,
         icon: artifactDefIcon(key as ArtifactSetKey),
       }
     } else if (namespace === 'weapon') {
-      const sheet = getWeaponSheet(key as WeaponKey)
-      if (!sheet) return errHeader
       const asc = data.get(input.weapon.asc).value
       return {
-        title: sheet.name,
+        title: <WeaponName weaponKey={key as WeaponKey} />,
         icon: weaponAsset(key as WeaponKey, asc >= 2),
       }
     }

@@ -1,5 +1,5 @@
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharData } from '@genshin-optimizer/gi/stats'
+import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { useContext } from 'react'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
@@ -26,7 +26,7 @@ export function BuildEquipped({ active = false }: { active?: boolean }) {
       artifactIds: equippedArtifacts,
       weaponId: equippedWeapon,
     })
-  const weaponTypeKey = getCharData(characterKey).weaponType
+  const weaponTypeKey = getCharStat(characterKey).weaponType
   const copyToTc = () => {
     const newBuildTcId = database.teamChars.newBuildTcFromBuild(
       teamCharId,
@@ -64,7 +64,7 @@ function BuildEquip({
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const weaponTypeKey = getCharData(characterKey).weaponType
+  const weaponTypeKey = getCharStat(characterKey).weaponType
   return (
     <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 2, lg: 3, xl: 3 }}>
       <Grid item xs={1}>

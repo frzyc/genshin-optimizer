@@ -1,5 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import type { WeaponData } from '@genshin-optimizer/gi/stats'
+import type { WeaponDataGen } from '@genshin-optimizer/gi/stats'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
 import {
@@ -15,7 +15,7 @@ import {
 
 export function dataObjForWeaponSheet(
   key: WeaponKey,
-  gen: WeaponData,
+  gen: WeaponDataGen,
   additional: Data = {},
   displayWeapon: DisplaySub = {}
 ): Data {

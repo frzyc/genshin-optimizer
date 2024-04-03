@@ -9,14 +9,15 @@ import {
   type ICachedWeapon,
 } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
-import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
+import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {
-  WeaponSheet,
   allArtifactData,
+  displayDataMap,
   getCharSheet,
   getWeaponSheet,
   resonanceData,
 } from '@genshin-optimizer/gi/sheets'
+import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { uiDataForTeam } from '@genshin-optimizer/gi/ui'
 import type { CharInfo, Data } from '@genshin-optimizer/gi/wr'
 import {
@@ -265,9 +266,8 @@ function getCharDataBundle(
   const weaponSheet = getWeaponSheet(weapon.key)
   if (!weaponSheet) return undefined
 
-  const weaponSheetsDataOfType = WeaponSheet.getAllDataOfType(
-    characterSheet.weaponTypeKey
-  )
+  const weaponSheetsDataOfType =
+    displayDataMap[getCharStat(charInfo.key).weaponType]
 
   const weaponSheetsData = useCustom
     ? (() => {

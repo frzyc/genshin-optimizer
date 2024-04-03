@@ -1,8 +1,7 @@
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
-import { useCharacter, useDBMeta } from '@genshin-optimizer/gi/db-ui'
-import { getCharSheet } from '@genshin-optimizer/gi/sheets'
+import { useCharacter } from '@genshin-optimizer/gi/db-ui'
 import { CardContent, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import type { CharacterContextObj } from '../../../Context/CharacterContext'
@@ -47,8 +46,6 @@ function CharacterEditorContent({
   onClose,
 }: CharacterDisplayCardProps) {
   const character = useCharacter(characterKey)
-  const { gender } = useDBMeta()
-  const characterSheet = getCharSheet(characterKey, gender)
   const teamData = useCharData(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
 
@@ -61,13 +58,13 @@ function CharacterEditorContent({
     }
   }, [charUIData, teamData])
 
-  const characterContextValue: CharacterContextObj | undefined = useMemo(() => {
-    if (!character || !characterSheet) return undefined
-    return {
-      character,
-      characterSheet,
-    }
-  }, [character, characterSheet])
+  const characterContextValue: CharacterContextObj | undefined = useMemo(
+    () =>
+      character && {
+        character,
+      },
+    [character]
+  )
 
   const [chartData, setChartData] = useState<ChartData | undefined>()
   const [graphBuilds, setGraphBuilds] = useState<GeneratedBuild[] | undefined>()

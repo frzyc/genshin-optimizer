@@ -3,6 +3,8 @@ import {
   BootstrapTooltip,
   ColorText,
   ConditionalWrapper,
+  InfoTooltip,
+  InfoTooltipInline,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { clamp, clamp01, getUnitStr } from '@genshin-optimizer/common/util'
@@ -18,9 +20,13 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getArtSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactSetName,
+  ArtifactSetSlotDesc,
+  ArtifactSetSlotName,
+  artifactLevelVariant,
+} from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
   getArtifactEfficiency,
@@ -47,7 +53,6 @@ import { ArtifactSetTooltipContent } from '../Components/Artifact/ArtifactSetToo
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
 import LocationName from '../Components/Character/LocationName'
-import InfoTooltip, { InfoTooltipInline } from '../Components/InfoTooltip'
 import PercentBadge from '../Components/PercentBadge'
 import type { ArtifactEditorProps } from './ArtifactEditor'
 
@@ -82,7 +87,6 @@ export default function ArtifactCard({
   const database = useDatabase()
   const databaseArtifact = useArtifact(artifactId)
   const artSetKey = (artifactObj ?? databaseArtifact)?.setKey
-  const sheet = artSetKey && getArtSheet(artSetKey)
   const setLocation = useCallback(
     (k: LocationKey) =>
       artifactId && database.arts.set(artifactId, { location: k }),
@@ -167,15 +171,13 @@ export default function ArtifactCard({
   )
 
   const artifactValid = maxEfficiency !== 0
-  const slotName = sheet?.getSlotName(slotKey)
-  const slotDesc = sheet?.getSlotDesc(slotKey)
+  const slotName = <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
+  const slotDesc = <ArtifactSetSlotDesc setKey={setKey} slotKey={slotKey} />
   const slotDescTooltip = slotDesc && (
     <InfoTooltip
       title={
         <Box>
-          <Suspense fallback={<Skeleton variant="text" width={100} />}>
-            <Typography variant="h6">{slotName}</Typography>
-          </Suspense>
+          <Typography variant="h6">{slotName}</Typography>
           <Typography>{slotDesc}</Typography>
         </Box>
       }
@@ -371,10 +373,11 @@ export default function ArtifactCard({
               </strong>
             )}
             <Typography color="success.main">
-              {sheet?.name ?? 'Artifact Set'}{' '}
-              {sheet && (
+              {(artSetKey && <ArtifactSetName setKey={artSetKey} />) ||
+                'Artifact Set'}{' '}
+              {artSetKey && (
                 <InfoTooltipInline
-                  title={<ArtifactSetTooltipContent artifactSheet={sheet} />}
+                  title={<ArtifactSetTooltipContent setKey={artSetKey} />}
                 />
               )}
             </Typography>

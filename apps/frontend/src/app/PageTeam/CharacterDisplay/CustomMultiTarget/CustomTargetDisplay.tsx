@@ -15,6 +15,7 @@ import {
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
+import { isCharMelee } from '@genshin-optimizer/gi/stats'
 import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { allInputPremodKeys } from '@genshin-optimizer/gi/wr'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
@@ -58,7 +59,9 @@ export default function CustomTargetDisplay({
   onDup: () => void
 }) {
   const { t } = useTranslation('page_character')
-  const { characterSheet } = useContext(CharacterContext)
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const { path, weight, hitMode, reaction, infusionAura, bonusStats } =
     customTarget
@@ -86,7 +89,7 @@ export default function CustomTargetDisplay({
   )
 
   const isMeleeAuto =
-    characterSheet?.isMelee() &&
+    isCharMelee(characterKey) &&
     (path[0] === 'normal' || path[0] === 'charged' || path[0] === 'plunging')
   const isTransformativeReaction = path[0] === 'reaction'
   return (

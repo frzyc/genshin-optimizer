@@ -1,4 +1,9 @@
-import { objMap, objPathValue, toDecimal } from '@genshin-optimizer/common/util'
+import {
+  objMap,
+  objPathValue,
+  shouldShowDevComponents,
+  toDecimal,
+} from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import {
   allSubstatKeys,
@@ -17,7 +22,6 @@ import {
   precompute,
 } from '@genshin-optimizer/gi/wr'
 import type { TeamData } from '../../../../Context/DataContext'
-import { shouldShowDevComponents } from '../../../../Util/Util'
 import { dynamicData } from '../TabOptimize/foreground'
 
 export type TCWorkerResult = TotalResult | CountResult | FinalizeResult

@@ -12,7 +12,11 @@ import {
   isCharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharSheet, getWeaponSheet } from '@genshin-optimizer/gi/sheets'
+import {
+  getCharEle,
+  getCharStat,
+  getWeaponStat,
+} from '@genshin-optimizer/gi/stats'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import {
@@ -143,7 +147,7 @@ export default function PageCharacter() {
         Object.entries(database.chars.data).forEach(([ck, char]) => {
           const weapon = database.weapons.get(char.equippedWeapon)
           if (!weapon) return
-          const wtk = getWeaponSheet(weapon.key).weaponType
+          const wtk = getWeaponStat(weapon.key).weaponType
           ct[wtk].total++
           if (charKeys.includes(ck)) ct[wtk].current++
         })
@@ -155,7 +159,7 @@ export default function PageCharacter() {
     () =>
       catTotal(allElementKeys, (ct) =>
         Object.entries(database.chars.data).forEach(([ck, char]) => {
-          const eleKey = getCharSheet(char.key, database.gender).elementKey
+          const eleKey = getCharEle(char.key)
           ct[eleKey].total++
           if (charKeys.includes(ck)) ct[eleKey].current++
         })
@@ -167,9 +171,9 @@ export default function PageCharacter() {
     () =>
       catTotal(allCharacterRarityKeys, (ct) =>
         Object.entries(database.chars.data).forEach(([ck, char]) => {
-          const eleKey = getCharSheet(char.key, database.gender).rarity
-          ct[eleKey].total++
-          if (charKeys.includes(ck)) ct[eleKey].current++
+          const key = getCharStat(char.key).rarity
+          ct[key].total++
+          if (charKeys.includes(ck)) ct[key].current++
         })
       ),
     [database, charKeys]
