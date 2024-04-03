@@ -2,6 +2,7 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi/db'
+import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { computeUIData } from '@genshin-optimizer/gi/ui'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
@@ -23,7 +24,6 @@ import {
 import LevelSelect from '../../../../Components/LevelSelect'
 import RefinementDropdown from '../../../../Components/RefinementDropdown'
 import { DataContext } from '../../../../Context/DataContext'
-import { getWeaponSheet } from '../../../../Data/Weapons'
 import { BuildTcContext } from './BuildTcContext'
 const WeaponSelectionModal = React.lazy(
   () => import('../../../../Components/Weapon/WeaponSelectionModal')

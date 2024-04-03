@@ -1,9 +1,9 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+import { getArtSheet } from '@genshin-optimizer/gi/sheets'
 import { Stack } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import ArtifactSetAutocomplete from '../../../../../Components/Artifact/ArtifactSetAutocomplete'
 import CardLight from '../../../../../Components/Card/CardLight'
-import { getArtSheet } from '../../../../../Data/Artifacts'
 import { BuildTcContext } from '../BuildTcContext'
 import { ArtifactSetEditor } from './ArtifactSetEditor'
 

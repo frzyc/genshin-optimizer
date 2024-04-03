@@ -10,6 +10,7 @@ import {
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
@@ -28,7 +29,6 @@ import {
   TeamCharacterContext,
   type TeamCharacterContextObj,
 } from '../Context/TeamCharacterContext'
-import { getCharSheet } from '../Data/Characters'
 import { useTeamDataNoContext } from '../ReactHooks/useTeamData'
 import useTitle from '../ReactHooks/useTitle'
 import { shouldShowDevComponents } from '../Util/Util'

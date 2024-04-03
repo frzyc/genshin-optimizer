@@ -8,6 +8,7 @@ import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
@@ -33,7 +34,6 @@ import CardDark from '../Components/Card/CardDark'
 import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
 import WeaponRarityToggle from '../Components/ToggleButton/WeaponRarityToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
-import { getWeaponSheet } from '../Data/Weapons'
 import {
   weaponFilterConfigs,
   weaponSortConfigs,

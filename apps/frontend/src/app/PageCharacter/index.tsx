@@ -12,6 +12,7 @@ import {
   isCharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { getCharSheet, getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import {
@@ -42,8 +43,6 @@ import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect
 import CharacterRarityToggle from '../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
-import { getCharSheet } from '../Data/Characters'
-import { getWeaponSheet } from '../Data/Weapons'
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback'
 import {
   characterFilterConfigs,

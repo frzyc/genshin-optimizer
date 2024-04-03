@@ -2,9 +2,11 @@ import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { ColorText, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { deepClone, objKeyMap } from '@genshin-optimizer/common/util'
+import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
+  SetNum,
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
@@ -16,6 +18,7 @@ import {
   handleArtSetExclusion,
 } from '@genshin-optimizer/gi/db'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import { getArtSheet, setKeysByRarities } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { Translate, UIData } from '@genshin-optimizer/gi/ui'
 import { constant } from '@genshin-optimizer/gi/wr'
@@ -44,9 +47,6 @@ import { InfoTooltipInline } from '../../../../../Components/InfoTooltip'
 import type { dataContextObj } from '../../../../../Context/DataContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
-import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
-import type { SetNum } from '../../../../../Types/consts'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import SetInclusionButton from './SetInclusionButton'
 

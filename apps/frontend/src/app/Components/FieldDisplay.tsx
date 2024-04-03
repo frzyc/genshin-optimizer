@@ -6,6 +6,10 @@ import {
 import { evalIfFunc, valueString } from '@genshin-optimizer/common/util'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
+import type {
+  IBasicFieldDisplay,
+  IFieldDisplay,
+} from '@genshin-optimizer/gi/sheets'
 import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
 import GroupsIcon from '@mui/icons-material/Groups'
@@ -24,7 +28,6 @@ import type { ReactNode } from 'react'
 import React, { Suspense, useCallback, useContext, useMemo } from 'react'
 import { DataContext } from '../Context/DataContext'
 import { FormulaDataContext } from '../Context/FormulaDataContext'
-import type { IBasicFieldDisplay, IFieldDisplay } from '../Types/fieldDisplay'
 import AmpReactionModeText from './AmpReactionModeText'
 
 export default function FieldsDisplay({

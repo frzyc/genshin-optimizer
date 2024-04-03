@@ -11,6 +11,7 @@ import {
   useCharacter,
   useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -18,7 +19,6 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { Box, CardActionArea, Typography } from '@mui/material'
 import type { MouseEvent, ReactNode } from 'react'
 import { useCallback, useContext } from 'react'
-import { getCharSheet } from '../../Data/Characters'
 import { iconAsset } from '../../Util/AssetUtil'
 import CardDark from '../Card/CardDark'
 

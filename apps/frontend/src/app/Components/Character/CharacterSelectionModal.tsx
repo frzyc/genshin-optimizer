@@ -18,6 +18,8 @@ import {
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
+import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import CloseIcon from '@mui/icons-material/Close'
@@ -47,8 +49,6 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DataContext } from '../../Context/DataContext'
-import { getCharSheet } from '../../Data/Characters'
-import type CharacterSheet from '../../Data/Characters/CharacterSheet'
 import { iconAsset } from '../../Util/AssetUtil'
 import type { CharacterSortKey } from '../../Util/CharacterSort'
 import {

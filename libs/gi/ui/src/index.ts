@@ -1,6 +1,7 @@
 import './App.scss'
 export * from './Artifact'
 export * from './Character'
+export * from './Components'
 export * from './Context'
 export * from './Theme'
 export * from './Translate'

@@ -1,9 +1,9 @@
 import { BootstrapTooltip, ImgIcon } from '@genshin-optimizer/common/ui'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
+import type { WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { Skeleton, Typography } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'
 import { Suspense } from 'react'
-import type WeaponSheet from '../../Data/Weapons/WeaponSheet'
 
 type Data = {
   sheet: WeaponSheet

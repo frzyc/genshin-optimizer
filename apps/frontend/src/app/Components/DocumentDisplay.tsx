@@ -1,15 +1,15 @@
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { CardHeaderCustom, CardThemed } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
-import { Box, Divider, Typography } from '@mui/material'
-import { useContext } from 'react'
-import { DataContext } from '../Context/DataContext'
 import type {
   DocumentSection,
   IDocumentFields,
   IDocumentHeader,
   IDocumentText,
-} from '../Types/sheet'
+} from '@genshin-optimizer/gi/sheets'
+import { Box, Divider, Typography } from '@mui/material'
+import { useContext } from 'react'
+import { DataContext } from '../Context/DataContext'
 import ConditionalDisplay from './Conditional/ConditionalDisplay'
 import FieldsDisplay from './FieldDisplay'
 import { InfoTooltipInline } from './InfoTooltip'

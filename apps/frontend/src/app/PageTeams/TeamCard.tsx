@@ -9,6 +9,7 @@ import {
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import InfoIcon from '@mui/icons-material/Info'
 import PersonIcon from '@mui/icons-material/Person'
@@ -29,7 +30,6 @@ import type { CharacterContextObj } from '../Context/CharacterContext'
 import { CharacterContext } from '../Context/CharacterContext'
 import type { dataContextObj } from '../Context/DataContext'
 import { DataContext } from '../Context/DataContext'
-import { getCharSheet } from '../Data/Characters'
 import { getArtifactData } from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
 import useCharData from '../ReactHooks/useCharData'
 

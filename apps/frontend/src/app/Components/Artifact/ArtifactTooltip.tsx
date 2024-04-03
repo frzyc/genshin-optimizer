@@ -7,6 +7,7 @@ import {
 import { clamp } from '@genshin-optimizer/common/util'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { getArtSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { RollColorKey } from '@genshin-optimizer/gi/ui'
 import { IconStatDisplay, artifactLevelVariant } from '@genshin-optimizer/gi/ui'
@@ -14,7 +15,6 @@ import { getMainStatDisplayStr } from '@genshin-optimizer/gi/util'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
-import { getArtSheet } from '../../Data/Artifacts'
 import LocationName from '../Character/LocationName'
 
 export default function ArtifactTooltip({

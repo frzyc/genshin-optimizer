@@ -1,9 +1,9 @@
 import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { CharIconSide } from '@genshin-optimizer/gi/ui'
 import { Typography } from '@mui/material'
-import { getCharSheet } from '../../Data/Characters'
 
 export default function LocationIcon({
   characterKey,

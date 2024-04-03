@@ -6,6 +6,11 @@ import {
   layeredAssignment,
 } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type {
+  DocumentConditional,
+  IDocumentConditionalExclusive,
+  IDocumentConditionalMultiple,
+} from '@genshin-optimizer/gi/sheets'
 import { Translate } from '@genshin-optimizer/gi/ui'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -14,11 +19,6 @@ import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { DataContext } from '../../Context/DataContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
-import type {
-  DocumentConditional,
-  IDocumentConditionalExclusive,
-  IDocumentConditionalMultiple,
-} from '../../Types/sheet'
 
 interface ConditionalSelectorProps {
   conditional: DocumentConditional
