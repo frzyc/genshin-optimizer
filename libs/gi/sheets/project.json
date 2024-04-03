@@ -11,6 +11,12 @@
       "options": {
         "lintFilePatterns": ["libs/gi/sheets/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "libs/gi/sheets/vitest.config.ts"
+      }
     }
   }
 }

@@ -7,17 +7,17 @@ import {
   type CharacterSheetKey,
   type WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
+import type { NumNode } from '@genshin-optimizer/gi/wr'
+import { greaterEq, input } from '@genshin-optimizer/gi/wr'
+import type { ReactNode } from 'react'
+import { nameTrans, st, trans } from '../SheetUtil'
 import type {
   DocumentConditional,
   DocumentConditionalBase,
   DocumentSection,
   IDocumentFields,
   IDocumentHeader,
-} from '@genshin-optimizer/gi/sheets'
-import type { NumNode } from '@genshin-optimizer/gi/wr'
-import { greaterEq, input } from '@genshin-optimizer/gi/wr'
-import { ReactNode } from 'react'
-import { nameTrans, st, trans } from '../SheetUtil'
+} from '../sheet'
 import type {
   TalentSheetElement,
   TalentSheetElementKey,

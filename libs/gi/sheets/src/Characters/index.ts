@@ -5,7 +5,7 @@ import type {
   TravelerKey,
 } from '@genshin-optimizer/gi/consts'
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
-import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
+import type { CharacterSheet } from './CharacterSheet'
 
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'

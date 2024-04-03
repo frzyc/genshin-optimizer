@@ -4,7 +4,7 @@ import type {
   RarityKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
-import type { DocumentSection } from '@genshin-optimizer/gi/sheets'
+import type { DocumentSection } from '../sheet'
 
 export interface TalentSheetElement {
   name: ReactNode //talentName

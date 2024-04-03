@@ -1,4 +1,4 @@
-import type { DocumentSection } from '@genshin-optimizer/gi/sheets'
+import type { DocumentSection } from '../sheet'
 
 export interface IWeaponSheet {
   document: DocumentSection[]

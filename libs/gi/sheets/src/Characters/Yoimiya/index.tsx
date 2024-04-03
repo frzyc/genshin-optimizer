@@ -1,7 +1,7 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
-import type { INodeFieldDisplay } from '@genshin-optimizer/gi/sheets'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import type { UIData } from '@genshin-optimizer/gi/ui'
 import {
   compareEq,
   constant,
@@ -18,6 +18,7 @@ import {
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
+import type { INodeFieldDisplay } from '../../fieldDisplay'
 import { CharacterSheet } from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
@@ -402,7 +403,7 @@ const sheet: ICharacterSheet = {
           },
           {
             text: ct.chg('burst.skillParams.2'),
-            value: (uiData) =>
+            value: (uiData: UIData) =>
               dm.burst.duration +
               (uiData.get(input.constellation).value >= 1
                 ? dm.constellation1.burst_durationInc
