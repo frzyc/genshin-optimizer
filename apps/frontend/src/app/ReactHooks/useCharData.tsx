@@ -9,14 +9,15 @@ import type {
 } from '@genshin-optimizer/gi/db'
 import { defaultInitialWeapon } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
+import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {
-  WeaponSheet,
   allArtifactData,
+  displayDataMap,
   getCharSheet,
   getWeaponSheet,
   resonanceData,
 } from '@genshin-optimizer/gi/sheets'
+import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { uiDataForTeam } from '@genshin-optimizer/gi/ui'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import {
@@ -122,7 +123,7 @@ function getTeamDataCalc(
     if (cache) return cache as TeamData
   }
   const { teamData, teamBundle } =
-    getCharData(
+    TeamDataBundle(
       database,
       characterKey,
       mainStatAssumptionLevel,
@@ -144,7 +145,7 @@ function getTeamDataCalc(
 /**
  * This is now used more for getting basic stat for a single char with some basic assumptions
  */
-function getCharData(
+function TeamDataBundle(
   database: ArtCharDatabase,
   characterKey: CharacterKey | '',
   mainStatAssumptionLevel = 0,
@@ -198,9 +199,8 @@ function getCharDataBundle(
   const weaponSheet = getWeaponSheet(weapon.key)
   if (!weaponSheet) return undefined
 
-  const weaponSheetsDataOfType = WeaponSheet.getAllDataOfType(
-    characterSheet.weaponTypeKey
-  )
+  const weaponSheetsDataOfType =
+    displayDataMap[getCharStat(character.key).weaponType]
 
   const weaponSheetsData = useCustom
     ? (() => {

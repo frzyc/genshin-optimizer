@@ -6,9 +6,12 @@ import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
-import { WeaponSheet, getWeaponSheet } from '@genshin-optimizer/gi/sheets'
+import type { WeaponSheet } from '@genshin-optimizer/gi/sheets'
+import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
+import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
 import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { computeUIData, nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
+import { getLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, input } from '@genshin-optimizer/gi/wr'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
@@ -98,7 +101,7 @@ export function WeaponCardNanoObj({
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
         <Box display="flex" height="100%" alignItems="stretch">
           <Box
-            className={`grad-${weaponSheet.rarity}star`}
+            className={`grad-${getWeaponStat(weapon.key).rarity}star`}
             sx={{
               height: '100%',
               position: 'relative',
@@ -109,7 +112,7 @@ export function WeaponCardNanoObj({
               justifyContent: 'flex-end',
             }}
           >
-            <WeaponNameTooltip sheet={weaponSheet}>
+            <WeaponNameTooltip weaponKey={weapon.key}>
               <Box
                 component="img"
                 src={weaponAsset(weapon.key, weapon.ascension >= 2)}
@@ -130,7 +133,11 @@ export function WeaponCardNanoObj({
             >
               <Chip
                 size="small"
-                label={<strong>{WeaponSheet.getLevelString(weapon)}</strong>}
+                label={
+                  <strong>
+                    {getLevelString(weapon.level, weapon.ascension)}
+                  </strong>
+                }
                 color="primary"
               />
               {showLocation && (
@@ -169,7 +176,7 @@ export function WeaponCardNanoObj({
                 alignItems: 'flex-end',
               }}
             >
-              {weaponSheet.hasRefinement && (
+              {weaponHasRefinement(weapon.key) && (
                 <Chip
                   size="small"
                   color="info"

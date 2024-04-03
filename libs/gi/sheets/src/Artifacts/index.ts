@@ -8,9 +8,10 @@ import {
   allArtifactSetKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { UIData } from '@genshin-optimizer/gi/ui'
-import { mergeData } from '@genshin-optimizer/gi/wr'
+import { input, mergeData } from '@genshin-optimizer/gi/wr'
 import type { ArtifactSheet } from './ArtifactSheet'
 
+import { getArtSetStat } from '@genshin-optimizer/gi/stats'
 import Adventurer from './Adventurer'
 import ArchaicPetra from './ArchaicPetra'
 import Berserker from './Berserker'
@@ -120,11 +121,11 @@ export function getArtSheet(sKey: ArtifactSetKey) {
 export const setKeysByRarities = Object.fromEntries(
   allArtifactRarityKeys.map((r) => [r, [] as ArtifactSetKey[]])
 ) as Record<ArtifactRarity, ArtifactSetKey[]>
-allArtifactSetKeys.forEach((setKey) => {
-  const sheet = getArtSheet(setKey)
-  const rarity = Math.max(...sheet.rarity) as ArtifactRarity
-  setKeysByRarities[rarity].push(setKey)
-})
+allArtifactSetKeys.forEach((setKey) =>
+  setKeysByRarities[
+    Math.max(...getArtSetStat(setKey).rarities) as ArtifactRarity
+  ].push(setKey)
+)
 
 export const allArtifactData = mergeData(
   Object.values(artifactSheets).map((s) => s.data)
@@ -135,7 +136,7 @@ export function dataSetEffects(data: UIData) {
     const sheet = getArtSheet(setKey)
     const setNums = (
       Object.keys(sheet.setEffects).map((k) => parseInt(k)) as SetNum[]
-    ).filter((sn) => sheet.hasEnough(sn, data))
+    ).filter((sn) => (data.get(input.artSet[setKey]).value ?? 0) >= sn)
     if (setNums.length) artifactSetEffect[setKey] = setNums
   })
   return artifactSetEffect

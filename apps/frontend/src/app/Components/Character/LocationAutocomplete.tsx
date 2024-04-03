@@ -2,6 +2,7 @@ import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import { GeneralAutocomplete } from '@genshin-optimizer/common/ui'
 import type {
+  CharacterKey,
   LocationCharacterKey,
   LocationKey,
 } from '@genshin-optimizer/gi/consts'
@@ -12,8 +13,6 @@ import {
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
-import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { CharIconSide, SillyContext } from '@genshin-optimizer/gi/ui'
 import type { Variant } from '@genshin-optimizer/gi/wr'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
@@ -24,7 +23,7 @@ import { useTranslation } from 'react-i18next'
 type LocationAutocompleteProps = {
   location: LocationKey
   setLocation: (v: LocationKey) => void
-  filter?: (v: CharacterSheet) => void
+  filter?: (v: CharacterKey) => void
   autoCompleteProps?: Omit<
     AutocompleteProps<
       GeneralAutocompleteOption<LocationKey>,
@@ -108,9 +107,7 @@ export function LocationAutocomplete({
       ...Array.from(
         new Set(
           allLocationCharacterKeys.filter((k) =>
-            filter(
-              getCharSheet(database.chars.LocationToCharacterKey(k), gender)
-            )
+            filter(database.chars.LocationToCharacterKey(k))
           )
         )
       )
@@ -131,7 +128,7 @@ export function LocationAutocomplete({
           return a.label.localeCompare(b.label)
         }),
     ],
-    [t, database.chars, gender, charInDb, filter, toText, silly, isFavorite]
+    [t, database, charInDb, filter, toText, silly, isFavorite]
   )
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>

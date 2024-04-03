@@ -3,10 +3,8 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   useCharMeta,
   useCharacter,
-  useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
-import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {
@@ -47,8 +45,6 @@ export default function CharacterCard({
   const database = useDatabase()
   const teamData = useCharData(characterKey)
   const character = useCharacter(characterKey)
-  const { gender } = useDBMeta()
-  const characterSheet = getCharSheet(characterKey, gender)
   const data = teamData?.[characterKey]?.target
   const onClickHandler = useCallback(
     () => characterKey && onClick?.(characterKey),
@@ -68,12 +64,10 @@ export default function CharacterCard({
 
   const characterContextObj: CharacterContextObj | undefined = useMemo(
     () =>
-      character &&
-      characterSheet && {
+      character && {
         character,
-        characterSheet,
       },
-    [character, characterSheet]
+    [character]
   )
   const dataContextObj: dataContextObj | undefined = useMemo(
     () =>

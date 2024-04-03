@@ -3,7 +3,8 @@ import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
-import { computeUIData } from '@genshin-optimizer/gi/ui'
+import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
+import { WeaponName, computeUIData } from '@genshin-optimizer/gi/ui'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
@@ -62,6 +63,7 @@ export function WeaponEditorCard({
     () => weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
     [weaponSheet, weapon]
   )
+  const hasRefinement = weaponHasRefinement(weapon.key)
   return (
     <CardLight sx={{ p: 1, mb: 1 }}>
       <WeaponSelectionModal
@@ -74,7 +76,7 @@ export function WeaponEditorCard({
       <Box display="flex" flexDirection="column" gap={1}>
         <Box display="flex" gap={1}>
           <Box
-            className={`grad-${weaponSheet.rarity}star`}
+            className={`grad-${getWeaponStat(weapon.key).rarity}star`}
             component="img"
             src={weaponAsset(weapon.key, ascension >= 2)}
             sx={{
@@ -92,9 +94,11 @@ export function WeaponEditorCard({
               onClick={onShow}
               disabled={disabled}
             >
-              <Box sx={{ maxWidth: '10em' }}>{weaponSheet?.name}</Box>
+              <Box sx={{ maxWidth: '10em' }}>
+                <WeaponName weaponKey={key} />
+              </Box>
             </Button>
-            {weaponSheet.hasRefinement && (
+            {hasRefinement && (
               <RefinementDropdown
                 disabled={disabled}
                 refinement={refinement}
@@ -107,7 +111,7 @@ export function WeaponEditorCard({
           level={level}
           ascension={ascension}
           setBoth={setWeapon}
-          useLow={!weaponSheet.hasRefinement}
+          useLow={!hasRefinement}
           disabled={disabled}
         />
         <CardDark>

@@ -42,3 +42,12 @@ export function CharacterConstellationName({
   if (characterKey.startsWith('Traveler')) cKey = `Traveler${gender}`
   return <Translate ns={`char_${cKey}_gen`} key18="constellationName" />
 }
+
+export function CharacterTitle({
+  characterKey,
+}: {
+  characterKey: CharacterKey
+}) {
+  if (characterKey.startsWith('Traveler')) return null
+  return <Translate ns={`char_${characterKey}_gen`} key18="title" />
+}
