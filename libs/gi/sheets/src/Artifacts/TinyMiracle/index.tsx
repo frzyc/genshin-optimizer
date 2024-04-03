@@ -5,7 +5,7 @@ import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent, sum } from '@genshin-optimizer/gi/wr'
 import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'TinyMiracle'
@@ -40,45 +40,41 @@ export const data: Data = dataObjForArtifactSheet(key, {
   ),
 })
 
-const sheet: IArtifactSheet = {
-  name: 'Tiny Miracle',
-  rarity: [3, 4],
-  setEffects: {
-    2: {
-      document: [
-        {
-          header: setHeader(2),
-          fields: Object.values(set2Nodes).map((n) => ({ node: n })),
-        },
-      ],
-    },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          path: condElePath,
-          value: condEle,
-          teamBuff: true,
-          name: trm('condName'),
-          states: Object.fromEntries(
-            allElementKeys.map((e) => [
-              e,
-              {
-                name: <ColorText color={e}>{stg(`element.${e}`)}</ColorText>,
-                fields: [
-                  ...Object.values(set4Nodes).map((n) => ({ node: n })),
-                  {
-                    text: stg('duration'),
-                    value: 10,
-                    unit: 's',
-                  },
-                ],
-              },
-            ])
-          ),
-        },
-      ],
-    },
+const sheet: SetEffectSheet = {
+  2: {
+    document: [
+      {
+        header: setHeader(2),
+        fields: Object.values(set2Nodes).map((n) => ({ node: n })),
+      },
+    ],
+  },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        path: condElePath,
+        value: condEle,
+        teamBuff: true,
+        name: trm('condName'),
+        states: Object.fromEntries(
+          allElementKeys.map((e) => [
+            e,
+            {
+              name: <ColorText color={e}>{stg(`element.${e}`)}</ColorText>,
+              fields: [
+                ...Object.values(set4Nodes).map((n) => ({ node: n })),
+                {
+                  text: stg('duration'),
+                  value: 10,
+                  unit: 's',
+                },
+              ],
+            },
+          ])
+        ),
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)

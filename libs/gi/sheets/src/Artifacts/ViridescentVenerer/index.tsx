@@ -5,7 +5,7 @@ import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent } from '@genshin-optimizer/gi/wr'
 import { condReadNode, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'ViridescentVenerer'
@@ -40,50 +40,46 @@ const data: Data = dataObjForArtifactSheet(key, {
   },
 })
 
-const sheet: IArtifactSheet = {
-  name: 'Viridescent Venerer',
-  rarity: [4, 5],
-  setEffects: {
-    2: {
-      document: [
-        {
-          header: setHeader(2),
-          fields: [{ node: anemo_dmg_ }],
-        },
-      ],
-    },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          fields: [{ node: swirl_dmg_ }],
-        },
-        {
-          header: setHeader(4),
-          teamBuff: true,
-          states: Object.fromEntries(
-            absorbableEle.map((eleKey) => [
-              eleKey,
-              {
-                value: condSwirls[eleKey],
-                path: condSwirlPaths[eleKey],
-                name: st(`swirlReaction.${eleKey}`),
-                fields: [
-                  {
-                    node: condSwirlNodes[`${eleKey}_enemyRes_`],
-                  },
-                  {
-                    text: st(`effectDuration.${eleKey}`),
-                    value: 10,
-                    unit: 's',
-                  },
-                ],
-              },
-            ])
-          ),
-        },
-      ],
-    },
+const sheet: SetEffectSheet = {
+  2: {
+    document: [
+      {
+        header: setHeader(2),
+        fields: [{ node: anemo_dmg_ }],
+      },
+    ],
+  },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        fields: [{ node: swirl_dmg_ }],
+      },
+      {
+        header: setHeader(4),
+        teamBuff: true,
+        states: Object.fromEntries(
+          absorbableEle.map((eleKey) => [
+            eleKey,
+            {
+              value: condSwirls[eleKey],
+              path: condSwirlPaths[eleKey],
+              name: st(`swirlReaction.${eleKey}`),
+              fields: [
+                {
+                  node: condSwirlNodes[`${eleKey}_enemyRes_`],
+                },
+                {
+                  text: st(`effectDuration.${eleKey}`),
+                  value: 10,
+                  unit: 's',
+                },
+              ],
+            },
+          ])
+        ),
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)

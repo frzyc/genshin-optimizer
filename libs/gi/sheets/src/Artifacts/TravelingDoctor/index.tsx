@@ -9,7 +9,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'TravelingDoctor'
@@ -34,26 +34,22 @@ export const data: Data = dataObjForArtifactSheet(
   }
 )
 
-const sheet: IArtifactSheet = {
-  name: 'Traveling Doctor',
-  rarity: [3],
-  setEffects: {
-    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          fields: [
-            {
-              node: infoMut(heal, {
-                name: stg('healing'),
-                variant: 'heal',
-              }),
-            },
-          ],
-        },
-      ],
-    },
+const sheet: SetEffectSheet = {
+  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        fields: [
+          {
+            node: infoMut(heal, {
+              name: stg('healing'),
+              variant: 'heal',
+            }),
+          },
+        ],
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)

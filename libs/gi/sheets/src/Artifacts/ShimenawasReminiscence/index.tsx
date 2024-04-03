@@ -3,7 +3,7 @@ import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent } from '@genshin-optimizer/gi/wr'
 import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'ShimenawasReminiscence'
@@ -30,41 +30,37 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
 })
 
-const sheet: IArtifactSheet = {
-  name: "Shimenawa's Reminiscence",
-  rarity: [4, 5],
-  setEffects: {
-    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          value: usedEnergyState,
-          path: usedEnergyStatePath,
-          name: trm('afterUseEnergy'),
-          states: {
-            used: {
-              fields: [
-                {
-                  node: set4Norm,
-                },
-                {
-                  node: set4Charged,
-                },
-                {
-                  node: set4Plunge,
-                },
-                {
-                  text: stg('duration'),
-                  value: 10,
-                  unit: 's',
-                },
-              ],
-            },
+const sheet: SetEffectSheet = {
+  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        value: usedEnergyState,
+        path: usedEnergyStatePath,
+        name: trm('afterUseEnergy'),
+        states: {
+          used: {
+            fields: [
+              {
+                node: set4Norm,
+              },
+              {
+                node: set4Charged,
+              },
+              {
+                node: set4Plunge,
+              },
+              {
+                text: stg('duration'),
+                value: 10,
+                unit: 's',
+              },
+            ],
           },
         },
-      ],
-    },
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)

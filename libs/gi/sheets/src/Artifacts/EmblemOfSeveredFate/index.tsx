@@ -2,7 +2,7 @@ import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { greaterEq, input, min, percent, prod } from '@genshin-optimizer/gi/wr'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'EmblemOfSeveredFate'
@@ -29,23 +29,19 @@ export const data: Data = dataObjForArtifactSheet(
   }
 )
 
-const sheet: IArtifactSheet = {
-  name: 'Emblem of Severed Fate',
-  rarity: [4, 5],
-  setEffects: {
-    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          fields: [
-            {
-              node: burstBonus,
-            },
-          ],
-        },
-      ],
-    },
+const sheet: SetEffectSheet = {
+  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        fields: [
+          {
+            node: burstBonus,
+          },
+        ],
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)

@@ -10,7 +10,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'EchoesOfAnOffering'
@@ -41,31 +41,27 @@ export const data: Data = dataObjForArtifactSheet(key, {
     normal_dmgInc,
   },
 })
-const sheet: IArtifactSheet = {
-  name: 'Echoes of an Offering',
-  rarity: [4, 5],
-  setEffects: {
-    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          value: condMode,
-          path: condModePath,
-          name: trm('mode'),
-          states: {
-            on: {
-              name: trm('always'),
-              fields: [{ node: normal_dmgInc }],
-            },
-            avg: {
-              name: trm('avg'),
-              fields: [{ node: normal_dmgInc }],
-            },
+const sheet: SetEffectSheet = {
+  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        value: condMode,
+        path: condModePath,
+        name: trm('mode'),
+        states: {
+          on: {
+            name: trm('always'),
+            fields: [{ node: normal_dmgInc }],
+          },
+          avg: {
+            name: trm('avg'),
+            fields: [{ node: normal_dmgInc }],
           },
         },
-      ],
-    },
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)

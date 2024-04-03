@@ -3,7 +3,7 @@ import type { Data, Info } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent, sum } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'Berserker'
@@ -25,31 +25,27 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
 })
 
-const sheet: IArtifactSheet = {
-  name: 'Berserker',
-  rarity: [3, 4],
-  setEffects: {
-    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          path: condPath,
-          value: condNode,
-          teamBuff: true,
-          name: st('lessPercentHP', { percent: 70 }),
-          states: {
-            70: {
-              fields: [
-                {
-                  node: set4,
-                },
-              ],
-            },
+const sheet: SetEffectSheet = {
+  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        path: condPath,
+        value: condNode,
+        teamBuff: true,
+        name: st('lessPercentHP', { percent: 70 }),
+        states: {
+          70: {
+            fields: [
+              {
+                node: set4,
+              },
+            ],
           },
         },
-      ],
-    },
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)
