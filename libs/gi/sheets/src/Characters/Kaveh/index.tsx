@@ -17,7 +17,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet'
+import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -30,9 +30,8 @@ import {
 const key: CharacterKey = 'Kaveh'
 const elementKey: ElementKey = 'dendro'
 
-const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponType)
+const ct = charTemplates(key)
 
 let a = 0,
   s = 0,
@@ -173,253 +172,236 @@ const dmgFormulas = {
 const burstC3 = greaterEq(input.constellation, 3, 3)
 const skillC5 = greaterEq(input.constellation, 5, 3)
 
-export const data = dataObjForCharacterSheet(
-  key,
-  elementKey,
-  'sumeru',
-  data_gen,
-  dmgFormulas,
-  {
+export const data = dataObjForCharacterSheet(key, dmgFormulas, {
+  premod: {
+    burstBoost: burstC3,
+    skillBoost: skillC5,
+    eleMas: a4_eleMas,
+    dendro_res_: c1AfterSkill_dendro_res_,
+    incHeal_: c1AfterSkill_incHeal_,
+    atkSPD_: c2_atkSPD_,
+    bloom_dmg_: c4_bloom_dmg_,
+  },
+  teamBuff: {
     premod: {
-      burstBoost: burstC3,
-      skillBoost: skillC5,
-      eleMas: a4_eleMas,
-      dendro_res_: c1AfterSkill_dendro_res_,
-      incHeal_: c1AfterSkill_incHeal_,
-      atkSPD_: c2_atkSPD_,
-      bloom_dmg_: c4_bloom_dmg_,
+      bloom_dmg_: afterBurst_bloom_dmg_,
     },
-    teamBuff: {
-      premod: {
-        bloom_dmg_: afterBurst_bloom_dmg_,
-      },
-    },
-    infusion: {
-      nonOverridableSelf: afterBurst_infusion,
-    },
-  }
-)
+  },
+  infusion: {
+    nonOverridableSelf: afterBurst_infusion,
+  },
+})
 
-const sheet: ICharacterSheet = {
-  key,
-  name: ct.name,
-  rarity: data_gen.rarity,
-  elementKey,
-  weaponTypeKey: data_gen.weaponType,
-  gender: 'M',
-  constellationName: ct.chg('constellationName'),
-  title: ct.chg('title'),
-  talent: {
-    auto: ct.talentTem('auto', [
-      {
-        text: ct.chg('auto.fields.normal'),
-      },
-      {
-        fields: dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], {
-            name: ct.chg(`auto.skillParams.${i}`),
+const sheet: TalentSheet = {
+  auto: ct.talentTem('auto', [
+    {
+      text: ct.chg('auto.fields.normal'),
+    },
+    {
+      fields: dm.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[i], {
+          name: ct.chg(`auto.skillParams.${i}`),
+        }),
+      })),
+    },
+    {
+      text: ct.chg('auto.fields.charged'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.charged.spin, {
+            name: ct.chg(`auto.skillParams.4`),
           }),
-        })),
-      },
-      {
-        text: ct.chg('auto.fields.charged'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.spin, {
-              name: ct.chg(`auto.skillParams.4`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.charged.final, {
-              name: ct.chg(`auto.skillParams.5`),
-            }),
-          },
-          {
-            text: ct.chg('auto.skillParams.6'),
-            value: `${dm.charged.stamina}/s`,
-          },
-        ],
-      },
-      {
-        text: ct.chg('auto.fields.plunging'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.plunging.dmg, {
-              name: stg('plunging.dmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.low, {
-              name: stg('plunging.low'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.high, {
-              name: stg('plunging.high'),
-            }),
-          },
-        ],
-      },
-    ]),
-
-    skill: ct.talentTem('skill', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.skill.dmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
-          },
-          {
-            text: stg('cd'),
-            value: dm.skill.cd,
-            unit: 's',
-          },
-        ],
-      },
-      ct.condTem('constellation1', {
-        value: condC1AfterSkill,
-        path: condC1AfterSkillPath,
-        name: st('hitOp.skill'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: c1AfterSkill_dendro_res_,
-              },
-              {
-                node: c1AfterSkill_incHeal_,
-              },
-              {
-                text: stg('duration'),
-                value: dm.c1.duration,
-                unit: 's',
-              },
-            ],
-          },
         },
-      }),
-    ]),
-
-    burst: ct.talentTem('burst', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.burst.dmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
-          },
-          {
-            text: stg('duration'),
-            value: dm.burst.duration,
-            unit: 's',
-          },
-          {
-            text: stg('cd'),
-            value: dm.burst.cd,
-            unit: 's',
-          },
-          {
-            text: stg('energyCost'),
-            value: dm.burst.enerCost,
-          },
-        ],
-      },
-      ct.condTem('burst', {
-        path: condAfterBurstPath,
-        value: condAfterBurst,
-        teamBuff: true,
-        name: st('afterUse.burst'),
-        states: {
-          on: {
-            fields: [
-              {
-                text: (
-                  <ColorText color="dendro">{st('infusion.dendro')}</ColorText>
-                ),
-                canShow: (data) => data.get(input.activeCharKey).value === key,
-              },
-              {
-                node: afterBurst_bloom_dmg_,
-              },
-            ],
-          },
+        {
+          node: infoMut(dmgFormulas.charged.final, {
+            name: ct.chg(`auto.skillParams.5`),
+          }),
         },
-      }),
-      ct.condTem('passive2', {
-        path: condA4StacksPath,
-        value: condA4Stacks,
-        canShow: equal(condAfterBurst, 'on', 1),
-        teamBuff: true, // for nahida
-        name: st('hitOp.normalChargedOrPlunging'),
-        states: objKeyMap(a4StacksArr, (stack) => ({
-          name: st('stack', { count: stack }),
+        {
+          text: ct.chg('auto.skillParams.6'),
+          value: `${dm.charged.stamina}/s`,
+        },
+      ],
+    },
+    {
+      text: ct.chg('auto.fields.plunging'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.plunging.dmg, {
+            name: stg('plunging.dmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.low, {
+            name: stg('plunging.low'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.high, {
+            name: stg('plunging.high'),
+          }),
+        },
+      ],
+    },
+  ]),
+
+  skill: ct.talentTem('skill', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.skill.dmg, {
+            name: ct.chg(`skill.skillParams.0`),
+          }),
+        },
+        {
+          text: stg('cd'),
+          value: dm.skill.cd,
+          unit: 's',
+        },
+      ],
+    },
+    ct.condTem('constellation1', {
+      value: condC1AfterSkill,
+      path: condC1AfterSkillPath,
+      name: st('hitOp.skill'),
+      states: {
+        on: {
           fields: [
             {
-              node: a4_eleMas,
+              node: c1AfterSkill_dendro_res_,
+            },
+            {
+              node: c1AfterSkill_incHeal_,
+            },
+            {
+              text: stg('duration'),
+              value: dm.c1.duration,
+              unit: 's',
             },
           ],
-        })),
-      }),
-      ct.headerTem('constellation2', {
-        canShow: equal(condAfterBurst, 'on', 1),
-        fields: [
-          {
-            node: c2_atkSPD_,
-          },
-        ],
-      }),
-    ]),
+        },
+      },
+    }),
+  ]),
 
-    passive1: ct.talentTem('passive1', [
-      ct.fieldsTem('passive1', {
+  burst: ct.talentTem('burst', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.burst.dmg, {
+            name: ct.chg(`burst.skillParams.0`),
+          }),
+        },
+        {
+          text: stg('duration'),
+          value: dm.burst.duration,
+          unit: 's',
+        },
+        {
+          text: stg('cd'),
+          value: dm.burst.cd,
+          unit: 's',
+        },
+        {
+          text: stg('energyCost'),
+          value: dm.burst.enerCost,
+        },
+      ],
+    },
+    ct.condTem('burst', {
+      path: condAfterBurstPath,
+      value: condAfterBurst,
+      teamBuff: true,
+      name: st('afterUse.burst'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: (
+                <ColorText color="dendro">{st('infusion.dendro')}</ColorText>
+              ),
+              canShow: (data) => data.get(input.activeCharKey).value === key,
+            },
+            {
+              node: afterBurst_bloom_dmg_,
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('passive2', {
+      path: condA4StacksPath,
+      value: condA4Stacks,
+      canShow: equal(condAfterBurst, 'on', 1),
+      teamBuff: true, // for nahida
+      name: st('hitOp.normalChargedOrPlunging'),
+      states: objKeyMap(a4StacksArr, (stack) => ({
+        name: st('stack', { count: stack }),
         fields: [
           {
-            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
-          },
-          {
-            text: stg('cd'),
-            value: dm.passive1.cd,
-            unit: 's',
-            fixed: 1,
+            node: a4_eleMas,
           },
         ],
-      }),
-    ]),
-    passive2: ct.talentTem('passive2'),
-    passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
-    constellation2: ct.talentTem('constellation2'),
-    constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: burstC3 }] },
-    ]),
-    constellation4: ct.talentTem('constellation4', [
-      { fields: [{ node: c4_bloom_dmg_ }] },
-    ]),
-    constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: skillC5 }] },
-    ]),
-    constellation6: ct.talentTem('constellation6', [
-      ct.fieldsTem('constellation6', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation6.dmg, {
-              name: ct.ch('c6Dmg'),
-            }),
-          },
-          {
-            text: stg('cd'),
-            value: dm.c6.cd,
-            unit: 's',
-          },
-        ],
-      }),
-    ]),
-  },
+      })),
+    }),
+    ct.headerTem('constellation2', {
+      canShow: equal(condAfterBurst, 'on', 1),
+      fields: [
+        {
+          node: c2_atkSPD_,
+        },
+      ],
+    }),
+  ]),
+
+  passive1: ct.talentTem('passive1', [
+    ct.fieldsTem('passive1', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
+        },
+        {
+          text: stg('cd'),
+          value: dm.passive1.cd,
+          unit: 's',
+          fixed: 1,
+        },
+      ],
+    }),
+  ]),
+  passive2: ct.talentTem('passive2'),
+  passive3: ct.talentTem('passive3'),
+  constellation1: ct.talentTem('constellation1'),
+  constellation2: ct.talentTem('constellation2'),
+  constellation3: ct.talentTem('constellation3', [
+    { fields: [{ node: burstC3 }] },
+  ]),
+  constellation4: ct.talentTem('constellation4', [
+    { fields: [{ node: c4_bloom_dmg_ }] },
+  ]),
+  constellation5: ct.talentTem('constellation5', [
+    { fields: [{ node: skillC5 }] },
+  ]),
+  constellation6: ct.talentTem('constellation6', [
+    ct.fieldsTem('constellation6', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.constellation6.dmg, {
+            name: ct.ch('c6Dmg'),
+          }),
+        },
+        {
+          text: stg('cd'),
+          value: dm.c6.cd,
+          unit: 's',
+        },
+      ],
+    }),
+  ]),
 }
 
 export default new CharacterSheet(sheet, data)

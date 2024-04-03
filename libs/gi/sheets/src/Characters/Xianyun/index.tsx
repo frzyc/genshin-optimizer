@@ -1,9 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import type {
-  CharacterKey,
-  ElementKey,
-  RegionKey,
-} from '@genshin-optimizer/gi/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
@@ -21,7 +17,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet'
+import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -33,9 +29,8 @@ import {
 } from '../dataUtil'
 
 const key: CharacterKey = 'Xianyun'
-const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponType)
+const ct = charTemplates(key)
 
 let a = 0,
   s = 0,
@@ -244,277 +239,260 @@ const dmgFormulas = {
 const burstC3 = greaterEq(input.constellation, 3, 3)
 const skillC5 = greaterEq(input.constellation, 5, 3)
 
-export const data = dataObjForCharacterSheet(
-  key,
-  data_gen.ele as ElementKey,
-  data_gen.region as RegionKey,
-  data_gen,
-  dmgFormulas,
-  {
+export const data = dataObjForCharacterSheet(key, dmgFormulas, {
+  premod: {
+    skillBoost: skillC5,
+    burstBoost: burstC3,
+    atk_: c2AfterSkill_atk_,
+  },
+  teamBuff: {
     premod: {
-      skillBoost: skillC5,
-      burstBoost: burstC3,
-      atk_: c2AfterSkill_atk_,
+      plunging_impact_dmgInc: a4HasStacks_plunging_dmg_inc,
+      plunging_critRate_: a1_plunging_critRate_,
     },
-    teamBuff: {
-      premod: {
-        plunging_impact_dmgInc: a4HasStacks_plunging_dmg_inc,
-        plunging_critRate_: a1_plunging_critRate_,
-      },
-    },
-  }
-)
+  },
+})
 
-const sheet: ICharacterSheet = {
-  key,
-  name: ct.name,
-  rarity: data_gen.rarity,
-  elementKey: data_gen.ele!,
-  weaponTypeKey: data_gen.weaponType,
-  gender: 'F',
-  constellationName: ct.chg('constellationName'),
-  title: ct.chg('title'),
-  talent: {
-    auto: ct.talentTem('auto', [
-      {
-        text: ct.chg('auto.fields.normal'),
-      },
-      {
-        fields: dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], {
-            name: ct.chg(`auto.skillParams.${i}`),
+const sheet: TalentSheet = {
+  auto: ct.talentTem('auto', [
+    {
+      text: ct.chg('auto.fields.normal'),
+    },
+    {
+      fields: dm.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[i], {
+          name: ct.chg(`auto.skillParams.${i}`),
+        }),
+      })),
+    },
+    {
+      text: ct.chg('auto.fields.charged'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.charged.dmg, {
+            name: ct.chg(`auto.skillParams.4`),
           }),
-        })),
-      },
-      {
-        text: ct.chg('auto.fields.charged'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.dmg, {
-              name: ct.chg(`auto.skillParams.4`),
-            }),
-          },
-          {
-            text: ct.chg('auto.skillParams.5'),
-            value: dm.charged.stam,
-          },
-        ],
-      },
-      {
-        text: ct.chg('auto.fields.plunging'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.plunging.dmg, {
-              name: stg('plunging.dmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.low, {
-              name: stg('plunging.low'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.high, {
-              name: stg('plunging.high'),
-            }),
-          },
-        ],
-      },
-    ]),
-
-    skill: ct.talentTem('skill', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.skill.trailDmg, {
-              name: ct.chg('skill.skillParams.0'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.firstLeapDmg, {
-              name: ct.chg('skill.skillParams.1'),
-              textSuffix: '(1)',
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.secondLeapDmg, {
-              name: ct.chg('skill.skillParams.1'),
-              textSuffix: '(2)',
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.thirdLeapDmg, {
-              name: ct.chg('skill.skillParams.1'),
-              textSuffix: '(3)',
-            }),
-          },
-          {
-            text: stg('cd'),
-            value: dm.skill.cd,
-            unit: 's',
-          },
-        ],
-      },
-      ct.condTem('constellation2', {
-        value: condC2AfterSkill,
-        path: condC2AfterSkillPath,
-        teamBuff: true,
-        name: st('afterUse.skill'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: c2AfterSkill_atk_,
-              },
-              {
-                text: stg('duration'),
-                value: dm.constellation2.duration,
-                unit: 's',
-              },
-            ],
-          },
         },
-      }),
-      ct.condTem('constellation6', {
-        path: condC6SkyladderUsesPath,
-        value: condC6SkyladderUses,
-        name: ct.ch('c6Cond'),
-        states: objKeyMap(c6SkyladderUsesArr, (uses) => ({
-          name: `${uses}`,
+        {
+          text: ct.chg('auto.skillParams.5'),
+          value: dm.charged.stam,
+        },
+      ],
+    },
+    {
+      text: ct.chg('auto.fields.plunging'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.plunging.dmg, {
+            name: stg('plunging.dmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.low, {
+            name: stg('plunging.low'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.high, {
+            name: stg('plunging.high'),
+          }),
+        },
+      ],
+    },
+  ]),
+
+  skill: ct.talentTem('skill', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.skill.trailDmg, {
+            name: ct.chg('skill.skillParams.0'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.firstLeapDmg, {
+            name: ct.chg('skill.skillParams.1'),
+            textSuffix: '(1)',
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.secondLeapDmg, {
+            name: ct.chg('skill.skillParams.1'),
+            textSuffix: '(2)',
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.thirdLeapDmg, {
+            name: ct.chg('skill.skillParams.1'),
+            textSuffix: '(3)',
+          }),
+        },
+        {
+          text: stg('cd'),
+          value: dm.skill.cd,
+          unit: 's',
+        },
+      ],
+    },
+    ct.condTem('constellation2', {
+      value: condC2AfterSkill,
+      path: condC2AfterSkillPath,
+      teamBuff: true,
+      name: st('afterUse.skill'),
+      states: {
+        on: {
           fields: [
             {
-              node: infoMut(c6Wave_critDMG_, {
-                name: ct.ch('wave_critDMG_'),
-                unit: '%',
-              }),
-            },
-          ],
-        })),
-      }),
-    ]),
-
-    burst: ct.talentTem('burst', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.burst.instantDmg, {
-              name: ct.chg('burst.skillParams.0'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.burst.coordinatedDmg, {
-              name: ct.chg('burst.skillParams.1'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.burst.instantHeal, {
-              name: ct.chg('burst.skillParams.2'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.burst.deviceHeal, {
-              name: ct.chg('burst.skillParams.3'),
-            }),
-          },
-          {
-            text: st('interval'),
-            value: dm.burst.deviceHealInterval,
-            unit: 's',
-            fixed: 1,
-          },
-          {
-            text: stg('duration'),
-            value: dm.burst.duration,
-            unit: 's',
-          },
-          {
-            text: stg('cd'),
-            value: dm.burst.cd,
-            unit: 's',
-          },
-          {
-            text: stg('energyCost'),
-            value: dm.burst.enerCost,
-          },
-        ],
-      },
-      ct.condTem('passive2', {
-        value: condA4HasStacks,
-        path: condA4HasStacksPath,
-        teamBuff: true,
-        name: ct.ch('a4Cond'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: dmgFormulas.passive2.a4HasStacks_plunging_dmg_inc,
-              },
-            ],
-          },
-        },
-      }),
-    ]),
-
-    passive1: ct.talentTem('passive1', [
-      ct.condTem('passive1', {
-        value: condA1Stacks,
-        path: condA1StacksPath,
-        teamBuff: true,
-        name: ct.ch('a1Cond'),
-        states: objKeyMap(a1StacksArr, (stack) => ({
-          name: st('stack', { count: stack }),
-          fields: [
-            {
-              node: a1_plunging_critRate_,
+              node: c2AfterSkill_atk_,
             },
             {
               text: stg('duration'),
-              value: dm.passive1.duration,
+              value: dm.constellation2.duration,
               unit: 's',
             },
           ],
-        })),
-      }),
-    ]),
-    passive2: ct.talentTem('passive2'),
-    passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
-    constellation2: ct.talentTem('constellation2'),
-    constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: burstC3 }] },
-    ]),
-    constellation4: ct.talentTem('constellation4', [
-      ct.fieldsTem('constellation4', {
+        },
+      },
+    }),
+    ct.condTem('constellation6', {
+      path: condC6SkyladderUsesPath,
+      value: condC6SkyladderUses,
+      name: ct.ch('c6Cond'),
+      states: objKeyMap(c6SkyladderUsesArr, (uses) => ({
+        name: `${uses}`,
         fields: [
           {
-            node: infoMut(dmgFormulas.constellation4.heal1, {
-              name: ct.ch('c4Heal'),
-              textSuffix: '(1)',
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.constellation4.heal2, {
-              name: ct.ch('c4Heal'),
-              textSuffix: '(2)',
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.constellation4.heal3, {
-              name: ct.ch('c4Heal'),
-              textSuffix: '(3)',
+            node: infoMut(c6Wave_critDMG_, {
+              name: ct.ch('wave_critDMG_'),
+              unit: '%',
             }),
           },
         ],
-      }),
-    ]),
-    constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: skillC5 }] },
-    ]),
-    constellation6: ct.talentTem('constellation6'),
-  },
+      })),
+    }),
+  ]),
+
+  burst: ct.talentTem('burst', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.burst.instantDmg, {
+            name: ct.chg('burst.skillParams.0'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.burst.coordinatedDmg, {
+            name: ct.chg('burst.skillParams.1'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.burst.instantHeal, {
+            name: ct.chg('burst.skillParams.2'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.burst.deviceHeal, {
+            name: ct.chg('burst.skillParams.3'),
+          }),
+        },
+        {
+          text: st('interval'),
+          value: dm.burst.deviceHealInterval,
+          unit: 's',
+          fixed: 1,
+        },
+        {
+          text: stg('duration'),
+          value: dm.burst.duration,
+          unit: 's',
+        },
+        {
+          text: stg('cd'),
+          value: dm.burst.cd,
+          unit: 's',
+        },
+        {
+          text: stg('energyCost'),
+          value: dm.burst.enerCost,
+        },
+      ],
+    },
+    ct.condTem('passive2', {
+      value: condA4HasStacks,
+      path: condA4HasStacksPath,
+      teamBuff: true,
+      name: ct.ch('a4Cond'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: dmgFormulas.passive2.a4HasStacks_plunging_dmg_inc,
+            },
+          ],
+        },
+      },
+    }),
+  ]),
+
+  passive1: ct.talentTem('passive1', [
+    ct.condTem('passive1', {
+      value: condA1Stacks,
+      path: condA1StacksPath,
+      teamBuff: true,
+      name: ct.ch('a1Cond'),
+      states: objKeyMap(a1StacksArr, (stack) => ({
+        name: st('stack', { count: stack }),
+        fields: [
+          {
+            node: a1_plunging_critRate_,
+          },
+          {
+            text: stg('duration'),
+            value: dm.passive1.duration,
+            unit: 's',
+          },
+        ],
+      })),
+    }),
+  ]),
+  passive2: ct.talentTem('passive2'),
+  passive3: ct.talentTem('passive3'),
+  constellation1: ct.talentTem('constellation1'),
+  constellation2: ct.talentTem('constellation2'),
+  constellation3: ct.talentTem('constellation3', [
+    { fields: [{ node: burstC3 }] },
+  ]),
+  constellation4: ct.talentTem('constellation4', [
+    ct.fieldsTem('constellation4', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.constellation4.heal1, {
+            name: ct.ch('c4Heal'),
+            textSuffix: '(1)',
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.constellation4.heal2, {
+            name: ct.ch('c4Heal'),
+            textSuffix: '(2)',
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.constellation4.heal3, {
+            name: ct.ch('c4Heal'),
+            textSuffix: '(3)',
+          }),
+        },
+      ],
+    }),
+  ]),
+  constellation5: ct.talentTem('constellation5', [
+    { fields: [{ node: skillC5 }] },
+  ]),
+  constellation6: ct.talentTem('constellation6'),
 }
 export default new CharacterSheet(sheet, data)

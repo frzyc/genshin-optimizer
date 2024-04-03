@@ -1,5 +1,5 @@
 import { range } from '@genshin-optimizer/common/util'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   compareEq,
@@ -22,7 +22,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -33,10 +33,8 @@ import {
 } from '../dataUtil'
 
 const key: CharacterKey = 'Nahida'
-const elementKey: ElementKey = 'dendro'
-const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponType)
+const ct = charTemplates(key)
 
 let a = 0,
   s = 0,
@@ -309,378 +307,361 @@ const dmgFormulas = {
 }
 const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
-const data = dataObjForCharacterSheet(
-  key,
-  elementKey,
-  'sumeru',
-  data_gen,
-  dmgFormulas,
-  {
-    premod: {
-      skillBoost: skillC3,
-      burstBoost: burstC5,
-      eleMas: c4_eleMas,
-    },
-    teamBuff: {
-      premod: {
-        burning_critRate_: c2Burning_critRate_,
-        bloom_critRate_: c2Bloom_critRate_,
-        hyperbloom_critRate_: c2Hyperbloom_critRate_,
-        burgeon_critRate_: c2Burgeon_critRate_,
-        burning_critDMG_: c2Burning_critDMG_,
-        bloom_critDMG_: c2Bloom_critDMG_,
-        hyperbloom_critDMG_: c2Hyperbloom_critDMG_,
-        burgeon_critDMG_: c2Burgeon_critDMG_,
-        enemyDefRed_: c2qsa_DefRed_,
-      },
-      total: {
-        eleMas: a1InBurst_eleMas,
-      },
-    },
-  }
-)
-
-const sheet: ICharacterSheet = {
-  key,
-  name: ct.name,
-  rarity: data_gen.rarity,
-  elementKey,
-  weaponTypeKey: data_gen.weaponType,
-  gender: 'F',
-  constellationName: ct.chg('constellationName'),
-  title: ct.chg('title'),
-  talent: {
-    auto: ct.talentTem('auto', [
-      {
-        text: ct.chg('auto.fields.normal'),
-      },
-      {
-        fields: dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], {
-            name: ct.chg(`auto.skillParams.${i}`),
-          }),
-        })),
-      },
-      {
-        text: ct.chg('auto.fields.charged'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.dmg, {
-              name: ct.chg(`auto.skillParams.4`),
-            }),
-          },
-          {
-            text: ct.chg('auto.skillParams.5'),
-            value: dm.charged.stamina,
-          },
-        ],
-      },
-      {
-        text: ct.chg(`auto.fields.plunging`),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.plunging.dmg, {
-              name: stg('plunging.dmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.low, {
-              name: stg('plunging.low'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.high, {
-              name: stg('plunging.high'),
-            }),
-          },
-        ],
-      },
-    ]),
-
-    skill: ct.talentTem('skill', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.skill.pressDmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.holdDmg, {
-              name: ct.chg(`skill.skillParams.1`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.karmaDmg, {
-              name: ct.chg(`skill.skillParams.2`),
-            }),
-          },
-          {
-            text: ct.chg('skill.skillParams.3'),
-            value: (data) => {
-              const intervalDec = +data
-                .get(burst_skillIntervalDec)
-                .value.toFixed(2)
-              return intervalDec !== 0
-                ? `${dm.skill.triggerInterval}s - ${intervalDec}s = ${
-                    dm.skill.triggerInterval - intervalDec
-                  }`
-                : dm.skill.triggerInterval
-            },
-            unit: 's',
-            fixed: 1,
-          },
-          {
-            text: ct.chg('skill.skillParams.4'),
-            value: dm.skill.duration,
-            unit: 's',
-          },
-          {
-            text: stg('press.cd'),
-            value: dm.skill.pressCd,
-            unit: 's',
-          },
-          {
-            text: stg('hold.cd'),
-            value: dm.skill.holdCd,
-            unit: 's',
-          },
-        ],
-      },
-      ct.headerTem('burst', {
-        canShow: equal(condPartyInBurst, 'on', sum(pyroLevel, electroLevel)),
-        fields: [
-          {
-            node: infoMut(burst_karma_dmg_, { name: ct.ch(`karmaDmg_`) }),
-          },
-          {
-            text: ct.ch('karmaIntervalDec'),
-            canShow: (data) => data.get(burst_skillIntervalDec).value > 0,
-            value: (data) => data.get(burst_skillIntervalDec).value,
-            unit: 's',
-            fixed: 2,
-          },
-        ],
-      }),
-      ct.headerTem('passive2', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.passive2.a4Karma_dmg_, {
-              name: ct.ch(`karmaDmg_`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.passive2.a4Karma_critRate_, {
-              name: ct.ch(`karmaCritRate_`),
-            }),
-          },
-        ],
-      }),
-      ct.condTem('constellation2', {
-        teamBuff: true,
-        path: condC2BloomPath,
-        value: condC2Bloom,
-        name: ct.ch('c2.bloomCondName'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: c2Burning_critRate_,
-              },
-              {
-                node: c2Burning_critDMG_,
-              },
-              {
-                node: c2Bloom_critRate_,
-              },
-              {
-                node: c2Bloom_critDMG_,
-              },
-              {
-                node: c2Hyperbloom_critRate_,
-              },
-              {
-                node: c2Hyperbloom_critDMG_,
-              },
-              {
-                node: c2Burgeon_critRate_,
-              },
-              {
-                node: c2Burgeon_critDMG_,
-              },
-            ],
-          },
-        },
-      }),
-      ct.condTem('constellation2', {
-        teamBuff: true,
-        path: condC2QSAPath,
-        value: condC2QSA,
-        name: ct.ch('c2.qasCondName'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: c2qsa_DefRed_,
-              },
-            ],
-          },
-        },
-      }),
-      ct.condTem('constellation4', {
-        teamBuff: true,
-        path: condC4CountPath,
-        value: condC4Count,
-        name: ct.ch('c4CondName'),
-        states: Object.fromEntries(
-          c4CountArr.map((count) => [
-            count,
-            {
-              name: st('opponents', { count }),
-              fields: [
-                {
-                  node: c4_eleMas,
-                },
-              ],
-            },
-          ])
-        ),
-      }),
-      ct.headerTem('constellation6', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation6.dmg, {
-              name: ct.ch('c6KarmicDmg'),
-            }),
-          },
-        ],
-      }),
-    ]),
-
-    burst: ct.talentTem('burst', [
-      {
-        fields: [
-          {
-            text: stg('duration'),
-            value: (data) => {
-              const durInc = +data.get(burst_durationInc).value.toFixed(2)
-              return durInc !== 0
-                ? `${dm.burst.duration}s + ${durInc}s = ${
-                    dm.burst.duration + durInc
-                  }`
-                : dm.burst.duration
-            },
-            unit: 's',
-          },
-          {
-            text: stg('cd'),
-            value: dm.burst.cd,
-            unit: 's',
-            fixed: 1,
-          },
-          {
-            text: stg('energyCost'),
-            value: dm.burst.energyCost,
-          },
-        ],
-      },
-      ct.condTem('burst', {
-        path: condPartyInBurstPath,
-        value: condPartyInBurst,
-        name: ct.ch('partyInBurst'),
-        states: {
-          on: {
-            fields: [
-              {
-                canShow: (data) =>
-                  data.get(sum(pyroLevel, electroLevel, hydroLevel)).value < 1,
-                text: ct.ch('noBurstEffect'),
-              },
-              {
-                canShow: (data) => data.get(burst_durationInc).value !== 0,
-                text: st('durationInc'),
-                value: (data) => data.get(burst_durationInc).value,
-                unit: 's',
-                fixed: 2,
-              },
-            ],
-          },
-        },
-      }),
-      ct.condTem('passive1', {
-        // Show for self only if party is in burst
-        // Show for teammates always
-        canShow: sum(
-          equal(condPartyInBurst, 'on', 1),
-          unequal(input.activeCharKey, key, 1)
-        ),
-        teamBuff: true,
-        path: condA1ActiveInBurstPath,
-        value: condA1ActiveInBurst,
-        name: st('activeCharField'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: a1InBurst_eleMasDisp,
-              },
-            ],
-          },
-        },
-      }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            text: ct.ch('c1Key'),
-            value: 1,
-          },
-        ],
-      }),
-      ct.condTem('constellation4', {
-        // C4 conditional that shows in teambuffs when A1 is activated
-        // In case Nahida is the one with the most elemental mastery
-        canShow: unequal(
-          input.activeCharKey,
-          key,
-          equal(condA1ActiveInBurst, 'on', 1)
-        ),
-        teamBuff: true,
-        path: condC4CountPath,
-        value: condC4Count,
-        name: ct.ch('c4CondName'),
-        states: Object.fromEntries(
-          c4CountArr.map((count) => [
-            count,
-            {
-              name: st('opponents', { count }),
-              fields: [
-                {
-                  node: c4_eleMas,
-                },
-              ],
-            },
-          ])
-        ),
-      }),
-    ]),
-
-    passive1: ct.talentTem('passive1'),
-    passive2: ct.talentTem('passive2'),
-    passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
-    constellation2: ct.talentTem('constellation2'),
-    constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: skillC3 }] },
-    ]),
-    constellation4: ct.talentTem('constellation4'),
-    constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: burstC5 }] },
-    ]),
-    constellation6: ct.talentTem('constellation6'),
+const data = dataObjForCharacterSheet(key, dmgFormulas, {
+  premod: {
+    skillBoost: skillC3,
+    burstBoost: burstC5,
+    eleMas: c4_eleMas,
   },
+  teamBuff: {
+    premod: {
+      burning_critRate_: c2Burning_critRate_,
+      bloom_critRate_: c2Bloom_critRate_,
+      hyperbloom_critRate_: c2Hyperbloom_critRate_,
+      burgeon_critRate_: c2Burgeon_critRate_,
+      burning_critDMG_: c2Burning_critDMG_,
+      bloom_critDMG_: c2Bloom_critDMG_,
+      hyperbloom_critDMG_: c2Hyperbloom_critDMG_,
+      burgeon_critDMG_: c2Burgeon_critDMG_,
+      enemyDefRed_: c2qsa_DefRed_,
+    },
+    total: {
+      eleMas: a1InBurst_eleMas,
+    },
+  },
+})
+
+const sheet: TalentSheet = {
+  auto: ct.talentTem('auto', [
+    {
+      text: ct.chg('auto.fields.normal'),
+    },
+    {
+      fields: dm.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[i], {
+          name: ct.chg(`auto.skillParams.${i}`),
+        }),
+      })),
+    },
+    {
+      text: ct.chg('auto.fields.charged'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.charged.dmg, {
+            name: ct.chg(`auto.skillParams.4`),
+          }),
+        },
+        {
+          text: ct.chg('auto.skillParams.5'),
+          value: dm.charged.stamina,
+        },
+      ],
+    },
+    {
+      text: ct.chg(`auto.fields.plunging`),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.plunging.dmg, {
+            name: stg('plunging.dmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.low, {
+            name: stg('plunging.low'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.high, {
+            name: stg('plunging.high'),
+          }),
+        },
+      ],
+    },
+  ]),
+
+  skill: ct.talentTem('skill', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.skill.pressDmg, {
+            name: ct.chg(`skill.skillParams.0`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.holdDmg, {
+            name: ct.chg(`skill.skillParams.1`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.karmaDmg, {
+            name: ct.chg(`skill.skillParams.2`),
+          }),
+        },
+        {
+          text: ct.chg('skill.skillParams.3'),
+          value: (data) => {
+            const intervalDec = +data
+              .get(burst_skillIntervalDec)
+              .value.toFixed(2)
+            return intervalDec !== 0
+              ? `${dm.skill.triggerInterval}s - ${intervalDec}s = ${
+                  dm.skill.triggerInterval - intervalDec
+                }`
+              : dm.skill.triggerInterval
+          },
+          unit: 's',
+          fixed: 1,
+        },
+        {
+          text: ct.chg('skill.skillParams.4'),
+          value: dm.skill.duration,
+          unit: 's',
+        },
+        {
+          text: stg('press.cd'),
+          value: dm.skill.pressCd,
+          unit: 's',
+        },
+        {
+          text: stg('hold.cd'),
+          value: dm.skill.holdCd,
+          unit: 's',
+        },
+      ],
+    },
+    ct.headerTem('burst', {
+      canShow: equal(condPartyInBurst, 'on', sum(pyroLevel, electroLevel)),
+      fields: [
+        {
+          node: infoMut(burst_karma_dmg_, { name: ct.ch(`karmaDmg_`) }),
+        },
+        {
+          text: ct.ch('karmaIntervalDec'),
+          canShow: (data) => data.get(burst_skillIntervalDec).value > 0,
+          value: (data) => data.get(burst_skillIntervalDec).value,
+          unit: 's',
+          fixed: 2,
+        },
+      ],
+    }),
+    ct.headerTem('passive2', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.passive2.a4Karma_dmg_, {
+            name: ct.ch(`karmaDmg_`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.passive2.a4Karma_critRate_, {
+            name: ct.ch(`karmaCritRate_`),
+          }),
+        },
+      ],
+    }),
+    ct.condTem('constellation2', {
+      teamBuff: true,
+      path: condC2BloomPath,
+      value: condC2Bloom,
+      name: ct.ch('c2.bloomCondName'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: c2Burning_critRate_,
+            },
+            {
+              node: c2Burning_critDMG_,
+            },
+            {
+              node: c2Bloom_critRate_,
+            },
+            {
+              node: c2Bloom_critDMG_,
+            },
+            {
+              node: c2Hyperbloom_critRate_,
+            },
+            {
+              node: c2Hyperbloom_critDMG_,
+            },
+            {
+              node: c2Burgeon_critRate_,
+            },
+            {
+              node: c2Burgeon_critDMG_,
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('constellation2', {
+      teamBuff: true,
+      path: condC2QSAPath,
+      value: condC2QSA,
+      name: ct.ch('c2.qasCondName'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: c2qsa_DefRed_,
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('constellation4', {
+      teamBuff: true,
+      path: condC4CountPath,
+      value: condC4Count,
+      name: ct.ch('c4CondName'),
+      states: Object.fromEntries(
+        c4CountArr.map((count) => [
+          count,
+          {
+            name: st('opponents', { count }),
+            fields: [
+              {
+                node: c4_eleMas,
+              },
+            ],
+          },
+        ])
+      ),
+    }),
+    ct.headerTem('constellation6', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.constellation6.dmg, {
+            name: ct.ch('c6KarmicDmg'),
+          }),
+        },
+      ],
+    }),
+  ]),
+
+  burst: ct.talentTem('burst', [
+    {
+      fields: [
+        {
+          text: stg('duration'),
+          value: (data) => {
+            const durInc = +data.get(burst_durationInc).value.toFixed(2)
+            return durInc !== 0
+              ? `${dm.burst.duration}s + ${durInc}s = ${
+                  dm.burst.duration + durInc
+                }`
+              : dm.burst.duration
+          },
+          unit: 's',
+        },
+        {
+          text: stg('cd'),
+          value: dm.burst.cd,
+          unit: 's',
+          fixed: 1,
+        },
+        {
+          text: stg('energyCost'),
+          value: dm.burst.energyCost,
+        },
+      ],
+    },
+    ct.condTem('burst', {
+      path: condPartyInBurstPath,
+      value: condPartyInBurst,
+      name: ct.ch('partyInBurst'),
+      states: {
+        on: {
+          fields: [
+            {
+              canShow: (data) =>
+                data.get(sum(pyroLevel, electroLevel, hydroLevel)).value < 1,
+              text: ct.ch('noBurstEffect'),
+            },
+            {
+              canShow: (data) => data.get(burst_durationInc).value !== 0,
+              text: st('durationInc'),
+              value: (data) => data.get(burst_durationInc).value,
+              unit: 's',
+              fixed: 2,
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('passive1', {
+      // Show for self only if party is in burst
+      // Show for teammates always
+      canShow: sum(
+        equal(condPartyInBurst, 'on', 1),
+        unequal(input.activeCharKey, key, 1)
+      ),
+      teamBuff: true,
+      path: condA1ActiveInBurstPath,
+      value: condA1ActiveInBurst,
+      name: st('activeCharField'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: a1InBurst_eleMasDisp,
+            },
+          ],
+        },
+      },
+    }),
+    ct.headerTem('constellation1', {
+      fields: [
+        {
+          text: ct.ch('c1Key'),
+          value: 1,
+        },
+      ],
+    }),
+    ct.condTem('constellation4', {
+      // C4 conditional that shows in teambuffs when A1 is activated
+      // In case Nahida is the one with the most elemental mastery
+      canShow: unequal(
+        input.activeCharKey,
+        key,
+        equal(condA1ActiveInBurst, 'on', 1)
+      ),
+      teamBuff: true,
+      path: condC4CountPath,
+      value: condC4Count,
+      name: ct.ch('c4CondName'),
+      states: Object.fromEntries(
+        c4CountArr.map((count) => [
+          count,
+          {
+            name: st('opponents', { count }),
+            fields: [
+              {
+                node: c4_eleMas,
+              },
+            ],
+          },
+        ])
+      ),
+    }),
+  ]),
+
+  passive1: ct.talentTem('passive1'),
+  passive2: ct.talentTem('passive2'),
+  passive3: ct.talentTem('passive3'),
+  constellation1: ct.talentTem('constellation1'),
+  constellation2: ct.talentTem('constellation2'),
+  constellation3: ct.talentTem('constellation3', [
+    { fields: [{ node: skillC3 }] },
+  ]),
+  constellation4: ct.talentTem('constellation4'),
+  constellation5: ct.talentTem('constellation5', [
+    { fields: [{ node: burstC5 }] },
+  ]),
+  constellation6: ct.talentTem('constellation6'),
 }
 export default new CharacterSheet(sheet, data)

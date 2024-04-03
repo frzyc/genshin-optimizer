@@ -1,8 +1,4 @@
-import type {
-  CharacterKey,
-  ElementKey,
-  RegionKey,
-} from '@genshin-optimizer/gi/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
@@ -13,7 +9,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -25,11 +21,8 @@ import {
 } from '../dataUtil'
 
 const key: CharacterKey = 'Kaeya'
-const elementKey: ElementKey = 'cryo'
-const region: RegionKey = 'mondstadt'
-const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponType)
+const ct = charTemplates(key)
 
 let a = 0,
   s = 0,
@@ -132,204 +125,187 @@ const nodeC1ChargeCritRate = greaterEq(
   equal(condC1Cryo, 'on', dm.constellation1.critRate_)
 )
 
-export const data = dataObjForCharacterSheet(
-  key,
-  elementKey,
-  region,
-  data_gen,
-  dmgFormulas,
-  {
-    premod: {
-      skillBoost: nodeC3,
-      burstBoost: nodeC5,
-      normal_critRate_: nodeC1NormalCritRate,
-      charged_critRate_: nodeC1ChargeCritRate,
-    },
-  }
-)
-
-const sheet: ICharacterSheet = {
-  key,
-  name: ct.name,
-  rarity: data_gen.rarity,
-  elementKey: elementKey,
-  weaponTypeKey: data_gen.weaponType,
-  gender: 'M',
-  constellationName: ct.chg('constellationName'),
-  title: ct.chg('title'),
-  talent: {
-    auto: ct.talentTem('auto', [
-      {
-        text: ct.chg('auto.fields.normal'),
-      },
-      {
-        fields: dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], {
-            name: ct.chg(`auto.skillParams.${i}`),
-          }),
-        })),
-      },
-      {
-        text: ct.chg('auto.fields.charged'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.dmg1, {
-              name: ct.chg(`auto.skillParams.5`),
-              textSuffix: '(1)',
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.charged.dmg2, {
-              name: ct.chg(`auto.skillParams.5`),
-              textSuffix: '(2)',
-            }),
-          },
-          {
-            text: ct.chg('auto.skillParams.7'),
-            value: dm.charged.stamina,
-          },
-        ],
-      },
-      {
-        text: ct.chg(`auto.fields.plunging`),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.plunging.dmg, {
-              name: stg('plunging.dmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.low, {
-              name: stg('plunging.low'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.high, {
-              name: stg('plunging.high'),
-            }),
-          },
-        ],
-      },
-    ]),
-
-    skill: ct.talentTem('skill', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.skill.dmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
-          },
-          {
-            text: ct.chg('skill.skillParams.1'),
-            value: dm.skill.cd,
-            unit: 's',
-          },
-        ],
-      },
-    ]),
-
-    burst: ct.talentTem('burst', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.burst.dmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
-          },
-          {
-            canShow: (data) => data.get(input.constellation).value < 2,
-            text: ct.chg('burst.skillParams.2'),
-            value: dm.burst.duration,
-            unit: 's',
-          },
-          {
-            canShow: (data) => data.get(input.constellation).value >= 2,
-            text: ct.chg('burst.skillParams.2'),
-            value: ct.ch('c2burstDuration'),
-          },
-          {
-            text: ct.chg('burst.skillParams.1'),
-            value: dm.burst.cd,
-            unit: 's',
-          },
-          {
-            text: ct.chg('burst.skillParams.3'),
-            value: dm.burst.enerCost,
-          },
-        ],
-      },
-    ]),
-
-    passive1: ct.talentTem('passive1', [
-      ct.headerTem('passive1', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
-          },
-        ],
-      }),
-    ]),
-    passive2: ct.talentTem('passive2'),
-    passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1', [
-      ct.condTem('constellation1', {
-        value: condC1Cryo,
-        path: condC1Path,
-        name: st('enemyAffected.cryo'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: nodeC1NormalCritRate,
-              },
-              {
-                node: nodeC1ChargeCritRate,
-              },
-            ],
-          },
-        },
-      }),
-    ]),
-    constellation2: ct.talentTem('constellation2'),
-    constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: nodeC3 }] },
-    ]),
-    constellation4: ct.talentTem('constellation4', [
-      ct.fieldsTem('constellation4', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation4.shield, {
-              name: st(`dmgAbsorption.none`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.constellation4.cryoShield, {
-              name: st(`dmgAbsorption.cryo`),
-            }),
-          },
-          {
-            text: ct.chg('burst.skillParams.2'),
-            value: dm.constellation4.duration,
-            unit: 's',
-          },
-          {
-            text: ct.chg('burst.skillParams.1'),
-            value: dm.constellation4.cooldown,
-            unit: 's',
-          },
-        ],
-      }),
-    ]),
-    constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: nodeC5 }] },
-    ]),
-    constellation6: ct.talentTem('constellation6'),
+export const data = dataObjForCharacterSheet(key, dmgFormulas, {
+  premod: {
+    skillBoost: nodeC3,
+    burstBoost: nodeC5,
+    normal_critRate_: nodeC1NormalCritRate,
+    charged_critRate_: nodeC1ChargeCritRate,
   },
+})
+
+const sheet: TalentSheet = {
+  auto: ct.talentTem('auto', [
+    {
+      text: ct.chg('auto.fields.normal'),
+    },
+    {
+      fields: dm.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[i], {
+          name: ct.chg(`auto.skillParams.${i}`),
+        }),
+      })),
+    },
+    {
+      text: ct.chg('auto.fields.charged'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.charged.dmg1, {
+            name: ct.chg(`auto.skillParams.5`),
+            textSuffix: '(1)',
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.charged.dmg2, {
+            name: ct.chg(`auto.skillParams.5`),
+            textSuffix: '(2)',
+          }),
+        },
+        {
+          text: ct.chg('auto.skillParams.7'),
+          value: dm.charged.stamina,
+        },
+      ],
+    },
+    {
+      text: ct.chg(`auto.fields.plunging`),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.plunging.dmg, {
+            name: stg('plunging.dmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.low, {
+            name: stg('plunging.low'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.high, {
+            name: stg('plunging.high'),
+          }),
+        },
+      ],
+    },
+  ]),
+
+  skill: ct.talentTem('skill', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.skill.dmg, {
+            name: ct.chg(`skill.skillParams.0`),
+          }),
+        },
+        {
+          text: ct.chg('skill.skillParams.1'),
+          value: dm.skill.cd,
+          unit: 's',
+        },
+      ],
+    },
+  ]),
+
+  burst: ct.talentTem('burst', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.burst.dmg, {
+            name: ct.chg(`burst.skillParams.0`),
+          }),
+        },
+        {
+          canShow: (data) => data.get(input.constellation).value < 2,
+          text: ct.chg('burst.skillParams.2'),
+          value: dm.burst.duration,
+          unit: 's',
+        },
+        {
+          canShow: (data) => data.get(input.constellation).value >= 2,
+          text: ct.chg('burst.skillParams.2'),
+          value: ct.ch('c2burstDuration'),
+        },
+        {
+          text: ct.chg('burst.skillParams.1'),
+          value: dm.burst.cd,
+          unit: 's',
+        },
+        {
+          text: ct.chg('burst.skillParams.3'),
+          value: dm.burst.enerCost,
+        },
+      ],
+    },
+  ]),
+
+  passive1: ct.talentTem('passive1', [
+    ct.headerTem('passive1', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
+        },
+      ],
+    }),
+  ]),
+  passive2: ct.talentTem('passive2'),
+  passive3: ct.talentTem('passive3'),
+  constellation1: ct.talentTem('constellation1', [
+    ct.condTem('constellation1', {
+      value: condC1Cryo,
+      path: condC1Path,
+      name: st('enemyAffected.cryo'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: nodeC1NormalCritRate,
+            },
+            {
+              node: nodeC1ChargeCritRate,
+            },
+          ],
+        },
+      },
+    }),
+  ]),
+  constellation2: ct.talentTem('constellation2'),
+  constellation3: ct.talentTem('constellation3', [
+    { fields: [{ node: nodeC3 }] },
+  ]),
+  constellation4: ct.talentTem('constellation4', [
+    ct.fieldsTem('constellation4', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.constellation4.shield, {
+            name: st(`dmgAbsorption.none`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.constellation4.cryoShield, {
+            name: st(`dmgAbsorption.cryo`),
+          }),
+        },
+        {
+          text: ct.chg('burst.skillParams.2'),
+          value: dm.constellation4.duration,
+          unit: 's',
+        },
+        {
+          text: ct.chg('burst.skillParams.1'),
+          value: dm.constellation4.cooldown,
+          unit: 's',
+        },
+      ],
+    }),
+  ]),
+  constellation5: ct.talentTem('constellation5', [
+    { fields: [{ node: nodeC5 }] },
+  ]),
+  constellation6: ct.talentTem('constellation6'),
 }
 
 export default new CharacterSheet(sheet, data)

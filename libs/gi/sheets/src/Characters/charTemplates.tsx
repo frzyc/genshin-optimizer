@@ -5,8 +5,8 @@ import {
   travelerMKeys,
   type CharacterKey,
   type CharacterSheetKey,
-  type WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
+import { getCharStat } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { greaterEq, input } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
@@ -55,15 +55,14 @@ export interface ICharacterTemplate {
   ) => DocumentConditional
   name: ReactNode
 }
-export const charTemplates = (
-  cKey: CharacterSheetKey,
-  wKey: WeaponTypeKey
-): ICharacterTemplate => {
+export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
   const [chg, ch] = trans('char', cKey)
+  const characterKey = charSheetKeyToCharKey(cKey)
+  const wKey = getCharStat(characterKey).weaponType
 
   const img = (tk: TalentSheetElementKey): string => {
     if (tk === 'auto') return imgAssets.weaponTypes[wKey]
-    return characterAsset(charSheetKeyToCharKey(cKey), tk, 'F') // Should be all genderless assets
+    return characterAsset(characterKey, tk, 'F') // Should be all genderless assets
   }
 
   return {

@@ -17,7 +17,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
-import Traveler from '../Traveler'
 import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 
@@ -28,7 +27,7 @@ export default function geo(
 ) {
   const elementKey: ElementKey = 'geo'
   const condCharKey = 'TravelerGeo'
-  const ct = charTemplates(key, Traveler.data_gen.weaponType)
+  const ct = charTemplates(key)
   const [, ch] = trans('char', condCharKey)
   const skillParam_gen = allStats.char.skillParam.TravelerGeoF
   let s = 0,
@@ -107,24 +106,17 @@ export default function geo(
   const burstC3 = greaterEq(input.constellation, 3, 3)
   const skillC5 = greaterEq(input.constellation, 5, 3)
 
-  const data = dataObjForCharacterSheet(
-    charKey,
-    elementKey,
-    undefined,
-    Traveler.data_gen,
-    dmgFormulas,
-    {
+  const data = dataObjForCharacterSheet(charKey, dmgFormulas, {
+    premod: {
+      skillBoost: skillC5,
+      burstBoost: burstC3,
+    },
+    teamBuff: {
       premod: {
-        skillBoost: skillC5,
-        burstBoost: burstC3,
+        critRate_: c1BurstArea_critRate_,
       },
-      teamBuff: {
-        premod: {
-          critRate_: c1BurstArea_critRate_,
-        },
-      },
-    }
-  )
+    },
+  })
 
   const talent: TalentSheet = {
     skill: ct.talentTem('skill', [
@@ -279,6 +271,5 @@ export default function geo(
   return {
     talent,
     data,
-    elementKey,
   }
 }
