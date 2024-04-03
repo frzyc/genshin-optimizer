@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, input, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -8,7 +7,6 @@ import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'ElegyForTheEnd'
 const [, trm] = trans('weapon', key)
-const data_gen = allStats.weapon.data[key]
 const eleMasInc = [-1, 60, 75, 90, 105, 120]
 const eleMasInc2 = [-1, 100, 125, 150, 175, 200]
 const atk_s = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
@@ -25,7 +23,7 @@ const eleMas2 = equal(
 )
 const atk_ = equal(condNode, 'on', subscript(input.weapon.refinement, atk_s))
 
-export const data = dataObjForWeaponSheet(key, data_gen, {
+export const data = dataObjForWeaponSheet(key, {
   premod: {
     eleMas,
   },
@@ -72,4 +70,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

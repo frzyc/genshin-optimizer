@@ -1,6 +1,5 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   input,
   lookup,
@@ -14,7 +13,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'Slingshot'
-const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const dmg_arr = [-1, 0.36, 0.42, 0.48, 0.54, 0.6]
@@ -31,7 +29,7 @@ const normal_dmg_ = lookup(
 )
 const charged_dmg_ = { ...normal_dmg_ }
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     normal_dmg_,
     charged_dmg_,
@@ -59,4 +57,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   input,
@@ -15,7 +14,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'EngulfingLightning'
-const data_gen = allStats.weapon.data[key]
 
 const atk = [-1, 0.28, 0.35, 0.42, 0.49, 0.56]
 const atkMax = [-1, 0.8, 0.9, 1, 1.1, 1.2]
@@ -41,7 +39,6 @@ const enerRech_ = equal(
 
 export const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       atk_,
@@ -85,4 +82,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

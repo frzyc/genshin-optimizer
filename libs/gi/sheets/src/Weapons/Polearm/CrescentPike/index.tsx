@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
@@ -15,7 +14,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'CrescentPike'
-const data_gen = allStats.weapon.data[key]
 
 const atkInc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 
@@ -33,7 +31,7 @@ const hit = equal(
     }
   )
 )
-const data = dataObjForWeaponSheet(key, data_gen, undefined, { hit })
+const data = dataObjForWeaponSheet(key, undefined, { hit })
 
 const sheet: IWeaponSheet = {
   document: [
@@ -47,4 +45,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

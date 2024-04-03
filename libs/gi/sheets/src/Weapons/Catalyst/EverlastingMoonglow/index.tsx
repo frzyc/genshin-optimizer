@@ -25,7 +25,6 @@ if (!heal_arr)
 const heal_ = subscript(input.weapon.refinement, heal_arr)
 export const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       normal_dmgInc, // TODO: technically should be in "total", but should be fine as premod
@@ -52,4 +51,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

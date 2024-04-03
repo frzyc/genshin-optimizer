@@ -1,7 +1,6 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   input,
   lookup,
@@ -15,7 +14,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'HaranGeppakuFutsu'
-const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const passiveRefine = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
@@ -36,7 +34,7 @@ const normal_dmg_ = lookup(
   naught
 )
 
-export const data = dataObjForWeaponSheet(key, data_gen, {
+export const data = dataObjForWeaponSheet(key, {
   premod: {
     ...passive_dmg_,
     normal_dmg_,
@@ -65,4 +63,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

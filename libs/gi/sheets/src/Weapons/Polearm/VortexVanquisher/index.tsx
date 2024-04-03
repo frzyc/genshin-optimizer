@@ -1,6 +1,5 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   input,
@@ -16,7 +15,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'VortexVanquisher'
-const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 const shieldSrc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const atkSrc = [-1, 0.04, 0.05, 0.06, 0.07, 0.08]
@@ -36,7 +34,7 @@ const atkStacks = prod(
   )
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     shield_,
     atk_: atkStacks,
@@ -97,4 +95,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

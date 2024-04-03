@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, input, subscript, sum } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -7,7 +6,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'BeaconOfTheReedSea'
-const data_gen = allStats.weapon.data[key]
 
 const afterSkillAtkArr = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const [condAfterSkillPath, condAfterSkill] = cond(key, 'afterSkill')
@@ -53,7 +51,6 @@ const noShield_hp_ = equal(
 
 const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       atk_: sum(afterSkill_atk_, afterDmg_atk_),
@@ -121,4 +118,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

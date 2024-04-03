@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -15,7 +14,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'MakhairaAquamarine'
-const data_gen = allStats.weapon.data[key]
 
 const atkArr = [-1, 0.24, 0.3, 0.36, 0.42, 0.48]
 const selfAtk = equal(
@@ -32,7 +30,6 @@ const teamAtk = unequal(input.activeCharKey, input.charKey, teamAtkDisp)
 
 const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     total: {
       atk: selfAtk,
@@ -73,4 +70,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

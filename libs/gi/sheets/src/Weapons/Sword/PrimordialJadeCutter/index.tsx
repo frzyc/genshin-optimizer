@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, input, prod, subscript } from '@genshin-optimizer/gi/wr'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -7,7 +6,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'PrimordialJadeCutter'
-const data_gen = allStats.weapon.data[key]
 
 const hpSrc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const atkSrc = [-1, 0.012, 0.015, 0.018, 0.021, 0.024]
@@ -23,7 +21,6 @@ const atk = equal(
 
 const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       hp_,
@@ -45,4 +42,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

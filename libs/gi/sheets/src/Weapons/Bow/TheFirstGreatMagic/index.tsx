@@ -1,6 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   compareEq,
   equal,
@@ -20,7 +19,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'TheFirstGreatMagic'
-const data_gen = allStats.weapon.data[key]
 
 const charged_dmg_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
 const stackAtk_arrs = [
@@ -68,7 +66,7 @@ const moveSPD_ = threshold(
   )
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     charged_dmg_,
     atk_,
@@ -100,4 +98,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)
