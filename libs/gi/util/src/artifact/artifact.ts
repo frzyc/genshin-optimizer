@@ -1,9 +1,9 @@
 import type { Unit } from '@genshin-optimizer/common/util'
 import {
   clampPercent,
+  getUnitStr,
   objKeyMap,
   toPercent,
-  unit,
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
@@ -18,14 +18,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import type { ArtifactMeta } from './artifactMeta'
-
-const showPercentKeys = ['hp_', 'def_', 'atk_'] as const
-export function artStatPercent(statkey: MainStatKey | SubstatKey) {
-  return showPercentKeys.includes(statkey as (typeof showPercentKeys)[number])
-    ? '%'
-    : ''
-}
+import { getArtifactMeta } from './artifactMeta'
 
 export function artDisplayValue(value: number, unit: Unit): string {
   switch (unit) {
@@ -52,7 +45,7 @@ export function getSubstatRolls(
 ): number[][] {
   const rollData = getSubstatValuesPercent(substatKey, rarity)
   const table = allStats.art.subRoll[rarity][substatKey]
-  const lookupValue = artDisplayValue(substatValue, unit(substatKey))
+  const lookupValue = artDisplayValue(substatValue, getUnitStr(substatKey))
   return (
     table[lookupValue as unknown as keyof typeof table]?.map((roll) =>
       roll.map((i) => rollData[i])
@@ -146,8 +139,10 @@ export function getMainStatDisplayStr(
   showUnit = true
 ): string {
   return (
-    artDisplayValue(getMainStatDisplayValue(key, rarity, level), unit(key)) +
-    (showUnit ? unit(key) : '')
+    artDisplayValue(
+      getMainStatDisplayValue(key, rarity, level),
+      getUnitStr(key)
+    ) + (showUnit ? getUnitStr(key) : '')
   )
 }
 
@@ -177,10 +172,10 @@ const maxSubstatRollEfficiency = objKeyMap(allArtifactRarityKeys, (rarity) =>
 
 export function getArtifactEfficiency(
   artifact: IArtifact,
-  artifactMeta: ArtifactMeta,
   filter: Set<SubstatKey> = new Set(allSubstatKeys)
 ): { currentEfficiency: number; maxEfficiency: number } {
   const { substats, rarity, level } = artifact
+  const { artifactMeta } = getArtifactMeta(artifact)
   // Relative to max star, so comparison between different * makes sense.
   const currentEfficiency = artifact.substats
     .filter(({ key }) => key && filter.has(key))

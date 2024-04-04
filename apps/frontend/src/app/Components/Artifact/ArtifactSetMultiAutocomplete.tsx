@@ -1,16 +1,18 @@
+import {
+  GeneralAutocompleteMulti,
+  ImgIcon,
+  StarsDisplay,
+} from '@genshin-optimizer/common/ui'
+import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
 } from '@genshin-optimizer/gi/consts'
+import { setKeysByRarities } from '@genshin-optimizer/gi/sheets'
 import type { AutocompleteRenderGroupParams } from '@mui/material'
 import { Box, Chip, List, ListSubheader } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { setKeysByRarities } from '../../Data/Artifacts'
-import { artifactDefIcon } from '../../Data/Artifacts/ArtifactSheet'
-import { GeneralAutocompleteMulti } from '../GeneralAutocomplete'
-import ImgIcon from '../Image/ImgIcon'
-import { StarsDisplay } from '../StarDisplay'
 import sortByRarityAndName from './sortByRarityAndName'
 
 export default function ArtifactSetMultiAutocomplete({

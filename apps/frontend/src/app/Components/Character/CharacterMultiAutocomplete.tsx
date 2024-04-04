@@ -7,13 +7,12 @@ import { notEmpty } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { SillyContext } from '@genshin-optimizer/gi/ui'
+import { getCharEle } from '@genshin-optimizer/gi/stats'
+import { CharIconSide, SillyContext } from '@genshin-optimizer/gi/ui'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { getCharSheet } from '../../Data/Characters'
 import { bulkCatTotal } from '../../Util/totalUtils'
-import CharIconSide from '../Image/CharIconSide'
 
 export function CharacterMultiAutocomplete({
   teamIds,
@@ -50,10 +49,7 @@ export function CharacterMultiAutocomplete({
     [gender, t]
   )
 
-  const toVariant = useCallback(
-    (key: CharacterKey) => getCharSheet(key, gender).elementKey ?? undefined,
-    [gender]
-  )
+  const toVariant = getCharEle
 
   const allCharKeys = useMemo(() => database.chars.keys, [database])
 

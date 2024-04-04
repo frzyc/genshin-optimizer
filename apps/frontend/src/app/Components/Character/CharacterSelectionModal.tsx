@@ -2,6 +2,7 @@ import {
   useBoolState,
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
+import { SqBadge, StarsDisplay } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
@@ -17,10 +18,14 @@ import {
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
-import { SillyContext } from '@genshin-optimizer/gi/ui'
+import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
+import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
+import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
-import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import type { TooltipProps } from '@mui/material'
 import {
   Box,
@@ -45,8 +50,6 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DataContext } from '../../Context/DataContext'
-import { getCharSheet } from '../../Data/Characters'
-import type CharacterSheet from '../../Data/Characters/CharacterSheet'
 import { iconAsset } from '../../Util/AssetUtil'
 import type { CharacterSortKey } from '../../Util/CharacterSort'
 import {
@@ -59,8 +62,6 @@ import CardDark from '../Card/CardDark'
 import CardLight from '../Card/CardLight'
 import ModalWrapper from '../ModalWrapper'
 import SortByButton from '../SortByButton'
-import SqBadge from '../SqBadge'
-import { StarsDisplay } from '../StarDisplay'
 import ElementToggle from '../ToggleButton/ElementToggle'
 import WeaponToggle from '../ToggleButton/WeaponToggle'
 import CharacterCard from './CharacterCard'
@@ -155,24 +156,24 @@ export default function CharacterSelectionModal({
     () =>
       catTotal(allWeaponTypeKeys, (ct) =>
         allCharacterKeys.forEach((ck) => {
-          const wtk = getCharSheet(ck, database.gender).weaponTypeKey
+          const wtk = getCharStat(ck).weaponType
           ct[wtk].total++
           if (characterKeyList.includes(ck)) ct[wtk].current++
         })
       ),
-    [characterKeyList, database]
+    [characterKeyList]
   )
 
   const elementTotals = useMemo(
     () =>
       catTotal(allElementKeys, (ct) =>
         allCharacterKeys.forEach((ck) => {
-          const ele = getCharSheet(ck, database.gender).elementKey
+          const ele = getCharEle(ck)
           ct[ele].total++
           if (characterKeyList.includes(ck)) ct[ele].current++
         })
       ),
-    [characterKeyList, database]
+    [characterKeyList]
   )
 
   const { weaponType, element, sortType, ascending } = state
@@ -287,7 +288,6 @@ function SelectionCard({
   onClick: () => void
 }) {
   const { gender } = useDBMeta()
-  const characterSheet = getCharSheet(characterKey, gender)
   const character = useCharacter(characterKey)
   const { favorite } = useCharMeta(characterKey)
   const database = useDatabase()
@@ -297,6 +297,7 @@ function SelectionCard({
 
   const { level = 1, ascension = 0, constellation = 0 } = character ?? {}
   const banner = characterAsset(characterKey, 'banner', gender)
+  const rarity = getCharStat(characterKey).rarity
   return (
     <CustomTooltip
       enterDelay={300}
@@ -324,16 +325,14 @@ function SelectionCard({
                 database.charMeta.set(characterKey, { favorite: !favorite })
               }}
             >
-              {favorite ? <Favorite /> : <FavoriteBorder />}
+              {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
             </IconButton>
           </Box>
           <CardActionArea onClick={onClick}>
             <Box
               display="flex"
               position="relative"
-              className={
-                !banner ? `grad-${characterSheet?.rarity}star` : undefined
-              }
+              className={!banner ? `grad-${rarity}star` : undefined}
               sx={{
                 '&::before': {
                   content: '""',
@@ -378,10 +377,13 @@ function SelectionCard({
               >
                 <Typography variant="body2" sx={{ flexGrow: 1 }}>
                   <SqBadge
-                    color={characterSheet?.elementKey}
+                    color={getCharEle(characterKey)}
                     sx={{ opacity: 0.85, textShadow: '0 0 5px gray' }}
                   >
-                    {characterSheet?.name}
+                    <CharacterName
+                      characterKey={characterKey}
+                      gender={gender}
+                    />
                   </SqBadge>
                 </Typography>
                 {character ? (
@@ -409,7 +411,7 @@ function SelectionCard({
                     <SqBadge>NEW</SqBadge>
                   </Typography>
                 )}
-                <StarsDisplay stars={characterSheet?.rarity ?? 1} colored />
+                <StarsDisplay stars={rarity} colored />
               </Box>
             </Box>
           </CardActionArea>

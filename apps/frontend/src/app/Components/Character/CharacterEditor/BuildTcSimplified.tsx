@@ -1,15 +1,14 @@
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
-import { unit } from '@genshin-optimizer/common/util'
+import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useBuildTc } from '@genshin-optimizer/gi/db-ui'
+import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import { artDisplayValue } from '@genshin-optimizer/gi/util'
 import { Box, Grid } from '@mui/material'
-import { getWeaponSheet } from '../../../Data/Weapons'
 import { BuildCard } from '../../../PageTeam/CharacterDisplay/Build/BuildCard'
-import ImgIcon from '../../Image/ImgIcon'
 import { StatWithUnit } from '../../StatDisplay'
 import { WeaponCardNanoObj } from '../../Weapon/WeaponCardNano'
 
@@ -130,8 +129,8 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
                   >
                     <StatWithUnit statKey={sk} />
                     <span>
-                      {artDisplayValue(number, unit(sk))}
-                      {unit(sk)}
+                      {artDisplayValue(number, getUnitStr(sk))}
+                      {getUnitStr(sk)}
                     </span>
                   </Box>
                 ))}

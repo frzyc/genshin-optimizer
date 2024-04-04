@@ -16,7 +16,7 @@ import materialData from './src/materialData'
 import type { WeaponDataGen } from './src/weaponData'
 import weaponData from './src/weaponData'
 
-export type { CharacterDataGen, WeaponDataGen as WeaponData, WeaponDataGen }
+export type { CharacterDataGen, WeaponDataGen }
 
 const proj_path = `${workspaceRoot}/libs/gi/stats`
 const path = `${proj_path}/Data`

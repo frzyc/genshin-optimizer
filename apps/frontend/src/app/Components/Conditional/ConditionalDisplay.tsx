@@ -1,10 +1,13 @@
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
+import type {
+  DocumentConditional,
+  DocumentSection,
+} from '@genshin-optimizer/gi/sheets'
 import { CardContent } from '@mui/material'
 import { useContext } from 'react'
 import { DataContext } from '../../Context/DataContext'
-import type { DocumentConditional, DocumentSection } from '../../Types/sheet'
 import { HeaderDisplay } from '../DocumentDisplay'
 import FieldsDisplay from '../FieldDisplay'
 import ConditionalSelector from './ConditionalSelector'

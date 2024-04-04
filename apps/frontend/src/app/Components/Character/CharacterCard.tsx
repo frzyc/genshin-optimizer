@@ -1,11 +1,12 @@
+import { ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   useCharMeta,
   useCharacter,
-  useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
-import { Favorite, FavoriteBorder } from '@mui/icons-material'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {
   Box,
   CardActionArea,
@@ -18,10 +19,8 @@ import type { CharacterContextObj } from '../../Context/CharacterContext'
 import { CharacterContext } from '../../Context/CharacterContext'
 import type { dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
-import { getCharSheet } from '../../Data/Characters'
 import useCharData from '../../ReactHooks/useCharData'
 import CardLight from '../Card/CardLight'
-import ConditionalWrapper from '../ConditionalWrapper'
 import { CharacterCardEquipmentRow } from './CharacterCard/CharacterCardEquipmentRow'
 import {
   CharacterCardHeader,
@@ -46,8 +45,6 @@ export default function CharacterCard({
   const database = useDatabase()
   const teamData = useCharData(characterKey)
   const character = useCharacter(characterKey)
-  const { gender } = useDBMeta()
-  const characterSheet = getCharSheet(characterKey, gender)
   const data = teamData?.[characterKey]?.target
   const onClickHandler = useCallback(
     () => characterKey && onClick?.(characterKey),
@@ -67,12 +64,10 @@ export default function CharacterCard({
 
   const characterContextObj: CharacterContextObj | undefined = useMemo(
     () =>
-      character &&
-      characterSheet && {
+      character && {
         character,
-        characterSheet,
       },
-    [character, characterSheet]
+    [character]
   )
   const dataContextObj: dataContextObj | undefined = useMemo(
     () =>
@@ -112,7 +107,7 @@ export default function CharacterCard({
               database.charMeta.set(characterKey, { favorite: !favorite })
             }
           >
-            {favorite ? <Favorite /> : <FavoriteBorder />}
+            {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
           </IconButton>
         </Box>
         <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>

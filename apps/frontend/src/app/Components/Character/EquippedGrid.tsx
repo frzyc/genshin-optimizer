@@ -1,6 +1,6 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSlotKey,
@@ -24,7 +24,6 @@ import ArtifactCard from '../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../PageWeapon/WeaponCard'
 import WeaponEditor from '../../PageWeapon/WeaponEditor'
 import ArtifactSwapModal from '../Artifact/ArtifactSwapModal'
-import ImgIcon from '../Image/ImgIcon'
 import WeaponSwapModal from '../Weapon/WeaponSwapModal'
 
 const columns = {

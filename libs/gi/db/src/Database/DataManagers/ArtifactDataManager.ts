@@ -12,7 +12,7 @@ import {
   allMainStatKeys,
   allSubstatKeys,
   artMaxLevel,
-  artSlotsData,
+  artSlotMainKeys,
   artSubstatRollData,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
@@ -357,7 +357,7 @@ export function cachedArtifact(
   let totalUnambiguousRolls = 0
 
   function efficiency(value: number, key: SubstatKey): number {
-    return (value / getSubstatValue(key)) * 100
+    return value / getSubstatValue(key)
   }
 
   substats.forEach((substat, index): void => {
@@ -503,7 +503,7 @@ export function validateArtifact(
   // substat cannot have same key as mainstat
   if (substats.find((sub) => sub.key === mainStatKey)) return undefined
   lock = !!lock
-  const plausibleMainStats = artSlotsData[slotKey].stats
+  const plausibleMainStats = artSlotMainKeys[slotKey]
   if (!(plausibleMainStats as unknown as MainStatKey[]).includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return undefined // ambiguous mainstat

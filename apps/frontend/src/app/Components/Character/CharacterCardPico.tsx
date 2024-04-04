@@ -2,6 +2,7 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   ConditionalWrapper,
+  SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
@@ -10,6 +11,7 @@ import {
   useCharacter,
   useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
+import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -17,10 +19,8 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { Box, CardActionArea, Typography } from '@mui/material'
 import type { MouseEvent, ReactNode } from 'react'
 import { useCallback, useContext } from 'react'
-import { getCharSheet } from '../../Data/Characters'
 import { iconAsset } from '../../Util/AssetUtil'
 import CardDark from '../Card/CardDark'
-import SqBadge from '../SqBadge'
 
 export default function CharacterCardPico({
   characterKey,
@@ -41,7 +41,6 @@ export default function CharacterCardPico({
   const { favorite } = useCharMeta(characterKey)
   const { gender } = useDBMeta()
   const { silly } = useContext(SillyContext)
-  const characterSheet = getCharSheet(characterKey, gender)
   const onClickHandler = useCallback(
     () => onClick?.(characterKey),
     [characterKey, onClick]
@@ -82,7 +81,10 @@ export default function CharacterCardPico({
           condition={!!onClick || !!onMouseDown || !!onMouseEnter}
           wrapper={actionWrapperFunc}
         >
-          <Box display="flex" className={`grad-${characterSheet.rarity}star`}>
+          <Box
+            display="flex"
+            className={`grad-${getCharStat(characterKey).rarity}star`}
+          >
             <Box
               component="img"
               src={iconAsset(characterKey, gender, silly)}

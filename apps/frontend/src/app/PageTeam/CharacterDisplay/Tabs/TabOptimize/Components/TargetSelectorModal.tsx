@@ -1,4 +1,6 @@
+import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/ui'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { Masonry } from '@mui/lab'
 import {
@@ -12,15 +14,12 @@ import { useContext, useMemo } from 'react'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
 import { NodeFieldDisplayText } from '../../../../../Components/FieldDisplay'
-import ImgIcon from '../../../../../Components/Image/ImgIcon'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
-import SqBadge from '../../../../../Components/SqBadge'
 import { DataContext } from '../../../../../Context/DataContext'
 import {
   getDisplayHeader,
   getDisplaySections,
 } from '../../../../../Formula/DisplayUtil'
-import type { NodeDisplay } from '../../../../../Formula/uiData'
 
 export interface TargetSelectorModalProps {
   show: boolean
@@ -52,9 +51,10 @@ export function TargetSelectorModal({
               key,
               Object.fromEntries(
                 Object.entries(sectionObj).filter(([_sectionKey, node]) => {
-                  if (flatOnly && node.info.unit === '%') return false
+                  const { unit, variant } = resolveInfo(node.info)
+                  if (flatOnly && unit === '%') return false
 
-                  if (excludeHeal && node.info.variant === 'heal') return false
+                  if (excludeHeal && variant === 'heal') return false
 
                   if (!showEmptyTargets && node.isEmpty) return false
                   return true

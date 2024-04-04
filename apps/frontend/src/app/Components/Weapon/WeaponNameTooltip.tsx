@@ -1,22 +1,30 @@
+import { BootstrapTooltip, ImgIcon } from '@genshin-optimizer/common/ui'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+import { WeaponName } from '@genshin-optimizer/gi/ui'
 import { Skeleton, Typography } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'
 import { Suspense } from 'react'
-import type WeaponSheet from '../../Data/Weapons/WeaponSheet'
-import BootstrapTooltip from '../BootstrapTooltip'
-import ImgIcon from '../Image/ImgIcon'
 
 type Data = {
-  sheet: WeaponSheet
+  weaponKey: WeaponKey
   addlText?: any
   children: ReactElement<any, any> & ReactNode
 }
-export default function WeaponNameTooltip({ sheet, addlText, children }: Data) {
+export default function WeaponNameTooltip({
+  weaponKey,
+  addlText,
+  children,
+}: Data) {
   const title = (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>
       <Typography>
-        <ImgIcon src={imgAssets.weaponTypes[sheet.weaponType]} size={1.5} />{' '}
-        {sheet.name}
+        <ImgIcon
+          src={imgAssets.weaponTypes[getWeaponStat(weaponKey).weaponType]}
+          size={1.5}
+        />{' '}
+        <WeaponName weaponKey={weaponKey} />
       </Typography>
       {addlText}
     </Suspense>

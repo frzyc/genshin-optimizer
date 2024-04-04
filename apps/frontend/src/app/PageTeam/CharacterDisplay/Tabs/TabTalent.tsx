@@ -1,8 +1,14 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
+import {
+  getCharSheet,
+  type DocumentSection,
+  type TalentSheetElementKey,
+} from '@genshin-optimizer/gi/sheets'
+import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
@@ -19,7 +25,6 @@ import CardDark from '../../../Components/Card/CardDark'
 import CardLight from '../../../Components/Card/CardLight'
 import ConstellationDropdown from '../../../Components/Character/ConstellationDropdown'
 import TalentDropdown from '../../../Components/Character/TalentDropdown'
-import ConditionalWrapper from '../../../Components/ConditionalWrapper'
 import DocumentDisplay from '../../../Components/DocumentDisplay'
 import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
 import {
@@ -28,9 +33,6 @@ import {
 } from '../../../Components/HitModeEditor'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
-import type { TalentSheetElementKey } from '../../../Data/Characters/ICharacterSheet'
-import type { NodeDisplay } from '../../../Formula/uiData'
-import type { DocumentSection } from '../../../Types/sheet'
 const talentSpacing = {
   xs: 12,
   sm: 6,
@@ -41,8 +43,9 @@ export default function CharacterTalentPane() {
   const { t } = useTranslation('sheet_gen')
   const {
     character: { key: characterKey },
-    characterSheet,
   } = useContext(CharacterContext)
+  const { gender } = useDBMeta()
+  const characterSheet = getCharSheet(characterKey, gender)
   const { data } = useContext(DataContext)
   const database = useDatabase()
   const skillBurstList = [
@@ -212,9 +215,10 @@ function SkillDisplayCard({
   onClickTitle,
 }: SkillDisplayCardProps) {
   const {
-    character: { talent },
-    characterSheet,
+    character: { talent, key: characterKey },
   } = useContext(CharacterContext)
+  const { gender } = useDBMeta()
+  const characterSheet = getCharSheet(characterKey, gender)
   const actionWrapperFunc = useCallback(
     (children) => (
       <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>

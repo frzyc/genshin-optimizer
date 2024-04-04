@@ -1,6 +1,9 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import type { TeamCharacter } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { allEleDmgKeys, allEleResKeys } from '@genshin-optimizer/gi/keymap'
+import { getCharEle, isCharMelee } from '@genshin-optimizer/gi/stats'
+import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
 import type { ReadNode } from '@genshin-optimizer/gi/wr'
 import { allInputPremodKeys, uiInput as input } from '@genshin-optimizer/gi/wr'
 import BarChartIcon from '@mui/icons-material/BarChart'
@@ -20,7 +23,6 @@ import { useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
-import ColorText from '../../Components/ColoredText'
 import {
   FieldDisplayList,
   NodeFieldDisplay,
@@ -30,7 +32,6 @@ import StatEditorList from '../../Components/StatEditorList'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
-import { nodeVStr, resolveInfo } from '../../Formula/uiData'
 const cols = {
   xs: 1,
   md: 2,
@@ -170,11 +171,13 @@ function StatDisplayContent({
 }
 
 function MainStatsCards() {
-  const { characterSheet } = useContext(CharacterContext)
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const specialNode = data.get(input.special)
-  const charEle = characterSheet.elementKey
-  const isMelee = characterSheet.isMelee()
+  const charEle = getCharEle(characterKey)
+  const isMelee = isCharMelee(characterKey)
 
   const otherStatReadNodes = useMemo(() => {
     const nodes = otherStatKeys
@@ -210,7 +213,13 @@ function MainStatsCards() {
                     >
                       <span>
                         <b>Special:</b>{' '}
-                        <ColorText color={variant}>
+                        <ColorText
+                          color={
+                            variant && variant === 'invalid'
+                              ? undefined
+                              : variant
+                          }
+                        >
                           {icon} {name}
                         </ColorText>
                       </span>

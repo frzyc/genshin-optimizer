@@ -1,4 +1,9 @@
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ColorText,
+  ImgIcon,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
@@ -9,6 +14,13 @@ import {
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
+import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
+import {
+  dataSetEffects,
+  getArtSheet,
+  resonanceSheets,
+} from '@genshin-optimizer/gi/sheets'
+import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import { input } from '@genshin-optimizer/gi/wr'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -32,10 +44,8 @@ import {
   CharacterCardHeader,
   CharacterCardHeaderContent,
 } from '../../Components/Character/CharacterCard/CharacterCardHeader'
-import ColorText from '../../Components/ColoredText'
 import DocumentDisplay from '../../Components/DocumentDisplay'
 import { NodeFieldDisplay } from '../../Components/FieldDisplay'
-import ImgIcon from '../../Components/Image/ImgIcon'
 import { InfoTooltipInline } from '../../Components/InfoTooltip'
 import { WeaponFullCardObj } from '../../Components/Weapon/WeaponFullCard'
 import type { CharacterContextObj } from '../../Context/CharacterContext'
@@ -44,10 +54,6 @@ import type { dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
 import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
-import { dataSetEffects, getArtSheet } from '../../Data/Artifacts'
-import type CharacterSheet from '../../Data/Characters/CharacterSheet'
-import { resonanceSheets } from '../../Data/Resonance'
-import type { NodeDisplay } from '../../Formula/uiData'
 
 export function TeamBuffDisplay() {
   const { data, compareData } = useContext(DataContext)
@@ -193,12 +199,10 @@ export function TeammateDisplay({
     [teamId, team, teamCharId, teamChar, dataBundle, loadoutDatum]
   )
   const characterContext: CharacterContextObj | undefined = useMemo(
-    () =>
-      dataBundle && {
-        character,
-        characterSheet: dataBundle.characterSheet,
-      },
-    [character, dataBundle]
+    () => ({
+      character,
+    }),
+    [character]
   )
   const teamMateDataContext: dataContextObj | undefined = useMemo(
     () =>

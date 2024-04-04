@@ -1,15 +1,16 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { getArtSheet } from '@genshin-optimizer/gi/sheets'
+import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
+import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTooltip'
-import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
-import SqBadge from '../../../../../Components/SqBadge'
-import { getArtSheet } from '../../../../../Data/Artifacts'
 
 type ArtifactSetBadgesProps = {
   artifacts: ICachedArtifact[]
@@ -57,7 +58,7 @@ function ArtifactSetBadge({
     .filter((setNum) => setNum <= numInSet)
   return (
     <Box>
-      <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={numInSet}>
+      <ArtifactSetTooltip setKey={setKey} numInSet={numInSet}>
         <SqBadge sx={{ height: '100%' }} color={'primary'}>
           <Typography>
             {slotarr.map((slotKey) => (
@@ -67,7 +68,7 @@ function ArtifactSetBadge({
                 iconProps={iconInlineProps}
               />
             ))}{' '}
-            {artifactSheet.name ?? ''}
+            <ArtifactSetName setKey={setKey} />
             {setActive.map((n, i) => (
               <SqBadge sx={{ ml: 0.5 }} key={'' + n + i} color="success">
                 {n}

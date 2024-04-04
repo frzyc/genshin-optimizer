@@ -1,19 +1,22 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
-import { weaponAsset } from '@genshin-optimizer/gi/assets'
+import { artifactDefIcon, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSetKey,
   CharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
+import {
+  ArtifactSetName,
+  WeaponName,
+  type NodeDisplay,
+  type UIData,
+} from '@genshin-optimizer/gi/ui'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
-import ColorText from '../Components/ColoredText'
-import { getArtSheet } from '../Data/Artifacts'
-import { artifactDefIcon } from '../Data/Artifacts/ArtifactSheet'
-import { getCharSheet } from '../Data/Characters'
-import { getWeaponSheet } from '../Data/Weapons'
-import type { NodeDisplay, UIData } from './uiData'
+import type { ReactNode } from 'react'
 
 const errHeader = {
   title: <ColorText color="warning">ERROR</ColorText>,
@@ -39,9 +42,9 @@ export function getDisplayHeader(
   sectionKey: string,
   database: ArtCharDatabase
 ): {
-  title: Displayable
+  title: ReactNode
   icon?: string
-  action?: Displayable
+  action?: ReactNode
 } {
   if (!sectionKey) return errHeader
   if (sectionKey === 'basic') return { title: 'Basic Stats' }
@@ -51,18 +54,14 @@ export function getDisplayHeader(
   else if (sectionKey.includes(':')) {
     const [namespace, key] = sectionKey.split(':')
     if (namespace === 'artifact') {
-      const sheet = getArtSheet(key as ArtifactSetKey)
-      if (!sheet) return errHeader
       return {
-        title: sheet.name,
+        title: <ArtifactSetName setKey={key as ArtifactSetKey} />,
         icon: artifactDefIcon(key as ArtifactSetKey),
       }
     } else if (namespace === 'weapon') {
-      const sheet = getWeaponSheet(key as WeaponKey)
-      if (!sheet) return errHeader
       const asc = data.get(input.weapon.asc).value
       return {
-        title: sheet.name,
+        title: <WeaponName weaponKey={key as WeaponKey} />,
         icon: weaponAsset(key as WeaponKey, asc >= 2),
       }
     }

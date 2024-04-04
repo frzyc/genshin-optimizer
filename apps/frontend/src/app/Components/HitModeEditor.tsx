@@ -1,4 +1,6 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
+import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
@@ -27,10 +29,7 @@ import { TeamCharacterContext } from '../Context/TeamCharacterContext'
 import { allowedAdditiveReactions, allowedAmpReactions } from '../Types/consts'
 import AdditiveReactionModeText from './AdditiveReactionModeText'
 import AmpReactionModeText from './AmpReactionModeText'
-import type { DropdownButtonProps } from './DropdownMenu/DropdownButton'
-import DropdownButton from './DropdownMenu/DropdownButton'
 import SolidToggleButtonGroup from './SolidToggleButtonGroup'
-import SqBadge from './SqBadge'
 
 export const infusionVals = {
   '': <span>No Team Melee Infusion</span>,

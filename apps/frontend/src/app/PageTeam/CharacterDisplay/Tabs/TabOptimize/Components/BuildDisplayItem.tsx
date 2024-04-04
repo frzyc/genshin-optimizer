@@ -2,7 +2,11 @@ import {
   useBoolState,
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { objKeyMap, toggleArr } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSlotKey,
@@ -20,9 +24,11 @@ import type {
 import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi/db'
 import {
   useArtifact,
+  useDBMeta,
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import { CharacterName } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
@@ -49,7 +55,6 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano'
-import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../../Components/Character/StatDisplayComponent'
@@ -58,7 +63,6 @@ import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import { getCharSheet } from '../../../../../Data/Characters'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../../PageWeapon/WeaponCard'
 import EquipBuildModal from '../../../Build/EquipBuildModal'
@@ -649,9 +653,8 @@ function ExcludeEquipButton({
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
-  const characterSheet = getCharSheet(
-    database.chars.LocationToCharacterKey(locationKey)
-  )
+  const { gender } = useDBMeta()
+  const characterKey = database.chars.LocationToCharacterKey(locationKey)
   const { excludedLocations } = useOptConfig(optConfigId) ?? {
     excludedLocations: [] as LocationCharacterKey[],
   }
@@ -672,7 +675,10 @@ function ExcludeEquipButton({
       startIcon={excluded ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />}
     >
       <span>
-        {t`excludeChar.allowEquip`} <strong>{characterSheet.name}</strong>
+        {t`excludeChar.allowEquip`}{' '}
+        <strong>
+          <CharacterName characterKey={characterKey} gender={gender} />
+        </strong>
       </span>
     </Button>
   )

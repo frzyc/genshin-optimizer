@@ -4,8 +4,11 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import {
+  BootstrapTooltip,
   CardThemed,
+  DropdownButton,
   ModalWrapper,
+  SqBadge,
   useConstObj,
 } from '@genshin-optimizer/common/ui'
 import {
@@ -30,9 +33,18 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
-import { getCharData } from '@genshin-optimizer/gi/stats'
+import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
+import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
+import { getCharStat } from '@genshin-optimizer/gi/stats'
+import {
+  CharIconSide,
+  CharacterName,
+  resolveInfo,
+  uiDataForTeam,
+  type UIData,
+} from '@genshin-optimizer/gi/ui'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
-import { optimize } from '@genshin-optimizer/gi/wr'
+import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -76,7 +88,6 @@ import React, {
 import { Trans, useTranslation } from 'react-i18next'
 import ArtifactCardPico from '../../../../Components/Artifact/ArtifactCardPico'
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
-import BootstrapTooltip from '../../../../Components/BootstrapTooltip'
 import CardLight from '../../../../Components/Card/CardLight'
 import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
 import {
@@ -84,27 +95,18 @@ import {
   CharacterCardHeaderContent,
 } from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
 import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
-import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton'
 import {
   HitModeToggle,
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
-import CharIconSide from '../../../../Components/Image/CharIconSide'
 import InfoTooltip from '../../../../Components/InfoTooltip'
 import NoArtWarning from '../../../../Components/NoArtWarning'
-import SqBadge from '../../../../Components/SqBadge'
-import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
-import { mergeData, uiDataForTeam } from '../../../../Formula/api'
-import type { UIData } from '../../../../Formula/uiData'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
-import type { OptProblemInput } from '../../../../Solver'
-import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
-import { mergeBuilds, mergePlot } from '../../../../Solver/common'
 import { bulkCatTotal } from '../../../../Util/totalUtils'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
@@ -132,7 +134,6 @@ export default function TabBuild() {
     teamId,
     team: { loadoutData },
   } = useContext(TeamCharacterContext)
-  const { characterSheet } = useContext(CharacterContext)
   const database = useDatabase()
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { gender } = useDBMeta()
@@ -403,10 +404,9 @@ export default function TabBuild() {
               workerData.display ?? {},
               JSON.parse(pathStr)
             )
+            const infoResolved = filterNode.info && resolveInfo(filterNode.info)
             const minimum =
-              filterNode.info?.unit === '%'
-                ? setting.value / 100
-                : setting.value // TODO: Conversion
+              infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
             return { value: filterNode, minimum: minimum }
           })
       )
@@ -470,11 +470,14 @@ export default function TabBuild() {
       if (plotBaseNumNode) {
         const plotData = mergePlot(results.map((x) => x.plotData!))
         const solverBuilds = Object.values(plotData)
-        if (targetNode.info?.unit === '%')
+        const targetNodeinfo = targetNode.info && resolveInfo(targetNode.info)
+        const plotBaseNumNodeInfo =
+          plotBaseNumNode.info && resolveInfo(plotBaseNumNode.info)
+        if (targetNodeinfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) => (dataEntry.value = dataEntry.value * 100)
           )
-        if (plotBaseNumNode.info?.unit === '%')
+        if (plotBaseNumNodeInfo?.unit === '%')
           solverBuilds.forEach(
             (dataEntry) => (dataEntry.plot = (dataEntry.plot ?? 0) * 100)
           )
@@ -558,7 +561,9 @@ export default function TabBuild() {
     throwGlobalError,
   ])
 
-  const characterName = characterSheet?.name ?? 'Character Name'
+  const characterName = (
+    <CharacterName characterKey={characterKey} gender={gender} />
+  )
 
   const setPlotBase = useCallback(
     (plotBase: string[] | undefined) => {
@@ -1184,7 +1189,7 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
   } = useContext(TeamCharacterContext)
 
   const toTc = () => {
-    const weaponTypeKey = getCharData(characterKey).weaponType
+    const weaponTypeKey = getCharStat(characterKey).weaponType
     const weapon = database.teams.getLoadoutWeapon(loadoutDatum)
     const buildTcId = database.teamChars.newBuildTcFromBuild(
       teamCharId,

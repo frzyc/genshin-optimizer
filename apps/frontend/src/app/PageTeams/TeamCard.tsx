@@ -4,11 +4,11 @@ import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   useCharacter,
-  useDBMeta,
   useDatabase,
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
+import { getCharEle } from '@genshin-optimizer/gi/stats'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import InfoIcon from '@mui/icons-material/Info'
 import PersonIcon from '@mui/icons-material/Person'
@@ -29,7 +29,6 @@ import type { CharacterContextObj } from '../Context/CharacterContext'
 import { CharacterContext } from '../Context/CharacterContext'
 import type { dataContextObj } from '../Context/DataContext'
 import { DataContext } from '../Context/DataContext'
-import { getCharSheet } from '../Data/Characters'
 import { getArtifactData } from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
 import useCharData from '../ReactHooks/useCharData'
 
@@ -55,7 +54,7 @@ export default function TeamCard({
       if (!loadoutDatum) return
       const teamChar = database.teamChars.get(loadoutDatum.teamCharId)
       if (!teamChar) return
-      return getCharSheet(teamChar.key).elementKey
+      return getCharEle(teamChar.key)
     }
   )
   return (
@@ -146,8 +145,6 @@ function HoverCard({
 }) {
   const database = useDatabase()
   const character = useCharacter(characterKey)
-  const { gender } = useDBMeta()
-  const characterSheet = getCharSheet(characterKey, gender)
 
   const { name } = useTeamChar(teamCharId)!
   const loadoutDatum = database.teams.getLoadoutDatum(teamId, teamCharId)!
@@ -169,12 +166,10 @@ function HoverCard({
 
   const characterContextObj: CharacterContextObj | undefined = useMemo(
     () =>
-      character &&
-      characterSheet && {
+      character && {
         character,
-        characterSheet,
       },
-    [character, characterSheet]
+    [character]
   )
   const dataContextObj: dataContextObj | undefined = useMemo(
     () =>

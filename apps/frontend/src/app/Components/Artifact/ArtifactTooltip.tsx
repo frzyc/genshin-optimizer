@@ -1,21 +1,25 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import {
+  BootstrapTooltip,
+  SqBadge,
+  StarsDisplay,
+} from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { RollColorKey } from '@genshin-optimizer/gi/ui'
-import { IconStatDisplay } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactSetName,
+  ArtifactSetSlotName,
+  IconStatDisplay,
+  artifactLevelVariant,
+} from '@genshin-optimizer/gi/ui'
 import { getMainStatDisplayStr } from '@genshin-optimizer/gi/util'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
-import { getArtSheet } from '../../Data/Artifacts'
-import Artifact from '../../Data/Artifacts/Artifact'
-import StatIcon from '../../KeyMap/StatIcon'
-import BootstrapTooltip from '../BootstrapTooltip'
 import LocationName from '../Character/LocationName'
-import SqBadge from '../SqBadge'
-import { StarsDisplay } from '../StarDisplay'
-import SlotIcon from './SlotIcon'
 
 export default function ArtifactTooltip({
   art,
@@ -43,14 +47,13 @@ export default function ArtifactTooltip({
 }
 function ArtifactData({ art }: { art: ICachedArtifact }) {
   const { t: tk } = useTranslation('statKey_gen')
-  const sheet = getArtSheet(art.setKey)
-  const { slotKey, level, rarity, mainStatKey, substats } = art
-  const slotName = sheet.getSlotName(slotKey)
+  const { setKey, slotKey, level, rarity, mainStatKey, substats } = art
   const mainVariant = KeyMap.getVariant(mainStatKey)
   return (
     <Box p={1}>
       <Typography variant="h6">
-        <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} /> {slotName}
+        <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} />{' '}
+        <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
       </Typography>
       <Typography variant="subtitle1" color={`${mainVariant}.main`}>
         <StatIcon statKey={mainStatKey} iconProps={iconInlineProps} />{' '}
@@ -65,7 +68,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
         }}
       >
         <StarsDisplay stars={rarity} />
-        <SqBadge color={Artifact.levelVariant(level)}>+{level}</SqBadge>{' '}
+        <SqBadge color={artifactLevelVariant(level)}>+{level}</SqBadge>{' '}
       </Typography>
       <Box py={1}>
         {substats.map(
@@ -82,7 +85,9 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
         )}
       </Box>
 
-      <Typography color="success.main">{sheet.name}</Typography>
+      <Typography color="success.main">
+        <ArtifactSetName setKey={setKey} />
+      </Typography>
       <LocationName color="secondary.main" location={art.location} />
     </Box>
   )

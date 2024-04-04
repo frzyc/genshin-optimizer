@@ -1,3 +1,4 @@
+import { ImgIcon, SqBadge, StarsDisplay } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { charCard } from '@genshin-optimizer/gi/char-cards'
@@ -7,11 +8,18 @@ import {
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
+import {
+  getCharSheet,
+  type TalentSheetElementKey,
+} from '@genshin-optimizer/gi/sheets'
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
-import { SillyContext } from '@genshin-optimizer/gi/ui'
+import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
+import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
+import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
-import { Favorite, FavoriteBorder } from '@mui/icons-material'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {
   Badge,
   Box,
@@ -24,14 +32,13 @@ import {
 import { useContext } from 'react'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
-import type { TalentSheetElementKey } from '../../Data/Characters/ICharacterSheet'
-import { ElementIcon } from '../../KeyMap/StatIcon'
-import ImgIcon from '../Image/ImgIcon'
-import SqBadge from '../SqBadge'
-import { StarsDisplay } from '../StarDisplay'
 
 export function CharacterCompactTalent() {
-  const { characterSheet } = useContext(CharacterContext)
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
+  const { gender } = useDBMeta()
+  const characterSheet = getCharSheet(characterKey, gender)
   const { data } = useContext(DataContext)
   const tlvl = {
     auto: data.get(input.total.auto).value,
@@ -83,13 +90,13 @@ export function CharacterCompactTalent() {
 }
 export function CharacterCompactConstSelector() {
   const {
-    characterSheet,
     character: { key: characterKey },
   } = useContext(CharacterContext)
   const database = useDatabase()
   const { data } = useContext(DataContext)
   const constellation = data.get(input.constellation).value
-
+  const { gender } = useDBMeta()
+  const characterSheet = getCharSheet(characterKey, gender)
   return (
     <Grid container spacing={1}>
       {range(1, 6).map((i) => (
@@ -140,7 +147,9 @@ export function CharacterCoverArea() {
   )
 }
 function SillyCoverArea({ src, level, ascension }) {
-  const { characterSheet } = useContext(CharacterContext)
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
 
   return (
     <Box sx={{ position: 'relative' }}>
@@ -165,7 +174,7 @@ function SillyCoverArea({ src, level, ascension }) {
             textAlign: 'center',
           }}
         >
-          <StarsDisplay stars={characterSheet.rarity} colored />
+          <StarsDisplay stars={getCharStat(characterKey).rarity} colored />
         </Typography>
         <FavoriteButton />
         <LevelBadge level={level} ascension={ascension} />
@@ -175,7 +184,9 @@ function SillyCoverArea({ src, level, ascension }) {
 }
 
 function CoverArea({ src, level, ascension }) {
-  const { characterSheet } = useContext(CharacterContext)
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
 
   return (
     <Box sx={{ position: 'relative' }}>
@@ -192,7 +203,7 @@ function CoverArea({ src, level, ascension }) {
             textAlign: 'center',
           }}
         >
-          <StarsDisplay stars={characterSheet.rarity} colored />
+          <StarsDisplay stars={getCharStat(characterKey).rarity} colored />
         </Typography>
         <Box
           sx={{
@@ -218,8 +229,12 @@ function CoverArea({ src, level, ascension }) {
 }
 
 function CharChip() {
-  const { characterSheet } = useContext(CharacterContext)
-  const charEle = characterSheet.elementKey
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
+  const { gender } = useDBMeta()
+  const charEle = getCharEle(characterKey)
+  const weaponType = getCharStat(characterKey).weaponType
   return (
     <Chip
       color={charEle}
@@ -231,11 +246,9 @@ function CharChip() {
         >
           <ElementIcon ele={charEle} />
           <Box sx={{ whiteSpace: 'normal', textAlign: 'center' }}>
-            {characterSheet.name}
+            <CharacterName characterKey={characterKey} gender={gender} />
           </Box>
-          <ImgIcon
-            src={imgAssets.weaponTypes?.[characterSheet.weaponTypeKey]}
-          />
+          <ImgIcon src={imgAssets.weaponTypes[weaponType]} />
         </Typography>
       }
     />
@@ -271,7 +284,7 @@ function FavoriteButton() {
           database.charMeta.set(characterKey, { favorite: !favorite })
         }
       >
-        {favorite ? <Favorite /> : <FavoriteBorder />}
+        {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
       </IconButton>
     </Box>
   )

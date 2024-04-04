@@ -6,8 +6,8 @@ import {
 import { useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { Add } from '@mui/icons-material'
+import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
+import AddIcon from '@mui/icons-material/Add'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import { Box, Button, CardContent, Grid, Skeleton } from '@mui/material'
 import React, {
@@ -23,7 +23,6 @@ import AddArtInfo from '../Components/AddArtInfo'
 import CardDark from '../Components/Card/CardDark'
 import InfoComponent from '../Components/InfoComponent'
 import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
-import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
 import ArtifactCard from './ArtifactCard'
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter'
 import {
@@ -216,7 +215,7 @@ export default function PageArtifact() {
             fullWidth
             onClick={onShowEditor}
             color="info"
-            startIcon={<Add />}
+            startIcon={<AddIcon />}
           >{t`addNew`}</Button>
         </Grid>
         <Grid item xs={1}>

@@ -1,9 +1,15 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
-import { unit } from '@genshin-optimizer/common/util'
+import {
+  CardThemed,
+  ImgIcon,
+  ModalWrapper,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
+import { getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useBuildTc, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import { artDisplayValue } from '@genshin-optimizer/gi/util'
@@ -18,11 +24,9 @@ import {
   TextField,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
-import ImgIcon from '../../../Components/Image/ImgIcon'
 import { StatWithUnit } from '../../../Components/StatDisplay'
 import { WeaponCardNanoObj } from '../../../Components/Weapon/WeaponCardNano'
 import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
-import { getWeaponSheet } from '../../../Data/Weapons'
 import { BuildCard } from './BuildCard'
 
 export default function BuildTc({
@@ -173,8 +177,8 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
                   >
                     <StatWithUnit statKey={sk} />
                     <span>
-                      {artDisplayValue(number, unit(sk))}
-                      {unit(sk)}
+                      {artDisplayValue(number, getUnitStr(sk))}
+                      {getUnitStr(sk)}
                     </span>
                   </Box>
                 ))}

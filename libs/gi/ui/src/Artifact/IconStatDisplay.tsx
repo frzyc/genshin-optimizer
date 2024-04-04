@@ -1,5 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { unit } from '@genshin-optimizer/common/util'
+import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { artDisplayValue } from '@genshin-optimizer/gi/util'
@@ -21,8 +21,8 @@ export function IconStatDisplay({
   typographyProps?: TypographyProps
 }) {
   const { t: tk } = useTranslation('statKey_gen')
-  const unitStr = unit(statKey)
-  const valueStr = artDisplayValue(value, unit(statKey))
+  const unit = getUnitStr(statKey)
+  const valueStr = artDisplayValue(value, unit)
   return (
     <Typography
       key={statKey}
@@ -30,7 +30,7 @@ export function IconStatDisplay({
       {...typographyProps}
     >
       <StatIcon statKey={statKey} iconProps={iconInlineProps} /> {tk(statKey)}{' '}
-      <strong>{`${prefix}${valueStr}${unitStr}`}</strong>
+      <strong>{`${prefix}${valueStr}${unit}`}</strong>
     </Typography>
   )
 }

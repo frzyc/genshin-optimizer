@@ -1,11 +1,18 @@
 import {
+  BootstrapTooltip,
   ColorText,
   type CardBackgroundColor,
 } from '@genshin-optimizer/common/ui'
 import { evalIfFunc, valueString } from '@genshin-optimizer/common/util'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
-import { Groups } from '@mui/icons-material'
+import type {
+  IBasicFieldDisplay,
+  IFieldDisplay,
+} from '@genshin-optimizer/gi/sheets'
+import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
+import GroupsIcon from '@mui/icons-material/Groups'
 import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, PaletteColor } from '@mui/material'
 import {
@@ -21,11 +28,7 @@ import type { ReactNode } from 'react'
 import React, { Suspense, useCallback, useContext, useMemo } from 'react'
 import { DataContext } from '../Context/DataContext'
 import { FormulaDataContext } from '../Context/FormulaDataContext'
-import type { NodeDisplay } from '../Formula/api'
-import { nodeVStr, resolveInfo } from '../Formula/uiData'
-import type { IBasicFieldDisplay, IFieldDisplay } from '../Types/fieldDisplay'
 import AmpReactionModeText from './AmpReactionModeText'
-import BootstrapTooltip from './BootstrapTooltip'
 
 export default function FieldsDisplay({
   fields,
@@ -243,7 +246,7 @@ export function NodeFieldDisplayText({ node }: { node: NodeDisplay }) {
         marginRight: 'auto',
       }}
     >
-      {!!isTeamBuff && <Groups />}
+      {!!isTeamBuff && <GroupsIcon />}
       {icon}
       <ColorText color={variant !== 'invalid' ? variant : undefined}>
         {name}

@@ -1,5 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon, ModalWrapper } from '@genshin-optimizer/common/ui'
 import {
   Button,
   DialogActions,
@@ -9,7 +9,6 @@ import {
   Link,
 } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
-import ImgIcon from '../../../../Components/Image/ImgIcon'
 import kqmIcon from './kqm.png'
 
 export default function KQMSButton({

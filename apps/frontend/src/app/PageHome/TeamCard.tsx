@@ -21,7 +21,7 @@ import toofless from './teamIcons/toofless.png'
 import van from './teamIcons/van.webp'
 import yae from './teamIcons/yae.png'
 
-import { Groups } from '@mui/icons-material'
+import GroupsIcon from '@mui/icons-material/Groups'
 import { useTranslation } from 'react-i18next'
 const team = [
   {
@@ -109,7 +109,7 @@ export default function TeamCard() {
     <CardDark>
       <CardHeader
         title={<Typography variant="h5">{t`teamCard.title`}</Typography>}
-        avatar={<Groups fontSize="large" />}
+        avatar={<GroupsIcon fontSize="large" />}
       />
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>

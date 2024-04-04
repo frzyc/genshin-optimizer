@@ -9,23 +9,26 @@ import type {
 } from '@genshin-optimizer/gi/db'
 import { defaultInitialWeapon } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { Data } from '@genshin-optimizer/gi/wr'
-import { common } from '@genshin-optimizer/gi/wr'
-import { useDeferredValue, useEffect, useMemo } from 'react'
-import type { TeamData } from '../Context/DataContext'
-import { allArtifactData } from '../Data/Artifacts'
-import { getCharSheet } from '../Data/Characters'
-import type CharacterSheet from '../Data/Characters/CharacterSheet'
-import { resonanceData } from '../Data/Resonance'
-import { getWeaponSheet } from '../Data/Weapons'
-import WeaponSheet from '../Data/Weapons/WeaponSheet'
+import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {
+  allArtifactData,
+  displayDataMap,
+  getCharSheet,
+  getWeaponSheet,
+  resonanceData,
+} from '@genshin-optimizer/gi/sheets'
+import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { uiDataForTeam } from '@genshin-optimizer/gi/ui'
+import type { Data } from '@genshin-optimizer/gi/wr'
+import {
+  common,
   dataObjForArtifact,
   dataObjForCharacter,
   dataObjForWeapon,
   mergeData,
-  uiDataForTeam,
-} from '../Formula/api'
+} from '@genshin-optimizer/gi/wr'
+import { useDeferredValue, useEffect, useMemo } from 'react'
+import type { TeamData } from '../Context/DataContext'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -120,7 +123,7 @@ function getTeamDataCalc(
     if (cache) return cache as TeamData
   }
   const { teamData, teamBundle } =
-    getCharData(
+    TeamDataBundle(
       database,
       characterKey,
       mainStatAssumptionLevel,
@@ -142,7 +145,7 @@ function getTeamDataCalc(
 /**
  * This is now used more for getting basic stat for a single char with some basic assumptions
  */
-function getCharData(
+function TeamDataBundle(
   database: ArtCharDatabase,
   characterKey: CharacterKey | '',
   mainStatAssumptionLevel = 0,
@@ -196,9 +199,8 @@ function getCharDataBundle(
   const weaponSheet = getWeaponSheet(weapon.key)
   if (!weaponSheet) return undefined
 
-  const weaponSheetsDataOfType = WeaponSheet.getAllDataOfType(
-    characterSheet.weaponTypeKey
-  )
+  const weaponSheetsDataOfType =
+    displayDataMap[getCharStat(character.key).weaponType]
 
   const weaponSheetsData = useCustom
     ? (() => {

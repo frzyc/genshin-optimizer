@@ -76,6 +76,7 @@ export function GeneralAutocomplete<T extends string>({
         const color = variant
           ? (theme.palette[variant] as PaletteColor | undefined)?.main
           : undefined
+        const valueKey = value?.key
         const { InputLabelProps, InputProps, inputProps, ...restParams } =
           params
         return (

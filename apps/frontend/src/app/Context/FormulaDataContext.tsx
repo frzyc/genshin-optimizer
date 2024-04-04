@@ -1,6 +1,6 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
+import type { NodeDisplay, UIData } from '@genshin-optimizer/gi/ui'
 import { createContext, useCallback, useState } from 'react'
-import type { NodeDisplay, UIData } from '../Formula/uiData'
 
 type FormulaDataContextObj = {
   data?: UIData

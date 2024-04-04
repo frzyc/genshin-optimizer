@@ -1,5 +1,5 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
@@ -8,8 +8,13 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharData } from '@genshin-optimizer/gi/stats'
-import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
+import { getCharStat } from '@genshin-optimizer/gi/stats'
+import {
+  CharacterConstellationName,
+  CharacterName,
+  SillyContext,
+} from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
@@ -20,8 +25,6 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import { DataContext } from '../../../Context/DataContext'
-import { getCharSheet } from '../../../Data/Characters'
-import ImgIcon from '../../Image/ImgIcon'
 import LevelSelect from '../../LevelSelect'
 import { CharacterCardStats } from '../CharacterCard/CharacterCardStats'
 import {
@@ -45,19 +48,16 @@ export default function Content({ onClose }: { onClose?: () => void }) {
   const {
     character,
     character: { key: characterKey },
-    characterSheet,
   } = useContext(CharacterContext)
   const { gender } = useDBMeta()
+  const characterSheet = getCharSheet(characterKey, gender)
   const { silly } = useContext(SillyContext)
   const deleteCharacter = useCallback(async () => {
-    let name = getCharSheet(characterKey, gender).name
-    // Use translated string
-    if (typeof name === 'object')
-      name = t(
-        `${
-          silly ? 'sillyWisher_charNames' : 'charNames_gen'
-        }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
-      )
+    const name = t(
+      `${
+        silly ? 'sillyWisher_charNames' : 'charNames_gen'
+      }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
+    )
 
     if (!window.confirm(t('removeCharacter', { value: name }))) return
     database.chars.remove(characterKey)
@@ -106,7 +106,10 @@ export default function Content({ onClose }: { onClose?: () => void }) {
                 <CharacterCardStats />
               </Box>
               <Typography sx={{ textAlign: 'center', pb: -1 }} variant="h6">
-                {characterSheet.constellationName}
+                <CharacterConstellationName
+                  characterKey={characterKey}
+                  gender={gender}
+                />
               </Typography>
               <CharacterCompactConstSelector />
             </CardThemed>
@@ -157,7 +160,7 @@ function EquipmentSection() {
 
   const database = useDatabase()
 
-  const weaponTypeKey = getCharData(characterKey).weaponType
+  const weaponTypeKey = getCharStat(characterKey).weaponType
   const weaponId = data.get(input.weapon.id).value
   const artifactIds = useMemo(
     () =>

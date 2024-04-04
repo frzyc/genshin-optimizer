@@ -58,7 +58,7 @@ export function Translate({
 }: {
   ns: string
   key18: string
-  values?: Record<string, string>
+  values?: Record<string, string | number>
   children?: ReactNode
   useBadge?: boolean
 }) {
@@ -69,14 +69,16 @@ export function Translate({
     : t(textKey, { returnObjects: true })
   if (typeof textObj === 'string')
     return (
-      <Trans
-        i18nKey={textKey}
-        t={t}
-        components={useBadge ? badgeComponents : textComponents}
-        values={values}
-      >
-        {children}
-      </Trans>
+      <span>
+        <Trans
+          i18nKey={textKey}
+          t={t}
+          components={useBadge ? badgeComponents : textComponents}
+          values={values}
+        >
+          {children}
+        </Trans>
+      </span>
     )
 
   return (

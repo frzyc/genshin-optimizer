@@ -5,7 +5,7 @@ import {
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import { SillyContext, theme, useSilly } from '@genshin-optimizer/gi/ui'
-import { KeyboardArrowUp } from '@mui/icons-material'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import {
   Box,
   Container,
@@ -128,7 +128,7 @@ function App() {
                       size="small"
                       aria-label="scroll back to top"
                     >
-                      <KeyboardArrowUp />
+                      <KeyboardArrowUpIcon />
                     </Fab>
                   </ScrollTop>
                 </HashRouter>

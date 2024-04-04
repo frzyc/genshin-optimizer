@@ -8,7 +8,7 @@ import {
   useCharacterContext,
   useCharacterReducer,
 } from '@genshin-optimizer/sr/ui'
-import { ExpandMore } from '@mui/icons-material'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Accordion,
   AccordionDetails,
@@ -56,7 +56,7 @@ export default function Character() {
               }
             />
             <Accordion>
-              <AccordionSummary expandIcon={<ExpandMore />}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 Relics
               </AccordionSummary>
               <AccordionDetails>
@@ -64,7 +64,7 @@ export default function Character() {
               </AccordionDetails>
             </Accordion>
             <Accordion>
-              <AccordionSummary expandIcon={<ExpandMore />}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 Basic stats for all chars
               </AccordionSummary>
               <AccordionDetails>
@@ -84,7 +84,7 @@ export default function Character() {
             </Accordion>
           </Stack>
           <Accordion>
-            <AccordionSummary expandIcon={<ExpandMore />}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               All target values, if sheet is created
             </AccordionSummary>
             <AccordionDetails>
@@ -100,7 +100,7 @@ export default function Character() {
                           {name}: {computed.val}
                         </Typography>
                         <Accordion>
-                          <AccordionSummary expandIcon={<ExpandMore />}>
+                          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                             meta for {name}
                           </AccordionSummary>
                           <AccordionDetails>

@@ -1,7 +1,8 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { BootstrapTooltip, SqBadge } from '@genshin-optimizer/common/ui'
 import {
   allElementWithPhyKeys,
-  artSlotsData,
+  artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import {
@@ -9,6 +10,8 @@ import {
   FlowerIcon,
   HpIcon,
   PlumeIcon,
+  SlotIcon,
+  StatIcon,
 } from '@genshin-optimizer/gi/svgicons'
 import {
   Box,
@@ -20,12 +23,8 @@ import {
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
-import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
-import SqBadge from '../../../../../Components/SqBadge'
 import { StatColoredWithUnit } from '../../../../../Components/StatDisplay'
 import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import StatIcon from '../../../../../KeyMap/StatIcon'
 import { handleMultiSelect } from '../../../../../Util/MultiSelect'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
 
@@ -50,11 +49,11 @@ export default function MainStatSelectionCard({
   const database = useDatabase()
   const { mainStatSlotTots, slotTots } = useMemo(() => {
     const catKeys = {
-      flowerMainStatTots: artSlotsData['flower'].stats,
-      plumeMainStatTots: artSlotsData['plume'].stats,
-      sandsMainStatTots: artSlotsData['sands'].stats,
-      gobletMainStatTots: artSlotsData['goblet'].stats,
-      circletMainStatTots: artSlotsData['circlet'].stats,
+      flowerMainStatTots: artSlotMainKeys['flower'],
+      plumeMainStatTots: artSlotMainKeys['plume'],
+      sandsMainStatTots: artSlotMainKeys['sands'],
+      gobletMainStatTots: artSlotMainKeys['goblet'],
+      circletMainStatTots: artSlotMainKeys['circlet'],
       slotTots: artifactsSlotsToSelectMainStats,
     } as const
     const catTotals = bulkCatTotal(catKeys, (ctMap) =>
@@ -123,7 +122,7 @@ export default function MainStatSelectionCard({
       </Box>
       {artifactsSlotsToSelectMainStats.map((slotKey) => {
         const selectedMainKeys = mainStatKeys[slotKey]
-        const mainKeys = artSlotsData[slotKey].stats
+        const mainKeys = artSlotMainKeys[slotKey]
         const mainKeysHandler = handleMultiSelect([...mainKeys])
         return (
           <Box key={slotKey}>

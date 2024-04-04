@@ -1,4 +1,4 @@
-import { useIsMount } from '@genshin-optimizer/common/ui'
+import { CustomNumberInput, useIsMount } from '@genshin-optimizer/common/ui'
 import { clamp, objMap } from '@genshin-optimizer/common/util'
 import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
@@ -7,7 +7,6 @@ import { Box, Slider } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardDark from '../../../../../Components/Card/CardDark'
-import CustomNumberInput from '../../../../../Components/CustomNumberInput'
 import { BuildTcContext } from '../BuildTcContext'
 
 function getMinRoll(charTC: BuildTc) {

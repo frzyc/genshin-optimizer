@@ -71,12 +71,14 @@
       "@genshin-optimizer/gi/prisma-schema": [
         "libs/gi/prisma-schema/src/index.ts"
       ],
+      "@genshin-optimizer/gi/sheets": ["libs/gi/sheets/src/index.ts"],
       "@genshin-optimizer/gi/silly-wisher": [
         "libs/gi/silly-wisher/src/index.ts"
       ],
       "@genshin-optimizer/gi/silly-wisher-names": [
         "libs/gi/silly-wisher-names/src/index.ts"
       ],
+      "@genshin-optimizer/gi/solver": ["libs/gi/solver/src/index.ts"],
       "@genshin-optimizer/gi/stats": ["libs/gi/stats/src/index.ts"],
       "@genshin-optimizer/gi/svgicons": ["libs/gi/svgicons/src/index.ts"],
       "@genshin-optimizer/gi/ui": ["libs/gi/ui/src/index.ts"],

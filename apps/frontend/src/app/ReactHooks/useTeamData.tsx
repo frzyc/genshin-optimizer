@@ -9,25 +9,27 @@ import {
   type ICachedWeapon,
 } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
-import type { Data } from '@genshin-optimizer/gi/wr'
-import { common } from '@genshin-optimizer/gi/wr'
-import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
-import type { TeamData } from '../Context/DataContext'
-import { TeamCharacterContext } from '../Context/TeamCharacterContext'
-import { allArtifactData } from '../Data/Artifacts'
-import { getCharSheet } from '../Data/Characters'
-import type CharacterSheet from '../Data/Characters/CharacterSheet'
-import { resonanceData } from '../Data/Resonance'
-import { getWeaponSheet } from '../Data/Weapons'
-import WeaponSheet from '../Data/Weapons/WeaponSheet'
-import type { CharInfo } from '../Formula/api'
+import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {
+  allArtifactData,
+  displayDataMap,
+  getCharSheet,
+  getWeaponSheet,
+  resonanceData,
+} from '@genshin-optimizer/gi/sheets'
+import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { uiDataForTeam } from '@genshin-optimizer/gi/ui'
+import type { CharInfo, Data } from '@genshin-optimizer/gi/wr'
+import {
+  common,
   dataObjForArtifact,
   dataObjForCharacterNew,
   dataObjForWeapon,
   mergeData,
-  uiDataForTeam,
-} from '../Formula/api'
+} from '@genshin-optimizer/gi/wr'
+import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
+import type { TeamData } from '../Context/DataContext'
+import { TeamCharacterContext } from '../Context/TeamCharacterContext'
 import { getArtifactData } from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
 
 type TeamDataBundle = {
@@ -264,9 +266,8 @@ function getCharDataBundle(
   const weaponSheet = getWeaponSheet(weapon.key)
   if (!weaponSheet) return undefined
 
-  const weaponSheetsDataOfType = WeaponSheet.getAllDataOfType(
-    characterSheet.weaponTypeKey
-  )
+  const weaponSheetsDataOfType =
+    displayDataMap[getCharStat(charInfo.key).weaponType]
 
   const weaponSheetsData = useCustom
     ? (() => {

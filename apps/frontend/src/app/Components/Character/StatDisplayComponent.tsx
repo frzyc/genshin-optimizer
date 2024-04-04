@@ -1,5 +1,11 @@
+import {
+  CardHeaderCustom,
+  ImgIcon,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { objMap } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { customRead } from '@genshin-optimizer/gi/wr'
 import type { MasonryProps } from '@mui/lab'
@@ -9,12 +15,8 @@ import { useContext, useMemo } from 'react'
 import { DataContext } from '../../Context/DataContext'
 import { OptimizationTargetContext } from '../../Context/OptimizationTargetContext'
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
-import type { NodeDisplay } from '../../Formula/uiData'
 import CardDark from '../Card/CardDark'
-import CardHeaderCustom from '../Card/CardHeaderCustom'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
-import ImgIcon from '../Image/ImgIcon'
-import SqBadge from '../SqBadge'
 
 export default function StatDisplayComponent({
   columns = { xs: 1, sm: 2, md: 3, xl: 4 },

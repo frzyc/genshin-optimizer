@@ -8,7 +8,8 @@ import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { Add } from '@mui/icons-material'
+import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
   Button,
@@ -33,7 +34,6 @@ import CardDark from '../Components/Card/CardDark'
 import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
 import WeaponRarityToggle from '../Components/ToggleButton/WeaponRarityToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
-import { getWeaponSheet } from '../Data/Weapons'
 import {
   weaponFilterConfigs,
   weaponSortConfigs,
@@ -165,7 +165,7 @@ export default function PageWeapon() {
     () =>
       catTotal(allWeaponTypeKeys, (ct) =>
         Object.entries(database.weapons.data).forEach(([id, weapon]) => {
-          const wtk = getWeaponSheet(weapon.key).weaponType
+          const wtk = getWeaponStat(weapon.key).weaponType
           ct[wtk].total++
           if (weaponIds.includes(id)) ct[wtk].current++
         })
@@ -177,7 +177,7 @@ export default function PageWeapon() {
     () =>
       catTotal(allRarityKeys, (ct) =>
         Object.entries(database.weapons.data).forEach(([id, weapon]) => {
-          const wr = getWeaponSheet(weapon.key).rarity
+          const wr = getWeaponStat(weapon.key).rarity
           ct[wr].total++
           if (weaponIds.includes(id)) ct[wr].current++
         })
@@ -276,7 +276,7 @@ export default function PageWeapon() {
           fullWidth
           onClick={() => setnewWeaponModalShow(true)}
           color="info"
-          startIcon={<Add />}
+          startIcon={<AddIcon />}
         >
           {t('page_weapon:addWeapon')}
         </Button>

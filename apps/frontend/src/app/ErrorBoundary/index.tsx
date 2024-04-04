@@ -1,5 +1,6 @@
 import { ThemeProvider } from '@emotion/react'
 import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
+import { isDev } from '@genshin-optimizer/common/util'
 import { theme } from '@genshin-optimizer/gi/ui'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import ErrorIcon from '@mui/icons-material/Error'
@@ -21,7 +22,6 @@ import type { WithTranslation } from 'react-i18next'
 import { Trans, withTranslation } from 'react-i18next'
 import CardLight from '../Components/Card/CardLight'
 import DatabaseCard from '../PageSettings/DatabaseCard'
-import { isDev } from '../Util/Util'
 import SpaghettiCode from './SpaghettiCode.png'
 
 interface Props extends WithTranslation {
