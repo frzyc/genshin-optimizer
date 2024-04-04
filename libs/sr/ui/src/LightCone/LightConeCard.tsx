@@ -1,16 +1,24 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { convert, selfTag } from '@genshin-optimizer/sr/formula'
+import {
+  convert,
+  lightConeData,
+  selfTag,
+  srCalculatorWithEntries,
+  withMember,
+} from '@genshin-optimizer/sr/formula'
 import { CardContent, Typography } from '@mui/material'
-import { useCalcContext } from '../Context'
 import { useLightCone } from '../Hook'
-
 type LightConeCardProps = {
   lightConeId: string
 }
 export function LightConeCard({ lightConeId }: LightConeCardProps) {
   const lightCone = useLightCone(lightConeId)
-  const { calc } = useCalcContext()
+  // const { calc } = useCalcContext()
+
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
+  const calc = srCalculatorWithEntries(
+    withMember('member0', ...lightConeData(lightCone))
+  )
 
   if (!lightCone) return null
   return (
