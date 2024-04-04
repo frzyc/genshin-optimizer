@@ -1,3 +1,4 @@
+import '@genshin-optimizer/gi/i18n'
 import { theme } from '@genshin-optimizer/gi/ui'
 import { DynamicFeed, Refresh } from '@mui/icons-material'
 import {
@@ -13,7 +14,6 @@ import {
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import CardLight from '../Components/Card/CardLight'
-import '../i18n'
 import derp from './derp.jpeg'
 
 export default function NewTab() {
