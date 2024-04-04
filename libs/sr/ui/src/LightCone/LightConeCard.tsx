@@ -13,7 +13,6 @@ type LightConeCardProps = {
 }
 export function LightConeCard({ lightConeId }: LightConeCardProps) {
   const lightCone = useLightCone(lightConeId)
-  // const { calc } = useCalcContext()
 
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
   const calc = srCalculatorWithEntries(
