@@ -73,7 +73,7 @@ export default defineConfig({
     alias: [
       // e.g. Resolves '@genshin-optimizer/pando/engine' -> 'libs/pando/engine/src'
       {
-        find: /@genshin-optimizer\/([a-z-]*)\/([a-z-]*)/,
+        find: /@genshin-optimizer\/([a-zA-Z0-9-]*)\/([a-zA-Z0-9-]*)/,
         replacement: resolve('libs/$1/$2/src'),
       },
     ],
