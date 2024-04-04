@@ -10,6 +10,7 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  Container,
   CssBaseline,
   Stack,
   StyledEngineProvider,
@@ -33,14 +34,18 @@ export default function App() {
               <Stack gap={1} pt={1}>
                 <CharacterSelector />
                 <Character />
-                <Accordion>
-                  <AccordionSummary expandIcon={<ExpandMore />}>
-                    Light Cones
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <LightConeInventory />
-                  </AccordionDetails>
-                </Accordion>
+
+                <Container>
+                  <Accordion>
+                    <AccordionSummary expandIcon={<ExpandMore />}>
+                      Light Cones
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <LightConeInventory />
+                    </AccordionDetails>
+                  </Accordion>
+                </Container>
+
                 <RelicEditor />
                 <Optimize />
                 <Database />
