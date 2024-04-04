@@ -1,6 +1,10 @@
 import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  TeamCharacterContext,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
@@ -21,8 +25,6 @@ import {
 import { useContext, useState } from 'react'
 import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
-import { CharacterContext } from '../../../Context/CharacterContext'
-import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 
 type EquipChangeProps = {
   currentName: string

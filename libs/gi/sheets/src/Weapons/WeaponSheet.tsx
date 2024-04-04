@@ -1,7 +1,7 @@
 import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import type { UIData } from '@genshin-optimizer/gi/ui'
+import type { UIData } from '@genshin-optimizer/gi/uidata'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'

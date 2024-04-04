@@ -3,8 +3,8 @@ import {
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { SqBadge } from '@genshin-optimizer/common/ui'
-import { filterFunction } from '@genshin-optimizer/common/util'
+import { SolidToggleButtonGroup, SqBadge } from '@genshin-optimizer/common/ui'
+import { bulkCatTotal, filterFunction } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   LocationCharacterKey,
@@ -21,7 +21,12 @@ import type {
   ICachedCharacter,
 } from '@genshin-optimizer/gi/db'
 import { allAllowLocationsState } from '@genshin-optimizer/gi/db'
-import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  TeamCharacterContext,
+  useDatabase,
+  useOptConfig,
+} from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
@@ -56,14 +61,10 @@ import CardLight from '../../../../../Components/Card/CardLight'
 import CharacterCardPico from '../../../../../Components/Character/CharacterCardPico'
 import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
-import SolidToggleButtonGroup from '../../../../../Components/SolidToggleButtonGroup'
 import CharacterRarityToggle from '../../../../../Components/ToggleButton/CharacterRarityToggle'
 import ElementToggle from '../../../../../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import { characterFilterConfigs } from '../../../../../Util/CharacterSort'
-import { bulkCatTotal } from '../../../../../Util/totalUtils'
 
 enum CharListMode {
   ToggleToAllow,

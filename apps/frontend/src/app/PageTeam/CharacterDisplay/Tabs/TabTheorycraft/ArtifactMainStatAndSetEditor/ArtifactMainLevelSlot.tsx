@@ -9,7 +9,11 @@ import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi/consts'
 import type { BuildTcArtifactSlot } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
+import {
+  StatColoredWithUnit,
+  StatWithUnit,
+  artifactLevelVariant,
+} from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
   getMainStatDisplayValue,
@@ -18,10 +22,6 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import CardDark from '../../../../../Components/Card/CardDark'
-import {
-  StatColoredWithUnit,
-  StatWithUnit,
-} from '../../../../../Components/StatDisplay'
 import { BuildTcContext } from '../BuildTcContext'
 
 export function ArtifactMainLevelSlot({

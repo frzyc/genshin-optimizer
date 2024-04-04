@@ -7,7 +7,11 @@ import {
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
@@ -15,6 +19,7 @@ import {
   CharacterName,
   SillyContext,
 } from '@genshin-optimizer/gi/ui'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
@@ -23,8 +28,6 @@ import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { CharacterContext } from '../../../Context/CharacterContext'
-import { DataContext } from '../../../Context/DataContext'
 import LevelSelect from '../../LevelSelect'
 import { CharacterCardStats } from '../CharacterCard/CharacterCardStats'
 import {

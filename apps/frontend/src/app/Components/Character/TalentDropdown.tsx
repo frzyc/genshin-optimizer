@@ -2,15 +2,14 @@ import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import { DropdownButton } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { talentLimits } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { CharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
 import { MenuItem } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharacterContext } from '../../Context/CharacterContext'
-import { DataContext } from '../../Context/DataContext'
 
 export default function TalentDropdown({
   talentKey,

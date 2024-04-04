@@ -6,13 +6,13 @@ import { useWeapon } from '@genshin-optimizer/gi/db-ui'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
-import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import { WeaponName } from '@genshin-optimizer/gi/ui'
+import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import {
-  WeaponName,
   computeUIData,
   nodeVStr,
   resolveInfo,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi/uidata'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'

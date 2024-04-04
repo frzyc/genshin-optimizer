@@ -1,0 +1,16 @@
+{
+  "name": "gi-uidata",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi/uidata/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gi/uidata/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

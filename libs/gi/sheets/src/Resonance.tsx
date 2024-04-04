@@ -13,8 +13,8 @@ import {
   HydroIcon,
   PyroIcon,
 } from '@genshin-optimizer/gi/svgicons'
-import type { UIData } from '@genshin-optimizer/gi/ui'
 import { ElementCycle, Translate } from '@genshin-optimizer/gi/ui'
+import type { UIData } from '@genshin-optimizer/gi/uidata'
 import {
   equal,
   greaterEq,

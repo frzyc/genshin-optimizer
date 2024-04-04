@@ -2,13 +2,21 @@ import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
 import { hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
+  CharacterContext,
   useCharacter,
   useDatabase,
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
+import {
+  DataContext,
+  getBuildTcArtifactData,
+  useCharData,
+} from '@genshin-optimizer/gi/ui-main'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import InfoIcon from '@mui/icons-material/Info'
 import PersonIcon from '@mui/icons-material/Person'
@@ -25,12 +33,6 @@ import {
 import CharacterCardPico, {
   BlankCharacterCardPico,
 } from '../Components/Character/CharacterCardPico'
-import type { CharacterContextObj } from '../Context/CharacterContext'
-import { CharacterContext } from '../Context/CharacterContext'
-import type { dataContextObj } from '../Context/DataContext'
-import { DataContext } from '../Context/DataContext'
-import { getArtifactData } from '../PageTeam/CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
-import useCharData from '../ReactHooks/useCharData'
 
 // TODO: Translation
 
@@ -155,7 +157,7 @@ function HoverCard({
   const arts = (() => {
     const { buildType, buildTcId } = loadoutDatum
     if (buildType === 'tc' && buildTcId)
-      return getArtifactData(database.buildTcs.get(buildTcId)!)
+      return getBuildTcArtifactData(database.buildTcs.get(buildTcId)!)
     return Object.values(
       database.teams.getLoadoutArtifacts(loadoutDatum)
     ).filter((a) => a) as ICachedArtifact[]

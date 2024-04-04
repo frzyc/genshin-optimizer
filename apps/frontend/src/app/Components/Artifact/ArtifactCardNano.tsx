@@ -10,7 +10,12 @@ import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedSubstat } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactTooltip,
+  LocationIcon,
+  StatColoredWithUnit,
+  artifactLevelVariant,
+} from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
   getMainStatDisplayStr,
@@ -26,9 +31,6 @@ import {
 } from '@mui/material'
 import { useCallback } from 'react'
 import CardDark from '../Card/CardDark'
-import LocationIcon from '../Character/LocationIcon'
-import { StatColoredWithUnit } from '../StatDisplay'
-import ArtifactTooltip from './ArtifactTooltip'
 
 type Data = {
   artifactId?: string

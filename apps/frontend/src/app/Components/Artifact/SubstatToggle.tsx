@@ -1,9 +1,9 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { SolidToggleButtonGroup } from '@genshin-optimizer/common/ui'
+import { handleMultiSelect } from '@genshin-optimizer/common/util'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { Box, ToggleButton } from '@mui/material'
-import { handleMultiSelect } from '../../Util/MultiSelect'
-import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
 import { ArtifactStatWithUnit } from './ArtifactStatKeyDisplay'
 
 const rvfilterHandler = handleMultiSelect([...allSubstatKeys])

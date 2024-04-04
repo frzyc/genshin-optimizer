@@ -4,10 +4,9 @@ import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
+import { ArtifactTooltip, artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import { Box, Typography } from '@mui/material'
 import CardDark from '../Card/CardDark'
-import ArtifactTooltip from './ArtifactTooltip'
 
 export default function ArtifactCardPico({
   artifactObj: art,

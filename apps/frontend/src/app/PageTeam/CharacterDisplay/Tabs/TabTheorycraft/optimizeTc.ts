@@ -10,18 +10,17 @@ import {
   artSubstatRollData,
   type CharacterKey,
 } from '@genshin-optimizer/gi/consts'
-import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi/db'
-import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
-import type { Data, NumNode, OptNode } from '@genshin-optimizer/gi/wr'
+import type { BuildTc } from '@genshin-optimizer/gi/db'
+import type { TeamData } from '@genshin-optimizer/gi/ui-main'
+import { getSubstatValue } from '@genshin-optimizer/gi/util'
+import type { NumNode, OptNode } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   mapFormulas,
   mergeData,
   optimize,
-  percent,
   precompute,
 } from '@genshin-optimizer/gi/wr'
-import type { TeamData } from '../../../../Context/DataContext'
 import { dynamicData } from '../TabOptimize/foreground'
 
 export type TCWorkerResult = TotalResult | CountResult | FinalizeResult
@@ -330,41 +329,4 @@ function countPerms(sum: number, bounds: number[]): number {
     counts = new_counts
   }
   return counts[sum]
-}
-
-export function getArtifactData(buildTc: BuildTc): Data {
-  const {
-    artifact: {
-      slots,
-      substats: { stats: substats },
-      sets,
-    },
-  } = buildTc
-  const allStats = objMap(substats, (v, k) => toDecimal(v, k))
-  Object.values(slots).forEach(
-    ({ statKey, rarity, level }) =>
-      (allStats[statKey] =
-        (allStats[statKey] ?? 0) + getMainStatValue(statKey, rarity, level))
-  )
-  return {
-    art: objMap(allStats, (v, k) =>
-      k.endsWith('_') ? percent(v) : constant(v)
-    ),
-    artSet: objMap(sets, (v) => constant(v)),
-  }
-}
-
-export function getWeaponData(buildTc: BuildTc): ICachedWeapon {
-  const {
-    weapon: { key, level, ascension, refinement },
-  } = buildTc
-  return {
-    id: '',
-    location: '',
-    key,
-    level,
-    ascension,
-    refinement,
-    lock: false,
-  }
 }

@@ -1,10 +1,14 @@
 import { ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
+  CharacterContext,
   useCharMeta,
   useCharacter,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
+import { DataContext, useCharData } from '@genshin-optimizer/gi/ui-main'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {
@@ -15,11 +19,6 @@ import {
   Skeleton,
 } from '@mui/material'
 import { Suspense, useCallback, useMemo } from 'react'
-import type { CharacterContextObj } from '../../Context/CharacterContext'
-import { CharacterContext } from '../../Context/CharacterContext'
-import type { dataContextObj } from '../../Context/DataContext'
-import { DataContext } from '../../Context/DataContext'
-import useCharData from '../../ReactHooks/useCharData'
 import CardLight from '../Card/CardLight'
 import { CharacterCardEquipmentRow } from './CharacterCard/CharacterCardEquipmentRow'
 import {

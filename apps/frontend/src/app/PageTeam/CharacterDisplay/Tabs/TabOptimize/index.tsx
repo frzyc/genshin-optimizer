@@ -12,6 +12,7 @@ import {
   useConstObj,
 } from '@genshin-optimizer/common/ui'
 import {
+  bulkCatTotal,
   notEmpty,
   objKeyMap,
   objPathValue,
@@ -29,6 +30,7 @@ import type {
 } from '@genshin-optimizer/gi/db'
 import { defThreads, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
+  TeamCharacterContext,
   useDBMeta,
   useDatabase,
   useOptConfig,
@@ -36,13 +38,17 @@ import {
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { CharIconSide, CharacterName } from '@genshin-optimizer/gi/ui'
 import {
-  CharIconSide,
-  CharacterName,
+  DataContext,
+  getTeamData,
+  useTeamData,
+} from '@genshin-optimizer/gi/ui-main'
+import {
   resolveInfo,
   uiDataForTeam,
   type UIData,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import {
@@ -101,13 +107,9 @@ import {
 } from '../../../../Components/HitModeEditor'
 import InfoTooltip from '../../../../Components/InfoTooltip'
 import NoArtWarning from '../../../../Components/NoArtWarning'
-import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
-import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
-import { bulkCatTotal } from '../../../../Util/totalUtils'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
 import AllowChar from './Components/AllowChar'

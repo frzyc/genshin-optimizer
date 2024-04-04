@@ -5,20 +5,19 @@ import {
   evalIfFunc,
   layeredAssignment,
 } from '@genshin-optimizer/common/util'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type {
   DocumentConditional,
   IDocumentConditionalExclusive,
   IDocumentConditionalMultiple,
 } from '@genshin-optimizer/gi/sheets'
 import { Translate } from '@genshin-optimizer/gi/ui'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import type { ButtonProps, Palette } from '@mui/material'
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'
-import { DataContext } from '../../Context/DataContext'
-import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 
 interface ConditionalSelectorProps {
   conditional: DocumentConditional

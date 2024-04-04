@@ -3,7 +3,11 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import { useInfScroll } from '@genshin-optimizer/common/ui'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import {
+  catTotal,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
@@ -39,7 +43,6 @@ import {
   weaponSortConfigs,
   weaponSortMap,
 } from '../Util/WeaponSort'
-import { catTotal } from '../Util/totalUtils'
 import WeaponCard from './WeaponCard'
 const WeaponSelectionModal = React.lazy(
   () => import('../Components/Weapon/WeaponSelectionModal')

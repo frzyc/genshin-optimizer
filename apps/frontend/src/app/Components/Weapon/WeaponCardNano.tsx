@@ -9,15 +9,19 @@ import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import type { WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
-import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
-import { computeUIData, nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
+import { LocationIcon } from '@genshin-optimizer/gi/ui'
+import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import {
+  computeUIData,
+  nodeVStr,
+  resolveInfo,
+} from '@genshin-optimizer/gi/uidata'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, input } from '@genshin-optimizer/gi/wr'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import CardDark from '../Card/CardDark'
-import LocationIcon from '../Character/LocationIcon'
 import WeaponNameTooltip from './WeaponNameTooltip'
 
 type Data = {

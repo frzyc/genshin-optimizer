@@ -15,12 +15,19 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
+  TeamCharacterContext,
   useDBMeta,
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
-import { resolveInfo, uiDataForTeam } from '@genshin-optimizer/gi/ui'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
+import {
+  DataContext,
+  getTeamData,
+  useTeamData,
+} from '@genshin-optimizer/gi/ui-main'
+import { resolveInfo, uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'
@@ -58,10 +65,6 @@ import {
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
 import NoArtWarning from '../../../../Components/NoArtWarning'
-import type { dataContextObj } from '../../../../Context/DataContext'
-import { DataContext } from '../../../../Context/DataContext'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
-import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'

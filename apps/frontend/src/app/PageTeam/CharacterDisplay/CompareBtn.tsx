@@ -1,11 +1,10 @@
 import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import type { ButtonGroupProps } from '@mui/material'
 import { Button, ButtonGroup, MenuItem } from '@mui/material'
 import { useContext } from 'react'
-import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 
 /**
  * The UI component that modifies the compare data in a TeamChar.

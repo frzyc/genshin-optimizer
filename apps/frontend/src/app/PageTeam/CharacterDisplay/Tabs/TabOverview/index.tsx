@@ -1,4 +1,5 @@
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Grid, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo, useRef } from 'react'
@@ -10,7 +11,6 @@ import {
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
 import WeaponCardNano from '../../../../Components/Weapon/WeaponCardNano'
-import { DataContext } from '../../../../Context/DataContext'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'

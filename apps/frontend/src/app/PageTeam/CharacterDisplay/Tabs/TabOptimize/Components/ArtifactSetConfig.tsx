@@ -1,7 +1,11 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { ColorText, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
-import { deepClone, objKeyMap } from '@genshin-optimizer/common/util'
+import {
+  bulkCatTotal,
+  deepClone,
+  objKeyMap,
+} from '@genshin-optimizer/common/util'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSetKey,
@@ -17,11 +21,18 @@ import {
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
 } from '@genshin-optimizer/gi/db'
-import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import {
+  TeamCharacterContext,
+  useDatabase,
+  useOptConfig,
+} from '@genshin-optimizer/gi/db-ui'
 import { getArtSheet, setKeysByRarities } from '@genshin-optimizer/gi/sheets'
 import { getArtSetStat } from '@genshin-optimizer/gi/stats'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
-import { ArtifactSetName, Translate, UIData } from '@genshin-optimizer/gi/ui'
+import { ArtifactSetName, Translate } from '@genshin-optimizer/gi/ui'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import { UIData } from '@genshin-optimizer/gi/uidata'
 import { constant } from '@genshin-optimizer/gi/wr'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
@@ -45,10 +56,6 @@ import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDispla
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
 import { InfoTooltipInline } from '../../../../../Components/InfoTooltip'
-import type { dataContextObj } from '../../../../../Context/DataContext'
-import { DataContext } from '../../../../../Context/DataContext'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import SetInclusionButton from './SetInclusionButton'
 
 export default function ArtifactSetConfig({

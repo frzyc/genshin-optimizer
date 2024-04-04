@@ -5,11 +5,10 @@ import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useBuildTc } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
-import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
+import { ArtifactSetName, StatWithUnit } from '@genshin-optimizer/gi/ui'
 import { artDisplayValue } from '@genshin-optimizer/gi/util'
 import { Box, Grid } from '@mui/material'
 import { BuildCard } from '../../../PageTeam/CharacterDisplay/Build/BuildCard'
-import { StatWithUnit } from '../../StatDisplay'
 import { WeaponCardNanoObj } from '../../Weapon/WeaponCardNano'
 
 export default function BuildTcSimplified({

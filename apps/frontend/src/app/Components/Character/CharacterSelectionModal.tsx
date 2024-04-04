@@ -3,7 +3,11 @@ import {
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
 import { SqBadge, StarsDisplay } from '@genshin-optimizer/common/ui'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import {
+  catTotal,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -22,6 +26,7 @@ import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import CloseIcon from '@mui/icons-material/Close'
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -49,7 +54,6 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DataContext } from '../../Context/DataContext'
 import { iconAsset } from '../../Util/AssetUtil'
 import type { CharacterSortKey } from '../../Util/CharacterSort'
 import {
@@ -57,7 +61,6 @@ import {
   characterSortConfigs,
   characterSortMap,
 } from '../../Util/CharacterSort'
-import { catTotal } from '../../Util/totalUtils'
 import CardDark from '../Card/CardDark'
 import CardLight from '../Card/CardLight'
 import ModalWrapper from '../ModalWrapper'

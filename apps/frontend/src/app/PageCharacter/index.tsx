@@ -3,7 +3,11 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import { useInfScroll } from '@genshin-optimizer/common/ui'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import {
+  catTotal,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allCharacterRarityKeys,
@@ -53,7 +57,6 @@ import {
   characterSortConfigs,
   characterSortMap,
 } from '../Util/CharacterSort'
-import { catTotal } from '../Util/totalUtils'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 5, sm: 8, md: 9, lg: 12, xl: 12 }
 const sortKeys = Object.keys(characterSortMap)

@@ -1,6 +1,11 @@
 import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/ui'
+import {
+  DataContext,
+  getDisplayHeader,
+  getDisplaySections,
+} from '@genshin-optimizer/gi/ui-main'
+import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { Masonry } from '@mui/lab'
 import {
@@ -15,11 +20,6 @@ import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
 import { NodeFieldDisplayText } from '../../../../../Components/FieldDisplay'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
-import { DataContext } from '../../../../../Context/DataContext'
-import {
-  getDisplayHeader,
-  getDisplaySections,
-} from '../../../../../Formula/DisplayUtil'
 
 export interface TargetSelectorModalProps {
   show: boolean

@@ -1,7 +1,18 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ModalWrapper } from '@genshin-optimizer/common/ui'
 import { objMap } from '@genshin-optimizer/common/util'
-import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  TeamCharacterContext,
+  useDatabase,
+  useOptConfig,
+} from '@genshin-optimizer/gi/db-ui'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
+import {
+  DataContext,
+  useCharData,
+  useTeamData,
+} from '@genshin-optimizer/gi/ui-main'
 import CloseIcon from '@mui/icons-material/Close'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import {
@@ -13,13 +24,7 @@ import {
 } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharacterContext } from '../Context/CharacterContext'
-import type { dataContextObj } from '../Context/DataContext'
-import { DataContext } from '../Context/DataContext'
-import { TeamCharacterContext } from '../Context/TeamCharacterContext'
 import BuildDisplayItem from '../PageTeam/CharacterDisplay/Tabs/TabOptimize/Components/BuildDisplayItem'
-import useCharData from '../ReactHooks/useCharData'
-import useTeamData from '../ReactHooks/useTeamData'
 import { HitModeToggle, ReactionToggle } from './HitModeEditor'
 export default function CompareBuildButton({
   artId,

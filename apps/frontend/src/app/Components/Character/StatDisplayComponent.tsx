@@ -5,16 +5,19 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { objMap } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import {
+  DataContext,
+  getDisplayHeader,
+  getDisplaySections,
+} from '@genshin-optimizer/gi/ui-main'
+import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { customRead } from '@genshin-optimizer/gi/wr'
 import type { MasonryProps } from '@mui/lab'
 import { Masonry } from '@mui/lab'
 import { Box, Divider, ListItem } from '@mui/material'
 import { useContext, useMemo } from 'react'
-import { DataContext } from '../../Context/DataContext'
 import { OptimizationTargetContext } from '../../Context/OptimizationTargetContext'
-import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
 import CardDark from '../Card/CardDark'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
 

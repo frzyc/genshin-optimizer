@@ -1,8 +1,8 @@
+import { PercentBadge } from '@genshin-optimizer/gi/ui'
 import { Grid, Typography } from '@mui/material'
 import { Trans } from 'react-i18next'
 import CardLight from '../../../Components/Card/CardLight'
 import InfoTooltip from '../../../Components/InfoTooltip'
-import PercentBadge from '../../../Components/PercentBadge'
 
 export default function SubstatEfficiencyDisplayCard({
   efficiency,

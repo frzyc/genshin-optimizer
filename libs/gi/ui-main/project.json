@@ -1,0 +1,16 @@
+{
+  "name": "gi-ui-main",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi/ui-main/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gi/ui-main/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

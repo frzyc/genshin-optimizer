@@ -1,4 +1,4 @@
-import type { UIData } from '@genshin-optimizer/gi/ui'
+import type { UIData } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 
 export interface IBasicFieldDisplay {

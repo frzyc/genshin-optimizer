@@ -4,6 +4,7 @@ import {
 } from '@genshin-optimizer/common/database'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
+import '@genshin-optimizer/gi/i18n' // import to load translations
 import { SillyContext, theme, useSilly } from '@genshin-optimizer/gi/ui'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import {
@@ -28,7 +29,6 @@ import Footer from './Footer'
 import Header from './Header'
 import useTitle from './ReactHooks/useTitle'
 import Snow from './Snow'
-import './i18n'
 
 const PageHome = lazy(() => import('./PageHome'))
 const PageArtifact = lazy(() => import('./PageArtifact'))

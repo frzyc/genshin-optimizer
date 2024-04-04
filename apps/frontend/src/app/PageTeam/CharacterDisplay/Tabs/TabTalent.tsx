@@ -1,14 +1,19 @@
 import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import {
   getCharSheet,
   type DocumentSection,
   type TalentSheetElementKey,
 } from '@genshin-optimizer/gi/sheets'
-import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
@@ -31,8 +36,6 @@ import {
   HitModeToggle,
   ReactionToggle,
 } from '../../../Components/HitModeEditor'
-import { CharacterContext } from '../../../Context/CharacterContext'
-import { DataContext } from '../../../Context/DataContext'
 const talentSpacing = {
   xs: 12,
   sm: 6,

@@ -6,7 +6,13 @@ import {
   charKeyToLocCharKey,
   type ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
-import { useBuild, useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  TeamCharacterContext,
+  useBuild,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { ArtifactSlotName, CharacterName } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -27,8 +33,6 @@ import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
 import EquippedGrid from '../../../Components/Character/EquippedGrid'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
-import { CharacterContext } from '../../../Context/CharacterContext'
-import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import { BuildCard } from './BuildCard'
 import EquipBuildModal from './EquipBuildModal'
 

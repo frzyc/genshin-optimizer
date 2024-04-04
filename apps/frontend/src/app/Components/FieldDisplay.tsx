@@ -10,8 +10,10 @@ import type {
   IBasicFieldDisplay,
   IFieldDisplay,
 } from '@genshin-optimizer/gi/sheets'
-import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
-import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
+import { AmpReactionModeText } from '@genshin-optimizer/gi/ui'
+import { DataContext, FormulaDataContext } from '@genshin-optimizer/gi/ui-main'
+import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/uidata'
 import GroupsIcon from '@mui/icons-material/Groups'
 import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, PaletteColor } from '@mui/material'
@@ -26,9 +28,6 @@ import {
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import React, { Suspense, useCallback, useContext, useMemo } from 'react'
-import { DataContext } from '../Context/DataContext'
-import { FormulaDataContext } from '../Context/FormulaDataContext'
-import AmpReactionModeText from './AmpReactionModeText'
 
 export default function FieldsDisplay({
   fields,

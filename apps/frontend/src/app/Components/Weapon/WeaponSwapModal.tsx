@@ -2,8 +2,17 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import {
+  CardThemed,
+  ImgIcon,
+  SolidToggleButtonGroup,
+  useInfScroll,
+} from '@genshin-optimizer/common/ui'
+import {
+  filterFunction,
+  handleMultiSelect,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   RarityKey,
@@ -41,7 +50,6 @@ import {
 import { useTranslation } from 'react-i18next'
 import WeaponCard from '../../PageWeapon/WeaponCard'
 import WeaponEditor from '../../PageWeapon/WeaponEditor'
-import { handleMultiSelect } from '../../Util/MultiSelect'
 import {
   weaponFilterConfigs,
   weaponSortConfigs,
@@ -50,7 +58,6 @@ import {
 import CompareBuildButton from '../CompareBuildButton'
 import ModalWrapper from '../ModalWrapper'
 import ShowingAndSortOptionSelect from '../ShowingAndSortOptionSelect'
-import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
 import WeaponSelectionModal from './WeaponSelectionModal'
 
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }

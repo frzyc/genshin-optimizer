@@ -1,9 +1,14 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
 import type { TeamCharacter } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  TeamCharacterContext,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { allEleDmgKeys, allEleResKeys } from '@genshin-optimizer/gi/keymap'
 import { getCharEle, isCharMelee } from '@genshin-optimizer/gi/stats'
-import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/uidata'
 import type { ReadNode } from '@genshin-optimizer/gi/wr'
 import { allInputPremodKeys, uiInput as input } from '@genshin-optimizer/gi/wr'
 import BarChartIcon from '@mui/icons-material/BarChart'
@@ -29,9 +34,6 @@ import {
 } from '../../Components/FieldDisplay'
 import ModalWrapper from '../../Components/ModalWrapper'
 import StatEditorList from '../../Components/StatEditorList'
-import { CharacterContext } from '../../Context/CharacterContext'
-import { DataContext } from '../../Context/DataContext'
-import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 const cols = {
   xs: 1,
   md: 2,

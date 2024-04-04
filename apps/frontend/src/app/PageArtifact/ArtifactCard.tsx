@@ -25,6 +25,8 @@ import {
   ArtifactSetName,
   ArtifactSetSlotDesc,
   ArtifactSetSlotName,
+  LocationName,
+  PercentBadge,
   artifactLevelVariant,
 } from '@genshin-optimizer/gi/ui'
 import {
@@ -52,8 +54,6 @@ import { useTranslation } from 'react-i18next'
 import { ArtifactSetTooltipContent } from '../Components/Artifact/ArtifactSetTooltip'
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
-import LocationName from '../Components/Character/LocationName'
-import PercentBadge from '../Components/PercentBadge'
 import type { ArtifactEditorProps } from './ArtifactEditor'
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))

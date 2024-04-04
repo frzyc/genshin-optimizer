@@ -4,6 +4,7 @@ import {
   CustomNumberInputButtonGroupWrapper,
   ImgFullwidth,
   ImgIcon,
+  TextButton,
 } from '@genshin-optimizer/common/ui'
 import { clamp, objMap } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
@@ -21,7 +22,6 @@ import {
 import { useState } from 'react'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
-import TextButton from '../Components/TextButton'
 const booksData = {
   advice: {
     name: "Wanderer's Advice",

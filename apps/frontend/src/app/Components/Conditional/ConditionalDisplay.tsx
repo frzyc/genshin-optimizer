@@ -5,9 +5,9 @@ import type {
   DocumentConditional,
   DocumentSection,
 } from '@genshin-optimizer/gi/sheets'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
 import { CardContent } from '@mui/material'
 import { useContext } from 'react'
-import { DataContext } from '../../Context/DataContext'
 import { HeaderDisplay } from '../DocumentDisplay'
 import FieldsDisplay from '../FieldDisplay'
 import ConditionalSelector from './ConditionalSelector'

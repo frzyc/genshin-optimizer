@@ -3,6 +3,7 @@ import {
   CustomNumberInputButtonGroupWrapper,
   DropdownButton,
   SqBadge,
+  TextButton,
 } from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import {
@@ -14,6 +15,7 @@ import type { ISubstat } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { RollColorKey } from '@genshin-optimizer/gi/ui'
+import { PercentBadge } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
   getSubstatSummedRolls,
@@ -34,9 +36,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { ArtifactStatWithUnit } from '../../../Components/Artifact/ArtifactStatKeyDisplay'
 import CardLight from '../../../Components/Card/CardLight'
-import PercentBadge from '../../../Components/PercentBadge'
-import TextButton from '../../../Components/TextButton'
-
 export default function SubstatInput({
   index,
   artifact,

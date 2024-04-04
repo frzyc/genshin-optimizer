@@ -1,5 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { CardThemed, ColorText } from '@genshin-optimizer/common/ui'
+import { CardThemed, ColorText, StatInput } from '@genshin-optimizer/common/ui'
 import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { Team } from '@genshin-optimizer/gi/db'
@@ -9,6 +9,7 @@ import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import type { IconButtonProps } from '@mui/material'
 import {
   Box,
   Button,
@@ -17,11 +18,28 @@ import {
   Chip,
   Collapse,
   Grid,
+  IconButton,
   Typography,
+  styled,
 } from '@mui/material'
 import { useCallback, useState } from 'react'
-import ExpandButton from './ExpandButton'
-import StatInput from './StatInput'
+
+interface ExpandMoreProps extends IconButtonProps {
+  expand: boolean
+}
+const ExpandButton = styled((props: ExpandMoreProps) => {
+  const { expand, ...other } = props
+  return <IconButton {...other} />
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: (theme as any).transitions.create('transform', {
+    duration: (theme as any).transitions.duration.shortest,
+  }),
+}))
+
+export default ExpandButton
+
 // TODO: Translation
 export function EnemyExpandCard({ teamId }: { teamId: string }) {
   const [expanded, setexpanded] = useState(false)

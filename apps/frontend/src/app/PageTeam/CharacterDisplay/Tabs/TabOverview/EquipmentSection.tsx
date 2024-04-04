@@ -3,9 +3,14 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  TeamCharacterContext,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { dataSetEffects } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
@@ -21,9 +26,6 @@ import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay'
 import CardLight from '../../../../Components/Card/CardLight'
 import EquippedGrid from '../../../../Components/Character/EquippedGrid'
 import DocumentDisplay from '../../../../Components/DocumentDisplay'
-import { CharacterContext } from '../../../../Context/CharacterContext'
-import { DataContext } from '../../../../Context/DataContext'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 
 export default function EquipmentSection() {
   const database = useDatabase()

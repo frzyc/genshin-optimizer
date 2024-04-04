@@ -6,10 +6,22 @@ import {
   type SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
-import { useBuildTc, useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  TeamCharacterContext,
+  useBuildTc,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi/ui'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
+import {
+  DataContext,
+  getBuildTcArtifactData,
+  getBuildTcWeaponData,
+  getTeamDataCalc,
+} from '@genshin-optimizer/gi/ui-main'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import CloseIcon from '@mui/icons-material/Close'
@@ -23,11 +35,7 @@ import {
   HitModeToggle,
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
-import type { dataContextObj } from '../../../../Context/DataContext'
-import { DataContext } from '../../../../Context/DataContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
-import { getTeamDataCalc } from '../../../../ReactHooks/useTeamData'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
@@ -42,10 +50,8 @@ import KQMSButton from './KQMSButton'
 import { WeaponEditorCard } from './WeaponEditorCard'
 import type { TCWorkerResult } from './optimizeTc'
 import {
-  getArtifactData,
   getMinSubAndOtherRolls,
   getScalesWith,
-  getWeaponData,
   optimizeTcGetNodes,
 } from './optimizeTc'
 export default function TabTheorycraft() {
@@ -158,8 +164,8 @@ export default function TabTheorycraft() {
       gender,
       teamCharId,
       0,
-      getArtifactData(buildTc),
-      getWeaponData(buildTc)
+      getBuildTcArtifactData(buildTc),
+      getBuildTcWeaponData(buildTc)
     )
     if (!tempTeamData) return
     const { nodes } = optimizeTcGetNodes(tempTeamData, characterKey, buildTc)

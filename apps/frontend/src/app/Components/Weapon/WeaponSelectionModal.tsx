@@ -1,4 +1,5 @@
 import { ImgIcon, StarsDisplay } from '@genshin-optimizer/common/ui'
+import { catTotal } from '@genshin-optimizer/common/util'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -25,7 +26,6 @@ import {
 import type { ChangeEvent } from 'react'
 import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { catTotal } from '../../Util/totalUtils'
 import CardDark from '../Card/CardDark'
 import CardLight from '../Card/CardLight'
 import ModalWrapper from '../ModalWrapper'

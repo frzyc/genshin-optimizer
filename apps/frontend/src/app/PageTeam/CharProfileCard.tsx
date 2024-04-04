@@ -1,6 +1,6 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { CharacterContext, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { CharacterConstellationName } from '@genshin-optimizer/gi/ui'
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
 import { Box, Button, Typography } from '@mui/material'
@@ -11,7 +11,6 @@ import {
   CharacterCompactTalent,
   CharacterCoverArea,
 } from '../Components/Character/CharacterProfilePieces'
-import { CharacterContext } from '../Context/CharacterContext'
 /* Image card with star and name and level */
 export default function CharacterProfileCard() {
   const {

@@ -10,11 +10,11 @@ import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import type { RollColorKey } from '@genshin-optimizer/gi/ui'
 import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { input } from '@genshin-optimizer/gi/wr'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
-import { DataContext } from '../../../Context/DataContext'
 import { iconAsset } from '../../../Util/AssetUtil'
 
 export function CharacterCardHeader({

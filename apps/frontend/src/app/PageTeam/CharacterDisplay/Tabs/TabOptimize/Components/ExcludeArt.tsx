@@ -5,7 +5,11 @@ import {
 } from '@genshin-optimizer/common/react-util'
 import { SqBadge, useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
-import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import {
+  TeamCharacterContext,
+  useDatabase,
+  useOptConfig,
+} from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -38,7 +42,6 @@ import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
 import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import {
   artifactFilterConfigs,

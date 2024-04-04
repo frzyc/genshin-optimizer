@@ -1,11 +1,10 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
+import type { SolidToggleButtonGroupProps } from '@genshin-optimizer/common/ui'
+import { ImgIcon, SolidToggleButtonGroup } from '@genshin-optimizer/common/ui'
+import { handleMultiSelect } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import { allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
-import { handleMultiSelect } from '../../Util/MultiSelect'
-import type { SolidToggleButtonGroupProps } from '../SolidToggleButtonGroup'
-import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
 type WeaponToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'

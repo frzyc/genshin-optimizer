@@ -7,8 +7,15 @@ import {
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
-import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
+import { AmpReactionModeText } from '@genshin-optimizer/gi/ui'
+import {
+  DataContext,
+  FormulaDataContext,
+  getDisplayHeader,
+  getDisplaySections,
+} from '@genshin-optimizer/gi/ui-main'
+import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import CloseIcon from '@mui/icons-material/Close'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -34,13 +41,9 @@ import {
   useRef,
   useState,
 } from 'react'
-import AmpReactionModeText from '../../Components/AmpReactionModeText'
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
 import ModalWrapper from '../../Components/ModalWrapper'
-import { DataContext } from '../../Context/DataContext'
-import { FormulaDataContext } from '../../Context/FormulaDataContext'
-import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
 export default function FormulaModal() {
   const { modalOpen } = useContext(FormulaDataContext)
   const { setFormulaData } = useContext(FormulaDataContext)

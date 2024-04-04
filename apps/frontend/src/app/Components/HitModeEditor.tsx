@@ -1,6 +1,10 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
-import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  DropdownButton,
+  SolidToggleButtonGroup,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
@@ -10,7 +14,11 @@ import {
   allAmpReactionKeys,
   allHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  TeamCharacterContext,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { isCharMelee } from '@genshin-optimizer/gi/stats'
 import {
   CryoIcon,
@@ -18,18 +26,15 @@ import {
   HydroIcon,
   PyroIcon,
 } from '@genshin-optimizer/gi/svgicons'
+import { AmpReactionModeText } from '@genshin-optimizer/gi/ui'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
 import { infusionNode, uiInput as input } from '@genshin-optimizer/gi/wr'
 import type { ToggleButtonGroupProps } from '@mui/material'
 import { MenuItem, ToggleButton } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharacterContext } from '../Context/CharacterContext'
-import { DataContext } from '../Context/DataContext'
-import { TeamCharacterContext } from '../Context/TeamCharacterContext'
 import { allowedAdditiveReactions, allowedAmpReactions } from '../Types/consts'
 import AdditiveReactionModeText from './AdditiveReactionModeText'
-import AmpReactionModeText from './AmpReactionModeText'
-import SolidToggleButtonGroup from './SolidToggleButtonGroup'
 
 export const infusionVals = {
   '': <span>No Team Melee Infusion</span>,

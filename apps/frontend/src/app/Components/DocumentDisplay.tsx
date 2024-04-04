@@ -7,9 +7,9 @@ import type {
   IDocumentHeader,
   IDocumentText,
 } from '@genshin-optimizer/gi/sheets'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
 import { Box, Divider, Typography } from '@mui/material'
 import { useContext } from 'react'
-import { DataContext } from '../Context/DataContext'
 import ConditionalDisplay from './Conditional/ConditionalDisplay'
 import FieldsDisplay from './FieldDisplay'
 import { InfoTooltipInline } from './InfoTooltip'

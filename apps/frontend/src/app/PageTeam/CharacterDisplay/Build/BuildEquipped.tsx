@@ -1,8 +1,10 @@
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  TeamCharacterContext,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { useContext } from 'react'
-import { CharacterContext } from '../../../Context/CharacterContext'
-import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 
 import { BuildCard } from './BuildCard'
 

@@ -1,9 +1,14 @@
 import {
   BootstrapTooltip,
+  SolidToggleButtonGroup,
   StarsDisplay,
   theme,
 } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import {
+  bulkCatTotal,
+  handleMultiSelect,
+  objKeyMap,
+} from '@genshin-optimizer/common/util'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
@@ -23,9 +28,6 @@ import Stack from '@mui/system/Stack'
 import { Suspense, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import type { FilterOption } from '../../PageArtifact/ArtifactSort'
-import { handleMultiSelect } from '../../Util/MultiSelect'
-import { bulkCatTotal } from '../../Util/totalUtils'
-import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
 import ArtifactLevelSlider from './ArtifactLevelSlider'
 import ArtifactMainStatMultiAutocomplete from './ArtifactMainStatMultiAutocomplete'
 import ArtifactSetMultiAutocomplete from './ArtifactSetMultiAutocomplete'

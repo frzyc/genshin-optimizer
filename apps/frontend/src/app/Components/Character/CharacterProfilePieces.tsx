@@ -4,6 +4,7 @@ import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { charCard } from '@genshin-optimizer/gi/char-cards'
 import type { AscensionKey } from '@genshin-optimizer/gi/consts'
 import {
+  CharacterContext,
   useCharMeta,
   useDBMeta,
   useDatabase,
@@ -16,6 +17,7 @@ import { splash } from '@genshin-optimizer/gi/silly-wisher'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
 import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -30,8 +32,6 @@ import {
   Typography,
 } from '@mui/material'
 import { useContext } from 'react'
-import { CharacterContext } from '../../Context/CharacterContext'
-import { DataContext } from '../../Context/DataContext'
 
 export function CharacterCompactTalent() {
   const {

@@ -2,6 +2,7 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, CodeBlock, ImgIcon } from '@genshin-optimizer/common/ui'
 import { toDecimal } from '@genshin-optimizer/common/util'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
+import { CharacterContext } from '@genshin-optimizer/gi/db-ui'
 import { ascensionMaxLevel, getMainStatValue } from '@genshin-optimizer/gi/util'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import {
@@ -16,7 +17,6 @@ import {
 } from '@mui/material'
 import { useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { CharacterContext } from '../../../../Context/CharacterContext'
 import { BuildTcContext } from './BuildTcContext'
 import gcsimIcon from './gcsim.png'
 

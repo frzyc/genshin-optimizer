@@ -4,16 +4,19 @@ import {
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterKey,
+  LocationCharacterKey,
+} from '@genshin-optimizer/gi/consts'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharStat, getWeaponStat } from '@genshin-optimizer/gi/stats'
+import { LocationName, WeaponName } from '@genshin-optimizer/gi/ui'
 import {
-  WeaponName,
   computeUIData,
   nodeVStr,
   resolveInfo,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi/uidata'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Lock, LockOpen } from '@mui/icons-material'
@@ -33,8 +36,6 @@ import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
-import LocationName from '../Components/Character/LocationName'
-import type { LocationKey } from '../Types/consts'
 
 type WeaponCardProps = {
   weaponId: string
@@ -76,7 +77,7 @@ export default function WeaponCard({
   )
   const falseWrapperFunc = useCallback((children) => <Box>{children}</Box>, [])
   const setLocation = useCallback(
-    (k: LocationKey) =>
+    (k: LocationCharacterKey | '') =>
       weaponId && database.weapons.set(weaponId, { location: k }),
     [database, weaponId]
   )

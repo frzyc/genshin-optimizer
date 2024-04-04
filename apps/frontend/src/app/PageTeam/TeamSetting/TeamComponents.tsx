@@ -7,7 +7,13 @@ import {
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
+import type {
+  CharacterContextObj,
+  TeamCharacterContextObj,
+} from '@genshin-optimizer/gi/db-ui'
 import {
+  CharacterContext,
+  TeamCharacterContext,
   useBuildTc,
   useCharacter,
   useDatabase,
@@ -20,8 +26,10 @@ import {
   getArtSheet,
   resonanceSheets,
 } from '@genshin-optimizer/gi/sheets'
-import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import { input } from '@genshin-optimizer/gi/wr'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
@@ -48,12 +56,6 @@ import DocumentDisplay from '../../Components/DocumentDisplay'
 import { NodeFieldDisplay } from '../../Components/FieldDisplay'
 import { InfoTooltipInline } from '../../Components/InfoTooltip'
 import { WeaponFullCardObj } from '../../Components/Weapon/WeaponFullCard'
-import type { CharacterContextObj } from '../../Context/CharacterContext'
-import { CharacterContext } from '../../Context/CharacterContext'
-import type { dataContextObj } from '../../Context/DataContext'
-import { DataContext } from '../../Context/DataContext'
-import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
-import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 
 export function TeamBuffDisplay() {
   const { data, compareData } = useContext(DataContext)

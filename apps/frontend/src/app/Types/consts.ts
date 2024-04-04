@@ -2,7 +2,6 @@ import type {
   AdditiveReactionKey,
   AmplifyingReactionKey,
   ElementKey,
-  LocationCharacterKey,
 } from '@genshin-optimizer/gi/consts'
 
 export const allowedAmpReactions: Dict<ElementKey, AmplifyingReactionKey[]> = {
@@ -17,5 +16,3 @@ export const allowedAdditiveReactions: Dict<ElementKey, AdditiveReactionKey[]> =
     electro: ['aggravate'],
     anemo: ['aggravate'],
   }
-
-export type LocationKey = LocationCharacterKey | ''

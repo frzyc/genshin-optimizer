@@ -1,7 +1,10 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { StarsDisplay } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterKey,
+  LocationCharacterKey,
+} from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
@@ -15,8 +18,9 @@ import {
   WeaponName,
   WeaponPassiveDesc,
   WeaponPassiveName,
-  computeUIData,
 } from '@genshin-optimizer/gi/ui'
+import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import { computeUIData } from '@genshin-optimizer/gi/uidata'
 import { milestoneLevelsLow } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Lock, LockOpen } from '@mui/icons-material'
@@ -42,8 +46,6 @@ import { FieldDisplayList, NodeFieldDisplay } from '../Components/FieldDisplay'
 import LevelSelect from '../Components/LevelSelect'
 import ModalWrapper from '../Components/ModalWrapper'
 import RefinementDropdown from '../Components/RefinementDropdown'
-import { DataContext } from '../Context/DataContext'
-import type { LocationKey } from '../Types/consts'
 const WeaponSelectionModal = React.lazy(
   () => import('../Components/Weapon/WeaponSelectionModal')
 )
@@ -83,7 +85,8 @@ export default function WeaponEditor({
   )
 
   const setLocation = useCallback(
-    (k: LocationKey) => id && database.weapons.set(id, { location: k }),
+    (k: LocationCharacterKey | '') =>
+      id && database.weapons.set(id, { location: k }),
     [database, id]
   )
   const filter = useCallback(
