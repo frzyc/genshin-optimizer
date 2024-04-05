@@ -1,17 +1,17 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
-import { ArtifactCardNano } from '@genshin-optimizer/gi/ui'
-import { DataContext } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactCardNano,
+  DataContext,
+  HitModeToggle,
+  ReactionToggle,
+  StatDisplayComponent,
+  WeaponCardNano,
+} from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Grid, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo, useRef } from 'react'
 import CardLight from '../../../../Components/Card/CardLight'
-import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
-import {
-  HitModeToggle,
-  ReactionToggle,
-} from '../../../../Components/HitModeEditor'
-import WeaponCardNano from '../../../../Components/Weapon/WeaponCardNano'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'

@@ -11,9 +11,15 @@ import {
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
-import { CharIconSide, CharacterName } from '@genshin-optimizer/gi/ui'
-import type { TeamData, dataContextObj } from '@genshin-optimizer/gi/ui-main'
-import { DataContext } from '@genshin-optimizer/gi/ui'
+import type { TeamData, dataContextObj } from '@genshin-optimizer/gi/ui'
+import {
+  CharIconSide,
+  CharacterName,
+  CharacterSelectionModal,
+  DataContext,
+  EnemyExpandCard,
+  TeamInfoAlert,
+} from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
@@ -36,9 +42,6 @@ import {
 } from '@mui/material'
 import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import CharacterSelectionModal from '../../Components/Character/CharacterSelectionModal'
-import { EnemyExpandCard } from '../../Components/EnemyEditor'
-import TeamInfoAlert from '../../Components/Team/TeamInfoAlert'
 import BuildDropdown from '../BuildDropdown'
 import { LoadoutDropdown } from '../LoadoutDropdown'
 import { ResonanceDisplay, TeammateDisplay } from './TeamComponents'

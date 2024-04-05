@@ -1,6 +1,6 @@
 'use client'
-import "@genshin-optimizer/gi/theme" // import to validate typing for color variants
 import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
+import '@genshin-optimizer/gi/theme' // import to validate typing for color variants
 import { Skeleton, Typography } from '@mui/material'
 import type { TFunction } from 'i18next'
 import type { ReactNode } from 'react'

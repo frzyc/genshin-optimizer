@@ -3,7 +3,12 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, SqBadge, useInfScroll } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  InfoTooltip,
+  SqBadge,
+  useInfScroll,
+} from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import {
   TeamCharacterContext,
@@ -11,6 +16,7 @@ import {
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import {
+  ArtifactCard,
   ArtifactCardNano,
   ArtifactFilterDisplay,
 } from '@genshin-optimizer/gi/ui'
@@ -46,9 +52,7 @@ import {
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
-import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
-import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 
 export default function ExcludeArt({
   disabled = false,

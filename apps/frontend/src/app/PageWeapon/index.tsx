@@ -14,6 +14,14 @@ import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
+  ShowingAndSortOptionSelect,
+  WeaponCard,
+  WeaponEditor,
+  WeaponRarityToggle,
+  WeaponSelectionModal,
+  WeaponToggle,
+} from '@genshin-optimizer/gi/ui'
+import {
   weaponFilterConfigs,
   weaponSortConfigs,
   weaponSortMap,
@@ -28,9 +36,8 @@ import {
   TextField,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
-import React, {
+import {
   Suspense,
-  lazy,
   useCallback,
   useDeferredValue,
   useEffect,
@@ -40,15 +47,6 @@ import React, {
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
-import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
-import WeaponRarityToggle from '../../../../../libs/gi/ui/src/Components/ToggleButton/WeaponRarityToggle'
-import WeaponToggle from '../../../../../libs/gi/ui/src/Components/ToggleButton/WeaponToggle'
-import WeaponCard from './WeaponCard'
-const WeaponSelectionModal = React.lazy(
-  () => import('../Components/Weapon/WeaponSelectionModal')
-)
-// Lazy load the weapon display
-const WeaponEditor = lazy(() => import('./WeaponEditor'))
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }

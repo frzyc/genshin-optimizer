@@ -1,6 +1,11 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { ColorText, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  ColorText,
+  InfoTooltipInline,
+  ModalWrapper,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   deepClone,
@@ -26,12 +31,17 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import { Translate } from '@genshin-optimizer/gi/i18n'
 import { getArtSheet } from '@genshin-optimizer/gi/sheets'
 import { getArtSetStat } from '@genshin-optimizer/gi/stats'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
-import { ArtifactSetName, Translate } from '@genshin-optimizer/gi/ui'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
-import { DataContext } from '@genshin-optimizer/gi/ui'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactSetName,
+  DataContext,
+  SetEffectDisplay,
+  SetInclusionButton,
+} from '@genshin-optimizer/gi/ui'
 import { UIData } from '@genshin-optimizer/gi/uidata'
 import { setKeysByRarities } from '@genshin-optimizer/gi/util'
 import { constant } from '@genshin-optimizer/gi/wr'
@@ -53,11 +63,8 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import {SetEffectDisplay} from '@genshin-optimizer/gi/ui'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
-import { InfoTooltipInline } from '../../../../../Components/InfoTooltip'
-import SetInclusionButton from './SetInclusionButton'
 
 export default function ArtifactSetConfig({
   disabled,

@@ -9,7 +9,7 @@ import {
 import {
   getBuildTcArtifactData,
   getTeamDataCalc,
-} from '@genshin-optimizer/gi/ui-main'
+} from '@genshin-optimizer/gi/ui'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'

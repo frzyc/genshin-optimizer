@@ -11,7 +11,7 @@ import {
   type CharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
-import type { TeamData } from '@genshin-optimizer/gi/ui-main'
+import type { TeamData } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import type { NumNode, OptNode } from '@genshin-optimizer/gi/wr'
 import {

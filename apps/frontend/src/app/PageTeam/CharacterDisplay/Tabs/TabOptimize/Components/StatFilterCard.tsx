@@ -1,3 +1,4 @@
+import { InfoTooltip } from '@genshin-optimizer/common/ui'
 import type { StatFilters } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
@@ -8,7 +9,6 @@ import { Box, CardContent, Divider, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardLight from '../../../../../Components/Card/CardLight'
-import InfoTooltip from '../../../../../Components/InfoTooltip'
 import OptimizationTargetEditorList from './OptimizationTargetEditorList'
 
 export default function StatFilterCard({

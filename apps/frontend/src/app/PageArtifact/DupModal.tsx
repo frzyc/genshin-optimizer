@@ -1,6 +1,7 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { ArtifactCard } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import {
@@ -16,7 +17,6 @@ import {
 import { useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
-import { ArtifactCard } from '@genshin-optimizer/gi/ui'
 export default function DupModal({ show, onHide }) {
   const { t } = useTranslation('artifact')
   return (

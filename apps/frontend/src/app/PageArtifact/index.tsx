@@ -24,7 +24,7 @@ import {
 import AddIcon from '@mui/icons-material/Add'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import { Box, Button, CardContent, Grid, Skeleton } from '@mui/material'
-import React, {
+import {
   Suspense,
   useCallback,
   useDeferredValue,
@@ -36,8 +36,8 @@ import { useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter'
 import DupModal from './DupModal'
-import ProbabilityFilter from './ProbabilityFilter'
 import ArtifactInfoDisplay from './InfoDisplay'
+import ProbabilityFilter from './ProbabilityFilter'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 5, sm: 6, md: 12, lg: 12, xl: 12 }

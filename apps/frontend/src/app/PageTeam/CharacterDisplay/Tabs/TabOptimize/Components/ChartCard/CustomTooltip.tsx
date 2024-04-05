@@ -5,8 +5,12 @@ import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { CharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { Unit } from '@genshin-optimizer/gi/keymap'
-import { ArtifactCardPico } from '@genshin-optimizer/gi/ui'
-import { DataContext } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactCardPico,
+  ArtifactSetBadges,
+  DataContext,
+  WeaponCardPico,
+} from '@genshin-optimizer/gi/ui'
 import { input } from '@genshin-optimizer/gi/wr'
 import CloseIcon from '@mui/icons-material/Close'
 import {
@@ -23,8 +27,6 @@ import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import type { TooltipProps } from 'recharts'
 import CardDark from '../../../../../../Components/Card/CardDark'
-import WeaponCardPico from '../../../../../../Components/Weapon/WeaponCardPico'
-import { ArtifactSetBadges } from '../ArtifactSetBadges'
 import type EnhancedPoint from './EnhancedPoint'
 
 type CustomTooltipProps = TooltipProps<number, string> & {

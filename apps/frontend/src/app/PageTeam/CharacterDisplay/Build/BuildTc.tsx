@@ -15,7 +15,12 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
-import { ArtifactSetName, StatWithUnit } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactSetName,
+  BuildCard,
+  StatWithUnit,
+  WeaponCardNanoObj,
+} from '@genshin-optimizer/gi/ui'
 import { artDisplayValue } from '@genshin-optimizer/gi/util'
 import CloseIcon from '@mui/icons-material/Close'
 import {
@@ -28,8 +33,6 @@ import {
   TextField,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
-import { WeaponCardNanoObj } from '../../../Components/Weapon/WeaponCardNano'
-import { BuildCard } from './BuildCard'
 
 export default function BuildTc({
   buildTcId,

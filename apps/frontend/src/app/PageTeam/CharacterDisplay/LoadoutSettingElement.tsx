@@ -8,7 +8,12 @@ import {
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { BuildInfoAlert, FormulaDataContext, LoadoutInfoAlert, LoadoutNameDesc } from '@genshin-optimizer/gi/ui'
+import {
+  BuildInfoAlert,
+  FormulaDataContext,
+  LoadoutInfoAlert,
+  LoadoutNameDesc,
+} from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import CalculateIcon from '@mui/icons-material/Calculate'

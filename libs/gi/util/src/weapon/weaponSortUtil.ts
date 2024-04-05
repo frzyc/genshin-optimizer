@@ -1,6 +1,6 @@
 import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common/util'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
-import i18n from '@genshin-optimizer/gi/i18n'
+import { i18n } from '@genshin-optimizer/gi/i18n'
 import { allStats } from '@genshin-optimizer/gi/stats'
 export const weaponSortKeys = ['level', 'rarity', 'name'] as const
 export type WeaponSortKey = (typeof weaponSortKeys)[number]

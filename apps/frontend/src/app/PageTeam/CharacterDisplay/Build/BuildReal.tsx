@@ -17,13 +17,16 @@ import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   ArtifactCardNano,
   ArtifactSlotName,
+  BuildCard,
   CharacterName,
+  EquipBuildModal,
+  EquippedGrid,
+  WeaponCardNano,
 } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Alert,
   Box,
-  Card,
   CardContent,
   CardHeader,
   Divider,
@@ -31,17 +34,9 @@ import {
   IconButton,
   TextField,
   Typography,
-  styled,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
-import EquippedGrid from '../../../Components/Character/EquippedGrid'
-import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
-import { BuildCard } from './BuildCard'
-import EquipBuildModal from './EquipBuildModal'
 
-const UsedCard = styled(Card)(() => ({
-  boxShadow: '0px 0px 0px 2px red',
-}))
 // TODO: Translation
 export default function BuildReal({
   buildId,

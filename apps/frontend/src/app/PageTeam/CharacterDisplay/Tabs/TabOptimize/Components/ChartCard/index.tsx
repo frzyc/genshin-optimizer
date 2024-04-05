@@ -1,5 +1,5 @@
 import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
-import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
+import { BootstrapTooltip, InfoTooltip } from '@genshin-optimizer/common/ui'
 import {
   objKeyMap,
   objPathValue,
@@ -8,7 +8,7 @@ import {
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useOptConfig } from '@genshin-optimizer/gi/db-ui'
-import { DataContext } from '@genshin-optimizer/gi/ui'
+import { DataContext, GraphContext } from '@genshin-optimizer/gi/ui'
 import { resolveInfo } from '@genshin-optimizer/gi/uidata'
 import type { Info, InfoExtra, NumNode } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
@@ -45,8 +45,6 @@ import {
 } from 'recharts'
 import CardDark from '../../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../../Components/Card/CardLight'
-import InfoTooltip from '../../../../../../Components/InfoTooltip'
-import { GraphContext } from '../../../../../../Context/GraphContext'
 import OptimizationTargetSelector from '../OptimizationTargetSelector'
 import CustomDot from './CustomDot'
 import CustomTooltip from './CustomTooltip'

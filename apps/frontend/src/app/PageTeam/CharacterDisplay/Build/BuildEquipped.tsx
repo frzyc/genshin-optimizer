@@ -1,17 +1,18 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import { type ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   TeamCharacterContext,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import { useContext } from 'react'
-
-import { BuildCard } from './BuildCard'
-
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { type ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
-import { ArtifactCardNano } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactCardNano,
+  BuildCard,
+  WeaponCardNano,
+} from '@genshin-optimizer/gi/ui'
 import { Grid } from '@mui/material'
+import { useContext } from 'react'
 export function BuildEquipped({ active = false }: { active?: boolean }) {
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const {

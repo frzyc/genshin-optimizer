@@ -14,6 +14,7 @@ import {
   artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
+import { Translate } from '@genshin-optimizer/gi/i18n'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   artDisplayValue,
@@ -23,7 +24,6 @@ import {
 } from '@genshin-optimizer/gi/util'
 import type { ReactNode } from 'react'
 import { statMap } from './enStringMap'
-import { Translate } from '@genshin-optimizer/gi/i18n'
 
 export type TextKey =
   | 'slotKey'

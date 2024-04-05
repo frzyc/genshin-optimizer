@@ -7,7 +7,12 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { allEleDmgKeys, allEleResKeys } from '@genshin-optimizer/gi/keymap'
 import { getCharEle, isCharMelee } from '@genshin-optimizer/gi/stats'
-import { DataContext } from '@genshin-optimizer/gi/ui'
+import {
+  DataContext,
+  FieldDisplayList,
+  NodeFieldDisplay,
+  StatEditorList,
+} from '@genshin-optimizer/gi/ui'
 import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/uidata'
 import type { ReadNode } from '@genshin-optimizer/gi/wr'
 import { allInputPremodKeys, uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -28,12 +33,7 @@ import { useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
-import {
-  FieldDisplayList,
-  NodeFieldDisplay,
-} from '../../Components/FieldDisplay'
 import ModalWrapper from '../../Components/ModalWrapper'
-import StatEditorList from '../../Components/StatEditorList'
 const cols = {
   xs: 1,
   md: 2,

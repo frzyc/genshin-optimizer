@@ -80,15 +80,12 @@
         "libs/gi/silly-wisher-names/src/index.ts"
       ],
       "@genshin-optimizer/gi/solver": ["libs/gi/solver/src/index.ts"],
-      "@genshin-optimizer/gi/theme": ["libs/gi/theme/src/index.ts"],
       "@genshin-optimizer/gi/stats": ["libs/gi/stats/src/index.ts"],
       "@genshin-optimizer/gi/svgicons": ["libs/gi/svgicons/src/index.ts"],
+      "@genshin-optimizer/gi/theme": ["libs/gi/theme/src/index.ts"],
       "@genshin-optimizer/gi/ui": ["libs/gi/ui/src/index.ts"],
       "@genshin-optimizer/gi/ui-next": ["libs/gi/ui-next/src/index.ts"],
       "@genshin-optimizer/gi/ui-next/server": ["libs/gi/ui-next/src/server.ts"],
-      "@genshin-optimizer/gi/ui/Context/SillyContext": [
-        "libs/gi/ui/src/Context/SillyContext.tsx"
-      ],
       "@genshin-optimizer/gi/uidata": ["libs/gi/uidata/src/index.ts"],
       "@genshin-optimizer/gi/util": ["libs/gi/util/src/index.ts"],
       "@genshin-optimizer/gi/wr": ["libs/gi/wr/src/index.ts"],

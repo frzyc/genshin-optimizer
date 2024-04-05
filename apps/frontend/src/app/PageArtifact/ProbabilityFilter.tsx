@@ -1,11 +1,11 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import { StatEditorList } from '@genshin-optimizer/gi/ui'
 import { CardContent, Divider, Grid, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
-import { StatEditorList } from '@genshin-optimizer/gi/ui'
 const keys = [...allSubstatKeys]
 export default function ProbabilityFilter({
   probabilityFilter: statFilters = {},

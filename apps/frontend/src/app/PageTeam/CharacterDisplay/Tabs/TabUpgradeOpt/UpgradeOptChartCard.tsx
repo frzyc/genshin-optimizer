@@ -3,8 +3,11 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { linspace } from '@genshin-optimizer/common/util'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { ArtifactCardPico } from '@genshin-optimizer/gi/ui'
-import { DataContext } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactCard,
+  ArtifactCardPico,
+  DataContext,
+} from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, CardContent, Grid, Typography } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
@@ -22,7 +25,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import { erf } from './mathUtil'
 import type { UpOptArtifact } from './upOpt'
 import { ResultType } from './upOpt'

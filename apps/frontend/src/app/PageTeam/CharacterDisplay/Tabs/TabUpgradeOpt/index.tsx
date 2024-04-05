@@ -21,13 +21,21 @@ import {
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
-import { ArtifactLevelSlider } from '@genshin-optimizer/gi/ui'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
+  AddArtInfo,
+  ArtifactLevelSlider,
+  CharacterCardEquipmentRow,
+  CharacterCardHeader,
+  CharacterCardHeaderContent,
+  CharacterCardStats,
   DataContext,
+  HitModeToggle,
+  NoArtWarning,
+  ReactionToggle,
   getTeamData,
   useTeamData,
-} from '@genshin-optimizer/gi/ui-main'
+} from '@genshin-optimizer/gi/ui'
 import { resolveInfo, uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
@@ -52,19 +60,7 @@ import {
   useState,
 } from 'react'
 import { Trans } from 'react-i18next'
-import AddArtInfo from '../../../../Components/AddArtInfo'
 import CardLight from '../../../../Components/Card/CardLight'
-import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
-import {
-  CharacterCardHeader,
-  CharacterCardHeaderContent,
-} from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
-import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
-import {
-  HitModeToggle,
-  ReactionToggle,
-} from '../../../../Components/HitModeEditor'
-import NoArtWarning from '../../../../Components/NoArtWarning'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'

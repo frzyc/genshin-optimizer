@@ -2,6 +2,7 @@ import {
   CardThemed,
   ColorText,
   ImgIcon,
+  InfoTooltipInline,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
@@ -26,9 +27,17 @@ import {
   getArtSheet,
   resonanceSheets,
 } from '@genshin-optimizer/gi/sheets'
-import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
-import { DataContext } from '@genshin-optimizer/gi/ui'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactSetName,
+  CharacterCardEquipmentRow,
+  CharacterCardHeader,
+  CharacterCardHeaderContent,
+  DataContext,
+  DocumentDisplay,
+  NodeFieldDisplay,
+  WeaponFullCardObj,
+} from '@genshin-optimizer/gi/ui'
 import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import { input } from '@genshin-optimizer/gi/wr'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -47,15 +56,6 @@ import {
 import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardLight from '../../Components/Card/CardLight'
-import { CharacterCardEquipmentRow } from '../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
-import {
-  CharacterCardHeader,
-  CharacterCardHeaderContent,
-} from '../../Components/Character/CharacterCard/CharacterCardHeader'
-import {DocumentDisplay} from '@genshin-optimizer/gi/ui'
-import { NodeFieldDisplay } from '../../Components/FieldDisplay'
-import { InfoTooltipInline } from '../../Components/InfoTooltip'
-import { WeaponFullCardObj } from '../../Components/Weapon/WeaponFullCard'
 
 export function TeamBuffDisplay() {
   const { data, compareData } = useContext(DataContext)

@@ -6,7 +6,7 @@ import {
   getBuildTcArtifactData,
   getBuildTcWeaponData,
   getTeamDataCalc,
-} from '@genshin-optimizer/gi/ui-main'
+} from '@genshin-optimizer/gi/ui'
 import { optimizeTcGetNodes, optimizeTcUsingNodes } from './optimizeTc'
 
 describe('A general optimizeTC usecase', () => {

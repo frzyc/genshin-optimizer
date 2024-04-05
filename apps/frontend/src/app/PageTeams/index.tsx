@@ -12,6 +12,11 @@ import {
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import { teamSortKeys } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterMultiAutocomplete,
+  ShowingAndSortOptionSelect,
+  TeamCard,
+} from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import UploadIcon from '@mui/icons-material/Upload'
 import {
@@ -29,9 +34,6 @@ import type { ChangeEvent } from 'react'
 import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { CharacterMultiAutocomplete } from '../Components/Character/CharacterMultiAutocomplete'
-import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
-import TeamCard from './TeamCard'
 import { teamFilterConfigs, teamSortConfigs, teamSortMap } from './TeamSort'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 3 }

@@ -3,13 +3,15 @@ import { DropdownButton, ImgIcon } from '@genshin-optimizer/common/ui'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSetKey, SetNum } from '@genshin-optimizer/gi/consts'
 import { getArtSheet } from '@genshin-optimizer/gi/sheets'
-import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactSetName,
+  ArtifactSetTooltip,
+  SetEffectDisplay,
+} from '@genshin-optimizer/gi/ui'
 import ClearIcon from '@mui/icons-material/Clear'
 import InfoIcon from '@mui/icons-material/Info'
 import { Box, Button, ButtonGroup, MenuItem, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
-import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTooltip'
-import {SetEffectDisplay} from '@genshin-optimizer/gi/ui'
 import CardLight from '../../../../../Components/Card/CardLight'
 import { BuildTcContext } from '../BuildTcContext'
 

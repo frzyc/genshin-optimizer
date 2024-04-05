@@ -14,18 +14,20 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   ArtifactStatWithUnit,
   BuildAlert,
-  initialBuildStatus,
-} from '@genshin-optimizer/gi/ui'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
-import {
   DataContext,
+  HitModeToggle,
+  OptimizationTargetContext,
+  ReactionToggle,
+  StatDisplayComponent,
   getBuildTcArtifactData,
   getBuildTcWeaponData,
   getTeamDataCalc,
-} from '@genshin-optimizer/gi/ui-main'
+  initialBuildStatus,
+} from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import CloseIcon from '@mui/icons-material/Close'
@@ -33,12 +35,6 @@ import { Alert, Box, Button, Grid, Skeleton, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardLight from '../../../../Components/Card/CardLight'
-import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
-import {
-  HitModeToggle,
-  ReactionToggle,
-} from '../../../../Components/HitModeEditor'
-import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'

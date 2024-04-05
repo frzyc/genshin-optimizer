@@ -7,6 +7,7 @@ import {
   BootstrapTooltip,
   CardThemed,
   DropdownButton,
+  InfoTooltip,
   ModalWrapper,
   SqBadge,
   useConstObj,
@@ -41,14 +42,23 @@ import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   ArtifactCardPico,
   ArtifactLevelSlider,
+  BuildDisplayItem,
   CharIconSide,
+  CharacterCardEquipmentRow,
+  CharacterCardHeader,
+  CharacterCardHeaderContent,
+  CharacterCardStats,
   CharacterName,
-} from '@genshin-optimizer/gi/ui'
-import {
   DataContext,
+  GraphContext,
+  HitModeToggle,
+  NoArtWarning,
+  OptimizationTargetContext,
+  ReactionToggle,
   getTeamData,
+  useGlobalError,
   useTeamData,
-} from '@genshin-optimizer/gi/ui-main'
+} from '@genshin-optimizer/gi/ui'
 import {
   resolveInfo,
   uiDataForTeam,
@@ -98,21 +108,6 @@ import React, {
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardLight from '../../../../Components/Card/CardLight'
-import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
-import {
-  CharacterCardHeader,
-  CharacterCardHeaderContent,
-} from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
-import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
-import {
-  HitModeToggle,
-  ReactionToggle,
-} from '../../../../Components/HitModeEditor'
-import InfoTooltip from '../../../../Components/InfoTooltip'
-import NoArtWarning from '../../../../Components/NoArtWarning'
-import { GraphContext } from '../../../../Context/GraphContext'
-import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
-import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
 import AllowChar from './Components/AllowChar'
@@ -121,7 +116,6 @@ import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle'
 import BonusStatsCard from './Components/BonusStatsCard'
 import type { BuildStatus } from './Components/BuildAlert'
 import BuildAlert from './Components/BuildAlert'
-import BuildDisplayItem from './Components/BuildDisplayItem'
 import ChartCard from './Components/ChartCard'
 import ExcludeArt from './Components/ExcludeArt'
 import MainStatSelectionCard from './Components/MainStatSelectionCard'

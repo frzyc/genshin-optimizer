@@ -12,7 +12,15 @@ import {
   type DocumentSection,
   type TalentSheetElementKey,
 } from '@genshin-optimizer/gi/sheets'
-import { DataContext } from '@genshin-optimizer/gi/ui'
+import {
+  ConstellationDropdown,
+  DataContext,
+  DocumentDisplay,
+  HitModeToggle,
+  NodeFieldDisplay,
+  ReactionToggle,
+  TalentDropdown,
+} from '@genshin-optimizer/gi/ui'
 import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
@@ -28,14 +36,7 @@ import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardDark from '../../../Components/Card/CardDark'
 import CardLight from '../../../Components/Card/CardLight'
-import ConstellationDropdown from '../../../Components/Character/ConstellationDropdown'
-import TalentDropdown from '../../../Components/Character/TalentDropdown'
-import {DocumentDisplay} from '@genshin-optimizer/gi/ui'
-import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
-import {
-  HitModeToggle,
-  ReactionToggle,
-} from '../../../Components/HitModeEditor'
+
 const talentSpacing = {
   xs: 12,
   sm: 6,
