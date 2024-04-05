@@ -1,4 +1,4 @@
-import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { ImgIcon, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   DataContext,
@@ -19,7 +19,6 @@ import {
 import { useContext, useMemo } from 'react'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
-import ModalWrapper from '../../../../../Components/ModalWrapper'
 
 export interface TargetSelectorModalProps {
   show: boolean

@@ -6,6 +6,7 @@ import {
 import {
   CardThemed,
   InfoTooltip,
+  ModalWrapper,
   SqBadge,
   useInfScroll,
 } from '@genshin-optimizer/common/ui'
@@ -52,7 +53,6 @@ import {
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
-import ModalWrapper from '../../../../../Components/ModalWrapper'
 
 export default function ExcludeArt({
   disabled = false,

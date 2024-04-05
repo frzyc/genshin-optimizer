@@ -1,5 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { StyledInputBase } from '@genshin-optimizer/common/ui'
+import { ModalWrapper, StyledInputBase } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import { Delete, Download, ImportExport, Upload } from '@mui/icons-material'
@@ -17,7 +17,6 @@ import { useCallback, useContext, useEffect, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
-import ModalWrapper from '../Components/ModalWrapper'
 import UploadCard from './UploadCard'
 
 export default function DatabaseCard({

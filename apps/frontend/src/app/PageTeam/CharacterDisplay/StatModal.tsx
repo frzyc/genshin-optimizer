@@ -1,4 +1,4 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
+import { ColorText, ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { TeamCharacter } from '@genshin-optimizer/gi/db'
 import {
   CharacterContext,
@@ -33,7 +33,6 @@ import { useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
-import ModalWrapper from '../../Components/ModalWrapper'
 const cols = {
   xs: 1,
   md: 2,

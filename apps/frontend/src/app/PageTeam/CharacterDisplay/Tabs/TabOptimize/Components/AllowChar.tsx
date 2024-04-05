@@ -5,6 +5,7 @@ import {
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   InfoTooltip,
+  ModalWrapper,
   SolidToggleButtonGroup,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
@@ -69,7 +70,6 @@ import {
 import { useTranslation } from 'react-i18next'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
-import ModalWrapper from '../../../../../Components/ModalWrapper'
 
 enum CharListMode {
   ToggleToAllow,

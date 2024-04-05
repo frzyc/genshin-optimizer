@@ -1,5 +1,9 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { InfoTooltip, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  InfoTooltip,
+  ModalWrapper,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { deepClone } from '@genshin-optimizer/common/util'
 import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
 import { initCustomMultiTarget } from '@genshin-optimizer/gi/db'
@@ -31,7 +35,6 @@ import {
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../../../Components/Card/CardDark'
-import ModalWrapper from '../../../Components/ModalWrapper'
 import CustomMultiTargetCard from './CustomMultiTargetCard'
 import CustomMultiTargetImportBtn from './CustomMultiTargetImportBtn'
 

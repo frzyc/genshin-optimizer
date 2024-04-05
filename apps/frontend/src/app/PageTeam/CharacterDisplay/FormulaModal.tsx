@@ -2,6 +2,7 @@ import {
   CardHeaderCustom,
   ColorText,
   ImgIcon,
+  ModalWrapper,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
@@ -43,7 +44,6 @@ import {
 } from 'react'
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
-import ModalWrapper from '../../Components/ModalWrapper'
 export default function FormulaModal() {
   const { modalOpen } = useContext(FormulaDataContext)
   const { setFormulaData } = useContext(FormulaDataContext)
