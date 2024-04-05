@@ -1,5 +1,5 @@
 import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
-import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import { DataContext } from '@genshin-optimizer/gi/ui'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { CardContent, Divider, Typography } from '@mui/material'

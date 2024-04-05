@@ -1,9 +1,10 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
-import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import { ArtifactCardNano } from '@genshin-optimizer/gi/ui'
+import { DataContext } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Grid, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo, useRef } from 'react'
-import ArtifactCardNano from '../../../../Components/Artifact/ArtifactCardNano'
 import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import {
@@ -90,20 +91,22 @@ function EquipmentRow({ onClick }: { onClick: () => void }) {
   return (
     <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 3, lg: 6, xl: 6 }}>
       <Grid item xs={1}>
-        <WeaponCardNano
-          weaponId={data.get(input.weapon.id).value}
-          BGComponent={CardLight}
-          onClick={onClick}
-        />
+        <CardThemed bgt="light" sx={{ height: '100%', maxHeight: '8em' }}>
+          <WeaponCardNano
+            weaponId={data.get(input.weapon.id).value}
+            onClick={onClick}
+          />
+        </CardThemed>
       </Grid>
       {allArtifactSlotKeys.map((slotKey) => (
         <Grid item key={slotKey} xs={1}>
-          <ArtifactCardNano
-            artifactId={data.get(input.art[slotKey].id).value?.toString()}
-            slotKey={slotKey}
-            BGComponent={CardLight}
-            onClick={onClick}
-          />
+          <CardThemed bgt="light" sx={{ height: '100%', maxHeight: '8em' }}>
+            <ArtifactCardNano
+              artifactId={data.get(input.art[slotKey].id).value?.toString()}
+              slotKey={slotKey}
+              onClick={onClick}
+            />
+          </CardThemed>
         </Grid>
       ))}
     </Grid>

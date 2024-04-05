@@ -5,7 +5,14 @@ import {
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import '@genshin-optimizer/gi/i18n' // import to load translations
-import { SillyContext, theme, useSilly } from '@genshin-optimizer/gi/ui'
+import { theme } from '@genshin-optimizer/gi/theme'
+import {
+  SnowContext,
+  useSilly,
+  useSnow,
+  useTitle,
+} from '@genshin-optimizer/gi/ui'
+import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import {
   Box,
@@ -23,11 +30,9 @@ import React, { Suspense, lazy, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
 import './App.scss'
-import { SnowContext, useSnow } from './Context/SnowContext'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'
-import useTitle from './ReactHooks/useTitle'
 import Snow from './Snow'
 
 const PageHome = lazy(() => import('./PageHome'))

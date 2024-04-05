@@ -14,7 +14,11 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactStatWithUnit,
+  BuildAlert,
+  initialBuildStatus,
+} from '@genshin-optimizer/gi/ui'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
 import {
   DataContext,
@@ -28,7 +32,6 @@ import CloseIcon from '@mui/icons-material/Close'
 import { Alert, Box, Button, Grid, Skeleton, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
 import CardLight from '../../../../Components/Card/CardLight'
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
 import {

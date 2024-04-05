@@ -27,6 +27,11 @@ const ModalContainer = styled(Container)(() => ({
 type ModalWrapperProps = ModalProps & {
   containerProps?: ContainerProps
 }
+/**
+ * @deprecated use @go/common/ui
+ * @param param0
+ * @returns
+ */
 export default function ModalWrapper({
   children,
   containerProps,

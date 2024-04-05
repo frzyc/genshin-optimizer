@@ -7,7 +7,7 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { allEleDmgKeys, allEleResKeys } from '@genshin-optimizer/gi/keymap'
 import { getCharEle, isCharMelee } from '@genshin-optimizer/gi/stats'
-import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import { DataContext } from '@genshin-optimizer/gi/ui'
 import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/uidata'
 import type { ReadNode } from '@genshin-optimizer/gi/wr'
 import { allInputPremodKeys, uiInput as input } from '@genshin-optimizer/gi/wr'

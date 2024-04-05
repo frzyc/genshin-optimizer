@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@emotion/react'
 import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
 import { isDev } from '@genshin-optimizer/common/util'
-import { theme } from '@genshin-optimizer/gi/ui'
+import { theme } from '@genshin-optimizer/gi/theme'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import ErrorIcon from '@mui/icons-material/Error'
 import RefreshIcon from '@mui/icons-material/Refresh'

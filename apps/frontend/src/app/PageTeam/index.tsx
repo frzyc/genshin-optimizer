@@ -19,7 +19,7 @@ import {
   type TeamCharacterContextObj,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
-import { SillyContext } from '@genshin-optimizer/gi/ui'
+import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import {
   DataContext,
   FormulaDataWrapper,

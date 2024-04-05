@@ -3,7 +3,7 @@ import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
-import { SillyContext } from '@genshin-optimizer/gi/ui'
+import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import {
   Article,
   Construction,

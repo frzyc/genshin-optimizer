@@ -13,6 +13,11 @@ import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+import {
+  weaponFilterConfigs,
+  weaponSortConfigs,
+  weaponSortMap,
+} from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
@@ -36,13 +41,8 @@ import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
 import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
-import WeaponRarityToggle from '../Components/ToggleButton/WeaponRarityToggle'
-import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
-import {
-  weaponFilterConfigs,
-  weaponSortConfigs,
-  weaponSortMap,
-} from '../Util/WeaponSort'
+import WeaponRarityToggle from '../../../../../libs/gi/ui/src/Components/ToggleButton/WeaponRarityToggle'
+import WeaponToggle from '../../../../../libs/gi/ui/src/Components/ToggleButton/WeaponToggle'
 import WeaponCard from './WeaponCard'
 const WeaponSelectionModal = React.lazy(
   () => import('../Components/Weapon/WeaponSelectionModal')

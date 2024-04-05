@@ -4,7 +4,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type { StatFilterSetting, StatFilters } from '@genshin-optimizer/gi/db'
-import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import { DataContext } from '@genshin-optimizer/gi/ui'
 import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import {
   CheckBox,

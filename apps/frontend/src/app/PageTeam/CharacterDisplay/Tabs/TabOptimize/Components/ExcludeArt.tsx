@@ -3,13 +3,21 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { SqBadge, useInfScroll } from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge, useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import {
   TeamCharacterContext,
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import {
+  ArtifactCardNano,
+  ArtifactFilterDisplay,
+} from '@genshin-optimizer/gi/ui'
+import {
+  artifactFilterConfigs,
+  initialArtifactFilterOption,
+} from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -36,17 +44,11 @@ import {
   useReducer,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano'
-import ArtifactFilterDisplay from '../../../../../Components/Artifact/ArtifactFilterDisplay'
 import CardDark from '../../../../../Components/Card/CardDark'
 import CardLight from '../../../../../Components/Card/CardLight'
 import InfoTooltip from '../../../../../Components/InfoTooltip'
 import ModalWrapper from '../../../../../Components/ModalWrapper'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
-import {
-  artifactFilterConfigs,
-  initialFilterOption,
-} from '../../../../../PageArtifact/ArtifactSort'
 
 export default function ExcludeArt({
   disabled = false,
@@ -142,13 +144,17 @@ export default function ExcludeArt({
             >
               {artExclusion.map((id) => (
                 <Grid item key={id} xs={1}>
-                  <ArtifactCardNano
-                    artifactId={id}
-                    slotKey="flower"
-                    BGComponent={CardLight}
-                    onClick={() => onDelSelect(id)}
-                    showLocation
-                  />
+                  <CardThemed
+                    bgt="light"
+                    sx={{ height: '100%', maxHeight: '8em' }}
+                  >
+                    <ArtifactCardNano
+                      artifactId={id}
+                      slotKey="flower"
+                      onClick={() => onDelSelect(id)}
+                      showLocation
+                    />
+                  </CardThemed>
                 </Grid>
               ))}
             </Grid>
@@ -231,7 +237,7 @@ function ArtifactSelectModal({
 
   const [filterOption, filterOptionDispatch] = useReducer(
     filterOptionReducer,
-    initialFilterOption()
+    initialArtifactFilterOption()
   )
 
   const [dbDirty, forceUpdate] = useForceUpdate()

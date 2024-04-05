@@ -21,6 +21,7 @@ import {
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
+import { ArtifactLevelSlider } from '@genshin-optimizer/gi/ui'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui-main'
 import {
   DataContext,
@@ -52,7 +53,6 @@ import {
 } from 'react'
 import { Trans } from 'react-i18next'
 import AddArtInfo from '../../../../Components/AddArtInfo'
-import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
 import CardLight from '../../../../Components/Card/CardLight'
 import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
 import {

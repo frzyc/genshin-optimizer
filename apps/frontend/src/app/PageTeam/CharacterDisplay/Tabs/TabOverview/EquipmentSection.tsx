@@ -10,7 +10,7 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { dataSetEffects } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import { DataContext } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
@@ -22,10 +22,10 @@ import {
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay'
+import {SetEffectDisplay} from '@genshin-optimizer/gi/ui'
 import CardLight from '../../../../Components/Card/CardLight'
 import EquippedGrid from '../../../../Components/Character/EquippedGrid'
-import DocumentDisplay from '../../../../Components/DocumentDisplay'
+import {DocumentDisplay} from '@genshin-optimizer/gi/ui'
 
 export default function EquipmentSection() {
   const database = useDatabase()

@@ -1,19 +1,17 @@
 import { SqBadge } from '@genshin-optimizer/common/ui'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
+import { ArtifactFilterDisplay } from '@genshin-optimizer/gi/ui'
+import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
 import PersonOffIcon from '@mui/icons-material/PersonOff'
 import ReplayIcon from '@mui/icons-material/Replay'
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material'
-import { Suspense, lazy, useCallback, useMemo } from 'react'
+import { Suspense, useCallback, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
-import type { FilterOption } from './ArtifactSort'
-const ArtifactFilterDisplay = lazy(
-  () => import('../Components/Artifact/ArtifactFilterDisplay')
-)
 
 export default function ArtifactFilter({
   numShowing,
@@ -28,7 +26,7 @@ export default function ArtifactFilter({
   const database = useDatabase()
   const { filterOption } = useDisplayArtifact()
   const filterOptionDispatch = useCallback(
-    (option: Partial<FilterOption>) =>
+    (option: Partial<ArtifactFilterOption>) =>
       database.displayArtifact.set({
         filterOption: { ...filterOption, ...option },
       }),

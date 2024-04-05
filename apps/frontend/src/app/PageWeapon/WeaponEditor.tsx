@@ -19,7 +19,7 @@ import {
   WeaponPassiveDesc,
   WeaponPassiveName,
 } from '@genshin-optimizer/gi/ui'
-import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import { DataContext } from '@genshin-optimizer/gi/ui'
 import { computeUIData } from '@genshin-optimizer/gi/uidata'
 import { milestoneLevelsLow } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -41,7 +41,7 @@ import React, { useCallback, useContext, useEffect, useMemo } from 'react'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
-import DocumentDisplay from '../Components/DocumentDisplay'
+import {DocumentDisplay} from '@genshin-optimizer/gi/ui'
 import { FieldDisplayList, NodeFieldDisplay } from '../Components/FieldDisplay'
 import LevelSelect from '../Components/LevelSelect'
 import ModalWrapper from '../Components/ModalWrapper'

@@ -6,6 +6,7 @@ import {
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { ArtifactCardNano } from '@genshin-optimizer/gi/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
@@ -23,7 +24,6 @@ import {
   Typography,
 } from '@mui/material'
 import { useContext, useState } from 'react'
-import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
 import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
 
 type EquipChangeProps = {
@@ -121,15 +121,19 @@ export default function EquipBuildModal({
                   columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
                 >
                   <Grid item xs={1}>
-                    <WeaponCardNano
-                      weaponId={equipChangeProps.currentWeapon}
-                      weaponTypeKey={weaponTypeKey}
-                    />
+                    <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+                      <WeaponCardNano
+                        weaponId={equipChangeProps.currentWeapon}
+                        weaponTypeKey={weaponTypeKey}
+                      />
+                    </CardThemed>
                   </Grid>
                   {Object.entries(equipChangeProps.currentArtifacts).map(
                     ([slotKey, id]) => (
                       <Grid item key={id || slotKey} xs={1}>
-                        <ArtifactCardNano artifactId={id} slotKey={slotKey} />
+                        <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+                          <ArtifactCardNano artifactId={id} slotKey={slotKey} />
+                        </CardThemed>
                       </Grid>
                     )
                   )}
@@ -165,15 +169,19 @@ export default function EquipBuildModal({
                   columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
                 >
                   <Grid item xs={1}>
-                    <WeaponCardNano
-                      weaponId={equipChangeProps.newWeapon}
-                      weaponTypeKey={weaponTypeKey}
-                    />
+                    <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+                      <WeaponCardNano
+                        weaponId={equipChangeProps.newWeapon}
+                        weaponTypeKey={weaponTypeKey}
+                      />
+                    </CardThemed>
                   </Grid>
                   {Object.entries(equipChangeProps.newArtifacts).map(
                     ([slotKey, id]) => (
                       <Grid item key={id || slotKey} xs={1}>
-                        <ArtifactCardNano artifactId={id} slotKey={slotKey} />
+                        <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+                          <ArtifactCardNano artifactId={id} slotKey={slotKey} />
+                        </CardThemed>
                       </Grid>
                     )
                   )}

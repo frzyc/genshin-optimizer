@@ -9,7 +9,7 @@ import InfoIcon from '@mui/icons-material/Info'
 import { Box, Button, ButtonGroup, MenuItem, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTooltip'
-import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
+import {SetEffectDisplay} from '@genshin-optimizer/gi/ui'
 import CardLight from '../../../../../Components/Card/CardLight'
 import { BuildTcContext } from '../BuildTcContext'
 

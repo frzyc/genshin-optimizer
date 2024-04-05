@@ -12,7 +12,7 @@ import {
   type DocumentSection,
   type TalentSheetElementKey,
 } from '@genshin-optimizer/gi/sheets'
-import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import { DataContext } from '@genshin-optimizer/gi/ui'
 import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
@@ -30,7 +30,7 @@ import CardDark from '../../../Components/Card/CardDark'
 import CardLight from '../../../Components/Card/CardLight'
 import ConstellationDropdown from '../../../Components/Character/ConstellationDropdown'
 import TalentDropdown from '../../../Components/Character/TalentDropdown'
-import DocumentDisplay from '../../../Components/DocumentDisplay'
+import {DocumentDisplay} from '@genshin-optimizer/gi/ui'
 import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
 import {
   HitModeToggle,

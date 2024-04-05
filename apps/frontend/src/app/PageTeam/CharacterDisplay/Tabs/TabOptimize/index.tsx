@@ -38,7 +38,12 @@ import {
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import { CharIconSide, CharacterName } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactCardPico,
+  ArtifactLevelSlider,
+  CharIconSide,
+  CharacterName,
+} from '@genshin-optimizer/gi/ui'
 import {
   DataContext,
   getTeamData,
@@ -92,8 +97,6 @@ import React, {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import ArtifactCardPico from '../../../../Components/Artifact/ArtifactCardPico'
-import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
 import CardLight from '../../../../Components/Card/CardLight'
 import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
 import {

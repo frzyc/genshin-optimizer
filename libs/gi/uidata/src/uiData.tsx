@@ -19,13 +19,9 @@ import {
   allCharacterSheetKeys,
   allWeaponKeys,
 } from '@genshin-optimizer/gi/consts'
+import { Translate } from '@genshin-optimizer/gi/i18n'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import {
-  ArtifactSetName,
-  SillyContext,
-  Translate,
-} from '@genshin-optimizer/gi/ui'
 import type {
   ComputeNode,
   Data,
@@ -58,6 +54,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
 import { useContext } from 'react'
+import { SillyContext } from './SillyContext'
 const shouldWrap = true
 
 export function nodeVStr(n: NodeDisplay) {
@@ -591,7 +588,7 @@ function keyMapInfo(path: string): InfoExtra & Info {
 }
 function artSetInfo(path: string): InfoExtra {
   if (!allArtifactSetKeys.includes(path as ArtifactSetKey)) return {}
-  return { name: <ArtifactSetName setKey={path as ArtifactSetKey} /> }
+  return { name: <Translate ns="artifactNames_gen" key18={path} /> }
 }
 export function resolveInfo(info: Info): InfoExtra & Info {
   const mergedInfo: Info & InfoExtra = {
@@ -926,7 +923,7 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
     const d2 = data2 as NodeDisplay | undefined
 
     if ((d1 && !d1.operation) || (d2 && !d2.operation))
-      throw new Error('@genshin-optimizer/gi/ui')
+      throw new Error('Unmatched structure when comparing UIData')
 
     const result: ComparedNodeDisplay = {
       info: {},

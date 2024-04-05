@@ -13,7 +13,7 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { CharIconSide, CharacterName } from '@genshin-optimizer/gi/ui'
 import type { TeamData, dataContextObj } from '@genshin-optimizer/gi/ui-main'
-import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import { DataContext } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'

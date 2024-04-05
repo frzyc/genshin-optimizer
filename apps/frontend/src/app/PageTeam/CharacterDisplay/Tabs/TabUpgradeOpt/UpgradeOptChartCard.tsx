@@ -1,8 +1,10 @@
 import { useTimeout } from '@genshin-optimizer/common/react-util'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { linspace } from '@genshin-optimizer/common/util'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import { ArtifactCardPico } from '@genshin-optimizer/gi/ui'
+import { DataContext } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, CardContent, Grid, Typography } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
@@ -20,8 +22,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import ArtifactCardPico from '../../../../Components/Artifact/ArtifactCardPico'
-import CardLight from '../../../../Components/Card/CardLight'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import { erf } from './mathUtil'
 import type { UpOptArtifact } from './upOpt'
@@ -154,7 +154,7 @@ function UpgradeOptChartCardGraph({
   }
 
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         <CardContent sx={{ flexGrow: 1 }}>
           <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
@@ -264,7 +264,7 @@ function UpgradeOptChartCardGraph({
           </ComposedChart>
         </ResponsiveContainer>
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }
 

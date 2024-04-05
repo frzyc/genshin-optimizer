@@ -7,13 +7,13 @@ import {
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { AmpReactionModeText } from '@genshin-optimizer/gi/ui'
 import {
+  AmpReactionModeText,
   DataContext,
   FormulaDataContext,
   getDisplayHeader,
   getDisplaySections,
-} from '@genshin-optimizer/gi/ui-main'
+} from '@genshin-optimizer/gi/ui'
 import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'

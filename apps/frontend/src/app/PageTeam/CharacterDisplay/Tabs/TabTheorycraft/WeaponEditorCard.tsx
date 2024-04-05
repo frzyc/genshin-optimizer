@@ -4,8 +4,16 @@ import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
-import { WeaponName } from '@genshin-optimizer/gi/ui'
-import { DataContext } from '@genshin-optimizer/gi/ui-main'
+import {
+  DataContext,
+  DocumentDisplay,
+  FieldDisplayList,
+  LevelSelect,
+  NodeFieldDisplay,
+  RefinementDropdown,
+  WeaponName,
+  WeaponSelectionModal,
+} from '@genshin-optimizer/gi/ui'
 import { computeUIData } from '@genshin-optimizer/gi/uidata'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
@@ -16,20 +24,10 @@ import {
   ListItem,
   Stack,
 } from '@mui/material'
-import React, { useCallback, useContext, useMemo } from 'react'
+import { useCallback, useContext, useMemo } from 'react'
 import CardDark from '../../../../Components/Card/CardDark'
 import CardLight from '../../../../Components/Card/CardLight'
-import DocumentDisplay from '../../../../Components/DocumentDisplay'
-import {
-  FieldDisplayList,
-  NodeFieldDisplay,
-} from '../../../../Components/FieldDisplay'
-import LevelSelect from '../../../../Components/LevelSelect'
-import RefinementDropdown from '../../../../Components/RefinementDropdown'
 import { BuildTcContext } from './BuildTcContext'
-const WeaponSelectionModal = React.lazy(
-  () => import('../../../../Components/Weapon/WeaponSelectionModal')
-)
 
 export function WeaponEditorCard({
   weaponTypeKey,

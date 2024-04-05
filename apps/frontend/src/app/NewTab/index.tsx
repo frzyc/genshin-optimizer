@@ -1,5 +1,5 @@
 import '@genshin-optimizer/gi/i18n'
-import { theme } from '@genshin-optimizer/gi/ui'
+import { theme } from '@genshin-optimizer/gi/theme'
 import { DynamicFeed, Refresh } from '@mui/icons-material'
 import {
   Box,

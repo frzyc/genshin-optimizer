@@ -15,7 +15,6 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { ArtifactSetName, ArtifactSlotName } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
   getMainStatDisplayValue,
@@ -24,6 +23,7 @@ import {
 } from '@genshin-optimizer/gi/util'
 import type { ReactNode } from 'react'
 import { statMap } from './enStringMap'
+import { Translate } from '@genshin-optimizer/gi/i18n'
 
 export type TextKey =
   | 'slotKey'
@@ -285,7 +285,7 @@ export function findBestArtifact(
   }
 
   addText('setKey', textSetKeys, 'Set', (value) => (
-    <ArtifactSetName setKey={value as ArtifactSetKey} />
+    <Translate ns="artifactNames_gen" key18={value as string} />
   ))
   addText('rarity', rarities, 'Rarity', (value) => (
     <>
@@ -293,7 +293,7 @@ export function findBestArtifact(
     </>
   ))
   addText('slotKey', slotKeys, 'Slot', (value) => (
-    <ArtifactSlotName slotKey={value as ArtifactSlotKey} />
+    <Translate ns="artifact" key18={`slotName.${value}`} />
   ))
   addText('mainStatKey', mainStatKeys, 'Main Stat', (value) => (
     <span>{statMap[value as string]}</span>
