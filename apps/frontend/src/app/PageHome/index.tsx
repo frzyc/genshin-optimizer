@@ -1,3 +1,4 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import DescriptionIcon from '@mui/icons-material/Description'
 import {
   Box,
@@ -16,7 +17,6 @@ import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import CardDark from '../Components/Card/CardDark'
 import InventoryCard from './InventoryCard'
 import QuickLinksCard from './QuickLinksCard'
 import ResinCard from './ResinCard'
@@ -71,7 +71,7 @@ export default function PageHome() {
 function IntroCard() {
   const { t } = useTranslation('page_home')
   return (
-    <CardDark>
+    <CardThemed>
       <CardContent>
         <Typography variant="subtitle1">
           <Trans t={t} i18nKey="intro">
@@ -89,7 +89,7 @@ function IntroCard() {
           </Trans>
         </Typography>
       </CardContent>
-    </CardDark>
+    </CardThemed>
   )
 }
 
@@ -110,7 +110,7 @@ function PatchNotesCard() {
       .catch((err) => console.log('Error: ' + err.message))
   }, [])
   return (
-    <CardDark>
+    <CardThemed>
       <CardHeader
         title={
           <Typography variant="h5">{t`quickLinksCard.buttons.patchNotes.title`}</Typography>
@@ -125,6 +125,6 @@ function PatchNotesCard() {
           'Loading...'
         )}
       </CardContent>
-    </CardDark>
+    </CardThemed>
   )
 }

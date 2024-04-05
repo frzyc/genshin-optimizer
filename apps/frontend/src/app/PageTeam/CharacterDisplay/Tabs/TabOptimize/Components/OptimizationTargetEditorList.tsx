@@ -4,7 +4,8 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type { StatFilterSetting, StatFilters } from '@genshin-optimizer/gi/db'
-import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/ui'
+import { DataContext } from '@genshin-optimizer/gi/ui'
+import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -13,7 +14,6 @@ import {
 import { Button, ButtonGroup } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DataContext } from '../../../../../Context/DataContext'
 import OptimizationTargetSelector from './OptimizationTargetSelector'
 
 type OptimizationTargetEditorListProps = {

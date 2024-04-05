@@ -1,3 +1,4 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   Box,
   CardContent,
@@ -7,8 +8,6 @@ import {
   Link,
   Typography,
 } from '@mui/material'
-import CardDark from '../Components/Card/CardDark'
-import CardLight from '../Components/Card/CardLight'
 import d1 from './teamIcons/d1.png'
 import frzyc from './teamIcons/frzyc.png'
 import lantua from './teamIcons/lantua.png'
@@ -106,7 +105,7 @@ const team = [
 export default function TeamCard() {
   const { t } = useTranslation(['page_home', 'ui'])
   return (
-    <CardDark>
+    <CardThemed>
       <CardHeader
         title={<Typography variant="h5">{t`teamCard.title`}</Typography>}
         avatar={<GroupsIcon fontSize="large" />}
@@ -116,7 +115,7 @@ export default function TeamCard() {
         <Grid container columns={{ xs: 6, md: 12 }} spacing={1}>
           {team.map(({ name, img, title, subtitle, url }, i) => (
             <Grid item key={name} xs={i < 2 ? 3 : 2} md={i <= 2 ? 4 : 3}>
-              <CardLight sx={{ height: '100%' }}>
+              <CardThemed bgt="light" sx={{ height: '100%' }}>
                 <CardContent>
                   <Box
                     component="img"
@@ -160,11 +159,11 @@ export default function TeamCard() {
                     </Typography>
                   </Box>
                 </CardContent>
-              </CardLight>
+              </CardThemed>
             </Grid>
           ))}
         </Grid>
       </CardContent>
-    </CardDark>
+    </CardThemed>
   )
 }

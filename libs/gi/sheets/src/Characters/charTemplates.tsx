@@ -10,7 +10,7 @@ import { getCharStat } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { greaterEq, input } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
-import { nameTrans, st, trans } from '../SheetUtil'
+import { st, trans } from '../SheetUtil'
 import type {
   DocumentConditional,
   DocumentConditionalBase,
@@ -53,7 +53,6 @@ export interface ICharacterTemplate {
     talentKey: TalentSheetElementKey,
     partialCond: DocumentConditionalBase
   ) => DocumentConditional
-  name: ReactNode
 }
 export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
   const [chg, ch] = trans('char', cKey)
@@ -84,7 +83,6 @@ export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
       talentKey: TalentSheetElementKey,
       partialCond: DocumentConditionalBase
     ) => conditionalTemplate(talentKey, partialCond, chg, img(talentKey)),
-    name: nameTrans(cKey, chg),
   }
 }
 

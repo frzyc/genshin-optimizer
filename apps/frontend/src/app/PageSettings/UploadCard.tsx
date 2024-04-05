@@ -1,5 +1,6 @@
 import { SandboxStorage } from '@genshin-optimizer/common/database'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   ArtCharDatabase,
   type ImportResult,
@@ -22,8 +23,6 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import CardDark from '../Components/Card/CardDark'
-import CardLight from '../Components/Card/CardLight'
 
 const InvisInput = styled('input')({
   display: 'none',
@@ -105,7 +104,8 @@ export default function UploadCard({
     reader.readAsText(file)
   }
   return (
-    <CardLight
+    <CardThemed
+      bgt="light"
       onDragOver={(e) => e.preventDefault()}
       onDrop={onDrop}
       sx={{ height: '100%' }}
@@ -131,7 +131,7 @@ export default function UploadCard({
             </label>
           </Grid>
           <Grid item flexGrow={1}>
-            <CardDark sx={{ px: 2, py: 1 }}>
+            <CardThemed sx={{ px: 2, py: 1 }}>
               <Typography>
                 {filename ? (
                   <span>
@@ -144,7 +144,7 @@ export default function UploadCard({
                   </span>
                 )}
               </Typography>
-            </CardDark>
+            </CardThemed>
           </Grid>
         </Grid>
         <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
@@ -226,7 +226,7 @@ export default function UploadCard({
         importedDatabase={importedDatabase}
         reset={reset}
       />
-    </CardLight>
+    </CardThemed>
   )
 }
 
@@ -239,7 +239,7 @@ function GOODUploadInfo({
 }) {
   const { t } = useTranslation('settings')
   return (
-    <CardDark>
+    <CardThemed>
       <CardContent sx={{ py: 1 }}>
         <Typography>
           <Trans t={t} i18nKey="uploadCard.dbSource" />
@@ -272,7 +272,7 @@ function GOODUploadInfo({
           </Grid>
         </Grid>
       </CardContent>
-    </CardDark>
+    </CardThemed>
   )
 }
 function MergeResult({
@@ -287,7 +287,7 @@ function MergeResult({
   const { t } = useTranslation('settings')
   const total = result.import
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent sx={{ py: 1 }}>
         <Typography>
           <Trans t={t} i18nKey={`count.${type}`} /> {total}
@@ -344,7 +344,7 @@ function MergeResult({
           </div>
         )}
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }
 

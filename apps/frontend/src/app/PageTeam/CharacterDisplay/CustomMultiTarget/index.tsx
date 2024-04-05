@@ -1,10 +1,16 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  InfoTooltip,
+  ModalWrapper,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { deepClone } from '@genshin-optimizer/common/util'
 import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
 import { initCustomMultiTarget } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { UIData } from '@genshin-optimizer/gi/ui'
+import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { DataContext } from '@genshin-optimizer/gi/ui'
+import { UIData } from '@genshin-optimizer/gi/uidata'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
@@ -29,11 +35,6 @@ import {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import CardDark from '../../../Components/Card/CardDark'
-import InfoTooltip from '../../../Components/InfoTooltip'
-import ModalWrapper from '../../../Components/ModalWrapper'
-import { DataContext } from '../../../Context/DataContext'
-import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
 import CustomMultiTargetCard from './CustomMultiTargetCard'
 import CustomMultiTargetImportBtn from './CustomMultiTargetImportBtn'
 
@@ -165,7 +166,7 @@ export function CustomMultiTargetButton({
           onClose={onClose}
           containerProps={{ sx: { overflow: 'visible' } }}
         >
-          <CardDark>
+          <CardThemed>
             <CardHeader
               title={
                 <Box display="flex" gap={1} alignItems="center">
@@ -234,7 +235,7 @@ export function CustomMultiTargetButton({
                 </Grid>
               </Box>
             </CardContent>
-          </CardDark>
+          </CardThemed>
         </ModalWrapper>
       </DataContext.Provider>
     </Suspense>

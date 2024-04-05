@@ -4,10 +4,27 @@ import {
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { CharIconSide, CharacterName } from '@genshin-optimizer/gi/ui'
+import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
+import type { TeamCharacterContextObj } from '@genshin-optimizer/gi/db-ui'
+import {
+  TeamCharacterContext,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
+import type { TeamData, dataContextObj } from '@genshin-optimizer/gi/ui'
+import {
+  CharIconSide,
+  CharacterName,
+  CharacterSelectionModal,
+  DataContext,
+  EnemyExpandCard,
+  TeamInfoAlert,
+} from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import ContentPasteIcon from '@mui/icons-material/ContentPaste'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import GroupsIcon from '@mui/icons-material/Groups'
 import SettingsIcon from '@mui/icons-material/Settings'
 import type { ButtonProps } from '@mui/material'
@@ -24,22 +41,10 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
-import CharacterSelectionModal from '../../Components/Character/CharacterSelectionModal'
-import type { TeamData, dataContextObj } from '../../Context/DataContext'
-import { DataContext } from '../../Context/DataContext'
+import { useLocation, useNavigate } from 'react-router-dom'
+import BuildDropdown from '../BuildDropdown'
 import { LoadoutDropdown } from '../LoadoutDropdown'
 import { ResonanceDisplay, TeammateDisplay } from './TeamComponents'
-
-import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
-import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import ContentPasteIcon from '@mui/icons-material/ContentPaste'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import { useLocation, useNavigate } from 'react-router-dom'
-import { EnemyExpandCard } from '../../Components/EnemyEditor'
-import TeamInfoAlert from '../../Components/Team/TeamInfoAlert'
-import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
-import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
-import BuildDropdown from '../BuildDropdown'
 
 // TODO: Translation
 export default function TeamSetting({

@@ -1,9 +1,9 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { getArtSheet } from '@genshin-optimizer/gi/sheets'
+import { ArtifactSetAutocomplete } from '@genshin-optimizer/gi/ui'
 import { Stack } from '@mui/material'
 import { useCallback, useContext } from 'react'
-import ArtifactSetAutocomplete from '../../../../../Components/Artifact/ArtifactSetAutocomplete'
-import CardLight from '../../../../../Components/Card/CardLight'
 import { BuildTcContext } from '../BuildTcContext'
 import { ArtifactSetEditor } from './ArtifactSetEditor'
 
@@ -42,7 +42,7 @@ export function ArtifactSetsEditor({
           disabled={disabled}
         />
       ))}
-      <CardLight sx={{ flexGrow: 1, overflow: 'visible' }}>
+      <CardThemed bgt="light" sx={{ flexGrow: 1, overflow: 'visible' }}>
         <ArtifactSetAutocomplete
           artSetKey={''}
           setArtSetKey={setSet}
@@ -56,7 +56,7 @@ export function ArtifactSetsEditor({
           }
           disabled={disabled}
         />
-      </CardLight>
+      </CardThemed>
     </Stack>
   )
 }

@@ -3,14 +3,28 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useInfScroll } from '@genshin-optimizer/common/ui'
+import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
+import {
+  AddArtInfo,
+  ArtifactCard,
+  ArtifactEditor,
+  InfoComponent,
+  ShowingAndSortOptionSelect,
+} from '@genshin-optimizer/gi/ui'
+import {
+  artifactFilterConfigs,
+  artifactSortConfigs,
+  artifactSortKeys,
+  artifactSortMap,
+  probability,
+} from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import { Box, Button, CardContent, Grid, Skeleton } from '@mui/material'
-import React, {
+import {
   Suspense,
   useCallback,
   useDeferredValue,
@@ -19,26 +33,10 @@ import React, {
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
-import AddArtInfo from '../Components/AddArtInfo'
-import CardDark from '../Components/Card/CardDark'
-import InfoComponent from '../Components/InfoComponent'
-import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
-import ArtifactCard from './ArtifactCard'
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter'
-import {
-  artifactFilterConfigs,
-  artifactSortConfigs,
-  artifactSortKeys,
-  artifactSortMap,
-} from './ArtifactSort'
 import DupModal from './DupModal'
+import ArtifactInfoDisplay from './InfoDisplay'
 import ProbabilityFilter from './ProbabilityFilter'
-import { probability } from './RollProbability'
-
-//lazy load the weapon display
-const ArtifactEditor = React.lazy(() => import('./ArtifactEditor'))
-
-const InfoDisplay = React.lazy(() => import('./InfoDisplay'))
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 5, sm: 6, md: 12, lg: 12, xl: 12 }
@@ -176,7 +174,7 @@ export default function PageArtifact() {
         modalTitle={t`info.title`}
         text={t('tipsOfTheDay', { returnObjects: true }) as string[]}
       >
-        <InfoDisplay />
+        <ArtifactInfoDisplay />
       </InfoComponent>
 
       {noArtifact && <AddArtInfo />}
@@ -186,7 +184,7 @@ export default function PageArtifact() {
         total={totalArtNum}
         artifactIds={artifactIds}
       />
-      <CardDark>
+      <CardThemed>
         <CardContent>
           <Box
             pb={2}
@@ -202,7 +200,7 @@ export default function PageArtifact() {
           </Box>
           <ArtifactRedButtons artifactIds={artifactIds} />
         </CardContent>
-      </CardDark>
+      </CardThemed>
       {showProbability && (
         <ProbabilityFilter
           probabilityFilter={probabilityFilter}

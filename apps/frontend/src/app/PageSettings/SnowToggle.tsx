@@ -1,9 +1,9 @@
+import { SnowContext } from '@genshin-optimizer/gi/ui'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import { Button } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { SnowContext } from '../Context/SnowContext'
 
 export function SnowToggle() {
   const { snow, setSnow } = useContext(SnowContext)
