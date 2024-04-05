@@ -3,7 +3,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useInfScroll } from '@genshin-optimizer/common/ui'
+import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
@@ -33,7 +33,6 @@ import {
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../Components/Card/CardDark'
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter'
 import DupModal from './DupModal'
 import ArtifactInfoDisplay from './InfoDisplay'
@@ -185,7 +184,7 @@ export default function PageArtifact() {
         total={totalArtNum}
         artifactIds={artifactIds}
       />
-      <CardDark>
+      <CardThemed>
         <CardContent>
           <Box
             pb={2}
@@ -201,7 +200,7 @@ export default function PageArtifact() {
           </Box>
           <ArtifactRedButtons artifactIds={artifactIds} />
         </CardContent>
-      </CardDark>
+      </CardThemed>
       {showProbability && (
         <ProbabilityFilter
           probabilityFilter={probabilityFilter}

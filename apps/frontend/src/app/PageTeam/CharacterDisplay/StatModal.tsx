@@ -1,4 +1,8 @@
-import { ColorText, ModalWrapper } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ColorText,
+  ModalWrapper,
+} from '@genshin-optimizer/common/ui'
 import type { TeamCharacter } from '@genshin-optimizer/gi/db'
 import {
   CharacterContext,
@@ -31,8 +35,6 @@ import {
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import CardDark from '../../Components/Card/CardDark'
-import CardLight from '../../Components/Card/CardLight'
 const cols = {
   xs: 1,
   md: 2,
@@ -42,7 +44,7 @@ export default function StatModal({ open, onClose }) {
   const { t } = useTranslation('page_character')
   return (
     <ModalWrapper open={open} onClose={onClose}>
-      <CardDark>
+      <CardThemed>
         <CardHeader
           title={
             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
@@ -62,7 +64,7 @@ export default function StatModal({ open, onClose }) {
             <MainStatsCards />
           </Stack>
         </CardContent>
-      </CardDark>
+      </CardThemed>
     </ModalWrapper>
   )
 }
@@ -83,7 +85,7 @@ function BonusStatsEditor() {
     database.teamChars.set(teamCharId, { bonusStats })
 
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex' }}>
         <Grid container columns={cols} sx={{ pt: 1 }} spacing={1}>
           <Grid item xs={12}>
@@ -108,7 +110,7 @@ function BonusStatsEditor() {
           />
         </Grid>
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }
 
@@ -200,7 +202,7 @@ function MainStatsCards() {
   const { icon, variant, name } =
     (specialNode && resolveInfo(specialNode.info)) ?? {}
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent>
         <Grid container columns={cols} spacing={1}>
           <Grid item xs={1}>
@@ -245,18 +247,18 @@ function MainStatsCards() {
           )}
         </Grid>
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }
 function StatDisplayCard({ title, children }) {
   return (
-    <CardDark>
+    <CardThemed>
       <CardContent sx={{ py: 1 }}>
         <Box display="flex" justifyContent="space-between">
           <Typography variant="subtitle1">{title}</Typography>
         </Box>
       </CardContent>
       {children}
-    </CardDark>
+    </CardThemed>
   )
 }

@@ -2,7 +2,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useInfScroll } from '@genshin-optimizer/common/ui'
+import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import {
   catTotal,
   filterFunction,
@@ -46,7 +46,6 @@ import {
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../Components/Card/CardDark'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
@@ -219,7 +218,7 @@ export default function PageWeapon() {
         />
       </Suspense>
 
-      <CardDark>
+      <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box display="flex" flexWrap="wrap" gap={1} alignItems="stretch">
             <WeaponToggle
@@ -264,7 +263,7 @@ export default function PageWeapon() {
             />
           </Box>
         </CardContent>
-      </CardDark>
+      </CardThemed>
       <Suspense
         fallback={
           <Skeleton

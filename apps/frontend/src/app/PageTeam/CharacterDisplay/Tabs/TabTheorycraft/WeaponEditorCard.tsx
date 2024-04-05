@@ -1,4 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi/db'
@@ -25,8 +26,6 @@ import {
   Stack,
 } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
-import CardDark from '../../../../Components/Card/CardDark'
-import CardLight from '../../../../Components/Card/CardLight'
 import { BuildTcContext } from './BuildTcContext'
 
 export function WeaponEditorCard({
@@ -64,7 +63,7 @@ export function WeaponEditorCard({
   )
   const hasRefinement = weaponHasRefinement(weapon.key)
   return (
-    <CardLight sx={{ p: 1, mb: 1 }}>
+    <CardThemed bgt="light" sx={{ p: 1, mb: 1 }}>
       <WeaponSelectionModal
         ascension={ascension}
         show={show}
@@ -113,7 +112,7 @@ export function WeaponEditorCard({
           useLow={!hasRefinement}
           disabled={disabled}
         />
-        <CardDark>
+        <CardThemed>
           <CardHeader
             title={'Main Stats'}
             titleTypographyProps={{ variant: 'subtitle2' }}
@@ -136,7 +135,7 @@ export function WeaponEditorCard({
               )}
             </FieldDisplayList>
           )}
-        </CardDark>
+        </CardThemed>
         {data && weaponSheet?.document && (
           <DocumentDisplay
             sections={weaponSheet.document}
@@ -144,6 +143,6 @@ export function WeaponEditorCard({
           />
         )}
       </Box>
-    </CardLight>
+    </CardThemed>
   )
 }

@@ -51,8 +51,6 @@ import {
   useReducer,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import CardDark from '../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../Components/Card/CardLight'
 
 export default function ExcludeArt({
   disabled = false,
@@ -104,7 +102,7 @@ export default function ExcludeArt({
         onClose={onClose}
         containerProps={{ maxWidth: 'xl' }}
       >
-        <CardDark>
+        <CardThemed>
           <CardHeader
             title={
               <Box display="flex" gap={1} alignItems="center">
@@ -137,9 +135,9 @@ export default function ExcludeArt({
               startIcon={<AddIcon />}
             >{t`excludeArt.addExc`}</Button>
             {!!numExcludedArt && (
-              <CardLight sx={{ mb: 1 }}>
+              <CardThemed bgt="light" sx={{ mb: 1 }}>
                 <Typography textAlign="center">{t`excludeArt.deSelectExc`}</Typography>
-              </CardLight>
+              </CardThemed>
             )}
             <Grid
               container
@@ -163,7 +161,7 @@ export default function ExcludeArt({
               ))}
             </Grid>
           </CardContent>
-        </CardDark>
+        </CardThemed>
       </ModalWrapper>
 
       {/* Button to open modal */}
@@ -277,7 +275,7 @@ function ArtifactSelectModal({
       onClose={onClose}
       containerProps={{ maxWidth: 'xl' }}
     >
-      <CardDark>
+      <CardThemed>
         <CardHeader
           title={t`excludeArt.selExc`}
           action={
@@ -327,7 +325,7 @@ function ArtifactSelectModal({
             )}
           </Box>
         </CardContent>
-      </CardDark>
+      </CardThemed>
     </ModalWrapper>
   )
 }

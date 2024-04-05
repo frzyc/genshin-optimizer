@@ -1,5 +1,9 @@
 import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
-import { BootstrapTooltip, InfoTooltip } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  InfoTooltip,
+} from '@genshin-optimizer/common/ui'
 import {
   objKeyMap,
   objPathValue,
@@ -43,8 +47,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import CardDark from '../../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../../Components/Card/CardLight'
 import OptimizationTargetSelector from '../OptimizationTargetSelector'
 import CustomDot from './CustomDot'
 import CustomTooltip from './CustomTooltip'
@@ -204,7 +206,7 @@ export default function ChartCard({
     : t('page_character_optimize:targetSelector.selectGraphTarget')
 
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent>
         <Grid container spacing={1} alignItems="center">
           <Grid item>
@@ -277,7 +279,7 @@ export default function ChartCard({
       {chartData && !!chartData.data.length && displayData && (
         <CardContent>
           <Collapse in={!!downloadData && showDownload}>
-            <CardDark sx={{ mb: 2 }}>
+            <CardThemed sx={{ mb: 2 }}>
               <CardContent>
                 <Typography>Min Data</Typography>
                 <ReadOnlyTextArea
@@ -288,7 +290,7 @@ export default function ChartCard({
                   value={JSON.stringify(downloadData?.allData)}
                 />
               </CardContent>
-            </CardDark>
+            </CardThemed>
           </Collapse>
           <Chart
             displayData={displayData}
@@ -317,7 +319,7 @@ export default function ChartCard({
           )}
         </CardContent>
       )}
-    </CardLight>
+    </CardThemed>
   )
 }
 

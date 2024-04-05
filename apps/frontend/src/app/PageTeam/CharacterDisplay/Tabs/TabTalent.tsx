@@ -34,8 +34,6 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../../../Components/Card/CardDark'
-import CardLight from '../../../Components/Card/CardLight'
 
 const talentSpacing = {
   xs: 12,
@@ -186,7 +184,7 @@ function ReactionDisplay() {
   const { data } = useContext(DataContext)
   const reaction = data.getDisplay().reaction as { [key: string]: NodeDisplay }
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent>
         <Grid container spacing={1}>
           {Object.entries(reaction)
@@ -194,17 +192,17 @@ function ReactionDisplay() {
             .map(([key, node]) => {
               return (
                 <Grid item key={key}>
-                  <CardDark>
+                  <CardThemed>
                     <CardContent sx={{ p: 1, '&:last-child': { pb: 1 } }}>
                       <NodeFieldDisplay node={node} />
                     </CardContent>
-                  </CardDark>
+                  </CardThemed>
                 </Grid>
               )
             })}
         </Grid>
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }
 
@@ -253,7 +251,7 @@ function SkillDisplayCard({
   }
 
   return (
-    <CardLight sx={{ height: '100%' }}>
+    <CardThemed bgt="light" sx={{ height: '100%' }}>
       {header}
       <CardContent>
         <ConditionalWrapper
@@ -283,6 +281,6 @@ function SkillDisplayCard({
           />
         ) : null}
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }

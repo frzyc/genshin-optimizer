@@ -1,3 +1,4 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
 import { DataContext, NodeFieldDisplay } from '@genshin-optimizer/gi/ui'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
@@ -5,7 +6,6 @@ import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { CardContent, Divider, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardLight from '../../../../../Components/Card/CardLight'
 
 export default function BonusStatsCard() {
   const { t } = useTranslation('page_character_optimize')
@@ -19,7 +19,7 @@ export default function BonusStatsCard() {
     data.get(input.customBonus[k] as NumNode)
   )
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent>
         <Typography
           sx={{ fontWeight: 'bold' }}
@@ -31,6 +31,6 @@ export default function BonusStatsCard() {
           <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />
         ))}
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }

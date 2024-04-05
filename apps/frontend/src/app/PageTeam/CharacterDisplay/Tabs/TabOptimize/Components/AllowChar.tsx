@@ -4,6 +4,7 @@ import {
 } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
+  CardThemed,
   InfoTooltip,
   ModalWrapper,
   SolidToggleButtonGroup,
@@ -68,8 +69,6 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../Components/Card/CardLight'
 
 enum CharListMode {
   ToggleToAllow,
@@ -332,7 +331,7 @@ export default function AllowChar({
         draggable={false}
         onMouseUp={onMouseUp}
       >
-        <CardDark>
+        <CardThemed>
           {/* Header */}
           <CardHeader
             title={
@@ -442,11 +441,11 @@ export default function AllowChar({
               toggleList={toggleList}
             />
           </CardContent>
-        </CardDark>
+        </CardThemed>
       </ModalWrapper>
 
       {/* Button to open modal */}
-      <CardLight sx={{ display: 'flex', width: '100%' }}>
+      <CardThemed bgt="light" sx={{ display: 'flex', width: '100%' }}>
         <CardContent sx={{ flexGrow: 1 }}>
           <Stack spacing={1}>
             <Typography>
@@ -482,7 +481,7 @@ export default function AllowChar({
         >
           <SettingsIcon />
         </Button>
-      </CardLight>
+      </CardThemed>
     </Box>
   )
 }
@@ -606,13 +605,13 @@ function SelectItem({
     [char?.equippedArtifacts]
   )
   return (
-    <CardLight sx={sx}>
+    <CardThemed bgt="light" sx={sx}>
       <CharacterCardPico
         characterKey={database.chars.LocationToCharacterKey(locKey)}
         onMouseDown={onMouseDown}
         onMouseEnter={onMouseEnter}
       />
       {content}
-    </CardLight>
+    </CardThemed>
   )
 }

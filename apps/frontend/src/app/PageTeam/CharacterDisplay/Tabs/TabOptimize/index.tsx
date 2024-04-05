@@ -107,7 +107,6 @@ import React, {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import CardLight from '../../../../Components/Card/CardLight'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
 import AllowChar from './Components/AllowChar'
@@ -629,7 +628,7 @@ export default function TabBuild() {
           />
 
           {/* Main Stat Filters */}
-          <CardLight>
+          <CardThemed bgt="light">
             <CardContent>
               <Typography
                 sx={{ fontWeight: 'bold' }}
@@ -664,7 +663,7 @@ export default function TabBuild() {
               disabled={generatingBuilds}
               filteredArtIdMap={filteredArtIdMap}
             />
-          </CardLight>
+          </CardThemed>
         </Grid>
 
         {/* 3 */}
@@ -913,7 +912,7 @@ export default function TabBuild() {
           showTooltip={!optimizationTarget}
         />
       </Box>
-      <CardLight>
+      <CardThemed bgt="light">
         <CardContent>
           <Box display="flex" alignItems="center" gap={1} mb={1}>
             <Typography sx={{ flexGrow: 1 }}>
@@ -962,7 +961,7 @@ export default function TabBuild() {
             </Grid>
           </Grid>
         </CardContent>
-      </CardLight>
+      </CardThemed>
 
       <OptimizationTargetContext.Provider value={optimizationTarget}>
         {graphBuilds && (
@@ -1005,7 +1004,7 @@ const LevelFilter = memo(function LevelFilter({
   const database = useDatabase()
   const { t } = useTranslation('page_character_optimize')
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex', gap: 1 }}>
         <Typography sx={{ fontWeight: 'bold' }}>{t`levelFilter`}</Typography>
         <SqBadge color="info">{levelTotal}</SqBadge>
@@ -1030,7 +1029,7 @@ const LevelFilter = memo(function LevelFilter({
           disabled={disabled}
         />
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 })
 

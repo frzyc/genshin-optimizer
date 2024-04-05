@@ -55,7 +55,6 @@ import {
 } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardLight from '../../Components/Card/CardLight'
 
 export function TeamBuffDisplay() {
   const { data, compareData } = useContext(DataContext)
@@ -96,7 +95,7 @@ export function TeamBuffDisplay() {
       </AccordionSummary>
       <AccordionDetails sx={{ p: 0 }}>
         <Divider />
-        <CardLight>
+        <CardThemed bgt="light">
           <CardContent>
             <Grid container>
               {nodes.map(
@@ -114,7 +113,7 @@ export function TeamBuffDisplay() {
               )}
             </Grid>
           </CardContent>
-        </CardLight>
+        </CardThemed>
       </AccordionDetails>
     </Accordion>
   )
@@ -127,7 +126,7 @@ export function ResonanceDisplay({ teamId }: { teamId: string }) {
   const teamCount = loadoutData.reduce((a, t) => a + (t ? 1 : 0), 0)
   return (
     <>
-      <CardLight>
+      <CardThemed bgt="light">
         <CardHeader
           title={
             <span>
@@ -144,9 +143,13 @@ export function ResonanceDisplay({ teamId }: { teamId: string }) {
           }
           titleTypographyProps={{ variant: 'subtitle2' }}
         />
-      </CardLight>
+      </CardThemed>
       {resonanceSheets.map((res, i) => (
-        <CardLight key={i} sx={{ opacity: res.canShow(data) ? 1 : 0.5 }}>
+        <CardThemed
+          bgt="light"
+          key={i}
+          sx={{ opacity: res.canShow(data) ? 1 : 0.5 }}
+        >
           <CardHeader
             title={
               <span>
@@ -165,7 +168,7 @@ export function ResonanceDisplay({ teamId }: { teamId: string }) {
               <DocumentDisplay sections={res.sections} teamBuffOnly hideDesc />
             </CardContent>
           )}
-        </CardLight>
+        </CardThemed>
       ))}
     </>
   )

@@ -2,7 +2,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useInfScroll } from '@genshin-optimizer/common/ui'
+import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import {
   catTotal,
   filterFunction,
@@ -56,7 +56,6 @@ import {
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import { useMatch, useNavigate } from 'react-router-dom'
-import CardDark from '../Components/Card/CardDark'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 5, sm: 8, md: 9, lg: 12, xl: 12 }
 const sortKeys = Object.keys(characterSortMap)
@@ -227,7 +226,7 @@ export default function PageCharacter() {
           onSelect={editCharacter}
         />
       </Suspense>
-      <CardDark>
+      <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Grid container spacing={1}>
             <Grid item>
@@ -290,7 +289,7 @@ export default function PageCharacter() {
             />
           </Box>
         </CardContent>
-      </CardDark>
+      </CardThemed>
       <Button
         fullWidth
         onClick={() => setnewCharacter(true)}

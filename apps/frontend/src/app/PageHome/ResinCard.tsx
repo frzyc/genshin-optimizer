@@ -1,4 +1,4 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { SECOND_MS } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { RESIN_MAX, timeZones } from '@genshin-optimizer/gi/db'
@@ -13,8 +13,6 @@ import {
 } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
-import CardDark from '../Components/Card/CardDark'
-import CardLight from '../Components/Card/CardLight'
 import { RESIN_RECH_MS } from '../PageTools/ResinCounter'
 
 export default function ResinCard() {
@@ -80,7 +78,7 @@ export default function ResinCard() {
   }, [database])
 
   return (
-    <CardDark>
+    <CardThemed>
       <CardHeader
         title={
           <Typography variant="h5">
@@ -91,7 +89,7 @@ export default function ResinCard() {
       />
       <Divider />
       <CardContent>
-        <CardLight>
+        <CardThemed bgt="light">
           <CardActionArea sx={{ p: 2 }} component={RouterLink} to="/tools">
             <Typography variant="h2" sx={{ textAlign: 'center' }}>
               <ImgIcon src={imgAssets.resin.fragile} />
@@ -100,8 +98,8 @@ export default function ResinCard() {
               </span>
             </Typography>
           </CardActionArea>
-        </CardLight>
+        </CardThemed>
       </CardContent>
-    </CardDark>
+    </CardThemed>
   )
 }

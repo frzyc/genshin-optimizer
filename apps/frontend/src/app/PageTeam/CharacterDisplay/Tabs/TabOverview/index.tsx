@@ -11,7 +11,6 @@ import {
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Grid, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo, useRef } from 'react'
-import CardLight from '../../../../Components/Card/CardLight'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
@@ -49,7 +48,8 @@ export default function TabOverview() {
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <EquipmentRow onClick={onScroll} />
-            <CardLight
+            <CardThemed
+              bgt="light"
               sx={{
                 flexGrow: 1,
                 p: 1,
@@ -75,7 +75,7 @@ export default function TabOverview() {
                   columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
                 />
               </DataContext.Provider>
-            </CardLight>
+            </CardThemed>
           </Grid>
         </Grid>
       </Box>

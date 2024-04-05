@@ -1,4 +1,4 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { MINUTE_MS, timeString } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { RESIN_MAX } from '@genshin-optimizer/gi/db'
@@ -13,7 +13,6 @@ import {
   Typography,
 } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
-import CardDark from '../Components/Card/CardDark'
 
 export const RESIN_RECH_MS = 8 * MINUTE_MS
 
@@ -76,7 +75,7 @@ export default function ResinCounter() {
   const nextDeltaString = timeString(Math.abs(nextResinDateNum - Date.now()))
 
   return (
-    <CardDark>
+    <CardThemed>
       <Grid container sx={{ px: 2, py: 1 }} spacing={2}>
         <Grid item>
           <ImgIcon src={imgAssets.resin.fragile} size={2} />
@@ -164,6 +163,6 @@ export default function ResinCounter() {
           </Grid>
         </Grid>
       </CardContent>
-    </CardDark>
+    </CardThemed>
   )
 }

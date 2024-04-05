@@ -1,5 +1,6 @@
 import {
   CardHeaderCustom,
+  CardThemed,
   ColorText,
   ImgIcon,
   ModalWrapper,
@@ -42,8 +43,6 @@ import {
   useRef,
   useState,
 } from 'react'
-import CardDark from '../../Components/Card/CardDark'
-import CardLight from '../../Components/Card/CardLight'
 export default function FormulaModal() {
   const { modalOpen } = useContext(FormulaDataContext)
   const { setFormulaData } = useContext(FormulaDataContext)
@@ -53,7 +52,7 @@ export default function FormulaModal() {
   )
   return (
     <ModalWrapper open={!!modalOpen} onClose={onCloseHandler}>
-      <CardDark>
+      <CardThemed>
         <CardHeader
           title="Formulas & Calculations"
           action={
@@ -65,7 +64,7 @@ export default function FormulaModal() {
         <CardContent sx={{ pt: 0 }}>
           <CalculationDisplay />
         </CardContent>
-      </CardDark>
+      </CardThemed>
     </ModalWrapper>
   )
 }
@@ -104,7 +103,7 @@ function FormulaCalc({
   if (Object.entries(displayNs).every(([_, node]) => node.isEmpty)) return null
   const { title, icon, action } = header
   return (
-    <CardLight sx={{ mb: 1 }}>
+    <CardThemed bgt="light" sx={{ mb: 1 }}>
       <CardHeaderCustom
         avatar={icon && <ImgIcon size={2} src={icon} />}
         title={title}
@@ -117,7 +116,7 @@ function FormulaCalc({
             !node.isEmpty && <FormulaAccordian key={key} node={node} />
         )}
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }
 function FormulaAccordian({ node }: { node: NodeDisplay }) {

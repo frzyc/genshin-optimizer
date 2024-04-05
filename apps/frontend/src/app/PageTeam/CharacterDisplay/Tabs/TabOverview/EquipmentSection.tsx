@@ -1,3 +1,4 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
@@ -27,7 +28,6 @@ import {
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardLight from '../../../../Components/Card/CardLight'
 
 export default function EquipmentSection() {
   const database = useDatabase()
@@ -48,11 +48,11 @@ export default function EquipmentSection() {
     () =>
       weaponSheet &&
       weaponSheet.document.length > 0 && (
-        <CardLight>
+        <CardThemed bgt="light">
           <Box p={1}>
             <DocumentDisplay sections={weaponSheet.document} />
           </Box>
-        </CardLight>
+        </CardThemed>
       ),
     [weaponSheet]
   )
@@ -161,7 +161,7 @@ function ArtifactSectionCard() {
   const setEffects = useMemo(() => dataSetEffects(data), [data])
 
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       {hasEquipped && (
         <Button
           color="error"
@@ -184,6 +184,6 @@ function ArtifactSectionCard() {
             )}
         </Stack>
       </Box>
-    </CardLight>
+    </CardThemed>
   )
 }

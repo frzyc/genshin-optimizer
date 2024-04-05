@@ -1,4 +1,8 @@
-import { BootstrapTooltip, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { objKeyMap, objMap, valueString } from '@genshin-optimizer/common/util'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
@@ -26,7 +30,6 @@ import {
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import type { TooltipProps } from 'recharts'
-import CardDark from '../../../../../../Components/Card/CardDark'
 import type EnhancedPoint from './EnhancedPoint'
 
 type CustomTooltipProps = TooltipProps<number, string> & {
@@ -114,7 +117,7 @@ export default function CustomTooltip({
   if (!tooltipProps.active || !selectedPoint) return null
   return (
     <ClickAwayListener onClickAway={clickAwayHandler}>
-      <CardDark
+      <CardThemed
         sx={{ minWidth: '400px', maxWidth: '400px', p: 1 }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -203,7 +206,7 @@ export default function CustomTooltip({
             </BootstrapTooltip>
           </Stack>
         </Box>
-      </CardDark>
+      </CardThemed>
     </ClickAwayListener>
   )
 }

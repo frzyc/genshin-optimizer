@@ -1,4 +1,4 @@
-import { SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
 import { ArtifactFilterDisplay } from '@genshin-optimizer/gi/ui'
@@ -11,7 +11,6 @@ import ReplayIcon from '@mui/icons-material/Replay'
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material'
 import { Suspense, useCallback, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import CardDark from '../Components/Card/CardDark'
 
 export default function ArtifactFilter({
   numShowing,
@@ -37,7 +36,7 @@ export default function ArtifactFilter({
     <Suspense
       fallback={<Skeleton variant="rectangular" width="100%" height={300} />}
     >
-      <CardDark>
+      <CardThemed>
         <CardContent>
           <Grid container>
             <Grid item>
@@ -85,7 +84,7 @@ export default function ArtifactFilter({
             />
           </Suspense>
         </CardContent>
-      </CardDark>
+      </CardThemed>
     </Suspense>
   )
 }

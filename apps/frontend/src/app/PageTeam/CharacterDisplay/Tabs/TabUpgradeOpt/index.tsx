@@ -60,7 +60,6 @@ import {
   useState,
 } from 'react'
 import { Trans } from 'react-i18next'
-import CardLight from '../../../../Components/Card/CardLight'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
@@ -351,7 +350,7 @@ export default function TabUpopt() {
   }, [data, teamData])
 
   const pagination = numPages > 1 && (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent>
         <Grid container>
           <Grid item flexGrow={1}>
@@ -369,7 +368,7 @@ export default function TabUpopt() {
           </Grid>
         </Grid>
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 
   return (
@@ -444,7 +443,7 @@ export default function TabUpopt() {
                       flexDirection="column"
                       gap={1}
                     >
-                      <CardLight>
+                      <CardThemed bgt="light">
                         <CardContent>
                           <span>Optimization Target: </span>
                           {
@@ -459,14 +458,14 @@ export default function TabUpopt() {
                             />
                           }
                         </CardContent>
-                      </CardLight>
-                      <CardLight>
+                      </CardThemed>
+                      <CardThemed bgt="light">
                         <CardContent>
                           <StatFilterCard disabled={false} />
                         </CardContent>
-                      </CardLight>
+                      </CardThemed>
                       {useFilters && (
-                        <CardLight>
+                        <CardThemed bgt="light">
                           <CardContent sx={{ py: 1 }}>
                             Artifact Level Filter
                           </CardContent>
@@ -495,7 +494,7 @@ export default function TabUpopt() {
                               filteredArtIdMap={filteredArtIdMap}
                             />
                           </CardContent>
-                        </CardLight>
+                        </CardThemed>
                       )}
                     </Grid>
                     <Grid
@@ -505,12 +504,12 @@ export default function TabUpopt() {
                       flexDirection="column"
                       gap={1}
                     >
-                      <CardLight>
+                      <CardThemed bgt="light">
                         <CardContent>
                           <ArtifactSetConfig disabled={false} />
                         </CardContent>
-                      </CardLight>
-                      <CardLight>
+                      </CardThemed>
+                      <CardThemed bgt="light">
                         <CardContent>
                           <Grid container spacing={1}>
                             <Grid item>
@@ -562,13 +561,13 @@ export default function TabUpopt() {
                             </Grid>
                           </Grid>
                         </CardContent>
-                      </CardLight>
+                      </CardThemed>
                     </Grid>
                   </Grid>
                 </Grid>
               </Grid>
             </Box>
-            <CardLight>
+            <CardThemed bgt="light">
               <CardContent>
                 <Grid container spacing={1}>
                   <Grid item>
@@ -593,7 +592,7 @@ export default function TabUpopt() {
                   </Grid>
                 </Grid>
               </CardContent>
-            </CardLight>
+            </CardThemed>
             {pagination}
             {noArtifact && <AddArtInfo />}
             <Suspense

@@ -1,5 +1,5 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { CustomNumberInput } from '@genshin-optimizer/common/ui'
+import { CardThemed, CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { isDev, objMap, toPercent } from '@genshin-optimizer/common/util'
 import {
   artSubstatRollData,
@@ -34,7 +34,6 @@ import CloseIcon from '@mui/icons-material/Close'
 import { Alert, Box, Button, Grid, Skeleton, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import CardLight from '../../../../Components/Card/CardLight'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
@@ -274,7 +273,7 @@ export default function TabTheorycraft() {
               lg={9.7}
               sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
             >
-              <CardLight sx={{ flexGrow: 1, p: 1 }}>
+              <CardThemed bgt="light" sx={{ flexGrow: 1, p: 1 }}>
                 <OptimizationTargetContext.Provider value={optimizationTarget}>
                   {dataContextValueWithCompare ? (
                     <DataContext.Provider value={dataContextValueWithCompare}>
@@ -286,11 +285,11 @@ export default function TabTheorycraft() {
                     <Skeleton variant="rectangular" width="100%" height={500} />
                   )}
                 </OptimizationTargetContext.Provider>
-              </CardLight>
+              </CardThemed>
             </Grid>
           </Grid>
         </Box>
-        <CardLight>
+        <CardThemed bgt="light">
           <Box sx={{ display: 'flex', gap: 1, p: 1, flexWrap: 'wrap' }}>
             <KQMSButton action={kqms} disabled={solving} />
             <GcsimButton disabled={solving} />
@@ -298,7 +297,7 @@ export default function TabTheorycraft() {
             <ReactionToggle size="small" />
             <CompareBtn buttonGroupProps={{ sx: { marginLeft: 'auto' } }} />
           </Box>
-        </CardLight>
+        </CardThemed>
         {dataContextValue ? (
           <DataContext.Provider value={dataContextValue}>
             <Box>

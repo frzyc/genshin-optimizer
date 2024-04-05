@@ -1,5 +1,6 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
+  CardThemed,
   InfoTooltip,
   ModalWrapper,
   SqBadge,
@@ -34,7 +35,6 @@ import {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import CardDark from '../../../Components/Card/CardDark'
 import CustomMultiTargetCard from './CustomMultiTargetCard'
 import CustomMultiTargetImportBtn from './CustomMultiTargetImportBtn'
 
@@ -166,7 +166,7 @@ export function CustomMultiTargetButton({
           onClose={onClose}
           containerProps={{ sx: { overflow: 'visible' } }}
         >
-          <CardDark>
+          <CardThemed>
             <CardHeader
               title={
                 <Box display="flex" gap={1} alignItems="center">
@@ -235,7 +235,7 @@ export function CustomMultiTargetButton({
                 </Grid>
               </Box>
             </CardContent>
-          </CardDark>
+          </CardThemed>
         </ModalWrapper>
       </DataContext.Provider>
     </Suspense>
