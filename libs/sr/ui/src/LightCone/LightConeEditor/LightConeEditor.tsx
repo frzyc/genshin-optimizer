@@ -27,7 +27,7 @@ import {
   Grid,
   MenuItem,
   Skeleton,
-  TextField,
+  Typography,
 } from '@mui/material'
 import { Suspense, useCallback, useEffect, useMemo, useReducer } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -169,16 +169,16 @@ export function LightConeEditor({
 
             {/* ascension */}
             <Grid item xs={1} display="flex" gap={1}>
-              <TextField
-                type="number"
-                label="Ascension"
-                variant="outlined"
-                sx={{ flexShrink: 1, flexGrow: 1 }}
-                size="medium"
-                inputProps={{ readOnly: true }}
-                value={lightCone?.ascension || 0}
-                disabled={!lightCone}
-              />
+              <CardThemed
+                bgt="light"
+                sx={{ p: 1, flexGrow: 1, alignContent: 'center' }}
+              >
+                <Suspense fallback={<Skeleton width="60%" />}>
+                  <Typography color="text.secondary" align="center">
+                    Ascension {lightCone?.ascension || 0}
+                  </Typography>
+                </Suspense>
+              </CardThemed>
             </Grid>
 
             {/* character location */}
