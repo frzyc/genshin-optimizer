@@ -11,7 +11,6 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import package_json from 'package.json'
 import { useEffect, useState } from 'react'
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
@@ -23,6 +22,7 @@ import ResinCard from './ResinCard'
 import TeamCard from './TeamCard'
 import VidGuideCard from './VidGuideCard'
 
+declare const __VERSION__: string
 export default function PageHome() {
   const theme = useTheme()
   const lg = useMediaQuery(theme.breakpoints.up('lg'))
@@ -92,14 +92,13 @@ function IntroCard() {
     </CardThemed>
   )
 }
-
 function PatchNotesCard() {
   const { t } = useTranslation('page_home')
   const [{ isLoaded, text }, setState] = useState({ isLoaded: false, text: '' })
   useEffect(() => {
-    fetch(
-      process.env.NX_URL_GITHUB_API_GO_RELEASES + package_json.version ?? ''
-    )
+    const regex = /^(\d+)\.(\d+)\.(\d+)$/
+    const minorVersion = __VERSION__.replace(regex, `$1.$2.${0}`)
+    fetch(process.env.NX_URL_GITHUB_API_GO_RELEASES + minorVersion ?? '')
       .then((res) => res.arrayBuffer())
       .then((buffer) => {
         const decoder = new TextDecoder('utf-8')

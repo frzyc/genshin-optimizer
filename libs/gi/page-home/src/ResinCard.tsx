@@ -1,6 +1,7 @@
 import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { SECOND_MS } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
+import { RESIN_RECH_MS } from '@genshin-optimizer/gi/consts'
 import { RESIN_MAX, timeZones } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled'
@@ -13,7 +14,6 @@ import {
 } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
-import { RESIN_RECH_MS } from '../PageTools/ResinCounter'
 
 export default function ResinCard() {
   const database = useDatabase()

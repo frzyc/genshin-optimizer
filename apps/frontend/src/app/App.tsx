@@ -35,16 +35,18 @@ import Footer from './Footer'
 import Header from './Header'
 import Snow from './Snow'
 
-const PageHome = lazy(() => import('./PageHome'))
-const PageArtifact = lazy(() => import('./PageArtifact'))
-const PageTools = lazy(() => import('./PageTools'))
-const PageSettings = lazy(() => import('./PageSettings'))
-const PageWeapon = lazy(() => import('./PageWeapon'))
-const PageDocumentation = lazy(() => import('./PageDocumentation'))
-const PageScanner = lazy(() => import('./PageScanner'))
-const PageCharacter = lazy(() => import('./PageCharacter'))
-const PageTeams = lazy(() => import('./PageTeams'))
-const PageTeam = lazy(() => import('./PageTeam'))
+const PageHome = lazy(() => import('@genshin-optimizer/gi/page-home'))
+const PageArtifacts = lazy(() => import('@genshin-optimizer/gi/page-artifacts'))
+const PageTools = lazy(() => import('@genshin-optimizer/gi/page-tools'))
+const PageSettings = lazy(() => import('@genshin-optimizer/gi/page-settings'))
+const PageWeapons = lazy(() => import('@genshin-optimizer/gi/page-weapons'))
+const PageDocumentation = lazy(() => import('@genshin-optimizer/gi/page-doc'))
+const PageScanner = lazy(() => import('@genshin-optimizer/gi/page-scanner'))
+const PageCharacters = lazy(
+  () => import('@genshin-optimizer/gi/page-characters')
+)
+const PageTeams = lazy(() => import('@genshin-optimizer/gi/page-teams'))
+const PageTeam = lazy(() => import('@genshin-optimizer/gi/page-team'))
 
 function ScrollTop({ children }: { children: React.ReactElement }) {
   const trigger = useScrollTrigger({
@@ -162,9 +164,9 @@ function Content() {
         >
           <Routes>
             <Route index element={<PageHome />} />
-            <Route path="/artifacts" element={<PageArtifact />} />
-            <Route path="/weapons" element={<PageWeapon />} />
-            <Route path="/characters/*" element={<PageCharacter />} />
+            <Route path="/artifacts" element={<PageArtifacts />} />
+            <Route path="/weapons" element={<PageWeapons />} />
+            <Route path="/characters/*" element={<PageCharacters />} />
             <Route path="/teams/*">
               <Route index element={<PageTeams />} />
               <Route path=":teamId/*" element={<PageTeam />} />

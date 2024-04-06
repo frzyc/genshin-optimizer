@@ -14,7 +14,7 @@ import {
 } from '@mui/material'
 import { useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import silly_icon from '../silly_icon.png'
+import silly_icon from './silly_icon.png'
 export default function SillyCard() {
   const { silly, setSilly } = useContext(SillyContext)
   const { t } = useTranslation(['ui', 'settings'])
