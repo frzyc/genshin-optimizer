@@ -24,7 +24,7 @@ function newLightCone(key: LightConeKey): ICachedLightCone {
     key,
     level: 1,
     ascension: 0,
-    superimpose: 0,
+    superimpose: 1,
     location: '',
     lock: false,
     id: '',
