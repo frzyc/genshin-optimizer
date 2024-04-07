@@ -9,7 +9,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'OceanHuedClam'
@@ -35,22 +35,26 @@ export const data: Data = dataObjForArtifactSheet(
   }
 )
 
-const sheet: SetEffectSheet = {
-  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-  4: {
-    document: [
-      {
-        header: setHeader(4),
-        fields: [
-          {
-            node: infoMut(heal, {
-              name: trm('condName'),
-              variant: 'physical',
-            }),
-          },
-        ],
-      },
-    ],
+const sheet: IArtifactSheet = {
+  name: 'Ocean-Hued Clam',
+  rarity: [4, 5],
+  setEffects: {
+    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+    4: {
+      document: [
+        {
+          header: setHeader(4),
+          fields: [
+            {
+              node: infoMut(heal, {
+                name: trm('condName'),
+                variant: 'physical',
+              }),
+            },
+          ],
+        },
+      ],
+    },
   },
 }
-export default new ArtifactSheet(sheet, data)
+export default new ArtifactSheet(key, sheet, data)

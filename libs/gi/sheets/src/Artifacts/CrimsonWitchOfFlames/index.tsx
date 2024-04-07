@@ -11,7 +11,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'CrimsonWitchOfFlames'
@@ -57,55 +57,59 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
 })
 
-const sheet: SetEffectSheet = {
-  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-  4: {
-    document: [
-      {
-        header: setHeader(4),
-        fields: [
-          {
-            node: set4Overload,
-          },
-          {
-            node: set4Burning,
-          },
-          {
-            node: set4Burgeon,
-          },
-          {
-            node: set4Vape,
-          },
-          {
-            node: set4Melt,
-          },
-        ],
-      },
-      {
-        header: setHeader(4),
-        value: condStack,
-        path: condStackPath,
-        name: st('afterUse.skill'),
-        states: Object.fromEntries(
-          stackArr.map((i) => [
-            i,
+const sheet: IArtifactSheet = {
+  name: 'Crimson Witch of Flames',
+  rarity: [4, 5],
+  setEffects: {
+    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+    4: {
+      document: [
+        {
+          header: setHeader(4),
+          fields: [
             {
-              name: st('stack', { count: i }),
-              fields: [
-                {
-                  node: set4Pyro_dmg_,
-                },
-                {
-                  text: stg('duration'),
-                  value: 10,
-                  unit: 's',
-                },
-              ],
+              node: set4Overload,
             },
-          ])
-        ),
-      },
-    ],
+            {
+              node: set4Burning,
+            },
+            {
+              node: set4Burgeon,
+            },
+            {
+              node: set4Vape,
+            },
+            {
+              node: set4Melt,
+            },
+          ],
+        },
+        {
+          header: setHeader(4),
+          value: condStack,
+          path: condStackPath,
+          name: st('afterUse.skill'),
+          states: Object.fromEntries(
+            stackArr.map((i) => [
+              i,
+              {
+                name: st('stack', { count: i }),
+                fields: [
+                  {
+                    node: set4Pyro_dmg_,
+                  },
+                  {
+                    text: stg('duration'),
+                    value: 10,
+                    unit: 's',
+                  },
+                ],
+              },
+            ])
+          ),
+        },
+      ],
+    },
   },
 }
-export default new ArtifactSheet(sheet, data)
+export default new ArtifactSheet(key, sheet, data)

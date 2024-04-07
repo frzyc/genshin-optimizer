@@ -4,19 +4,24 @@ import type { ArtifactSetKey, SetNum } from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { st, trans } from '../SheetUtil'
 import type { IDocumentHeader } from '../sheet'
-import type { SetEffectEntry, SetEffectSheet } from './IArtifactSheet'
+import type { IArtifactSheet, SetEffectEntry } from './IArtifactSheet'
 
 export class ArtifactSheet {
-  readonly sheet: SetEffectSheet
+  readonly sheet: IArtifactSheet
   readonly data: Data
-  constructor(sheet: SetEffectSheet, data: Data) {
+  constructor(
+    _: ArtifactSetKey, // TODO: refactor
+    sheet: IArtifactSheet,
+    data: Data
+  ) {
     this.sheet = sheet
     this.data = data
   }
   get setEffects(): Partial<Record<SetNum, SetEffectEntry>> {
-    return this.sheet
+    return this.sheet.setEffects
   }
-  setEffectDocument = (setNum: SetNum) => this.sheet[setNum]?.document
+  setEffectDocument = (setNum: SetNum) =>
+    this.sheet.setEffects[setNum]?.document
 }
 
 export const setHeaderTemplate = (

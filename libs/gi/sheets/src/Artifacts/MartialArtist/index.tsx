@@ -3,7 +3,7 @@ import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent, sum } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'MartialArtist'
@@ -34,38 +34,42 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
 })
 
-const sheet: SetEffectSheet = {
-  2: {
-    document: [
-      { header: setHeader(2), fields: [{ node: set2NA }, { node: set2CA }] },
-    ],
-  },
-  4: {
-    document: [
-      {
-        header: setHeader(4),
-        value: condState,
-        path: condStatePath,
-        name: st('afterUse.skill'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: set4NA,
-              },
-              {
-                node: set4CA,
-              },
-              {
-                text: stg('duration'),
-                value: 8,
-                unit: 's',
-              },
-            ],
+const sheet: IArtifactSheet = {
+  name: 'Martial Artist',
+  rarity: [3, 4],
+  setEffects: {
+    2: {
+      document: [
+        { header: setHeader(2), fields: [{ node: set2NA }, { node: set2CA }] },
+      ],
+    },
+    4: {
+      document: [
+        {
+          header: setHeader(4),
+          value: condState,
+          path: condStatePath,
+          name: st('afterUse.skill'),
+          states: {
+            on: {
+              fields: [
+                {
+                  node: set4NA,
+                },
+                {
+                  node: set4CA,
+                },
+                {
+                  text: stg('duration'),
+                  value: 8,
+                  unit: 's',
+                },
+              ],
+            },
           },
         },
-      },
-    ],
+      ],
+    },
   },
 }
-export default new ArtifactSheet(sheet, data)
+export default new ArtifactSheet(key, sheet, data)

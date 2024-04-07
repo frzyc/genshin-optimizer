@@ -9,7 +9,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'BlizzardStrayer'
@@ -35,27 +35,31 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
 })
 
-const sheet: SetEffectSheet = {
-  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-  4: {
-    document: [
-      {
-        header: setHeader(4),
-        value: condState,
-        path: condStatePath,
-        name: trm('condName'),
-        states: {
-          cryo: {
-            name: trm('condCryo'),
-            fields: [{ node: set4 }],
-          },
-          frozen: {
-            name: trm('condFrozen'),
-            fields: [{ node: set4 }],
+const sheet: IArtifactSheet = {
+  name: 'Blizzard Strayer',
+  rarity: [4, 5],
+  setEffects: {
+    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+    4: {
+      document: [
+        {
+          header: setHeader(4),
+          value: condState,
+          path: condStatePath,
+          name: trm('condName'),
+          states: {
+            cryo: {
+              name: trm('condCryo'),
+              fields: [{ node: set4 }],
+            },
+            frozen: {
+              name: trm('condFrozen'),
+              fields: [{ node: set4 }],
+            },
           },
         },
-      },
-    ],
+      ],
+    },
   },
 }
-export default new ArtifactSheet(sheet, data)
+export default new ArtifactSheet(key, sheet, data)
