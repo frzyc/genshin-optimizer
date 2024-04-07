@@ -13,6 +13,8 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type {
+  CustomTarget,
+  ExpressionNode,
   ICachedArtifact,
   ICachedCharacter,
   ICachedWeapon,
@@ -189,43 +191,85 @@ export function dataObjForCharacterNew(
   )
 
   if (sheetData?.display) {
-    sheetData.display.custom = {}
-    customMultiTargets.forEach(({ name, targets }, i) => {
-      const targetNodes = targets.map(
-        ({ weight, path, hitMode, reaction, infusionAura, bonusStats }) => {
-          const targetNode = objPathValue(sheetData.display, path) as
-            | NumNode
-            | undefined
-          if (!targetNode) return constant(0)
-          if (hitMode === 'global') hitMode = globalHitMode
+    sheetData.display['custom'] = {}
 
-          return prod(
-            constant(weight),
-            infoMut(
-              data(targetNode, {
-                premod: objMap(bonusStats, (v, k) =>
-                  k.endsWith('_') ? percent(v / 100) : constant(v)
-                ),
-                hit: {
-                  hitMode: constant(hitMode),
-                  reaction: reaction ? constant(reaction) : none,
-                },
-                infusion: {
-                  team: infusionAura ? constant(infusionAura) : none,
-                },
-              }),
-              { pivot: true }
-            )
-          )
-        }
+    const parseCustomTarget = (target: CustomTarget, useWeight = true): NumNode => {
+      let { weight, path, hitMode, reaction, infusionAura, bonusStats } = target
+      const targetNode = objPathValue(sheetData.display, path) as
+        | NumNode
+        | undefined
+      if (!targetNode) return constant(0)
+      if (hitMode === 'global') hitMode = globalHitMode
+
+      let result = infoMut(
+        data(targetNode, {
+          premod: objMap(bonusStats, (v, k) =>
+            k.endsWith('_') ? percent(v / 100) : constant(v)
+          ),
+          hit: {
+            hitMode: constant(hitMode),
+            reaction: reaction ? constant(reaction) : none,
+          },
+          infusion: {
+            team: infusionAura ? constant(infusionAura) : none,
+          },
+        }),
+        { pivot: true }
       )
+      if (useWeight) result = prod(constant(weight), result)
+      return result
+    }
 
-      // Make the variant "invalid" because its not easy to determine variants in multitarget
-      const multiTargetNode = infoMut(sum(...targetNodes), {
-        name,
-        variant: 'invalid',
-      })
-      sheetData.display!.custom[i] = multiTargetNode
+    const parseCustomExpression = (customExpression: ExpressionNode): NumNode => {
+      const { operation, operands: _operands } = customExpression
+      const operands = _operands.map((x) =>
+        typeof x === 'number'
+          ? constant(x)
+          : (
+            'path' in x
+              ? parseCustomTarget(x, false)
+              : parseCustomExpression(x)
+          )
+      )
+      switch (operation) {
+        case '+':
+          return sum(...operands)
+        case '-':
+          return prod(constant(-1), sum(...operands)) // TODO: Check it; Implement subtraction
+        case '*':
+          return prod(...operands)
+        case '/':
+          return sum(...operands) // TODO: Implement division
+        case 'avg':
+          return prod(constant(1 / operands.length), sum(...operands)) // TODO: Implement avg
+        case 'min':
+          return operands.reduce((a, b) => prod(constant(1), a, b)) // TODO: Check it; Implement min
+        case 'max':
+          return operands.reduce((a, b) => prod(constant(2), a, b)) // TODO: Check it; Implement max
+        case 'group': // It means parenthesis
+          return sum(constant(0), ...operands) // TODO: Implement group
+        default:
+          throw new Error(`Unknown operation ${operation}`)
+      }
+    }
+
+    customMultiTargets.forEach(({ name, targets, customExpression }, i) => {
+      if (customExpression) {
+        const multiTargetNode = parseCustomExpression(customExpression)
+        sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
+          name,
+          variant: 'invalid',
+        })
+      } else {
+        const targetNodes = targets.map((target) => parseCustomTarget(target))
+
+        // Make the variant "invalid" because its not easy to determine variants in multitarget
+        const multiTargetNode = infoMut(sum(...targetNodes), {
+          name,
+          variant: 'invalid',
+        })
+        sheetData.display!['custom'][i] = multiTargetNode
+      }
     })
   }
   return result

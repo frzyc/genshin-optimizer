@@ -65,10 +65,20 @@ export interface CustomTarget {
   infusionAura?: InfusionAuraElementKey
   bonusStats: Partial<Record<InputPremodKey, number>>
 }
+
+export const validExpressionOperators = ['+', '-', '*', '/', 'avg', 'min', 'max', 'group'] as const
+export type ExpressionOperand = ExpressionNode | CustomTarget | number
+
+export interface ExpressionNode {
+  operation: typeof validExpressionOperators[number]
+  operands: ExpressionOperand[]
+}
+
 export interface CustomMultiTarget {
   name: string
   description?: string
   targets: CustomTarget[]
+  customExpression?: ExpressionNode
 }
 
 export class TeamCharacterDataManager extends DataManager<
