@@ -27,35 +27,6 @@ import { input, tally } from './formula'
 import type { Data, Info, NumNode, ReadNode, StrNode } from './type'
 import { constant, data, infoMut, none, percent, prod, sum } from './utils'
 
-// export function parseCustomExpression(
-//   customExpression: ExpressionNode
-// ): NumNode {
-//   const { operation, operands: _operands } = customExpression
-//   const operands = _operands.map((x) =>
-//     typeof x !== 'object' ? constant(x) : 'path' in x ? parseCustomTarget(x, false) : parseCustomExpression(x)
-//   )
-//   switch (operation) {
-//     case '+':
-//       return sum(...operands)
-//     case '-':
-//       return prod(constant(-1), sum(...operands)) // TODO: Check it; Implement subtraction
-//     case '*':
-//       return prod(...operands)
-//     case '/':
-//       return sum(...operands) // TODO: Implement division
-//     case 'avg':
-//       return prod(constant(1 / operands.length), sum(...operands)) // TODO: Implement avg
-//     case 'min':
-//       return operands.reduce((a, b) => prod(constant(1), a, b)) // TODO: Chack it; Implement min
-//     case 'max':
-//       return operands.reduce((a, b) => prod(constant(2), a, b)) // TODO: Chack it; Implement max
-//     case 'group':
-//       return sum(constant(0), ...operands) // TODO: Implement group
-//     default:
-//       throw new Error(`Unknown operation ${operation}`)
-//   }
-// }
-
 export function inferInfoMut(data: Data, source?: Info['source']): Data {
   crawlObject(
     data,
@@ -220,7 +191,7 @@ export function dataObjForCharacterNew(
   )
 
   if (sheetData?.display) {
-    sheetData.display.custom = {}
+    sheetData.display['custom'] = {}
 
     const parseCustomTarget = (target: CustomTarget, useWeight = true): NumNode => {
       let { weight, path, hitMode, reaction, infusionAura, bonusStats } = target
@@ -275,7 +246,7 @@ export function dataObjForCharacterNew(
           return operands.reduce((a, b) => prod(constant(1), a, b)) // TODO: Chack it; Implement min
         case 'max':
           return operands.reduce((a, b) => prod(constant(2), a, b)) // TODO: Chack it; Implement max
-        case 'group':
+        case 'group': // It means parenthesis
           return sum(constant(0), ...operands) // TODO: Implement group
         default:
           throw new Error(`Unknown operation ${operation}`)
@@ -285,7 +256,7 @@ export function dataObjForCharacterNew(
     customMultiTargets.forEach(({ name, targets, customExpression }, i) => {
       if (customExpression) {
         const multiTargetNode = parseCustomExpression(customExpression)
-        sheetData.display!.custom[i] = infoMut(multiTargetNode, {
+        sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
           name,
           variant: 'invalid',
         })
@@ -297,7 +268,7 @@ export function dataObjForCharacterNew(
           name,
           variant: 'invalid',
         })
-        sheetData.display!.custom[i] = multiTargetNode
+        sheetData.display!['custom'][i] = multiTargetNode
       }
     })
   }
