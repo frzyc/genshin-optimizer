@@ -191,7 +191,7 @@ export function dataObjForCharacterNew(
   )
 
   if (sheetData?.display) {
-    sheetData.display['custom'] = {}
+    sheetData.display.custom = {}
 
     const parseCustomTarget = (target: CustomTarget, useWeight = true): NumNode => {
       let { weight, path, hitMode, reaction, infusionAura, bonusStats } = target
@@ -256,7 +256,7 @@ export function dataObjForCharacterNew(
     customMultiTargets.forEach(({ name, targets, customExpression }, i) => {
       if (customExpression) {
         const multiTargetNode = parseCustomExpression(customExpression)
-        sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
+        sheetData.display!.custom[i] = infoMut(multiTargetNode, {
           name,
           variant: 'invalid',
         })
@@ -268,7 +268,7 @@ export function dataObjForCharacterNew(
           name,
           variant: 'invalid',
         })
-        sheetData.display!['custom'][i] = multiTargetNode
+        sheetData.display!.custom[i] = multiTargetNode
       }
     })
   }
