@@ -1,6 +1,8 @@
 import type {
   CharacterKey,
   CharacterSheetKey,
+  ElementKey,
+  WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -8,6 +10,7 @@ import { infoMut } from '@genshin-optimizer/gi/wr'
 import { stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type {
+  ICharacterSheet,
   TalentSheetElement,
   TalentSheetElementKey,
 } from '../ICharacterSheet.d'
@@ -21,12 +24,15 @@ type TravelerTalentFunc = (
 ) => {
   talent: Partial<Record<TalentSheetElementKey, TalentSheetElement>>
   data: Data
+  elementKey: ElementKey
 }
 export function travelerSheet(
   key: CharacterSheetKey,
   charKey: CharacterKey,
-  talentFunc: TravelerTalentFunc
+  talentFunc: TravelerTalentFunc,
+  baseTravelerSheet: Partial<ICharacterSheet>
 ) {
+  const data_gen = allStats.char.data.Traveler
   const skillParam_gen = allStats.char.skillParam[key]
   const dm = {
     normal: {
@@ -70,8 +76,8 @@ export function travelerSheet(
     ),
   } as const
 
-  const { talent, data } = talentFunc(key, charKey, dmgFormulas)
-  const ct = charTemplates(key)
+  const { talent, data, elementKey } = talentFunc(key, charKey, dmgFormulas)
+  const ct = charTemplates(key, data_gen.weaponType)
 
   talent.auto = ct.talentTem('auto', [
     {
@@ -131,5 +137,20 @@ export function travelerSheet(
     },
   ])
 
-  return new CharacterSheet(talent, data)
+  const sheet = {
+    ...baseTravelerSheet,
+    talent,
+    key: charKey,
+    elementKey,
+  } as ICharacterSheet
+
+  return new CharacterSheet(sheet, data)
 }
+const data_gen = allStats.char.data.Traveler
+export default {
+  sheet: {
+    rarity: data_gen.rarity,
+    weaponTypeKey: data_gen.weaponType as WeaponTypeKey,
+  },
+  data_gen,
+} as const

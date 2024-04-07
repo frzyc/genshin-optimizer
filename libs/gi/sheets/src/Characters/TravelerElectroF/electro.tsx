@@ -19,6 +19,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
+import Traveler from '../Traveler'
 import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 
@@ -29,7 +30,7 @@ export default function electro(
 ) {
   const elementKey: ElementKey = 'electro'
   const condCharKey = 'TravelerElectro'
-  const ct = charTemplates(key)
+  const ct = charTemplates(key, Traveler.data_gen.weaponType)
   const [, ch] = trans('char', condCharKey)
   const skillParam_gen = allStats.char.skillParam.TravelerElectroF
   let s = 0,
@@ -137,20 +138,27 @@ export default function electro(
   const burstC3 = greaterEq(input.constellation, 3, 3)
   const skillC5 = greaterEq(input.constellation, 5, 3)
 
-  const data = dataObjForCharacterSheet(charKey, dmgFormulas, {
-    premod: {
-      skillBoost: skillC5,
-      burstBoost: burstC3,
-    },
-    teamBuff: {
+  const data = dataObjForCharacterSheet(
+    charKey,
+    elementKey,
+    undefined,
+    Traveler.data_gen,
+    dmgFormulas,
+    {
       premod: {
-        electro_enemyRes_: c2Thunder_electro_enemyRes_,
+        skillBoost: skillC5,
+        burstBoost: burstC3,
       },
-      total: {
-        enerRech_: skillAmulet_enerRech_, // In total to avoid loops
+      teamBuff: {
+        premod: {
+          electro_enemyRes_: c2Thunder_electro_enemyRes_,
+        },
+        total: {
+          enerRech_: skillAmulet_enerRech_, // In total to avoid loops
+        },
       },
-    },
-  })
+    }
+  )
 
   const talent: TalentSheet = {
     skill: ct.talentTem('skill', [
@@ -332,5 +340,6 @@ export default function electro(
   return {
     talent,
     data,
+    elementKey,
   }
 }

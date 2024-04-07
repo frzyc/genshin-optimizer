@@ -2,6 +2,7 @@ import { objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   CharacterSheetKey,
+  ElementKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -20,6 +21,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'
+import Traveler from '../Traveler'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -34,8 +36,9 @@ export default function dendro(
   charKey: CharacterKey,
   dmgForms: { [key: string]: DisplaySub }
 ) {
+  const elementKey: ElementKey = 'hydro'
   const condCharKey = 'TravelerHydro'
-  const ct = charTemplates(key)
+  const ct = charTemplates(key, Traveler.data_gen.weaponType)
   const [, ch] = trans('char', condCharKey)
 
   const skillParam_gen = allStats.char.skillParam.TravelerHydroF
@@ -176,12 +179,19 @@ export default function dendro(
   const skillC3 = greaterEq(input.constellation, 3, 3)
   const burstC5 = greaterEq(input.constellation, 5, 3)
 
-  const data = dataObjForCharacterSheet(charKey, dmgFormulas, {
-    premod: {
-      burstBoost: burstC5,
-      skillBoost: skillC3,
-    },
-  })
+  const data = dataObjForCharacterSheet(
+    charKey,
+    elementKey,
+    undefined,
+    Traveler.data_gen,
+    dmgFormulas,
+    {
+      premod: {
+        burstBoost: burstC5,
+        skillBoost: skillC3,
+      },
+    }
+  )
 
   const talent: TalentSheet = {
     skill: ct.talentTem('skill', [
@@ -359,5 +369,6 @@ export default function dendro(
   return {
     talent,
     data,
+    elementKey,
   }
 }

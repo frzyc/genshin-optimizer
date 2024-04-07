@@ -1,20 +1,20 @@
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
-import type { TalentSheet, TalentSheetElementKey } from './ICharacterSheet'
+import type { ICharacterSheet, TalentSheetElementKey } from './ICharacterSheet'
 
 export type AllCharacterSheets = (
   characterkey: CharacterKey,
   gender: GenderKey
 ) => CharacterSheet
 export class CharacterSheet {
-  readonly sheet: TalentSheet
+  readonly sheet: ICharacterSheet
   readonly data: Data
-  constructor(charSheet: TalentSheet, data: Data) {
+  constructor(charSheet: ICharacterSheet, data: Data) {
     this.sheet = charSheet
     this.data = data
   }
   get talent() {
-    return this.sheet
+    return this.sheet.talent
   }
   getTalentOfKey = (talentKey: TalentSheetElementKey) => this.talent[talentKey]
 }
