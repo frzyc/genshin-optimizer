@@ -3,14 +3,8 @@ import {
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import {
-  CardThemed,
-  InfoTooltip,
-  ModalWrapper,
-  SolidToggleButtonGroup,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
-import { bulkCatTotal, filterFunction } from '@genshin-optimizer/common/util'
+import { SqBadge } from '@genshin-optimizer/common/ui'
+import { filterFunction } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   LocationCharacterKey,
@@ -27,22 +21,10 @@ import type {
   ICachedCharacter,
 } from '@genshin-optimizer/gi/db'
 import { allAllowLocationsState } from '@genshin-optimizer/gi/db'
-import {
-  CharacterContext,
-  TeamCharacterContext,
-  useDatabase,
-  useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
-import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
+import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
-import {
-  CharacterCardPico,
-  CharacterRarityToggle,
-  ElementToggle,
-  WeaponToggle,
-  characterFilterConfigs,
-} from '@genshin-optimizer/gi/ui'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import SettingsIcon from '@mui/icons-material/Settings'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
@@ -69,6 +51,19 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import CardDark from '../../../../../Components/Card/CardDark'
+import CardLight from '../../../../../Components/Card/CardLight'
+import CharacterCardPico from '../../../../../Components/Character/CharacterCardPico'
+import InfoTooltip from '../../../../../Components/InfoTooltip'
+import ModalWrapper from '../../../../../Components/ModalWrapper'
+import SolidToggleButtonGroup from '../../../../../Components/SolidToggleButtonGroup'
+import CharacterRarityToggle from '../../../../../Components/ToggleButton/CharacterRarityToggle'
+import ElementToggle from '../../../../../Components/ToggleButton/ElementToggle'
+import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'
+import { CharacterContext } from '../../../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
+import { characterFilterConfigs } from '../../../../../Util/CharacterSort'
+import { bulkCatTotal } from '../../../../../Util/totalUtils'
 
 enum CharListMode {
   ToggleToAllow,
@@ -205,10 +200,11 @@ export default function AllowChar({
             charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
         )
         .forEach(([ck]) => {
-          const eleKey = getCharEle(ck)
-          const charStat = getCharStat(ck)
-          const weaponTypeKey = charStat.weaponType
-          const characterRarityKey = charStat.rarity
+          const sheet = getCharSheet(ck, database.gender)
+
+          const eleKey = sheet.elementKey
+          const weaponTypeKey = sheet.weaponTypeKey
+          const characterRarityKey = sheet.rarity
 
           ctMap.elementTotals[eleKey].total++
           if (charKeyMap[ck]) ctMap.elementTotals[eleKey].current++
@@ -248,7 +244,14 @@ export default function AllowChar({
           }
         })
     )
-  }, [charKeyMap, characterKey, database, excludedLocations, locList])
+  }, [
+    charKeyMap,
+    characterKey,
+    database.chars.data,
+    database.gender,
+    excludedLocations,
+    locList,
+  ])
 
   useEffect(
     () => database.charMeta.followAny((_) => forceUpdate()),
@@ -331,7 +334,7 @@ export default function AllowChar({
         draggable={false}
         onMouseUp={onMouseUp}
       >
-        <CardThemed>
+        <CardDark>
           {/* Header */}
           <CardHeader
             title={
@@ -441,11 +444,11 @@ export default function AllowChar({
               toggleList={toggleList}
             />
           </CardContent>
-        </CardThemed>
+        </CardDark>
       </ModalWrapper>
 
       {/* Button to open modal */}
-      <CardThemed bgt="light" sx={{ display: 'flex', width: '100%' }}>
+      <CardLight sx={{ display: 'flex', width: '100%' }}>
         <CardContent sx={{ flexGrow: 1 }}>
           <Stack spacing={1}>
             <Typography>
@@ -481,7 +484,7 @@ export default function AllowChar({
         >
           <SettingsIcon />
         </Button>
-      </CardThemed>
+      </CardLight>
     </Box>
   )
 }
@@ -605,13 +608,13 @@ function SelectItem({
     [char?.equippedArtifacts]
   )
   return (
-    <CardThemed bgt="light" sx={sx}>
+    <CardLight sx={sx}>
       <CharacterCardPico
         characterKey={database.chars.LocationToCharacterKey(locKey)}
         onMouseDown={onMouseDown}
         onMouseEnter={onMouseEnter}
       />
       {content}
-    </CardThemed>
+    </CardLight>
   )
 }

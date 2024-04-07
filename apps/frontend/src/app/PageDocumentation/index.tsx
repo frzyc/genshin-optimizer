@@ -1,4 +1,4 @@
-import { CardThemed, CodeBlock, SqBadge } from '@genshin-optimizer/common/ui'
+import { CodeBlock, SqBadge } from '@genshin-optimizer/common/ui'
 import {
   allArtifactSetKeys,
   allLocationCharacterKeys,
@@ -24,6 +24,8 @@ import { Suspense } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import { Link, Route, Routes, useMatch } from 'react-router-dom'
+import CardDark from '../Components/Card/CardDark'
+import CardLight from '../Components/Card/CardLight'
 
 export default function PageDocumentation() {
   // const { t } = useTranslation("documentation")
@@ -34,7 +36,7 @@ export default function PageDocumentation() {
   } = useMatch('/doc/:currentTab') ?? { params: { currentTab: '' } }
 
   return (
-    <CardThemed sx={{ my: 1 }}>
+    <CardDark sx={{ my: 1 }}>
       <Grid container sx={{ px: 2, py: 1 }}>
         <Grid item flexGrow={1}>
           <Typography variant="h6">Documentation</Typography>
@@ -49,7 +51,7 @@ export default function PageDocumentation() {
       <CardContent>
         <Grid container spacing={1}>
           <Grid item xs={12} md={2}>
-            <CardThemed bgt="light" sx={{ height: '100%' }}>
+            <CardLight sx={{ height: '100%' }}>
               <Tabs
                 orientation="vertical"
                 value={currentTab}
@@ -100,10 +102,10 @@ export default function PageDocumentation() {
                   to="VersionHistory"
                 />
               </Tabs>
-            </CardThemed>
+            </CardLight>
           </Grid>
           <Grid item xs={12} md={10}>
-            <CardThemed bgt="light" sx={{ height: '100%' }}>
+            <CardLight sx={{ height: '100%' }}>
               <CardContent>
                 <Suspense
                   fallback={
@@ -131,11 +133,11 @@ export default function PageDocumentation() {
                   </Routes>
                 </Suspense>
               </CardContent>
-            </CardThemed>
+            </CardLight>
           </Grid>
         </Grid>
       </CardContent>
-    </CardThemed>
+    </CardDark>
   )
 }
 
@@ -205,44 +207,44 @@ function Overview() {
         As of version 6.0.0, Genshin Optimizer's database export conforms to
         this format.
       </Typography>
-      <CardThemed>
+      <CardDark>
         <CardContent>
           <CodeBlock text={goodCode} />
         </CardContent>
-      </CardThemed>
+      </CardDark>
       <br />
       <Typography gutterBottom variant="h4">
         Artifact data representation
       </Typography>
-      <CardThemed>
+      <CardDark>
         <CardContent>
           <CodeBlock text={artifactCode} />
         </CardContent>
-      </CardThemed>
+      </CardDark>
       <br />
       <Typography gutterBottom variant="h4">
         Weapon data representation
       </Typography>
-      <CardThemed>
+      <CardDark>
         <CardContent>
           <CodeBlock text={weaponCode} />
         </CardContent>
-      </CardThemed>
+      </CardDark>
       <br />
       <Typography gutterBottom variant="h4">
         Character data representation
       </Typography>
-      <CardThemed>
+      <CardDark>
         <CardContent>
           <CodeBlock text={characterCode} />
         </CardContent>
-      </CardThemed>
+      </CardDark>
     </>
   )
 }
 function KeyNamingPane() {
   return (
-    <CardThemed>
+    <CardDark>
       <CardContent>
         <Typography>Key Naming Convention</Typography>
       </CardContent>
@@ -277,7 +279,7 @@ function KeyNamingPane() {
           <code>TheCatch</code>
         </Typography>
       </CardContent>
-    </CardThemed>
+    </CardDark>
   )
 }
 
@@ -312,11 +314,11 @@ function StatKeyPane() {
       <Typography gutterBottom variant="h4">
         StatKey
       </Typography>
-      <CardThemed>
+      <CardDark>
         <CardContent>
           <CodeBlock text={statKeysCode} />
         </CardContent>
-      </CardThemed>
+      </CardDark>
     </>
   )
 }
@@ -333,11 +335,11 @@ function ArtifactSetKeyPane() {
       <Typography gutterBottom variant="h4">
         ArtifactSetKey
       </Typography>
-      <CardThemed>
+      <CardDark>
         <CardContent>
           <CodeBlock text={artSetKeysCode} />
         </CardContent>
-      </CardThemed>
+      </CardDark>
     </>
   )
 }
@@ -364,11 +366,11 @@ function CharacterKeyPane() {
       <Typography gutterBottom variant="h4">
         CharacterKey
       </Typography>
-      <CardThemed>
+      <CardDark>
         <CardContent>
           <CodeBlock text={charKeysCode} />
         </CardContent>
-      </CardThemed>
+      </CardDark>
     </>
   )
 }
@@ -383,11 +385,11 @@ function WeaponKeyPane() {
       <Typography gutterBottom variant="h4">
         WeaponKey
       </Typography>
-      <CardThemed>
+      <CardDark>
         <CardContent>
           <CodeBlock text={weaponKeysCode} />
         </CardContent>
-      </CardThemed>
+      </CardDark>
     </>
   )
 }
@@ -402,7 +404,7 @@ function MaterialKeyPane() {
       <Typography gutterBottom variant="h4">
         MaterialKey
       </Typography>
-      <CardThemed>
+      <CardDark>
         <CardContent>
           <Typography gutterBottom>
             The item names are taken from the english translation, and then
@@ -414,7 +416,7 @@ function MaterialKeyPane() {
           </Typography>
           <CodeBlock text={weaponKeysCode} />
         </CardContent>
-      </CardThemed>
+      </CardDark>
     </>
   )
 }
@@ -425,7 +427,7 @@ function VersionHistoryPane() {
       <Typography gutterBottom variant="h4">
         Version History
       </Typography>
-      <CardThemed>
+      <CardDark>
         <CardContent>
           <Typography>Version 1</Typography>
         </CardContent>
@@ -436,8 +438,8 @@ function VersionHistoryPane() {
             artifact fields.
           </Typography>
         </CardContent>
-      </CardThemed>
-      <CardThemed>
+      </CardDark>
+      <CardDark>
         <CardContent>
           <Typography>Version 2</Typography>
         </CardContent>
@@ -448,7 +450,7 @@ function VersionHistoryPane() {
             fields remain the same. V2 is backwards compatible with V1.
           </Typography>
         </CardContent>
-      </CardThemed>
+      </CardDark>
     </Box>
   )
 }

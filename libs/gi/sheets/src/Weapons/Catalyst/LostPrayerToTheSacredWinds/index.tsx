@@ -1,6 +1,7 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   input,
   lookup,
@@ -15,6 +16,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'LostPrayerToTheSacredWinds'
+const data_gen = allStats.weapon.data[key]
 const ele_dmg_s = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 
 const [condPassivePath, condPassive] = cond(key, 'BoundlessBlessing')
@@ -34,7 +36,7 @@ const eleDmgStacks = Object.fromEntries(
   ])
 )
 
-export const data = dataObjForWeaponSheet(key, {
+export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     moveSPD_,
     ...Object.fromEntries(
@@ -60,4 +62,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

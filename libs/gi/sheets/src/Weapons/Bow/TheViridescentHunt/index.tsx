@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
@@ -14,6 +15,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'TheViridescentHunt'
+const data_gen = allStats.weapon.data[key]
 
 const dmgPerc_s = [-1, 0.4, 0.5, 0.6, 0.7, 0.8]
 const dmg = equal(
@@ -26,7 +28,7 @@ const dmg = equal(
   )
 )
 
-const data = dataObjForWeaponSheet(key, undefined, { dmg })
+const data = dataObjForWeaponSheet(key, data_gen, undefined, { dmg })
 const sheet: IWeaponSheet = {
   document: [
     {
@@ -40,4 +42,4 @@ const sheet: IWeaponSheet = {
   ],
 }
 
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

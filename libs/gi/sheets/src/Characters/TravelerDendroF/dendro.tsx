@@ -3,6 +3,7 @@ import { range } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   CharacterSheetKey,
+  ElementKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -20,6 +21,7 @@ import {
 import type { Palette } from '@mui/material'
 import { cond, st, stg } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
+import Traveler from '../Traveler'
 import { charTemplates } from '../charTemplates'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 
@@ -28,8 +30,9 @@ export default function dendro(
   charKey: CharacterKey,
   dmgForms: { [key: string]: DisplaySub }
 ) {
+  const elementKey: ElementKey = 'dendro'
   const condCharKey = 'TravelerDendro'
-  const ct = charTemplates(key)
+  const ct = charTemplates(key, Traveler.data_gen.weaponType)
 
   const skillParam_gen = allStats.char.skillParam.TravelerDendroF
   let s = 0,
@@ -146,21 +149,28 @@ export default function dendro(
   const skillC3 = greaterEq(input.constellation, 3, 3)
   const burstC5 = greaterEq(input.constellation, 5, 3)
 
-  const data = dataObjForCharacterSheet(charKey, dmgFormulas, {
-    premod: {
-      burstBoost: burstC5,
-      skillBoost: skillC3,
-      skill_dmg_: a4_skill_dmg_,
-      burst_dmg_: a4_burst_dmg_,
-    },
-    teamBuff: {
+  const data = dataObjForCharacterSheet(
+    charKey,
+    elementKey,
+    undefined,
+    Traveler.data_gen,
+    dmgFormulas,
+    {
       premod: {
-        eleMas: a1_eleMas,
-        dendro_dmg_: c6_dendro_dmg_,
-        ...c6_ele_dmg_,
+        burstBoost: burstC5,
+        skillBoost: skillC3,
+        skill_dmg_: a4_skill_dmg_,
+        burst_dmg_: a4_burst_dmg_,
       },
-    },
-  })
+      teamBuff: {
+        premod: {
+          eleMas: a1_eleMas,
+          dendro_dmg_: c6_dendro_dmg_,
+          ...c6_ele_dmg_,
+        },
+      },
+    }
+  )
 
   const talent: TalentSheet = {
     skill: ct.talentTem('skill', [
@@ -317,5 +327,6 @@ export default function dendro(
   return {
     talent,
     data,
+    elementKey,
   }
 }

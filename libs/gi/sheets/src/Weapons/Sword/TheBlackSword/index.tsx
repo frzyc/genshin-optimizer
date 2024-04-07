@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -13,6 +14,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'TheBlackSword'
+const data_gen = allStats.weapon.data[key]
 
 const autoSrc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const hpRegenSrc = [-1, 0.6, 0.7, 0.8, 0.9, 1]
@@ -31,6 +33,7 @@ const heal = equal(
 
 const data = dataObjForWeaponSheet(
   key,
+  data_gen,
   {
     premod: {
       normal_dmg_,
@@ -57,4 +60,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

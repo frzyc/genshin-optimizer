@@ -1,5 +1,6 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   input,
   lookup,
@@ -13,6 +14,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'AlleyHunter'
+const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 const dmgInc = [-1, 0.02, 0.025, 0.03, 0.035, 0.04]
 
@@ -27,7 +29,7 @@ const all_dmg_ = lookup(
   naught
 )
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     all_dmg_,
   },
@@ -57,4 +59,4 @@ const sheet: IWeaponSheet = {
   ],
 }
 
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

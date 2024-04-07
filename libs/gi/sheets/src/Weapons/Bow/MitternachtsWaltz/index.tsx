@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, input, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -6,6 +7,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'MitternachtsWaltz'
+const data_gen = allStats.weapon.data[key]
 
 const skill_dmg_s = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const normal_dmg_s = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
@@ -24,7 +26,7 @@ const normal_dmg_ = equal(
   subscript(input.weapon.refinement, normal_dmg_s)
 )
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     skill_dmg_,
     normal_dmg_,
@@ -75,4 +77,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

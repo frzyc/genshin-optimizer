@@ -7,13 +7,11 @@ import {
   BootstrapTooltip,
   CardThemed,
   DropdownButton,
-  InfoTooltip,
   ModalWrapper,
   SqBadge,
   useConstObj,
 } from '@genshin-optimizer/common/ui'
 import {
-  bulkCatTotal,
   notEmpty,
   objKeyMap,
   objPathValue,
@@ -31,39 +29,19 @@ import type {
 } from '@genshin-optimizer/gi/db'
 import { defThreads, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
-  TeamCharacterContext,
   useDBMeta,
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import {
-  ArtifactCardPico,
-  ArtifactLevelSlider,
-  BuildDisplayItem,
   CharIconSide,
-  CharacterCardEquipmentRow,
-  CharacterCardHeader,
-  CharacterCardHeaderContent,
-  CharacterCardStats,
-  CharacterName,
-  DataContext,
-  GraphContext,
-  HitModeToggle,
-  NoArtWarning,
-  OptimizationTargetContext,
-  ReactionToggle,
-  getTeamData,
-  useGlobalError,
-  useTeamData,
-} from '@genshin-optimizer/gi/ui'
-import {
   resolveInfo,
   uiDataForTeam,
   type UIData,
-} from '@genshin-optimizer/gi/uidata'
+} from '@genshin-optimizer/gi/ui'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import {
@@ -107,6 +85,29 @@ import React, {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import ArtifactCardPico from '../../../../Components/Artifact/ArtifactCardPico'
+import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
+import CardLight from '../../../../Components/Card/CardLight'
+import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
+import {
+  CharacterCardHeader,
+  CharacterCardHeaderContent,
+} from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
+import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
+import {
+  HitModeToggle,
+  ReactionToggle,
+} from '../../../../Components/HitModeEditor'
+import InfoTooltip from '../../../../Components/InfoTooltip'
+import NoArtWarning from '../../../../Components/NoArtWarning'
+import { CharacterContext } from '../../../../Context/CharacterContext'
+import { DataContext } from '../../../../Context/DataContext'
+import { GraphContext } from '../../../../Context/GraphContext'
+import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
+import useGlobalError from '../../../../ReactHooks/useGlobalError'
+import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
+import { bulkCatTotal } from '../../../../Util/totalUtils'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
 import AllowChar from './Components/AllowChar'
@@ -115,6 +116,7 @@ import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle'
 import BonusStatsCard from './Components/BonusStatsCard'
 import type { BuildStatus } from './Components/BuildAlert'
 import BuildAlert from './Components/BuildAlert'
+import BuildDisplayItem from './Components/BuildDisplayItem'
 import ChartCard from './Components/ChartCard'
 import ExcludeArt from './Components/ExcludeArt'
 import MainStatSelectionCard from './Components/MainStatSelectionCard'
@@ -132,6 +134,7 @@ export default function TabBuild() {
     teamId,
     team: { loadoutData },
   } = useContext(TeamCharacterContext)
+  const { characterSheet } = useContext(CharacterContext)
   const database = useDatabase()
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { gender } = useDBMeta()
@@ -559,9 +562,7 @@ export default function TabBuild() {
     throwGlobalError,
   ])
 
-  const characterName = (
-    <CharacterName characterKey={characterKey} gender={gender} />
-  )
+  const characterName = characterSheet?.name ?? 'Character Name'
 
   const setPlotBase = useCallback(
     (plotBase: string[] | undefined) => {
@@ -628,7 +629,7 @@ export default function TabBuild() {
           />
 
           {/* Main Stat Filters */}
-          <CardThemed bgt="light">
+          <CardLight>
             <CardContent>
               <Typography
                 sx={{ fontWeight: 'bold' }}
@@ -663,7 +664,7 @@ export default function TabBuild() {
               disabled={generatingBuilds}
               filteredArtIdMap={filteredArtIdMap}
             />
-          </CardThemed>
+          </CardLight>
         </Grid>
 
         {/* 3 */}
@@ -912,7 +913,7 @@ export default function TabBuild() {
           showTooltip={!optimizationTarget}
         />
       </Box>
-      <CardThemed bgt="light">
+      <CardLight>
         <CardContent>
           <Box display="flex" alignItems="center" gap={1} mb={1}>
             <Typography sx={{ flexGrow: 1 }}>
@@ -961,7 +962,7 @@ export default function TabBuild() {
             </Grid>
           </Grid>
         </CardContent>
-      </CardThemed>
+      </CardLight>
 
       <OptimizationTargetContext.Provider value={optimizationTarget}>
         {graphBuilds && (
@@ -1004,7 +1005,7 @@ const LevelFilter = memo(function LevelFilter({
   const database = useDatabase()
   const { t } = useTranslation('page_character_optimize')
   return (
-    <CardThemed bgt="light">
+    <CardLight>
       <CardContent sx={{ display: 'flex', gap: 1 }}>
         <Typography sx={{ fontWeight: 'bold' }}>{t`levelFilter`}</Typography>
         <SqBadge color="info">{levelTotal}</SqBadge>
@@ -1029,7 +1030,7 @@ const LevelFilter = memo(function LevelFilter({
           disabled={disabled}
         />
       </CardContent>
-    </CardThemed>
+    </CardLight>
   )
 })
 
@@ -1187,7 +1188,7 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
   } = useContext(TeamCharacterContext)
 
   const toTc = () => {
-    const weaponTypeKey = getCharStat(characterKey).weaponType
+    const weaponTypeKey = getCharData(characterKey).weaponType
     const weapon = database.teams.getLoadoutWeapon(loadoutDatum)
     const buildTcId = database.teamChars.newBuildTcFromBuild(
       teamCharId,

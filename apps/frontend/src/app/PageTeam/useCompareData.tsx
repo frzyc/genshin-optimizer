@@ -1,18 +1,13 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedWeapon } from '@genshin-optimizer/gi/db'
-import {
-  TeamCharacterContext,
-  useDBMeta,
-  useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
-import {
-  getBuildTcArtifactData,
-  getTeamDataCalc,
-} from '@genshin-optimizer/gi/ui'
-import type { UIData } from '@genshin-optimizer/gi/uidata'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type { UIData } from '@genshin-optimizer/gi/ui'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
+import { TeamCharacterContext } from '../Context/TeamCharacterContext'
+import { getTeamDataCalc } from '../ReactHooks/useTeamData'
+import { getArtifactData } from './CharacterDisplay/Tabs/TabTheorycraft/optimizeTc'
 
 /**
  * generate data for the "compare build function", usually used in conjunction with `DataContext.compareData`
@@ -94,7 +89,7 @@ export default function useCompareData(): undefined | UIData {
         case 'tc': {
           const buildTc = database.buildTcs.get(compareBuildTcId)!
           return {
-            overrideArt: getBuildTcArtifactData(buildTc),
+            overrideArt: getArtifactData(buildTc),
             overrideWeapon: {
               ...buildTc.weapon,
               location: charKeyToLocCharKey(characterKey),

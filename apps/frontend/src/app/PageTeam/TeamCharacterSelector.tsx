@@ -2,7 +2,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { CharIconSide, CharacterName } from '@genshin-optimizer/gi/ui'
 import PersonIcon from '@mui/icons-material/Person'
 import { Box, Tab, Tabs } from '@mui/material'
@@ -27,7 +27,7 @@ export default function TeamCharacterSelector({
       if (!loadoutDatum) return
       const teamChar = database.teamChars.get(loadoutDatum.teamCharId)
       if (!teamChar) return
-      return getCharEle(teamChar.key)
+      return getCharSheet(teamChar.key).elementKey
     }
   )
   const selectedIndex = loadoutData.findIndex(

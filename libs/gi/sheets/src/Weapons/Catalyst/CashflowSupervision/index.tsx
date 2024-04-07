@@ -58,7 +58,7 @@ const atkSPD_ = equal(
   subscript(input.weapon.refinement, atkSPD_arr)
 )
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,
     normal_dmg_,
@@ -110,4 +110,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

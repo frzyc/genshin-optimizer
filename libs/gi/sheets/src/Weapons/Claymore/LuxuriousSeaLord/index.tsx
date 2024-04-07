@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
@@ -14,6 +15,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'LuxuriousSeaLord'
+const data_gen = allStats.weapon.data[key]
 
 const burst_dmg_Src = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const dmg_Src = [-1, 1, 1.25, 1.5, 1.75, 2]
@@ -33,6 +35,7 @@ const dmg = equal(
 
 const data = dataObjForWeaponSheet(
   key,
+  data_gen,
   {
     premod: {
       burst_dmg_,
@@ -63,4 +66,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

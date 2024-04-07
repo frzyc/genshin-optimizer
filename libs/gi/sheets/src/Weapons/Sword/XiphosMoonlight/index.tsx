@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -15,6 +16,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'XiphosMoonlight'
+const data_gen = allStats.weapon.data[key]
 
 const enerRech_arr = [-1, 0.00036, 0.00045, 0.00054, 0.00063, 0.00072]
 const selfEnerRech_ = equal(
@@ -38,6 +40,7 @@ const teamEnerRech_ = unequal(input.charKey, target.charKey, teamEnerRech_disp)
 
 const data = dataObjForWeaponSheet(
   key,
+  data_gen,
   {
     total: {
       enerRech_: selfEnerRech_,
@@ -78,4 +81,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

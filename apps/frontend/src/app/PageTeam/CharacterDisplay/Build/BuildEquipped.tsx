@@ -1,18 +1,15 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { type ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
-import {
-  CharacterContext,
-  TeamCharacterContext,
-  useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
-import {
-  ArtifactCardNano,
-  BuildCard,
-  WeaponCardNano,
-} from '@genshin-optimizer/gi/ui'
-import { Grid } from '@mui/material'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import { useContext } from 'react'
+import { CharacterContext } from '../../../Context/CharacterContext'
+import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
+
+import { BuildCard } from './BuildCard'
+
+import { type ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import { Grid } from '@mui/material'
+import ArtifactCardNano from '../../../Components/Artifact/ArtifactCardNano'
+import WeaponCardNano from '../../../Components/Weapon/WeaponCardNano'
 export function BuildEquipped({ active = false }: { active?: boolean }) {
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const {
@@ -29,7 +26,7 @@ export function BuildEquipped({ active = false }: { active?: boolean }) {
       artifactIds: equippedArtifacts,
       weaponId: equippedWeapon,
     })
-  const weaponTypeKey = getCharStat(characterKey).weaponType
+  const weaponTypeKey = getCharData(characterKey).weaponType
   const copyToTc = () => {
     const newBuildTcId = database.teamChars.newBuildTcFromBuild(
       teamCharId,
@@ -67,19 +64,15 @@ function BuildEquip({
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const weaponTypeKey = getCharStat(characterKey).weaponType
+  const weaponTypeKey = getCharData(characterKey).weaponType
   return (
     <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 2, lg: 3, xl: 3 }}>
       <Grid item xs={1}>
-        <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
-          <WeaponCardNano weaponId={weaponId} weaponTypeKey={weaponTypeKey} />
-        </CardThemed>
+        <WeaponCardNano weaponId={weaponId} weaponTypeKey={weaponTypeKey} />
       </Grid>
       {Object.entries(artifactIds).map(([slotKey, id]) => (
         <Grid item key={id || slotKey} xs={1}>
-          <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
-            <ArtifactCardNano artifactId={id} slotKey={slotKey} />
-          </CardThemed>
+          <ArtifactCardNano artifactId={id} slotKey={slotKey} />
         </Grid>
       ))}
     </Grid>

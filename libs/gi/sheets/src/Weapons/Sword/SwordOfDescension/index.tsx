@@ -1,6 +1,7 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
@@ -18,6 +19,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'SwordOfDescension'
+const data_gen = allStats.weapon.data[key]
 
 // Check equipped character is Traveler
 const atk = lookup(
@@ -35,6 +37,7 @@ const dmg_ = equal(
 
 const data = dataObjForWeaponSheet(
   key,
+  data_gen,
   {
     premod: {
       atk,
@@ -59,4 +62,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   greaterEq,
   input,
@@ -12,6 +13,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'BalladOfTheFjords'
+const data_gen = allStats.weapon.data[key]
 
 const eleMasArr = [-1, 120, 150, 180, 210, 240]
 const eleMas = greaterEq(
@@ -20,7 +22,7 @@ const eleMas = greaterEq(
   subscript(input.weapon.refinement, eleMasArr)
 )
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     eleMas,
   },
@@ -39,4 +41,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

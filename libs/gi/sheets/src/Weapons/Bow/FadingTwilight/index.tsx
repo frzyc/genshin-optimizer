@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, lookup, naught, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -6,6 +7,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'FadingTwilight'
+const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const [condStatePath, condState] = cond(key, 'state')
@@ -25,7 +27,7 @@ const state_dmg_dict = {
 }
 const state_dmg_ = lookup(condState, state_dmg_dict, naught)
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     all_dmg_: state_dmg_,
   },
@@ -50,4 +52,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

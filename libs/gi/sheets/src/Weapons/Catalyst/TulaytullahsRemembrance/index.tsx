@@ -1,5 +1,6 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   input,
@@ -16,6 +17,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'TulaytullahsRemembrance'
+const data_gen = allStats.weapon.data[key]
 const atkSPD_arr = [-1, 0.1, 0.125, 0.15, 0.175, 0.2]
 const time_normal_dmg_arr = [-1, 0.048, 0.06, 0.072, 0.084, 0.096]
 const time_normal_dmg_stacksArr = range(1, 12)
@@ -76,7 +78,7 @@ const finalNormal_dmg_ = min(
   sum(time_normal_dmg_, hit_normal_dmg_)
 )
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atkSPD_,
     normal_dmg_: finalNormal_dmg_,
@@ -150,4 +152,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

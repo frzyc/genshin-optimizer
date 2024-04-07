@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -13,6 +14,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'KingsSquire'
+const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'passive')
 const eleMasArr = [-1, 60, 80, 100, 120, 140]
@@ -36,6 +38,7 @@ const dmg = equal(
 
 const data = dataObjForWeaponSheet(
   key,
+  data_gen,
   {
     premod: {
       eleMas,
@@ -83,4 +86,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

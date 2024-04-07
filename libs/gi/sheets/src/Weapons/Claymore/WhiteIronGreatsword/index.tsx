@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -13,6 +14,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'WhiteIronGreatsword'
+const data_gen = allStats.weapon.data[key]
 
 const hpRegen = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 const [condPath, condNode] = cond(key, 'CullTheWeak')
@@ -31,7 +33,7 @@ const heal = equal(
   )
 )
 
-export const data = dataObjForWeaponSheet(key, undefined, { heal })
+export const data = dataObjForWeaponSheet(key, data_gen, undefined, { heal })
 const sheet: IWeaponSheet = {
   document: [
     {
@@ -51,4 +53,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

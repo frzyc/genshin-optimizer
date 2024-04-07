@@ -1,4 +1,5 @@
 import { type WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -14,6 +15,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'UrakuMisugiri'
+const data_gen = allStats.weapon.data[key]
 
 const normal_dmg_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
 const skill_dmg_arr = [-1, 0.24, 0.3, 0.36, 0.42, 0.48]
@@ -39,7 +41,7 @@ const teamGeo_skill_dmg_ = equal(
 
 const def_ = subscript(input.weapon.refinement, def_arr)
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     normal_dmg_: sum(normal_dmg_, teamGeo_normal_dmg_),
     skill_dmg_: sum(skill_dmg_, teamGeo_skill_dmg_),
@@ -88,4 +90,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)
