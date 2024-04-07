@@ -69,16 +69,14 @@ export function Translate({
     : t(textKey, { returnObjects: true })
   if (typeof textObj === 'string')
     return (
-      <span>
-        <Trans
-          i18nKey={textKey}
-          t={t}
-          components={useBadge ? badgeComponents : textComponents}
-          values={values}
-        >
-          {children}
-        </Trans>
-      </span>
+      <Trans
+        i18nKey={textKey}
+        t={t}
+        components={useBadge ? badgeComponents : textComponents}
+        values={values}
+      >
+        {children}
+      </Trans>
     )
 
   return (
