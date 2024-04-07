@@ -22,7 +22,7 @@ import type {
 } from '@genshin-optimizer/gi/db'
 import { allAllowLocationsState } from '@genshin-optimizer/gi/db'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -200,10 +200,11 @@ export default function AllowChar({
             charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
         )
         .forEach(([ck]) => {
-          const eleKey = getCharEle(ck)
-          const charStat = getCharStat(ck)
-          const weaponTypeKey = charStat.weaponType
-          const characterRarityKey = charStat.rarity
+          const sheet = getCharSheet(ck, database.gender)
+
+          const eleKey = sheet.elementKey
+          const weaponTypeKey = sheet.weaponTypeKey
+          const characterRarityKey = sheet.rarity
 
           ctMap.elementTotals[eleKey].total++
           if (charKeyMap[ck]) ctMap.elementTotals[eleKey].current++
@@ -243,7 +244,14 @@ export default function AllowChar({
           }
         })
     )
-  }, [charKeyMap, characterKey, database, excludedLocations, locList])
+  }, [
+    charKeyMap,
+    characterKey,
+    database.chars.data,
+    database.gender,
+    excludedLocations,
+    locList,
+  ])
 
   useEffect(
     () => database.charMeta.followAny((_) => forceUpdate()),

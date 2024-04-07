@@ -1,7 +1,6 @@
 export * from './lib/BorrowManager'
 export * from './lib/array'
 export * from './lib/color'
-export * from './lib/isDev'
 export * from './lib/numDisplay'
 export * from './lib/number'
 export * from './lib/object'

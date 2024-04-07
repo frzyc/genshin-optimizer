@@ -7,7 +7,7 @@ import {
   type ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import { useBuild, useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import { ArtifactSlotName, CharacterName } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
@@ -83,7 +83,7 @@ export default function BuildReal({
     //TODO: prompt user for removal
     database.builds.remove(buildId)
   }
-  const weaponTypeKey = getCharStat(characterKey).weaponType
+  const weaponTypeKey = getCharData(characterKey).weaponType
   const copyToTc = () => {
     const newBuildTcId = database.teamChars.newBuildTcFromBuild(
       teamCharId,
@@ -230,7 +230,7 @@ function BuildEditor({
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const weaponTypeKey = getCharStat(characterKey).weaponType
+  const weaponTypeKey = getCharData(characterKey).weaponType
   const database = useDatabase()
   const build = useBuild(buildId)!
 

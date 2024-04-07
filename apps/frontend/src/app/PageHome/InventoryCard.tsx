@@ -7,8 +7,8 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle, getWeaponStat } from '@genshin-optimizer/gi/stats'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { getCharSheet, getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {
   ElementIcon,
   FlowerIcon,
@@ -34,21 +34,22 @@ import CardLight from '../Components/Card/CardLight'
 export default function InventoryCard() {
   const { t } = useTranslation(['page_home', 'ui'])
   const database = useDatabase()
+  const { gender } = useDBMeta()
   const { characterTally, characterTotal } = useMemo(() => {
     const chars = database.chars.keys
     const tally = objKeyMap(allElementKeys, () => 0)
     chars.forEach((ck) => {
-      const elementKey = getCharEle(ck)
+      const elementKey = getCharSheet(ck, gender).elementKey
       tally[elementKey] = tally[elementKey] + 1
     })
     return { characterTally: tally, characterTotal: chars.length }
-  }, [database])
+  }, [database, gender])
 
   const { weaponTally, weaponTotal } = useMemo(() => {
     const weapons = database.weapons.values
     const tally = objKeyMap(allWeaponTypeKeys, () => 0)
     weapons.forEach((wp) => {
-      const type = getWeaponStat(wp.key).weaponType
+      const type = getWeaponSheet(wp.key).weaponType
       tally[type] = tally[type] + 1
     })
     return { weaponTally: tally, weaponTotal: weapons.length }

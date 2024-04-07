@@ -18,7 +18,7 @@ import {
   type InfusionAuraElementKey,
   type MultiOptHitModeKey,
 } from '@genshin-optimizer/gi/consts'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import type { BuildTc, ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -265,7 +265,7 @@ export class TeamCharacterDataManager extends DataManager<
     if (!build.weaponId) {
       const teamChar = this.database.teamChars.get(teamCharId)
       if (!teamChar) return
-      const weaponTypeKey = getCharStat(teamChar.key).weaponType
+      const weaponTypeKey = getCharData(teamChar.key).weaponType
       const defWeaponKey = defaultInitialWeaponKey(weaponTypeKey)
 
       build.weaponId = this.database.weapons.keys.find((weaponId) => {

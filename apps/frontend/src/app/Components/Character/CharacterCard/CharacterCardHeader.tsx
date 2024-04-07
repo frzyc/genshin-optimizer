@@ -7,7 +7,8 @@ import {
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import type { RollColorKey } from '@genshin-optimizer/gi/ui'
 import { CharacterName, SillyContext } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
@@ -28,7 +29,7 @@ export function CharacterCardHeader({
 }) {
   const { gender } = useDBMeta()
   const { silly } = useContext(SillyContext)
-  const charStat = getCharStat(characterKey)
+  const charData = getCharData(characterKey)
 
   const actionWrapperFunc = useCallback(
     (children) => (
@@ -48,7 +49,7 @@ export function CharacterCardHeader({
       <Box
         display="flex"
         position="relative"
-        className={!banner ? `grad-${charStat.rarity}star` : undefined}
+        className={!banner ? `grad-${charData.rarity}star` : undefined}
         sx={{
           '&::before': {
             content: '""',
@@ -109,7 +110,7 @@ export function CharacterCardHeaderContent({
   const tAuto = data.get(input.total.auto).value
   const tSkill = data.get(input.total.skill).value
   const tBurst = data.get(input.total.burst).value
-  const charStat = getCharStat(characterKey)
+  const charData = getCharData(characterKey)
 
   return (
     <>
@@ -167,7 +168,7 @@ export function CharacterCardHeaderContent({
         />
       </Box>
       <Typography variant="h6" lineHeight={1}>
-        <StarsDisplay stars={charStat.rarity} colored inline />
+        <StarsDisplay stars={charData.rarity} colored inline />
       </Typography>
     </>
   )
@@ -179,7 +180,8 @@ export function HeaderContentNew({
   characterKey: CharacterKey
 }) {
   const { gender } = useDBMeta()
-  const charStat = getCharStat(characterKey)
+  const charData = getCharData(characterKey)
+  const sheet = getCharSheet(characterKey, gender)
   return (
     <>
       <Chip
@@ -189,7 +191,7 @@ export function HeaderContentNew({
           </Typography>
         }
         size="small"
-        color={getCharEle(characterKey)}
+        color={sheet.elementKey}
         sx={{ opacity: 0.85 }}
       />
       <Box mt={1}>
@@ -198,7 +200,7 @@ export function HeaderContentNew({
         </Typography>
       </Box>
       <Typography mt={1.5}>
-        <StarsDisplay stars={charStat.rarity} colored />
+        <StarsDisplay stars={charData.rarity} colored />
       </Typography>
     </>
   )

@@ -31,38 +31,13 @@ export type TalentSheet = Partial<
 >
 
 export type ICharacterSheet = {
-  /**
-   * @deprecated
-   */
   key: CharacterKey
-  /**
-   * @deprecated <CharacterName/>
-   */
   name: ReactNode
-  /**
-   * @deprecated getCharData().rarity
-   */
   rarity: RarityKey
-  /**
-   * @deprecated getCharData().weaponType
-   */
   weaponTypeKey: WeaponTypeKey
-  /**
-   * @deprecated
-   */
   gender: string
-  /**
-   * @deprecated <CharacterConstellationName/>
-   */
   constellationName: ReactNode
-  /**
-   * @deprecated <CharacterTitle/>
-   */
   title: ReactNode
-  /**
-   * @deprecated getCharEle()
-   */
   elementKey: ElementKey
-
   talent: TalentSheet
 }

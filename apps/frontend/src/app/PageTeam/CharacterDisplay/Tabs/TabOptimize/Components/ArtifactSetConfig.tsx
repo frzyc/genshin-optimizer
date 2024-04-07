@@ -19,9 +19,8 @@ import {
 } from '@genshin-optimizer/gi/db'
 import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import { getArtSheet, setKeysByRarities } from '@genshin-optimizer/gi/sheets'
-import { getArtSetStat } from '@genshin-optimizer/gi/stats'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
-import { ArtifactSetName, Translate, UIData } from '@genshin-optimizer/gi/ui'
+import { Translate, UIData } from '@genshin-optimizer/gi/ui'
 import { constant } from '@genshin-optimizer/gi/wr'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
@@ -548,7 +547,6 @@ function ArtifactSetCard({
   const allow4 = !setExclusionSet.includes(4)
   const slots = getNumSlots(slotCount)
   const sheet = getArtSheet(setKey)
-  const artStat = getArtSetStat(setKey)
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {
     if (!allow4) return []
@@ -562,7 +560,7 @@ function ArtifactSetCard({
         sx={{ height: '100%', opacity: slots < 2 ? '50%' : undefined }}
       >
         <Box
-          className={`grad-${Math.max(...artStat.rarities)}star`}
+          className={`grad-${sheet.rarity[0]}star`}
           width="100%"
           sx={{ display: 'flex' }}
         >
@@ -580,28 +578,20 @@ function ArtifactSetCard({
               justifyContent: 'center',
             }}
           >
-            <Typography variant="h6">
-              <ArtifactSetName setKey={setKey} />
-            </Typography>
+            <Typography variant="h6">{sheet.name ?? ''}</Typography>
             <Box>
               {/* If there is ever a 2-Set conditional, we will need to change this */}
-              <Typography
-                variant="subtitle1"
-                display="flex"
-                gap={1}
-                alignItems="center"
-              >
-                {artStat.rarities
-                  .filter((r) => r >= 3)
-                  .map((ns) => (
-                    <Box
-                      component="span"
-                      sx={{ display: 'inline-flex', alignItems: 'center' }}
-                      key={ns}
-                    >
-                      {ns} <StarRoundedIcon fontSize="inherit" />
-                    </Box>
-                  ))}
+              <Typography variant="subtitle1">
+                {sheet.rarity.map((ns, i) => (
+                  <Box
+                    component="span"
+                    sx={{ display: 'inline-flex', alignItems: 'center' }}
+                    key={ns}
+                  >
+                    {ns} <StarRoundedIcon fontSize="inherit" />{' '}
+                    {i < sheet.rarity.length - 1 ? '/ ' : null}
+                  </Box>
+                ))}{' '}
                 <InfoTooltipInline
                   title={
                     <Box>

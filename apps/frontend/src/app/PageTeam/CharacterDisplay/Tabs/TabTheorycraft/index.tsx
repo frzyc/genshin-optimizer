@@ -1,13 +1,13 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CustomNumberInput } from '@genshin-optimizer/common/ui'
-import { isDev, objMap, toPercent } from '@genshin-optimizer/common/util'
+import { objMap, toPercent } from '@genshin-optimizer/common/util'
 import {
   artSubstatRollData,
   type SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
 import { useBuildTc, useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
@@ -28,6 +28,7 @@ import { DataContext } from '../../../../Context/DataContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import { getTeamDataCalc } from '../../../../ReactHooks/useTeamData'
+import { isDev } from '../../../../Util/Util'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
@@ -69,7 +70,7 @@ export default function TabTheorycraft() {
     () => ({ buildTc, setBuildTc }),
     [buildTc, setBuildTc]
   )
-  const weaponTypeKey = getCharStat(characterKey).weaponType
+  const weaponTypeKey = getCharData(characterKey).weaponType
 
   const dataContextValue = useContext(DataContext)
   const compareData = useCompareData()

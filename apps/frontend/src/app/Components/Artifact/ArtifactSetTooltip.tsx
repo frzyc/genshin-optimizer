@@ -1,6 +1,5 @@
 import { BootstrapTooltip, SqBadge } from '@genshin-optimizer/common/ui'
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { getArtSheet } from '@genshin-optimizer/gi/sheets'
+import type { ArtifactSheet } from '@genshin-optimizer/gi/sheets'
 import { Translate } from '@genshin-optimizer/gi/ui'
 import { Box, Skeleton, Stack, Typography } from '@mui/material'
 import { Suspense } from 'react'
@@ -8,17 +7,22 @@ import { useTranslation } from 'react-i18next'
 
 export default function ArtifactSetTooltip({
   children,
-  setKey,
+  artifactSheet,
   numInSet = 5,
 }: {
   children: JSX.Element
-  setKey: ArtifactSetKey
+  artifactSheet: ArtifactSheet
   numInSet?: number
 }) {
   return (
     <BootstrapTooltip
       placement="top"
-      title={<ArtifactSetTooltipContent setKey={setKey} numInSet={numInSet} />}
+      title={
+        <ArtifactSetTooltipContent
+          artifactSheet={artifactSheet}
+          numInSet={numInSet}
+        />
+      }
       disableInteractive
     >
       {children}
@@ -26,29 +30,28 @@ export default function ArtifactSetTooltip({
   )
 }
 export function ArtifactSetTooltipContent({
-  setKey,
+  artifactSheet,
   numInSet = 5,
 }: {
-  setKey: ArtifactSetKey
+  artifactSheet: ArtifactSheet
   numInSet?: number
 }) {
   return (
     <Suspense
       fallback={<Skeleton variant="rectangular" width={100} height={100} />}
     >
-      <SetToolTipTitle numInSet={numInSet} setKey={setKey} />
+      <SetToolTipTitle artifactSheet={artifactSheet} numInSet={numInSet} />
     </Suspense>
   )
 }
 function SetToolTipTitle({
-  setKey,
+  artifactSheet,
   numInSet = 5,
 }: {
-  setKey: ArtifactSetKey
+  artifactSheet: ArtifactSheet
   numInSet?: number
 }) {
   const { t } = useTranslation('sheet')
-  const artifactSheet = getArtSheet(setKey)
   return (
     <Stack spacing={2} sx={{ p: 1 }}>
       {Object.keys(artifactSheet.setEffects).map((setKey) => (
@@ -61,7 +64,7 @@ function SetToolTipTitle({
           </Typography>
           <Typography>
             <Translate
-              ns={`artifact_${setKey}_gen`}
+              ns={`artifact_${artifactSheet.key}_gen`}
               key18={`setEffects.${setKey}`}
             />
           </Typography>

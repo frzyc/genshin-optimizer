@@ -1,7 +1,7 @@
 import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
@@ -52,7 +52,7 @@ export default function EquipBuildModal({
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const weaponTypeKey = getCharStat(characterKey).weaponType
+  const weaponTypeKey = getCharData(characterKey).weaponType
 
   const toEquip = () => {
     if (copyCurrent) {

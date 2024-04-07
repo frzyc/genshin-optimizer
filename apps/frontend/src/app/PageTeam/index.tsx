@@ -1,9 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import {
-  colorToRgbaString,
-  hexToColor,
-  shouldShowDevComponents,
-} from '@genshin-optimizer/common/util'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
@@ -14,7 +10,7 @@ import {
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
+import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
@@ -35,6 +31,7 @@ import {
 } from '../Context/TeamCharacterContext'
 import { useTeamDataNoContext } from '../ReactHooks/useTeamData'
 import useTitle from '../ReactHooks/useTitle'
+import { shouldShowDevComponents } from '../Util/Util'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
@@ -186,7 +183,8 @@ function Page({ teamId }: { teamId: string }) {
       <CardThemed>
         <Box
           sx={(theme) => {
-            const elementKey = characterKey && getCharEle(characterKey)
+            const elementKey =
+              characterKey && getCharSheet(characterKey).elementKey
             if (!elementKey) return {}
             const hex = theme.palette[elementKey].main as string
             const color = hexToColor(hex)
@@ -225,17 +223,23 @@ function Page({ teamId }: { teamId: string }) {
   )
 }
 function InnerContent({ tab }: { tab: string }) {
+  const { gender } = useDBMeta()
   const {
     teamCharId,
     teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
+  const characterSheet = characterKey
+    ? getCharSheet(characterKey, gender)
+    : undefined
   const character = useCharacter(characterKey as CharacterKey)
   const CharacterContextValue: CharacterContextObj | undefined = useMemo(
     () =>
-      character && {
+      character &&
+      characterSheet && {
         character,
+        characterSheet,
       },
-    [character]
+    [character, characterSheet]
   )
 
   const [chartData, setChartDataState] = useState<ChartData | undefined>(

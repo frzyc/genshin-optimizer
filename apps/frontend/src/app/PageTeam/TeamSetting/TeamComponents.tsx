@@ -199,10 +199,12 @@ export function TeammateDisplay({
     [teamId, team, teamCharId, teamChar, dataBundle, loadoutDatum]
   )
   const characterContext: CharacterContextObj | undefined = useMemo(
-    () => ({
-      character,
-    }),
-    [character]
+    () =>
+      dataBundle && {
+        character,
+        characterSheet: dataBundle.characterSheet,
+      },
+    [character, dataBundle]
   )
   const teamMateDataContext: dataContextObj | undefined = useMemo(
     () =>

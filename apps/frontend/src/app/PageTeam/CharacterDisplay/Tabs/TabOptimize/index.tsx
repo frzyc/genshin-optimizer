@@ -35,10 +35,9 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import {
   CharIconSide,
-  CharacterName,
   resolveInfo,
   uiDataForTeam,
   type UIData,
@@ -101,6 +100,7 @@ import {
 } from '../../../../Components/HitModeEditor'
 import InfoTooltip from '../../../../Components/InfoTooltip'
 import NoArtWarning from '../../../../Components/NoArtWarning'
+import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
@@ -134,6 +134,7 @@ export default function TabBuild() {
     teamId,
     team: { loadoutData },
   } = useContext(TeamCharacterContext)
+  const { characterSheet } = useContext(CharacterContext)
   const database = useDatabase()
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { gender } = useDBMeta()
@@ -561,9 +562,7 @@ export default function TabBuild() {
     throwGlobalError,
   ])
 
-  const characterName = (
-    <CharacterName characterKey={characterKey} gender={gender} />
-  )
+  const characterName = characterSheet?.name ?? 'Character Name'
 
   const setPlotBase = useCallback(
     (plotBase: string[] | undefined) => {
@@ -1189,7 +1188,7 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
   } = useContext(TeamCharacterContext)
 
   const toTc = () => {
-    const weaponTypeKey = getCharStat(characterKey).weaponType
+    const weaponTypeKey = getCharData(characterKey).weaponType
     const weapon = database.teams.getLoadoutWeapon(loadoutDatum)
     const buildTcId = database.teamChars.newBuildTcFromBuild(
       teamCharId,

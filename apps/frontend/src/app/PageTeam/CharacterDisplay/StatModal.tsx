@@ -2,7 +2,6 @@ import { ColorText } from '@genshin-optimizer/common/ui'
 import type { TeamCharacter } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { allEleDmgKeys, allEleResKeys } from '@genshin-optimizer/gi/keymap'
-import { getCharEle, isCharMelee } from '@genshin-optimizer/gi/stats'
 import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
 import type { ReadNode } from '@genshin-optimizer/gi/wr'
 import { allInputPremodKeys, uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -171,13 +170,11 @@ function StatDisplayContent({
 }
 
 function MainStatsCards() {
-  const {
-    character: { key: characterKey },
-  } = useContext(CharacterContext)
+  const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const specialNode = data.get(input.special)
-  const charEle = getCharEle(characterKey)
-  const isMelee = isCharMelee(characterKey)
+  const charEle = characterSheet.elementKey
+  const isMelee = characterSheet.isMelee()
 
   const otherStatReadNodes = useMemo(() => {
     const nodes = otherStatKeys

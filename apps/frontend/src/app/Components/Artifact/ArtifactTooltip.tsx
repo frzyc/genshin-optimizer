@@ -7,14 +7,10 @@ import {
 import { clamp } from '@genshin-optimizer/common/util'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
+import { getArtSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { RollColorKey } from '@genshin-optimizer/gi/ui'
-import {
-  ArtifactSetName,
-  ArtifactSetSlotName,
-  IconStatDisplay,
-  artifactLevelVariant,
-} from '@genshin-optimizer/gi/ui'
+import { IconStatDisplay, artifactLevelVariant } from '@genshin-optimizer/gi/ui'
 import { getMainStatDisplayStr } from '@genshin-optimizer/gi/util'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
@@ -47,13 +43,14 @@ export default function ArtifactTooltip({
 }
 function ArtifactData({ art }: { art: ICachedArtifact }) {
   const { t: tk } = useTranslation('statKey_gen')
-  const { setKey, slotKey, level, rarity, mainStatKey, substats } = art
+  const sheet = getArtSheet(art.setKey)
+  const { slotKey, level, rarity, mainStatKey, substats } = art
+  const slotName = sheet.getSlotName(slotKey)
   const mainVariant = KeyMap.getVariant(mainStatKey)
   return (
     <Box p={1}>
       <Typography variant="h6">
-        <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} />{' '}
-        <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
+        <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} /> {slotName}
       </Typography>
       <Typography variant="subtitle1" color={`${mainVariant}.main`}>
         <StatIcon statKey={mainStatKey} iconProps={iconInlineProps} />{' '}
@@ -85,9 +82,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
         )}
       </Box>
 
-      <Typography color="success.main">
-        <ArtifactSetName setKey={setKey} />
-      </Typography>
+      <Typography color="success.main">{sheet.name}</Typography>
       <LocationName color="secondary.main" location={art.location} />
     </Box>
   )

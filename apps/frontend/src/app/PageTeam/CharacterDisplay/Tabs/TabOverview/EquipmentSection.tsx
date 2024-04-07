@@ -5,7 +5,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { dataSetEffects } from '@genshin-optimizer/gi/sheets'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
@@ -53,7 +53,7 @@ export default function EquipmentSection() {
     [weaponSheet]
   )
 
-  const weaponTypeKey = getCharStat(characterKey).weaponType
+  const weaponTypeKey = getCharData(characterKey).weaponType
   const weaponId = data.get(input.weapon.id).value
   const artifactIds = useMemo(
     () =>

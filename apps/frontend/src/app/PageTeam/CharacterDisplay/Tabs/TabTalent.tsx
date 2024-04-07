@@ -1,12 +1,11 @@
 import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
-import {
-  getCharSheet,
-  type DocumentSection,
-  type TalentSheetElementKey,
+import type {
+  DocumentSection,
+  TalentSheetElementKey,
 } from '@genshin-optimizer/gi/sheets'
 import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -43,9 +42,8 @@ export default function CharacterTalentPane() {
   const { t } = useTranslation('sheet_gen')
   const {
     character: { key: characterKey },
+    characterSheet,
   } = useContext(CharacterContext)
-  const { gender } = useDBMeta()
-  const characterSheet = getCharSheet(characterKey, gender)
   const { data } = useContext(DataContext)
   const database = useDatabase()
   const skillBurstList = [
@@ -215,10 +213,9 @@ function SkillDisplayCard({
   onClickTitle,
 }: SkillDisplayCardProps) {
   const {
-    character: { talent, key: characterKey },
+    character: { talent },
+    characterSheet,
   } = useContext(CharacterContext)
-  const { gender } = useDBMeta()
-  const characterSheet = getCharSheet(characterKey, gender)
   const actionWrapperFunc = useCallback(
     (children) => (
       <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>

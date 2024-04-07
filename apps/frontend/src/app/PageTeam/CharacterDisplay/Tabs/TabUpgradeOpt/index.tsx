@@ -1,10 +1,6 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import {
-  clamp,
-  objPathValue,
-  shouldShowDevComponents,
-} from '@genshin-optimizer/common/util'
+import { clamp, objPathValue } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSlotKey,
   CharacterKey,
@@ -62,6 +58,7 @@ import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
+import { shouldShowDevComponents } from '../../../../Util/Util'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'

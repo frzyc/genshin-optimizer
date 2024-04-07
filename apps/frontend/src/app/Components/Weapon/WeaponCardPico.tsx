@@ -2,11 +2,9 @@ import { SqBadge } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
-import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
-import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
+import { WeaponSheet, getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
 import { computeUIData, nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
-import { getLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
@@ -51,9 +49,9 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
         display="flex"
         flexDirection="column"
         alignContent="flex-end"
-        className={`grad-${getWeaponStat(weapon.key).rarity}star`}
+        className={`grad-${weaponSheet.rarity}star`}
       >
-        <WeaponNameTooltip weaponKey={weapon.key} addlText={tooltipAddl}>
+        <WeaponNameTooltip sheet={weaponSheet} addlText={tooltipAddl}>
           <Box
             component="img"
             src={weaponAsset(weapon.key, weapon.ascension >= 2)}
@@ -74,11 +72,11 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
       >
         <strong>
           <SqBadge color="primary">
-            {getLevelString(weapon.level, weapon.ascension)}
+            {WeaponSheet.getLevelString(weapon)}
           </SqBadge>
         </strong>
       </Typography>
-      {weaponHasRefinement(weapon.key) && (
+      {weaponSheet.hasRefinement && (
         <Typography
           sx={{
             position: 'absolute',

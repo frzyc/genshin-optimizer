@@ -4,16 +4,10 @@ import {
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
+import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
-import { getCharStat, getWeaponStat } from '@genshin-optimizer/gi/stats'
-import {
-  WeaponName,
-  computeUIData,
-  nodeVStr,
-  resolveInfo,
-} from '@genshin-optimizer/gi/ui'
+import { computeUIData, nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Lock, LockOpen } from '@mui/icons-material'
@@ -56,14 +50,11 @@ export default function WeaponCard({
   const database = useDatabase()
   const databaseWeapon = useWeapon(weaponId)
   const weapon = databaseWeapon
-  const weaponKey = weapon?.key
-  const weaponSheet = weaponKey && getWeaponSheet(weaponKey)
+  const weaponSheet = weapon?.key ? getWeaponSheet(weapon.key) : undefined
 
   const filter = useCallback(
-    (ck: CharacterKey) =>
-      weaponKey &&
-      getWeaponStat(weaponKey).weaponType === getCharStat(ck).weaponType,
-    [weaponKey]
+    (cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType,
+    [weaponSheet]
   )
 
   const wrapperFunc = useCallback(
@@ -96,7 +87,7 @@ export default function WeaponCard({
     (x) => UIData.get(x)
   )
   const img = weaponAsset(weapon.key, ascension >= 2)
-  const weaponStat = getWeaponStat(weapon.key)
+
   return (
     <Suspense
       fallback={
@@ -120,7 +111,7 @@ export default function WeaponCard({
           falseWrapper={falseWrapperFunc}
         >
           <Box
-            className={`grad-${weaponStat.rarity}star`}
+            className={`grad-${weaponSheet.rarity}star`}
             sx={{ position: 'relative', pt: 2, px: 2 }}
           >
             {!onClick && (
@@ -147,9 +138,7 @@ export default function WeaponCard({
                     px: 1,
                   }}
                 >
-                  <strong>
-                    <WeaponName weaponKey={weapon.key} />
-                  </strong>
+                  <strong>{weaponSheet.name}</strong>
                 </Typography>
               </Box>
               <Typography component="span" variant="h5">
@@ -161,7 +150,7 @@ export default function WeaponCard({
               <Typography variant="h6">
                 Refinement <strong>{refinement}</strong>
               </Typography>
-              <StarsDisplay stars={weaponStat.rarity} colored />
+              <StarsDisplay stars={weaponSheet.rarity} colored />
             </Box>
             <Box
               sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}

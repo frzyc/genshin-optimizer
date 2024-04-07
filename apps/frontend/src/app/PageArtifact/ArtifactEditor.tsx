@@ -4,11 +4,7 @@ import {
   DropdownButton,
   ImgIcon,
 } from '@genshin-optimizer/common/ui'
-import {
-  clamp,
-  deepClone,
-  shouldShowDevComponents,
-} from '@genshin-optimizer/common/util'
+import { clamp, deepClone } from '@genshin-optimizer/common/util'
 import type { Processed } from '@genshin-optimizer/gi/art-scanner'
 import { ScanningQueue } from '@genshin-optimizer/gi/art-scanner'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
@@ -26,9 +22,8 @@ import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { cachedArtifact, validateArtifact } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
-import { getArtSetStat } from '@genshin-optimizer/gi/stats'
+import { getArtSheet } from '@genshin-optimizer/gi/sheets'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { ArtifactSetSlotName } from '@genshin-optimizer/gi/ui'
 import {
   getArtifactEfficiency,
   getMainStatDisplayStr,
@@ -86,6 +81,7 @@ import {
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
 import CustomNumberTextField from '../Components/CustomNumberTextField'
 import ModalWrapper from '../Components/ModalWrapper'
+import { shouldShowDevComponents } from '../Util/Util'
 import ArtifactCard from './ArtifactCard'
 import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard'
 import SubstatInput from './ArtifactEditor/Components/SubstatInput'
@@ -233,7 +229,7 @@ export default function ArtifactEditor({
     return validated
   }, [artifact, artifactIdToEdit])
 
-  const artStat = artifact && getArtSetStat(artifact.setKey)
+  const sheet = artifact ? getArtSheet(artifact.setKey) : undefined
   const reset = useCallback(() => {
     cancelEdit?.()
     artifactDispatch({ type: 'reset' })
@@ -241,8 +237,7 @@ export default function ArtifactEditor({
   }, [cancelEdit, artifactDispatch])
   const update = useCallback(
     (newValue: Partial<IArtifact>) => {
-      const newStat =
-        (newValue.setKey && getArtSetStat(newValue.setKey)) ?? artStat
+      const newSheet = newValue.setKey ? getArtSheet(newValue.setKey) : sheet!
 
       function pick<T>(
         value: T | undefined,
@@ -254,12 +249,12 @@ export default function ArtifactEditor({
           : prefer ?? available[0]
       }
 
-      if (newValue.setKey && newStat) {
+      if (newValue.setKey) {
         newValue.rarity = pick(
           artifact?.rarity,
-          newStat.rarities,
-          Math.max(...newStat.rarities)
-        ) as ArtifactRarity
+          newSheet.rarity,
+          Math.max(...newSheet.rarity) as ArtifactRarity
+        )
         // If we're updating an existing artifact, then slotKey should immediately be set to the artifact's slot.
         // Otherwise, if slot selection is disabled but a key has been provided in fixedSlotKey, we assign that
         // value (e.g. when creating a new artifact from the artifact swap UI). If neither, then we default to
@@ -288,7 +283,7 @@ export default function ArtifactEditor({
       }
       artifactDispatch({ type: 'update', artifact: newValue })
     },
-    [artifact, artStat, artifactDispatch, fixedSlotKey]
+    [artifact, sheet, artifactDispatch, fixedSlotKey]
   )
   const setSubstat = useCallback(
     (index: number, substat: ISubstat) => {
@@ -439,8 +434,8 @@ export default function ArtifactEditor({
                 <ArtifactRarityDropdown
                   rarity={artifact ? rarity : undefined}
                   onChange={(r) => update({ rarity: r })}
-                  filter={(r) => !!artStat?.rarities?.includes?.(r)}
-                  disabled={!artStat}
+                  filter={(r) => !!sheet?.rarity?.includes?.(r)}
+                  disabled={!sheet}
                 />
               </Box>
 
@@ -454,14 +449,14 @@ export default function ArtifactEditor({
                   margin="dense"
                   size="small"
                   value={level}
-                  disabled={!artStat}
+                  disabled={!sheet}
                   placeholder={`0~${rarity * 4}`}
                   onChange={(l) => update({ level: l })}
                 />
                 <ButtonGroup>
                   <Button
                     onClick={() => update({ level: level - 1 })}
-                    disabled={!artStat || level === 0}
+                    disabled={!sheet || level === 0}
                   >
                     -
                   </Button>
@@ -472,7 +467,7 @@ export default function ArtifactEditor({
                           <Button
                             key={i}
                             onClick={() => update({ level: i })}
-                            disabled={!artStat || level === i}
+                            disabled={!sheet || level === i}
                           >
                             {i}
                           </Button>
@@ -480,7 +475,7 @@ export default function ArtifactEditor({
                     : null}
                   <Button
                     onClick={() => update({ level: level + 1 })}
-                    disabled={!artStat || level === rarity * 4}
+                    disabled={!sheet || level === rarity * 4}
                   >
                     +
                   </Button>
@@ -492,7 +487,7 @@ export default function ArtifactEditor({
                 <ArtifactSlotDropdown
                   disabled={
                     disableEditSlot ||
-                    !artStat ||
+                    !sheet ||
                     artifact?.setKey?.startsWith('Prayer')
                   }
                   slotKey={slotKey}
@@ -501,7 +496,7 @@ export default function ArtifactEditor({
                 <CardThemed bgt="light" sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                   <Suspense fallback={<Skeleton width="60%" />}>
                     <Typography color="text.secondary">
-                      {artifact ? (
+                      {artifact && sheet?.getSlotName(artifact!.slotKey) ? (
                         <span>
                           <ImgIcon
                             size={2}
@@ -510,10 +505,7 @@ export default function ArtifactEditor({
                               artifact.slotKey
                             )}
                           />
-                          <ArtifactSetSlotName
-                            setKey={artifact.setKey}
-                            slotKey={artifact.slotKey}
-                          />
+                          {sheet?.getSlotName(artifact!.slotKey)}
                         </span>
                       ) : (
                         t`editor.unknownPieceName`
@@ -540,7 +532,7 @@ export default function ArtifactEditor({
                       )}
                     </b>
                   }
-                  disabled={!artStat}
+                  disabled={!sheet}
                   color={color}
                 >
                   {artSlotMainKeys[slotKey].map((mainStatK) => (

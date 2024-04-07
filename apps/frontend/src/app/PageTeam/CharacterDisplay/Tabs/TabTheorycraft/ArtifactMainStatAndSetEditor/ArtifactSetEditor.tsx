@@ -3,7 +3,6 @@ import { DropdownButton, ImgIcon } from '@genshin-optimizer/common/ui'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSetKey, SetNum } from '@genshin-optimizer/gi/consts'
 import { getArtSheet } from '@genshin-optimizer/gi/sheets'
-import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import ClearIcon from '@mui/icons-material/Clear'
 import InfoIcon from '@mui/icons-material/Info'
 import { Box, Button, ButtonGroup, MenuItem, Stack } from '@mui/material'
@@ -58,12 +57,10 @@ export function ArtifactSetEditor({
   return (
     <CardLight>
       <Box display="flex">
-        <ArtifactSetTooltip setKey={setKey} numInSet={value}>
+        <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={value}>
           <Box flexGrow={1} p={1} display="flex" gap={1} alignItems="center">
             <ImgIcon size={2} src={artifactDefIcon(setKey)} />
-            <Box>
-              <ArtifactSetName setKey={setKey} />
-            </Box>
+            <Box>{artifactSheet.setName}</Box>
             <InfoIcon {...iconInlineProps} />
           </Box>
         </ArtifactSetTooltip>

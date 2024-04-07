@@ -190,7 +190,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   YunJin,
   Zhongli,
 } as const
-export function getCharSheet(charKey: CharacterKey, gender: GenderKey) {
+export function getCharSheet(charKey: CharacterKey, gender: GenderKey = 'F') {
   return characters[charKeyToCharSheetKey(charKey, gender)]
 }
 

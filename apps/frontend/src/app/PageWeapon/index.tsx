@@ -8,7 +8,7 @@ import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
@@ -165,7 +165,7 @@ export default function PageWeapon() {
     () =>
       catTotal(allWeaponTypeKeys, (ct) =>
         Object.entries(database.weapons.data).forEach(([id, weapon]) => {
-          const wtk = getWeaponStat(weapon.key).weaponType
+          const wtk = getWeaponSheet(weapon.key).weaponType
           ct[wtk].total++
           if (weaponIds.includes(id)) ct[wtk].current++
         })
@@ -177,7 +177,7 @@ export default function PageWeapon() {
     () =>
       catTotal(allRarityKeys, (ct) =>
         Object.entries(database.weapons.data).forEach(([id, weapon]) => {
-          const wr = getWeaponStat(weapon.key).rarity
+          const wr = getWeaponSheet(weapon.key).rarity
           ct[wr].total++
           if (weaponIds.includes(id)) ct[wr].current++
         })

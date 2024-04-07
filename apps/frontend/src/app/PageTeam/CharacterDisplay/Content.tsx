@@ -6,15 +6,15 @@ import ScienceIcon from '@mui/icons-material/Science'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import { Skeleton, Tab, Tabs } from '@mui/material'
 import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Route, Link as RouterLink, Routes } from 'react-router-dom'
 import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
+import { shouldShowDevComponents } from '../../Util/Util'
 import FormulaModal from './FormulaModal'
 import LoadoutSettingElement from './LoadoutSettingElement'
 import TabBuild from './Tabs/TabOptimize'
@@ -31,7 +31,7 @@ export default function Content({ tab }: { tab: string }) {
   const isTCBuild = !!(
     loadoutDatum.buildTcId && loadoutDatum.buildType === 'tc'
   )
-  const elementKey = getCharEle(characterKey)
+  const elementKey = getCharData(characterKey).ele
   return (
     <>
       <FormulaModal />
@@ -86,7 +86,7 @@ function TabNav({
 }) {
   const { t } = useTranslation('page_character')
   const { gender } = useDBMeta()
-  const elementKey = getCharEle(characterKey)
+  const elementKey = getCharData(characterKey).ele
   const banner = characterAsset(characterKey, 'banner', gender)
   return (
     <CardThemed

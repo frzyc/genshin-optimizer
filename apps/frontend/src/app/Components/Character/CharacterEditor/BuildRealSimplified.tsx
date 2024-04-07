@@ -1,6 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useBuild } from '@genshin-optimizer/gi/db-ui'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import { Box, Grid } from '@mui/material'
 import { BuildCard } from '../../../PageTeam/CharacterDisplay/Build/BuildCard'
 import ArtifactCardNano from '../../Artifact/ArtifactCardNano'
@@ -16,7 +16,7 @@ export default function BuildRealSimplified({
 }) {
   const { name, description, weaponId, artifactIds } = useBuild(buildId)!
 
-  const weaponTypeKey = getCharStat(characterKey).weaponType
+  const weaponTypeKey = getCharData(characterKey).weaponType
 
   return (
     <BuildCard name={name} description={description} hideFooter>

@@ -1,22 +1,11 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { StarsDisplay } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
+import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
-import {
-  getCharStat,
-  getWeaponStat,
-  weaponHasRefinement,
-} from '@genshin-optimizer/gi/stats'
-import {
-  WeaponDesc,
-  WeaponName,
-  WeaponPassiveDesc,
-  WeaponPassiveName,
-  computeUIData,
-} from '@genshin-optimizer/gi/ui'
+import { computeUIData } from '@genshin-optimizer/gi/ui'
 import { milestoneLevelsLow } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Lock, LockOpen } from '@mui/icons-material'
@@ -64,7 +53,7 @@ export default function WeaponEditor({
   const database = useDatabase()
   const weapon = useWeapon(propWeaponId)
   const {
-    key,
+    key = '',
     level = 0,
     refinement = 1,
     ascension = 0,
@@ -72,9 +61,8 @@ export default function WeaponEditor({
     location = '',
     id,
   } = weapon ?? {}
-  const weaponSheet = key && getWeaponSheet(key)
-  const weaponStat = key && getWeaponStat(key)
-  const weaponType = weaponStat?.weaponType
+  const weaponSheet = key ? getWeaponSheet(key) : undefined
+
   const weaponDispatch = useCallback(
     (newWeapon: Partial<ICachedWeapon>) => {
       database.weapons.set(propWeaponId, newWeapon)
@@ -87,8 +75,8 @@ export default function WeaponEditor({
     [database, id]
   )
   const filter = useCallback(
-    (ck: CharacterKey) => weaponType === getCharStat(ck).weaponType,
-    [weaponType]
+    (cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType,
+    [weaponSheet]
   )
 
   const [showModal, onShowModal, onHideModal] = useBoolState()
@@ -96,12 +84,13 @@ export default function WeaponEditor({
 
   //check the levels when switching from a 5* to a 1*, for example.
   useEffect(() => {
-    if (!weaponStat) return
-    if (weaponStat.rarity <= 2 && (level > 70 || ascension > 4)) {
+    if (!weaponSheet || !weaponDispatch || weaponSheet.key !== weapon?.key)
+      return
+    if (weaponSheet.rarity <= 2 && (level > 70 || ascension > 4)) {
       const [level, ascension] = milestoneLevelsLow[0]
       weaponDispatch({ level, ascension })
     }
-  }, [weaponStat, weapon, weaponDispatch, level, ascension])
+  }, [weaponSheet, weapon, weaponDispatch, level, ascension])
 
   const weaponUIData = useMemo(
     () =>
@@ -123,10 +112,10 @@ export default function WeaponEditor({
           onHide={onHideModal}
           onSelect={(k) => weaponDispatch({ key: k })}
           // can only swap to a weapon of the same type
-          weaponTypeFilter={weaponType}
+          weaponTypeFilter={weaponSheet && weaponSheet.weaponType}
         />
         <CardContent>
-          {weaponStat && weaponUIData && (
+          {weaponSheet && weaponUIData && (
             <Grid container spacing={1.5}>
               {/* Left column */}
               <Grid item xs={12} sm={3}>
@@ -136,7 +125,7 @@ export default function WeaponEditor({
                       <Box
                         component="img"
                         src={img}
-                        className={`grad-${weaponStat.rarity}star`}
+                        className={`grad-${weaponSheet.rarity}star`}
                         sx={{
                           maxWidth: 256,
                           width: '100%',
@@ -162,7 +151,7 @@ export default function WeaponEditor({
                   </Grid>
                   <Grid item xs={6} sm={12}>
                     <Typography>
-                      <small>{key && <WeaponDesc weaponKey={key} />}</small>
+                      <small>{weaponSheet.description}</small>
                     </Typography>
                   </Grid>
                 </Grid>
@@ -177,10 +166,9 @@ export default function WeaponEditor({
                 <Box display="flex" gap={1} flexWrap="wrap">
                   <ButtonGroup>
                     <Button color="info" onClick={onShowModal}>
-                      {(key && <WeaponName weaponKey={key} />) ||
-                        'Select a Weapon'}
+                      {weaponSheet?.name ?? 'Select a Weapon'}
                     </Button>
-                    {key && weaponHasRefinement(key) && (
+                    {weaponSheet?.hasRefinement && (
                       <RefinementDropdown
                         refinement={refinement}
                         setRefinement={(r) => weaponDispatch({ refinement: r })}
@@ -195,31 +183,24 @@ export default function WeaponEditor({
                   )}
                 </Box>
                 <Box display="flex" gap={1} flexWrap="wrap">
-                  {key && (
+                  {weaponSheet && (
                     <LevelSelect
                       level={level}
                       ascension={ascension}
                       setBoth={weaponDispatch}
-                      useLow={!weaponHasRefinement(key)}
+                      useLow={!weaponSheet.hasRefinement}
                     />
                   )}
                 </Box>
-                <StarsDisplay stars={weaponStat.rarity} />
+                <StarsDisplay stars={weaponSheet.rarity} />
                 <Typography variant="subtitle1">
-                  <strong>
-                    {key && <WeaponPassiveName weaponKey={key} />}
-                  </strong>
+                  <strong>{weaponSheet.passiveName}</strong>
                 </Typography>
                 <Typography gutterBottom>
-                  {key && (
-                    <WeaponPassiveDesc
-                      weaponKey={key}
-                      refineIndex={
-                        (weaponUIData.get(input.weapon.refinement).value ?? 1) -
-                        1
-                      }
-                    />
-                  )}
+                  {weaponSheet.passiveName &&
+                    weaponSheet.passiveDescription(
+                      weaponUIData.get(input.weapon.refinement).value - 1
+                    )}
                 </Typography>
                 <Box display="flex" flexDirection="column" gap={1}>
                   <CardDark>
@@ -246,7 +227,7 @@ export default function WeaponEditor({
                       })}
                     </FieldDisplayList>
                   </CardDark>
-                  {data && weaponSheet?.document && (
+                  {data && weaponSheet.document && (
                     <DocumentDisplay sections={weaponSheet.document} />
                   )}
                 </Box>
