@@ -15,28 +15,12 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
-  TeamCharacterContext,
   useDBMeta,
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui'
-import {
-  AddArtInfo,
-  ArtifactLevelSlider,
-  CharacterCardEquipmentRow,
-  CharacterCardHeader,
-  CharacterCardHeaderContent,
-  CharacterCardStats,
-  DataContext,
-  HitModeToggle,
-  NoArtWarning,
-  ReactionToggle,
-  getTeamData,
-  useTeamData,
-} from '@genshin-optimizer/gi/ui'
-import { resolveInfo, uiDataForTeam } from '@genshin-optimizer/gi/uidata'
+import { resolveInfo, uiDataForTeam } from '@genshin-optimizer/gi/ui'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'
@@ -60,6 +44,24 @@ import {
   useState,
 } from 'react'
 import { Trans } from 'react-i18next'
+import AddArtInfo from '../../../../Components/AddArtInfo'
+import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
+import CardLight from '../../../../Components/Card/CardLight'
+import { CharacterCardEquipmentRow } from '../../../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
+import {
+  CharacterCardHeader,
+  CharacterCardHeaderContent,
+} from '../../../../Components/Character/CharacterCard/CharacterCardHeader'
+import { CharacterCardStats } from '../../../../Components/Character/CharacterCard/CharacterCardStats'
+import {
+  HitModeToggle,
+  ReactionToggle,
+} from '../../../../Components/HitModeEditor'
+import NoArtWarning from '../../../../Components/NoArtWarning'
+import type { dataContextObj } from '../../../../Context/DataContext'
+import { DataContext } from '../../../../Context/DataContext'
+import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
+import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
@@ -350,7 +352,7 @@ export default function TabUpopt() {
   }, [data, teamData])
 
   const pagination = numPages > 1 && (
-    <CardThemed bgt="light">
+    <CardLight>
       <CardContent>
         <Grid container>
           <Grid item flexGrow={1}>
@@ -368,7 +370,7 @@ export default function TabUpopt() {
           </Grid>
         </Grid>
       </CardContent>
-    </CardThemed>
+    </CardLight>
   )
 
   return (
@@ -443,7 +445,7 @@ export default function TabUpopt() {
                       flexDirection="column"
                       gap={1}
                     >
-                      <CardThemed bgt="light">
+                      <CardLight>
                         <CardContent>
                           <span>Optimization Target: </span>
                           {
@@ -458,14 +460,14 @@ export default function TabUpopt() {
                             />
                           }
                         </CardContent>
-                      </CardThemed>
-                      <CardThemed bgt="light">
+                      </CardLight>
+                      <CardLight>
                         <CardContent>
                           <StatFilterCard disabled={false} />
                         </CardContent>
-                      </CardThemed>
+                      </CardLight>
                       {useFilters && (
-                        <CardThemed bgt="light">
+                        <CardLight>
                           <CardContent sx={{ py: 1 }}>
                             Artifact Level Filter
                           </CardContent>
@@ -494,7 +496,7 @@ export default function TabUpopt() {
                               filteredArtIdMap={filteredArtIdMap}
                             />
                           </CardContent>
-                        </CardThemed>
+                        </CardLight>
                       )}
                     </Grid>
                     <Grid
@@ -504,12 +506,12 @@ export default function TabUpopt() {
                       flexDirection="column"
                       gap={1}
                     >
-                      <CardThemed bgt="light">
+                      <CardLight>
                         <CardContent>
                           <ArtifactSetConfig disabled={false} />
                         </CardContent>
-                      </CardThemed>
-                      <CardThemed bgt="light">
+                      </CardLight>
+                      <CardLight>
                         <CardContent>
                           <Grid container spacing={1}>
                             <Grid item>
@@ -561,13 +563,13 @@ export default function TabUpopt() {
                             </Grid>
                           </Grid>
                         </CardContent>
-                      </CardThemed>
+                      </CardLight>
                     </Grid>
                   </Grid>
                 </Grid>
               </Grid>
             </Box>
-            <CardThemed bgt="light">
+            <CardLight>
               <CardContent>
                 <Grid container spacing={1}>
                   <Grid item>
@@ -592,7 +594,7 @@ export default function TabUpopt() {
                   </Grid>
                 </Grid>
               </CardContent>
-            </CardThemed>
+            </CardLight>
             {pagination}
             {noArtifact && <AddArtInfo />}
             <Suspense

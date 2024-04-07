@@ -2,12 +2,8 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
-import {
-  catTotal,
-  filterFunction,
-  sortFunction,
-} from '@genshin-optimizer/common/util'
+import { useInfScroll } from '@genshin-optimizer/common/ui'
+import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allCharacterRarityKeys,
@@ -21,20 +17,7 @@ import {
   getCharStat,
   getWeaponStat,
 } from '@genshin-optimizer/gi/stats'
-import {
-  CharacterCard,
-  CharacterEditor,
-  CharacterRarityToggle,
-  CharacterSelectionModal,
-  ElementToggle,
-  ShowingAndSortOptionSelect,
-  WeaponToggle,
-  characterFilterConfigs,
-  characterSortConfigs,
-  characterSortMap,
-  useCharSelectionCallback,
-} from '@genshin-optimizer/gi/ui'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
@@ -56,6 +39,21 @@ import {
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import { useMatch, useNavigate } from 'react-router-dom'
+import CardDark from '../Components/Card/CardDark'
+import CharacterCard from '../Components/Character/CharacterCard'
+import CharacterEditor from '../Components/Character/CharacterEditor'
+import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
+import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
+import CharacterRarityToggle from '../Components/ToggleButton/CharacterRarityToggle'
+import ElementToggle from '../Components/ToggleButton/ElementToggle'
+import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
+import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback'
+import {
+  characterFilterConfigs,
+  characterSortConfigs,
+  characterSortMap,
+} from '../Util/CharacterSort'
+import { catTotal } from '../Util/totalUtils'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 5, sm: 8, md: 9, lg: 12, xl: 12 }
 const sortKeys = Object.keys(characterSortMap)
@@ -226,7 +224,7 @@ export default function PageCharacter() {
           onSelect={editCharacter}
         />
       </Suspense>
-      <CardThemed>
+      <CardDark>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Grid container spacing={1}>
             <Grid item>
@@ -289,7 +287,7 @@ export default function PageCharacter() {
             />
           </Box>
         </CardContent>
-      </CardThemed>
+      </CardDark>
       <Button
         fullWidth
         onClick={() => setnewCharacter(true)}

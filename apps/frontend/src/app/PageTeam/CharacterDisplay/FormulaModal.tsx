@@ -1,23 +1,14 @@
 import {
   CardHeaderCustom,
-  CardThemed,
   ColorText,
   ImgIcon,
-  ModalWrapper,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import {
-  AmpReactionModeText,
-  DataContext,
-  FormulaDataContext,
-  getDisplayHeader,
-  getDisplaySections,
-} from '@genshin-optimizer/gi/ui'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
-import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/uidata'
+import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/ui'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import CloseIcon from '@mui/icons-material/Close'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -43,6 +34,13 @@ import {
   useRef,
   useState,
 } from 'react'
+import AmpReactionModeText from '../../Components/AmpReactionModeText'
+import CardDark from '../../Components/Card/CardDark'
+import CardLight from '../../Components/Card/CardLight'
+import ModalWrapper from '../../Components/ModalWrapper'
+import { DataContext } from '../../Context/DataContext'
+import { FormulaDataContext } from '../../Context/FormulaDataContext'
+import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
 export default function FormulaModal() {
   const { modalOpen } = useContext(FormulaDataContext)
   const { setFormulaData } = useContext(FormulaDataContext)
@@ -52,7 +50,7 @@ export default function FormulaModal() {
   )
   return (
     <ModalWrapper open={!!modalOpen} onClose={onCloseHandler}>
-      <CardThemed>
+      <CardDark>
         <CardHeader
           title="Formulas & Calculations"
           action={
@@ -64,7 +62,7 @@ export default function FormulaModal() {
         <CardContent sx={{ pt: 0 }}>
           <CalculationDisplay />
         </CardContent>
-      </CardThemed>
+      </CardDark>
     </ModalWrapper>
   )
 }
@@ -103,7 +101,7 @@ function FormulaCalc({
   if (Object.entries(displayNs).every(([_, node]) => node.isEmpty)) return null
   const { title, icon, action } = header
   return (
-    <CardThemed bgt="light" sx={{ mb: 1 }}>
+    <CardLight sx={{ mb: 1 }}>
       <CardHeaderCustom
         avatar={icon && <ImgIcon size={2} src={icon} />}
         title={title}
@@ -116,7 +114,7 @@ function FormulaCalc({
             !node.isEmpty && <FormulaAccordian key={key} node={node} />
         )}
       </CardContent>
-    </CardThemed>
+    </CardLight>
   )
 }
 function FormulaAccordian({ node }: { node: NodeDisplay }) {

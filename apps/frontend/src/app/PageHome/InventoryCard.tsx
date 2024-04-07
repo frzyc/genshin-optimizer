@@ -1,5 +1,5 @@
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
-import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
+import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import {
@@ -28,6 +28,8 @@ import {
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
+import CardDark from '../Components/Card/CardDark'
+import CardLight from '../Components/Card/CardLight'
 
 export default function InventoryCard() {
   const { t } = useTranslation(['page_home', 'ui'])
@@ -65,14 +67,14 @@ export default function InventoryCard() {
   const smaller = !useMediaQuery(theme.breakpoints.up('md'))
 
   return (
-    <CardThemed>
+    <CardDark>
       <CardHeader
         title={<Typography variant="h5">{t`inventoryCard.title`}</Typography>}
         avatar={<BusinessCenter fontSize="large" />}
       />
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <CardThemed bgt="light">
+        <CardLight>
           <CardActionArea
             sx={{
               display: 'flex',
@@ -108,8 +110,8 @@ export default function InventoryCard() {
               />
             ))}
           </CardActionArea>
-        </CardThemed>
-        <CardThemed bgt="light">
+        </CardLight>
+        <CardLight>
           <CardActionArea
             sx={{
               display: 'flex',
@@ -145,8 +147,8 @@ export default function InventoryCard() {
               />
             ))}
           </CardActionArea>
-        </CardThemed>
-        <CardThemed bgt="light">
+        </CardLight>
+        <CardLight>
           <CardActionArea
             sx={{
               display: 'flex',
@@ -182,8 +184,8 @@ export default function InventoryCard() {
               />
             ))}
           </CardActionArea>
-        </CardThemed>
+        </CardLight>
       </CardContent>
-    </CardThemed>
+    </CardDark>
   )
 }

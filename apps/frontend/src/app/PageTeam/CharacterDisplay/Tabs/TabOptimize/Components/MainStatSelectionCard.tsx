@@ -1,15 +1,10 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { BootstrapTooltip, SqBadge } from '@genshin-optimizer/common/ui'
-import { bulkCatTotal, handleMultiSelect } from '@genshin-optimizer/common/util'
 import {
   allElementWithPhyKeys,
   artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
-import {
-  TeamCharacterContext,
-  useDatabase,
-  useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import {
   AtkIcon,
   FlowerIcon,
@@ -18,7 +13,6 @@ import {
   SlotIcon,
   StatIcon,
 } from '@genshin-optimizer/gi/svgicons'
-import { StatColoredWithUnit } from '@genshin-optimizer/gi/ui'
 import {
   Box,
   Button,
@@ -29,6 +23,10 @@ import {
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { StatColoredWithUnit } from '../../../../../Components/StatDisplay'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
+import { handleMultiSelect } from '../../../../../Util/MultiSelect'
+import { bulkCatTotal } from '../../../../../Util/totalUtils'
 
 export const artifactsSlotsToSelectMainStats = [
   'sands',

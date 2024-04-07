@@ -1,4 +1,4 @@
-import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
+import { DropdownButton } from '@genshin-optimizer/common/ui'
 import {
   DAY_MS,
   MINUTE_MS,
@@ -11,6 +11,7 @@ import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled'
 import { CardContent, Divider, Grid, MenuItem, Typography } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
+import CardDark from '../Components/Card/CardDark'
 
 export function initToolsDisplayTimezone() {
   return { timeZoneKey: Object.keys(timeZones)[0] as TimeZoneKey }
@@ -53,7 +54,7 @@ export default function TeyvatTime() {
   const remainingResetString = timeString(remaningTimeMs)
 
   return (
-    <CardThemed>
+    <CardDark>
       <CardContent sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
         <AccessTimeFilledIcon />
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
@@ -99,6 +100,6 @@ export default function TeyvatTime() {
           </Grid>
         </Grid>
       </CardContent>
-    </CardThemed>
+    </CardDark>
   )
 }

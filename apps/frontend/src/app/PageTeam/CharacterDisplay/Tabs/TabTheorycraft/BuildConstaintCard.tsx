@@ -8,7 +8,6 @@ import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { MinTotalStatKey } from '@genshin-optimizer/gi/db'
 import { minTotalStatKeys } from '@genshin-optimizer/gi/db'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { ArtifactStatWithUnit } from '@genshin-optimizer/gi/ui'
 import ClearIcon from '@mui/icons-material/Clear'
 import {
   Box,
@@ -23,6 +22,7 @@ import {
 } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
 import { BuildTcContext } from './BuildTcContext'
 
 export function BuildConstaintCard({ disabled }: { disabled: boolean }) {

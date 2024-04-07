@@ -1,6 +1,4 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import '@genshin-optimizer/gi/i18n'
-import { theme } from '@genshin-optimizer/gi/theme'
+import { theme } from '@genshin-optimizer/gi/ui'
 import { DynamicFeed, Refresh } from '@mui/icons-material'
 import {
   Box,
@@ -14,6 +12,8 @@ import {
   Typography,
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+import CardLight from '../Components/Card/CardLight'
+import '../i18n'
 import derp from './derp.jpeg'
 
 export default function NewTab() {
@@ -29,7 +29,7 @@ export default function NewTab() {
           justifyContent="center"
           alignItems="center"
         >
-          <CardThemed bgt="light">
+          <CardLight>
             <Box display="flex" flexDirection="column">
               <CardContent
                 sx={{
@@ -73,7 +73,7 @@ export default function NewTab() {
                 >{t`refresh`}</Button>
               </CardActions>
             </Box>
-          </CardThemed>
+          </CardLight>
         </Box>
       </ThemeProvider>
     </StyledEngineProvider>

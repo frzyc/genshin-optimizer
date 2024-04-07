@@ -1,17 +1,7 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import {
-  CardThemed,
-  ColorText,
-  InfoTooltipInline,
-  ModalWrapper,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
-import {
-  bulkCatTotal,
-  deepClone,
-  objKeyMap,
-} from '@genshin-optimizer/common/util'
+import { ColorText, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
+import { deepClone, objKeyMap } from '@genshin-optimizer/common/util'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSetKey,
@@ -27,24 +17,11 @@ import {
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
 } from '@genshin-optimizer/gi/db'
-import {
-  TeamCharacterContext,
-  useDatabase,
-  useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
-import { Translate } from '@genshin-optimizer/gi/i18n'
-import { getArtSheet } from '@genshin-optimizer/gi/sheets'
+import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import { getArtSheet, setKeysByRarities } from '@genshin-optimizer/gi/sheets'
 import { getArtSetStat } from '@genshin-optimizer/gi/stats'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui'
-import {
-  ArtifactSetName,
-  DataContext,
-  SetEffectDisplay,
-  SetInclusionButton,
-} from '@genshin-optimizer/gi/ui'
-import { UIData } from '@genshin-optimizer/gi/uidata'
-import { setKeysByRarities } from '@genshin-optimizer/gi/util'
+import { ArtifactSetName, Translate, UIData } from '@genshin-optimizer/gi/ui'
 import { constant } from '@genshin-optimizer/gi/wr'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
@@ -64,6 +41,15 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
+import CardDark from '../../../../../Components/Card/CardDark'
+import CardLight from '../../../../../Components/Card/CardLight'
+import { InfoTooltipInline } from '../../../../../Components/InfoTooltip'
+import type { dataContextObj } from '../../../../../Context/DataContext'
+import { DataContext } from '../../../../../Context/DataContext'
+import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
+import { bulkCatTotal } from '../../../../../Util/totalUtils'
+import SetInclusionButton from './SetInclusionButton'
 
 export default function ArtifactSetConfig({
   disabled,
@@ -178,7 +164,7 @@ export default function ArtifactSetConfig({
   return (
     <>
       {/* Button to open modal */}
-      <CardThemed bgt="light" sx={{ display: 'flex', width: '100%' }}>
+      <CardLight sx={{ display: 'flex', width: '100%' }}>
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography>
             <strong>{t`artSetConfig.title`}</strong>
@@ -236,11 +222,11 @@ export default function ArtifactSetConfig({
         >
           <SettingsIcon />
         </Button>
-      </CardThemed>
+      </CardLight>
 
       {/* Begin modal */}
       <ModalWrapper open={open} onClose={onClose}>
-        <CardThemed>
+        <CardDark>
           <CardContent sx={{ display: 'flex', gap: 1 }}>
             <Typography variant="h6">{t`artSetConfig.title`}</Typography>
             <IconButton onClick={onClose} sx={{ ml: 'auto' }}>
@@ -249,7 +235,7 @@ export default function ArtifactSetConfig({
           </CardContent>
           <Divider />
           <CardContent>
-            <CardThemed bgt="light" sx={{ mb: 1 }}>
+            <CardLight sx={{ mb: 1 }}>
               <CardContent>
                 <Box display="flex" gap={1}>
                   <Typography>
@@ -269,8 +255,8 @@ export default function ArtifactSetConfig({
                 </Box>
                 <Typography>{t`artSetConfig.modal.setCond.text`}</Typography>
               </CardContent>
-            </CardThemed>
-            <CardThemed bgt="light" sx={{ mb: 1 }}>
+            </CardLight>
+            <CardLight sx={{ mb: 1 }}>
               <CardContent>
                 <Typography sx={{ flexGrow: 1 }}>
                   <strong>
@@ -390,7 +376,7 @@ export default function ArtifactSetConfig({
                   </Trans>
                 </Typography>
               </CardContent>
-            </CardThemed>
+            </CardLight>
             <Grid
               container
               columns={{ xs: 2, lg: 3 }}
@@ -412,7 +398,7 @@ export default function ArtifactSetConfig({
                 />
               </Grid>
               <Grid item xs={1}>
-                <CardThemed bgt="light">
+                <CardLight>
                   <CardContent>
                     <Typography gutterBottom>
                       <strong>
@@ -479,7 +465,7 @@ export default function ArtifactSetConfig({
                       >{t`artSetConfig.4rainbow`}</Button>
                     </Box>
                   </CardContent>
-                </CardThemed>
+                </CardLight>
               </Grid>
             </Grid>
             <Grid container spacing={1} columns={{ xs: 2, lg: 3 }}>
@@ -493,7 +479,7 @@ export default function ArtifactSetConfig({
               ))}
             </Grid>
           </CardContent>
-        </CardThemed>
+        </CardDark>
       </ModalWrapper>
     </>
   )
@@ -509,7 +495,7 @@ function AllSetAllowExcludeCard({
 }) {
   const { t } = useTranslation(['page_character_optimize', 'sheet'])
   return (
-    <CardThemed bgt="light">
+    <CardLight>
       <CardContent>
         <Typography gutterBottom>
           <strong>{t(`sheet:${setNum}set`)}</strong>{' '}
@@ -541,7 +527,7 @@ function AllSetAllowExcludeCard({
           </Button>
         </Box>
       </CardContent>
-    </CardThemed>
+    </CardLight>
   )
 }
 function ArtifactSetCard({
@@ -572,8 +558,7 @@ function ArtifactSetCard({
   }, [sheet.setEffects, allow4])
   return (
     <Grid item key={setKey} xs={1}>
-      <CardThemed
-        bgt="light"
+      <CardLight
         sx={{ height: '100%', opacity: slots < 2 ? '50%' : undefined }}
       >
         <Box
@@ -691,7 +676,7 @@ function ArtifactSetCard({
             </CardContent>
           </DataContext.Provider>
         )}
-      </CardThemed>
+      </CardLight>
     </Grid>
   )
 }

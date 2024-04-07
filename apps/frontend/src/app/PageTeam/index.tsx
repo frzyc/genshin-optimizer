@@ -7,33 +7,34 @@ import {
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
-import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
-  CharacterContext,
-  TeamCharacterContext,
   useCharacter,
   useDBMeta,
   useDatabase,
   useTeam,
   useTeamChar,
-  type TeamCharacterContextObj,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
-import {
-  DataContext,
-  FormulaDataWrapper,
-  GraphContext,
-  useTeamDataNoContext,
-  useTitle,
-  type ChartData,
-  type GraphContextObj,
-  type dataContextObj,
-} from '@genshin-optimizer/gi/ui'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, useMatch, useParams } from 'react-router-dom'
+import type { CharacterContextObj } from '../Context/CharacterContext'
+import { CharacterContext } from '../Context/CharacterContext'
+import { DataContext, type dataContextObj } from '../Context/DataContext'
+import { FormulaDataWrapper } from '../Context/FormulaDataContext'
+import {
+  GraphContext,
+  type ChartData,
+  type GraphContextObj,
+} from '../Context/GraphContext'
+import {
+  TeamCharacterContext,
+  type TeamCharacterContextObj,
+} from '../Context/TeamCharacterContext'
+import { useTeamDataNoContext } from '../ReactHooks/useTeamData'
+import useTitle from '../ReactHooks/useTitle'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
