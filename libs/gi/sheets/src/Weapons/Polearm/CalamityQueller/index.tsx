@@ -1,6 +1,7 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   compareEq,
   constant,
@@ -16,6 +17,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'CalamityQueller'
+const data_gen = allStats.weapon.data[key]
 
 const [, trm] = trans('weapon', key)
 
@@ -45,7 +47,7 @@ const atkInc = prod(
   subscript(input.weapon.refinement, atk_)
 )
 
-export const data = dataObjForWeaponSheet(key, {
+export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     ...dmg_Nodes,
     atk_: atkInc,
@@ -79,4 +81,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

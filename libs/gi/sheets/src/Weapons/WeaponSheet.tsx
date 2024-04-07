@@ -1,6 +1,7 @@
 import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import type { WeaponDataGen } from '@genshin-optimizer/gi/stats'
 import type { UIData } from '@genshin-optimizer/gi/ui'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
@@ -10,9 +11,16 @@ import type { IDocumentHeader } from '../sheet'
 import type { IWeaponSheet } from './IWeaponSheet'
 
 export class WeaponSheet {
+  readonly key: WeaponKey
   readonly sheet: IWeaponSheet
   readonly data: Data
-  constructor(weaponSheet: IWeaponSheet, data: Data) {
+  constructor(
+    key: WeaponKey,
+    weaponSheet: IWeaponSheet,
+    _: WeaponDataGen, // TODO: needs refactoring
+    data: Data
+  ) {
+    this.key = key
     this.sheet = weaponSheet
     this.data = data
   }

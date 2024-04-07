@@ -1,5 +1,6 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   input,
@@ -14,6 +15,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'PrimordialJadeWingedSpear'
+const data_gen = allStats.weapon.data[key]
 
 const [condStackPath, condStack] = cond(key, 'stack')
 const atkInc = [-1, 0.032, 0.039, 0.046, 0.053, 0.06]
@@ -30,7 +32,7 @@ const all_dmg_ = equal(
   '7',
   subscript(input.weapon.refinement, allDmgInc, { unit: '%' })
 )
-export const data = dataObjForWeaponSheet(key, {
+export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,
     all_dmg_,
@@ -56,4 +58,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

@@ -1,5 +1,6 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   input,
@@ -15,6 +16,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'SummitShaper'
+const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const [condPassivePath, condPassive] = cond(key, 'GoldenMajesty')
@@ -32,7 +34,7 @@ const atkStacks = prod(
   )
 )
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     shield_,
     atk_: atkStacks,
@@ -91,4 +93,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

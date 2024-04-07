@@ -1,5 +1,6 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   input,
   lookup,
@@ -14,6 +15,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'FruitOfFulfillment'
+const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const eleMasArr = [-1, 24, 27, 30, 33, 36]
@@ -38,7 +40,7 @@ const atk_ = lookup(
   naught
 )
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     eleMas,
     atk_,
@@ -72,4 +74,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

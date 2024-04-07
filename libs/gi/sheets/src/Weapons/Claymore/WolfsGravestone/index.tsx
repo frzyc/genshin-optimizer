@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, input, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -6,6 +7,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'WolfsGravestone'
+const data_gen = allStats.weapon.data[key]
 
 const atk_Src = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const atkTeam_Src = [-1, 0.4, 0.5, 0.6, 0.7, 0.8]
@@ -17,7 +19,7 @@ const atkTeam_ = equal(
   subscript(input.weapon.refinement, atkTeam_Src, { path: 'atk_' })
 )
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_: atk_,
   },
@@ -56,4 +58,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

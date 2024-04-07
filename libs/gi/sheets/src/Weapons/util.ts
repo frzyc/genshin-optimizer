@@ -1,5 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats, getWeaponStat } from '@genshin-optimizer/gi/stats'
+import type { WeaponDataGen } from '@genshin-optimizer/gi/stats'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
 import {
   constant,
@@ -14,22 +15,24 @@ import {
 
 export function dataObjForWeaponSheet(
   key: WeaponKey,
+  gen: WeaponDataGen,
   additional: Data = {},
   displayWeapon: DisplaySub = {}
 ): Data {
-  const { weaponType, mainStat, subStat, ascensionBonus } = getWeaponStat(key)
   const result: Data = {
     base: {},
     premod: {},
     total: {},
     weapon: {
       key: constant(key),
-      type: constant(weaponType),
+      type: constant(gen.weaponType),
     },
     display: {
       [`weapon:${key}`]: displayWeapon,
     },
   }
+
+  const { mainStat, subStat } = gen
   const merging = [result]
 
   if (
@@ -44,7 +47,7 @@ export function dataObjForWeaponSheet(
         mainStat.base,
         subscript(input.weapon.lvl, allStats.weapon.expCurve[mainStat.curve])
       ),
-      subscript(input.weapon.asc, ascensionBonus['atk'] ?? [])
+      subscript(input.weapon.asc, gen.ascensionBonus['atk'] ?? [])
     ),
     { path: mainStat.type }
   )

@@ -1,5 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -19,6 +20,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'AThousandFloatingDreams'
+const data_gen = allStats.weapon.data[key]
 
 const self_eleMasArr = [-1, 32, 40, 48, 56, 64]
 const self_eleDmg_arr = [-1, 0.1, 0.14, 0.18, 0.22, 0.26]
@@ -64,7 +66,7 @@ const team_eleMasDisp = equal(
 // Apply to non-equipped character
 const team_eleMas = unequal(input.charKey, target.charKey, team_eleMasDisp)
 
-export const data = dataObjForWeaponSheet(key, {
+export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     eleMas: self_eleMas,
     ...self_eleDmg_,
@@ -97,4 +99,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

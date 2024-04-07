@@ -16,6 +16,7 @@ import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'TomeOfTheEternalFlow'
 const data_gen = allStats.weapon.data[key]
+
 const hp_arr = data_gen.refinementBonus.hp_
 if (!hp_arr)
   throw new Error(`data_gen.refinementBonus.hp_ for ${key} was undefined`)
@@ -40,7 +41,7 @@ const charged_dmg_ = lookup(
   naught
 )
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     hp_,
     charged_dmg_,
@@ -84,4 +85,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

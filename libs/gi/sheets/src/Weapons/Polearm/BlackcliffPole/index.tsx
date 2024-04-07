@@ -1,5 +1,6 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   input,
@@ -12,6 +13,7 @@ import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 const key: WeaponKey = 'BlackcliffPole'
+const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'PressTheAdvantage')
 const opponentsDefeated = range(1, 3)
@@ -25,7 +27,7 @@ const atk_ = prod(
   subscript(input.weapon.refinement, atkInc)
 )
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_: atk_,
   },
@@ -60,4 +62,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

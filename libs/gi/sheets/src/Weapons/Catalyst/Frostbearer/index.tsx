@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
@@ -14,6 +15,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'Frostbearer'
+const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const dmgAoePerc = [-1, 0.8, 0.95, 1.1, 1.25, 1.4]
@@ -47,7 +49,7 @@ const dmgOnCryoOp = equal(
   )
 )
 
-const data = dataObjForWeaponSheet(key, undefined, {
+const data = dataObjForWeaponSheet(key, data_gen, undefined, {
   dmgAoe,
   dmgOnCryoOp,
 })
@@ -68,4 +70,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

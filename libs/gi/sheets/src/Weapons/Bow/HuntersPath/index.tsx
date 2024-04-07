@@ -1,5 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, input, prod, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -7,6 +8,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'HuntersPath'
+const data_gen = allStats.weapon.data[key]
 
 const allEle_dmg_arr = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const allEle_dmg_ = Object.fromEntries(
@@ -27,7 +29,7 @@ const charged_dmgInc = equal(
   )
 )
 
-const data = dataObjForWeaponSheet(key, {
+const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     ...allEle_dmg_,
     charged_dmgInc,
@@ -73,4 +75,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

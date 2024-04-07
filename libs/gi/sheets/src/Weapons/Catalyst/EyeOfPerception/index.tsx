@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
@@ -14,6 +15,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'EyeOfPerception'
+const data_gen = allStats.weapon.data[key]
 
 const dmg_Src = [-1, 2.4, 2.7, 3, 3.3, 3.6]
 const dmg = equal(
@@ -31,7 +33,7 @@ const dmg = equal(
   )
 )
 
-const data = dataObjForWeaponSheet(key, undefined, {
+const data = dataObjForWeaponSheet(key, data_gen, undefined, {
   dmg_: dmg,
 })
 
@@ -43,4 +45,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

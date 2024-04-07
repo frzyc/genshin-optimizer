@@ -1,4 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
@@ -14,6 +15,7 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'SwordOfNarzissenkreuz'
+const data_gen = allStats.weapon.data[key]
 
 const dmg_arr = [-1, 1.6, 2, 2.4, 2.8, 3.2]
 // TODO: Don't show dmg value when wielder has an Arkhe
@@ -32,7 +34,7 @@ const dmg = equal(
   )
 )
 
-const data = dataObjForWeaponSheet(key, undefined, {
+const data = dataObjForWeaponSheet(key, data_gen, undefined, {
   dmg,
 })
 const sheet: IWeaponSheet = {
@@ -43,4 +45,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)
