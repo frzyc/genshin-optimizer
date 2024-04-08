@@ -111,7 +111,7 @@ function FieldsSectionDisplay({
   bgt?: CardBackgroundColor
 }) {
   const { data } = useContext(DataContext)
-  if(!data) return null
+  if (!data) return null
   return (
     <CardThemed bgt={bgt}>
       {!evalIfFunc(hideHeader, section) && section.header && (

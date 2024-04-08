@@ -12,6 +12,7 @@ import {
   Scanner,
   Settings,
 } from '@mui/icons-material'
+import BookIcon from '@mui/icons-material/Book'
 import GroupsIcon from '@mui/icons-material/Groups'
 import {
   AppBar,
@@ -34,7 +35,6 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import BookIcon from '@mui/icons-material/Book';
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'

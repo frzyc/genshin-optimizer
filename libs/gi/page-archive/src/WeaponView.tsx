@@ -21,8 +21,6 @@ import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   CardContent,
-  CardHeader,
-  Divider,
   Grid,
   IconButton,
   ListItem,
@@ -88,7 +86,7 @@ export function WeaponView({
                 sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
               >
                 <Box display="flex" gap={1} flexWrap="wrap">
-                  <Typography variant='h5'>
+                  <Typography variant="h5">
                     <WeaponName weaponKey={key} />
                   </Typography>
                   {onClose && (
@@ -118,8 +116,8 @@ export function WeaponView({
                   )}
                 </Typography>
                 <Box display="flex" flexDirection="column" gap={1}>
-                  <CardThemed bgt='light'>
-                    <FieldDisplayList bgt='light'>
+                  <CardThemed bgt="light">
+                    <FieldDisplayList bgt="light">
                       {[
                         input.weapon.main,
                         input.weapon.sub,

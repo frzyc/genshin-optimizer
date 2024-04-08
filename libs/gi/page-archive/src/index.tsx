@@ -6,10 +6,16 @@ import { Box, Divider, Skeleton, Tab, Tabs } from '@mui/material'
 import type { ReactElement } from 'react'
 import { Suspense, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Navigate, Route, Link as RouterLink, Routes, useMatch } from 'react-router-dom'
+import {
+  Navigate,
+  Route,
+  Link as RouterLink,
+  Routes,
+  useMatch,
+} from 'react-router-dom'
 import TabArtifact from './TabArtifact'
-import TabWeapon from './TabWeapon'
 import TabCharacter from './TabCharacter'
+import TabWeapon from './TabWeapon'
 type Tab = {
   i18Key: string
   icon: ReactElement
@@ -57,19 +63,17 @@ export default function PageArchive() {
         <Tabs
           variant="fullWidth"
           value={tab}
-          sx={(theme) => {
-            return {
-              '& .MuiTab-root:hover': {
-                transition: 'background-color 0.25s ease',
-                backgroundColor: 'rgba(255,255,255,0.1)',
-              },
-              '& .Mui-selected': {
-                color: 'white !important',
-              },
-              '& .MuiTabs-indicator': {
-                height: '4px',
-              },
-            }
+          sx={{
+            '& .MuiTab-root:hover': {
+              transition: 'background-color 0.25s ease',
+              backgroundColor: 'rgba(255,255,255,0.1)',
+            },
+            '& .Mui-selected': {
+              color: 'white !important',
+            },
+            '& .MuiTabs-indicator': {
+              height: '4px',
+            },
           }}
         >
           {tabs.map(({ i18Key, icon, value, to }) => {

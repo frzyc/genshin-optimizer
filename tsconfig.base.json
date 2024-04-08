@@ -69,6 +69,9 @@
       "@genshin-optimizer/gi/localization": [
         "libs/gi/localization/src/index.ts"
       ],
+      "@genshin-optimizer/gi/page-archive": [
+        "libs/gi/page-archive/src/index.tsx"
+      ],
       "@genshin-optimizer/gi/page-artifacts": [
         "libs/gi/page-artifacts/src/index.tsx"
       ],
@@ -76,7 +79,6 @@
         "libs/gi/page-characters/src/index.tsx"
       ],
       "@genshin-optimizer/gi/page-doc": ["libs/gi/page-doc/src/index.tsx"],
-      "@genshin-optimizer/gi/page-archive": ["libs/gi/page-archive/src/index.tsx"],
       "@genshin-optimizer/gi/page-home": ["libs/gi/page-home/src/index.tsx"],
       "@genshin-optimizer/gi/page-scanner": [
         "libs/gi/page-scanner/src/index.tsx"

@@ -28,7 +28,7 @@ export function ConditionalDisplay({
   bgt = 'normal',
 }: ConditionalDisplayProps) {
   const { data } = useContext(DataContext)
-  if(!data) return null
+  if (!data) return null
   let fields
   if ('path' in conditional) {
     const condVal = data.get(conditional.value).value

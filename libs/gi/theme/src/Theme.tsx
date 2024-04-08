@@ -46,11 +46,11 @@ declare module '@mui/material/styles' {
     roll4?: PaletteOptions['primary']
     roll5?: PaletteOptions['primary']
     roll6?: PaletteOptions['primary']
-    rarity1: PaletteOptions['primary']
-    rarity2: PaletteOptions['primary']
-    rarity3: PaletteOptions['primary']
-    rarity4: PaletteOptions['primary']
-    rarity5: PaletteOptions['primary']
+    rarity1?: PaletteOptions['primary']
+    rarity2?: PaletteOptions['primary']
+    rarity3?: PaletteOptions['primary']
+    rarity4?: PaletteOptions['primary']
+    rarity5?: PaletteOptions['primary']
     geo?: PaletteOptions['primary']
     dendro?: PaletteOptions['primary']
     pyro?: PaletteOptions['primary']
@@ -314,23 +314,23 @@ export const theme = createTheme({
       color: { main: '#3b8dc8', contrastText: '#fff' },
       name: 'hyperbloom',
     }),
-    rarity1:commonTheme.palette.augmentColor({
+    rarity1: commonTheme.palette.augmentColor({
       color: { main: '#838f99', contrastText: '#fff' },
       name: 'rarity1',
     }),
-    rarity2:commonTheme.palette.augmentColor({
+    rarity2: commonTheme.palette.augmentColor({
       color: { main: '#5e966c', contrastText: '#fff' },
       name: 'rarity2',
     }),
-    rarity3:commonTheme.palette.augmentColor({
+    rarity3: commonTheme.palette.augmentColor({
       color: { main: '#499fb3', contrastText: '#fff' },
       name: 'rarity3',
     }),
-    rarity4:commonTheme.palette.augmentColor({
+    rarity4: commonTheme.palette.augmentColor({
       color: { main: '#b886ca', contrastText: '#fff' },
       name: 'rarity4',
     }),
-    rarity5:commonTheme.palette.augmentColor({
+    rarity5: commonTheme.palette.augmentColor({
       color: { main: '#e6ac54', contrastText: '#fff' },
       name: 'rarity5',
     }),
