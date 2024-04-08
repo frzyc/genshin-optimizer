@@ -40,6 +40,7 @@ const PageArtifacts = lazy(() => import('@genshin-optimizer/gi/page-artifacts'))
 const PageTools = lazy(() => import('@genshin-optimizer/gi/page-tools'))
 const PageSettings = lazy(() => import('@genshin-optimizer/gi/page-settings'))
 const PageWeapons = lazy(() => import('@genshin-optimizer/gi/page-weapons'))
+const PageArchive = lazy(() => import('@genshin-optimizer/gi/page-archive'))
 const PageDocumentation = lazy(() => import('@genshin-optimizer/gi/page-doc'))
 const PageScanner = lazy(() => import('@genshin-optimizer/gi/page-scanner'))
 const PageCharacters = lazy(
@@ -171,6 +172,7 @@ function Content() {
               <Route index element={<PageTeams />} />
               <Route path=":teamId/*" element={<PageTeam />} />
             </Route>
+            <Route path="/archive/*" element={<PageArchive />} />
             <Route path="/tools" element={<PageTools />} />
             <Route path="/setting" element={<PageSettings />} />
             <Route path="/doc/*" element={<PageDocumentation />} />

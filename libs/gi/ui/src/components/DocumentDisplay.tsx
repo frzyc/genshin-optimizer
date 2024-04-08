@@ -39,7 +39,7 @@ export function DocumentDisplay({
   const sectionDisplays = sections
     .map((s, i) => {
       // If we can't show this section, return null
-      if (s.canShow && !data.get(s.canShow).value) return null
+      if (s.canShow && !data?.get(s.canShow).value) return null
       // If we are showing only teambuffs, and this section is not a teambuff, return null
       if (teamBuffOnly && !s.teamBuff) return null
       return (
@@ -110,6 +110,8 @@ function FieldsSectionDisplay({
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
   bgt?: CardBackgroundColor
 }) {
+  const { data } = useContext(DataContext)
+  if(!data) return null
   return (
     <CardThemed bgt={bgt}>
       {!evalIfFunc(hideHeader, section) && section.header && (

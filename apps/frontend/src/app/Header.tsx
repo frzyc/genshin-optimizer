@@ -34,6 +34,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
+import BookIcon from '@mui/icons-material/Book';
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
@@ -58,6 +59,12 @@ const weapons: ITab = {
   to: '/weapons',
   value: 'weapons',
   textSuffix: <WeaponChip key="weaponAdd" />,
+}
+const archive: ITab = {
+  i18Key: 'tabs.archive',
+  icon: <BookIcon />,
+  to: '/archive',
+  value: 'archive',
 }
 const characters: ITab = {
   i18Key: 'tabs.characters',
@@ -170,6 +177,7 @@ const maincontent = [
   weapons,
   characters,
   teams,
+  archive,
   tools,
   scanner,
   doc,
@@ -281,6 +289,7 @@ const mobileContent = [
   weapons,
   characters,
   teams,
+  archive,
   tools,
   scanner,
   doc,
