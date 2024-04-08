@@ -28,7 +28,7 @@ const InvisInput = styled('input')({
   display: 'none',
 })
 
-export default function UploadCard({
+export function UploadCard({
   index,
   onReplace,
 }: {

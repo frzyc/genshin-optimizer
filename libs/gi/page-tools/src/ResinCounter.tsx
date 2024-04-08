@@ -1,6 +1,7 @@
 import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
-import { MINUTE_MS, timeString } from '@genshin-optimizer/common/util'
+import { timeString } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
+import { RESIN_RECH_MS } from '@genshin-optimizer/gi/consts'
 import { RESIN_MAX } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
@@ -13,8 +14,6 @@ import {
   Typography,
 } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
-
-export const RESIN_RECH_MS = 8 * MINUTE_MS
 
 export default function ResinCounter() {
   const database = useDatabase()

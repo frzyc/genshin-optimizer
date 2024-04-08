@@ -19,13 +19,9 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import UploadCard from './UploadCard'
+import { UploadCard } from './UploadCard'
 
-export default function DatabaseCard({
-  readOnly = false,
-}: {
-  readOnly?: boolean
-}) {
+export function DatabaseCard({ readOnly = false }: { readOnly?: boolean }) {
   const { t } = useTranslation(['settings'])
   return (
     <CardThemed bgt="light">
