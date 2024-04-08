@@ -160,15 +160,27 @@ export default function CustomMultiTargetCard({
               <Box display="flex" gap={1} alignItems="center">
                 <Chip
                   sx={{ minWidth: '8em' }}
-                  color={target.targets.length ? 'success' : undefined}
+                  color={
+                    target.expression
+                      ? 'electro'
+                      : target.targets.length
+                      ? 'success'
+                      : undefined
+                  }
                   label={
-                    <Trans
-                      t={t}
-                      i18nKey="multiTarget.target"
-                      count={target.targets.length}
-                    >
-                      {{ count: target.targets.length }} Targets
-                    </Trans>
+                    target.expression ? (
+                      <Trans t={t} i18nKey="multiTarget.expression">
+                        Expression
+                      </Trans>
+                    ) : (
+                      <Trans
+                        t={t}
+                        i18nKey="multiTarget.target"
+                        count={target.targets.length}
+                      >
+                        {{ count: target.targets.length }} Targets
+                      </Trans>
+                    )
                   }
                 />
                 <Typography>{name}</Typography>

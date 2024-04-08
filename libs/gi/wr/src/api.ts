@@ -193,7 +193,10 @@ export function dataObjForCharacterNew(
   if (sheetData?.display) {
     sheetData.display.custom = {}
 
-    const parseCustomTarget = (target: CustomTarget, useWeight = true): NumNode => {
+    const parseCustomTarget = (
+      target: CustomTarget,
+      useWeight = true
+    ): NumNode => {
       let { weight, path, hitMode, reaction, infusionAura, bonusStats } = target
       const targetNode = objPathValue(sheetData.display, path) as
         | NumNode
@@ -220,42 +223,41 @@ export function dataObjForCharacterNew(
       return result
     }
 
-    const parseCustomExpression = (customExpression: ExpressionNode): NumNode => {
-      const { operation, operands: _operands } = customExpression
+    const parseCustomExpression = (expression: ExpressionNode): NumNode => {
+      const { operation, operands: _operands } = expression
       const operands = _operands.map((x) =>
         typeof x === 'number'
           ? constant(x)
-          : (
-            'path' in x
-              ? parseCustomTarget(x, false)
-              : parseCustomExpression(x)
-          )
+          : 'path' in x
+          ? parseCustomTarget(x, false)
+          : parseCustomExpression(x)
       )
+      const [first, ...rest] = operands
       switch (operation) {
-        case '+':
+        case '+' || 'sum' || 'summation' || 'add' || 'addition' || 'plus':
           return sum(...operands)
-        case '-':
-          return prod(constant(-1), sum(...operands)) // TODO: Check it; Implement subtraction
-        case '*':
+        case '-' || 'sub' || 'subtract' || 'subtraction' || 'minus':
+          return sum(first, prod(constant(-1), sum(...rest))) // TODO: Properly implement subtraction
+        case '*' || 'mul' || 'multiply' || 'multiplication' || 'times' || 'x':
           return prod(...operands)
-        case '/':
+        case '/' || 'div' || 'divide' || 'division':
           return sum(...operands) // TODO: Implement division
-        case 'avg':
-          return prod(constant(1 / operands.length), sum(...operands)) // TODO: Implement avg
-        case 'min':
-          return operands.reduce((a, b) => prod(constant(1), a, b)) // TODO: Check it; Implement min
-        case 'max':
-          return operands.reduce((a, b) => prod(constant(2), a, b)) // TODO: Check it; Implement max
-        case 'group': // It means parenthesis
-          return sum(constant(0), ...operands) // TODO: Implement group
+        case 'avg' || 'average' || 'mean':
+          return prod(constant(1 / operands.length), sum(...operands)) // TODO: Properly implement average
+        case 'min' || 'minimum':
+          return sum(...operands) // TODO: Implement min
+        case 'max' || 'maximum':
+          return sum(...operands) // TODO: Implement max
+        case 'group' || '()':
+          return sum(constant(0), ...operands) // TODO: Properly implement group
         default:
           throw new Error(`Unknown operation ${operation}`)
       }
     }
 
-    customMultiTargets.forEach(({ name, targets, customExpression }, i) => {
-      if (customExpression) {
-        const multiTargetNode = parseCustomExpression(customExpression)
+    customMultiTargets.forEach(({ name, targets, expression }, i) => {
+      if (expression) {
+        const multiTargetNode = parseCustomExpression(expression)
         sheetData.display!.custom[i] = infoMut(multiTargetNode, {
           name,
           variant: 'invalid',

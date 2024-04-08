@@ -81,18 +81,22 @@ export function validateCustomExpression(
 ): ExpressionNode | undefined {
   if (!ce || typeof ce !== 'object') return undefined
   // if ('path' in ce) return validateCustomTarget(ce)
-    const { operation, operands: _operands } = ce as ExpressionNode
+  const { operation, operands: _operands } = ce as ExpressionNode
   if (
     !operation ||
     typeof operation !== 'string' ||
     !validExpressionOperators.includes(operation)
   )
-  return undefined
+    return undefined
   let operands = _operands
   if (!Array.isArray(operands)) operands = []
   operands = operands
-  .map((o) => typeof o === 'number' ? o : validateCustomTarget(o) ?? validateCustomExpression(o))
-  .filter((o): o is NonNullable<ExpressionNode> => o !== undefined)
+    .map((o) =>
+      typeof o === 'number'
+        ? o
+        : validateCustomTarget(o) ?? validateCustomExpression(o)
+    )
+    .filter((o): o is NonNullable<ExpressionNode> => o !== undefined)
   return { operation, operands }
 }
 
@@ -100,7 +104,7 @@ export function validateCustomMultiTarget(
   cmt: unknown
 ): CustomMultiTarget | undefined {
   if (typeof cmt !== 'object') return undefined
-  let { name, description, targets, customExpression } = cmt as CustomMultiTarget
+  let { name, description, targets, expression } = cmt as CustomMultiTarget
   if (typeof name !== 'string') name = 'New Custom Target'
   else if (name.length > MAX_NAME_LENGTH) name = name.slice(0, MAX_NAME_LENGTH)
   if (typeof description !== 'string') description = undefined
@@ -110,8 +114,8 @@ export function validateCustomMultiTarget(
   targets = targets
     .map((t) => validateCustomTarget(t))
     .filter((t): t is NonNullable<CustomTarget> => t !== undefined)
-  if (typeof customExpression === 'object') {
-    customExpression = validateCustomExpression(customExpression)
+  if (typeof expression === 'object') {
+    expression = validateCustomExpression(expression)
   }
-  return { name, description, targets, customExpression }
+  return { name, description, targets, expression }
 }
