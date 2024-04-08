@@ -8,6 +8,7 @@ import { arrayMove, deepClone } from '@genshin-optimizer/common/util'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
 import {
   initCustomTarget,
+  initExpressionNode,
   type CustomMultiTarget,
 } from '@genshin-optimizer/gi/db'
 import AddIcon from '@mui/icons-material/Add'
@@ -224,6 +225,14 @@ export default function CustomMultiTargetCard({
               >
                 Export
               </Button>
+              {!target.expression && (
+                <Button
+                  color="warning"
+                  onClick={() => setTarget(targetListToExpression(target))}
+                >
+                  Convert to Expression
+                </Button>
+              )}
               <Button color="error" onClick={onDelete}>
                 <DeleteForeverIcon />
               </Button>
@@ -241,6 +250,23 @@ export default function CustomMultiTargetCard({
     </>
   )
 }
+
+function targetListToExpression(cmt: CustomMultiTarget): CustomMultiTarget {
+  return {
+    ...cmt,
+    targets: [],
+    expression: initExpressionNode({
+      operation: 'addition',
+      operands: cmt.targets.map((t) =>
+        initExpressionNode({
+          operation: 'multiplication',
+          operands: [t.weight, t],
+        })
+      ),
+    }),
+  }
+}
+
 function NameDesc({
   name: nameProp,
   desc: descProp,

@@ -14,42 +14,21 @@ export interface CustomTarget {
   bonusStats: Record<string, number>
 }
 
-export const validExpressionOperators = [
-  '+',
-  'sum',
-  'summation',
-  'add',
+export const ExpressionOperations = [
   'addition',
-  'plus',
-  '-',
-  'sub',
-  'subtract',
   'subtraction',
-  'minus',
-  '*',
-  'mul',
-  'multiply',
   'multiplication',
-  'times',
-  'x',
-  '/',
-  'div',
-  'divide',
   'division',
-  'avg',
-  'average',
-  'mean',
-  'min',
   'minimum',
-  'max',
   'maximum',
-  'group',
-  '()', // group is a special operator that does not do anything, but is used to group operands
+  'average',
+  'grouping',
 ] as const
+export type ExpressionOperation = (typeof ExpressionOperations)[number]
 export type ExpressionOperand = ExpressionNode | CustomTarget | number
 
 export interface ExpressionNode {
-  operation: (typeof validExpressionOperators)[number]
+  operation: ExpressionOperation
   operands: ExpressionOperand[]
 }
 

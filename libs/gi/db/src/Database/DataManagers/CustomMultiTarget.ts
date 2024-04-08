@@ -7,10 +7,11 @@ import {
 } from '@genshin-optimizer/gi/consts'
 
 import {
-  validExpressionOperators,
+  ExpressionOperations,
   type CustomMultiTarget,
   type CustomTarget,
   type ExpressionNode,
+  type ExpressionOperand,
 } from '../../Interfaces/CustomMultiTarget'
 import type { InputPremodKey } from '../../legacy/keys'
 import { allInputPremodKeys } from '../../legacy/keys'
@@ -30,6 +31,11 @@ export function initCustomTarget(path: string[], multi = 1): CustomTarget {
     hitMode: 'avgHit',
     bonusStats: {},
   }
+}
+export function initExpressionNode(
+  args: Partial<ExpressionNode> = {}
+): ExpressionNode {
+  return { operation: 'addition', operands: [], ...args }
 }
 function validateOptTarget(path: string[]): string[] {
   // TODO: validate path. This function will probably need to be async
@@ -80,24 +86,17 @@ export function validateCustomExpression(
   ce: unknown
 ): ExpressionNode | undefined {
   if (!ce || typeof ce !== 'object') return undefined
-  // if ('path' in ce) return validateCustomTarget(ce)
-  const { operation, operands: _operands } = ce as ExpressionNode
-  if (
-    !operation ||
-    typeof operation !== 'string' ||
-    !validExpressionOperators.includes(operation)
+  const { operation, operands } = ce as ExpressionNode
+  if (!ExpressionOperations.includes(operation)) return undefined
+  if (!Array.isArray(operands)) return undefined
+  const operands2 = operands.map((o) =>
+    typeof o === 'number'
+      ? o
+      : validateCustomTarget(o) ?? validateCustomExpression(o)
   )
-    return undefined
-  let operands = _operands
-  if (!Array.isArray(operands)) operands = []
-  operands = operands
-    .map((o) =>
-      typeof o === 'number'
-        ? o
-        : validateCustomTarget(o) ?? validateCustomExpression(o)
-    )
-    .filter((o): o is NonNullable<ExpressionNode> => o !== undefined)
-  return { operation, operands }
+  if (operands2.some((o): o is undefined => o === undefined)) return undefined
+  const operands3 = operands2 as ExpressionOperand[]
+  return { operation, operands: operands3 }
 }
 
 export function validateCustomMultiTarget(
@@ -114,8 +113,9 @@ export function validateCustomMultiTarget(
   targets = targets
     .map((t) => validateCustomTarget(t))
     .filter((t): t is NonNullable<CustomTarget> => t !== undefined)
-  if (typeof expression === 'object') {
+  if (typeof expression !== undefined) {
     expression = validateCustomExpression(expression)
+    if (!expression) return undefined
   }
   return { name, description, targets, expression }
 }

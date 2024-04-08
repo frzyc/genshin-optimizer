@@ -234,21 +234,21 @@ export function dataObjForCharacterNew(
       )
       const [first, ...rest] = operands
       switch (operation) {
-        case '+' || 'sum' || 'summation' || 'add' || 'addition' || 'plus':
+        case 'addition':
           return sum(...operands)
-        case '-' || 'sub' || 'subtract' || 'subtraction' || 'minus':
+        case 'subtraction':
           return sum(first, prod(constant(-1), sum(...rest))) // TODO: Properly implement subtraction
-        case '*' || 'mul' || 'multiply' || 'multiplication' || 'times' || 'x':
+        case 'multiplication':
           return prod(...operands)
-        case '/' || 'div' || 'divide' || 'division':
+        case 'division':
           return sum(...operands) // TODO: Implement division
-        case 'avg' || 'average' || 'mean':
-          return prod(constant(1 / operands.length), sum(...operands)) // TODO: Properly implement average
-        case 'min' || 'minimum':
+        case 'minimum':
           return sum(...operands) // TODO: Implement min
-        case 'max' || 'maximum':
+        case 'maximum':
           return sum(...operands) // TODO: Implement max
-        case 'group' || '()':
+        case 'average':
+          return prod(constant(1 / operands.length), sum(...operands)) // TODO: Properly implement average
+        case 'grouping':
           return sum(constant(0), ...operands) // TODO: Properly implement group
         default:
           throw new Error(`Unknown operation ${operation}`)
