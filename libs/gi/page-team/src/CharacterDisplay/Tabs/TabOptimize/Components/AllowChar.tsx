@@ -108,7 +108,7 @@ export default function AllowChar({
   ])
   const deferredCharacterRarityKeys = useDeferredValue(characterRarityKeys)
 
-  const charKeyMap: Dict<CharacterKey, ICachedCharacter> = useMemo(
+  const charKeyMap: Partial<Record<CharacterKey, ICachedCharacter>> = useMemo(
     () =>
       deferredDbDirty &&
       Object.fromEntries(

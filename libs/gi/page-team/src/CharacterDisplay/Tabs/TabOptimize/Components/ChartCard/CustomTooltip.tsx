@@ -27,15 +27,16 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import type { ReactNode } from 'react'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import type { TooltipProps } from 'recharts'
 import type EnhancedPoint from './EnhancedPoint'
 
 type CustomTooltipProps = TooltipProps<number, string> & {
-  xLabel: Displayable
+  xLabel: ReactNode
   xUnit: Unit | undefined
-  yLabel: Displayable
+  yLabel: ReactNode
   yUnit: Unit | undefined
   selectedPoint: EnhancedPoint | undefined
   setSelectedPoint: (pt: EnhancedPoint | undefined) => void

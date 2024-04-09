@@ -34,16 +34,17 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
+import type { ReactElement, ReactNode } from 'react'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
 import silly_icon from './silly_icon.png'
 type ITab = {
   i18Key: string
-  icon: Displayable
+  icon: ReactNode
   to: string
   value: string
-  textSuffix?: Displayable
+  textSuffix?: ReactNode
 }
 const artifacts: ITab = {
   i18Key: 'tabs.artifacts',
@@ -256,7 +257,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
                 value={value}
                 component={RouterLink}
                 to={to}
-                icon={tooltipIcon}
+                icon={tooltipIcon as ReactElement}
                 iconPosition="start"
                 label={
                   isXL || textSuffix ? (

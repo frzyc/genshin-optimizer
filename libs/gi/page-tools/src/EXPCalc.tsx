@@ -20,6 +20,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material'
+import type { ReactNode } from 'react'
 import { useState } from 'react'
 const booksData = {
   advice: {
@@ -99,7 +100,7 @@ export default function EXPCalc() {
   }
   if (finalLvl === milestoneLvl) finalExp = 0
 
-  let invalidText: Displayable = ''
+  let invalidText: ReactNode = ''
 
   if (finalMora < 0)
     invalidText = (

@@ -43,7 +43,7 @@ import { relicReducer } from './reducer'
 // TODO: temporary until relic sheet is implemented
 interface IRelicSheet {
   rarity: readonly RelicRarityKey[]
-  // setEffects: Dict<SetNum, SetEffectEntry>
+  // setEffects: Partial<Record<SetNum, SetEffectEntry>>
   setEffects: any
 }
 const tempRelicSheet: IRelicSheet = {

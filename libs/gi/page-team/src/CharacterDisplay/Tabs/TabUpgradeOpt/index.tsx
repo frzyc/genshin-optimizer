@@ -243,7 +243,7 @@ export default function TabUpopt() {
 
     const equippedArts =
       database.chars.get(characterKey)?.equippedArtifacts ??
-      ({} as StrictDict<ArtifactSlotKey, string>)
+      ({} as Record<ArtifactSlotKey, string>)
     const curEquip: UpOptBuild = Object.fromEntries(
       allArtifactSlotKeys.map((slotKey) => {
         const art = database.arts.get(equippedArts[slotKey] ?? '')
