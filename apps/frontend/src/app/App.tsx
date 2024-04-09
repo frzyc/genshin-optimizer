@@ -27,8 +27,7 @@ import {
   useScrollTrigger,
 } from '@mui/material'
 import React, { Suspense, lazy, useCallback, useMemo, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
