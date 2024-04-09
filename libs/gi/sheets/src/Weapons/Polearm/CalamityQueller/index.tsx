@@ -9,6 +9,7 @@ import {
   lookup,
   prod,
   subscript,
+  target,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -32,10 +33,10 @@ const dmg_Nodes = Object.fromEntries(
 )
 const atkInc = prod(
   compareEq(
-    input.charKey,
+    target.charKey,
     input.activeCharKey,
     infoMut(constant(1), { name: trm('active') }),
-    infoMut(constant(1), { name: trm('inactive') })
+    infoMut(constant(2), { name: trm('inactive') })
   ),
   lookup(
     condStack,
