@@ -44,7 +44,7 @@ function FooterContent() {
               target="_blank"
               rel="noreferrer"
             >
-              {{ version: __VERSION__ } as TransObject}
+              {{ version: __VERSION__ } as any}
             </a>
           </Trans>
         </Typography>

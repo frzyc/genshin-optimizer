@@ -189,12 +189,12 @@ export default function ExcludeArt({
             >
               {useExcludedArts ? (
                 <Trans t={t} i18nKey="excludeArt.usingNum">
-                  Using {{ totalStr: excludedTotal } as TransObject} excluded
+                  Using {{ totalStr: excludedTotal } as any} excluded
                   artifacts
                 </Trans>
               ) : (
                 <Trans t={t} i18nKey="excludeArt.excNum" count={numExcludedArt}>
-                  {{ count: numExcludedArt } as TransObject} artifacts are
+                  {{ count: numExcludedArt } as any} artifacts are
                   excluded
                 </Trans>
               )}
