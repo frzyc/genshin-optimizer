@@ -1,8 +1,8 @@
 import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common/util'
+import type { WeaponSortKey } from '@genshin-optimizer/gi/db'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { i18n } from '@genshin-optimizer/gi/i18n'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import type {WeaponSortKey} from "@genshin-optimizer/gi/db"
 
 export function weaponSortConfigs(): SortConfigs<WeaponSortKey, IWeapon> {
   return {
