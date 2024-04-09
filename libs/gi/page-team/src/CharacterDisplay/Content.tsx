@@ -13,7 +13,7 @@ import { getCharEle } from '@genshin-optimizer/gi/stats'
 import { Skeleton, Tab, Tabs } from '@mui/material'
 import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Route, Link as RouterLink, Routes } from 'react-router-dom'
+import { Navigate, Route, Link as RouterLink, Routes } from 'react-router-dom'
 import FormulaModal from './FormulaModal'
 import LoadoutSettingElement from './LoadoutSettingElement'
 import TabBuild from './Tabs/TabOptimize'
@@ -58,18 +58,17 @@ function CharacterPanel({ isTCBuild }: { isTCBuild: boolean }) {
       <Routes>
         {/* Character Panel */}
         {isTCBuild ? (
-          <Route path="/*" element={<TabTheorycraft />} />
+          <Route path="overview" element={<TabTheorycraft />} />
         ) : (
-          <Route path="/*" element={<TabOverview />} />
+          <Route path="overview" element={<TabOverview />} />
         )}
-        <Route path="/:characterKey/talent" element={<TabTalent />} />
-        {!isTCBuild && (
-          <Route path="/:characterKey/optimize" element={<TabBuild />} />
-        )}
+        <Route path="talent" element={<TabTalent />} />
+        {!isTCBuild && <Route path="optimize" element={<TabBuild />} />}
 
         {!isTCBuild && shouldShowDevComponents && (
-          <Route path="/:characterKey/upopt" element={<TabUpopt />} />
+          <Route path="upopt" element={<TabUpopt />} />
         )}
+        <Route path="*" index element={<Navigate to="overview" />} />
       </Routes>
     </Suspense>
   )
@@ -141,7 +140,7 @@ function TabNav({
             label={t('tabs.theorycraft')}
             icon={<ScienceIcon />}
             component={RouterLink}
-            to={`${characterKey}/`}
+            to="overview"
           />
         ) : (
           <Tab
@@ -149,7 +148,7 @@ function TabNav({
             label={t('tabs.overview')}
             icon={<PersonIcon />}
             component={RouterLink}
-            to={`${characterKey}/`}
+            to="overview"
           />
         )}
         <Tab
@@ -157,7 +156,7 @@ function TabNav({
           label={t('tabs.talent')}
           icon={<FactCheckIcon />}
           component={RouterLink}
-          to={`${characterKey}/talent`}
+          to="talent"
         />
         {!isTCBuild && (
           <Tab
@@ -165,7 +164,7 @@ function TabNav({
             label={t('tabs.optimize')}
             icon={<TrendingUpIcon />}
             component={RouterLink}
-            to={`${characterKey}/optimize`}
+            to="optimize"
           />
         )}
 
@@ -175,7 +174,7 @@ function TabNav({
             label={t('tabs.upgradeopt')}
             icon={<TrendingUpIcon />}
             component={RouterLink}
-            to={`${characterKey}/upopt`}
+            to="upopt"
           />
         )}
       </Tabs>
