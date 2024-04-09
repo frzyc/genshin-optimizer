@@ -43,7 +43,6 @@ describe('A general optimizeTC usecase', () => {
       },
       weapon: { key: 'StaffOfHoma', level: 90, ascension: 6, refinement: 1 },
       optimization: {
-        target: ['normal', '0'],
         distributedSubstats: 2,
         maxSubstats: {
           hp: 10,
@@ -159,7 +158,10 @@ describe('A general optimizeTC usecase', () => {
     )!
 
     expect(teamData).toBeTruthy()
-    const { nodes } = optimizeTcGetNodes(teamData, characterKey, buildTc)
+    const { nodes } = optimizeTcGetNodes(teamData, characterKey, buildTc, [
+      'normal',
+      '0',
+    ])
     expect(nodes).toBeTruthy()
     nodes &&
       optimizeTcUsingNodes(nodes, buildTc, (data) => {

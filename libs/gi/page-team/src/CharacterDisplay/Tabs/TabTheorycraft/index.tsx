@@ -11,6 +11,7 @@ import {
   useBuildTc,
   useDBMeta,
   useDatabase,
+  useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
@@ -60,9 +61,10 @@ export default function TabTheorycraft() {
     teamId,
     teamCharId,
     loadoutDatum,
-    teamChar: { key: characterKey },
+    teamChar: { key: characterKey, optConfigId },
   } = useContext(TeamCharacterContext)
   const buildTc = useBuildTc(loadoutDatum.buildTcId)!
+  const { optimizationTarget } = useOptConfig(optConfigId)!
   const setBuildTc = useCallback(
     (data: SetBuildTcAction) => {
       database.buildTcs.set(loadoutDatum.buildTcId, data)
@@ -86,14 +88,11 @@ export default function TabTheorycraft() {
       }
     }, [dataContextValue, compareData])
 
-  const optimizationTarget = buildTc.optimization.target
   const setOptimizationTarget = useCallback(
-    (optimizationTarget: BuildTc['optimization']['target']) => {
-      const data_ = structuredClone(buildTc)
-      data_.optimization.target = optimizationTarget
-      setBuildTc(data_)
+    (optimizationTarget: string[]) => {
+      database.optConfigs.set(optConfigId, { optimizationTarget })
     },
-    [buildTc, setBuildTc]
+    [database, optConfigId]
   )
 
   const distributedSubstats = buildTc.optimization.distributedSubstats
@@ -141,14 +140,15 @@ export default function TabTheorycraft() {
     const { nodes } = optimizeTcGetNodes(
       dataContextValue.teamData,
       characterKey,
-      buildTc
+      buildTc,
+      optimizationTarget
     )
     const scalesWith = nodes ? getScalesWith(nodes) : new Set<SubstatKey>()
     return {
       nodes,
       scalesWith,
     }
-  }, [dataContextValue.teamData, characterKey, buildTc])
+  }, [dataContextValue.teamData, characterKey, buildTc, optimizationTarget])
 
   const optimizeSubstats = (apply: boolean) => {
     if (!workerRef.current) return
@@ -166,7 +166,12 @@ export default function TabTheorycraft() {
       getBuildTcWeaponData(buildTc)
     )
     if (!tempTeamData) return
-    const { nodes } = optimizeTcGetNodes(tempTeamData, characterKey, buildTc)
+    const { nodes } = optimizeTcGetNodes(
+      tempTeamData,
+      characterKey,
+      buildTc,
+      optimizationTarget
+    )
     workerRef.current.postMessage({ buildTc, nodes })
     setStatus((s) => ({
       ...s,

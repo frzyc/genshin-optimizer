@@ -54,11 +54,12 @@ export interface FinalizeResult {
 export function optimizeTcGetNodes(
   teamDataProp: TeamData,
   characterKey: CharacterKey,
-  buildTc: BuildTc
+  buildTc: BuildTc,
+  optimizationTarget: string[] | undefined
 ) {
   const {
     artifact: { sets: artSets },
-    optimization: { target: optimizationTarget, minTotal },
+    optimization: { minTotal },
   } = buildTc
   if (!optimizationTarget) return {}
   const workerData = teamDataProp[characterKey]?.target.data![0]

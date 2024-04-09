@@ -130,7 +130,6 @@ export function initCharTC(weaponKey: WeaponKey): BuildTc {
       sets: {},
     },
     optimization: {
-      target: undefined,
       distributedSubstats: 45,
       maxSubstats: initCharTcOptimizationMaxSubstats(),
       minTotal: {},
@@ -215,9 +214,8 @@ function validateCharTcOptimization(
   optimization: unknown
 ): BuildTc['optimization'] | undefined {
   if (typeof optimization !== 'object') return undefined
-  let { target, distributedSubstats, maxSubstats, minTotal } =
+  let { distributedSubstats, maxSubstats, minTotal } =
     optimization as BuildTc['optimization']
-  if (!Array.isArray(target)) target = undefined
   if (typeof distributedSubstats !== 'number') distributedSubstats = 20
   if (typeof maxSubstats !== 'object')
     maxSubstats = initCharTcOptimizationMaxSubstats()
@@ -231,7 +229,7 @@ function validateCharTcOptimization(
     )
   )
 
-  return { target, distributedSubstats, maxSubstats, minTotal }
+  return { distributedSubstats, maxSubstats, minTotal }
 }
 function initCharTcOptimizationMaxSubstats(): BuildTc['optimization']['maxSubstats'] {
   return objKeyMap(
