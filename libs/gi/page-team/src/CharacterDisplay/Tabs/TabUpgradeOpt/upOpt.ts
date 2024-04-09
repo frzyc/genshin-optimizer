@@ -118,7 +118,7 @@ type GaussianMixture = {
 
 // TODO: put this into a `constants` files somewhere.
 /* substat roll weights */
-const fWeight: StrictDict<SubstatKey, number> = {
+const fWeight: Record<SubstatKey, number> = {
   hp: 6,
   atk: 6,
   def: 6,

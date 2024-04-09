@@ -95,6 +95,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
+import type { ReactNode } from 'react'
 import React, {
   Suspense,
   memo,
@@ -1084,7 +1085,7 @@ const BuildList = memo(function BuildList({
   setBuilds?: (builds: GeneratedBuild[] | undefined) => void
   compareData?: UIData
   disabled: boolean
-  getLabel: (index: number) => Displayable
+  getLabel: (index: number) => ReactNode
   mainStatAssumptionLevel: number
   allowLocationsState: AllowLocationsState
 }) {
@@ -1139,7 +1140,7 @@ const BuildItemWrapper = memo(function BuildItemWrapper({
   allowLocationsState,
 }: {
   index: number
-  label: Displayable
+  label: ReactNode
   build: GeneratedBuild
   disabled: boolean
   deleteBuild?: (index: number) => void

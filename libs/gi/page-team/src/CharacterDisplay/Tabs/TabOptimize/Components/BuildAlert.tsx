@@ -26,7 +26,7 @@ export default function BuildAlert({
   characterName,
 }: {
   status: BuildStatus
-  characterName: Displayable
+  characterName: ReactNode
 }) {
   const hasTotal = isFinite(total)
 

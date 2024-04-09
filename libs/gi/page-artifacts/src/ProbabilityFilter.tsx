@@ -10,8 +10,8 @@ export default function ProbabilityFilter({
   setProbabilityFilter: setStatFilters,
   disabled = false,
 }: {
-  probabilityFilter: Dict<SubstatKey, number>
-  setProbabilityFilter: (object: Dict<SubstatKey, number>) => void
+  probabilityFilter: Partial<Record<SubstatKey, number>>
+  setProbabilityFilter: (object: Partial<Record<SubstatKey, number>>) => void
   disabled?: boolean
 }) {
   const { t } = useTranslation('artifact')

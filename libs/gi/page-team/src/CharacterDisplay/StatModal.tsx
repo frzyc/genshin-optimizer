@@ -33,6 +33,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import type { ReactNode } from 'react'
 import { useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 const cols = {
@@ -155,7 +156,7 @@ function StatDisplayContent({
   extra,
 }: {
   nodes: ReadNode<number>[]
-  extra?: Displayable
+  extra?: ReactNode
 }) {
   const { data, compareData } = useContext(DataContext)
   return (
