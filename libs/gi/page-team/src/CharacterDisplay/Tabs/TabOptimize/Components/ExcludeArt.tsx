@@ -189,13 +189,11 @@ export default function ExcludeArt({
             >
               {useExcludedArts ? (
                 <Trans t={t} i18nKey="excludeArt.usingNum">
-                  Using {{ totalStr: excludedTotal } as any} excluded
-                  artifacts
+                  Using {{ totalStr: excludedTotal } as any} excluded artifacts
                 </Trans>
               ) : (
                 <Trans t={t} i18nKey="excludeArt.excNum" count={numExcludedArt}>
-                  {{ count: numExcludedArt } as any} artifacts are
-                  excluded
+                  {{ count: numExcludedArt } as any} artifacts are excluded
                 </Trans>
               )}
             </SqBadge>
