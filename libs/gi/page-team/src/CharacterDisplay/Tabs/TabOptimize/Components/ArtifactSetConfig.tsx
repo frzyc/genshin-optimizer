@@ -59,10 +59,18 @@ import {
   Divider,
   Grid,
   IconButton,
+  Skeleton,
   Stack,
   Typography,
 } from '@mui/material'
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import {
+  Suspense,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
 export default function ArtifactSetConfig({
@@ -619,31 +627,43 @@ function ArtifactSetCard({
                   ))}
                 <InfoTooltipInline
                   title={
-                    <Box>
-                      <Typography>
-                        <SqBadge color="success">{t`2set`}</SqBadge>
-                      </Typography>
-                      <Typography>
-                        <Translate
-                          ns={`artifact_${setKey}_gen`}
-                          key18={'setEffects.2'}
+                    <Suspense
+                      fallback={
+                        <Skeleton
+                          variant="rectangular"
+                          width={300}
+                          height={200}
                         />
-                      </Typography>
-                      <Box
-                        paddingTop={2}
-                        sx={{ opacity: setExclusionSet.includes(4) ? 0.6 : 1 }}
-                      >
+                      }
+                    >
+                      <Box>
                         <Typography>
-                          <SqBadge color="success">{t`4set`}</SqBadge>
+                          <SqBadge color="success">{t`2set`}</SqBadge>
                         </Typography>
                         <Typography>
                           <Translate
                             ns={`artifact_${setKey}_gen`}
-                            key18={'setEffects.4'}
+                            key18={'setEffects.2'}
                           />
                         </Typography>
+                        <Box
+                          paddingTop={2}
+                          sx={{
+                            opacity: setExclusionSet.includes(4) ? 0.6 : 1,
+                          }}
+                        >
+                          <Typography>
+                            <SqBadge color="success">{t`4set`}</SqBadge>
+                          </Typography>
+                          <Typography>
+                            <Translate
+                              ns={`artifact_${setKey}_gen`}
+                              key18={'setEffects.4'}
+                            />
+                          </Typography>
+                        </Box>
                       </Box>
-                    </Box>
+                    </Suspense>
                   }
                 />
               </Typography>
