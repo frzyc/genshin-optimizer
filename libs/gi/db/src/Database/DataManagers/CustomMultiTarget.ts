@@ -89,14 +89,14 @@ export function validateCustomExpression(
   const { operation, operands } = ce as ExpressionNode
   if (!ExpressionOperations.includes(operation)) return undefined
   if (!Array.isArray(operands)) return undefined
-  const operands2 = operands.map((o) =>
+  const operands_ = operands.map((o) =>
     typeof o === 'number'
       ? o
       : validateCustomTarget(o) ?? validateCustomExpression(o)
   )
-  if (operands2.some((o): o is undefined => o === undefined)) return undefined
-  const operands3 = operands2 as ExpressionOperand[]
-  return { operation, operands: operands3 }
+  if (operands_.some((o): o is undefined => o === undefined)) return undefined
+  const operands__ = operands_ as ExpressionOperand[]
+  return { operation, operands: operands__ }
 }
 
 export function validateCustomMultiTarget(
@@ -113,7 +113,7 @@ export function validateCustomMultiTarget(
   targets = targets
     .map((t) => validateCustomTarget(t))
     .filter((t): t is NonNullable<CustomTarget> => t !== undefined)
-  if (typeof expression !== undefined) {
+  if (expression !== undefined) {
     expression = validateCustomExpression(expression)
     if (!expression) return undefined
   }
