@@ -20,12 +20,10 @@ import {
   WeaponRarityToggle,
   WeaponSelectionModal,
   WeaponToggle,
-} from '@genshin-optimizer/gi/ui'
-import {
   weaponFilterConfigs,
   weaponSortConfigs,
   weaponSortMap,
-} from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
