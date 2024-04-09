@@ -16,6 +16,7 @@ import {
   CharacterMultiAutocomplete,
   ShowingAndSortOptionSelect,
   TeamCard,
+  useTitle,
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import UploadIcon from '@mui/icons-material/Upload'
@@ -58,6 +59,9 @@ export default function PageTeams() {
         (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
     )
   }, [forceUpdate, database])
+
+  // Account for the case of switching from a team -> teams page, since they have the same base /teams url
+  useTitle()
 
   const onAdd = () => {
     const newid = database.teams.new()

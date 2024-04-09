@@ -125,9 +125,6 @@ function App() {
             <DatabaseContext.Provider value={dbContextObj}>
               <ErrorBoundary>
                 <HashRouter basename="/">
-                  <Suspense fallback={null}>
-                    <MatchTitle />
-                  </Suspense>
                   <Content />
                   <ScrollTop>
                     <Fab
@@ -148,6 +145,7 @@ function App() {
   )
 }
 function Content() {
+  useTitle()
   return (
     <Grid container direction="column" minHeight="100vh" position="relative">
       <Grid item>
@@ -186,13 +184,5 @@ function Content() {
       </Grid>
     </Grid>
   )
-}
-function MatchTitle() {
-  const { t } = useTranslation('ui')
-  const {
-    params: { page = '' },
-  } = useMatch({ path: '/:page/*' }) ?? { params: { page: '' } }
-  useTitle(useMemo(() => page && t(`tabs.${page}`), [page, t]))
-  return null
 }
 export default App
