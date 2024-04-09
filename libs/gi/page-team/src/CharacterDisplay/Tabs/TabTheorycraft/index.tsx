@@ -1,6 +1,6 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed, CustomNumberInput } from '@genshin-optimizer/common/ui'
-import { isDev, objMap, toPercent } from '@genshin-optimizer/common/util'
+import { objMap, toPercent } from '@genshin-optimizer/common/util'
 import {
   artSubstatRollData,
   type SubstatKey,
@@ -13,6 +13,13 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import type { TCWorkerResult } from '@genshin-optimizer/gi/solver-tc'
+import {
+  TCWorker,
+  getMinSubAndOtherRolls,
+  getScalesWith,
+  optimizeTcGetNodes,
+} from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
@@ -28,6 +35,7 @@ import {
   getBuildTcWeaponData,
   getTeamDataCalc,
   initialBuildStatus,
+  isDev,
 } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import CalculateIcon from '@mui/icons-material/Calculate'
@@ -47,12 +55,6 @@ import { BuildTcContext } from './BuildTcContext'
 import GcsimButton from './GcsimButton'
 import KQMSButton from './KQMSButton'
 import { WeaponEditorCard } from './WeaponEditorCard'
-import type { TCWorkerResult } from './optimizeTc'
-import {
-  getMinSubAndOtherRolls,
-  getScalesWith,
-  optimizeTcGetNodes,
-} from './optimizeTc'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const database = useDatabase()
@@ -106,12 +108,9 @@ export default function TabTheorycraft() {
   )
   const workerRef = useRef<Worker | null>(null)
   if (workerRef.current === null)
-    workerRef.current = new Worker(
-      new URL('./optimizeTcWorker.ts', import.meta.url),
-      {
-        type: 'module',
-      }
-    )
+    workerRef.current = new Worker(TCWorker, {
+      type: 'module',
+    })
 
   const [status, setStatus] = useState(initialBuildStatus())
   const solving = status.type === 'active'

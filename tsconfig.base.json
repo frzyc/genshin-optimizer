@@ -100,6 +100,7 @@
         "libs/gi/silly-wisher-names/src/index.ts"
       ],
       "@genshin-optimizer/gi/solver": ["libs/gi/solver/src/index.ts"],
+      "@genshin-optimizer/gi/solver-tc": ["libs/gi/solver-tc/src/index.ts"],
       "@genshin-optimizer/gi/stats": ["libs/gi/stats/src/index.ts"],
       "@genshin-optimizer/gi/svgicons": ["libs/gi/svgicons/src/index.ts"],
       "@genshin-optimizer/gi/theme": ["libs/gi/theme/src/index.ts"],

@@ -11,3 +11,5 @@ onmessage = async (e: MessageEvent<WorkerData>) => {
   const { nodes, buildTc } = e.data
   optimizeTcUsingNodes(nodes, buildTc, (r) => postMessage(r))
 }
+
+export default {}

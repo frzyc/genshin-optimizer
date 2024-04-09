@@ -8,6 +8,7 @@ import {
   getTeamDataCalc,
 } from '@genshin-optimizer/gi/ui'
 import { optimizeTcGetNodes, optimizeTcUsingNodes } from './optimizeTc'
+// FIXME: Should not be importing from @go/gi/ui, since this means this TS lib is importing from a React Lib
 
 describe('A general optimizeTC usecase', () => {
   it('generate correct distribution', () => {
