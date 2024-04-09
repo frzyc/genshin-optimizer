@@ -56,21 +56,19 @@ function CharacterPanel({ isTCBuild }: { isTCBuild: boolean }) {
       fallback={<Skeleton variant="rectangular" width="100%" height={500} />}
     >
       <Routes>
-        <Route path=":characterKey">
-          {/* Character Panel */}
-          {isTCBuild ? (
-            <Route path="overview" element={<TabTheorycraft />} />
-          ) : (
-            <Route path="overview" element={<TabOverview />} />
-          )}
-          <Route path="talent" element={<TabTalent />} />
-          {!isTCBuild && <Route path="optimize" element={<TabBuild />} />}
+        {/* Character Panel */}
+        {isTCBuild ? (
+          <Route path="overview" element={<TabTheorycraft />} />
+        ) : (
+          <Route path="overview" element={<TabOverview />} />
+        )}
+        <Route path="talent" element={<TabTalent />} />
+        {!isTCBuild && <Route path="optimize" element={<TabBuild />} />}
 
-          {!isTCBuild && shouldShowDevComponents && (
-            <Route path="upopt" element={<TabUpopt />} />
-          )}
-          <Route path="*" index element={<Navigate to="overview" />} />
-        </Route>
+        {!isTCBuild && shouldShowDevComponents && (
+          <Route path="upopt" element={<TabUpopt />} />
+        )}
+        <Route path="*" index element={<Navigate to="overview" />} />
       </Routes>
     </Suspense>
   )

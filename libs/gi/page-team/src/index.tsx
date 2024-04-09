@@ -29,7 +29,14 @@ import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
+import {
+  Navigate,
+  Route,
+  Routes,
+  useMatch,
+  useNavigate,
+  useParams,
+} from 'react-router-dom'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
@@ -260,7 +267,11 @@ function InnerContent({ tab }: { tab: string }) {
     <CharacterContext.Provider value={CharacterContextValue}>
       <GraphContext.Provider value={graphContextValue}>
         <FormulaDataWrapper>
-          <Content tab={tab} />
+          <Routes>
+            <Route path=":characterKey">
+              <Route path="*" index element={<Content tab={tab} />} />
+            </Route>
+          </Routes>
         </FormulaDataWrapper>
       </GraphContext.Provider>
     </CharacterContext.Provider>
