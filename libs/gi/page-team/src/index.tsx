@@ -1,9 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import {
-  colorToRgbaString,
-  hexToColor,
-  shouldShowDevComponents,
-} from '@genshin-optimizer/common/util'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
@@ -33,7 +29,7 @@ import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Navigate, useMatch, useParams } from 'react-router-dom'
+import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
@@ -45,7 +41,7 @@ export default function PageTeam() {
 
   // An edit is triggered whenever a team gets opened even if no edits are done
   useEffect(() => {
-    if (invalidKey || !teamId) return
+    if (invalidKey) return
     database.teams.set(teamId, { lastEdit: Date.now() })
   }, [teamId, database.teams, invalidKey])
 
@@ -62,14 +58,12 @@ export default function PageTeam() {
   )
 }
 
-const tabs = ['overview', 'talent', 'teambuffs', 'optimize']
-if (shouldShowDevComponents) tabs.push('upopt')
-const tabsTc = ['overview', 'talent', 'teambuffs']
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 // Stored per teamCharId
 const chartDataAll: Record<string, ChartData> = {}
 const graphBuildAll: Record<string, GeneratedBuild[]> = {}
 function Page({ teamId }: { teamId: string }) {
+  const navigate = useNavigate()
   const { silly } = useContext(SillyContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
@@ -83,24 +77,28 @@ function Page({ teamId }: { teamId: string }) {
   } = useMatch({ path: '/teams/:teamId/:characterKey', end: false }) ?? {
     params: {},
   }
-
   const {
     params: { tab: tabRaw },
-  } = useMatch({ path: '/teams/:teamId/:characterKey/:tab', end: false }) ?? {
+  } = useMatch({ path: '/teams/:teamId/:characterKey/:tab' }) ?? {
     params: {},
   }
+  const tab = tabRaw ?? 'overview'
 
   // validate characterKey
-  const loadoutDatum = useMemo(
-    () =>
-      loadoutData.find(
-        (loadoutDatum) =>
-          loadoutDatum?.teamCharId &&
-          database.teamChars.get(loadoutDatum.teamCharId)?.key ===
-            characterKeyRaw
-      ) ?? loadoutData[0],
-    [database, loadoutData, characterKeyRaw]
-  )
+  const loadoutDatum = useMemo(() => {
+    const loadoutDatum = loadoutData.find(
+      (loadoutDatum) =>
+        loadoutDatum?.teamCharId &&
+        database.teamChars.get(loadoutDatum.teamCharId)?.key === characterKeyRaw
+    )
+    if (!loadoutDatum) {
+      const ld = loadoutData[0]
+      const ck = ld && database.teamChars.get(ld.teamCharId)?.key
+      if (ck) navigate(ck)
+      else navigate('')
+    }
+    return loadoutDatum
+  }, [loadoutData, database.teamChars, characterKeyRaw, navigate])
 
   const { characterKey, teamCharId } = useMemo(() => {
     const teamCharId = loadoutDatum?.teamCharId
@@ -109,17 +107,6 @@ function Page({ teamId }: { teamId: string }) {
   }, [loadoutDatum, database])
 
   const teamChar = useTeamChar(teamCharId ?? '')
-
-  // validate tab value
-  const tab = useMemo(() => {
-    if (!loadoutDatum) return 'overview'
-    if (loadoutDatum.buildType === 'tc') {
-      if (!tabRaw || !tabsTc.includes(tabRaw)) return 'overview'
-    } else {
-      if (!tabRaw || !tabs.includes(tabRaw)) return 'overview'
-    }
-    return tabRaw
-  }, [loadoutDatum, tabRaw])
 
   const { t } = useTranslation([
     'sillyWisher_charNames',
