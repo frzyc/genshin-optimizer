@@ -325,8 +325,6 @@ const sheet: TalentSheet = {
       value: condA4,
       path: condA4Path,
       teamBuff: true,
-      // Hide for Rosaria
-      canShow: unequal(input.activeCharKey, key, 1),
       states: {
         on: {
           fields: [
@@ -351,7 +349,7 @@ const sheet: TalentSheet = {
       value: condA1,
       name: ct.ch('a1'),
       teamBuff: true,
-      canShow: unequal(input.activeCharKey, key, equal(condA4, 'on', 1)),
+      canShow: equal(condA4, 'on', 1),
       states: {
         on: {
           fields: [
@@ -368,7 +366,6 @@ const sheet: TalentSheet = {
       },
     }),
     ct.fieldsTem('passive2', {
-      canShow: equal(input.activeCharKey, key, 1),
       fields: [{ node: dmgFormulas.passive2.nodeA4OptTarget }],
     }),
   ]),
