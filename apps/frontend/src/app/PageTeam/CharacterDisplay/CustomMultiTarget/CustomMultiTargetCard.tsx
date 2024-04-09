@@ -330,6 +330,7 @@ function recursiveExpressionNodeDisplayer({
       value={[...ptn, index].toString()}
       sx={style}
       onClick={() => setPTSN([...ptn, index])}
+      disabled={[...ptn, index].toString() === ptsn.toString()}
     >
       <ColorText color="red">null</ColorText>
     </ToggleButton>
@@ -341,6 +342,7 @@ function recursiveExpressionNodeDisplayer({
           value={[...ptn, index].toString()}
           sx={style}
           onClick={() => setPTSN([...ptn, index])}
+          disabled={[...ptn, index].toString() === ptsn.toString()}
         >
           {typeof operand === 'number'
             ? operand
@@ -360,10 +362,10 @@ function recursiveExpressionNodeDisplayer({
   })
   const lastIndex = operands_.length - 1
   if (lastIndex < 1) {
-    buttons.push(nullButton(lastIndex + 1))
+    operands_.push([nullButton(lastIndex + 1)])
   }
   if (lastIndex < 0) {
-    buttons.push(nullButton(lastIndex + 2))
+    operands_.push([nullButton(lastIndex + 2)])
   }
   if (operation in operationSymbols) {
     // buttons.push(selfButton('('))
