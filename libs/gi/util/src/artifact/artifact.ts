@@ -179,9 +179,13 @@ export function getArtifactEfficiency(
   const { substats, rarity, level } = artifact
   const { artifactMeta } = getArtifactMeta(artifact)
   // Relative to max star, so comparison between different * makes sense.
-  const currentEfficiency = artifact.substats
-    .filter(({ key }) => key && filter.has(key))
-    .reduce((sum, _, i) => sum + (artifactMeta.substats[i]?.efficiency ?? 0), 0)
+  const currentEfficiency = artifact.substats.reduce(
+    (sum, { key }, i) =>
+      key && filter.has(key)
+        ? sum + (artifactMeta.substats[i]?.efficiency ?? 0)
+        : sum,
+    0
+  )
 
   const rollsRemaining = getRollsRemaining(level, rarity)
   const emptySlotCount = substats.filter((s) => !s.key).length

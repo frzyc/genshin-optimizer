@@ -1,9 +1,4 @@
-import {
-  objMap,
-  objPathValue,
-  shouldShowDevComponents,
-  toDecimal,
-} from '@genshin-optimizer/common/util'
+import { objMap, objPathValue, toDecimal } from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import {
   allSubstatKeys,
@@ -11,7 +6,6 @@ import {
   type CharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
-import type { TeamData } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import type { NumNode, OptNode } from '@genshin-optimizer/gi/wr'
 import {
@@ -21,7 +15,7 @@ import {
   optimize,
   precompute,
 } from '@genshin-optimizer/gi/wr'
-import { dynamicData } from '../TabOptimize/foreground'
+import { dynamicData } from './foreground'
 
 export type TCWorkerResult = TotalResult | CountResult | FinalizeResult
 
@@ -52,13 +46,14 @@ export interface FinalizeResult {
 // We brute force iterate over all substats in the graph and compute the maximum
 // n.b. some substat combinations may not be materializable into real artifacts
 export function optimizeTcGetNodes(
-  teamDataProp: TeamData,
+  teamDataProp: any, //TeamData FIXME: TeamData has UIData, which can't be lib'd as a TS lib dependency.
   characterKey: CharacterKey,
-  buildTc: BuildTc
+  buildTc: BuildTc,
+  optimizationTarget: string[] | undefined
 ) {
   const {
     artifact: { sets: artSets },
-    optimization: { target: optimizationTarget, minTotal },
+    optimization: { minTotal },
   } = buildTc
   if (!optimizationTarget) return {}
   const workerData = teamDataProp[characterKey]?.target.data![0]
@@ -141,7 +136,8 @@ export function getMinSubAndOtherRolls(charTC: BuildTc) {
 export function optimizeTcUsingNodes(
   nodes: OptNode[],
   charTC: BuildTc,
-  callback: (r: TCWorkerResult) => void
+  callback: (r: TCWorkerResult) => void,
+  debug = false
 ) {
   const startTime = performance.now()
   const {
@@ -259,7 +255,7 @@ export function optimizeTcUsingNodes(
     }
   }
   permute(distributedSubstats, [...scalesWithSub, 'other'])
-  if (shouldShowDevComponents) {
+  if (debug) {
     console.log(`Took ${performance.now() - startTime} ms`)
     console.log({
       maxBuffer,

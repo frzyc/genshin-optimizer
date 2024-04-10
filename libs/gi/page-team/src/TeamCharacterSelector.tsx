@@ -100,6 +100,8 @@ export default function TeamCharacterSelector({
                   )
                 }
                 onClick={() =>
+                  // conserve the current tab when switching to another character
+                  teamCharKey &&
                   navigate(`/teams/${teamId}/${teamCharKey}/${tab}`)
                 }
               />

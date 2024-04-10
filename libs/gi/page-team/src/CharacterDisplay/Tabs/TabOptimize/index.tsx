@@ -38,6 +38,7 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
+import { compactArtifacts, dynamicData } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   ArtifactCardPico,
@@ -95,6 +96,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
+import type { ReactNode } from 'react'
 import React, {
   Suspense,
   memo,
@@ -120,7 +122,6 @@ import ExcludeArt from './Components/ExcludeArt'
 import MainStatSelectionCard from './Components/MainStatSelectionCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
-import { compactArtifacts, dynamicData } from './foreground'
 
 const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
@@ -1084,7 +1085,7 @@ const BuildList = memo(function BuildList({
   setBuilds?: (builds: GeneratedBuild[] | undefined) => void
   compareData?: UIData
   disabled: boolean
-  getLabel: (index: number) => Displayable
+  getLabel: (index: number) => ReactNode
   mainStatAssumptionLevel: number
   allowLocationsState: AllowLocationsState
 }) {
@@ -1139,7 +1140,7 @@ const BuildItemWrapper = memo(function BuildItemWrapper({
   allowLocationsState,
 }: {
   index: number
-  label: Displayable
+  label: ReactNode
   build: GeneratedBuild
   disabled: boolean
   deleteBuild?: (index: number) => void

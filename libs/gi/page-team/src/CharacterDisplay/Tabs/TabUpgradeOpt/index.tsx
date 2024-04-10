@@ -1,10 +1,6 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import {
-  clamp,
-  objPathValue,
-  shouldShowDevComponents,
-} from '@genshin-optimizer/common/util'
+import { clamp, objPathValue } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSlotKey,
   CharacterKey,
@@ -21,6 +17,7 @@ import {
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
+import { dynamicData } from '@genshin-optimizer/gi/solver-tc'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AddArtInfo,
@@ -34,6 +31,7 @@ import {
   NoArtWarning,
   ReactionToggle,
   getTeamData,
+  shouldShowDevComponents,
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { resolveInfo, uiDataForTeam } from '@genshin-optimizer/gi/uidata'
@@ -65,7 +63,6 @@ import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
-import { dynamicData } from '../TabOptimize/foreground'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
 import type { UpOptBuild } from './upOpt'
 import { UpOptCalculator, toArtifact } from './upOpt'
@@ -243,7 +240,7 @@ export default function TabUpopt() {
 
     const equippedArts =
       database.chars.get(characterKey)?.equippedArtifacts ??
-      ({} as StrictDict<ArtifactSlotKey, string>)
+      ({} as Record<ArtifactSlotKey, string>)
     const curEquip: UpOptBuild = Object.fromEntries(
       allArtifactSlotKeys.map((slotKey) => {
         const art = database.arts.get(equippedArts[slotKey] ?? '')

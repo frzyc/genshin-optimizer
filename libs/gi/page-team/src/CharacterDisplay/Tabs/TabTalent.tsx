@@ -32,6 +32,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
+import type { ReactNode } from 'react'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -222,13 +223,13 @@ function SkillDisplayCard({
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
   const actionWrapperFunc = useCallback(
-    (children) => (
+    (children: ReactNode) => (
       <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>
     ),
     [onClickTitle]
   )
 
-  let header: Displayable | null = null
+  let header: ReactNode = null
 
   if (talentKey in talent) {
     header = (

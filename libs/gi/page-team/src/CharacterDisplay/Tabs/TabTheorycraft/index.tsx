@@ -1,6 +1,6 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed, CustomNumberInput } from '@genshin-optimizer/common/ui'
-import { isDev, objMap, toPercent } from '@genshin-optimizer/common/util'
+import { objMap, toPercent } from '@genshin-optimizer/common/util'
 import {
   artSubstatRollData,
   type SubstatKey,
@@ -11,7 +11,15 @@ import {
   useBuildTc,
   useDBMeta,
   useDatabase,
+  useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import type { TCWorkerResult } from '@genshin-optimizer/gi/solver-tc'
+import {
+  TCWorker,
+  getMinSubAndOtherRolls,
+  getScalesWith,
+  optimizeTcGetNodes,
+} from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
@@ -27,6 +35,7 @@ import {
   getBuildTcWeaponData,
   getTeamDataCalc,
   initialBuildStatus,
+  isDev,
 } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import CalculateIcon from '@mui/icons-material/Calculate'
@@ -46,12 +55,6 @@ import { BuildTcContext } from './BuildTcContext'
 import GcsimButton from './GcsimButton'
 import KQMSButton from './KQMSButton'
 import { WeaponEditorCard } from './WeaponEditorCard'
-import type { TCWorkerResult } from './optimizeTc'
-import {
-  getMinSubAndOtherRolls,
-  getScalesWith,
-  optimizeTcGetNodes,
-} from './optimizeTc'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
   const database = useDatabase()
@@ -60,9 +63,10 @@ export default function TabTheorycraft() {
     teamId,
     teamCharId,
     loadoutDatum,
-    teamChar: { key: characterKey },
+    teamChar: { key: characterKey, optConfigId },
   } = useContext(TeamCharacterContext)
   const buildTc = useBuildTc(loadoutDatum.buildTcId)!
+  const { optimizationTarget } = useOptConfig(optConfigId)!
   const setBuildTc = useCallback(
     (data: SetBuildTcAction) => {
       database.buildTcs.set(loadoutDatum.buildTcId, data)
@@ -86,14 +90,11 @@ export default function TabTheorycraft() {
       }
     }, [dataContextValue, compareData])
 
-  const optimizationTarget = buildTc.optimization.target
   const setOptimizationTarget = useCallback(
-    (optimizationTarget: BuildTc['optimization']['target']) => {
-      const data_ = structuredClone(buildTc)
-      data_.optimization.target = optimizationTarget
-      setBuildTc(data_)
+    (optimizationTarget: string[]) => {
+      database.optConfigs.set(optConfigId, { optimizationTarget })
     },
-    [buildTc, setBuildTc]
+    [database, optConfigId]
   )
 
   const distributedSubstats = buildTc.optimization.distributedSubstats
@@ -107,12 +108,9 @@ export default function TabTheorycraft() {
   )
   const workerRef = useRef<Worker | null>(null)
   if (workerRef.current === null)
-    workerRef.current = new Worker(
-      new URL('./optimizeTcWorker.ts', import.meta.url),
-      {
-        type: 'module',
-      }
-    )
+    workerRef.current = new Worker(TCWorker, {
+      type: 'module',
+    })
 
   const [status, setStatus] = useState(initialBuildStatus())
   const solving = status.type === 'active'
@@ -141,14 +139,15 @@ export default function TabTheorycraft() {
     const { nodes } = optimizeTcGetNodes(
       dataContextValue.teamData,
       characterKey,
-      buildTc
+      buildTc,
+      optimizationTarget
     )
     const scalesWith = nodes ? getScalesWith(nodes) : new Set<SubstatKey>()
     return {
       nodes,
       scalesWith,
     }
-  }, [dataContextValue.teamData, characterKey, buildTc])
+  }, [dataContextValue.teamData, characterKey, buildTc, optimizationTarget])
 
   const optimizeSubstats = (apply: boolean) => {
     if (!workerRef.current) return
@@ -166,7 +165,12 @@ export default function TabTheorycraft() {
       getBuildTcWeaponData(buildTc)
     )
     if (!tempTeamData) return
-    const { nodes } = optimizeTcGetNodes(tempTeamData, characterKey, buildTc)
+    const { nodes } = optimizeTcGetNodes(
+      tempTeamData,
+      characterKey,
+      buildTc,
+      optimizationTarget
+    )
     workerRef.current.postMessage({ buildTc, nodes })
     setStatus((s) => ({
       ...s,

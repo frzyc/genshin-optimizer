@@ -95,7 +95,7 @@ export function ArtifactSubCard({
               <Typography>
                 <Trans t={t} i18nKey={'tabTheorycraft.maxTotalRolls'}>
                   {'The current build can only have a maximum of '}
-                  <strong>{{ value: maxTotalRolls } as TransObject}</strong>
+                  <strong>{{ value: maxTotalRolls } as any}</strong>
                   {' rolls.'}
                 </Trans>
               </Typography>

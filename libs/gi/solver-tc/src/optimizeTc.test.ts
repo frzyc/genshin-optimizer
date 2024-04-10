@@ -8,6 +8,7 @@ import {
   getTeamDataCalc,
 } from '@genshin-optimizer/gi/ui'
 import { optimizeTcGetNodes, optimizeTcUsingNodes } from './optimizeTc'
+// FIXME: Should not be importing from @go/gi/ui, since this means this TS lib is importing from a React Lib
 
 describe('A general optimizeTC usecase', () => {
   it('generate correct distribution', () => {
@@ -43,7 +44,6 @@ describe('A general optimizeTC usecase', () => {
       },
       weapon: { key: 'StaffOfHoma', level: 90, ascension: 6, refinement: 1 },
       optimization: {
-        target: ['normal', '0'],
         distributedSubstats: 2,
         maxSubstats: {
           hp: 10,
@@ -159,7 +159,10 @@ describe('A general optimizeTC usecase', () => {
     )!
 
     expect(teamData).toBeTruthy()
-    const { nodes } = optimizeTcGetNodes(teamData, characterKey, buildTc)
+    const { nodes } = optimizeTcGetNodes(teamData, characterKey, buildTc, [
+      'normal',
+      '0',
+    ])
     expect(nodes).toBeTruthy()
     nodes &&
       optimizeTcUsingNodes(nodes, buildTc, (data) => {
