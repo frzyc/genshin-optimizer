@@ -11,20 +11,11 @@ import type {
   IDocumentHeader,
   IDocumentText,
 } from '@genshin-optimizer/gi/sheets'
-import { Box, Divider, Typography } from '@mui/material'
-import { useContext } from 'react'
+import { Box, Collapse, Divider, Typography } from '@mui/material'
+import { useContext, useState } from 'react'
 import { DataContext } from '../context'
 import { FieldsDisplay } from './FieldDisplay'
 import { ConditionalDisplay } from './conditional/ConditionalDisplay'
-
-type DocumentDisplayProps = {
-  sections: DocumentSection[]
-  teamBuffOnly?: boolean
-  hideDesc?: boolean
-  hideHeader?: boolean | ((section: DocumentSection) => boolean)
-  disabled?: boolean
-  bgt?: CardBackgroundColor
-}
 
 export function DocumentDisplay({
   sections,
@@ -33,7 +24,16 @@ export function DocumentDisplay({
   hideHeader = false,
   disabled = false,
   bgt = 'normal',
-}: DocumentDisplayProps) {
+  collapse = false,
+}: {
+  sections: DocumentSection[]
+  teamBuffOnly?: boolean
+  hideDesc?: boolean
+  hideHeader?: boolean | ((section: DocumentSection) => boolean)
+  disabled?: boolean
+  bgt?: CardBackgroundColor
+  collapse?: boolean
+}) {
   const { data } = useContext(DataContext)
   if (!sections.length) return null
   const sectionDisplays = sections
@@ -50,6 +50,7 @@ export function DocumentDisplay({
           hideHeader={hideHeader}
           disabled={disabled}
           bgt={bgt}
+          collapse={collapse}
         />
       )
     })
@@ -68,12 +69,14 @@ function SectionDisplay({
   hideHeader = false,
   disabled = false,
   bgt = 'normal',
+  collapse = false,
 }: {
   section: DocumentSection
   hideDesc?: boolean
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
   disabled?: boolean
   bgt?: CardBackgroundColor
+  collapse?: boolean
 }) {
   if ('fields' in section) {
     return (
@@ -95,7 +98,11 @@ function SectionDisplay({
       />
     )
   } /* if ("text" in section) */ else {
-    return <TextSectionDisplay section={section} />
+    return collapse ? (
+      <TextSectionDisplayCollapse section={section} />
+    ) : (
+      <TextSectionDisplay section={section} />
+    )
   }
 }
 
@@ -129,6 +136,24 @@ function FieldsSectionDisplay({
 function TextSectionDisplay({ section }: { section: IDocumentText }) {
   const { data } = useContext(DataContext)
   return <div>{evalIfFunc(section.text, data)}</div>
+}
+function TextSectionDisplayCollapse({ section }: { section: IDocumentText }) {
+  const { data } = useContext(DataContext)
+  const [expanded, setExpanded] = useState(false)
+  return (
+    <Collapse
+      collapsedSize={55}
+      onClick={() => setExpanded((e) => !e)}
+      in={expanded}
+      sx={{
+        maskImage: expanded
+          ? undefined
+          : 'linear-gradient(to bottom, black 50%, transparent 100%)',
+      }}
+    >
+      <div>{evalIfFunc(section.text, data)}</div>
+    </Collapse>
+  )
 }
 
 export function HeaderDisplay({

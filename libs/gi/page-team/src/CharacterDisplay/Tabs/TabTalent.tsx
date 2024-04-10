@@ -279,6 +279,7 @@ function SkillDisplayCard({
             sections={talentSheet.sections}
             hideDesc
             hideHeader={hideHeader}
+            collapse
           />
         ) : null}
       </CardContent>
