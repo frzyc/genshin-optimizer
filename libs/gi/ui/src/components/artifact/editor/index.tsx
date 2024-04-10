@@ -5,11 +5,7 @@ import {
   ImgIcon,
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
-import {
-  clamp,
-  deepClone,
-  shouldShowDevComponents,
-} from '@genshin-optimizer/common/util'
+import { clamp, deepClone } from '@genshin-optimizer/common/util'
 import type { Processed } from '@genshin-optimizer/gi/art-scanner'
 import { ScanningQueue } from '@genshin-optimizer/gi/art-scanner'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
@@ -76,6 +72,7 @@ import {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { shouldShowDevComponents } from '../../../util'
 import { CustomNumberTextField } from '../../CustomNumberTextField'
 import { LocationAutocomplete } from '../../character'
 import { ArtifactCard } from '../ArtifactCard'
