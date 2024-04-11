@@ -51,18 +51,18 @@ function SetToolTipTitle({
   const artifactSheet = getArtSheet(setKey)
   return (
     <Stack spacing={2} sx={{ p: 1 }}>
-      {Object.keys(artifactSheet.setEffects).map((setKey) => (
+      {Object.keys(artifactSheet.setEffects).map((setNum) => (
         <Box
-          key={setKey}
-          sx={{ opacity: parseInt(setKey) <= numInSet ? 1 : 0.5 }}
+          key={setNum}
+          sx={{ opacity: parseInt(setNum) <= numInSet ? 1 : 0.5 }}
         >
           <Typography>
-            <SqBadge color="success">{t(`${setKey}set`)}</SqBadge>
+            <SqBadge color="success">{t(`${setNum}set`)}</SqBadge>
           </Typography>
           <Typography>
             <Translate
               ns={`artifact_${setKey}_gen`}
-              key18={`setEffects.${setKey}`}
+              key18={`setEffects.${setNum}`}
             />
           </Typography>
         </Box>
