@@ -2,7 +2,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
-import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
+import type { GeneratedBuild, LoadoutDatum } from '@genshin-optimizer/gi/db'
 import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
   CharacterContext,
@@ -29,14 +29,7 @@ import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import {
-  Navigate,
-  Route,
-  Routes,
-  useMatch,
-  useNavigate,
-  useParams,
-} from 'react-router-dom'
+import { Navigate, Route, Routes, useMatch, useParams } from 'react-router-dom'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
@@ -59,25 +52,15 @@ export default function PageTeam() {
       <Suspense
         fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}
       >
-        {teamId && <Page teamId={teamId} />}
+        {teamId && <PageLoadoutWrapper teamId={teamId} />}
       </Suspense>
     </Box>
   )
 }
-
-const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
-// Stored per teamCharId
-const chartDataAll: Record<string, ChartData> = {}
-const graphBuildAll: Record<string, GeneratedBuild[]> = {}
-function Page({ teamId }: { teamId: string }) {
-  const navigate = useNavigate()
-  const { silly } = useContext(SillyContext)
+function PageLoadoutWrapper({ teamId }: { teamId: string }) {
   const database = useDatabase()
-  const { gender } = useDBMeta()
-
   const team = useTeam(teamId)!
   const { loadoutData } = team
-
   // use the current URL as the "source of truth" for characterKey and tab.
   const {
     params: { characterKey: characterKeyRaw },
@@ -98,20 +81,42 @@ function Page({ teamId }: { teamId: string }) {
         loadoutDatum?.teamCharId &&
         database.teamChars.get(loadoutDatum.teamCharId)?.key === characterKeyRaw
     )
-    if (!loadoutDatum) {
-      const ld = loadoutData[0]
-      const ck = ld && database.teamChars.get(ld.teamCharId)?.key
-      if (ck) navigate(ck)
-      else navigate('')
-    }
-    return loadoutDatum
-  }, [loadoutData, database.teamChars, characterKeyRaw, navigate])
 
-  const { characterKey, teamCharId } = useMemo(() => {
-    const teamCharId = loadoutDatum?.teamCharId
-    const characterKey = database.teamChars.get(teamCharId)?.key
-    return { characterKey, teamCharId }
-  }, [loadoutDatum, database])
+    return loadoutDatum
+  }, [loadoutData, database.teamChars, characterKeyRaw])
+
+  // make sure the characterKey path is valid
+  if (characterKeyRaw && !loadoutDatum) {
+    const ld = loadoutData[0]
+    const ck = ld && database.teamChars.get(ld.teamCharId)?.key
+    if (ck) return <Navigate to={ck} />
+    else return <Navigate to="" />
+  }
+  return <Page loadoutDatum={loadoutDatum} teamId={teamId} tab={tab} />
+}
+
+const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
+// Stored per teamCharId
+const chartDataAll: Record<string, ChartData> = {}
+const graphBuildAll: Record<string, GeneratedBuild[]> = {}
+
+function Page({
+  teamId,
+  tab,
+  loadoutDatum,
+}: {
+  teamId: string
+  tab: string
+  loadoutDatum?: LoadoutDatum
+}) {
+  const { silly } = useContext(SillyContext)
+  const database = useDatabase()
+  const { gender } = useDBMeta()
+
+  const team = useTeam(teamId)!
+
+  const teamCharId = loadoutDatum?.teamCharId
+  const characterKey = database.teamChars.get(teamCharId)?.key
 
   const teamChar = useTeamChar(teamCharId ?? '')
 
