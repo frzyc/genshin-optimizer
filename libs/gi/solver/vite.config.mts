@@ -17,6 +17,15 @@ export default defineConfig({
     }),
   ],
 
+  // Uncomment this if you are using workers.
+  worker: {
+   plugins: [
+     viteTsConfigPaths({
+       root: '../../../',
+     }),
+   ],
+  },
+
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
