@@ -108,9 +108,7 @@ export default function TabTheorycraft() {
   )
   const workerRef = useRef<Worker | null>(null)
   if (workerRef.current === null)
-    workerRef.current = new Worker(TCWorker, {
-      type: 'module',
-    })
+    workerRef.current = TCWorker()
 
   const [status, setStatus] = useState(initialBuildStatus())
   const solving = status.type === 'active'
