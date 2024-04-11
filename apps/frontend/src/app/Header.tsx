@@ -302,6 +302,8 @@ function MobileHeader({
 
   const { t } = useTranslation('ui')
   const { silly } = useContext(SillyContext)
+  // Allow navigating back to the teams page when on a specific team.
+  const inTeam = useMatch({ path: '/teams/:teamId/*' })
   return (
     <>
       <AppBar position="fixed" sx={{ bgcolor: '#343a40' }} elevation={0}>
@@ -334,7 +336,7 @@ function MobileHeader({
                   component={RouterLink}
                   to={to}
                   selected={currentTab === value}
-                  disabled={currentTab === value}
+                  disabled={currentTab === value && !inTeam}
                   onClick={handleDrawerToggle}
                 >
                   <ListItemIcon>{icon}</ListItemIcon>
