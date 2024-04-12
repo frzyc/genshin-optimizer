@@ -1,5 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
+import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
 import { handleMultiSelect } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
@@ -21,6 +21,7 @@ import {
   Box,
   CardContent,
   InputAdornment,
+  Skeleton,
   Table,
   TableBody,
   TableCell,
@@ -30,7 +31,14 @@ import {
   ToggleButton,
   ToggleButtonGroup,
 } from '@mui/material'
-import { memo, useContext, useDeferredValue, useMemo, useState } from 'react'
+import {
+  Suspense,
+  memo,
+  useContext,
+  useDeferredValue,
+  useMemo,
+  useState,
+} from 'react'
 import { CharacterView } from './CharacterView'
 const rarties = [5, 4] as const
 export default function TabCharacter() {
@@ -43,7 +51,7 @@ export default function TabCharacter() {
   const handleType = handleMultiSelect([...allWeaponTypeKeys])
   const [searchTerm, setSearchTerm] = useState('')
   const searchTermDeferred = useDeferredValue(searchTerm)
-  const weaponKeys = useMemo(() => {
+  const charKeys = useMemo(() => {
     return allCharacterKeys.filter(
       (cKey) => {
         const { rarity, weaponType } = getCharStat(cKey)
@@ -71,6 +79,12 @@ export default function TabCharacter() {
       [rarityFilter]
     )
   }, [rarityFilter, searchTermDeferred, silly, weaponTypeFilter])
+
+  const { numShow, setTriggerElement } = useInfScroll(10, charKeys.length)
+  const charKeysToShow = useMemo(
+    () => charKeys.slice(0, numShow),
+    [charKeys, numShow]
+  )
   return (
     <Box>
       <CardContent sx={{ display: 'flex', gap: 2 }}>
@@ -122,9 +136,25 @@ export default function TabCharacter() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {weaponKeys.map((wKey) => (
+          {charKeysToShow.map((wKey) => (
             <CharacterRow key={wKey} characterKey={wKey} />
           ))}
+          {charKeysToShow.length !== charKeys.length && (
+            <TableRow>
+              <TableCell colSpan={5}>
+                <Skeleton
+                  ref={(node) => {
+                    if (!node) return
+                    setTriggerElement(node)
+                  }}
+                  sx={{ borderRadius: 1 }}
+                  variant="rectangular"
+                  width="100%"
+                  height={50}
+                />
+              </TableCell>
+            </TableRow>
+          )}
         </TableBody>
       </Table>
     </Box>
@@ -156,7 +186,20 @@ const CharacterRow = memo(function CharacterRow({
     [cKey]
   )
   return (
-    <>
+    <Suspense
+      fallback={
+        <TableRow>
+          <TableCell colSpan={4}>
+            <Skeleton
+              sx={{ borderRadius: 1 }}
+              variant="rectangular"
+              width="100%"
+              height={50}
+            />
+          </TableCell>
+        </TableRow>
+      }
+    >
       <CharacterView show={show} character={character} onClose={onHide} />
       <TableRow hover onClick={onShow} sx={{ cursor: 'pointer' }}>
         <TableCell>
@@ -186,6 +229,6 @@ const CharacterRow = memo(function CharacterRow({
           />
         </TableCell>
       </TableRow>
-    </>
+    </Suspense>
   )
 })

@@ -11,6 +11,7 @@ import type {
   IDocumentHeader,
   IDocumentText,
 } from '@genshin-optimizer/gi/sheets'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Box, Collapse, Divider, Typography } from '@mui/material'
 import { useContext, useState } from 'react'
 import { DataContext } from '../context'
@@ -105,7 +106,6 @@ function SectionDisplay({
     )
   }
 }
-
 function FieldsSectionDisplay({
   section,
   hideDesc,
@@ -140,19 +140,50 @@ function TextSectionDisplay({ section }: { section: IDocumentText }) {
 function TextSectionDisplayCollapse({ section }: { section: IDocumentText }) {
   const { data } = useContext(DataContext)
   const [expanded, setExpanded] = useState(false)
+  const [hover, setHover] = useState(false)
   return (
-    <Collapse
-      collapsedSize={55}
-      onClick={() => setExpanded((e) => !e)}
-      in={expanded}
-      sx={{
-        maskImage: expanded
-          ? undefined
-          : 'linear-gradient(to bottom, black 50%, transparent 100%)',
-      }}
-    >
-      <div>{evalIfFunc(section.text, data)}</div>
-    </Collapse>
+    <Box sx={{ position: 'relative' }}>
+      {!expanded && (
+        <Box
+          sx={{
+            pointerEvents: 'none',
+            position: 'absolute',
+            mx: 'auto',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            height: '100%',
+            alignItems: 'flex-end',
+            zIndex: '10',
+            transition: 'transform 0.3s ease',
+            transform: hover ? 'translate(0,-5px)' : undefined,
+          }}
+        >
+          <KeyboardArrowDownIcon />
+        </Box>
+      )}
+      <Collapse
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        collapsedSize={55}
+        onClick={() => setExpanded((e) => !e)}
+        in={expanded}
+        sx={{
+          cursor: 'pointer',
+          position: 'relative',
+          maskImage: expanded
+            ? undefined
+            : 'linear-gradient(to bottom, black 0%, transparent 100%)',
+          '&:hover': {
+            maskImage: expanded
+              ? undefined
+              : 'linear-gradient(to bottom, black 50%, transparent 100%)',
+          },
+        }}
+      >
+        <div>{evalIfFunc(section.text, data)}</div>
+      </Collapse>
+    </Box>
   )
 }
 

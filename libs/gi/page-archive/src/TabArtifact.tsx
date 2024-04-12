@@ -1,4 +1,4 @@
-import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
+import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
 import { handleMultiSelect } from '@genshin-optimizer/common/util'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
@@ -12,6 +12,7 @@ import {
   Box,
   CardContent,
   InputAdornment,
+  Skeleton,
   Table,
   TableBody,
   TableCell,
@@ -21,7 +22,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
 } from '@mui/material'
-import { useDeferredValue, useMemo, useState } from 'react'
+import { Suspense, useDeferredValue, useMemo, useState } from 'react'
 const maxRarities = [5, 4, 3] as const
 export default function TabArtifact() {
   const [rarityFilter, setRarityFilter] = useState([...maxRarities])
@@ -51,6 +52,18 @@ export default function TabArtifact() {
       [rarityFilter]
     )
   }, [rarityFilter, searchTermDeferred])
+  const artSetKeysWithoutPrayer = useMemo(
+    () => artSetKeys.filter((sk) => !sk.startsWith('Prayers')),
+    [artSetKeys]
+  )
+  const { numShow, setTriggerElement } = useInfScroll(
+    10,
+    artSetKeysWithoutPrayer.length
+  )
+  const artSetKeysToShow = useMemo(
+    () => artSetKeysWithoutPrayer.slice(0, numShow),
+    [artSetKeysWithoutPrayer, numShow]
+  )
   return (
     <Box>
       <CardContent sx={{ display: 'flex', gap: 2 }}>
@@ -91,11 +104,23 @@ export default function TabArtifact() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {artSetKeys
-            .filter((sk) => !sk.startsWith('Prayers'))
-            .map((setKey) => {
-              const { rarities } = getArtSetStat(setKey)
-              return (
+          {artSetKeysToShow.map((setKey) => {
+            const { rarities } = getArtSetStat(setKey)
+            return (
+              <Suspense
+                fallback={
+                  <TableRow>
+                    <TableCell colSpan={4}>
+                      <Skeleton
+                        sx={{ borderRadius: 1 }}
+                        variant="rectangular"
+                        width="100%"
+                        height={50}
+                      />
+                    </TableCell>
+                  </TableRow>
+                }
+              >
                 <TableRow key={setKey}>
                   <TableCell>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -131,8 +156,25 @@ export default function TabArtifact() {
                     />
                   </TableCell>
                 </TableRow>
-              )
-            })}
+              </Suspense>
+            )
+          })}
+          {artSetKeysWithoutPrayer.length !== artSetKeysToShow.length && (
+            <TableRow>
+              <TableCell colSpan={4}>
+                <Skeleton
+                  ref={(node) => {
+                    if (!node) return
+                    setTriggerElement(node)
+                  }}
+                  sx={{ borderRadius: 1 }}
+                  variant="rectangular"
+                  width="100%"
+                  height={50}
+                />
+              </TableCell>
+            </TableRow>
+          )}
         </TableBody>
       </Table>
       {/* Table for Prayers pieces */}

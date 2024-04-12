@@ -1,5 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
+import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
 import { handleMultiSelect } from '@genshin-optimizer/common/util'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
@@ -23,6 +23,7 @@ import {
   Box,
   CardContent,
   InputAdornment,
+  Skeleton,
   Table,
   TableBody,
   TableCell,
@@ -33,7 +34,7 @@ import {
   ToggleButtonGroup,
   Typography,
 } from '@mui/material'
-import { memo, useDeferredValue, useMemo, useState } from 'react'
+import { Suspense, memo, useDeferredValue, useMemo, useState } from 'react'
 import { WeaponView } from './WeaponView'
 const rarities = [5, 4, 3, 2, 1] as const
 export default function TabWeapon() {
@@ -64,6 +65,11 @@ export default function TabWeapon() {
       [rarityFilter]
     )
   }, [rarityFilter, searchTermDeferred, weaponTypeFilter])
+  const { numShow, setTriggerElement } = useInfScroll(10, weaponKeys.length)
+  const weaponKeysToShow = useMemo(
+    () => weaponKeys.slice(0, numShow),
+    [weaponKeys, numShow]
+  )
   return (
     <Box>
       <CardContent sx={{ display: 'flex', gap: 2 }}>
@@ -116,9 +122,25 @@ export default function TabWeapon() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {weaponKeys.map((wKey) => (
+          {weaponKeysToShow.map((wKey) => (
             <WeaponRow key={wKey} weaponKey={wKey} />
           ))}
+          {weaponKeys.length !== weaponKeysToShow.length && (
+            <TableRow>
+              <TableCell colSpan={5}>
+                <Skeleton
+                  ref={(node) => {
+                    if (!node) return
+                    setTriggerElement(node)
+                  }}
+                  sx={{ borderRadius: 1 }}
+                  variant="rectangular"
+                  width="100%"
+                  height={50}
+                />
+              </TableCell>
+            </TableRow>
+          )}
         </TableBody>
       </Table>
     </Box>
@@ -151,7 +173,20 @@ const WeaponRow = memo(function WeaponRow({
   const main = weaponUIData.get(input.weapon.main)
   const sub = weaponUIData.get(input.weapon.sub)
   return (
-    <>
+    <Suspense
+      fallback={
+        <TableRow>
+          <TableCell colSpan={5}>
+            <Skeleton
+              sx={{ borderRadius: 1 }}
+              variant="rectangular"
+              width="100%"
+              height={50}
+            />
+          </TableCell>
+        </TableRow>
+      }
+    >
       <WeaponView
         show={show}
         weaponUIData={weaponUIData}
@@ -186,7 +221,7 @@ const WeaponRow = memo(function WeaponRow({
           <StatDisplay node={sub} />
         </TableCell>
       </TableRow>
-    </>
+    </Suspense>
   )
 })
 function StatDisplay({ node }: { node: NodeDisplay<number> }) {
