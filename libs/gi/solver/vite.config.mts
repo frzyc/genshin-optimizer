@@ -1,90 +1,40 @@
-/// <reference types="vitest" />
-import { resolve } from 'path'
-import { defineConfig, normalizePath } from 'vite'
-
 import react from '@vitejs/plugin-react'
-// viteStaticCopy contains some `require`, so we need to have our config as .mts instead of .ts.
-// https://vitejs.dev/guide/troubleshooting.html#this-package-is-esm-only
-import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { join } from 'path'
+import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
-  base: '',
-  cacheDir: '../../node_modules/.vite/frontend',
-
-  server: {
-    port: 4200,
-    host: 'localhost',
-    // Allows workers to fetch the needed .ts file
-    fs: {
-      allow: ['../../'],
-    },
-  },
-
-  preview: {
-    port: 4300,
-    host: 'localhost',
-  },
-
   plugins: [
+    dts({
+      tsConfigFilePath: join(__dirname, 'tsconfig.lib.json'),
+      // Faster builds by skipping tests. Set this to false to enable type checking.
+      skipDiagnostics: true,
+    }),
+    react(),
     viteTsConfigPaths({
-      root: '../../',
-    }),
-    // Enables proper hot module reloading
-    react({
-      include: '**/*.tsx',
-    }),
-    // Nx executor for vite does not support `assets` prop for copying files.
-    // So we need to do it with this plugin. This works for both `build` and `serve`.
-    viteStaticCopy({
-      targets: [
-        {
-          src: normalizePath(resolve('libs/gi/localization/assets/locales')),
-          dest: 'assets',
-        },
-        {
-          src: normalizePath(resolve('libs/gi/dm-localization/assets/locales')),
-          dest: 'assets',
-        },
-        {
-          src: normalizePath(
-            resolve('libs/gi/silly-wisher-names/assets/locales')
-          ),
-          dest: 'assets',
-        },
-        {
-          src: normalizePath(resolve('apps/frontend/assets/*')),
-          dest: 'assets',
-        },
-      ],
-      // Force page to reload if we change any of the above files
-      watch: {
-        reloadPageOnChange: true,
-      },
+      root: '../../../',
     }),
   ],
 
+  // Configuration for building your library.
+  // See: https://vitejs.dev/guide/build.html#library-mode
+  build: {
+    lib: {
+      // Could also be a dictionary or array of multiple entry points.
+      entry: 'src/index.ts',
+      name: 'gi-solver',
+      fileName: 'index',
+      // Change this to the formats you want to support.
+      // Don't forgot to update your package.json as well.
+      formats: ['es', 'cjs'],
+    },
+    rollupOptions: {
+      // External packages that should not be bundled into your library.
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
+    },
+  },
   define: {
-    'process.env': process.env,
-  },
-
-  // Resolve aliases. If we ever alias to non-libs folder, need to update this
-  resolve: {
-    alias: [
-      // e.g. Resolves '@genshin-optimizer/pando/engine' -> 'libs/pando/engine/src'
-      {
-        find: /@genshin-optimizer\/([a-zA-Z0-9-]*)\/([a-zA-Z0-9-]*)/,
-        replacement: resolve('libs/$1/$2/src'),
-      },
-    ],
-  },
-
-  // Uncomment this if you are using workers.
-  worker: {
-    plugins: [
-      viteTsConfigPaths({
-        root: '../../',
-      }),
-    ],
+    'import.meta.vitest': undefined,
   },
 })

@@ -185,6 +185,24 @@ export function ArtifactFilterDisplay({
                 </ToggleButton>
               ))}
             </SolidToggleButtonGroup>
+            {/* Number of Sub stats filter */}
+            <SolidToggleButtonGroup fullWidth value={lines} size="small">
+              {[1, 2, 3, 4].map((line) => (
+                <ToggleButton
+                  key={line}
+                  sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}
+                  value={line}
+                  onClick={() =>
+                    filterOptionDispatch({
+                      lines: lineHandler(lines, line) as Array<1 | 2 | 3 | 4>,
+                    })
+                  }
+                >
+                  <Box whiteSpace="nowrap">{t('sub', { count: line })}</Box>
+                  <Chip label={linesTotal[line]} size="small" />
+                </ToggleButton>
+              ))}
+            </SolidToggleButtonGroup>
             {/* Artifact Slot */}
             <SolidToggleButtonGroup
               fullWidth
@@ -226,33 +244,6 @@ export function ArtifactFilterDisplay({
                 filterOptionDispatch({ artSetKeys })
               }
             />
-          </Stack>
-        </Box>
-        {/* Sub-Stats */}
-        <Box p={1}>
-          <Trans t={t} i18nKey="subheadings.substats" />
-          <Divider
-            sx={{ bgcolor: theme.palette.contentNormal.light, marginBottom: 1 }}
-          />
-          <Stack spacing={1.5}>
-            {/* Number of Sub stats filter */}
-            <SolidToggleButtonGroup fullWidth value={lines} size="small">
-              {[1, 2, 3, 4].map((line) => (
-                <ToggleButton
-                  key={line}
-                  sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}
-                  value={line}
-                  onClick={() =>
-                    filterOptionDispatch({
-                      lines: lineHandler(lines, line) as Array<1 | 2 | 3 | 4>,
-                    })
-                  }
-                >
-                  <Box whiteSpace="nowrap">{t('sub', { count: line })}</Box>
-                  <Chip label={linesTotal[line]} size="small" />
-                </ToggleButton>
-              ))}
-            </SolidToggleButtonGroup>
             {/* Sub stat dropdown */}
             <ArtifactSubstatMultiAutocomplete
               totals={subStatTotal}

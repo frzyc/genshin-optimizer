@@ -11,6 +11,7 @@ import type { Unit } from '@genshin-optimizer/common/util'
 import { clamp, clamp01 } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type {
+  ArtifactRarity,
   LocationCharacterKey,
   RarityKey,
   SubstatKey,
@@ -106,20 +107,19 @@ export function ArtifactCard({
       }
     const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
       artifact as IArtifact,
-      artifactMeta,
       effFilter
     )
     const {
       currentEfficiency: currentEfficiency_,
       maxEfficiency: maxEfficiency_,
-    } = getArtifactEfficiency(artifact as IArtifact, artifactMeta)
+    } = getArtifactEfficiency(artifact as IArtifact)
     return {
       currentEfficiency,
       maxEfficiency,
       currentEfficiency_,
       maxEfficiency_,
     }
-  }, [artifact, effFilter, artifactMeta])
+  }, [artifact, effFilter])
 
   const artifactValid = maxEfficiency !== 0
   return (
@@ -312,7 +312,7 @@ function Header({
             <ColorText color={mainStatLevel !== level ? 'warning' : undefined}>
               {getMainStatDisplayStr(
                 mainStatKey,
-                rarity as RarityKey,
+                rarity as ArtifactRarity,
                 mainStatLevel
               )}
             </ColorText>
@@ -361,7 +361,7 @@ function SubstatDisplay({
   const numRolls = statMeta.rolls?.length ?? 0
   const maxRoll = key ? getSubstatValue(stat.key) : 0
   const rollData = useMemo(
-    () => (key ? getSubstatValuesPercent(key, rarity) : []),
+    () => (key ? getSubstatValuesPercent(key, rarity as ArtifactRarity) : []),
     [key, rarity]
   )
   const rollOffset = 7 - rollData.length

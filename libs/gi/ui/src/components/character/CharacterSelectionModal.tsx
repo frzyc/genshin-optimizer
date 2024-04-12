@@ -191,7 +191,6 @@ export function CharacterSelectionModal({
         setSearchTerm('')
         onHide()
       }}
-      sx={{ '& .MuiContainer-root': { justifyContent: 'normal' } }}
     >
       <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>

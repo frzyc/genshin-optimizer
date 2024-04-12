@@ -23,11 +23,6 @@ import type {
 import { allRarityKeys } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import {
-  weaponFilterConfigs,
-  weaponSortConfigs,
-  weaponSortMap,
-} from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
@@ -54,6 +49,11 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import {
+  weaponFilterConfigs,
+  weaponSortConfigs,
+  weaponSortMap,
+} from '../../util'
 import { CompareBuildButton } from '../CompareBuildButton'
 import { ShowingAndSortOptionSelect } from '../ShowingAndSortOptionSelect'
 import { WeaponCard } from './WeaponCard'

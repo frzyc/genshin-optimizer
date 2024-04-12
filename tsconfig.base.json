@@ -9,7 +9,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
-    "module": "CommonJS",
+    "module": "esnext",
     "lib": ["es2021", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
@@ -69,6 +69,26 @@
       "@genshin-optimizer/gi/localization": [
         "libs/gi/localization/src/index.ts"
       ],
+      "@genshin-optimizer/gi/page-artifacts": [
+        "libs/gi/page-artifacts/src/index.tsx"
+      ],
+      "@genshin-optimizer/gi/page-characters": [
+        "libs/gi/page-characters/src/index.tsx"
+      ],
+      "@genshin-optimizer/gi/page-doc": ["libs/gi/page-doc/src/index.tsx"],
+      "@genshin-optimizer/gi/page-home": ["libs/gi/page-home/src/index.tsx"],
+      "@genshin-optimizer/gi/page-scanner": [
+        "libs/gi/page-scanner/src/index.tsx"
+      ],
+      "@genshin-optimizer/gi/page-settings": [
+        "libs/gi/page-settings/src/index.tsx"
+      ],
+      "@genshin-optimizer/gi/page-team": ["libs/gi/page-team/src/index.tsx"],
+      "@genshin-optimizer/gi/page-teams": ["libs/gi/page-teams/src/index.tsx"],
+      "@genshin-optimizer/gi/page-tools": ["libs/gi/page-tools/src/index.tsx"],
+      "@genshin-optimizer/gi/page-weapons": [
+        "libs/gi/page-weapons/src/index.tsx"
+      ],
       "@genshin-optimizer/gi/prisma-schema": [
         "libs/gi/prisma-schema/src/index.ts"
       ],
@@ -80,6 +100,7 @@
         "libs/gi/silly-wisher-names/src/index.ts"
       ],
       "@genshin-optimizer/gi/solver": ["libs/gi/solver/src/index.ts"],
+      "@genshin-optimizer/gi/solver-tc": ["libs/gi/solver-tc/src/index.ts"],
       "@genshin-optimizer/gi/stats": ["libs/gi/stats/src/index.ts"],
       "@genshin-optimizer/gi/svgicons": ["libs/gi/svgicons/src/index.ts"],
       "@genshin-optimizer/gi/theme": ["libs/gi/theme/src/index.ts"],

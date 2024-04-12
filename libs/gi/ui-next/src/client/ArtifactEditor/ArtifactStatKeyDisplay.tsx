@@ -1,8 +1,9 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { ColorText } from '@genshin-optimizer/common/ui'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
+import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { artStatPercent, getVariant } from '@genshin-optimizer/gi/ui'
+import { artStatPercent } from '@genshin-optimizer/gi/ui'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
@@ -45,7 +46,7 @@ export function ArtifactColoredIconStatWithUnit({
   disableIcon?: boolean
 }) {
   return (
-    <ColorText color={getVariant(statKey)}>
+    <ColorText color={KeyMap.getVariant(statKey)}>
       <ArtifactIconStatWithUnit statKey={statKey} disableIcon={disableIcon} />
     </ColorText>
   )
