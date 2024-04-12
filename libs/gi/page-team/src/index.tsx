@@ -86,11 +86,11 @@ function PageLoadoutWrapper({ teamId }: { teamId: string }) {
   }, [loadoutData, database.teamChars, characterKeyRaw])
 
   // make sure the characterKey path is valid
-  if (characterKeyRaw && !loadoutDatum) {
+  if ((characterKeyRaw && !loadoutDatum) || (loadoutData[0] && !loadoutDatum)) {
     const ld = loadoutData[0]
     const ck = ld && database.teamChars.get(ld.teamCharId)?.key
-    if (ck) return <Navigate to={ck} />
-    else return <Navigate to="" />
+    if (ck) return <Navigate to={ck} replace />
+    else return <Navigate to="" replace />
   }
   return <Page loadoutDatum={loadoutDatum} teamId={teamId} tab={tab} />
 }
