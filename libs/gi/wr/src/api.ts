@@ -14,7 +14,9 @@ import type {
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type {
   CustomTarget,
-  ExpressionNode,
+  EnclosingOperation,
+  ExpressionOperation,
+  ExpressionUnit,
   ICachedArtifact,
   ICachedCharacter,
   ICachedWeapon,
@@ -162,7 +164,10 @@ export function dataObjForCharacterNew(
       ...objKeyMap(
         allElementWithPhyKeys.map((ele) => `${ele}_res_`),
         (ele) =>
-          percent((enemyOverride[`${ele.slice(0, -5)}_enemyRes_`] ?? 10) / 100)
+          percent(
+            ((enemyOverride as any)[`${ele.slice(0, -5)}_enemyRes_`] ?? 10) /
+              100
+          )
       ),
       level: constant(enemyOverride.enemyLevel ?? level),
     },
@@ -191,7 +196,7 @@ export function dataObjForCharacterNew(
   )
 
   if (sheetData?.display) {
-    sheetData.display.custom = {}
+    sheetData.display['custom'] = {}
 
     const parseCustomTarget = (
       target: CustomTarget,
@@ -223,42 +228,140 @@ export function dataObjForCharacterNew(
       return result
     }
 
-    const parseCustomExpression = (expression: ExpressionNode): NumNode => {
-      const { operation, operands: _operands } = expression
-      const operands = _operands.map((x) =>
-        typeof x === 'number'
-          ? constant(x)
-          : 'path' in x
-          ? parseCustomTarget(x, false)
-          : parseCustomExpression(x)
-      )
-      const [first, ...rest] = operands
-      switch (operation) {
-        case 'addition':
-          return sum(...operands)
-        case 'subtraction':
-          return sum(first, prod(constant(-1), sum(...rest))) // TODO: Properly implement subtraction
-        case 'multiplication':
-          return prod(...operands)
-        case 'division':
-          return sum(...operands) // TODO: Implement division
-        case 'minimum':
-          return sum(...operands) // TODO: Implement min
-        case 'maximum':
-          return sum(...operands) // TODO: Implement max
-        case 'average':
-          return prod(constant(1 / operands.length), sum(...operands)) // TODO: Properly implement average
-        case 'grouping':
-          return sum(constant(0), ...operands) // TODO: Properly implement group
-        default:
-          throw new Error(`Unknown operation ${operation}`)
+    const parseCustomExpression = (e: ExpressionUnit[]): NumNode => {
+      const expression = [...e]
+      const operationPriority = {
+        addition: 1,
+        subtraction: 1,
+        multiplication: 2,
+        division: 2,
+        minimum: 3,
+        maximum: 3,
+        average: 3,
+        grouping: 3,
+      } as const
+      const handled = [] as ExpressionUnit[]
+      const stack = [] as EnclosingOperation[]
+      let parts = [[]] as ExpressionUnit[][]
+      let currentOperation: ExpressionOperation | undefined
+      let lastUnit: ExpressionUnit | undefined
+
+      while (expression.length) {
+        if (lastUnit) handled.push(lastUnit)
+        const unit = expression.shift() as ExpressionUnit
+        lastUnit = unit
+        if (stack.length) {
+          parts[parts.length - 1].push(unit)
+          if (unit.type === 'enclosing') {
+            if (unit.part === 'head') stack.push(unit.operation)
+            if (unit.part === 'tail') stack.pop()
+          }
+          continue
+        }
+        if (unit.type === 'enclosing') {
+          if (unit.part === 'head') {
+            if (!handled.length) {
+              // Special case for enclosing as first unit
+              currentOperation = unit.operation
+              continue
+            }
+            stack.push(unit.operation)
+            parts[parts.length - 1].push(unit)
+            continue
+          }
+          if (unit.part === 'comma') {
+            parts.push([])
+            continue
+          }
+          if (unit.part === 'tail') {
+            continue
+          }
+        }
+        if (unit.type === 'operation') {
+          // Operations with lower priority first, so they will go to a higher node and will be calculated last
+          if (
+            !currentOperation ||
+            operationPriority[unit.operation] <
+              operationPriority[currentOperation]
+          ) {
+            currentOperation = unit.operation
+            parts = [[...handled], []]
+            continue
+          }
+          if (unit.operation === currentOperation) {
+            parts.push([])
+            continue
+          }
+        }
+        if (unit.type === 'null' && unit.kind === 'operation') {
+          if (!currentOperation) {
+            currentOperation = 'addition'
+            parts = [[...handled]]
+            continue
+          }
+          if (currentOperation === 'addition') {
+            parts.push([])
+            continue
+          }
+        }
+        parts[parts.length - 1].push(unit)
       }
+
+      if (stack.length) throw new Error(`Unclosed enclosing stack ${stack}`)
+
+      if (!currentOperation) {
+        // It means we are at the very end of the recursion, we need to process operands
+        if (!e.length) return constant(1)
+        const operand = e[0]
+        if (operand.type === 'constant') return constant(operand.value)
+        if (operand.type === 'target')
+          return parseCustomTarget(operand.target, false)
+        if (operand.type === 'null') return constant(1)
+        throw new Error(`Unexpected operand type ${operand.type}`)
+      }
+
+      const parsedParts = parts.map(parseCustomExpression)
+
+      if (currentOperation === 'addition') {
+        return sum(...parsedParts)
+      }
+      if (currentOperation === 'subtraction') {
+        // TODO: Properly implement subtraction
+        return sum(
+          parsedParts[0],
+          prod(constant(-1), sum(...parsedParts.slice(1)))
+        )
+      }
+      if (currentOperation === 'multiplication') {
+        return prod(...parsedParts)
+      }
+      if (currentOperation === 'division') {
+        // TODO: Implement division
+        return sum(...parsedParts)
+      }
+      if (currentOperation === 'minimum') {
+        // TODO: Implement minimum
+        return sum(...parsedParts)
+      }
+      if (currentOperation === 'maximum') {
+        // TODO: Implement maximum
+        return sum(...parsedParts)
+      }
+      if (currentOperation === 'average') {
+        // TODO: Properly implement average
+        return prod(constant(1 / parsedParts.length), sum(...parsedParts))
+      }
+      if (currentOperation === 'grouping') {
+        // TODO: Properly implement grouping
+        return sum(constant(0), ...parsedParts)
+      }
+      throw new Error(`Unexpected operation ${currentOperation}`)
     }
 
     customMultiTargets.forEach(({ name, targets, expression }, i) => {
       if (expression) {
         const multiTargetNode = parseCustomExpression(expression)
-        sheetData.display!.custom[i] = infoMut(multiTargetNode, {
+        sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
           name,
           variant: 'invalid',
         })
@@ -270,7 +373,7 @@ export function dataObjForCharacterNew(
           name,
           variant: 'invalid',
         })
-        sheetData.display!.custom[i] = multiTargetNode
+        sheetData.display!['custom'][i] = multiTargetNode
       }
     })
   }

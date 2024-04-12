@@ -1,19 +1,14 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
-  ColorText,
   InfoTooltip,
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
 import { arrayMove, deepClone } from '@genshin-optimizer/common/util'
-import type {
-  CustomTarget,
-  ExpressionNode,
-  ExpressionOperand,
-} from '@genshin-optimizer/gi/db'
+import type { CustomTarget, ExpressionUnit } from '@genshin-optimizer/gi/db'
 import {
   initCustomTarget,
-  initExpressionNode,
+  initExpressionUnit,
   type CustomMultiTarget,
 } from '@genshin-optimizer/gi/db'
 import AddIcon from '@mui/icons-material/Add'
@@ -31,7 +26,6 @@ import {
   Divider,
   IconButton,
   TextField,
-  ToggleButton,
   Typography,
 } from '@mui/material'
 import type { Dispatch, SetStateAction } from 'react'
@@ -43,7 +37,6 @@ import {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import SolidToggleButtonGroup from '../../../Components/SolidToggleButtonGroup'
 import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelectorModal'
 import CustomTargetDisplay from './CustomTargetDisplay'
 export default function CustomMultiTargetCard({
@@ -250,7 +243,16 @@ export default function CustomMultiTargetCard({
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             {target.expression && (
-              <ExpressionNavbar expression={target.expression} />
+              <Typography>
+                {t('multiTarget.expression')}
+                <IconButton
+                  onClick={() =>
+                    setTarget({ ...target, expression: undefined })
+                  }
+                >
+                  <CloseIcon />
+                </IconButton>
+              </Typography>
             )}
             {!target.expression && (
               <>
@@ -265,27 +267,27 @@ export default function CustomMultiTargetCard({
   )
 }
 
-function ExpressionNavbar({ expression }: { expression: ExpressionNode }) {
-  // Path to selected node
-  const [ptsn, setPTSN] = useState<number[]>([])
+// function ExpressionNavbar({ expression }: { expression: ExpressionNode }) {
+//   // Path to selected node
+//   const [ptsn, setPTSN] = useState<number[]>([])
 
-  return (
-    <Box display="flex" gap={1}>
-      <SolidToggleButtonGroup
-        sx={{ flexWrap: 'wrap', alignItems: 'flex-start' }}
-        value={ptsn.toString()}
-        baseColor="secondary"
-        size={'small'}
-      >
-        {recursiveExpressionNodeDisplayer({
-          node: expression,
-          setPTSN,
-          ptsn,
-        })}
-      </SolidToggleButtonGroup>
-    </Box>
-  )
-}
+//   return (
+//     <Box display="flex" gap={1}>
+//       <SolidToggleButtonGroup
+//         sx={{ flexWrap: 'wrap', alignItems: 'flex-start' }}
+//         value={ptsn.toString()}
+//         baseColor="secondary"
+//         size={'small'}
+//       >
+//         {recursiveExpressionNodeButtonDisplayer({
+//           node: expression,
+//           setPTSN,
+//           ptsn,
+//         })}
+//       </SolidToggleButtonGroup>
+//     </Box>
+//   )
+// }
 
 const operationSymbols = {
   addition: '+',
@@ -300,113 +302,108 @@ const operationFuncNames = {
   grouping: '',
 }
 
-function recursiveExpressionNodeDisplayer({
-  node,
-  setPTSN,
-  ptsn,
-  ptn = [],
-}: {
-  node: ExpressionNode
-  setPTSN: Dispatch<SetStateAction<number[]>>
-  ptsn: number[]
-  ptn?: number[]
-}) {
-  const { operation, operands } = node
-  const buttons: JSX.Element[] = []
-  const style = { minWidth: '0', pl: 0.3, pr: 0.3, pt: 1, pb: 1 }
-  const active = ptn.toString() === ptsn.toString()
-  const selfButton = (text: string) => (
-    <ToggleButton
-      value={ptn.toString()}
-      sx={style}
-      onClick={() => setPTSN(ptn)}
-      disabled={active}
-    >
-      {text}
-    </ToggleButton>
-  )
-  const nullButton = (index: number) => (
-    <ToggleButton
-      value={[...ptn, index].toString()}
-      sx={style}
-      onClick={() => setPTSN([...ptn, index])}
-      disabled={[...ptn, index].toString() === ptsn.toString()}
-    >
-      <ColorText color="red">null</ColorText>
-    </ToggleButton>
-  )
-  const operandHandler = (operand: ExpressionOperand, index: number) => {
-    if (typeof operand === 'number' || 'path' in operand) {
-      return [
-        <ToggleButton
-          value={[...ptn, index].toString()}
-          sx={style}
-          onClick={() => setPTSN([...ptn, index])}
-          disabled={[...ptn, index].toString() === ptsn.toString()}
-        >
-          {typeof operand === 'number'
-            ? operand
-            : (operand as { path: string[] }).path.join('.')}
-        </ToggleButton>,
-      ]
-    }
-    return recursiveExpressionNodeDisplayer({
-      node: operand,
-      ptn: [...ptn, index],
-      setPTSN,
-      ptsn,
-    })
-  }
-  const operands_: JSX.Element[][] = operands.map((operand, index) => {
-    return operandHandler(operand, index)
-  })
-  const lastIndex = operands_.length - 1
-  if (lastIndex < 1) {
-    operands_.push([nullButton(lastIndex + 1)])
-  }
-  if (lastIndex < 0) {
-    operands_.push([nullButton(lastIndex + 2)])
-  }
-  if (operation in operationSymbols) {
-    // buttons.push(selfButton('('))
-    // if (active) buttons.push(selfButton('('))
-    // if (ptn.slice(0, -1).toString() === ptsn.slice(0, -1).toString()) {
-    //   buttons.push(selfButton('('))
-    // }
-    operands_.forEach((operand, index) => {
-      if (index > 0) {
-        buttons.push(selfButton(operationSymbols[operation]))
-      }
-      buttons.push(...operand)
-    })
-    // buttons.push(selfButton(')'))
-    // if (active) buttons.push(selfButton(')'))
-    // if (ptn.slice(0, -1).toString() === ptsn.slice(0, -1).toString()) {
-    //   buttons.push(selfButton(')'))
-    // }
-  } else if (operation in operationFuncNames) {
-    buttons.push(selfButton(`${operationFuncNames[operation]}(`))
-    buttons.push(...operands_.flat())
-    buttons.push(selfButton(')'))
-  } else {
-    console.error('Invalid operation', operation)
-  }
-  return buttons
-}
+// function recursiveExpressionNodeButtonDisplayer({
+//   node,
+//   setPTSN,
+//   ptsn,
+//   ptn = [],
+// }: {
+//   node: ExpressionNode
+//   setPTSN: Dispatch<SetStateAction<number[]>>
+//   ptsn: number[]
+//   ptn?: number[]
+// }) {
+//   const { operation, operands } = node
+//   const buttons: JSX.Element[] = []
+//   const style = { minWidth: '0', pl: 0.3, pr: 0.3, pt: 1, pb: 1 }
+//   const active = ptn.toString() === ptsn.toString()
+//   const selfButton = (text: string) => (
+//     <ToggleButton
+//       value={ptn.toString()}
+//       sx={style}
+//       onClick={() => setPTSN(ptn)}
+//       disabled={active}
+//     >
+//       {text}
+//     </ToggleButton>
+//   )
+//   const nullButton = (index: number) => (
+//     <ToggleButton
+//       value={[...ptn, index].toString()}
+//       sx={style}
+//       onClick={() => setPTSN([...ptn, index])}
+//       disabled={[...ptn, index].toString() === ptsn.toString()}
+//     >
+//       <ColorText color="red">null</ColorText>
+//     </ToggleButton>
+//   )
+//   const operandHandler = (operand: ExpressionOperand, index: number) => {
+//     if (typeof operand === 'number' || 'path' in operand) {
+//       return [
+//         <ToggleButton
+//           value={[...ptn, index].toString()}
+//           sx={style}
+//           onClick={() => setPTSN([...ptn, index])}
+//           disabled={[...ptn, index].toString() === ptsn.toString()}
+//         >
+//           {typeof operand === 'number'
+//             ? operand
+//             : (operand as { path: string[] }).path.join('.')}
+//         </ToggleButton>,
+//       ]
+//     }
+//     return recursiveExpressionNodeButtonDisplayer({
+//       node: operand,
+//       ptn: [...ptn, index],
+//       setPTSN,
+//       ptsn,
+//     })
+//   }
+//   const operands_: JSX.Element[][] = operands.map((operand, index) => {
+//     return operandHandler(operand, index)
+//   })
+//   const lastIndex = operands_.length - 1
+//   if (lastIndex < 1) {
+//     operands_.push([nullButton(lastIndex + 1)])
+//   }
+//   if (lastIndex < 0) {
+//     operands_.push([nullButton(lastIndex + 2)])
+//   }
+//   if (operation in operationSymbols) {
+//     operands_.forEach((operand, index) => {
+//       if (index > 0) {
+//         buttons.push(selfButton(operationSymbols[operation]))
+//       }
+//       buttons.push(...operand)
+//     })
+//   } else if (operation in operationFuncNames) {
+//     buttons.push(selfButton(`${operationFuncNames[operation]}(`))
+//     buttons.push(...operands_.flat())
+//     buttons.push(selfButton(')'))
+//   } else {
+//     console.error('Invalid operation', operation)
+//   }
+//   return buttons
+// }
 
 function targetListToExpression(cmt: CustomMultiTarget): CustomMultiTarget {
+  const expression: ExpressionUnit[] = []
+  cmt.targets.forEach((t, i) => {
+    if (i > 0) {
+      expression.push(
+        initExpressionUnit({ type: 'operation', operation: 'addition' })
+      )
+    }
+    expression.push(initExpressionUnit({ type: 'constant', value: t.weight }))
+    expression.push(
+      initExpressionUnit({ type: 'operation', operation: 'multiplication' })
+    )
+    expression.push(initExpressionUnit({ type: 'target', target: t }))
+  })
   return {
     ...cmt,
     targets: [],
-    expression: initExpressionNode({
-      operation: 'addition',
-      operands: cmt.targets.map((t) =>
-        initExpressionNode({
-          operation: 'multiplication',
-          operands: [t.weight, t],
-        })
-      ),
-    }),
+    expression,
   }
 }
 
