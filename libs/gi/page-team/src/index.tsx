@@ -90,7 +90,7 @@ function PageLoadoutWrapper({ teamId }: { teamId: string }) {
     const ld = loadoutData[0]
     const ck = ld && database.teamChars.get(ld.teamCharId)?.key
     if (ck) return <Navigate to={ck} replace />
-    else return <Navigate to="" />
+    else return <Navigate to="" replace />
   }
   return <Page loadoutDatum={loadoutDatum} teamId={teamId} tab={tab} />
 }

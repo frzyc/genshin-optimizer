@@ -68,7 +68,7 @@ function CharacterPanel({ isTCBuild }: { isTCBuild: boolean }) {
         {!isTCBuild && shouldShowDevComponents && (
           <Route path="upopt" element={<TabUpopt />} />
         )}
-        <Route path="*" index element={<Navigate to="overview" />} />
+        <Route path="*" index element={<Navigate to="overview" replace />} />
       </Routes>
     </Suspense>
   )
