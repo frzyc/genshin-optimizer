@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -14,7 +13,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'TheBell'
-const data_gen = allStats.weapon.data[key]
 
 const shieldSrc = [-1, 0.2, 0.23, 0.26, 0.29, 0.32]
 const allDmgSrc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
@@ -42,7 +40,6 @@ const all_dmg_ = equal(
 
 const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       all_dmg_,
@@ -91,4 +88,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

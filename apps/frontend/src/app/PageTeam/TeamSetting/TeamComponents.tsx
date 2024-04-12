@@ -2,12 +2,19 @@ import {
   CardThemed,
   ColorText,
   ImgIcon,
+  InfoTooltipInline,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
+import type {
+  CharacterContextObj,
+  TeamCharacterContextObj,
+} from '@genshin-optimizer/gi/db-ui'
 import {
+  CharacterContext,
+  TeamCharacterContext,
   useBuildTc,
   useCharacter,
   useDatabase,
@@ -20,8 +27,18 @@ import {
   getArtSheet,
   resonanceSheets,
 } from '@genshin-optimizer/gi/sheets'
-import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
-import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactSetName,
+  CharacterCardEquipmentRow,
+  CharacterCardHeader,
+  CharacterCardHeaderContent,
+  DataContext,
+  DocumentDisplay,
+  NodeFieldDisplay,
+  WeaponFullCardObj,
+} from '@genshin-optimizer/gi/ui'
+import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import { input } from '@genshin-optimizer/gi/wr'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
@@ -38,22 +55,6 @@ import {
 } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardLight from '../../Components/Card/CardLight'
-import { CharacterCardEquipmentRow } from '../../Components/Character/CharacterCard/CharacterCardEquipmentRow'
-import {
-  CharacterCardHeader,
-  CharacterCardHeaderContent,
-} from '../../Components/Character/CharacterCard/CharacterCardHeader'
-import DocumentDisplay from '../../Components/DocumentDisplay'
-import { NodeFieldDisplay } from '../../Components/FieldDisplay'
-import { InfoTooltipInline } from '../../Components/InfoTooltip'
-import { WeaponFullCardObj } from '../../Components/Weapon/WeaponFullCard'
-import type { CharacterContextObj } from '../../Context/CharacterContext'
-import { CharacterContext } from '../../Context/CharacterContext'
-import type { dataContextObj } from '../../Context/DataContext'
-import { DataContext } from '../../Context/DataContext'
-import type { TeamCharacterContextObj } from '../../Context/TeamCharacterContext'
-import { TeamCharacterContext } from '../../Context/TeamCharacterContext'
 
 export function TeamBuffDisplay() {
   const { data, compareData } = useContext(DataContext)
@@ -94,7 +95,7 @@ export function TeamBuffDisplay() {
       </AccordionSummary>
       <AccordionDetails sx={{ p: 0 }}>
         <Divider />
-        <CardLight>
+        <CardThemed bgt="light">
           <CardContent>
             <Grid container>
               {nodes.map(
@@ -112,7 +113,7 @@ export function TeamBuffDisplay() {
               )}
             </Grid>
           </CardContent>
-        </CardLight>
+        </CardThemed>
       </AccordionDetails>
     </Accordion>
   )
@@ -125,7 +126,7 @@ export function ResonanceDisplay({ teamId }: { teamId: string }) {
   const teamCount = loadoutData.reduce((a, t) => a + (t ? 1 : 0), 0)
   return (
     <>
-      <CardLight>
+      <CardThemed bgt="light">
         <CardHeader
           title={
             <span>
@@ -142,9 +143,13 @@ export function ResonanceDisplay({ teamId }: { teamId: string }) {
           }
           titleTypographyProps={{ variant: 'subtitle2' }}
         />
-      </CardLight>
+      </CardThemed>
       {resonanceSheets.map((res, i) => (
-        <CardLight key={i} sx={{ opacity: res.canShow(data) ? 1 : 0.5 }}>
+        <CardThemed
+          bgt="light"
+          key={i}
+          sx={{ opacity: res.canShow(data) ? 1 : 0.5 }}
+        >
           <CardHeader
             title={
               <span>
@@ -163,7 +168,7 @@ export function ResonanceDisplay({ teamId }: { teamId: string }) {
               <DocumentDisplay sections={res.sections} teamBuffOnly hideDesc />
             </CardContent>
           )}
-        </CardLight>
+        </CardThemed>
       ))}
     </>
   )
@@ -199,12 +204,10 @@ export function TeammateDisplay({
     [teamId, team, teamCharId, teamChar, dataBundle, loadoutDatum]
   )
   const characterContext: CharacterContextObj | undefined = useMemo(
-    () =>
-      dataBundle && {
-        character,
-        characterSheet: dataBundle.characterSheet,
-      },
-    [character, dataBundle]
+    () => ({
+      character,
+    }),
+    [character]
   )
   const teamMateDataContext: dataContextObj | undefined = useMemo(
     () =>

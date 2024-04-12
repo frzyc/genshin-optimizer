@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, input, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -7,7 +6,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'SkyriderSword'
-const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'Determination')
 const bonusInc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
@@ -22,7 +20,7 @@ const moveSPD_ = equal(
   subscript(input.weapon.refinement, bonusInc, { unit: '%' })
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
     moveSPD_,
@@ -55,4 +53,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

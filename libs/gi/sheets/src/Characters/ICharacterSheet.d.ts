@@ -1,9 +1,3 @@
-import type {
-  CharacterKey,
-  ElementKey,
-  RarityKey,
-  WeaponTypeKey,
-} from '@genshin-optimizer/gi/consts'
 import type { DocumentSection } from '../sheet'
 
 export interface TalentSheetElement {
@@ -29,15 +23,3 @@ export type TalentSheetElementKey =
 export type TalentSheet = Partial<
   Record<TalentSheetElementKey, TalentSheetElement>
 >
-
-export type ICharacterSheet = {
-  key: CharacterKey
-  name: ReactNode
-  rarity: RarityKey
-  weaponTypeKey: WeaponTypeKey
-  gender: string
-  constellationName: ReactNode
-  title: ReactNode
-  elementKey: ElementKey
-  talent: TalentSheet
-}

@@ -1,6 +1,5 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   input,
@@ -15,7 +14,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'KeyOfKhajNisut'
-const data_gen = allStats.weapon.data[key]
 
 const selfEmSrc = [-1, 0.0012, 0.0015, 0.0018, 0.0021, 0.0024]
 const teamEmSrc = [-1, 0.002, 0.0025, 0.003, 0.0035, 0.004]
@@ -64,7 +62,6 @@ const teamEleMas = equal(
 
 const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       hp_,
@@ -132,4 +129,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

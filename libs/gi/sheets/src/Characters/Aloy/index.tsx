@@ -16,7 +16,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -26,9 +26,8 @@ import {
 
 const key: CharacterKey = 'Aloy'
 const elementKey: ElementKey = 'cryo'
-const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponType)
+const ct = charTemplates(key)
 
 let a = 0,
   s = 0,
@@ -161,232 +160,215 @@ const dmgFormulas = {
   },
 }
 
-export const data = dataObjForCharacterSheet(
-  key,
-  elementKey,
-  undefined,
-  data_gen,
-  dmgFormulas,
-  {
+export const data = dataObjForCharacterSheet(key, dmgFormulas, {
+  premod: {
+    normal_dmg_,
+    atk_,
+    cryo_dmg_,
+  },
+  teamBuff: {
     premod: {
-      normal_dmg_,
-      atk_,
-      cryo_dmg_,
+      atk_: teamAtk_,
     },
-    teamBuff: {
-      premod: {
-        atk_: teamAtk_,
-      },
-    },
-  }
-)
+  },
+})
 
-const sheet: ICharacterSheet = {
-  key,
-  name: ct.name,
-  rarity: data_gen.rarity,
-  elementKey,
-  weaponTypeKey: data_gen.weaponType,
-  gender: 'F',
-  constellationName: ct.chg('constellationName'),
-  title: ct.chg('title'),
-  talent: {
-    auto: ct.talentTem('auto', [
-      {
-        text: ct.chg('auto.fields.normal'),
-      },
-      {
-        fields: dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], {
-            name: ct.chg(`auto.skillParams.${i + (i === 0 ? 0 : -1)}`),
-            textSuffix: i === 0 ? '(1)' : i === 1 ? '(2)' : '',
+const sheet: TalentSheet = {
+  auto: ct.talentTem('auto', [
+    {
+      text: ct.chg('auto.fields.normal'),
+    },
+    {
+      fields: dm.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[i], {
+          name: ct.chg(`auto.skillParams.${i + (i === 0 ? 0 : -1)}`),
+          textSuffix: i === 0 ? '(1)' : i === 1 ? '(2)' : '',
+        }),
+      })),
+    },
+    {
+      text: ct.chg('auto.fields.charged'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.charged.aimed, {
+            name: ct.chg(`auto.skillParams.4`),
           }),
-        })),
-      },
-      {
-        text: ct.chg('auto.fields.charged'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.aimed, {
-              name: ct.chg(`auto.skillParams.4`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.charged.aimedCharged, {
-              name: ct.chg(`auto.skillParams.5`),
-            }),
-          },
-        ],
-      },
-      {
-        text: ct.chg('auto.fields.plunging'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.plunging.dmg, {
-              name: stg('plunging.dmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.low, {
-              name: stg('plunging.low'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.high, {
-              name: stg('plunging.high'),
-            }),
-          },
-        ],
-      },
-    ]),
-
-    skill: ct.talentTem('skill', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.skill.freezeBombDmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.chillWaterBomblets, {
-              name: ct.chg(`skill.skillParams.1`),
-            }),
-          },
-          {
-            node: infoMut(
-              subscript(input.total.skillIndex, dm.skill.atkDecrease),
-              {
-                name: ct.chg(`skill.skillParams.2`),
-                unit: '%',
-              }
-            ),
-          },
-          {
-            text: ct.chg('skill.skillParams.3'),
-            value: `${dm.skill.atkDecreaseDuration}`,
-            unit: 's',
-          },
-          {
-            text: ct.chg('skill.skillParams.7'),
-            value: `${dm.skill.cd}`,
-            unit: 's',
-          },
-        ],
-      },
-      ct.condTem('skill', {
-        value: condCoil,
-        path: condCoilPath,
-        name: ct.ch('skill.coil'),
-        states: {
-          ...Object.fromEntries(
-            range(1, 3).map((i) => [
-              `coil${i}`,
-              {
-                name: st('stack', { count: i }),
-                fields: [
-                  {
-                    node: normal_dmg_,
-                  },
-                ],
-              },
-            ])
-          ),
-          rush: {
-            name: ct.ch('skill.rush'),
-            fields: [
-              {
-                node: normal_dmg_,
-              },
-              {
-                text: ct.ch('normCryoInfus'),
-              },
-              {
-                text: ct.chg('skill.skillParams.6'),
-                value: dm.skill.rushingDuration,
-                unit: 's',
-              },
-            ],
-          },
         },
-      }),
-    ]),
-
-    burst: ct.talentTem('burst', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.burst.dmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
-          },
-          {
-            text: ct.chg('burst.skillParams.1'),
-            value: dm.burst.cd,
-            unit: 's',
-          },
-          {
-            text: ct.chg('burst.skillParams.2'),
-            value: dm.burst.enerCost,
-          },
-        ],
-      },
-    ]),
-
-    passive1: ct.talentTem('passive1', [
-      ct.condTem('passive1', {
-        value: condA1,
-        path: condA1Path,
-        teamBuff: true,
-        name: ct.ch('a1CondName'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: infoMut(teamAtk_, { path: 'atk_' }),
-              },
-              {
-                node: infoMut(atk_, { path: 'atk_' }),
-              },
-              {
-                text: stg('duration'),
-                value: dm.passive1.duration,
-                unit: 's',
-              },
-            ],
-          },
+        {
+          node: infoMut(dmgFormulas.charged.aimedCharged, {
+            name: ct.chg(`auto.skillParams.5`),
+          }),
         },
-      }),
-    ]),
-    passive2: ct.talentTem('passive2', [
-      ct.condTem('passive2', {
-        value: condA4,
-        path: condA4Path,
-        canShow: equal('rush', condCoil, 1),
-        name: ct.ch('skill.rushState'),
-        states: Object.fromEntries(
-          range(1, 10).map((i) => [
-            i,
+      ],
+    },
+    {
+      text: ct.chg('auto.fields.plunging'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.plunging.dmg, {
+            name: stg('plunging.dmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.low, {
+            name: stg('plunging.low'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.high, {
+            name: stg('plunging.high'),
+          }),
+        },
+      ],
+    },
+  ]),
+
+  skill: ct.talentTem('skill', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.skill.freezeBombDmg, {
+            name: ct.chg(`skill.skillParams.0`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.chillWaterBomblets, {
+            name: ct.chg(`skill.skillParams.1`),
+          }),
+        },
+        {
+          node: infoMut(
+            subscript(input.total.skillIndex, dm.skill.atkDecrease),
             {
-              name: st('seconds', { count: i }),
-              fields: [{ node: cryo_dmg_ }],
+              name: ct.chg(`skill.skillParams.2`),
+              unit: '%',
+            }
+          ),
+        },
+        {
+          text: ct.chg('skill.skillParams.3'),
+          value: `${dm.skill.atkDecreaseDuration}`,
+          unit: 's',
+        },
+        {
+          text: ct.chg('skill.skillParams.7'),
+          value: `${dm.skill.cd}`,
+          unit: 's',
+        },
+      ],
+    },
+    ct.condTem('skill', {
+      value: condCoil,
+      path: condCoilPath,
+      name: ct.ch('skill.coil'),
+      states: {
+        ...Object.fromEntries(
+          range(1, 3).map((i) => [
+            `coil${i}`,
+            {
+              name: st('stack', { count: i }),
+              fields: [
+                {
+                  node: normal_dmg_,
+                },
+              ],
             },
           ])
         ),
-      }),
-    ]),
-    passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
-    constellation2: ct.talentTem('constellation2'),
-    constellation3: ct.talentTem('constellation3'),
-    constellation4: ct.talentTem('constellation4'),
-    constellation5: ct.talentTem('constellation5'),
-    constellation6: ct.talentTem('constellation6'),
-  },
+        rush: {
+          name: ct.ch('skill.rush'),
+          fields: [
+            {
+              node: normal_dmg_,
+            },
+            {
+              text: ct.ch('normCryoInfus'),
+            },
+            {
+              text: ct.chg('skill.skillParams.6'),
+              value: dm.skill.rushingDuration,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
+  ]),
+
+  burst: ct.talentTem('burst', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.burst.dmg, {
+            name: ct.chg(`burst.skillParams.0`),
+          }),
+        },
+        {
+          text: ct.chg('burst.skillParams.1'),
+          value: dm.burst.cd,
+          unit: 's',
+        },
+        {
+          text: ct.chg('burst.skillParams.2'),
+          value: dm.burst.enerCost,
+        },
+      ],
+    },
+  ]),
+
+  passive1: ct.talentTem('passive1', [
+    ct.condTem('passive1', {
+      value: condA1,
+      path: condA1Path,
+      teamBuff: true,
+      name: ct.ch('a1CondName'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: infoMut(teamAtk_, { path: 'atk_' }),
+            },
+            {
+              node: infoMut(atk_, { path: 'atk_' }),
+            },
+            {
+              text: stg('duration'),
+              value: dm.passive1.duration,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
+  ]),
+  passive2: ct.talentTem('passive2', [
+    ct.condTem('passive2', {
+      value: condA4,
+      path: condA4Path,
+      canShow: equal('rush', condCoil, 1),
+      name: ct.ch('skill.rushState'),
+      states: Object.fromEntries(
+        range(1, 10).map((i) => [
+          i,
+          {
+            name: st('seconds', { count: i }),
+            fields: [{ node: cryo_dmg_ }],
+          },
+        ])
+      ),
+    }),
+  ]),
+  passive3: ct.talentTem('passive3'),
+  constellation1: ct.talentTem('constellation1'),
+  constellation2: ct.talentTem('constellation2'),
+  constellation3: ct.talentTem('constellation3'),
+  constellation4: ct.talentTem('constellation4'),
+  constellation5: ct.talentTem('constellation5'),
+  constellation6: ct.talentTem('constellation6'),
 }
 
 export default new CharacterSheet(sheet, data)

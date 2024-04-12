@@ -1,7 +1,6 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, input, subscript, sum } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -9,7 +8,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'KagurasVerity'
-const data_gen = allStats.weapon.data[key]
 
 const [condPath, condNode] = cond(key, 'KaguraDance')
 const totems = range(1, 3)
@@ -32,7 +30,7 @@ const ele_dmg_s = Object.fromEntries(
   ])
 )
 
-export const data = dataObjForWeaponSheet(key, data_gen, {
+export const data = dataObjForWeaponSheet(key, {
   premod: {
     skill_dmg_: sum(...skill_dmg_s),
     ...Object.fromEntries(
@@ -64,4 +62,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

@@ -1,6 +1,17 @@
-import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ImgIcon,
+  ModalWrapper,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/ui'
+import {
+  DataContext,
+  NodeFieldDisplayText,
+  getDisplayHeader,
+  getDisplaySections,
+} from '@genshin-optimizer/gi/ui'
+import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { Masonry } from '@mui/lab'
 import {
@@ -11,15 +22,6 @@ import {
   MenuList,
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
-import CardDark from '../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../Components/Card/CardLight'
-import { NodeFieldDisplayText } from '../../../../../Components/FieldDisplay'
-import ModalWrapper from '../../../../../Components/ModalWrapper'
-import { DataContext } from '../../../../../Context/DataContext'
-import {
-  getDisplayHeader,
-  getDisplaySections,
-} from '../../../../../Formula/DisplayUtil'
 
 export interface TargetSelectorModalProps {
   show: boolean
@@ -69,7 +71,7 @@ export function TargetSelectorModal({
 
   return (
     <ModalWrapper open={show} onClose={onClose}>
-      <CardDark>
+      <CardThemed>
         <CardContent>
           <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={1}>
             {sections.map(([key, Nodes]) => (
@@ -82,7 +84,7 @@ export function TargetSelectorModal({
             ))}
           </Masonry>
         </CardContent>
-      </CardDark>
+      </CardThemed>
     </ModalWrapper>
   )
 }
@@ -103,7 +105,7 @@ function SelectorSection({
     [data, sectionKey, database]
   )
   return (
-    <CardLight key={sectionKey as string}>
+    <CardThemed bgt="light" key={sectionKey as string}>
       {header && (
         <CardHeader
           avatar={header.icon && <ImgIcon size={2} src={header.icon} />}
@@ -122,7 +124,7 @@ function SelectorSection({
           />
         ))}
       </MenuList>
-    </CardLight>
+    </CardThemed>
   )
 }
 

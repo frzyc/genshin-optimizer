@@ -2,13 +2,12 @@ import { SandboxStorage } from '@genshin-optimizer/common/database'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { BuildTc, LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
-import { getTeamDataCalc } from '../../../../ReactHooks/useTeamData'
 import {
-  getArtifactData,
-  getWeaponData,
-  optimizeTcGetNodes,
-  optimizeTcUsingNodes,
-} from './optimizeTc'
+  getBuildTcArtifactData,
+  getBuildTcWeaponData,
+  getTeamDataCalc,
+} from '@genshin-optimizer/gi/ui'
+import { optimizeTcGetNodes, optimizeTcUsingNodes } from './optimizeTc'
 
 describe('A general optimizeTC usecase', () => {
   it('generate correct distribution', () => {
@@ -147,8 +146,8 @@ describe('A general optimizeTC usecase', () => {
       loadoutData,
     })
     expect(teamId).toBeTruthy()
-    const overrideArt = getArtifactData(buildTc)
-    const overrideWeapon = getWeaponData(buildTc)
+    const overrideArt = getBuildTcArtifactData(buildTc)
+    const overrideWeapon = getBuildTcWeaponData(buildTc)
     const teamData = getTeamDataCalc(
       database,
       teamId,

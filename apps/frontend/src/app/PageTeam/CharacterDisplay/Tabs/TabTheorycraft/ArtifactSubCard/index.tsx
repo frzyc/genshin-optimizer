@@ -12,11 +12,11 @@ import {
   artSubstatRollData,
   substatTypeKeys,
 } from '@genshin-optimizer/gi/consts'
+import { ArtifactRarityDropdown } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { Box, MenuItem, Stack, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import ArtifactRarityDropdown from '../../../../../Components/Artifact/ArtifactRarityDropdown'
 import { BuildTcContext } from '../BuildTcContext'
 import { ArtifactAllSubstatEditor } from './ArtifactAllSubstatEditor'
 import { ArtifactSubstatEditor } from './ArtifactSubstatEditor'

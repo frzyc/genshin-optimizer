@@ -1,6 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   input,
   lookup,
@@ -14,7 +13,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'RoyalBow'
-const data_gen = allStats.weapon.data[key]
 
 const critRate_s = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 const [condPassivePath, condPassive] = cond(key, 'Focus')
@@ -28,7 +26,7 @@ const critRate_ = lookup(
   naught
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     critRate_,
   },
@@ -57,4 +55,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -14,7 +13,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'ScionOfTheBlazingSun'
-const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const dmgArr = [-1, 0.6, 0.75, 0.9, 1.05, 1.2]
@@ -34,7 +32,7 @@ const charged_dmg_ = equal(
   subscript(input.weapon.refinement, charged_dmg_arr)
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     charged_dmg_,
   },
@@ -77,4 +75,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

@@ -18,7 +18,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'GildedDreams'
@@ -84,66 +84,62 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
 })
 
-const sheet: IArtifactSheet = {
-  name: 'Gilded Dreams',
-  rarity: [4, 5],
-  setEffects: {
-    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          teamBuff: true,
-          path: condPassivePath,
-          value: condPassive,
-          name: st('afterReaction'),
-          states: {
-            on: {
-              fields: [
-                {
-                  node: set4_atk_,
-                },
-                {
-                  node: set4_eleMas,
-                },
-                {
-                  text: stg('duration'),
-                  value: 8,
-                  unit: 's',
-                },
-                {
-                  text: stg('cd'),
-                  value: 8,
-                  unit: 's',
-                },
-              ],
-            },
+const sheet: SetEffectSheet = {
+  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        teamBuff: true,
+        path: condPassivePath,
+        value: condPassive,
+        name: st('afterReaction'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: set4_atk_,
+              },
+              {
+                node: set4_eleMas,
+              },
+              {
+                text: stg('duration'),
+                value: 8,
+                unit: 's',
+              },
+              {
+                text: stg('cd'),
+                value: 8,
+                unit: 's',
+              },
+            ],
           },
         },
-        {
-          header: setHeader(4),
-          teamBuff: true,
-          path: condOverrideSamePath,
-          value: condOverrideSame,
-          name: trm('overrideSameCond'),
-          states: objKeyMap(overrideArr, (override) => ({
-            name: st('members', { count: override }),
-            fields: [],
-          })),
-        },
-        {
-          header: setHeader(4),
-          teamBuff: true,
-          path: condOverrideOtherPath,
-          value: condOverrideOther,
-          name: trm('overrideOtherCond'),
-          states: objKeyMap(overrideArr, (override) => ({
-            name: st('members', { count: override }),
-            fields: [],
-          })),
-        },
-      ],
-    },
+      },
+      {
+        header: setHeader(4),
+        teamBuff: true,
+        path: condOverrideSamePath,
+        value: condOverrideSame,
+        name: trm('overrideSameCond'),
+        states: objKeyMap(overrideArr, (override) => ({
+          name: st('members', { count: override }),
+          fields: [],
+        })),
+      },
+      {
+        header: setHeader(4),
+        teamBuff: true,
+        path: condOverrideOtherPath,
+        value: condOverrideOther,
+        name: trm('overrideOtherCond'),
+        states: objKeyMap(overrideArr, (override) => ({
+          name: st('members', { count: override }),
+          fields: [],
+        })),
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)

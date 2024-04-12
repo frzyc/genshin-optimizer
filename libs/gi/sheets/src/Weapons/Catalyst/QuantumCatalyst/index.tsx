@@ -1,6 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   input,
@@ -15,7 +14,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'QuantumCatalyst'
-const data_gen = allStats.weapon.data[key]
 
 const enerRech_arr = [-1, 0.18, 0.225, 0.27, 0.315, 0.36]
 const normCharged_dmgIncArr = [-1, 0.06, 0.075, 0.09, 0.105, 0.12]
@@ -44,7 +42,6 @@ const eleMas = lookup(
 
 export const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       enerRech_,
@@ -84,4 +81,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

@@ -43,7 +43,7 @@ const atk_2 = lookup(
   { path: 'atk_' }
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_: sum(atk_, atk_2),
   },
@@ -75,4 +75,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

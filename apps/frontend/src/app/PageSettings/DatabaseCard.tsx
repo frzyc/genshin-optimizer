@@ -1,5 +1,9 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { StyledInputBase } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ModalWrapper,
+  StyledInputBase,
+} from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import { Delete, Download, ImportExport, Upload } from '@mui/icons-material'
@@ -15,9 +19,6 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import CardDark from '../Components/Card/CardDark'
-import CardLight from '../Components/Card/CardLight'
-import ModalWrapper from '../Components/ModalWrapper'
 import UploadCard from './UploadCard'
 
 export default function DatabaseCard({
@@ -27,7 +28,7 @@ export default function DatabaseCard({
 }) {
   const { t } = useTranslation(['settings'])
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent sx={{ py: 1 }}>
         <Typography variant="subtitle1">{t`DatabaseCard.title`}</Typography>
       </CardContent>
@@ -41,7 +42,7 @@ export default function DatabaseCard({
           ))}
         </Grid>
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }
 
@@ -118,7 +119,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   const onKeyDOwn = useCallback((e) => e.key === 'Enter' && onBlur(), [onBlur])
 
   return (
-    <CardDark
+    <CardThemed
       sx={{
         height: '100%',
         boxShadow: current ? '0px 0px 0px 2px green inset' : undefined,
@@ -225,6 +226,6 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
           </Box>
         </Box>
       </CardContent>
-    </CardDark>
+    </CardThemed>
   )
 }

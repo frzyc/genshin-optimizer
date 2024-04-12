@@ -5,6 +5,7 @@ import {
   PaypalIcon,
   TwitchIcon,
 } from '@genshin-optimizer/common/svgicons'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   Article,
   Description,
@@ -26,7 +27,6 @@ import {
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
-import CardDark from '../Components/Card/CardDark'
 
 const buttons = [
   {
@@ -118,7 +118,7 @@ const buttons = [
 export default function QuickLinksCard() {
   const { t } = useTranslation(['page_home', 'ui'])
   return (
-    <CardDark>
+    <CardThemed>
       <CardHeader
         title={<Typography variant="h5">{t`quickLinksCard.title`}</Typography>}
         avatar={<InsertLink fontSize="large" />}
@@ -163,6 +163,6 @@ export default function QuickLinksCard() {
           )
         })}
       </CardContent>
-    </CardDark>
+    </CardThemed>
   )
 }

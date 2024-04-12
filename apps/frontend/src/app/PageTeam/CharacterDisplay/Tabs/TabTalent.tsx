@@ -1,13 +1,27 @@
 import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
-import type {
-  DocumentSection,
-  TalentSheetElementKey,
+import {
+  getCharSheet,
+  type DocumentSection,
+  type TalentSheetElementKey,
 } from '@genshin-optimizer/gi/sheets'
-import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import {
+  ConstellationDropdown,
+  DataContext,
+  DocumentDisplay,
+  HitModeToggle,
+  NodeFieldDisplay,
+  ReactionToggle,
+  TalentDropdown,
+} from '@genshin-optimizer/gi/ui'
+import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
@@ -20,18 +34,7 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../../../Components/Card/CardDark'
-import CardLight from '../../../Components/Card/CardLight'
-import ConstellationDropdown from '../../../Components/Character/ConstellationDropdown'
-import TalentDropdown from '../../../Components/Character/TalentDropdown'
-import DocumentDisplay from '../../../Components/DocumentDisplay'
-import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
-import {
-  HitModeToggle,
-  ReactionToggle,
-} from '../../../Components/HitModeEditor'
-import { CharacterContext } from '../../../Context/CharacterContext'
-import { DataContext } from '../../../Context/DataContext'
+
 const talentSpacing = {
   xs: 12,
   sm: 6,
@@ -42,8 +45,9 @@ export default function CharacterTalentPane() {
   const { t } = useTranslation('sheet_gen')
   const {
     character: { key: characterKey },
-    characterSheet,
   } = useContext(CharacterContext)
+  const { gender } = useDBMeta()
+  const characterSheet = getCharSheet(characterKey, gender)
   const { data } = useContext(DataContext)
   const database = useDatabase()
   const skillBurstList = [
@@ -180,7 +184,7 @@ function ReactionDisplay() {
   const { data } = useContext(DataContext)
   const reaction = data.getDisplay().reaction as { [key: string]: NodeDisplay }
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent>
         <Grid container spacing={1}>
           {Object.entries(reaction)
@@ -188,17 +192,17 @@ function ReactionDisplay() {
             .map(([key, node]) => {
               return (
                 <Grid item key={key}>
-                  <CardDark>
+                  <CardThemed>
                     <CardContent sx={{ p: 1, '&:last-child': { pb: 1 } }}>
                       <NodeFieldDisplay node={node} />
                     </CardContent>
-                  </CardDark>
+                  </CardThemed>
                 </Grid>
               )
             })}
         </Grid>
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }
 
@@ -213,9 +217,10 @@ function SkillDisplayCard({
   onClickTitle,
 }: SkillDisplayCardProps) {
   const {
-    character: { talent },
-    characterSheet,
+    character: { talent, key: characterKey },
   } = useContext(CharacterContext)
+  const { gender } = useDBMeta()
+  const characterSheet = getCharSheet(characterKey, gender)
   const actionWrapperFunc = useCallback(
     (children) => (
       <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>
@@ -246,7 +251,7 @@ function SkillDisplayCard({
   }
 
   return (
-    <CardLight sx={{ height: '100%' }}>
+    <CardThemed bgt="light" sx={{ height: '100%' }}>
       {header}
       <CardContent>
         <ConditionalWrapper
@@ -276,6 +281,6 @@ function SkillDisplayCard({
           />
         ) : null}
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }

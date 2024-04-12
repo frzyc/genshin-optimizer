@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -14,7 +13,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'StaffOfHoma'
-const data_gen = allStats.weapon.data[key]
 
 const hpInc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const atkInc = [-1, 0.008, 0.01, 0.012, 0.014, 0.016]
@@ -40,7 +38,6 @@ const atk2 = equal(
 )
 const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       hp_,
@@ -85,4 +82,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

@@ -1,5 +1,9 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { CustomNumberInput, DropdownButton } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  CustomNumberInput,
+  DropdownButton,
+} from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
@@ -9,7 +13,11 @@ import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi/consts'
 import type { BuildTcArtifactSlot } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { artifactLevelVariant } from '@genshin-optimizer/gi/ui'
+import {
+  StatColoredWithUnit,
+  StatWithUnit,
+  artifactLevelVariant,
+} from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
   getMainStatDisplayValue,
@@ -17,11 +25,6 @@ import {
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'
-import CardDark from '../../../../../Components/Card/CardDark'
-import {
-  StatColoredWithUnit,
-  StatWithUnit,
-} from '../../../../../Components/StatDisplay'
 import { BuildTcContext } from '../BuildTcContext'
 
 export function ArtifactMainLevelSlot({
@@ -65,7 +68,7 @@ export function ArtifactMainLevelSlot({
       alignItems="center"
     >
       <SlotIcon slotKey={slotKey} />
-      <CardDark
+      <CardThemed
         sx={{ height: '100%', minWidth: '5em', flexGrow: 1, display: 'flex' }}
       >
         {keys.length === 1 ? (
@@ -99,7 +102,7 @@ export function ArtifactMainLevelSlot({
             ))}
           </DropdownButton>
         )}
-      </CardDark>
+      </CardThemed>
       <DropdownButton
         sx={{ px: 0 }}
         title={
@@ -130,12 +133,12 @@ export function ArtifactMainLevelSlot({
         inputProps={{ sx: { pl: 0.5, width: '2em' }, max: 20, min: 0 }}
         disabled={disabled}
       />
-      <CardDark sx={{ height: '100%', minWidth: '4em' }}>
+      <CardThemed sx={{ height: '100%', minWidth: '4em' }}>
         <Box p={1} textAlign="center">{`${artDisplayValue(
           getMainStatDisplayValue(statKey, rarity, level),
           getUnitStr(statKey)
         )}${getUnitStr(statKey)}`}</Box>
-      </CardDark>
+      </CardThemed>
     </Box>
   )
 }

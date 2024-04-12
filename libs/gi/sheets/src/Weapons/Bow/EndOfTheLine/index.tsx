@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -14,7 +13,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'EndOfTheLine'
-const data_gen = allStats.weapon.data[key]
 
 const dmgArr = [-1, 0.8, 1, 1.2, 1.4, 1.6]
 const dmg = equal(
@@ -29,7 +27,7 @@ const dmg = equal(
   )
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, undefined, { dmg })
+const data = dataObjForWeaponSheet(key, undefined, { dmg })
 
 const sheet: IWeaponSheet = {
   document: [
@@ -43,4 +41,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

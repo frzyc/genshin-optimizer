@@ -12,7 +12,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'FlowerOfParadiseLost'
@@ -68,59 +68,55 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
 })
 
-const sheet: IArtifactSheet = {
-  name: 'Flower of Paradise Lost',
-  rarity: [4, 5],
-  setEffects: {
-    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          fields: [
+const sheet: SetEffectSheet = {
+  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        fields: [
+          {
+            node: base_bloom_dmg_,
+          },
+          {
+            node: base_hyperbloom_dmg_,
+          },
+          {
+            node: base_burgeon_dmg_,
+          },
+        ],
+      },
+      {
+        header: setHeader(4),
+        path: condStacksPath,
+        value: condStacks,
+        name: trm('condName'),
+        states: Object.fromEntries(
+          stacksArr.map((stack) => [
+            stack,
             {
-              node: base_bloom_dmg_,
+              name: st('stack', { count: stack }),
+              fields: [
+                {
+                  node: stack_bloom_dmg_,
+                },
+                {
+                  node: stack_hyperbloom_dmg_,
+                },
+                {
+                  node: stack_burgeon_dmg_,
+                },
+                {
+                  text: stg('duration'),
+                  value: 10,
+                  unit: 's',
+                },
+              ],
             },
-            {
-              node: base_hyperbloom_dmg_,
-            },
-            {
-              node: base_burgeon_dmg_,
-            },
-          ],
-        },
-        {
-          header: setHeader(4),
-          path: condStacksPath,
-          value: condStacks,
-          name: trm('condName'),
-          states: Object.fromEntries(
-            stacksArr.map((stack) => [
-              stack,
-              {
-                name: st('stack', { count: stack }),
-                fields: [
-                  {
-                    node: stack_bloom_dmg_,
-                  },
-                  {
-                    node: stack_hyperbloom_dmg_,
-                  },
-                  {
-                    node: stack_burgeon_dmg_,
-                  },
-                  {
-                    text: stg('duration'),
-                    value: 10,
-                    unit: 's',
-                  },
-                ],
-              },
-            ])
-          ),
-        },
-      ],
-    },
+          ])
+        ),
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)

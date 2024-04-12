@@ -1,5 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
@@ -15,7 +15,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { ICharacterSheet } from '../ICharacterSheet'
+import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -25,11 +25,8 @@ import {
 } from '../dataUtil'
 
 const key: CharacterKey = 'Mika'
-const elementKey: ElementKey = 'cryo'
-
-const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponType)
+const ct = charTemplates(key)
 
 let a = -1,
   s = 0,
@@ -183,239 +180,222 @@ const dmgFormulas = {
 
 const burstC3 = greaterEq(input.constellation, 3, 3)
 const skillC5 = greaterEq(input.constellation, 5, 3)
-export const data = dataObjForCharacterSheet(
-  key,
-  elementKey,
-  'mondstadt',
-  data_gen,
-  dmgFormulas,
-  {
-    premod: {
-      burstBoost: burstC3,
-      skillBoost: skillC5,
-    },
-    teamBuff: {
-      premod: {
-        atkSPD_: skillInSoulwind_atkSPD_,
-        physical_dmg_: a1DetectorStacks_physical_dmg_,
-        physical_critDMG_: c6InSoulwind_physical_critDMG_,
-      },
-    },
-  }
-)
-
-const sheet: ICharacterSheet = {
-  key,
-  name: ct.name,
-  rarity: data_gen.rarity,
-  elementKey: elementKey,
-  weaponTypeKey: data_gen.weaponType,
-  gender: 'M',
-  constellationName: ct.chg('constellationName'),
-  title: ct.chg('title'),
-  talent: {
-    auto: ct.talentTem('auto', [
-      {
-        text: ct.chg('auto.fields.normal'),
-      },
-      {
-        fields: dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], {
-            name: ct.chg(`auto.skillParams.${i}`),
-            multi: i === 3 ? 2 : undefined,
-          }),
-        })),
-      },
-      {
-        text: ct.chg('auto.fields.charged'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.charged.dmg, {
-              name: ct.chg(`auto.skillParams.5`),
-            }),
-          },
-          {
-            text: ct.chg('auto.skillParams.6'),
-            value: dm.charged.stamina,
-          },
-        ],
-      },
-      {
-        text: ct.chg('auto.fields.plunging'),
-      },
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.plunging.dmg, {
-              name: stg('plunging.dmg'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.low, {
-              name: stg('plunging.low'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.plunging.high, {
-              name: stg('plunging.high'),
-            }),
-          },
-        ],
-      },
-    ]),
-
-    skill: ct.talentTem('skill', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.skill.arrowDmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.flareDmg, {
-              name: ct.chg(`skill.skillParams.1`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.shardDmg, {
-              name: ct.chg(`skill.skillParams.2`),
-            }),
-          },
-          {
-            text: ct.chg('skill.skillParams.4'),
-            value: dm.skill.soulwindDuration,
-            unit: 's',
-          },
-          {
-            text: stg('cd'),
-            value: dm.skill.cd,
-            unit: 's',
-          },
-        ],
-      },
-      ct.condTem('skill', {
-        path: condInSoulwindPath,
-        value: condInSoulwind,
-        teamBuff: true,
-        name: ct.ch('inSoulwind'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: skillInSoulwind_atkSPD_disp,
-              },
-            ],
-          },
-        },
-      }),
-      ct.condTem('passive1', {
-        path: condA1DetectorStacksPath,
-        value: condA1DetectorStacks,
-        teamBuff: true,
-        canShow: equal(condInSoulwind, 'on', 1),
-        name: ct.ch('numDetectorStacks'),
-        states: (data) =>
-          objKeyMap(
-            range(1, data.get(input.constellation).value >= 6 ? 4 : 3),
-            (stack) => ({
-              name: st('stack', { count: stack }),
-              fields: [
-                {
-                  node: a1DetectorStacks_physical_dmg_disp,
-                },
-              ],
-            })
-          ),
-      }),
-      ct.condTem('constellation6', {
-        teamBuff: true,
-        canShow: equal(condInSoulwind, 'on', 1),
-        path: condC6CritPath,
-        value: condC6Crit,
-        name: ct.ch('inSoulwind'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: c6InSoulwind_physical_critDMG_disp,
-              },
-            ],
-          },
-        },
-      }),
-      ct.headerTem('constellation6', {
-        fields: [
-          {
-            text: ct.ch('incDetectorStacks'),
-            value: dm.constellation6.extraStacks,
-          },
-        ],
-      }),
-    ]),
-
-    burst: ct.talentTem('burst', [
-      {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.burst.castHeal, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.burst.plumeHeal, {
-              name: ct.chg(`burst.skillParams.1`),
-            }),
-          },
-          {
-            text: ct.chg('burst.skillParams.2'),
-            value: (data) =>
-              data.get(input.constellation).value >= 1 &&
-              data.get(condInSoulwind).value === 'on' &&
-              data.get(input.activeCharKey).value ===
-                data.get(target.charKey).value
-                ? `${dm.burst.plumeInterval}s - ${
-                    data.get(skillInSoulwind_atkSPD_disp).value * 100
-                  }% = ${(
-                    dm.burst.plumeInterval *
-                    (1 - data.get(skillInSoulwind_atkSPD_disp).value)
-                  ).toFixed(2)}`
-                : dm.burst.plumeInterval,
-            unit: 's',
-            fixed: 1,
-          },
-          {
-            text: ct.chg('burst.skillParams.3'),
-            value: dm.burst.plumeDuration,
-            unit: 's',
-          },
-          {
-            text: stg('cd'),
-            value: dm.burst.cd,
-            unit: 's',
-          },
-          {
-            text: stg('energyCost'),
-            value: dm.burst.energyCost,
-          },
-        ],
-      },
-    ]),
-
-    passive1: ct.talentTem('passive1'),
-    passive2: ct.talentTem('passive2'),
-    constellation1: ct.talentTem('constellation1'),
-    constellation2: ct.talentTem('constellation2'),
-    constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: burstC3 }] },
-    ]),
-    constellation4: ct.talentTem('constellation4'),
-    constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: skillC5 }] },
-    ]),
-    constellation6: ct.talentTem('constellation6'),
+export const data = dataObjForCharacterSheet(key, dmgFormulas, {
+  premod: {
+    burstBoost: burstC3,
+    skillBoost: skillC5,
   },
+  teamBuff: {
+    premod: {
+      atkSPD_: skillInSoulwind_atkSPD_,
+      physical_dmg_: a1DetectorStacks_physical_dmg_,
+      physical_critDMG_: c6InSoulwind_physical_critDMG_,
+    },
+  },
+})
+
+const sheet: TalentSheet = {
+  auto: ct.talentTem('auto', [
+    {
+      text: ct.chg('auto.fields.normal'),
+    },
+    {
+      fields: dm.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[i], {
+          name: ct.chg(`auto.skillParams.${i}`),
+          multi: i === 3 ? 2 : undefined,
+        }),
+      })),
+    },
+    {
+      text: ct.chg('auto.fields.charged'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.charged.dmg, {
+            name: ct.chg(`auto.skillParams.5`),
+          }),
+        },
+        {
+          text: ct.chg('auto.skillParams.6'),
+          value: dm.charged.stamina,
+        },
+      ],
+    },
+    {
+      text: ct.chg('auto.fields.plunging'),
+    },
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.plunging.dmg, {
+            name: stg('plunging.dmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.low, {
+            name: stg('plunging.low'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.plunging.high, {
+            name: stg('plunging.high'),
+          }),
+        },
+      ],
+    },
+  ]),
+
+  skill: ct.talentTem('skill', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.skill.arrowDmg, {
+            name: ct.chg(`skill.skillParams.0`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.flareDmg, {
+            name: ct.chg(`skill.skillParams.1`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.skill.shardDmg, {
+            name: ct.chg(`skill.skillParams.2`),
+          }),
+        },
+        {
+          text: ct.chg('skill.skillParams.4'),
+          value: dm.skill.soulwindDuration,
+          unit: 's',
+        },
+        {
+          text: stg('cd'),
+          value: dm.skill.cd,
+          unit: 's',
+        },
+      ],
+    },
+    ct.condTem('skill', {
+      path: condInSoulwindPath,
+      value: condInSoulwind,
+      teamBuff: true,
+      name: ct.ch('inSoulwind'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: skillInSoulwind_atkSPD_disp,
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('passive1', {
+      path: condA1DetectorStacksPath,
+      value: condA1DetectorStacks,
+      teamBuff: true,
+      canShow: equal(condInSoulwind, 'on', 1),
+      name: ct.ch('numDetectorStacks'),
+      states: (data) =>
+        objKeyMap(
+          range(1, data.get(input.constellation).value >= 6 ? 4 : 3),
+          (stack) => ({
+            name: st('stack', { count: stack }),
+            fields: [
+              {
+                node: a1DetectorStacks_physical_dmg_disp,
+              },
+            ],
+          })
+        ),
+    }),
+    ct.condTem('constellation6', {
+      teamBuff: true,
+      canShow: equal(condInSoulwind, 'on', 1),
+      path: condC6CritPath,
+      value: condC6Crit,
+      name: ct.ch('inSoulwind'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: c6InSoulwind_physical_critDMG_disp,
+            },
+          ],
+        },
+      },
+    }),
+    ct.headerTem('constellation6', {
+      fields: [
+        {
+          text: ct.ch('incDetectorStacks'),
+          value: dm.constellation6.extraStacks,
+        },
+      ],
+    }),
+  ]),
+
+  burst: ct.talentTem('burst', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.burst.castHeal, {
+            name: ct.chg(`burst.skillParams.0`),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.burst.plumeHeal, {
+            name: ct.chg(`burst.skillParams.1`),
+          }),
+        },
+        {
+          text: ct.chg('burst.skillParams.2'),
+          value: (data) =>
+            data.get(input.constellation).value >= 1 &&
+            data.get(condInSoulwind).value === 'on' &&
+            data.get(input.activeCharKey).value ===
+              data.get(target.charKey).value
+              ? `${dm.burst.plumeInterval}s - ${
+                  data.get(skillInSoulwind_atkSPD_disp).value * 100
+                }% = ${(
+                  dm.burst.plumeInterval *
+                  (1 - data.get(skillInSoulwind_atkSPD_disp).value)
+                ).toFixed(2)}`
+              : dm.burst.plumeInterval,
+          unit: 's',
+          fixed: 1,
+        },
+        {
+          text: ct.chg('burst.skillParams.3'),
+          value: dm.burst.plumeDuration,
+          unit: 's',
+        },
+        {
+          text: stg('cd'),
+          value: dm.burst.cd,
+          unit: 's',
+        },
+        {
+          text: stg('energyCost'),
+          value: dm.burst.energyCost,
+        },
+      ],
+    },
+  ]),
+
+  passive1: ct.talentTem('passive1'),
+  passive2: ct.talentTem('passive2'),
+  constellation1: ct.talentTem('constellation1'),
+  constellation2: ct.talentTem('constellation2'),
+  constellation3: ct.talentTem('constellation3', [
+    { fields: [{ node: burstC3 }] },
+  ]),
+  constellation4: ct.talentTem('constellation4'),
+  constellation5: ct.talentTem('constellation5', [
+    { fields: [{ node: skillC5 }] },
+  ]),
+  constellation6: ct.talentTem('constellation6'),
 }
 export default new CharacterSheet(sheet, data)

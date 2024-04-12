@@ -1,5 +1,6 @@
 import { DiscordIcon } from '@genshin-optimizer/common/svgicons'
-import { SillyContext } from '@genshin-optimizer/gi/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import { Android as AndroidIcon, Apple as AppleIcon } from '@mui/icons-material'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -13,13 +14,12 @@ import {
 } from '@mui/material'
 import { useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import CardLight from '../Components/Card/CardLight'
 import silly_icon from '../silly_icon.png'
 export default function SillyCard() {
   const { silly, setSilly } = useContext(SillyContext)
   const { t } = useTranslation(['ui', 'settings'])
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Avatar src={silly_icon} />
         <Typography variant="h5"> {t`sillyPageTitle`}</Typography>
@@ -67,6 +67,6 @@ export default function SillyCard() {
           </Button>
         </Box>
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }

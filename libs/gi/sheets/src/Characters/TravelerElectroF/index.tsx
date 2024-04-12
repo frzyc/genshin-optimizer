@@ -3,10 +3,9 @@ import type {
   CharacterSheetKey,
 } from '@genshin-optimizer/gi/consts'
 import { travelerSheet } from '../Traveler'
-import TravelerF from '../TravelerF'
 import electro from './electro'
 
 const key: CharacterSheetKey = 'TravelerElectroF'
 const charKey: CharacterKey = 'TravelerElectro'
 
-export default travelerSheet(key, charKey, electro, TravelerF.sheet)
+export default travelerSheet(key, charKey, electro)

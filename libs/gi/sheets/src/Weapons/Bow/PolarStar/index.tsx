@@ -1,6 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { input, lookup, naught, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -8,7 +7,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'PolarStar'
-const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 const eleSrc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const ashenStack1 = [-1, 0.1, 0.125, 0.15, 0.175, 0.2]
@@ -31,7 +29,7 @@ const atk_ = lookup(
   naught
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     skill_dmg_,
     burst_dmg_,
@@ -68,4 +66,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

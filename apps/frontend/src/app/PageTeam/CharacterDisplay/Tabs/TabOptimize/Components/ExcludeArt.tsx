@@ -3,9 +3,28 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { SqBadge, useInfScroll } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  InfoTooltip,
+  ModalWrapper,
+  SqBadge,
+  useInfScroll,
+} from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
-import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import {
+  TeamCharacterContext,
+  useDatabase,
+  useOptConfig,
+} from '@genshin-optimizer/gi/db-ui'
+import {
+  ArtifactCard,
+  ArtifactCardNano,
+  ArtifactFilterDisplay,
+} from '@genshin-optimizer/gi/ui'
+import {
+  artifactFilterConfigs,
+  initialArtifactFilterOption,
+} from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -32,18 +51,6 @@ import {
   useReducer,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano'
-import ArtifactFilterDisplay from '../../../../../Components/Artifact/ArtifactFilterDisplay'
-import CardDark from '../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../Components/Card/CardLight'
-import InfoTooltip from '../../../../../Components/InfoTooltip'
-import ModalWrapper from '../../../../../Components/ModalWrapper'
-import { TeamCharacterContext } from '../../../../../Context/TeamCharacterContext'
-import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
-import {
-  artifactFilterConfigs,
-  initialFilterOption,
-} from '../../../../../PageArtifact/ArtifactSort'
 
 export default function ExcludeArt({
   disabled = false,
@@ -95,7 +102,7 @@ export default function ExcludeArt({
         onClose={onClose}
         containerProps={{ maxWidth: 'xl' }}
       >
-        <CardDark>
+        <CardThemed>
           <CardHeader
             title={
               <Box display="flex" gap={1} alignItems="center">
@@ -128,9 +135,9 @@ export default function ExcludeArt({
               startIcon={<AddIcon />}
             >{t`excludeArt.addExc`}</Button>
             {!!numExcludedArt && (
-              <CardLight sx={{ mb: 1 }}>
+              <CardThemed bgt="light" sx={{ mb: 1 }}>
                 <Typography textAlign="center">{t`excludeArt.deSelectExc`}</Typography>
-              </CardLight>
+              </CardThemed>
             )}
             <Grid
               container
@@ -139,18 +146,22 @@ export default function ExcludeArt({
             >
               {artExclusion.map((id) => (
                 <Grid item key={id} xs={1}>
-                  <ArtifactCardNano
-                    artifactId={id}
-                    slotKey="flower"
-                    BGComponent={CardLight}
-                    onClick={() => onDelSelect(id)}
-                    showLocation
-                  />
+                  <CardThemed
+                    bgt="light"
+                    sx={{ height: '100%', maxHeight: '8em' }}
+                  >
+                    <ArtifactCardNano
+                      artifactId={id}
+                      slotKey="flower"
+                      onClick={() => onDelSelect(id)}
+                      showLocation
+                    />
+                  </CardThemed>
                 </Grid>
               ))}
             </Grid>
           </CardContent>
-        </CardDark>
+        </CardThemed>
       </ModalWrapper>
 
       {/* Button to open modal */}
@@ -228,7 +239,7 @@ function ArtifactSelectModal({
 
   const [filterOption, filterOptionDispatch] = useReducer(
     filterOptionReducer,
-    initialFilterOption()
+    initialArtifactFilterOption()
   )
 
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -264,7 +275,7 @@ function ArtifactSelectModal({
       onClose={onClose}
       containerProps={{ maxWidth: 'xl' }}
     >
-      <CardDark>
+      <CardThemed>
         <CardHeader
           title={t`excludeArt.selExc`}
           action={
@@ -314,7 +325,7 @@ function ArtifactSelectModal({
             )}
           </Box>
         </CardContent>
-      </CardDark>
+      </CardThemed>
     </ModalWrapper>
   )
 }

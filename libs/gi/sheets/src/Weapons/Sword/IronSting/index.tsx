@@ -1,6 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   input,
@@ -15,7 +14,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'IronSting'
-const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'InfusionStinger')
 const eleDmgDealtStack = range(1, 2)
@@ -29,7 +27,7 @@ const all_dmg_ = prod(
   subscript(input.weapon.refinement, allDmgInc)
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     all_dmg_,
   },
@@ -62,4 +60,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

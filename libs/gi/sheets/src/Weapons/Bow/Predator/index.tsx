@@ -1,6 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   input,
@@ -15,7 +14,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'Predator'
-const data_gen = allStats.weapon.data[key]
 
 const normalInc = percent(0.1)
 const chargedInc = percent(0.1)
@@ -36,7 +34,7 @@ const charged_dmg_ = lookup(
 )
 const atk = equal(input.activeCharKey, 'Aloy', 66)
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     normal_dmg_,
     charged_dmg_,
@@ -76,4 +74,4 @@ const sheet: IWeaponSheet = {
   ],
 }
 
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

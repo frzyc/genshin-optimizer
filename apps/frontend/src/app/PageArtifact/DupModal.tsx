@@ -1,6 +1,7 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { ArtifactCard } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import {
@@ -15,9 +16,6 @@ import {
 } from '@mui/material'
 import { useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../Components/Card/CardDark'
-import ModalWrapper from '../Components/ModalWrapper'
-import ArtifactCard from './ArtifactCard'
 export default function DupModal({ show, onHide }) {
   const { t } = useTranslation('artifact')
   return (
@@ -81,7 +79,7 @@ function DupContent() {
   return (
     <Stack spacing={2}>
       {dupList.map((dups) => (
-        <CardDark key={dups.join()} sx={{ overflowX: 'scroll' }}>
+        <CardThemed key={dups.join()} sx={{ overflowX: 'scroll' }}>
           <CardContent sx={{ display: 'flex', gap: 1 }}>
             {dups.map((dup) => (
               <Box key={dup} sx={{ minWidth: 300 }}>
@@ -94,7 +92,7 @@ function DupContent() {
               </Box>
             ))}
           </CardContent>
-        </CardDark>
+        </CardThemed>
       ))}
       {!dupList.length && (
         <Alert variant="filled" severity="success">{t`noDupAlert`}</Alert>

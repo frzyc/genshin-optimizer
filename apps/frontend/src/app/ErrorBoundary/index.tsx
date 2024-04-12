@@ -1,6 +1,8 @@
 import { ThemeProvider } from '@emotion/react'
 import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
-import { theme } from '@genshin-optimizer/gi/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import { isDev } from '@genshin-optimizer/common/util'
+import { theme } from '@genshin-optimizer/gi/theme'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import ErrorIcon from '@mui/icons-material/Error'
 import RefreshIcon from '@mui/icons-material/Refresh'
@@ -19,9 +21,7 @@ import type { ErrorInfo, ReactNode } from 'react'
 import { Component, Suspense } from 'react'
 import type { WithTranslation } from 'react-i18next'
 import { Trans, withTranslation } from 'react-i18next'
-import CardLight from '../Components/Card/CardLight'
 import DatabaseCard from '../PageSettings/DatabaseCard'
-import { isDev } from '../Util/Util'
 import SpaghettiCode from './SpaghettiCode.png'
 
 interface Props extends WithTranslation {
@@ -76,7 +76,7 @@ class ErrorBoundary extends Component<Props, State> {
                 alignItems="center"
                 p={2}
               >
-                <CardLight>
+                <CardThemed bgt="light">
                   <Box display="flex" flexDirection="column">
                     <CardContent
                       sx={{
@@ -181,7 +181,7 @@ class ErrorBoundary extends Component<Props, State> {
                       >{t`nuke`}</Button>
                     </CardActions>
                   </Box>
-                </CardLight>
+                </CardThemed>
               </Box>
             </ThemeProvider>
           </StyledEngineProvider>

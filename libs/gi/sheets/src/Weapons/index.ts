@@ -1,5 +1,6 @@
 import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import { allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
+import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import { mergeData, type Data } from '@genshin-optimizer/gi/wr'
 import bow from './Bow'
 import catalyst from './Catalyst'
@@ -21,9 +22,9 @@ export const displayDataMap = Object.fromEntries(
   allWeaponTypeKeys.map((k) => [
     k,
     mergeData(
-      Object.values(WeaponData)
-        .filter((sheet) => sheet.weaponType === k)
-        .map((sheet) => ({ display: sheet.data.display }))
+      Object.entries(WeaponData)
+        .filter(([wKey, _]) => getWeaponStat(wKey).weaponType === k)
+        .map(([_, sheet]) => ({ display: sheet.data.display }))
     ),
   ])
 ) as Record<WeaponTypeKey, Data>

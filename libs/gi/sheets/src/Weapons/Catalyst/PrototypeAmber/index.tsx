@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -14,7 +13,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'PrototypeAmber'
-const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'Gliding')
 const healPerc = [-1, 0.04, 0.045, 0.05, 0.055, 0.06]
@@ -29,7 +27,7 @@ const heal = equal(
     )
   )
 )
-export const data = dataObjForWeaponSheet(key, data_gen, undefined, { heal })
+export const data = dataObjForWeaponSheet(key, undefined, { heal })
 const sheet: IWeaponSheet = {
   document: [
     {
@@ -47,4 +45,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

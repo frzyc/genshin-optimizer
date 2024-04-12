@@ -13,25 +13,26 @@ import type {
 import {
   allAmpReactionKeys,
   allMultiOptHitModeKeys,
+  allowedAdditiveReactions,
+  allowedAmpReactions,
 } from '@genshin-optimizer/gi/consts'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
-import type { NodeDisplay } from '@genshin-optimizer/gi/ui'
+import { CharacterContext } from '@genshin-optimizer/gi/db-ui'
+import { isCharMelee } from '@genshin-optimizer/gi/stats'
+import {
+  AdditiveReactionModeText,
+  AmpReactionModeText,
+  DataContext,
+  StatEditorList,
+  infusionVals,
+} from '@genshin-optimizer/gi/ui'
+import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import { allInputPremodKeys } from '@genshin-optimizer/gi/wr'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { Box, Button, ButtonGroup, Grid, MenuItem } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import AdditiveReactionModeText from '../../../Components/AdditiveReactionModeText'
-import AmpReactionModeText from '../../../Components/AmpReactionModeText'
-import { infusionVals } from '../../../Components/HitModeEditor'
-import StatEditorList from '../../../Components/StatEditorList'
-import { CharacterContext } from '../../../Context/CharacterContext'
-import { DataContext } from '../../../Context/DataContext'
-import {
-  allowedAdditiveReactions,
-  allowedAmpReactions,
-} from '../../../Types/consts'
 import OptimizationTargetSelector from '../Tabs/TabOptimize/Components/OptimizationTargetSelector'
 
 const keys = [...allInputPremodKeys]
@@ -58,7 +59,9 @@ export default function CustomTargetDisplay({
   onDup: () => void
 }) {
   const { t } = useTranslation('page_character')
-  const { characterSheet } = useContext(CharacterContext)
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const { path, weight, hitMode, reaction, infusionAura, bonusStats } =
     customTarget
@@ -86,7 +89,7 @@ export default function CustomTargetDisplay({
   )
 
   const isMeleeAuto =
-    characterSheet?.isMelee() &&
+    isCharMelee(characterKey) &&
     (path[0] === 'normal' || path[0] === 'charged' || path[0] === 'plunging')
   const isTransformativeReaction = path[0] === 'reaction'
   return (

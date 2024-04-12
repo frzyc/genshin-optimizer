@@ -1,4 +1,8 @@
-import { CustomNumberInput, useIsMount } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  CustomNumberInput,
+  useIsMount,
+} from '@genshin-optimizer/common/ui'
 import { clamp, objMap } from '@genshin-optimizer/common/util'
 import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
@@ -6,7 +10,6 @@ import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { Box, Slider } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../../../../../Components/Card/CardDark'
 import { BuildTcContext } from '../BuildTcContext'
 
 function getMinRoll(charTC: BuildTc) {
@@ -93,7 +96,7 @@ export function ArtifactAllSubstatEditor({
       justifyContent="space-between"
       alignItems="center"
     >
-      <CardDark
+      <CardThemed
         sx={{
           px: 2,
           flexGrow: 1,
@@ -116,7 +119,7 @@ export function ArtifactAllSubstatEditor({
           onChangeCommitted={(e, v) => setRolls([v as number])}
           disabled={disabled}
         />
-      </CardDark>
+      </CardThemed>
       <CustomNumberInput
         color={rolls && invalid ? 'warning' : 'primary'}
         float

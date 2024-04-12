@@ -1,11 +1,22 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  TeamCharacterContext,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { dataSetEffects } from '@genshin-optimizer/gi/sheets'
-import { getCharData } from '@genshin-optimizer/gi/stats'
+import { getCharStat } from '@genshin-optimizer/gi/stats'
+import {
+  DataContext,
+  DocumentDisplay,
+  EquippedGrid,
+  SetEffectDisplay,
+} from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
@@ -17,13 +28,6 @@ import {
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay'
-import CardLight from '../../../../Components/Card/CardLight'
-import EquippedGrid from '../../../../Components/Character/EquippedGrid'
-import DocumentDisplay from '../../../../Components/DocumentDisplay'
-import { CharacterContext } from '../../../../Context/CharacterContext'
-import { DataContext } from '../../../../Context/DataContext'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
 
 export default function EquipmentSection() {
   const database = useDatabase()
@@ -44,16 +48,16 @@ export default function EquipmentSection() {
     () =>
       weaponSheet &&
       weaponSheet.document.length > 0 && (
-        <CardLight>
+        <CardThemed bgt="light">
           <Box p={1}>
             <DocumentDisplay sections={weaponSheet.document} />
           </Box>
-        </CardLight>
+        </CardThemed>
       ),
     [weaponSheet]
   )
 
-  const weaponTypeKey = getCharData(characterKey).weaponType
+  const weaponTypeKey = getCharStat(characterKey).weaponType
   const weaponId = data.get(input.weapon.id).value
   const artifactIds = useMemo(
     () =>
@@ -157,7 +161,7 @@ function ArtifactSectionCard() {
   const setEffects = useMemo(() => dataSetEffects(data), [data])
 
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       {hasEquipped && (
         <Button
           color="error"
@@ -180,6 +184,6 @@ function ArtifactSectionCard() {
             )}
         </Stack>
       </Box>
-    </CardLight>
+    </CardThemed>
   )
 }

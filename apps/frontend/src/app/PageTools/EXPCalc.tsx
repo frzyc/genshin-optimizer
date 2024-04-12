@@ -1,9 +1,11 @@
 import {
+  CardThemed,
   ColorText,
   CustomNumberInput,
   CustomNumberInputButtonGroupWrapper,
   ImgFullwidth,
   ImgIcon,
+  TextButton,
 } from '@genshin-optimizer/common/ui'
 import { clamp, objMap } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
@@ -19,9 +21,6 @@ import {
   Typography,
 } from '@mui/material'
 import { useState } from 'react'
-import CardDark from '../Components/Card/CardDark'
-import CardLight from '../Components/Card/CardLight'
-import TextButton from '../Components/TextButton'
 const booksData = {
   advice: {
     name: "Wanderer's Advice",
@@ -116,7 +115,7 @@ export default function EXPCalc() {
     )
   else if (level === 90) invalidText = 'You are at the maximum level.'
   return (
-    <CardDark>
+    <CardThemed>
       <Grid container sx={{ px: 2, py: 1 }} spacing={2}>
         <Grid item>
           <ImgIcon src={booksData.wit.img} size={2} />
@@ -195,7 +194,7 @@ export default function EXPCalc() {
             </ButtonGroup>
           </Grid>
           <Grid item xs={6} md={3}>
-            <CardLight>
+            <CardThemed bgt="light">
               <Box
                 sx={{ p: 1, display: 'flex', justifyContent: 'space-between' }}
               >
@@ -204,10 +203,10 @@ export default function EXPCalc() {
                   <b>{milestoneLvl}</b>
                 </Typography>
               </Box>
-            </CardLight>
+            </CardThemed>
           </Grid>
           <Grid item xs={6} md={3}>
-            <CardLight>
+            <CardThemed bgt="light">
               <Box
                 sx={{ p: 1, display: 'flex', justifyContent: 'space-between' }}
               >
@@ -218,7 +217,7 @@ export default function EXPCalc() {
                   </span>
                 </Typography>
               </Box>
-            </CardLight>
+            </CardThemed>
           </Grid>
           {Object.entries(books).map(([bookKey]) => {
             return (
@@ -251,7 +250,7 @@ export default function EXPCalc() {
             </ButtonGroup>
           </Grid>
           <Grid item xs={12} md={4}>
-            <CardLight>
+            <CardThemed bgt="light">
               <Box
                 sx={{ p: 1, display: 'flex', justifyContent: 'space-between' }}
               >
@@ -260,10 +259,10 @@ export default function EXPCalc() {
                   <b>{moraCost}</b>
                 </Typography>
               </Box>
-            </CardLight>
+            </CardThemed>
           </Grid>
           <Grid item xs={12} md={4}>
-            <CardLight>
+            <CardThemed bgt="light">
               <Box
                 sx={{ p: 1, display: 'flex', justifyContent: 'space-between' }}
               >
@@ -276,10 +275,10 @@ export default function EXPCalc() {
                   </b>
                 </Typography>
               </Box>
-            </CardLight>
+            </CardThemed>
           </Grid>
           <Grid item xs={12} md={4}>
-            <CardLight>
+            <CardThemed bgt="light">
               <Box
                 sx={{ p: 1, display: 'flex', justifyContent: 'space-between' }}
               >
@@ -292,10 +291,10 @@ export default function EXPCalc() {
                   </b>
                 </Typography>
               </Box>
-            </CardLight>
+            </CardThemed>
           </Grid>
           <Grid item xs={12} md={4}>
-            <CardLight>
+            <CardThemed bgt="light">
               <Box
                 sx={{ p: 1, display: 'flex', justifyContent: 'space-between' }}
               >
@@ -306,10 +305,10 @@ export default function EXPCalc() {
                   </b>
                 </Typography>
               </Box>
-            </CardLight>
+            </CardThemed>
           </Grid>
           <Grid item xs={12} md={4}>
-            <CardLight>
+            <CardThemed bgt="light">
               <Box
                 sx={{ p: 1, display: 'flex', justifyContent: 'space-between' }}
               >
@@ -322,7 +321,7 @@ export default function EXPCalc() {
                   </b>
                 </Typography>
               </Box>
-            </CardLight>
+            </CardThemed>
           </Grid>
         </Grid>
       </CardContent>
@@ -360,13 +359,13 @@ export default function EXPCalc() {
           </Grid>
         </Grid>
       </CardContent>
-    </CardDark>
+    </CardThemed>
   )
 }
 function BookDisplay(props) {
   const { bookKey, value = 0, setValue, required = 0 } = props
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent sx={{ py: 1 }}>
         <Typography>{booksData[bookKey].name}</Typography>
       </CardContent>
@@ -402,7 +401,7 @@ function BookDisplay(props) {
           </Grid>
         </Grid>
       </CardContent>
-    </CardLight>
+    </CardThemed>
   )
 }
 

@@ -3,7 +3,7 @@ import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'BloodstainedChivalry'
@@ -30,38 +30,34 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
 })
 
-const sheet: IArtifactSheet = {
-  name: 'Bloodstained Chivalry',
-  rarity: [4, 5],
-  setEffects: {
-    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: {
-      document: [
-        {
-          header: setHeader(4),
-          path: condPath,
-          value: condNode,
-          name: st('afterDefeatEnemy', { percent: 70 }),
-          states: {
-            hit: {
-              fields: [
-                {
-                  node: set4Charged,
-                },
-                {
-                  node: set4StamDec,
-                },
-                {
-                  text: stg('duration'),
-                  value: 10,
-                  unit: 's',
-                },
-              ],
-            },
+const sheet: SetEffectSheet = {
+  2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
+  4: {
+    document: [
+      {
+        header: setHeader(4),
+        path: condPath,
+        value: condNode,
+        name: st('afterDefeatEnemy', { percent: 70 }),
+        states: {
+          hit: {
+            fields: [
+              {
+                node: set4Charged,
+              },
+              {
+                node: set4StamDec,
+              },
+              {
+                text: stg('duration'),
+                value: 10,
+                unit: 's',
+              },
+            ],
           },
         },
-      ],
-    },
+      },
+    ],
   },
 }
-export default new ArtifactSheet(key, sheet, data)
+export default new ArtifactSheet(sheet, data)

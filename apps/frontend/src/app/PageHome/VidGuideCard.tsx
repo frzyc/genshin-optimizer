@@ -1,3 +1,4 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import {
   Box,
@@ -9,7 +10,6 @@ import {
   Typography,
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../Components/Card/CardDark'
 
 const embeds = JSON.parse(process.env.NX_URLS_GUIDES ?? '[]') as string[]
 
@@ -17,7 +17,7 @@ export default function VidGuideCard() {
   const { t } = useTranslation(['page_home', 'ui'])
   if (!embeds.length) return null
   return (
-    <CardDark>
+    <CardThemed>
       <CardHeader
         title={
           <Typography
@@ -68,6 +68,6 @@ export default function VidGuideCard() {
           ))}
         </Grid>
       </CardContent>
-    </CardDark>
+    </CardThemed>
   )
 }

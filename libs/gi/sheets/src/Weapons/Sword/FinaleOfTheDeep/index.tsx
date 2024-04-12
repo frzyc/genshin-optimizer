@@ -1,5 +1,4 @@
 import { type WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   input,
@@ -14,7 +13,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'FinaleOfTheDeep'
-const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const atk_arr = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
@@ -48,7 +46,6 @@ const bond_atk = equal(
 
 const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       atk_: base_atk_,
@@ -107,4 +104,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

@@ -1,5 +1,5 @@
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
-import { ImgIcon } from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import {
@@ -7,8 +7,8 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharSheet, getWeaponSheet } from '@genshin-optimizer/gi/sheets'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { getCharEle, getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
   ElementIcon,
   FlowerIcon,
@@ -28,28 +28,25 @@ import {
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
-import CardDark from '../Components/Card/CardDark'
-import CardLight from '../Components/Card/CardLight'
 
 export default function InventoryCard() {
   const { t } = useTranslation(['page_home', 'ui'])
   const database = useDatabase()
-  const { gender } = useDBMeta()
   const { characterTally, characterTotal } = useMemo(() => {
     const chars = database.chars.keys
     const tally = objKeyMap(allElementKeys, () => 0)
     chars.forEach((ck) => {
-      const elementKey = getCharSheet(ck, gender).elementKey
+      const elementKey = getCharEle(ck)
       tally[elementKey] = tally[elementKey] + 1
     })
     return { characterTally: tally, characterTotal: chars.length }
-  }, [database, gender])
+  }, [database])
 
   const { weaponTally, weaponTotal } = useMemo(() => {
     const weapons = database.weapons.values
     const tally = objKeyMap(allWeaponTypeKeys, () => 0)
     weapons.forEach((wp) => {
-      const type = getWeaponSheet(wp.key).weaponType
+      const type = getWeaponStat(wp.key).weaponType
       tally[type] = tally[type] + 1
     })
     return { weaponTally: tally, weaponTotal: weapons.length }
@@ -68,14 +65,14 @@ export default function InventoryCard() {
   const smaller = !useMediaQuery(theme.breakpoints.up('md'))
 
   return (
-    <CardDark>
+    <CardThemed>
       <CardHeader
         title={<Typography variant="h5">{t`inventoryCard.title`}</Typography>}
         avatar={<BusinessCenter fontSize="large" />}
       />
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <CardLight>
+        <CardThemed bgt="light">
           <CardActionArea
             sx={{
               display: 'flex',
@@ -111,8 +108,8 @@ export default function InventoryCard() {
               />
             ))}
           </CardActionArea>
-        </CardLight>
-        <CardLight>
+        </CardThemed>
+        <CardThemed bgt="light">
           <CardActionArea
             sx={{
               display: 'flex',
@@ -148,8 +145,8 @@ export default function InventoryCard() {
               />
             ))}
           </CardActionArea>
-        </CardLight>
-        <CardLight>
+        </CardThemed>
+        <CardThemed bgt="light">
           <CardActionArea
             sx={{
               display: 'flex',
@@ -185,8 +182,8 @@ export default function InventoryCard() {
               />
             ))}
           </CardActionArea>
-        </CardLight>
+        </CardThemed>
       </CardContent>
-    </CardDark>
+    </CardThemed>
   )
 }

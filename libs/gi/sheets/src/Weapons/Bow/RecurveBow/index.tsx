@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -14,7 +13,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'RecurveBow'
-const data_gen = allStats.weapon.data[key]
 
 const healing_s = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 const healing = equal(
@@ -25,7 +23,7 @@ const healing = equal(
   )
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, undefined, { healing })
+const data = dataObjForWeaponSheet(key, undefined, { healing })
 
 const sheet: IWeaponSheet = {
   document: [
@@ -40,4 +38,4 @@ const sheet: IWeaponSheet = {
   ],
 }
 
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

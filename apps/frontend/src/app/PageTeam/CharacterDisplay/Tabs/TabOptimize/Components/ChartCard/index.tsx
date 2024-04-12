@@ -1,5 +1,9 @@
 import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
-import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  InfoTooltip,
+} from '@genshin-optimizer/common/ui'
 import {
   objKeyMap,
   objPathValue,
@@ -7,8 +11,9 @@ import {
 } from '@genshin-optimizer/common/util'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
-import { useOptConfig } from '@genshin-optimizer/gi/db-ui'
-import { resolveInfo } from '@genshin-optimizer/gi/ui'
+import { TeamCharacterContext, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import { DataContext, GraphContext } from '@genshin-optimizer/gi/ui'
+import { resolveInfo } from '@genshin-optimizer/gi/uidata'
 import type { Info, InfoExtra, NumNode } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
 import {
@@ -42,12 +47,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import CardDark from '../../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../../Components/Card/CardLight'
-import InfoTooltip from '../../../../../../Components/InfoTooltip'
-import { DataContext } from '../../../../../../Context/DataContext'
-import { GraphContext } from '../../../../../../Context/GraphContext'
-import { TeamCharacterContext } from '../../../../../../Context/TeamCharacterContext'
 import OptimizationTargetSelector from '../OptimizationTargetSelector'
 import CustomDot from './CustomDot'
 import CustomTooltip from './CustomTooltip'
@@ -207,7 +206,7 @@ export default function ChartCard({
     : t('page_character_optimize:targetSelector.selectGraphTarget')
 
   return (
-    <CardLight>
+    <CardThemed bgt="light">
       <CardContent>
         <Grid container spacing={1} alignItems="center">
           <Grid item>
@@ -280,7 +279,7 @@ export default function ChartCard({
       {chartData && !!chartData.data.length && displayData && (
         <CardContent>
           <Collapse in={!!downloadData && showDownload}>
-            <CardDark sx={{ mb: 2 }}>
+            <CardThemed sx={{ mb: 2 }}>
               <CardContent>
                 <Typography>Min Data</Typography>
                 <ReadOnlyTextArea
@@ -291,7 +290,7 @@ export default function ChartCard({
                   value={JSON.stringify(downloadData?.allData)}
                 />
               </CardContent>
-            </CardDark>
+            </CardThemed>
           </Collapse>
           <Chart
             displayData={displayData}
@@ -320,7 +319,7 @@ export default function ChartCard({
           )}
         </CardContent>
       )}
-    </CardLight>
+    </CardThemed>
   )
 }
 

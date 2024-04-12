@@ -2,13 +2,30 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useInfScroll } from '@genshin-optimizer/common/ui'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
+import {
+  catTotal,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
+import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+import {
+  ShowingAndSortOptionSelect,
+  WeaponCard,
+  WeaponEditor,
+  WeaponRarityToggle,
+  WeaponSelectionModal,
+  WeaponToggle,
+} from '@genshin-optimizer/gi/ui'
+import {
+  weaponFilterConfigs,
+  weaponSortConfigs,
+  weaponSortMap,
+} from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
@@ -19,9 +36,8 @@ import {
   TextField,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
-import React, {
+import {
   Suspense,
-  lazy,
   useCallback,
   useDeferredValue,
   useEffect,
@@ -30,22 +46,6 @@ import React, {
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../Components/Card/CardDark'
-import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
-import WeaponRarityToggle from '../Components/ToggleButton/WeaponRarityToggle'
-import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
-import {
-  weaponFilterConfigs,
-  weaponSortConfigs,
-  weaponSortMap,
-} from '../Util/WeaponSort'
-import { catTotal } from '../Util/totalUtils'
-import WeaponCard from './WeaponCard'
-const WeaponSelectionModal = React.lazy(
-  () => import('../Components/Weapon/WeaponSelectionModal')
-)
-// Lazy load the weapon display
-const WeaponEditor = lazy(() => import('./WeaponEditor'))
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
@@ -165,7 +165,7 @@ export default function PageWeapon() {
     () =>
       catTotal(allWeaponTypeKeys, (ct) =>
         Object.entries(database.weapons.data).forEach(([id, weapon]) => {
-          const wtk = getWeaponSheet(weapon.key).weaponType
+          const wtk = getWeaponStat(weapon.key).weaponType
           ct[wtk].total++
           if (weaponIds.includes(id)) ct[wtk].current++
         })
@@ -177,7 +177,7 @@ export default function PageWeapon() {
     () =>
       catTotal(allRarityKeys, (ct) =>
         Object.entries(database.weapons.data).forEach(([id, weapon]) => {
-          const wr = getWeaponSheet(weapon.key).rarity
+          const wr = getWeaponStat(weapon.key).rarity
           ct[wr].total++
           if (weaponIds.includes(id)) ct[wr].current++
         })
@@ -218,7 +218,7 @@ export default function PageWeapon() {
         />
       </Suspense>
 
-      <CardDark>
+      <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box display="flex" flexWrap="wrap" gap={1} alignItems="stretch">
             <WeaponToggle
@@ -263,7 +263,7 @@ export default function PageWeapon() {
             />
           </Box>
         </CardContent>
-      </CardDark>
+      </CardThemed>
       <Suspense
         fallback={
           <Skeleton

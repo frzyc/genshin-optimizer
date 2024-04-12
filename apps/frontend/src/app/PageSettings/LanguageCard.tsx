@@ -1,7 +1,7 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
+import { languageCodeList } from '@genshin-optimizer/gi/i18n'
 import { MenuItem } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
-import { languageCodeList } from '../i18n'
 
 const nativeLanguages = {
   chs: '简体中文',

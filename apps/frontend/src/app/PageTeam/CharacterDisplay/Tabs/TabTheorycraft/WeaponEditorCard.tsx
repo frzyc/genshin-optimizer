@@ -1,9 +1,21 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
-import { computeUIData } from '@genshin-optimizer/gi/ui'
+import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
+import {
+  DataContext,
+  DocumentDisplay,
+  FieldDisplayList,
+  LevelSelect,
+  NodeFieldDisplay,
+  RefinementDropdown,
+  WeaponName,
+  WeaponSelectionModal,
+} from '@genshin-optimizer/gi/ui'
+import { computeUIData } from '@genshin-optimizer/gi/uidata'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
@@ -13,21 +25,8 @@ import {
   ListItem,
   Stack,
 } from '@mui/material'
-import React, { useCallback, useContext, useMemo } from 'react'
-import CardDark from '../../../../Components/Card/CardDark'
-import CardLight from '../../../../Components/Card/CardLight'
-import DocumentDisplay from '../../../../Components/DocumentDisplay'
-import {
-  FieldDisplayList,
-  NodeFieldDisplay,
-} from '../../../../Components/FieldDisplay'
-import LevelSelect from '../../../../Components/LevelSelect'
-import RefinementDropdown from '../../../../Components/RefinementDropdown'
-import { DataContext } from '../../../../Context/DataContext'
+import { useCallback, useContext, useMemo } from 'react'
 import { BuildTcContext } from './BuildTcContext'
-const WeaponSelectionModal = React.lazy(
-  () => import('../../../../Components/Weapon/WeaponSelectionModal')
-)
 
 export function WeaponEditorCard({
   weaponTypeKey,
@@ -62,8 +61,9 @@ export function WeaponEditorCard({
     () => weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
     [weaponSheet, weapon]
   )
+  const hasRefinement = weaponHasRefinement(weapon.key)
   return (
-    <CardLight sx={{ p: 1, mb: 1 }}>
+    <CardThemed bgt="light" sx={{ p: 1, mb: 1 }}>
       <WeaponSelectionModal
         ascension={ascension}
         show={show}
@@ -74,7 +74,7 @@ export function WeaponEditorCard({
       <Box display="flex" flexDirection="column" gap={1}>
         <Box display="flex" gap={1}>
           <Box
-            className={`grad-${weaponSheet.rarity}star`}
+            className={`grad-${getWeaponStat(weapon.key).rarity}star`}
             component="img"
             src={weaponAsset(weapon.key, ascension >= 2)}
             sx={{
@@ -92,9 +92,11 @@ export function WeaponEditorCard({
               onClick={onShow}
               disabled={disabled}
             >
-              <Box sx={{ maxWidth: '10em' }}>{weaponSheet?.name}</Box>
+              <Box sx={{ maxWidth: '10em' }}>
+                <WeaponName weaponKey={key} />
+              </Box>
             </Button>
-            {weaponSheet.hasRefinement && (
+            {hasRefinement && (
               <RefinementDropdown
                 disabled={disabled}
                 refinement={refinement}
@@ -107,10 +109,10 @@ export function WeaponEditorCard({
           level={level}
           ascension={ascension}
           setBoth={setWeapon}
-          useLow={!weaponSheet.hasRefinement}
+          useLow={!hasRefinement}
           disabled={disabled}
         />
-        <CardDark>
+        <CardThemed>
           <CardHeader
             title={'Main Stats'}
             titleTypographyProps={{ variant: 'subtitle2' }}
@@ -133,7 +135,7 @@ export function WeaponEditorCard({
               )}
             </FieldDisplayList>
           )}
-        </CardDark>
+        </CardThemed>
         {data && weaponSheet?.document && (
           <DocumentDisplay
             sections={weaponSheet.document}
@@ -141,6 +143,6 @@ export function WeaponEditorCard({
           />
         )}
       </Box>
-    </CardLight>
+    </CardThemed>
   )
 }

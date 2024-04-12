@@ -17,7 +17,6 @@ import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'SkywardBlade'
 const data_gen = allStats.weapon.data[key]
-
 const [condPassivePath, condPassive] = cond(key, 'SkyPiercingMight')
 const atkSrc_ = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const moveSPD_ = equal('on', condPassive, percent(0.1))
@@ -47,7 +46,6 @@ const critRate_ = subscript(input.weapon.refinement, critRate_arr)
 
 const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       critRate_,
@@ -91,4 +89,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

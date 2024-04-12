@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, input, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -7,7 +6,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'SolarPearl'
-const data_gen = allStats.weapon.data[key]
 
 const refinementVals = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 
@@ -18,7 +16,7 @@ const skill_dmg_ = equal('normal', condNormal, refineVal)
 const burst_dmg_ = { ...skill_dmg_ }
 const normal_dmg_ = equal('skillBurst', condSkillBurst, refineVal)
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   premod: {
     skill_dmg_,
     burst_dmg_,
@@ -63,4 +61,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

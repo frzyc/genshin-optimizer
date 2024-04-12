@@ -7,7 +7,13 @@ import {
 } from '@genshin-optimizer/common/ui'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharData } from '@genshin-optimizer/gi/stats'
+import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
+import {
+  BuildInfoAlert,
+  FormulaDataContext,
+  LoadoutInfoAlert,
+  LoadoutNameDesc,
+} from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import CalculateIcon from '@mui/icons-material/Calculate'
@@ -29,10 +35,6 @@ import {
 } from '@mui/material'
 import { Suspense, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import BuildInfoAlert from '../../Components/Team/Loadout/Build/BuildInfoAlert'
-import LoadoutInfoAlert from '../../Components/Team/Loadout/LoadoutInfoAlert'
-import LoadoutNameDesc from '../../Components/Team/Loadout/LoadoutNameDesc'
-import { FormulaDataContext } from '../../Context/FormulaDataContext'
 import { LoadoutDropdown } from '../LoadoutDropdown'
 import { BuildEquipped } from './Build/BuildEquipped'
 import BuildReal from './Build/BuildReal'
@@ -64,7 +66,7 @@ export default function LoadoutSettingElement({
       team.loadoutData[index] = { teamCharId: newTeamCharId } as LoadoutDatum
     })
   }
-  const elementKey = getCharData(teamChar.key).ele
+  const elementKey = getCharEle(teamChar.key)
   return (
     <>
       <Box display="flex" gap={1} alignItems="center">
@@ -174,7 +176,7 @@ function BuildManagementContent() {
     teamChar: { key: characterKey, buildIds, buildTcIds },
   } = useContext(TeamCharacterContext)
 
-  const weaponTypeKey = getCharData(characterKey).weaponType
+  const weaponTypeKey = getCharStat(characterKey).weaponType
 
   return (
     <>

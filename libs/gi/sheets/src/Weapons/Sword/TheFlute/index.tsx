@@ -1,5 +1,4 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
@@ -15,7 +14,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'TheFlute'
-const data_gen = allStats.weapon.data[key]
 
 const dmg_ = equal(
   input.weapon.key,
@@ -25,7 +23,7 @@ const dmg_ = equal(
   })
 )
 
-const data = dataObjForWeaponSheet(key, data_gen, undefined, {
+const data = dataObjForWeaponSheet(key, undefined, {
   dmg_,
 })
 const sheet: IWeaponSheet = {
@@ -36,4 +34,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

@@ -1,34 +1,39 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { CustomNumberInput } from '@genshin-optimizer/common/ui'
-import { objMap, toPercent } from '@genshin-optimizer/common/util'
+import { CardThemed, CustomNumberInput } from '@genshin-optimizer/common/ui'
+import { isDev, objMap, toPercent } from '@genshin-optimizer/common/util'
 import {
   artSubstatRollData,
   type SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
-import { useBuildTc, useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharData } from '@genshin-optimizer/gi/stats'
+import {
+  TeamCharacterContext,
+  useBuildTc,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
+import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { BuildAlert, initialBuildStatus } from '@genshin-optimizer/gi/ui'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactStatWithUnit,
+  BuildAlert,
+  DataContext,
+  HitModeToggle,
+  OptimizationTargetContext,
+  ReactionToggle,
+  StatDisplayComponent,
+  getBuildTcArtifactData,
+  getBuildTcWeaponData,
+  getTeamDataCalc,
+  initialBuildStatus,
+} from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import CloseIcon from '@mui/icons-material/Close'
 import { Alert, Box, Button, Grid, Skeleton, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { ArtifactStatWithUnit } from '../../../../Components/Artifact/ArtifactStatKeyDisplay'
-import CardLight from '../../../../Components/Card/CardLight'
-import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent'
-import {
-  HitModeToggle,
-  ReactionToggle,
-} from '../../../../Components/HitModeEditor'
-import type { dataContextObj } from '../../../../Context/DataContext'
-import { DataContext } from '../../../../Context/DataContext'
-import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
-import { TeamCharacterContext } from '../../../../Context/TeamCharacterContext'
-import { getTeamDataCalc } from '../../../../ReactHooks/useTeamData'
-import { isDev } from '../../../../Util/Util'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
@@ -43,10 +48,8 @@ import KQMSButton from './KQMSButton'
 import { WeaponEditorCard } from './WeaponEditorCard'
 import type { TCWorkerResult } from './optimizeTc'
 import {
-  getArtifactData,
   getMinSubAndOtherRolls,
   getScalesWith,
-  getWeaponData,
   optimizeTcGetNodes,
 } from './optimizeTc'
 export default function TabTheorycraft() {
@@ -70,7 +73,7 @@ export default function TabTheorycraft() {
     () => ({ buildTc, setBuildTc }),
     [buildTc, setBuildTc]
   )
-  const weaponTypeKey = getCharData(characterKey).weaponType
+  const weaponTypeKey = getCharStat(characterKey).weaponType
 
   const dataContextValue = useContext(DataContext)
   const compareData = useCompareData()
@@ -159,8 +162,8 @@ export default function TabTheorycraft() {
       gender,
       teamCharId,
       0,
-      getArtifactData(buildTc),
-      getWeaponData(buildTc)
+      getBuildTcArtifactData(buildTc),
+      getBuildTcWeaponData(buildTc)
     )
     if (!tempTeamData) return
     const { nodes } = optimizeTcGetNodes(tempTeamData, characterKey, buildTc)
@@ -270,7 +273,7 @@ export default function TabTheorycraft() {
               lg={9.7}
               sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
             >
-              <CardLight sx={{ flexGrow: 1, p: 1 }}>
+              <CardThemed bgt="light" sx={{ flexGrow: 1, p: 1 }}>
                 <OptimizationTargetContext.Provider value={optimizationTarget}>
                   {dataContextValueWithCompare ? (
                     <DataContext.Provider value={dataContextValueWithCompare}>
@@ -282,11 +285,11 @@ export default function TabTheorycraft() {
                     <Skeleton variant="rectangular" width="100%" height={500} />
                   )}
                 </OptimizationTargetContext.Provider>
-              </CardLight>
+              </CardThemed>
             </Grid>
           </Grid>
         </Box>
-        <CardLight>
+        <CardThemed bgt="light">
           <Box sx={{ display: 'flex', gap: 1, p: 1, flexWrap: 'wrap' }}>
             <KQMSButton action={kqms} disabled={solving} />
             <GcsimButton disabled={solving} />
@@ -294,7 +297,7 @@ export default function TabTheorycraft() {
             <ReactionToggle size="small" />
             <CompareBtn buttonGroupProps={{ sx: { marginLeft: 'auto' } }} />
           </Box>
-        </CardLight>
+        </CardThemed>
         {dataContextValue ? (
           <DataContext.Provider value={dataContextValue}>
             <Box>

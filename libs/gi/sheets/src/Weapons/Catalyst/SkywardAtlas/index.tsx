@@ -1,6 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
   equal,
@@ -16,7 +15,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'SkywardAtlas'
-const data_gen = allStats.weapon.data[key]
 
 const dmgBonus = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const eleBonus_ = Object.fromEntries(
@@ -43,7 +41,6 @@ const dmg = equal(
 )
 const data = dataObjForWeaponSheet(
   key,
-  data_gen,
   {
     premod: {
       ...Object.fromEntries(
@@ -67,4 +64,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

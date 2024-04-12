@@ -2,8 +2,12 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useInfScroll } from '@genshin-optimizer/common/ui'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
+import {
+  catTotal,
+  filterFunction,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allCharacterRarityKeys,
@@ -12,8 +16,25 @@ import {
   isCharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharSheet, getWeaponSheet } from '@genshin-optimizer/gi/sheets'
-import { SillyContext } from '@genshin-optimizer/gi/ui'
+import {
+  getCharEle,
+  getCharStat,
+  getWeaponStat,
+} from '@genshin-optimizer/gi/stats'
+import {
+  CharacterCard,
+  CharacterEditor,
+  CharacterRarityToggle,
+  CharacterSelectionModal,
+  ElementToggle,
+  ShowingAndSortOptionSelect,
+  WeaponToggle,
+  characterFilterConfigs,
+  characterSortConfigs,
+  characterSortMap,
+  useCharSelectionCallback,
+} from '@genshin-optimizer/gi/ui'
+import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
@@ -35,21 +56,6 @@ import {
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import { useMatch, useNavigate } from 'react-router-dom'
-import CardDark from '../Components/Card/CardDark'
-import CharacterCard from '../Components/Character/CharacterCard'
-import CharacterEditor from '../Components/Character/CharacterEditor'
-import CharacterSelectionModal from '../Components/Character/CharacterSelectionModal'
-import ShowingAndSortOptionSelect from '../Components/ShowingAndSortOptionSelect'
-import CharacterRarityToggle from '../Components/ToggleButton/CharacterRarityToggle'
-import ElementToggle from '../Components/ToggleButton/ElementToggle'
-import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
-import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback'
-import {
-  characterFilterConfigs,
-  characterSortConfigs,
-  characterSortMap,
-} from '../Util/CharacterSort'
-import { catTotal } from '../Util/totalUtils'
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 5, sm: 8, md: 9, lg: 12, xl: 12 }
 const sortKeys = Object.keys(characterSortMap)
@@ -143,7 +149,7 @@ export default function PageCharacter() {
         Object.entries(database.chars.data).forEach(([ck, char]) => {
           const weapon = database.weapons.get(char.equippedWeapon)
           if (!weapon) return
-          const wtk = getWeaponSheet(weapon.key).weaponType
+          const wtk = getWeaponStat(weapon.key).weaponType
           ct[wtk].total++
           if (charKeys.includes(ck)) ct[wtk].current++
         })
@@ -155,7 +161,7 @@ export default function PageCharacter() {
     () =>
       catTotal(allElementKeys, (ct) =>
         Object.entries(database.chars.data).forEach(([ck, char]) => {
-          const eleKey = getCharSheet(char.key, database.gender).elementKey
+          const eleKey = getCharEle(char.key)
           ct[eleKey].total++
           if (charKeys.includes(ck)) ct[eleKey].current++
         })
@@ -167,9 +173,9 @@ export default function PageCharacter() {
     () =>
       catTotal(allCharacterRarityKeys, (ct) =>
         Object.entries(database.chars.data).forEach(([ck, char]) => {
-          const eleKey = getCharSheet(char.key, database.gender).rarity
-          ct[eleKey].total++
-          if (charKeys.includes(ck)) ct[eleKey].current++
+          const key = getCharStat(char.key).rarity
+          ct[key].total++
+          if (charKeys.includes(ck)) ct[key].current++
         })
       ),
     [database, charKeys]
@@ -220,7 +226,7 @@ export default function PageCharacter() {
           onSelect={editCharacter}
         />
       </Suspense>
-      <CardDark>
+      <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Grid container spacing={1}>
             <Grid item>
@@ -283,7 +289,7 @@ export default function PageCharacter() {
             />
           </Box>
         </CardContent>
-      </CardDark>
+      </CardThemed>
       <Button
         fullWidth
         onClick={() => setnewCharacter(true)}

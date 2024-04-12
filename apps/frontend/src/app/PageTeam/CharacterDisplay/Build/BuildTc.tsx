@@ -8,10 +8,19 @@ import {
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
-import { useBuildTc, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  TeamCharacterContext,
+  useBuildTc,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
-import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
+import {
+  ArtifactSetName,
+  BuildCard,
+  StatWithUnit,
+  WeaponCardNanoObj,
+} from '@genshin-optimizer/gi/ui'
 import { artDisplayValue } from '@genshin-optimizer/gi/util'
 import CloseIcon from '@mui/icons-material/Close'
 import {
@@ -24,10 +33,6 @@ import {
   TextField,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
-import { StatWithUnit } from '../../../Components/StatDisplay'
-import { WeaponCardNanoObj } from '../../../Components/Weapon/WeaponCardNano'
-import { TeamCharacterContext } from '../../../Context/TeamCharacterContext'
-import { BuildCard } from './BuildCard'
 
 export default function BuildTc({
   buildTcId,

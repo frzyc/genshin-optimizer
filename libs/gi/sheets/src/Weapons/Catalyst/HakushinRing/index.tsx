@@ -1,6 +1,5 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   equal,
   infoMut,
@@ -15,7 +14,6 @@ import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
 const key: WeaponKey = 'HakushinRing'
-const data_gen = allStats.weapon.data[key]
 
 const refinementEleBonusSrc = [-1, 0.1, 0.125, 0.15, 0.175, 0.2]
 
@@ -37,7 +35,7 @@ const dendro_dmg_ = equal('dendro', target.charEle, dendro_dmg_disp)
 const electro_dmg_disp = unequal(condPassive, undefined, eleDmg)
 const electro_dmg_ = equal('electro', target.charEle, electro_dmg_disp)
 
-const data = dataObjForWeaponSheet(key, data_gen, {
+const data = dataObjForWeaponSheet(key, {
   teamBuff: {
     premod: {
       anemo_dmg_,
@@ -214,4 +212,4 @@ const sheet: IWeaponSheet = {
     },
   ],
 }
-export default new WeaponSheet(key, sheet, data_gen, data)
+export default new WeaponSheet(sheet, data)

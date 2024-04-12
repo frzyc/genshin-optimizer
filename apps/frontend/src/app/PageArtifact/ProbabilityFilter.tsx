@@ -1,11 +1,9 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
+import { CardThemed, ColorText } from '@genshin-optimizer/common/ui'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import { StatEditorList } from '@genshin-optimizer/gi/ui'
 import { CardContent, Divider, Grid, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import CardDark from '../Components/Card/CardDark'
-import CardLight from '../Components/Card/CardLight'
-import StatEditorList from '../Components/StatEditorList'
 const keys = [...allSubstatKeys]
 export default function ProbabilityFilter({
   probabilityFilter: statFilters = {},
@@ -19,7 +17,7 @@ export default function ProbabilityFilter({
   const { t } = useTranslation('artifact')
 
   return (
-    <CardDark>
+    <CardThemed>
       <CardContent sx={{ py: 1 }}>
         <Typography variant="h6">Roll Probability Calculator</Typography>
       </CardContent>
@@ -27,7 +25,7 @@ export default function ProbabilityFilter({
       <CardContent>
         <Grid container spacing={1}>
           <Grid item xs={12} md={6}>
-            <CardLight>
+            <CardThemed bgt="light">
               <CardContent>
                 <Typography>
                   This UI only pops up when "Sort by"
@@ -42,7 +40,7 @@ export default function ProbabilityFilter({
                   </ColorText>
                 </Typography>
               </CardContent>
-            </CardLight>
+            </CardThemed>
           </Grid>
           <Grid
             item
@@ -61,6 +59,6 @@ export default function ProbabilityFilter({
           </Grid>
         </Grid>
       </CardContent>
-    </CardDark>
+    </CardThemed>
   )
 }
