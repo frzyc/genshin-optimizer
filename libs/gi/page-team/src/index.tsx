@@ -89,7 +89,7 @@ function PageLoadoutWrapper({ teamId }: { teamId: string }) {
   if ((characterKeyRaw && !loadoutDatum) || (loadoutData[0] && !loadoutDatum)) {
     const ld = loadoutData[0]
     const ck = ld && database.teamChars.get(ld.teamCharId)?.key
-    if (ck) return <Navigate to={ck} />
+    if (ck) return <Navigate to={ck} replace />
     else return <Navigate to="" />
   }
   return <Page loadoutDatum={loadoutDatum} teamId={teamId} tab={tab} />
