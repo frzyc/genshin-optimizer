@@ -11,20 +11,12 @@ import type {
   IDocumentHeader,
   IDocumentText,
 } from '@genshin-optimizer/gi/sheets'
-import { Box, Divider, Typography } from '@mui/material'
-import { useContext } from 'react'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import { Box, Collapse, Divider, Typography } from '@mui/material'
+import { useContext, useState } from 'react'
 import { DataContext } from '../context'
 import { FieldsDisplay } from './FieldDisplay'
 import { ConditionalDisplay } from './conditional/ConditionalDisplay'
-
-type DocumentDisplayProps = {
-  sections: DocumentSection[]
-  teamBuffOnly?: boolean
-  hideDesc?: boolean
-  hideHeader?: boolean | ((section: DocumentSection) => boolean)
-  disabled?: boolean
-  bgt?: CardBackgroundColor
-}
 
 export function DocumentDisplay({
   sections,
@@ -33,13 +25,22 @@ export function DocumentDisplay({
   hideHeader = false,
   disabled = false,
   bgt = 'normal',
-}: DocumentDisplayProps) {
+  collapse = false,
+}: {
+  sections: DocumentSection[]
+  teamBuffOnly?: boolean
+  hideDesc?: boolean
+  hideHeader?: boolean | ((section: DocumentSection) => boolean)
+  disabled?: boolean
+  bgt?: CardBackgroundColor
+  collapse?: boolean
+}) {
   const { data } = useContext(DataContext)
   if (!sections.length) return null
   const sectionDisplays = sections
     .map((s, i) => {
       // If we can't show this section, return null
-      if (s.canShow && !data.get(s.canShow).value) return null
+      if (s.canShow && !data?.get(s.canShow).value) return null
       // If we are showing only teambuffs, and this section is not a teambuff, return null
       if (teamBuffOnly && !s.teamBuff) return null
       return (
@@ -50,6 +51,7 @@ export function DocumentDisplay({
           hideHeader={hideHeader}
           disabled={disabled}
           bgt={bgt}
+          collapse={collapse}
         />
       )
     })
@@ -68,12 +70,14 @@ function SectionDisplay({
   hideHeader = false,
   disabled = false,
   bgt = 'normal',
+  collapse = false,
 }: {
   section: DocumentSection
   hideDesc?: boolean
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
   disabled?: boolean
   bgt?: CardBackgroundColor
+  collapse?: boolean
 }) {
   if ('fields' in section) {
     return (
@@ -95,10 +99,13 @@ function SectionDisplay({
       />
     )
   } /* if ("text" in section) */ else {
-    return <TextSectionDisplay section={section} />
+    return collapse ? (
+      <TextSectionDisplayCollapse section={section} />
+    ) : (
+      <TextSectionDisplay section={section} />
+    )
   }
 }
-
 function FieldsSectionDisplay({
   section,
   hideDesc,
@@ -110,6 +117,8 @@ function FieldsSectionDisplay({
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
   bgt?: CardBackgroundColor
 }) {
+  const { data } = useContext(DataContext)
+  if (!data) return null
   return (
     <CardThemed bgt={bgt}>
       {!evalIfFunc(hideHeader, section) && section.header && (
@@ -127,6 +136,55 @@ function FieldsSectionDisplay({
 function TextSectionDisplay({ section }: { section: IDocumentText }) {
   const { data } = useContext(DataContext)
   return <div>{evalIfFunc(section.text, data)}</div>
+}
+function TextSectionDisplayCollapse({ section }: { section: IDocumentText }) {
+  const { data } = useContext(DataContext)
+  const [expanded, setExpanded] = useState(false)
+  const [hover, setHover] = useState(false)
+  return (
+    <Box sx={{ position: 'relative' }}>
+      {!expanded && (
+        <Box
+          sx={{
+            pointerEvents: 'none',
+            position: 'absolute',
+            mx: 'auto',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            height: '100%',
+            alignItems: 'flex-end',
+            zIndex: '10',
+            transition: 'transform 0.3s ease',
+            transform: hover ? 'translate(0,-5px)' : undefined,
+          }}
+        >
+          <KeyboardArrowDownIcon />
+        </Box>
+      )}
+      <Collapse
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        collapsedSize={55}
+        onClick={() => setExpanded((e) => !e)}
+        in={expanded}
+        sx={{
+          cursor: 'pointer',
+          position: 'relative',
+          maskImage: expanded
+            ? undefined
+            : 'linear-gradient(to bottom, black 0%, transparent 100%)',
+          '&:hover': {
+            maskImage: expanded
+              ? undefined
+              : 'linear-gradient(to bottom, black 50%, transparent 100%)',
+          },
+        }}
+      >
+        <div>{evalIfFunc(section.text, data)}</div>
+      </Collapse>
+    </Box>
+  )
 }
 
 export function HeaderDisplay({

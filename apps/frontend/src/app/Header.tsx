@@ -12,6 +12,7 @@ import {
   Scanner,
   Settings,
 } from '@mui/icons-material'
+import BookIcon from '@mui/icons-material/Book'
 import GroupsIcon from '@mui/icons-material/Groups'
 import {
   AppBar,
@@ -59,6 +60,12 @@ const weapons: ITab = {
   to: '/weapons',
   value: 'weapons',
   textSuffix: <WeaponChip key="weaponAdd" />,
+}
+const archive: ITab = {
+  i18Key: 'tabs.archive',
+  icon: <BookIcon />,
+  to: '/archive',
+  value: 'archive',
 }
 const characters: ITab = {
   i18Key: 'tabs.characters',
@@ -171,6 +178,7 @@ const maincontent = [
   weapons,
   characters,
   teams,
+  archive,
   tools,
   scanner,
   doc,
@@ -282,6 +290,7 @@ const mobileContent = [
   weapons,
   characters,
   teams,
+  archive,
   tools,
   scanner,
   doc,

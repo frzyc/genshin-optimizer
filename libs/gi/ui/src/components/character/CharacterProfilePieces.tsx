@@ -54,37 +54,41 @@ export function CharacterCompactTalent() {
   return (
     <Box>
       <Grid container spacing={1} mt={-1}>
-        {(['auto', 'skill', 'burst'] as TalentSheetElementKey[]).map((tKey) => (
-          <Grid item xs={4} key={tKey}>
-            <Badge
-              badgeContent={tlvl[tKey]}
-              color={tBoost[tKey] ? 'info' : 'secondary'}
-              overlap="circular"
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'right',
-              }}
-              sx={{
-                width: '100%',
-                height: '100%',
-                '& > .MuiBadge-badge': {
-                  fontSize: '1.25em',
-                  padding: '.25em .4em',
-                  borderRadius: '.5em',
-                  lineHeight: 1,
-                  height: '1.25em',
-                },
-              }}
-            >
-              <Box
-                component="img"
-                src={characterSheet.getTalentOfKey(tKey)?.img}
-                width="100%"
-                height="auto"
-              />
-            </Badge>
-          </Grid>
-        ))}
+        {(['auto', 'skill', 'burst'] as const).map((tKey) => {
+          const badgeContent = tlvl[tKey].toString()
+          return (
+            <Grid item xs={4} key={tKey}>
+              <Badge
+                badgeContent={badgeContent}
+                color={tBoost[tKey] ? 'info' : 'secondary'}
+                overlap="circular"
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'right',
+                }}
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  '& > .MuiBadge-badge': {
+                    fontSize: '1em',
+                    padding: badgeContent.length > 1 ? '.25em' : '.25em .4em',
+                    borderRadius: '.5em',
+                    lineHeight: 1,
+                    height: '1.25em',
+                    right: '25%',
+                  },
+                }}
+              >
+                <Box
+                  component="img"
+                  src={characterSheet.getTalentOfKey(tKey)?.img}
+                  width="100%"
+                  height="auto"
+                />
+              </Badge>
+            </Grid>
+          )
+        })}
       </Grid>
     </Box>
   )
