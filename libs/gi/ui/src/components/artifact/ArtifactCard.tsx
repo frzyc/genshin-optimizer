@@ -20,7 +20,7 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
-import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useArtifact } from '@genshin-optimizer/gi/db-ui'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   artDisplayValue,
@@ -43,7 +43,7 @@ import {
   Typography,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { Suspense, lazy, useCallback, useMemo, useState } from 'react'
+import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { PercentBadge } from '../PercentBadge'
 import { LocationAutocomplete, LocationName } from '../character'
@@ -54,66 +54,52 @@ import {
   ArtifactSetSlotName,
 } from './ArtifactTrans'
 import { SmolProgress } from './SmolProgress'
-import type { ArtifactEditorProps } from './editor'
 import { artifactLevelVariant } from './util'
 
-const ArtifactEditor = lazy(() =>
-  import('./editor').then((module) => ({ default: module.ArtifactEditor }))
-)
-
 type Data = {
-  artifactId?: string
-  artifactObj?: ICachedArtifact
-  onClick?: (id: string) => void
-  onDelete?: (id: string) => void
+  onClick?: () => void
+  onDelete?: () => void
+  onEdit?: () => void
+  onLockToggle?: () => void
+  setLocation?: (lk: LocationKey) => void
   mainStatAssumptionLevel?: number
   effFilter?: Set<SubstatKey>
-  editorProps?: Partial<ArtifactEditorProps>
-  canEquip?: boolean
   extraButtons?: JSX.Element
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
-export function ArtifactCard({
-  artifactId,
-  artifactObj,
+export function ArtifactCard(props: { artifactId: string } & Data) {
+  const { artifactId, ...rest } = props
+  const artifact = useArtifact(artifactId)
+  if (!artifact) return null
+  return <ArtifactCardObj artifact={artifact} {...rest} />
+}
+export function ArtifactCardObj({
+  artifact,
   onClick,
   onDelete,
+  onLockToggle,
+  setLocation,
+  onEdit,
   mainStatAssumptionLevel = 0,
   effFilter = allSubstatFilter,
-  editorProps,
-  canEquip = false,
   extraButtons,
-}: Data): JSX.Element | null {
+}: {
+  artifact: ICachedArtifact
+} & Data) {
   const { t } = useTranslation(['artifact', 'ui'])
   const { t: tk } = useTranslation('statKey_gen')
-  const database = useDatabase()
-  const databaseArtifact = useArtifact(artifactId)
-  const artSetKey = (artifactObj ?? databaseArtifact)?.setKey
-  const setLocation = useCallback(
-    (k: LocationKey) =>
-      artifactId && database.arts.set(artifactId, { location: k }),
-    [database, artifactId]
-  )
-
-  const editable = !artifactObj
-  const [showEditor, setshowEditor] = useState(false)
-  const onHideEditor = useCallback(() => setshowEditor(false), [setshowEditor])
-  const onShowEditor = useCallback(
-    () => editable && setshowEditor(true),
-    [editable, setshowEditor]
-  )
 
   const wrapperFunc = useCallback(
     (children: ReactNode) => (
       <CardActionArea
-        onClick={() => artifactId && onClick?.(artifactId)}
+        onClick={onClick}
         sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
       >
         {children}
       </CardActionArea>
     ),
-    [onClick, artifactId]
+    [onClick]
   )
   const falseWrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -124,41 +110,29 @@ export function ArtifactCard({
     []
   )
 
-  const art = artifactObj ?? databaseArtifact
-
   const {
     currentEfficiency,
     maxEfficiency,
     currentEfficiency_,
     maxEfficiency_,
   } = useMemo(() => {
-    if (!art)
-      return {
-        currentEfficiency: 0,
-        maxEfficiency: 0,
-        currentEfficiency_: 0,
-        maxEfficiency_: 0,
-      }
     const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
-      art,
+      artifact,
       effFilter
     )
     const {
       currentEfficiency: currentEfficiency_,
       maxEfficiency: maxEfficiency_,
-    } = getArtifactEfficiency(art, new Set(allSubstatKeys))
+    } = getArtifactEfficiency(artifact, new Set(allSubstatKeys))
     return {
       currentEfficiency,
       maxEfficiency,
       currentEfficiency_,
       maxEfficiency_,
     }
-  }, [art, effFilter])
-
-  if (!art) return null
+  }, [artifact, effFilter])
 
   const {
-    id,
     lock,
     slotKey,
     setKey,
@@ -167,7 +141,7 @@ export function ArtifactCard({
     mainStatKey,
     substats,
     location = '',
-  } = art
+  } = artifact
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 4),
     level
@@ -197,15 +171,6 @@ export function ArtifactCard({
         />
       }
     >
-      {editorProps && (
-        <Suspense fallback={false}>
-          <ArtifactEditor
-            artifactIdToEdit={showEditor ? artifactId : ''}
-            cancelEdit={onHideEditor}
-            {...editorProps}
-          />
-        </Suspense>
-      )}
       <CardThemed
         bgt="light"
         sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
@@ -219,11 +184,10 @@ export function ArtifactCard({
             className={`grad-${rarity}star`}
             sx={{ position: 'relative', width: '100%' }}
           >
-            {!onClick && (
+            {!onClick && !!onLockToggle && (
               <IconButton
                 color="primary"
-                disabled={!editable}
-                onClick={() => database.arts.set(id, { lock: !lock })}
+                onClick={onLockToggle}
                 sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
               >
                 {lock ? <Lock /> : <LockOpen />}
@@ -371,17 +335,18 @@ export function ArtifactCard({
               </Typography>
             )}
             <Box flexGrow={1} />
-            {art.probability !== undefined && art.probability >= 0 && (
-              <strong>
-                Probability: {(art.probability * 100).toFixed(2)}%
-              </strong>
-            )}
+            {artifact.probability !== undefined &&
+              artifact.probability >= 0 && (
+                <strong>
+                  Probability: {(artifact.probability * 100).toFixed(2)}%
+                </strong>
+              )}
             <Typography color="success.main">
-              {(artSetKey && <ArtifactSetName setKey={artSetKey} />) ||
+              {(setKey && <ArtifactSetName setKey={setKey} />) ||
                 'Artifact Set'}{' '}
-              {artSetKey && (
+              {setKey && (
                 <InfoTooltipInline
-                  title={<ArtifactSetTooltipContent setKey={artSetKey} />}
+                  title={<ArtifactSetTooltipContent setKey={setKey} />}
                 />
               )}
             </Typography>
@@ -397,7 +362,7 @@ export function ArtifactCard({
           }}
         >
           <Box sx={{ flexGrow: 1 }}>
-            {editable && canEquip ? (
+            {setLocation ? (
               <LocationAutocomplete
                 location={location}
                 setLocation={setLocation}
@@ -413,18 +378,18 @@ export function ArtifactCard({
             height="100%"
             sx={{ '& .MuiButton-root': { minWidth: 0, height: '100%' } }}
           >
-            {editable && editorProps && (
+            {!!onEdit && (
               <BootstrapTooltip
                 title={<Typography>{t`artifact:edit`}</Typography>}
                 placement="top"
                 arrow
               >
-                <Button color="info" size="small" onClick={onShowEditor}>
+                <Button color="info" size="small" onClick={onEdit}>
                   <EditIcon />
                 </Button>
               </BootstrapTooltip>
             )}
-            {editable && !!onDelete && (
+            {!!onDelete && (
               <BootstrapTooltip
                 title={lock ? t('artifact:cantDeleteLock') : ''}
                 placement="top"
@@ -433,7 +398,7 @@ export function ArtifactCard({
                   <Button
                     color="error"
                     size="small"
-                    onClick={() => onDelete(id)}
+                    onClick={onDelete}
                     disabled={lock}
                   >
                     <DeleteForeverIcon />

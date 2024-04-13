@@ -30,6 +30,7 @@ import {
   useDeferredValue,
   useEffect,
   useMemo,
+  useState,
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
@@ -46,7 +47,7 @@ export default function PageArtifact() {
   const database = useDatabase()
   const artifactDisplayState = useDisplayArtifact()
 
-  const [showEditor, onShowEditor, onHideEditor] = useBoolState(false)
+  const [artifactIdToEdit, setArtifactIdToEdit] = useState<string | undefined>()
 
   const [showDup, onShowDup, onHideDup] = useBoolState(false)
 
@@ -62,10 +63,6 @@ export default function PageArtifact() {
     () => new Set(effFilter),
     [effFilter]
   ) as Set<SubstatKey>
-  const deleteArtifact = useCallback(
-    (id: string) => database.arts.remove(id),
-    [database]
-  )
 
   useEffect(() => {
     ReactGA.send({ hitType: 'pageview', page: '/artifact' })
@@ -160,14 +157,18 @@ export default function PageArtifact() {
     <Box display="flex" flexDirection="column" gap={1} my={1}>
       <Suspense fallback={false}>
         <ArtifactEditor
-          artifactIdToEdit={showEditor ? 'new' : ''}
-          cancelEdit={onHideEditor}
+          artifactIdToEdit={artifactIdToEdit}
+          cancelEdit={() => setArtifactIdToEdit(undefined)}
           allowUpload
           allowEmpty
         />
       </Suspense>
       <Suspense fallback={false}>
-        <DupModal show={showDup} onHide={onHideDup} />
+        <DupModal
+          show={showDup}
+          onHide={onHideDup}
+          setArtifactIdToEdit={setArtifactIdToEdit}
+        />
       </Suspense>
       <InfoComponent
         pageKey="artifactPage"
@@ -211,7 +212,7 @@ export default function PageArtifact() {
         <Grid item xs>
           <Button
             fullWidth
-            onClick={onShowEditor}
+            onClick={() => setArtifactIdToEdit('new')}
             color="info"
             startIcon={<AddIcon />}
           >{t`addNew`}</Button>
@@ -239,9 +240,11 @@ export default function PageArtifact() {
               <ArtifactCard
                 artifactId={artId}
                 effFilter={effFilterSet}
-                onDelete={deleteArtifact}
-                editorProps={{}}
-                canEquip
+                onDelete={() => database.arts.remove(artId)}
+                onEdit={() => setArtifactIdToEdit(artId)}
+                setLocation={(location) =>
+                  database.arts.set(artId, { location })
+                }
               />
             </Grid>
           ))}
