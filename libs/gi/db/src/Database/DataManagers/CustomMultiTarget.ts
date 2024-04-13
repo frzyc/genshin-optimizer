@@ -174,7 +174,6 @@ export function validateCustomExpression(
       if (!NonenclosingOperations.includes(operation)) return undefined
     } else if (type === 'enclosing') {
       const { part } = unit
-      if (!['head', 'comma', 'tail'].includes(part)) return undefined
       switch (part) {
         case 'head':
           if (!EnclosingOperations.includes(unit.operation)) return undefined
@@ -185,6 +184,8 @@ export function validateCustomExpression(
         case 'tail':
           if (!stack.pop()) return undefined
           break
+        default:
+          return undefined
       }
     } else if (type === 'null') {
       const { kind } = unit

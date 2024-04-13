@@ -1,12 +1,15 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
+  ColorText,
   InfoTooltip,
   ModalWrapper,
+  SolidToggleButtonGroup,
 } from '@genshin-optimizer/common/ui'
 import { arrayMove, deepClone } from '@genshin-optimizer/common/util'
-import type { CustomTarget, ExpressionUnit } from '@genshin-optimizer/gi/db'
+import type { CustomTarget, ExpressionOperation, ExpressionUnit } from '@genshin-optimizer/gi/db'
 import {
+  EnclosingOperations,
   initCustomTarget,
   initExpressionUnit,
   type CustomMultiTarget,
@@ -19,6 +22,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,
   Button,
+  ButtonGroup,
   CardActionArea,
   CardContent,
   CardHeader,
@@ -26,6 +30,7 @@ import {
   Divider,
   IconButton,
   TextField,
+  ToggleButton,
   Typography,
 } from '@mui/material'
 import type { Dispatch, SetStateAction } from 'react'
@@ -38,7 +43,7 @@ import {
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelectorModal'
-import CustomTargetDisplay from './CustomTargetDisplay'
+import { CustomTargetDisplay } from './CustomTargetDisplay'
 export default function CustomMultiTargetCard({
   customMultiTarget: targetProp,
   setTarget: setTargetProp,
@@ -243,16 +248,7 @@ export default function CustomMultiTargetCard({
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             {target.expression && (
-              <Typography>
-                {t('multiTarget.expression')}
-                <IconButton
-                  onClick={() =>
-                    setTarget({ ...target, expression: undefined })
-                  }
-                >
-                  <CloseIcon />
-                </IconButton>
-              </Typography>
+              <ExpressionNavbar expression={target.expression} setCMT={setTarget} />
             )}
             {!target.expression && (
               <>
@@ -267,124 +263,180 @@ export default function CustomMultiTargetCard({
   )
 }
 
-// function ExpressionNavbar({ expression }: { expression: ExpressionNode }) {
-//   // Path to selected node
-//   const [ptsn, setPTSN] = useState<number[]>([])
+const operationSymbols = {
+  addition: '+',
+  subtraction: '-',
+  multiplication: '*',
+  division: '/',
+}
+const enclosingNames = {
+  minimum: 'min',
+  maximum: 'max',
+  average: 'avg',
+  grouping: '',
+}
 
-//   return (
-//     <Box display="flex" gap={1}>
-//       <SolidToggleButtonGroup
-//         sx={{ flexWrap: 'wrap', alignItems: 'flex-start' }}
-//         value={ptsn.toString()}
-//         baseColor="secondary"
-//         size={'small'}
-//       >
-//         {recursiveExpressionNodeButtonDisplayer({
-//           node: expression,
-//           setPTSN,
-//           ptsn,
-//         })}
-//       </SolidToggleButtonGroup>
-//     </Box>
-//   )
-// }
+function ExpressionNavbar({ expression, setCMT }: { expression: ExpressionUnit[], setCMT: Dispatch<SetStateAction<CustomMultiTarget>> }) {
+  // Selected unit index
+  const [sui, setSUI] = useState(0)
 
-// const operationSymbols = {
-//   addition: '+',
-//   subtraction: '-',
-//   multiplication: '*',
-//   division: '/',
-// }
-// const operationFuncNames = {
-//   minimum: 'min',
-//   maximum: 'max',
-//   average: 'avg',
-//   grouping: '',
-// }
+  // Selected unit related parts index list
+  const [surpi, setSURPI] = useState(partsFinder(expression, sui))
 
-// function recursiveExpressionNodeButtonDisplayer({
-//   node,
-//   setPTSN,
-//   ptsn,
-//   ptn = [],
-// }: {
-//   node: ExpressionNode
-//   setPTSN: Dispatch<SetStateAction<number[]>>
-//   ptsn: number[]
-//   ptn?: number[]
-// }) {
-//   const { operation, operands } = node
-//   const buttons: JSX.Element[] = []
-//   const style = { minWidth: '0', pl: 0.3, pr: 0.3, pt: 1, pb: 1 }
-//   const active = ptn.toString() === ptsn.toString()
-//   const selfButton = (text: string) => (
-//     <ToggleButton
-//       value={ptn.toString()}
-//       sx={style}
-//       onClick={() => setPTSN(ptn)}
-//       disabled={active}
-//     >
-//       {text}
-//     </ToggleButton>
-//   )
-//   const nullButton = (index: number) => (
-//     <ToggleButton
-//       value={[...ptn, index].toString()}
-//       sx={style}
-//       onClick={() => setPTSN([...ptn, index])}
-//       disabled={[...ptn, index].toString() === ptsn.toString()}
-//     >
-//       <ColorText color="red">null</ColorText>
-//     </ToggleButton>
-//   )
-//   const operandHandler = (operand: ExpressionOperand, index: number) => {
-//     if (typeof operand === 'number' || 'path' in operand) {
-//       return [
-//         <ToggleButton
-//           value={[...ptn, index].toString()}
-//           sx={style}
-//           onClick={() => setPTSN([...ptn, index])}
-//           disabled={[...ptn, index].toString() === ptsn.toString()}
-//         >
-//           {typeof operand === 'number'
-//             ? operand
-//             : (operand as { path: string[] }).path.join('.')}
-//         </ToggleButton>,
-//       ]
-//     }
-//     return recursiveExpressionNodeButtonDisplayer({
-//       node: operand,
-//       ptn: [...ptn, index],
-//       setPTSN,
-//       ptsn,
-//     })
-//   }
-//   const operands_: JSX.Element[][] = operands.map((operand, index) => {
-//     return operandHandler(operand, index)
-//   })
-//   const lastIndex = operands_.length - 1
-//   if (lastIndex < 1) {
-//     operands_.push([nullButton(lastIndex + 1)])
-//   }
-//   if (lastIndex < 0) {
-//     operands_.push([nullButton(lastIndex + 2)])
-//   }
-//   if (operation in operationSymbols) {
-//     operands_.forEach((operand, index) => {
-//       if (index > 0) {
-//         buttons.push(selfButton(operationSymbols[operation]))
-//       }
-//       buttons.push(...operand)
-//     })
-//   } else if (operation in operationFuncNames) {
-//     buttons.push(selfButton(`${operationFuncNames[operation]}(`))
-//     buttons.push(...operands_.flat())
-//     buttons.push(selfButton(')'))
-//   } else {
-//     console.error('Invalid operation', operation)
-//   }
-//   return buttons
-// }
+  useEffect(() => {
+    setSURPI(partsFinder(expression, sui))
+  }, [sui, expression, setSURPI])
+
+  const addUnit = (units: ExpressionUnit[]) => {
+    setCMT((cmt) => {
+      const expression_ = [...expression]
+      if (expression[sui].type === 'null') {
+        expression_.splice(sui, 1, ...units)
+      } else {
+        expression_.splice(sui, 0, ...units)
+      }
+      return { ...cmt, expression: expression_ }
+    })
+  }
+
+  // const removeUnit = () => {
+  //   if (expression[sui].type === 'null') return
+  //   setCMT((cmt) => {
+  //     const expression_ = [...expression]
+  //     if (expression[sui].type === 'enclosing') {
+  //       for (const i of surpi) {
+  //         expression_.splice(i, 1)
+  //       }
+  //     } else {
+  //       expression_.splice(sui, 1)
+  //     }
+  //     return { ...cmt, expression: expression_ }
+  //   })
+  // }
+
+
+  // const moveUnit = (direction: 'up' | 'down') => {
+  //   const unit = expression[sui]
+  //   if (unit.type === 'enclosing' && unit.part !== 'comma') {
+  //     if (direction === 'up' && surpi.indexOf(sui) < 2) return
+  //     if (direction === 'down' && surpi.indexOf(sui) === surpi.length - 2) return
+  //   }
+  //   setCMT((cmt) => {
+  //     const expression_ = [...expression]
+  //     if (direction === 'up') {
+  //       if (sui === 0) return cmt
+  //       arrayMove(expression_, sui, sui - 1)
+  //       setSUI(sui - 1)
+  //     } else {
+  //       if (sui === expression_.length - 1) return cmt
+  //       arrayMove(expression_, sui, sui + 1)
+  //       setSUI(sui + 1)
+  //     }
+  //     return { ...cmt, expression: expression_ }
+  //   })
+  // }
+
+  return (<>
+    <Box display="flex" gap={1}>
+      <SolidToggleButtonGroup
+        sx={{ flexWrap: 'wrap', alignItems: 'flex-start' }}
+        value={surpi}
+        baseColor="secondary"
+        size={'small'}
+      >
+        {expression.map((unit, index) => {
+          const { type } = unit
+          let text: string | JSX.Element = ''
+          if (type === 'constant') {
+            text = unit.value.toString()
+          } else if (type === 'target') {
+            text = unit.target.path.join('.')
+          } else if (type === 'operation') {
+            text = operationSymbols[unit.operation]
+          } else if (type === 'enclosing') {
+            if (unit.part === 'head') {
+              text = enclosingNames[unit.operation] + '('
+            } else if (unit.part === 'comma') {
+              text = ','
+            } else if (unit.part === 'tail') {
+              text = ')'
+            }
+          } else if (type === 'null') {
+            text = <ColorText color="red">null</ColorText>
+          }
+
+          return (
+            <ToggleButton
+              key={index}
+              value={index}
+              sx={{ minWidth: '0', pl: 0.3, pr: 0.3, pt: 1, pb: 1 }}
+              onClick={() => setSUI(index)}
+              disabled={index === sui}
+            >
+              {text}
+            </ToggleButton>
+          )
+        })}
+      </SolidToggleButtonGroup>
+    </Box>
+    <AddUnitBtnGroup addUnit={addUnit} />
+  </>)
+}
+
+function AddUnitBtnGroup({
+  addUnit,
+}: {
+  addUnit: (units: ExpressionUnit[]) => void
+}) {
+  // Three buttons for adding Target, Operation(including Enclosing) and Constant
+  const { t } = useTranslation('page_character')
+  const [show, onShow, onClose] = useBoolState(false)
+  const addTarget = (target: CustomTarget) => {
+    onClose()
+    addUnit([initExpressionUnit({ type: 'target', target })])
+  }
+  const addOperation = (operation: ExpressionOperation) => {
+    if (EnclosingOperations.includes(operation as any)) {
+      addUnit([
+        initExpressionUnit({ type: 'enclosing', operation: operation as any, part: 'head' }),
+        initExpressionUnit({ type: 'null' }),
+        initExpressionUnit({ type: 'enclosing', part: 'tail' }),
+      ])
+    } else {
+      addUnit([initExpressionUnit({ type: 'operation', operation: operation as any })])
+    }
+  }
+  // const addConstant = (value: number) => addUnit([initExpressionUnit({ type: 'constant', value })])
+
+  return (
+    <>
+      <ButtonGroup fullWidth>
+        <Button onClick={onShow}>{t`multiTarget.addNewTarget`}</Button>
+        <Button onClick={onShow}>{t`multiTarget.addConstant`}</Button>
+      </ButtonGroup>
+      <ButtonGroup fullWidth>
+        <Button onClick={() => addOperation('addition')}>+</Button>
+        <Button onClick={() => addOperation('subtraction')}>-</Button>
+        <Button onClick={() => addOperation('multiplication')}>*</Button>
+        <Button onClick={() => addOperation('division')}>/</Button>
+      </ButtonGroup>
+      <ButtonGroup fullWidth>
+        <Button onClick={() => addOperation('minimum')}>min</Button>
+        <Button onClick={() => addOperation('maximum')}>max</Button>
+        <Button onClick={() => addOperation('average')}>avg</Button>
+        <Button onClick={() => addOperation('grouping')}>grouping</Button>
+      </ButtonGroup>
+      <TargetSelectorModal
+        showEmptyTargets
+        show={show}
+        onClose={onClose}
+        setTarget={(target, multi) => addTarget(initCustomTarget(target, multi))}
+        excludeSections={['custom']}
+      />
+    </>
+  )
+}
+
 
 function targetListToExpression(cmt: CustomMultiTarget): CustomMultiTarget {
   const expression: ExpressionUnit[] = []
@@ -499,4 +551,40 @@ function AddCustomTargetBtn({
       />
     </>
   )
+}
+
+function partsFinder(expression: ExpressionUnit[], index: number): number[] {
+  const unit = expression[index]
+  const parts: number[] = [index]
+  if (unit.type !== 'enclosing') return parts
+  const directions: ('up' | 'down')[] = []
+  if (['head', 'comma'].includes(unit.part)) {
+    directions.push('down')
+  }
+  if (['comma', 'tail'].includes(unit.part)) {
+    directions.push('up')
+  }
+  directions.forEach((direction) => {
+    let stack = 0
+    for (let i = index + (direction === 'up' ? -1 : 1); i >= 0 && i < expression.length; i += (direction === 'up' ? -1 : 1)) {
+      const unit_ = expression[i]
+      if (unit_.type !== 'enclosing') continue
+      if (unit_.part === 'head') {
+        if (stack === 0 && direction === 'up') {
+          parts.push(i)
+          break
+        }
+        direction === 'up' ? stack-- : stack++
+      } else if (unit_.part === 'comma') {
+        stack === 0 && parts.push(i)
+      } else if (unit_.part === 'tail') {
+        if (stack === 0 && direction === 'down') {
+          parts.push(i)
+          break
+        }
+        direction === 'up' ? stack++ : stack--
+      }
+    }
+  })
+  return parts.sort((a, b) => a - b)
 }

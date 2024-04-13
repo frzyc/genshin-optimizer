@@ -41,7 +41,9 @@ const wrapperFunc = (e: JSX.Element, key?: string) => (
     {e}
   </Grid>
 )
-export default function CustomTargetDisplay({
+
+export function CustomTargetDisplay({
+  mode,
   customTarget,
   setCustomTarget,
   deleteCustomTarget,
@@ -50,6 +52,7 @@ export default function CustomTargetDisplay({
   setTargetIndex,
   onDup,
 }: {
+  mode?: 'target_list'
   customTarget: CustomTarget
   setCustomTarget: (t: CustomTarget) => void
   deleteCustomTarget: () => void
@@ -57,7 +60,39 @@ export default function CustomTargetDisplay({
   maxRank: number
   setTargetIndex: (ind?: number) => void
   onDup: () => void
-}) {
+}): JSX.Element
+export function CustomTargetDisplay({
+  mode,
+  customTarget,
+  setCustomTarget,
+  deleteCustomTarget,
+  onDup,
+}: {
+  mode: 'expression'
+  customTarget: CustomTarget
+  setCustomTarget: (t: CustomTarget) => void
+  deleteCustomTarget: () => void
+  onDup: () => void
+}): JSX.Element
+export function CustomTargetDisplay({
+  mode = 'target_list',
+  customTarget,
+  setCustomTarget,
+  deleteCustomTarget,
+  rank,
+  maxRank,
+  setTargetIndex,
+  onDup,
+}: {
+  mode?: 'target_list' | 'expression'
+  customTarget: CustomTarget
+  setCustomTarget: (t: CustomTarget) => void
+  deleteCustomTarget: () => void
+  rank?: number
+  maxRank?: number
+  setTargetIndex?: (ind?: number) => void
+  onDup: () => void
+}): JSX.Element {
   const { t } = useTranslation('page_character')
   const {
     character: { key: characterKey },
@@ -96,14 +131,16 @@ export default function CustomTargetDisplay({
     <CardThemed bgt="light" sx={{ display: 'flex' }}>
       <Box sx={{ p: 1, flexGrow: 1 }}>
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-          <CustomNumberInput
-            float
-            startAdornment="x"
-            value={weight}
-            onChange={setWeight}
-            sx={{ borderRadius: 1, pl: 1 }}
-            inputProps={{ sx: { pl: 0.5, width: '2em' }, min: 0 }}
-          />
+          {mode === 'target_list' && (
+            <CustomNumberInput
+              float
+              startAdornment="x"
+              value={weight}
+              onChange={setWeight}
+              sx={{ borderRadius: 1, pl: 1 }}
+              inputProps={{ sx: { pl: 0.5, width: '2em' }, min: 0 }}
+            />
+          )}
           <OptimizationTargetSelector
             optimizationTarget={path}
             setTarget={(path) =>
@@ -115,10 +152,14 @@ export default function CustomTargetDisplay({
               })
             }
             showEmptyTargets
-            targetSelectorModalProps={{
-              flatOnly: true,
-              excludeSections: ['basic', 'custom'],
-            }}
+            targetSelectorModalProps={
+              (mode === 'expression' && {
+                excludeSections: ['custom'],
+              }) || {
+                flatOnly: true,
+                excludeSections: ['basic', 'custom'],
+              }
+            }
           />
           <Box sx={{ flexGrow: 1 }} />
           {node && (
@@ -182,14 +223,16 @@ export default function CustomTargetDisplay({
         orientation="vertical"
         sx={{ borderTopLeftRadius: 0, '*': { flexGrow: 1 } }}
       >
-        <CustomNumberInputButtonGroupWrapper>
-          <CustomNumberInput
-            value={rank}
-            onChange={setTargetIndex}
-            sx={{ pl: 2 }}
-            inputProps={{ sx: { width: '1em' }, min: 1, max: maxRank }}
-          />
-        </CustomNumberInputButtonGroupWrapper>
+        {mode === 'target_list' && (
+          <CustomNumberInputButtonGroupWrapper>
+            <CustomNumberInput
+              value={rank}
+              onChange={setTargetIndex!}
+              sx={{ pl: 2 }}
+              inputProps={{ sx: { width: '1em' }, min: 1, max: maxRank }}
+            />
+          </CustomNumberInputButtonGroupWrapper>
+        )}
         <Button size="small" color="info" onClick={onDup}>
           <ContentCopyIcon />
         </Button>

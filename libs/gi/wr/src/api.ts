@@ -27,7 +27,7 @@ import type { ICharacter } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import { input, tally } from './formula'
 import type { Data, Info, NumNode, ReadNode, StrNode } from './type'
-import { constant, data, infoMut, none, percent, prod, sum } from './utils'
+import { constant, data, infoMut, none, percent, prod, sum, min, max } from './utils'
 
 export function inferInfoMut(data: Data, source?: Info['source']): Data {
   crawlObject(
@@ -340,12 +340,10 @@ export function dataObjForCharacterNew(
         return sum(...parsedParts)
       }
       if (currentOperation === 'minimum') {
-        // TODO: Implement minimum
-        return sum(...parsedParts)
+        return min(...parsedParts)
       }
       if (currentOperation === 'maximum') {
-        // TODO: Implement maximum
-        return sum(...parsedParts)
+        return max(...parsedParts)
       }
       if (currentOperation === 'average') {
         // TODO: Properly implement average
