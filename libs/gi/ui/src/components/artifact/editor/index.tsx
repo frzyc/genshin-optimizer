@@ -75,7 +75,7 @@ import { Trans, useTranslation } from 'react-i18next'
 import { shouldShowDevComponents } from '../../../util'
 import { CustomNumberTextField } from '../../CustomNumberTextField'
 import { LocationAutocomplete } from '../../character'
-import { ArtifactCard } from '../ArtifactCard'
+import { ArtifactCardObj } from '../ArtifactCard'
 import { ArtifactRarityDropdown } from '../ArtifactRarityDropdown'
 import { ArtifactSetAutocomplete } from '../ArtifactSetAutocomplete'
 import { ArtifactSlotDropdown } from '../ArtifactSlotDropdown'
@@ -730,7 +730,7 @@ export function ArtifactEditor({
                         : t`editor.upArt`
                       : t`editor.beforeEdit`}
                   </Typography>
-                  <ArtifactCard artifactObj={old} />
+                  <ArtifactCardObj artifact={old} />
                 </CardThemed>
               </Grid>
               {grmd && (
@@ -754,7 +754,7 @@ export function ArtifactEditor({
                     variant="h6"
                     color="text.secondary"
                   >{t`editor.preview`}</Typography>
-                  <ArtifactCard artifactObj={cArtifact} />
+                  {cArtifact && <ArtifactCardObj artifact={cArtifact} />}
                 </CardThemed>
               </Grid>
             </Grid>

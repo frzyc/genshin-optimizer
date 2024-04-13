@@ -21,6 +21,7 @@ import { dynamicData } from '@genshin-optimizer/gi/solver-tc'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AddArtInfo,
+  ArtifactEditor,
   ArtifactLevelSlider,
   CharacterCardEquipmentRow,
   CharacterCardHeader,
@@ -75,6 +76,8 @@ export default function TabUpopt() {
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
+
+  const [artifactIdToEdit, setArtifactIdToEdit] = useState<string | undefined>()
 
   const activeCharKey = database.teams.getActiveTeamChar(teamId)!.key
 
@@ -592,6 +595,12 @@ export default function TabUpopt() {
             </CardThemed>
             {pagination}
             {noArtifact && <AddArtInfo />}
+            <Suspense fallback={false}>
+              <ArtifactEditor
+                artifactIdToEdit={artifactIdToEdit}
+                cancelEdit={() => setArtifactIdToEdit(undefined)}
+              />
+            </Suspense>
             <Suspense
               fallback={
                 <Skeleton
@@ -603,6 +612,7 @@ export default function TabUpopt() {
               {artifactsToShow.map((art, i) => (
                 <Box key={art.id}>
                   <UpgradeOptChartCard
+                    setArtifactIdToEdit={setArtifactIdToEdit}
                     upgradeOpt={art}
                     thresholds={upOptCalc?.thresholds ?? []}
                     objMax={maxObj0}

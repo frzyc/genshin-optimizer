@@ -8,7 +8,7 @@ import {
   ModalWrapper,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
-import { objKeyMap, toggleArr } from '@genshin-optimizer/common/util'
+import { notEmpty, objKeyMap, toggleArr } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSlotKey,
   LocationCharacterKey,
@@ -20,7 +20,6 @@ import {
 import type {
   AllowLocationsState,
   ArtSetExclusionKey,
-  ICachedArtifact,
 } from '@genshin-optimizer/gi/db'
 import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi/db'
 import {
@@ -58,7 +57,12 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DataContext } from '../../context'
-import { ArtifactCard, ArtifactCardNano, SetInclusionButton } from '../artifact'
+import {
+  ArtifactCard,
+  ArtifactCardNano,
+  ArtifactEditor,
+  SetInclusionButton,
+} from '../artifact'
 import { ArtifactSetBadges } from '../artifact/ArtifactSetBadges'
 import { CharacterName } from '../character'
 import { StatDisplayComponent } from '../character/StatDisplayComponent'
@@ -175,9 +179,10 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   const artifacts = useMemo(
     () =>
       artifactIdsBySlot &&
-      (Object.values(artifactIdsBySlot)
+      Object.values(artifactIdsBySlot)
+        .filter(notEmpty)
         .map((artiId: string) => database.arts.get(artiId))
-        .filter((arti) => arti) as ICachedArtifact[]),
+        .filter(notEmpty),
     [artifactIdsBySlot, database.arts]
   )
 
@@ -511,11 +516,10 @@ function CompareArtifactModal({
   const newArtifact = useArtifact(newId)
   const oldArtifact = useArtifact(oldId)
 
-  const deleteArtifact = useCallback(
-    (id: string) => database.arts.remove(id),
-    [database]
-  )
-
+  const [fixedSlotKey, setFixedSlotKey] = useState<
+    ArtifactSlotKey | undefined
+  >()
+  const [artifactIdToEdit, setArtifactIdToEdit] = useState<string | undefined>()
   return (
     <ModalWrapper
       open={!!newId}
@@ -531,6 +535,14 @@ function CompareArtifactModal({
             gap: 2,
           }}
         >
+          <Suspense fallback={false}>
+            <ArtifactEditor
+              artifactIdToEdit={artifactIdToEdit}
+              cancelEdit={() => setArtifactIdToEdit(undefined)}
+              disableSet
+              fixedSlotKey={fixedSlotKey}
+            />
+          </Suspense>
           {oldId && (
             <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
               <CardThemed bgt="light" sx={{ p: 1 }}>
@@ -545,11 +557,11 @@ function CompareArtifactModal({
               ) : (
                 <ArtifactCard
                   artifactId={oldId}
-                  onDelete={deleteArtifact}
+                  onDelete={() => database.arts.remove(oldId)}
                   mainStatAssumptionLevel={mainStatAssumptionLevel}
-                  editorProps={{
-                    disableSet: true,
-                    fixedSlotKey: oldArtifact?.slotKey,
+                  onEdit={() => {
+                    setArtifactIdToEdit(oldId)
+                    setFixedSlotKey(oldArtifact?.slotKey)
                   }}
                 />
               )}
@@ -574,11 +586,11 @@ function CompareArtifactModal({
             </CardThemed>
             <ArtifactCard
               artifactId={newId}
-              onDelete={deleteArtifact}
+              onDelete={() => database.arts.remove(newId)}
               mainStatAssumptionLevel={mainStatAssumptionLevel}
-              editorProps={{
-                disableSet: true,
-                fixedSlotKey: newArtifact?.slotKey,
+              onEdit={() => {
+                setArtifactIdToEdit(newId)
+                setFixedSlotKey(newArtifact?.slotKey)
               }}
             />
             {!compareFromCharEditor && (

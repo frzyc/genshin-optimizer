@@ -227,14 +227,6 @@ function ArtifactSelectModal({
 }) {
   const { t } = useTranslation('page_character_optimize')
   const database = useDatabase()
-  const clickHandler = useCallback(
-    (id: string) => {
-      onSelect(id)
-      onClose()
-    },
-    [onSelect, onClose]
-  )
-
   const [filterOption, filterOptionDispatch] = useReducer(
     filterOptionReducer,
     initialArtifactFilterOption()
@@ -304,7 +296,13 @@ function ArtifactSelectModal({
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
                 {artifactIdsToShow.map((id) => (
                   <Grid item key={id} xs={1}>
-                    <ArtifactCard artifactId={id} onClick={clickHandler} />
+                    <ArtifactCard
+                      artifactId={id}
+                      onClick={() => {
+                        onSelect(id)
+                        onClose()
+                      }}
+                    />
                   </Grid>
                 ))}
               </Grid>

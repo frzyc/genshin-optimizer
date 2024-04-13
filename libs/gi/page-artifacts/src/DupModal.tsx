@@ -16,7 +16,15 @@ import {
 } from '@mui/material'
 import { useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-export default function DupModal({ show, onHide }) {
+export default function DupModal({
+  setArtifactIdToEdit,
+  show,
+  onHide,
+}: {
+  setArtifactIdToEdit: (id: string | undefined) => void
+  show: boolean
+  onHide: () => void
+}) {
   const { t } = useTranslation('artifact')
   return (
     <ModalWrapper open={show} onClose={onHide}>
@@ -41,13 +49,17 @@ export default function DupModal({ show, onHide }) {
         />
         <Divider />
         <CardContent>
-          <DupContent />
+          <DupContent setArtifactIdToEdit={setArtifactIdToEdit} />
         </CardContent>
       </CardThemed>
     </ModalWrapper>
   )
 }
-function DupContent() {
+function DupContent({
+  setArtifactIdToEdit,
+}: {
+  setArtifactIdToEdit: (id: string | undefined) => void
+}) {
   const { t } = useTranslation('artifact')
   const database = useDatabase()
   const [dbDirty, setDBDirty] = useForceUpdate()
@@ -75,7 +87,6 @@ function DupContent() {
     }
     return dups
   }, [database, dbDirty])
-  const editorProps = useMemo(() => ({}), [])
   return (
     <Stack spacing={2}>
       {dupList.map((dups) => (
@@ -85,9 +96,11 @@ function DupContent() {
               <Box key={dup} sx={{ minWidth: 300 }}>
                 <ArtifactCard
                   artifactId={dup}
-                  canEquip
+                  setLocation={(location) =>
+                    database.arts.set(dup, { location })
+                  }
                   onDelete={() => database.arts.remove(dup)}
-                  editorProps={editorProps}
+                  onEdit={() => setArtifactIdToEdit(dup)}
                 />
               </Box>
             ))}
