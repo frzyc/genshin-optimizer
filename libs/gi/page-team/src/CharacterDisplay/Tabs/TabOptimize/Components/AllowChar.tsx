@@ -36,6 +36,7 @@ import {
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import {
+  CharacterCard,
   CharacterCardPico,
   CharacterRarityToggle,
   ElementToggle,
@@ -604,12 +605,18 @@ function SelectItem({
     ),
     [char?.equippedArtifacts]
   )
+  const characterKey = database.chars.LocationToCharacterKey(locKey)
   return (
     <CardThemed bgt="light" sx={sx}>
       <CharacterCardPico
-        characterKey={database.chars.LocationToCharacterKey(locKey)}
+        characterKey={characterKey}
         onMouseDown={onMouseDown}
         onMouseEnter={onMouseEnter}
+        hoverChild={
+          <Box sx={{ width: 300, m: -1 }}>
+            <CharacterCard hideStats characterKey={characterKey} />
+          </Box>
+        }
       />
       {content}
     </CardThemed>
