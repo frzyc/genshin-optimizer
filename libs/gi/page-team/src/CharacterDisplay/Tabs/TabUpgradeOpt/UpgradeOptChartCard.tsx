@@ -52,7 +52,10 @@ export default function UpgradeOptChartCard(props: Props) {
   return (
     <Grid container spacing={1}>
       <Grid item xs={5} sm={4} md={4} lg={3} xl={3}>
-        <ArtifactCard artifactId={id} onEdit={() => props.setArtifactIdToEdit(id)} />
+        <ArtifactCard
+          artifactId={id}
+          onEdit={() => props.setArtifactIdToEdit(id)}
+        />
       </Grid>
       <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
         <UpgradeOptChartCardGraph {...props} />
