@@ -54,7 +54,7 @@ export function CharacterCompactTalent() {
   return (
     <Box>
       <Grid container spacing={1} mt={-1}>
-        {(['auto', 'skill', 'burst'] as TalentSheetElementKey[]).map((tKey) => (
+        {(['auto', 'skill', 'burst'] as const).map((tKey) => (
           <Grid item xs={4} key={tKey}>
             <Badge
               badgeContent={tlvl[tKey]}
