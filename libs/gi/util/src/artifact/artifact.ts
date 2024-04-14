@@ -7,17 +7,19 @@ import {
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
+  ArtifactSetKey,
   MainStatKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
+  allArtifactSetKeys,
   allSubstatKeys,
   artMaxLevel,
   artSubstatRollData,
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact } from '@genshin-optimizer/gi/good'
-import { allStats } from '@genshin-optimizer/gi/stats'
+import { allStats, getArtSetStat } from '@genshin-optimizer/gi/stats'
 import { getArtifactMeta } from './artifactMeta'
 
 export function artDisplayValue(value: number, unit: Unit): string {
@@ -177,9 +179,13 @@ export function getArtifactEfficiency(
   const { substats, rarity, level } = artifact
   const { artifactMeta } = getArtifactMeta(artifact)
   // Relative to max star, so comparison between different * makes sense.
-  const currentEfficiency = artifact.substats
-    .filter(({ key }) => key && filter.has(key))
-    .reduce((sum, _, i) => sum + (artifactMeta.substats[i]?.efficiency ?? 0), 0)
+  const currentEfficiency = artifact.substats.reduce(
+    (sum, { key }, i) =>
+      key && filter.has(key)
+        ? sum + (artifactMeta.substats[i]?.efficiency ?? 0)
+        : sum,
+    0
+  )
 
   const rollsRemaining = getRollsRemaining(level, rarity)
   const emptySlotCount = substats.filter((s) => !s.key).length
@@ -201,3 +207,12 @@ export function getArtifactEfficiency(
 
   return { currentEfficiency, maxEfficiency }
 }
+
+export const setKeysByRarities = Object.fromEntries(
+  allArtifactRarityKeys.map((r) => [r, [] as ArtifactSetKey[]])
+) as Record<ArtifactRarity, ArtifactSetKey[]>
+allArtifactSetKeys.forEach((setKey) =>
+  setKeysByRarities[
+    Math.max(...getArtSetStat(setKey).rarities) as ArtifactRarity
+  ].push(setKey)
+)

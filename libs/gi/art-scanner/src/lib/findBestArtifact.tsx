@@ -14,8 +14,8 @@ import {
   artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
+import { Translate } from '@genshin-optimizer/gi/i18n'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { ArtifactSetName, ArtifactSlotName } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
   getMainStatDisplayValue,
@@ -285,7 +285,7 @@ export function findBestArtifact(
   }
 
   addText('setKey', textSetKeys, 'Set', (value) => (
-    <ArtifactSetName setKey={value as ArtifactSetKey} />
+    <Translate ns="artifactNames_gen" key18={value as string} />
   ))
   addText('rarity', rarities, 'Rarity', (value) => (
     <>
@@ -293,7 +293,7 @@ export function findBestArtifact(
     </>
   ))
   addText('slotKey', slotKeys, 'Slot', (value) => (
-    <ArtifactSlotName slotKey={value as ArtifactSlotKey} />
+    <Translate ns="artifact" key18={`slotName.${value}`} />
   ))
   addText('mainStatKey', mainStatKeys, 'Main Stat', (value) => (
     <span>{statMap[value as string]}</span>

@@ -4,6 +4,7 @@ import {
   allElementKeys,
   allElementWithPhyKeys,
 } from '@genshin-optimizer/gi/consts'
+import { Translate } from '@genshin-optimizer/gi/i18n'
 import {
   AnemoIcon,
   CryoIcon,
@@ -13,8 +14,7 @@ import {
   HydroIcon,
   PyroIcon,
 } from '@genshin-optimizer/gi/svgicons'
-import type { UIData } from '@genshin-optimizer/gi/ui'
-import { ElementCycle, Translate } from '@genshin-optimizer/gi/ui'
+import type { UIData } from '@genshin-optimizer/gi/uidata'
 import {
   equal,
   greaterEq,
@@ -27,6 +27,7 @@ import {
   target,
 } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
+import ElementCycle from './ElementCycle'
 import { activeCharBuff, condReadNode, st, stg } from './SheetUtil'
 import type { DocumentSection } from './sheet'
 const tr = (strKey: string) => (

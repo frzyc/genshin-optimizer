@@ -3,6 +3,7 @@ import {
   CharacterProvider,
   DatabaseProvider,
   LightConeInventory,
+  LightConeEditor,
   RelicEditor,
 } from '@genshin-optimizer/sr/ui'
 import { ExpandMore } from '@mui/icons-material'
@@ -34,7 +35,6 @@ export default function App() {
               <Stack gap={1} pt={1}>
                 <CharacterSelector />
                 <Character />
-
                 <Container>
                   <Accordion>
                     <AccordionSummary expandIcon={<ExpandMore />}>
@@ -45,7 +45,6 @@ export default function App() {
                     </AccordionDetails>
                   </Accordion>
                 </Container>
-
                 <RelicEditor />
                 <Optimize />
                 <Database />

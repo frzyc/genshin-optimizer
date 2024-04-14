@@ -7,13 +7,13 @@ import {
 import { clamp } from '@genshin-optimizer/common/util'
 import type { RarityKey } from '@genshin-optimizer/gi/consts'
 import type { Artifact } from '@genshin-optimizer/gi/frontend-gql'
+import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   ArtifactSetName,
   ArtifactSetSlotName,
   IconStatDisplay,
   artifactLevelVariant,
-  getVariant,
 } from '@genshin-optimizer/gi/ui'
 import { getMainStatDisplayStr } from '@genshin-optimizer/gi/util'
 import type { Palette } from '@mui/material'
@@ -49,7 +49,7 @@ export default function ArtifactTooltip({
 function ArtifactData({ artifact }: { artifact: Artifact }) {
   const { t: tk } = useTranslation('statKey_gen')
   const { slotKey, level, rarity, mainStatKey, substats, setKey } = artifact
-  const mainVariant = getVariant(mainStatKey)
+  const mainVariant = KeyMap.getVariant(mainStatKey)
   return (
     <Box p={1}>
       <Typography variant="h6">

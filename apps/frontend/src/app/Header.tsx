@@ -1,9 +1,9 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
-import { SillyContext } from '@genshin-optimizer/gi/ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/gi/ui'
+import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import {
   Article,
   Construction,
@@ -12,6 +12,7 @@ import {
   Scanner,
   Settings,
 } from '@mui/icons-material'
+import BookIcon from '@mui/icons-material/Book'
 import GroupsIcon from '@mui/icons-material/Groups'
 import {
   AppBar,
@@ -34,16 +35,17 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
+import type { ReactElement, ReactNode } from 'react'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
 import silly_icon from './silly_icon.png'
 type ITab = {
   i18Key: string
-  icon: Displayable
+  icon: ReactNode
   to: string
   value: string
-  textSuffix?: Displayable
+  textSuffix?: ReactNode
 }
 const artifacts: ITab = {
   i18Key: 'tabs.artifacts',
@@ -58,6 +60,12 @@ const weapons: ITab = {
   to: '/weapons',
   value: 'weapons',
   textSuffix: <WeaponChip key="weaponAdd" />,
+}
+const archive: ITab = {
+  i18Key: 'tabs.archive',
+  icon: <BookIcon />,
+  to: '/archive',
+  value: 'archive',
 }
 const characters: ITab = {
   i18Key: 'tabs.characters',
@@ -170,6 +178,7 @@ const maincontent = [
   weapons,
   characters,
   teams,
+  archive,
   tools,
   scanner,
   doc,
@@ -256,7 +265,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
                 value={value}
                 component={RouterLink}
                 to={to}
-                icon={tooltipIcon}
+                icon={tooltipIcon as ReactElement}
                 iconPosition="start"
                 label={
                   isXL || textSuffix ? (
@@ -281,6 +290,7 @@ const mobileContent = [
   weapons,
   characters,
   teams,
+  archive,
   tools,
   scanner,
   doc,
@@ -301,6 +311,8 @@ function MobileHeader({
 
   const { t } = useTranslation('ui')
   const { silly } = useContext(SillyContext)
+  // Allow navigating back to the teams page when on a specific team.
+  const inTeam = useMatch({ path: '/teams/:teamId/*' })
   return (
     <>
       <AppBar position="fixed" sx={{ bgcolor: '#343a40' }} elevation={0}>
@@ -333,7 +345,7 @@ function MobileHeader({
                   component={RouterLink}
                   to={to}
                   selected={currentTab === value}
-                  disabled={currentTab === value}
+                  disabled={currentTab === value && !inTeam}
                   onClick={handleDrawerToggle}
                 >
                   <ListItemIcon>{icon}</ListItemIcon>

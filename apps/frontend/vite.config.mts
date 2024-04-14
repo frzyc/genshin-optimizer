@@ -7,7 +7,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/guide/troubleshooting.html#this-package-is-esm-only
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
-
+import pkg from '../../package.json' assert { type: 'json' }
 export default defineConfig({
   base: '',
   cacheDir: '../../node_modules/.vite/frontend',
@@ -66,6 +66,7 @@ export default defineConfig({
 
   define: {
     'process.env': process.env,
+    __VERSION__: `"${pkg.version}"`,
   },
 
   // Resolve aliases. If we ever alias to non-libs folder, need to update this
@@ -73,7 +74,7 @@ export default defineConfig({
     alias: [
       // e.g. Resolves '@genshin-optimizer/pando/engine' -> 'libs/pando/engine/src'
       {
-        find: /@genshin-optimizer\/([a-z-]*)\/([a-z-]*)/,
+        find: /@genshin-optimizer\/([a-zA-Z0-9-]*)\/([a-zA-Z0-9-]*)/,
         replacement: resolve('libs/$1/$2/src'),
       },
     ],

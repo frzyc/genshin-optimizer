@@ -1,6 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import type { UIData } from '@genshin-optimizer/gi/ui'
+import type { UIData } from '@genshin-optimizer/gi/uidata'
 import {
   constant,
   equal,

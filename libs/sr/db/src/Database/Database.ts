@@ -5,12 +5,15 @@ import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
 import type { ISroDatabase } from '../Interfaces'
 import { SroSource } from '../Interfaces'
 import { DBMetaEntry } from './DataEntries/DBMetaEntry'
-import { BuildResultDataManager } from './DataManagers/BuildResultData'
-import { BuildSettingDataManager } from './DataManagers/BuildSettingData'
-import { CharMetaDataManager } from './DataManagers/CharMetaData'
-import { CharacterDataManager } from './DataManagers/CharacterData'
-import { LightConeDataManager } from './DataManagers/LightConeData'
-import { RelicDataManager } from './DataManagers/RelicData'
+import { BuildDataManager } from './DataManagers/BuildDataManager'
+import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
+import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
+import { CharacterDataManager } from './DataManagers/CharacterDataManager'
+import { LightConeDataManager } from './DataManagers/LightConeDataManager'
+import { OptConfigDataManager } from './DataManagers/OptConfigDataManager'
+import { RelicDataManager } from './DataManagers/RelicDataManager'
+import { TeamCharacterDataManager } from './DataManagers/TeamCharacterDataManager'
+import { TeamDataManager } from './DataManagers/TeamDataManager'
 import type { ImportResult } from './exim'
 import { newImportResult } from './exim'
 import {
@@ -21,10 +24,13 @@ import {
 export class SroDatabase extends Database {
   relics: RelicDataManager
   chars: CharacterDataManager
+  buildTcs: BuildTcDataManager
   lightCones: LightConeDataManager
-  buildSettings: BuildSettingDataManager
-  buildResult: BuildResultDataManager
+  optConfigs: OptConfigDataManager
   charMeta: CharMetaDataManager
+  builds: BuildDataManager
+  teamChars: TeamCharacterDataManager
+  teams: TeamDataManager
 
   dbMeta: DBMetaEntry
   dbIndex: 1 | 2 | 3 | 4
@@ -44,23 +50,29 @@ export class SroDatabase extends Database {
     // Handle Datamanagers
     this.chars = new CharacterDataManager(this)
 
-    // Light cone needs to be instantiated after character to check for relations
+    // Light cones needs to be instantiated after character to check for relations
     this.lightCones = new LightConeDataManager(this)
 
     // Relics needs to be instantiated after character to check for relations
     this.relics = new RelicDataManager(this)
 
-    this.buildSettings = new BuildSettingDataManager(this)
+    // Depends on relics
+    this.optConfigs = new OptConfigDataManager(this)
 
-    // This should be instantiated after relics, so that invalid relics that persists in build results can be pruned.
-    this.buildResult = new BuildResultDataManager(this)
-
+    this.buildTcs = new BuildTcDataManager(this)
     this.charMeta = new CharMetaDataManager(this)
+
+    this.builds = new BuildDataManager(this)
+
+    // Depends on builds, buildTcs, and optConfigs
+    this.teamChars = new TeamCharacterDataManager(this)
+
+    // Depends on TeamChar
+    this.teams = new TeamDataManager(this)
 
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
 
-    // invalidates character when things change.
     this.chars.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
@@ -77,9 +89,12 @@ export class SroDatabase extends Database {
       this.chars,
       this.lightCones,
       this.relics,
-      this.buildSettings,
-      this.buildResult,
+      this.optConfigs,
+      this.buildTcs,
       this.charMeta,
+      this.builds,
+      this.teamChars,
+      this.teams,
     ] as const
   }
   get dataEntries() {

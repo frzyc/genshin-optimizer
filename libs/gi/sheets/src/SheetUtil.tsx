@@ -4,7 +4,7 @@ import type {
   CharacterSheetKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
-import { SillyContext, Translate } from '@genshin-optimizer/gi/ui'
+import { Translate } from '@genshin-optimizer/gi/i18n'
 import type { Info, NumNode, ReadNode, StrNode } from '@genshin-optimizer/gi/wr'
 import {
   customStringRead,
@@ -13,8 +13,6 @@ import {
   input,
 } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
-import { useContext } from 'react'
-import { useTranslation } from 'react-i18next'
 
 export const st = (
   strKey: string,
@@ -69,25 +67,6 @@ export function trans(
       <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />
     ),
   ]
-}
-export function nameTrans(
-  cKey: CharTransKey,
-  chg: (i18key: string) => ReactNode
-): ReactNode {
-  return <NameTrans cKey={cKey} chg={chg} />
-}
-function NameTrans({
-  cKey,
-  chg,
-}: {
-  cKey: string
-  chg: (i18key: string) => ReactNode
-}) {
-  const { silly } = useContext(SillyContext)
-  const { i18n } = useTranslation('sillyWisher_charNames')
-  if (silly && i18n.exists(`sillyWisher_charNames:${cKey}`))
-    return <Translate ns={`sillyWisher_charNames`} key18={cKey} />
-  else return chg('name') as JSX.Element
 }
 
 export function activeCharBuff(

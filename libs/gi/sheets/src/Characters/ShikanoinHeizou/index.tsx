@@ -323,7 +323,6 @@ const sheet: TalentSheet = {
       value: condSkillHit,
       name: st('hitOp.skill'),
       teamBuff: true,
-      canShow: unequal(target.charKey, input.activeCharKey, 1),
       states: {
         on: {
           fields: [
