@@ -1285,7 +1285,11 @@ function CopyBuildButton({
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
       {/* TODO: Translation */}
-      <ModalWrapper open={showPrompt} onClose={OnHidePrompt}>
+      <ModalWrapper
+        open={showPrompt}
+        onClose={OnHidePrompt}
+        disableRestoreFocus
+      >
         <CardThemed>
           <CardHeader
             title="New Build"
