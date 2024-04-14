@@ -55,6 +55,7 @@ export class DataManager<
     let ind = keys.size
     let candidate = ''
     do {
+      candidate = this.toStorageKey(`${ind++}`)
     } while (keys.has(this.toStorageKey(candidate)))
     return candidate
   }
