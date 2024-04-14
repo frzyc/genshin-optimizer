@@ -96,7 +96,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
-import type { ReactNode } from 'react'
+import type { FormEventHandler, ReactNode } from 'react'
 import React, {
   Suspense,
   memo,
@@ -1262,7 +1262,8 @@ function CopyBuildButton({
   const database = useDatabase()
   const { teamCharId } = useContext(TeamCharacterContext)
 
-  const toLoadout = () => {
+  const toLoadout: FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault()
     database.teamChars.newBuild(teamCharId, {
       name,
       artifactIds,
@@ -1299,20 +1300,22 @@ function CopyBuildButton({
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <Typography>Copy over this build to a new build</Typography>
-            <TextField
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              autoFocus
-              margin="dense"
-              label="Build Name"
-              fullWidth
-            />
-            <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-              <Button onClick={OnHidePrompt}>Cancel</Button>
-              <Button color="success" disabled={!name} onClick={toLoadout}>
-                Create
-              </Button>
-            </Box>
+            <form onSubmit={toLoadout}>
+              <TextField
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                autoFocus
+                margin="dense"
+                label="Build Name"
+                fullWidth
+              />
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
+                <Button onClick={OnHidePrompt}>Cancel</Button>
+                <Button type="submit" color="success" disabled={!name}>
+                  Create
+                </Button>
+              </Box>
+            </form>
           </CardContent>
         </CardThemed>
       </ModalWrapper>
