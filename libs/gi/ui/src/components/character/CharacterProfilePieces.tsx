@@ -30,6 +30,7 @@ import {
   IconButton,
   Typography,
 } from '@mui/material'
+import { grey } from '@mui/material/colors'
 import { useContext } from 'react'
 import { DataContext } from '../../context'
 import { CharacterName } from './Trans'
@@ -112,6 +113,11 @@ export function CharacterCompactConstSelector() {
                 constellation: i === constellation ? i - 1 : i,
               })
             }
+            style={{
+              border: `1px solid ${grey[200]}`,
+              borderRadius: '4px',
+              overflow: 'hidden',
+            }}
           >
             <Box
               component="img"
