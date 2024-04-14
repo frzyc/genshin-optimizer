@@ -1,4 +1,3 @@
-import { defThreads } from '../../thread'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 
@@ -8,7 +7,7 @@ interface IDisplayOptimizeEntry {
 
 function initialTabOptimize(): IDisplayOptimizeEntry {
   return {
-    threads: defThreads,
+    threads: 4,
   }
 }
 
@@ -29,7 +28,7 @@ export class DisplayOptimizeEntry extends DataEntry<
       !Number.isInteger(threads) ||
       threads <= 0
     )
-      threads = defThreads
+      threads = 4
 
     return { threads } as IDisplayOptimizeEntry
   }

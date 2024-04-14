@@ -29,7 +29,7 @@ import type {
   GeneratedBuild,
   ICachedArtifact,
 } from '@genshin-optimizer/gi/db'
-import { defThreads, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
+import { maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useDBMeta,
@@ -156,15 +156,15 @@ export default function TabBuild() {
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
-  const [{ threads = defThreads }, setDisplayOptimize] = useState(
+  const [{ threads }, setDisplayOptimize] = useState(
     database.displayOptimize.get()
   )
   useEffect(
     () => database.displayOptimize.follow((_r, to) => setDisplayOptimize(to)),
     [database, setDisplayOptimize]
   )
-
-  const maxWorkers = threads > defThreads ? defThreads : threads
+  const nativeThreads = navigator?.hardwareConcurrency || 4
+  const maxWorkers = threads > nativeThreads ? nativeThreads : threads
   const setMaxWorkers = useCallback(
     (threads: number) => database.displayOptimize.set({ threads }),
     [database]
@@ -851,7 +851,7 @@ export default function TabBuild() {
             </Typography>
           </MenuItem>
           <Divider />
-          {range(1, defThreads)
+          {range(1, nativeThreads)
             .reverse()
             .map((v) => (
               <MenuItem key={v} onClick={() => setMaxWorkers(v)}>
