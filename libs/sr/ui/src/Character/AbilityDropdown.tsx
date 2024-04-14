@@ -6,7 +6,8 @@ import {
   type CharacterKey,
 } from '@genshin-optimizer/sr/consts'
 import { MenuItem } from '@mui/material'
-import { useCharacter, useCharacterReducer } from '../Hook'
+import { useDatabaseContext } from '../Context'
+import { useCharacter } from '../Hook'
 
 type AbilityDropdownProps = {
   characterKey: CharacterKey | ''
@@ -18,27 +19,30 @@ export function AbilityDropdown({
   abilityKey,
 }: AbilityDropdownProps) {
   const character = useCharacter(characterKey)
-  const charReducer = useCharacterReducer(characterKey)
+  const { database } = useDatabaseContext()
 
   const displayName = abilityKey.charAt(0).toUpperCase() + abilityKey.slice(1)
 
   return (
     <DropdownButton
-      title={`${displayName} Lv. ${character?.[abilityKey] ?? ''}`}
+      title={`${displayName} Lv. ${character?.[abilityKey] ?? 1}`}
       disabled={!character}
     >
-      {range(1, allAbilityLimits[abilityKey][character?.ascension ?? 0]).map(
-        (level) => (
-          <MenuItem
-            key={`${abilityKey}_${level}`}
-            selected={character?.[abilityKey] === level}
-            disabled={character?.[abilityKey] === level}
-            onClick={() => charReducer({ [abilityKey]: level })}
-          >
-            {displayName} Lv. {level}
-          </MenuItem>
-        )
-      )}
+      {!!characterKey &&
+        range(1, allAbilityLimits[abilityKey][character?.ascension ?? 0]).map(
+          (level) => (
+            <MenuItem
+              key={`${abilityKey}_${level}`}
+              selected={character?.[abilityKey] === level}
+              disabled={character?.[abilityKey] === level}
+              onClick={() =>
+                database.chars.set(characterKey, { [abilityKey]: level })
+              }
+            >
+              {displayName} Lv. {level}
+            </MenuItem>
+          )
+        )}
     </DropdownButton>
   )
 }

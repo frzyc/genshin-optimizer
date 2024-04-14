@@ -14,8 +14,7 @@ export default function CharacterSelector() {
 
   const setOrCreateCharacter = useCallback(
     (charKey: CharacterKey | '') => {
-      if (!charKey) return
-      database.chars.getOrCreate(charKey)
+      if (charKey) database.chars.getOrCreate(charKey)
       setCharacterKey(charKey)
     },
     [database.chars, setCharacterKey]

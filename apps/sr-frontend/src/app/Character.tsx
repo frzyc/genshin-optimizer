@@ -1,5 +1,6 @@
 import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
 import { allEidolonKeys, type AscensionKey } from '@genshin-optimizer/sr/consts'
+import type { ICachedSroCharacter } from '@genshin-optimizer/sr/db'
 import { convert, selfTag } from '@genshin-optimizer/sr/formula'
 import {
   AbilityDropdown,
@@ -7,7 +8,7 @@ import {
   useCalcContext,
   useCharacter,
   useCharacterContext,
-  useCharacterReducer,
+  useDatabaseContext,
 } from '@genshin-optimizer/sr/ui'
 import { CheckBox, CheckBoxOutlineBlank, ExpandMore } from '@mui/icons-material'
 import {
@@ -26,10 +27,14 @@ import {
   Typography,
 } from '@mui/material'
 
-export default function Character() {
+export default function CharacterEditor() {
   const { characterKey } = useCharacterContext()
   const character = useCharacter(characterKey)
-  const charReducer = useCharacterReducer(characterKey)
+  const { database } = useDatabaseContext()
+
+  const updateCharacter = (character: Partial<ICachedSroCharacter>) => {
+    characterKey && database.chars.set(characterKey, character)
+  }
 
   const { calc } = useCalcContext()
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
@@ -46,7 +51,10 @@ export default function Character() {
               variant="outlined"
               inputProps={{ min: 1, max: 90 }}
               value={character?.level || 0}
-              onChange={(e) => charReducer({ level: parseInt(e.target.value) })}
+              onChange={(e) =>
+                updateCharacter({ level: parseInt(e.target.value) })
+              }
+              disabled={!character}
             />
             <TextField
               type="number"
@@ -55,15 +63,16 @@ export default function Character() {
               inputProps={{ min: 0, max: 6 }}
               value={character?.ascension || 0}
               onChange={(e) =>
-                charReducer({
+                updateCharacter({
                   ascension: parseInt(e.target.value) as AscensionKey,
                 })
               }
+              disabled={!character}
             />
             <Grid container>
               <Grid item>
                 <DropdownButton
-                  title={`Eidolon Lv. ${character?.eidolon}`}
+                  title={`Eidolon Lv. ${character?.eidolon ?? 0}`}
                   fullWidth={false}
                   disabled={!character}
                 >
@@ -72,7 +81,7 @@ export default function Character() {
                       key={eidolon}
                       selected={character?.eidolon === eidolon}
                       disabled={character?.eidolon === eidolon}
-                      onClick={() => charReducer({ eidolon })}
+                      onClick={() => updateCharacter({ eidolon })}
                     >
                       Eidolon Lv. {eidolon}
                     </MenuItem>
@@ -123,7 +132,7 @@ export default function Character() {
                           <Button
                             color="primary"
                             onClick={() => {
-                              charReducer({
+                              updateCharacter({
                                 bonusAbilities: {
                                   ...character?.bonusAbilities,
                                   [bonusAbility]: !enabled,
@@ -149,7 +158,7 @@ export default function Character() {
                           <Button
                             color="primary"
                             onClick={() => {
-                              charReducer({
+                              updateCharacter({
                                 statBoosts: {
                                   ...character?.statBoosts,
                                   [statBoost]: !enabled,
