@@ -23,12 +23,12 @@ export default function CharacterProfileCard() {
   return (
     <CardThemed bgt="light" sx={{ height: '100%' }}>
       <CharacterCoverArea />
-      <Box>
+      <Box p={1}>
         <CharacterEditor
           characterKey={showEditor ? characterKey : undefined}
           onClose={onHideEditor}
         />
-        <Box sx={{ px: 1 }}>
+        <Box>
           <Button
             fullWidth
             color="info"

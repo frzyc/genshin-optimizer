@@ -30,6 +30,7 @@ import {
   IconButton,
   Typography,
 } from '@mui/material'
+import { grey } from '@mui/material/colors'
 import { useContext } from 'react'
 import { DataContext } from '../../context'
 import { CharacterName } from './Trans'
@@ -53,7 +54,7 @@ export function CharacterCompactTalent() {
   }
   return (
     <Box>
-      <Grid container spacing={1} mt={-1}>
+      <Grid container spacing={1}>
         {(['auto', 'skill', 'burst'] as const).map((tKey) => {
           const badgeContent = tlvl[tKey].toString()
           return (
@@ -112,6 +113,11 @@ export function CharacterCompactConstSelector() {
                 constellation: i === constellation ? i - 1 : i,
               })
             }
+            style={{
+              border: `1px solid ${grey[200]}`,
+              borderRadius: '4px',
+              overflow: 'hidden',
+            }}
           >
             <Box
               component="img"
@@ -157,7 +163,7 @@ function SillyCoverArea({ src, level, ascension }) {
   } = useContext(CharacterContext)
 
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box sx={{ display: 'flex', position: 'relative' }}>
       <Box src={src} component="img" width="100%" height="auto" />
       <Box sx={{ width: '100%', height: '100%' }}>
         <Box
@@ -194,7 +200,7 @@ function CoverArea({ src, level, ascension }) {
   } = useContext(CharacterContext)
 
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box sx={{ display: 'flex', position: 'relative' }}>
       <Box sx={{ position: 'absolute', width: '100%', height: '100%' }}>
         <Typography
           variant="h6"
