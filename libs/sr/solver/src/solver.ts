@@ -19,7 +19,7 @@ export interface ProgressResult {
   numBuildsComputed: number
 }
 
-export class Optimizer {
+export class Solver {
   private calc: Calculator
   private optTarget: Read
   private relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>

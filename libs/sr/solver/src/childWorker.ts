@@ -2,8 +2,8 @@ import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import { compile } from '@genshin-optimizer/pando/engine'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { MAX_BUILDS } from './common'
-import type { BuildResult } from './optimizer'
 import type { RelicStats } from './parentWorker'
+import type { BuildResult } from './solver'
 
 const MAX_BUILDS_TO_SEND = 200_000
 let compiledCalcFunction: (relicStats: RelicStats['stats'][]) => number[]
