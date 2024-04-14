@@ -54,7 +54,7 @@ export function CharacterCompactTalent() {
   }
   return (
     <Box>
-      <Grid container spacing={1} mt={-1}>
+      <Grid container spacing={1}>
         {(['auto', 'skill', 'burst'] as const).map((tKey) => {
           const badgeContent = tlvl[tKey].toString()
           return (
