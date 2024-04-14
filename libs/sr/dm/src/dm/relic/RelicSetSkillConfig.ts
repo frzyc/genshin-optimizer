@@ -17,8 +17,8 @@ export type RelicSetSkillConfig = {
 }
 // TODO: update these once Dim updates the datamine
 type Property = {
-  IMHNJLJDLLH: StatDMKey // PropertyName
-  IEDALJJJBCE: Value // Value
+  KHGMJFPILBD: StatDMKey // PropertyName
+  BOANKOCFAIM: Value // Value
 }
 
 const relicSetSkillConfigSrc = JSON.parse(

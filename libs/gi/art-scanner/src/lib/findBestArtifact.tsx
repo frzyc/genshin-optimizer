@@ -1,5 +1,5 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
-import { getUnitStr, objKeyMap } from '@genshin-optimizer/common/util'
+import { objKeyMap, unit } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
@@ -14,8 +14,8 @@ import {
   artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
-import { Translate } from '@genshin-optimizer/gi/i18n'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import { ArtifactSetName, ArtifactSlotName } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
   getMainStatDisplayValue,
@@ -102,14 +102,14 @@ export function findBestArtifact(
   // Test all *probable* combinations
   for (const slotKey of allArtifactSlotKeys) {
     for (const mainStatKey of artSlotMainKeys[slotKey]) {
-      const mainStatUnit = getUnitStr(mainStatKey)
+      const mainStatUnit = unit(mainStatKey)
       const mainStatFixed = mainStatUnit === '%' ? 1 : 0
       const mainStatOffset = mainStatUnit === '%' ? 0.1 : 1
       const mainStatScore =
         (slotKeys.has(slotKey) ? 1 : 0) +
         (mainStatKeys.has(mainStatKey) ? 1 : 0)
       const relevantMainStatValues = mainStatValues
-        .filter((value) => value.unit !== '%' || mainStatUnit === '%') // Ignore "%" text if key isn't "%"
+        .filter((value) => value.unit !== '%' || unit(mainStatKey) === '%') // Ignore "%" text if key isn't "%"
         .map((value) => value.mainStatValue)
       for (const [rarityString, rarityIndividualScore] of Object.entries(
         rarityRates
@@ -285,7 +285,7 @@ export function findBestArtifact(
   }
 
   addText('setKey', textSetKeys, 'Set', (value) => (
-    <Translate ns="artifactNames_gen" key18={value as string} />
+    <ArtifactSetName setKey={value as ArtifactSetKey} />
   ))
   addText('rarity', rarities, 'Rarity', (value) => (
     <>
@@ -293,7 +293,7 @@ export function findBestArtifact(
     </>
   ))
   addText('slotKey', slotKeys, 'Slot', (value) => (
-    <Translate ns="artifact" key18={`slotName.${value}`} />
+    <ArtifactSlotName slotKey={value as ArtifactSlotKey} />
   ))
   addText('mainStatKey', mainStatKeys, 'Main Stat', (value) => (
     <span>{statMap[value as string]}</span>
@@ -307,8 +307,8 @@ export function findBestArtifact(
             {detectedText(substat, 'Sub Stat', (value) => (
               <>
                 {statMap[value.key]}+
-                {artDisplayValue(value.value, getUnitStr(value.key))}
-                {getUnitStr(value.key)}
+                {artDisplayValue(value.value, unit(value.key))}
+                {unit(value.key)}
               </>
             ))}
           </div>
@@ -318,11 +318,11 @@ export function findBestArtifact(
 
   const valueStrFunc = (value: number) => (
     <>
-      {artDisplayValue(value, getUnitStr(result.mainStatKey))}
-      {getUnitStr(result.mainStatKey)}
+      {artDisplayValue(value, unit(result.mainStatKey))}
+      {unit(result.mainStatKey)}
     </>
   )
-  const toFixed = getUnitStr(result.mainStatKey) === '%' ? 1 : 0
+  const toFixed = unit(result.mainStatKey) === '%' ? 1 : 0
   if (
     mainStatValues.find(
       (value) =>

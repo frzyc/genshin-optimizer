@@ -26,7 +26,7 @@ export function valueString(
   return `${value.toFixed(fixed)}${unit}`
 }
 
-export function getUnitStr<Key extends string>(key: Key): Unit {
+export function unit<Key extends string>(key: Key): Unit {
   if (key.endsWith('_')) return '%'
   return ''
 }

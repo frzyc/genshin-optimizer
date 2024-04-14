@@ -14,7 +14,7 @@ import {
 import { cachedRelic } from '@genshin-optimizer/sr/db'
 import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr/util'
-import AddIcon from '@mui/icons-material/Add'
+import { Add } from '@mui/icons-material'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
 import {
@@ -43,7 +43,7 @@ import { relicReducer } from './reducer'
 // TODO: temporary until relic sheet is implemented
 interface IRelicSheet {
   rarity: readonly RelicRarityKey[]
-  // setEffects: Partial<Record<SetNum, SetEffectEntry>>
+  // setEffects: Dict<SetNum, SetEffectEntry>
   setEffects: any
 }
 const tempRelicSheet: IRelicSheet = {
@@ -315,7 +315,7 @@ export function RelicEditor({ relicIdToEdit = 'new' }: RelicEditorProps) {
           )}
           <Grid>
             <Button
-              startIcon={<AddIcon />}
+              startIcon={<Add />}
               onClick={() => {
                 database.relics.new(relic!)
                 reset()

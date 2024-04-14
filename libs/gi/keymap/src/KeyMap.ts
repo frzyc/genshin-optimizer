@@ -280,4 +280,13 @@ export class KeyMap {
     if (key.includes('heal')) return 'heal'
     return allElementWithPhyKeys.find((e) => key.startsWith(e))
   }
+  /**
+   * @deprecated use @genshin-optimizer/common/util/numDisplay/unit
+   * @param key
+   * @returns
+   */
+  static unit(key = ''): Unit {
+    if (key.endsWith('_')) return '%'
+    return ''
+  }
 }

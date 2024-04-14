@@ -1,7 +1,6 @@
 import type { TagMapNodeEntries } from '../util'
 import ASecretVow from './ASecretVow'
 import Adversarial from './Adversarial'
-import AlongThePassingShore from './AlongThePassingShore'
 import Amber from './Amber'
 import AnInstantBeforeAGaze from './AnInstantBeforeAGaze'
 import Arrows from './Arrows'
@@ -13,7 +12,6 @@ import ButTheBattleIsntOver from './ButTheBattleIsntOver'
 import CarveTheMoonWeaveTheClouds from './CarveTheMoonWeaveTheClouds'
 import Chorus from './Chorus'
 import CollapsingSky from './CollapsingSky'
-import ConcertForTwo from './ConcertForTwo'
 import Cornucopia from './Cornucopia'
 import CruisingInTheStellarSea from './CruisingInTheStellarSea'
 import DanceDanceDance from './DanceDanceDance'
@@ -39,7 +37,6 @@ import InTheNameOfTheWorld from './InTheNameOfTheWorld'
 import InTheNight from './InTheNight'
 import IncessantRain from './IncessantRain'
 import IndeliblePromise from './IndeliblePromise'
-import InherentlyUnjustDestiny from './InherentlyUnjustDestiny'
 import ItsShowtime from './ItsShowtime'
 import LandausChoice from './LandausChoice'
 import Loop from './Loop'
@@ -99,7 +96,6 @@ import WorrisomeBlissful from './WorrisomeBlissful'
 const data: TagMapNodeEntries[] = [
   ASecretVow,
   Adversarial,
-  AlongThePassingShore,
   Amber,
   AnInstantBeforeAGaze,
   Arrows,
@@ -111,7 +107,6 @@ const data: TagMapNodeEntries[] = [
   CarveTheMoonWeaveTheClouds,
   Chorus,
   CollapsingSky,
-  ConcertForTwo,
   Cornucopia,
   CruisingInTheStellarSea,
   DanceDanceDance,
@@ -137,7 +132,6 @@ const data: TagMapNodeEntries[] = [
   InTheNight,
   IncessantRain,
   IndeliblePromise,
-  InherentlyUnjustDestiny,
   ItsShowtime,
   LandausChoice,
   Loop,

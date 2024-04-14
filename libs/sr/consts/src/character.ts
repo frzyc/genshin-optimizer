@@ -2,11 +2,9 @@ export const allGenderKeys = ['F', 'M'] as const
 export type GenderKey = (typeof allGenderKeys)[number]
 
 export const nonTrailblazerCharacterKeys = [
-  'Acheron',
   'Argenti',
   'Arlan',
   'Asta',
-  'Aventurine',
   'Bailu',
   'BlackSwan',
   'Blade',
@@ -16,7 +14,6 @@ export const nonTrailblazerCharacterKeys = [
   'DanHengImbibitorLunae',
   'DrRatio',
   'FuXuan',
-  'Gallagher',
   'Gepard',
   'Guinaifen',
   'Hanya',

@@ -4,7 +4,7 @@ import {
   CardThemed,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
-import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
+import { toPercent, unit } from '@genshin-optimizer/common/util'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { RarityKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -124,11 +124,8 @@ export function WeaponCard({
                   {tk(statKey)}{' '}
                 </Typography>
                 <Typography>
-                  {artDisplayValue(
-                    toPercent(value, statKey),
-                    getUnitStr(statKey)
-                  )}
-                  {getUnitStr(statKey)}
+                  {artDisplayValue(toPercent(value, statKey), unit(statKey))}
+                  {unit(statKey)}
                 </Typography>
               </Box>
             )

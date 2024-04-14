@@ -45,7 +45,7 @@ import { Suspense, useContext, useMemo, useState } from 'react'
 
 import { CalcContext, NodeFieldDisplay } from '@genshin-optimizer/gi/formula-ui'
 import type { Character } from '@genshin-optimizer/gi/frontend-gql'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { getCharData } from '@genshin-optimizer/gi/stats'
 import type { RollColorKey } from '@genshin-optimizer/gi/ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
 import Image from 'next/image'
@@ -197,7 +197,7 @@ function Header({
 }) {
   const gender: GenderKey = 'F' //TODO:
   const { silly } = useContext(SillyContext)
-  const rarity = getCharStat(characterKey).rarity
+  const rarity = getCharData(characterKey).rarity
 
   return (
     <Box

@@ -101,8 +101,6 @@ export enum LocationKey {
     Bennett = "Bennett",
     Candace = "Candace",
     Charlotte = "Charlotte",
-    Chevreuse = "Chevreuse",
-    Chiori = "Chiori",
     Chongyun = "Chongyun",
     Collei = "Collei",
     Cyno = "Cyno",
@@ -115,7 +113,6 @@ export enum LocationKey {
     Fischl = "Fischl",
     Freminet = "Freminet",
     Furina = "Furina",
-    Gaming = "Gaming",
     Ganyu = "Ganyu",
     Gorou = "Gorou",
     HuTao = "HuTao",
@@ -159,7 +156,6 @@ export enum LocationKey {
     Wanderer = "Wanderer",
     Wriothesley = "Wriothesley",
     Xiangling = "Xiangling",
-    Xianyun = "Xianyun",
     Xiao = "Xiao",
     Xingqiu = "Xingqiu",
     Xinyan = "Xinyan",
@@ -184,94 +180,6 @@ export enum SubstatKey {
     enerRech_ = "enerRech_",
     critRate_ = "critRate_",
     critDMG_ = "critDMG_"
-}
-
-export enum CharacterKey {
-    Albedo = "Albedo",
-    Alhaitham = "Alhaitham",
-    Aloy = "Aloy",
-    Amber = "Amber",
-    AratakiItto = "AratakiItto",
-    Baizhu = "Baizhu",
-    Barbara = "Barbara",
-    Beidou = "Beidou",
-    Bennett = "Bennett",
-    Candace = "Candace",
-    Charlotte = "Charlotte",
-    Chevreuse = "Chevreuse",
-    Chiori = "Chiori",
-    Chongyun = "Chongyun",
-    Collei = "Collei",
-    Cyno = "Cyno",
-    Dehya = "Dehya",
-    Diluc = "Diluc",
-    Diona = "Diona",
-    Dori = "Dori",
-    Eula = "Eula",
-    Faruzan = "Faruzan",
-    Fischl = "Fischl",
-    Freminet = "Freminet",
-    Furina = "Furina",
-    Gaming = "Gaming",
-    Ganyu = "Ganyu",
-    Gorou = "Gorou",
-    HuTao = "HuTao",
-    Jean = "Jean",
-    KaedeharaKazuha = "KaedeharaKazuha",
-    Kaeya = "Kaeya",
-    KamisatoAyaka = "KamisatoAyaka",
-    KamisatoAyato = "KamisatoAyato",
-    Kaveh = "Kaveh",
-    Keqing = "Keqing",
-    Kirara = "Kirara",
-    Klee = "Klee",
-    KujouSara = "KujouSara",
-    KukiShinobu = "KukiShinobu",
-    Layla = "Layla",
-    Lisa = "Lisa",
-    Lynette = "Lynette",
-    Lyney = "Lyney",
-    Mika = "Mika",
-    Mona = "Mona",
-    Nahida = "Nahida",
-    Navia = "Navia",
-    Neuvillette = "Neuvillette",
-    Nilou = "Nilou",
-    Ningguang = "Ningguang",
-    Noelle = "Noelle",
-    Qiqi = "Qiqi",
-    RaidenShogun = "RaidenShogun",
-    Razor = "Razor",
-    Rosaria = "Rosaria",
-    SangonomiyaKokomi = "SangonomiyaKokomi",
-    Sayu = "Sayu",
-    Shenhe = "Shenhe",
-    ShikanoinHeizou = "ShikanoinHeizou",
-    Somnia = "Somnia",
-    Sucrose = "Sucrose",
-    Tartaglia = "Tartaglia",
-    Thoma = "Thoma",
-    Tighnari = "Tighnari",
-    Venti = "Venti",
-    Wanderer = "Wanderer",
-    Wriothesley = "Wriothesley",
-    Xiangling = "Xiangling",
-    Xianyun = "Xianyun",
-    Xiao = "Xiao",
-    Xingqiu = "Xingqiu",
-    Xinyan = "Xinyan",
-    YaeMiko = "YaeMiko",
-    Yanfei = "Yanfei",
-    Yaoyao = "Yaoyao",
-    Yelan = "Yelan",
-    Yoimiya = "Yoimiya",
-    YunJin = "YunJin",
-    Zhongli = "Zhongli",
-    TravelerAnemo = "TravelerAnemo",
-    TravelerGeo = "TravelerGeo",
-    TravelerElectro = "TravelerElectro",
-    TravelerDendro = "TravelerDendro",
-    TravelerHydro = "TravelerHydro"
 }
 
 export enum WeaponKey {
@@ -314,7 +222,6 @@ export enum WeaponKey {
     TheFlute = "TheFlute",
     ToukabouShigure = "ToukabouShigure",
     TravelersHandySword = "TravelersHandySword",
-    UrakuMisugiri = "UrakuMisugiri",
     WolfFang = "WolfFang",
     XiphosMoonlight = "XiphosMoonlight",
     Akuoumaru = "Akuoumaru",
@@ -359,7 +266,6 @@ export enum WeaponKey {
     CalamityQueller = "CalamityQueller",
     CrescentPike = "CrescentPike",
     Deathmatch = "Deathmatch",
-    DialoguesOfTheDesertSages = "DialoguesOfTheDesertSages",
     DragonsBane = "DragonsBane",
     DragonspineSpear = "DragonspineSpear",
     EngulfingLightning = "EngulfingLightning",
@@ -424,7 +330,6 @@ export enum WeaponKey {
     BalladOfTheBoundlessBlue = "BalladOfTheBoundlessBlue",
     BlackcliffAgate = "BlackcliffAgate",
     CashflowSupervision = "CashflowSupervision",
-    CranesEchoingCall = "CranesEchoingCall",
     DodocoTales = "DodocoTales",
     EmeraldOrb = "EmeraldOrb",
     EverlastingMoonglow = "EverlastingMoonglow",
@@ -457,6 +362,90 @@ export enum WeaponKey {
     TwinNephrite = "TwinNephrite",
     WanderingEvenstar = "WanderingEvenstar",
     WineAndSong = "WineAndSong"
+}
+
+export enum CharacterKey {
+    Albedo = "Albedo",
+    Alhaitham = "Alhaitham",
+    Aloy = "Aloy",
+    Amber = "Amber",
+    AratakiItto = "AratakiItto",
+    Baizhu = "Baizhu",
+    Barbara = "Barbara",
+    Beidou = "Beidou",
+    Bennett = "Bennett",
+    Candace = "Candace",
+    Charlotte = "Charlotte",
+    Chongyun = "Chongyun",
+    Collei = "Collei",
+    Cyno = "Cyno",
+    Dehya = "Dehya",
+    Diluc = "Diluc",
+    Diona = "Diona",
+    Dori = "Dori",
+    Eula = "Eula",
+    Faruzan = "Faruzan",
+    Fischl = "Fischl",
+    Freminet = "Freminet",
+    Furina = "Furina",
+    Ganyu = "Ganyu",
+    Gorou = "Gorou",
+    HuTao = "HuTao",
+    Jean = "Jean",
+    KaedeharaKazuha = "KaedeharaKazuha",
+    Kaeya = "Kaeya",
+    KamisatoAyaka = "KamisatoAyaka",
+    KamisatoAyato = "KamisatoAyato",
+    Kaveh = "Kaveh",
+    Keqing = "Keqing",
+    Kirara = "Kirara",
+    Klee = "Klee",
+    KujouSara = "KujouSara",
+    KukiShinobu = "KukiShinobu",
+    Layla = "Layla",
+    Lisa = "Lisa",
+    Lynette = "Lynette",
+    Lyney = "Lyney",
+    Mika = "Mika",
+    Mona = "Mona",
+    Nahida = "Nahida",
+    Navia = "Navia",
+    Neuvillette = "Neuvillette",
+    Nilou = "Nilou",
+    Ningguang = "Ningguang",
+    Noelle = "Noelle",
+    Qiqi = "Qiqi",
+    RaidenShogun = "RaidenShogun",
+    Razor = "Razor",
+    Rosaria = "Rosaria",
+    SangonomiyaKokomi = "SangonomiyaKokomi",
+    Sayu = "Sayu",
+    Shenhe = "Shenhe",
+    ShikanoinHeizou = "ShikanoinHeizou",
+    Somnia = "Somnia",
+    Sucrose = "Sucrose",
+    Tartaglia = "Tartaglia",
+    Thoma = "Thoma",
+    Tighnari = "Tighnari",
+    Venti = "Venti",
+    Wanderer = "Wanderer",
+    Wriothesley = "Wriothesley",
+    Xiangling = "Xiangling",
+    Xiao = "Xiao",
+    Xingqiu = "Xingqiu",
+    Xinyan = "Xinyan",
+    YaeMiko = "YaeMiko",
+    Yanfei = "Yanfei",
+    Yaoyao = "Yaoyao",
+    Yelan = "Yelan",
+    Yoimiya = "Yoimiya",
+    YunJin = "YunJin",
+    Zhongli = "Zhongli",
+    TravelerAnemo = "TravelerAnemo",
+    TravelerGeo = "TravelerGeo",
+    TravelerElectro = "TravelerElectro",
+    TravelerDendro = "TravelerDendro",
+    TravelerHydro = "TravelerHydro"
 }
 
 export interface InputArtifact {
@@ -568,6 +557,17 @@ export interface Substat {
     value: number;
 }
 
+export interface Weapon {
+    id: string;
+    genshinUserId: string;
+    key: WeaponKey;
+    level: number;
+    ascension: number;
+    refinement: number;
+    location?: Nullable<LocationKey>;
+    lock: boolean;
+}
+
 export interface Talent {
     auto: number;
     skill: number;
@@ -582,17 +582,6 @@ export interface Character {
     ascension: number;
     constellation: number;
     talent: Talent;
-}
-
-export interface Weapon {
-    id: string;
-    genshinUserId: string;
-    key: WeaponKey;
-    level: number;
-    ascension: number;
-    refinement: number;
-    location?: Nullable<LocationKey>;
-    lock: boolean;
 }
 
 export interface IQuery {

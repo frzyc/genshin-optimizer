@@ -2,8 +2,8 @@ import { AppBar, Box, Skeleton, Typography } from '@mui/material'
 import { grey } from '@mui/material/colors'
 import { Suspense } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import packageInfo from '../../../../package.json'
 
-declare const __VERSION__: string
 export default function Footer() {
   return (
     <Suspense fallback={<Skeleton variant="rectangular" height={64} />}>
@@ -33,7 +33,7 @@ function FooterContent() {
           <Trans
             t={t}
             i18nKey="ui:appVersion"
-            values={{ version: __VERSION__ }}
+            values={{ version: packageInfo.version }}
           >
             Genshin Optimizer Version:
             <a
@@ -44,7 +44,7 @@ function FooterContent() {
               target="_blank"
               rel="noreferrer"
             >
-              {{ version: __VERSION__ } as any}
+              {{ version: packageInfo.version } as TransObject}
             </a>
           </Trans>
         </Typography>

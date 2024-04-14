@@ -1,4 +1,4 @@
-import { getUnitStr, levenshteinDistance } from '@genshin-optimizer/common/util'
+import { levenshteinDistance, unit } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
@@ -100,7 +100,7 @@ export function parseSubstats(texts: string[]): ISubstat[] {
     allSubstatKeys.forEach((key) => {
       const name = statMap[key]
       const regex =
-        getUnitStr(key) === '%'
+        unit(key) === '%'
           ? new RegExp(name + '\\s*\\+\\s*(\\d+[\\.|,]+\\d)%', 'im')
           : new RegExp(name + '\\s*\\+\\s*(\\d+,\\d+|\\d+)($|\\s)', 'im')
       const match = regex.exec(text)

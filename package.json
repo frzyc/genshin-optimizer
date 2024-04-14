@@ -1,6 +1,6 @@
 {
   "name": "genshin-optimizer",
-  "version": "10.5.0",
+  "version": "10.3.3",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -37,7 +37,6 @@
     "@nx/webpack": "16.10.0",
     "@nx/workspace": "16.10.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
-    "@prisma/nextjs-monorepo-workaround-plugin": "^5.12.1",
     "@svgr/webpack": "8.0.1",
     "@swc-node/register": "1.4.2",
     "@swc/cli": "~0.1.62",

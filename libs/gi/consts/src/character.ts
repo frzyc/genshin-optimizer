@@ -1,6 +1,3 @@
-import type { AdditiveReactionKey } from './go'
-import type { AmplifyingReactionKey } from './reaction'
-
 export const allGenderKeys = ['F', 'M'] as const
 export type GenderKey = (typeof allGenderKeys)[number]
 
@@ -233,48 +230,4 @@ export function travelerElement(element: TravelerElementKey): TravelerKey {
   return ('Traveler' +
     element.toUpperCase().slice(0, 1) +
     element.slice(1)) as TravelerKey
-}
-
-export const absorbableEle = [
-  'hydro',
-  'pyro',
-  'cryo',
-  'electro',
-] as ElementKey[]
-
-export const travelerFKeys = [
-  'TravelerAnemoF',
-  'TravelerGeoF',
-  'TravelerElectroF',
-  'TravelerDendroF',
-  'TravelerHydroF',
-] as const
-export const travelerMKeys = [
-  'TravelerAnemoM',
-  'TravelerGeoM',
-  'TravelerElectroM',
-  'TravelerDendroM',
-  'TravelerHydroM',
-] as const
-export const allCharacterSheetKeys = [
-  ...nonTravelerCharacterKeys,
-  ...travelerFKeys,
-  ...travelerMKeys,
-]
-export type CharacterSheetKey = (typeof allCharacterSheetKeys)[number]
-
-export const allowedAmpReactions: Partial<
-  Record<ElementKey, AmplifyingReactionKey[]>
-> = {
-  pyro: ['vaporize', 'melt'],
-  hydro: ['vaporize'],
-  cryo: ['melt'],
-  anemo: ['vaporize', 'melt'],
-}
-export const allowedAdditiveReactions: Partial<
-  Record<ElementKey, AdditiveReactionKey[]>
-> = {
-  dendro: ['spread'],
-  electro: ['aggravate'],
-  anemo: ['aggravate'],
 }

@@ -1,9 +1,9 @@
 import {
   getRandomElementFromArray,
   getRandomIntInclusive,
-  getUnitStr,
   range,
   toPercent,
+  unit,
 } from '@genshin-optimizer/common/util'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import {
@@ -138,7 +138,7 @@ export function roundStat(
   value: number,
   statKey: RelicMainStatKey | RelicSubStatKey
 ) {
-  return getUnitStr(statKey) === '%'
+  return unit(statKey) === '%'
     ? Math.round(value * 10000) / 10000
     : Math.round(value * 100) / 100
 }

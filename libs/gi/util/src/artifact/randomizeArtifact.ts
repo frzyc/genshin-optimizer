@@ -1,7 +1,7 @@
 import {
   getRandomElementFromArray,
   getRandomIntInclusive,
-  getUnitStr,
+  unit,
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
@@ -15,7 +15,7 @@ import {
   allArtifactSetKeys,
   allSubstatKeys,
   artMaxLevel,
-  artSlotMainKeys,
+  artSlotsData,
   artSubstatRollData,
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
@@ -38,7 +38,7 @@ export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
   const slot: ArtifactSlotKey =
     base.slotKey ?? getRandomElementFromArray(data.slots)
   const mainStatKey: MainStatKey =
-    base.mainStatKey ?? getRandomElementFromArray(artSlotMainKeys[slot])
+    base.mainStatKey ?? getRandomElementFromArray(artSlotsData[slot].stats)
   const level =
     base.level ?? getRandomIntInclusive(0, artMaxLevel[rarity as RarityKey])
   const substats: ISubstat[] = [0, 1, 2, 3].map(() => ({ key: '', value: 0 }))
@@ -63,7 +63,7 @@ export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
   }
   for (const substat of substats)
     if (substat.key) {
-      const value = artDisplayValue(substat.value, getUnitStr(substat.key))
+      const value = artDisplayValue(substat.value, unit(substat.key))
       substat.value = parseFloat(
         allStats.art.subRollCorrection[rarity]?.[substat.key]?.[value] ?? value
       )

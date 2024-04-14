@@ -1,7 +1,6 @@
 import {
   deepClone,
   deepFreeze,
-  objKeyMap,
   validateArr,
 } from '@genshin-optimizer/common/util'
 import type {
@@ -14,7 +13,7 @@ import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
-  artSlotMainKeys,
+  artSlotsData,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
@@ -141,7 +140,7 @@ export class OptConfigDataManager extends DataManager<
       // make sure the arrays are not empty
       ;(['sands', 'goblet', 'circlet'] as const).forEach((sk) => {
         if (!mainStatKeys[sk].length)
-          mainStatKeys[sk] = [...artSlotMainKeys[sk]]
+          mainStatKeys[sk] = [...artSlotsData[sk].stats]
       })
     }
 
@@ -193,21 +192,23 @@ export class OptConfigDataManager extends DataManager<
       builds = []
       buildDate = 0
     } else {
-      builds = builds
-        .map((build) => {
-          if (typeof build !== 'object') return undefined
-          const { weaponId, artifactIds: artifactIdsRaw } =
-            build as GeneratedBuild
-          if (!this.database.weapons.get(weaponId)) return undefined
-          const artifactIds = objKeyMap(allArtifactSlotKeys, (slotKey) =>
+      builds = mapFilterInplace(builds, (build) => {
+        if (typeof build !== 'object') return undefined
+        const { weaponId, artifactIds: artifactIdsRaw } =
+          build as GeneratedBuild
+        if (!this.database.weapons.get(weaponId)) return undefined
+        const artifactIds = objKeyMapInplace(
+          allArtifactSlotKeys,
+          (slotKey) =>
             this.database.arts.get(artifactIdsRaw[slotKey])?.slotKey === slotKey
               ? artifactIdsRaw[slotKey]
-              : undefined
-          )
-
-          return { artifactIds, weaponId }
-        })
-        .filter((b) => b) as GeneratedBuild[]
+              : undefined,
+          artifactIdsRaw
+        )
+        return artifactIds === artifactIdsRaw
+          ? build
+          : { artifactIds, weaponId }
+      })
       if (!Number.isInteger(buildDate)) buildDate = 0
     }
     if (typeof useTeammateBuild !== 'boolean') useTeammateBuild = false
@@ -271,9 +272,9 @@ const initialBuildSettings: OptConfig = deepFreeze({
   useExcludedArts: false,
   statFilters: {},
   mainStatKeys: {
-    sands: [...artSlotMainKeys['sands']],
-    goblet: [...artSlotMainKeys['goblet']],
-    circlet: [...artSlotMainKeys['circlet']],
+    sands: [...artSlotsData['sands'].stats],
+    goblet: [...artSlotsData['goblet'].stats],
+    circlet: [...artSlotsData['circlet'].stats],
   },
   optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
@@ -306,4 +307,50 @@ export function handleArtSetExclusion(
     if (!setExclusion.length) delete artSetExclusion[setKey]
   }
   return artSetExclusion
+}
+
+/**
+ * Like `xs.map(f).filter(x=>x)` but if all the returned objects are equal,
+ * the original array is returned
+ *
+ * If `f` returns undefined, the element is removed
+ *
+ * React compares objects by pointer equality, so `xs.map(f).filter(x=>x)`
+ * always causes a rerender
+ *
+ * @template T must not contain undefined
+ */
+function mapFilterInplace<T>(xs: T[], f: (x: T) => T | undefined): T[] {
+  const a: T[] = []
+  let reuse = true
+  for (const x of xs) {
+    const y = f(x)
+    if (y) {
+      a.push(y)
+    }
+    reuse &&= x !== undefined && y === x
+  }
+  return reuse ? xs : a
+}
+
+/**
+ * Like `objKeyMap` but if all the returned objects are equal, the original
+ * object `o` is returned
+ *
+ * React compares objects by pointer equality, so `objKeyMap`
+ * always causes a rerender
+ */
+function objKeyMapInplace<K extends string, T>(
+  ks: readonly K[],
+  f: (k: K) => T,
+  o: Record<K, T>
+): Record<K, T> {
+  const oKeys = Object.keys(o)
+  let reuse = oKeys.length == ks.length && ks.every((k, i) => k === oKeys[i])
+  const r = ks.map((k) => {
+    const y = f(k)
+    reuse &&= y === o[k]
+    return [k, y]
+  })
+  return reuse ? o : Object.fromEntries(r)
 }

@@ -1,13 +1,13 @@
 import type { RarityKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
+
+import { weaponSortKeys } from '../../Interfaces'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 
-export const weaponSortKeys = ['level', 'rarity', 'name'] as const
-export type WeaponSortKey = (typeof weaponSortKeys)[number]
 export interface IDisplayWeapon {
   editWeaponId: string
-  sortType: WeaponSortKey
+  sortType: (typeof weaponSortKeys)[number]
   ascending: boolean
   rarity: RarityKey[]
   weaponType: WeaponTypeKey[]
