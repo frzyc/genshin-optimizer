@@ -2,25 +2,19 @@ import { deepFreeze } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   CharacterLocationKey,
-  RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
-import {
-  allRelicSubStatKeys,
-  allTrailblazerKeys,
-} from '@genshin-optimizer/sr/consts'
+import { allTrailblazerKeys } from '@genshin-optimizer/sr/consts'
+import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
-import { SroDataManager } from '../SroDataManager'
 
 interface ICharMeta {
-  rvFilter: RelicSubStatKey[]
   favorite: boolean
 }
 const initCharMeta: ICharMeta = deepFreeze({
-  rvFilter: [...allRelicSubStatKeys],
   favorite: false,
 })
 
-export class CharMetaDataManager extends SroDataManager<
+export class CharMetaDataManager extends DataManager<
   CharacterKey,
   'charMetas',
   ICharMeta,
@@ -32,11 +26,9 @@ export class CharMetaDataManager extends SroDataManager<
   override validate(obj: any): ICharMeta | undefined {
     if (typeof obj !== 'object') return undefined
 
-    let { rvFilter, favorite } = obj
-    if (!Array.isArray(rvFilter)) rvFilter = []
-    else rvFilter = rvFilter.filter((k) => allRelicSubStatKeys.includes(k))
+    let { favorite } = obj
     if (typeof favorite !== 'boolean') favorite = false
-    return { rvFilter, favorite }
+    return { favorite }
   }
   getTrailblazerCharacterKey(): CharacterKey {
     return (

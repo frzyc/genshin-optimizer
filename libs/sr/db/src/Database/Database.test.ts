@@ -12,7 +12,7 @@ import type {
 import { randomizeRelic } from '@genshin-optimizer/sr/util'
 import type { ICachedLightCone, ISroDatabase } from '../Interfaces'
 import { SroSource } from '../Interfaces'
-import { initialCharacter } from './DataManagers/CharacterData'
+import { initialCharacter } from './DataManagers/CharacterDataManager'
 import { SroDatabase } from './Database'
 
 const dbStorage = new DBLocalStorage(localStorage, 'sro')
@@ -66,16 +66,16 @@ describe('Database', () => {
     expect(
       database.storage.entries.filter(
         ([k]) =>
-          k.startsWith('lightCone_') ||
-          k.startsWith('character_') ||
-          k.startsWith('relic_')
+          k.startsWith('sro_lightCone_') ||
+          k.startsWith('sro_character_') ||
+          k.startsWith('sro_relic_')
       )
     ).toEqual(
       newDB.storage.entries.filter(
         ([k]) =>
-          k.startsWith('lightCone_') ||
-          k.startsWith('character_') ||
-          k.startsWith('relic_')
+          k.startsWith('sro_lightCone_') ||
+          k.startsWith('sro_character_') ||
+          k.startsWith('sro_relic_')
       )
     )
     expect(database.chars.values).toEqual(newDB.chars.values)
@@ -425,7 +425,12 @@ describe('Database', () => {
       const oldId2 = database.relics.new(old2)
       const oldId3 = database.relics.new(old3)
       const oldId4 = database.relics.new(old4)
-      expect([oldId1, oldId2, oldId3, oldId4]).toEqual(['0', '1', '2', '3'])
+      expect([oldId1, oldId2, oldId3, oldId4]).toEqual([
+        'sro_relic_0',
+        'sro_relic_1',
+        'sro_relic_2',
+        'sro_relic_3',
+      ])
 
       const srod: ISrObjectDescription = {
         format: 'SROD',
@@ -466,7 +471,12 @@ describe('Database', () => {
       const oldId2 = database.lightCones.new(old2)
       const oldId3 = database.lightCones.new(old3)
       const oldId4 = database.lightCones.new(old4)
-      expect([oldId1, oldId2, oldId3, oldId4]).toEqual(['0', '1', '2', '3'])
+      expect([oldId1, oldId2, oldId3, oldId4]).toEqual([
+        'sro_lightCone_0',
+        'sro_lightCone_1',
+        'sro_lightCone_2',
+        'sro_lightCone_3',
+      ])
 
       const srod: ISrObjectDescription = {
         format: 'SROD',
@@ -509,7 +519,7 @@ describe('Database', () => {
 
       const oldId1 = database.relics.new(old1)
       const oldId2 = database.relics.new(old2)
-      expect([oldId1, oldId2]).toEqual(['0', '1'])
+      expect([oldId1, oldId2]).toEqual(['sro_relic_0', 'sro_relic_1'])
 
       const srod: ISrObjectDescription = {
         format: 'SROD',
@@ -548,7 +558,7 @@ describe('Database', () => {
 
       const oldId1 = database.lightCones.new(old1)
       const oldId2 = database.lightCones.new(old2)
-      expect([oldId1, oldId2]).toEqual(['0', '1'])
+      expect([oldId1, oldId2]).toEqual(['sro_lightCone_0', 'sro_lightCone_1'])
 
       const srod: ISrObjectDescription = {
         format: 'SROD',

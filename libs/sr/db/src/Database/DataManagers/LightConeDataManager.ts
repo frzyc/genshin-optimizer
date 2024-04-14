@@ -15,12 +15,12 @@ import type {
   ICachedSroCharacter,
   ISroDatabase,
 } from '../../Interfaces'
+import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
-import { SroDataManager } from '../SroDataManager'
 import type { ImportResult } from '../exim'
-import { initialCharacter } from './CharacterData'
+import { initialCharacter } from './CharacterDataManager'
 
-export class LightConeDataManager extends SroDataManager<
+export class LightConeDataManager extends DataManager<
   string,
   'lightCones',
   ICachedLightCone,
