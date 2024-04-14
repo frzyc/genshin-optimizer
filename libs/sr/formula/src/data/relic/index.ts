@@ -12,6 +12,7 @@ import GeniusOfBrilliantStars from './GeniusOfBrilliantStars'
 import GuardOfWutheringSnow from './GuardOfWutheringSnow'
 import HunterOfGlacialForest from './HunterOfGlacialForest'
 import InertSalsotto from './InertSalsotto'
+import IzumoGenseiAndTakamaDivineRealm from './IzumoGenseiAndTakamaDivineRealm'
 import KnightOfPurityPalace from './KnightOfPurityPalace'
 import LongevousDisciple from './LongevousDisciple'
 import MessengerTraversingHackerspace from './MessengerTraversingHackerspace'
@@ -22,6 +23,7 @@ import PenaconyLandOfTheDreams from './PenaconyLandOfTheDreams'
 import PioneerDiverOfDeadWaters from './PioneerDiverOfDeadWaters'
 import PrisonerInDeepConfinement from './PrisonerInDeepConfinement'
 import RutilantArena from './RutilantArena'
+import SigoniaTheUnclaimedDesolation from './SigoniaTheUnclaimedDesolation'
 import SpaceSealingStation from './SpaceSealingStation'
 import SprightlyVonwacq from './SprightlyVonwacq'
 import TaliaKingdomOfBanditry from './TaliaKingdomOfBanditry'
@@ -55,9 +57,11 @@ const data: TagMapNodeEntries[] = [
   FirmamentFrontlineGlamoth,
   FleetOfTheAgeless,
   InertSalsotto,
+  IzumoGenseiAndTakamaDivineRealm,
   PanCosmicCommercialEnterprise,
   PenaconyLandOfTheDreams,
   RutilantArena,
+  SigoniaTheUnclaimedDesolation,
   SpaceSealingStation,
   SprightlyVonwacq,
   TaliaKingdomOfBanditry,
