@@ -163,7 +163,7 @@ function SillyCoverArea({ src, level, ascension }) {
   } = useContext(CharacterContext)
 
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box sx={{ display: 'flex', position: 'relative' }}>
       <Box src={src} component="img" width="100%" height="auto" />
       <Box sx={{ width: '100%', height: '100%' }}>
         <Box
@@ -200,7 +200,7 @@ function CoverArea({ src, level, ascension }) {
   } = useContext(CharacterContext)
 
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box sx={{ display: 'flex', position: 'relative' }}>
       <Box sx={{ position: 'absolute', width: '100%', height: '100%' }}>
         <Typography
           variant="h6"
