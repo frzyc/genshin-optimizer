@@ -1,13 +1,16 @@
 import { Box, Typography } from '@mui/material'
-
-export default function CardHeaderCustom({
+import type { ReactNode } from 'react'
+/**
+ * A Cardheader thta also has space for an avatar element
+ */
+export function CardHeaderCustom({
   avatar,
   title,
   action,
 }: {
-  avatar?: JSX.Element
-  title: JSX.Element
-  action?: JSX.Element
+  avatar?: ReactNode
+  title: ReactNode
+  action?: ReactNode
 }) {
   return (
     <Box display="flex" gap={1} p={2} alignItems="center">

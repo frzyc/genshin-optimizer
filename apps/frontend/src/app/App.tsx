@@ -4,8 +4,16 @@ import {
 } from '@genshin-optimizer/common/database'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
-import { SillyContext, theme, useSilly } from '@genshin-optimizer/gi/ui'
-import { KeyboardArrowUp } from '@mui/icons-material'
+import '@genshin-optimizer/gi/i18n' // import to load translations
+import { theme } from '@genshin-optimizer/gi/theme'
+import {
+  SnowContext,
+  useSilly,
+  useSnow,
+  useTitle,
+} from '@genshin-optimizer/gi/ui'
+import { SillyContext } from '@genshin-optimizer/gi/uidata'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import {
   Box,
   Container,
@@ -19,27 +27,26 @@ import {
   useScrollTrigger,
 } from '@mui/material'
 import React, { Suspense, lazy, useCallback, useMemo, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
-import { SnowContext, useSnow } from './Context/SnowContext'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'
-import useTitle from './ReactHooks/useTitle'
 import Snow from './Snow'
-import './i18n'
 
-const PageHome = lazy(() => import('./PageHome'))
-const PageArtifact = lazy(() => import('./PageArtifact'))
-const PageTools = lazy(() => import('./PageTools'))
-const PageSettings = lazy(() => import('./PageSettings'))
-const PageWeapon = lazy(() => import('./PageWeapon'))
-const PageDocumentation = lazy(() => import('./PageDocumentation'))
-const PageScanner = lazy(() => import('./PageScanner'))
-const PageCharacter = lazy(() => import('./PageCharacter'))
-const PageTeams = lazy(() => import('./PageTeams'))
-const PageTeam = lazy(() => import('./PageTeam'))
+const PageHome = lazy(() => import('@genshin-optimizer/gi/page-home'))
+const PageArtifacts = lazy(() => import('@genshin-optimizer/gi/page-artifacts'))
+const PageTools = lazy(() => import('@genshin-optimizer/gi/page-tools'))
+const PageSettings = lazy(() => import('@genshin-optimizer/gi/page-settings'))
+const PageWeapons = lazy(() => import('@genshin-optimizer/gi/page-weapons'))
+const PageArchive = lazy(() => import('@genshin-optimizer/gi/page-archive'))
+const PageDocumentation = lazy(() => import('@genshin-optimizer/gi/page-doc'))
+const PageScanner = lazy(() => import('@genshin-optimizer/gi/page-scanner'))
+const PageCharacters = lazy(
+  () => import('@genshin-optimizer/gi/page-characters')
+)
+const PageTeams = lazy(() => import('@genshin-optimizer/gi/page-teams'))
+const PageTeam = lazy(() => import('@genshin-optimizer/gi/page-team'))
 
 function ScrollTop({ children }: { children: React.ReactElement }) {
   const trigger = useScrollTrigger({
@@ -118,9 +125,6 @@ function App() {
             <DatabaseContext.Provider value={dbContextObj}>
               <ErrorBoundary>
                 <HashRouter basename="/">
-                  <Suspense fallback={null}>
-                    <MatchTitle />
-                  </Suspense>
                   <Content />
                   <ScrollTop>
                     <Fab
@@ -128,7 +132,7 @@ function App() {
                       size="small"
                       aria-label="scroll back to top"
                     >
-                      <KeyboardArrowUp />
+                      <KeyboardArrowUpIcon />
                     </Fab>
                   </ScrollTop>
                 </HashRouter>
@@ -141,6 +145,7 @@ function App() {
   )
 }
 function Content() {
+  useTitle()
   return (
     <Grid container direction="column" minHeight="100vh" position="relative">
       <Grid item>
@@ -157,13 +162,14 @@ function Content() {
         >
           <Routes>
             <Route index element={<PageHome />} />
-            <Route path="/artifacts" element={<PageArtifact />} />
-            <Route path="/weapons" element={<PageWeapon />} />
-            <Route path="/characters/*" element={<PageCharacter />} />
+            <Route path="/artifacts" element={<PageArtifacts />} />
+            <Route path="/weapons" element={<PageWeapons />} />
+            <Route path="/characters/*" element={<PageCharacters />} />
             <Route path="/teams/*">
               <Route index element={<PageTeams />} />
               <Route path=":teamId/*" element={<PageTeam />} />
             </Route>
+            <Route path="/archive/*" element={<PageArchive />} />
             <Route path="/tools" element={<PageTools />} />
             <Route path="/setting" element={<PageSettings />} />
             <Route path="/doc/*" element={<PageDocumentation />} />
@@ -179,13 +185,5 @@ function Content() {
       </Grid>
     </Grid>
   )
-}
-function MatchTitle() {
-  const { t } = useTranslation('ui')
-  const {
-    params: { page = '' },
-  } = useMatch({ path: '/:page/*' }) ?? { params: { page: '' } }
-  useTitle(useMemo(() => page && t(`tabs.${page}`), [page, t]))
-  return null
 }
 export default App

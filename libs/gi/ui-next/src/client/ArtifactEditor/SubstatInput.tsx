@@ -4,7 +4,7 @@ import {
   SqBadge,
   TextButton,
 } from '@genshin-optimizer/common/ui'
-import { clamp, unit as getUnit } from '@genshin-optimizer/common/util'
+import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import type { RarityKey } from '@genshin-optimizer/gi/consts'
 import {
   allSubstatKeys,
@@ -53,7 +53,7 @@ export default function SubstatInput({
   const { key, value = 0 } = artifact?.substats?.[index] ?? {}
 
   const accurateValue = rolls.reduce((a, b) => a + b, 0)
-  const unit = getUnit(key ?? ''),
+  const unit = getUnitStr(key ?? ''),
     rollNum = rolls.length
 
   let error = '',
