@@ -23,11 +23,11 @@ import type {
   ISroDatabase,
 } from '../../Interfaces'
 import { SroSource } from '../../Interfaces'
+import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
-import { SroDataManager } from '../SroDataManager'
 import type { ImportResult } from '../exim'
 
-export class CharacterDataManager extends SroDataManager<
+export class CharacterDataManager extends DataManager<
   CharacterKey,
   'characters',
   ICachedSroCharacter,

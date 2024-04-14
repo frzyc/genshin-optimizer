@@ -29,11 +29,11 @@ import type {
   ICachedSubstat,
   ISroDatabase,
 } from '../../Interfaces'
+import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
-import { SroDataManager } from '../SroDataManager'
 import type { ImportResult } from '../exim'
 
-export class RelicDataManager extends SroDataManager<
+export class RelicDataManager extends DataManager<
   string,
   'relics',
   ICachedRelic,
