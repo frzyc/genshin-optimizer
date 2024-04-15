@@ -10,8 +10,8 @@ import type {
   IBasicFieldDisplay,
   IFieldDisplay,
 } from '@genshin-optimizer/gi/sheets'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
-import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+import { getCalcDisplay, resolveInfo } from '@genshin-optimizer/gi/uidata'
 import GroupsIcon from '@mui/icons-material/Groups'
 import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, PaletteColor } from '@mui/material'
@@ -109,7 +109,7 @@ export function NodeFieldDisplay({
   component,
   emphasize,
 }: {
-  node: NodeDisplay
+  node: CalcResult
   compareValue?: number
   component?: React.ElementType
   emphasize?: boolean
@@ -128,6 +128,7 @@ export function NodeFieldDisplay({
   const nodeValue = node.value
   let fieldVal = false as ReactNode
   const { unit, fixed, variant, subVariant } = resolveInfo(node.info)
+  const calcDisplay = getCalcDisplay(node)
   if (compareValue !== undefined) {
     const diff = nodeValue - compareValue
     const pctDiff = valueString(diff / compareValue, '%', fixed)
@@ -168,7 +169,7 @@ export function NodeFieldDisplay({
         )}
       </>
     )
-  } else fieldVal = <span>{nodeVStr(node)}</span>
+  } else fieldVal = <span>{calcDisplay.valueString}</span>
 
   return (
     <Box
@@ -194,7 +195,7 @@ export function NodeFieldDisplay({
         {multiDisplay}
         {fieldVal}
       </Typography>
-      {!!node.formula && (
+      {!!calcDisplay.formula && (
         <BootstrapTooltip
           placement="top"
           title={
@@ -217,7 +218,7 @@ export function NodeFieldDisplay({
                     <Divider orientation="vertical" flexItem />
                   </Box>
                 )}
-                <span>{node.formula}</span>
+                <span>{calcDisplay.formula}</span>
               </Suspense>
             </Typography>
           }
@@ -232,7 +233,7 @@ export function NodeFieldDisplay({
     </Box>
   )
 }
-export function NodeFieldDisplayText({ node }: { node: NodeDisplay }) {
+export function NodeFieldDisplayText({ node }: { node: CalcResult }) {
   const { textSuffix, icon, isTeamBuff, variant, name } = resolveInfo(node.info)
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
   return (

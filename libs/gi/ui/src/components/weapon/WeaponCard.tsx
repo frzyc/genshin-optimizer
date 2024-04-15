@@ -14,7 +14,7 @@ import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharStat, getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
   computeUIData,
-  nodeVStr,
+  getCalcDisplay,
   resolveInfo,
 } from '@genshin-optimizer/gi/uidata'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
@@ -186,7 +186,7 @@ export function WeaponCard({
                   <Typography flexGrow={1}>
                     {icon} {name}
                   </Typography>
-                  <Typography>{nodeVStr(node)}</Typography>
+                  <Typography>{getCalcDisplay(node).valueString}</Typography>
                 </Box>
               )
             })}

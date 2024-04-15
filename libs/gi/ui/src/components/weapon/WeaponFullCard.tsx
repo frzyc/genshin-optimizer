@@ -6,10 +6,10 @@ import { useWeapon } from '@genshin-optimizer/gi/db-ui'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import {
   computeUIData,
-  nodeVStr,
+  getCalcDisplay,
   resolveInfo,
 } from '@genshin-optimizer/gi/uidata'
 import { getLevelString } from '@genshin-optimizer/gi/util'
@@ -87,11 +87,11 @@ export function WeaponFullCardObj({
     </CardThemed>
   )
 }
-function WeaponStat({ node }: { node: NodeDisplay }) {
+function WeaponStat({ node }: { node: CalcResult }) {
   const { icon } = resolveInfo(node.info)
   return Number.isNaN(node.value) ? null : (
     <SqBadge color="secondary">
-      {icon} {nodeVStr(node)}
+      {icon} {getCalcDisplay(node).valueString}
     </SqBadge>
   )
 }

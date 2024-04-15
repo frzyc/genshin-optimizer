@@ -9,10 +9,10 @@ import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import type { WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import {
   computeUIData,
-  nodeVStr,
+  getCalcDisplay,
   resolveInfo,
 } from '@genshin-optimizer/gi/uidata'
 import { getLevelString } from '@genshin-optimizer/gi/util'
@@ -191,7 +191,7 @@ export function WeaponCardNanoObj({
     </ConditionalWrapper>
   )
 }
-function WeaponStat({ node }: { node: NodeDisplay }) {
+function WeaponStat({ node }: { node: CalcResult }) {
   const { name, icon } = resolveInfo(node.info)
   if (!name) return null
   return (
@@ -207,7 +207,7 @@ function WeaponStat({ node }: { node: NodeDisplay }) {
         >
           <span>{icon}</span>
         </BootstrapTooltip>
-        <span>{nodeVStr(node)}</span>
+        <span>{getCalcDisplay(node).valueString}</span>
       </Typography>
     </Box>
   )

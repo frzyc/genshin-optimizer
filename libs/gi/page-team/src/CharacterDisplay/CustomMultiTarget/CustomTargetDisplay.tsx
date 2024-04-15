@@ -26,7 +26,7 @@ import {
   StatEditorList,
   infusionVals,
 } from '@genshin-optimizer/gi/ui'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { allInputPremodKeys } from '@genshin-optimizer/gi/wr'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -69,7 +69,7 @@ export default function CustomTargetDisplay({
     (weight) => setCustomTarget({ ...customTarget, weight }),
     [customTarget, setCustomTarget]
   )
-  const node = objPathValue(data.getDisplay(), path) as NodeDisplay | undefined
+  const node = objPathValue(data.getDisplay(), path) as CalcResult | undefined
   const setFilter = useCallback(
     (bonusStats) => setCustomTarget({ ...customTarget, bonusStats }),
     [customTarget, setCustomTarget]
@@ -206,7 +206,7 @@ function ReactionDropdown({
   setReactionMode,
   infusionAura,
 }: {
-  node: NodeDisplay
+  node: CalcResult
   reaction?: AmpReactionKey | AdditiveReactionKey
   setReactionMode: (r?: AmpReactionKey | AdditiveReactionKey) => void
   infusionAura?: InfusionAuraElementKey

@@ -1,7 +1,8 @@
 import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+import { resolveInfo } from '@genshin-optimizer/gi/uidata'
 import TrackChangesIcon from '@mui/icons-material/TrackChanges'
 import {
   Box,
@@ -36,7 +37,7 @@ export function OptimizationTargetDisplay({
   const defaultText = t('targetSelector.selectOptTarget')
 
   const { title, icon, action } = displayHeader ?? {}
-  const node: NodeDisplay | undefined =
+  const node: CalcResult | undefined =
     optimizationTarget &&
     (objPathValue(data.getDisplay(), optimizationTarget) as any)
 

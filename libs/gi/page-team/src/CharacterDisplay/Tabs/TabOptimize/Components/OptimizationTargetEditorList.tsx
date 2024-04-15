@@ -5,7 +5,8 @@ import {
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type { StatFilterSetting, StatFilters } from '@genshin-optimizer/gi/db'
 import { DataContext } from '@genshin-optimizer/gi/ui'
-import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+import { resolveInfo } from '@genshin-optimizer/gi/uidata'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -144,7 +145,7 @@ function OptimizationTargetEditorItem({
   )
   const buttonStyle = { p: 1, flexBasis: 30, flexGrow: 0, flexShrink: 0 }
 
-  const buildConstraintNode: NodeDisplay = objPathValue(
+  const buildConstraintNode: CalcResult = objPathValue(
     data.getDisplay(),
     path ?? []
   )

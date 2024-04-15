@@ -21,7 +21,7 @@ import {
   ReactionToggle,
   TalentDropdown,
 } from '@genshin-optimizer/gi/ui'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
@@ -183,7 +183,7 @@ export default function CharacterTalentPane() {
 }
 function ReactionDisplay() {
   const { data } = useContext(DataContext)
-  const reaction = data.getDisplay().reaction as { [key: string]: NodeDisplay }
+  const reaction = data.getDisplay()['reaction'] as Record<string, CalcResult>
   return (
     <CardThemed bgt="light">
       <CardContent>

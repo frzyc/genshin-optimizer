@@ -56,11 +56,10 @@ import type { ReactNode } from 'react'
 import { useContext } from 'react'
 import { SillyContext } from './SillyContext'
 
-export function nodeVStr(n: NodeDisplay) {
-  const { unit, fixed } = resolveInfo(n.info)
-  return valueString(n.value, unit, fixed)
-}
-
+/**
+ * @deprecated
+ * use CalcResult
+ */
 export interface NodeDisplay<V = number> {
   /** Leave this here to make sure one can use `crawlObject` on hierarchy of `NodeDisplay` */
   operation: true
@@ -73,7 +72,7 @@ export interface NodeDisplay<V = number> {
   formulas: ReactNode[]
 }
 
-export type CalcResult<V> = {
+export type CalcResult<V = number> = {
   value: V
   meta: {
     op: 'const' | 'add' | 'mul' | 'min' | 'max' | 'sum_frac' | 'res'
@@ -81,7 +80,7 @@ export type CalcResult<V> = {
     conds: (readonly string[])[]
   }
   info: Info
-  empty: boolean
+  isEmpty: boolean
 }
 
 type CalcDisplay = {
@@ -90,7 +89,7 @@ type CalcDisplay = {
   formula: ReactNode
 
   prec: number
-  deps: ReactNode[]
+  formulas: ReactNode[]
 }
 
 export class UIData {
@@ -121,12 +120,12 @@ export class UIData {
   }
 
   getDisplay(): {
-    [key: string]: DisplaySub<NodeDisplay>
+    [key: string]: DisplaySub<CalcResult>
   } {
     if (!this.display) this.display = this.getAll(['display'])
     return this.display
   }
-  getTeamBuff(): UIInput<NodeDisplay, NodeDisplay<string>> {
+  getTeamBuff(): UIInput<CalcResult, CalcResult<string>> {
     if (!this.teamBuff) {
       const calculated = this.getAll(['teamBuff']),
         result = {} as any
@@ -144,7 +143,7 @@ export class UIData {
     }
     return this.teamBuff
   }
-  getAll(prefix: string[]): any {
+  private getAll(prefix: string[]): any {
     const result = {}
     for (const data of this.data) {
       crawlObject(
@@ -157,24 +156,11 @@ export class UIData {
     }
     return result
   }
-  /**
-   * @deprecated Use `UIData.newGet` instead
-   */
-  get(node: NumNode): NodeDisplay
-  get(node: StrNode): NodeDisplay<string | undefined>
-  get(node: NumNode | StrNode): NodeDisplay<number | string | undefined>
-  get(node: NumNode | StrNode): NodeDisplay<number | string | undefined> {
-    const old = this.processed.get(node)
-    if (old) return old
-    const result = computeNodeDisplay(this.newGet(node))
-    this.processed.set(node, result)
-    return result
-  }
 
-  newGet(node: NumNode): CalcResult<string | undefined>
-  newGet(node: StrNode): CalcResult<string | undefined>
-  newGet(node: NumNode | StrNode): CalcResult<number | string | undefined>
-  newGet(node: NumNode | StrNode): CalcResult<number | string | undefined> {
+  get(node: NumNode): CalcResult<number>
+  get(node: StrNode): CalcResult<string | undefined>
+  get(node: NumNode | StrNode): CalcResult<number | string | undefined>
+  get(node: NumNode | StrNode): CalcResult<number | string | undefined> {
     const old = this.nodes.get(node)
     if (old) return old
     const result = this.computeNode(node)
@@ -378,7 +364,7 @@ export class UIData {
       value,
       meta: { op: 'const', ops: [], conds: [] },
       info: {},
-      empty: false,
+      isEmpty: false,
     }
   }
   private _accumulate(
@@ -409,7 +395,7 @@ export class UIData {
         conds: operands.flatMap((op) => op.meta.conds),
       },
       info,
-      empty: operands.every((x) => x.empty),
+      isEmpty: operands.every((x) => x.isEmpty),
     }
   }
 }
@@ -460,36 +446,18 @@ function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
   return result
 }
 
-/**
- * @deprecated Use `newGetNodeDisplay` instead
- */
-export function computeNodeDisplay(
-  node: CalcResult<number | string | undefined>
-): NodeDisplay<number | string | undefined> {
-  const newDisplay = newGetNodeDisplay(node)
-  return {
-    operation: true,
-    info: node.info,
-    value: node.value,
-    valueString: newDisplay.valueString,
-    isEmpty: node.empty,
-    formula: newDisplay.formula,
-    formulas: newDisplay.deps,
-  }
-}
-
 const displayKey = Symbol()
-export function newGetNodeDisplay(
+export function getCalcDisplay(
   node: CalcResult<number | string | undefined>
 ): CalcDisplay {
   if ((node as any)[displayKey]) {
     return (node as any)[displayKey]
   }
-  const result: CalcDisplay = newComputeNodeDisplay(node)
+  const result: CalcDisplay = _getCalcDisplay(node)
   ;(node as any)[displayKey] = result
   return result
 }
-function newComputeNodeDisplay(
+function _getCalcDisplay(
   node: CalcResult<number | string | undefined>
 ): CalcDisplay {
   const { info, value } = node
@@ -499,7 +467,7 @@ function newComputeNodeDisplay(
       prec: Infinity,
       valueString: str,
       formula: str,
-      deps: [],
+      formulas: [],
     }
   }
 
@@ -522,7 +490,7 @@ function newComputeNodeDisplay(
       </>
     )
 
-    let deps = result.deps
+    let deps = result.formulas
     const hasFormula = node.meta.op !== 'const'
     if (hasFormula) {
       const assignmentDisplay = (
@@ -542,7 +510,7 @@ function newComputeNodeDisplay(
           <span style={{ fontSize: '85%' }}>{name}</span> {valueString}
         </>
       ),
-      deps,
+      formulas: deps,
     }
   }
   return result
@@ -555,7 +523,7 @@ function computeFormulaDisplay(
   switch (node.meta.op) {
     case 'const': {
       const vStr = valueString(node.value, info.unit, info.fixed)
-      return { prec: Infinity, formula: vStr, valueString: vStr, deps: [] }
+      return { prec: Infinity, formula: vStr, valueString: vStr, formulas: [] }
     }
     case 'add':
     case 'mul':
@@ -564,7 +532,12 @@ function computeFormulaDisplay(
     case 'sum_frac':
     case 'res':
       // TODO: Pando's formulaText example might work here
-      return { prec: Infinity, formula: 'TODO', valueString: 'TODO', deps: [] }
+      return {
+        prec: Infinity,
+        formula: 'TODO',
+        valueString: 'TODO',
+        formulas: [],
+      }
   }
 }
 
@@ -635,6 +608,8 @@ function SourceDisplay({ source }: { source: string | undefined }) {
   return null
 }
 
+// TODO: need to implement?
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function mergeFormulaComponents(components: ReactNode[]): ReactNode {
   return (
     <>
@@ -662,7 +637,7 @@ const illformed: CalcResult<number> = {
   info: {
     pivot: true,
   },
-  empty: false,
+  isEmpty: false,
 }
 const illformedStr: CalcResult<string | undefined> = {
   value: undefined,
@@ -674,7 +649,7 @@ const illformedStr: CalcResult<string | undefined> = {
   info: {
     pivot: true,
   },
-  empty: false,
+  isEmpty: false,
 }
 function makeEmpty(value: number): CalcResult<number>
 function makeEmpty(value: string | undefined): CalcResult<string | undefined>
@@ -692,7 +667,7 @@ function makeEmpty(
       conds: [],
     },
     info: {},
-    empty: true,
+    isEmpty: true,
   }
 }
 

@@ -11,7 +11,7 @@ export function CharacterCardStats() {
   const { name, icon } = resolveInfo(specialNode.info)
   return (
     <Box sx={{ width: '100%' }}>
-      {Object.values(data.getDisplay().basic).map((n) => (
+      {Object.values(data.getDisplay()['basic']).map((n) => (
         <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />
       ))}
       {name && (

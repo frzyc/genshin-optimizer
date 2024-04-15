@@ -6,7 +6,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { objMap } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { customRead } from '@genshin-optimizer/gi/wr'
 import type { MasonryProps } from '@mui/lab'
@@ -45,7 +45,7 @@ function Section({
   displayNs,
   sectionKey,
 }: {
-  displayNs: DisplaySub<NodeDisplay>
+  displayNs: DisplaySub<CalcResult>
   sectionKey: string
 }) {
   const optimizationTarget = useContext(OptimizationTargetContext)
