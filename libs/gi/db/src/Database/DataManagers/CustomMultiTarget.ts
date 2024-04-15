@@ -130,16 +130,12 @@ export function validateCustomExpression(
   ce: unknown
 ): ExpressionUnit[] | undefined {
   if (!Array.isArray(ce)) return undefined
-  // Return undefined if any of the EnclosingOperations are not closed or are closed more often than they are opened
-  const stack: EnclosingOperation[] = []
-  // Need to delete null(operand) unit if there is any operand before or after it
-  // Need to delete null(operation) unit if there is any non-oprand unit before or after it
-  // Need to delete enclosing(comma) unit if there is any non-oprand unit before or after it
-  // Need to delete enclosing(comma) unit if stack is empty or the last enclosing operation is 'grouping'
-  // Need to delete null(operand) unit and null(operation) unit if they are adjacent
-  // Need to delete enclosing(comma) unit and null(operand) unit if they are adjacent
+  // Need to ignore any null and enclosing(comma) units
+  // Need to ignore any enclosing(tail) unit if stack is empty
   // Need to add null(operand) unit between any two non-operand units, and nothing is also considered a non-operand unit
   // Need to add null(operation) or current enclosing(comma) unit between any two operand units
+  // Need to add enclosing(tail) units if stack is not empty
+  const stack: EnclosingOperation[] = []
   let lastUnit = initExpressionUnit({ type: 'null', kind: 'operation' })
   // EnclosingUnit can be treated as an operand only from the outside
   const isOperand = (
@@ -159,9 +155,9 @@ export function validateCustomExpression(
   }
   const expression: ExpressionUnit[] = []
   for (const unit of ce as ExpressionUnit[]) {
-    if (typeof unit !== 'object') return undefined
     const { type } = unit
     if (!ExpressionUnitTypes.includes(type)) return undefined
+    const stack_ = [...stack]
     if (type === 'constant') {
       const { value } = unit
       if (typeof value !== 'number') return undefined
@@ -174,111 +170,30 @@ export function validateCustomExpression(
       if (!NonenclosingOperations.includes(operation)) return undefined
     } else if (type === 'enclosing') {
       const { part } = unit
-      switch (part) {
-        case 'head':
-          if (!EnclosingOperations.includes(unit.operation)) return undefined
-          stack.push(unit.operation)
-          break
-        case 'comma':
-          break
-        case 'tail':
-          if (!stack.pop()) return undefined
-          break
-        default:
-          return undefined
+      if (part === 'head') {
+        if (!EnclosingOperations.includes(unit.operation)) return undefined
+        stack.push(unit.operation)
+      } else if (part === 'comma') {
+        // Condition one
+        continue
+      } else if (part === 'tail') {
+        // Condition two
+        if (!stack.pop()) continue
       }
     } else if (type === 'null') {
       const { kind } = unit
       if (!['operand', 'operation'].includes(kind)) return undefined
+      // Condition one
+      continue
     }
 
-    // Condition one
-    if (
-      type === 'null' &&
-      unit.kind === 'operand' &&
-      isOperand(lastUnit, 'right')
-    )
-      continue
-    if (
-      lastUnit.type === 'null' &&
-      lastUnit.kind === 'operand' &&
-      isOperand(unit, 'left')
-    ) {
-      expression.pop()
-      expression.push(unit)
-      lastUnit = unit
-      continue
-    }
-    // Condition two
-    if (
-      type === 'null' &&
-      unit.kind === 'operation' &&
-      !isOperand(lastUnit, 'right')
-    )
-      continue
-    if (
-      lastUnit.type === 'null' &&
-      lastUnit.kind === 'operation' &&
-      !isOperand(unit, 'left')
-    ) {
-      expression.pop()
-      expression.push(unit)
-      lastUnit = unit
-      continue
-    }
     // Condition three
-    if (
-      type === 'enclosing' &&
-      unit.part === 'comma' &&
-      !isOperand(lastUnit, 'right')
-    )
-      continue
-    if (
-      lastUnit.type === 'enclosing' &&
-      lastUnit.part === 'comma' &&
-      !isOperand(unit, 'left')
-    ) {
-      expression.pop()
-      expression.push(unit)
-      lastUnit = unit
-      continue
-    }
-    // Condition four
-    if (
-      type === 'enclosing' &&
-      unit.part === 'comma' &&
-      (!stack.length || stack[stack.length - 1] === 'grouping')
-    ) {
-      continue
-    }
-    // Condition five
-    if (type === 'null' && lastUnit.type === 'null') {
-      // After the previous conditions, they cannot be of the same kind
-      expression.pop()
-      lastUnit = expression[expression.length - 1] ?? lastUnit
-      continue
-    }
-    // Condition six
-    if (
-      (type === 'enclosing' &&
-        unit.part === 'comma' &&
-        lastUnit.type === 'null') ||
-      (type === 'null' &&
-        lastUnit.type === 'enclosing' &&
-        lastUnit.part === 'comma')
-    ) {
-      expression.pop()
-      lastUnit = expression[expression.length - 1] ?? lastUnit
-      continue
-    }
-    // Condition seven
     if (!isOperand(lastUnit, 'right') && !isOperand(unit, 'left')) {
-      // After the previous conditions, they cannot be null or enclosing(comma) units
       expression.push(initExpressionUnit({ type: 'null', kind: 'operand' }))
     }
-    // Condition eight
+    // Condition four
     if (isOperand(lastUnit, 'right') && isOperand(unit, 'left')) {
-      if (stack.length && stack[stack.length - 1] !== 'grouping') {
+      if (stack_.length && stack_[stack_.length - 1] !== 'grouping') {
         expression.push(
           initExpressionUnit({
             type: 'enclosing',
@@ -293,12 +208,16 @@ export function validateCustomExpression(
     expression.push(unit)
     lastUnit = unit
   }
-  // Condition six
+
+  // Condition three
   if (!isOperand(lastUnit, 'right')) {
     expression.push(initExpressionUnit({ type: 'null', kind: 'operand' }))
   }
 
-  if (stack.length) return undefined
+  // Condition five
+  for (const _ of stack) {
+    expression.push(initExpressionUnit({ type: 'enclosing', part: 'tail' }))
+  }
   return expression
 }
 

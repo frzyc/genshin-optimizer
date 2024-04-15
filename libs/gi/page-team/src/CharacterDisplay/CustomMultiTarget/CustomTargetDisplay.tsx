@@ -65,13 +65,11 @@ export function CustomTargetDisplay({
   mode,
   customTarget,
   setCustomTarget,
-  deleteCustomTarget,
   onDup,
 }: {
   mode: 'expression'
   customTarget: CustomTarget
   setCustomTarget: (t: CustomTarget) => void
-  deleteCustomTarget: () => void
   onDup: () => void
 }): JSX.Element
 export function CustomTargetDisplay({
@@ -87,7 +85,7 @@ export function CustomTargetDisplay({
   mode?: 'target_list' | 'expression'
   customTarget: CustomTarget
   setCustomTarget: (t: CustomTarget) => void
-  deleteCustomTarget: () => void
+  deleteCustomTarget?: () => void
   rank?: number
   maxRank?: number
   setTargetIndex?: (ind?: number) => void
@@ -236,9 +234,11 @@ export function CustomTargetDisplay({
         <Button size="small" color="info" onClick={onDup}>
           <ContentCopyIcon />
         </Button>
-        <Button size="small" color="error" onClick={deleteCustomTarget}>
-          <DeleteForeverIcon />
-        </Button>
+        {mode === 'target_list' && (
+          <Button size="small" color="error" onClick={deleteCustomTarget}>
+            <DeleteForeverIcon />
+          </Button>
+        )}
       </ButtonGroup>
     </CardThemed>
   )
