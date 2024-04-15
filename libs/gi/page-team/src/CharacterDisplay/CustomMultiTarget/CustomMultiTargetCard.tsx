@@ -480,84 +480,88 @@ function ScreenKeyboard({
     addUnits([initExpressionUnit({ type: 'constant', value })])
 
   return (
-    <>
-      <Box display="flex" gap={1}>
-        <Button
-          sx={{ flexGrow: 8 }}
-          onClick={onShow}
-        >{t`multiTarget.addNewTarget`}</Button>
-        <Box sx={{ flexGrow: 1 }}>
-          <ButtonGroup fullWidth>
-            <Button onClick={() => addConstant(newNumber)}>Add</Button>
-            <CustomNumberInputButtonGroupWrapper component={Grid}>
-              <CustomNumberInput
-                float
-                value={newNumber}
-                onChange={(value) => (newNumber = value ?? 0)}
-                inputProps={{ sx: { textAlign: 'center' } }}
-              />
-            </CustomNumberInputButtonGroupWrapper>
-          </ButtonGroup>
+    <Box display="flex" gap={1}>
+      <Box sx={{ flexGrow: 1 }} display="flex" flexDirection="column" gap={1}>
+        <Box display="flex" gap={1}>
+          <Button
+            sx={{ flexGrow: 8 }}
+            onClick={onShow}
+          >{t`multiTarget.addNewTarget`}</Button>
+          <Box sx={{ flexGrow: 1 }}>
+            <ButtonGroup fullWidth>
+              <Button onClick={() => addConstant(newNumber)}>Add</Button>
+              <CustomNumberInputButtonGroupWrapper component={Grid}>
+                <CustomNumberInput
+                  float
+                  value={newNumber}
+                  onChange={(value) => (newNumber = value ?? 0)}
+                  inputProps={{ sx: { textAlign: 'center' } }}
+                />
+              </CustomNumberInputButtonGroupWrapper>
+            </ButtonGroup>
+          </Box>
+          <Box sx={{ flexGrow: 1 }}>
+            <ButtonGroup fullWidth>
+              <Button onClick={() => moveUnit('up')}>←</Button>
+              <Button onClick={() => moveUnit('down')}>→</Button>
+            </ButtonGroup>
+          </Box>
         </Box>
-        <Box sx={{ flexGrow: 1 }}>
-          <ButtonGroup fullWidth>
-            <Button onClick={() => moveUnit('up')}>←</Button>
-            <Button onClick={() => moveUnit('down')}>→</Button>
-          </ButtonGroup>
-        </Box>
-        <Button sx={{ flexGrow: 0 }} onClick={onDelete} color="error">
-          <DeleteForeverIcon />
-        </Button>
-      </Box>
-      <ButtonGroup fullWidth>
-        {(
-          [
-            'addition',
-            'subtraction',
-            'multiplication',
-            'division',
-          ] as NonenclosingOperation[]
-        ).map((operation) => (
-          <Grid item xs={1.5}>
-            <Button onClick={() => addOperation(operation as any)}>
-              {operationSymbols[operation]}
-            </Button>
-          </Grid>
-        ))}
-        {(['minimum', 'maximum', 'average'] as EnclosingOperation[]).map(
-          (operation) => (
+        <ButtonGroup fullWidth>
+          {(
+            [
+              'addition',
+              'subtraction',
+              'multiplication',
+              'division',
+            ] as NonenclosingOperation[]
+          ).map((operation) => (
             <Grid item xs={1.5}>
-              <Button onClick={() => addOperation(operation)}>
-                {enclosingNames[operation]}
+              <Button onClick={() => addOperation(operation as any)}>
+                {operationSymbols[operation]}
               </Button>
             </Grid>
-          )
-        )}
-        <Grid item xs={0.5}>
-          <Button onClick={() => addOperation('grouping')}>{'('}</Button>
-        </Grid>
-        <Grid item xs={0.5}>
-          <Button
-            onClick={() =>
-              addUnits([
-                initExpressionUnit({ type: 'enclosing', part: 'comma' }),
-              ])
-            }
-          >
-            {','}
-          </Button>
-        </Grid>
-        <Grid item xs={0.5}>
-          <Button
-            onClick={() =>
-              addUnits([
-                initExpressionUnit({ type: 'enclosing', part: 'tail' }),
-              ])
-            }
-          >
-            {')'}
-          </Button>
-        </Grid>
+          ))}
+          {(['minimum', 'maximum', 'average'] as EnclosingOperation[]).map(
+            (operation) => (
+              <Grid item xs={1.5}>
+                <Button onClick={() => addOperation(operation)}>
+                  {enclosingNames[operation]}
+                </Button>
+              </Grid>
+            )
+          )}
+          <Grid item xs={0.5}>
+            <Button onClick={() => addOperation('grouping')}>{'('}</Button>
+          </Grid>
+          <Grid item xs={0.5}>
+            <Button
+              onClick={() =>
+                addUnits([
+                  initExpressionUnit({ type: 'enclosing', part: 'comma' }),
+                ])
+              }
+            >
+              {','}
+            </Button>
+          </Grid>
+          <Grid item xs={0.5}>
+            <Button
+              onClick={() =>
+                addUnits([
+                  initExpressionUnit({ type: 'enclosing', part: 'tail' }),
+                ])
+              }
+            >
+              {')'}
+            </Button>
+          </Grid>
+        </ButtonGroup>
+      </Box>
+      <ButtonGroup>
+        <Button size="small" onClick={onDelete} color="error">
+          <DeleteForeverIcon />
+        </Button>
       </ButtonGroup>
       <TargetSelectorModal
         showEmptyTargets
@@ -568,7 +572,7 @@ function ScreenKeyboard({
         }
         excludeSections={['custom']}
       />
-    </>
+    </Box>
   )
 }
 

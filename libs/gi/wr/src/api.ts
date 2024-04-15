@@ -1,4 +1,5 @@
 import {
+  assertUnreachable,
   crawlObject,
   layeredAssignment,
   objKeyMap,
@@ -12,16 +13,16 @@ import type {
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
-import type {
-  CustomTarget,
-  EnclosingOperation,
-  ExpressionOperation,
-  ExpressionUnit,
-  ICachedArtifact,
-  ICachedCharacter,
-  ICachedWeapon,
-  Team,
-  TeamCharacter,
+import {
+  type CustomTarget,
+  type EnclosingOperation,
+  type ExpressionOperation,
+  type ExpressionUnit,
+  type ICachedArtifact,
+  type ICachedCharacter,
+  type ICachedWeapon,
+  type Team,
+  type TeamCharacter,
 } from '@genshin-optimizer/gi/db'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
@@ -255,6 +256,7 @@ export function dataObjForCharacterNew(
       let parts = [[]] as ExpressionUnit[][]
       let currentOperation: ExpressionOperation | undefined
       let lastUnit: ExpressionUnit | undefined
+      let enclosingMode = false
 
       while (expression.length) {
         if (lastUnit) handled.push(lastUnit)
@@ -273,6 +275,7 @@ export function dataObjForCharacterNew(
             if (!handled.length) {
               // Special case for enclosing as first unit
               currentOperation = unit.operation
+              enclosingMode = true
               continue
             }
             stack.push(unit.operation)
@@ -280,6 +283,7 @@ export function dataObjForCharacterNew(
             continue
           }
           if (unit.part === 'comma') {
+            // We can only be here if the stack is empty and currentOperation is an enclosing operation
             parts.push([])
             continue
           }
@@ -288,6 +292,10 @@ export function dataObjForCharacterNew(
           }
         }
         if (unit.type === 'operation') {
+          if (enclosingMode) {
+            parts[parts.length - 1].push(unit)
+            continue
+          }
           // Operations with lower priority first, so they will go to a higher node and will be calculated last
           if (
             !currentOperation ||
@@ -306,7 +314,7 @@ export function dataObjForCharacterNew(
         if (unit.type === 'null' && unit.kind === 'operation') {
           if (!currentOperation) {
             currentOperation = 'addition'
-            parts = [[...handled]]
+            parts = [[...handled], []]
             continue
           }
           if (currentOperation === 'addition') {
@@ -363,7 +371,7 @@ export function dataObjForCharacterNew(
         // TODO: Properly implement grouping
         return sum(constant(0), ...parsedParts)
       }
-      throw new Error(`Unexpected operation ${currentOperation}`)
+      assertUnreachable(currentOperation)
     }
 
     customMultiTargets.forEach(({ name, targets, expression }, i) => {
