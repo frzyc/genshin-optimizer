@@ -58,6 +58,7 @@ import {
   ReactionToggle,
   getTeamData,
   useGlobalError,
+  useNumWorkers,
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import {
@@ -156,19 +157,7 @@ export default function TabBuild() {
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
-  const [{ threads }, setDisplayOptimize] = useState(
-    database.displayOptimize.get()
-  )
-  useEffect(
-    () => database.displayOptimize.follow((_r, to) => setDisplayOptimize(to)),
-    [database, setDisplayOptimize]
-  )
-  const nativeThreads = navigator?.hardwareConcurrency || 4
-  const maxWorkers = threads > nativeThreads ? nativeThreads : threads
-  const setMaxWorkers = useCallback(
-    (threads: number) => database.displayOptimize.set({ threads }),
-    [database]
-  )
+  const [maxWorkers, nativeThreads, setMaxWorkers] = useNumWorkers()
 
   // Clear state when changing characters
   useEffect(() => {

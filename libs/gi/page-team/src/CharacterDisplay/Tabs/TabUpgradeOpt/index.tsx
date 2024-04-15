@@ -53,7 +53,6 @@ import {
   useCallback,
   useContext,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -86,12 +85,6 @@ export default function TabUpopt() {
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
   const [artsDirty] = useForceUpdate()
-  // const [{ equipmentPriority, threads = defThreads }, setDisplayOptimize] = useState(database.displayOptimize.get())
-  const [, setDisplayOptimize] = useState(database.displayOptimize.get())
-  useEffect(
-    () => database.displayOptimize.follow((_r, to) => setDisplayOptimize(to)),
-    [database, setDisplayOptimize]
-  )
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
   const filteredArts = useMemo(() => {
