@@ -138,11 +138,13 @@ export function prod(...values: Num[]): ComputeNode
 export function prod(...values: Num[]): ComputeNode {
   return { operation: 'mul', operands: intoOps(values) }
 }
+/** x1 - x2 - ... */
 export function sub(...values: Opt[]): ComputeNode<OptNode, OptNode>
 export function sub(...values: Num[]): ComputeNode
 export function sub(...values: Num[]): ComputeNode {
   return { operation: 'sub', operands: intoOps(values) }
 }
+/** x1 / x2 / ... */
 export function div(...values: Opt[]): ComputeNode<OptNode, OptNode>
 export function div(...values: Num[]): ComputeNode
 export function div(...values: Num[]): ComputeNode {

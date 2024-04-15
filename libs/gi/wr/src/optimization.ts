@@ -353,7 +353,9 @@ export function constantFold(
           result = formula
           break
         case 'add':
+        case 'sub':
         case 'mul':
+        case 'div':
         case 'max':
         case 'min':
         case 'avg': {
@@ -403,8 +405,6 @@ export function constantFold(
           else result = { operation, operands: formulaOperands }
           break
         }
-        case 'sub':
-        case 'div':
         case 'res':
         case 'sum_frac': {
           const operands = formula.operands.map((x) => fold(x, context))
