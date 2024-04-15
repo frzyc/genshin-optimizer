@@ -55,7 +55,6 @@ import {
 import type { ReactNode } from 'react'
 import { useContext } from 'react'
 import { SillyContext } from './SillyContext'
-const shouldWrap = true
 
 export function nodeVStr(n: NodeDisplay) {
   const { unit, fixed } = resolveInfo(n.info)
@@ -67,10 +66,31 @@ export interface NodeDisplay<V = number> {
   operation: true
   info: Info
   value: V
+  valueString: string
   /** Whether the node fails the conditional test (`threshold_add`, `match`, etc.) or consists solely of empty nodes */
   isEmpty: boolean
   formula?: ReactNode
   formulas: ReactNode[]
+}
+
+export type CalcResult<V> = {
+  value: V
+  meta: {
+    op: 'const' | 'add' | 'mul' | 'min' | 'max' | 'sum_frac' | 'res'
+    ops: CalcResult<number>[]
+    conds: (readonly string[])[]
+  }
+  info: Info
+  empty: boolean
+}
+
+type CalcDisplay = {
+  name?: ReactNode
+  valueString: string
+  formula: ReactNode
+
+  prec: number
+  deps: ReactNode[]
 }
 
 export class UIData {
@@ -78,10 +98,7 @@ export class UIData {
   children = new Map<Data, UIData>()
 
   data: Data[]
-  nodes = new Map<
-    NumNode | StrNode,
-    ContextNodeDisplay<number | string | undefined>
-  >()
+  nodes = new Map<NumNode | StrNode, CalcResult<number | string | undefined>>()
   processed = new Map<
     NumNode | StrNode,
     NodeDisplay<number | string | undefined>
@@ -144,37 +161,26 @@ export class UIData {
   get(node: StrNode): NodeDisplay<string | undefined>
   get(node: NumNode | StrNode): NodeDisplay<number | string | undefined>
   get(node: NumNode | StrNode): NodeDisplay<number | string | undefined> {
-    if (node === undefined) {
-      console.trace('Please report this bug with this trace')
-      return {
-        info: {},
-        operation: true,
-        value: undefined,
-        isEmpty: true,
-        formulas: [],
-      }
-    }
     const old = this.processed.get(node)
     if (old) return old
-
     const result = computeNodeDisplay(this.computeNode(node))
     this.processed.set(node, result)
-    // if (result.info.subVariant) console.log(result.info)
     return result
   }
-  private computeNode(node: NumNode): ContextNodeDisplay
-  private computeNode(node: StrNode): ContextNodeDisplay<string | undefined>
+
+  private computeNode(node: NumNode): CalcResult<number>
+  private computeNode(node: StrNode): CalcResult<string | undefined>
   private computeNode(
     node: NumNode | StrNode
-  ): ContextNodeDisplay<number | string | undefined>
+  ): CalcResult<number | string | undefined>
   private computeNode(
     node: NumNode | StrNode
-  ): ContextNodeDisplay<number | string | undefined> {
+  ): CalcResult<number | string | undefined> {
     const old = this.nodes.get(node)
     if (old) return old
 
     const { operation, info } = node
-    let result: ContextNodeDisplay<number | string | undefined>
+    let result: CalcResult<number | string | undefined>
     switch (operation) {
       case 'add':
       case 'mul':
@@ -224,13 +230,13 @@ export class UIData {
       // if (info.key) result.info.pivot = true
 
       if (asConst) {
-        delete result.formula
-        delete result.assignment
-        result.dependencies = new Set()
+        result.meta = {
+          op: 'const',
+          ops: [],
+          conds: [],
+        }
       }
-      if (result.info.pivot || !result.formula) result.mayNeedWrapping = false
     }
-    createDisplay(result)
 
     this.nodes.set(node, result)
     return result
@@ -243,25 +249,21 @@ export class UIData {
   }
   private readFirst(
     path: readonly string[]
-  ): ContextNodeDisplay<number | string | undefined> | undefined {
+  ): CalcResult<number | string | undefined> | undefined {
     const data = this.data
       .map((x) => objPathValue(x, path) as NumNode | StrNode)
       .find((x) => x)
     return data && this.computeNode(data)
   }
 
-  private _prio(
-    nodes: readonly StrNode[]
-  ): ContextNodeDisplay<string | undefined> {
+  private _prio(nodes: readonly StrNode[]): CalcResult<string | undefined> {
     const first = nodes.find(
       (node) => this.computeNode(node).value !== undefined
     )
     return first ? this.computeNode(first) : illformedStr
   }
-  private _small(
-    nodes: readonly StrNode[]
-  ): ContextNodeDisplay<string | undefined> {
-    let smallest: ContextNodeDisplay<string | undefined> | undefined = undefined
+  private _small(nodes: readonly StrNode[]): CalcResult<string | undefined> {
+    let smallest: CalcResult<string | undefined> | undefined = undefined
     for (const node of nodes) {
       const candidate = this.computeNode(node)
       if (
@@ -274,27 +276,31 @@ export class UIData {
   }
   private _read(
     node: ReadNode<number | string | undefined>
-  ): ContextNodeDisplay<number | string | undefined> {
+  ): CalcResult<number | string | undefined> {
     const { path } = node
+    let result: CalcResult<number | string | undefined>
     if (node.accu === undefined) {
-      return (
+      result =
         this.readFirst(path) ??
         (node.type === 'string' ? illformedStr : illformed)
-      )
     } else {
       const nodes = this.prereadAll(path)
-      if (nodes.length === 1) return this.computeNode(nodes[0])
-      return node.accu === 'small'
-        ? this._small(nodes as StrNode[])
-        : this._accumulate(
-            node.accu,
-            nodes.map((x) => this.computeNode(x)) as ContextNodeDisplay[]
-          )
+      if (nodes.length === 1) result = this.computeNode(nodes[0])
+      result =
+        node.accu === 'small'
+          ? this._small(nodes as StrNode[])
+          : this._accumulate(
+              node.accu,
+              (nodes as NumNode[]).map((x) => this.computeNode(x))
+            )
     }
+    const meta = { ...result.meta, path }
+    if (path[0] === 'conditional') meta.conds = [path, ...meta.conds]
+    return { ...result, meta }
   }
   private _lookup(
     node: LookupNode<NumNode | StrNode>
-  ): ContextNodeDisplay<number | string | undefined> {
+  ): CalcResult<number | string | undefined> {
     const key = this.computeNode(node.operands[0]).value
     const selected = node.table[key!] ?? node.operands[1]
     if (!selected) throw new Error(`Lookup Fail with key ${key}`)
@@ -302,7 +308,7 @@ export class UIData {
   }
   private _match(
     node: MatchNode<StrNode | NumNode, StrNode | NumNode>
-  ): ContextNodeDisplay<number | string | undefined> {
+  ): CalcResult<number | string | undefined> {
     const [v1Node, v2Node, matchNode, unmatchNode] = node.operands
     const v1 = this.computeNode(v1Node),
       v2 = this.computeNode(v2Node)
@@ -315,7 +321,7 @@ export class UIData {
   }
   private _threshold(
     node: ThresholdNode<NumNode | StrNode>
-  ): ContextNodeDisplay<number | string | undefined> {
+  ): CalcResult<number | string | undefined> {
     const [valueNode, thresholdNode, pass, fail] = node.operands
     const value = this.computeNode(valueNode),
       threshold = this.computeNode(thresholdNode)
@@ -333,7 +339,7 @@ export class UIData {
   }
   private _data(
     node: DataNode<NumNode | StrNode>
-  ): ContextNodeDisplay<number | string | undefined> {
+  ): CalcResult<number | string | undefined> {
     let child = this.children.get(node.data)
     if (!child) {
       child = new UIData(node.data, node.reset ? this.origin : this)
@@ -341,44 +347,31 @@ export class UIData {
     }
     return child.computeNode(node.operands[0])
   }
-  private _compute(node: ComputeNode): ContextNodeDisplay {
+  private _compute(node: ComputeNode): CalcResult<number> {
     const { operation, operands } = node
     return this._accumulate(
       operation,
       operands.map((x) => this.computeNode(x))
     )
   }
-  private _subscript(node: SubscriptNode<number>): ContextNodeDisplay {
+  private _subscript(node: SubscriptNode<number>): CalcResult<number> {
     const operand = this.computeNode(node.operands[0])
     const value = node.list[operand.value] ?? NaN
     return this._constant(value)
   }
-  private _constant<V>(value: V): ContextNodeDisplay<V> {
+  private _constant<V>(value: V): CalcResult<V> {
     return {
-      info: {},
       value,
+      meta: { op: 'const', ops: [], conds: [] },
+      info: {},
       empty: false,
-      mayNeedWrapping: false,
-      dependencies: new Set(),
     }
   }
   private _accumulate(
     operation: ComputeNode['operation'],
-    operands: ContextNodeDisplay[]
-  ): ContextNodeDisplay {
-    let info: Info | undefined
-    switch (operation) {
-      case 'add':
-      case 'mul':
-      case 'min':
-      case 'max':
-      case 'res':
-      case 'sum_frac':
-        info = accumulateInfo(operands)
-        break
-      default:
-        assertUnreachable(operation)
-    }
+    operands: CalcResult<number>[]
+  ): CalcResult<number> {
+    const info = accumulateInfo(operands)
     switch (operation) {
       case 'add':
       case 'mul':
@@ -394,115 +387,19 @@ export class UIData {
       }
     }
 
-    let formula: { display: ReactNode; dependencies: ReactNode[] }
-    let mayNeedWrapping = false
-    switch (operation) {
-      case 'max':
-        formula = fStr`Max( ${{ operands }} )`
-        break
-      case 'min':
-        formula = fStr`Min( ${{ operands }} )`
-        break
-      case 'add':
-        formula = fStr`${{ operands, separator: ' + ' }}`
-        break
-      case 'mul':
-        formula = fStr`${{
-          operands,
-          separator: ' * ',
-          shouldWrap: operands.length > 1,
-        }}`
-        break
-      case 'sum_frac':
-        formula = fStr`${{ operands: [operands[0]], shouldWrap }} / ( ${{
-          operands,
-          separator: ' + ',
-        }} )`
-        break
-      case 'res': {
-        const base = operands[0].value
-        if (base < 0) {
-          formula = fStr`100% - ${{ operands, shouldWrap }} / 2`
-          mayNeedWrapping = true
-        } else if (base >= 0.75)
-          formula = fStr`100% / ( ${{ operands, shouldWrap }} * 4 + 100% )`
-        else {
-          formula = fStr`100% - ${{ operands, shouldWrap }}`
-          mayNeedWrapping = true
-        }
-        break
-      }
-      default:
-        assertUnreachable(operation)
-    }
-    switch (operation) {
-      case 'add':
-      case 'mul':
-        if (operands.length <= 1)
-          mayNeedWrapping = operands[0]?.mayNeedWrapping ?? true
-        else if (operation === 'add') mayNeedWrapping = true
-    }
-
-    const value = allOperations[operation](operands.map((x) => x.value))
-    const dependencies = new Set([
-      ...operands.flatMap((x) =>
-        x.info.pivot && x.assignment
-          ? [x.assignment, ...x.dependencies]
-          : [...x.dependencies]
-      ),
-    ])
-    const result: ContextNodeDisplay = {
+    return {
+      value: allOperations[operation](operands.map((x) => x.value)),
+      meta: {
+        op: operation,
+        ops: operands,
+        conds: operands.flatMap((op) => op.meta.conds),
+      },
       info,
-      formula: formula.display,
       empty: operands.every((x) => x.empty),
-      value,
-      mayNeedWrapping,
-      dependencies,
     }
-    return result
   }
 }
-type ContextNodeDisplayList = {
-  operands: ContextNodeDisplay[]
-  separator?: string
-  shouldWrap?: boolean
-}
-function fStr(
-  strings: TemplateStringsArray,
-  ...list: ContextNodeDisplayList[]
-): { display: ReactNode; dependencies: ReactNode[] } {
-  const dependencies = new Set<ReactNode>()
-  const predisplay: ReactNode[] = []
-
-  strings.forEach((string, i) => {
-    predisplay.push(string)
-
-    const key = list[i]
-    if (key) {
-      const { operands, shouldWrap, separator = ', ' } = key
-      operands.forEach((item, i, array) => {
-        let itemFormula: ReactNode
-        if (!item.info.pivot && item.formula) itemFormula = item.formula
-        else itemFormula = createFormulaComponent(item)
-
-        if (shouldWrap && item.mayNeedWrapping) {
-          predisplay.push('( ')
-          predisplay.push(itemFormula)
-          predisplay.push(' )')
-        } else {
-          predisplay.push(itemFormula)
-        }
-        if (i + 1 < array.length) predisplay.push(separator)
-        item.dependencies.forEach((x) => dependencies.add(x))
-      })
-    }
-  })
-  return {
-    display: mergeFormulaComponents(predisplay),
-    dependencies: [...dependencies],
-  }
-}
-function accumulateInfo<V>(operands: ContextNodeDisplay<V>[]): Info {
+function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
   function score(variant: Required<Info>['variant']) {
     switch (variant) {
       case 'overloaded':
@@ -541,22 +438,115 @@ function accumulateInfo<V>(operands: ContextNodeDisplay<V>[]): Info {
     operands.flatMap((x) => [x.info.variant!, x.info.subVariant!])
   )
   variants.delete(undefined!)
-  const sorted = [...variants].sort((a, b) => score(a) - score(b)),
-    result: Info = {}
+  const sorted = [...variants].sort((a, b) => score(a) - score(b))
+  const result: Info = {}
   if (sorted.length) result.variant = sorted.pop()
   if (sorted.length) result.subVariant = sorted.pop()
   else result.subVariant = result.variant
   return result
 }
-function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
-  const { info, dependencies, value, formula, assignment, empty } = node
+
+export function computeNodeDisplay(
+  node: CalcResult<number | string | undefined>
+): NodeDisplay<number | string | undefined> {
+  const newDisplay = newGetNodeDisplay(node)
   return {
     operation: true,
-    info,
-    value,
-    isEmpty: empty,
-    formula,
-    formulas: [...(assignment ? [assignment] : []), ...dependencies],
+    info: node.info,
+    value: node.value,
+    valueString: newDisplay.valueString,
+    isEmpty: node.empty,
+    formula: newDisplay.formula,
+    formulas: newDisplay.deps,
+  }
+}
+
+const displayKey = Symbol()
+export function newGetNodeDisplay(
+  node: CalcResult<number | string | undefined>
+): CalcDisplay {
+  if ((node as any)[displayKey]) {
+    return (node as any)[displayKey]
+  }
+  const result: CalcDisplay = newComputeNodeDisplay(node)
+  ;(node as any)[displayKey] = result
+  return result
+}
+function newComputeNodeDisplay(
+  node: CalcResult<number | string | undefined>
+): CalcDisplay {
+  const { info, value } = node
+  if (typeof value !== 'number') {
+    const str = value ?? ''
+    return {
+      prec: Infinity,
+      valueString: str,
+      formula: str,
+      deps: [],
+    }
+  }
+
+  const infoExtra = resolveInfo(info)
+  const { name, prefix, source, variant } = infoExtra
+  const result = computeFormulaDisplay(node as CalcResult<number>, infoExtra)
+  if (node.info.pivot && node.info.path) {
+    const prefixDisplay = prefix && !source ? <>{subKeyMap[prefix]} </> : null
+    const sourceDisplay = <SourceDisplay source={source} />
+    const valueString = result.valueString
+
+    const nameVariant = variant && variant === 'invalid' ? undefined : variant
+    const nameDisplay = (
+      <>
+        <ColorText color={nameVariant}>
+          {prefixDisplay}
+          {name}
+        </ColorText>
+        {sourceDisplay}
+      </>
+    )
+
+    let deps = result.deps
+    const hasFormula = node.meta.op !== 'const'
+    if (hasFormula) {
+      const assignmentDisplay = (
+        <div className="formula">
+          {nameDisplay} <ColorText color="info">{valueString}</ColorText> ={' '}
+          {result.formula}
+        </div>
+      )
+      deps = [assignmentDisplay, ...deps]
+    }
+    return {
+      name: nameDisplay,
+      valueString,
+      prec: Infinity,
+      formula: (
+        <>
+          <span style={{ fontSize: '85%' }}>{name}</span> {valueString}
+        </>
+      ),
+      deps,
+    }
+  }
+  return result
+}
+
+function computeFormulaDisplay(
+  node: CalcResult<number>,
+  info: Info & InfoExtra
+): CalcDisplay {
+  switch (node.meta.op) {
+    case 'const': {
+      const vStr = valueString(node.value, info.unit, info.fixed)
+      return { prec: Infinity, formula: vStr, valueString: vStr, deps: [] }
+    }
+    case 'add':
+    case 'mul':
+    case 'min':
+    case 'max':
+    case 'sum_frac':
+    case 'res':
+      return { prec: Infinity, formula: 'TODO', valueString: 'TODO', deps: [] }
   }
 }
 
@@ -572,68 +562,28 @@ const subKeyMap: Record<KeyMapPrefix, string> = {
   teamBuff: 'Team',
 }
 
-function keyMapInfo(path: string): InfoExtra & Info {
-  if (!KeyMap.getStr(path)) return {}
-  const name = KeyMap.get(path)
-  const unit = getUnitStr(path)
-  const variant = KeyMap.getVariant(path)
+export function resolveInfo(oldInfo: Info): InfoExtra & Info {
+  let info: Info & InfoExtra = { ...oldInfo }
+  const path = oldInfo.path
+  if (path) {
+    if (allArtifactSetKeys.includes(path as ArtifactSetKey)) {
+      info.name = <Translate ns="artifactNames_gen" key18={path} />
+    }
+    if (KeyMap.getStr(path)) {
+      if (!info.variant) info.variant = KeyMap.getVariant(path)
+      if (!info.unit) info.unit = getUnitStr(path)
 
-  const icon = (
-    <StatIcon
-      statKey={path}
-      iconProps={{ fontSize: 'inherit', color: variant }}
-    />
-  )
-  return { name, icon, unit, variant }
-}
-function artSetInfo(path: string): InfoExtra {
-  if (!allArtifactSetKeys.includes(path as ArtifactSetKey)) return {}
-  return { name: <Translate ns="artifactNames_gen" key18={path} /> }
-}
-export function resolveInfo(info: Info): InfoExtra & Info {
-  const mergedInfo: Info & InfoExtra = {
-    ...info,
-    ...(info.path && artSetInfo(info.path)),
-    ...(info.path && keyMapInfo(info.path)),
-    ...((info.path && infoManager[info.path]) ?? {}),
-  }
-  return mergedInfo
-}
-function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
-  /**
-   * TODO Fetch these `ReactNode` from `node.field` instead
-   * In particular, `node.valueDisplay` and `node.name` below
-   */
-
-  const { info, value, formula } = node
-  const mergedInfo = resolveInfo(info)
-  const { name, prefix, source, variant, fixed, unit } = mergedInfo
-  if (typeof value !== 'number') return
-  node.valueDisplay = (
-    <ColorText color="info">{valueString(value, unit, fixed)}</ColorText>
-  )
-  if (name) {
-    const prefixDisplay = prefix && !source ? <>{subKeyMap[prefix]} </> : null
-    const sourceDisplay = <SourceDisplay source={source} />
-    node.name = (
-      <>
-        <ColorText
-          color={variant && variant === 'invalid' ? undefined : variant}
-        >
-          {prefixDisplay}
-          {name}
-        </ColorText>
-        {sourceDisplay}
-      </>
-    )
-
-    if (formula)
-      node.assignment = (
-        <div className="formula">
-          {node.name} {node.valueDisplay} = {formula}
-        </div>
+      info.name = KeyMap.get(path)
+      info.icon = (
+        <StatIcon
+          statKey={path}
+          iconProps={{ fontSize: 'inherit', color: info.variant as any }}
+        />
       )
+    }
+    info = { ...info, ...infoManager[path] }
   }
+  return info
 }
 function SourceDisplay({ source }: { source: string | undefined }) {
   const { silly } = useContext(SillyContext)
@@ -667,17 +617,6 @@ function SourceDisplay({ source }: { source: string | undefined }) {
   return null
 }
 
-function createFormulaComponent(node: ContextNodeDisplay): ReactNode {
-  const { name, valueDisplay } = node
-  //TODO: change formula size in the formula display element instead
-  return name ? (
-    <>
-      <span style={{ fontSize: '85%' }}>{name}</span> {valueDisplay}
-    </>
-  ) : (
-    valueDisplay!
-  )
-}
 function mergeFormulaComponents(components: ReactNode[]): ReactNode {
   return (
     <>
@@ -695,52 +634,47 @@ function mergeInfo(base: Info, override: Info): Info {
   return result
 }
 
-interface ContextNodeDisplay<V = number> {
-  info: Info
-  empty: boolean
-  value: V
-
-  dependencies: Set<ReactNode>
-
-  mayNeedWrapping: boolean // Whether this formula should be parenthesized when it is a part of multiplications/divisions and subtractions' subtrahends
-
-  // Don't set these manually outside of `UIData.computeNode`
-  name?: ReactNode
-  valueDisplay?: ReactNode
-  formula?: ReactNode
-  assignment?: ReactNode
-}
-
-const illformed: ContextNodeDisplay = {
-  info: { pivot: true },
+const illformed: CalcResult<number> = {
   value: NaN,
+  meta: {
+    op: 'const',
+    ops: [],
+    conds: [],
+  },
+  info: {
+    pivot: true,
+  },
   empty: false,
-  dependencies: new Set(),
-  mayNeedWrapping: false,
 }
-const illformedStr: ContextNodeDisplay<string | undefined> = {
-  info: { pivot: true },
+const illformedStr: CalcResult<string | undefined> = {
   value: undefined,
+  meta: {
+    op: 'const',
+    ops: [],
+    conds: [],
+  },
+  info: {
+    pivot: true,
+  },
   empty: false,
-  dependencies: new Set(),
-  mayNeedWrapping: false,
 }
-function makeEmpty(emptyValue: number): ContextNodeDisplay<number>
+function makeEmpty(value: number): CalcResult<number>
+function makeEmpty(value: string | undefined): CalcResult<string | undefined>
 function makeEmpty(
-  emptyValue: string | undefined
-): ContextNodeDisplay<string | undefined>
+  value: number | string | undefined
+): CalcResult<number | string | undefined>
 function makeEmpty(
-  emptyValue: number | string | undefined
-): ContextNodeDisplay<number | string | undefined>
-function makeEmpty(
-  emptyValue: number | string | undefined
-): ContextNodeDisplay<number | string | undefined> {
+  value: number | string | undefined
+): CalcResult<number | string | undefined> {
   return {
+    value,
+    meta: {
+      op: 'const',
+      ops: [],
+      conds: [],
+    },
     info: {},
-    value: emptyValue,
     empty: true,
-    dependencies: new Set(),
-    mayNeedWrapping: false,
   }
 }
 
@@ -929,6 +863,7 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
       info: {},
       operation: true,
       value: 0,
+      valueString: '0',
       isEmpty: true,
       formulas: [],
       ...d1,

@@ -261,21 +261,15 @@ export class KeyMap {
     | undefined {
     const trans = Object.keys(transformativeReactions).find((e) =>
       key.startsWith(e)
-    )
-    if (trans)
-      return trans as
-        | ElementWithPhyKey
-        | TransformativeReactionsKey
-        | AmplifyingReactionsKey
-        | AdditiveReactionsKey
-    const amp = Object.keys(amplifyingReactions).find((e) => key.startsWith(e))
-    if (amp)
-      return amp as
-        | ElementWithPhyKey
-        | TransformativeReactionsKey
-        | AmplifyingReactionsKey
-        | AdditiveReactionsKey
-    const add = Object.keys(additiveReactions).find((e) => key.startsWith(e))
+    ) as undefined | keyof typeof transformativeReactions
+    if (trans) return trans
+    const amp = Object.keys(amplifyingReactions).find((e) =>
+      key.startsWith(e)
+    ) as undefined | keyof typeof amplifyingReactions
+    if (amp) return amp
+    const add = Object.keys(additiveReactions).find((e) =>
+      key.startsWith(e)
+    ) as undefined | keyof typeof additiveReactions
     if (add) return add
     if (key.includes('heal')) return 'heal'
     return allElementWithPhyKeys.find((e) => key.startsWith(e))

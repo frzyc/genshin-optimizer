@@ -8,7 +8,6 @@ import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
   TransformativeReactionsKey,
-  Unit,
 } from '@genshin-optimizer/gi/keymap'
 import type { input, uiInput } from './formula'
 
