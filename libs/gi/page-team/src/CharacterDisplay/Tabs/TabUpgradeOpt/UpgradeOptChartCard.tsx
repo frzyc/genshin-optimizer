@@ -30,6 +30,7 @@ import type { UpOptArtifact } from './upOpt'
 import { ResultType } from './upOpt'
 
 type Props = {
+  setArtifactIdToEdit: (id: string | undefined) => void
   upgradeOpt: UpOptArtifact
   showTrue?: boolean
   objMin: number
@@ -47,10 +48,14 @@ type ChartData = {
 const nbins = 50
 
 export default function UpgradeOptChartCard(props: Props) {
+  const id = props.upgradeOpt.id
   return (
     <Grid container spacing={1}>
       <Grid item xs={5} sm={4} md={4} lg={3} xl={3}>
-        <ArtifactCard artifactId={props.upgradeOpt.id} editorProps={{}} />
+        <ArtifactCard
+          artifactId={id}
+          onEdit={() => props.setArtifactIdToEdit(id)}
+        />
       </Grid>
       <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
         <UpgradeOptChartCardGraph {...props} />

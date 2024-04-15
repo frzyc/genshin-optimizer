@@ -40,6 +40,30 @@ export type INumConditionalData = {
 }
 
 export const conditionals = {
+  Acheron: {
+    boolConditional: {
+      src: 'Acheron',
+      name: 'boolConditional',
+      tag: { et: 'self', src: 'Acheron', qt: 'cond', q: 'boolConditional' },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'Acheron',
+      name: 'listConditional',
+      tag: { et: 'self', src: 'Acheron', qt: 'cond', q: 'listConditional' },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'Acheron',
+      name: 'numConditional',
+      tag: { et: 'self', src: 'Acheron', qt: 'cond', q: 'numConditional' },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   Argenti: {
     boolConditional: {
       src: 'Argenti',
@@ -106,6 +130,30 @@ export const conditionals = {
       src: 'Asta',
       name: 'numConditional',
       tag: { et: 'self', src: 'Asta', qt: 'cond', q: 'numConditional' },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Aventurine: {
+    boolConditional: {
+      src: 'Aventurine',
+      name: 'boolConditional',
+      tag: { et: 'self', src: 'Aventurine', qt: 'cond', q: 'boolConditional' },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'Aventurine',
+      name: 'listConditional',
+      tag: { et: 'self', src: 'Aventurine', qt: 'cond', q: 'listConditional' },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'Aventurine',
+      name: 'numConditional',
+      tag: { et: 'self', src: 'Aventurine', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -337,6 +385,30 @@ export const conditionals = {
       src: 'FuXuan',
       name: 'numConditional',
       tag: { et: 'self', src: 'FuXuan', qt: 'cond', q: 'numConditional' },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Gallagher: {
+    boolConditional: {
+      src: 'Gallagher',
+      name: 'boolConditional',
+      tag: { et: 'self', src: 'Gallagher', qt: 'cond', q: 'boolConditional' },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'Gallagher',
+      name: 'listConditional',
+      tag: { et: 'self', src: 'Gallagher', qt: 'cond', q: 'listConditional' },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'Gallagher',
+      name: 'numConditional',
+      tag: { et: 'self', src: 'Gallagher', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1126,6 +1198,45 @@ export const conditionals = {
       max: 2,
     },
   },
+  AlongThePassingShore: {
+    boolConditional: {
+      src: 'AlongThePassingShore',
+      name: 'boolConditional',
+      tag: {
+        et: 'self',
+        src: 'AlongThePassingShore',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'AlongThePassingShore',
+      name: 'listConditional',
+      tag: {
+        et: 'self',
+        src: 'AlongThePassingShore',
+        qt: 'cond',
+        q: 'listConditional',
+      },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'AlongThePassingShore',
+      name: 'numConditional',
+      tag: {
+        et: 'self',
+        src: 'AlongThePassingShore',
+        qt: 'cond',
+        q: 'numConditional',
+      },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   Amber: {
     boolConditional: {
       src: 'Amber',
@@ -1486,6 +1597,45 @@ export const conditionals = {
       tag: {
         et: 'self',
         src: 'CollapsingSky',
+        qt: 'cond',
+        q: 'numConditional',
+      },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  ConcertForTwo: {
+    boolConditional: {
+      src: 'ConcertForTwo',
+      name: 'boolConditional',
+      tag: {
+        et: 'self',
+        src: 'ConcertForTwo',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'ConcertForTwo',
+      name: 'listConditional',
+      tag: {
+        et: 'self',
+        src: 'ConcertForTwo',
+        qt: 'cond',
+        q: 'listConditional',
+      },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'ConcertForTwo',
+      name: 'numConditional',
+      tag: {
+        et: 'self',
+        src: 'ConcertForTwo',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2316,6 +2466,45 @@ export const conditionals = {
       tag: {
         et: 'self',
         src: 'IndeliblePromise',
+        qt: 'cond',
+        q: 'numConditional',
+      },
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  InherentlyUnjustDestiny: {
+    boolConditional: {
+      src: 'InherentlyUnjustDestiny',
+      name: 'boolConditional',
+      tag: {
+        et: 'self',
+        src: 'InherentlyUnjustDestiny',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
+      type: 'bool',
+    },
+    listConditional: {
+      src: 'InherentlyUnjustDestiny',
+      name: 'listConditional',
+      tag: {
+        et: 'self',
+        src: 'InherentlyUnjustDestiny',
+        qt: 'cond',
+        q: 'listConditional',
+      },
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      src: 'InherentlyUnjustDestiny',
+      name: 'numConditional',
+      tag: {
+        et: 'self',
+        src: 'InherentlyUnjustDestiny',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -4254,6 +4443,19 @@ export const conditionals = {
   },
 }
 export const formulas = {
+  Acheron: {
+    basicDmg_0: {
+      src: 'Acheron',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'Acheron',
+        name: 'basicDmg_0',
+      },
+    },
+  },
   Argenti: {
     basicDmg_0: {
       src: 'Argenti',
@@ -4289,6 +4491,19 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         src: 'Asta',
+        name: 'basicDmg_0',
+      },
+    },
+  },
+  Aventurine: {
+    basicDmg_0: {
+      src: 'Aventurine',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'Aventurine',
         name: 'basicDmg_0',
       },
     },
@@ -4406,6 +4621,19 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         src: 'FuXuan',
+        name: 'basicDmg_0',
+      },
+    },
+  },
+  Gallagher: {
+    basicDmg_0: {
+      src: 'Gallagher',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'Gallagher',
         name: 'basicDmg_0',
       },
     },

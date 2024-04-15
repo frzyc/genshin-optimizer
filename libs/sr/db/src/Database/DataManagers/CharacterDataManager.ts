@@ -23,11 +23,11 @@ import type {
   ISroDatabase,
 } from '../../Interfaces'
 import { SroSource } from '../../Interfaces'
+import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
-import { SroDataManager } from '../SroDataManager'
 import type { ImportResult } from '../exim'
 
-export class CharacterDataManager extends SroDataManager<
+export class CharacterDataManager extends DataManager<
   CharacterKey,
   'characters',
   ICachedSroCharacter,
@@ -169,6 +169,14 @@ export class CharacterDataManager extends SroDataManager<
       compareData,
     }
     return result
+  }
+  // These overrides allow CharacterKey to be used as id.
+  // This assumes we only support one copy of a character in a DB.
+  override toStorageKey(key: string): string {
+    return `${this.goKeySingle}_${key}`
+  }
+  override toCacheKey(key: string): CharacterKey {
+    return key.split(`${this.goKeySingle}_`)[1] as CharacterKey
   }
   getTrailblazerCharacterKey(): CharacterKey {
     return (

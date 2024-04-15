@@ -18,9 +18,9 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
-import { useCallback, useEffect, useState } from 'react'
+import { Suspense, useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ArtifactCard } from '../artifact'
+import { ArtifactCard, ArtifactEditor } from '../artifact'
 import { ArtifactSwapModal } from '../artifact/ArtifactSwapModal'
 import { WeaponCard } from '../weapon/WeaponCard'
 import { WeaponEditor } from '../weapon/WeaponEditor'
@@ -49,6 +49,7 @@ export function EquippedGrid({
   const database = useDatabase()
 
   const [editorWeaponId, setEditorWeaponId] = useState('')
+  const [artifactIdToEdit, setArtifactIdToEdit] = useState<string | undefined>()
 
   //triggers when character swap weapons
   useEffect(() => {
@@ -64,17 +65,25 @@ export function EquippedGrid({
 
   return (
     <Box>
-      <WeaponEditor
-        weaponId={editorWeaponId}
-        footer
-        onClose={hideWeapon}
-        extraButtons={
-          <LargeWeaponSwapButton
-            weaponTypeKey={weaponTypeKey}
-            onChangeId={setWeapon}
-          />
-        }
-      />
+      <Suspense fallback={false}>
+        <WeaponEditor
+          weaponId={editorWeaponId}
+          footer
+          onClose={hideWeapon}
+          extraButtons={
+            <LargeWeaponSwapButton
+              weaponTypeKey={weaponTypeKey}
+              onChangeId={setWeapon}
+            />
+          }
+        />
+      </Suspense>
+      <Suspense fallback={false}>
+        <ArtifactEditor
+          artifactIdToEdit={artifactIdToEdit}
+          cancelEdit={() => setArtifactIdToEdit(undefined)}
+        />
+      </Suspense>
       <Grid item columns={columns} container spacing={1}>
         <Grid item xs={1} display="flex" flexDirection="column">
           {weaponId && database.weapons.keys.includes(weaponId) ? (
@@ -107,7 +116,7 @@ export function EquippedGrid({
                       onChangeId={(id) => setArtifact(slotKey, id)}
                     />
                   }
-                  editorProps={{}}
+                  onEdit={() => setArtifactIdToEdit(id)}
                 />
               ) : (
                 <ArtSwapCard

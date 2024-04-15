@@ -1,6 +1,7 @@
 export const allLightConeKeys = [
   'ASecretVow',
   'Adversarial',
+  'AlongThePassingShore',
   'Amber',
   'AnInstantBeforeAGaze',
   'Arrows',
@@ -12,6 +13,7 @@ export const allLightConeKeys = [
   'CarveTheMoonWeaveTheClouds',
   'Chorus',
   'CollapsingSky',
+  'ConcertForTwo',
   'Cornucopia',
   'CruisingInTheStellarSea',
   'DanceDanceDance',
@@ -37,6 +39,7 @@ export const allLightConeKeys = [
   'InTheNight',
   'IncessantRain',
   'IndeliblePromise',
+  'InherentlyUnjustDestiny',
   'ItsShowtime',
   'LandausChoice',
   'Loop',

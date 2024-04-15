@@ -1,21 +1,22 @@
 import {
   deepClone,
   deepFreeze,
+  objKeyMap,
   validateArr,
 } from '@genshin-optimizer/common/util'
 import type {
-  CharacterKey,
   CharacterLocationKey,
   RelicMainStatKey,
+  RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
 import {
-  allCharacterKeys,
   allCharacterLocationKeys,
   allRelicSetKeys,
+  allRelicSlotKeys,
   relicSlotToMainStatKeys,
 } from '@genshin-optimizer/sr/consts'
+import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
-import { SroDataManager } from '../SroDataManager'
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5
@@ -37,7 +38,13 @@ export interface StatFilterSetting {
   disabled: boolean
 }
 export type StatFilters = Record<string, StatFilterSetting[]>
-export interface BuildSetting {
+
+export type GeneratedBuild = {
+  lightConeId?: string
+  relicIds: Record<RelicSlotKey, string | undefined>
+}
+
+export interface OptConfig {
   relicSetExclusion: RelicSetExclusion
   statFilters: StatFilters
   mainStatKeys: {
@@ -60,19 +67,23 @@ export interface BuildSetting {
   compareBuild: boolean
   levelLow: number
   levelHigh: number
+  useTeammateBuild: boolean
+
+  //generated opt builds
+  builds: Array<GeneratedBuild>
+  buildDate: number
 }
 
-export class BuildSettingDataManager extends SroDataManager<
-  CharacterKey,
-  'buildSettings',
-  BuildSetting,
-  BuildSetting
+export class OptConfigDataManager extends DataManager<
+  string,
+  'optConfigs',
+  OptConfig,
+  OptConfig
 > {
   constructor(database: SroDatabase) {
-    super(database, 'buildSettings')
+    super(database, 'optConfigs')
   }
-  override validate(obj: object, key: string): BuildSetting | undefined {
-    if (!allCharacterKeys.includes(key as CharacterKey)) return undefined
+  override validate(obj: object, key: string): OptConfig | undefined {
     if (typeof obj !== 'object') return undefined
     let {
       relicSetExclusion,
@@ -90,7 +101,11 @@ export class BuildSettingDataManager extends SroDataManager<
       compareBuild,
       levelLow,
       levelHigh,
-    } = obj as BuildSetting
+      useTeammateBuild,
+
+      builds,
+      buildDate,
+    } = obj as OptConfig
 
     if (typeof statFilters !== 'object') statFilters = {}
 
@@ -153,6 +168,29 @@ export class BuildSettingDataManager extends SroDataManager<
         .map(([k, r]) => [k, [...new Set(r)]])
         .filter(([_, a]) => a.length)
     )
+    if (typeof useTeammateBuild !== 'boolean') useTeammateBuild = false
+
+    if (!Array.isArray(builds)) {
+      builds = []
+      buildDate = 0
+    } else {
+      builds = builds
+        .map((build) => {
+          if (typeof build !== 'object') return undefined
+          const { lightConeId, relicIds: relicIdsRaw } = build as GeneratedBuild
+          if (!this.database.lightCones.get(lightConeId)) return undefined
+          const relicIds = objKeyMap(allRelicSlotKeys, (slotKey) =>
+            this.database.relics.get(relicIdsRaw[slotKey])?.slotKey === slotKey
+              ? relicIdsRaw[slotKey]
+              : undefined
+          )
+
+          return { relicIds, lightConeId }
+        })
+        .filter((b) => b) as GeneratedBuild[]
+      if (!Number.isInteger(buildDate)) buildDate = 0
+    }
+
     return {
       relicSetExclusion,
       relicExclusion,
@@ -169,14 +207,45 @@ export class BuildSettingDataManager extends SroDataManager<
       compareBuild,
       levelLow,
       levelHigh,
+      useTeammateBuild,
+
+      builds,
+      buildDate,
     }
   }
-  override get(key: CharacterKey) {
-    return super.get(key) ?? initialBuildSettings
+  new(data: Partial<OptConfig> = {}) {
+    const id = this.generateKey()
+    this.set(id, { ...initialBuildSettings, ...data })
+    return id
+  }
+  duplicate(optConfigId: string): string {
+    const optConfig = this.get(optConfigId)
+    if (!optConfig) return ''
+    return this.new(structuredClone(optConfig))
+  }
+  export(optConfigId: string): object {
+    const optConfig = this.database.optConfigs.get(optConfigId)
+    if (!optConfig) return {}
+    const {
+      // remove user-specific data
+      useExcludedRelics,
+      excludedLocations,
+      allowLocationsState,
+      relicExclusion,
+      buildDate,
+      builds,
+      ...rest
+    } = optConfig
+    return rest
+  }
+  import(data: object): string {
+    const id = this.generateKey()
+    if (!this.set(id, data)) return ''
+    return id
   }
 }
 
-const initialBuildSettings: BuildSetting = deepFreeze({
+const initialBuildSettings: OptConfig = deepFreeze({
   relicSetExclusion: {},
   relicExclusion: [],
   useExcludedRelics: false,
@@ -196,7 +265,11 @@ const initialBuildSettings: BuildSetting = deepFreeze({
   plotBase: undefined,
   compareBuild: true,
   levelLow: 0,
-  levelHigh: 20,
+  levelHigh: 15,
+  useTeammateBuild: false,
+
+  builds: [],
+  buildDate: 0,
 })
 
 // TODO: Remove 4-set exclusion for planar relics

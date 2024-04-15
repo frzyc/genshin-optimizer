@@ -53,13 +53,7 @@ export function ArtifactSwapModal({
 }) {
   const { t } = useTranslation(['page_character', 'artifact'])
   const database = useDatabase()
-  const clickHandler = useCallback(
-    (id) => {
-      onChangeId(id)
-      onClose()
-    },
-    [onChangeId, onClose]
-  )
+
   const filterOptionReducer = useCallback(
     (state, action) => ({ ...state, ...action, slotKeys: [slotKey] }),
     [slotKey]
@@ -193,7 +187,10 @@ export function ArtifactSwapModal({
                     <ArtifactCard
                       artifactId={id}
                       extraButtons={<CompareBuildButton artId={id} />}
-                      onClick={clickHandler}
+                      onClick={() => {
+                        onChangeId(id)
+                        onClose()
+                      }}
                     />
                   </Grid>
                 ))}

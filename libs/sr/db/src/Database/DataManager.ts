@@ -2,7 +2,7 @@ import { DataManagerBase } from '@genshin-optimizer/common/database'
 import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
 import type { ISroDatabase, SroDatabase } from '..'
 import type { ImportResult } from './exim'
-export class SroDataManager<
+export class DataManager<
   CacheKey extends string,
   DataKey extends string,
   CacheValue extends StorageValue,
@@ -44,19 +44,5 @@ export class SroDataManager<
     if (key.endsWith('s'))
       return `${this.database.keyPrefix}_${key.slice(0, -1)}`
     return `${this.database.keyPrefix}_${key}`
-  }
-  override toStorageKey(key: string): string {
-    return `${this.goKeySingle}_${key}`
-  }
-  override toCacheKey(key: string): CacheKey {
-    return key.split(`${this.goKeySingle}_`)[1] as CacheKey
-  }
-  override generateKey(keys: Set<string> = new Set(this.keys)): string {
-    let ind = keys.size
-    let candidate = ''
-    do {
-      candidate = `${ind++}`
-    } while (keys.has(this.toStorageKey(candidate)))
-    return candidate
   }
 }
