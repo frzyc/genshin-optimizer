@@ -29,7 +29,6 @@ export default function App() {
               <Stack gap={1} pt={1}>
                 <CharacterSelector />
                 <CharacterEditor />
-                <Character />
                 <LightConeEditor />
                 <RelicEditor />
                 <Optimize />
