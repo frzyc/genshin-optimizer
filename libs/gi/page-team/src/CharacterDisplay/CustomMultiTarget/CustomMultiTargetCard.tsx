@@ -689,10 +689,12 @@ function AddCustomTargetBtn({
       >{t`multiTarget.addNewTarget`}</Button>
       <TargetSelectorModal
         showEmptyTargets
+        flatOnly
+        excludeHeal
         show={show}
         onClose={onClose}
         setTarget={setTargetHandler}
-        excludeSections={['custom']}
+        excludeSections={['basic', 'custom']}
       />
     </>
   )
