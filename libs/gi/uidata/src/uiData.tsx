@@ -157,14 +157,28 @@ export class UIData {
     }
     return result
   }
+  /**
+   * @deprecated Use `UIData.newGet` instead
+   */
   get(node: NumNode): NodeDisplay
   get(node: StrNode): NodeDisplay<string | undefined>
   get(node: NumNode | StrNode): NodeDisplay<number | string | undefined>
   get(node: NumNode | StrNode): NodeDisplay<number | string | undefined> {
     const old = this.processed.get(node)
     if (old) return old
-    const result = computeNodeDisplay(this.computeNode(node))
+    const result = computeNodeDisplay(this.newGet(node))
     this.processed.set(node, result)
+    return result
+  }
+
+  newGet(node: NumNode): CalcResult<string | undefined>
+  newGet(node: StrNode): CalcResult<string | undefined>
+  newGet(node: NumNode | StrNode): CalcResult<number | string | undefined>
+  newGet(node: NumNode | StrNode): CalcResult<number | string | undefined> {
+    const old = this.nodes.get(node)
+    if (old) return old
+    const result = this.computeNode(node)
+    this.nodes.set(node, result)
     return result
   }
 
@@ -446,6 +460,9 @@ function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
   return result
 }
 
+/**
+ * @deprecated Use `newGetNodeDisplay` instead
+ */
 export function computeNodeDisplay(
   node: CalcResult<number | string | undefined>
 ): NodeDisplay<number | string | undefined> {
@@ -546,6 +563,7 @@ function computeFormulaDisplay(
     case 'max':
     case 'sum_frac':
     case 'res':
+      // TODO: Pando's formulaText example might work here
       return { prec: Infinity, formula: 'TODO', valueString: 'TODO', deps: [] }
   }
 }
