@@ -533,10 +533,21 @@ function ScreenKeyboard({
             </Grid>
           )
         )}
-        <Grid item xs={0.75}>
+        <Grid item xs={0.5}>
           <Button onClick={() => addOperation('grouping')}>{'('}</Button>
         </Grid>
-        <Grid item xs={0.75}>
+        <Grid item xs={0.5}>
+          <Button
+            onClick={() =>
+              addUnits([
+                initExpressionUnit({ type: 'enclosing', part: 'comma' }),
+              ])
+            }
+          >
+            {','}
+          </Button>
+        </Grid>
+        <Grid item xs={0.5}>
           <Button
             onClick={() =>
               addUnits([
