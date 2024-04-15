@@ -360,10 +360,12 @@ function ExpressionNavbar({
     })
   }
 
-  const onDelete = () => {
+  const onDelete = (replace?: ExpressionUnit) => {
     setCMT((cmt) => {
       const expression_ = [...(cmt.expression ?? [])]
-      if (expression_.length === 1 && sui === 0) {
+      if (replace) {
+        expression_.splice(sui, 1, replace)
+      } else if (expression_.length < 2) {
         expression_.splice(0, 1, initExpressionUnit({ type: 'null' }))
       } else {
         expression_.splice(sui, 1)
@@ -452,7 +454,7 @@ function ScreenKeyboard({
 }: {
   addUnits: (units: ExpressionUnit[]) => void
   moveUnit: (direction: 'up' | 'down') => void
-  onDelete: () => void
+  onDelete: (replace?: ExpressionUnit) => void
 }) {
   const { t } = useTranslation('page_character')
   const [show, onShow, onClose] = useBoolState(false)
@@ -558,9 +560,12 @@ function ScreenKeyboard({
           </Grid>
         </ButtonGroup>
       </Box>
-      <ButtonGroup>
-        <Button size="small" onClick={onDelete} color="error">
+      <ButtonGroup orientation='vertical' color='error'>
+        <Button size="small" onClick={() => onDelete()} sx={{ height: '100%' }}>
           <DeleteForeverIcon />
+        </Button>
+        <Button size="small" onClick={() => onDelete(initExpressionUnit({ type: 'null' }))} sx={{ height: '100%' }}>
+          null
         </Button>
       </ButtonGroup>
       <TargetSelectorModal
