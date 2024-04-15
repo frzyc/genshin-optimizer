@@ -132,7 +132,7 @@ export default function CharacterEditor() {
                       ([bonusAbility, enabled]) => (
                         <Grid item key={bonusAbility}>
                           <Button
-                            color="primary"
+                            color={enabled ? 'success' : 'primary'}
                             onClick={() => {
                               updateCharacter({
                                 bonusAbilities: {
@@ -162,7 +162,7 @@ export default function CharacterEditor() {
                       ([statBoost, enabled]) => (
                         <Grid item key={statBoost}>
                           <Button
-                            color="primary"
+                            color={enabled ? 'success' : 'primary'}
                             onClick={() => {
                               updateCharacter({
                                 statBoosts: {
