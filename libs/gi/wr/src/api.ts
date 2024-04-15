@@ -27,7 +27,17 @@ import type { ICharacter } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import { input, tally } from './formula'
 import type { Data, Info, NumNode, ReadNode, StrNode } from './type'
-import { constant, data, infoMut, none, percent, prod, sum, min, max } from './utils'
+import {
+  constant,
+  data,
+  infoMut,
+  max,
+  min,
+  none,
+  percent,
+  prod,
+  sum,
+} from './utils'
 
 export function inferInfoMut(data: Data, source?: Info['source']): Data {
   crawlObject(
