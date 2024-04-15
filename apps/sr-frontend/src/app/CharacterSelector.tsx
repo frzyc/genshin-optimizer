@@ -1,12 +1,24 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   CharacterAutocomplete,
   useCharacterContext,
+  useDatabaseContext,
 } from '@genshin-optimizer/sr/ui'
 import { CardContent, Container } from '@mui/material'
+import { useCallback } from 'react'
 
 export default function CharacterSelector() {
   const { characterKey, setCharacterKey } = useCharacterContext()
+  const { database } = useDatabaseContext()
+
+  const setOrCreateCharacter = useCallback(
+    (charKey: CharacterKey | '') => {
+      if (charKey) database.chars.getOrCreate(charKey)
+      setCharacterKey(charKey)
+    },
+    [database.chars, setCharacterKey]
+  )
 
   return (
     <Container>
@@ -14,7 +26,7 @@ export default function CharacterSelector() {
         <CardContent>
           <CharacterAutocomplete
             charKey={characterKey}
-            setCharKey={setCharacterKey}
+            setCharKey={setOrCreateCharacter}
           />
         </CardContent>
       </CardThemed>
