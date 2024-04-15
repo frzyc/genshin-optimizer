@@ -251,7 +251,7 @@ export default function CustomMultiTargetCard({
                   color="warning"
                   onClick={() => setTarget(targetListToExpression(target))}
                 >
-                  Convert to Expression
+                  {t`multiTarget.convertToExpression`}
                 </Button>
               )}
               <Button color="error" onClick={onDelete}>
@@ -499,11 +499,10 @@ function ScreenKeyboard({
                 key={'addConstant'}
                 onClick={() => addConstant(newNumber)}
               >
-                Add
+                {t`multiTarget.add`}
               </Button>
               <CustomNumberInputButtonGroupWrapper>
                 <CustomNumberInput
-                  allowEmpty
                   float
                   value={newNumber}
                   onChange={(value) => setNewNumber(value ?? 1)}
