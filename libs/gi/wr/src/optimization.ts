@@ -36,8 +36,8 @@ export const allOperations: Record<
   (_: number[]) => number
 > = {
   ...allCommutativeMonoidOperations,
-  sub: (x: number[]): number => x.length ? x.reduce((a, b) => a - b) : 1,
-  div: (x: number[]): number => x.length ? x.reduce((a, b) => a / b) : 1,
+  sub: (x: number[]): number => (x.length ? x.reduce((a, b) => a - b) : 1),
+  div: (x: number[]): number => (x.length ? x.reduce((a, b) => a / b) : 1),
   res: ([res]: number[]): number => {
     if (res < 0) return 1 - res / 2
     else if (res >= 0.75) return 1 / (res * 4 + 1)

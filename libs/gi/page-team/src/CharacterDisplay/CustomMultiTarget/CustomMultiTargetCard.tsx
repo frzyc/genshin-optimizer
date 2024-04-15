@@ -560,11 +560,15 @@ function ScreenKeyboard({
           </Grid>
         </ButtonGroup>
       </Box>
-      <ButtonGroup orientation='vertical' color='error'>
+      <ButtonGroup orientation="vertical" color="error">
         <Button size="small" onClick={() => onDelete()} sx={{ height: '100%' }}>
           <DeleteForeverIcon />
         </Button>
-        <Button size="small" onClick={() => onDelete(initExpressionUnit({ type: 'null' }))} sx={{ height: '100%' }}>
+        <Button
+          size="small"
+          onClick={() => onDelete(initExpressionUnit({ type: 'null' }))}
+          sx={{ height: '100%' }}
+        >
           null
         </Button>
       </ButtonGroup>
