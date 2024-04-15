@@ -180,7 +180,6 @@ export class UIData {
       case 'mul':
       case 'min':
       case 'max':
-      case 'avg':
       case 'sub':
       case 'div':
       case 'res':
@@ -375,7 +374,6 @@ export class UIData {
       case 'mul':
       case 'min':
       case 'max':
-      case 'avg':
       case 'sub':
       case 'div':
       case 'res':
@@ -408,9 +406,6 @@ export class UIData {
         break
       case 'min':
         formula = fStr`Min( ${{ operands }} )`
-        break
-      case 'avg':
-        formula = fStr`Avg( ${{ operands }} )`
         break
       case 'add':
         formula = fStr`${{ operands, separator: ' + ' }}`

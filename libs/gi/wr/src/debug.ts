@@ -14,7 +14,6 @@ export function formulaString(formula: NumNode | StrNode): string {
       return `Lookup${formulaString(formula.operands[0])}`
     case 'min':
     case 'max':
-    case 'avg':
     case 'prio':
       return `${operation}( ${formula.operands.map(formulaString).join(', ')} )`
     case 'div':

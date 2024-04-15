@@ -27,7 +27,6 @@ const allCommutativeMonoidOperations: Record<
 > = {
   min: (x: number[]): number => Math.min(...x),
   max: (x: number[]): number => Math.max(...x),
-  avg: (x: number[]): number => x.reduce((a, b) => a + b, 0) / x.length,
   add: (x: number[]): number => x.reduce((a, b) => a + b, 0),
   mul: (x: number[]): number => x.reduce((a, b) => a * b, 1),
 }
@@ -131,7 +130,6 @@ const x0=0` // making sure `const` has at least one entry
           break
         case 'min':
         case 'max':
-        case 'avg':
           body += `,${name}=Math.${operation}(${operandNames})\n`
           break
         case 'sub':
@@ -268,8 +266,7 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
       case 'add':
       case 'mul':
       case 'min':
-      case 'max':
-      case 'avg': {
+      case 'max': {
         if (op1 !== op2) throw Error('ily jslint')
         const s1 = n1.operands.map((op) => nodeSortMap.get(op)!),
           s2 = n2.operands.map((op) => nodeSortMap.get(op)!)
@@ -357,8 +354,7 @@ export function constantFold(
         case 'mul':
         case 'div':
         case 'max':
-        case 'min':
-        case 'avg': {
+        case 'min': {
           const f = allOperations[operation]
           const numericOperands: number[] = []
           const formulaOperands: OptNode[] = formula.operands

@@ -120,12 +120,6 @@ export function max(...values: Num[]): ComputeNode
 export function max(...values: Num[]): ComputeNode {
   return { operation: 'max', operands: intoOps(values) }
 }
-/** avg( x1, x2, ... ) */
-export function avg(...values: Opt[]): ComputeNode<OptNode, OptNode>
-export function avg(...values: Num[]): ComputeNode
-export function avg(...values: Num[]): ComputeNode {
-  return { operation: 'avg', operands: intoOps(values) }
-}
 /** x1 + x2 + ... */
 export function sum(...values: Opt[]): ComputeNode<OptNode, OptNode>
 export function sum(...values: Num[]): ComputeNode

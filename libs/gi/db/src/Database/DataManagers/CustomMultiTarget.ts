@@ -60,7 +60,7 @@ export function initExpressionUnit(
             ...args,
             type: 'enclosing',
             part: 'head',
-            operation: args.operation ?? 'grouping',
+            operation: args.operation ?? 'priority',
           }
         case 'comma':
           return { ...args, type: 'enclosing', part: 'comma' }
@@ -71,7 +71,7 @@ export function initExpressionUnit(
             ...args,
             type: 'enclosing',
             part: 'head',
-            operation: 'grouping',
+            operation: 'priority',
           }
       }
     case 'null':
@@ -198,7 +198,7 @@ export function validateCustomExpression(
     }
     // Condition four
     if (isOperand(lastUnit, 'right') && isOperand(unit, 'left')) {
-      if (stack_.length && stack_[stack_.length - 1] !== 'grouping') {
+      if (stack_.length && stack_[stack_.length - 1] !== 'priority') {
         expression.push(
           initExpressionUnit({
             type: 'enclosing',

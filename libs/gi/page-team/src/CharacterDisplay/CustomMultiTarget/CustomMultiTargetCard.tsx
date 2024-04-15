@@ -292,7 +292,7 @@ const enclosingNames = {
   minimum: 'min',
   maximum: 'max',
   average: 'avg',
-  grouping: '',
+  priority: '',
 }
 
 function ExpressionNavbar({
@@ -424,6 +424,7 @@ function ExpressionNavbar({
             )
           })}
           <ToggleButton
+            key={expression.length}
             value={expression.length}
             sx={{ minWidth: '0', pl: 0.3, pr: 0.3, pt: 1, pb: 1 }}
             onClick={() => setSUI(expression.length)}
@@ -458,7 +459,7 @@ function ScreenKeyboard({
 }) {
   const { t } = useTranslation('page_character')
   const [show, onShow, onClose] = useBoolState(false)
-  let newNumber = 0
+  const [newNumber, setNewNumber] = useState<number>(0)
   const addTarget = (target: CustomTarget) => {
     onClose()
     addUnits([initExpressionUnit({ type: 'target', target })])
@@ -478,25 +479,34 @@ function ScreenKeyboard({
       ])
     }
   }
-  const addConstant = (value: number) =>
+  const addConstant = (value: number) => {
     addUnits([initExpressionUnit({ type: 'constant', value })])
+    setNewNumber(0)
+  }
 
   return (
     <Box display="flex" gap={1}>
       <Box sx={{ flexGrow: 1 }} display="flex" flexDirection="column" gap={1}>
         <Box display="flex" gap={1}>
           <Button
+            key={'addNewTarget'}
             sx={{ flexGrow: 8 }}
             onClick={onShow}
           >{t`multiTarget.addNewTarget`}</Button>
           <Box sx={{ flexGrow: 1 }}>
             <ButtonGroup fullWidth>
-              <Button onClick={() => addConstant(newNumber)}>Add</Button>
-              <CustomNumberInputButtonGroupWrapper component={Grid}>
+              <Button
+                key={'addConstant'}
+                onClick={() => addConstant(newNumber)}
+              >
+                Add
+              </Button>
+              <CustomNumberInputButtonGroupWrapper>
                 <CustomNumberInput
+                  allowEmpty
                   float
                   value={newNumber}
-                  onChange={(value) => (newNumber = value ?? 0)}
+                  onChange={(value) => setNewNumber(value ?? 1)}
                   inputProps={{ sx: { textAlign: 'center' } }}
                 />
               </CustomNumberInputButtonGroupWrapper>
@@ -504,8 +514,12 @@ function ScreenKeyboard({
           </Box>
           <Box sx={{ flexGrow: 1 }}>
             <ButtonGroup fullWidth>
-              <Button onClick={() => moveUnit('up')}>←</Button>
-              <Button onClick={() => moveUnit('down')}>→</Button>
+              <Button key={'up'} onClick={() => moveUnit('up')}>
+                ←
+              </Button>
+              <Button key={'down'} onClick={() => moveUnit('down')}>
+                →
+              </Button>
             </ButtonGroup>
           </Box>
         </Box>
@@ -518,26 +532,32 @@ function ScreenKeyboard({
               'division',
             ] as NonenclosingOperation[]
           ).map((operation) => (
-            <Grid item xs={1.5}>
-              <Button onClick={() => addOperation(operation as any)}>
+            <Grid item xs={1.5} key={operation}>
+              <Button
+                key={operation}
+                onClick={() => addOperation(operation as any)}
+              >
                 {operationSymbols[operation]}
               </Button>
             </Grid>
           ))}
           {(['minimum', 'maximum', 'average'] as EnclosingOperation[]).map(
             (operation) => (
-              <Grid item xs={1.5}>
-                <Button onClick={() => addOperation(operation)}>
+              <Grid item xs={1.5} key={operation}>
+                <Button key={operation} onClick={() => addOperation(operation)}>
                   {enclosingNames[operation]}
                 </Button>
               </Grid>
             )
           )}
-          <Grid item xs={0.5}>
-            <Button onClick={() => addOperation('grouping')}>{'('}</Button>
+          <Grid item xs={0.5} key={'priority'}>
+            <Button key={'priority'} onClick={() => addOperation('priority')}>
+              {'('}
+            </Button>
           </Grid>
-          <Grid item xs={0.5}>
+          <Grid item xs={0.5} key={'comma'}>
             <Button
+              key={'comma'}
               onClick={() =>
                 addUnits([
                   initExpressionUnit({ type: 'enclosing', part: 'comma' }),
@@ -547,8 +567,9 @@ function ScreenKeyboard({
               {','}
             </Button>
           </Grid>
-          <Grid item xs={0.5}>
+          <Grid item xs={0.5} key={'tail'}>
             <Button
+              key={'tail'}
               onClick={() =>
                 addUnits([
                   initExpressionUnit({ type: 'enclosing', part: 'tail' }),
@@ -561,10 +582,16 @@ function ScreenKeyboard({
         </ButtonGroup>
       </Box>
       <ButtonGroup orientation="vertical" color="error">
-        <Button size="small" onClick={() => onDelete()} sx={{ height: '100%' }}>
+        <Button
+          key={'delete'}
+          size="small"
+          onClick={() => onDelete()}
+          sx={{ height: '100%' }}
+        >
           <DeleteForeverIcon />
         </Button>
         <Button
+          key={'null'}
           size="small"
           onClick={() => onDelete(initExpressionUnit({ type: 'null' }))}
           sx={{ height: '100%' }}

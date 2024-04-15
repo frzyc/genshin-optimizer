@@ -1,5 +1,4 @@
 import {
-  assertUnreachable,
   crawlObject,
   layeredAssignment,
   objKeyMap,
@@ -29,7 +28,6 @@ import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import { input, tally } from './formula'
 import type { Data, Info, NumNode, ReadNode, StrNode } from './type'
 import {
-  avg,
   constant,
   data,
   div,
@@ -252,7 +250,7 @@ export function dataObjForCharacterNew(
         minimum: 3,
         maximum: 3,
         average: 3,
-        grouping: 3,
+        priority: 3,
       } as const
       const handled = [] as ExpressionUnit[]
       const stack = [] as EnclosingOperation[]
@@ -368,13 +366,16 @@ export function dataObjForCharacterNew(
         return max(...parsedParts)
       }
       if (currentOperation === 'average') {
-        return avg(...parsedParts)
+        // TODO: Properly implement average
+        return sum(constant(0), div(sum(...parsedParts), parsedParts.length))
       }
-      if (currentOperation === 'grouping') {
-        // TODO: Properly implement grouping
+      if (currentOperation === 'priority') {
+        // TODO: Properly implement priority
         return sum(constant(0), ...parsedParts)
       }
-      assertUnreachable(currentOperation)
+      ;((_: never) => {
+        throw new Error(`Unexpected operation ${currentOperation}`)
+      })(currentOperation)
     }
 
     customMultiTargets.forEach(({ name, targets, expression }, i) => {

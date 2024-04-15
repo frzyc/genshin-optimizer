@@ -26,7 +26,7 @@ export const EnclosingOperations = [
   'minimum',
   'maximum',
   'average',
-  'grouping',
+  'priority',
 ] as const
 export type EnclosingOperation = (typeof EnclosingOperations)[number]
 

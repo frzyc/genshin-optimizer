@@ -174,7 +174,6 @@ function reaffine(
         case 'sum_frac':
         case 'max':
         case 'min':
-        case 'avg':
           return visit(f, false)
         default:
           assertUnreachable(operation)
@@ -468,7 +467,6 @@ export function computeNodeRange(
         case 'add':
         case 'min':
         case 'max':
-        case 'avg':
           current = {
             min: allOperations[operation](operands.map((x) => x.min)),
             max: allOperations[operation](operands.map((x) => x.max)),
