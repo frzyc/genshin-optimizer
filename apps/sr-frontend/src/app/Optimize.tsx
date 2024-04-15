@@ -11,7 +11,8 @@ import {
   useCalcContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/ui'
-import { Close, TrendingUp } from '@mui/icons-material'
+import CloseIcon from '@mui/icons-material/Close'
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
   Box,
   Button,
@@ -116,7 +117,7 @@ export default function Optimize() {
               <Button
                 onClick={optimizing ? onCancel : onOptimize}
                 color={optimizing ? 'error' : 'primary'}
-                startIcon={optimizing ? <Close /> : <TrendingUp />}
+                startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
               >
                 {optimizing ? t('cancel') : t('optimize')}
               </Button>

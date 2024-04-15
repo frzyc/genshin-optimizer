@@ -61,3 +61,17 @@ export function linspace(
 export function notEmpty<T>(value: T | null | undefined): value is T {
   return value !== null && value !== undefined
 }
+
+/**
+ * Allow a "smart" toggling of elements within an array.
+ * @param allKeys
+ * @returns
+ */
+export function handleMultiSelect<T>(allKeys: T[]) {
+  return (arr: T[], v: T): T[] => {
+    const len = arr.length
+    if (len === allKeys.length) return [v]
+    if (len === 1 && arr[0] === v) return [...allKeys]
+    return [...new Set(toggleArr(arr, v))]
+  }
+}

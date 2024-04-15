@@ -1,7 +1,9 @@
 import type { TagMapNodeEntries } from '../util'
+import Acheron from './Acheron'
 import Argenti from './Argenti'
 import Arlan from './Arlan'
 import Asta from './Asta'
+import Aventurine from './Aventurine'
 import Bailu from './Bailu'
 import BlackSwan from './BlackSwan'
 import Blade from './Blade'
@@ -11,6 +13,7 @@ import DanHeng from './DanHeng'
 import DanHengImbibitorLunae from './DanHengImbibitorLunae'
 import DrRatio from './DrRatio'
 import FuXuan from './FuXuan'
+import Gallagher from './Gallagher'
 import Gepard from './Gepard'
 import Guinaifen from './Guinaifen'
 import Hanya from './Hanya'
@@ -44,9 +47,11 @@ import Yanqing from './Yanqing'
 import Yukong from './Yukong'
 
 const data: TagMapNodeEntries[] = [
+  Acheron,
   Argenti,
   Arlan,
   Asta,
+  Aventurine,
   Bailu,
   BlackSwan,
   Blade,
@@ -56,6 +61,7 @@ const data: TagMapNodeEntries[] = [
   DanHengImbibitorLunae,
   DrRatio,
   FuXuan,
+  Gallagher,
   Gepard,
   Guinaifen,
   Hanya,

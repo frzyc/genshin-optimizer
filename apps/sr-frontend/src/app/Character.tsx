@@ -10,7 +10,9 @@ import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/ui'
-import { CheckBox, CheckBoxOutlineBlank, ExpandMore } from '@mui/icons-material'
+import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Accordion,
   AccordionDetails,
@@ -90,7 +92,7 @@ export default function CharacterEditor() {
               </Grid>
             </Grid>
             <Accordion>
-              <AccordionSummary expandIcon={<ExpandMore />}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 Traces
               </AccordionSummary>
               <AccordionDetails>
@@ -140,7 +142,11 @@ export default function CharacterEditor() {
                               })
                             }}
                             startIcon={
-                              enabled ? <CheckBox /> : <CheckBoxOutlineBlank />
+                              enabled ? (
+                                <CheckBoxIcon />
+                              ) : (
+                                <CheckBoxOutlineBlankIcon />
+                              )
                             }
                           >
                             {bonusAbility}
@@ -166,7 +172,11 @@ export default function CharacterEditor() {
                               })
                             }}
                             startIcon={
-                              enabled ? <CheckBox /> : <CheckBoxOutlineBlank />
+                              enabled ? (
+                                <CheckBoxIcon />
+                              ) : (
+                                <CheckBoxOutlineBlankIcon />
+                              )
                             }
                           >
                             {statBoost}
@@ -179,7 +189,7 @@ export default function CharacterEditor() {
               </AccordionDetails>
             </Accordion>
             <Accordion>
-              <AccordionSummary expandIcon={<ExpandMore />}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 Relics
               </AccordionSummary>
               <AccordionDetails>
@@ -187,7 +197,7 @@ export default function CharacterEditor() {
               </AccordionDetails>
             </Accordion>
             <Accordion>
-              <AccordionSummary expandIcon={<ExpandMore />}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 Basic stats for all chars
               </AccordionSummary>
               <AccordionDetails>
@@ -207,7 +217,7 @@ export default function CharacterEditor() {
             </Accordion>
           </Stack>
           <Accordion>
-            <AccordionSummary expandIcon={<ExpandMore />}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               All target values, if sheet is created
             </AccordionSummary>
             <AccordionDetails>
@@ -223,7 +233,7 @@ export default function CharacterEditor() {
                           {name}: {computed.val}
                         </Typography>
                         <Accordion>
-                          <AccordionSummary expandIcon={<ExpandMore />}>
+                          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                             meta for {name}
                           </AccordionSummary>
                           <AccordionDetails>
