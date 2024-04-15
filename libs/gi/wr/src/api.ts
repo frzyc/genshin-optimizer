@@ -288,14 +288,20 @@ export function dataObjForCharacterNew(
             continue
           }
           if (unit.part === 'tail') {
+            // We can only be here if current enclosing is closed
+            if (expression.length) {
+              enclosingMode = false
+              currentOperation = undefined
+              parts[parts.length - 1].push(unit)
+            }
             continue
           }
         }
+        if (enclosingMode) {
+          parts[parts.length - 1].push(unit)
+          continue
+        }
         if (unit.type === 'operation') {
-          if (enclosingMode) {
-            parts[parts.length - 1].push(unit)
-            continue
-          }
           // Operations with lower priority first, so they will go to a higher node and will be calculated last
           if (
             !currentOperation ||
@@ -339,6 +345,8 @@ export function dataObjForCharacterNew(
       }
 
       const parsedParts = parts.map(parseCustomExpression)
+      console.log('parts', parts)
+      console.log('parsedParts', parsedParts)
 
       if (currentOperation === 'addition') {
         return sum(...parsedParts)
@@ -377,6 +385,7 @@ export function dataObjForCharacterNew(
     customMultiTargets.forEach(({ name, targets, expression }, i) => {
       if (expression) {
         const multiTargetNode = parseCustomExpression(expression)
+        console.log('multiTargetNode', multiTargetNode)
         sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
           name,
           variant: 'invalid',

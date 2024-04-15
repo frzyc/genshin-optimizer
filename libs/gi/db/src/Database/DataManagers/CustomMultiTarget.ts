@@ -8,7 +8,6 @@ import {
 
 import {
   EnclosingOperations,
-  ExpressionUnitTypes,
   NonenclosingOperations,
   type CustomMultiTarget,
   type CustomTarget,
@@ -38,7 +37,8 @@ export function initCustomTarget(path: string[], multi = 1): CustomTarget {
 export function initExpressionUnit(
   args: Partial<ExpressionUnit> = {}
 ): ExpressionUnit {
-  switch (args.type) {
+  const { type } = args
+  switch (type) {
     case 'constant':
       return { ...args, type: 'constant', value: args.value ?? 1 }
     case 'target':
@@ -76,8 +76,12 @@ export function initExpressionUnit(
       }
     case 'null':
       return { ...args, type: 'null', kind: args.kind ?? 'operation' }
-    default:
+    case undefined:
       return { type: 'null', kind: 'operation' }
+    default:
+      return ((_: never) => {
+        return { type: 'null', kind: 'operation' }
+      })(type)
   }
 }
 
@@ -156,7 +160,6 @@ export function validateCustomExpression(
   const expression: ExpressionUnit[] = []
   for (const unit of ce as ExpressionUnit[]) {
     const { type } = unit
-    if (!ExpressionUnitTypes.includes(type)) return undefined
     const stack_ = [...stack]
     if (type === 'constant') {
       const { value } = unit
@@ -185,6 +188,8 @@ export function validateCustomExpression(
       if (!['operand', 'operation'].includes(kind)) return undefined
       // Condition one
       continue
+    } else {
+      return ((_: never) => undefined)(unit)
     }
 
     // Condition three
