@@ -180,6 +180,9 @@ export class UIData {
       case 'mul':
       case 'min':
       case 'max':
+      case 'avg':
+      case 'sub':
+      case 'div':
       case 'res':
       case 'sum_frac':
         result = this._compute(node)
@@ -372,6 +375,9 @@ export class UIData {
       case 'mul':
       case 'min':
       case 'max':
+      case 'avg':
+      case 'sub':
+      case 'div':
       case 'res':
       case 'sum_frac':
         info = accumulateInfo(operands)
@@ -403,6 +409,9 @@ export class UIData {
       case 'min':
         formula = fStr`Min( ${{ operands }} )`
         break
+      case 'avg':
+        formula = fStr`Avg( ${{ operands }} )`
+        break
       case 'add':
         formula = fStr`${{ operands, separator: ' + ' }}`
         break
@@ -410,6 +419,16 @@ export class UIData {
         formula = fStr`${{
           operands,
           separator: ' * ',
+          shouldWrap: operands.length > 1,
+        }}`
+        break
+      case 'sub':
+        formula = fStr`${{ operands, separator: ' - ' }}`
+        break
+      case 'div':
+        formula = fStr`${{
+          operands,
+          separator: ' / ',
           shouldWrap: operands.length > 1,
         }}`
         break

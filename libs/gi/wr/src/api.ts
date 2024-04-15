@@ -29,14 +29,17 @@ import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import { input, tally } from './formula'
 import type { Data, Info, NumNode, ReadNode, StrNode } from './type'
 import {
+  avg,
   constant,
   data,
+  div,
   infoMut,
   max,
   min,
   none,
   percent,
   prod,
+  sub,
   sum,
 } from './utils'
 
@@ -345,25 +348,18 @@ export function dataObjForCharacterNew(
       }
 
       const parsedParts = parts.map(parseCustomExpression)
-      console.log('parts', parts)
-      console.log('parsedParts', parsedParts)
 
       if (currentOperation === 'addition') {
         return sum(...parsedParts)
       }
       if (currentOperation === 'subtraction') {
-        // TODO: Properly implement subtraction
-        return sum(
-          parsedParts[0],
-          prod(constant(-1), sum(...parsedParts.slice(1)))
-        )
+        return sub(...parsedParts)
       }
       if (currentOperation === 'multiplication') {
         return prod(...parsedParts)
       }
       if (currentOperation === 'division') {
-        // TODO: Implement division
-        return sum(...parsedParts)
+        return div(...parsedParts)
       }
       if (currentOperation === 'minimum') {
         return min(...parsedParts)
@@ -372,8 +368,7 @@ export function dataObjForCharacterNew(
         return max(...parsedParts)
       }
       if (currentOperation === 'average') {
-        // TODO: Properly implement average
-        return prod(constant(1 / parsedParts.length), sum(...parsedParts))
+        return avg(...parsedParts)
       }
       if (currentOperation === 'grouping') {
         // TODO: Properly implement grouping
@@ -385,7 +380,6 @@ export function dataObjForCharacterNew(
     customMultiTargets.forEach(({ name, targets, expression }, i) => {
       if (expression) {
         const multiTargetNode = parseCustomExpression(expression)
-        console.log('multiTargetNode', multiTargetNode)
         sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
           name,
           variant: 'invalid',

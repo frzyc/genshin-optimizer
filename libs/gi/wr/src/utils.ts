@@ -120,6 +120,12 @@ export function max(...values: Num[]): ComputeNode
 export function max(...values: Num[]): ComputeNode {
   return { operation: 'max', operands: intoOps(values) }
 }
+/** avg( x1, x2, ... ) */
+export function avg(...values: Opt[]): ComputeNode<OptNode, OptNode>
+export function avg(...values: Num[]): ComputeNode
+export function avg(...values: Num[]): ComputeNode {
+  return { operation: 'avg', operands: intoOps(values) }
+}
 /** x1 + x2 + ... */
 export function sum(...values: Opt[]): ComputeNode<OptNode, OptNode>
 export function sum(...values: Num[]): ComputeNode
@@ -131,6 +137,16 @@ export function prod(...values: Opt[]): ComputeNode<OptNode, OptNode>
 export function prod(...values: Num[]): ComputeNode
 export function prod(...values: Num[]): ComputeNode {
   return { operation: 'mul', operands: intoOps(values) }
+}
+export function sub(...values: Opt[]): ComputeNode<OptNode, OptNode>
+export function sub(...values: Num[]): ComputeNode
+export function sub(...values: Num[]): ComputeNode {
+  return { operation: 'sub', operands: intoOps(values) }
+}
+export function div(...values: Opt[]): ComputeNode<OptNode, OptNode>
+export function div(...values: Num[]): ComputeNode
+export function div(...values: Num[]): ComputeNode {
+  return { operation: 'div', operands: intoOps(values) }
 }
 /** x / (x + c) */
 export function frac(x: Opt, c: Opt): ComputeNode<OptNode, OptNode>

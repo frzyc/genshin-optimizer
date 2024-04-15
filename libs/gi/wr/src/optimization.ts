@@ -27,6 +27,7 @@ const allCommutativeMonoidOperations: Record<
 > = {
   min: (x: number[]): number => Math.min(...x),
   max: (x: number[]): number => Math.max(...x),
+  avg: (x: number[]): number => x.reduce((a, b) => a + b, 0) / x.length,
   add: (x: number[]): number => x.reduce((a, b) => a + b, 0),
   mul: (x: number[]): number => x.reduce((a, b) => a * b, 1),
 }
@@ -35,6 +36,8 @@ export const allOperations: Record<
   (_: number[]) => number
 > = {
   ...allCommutativeMonoidOperations,
+  sub: (x: number[]): number => x.length ? x.reduce((a, b) => a - b) : 1,
+  div: (x: number[]): number => x.length ? x.reduce((a, b) => a / b) : 1,
   res: ([res]: number[]): number => {
     if (res < 0) return 1 - res / 2
     else if (res >= 0.75) return 1 / (res * 4 + 1)
@@ -128,7 +131,14 @@ const x0=0` // making sure `const` has at least one entry
           break
         case 'min':
         case 'max':
+        case 'avg':
           body += `,${name}=Math.${operation}(${operandNames})\n`
+          break
+        case 'sub':
+        case 'div':
+          body += `,${name}=${operandNames.join(
+            operation === 'sub' ? '-' : '/'
+          )}\n`
           break
         case 'threshold': {
           const [value, threshold, pass, fail] = operandNames
@@ -253,10 +263,13 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
           s2 = n2.operands.map((op) => nodeSortMap.get(op)!)
         return arrayCompare(s1, s2, (n1, n2) => n1 - n2)
       }
+      case 'sub':
+      case 'div':
       case 'add':
       case 'mul':
       case 'min':
-      case 'max': {
+      case 'max':
+      case 'avg': {
         if (op1 !== op2) throw Error('ily jslint')
         const s1 = n1.operands.map((op) => nodeSortMap.get(op)!),
           s2 = n2.operands.map((op) => nodeSortMap.get(op)!)
@@ -264,6 +277,8 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
         s2.sort((a, b) => a - b)
         return arrayCompare(s1, s2, (n1, n2) => n1 - n2)
       }
+      default:
+        assertUnreachable(op1)
     }
   }
 
@@ -340,7 +355,8 @@ export function constantFold(
         case 'add':
         case 'mul':
         case 'max':
-        case 'min': {
+        case 'min':
+        case 'avg': {
           const f = allOperations[operation]
           const numericOperands: number[] = []
           const formulaOperands: OptNode[] = formula.operands
@@ -387,6 +403,8 @@ export function constantFold(
           else result = { operation, operands: formulaOperands }
           break
         }
+        case 'sub':
+        case 'div':
         case 'res':
         case 'sum_frac': {
           const operands = formula.operands.map((x) => fold(x, context))

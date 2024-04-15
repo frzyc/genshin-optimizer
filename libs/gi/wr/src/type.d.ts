@@ -186,8 +186,10 @@ export interface NodeData<T = NumNode> {
   [key: string]: typeof key extends 'operation' ? never : NodeData<T> | T
 }
 
-export type CommutativeMonoidOperation = 'min' | 'max' | 'add' | 'mul'
+export type CommutativeMonoidOperation = 'min' | 'max' | 'avg' | 'add' | 'mul'
 export type Operation =
   | CommutativeMonoidOperation
+  | 'sub'
+  | 'div'
   | 'res' // Resistance from base resistance
   | 'sum_frac' // linear fractional; operands[0] / (operands[0] + operands[1])

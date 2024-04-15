@@ -167,11 +167,14 @@ function reaffine(
         }
         case 'const':
           return visit(f, true)
+        case 'sub':
+        case 'div':
         case 'res':
         case 'threshold':
         case 'sum_frac':
         case 'max':
         case 'min':
+        case 'avg':
           return visit(f, false)
         default:
           assertUnreachable(operation)
@@ -460,9 +463,12 @@ export function computeNodeRange(
         case 'const':
           current = computeMinMax([f.value])
           break
+        case 'sub':
+        case 'div':
         case 'add':
         case 'min':
         case 'max':
+        case 'avg':
           current = {
             min: allOperations[operation](operands.map((x) => x.min)),
             max: allOperations[operation](operands.map((x) => x.max)),
