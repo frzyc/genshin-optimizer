@@ -8,9 +8,13 @@ import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { i18n } from '@genshin-optimizer/gi/i18n'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
-import { WeaponName, getCalcDisplay } from '@genshin-optimizer/gi/ui'
+import {
+  WeaponName,
+  getCalcDisplay,
+  resolveInfo,
+} from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import { computeUIData, resolveInfo } from '@genshin-optimizer/gi/uidata'
+import { computeUIData } from '@genshin-optimizer/gi/uidata'
 import { dataObjForWeapon, input } from '@genshin-optimizer/gi/wr'
 import SearchIcon from '@mui/icons-material/Search'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'

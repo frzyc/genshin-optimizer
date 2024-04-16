@@ -5,22 +5,14 @@ import {
   layeredAssignment,
   objPathValue,
 } from '@genshin-optimizer/common/util'
-import type {
-  ArtifactSetKey,
-  CharacterKey,
-  GenderKey,
-} from '@genshin-optimizer/gi/consts'
-import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
-import { Translate } from '@genshin-optimizer/gi/i18n'
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
-import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type {
   ComputeNode,
   Data,
   DataNode,
   DisplaySub,
   Info,
-  InfoExtra,
   LookupNode,
   MatchNode,
   NumNode,
@@ -35,7 +27,6 @@ import {
   constant,
   customRead,
   deepNodeClone,
-  infoManager,
   input,
   mergeData,
   resetData,
@@ -428,31 +419,6 @@ function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
   if (sorted.length) result.subVariant = sorted.pop()
   else result.subVariant = result.variant
   return result
-}
-
-export function resolveInfo(info: Info): Info & InfoExtra {
-  // Make sure not to override any `Info` (those should be calculated
-  // in `UIData`) so we only write to `extra` and combine later
-  let extra: InfoExtra = {}
-  const { path, variant } = info
-  if (path) {
-    if (allArtifactSetKeys.includes(path as ArtifactSetKey))
-      extra.name = <Translate ns="artifactNames_gen" key18={path} />
-
-    if (KeyMap.getStr(path)) {
-      extra.name = KeyMap.get(path)
-      extra.icon = (
-        <StatIcon
-          statKey={path}
-          iconProps={{ fontSize: 'inherit', color: variant as any }}
-        />
-      )
-    }
-
-    extra = { ...extra, ...infoManager[path] }
-  }
-
-  return Object.keys(extra).length ? { ...info, ...extra } : info
 }
 
 function mergeInfo(base: Info, override: Info): Info {

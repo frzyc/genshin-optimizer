@@ -12,8 +12,11 @@ import {
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useOptConfig } from '@genshin-optimizer/gi/db-ui'
-import { DataContext, GraphContext } from '@genshin-optimizer/gi/ui'
-import { resolveInfo } from '@genshin-optimizer/gi/uidata'
+import {
+  DataContext,
+  GraphContext,
+  resolveInfo,
+} from '@genshin-optimizer/gi/ui'
 import type { Info, InfoExtra, NumNode } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
 import {

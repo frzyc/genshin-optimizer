@@ -15,9 +15,9 @@ import {
   getCalcDisplay,
   getDisplayHeader,
   getDisplaySections,
+  resolveInfo,
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import { resolveInfo } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import CloseIcon from '@mui/icons-material/Close'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'

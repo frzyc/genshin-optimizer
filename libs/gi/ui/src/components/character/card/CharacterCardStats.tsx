@@ -1,8 +1,8 @@
-import { resolveInfo } from '@genshin-optimizer/gi/uidata'
 import { input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { DataContext } from '../../../context'
+import { resolveInfo } from '../../../util'
 import { NodeFieldDisplay } from '../../FieldDisplay'
 
 export function CharacterCardStats() {

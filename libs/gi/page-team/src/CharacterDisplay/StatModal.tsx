@@ -17,8 +17,8 @@ import {
   NodeFieldDisplay,
   StatEditorList,
   getCalcDisplay,
+  resolveInfo,
 } from '@genshin-optimizer/gi/ui'
-import { resolveInfo } from '@genshin-optimizer/gi/uidata'
 import type { ReadNode } from '@genshin-optimizer/gi/wr'
 import { allInputPremodKeys, uiInput as input } from '@genshin-optimizer/gi/wr'
 import BarChartIcon from '@mui/icons-material/BarChart'

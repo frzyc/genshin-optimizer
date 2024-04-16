@@ -11,10 +11,11 @@ import {
   allWeaponKeys,
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
-import { resolveInfo, type CalcResult } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import type { Info, InfoExtra, KeyMapPrefix } from '@genshin-optimizer/gi/wr'
 import { useContext, type ReactNode } from 'react'
 import { SillyContext } from '../context'
+import { resolveInfo } from './resolveInfo'
 
 type CalcDisplay = {
   name?: ReactNode
