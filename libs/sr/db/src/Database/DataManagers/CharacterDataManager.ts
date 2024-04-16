@@ -170,6 +170,14 @@ export class CharacterDataManager extends DataManager<
     }
     return result
   }
+  // These overrides allow CharacterKey to be used as id.
+  // This assumes we only support one copy of a character in a DB.
+  override toStorageKey(key: string): string {
+    return `${this.goKeySingle}_${key}`
+  }
+  override toCacheKey(key: string): CharacterKey {
+    return key.split(`${this.goKeySingle}_`)[1] as CharacterKey
+  }
   getTrailblazerCharacterKey(): CharacterKey {
     return (
       allTrailblazerKeys.find((k) => this.keys.includes(k)) ??

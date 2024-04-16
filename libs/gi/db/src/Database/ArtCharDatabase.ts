@@ -5,7 +5,6 @@ import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { DBMetaEntry } from './DataEntries/DBMetaEntry'
 import { DisplayArtifactEntry } from './DataEntries/DisplayArtifactEntry'
 import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
-import { DisplayOptimizeEntry } from './DataEntries/DisplayOptimizeEntry'
 import { DisplayTeamEntry } from './DataEntries/DisplayTeamEntry'
 import { DisplayToolEntry } from './DataEntries/DisplayTool'
 import { DisplayWeaponEntry } from './DataEntries/DisplayWeaponEntry'
@@ -35,7 +34,6 @@ export class ArtCharDatabase extends Database {
   dbMeta: DBMetaEntry
   displayWeapon: DisplayWeaponEntry
   displayArtifact: DisplayArtifactEntry
-  displayOptimize: DisplayOptimizeEntry
   displayCharacter: DisplayCharacterEntry
   displayTool: DisplayToolEntry
   displayTeam: DisplayTeamEntry
@@ -80,7 +78,6 @@ export class ArtCharDatabase extends Database {
     this.dbMeta = new DBMetaEntry(this)
     this.displayWeapon = new DisplayWeaponEntry(this)
     this.displayArtifact = new DisplayArtifactEntry(this)
-    this.displayOptimize = new DisplayOptimizeEntry(this)
     this.displayCharacter = new DisplayCharacterEntry(this)
     this.displayTool = new DisplayToolEntry(this)
     this.displayTeam = new DisplayTeamEntry(this)
@@ -115,7 +112,6 @@ export class ArtCharDatabase extends Database {
       this.dbMeta,
       this.displayWeapon,
       this.displayArtifact,
-      this.displayOptimize,
       this.displayCharacter,
       this.displayTool,
       this.displayTeam,
