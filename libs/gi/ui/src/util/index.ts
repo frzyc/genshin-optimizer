@@ -1,4 +1,5 @@
 export * from './getBuildTcData'
+export * from './getCalcDisplay'
 export * from './getDisplayUtil'
 export * from './iconAsset'
 export * from './isDev'

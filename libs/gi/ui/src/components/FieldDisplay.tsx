@@ -11,7 +11,7 @@ import type {
   IFieldDisplay,
 } from '@genshin-optimizer/gi/sheets'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import { getCalcDisplay, resolveInfo } from '@genshin-optimizer/gi/uidata'
+import { resolveInfo } from '@genshin-optimizer/gi/uidata'
 import GroupsIcon from '@mui/icons-material/Groups'
 import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, PaletteColor } from '@mui/material'
@@ -27,6 +27,7 @@ import {
 import type { ReactNode } from 'react'
 import React, { Suspense, useCallback, useContext, useMemo } from 'react'
 import { DataContext, FormulaDataContext } from '../context'
+import { getCalcDisplay } from '../util'
 import { AmpReactionModeText } from './AmpReactionModeText'
 
 export function FieldsDisplay({

@@ -10,17 +10,14 @@ import type { WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import {
-  computeUIData,
-  getCalcDisplay,
-  resolveInfo,
-} from '@genshin-optimizer/gi/uidata'
+import { computeUIData, resolveInfo } from '@genshin-optimizer/gi/uidata'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, input } from '@genshin-optimizer/gi/wr'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo } from 'react'
+import { getCalcDisplay } from '../../util'
 import { LocationIcon } from '../LocationIcon'
 import { WeaponNameTooltip } from './WeaponNameTooltip'
 

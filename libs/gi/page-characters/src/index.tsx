@@ -28,13 +28,13 @@ import {
   CharacterSelectionModal,
   ElementToggle,
   ShowingAndSortOptionSelect,
+  SillyContext,
   WeaponToggle,
   characterFilterConfigs,
   characterSortConfigs,
   characterSortMap,
   useCharSelectionCallback,
 } from '@genshin-optimizer/gi/ui'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,

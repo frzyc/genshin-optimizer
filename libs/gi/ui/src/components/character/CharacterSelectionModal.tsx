@@ -30,7 +30,6 @@ import {
 import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import CloseIcon from '@mui/icons-material/Close'
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -58,7 +57,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DataContext } from '../../context'
+import { DataContext, SillyContext } from '../../context'
 import { iconAsset } from '../../util/iconAsset'
 import { SortByButton } from '../SortByButton'
 import { ElementToggle, WeaponToggle } from '../toggles'

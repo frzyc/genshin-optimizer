@@ -14,7 +14,6 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
@@ -23,7 +22,7 @@ import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { DataContext } from '../../../context'
+import { DataContext, SillyContext } from '../../../context'
 import { LevelSelect } from '../../LevelSelect'
 import {
   CharacterCompactConstSelector,

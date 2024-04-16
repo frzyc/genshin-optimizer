@@ -40,10 +40,10 @@ import {
   CharacterCardPico,
   CharacterRarityToggle,
   ElementToggle,
+  SillyContext,
   WeaponToggle,
   characterFilterConfigs,
 } from '@genshin-optimizer/gi/ui'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import CloseIcon from '@mui/icons-material/Close'
 import SettingsIcon from '@mui/icons-material/Settings'
 import ShowChartIcon from '@mui/icons-material/ShowChart'

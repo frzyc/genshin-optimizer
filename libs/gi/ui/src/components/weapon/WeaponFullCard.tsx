@@ -7,15 +7,12 @@ import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import {
-  computeUIData,
-  getCalcDisplay,
-  resolveInfo,
-} from '@genshin-optimizer/gi/uidata'
+import { computeUIData, resolveInfo } from '@genshin-optimizer/gi/uidata'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
+import { getCalcDisplay } from '../../util'
 import { WeaponName } from './WeaponTrans'
 export function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
