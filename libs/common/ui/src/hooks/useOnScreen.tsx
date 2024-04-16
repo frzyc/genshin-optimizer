@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from 'react'
 export function useOnScreen(element?: HTMLElement) {
   const [isOnScreen, setIsOnScreen] = useState(false)
   const observerRef = useRef<IntersectionObserver | null>(null)
-  if (!observerRef.current)
+  if (!observerRef.current && typeof window !== 'undefined')
     observerRef.current = new IntersectionObserver(([entry]) =>
       setIsOnScreen(entry.isIntersecting)
     )
