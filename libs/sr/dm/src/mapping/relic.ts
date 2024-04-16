@@ -32,6 +32,8 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
   310: 'BrokenKeel',
   311: 'FirmamentFrontlineGlamoth',
   312: 'PenaconyLandOfTheDreams',
+  313: 'SigoniaTheUnclaimedDesolation',
+  314: 'IzumoGenseiAndTakamaDivineRealm',
 }
 export type RelicSetId = keyof typeof relicSetIdMap
 

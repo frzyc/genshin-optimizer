@@ -6,8 +6,8 @@
       "SkillDesc": "RelicDesc_1012",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "HealRatioBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "HealRatioBase",
+          "IEDALJJJBCE": {
             "Value": 0.1
           }
         }
@@ -35,8 +35,8 @@
       "SkillDesc": "RelicDesc_1022",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "AttackAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "AttackAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.12
           }
         }
@@ -54,8 +54,8 @@
       "SkillDesc": "RelicDesc_1024",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "SpeedAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "SpeedAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.06
           }
         }
@@ -78,8 +78,8 @@
       "SkillDesc": "RelicDesc_1032",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "DefenceAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "DefenceAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.15
           }
         }
@@ -111,8 +111,8 @@
       "SkillDesc": "RelicDesc_1042",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "IceAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "IceAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.1
           }
         }
@@ -147,8 +147,8 @@
       "SkillDesc": "RelicDesc_1052",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "PhysicalAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "PhysicalAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.1
           }
         }
@@ -215,8 +215,8 @@
       "SkillDesc": "RelicDesc_1072",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "FireAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "FireAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.1
           }
         }
@@ -251,8 +251,8 @@
       "SkillDesc": "RelicDesc_1082",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "QuantumAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "QuantumAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.1
           }
         }
@@ -287,8 +287,8 @@
       "SkillDesc": "RelicDesc_1092",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "ThunderAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "ThunderAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.1
           }
         }
@@ -323,8 +323,8 @@
       "SkillDesc": "RelicDesc_1102",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "WindAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "WindAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.1
           }
         }
@@ -356,8 +356,8 @@
       "SkillDesc": "RelicDesc_1112",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "BreakDamageAddedRatioBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "BreakDamageAddedRatioBase",
+          "IEDALJJJBCE": {
             "Value": 0.16
           }
         }
@@ -375,8 +375,8 @@
       "SkillDesc": "RelicDesc_1114",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "BreakDamageAddedRatioBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "BreakDamageAddedRatioBase",
+          "IEDALJJJBCE": {
             "Value": 0.16
           }
         }
@@ -399,8 +399,8 @@
       "SkillDesc": "RelicDesc_1122",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "ImaginaryAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "ImaginaryAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.1
           }
         }
@@ -435,8 +435,8 @@
       "SkillDesc": "RelicDesc_1132",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "HPAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "HPAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.12
           }
         }
@@ -474,8 +474,8 @@
       "SkillDesc": "RelicDesc_1142",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "SpeedAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "SpeedAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.06
           }
         }
@@ -542,8 +542,8 @@
       "SkillDesc": "RelicDesc_1162",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "AttackAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "AttackAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.12
           }
         }
@@ -590,8 +590,8 @@
       "SkillDesc": "RelicDesc_1174",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "CriticalChanceBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "CriticalChanceBase",
+          "IEDALJJJBCE": {
             "Value": 0.04
           }
         }
@@ -626,8 +626,8 @@
       "SkillDesc": "RelicDesc_1182",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "BreakDamageAddedRatioBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "BreakDamageAddedRatioBase",
+          "IEDALJJJBCE": {
             "Value": 0.16
           }
         }
@@ -662,8 +662,8 @@
       "SkillDesc": "RelicDesc_3012",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "AttackAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "AttackAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.12
           }
         }
@@ -689,8 +689,8 @@
       "SkillDesc": "RelicDesc_3022",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "HPAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "HPAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.12
           }
         }
@@ -716,8 +716,8 @@
       "SkillDesc": "RelicDesc_3032",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "StatusProbabilityBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "StatusProbabilityBase",
+          "IEDALJJJBCE": {
             "Value": 0.1
           }
         }
@@ -743,8 +743,8 @@
       "SkillDesc": "RelicDesc_3042",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "DefenceAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "DefenceAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.15
           }
         }
@@ -770,8 +770,8 @@
       "SkillDesc": "RelicDesc_3052",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "CriticalDamageBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "CriticalDamageBase",
+          "IEDALJJJBCE": {
             "Value": 0.16
           }
         }
@@ -797,8 +797,8 @@
       "SkillDesc": "RelicDesc_3062",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "CriticalChanceBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "CriticalChanceBase",
+          "IEDALJJJBCE": {
             "Value": 0.08
           }
         }
@@ -824,8 +824,8 @@
       "SkillDesc": "RelicDesc_3072",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "BreakDamageAddedRatioBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "BreakDamageAddedRatioBase",
+          "IEDALJJJBCE": {
             "Value": 0.16
           }
         }
@@ -851,8 +851,8 @@
       "SkillDesc": "RelicDesc_3082",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "SPRatioBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "SPRatioBase",
+          "IEDALJJJBCE": {
             "Value": 0.05
           }
         }
@@ -878,8 +878,8 @@
       "SkillDesc": "RelicDesc_3092",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "CriticalChanceBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "CriticalChanceBase",
+          "IEDALJJJBCE": {
             "Value": 0.08
           }
         }
@@ -905,8 +905,8 @@
       "SkillDesc": "RelicDesc_3102",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "StatusResistanceBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "StatusResistanceBase",
+          "IEDALJJJBCE": {
             "Value": 0.1
           }
         }
@@ -932,8 +932,8 @@
       "SkillDesc": "RelicDesc_3112",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "AttackAddedRatio",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "AttackAddedRatio",
+          "IEDALJJJBCE": {
             "Value": 0.12
           }
         }
@@ -965,8 +965,8 @@
       "SkillDesc": "RelicDesc_3122",
       "PropertyList": [
         {
-          "KHGMJFPILBD": "SPRatioBase",
-          "BOANKOCFAIM": {
+          "IMHNJLJDLLH": "SPRatioBase",
+          "IEDALJJJBCE": {
             "Value": 0.05
           }
         }
@@ -978,6 +978,57 @@
         },
         {
           "Value": 0.1
+        }
+      ]
+    }
+  ],
+  "313": [
+    {
+      "SetID": 313,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3132",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "CriticalChanceBase",
+          "IEDALJJJBCE": {
+            "Value": 0.04
+          }
+        }
+      ],
+      "AbilityName": "Ability53131",
+      "AbilityParamList": [
+        {
+          "Value": 0.04
+        },
+        {
+          "Value": 10
+        },
+        {
+          "Value": 0.04
+        }
+      ]
+    }
+  ],
+  "314": [
+    {
+      "SetID": 314,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3142",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "AttackAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.12
+          }
+        }
+      ],
+      "AbilityName": "Ability53141",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 0.12
         }
       ]
     }

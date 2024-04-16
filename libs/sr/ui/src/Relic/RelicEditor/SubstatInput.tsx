@@ -6,7 +6,7 @@ import {
   SqBadge,
   TextButton,
 } from '@genshin-optimizer/common/ui'
-import { clamp, toPercent, unit } from '@genshin-optimizer/common/util'
+import { clamp, getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import type { RelicSubStatKey } from '@genshin-optimizer/sr/consts'
 import {
   allRelicSubStatKeys,
@@ -128,7 +128,7 @@ export default function SubstatInput({
             sx={{ flexBasis: 30, flexGrow: 1 }}
           >
             <CustomNumberInput
-              float={unit(key) === '%'}
+              float={getUnitStr(key) === '%'}
               placeholder={t`editor.substat.selectSub`}
               value={
                 key
@@ -137,7 +137,7 @@ export default function SubstatInput({
               }
               onChange={(v) => {
                 let value = (v as number) ?? 0
-                if (unit(key) === '%') {
+                if (getUnitStr(key) === '%') {
                   value = value / 100
                 }
                 setSubstat(index, { key, value })
@@ -181,7 +181,7 @@ export default function SubstatInput({
           marks={marks}
           setValue={(v) => {
             let value = (v as number) ?? 0
-            if (unit(key) === '%') {
+            if (getUnitStr(key) === '%') {
               value = value / 100
             }
             setSubstat(index, { key, value })

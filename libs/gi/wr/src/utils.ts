@@ -53,9 +53,9 @@ export function percent(value: number, info?: Info): ConstantNode<number> {
 }
 
 export type InfoExtra = {
-  name?: any //Displayable
-  icon?: any //Displayable
-  textSuffix?: any //Displayable
+  name?: any //ReactNode
+  icon?: any //ReactNode
+  textSuffix?: any //ReactNode
 }
 export const infoManager: Record<string, InfoExtra> = {}
 

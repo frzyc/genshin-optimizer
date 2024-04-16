@@ -117,26 +117,6 @@ export const artifactCircletStatKeys = [
 ] as const
 export type ArtifactCircletStatKey = (typeof artifactCircletStatKeys)[number]
 
-/**
- * @deprecated use artSlotMainKeys
- */
-export const artSlotsData = {
-  flower: { name: 'Flower of Life', stats: ['hp'] as readonly MainStatKey[] },
-  plume: { name: 'Plume of Death', stats: ['atk'] as readonly MainStatKey[] },
-  sands: {
-    name: 'Sands of Eon',
-    stats: artifactSandsStatKeys as readonly MainStatKey[],
-  },
-  goblet: {
-    name: 'Goblet of Eonothem',
-    stats: artifactGobletStatKeys as readonly MainStatKey[],
-  },
-  circlet: {
-    name: 'Circlet of Logos',
-    stats: artifactCircletStatKeys as readonly MainStatKey[],
-  },
-} as const
-
 export const artSlotMainKeys = {
   flower: ['hp'] as readonly MainStatKey[],
   plume: ['atk'] as readonly MainStatKey[],
@@ -183,3 +163,6 @@ export type SubstatKey = (typeof allSubstatKeys)[number]
 // GO currently only support 3-5 star artifacts
 export const allArtifactRarityKeys = [5, 4, 3] as const
 export type ArtifactRarity = (typeof allArtifactRarityKeys)[number]
+
+const allArtifactSetCount = [1, 2, 3, 4, 5] as const
+export type SetNum = (typeof allArtifactSetCount)[number]

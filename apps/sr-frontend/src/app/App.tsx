@@ -2,6 +2,7 @@ import {
   CalcProvider,
   CharacterProvider,
   DatabaseProvider,
+  LightConeEditor,
   RelicEditor,
   RelicInventory,
 } from '@genshin-optimizer/sr/ui'
@@ -11,7 +12,7 @@ import {
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material'
-import Character from './Character'
+import CharacterEditor from './Character'
 import CharacterSelector from './CharacterSelector'
 import Database from './Database'
 import Optimize from './Optimize'
@@ -28,7 +29,8 @@ export default function App() {
               <CssBaseline />
               <Stack gap={1} pt={1}>
                 <CharacterSelector />
-                <Character />
+                <CharacterEditor />
+                <LightConeEditor />
                 <RelicEditor />
                 <RelicInventory />
                 <Optimize />

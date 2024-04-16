@@ -130,6 +130,8 @@ enum LocationKey {
   Bennett
   Candace
   Charlotte
+  Chevreuse
+  Chiori
   Chongyun
   Collei
   Cyno
@@ -142,6 +144,7 @@ enum LocationKey {
   Fischl
   Freminet
   Furina
+  Gaming
   Ganyu
   Gorou
   HuTao
@@ -185,6 +188,7 @@ enum LocationKey {
   Wanderer
   Wriothesley
   Xiangling
+  Xianyun
   Xiao
   Xingqiu
   Xinyan
@@ -214,6 +218,110 @@ enum SubstatKey {
   enerRech_
   critRate_
   critDMG_
+}
+
+type Talent {
+  auto: Int!
+  skill: Int!
+  burst: Int!
+}
+
+type Character {
+  id: ID!
+  genshinUserId: String!
+  key: CharacterKey!
+  level: Int!
+  ascension: Int!
+  constellation: Int!
+  talent: Talent!
+}
+
+enum CharacterKey {
+  Albedo
+  Alhaitham
+  Aloy
+  Amber
+  AratakiItto
+  Baizhu
+  Barbara
+  Beidou
+  Bennett
+  Candace
+  Charlotte
+  Chevreuse
+  Chiori
+  Chongyun
+  Collei
+  Cyno
+  Dehya
+  Diluc
+  Diona
+  Dori
+  Eula
+  Faruzan
+  Fischl
+  Freminet
+  Furina
+  Gaming
+  Ganyu
+  Gorou
+  HuTao
+  Jean
+  KaedeharaKazuha
+  Kaeya
+  KamisatoAyaka
+  KamisatoAyato
+  Kaveh
+  Keqing
+  Kirara
+  Klee
+  KujouSara
+  KukiShinobu
+  Layla
+  Lisa
+  Lynette
+  Lyney
+  Mika
+  Mona
+  Nahida
+  Navia
+  Neuvillette
+  Nilou
+  Ningguang
+  Noelle
+  Qiqi
+  RaidenShogun
+  Razor
+  Rosaria
+  SangonomiyaKokomi
+  Sayu
+  Shenhe
+  ShikanoinHeizou
+  Somnia
+  Sucrose
+  Tartaglia
+  Thoma
+  Tighnari
+  Venti
+  Wanderer
+  Wriothesley
+  Xiangling
+  Xianyun
+  Xiao
+  Xingqiu
+  Xinyan
+  YaeMiko
+  Yanfei
+  Yaoyao
+  Yelan
+  Yoimiya
+  YunJin
+  Zhongli
+  TravelerAnemo
+  TravelerGeo
+  TravelerElectro
+  TravelerDendro
+  TravelerHydro
 }
 
 type Weapon {
@@ -267,6 +375,7 @@ enum WeaponKey {
   TheFlute
   ToukabouShigure
   TravelersHandySword
+  UrakuMisugiri
   WolfFang
   XiphosMoonlight
   Akuoumaru
@@ -311,6 +420,7 @@ enum WeaponKey {
   CalamityQueller
   CrescentPike
   Deathmatch
+  DialoguesOfTheDesertSages
   DragonsBane
   DragonspineSpear
   EngulfingLightning
@@ -375,6 +485,7 @@ enum WeaponKey {
   BalladOfTheBoundlessBlue
   BlackcliffAgate
   CashflowSupervision
+  CranesEchoingCall
   DodocoTales
   EmeraldOrb
   EverlastingMoonglow
@@ -407,106 +518,6 @@ enum WeaponKey {
   TwinNephrite
   WanderingEvenstar
   WineAndSong
-}
-
-type Talent {
-  auto: Int!
-  skill: Int!
-  burst: Int!
-}
-
-type Character {
-  id: ID!
-  genshinUserId: String!
-  key: CharacterKey!
-  level: Int!
-  ascension: Int!
-  constellation: Int!
-  talent: Talent!
-}
-
-enum CharacterKey {
-  Albedo
-  Alhaitham
-  Aloy
-  Amber
-  AratakiItto
-  Baizhu
-  Barbara
-  Beidou
-  Bennett
-  Candace
-  Charlotte
-  Chongyun
-  Collei
-  Cyno
-  Dehya
-  Diluc
-  Diona
-  Dori
-  Eula
-  Faruzan
-  Fischl
-  Freminet
-  Furina
-  Ganyu
-  Gorou
-  HuTao
-  Jean
-  KaedeharaKazuha
-  Kaeya
-  KamisatoAyaka
-  KamisatoAyato
-  Kaveh
-  Keqing
-  Kirara
-  Klee
-  KujouSara
-  KukiShinobu
-  Layla
-  Lisa
-  Lynette
-  Lyney
-  Mika
-  Mona
-  Nahida
-  Navia
-  Neuvillette
-  Nilou
-  Ningguang
-  Noelle
-  Qiqi
-  RaidenShogun
-  Razor
-  Rosaria
-  SangonomiyaKokomi
-  Sayu
-  Shenhe
-  ShikanoinHeizou
-  Somnia
-  Sucrose
-  Tartaglia
-  Thoma
-  Tighnari
-  Venti
-  Wanderer
-  Wriothesley
-  Xiangling
-  Xiao
-  Xingqiu
-  Xinyan
-  YaeMiko
-  Yanfei
-  Yaoyao
-  Yelan
-  Yoimiya
-  YunJin
-  Zhongli
-  TravelerAnemo
-  TravelerGeo
-  TravelerElectro
-  TravelerDendro
-  TravelerHydro
 }
 
 type Query {
