@@ -119,7 +119,6 @@ async function start() {
                 sphere.stats,
                 rope.stats,
               ])
-              console.log(results)
 
               builds.push({
                 value: results[0], // We only pass 1 target to calculate, so just grab the 1st result
