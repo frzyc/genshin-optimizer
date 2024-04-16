@@ -1,8 +1,8 @@
-import { resolveInfo } from '@genshin-optimizer/gi/uidata'
 import { input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { DataContext } from '../../../context'
+import { resolveInfo } from '../../../util'
 import { NodeFieldDisplay } from '../../FieldDisplay'
 
 export function CharacterCardStats() {
@@ -11,7 +11,7 @@ export function CharacterCardStats() {
   const { name, icon } = resolveInfo(specialNode.info)
   return (
     <Box sx={{ width: '100%' }}>
-      {Object.values(data.getDisplay().basic).map((n) => (
+      {Object.values(data.getDisplay()['basic']).map((n) => (
         <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />
       ))}
       {name && (

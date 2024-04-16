@@ -2,8 +2,7 @@ import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
-import { shouldShowDevComponents } from '@genshin-optimizer/gi/ui'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
+import { SillyContext, shouldShowDevComponents } from '@genshin-optimizer/gi/ui'
 import {
   Article,
   Construction,

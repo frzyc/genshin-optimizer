@@ -3,9 +3,9 @@ import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { portrait } from '@genshin-optimizer/gi/silly-wisher'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import { styled } from '@mui/material/styles'
 import { useContext } from 'react'
+import { SillyContext } from '../../context'
 interface ImgIconProps {
   size?: number
   sideMargin?: boolean

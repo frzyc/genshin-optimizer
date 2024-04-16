@@ -10,8 +10,9 @@ import {
   NodeFieldDisplayText,
   getDisplayHeader,
   getDisplaySections,
+  resolveInfo,
 } from '@genshin-optimizer/gi/ui'
-import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { Masonry } from '@mui/lab'
 import {
@@ -61,8 +62,8 @@ export function TargetSelectorModal({
                   if (!showEmptyTargets && node.isEmpty) return false
                   return true
                 })
-              ) as DisplaySub<NodeDisplay>,
-            ] as [string, DisplaySub<NodeDisplay>]
+              ) as DisplaySub<CalcResult>,
+            ] as [string, DisplaySub<CalcResult>]
         )
         // Determine if a section has all empty entries
         .filter(([_key, sectionObj]) => Object.keys(sectionObj).length)
@@ -93,7 +94,7 @@ function SelectorSection({
   sectionKey,
   setTarget,
 }: {
-  displayNs: DisplaySub<NodeDisplay>
+  displayNs: DisplaySub<CalcResult>
   sectionKey: string
   setTarget: (target: string[], multi?: number) => void
   flatOnly?: boolean
@@ -132,7 +133,7 @@ function TargetSelectorMenuItem({
   node,
   onClick,
 }: {
-  node: NodeDisplay
+  node: CalcResult
   onClick: () => void
 }) {
   return (

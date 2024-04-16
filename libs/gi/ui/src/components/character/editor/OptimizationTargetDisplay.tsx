@@ -1,7 +1,7 @@
 import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import TrackChangesIcon from '@mui/icons-material/TrackChanges'
 import {
   Box,
@@ -14,7 +14,7 @@ import {
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DataContext } from '../../../context'
-import { getDisplayHeader } from '../../../util'
+import { getDisplayHeader, resolveInfo } from '../../../util'
 export function OptimizationTargetDisplay({
   optimizationTarget,
   showEmptyTargets = false,
@@ -36,7 +36,7 @@ export function OptimizationTargetDisplay({
   const defaultText = t('targetSelector.selectOptTarget')
 
   const { title, icon, action } = displayHeader ?? {}
-  const node: NodeDisplay | undefined =
+  const node: CalcResult | undefined =
     optimizationTarget &&
     (objPathValue(data.getDisplay(), optimizationTarget) as any)
 

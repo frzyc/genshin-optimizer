@@ -2,8 +2,12 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { DataContext, getDisplayHeader } from '@genshin-optimizer/gi/ui'
-import { resolveInfo, type NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import {
+  DataContext,
+  getDisplayHeader,
+  resolveInfo,
+} from '@genshin-optimizer/gi/ui'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { Box, Button, Divider, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -47,7 +51,7 @@ export default function OptimizationTargetSelector({
   if (!defaultText) defaultText = t('targetSelector.selectOptTarget')
 
   const { title, icon, action } = displayHeader ?? {}
-  const node: NodeDisplay | undefined =
+  const node: CalcResult | undefined =
     optimizationTarget &&
     (objPathValue(data.getDisplay(), optimizationTarget) as any)
 

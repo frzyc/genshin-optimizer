@@ -8,7 +8,6 @@ import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
   TransformativeReactionsKey,
-  Unit,
 } from '@genshin-optimizer/gi/keymap'
 import type { input, uiInput } from './formula'
 
@@ -174,7 +173,7 @@ export type UIInput<Num = NumNode, Str = StrNode> = _Input<
 >
 
 export type Data = Input & DynamicNumInput
-export type DisplaySub<T = NumNode> = { [key in string]?: T }
+export type DisplaySub<T = NumNode> = Record<string, T>
 interface DynamicNumInput<T = NumNode> {
   display?: {
     [key: string]: DisplaySub
