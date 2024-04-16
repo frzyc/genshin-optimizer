@@ -19,7 +19,6 @@ import {
   Container,
   CssBaseline,
   Fab,
-  Grid,
   Skeleton,
   StyledEngineProvider,
   ThemeProvider,
@@ -147,10 +146,14 @@ function App() {
 function Content() {
   useTitle()
   return (
-    <Grid container direction="column" minHeight="100vh" position="relative">
-      <Grid item>
-        <Header anchor="back-to-top-anchor" />
-      </Grid>
+    <Box
+      display="flex"
+      flexDirection="column"
+      minHeight="100vh"
+      position="relative"
+    >
+      <Header anchor="back-to-top-anchor" />
+
       <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1 } }}>
         <Suspense
           fallback={
@@ -178,12 +181,10 @@ function Content() {
         </Suspense>
       </Container>
       {/* make sure footer is always at bottom */}
-      <Grid item flexGrow={1} />
+      <Box flexGrow={1} />
       <Snow />
-      <Grid item>
-        <Footer />
-      </Grid>
-    </Grid>
+      <Footer />
+    </Box>
   )
 }
 export default App
