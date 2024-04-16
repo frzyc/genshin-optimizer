@@ -38,7 +38,7 @@ import {
   NodeFieldDisplay,
   WeaponFullCardObj,
 } from '@genshin-optimizer/gi/ui'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { input } from '@genshin-optimizer/gi/wr'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
@@ -59,7 +59,7 @@ import { useTranslation } from 'react-i18next'
 export function TeamBuffDisplay() {
   const { data, compareData } = useContext(DataContext)
   const teamBuffs = data.getTeamBuff() as any
-  const nodes: Array<[string[], NodeDisplay<number>]> = []
+  const nodes: Array<[string[], CalcResult]> = []
   Object.entries(teamBuffs.total ?? {}).forEach(
     ([key, node]: [key: string, node: any]) =>
       !node.isEmpty && node.value !== 0 && nodes.push([['total', key], node])
@@ -73,7 +73,7 @@ export function TeamBuffDisplay() {
       !node.isEmpty &&
       typeof node.value === 'number' &&
       node.value !== 0 &&
-      nodes.push([['enemy', key], node as NodeDisplay<number>])
+      nodes.push([['enemy', key], node as CalcResult])
   )
   if (!nodes.length) return null
   return (

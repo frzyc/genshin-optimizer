@@ -1,7 +1,6 @@
 import {
   CardHeaderCustom,
   CardThemed,
-  ColorText,
   ImgIcon,
   ModalWrapper,
   SqBadge,
@@ -13,11 +12,12 @@ import {
   AmpReactionModeText,
   DataContext,
   FormulaDataContext,
+  getCalcDisplay,
   getDisplayHeader,
   getDisplaySections,
+  resolveInfo,
 } from '@genshin-optimizer/gi/ui'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
-import { nodeVStr, resolveInfo } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import CloseIcon from '@mui/icons-material/Close'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -89,7 +89,7 @@ function FormulaCalc({
   sectionKey,
   displayNs,
 }: {
-  displayNs: DisplaySub<NodeDisplay>
+  displayNs: DisplaySub<CalcResult>
   sectionKey: string
 }) {
   const { data } = useContext(DataContext)
@@ -119,7 +119,7 @@ function FormulaCalc({
     </CardThemed>
   )
 }
-function FormulaAccordian({ node }: { node: NodeDisplay }) {
+function FormulaAccordian({ node }: { node: CalcResult }) {
   const { node: contextNode } = useContext(FormulaDataContext)
   const [expanded, setExpanded] = useState(false)
   const handleChange = useCallback(
@@ -137,7 +137,8 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
       )
   }, [scrollRef, node, contextNode])
 
-  const { variant, name, subVariant } = resolveInfo(node.info)
+  const { variant, subVariant } = resolveInfo(node.info)
+  const calcDisplay = getCalcDisplay(node)
   return (
     <Accordion
       sx={{ bgcolor: 'contentNormal.main' }}
@@ -147,12 +148,8 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
     >
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography>
-          <ColorText
-            color={variant && variant === 'invalid' ? undefined : variant}
-          >
-            {name}
-          </ColorText>{' '}
-          <strong>{nodeVStr(node)}</strong>
+          {calcDisplay.name}
+          <strong>{calcDisplay.valueString}</strong>
         </Typography>
         {allAmpReactionKeys.includes(variant as 'vaporize' | 'melt') && (
           <Box sx={{ display: 'inline-block', ml: 'auto', mr: 2 }}>
@@ -164,7 +161,8 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
         )}
       </AccordionSummary>
       <AccordionDetails>
-        {node.formulas.map((subform, i) => (
+        {calcDisplay.assignment}
+        {calcDisplay.formulas.map((subform, i) => (
           <Typography key={i} component="div">
             {subform}
           </Typography>

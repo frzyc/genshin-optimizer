@@ -32,10 +32,11 @@ import {
   NoArtWarning,
   ReactionToggle,
   getTeamData,
+  resolveInfo,
   shouldShowDevComponents,
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
-import { resolveInfo, uiDataForTeam } from '@genshin-optimizer/gi/uidata'
+import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'

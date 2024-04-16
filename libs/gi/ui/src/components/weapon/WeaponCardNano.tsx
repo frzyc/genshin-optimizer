@@ -9,18 +9,15 @@ import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import type { WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
-import {
-  computeUIData,
-  nodeVStr,
-  resolveInfo,
-} from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+import { computeUIData } from '@genshin-optimizer/gi/uidata'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, input } from '@genshin-optimizer/gi/wr'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo } from 'react'
+import { getCalcDisplay, resolveInfo } from '../../util'
 import { LocationIcon } from '../LocationIcon'
 import { WeaponNameTooltip } from './WeaponNameTooltip'
 
@@ -191,7 +188,7 @@ export function WeaponCardNanoObj({
     </ConditionalWrapper>
   )
 }
-function WeaponStat({ node }: { node: NodeDisplay }) {
+function WeaponStat({ node }: { node: CalcResult }) {
   const { name, icon } = resolveInfo(node.info)
   if (!name) return null
   return (
@@ -207,7 +204,7 @@ function WeaponStat({ node }: { node: NodeDisplay }) {
         >
           <span>{icon}</span>
         </BootstrapTooltip>
-        <span>{nodeVStr(node)}</span>
+        <span>{getCalcDisplay(node).valueString}</span>
       </Typography>
     </Box>
   )

@@ -57,15 +57,13 @@ import {
   OptimizationTargetContext,
   ReactionToggle,
   getTeamData,
+  resolveInfo,
   useGlobalError,
   useNumWorkers,
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
-import {
-  resolveInfo,
-  uiDataForTeam,
-  type UIData,
-} from '@genshin-optimizer/gi/uidata'
+import type { UIData } from '@genshin-optimizer/gi/uidata'
+import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import {

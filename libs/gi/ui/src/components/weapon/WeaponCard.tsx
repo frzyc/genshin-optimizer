@@ -12,11 +12,7 @@ import type {
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharStat, getWeaponStat } from '@genshin-optimizer/gi/stats'
-import {
-  computeUIData,
-  nodeVStr,
-  resolveInfo,
-} from '@genshin-optimizer/gi/uidata'
+import { computeUIData } from '@genshin-optimizer/gi/uidata'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Lock, LockOpen } from '@mui/icons-material'
@@ -34,6 +30,7 @@ import {
 } from '@mui/material'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { getCalcDisplay, resolveInfo } from '../../util'
 import { LocationAutocomplete, LocationName } from '../character'
 import { WeaponName } from './WeaponTrans'
 
@@ -186,7 +183,7 @@ export function WeaponCard({
                   <Typography flexGrow={1}>
                     {icon} {name}
                   </Typography>
-                  <Typography>{nodeVStr(node)}</Typography>
+                  <Typography>{getCalcDisplay(node).valueString}</Typography>
                 </Box>
               )
             })}

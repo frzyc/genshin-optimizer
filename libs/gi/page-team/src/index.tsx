@@ -19,13 +19,13 @@ import {
   DataContext,
   FormulaDataWrapper,
   GraphContext,
+  SillyContext,
   useTeamDataNoContext,
   useTitle,
   type ChartData,
   type GraphContextObj,
   type dataContextObj,
 } from '@genshin-optimizer/gi/ui'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
