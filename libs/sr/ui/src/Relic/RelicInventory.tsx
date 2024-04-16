@@ -48,7 +48,7 @@ export function RelicInventory() {
 
   return (
     <Container>
-      <CardThemed>
+      <CardThemed bgt='dark'>
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMore />}>
             Relics
