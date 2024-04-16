@@ -86,9 +86,10 @@ export type CalcResult<V = number> = {
 type CalcDisplay = {
   name?: ReactNode
   valueString: string
-  formula: ReactNode
 
   prec: number
+  formula: ReactNode
+  assignment?: ReactNode
   formulas: ReactNode[]
 }
 
@@ -222,20 +223,24 @@ export class UIData {
     }
 
     if (info) {
-      const { asConst } = info
+      const { path, asConst } = info
       result = { ...result }
       result.info = mergeInfo(result.info, info)
 
-      // Pivot all keyed nodes for debugging
-      // if (info.key) result.info.pivot = true
-
-      if (asConst) {
+      if (asConst)
         result.meta = {
           op: 'const',
           ops: [],
           conds: [],
         }
+
+      if (path && KeyMap.getStr(path)) {
+        if (!result.info.variant) result.info.variant = KeyMap.getVariant(path)
+        if (!result.info.unit) result.info.unit = getUnitStr(path)
       }
+
+      // Pivot all keyed nodes for debugging
+      // if (info.key) result.info.pivot = true
     }
 
     this.nodes.set(node, result)
@@ -474,43 +479,42 @@ function _getCalcDisplay(
   const infoExtra = resolveInfo(info)
   const { name, prefix, source, variant } = infoExtra
   const result = computeFormulaDisplay(node as CalcResult<number>, infoExtra)
-  if (node.info.pivot && node.info.path) {
+  if (node.info.path) {
     const prefixDisplay = prefix && !source ? <>{subKeyMap[prefix]} </> : null
     const sourceDisplay = <SourceDisplay source={source} />
-    const valueString = result.valueString
-
     const nameVariant = variant && variant === 'invalid' ? undefined : variant
-    const nameDisplay = (
+    result.name = (
       <>
         <ColorText color={nameVariant}>
           {prefixDisplay}
+          {prefixDisplay && ' '}
           {name}
-        </ColorText>
+        </ColorText>{' '}
         {sourceDisplay}
       </>
     )
 
-    let deps = result.formulas
-    const hasFormula = node.meta.op !== 'const'
-    if (hasFormula) {
-      const assignmentDisplay = (
+    if (node.meta.op !== 'const')
+      result.assignment = (
         <div className="formula">
-          {nameDisplay} <ColorText color="info">{valueString}</ColorText> ={' '}
-          {result.formula}
+          {result.name} <ColorText color="info">{result.valueString}</ColorText>{' '}
+          = {result.formula}
         </div>
       )
-      deps = [assignmentDisplay, ...deps]
-    }
-    return {
-      name: nameDisplay,
-      valueString,
-      prec: Infinity,
-      formula: (
+
+    if (node.info.pivot || node.meta.op === 'const') {
+      result.prec = Infinity
+      result.formula = (
         <>
-          <span style={{ fontSize: '85%' }}>{name}</span> {valueString}
+          <span style={{ fontSize: '85%' }}>{result.name}</span>{' '}
+          {result.valueString}
         </>
-      ),
-      formulas: deps,
+      )
+
+      if (result.assignment) {
+        result.formulas = [result.assignment, ...result.formulas]
+        delete result.assignment
+      }
     }
   }
   return result
@@ -520,25 +524,88 @@ function computeFormulaDisplay(
   node: CalcResult<number>,
   info: Info & InfoExtra
 ): CalcDisplay {
-  switch (node.meta.op) {
-    case 'const': {
-      const vStr = valueString(node.value, info.unit, info.fixed)
-      return { prec: Infinity, formula: vStr, valueString: vStr, formulas: [] }
-    }
+  const details = {
+    add: { head: '', sep: ' + ', tail: '', prec: 1 },
+    mul: { head: '', sep: ' * ', tail: '', prec: 2 },
+    max: { head: 'Max(', sep: ', ', tail: ')', prec: Infinity },
+    min: { head: 'Min(', sep: ', ', tail: ')', prec: Infinity },
+  } as const
+
+  const { op, ops } = node.meta
+  const result: CalcDisplay = {
+    prec: Infinity,
+    formula: '',
+    valueString: valueString(node.value, info.unit, info.fixed),
+    formulas: [...new Set(ops.flatMap((op) => getCalcDisplay(op).formulas))],
+  }
+  const components: ReactNode[] = []
+
+  function addComponents(node: CalcResult<number>, p: number) {
+    const display = getCalcDisplay(node)
+    if (p > display.prec) components.push('(')
+    components.push(display.formula)
+    if (p > display.prec) components.push(')')
+  }
+
+  switch (op) {
+    case 'const':
+      components.push(result.valueString)
+      break
     case 'add':
     case 'mul':
     case 'min':
-    case 'max':
-    case 'sum_frac':
-    case 'res':
-      // TODO: Pando's formulaText example might work here
-      return {
-        prec: Infinity,
-        formula: 'TODO',
-        valueString: 'TODO',
-        formulas: [],
+    case 'max': {
+      if (ops.length === 1) result.prec = getCalcDisplay(ops[0]).prec
+      else result.prec = details[op].prec
+      const { head, sep, tail, prec } = details[op]
+      components.push(head)
+      ops.forEach((op, i) => {
+        if (i !== 0) components.push(sep)
+        addComponents(op, prec)
+      })
+      components.push(tail)
+      break
+    }
+    case 'sum_frac': {
+      result.prec = details.mul.prec
+      addComponents(ops[0], details.mul.prec)
+      components.push(' / (')
+      addComponents(ops[0], details.add.prec)
+      components.push(' + ')
+      addComponents(ops[1], details.add.prec)
+      components.push(')')
+      break
+    }
+    case 'res': {
+      const [preRes] = ops
+      if (preRes.value >= 0.75) {
+        result.prec = details.mul.prec
+        components.push('1 / (1 + 4 * ')
+        addComponents(preRes, details.mul.prec)
+        components.push(')')
+      } else if (preRes.value >= 0) {
+        result.prec = details.add.prec
+        components.push('1 - ')
+        addComponents(preRes, details.add.prec)
+      } else {
+        result.prec = details.add.prec
+        components.push('1 - ')
+        addComponents(preRes, details.mul.prec)
+        components.push(' / 2')
       }
+    }
   }
+
+  components.filter((c) => c)
+  result.formula = (
+    <>
+      {components.map((x, i) => (
+        <span key={i}>{x}</span>
+      ))}
+    </>
+  )
+
+  return result
 }
 
 const subKeyMap: Record<KeyMapPrefix, string> = {
@@ -553,28 +620,29 @@ const subKeyMap: Record<KeyMapPrefix, string> = {
   teamBuff: 'Team',
 }
 
-export function resolveInfo(oldInfo: Info): InfoExtra & Info {
-  let info: Info & InfoExtra = { ...oldInfo }
-  const path = oldInfo.path
+export function resolveInfo(info: Info): Info & InfoExtra {
+  // Make sure not to override any `Info` (those should be calculated
+  // in `UIData`) so we only write to `extra` and combine later
+  let extra: InfoExtra = {}
+  const { path, variant } = info
   if (path) {
-    if (allArtifactSetKeys.includes(path as ArtifactSetKey)) {
-      info.name = <Translate ns="artifactNames_gen" key18={path} />
-    }
-    if (KeyMap.getStr(path)) {
-      if (!info.variant) info.variant = KeyMap.getVariant(path)
-      if (!info.unit) info.unit = getUnitStr(path)
+    if (allArtifactSetKeys.includes(path as ArtifactSetKey))
+      extra.name = <Translate ns="artifactNames_gen" key18={path} />
 
-      info.name = KeyMap.get(path)
-      info.icon = (
+    if (KeyMap.getStr(path)) {
+      extra.name = KeyMap.get(path)
+      extra.icon = (
         <StatIcon
           statKey={path}
-          iconProps={{ fontSize: 'inherit', color: info.variant as any }}
+          iconProps={{ fontSize: 'inherit', color: variant as any }}
         />
       )
     }
-    info = { ...info, ...infoManager[path] }
+
+    extra = { ...extra, ...infoManager[path] }
   }
-  return info
+
+  return Object.keys(extra).length ? { ...info, ...extra } : info
 }
 function SourceDisplay({ source }: { source: string | undefined }) {
   const { silly } = useContext(SillyContext)
@@ -606,18 +674,6 @@ function SourceDisplay({ source }: { source: string | undefined }) {
       </ColorText>
     )
   return null
-}
-
-// TODO: need to implement?
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function mergeFormulaComponents(components: ReactNode[]): ReactNode {
-  return (
-    <>
-      {components.map((x, i) => (
-        <span key={i}>{x}</span>
-      ))}
-    </>
-  )
 }
 
 function mergeInfo(base: Info, override: Info): Info {

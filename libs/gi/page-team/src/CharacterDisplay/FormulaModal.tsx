@@ -1,7 +1,6 @@
 import {
   CardHeaderCustom,
   CardThemed,
-  ColorText,
   ImgIcon,
   ModalWrapper,
   SqBadge,
@@ -137,7 +136,7 @@ function FormulaAccordian({ node }: { node: CalcResult }) {
       )
   }, [scrollRef, node, contextNode])
 
-  const { variant, name, subVariant } = resolveInfo(node.info)
+  const { variant, subVariant } = resolveInfo(node.info)
   const calcDisplay = getCalcDisplay(node)
   return (
     <Accordion
@@ -148,11 +147,7 @@ function FormulaAccordian({ node }: { node: CalcResult }) {
     >
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography>
-          <ColorText
-            color={variant && variant === 'invalid' ? undefined : variant}
-          >
-            {name}
-          </ColorText>{' '}
+          {calcDisplay.name}
           <strong>{calcDisplay.valueString}</strong>
         </Typography>
         {allAmpReactionKeys.includes(variant as 'vaporize' | 'melt') && (
@@ -165,6 +160,7 @@ function FormulaAccordian({ node }: { node: CalcResult }) {
         )}
       </AccordionSummary>
       <AccordionDetails>
+        {calcDisplay.assignment}
         {calcDisplay.formulas.map((subform, i) => (
           <Typography key={i} component="div">
             {subform}
