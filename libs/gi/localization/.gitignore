@@ -1,2 +1,5 @@
 assets/locales/*
 !assets/locales/en
+
+# This is only used for POEditor, not in our code
+main_gen.json

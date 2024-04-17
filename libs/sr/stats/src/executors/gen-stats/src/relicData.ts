@@ -108,12 +108,12 @@ export function RelicData(): RelicData {
             passiveStats: Object.fromEntries(
               // Expand all damage bonus to individual elemental dmg bonus
               config.PropertyList.flatMap((property) =>
-                property.KHGMJFPILBD === 'AllDamageTypeAddedRatio'
+                property.IMHNJLJDLLH === 'AllDamageTypeAddedRatio'
                   ? allElementalDamageKeys.map((key) => ({ ...property, key }))
-                  : [{ ...property, key: statKeyMap[property.KHGMJFPILBD] }]
+                  : [{ ...property, key: statKeyMap[property.IMHNJLJDLLH] }]
               )
                 // Map to desired object shape
-                .map((property) => [property.key, property.BOANKOCFAIM.Value])
+                .map((property) => [property.key, property.IEDALJJJBCE.Value])
             ),
             otherStats: config.AbilityParamList.map((param) => param.Value),
           })

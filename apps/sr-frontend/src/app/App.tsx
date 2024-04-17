@@ -3,6 +3,7 @@ import {
   CharacterInventory,
   CharacterProvider,
   DatabaseProvider,
+  LightConeEditor,
   RelicEditor,
 } from '@genshin-optimizer/sr/ui'
 import {
@@ -15,12 +16,13 @@ import {
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material'
-import Character from './Character'
+import CharacterEditor from './Character'
 import CharacterSelector from './CharacterSelector'
 import Database from './Database'
 import Optimize from './Optimize'
 import { theme } from './Theme'
 import { ExpandMore } from '@mui/icons-material'
+import Character from './Character'
 
 export default function App() {
   return (
@@ -33,6 +35,7 @@ export default function App() {
               <CssBaseline />
               <Stack gap={1} pt={1}>
                 <CharacterSelector />
+                <Character />
                 <Container>
                   <Accordion>
                     <AccordionSummary expandIcon={<ExpandMore />}>
@@ -43,7 +46,8 @@ export default function App() {
                     </AccordionDetails>
                   </Accordion>
                 </Container>
-                <Character />
+                <CharacterEditor />
+                <LightConeEditor />
                 <RelicEditor />
                 <Optimize />
                 <Database />

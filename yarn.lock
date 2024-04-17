@@ -4837,6 +4837,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prisma/nextjs-monorepo-workaround-plugin@npm:^5.12.1":
+  version: 5.12.1
+  resolution: "@prisma/nextjs-monorepo-workaround-plugin@npm:5.12.1"
+  checksum: 565431e0d589b0065ff9bad9f497501eda6fd859b7955f518ff923dddd099ddfe5c9442c8453451714f443c1ec8b849796a9b08484d035f3f224a83b94075ed8
+  languageName: node
+  linkType: hard
+
 "@protobufjs/aspromise@npm:^1.1.1, @protobufjs/aspromise@npm:^1.1.2":
   version: 1.1.2
   resolution: "@protobufjs/aspromise@npm:1.1.2"
@@ -11597,6 +11604,7 @@ __metadata:
     "@nx/workspace": 16.10.0
     "@pmmmwh/react-refresh-webpack-plugin": ^0.5.10
     "@prisma/client": ^5.4.2
+    "@prisma/nextjs-monorepo-workaround-plugin": ^5.12.1
     "@svgr/webpack": 8.0.1
     "@swc-node/register": 1.4.2
     "@swc/cli": ~0.1.62

@@ -1,6 +1,7 @@
 export const allLightConeKeys = [
   'ASecretVow',
   'Adversarial',
+  'AlongThePassingShore',
   'Amber',
   'AnInstantBeforeAGaze',
   'Arrows',
@@ -12,6 +13,7 @@ export const allLightConeKeys = [
   'CarveTheMoonWeaveTheClouds',
   'Chorus',
   'CollapsingSky',
+  'ConcertForTwo',
   'Cornucopia',
   'CruisingInTheStellarSea',
   'DanceDanceDance',
@@ -37,6 +39,7 @@ export const allLightConeKeys = [
   'InTheNight',
   'IncessantRain',
   'IndeliblePromise',
+  'InherentlyUnjustDestiny',
   'ItsShowtime',
   'LandausChoice',
   'Loop',
@@ -96,7 +99,7 @@ export const allLightConeKeys = [
 
 export type LightConeKey = (typeof allLightConeKeys)[number]
 
-export const allSuperimposeKeys = [0, 1, 2, 3, 4, 5] as const
+export const allSuperimposeKeys = [1, 2, 3, 4, 5] as const
 export type SuperimposeKey = (typeof allSuperimposeKeys)[number]
 
 export const lightConeMaxLevel = 80

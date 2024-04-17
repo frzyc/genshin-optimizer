@@ -33,7 +33,6 @@ export type BuildTc = {
     sets: Partial<Record<ArtifactSetKey, 1 | 2 | 4>>
   }
   optimization: {
-    target?: string[]
     distributedSubstats: number
     maxSubstats: Record<SubstatKey, number>
     /** NB: this is in total raw value, not substat count
