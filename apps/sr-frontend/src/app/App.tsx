@@ -6,6 +6,10 @@ import {
   RelicEditor,
 } from '@genshin-optimizer/sr/ui'
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Container,
   CssBaseline,
   Stack,
   StyledEngineProvider,
@@ -16,6 +20,7 @@ import CharacterSelector from './CharacterSelector'
 import Database from './Database'
 import Optimize from './Optimize'
 import { theme } from './Theme'
+import { ExpandMore } from '@mui/icons-material'
 
 export default function App() {
   return (
@@ -28,10 +33,19 @@ export default function App() {
               <CssBaseline />
               <Stack gap={1} pt={1}>
                 <CharacterSelector />
+                <Container>
+                  <Accordion>
+                    <AccordionSummary expandIcon={<ExpandMore />}>
+                      Characters
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <CharacterInventory />
+                    </AccordionDetails>
+                  </Accordion>
+                </Container>
                 <Character />
                 <RelicEditor />
                 <Optimize />
-                <CharacterInventory />
                 <Database />
               </Stack>
             </CalcProvider>
