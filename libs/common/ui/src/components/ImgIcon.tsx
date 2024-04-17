@@ -1,4 +1,5 @@
 import { styled } from '@mui/material'
+import { NextImage } from './NextImage'
 interface ImgIconProps {
   size?: number
   sideMargin?: boolean
@@ -6,7 +7,7 @@ interface ImgIconProps {
 /**
  * An `img` wrapper that automates margin to make sure that the icon is always `1em` tall, no matter what `size` it is.
  */
-export const ImgIcon = styled('img', {
+export const ImgIcon = styled(NextImage ? (NextImage as any) : 'img', {
   name: 'ImgIcon',
   slot: 'Root',
   shouldForwardProp: (pn) =>
