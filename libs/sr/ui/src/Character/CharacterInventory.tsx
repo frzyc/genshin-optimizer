@@ -43,41 +43,39 @@ export function CharacterInventory() {
         />
       }
     >
-      <Container>
-        <CardThemed bgt="dark">
-          <CardHeader title="Characters" />
-          <CardContent>
-            <Box
-              sx={{ overflow: 'auto', maxHeight: '50vh' }}
-              my={1}
-              display="flex"
-              flexDirection="column"
-              gap={1}
-            >
-              <Grid container spacing={1} columns={columns}>
-                {charactersInView.map((c, i) => (
-                  <Grid item key={i} xs={1}>
-                    <CharacterCard character={c} />
-                  </Grid>
-                ))}
-              </Grid>
+      <CardThemed bgt="dark">
+        <CardHeader title="Characters" />
+        <CardContent>
+          <Box
+            sx={{ overflow: 'auto', maxHeight: '50vh' }}
+            my={1}
+            display="flex"
+            flexDirection="column"
+            gap={1}
+          >
+            <Grid container spacing={1} columns={columns}>
+              {charactersInView.map((c, i) => (
+                <Grid item key={i} xs={1}>
+                  <CharacterCard character={c} />
+                </Grid>
+              ))}
+            </Grid>
 
-              {characters.length !== charactersInView.length && (
-                <Skeleton
-                  ref={(node) => {
-                    if (!node) return
-                    setTriggerElement(node)
-                  }}
-                  sx={{ borderRadius: 1 }}
-                  variant="rectangular"
-                  width="100%"
-                  height={100}
-                />
-              )}
-            </Box>
-          </CardContent>
-        </CardThemed>
-      </Container>
+            {characters.length !== charactersInView.length && (
+              <Skeleton
+                ref={(node) => {
+                  if (!node) return
+                  setTriggerElement(node)
+                }}
+                sx={{ borderRadius: 1 }}
+                variant="rectangular"
+                width="100%"
+                height={100}
+              />
+            )}
+          </Box>
+        </CardContent>
+      </CardThemed>
     </Suspense>
   )
 }
