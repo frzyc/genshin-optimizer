@@ -99,6 +99,9 @@ function DupContent({
                   setLocation={(location) =>
                     database.arts.set(dup, { location })
                   }
+                  onLockToggle={() =>
+                    database.arts.set(dup, ({ lock }) => ({ lock: !lock }))
+                  }
                   onDelete={() => database.arts.remove(dup)}
                   onEdit={() => setArtifactIdToEdit(dup)}
                 />
