@@ -92,7 +92,30 @@ async function start({
     relicsBySlot[slot].map(convertRelicToStats)
   )
 
-  const chunkSize = Math.ceil(relicsBySlot.head.length / numWorkers)
+  // Split work on the largest slot to reduce variance in work between workers
+  const { largestSlot } = Object.entries(relicsBySlot).reduce(
+    ({ largestSlot, largestSize }, [currentSlot, relics]) =>
+      relics.length > largestSize
+        ? { largestSlot: currentSlot, largestSize: relics.length }
+        : { largestSlot, largestSize },
+    { largestSlot: 'head' as RelicSlotKey, largestSize: -1 }
+  )
+  // Split work
+  const chunkedRelicStatsBySlot: Record<RelicSlotKey, RelicStats[]>[] = range(
+    0,
+    numWorkers - 1
+  ).map((worker) =>
+    objKeyMap(allRelicSlotKeys, (slot) =>
+      slot === largestSlot
+        ? // For largest slot, only give ~1/numWorkers amount of relics
+          relicStatsBySlot[slot].filter(
+            (_, index) => index % numWorkers === worker
+          )
+        : // For other slots, give all relics
+          relicStatsBySlot[slot]
+    )
+  )
+
   // Spawn child workers to calculate builds
   workers = range(1, numWorkers).map(
     () =>
@@ -141,18 +164,10 @@ async function start({
           }
         }
 
-        // Chunk data
-        const chunkedRelicsBySlot: Record<RelicSlotKey, RelicStats[]> = {
-          ...relicStatsBySlot,
-          head: relicStatsBySlot.head.slice(
-            index * chunkSize,
-            (index + 1) * chunkSize
-          ),
-        }
         // Initialize worker
         const message: ChildCommand = {
           command: 'init',
-          relicStatsBySlot: chunkedRelicsBySlot,
+          relicStatsBySlot: chunkedRelicStatsBySlot[index],
           detachedNodes,
         }
         worker.postMessage(message)
