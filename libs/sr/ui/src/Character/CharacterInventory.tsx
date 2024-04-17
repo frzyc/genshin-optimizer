@@ -1,13 +1,6 @@
 import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
-import {
-  Box,
-  CardContent,
-  CardHeader,
-  Container,
-  Grid,
-  Skeleton,
-} from '@mui/material'
+import { Box, CardContent, CardHeader, Grid, Skeleton } from '@mui/material'
 import { Suspense, useMemo } from 'react'
 import { useDatabaseContext } from '../Context'
 import { CharacterCard } from './CharacterCard'

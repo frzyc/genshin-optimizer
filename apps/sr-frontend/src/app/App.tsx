@@ -6,6 +6,7 @@ import {
   LightConeEditor,
   RelicEditor,
 } from '@genshin-optimizer/sr/ui'
+import { ExpandMore } from '@mui/icons-material'
 import {
   Accordion,
   AccordionDetails,
@@ -16,13 +17,11 @@ import {
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material'
-import CharacterEditor from './Character'
+import { default as Character, default as CharacterEditor } from './Character'
 import CharacterSelector from './CharacterSelector'
 import Database from './Database'
 import Optimize from './Optimize'
 import { theme } from './Theme'
-import { ExpandMore } from '@mui/icons-material'
-import Character from './Character'
 
 export default function App() {
   return (
