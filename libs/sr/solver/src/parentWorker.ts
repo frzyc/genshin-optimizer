@@ -92,7 +92,7 @@ async function start({
     relicsBySlot[slot].map(convertRelicToStats)
   )
 
-  const chunkSize = Math.floor(relicsBySlot.head.length / numWorkers)
+  const chunkSize = Math.ceil(relicsBySlot.head.length / numWorkers)
   // Spawn child workers to calculate builds
   workers = range(1, numWorkers).map(
     () =>
@@ -146,9 +146,7 @@ async function start({
           ...relicStatsBySlot,
           head: relicStatsBySlot.head.slice(
             index * chunkSize,
-            index === numWorkers - 1
-              ? undefined // Last chunk may be slightly larger to accomodate remainder from chunking
-              : (index + 1) * chunkSize
+            (index + 1) * chunkSize
           ),
         }
         // Initialize worker
