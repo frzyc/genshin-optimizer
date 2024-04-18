@@ -19,8 +19,9 @@
     "lint": {},
     "test": {
       "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "config": "libs/pando/engine/vitest.config.ts"
+        "reportsDirectory": "../../../coverage/libs/test"
       }
     }
   },

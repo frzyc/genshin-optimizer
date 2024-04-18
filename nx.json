@@ -77,6 +77,10 @@
     },
     "publish": {
       "dependsOn": ["build"]
+    },
+    "@nx/vite:test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
     }
   },
   "namedInputs": {
@@ -105,10 +109,10 @@
     },
     "@nx/react": {
       "application": {
+        "babel": true,
         "style": "@emotion/styled",
         "linter": "eslint",
-        "bundler": "webpack",
-        "babel": true
+        "bundler": "webpack"
       },
       "component": {
         "style": "@emotion/styled"
@@ -128,5 +132,23 @@
   },
   "affected": {
     "defaultBase": "master"
-  }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "eslint:lint",
+        "extensions": ["ts", "tsx", "js", "jsx", "html", "vue"]
+      }
+    },
+    {
+      "plugin": "@nx/next/plugin",
+      "options": {
+        "startTargetName": "start",
+        "buildTargetName": "next:build",
+        "devTargetName": "dev",
+        "serveStaticTargetName": "serve-static"
+      }
+    }
+  ]
 }

@@ -19,8 +19,9 @@
     "lint": {},
     "test": {
       "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "config": "libs/gi/formula/vitest.config.ts"
+        "reportsDirectory": "../../../coverage/libs/test"
       }
     }
   },
