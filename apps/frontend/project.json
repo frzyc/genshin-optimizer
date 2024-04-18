@@ -52,6 +52,7 @@
       }
     },
     "typecheck": {
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "apps/frontend",
         "commands": ["tsc -p tsconfig.app.json --noEmit"]

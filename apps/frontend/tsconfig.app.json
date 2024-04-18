@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": ["node", "vite/client"]
+    "types": ["node", "vite/client", "object-overrides"]
   },
   "files": [
     "../../node_modules/@nx/react/typings/cssmodule.d.ts",

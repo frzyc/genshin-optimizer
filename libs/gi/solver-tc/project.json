@@ -3,9 +3,10 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/solver-tc/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/gi/solver-tc/**/*.ts"]
@@ -17,6 +18,5 @@
         "config": "libs/gi/solver-tc/vitest.config.mts"
       }
     }
-  },
-  "tags": []
+  }
 }

@@ -1,36 +1,21 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "load-dm",
-          "gen-file",
-          "build",
-          "build-vite",
-          "build-ts",
-          "lint",
-          "test",
-          "e2e"
-        ]
-      }
-    }
-  },
   "targetDefaults": {
     "load-dm": {
       "executor": "@genshin-optimizer/common/plugin:sync-repo",
-      "outputs": ["{workspaceRoot}/{options.outputPath}.hash"]
+      "outputs": ["{workspaceRoot}/{options.outputPath}.hash"],
+      "cache": true
     },
     "gen-file": {
-      "executor": "nx:noop",
       "dependsOn": ["load-dm", "^gen-file"],
-      "inputs": ["production", "^production"]
+      "inputs": ["production", "^production"],
+      "cache": true
     },
     "build": {
       "executor": "nx:noop",
       "dependsOn": ["build-vite", "build-ts"],
-      "inputs": ["production", "^production"]
+      "inputs": ["production", "^production"],
+      "cache": true
     },
     "build-vite": {
       "executor": "@nx/vite:build",
@@ -47,7 +32,8 @@
           "mode": "production"
         }
       },
-      "inputs": ["production", "^production"]
+      "inputs": ["production", "^production"],
+      "cache": true
     },
     "build-ts": {
       "executor": "@nx/js:tsc",
@@ -57,19 +43,22 @@
         "main": "{projectRoot}/src/index.ts",
         "tsConfig": "{projectRoot}/tsconfig.lib.json"
       },
-      "inputs": ["production", "^production"]
+      "inputs": ["production", "^production"],
+      "cache": true
     },
     "e2e": {
-      "inputs": ["default", "^production"]
+      "inputs": ["default", "^production"],
+      "cache": true
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx,js,jsx}"],
         "fix": true
       },
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+      "cache": true
     },
     "test": {
       "executor": "@nx/jest:jest",
@@ -80,14 +69,11 @@
         "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}",
         "passWithNoTests": true
       },
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+      "cache": true
     },
     "typecheck": {
-      "executor": "nx:run-commands",
-      "options": {
-        "forwardAllArgs": false,
-        "description": "Type check with tsc"
-      }
+      "executor": "nx:run-commands"
     },
     "publish": {
       "dependsOn": ["build"]

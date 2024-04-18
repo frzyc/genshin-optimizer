@@ -280,7 +280,7 @@ export default function TabBuild() {
         teammateBuildTotal: ['in'],
       } as const
       return bulkCatTotal(catKeys, (ctMap) =>
-        Object.entries(database.arts.data).forEach(([id, art]) => {
+        database.arts.entries.forEach(([id, art]) => {
           const { level, location } = art
           const {
             levelLow,
@@ -461,32 +461,36 @@ export default function TabBuild() {
           plotBaseNumNode.info && resolveInfo(plotBaseNumNode.info)
         if (targetNodeinfo?.unit === '%')
           solverBuilds.forEach(
-            (dataEntry) => (dataEntry.value = dataEntry.value * 100)
+            (dataEntry) =>
+              dataEntry && (dataEntry.value = dataEntry.value * 100)
           )
         if (plotBaseNumNodeInfo?.unit === '%')
           solverBuilds.forEach(
-            (dataEntry) => (dataEntry.plot = (dataEntry.plot ?? 0) * 100)
+            (dataEntry) =>
+              dataEntry && (dataEntry.plot = (dataEntry.plot ?? 0) * 100)
           )
         setChartData({
           valueNode: targetNode,
           plotNode: plotBaseNumNode,
-          data: solverBuilds.map(({ value, plot, artifactIds }) => ({
-            artifactIds: objKeyMap(allArtifactSlotKeys, (slotKey) =>
-              artifactIds.find(
-                (aId) => database.arts.get(aId)?.slotKey === slotKey
-              )
-            ),
-            weaponId,
-            value,
-            plot,
-          })),
+          data: solverBuilds
+            .filter(notEmpty)
+            .map(({ value, plot, artifactIds }) => ({
+              artifactIds: objKeyMap(allArtifactSlotKeys, (slotKey) =>
+                artifactIds.find(
+                  (aId) => database.arts.get(aId)?.slotKey === slotKey
+                )
+              ),
+              weaponId,
+              value,
+              plot,
+            })),
         })
       }
       const builds = mergeBuilds(
         results.map((x) => x.builds),
         maxBuildsToShow
       )
-      if (process.env.NODE_ENV === 'development')
+      if (process.env['NODE_ENV'] === 'development')
         console.log('Build Result', builds)
 
       database.optConfigs.set(optConfigId, {
@@ -1333,9 +1337,9 @@ const DataContextWrapper = memo(function DataContextWrapper({
   // Update the build when the build artifacts/weapons are changed.
   const [dirty, setDirty] = useForceUpdate()
   useEffect(() => {
-    const unfollowArts = Object.values(artifactIds).map((id) =>
-      database.arts.follow(id, () => setDirty())
-    )
+    const unfollowArts = Object.values(artifactIds)
+      .filter(notEmpty)
+      .map((id) => database.arts.follow(id, () => setDirty()))
     return () => {
       unfollowArts.forEach((unfollow) => unfollow())
     }

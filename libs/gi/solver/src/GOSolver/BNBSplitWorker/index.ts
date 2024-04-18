@@ -164,7 +164,7 @@ export class BNBSplitWorker implements SplitWorker {
     ))
     nodes = optimize(nodes, {}, (_) => false)
     if (Object.values(arts.values).every((x) => x.length)) {
-      ;({ lins, approxs } = approximation(nodes, arts))
+      ({ lins, approxs } = approximation(nodes, arts))
       maxConts = approxs.map((approx) =>
         objMap(arts.values, (val) => maxContribution(val, approx))
       )

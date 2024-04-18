@@ -2,7 +2,7 @@
 import { AppBar, Box, Typography } from '@mui/material'
 import { grey } from '@mui/material/colors'
 import { Trans, useTranslation } from 'react-i18next'
-import packageInfo from '../../../../../../package.json'
+// import packageInfo from '../../../../../../package.json'
 
 export default function Footer() {
   const { t } = useTranslation('ui')
@@ -23,18 +23,14 @@ export default function Footer() {
           variant="caption"
           sx={{ color: grey[200], textAlign: 'right' }}
         >
-          <Trans
-            t={t}
-            i18nKey="ui:appVersion"
-            values={{ version: packageInfo.version }}
-          >
+          <Trans t={t} i18nKey="ui:appVersion" values={{ version: '0.0.0' }}>
             Genshin Optimizer Version:
             <a
               href={`${process.env['NEXT_PUBLIC_GITHUB_GO_URL']}/releases`}
               target="_blank"
               rel="noreferrer"
             >
-              {{ version: packageInfo.version } as any}
+              {{ version: '0.0.0' } as any}
             </a>
           </Trans>
         </Typography>

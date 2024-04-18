@@ -3,9 +3,10 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/wr/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/gi/wr/**/*.ts"]
@@ -17,6 +18,5 @@
         "config": "libs/gi/wr/vitest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

@@ -47,7 +47,8 @@ export default defineConfig({
 
   // Uncomment this if you are using workers.
   worker: {
-    plugins: [
+    // https://vitejs.dev/guide/migration#worker-plugins-is-now-a-function
+    plugins: () => [
       viteTsConfigPaths({
         root: '../../',
       }),

@@ -5,6 +5,7 @@ import {
   InfoTooltip,
 } from '@genshin-optimizer/common/ui'
 import {
+  notEmpty,
   objKeyMap,
   objPathValue,
   valueString,
@@ -116,7 +117,7 @@ export default function ChartCard({
         if (x === undefined) return null
         if (x < sliderMin) sliderMin = x
         if (x > sliderMax) sliderMax = x
-        const artifactIdsArr = Object.values(artifactIds)
+        const artifactIdsArr = Object.values(artifactIds).filter(notEmpty)
         const enhancedDatum: EnhancedPoint = new EnhancedPoint(x, y, {
           artifactIds,
           weaponId,
@@ -134,7 +135,9 @@ export default function ChartCard({
         const graphBuildIndex = graphBuilds?.findIndex(
           (build) =>
             build.weaponId === weaponId &&
-            Object.values(build.artifactIds).every((aId) => datumBuildMap[aId])
+            Object.values(build.artifactIds).every(
+              (aId) => aId && datumBuildMap[aId]
+            )
         )
         if (graphBuildIndex !== undefined && graphBuildIndex !== -1) {
           // Skip setting y-value if it has already been set.
@@ -149,7 +152,9 @@ export default function ChartCard({
         const generBuildIndex = generatedBuilds.findIndex(
           (build) =>
             build.weaponId === weaponId &&
-            Object.values(build.artifactIds).every((aId) => datumBuildMap[aId])
+            Object.values(build.artifactIds).every(
+              (aId) => aId && datumBuildMap[aId]
+            )
         )
         if (generBuildIndex !== -1) {
           // Skip setting y-value if it has already been set.
