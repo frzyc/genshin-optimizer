@@ -280,7 +280,7 @@ export default function PageCharacter() {
           <Box
             display="flex"
             justifyContent="space-between"
-            alignItems="flex-end"
+            alignItems="center"
             flexWrap="wrap"
           >
             <ShowingAndSortOptionSelect

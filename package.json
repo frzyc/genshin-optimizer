@@ -1,6 +1,6 @@
 {
   "name": "genshin-optimizer",
-  "version": "10.5.1",
+  "version": "10.5.2",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -119,7 +119,7 @@
     "i18next-http-backend": "^2.1.1",
     "i18next-resources-to-backend": "^1.1.4",
     "jsonwebtoken": "^9.0.2",
-    "next": "14.0.3",
+    "next": "^14.2.1",
     "next-auth": "^4.23.2",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",

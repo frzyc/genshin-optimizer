@@ -1,21 +1,21 @@
+import { ScrollTop } from '@genshin-optimizer/common/ui'
 import {
   CalcProvider,
   CharacterProvider,
   DatabaseProvider,
-  LightConeEditor,
-  RelicEditor,
-  RelicInventory,
 } from '@genshin-optimizer/sr/ui'
 import {
+  Box,
+  Container,
   CssBaseline,
-  Stack,
+  Skeleton,
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material'
-import CharacterEditor from './Character'
-import CharacterSelector from './CharacterSelector'
-import Database from './Database'
-import Optimize from './Optimize'
+import { Suspense } from 'react'
+import { HashRouter, Route, Routes } from 'react-router-dom'
+import Header from './Header'
+import PageHome from './PageHome'
 import { theme } from './Theme'
 
 export default function App() {
@@ -23,23 +23,46 @@ export default function App() {
     <StyledEngineProvider injectFirst>
       {/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <DatabaseProvider>
           <CharacterProvider>
             <CalcProvider>
-              <CssBaseline />
-              <Stack gap={1} pt={1}>
-                <CharacterSelector />
-                <CharacterEditor />
-                <LightConeEditor />
-                <RelicEditor />
-                <RelicInventory />
-                <Optimize />
-                <Database />
-              </Stack>
+              <HashRouter basename="/">
+                <Content />
+                <ScrollTop />
+              </HashRouter>
             </CalcProvider>
           </CharacterProvider>
         </DatabaseProvider>
       </ThemeProvider>
     </StyledEngineProvider>
+  )
+}
+
+function Content() {
+  return (
+    <Box
+      display="flex"
+      flexDirection="column"
+      minHeight="100vh"
+      position="relative"
+    >
+      <Header anchor="back-to-top-anchor" />
+
+      <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1 } }}>
+        <Suspense
+          fallback={
+            <Skeleton
+              variant="rectangular"
+              sx={{ width: '100%', height: '100%' }}
+            />
+          }
+        >
+          <Routes>
+            <Route index element={<PageHome />} />
+          </Routes>
+        </Suspense>
+      </Container>
+    </Box>
   )
 }

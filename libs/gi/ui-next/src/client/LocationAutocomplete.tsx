@@ -12,14 +12,13 @@ import {
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
+import { CharIconSide, SillyContext } from '@genshin-optimizer/gi/ui'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { AutocompleteProps, Palette } from '@mui/material'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharIconSide } from './CharIconSide'
 import { GenshinUserContext } from './GenshinUserDataWrapper'
-import { SillyContext } from './SillyContext'
 import { locationCharacterKeyToCharacterKey } from './util'
 
 type LocationAutocompleteProps = {

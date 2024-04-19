@@ -245,6 +245,9 @@ export default function PageArtifact() {
                 setLocation={(location) =>
                   database.arts.set(artId, { location })
                 }
+                onLockToggle={() =>
+                  database.arts.set(artId, ({ lock }) => ({ lock: !lock }))
+                }
               />
             </Grid>
           ))}

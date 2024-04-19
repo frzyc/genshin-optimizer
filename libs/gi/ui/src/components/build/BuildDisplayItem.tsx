@@ -563,6 +563,9 @@ function CompareArtifactModal({
                     setArtifactIdToEdit(oldId)
                     setFixedSlotKey(oldArtifact?.slotKey)
                   }}
+                  onLockToggle={() =>
+                    database.arts.set(oldId, ({ lock }) => ({ lock: !lock }))
+                  }
                 />
               )}
 
@@ -592,6 +595,9 @@ function CompareArtifactModal({
                 setArtifactIdToEdit(newId)
                 setFixedSlotKey(newArtifact?.slotKey)
               }}
+              onLockToggle={() =>
+                database.arts.set(newId, ({ lock }) => ({ lock: !lock }))
+              }
             />
             {!compareFromCharEditor && (
               <>

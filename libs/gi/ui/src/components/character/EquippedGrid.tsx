@@ -117,6 +117,9 @@ export function EquippedGrid({
                     />
                   }
                   onEdit={() => setArtifactIdToEdit(id)}
+                  onLockToggle={() =>
+                    database.arts.set(id, ({ lock }) => ({ lock: !lock }))
+                  }
                 />
               ) : (
                 <ArtSwapCard

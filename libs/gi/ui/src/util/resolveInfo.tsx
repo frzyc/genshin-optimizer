@@ -1,3 +1,4 @@
+import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
@@ -23,6 +24,12 @@ export function resolveInfo(info: Info): Info & InfoExtra {
           iconProps={{ fontSize: 'inherit', color: variant as any }}
         />
       )
+      if (!info.variant || !info.unit)
+        info = {
+          variant: KeyMap.getVariant(path),
+          unit: getUnitStr(path),
+          ...info,
+        }
     }
 
     extra = { ...extra, ...infoManager[path] }
