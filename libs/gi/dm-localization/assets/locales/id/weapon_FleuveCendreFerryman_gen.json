@@ -1,0 +1,24 @@
+{
+  "name": "Fleuve Cendre Ferryman",
+  "description": {
+    "0": "Pipa tembaga yang pernah digunakan sebagai senjata di masa lalu. Bisa dibilang benda ini cukup terkenal — atau mungkin juga tidak — tergantung lingkungan komunitasnya."
+  },
+  "passiveName": "Ironbone",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan CRIT Rate Elemental Skill sebesar <cryo>8%</cryo>. Selain itu, Energy Recharge meningkat <cryo>16%</cryo> selama 5 detik setelah melancarkan Elemental Skill."
+    },
+    "1": {
+      "0": "Meningkatkan CRIT Rate Elemental Skill sebesar <cryo>10%</cryo>. Selain itu, Energy Recharge meningkat <cryo>20%</cryo> selama 5 detik setelah melancarkan Elemental Skill."
+    },
+    "2": {
+      "0": "Meningkatkan CRIT Rate Elemental Skill sebesar <cryo>12%</cryo>. Selain itu, Energy Recharge meningkat <cryo>24%</cryo> selama 5 detik setelah melancarkan Elemental Skill."
+    },
+    "3": {
+      "0": "Meningkatkan CRIT Rate Elemental Skill sebesar <cryo>14%</cryo>. Selain itu, Energy Recharge meningkat <cryo>28%</cryo> selama 5 detik setelah melancarkan Elemental Skill."
+    },
+    "4": {
+      "0": "Meningkatkan CRIT Rate Elemental Skill sebesar <cryo>16%</cryo>. Selain itu, Energy Recharge meningkat <cryo>32%</cryo> selama 5 detik setelah melancarkan Elemental Skill."
+    }
+  }
+}

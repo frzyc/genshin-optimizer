@@ -1,0 +1,24 @@
+{
+  "name": "Messaggera dell'alba",
+  "description": {
+    "0": "In passato, questa spada splendeva come il sole. Chi la brandisce sarà benedetto da un effetto positivo di benessere. Il materiale riflettente della lama si è consumato da tempo."
+  },
+  "passiveName": "Prestanza",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando i PS sono superiori a un 90%, aumenta il tasso di CRIT di un <cryo>14%</cryo>."
+    },
+    "1": {
+      "0": "Quando i PS sono superiori a un 90%, aumenta il tasso di CRIT di un <cryo>17,5%</cryo>."
+    },
+    "2": {
+      "0": "Quando i PS sono superiori a un 90%, aumenta il tasso di CRIT di un <cryo>21%</cryo>."
+    },
+    "3": {
+      "0": "Quando i PS sono superiori a un 90%, aumenta il tasso di CRIT di un <cryo>24,5%</cryo>."
+    },
+    "4": {
+      "0": "Quando i PS sono superiori a un 90%, aumenta il tasso di CRIT di un <cryo>28%</cryo>."
+    }
+  }
+}

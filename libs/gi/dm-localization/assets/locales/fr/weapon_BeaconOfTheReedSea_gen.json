@@ -1,0 +1,24 @@
+{
+  "name": "Balise de la mer de roseaux",
+  "description": {
+    "0": "Une grande épée à bout plat conçue pour être l'arme d'un roi d'antan ou une sorte d'instrument de cérémonie."
+  },
+  "passiveName": "Garde du désert",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsqu'une compétence élémentaire a touché un ennemi, l'ATQ augmente de <cryo>20 %</cryo> pendant 8 s. Après avoir subi des DGT, l'ATQ augmente de <cryo>20 %</cryo> pendant 8 s. Les 2 effets susmentionnés peuvent être déclenchés même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. De plus, lorsqu'il n'est pas protégé par un bouclier, les PV max du personnage augmentent de <cryo>32 %</cryo>."
+    },
+    "1": {
+      "0": "Lorsqu'une compétence élémentaire a touché un ennemi, l'ATQ augmente de <cryo>25 %</cryo> pendant 8 s. Après avoir subi des DGT, l'ATQ augmente de <cryo>25 %</cryo> pendant 8 s. Les 2 effets susmentionnés peuvent être déclenchés même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. De plus, lorsqu'il n'est pas protégé par un bouclier, les PV max du personnage augmentent de <cryo>40 %</cryo>."
+    },
+    "2": {
+      "0": "Lorsqu'une compétence élémentaire a touché un ennemi, l'ATQ augmente de <cryo>30 %</cryo> pendant 8 s. Après avoir subi des DGT, l'ATQ augmente de <cryo>30 %</cryo> pendant 8 s. Les 2 effets susmentionnés peuvent être déclenchés même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. De plus, lorsqu'il n'est pas protégé par un bouclier, les PV max du personnage augmentent de <cryo>48 %</cryo>."
+    },
+    "3": {
+      "0": "Lorsqu'une compétence élémentaire a touché un ennemi, l'ATQ augmente de <cryo>35 %</cryo> pendant 8 s. Après avoir subi des DGT, l'ATQ augmente de <cryo>35 %</cryo> pendant 8 s. Les 2 effets susmentionnés peuvent être déclenchés même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. De plus, lorsqu'il n'est pas protégé par un bouclier, les PV max du personnage augmentent de <cryo>56 %</cryo>."
+    },
+    "4": {
+      "0": "Lorsqu'une compétence élémentaire a touché un ennemi, l'ATQ augmente de <cryo>40 %</cryo> pendant 8 s. Après avoir subi des DGT, l'ATQ augmente de <cryo>40 %</cryo> pendant 8 s. Les 2 effets susmentionnés peuvent être déclenchés même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. De plus, lorsqu'il n'est pas protégé par un bouclier, les PV max du personnage augmentent de <cryo>64 %</cryo>."
+    }
+  }
+}

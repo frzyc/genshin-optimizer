@@ -1,0 +1,165 @@
+{
+  "name": "Baizhu",
+  "title": "Mortalità trascesa",
+  "description": "Il proprietario della Farmacia Bubu, accompagnato quasi sempre dalla serpentella bianca di nome Changsheng. È un'enciclopedia medica vivente, nonché dedito a velati intrighi personali.",
+  "constellationName": "Lagenaria",
+  "auto": {
+    "name": "Agopuntura classica",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 attacchi che infliggono <dendro>DAN da Dendro</dendro> agli avversari davanti a lui."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per infliggere <dendro>DAN da Dendro ad area</dendro> agli avversari davanti a lui dopo un breve periodo di lancio."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Evocando il potere di Dendro, Baizhu si scaglia verso il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <dendro>DAN da Dendro ad area</dendro> all'impatto con il suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore attacco caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Diagnosi universale",
+    "description": {
+      "0": "Controlla un Armonispirito che vaga per il campo di battaglia, attaccando i nemici nelle vicinanze e infliggendo <dendro>DAN da Dendro</dendro>.",
+      "1": "Dopo aver sferrato 3 attacchi, o se non ci sono nemici nelle vicinanze, lo spirito tornerà indietro, guarendo i membri del gruppo vicini in base ai PS max di Baizhu.",
+      "2": "<br/>",
+      "3": "<i>Coloro che sono dediti alla medicina, e che sanno distinguere i veri segni di malattia da quelli falsi, possono guarire i malati prima ancora dell'insorgenza dei sintomi.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Guarigione",
+      "2": "TdR",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rinascita olistica",
+    "description": {
+      "0": "Entra nello stato di Purezza pulsante, creando uno Scudo assoluto che assorbe <dendro>DAN da Dendro</dendro> con un 250% di efficacia.",
+      "1": "Quando è in questo stato, Baizhu genera un nuovo Scudo assoluto ogni 2,5 s.",
+      "2": "<br/>",
+      "3": "Lo Scudo assoluto guarisce il tuo personaggio attivo in base ai PS max di Baizhu e attacca i nemici scatenando Meridiani spiritici, infliggendo <dendro>DAN da Dendro</dendro> nelle seguenti circostanze:",
+      "4": [
+        " quando un personaggio è sotto la protezione di uno Scudo assoluto e un altro di questi Scudi viene generato;",
+        " quando lo Scudo assoluto viene frantumato o i suoi effetti giungono al termine."
+      ],
+      "5": "<br/>",
+      "6": "<i>Se percepisci cielo e terra dovrai difenderti dalle aure maligne tramite il flusso del qi. Mantieni la mente serena e nulla potrà fermarti.</i>"
+    },
+    "skillParams": {
+      "0": "Assorbimento DAN Scudo assoluto",
+      "1": "Durata Scudo assoluto",
+      "2": "Guarigione da Scudo assoluto",
+      "3": "DAN da Meridiano spiritico",
+      "4": "Durata Purezza pulsante",
+      "5": "TdR",
+      "6": "Costo energia",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cinque fortune perpetue",
+    "description": {
+      "0": "Baizhu ottiene diversi effetti in base ai PS del personaggio attualmente attivo:",
+      "1": [
+        " se i PS sono inferiori a un 50%, Baizhu ottiene un 20% di bonus di guarigione;",
+        " se i PS sono pari o superiori a un 50%, Baizhu ottiene un 25% di <dendro>bonus DAN da Dendro</dendro>."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Tutto si origina dalla terra",
+    "description": {
+      "0": "I personaggi che vengono guariti dagli <strong>Scudi assoluti</strong> ottengono l'effetto di Anno della Grazia verdeggiante: per ogni 1.000 PS max che Baizhu possiede, fino a un massimo di 50.000, i DAN da reazioni di Ustione, Fioritura, Iperfioritura e Germinazione inflitti da questi personaggi aumentano di un 2%, e i DAN da reazioni di Accentuazione e Propagazione aumentano di uno 0,8%. Quest'effetto dura 6 s."
+    }
+  },
+  "passive3": {
+    "name": "Nutrimento erboristico",
+    "description": {
+      "0": "Quando Baizhu è nel gruppo, interagire con certi oggetti collezionabili guarisce il tuo personaggio attivo di un 2,5% dei PS max di Baizhu."
+    }
+  },
+  "constellation1": {
+    "name": "Osservazione accurata",
+    "description": {
+      "0": "<strong>Diagnosi universale</strong> ottiene 1 carica aggiuntiva."
+    }
+  },
+  "constellation2": {
+    "name": "Discernimento accurato",
+    "description": {
+      "0": "Quando il tuo personaggio attivo colpisce un avversario vicino con i suoi attacchi, Baizhu usa Armonispirito: Giuntura.",
+      "1": "Armonispirito: Giuntura sferra 1 attacco che infligge un 250% dell'ATT di Baizhu come <dendro>DAN da Dendro</dendro>, per poi tornare e fornire una guarigione da <strong>Diagnosi universale</strong> pari a un 20% della guarigione normale di Armonispirito.",
+      "2": "I DAN inflitti in questo modo sono considerati DAN da abilità elementale.",
+      "3": "Quest'effetto può attivarsi una volta ogni 5 s."
+    }
+  },
+  "constellation3": {
+    "name": "Tutti gli aspetti stabilizzati",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Rinascita olistica</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Antica arte della percezione",
+    "description": {
+      "0": "Durante i 15 s successivi all'uso di <strong>Rinascita olistica</strong>, Baizhu aumenta di 80 la maestria elementale di tutti i membri del gruppo vicini."
+    }
+  },
+  "constellation5": {
+    "name": "Gli alti e bassi nascosti",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Diagnosi universale</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Rimozione del qi maligno",
+    "description": {
+      "0": "Aumenta i DAN inflitti dai Meridiani spiritici di <strong>Rinascita olistica</strong> di un 8% dei PS max di Baizhu.",
+      "1": "In più, quando <strong>Armonispirito</strong> o Armonispirito: Giuntura colpisce gli avversari, si ha un 100% di probabilità di generare uno Scudo assoluto di <strong>Rinascita olistica</strong>. Questo effetto può attivarsi solo una volta con Armonispirito o Armonispirito: Giuntura."
+    }
+  }
+}

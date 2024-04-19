@@ -1,0 +1,24 @@
+{
+  "name": "Ojo de la Perspicacia",
+  "description": {
+    "0": "Una oscura joya hecha de cristal. Cuenta la leyenda que posee la capacidad de ver a través de la pureza de las personas."
+  },
+  "passiveName": "Eco",
+  "passiveDescription": {
+    "0": {
+      "0": "Los Ataques Normales y Ataques Cargados tienen un 50% de probabilidad de lanzar un Ojo de la Perspicacia que inflige un <cryo>240%</cryo> de ATQ como daño. El Ojo de la Perspicacia puede rebotar entre enemigos un máximo de 4 veces. Este efecto puede ocurrir una vez cada <cryo>12</cryo> s."
+    },
+    "1": {
+      "0": "Los Ataques Normales y Ataques Cargados tienen un 50% de probabilidad de lanzar un Ojo de la Perspicacia que inflige un <cryo>270%</cryo> de ATQ como daño. El Ojo de la Perspicacia puede rebotar entre enemigos un máximo de 4 veces. Este efecto puede ocurrir una vez cada <cryo>11</cryo> s."
+    },
+    "2": {
+      "0": "Los Ataques Normales y Ataques Cargados tienen un 50% de probabilidad de lanzar un Ojo de la Perspicacia que inflige un <cryo>300%</cryo> de ATQ como daño. El Ojo de la Perspicacia puede rebotar entre enemigos un máximo de 4 veces. Este efecto puede ocurrir una vez cada <cryo>10</cryo> s."
+    },
+    "3": {
+      "0": "Los Ataques Normales y Ataques Cargados tienen un 50% de probabilidad de lanzar un Ojo de la Perspicacia que inflige un <cryo>330%</cryo> de ATQ como daño. El Ojo de la Perspicacia puede rebotar entre enemigos un máximo de 4 veces. Este efecto puede ocurrir una vez cada <cryo>9</cryo> s."
+    },
+    "4": {
+      "0": "Los Ataques Normales y Ataques Cargados tienen un 50% de probabilidad de lanzar un Ojo de la Perspicacia que inflige un <cryo>360%</cryo> de ATQ como daño. El Ojo de la Perspicacia puede rebotar entre enemigos un máximo de 4 veces. Este efecto puede ocurrir una vez cada <cryo>8</cryo> s."
+    }
+  }
+}

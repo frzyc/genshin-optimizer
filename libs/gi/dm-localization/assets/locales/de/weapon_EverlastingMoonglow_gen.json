@@ -1,0 +1,24 @@
+{
+  "name": "Ewiger Mondschein",
+  "description": {
+    "0": "Ein Ring aus lieblichem Jaspis der Tiefsee. Er glänzt mit einem reinen Glanz wie der des Mondes und genauso unendlich weit."
+  },
+  "passiveName": "Byakuya Kougetsu",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den Heilungsbonus um <cryo>10 %</cryo>. Erhöht den mit Standardangriffen verursachten Schaden um <cryo>1 %</cryo> der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her."
+    },
+    "1": {
+      "0": "Erhöht den Heilungseffekt um <cryo>12,5 %</cryo>. Erhöht den mit Standardangriffen verursachten Schaden um <cryo>1,5 %</cryo> der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her."
+    },
+    "2": {
+      "0": "Erhöht den Heilungseffekt um <cryo>15 %</cryo>. Erhöht den mit Standardangriffen verursachten Schaden um <cryo>2 %</cryo> der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her."
+    },
+    "3": {
+      "0": "Erhöht den Heilungseffekt um <cryo>17,5 %</cryo>. Erhöht den mit Standardangriffen verursachten Schaden um <cryo>2,5 %</cryo> der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her."
+    },
+    "4": {
+      "0": "Erhöht den Heilungseffekt um <cryo>20 %</cryo>. Erhöht den mit Standardangriffen verursachten Schaden um <cryo>3 %</cryo> der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her."
+    }
+  }
+}

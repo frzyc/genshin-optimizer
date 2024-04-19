@@ -1,0 +1,182 @@
+{
+  "name": "Chiori",
+  "title": "The Thundering Seamstress",
+  "description": "Pemilik Chioriya Boutique. Penjahit yang namanya sangat terkenal di Fontaine.",
+  "constellationName": "Cisoria",
+  "auto": {
+    "name": "Weaving Blade",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Fluttering Hasode",
+    "description": {
+      "0": "Menerjang dengan cepat dengan tarian selembut sutra. Saat terjangan berakhir, akan memanggil \"Tamoto\" si boneka automaton dan melancarkan serangan ke atas, mengakibatkan <geo>Geo DMG Area</geo> yang didasarkan pada ATK dan DEF Chiori.",
+      "1": "Saat ditahan, akan melancarkan serangan dengan cara yang berbeda.",
+      "2": "<br/>",
+      "3": "<strong>Mode Tahan</strong>",
+      "4": "Memasuki mode membidik untuk menyesuaikan arah terjangan.",
+      "5": "<br/>",
+      "6": "<strong>Tamoto</strong>",
+      "7": [
+        "Menebas musuh di sekitar secara bertahap, mengakibatkan <geo>Geo DMG Area</geo> yang didasarkan pada ATK dan DEF Chiori;",
+        "Selama aktif, jika ada <geo>Geo Construct</geo> di sekitar, atau ada <geo>Geo Construct</geo> yang diciptakan di sekitar, maka akan memanggil satu Tamoto tambahan di sisi Karakter aktif saat ini. Maksimum satu Tamoto tambahan yang bisa dipanggil dengan cara ini, dan durasinya dihitung secara terpisah."
+      ],
+      "8": "<br/>",
+      "9": "<i>\"Sakura merah mewarnai brokatnya, sisa wanginya yang terselip di lengan baju, bahkan bisa membuat burung oriole mabuk.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tamoto",
+      "1": "Durasi Tamoto",
+      "2": "Jeda Serangan Tamoto",
+      "3": "DMG Serangan ke Atas",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hiyoku: Twin Blades",
+    "description": {
+      "0": "Menarik kedua pedang dari sarungnya, mengayunkan sebuah tebasan tajam dengan gaya menjahit, mengakibatkan <geo>Geo DMG Area</geo> yang didasarkan pada ATK dan DEF Chiori.",
+      "1": "<br/>",
+      "2": "<i>\"Hanya satu prinsip yang dibutuhkan untuk menembus seluruh kebenaran\".</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "Konsumsi Energy",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tailor-Made",
+    "description": {
+      "0": "Dalam waktu singkat setelah melancarkan serangan ke atas dari <strong>Fluttering Hasode</strong>, akan menghasilkan efek yang berbeda berdasarkan pengoperasian lanjutannya: Menekan tombol Elemental Skill akan memicu Tapestry; Menekan Normal Attack akan memicu Tailoring.",
+      "1": "<br/>",
+      "2": "<strong>Tapestry</strong>",
+      "3": [
+        "Mengganti Karakter dan membuat Karakter selanjutnya memasuki medan pertempuran;",
+        "Memberikan Seize the Moment kepada seluruh Karakter di dalam party: Saat Normal Attack, Charged Attack, atau Plunging Attack Karakter aktif di dalam party mengenai musuh di sekitar, maka \"Tamoto\" akan melancarkan serangan terkoordinasi dan mengakibatkan <geo>Geo DMG Area</geo> di posisi musuh yang setara dengan 100% DMG serangan ke atas dari Fluttering Hasode. DMG yang diakibatkan dengan cara ini dianggap sebagai DMG Elemental Skill;",
+        "Seize the Moment berlangsung selama 8 detik, serangan terkoordinasi \"Tamoto\" dapat terpicu maksimum sekali setiap 2 detik. Dalam satu kali durasi Seize the Moment, maksimum dapat memicu 2 kali serangan terkoordinasi ini."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Tailoring</strong>",
+      "6": [
+        "Chiori mendapatkan <geo>Geo Infusion</geo> selama 5 detik."
+      ],
+      "7": "<br/>",
+      "8": "Saat Chiori berada di medan pertempuran, jika tidak menekan Normal Attack atau tombol Elemental Skill lagi dalam waktu singkat setelah melancarkan serangan ke atas dari Fluttering Hasode, maka efek lanjutan Tailoring yang akan terpicu."
+    }
+  },
+  "passive2": {
+    "name": "The Finishing Touch",
+    "description": {
+      "0": "Saat Karakter di dalam party di sekitar menciptakan <geo>Geo Construct</geo>, Chiori mendapatkan 20% <geo>Geo DMG Bonus</geo> yang berlangsung 20 detik."
+    }
+  },
+  "passive3": {
+    "name": "Brocaded Collar's Beauteous Silhouette",
+    "description": {
+      "0": "Saat Karakter apa pun di dalam party mengenakan kostum selain kostum semula, atau saat wind glider yang dikenakan bukan merupakan Wings of First Flight, Karakter sendiri di dalam party mendapatkan efek peningkatan kecepatan: Movement SPD meningkat 10%.",
+      "1": "Efek ini tidak aktif dalam Domain, Domain Trounce, atau Spiral Abyss. Efek peningkatan kecepatan tidak dapat ditumpuk."
+    }
+  },
+  "constellation1": {
+    "name": "Six Paths of Sage Silkcraft",
+    "description": {
+      "0": "Radius serangan area milik \"Tamoto\" si boneka automaton yang dipanggil dari <strong>Fluttering Hasode</strong> meningkat 50%.",
+      "1": "Selain itu, jika ada Karakter <geo>Geo</geo> selain Chiori di dalam party, setelah terjangan Fluttering Hasode berakhir, akan memicu efek sebagai berikut:",
+      "2": [
+        "Memanggil satu Tamoto tambahan. Hanya boleh ada satu Tamoto milik Chiori yang dipanggil dengan cara ini dan melalui Geo Construct yang bisa dipanggil secara bersamaan.",
+        "Memicu Talenta Pasif \"The Finishing Touch\". Harus membuka Talenta Pasif \"The Finishing Touch\" terlebih dahulu."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "In Five Colors Dyed",
+    "description": {
+      "0": "Setelah melancarkan <strong>Hiyoku: Twin Blades</strong>, selama 10 detik berikutnya \"Kinu\" si boneka automaton sederhana akan muncul di samping Karakter aktif milik sendiri setiap 3 detik sekali. Kinu akan menyerang musuh di sekitar dan mengakibatkan <geo>Geo DMG Area</geo> setara dengan 170% DMG Tamoto. DMG yang diakibatkan dengan cara ini akan dianggap sebagai DMG Elemental Skill.",
+      "1": "Kinu akan hilang setelah menyerang satu kali atau setelah muncul selama 3 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Four Brocade Embellishments",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Fluttering Hasode</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "A Tailor's Three Courtesies",
+    "description": {
+      "0": "Dalam 8 detik setelah memicu efek lanjutan dari Talenta Pasif Tailor-Made, saat Normal Attack, Charged Attack, atau Plunging Attack Karakter aktif sendiri di dalam party mengenai musuh di sekitar, akan memanggil satu \"Kinu\" si boneka automaton sederhana di sekitar musuh. Jumlah Kinu yang bisa dipanggil melalui cara di atas adalah maksimum satu setiap 1 detik. Dalam satu durasi \"Seize the Moment\" atau efek \"Tailoring\" dari Talenta Pasif \"Tailor-Made\" berlangsung, maksimum bisa memanggil hingga 3 Kinu. Efek di atas dapat terpicu sekali setiap 15 detik.",
+      "1": "Harus membuka Talenta Pasif \"Tailor-Made\" terlebih dahulu."
+    }
+  },
+  "constellation5": {
+    "name": "Two Silken Plumules",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Hiyoku: Twin Blades</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sole Principle Pursuit",
+    "description": {
+      "0": "Setelah memicu efek lanjutan Talenta Pasif \"Tailor Made\", CD <strong>Fluttering Hasode</strong> Chiori sendiri berkurang 12 detik. Harus membuka Talenta Pasif \"Tailor-Made\" terlebih dahulu.",
+      "1": "Selain itu, DMG yang diakibatkan Normal Attack Chiori meningkat setara dengan 235% DEF Chiori sendiri."
+    }
+  }
+}

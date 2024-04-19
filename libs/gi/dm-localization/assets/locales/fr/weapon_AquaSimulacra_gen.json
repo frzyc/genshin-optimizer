@@ -1,0 +1,24 @@
+{
+  "name": "Simulacre d'eau",
+  "description": {
+    "0": "La couleur de cet arc long est imprévisible. Sous la lumière, il prend un bleu lustré et aqueux."
+  },
+  "passiveName": "Forme purifiante",
+  "passiveDescription": {
+    "0": {
+      "0": "Les PV sont augmentés de <cryo>16 %</cryo>. Si des ennemis sont proches, les DGT infligés par le personnage équipé de l'arme augmentent de <cryo>20 %</cryo>, qu'il soit déployé ou non."
+    },
+    "1": {
+      "0": "Les PV sont augmentés de <cryo>20 %</cryo>. Si des ennemis sont proches, les DGT infligés par le personnage équipé de l'arme augmentent de <cryo>25 %</cryo>, qu'il soit déployé ou non."
+    },
+    "2": {
+      "0": "Les PV sont augmentés de <cryo>24 %</cryo>. Si des ennemis sont proches, les DGT infligés par le personnage équipé de l'arme augmentent de <cryo>30 %</cryo>, qu'il soit déployé ou non."
+    },
+    "3": {
+      "0": "Les PV sont augmentés de <cryo>28 %</cryo>. Si des ennemis sont proches, les DGT infligés par le personnage équipé de l'arme augmentent de <cryo>35 %</cryo>, qu'il soit déployé ou non."
+    },
+    "4": {
+      "0": "Les PV sont augmentés de <cryo>32 %</cryo>. Si des ennemis sont proches, les DGT infligés par le personnage équipé de l'arme augmentent de <cryo>40 %</cryo>, qu'il soit déployé ou non."
+    }
+  }
+}

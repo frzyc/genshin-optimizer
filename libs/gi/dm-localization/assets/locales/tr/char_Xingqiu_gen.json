@@ -1,0 +1,167 @@
+{
+  "name": "Xingqiu",
+  "title": "Gençliğin Baharı",
+  "description": "Kitap tezgahlarında sıkça görülen, uzun kılıç taşıyan genç bir adam. Cesur yüreklidir ve herkes için adalet ister.",
+  "constellationName": "Dokuma Hikayeleri",
+  "auto": {
+    "name": "Guhua Tarzı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla 5 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 2 hızlı kılıç saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Guhua Kılıcı: Ölümcül Yağmur",
+    "description": {
+      "0": "Xingqiu, kılıcıyla aynı anda iki saldırı yaparak <hydro>Su Hasarı</hydro> verir. Bu sırada bu beceri mümkün olan maksimum sayıda Yağmur Kılıcı oluşturur ve bu kılıçlar aktif karakterinin etrafında döner.",
+      "1": "Yağmur Kılıçları şu özelliklere sahiptir:",
+      "2": [
+        "Bir karakter Hasar aldığında Yağmur Kılıcı kırılır ve alınan Hasarı azaltır.",
+        "Karakterin müdahaleye karşı direnci artar."
+      ],
+      "3": "<br/>",
+      "4": "Xingqiu'nun <hydro>Su Hasarı Bonusunun</hydro> %20'si Yağmur Kılıçları için ek Hasar Azaltmaya dönüştürülür.",
+      "5": "<br/>",
+      "6": "Karakterin bu şekilde elde edebileceği maksimum ek Hasar Azaltma oranı %24'tür.",
+      "7": "Maksimum Yağmur Kılıcı sayısı başlangıçta 3'tür.",
+      "8": "Bu beceriyi kullandığında karakter <hydro>Islanır</hydro>.",
+      "9": "<br/>",
+      "10": "<i>\"Yağmuru durdurmak, bir yağmur ejderhasını öldürmekten daha zordur.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Hasar Azaltma Oranı",
+      "2": "Süre",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Guhua Kılıcı: Yağmurkesici",
+    "description": {
+      "0": "Gökkuşağı Kılıcı Tekniğini kullanıp hayali bir kılıç yağmuruyla saldırarak maksimum sayıda Yağmur Kılıcı oluşturursun.",
+      "1": "<br/>",
+      "2": "<strong>Gökkuşağı Kılıcı Tekniği</strong>",
+      "3": [
+        "Aktif karakterinin Normal Saldırıları, arka arkaya kılıç yağmuru saldırılarını tetikleyerek <hydro>Su Hasarı</hydro> verir.",
+        "Yağmur Kılıçları, beceri süresi boyunca maksimum sayıda kalır."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Yağmur Kesen Yöntemi\", Guhua Cemiyetinin en özel ve en gizli tekniklerinden biridir.</i>"
+    },
+    "skillParams": {
+      "0": "Kılıç Yağmuru Hasarı",
+      "1": "Süre",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Suyun Sırrı",
+    "description": {
+      "0": "Bir Yağmur Kılıcı parçalandığında veya süresi bittiğinde mevcut karakterin Canını, Xingqiu'nun Maks. Canının %6'sı kadar yeniler."
+    }
+  },
+  "passive2": {
+    "name": "Keskin Yağmur Damlaları",
+    "description": {
+      "0": "Xingqiu %20 <hydro>Su Hasarı Bonusu</hydro> kazanır."
+    }
+  },
+  "passive3": {
+    "name": "Zeka Parıltısı",
+    "description": {
+      "0": "Xingqiu, Karakter Yeteneği Malzemeleri üretirken kullanılan malzemelerin bir kısmını %25 ihtimalle iade eder."
+    }
+  },
+  "constellation1": {
+    "name": "Yağmur Kokusu",
+    "description": {
+      "0": "Maksimum Yağmur Kılıcı sayısını 1 artırır."
+    }
+  },
+  "constellation2": {
+    "name": "Mavi Gökteki Alkım",
+    "description": {
+      "0": "<strong>Guhua Kılıcı: Yağmurkesici</strong> becerisinin süresini 3sn uzatır.",
+      "1": "Kılıç yağmuruyla vurulan düşmanların <hydro>Su Direnci</hydro> 4 saniyeliğine %15 azalır."
+    }
+  },
+  "constellation3": {
+    "name": "Mısra Dokuyan",
+    "description": {
+      "0": "<strong>Guhua Kılıcı: Yağmurkesici</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Şer Dindiren",
+    "description": {
+      "0": "<strong>Guhua Kılıcı: Yağmurkesici</strong> etkinken <strong>Guhua Kılıcı: Ölümcül Yağmur</strong> becerisinin verdiği Hasar %50 artar."
+    }
+  },
+  "constellation5": {
+    "name": "Yağmur Altında Dans",
+    "description": {
+      "0": "<strong>Guhua Kılıcı: Ölümcül Yağmur</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Derlenmiş Dizeler",
+    "description": {
+      "0": "<strong>Guhua Kılıcı: Yağmurkesici</strong> becerisinin 2 kılıç yağmuru saldırısı etkinleştiğinde üçüncü kılıç yağmuru saldırısı büyük ölçüde gelişir. Ayrıca üçüncü kılıç yağmuru saldırısı isabet ettiğinde Xingqiu için 3 Enerji yeniler."
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "name": "Freminet",
+  "title": "Khát Khao Chìm Đắm",
+  "description": "Thiếu niên ít nói rất giỏi bơi lặn, bên dưới vẻ ngoài lạnh lùng là một trái tim thuần khiết.",
+  "constellationName": "Cung Cơ Xảo",
+  "auto": {
+    "name": "Dòng Chảy Xoáy",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần tấn công liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực để xoay kiếm tấn công địch xung quanh.",
+        "2": "Khi ngừng quay, sẽ bổ một nhát cực mạnh."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích Tuần Hoàn",
+      "5": "Sát Thương Trọng Kích Chí Mạng",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Thời Gian Kéo Dài Tối Đa",
+      "8": "Sát Thương Khi Đáp",
+      "9": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Băng Giá Điều Áp",
+    "description": {
+      "0": "Thực hiện đòn Vung Đao, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>, đồng thời vào trạng thái Thời Khắc Của Pers trong 10s.",
+      "1": "Khi trong trạng thái Thời Khắc Của Pers, Kỹ Năng Nguyên Tố chuyển thành Áp Lực Nghiền Nát.",
+      "2": "<br/>",
+      "3": "<strong>Áp Lực Nghiền Nát</strong>",
+      "4": "Căn cứ vào cấp bậc Áp Lực từ Thời Khắc Của Pers mà tiến hành các kiểu tấn công khác nhau, đồng thời xóa bỏ trạng thái Thời Khắc Của Pers:",
+      "5": [
+        "Cấp bậc 0: Tung nhát chém thẳng đứng, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>;",
+        "Cấp bậc 1-3: Tung nhát chém thẳng đứng cùng với Pers, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> và Sát Thương Vật Lý. Lượng sát thương sẽ khác nhau căn cứ vào cấp bậc Áp Lực;",
+        "Cấp bậc 4: Mượn sức mạnh đã nạp đầy của Pers để gây Sát Thương Vật Lý. Lúc này \"Tấn Công Thường - Dòng Chảy Xoáy\" sẽ chuyển thành Áp Lực Nghiền Nát."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Thời Khắc Của Pers</strong>",
+      "8": "Freminet khi tấn công thường, sẽ cùng lúc tạo ra Băng Sương gây <cryo>Sát Thương Nguyên Tố Băng</cryo> và tăng cấp bậc Áp Lực từ Thời Khắc Của Pers.",
+      "9": "<cryo>Sát Thương Nguyên Tố Băng</cryo> gây ra cùng lúc sẽ được tính là sát thương Kỹ Năng Nguyên Tố.",
+      "10": "<br/>",
+      "11": "<strong>Sức Mạnh Nền Tảng: Pneuma</strong>",
+      "12": "Cứ cách một khoảng thời gian, thực hiện đòn Vung Đao sẽ hình thành Gai Linh Hồn dưới dạng vung đao, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> thuộc tính Pneuma.",
+      "13": "<br/>",
+      "14": "<i>Ngăn cản hành động mà không đoạt mạng đối phương, ở góc độ nào đó cũng là một chiến lược vì sinh tồn.</i>",
+      "15": "<i>\"Trông cậy vào Pers rồi.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Vung Đao",
+      "1": "Sát Thương Băng Sương",
+      "2": "Sát Thương Áp Lực Nghiền Nát Bậc 0",
+      "3": "Sát Thương Áp Lực Nghiền Nát Bậc 1",
+      "4": "Sát Thương Áp Lực Nghiền Nát Bậc 2",
+      "5": "Sát Thương Áp Lực Nghiền Nát Bậc 3",
+      "6": "Sát Thương Áp Lực Nghiền Nát Bậc 4",
+      "7": "Sát Thương Gai Linh Hồn",
+      "8": "Giãn Cách Gai Linh Hồn",
+      "9": "CD",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ảo Ảnh Công Phá",
+    "description": {
+      "0": "Thi triển băng giá cực hạn, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>, làm mới thời gian chờ của Kỹ Năng Nguyên Tố \"Băng Giá Điều Áp\", đồng thời vào trạng thái Lén Lút trong 10s.",
+      "1": "<br/>",
+      "2": "Khi trong trạng thái Lén Lút, Freminet sẽ tăng khả năng kháng gián đoạn và cường hóa Kỹ Năng Nguyên Tố \"Băng Giá Điều Áp\":",
+      "3": [
+        "Thời gian chờ rút ngắn 70%;",
+        "Tiến hành tấn công thường sẽ tăng thêm một cấp Áp Lực từ Thời Khắc Của Pers, đồng thời gây 200% sát thương Băng Sương của tấn công thường so với mức ban đầu."
+      ],
+      "4": "<br/>",
+      "5": "Hiệu quả này sẽ xóa khi Freminet rời trận.",
+      "6": "<br/>",
+      "7": "<i>\"Bây giờ... đã không cần những tạp âm dư thừa nữa.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Thời Gian Kéo Dài",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Độ Bão Hòa Sâu Thẳm",
+    "description": {
+      "0": "Khi thi triển <strong>Băng Giá Điều Áp - Áp Lực Nghiền Nát</strong>, nếu cấp Áp Lực từ Thời Khắc Của Pers nhỏ hơn 4, thời gian chờ của Băng Giá Điều Áp rút ngắn 1s."
+    }
+  },
+  "passive2": {
+    "name": "Thiết Bị Ngưng Tụ Song Song",
+    "description": {
+      "0": "Freminet khi kích hoạt phản ứng Phá Băng lên kẻ địch, sẽ khiến sát thương gây ra từ <strong>Băng Giá Điều Áp - Áp Lực Nghiền Nát</strong> tăng 40%, duy trì 5s."
+    }
+  },
+  "passive3": {
+    "name": "Người Dẫn Đường Biển Sâu",
+    "description": {
+      "0": "Giảm 35% tiêu hao thể lực dưới nước cho nhân vật trong đội của bản thân.",
+      "1": "Không thể cộng dồn với buff Thiên Phú cố định có cùng hiệu quả."
+    }
+  },
+  "constellation1": {
+    "name": "Giấc Mơ Biển Sâu Và Bọt Biển",
+    "description": {
+      "0": "Tỉ lệ bạo kích của <strong>Băng Giá Điều Áp - Áp Lực Nghiền Nát</strong> tăng 15%."
+    }
+  },
+  "constellation2": {
+    "name": "Vương Quốc Màu Mỡ Và Cánh Cụt",
+    "description": {
+      "0": "Thi triển <strong>Băng Giá Điều Áp - Áp Lực Nghiền Nát</strong> sẽ hồi cho Freminet 2 điểm Năng Lượng Nguyên Tố. Nếu khi thi triển là Áp Lực Nghiền Nát có Áp Lực bậc 4, sẽ chuyển thành hồi phục 3 điểm."
+    }
+  },
+  "constellation3": {
+    "name": "Khúc Ca Sóng Biển Và Cát Trắng",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tấn Công Thường - Dòng Chảy Xoáy</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Vũ Điệu Trăng Tuyết Và Sáo Trúc",
+    "description": {
+      "0": "Freminet sau khi kích hoạt phản ứng Đóng Băng, Phá Băng, Siêu Dẫn lên kẻ địch, tấn công tăng 9%. Hiệu quả này duy trì 6s, tối đa cộng dồn 2 lần, mỗi 0.3s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation5": {
+    "name": "Đêm Tối Hân Hoan Và Bếp Lửa",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Băng Giá Điều Áp</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Thời Khắc Bừng Tỉnh Và Quyết Tâm",
+    "description": {
+      "0": "Freminet sau khi kích hoạt phản ứng Đóng Băng, Phá Băng, Siêu Dẫn lên kẻ địch, sát thương bạo kích tăng 12%. Hiệu quả này duy trì 6s, tối đa cộng dồn 3 lần, mỗi 0.3s tối đa kích hoạt một lần."
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "electro": {
+    "skill": {
+      "enerRegen": "Hồi Phục Năng Lượng Nguyên Tố",
+      "enerRechInc": "Tăng Hiệu Quả Nạp Nguyên Tố"
+    },
+    "burst": {
+      "thunderDMG": "Sát thương Sấm Sét Uy Vũ"
+    }
+  }
+}

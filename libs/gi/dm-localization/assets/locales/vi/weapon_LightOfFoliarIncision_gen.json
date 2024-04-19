@@ -1,0 +1,24 @@
+{
+  "name": "Ánh Lá Phán Quyết",
+  "description": {
+    "0": "Thanh kiếm được chế tạo từ cành trắng quý báu, từng chém gãy vô số độc dịch xâm chiếm khu rừng."
+  },
+  "passiveName": "Râu Rễ Trăng Bạc",
+  "passiveDescription": {
+    "0": {
+      "0": "Tỉ lệ bạo kích tăng <cryo>4%</cryo>; Khi tấn công thường gây Sát Thương Nguyên Tố sẽ nhận được hiệu quả \"Tán Lá Phán Quyết\": Tăng sát thương gây ra từ tấn công thường và Kỹ Năng Nguyên Tố dựa vào <cryo>120%</cryo> Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi hiệu lực 28 lần hoặc sau 12s, mỗi 12s tối đa nhận được hiệu quả \"Tán Lá Phán Quyết\" một lần."
+    },
+    "1": {
+      "0": "Tỉ lệ bạo kích tăng <cryo>5%</cryo>; Khi tấn công thường gây Sát Thương Nguyên Tố sẽ nhận được hiệu quả \"Tán Lá Phán Quyết\": Tăng sát thương gây ra từ tấn công thường và Kỹ Năng Nguyên Tố dựa vào <cryo>150%</cryo> Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi hiệu lực 28 lần hoặc sau 12s, mỗi 12s tối đa nhận được hiệu quả \"Tán Lá Phán Quyết\" một lần."
+    },
+    "2": {
+      "0": "Tỉ lệ bạo kích tăng <cryo>6%</cryo>; Khi tấn công thường gây Sát Thương Nguyên Tố sẽ nhận được hiệu quả \"Tán Lá Phán Quyết\": Tăng sát thương gây ra từ tấn công thường và Kỹ Năng Nguyên Tố dựa vào <cryo>180%</cryo> Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi hiệu lực 28 lần hoặc sau 12s, mỗi 12s tối đa nhận được hiệu quả \"Tán Lá Phán Quyết\" một lần."
+    },
+    "3": {
+      "0": "Tỉ lệ bạo kích tăng <cryo>7%</cryo>; Khi tấn công thường gây Sát Thương Nguyên Tố sẽ nhận được hiệu quả \"Tán Lá Phán Quyết\": Tăng sát thương gây ra từ tấn công thường và Kỹ Năng Nguyên Tố dựa vào <cryo>210%</cryo> Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi hiệu lực 28 lần hoặc sau 12s, mỗi 12s tối đa nhận được hiệu quả \"Tán Lá Phán Quyết\" một lần."
+    },
+    "4": {
+      "0": "Tỉ lệ bạo kích tăng <cryo>8%</cryo>; Khi tấn công thường gây Sát Thương Nguyên Tố sẽ nhận được hiệu quả \"Tán Lá Phán Quyết\": Tăng sát thương gây ra từ tấn công thường và Kỹ Năng Nguyên Tố dựa vào <cryo>240%</cryo> Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi hiệu lực 28 lần hoặc sau 12s, mỗi 12s tối đa nhận được hiệu quả \"Tán Lá Phán Quyết\" một lần."
+    }
+  }
+}

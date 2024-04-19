@@ -1,0 +1,24 @@
+{
+  "name": "Medidor de Alcance",
+  "description": {
+    "0": "Um instrumento de medida que raramente é visto hoje em dia. É capaz de disparar flechas."
+  },
+  "passiveName": "Canção do Pedreiro",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando é curado ou cura, concede o Sinal da União por 30s, é possível acumular 3 Sinais da União. Ao lançar uma Habilidade Elemental ou Supremo, consome todos os Sinais da União e gera por 10s o efeito \"Resistência\": para cada Sinal da União consumido, aumenta o ATQ em <cryo>3%</cryo> e o Bônus de Dano Elemental em <cryo>7%</cryo>. É possível desencadear o efeito \"Resistência\" uma vez a cada 15s. Também é possível obter o Sinal da União quando o personagem não está ativo no campo de batalha."
+    },
+    "1": {
+      "0": "Quando é curado ou cura, concede o Sinal da União por 30s, é possível acumular 3 Sinais da União. Ao lançar uma Habilidade Elemental ou Supremo, consome todos os Sinais da União e gera por 10s o efeito \"Resistência\": para cada Sinal da União consumido, aumenta o ATQ em <cryo>4%</cryo> e o Bônus de Dano Elemental em <cryo>8.5%</cryo>. É possível desencadear o efeito \"Resistência\" uma vez a cada 15s. Também é possível obter o Sinal da União quando o personagem não está ativo no campo de batalha."
+    },
+    "2": {
+      "0": "Quando é curado ou cura, concede o Sinal da União por 30s, é possível acumular 3 Sinais da União. Ao lançar uma Habilidade Elemental ou Supremo, consome todos os Sinais da União e gera por 10s o efeito \"Resistência\": para cada Sinal da União consumido, aumenta o ATQ em <cryo>5%</cryo> e o Bônus de Dano Elemental em <cryo>10%</cryo>. É possível desencadear o efeito \"Resistência\" uma vez a cada 15s. Também é possível obter o Sinal da União quando o personagem não está ativo no campo de batalha."
+    },
+    "3": {
+      "0": "Quando é curado ou cura, concede o Sinal da União por 30s, é possível acumular 3 Sinais da União. Ao lançar uma Habilidade Elemental ou Supremo, consome todos os Sinais da União e gera por 10s o efeito \"Resistência\": para cada Sinal da União consumido, aumenta o ATQ em <cryo>6%</cryo> e o Bônus de Dano Elemental em <cryo>11.5%</cryo>. É possível desencadear o efeito \"Resistência\" uma vez a cada 15s. Também é possível obter o Sinal da União quando o personagem não está ativo no campo de batalha."
+    },
+    "4": {
+      "0": "Quando é curado ou cura, concede o Sinal da União por 30s, é possível acumular 3 Sinais da União. Ao lançar uma Habilidade Elemental ou Supremo, consome todos os Sinais da União e gera por 10s o efeito \"Resistência\": para cada Sinal da União consumido, aumenta o ATQ em <cryo>7%</cryo> e o Bônus de Dano Elemental em <cryo>13%</cryo>. É possível desencadear o efeito \"Resistência\" uma vez a cada 15s. Também é possível obter o Sinal da União quando o personagem não está ativo no campo de batalha."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Récompense légitime",
+  "description": {
+    "0": "Une lance pointue, dont seule la pointe reste tachée de sang frais."
+  },
+  "passiveName": "Pointe de la lance",
+  "passiveDescription": {
+    "0": {
+      "0": "Recevoir des soins restaure <cryo>8</cryo> pts d'énergie. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Recevoir des soins restaure <cryo>10</cryo> pts d'énergie. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Recevoir des soins restaure <cryo>12</cryo> pts d'énergie. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Recevoir des soins restaure <cryo>14</cryo> pts d'énergie. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Recevoir des soins restaure <cryo>16</cryo> pts d'énergie. Cet effet peut être déclenché une fois toutes les 10 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

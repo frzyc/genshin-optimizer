@@ -1,0 +1,29 @@
+{
+  "setName": "Sorcière des flammes ardentes",
+  "setEffects": {
+    "2": "Confère un bonus de DGT Pyro de 15 %.",
+    "4": "Augmente les DGT infligés par Surcharge, Brûlure et Bourgeonnement de 40 % et ceux d'Évaporation et de Fonte de 15 %. L'utilisation d'une compétence élémentaire augmente pendant 10 s l'effet du set de 2 pièces de 50 %. Cet effet peut être cumulé 3 fois maximum."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fleur ardente de la Sorcière",
+      "desc": "Une fleur touchée par la sorcière qui rêvait de brûler tous les démons du monde. Des flammes anonymes caressent doucement la main de ceux qui la touchent."
+    },
+    "plume": {
+      "name": "Plume enflammée éternelle de la Sorcière",
+      "desc": "Une plume d'oiseau touchée par la sorcière qui rêvait de brûler tous les démons du monde. Elle brûle toujours et dégage une douce chaleur."
+    },
+    "sands": {
+      "name": "Temps évanoui de la Sorcière",
+      "desc": "Un sablier porté par la sorcière qui rêvait de brûler tous les démons du monde. Les sables qui s'écoulent à l'intérieur représentent les années que dédia la sorcière à la puissance du feu."
+    },
+    "goblet": {
+      "name": "Feu du cœur de la Sorcière",
+      "desc": "Une urne emplie de feu, laissée par la Sorcière des flammes, dont le rêve était autrefois de brûler tous les démons dans le monde. Ce feu ne s'éteint jamais, à la manière du feu habitant son ancienne propriétaire."
+    },
+    "circlet": {
+      "name": "Chapeau brûlé de la Sorcière",
+      "desc": "Un chapeau porté par la sorcière qui rêvait de brûler tous les démons du monde. La large visière lui cachait la vue."
+    }
+  }
+}

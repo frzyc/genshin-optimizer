@@ -1,0 +1,24 @@
+{
+  "name": "Vasalla del Rey",
+  "description": {
+    "0": "Un arma obtenida a través de una de las historias de los aranara. Tiene forma de arco y, con sus flechas, es capaz de derribar a cualquier enemigo del bosque."
+  },
+  "passiveName": "Enseñanzas del Rey del Laberinto",
+  "passiveDescription": {
+    "0": {
+      "0": "Al usar una Habilidad Elemental o Definitiva, obtienes el efecto de “enseñanzas del bosque”, el cual aumenta la Maestría Elemental en <cryo>60</cryo> pts. durante 12 s. Este efecto se eliminará al cambiar de personaje. Cuando termina la duración de enseñanzas del bosque o cuando se elimina el efecto, se inflige un daño equivalente al <cryo>100%</cryo> del ATQ del personaje contra un enemigo cercano. El efecto de enseñanzas del bosque solo se puede activar una vez cada 20 s."
+    },
+    "1": {
+      "0": "Al usar una Habilidad Elemental o Definitiva, obtienes el efecto de “enseñanzas del bosque”, el cual aumenta la Maestría Elemental en <cryo>80</cryo> pts. durante 12 s. Este efecto se eliminará al cambiar de personaje. Cuando termina la duración de enseñanzas del bosque o cuando se elimina el efecto, se inflige un daño equivalente al <cryo>120%</cryo> del ATQ del personaje contra un enemigo cercano. El efecto de enseñanzas del bosque solo se puede activar una vez cada 20 s."
+    },
+    "2": {
+      "0": "Al usar una Habilidad Elemental o Definitiva, obtienes el efecto de “enseñanzas del bosque”, el cual aumenta la Maestría Elemental en <cryo>100</cryo> pts. durante 12 s. Este efecto se eliminará al cambiar de personaje. Cuando termina la duración de enseñanzas del bosque o cuando se elimina el efecto, se inflige un daño equivalente al <cryo>140%</cryo> del ATQ del personaje contra un enemigo cercano. El efecto de enseñanzas del bosque solo se puede activar una vez cada 20 s."
+    },
+    "3": {
+      "0": "Al usar una Habilidad Elemental o Definitiva, obtienes el efecto de “enseñanzas del bosque”, el cual aumenta la Maestría Elemental en <cryo>120</cryo> pts. durante 12 s. Este efecto se eliminará al cambiar de personaje. Cuando termina la duración de enseñanzas del bosque o cuando se elimina el efecto, se inflige un daño equivalente al <cryo>160%</cryo> del ATQ del personaje contra un enemigo cercano. El efecto de enseñanzas del bosque solo se puede activar una vez cada 20 s."
+    },
+    "4": {
+      "0": "Al usar una Habilidad Elemental o Definitiva, obtienes el efecto de “enseñanzas del bosque”, el cual aumenta la Maestría Elemental en <cryo>140</cryo> pts. durante 12 s. Este efecto se eliminará al cambiar de personaje. Cuando termina la duración de enseñanzas del bosque o cuando se elimina el efecto, se inflige un daño equivalente al <cryo>180%</cryo> del ATQ del personaje contra un enemigo cercano. El efecto de enseñanzas del bosque solo se puede activar una vez cada 20 s."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Eco del Sacrificio",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Al golpear a un enemigo con un Ataque Normal, hay una probabilidad del 36% de activar el efecto de “ritual del valle”, el cual aumenta el daño de Ataque Normal en una cantidad equivalente al 70% del ATQ. Este efecto se anula 0.05 s después de infligir daño con un Ataque Normal. Si dicho ataque no activa ritual del valle, la probabilidad de activarlo con el siguiente golpe de Ataque Normal aumenta en un 20%. Esta activación solo puede ocurrir una vez cada 0.2 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor Aromaespíritu",
+      "desc": "Una figura de jade con forma de flor. Cierta fragancia fantasmal parece rezumar de ella."
+    },
+    "plume": {
+      "name": "Hoja de Jade",
+      "desc": "Un adorno de jade parecido a una hoja. En el pasado, tenía un significado muy especial para dos determinadas amigas."
+    },
+    "sands": {
+      "name": "Símbolo Ceremonial",
+      "desc": "Un adorno de jade redondo. Según una leyenda, simbolizaba en algún sitio el inicio de un ritual."
+    },
+    "goblet": {
+      "name": "Taza de la Fuente",
+      "desc": "Una taza de té de la que emana un constante flujo de agua cristalina. Es incierto si se trata de un regalo, una reliquia o un objeto perdido de los Adeptus."
+    },
+    "circlet": {
+      "name": "Aretes Torrenciales",
+      "desc": "Unos aretes hechos de un hermoso jade. Tienen un tacto sumamente suave."
+    }
+  }
+}

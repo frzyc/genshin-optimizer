@@ -1,0 +1,12 @@
+{
+  "setName": "Sacrifieur Hydro",
+  "setEffects": {
+    "1": "Diminue la durée des effets Hydro subis de 40 %."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Couronne rituelle Hydro",
+      "desc": "Une couronne portée par les prêtres lors de cérémonies dans les temps anciens. Son immersion dans l'eau tout au long de l'année lui a conféré une merveilleuse résistance."
+    }
+  }
+}

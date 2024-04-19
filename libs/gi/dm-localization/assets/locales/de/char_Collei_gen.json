@@ -1,0 +1,160 @@
+{
+  "name": "Collei",
+  "title": "Taufrisches Keimblatt",
+  "description": "Eine auszubildende Waldhüterin vom Avidya-Wald. Hinter ihren leidenschaftlichen Worten und Taten verbirgt sich eine eher introvertierte Persönlichkeit.",
+  "constellationName": "Leptailurus Cervarius",
+  "auto": {
+    "name": "Der Anbeterin Schießkunst",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Pfeilschüsse hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
+        "2": "Konzentriert die Dendro-Kraft während des Zielens an der Pfeilspitze, die voll aufgeladen <dendro>Dendro-Schaden</dendro> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "Gezielte Schüsse",
+      "5": "Voll aufgeladene gezielte Schüsse",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Der Kämpferin Laub",
+    "description": {
+      "0": "Wirft das fliegende Laubrad aus, das jedem getroffenen Ziel 1-mal <dendro>Dendro-Schaden</dendro> zufügt.",
+      "1": "Das Rad kehrt nach einer gewissen Zeit zurück und verursacht erneut <dendro>Dendro-Schaden</dendro>.",
+      "2": "<br/>",
+      "3": "<i>Ein zuverlässiges Hilfsmittel, das Collei benutzt, um mit unruhigen Monstern fertig zu werden. Nach ein paar Schlägen mit diesem Gegenstand werden sie normalerweise wieder ruhig und gefügig. Funktioniert auch gut gegen Schurken mit bösen Absichten.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Geheimer Katzenschatz",
+    "description": {
+      "0": "Nimmt im Kampf die Hilfe des verlässlichen Cuilein-Anbar in Anspruch.",
+      "1": "Wirft eine Cuilein-Anbar-Puppe, die bei ihrer Explosion <dendro>Dendro-Flächenschaden</dendro> verursacht und ein Cuilein-Anbar-Feld erzeugt. Cuilein-Anbar springt immer wieder auf diesem Feld herum und verursacht <dendro>Dendro-Flächenschaden</dendro>.",
+      "2": "<br/>",
+      "3": "<i>„Krass, oder? ... Oh, woher der Name Cuilein-Anbar kommt, fragst du dich? Hmm, das, äh ...“</i>"
+    },
+    "skillParams": {
+      "0": "Explosions-SCH",
+      "1": "SCH des Cuilein-Anbar-Sprungs",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Wiederkehr des fliegenden Laubs",
+    "description": {
+      "0": "Verleiht der Figur bei der Rückkehr des <strong>fliegenden Laubrads</strong> den Effekt „Jungtrieb“, der 3 s lang den Gegnern in der Nähe fortlaufend <dendro>Dendro-Schaden</dendro> in Höhe von 40 % von Colleis ANG zufügt, wenn eine eigene Figur in der Truppe vor der Rückkehr des <strong>fliegenden Laubrads</strong> Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ ausgelöst hat.",
+      "1": "Wenn während der Dauer des Effekts ein weiterer „Jungtrieb“ erzeugt wird, wird er den bestehenden ersetzen. Der vom Jungtrieb-Effekt verursachte Schaden gilt als Elementarfähigkeitsschaden."
+    }
+  },
+  "passive2": {
+    "name": "Gemächliche Stille im Wald",
+    "description": {
+      "0": "Verlängert die Dauer des Felds um 1 s, wenn eine Figur im <strong>Cuilein-Anbar-Feld</strong> Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ auslöst.",
+      "1": "Die Dauer pro Auslösung von <strong>Geheimer Katzenschatz</strong> kann auf diese Weise um bis zu 3 s verlängert werden."
+    }
+  },
+  "passive3": {
+    "name": "„Flugmeisterin von Sumeru“",
+    "description": {
+      "0": "Verringert die beim Gleiten verbrauchte Ausdauer aller eigenen Truppenmitglieder um 20 %.",
+      "1": "Nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar."
+    }
+  },
+  "constellation1": {
+    "name": "Hüterin im tiefen Wald",
+    "description": {
+      "0": "Erhöht Colleis Aufladerate um 20 %, wenn sie inaktiv in der Truppe ist."
+    }
+  },
+  "constellation2": {
+    "name": "Wanderin zwischen Bergen und Seen",
+    "description": {
+      "0": "Ändert das passive Talent „Wiederkehr des fliegenden Laubs“ wie folgt:",
+      "1": "Das <strong>fliegende Laubrad</strong> verleiht bei seiner Rückkehr der Figur den Effekt „Jungtrieb“ des passiven Talents „Wiederkehr des fliegenden Laubs“, der 3 s lang fortlaufend den Gegnern in der Nähe <dendro>Dendro-Schaden</dendro> in Höhe von 40 % von Colleis ANG zufügt.",
+      "2": "Wenn eines der eigenen Truppenmitglieder nach Anwenden der Fähigkeit <strong>Der Kämpferin Laub</strong> und, bevor der aktuelle Effekt „Jungtrieb“ endet, Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ auslöst, wird dieser „Jungtrieb“ um 3 s verlängert.",
+      "3": "Die Dauer des Effekts „Jungtrieb“ kann nur einmal auf diese Weise verlängert werden. Wird während der Dauer ein weiterer „Jungtrieb“ erzeugt, ersetzt er den bestehenden. Der vom Jungtrieb-Effekt verursachte Schaden gilt als Elementarfähigkeitsschaden.",
+      "4": "Das passive Talent „Wiederkehr des fliegenden Laubs“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "Blütenduft im Sommer",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Der Kämpferin Laub</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Waldgeschenk unterm Mond",
+    "description": {
+      "0": "Erhöht bei Anwendung der Fähigkeit <strong>Geheimer Katzenschatz</strong> die Elementarkunde aller Truppenmitglieder in der Nähe (außer Collei) 12 s lang um 60 Punkte."
+    }
+  },
+  "constellation5": {
+    "name": "Schwelendes Feuer aus Illusionen",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Geheimer Katzenschatz</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Stählerner Wald aus Pfeilen",
+    "description": {
+      "0": "Bei Treffern mit <strong>dem fliegenden Laubrad</strong> erschafft es ein Mini-Cuilein-Anbar, das <dendro>Dendro-Schaden</dendro> in Höhe von 200 % von Colleis ANG verursacht.",
+      "1": "Jede Anwendung von <strong>Der Kämpferin Laub</strong> kann nur 1 Mini-Cuilein-Anbar erschaffen."
+    }
+  }
+}

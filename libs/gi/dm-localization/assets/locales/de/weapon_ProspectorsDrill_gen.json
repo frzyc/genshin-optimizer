@@ -1,0 +1,24 @@
+{
+  "name": "Erkundungsbohrer",
+  "description": {
+    "0": "Dieser inzwischen nahezu verschwundene Bohrer mit langem Stiel wurde häufig für Erkundungen, Steinmetz- und Schnitzarbeiten verwendet."
+  },
+  "passiveName": "Steinmetzlied",
+  "passiveDescription": {
+    "0": {
+      "0": "Verleiht der Figur bei erhaltener Heilung, oder wenn sie jemanden heilt, ein Zeichen des Zusammenhalts, hält 30 s. Es können max. bis zu 3 Zeichen des Zusammenhalts vorhanden sein. Verbraucht beim Auslösen der Elementarfähigkeit oder der Spezialfähigkeit alle Zeichen des Zusammenhalts und löst den Effekt „Auflehnung“ aus, der 10 s hält: Jedes verbrauchte Zeichen des Zusammenhalts erhöht den ANG um <cryo>3 %</cryo> und den Elementar-SCH-Bonus aller Elemente um <cryo>7 %</cryo>. 15 s Abklingzeit für den Effekt „Auflehnung“. Zeichen des Zusammenhalts können auch erhalten werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "1": {
+      "0": "Verleiht der Figur bei erhaltener Heilung, oder wenn sie jemanden heilt, ein Zeichen des Zusammenhalts, hält 30 s. Es können max. bis zu 3 Zeichen des Zusammenhalts vorhanden sein. Verbraucht beim Auslösen der Elementarfähigkeit oder der Spezialfähigkeit alle Zeichen des Zusammenhalts und löst den Effekt „Auflehnung“ aus, der 10 s hält: Jedes verbrauchte Zeichen des Zusammenhalts erhöht den ANG um <cryo>4 %</cryo> und den Elementar-SCH-Bonus aller Elemente um <cryo>8,5 %</cryo>. 15 s Abklingzeit für den Effekt „Auflehnung“. Zeichen des Zusammenhalts können auch erhalten werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "2": {
+      "0": "Verleiht der Figur bei erhaltener Heilung, oder wenn sie jemanden heilt, ein Zeichen des Zusammenhalts, hält 30 s. Es können max. bis zu 3 Zeichen des Zusammenhalts vorhanden sein. Verbraucht beim Auslösen der Elementarfähigkeit oder der Spezialfähigkeit alle Zeichen des Zusammenhalts und löst den Effekt „Auflehnung“ aus, der 10 s hält: Jedes verbrauchte Zeichen des Zusammenhalts erhöht den ANG um <cryo>5 %</cryo> und den Elementar-SCH-Bonus aller Elemente um <cryo>10 %</cryo>. 15 s Abklingzeit für den Effekt „Auflehnung“. Zeichen des Zusammenhalts können auch erhalten werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "3": {
+      "0": "Verleiht der Figur bei erhaltener Heilung, oder wenn sie jemanden heilt, ein Zeichen des Zusammenhalts, hält 30 s. Es können max. bis zu 3 Zeichen des Zusammenhalts vorhanden sein. Verbraucht beim Auslösen der Elementarfähigkeit oder der Spezialfähigkeit alle Zeichen des Zusammenhalts und löst den Effekt „Auflehnung“ aus, der 10 s hält: Jedes verbrauchte Zeichen des Zusammenhalts erhöht den ANG um <cryo>6 %</cryo> und den Elementar-SCH-Bonus aller Elemente um <cryo>11,5 %</cryo>. 15 s Abklingzeit für den Effekt „Auflehnung“. Zeichen des Zusammenhalts können auch erhalten werden, wenn die Figur inaktiv in der Truppe ist."
+    },
+    "4": {
+      "0": "Verleiht der Figur bei erhaltener Heilung, oder wenn sie jemanden heilt, ein Zeichen des Zusammenhalts, hält 30 s. Es können max. bis zu 3 Zeichen des Zusammenhalts vorhanden sein. Verbraucht beim Auslösen der Elementarfähigkeit oder der Spezialfähigkeit alle Zeichen des Zusammenhalts und löst den Effekt „Auflehnung“ aus, der 10 s hält: Jedes verbrauchte Zeichen des Zusammenhalts erhöht den ANG um <cryo>7 %</cryo> und den Elementar-SCH-Bonus aller Elemente um <cryo>13 %</cryo>. 15 s Abklingzeit für den Effekt „Auflehnung“. Zeichen des Zusammenhalts können auch erhalten werden, wenn die Figur inaktiv in der Truppe ist."
+    }
+  }
+}

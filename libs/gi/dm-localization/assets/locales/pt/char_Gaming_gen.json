@@ -1,0 +1,160 @@
+{
+  "name": "Gaming",
+  "title": "Olhar Leonino",
+  "description": "Guarda de aluguel da Agência de Transporte Seguro Espada & Caixa, líder do grupo Bestas Místicas Poderosas.",
+  "constellationName": "Leo Expergiscens",
+  "auto": {
+    "name": "Lâmina Estelar",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos.",
+        "2": "Ao final da sequência, realiza um corte poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Loop de Ataque Carregado",
+      "5": "Dano Final de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Duração Máxima",
+      "8": "Dano Durante a Queda",
+      "9": "Dano de Queda de Baixa/Alta Altitude",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ascensão Bestial",
+    "description": {
+      "0": "Ataca para frente com as artes Wushou, saltando no ar quando atingir o alvo ou o terreno.",
+      "1": "Quando Gaming usar sua Habilidade Elemental, Ascensão Bestial, para ascender no ar, e se realizar um Ataque Imersivo imediatamente, lançará um poderoso Ataque Imersivo: Caminhador das Nuvens.",
+      "2": "<br/>",
+      "3": "<strong>Ataque Imersivo: Caminhador das Nuvens</strong>",
+      "4": "O Dano do Ataque Imersivo da Habilidade Elemental Ascensão Bestial é convertido em <pyro>Dano Pyro</pyro> que não pode ser substituído, e ao cair, consome uma certa quantidade da Vida de Gaming. É possível reduzir a Vida de Gaming até 10% dessa forma.",
+      "5": "O Dano de Caminhador das Nuvens é considerado Dano de Ataque Imersivo.",
+      "6": "<br/>",
+      "7": "<i>\"A besta salta e pega o verde, a prosperidade ao nosso redor. Que a riqueza e saúde venha para todos, e que sejamos abençoados!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Ataque Imersivo: Caminhador das Nuvens",
+      "1": "Consumo de Vida",
+      "2": "Recarga",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dança das Chamas Douradas",
+    "description": {
+      "0": "Gaming entra na Postura Wushou, <pyro>aplicando Pyro</pyro> em Gaming por um curto tempo, regenerando uma certa quantidade de Vida e invocando seu fiel companheiro, o Suanni Man Chai para esmagar seu alvo, causando <pyro>Dano Pyro em AdE</pyro>.",
+      "1": "Depois de atacar seu alvo, Man Chai vai rolar até um local próximo antes de se mover na direção de Gaming. Ao se reunir com Gaming, Man Chai recuará, e redefinirá a recarga da Habilidade Elemental \"Ascensão Bestial\" de Gaming.",
+      "2": "Na duração da Postura Wushou, aumenta a RES contra Interrupção de Gaming, e quando o Ataque Imersivo: Caminhador das Nuvens atingir o chão, ou completar o ataque frontal de Ascensão Bestial com mais de 50% de Vida, invocará Man Chai novamente.",
+      "3": "Só é possível haver 1 Man Chai de Gaming ativo por vez.",
+      "4": "Esse efeito será removido quando Gaming sair do campo.",
+      "5": "<br/>",
+      "6": "<i>\"A besta dourada traz a fortuna, luzes ofuscantes e paisagens brilhantes! Isso sim é uma vida abundante!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Suanni Man Chai",
+      "1": "Cura de Habilidade",
+      "2": "Duração da Postura Wushou",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dança da Ascensão",
+    "description": {
+      "0": "Depois que o Ataque Imersivo: Caminhador das Nuvens de <strong>Ascensão Bestial</strong> atingir o inimigo, regenera Vida para Gaming a cada 0.2s. A quantidade regenerada equivale a 1.5% da Vida Máxima de Gaming e dura 0.8s."
+    }
+  },
+  "passive2": {
+    "name": "Ar da Prosperidade",
+    "description": {
+      "0": "Quando a Vida de Gaming é inferior a 50%, obtém 20% de Bônus de Cura. Quando a Vida de Gaming é maior ou equivalente a 50%, Ataque Imersivo: Caminhador das Nuvens causa 20% a mais de Dano."
+    }
+  },
+  "passive3": {
+    "name": "A Besta Caminhante",
+    "description": {
+      "0": "Durante o dia (06:00 - 18:00), os membros do seu grupo ganham o efeito Passos Ágeis: Veloc. Mov. aumenta em 10%.",
+      "1": "Não tem efeito em Domínios, Domínios Dizimados ou Abismo Espiral. O efeito Passos Ágeis não se acumula."
+    }
+  },
+  "constellation1": {
+    "name": "Abençoador",
+    "description": {
+      "0": "Quando o Suanni Man Chai de <strong>Dança das Chamas Douradas</strong> reunir-se com Gaming, regenerará 15% da Vida de Gaming."
+    }
+  },
+  "constellation2": {
+    "name": "As Ameixas Desabrocham Sob os Pés",
+    "description": {
+      "0": "Quando Gaming é curado, se essa cura sobrecurar, o ATQ de Gaming aumentará 20% por 5s."
+    }
+  },
+  "constellation3": {
+    "name": "Espírito Desperto",
+    "description": {
+      "0": "Aumenta o nível da <strong>Ascensão Bestial</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Voando Entre Montanhas",
+    "description": {
+      "0": "Quando o Ataque Imersivo: Caminhador das Nuvens de <strong>Ascensão Bestial</strong> atinge um inimigo, regenera 2 de Energia Elemental para Gaming. Esse efeito pode ser desencadeado uma vez a cada 0.2s."
+    }
+  },
+  "constellation5": {
+    "name": "Rugido Perseguidor de Demônios",
+    "description": {
+      "0": "Aumenta o nível da <strong>Dança das Chamas Douradas</strong> em 3 níveis.",
+      "1": "Sendo o nível máximo de elevação 15."
+    }
+  },
+  "constellation6": {
+    "name": "Domesticando Todas as Bestas",
+    "description": {
+      "0": "Aumenta a Taxa CRIT do Ataque Imersivo: Caminhador das Nuvens de <strong>Ascensão Bestial</strong> em 20%, o Dano CRIT em 40%, e a AdE de Ataque."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Épée céleste",
+  "description": {
+    "0": "Une solide épée en acier. On raconte que quelqu'un a essayé de s'en servir comme moyen de transport..."
+  },
+  "passiveName": "Détermination",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ et la VIT de déplacement de <cryo>12 %</cryo> pendant 15 s après un déchaînement élémentaire."
+    },
+    "1": {
+      "0": "Augmente l'ATQ et la VIT de déplacement de <cryo>15 %</cryo> pendant 15 s après un déchaînement élémentaire."
+    },
+    "2": {
+      "0": "Augmente l'ATQ et la VIT de déplacement de <cryo>18 %</cryo> pendant 15 s après un déchaînement élémentaire."
+    },
+    "3": {
+      "0": "Augmente l'ATQ et la VIT de déplacement de <cryo>21 %</cryo> pendant 15 s après un déchaînement élémentaire."
+    },
+    "4": {
+      "0": "Augmente l'ATQ et la VIT de déplacement de <cryo>24 %</cryo> pendant 15 s après un déchaînement élémentaire."
+    }
+  }
+}

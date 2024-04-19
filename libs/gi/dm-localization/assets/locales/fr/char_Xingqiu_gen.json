@@ -1,0 +1,166 @@
+{
+  "name": "Xingqiu",
+  "title": "Jeune galant",
+  "description": "Un jeune homme intègre et serviable, que l'on voit souvent dans les librairies. Il porte une longue épée, et poursuit un idéal de justice.",
+  "constellationName": "Fabulae Textile",
+  "auto": {
+    "name": "Style Guhua",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Épée Guhua : Pluie battante",
+    "description": {
+      "0": "Lance une succession de 2 coups d'épée qui infligent des <hydro>DGT Hydro</hydro> aux ennemis en face. En même temps, le personnage déployé s'entoure du nombre maximum d'épées de pluie.",
+      "1": "Les épées de pluie ont les propriétés suivantes :",
+      "2": [
+        " Les épées se brisent lorsque Xingqiu subit des DGT, et ce faisant, réduisent les DGT subis.",
+        " Augmentent la RÉS à l'interruption du personnage."
+      ],
+      "3": "20 % du <hydro>bonus de DGT Hydro</hydro> de Xingqiu est converti en réduction de DGT supplémentaire par les épées de pluie.",
+      "4": "<br/>",
+      "5": "Un maximum de 24 % de réduction de DGT supplémentaire peut être obtenu de cette manière.",
+      "6": "Xingqiu commence avec 3 épées de pluie maximum.",
+      "7": "Applique l'état <hydro>Trempé</hydro> à Xingqiu lors du lancement.",
+      "8": "<br/>",
+      "9": "<i>« Le dragon est facile à vaincre, mais la goutte de pluie est insaisissable. »</i>."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Réduction DGT",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Épée Guhua : Pluie et arc-en-ciel",
+    "description": {
+      "0": "Xingqiu fait appel à un déluge d'épées et combat avec une lame arc-en-ciel, tout en s'entourant du nombre maximum d'épées de pluie.",
+      "1": "<br/>",
+      "2": "<strong>Lame arc-en-ciel</strong>",
+      "3": [
+        " Les attaques normales infligées par votre personnage déployé libèrent un déluge d'épées et infligent des <hydro>DGT Hydro</hydro>.",
+        " Le nombre d'épées de pluie ne diminue pas."
+      ],
+      "4": "<br/>",
+      "5": "<i>La Voie des Lames de Pluie est l'un des trois secrets jalousement gardés par le Clan Guhua.</i>"
+    },
+    "skillParams": {
+      "0": "DGT épées de pluie",
+      "1": "Durée",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Clé d'invocation d'eau",
+    "description": {
+      "0": "Lorsqu'une épée de pluie est brisée par des attaques ou se termine, elle restaure les PV du personnage déployé d'une quantité de PV équivalant à 6 % des PV max de Xingqiu."
+    }
+  },
+  "passive2": {
+    "name": "Lames et gouttes de pluie",
+    "description": {
+      "0": "Confère un <hydro>bonus de DGT Hydro</hydro> de 20 % à Xingqiu."
+    }
+  },
+  "passive3": {
+    "name": "Illumination",
+    "description": {
+      "0": "25 % de chances de récupérer des ressources lors de la synthèse de matériaux d'amélioration d'aptitude."
+    }
+  },
+  "constellation1": {
+    "name": "Parfum persistant",
+    "description": {
+      "0": "Augmente le nombre maximum d'épées de pluie de 1."
+    }
+  },
+  "constellation2": {
+    "name": "Arc-en-ciel sur le ciel d'azur",
+    "description": {
+      "0": "Prolonge la durée d'<strong>Épée Guhua : Pluie et arc-en-ciel</strong> de 3 s.",
+      "1": "De plus, les épées de pluie réduisent la <hydro>RÉS Hydro</hydro> des ennemis qu'elles touchent de 15 % pendant 4 s."
+    }
+  },
+  "constellation3": {
+    "name": "Tisseuse de vers",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Épée Guhua - Pluie et arc-en-ciel</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Conquérant du dragon",
+    "description": {
+      "0": "Pendant la durée d'<strong>Épée Guhua : Pluie et arc-en-ciel</strong>, les DGT infligés par l'<strong>Épée Guhua : Pluie battante</strong> augmentent de 50 %."
+    }
+  },
+  "constellation5": {
+    "name": "Embrassement de pluie",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Épée Guhua : Pluie battante</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Rassemblement d'articles",
+    "description": {
+      "0": "Les DGT du déluge d'épées d'<strong>Épée Guhua : Pluie et arc-en-ciel</strong> augmentent considérablement toutes les 2 pluies d'épées. Xingqiu récupère de plus 3 pts d'énergie élémentaire."
+    }
+  }
+}

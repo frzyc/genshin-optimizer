@@ -1,0 +1,24 @@
+{
+  "name": "İlk Büyük Sihir",
+  "description": {
+    "0": "Geçmişte bir \"Büyük Sihirbaz\"ın kullandığı bir sahne dekoru. Bu dekorun ardındaki sır ise onun aynı zamanda bir silah da olması."
+  },
+  "passiveName": "Büyük Parsifal",
+  "passiveDescription": {
+    "0": {
+      "0": "Yüklü Saldırılar ile verilen Hasar <cryo>%16</cryo> artar. Kuşanan karakterle aynı Element Türüne sahip olan her bir grup üyesi için (kuşanan karakter dahil) 1 Numara kademesi kazanılır. Element Türü farklı olan her bir grup üyesi içinse 1 Oyun kademesi kazanılır. Kuşanan karakter 1/2/3 veya daha fazla Numara kademesine sahip olduğunda Saldırı <cryo>%16/%32/%48</cryo> artar. 1/2/3 veya daha fazla Oyun kademesine sahip olduğunda ise Hareket Hızı <cryo>%4/%7/%10</cryo> artar."
+    },
+    "1": {
+      "0": "Yüklü Saldırılar ile verilen Hasar <cryo>%20</cryo> artar. Kuşanan karakterle aynı Element Türüne sahip olan her bir grup üyesi için (kuşanan karakter dahil) 1 Numara kademesi kazanılır. Element Türü farklı olan her bir grup üyesi içinse 1 Oyun kademesi kazanılır. Kuşanan karakter 1/2/3 veya daha fazla Numara kademesine sahip olduğunda Saldırı <cryo>%20/%40/%60</cryo> artar. 1/2/3 veya daha fazla Oyun kademesine sahip olduğunda ise Hareket Hızı <cryo>%6/%9/%12</cryo> artar."
+    },
+    "2": {
+      "0": "Yüklü Saldırılar ile verilen Hasar <cryo>%24</cryo> artar. Kuşanan karakterle aynı Element Türüne sahip olan her bir grup üyesi için (kuşanan karakter dahil) 1 Numara kademesi kazanılır. Element Türü farklı olan her bir grup üyesi içinse 1 Oyun kademesi kazanılır. Kuşanan karakter 1/2/3 veya daha fazla Numara kademesine sahip olduğunda Saldırı <cryo>%24/%48/%72</cryo> artar. 1/2/3 veya daha fazla Oyun kademesine sahip olduğunda ise Hareket Hızı <cryo>%8/%11/%14</cryo> artar."
+    },
+    "3": {
+      "0": "Yüklü Saldırılar ile verilen Hasar <cryo>%28</cryo> artar. Kuşanan karakterle aynı Element Türüne sahip olan her bir grup üyesi için (kuşanan karakter dahil) 1 Numara kademesi kazanılır. Element Türü farklı olan her bir grup üyesi içinse 1 Oyun kademesi kazanılır. Kuşanan karakter 1/2/3 veya daha fazla Numara kademesine sahip olduğunda Saldırı <cryo>%28/%56/%84</cryo> artar. 1/2/3 veya daha fazla Oyun kademesine sahip olduğunda ise Hareket Hızı <cryo>%10/%13/%16</cryo> artar."
+    },
+    "4": {
+      "0": "Yüklü Saldırılar ile verilen Hasar <cryo>%32</cryo> artar. Kuşanan karakterle aynı Element Türüne sahip olan her bir grup üyesi için (kuşanan karakter dahil) 1 Numara kademesi kazanılır. Element Türü farklı olan her bir grup üyesi içinse 1 Oyun kademesi kazanılır. Kuşanan karakter 1/2/3 veya daha fazla Numara kademesine sahip olduğunda Saldırı <cryo>%32/%64/%96</cryo> artar. 1/2/3 veya daha fazla Oyun kademesine sahip olduğunda ise Hareket Hızı <cryo>%12/%15/%18</cryo> artar."
+    }
+  }
+}

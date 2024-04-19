@@ -1,0 +1,24 @@
+{
+  "name": "Bâton bavard",
+  "description": {
+    "0": "La plupart des gens trouveront cette massue incrustée d'obsidienne assez convaincante."
+  },
+  "passiveName": "« Don du bagou »",
+  "passiveDescription": {
+    "0": {
+      "0": "L'ATQ augmente de <cryo>16 %</cryo> pendant 15 s après avoir été affecté par l'élément Pyro, cet effet pouvant être déclenché une fois toutes les 12 s. Le bonus de DGT élémentaires augmente de <cryo>12 %</cryo> pendant 15 s après avoir été affecté par l'élément Hydro, Cryo, Électro ou Dendro, cet effet pouvant être déclenché une fois toutes les 12 s."
+    },
+    "1": {
+      "0": "L'ATQ augmente de <cryo>20 %</cryo> pendant 15 s après avoir été affecté par l'élément Pyro, cet effet pouvant être déclenché une fois toutes les 12 s. Le bonus de DGT élémentaires augmente de <cryo>15 %</cryo> pendant 15 s après avoir été affecté par l'élément Hydro, Cryo, Électro ou Dendro, cet effet pouvant être déclenché une fois toutes les 12 s."
+    },
+    "2": {
+      "0": "L'ATQ augmente de <cryo>24 %</cryo> pendant 15 s après avoir été affecté par l'élément Pyro, cet effet pouvant être déclenché une fois toutes les 12 s. Le bonus de DGT élémentaires augmente de <cryo>18 %</cryo> pendant 15 s après avoir été affecté par l'élément Hydro, Cryo, Électro ou Dendro, cet effet pouvant être déclenché une fois toutes les 12 s."
+    },
+    "3": {
+      "0": "L'ATQ augmente de <cryo>28 %</cryo> pendant 15 s après avoir été affecté par l'élément Pyro, cet effet pouvant être déclenché une fois toutes les 12 s. Le bonus de DGT élémentaires augmente de <cryo>21 %</cryo> pendant 15 s après avoir été affecté par l'élément Hydro, Cryo, Électro ou Dendro, cet effet pouvant être déclenché une fois toutes les 12 s."
+    },
+    "4": {
+      "0": "L'ATQ augmente de <cryo>32 %</cryo> pendant 15 s après avoir été affecté par l'élément Pyro, cet effet pouvant être déclenché une fois toutes les 12 s. Le bonus de DGT élémentaires augmente de <cryo>24 %</cryo> pendant 15 s après avoir été affecté par l'élément Hydro, Cryo, Électro ou Dendro, cet effet pouvant être déclenché une fois toutes les 12 s."
+    }
+  }
+}

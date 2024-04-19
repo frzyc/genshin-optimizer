@@ -1,0 +1,24 @@
+{
+  "name": "The Black Sword",
+  "description": {
+    "0": "A pitch-black longsword that thirsts for violence and conflict. It is said that this weapon can cause its user to become drunk on the red wine of slaughter."
+  },
+  "passiveName": "Justice",
+  "passiveDescription": {
+    "0": {
+      "0": "Increases DMG dealt by Normal and Charged Attacks by <cryo>20%</cryo>. Additionally, regenerates <cryo>60%</cryo> of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+    },
+    "1": {
+      "0": "Increases DMG dealt by Normal and Charged Attacks by <cryo>25%</cryo>. Additionally, regenerates <cryo>70%</cryo> of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+    },
+    "2": {
+      "0": "Increases DMG dealt by Normal and Charged Attacks by <cryo>30%</cryo>. Additionally, regenerates <cryo>80%</cryo> of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+    },
+    "3": {
+      "0": "Increases DMG dealt by Normal and Charged Attacks by <cryo>35%</cryo>. Additionally, regenerates <cryo>90%</cryo> of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+    },
+    "4": {
+      "0": "Increases DMG dealt by Normal and Charged Attacks by <cryo>40%</cryo>. Additionally, regenerates <cryo>100%</cryo> of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Uraku Misugiri",
+  "description": {
+    "0": "Bu meşhur kılıcı ünlü bilgin Urakusai kendi elleriyle yapmıştır. Efsaneye göre asırlardır hiçbir canlıyı kesmemiştir."
+  },
+  "passiveName": "Sırmalı Çiçek ve Tapınak Kılıcı",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal Saldırı Hasarı <cryo>%16</cryo> artar ve Element Becerisi Hasarı <cryo>%24</cryo> artar. Yakındaki bir aktif karakter Toprak Hasarı verdikten sonra 15sn boyunca yukarıdaki etkiler %100 artar. Buna ek olarak silahı kuşanan karakterin Savunması <cryo>%20</cryo> artar."
+    },
+    "1": {
+      "0": "Normal Saldırı Hasarı <cryo>%20</cryo> artar ve Element Becerisi Hasarı <cryo>%30</cryo> artar. Yakındaki bir aktif karakter Toprak Hasarı verdikten sonra 15sn boyunca yukarıdaki etkiler %100 artar. Buna ek olarak silahı kuşanan karakterin Savunması <cryo>%25</cryo> artar."
+    },
+    "2": {
+      "0": "Normal Saldırı Hasarı <cryo>%24</cryo> artar ve Element Becerisi Hasarı <cryo>%36</cryo> artar. Yakındaki bir aktif karakter Toprak Hasarı verdikten sonra 15sn boyunca yukarıdaki etkiler %100 artar. Buna ek olarak silahı kuşanan karakterin Savunması <cryo>%30</cryo> artar."
+    },
+    "3": {
+      "0": "Normal Saldırı Hasarı <cryo>%28</cryo> artar ve Element Becerisi Hasarı <cryo>%42</cryo> artar. Yakındaki bir aktif karakter Toprak Hasarı verdikten sonra 15sn boyunca yukarıdaki etkiler %100 artar. Buna ek olarak silahı kuşanan karakterin Savunması <cryo>%35</cryo> artar."
+    },
+    "4": {
+      "0": "Normal Saldırı Hasarı <cryo>%32</cryo> artar ve Element Becerisi Hasarı <cryo>%48</cryo> artar. Yakındaki bir aktif karakter Toprak Hasarı verdikten sonra 15sn boyunca yukarıdaki etkiler %100 artar. Buna ek olarak silahı kuşanan karakterin Savunması <cryo>%40</cryo> artar."
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "burst": {
+    "name": "Kazuha Slash",
+    "description": {
+      "0": "Ilmu pedang Garyu terkuat — sebuah tebasan pedang yang membawa badai dan mengakibatkan <anemo>Anemo DMG Area</anemo>.",
+      "1": "Tebasan pedang ini akan menyisakan sebuah area yang disebut \"Autumn Whirlwind\" dan mengakibatkan <anemo>Anemo DMG Area</anemo> setiap beberapa saat ke musuh di dalamnya.",
+      "2": "<br/>",
+      "3": "<strong>Elemental Absorption</strong>",
+      "4": "Jika Autumn Whirlwind bersentuhan dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka Autumn Whirlwind akan mengakibatkan DMG elemental tambahan yang sesuai dengan elemen tersebut.",
+      "5": "Elemental Absorption hanya dapat terpicu sekali setiap penggunaan.",
+      "6": "<br/>",
+      "7": "<i>\"Aku dapat melihat keabadian yang berlalu dalam satu kedipan mata, dalam selembar daun yang telah melewati ribuan musim gugur. Biarkan pedangku memotong lembaran daun ini, dan mempertanyakan jalannya sang waktu——\"</i>"
+    },
+    "slashdmg": "DMG Tebasan",
+    "skillParams": {
+      "0": "DMG Tebasan",
+      "1": "DMG Berkelanjutan",
+      "2": "Tambahan Elemental DMG",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Kaedehara Kazuha",
+  "title": "Scarlet Leaves Pursue Wild Waves",
+  "description": "Seorang samurai pengembara dari Inazuma yang saat ini bergabung bersama dengan armada Crux Fleet Liyue. Di dalam jiwanya yang lembut dan riang, terdapat hati yang menyembunyikan banyak beban.",
+  "constellationName": "Acer Palmatum",
+  "auto": {
+    "name": "Garyuu Bladework",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 tebasan pedang berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG area saat mendarat. Jika serangan Plunging Attack terpicu dengan menggunakan Chihayaburu, maka Plunging Attack akan berubah menjadi Plunging Attack: Midare Ranzan."
+      },
+      "plunging_midare": {
+        "0": "<strong>Plunging Attack: Midare Ranzan</strong>",
+        "1": "Saat Plunging Attack dilakukan dengan menggunakan efek Elemental Skill Chihayaburu, maka DMG dari Plunging Attack akan berubah menjadi <anemo>Anemo DMG</anemo> dan akan menciptakan arus angin kecil yang menarik musuh dan benda di sekitarnya."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Chihayaburu",
+    "description": {
+      "0": "Melancarkan ilmu pedang rahasia seganas badai. Menarik musuh dan benda-benda ke posisi Kazuha lalu mementalkan musuh yang ada di dalam areanya, mengakibatkan <anemo>Anemo DMG</anemo> dan mengangkat Kazuha ke udara dengan arus angin yang tercipta.",
+      "1": "Selama 10 detik setelah Kazuha terbang ke udara dengan menggunakan Chihayaburu, Kazuha dapat melancarkan Plunging Attack khusus yang kuat: Midare Ranzan.",
+      "2": "<br/>",
+      "3": "<strong>Tekan</strong>",
+      "4": "Dapat digunakan di udara.",
+      "5": "<br/>",
+      "6": "<strong>Tahan</strong>",
+      "7": "Setelah beberapa saat, melancarkan serangan <anemo>Anemo DMG</anemo> dengan area yang lebih luas dan DMG lebih besar dari mode Tekan.",
+      "8": "<br/>",
+      "9": "<strong>Plunging Attack: Midare Ranzan</strong>",
+      "10": "Saat Plunging Attack dilakukan dengan menggunakan efek Elemental Skill Chihayaburu, maka DMG dari Plunging Attack akan berubah menjadi <anemo>Anemo DMG</anemo> dan menciptakan arus angin kecil yang menarik musuh dan benda di sekitarnya.",
+      "11": "DMG dari Midare Ranzan terhitung sebagai DMG Plunging Attack.",
+      "12": "<br/>",
+      "13": "<i>\"Dedaunan terembus oleh angin kesedihan,",
+      "14": "masa dewa-dewa dan manusia telah lama berlalu,",
+      "15": "bagaikan gunung merah di musim gugur.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG (Tekan)",
+      "1": "Cooldown (Mode Tekan)",
+      "2": "DMG (Tahan)",
+      "3": "Cooldown (Mode Tahan)",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Soumon Swordmanship",
+    "description": {
+      "0": "Jika <strong>Chihayaburu</strong> bersentuhan dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> saat digunakan, maka <strong>Chihayaburu</strong> mendapatkan efek Elemental Absorption dan Plunging Attack: Midare Ranzan akan mengakibatkan DMG tambahan sesuai elemen yang bersentuhan sebesar 200% ATK. DMG ini terhitung sebagai DMG Plunging Attack.",
+      "1": "Elemental Absorption hanya dapat terpicu sekali setiap penggunaan <strong>Chihayaburu</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Poetics of Fuubutsu",
+    "description": {
+      "0": "Untuk setiap poin Elemental Mastery yang dimiliki Kaedehara Kazuha, setelah Kazuha memicu reaksi Swirl, seluruh anggota party akan mendapatkan peningkatan 0,04% Bonus Elemental DMG yang sesuai dengan reaksi Elemental Swirl yang terpicu selama 8 detik. Bonus DMG untuk elemen berbeda yang didapatkan dengan cara ini dapat aktif secara bersamaan."
+    }
+  },
+  "passive3": {
+    "name": "Cloud Strider",
+    "description": {
+      "0": "Mengurangi 20% konsumsi Stamina Karakter party sendiri saat berlari.",
+      "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
+    }
+  },
+  "constellation1": {
+    "name": "Scarlet Hills",
+    "description": {
+      "0": "Mengurangi 10% CD <strong>Chihayaburu</strong>.",
+      "1": "Menggunakan <strong>Kazuha Slash</strong> akan langsung menyelesaikan CD <strong>Chihayaburu</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Yamaarashi Tailwind",
+    "description": {
+      "0": "Area Autumn Whirlwind yang dibuat oleh <strong>Kazuha Slash</strong> memiliki efek berikut:",
+      "1": [
+        " Meningkatkan 200 Elemental Mastery Kaedehara Kazuha.",
+        " Meningkatkan 200 Elemental Mastery Karakter di dalam area."
+      ],
+      "2": "<br/>",
+      "3": "Efek peningkatan Elemental Mastery dari Konstelasi ini tidak bisa ditumpuk."
+    }
+  },
+  "constellation3": {
+    "name": "Maple Monogatari",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Chihayaburu</strong>. Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Oozora Genpou",
+    "description": {
+      "0": "Saat Energy Kaedehara Kazuha kurang dari 45, Kazuha akan mendapatkan efek berikut:",
+      "1": [
+        "Menekan atau Menahan skill <strong>Chihayaburu</strong> akan memulihkan 3 atau 4 Energy Kaedehara Kazuha;",
+        "Memulihkan 2 Energy Kaedehara Kazuha setiap detik saat sedang meluncur."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Wisdom of Bansei",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Kazuha Slash</strong>. Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Crimson Momiji",
+    "description": {
+      "0": "Kaedehara Kazuha akan mendapatkan <anemo>Anemo Infusion</anemo> selama 5 detik setelah menggunakan <strong>Chihayaburu</strong> atau <strong>Kazuha Slash</strong>. Sebagai tambahan, setiap poin Elemental Mastery Kaedehara Kazuha akan meningkatkan 0,2% DMG Normal, Charged, dan Plunging Attack Kaedehara Kazuha."
+    }
+  }
+}

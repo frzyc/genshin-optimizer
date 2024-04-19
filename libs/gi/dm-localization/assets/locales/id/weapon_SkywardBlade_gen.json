@@ -1,0 +1,24 @@
+{
+  "name": "Skyward Blade",
+  "description": {
+    "0": "Pedang Knight yang melambangkan kemuliaan Dvalin yang sudah terpulihkan. Berkat Archon Anemo bersinar di atas mata pedangnya, memberikan kekuatan langit dan angin."
+  },
+  "passiveName": "Sky-Piercing Fang",
+  "passiveDescription": {
+    "0": {
+      "0": "CRIT Rate meningkat sebesar <cryo>4%</cryo>. Saat menggunakan Elemental Burst akan mendapatkan Skypiercing Might dengan efek: Meningkatkan <cryo>10%</cryo> Movement SPD, dan <cryo>10%</cryo> ATK SPD. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG sebesar <cryo>20%</cryo> ATK. Skypiercing Might bertahan selama 12 detik."
+    },
+    "1": {
+      "0": "CRIT Rate meningkat sebesar <cryo>5%</cryo>. Saat menggunakan Elemental Burst akan mendapatkan Skypiercing Might dengan efek: Meningkatkan <cryo>10%</cryo> Movement SPD, dan <cryo>10%</cryo> ATK SPD. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG sebesar <cryo>25%</cryo> ATK. Skypiercing Might bertahan selama 12 detik."
+    },
+    "2": {
+      "0": "CRIT Rate meningkat sebesar <cryo>6%</cryo>. Saat menggunakan Elemental Burst akan mendapatkan Skypiercing Might dengan efek: Meningkatkan <cryo>10%</cryo> Movement SPD, dan <cryo>10%</cryo> ATK SPD. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG sebesar <cryo>30%</cryo> ATK. Skypiercing Might bertahan selama 12 detik."
+    },
+    "3": {
+      "0": "CRIT Rate meningkat sebesar <cryo>7%</cryo>. Saat menggunakan Elemental Burst akan mendapatkan Skypiercing Might dengan efek: Meningkatkan <cryo>10%</cryo> Movement SPD, dan <cryo>10%</cryo> ATK SPD. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG sebesar <cryo>35%</cryo> ATK. Skypiercing Might bertahan selama 12 detik."
+    },
+    "4": {
+      "0": "CRIT Rate meningkat sebesar <cryo>8%</cryo>. Saat menggunakan Elemental Burst akan mendapatkan Skypiercing Might dengan efek: Meningkatkan <cryo>10%</cryo> Movement SPD, dan <cryo>10%</cryo> ATK SPD. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG sebesar <cryo>40%</cryo> ATK. Skypiercing Might bertahan selama 12 detik."
+    }
+  }
+}

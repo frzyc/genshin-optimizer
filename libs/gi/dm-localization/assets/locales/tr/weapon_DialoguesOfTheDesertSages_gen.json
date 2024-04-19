@@ -1,0 +1,24 @@
+{
+  "name": "Çöl Alimleriyle Sohbet",
+  "description": {
+    "0": "Simyanın şanını temsil eden bir asa. İtibarına yakışacak şekilde özel bir alaşımdan yapılmıştır. Son derece sağlam ve ağır olduğundan bir silah olarak kullanıldığında epey can yakar."
+  },
+  "passiveName": "Denge İlkesi",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter Can yenilediğinde <cryo>8</cryo> Enerji yeniler. Bu etki her 10 saniyede bir ve karakter alanda olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Kuşanan karakter Can yenilediğinde <cryo>10</cryo> Enerji yeniler. Bu etki her 10 saniyede bir ve karakter alanda olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Kuşanan karakter Can yenilediğinde <cryo>12</cryo> Enerji yeniler. Bu etki her 10 saniyede bir ve karakter alanda olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Kuşanan karakter Can yenilediğinde <cryo>14</cryo> Enerji yeniler. Bu etki her 10 saniyede bir ve karakter alanda olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Kuşanan karakter Can yenilediğinde <cryo>16</cryo> Enerji yeniler. Bu etki her 10 saniyede bir ve karakter alanda olmasa da tetiklenebilir."
+    }
+  }
+}

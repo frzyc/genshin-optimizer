@@ -1,0 +1,164 @@
+{
+  "name": "Kirara",
+  "title": "Mistigri sur les toits",
+  "description": "Une coursière de Komaniya Express, une société de livraison située à Inazuma. C'est une nekomata qui aime son travail et la société humaine.",
+  "constellationName": "Arcella",
+  "auto": {
+    "name": "Ouvre-colis",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 attaques."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher trois coups de griffes rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Coup de patte miaou-téorite",
+    "description": {
+      "0": "<strong>Appui simple</strong>",
+      "1": "Saute dans les airs avec l'agilité d'un chat passant à travers des buissons et frappe l'ennemi avec un coup de pied volant qui inflige des <dendro>DGT Dendro de zone</dendro> tout en déployant un bouclier de transport sécurisé et en accordant à Kirara une brève <dendro>application Dendro</dendro>. Le bouclier absorbe les <dendro>DGT Dendro</dendro> 250 % plus efficacement, et son absorption de DGT est basée sur les PV max de Kirara, mais ne dépassera pas un certain pourcentage de ses PV max. L'absorption de DGT restante d'un bouclier de transport sécurisé se cumulera si un autre bouclier de transport sécurisé est obtenu en même temps, tandis que sa durée sera réinitialisée.",
+      "2": "<br/>",
+      "3": "<strong>Appui long</strong>",
+      "4": "Poussée par son envie de « finir sa livraison en une demi-journée », Kirara déploie un bouclier de transport sécurisé identique à celui créé lors d'un appui simple et se recroqueville dans un colis express spécial avant d'entrer dans l'état Neko-colis urgent afin de se déplacer et de combattre plus rapidement.",
+      "5": "<br/>",
+      "6": "<strong>Neko-colis urgent</strong>",
+      "7": [
+        " Inflige des <dendro>DGT Dendro</dendro> aux ennemis percutés, cet effet pouvant être déclenché sur un même ennemi une fois toutes les 0,5 s.",
+        " Dans cet état, la VIT de déplacement, la VIT d'escalade et la capacité de saut de Kirara augmentent, mais sa consommation d'endurance lors de l'escalade augmente également.",
+        " Lorsque la durée prend fin ou la capacité est utilisée une nouvelle fois, un coup de rectigriffes plus puissant que lors d'un appui simple est déclenché, infligeant des <dendro>DGT Dendro de zone</dendro>.",
+        " L'état Neko-colis urgent a une durée maximum de 10 s. Lorsque l'état prend fin, la capacité entre en TdR. Plus Kirara passe de temps dans cet état, plus le TdR est long.",
+        " Le sprint ou l'annulation volontaire de l'escalade mettra fin à l'état Neko-colis urgent plus tôt."
+      ],
+      "8": "<br/>",
+      "9": "<i>« Hmm, vous voulez connaître le secret pour une livraison rapide ? Eh bien, tout est dans les jambes ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT coup de pied volant",
+      "1": "PV du bouclier",
+      "2": "PV max du bouclier",
+      "3": "Durée de bouclier",
+      "4": "DGT percussion de neko-colis urgent",
+      "5": "Durée max de neko-colis urgent",
+      "6": "DGT rectigriffes",
+      "7": "Temps de recharge ",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Art secret : Livraison surprise",
+    "description": {
+      "0": "Envoie un colis spécial en livraison recommandée aux brigands qui doivent être punis, infligeant des <dendro>DGT Dendro de zone</dendro>. Lorsque le colis spécial explose, il se divise en plusieurs <strong>noix de cataire</strong> qui explosent au contact d'un ennemi ou après un certain temps pour infliger des <dendro>DGT Dendro de zone</dendro>.",
+      "1": "<br/>",
+      "2": "<i>« Héhé. C'est fait tout spécialement pour faire face aux voleurs de colis ! Et n'oubliez pas de laisser une note de 5 étoiles ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT explosion de noix de cataire",
+      "2": "Durée de noix de cataire",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Queues de mistigri",
+    "description": {
+      "0": "Lorsque Kirara est dans l'état Neko-colis urgent de <strong>Coup de patte miaou-téorite</strong>, elle obtient 1 cumul d'<strong>emballage renforcé</strong> chaque fois qu'elle percute un ennemi. Cet effet peut être déclenché sur un même ennemi une fois toutes les 0,5 s et cumulé 3 fois maximum. Lorsque l'état Neko-colis urgent prend fin, chaque cumul d'emballage renforcé accorde un bouclier de transport sécurisé à Kirara, dont l'absorption de DGT équivaut à 20 % de celle d'un bouclier de transport sécurisé créé par <strong>Coup de patte miaou-téorite</strong>. Si Kirara est déjà protégée par un bouclier de transport sécurisé créé par Coup de patte miaou-téorite, l'absorption de DGT se cumule avec ces boucliers et la durée est réinitialisée."
+    }
+  },
+  "passive2": {
+    "name": "Écart pupillaire",
+    "description": {
+      "0": "Chaque tranche de 1 000 PV max que Kirara possède augmente les DGT infligés par <strong>Coup de patte miaou-téorite</strong> de 0,4 % et ceux infligés par <strong>Art secret : Livraison surprise</strong> de 0,3 %."
+    }
+  },
+  "passive3": {
+    "name": "Foulée féline",
+    "description": {
+      "0": "Quand Kirara fait partie de l'équipe, vos personnages dans l'équipe n'effraient pas certains petits animaux en s'approchant, et peuvent ainsi obtenir de la volaille, de la viande crue et de la viande congelée."
+    }
+  },
+  "constellation1": {
+    "name": "Circulation d'objets",
+    "description": {
+      "0": "Lorsque Kirara utilise <strong>Art secret : Livraison surprise</strong>, chaque tranche de 8 000 PV max qu'elle possède lui permet de créer 1 <strong>noix de cataire</strong> supplémentaire. Un maximum de 4 noix de cataire supplémentaires peut être créé de cette manière."
+    }
+  },
+  "constellation2": {
+    "name": "Emballage parfait",
+    "description": {
+      "0": "Lorsque Kirara est dans l'état Neko-colis urgent de <strong>Coup de patte miaou-téorite</strong>, elle accorde un bouclier de transport critique aux personnages de l'équipe qu'elle percute.",
+      "1": "Les boucliers de transport critique possèdent une absorption de DGT équivalant à 40 % de l'absorption maximum d'un bouclier de transport sécurisé de <strong>Coup de patte miaou-téorite</strong> et absorbent les <dendro>DGT Dendro</dendro> 250 % plus efficacement.",
+      "2": "Les boucliers de transport critique durent 12 s et peuvent être déclenchés sur un même personnage une fois toutes les 10 s."
+    }
+  },
+  "constellation3": {
+    "name": "Connaissance des lieux",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Coup de patte miaou-téorite</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Étalon de Skanda",
+    "description": {
+      "0": "Lorsque l'attaque normale, chargée ou plongeante d'un personnage déployé avec un <strong>bouclier de transport sécurisé</strong> ou un <strong>bouclier de transport critique</strong> a touché un ennemi, Kirara utilise des <strong>noisettes de cataire</strong> pour déclencher une attaque coordonnée, infligeant des <dendro>DGT Dendro</dendro> d'une valeur équivalant à 200 % de son ATQ. Les DGT infligés de cette manière sont considérés comme des DGT de déchaînement élémentaire. Cet effet peut être déclenché une fois toutes les 3,8 s, tous les personnages de l'équipe partageant ce TdR."
+    }
+  },
+  "constellation5": {
+    "name": "Mille lieues par jour",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Art secret : Livraison surprise</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Myriade de curiosités en chemin",
+    "description": {
+      "0": "Lorsque Kirara a utilisé une compétence ou un déchaînement élémentaires, tous les personnages de l'équipe à proximité bénéficient d'un bonus de DGT élémentaires de 12 % pendant 15 s."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Ode au chant du vent",
+  "description": {
+    "0": "Un espadon aussi léger que la brise soufflant sur l'herbe, mais aussi puissant qu'un ouragan."
+  },
+  "passiveName": "Hymne du drapeau rebelle",
+  "passiveDescription": {
+    "0": {
+      "0": "Partie du « Concert du millénaire ». Augmente l'ATQ de <cryo>16 %</cryo>, et lorsque les attaques normales ou chargées touchent un ennemi, le personnage obtient un charme des murmures, à raison d'un charme toutes les 0,3 s maximum. Une fois 4 charmes obtenus, ils sont consommés et tous les personnages de l'équipe à proximité bénéficient de l'effet « Concert du millénaire - Hymne du drapeau » pendant 12 s, ce qui augmente la VIT d'attaque normale de <cryo>12 %</cryo>, et l'ATQ de <cryo>20 %</cryo>. Il n'est plus possible d'obtenir de charmes des murmures pendant 20 s après avoir déclenché cet effet. Parmi les nombreux effets du « Concert du millénaire », les améliorations du même type ne se cumulent pas."
+    },
+    "1": {
+      "0": "Partie du « Concert du millénaire ». Augmente l'ATQ de <cryo>20 %</cryo>, et lorsque les attaques normales ou chargées touchent un ennemi, le personnage obtient un charme des murmures, à raison d'un charme toutes les 0,3 s maximum. Une fois 4 charmes obtenus, ils sont consommés et tous les personnages de l'équipe à proximité bénéficient de l'effet « Concert du millénaire - Hymne du drapeau » pendant 12 s, ce qui augmente la VIT d'attaque normale de <cryo>15 %</cryo>, et l'ATQ de <cryo>25 %</cryo>. Il n'est plus possible d'obtenir de charmes des murmures pendant 20 s après avoir déclenché cet effet. Parmi les nombreux effets du « Concert du millénaire », les améliorations du même type ne se cumulent pas."
+    },
+    "2": {
+      "0": "Partie du « Concert du millénaire ». Augmente l'ATQ de <cryo>24 %</cryo>, et lorsque les attaques normales ou chargées touchent un ennemi, le personnage obtient un charme des murmures, à raison d'un charme toutes les 0,3 s maximum. Une fois 4 charmes obtenus, ils sont consommés et tous les personnages de l'équipe à proximité bénéficient de l'effet « Concert du millénaire - Hymne du drapeau » pendant 12 s, ce qui augmente la VIT d'attaque normale de <cryo>18 %</cryo>, et l'ATQ de <cryo>30 %</cryo>. Il n'est plus possible d'obtenir de charmes des murmures pendant 20 s après avoir déclenché cet effet. Parmi les nombreux effets du « Concert du millénaire », les améliorations du même type ne se cumulent pas."
+    },
+    "3": {
+      "0": "Partie du « Concert du millénaire ». Augmente l'ATQ de <cryo>28 %</cryo>, et lorsque les attaques normales ou chargées touchent un ennemi, le personnage obtient un charme des murmures, à raison d'un charme toutes les 0,3 s maximum. Une fois 4 charmes obtenus, ils sont consommés et tous les personnages de l'équipe à proximité bénéficient de l'effet « Concert du millénaire - Hymne du drapeau » pendant 12 s, ce qui augmente la VIT des attaques normales de <cryo>21 %</cryo>, et l'ATQ de <cryo>35 %</cryo>. Il n'est plus possible d'obtenir de charmes des murmures pendant 20 s après avoir déclenché cet effet. Parmi les nombreux effets du « Concert du millénaire », les améliorations du même type ne se cumulent pas."
+    },
+    "4": {
+      "0": "Partie du « Concert du millénaire ». Augmente l'ATQ de <cryo>32 %</cryo>, et lorsque les attaques normales ou chargées touchent un ennemi, le personnage obtient un charme des murmures, à raison d'un charme toutes les 0,3 s maximum. Une fois 4 charmes obtenus, ils sont consommés et tous les personnages de l'équipe à proximité bénéficient de l'effet « Concert du millénaire - Hymne du drapeau » pendant 12 s, ce qui augmente la VIT d'attaque normale de <cryo>24 %</cryo>, et l'ATQ de <cryo>40 %</cryo>. Il n'est plus possible d'obtenir de charmes des murmures pendant 20 s après avoir déclenché cet effet. Parmi les nombreux effets du « Concert du millénaire », les améliorations du même type ne se cumulent pas."
+    }
+  }
+}

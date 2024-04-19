@@ -1,0 +1,24 @@
+{
+  "name": "Nghi Thức Dòng Chảy Vĩnh Hằng",
+  "description": {
+    "0": "Sách răn dạy từng được lưu truyền nhiều đời của hội ẩn tu dưới nước. Ngày nay đã không còn ai biết về sự tồn tại của nó."
+  },
+  "passiveName": "Thủy Triều Vạn Thế",
+  "passiveDescription": {
+    "0": {
+      "0": "HP tăng <cryo>16%</cryo>. Khi HP hiện tại tăng lên hoặc giảm xuống, sát thương trọng kích tăng <cryo>14%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 3 tầng, mỗi 0.3s tối đa kích hoạt một lần. Khi cộng dồn đến tầng 3 hoặc làm mới thời gian duy trì tầng 3, sẽ hồi phục <cryo>8</cryo> Năng Lượng Nguyên Tố, mỗi 12s tối đa hồi phục một lần thông qua cách thức này."
+    },
+    "1": {
+      "0": "HP tăng <cryo>20%</cryo>. Khi HP hiện tại tăng lên hoặc giảm xuống, sát thương trọng kích tăng <cryo>18%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 3 tầng, mỗi 0.3s tối đa kích hoạt một lần. Khi cộng dồn đến tầng 3 hoặc làm mới thời gian duy trì tầng 3, sẽ hồi phục <cryo>9</cryo> Năng Lượng Nguyên Tố, mỗi 12s tối đa hồi phục một lần thông qua cách thức này."
+    },
+    "2": {
+      "0": "HP tăng <cryo>24%</cryo>. Khi HP hiện tại tăng lên hoặc giảm xuống, sát thương trọng kích tăng <cryo>22%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 3 tầng, mỗi 0.3s tối đa kích hoạt một lần. Khi cộng dồn đến tầng 3 hoặc làm mới thời gian duy trì tầng 3, sẽ hồi phục <cryo>10</cryo> Năng Lượng Nguyên Tố, mỗi 12s tối đa hồi phục một lần thông qua cách thức này."
+    },
+    "3": {
+      "0": "HP tăng <cryo>28%</cryo>. Khi HP hiện tại tăng lên hoặc giảm xuống, sát thương trọng kích tăng <cryo>26%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 3 tầng, mỗi 0.3s tối đa kích hoạt một lần. Khi cộng dồn đến tầng 3 hoặc làm mới thời gian duy trì tầng 3, sẽ hồi phục <cryo>11</cryo> Năng Lượng Nguyên Tố, mỗi 12s tối đa hồi phục một lần thông qua cách thức này."
+    },
+    "4": {
+      "0": "HP tăng <cryo>32%</cryo>. Khi HP hiện tại tăng lên hoặc giảm xuống, sát thương trọng kích tăng <cryo>30%</cryo>. Hiệu quả này duy trì 4s, tối đa cộng dồn 3 tầng, mỗi 0.3s tối đa kích hoạt một lần. Khi cộng dồn đến tầng 3 hoặc làm mới thời gian duy trì tầng 3, sẽ hồi phục <cryo>12</cryo> Năng Lượng Nguyên Tố, mỗi 12s tối đa hồi phục một lần thông qua cách thức này."
+    }
+  }
+}

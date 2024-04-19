@@ -1,0 +1,24 @@
+{
+  "name": "Cinnabar Spindle",
+  "description": {
+    "0": "Pedang yang terbentuk dari material yang bukan berasal dari dunia ini. Energi di dalam pedang ini bahkan dapat menangkis racun mematikan yang dapat melukai seekor naga."
+  },
+  "passiveName": "Spotless Heart",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan DMG Elemental Skill sebesar <cryo>40%</cryo> DEF. Efek ini dapat terpicu setiap 1,5 detik dan akan langsung hilang dalam waktu 0,1 detik setelah Elemental Skill mengakibatkan DMG."
+    },
+    "1": {
+      "0": "Meningkatkan DMG Elemental Skill sebesar <cryo>50%</cryo> DEF. Efek ini dapat terpicu setiap 1,5 detik dan akan langsung hilang dalam waktu 0,1 detik setelah Elemental Skill mengakibatkan DMG."
+    },
+    "2": {
+      "0": "Meningkatkan DMG Elemental Skill sebesar <cryo>60%</cryo> DEF. Efek ini dapat terpicu setiap 1,5 detik dan akan langsung hilang dalam waktu 0,1 detik setelah Elemental Skill mengakibatkan DMG."
+    },
+    "3": {
+      "0": "Meningkatkan DMG Elemental Skill sebesar <cryo>70%</cryo> DEF. Efek ini dapat terpicu setiap 1,5 detik dan akan langsung hilang dalam waktu 0,1 detik setelah Elemental Skill mengakibatkan DMG."
+    },
+    "4": {
+      "0": "Meningkatkan DMG Elemental Skill sebesar <cryo>80%</cryo> DEF. Efek ini dapat terpicu setiap 1,5 detik dan akan langsung hilang dalam waktu 0,1 detik setelah Elemental Skill mengakibatkan DMG."
+    }
+  }
+}

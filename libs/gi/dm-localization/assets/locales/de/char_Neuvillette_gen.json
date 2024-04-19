@@ -1,0 +1,169 @@
+{
+  "constellationName": "Leviathan Judicator",
+  "name": "Neuvillette",
+  "title": "Fäller des unerbittlichen Urteils",
+  "description": "Oberster Richter Fontaines, bekannt für seine unanfechtbare „Unparteilichkeit“.",
+  "auto": {
+    "name": "Wie stille Wasser",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Neuvillette schwingt sein Zepter und treibt die Wellen dazu an, bis zu dreimal anzugreifen und <hydro>Hydro-Schaden</hydro> zu verursachen."
+      },
+      "chargedLegal": {
+        "0": "<strong>Aufgeladener heftiger Schlag – Richterliche Prüfung</strong>",
+        "1": "Während des Aufladens sammelt Neuvillette die Kraft des Quellwassers und bildet allmählich ein Siegel des Urteils. In diesem Zustand kann er sich weiterhin bewegen, die Richtung ändern und innerhalb eines bestimmten Bereichs Quellwassertropfen absorbieren.",
+        "2": "Jeder absorbierte Quellwassertropfen beschleunigt die Bildung des Siegels und stellt Neuvillette LP wieder her.",
+        "3": "Wird das Aufladen unterbrochen, während das Siegel noch nicht vollständig gebildet wurde, führt Neuvillette seinen heftigen Schlag aus; ist das Siegel hingegen vollständig, wird heftiger Schlag – Gerechter Vorstoß entfesselt."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und greift Gegner mit voller Wucht mit einem Wasserring an, der <hydro>Hydro-Flächenschaden</hydro> verursacht."
+      },
+      "chargedJudgment": {
+        "0": "<strong>Heftiger Schlag – Gerechter Vorstoß</strong>",
+        "1": "Entfesselt einen tosenden Strom, der fortlaufend Gegnern in einem geradlinigen Bereich vor sich <hydro>Hydro-Flächenschaden</hydro> zufügt.",
+        "2": "Heftiger Schlag – Gerechter Vorstoß verbraucht keine Ausdauer. Hält 3 s.",
+        "3": "Neuvillette verbraucht fortlaufend LP, wenn diese beim Auslösen über 50 % liegen."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft des Wassers, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <hydro>Hydro-Flächenschaden</hydro>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "Fortlaufender SCH von heftiger Schlag – Gerechter Vorstoß",
+      "6": "LP-Wiederherstellung",
+      "7": "LP-Verlust",
+      "8": "SCH beim Fallen",
+      "9": "SCH beim Fallen aus niedriger/großer Höhe",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "O Tränen, ich werd’s vergelten",
+    "description": {
+      "0": "Beschwört einen tosenden Wasserfall, der herabstürzt und den Gegnern vor sich <hydro>Hydro-Flächenschaden</hydro> basierend auf Neuvillettes max. LP zufügt und drei Quellwassertropfen in der Nähe eines der getroffenen Gegner erzeugt.",
+      "1": "<br/>",
+      "2": "<strong>Arkhe: Pneuma</strong>",
+      "3": "Erzeugt nach Herabstürzen des tosenden Wasserfalls in gewissen Zeitabständen einen Geisterstachel, der auf Gegner herabfällt, diese durchbohrt und mit Pneuma versehenen <hydro>Hydro-Schaden</hydro> verursacht.",
+      "4": "<br/>",
+      "5": "<i>„Das Gesetz kann jede Art der Ungerechtigkeit eindämmen, aber das Übel selbst vermag es nicht zu beseitigen.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Geisterstachel-SCH",
+      "2": "Geisterstachel-Intervall",
+      "3": "Quellwassertropfen-Dauer",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "O Gezeiten, ich bin zurückgekehrt",
+    "description": {
+      "0": "Entfesselt eine berstende Welle, die basierend auf Neuvillettes max. LP <hydro>Hydro-Flächenschaden</hydro> verursacht. Nach einem kurzen Intervall werden in der Nähe zwei Wasserfälle herabstürzen, die in einem kleineren Bereich <hydro>Hydro-Schaden</hydro> verursachen und in einem bestimmten Bereich vor sich sechs Quellwassertropfen erzeugen.",
+      "1": "<br/>",
+      "2": "<i>„Die Gesetze entstehen erst, wenn sie erlassen werden. Darüber hinaus haben die Naturgesetze von jeher über alle Arten und Generationen entschieden.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Wasserfall-SCH",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Erbe des Relikts der uralten See",
+    "description": {
+      "0": "Neuvillette erhält für 30 s den Effekt „Glorie längst vergangener Drachen“, wenn Truppenmitglieder beim Gegner die Reaktionen Verdampfen, Gefroren, Unter Strom, Sprießen, Hydro-Verwirbelung oder Hydro-Kristallisation auslösen. 3-fach stapelbar. Dieser Effekt erhöht den Schaden von heftigem Schlag – Gerechter Vorstoß bei 1/2/3 Stapelungen auf 110/125/160 % des ursprünglichen Schadens.",
+      "1": "Jede „Glorie längst vergangener Drachen“, die durch jede Art von Elementarreaktionen erzeugt wird, existiert unabhängig voneinander."
+    }
+  },
+  "passive2": {
+    "name": "Disziplin oberster Gerichtsbarkeit",
+    "description": {
+      "0": "Neuvillette erhält für je 1 %, die seine aktuellen LP über 30 % seiner max. LP liegen, einen <hydro>Hydro-SCH-Bonus</hydro> von 0,6 %. Auf diese Weise kann der Hydro-SCH um bis zu 30 % erhöht werden."
+    }
+  },
+  "passive3": {
+    "name": "Den Wellen gleich zusammenkommen",
+    "description": {
+      "0": "Erhöht die Bewegungsgeschwindigkeit aller eigenen Truppenmitglieder beim schnellen Schwimmen unter Wasser (mithilfe der Rennen-Fähigkeit) um 15 %.",
+      "1": "Nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar."
+    }
+  },
+  "constellation1": {
+    "name": "Erschaffung von Amt und Würde",
+    "description": {
+      "0": "Neuvillette erhält beim Einwechseln einen Stapel „Glorie längst vergangener Drachen“ des passiven Talents „Erbe des Relikts der uralten See“. Das passive Talent „Erbe des Relikts der uralten See“ muss zuerst freigeschaltet werden.",
+      "1": "Außerdem erhöht sich beim Auslösen von Aufgeladener heftiger Schlag – Richterliche Prüfung und heftiger Schlag – Gerechter Vorstoß Neuvillettes Unterbrechungs-WDS."
+    }
+  },
+  "constellation2": {
+    "name": "Das Gesetz gebietet",
+    "description": {
+      "0": "Verstärkt das passive Talent „Erbe des Relikts der uralten See“: Erhöht für jeden Stapel „Glorie längst vergangener Drachen“ den Kritischen Schaden von heftigem Schlag – Gerechter Vorstoß um 14 %. Bis zu 42 % Bonus auf diese Weise möglich.",
+      "1": "Das passive Talent „Erbe des Relikts der uralten See“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "Uralte Gebote",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Standardangriff: Wie stille Wasser</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Gekrönt in Gnade",
+    "description": {
+      "0": "Erschafft einen Quellwassertropfen, wenn Neuvillette als aktuelle Figur geheilt wird. 4 s Abklingzeit."
+    }
+  },
+  "constellation5": {
+    "name": "Axiomatisches Urteil",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>O Gezeiten, ich bin zurückgekehrt</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Wütende Vergeltung",
+    "description": {
+      "0": "Neuvillette absorbiert beim Auslösen von heftigem Schlag – Gerechter Vorstoß Quellwassertropfen innerhalb eines bestimmten Bereichs. Jeder absorbierte Quellwassertropfen verlängert die Dauer von heftigem Schlag – Gerechter Vorstoß um 1 s.",
+      "1": "Außerdem werden alle 2 s zusätzlich zwei Ströme ausgelöst, wenn Neuvillettes heftiger Schlag – Gerechter Vorstoß Gegner trifft, von denen jeder <hydro>Hydro-Schaden</hydro> in Höhe von 10 % von Neuvillettes max. LP verursacht. Der auf diese Weise verursachte Schaden wird als Schaden vom heftigen Schlags – Gerechter Vorstoß betrachtet."
+    }
+  }
+}

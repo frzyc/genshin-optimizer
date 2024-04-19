@@ -1,0 +1,24 @@
+{
+  "name": "Beyaz Demirden Büyük Kılıç",
+  "description": {
+    "0": "Beyaz demirden yapılmış çift elli bir kılıç. Sağlamlığından ödün vermez ama tüy kadar hafiftir. Ortalama bir savaşçı bile kullanabilir ama güçlü bir ustanın elinde son derece ölümcüldür."
+  },
+  "passiveName": "Güçsüzlerin Hasadı",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir düşmanı yenmek <cryo>%8</cryo> Can yeniler."
+    },
+    "1": {
+      "0": "Bir düşmanı yenmek <cryo>%10</cryo> Can yeniler."
+    },
+    "2": {
+      "0": "Bir düşmanı yenmek <cryo>%12</cryo> Can yeniler."
+    },
+    "3": {
+      "0": "Bir düşmanı yenmek <cryo>%14</cryo> Can yeniler."
+    },
+    "4": {
+      "0": "Bir düşmanı yenmek <cryo>%16</cryo> Can yeniler."
+    }
+  }
+}

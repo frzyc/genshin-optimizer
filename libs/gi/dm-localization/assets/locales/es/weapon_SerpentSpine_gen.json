@@ -1,0 +1,24 @@
+{
+  "name": "Médula de la Serpiente Marina",
+  "description": {
+    "0": "Un arma muy poco común procedente del océano. Al blandirla, emite un silbido que recuerda al romper de las olas."
+  },
+  "passiveName": "Rompeolas",
+  "passiveDescription": {
+    "0": {
+      "0": "Cuando el personaje esté en combate, aumenta el daño que inflige en un <cryo>6%</cryo> y el daño que recibe en un <cryo>3%</cryo> cada 4 s. Este efecto puede acumularse un máximo de 5 veces, y no se reiniciará si el personaje se retira de combate, sino que, cada vez que reciba daño, perderá una de las cargas acumuladas."
+    },
+    "1": {
+      "0": "Cuando el personaje esté en combate, aumenta el daño que inflige en un <cryo>7%</cryo> y el daño que recibe en un <cryo>2.7%</cryo> cada 4 s. Este efecto puede acumularse un máximo de 5 veces, y no se reiniciará si el personaje se retira de combate, sino que, cada vez que reciba daño, perderá una de las cargas acumuladas."
+    },
+    "2": {
+      "0": "Cuando el personaje esté en combate, aumenta el daño que inflige en un <cryo>8%</cryo> y el daño que recibe en un <cryo>2.4%</cryo> cada 4 s. Este efecto puede acumularse un máximo de 5 veces, y no se reiniciará si el personaje se retira de combate, sino que, cada vez que reciba daño, perderá una de las cargas acumuladas."
+    },
+    "3": {
+      "0": "Cuando el personaje esté en combate, aumenta el daño que inflige en un <cryo>9%</cryo> y el daño que recibe en un <cryo>2.2%</cryo> cada 4 s. Este efecto puede acumularse un máximo de 5 veces, y no se reiniciará si el personaje se retira de combate, sino que, cada vez que reciba daño, perderá una de las cargas acumuladas."
+    },
+    "4": {
+      "0": "Cuando el personaje esté en combate, aumenta el daño que inflige en un <cryo>10%</cryo> y el daño que recibe en un <cryo>2%</cryo> cada 4 s. Este efecto puede acumularse un máximo de 5 veces, y no se reiniciará si el personaje se retira de combate, sino que, cada vez que reciba daño, perderá una de las cargas acumuladas."
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "name": "Yoimiya",
+  "title": "La Maestra de las Llamas",
+  "description": "La dueña de la tienda Pirotecnia Naganohara y Reina del Festival de Verano. Deposita los deseos de la gente en sus artesanales fuegos artificiales.",
+  "constellationName": "Carassius Auratus",
+  "auto": {
+    "name": "Pirotecnia",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 disparos consecutivos con arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
+        "2": "Mientras se apunta, unas llamas se acumularán en la punta de la flecha antes de que esta sea disparada. Sus efectos serán distintos dependiendo de durante cuánto tiempo se haya cargado:",
+        "3": [
+          "Carga 1: dispara una flecha ardiente que inflige <pyro>Daño Pyro</pyro>.",
+          "Carga 2: dependiendo del tiempo de carga, dispara hasta un máximo de 3 flechas abrasadoras que son liberadas cuando Yoimiya ejecuta este Disparo Preciso. Las flechas abrasadoras perseguirán por sí solas a los enemigos cercanos y, al alcanzarlos, infligirán <pyro>Daño Pyro</pyro> contra ellos."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Disparo Preciso",
+      "6": "Disparo Preciso (carga completa)",
+      "7": "Daño de flecha abrasadora",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Danza de la pólvora",
+    "description": {
+      "0": "Yoimiya agita una bengala para que un anillo chispeante la rodee.",
+      "1": "<br/>",
+      "2": "<strong>Nitrofogata</strong>",
+      "3": "Mientras este efecto esté activo, las flechas que dispara Yoimiya con sus Ataques Normales se convierten en flechas flamígeras cuyo daño no solo aumenta, sino que también se convierte en <pyro>Daño Pyro</pyro>. Mientras dure la nitrofogata, las flechas disparadas con la Carga 2 de Ataque Normal: Pirotecnia no generarán flechas abrasadoras.",
+      "4": "<br/>",
+      "5": "Este efecto se disipará una vez que Yoimiya sea retirada de combate.",
+      "6": "<br/>",
+      "7": "<i>Las nitrofogatas son un tipo de fuegos artificiales de incienso inventados por Yoimiya. Para prenderlas, no se necesita ninguna preparación ni entrenamiento previos, por lo que gozan de gran popularidad. Tras varios incidentes ocasionados por el fuego, la Comisión Tenryou prohibió prender nitrofogatas dentro de la ciudad. Sin embargo, pequeñas chispas brillantes siguen viéndose con frecuencia durante la noche. De hecho, si se observa desde un punto elevado, parecen como estrellas con una luz titilante.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de flecha flamígera",
+      "1": "Duración",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Saxifraga de oro",
+    "description": {
+      "0": "Yoimiya da un salto para lanzar su creación, la saxifraga de oro, y disparar cohetes ardientes sorpresa que infligen <pyro>Daño Pyro en el AdE</pyro> y que aplican el efecto de ascua dorada sobre uno de los enemigos golpeados.",
+      "1": "<br/>",
+      "2": "<strong>Ascua dorada</strong>",
+      "3": "Cuando cualquier personaje del equipo (a excepción de Yoimiya) ataca al enemigo afectado por ascua dorada con Ataques Normales, Cargados o Descendentes o con la Habilidad Elemental o Definitiva, ocurrirá una explosión que inflige <pyro>Daño Pyro en el AdE</pyro>.",
+      "4": "Si un enemigo afectado por ascua dorada es derrotado, este efecto pasará a otro enemigo cercano, el cual heredará la duración restante.",
+      "5": "<br/>",
+      "6": "Solo se puede generar una explosión cada 2 s con ascua dorada y, cuando Yoimiya es derrotada, dicho efecto aplicado por ella misma se disipará.",
+      "7": "<br/>",
+      "8": "<i>Los fuegos artificiales son como estrellas creadas por el ser humano, cometas que se dirigen hacia el cielo. Aunque solo duren un pequeño instante, su resplandeciente brillo quedará grabado para siempre en el corazón de las personas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de explosión de ascua dorada",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Truco ígneo",
+    "description": {
+      "0": "Mientras está activo el efecto de <strong>Danza de la pólvora</strong>, si Yoimiya golpea a un enemigo con un Ataque Normal, obtiene un 2% de <pyro>Bono de Daño Pyro</pyro> durante 3 s. Este efecto puede acumularse hasta 10 veces."
+    }
+  },
+  "passive2": {
+    "name": "Sofoco estival",
+    "description": {
+      "0": "Tras usar <strong>Saxifraga de oro</strong>, el ATQ de todos los miembros del equipo (a excepción de Yoimiya) aumenta en un 10% durante 15 s. Además, en función del número de acumulaciones de Truco ígneo que tenga Yoimiya en el momento de usar <strong>Saxifraga de oro</strong>, dicho aumento de ATQ incrementará en un 1% adicional por cada acumulación."
+    }
+  },
+  "passive3": {
+    "name": "Ornamentación flagrante",
+    "description": {
+      "0": "Al fabricar decoraciones, artículos decorativos y de paisaje, se recuperan parte de los materiales."
+    }
+  },
+  "constellation1": {
+    "name": "Cornalina dorada",
+    "description": {
+      "0": "Aumenta en 4 s la duración de la ascua dorada aplicada mediante <strong>Saxifraga de oro</strong>.",
+      "1": "Además, cuando un enemigo afectado por ascua dorada es derrotado, el ATQ de Yoimiya aumenta en un 20% durante 20 s."
+    }
+  },
+  "constellation2": {
+    "name": "Procesión de las antorchas",
+    "description": {
+      "0": "Cuando Yoimiya asesta un golpe CRIT de <pyro>Daño Pyro</pyro>, obtiene un 25% de <pyro>Bono de Daño Pyro</pyro> durante 6 s.",
+      "1": "Este efecto se puede activar incluso cuando Yoimiya está en tu equipo pero no en uso."
+    }
+  },
+  "constellation3": {
+    "name": "Llama de la astucia",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Danza de la pólvora</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Conocimiento pirotécnico",
+    "description": {
+      "0": "Cada explosión de ascua dorada de Yoimiya reduce en 1.2 s el TdE de <strong>Danza de la pólvora</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Noche del festival de verano",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Saxifraga de oro</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Lluvia de meteoros Naganohara",
+    "description": {
+      "0": "Cuando Yoimiya realiza un Ataque Normal mientras <strong>Danza de la pólvora</strong> está activa, hay una probabilidad del 50% de disparar una flecha flamígera adicional, la cual inflige un 60% del daño original. Este daño se considera daño de Ataque Normal."
+    }
+  }
+}

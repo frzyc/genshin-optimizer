@@ -1,0 +1,24 @@
+{
+  "name": "Espada de Hierro Oscuro",
+  "description": {
+    "0": "Esta espada... es simplemente una espada de hierro de un tono oscuro."
+  },
+  "passiveName": "Sobrecarga",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras causar una reacción de Sobrecarga, Superconductor, Electrocargado, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, aumenta el ATQ en un <cryo>20%</cryo> durante 12 s."
+    },
+    "1": {
+      "0": "Tras causar una reacción de Sobrecarga, Superconductor, Electrocargado, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, aumenta el ATQ en un <cryo>25%</cryo> durante 12 s."
+    },
+    "2": {
+      "0": "Tras causar una reacción de Sobrecarga, Superconductor, Electrocargado, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, aumenta el ATQ en un <cryo>30%</cryo> durante 12 s."
+    },
+    "3": {
+      "0": "Tras causar una reacción de Sobrecarga, Superconductor, Electrocargado, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, aumenta el ATQ en un <cryo>35%</cryo> durante 12 s."
+    },
+    "4": {
+      "0": "Tras causar una reacción de Sobrecarga, Superconductor, Electrocargado, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, aumenta el ATQ en un <cryo>40%</cryo> durante 12 s."
+    }
+  }
+}

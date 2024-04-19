@@ -1,0 +1,29 @@
+{
+  "setName": "Verbeugung des Gladiators",
+  "setEffects": {
+    "2": "Erhöht den ANG um 18 %.",
+    "4": "Erhöht den mit Standardangriffen verursachten Schaden, wenn die mit diesem Artefaktset ausgestattete Figur einen Einhänder, einen Zweihänder oder eine Stangenwaffe trägt, um 35 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Nostalgie des Gladiators",
+      "desc": "Keiner weiß, warum die legendären Gladiatoren stets diese Blume trugen. Sie scheint der einzige Schwachpunkt der grausamen Kämpfer zu sein."
+    },
+    "plume": {
+      "name": "Zuflucht des Gladiators",
+      "desc": "Eine Feder wie aus einem Traum von der Freiheit eines Falken. Der ungebändigte Vogel trug diese Feder vor seiner Brust."
+    },
+    "sands": {
+      "name": "Zuversicht des Gladiators",
+      "desc": "Ein Zeugnis der blutigen Tage eines Gladiators. Es steht für seinen schwierigen Weg bis zur Freiheit."
+    },
+    "goblet": {
+      "name": "Rausch des Gladiators",
+      "desc": "Der metallene Becher eines Gladiators vergangener Zeiten. Bis man ihn mit Getränken füllt, ist er zum Überlaufen gefüllt mit der Zeit, die er schon existiert."
+    },
+    "circlet": {
+      "name": "Triumph des Gladiators",
+      "desc": "Der Helm eines frühzeitlichen Gladiators, befleckt von dem Blut unzähliger Gegner und bewundert von unzähligen Zuschauern."
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "name": "Yun Jin",
+  "title": "Stage Lucida",
+  "description": "Seorang penyanyi opera Liyue yang mahir bernyanyi dan pintar menulis sandiwara. Gayanya lain dari yang lain — elegan dan lembut, persis seperti karakternya.",
+  "constellationName": "Opera Grandis",
+  "auto": {
+    "name": "Cloud-Grazing Strike",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan tombak."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalurnya."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Opening Flourish",
+    "description": {
+      "0": "Yun Jin dapat menggunakan kuda-kuda bela dirinya untuk melawan para musuh.",
+      "1": "<br/>",
+      "2": "<strong>Mode Tekan</strong>",
+      "3": "Memutar tombak dengan kuda-kuda pembelah awan dan mengakibatkan <geo>Geo DMG</geo>.",
+      "4": "<br/>",
+      "5": "<strong>Mode Tahan</strong>",
+      "6": "Memasang kuda-kuda Opening Flourish dan melakukan charge untuk menciptakan sebuah perisai. Jumlah DMG yang dapat ditahan perisai didasarkan pada Max HP Yun Jin dan memiliki 150% efek penahanan terhadap semua Elemental DMG dan Physical DMG. Perisai akan berakhir saat Elemental Skill selesai dilancarkan.",
+      "7": "Saat melancarkan skill dengan melepas tombol, durasinya berakhir, atau perisainya hancur, Yun Jin akan menyerang dengan ayunan tombaknya dan melepaskan energi yang tersimpan untuk mengakibatkan <geo>Geo DMG</geo>.",
+      "8": "Yun Jin akan melancarkan serangan Charge Tahap 1 atau Charge Tahap 2 berdasarkan durasi charge-nya.",
+      "9": "<br/>",
+      "10": "<i>Di balik satu momen kejayaan di atas panggung, terdapat kerja keras selama sepuluh tahun.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Mode Tekan",
+      "1": "DMG Charge Tahap 1",
+      "2": "DMG Charge Tahap 2",
+      "3": "Pertahanan Perisai",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Cliffbreaker's Banner",
+    "description": {
+      "0": "Mengakibatkan <geo>Geo DMG Area</geo> dan memberikan efek Flying Cloud Flag Formation kepada seluruh anggota party di sekitar.",
+      "1": "<br/>",
+      "2": "<strong>Flying Cloud Flag Formation</strong>",
+      "3": "Saat mengakibatkan DMG kepada musuh dengan Normal Attack, DMG yang diakibatkan akan meningkat sesuai dengan DEF Yun Jin sendiri saat ini.",
+      "4": "<br/>",
+      "5": "Efek Flying Cloud Flag Formation akan hilang setelah durasinya berakhir atau lapisannya terkonsumsi dalam jumlah tertentu.",
+      "6": "Saat satu Normal Attack mengenai beberapa musuh secara bersamaan, jumlah lapisan Flying Cloud Flag Formation yang dikonsumsi akan disesuaikan dengan jumlah musuh yang terkena serangan. Efek dan jumlah lapisan Flying Cloud Flag Formation untuk setiap Karakter dalam party akan dihitung secara terpisah.",
+      "7": "<br/>",
+      "8": "<i>\"Di tengah suara genderang perang dan tombak serta pedang yang saling berayun, sang wanita cantik menjelma sebagai sesosok jenderal yang membawa panji peperangan.\"</i>",
+      "9": "<i>\"Saat instrumen di atas panggung berkumandang serempak, lihatlah caranya menumpas para iblis itu!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Peningkatan DMG",
+      "2": "Durasi",
+      "3": "Jumlah Lapisan",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "True to Oneself",
+    "description": {
+      "0": "Menggunakan <strong>Opening Flourish</strong> tepat saat Yun Jin terkena serangan akan melancarkan bentuk Charge Tahap 2 (Mode Tahan)-nya."
+    }
+  },
+  "passive2": {
+    "name": "Breaking Conventions",
+    "description": {
+      "0": "Bonus DMG Normal Attack dari <strong>Flying Cloud Flag Formation</strong> akan meningkat lagi sebesar 2,5%/5%/7,5%/11,5% dari DEF Yun Jin saat party berisi Karakter dengan 1/2/3/4 jenis elemen berbeda."
+    }
+  },
+  "passive3": {
+    "name": "Light Nourishment",
+    "description": {
+      "0": "Saat masakan jenis petualangan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "Thespian Gallop",
+    "description": {
+      "0": "Mengurangi 18% CD <strong>Opening Flourish</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Myriad Mise-En-Scène",
+    "description": {
+      "0": "Setelah melancarkan <strong>Cliffbreaker's Banner</strong>, DMG Normal Attack seluruh anggota party di sekitar meningkat 15% selama 12 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Seafaring General",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Cliffbreaker's Banner</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Flower and a Fighter",
+    "description": {
+      "0": "Setelah Yun Jin memicu reaksi Crystallize, DEF Yun Jin meningkat 20% selama 12 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Famed Throughout the Land",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Opening Flourish</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Decorous Harmony",
+    "description": {
+      "0": "Meningkatkan 12% Normal ATK SPD Karakter yang berada dalam status <strong>Flying Cloud Flag Formation</strong>."
+    }
+  }
+}

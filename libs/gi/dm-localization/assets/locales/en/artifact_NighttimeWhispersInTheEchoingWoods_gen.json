@@ -1,0 +1,29 @@
+{
+  "setName": "Nighttime Whispers in the Echoing Woods",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "After using an Elemental Skill, gain a 20% Geo DMG Bonus for 10s. While under a shield granted by the Crystallize reaction, the above effect will be increased by 150%, and this additional increase disappears 1s after that shield is lost."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Selfless Floral Accessory",
+      "desc": "A brooch that the witch in the tale wore. As with the other ornaments she loved, this was characterized by butterfly-like shapes."
+    },
+    "plume": {
+      "name": "Honest Quill",
+      "desc": "The witch in the tale used this dip pen. Among its various advantages, its silky-smooth writing is the least worthy of mention."
+    },
+    "sands": {
+      "name": "Faithful Hourglass",
+      "desc": "A sand timepiece that the witch relied on in the story. Legend has it that if you recite the wrong incantation over it, time will suddenly flow exceptionally quickly."
+    },
+    "goblet": {
+      "name": "Magnanimous Ink Bottle",
+      "desc": "An ink bottle utilized by the witch in the story. It possesses a strange enchantment no less powerful than the one cast upon the dip pen."
+    },
+    "circlet": {
+      "name": "Compassionate Ladies' Hat",
+      "desc": "The lady's hat favored by the witch in the story. She loved this piece of headwear for how it weaves together solemnity and playfulness."
+    }
+  }
+}

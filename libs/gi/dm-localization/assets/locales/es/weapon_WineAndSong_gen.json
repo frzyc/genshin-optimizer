@@ -1,0 +1,24 @@
+{
+  "name": "Vino y Poesía",
+  "description": {
+    "0": "El nombre de una canción muy popular durante la época de la aristocracia. Su autor es desconocido. En ella, se cuenta la historia de un bandido errante..."
+  },
+  "passiveName": "Versatilidad",
+  "passiveDescription": {
+    "0": {
+      "0": "Al atacar a un enemigo con un Ataque Normal, el Coste de Aguante al esprintar o al usar una habilidad que sustituye a esprintar se reduce en un <cryo>14%</cryo> durante 5 s. Además, después de esprintar o de usar una habilidad que sustituye a esprintar, el ATQ aumenta en un <cryo>20%</cryo> durante 5 s."
+    },
+    "1": {
+      "0": "Al atacar a un enemigo con un Ataque Normal, el Coste de Aguante al esprintar o al usar una habilidad que sustituye a esprintar se reduce en un <cryo>16%</cryo> durante 5 s. Además, después de esprintar o de usar una habilidad que sustituye a esprintar, el ATQ aumenta en un <cryo>25%</cryo> durante 5 s."
+    },
+    "2": {
+      "0": "Al atacar a un enemigo con un Ataque Normal, el Coste de Aguante al esprintar o al usar una habilidad que sustituye a esprintar se reduce en un <cryo>18%</cryo> durante 5 s. Además, después de esprintar o de usar una habilidad que sustituye a esprintar, el ATQ aumenta en un <cryo>30%</cryo> durante 5 s."
+    },
+    "3": {
+      "0": "Al atacar a un enemigo con un Ataque Normal, el Coste de Aguante al esprintar o al usar una habilidad que sustituye a esprintar se reduce en un <cryo>20%</cryo> durante 5 s. Además, después de esprintar o de usar una habilidad que sustituye a esprintar, el ATQ aumenta en un <cryo>35%</cryo> durante 5 s."
+    },
+    "4": {
+      "0": "Al atacar a un enemigo con un Ataque Normal, el Coste de Aguante al esprintar o al usar una habilidad que sustituye a esprintar se reduce en un <cryo>22%</cryo> durante 5 s. Además, después de esprintar o de usar una habilidad que sustituye a esprintar, el ATQ aumenta en un <cryo>40%</cryo> durante 5 s."
+    }
+  }
+}

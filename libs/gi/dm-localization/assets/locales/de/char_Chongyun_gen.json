@@ -1,0 +1,154 @@
+{
+  "name": "Chongyun",
+  "title": "Spuren im schmelzenden Schnee",
+  "description": "Ein junger Mystiker aus einer Familie von Dämonenvertreibern, der alles dafür tut, seine „Yang-Lastigkeit“ zu unterdrücken.",
+  "constellationName": "Nubis Caesor",
+  "auto": {
+    "name": "Auslöschung des Bösen",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht fortlaufend Ausdauer, wirbelt das Großschwert und greift Gegner in der Umgebung an.",
+        "2": "Schwingt das Schwert am Ende mit besonders großer Wucht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge pro Runde",
+      "5": "SCH heftiger Schläge am Ende",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "Höchstdauer",
+      "8": "SCH beim Fallen",
+      "9": "SCH beim Fallen aus niedriger/großer Höhe",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Seelenklinge – Schichtfrost",
+    "description": {
+      "0": "Chongyun schlägt mit voller Wucht mit seinem riesigen Schwert auf den Boden, verursacht vor sich eine runde Kryo-Explosion und fügt Gegnern <cryo>Kryo-Schaden</cryo> zu.",
+      "1": "Konzentriert kurze Zeit nach der Explosion die verströmende Kälte zu einem Schichtfrostfeld, das Figuren mit Einhändern, Großschwertern und Stangenwaffen die <cryo>Kryo-Kraft</cryo> verleiht.",
+      "2": "<br/>",
+      "3": "<i>„Es knistert in sonst völliger Stille. Die Bäche sind zugefroren und dicke Schneewolken ziehen auf. Nach dem Öffnen der Tore zum Altar ergeht es dem Bösen schlecht.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Elementarumwandlungsdauer",
+      "2": "Dauer des Feldes",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Seelenklinge – Wolken teilender Stern",
+    "description": {
+      "0": "Chongyun formt Fingerzeichen, mit denen er drei große Seelenklingen in der Luft beschwört, die nach kurzer Zeit nacheinander auf den Boden fallen und zerspringen.",
+      "1": "Beim Zerspringen verursachen die Seelenklingen <cryo>Kryo-Flächenschaden</cryo> und schleudern Gegner weg.",
+      "2": "<br/>",
+      "3": "<i>„Erhört meine Worte! Dieses Schwert lässt Himmel und Erde beben, auf dass sie die eisige Kälte erfahren!“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "Elementarenergie",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Atemtechnik",
+    "description": {
+      "0": "Erhöht die Standardangriffs-GSW aller Figuren mit Einhändern, Zweihändern und Stangenwaffen im Wirkungsbereich von <strong>Seelenklinge – Schichtfrost</strong> um 8 %."
+    }
+  },
+  "passive2": {
+    "name": "Eisjägerschwert",
+    "description": {
+      "0": "Erschafft beim Verschwinden des Schichtfrostfeldes von <strong>Seelenklinge – Schichtfrost</strong> eine Seelenklinge, die Gegner in der Nähe automatisch angreift und <cryo>Kryo-Flächenschaden</cryo> in Höhe von 100 % des Schadens von Seelenklinge – Schichtfrost verursacht. Verringert den <cryo>Kryo-WDS</cryo> getroffener Gegner 8 s lang um 10 %."
+    }
+  },
+  "passive3": {
+    "name": "Durch Land und Meer",
+    "description": {
+      "0": "Verkürzt die bei Erkundungen innerhalb des Einflussbereichs von Liyue verbrauchte Zeit um 25 %."
+    }
+  },
+  "constellation1": {
+    "name": "Gesang der Eiszapfen",
+    "description": {
+      "0": "Schlägt beim letzten Schlag des Standardangriffs mit drei Eisklingen nach vorn, von denen jede Klinge Gegnern in ihrer Bahn <cryo>Kryo-Schaden</cryo> in Höhe von 50 % von Chongyuns ANG zufügt."
+    }
+  },
+  "constellation2": {
+    "name": "Bewegungen des Sternenzelts",
+    "description": {
+      "0": "Verringert die Abklingzeit von im Wirkungsbereich von <strong>Seelenklinge – Schichtfrost</strong> angewendeten Elementarfähigkeiten und Spezialfähigkeiten um 15 %."
+    }
+  },
+  "constellation3": {
+    "name": "Aufklaren des Himmels",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Seelenklinge – Wolken teilender Stern</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Gefrorene Wolken",
+    "description": {
+      "0": "Stellt beim Treffen von <cryo>Kryo</cryo>-Effekten betroffener Gegner mit allen Angriffen von Chongyun 1 Punkt Elementarenergie wieder her.",
+      "1": "2 s Abklingzeit."
+    }
+  },
+  "constellation5": {
+    "name": "Die eine Wahrheit",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Seelenklinge – Schichtfrost</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Gepriesene Seelen",
+    "description": {
+      "0": "Erhöht den Schaden von <strong>Seelenklinge – Wolken teilender Stern</strong> gegenüber Gegnern mit geringerem LP-Anteil als Chongyun um 15 %.",
+      "1": "Beschwört bei Anwendung der Fähigkeit außerdem eine weitere Seelenklinge."
+    }
+  }
+}

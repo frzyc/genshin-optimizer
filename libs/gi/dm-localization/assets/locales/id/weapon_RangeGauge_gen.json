@@ -1,0 +1,24 @@
+{
+  "name": "Range Gauge",
+  "description": {
+    "0": "Alat pengukur yang hampir punah saat ini. Memiliki kemampuan untuk menembakkan anak panah."
+  },
+  "passiveName": "Masons' Ditty",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat penggunanya menerima pemulihan atau memberikan pemulihan, akan memberikan satu Unity's Symbol yang berlangsung selama 30 detik dan dapat ditumpuk sampai 3 lapis. Saat melancarkan Elemental Skill atau Elemental Burst, akan mengonsumsi seluruh Unity's Symbol yang dimiliki untuk menghasilkan efek Struggle yang berlangsung selama 10 detik. Setiap Unity's Symbol yang dikonsumsi, akan meningkatkan <cryo>3%</cryo> ATK dan <cryo>7%</cryo> Elemental DMG Bonus seluruh elemen. Efek Struggle dapat terpicu sekali setiap 15 detik. Unity's Symbol tetap dapat diperoleh saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Saat penggunanya menerima pemulihan atau memberikan pemulihan, akan memberikan satu Unity's Symbol yang berlangsung selama 30 detik dan dapat ditumpuk sampai 3 lapis. Saat melancarkan Elemental Skill atau Elemental Burst, akan mengonsumsi seluruh Unity's Symbol yang dimiliki untuk menghasilkan efek Struggle yang berlangsung selama 10 detik. Setiap Unity's Symbol yang dikonsumsi, akan meningkatkan <cryo>4%</cryo> ATK dan <cryo>8,5%</cryo> Elemental DMG Bonus seluruh elemen. Efek Struggle dapat terpicu sekali setiap 15 detik. Unity's Symbol tetap dapat diperoleh saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Saat penggunanya menerima pemulihan atau memberikan pemulihan, akan memberikan satu Unity's Symbol yang berlangsung selama 30 detik dan dapat ditumpuk sampai 3 lapis. Saat melancarkan Elemental Skill atau Elemental Burst, akan mengonsumsi seluruh Unity's Symbol yang dimiliki untuk menghasilkan efek Struggle yang berlangsung selama 10 detik. Setiap Unity's Symbol yang dikonsumsi, akan meningkatkan <cryo>5%</cryo> ATK dan <cryo>10%</cryo> Elemental DMG Bonus seluruh elemen. Efek Struggle dapat terpicu sekali setiap 15 detik. Unity's Symbol tetap dapat diperoleh saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Saat penggunanya menerima pemulihan atau memberikan pemulihan, akan memberikan satu Unity's Symbol yang berlangsung selama 30 detik dan dapat ditumpuk sampai 3 lapis. Saat melancarkan Elemental Skill atau Elemental Burst, akan mengonsumsi seluruh Unity's Symbol yang dimiliki untuk menghasilkan efek Struggle yang berlangsung selama 10 detik. Setiap Unity's Symbol yang dikonsumsi, akan meningkatkan <cryo>6%</cryo> ATK dan <cryo>11,5%</cryo> Elemental DMG Bonus seluruh elemen. Efek Struggle dapat terpicu sekali setiap 15 detik. Unity's Symbol tetap dapat diperoleh saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Saat penggunanya menerima pemulihan atau memberikan pemulihan, akan memberikan satu Unity's Symbol yang berlangsung selama 30 detik dan dapat ditumpuk sampai 3 lapis. Saat melancarkan Elemental Skill atau Elemental Burst, akan mengonsumsi seluruh Unity's Symbol yang dimiliki untuk menghasilkan efek Struggle yang berlangsung selama 10 detik. Setiap Unity's Symbol yang dikonsumsi, akan meningkatkan <cryo>7%</cryo> ATK dan <cryo>13%</cryo> Elemental DMG Bonus seluruh elemen. Efek Struggle dapat terpicu sekali setiap 15 detik. Unity's Symbol tetap dapat diperoleh saat Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Thuẫn Kích",
+  "description": {
+    "0": "Binh khí trên mũi có gắn thêm lưỡi đao nhọn, có sức phá hủy lớn. Là vũ khí được Thiên Nham Quân ưa chuộng."
+  },
+  "passiveName": "Trầm Trọng",
+  "passiveDescription": {
+    "0": {
+      "0": "Tạo thành thêm <cryo>160%</cryo> công kích cho kẻ địch bị tấn công thường đánh trúng. Mỗi 10s mới thi triển 1 lần."
+    },
+    "1": {
+      "0": "Tạo thành thêm <cryo>200%</cryo>công kích cho kẻ địch bị tấn công thường đánh trúng. Mỗi 10s mới thi triển 1 lần."
+    },
+    "2": {
+      "0": "Tạo thành thêm <cryo>240%</cryo> công kích cho kẻ địch bị tấn công thường đánh trúng. Mỗi 10s mới thi triển 1 lần."
+    },
+    "3": {
+      "0": "Tạo thành thêm <cryo>280%</cryo> công kích cho kẻ địch bị tấn công thường đánh trúng. Mỗi 10s mới thi triển 1 lần."
+    },
+    "4": {
+      "0": "Tạo thành thêm <cryo>320%</cryo> công kích cho kẻ địch bị tấn công thường đánh trúng. Mỗi 10s mới thi triển 1 lần."
+    }
+  }
+}

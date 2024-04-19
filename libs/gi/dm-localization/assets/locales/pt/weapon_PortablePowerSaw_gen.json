@@ -1,0 +1,24 @@
+{
+  "name": "Serra Elétrica Portátil",
+  "description": {
+    "0": "Uma serra elétrica vintage rara de se ver hoje em dia. Era uma ferramenta usada por trabalhadores em todos os cantos."
+  },
+  "passiveName": "Canção de Marinheiro",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando o personagem é curado ou cura, concede o Sinal da Tenacidade por 30s. É possível acumular até 3 Sinais da Tenacidade. Ao lançar a Habilidade Elemental ou o Supremo, consome todos os Sinais da Tenacidade e gera por 10s o efeito \"Ascendendo\": para cada Sinal da Tenacidade consumido, aumenta a Proficiência Elemental em <cryo>40</cryo> pontos, e 2s após gerar esse efeito, cada Sinal da Tenacidade Consumido regenerará <cryo>2</cryo> de Energia Elemental para o personagem que está com essa arma equipada. É possível desencadear o efeito \"Ascendendo\" uma vez a cada 15s. Também é possível obter o Sinal da Tenacidade quando o personagem não está ativo no campo de batalha."
+    },
+    "1": {
+      "0": "Quando o personagem é curado ou cura, concede o Sinal da Tenacidade por 30s. É possível acumular até 3 Sinais da Tenacidade. Ao lançar a Habilidade Elemental ou o Supremo, consome todos os Sinais da Tenacidade e gera por 10s o efeito \"Ascendendo\": para cada Sinal da Tenacidade consumido, aumenta a Proficiência Elemental em <cryo>50</cryo> pontos, e 2s após gerar esse efeito, cada Sinal da Tenacidade Consumido regenerará <cryo>2.5</cryo> de Energia Elemental para o personagem que está com essa arma equipada. É possível desencadear o efeito \"Ascendendo\" uma vez a cada 15s. Também é possível obter o Sinal da Tenacidade quando o personagem não está ativo no campo de batalha."
+    },
+    "2": {
+      "0": "Quando o personagem é curado ou cura, concede o Sinal da Tenacidade por 30s. É possível acumular até 3 Sinais da Tenacidade. Ao lançar a Habilidade Elemental ou o Supremo, consome todos os Sinais da Tenacidade e gera por 10s o efeito \"Ascendendo\": para cada Sinal da Tenacidade consumido, aumenta a Proficiência Elemental em <cryo>60</cryo> pontos, e 2s após gerar esse efeito, cada Sinal da Tenacidade Consumido regenerará <cryo>3</cryo> de Energia Elemental para o personagem que está com essa arma equipada. É possível desencadear o efeito \"Ascendendo\" uma vez a cada 15s. Também é possível obter o Sinal da Tenacidade quando o personagem não está ativo no campo de batalha."
+    },
+    "3": {
+      "0": "Quando o personagem é curado ou cura, concede o Sinal da Tenacidade por 30s. É possível acumular até 3 Sinais da Tenacidade. Ao lançar a Habilidade Elemental ou o Supremo, consome todos os Sinais da Tenacidade e gera por 10s o efeito \"Ascendendo\": para cada Sinal da Tenacidade consumido, aumenta a Proficiência Elemental em <cryo>70</cryo> pontos, e 2s após gerar esse efeito, cada Sinal da Tenacidade Consumido regenerará <cryo>3.5</cryo> de Energia Elemental para o personagem que está com essa arma equipada. É possível desencadear o efeito \"Ascendendo\" uma vez a cada 15s. Também é possível obter o Sinal da Tenacidade quando o personagem não está ativo no campo de batalha."
+    },
+    "4": {
+      "0": "Quando o personagem é curado ou cura, concede o Sinal da Tenacidade por 30s. É possível acumular até 3 Sinais da Tenacidade. Ao lançar a Habilidade Elemental ou o Supremo, consome todos os Sinais da Tenacidade e gera por 10s o efeito \"Ascendendo\": para cada Sinal da Tenacidade consumido, aumenta a Proficiência Elemental em <cryo>80</cryo> pontos, e 2s após gerar esse efeito, cada Sinal da Tenacidade Consumido regenerará <cryo>4</cryo> de Energia Elemental para o personagem que está com essa arma equipada. É possível desencadear o efeito \"Ascendendo\" uma vez a cada 15s. Também é possível obter o Sinal da Tenacidade quando o personagem não está ativo no campo de batalha."
+    }
+  }
+}

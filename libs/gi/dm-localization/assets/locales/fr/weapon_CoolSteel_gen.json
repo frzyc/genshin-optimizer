@@ -1,0 +1,24 @@
+{
+  "name": "Lame froide",
+  "description": {
+    "0": "Une arme faite dans un acier travaillé à maintes reprises, qui témoigne des aventures de son précédent propriétaire."
+  },
+  "passiveName": "Fléau d'eau et de glace",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Cryo de <cryo>12 %</cryo>."
+    },
+    "1": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Cryo de <cryo>15 %</cryo>."
+    },
+    "2": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Cryo de <cryo>18 %</cryo>."
+    },
+    "3": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Cryo de <cryo>21 %</cryo>."
+    },
+    "4": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Cryo de <cryo>24 %</cryo>."
+    }
+  }
+}

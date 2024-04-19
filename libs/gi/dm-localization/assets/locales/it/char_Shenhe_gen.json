@@ -1,0 +1,171 @@
+{
+  "name": "Shenhe",
+  "title": "Trascendenza solitaria",
+  "description": "Una discepola degli Adepti alquanto singolare. Avendo trascorso lungo tempo in isolamento tra le montagne di Liyue, è diventata fredda e distante come gli Adepti stessi.",
+  "constellationName": "Crista Doloris",
+  "auto": {
+    "name": "Affondo Albastella",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi di lancia consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per attaccare balzando in avanti infliggendo DAN agli avversari lungo la traiettoria."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Evocazione dello spirito primaverile",
+    "description": {
+      "0": "La rugiada gelata, densa e argentata esorcizzerà tutti i demoni.",
+      "1": "Garantisce a tutti i membri del gruppo vicini l'effetto Aculeo di ghiaccio e infligge <cryo>DAN da Cryo</cryo> in modo diverso in caso di pressione o pressione prolungata.",
+      "2": "<br/>",
+      "3": "<strong>Pressione</strong>",
+      "4": "Scatta in avanti insieme a uno Spirito talismano, infliggendo <cryo>DAN da Cryo</cryo> agli avversari lungo il percorso.",
+      "5": "<br/>",
+      "6": "<strong>Pressione prolungata</strong>",
+      "7": "Ordina allo Spirito talismano di infliggere <cryo>DAN da Cryo ad area</cryo>.",
+      "8": "<br/>",
+      "9": "<strong>Aculeo di ghiaccio</strong>",
+      "10": "Quando gli attacchi normali, caricati e in picchiata, le abilità elementali e i Tripudi elementali infliggono <cryo>DAN da Cryo</cryo> agli avversari, i DAN inflitti aumentano in base all'ATT attuale di Shenhe.",
+      "11": "<br/>",
+      "12": "Gli effetti di Aculeo di ghiaccio cesseranno al termine della sua durata o dopo un certo numero di attivazioni. Quando si effettua una pressione prolungata anziché una pressione breve, l'effetto Aculeo di ghiaccio dura di più e si può attivare più volte.",
+      "13": "Quando un'iterazione di <cryo>DAN da Cryo</cryo> colpisce più avversari, l'effetto si attiva più volte in base al numero di avversari colpiti. Il numero di volte in cui si attiva l'effetto si calcola singolarmente per ogni membro del gruppo con Aculeo di ghiaccio.",
+      "14": "<br/>",
+      "15": "<i>Il potere degli spiriti non è una falsità. Con l'onere dei suoi ordini, la fanciulla divina si affretta a procedere!</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità pressione",
+      "1": "DAN da abilità pressione prolungata",
+      "2": "Bonus DAN",
+      "3": "Durata pressione/pressione prolungata",
+      "4": "Quota attivazioni pressione/pressione prolungata",
+      "5": "TdR pressione",
+      "6": "TdR pressione prolungata",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Salvezza della divina damigella",
+    "description": {
+      "0": "Libera il potere dello Spirito talismano, permettendogli di aggirarsi liberamente in questo piano infliggendo <cryo>DAN da Cryo ad area</cryo>.",
+      "1": "Lo Spirito talismano crea poi un campo che riduce la <cryo>RES a Cryo</cryo> e la RES fisica degli avversari dentro di esso. Infligge inoltre <cryo>DAN da Cryo</cryo> agli avversari all'interno del campo.",
+      "2": "<br/>",
+      "3": "<i>La via degli Adepti non è definita esclusivamente dal misterioso e dal fantastico. Solo osservando i cambiamenti nei cieli e nella terra, e comprendendo le leggi di causa ed effetto in questo regno, la sua essenza può essere compresa.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Riduzione RES",
+      "2": "DAN nel tempo",
+      "3": "Durata",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Abbraccio deifico",
+    "description": {
+      "0": "Un personaggio attivo nel campo creato da <strong>Salvezza della divina damigella</strong> ottiene un 15% di <cryo>bonus DAN da Cryo</cryo>."
+    }
+  },
+  "passive2": {
+    "name": "Sigillo di comunione dello spirito",
+    "description": {
+      "0": "Dopo aver usato <strong>Evocazione dello spirito primaverile</strong>, Shenhe conferisce a tutti i membri del gruppo vicini i seguenti effetti:",
+      "1": [
+        " Pressione: DAN da abilità elementale e Tripudio elementale aumentati di un 15% per 10 s;",
+        " Pressione prolungata: DAN da attacco normale, caricato e in picchiata aumentati di un 15% per 15 s."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Puntualità esemplare",
+    "description": {
+      "0": "Ottiene un 25% in più di ricompense quando intraprende una spedizione a Liyue per 20 ore."
+    }
+  },
+  "constellation1": {
+    "name": "Cuore puro",
+    "description": {
+      "0": "<strong>Evocazione dello spirito primaverile</strong> può essere usata 1 volta in più."
+    }
+  },
+  "constellation2": {
+    "name": "Concentrazione spirituale",
+    "description": {
+      "0": "<strong>Salvezza della divina damigella</strong> dura 6 s in più. I personaggi attivi all'interno del campo dell'abilità infliggono un 15% di DAN da CRIT da <cryo>Cryo</cryo> extra."
+    }
+  },
+  "constellation3": {
+    "name": "Isolamento",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Evocazione dello spirito primaverile</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Vista acuta",
+    "description": {
+      "0": "Quando i personaggi sotto l'effetto di <strong>Aculeo di ghiaccio</strong> applicato da Shenhe attivano i suoi effetti bonus DAN, Shenhe otterrà un accumulo di Mantra Gelocielo:",
+      "1": [
+        " quando Shenhe usa <strong>Evocazione dello spirito primaverile</strong>, consumerà tutti gli accumuli di Mantra Gelocielo, aumentando di un 5% i DAN inflitti da Evocazione dello spirito primaverile per ogni accumulo usato;",
+        " cumulabile fino a 50 volte. Ogni accumulo dura 60 s."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Ascensione divina",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Salvezza della divina damigella</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Abbandono mistico",
+    "description": {
+      "0": "Quando i personaggi attivano gli effetti di <strong>Aculeo di ghiaccio</strong> infliggendo DAN da attacco normale e caricato, questi non vengono conteggiati ai fini della quota attivazioni."
+    }
+  }
+}

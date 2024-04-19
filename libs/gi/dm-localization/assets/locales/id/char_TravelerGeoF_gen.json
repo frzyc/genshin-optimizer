@@ -1,0 +1,148 @@
+{
+  "auto": {
+    "name": "Foreign Rockblade",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Starfell Sword",
+    "description": {
+      "0": "Kamu membangkitkan sebongkah batu meteor dari dalam tanah untuk mengakibatkan <geo>Geo DMG Area</geo>.",
+      "1": "Batu meteor tersebut dianggap sebagai sebuah <geo>Geo Construct</geo> dan dapat dipanjat atau digunakan untuk memblokir serangan.",
+      "2": "<br/>",
+      "3": "<strong>Tahan</strong>",
+      "4": "Posisi skill ini dapat diubah.",
+      "5": "<br/>",
+      "6": "<i>Kamu berbincang dengan Paimon tentang tujuan terakhir bintang-bintang yang terjatuh.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Durasi Meteorit",
+      "2": "Cooldown",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Wake of Earth",
+    "description": {
+      "0": "Dengan memberikan energi kepada elemen Geo yang jauh di bawah tanah, kamu menciptakan gelombang yang meluas.",
+      "1": "Menghempas musuh di sekitar ke belakang dan mengakibatkan <geo>Geo DMG area</geo>.",
+      "2": "Sebuah dinding batu akan didirikan di ujung gelombangnya.",
+      "3": "Dinding batu ini dianggap sebagai sebuah <geo>Geo Construct</geo> dan dapat digunakan untuk memblokir serangan.",
+      "4": "<br/>",
+      "5": "<i>Kamu dan Paimon berdebat tentang detak gunung-gunung.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Per Gelombang",
+      "1": "Durasi Stonewall",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Shattered Darkrock",
+    "description": {
+      "0": "Mengurangi 2 detik CD <strong>Starfell Sword</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Frenzied Rockslide",
+    "description": {
+      "0": "Serangan tahap terakhir Normal Attack menimbulkan kerusakan yang mengakibatkan <geo>Geo DMG</geo> sebesar 60% ATK ke musuh di sekitar."
+    }
+  },
+  "constellation1": {
+    "name": "Invincible Stonewall",
+    "description": {
+      "0": "Meningkatkan ketahanan terhadap interupsi dan 10% CRIT Rate untuk anggota party yang berada dalam radius <strong>Wake of Earth</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Rockcore Meltdown",
+    "description": {
+      "0": "Saat meteorit yang dibuat oleh <strong>Starfell Sword</strong> hancur, akan terjadi ledakan yang mengakibatkan <geo>Geo DMG area</geo> tambahan setara dengan DMG yang dihasilkan Starfell Sword."
+    }
+  },
+  "constellation3": {
+    "name": "Will of the Rock",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Wake of Earth</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Reaction Force",
+    "description": {
+      "0": "Serangan gelombang <strong>Wake of Earth</strong> memulihkan 5 Energy untuk setiap musuh yang terkena DMG.",
+      "1": "Maksimum dapat memulihkan 25 Energy dengan cara ini setiap kalinya."
+    }
+  },
+  "constellation5": {
+    "name": "Meteorite Impact",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Starfell Sword</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Everlasting Boulder",
+    "description": {
+      "0": "Tembok batu yang diciptakan oleh <strong>Wake of Earth</strong> bertahan 5 detik lebih lama.",
+      "1": "Meteorit yang dibuat oleh <strong>Starfell Sword</strong> bertahan 10 detik lebih lama."
+    }
+  }
+}

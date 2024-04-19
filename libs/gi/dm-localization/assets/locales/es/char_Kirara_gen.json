@@ -1,0 +1,164 @@
+{
+  "name": "Kirara",
+  "title": "La Gata en los Aleros",
+  "description": "Una repartidora de Komaniya Exprés, una empresa de envíos de Inazuma. Es una nekomata a la que le encanta su trabajo y la sociedad humana.",
+  "constellationName": "Arcella",
+  "auto": {
+    "name": "Kirigami",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para ejecutar tres zarpazos hacia delante."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Ataque Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nekopatada voladora",
+    "description": {
+      "0": "<strong>Pulsar una vez</strong>",
+      "1": "Salta con la destreza de un gato que se mueve entre la maleza y golpea al enemigo con una patada voladora que inflige <dendro>Daño Dendro en el AdE</dendro>. A su vez, crea un escudo de transporte seguro que aplica <dendro>Dendro</dendro> sobre Kirara durante un corto periodo de tiempo y tiene un 250% de efectividad de absorción de <dendro>Daño Dendro</dendro>. La cantidad de absorción de daño del escudo aumenta en función de la Vida Máx. de Kirara, y no superará cierto porcentaje de dicha Vida Máx. La absorción de daño restante del escudo podrá acumularse con la otorgada por un nuevo escudo de transporte seguro, reiniciando su duración.",
+      "2": "<br/>",
+      "3": "<strong>Mantener pulsado</strong>",
+      "4": "Reúne la determinación de una repartidora entregada a su trabajo para crear un escudo de transporte seguro idéntico al que obtiene al pulsar una vez y se acurruca en una caja de entrega especial, lo que hace que Kirara entre en el estado de “paquete minino” para moverse y pelear más velozmente.",
+      "5": "<br/>",
+      "6": "<strong>Paquete minino</strong>",
+      "7": [
+        "Inflige <dendro>Daño Dendro</dendro> a los enemigos contra los que impacta. Este efecto solo puede ocurrir una vez cada 0.5 s por cada enemigo.",
+        "En este estado, la Vel. Movimiento, Vel. de Escalada y la capacidad de salto de Kirara aumentan, pero el Coste de Aguante al escalar también es mayor.",
+        "Cuando termina la duración o esta habilidad se vuelve a usar, ejecuta un zarpazo más poderoso que el de pulsar una vez, y que inflige <dendro>Daño Dendro en el AdE</dendro>.",
+        "El estado de paquete minino tiene una duración máxima de 10 s y, cuando el efecto termina, la habilidad entra en TdE. Cuanto más tiempo permanezca Kirara en este estado, mayor será el TdE.",
+        "Esprintar o dejar de escalar cancelará este estado."
+      ],
+      "8": "<br/>",
+      "9": "<i>“¿Quieres saber cuál es el secreto para entregar algo tan rápidamente? Evidentemente, ¡la clave está en las patas!”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de patada voladora",
+      "1": "Absorción de daño del escudo",
+      "2": "Absorción de daño máx. del escudo",
+      "3": "Duración del escudo",
+      "4": "Daño de impacto de paquete minino",
+      "5": "Duración máxima de paquete minino",
+      "6": "Daño de zarpazo",
+      "7": "TdE",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Técnica secreta: Entrega sorpresa",
+    "description": {
+      "0": "Utiliza un paquete especial antiladrones para castigar y aplastar a sus enemigos e infligir <dendro>Daño Dendro en el AdE</dendro>. Cuando el paquete explota, se divide en múltiples <strong>briznas cardamiau-miau</strong>, las cuales a su vez explotan cuando entran en contacto con un enemigo o tras un periodo de tiempo e infligen <dendro>Daño Dendro en el AdE</dendro>.",
+      "1": "<br/>",
+      "2": "<i>“Jeje, esto es para los que les gusta robar paquetes. Delincuentes, ¡no olviden dejar una reseña de 5 estrellas tras recibir el suyo!”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de explosión de briznas cardamiau-miau",
+      "2": "Duración de briznas cardamiau-miau",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cola exorcizadora",
+    "description": {
+      "0": "Cuando Kirara se encuentra en el estado de paquete minino de <strong>Nekopatada voladora</strong>, cada impacto contra un oponente otorga una carga de <strong>paquete reforzado</strong>. Este efecto solo puede ocurrir una vez cada 0.5 s por cada enemigo impactado y puede acumularse hasta 3 veces. Cuando termina el estado de paquete minino, cada carga de paquete reforzado otorga a Kirara un escudo de transporte seguro con una absorción de daño equivalente al 20% de la que tendría un escudo obtenido al utilizar <strong>Nekopatada voladora</strong>. Si Kirara ya se encuentra bajo la protección de un escudo de transporte seguro de Nekopatada voladora, su absorción de daño restante se acumula y su duración se reinicia."
+    }
+  },
+  "passive2": {
+    "name": "Distracción oportuna",
+    "description": {
+      "0": "Por cada 1000 pts. de Vida Máx. que tenga Kirara, el daño infligido por <strong>Nekopatada voladora</strong> aumenta en un 0.4%, y el de <strong>Técnica secreta: Entrega sorpresa</strong> aumenta en un 0.3%."
+    }
+  },
+  "passive3": {
+    "name": "Acecho furtivo",
+    "description": {
+      "0": "Cuando Kirara está en el equipo, tus personajes no asustarán a los animales de los que se puede obtener carne de ave, carne cruda y carne congelada."
+    }
+  },
+  "constellation1": {
+    "name": "Circulación logística",
+    "description": {
+      "0": "Al utilizar <strong>Técnica secreta: Entrega sorpresa</strong>, Kirara crea una <strong>brizna cardamiau-miau</strong> adicional por cada 8000 pts. de Vida Máx. que posea. Solo se pueden crear hasta 4 briznas cardamiau-miau adicionales de esta manera."
+    }
+  },
+  "constellation2": {
+    "name": "Embalaje perfecto",
+    "description": {
+      "0": "Cuando Kirara se encuentra en el estado de paquete minino de <strong>Nekopatada voladora</strong>, otorga escudos de transporte crítico a los demás miembros del equipo con los que impacta.",
+      "1": "La cantidad de absorción de daño de dicho escudo es equivalente al 40% de la absorción de daño máxima de un escudo de transporte seguro de <strong>Nekopatada voladora</strong>, y tiene un 250% de efectividad de absorción de <dendro>Daño Dendro</dendro>.",
+      "2": "El escudo de transporte crítico tiene una duración de 12 s y solo puede otorgarse una vez cada 10 s a cada miembro del equipo."
+    }
+  },
+  "constellation3": {
+    "name": "Conoce a tu vecino",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Nekopatada voladora</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Corcel de Skanda",
+    "description": {
+      "0": "Cuando el personaje en uso está bajo la protección de un <strong>escudo de transporte seguro</strong> o de un <strong>escudo de transporte crítico</strong> y golpea a un enemigo con un Ataque Normal, Cargado o Descendente, Kirara realizará un ataque coordinado utilizando <strong>minibriznas cardamiau-miau</strong> para infligir <dendro>Daño Dendro</dendro> equivalente al 200% de su ATQ. El daño infligido de esta forma se considera daño de Habilidad Definitiva. Este efecto solo puede ocurrir una vez cada 3.8 s y el TdE se comparte entre todos los miembros del equipo."
+    }
+  },
+  "constellation5": {
+    "name": "Periplo diario",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Técnica secreta: Entrega sorpresa</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Infinidad paisajística",
+    "description": {
+      "0": "Después de que Kirara use su Habilidad Elemental o Definitiva, todos los miembros del equipo cercanos obtienen un 12% de todos los Bonos de Daño Elemental durante 15 s."
+    }
+  }
+}

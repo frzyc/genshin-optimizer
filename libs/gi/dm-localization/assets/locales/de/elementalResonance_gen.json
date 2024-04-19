@@ -1,0 +1,34 @@
+{
+  "ProtectiveCanopy": {
+    "name": "Verwobene Wehr",
+    "desc": "Erhöht den WDS gegen alle Elemente um 15 % und den phys. WDS um 15 %."
+  },
+  "FerventFlames": {
+    "name": "Aufrichtiges Feuer",
+    "desc": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Kryo-Attribut um 40 % und erhöht den ANG um 25 %."
+  },
+  "SoothingWater": {
+    "name": "Heilendes Wasser",
+    "desc": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Pyro-Attribut um 40 % und erhöht die max. LP um 25 %."
+  },
+  "ShatteringIce": {
+    "name": "Zerspringendes Eis",
+    "desc": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Elektro-Attribut um 40 % und erhöht die KT bei Angriffen auf von Kryo-Effekten oder Gefroren betroffenen Gegnern um 15 %."
+  },
+  "HighVoltage": {
+    "name": "Energiereicher Blitz",
+    "desc": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Hydro-Attribut um 40 % und erschafft beim Auslösen der Reaktionen „Supraleiter“, „Überladen“, „Unter Strom“, „Urwuchs“, „Suprawuchs“ und „Supraspross“ mit einer Wahrscheinlichkeit von 100 % ein Elektro-Elementarteilchen, 5 s Abklingzeit."
+  },
+  "ImpetuousWinds": {
+    "name": "Ungestümer Wind",
+    "desc": "Verringert den Ausdauerverbrauch um 15 %, erhöht die Bewegungsgeschwindigkeit um 10 % und verkürzt die Abklingzeit von Fähigkeiten um 5 %."
+  },
+  "EnduringRock": {
+    "name": "Beständiges Gestein",
+    "desc": "Erhöht die Schildeffizienz um 15 % und verleiht Figuren im Schutz von Schilden folgende Merkmale: Erhöht den verursachten Schaden um 15 % und verringert den Geo-WDS von Gegnern, denen die Figuren Schaden zufügen, um 20 %. Hält 15 s."
+  },
+  "SprawlingGreenery": {
+    "name": "Überwucherndes Gras",
+    "desc": "Erhöht die Elementarkunde um 50 Punkte. Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe beim Auslösen der Reaktionen „In Flammen“ „Urwuchs“ und „Sprießen“ 6 s lang um 30 Punkte. Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe beim Auslösen der Reaktionen „Suprawuchs“, „Rankenwuchs“, „Supraspross“ und „Flammenspross“ 6 s lang um 20 Punkte. Die Wirkungsdauer der oben genannten Wirkungen wird unabhängig voneinander berechnet."
+  }
+}

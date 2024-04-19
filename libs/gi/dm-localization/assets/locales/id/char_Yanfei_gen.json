@@ -1,0 +1,163 @@
+{
+  "name": "Yanfei",
+  "title": "Wise Innocence",
+  "description": "Seorang konsultan hukum yang terkenal di Liyue, di tubuh gadis muda ini juga mengalir darah Adeptus.",
+  "constellationName": "Bestia Iustitia",
+  "auto": {
+    "name": "Seal of Approval",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan bola api yang mengakibatkan <pyro>Pyro DMG</pyro>.",
+        "2": "Ketika Normal Attack Yanfei mengenai musuh, Yanfei akan mendapatkan 1 Scarlet Seal. Scarlet Seal maksimum yang bisa dikumpulkan Yanfei adalah 3 buah. Setiap kali efek ini terpicu, durasi dari Scarlet Seal yang telah terkumpul akan diperbarui.",
+        "3": "Setiap Scarlet Seal akan mengurangi konsumsi Stamina Yanfei dan akan menghilang jika Yanfei meninggalkan medan pertempuran."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi Stamina dan semua Scarlet Seal untuk mengakibatkan <pyro>Pyro DMG Area</pyro> setelah jeda singkat.",
+        "2": "Area dan DMG dari Charged Attack ini akan meluas dan meningkat sesuai dengan jumlah Scarlet Seal yang dikonsumsi."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Pyro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <pyro>Pyro DMG Area</pyro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "Pengurangan Konsumsi Stamina Scarlet Seal",
+      "6": "Durasi Scarlet Seal",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Signed Edict",
+    "description": {
+      "0": "Memanggil api yang mengakibatkan <pyro>Pyro DMG Area</pyro>.",
+      "1": "Yanfei akan mendapatkan Scarlet Seal dalam jumlah maksimum saat Signed Edict mengenai musuh.",
+      "2": "<br/>",
+      "3": "<i>Selain dari penggunaan legalnya, segel Yanfei juga dilengkapi dengan syarat dan ketentuan tambahan yang disesuaikan. Bagaimanapun juga, Bagian Urusan Sipil tidak bisa mengubah hukum alam.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Done Deal",
+    "description": {
+      "0": "Memicu semburan api dahsyat yang menyerbu musuh di sekitar dan mengakibatkan <pyro>Pyro DMG Area</pyro>, serta memberikan Scarlet Seal dalam jumlah maksimum dan efek Brilliance pada Yanfei.",
+      "1": "<br/>",
+      "2": "<strong>Brilliance</strong>",
+      "3": "Memiliki efek berikut:",
+      "4": [
+        "Memberikan Scarlet Seal pada Yanfei setiap beberapa saat.",
+        "Meningkatkan DMG yang diakibatkan oleh Charged Attack.",
+        "Efek Brilliance akan berakhir saat Yanfei meninggalkan medan pertempuran atau gugur."
+      ],
+      "5": "<br/>",
+      "6": "<i>\"Inilah daftar istilah lengkap untuk urusan hidup dan mati — maksudku adalah hidupku dan kematianmu!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "",
+      "2": "Jeda Pemberian Scarlet Seal",
+      "3": "Peningkatan DMG Charged Attack",
+      "4": "Durasi",
+      "5": "Cooldown",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Proviso",
+    "description": {
+      "0": "Saat Yanfei mengonsumsi Scarlet Seal dengan menggunakan Charged Attack, setiap Scarlet Seal akan meningkatkan 5% <pyro>Bonus Pyro DMG</pyro> Yanfei selama 6 detik. Jika Yanfei menggunakan Charged Attack sekali lagi selama durasi masih berlangsung, maka efek sebelumnya akan hilang."
+    }
+  },
+  "passive2": {
+    "name": "Blazing Eye",
+    "description": {
+      "0": "Saat Charged Attack Yanfei mengakibatkan CRIT pada musuh, Yanfei akan mengakibatkan <pyro>Pyro DMG Area</pyro> tambahan sebesar 80% ATK Yanfei. DMG ini terhitung sebagai DMG Charged Attack."
+    }
+  },
+  "passive3": {
+    "name": "Encyclopedic Expertise",
+    "description": {
+      "0": "Memperlihatkan lokasi <strong>produk khas Liyue</strong> di sekitar pada peta kecil."
+    }
+  },
+  "constellation1": {
+    "name": "The Law Knows No Kindness",
+    "description": {
+      "0": "Saat Yanfei melancarkan Charged Attack, setiap Scarlet Seal yang terkumpul akan mengurangi 10% konsumsi stamina Charged Attack dan meningkatkan ketahanan terhadap interupsi selama Charged Attack berlangsung."
+    }
+  },
+  "constellation2": {
+    "name": "Right of Final Interpretation",
+    "description": {
+      "0": "Meningkatkan 20% CRIT Rate Charged Attack Yanfei terhadap musuh dengan HP kurang dari 50%."
+    }
+  },
+  "constellation3": {
+    "name": "Samadhi Fire-Forged",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Signed Edict</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Supreme Amnesty",
+    "description": {
+      "0": "Saat <strong>Done Deal</strong> digunakan:",
+      "1": "Menciptakan perisai yang dapat menahan DMG hingga 45% dari Max HP Yanfei selama 15 detik.",
+      "2": "Perisai ini dapat menahan <pyro>Pyro DMG</pyro> 250% lebih efektif."
+    }
+  },
+  "constellation5": {
+    "name": "Abiding Affidavit",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Done Deal</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Extra Clause",
+    "description": {
+      "0": "Meningkatkan jumlah maksimum Scarlet Seal sebanyak 1."
+    }
+  }
+}

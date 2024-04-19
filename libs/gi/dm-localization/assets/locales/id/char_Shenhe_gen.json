@@ -1,0 +1,171 @@
+{
+  "name": "Shenhe",
+  "title": "Lonesome Transcendence",
+  "description": "Seorang murid Adeptus dengan temperamen yang sedikit unik. Karena sudah lama hidup terisolasi di pegunungan Liyue, sifatnya juga menjadi acuh tak acuh dan menjaga jarak seperti para Adeptus.",
+  "constellationName": "Crista Doloris",
+  "auto": {
+    "name": "Dawnstar Piercer",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan tombak."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalurnya."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Spring Spirit Summoning",
+    "description": {
+      "0": "Memadatkan embun beku perak untuk mengusir semua iblis.",
+      "1": "Memberikan efek \"Icy Quill\" pada seluruh anggota party di sekitar dan mengakibatkan <cryo>Cryo DMG</cryo> berdasarkan cara skill dilancarkan, yaitu ditekan atau ditahan.",
+      "2": "<br/>",
+      "3": "<strong>Mode Tekan</strong>",
+      "4": "Menerjang ke arah depan bersama \"Talisman Spirit\" dan mengakibatkan <cryo>Cryo DMG</cryo> pada musuh yang berada di jalur serangan.",
+      "5": "<br/>",
+      "6": "<strong>Mode Tahan</strong>",
+      "7": "Memerintahkan Talisman Spirit untuk mengakibatkan <cryo>Cryo DMG Area</cryo>.",
+      "8": "<br/>",
+      "9": "<strong>Icy Quill</strong>",
+      "10": "Saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, dan Elemental Burst mengakibatkan <cryo>Cryo DMG</cryo> kepada musuh, DMG yang diakibatkan akan meningkat sesuai dengan ATK Shenhe saat ini.",
+      "11": "<br/>",
+      "12": "Efek Icy Quill akan hilang setelah durasinya berakhir atau lapisannya terkonsumsi dalam jumlah tertentu. Icy Quill yang dilancarkan dengan Mode Tahan akan memiliki durasi lebih lama dan jumlah lapisan lebih banyak.",
+      "13": "Saat satu serangan <cryo>Cryo DMG</cryo> mengenai beberapa musuh secara bersamaan, jumlah lapisan Icy Quill yang dikonsumsi akan disesuaikan dengan jumlah musuh yang terkena serangan. Efek dan jumlah lapisan Icy Quill untuk setiap Karakter dalam party akan dihitung secara terpisah.",
+      "14": "<br/>",
+      "15": "<i>\"Kekuatan roh bukanlah suatu kepalsuan. Gadis suci ini telah diperintahkan untuk segera bergegas!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill (Mode Tekan)",
+      "1": "DMG Skill (Mode Tahan)",
+      "2": "Peningkatan DMG",
+      "3": "Durasi Mode Tekan/Tahan",
+      "4": "Jumlah Lapisan Mode Tekan/Tahan",
+      "5": "Cooldown (Mode Tekan)",
+      "6": "Cooldown (Mode Tahan)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Divine Maiden's Deliverance",
+    "description": {
+      "0": "Melepaskan kekuatan Talisman Spirit, membiarkannya bergerak bebas di dunia ini, dan mengakibatkan <cryo>Cryo DMG Area</cryo>.",
+      "1": "Talisman Spirit akan menciptakan sebuah area yang mengurangi <cryo>Cryo RES</cryo> dan Physical RES musuh yang berada di dalamnya. Selama durasinya, area ini terus mengakibatkan <cryo>Cryo DMG</cryo> kepada musuh yang berada di dalamnya.",
+      "2": "<br/>",
+      "3": "<i>\"Jalan Adeptus tidaklah didasarkan pada sesuatu yang abstrak dan misterius. Hanya dengan mengamati perubahan di langit dan bumi, dan memahami hukum sebab akibat di dunia ini, barulah kebenaran dapat dipahami.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Penurunan RES",
+      "2": "DMG Berkelanjutan",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Deific Embrace",
+    "description": {
+      "0": "Karakter aktif yang berada di dalam area <strong>Divine Maiden's Deliverance</strong> akan mendapatkan 15% <cryo>Cryo DMG Bonus</cryo>."
+    }
+  },
+  "passive2": {
+    "name": "Spirit Communion Seal",
+    "description": {
+      "0": "Setelah Shenhe melancarkan <strong>Spring Spirit Summoning</strong>, anggota party di sekitar akan mendapatkan efek berikut:",
+      "1": [
+        "Mode Tekan: Meningkatkan 15% DMG Elemental Skill dan Elemental Burst selama 10 detik.",
+        "Mode Tahan: Meningkatkan 15% DMG Normal Attack, Charged Attack, dan Plunging Attack selama 15 detik."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Precise Comings and Goings",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Liyue selama 20 jam, hadiah yang didapatkan akan bertambah 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Clarity of Heart",
+    "description": {
+      "0": "Jumlah penggunaan <strong>Spring Spirit Summoning</strong> bertambah 1 kali."
+    }
+  },
+  "constellation2": {
+    "name": "Centered Spirit",
+    "description": {
+      "0": "Durasi <strong>Divine Maiden's Deliverance</strong> diperpanjang 6 detik. CRIT DMG dari <cryo>Cryo DMG</cryo> untuk Karakter aktif yang berada di dalam area meningkat 15%."
+    }
+  },
+  "constellation3": {
+    "name": "Seclusion",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Spring Spirit Summoning</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Insight",
+    "description": {
+      "0": "Saat Karakter yang berada dalam status <strong>Icy Quill</strong> dari Shenhe sendiri memicu Bonus DMG dari Icy Quill, Shenhe akan mendapatkan 1 lapis Skyfrost Mantra:",
+      "1": [
+        "Saat Shenhe melancarkan <strong>Spring Spirit Summoning</strong>, dia akan mengonsumsi semua lapisan Skyfrost Mantra dan meningkatkan DMG yang diakibatkan oleh Spring Spirit Summoning sebesar 5% untuk setiap lapisan yang dikonsumsi.",
+        "Efek ini dapat ditumpuk hingga 50 lapis dan berlangsung selama 60 detik."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Divine Attainment",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Divine Maiden's Deliverance</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Mystical Abandon",
+    "description": {
+      "0": "Saat Karakter memicu efek <strong>Icy Quill</strong> melalui DMG Normal Attack dan Charged Attack, jumlah lapisan Icy Quill tidak akan berkurang."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Cronache del Padiglione nel deserto",
+  "setEffects": {
+    "2": "Bonus DAN da Anemo +15%.",
+    "4": "Quando gli attacchi caricati colpiscono gli avversari, la VEL dell'attacco normale del personaggio aumenta di un 10%, mentre i DAN da attacco normale, caricato e in picchiata aumentano di un 40% per 15 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Primi giorni della Città dei Re",
+      "desc": "Un fiore artificiale che emette un misterioso scintillio. Tendendo l'orecchio verso di esso, è possibile udire il vago riecheggiare di dolci risate."
+    },
+    "plume": {
+      "name": "Fine del regno dorato",
+      "desc": "Una piuma artificiale cristallina, eredità di un antico regno umano. Il suo interno sembra racchiudere uno stridio di aquile che si librano in volo."
+    },
+    "sands": {
+      "name": "Orologio del sentiero perduto",
+      "desc": "Un antico orologio meccanico. I frammenti di djinn nella parte centrale continuano a emettere una luce indistinta, vibrando leggermente come se tentassero di comunicare..."
+    },
+    "goblet": {
+      "name": "Difensore dei sogni ammalianti",
+      "desc": "Un antico calice d'oro superbamente e riccamente lavorato. Strani mormorii sembrano provenire dal suo interno vuoto."
+    },
+    "circlet": {
+      "name": "Lascito della nobiltà del deserto",
+      "desc": "Degli orecchini in oro ambrato che brillano di una luce insolita."
+    }
+  }
+}

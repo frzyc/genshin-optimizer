@@ -1,0 +1,24 @@
+{
+  "name": "Sinfonia errante",
+  "description": {
+    "0": "Un grosso taccuino che contiene spartiti musicali. Sebbene danneggiato dalle tarme e da un'usura avanzata, le parole al suo interno racchiudono ancora un grande potere."
+  },
+  "passiveName": "Debutto",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando il personaggio scende in campo, riceve un tema musicale casuale per 10 s. Si può verificare una sola volta ogni 30 s. Recitativo: l'ATT aumenta di un <cryo>60%</cryo>. Aria: aumenta i DAN elementali per tutti gli elementi di un <cryo>48%</cryo>. Interludio: la maestria elementale aumenta di <cryo>240</cryo>."
+    },
+    "1": {
+      "0": "Quando il personaggio scende in campo, riceve un tema musicale casuale per 10 s. Si può verificare una sola volta ogni 30 s. Recitativo: l'ATT aumenta di un <cryo>75%</cryo>. Aria: aumenta i DAN elementali per tutti gli elementi di un <cryo>60%</cryo>. Interludio: la maestria elementale aumenta di <cryo>300</cryo>."
+    },
+    "2": {
+      "0": "Quando il personaggio scende in campo, riceve un tema musicale casuale per 10 s. Si può verificare una sola volta ogni 30 s. Recitativo: l'ATT aumenta di un <cryo>90%</cryo>. Aria: aumenta i DAN elementali per tutti gli elementi di un <cryo>72%</cryo>. Interludio: la maestria elementale aumenta di <cryo>360</cryo>."
+    },
+    "3": {
+      "0": "Quando il personaggio scende in campo, riceve un tema musicale casuale per 10 s. Si può verificare una sola volta ogni 30 s. Recitativo: l'ATT aumenta di un <cryo>105%</cryo>. Aria: aumenta i DAN elementali per tutti gli elementi di un <cryo>84%</cryo>. Interludio: la maestria elementale aumenta di <cryo>420</cryo>."
+    },
+    "4": {
+      "0": "Quando il personaggio scende in campo, riceve un tema musicale casuale per 10 s. Si può verificare una sola volta ogni 30 s. Recitativo: l'ATT aumenta di un <cryo>120%</cryo>. Aria: aumenta i DAN elementali per tutti gli elementi di un <cryo>96%</cryo>. Interludio: la maestria elementale aumenta di <cryo>480</cryo>."
+    }
+  }
+}

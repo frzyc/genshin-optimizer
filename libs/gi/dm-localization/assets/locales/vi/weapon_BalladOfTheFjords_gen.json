@@ -1,0 +1,24 @@
+{
+  "name": "Khúc Ca Vịnh Hẹp",
+  "description": {
+    "0": "Ngọn thương mà người bắt cá ở vùng băng giá sử dụng, tuyệt đối không buông tha cho bất cứ con mồi nào."
+  },
+  "passiveName": "Câu Chuyện Lãnh Nguyên",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi trong đội tồn tại ít nhất 3 nhân vật không cùng loại nguyên tố, Tinh Thông Nguyên Tố tăng <cryo>120</cryo> điểm."
+    },
+    "1": {
+      "0": "Khi trong đội tồn tại ít nhất 3 nhân vật không cùng loại nguyên tố, Tinh Thông Nguyên Tố tăng <cryo>150</cryo> điểm."
+    },
+    "2": {
+      "0": "Khi trong đội tồn tại ít nhất 3 nhân vật không cùng loại nguyên tố, Tinh Thông Nguyên Tố tăng <cryo>180</cryo> điểm."
+    },
+    "3": {
+      "0": "Khi trong đội tồn tại ít nhất 3 nhân vật không cùng loại nguyên tố, Tinh Thông Nguyên Tố tăng <cryo>210</cryo> điểm."
+    },
+    "4": {
+      "0": "Khi trong đội tồn tại ít nhất 3 nhân vật không cùng loại nguyên tố, Tinh Thông Nguyên Tố tăng <cryo>240</cryo> điểm."
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "name": "Albedo",
+  "title": "Kreideprinz",
+  "description": "Seorang jenius yang dikenal dengan julukan Kreideprinz, dia adalah Kepala Alkemis dan Kapten Tim Investigasi Knights of Favonius.",
+  "constellationName": "Princeps Cretaceus",
+  "auto": {
+    "name": "Favonius Bladework - Weiss",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 tebasan pedang berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang ke depan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Abiogenesis: Solar Isotoma",
+    "description": {
+      "0": "Albedo menciptakan Solar Isotoma yang mengakibatkan <geo>Geo DMG area</geo>.",
+      "1": "<br/>",
+      "2": "<strong>Solar Isotoma</strong>",
+      "3": "Mempunyai efek sebagai berikut:",
+      "4": [
+        "Saat musuh yang berada dalam area Solar Isotoma menerima DMG, Solar Isotoma akan menghasilkan Transient Blossom yang mengakibatkan <geo>Geo DMG area</geo>. DMG yang diakibatkan akan berdasarkan pada DEF Albedo.",
+        "Transient Blossom hanya dapat muncul setiap 2 detik.",
+        "Saat Karakter berada di atas Solar Isotoma, Solar Isotoma akan mengakumulasi kekuatan Geo dan mengangkat Karakter ke atas platform kristal. Hanya bisa terdapat satu platform kristal dalam waktu bersamaan.",
+        "Hanya bisa terdapat satu Solar Isotoma yang diciptakan Albedo di waktu yang bersamaan. Solar Isotoma dianggap sebagai <geo>Geo Construct</geo>."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Tahan</strong>",
+      "7": "Untuk mengatur lokasi skill.",
+      "8": "<br/>",
+      "9": "<i>Bunga Geo ini mempunyai ciri khas yang mencerminkan tujuan utama ilmu alkimia: Lahir dari bumi dan naik ke langit, untuk menjadi matahari.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Transient Blossom",
+      "2": "Durasi",
+      "3": "Cooldown Skill",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rite of Progeniture: Tectonic Tide",
+    "description": {
+      "0": "Di bawah perintah Albedo, kristal Geo melonjak dan meledak, mengakibatkan <geo>Geo DMG area</geo> di hadapan Albedo.",
+      "1": "Jika Solar Isotoma yang dibuat oleh Albedo sendiri ada di sekitarnya, maka 7 Fatal Blossom akan muncul di area sekitar Solar Isotoma dan menyebabkan ledakan yang mengakibatkan <geo>Geo DMG area</geo>.",
+      "2": "<br/>",
+      "3": "DMG Tectonic Tide dan DMG Fatal Blossom tidak akan menghasilkan Transient Blossom.",
+      "4": "<br/>",
+      "5": "<i>Di bawah perintah Kreideprinz, gelombang tektonik penciptaan akan menghasilkan kehidupan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Burst",
+      "1": "DMG Fatal Blossom",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Calcite Might",
+    "description": {
+      "0": "Transient Blossom yang muncul karena <strong>Abiogenesis: Solar Isotoma</strong> mengakibatkan 25% DMG lebih besar kepada musuh dengan HP kurang dari 50%."
+    }
+  },
+  "passive2": {
+    "name": "Homuncular Nature",
+    "description": {
+      "0": "<strong>Rite of Progeniture: Tectonic Tide</strong> akan meningkatkan 125 Elemental Mastery bagi anggota party di sekitarnya selama 10 detik."
+    }
+  },
+  "passive3": {
+    "name": "Flash of Genius",
+    "description": {
+      "0": "Saat membuat Material Ascension Senjata, memiliki 10% kemungkinan untuk mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "Flower of Eden",
+    "description": {
+      "0": "Transient Blossom yang muncul dari skill <strong>Abiogenesis: Solar Isotoma</strong> akan memulihkan 1,2 Energy Albedo."
+    }
+  },
+  "constellation2": {
+    "name": "Opening of Phanerozoic",
+    "description": {
+      "0": "Transient Blossom yang dihasilkan oleh <strong>Abiogenesis: Solar Isotoma</strong> memberikan Albedo Fatal Reckoning selama 30 detik:",
+      "1": [
+        "Melancarkan skill <strong>Rite of Progeniture: Tectonic Tide</strong> akan mengonsumsi seluruh lapisan Fatal Reckoning, meningkatkan DMG yang diakibatkan oleh Tectonic Tide dan Fatal Blossom berdasarkan jumlah lapisan yang dikonsumsi.",
+        "Setiap lapis Fatal Reckoning akan meningkatkan DMG sebesar 30% DEF Albedo."
+      ],
+      "2": "Efek ini dapat ditumpuk hingga 4 kali."
+    }
+  },
+  "constellation3": {
+    "name": "Grace of Helios",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Abiogenesis: Solar Isotoma</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Descent of Divinity",
+    "description": {
+      "0": "Solar Isotoma meningkatkan 30% DMG Plunging Attack untuk Karakter yang berada di dalam area Solar Isotoma."
+    }
+  },
+  "constellation5": {
+    "name": "Tide of Hadean",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Rite of Progeniture: Tectonic Tide</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Dust of Purification",
+    "description": {
+      "0": "Solar Isotoma akan meningkatkan 17% DMG Karakter aktif yang berada dalam lingkup areanya dan dilindungi oleh perisai yang terbuat dari Crystallize."
+    }
+  }
+}

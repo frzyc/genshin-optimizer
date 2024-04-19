@@ -1,0 +1,164 @@
+{
+  "name": "Chevreuse",
+  "title": "Người Thực Thi Công Lý",
+  "description": "Đội trưởng Đội Tuần Tra Đặc Biệt luôn tuân thủ \"chính nghĩa\" trong lòng. Khẩu súng hỏa mai trong tay chỉ hướng về những kẻ có tội.",
+  "constellationName": "Cung Kiếm Súng",
+  "auto": {
+    "name": "Lưỡi Lê Cải Tiến",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Sát Thương Khi Rơi",
+      "7": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Đánh Chặn Nhanh Tầm Gần",
+    "description": {
+      "0": "Chevreuse giơ cao súng hỏa mai để bắn kẻ địch, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
+      "1": "Trong một khoảng thời gian sau khi Chevreuse bắn sẽ liên tục hồi phục HP cho nhân vật của bản thân trong trận hiện tại, lượng hồi phục căn cứ vào giới hạn HP của Chevreuse.",
+      "2": "Khi Nhấn Giữ sẽ thi triển theo cách thức khác.",
+      "3": "<br/>",
+      "4": "<strong>Nhấn Giữ</strong>",
+      "5": "Tiến hành ngắm chuẩn, khóa một kẻ địch trong tầm ngắm để bắn một phát đánh chặn chính xác; Nếu Chevreuse có \"Đầu Đạn Quá Tải\" thì sẽ chuyển thành bắn Đầu Đạn Quá Tải đó để gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> lớn hơn trong phạm vi rộng hơn.",
+      "6": "Chevreuse sẽ nhận 1 Đầu Đạn Quá Tải khi nhân vật trong đội gần đó kích hoạt phản ứng Quá Tải, tối đa chỉ sở hữu 1 Đầu Đạn Quá Tải cùng lúc.",
+      "7": "<br/>",
+      "8": "<strong>Sức Mạnh Nền Tảng: Ousia</strong>",
+      "9": "Mỗi cách một khoảng thời gian, \"Đánh Chặn Nhanh Tầm Gần\" của Chevreuse khi bắn trúng sẽ triệu hồi Lưỡi Dao Nổi Sóng, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> thuộc tính Ousia.",
+      "10": "<br/>",
+      "11": "<i>\"Thực ra trong quy định chỉ có thuật ngữ 'đánh chặn' thôi, nhưng nhân vật chính trong tiểu thuyết cho rằng tạo thêm chút kiểu cách cho tên kỹ năng sẽ vừa có thể khiến đồng đội phấn chấn hơn, vừa khiến đối thủ dè chừng hơn... Tôi cảm thấy có lý, nên đã thay đổi quy định đó rồi!\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Nhấn",
+      "1": "Sát Thương Nhấn Giữ",
+      "2": "Sát Thương Đầu Đạn Quá Tải",
+      "3": "Lượng Trị Liệu Duy Trì",
+      "4": "Trị Liệu Duy Trì",
+      "5": "Sát Thương Lưỡi Dao Nổi Sóng",
+      "6": "Giãn Cách Lưỡi Dao Nổi Sóng",
+      "7": "CD",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Bom Chùm Oanh Tạc",
+    "description": {
+      "0": "Chevreuse dùng súng hỏa mai bắn Bom Đạn Chùm vào kẻ địch, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>. Bom Đạn Chùm khi trúng sẽ phân tách thành nhiều quả Bom Nổ Kép.",
+      "1": "Bom Nổ Kép sẽ phát nổ sau một thời gian ngắn, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> cho kẻ địch gần đó.",
+      "2": "<br/>",
+      "3": "<i>\"Về mặt lý thuyết, cho nổ một khu vực hình chữ nhật sẽ có hiệu quả trong việc tiêu diệt đội hình địch. Tuy nhiên, sóng xung kích của vụ nổ lại có hình tròn, giống như hầu hết các loại bánh vậy, nên những quả bom kép vòng quanh rìa sẽ như trái cây trang trí trên bánh thôi.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Bom Đạn Chùm",
+      "1": "Sát Thương Bom Nổ Kép",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Chiến Thuật Phối Hợp Tiên Phong",
+    "description": {
+      "0": "Khi loại nguyên tố của tất cả nhân vật trong đội là <pyro>Hỏa</pyro> hoặc <electro>Lôi</electro>, đồng thời có ít nhất một nhân vật nguyên tố Hỏa và một nhân vật nguyên tố Lôi trong đó:",
+      "1": "Chevreuse sẽ cung cấp hiệu quả \"Chiến Thuật Phối Hợp\" cho nhân vật trong đội gần đó: Sau khi nhân vật kích hoạt phản ứng Quá Tải, sẽ khiến kẻ địch chịu ảnh hưởng bởi lần phản ứng này giảm Kháng Nguyên Tố <pyro>Hỏa</pyro> và <electro>Lôi</electro> đi 40% trong 6s.",
+      "2": "Khi loại nguyên tố của nhân vật trong đội hiện tại không thỏa mãn điều kiện của thiên phú, sẽ xóa đi hiệu quả \"Chiến Thuật Phối Hợp\" đã có."
+    }
+  },
+  "passive2": {
+    "name": "Phối Hợp Vũ Lực Xuyên Thấu",
+    "description": {
+      "0": "Chevreuse sau khi bắn Đầu Đạn Quá Tải của kỹ năng <strong>Đánh Chặn Nhanh Tầm Gần</strong>, sẽ khiến tất cả nhân vật nguyên tố <pyro>Hỏa</pyro> và <electro>Lôi</electro> trong đội gần đó tăng 1% tấn công với mỗi 1000 điểm giới hạn HP của Chevreuse, duy trì 30s. Tối đa có thể tăng 40% tấn công bằng cách này."
+    }
+  },
+  "passive3": {
+    "name": "Sách Lược Hành Quân Thần Tốc",
+    "description": {
+      "0": "Giảm 20% tiêu hao thể lực khi xung kích cho nhân vật trong đội của bản thân.",
+      "1": "Không thể cộng dồn với buff Thiên Phú cố định có cùng hiệu quả."
+    }
+  },
+  "constellation1": {
+    "name": "Sách Lược Ổn Định Trận Hình",
+    "description": {
+      "0": "Nhân vật trong trận hiện tại có trạng thái \"Chiến Thuật Phối Hợp\" (Không bao gồm bản thân Chevreuse) khi kích hoạt phản ứng Quá Tải sẽ hồi phục 6 điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 10s tối đa kích hoạt một lần.",
+      "1": "Cần mở khóa thiên phú \"Chiến Thuật Phối Hợp Tiên Phong\"."
+    }
+  },
+  "constellation2": {
+    "name": "Phương Pháp Đánh Úp Dẫn Nổ",
+    "description": {
+      "0": "Nhấn Giữ thi triển <strong>Đánh Chặn Nhanh Tầm Gần</strong> khi bắn trúng, sẽ kích hoạt 2 lần nổ lan ở vị trí trúng phải. Mỗi lần nổ sẽ gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> tương đương với 120% tấn công của Chevreuse. Hiệu quả này mỗi 10s tối đa kích hoạt 1 lần, sát thương gây ra bởi cách thức này sẽ được xem là sát thương Kỹ Năng Nguyên Tố."
+    }
+  },
+  "constellation3": {
+    "name": "Kỹ Thuật Nạp Đạn Thuần Thục",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Đánh Chặn Nhanh Tầm Gần</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Bí Quyết Bắn Nhanh Nhiều Lần",
+    "description": {
+      "0": "Sau khi thi triển <strong>Bom Chùm Oanh Tạc</strong>, Chevreuse Nhấn Giữ thi triển <strong>Đánh Chặn Nhanh Tầm Gần</strong> sẽ không vào trạng thái thời gian chờ. Hiệu quả này tối đa duy trì 6s, hoặc sẽ xóa sau khi Nhấn Giữ thi triển Đánh Chặn Nhanh Tầm Gần lần 2."
+    }
+  },
+  "constellation5": {
+    "name": "Tăng Cường Hỏa Lực Đạn Dược",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Bom Chùm Oanh Tạc</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Truy Nã Tội Ác Cùng Cực",
+    "description": {
+      "0": "Sau khi hiệu quả trị liệu của <strong>Đánh Chặn Nhanh Tầm Gần</strong> duy trì 12s, sẽ hồi phục một lần cho toàn bộ nhân vật trong đội gần đó một lượng HP bằng 10% giới hạn HP của Chevreuse.",
+      "1": "Nhân vật trong đội sau khi nhận được trị liệu từ Đánh Chặn Nhanh Tầm Gần, sẽ nhận được 20% <pyro>Buff Sát Thương Nguyên Tố Hỏa</pyro> và <electro>Buff Sát Thương Nguyên Tố Lôi</electro> trong 8s, cộng dồn 3 tầng, mỗi tầng tính giờ riêng."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Chamado Ecoante da Garça",
+  "description": {
+    "0": "Um leque esculpido em jade puro, ao redor do qual circula uma antiga aura de Força Adepti."
+  },
+  "passiveName": "Axioma da Queda da Nuvem",
+  "passiveDescription": {
+    "0": {
+      "0": "Após o personagem que está com essa arma equipada atingir um inimigo com um Ataque Imersivo, aumenta o Dano do Ataque Imersivo de todos os membros próximos da equipe em <cryo>28%</cryo> por 20s. Quando o Ataque Imersivo dos personagens próximos atinge um inimigo, regenera <cryo>2.5</cryo> de Energia Elemental para o personagem que está com essa arma equipada. É possível regenerar Energia Elemental uma vez a cada 0.7s dessa forma. O personagem que está com essa arma equipada pode regenerar Energia Elemental mesmo não estando ativo no campo de batalha."
+    },
+    "1": {
+      "0": "Após o personagem que está com essa arma equipada atingir um inimigo com um Ataque Imersivo, aumenta o Dano do Ataque Imersivo de todos os membros próximos da equipe em <cryo>41%</cryo> por 20s. Quando o Ataque Imersivo dos personagens próximos atinge um inimigo, regenera <cryo>2.75</cryo> de Energia Elemental para o personagem que está com essa arma equipada. É possível regenerar Energia Elemental uma vez a cada 0.7s dessa forma. O personagem que está com essa arma equipada pode regenerar Energia Elemental mesmo não estando ativo no campo de batalha."
+    },
+    "2": {
+      "0": "Após o personagem que está com essa arma equipada atingir um inimigo com um Ataque Imersivo, aumenta o Dano do Ataque Imersivo de todos os membros próximos da equipe em <cryo>54%</cryo> por 20s. Quando o Ataque Imersivo dos personagens próximos atinge um inimigo, regenera <cryo>3</cryo> de Energia Elemental para o personagem que está com essa arma equipada. É possível regenerar Energia Elemental uma vez a cada 0.7s dessa forma. O personagem que está com essa arma equipada pode regenerar Energia Elemental mesmo não estando ativo no campo de batalha."
+    },
+    "3": {
+      "0": "Após o personagem que está com essa arma equipada atingir um inimigo com um Ataque Imersivo, aumenta o Dano do Ataque Imersivo de todos os membros próximos da equipe em <cryo>67%</cryo> por 20s. Quando o Ataque Imersivo dos personagens próximos atinge um inimigo, regenera <cryo>3.25</cryo> de Energia Elemental para o personagem que está com essa arma equipada. É possível regenerar Energia Elemental uma vez a cada 0.7s dessa forma. O personagem que está com essa arma equipada pode regenerar Energia Elemental mesmo não estando ativo no campo de batalha."
+    },
+    "4": {
+      "0": "Após o personagem que está com essa arma equipada atingir um inimigo com um Ataque Imersivo, aumenta o Dano do Ataque Imersivo de todos os membros próximos da equipe em <cryo>80%</cryo> por 20s. Quando o Ataque Imersivo dos personagens próximos atinge um inimigo, regenera <cryo>3.5</cryo> de Energia Elemental para o personagem que está com essa arma equipada. É possível regenerar Energia Elemental uma vez a cada 0.7s dessa forma. O personagem que está com essa arma equipada pode regenerar Energia Elemental mesmo não estando ativo no campo de batalha."
+    }
+  }
+}

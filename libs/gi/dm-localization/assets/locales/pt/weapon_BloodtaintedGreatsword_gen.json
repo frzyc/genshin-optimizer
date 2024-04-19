@@ -1,0 +1,24 @@
+{
+  "name": "Espadão Sangrento",
+  "description": {
+    "0": "Uma espada de aço que quem dizem ter sido revestida com sangue de dragão, tornando-a invulnerável ao dano. Contudo, este bônus não é estendido ao seu portador."
+  },
+  "passiveName": "Destruição de Fogo e Trovão",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em <cryo>24%</cryo>."
+    }
+  }
+}

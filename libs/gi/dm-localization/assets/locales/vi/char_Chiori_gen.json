@@ -1,0 +1,182 @@
+{
+  "name": "Chiori",
+  "title": "Nhà Thiết Kế Sấm Chớp",
+  "description": "Chủ Tiệm Thời Trang Chioriya. Nhà thiết kế thời trang nổi tiếng ở Fontaine.",
+  "constellationName": "Cung Ti Thiết Kiệp",
+  "auto": {
+    "name": "Lưỡi Đao Dệt Gấm",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Sát Thương Khi Đáp",
+      "7": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hasode Lả Lướt",
+    "description": {
+      "0": "Dùng vũ điệu mượt mà để lao nhanh về phía trước. Khi kết thúc sẽ triệu hồi búp bê tự động \"Tamoto\" ở bên cạnh và thi triển đòn Vung Đao, gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> cho kẻ địch gần đó căn cứ vào Tấn Công và Phòng Ngự của Chiori.",
+      "1": "Khi nhấn giữ sẽ thi triển theo cách thức khác.",
+      "2": "<br/>",
+      "3": "<strong>Nhấn Giữ</strong>",
+      "4": "Vào trạng thái ngắm chuẩn để điều chỉnh phương hướng lao đi.",
+      "5": "<br/>",
+      "6": "<strong>Tamoto</strong>",
+      "7": [
+        "Chém kẻ địch ở gần đó theo chu kỳ, gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> căn cứ vào Tấn Công và Phòng Ngự của Chiori.",
+        "Trong thời gian tồn tại, nếu ở gần đó có <geo>tạo vật nguyên tố Nham</geo> hoặc <geo>tạo vật nguyên tố Nham</geo> được tạo ra thì sẽ triệu hồi thêm một Tamoto ở bên cạnh nhân vật của bản thân trong trận hiện tại. Tối đa triệu hồi một Tamoto thông qua cách này, thời gian tồn tại sẽ tính riêng."
+      ],
+      "8": "<br/>",
+      "9": "<i>\"Anh đào nhuộm đỏ gấm, hương thơm ngập tay áo, chim vàng anh say đắm.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Tamoto",
+      "1": "Tamoto Tồn Tại",
+      "2": "Giãn Cách Tamoto Tấn Công",
+      "3": "Sát Thương Vung Đao",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hiyoku - Song Đao Thức",
+    "description": {
+      "0": "Hai thanh đao rời khỏi vỏ, chém một đường dứt khoát dưới đôi tay nghệ thuật của Chiori, gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> căn cứ vào Tấn Công và Phòng Ngự của Chiori.",
+      "1": "<br/>",
+      "2": "<i>\"Nắm vững một nguyên tắc thì hàng vạn con đường sẽ mở ra.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "Năng Lượng Nguyên Tố",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Đo Ni Đóng Giày",
+    "description": {
+      "0": "Trong một thời gian ngắn sau khi thực hiện đòn Vung Đao của kỹ năng <strong>Hasode Lả Lướt</strong>, căn cứ vào hành động sau đó để sản sinh hiệu quả khác nhau: Nhấn Kỹ Năng Nguyên Tố sẽ kích hoạt Dệt Gấm, nhấn Tấn Công Thường sẽ kích hoạt Cắt Lụa.",
+      "1": "<br/>",
+      "2": "<strong>Dệt Gấm</strong>",
+      "3": [
+        "Đổi sang nhân vật tiếp theo trong đội ra trận;",
+        "Thêm hiệu ứng \"Nắm Bắt Cơ Hội\" cho tất cả nhân vật của bản thân trong đội: Nhân vật ra trận của bản thân trong đội hiện tại khi Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp trúng kẻ địch gần đó, \"Tamoto\" sẽ hỗ trợ tấn công, gây 100% <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> của đòn Vung Đao từ kỹ năng Hasode Lả Lướt ở vị trí kẻ địch. Sát thương gây ra từ cách thức này được tính là sát thương Kỹ Năng Nguyên Tố;",
+        "\"Nắm Bắt Cơ Hội\" duy trì 8s, mỗi 2s tối đa kích hoạt một lần hỗ trợ tấn công của \"Tamoto\". Trong một lần duy trì \"Nắm Bắt Cơ Hội\" tối đa kích hoạt 2 lần hỗ trợ tấn công."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Cắt Lụa</strong>",
+      "6": [
+        "Chiori nhận được <geo>đính kèm nguyên tố Nham</geo> trong 5s."
+      ],
+      "7": "<br/>",
+      "8": "Khi Chiori ra trận, nếu thi triển đòn Vung Đao của kỹ năng Hasode Lả Lướt mà không nhấn tiếp Kỹ Năng Nguyên Tố hay Tấn Công Thường, thì sẽ kích hoạt hiệu quả \"Cắt Lụa\"."
+    }
+  },
+  "passive2": {
+    "name": "Thêu Hoa Dệt Gấm",
+    "description": {
+      "0": "Khi nhân vật trong đội gần đó tạo ra <geo>tạo vật nguyên tố Nham</geo> thì Chiori sẽ nhận được 20% <geo>Buff Sát Thương Nguyên Tố Nham</geo> trong 20s."
+    }
+  },
+  "passive3": {
+    "name": "Vải Lụa Lả Lướt",
+    "description": {
+      "0": "Khi nhân vật tùy ý của bản thân trong đội trang bị trang phục ngoài trang phục mặc định, hoặc Phong Chi Dực ngoài Phong Chi Dực mặc định, thì nhân vật trong đội của bản thân sẽ nhận hiệu ứng Tốc Hành: Tốc độ di chuyển tăng 10%.",
+      "1": "Hiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh. Hiệu quả Tốc Hành không thể cộng dồn."
+    }
+  },
+  "constellation1": {
+    "name": "Sáu Khổ Lụa Là",
+    "description": {
+      "0": "Phạm vi tấn công của búp bê tự động \"Tamoto\" từ kỹ năng <strong>Hasode Lả Lướt</strong> tăng 50%.",
+      "1": "Ngoài ra, nếu trong đội có nhân vật <geo>nguyên tố Nham</geo> ngoài Chiori thì khi kỹ năng Hasode Lả Lướt kết thúc trạng thái lao đến sẽ kích hoạt hiệu quả sau:",
+      "2": [
+        "Triệu hồi thêm một Tamoto. Tối đa chỉ tồn tại một Tamoto được triệu hồi bởi Chiori từ cách này hoặc từ tạo vật Nham triệu hồi ra;",
+        "Kích hoạt thiên phú \"Thêu Hoa Dệt Gấm\", hiệu quả này cần mở khóa thiên phú \"Thêu Hoa Dệt Gấm\"."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "Năm Màu Thuốc Nhuộm",
+    "description": {
+      "0": "Trong 10s sau khi thi triển <strong>Hiyoku - Song Đao Thức</strong>, mỗi 3s sẽ triệu hồi búp bê tự động \"Kinu\" ở bên cạnh nhân vật của bản thân trong trận hiện tại. Kinu sẽ tấn công kẻ địch gần đó, gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> bằng 170% so với Tamoto, sát thương gây ra bằng cách thức này sẽ được tính là sát thương Kỹ Năng Nguyên Tố.",
+      "1": "Kinu sẽ rời trận sau khi tấn công một lần hoặc sau khi tồn tại 3s."
+    }
+  },
+  "constellation3": {
+    "name": "Bốn Bộ Trang Sức",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Hasode Lả Lướt</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ba Phần Cung Kính",
+    "description": {
+      "0": "Trong 8s sau khi kích hoạt hiệu quả sau đó của thiên phú \"Đo Ni Đóng Giày\", nhân vật ra trận trong đội hiện tại của bản thân khi Tấn Công Thường, Trọng Kích hoặc Tấn Công Khi Đáp trúng kẻ địch gần đó, sẽ triệu hồi một búp bê tự động \"Kinu\" ở gần kẻ địch. Mỗi 1s tối đa triệu hồi một Kinu thông qua cách thức trên, trong một lần thời gian hiệu quả \"Nắm Bắt Cơ Hội\" hoặc \"Cắt Lụa\" của thiên phú \"Đo Ni Đóng Giày\" tối đa triệu hồi 3 Kinu. Hiệu quả trên mỗi 15s tối đa kích hoạt một lần.",
+      "1": "Cần mở khóa thiên phú \"Đo Ni Đóng Giày\"."
+    }
+  },
+  "constellation5": {
+    "name": "Hai Tầng Trang Phục",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Hiyoku - Song Đao Thức</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Một Lòng Tuân Thủ",
+    "description": {
+      "0": "Sau khi kích hoạt hiệu quả sau đó của thiên phú \"Đo Ni Đóng Giày\", thời gian chờ của kỹ năng <strong>Hasode Lả Lướt</strong> từ bản thân Chiori giảm 12s. Cần mở khóa thiên phú \"Đo Ni Đóng Giày\".",
+      "1": "Ngoài ra, tăng sát thương gây ra từ Tấn Công Thường của Chiori, mức tăng tương ứng với 235% Phòng Ngự của Chiori."
+    }
+  }
+}

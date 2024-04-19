@@ -1,0 +1,166 @@
+{
+  "name": "Xiao",
+  "title": "Gardien Yaksha",
+  "description": "Un des Adeptes de Liyue, aussi connu sous le nom de « Dompteur de démons » et « Général des Yakshas ».",
+  "constellationName": "Alatus Nemeseos",
+  "auto": {
+    "name": "Coup de tourbillon",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 6 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher une attaque ascendante."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact.",
+        "2": "Xiao ne subit pas de DGT lorsqu'il exécute une attaque plongeante."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT 6e coup",
+      "6": "DGT attaque chargée",
+      "7": "Coût d'endurance attaque chargée",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cycle du vent lemniscatique",
+    "description": {
+      "0": "Xiao se précipite vers l'avant, infligeant des <anemo>DGT Anémo</anemo> aux ennemis sur sa route.",
+      "1": "Fonctionne aussi dans les airs.",
+      "2": "Xiao commence avec 2 utilisations disponibles.",
+      "3": "<br/>",
+      "4": "<i>La légende d'un lointain pays raconte qu'un jour, le monde périra entre deux roues à aubes. La maîtrise totale de la lance permet à Xiao d'écraser ses ennemis, à l'image des roues légendaires écrasant le monde.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Fléau du mal",
+    "description": {
+      "0": "Xiao revêt le Masque du Yaksha, qui, il y a bien longtemps, fit trembler dieux et démons.",
+      "1": "<br/>",
+      "2": "<strong>Masque du Yaksha</strong>",
+      "3": [
+        " Améliore considérablement la capacité de saut de Xiao.",
+        " Augmente la portée et les DGT d'attaque.",
+        " Les DGT d'attaque sont convertis en <anemo>DGT Anémo</anemo> ne pouvant pas être enchantés."
+      ],
+      "4": "<br/>",
+      "5": "Cet effet consomme des PV de façon continue.",
+      "6": "<br/>",
+      "7": "L'état prend fin lorsque Xiao quitte le champ de bataille.",
+      "8": "<br/>",
+      "9": "<i>En revêtant le Masque du Yaksha, Xiao prend la forme terrifiante du Gardien Yaksha Dompteur de démons. Mais un tel pouvoir a un prix... Aussi l'appelle-t-on : le Fléau du mal.</i>"
+    },
+    "skillParams": {
+      "0": "Bonus ATQ normale/chargée/plongeante",
+      "1": "PV consommés",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dompteur de démons : Conquérant du mal",
+    "description": {
+      "0": "Xiao inflige 5 % de DGT supplémentaires tant que <strong>Fléau du mal</strong> est actif. Un cumul de 5 % de DGT supplémentaires est ensuite appliqué toutes les 3 s tant que dure la compétence.",
+      "1": "Cumul maximum : 25 % de DGT supplémentaires."
+    }
+  },
+  "passive2": {
+    "name": "Dissolution d'éon : Chute des cieux",
+    "description": {
+      "0": "<strong>Cycle du vent lemniscatique</strong> inflige 15 % de DGT en plus lorsqu'il est relancé dans les 7 s.",
+      "1": "Cet effet dure 7 s et peut être cumulé 3 fois maximum. Le délai est réinitialisé à chaque nouveau cumul."
+    }
+  },
+  "passive3": {
+    "name": "Transcendance : Contrôleur de gravité",
+    "description": {
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de l'escalade.",
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Dissolution d'éon : Destructeur de mondes",
+    "description": {
+      "0": "Confère une utilisation supplémentaire de <strong>Cycle du vent lemniscatique</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Annihilation d'éon : Fleur du kaléidoscope",
+    "description": {
+      "0": "La recharge d'énergie de Xiao augmente de 25 % lorsqu'il fait partie de l'équipe mais n'est pas déployé."
+    }
+  },
+  "constellation3": {
+    "name": "Dompteur de démons : Déité de la colère",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Cycle du vent lemniscatique</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Transcendance : Extinction de la souffrance",
+    "description": {
+      "0": "Xiao bénéficie d'un bonus de DÉF de 100 % quand ses PV sont inférieurs à 50 %."
+    }
+  },
+  "constellation5": {
+    "name": "Évolution d'éon : Origine de l'ignorance",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Fléau du mal</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Dompteur de démons : Gardien Yaksha",
+    "description": {
+      "0": "Lorsque <strong>Fléau du mal</strong> est actif, les attaques plongeantes touchant au moins 2 ennemis confèrent immédiatement un cumul de <strong>cycle du vent lemniscatique</strong> supplémentaire, qui peut être activé dans la seconde qui suit même s'il n'est pas entièrement rechargé."
+    }
+  }
+}

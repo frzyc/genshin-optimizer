@@ -1,0 +1,24 @@
+{
+  "name": "Sombra de Ferro",
+  "description": {
+    "0": "Uma réplica da espada famosa de Arundolyn, o Leão da Luz. Maneje-a e sinta o poder de um herói lendário! Aviso: Sonhar demais pode ser prejudicial para você."
+  },
+  "passiveName": "Implacável",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando a Vida estiver inferior a <cryo>70%</cryo>, Ataques Carregados raramente são interrompidos e aumenta <cryo>30%</cryo> do Ataque Carregado."
+    },
+    "1": {
+      "0": "Quando a Vida estiver inferior a <cryo>75%</cryo>, Ataques Carregados raramente são interrompidos e aumenta <cryo>35%</cryo> do Ataque Carregado."
+    },
+    "2": {
+      "0": "Quando a Vida estiver inferior a <cryo>80%</cryo>, Ataques Carregados raramente são interrompidos e aumenta <cryo>40%</cryo> do Ataque Carregado."
+    },
+    "3": {
+      "0": "Quando a Vida estiver inferior a <cryo>85%</cryo>, Ataques Carregados raramente são interrompidos e aumenta <cryo>45%</cryo> do Ataque Carregado."
+    },
+    "4": {
+      "0": "Quando a Vida estiver inferior a <cryo>90%</cryo>, Ataques Carregados raramente são interrompidos e aumenta <cryo>50%</cryo> do Ataque Carregado."
+    }
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "name": "Amber",
+  "title": "La Campeona de Vuelo",
+  "description": "Siempre enérgica y llena de vida, Amber es la mejor exploradora de los Caballeros de Favonius, aunque también es la única...",
+  "constellationName": "Lepus Minor",
+  "auto": {
+    "name": "As de la arquería",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 disparos consecutivos con arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
+        "2": "Al apuntar, se acumularán llamas en la punta de flecha. Una flecha en llamas totalmente cargada infligirá <pyro>Daño Pyro</pyro>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Disparo Preciso",
+      "6": "Disparo Preciso (carga completa)",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Marioneta explosiva",
+    "description": {
+      "0": "El fiel Barón Bunny aparece en escena.",
+      "1": "<br/>",
+      "2": "<strong>Barón Bunny</strong>:",
+      "3": [
+        "Se burla de los enemigos cercanos para atraer su atención.",
+        "La Vida Máx. de Barón Bunny aumenta en proporción a la Vida de Amber.",
+        "Cuando es destruido o su temporizador llega a cero, Barón Bunny explota, infligiendo <pyro>Daño Pyro en el AdE</pyro>."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Mantener pulsado</strong>",
+      "6": "Ajusta la dirección de lanzamiento de Barón Bunny. Cuanto más tiempo mantengas apretado, más lejos se lanzará.",
+      "7": "<br/>",
+      "8": "<i>Barón Bunny proviene de un gran linaje histórico. De hecho, Amber dejó de contar los antepasados de Barón Bunny a partir del n.º 893.</i>"
+    },
+    "skillParams": {
+      "0": "Vida de Barón Bunny",
+      "1": "Daño de explosión",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Lluvia ardiente",
+    "description": {
+      "0": "Dispara una lluvia de flechas ardientes que infligen <pyro>Daño Pyro en el AdE</pyro> de forma continua.",
+      "1": "<br/>",
+      "2": "<i>La pasión de Amber arde como el fuego.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de Lluvia ardiente (por golpe)",
+      "1": "Daño de Lluvia ardiente (total)",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "¡Puntería final!",
+    "description": {
+      "0": "La Prob. CRIT de <strong>Lluvia ardiente</strong> aumenta en un 10%, y su AdE, en un 30%."
+    }
+  },
+  "passive2": {
+    "name": "Flecha precisa",
+    "description": {
+      "0": "Al infligir daño en los puntos débiles del enemigo usando Disparo Preciso, el ATQ aumenta en un 15% durante 10 s."
+    }
+  },
+  "passive3": {
+    "name": "Campeona de vuelo",
+    "description": {
+      "0": "Disminuye en un 20% el Coste de Aguante al planear de todos los miembros de tu equipo.",
+      "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "constellation1": {
+    "name": "¡Una flecha para gobernarlos a todos!",
+    "description": {
+      "0": "Lanza 2 flechas por cada <strong>Disparo Preciso</strong>. La segunda flecha inflige un 20% del daño de la primera flecha."
+    }
+  },
+  "constellation2": {
+    "name": "Lanzamiento de Barón Bunny",
+    "description": {
+      "0": "¡Un nuevo y mejorado Barón Bunny! Atacarle a los pies con un Disparo Preciso cargado hace que detone inmediatamente.",
+      "1": "Explotarlo de esta manera hará que inflija un 200% de daño adicional."
+    }
+  },
+  "constellation3": {
+    "name": "¡Quémalo todo!",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Lluvia ardiente</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "No es un muñeco cualquiera...",
+    "description": {
+      "0": "Reduce el TdE de <strong>Marioneta explosiva</strong> en un 20%, y puede ser utilizada 1 vez más."
+    }
+  },
+  "constellation5": {
+    "name": "¡Es Barón Bunny!",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Marioneta explosiva</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fuego salvaje",
+    "description": {
+      "0": "<strong>Lluvia ardiente</strong> aumenta la Vel. Movimiento de todos los miembros del equipo en un 15% y su ATQ en un 15% durante 10 s."
+    }
+  }
+}

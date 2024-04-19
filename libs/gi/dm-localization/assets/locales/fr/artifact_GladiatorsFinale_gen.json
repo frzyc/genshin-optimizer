@@ -1,0 +1,29 @@
+{
+  "setName": "Rideau du Gladiateur",
+  "setEffects": {
+    "2": "Augmente l'ATQ de 18 %.",
+    "4": "Augmente les DGT infligés par les attaques normales de 35 % lorsque ce set d'artéfacts est équipé par les personnages armés d'une épée à une main, à deux mains ou d'une arme d'hast."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Nostalgie du Gladiateur",
+      "desc": "Personne ne sait pourquoi cette fleur était portée par le plus grand des gladiateurs. Il s'agissait là de son unique point faible."
+    },
+    "plume": {
+      "name": "Destination du Gladiateur",
+      "desc": "Une plume qui rêve de la liberté du faucon. À la fin de la vie du légendaire gladiateur, ce cadeau d'adieu fut déposé sur sa poitrine par un oiseau qui savait ce qu'était la vraie liberté."
+    },
+    "sands": {
+      "name": "Espoir du Gladiateur",
+      "desc": "Un symbole des jours sanglants d'un gladiateur et de son chemin semé d'embûches vers la liberté."
+    },
+    "goblet": {
+      "name": "Ivresse du Gladiateur",
+      "desc": "Une coupe en or ayant appartenu à un gladiateur. Elle brillait de la gloire du guerrier, jusqu'au jour fatidique qui vit sa chute."
+    },
+    "circlet": {
+      "name": "Triomphe du Gladiateur",
+      "desc": "Un casque ayant appartenu à un gladiateur, qui avait pour habitude d'appeler de ses bras en sang les applaudissements de la foule."
+    }
+  }
+}

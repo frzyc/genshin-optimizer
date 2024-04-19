@@ -1,0 +1,163 @@
+{
+  "name": "Faruzan",
+  "title": "Enigmatic Machinist",
+  "description": "Peneliti dari \"seratus tahun lalu\". Dia suka mengaku diri sebagai seniornya semua orang dan punya pengetahuan luas tentang berbagai naskah kuno dan segala jenis mesin.",
+  "constellationName": "Flosculi Implexi",
+  "auto": {
+    "name": "Parthian Shot",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 tembakan panah berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG yang lebih besar.",
+        "2": "Saat membidik, angin kuat akan berkumpul di ujung anak panah. Panah dengan angin kuat yang terkumpul penuh akan mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara, menerjang tanah dengan kecepatan tinggi, menyerang musuh di jalur terjangan, dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Membidik",
+      "5": "DMG Membidik Penuh",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Wind Realm of Nasamjnin",
+    "description": {
+      "0": "Faruzan mengerahkan Polyhedron dan menyebabkan <anemo>Anemo DMG Area</anemo> terhadap musuh di sekitar dan mendapatkan efek Manifest Gale.",
+      "1": "Saat berada dalam status Manifest Gale, charge penuh Serangan Membidik Faruzan kali selanjutnya akan mengonsumsi efek Manifest Gale ini dan akan menjadi Hurricane Arrow dengan pusaran angin bertekanan tinggi, mengakibatkan <anemo>Anemo DMG</anemo> berdasarkan DMG Membidik Penuh Normal Attack: Parthian Shot.",
+      "2": "<br/>",
+      "3": "<strong>Pressurized Collapse</strong>",
+      "4": "Hurricane Arrow akan menambahkan efek Pressurized Collapse terhadap musuh atau Karakter yang terkena. Efek ini akan hilang dalam waktu singkat, lalu menghasilkan pusaran angin yang mengakibatkan <anemo>Anemo DMG Area</anemo>, dan akan menarik objek atau musuh yang berada di sekitar; Jika belum mengenai musuh atau Karakter, maka akan menghasilkan efek Pressurized Collapse di posisi target yang terkena.",
+      "5": "DMG yang diakibatkan pusaran angin akan dianggap sebagai DMG Elemental Skill.",
+      "6": "<br/>",
+      "7": "<i>Angin kebenaran menerpa semangat orang-orang yang mencari kebenaran, dan menghancurkan seluruh racun prasangka.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Pusaran Angin Pressurized Collapse",
+      "2": "Durasi Manifest Gale",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "The Wind's Secret Ways",
+    "description": {
+      "0": "Faruzan mengerahkan \"Dazzling Polyhedron\" dengan cepat, melancarkan satu kali Whirlwind Pulse dan mengakibatkan <anemo>Anemo DMG Area</anemo>.",
+      "1": "Selama Dazzling Polyhedron aktif, akan terus-menerus bergerak dalam jalur berbentuk segitiga. Setiap kali menyentuh sudut segitiga, Dazzling Polyhedron akan melancarkan satu kali Whirlwind Pulse tambahan.",
+      "2": "<br/>",
+      "3": "<strong>Whirlwind Pulse</strong>",
+      "4": [
+        "Saat Whirlwind Pulse dilancarkan, akan memberikan efek Perfidious Wind's Bale terhadap musuh di sekitar: Mengurangi <anemo>Anemo RES</anemo> musuh;",
+        "Saat melancarkan Whirlwind Pulse, akan memberikan efek Prayerful Wind's Benefit terhadap seluruh anggota party: Mendapatkan <anemo>Anemo DMG Bonus</anemo>."
+      ],
+      "5": "<br/>",
+      "6": "<i>Seseorang harus menghormati kebijaksanaan tak diketahui yang mungkin ditemukan tersembunyi di antara reruntuhan kuno.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Anemo DMG Bonus",
+      "2": "Durasi Prayerful Wind's Benefit",
+      "3": "Pengurangan Anemo RES",
+      "4": "Durasi Perfidious Wind's Bale",
+      "5": "Durasi",
+      "6": "Cooldown",
+      "7": "Konsumsi Energy",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Impetuous Flow",
+    "description": {
+      "0": "Saat Faruzan berada dalam status Manifest Gale dari <strong>Wind Realm of Nasamjnin</strong>, waktu charge Serangan Membidik berkurang 60%; Akan bisa menambahkan efek Perfidious Wind's Bale dari <strong>The Wind's Secret Ways</strong> terhadap musuh yang terkena pusaran angin yang dihasilkan oleh Pressurized Collapse."
+    }
+  },
+  "passive2": {
+    "name": "Lost Wisdom of the Seven Caverns",
+    "description": {
+      "0": "Pada saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill atau Elemental Burst Karakter yang berada dalam status Prayerful Wind's Benefit dari <strong>The Wind's Secret Ways</strong> mengakibatkan <anemo>Anemo DMG</anemo> terhadap musuh, akan menghasilkan efek Hurricane Guard: DMG yang diakibatkan akan ditingkatkan berdasarkan 32% Base ATK Faruzan. Hurricane Guard bisa terpicu setiap 0,8 detik sekali. Efek ini akan hilang setelah durasi Prayerful Wind's setelah efeknya terpicu satu kali."
+    }
+  },
+  "passive3": {
+    "name": "Tomes Light the Path",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Sumeru selama 20 jam, hadiah yang didapatkan akan bertambah 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Truth by Any Means",
+    "description": {
+      "0": "Saat berada dalam satu kali efek Manifest Gale dari <strong>Wind Realm of Nasamjnin</strong>, Faruzan bisa melepaskan maksimum sebanyak 2 buah Hurricane Arrow dalam satu kali charge penuh Serangan Membidik."
+    }
+  },
+  "constellation2": {
+    "name": "Overzealous Intellect",
+    "description": {
+      "0": "Durasi Dazzling Polyhedron dari <strong>The Wind's Secret Ways</strong> meningkat 6 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Spirit-Orchard Stroll",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Wind Realm of Nasamjnin</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Divine Comprehension",
+    "description": {
+      "0": "Pusaran angin dari <strong>Pressurized Collapse</strong> akan bisa mengembalikan Energy Faruzan berdasarkan jumlah musuh yang terkena: Saat mengenai satu musuh, akan bisa memulihkan 2 poin Energy untuk Faruzan; Untuk setiap penambahan satu musuh yang terkena, akan memulihkan 0,5 poin Energy untuk Faruzan.",
+      "1": "Dengan cara ini, satu kali pusaran angin bisa memulihkan Energy Faruzan sebanyak maksimum 4 poin Energy."
+    }
+  },
+  "constellation5": {
+    "name": "Wonderland of Rumination",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>The Wind's Secret Ways</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Wondrous Path of Truth",
+    "description": {
+      "0": "CRIT DMG <strong>Anemo DMG</strong> yang diakibatkan Karakter yang berada dalam status Prayerful Wind's Benefit dari <anemo>The Wind's Secret Ways</anemo> meningkat 40%; Saat Karakter aktif yang berada dalam status Prayerful Wind's Benefit menghasilkan DMG, akan memberikan Pressurized Collapse terhadap musuh ini. Efek ini bisa terpicu setiap 3 detik sekali, CD ini berlaku bagi seluruh anggota party."
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "normal": {
+    "hit1": "DAN da 1º colpo",
+    "hit2": "DAN da 2º colpo",
+    "hit3": "DAN da 3º colpo",
+    "hit4": "DAN da 4º colpo",
+    "hit5": "DAN da 5º colpo",
+    "hit6": "DAN da 6º colpo"
+  },
+  "charged": {
+    "dmg": "DAN da ATT caricato",
+    "spinning": "DAN da ATT caricato ciclico",
+    "final": "DAN da ATT caricato finali",
+    "stamina": "Costo vigore ATT caricato",
+    "aimed": "ATT mirato",
+    "fullyAimed": "ATT mirato a piena carica"
+  },
+  "plunging": {
+    "dmg": "DAN da ATT in picchiata",
+    "low": "DAN da ATT in picchiata basso",
+    "high": "DAN da ATT in picchiata alto"
+  },
+  "maxDuration": "Durata max",
+  "maxStacks": "Numero accumuli massimi",
+  "skillDMG": "DAN da abilità",
+  "burstDMG": "DAN da esplosione",
+  "dmgAbsorption": "Assorbimento DAN scudo",
+  "healing": "Guarigione",
+  "contHealing": "Guarigione continua",
+  "duration": "Durata",
+  "cd": "TdR",
+  "energyCost": "Costo energia",
+  "energyRegen": "RIGEN energia",
+  "baseDMG": "DAN base",
+  "dot": "DAN nel tempo",
+  "addEleDMG": "DAN elementali aggiuntivi",
+  "hpRegenPerHit": "RIGEN PS per colpo",
+  "press": {
+    "dmg": "DAN da pressione",
+    "cd": "TdR pressione"
+  },
+  "hold": {
+    "dmg": "DAN da pressione prolungata",
+    "cd": "TdR (pressione prolungata)"
+  },
+  "element": {
+    "anemo": "Anemo",
+    "geo": "Geo",
+    "pyro": "Pyro",
+    "hydro": "Hydro",
+    "cryo": "Cryo",
+    "electro": "Electro",
+    "dendro": "Dendro"
+  },
+  "reaction": {
+    "swirl": "Turbinio",
+    "crystallize": "Cristallizzazione",
+    "overloaded": "Sovraccarico",
+    "electrocharged": "Electrocarica",
+    "superconduct": "Superconduzione",
+    "vaporize": "Vaporizzazione",
+    "melt": "Fusione",
+    "bloom": "Fioritura",
+    "burgeon": "Germinazione",
+    "hyperbloom": "Iperfioritura",
+    "quicken": "Vivificazione",
+    "aggravate": "Accentuazione",
+    "spread": "Propagazione"
+  },
+  "stat": {
+    "def": "DIF",
+    "base": {
+      "atk": "ATT di base"
+    }
+  },
+  "constellationLvl": "Liv. costellazione {{level}}",
+  "talentLvl": "Liv. talento {{level}}",
+  "talents": {
+    "auto": "Attacco normale",
+    "skill": "Abilità elementale",
+    "burst": "Tripudio elementale",
+    "altSprint": "Scatto alternativo"
+  },
+  "unlockPassive1": "Si sblocca dopo aver raggiunto la fase d'ascensione 1",
+  "unlockPassive2": "Si sblocca dopo aver raggiunto la fase d'ascensione 4",
+  "unlockPassive3": "Talento passivo"
+}

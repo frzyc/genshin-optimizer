@@ -1,0 +1,150 @@
+{
+  "name": "Xiangling",
+  "title": "Küchenfee des Volkes",
+  "description": "Eine recht bekannte Köchin aus Liyue, die Gerichte mit Leidenschaft zubereitet. Ihre Techniken sind feurig genug, um ihren Gegnern den Appetit zu verderben.",
+  "constellationName": "Trulla",
+  "auto": {
+    "name": "Gebäckgefecht",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Guoba, erscheine!",
+    "description": {
+      "0": "Ruft den Feuer spuckenden Guoba herbei, der Gegner vor ihm während der Wirkungsdauer immer wieder mit Feuer bespuckt und <pyro>Pyro-Flächenschaden</pyro> verursacht.",
+      "1": "<br/>",
+      "2": "<i>Guoba mag sein Essen scharf. Ob er sein Essen so scharf verträgt, ist allerdings eine andere Sache.</i>"
+    },
+    "skillParams": {
+      "0": "Feuer-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Feuerrad",
+    "description": {
+      "0": "Erschafft aufgrund ihrer Fähigkeit, Feuer zu kontrollieren, und ihrer Fertigkeit im Umgang mit dem Speer ein Feuerrad, das mit hoher Geschwindigkeit um sie kreist.",
+      "1": "Das Feuerrad bewegt sich während der Wirkungsdauer mit Xiangling und fügt allen Gegnern in seiner Bahn <pyro>Pyro-Schaden</pyro> zu.",
+      "2": "<br/>",
+      "3": "<i>Das soll ein Feuer sein? Das ist höchstens ein Feuerchen!</i>"
+    },
+    "skillParams": {
+      "0": "Wirbel-SCH Phase 1",
+      "1": "Wirbel-SCH Phase 2",
+      "2": "Wirbel-SCH Phase 3",
+      "3": "Feuerrad-SCH",
+      "4": "Dauer",
+      "5": "Abklingzeit",
+      "6": "Elementarenergie",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Kreuzfeuer",
+    "description": {
+      "0": "Erhöht die Reichweite des Feuers von Guoba um 20 %."
+    }
+  },
+  "passive2": {
+    "name": "Scharfes Teil!",
+    "description": {
+      "0": "Guoba hinterlässt nach dem Ende des Effekts von <strong>Guoba, erscheine!</strong> eine Peperoni, die den ANG beim Einsammeln 10 s lang um 10 % erhöht."
+    }
+  },
+  "passive3": {
+    "name": "Chefköchin des Restaurants Wanmin",
+    "description": {
+      "0": "Stellt bei der perfekten Zubereitung eines Gerichts mit offensiver Funktion mit einer Wahrscheinlichkeit von 12 % den 2-fachen Ertrag her."
+    }
+  },
+  "constellation1": {
+    "name": "Außen knusprig, innen zart",
+    "description": {
+      "0": "Verringert den <pyro>Pyro-WDS</pyro> der von Guoba getroffenen Gegner 6 s lang um 15 %."
+    }
+  },
+  "constellation2": {
+    "name": "Öl auf Feuer",
+    "description": {
+      "0": "Fügt Gegnern mit dem letzten Schlag des Standardangriffs 2 s lang den Effekt „Implosion“ zu. Die Implosion tritt am Ende der Wirkungsdauer in Kraft und verursacht <pyro>Pyro-Flächenschaden</pyro> in Höhe von 75 % ANG."
+    }
+  },
+  "constellation3": {
+    "name": "Scharf angebraten",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Feuerrad</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Langsam gegart",
+    "description": {
+      "0": "Verlängert die Dauer von <strong>Feuerrad</strong> um 40 %."
+    }
+  },
+  "constellation5": {
+    "name": "Guoba sauer",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Guoba, erscheine!</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Feuertornado",
+    "description": {
+      "0": "Erhöht den <pyro>Pyro-Schaden</pyro> aller Truppenmitglieder während der Wirkungsdauer von <strong>Feuerrad</strong> um 15 %."
+    }
+  }
+}

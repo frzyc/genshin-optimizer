@@ -1,0 +1,181 @@
+{
+  "name": "Nahida",
+  "title": "Saflık Abidesi",
+  "description": "Surasthana Mabedi içinde hapsedilmiş ve dış dünyayı yalnızca rüyalarında görebilen bir kuş.",
+  "constellationName": "Hürmüz'ün Bilgeliği",
+  "auto": {
+    "name": "Akara",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Önündeki düşmanlara <dendro>Doğa Hasarı</dendro> veren en fazla 4 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Kısa süre kullanıldıktan sonra belirli miktarda Dayanıklılık harcayarak önündeki düşmanlara <dendro>Doğa Alan Hasarı</dendro> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Nahida, Doğanın gücünü çağırarak havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <dendro>Doğa Alan Hasarı</dendro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Tüm Planları Bilen",
+    "description": {
+      "0": "Bulunduğu yerden kütük ve ağaçların karma bağlarını göndererek <dendro>Doğa Alan Hasarı</dendro> verir ve 8 düşmana kadar düşmanları Skandha Tohumu ile işaretler.",
+      "1": "Basılı tutulduğunda beceri farklı şekilde tetiklenir.",
+      "2": "<br/>",
+      "3": "<strong>Basılı Tutma</strong>",
+      "4": "Nişan Alma Moduna girer ve bu moddayken sınırlı bir bölgede sınırlı sayıda düşman seçebilirsin. Bu sırada Nahida'nın müdahaleye karşı direnci artar.",
+      "5": "Beceri, bırakıldığında <dendro>Doğa Hasarı</dendro> verir ve onları Skandha Tohumu ile işaretler.",
+      "6": "Nişan Alma Modu en fazla 5 saniye sürer ve maksimum 8 düşman seçilebilir.",
+      "7": "<br/>",
+      "8": "<strong>Skandha Tohumu</strong>",
+      "9": "Skandha Tohumu ile işaretlenen düşmanlar belirli bir mesafe boyunca birbirlerine bağlanırlar.",
+      "10": "Skandha Tohumu etkisindeki düşmanların üzerinde Element Tepkimeleri tetiklendikten veya bu düşmanlar Doğa Çekirdeklerinden Hasar aldıktan sonra (Filizlenme ve Aşırı Çiçeklenme dahil) Nahida, düşmanlara ve tüm bağlı düşmanlara Üç Karma Arınması gönderir ve Saldırı ve Element Ustalığına bağlı olarak <dendro>Doğa Hasarı</dendro> verir.",
+      "11": "Kısa bir süre içinde yalnızca 1 defa Üç Karma Arınması tetikleyebilirsin.",
+      "12": "<br/>",
+      "13": "<i>Çimenler ve ağaçlar tanrısı, üç karmanın kökenini ve yıkımını aydınlatarak nihai hakikatini boşluğa yansıtıyor.</i>"
+    },
+    "skillParams": {
+      "0": "Basma Hasarı",
+      "1": "Basılı Tutma Hasarı",
+      "2": "Üç Karma Arınması Hasarı",
+      "3": "Üç Karma Arınması Tetikleme Aralığı",
+      "4": "Skandha Tohumu Süresi",
+      "5": "Basma BS",
+      "6": "BS (Basılı Tutma)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hayali Kalp",
+    "description": {
+      "0": "Rüya Köşkünü gösterir ve Maya Tapınağını genişletir.",
+      "1": "<br/>",
+      "2": "Maya Tapınağının alanı genişleyince gruptaki Element Türlerine bağlı olarak ayrı ayrı şu etkiler görülür.",
+      "3": [
+        "<pyro>Ateş</pyro>: Nahida Maya Tapınağında bulunduğu sırada, \"Tüm Planları Bilen\" becerisine ait Üç Karma Arınmasının verdiği Hasar artar.",
+        "<electro>Elektrik</electro>: Nahida Maya Tapınağında bulunduğu sırada, \"Tüm Planları Bilen\" becerisine ait her Üç Karma Arınması arasındaki süre azalır.",
+        "<hydro>Su</hydro>: Maya Tapınağının süresi artar."
+      ],
+      "4": "<br/>",
+      "5": "Alan genişletildiği sırada yukarıdaki Element Türlerinden en az 2 grup üyesi varsa söz konusu etkiler daha da artar.",
+      "6": "<br/>",
+      "7": "Nahida savaş alanında olmasa bile grup üyeleri, Maya Tapınağı içinde olduğu sürece bu bonus etkiler gerçekleşir.",
+      "8": "<br/>",
+      "9": "<i>Belki de ağaç çardaklarının altında yaşayanlar, Bilgelik Tanrısı'nın gözünde tepetaklak rüyalardan başka bir şey değildir.</i>"
+    },
+    "skillParams": {
+      "0": "Ateş: Hasar Bonusu",
+      "1": "Ateş: Hasar Bonusu",
+      "2": "Elektrik: Tetikleme Aralığı Azalması",
+      "3": "Elektrik: Tetikleme Aralığı Azalması",
+      "4": "Su: Süre Uzatma",
+      "5": "Su: Süre Uzatma",
+      "6": "Temel Süre",
+      "7": "BS",
+      "8": "Enerji Maliyeti",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Aydınlatılmış Şefkat",
+    "description": {
+      "0": "<strong>Hayali Kalp</strong> ateşlendiğinde Maya Tapınağı şu etkileri elde eder:",
+      "1": "Savaş alanındaki aktif karakterin Element Ustalığı, en yüksek Element Ustalığına sahip grup üyesinin Element Ustalığının %25'i kadar artar.",
+      "2": "Bu şekilde maksimum 250 Element Ustalığı elde edebilirsin."
+    }
+  },
+  "passive2": {
+    "name": "Aydınlatılmış Uyanış",
+    "description": {
+      "0": "Nahida'nın 200 üzerindeki her Element Ustalığı puanı, <strong>Tüm Planları Bilen</strong> becerisine ait Üç Karma Arınmasına %0,1 Bonus Hasar ve %0,03 Kritik Oranı sağlar.",
+      "1": "Üç Karma Arınmasına bu şekilde maksimum %80 Bonus Hasar ve %24 Kritik Oranı sağlanabilir."
+    }
+  },
+  "passive3": {
+    "name": "Her Şey Meditasyon Halinde",
+    "description": {
+      "0": "Nahida, sabit bir Etki Alanı içinde bazı toplanabilir eşyalarla etkileşime geçmek için <strong>Tüm Planları Bilen</strong> becerisini kullanabilir.",
+      "1": "Bu becerinin başka etkileri de vardır..."
+    }
+  },
+  "constellation1": {
+    "name": "Saklanmış Bilgi Tohumu",
+    "description": {
+      "0": "<strong>Maya Tapınağı</strong> genişletildiğinde ve gruptaki Element Türlerine ait karakterlerin sayısı hesaplandığında sırasıyla Ateş, Elektrik ve Su karakterlerinin sayısına 1 eklenir."
+    }
+  },
+  "constellation2": {
+    "name": "Olgunluğun Kökü",
+    "description": {
+      "0": "Nahida'nın <strong>Skandha Tohumuyla</strong> bizzat işaretlediği düşmanlar şu etkilere maruz kalırlar:",
+      "1": [
+        "Aldıkları Yanma, Çiçeklenme, Aşırı Çiçeklenme ve Filizlenme Tepkimelerinin Hasarı Kritik Vuruşa yol açabilir. Kritik Oranı ve Kritik Hasar sırasıyla %20 ve %100 olarak sabitlenmiştir.",
+        "Hızlanma, Şiddetlenme, Yayılma tepkimelerinden etkilendikten sonraki 8 saniye içinde Savunmaları %30 azalır."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Bilinçli Başarı Ateşi",
+    "description": {
+      "0": "<strong>Tüm Planları Bilen</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Dışa Vurumun Kökü",
+    "description": {
+      "0": "Yakındaki 1/2/3/4 (veya daha fazla) düşman <strong>Tüm Planları Bilen</strong> becerisinin Skandha Tohumlarından etkilendiğinde, Nahida'nın Element Ustalığı 100/120/140/160 artar."
+    }
+  },
+  "constellation5": {
+    "name": "Aydınlatıcı Sözlerin Yaprakları",
+    "description": {
+      "0": "<strong>Hayali Kalp</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Zihnin Doruk Noktası",
+    "description": {
+      "0": "Nahida, <strong>Hayali Kalp</strong> gönderdikten sonra, <strong>Tüm Planları Bilen</strong> becerisine ait Skandha Tohumlarından etkilenmiş bir düşmana Normal veya Yüklü Saldırı ile vurduğunda o düşman ve ona bağlı olan diğer düşmanlar üzerinde Üç Karma Arınması: Karmik Yok Oluş kullanır ve Nahida'nın Saldırısının %200'üne ve Element Ustalığının %400'üne bağlı olarak <dendro>Doğa Hasarı</dendro> verir.",
+      "1": "Üç Karma Arınması: Karmik Yok Oluş tarafından verilen Hasar, Element Becerisi Hasarı olarak görülür ve 0,2 saniyede bir tetiklenebilir.",
+      "2": "Bu etki maksimum 10 saniye sürer ve Nahida 6 Üç Karma Arınması: Karmik Yok Oluş gönderdikten sonra kaldırılır."
+    }
+  }
+}

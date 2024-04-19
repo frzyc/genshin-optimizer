@@ -1,0 +1,150 @@
+{
+  "name": "Xiangling",
+  "title": "Exquisite Delicacy",
+  "description": "Seorang koki ternama dari Liyue. Memiliki cinta yang mendalam akan seni masak-memasak, sangat pandai memasak masakan andalannya dengan rasa yang pedas dan gurih.",
+  "constellationName": "Ladle",
+  "auto": {
+    "name": "Dough-Fu",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan tombak."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalurnya."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Guoba Attack",
+    "description": {
+      "0": "Memanggil Guoba si Panda. Guoba terus menghembuskan api ke musuh, mengakibatkan <pyro>Pyro DMG area</pyro>.",
+      "1": "<br/>",
+      "2": "<i>Guoba suka makan yang pedas-pedas. Masalahnya, perutnya tidak tahan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Flamethrower",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Pyronado",
+    "description": {
+      "0": "Xiangling menunjukkan keahliannya dengan api dan tombak, dia membuat Pyronado yang berputar di sekitarnya.",
+      "1": "Pyronado akan bergerak mengikuti Karaktermu selama durasinya dan mengakibatkan <pyro>Pyro DMG</pyro> ke semua musuh di jalurnya.",
+      "2": "<br/>",
+      "3": "<i>Tidak akan pernah ada panas yang cukup. Tidak pernah.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tebasan Tahap 1",
+      "1": "DMG Tebasan Tahap 2",
+      "2": "DMG Tebasan Tahap 3",
+      "3": "DMG Pyronado",
+      "4": "Durasi",
+      "5": "Cooldown",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Crossfire",
+    "description": {
+      "0": "Meningkatkan 20% jarak semburan api Guoba."
+    }
+  },
+  "passive2": {
+    "name": "Beware, It's Super Hot!",
+    "description": {
+      "0": "Saat durasi skill <strong>Guoba Attack</strong> selesai, Guoba akan meninggalkan sebuah cabai di lantai. Mengambil cabai tersebut meningkatkan 10% ATK selama 10 detik."
+    }
+  },
+  "passive3": {
+    "name": "Chef de Cuisine",
+    "description": {
+      "0": "Saat masakan jenis penyerangan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "Crispy Outside, Tender Inside",
+    "description": {
+      "0": "Saat serangan Guoba mengenai musuh, akan mengurangi 15% <pyro>Pyro RES</pyro> mereka selama 6 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Oil Meets Fire",
+    "description": {
+      "0": "Serangan terakhir dari Normal Attack mengakibatkan Implode pada musuh selama 2 detik. Saat durasi Implode selesai, menimbulkan ledakan yang mengakibatkan 75% dari ATK Xiangling sebagai <pyro>Pyro DMG area</pyro>."
+    }
+  },
+  "constellation3": {
+    "name": "Deepfry",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Pyronado</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Slowbake",
+    "description": {
+      "0": "Meningkatkan 40% durasi <strong>Pyronado</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Guoba Mad",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Guoba Attack</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Condensed Pyronado",
+    "description": {
+      "0": "Saat <strong>Pyronado</strong> aktif, seluruh anggota party menerima peningkatan 15% <pyro>Pyro DMG Bonus</pyro>."
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "name": "Yelan",
+  "title": "Orchidea della valle",
+  "description": "Una persona misteriosa che sostiene di lavorare per il Ministero degli Affari Civili, ma che risulta \"inesistente\" nella lista dello stesso Ministero.",
+  "constellationName": "Umbrabilis Orchis",
+  "auto": {
+    "name": "Tiro furtivo",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Effettua fino a 4 tiri consecutivi con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> più preciso con DAN aumentati.",
+        "2": "Mentre mira, sulla punta della freccia si accumula un flusso d'acqua. Una freccia torrenziale caricata al massimo infligge <hydro>DAN da Hydro</hydro>."
+      },
+      "breakthrough": {
+        "0": "<strong>Squarcio</strong>",
+        "1": "Trascorsi 5 s fuori da un combattimento, Yelan entra nello stato di Squarcio, che comporta una riduzione di un 80% del tempo di carica del suo attacco mirato, il quale, una volta a piena carica, permette a Yelan di scoccare una Freccia squarciante, che infligge <hydro>DAN da Hydro ad area</hydro> in base ai suoi PS max."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "ATT mirato",
+      "5": "ATT mirato a piena carica",
+      "6": "DAN da Freccia squarciante",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Linea persistente",
+    "description": {
+      "0": "Scaglia una Linea salvavita che le permette di muoversi rapidamente, aggrovigliando e marchiando gli avversari lungo il suo percorso.",
+      "1": "Al termine di questo movimento rapido, la Linea salvavita esplode infliggendo <hydro>DAN da Hydro</hydro> agli avversari marchiati in base ai PS max di Yelan.",
+      "2": "<br/>",
+      "3": "<strong>Pressione</strong>",
+      "4": "Yelan si sposta rapidamente in avanti per una certa distanza.",
+      "5": "<br/>",
+      "6": "<strong>Pressione prolungata</strong>",
+      "7": "Effettua continui movimenti rapidi, durante i quali la resistenza all'interruzione di Yelan aumenta.",
+      "8": "Durante questo lasso di tempo, Yelan può controllare i suoi movimenti rapidi e fermarsi utilizzando di nuovo l'abilità.",
+      "9": "<br/>",
+      "10": "Inoltre, quando la Linea salvavita esplode, ogni avversario marchiato garantisce a Yelan un 34% di probabilità di ripristinare lo stato Squarcio.",
+      "11": "<br/>",
+      "12": "<i>Quando lei inizia a tirare le corde, i malvagi, i furfanti e i subdoli nemici ormai sanno che non c'è più scampo.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Durata max (pressione prolungata)",
+      "2": "TdR",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dado Chiaroprofondo",
+    "description": {
+      "0": "Infligge <hydro>DAN da Hydro ad area</hydro> e crea un Dado raffinato, che la aiuta in battaglia.",
+      "1": "<br/>",
+      "2": "<strong>Dado raffinato</strong>",
+      "3": "Segue il personaggio e dà inizio a un attacco coordinato nelle circostanze seguenti, infliggendo <hydro>DAN da Hydro</hydro> in base ai PS max di Yelan:",
+      "4": [
+        " può verificarsi una volta ogni secondo quando il personaggio attivo usa un attacco normale;",
+        " si verifica ogni volta che la Linea salvavita di Yelan esplode e colpisce gli avversari."
+      ],
+      "5": "<br/>",
+      "6": "<i>\"La dipendenza dal gioco d'azzardo ti farà solo del male. Su, lascia che sia io, il mazziere, a fare i calcoli per te. Quante possibilità di battermi pensi di avere, se io ho sette dadi e tu solo uno?\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Dado raffinato",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Controllo strategico",
+    "description": {
+      "0": "Quando il gruppo ha 1/2/3/4 tipi elementali, i PS max di Yelan aumentano di un 6%/12%/18%/30%."
+    }
+  },
+  "passive2": {
+    "name": "Facilità di adattamento",
+    "description": {
+      "0": "Finché un <strong>Dado raffinato</strong> è presente, il tuo personaggio attivo infligge un 1% di DAN in più. I DAN aumentano di un ulteriore 3,5% ogni secondo. L'aumento massimo di DAN inflitti è pari a un 50%.",
+      "1": "L'effetto preesistente sarà annullato se usi Dado Chiaroprofondo di nuovo durante la sua durata."
+    }
+  },
+  "passive3": {
+    "name": "Calcoli necessari",
+    "description": {
+      "0": "Ottiene un 25% in più di ricompense quando intraprende una spedizione a Liyue per 20 ore."
+    }
+  },
+  "constellation1": {
+    "name": "Trappola anticospiratori",
+    "description": {
+      "0": "<strong>Linea persistente</strong> ottiene 1 carica aggiuntiva."
+    }
+  },
+  "constellation2": {
+    "name": "Aperto a tutti",
+    "description": {
+      "0": "Quando <strong>Dado raffinato</strong> sferra un attacco coordinato, scocca una freccia acquatica aggiuntiva che infligge DAN da Hydro pari a un 14% dei PS max di Yelan.",
+      "1": "Questo effetto si può attivare una volta ogni 1,8 s."
+    }
+  },
+  "constellation3": {
+    "name": "Dado truccato",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Dado Chiaroprofondo</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Scambio favorevole",
+    "description": {
+      "0": "Aumenta di un 10% i PS max di tutti i membri del gruppo per 25 s per ogni avversario marchiato dalla <strong>Linea salvavita</strong> quando essa esplode. È possibile ottenere un aumento massimo di un 40% dei PS max in questo modo."
+    }
+  },
+  "constellation5": {
+    "name": "Trucco del mazziere",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Linea persistente</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Asso pigliatutto",
+    "description": {
+      "0": "Dopo aver usato <strong>Dado Chiaroprofondo</strong>, Yelan entra nello stato di Mente superiore.",
+      "1": "In questo stato, tutti gli attacchi normali di Yelan saranno convertiti in Frecce squarcianti speciali. Queste Frecce squarcianti possiedono abilità simili a quelle normali e i DAN inflitti sono considerati DAN da attacco caricato, infliggendo un 156% dei DAN da Freccia squarciante normale.",
+      "2": "<br/>",
+      "3": "Lo stato Mente superiore ha una durata di 20 s e termina quando Yelan scocca 5 frecce."
+    }
+  }
+}

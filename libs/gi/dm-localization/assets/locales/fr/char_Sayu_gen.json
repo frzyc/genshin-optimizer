@@ -1,0 +1,188 @@
+{
+  "name": "Sayu",
+  "title": "Mujina shinobi",
+  "description": "Une très petite ninja rattachée au Shuumatsuban, qui semble toujours manquer de sommeil.",
+  "constellationName": "Nyctereutes Minor",
+  "auto": {
+    "name": "Lame ninja du Shuumatsuban",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'attaques tournoyantes contre les ennemis proches.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT enchaînement attaque chargée",
+      "5": "DGT coup final attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "Durée max",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "École Yoohoo : Course Fuuin",
+    "description": {
+      "0": "La technique spéciale des ninjas de l'École Yoohoo !",
+      "1": "Se recroqueville sous la forme d'un tourbillon Fuufuu, qui inflige des <anemo>DGT Anémo</anemo> aux ennemis qu'elle percute à grande vitesse, pour terminer sur un coup de pied Fuufuu qui inflige des <anemo>DGT Anémo de zone</anemo>.",
+      "2": "<br/>",
+      "3": "<strong>Appui simple</strong>",
+      "4": "Se met sous la forme d'un tourbillon Fuufuu et roule vers l'avant sur une courte distance avant d'exécuter son coup de pied Fuufuu.",
+      "5": "<br/>",
+      "6": "<strong>Appui long</strong>",
+      "7": "Roule continuellement en tourbillon Fuufuu, augmentant la RÉS à l'interruption de Sayu.",
+      "8": "Sayu peut contrôler la direction dans laquelle elle roule, et utiliser à nouveau la compétence permet de sortir de cet état et d'exécuter un coup de pied Fuufuu plus puissant.",
+      "9": "L'appui long de cette compétence peut déclencher une absorption élémentaire.",
+      "10": "<br/>",
+      "11": "Cette compétence a une durée maximum de 10 s, et entre en TdR lorsque son effet prend fin. Plus Sayu reste longtemps en tourbillon Fuufuu, plus le TdR est long.",
+      "12": "<br/>",
+      "13": "<strong>Absorption élémentaire</strong>",
+      "14": "Si Sayu entre en contact avec les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> lorsqu'elle est en tourbillon Fuufuu, elle obtient les attributs élémentaires correspondants, et le tourbillon Fuufuu ainsi que le coup de pied Fuufuu infligent des DGT supplémentaires de l'élément absorbé.",
+      "15": "Une seule réaction d'absorption élémentaire peut avoir lieu par utilisation.",
+      "16": "<br/>",
+      "17": "<i>Sayu est capable d'exécuter cette technique les yeux fermés. Technique de fuite à la base, elle peut, maintenant qu'elle possède un œil divin, l'utiliser pour faire mordre la poussière à ses ennemis.</i>"
+    },
+    "skillParams": {
+      "0": "DGT tourbillon Fuufuu",
+      "1": "DGT coup de pied Fuufuu (appui simple)",
+      "2": "DGT coup de pied Fuufuu (appui long)",
+      "3": "DGT élémentaires tourbillon Fuufuu",
+      "4": "DGT élémentaires coup de pied Fuufuu",
+      "5": "Durée max (appui long)",
+      "6": "Temps de recharge",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "École Yoohoo : Bourrasque du mujina",
+    "description": {
+      "0": "Une autre technique spéciale des ninjas de l'École Yoohoo, qui fait appel à une invocation pour venir en aide à Sayu.",
+      "1": "Inflige des <anemo>DGT Anémo</anemo> aux ennemis proches, et soigne tous les personnages de l'équipe proches d'une quantité de PV proportionnelle à l'ATQ de Sayu. Invoque également un Daruma Muji-muji.",
+      "2": "<br/>",
+      "3": "<strong>Daruma Muji-muji</strong>",
+      "4": "À intervalles réguliers, le Daruma Muji-muji agit de l'une des manières suivantes en fonction de la situation :",
+      "5": [
+        " Lorsque les PV des personnages proches sont supérieurs à 70 %, le Daruma Muji-muji attaque un ennemi proche, à qui il inflige des <anemo>DGT Anémo</anemo>.",
+        " Lorsqu'un personnage déployé dont les PV sont inférieurs ou égaux à 70 % se trouve à proximité, le Daruma Muji-muji soigne le personnage déployé proche ayant le plus faible pourcentage de PV d'une quantité de PV proportionnelle à l'ATQ de Sayu. Si aucun ennemi ne se trouve à proximité et que les personnages ont tous plus de 70 % de leurs PV, le Daruma Muji-muji soigne aussi les personnages."
+      ],
+      "6": "<br/>",
+      "7": "<i>Ceux qui ne comprennent rien au jujitsu adorent voir Sayu faire étalage de cette technique, et certains ont même essayé de l'apprendre auprès d'elle. Mais Sayu veut dormir et n'a aucune envie d'être dérangée.</i>"
+    },
+    "skillParams": {
+      "0": "DGT à l'activation de la compétence",
+      "1": "Soins à l'activation de la compétence",
+      "2": "DGT Daruma Muji-muji",
+      "3": "Soins Daruma Muji-muji",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Quelqu'un de plus efficace",
+    "description": {
+      "0": "Lorsque Sayu déclenche une réaction de Dispersion sur le champ de bataille, elle soigne vos personnages dans l'équipe ainsi que les personnages alliés proches à hauteur de 300 PV. Sayu récupère de plus 1,2 PV supplémentaire pour chaque point de maîtrise élémentaire qu'elle possède.",
+      "1": "Cet effet peut être déclenché une fois toutes les 2 s."
+    }
+  },
+  "passive2": {
+    "name": "Pas de boulot aujourd'hui !",
+    "description": {
+      "0": "Confère au Daruma Muji-muji invoqué pendant <strong>École Yoohoo : Bourrasque du mujina</strong> les effets suivants :",
+      "1": [
+        " Lorsqu'il soigne un personnage, les personnages proches de ce dernier sont soignés à hauteur de 20 % des PV récupérés par le personnage.",
+        " La zone de DGT infligés augmente lorsqu'il attaque un ennemi."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "École Yoohoo : Art du silence",
+    "description": {
+      "0": "Quand Sayu fait partie de l'équipe, vos personnages dans l'équipe n'effraient pas certains animaux, tels que le papillon cristallin.",
+      "1": "Pour savoir quels sont les animaux concernés, consultez l'onglet « Divers » dans la section « Faune » du Bestiaire des Archives."
+    }
+  },
+  "constellation1": {
+    "name": "Technique multitâche",
+    "description": {
+      "0": "Le Daruma Muji-muji invoqué par <strong>École Yoohoo : Bourrasque du mujina</strong> ignore les limites de PV et peut attaquer les ennemis proches et soigner les personnages en même temps."
+    }
+  },
+  "constellation2": {
+    "name": "Hors de mon chemin !",
+    "description": {
+      "0": "<strong>École Yoohoo : Course Fuuin</strong> obtient les effets suivants :",
+      "1": [
+        " Les DGT infligés par le coup de pied Fuufuu après un appui simple augmentent de 3,3 %.",
+        " Les DGT infligés par le coup de pied Fuufuu après un appui long augmentent de 3,3 % toutes les 0,5 s passées en tourbillon Fuufuu, jusqu'à un maximum de 66 %."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Bah, le clone s'en occupe...",
+    "description": {
+      "0": "Niveau d'aptitude <strong>École Yoohoo : Bourrasque du mujina</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Paresse revue et améliorée",
+    "description": {
+      "0": "Sayu récupère 1,2 pt d'énergie élémentaire lorsqu'elle déclenche une réaction de Dispersion sur le champ de bataille.",
+      "1": "Cet effet peut être déclenché une fois toutes les 2 s."
+    }
+  },
+  "constellation5": {
+    "name": "La vitesse avant tout",
+    "description": {
+      "0": "Niveau d'aptitude <strong>École Yoohoo : Course Fuuin</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "C'est l'heure d'un bon dodo",
+    "description": {
+      "0": "Les attaques et les soins du Daruma Muji-muji invoqué par Sayu lors d'<strong>École Yoohoo : Bourrasque du mujina</strong> augmentent avec le Niv. de maîtrise élémentaire de Sayu. Chaque point de maîtrise élémentaire que Sayu possède confère les effets suivants :",
+      "1": [
+        " Augmente les DGT infligés par les attaques du Daruma Muji-muji de 0,2 % de l'ATQ, jusqu'à 400 % de l'ATQ maximum.",
+        " Augmente de 3 les PV soignés par le Daruma Muji-muji, jusqu'à 6 000 PV max."
+      ]
+    }
+  }
+}

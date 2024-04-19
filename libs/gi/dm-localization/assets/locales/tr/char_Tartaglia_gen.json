@@ -1,0 +1,185 @@
+{
+  "name": "Tartaglia",
+  "title": "Asilzade",
+  "description": "\"Asilzade\" olarak da bilinen 11 numaralı Haberci. Savaş alanındaki cesaretiyle nam salmıştır.",
+  "constellationName": "Göklerdeki Tekboynuz",
+  "auto": {
+    "name": "Keskin Sel",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 6 ok atar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Daha isabetli ve daha yüksek Hasar veren bir <strong>Hedefli Atış</strong> yapar.",
+        "2": "Nişan alırken okun ucunda Suyun gücü birikir. Tam yüklü bu sel oku <hydro>Su Hasarı</hydro> verir ve Dalga durum etkisi uygular."
+      },
+      "riptide": {
+        "0": "<strong>Dalga</strong>",
+        "1": "Tartaglia'nın Dalgadan etkilenen düşmanlara yaptığı çeşitli saldırılar, düşmanlara <hydro>Su Alan Hasarı</hydro> verir. Bu şekilde verilen Hasar, Normal Saldırı Hasarı olarak geçer.",
+        "2": [
+          "Dalga Parıltısı: Dalgadan etkilenen bir düşmanı vuran ve arka arkaya Alan Hasarı veren tam yüklü bir Hedefli Atış. 0,7 saniyede bir uygulanabilir.",
+          "Dalga Patlaması: Dalgadan etkilenen bir düşman yenildiğinde yakındaki düşmanlara vurunca Dalga etkisi veren bir Su patlaması ortaya çıkar."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yaylım ok atışı yapar ve dalışa geçerek yere vurur. Yere vurduğunda Alan Hasarı verir.",
+        "2": "Tartaglia, Kötülüğün Mirası: Dalgaların Öfkesi Yakın Saldırı duruşundayken havadan saldırı yapamaz."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "6 Vuruş Hasarı",
+      "6": "Hedefli Atış",
+      "7": "Tam Yüklü Hedefli Atış",
+      "8": "Dalga Parıltısı Hasarı",
+      "9": "Dalga Patlaması Hasarı",
+      "10": "Dalga Süresi",
+      "11": "Havadan Saldırı Hasarı",
+      "12": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kötülüğün Mirası: Dalgaların Öfkesi",
+    "description": {
+      "0": "Saf sudan üretilmiş silahlar çıkararak etrafındaki düşmanlara <hydro>Su Hasarı</hydro> verir ve Yakın Saldırı duruşuna geçer.",
+      "1": "Bu duruştayken Tartaglia'nın Normal ve Yüklü Saldırıları diğer herhangi bir element tesiriyle değişmeyecek şekilde <hydro>Su Hasarına</hydro> dönüşür ve şu şekilde değişir:",
+      "2": "<br/>",
+      "3": "<strong>Normal Saldırı</strong>",
+      "4": "Arka arkaya en fazla 6 <hydro>Su</hydro> saldırısı yapar.",
+      "5": "<br/>",
+      "6": "<strong>Yüklü Saldırı</strong>",
+      "7": "Belirli miktarda Dayanıklılık harcayarak çapraz saldırı yapar ve <hydro>Su Hasarı</hydro> verir.",
+      "8": "<br/>",
+      "9": "<strong>Dalga Darbesi</strong>",
+      "10": "Dalgadan etkilenen bir düşmana yakından saldırdığında <hydro>Su Alan Hasarı</hydro> veren Dalga Darbesi açığa çıkar. Bu şekilde verilen Hasar, Element Becerisi Hasarı sayılır ve 1,5 saniyede bir uygulanabilir.",
+      "11": "<br/>",
+      "12": "30sn sonra veya yetenek tekrar kullanıldığında bu beceri sona erer. Tartaglia, Menzilli Saldırı Duruşuna geri döner ve bu becerinin Bekleme Süresi başlar. Tartaglia, Yakın Saldırı duruşunda ne kadar uzun kalırsa Bekleme Süresi de o kadar uzun olur.",
+      "13": "30sn sonunda menzilli saldırı duruşuna otomatik olarak dönülürse Bekleme Süresi daha da uzun olur.",
+      "14": "<br/>",
+      "15": "<i>Yay kullanmasının amacı yay kullanmaktaki zayıflığını yenmekti ama savaş ciddiyse onun da ciddileşmesi gerekir...</i>"
+    },
+    "skillParams": {
+      "0": "Saldırı Duruşu Değişim Hasarı",
+      "1": "1 Vuruş Hasarı",
+      "2": "2 Vuruş Hasarı",
+      "3": "3 Vuruş Hasarı",
+      "4": "4 Vuruş Hasarı",
+      "5": "5 Vuruş Hasarı",
+      "6": "6 Vuruş Hasarı",
+      "7": "Yüklü Saldırı Hasarı",
+      "8": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "9": "Dalga Darbesi",
+      "10": "Maks. Süre",
+      "11": "Öncü BS",
+      "12": "Maks. BS",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Yıkım: Yok Etme",
+    "description": {
+      "0": "Kullanıldığında Tartaglia'nın duruşuna bağlı olarak farklı saldırılar yapar.",
+      "1": "<br/>",
+      "2": "<strong>Menzilli Saldırı Duruşu: Yıkım Atışı</strong>",
+      "3": "Su etkisine sahip büyülü bir oku hızla atar ve <hydro>Su Alan Hasarı</hydro> vererek Dalga durumu uygular.",
+      "4": "Kullanıldıktan sonra Enerji Maliyetinin bir kısmı geri verilir.",
+      "5": "<br/>",
+      "6": "<strong>Yakın Saldırı Duruşu: Yok Eden Işık</strong>",
+      "7": "Geniş bir etki alanı olan bir darbe indirir ve etraftaki tüm düşmanlara vurarak çok büyük miktarda <hydro>Su Hasarı</hydro> verir. Böylece Dalga Saldırısı tetiklenir.",
+      "8": "<br/>",
+      "9": "<strong>Dalga Saldırısı</strong>",
+      "10": "Yok edici sular, Dalgadan etkilenen bir düşmana vurduğunda Dalga durumu düşmanlardan kalkar ve <hydro>Su Alan Hasarı</hydro> veren bir Su Patlaması tetiklenir.",
+      "11": "Bu şekilde verilen Hasar, Element Patlaması Hasarı olarak geçer.",
+      "12": "<br/>",
+      "13": "<i>Karlı vatanında akarsular nadir görülür. Belki suya hükmetme becerisi suyun ne kadar kıymetli olduğunu bilmesinden geliyordur.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı: Yakın",
+      "1": "Beceri Hasarı: Menzilli",
+      "2": "Dalga Saldırısı Hasarı",
+      "3": "Enerji İadesi (Menzilli)",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ebediyet",
+    "description": {
+      "0": "Dalga süresini 8 saniye uzatır."
+    }
+  },
+  "passive2": {
+    "name": "Akıntı Kılıcı",
+    "description": {
+      "0": "Tartaglia <strong>Kötülüğün Mirası: Dalgaların Öfkesi</strong> Yakın Saldırı duruşundayken Kritik Vuruş yaptığında Normal ve Yüklü Saldırılar düşmanlara Dalga etkisi uygular."
+    }
+  },
+  "passive3": {
+    "name": "Silah Ustası",
+    "description": {
+      "0": "Kendi grup üyelerinin <strong>Normal Saldırı</strong> Seviyesini 1 artırır."
+    }
+  },
+  "constellation1": {
+    "name": "Kötülüğün Mirası: Dalga Tutan",
+    "description": {
+      "0": "<strong>Kötülüğün Mirası: Dalgaların Öfkesi</strong> becerisinin Bekleme Süresini %20 kısaltır."
+    }
+  },
+  "constellation2": {
+    "name": "Kötülüğün Mirası: Gizli Akıntı",
+    "description": {
+      "0": "Tartaglia, Dalga etkisindeki düşmanlar yenildiğinde 4 Element Enerjisi yeniler."
+    }
+  },
+  "constellation3": {
+    "name": "Hiçlik Felaketi: Kargaşa Girdabı",
+    "description": {
+      "0": "<strong>Kötülüğün Mirası: Dalgaların Öfkesi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Hiçlik Felaketi: Su Patlaması",
+    "description": {
+      "0": "Tartaglia, <strong>Kötülüğün Mirası: Dalgaların Öfkesi</strong> Yakın Saldırı duruşundayken Dalga etkisindeki düşmanlara karşı 4 saniyede bir Dalga Darbesi tetikler. Menzilli Saldırı Duruşundayken ise Dalga Parıltısı tetikler.",
+      "1": "Bu Takımyıldız etkisiyle tetiklenen Dalga Darbesi ve Dalga Parıltısı için normalde var olan zaman aralıkları geçerli değildir. Ayrıca bu iki becerinin söz konusu zaman aralıkları üzerinde etkisi yoktur."
+    }
+  },
+  "constellation5": {
+    "name": "Yıkım: Akışkan Kılıç",
+    "description": {
+      "0": "<strong>Yıkım: Yok Etme</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Yıkım: İmha",
+    "description": {
+      "0": "<strong>Yıkım: Yok Etme</strong>, Yakın Saldırı Duruşunda kullanıldığında <strong>Kötülüğün Mirası: Dalgaların Öfkesi</strong> becerisinin Bekleme Süresi sıfırlanır.",
+      "1": "Bu etki ancak Tartaglia Menzilli Saldırı Duruşuna döndüğünde devreye girer."
+    }
+  }
+}

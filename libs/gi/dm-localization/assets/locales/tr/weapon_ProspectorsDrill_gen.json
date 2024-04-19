@@ -1,0 +1,24 @@
+{
+  "name": "Madenci Kazması",
+  "description": {
+    "0": "Bugünlerde nadir bulunan uzun saplı bir kazma. Eskiden taşları delmek ve oymak için kullanılırdı."
+  },
+  "passiveName": "Duvarcı Şarkısı",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter iyileştiğinde veya bir karakteri iyileştirdiğinde 30 saniye süren bir Birlik Sembolü elde eder ve en fazla 3 Sembole sahip olabilir. Element Becerisi veya Patlaması kullandığında tüm Semboller harcanır ve 10 saniyeliğine Çabalama etkisi kazanır. Harcadığı her bir Sembol için <cryo>%3</cryo> Saldırı Bonusu elde eder ve Tüm Element Hasarları <cryo>%7</cryo> artar. Çabalama etkisi her 15 saniyede bir tetiklenebilir ve Semboller, kuşanan karakter savaş alanında olmasa da elde edilebilir."
+    },
+    "1": {
+      "0": "Kuşanan karakter iyileştiğinde veya bir karakteri iyileştirdiğinde 30 saniye süren bir Birlik Sembolü elde eder ve en fazla 3 Sembole sahip olabilir. Element Becerisi veya Patlaması kullandığında tüm Semboller harcanır ve 10 saniyeliğine Çabalama etkisi kazanır. Harcadığı her bir Sembol için <cryo>%4</cryo> Saldırı Bonusu elde eder ve Tüm Element Hasarları <cryo>%8,5</cryo> artar. Çabalama etkisi her 15 saniyede bir tetiklenebilir ve Semboller, kuşanan karakter savaş alanında olmasa da elde edilebilir."
+    },
+    "2": {
+      "0": "Kuşanan karakter iyileştiğinde veya bir karakteri iyileştirdiğinde 30 saniye süren bir Birlik Sembolü elde eder ve en fazla 3 Sembole sahip olabilir. Element Becerisi veya Patlaması kullandığında tüm Semboller harcanır ve 10 saniyeliğine Çabalama etkisi kazanır. Harcadığı her bir Sembol için <cryo>%5</cryo> Saldırı Bonusu elde eder ve Tüm Element Hasarları <cryo>%10</cryo> artar. Çabalama etkisi her 15 saniyede bir tetiklenebilir ve Semboller, kuşanan karakter savaş alanında olmasa da elde edilebilir."
+    },
+    "3": {
+      "0": "Kuşanan karakter iyileştiğinde veya bir karakteri iyileştirdiğinde 30 saniye süren bir Birlik Sembolü elde eder ve en fazla 3 Sembole sahip olabilir. Element Becerisi veya Patlaması kullandığında tüm Semboller harcanır ve 10 saniyeliğine Çabalama etkisi kazanır. Harcadığı her bir Sembol için <cryo>%6</cryo> Saldırı Bonusu elde eder ve Tüm Element Hasarları <cryo>%11,5</cryo> artar. Çabalama etkisi her 15 saniyede bir tetiklenebilir ve Semboller, kuşanan karakter savaş alanında olmasa da elde edilebilir."
+    },
+    "4": {
+      "0": "Kuşanan karakter iyileştiğinde veya bir karakteri iyileştirdiğinde 30 saniye süren bir Birlik Sembolü elde eder ve en fazla 3 Sembole sahip olabilir. Element Becerisi veya Patlaması kullandığında tüm Semboller harcanır ve 10 saniyeliğine Çabalama etkisi kazanır. Harcadığı her bir Sembol için <cryo>%7</cryo> Saldırı Bonusu elde eder ve Tüm Element Hasarları <cryo>%13</cryo> artar. Çabalama etkisi her 15 saniyede bir tetiklenebilir ve Semboller, kuşanan karakter savaş alanında olmasa da elde edilebilir."
+    }
+  }
+}

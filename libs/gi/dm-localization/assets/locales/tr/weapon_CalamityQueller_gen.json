@@ -1,0 +1,24 @@
+{
+  "name": "Bela Söndüren",
+  "description": {
+    "0": "İncecik bilenmiş ve tuhaf bir kristalden yapılmış bir silah. Soluk mavi parıltısı geçmişin hikayelerini anlatır."
+  },
+  "passiveName": "Yıkım İlkesi",
+  "passiveDescription": {
+    "0": {
+      "0": "Tüm Element Hasarları için <cryo>%12</cryo> Bonus kazandırır. Bir Element Becerisi kullanıldığında 20 saniyeliğine Doruk Noktası kazanılır ve Saldırıyı saniyede <cryo>%3,2</cryo> artırır. Bu Saldırı artışı 6 kademeye kadar birikebilir. Bu silahı kuşanan karakter savaş alanında değilken Doruk Noktası Saldırı artışı ikiye katlanır."
+    },
+    "1": {
+      "0": "Tüm Element Hasarları için <cryo>%15</cryo> Bonus kazandırır. Bir Element Becerisi kullanıldığında 20 saniyeliğine Doruk Noktası kazanılır ve Saldırıyı saniyede <cryo>%4</cryo> artırır. Bu Saldırı artışı 6 kademeye kadar birikebilir. Bu silahı kuşanan karakter savaş alanında değilken Doruk Noktası Saldırı artışı ikiye katlanır."
+    },
+    "2": {
+      "0": "Tüm Element Hasarları için <cryo>%18</cryo> Bonus kazandırır. Bir Element Becerisi kullanıldığında 20 saniyeliğine Doruk Noktası kazanılır ve Saldırıyı saniyede <cryo>%4,8</cryo> artırır. Bu Saldırı artışı 6 kademeye kadar birikebilir. Bu silahı kuşanan karakter savaş alanında değilken Doruk Noktası Saldırı artışı ikiye katlanır."
+    },
+    "3": {
+      "0": "Tüm Element Hasarları için <cryo>%21</cryo> Bonus kazandırır. Bir Element Becerisi kullanıldığında 20 saniyeliğine Doruk Noktası kazanılır ve Saldırıyı saniyede <cryo>%5,6</cryo> artırır. Bu Saldırı artışı 6 kademeye kadar birikebilir. Bu silahı kuşanan karakter savaş alanında değilken Doruk Noktası Saldırı artışı ikiye katlanır."
+    },
+    "4": {
+      "0": "Tüm Element Hasarları için <cryo>%24</cryo> Bonus kazandırır. Bir Element Becerisi kullanıldığında 20 saniyeliğine Doruk Noktası kazanılır ve Saldırıyı saniyede <cryo>%6,4</cryo> artırır. Bu Saldırı artışı 6 kademeye kadar birikebilir. Bu silahı kuşanan karakter savaş alanında değilken Doruk Noktası Saldırı artışı ikiye katlanır."
+    }
+  }
+}

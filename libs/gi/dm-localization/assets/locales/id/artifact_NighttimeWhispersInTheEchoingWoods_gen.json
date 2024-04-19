@@ -1,0 +1,29 @@
+{
+  "setName": "Nighttime Whispers in the Echoing Woods",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "Selama 10 detik setelah melancarkan Elemental Skill, Geo DMG Bonus akan meningkat 20%. Saat dilindungi oleh perisai yang tercipta dari reaksi Crystallize, efek di atas akan ditingkatkan lagi sebesar 150%. Efek peningkatan tambahan tersebut akan dihapus setelah 1 detik perisai Crystallize hilang."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Selfless Floral Accessory",
+      "desc": "Karangan bunga yang dipakai oleh penyihir wanita dalam cerita. Menggunakan sentuhan kupu-kupu sebagai desainnya, sama seperti aksesoris lainnya yang disukainya."
+    },
+    "plume": {
+      "name": "Honest Quill",
+      "desc": "Pena celup yang dipakai oleh penyihir wanita dalam cerita. Kemulusan adalah hal yang paling tidak pantas diperhatikan dari semua kelebihannya."
+    },
+    "sands": {
+      "name": "Faithful Hourglass",
+      "desc": "Jam pasir yang dipercaya oleh penyihir wanita dalam cerita. Konon katanya, jika melafalkan mantra yang salah kepada jam itu, aliran waktu akan berjalan dengan sangat cepat."
+    },
+    "goblet": {
+      "name": "Magnanimous Ink Bottle",
+      "desc": "Botol tinta yang dipakai oleh penyihir wanita dalam cerita. Memiliki sihir ajaib yang tidak kalah dari pena celup."
+    },
+    "circlet": {
+      "name": "Compassionate Ladies' Hat",
+      "desc": "Topi wanita elegan yang disukai oleh penyihir wanita dalam cerita. Desainnya yang kalem dan ceria benar-benar membuatnya jatuh hati."
+    }
+  }
+}

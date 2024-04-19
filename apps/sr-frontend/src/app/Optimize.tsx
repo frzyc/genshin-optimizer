@@ -1,17 +1,18 @@
-import type { RelicSlotKey } from '@genshin-optimizer/sr-consts'
-import type { ICachedRelic } from '@genshin-optimizer/sr-db'
-import type { Read } from '@genshin-optimizer/sr-formula'
-import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr-opt'
-import { MAX_BUILDS, Optimizer } from '@genshin-optimizer/sr-opt'
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import type { ICachedRelic } from '@genshin-optimizer/sr/db'
+import type { Read } from '@genshin-optimizer/sr/formula'
+import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr/solver'
+import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
 import {
   BuildDisplay,
   OptimizationTargetSelector,
   WorkerSelector,
   useCalcContext,
   useDatabaseContext,
-} from '@genshin-optimizer/sr-ui'
-import { CardThemed } from '@genshin-optimizer/ui-common'
-import { Close, TrendingUp } from '@mui/icons-material'
+} from '@genshin-optimizer/sr/ui'
+import CloseIcon from '@mui/icons-material/Close'
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
   Box,
   Button,
@@ -75,7 +76,7 @@ export default function Optimize() {
     setProgress(undefined)
     setOptimizing(true)
 
-    const optimizer = new Optimizer(
+    const optimizer = new Solver(
       calc,
       optTarget,
       relicsBySlot,
@@ -116,7 +117,7 @@ export default function Optimize() {
               <Button
                 onClick={optimizing ? onCancel : onOptimize}
                 color={optimizing ? 'error' : 'primary'}
-                startIcon={optimizing ? <Close /> : <TrendingUp />}
+                startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
               >
                 {optimizing ? t('cancel') : t('optimize')}
               </Button>

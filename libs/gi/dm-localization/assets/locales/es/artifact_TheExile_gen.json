@@ -1,0 +1,29 @@
+{
+  "setName": "Exiliado",
+  "setEffects": {
+    "2": "Recarga de Energía +20%.",
+    "4": "Al usar la Habilidad Definitiva, todos los miembros del equipo (a excepción de tu personaje en uso) recuperan 2 pts. de Energía Elemental cada 2 s durante 6 s. Este efecto no puede acumularse."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor del Exiliado",
+      "desc": "Una flor marchita colgada en la camisa. Debe significar algo si un exiliado insiste en llevarla puesta."
+    },
+    "plume": {
+      "name": "Pluma del Exiliado",
+      "desc": "No es un accesorio creado intencionadamente. Simplemente es una pluma de pájaro que quedó atrapada en un árbol mientras volaba por la selva."
+    },
+    "sands": {
+      "name": "Reloj de Bolsillo del Exiliado",
+      "desc": "La esfera del reloj de cristal se ha roto y sus manecillas se han perdido, pero su propietario lo siguió conservando."
+    },
+    "goblet": {
+      "name": "Cáliz del Exiliado",
+      "desc": "Una taza opaca hecha con metales pesados. Tuvo piedras preciosas incrustadas en su momento, pero alguien se las arrancó."
+    },
+    "circlet": {
+      "name": "Diadema del Exiliado",
+      "desc": "Una prestigiosa diadema. Su insignia real fue arañada con un objeto punzante y perdió su distinguida identidad original."
+    }
+  }
+}

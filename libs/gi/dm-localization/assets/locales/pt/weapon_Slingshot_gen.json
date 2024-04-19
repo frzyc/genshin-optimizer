@@ -1,0 +1,24 @@
+{
+  "name": "Estilingue",
+  "description": {
+    "0": "Na verdade, é um arco. Depois de incontáveis experimentos e melhorias, o mestre criador de estilingues acabou criando um arco."
+  },
+  "passiveName": "Estilingue",
+  "passiveDescription": {
+    "0": {
+      "0": "Se a flecha do Ataque Normal e do Ataque Carregado atingir um alvo dentro de 0.3s após o disparo, o Dano é aumentado em <cryo>36%</cryo>. Caso contrário, o Dano é diminuído em 10%."
+    },
+    "1": {
+      "0": "Se a flecha do Ataque Normal e do Ataque Carregado atingir um alvo dentro de 0.3s após o disparo, o Dano é aumentado em <cryo>42%</cryo>. Caso contrário, o Dano é diminuído em 10%."
+    },
+    "2": {
+      "0": "Se a flecha do Ataque Normal e do Ataque Carregado atingir um alvo dentro de 0.3s após o disparo, o Dano é aumentado em <cryo>48%</cryo>. Caso contrário, o Dano é diminuído em 10%."
+    },
+    "3": {
+      "0": "Se a flecha do Ataque Normal e do Ataque Carregado atingir um alvo dentro de 0.3s após o disparo, o Dano é aumentado em <cryo>54%</cryo>. Caso contrário, o Dano é diminuído em 10%."
+    },
+    "4": {
+      "0": "Se a flecha do Ataque Normal e do Ataque Carregado atingir um alvo dentro de 0.3s após o disparo, o Dano é aumentado em <cryo>60%</cryo>. Caso contrário, o Dano é diminuído em 10%."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Oração Perdida aos Ventos Sagrados",
+  "description": {
+    "0": "Um livro educacional escrito por habitantes anônimos que adoravam o vento. Foi abençoado pelo vento por sua fidelidade e influência ao longo dos milênios."
+  },
+  "passiveName": "Bênção Sem Fronteiras",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a Veloc. Mov. em 10%. Durante a batalha, ganha um adicional de <cryo>8%</cryo> de Dano Elemental a cada 4s, sendo capaz de acumular até 4 vezes. Dura até o último personagem ser abatido ou trocar de personagem."
+    },
+    "1": {
+      "0": "Aumenta a Veloc. Mov. em 10%. Durante a batalha, ganha um adicional de <cryo>10%</cryo> de Dano Elemental a cada 4s, sendo capaz de acumular até 4 vezes. Dura até o último personagem ser abatido ou trocar de personagem."
+    },
+    "2": {
+      "0": "Aumenta a Veloc. Mov. em 10%. Durante a batalha, ganha um adicional de <cryo>12%</cryo> de Dano Elemental a cada 4s, sendo capaz de acumular até 4 vezes. Dura até o último personagem ser abatido ou trocar de personagem."
+    },
+    "3": {
+      "0": "Aumenta a Veloc. Mov. em 10%. Durante a batalha, ganha um adicional de <cryo>14%</cryo> de Dano Elemental a cada 4s, sendo capaz de acumular até 4 vezes. Dura até o último personagem ser abatido ou trocar de personagem."
+    },
+    "4": {
+      "0": "Aumenta a Veloc. Mov. em 10%. Durante a batalha, ganha um adicional de <cryo>16%</cryo> de Dano Elemental a cada 4s, sendo capaz de acumular até 4 vezes. Dura até o último personagem ser abatido ou trocar de personagem."
+    }
+  }
+}

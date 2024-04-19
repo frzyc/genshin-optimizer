@@ -1,0 +1,162 @@
+{
+  "name": "Yanfei",
+  "title": "La Letrada Inocente",
+  "description": "Una reconocida asesora legal que vive en Liyue. Esta joven tan perspicaz tiene parte de sangre de bestia iluminada.",
+  "constellationName": "Bestia Iustitia",
+  "auto": {
+    "name": "Sello ígneo",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Lanza bolas de fuego que infligen hasta tres golpes de <pyro>Daño Pyro</pyro>.",
+        "2": "Al golpear a un enemigo, Yanfei obtiene un sello escarlata. Inicialmente se puede tener un máximo de 3 sellos escarlatas y, cada vez que este efecto se active, la duración de los sellos que posea Yanfei en ese momento se reiniciará.",
+        "3": "Cada sello reducirá el Coste de Aguante de Yanfei, pero desaparecerán cuando ella se retire del combate."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Gasta Aguante para, tras un corto tiempo de canalización, consumir todos los sellos escarlatas e infligir <pyro>Daño Pyro en el AdE</pyro> a todos los enemigos frente a Yanfei.",
+        "2": "El AdE y el daño de este Ataque Cargado aumentará según la cantidad de sellos que se consuman."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder del fuego, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <pyro>Daño Pyro en el AdE</pyro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Reducción de Coste de Aguante",
+      "6": "Duración de sello escarlata",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Trato cerrado",
+    "description": {
+      "0": "Invoca unas llamas ardientes que infligen <pyro>Daño Pyro en el AdE</pyro>.",
+      "1": "Al golpear con ellas a sus enemigos, Yanfei obtiene el máximo de sellos escarlatas.",
+      "2": "<br/>",
+      "3": "<i>Aparte de tener aplicaciones legales, los sellos de fuego de Yanfei también traen consigo sus propias cláusulas adicionales. Al fin y al cabo, el Ministerio de Asuntos Civiles no puede modificar las leyes naturales.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Contrato vinculante",
+    "description": {
+      "0": "Conjura unas explosivas e intensas llamas que lanza contra los enemigos cercanos, infligiendo <pyro>Daño Pyro en el AdE</pyro> y otorgando a Yanfei el máximo de sellos escarlatas, así como el efecto de resplandor.",
+      "1": "<br/>",
+      "2": "<strong>Resplandor</strong>",
+      "3": "Tiene los siguientes efectos:",
+      "4": [
+        "Otorga a Yanfei un sello escarlata cada cierto intervalo de tiempo.",
+        "Aumenta el daño infligido con Ataque Cargado."
+      ],
+      "5": "Resplandor se disipará cuando Yanfei se retire del combate o sea derrotada.",
+      "6": "<br/>",
+      "7": "<i>“Las cláusulas ya están redactadas. Así pues, por la presente, establezco este contrato de vida o muerte. ¡Yo vivo y tú mueres!”</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "",
+      "2": "Intervalo de obtención de sellos escarlatas",
+      "3": "Aumento de daño de ATQ Cargado",
+      "4": "Duración",
+      "5": "TdE",
+      "6": "Energía Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Términos asociados",
+    "description": {
+      "0": "Cuando Yanfei consume sellos escarlatas mediante un Ataque Cargado, su <pyro>Bono de Daño Pyro</pyro> aumenta en un 5% durante 6 s por cada sello consumido. Si mientras dura este efecto vuelve a realizarse un Ataque Cargado, el efecto anterior se eliminará."
+    }
+  },
+  "passive2": {
+    "name": "Ojos justicieros",
+    "description": {
+      "0": "Cuando Yanfei asesta un golpe crítico contra un enemigo con su Ataque Cargado, inflige adicionalmente <pyro>Daño Pyro en el AdE</pyro> equivalente al 80% de su ATQ. Este daño se considera daño de Ataque Cargado."
+    }
+  },
+  "passive3": {
+    "name": "Conocimiento enciclopédico",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Liyue</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Insisto, Señoría",
+    "description": {
+      "0": "La RES a interrupción de Yanfei mientras canaliza un Ataque Cargado aumenta por cada sello escarlata que posea. Además, el Coste de Aguante de dicho Ataque Cargado se reduce en un 10% adicional por cada sello."
+    }
+  },
+  "constellation2": {
+    "name": "Derecho de interpretación final",
+    "description": {
+      "0": "Aumenta en un 20% la Prob. CRIT del Ataque Cargado de Yanfei contra los enemigos con menos de un 50% de Vida."
+    }
+  },
+  "constellation3": {
+    "name": "Sello pírico del samadhi",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Trato cerrado</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Absolución",
+    "description": {
+      "0": "Al utilizar <strong>Contrato vinculante</strong>, se crea un escudo que dura 15 s y que absorbe daño en una cantidad equivalente al 45% de la Vida Máx. de Yanfei.",
+      "1": "El escudo tiene un 250% de eficiencia de absorción de <pyro>Daño Pyro</pyro>."
+    }
+  },
+  "constellation5": {
+    "name": "Declaración jurada",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Contrato vinculante</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Cláusula adicional",
+    "description": {
+      "0": "Aumenta en 1 la cantidad máxima de sellos escarlatas que puede llevar Yanfei."
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "name": "Dehya",
+  "title": "La Leona Ardiente",
+  "description": "Dehya, miembro de Los Eremitas, una organización de mercenarios del desierto de Sumeru. Es valiente, poderosa y goza de una gran reputación en dicha organización.",
+  "constellationName": "Mantichora",
+  "auto": {
+    "name": "Sacudida áurea",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques consecutivos combinando técnicas marciales y de mandoble."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume Aguante de manera constante para realizar golpes de espada continuos.",
+        "2": "Cuando termina el Ataque Cargado, hará un golpe aún más poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado en ciclo",
+      "5": "Daño final de Ataque Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Duración máx.",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Fundición infernal",
+    "description": {
+      "0": "Dehya hace uso de distintas técnicas de combate de creación propia según las circunstancias de la batalla.",
+      "1": "<br/>",
+      "2": "<strong>Llama indómita</strong>",
+      "3": "Se libera cuando no hay ningún cerco ígneo de Dehya presente en el campo de batalla.",
+      "4": "Inflige <pyro>Daño Pyro en el AdE</pyro> y crea un área llamada “cerco ígneo”.",
+      "5": "<br/>",
+      "6": "<strong>Acometida ardiente</strong>",
+      "7": "Se libera cuando hay algún cerco ígneo de Dehya presente en el campo de batalla.",
+      "8": "Realiza un ataque en salto que inflige <pyro>Daño Pyro en el AdE</pyro> y crea en el lugar de impacto un nuevo cerco ígneo.",
+      "9": "El nuevo cerco creado de esta manera hereda la duración del original.",
+      "10": "<br/>",
+      "11": "Solo se puede liberar una acometida ardiente durante el tiempo en que un cerco ígneo está activo.",
+      "12": "<br/>",
+      "13": "<strong>Cerco ígneo</strong>",
+      "14": "Cuando los enemigos situados en el área del cerco ígneo reciben daño, este realizará un ataque coordinado que inflige <pyro>Daño Pyro en el AdE</pyro> en función del ATQ y la Vida Máx. de Dehya. Este efecto solo puede ocurrir una vez cada 2.5 s.",
+      "15": "Además, aumenta la RES a interrupción de los personajes en uso dentro del área y, cuando reciben daño, parte de este es mitigado y transferido a “sangre de la Leona escarlata”, de modo que Dehya soportará dicho daño durante 10 s. Cuando el daño acumulado por sangre de la Leona escarlata alcance o supere cierto porcentaje de la Vida Máx. de Dehya, dejará de mitigarse daño de esta forma.",
+      "16": "<br/>",
+      "17": "Solo puede existir 1 cerco ígneo creado por Dehya al mismo tiempo.",
+      "18": "<br/>",
+      "19": "<i>Atraviesa conmigo las llamas de esta ordalía y quema todo lo impuro, igual que una bestia fulgurante que se inmola mientras desciende.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de llama indómita",
+      "1": "Daño de acometida ardiente",
+      "2": "Daño del área",
+      "3": "Mitigación de daño",
+      "4": "Porcentaje máx. de sangre de la Leona escarlata",
+      "5": "Duración del área",
+      "6": "TdE",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dentellada ignívoma de la Leona",
+    "description": {
+      "0": "Dehya desata su furia abrasadora y prescinde del engorroso mandoble para entrar en el estado de “Leona fogosa”, durante el cual aumenta su RES a interrupción.",
+      "1": "En este estado, asesta puñetazos leoninos de forma automática y continua, los cuales infligen <pyro>Daño Pyro</pyro> en función del ATQ y la Vida Máx. de Dehya. Al terminar su duración, lanza una patada incineradora que inflige <pyro>Daño Pyro en el AdE</pyro> en función de su ATQ y Vida Máx.",
+      "2": "Al usar esta Habilidad Definitiva, si en el campo de batalla ya existe un cerco ígneo creado por la propia Dehya con su Habilidad Elemental, Fundición infernal, lo retirará del combate y creará otro en una nueva ubicación cuando termine el estado de Leona fogosa. El nuevo cerco ígneo heredará la duración del que fue retirado.",
+      "3": "En este estado, Dehya no puede lanzar su Habilidad Elemental ni ejecutar Ataques Normales, Cargados o Descendentes. No obstante, su Ataque Normal: Sacudida áurea y su Habilidad Elemental: Fundición infernal se sustituyen por “andanada rugiente”.",
+      "4": "<br/>",
+      "5": "<strong>Andanada rugiente</strong>",
+      "6": "Si liberas la andanada rugiente 0.4 s después de asestar un puñetazo leonino, asestarás el siguiente puñetazo más rápidamente.",
+      "7": "<br/>",
+      "8": "<i>Hasta el fuego, siempre cambiante, obedece el mandato de su furia y se convierte en sus colmillos y garras.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de puñetazo leonino",
+      "1": "Daño de patada incineradora",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Auxilio abnegado",
+    "description": {
+      "0": "Tras retirar un cerco ígneo mediante la <strong>acometida ardiente de Fundición infernal</strong> o <strong>Dentellada ignívoma de la Leona</strong>, el daño que recibe Dehya al soportarlo mediante sangre de la Leona escarlata se reduce en un 60% durante 6 s. Este efecto puede activarse una vez cada 2 s.",
+      "1": "Además, tras usar la <strong>llama indómita de Fundición infernal</strong>, Dehya otorga a todos los miembros del equipo el estado de “forja áurea” durante 9 s. Cuando un personaje bajo los efectos de este estado se encuentra dentro del cerco ígneo, su RES a interrupción aumenta de forma adicional. El estado de forja áurea solo se puede crear una vez cada 18 s."
+    }
+  },
+  "passive2": {
+    "name": "Rectitud incondicional",
+    "description": {
+      "0": "Cuando la Vida de Dehya está por debajo del 40%, recupera Vida en una cantidad equivalente al 20% de su Vida Máx. Además, durante los siguientes 10 s, recupera Vida cada 2 s en una cantidad equivalente al 6% de su Vida Máx. Este efecto solo puede ocurrir una vez cada 20 s."
+    }
+  },
+  "passive3": {
+    "name": "Camino soleado",
+    "description": {
+      "0": "Tus personajes del equipo obtienen el efecto de “paso ligero”, de manera que su Vel. Movimiento aumenta en un 10% por el día (06-18 h).",
+      "1": "Este efecto no se activará en dominios, Dominios de la cruzada y la Espiral del Abismo, y no se puede acumular con otros efectos de paso ligero."
+    }
+  },
+  "constellation1": {
+    "name": "Filoígneo impoluto",
+    "description": {
+      "0": "La Vida Máx. de Dehya aumenta en un 20%. Además, el daño infligido por sus siguientes ataques aumenta en proporción a su Vida Máx.:",
+      "1": [
+        "El daño de <strong>Fundición infernal</strong> aumenta en un 3.6% de su Vida Máx.",
+        "El daño de <strong>Dentellada ignívoma de la Leona</strong> aumenta en un 6% de su Vida Máx."
+      ]
+    }
+  },
+  "constellation2": {
+    "name": "Hoja de las arenas rutilantes",
+    "description": {
+      "0": "Cuando Dehya libera la <strong>acometida ardiente de Fundición infernal</strong>, la duración del cerco ígneo recién creado aumenta en 6 s.",
+      "1": "Además, cuando en el campo de batalla ya existe un cerco ígneo y un personaje en uso es atacado dentro de él, el daño infligido por el siguiente ataque coordinado del cerco ígneo aumentará en un 50%."
+    }
+  },
+  "constellation3": {
+    "name": "Furia calcinadora",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Dentellada ignívoma de la Leona</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Juramento inquebrantable",
+    "description": {
+      "0": "Al golpear a un enemigo con los puñetazos leoninos o la patada incineradora de <strong>Dentellada ignívoma de la Leona</strong>, Dehya recupera 1.5 pts. de Energía Elemental, y también recupera Vida en una cantidad equivalente al 2.5% de su Vida Máx. Este efecto solo puede ocurrir una vez cada 0.2 s."
+    }
+  },
+  "constellation5": {
+    "name": "Leona desmelenada",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Fundición infernal</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Zarpazo flamígero",
+    "description": {
+      "0": "La Prob. CRIT de <strong>Dentellada ignívoma de la Leona</strong> aumenta en un 10%.",
+      "1": "Además, después de que un puñetazo leonino golpee a un enemigo e inflija un crítico mientras el estado de Leona fogosa está activo, el Daño CRIT de Dentellada ignívoma de la Leona aumenta en un 15% mientras dura la habilidad, y la duración de Leona fogosa aumenta en 0.5 s. Este efecto solo puede ocurrir una vez cada 0.2 s. La duración de Leona fogosa solo puede aumentar en 2 s y el Daño CRIT de Dentellada ignívoma puede aumentar hasta un máximo de un 60% de esta manera."
+    }
+  }
+}

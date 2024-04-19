@@ -1,0 +1,24 @@
+{
+  "name": "Lanza de Espinadragón",
+  "description": {
+    "0": "Una lanza creada a partir del colmillo de un dragón. Sorprendentemente, es cálida al tacto."
+  },
+  "passiveName": "Entierro helado",
+  "passiveDescription": {
+    "0": {
+      "0": "Al golpear a los enemigos con Ataques Normales y Cargados, hay un <cryo>60%</cryo> de probabilidad de crear un carámbano sobre ellos. Al caer, el carámbano inflige un <cryo>80%</cryo> de daño de ATQ en el AdE. Si los enemigos están afectados por Cryo, el daño de ATQ infligido será del <cryo>200%</cryo>. Este efecto solo puede ocurrir una vez cada 10 s."
+    },
+    "1": {
+      "0": "Al golpear a los enemigos con Ataques Normales y Cargados, hay un <cryo>70%</cryo> de probabilidad de crear un carámbano sobre ellos. Al caer, el carámbano inflige un <cryo>95%</cryo> de daño de ATQ en el AdE. Si los enemigos están afectados por Cryo, el daño de ATQ infligido será del <cryo>240%</cryo>. Este efecto solo puede ocurrir una vez cada 10 s."
+    },
+    "2": {
+      "0": "Al golpear a los enemigos con Ataques Normales y Cargados, hay un <cryo>80%</cryo> de probabilidad de crear un carámbano sobre ellos. Al caer, el carámbano inflige un <cryo>110%</cryo> de daño de ATQ en el AdE. Si los enemigos están afectados por Cryo, el daño de ATQ infligido será del <cryo>280%</cryo>. Este efecto solo puede ocurrir una vez cada 10 s."
+    },
+    "3": {
+      "0": "Al golpear a los enemigos con Ataques Normales y Cargados, hay un <cryo>90%</cryo> de probabilidad de crear un carámbano sobre ellos. Al caer, el carámbano inflige un <cryo>125%</cryo> de daño de ATQ en el AdE. Si los enemigos están afectados por Cryo, el daño de ATQ infligido será del <cryo>320%</cryo>. Este efecto solo puede ocurrir una vez cada 10 s."
+    },
+    "4": {
+      "0": "Al golpear a los enemigos con Ataques Normales y Cargados, hay un <cryo>100%</cryo> de probabilidad de crear un carámbano sobre ellos. Al caer, el carámbano inflige un <cryo>140%</cryo> de daño de ATQ en el AdE. Si los enemigos están afectados por Cryo, el daño de ATQ infligido será del <cryo>360%</cryo>. Este efecto solo puede ocurrir una vez cada 10 s."
+    }
+  }
+}

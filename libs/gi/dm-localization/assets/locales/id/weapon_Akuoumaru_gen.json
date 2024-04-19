@@ -1,0 +1,24 @@
+{
+  "name": "Akuoumaru",
+  "description": {
+    "0": "Pedang kesayangan \"Akuou\" yang legendaris. Pedang ini sangat besar dan agung, tapi ternyata cukup mudah digunakan."
+  },
+  "passiveName": "Watatsumi Wavewalker",
+  "passiveDescription": {
+    "0": {
+      "0": "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan <cryo>0,12%</cryo> DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah <cryo>40%</cryo>."
+    },
+    "1": {
+      "0": "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan <cryo>0,15%</cryo> DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah <cryo>50%</cryo>."
+    },
+    "2": {
+      "0": "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan <cryo>0,18%</cryo> DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah <cryo>60%</cryo>."
+    },
+    "3": {
+      "0": "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan <cryo>0,21%</cryo> DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah <cryo>70%</cryo>."
+    },
+    "4": {
+      "0": "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan <cryo>0,24%</cryo> DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah <cryo>80%</cryo>."
+    }
+  }
+}

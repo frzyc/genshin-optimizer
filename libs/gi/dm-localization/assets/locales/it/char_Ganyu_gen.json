@@ -1,0 +1,165 @@
+{
+  "name": "Ganyu",
+  "title": "Sguardo del plenilunio",
+  "description": "La segretaria del Padiglione Yuehai. Nelle sue vene scorre il sangue del Qilin, una bestia illuminata.",
+  "constellationName": "Sinae Unicornis",
+  "auto": {
+    "name": "Arciere di Liutian",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Effettua fino a 6 tiri consecutivi con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, un'aura di ghiaccio si accumula sulla punta della freccia prima che questa venga scoccata. Ha diversi effetti in base alla durata della carica dell'energia.",
+        "3": [
+          " Livello di carica 1: scocca una freccia gelata che infligge <cryo>DAN da Cryo</cryo>.",
+          " Livello di carica 2: scocca una freccia Fiocco di ghiaccio che infligge <cryo>DAN da Cryo</cryo>. La freccia Fiocco di ghiaccio sboccia dopo aver colpito il suo obiettivo, infliggendo <cryo>DAN da Cryo ad area</cryo>."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da 6º colpo",
+      "6": "ATT mirato",
+      "7": "ATT mirato a livello di carica 1",
+      "8": "DAN da freccia Fiocco di ghiaccio",
+      "9": "DAN da fioritura freccia Fiocco di ghiaccio",
+      "10": "DAN da ATT in picchiata",
+      "11": "DAN da ATT in picchiata basso/alto",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Scia del Qilin",
+    "description": {
+      "0": "Lasciando sul posto un singolo Loto di ghiaccio, Ganyu scatta all'indietro, scansando tutte le impurità e infliggendo <cryo>DAN da Cryo ad area</cryo>.",
+      "1": "<br/>",
+      "2": "<strong>Loto di ghiaccio</strong>",
+      "3": [
+        " Provoca continuamente gli avversari circostanti, attirando i loro attacchi.",
+        " La resistenza varia in base ai PS max di Ganyu.",
+        " Sboccia a profusione quando viene distrutto o al termine della sua durata, infliggendo <cryo>DAN da Cryo ad area</cryo>."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Mi hai visto, dici? Ti sbagli: stavo facendo gli straordinari al lavoro.\"</i>"
+    },
+    "skillParams": {
+      "0": "PS ereditati",
+      "1": "DAN da abilità",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Pioggia celestiale",
+    "description": {
+      "0": "Condensa il gelo atmosferico e la neve per evocare una Perla sacra di Cryo che esorcizza il male.",
+      "1": "Finché la sua abilità è attiva, la Perla sacra di Cryo fa piovere schegge di ghiaccio, colpendo gli avversari all'interno di un'area d'effetto e infliggendo <cryo>DAN da Cryo</cryo>.",
+      "2": "<br/>",
+      "3": "<i>Naturalmente, Ganyu può far piovere dolci piogge. Ma contro i demoni e gli eretici, diventano nevi gelide e amare.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Scheggia di ghiaccio",
+      "1": "Durata",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cuore indivisibile",
+    "description": {
+      "0": "Dopo aver scagliato una freccia Fiocco di ghiaccio, il tasso di CRIT delle frecce Fiocco di ghiaccio successive e i loro effetti di fioritura aumentano di un 20% per 5 s."
+    }
+  },
+  "passive2": {
+    "name": "Armonia tra cielo e terra",
+    "description": {
+      "0": "<strong>Pioggia celestiale</strong> fornisce un 20% di <cryo>bonus DAN da Cryo</cryo> ai membri attivi del gruppo nell'area d'effetto."
+    }
+  },
+  "passive3": {
+    "name": "Arco di riserva",
+    "description": {
+      "0": "Restituisce un 15% del materiale usato quando forgi armi di tipo Arco."
+    }
+  },
+  "constellation1": {
+    "name": "Il sapore della rugiada",
+    "description": {
+      "0": "Per colpo a segno, le frecce Fiocco di ghiaccio o i fiori delle frecce Fiocco di ghiaccio al livello di carica 2 riducono di un 15% la <cryo>RES a Cryo</cryo> degli avversari per 6 s. ",
+      "1": "Inoltre, l'energia di Ganyu si rigenera di 2 a ogni colpo. Si può verificare una sola volta per ogni freccia Fiocco di ghiaccio al livello di carica 2, a prescindere dal fatto che la freccia o il fiore Fiocco di ghiaccio colpisca il bersaglio."
+    }
+  },
+  "constellation2": {
+    "name": "Auspicio",
+    "description": {
+      "0": "<strong>Scia del Qilin</strong> ottiene 1 carica aggiuntiva."
+    }
+  },
+  "constellation3": {
+    "name": "Camminatore delle nuvole",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Pioggia celestiale</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Viaggio verso ovest",
+    "description": {
+      "0": "Gli avversari all'interno dell'area d'effetto di <strong>Pioggia celestiale</strong> subiscono DAN extra. Quest'effetto si potenzia nel tempo.",
+      "1": "L'aumento di DAN subiti inizia con un 5% e aumenta di un 5% ogni 3 s, fino a un massimo di 25%.",
+      "2": "L'effetto si protrae per 3 s dopo che l'avversario esce dall'area d'effetto."
+    }
+  },
+  "constellation5": {
+    "name": "Misericordia",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Scia del Qilin</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Clemenza",
+    "description": {
+      "0": "L'uso di <strong>Scia del Qilin</strong> consente di non ricaricare la prossima freccia Fiocco di ghiaccio scagliata nei successivi 30 s."
+    }
+  }
+}

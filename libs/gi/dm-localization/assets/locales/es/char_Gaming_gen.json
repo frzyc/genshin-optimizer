@@ -1,0 +1,160 @@
+{
+  "name": "Gaming",
+  "title": "El Vigía Leonino",
+  "description": "Escolta de la Agencia de Transporte Seguro Cofrespada y líder del grupo Bestias Místicas Poderosas.",
+  "constellationName": "Leo Expergiscens",
+  "auto": {
+    "name": "Zarpazo estelar",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques de espada consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume Aguante de manera constante para realizar golpes de espada giratorios contra los enemigos cercanos.",
+        "2": "Al final del Ataque Cargado, realizará un golpe de espada más poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado en ciclo",
+      "5": "Daño final de Ataque Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Duración máx.",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ascensión bestial",
+    "description": {
+      "0": "Se abalanza hacia delante utilizando el arte de la danza de bestias y, tras entrar en contacto con un objetivo o cualquier tipo de obstáculo, da un gran salto hacia arriba.",
+      "1": "Si Gaming ejecuta un Ataque Descendente inmediatamente después de elevarse en las alturas con su Habilidad Elemental, “Ascensión bestial”, ejecutará un Ataque Descendente: Auspicio nebular especialmente poderoso.",
+      "2": "<br/>",
+      "3": "<strong>Ataque Descendente: Auspicio nebular</strong>",
+      "4": "El daño infligido con el Ataque Descendente ejecutado con su Habilidad Elemental, “Ascensión bestial”, se convierte en <pyro>Daño Pyro</pyro>, el cual no puede sustituirse imbuyéndose de otro elemento, y además, al aterrizar, Gaming perderá cierta cantidad de Vida. Como máximo, la Vida de Gaming puede reducirse hasta el 10% de esta manera.",
+      "5": "El daño de Auspicio nebular se considera daño de Ataque Descendente.",
+      "6": "<br/>",
+      "7": "<i>“La bestia salta para atrapar la verdura, símbolo de prosperidad y buena fortuna. Riqueza y salud con nosotros estén, ¡y saltemos muy alto para ascender!”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de Ataque Descendente: Auspicio nebular",
+      "1": "Consumo de Vida",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Pirodanza del suanni",
+    "description": {
+      "0": "Gaming hace uso de su danza de bestias para <pyro>aplicar Pyro</pyro> sobre sí mismo durante un breve periodo de tiempo, recuperar una cantidad de Vida determinada e invocar a su fiel compañero, el suanni Man Chai, con el que aplasta a su objetivo e inflige <pyro>Daño Pyro en el AdE</pyro>.",
+      "1": "Tras golpear a su objetivo, Man Chai cae rodando en un lugar cercano y luego regresa con Gaming. Después de reunirse con él, Man Chai abandona el campo de batalla y reinicia el TdE de la Habilidad Elemental de Gaming, “Ascensión bestial”.",
+      "2": "Mientras la danza de bestias está activa, la RES a interrupción de Gaming aumenta y, cuando el Ataque Descendente: Auspicio nebular impacta contra el suelo o cuando termina de abalanzarse hacia delante contra un objetivo con Ascensión bestial, si Gaming tiene más del 50% de Vida, invocará de nuevo a Man Chai.",
+      "3": "Solo puede haber 1 suanni Man Chai a la vez en el campo de batalla.",
+      "4": "Este efecto termina cuando Gaming se retira del campo de batalla.",
+      "5": "<br/>",
+      "6": "<i>“La bestia dorada trae buena suerte y una luz resplandeciente. ¡Eso es lo que yo llamo una vida floreciente!”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de aplastamiento del suanni Man Chai",
+      "1": "Recuperación de Vida",
+      "2": "Duración de danza de bestias",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Baile de la concordia",
+    "description": {
+      "0": "Tras golpear a un enemigo con el Ataque Descendente: Auspicio nebular de <strong>Ascensión bestial</strong>, Gaming recupera una cantidad de Vida equivalente al 1.5% de su Vida Máx. cada 0.2 s durante 0.8 s."
+    }
+  },
+  "passive2": {
+    "name": "Vaharina auspiciosa",
+    "description": {
+      "0": "Cuando la Vida de Gaming es inferior al 50%, obtiene un 20% de Bono de Curación recibida. Cuando su Vida es igual o superior al 50%, su Ataque Descendente: Auspicio nebular inflige un 20% más de daño."
+    }
+  },
+  "passive3": {
+    "name": "Andar de la bestia",
+    "description": {
+      "0": "Tus personajes del equipo obtienen el efecto de “paso ligero”, de manera que su Vel. Movimiento aumenta en un 10% por el día (06-18 h).",
+      "1": "Este efecto no se activará en dominios, Dominios de la cruzada y la Espiral del Abismo, y no se puede acumular con otros efectos de paso ligero."
+    }
+  },
+  "constellation1": {
+    "name": "Bendición refulgente",
+    "description": {
+      "0": "Cuando el suanni Man Chai de <strong>Pirodanza del suanni</strong> se reúne con Gaming, este recupera un 15% de Vida."
+    }
+  },
+  "constellation2": {
+    "name": "Paseo entre cerezos",
+    "description": {
+      "0": "Cuando Gaming recibe curación teniendo la Vida al máximo, su ATQ aumenta en un 20% durante 5 s."
+    }
+  },
+  "constellation3": {
+    "name": "Despertar espiritual",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Ascensión bestial</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Surcador de montañas",
+    "description": {
+      "0": "Cuando el Ataque Descendente: Auspicio nebular de <strong>Ascensión bestial</strong> golpea a un enemigo, Gaming recupera 2 pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 0.2 s."
+    }
+  },
+  "constellation5": {
+    "name": "Rugido acechademonios",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Pirodanza del suanni</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Domador de todas las bestias",
+    "description": {
+      "0": "La Prob. CRIT del Ataque Descendente: Auspicio nebular de <strong>Ascensión bestial</strong> aumenta en un 20%, su Daño CRIT aumenta en un 40% y su AdE se incrementa."
+    }
+  }
+}

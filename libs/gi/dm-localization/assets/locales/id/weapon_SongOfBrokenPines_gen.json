@@ -1,0 +1,24 @@
+{
+  "name": "Song of Broken Pines",
+  "description": {
+    "0": "Pedang besar seringan angin yang meniup dedaunan dengan lembut, tapi juga bagaikan angin topan yang ganas dan tanpa ampun bagi mereka yang korup."
+  },
+  "passiveName": "Rebel's Banner-Hymn",
+  "passiveDescription": {
+    "0": {
+      "0": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan <cryo>16%</cryo> ATK; Saat Normal atau Charged Attack mengenai musuh, Karakter akan mendapatkan satu Sigil of Whispers. Efek ini dapat terpicu setiap 0,3 detik. Saat kamu mempunyai 4 Sigil of Whispers, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Banner-Hymn\" selama 12 detik. \"Millennial Movement: Banner-Hymn\" akan meningkatkan <cryo>12%</cryo> Normal ATK SPD dan meningkatkan <cryo>20%</cryo> ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Whispers lagi selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+    },
+    "1": {
+      "0": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan <cryo>20%</cryo> ATK; Saat Normal atau Charged Attack mengenai musuh, Karakter akan mendapatkan satu Sigil of Whispers. Efek ini dapat terpicu setiap 0,3 detik. Saat kamu mempunyai 4 Sigil of Whispers, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Banner-Hymn\" selama 12 detik. \"Millennial Movement: Banner-Hymn\" akan meningkatkan <cryo>15%</cryo> Normal ATK SPD dan meningkatkan <cryo>25%</cryo> ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Whispers lagi selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+    },
+    "2": {
+      "0": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan <cryo>24%</cryo> ATK; Saat Normal atau Charged Attack mengenai musuh, Karakter akan mendapatkan satu Sigil of Whispers. Efek ini dapat terpicu setiap 0,3 detik. Saat kamu mempunyai 4 Sigil of Whispers, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Banner-Hymn\" selama 12 detik. \"Millennial Movement: Banner-Hymn\" akan meningkatkan <cryo>18%</cryo> Normal ATK SPD dan meningkatkan <cryo>30%</cryo> ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Whispers lagi selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+    },
+    "3": {
+      "0": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan <cryo>28%</cryo> ATK; Saat Normal atau Charged Attack mengenai musuh, Karakter akan mendapatkan satu Sigil of Whispers. Efek ini dapat terpicu setiap 0,3 detik. Saat kamu mempunyai 4 Sigil of Whispers, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Banner-Hymn\" selama 12 detik. \"Millennial Movement: Banner-Hymn\" akan meningkatkan <cryo>21%</cryo> Normal ATK SPD dan meningkatkan <cryo>35%</cryo> ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Whispers lagi selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+    },
+    "4": {
+      "0": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan <cryo>32%</cryo> ATK; Saat Normal atau Charged Attack mengenai musuh, Karakter akan mendapatkan satu Sigil of Whispers. Efek ini dapat terpicu setiap 0,3 detik. Saat kamu mempunyai 4 Sigil of Whispers, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Banner-Hymn\" selama 12 detik. \"Millennial Movement: Banner-Hymn\" akan meningkatkan <cryo>24%</cryo> Normal ATK SPD dan meningkatkan <cryo>40%</cryo> ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Whispers lagi selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+    }
+  }
+}

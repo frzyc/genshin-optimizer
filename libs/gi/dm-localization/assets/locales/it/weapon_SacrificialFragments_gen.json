@@ -1,0 +1,24 @@
+{
+  "name": "Frammenti sacrificali",
+  "description": {
+    "0": "Un libro eroso dal tempo, il cui testo è divenuto illeggibile. Un oggetto maledetto corrotto dai venti del tempo."
+  },
+  "passiveName": "Compostezza",
+  "passiveDescription": {
+    "0": {
+      "0": "Dopo aver inflitto danni a un avversario con un'abilità elementale, questa ha un <cryo>40%</cryo> di probabilità di azzerare il proprio TdR. Si può verificare una sola volta ogni <cryo>30</cryo> s."
+    },
+    "1": {
+      "0": "Dopo aver inflitto danni a un avversario con un'abilità elementale, questa ha un <cryo>50%</cryo> di probabilità di azzerare il proprio TdR. Si può verificare una sola volta ogni <cryo>26</cryo> s."
+    },
+    "2": {
+      "0": "Dopo aver inflitto danni a un avversario con un'abilità elementale, questa ha un <cryo>60%</cryo> di probabilità di azzerare il proprio TdR. Si può verificare una sola volta ogni <cryo>22</cryo> s."
+    },
+    "3": {
+      "0": "Dopo aver inflitto danni a un avversario con un'abilità elementale, questa ha un <cryo>70%</cryo> di probabilità di azzerare il proprio TdR. Si può verificare una sola volta ogni <cryo>19</cryo> s."
+    },
+    "4": {
+      "0": "Dopo aver inflitto danni a un avversario con un'abilità elementale, questa ha un <cryo>80%</cryo> di probabilità di azzerare il proprio TdR. Si può verificare una sola volta ogni <cryo>16</cryo> s."
+    }
+  }
+}

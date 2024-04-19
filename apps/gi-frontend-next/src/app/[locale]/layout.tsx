@@ -1,6 +1,9 @@
 import { Box, Container, Stack } from '@mui/material'
 import { dir } from 'i18next'
 import * as React from 'react'
+import { auth } from '../../auth'
+import { languages } from '../../i18n/settings'
+import DatabaseWrapper from './DatabaseWrapper'
 import DataWrapper from './components/DataWrapper'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -8,8 +11,6 @@ import ApolloProviderWrapper from './layoutWrappers/ApolloProviderWrapper'
 import { SessionProviderWrapper } from './layoutWrappers/SessionProviderWrapper'
 import ThemeRegistry from './layoutWrappers/ThemeRegistry/ThemeRegistry'
 import TransClientUpdate from './layoutWrappers/TransClientUpdate'
-import { auth } from '../../auth'
-import { languages } from '../../i18n/settings'
 
 export const metadata = {
   title: 'Genshin Optimizer',
@@ -36,23 +37,19 @@ export default async function RootLayout({
           <ApolloProviderWrapper>
             <ThemeRegistry>
               <TransClientUpdate locale={locale} />
-              <DataWrapper>
-                <Stack minHeight="100vh">
-                  <Header locale={locale} />
-                  <Container
-                    maxWidth="xl"
-                    sx={{
-                      px: { xs: 0.5, sm: 1, md: 2 },
-                      py: { xs: 0.5, sm: 1, md: 2 },
-                    }}
-                  >
-                    {children}
-                  </Container>
-                  {/* make sure footer is always at bottom */}
-                  <Box flexGrow={1} />
-                  <Footer />
-                </Stack>
-              </DataWrapper>
+              <DatabaseWrapper>
+                <DataWrapper>
+                  <Stack minHeight="100vh">
+                    <Header locale={locale} />
+                    <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1 } }}>
+                      {children}
+                    </Container>
+                    {/* make sure footer is always at bottom */}
+                    <Box flexGrow={1} />
+                    <Footer />
+                  </Stack>
+                </DataWrapper>
+              </DatabaseWrapper>
             </ThemeRegistry>
           </ApolloProviderWrapper>
         </SessionProviderWrapper>

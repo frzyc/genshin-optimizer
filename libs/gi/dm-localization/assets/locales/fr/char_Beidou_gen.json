@@ -1,0 +1,177 @@
+{
+  "name": "Beidou",
+  "title": "Reine des mers sans couronne",
+  "description": "Capitaine de la Flotte du Crux, une femme de tête franche et directe.",
+  "constellationName": "Victor Mare",
+  "auto": {
+    "name": "Conquête des mers",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'entailles aussi rapides que tranchantes.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT enchaînement attaque chargée",
+      "6": "DGT coup final attaque chargée",
+      "7": "Coût d'endurance attaque chargée",
+      "8": "Durée max",
+      "9": "DGT durant la chute",
+      "10": "DGT chute basse/élevée",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Invocation des marées",
+    "description": {
+      "0": "N'ayez crainte. Que quelqu'un ose s'en prendre à Beidou ou aux siens, et sa lame et le tonnerre lui feront payer au centuple.",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Beidou concentre le pouvoir de la foudre sur son épée, et exécute un coup violent qui inflige aux ennemis en face des <electro>DGT Électro</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Beidou brandit son arme, qu'elle utilise comme bouclier. La quantité de DGT absorbés est proportionnelle aux PV max de Beidou.",
+      "7": "Lorsque vous relâchez la compétence ou que celle-ci prend fin, Beidou brandit sa longue épée et effectue une contre-attaque libérant toute l'énergie accumulée, infligeant des <electro>DGT Électro</electro>.",
+      "8": "Les DGT infligés augmentent en fonction du nombre d'attaques subies par Beidou pendant la durée de la compétence. Le bonus de DGT maximum est atteint lorsque l'effet est déclenché deux fois.",
+      "9": "Le bouclier a les propriétés suivantes :",
+      "10": [
+        " A 250 % d'efficacité contre les <electro>DGT Électro</electro>.",
+        " Applique l'<electro>élément Électro</electro> à Beidou à l'activation."
+      ],
+      "11": "<br/>",
+      "12": "<i>À l'assaut des mers ! À la poursuite des vagues et de la tempête !</i>"
+    },
+    "skillParams": {
+      "0": "PV du bouclier",
+      "1": "DGT de base",
+      "2": "Bonus de DGT par coup",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Brisure d'orage",
+    "description": {
+      "0": "Se remémorant son combat contre Haishan, la bête géante, Beidou fait appel à la même force destructrice, et crée un bouclier de foudre qui inflige des <electro>DGT Électro</electro> aux ennemis proches.",
+      "1": "<br/>",
+      "2": "<strong>Bouclier de foudre</strong>",
+      "3": [
+        " Les attaques normales et chargées, lorsqu'elles touchent, libèrent une décharge électrique qui se propage d'ennemi en ennemi et inflige des <electro>DGT Électro</electro>.",
+        " Augmente la RÉS à l'interruption du personnage et diminue les DGT subis."
+      ],
+      "4": "<br/>",
+      "5": "Une décharge peut être libérée une fois toutes les secondes.<i>Le plus puissant des éclairs peut fendre mers et montagnes.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT décharge",
+      "2": "Réduction DGT",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Châtiment",
+    "description": {
+      "0": "La contre-attaque d'<strong>Invocation des marées</strong> inflige le maximum de DGT lorsqu'elle est exécutée juste après une attaque."
+    }
+  },
+  "passive2": {
+    "name": "Tempête de coups de tonnerre",
+    "description": {
+      "0": "<strong>Invocation des marées</strong> confère pendant 10 s les effets suivants lorsque cette aptitude est exécutée avec le maximum de bonus de DGT :",
+      "1": [
+        " Les attaques normales et chargées infligent 15 % de DGT supplémentaires.",
+        " La VIT des attaques normales et chargées augmente de 15 %.",
+        " Diminue considérablement le temps de préparation des attaques chargées."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Braveuse de marée",
+    "description": {
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de la nage.",
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Fléau des monstres marins",
+    "description": {
+      "0": "L'activation de <strong>Brisure d'orage</strong> confère les effets suivants :",
+      "1": "Génère un bouclier qui absorbe une quantité de DGT équivalant à 16 % des PV max et dure 15 s.",
+      "2": "Le bouclier est efficace à 250 % contre les <electro>DGT Électro</electro>."
+    }
+  },
+  "constellation2": {
+    "name": "Sur la mer turbulente, le tonnerre gronde",
+    "description": {
+      "0": "Les décharges de <strong>Brisure d'orage</strong> se propagent à 2 ennemis supplémentaires."
+    }
+  },
+  "constellation3": {
+    "name": "Invocateur de tonnerre",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Invocation des marées</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Vengeance étonnante",
+    "description": {
+      "0": "Après avoir subi une attaque, les attaques normales de Beidou infligent 20 % de <electro>DGT Électro</electro> supplémentaires pendant 10 s."
+    }
+  },
+  "constellation5": {
+    "name": "Marcheur de marée écarlate",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Brisure d'orage</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Chancre du mal",
+    "description": {
+      "0": "La <electro>RÉS Électro</electro> des ennemis proches diminue de 15 % tant que <strong>Brisure d'orage</strong> est actif."
+    }
+  }
+}

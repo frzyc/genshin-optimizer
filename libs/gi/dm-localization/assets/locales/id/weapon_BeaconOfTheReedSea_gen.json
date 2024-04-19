@@ -1,0 +1,24 @@
+{
+  "name": "Beacon of the Reed Sea",
+  "description": {
+    "0": "Pedang besar berujung datar yang dirancang agar cocok dipakai sebagai senjata raja kuno atau instrumen upacara."
+  },
+  "passiveName": "Desert Watch",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Elemental Skill mengenai musuh, ATK meningkat <cryo>20%</cryo> selama 8 detik; Setelah menerima DMG, ATK meningkat <cryo>20%</cryo> selama 8 detik. Kedua efek di atas tetap bisa terpicu meskipun Karakter yang mengenakan Senjata ini ada dalam party namun sedang tidak berada di medan pertempuran. Selain itu, saat tidak dilindungi perisai, Max HP meningkat <cryo>32%</cryo>."
+    },
+    "1": {
+      "0": "Setelah Elemental Skill mengenai musuh, ATK meningkat <cryo>25%</cryo> selama 8 detik; Setelah menerima DMG, ATK meningkat <cryo>25%</cryo> selama 8 detik. Kedua efek di atas tetap bisa terpicu meskipun Karakter yang mengenakan Senjata ini ada dalam party namun sedang tidak berada di medan pertempuran. Selain itu, saat tidak dilindungi perisai, Max HP meningkat <cryo>40%</cryo>."
+    },
+    "2": {
+      "0": "Setelah Elemental Skill mengenai musuh, ATK meningkat <cryo>30%</cryo> selama 8 detik; Setelah menerima DMG, ATK meningkat <cryo>30%</cryo> selama 8 detik. Kedua efek di atas tetap bisa terpicu meskipun Karakter yang mengenakan Senjata ini ada dalam party namun sedang tidak berada di medan pertempuran. Selain itu, saat tidak dilindungi perisai, Max HP meningkat <cryo>48%</cryo>."
+    },
+    "3": {
+      "0": "Setelah Elemental Skill mengenai musuh, ATK meningkat <cryo>35%</cryo> selama 8 detik; Setelah menerima DMG, ATK meningkat <cryo>35%</cryo> selama 8 detik. Kedua efek di atas tetap bisa terpicu meskipun Karakter yang mengenakan Senjata ini ada dalam party namun sedang tidak berada di medan pertempuran. Selain itu, saat tidak dilindungi perisai, Max HP meningkat <cryo>56%</cryo>."
+    },
+    "4": {
+      "0": "Setelah Elemental Skill mengenai musuh, ATK meningkat <cryo>40%</cryo> selama 8 detik; Setelah menerima DMG, ATK meningkat <cryo>40%</cryo> selama 8 detik. Kedua efek di atas tetap bisa terpicu meskipun Karakter yang mengenakan Senjata ini ada dalam party namun sedang tidak berada di medan pertempuran. Selain itu, saat tidak dilindungi perisai, Max HP meningkat <cryo>64%</cryo>."
+    }
+  }
+}

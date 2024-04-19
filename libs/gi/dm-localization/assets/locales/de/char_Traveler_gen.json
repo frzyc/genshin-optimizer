@@ -1,0 +1,11 @@
+{
+  "electro": {
+    "skill": {
+      "enerRegen": "Elementarenergie-Wiederherstellung",
+      "enerRechInc": "Aufladeratenbonus"
+    },
+    "burst": {
+      "thunderDMG": "SCH greller Blitzschläge"
+    }
+  }
+}

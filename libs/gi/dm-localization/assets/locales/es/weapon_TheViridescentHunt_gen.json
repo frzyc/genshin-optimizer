@@ -1,0 +1,24 @@
+{
+  "name": "Arco de la Cazadora Esmeralda",
+  "description": {
+    "0": "Un noble e inmaculado arco de caza de color verde oscuro. Perteneció a una persona que solía cazar en los bosques."
+  },
+  "passiveName": "Viento esmeralda",
+  "passiveDescription": {
+    "0": {
+      "0": "Al golpear con un Ataque Normal o Ataque Cargado, hay un 50% de probabilidad de crear un ciclón que atrae a los enemigos cercanos de forma continua, infligiendo un <cryo>40%</cryo> del ATQ como daño cada 0.5 s durante 4 s. Este efecto puede ocurrir una vez cada <cryo>14</cryo> s."
+    },
+    "1": {
+      "0": "Al golpear con un Ataque Normal o Ataque Cargado, hay un 50% de probabilidad de crear un ciclón que atrae a los enemigos cercanos de forma continua, infligiendo un <cryo>50%</cryo> del ATQ como daño cada 0.5 s durante 4 s. Este efecto puede ocurrir una vez cada <cryo>13</cryo> s."
+    },
+    "2": {
+      "0": "Al golpear con un Ataque Normal o Ataque Cargado, hay un 50% de probabilidad de crear un ciclón que atrae a los enemigos cercanos de forma continua, infligiendo un <cryo>60%</cryo> del ATQ como daño cada 0.5 s durante 4 s. Este efecto puede ocurrir una vez cada <cryo>12</cryo> s."
+    },
+    "3": {
+      "0": "Al golpear con un Ataque Normal o Ataque Cargado, hay un 50% de probabilidad de crear un ciclón que atrae a los enemigos cercanos de forma continua, infligiendo un <cryo>70%</cryo> del ATQ como daño cada 0.5 s durante 4 s. Este efecto puede ocurrir una vez cada <cryo>11</cryo> s."
+    },
+    "4": {
+      "0": "Al golpear con un Ataque Normal o Ataque Cargado, hay un 50% de probabilidad de crear un ciclón que atrae a los enemigos cercanos de forma continua, infligiendo un <cryo>80%</cryo> del ATQ como daño cada 0.5 s durante 4 s. Este efecto puede ocurrir una vez cada <cryo>10</cryo> s."
+    }
+  }
+}

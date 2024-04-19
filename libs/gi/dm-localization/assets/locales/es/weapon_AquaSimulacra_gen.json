@@ -1,0 +1,24 @@
+{
+  "name": "Aqua Simulacra",
+  "description": {
+    "0": "Un arco largo de un brillo imprevisiblemente cambiante. Al recibir el reflejo de una luz, adquiere un color azulado."
+  },
+  "passiveName": "Purificaformas",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta la Vida en un <cryo>16%</cryo>. Cuando haya algún enemigo cerca, el daño del personaje que lleva esta arma equipada aumenta en un <cryo>20%</cryo>. Este efecto se puede activar cuando dicho personaje está en uso o cuando está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Aumenta la Vida en un <cryo>20%</cryo>. Cuando haya algún enemigo cerca, el daño del personaje que lleva esta arma equipada aumenta en un <cryo>25%</cryo>. Este efecto se puede activar cuando dicho personaje está en uso o cuando está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Aumenta la Vida en un <cryo>24%</cryo>. Cuando haya algún enemigo cerca, el daño del personaje que lleva esta arma equipada aumenta en un <cryo>30%</cryo>. Este efecto se puede activar cuando dicho personaje está en uso o cuando está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Aumenta la Vida en un <cryo>28%</cryo>. Cuando haya algún enemigo cerca, el daño del personaje que lleva esta arma equipada aumenta en un <cryo>35%</cryo>. Este efecto se puede activar cuando dicho personaje está en uso o cuando está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Aumenta la Vida en un <cryo>32%</cryo>. Cuando haya algún enemigo cerca, el daño del personaje que lleva esta arma equipada aumenta en un <cryo>40%</cryo>. Este efecto se puede activar cuando dicho personaje está en uso o cuando está en tu equipo pero no en uso."
+    }
+  }
+}

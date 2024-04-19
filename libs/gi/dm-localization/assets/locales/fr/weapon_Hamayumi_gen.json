@@ -1,0 +1,24 @@
+{
+  "name": "Arc d'exorcisme",
+  "description": {
+    "0": "Cet arc de guerre appartenait autrefois à une certaine prêtresse. Il a été fabriqué avec un doigté exceptionnel, et est à la fois complexe et robuste."
+  },
+  "passiveName": "Pleine allonge",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT infligés par les attaques normales de <cryo>16 %</cryo> et ceux des attaques chargées de <cryo>12 %</cryo>. Lorsque l'énergie élémentaire du personnage équipé de l'arme atteint 100 %, cet effet augmente de 100 %."
+    },
+    "1": {
+      "0": "Augmente les DGT infligés par les attaques normales de <cryo>20 %</cryo> et ceux des attaques chargées de <cryo>15 %</cryo>. Lorsque l'énergie élémentaire du personnage équipé de l'arme atteint 100 %, cet effet augmente de 100 %."
+    },
+    "2": {
+      "0": "Augmente les DGT infligés par les attaques normales de <cryo>24 %</cryo> et ceux des attaques chargées de <cryo>18 %</cryo>. Lorsque l'énergie élémentaire du personnage équipé de l'arme atteint 100 %, cet effet augmente de 100 %."
+    },
+    "3": {
+      "0": "Augmente les DGT infligés par les attaques normales de <cryo>28 %</cryo> et ceux des attaques chargées de <cryo>21 %</cryo>. Lorsque l'énergie élémentaire du personnage équipé de l'arme atteint 100 %, cet effet augmente de 100 %."
+    },
+    "4": {
+      "0": "Augmente les DGT infligés par les attaques normales de <cryo>32 %</cryo> et ceux des attaques chargées de <cryo>24 %</cryo>. Lorsque l'énergie élémentaire du personnage équipé de l'arme atteint 100 %, cet effet augmente de 100 %."
+    }
+  }
+}

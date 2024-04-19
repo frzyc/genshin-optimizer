@@ -1,0 +1,24 @@
+{
+  "name": "Kompozit Yay",
+  "description": {
+    "0": "Uzak diyarlardan gelen metal bir yay. Bakımı oldukça zordur ama eşsiz fırlatma gücüyle avına muazzam bir darbe indirir."
+  },
+  "passiveName": "Tesirli Ok",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal Saldırı ve Yüklü Saldırı vuruşları 6 saniyeliğine Saldırıyı <cryo>%4</cryo>, Normal Saldırı Hızını <cryo>%1,2</cryo> artırır. 4 kademeye kadar birikir. 0,3 saniyede bir uygulanabilir."
+    },
+    "1": {
+      "0": "Normal Saldırı ve Yüklü Saldırı vuruşları 6 saniyeliğine Saldırıyı <cryo>%5</cryo>, Normal Saldırı Hızını <cryo>%1,5</cryo> artırır. 4 kademeye kadar birikir. 0,3 saniyede bir uygulanabilir."
+    },
+    "2": {
+      "0": "Normal Saldırı ve Yüklü Saldırı vuruşları 6 saniyeliğine Saldırıyı <cryo>%6</cryo>, Normal Saldırı Hızını <cryo>%1,8</cryo> artırır. 4 kademeye kadar birikir. 0,3 saniyede bir uygulanabilir."
+    },
+    "3": {
+      "0": "Normal Saldırı ve Yüklü Saldırı vuruşları 6 saniyeliğine Saldırıyı <cryo>%7</cryo>, Normal Saldırı Hızını <cryo>%2,1</cryo> artırır. 4 kademeye kadar birikir. 0,3 saniyede bir uygulanabilir."
+    },
+    "4": {
+      "0": "Normal Saldırı ve Yüklü Saldırı vuruşları 6 saniyeliğine Saldırıyı <cryo>%8</cryo>, Normal Saldırı Hızını <cryo>%2,4</cryo> artırır. 4 kademeye kadar birikir. 0,3 saniyede bir uygulanabilir."
+    }
+  }
+}

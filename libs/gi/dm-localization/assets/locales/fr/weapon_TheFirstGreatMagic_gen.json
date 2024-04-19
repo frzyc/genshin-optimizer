@@ -1,0 +1,24 @@
+{
+  "name": "La première grande magie",
+  "description": {
+    "0": "Un accessoire de scène autrefois utilisé par une « grande magicienne », l'ultime secret de cette dernière étant qu'il s'agissait en fait d'une arme."
+  },
+  "passiveName": "Parsifal la grande",
+  "passiveDescription": {
+    "0": {
+      "0": "Les DGT infligés par les attaques chargées augmentent de <cryo>16 %</cryo>. Chaque personnage de l'équipe dont le type élémentaire est le même que celui du personnage équipé de l'arme (y compris le personnage en question) accorde 1 cumul de l'effet Roublardise, tandis que chaque personnage de l'équipe dont le type élémentaire est différent accorde 1 cumul de l'effet Tragédien. Avec 1, 2 ou au minimum 3 cumuls de roublardise, l'ATQ augmente respectivement de <cryo>16 %, 32 % ou 48 %</cryo>, tandis qu'avec 1, 2 ou au minimum 3 cumuls de tragédien, la VIT de déplacement augmente respectivement de <cryo>4 %, 7 % ou 10 %</cryo>."
+    },
+    "1": {
+      "0": "Les DGT infligés par les attaques chargées augmentent de <cryo>20 %</cryo>. Chaque personnage de l'équipe dont le type élémentaire est le même que celui du personnage équipé de l'arme (y compris le personnage en question) accorde 1 cumul de l'effet Roublardise, tandis que chaque personnage de l'équipe dont le type élémentaire est différent accorde 1 cumul de l'effet Tragédien. Avec 1, 2 ou au minimum 3 cumuls de roublardise, l'ATQ augmente respectivement de <cryo>20 %, 40 % ou 60 %</cryo>, tandis qu'avec 1, 2 ou au minimum 3 cumuls de tragédien, la VIT de déplacement augmente respectivement de <cryo>6 %, 9 % ou 12 %</cryo>."
+    },
+    "2": {
+      "0": "Les DGT infligés par les attaques chargées augmentent de <cryo>24 %</cryo>. Chaque personnage de l'équipe dont le type élémentaire est le même que celui du personnage équipé de l'arme (y compris le personnage en question) accorde 1 cumul de l'effet Roublardise, tandis que chaque personnage de l'équipe dont le type élémentaire est différent accorde 1 cumul de l'effet Tragédien. Avec 1, 2 ou au minimum 3 cumuls de roublardise, l'ATQ augmente respectivement de <cryo>24 %, 48 % ou 72 %</cryo>, tandis qu'avec 1, 2 ou au minimum 3 cumuls de tragédien, la VIT de déplacement augmente respectivement de <cryo>8 %, 11 % ou 14 %</cryo>."
+    },
+    "3": {
+      "0": "Les DGT infligés par les attaques chargées augmentent de <cryo>28 %</cryo>. Chaque personnage de l'équipe dont le type élémentaire est le même que celui du personnage équipé de l'arme (y compris le personnage en question) accorde 1 cumul de l'effet Roublardise, tandis que chaque personnage de l'équipe dont le type élémentaire est différent accorde 1 cumul de l'effet Tragédien. Avec 1, 2 ou au minimum 3 cumuls de roublardise, l'ATQ augmente respectivement de <cryo>28 %, 56 % ou 84 %</cryo>, tandis qu'avec 1, 2 ou au minimum 3 cumuls de tragédien, la VIT de déplacement augmente respectivement de <cryo>10 %, 13 % ou 16 %</cryo>."
+    },
+    "4": {
+      "0": "Les DGT infligés par les attaques chargées augmentent de <cryo>32 %</cryo>. Chaque personnage de l'équipe dont le type élémentaire est le même que celui du personnage équipé de l'arme (y compris le personnage en question) accorde 1 cumul de l'effet Roublardise, tandis que chaque personnage de l'équipe dont le type élémentaire est différent accorde 1 cumul de l'effet Tragédien. Avec 1, 2 ou au minimum 3 cumuls de roublardise, l'ATQ augmente respectivement de <cryo>32 %, 64 % ou 96 %</cryo>, tandis qu'avec 1, 2 ou au minimum 3 cumuls de tragédien, la VIT de déplacement augmente respectivement de <cryo>12 %, 15 % ou 18 %</cryo>."
+    }
+  }
+}

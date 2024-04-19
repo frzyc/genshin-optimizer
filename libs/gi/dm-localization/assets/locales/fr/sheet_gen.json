@@ -1,0 +1,87 @@
+{
+  "normal": {
+    "hit1": "DGT 1er coup",
+    "hit2": "DGT 2e coup",
+    "hit3": "DGT 3e coup",
+    "hit4": "DGT 4e coup",
+    "hit5": "DGT 5e coup",
+    "hit6": "DGT 6e coup"
+  },
+  "charged": {
+    "dmg": "DGT attaque chargée",
+    "spinning": "DGT enchaînement attaque chargée",
+    "final": "DGT coup final attaque chargée",
+    "stamina": "Coût d'endurance attaque chargée",
+    "aimed": "DGT tir visé",
+    "fullyAimed": "DGT tir visé (pleine charge)"
+  },
+  "plunging": {
+    "dmg": "DGT durant la chute",
+    "low": "DGT chute basse",
+    "high": "DGT chute élevée"
+  },
+  "maxDuration": "Durée max",
+  "maxStacks": "Limite de cumuls d'énergie",
+  "skillDMG": "DGT compétence",
+  "burstDMG": "DGT explosifs",
+  "dmgAbsorption": "PV du bouclier",
+  "healing": "Soins",
+  "contHealing": "Soins continus",
+  "duration": "Durée",
+  "cd": "Temps de recharge",
+  "energyCost": "Énergie élémentaire",
+  "energyRegen": "Restauration énergie élémentaire",
+  "baseDMG": "DGT de base",
+  "dot": "DGT continus",
+  "addEleDMG": "Bonus DGT élémentaires",
+  "hpRegenPerHit": "Soins équipe",
+  "press": {
+    "dmg": "DGT appui simple",
+    "cd": "TdR appui simple"
+  },
+  "hold": {
+    "dmg": "DGT appui long",
+    "cd": "TdR appui long"
+  },
+  "element": {
+    "anemo": "Anémo",
+    "geo": "Géo",
+    "pyro": "Pyro",
+    "hydro": "Hydro",
+    "cryo": "Cryo",
+    "electro": "Électro",
+    "dendro": "Dendro"
+  },
+  "reaction": {
+    "swirl": "Dispersion",
+    "crystallize": "Cristallisation",
+    "overloaded": "Surcharge",
+    "electrocharged": "Électrocution",
+    "superconduct": "Supraconduction",
+    "vaporize": "Évaporation",
+    "melt": "Fonte",
+    "bloom": "Fleurissement",
+    "burgeon": "Bourgeonnement",
+    "hyperbloom": "Exubérance",
+    "quicken": "Stimulation",
+    "aggravate": "Suractivation",
+    "spread": "Propagation"
+  },
+  "stat": {
+    "def": "DÉF",
+    "base": {
+      "atk": "ATQ de base"
+    }
+  },
+  "constellationLvl": "Constellation Niv.{{level}}",
+  "talentLvl": "Niveau d'aptitude {{level}}",
+  "talents": {
+    "auto": "Attaque normale",
+    "skill": "Compétence élémentaire",
+    "burst": "Déchaînement élémentaire",
+    "altSprint": "Sprint alternatif"
+  },
+  "unlockPassive1": "Disponible lorsque le personnage atteint la phase d'élévation 1",
+  "unlockPassive2": "Disponible lorsque le personnage atteint la phase d'élévation 4",
+  "unlockPassive3": "Aptitude passive"
+}

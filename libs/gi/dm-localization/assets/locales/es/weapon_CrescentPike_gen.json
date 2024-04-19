@@ -1,0 +1,24 @@
+{
+  "name": "Pica Luna Creciente",
+  "description": {
+    "0": "Un arma exótica con una cuchilla extremadamente larga en la parte superior y una cuchilla en forma de media luna en la parte inferior. Llegó a Liyue a través de comerciantes extranjeros. Con la práctica, puede causar grandes daños."
+  },
+  "passiveName": "Aguja de infusión",
+  "passiveDescription": {
+    "0": {
+      "0": "Después de obtener una partícula u orbe elemental, los Ataques Normales y Cargados infligen un <cryo>20%</cryo> de daño de ATQ adicional durante 5 s."
+    },
+    "1": {
+      "0": "Después de obtener una partícula u orbe elemental, los Ataques Normales y Cargados infligen un <cryo>25%</cryo> de daño de ATQ adicional durante 5 s."
+    },
+    "2": {
+      "0": "Después de obtener una partícula u orbe elemental, los Ataques Normales y Cargados infligen un <cryo>30%</cryo> de daño de ATQ adicional durante 5 s."
+    },
+    "3": {
+      "0": "Después de obtener una partícula u orbe elemental, los Ataques Normales y Cargados infligen un <cryo>35%</cryo> de daño de ATQ adicional durante 5 s."
+    },
+    "4": {
+      "0": "Después de obtener una partícula u orbe elemental, los Ataques Normales y Cargados infligen un <cryo>40%</cryo> de daño de ATQ adicional durante 5 s."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Fulgor de Vurukasha",
+  "setEffects": {
+    "2": "Vida +20%.",
+    "4": "El daño de la Habilidad Elemental y Definitiva aumenta en un 10%. Cuando el portador de este artefacto recibe daño, el incremento de daño anteriormente mencionado aumenta en un 80% durante 5 s. Este efecto puede acumularse hasta 5 veces, cada acumulación se calcula de manera independiente y se puede activar incluso cuando el portador está en tu equipo pero no en uso."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Estambre Primordial de la Jvarena",
+      "desc": "Una insignia que solían llevar los peregrinos de otros tiempos. Tiene la apariencia de una bella flor."
+    },
+    "plume": {
+      "name": "Pluma Cromática",
+      "desc": "Una pluma decorativa elaborada con la máxima sofisticación. Irradia el lustre característico de unas hojas verdes y unas flores fragantes."
+    },
+    "sands": {
+      "name": "Marchitamiento de Antaño",
+      "desc": "Un reloj antiguo que irradia energía jvarena. Contiene un líquido de gran pureza que parece tener vida propia."
+    },
+    "goblet": {
+      "name": "Festín del Júbilo Inconmensurable",
+      "desc": "Una hermosa copa, ahora completamente vacía, que antaño contenía el néctar más exquisito."
+    },
+    "circlet": {
+      "name": "Corazón Refulgente de la Jvarena",
+      "desc": "Unos aretes elegantes y coloridos. Su fulgor desprende el brillo de cien flores."
+    }
+  }
+}

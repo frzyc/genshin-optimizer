@@ -1,0 +1,24 @@
+{
+  "name": "Lance Dosdragon",
+  "description": {
+    "0": "Une lance fabriquée à partir d'un croc de dragon. Une certaine chaleur en émane."
+  },
+  "passiveName": "Deuil givré",
+  "passiveDescription": {
+    "0": {
+      "0": "Les attaques normales et chargées ont <cryo>60 %</cryo> de chances lorsqu'elles touchent de générer une stalactite de glace qui inflige des DGT de zone équivalant à <cryo>80 %</cryo> de l'ATQ. Si l'ennemi est affecté par l'élément Cryo, la stalactite inflige alors <cryo>200 %</cryo> de l'ATQ. Cet effet peut être déclenché une fois toutes les 10 s."
+    },
+    "1": {
+      "0": "Les attaques normales et chargées ont <cryo>70 %</cryo> de chances lorsqu'elles touchent de générer une stalactite de glace qui inflige des DGT de zone équivalant à <cryo>95 %</cryo> de l'ATQ. Si l'ennemi est affecté par l'élément Cryo, la stalactite inflige alors <cryo>240 %</cryo> de l'ATQ. Cet effet peut être déclenché une fois toutes les 10 s."
+    },
+    "2": {
+      "0": "Les attaques normales et chargées ont <cryo>80 %</cryo> de chances lorsqu'elles touchent de générer une stalactite de glace qui inflige des DGT de zone équivalant à <cryo>110 %</cryo> de l'ATQ. Si l'ennemi est affecté par l'élément Cryo, la stalactite inflige alors <cryo>280 %</cryo> de l'ATQ. Cet effet peut être déclenché une fois toutes les 10 s."
+    },
+    "3": {
+      "0": "Les attaques normales et chargées ont <cryo>90 %</cryo> de chances lorsqu'elles touchent de générer une stalactite de glace qui inflige des DGT de zone équivalant à <cryo>125 %</cryo> de l'ATQ. Si l'ennemi est affecté par l'élément Cryo, la stalactite inflige alors <cryo>320 %</cryo> de l'ATQ. Cet effet peut être déclenché une fois toutes les 10 s."
+    },
+    "4": {
+      "0": "Les attaques normales et chargées ont <cryo>100 %</cryo> de chances lorsqu'elles touchent de générer une stalactite de glace qui inflige des DGT de zone équivalant à <cryo>140 %</cryo> de l'ATQ. Si l'ennemi est affecté par l'élément Cryo, la stalactite inflige alors <cryo>360 %</cryo> de l'ATQ. Cet effet peut être déclenché une fois toutes les 10 s."
+    }
+  }
+}

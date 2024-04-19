@@ -1,0 +1,24 @@
+{
+  "name": "Khúc Ca Tĩnh Lặng",
+  "description": {
+    "0": "Chiếc cung có hình dáng kỳ lạ như sinh vật dưới biển, khi rung dây cung hình như không chút tiếng động."
+  },
+  "passiveName": "Âm Điệu Biển Sâu",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi nhận trị liệu, sát thương gây ra tăng <cryo>16%</cryo>, duy trì 8s. Nhân vật không ra trận cũng có thể kích hoạt."
+    },
+    "1": {
+      "0": "Sau khi nhận trị liệu, sát thương gây ra tăng <cryo>20%</cryo>, duy trì 8s. Nhân vật không ra trận cũng có thể kích hoạt."
+    },
+    "2": {
+      "0": "Sau khi nhận trị liệu, sát thương gây ra tăng <cryo>24%</cryo>, duy trì 8s. Nhân vật không ra trận cũng có thể kích hoạt."
+    },
+    "3": {
+      "0": "Sau khi nhận trị liệu, sát thương gây ra tăng <cryo>28%</cryo>, duy trì 8s. Nhân vật không ra trận cũng có thể kích hoạt."
+    },
+    "4": {
+      "0": "Sau khi nhận trị liệu, sát thương gây ra tăng <cryo>32%</cryo>, duy trì 8s. Nhân vật không ra trận cũng có thể kích hoạt."
+    }
+  }
+}

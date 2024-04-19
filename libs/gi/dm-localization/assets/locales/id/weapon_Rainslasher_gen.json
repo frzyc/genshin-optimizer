@@ -1,0 +1,24 @@
+{
+  "name": "Rainslasher",
+  "description": {
+    "0": "Pedang besar tanpa mata pedang yang bersinar gelap. Meremukkan musuh-musuhnya dengan kekuatan yang besar."
+  },
+  "passiveName": "Bane of Storm and Tide",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>20%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Electro."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>24%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Electro."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>28%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Electro."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>32%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Electro."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>36%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Electro."
+    }
+  }
+}

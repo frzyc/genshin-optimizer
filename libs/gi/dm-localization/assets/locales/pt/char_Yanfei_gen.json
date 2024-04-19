@@ -1,0 +1,163 @@
+{
+  "name": "Yanfei",
+  "title": "Inocência Sábia",
+  "description": "Uma Consultora Jurídica animada que vive no Porto de Liyue, é uma garota esperta com sangue da Besta Iluminada.",
+  "constellationName": "Bestia Iustitia",
+  "auto": {
+    "name": "Selo Ardente",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Dispara bolas de fogo continuamente, causando no máximo três <pyro>Danos Pyro</pyro>.",
+        "2": "Quando o Ataque Normal atinge os inimigos, Yanfei obtém uma Insígnia de Chamas. Inicialmente, pode ter no máximo três Insígnias de Chamas. A cada vez que o efeito ocorre, a duração da Insígnia de Chamas atual será renovada.",
+        "3": "Cada Insígnia de Chamas reduzirá o consumo de Stamina de Yanfei e desaparecerá quando Yanfei sair do combate."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome Stamina e, depois de ativada por um curto tempo, consome todas as Insígnias de Chamas e causa <pyro>Dano Pyro na AdE</pyro> em sua frente.",
+        "2": "De acordo com a quantidade de Insígnias de Chama consumidas, fortalece a Área e Dano do Ataque Carregado."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Acumula energia Pyro, mergulha em pleno ar para golpear o chão, atingindo os inimigos em seu caminho e infligindo <pyro>Dano Pyro na AdE</pyro> quando impacta no chão."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Ataque Carregado",
+      "4": "Consumo de Stamina de Ataque Carregado",
+      "5": "Redução do Consumo de Stamina da Insígnia de Chamas",
+      "6": "Recarga de Insígnia de Chamas",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Édito Assinado",
+    "description": {
+      "0": "Invoca as chamas, criando <pyro>Dano Pyro na AdE</pyro>.",
+      "1": "Depois de atingir o inimigo, Yanfei obtém a quantidade máxima de Insígnias de Chamas.",
+      "2": "<br/>",
+      "3": "<i>Apesar de possuírem vínculo legal, as Insígnias de Chamas de Yanfei também têm suas próprias cláusulas adicionais. No final das contas, o Ministério dos Assuntos Civis não pode modificar as leis naturais sozinho.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Tempo de Recarga",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Contrato Vinculativo",
+    "description": {
+      "0": "Causa o lançamento de uma chama explosiva, atacando os inimigos ao redor e criando <pyro>Dano Pyro na AdE</pyro> e Yanfei obtém a quantidade máxima de Insígnias de Chamas e Efeito de Clarão.",
+      "1": "<br/>",
+      "2": "<strong>Clarão</strong>",
+      "3": "Possui os seguintes efeitos:",
+      "4": "Yanfei obtém uma Insígnia de Chamas em cada intervalo de tempo;",
+      "5": [
+        "Aumenta o Dano causado pelo Ataque Carregado."
+      ],
+      "6": "O efeito de Clarão será eliminado quando Yanfei sair do combate ou for derrotada em batalha.",
+      "7": "<br/>",
+      "8": "<i>\"As cláusulas já estão escritas. Assim, por esse meio, estabeleço esse contrato de vida ou morte. É claro, eu vivo e você morre!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "",
+      "2": "Intervalo de Obtenção de Insígnia de Chamas",
+      "3": "Aumenta Dano de Ataque Carregado",
+      "4": "Duração",
+      "5": "Tempo de Recarga",
+      "6": "Energia Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Clausulas Relacionais",
+    "description": {
+      "0": "Quando o Ataque Carregado de Yanfei consumir uma Insígnia de Chama, cada Insígnia de Chama irá aumentar o <pyro>Bônus de Dano Pyro</pyro> de Yanfei em 5% por 6s. Ao lançar novamente o Ataque Carregado durante o período deste efeito, o efeito anterior será dissipado."
+    }
+  },
+  "passive2": {
+    "name": "Olho de Xiezhi",
+    "description": {
+      "0": "Quando o Ataque Carregado de Yanfei causa um Dano CRIT, ela causará um <pyro>Dano Pyro AdE</pyro> correspondente a 80% do seu Ataque. Este Dano é considerado como Dano de um Ataque Carregado."
+    }
+  },
+  "passive3": {
+    "name": "Conhecimento Enciclopédico",
+    "description": {
+      "0": "Mostra a localização de <strong>Especialidades de Liyue</strong> próximos no mapa."
+    }
+  },
+  "constellation1": {
+    "name": "A Lei Não Perdoa",
+    "description": {
+      "0": "Quando Yanfei realiza um Ataque Carregado, cada Insígnia de Chamas que ela possuir aumenta sua Resistência Contra Interrupção enquanto ataca, e também reduz o consumo de Stamina desse Ataque Carregado em 10%."
+    }
+  },
+  "constellation2": {
+    "name": "Direito de Interpretação Final",
+    "description": {
+      "0": "A Taxa CRIT dos Ataques Carregados de Yanfei aumenta em 20% contra inimigos com menos de 50% de Vida."
+    }
+  },
+  "constellation3": {
+    "name": "Selado sobre Fogo",
+    "description": {
+      "0": "Aumenta o nível da Habilidade <strong>Édito Assinado</strong> em 3.",
+      "1": "O nível máximo é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Boa Autoridade",
+    "description": {
+      "0": "Ao lançar o <strong>Contrato Vinculativo</strong>:",
+      "1": "Gera um Escudo que absorve Dano com base em 45% da Vida Máxima, com duração de 15s.",
+      "2": "Esse Escudo tem eficiência de 250% contra <pyro>Dano Pyro</pyro>."
+    }
+  },
+  "constellation5": {
+    "name": "Respeitando a Declaração Juramentada",
+    "description": {
+      "0": "Aumenta o nível da Habilidade <strong>Contrato Vinculativo</strong> em 3.",
+      "1": "O nível máximo é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Uma Cláusula Adicional",
+    "description": {
+      "0": "Aumenta a capacidade máxima de Insígnia de Chamas que Yanfei pode ter em 1."
+    }
+  }
+}

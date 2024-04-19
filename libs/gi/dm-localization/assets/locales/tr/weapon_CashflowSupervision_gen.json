@@ -1,0 +1,24 @@
+{
+  "name": "Nakit Akışı İzleyici",
+  "description": {
+    "0": "Belirli olayları takip edebilen uçan bir cihaz. Tedavülden kaldırıldıktan sonra başka amaçlara hizmet etmesi amacıyla üzerinde değişiklikler yapıldı."
+  },
+  "passiveName": "Altın Kan Dalgası",
+  "passiveDescription": {
+    "0": {
+      "0": "Saldırı <cryo>%16</cryo> artar. Mevcut Can arttığında veya azaldığında 4 saniyeliğine Normal Saldırı Hasarı <cryo>%16</cryo>, Yüklü Saldırı Hasarı <cryo>%14</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir. Kuşanan karakter 3 kademeye sahip olduğunda Saldırı Hızı <cryo>%8</cryo> artar."
+    },
+    "1": {
+      "0": "Saldırı <cryo>%20</cryo> artar. Mevcut Can arttığında veya azaldığında 4 saniyeliğine Normal Saldırı Hasarı <cryo>%20</cryo>, Yüklü Saldırı Hasarı <cryo>%17,5</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir. Kuşanan karakter 3 kademeye sahip olduğunda Saldırı Hızı <cryo>%10</cryo> artar."
+    },
+    "2": {
+      "0": "Saldırı <cryo>%24</cryo> artar. Mevcut Can arttığında veya azaldığında 4 saniyeliğine Normal Saldırı Hasarı <cryo>%24</cryo>, Yüklü Saldırı Hasarı <cryo>%21</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir. Kuşanan karakter 3 kademeye sahip olduğunda Saldırı Hızı <cryo>%12</cryo> artar."
+    },
+    "3": {
+      "0": "Saldırı <cryo>%28</cryo> artar. Mevcut Can arttığında veya azaldığında 4 saniyeliğine Normal Saldırı Hasarı <cryo>%28</cryo>, Yüklü Saldırı Hasarı <cryo>%24,5</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir. Kuşanan karakter 3 kademeye sahip olduğunda Saldırı Hızı <cryo>%14</cryo> artar."
+    },
+    "4": {
+      "0": "Saldırı <cryo>%32</cryo> artar. Mevcut Can arttığında veya azaldığında 4 saniyeliğine Normal Saldırı Hasarı <cryo>%32</cryo>, Yüklü Saldırı Hasarı <cryo>%28</cryo> artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir. Kuşanan karakter 3 kademeye sahip olduğunda Saldırı Hızı <cryo>%16</cryo> artar."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dodoco-Geschichten",
+  "description": {
+    "0": "Ein Kinderbuch mit vielen lustigen Kurzgeschichten.",
+    "1": "Die unschuldigen, kindlichen Abenteuer, die in den Geschichten geschildert werden, reißen selbst die längst erwachsenen Leser beim Lesen mit."
+  },
+  "passiveName": "Dodo-Abenteuer!",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den mit heftigen Schlägen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 6 s lang um <cryo>16 %</cryo>. Erhöht den ANG nach dem Treffen von Gegnern mit heftigen Schlägen 6 s lang um <cryo>8 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den mit heftigen Schlägen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 6 s lang um <cryo>20 %</cryo>. Erhöht den ANG nach dem Treffen von Gegnern mit heftigen Schlägen 6 s lang um <cryo>10 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den mit heftigen Schlägen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 6 s lang um <cryo>24 %</cryo>. Erhöht den ANG nach dem Treffen von Gegnern mit heftigen Schlägen 6 s lang um <cryo>12 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den mit heftigen Schlägen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 6 s lang um <cryo>28 %</cryo>. Erhöht den ANG nach dem Treffen von Gegnern mit heftigen Schlägen 6 s lang um <cryo>14 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den mit heftigen Schlägen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 6 s lang um <cryo>32 %</cryo>. Erhöht den ANG nach dem Treffen von Gegnern mit heftigen Schlägen 6 s lang um <cryo>16 %</cryo>."
+    }
+  }
+}

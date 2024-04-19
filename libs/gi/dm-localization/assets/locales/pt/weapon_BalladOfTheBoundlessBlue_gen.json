@@ -1,0 +1,24 @@
+{
+  "name": "Canção do Vasto Azul",
+  "description": {
+    "0": "Uma coleção de poesia requintada. Contém algumas poesias sobre os céus, Dandelions e outros tópicos amados pelas pessoas de Mondstadt."
+  },
+  "passiveName": "Céu Azul",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 6s após um Ataque Normal ou Carregado atingir um inimigo, aumenta o Dano causado pelo Ataque Normal em <cryo>8%</cryo> e o Dano causado pelo Ataque Carregado em <cryo>6%</cryo>. Esse efeito pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s."
+    },
+    "1": {
+      "0": "Nos 6s após um Ataque Normal ou Carregado atingir um inimigo, aumenta o Dano causado pelo Ataque Normal em <cryo>10%</cryo> e o Dano causado pelo Ataque Carregado em <cryo>7.5%</cryo>. Esse efeito pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s."
+    },
+    "2": {
+      "0": "Nos 6s após um Ataque Normal ou Carregado atingir um inimigo, aumenta o Dano causado pelo Ataque Normal em <cryo>12%</cryo> e o Dano causado pelo Ataque Carregado em <cryo>9%</cryo>. Esse efeito pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s."
+    },
+    "3": {
+      "0": "Nos 6s após um Ataque Normal ou Carregado atingir um inimigo, aumenta o Dano causado pelo Ataque Normal em <cryo>14%</cryo> e o Dano causado pelo Ataque Carregado em <cryo>10.5%</cryo>. Esse efeito pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s."
+    },
+    "4": {
+      "0": "Nos 6s após um Ataque Normal ou Carregado atingir um inimigo, aumenta o Dano causado pelo Ataque Normal em <cryo>16%</cryo> e o Dano causado pelo Ataque Carregado em <cryo>12%</cryo>. Esse efeito pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s."
+    }
+  }
+}

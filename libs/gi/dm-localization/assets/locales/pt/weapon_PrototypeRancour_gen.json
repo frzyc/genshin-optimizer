@@ -1,0 +1,24 @@
+{
+  "name": "Protótipo Rancor",
+  "description": {
+    "0": "Uma antiga espada longa descoberta na Forja do Penhasco Obscuro que corta pedras como uma faca quente na manteiga."
+  },
+  "passiveName": "Pedra Destruída",
+  "passiveDescription": {
+    "0": {
+      "0": "Ao acertar um Ataque Normal ou Ataque Carregado, o ATQ e a DEF aumentam <cryo>4%</cryo>, com duração de 6s, acumulando até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s."
+    },
+    "1": {
+      "0": "Ao acertar um Ataque Normal ou Ataque Carregado, o ATQ e a DEF aumentam <cryo>5%</cryo>, com duração de 6s, acumulando até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s."
+    },
+    "2": {
+      "0": "Ao acertar um Ataque Normal ou Ataque Carregado, o ATQ e a DEF aumentam <cryo>6%</cryo>, com duração de 6s, acumulando até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s."
+    },
+    "3": {
+      "0": "Ao acertar um Ataque Normal ou Ataque Carregado, o ATQ e a DEF aumentam <cryo>7%</cryo>, com duração de 6s, acumulando até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s."
+    },
+    "4": {
+      "0": "Ao acertar um Ataque Normal ou Ataque Carregado, o ATQ e a DEF aumentam <cryo>8%</cryo>, com duração de 6s, acumulando até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s."
+    }
+  }
+}

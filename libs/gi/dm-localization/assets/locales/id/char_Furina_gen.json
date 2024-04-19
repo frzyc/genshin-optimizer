@@ -1,0 +1,179 @@
+{
+  "name": "Furina",
+  "title": "Endless Solo of Solitude",
+  "description": "Pusat perhatian utama panggung pengadilan, hingga tepuk-tangan di penghujung acara terdengar.",
+  "constellationName": "Animula Choragi",
+  "auto": {
+    "name": "Soloist's Solicitation",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina, melancarkan tarian tunggal yang mengakibatkan Physical DMG terhadap musuh di sekitarnya, lalu mengganti Karakteristik Arkhe diri sendiri. Jika \"Salon Members\" atau \"Singer of Many Waters\" yang dipanggil oleh Elemental Skill \"Salon Solitaires\" miliknya berada di medan perang, barisan mereka juga akan turut berubah."
+      },
+      "arkhe": {
+        "0": "<strong>Arkhe: Seats Sacred and Secular</strong>",
+        "1": "Setiap satu kurun waktu tertentu, saat Normal Attack Furina mengenai musuh, akan menurunkan Spiritbreath Thorn atau Surging Blade berdasarkan Karakteristiknya saat ini dan mengakibatkan <hydro>Hydro DMG</hydro> Pneuma-Aligned atau Ousia-Aligned.",
+        "2": "Saat Furina berada di medan pertempuran, Arkhe awalnya adalah Ousia."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "DMG Spiritbreath Thorn/Surging Blade",
+      "9": "Jeda DMG Spiritbreath Thorn/Surging Blade",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Salon Solitaire",
+    "description": {
+      "0": "Mengundang tamu-tamu dari Salon Solitaire untuk bergabung ke dalam barisan dan membantu pertunjukan Furina. Tamu yang diundang termasuk \"Salon Members\" atau \"Singer of Many Waters\", ditentukan berdasarkan <strong>Karakteristik Arkhe</strong> Furina saat ini.",
+      "1": "<br/>",
+      "2": "<strong>Ousia</strong>",
+      "3": "Membentuk gelembung yang berpesta ria dan mengakibatkan <hydro>Hydro DMG Area</hydro> yang didasarkan pada Max HP Furina, dan memanggil tiga \"Salon Members\", yaitu: \"Gentilhomme Usher\" yang berbentuk Ball Octopus, \"Surintendante Chevalmarin\" yang berbentuk Bubbly Seahorse, dan \"Mademoiselle Crabaletta\" yang berbentuk Armored Crab.",
+      "4": "Salon Members akan menyerang musuh di sekitar secara berkala, dengan prioritas menyerang target Karakter aktif lebih dulu, dan mengakibatkan <hydro>Hydro DMG</hydro> yang didasarkan pada Max HP.",
+      "5": "Saat Salon Members menyerang, akan meningkatkan serangan tersebut berdasarkan jumlah anggota party di sekitar yang memiliki HP di atas 50%, dan akan mengonsumsi HP Karakter yang bersangkutan. Saat jumlah Karakter yang memenuhi syarat berjumlah 1/2/3/4 atau lebih, maka DMG serangan akan menjadi 110%/120%/130%/140% dari nilai awalnya.",
+      "6": "<br/>",
+      "7": "<strong>Pneuma</strong>",
+      "8": "Memanggil \"Singer of Many Waters\" untuk memulihkan HP Karakter aktif di sekitar setiap satu kurun waktu tertentu. Jumlah pemulihan didasarkan pada Max HP.",
+      "9": "<br/>",
+      "10": "Salon Members dan Singer of Many Waters berbagi durasi yang sama. Saat Furina mengganti formasi tamu melalui Charged Attack, tamu baru akan melanjutkan sisa durasi awal.",
+      "11": "Furina dapat bergerak di atas permukaan air selama Salon Members atau Singer of Many Waters berada di medan pertempuran.",
+      "12": "<br/>",
+      "13": "<i>Daftar pengunjung tetap yang sering mengunjungi Salon Solitaire Furina. Di waktu yang lain, Mademoiselle Crabaletta, Surintendante Chevalmarin, dan Gentilhomme Usher akan berkunjung, dan di hari Rabu yang suram, para penyanyi yang akan datang.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Gelembung Ousia",
+      "1": "Durasi",
+      "2": "DMG Gentilhomme Usher",
+      "3": "DMG Surintendante Chevalmarin",
+      "4": "DMG Mademoiselle Crabaletta",
+      "5": "Konsumsi HP Gentilhomme Usher",
+      "6": "Konsumsi HP Surintendante Chevalmarin",
+      "7": "Konsumsi HP Mademoiselle Crabaletta",
+      "8": "Pemulihan Singer of Many Waters",
+      "9": "Cooldown",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Let the People Rejoice",
+    "description": {
+      "0": "Mengumpulkan sukacita kebahagiaan dan membentuk panggung gelembung, mengakibatkan <hydro>Hydro DMG Area</hydro> yang didasarkan pada Max HP Furina, juga membuat anggota party di sekitar memasuki status Universal Revelry: Selama durasi berlangsung, saat HP Karakter tersebut bertambah atau berkurang, akan memberikan 1 Fanfare Point kepada Furina berdasarkan setiap persentase perubahan HP Karakter yang bersangkutan.",
+      "1": "Selain itu, DMG yang diakibatkan dan bonus pemulihan yang diterima seluruh anggota party di sekitar akan meningkat berdasarkan jumlah Fanfare Point yang dimiliki Furina.",
+      "2": "Saat durasinya berakhir, Fanfare Point yang dimiliki oleh Furina akan dihapus.",
+      "3": "<br/>",
+      "4": "<i>\"Bersoraklah! Pujilah! Terpesonalah! Angkat gelasmu! Karena setiap malam tanpa pesta adalah sebuah kesia-siaan terhadap siang hari yang menderita dan terjaga ... Dan, uh ... yang masih di bawah umur boleh minum jus anggur saja!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Durasi",
+      "2": "Fanfare Maksimum",
+      "3": "Rasio Konversi Fanfare Menjadi Peningkatan DMG",
+      "4": "Rasio Konversi Fanfare Menjadi Bonus Pemulihan Diterima",
+      "5": "Cooldown",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Endless Waltz",
+    "description": {
+      "0": "Saat Karakter aktif di dalam party menerima pemulihan, jika pemulihan tersebut bukan berasal dari Furina sendiri dan pemulihannya berlebih, maka dalam 4 detik selanjutnya, Furina akan memberikan satu kali pemulihan terhadap Karakter di dalam party yang berada sekitar setiap 2 detik. Jumlah pemulihan adalah 2% Max HP Karakter yang bersangkutan."
+    }
+  },
+  "passive2": {
+    "name": "Unheard Confession",
+    "description": {
+      "0": "Untuk setiap 1.000 poin Max HP Furina, akan memberikan buff yang berbeda berdasarkan <strong>Salon Solitaire</strong> Furina yang berada dalam karakteristik Arkhe yang berbeda:",
+      "1": "Meningkatkan 0,7% DMG yang diakibatkan oleh Salon Members. Maksimum peningkatan DMG yang dapat diperoleh Salon Members dengan cara ini adalah 28%.",
+      "2": "Mengurangi jeda pemulihan Singer of Many Waters terhadap Karakter aktif di sekitar sebesar 0,4%. Maksimum pengurangan jeda yang dapat diperoleh dengan cara ini adalah 16%."
+    }
+  },
+  "passive3": {
+    "name": "The Sea is My Stage",
+    "description": {
+      "0": "Cooldown kemampuan Xenochromatic Fontemer Aberrant berkurang 30%."
+    }
+  },
+  "constellation1": {
+    "name": "\"Love Is a Rebellious Bird That None Can Tame\"",
+    "description": {
+      "0": "Saat melancarkan <strong>Let the People Rejoice</strong>, Furina akan mendapatkan 150 poin Fanfare.",
+      "1": "Selain itu, batas maksimum Fanfare Furina meningkat 100 poin."
+    }
+  },
+  "constellation2": {
+    "name": "\"A Woman Adapts Like Duckweed in Water\"",
+    "description": {
+      "0": "Selama durasi <strong>Let the People Rejoice</strong> berlangsung, peningkatan Fanfare yang diperoleh Furina dari bertambah atau berkurangnya HP anggota party di sekitar meningkat 250%. Setiap poin Fanfare yang melebihi batas maksimum akan meningkatkan Max HP Furina sebesar 0,35%. Maksimum peningkatan Max HP yang dapat diperoleh Furina dengan cara ini adalah 140%."
+    }
+  },
+  "constellation3": {
+    "name": "\"My Secret Is Hidden Within Me, No One Will Know My Name\"",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Let the People Rejoice</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"They Know Not Life, Who Dwelt in the Netherworld Not!\"",
+    "description": {
+      "0": "Saat serangan Salon Members dari <strong>Salon Solitaire</strong> mengenai musuh, atau saat Singer of Many Waters memulihkan HP Karakter aktif di sekitarnya, Furina akan mendapatkan 4 poin Energy. Efek ini dapat terpicu sekali setiap 5 detik."
+    }
+  },
+  "constellation5": {
+    "name": "\"His Name I Now Know, It Is...!\"",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Salon Solitaire</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Hear Me — Let Us Raise the Chalice of Love!\"",
+    "description": {
+      "0": "Saat melancarkan <strong>Salon Solitaire</strong>, Furina akan mendapatkan \"Center of Attention\" yang berlangsung selama 10 detik.",
+      "1": "Selama durasi ini berlangsung, Normal Attack, Charged Attack, dan Plunging Attack Furina akan dikonversi menjadi <hydro>Hydro DMG</hydro> yang tidak bisa ditimpa Elemental Infusion lainnya. DMG yang diakibatkan juga meningkat sebesar 18% Max HP Furina.",
+      "2": "Setiap 0,1 detik selama efek ini berlangsung, Normal Attack (tidak termasuk serangan \"Arkhe: Seats Sacred and Secular\"), Charged Attack, dan Plunging Attack Furina yang mengenai musuh akan menghasilkan efek yang berbeda berdasarkan Karakteristik Arkhe Furina saat ini:",
+      "3": "<br/>",
+      "4": "Arkhe: Ousia",
+      "5": "Memulihkan HP seluruh anggota party di sekitar sebesar 4% Max HP Furina setiap detik selama 2,9 detik. Memicu efek ini lagi akan memperpanjang durasinya.",
+      "6": "Arkhe: Pneuma",
+      "7": "DMG yang diakibatkan Normal Attack (tidak termasuk serangan \"Arkhe: Seats Sacred and Secular\"), Charged Attack, dan Plunging Attack kali ini akan ditingkatkan lagi sebesar 25% Max HP Furina. Saat serangan-serangan yang disebutkan di atas mengenai musuh, seluruh anggota party di sekitar akan kehilangan 1% dari HP-nya saat ini.",
+      "8": "<br/>",
+      "9": "Dalam satu durasi \"Center of Attention\", efek di atas dapat terpicu maksimum 6 kali. Efek ini akan hilang setelah terpicu 6 kali atau saat durasinya berakhir."
+    }
+  }
+}

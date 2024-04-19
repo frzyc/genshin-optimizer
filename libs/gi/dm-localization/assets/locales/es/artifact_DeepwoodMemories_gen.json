@@ -1,0 +1,29 @@
+{
+  "setName": "Recuerdos del Bosque",
+  "setEffects": {
+    "2": "Bono de Daño Dendro +15%.",
+    "4": "Tras golpear a un enemigo con una Habilidad Elemental o Definitiva, la RES Dendro de dicho enemigo se reduce en un 30% durante 8 s. Este efecto se puede activar incluso cuando el personaje que lleva este conjunto equipado está en tu equipo pero no en uso."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Visitante del Laberinto",
+      "desc": "Una flor dorada arrancada de la corona del Rey del Bosque."
+    },
+    "plume": {
+      "name": "Sabio de la Espesura",
+      "desc": "Una hoja de un color esmeralda, ligera como una pluma y extraída de la indumentaria de un sabio del bosque."
+    },
+    "sands": {
+      "name": "Fenecimiento de la Sabiduría",
+      "desc": "Un reloj utilizado por aquellos que se dedican a la búsqueda de la sabiduría. Lo que contiene no es arena inerte, sino diminutos granos de mostaza."
+    },
+    "goblet": {
+      "name": "Lámpara del Exilio",
+      "desc": "Originalmente era una lámpara de aceite de estilo desértico, pero en algún momento le crecieron unas radiantes hojas verdes."
+    },
+    "circlet": {
+      "name": "Corona Láurea",
+      "desc": "Una corona, obsequio de la soberana divina de las plantas, que fue heredándose entre los distintos reyes del laberinto. Al final, acabó en manos del vasallo de uno de esos reyes."
+    }
+  }
+}

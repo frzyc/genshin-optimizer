@@ -1,0 +1,29 @@
+{
+  "setName": "Geçmiş Günlerin Şarkısı",
+  "setEffects": {
+    "2": "+%15 İyileştirme Bonusu.",
+    "4": "Kuşanan karakter, bir grup üyesini iyileştirdiğinde 6 saniyeliğine Hasret etkisi oluşur ve toplam iyileştirme miktarı kaydedilir (fazlalık iyileştirme miktarı dahil). Etki süresi sona erdiğinde Hasret etkisi \"Geçmiş Günlerin Dalgaları\" etkisine dönüşür. Aktif grup üyesi bir düşmana Normal Saldırı, Yüklü Saldırı, Havadan Saldırı, Element Becerisi veya Element Patlaması ile saldırdığında verilen Hasar, Hasret etkisiyle kaydedilen toplam iyileştirme miktarının %8'i kadar artar. \"Geçmiş Günlerin Dalgaları\" etkisi, 5 defa etkili olduğunda veya 10sn sonra kaldırılır. Tek bir Hasret etkisi en fazla 15.000 iyileştirme kaydeder ve aynı anda sadece bir tane var olabilir ancak kuşanan birden fazla karakter varsa hepsinin iyileştirmelerini kaydedebilir. Hazırdaki kuşanan karakterler de bu etkiyi tetikleyebilir."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Geçmiş Günlerin Unutulan Yemini",
+      "desc": "Larimar taşı ve parlak gümüşten yapılmış, her daim açık duran bir çiçek. Bunun günümüzde hâlâ direnişi simgelediği söylenir."
+    },
+    "plume": {
+      "name": "Geçmiş Günlerin Anıları",
+      "desc": "Gümüş ve mavi kristallerden yapılmış kelebek şeklinde bir tüy aksesuar. Uzak geçmişte kişilerin birbirinden asla ayrılmama yeminini simgelediği söylenir."
+    },
+    "sands": {
+      "name": "Geçmiş Günlerin Yankılı Sesleri",
+      "desc": "Lazurit ve su yeşiminden yapılmış, tuhaf şekilli bir kum saati. Petrichor'daki çan kulesinden ilhamla tasarlandığı söylenir."
+    },
+    "goblet": {
+      "name": "Geçmiş Günlerin Vadedilmiş Rüyası",
+      "desc": "Efsanevi \"Saf Kase\"nin formuna sahip gösterişli bir çanak. En saf kalpli kişilerin dileklerini yerine getirebildiği söylenir."
+    },
+    "circlet": {
+      "name": "Geçmiş Günlerin Şiirleri",
+      "desc": "Bir zamanlar Fontaine'de opera bestecileri arasında moda olan resmi görünümlü bir şapka. Tüylü süsünün efsanevi Göl Şövalyelerinin miğferlerinden ilhamla tasarlandığı söylenir."
+    }
+  }
+}

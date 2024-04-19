@@ -1,0 +1,29 @@
+{
+  "setName": "Kanlı Şövalyelik",
+  "setEffects": {
+    "2": "+%25 Fiziksel Hasar.",
+    "4": "Bir düşmanı yendikten sonra, 10 saniyeliğine Yüklü Saldırı Hasarını %50 artırır ve Dayanıklılık maliyetini 0'a düşürür."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Kanlı Demir Çiçek",
+      "desc": "Kan ile siyaha bürünmüş ve çelik kadar sertleşmiş kuru bir çiçek. Muhtemelen önceki sahibi için bir hatıraydı."
+    },
+    "plume": {
+      "name": "Kanlı Siyah Tüy",
+      "desc": "Bir şövalyenin pelerinine sabitlenmiş bir kuzgun tüyü. Sayısız kan lekesiyle siyaha bürünmüş."
+    },
+    "sands": {
+      "name": "Kanlı Şövalyenin Saati",
+      "desc": "Bir zamanlar bir şövalye tarafından kullanılan bir saat. Ebedi zaman, içindeki sıvıyı kurutarak kullanılamaz hale getirmiş."
+    },
+    "goblet": {
+      "name": "Kanlı Şövalyenin Kadehi",
+      "desc": "Kanlı Şövalye'ye ait olan koyu metalik bir kadeh. Dışı, duman ve kuru kanla gece kadar siyaha bürünmüş."
+    },
+    "circlet": {
+      "name": "Kanlı Demir Maske",
+      "desc": "Şövalyenin kimliğini gizlemek için kullandığı demir maske. Maskenin ardında kim olduğu ise birçoğuna göre bir gizem."
+    }
+  }
+}

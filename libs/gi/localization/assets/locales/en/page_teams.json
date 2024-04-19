@@ -1,0 +1,4 @@
+{
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Team",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Teams"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Verdetto",
+  "description": {
+    "0": "Un'arma che un tempo apparteneva a una fanciulla che rinnegò la propria famiglia. La lama è macchiata dal sangue dei nemici e di persone care."
+  },
+  "passiveName": "Mille promesse di aurora e crepuscolo",
+  "passiveDescription": {
+    "0": {
+      "0": "L'ATT aumenta di un <cryo>20%</cryo>. Quando i personaggi del gruppo ottengono frammenti elementali derivanti da reazioni di Cristallizzazione, il personaggio che equipaggia quest'arma riceve 1 Sigillo. Ogni Sigillo aumenta i DAN da abilità elementale di un <cryo>18%</cryo> e ha una durata di 15 s. È possibile avere fino a un massimo di 2 Sigilli contemporaneamente, che svaniscono 0,2 s dopo aver inflitto DAN con l'abilità elementale."
+    },
+    "1": {
+      "0": "L'ATT aumenta di un <cryo>25%</cryo>. Quando i personaggi del gruppo ottengono frammenti elementali derivanti da reazioni di Cristallizzazione, il personaggio che equipaggia quest'arma riceve 1 Sigillo. Ogni Sigillo aumenta i DAN da abilità elementale di un <cryo>22,5%</cryo> e ha una durata di 15 s. È possibile avere fino a un massimo di 2 Sigilli contemporaneamente, che svaniscono 0,2 s dopo aver inflitto DAN con l'abilità elementale."
+    },
+    "2": {
+      "0": "L'ATT aumenta di un <cryo>30%</cryo>. Quando i personaggi del gruppo ottengono frammenti elementali derivanti da reazioni di Cristallizzazione, il personaggio che equipaggia quest'arma riceve 1 Sigillo. Ogni Sigillo aumenta i DAN da abilità elementale di un <cryo>27%</cryo> e ha una durata di 15 s. È possibile avere fino a un massimo di 2 Sigilli contemporaneamente, che svaniscono 0,2 s dopo aver inflitto DAN con l'abilità elementale."
+    },
+    "3": {
+      "0": "L'ATT aumenta di un <cryo>35%</cryo>. Quando i personaggi del gruppo ottengono frammenti elementali derivanti da reazioni di Cristallizzazione, il personaggio che equipaggia quest'arma riceve 1 Sigillo. Ogni Sigillo aumenta i DAN da abilità elementale di un <cryo>31,5%</cryo> e ha una durata di 15 s. È possibile avere fino a un massimo di 2 Sigilli contemporaneamente, che svaniscono 0,2 s dopo aver inflitto DAN con l'abilità elementale."
+    },
+    "4": {
+      "0": "L'ATT aumenta di un <cryo>40%</cryo>. Quando i personaggi del gruppo ottengono frammenti elementali derivanti da reazioni di Cristallizzazione, il personaggio che equipaggia quest'arma riceve 1 Sigillo. Ogni Sigillo aumenta i DAN da abilità elementale di un <cryo>36%</cryo> e ha una durata di 15 s. È possibile avere fino a un massimo di 2 Sigilli contemporaneamente, che svaniscono 0,2 s dopo aver inflitto DAN con l'abilità elementale."
+    }
+  }
+}

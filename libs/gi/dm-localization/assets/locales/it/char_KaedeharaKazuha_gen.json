@@ -1,0 +1,185 @@
+{
+  "burst": {
+    "name": "Fendente di Kazuha",
+    "description": {
+      "0": "La tecnica speciale di Kazuha, un singolo fendente che colpisce con la forza del primo vento d'autunno, infliggendo <anemo>DAN da Anemo ad area</anemo>.",
+      "1": "La lama lascia dietro di sé un campo chiamato Turbine d'autunno che infligge periodicamente <anemo>DAN da Anemo ad area</anemo> agli avversari nel suo raggio d'azione.",
+      "2": "<br/>",
+      "3": "<strong>Assorbimento elementale</strong>",
+      "4": "Se il Turbine d'autunno entra in contatto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, infliggerà DAN elementali aggiuntivi di quel tipo.",
+      "5": "L'assorbimento elementale avviene una volta per utilizzo.",
+      "6": "<br/>",
+      "7": "<i>\"Vedo l'eternità scorrere in un istante, gli autunni di tanti anni in una singola foglia. Perciò, taglierò quest'acero con un fendente, e porrò la domanda dei secoli.\"</i>"
+    },
+    "slashdmg": "DAN da fendente",
+    "skillParams": {
+      "0": "DAN da fendente",
+      "1": "DAN nel tempo",
+      "2": "DAN elementali aggiuntivi",
+      "3": "Durata",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Kaedehara Kazuha",
+  "title": "Vortice delle foglie scarlatte",
+  "description": "Un samurai errante di Inazuma attualmente imbarcato sulla flotta della Crux di Liyue. Un'anima gentile e spensierata il cui cuore nasconde troppi fardelli del passato.",
+  "constellationName": "Acer Palmatum",
+  "auto": {
+    "name": "Tecnica di Garyuu",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto. Se questo attacco in picchiata è scatenato da Chihayaburu, verrà convertito in Attacco in picchiata: Midare Ranzan."
+      },
+      "plunging_midare": {
+        "0": "<strong>Attacco in picchiata: Midare Ranzan</strong>",
+        "1": "Quando viene eseguito un attacco in picchiata usando gli effetti dell'abilità elementale Chihayaburu, i DAN da attacco in picchiata sono convertiti in <anemo>DAN da Anemo</anemo>, creando inoltre un piccolo tunnel di vento tramite una tecnica segreta con la spada, che attira gli oggetti vicini e gli avversari."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Chihayaburu",
+    "description": {
+      "0": "Scatena una tecnica segreta feroce come una tempesta che attira gli oggetti e gli avversari verso la posizione attuale di Kazuha, per poi scagliare via gli avversari all'interno dell'area d'effetto, infliggendo <anemo>DAN da Anemo</anemo> e sollevando Kazuha in aria su una corrente di vento impetuosa.",
+      "1": "Entro 10 s in cui è sospeso in aria dopo aver lanciato Chihayaburu, Kazuha può sferrare un potente attacco in picchiata noto come Midare Ranzan.",
+      "2": "<br/>",
+      "3": "<strong>Pressione</strong>",
+      "4": "Si può usare a mezz'aria.",
+      "5": "<br/>",
+      "6": "<strong>Pressione prolungata</strong>",
+      "7": "Carica l'abilità per poi aumentare i <anemo>DAN da Anemo</anemo> e l'area d'effetto rispetto alla variante a pressione.",
+      "8": "<br/>",
+      "9": "<strong>Attacco in picchiata: Midare Ranzan</strong>",
+      "10": "Quando viene eseguito un attacco in picchiata usando gli effetti dell'abilità elementale Chihayaburu, i DAN da attacco in picchiata sono convertiti in <anemo>DAN da Anemo</anemo>. Una volta a terra, Kazuha crea un piccolo tunnel di vento tramite una tecnica segreta con la spada, che attira gli oggetti vicini e gli avversari.",
+      "11": "I DAN di Midare Ranzan sono considerati DAN da attacco in picchiata.",
+      "12": "<br/>",
+      "13": "<i>\"Il dolore del vento tra i rami",
+      "14": "Gli anni passati, gli dèi antichi",
+      "15": "Le foglie d'autunno appassite\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità pressione",
+      "1": "TdR pressione",
+      "2": "DAN da abilità pressione prolungata",
+      "3": "TdR pressione prolungata",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tecnica di spada Soumon",
+    "description": {
+      "0": "Se <strong>Chihayaburu</strong> entra in contatto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> quando impiegata, <strong>Chihayaburu</strong> assorbirà quell'elemento e se Attacco in picchiata: Midare Ranzan viene scagliato prima che l'effetto termini, infliggerà DAN extra dell'elemento assorbito pari a un 200% dell'ATT. Questi DAN verranno considerati come DAN da attacco in picchiata.",
+      "1": "L'assorbimento elementale può verificarsi solo una volta per ogni uso di <strong>Chihayaburu</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Poesia di Fuubutsu",
+    "description": {
+      "0": "Innescando una reazione di Turbinio, Kaedehara Kazuha fornirà per 8 s a tutti i membri del gruppo uno 0,04% di bonus DAN elementali all'elemento assorbito dalla reazione per ogni suo punto di maestria elementale. Possono coesistere più bonus di diversi elementi ottenuti in questo modo."
+    }
+  },
+  "passive3": {
+    "name": "Vagabondo delle nubi",
+    "description": {
+      "0": "Diminuisce di un 20% il consumo di vigore durante lo Scatto per i membri del tuo gruppo.",
+      "1": "Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
+    }
+  },
+  "constellation1": {
+    "name": "Colline scarlatte",
+    "description": {
+      "0": "Riduce il TdR di <strong>Chihayaburu</strong> di un 10%.",
+      "1": "Usare <strong>Fendente di Kazuha</strong>, azzera il TdR di <strong>Chihayaburu</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Vento di montagna",
+    "description": {
+      "0": "Il campo Turbine d'autunno generato da <strong>Fendente di Kazuha</strong> ha i seguenti effetti:",
+      "1": [
+        " aumenta di 200 la maestria elementale di Kaedehara Kazuha per tutta la durata del campo;",
+        " aumenta di 200 la maestria elementale dei personaggi all'interno del campo."
+      ],
+      "2": "<br/>",
+      "3": "Gli effetti di questa costellazione che aumentano la maestria elementale non sono cumulabili."
+    }
+  },
+  "constellation3": {
+    "name": "Leggenda dell'acero",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Chihayaburu</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Vuoto illusorio",
+    "description": {
+      "0": "Quando l'energia di Kaedehara Kazuha è inferiore a 45, ottiene i seguenti effetti:",
+      "1": [
+        " usando <strong>Chihayaburu</strong> con pressione o pressione prolungata l'energia di Kaedehara Kazuha si rigenera di 3 o 4;",
+        " quando plana, Kaedehara Kazuha rigenera di 2 l'energia al secondo."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Saggezza dei secoli",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Fendente di Kazuha</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Autunno cremisi",
+    "description": {
+      "0": "Dopo aver usato <strong>Chihayaburu</strong> o <strong>Fendente di Kazuha</strong>, Kaedehara Kazuha ottiene un'<anemo>infusione di Anemo</anemo> per 5 s. Inoltre, ogni punto di maestria elementale aumenterà di uno 0,2% i DAN inflitti dagli attacchi normali, caricati e in picchiata di Kaedehara Kazuha."
+    }
+  }
+}

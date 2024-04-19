@@ -1,0 +1,24 @@
+{
+  "name": "Espada Grande de Katsuragi",
+  "description": {
+    "0": "Uma espada forjada em Tatarasuna. Pesada e resistente."
+  },
+  "passiveName": "Conduta do Samurai",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano causado pela Habilidade Elemental em <cryo>6%</cryo>. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura <cryo>3</cryo> pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado."
+    },
+    "1": {
+      "0": "Aumenta o Dano causado pela Habilidade Elemental em <cryo>7.5%</cryo>. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura <cryo>3.5</cryo> pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado."
+    },
+    "2": {
+      "0": "Aumenta o Dano causado pela Habilidade Elemental em <cryo>9%</cryo>. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura <cryo>4</cryo> pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado."
+    },
+    "3": {
+      "0": "Aumenta o Dano causado pela Habilidade Elemental em <cryo>10.5%</cryo>. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura <cryo>4.5</cryo> pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado."
+    },
+    "4": {
+      "0": "Aumenta o Dano causado pela Habilidade Elemental em <cryo>12%</cryo>. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura <cryo>5</cryo> pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado."
+    }
+  }
+}

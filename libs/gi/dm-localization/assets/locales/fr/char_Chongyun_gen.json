@@ -1,0 +1,154 @@
+{
+  "name": "Chongyun",
+  "title": "Corps de glace et cœur de feu",
+  "description": "Le jeune héritier d'une célèbre famille d'exorcistes, qui s'efforce de contrôler l'énergie qui l'habite.",
+  "constellationName": "Nubis Caesor",
+  "auto": {
+    "name": "Fléau des démons",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'attaques tournoyantes contre les ennemis proches.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT enchaînement attaque chargée",
+      "5": "DGT coup final attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "Durée max",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lame de l'esprit : Givre superposé",
+    "description": {
+      "0": "Chongyun abat violemment sa longue épée sur le sol, provoquant une explosion de glace qui inflige des <cryo>DGT Cryo</cryo> aux ennemis en face dans une zone circulaire.",
+      "1": "Après un court délai, les courants d'air froids de l'explosion se condensent en un champ de givre. Les DGT des attaques normales et chargées des personnages qui s'y trouvent et qui manient l'épée longue, à une main, ou une arme d'hast obtiennent un <cryo>enchantement Cryo</cryo>.",
+      "2": "<br/>",
+      "3": "<i>« Lorsque les cloches sonnent, tout est calme et silencieux. Les eaux des lacs et des rivières ne s'écoulent plus, et les nuages sont couverts de givre épais. Les portes de l'autel s'ouvrent, tous les maux sont éliminés. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Durée enchantement",
+      "2": "Durée du champ",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Lame de l'esprit : Chute d'étoiles",
+    "description": {
+      "0": "D'un geste rapide, Chongyun invoque en l'air 3 lames éthérées qui foncent au sol après un court délai.",
+      "1": "L'impact inflige des <cryo>DGT Cryo de zone</cryo> et projette les ennemis en l'air.",
+      "2": "<br/>",
+      "3": "<i>« Ô lame du ciel et de la terre qui gèle tous les démons du monde... Entends mon appel ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Respiration stable",
+    "description": {
+      "0": "Dans le champ de <strong>Lame de l'esprit : Givre superposé</strong>, la VIT d'attaque des attaques normales des personnages armés d'une épée à une mains, à deux mains ou d'une arme d'hast augmente de 8 %."
+    }
+  },
+  "passive2": {
+    "name": "Lame du chasseur de glace",
+    "description": {
+      "0": "Une lame apparaît à la fin du champ de <strong>Lame de l'esprit : Givre superposé</strong> ; elle inflige des <cryo>DGT Cryo de zone</cryo> équivalant à 100 % des DGT de Lame de l'esprit : Givre superposé aux ennemis proches. La <cryo>RÉS Cryo</cryo> des ennemis touchés diminue de 10 % pendant 8 s."
+    }
+  },
+  "passive3": {
+    "name": "Périple alyzéen",
+    "description": {
+      "0": "Diminue la durée d'une expédition de 25 % lorsqu'elle se déroule à Liyue."
+    }
+  },
+  "constellation1": {
+    "name": "Glace déchaînée",
+    "description": {
+      "0": "Le dernier coup d'attaque normale libère 3 lames de glace vers l'avant ; chacune inflige une quantité de <cryo>DGT Cryo</cryo> équivalant à 50 % de l'ATQ de Chongyun."
+    }
+  },
+  "constellation2": {
+    "name": "Révolution astrale",
+    "description": {
+      "0": "Lancer une compétence ou un déchaînement élémentaires dans le champ de <strong>Lame de l'esprit : Givre superposé</strong> diminue leur TdR de 15 %."
+    }
+  },
+  "constellation3": {
+    "name": "Étincellement des nuages",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Lame de l'esprit : Chute d'étoiles</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Cieux givrés",
+    "description": {
+      "0": "Chongyun récupère 1 pt d'énergie à chaque fois qu'il touche un ennemi affecté par <cryo>Cryo</cryo>.",
+      "1": "Cet effet peut être déclenché une fois toutes les 2 s."
+    }
+  },
+  "constellation5": {
+    "name": "La Voie",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Lame de l'esprit : Givre superposé</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Rassemblement des quatre lames",
+    "description": {
+      "0": "<strong>Lame de l'esprit : Chute d'étoiles</strong> inflige 15 % de DGT supplémentaires aux ennemis dont les PV sont inférieurs à ceux de Chongyun.",
+      "1": "De plus, une lame supplémentaire est générée à l'activation de la compétence."
+    }
+  }
+}

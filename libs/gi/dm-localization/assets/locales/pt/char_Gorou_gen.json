@@ -1,0 +1,178 @@
+{
+  "name": "Gorou",
+  "title": "Guerreiro Canino",
+  "description": "O grande general das tropas da Ilha Watatsumi. Seus subordinados acreditam profundamente nele.",
+  "constellationName": "Canis Bellatoris",
+  "auto": {
+    "name": "Flechas de Garras Dilacerantes",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 tiros consecutivos com um arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Dispara um <strong>Tiro com Mira</strong> mais preciso e com Dano aumentado.",
+        "2": "Ao mirar, Pedras Cristalizadas irão se acumular na ponta da flecha. Uma flecha em Pedras Cristalizadas completamente carregada inflige <geo>Dano Geo</geo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Disparo com Mira",
+      "5": "Disparo com Mira com Energização Completa",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Defesa Concentrada Inuzaka",
+    "description": {
+      "0": "Causa <geo>Dano Geo em uma AdE</geo> e levanta o Estandarte do General.",
+      "1": "<br/>",
+      "2": "<strong>Estandarte do General</strong>",
+      "3": "Fornece os seguintes bônus com base no número de membros da equipe que são do Elemento <geo>Geo</geo>:",
+      "4": "Ter 1 membro da equipe do Elemento Geo concede o efeito \"Robusto\": Bônus de DEF.",
+      "5": "Ter 2 membros da equipe do Elemento Geo concede o efeito \"Inquebrável\": Resistência a interrupção, além do efeito do mencionado anteriormente.",
+      "6": "Ter 3 membros da equipe do Elemento Geo concede o efeito \"Destruidor\": concede um <geo>Bônus de Dano GEO</geo>, além dos efeitos mencionados anteriormente.",
+      "7": "<br/>",
+      "8": "Apenas 1 Estandarte do General que Gorou criou pode existir no campo a qualquer momento. Os personagens só podem se beneficiar de 1 Estandarte do General por vez. Quando os membros da equipe deixam o campo, os efeitos do campo duram por 2s.",
+      "9": "<br/>",
+      "10": "<strong>Manter Pressionado</strong>",
+      "11": "Mantenha Pressionado para designar o local que ficará a habilidade.",
+      "12": "<br/>",
+      "13": "<i>\"Assuma esta formação e estaremos seguros - eu garanto!\" Como general e líder das tropas, a última coisa que Gorou quer é ver aqueles que o seguem serem feridos.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Aumento da DEF",
+      "2": "Taxa de Bônus de Dano Geo",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Juuga: Para a Vitória",
+    "description": {
+      "0": "Demonstrando seu valor como general, Gorou causa <geo>Dano Geo em uma AdE</geo> e cria um campo conhecido como a Glória do General para animar seus companheiros.",
+      "1": "<br/>",
+      "2": "<strong>Glória do General</strong>",
+      "3": "Este campo tem as seguintes propriedades:",
+      "4": "Este campo tem efeitos idênticos aos do Estandarte do General criado por sua Habilidade Elemental, Defesa Concentrada Inuzaka, concedendo bônus baseado no número de membros da equipe cujo elemento seja <geo>Geo</geo>, e também se moverá junto com seu personagem ativo atual.",
+      "5": "Cria 1 Colapso Cristalino a cada 1.5s que causa <geo>Dano Geo em uma AdE</geo> a 1 oponente dentro de sua AdE.",
+      "6": [
+        " Ele puxará 1 fragmento elemental pela Reação de Cristalização dentro de sua área de ação para a posição do seu personagem ativo a cada 1.5 s."
+      ],
+      "7": "<br/>",
+      "8": "Se um Estandarte do General criado pelo próprio Gorou existir atualmente em campo quando esta habilidade for utilizada, ele será destruído.",
+      "9": "<br/>",
+      "10": "<i>\"Nós temos a vantagem do terreno!\" Gorou pode sempre mudar ligeiramente o terreno do campo de batalha para ajudar a ganhar a vitória. Esta técnica o tem assistido através de muitas batalhas contra uma oposição aparentemente superior.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano do Colapso Cristalino",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Contra o Vento e a Maré",
+    "description": {
+      "0": "Nos 12 segundos seguintes de lançar <strong>Juuga: Para a Vitória</strong>, a DEF de todos os membros da equipe ao redor será aumentada em 25%."
+    }
+  },
+  "passive2": {
+    "name": "Um Favor Recíproco",
+    "description": {
+      "0": "Gorou recebe os seguintes Bônus de Dano aos seus ataques baseado em sua DEF:",
+      "1": "<strong>Defesa Concentrada Inuzaka</strong> aumenta o Dano da habilidade em 156% da sua DEF.",
+      "2": "<strong>Juuga: Para a Vitória</strong> aumenta o Dano da habilidade e do Colapso Cristalino em 15.6% da DEF."
+    }
+  },
+  "passive3": {
+    "name": "Cãozinho Farejador",
+    "description": {
+      "0": "Mostra a localização de <strong>recursos únicos de Inazuma</strong> próximos no mapa."
+    }
+  },
+  "constellation1": {
+    "name": "Pegureiro Veloz: Rápido como o Vento",
+    "description": {
+      "0": "Quando um personagem (que não seja o Gorou) causar Dano Geo dentro da AdE do <strong>Estandarte do General</strong> ou da <strong>Glória do General</strong> criado por Gorou, o Tempo de Recarga da <strong>Defesa Concentrada Inuzaka</strong> de Gorou é reduzido em 2s.",
+      "1": "Este efeito pode ocorrer uma vez a cada 10s."
+    }
+  },
+  "constellation2": {
+    "name": "Pegureiro Sentado: Firme Feito a Rocha",
+    "description": {
+      "0": "Quando um personagem próximo ganha um Fragmento de Cristal da Reação de Cristalização criado enquanto a <strong>Glória do General</strong> está ativa, a duração da Glória do General do próprio Gorou é aumentada em 1s.",
+      "1": "Isso só pode ocorrer uma vez a cada 0.1s e sua duração só pode ser prolongada por um máximo de 3s."
+    }
+  },
+  "constellation3": {
+    "name": "Pegureiro Feroz: Feroz como o Fogo",
+    "description": {
+      "0": "Aumenta o nível da <strong>Defesa Concentrada Inuzaka</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Pegureiro Bebedor: Quente como a água",
+    "description": {
+      "0": "Quando <strong>Glória do General</strong> está nos estados de \"Inquebrável\" ou \"Destruidor\", ela também curará o personagem ativo dentro de sua AdE a cada 1,5s por 50% da DEF de Gorou."
+    }
+  },
+  "constellation5": {
+    "name": "Pegureiro Atacante: Força Trovejante",
+    "description": {
+      "0": "Aumenta o nível do <strong>Juuga: Para a Vitória</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Pegureiro Valente: Lealdade Montanhosa",
+    "description": {
+      "0": "Dentro de 12 segundos após lançar a <strong>Defesa Concentrada Inuzaka</strong> ou <strong>Juuga: Para a Vitória</strong>, de acordo com o nível da área no momento do lançamento, o Dano CRIT de <geo>Dano Geo</geo> de todos os personagens da equipe que se encontrarem próximos, será aumentado: ",
+      "1": "Robusto: aumentado em 10%; Inquebrável: aumentado em 20%; Destruidor: aumentado em 40%.",
+      "2": "<br/>",
+      "3": "Esse efeito não pode ser acumulado, mas será determinado com base no último efeito desencadeado."
+    }
+  }
+}

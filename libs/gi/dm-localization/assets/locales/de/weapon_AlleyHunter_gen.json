@@ -1,0 +1,24 @@
+{
+  "name": "Gassenjäger",
+  "description": {
+    "0": "Ein präziser und extravaganter Langbogen, der einmal einem Vogelfreien gehört hat, der sich der Gerechtigkeit verschrieben hat und niemals gefangen wurde."
+  },
+  "passiveName": "Angriff aus der Gasse",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um <cryo>2 %</cryo> und insgesamt um bis zu <cryo>20 %</cryo>. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um <cryo>4 %</cryo>, bis der Bonus auf 0 % gefallen ist."
+    },
+    "1": {
+      "0": "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um <cryo>2,5 %</cryo> und insgesamt um bis zu <cryo>25 %</cryo>. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um <cryo>5 %</cryo>, bis der Bonus auf 0 % gefallen ist."
+    },
+    "2": {
+      "0": "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um <cryo>3 %</cryo> und insgesamt um bis zu <cryo>30 %</cryo>. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um <cryo>6 %</cryo>, bis der Bonus auf 0 % gefallen ist."
+    },
+    "3": {
+      "0": "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um <cryo>3,5 %</cryo> und insgesamt um bis zu <cryo>35 %</cryo>. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um <cryo>7 %</cryo>, bis der Bonus auf 0 % gefallen ist."
+    },
+    "4": {
+      "0": "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um <cryo>4 %</cryo> und insgesamt um bis zu <cryo>40 %</cryo>. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um <cryo>8 %</cryo>, bis der Bonus auf 0 % gefallen ist."
+    }
+  }
+}

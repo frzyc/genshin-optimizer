@@ -1,0 +1,24 @@
+{
+  "name": "Traveler's Handy Sword",
+  "description": {
+    "0": "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath."
+  },
+  "passiveName": "Journey",
+  "passiveDescription": {
+    "0": {
+      "0": "Each Elemental Orb or Particle collected restores <cryo>1%</cryo> HP."
+    },
+    "1": {
+      "0": "Each Elemental Orb or Particle collected restores <cryo>1.25%</cryo> HP."
+    },
+    "2": {
+      "0": "Each Elemental Orb or Particle collected restores <cryo>1.5%</cryo> HP."
+    },
+    "3": {
+      "0": "Each Elemental Orb or Particle collected restores <cryo>1.75%</cryo> HP."
+    },
+    "4": {
+      "0": "Each Elemental Orb or Particle collected restores <cryo>2%</cryo> HP."
+    }
+  }
+}

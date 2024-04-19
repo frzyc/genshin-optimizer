@@ -1,0 +1,173 @@
+{
+  "name": "Dori",
+  "title": "Treasure of Dream Garden",
+  "description": "Pedagang keliling yang sulit dipahami dan paling suka dengan Mora yang berkilauan.",
+  "constellationName": "Magicae Lucerna",
+  "auto": {
+    "name": "Marvelous Sword-Dance (Modified)",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong> Melancarkan hingga 3 tebasan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar.",
+        "2": "Saat berhenti berputar, akan melancarkan sebuah tebasan yang sangat kuat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Berputar Charged Attack",
+      "4": "DMG Akhir Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "Durasi Maksimum",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Spirit-Warding Lamp: Troubleshooter Cannon",
+    "description": {
+      "0": "Memerintahkan Spirit-Warding Lamp untuk menembakkan Troubleshooter Shot terhadap musuh, mengakibatkan <electro>Electro DMG</electro>.",
+      "1": "Setelah Troubleshooter Shot mengenai target, akan menghasilkan 2 buah After-Sales Service Round yang akan otomatis mengikuti musuh di sekitar dan mengakibatkan <electro>Electro DMG</electro>.",
+      "2": "<br/>",
+      "3": "<i>Konon katanya, Dori akan bisa menyelesaikan semua masalahmu ... asal harganya cocok.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Troubleshooter Shot",
+      "1": "DMG After-Sales Service Round",
+      "2": "Cooldown",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Alcazarzaray's Exactitude",
+    "description": {
+      "0": "Memanggil Jinni yang berada di dalam lampu dan menyediakan bantuan yang beragam kepada klien.",
+      "1": "<br/>",
+      "2": "<strong>Jinni</strong>",
+      "3": "<br/>",
+      "4": "Akan bisa terhubung dengan Karakter di sekitar. Karakter yang terhubung dengan Jinni akan:",
+      "5": [
+        "Terus-menerus memulihkan HP berdasarkan Max HP Dori;",
+        "Terus menerus memulihkan Energy Karakter;",
+        "Berada dalam status <electro>terpengaruh oleh efek Electro</electro>."
+      ],
+      "6": "<br/>",
+      "7": "Selain itu, saat penghubung antara Karakter dan Jinni menyentuh musuh, akan mengakibatkan satu kali <electro>Electro DMG</electro> terhadap musuh setiap 0,4 detik.",
+      "8": "<br/>",
+      "9": "Hanya satu Jinni yang bisa muncul dalam waktu bersamaan.",
+      "10": "<br/>",
+      "11": "<i>\"Eh? Anda yakin mau memilih lampu ini? Duh! Selera Anda tinggi sekali! Sayangnya, aku tidak bisa buka harga untuk benda berharga yang satu ini. Misalnya saja, Anda pasti tidak akan pernah bisa menjual maskot yang ada di sisi Anda, berapa pun Mora yang ditawarkan kepada Anda, benar seperti itu kan?\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Connector",
+      "1": "Heal Berkelanjutan",
+      "2": "Pemulihan Energy",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "An Eye for Gold",
+    "description": {
+      "0": "Setelah Karakter yang terhubung dengan <strong>Jinni</strong> memicu Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl atau Crystallize dari Electro, maka CD <strong>Spirit-Warding Lamp: Troubleshooter Cannon</strong> berkurang 1 detik.",
+      "1": " Efek ini dapat terpicu setiap 3 detik."
+    }
+  },
+  "passive2": {
+    "name": "Compound Interest",
+    "description": {
+      "0": "Saat Troubleshooter Shot atau After-Sales Service Round dari <strong>Spirit-Warding Lamp: Troubleshooter Cannon</strong> mengenai musuh, Dori akan memulihkan 5 Energy untuk setiap 100% Energy Recharge yang dimiliki Dori.",
+      "1": "Untuk setiap Spirit-Warding Lamp: Troubleshooter Cannon, hanya satu pemulihan Energi yang dapat terpicu dan maksimal 15 Energy yang bisa dipulihkan dengan cara ini."
+    }
+  },
+  "passive3": {
+    "name": "Unexpected Order",
+    "description": {
+      "0": "Saat membuat Material Penguatan Senjata dan Karakter, memiliki 25% persentase untuk mendapatkan kembali sebagian material yang digunakan."
+    }
+  },
+  "constellation1": {
+    "name": "Additional Investment",
+    "description": {
+      "0": "Jumlah After Sales Service Round yang diciptakan dari <strong>Troubleshooter Shot</strong> bertambah 1."
+    }
+  },
+  "constellation2": {
+    "name": "Special Franchise",
+    "description": {
+      "0": "Saat berada dalam status pertempuran, saat <strong>Jinni</strong> memulihkan HP Karakter yang terhubung, maka akan menembakkan Jinni Toop dari posisi berdiri Karakter tersebut dan mengakibatkan DMG setara dengan 50% dari ATK Dori."
+    }
+  },
+  "constellation3": {
+    "name": "Wonders Never Cease",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Alcazarzaray's Exactitude</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Discretionary Supplement",
+    "description": {
+      "0": "Karakter yang terhubung dengan <strong>Jinni</strong> akan mendapatkan buff berikut berdasarkan HP dan Energy sekarang:",
+      "1": [
+        "Meningkatkan 50% Bonus Pemulihan saat HP kurang dari 50%;",
+        "Meningkatkan 30% Energy Recharge saat Energy kurang dari 50%."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Value for Mora",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Spirit-Warding Lamp: Troubleshooter Cannon</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sprinkling Weight",
+    "description": {
+      "0": "3 detik setelah melancarkan <strong>Spirit-Warding Lamp: Troubleshooter Cannon</strong>, Dori akan mendapatkan efek berikut:",
+      "1": [
+        "<electro>Electro Infusion</electro>;"
+      ],
+      "2": "Saat Normal Attack mengenai musuh, memulihkan HP kepada seluruh anggota party di sekitar sebesar 4% Max HP Dori. Pemulihan HP dengan cara ini bisa terjadi setiap 0.1 detik sekali."
+    }
+  }
+}

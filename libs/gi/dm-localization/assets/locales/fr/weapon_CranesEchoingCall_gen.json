@@ -1,0 +1,24 @@
+{
+  "name": "Écho de la grue",
+  "description": {
+    "0": "Un éventail sculpté dans du jade pur, autour duquel tourbillonne une ancienne aura d'énergie mystique."
+  },
+  "passiveName": "Précepte des nuages",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsque l'attaque plongeante du personnage équipé de l'arme a touché un ennemi, les DGT des attaques plongeantes de tous les personnages de l'équipe à proximité augmentent de <cryo>28 %</cryo> pendant 20 s. Lorsque l'attaque plongeante d'un personnage de l'équipe à proximité touche un ennemi, le personnage équipé de l'arme récupère <cryo>2,5</cryo> pts d'énergie élémentaire. L'énergie peut être restaurée une fois toutes les 0,7 s de cette manière. Cette restauration d'énergie élémentaire peut être déclenchée même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Lorsque l'attaque plongeante du personnage équipé de l'arme a touché un ennemi, les DGT des attaques plongeantes de tous les personnages de l'équipe à proximité augmentent de <cryo>41 %</cryo> pendant 20 s. Lorsque l'attaque plongeante d'un personnage de l'équipe à proximité touche un ennemi, le personnage équipé de l'arme récupère <cryo>2,75</cryo> pts d'énergie élémentaire. L'énergie peut être restaurée une fois toutes les 0,7 s de cette manière. Cette restauration d'énergie élémentaire peut être déclenchée même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Lorsque l'attaque plongeante du personnage équipé de l'arme a touché un ennemi, les DGT des attaques plongeantes de tous les personnages de l'équipe à proximité augmentent de <cryo>54 %</cryo> pendant 20 s. Lorsque l'attaque plongeante d'un personnage de l'équipe à proximité touche un ennemi, le personnage équipé de l'arme récupère <cryo>3</cryo> pts d'énergie élémentaire. L'énergie peut être restaurée une fois toutes les 0,7 s de cette manière. Cette restauration d'énergie élémentaire peut être déclenchée même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Lorsque l'attaque plongeante du personnage équipé de l'arme a touché un ennemi, les DGT des attaques plongeantes de tous les personnages de l'équipe à proximité augmentent de <cryo>67 %</cryo> pendant 20 s. Lorsque l'attaque plongeante d'un personnage de l'équipe à proximité touche un ennemi, le personnage équipé de l'arme récupère <cryo>3,25</cryo> pts d'énergie élémentaire. L'énergie peut être restaurée une fois toutes les 0,7 s de cette manière. Cette restauration d'énergie élémentaire peut être déclenchée même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Lorsque l'attaque plongeante du personnage équipé de l'arme a touché un ennemi, les DGT des attaques plongeantes de tous les personnages de l'équipe à proximité augmentent de <cryo>80 %</cryo> pendant 20 s. Lorsque l'attaque plongeante d'un personnage de l'équipe à proximité touche un ennemi, le personnage équipé de l'arme récupère <cryo>3,5</cryo> pts d'énergie élémentaire. L'énergie peut être restaurée une fois toutes les 0,7 s de cette manière. Cette restauration d'énergie élémentaire peut être déclenchée même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

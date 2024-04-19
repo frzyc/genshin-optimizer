@@ -1,0 +1,164 @@
+{
+  "name": "Jean",
+  "title": "Kỵ Sĩ Bồ Công Anh",
+  "description": "Kỵ sĩ Bồ Công Anh chính trực nghiêm nghị, đội trưởng đại diện Đội Kỵ Sĩ Tây Phong của Mondstadt.",
+  "constellationName": "Cung Ấu Sư",
+  "auto": {
+    "name": "Tây Phong Kiếm Thuật",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, đánh một đòn tràn đầy sức mạnh của gió.",
+        "2": "Địch bị đánh bay sẽ rơi chậm trong thời gian ngắn."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Rơi",
+      "8": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Gió Cuộn Kiếm",
+    "description": {
+      "0": "Hội tụ sức mạnh của gió vô hình lên kiếm, thi triển cơn bão nhỏ, đánh bay địch ở hướng ngắm bắn, gây lượng lớn <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "1": "<br/>",
+      "2": "<strong>Nhấn Giữ</strong>",
+      "3": "Tiếp tục tiêu hao thể lực để trả giá, tạo lốc xoáy kéo địch và vật thể xung quanh đến trước mặt.",
+      "4": "Có thể điều chỉnh phương hướng.",
+      "5": "Trong khi sử dụng kỹ năng không thể di chuyển.",
+      "6": "<br/>",
+      "7": "<i>Đồng hành cùng với Jean, là cơn gió bảo vệ đồng đội khỏi nguy hiểm.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Tiêu Hao Thể Lực",
+      "2": "Thời Gian Tối Đa",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Gió Bồ Công Anh",
+    "description": {
+      "0": "Bảo hộ triệu hồi gió, tạo ra Vùng Đất Bồ Công Anh hỗn loạn, đánh lui địch xung quanh và gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "1": "Đồng thời hồi nhanh lượng lớn HP cho tất cả nhân vật trong đội, lượng hồi được hưởng từ tấn công của Jean.",
+      "2": "<br/>",
+      "3": "<strong>Vùng Đất Bồ Công Anh</strong>",
+      "4": [
+        "Duy trì hồi phục HP cho nhân vật trong đó;",
+        "Khiến nhân vật trong đó tiếp tục chịu <anemo>ảnh hưởng Nguyên Tố Phong</anemo>;",
+        "Đối với địch ra vào khu vực, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      ],
+      "5": "<br/>",
+      "6": "<i>Ân trạch của gió như bồ công anh trải rộng, là căn nguyên và lòng tốt của sự thủ hộ từ Jean.</i>"
+    },
+    "skillParams": {
+      "0": "ST Bạo Phát",
+      "1": "Sát thương trong vùng đất",
+      "2": "Vùng đất phát động trị liệu",
+      "3": "Kéo dài trị liệu",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Đi Cùng Với Gió",
+    "description": {
+      "0": "Khi tấn công thường của Jean đánh trúng, có 50% tỷ lệ hồi HP bằng với 15% tấn công của Jean cho tất cả thành viên đội."
+    }
+  },
+  "passive2": {
+    "name": "Nghe Theo Hướng Gió",
+    "description": {
+      "0": "Sau khi sử dụng <strong>Gió Bồ Công Anh</strong>, sẽ hồi phục 20% Năng Lượng Nguyên Tố"
+    }
+  },
+  "passive3": {
+    "name": "Ngọn Gió Dẫn Đường",
+    "description": {
+      "0": "Nấu hoàn mỹ món ăn thuộc loại hồi phục, có tỷ lệ 12% x2 sản lượng."
+    }
+  },
+  "constellation1": {
+    "name": "Cơn Bão Gió Lốc",
+    "description": {
+      "0": "Nhấn giữ <strong>Gió Cuộn Kiếm</strong> trong hơn 1s để tăng tốc độ kéo, sát thương tạo thành cũng tăng 40%."
+    }
+  },
+  "constellation2": {
+    "name": "Lá Khiên Bảo Vệ",
+    "description": {
+      "0": "Khi Jean nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, tất cả nhân vật trong đội tăng 15% tốc độ tấn công và 15% tốc độ di chuyển, kéo dài 15s."
+    }
+  },
+  "constellation3": {
+    "name": "Khi Gió Tây Về",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Gió Bồ Công Anh</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lãnh Thổ Bồ Công Anh",
+    "description": {
+      "0": "Trong vùng đất <strong>Gió Bồ Công Anh</strong>, <anemo>Kháng Nguyên Tố Phong</anemo> của địch giảm 40%."
+    }
+  },
+  "constellation5": {
+    "name": "Ngọn Gió Mạnh Thổi Qua",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Gió Cuộn Kiếm</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Nanh Sư Tử Chăm Lo Muôn Dân!",
+    "description": {
+      "0": "Trong <strong>Gió Bồ Công Anh</strong> sát thương phải nhận giảm 35%.",
+      "1": "Rời khỏi vùng đất, hiệu quả này sẽ biến mất sau 3 lần tấn công hoặc sau 10S."
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "name": "Kujou Sara",
+  "title": "Crowfeather Kaburaya",
+  "description": "Seorang jenderal di Tenryou Commission. Sifatnya berani, tegas, dan sangat pandai bertarung.",
+  "constellationName": "Flabellum",
+  "auto": {
+    "name": "Tengu Bowmanship",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
+        "2": "Saat membidik, energi listrik akan berkumpul di ujung anak panah. Panah dengan listrik yang terkumpul penuh akan mengakibatkan <electro>Electro DMG</electro> saat mengenai musuh.",
+        "3": "Saat berada dalam status Crowfeather Cover, anak panah dengan energi yang terkumpul penuh akan meninggalkan Crowfeather saat mengenai target."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Membidik",
+      "6": "DMG Membidik Penuh",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Tengu Stormcall",
+    "description": {
+      "0": "Mundur dengan kecepatan seperti tengu dan memanggil perlindungan dari Crowfeather.",
+      "1": "Mendapatkan efek Crowfeather Cover selama 18 detik, dan jika Kujou Sara melancarkan Serangan Membidik yang terisi penuh, Crowfeather Cover akan terkonsumsi dan tembakan ini akan meninggalkan sebuah Crowfeather di lokasi target.",
+      "2": "Crowfeather akan memicu Tengu Juurai: Ambush setelah beberapa saat, mengakibatkan <electro>Electro DMG</electro> pada musuh di dekatnya, dan memberikan Bonus ATK sebesar persentase dari Base ATK Kujou Sara pada Karakter aktif di sekitar.",
+      "3": "<br/>",
+      "4": "Bonus ATK dari berbagai Tengu Juurai yang berbeda tidak bisa digabungkan. Efek dan durasi nya juga akan ditentukan oleh efek Tengu Juurai yang aktif terakhir.",
+      "5": "<br/>",
+      "6": "<i>Ras tengu tidak pernah kekurangan orang berbakat yang diberkati dengan Vision Electro. Mereka selalu mengucapkan mantra pada Archon Electro saat sedang mengendalikan elemen Electro. Isi mantranya kira-kira seperti ini:</i>",
+      "7": "<i>\"Tunjukkanlah kekuatanmu wahai Narukami Yang Agung, berikanlah kekuatan petirmu yang perkasa pada hambamu ini! Sowaka!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tengu Juurai: Ambush",
+      "1": "Rasio Bonus ATK",
+      "2": "Durasi Bonus ATK",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Subjugation: Koukou Sendou",
+    "description": {
+      "0": "Menjatuhkan sebuah Tengu Juurai: Titanbreaker di lokasi target dan mengakibatkan <electro>Electro DMG Area</electro>. Setelah itu, Tengu Juurai: Titanbreaker ini akan berpencar menjadi 4 Tengu Juurai: Stormcluster secara beruntun dan mengakibatkan <electro>Electro DMG Area</electro>.",
+      "1": "Tengu Juurai: Titanbreaker dan Tengu Juurai: Stormcluster akan memberikan Bonus ATK pada Karakter aktif yang ada di sekitar, sama seperti saat melancarkan Elemental Skill Tengu Stormcall.",
+      "2": "<br/>",
+      "3": "Bonus ATK dari berbagai Tengu Juurai yang berbeda tidak bisa digabungkan. Efek dan durasi nya juga akan ditentukan oleh efek Tengu Juurai yang aktif terakhir.",
+      "4": "<br/>",
+      "5": "<i>Sara telah berpaling dari kaumnya sendiri, para tengu, dan juga telah kehilangan kepercayaan pada Tenryou Commission. Namun setelah keraguan di hatinya sirna, dia berhasil menemukan petirnya yang baru.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tengu Juurai: Titanbreaker",
+      "1": "DMG Tengu Juurai: Stormcluster",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Immovable Will",
+    "description": {
+      "0": "Saat berada dalam kondisi Crowfeather Cover dari skill <strong>Tengu Stormcall</strong>, waktu charge Serangan Membidik akan berkurang 60%."
+    }
+  },
+  "passive2": {
+    "name": "Decorum",
+    "description": {
+      "0": "Saat Tengu Juurai: Ambush mengenai musuh, Kujou Sara akan memulihkan 1,2 Energy pada seluruh anggota party untuk setiap 100% Energy Recharge yang Sara miliki. Efek ini dapat terpicu setiap 3 detik."
+    }
+  },
+  "passive3": {
+    "name": "Land Survey",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Inazuma, waktu yang dibutuhkan berkurang 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Crow's Eye",
+    "description": {
+      "0": "Saat Tengu Juurai memberikan Bonus ATK pada Karakter atau mengenai musuh, maka CD <strong>Tengu Stormcall</strong> akan berkurang 1 detik.",
+      "1": "Efek ini dapat terpicu setiap 3 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Dark Wings",
+    "description": {
+      "0": "Melancarkan <strong>Tengu Stormcall</strong> akan menciptakan Crowfeather yang lebih lemah di posisi awal Kujou Sara dan mengakibatkan 30% dari DMG aslinya."
+    }
+  },
+  "constellation3": {
+    "name": "The War Within",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Subjugation: Koukou Sendou</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Conclusive Proof",
+    "description": {
+      "0": "Jumlah Tengu Juurai: Stormcluster yang tercipta dari skill <strong>Subjugation: Koukou Sendou</strong> bertambah menjadi 6."
+    }
+  },
+  "constellation5": {
+    "name": "Spellsinger",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Tengu Stormcall</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sin of Pride",
+    "description": {
+      "0": "Saat Karakter mendapatkan Bonus ATK dari Tengu Juurai, maka CRIT DMG untuk <electro>Electro DMG</electro> milik Karakter tersebut akan meningkat 60%."
+    }
+  }
+}

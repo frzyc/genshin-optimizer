@@ -1,0 +1,160 @@
+{
+  "name": "Collei",
+  "title": "Broto de Renascimento",
+  "description": "Uma Guarda-Florestal em Treinamento que patrulha a Floresta Avidya. Por trás de seu entusiasmo, encontra-se uma personalidade bastante introvertida.",
+  "constellationName": "Leptailurus Cervarius",
+  "auto": {
+    "name": "Homenagem ao Tiro com Arco",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 disparos consecutivos com o arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Realiza um <strong>Disparo com Mira</strong> mais preciso e com mais dano.",
+        "2": "Enquanto mira, elemento Dendro irá acumular na ponta da flecha. Uma flecha completamente carregada irá causar <dendro>Dano Dendro</dendro>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas do ar antes de cair e impactar o chão, causando Dano em uma AdE no impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Disparo com Mira",
+      "5": "Disparo com Mira com Energização Completa",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Carícia das Flores",
+    "description": {
+      "0": "Lança um Bumerangue Floral que inflige 1 golpe de <dendro>Dano Dendro</dendro> contra os oponentes atingidos.",
+      "1": "O Bumerangue Floral retornará depois de um tempo, infligindo <dendro>Dano Dendro</dendro> novamente.",
+      "2": "<br/>",
+      "3": "<i>Essa é a melhor ferramenta de escolha da Collei para lidar com bestas selvagens. Só alguns golpes com essa ferramenta normalmente melhoram o comportamento delas. Esse mesmo princípio funciona muito bem com aqueles mal-intencionados.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Tempo de Recarga",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Segredo Miauvilhoso",
+    "description": {
+      "0": "A confiável Collambei chega para salvar o dia!",
+      "1": "Lança a boneca chamada Collambei, causando uma explosão que inflige <dendro>Dano Dendro em uma AdE</dendro> e criando uma Zona Collambei. Collambei irá saltar constantemente dentro desta zona, infligindo <dendro>Dano Dendro em uma AdE</dendro>.",
+      "2": "<br/>",
+      "3": "<i>\"Incrível, não é? ...Hã? Você quer saber de onde tirei o nome Collambei? Uh, bem, eu...\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Explosão",
+      "1": "Dano de Salto",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Retorno Floral",
+    "description": {
+      "0": "Se antes do <strong>Bumerangue Floral</strong> retornar um dos membros da equipe desencadear a reação elemental de Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, concederá ao personagem o estado \"Brotar\", que infligirá <dendro>Dano Dendro</dendro> continuamente contra os inimigos próximos equivalente a 40% do ATQ de Collei por 3s.",
+      "1": "Desencadear um novo efeito \"Brotar\" na duração do efeito \"Brotar\" existente anulará o efeito original. O Dano infligido pelo efeito \"Brotar\" é considerado Dano de Habilidade Elemental."
+    }
+  },
+  "passive2": {
+    "name": "Quietude da Floresta",
+    "description": {
+      "0": "Quando um personagem dentro da <strong>Zona Collambei</strong> desencadeia uma reação elemental de Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, a duração da área será prolongada em 1s.",
+      "1": "É possível prolongar a duração até 3 vezes desta maneira em um uso de <strong>Segredo Miauvilhoso</strong>."
+    }
+  },
+  "passive3": {
+    "name": "Campeã Voadora de Sumeru",
+    "description": {
+      "0": "Diminui o consumo de Stamina ao Planar de todos os seus personagens em 20%.",
+      "1": "Não acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos."
+    }
+  },
+  "constellation1": {
+    "name": "Patrulha Florestal",
+    "description": {
+      "0": "Quando Collei está na equipe, mas não no campo de batalha, sua Recarga de Energia é aumentada em 20%."
+    }
+  },
+  "constellation2": {
+    "name": "Pelas Colinas e Bosques",
+    "description": {
+      "0": "Transforma o Talento Passivo Retorno Floral: ",
+      "1": "Quando o <strong>Bumerangue Floral</strong> retorna, fornece ao personagem o efeito \"Brotar\" do Talento Passivo \"Retorno Floral\", infligindo continuamente 40% do ATQ de Collei como <dendro>Dano Dendro</dendro> contra os inimigos próximos por 3s.",
+      "2": "Quando <strong>Carícia das Flores</strong> é lançada até o fim do estado \"Brotar\", se qualquer um dos membros da equipe desencadear as reações de Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação antes que essa instância do efeito \"Brotar\" termine, a duração do efeito será estendida em 3s.",
+      "3": "O efeito \"Brotar\" só pode ser estendido dessa forma uma vez. Se outro efeito \"Brotar\" for desencadeado na duração do efeito \"Brotar\" inicial, o efeito original será removido. O Dano infligido pelo efeito \"Brotar\" é considerado Dano de Habilidade Elemental.",
+      "4": "Requer que você tenha desbloqueado o Talento Passivo \"Retorno Floral\"."
+    }
+  },
+  "constellation3": {
+    "name": "Fragrância de Verão",
+    "description": {
+      "0": "Aumenta o nível da Habilidade <strong>Carícia das Flores</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Presente da Floresta",
+    "description": {
+      "0": "Ao usar <strong>Segredo Miauvilhoso</strong> aumenta a Proficiência Elemental de todos os personagens próximos em 60 por 12s (exceto para a própria Collei)."
+    }
+  },
+  "constellation5": {
+    "name": "Plenitude das Chamas",
+    "description": {
+      "0": "Aumenta o nível de <strong>Segredo Miauvilhoso</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Bosque das Flechas",
+    "description": {
+      "0": "Quando o <strong>Bumerangue Floral</strong> atingir, ele irá criar uma Collambei em miniatura que inflige 200% do ATQ da Collei como <dendro>Dano Dendro</dendro>.",
+      "1": "Cada <strong>Carícia das Flores</strong> pode criar até uma Collambei em miniatura."
+    }
+  }
+}

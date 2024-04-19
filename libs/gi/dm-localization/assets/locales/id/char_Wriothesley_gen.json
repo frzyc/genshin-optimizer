@@ -1,0 +1,174 @@
+{
+  "name": "Wriothesley",
+  "title": "Emissary of Solitary Iniquity",
+  "description": "Pemimpin Fortress of Meropide yang bergelar Duke. Penguasa di perairan keruh.",
+  "constellationName": "Cerberus",
+  "auto": {
+    "name": "Forceful Fists of Frost",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Mengumpulkan es di ujung kepalan tangannya, melancarkan <strong>Repelling Fist</strong> yang kuat dan cepat, melancarkan maksimum 5 pukulan berturut-turut dan mengakibatkan <cryo>Cryo DMG</cryo>.",
+        "2": "Selain itu, jumlah kombo Normal Attack tidak akan diulang untuk waktu yang singkat setelah berlari atau setelah melancarkan Elemental Skill \"Icefang Rush\"."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melompat dan melancarkan <strong>Vaulting Fist</strong> yang mengakibatkan <cryo>Cryo DMG Area</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalur terjangan dan mengakibatkan <cryo>Cryo DMG Area</cryo> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Icefang Rush",
+    "description": {
+      "0": "Mengatur napas, ritme, dan langkah kakinya dengan cepat, lalu berlari ke depan dalam jarak pendek, dan memasuki status <strong>Chilling Penalty</strong> untuk melancarkan serangan yang lebih kuat.",
+      "1": "<br/>",
+      "2": "<strong>Chilling Penalty</strong>",
+      "3": [
+        "Meningkatkan ketahanan Wriothesley terhadap interupsi;",
+        "Saat HP Wriothesley lebih dari 50%, memperkuat Repelling Fist dari <strong>Normal Attack: Forceful Fists of Frost</strong> dan meningkatkan DMG-nya; Saat mengenai target, serangan ini akan mengonsumsi HP Wriothesley dalam jumlah tertentu setiap 0,1 detik;"
+      ],
+      "4": "Efek ini akan hilang saat Wriothesley meninggalkan medan pertempuran.",
+      "5": "<br/>",
+      "6": "<i>\"Keyakinan masa lalu adalah masa lalu. Keputusan masa depan lah yang harus kita genggam erat.\"",
+      "7": "\"Kalau kamu tidak ingin dilahap dosa yang kamu lakukan sekarang, harap hargai momen saat ini.\"</i>"
+    },
+    "skillParams": {
+      "0": "Peningkatan DMG Repelling Fist",
+      "1": "Konsumsi HP",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Darkgold Wolfbite",
+    "description": {
+      "0": "Mengaktifkan sarung tinjunya, menyerang dengan pukulan tinju embun beku, dan terus-menerus melancarkan Icicle Impact ke area depan dan mengakibatkan <cryo>Cryo DMG Area</cryo> berkali-kali.",
+      "1": "<br/>",
+      "2": "<strong>Arkhe: Ousia</strong>",
+      "3": "Setelah Icicle Impact berakhir, Surging Blade akan dijatuhkan ke posisi musuh berada dan mengakibatkan Ousia-aligned <cryo>Cryo DMG</cryo>.",
+      "4": "<br/>",
+      "5": "<i>Ada beberapa hal yang bahkan Duke dari Benteng Meropide merasa tidak berdaya. Contohnya, pekerjaan dokumen yang rumit, hal-hal sepele atau bahkan ... anak kecil yang menempelkan berbagai stiker yang lucu tapi sulit dilepas di sarung tinjunya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Surging Blade",
+      "2": "Cooldown",
+      "3": "Cooldown Surging Blade",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "There Shall Be a Plea for Justice",
+    "description": {
+      "0": "Saat HP Wriothesley berada di bawah 60%, akan mendapatkan Gracious Rebuke. Charged Attack dari <strong>Normal Attack: Forceful Fists of Frost</strong> berikutnya akan diperkuat menjadi Rebuke: Vaulting Fist yang tidak mengonsumsi Stamina, meningkatkan DMG yang diakibatkan sebesar 50%, dan memulihkan HP Wriothesley setelah serangan mengenai musuh. Jumlah pemulihan adalah sebesar 30% Max HP Wriothesley.",
+      "1": "Efek Gracious Rebuke yang dapat diperoleh dengan cara ini adalah sekali setiap 5 detik."
+    }
+  },
+  "passive2": {
+    "name": "There Shall Be a Reckoning for Sin",
+    "description": {
+      "0": "Saat HP Wriothesley meningkat atau berkurang, jika Wriothesley sedang berada dalam status Chilling Penalty dari <strong>Icefang Rush</strong>, Chilling Penalty akan mendapatkan satu lapis efek Prosecution Edict. Efek ini dapat ditumpuk sampai 5 lapis. Setiap lapisnya akan meningkatkan 6% ATK Wriothesley."
+    }
+  },
+  "passive3": {
+    "name": "The Duke's Grace",
+    "description": {
+      "0": "Saat membuat Material Ascension Senjata, memiliki 10% kemungkinan untuk mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "Terror for the Evildoers",
+    "description": {
+      "0": "Gracious Rebuke dari \"There Shall Be a Plea for Justice\" akan dikonversi menjadi:",
+      "1": "Saat HP Wriothesley kurang dari 60% atau saat status Chilling Penalty dari <strong>Icefang Rush</strong> sedang berlangsung, akan mendapatkan \"Gracious Rebuke\" saat serangan Repelling Fist tahap ke-lima mengenai musuh. Efek \"Gracious Rebuke\" dapat diperoleh dengan cara ini satu kali setiap 2,5 detik.",
+      "2": "<br/>",
+      "3": "Selain itu, Rebuke: Vaulting Fist akan mendapatkan penguatan sebagai berikut:",
+      "4": [
+        "DMG Bonus yang diakibatkan ditingkatkan lagi menjadi 200%;",
+        "Saat mengenai musuh, jika sedang berada dalam status Chilling Penalty, durasi status ini akan bertambah 4 detik. Selama satu kali durasi Chilling Penalty berlangsung, hanya dapat menerima perpanjangan durasi satu kali."
+      ],
+      "5": "<br/>",
+      "6": "Harus membuka Talenta Pasif \"There Shall Be a Plea for Justice\" terlebih dahulu."
+    }
+  },
+  "constellation2": {
+    "name": "Shackles for the Arrogant",
+    "description": {
+      "0": "Saat melancarkan <strong>Darkgold Wolfbite</strong>, setiap lapis Prosecution Edict dari Talenta Pasif \"There Shall Be a Reckoning for Sin\" akan memberikan peningkatan DMG sebesar 40%.",
+      "1": "Harus membuka Talenta Pasif \"There Shall Be a Reckoning for Sin\" terlebih dahulu."
+    }
+  },
+  "constellation3": {
+    "name": "Punishment for the Frauds",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Normal Attack: Forceful Fists of Frost</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Redemption for the Suffering",
+    "description": {
+      "0": "Batas pemulihan yang diberikan Rebuke: Vaulting Fist kepada Wriothesley akan meningkat menjadi 50% Max HP-nya. Harus membuka Talenta Pasif \"There Shall Be a Plea for Justice\" terlebih dahulu.",
+      "1": "Selain itu, saat Wriothesley menerima pemulihan, jika pemulihan kali ini ada yang berlebihan, maka akan menghasilkan efek berdasarkan ada atau tidaknya Wriothesley di medan pertempuran pada saat ini: Jika Wriothesley berada di medan pertempuran, maka ATK SPD Wriothesley meningkat 20% selama 4 detik; Saat Wriothesley ada di dalam party namun tidak berada di medan pertempuran, ATK SPD seluruh anggota party sendiri akan meningkat 10% selama 6 detik. Kedua efek peningkatan ATK SPD tersebut tidak dapat ditumpuk."
+    }
+  },
+  "constellation5": {
+    "name": "Mercy for the Wronged",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Darkgold Wolfbite</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Esteem for the Innocent",
+    "description": {
+      "0": "CRIT Rate Rebuke: Vaulting Fist meningkat 10%, CRIT DMG Vaulting Fist meningkat 80%. Saat dilancarkan, akan menghasilkan untaian es tambahan yang mengakibatkan <cryo>Cryo DMG</cryo> sebesar 100% DMG awal. DMG yang diakibatkan dengan cara ini akan dianggap sebagai DMG Charged Attack.",
+      "1": "Harus membuka Talenta Pasif \"There Shall Be a Plea for Justice\" terlebih dahulu."
+    }
+  }
+}

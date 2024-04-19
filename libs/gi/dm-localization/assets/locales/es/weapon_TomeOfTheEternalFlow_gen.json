@@ -1,0 +1,24 @@
+{
+  "name": "Escrituras del Fluir Sempiterno",
+  "description": {
+    "0": "Un libro de enseñanzas que durante un tiempo pasó de generación en generación en un monasterio. Ya nadie sabe de su existencia."
+  },
+  "passiveName": "Oleada sempiterna",
+  "passiveDescription": {
+    "0": {
+      "0": "Otorga un <cryo>16%</cryo> más de Vida. Cuando la Vida aumenta o disminuye, el daño de los Ataques Cargados aumenta en un <cryo>14%</cryo>. Este efecto dura 4 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s. Al alcanzar 3 acumulaciones o al reiniciar su duración, regenera <cryo>8</cryo> pts. de Energía Elemental. Solo se puede regenerar Energía Elemental una vez cada 12 s de esta forma."
+    },
+    "1": {
+      "0": "Otorga un <cryo>20%</cryo> más de Vida. Cuando la Vida aumenta o disminuye, el daño de los Ataques Cargados aumenta en un <cryo>18%</cryo>. Este efecto dura 4 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s. Al alcanzar 3 acumulaciones o al reiniciar su duración, regenera <cryo>9</cryo> pts. de Energía Elemental. Solo se puede regenerar Energía Elemental una vez cada 12 s de esta forma."
+    },
+    "2": {
+      "0": "Otorga un <cryo>24%</cryo> más de Vida. Cuando la Vida aumenta o disminuye, el daño de los Ataques Cargados aumenta en un <cryo>22%</cryo>. Este efecto dura 4 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s. Al alcanzar 3 acumulaciones o al reiniciar su duración, regenera <cryo>10</cryo> pts. de Energía Elemental. Solo se puede regenerar Energía Elemental una vez cada 12 s de esta forma."
+    },
+    "3": {
+      "0": "Otorga un <cryo>28%</cryo> más de Vida. Cuando la Vida aumenta o disminuye, el daño de los Ataques Cargados aumenta en un <cryo>26%</cryo>. Este efecto dura 4 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s. Al alcanzar 3 acumulaciones o al reiniciar su duración, regenera <cryo>11</cryo> pts. de Energía Elemental. Solo se puede regenerar Energía Elemental una vez cada 12 s de esta forma."
+    },
+    "4": {
+      "0": "Otorga un <cryo>32%</cryo> más de Vida. Cuando la Vida aumenta o disminuye, el daño de los Ataques Cargados aumenta en un <cryo>30%</cryo>. Este efecto dura 4 s, puede acumularse hasta 3 veces y solo se puede activar una vez cada 0.3 s. Al alcanzar 3 acumulaciones o al reiniciar su duración, regenera <cryo>12</cryo> pts. de Energía Elemental. Solo se puede regenerar Energía Elemental una vez cada 12 s de esta forma."
+    }
+  }
+}

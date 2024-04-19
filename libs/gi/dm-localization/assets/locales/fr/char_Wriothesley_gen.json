@@ -1,0 +1,174 @@
+{
+  "name": "Wriothesley",
+  "title": "Émissaire de l'iniquité solitaire",
+  "description": "Le duc de la Forteresse de Méropide est dans l'ombre le seigneur des profondeurs troubles.",
+  "constellationName": "Cerberus",
+  "auto": {
+    "name": "Poing vigoureux du givre",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Condense du givre sur son poing et déclenche un puissant <strong>poing de réprimande</strong>, enchaînant jusqu'à 5 attaques rapides qui infligent des <cryo>DGT Cryo</cryo>.",
+        "2": "De plus, l'enchaînement d'attaques normales ne sera pas réinitialisé pendant une courte période après la compétence élémentaire « Ruée glaciale du croc » ou l'initiation d'un sprint."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour sauter et déclencher un <strong>poing bondissant</strong> qui inflige des <cryo>DGT Cryo de zone</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des <cryo>DGT Cryo de zone</cryo> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ruée glaciale du croc",
+    "description": {
+      "0": "En ajustant sa respiration, son rythme et sa cadence, Wriothesley sprinte vers l'avant sur une courte distance, entrant dans l'état <strong>Châtiment algide</strong> qui lui permet de déclencher des attaques encore plus puissantes.",
+      "1": "<br/>",
+      "2": "<strong>Châtiment algide</strong>",
+      "3": [
+        " Augmente la RÉS à l'interruption de Wriothesley.",
+        " Lorsque les PV de Wriothesley sont supérieurs à 50 % : le poing de réprimande de l'<strong>attaque normale « Poing vigoureux du givre »</strong> est renforcé et ses DGT augmentés, et toucher avec ce poing consomme une quantité fixe des PV de Wriothesley, les PV pouvant être perdus une fois toutes les 0,1 s de cette manière."
+      ],
+      "4": "Cet effet cesse lorsque Wriothesley quitte le champ de bataille.",
+      "5": "<br/>",
+      "6": "<i>« Les condamnations passées sont passées. Ce sont nos choix futurs que nous devons appréhender.",
+      "7": "Si vous ne voulez pas vous faire consumer par les péchés du moment, alors s'il vous plaît, chérissez cet instant. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT poing de réprimande renforcé",
+      "1": "Coût de PV",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Morsure lupine de l'or",
+    "description": {
+      "0": "Activant ses gants de boxe, Wriothesley déclenche un coup droit condensé de givre, puis utilise un impact de stalactite vers l'avant pour infliger plusieurs fois des <cryo>DGT Cryo de zone</cryo>.",
+      "1": "<br/>",
+      "2": "<strong>Arkhe : Ousia</strong>",
+      "3": "Après la fin de l'impact de stalactite, une lame fluide descend à l'emplacement de l'ennemi pour infliger des <cryo>DGT Cryo</cryo> chargés d'énergie ousia.",
+      "4": "<br/>",
+      "5": "<i>Il y a des choses contre lesquelles même le duc de la Forteresse de Méropide ne peut pas faire grand-chose : par exemple, la paperasserie compliquée, les futilités d'un superviseur ou bien... les petits enfants qui collent toute une série d'autocollants mignons mais difficiles à enlever sur ses gants de boxe...</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT lame fluide",
+      "2": "Temps de recharge",
+      "3": "TdR lame fluide",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Plaidoirie pour la justice",
+    "description": {
+      "0": "Lorsque les PV de Wriothesley sont inférieurs à 60 %, il obtient une réprimande miséricordieuse qui convertit la prochaine attaque chargée de son <strong>attaque normale « Poing vigoureux du givre »</strong> en poing bondissant de réprimande : ne consomme pas d'endurance, augmente les DGT infligés de 50 %, et restaure les PV de Wriothesley d'une valeur équivalant à 30 % de ses PV max en touchant.",
+      "1": "Une réprimande miséricordieuse peut être obtenue une fois toutes les 5 s de cette manière."
+    }
+  },
+  "passive2": {
+    "name": "Rétribution pour le péché",
+    "description": {
+      "0": "Lorsque les PV actuels de Wriothesley augmentent ou diminuent et s'il est sous l'effet du châtiment algide accordé par <strong>Ruée glaciale du croc</strong>, le châtiment algide obtient un cumul d'édit d'accusation. Cet effet peut être cumulé 5 fois maximum, chaque cumul permettant d'augmenter l'ATQ de Wriothesley de 6 %."
+    }
+  },
+  "passive3": {
+    "name": "Clémence du duc",
+    "description": {
+      "0": "10 % de chances d'obtenir le double de produits lors de la synthèse de matériaux d'élévation d'arme."
+    }
+  },
+  "constellation1": {
+    "name": "Terreur pour les malfaiteurs",
+    "description": {
+      "0": "La réprimande miséricordieuse de l'aptitude passive « Plaidoirie pour la justice » est modifiée :",
+      "1": "Si les PV de Wriothesley sont inférieurs à 60 % ou s'il est sous l'effet du châtiment algide de <strong>Ruée glaciale du croc</strong>, il obtient une réprimande miséricordieuse lorsque la 5e attaque du poing de réprimande touche. Une réprimande miséricordieuse peut être obtenue une fois toutes les 2,5 s.",
+      "2": "<br/>",
+      "3": "De plus, le poing bondissant de réprimande obtient les renforcements suivants :",
+      "4": [
+        " Le bonus de DGT infligés augmente davantage jusqu'à 200 %.",
+        " En touchant alors que Wriothesley est sous l'effet d'un châtiment algide, la durée du châtiment se prolonge de 4 s. Une seule prolongation de durée peut avoir lieu par châtiment algide."
+      ],
+      "5": "<br/>",
+      "6": "L'aptitude passive « Plaidoirie pour la justice » doit être déjà débloquée."
+    }
+  },
+  "constellation2": {
+    "name": "Entrave pour les arrogants",
+    "description": {
+      "0": "En utilisant <strong>Morsure lupine de l'or</strong>, chaque cumul d'édit d'accusation de l'aptitude passive « Rétribution pour le péché » augmente les DGT infligés de 40 %.",
+      "1": "L'aptitude passive « Rétribution pour le péché » doit être déjà débloquée."
+    }
+  },
+  "constellation3": {
+    "name": "Punition pour les frauduleux",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Attaque normale : Poing vigoureux du givre</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Rédemption pour les nécessiteux",
+    "description": {
+      "0": "Les PV que le poing bondissant de réprimande restaure à Wriothesley augmentent à une valeur équivalant à 50 % de ses PV max. L'aptitude passive « Plaidoirie pour la justice » doit être déjà débloquée.",
+      "1": "De plus, lorsque Wriothesley reçoit un soin et si la quantité du soin dépasse la quantité maximum que Wriothesley peut recevoir, les effets suivants se produisent selon si Wriothesley est déployé ou non : s'il est déployé, sa VIT d'attaque augmente de 20 % pendant 4 s ; s'il fait partie de l'équipe mais n'est pas déployé, la VIT d'attaque de tous vos personnages dans l'équipe augmente de 10 % pendant 6 s. Ces deux effets d'augmentation de VIT d'attaque ne peuvent pas se cumuler."
+    }
+  },
+  "constellation5": {
+    "name": "Indulgence pour les innocents",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Morsure lupine de l'or</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Estime pour les irréprochables",
+    "description": {
+      "0": "Le taux CRIT du poing bondissant de réprimande augmente de 10 % et ses DGT CRIT de 80 %, et son déclenchement permet de libérer un pic de glace supplémentaire infligeant des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 100 % des DGT d'origine. Les DGT infligés de cette manière sont considérés comme des DGT d'attaque chargée.",
+      "1": "L'aptitude passive « Plaidoirie pour la justice » doit être déjà débloquée."
+    }
+  }
+}

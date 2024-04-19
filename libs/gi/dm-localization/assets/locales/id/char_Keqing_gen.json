@@ -1,0 +1,164 @@
+{
+  "name": "Keqing",
+  "title": "Driving Thunder",
+  "description": "Yuheng dari Liyue Qixing, dia punya banyak hal yang ingin dikatakan mengenai Rex Lapis yang memerintah Liyue- dan pada kenyataannya, para Dewa mengagumi orang-orang sepertinya.",
+  "constellationName": "Trulla Cementarii",
+  "auto": {
+    "name": "Yunlai Swordsmanship",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Stellar Restoration",
+    "description": {
+      "0": "Dengan cepat menggunakan Lightning Stiletto untuk menghabisi musuh bagaikan kilat.",
+      "1": "Saat Stiletto mengenai musuh, mengakibatkan <electro>Electro DMG</electro> kepada musuh dalam area yang kecil, dan menaruh Stiletto Mark di tempat.",
+      "2": "<br/>",
+      "3": "<strong>Tahan</strong>",
+      "4": "Tahan untuk menyesuaikan arah ke mana Stiletto akan dilemparkan.",
+      "5": "Stiletto yang dilemparkan oleh tipe serangan yang ditahan dapat ditangguhkan di udara, memungkinkan Keqing untuk melompat ke arah stiletto saat menggunakan Stellar Restoration untuk kedua kalinya.",
+      "6": "<br/>",
+      "7": "<strong>Lightning Stiletto</strong>",
+      "8": [
+        "Jika Keqing menggunakan Stellar Restoration kembali atau menggunakan Charged Attack saat durasinya masih berlangsung, maka akan menghapus Stiletto Mark dan menghasilkan efek berbeda:",
+        "Jika dia menggunakan Stellar Restoration kembali, dia akan berpindah dengan cepat ke lokasi yang ditandai dan mengeluarkan satu serangan tebasan yang mengakibatkan <electro>Electro DMG area</electro>. Saat berpindah menuju Stiletto yang dilemparkan dari serangan tahan, Keqing dapat mengabaikan hambatan yang ada.",
+        "Jika Keqing menggunakan Charged Attack, dia akan memicu beberapa tebasan petir di lokasi yang ditandai, mengakibatkan <electro>Electro DMG area</electro>."
+      ],
+      "9": "<br/>",
+      "10": "<i>\"Manusia itu bagaikan ngengat, mengejar api tiada henti yang sering kali disebut sebagai Dewa atau Adeptus. Tapi api yang kumiliki di sini adalah milikku sendiri.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Lightning Stiletto",
+      "1": "DMG Tebasan",
+      "2": "DMG Thunderclap Slash",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Starward Sword",
+    "description": {
+      "0": "Keqing melepaskan kekuatan petir, menghasilkan <electro>Electro DMG</electro> pada area sekitar.",
+      "1": "Lalu dia akan menyatu dengan bayangan pedangnya, menyerang dengan serangkaian pukulan petir kepada musuh di sekitarnya secara bersamaan yang menghasilkan beberapa <electro>Electro DMG</electro>. Serangan terakhir menghasilkan <electro>Electro DMG area</electro> yang luar biasa.",
+      "2": "<br/>",
+      "3": "<i>Teknik tercepat dalam ilmu pedang yang dimiliki Keqing cukup cepat untuk dapat meruntuhkan bintang-bintang.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Tebasan Berkelanjutan",
+      "2": "DMG Serangan Terakhir",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Thundering Penance",
+    "description": {
+      "0": "Setelah melancarkan <strong>Stellar Restoration</strong> untuk kedua kalinya saat Lightning Stiletto masih aktif, Keqing akan mendapatkan <electro>Electro Infusion</electro> selama 5 detik."
+    }
+  },
+  "passive2": {
+    "name": "Aristocratic Dignity",
+    "description": {
+      "0": "Meningkatkan 15% CRIT Rate dan Energy Recharge Keqing selama 8 detik ketika menggunakan skill <strong>Starward Sword</strong>."
+    }
+  },
+  "passive3": {
+    "name": "Land's Overseer",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Liyue, waktu yang dibutuhkan berkurang 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Thundering Might",
+    "description": {
+      "0": "Saat Lightning Stiletto masih ada, dan <strong>Stellar Restoration</strong> diluncurkan kembali, akan menyebabkan 50% dari ATK Keqing menjadi <electro>Electro DMG area</electro> pada titik awal dan titik akhir Blink."
+    }
+  },
+  "constellation2": {
+    "name": "Keen Extraction",
+    "description": {
+      "0": "Saat Normal dan Charged Attack Keqing mengenai musuh yang terkena efek <electro>Electro</electro>, memiliki 50% persentase untuk menghasilkan Elemental Particle.",
+      "1": "Efek ini terpicu setiap 5 detik"
+    }
+  },
+  "constellation3": {
+    "name": "Foreseen Reformation",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Starward Sword</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Attunement",
+    "description": {
+      "0": "Setelah Keqing memicu <electro>Reaksi Elemental yang berhubungan dengan elemen Electro</electro>, ATK Keqing meningkat 25% selama 10 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Beckoning Stars",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Stellar Restoration</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tenacious Star",
+    "description": {
+      "0": "Saat memulai Normal Attack, Charged Attack, Elemental Skill atau Elemental Burst, Keqing mendapatkan 6% <electro>Electro DMG Bonus</electro> selama 8 detik.",
+      "1": "Efek yang terpicu oleh Normal Attack, Charged Attack, Elemental Skill dan Elemental Burst aktif secara independen."
+    }
+  }
+}

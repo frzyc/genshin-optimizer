@@ -1,0 +1,29 @@
+{
+  "setName": "Đoàn Hát Lang Thang Đại Lục",
+  "setEffects": {
+    "2": "Tăng 80 điểm tinh thông nguyên tố.",
+    "4": "Khi nhân vật trang bị bộ Thánh Di Vật này dùng pháp khí, cung tên, sát thương trọng kích nhân vật tạo thành tăng 35%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Ánh Sáng Của Ban Nhạc",
+      "desc": "Huy chương hình hoa nhỏ bé, khi đặt bên tai lắng nghe, sẽ phảng phất nghe được tiếng sáo và giọng hát trong veo."
+    },
+    "plume": {
+      "name": "Mũi Tên Nhạc Sĩ",
+      "desc": "Mũi tên bằng lông có màu xanh lam, không hề bị thời gian làm cho xuống sắc. Dường như đem lại âm thanh như tiếng nước chảy."
+    },
+    "sands": {
+      "name": "Thời Gian Bế Mạc",
+      "desc": "Đồng hồ cát tính thời gian cho ban nhạc, từng phát ra âm thanh tinh tế. Nhưng hiện nay buổi biểu diễn của họ đã kết thúc."
+    },
+    "goblet": {
+      "name": "Bình Nước Nhà Thơ",
+      "desc": "Bình nước cổ đại có hình thù kỳ lạ, bên trong còn bài trí dây đàn, phát ra âm thanh kỳ diệu theo dòng nước chảy."
+    },
+    "circlet": {
+      "name": "Nón Chỉ Huy",
+      "desc": "Cho dù trải qua gió tuyết, nhưng vẫn lấp lánh sáng ngời. Dường như ẩn chứa điệu nhạc từ xa xưa."
+    }
+  }
+}

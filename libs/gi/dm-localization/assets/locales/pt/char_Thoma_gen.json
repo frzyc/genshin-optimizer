@@ -1,0 +1,169 @@
+{
+  "name": "Thoma",
+  "title": "Protetor de Longe",
+  "description": "O Empregado do Clã Kamisato e animado Mediador de Inazuma.",
+  "constellationName": "Rubeum Scutum",
+  "auto": {
+    "name": "Poder da Lança Veloz",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes com a lança."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para se lançar para frente, infligindo Dano em seu trajeto."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina do Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Proteção das Chamas do Destino",
+    "description": {
+      "0": "Thoma usa a ponta de sua lança como apoio para canalizar as chamas e executar um chute que causa <pyro>Dano Pyro em uma AdE</pyro> e desencadear uma Barreira Flamejante defensiva. No momento em que é desencadeada, a Barreira concederá a Thoma <pyro>Infusão Pyro</pyro>.",
+      "1": "A Absorção de Dano da Barreira é baseada na Vida Máxima de Thoma.",
+      "2": "A Barreira Flamejante tem as seguintes propriedades:",
+      "3": "Absorve o <pyro>Dano Pyro</pyro> 250% mais efetivamente.",
+      "4": "A absorção de Dano restante de uma Barreira Flamejante existente será acumulada e sua duração será renovada se outra Barreira Flamejante for obtida durante este tempo.",
+      "5": "<br/>",
+      "6": "A absorção máxima de Dano da Barreira não irá exceder uma determinada porcentagem baseado na Vida Máxima de Thoma.",
+      "7": "<br/>",
+      "8": "<i>Como um convidado de longe, somente a paixão mais ardente permitiria dominar a arte pura e precisa da lança de Inazuma. O domínio de Thoma, de fato, não se limita a ser o \"estudante mais rápido\" ou \"um mestre da lança\", mas ele incorporou sua vontade de proteger os outros e de combater os inimigos em sua arte também.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Absorção de Escudo",
+      "2": "Duração do Escudo",
+      "3": "Limite Máximo de Absorção de Dano do Escudo",
+      "4": "Tempo de Recarga",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Grande Armadura Flamejante",
+    "description": {
+      "0": "Thoma gira sua lança, retalhando através de seus adversários com fogos abrasadores que causam <pyro>Dano Pyro em uma AdE</pyro> que se entrelaçam e criam uma Armadura Flamejante.",
+      "1": "<br/>",
+      "2": "<strong>Armadura Flamejante</strong>",
+      "3": "Os Ataques Normais dos personagens ativos afetados pela Armadura Flamejante irão desencadear Colapso Ardente que causa <pyro>Dano Pyro em uma AdE</pyro> e cria uma Barreira Flamejante.",
+      "4": "Colapso Ardente pode ser desencadeado a cada 1s.",
+      "5": "<br/>",
+      "6": "As Barreiras Flamejantes criadas desta maneira, são idênticas àquelas criadas pela Habilidade Elemental de Thoma, Proteção das Chamas do Destino, exceto pela quantidade de Dano que elas podem absorver.",
+      "7": "Elas absorvem o <pyro>Dano Pyro</pyro> 250% mais efetivamente.",
+      "8": "A absorção de Dano restante de uma Barreira Flamejante existente será acumulada e sua duração será renovada se outra Barreira Flamejante for obtida durante este tempo.",
+      "9": "<br/>",
+      "10": "A absorção máxima de Dano da Barreira não irá exceder uma determinada porcentagem baseada na Vida Máxima de Thoma.",
+      "11": "<br/>",
+      "12": "Se Thoma for derrotado, os efeitos da Armadura Flamejante serão dissipados.",
+      "13": "<br/>",
+      "14": "<i>\"Não vou esquecer minha promessa inicial. Que esta chama ardente proteja aqueles que eu prezo, e que nunca se apague.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano do Colapso Ardente",
+      "2": "Absorção de Escudo",
+      "3": "Duração do Escudo",
+      "4": "Duração da Armadura Flamejante",
+      "5": "Tempo de Recarga",
+      "6": "Energia Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Armadura Imbricada",
+    "description": {
+      "0": "Quando o seu próprio personagem ativo no campo de batalha obter ou renovar uma <strong>Barreira Flamejante</strong>, a Força do Escudo será aumentada em 5% e terá duração de 6s.",
+      "1": "Esse efeito pode ser desencadeado no máximo uma vez a cada 0.3s, podendo acumular até 5 vezes."
+    }
+  },
+  "passive2": {
+    "name": "Ataque Incinerador",
+    "description": {
+      "0": "O Dano causado pelo Colapso Ardente da <strong>Grande Armadura Flamejante</strong> é aumentado em 2.2% baseado na Vida Máxima de Thoma."
+    }
+  },
+  "passive3": {
+    "name": "Apaixonado Pela Pesca",
+    "description": {
+      "0": "Quando você <strong>pescar</strong> com sucesso em Inazuma, possui 20% de chance de obter o dobro de peixe graças à ajuda de Thoma."
+    }
+  },
+  "constellation1": {
+    "name": "O Dever de Um Amigo",
+    "description": {
+      "0": "Quando uma <strong>Barreira Flamejante</strong> proteger contra Dano qualquer personagem que não seja Thoma, então a própria <strong>Proteção das Chamas do Destino</strong> dele irá diminuir seu Tempo de Recarga em 3s, enquanto sua própria <strong>Grande Armadura Flamejante</strong> tem seu Tempo de Recarga reduzido em 3s.",
+      "1": "Este efeito pode ser desencadeado uma vez a cada 20s."
+    }
+  },
+  "constellation2": {
+    "name": "Servente Hábil",
+    "description": {
+      "0": "Aumenta a duração da <strong>Grande Armadura Flamejante</strong> em 3s."
+    }
+  },
+  "constellation3": {
+    "name": "Vontade Resoluta",
+    "description": {
+      "0": "Aumenta o Nível da <strong>Proteção das Chamas do Destino</strong> em 3.",
+      "1": "O Nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Plano a Longo Prazo",
+    "description": {
+      "0": "Após lançar <strong>Grande Armadura Flamejante</strong>, Thoma regenerará 15 pontos de Energia Elemental."
+    }
+  },
+  "constellation5": {
+    "name": "Fogo Incontrolável",
+    "description": {
+      "0": "Aumenta o nível da <strong>Grande Armadura Flamejante</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Coração Fervoroso",
+    "description": {
+      "0": "Quando uma <strong>Barreira Flamejante</strong> é obtida ou redefinida, o Dano causado por Ataques Normais, Carregados e Imersivos de todos os membros da equipe é aumentado em 15% por 6s."
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "name": "Mika",
+  "title": "Coordinates of Clear Frost",
+  "description": "Seorang kesatria muda yang terlahir di keluarga biasa. Di dalam kelompok pasukannya, dia bertugas sebagai \"petugas survei lapangan barisan depan\". Dia adalah orang yang rendah hati dan selalu berwaspada.",
+  "constellationName": "Palumbus",
+  "auto": {
+    "name": "Spear of Favonius - Arrow's Passage",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut dengan menggunakan kombinasi antara tombak dan busur silang."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalurnya."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Starfrost Swirl",
+    "description": {
+      "0": "Mika menggunakan busur silangnya untuk menyerang musuh, dan memberikan status Soulwind pada Karakter aktif di sekitar. Saat Karakter dengan status Soulwind berada di medan pertempuran, ATK SPD Karakter ini akan meningkat.",
+      "1": "Akan menghasilkan efek yang berbeda berdasarkan cara skill dilancarkan, yaitu ditekan atau ditahan.",
+      "2": "<br/>",
+      "3": "<strong>Mode Tekan</strong>",
+      "4": "Menembakkan satu Flowfrost Arrow yang bisa menembus musuh dan mengakibatkan <cryo>Cryo DMG</cryo> pada musuh yang terkena.",
+      "5": "<br/>",
+      "6": "<strong>Mode Tahan</strong>",
+      "7": "Memasuki Mode Membidik, mengunci satu musuh dan menembakkan Rimestar Flare terhadap musuh tersebut untuk mengakibatkan <cryo>Cryo DMG</cryo>. Setelah mengenai musuh, Rimestar Flare akan membumbung ke udara dan meledak, lalu akan meluncurkan Rimestar Shard kepada maksimum 3 musuh lainnya dan mengakibatkan <cryo>Cryo DMG</cryo>.",
+      "8": "<br/>",
+      "9": "<i>Bintang meledak di bawah langit beku.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Flowfrost Arrow",
+      "1": "DMG Rimestar Flare",
+      "2": "DMG Rimestar Shard",
+      "3": "Peningkatan ATK SPD",
+      "4": "Durasi Soulwind",
+      "5": "Cooldown",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Skyfeather Song",
+    "description": {
+      "0": "Mika membangkitkan semangat timnya dengan membacakan doa para kesatria. Mika akan memulihkan HP dan memberikan status Eagleplume kepada seluruh Karakter di sekitar. Jumlah pemulihan akan didasarkan pada Max HP Mika.",
+      "1": "<br/>",
+      "2": "<strong>Eagleplume</strong>",
+      "3": "Saat Normal Attack Karakter aktif yang berada dalam status Eagleplume mengenai musuh, Mika akan memulihkan HP Karakter ini dan jumlah pemulihannya akan didasarkan pada Max HP Mika.",
+      "4": "Karakter yang berada dalam status ini hanya bisa memulihkan HP dengan cara ini satu kali setiap beberapa saat.",
+      "5": "<br/>",
+      "6": "<i>\"Pegang teguh harapanmu meskipun berada dalam kondisi sulit, dan tetaplah waspada saat semuanya sedang baik-baik saja ... Sebab bulu putih yang murni itu pada akhirnya akan memandu para musafir yang tersesat.\"</i>"
+    },
+    "skillParams": {
+      "0": "Pemulihan Saat Dilancarkan",
+      "1": "Pemulihan Eagleplume",
+      "2": "Jeda Pemulihan Eagleplume",
+      "3": "Durasi Eagleplume",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Suppressive Barrage",
+    "description": {
+      "0": "Dalam kondisi berikut ini, status Soulwind dari <strong>Starfrost Swirl</strong> akan memberikan efek Detector kepada Karakter di medan pertempuran, efek Detector akan meningkatkan 10% Physical DMG yang diakibatkan:",
+      "1": [
+        "Jika Flowfrost Arrow mengenai lebih dari satu musuh, Karakter mendapatkan 1 lapis efek Detector untuk setiap 1 musuh tambahan yang terkena;",
+        "Satu lapis efek Detector akan tercipta saat Rimestar Shard mengenai musuh. Setiap Rimestar Shard hanya bisa memicu efek ini satu kali."
+      ],
+      "2": "<br/>",
+      "3": "Jumlah maksimum efek Detector dari status Soulwind adalah 3 lapis. Jika Starfrost Swirl dilancarkan kembali selama durasinya masih berlangsung, maka status Soulwind dan seluruh lapisan Detector yang ada sebelumnya akan dihapus."
+    }
+  },
+  "passive2": {
+    "name": "Topographical Mapping",
+    "description": {
+      "0": "Saat Karakter aktif berada dalam status Eagleplume dari <strong>Skyfeather Song</strong> dan status Soulwind dari <strong>Starfrost Swirl</strong> secara bersamaan, saat Karakter mengakibatkan Serangan CRIT, status Soulwind akan memberikan 1 lapis efek Detector dari Talenta Pasif \"Suppressive Barrage\". Jumlah maksimum efek Detector yang bisa diperoleh dengan cara ini adalah 1 lapis dalam durasi satu kali status Eagleplume.",
+      "1": "Selain itu, jumlah maksimum efek Detector yang bisa diperoleh dari status Soulwind sendiri akan bertambah 1 lapis.",
+      "2": "Harus membuka Talenta Pasif \"Suppressive Barrage\" terlebih dahulu."
+    }
+  },
+  "passive3": {
+    "name": "Demarcation",
+    "description": {
+      "0": "Memperlihatkan lokasi <strong>produk khas Mondstadt</strong> di sekitar pada peta kecil."
+    }
+  },
+  "constellation1": {
+    "name": "Factor Confluence",
+    "description": {
+      "0": "Status Soulwind dari <strong>Starfrost Swirl</strong> akan mengurangi jeda pemulihan HP status Eagleplume dari <strong>Skyfeather Song</strong>. Persentase pengurangan ini setara dengan peningkatan ATK SPD yang diberikan Soulwind."
+    }
+  },
+  "constellation2": {
+    "name": "Companion's Ingress",
+    "description": {
+      "0": "Saat Flowfrost Arrow dari <strong>Starfrost Swirl</strong> mengenai musuh untuk pertama kalinya, atau saat Rimestar Flare mengenai musuh, akan menghasilkan 1 lapis efek Detector dari Talenta Pasif \"Suppressive Barrage\".",
+      "1": "Harus membuka Talenta Pasif Suppressive Barrage lebih dulu."
+    }
+  },
+  "constellation3": {
+    "name": "Reconnaissance Experience",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Skyfeather Song</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Sunfrost Encomium",
+    "description": {
+      "0": "Saat status Eagleplume dari <strong>Skyfeather Song</strong> milik Mika memulihkan HP Karakter di dalam party, maka akan memulihkan 3 poin Energy kepada Mika. Pemulihan Energy seperti ini bisa terjadi 5 kali selama durasi satu kali status Eagleplume (yang diciptakan oleh satu kali Skyfeather Song) berlangsung."
+    }
+  },
+  "constellation5": {
+    "name": "Signal Arrow",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Starfrost Swirl</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Companion's Counsel",
+    "description": {
+      "0": "Jumlah maksimum tumpukan efek Detector status Soulwind dari <strong>Starfrost Swirl</strong> bertambah 1 lapis.",
+      "1": "Harus membuka Talenta Pasif Suppressive Barrage lebih dulu.",
+      "2": "Selain itu, Physical CRIT DMG Karakter aktif yang berada dalam status Soulwind meningkat 60%."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Marechaussee Hunter",
+  "setEffects": {
+    "2": "Meningkatkan 15% DMG Normal Attack dan Charged Attack.",
+    "4": "Saat HP bertambah atau berkurang, CRIT Rate meningkat 12% selama 5 detik, dapat ditumpuk sampai 3 kali."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hunter's Brooch",
+      "desc": "Medali tua yang pernah digunakan untuk diberikan kepada orang-orang yang telah berkontribusi hebat dalam pertempuran."
+    },
+    "plume": {
+      "name": "Masterpiece's Overture",
+      "desc": "Alat portabel yang dapat digunakan untuk menyesuaikan kekuatan roda gigi kuno. Sekarang telah kehilangan nilai gunanya."
+    },
+    "sands": {
+      "name": "Moment of Judgment",
+      "desc": "Jam saku standar. Tidak terlalu akurat."
+    },
+    "goblet": {
+      "name": "Forgotten Vessel",
+      "desc": "Sebuah wadah logam portabel yang berisi anggur. Cocok untuk diletakkan di dalam kantong jubah sehingga praktis untuk digunakan kapan saja."
+    },
+    "circlet": {
+      "name": "Veteran's Visage",
+      "desc": "Topeng tua yang dapat menutupi wajah yang rusak karena luka dan sebagainya. Terdapat berbagai desain yang berbeda, tergantung pada area luka dan jenis kelamin pengguna."
+    }
+  }
+}

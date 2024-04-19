@@ -1,0 +1,29 @@
+{
+  "setName": "Derinliğin Kalbi",
+  "setEffects": {
+    "2": "+%15 Su Hasarı Bonusu.",
+    "4": "Element Becerisi kullandıktan sonra, 15 saniyeliğine Normal Saldırı ve Yüklü Saldırı Hasarı %30 artar."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Yaldızlı Broş",
+      "desc": "Parlaklığını yitirmiş bir pelerin broşu. Bir zamanlar onu süsleyen altın kaplama, çetin dalgalar ve rüzgarlarla uzun zaman önce aşınmış."
+    },
+    "plume": {
+      "name": "Nostalji Rüzgarı",
+      "desc": "Kızıl dalgalar ve iniltili deniz rüzgarlarıyla taşınmış bir tüy. Zamanla şekli ve rengi değişmiş."
+    },
+    "sands": {
+      "name": "Bakır Pusula",
+      "desc": "Eski bir pusula. İbresi, çok çok uzaktaki bir sahili, var olmayan bir limanı gösteriyor."
+    },
+    "goblet": {
+      "name": "Uğultulu Derinliklerin Kadehi",
+      "desc": "Denizden çıkarılan soluk bir şarap kadehi. İçinin renksizliği, dalgalar altında geçirdiği günleri ortaya koyuyor."
+    },
+    "circlet": {
+      "name": "Şarap Lekeli Denizci Şapkası",
+      "desc": "Şimdi bile alkol kokan, şarap lekeli, eski bir denizci şapkası."
+    }
+  }
+}

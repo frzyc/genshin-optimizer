@@ -1,0 +1,175 @@
+{
+  "name": "Razor",
+  "title": "El Niño-lobo",
+  "description": "Un chico que vive entre los lobos en el Reino de los Lobos de Mondstadt, lejos de la civilización. Es ágil como un relámpago.",
+  "constellationName": "Lupus Minor",
+  "auto": {
+    "name": "Colmillo de acero",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 tajos de espada consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume Aguante de manera constante para realizar golpes de espada giratorios contra los enemigos cercanos.",
+        "2": "Al final del Ataque Cargado, realizará un golpe de espada más poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado en ciclo",
+      "5": "Daño final de Ataque Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Duración máx.",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Garra y trueno",
+    "description": {
+      "0": "Caza su presa usando las técnicas que le enseñó su maestro y su lupical.",
+      "1": "<br/>",
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Ataca con las garras del Lobo del Trueno, infligiendo <electro>Daño Electro</electro> a los enemigos frente a Razor.",
+      "4": "Al golpear a un enemigo, Razor obtendrá una carga Electro, la cual aumentará su Recarga de Energía.",
+      "5": "Razor puede tener hasta 3 cargas Electro al mismo tiempo. Obtener una nueva carga Electro reiniciará su duración.",
+      "6": "<br/>",
+      "7": "<strong>Mantener pulsado</strong>",
+      "8": "Reúne energía eléctrica para desatar una tormenta de rayos sobre una AdE, infligiendo una gran cantidad de <electro>Daño Electro</electro>, y eliminando todas las cargas Electro de Razor.",
+      "9": "Cada carga Electro eliminada de esta manera se convertirá en Energía Elemental.",
+      "10": "<br/>",
+      "11": "<i>En el momento en que cae el rayo , a veces se puede ver en lo más profundo de los ojos de Razor la mirada de un depredador observando a su presa.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad al pulsar una vez",
+      "1": "Daño de habilidad al mantener pulsado",
+      "2": "Aumento de Rec. de Energía",
+      "3": "Energía recuperada",
+      "4": "Duración de carga Electro",
+      "5": "TdE al pulsar una vez",
+      "6": "TdE de mantener pulsado",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Colmillo relámpago",
+    "description": {
+      "0": "Razor invoca a su lobo interior, infligiendo <electro>Daño Electro</electro> a todos los enemigos cercanos. Esto elimina todas sus cargas Electro, que se convertirán en Energía Elemental.",
+      "1": "El lobo interior luchará junto a Razor mientras dure la habilidad.",
+      "2": "<br/>",
+      "3": "<strong>Lobo interior</strong>",
+      "4": [
+        "Ataca junto a los Ataques Normales de Razor, infligiendo <electro>Daño Electro</electro>.",
+        "Aumenta la Vel. de Ataque de Razor y su <electro>RES Electro</electro>.",
+        "Hace que Razor sea inmune al daño que recibe por la reacción de <electro>Electrocargado</electro>.",
+        "Desactiva los Ataques Cargados de Razor.",
+        "Aumenta la RES a interrupción de Razor."
+      ],
+      "5": "<br/>",
+      "6": "Estos efectos terminan cuando Razor abandona el campo de batalla.",
+      "7": "Al hacerlo, obtendrá una cierta cantidad de Energía Elemental en proporción a la duración restante de la habilidad. Razor solo podrá recuperar un máximo de 10 pts. de Energía de esta manera.",
+      "8": "<br/>",
+      "9": "<i>El lobo se ha despertado. La cacería está en marcha.</i>"
+    },
+    "skillParams": {
+      "0": "Daño instantáneo",
+      "1": "Daño del espíritu del lobo",
+      "2": "Aumento de Vel. de ATQ Normal",
+      "3": "Aumento de RES Electro",
+      "4": "Duración",
+      "5": "TdE",
+      "6": "Energía Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Despertar",
+    "description": {
+      "0": "Reduce en un 18% el TdE de <strong>Garra y trueno</strong>.",
+      "1": "Además, activar <strong>Colmillo relámpago</strong> reiniciará el TdE de <strong>Garra y trueno</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Hambre",
+    "description": {
+      "0": "Cuando la Energía Elemental de Razor es inferior al 50%, la Recarga de Energía aumenta en un 30%."
+    }
+  },
+  "passive3": {
+    "name": "Velocidad de lobo",
+    "description": {
+      "0": "Disminuye en un 20% el Coste de Aguante al esprintar de todos los miembros de tu equipo.",
+      "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "constellation1": {
+    "name": "Naturaleza del lobo",
+    "description": {
+      "0": "Recoger un orbe o partícula elemental aumenta el Daño de Razor en un 10% durante 8 s."
+    }
+  },
+  "constellation2": {
+    "name": "Represión",
+    "description": {
+      "0": "La Prob. CRIT de Razor aumenta en un 10% contra enemigos con menos del 30% de Vida."
+    }
+  },
+  "constellation3": {
+    "name": "Alma de la bestia",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Colmillo relámpago</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Mordisco",
+    "description": {
+      "0": "Al pulsar una vez <strong>Garra y trueno</strong>, reduce la DEF de los enemigos golpeados en un 15% durante 7 s."
+    }
+  },
+  "constellation5": {
+    "name": "Garras afiladas",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Garra y trueno</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Lupus fulguris",
+    "description": {
+      "0": "La espada de Razor se carga de electricidad cada 10 s, lo que hace que su próximo Ataque Normal libere un rayo que inflige un 100% del ATQ como <electro>Daño Electro</electro>.",
+      "1": "Cuando no está bajo los efectos de <strong>Colmillo relámpago</strong>, cada rayo añade 1 carga Electro a <strong>Garra y trueno</strong>."
+    }
+  }
+}

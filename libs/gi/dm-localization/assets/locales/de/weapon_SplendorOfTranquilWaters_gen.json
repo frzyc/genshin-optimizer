@@ -1,0 +1,24 @@
+{
+  "name": "Pracht des stillen Wassers",
+  "description": {
+    "0": "Ein Stab, um den reinstes Wasser wirbelt. In längst vergangenen Tagen symbolisierte er die höchste Autorität über die Meere."
+  },
+  "passiveName": "Morgengrauen und Abenddämmerung am See",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht, wenn die aktuellen LP des Trägers steigen oder sinken, den durch die Elementarfähigkeit verursachten Schaden 6 s lang um <cryo>8 %</cryo>, 3-fach stapelbar, 0,2 s Abklingzeit. Erhöht, wenn die aktuellen LP anderer Truppenmitglieder steigen oder sinken, die max. LP des Trägers 6 s lang um <cryo>14 %</cryo>, 2-fach stapelbar, 0,2 s Abklingzeit. Dieser Effekt kann auch noch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv in der Truppe ist."
+    },
+    "1": {
+      "0": "Erhöht, wenn die aktuellen LP des Trägers steigen oder sinken, den durch die Elementarfähigkeit verursachten Schaden 6 s lang um <cryo>10 %</cryo>, 3-fach stapelbar, 0,2 s Abklingzeit. Erhöht, wenn die aktuellen LP anderer Truppenmitglieder steigen oder sinken, die max. LP des Trägers 6 s lang um <cryo>17,5 %</cryo>, 2-fach stapelbar, 0,2 s Abklingzeit. Dieser Effekt kann auch noch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv in der Truppe ist."
+    },
+    "2": {
+      "0": "Erhöht, wenn die aktuellen LP des Trägers steigen oder sinken, den durch die Elementarfähigkeit verursachten Schaden 6 s lang um <cryo>12 %</cryo>, 3-fach stapelbar, 0,2 s Abklingzeit. Erhöht, wenn die aktuellen LP anderer Truppenmitglieder steigen oder sinken, die max. LP des Trägers 6 s lang um <cryo>21 %</cryo>, 2-fach stapelbar, 0,2 s Abklingzeit. Dieser Effekt kann auch noch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv in der Truppe ist."
+    },
+    "3": {
+      "0": "Erhöht, wenn die aktuellen LP des Trägers steigen oder sinken, den durch die Elementarfähigkeit verursachten Schaden 6 s lang um <cryo>14 %</cryo>, 3-fach stapelbar, 0,2 s Abklingzeit. Erhöht, wenn die aktuellen LP anderer Truppenmitglieder steigen oder sinken, die max. LP des Trägers 6 s lang um <cryo>24,5 %</cryo>, 2-fach stapelbar, 0,2 s Abklingzeit. Dieser Effekt kann auch noch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv in der Truppe ist."
+    },
+    "4": {
+      "0": "Erhöht, wenn die aktuellen LP des Trägers steigen oder sinken, den durch die Elementarfähigkeit verursachten Schaden 6 s lang um <cryo>16 %</cryo>, 3-fach stapelbar, 0,2 s Abklingzeit. Erhöht, wenn die aktuellen LP anderer Truppenmitglieder steigen oder sinken, die max. LP des Trägers 6 s lang um <cryo>28 %</cryo>, 2-fach stapelbar, 0,2 s Abklingzeit. Dieser Effekt kann auch noch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv in der Truppe ist."
+    }
+  }
+}

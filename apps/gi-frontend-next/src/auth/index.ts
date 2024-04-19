@@ -7,10 +7,8 @@ import type {
 import type { NextAuthOptions } from 'next-auth'
 import { getServerSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
-import { PrismaClient } from '@prisma/client/gi' // Using the client generated from libs\gi-prisma-schema
+import prisma from './db'
 import { signJwt } from './jwt'
-
-const prisma = new PrismaClient()
 
 const GOOGLE_CLIENT_ID = process.env['GOOGLE_CLIENT_ID']
 const GOOGLE_CLIENT_SECRET = process.env['GOOGLE_CLIENT_SECRET']

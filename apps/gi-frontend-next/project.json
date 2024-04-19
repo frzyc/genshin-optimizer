@@ -12,17 +12,17 @@
         "outputPath": "dist/apps/gi-frontend-next",
         "assets": [
           {
-            "input": "libs/gi-localization/assets",
+            "input": "libs/gi/localization/assets",
             "glob": "**/*",
             "output": ""
           },
           {
-            "input": "libs/gi-dm-localization/assets",
+            "input": "libs/gi/dm-localization/assets",
             "glob": "**/*",
             "output": ""
           },
           {
-            "input": "libs/silly-wisher-names/assets",
+            "input": "libs/gi/silly-wisher-names/assets",
             "glob": "**/*",
             "output": ""
           }
@@ -88,6 +88,6 @@
     "gi-prisma-schema",
     "gi-localization",
     "gi-dm-localization",
-    "silly-wisher-names"
+    "gi-silly-wisher-names"
   ]
 }

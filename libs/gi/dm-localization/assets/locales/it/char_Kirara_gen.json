@@ -1,0 +1,164 @@
+{
+  "name": "Kirara",
+  "title": "Gatta sulle grondaie",
+  "description": "Una fattorina della Komaniya Express, una compagnia di spedizione di Inazuma. Una nekomata che adora il suo lavoro e la società umana.",
+  "constellationName": "Arcella",
+  "auto": {
+    "name": "Trincetto",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 3 artigliate rapide."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi al suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Calcio Miaoteoritico",
+    "description": {
+      "0": "<strong>Pressione</strong>",
+      "1": "Balza con l'agilità di un gatto che si districa tra i cespugli, sferrando un calcio rotante che infligge <dendro>DAN da Dendro ad area</dendro> e creando al contempo uno Scudo di trasporto sicuro che conferisce a Kirara una breve <dendro>applicazione di Dendro</dendro>. Lo scudo assorbe i <dendro>DAN da Dendro</dendro> con un 250% di efficacia. L'assorbimento DAN si basa sui PS max di Kirara, e non può superare una determinata percentuale di tale quantità. L'assorbimento DAN restante di uno Scudo di trasporto sicuro si accumula su un nuovo Scudo ogni volta che questo viene creato, e la sua durata viene ripristinata.",
+      "2": "<br/>",
+      "3": "<strong>Pressione prolungata</strong>",
+      "4": "Spinta dal suo desiderio di \"completare le consegne nell'arco di mezza giornata\", Kirara crea uno Scudo di trasporto sicuro identico a quello che è possibile creare con la variante a pressione dell'abilità. In più, si rannicchia in uno speciale pacco da consegna espressa, entrando nello stato di Nekopacco urgente, che rende più rapidi i suoi movimenti e i suoi attacchi.",
+      "5": "<br/>",
+      "6": "<strong>Nekopacco urgente</strong>",
+      "7": [
+        " Infligge <dendro>DAN da Dendro</dendro> agli avversari contro cui si scaraventa. Questo effetto può attivarsi su ciascun avversario una volta ogni 0,5 s.",
+        " Quando è in questo stato, la velocità di movimento, la velocità di arrampicata e la potenza di salto di Kirara aumentano, così come il suo consumo di vigore durante l'arrampicata.",
+        " Quando la durata termina o l'abilità viene usata di nuovo, scatena un Assalto graffiante più potente dell'attacco eseguito nella variante a pressione, infliggendo <dendro>DAN da Dendro ad area</dendro>.",
+        " Lo stato di Nekopacco urgente dura fino a un massimo di 10 s. Al termine di quest'ultimo, il TdR dell'abilità si riavvia. Più tempo Kirara trascorre in questo stato, più lungo sarà il TdR.",
+        " Lo stato termina immediatamente se si usa uno Scatto o si annulla attivamente una scalata."
+      ],
+      "8": "<br/>",
+      "9": "<i>\"Quindi vuoi sapere qual è il segreto di una spedizione rapida? Beh, è tutta una questione di gambe!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Colpo della Coda rotante",
+      "1": "Assorbimento DAN scudo",
+      "2": "Assorbimento DAN scudo max",
+      "3": "Durata scudo",
+      "4": "DAN da impatto Nekopacco urgente",
+      "5": "Durata Nekopacco urgente max",
+      "6": "DAN da Assalto graffiante",
+      "7": "TdR",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Arte segreta: Spedizione a sorpresa",
+    "description": {
+      "0": "Sbaraglia gli avversari e i ladri di spedizioni con un apposito Pacco in consegna speciale, infliggendo <dendro>DAN da Dendro ad area</dendro>. Quando il Pacco in consegna speciale esplode, genera un gran numero di <strong>Cardamomi di erba gatta</strong> che scoppiano al contatto con gli avversari o dopo un certo lasso di tempo, infliggendo <dendro>DAN da Dendro ad area</dendro>.",
+      "1": "<br/>",
+      "2": "<i>\"Eheh, proprio così! È una misura escogitata per occuparsi di quegli insopportabili ladri di spedizioni! Mi raccomando, lascia una valutazione da cinque stelle, una volta ricevuta la tua consegna!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da esplosione Cardamomo di erba gatta",
+      "2": "Durata Cardamomo di erba gatta",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Code ammalianti",
+    "description": {
+      "0": "Quando Kirara è nello stato di Nekopacco urgente di <strong>Calcio Miaoteoritico</strong>, ciascun impatto contro l'avversario le conferisce un accumulo di <strong>Imballaggio rinforzato</strong>. Quest'effetto può attivarsi una volta per ciascun colpo a segno ogni 0,5 s. Massimo 3 accumuli. Al termine dello stato di Nekopacco urgente, ciascun accumulo di Imballaggio rinforzato crea 1 Scudo di trasporto sicuro per Kirara. Gli scudi così creati offrono un 20% dell'assorbimento DAN dello Scudo di trasporto sicuro creato da <strong>Calcio Miaoteoritico</strong>. Se Kirara è già sotto la protezione di uno Scudo di trasporto sicuro creato da Calcio Miaoteoritico, il suo assorbimento DAN si accumula con quello di questi scudi e la sua durata viene reimpostata."
+    }
+  },
+  "passive2": {
+    "name": "Abbaglio tempestivo",
+    "description": {
+      "0": "Per ogni 1.000 PS max di Kirara, aumenta i DAN inflitti da <strong>Calcio Miaoteoritico</strong> e da <strong>Arte segreta: Spedizione a sorpresa</strong> di uno 0,4% e di uno 0,3% rispettivamente."
+    }
+  },
+  "passive3": {
+    "name": "Passo del gatto furtivo",
+    "description": {
+      "0": "Quando Kirara è nel gruppo, gli animali che forniscono pollame, carne cruda o carne congelata non fuggiranno dallo spavento se i membri del gruppo si avvicinano a loro."
+    }
+  },
+  "constellation1": {
+    "name": "Circolazione materiale",
+    "description": {
+      "0": "Per ogni 8.000 PS max di Kirara, crea 1 <strong>Cardamomo di erba gatta</strong> in più quando usa <strong>Arte segreta: Spedizione a sorpresa</strong>. In questo modo, è possibile crearne fino a un massimo di 4."
+    }
+  },
+  "constellation2": {
+    "name": "Imballaggio perfetto",
+    "description": {
+      "0": "Quando Kirara è nello stato di Nekopacco urgente di <strong>Calcio Miaoteoritico</strong>, conferisce degli Scudi di trasporto critico agli altri membri del gruppo contro cui si schianta.",
+      "1": "L'assorbimento DAN di uno Scudo di trasporto critico è pari a un 40% dell'assorbimento massimo di un normale Scudo di trasporto sicuro creato da <strong>Calcio Miaoteoritico</strong>, e assorbe i <dendro>DAN da Dendro</dendro> con un 250% di efficacia.",
+      "2": "Gli Scudi di trasporto critico durano 12 s e possono essere attivati una volta ogni 10 s su ciascun personaggio."
+    }
+  },
+  "constellation3": {
+    "name": "Riconoscimento universale",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Calcio Miaoteoritico</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Destriera di Skanda",
+    "description": {
+      "0": "Quando i personaggi attivi protetti da <strong>Scudi di trasporto sicuro</strong> o <strong>Scudi di trasporto critico</strong> colpiscono gli avversari con attacchi normali, caricati o in picchiata, Kirara esegue un attacco coordinato usando dei <strong>Mini Cardamomi di erba gatta</strong>, infliggendo <dendro>DAN da Dendro</dendro> pari a un 200% del suo ATT. I DAN inflitti in questo modo sono considerati DAN da Tripudio elementale. Quest'effetto può attivarsi una volta ogni 3,8 s. Questo TdR è condiviso tra tutti i membri del gruppo."
+    }
+  },
+  "constellation5": {
+    "name": "Mille miglia al giorno",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Arte segreta: Spedizione a sorpresa</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Panorami infiniti",
+    "description": {
+      "0": "Quando Kirara usa l'abilità o il Tripudio elementale, fornisce a tutti membri del gruppo vicini un 12% di bonus DAN per tutti gli elementi per 15 s."
+    }
+  }
+}

@@ -2,6 +2,8 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 
+import react from '@vitejs/plugin-react'
+
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
@@ -25,6 +27,7 @@ export default defineConfig({
     viteTsConfigPaths({
       root: '../../',
     }),
+    react(),
   ],
 
   define: {
@@ -34,8 +37,11 @@ export default defineConfig({
   // Resolve aliases. If we ever alias to non-libs folder, need to update this
   resolve: {
     alias: [
-      // e.g. Resolves '@genshin-optimizer/pando' -> 'libs/pando/src'
-      { find: /@genshin-optimizer\/(.*)/, replacement: resolve('libs/$1/src') },
+      // e.g. Resolves '@genshin-optimizer/pando/engine' -> 'libs/pando/engine/src'
+      {
+        find: /@genshin-optimizer\/([a-zA-Z0-9-]*)\/([a-zA-Z0-9-]*)/,
+        replacement: resolve('libs/$1/$2/src'),
+      },
     ],
   },
 

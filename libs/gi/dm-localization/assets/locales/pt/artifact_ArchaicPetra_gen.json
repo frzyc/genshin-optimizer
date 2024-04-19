@@ -1,0 +1,29 @@
+{
+  "setName": "Pedra Arcaica",
+  "setEffects": {
+    "2": "Obtém 15% de Bônus de Dano Geo.",
+    "4": "Ao obter um Fragmento Elemental por meio de uma Reação de Cristalização, todos os personagens na equipe ganham 35% de Dano para esse elemento em particular por 10s. Somente uma forma de Dano Elemental pode ser obtida dessa maneira a qualquer momento."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor do Penhasco Rachado",
+      "desc": "Flor de pedra dourada em plena floração. As pétalas balançam suavemente ao vento, parecendo estar vivas."
+    },
+    "plume": {
+      "name": "Asas do Pico da Montanha",
+      "desc": "A pluma da pipa gigante na rocha, e a ponta da pedra negra às vezes condensa com orvalho frio."
+    },
+    "sands": {
+      "name": "Relógio de Sol de Jade Duradouro",
+      "desc": "Um relógio de sol esculpido em um único pedaço grande de jade. Está alinhado com um padrão que registra silenciosamente a passagem do tempo."
+    },
+    "goblet": {
+      "name": "Taça do Escultor de Pedra",
+      "desc": "Lindas garrafas de vinho que foram enchidas com licor requintado."
+    },
+    "circlet": {
+      "name": "Imagem de uma Pedra Imóvel",
+      "desc": "A máscara esculpida em rocha basáltica, com olhos vazios olhando para sempre friamente para a frente."
+    }
+  }
+}

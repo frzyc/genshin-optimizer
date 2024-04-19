@@ -1,0 +1,21 @@
+{
+  "name": "gi-dm",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi/dm/src",
+  "projectType": "library",
+  "targets": {
+    "load-dm": {
+      "options": {
+        "outputPath": "libs/gi/dm/GenshinData"
+      },
+      "inputs": [
+        {
+          "runtime": "git ls-tree --object-only HEAD libs/gi/dm/GenshinData"
+        }
+      ]
+    },
+    "gen-file": {},
+    "lint": {}
+  },
+  "tags": []
+}

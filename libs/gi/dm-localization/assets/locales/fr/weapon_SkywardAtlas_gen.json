@@ -1,0 +1,24 @@
+{
+  "name": "Atlas de la Voûte d'Azur",
+  "description": {
+    "0": "Un atlas représentant Dvalin et son ancien maître, l'Archon Anémo. Il décrit en détail les vents et les nuages au nord de Teyvat et renferme la puissance des cieux et des vents."
+  },
+  "passiveName": "Nuages vagabonds",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente le bonus de DGT élémentaires de <cryo>12 %</cryo>. Les attaques normales ont 50 % de chances lorsqu'elles touchent d'obtenir pendant 15 s la faveur des cieux, qui attaque automatiquement les ennemis proches, et leur inflige <cryo>160 %</cryo> des DGT d'ATQ. Cet effet peut être déclenché une fois toutes les 30 s."
+    },
+    "1": {
+      "0": "Augmente le bonus de DGT élémentaires de <cryo>15 %</cryo>. Les attaques normales ont 50 % de chances lorsqu'elles touchent d'obtenir pendant 15 s la faveur des cieux, qui attaque automatiquement les ennemis proches, et leur inflige <cryo>200 %</cryo> des DGT d'ATQ. Cet effet peut être déclenché une fois toutes les 30 s."
+    },
+    "2": {
+      "0": "Augmente le bonus de DGT élémentaires de <cryo>18 %</cryo>. Les attaques normales ont 50 % de chances lorsqu'elles touchent d'obtenir pendant 15 s la faveur des cieux, qui attaque automatiquement les ennemis proches, et leur inflige <cryo>240 %</cryo> des DGT d'ATQ. Cet effet peut être déclenché une fois toutes les 30 s."
+    },
+    "3": {
+      "0": "Augmente le bonus de DGT élémentaires de <cryo>21 %</cryo>. Les attaques normales ont 50 % de chances lorsqu'elles touchent d'obtenir pendant 15 s la faveur des cieux, qui attaque automatiquement les ennemis proches, et leur inflige <cryo>280 %</cryo> des DGT d'ATQ. Cet effet peut être déclenché une fois toutes les 30 s."
+    },
+    "4": {
+      "0": "Augmente le bonus de DGT élémentaires de <cryo>24 %</cryo>. Les attaques normales ont 50 % de chances lorsqu'elles touchent d'obtenir pendant 15 s la faveur des cieux, qui attaque automatiquement les ennemis proches, et leur inflige <cryo>320 %</cryo> des DGT d'ATQ. Cet effet peut être déclenché une fois toutes les 30 s."
+    }
+  }
+}

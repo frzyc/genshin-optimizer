@@ -1,0 +1,169 @@
+{
+  "constellationName": "Leviathan Judicator",
+  "name": "Neuvillette",
+  "title": "Ordainer of Inexorable Judgment",
+  "description": "The Chief Justice of Fontaine, known as the Iudex, is renowned for his unassailable impartiality.",
+  "auto": {
+    "name": "As Water Seeks Equilibrium",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "With light flourishes, Neuvillette commands the tides to unleash a maximum of 3 attacks, dealing <hydro>Hydro DMG</hydro>."
+      },
+      "chargedLegal": {
+        "0": "<strong>Charged Attack Empowerment: Legal Evaluation</strong>",
+        "1": "While charging up, Neuvillette will gather the power of water, forming it into a Seal of Arbitration. In this state, Neuvillette can move and change facing, and also absorb any Sourcewater Droplets in a certain AoE.",
+        "2": "Every Droplet he absorbs will increase the formation speed of the Seal, and will heal Neuvillette.",
+        "3": "When the charging is stopped, if the Symbol has yet to be formed, then a Charged Attack will be unleashed. If it has been formed, then a Charged Attack: Equitable Judgment will be unleashed."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a fixed amount of Stamina to attack opponents with a rupturing blast of water, dealing <hydro>AoE Hydro DMG</hydro>."
+      },
+      "chargedJudgment": {
+        "0": "<strong>Charged Attack: Equitable Judgment</strong>",
+        "1": "Unleashes surging torrents, dealing continuous <hydro>AoE Hydro DMG</hydro> to all opponents in a straight-line area in front of him.",
+        "2": "Equitable Judgment will not consume any Stamina and lasts 3s.",
+        "3": "If Neuvillette's HP is above 50%, he will continuously lose HP while using this attack."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Gathering the might of Hydro, Neuvillette plunges towards the ground from mid-air, damaging all opponents in his path. Deals <hydro>AoE Hydro DMG</hydro> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "Charged Attack DMG",
+      "4": "Charged Attack Stamina Cost",
+      "5": "Charged Attack: Equitable Judgment",
+      "6": "HP Restored",
+      "7": "HP Loss",
+      "8": "Plunge DMG",
+      "9": "Low/High Plunge DMG",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "O Tears, I Shall Repay",
+    "description": {
+      "0": "Summons a Raging Waterfall that will deal <hydro>AoE Hydro DMG</hydro> to opponents in front of Neuvillette based on his Max HP. After hitting an opponent, this skill will generate 3 Sourcewater Droplets near that opponent.",
+      "1": "<br/>",
+      "2": "<strong>Arkhe: Pneuma</strong>",
+      "3": "At certain intervals, when the Raging Waterfall descends, a Spiritbreath Thorn will descend that will pierce opponents, dealing Pneuma-aligned <hydro>Hydro DMG</hydro>.",
+      "4": "<br/>",
+      "5": "<i>\"The law can restrict all manner of crimes, but it cannot extirpate evil itself.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Spiritbreath Thorn DMG",
+      "2": "Spiritbreath Thorn Interval",
+      "3": "Sourcewater Droplet Duration",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "O Tides, I Have Returned",
+    "description": {
+      "0": "Unleashes waves that will deal <hydro>AoE Hydro DMG</hydro> based on Neuvillette's Max HP. After a short interval, 2 waterfalls will descend and deal <hydro>Hydro DMG</hydro> in a somewhat smaller AoE, and will generate 6 Sourcewater Droplets within an area in front.",
+      "1": "<br/>",
+      "2": "<i>\"The law is only established after its publication, and above that, the laws of nature have governed all species and eras since ancient times.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Waterfall DMG",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Heir to the Ancient Sea's Authority",
+    "description": {
+      "0": "When a party member triggers a Vaporize, Frozen, Electro-Charged, Bloom, Hydro Swirl, or a Hydro Crystallize reaction on opponents, 1 stack of Past Draconic Glories will be granted to Neuvillette for 30s. Max 3 stacks. Past Draconic Glories causes Charged Attack: Equitable Judgment to deal 110%/125%/160% of its original DMG.",
+      "1": "The stacks of Past Draconic Glories created by each kind of Elemental Reaction exist independently."
+    }
+  },
+  "passive2": {
+    "name": "Discipline of the Supreme Arbitration",
+    "description": {
+      "0": "For each 1% of Neuvillette's current HP greater than 30% of Max HP, he will gain 0.6% <hydro>Hydro DMG Bonus</hydro>. A maximum bonus of 30% can be obtained this way."
+    }
+  },
+  "passive3": {
+    "name": "Gather Like the Tide",
+    "description": {
+      "0": "Increases underwater Sprint SPD for your own party members by 15%.",
+      "1": "Not stackable with Passive Talents that provide the exact same effects."
+    }
+  },
+  "constellation1": {
+    "name": "Venerable Institution",
+    "description": {
+      "0": "When Neuvillette takes the field, he will obtain 1 stack of Past Draconic Glories from the Passive Talent \"Heir to the Ancient Sea's Authority.\" You must first unlock the Passive Talent \"Heir to the Ancient Sea's Authority.\"",
+      "1": "Additionally, his interruption resistance will be increased while using the Charged Attack Empowerment: Legal Evaluation and the Charged Attack: Equitable Judgment."
+    }
+  },
+  "constellation2": {
+    "name": "Juridical Exhortation",
+    "description": {
+      "0": "The Passive Talent \"Heir to the Ancient Sea's Authority\" will be enhanced: Each stack of Past Draconic Glories will increase the CRIT DMG of Charged Attack: Equitable Judgment by 14%. The maximum increase that can be achieved this way is 42%.",
+      "1": "You must first unlock the Passive Talent \"Heir to the Ancient Sea's Authority.\""
+    }
+  },
+  "constellation3": {
+    "name": "Ancient Postulation",
+    "description": {
+      "0": "Increases the Level of <strong>Normal Attack: As Water Seeks Equilibrium</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Crown of Commiseration",
+    "description": {
+      "0": "When Neuvillette is on the field and is healed, 1 Sourcewater Droplet will be generated. This effect can occur once every 4s."
+    }
+  },
+  "constellation5": {
+    "name": "Axiomatic Judgment",
+    "description": {
+      "0": "Increases the Level of <strong>O Tides, I Have Returned</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Wrathful Recompense",
+    "description": {
+      "0": "When using Charged Attack: Equitable Judgment, Neuvillette can absorb nearby Sourcewater Droplets in an AoE. Each absorbed Droplet will increase the duration of Charged Attack: Equitable Judgment by 1s.",
+      "1": "Additionally, when Equitable Judgment hits opponents, it will fire off 2 additional currents every 2s, each of which will deal 10% of Neuvillette's Max HP as <hydro>Hydro DMG</hydro>. DMG dealt this way will count as DMG dealt by Equitable Judgment."
+    }
+  }
+}

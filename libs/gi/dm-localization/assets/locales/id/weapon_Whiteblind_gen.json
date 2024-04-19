@@ -1,0 +1,24 @@
+{
+  "name": "Whiteblind",
+  "description": {
+    "0": "Pedang indah yang memiliki bagian tumpul di mata pedangnya. Mencapai Liyue setelah melewati tangan beberapa pedagang. Dapat menjadi senjata mematikan di tangan orang yang dapat menggunakannya."
+  },
+  "passiveName": "Infused Edge",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat mengenai musuh, Normal atau Charged Attack meningkatkan <cryo>6%</cryo> ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik."
+    },
+    "1": {
+      "0": "Saat mengenai musuh, Normal atau Charged Attack meningkatkan <cryo>7,5%</cryo> ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik."
+    },
+    "2": {
+      "0": "Saat mengenai musuh, Normal atau Charged Attack meningkatkan <cryo>9%</cryo> ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik."
+    },
+    "3": {
+      "0": "Saat mengenai musuh, Normal atau Charged Attack meningkatkan <cryo>10,5%</cryo> ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik."
+    },
+    "4": {
+      "0": "Saat mengenai musuh, Normal atau Charged Attack meningkatkan <cryo>12%</cryo> ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik."
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "name": "Amber",
+  "title": "Gliding Champion",
+  "description": "Gadis periang yang selalu penuh semangat. Amber adalah Outrider terbaik (dan juga satu-satunya) di Knights of Favonius.",
+  "constellationName": "Lepus",
+  "auto": {
+    "name": "Sharpshooter",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat dengan DMG lebih besar.",
+        "2": "Saat membidik, api akan berkumpul di ujung anak panah. Panah dengan api yang terkumpul penuh akan mengakibatkan <pyro>Pyro DMG</pyro>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Membidik",
+      "6": "DMG Membidik Penuh",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Explosive Puppet",
+    "description": {
+      "0": "Memanggil si Baron Bunny yang selalu dapat diandalkan.",
+      "1": "<br/>",
+      "2": "<strong>Baron Bunny</strong>",
+      "3": [
+        "Terus menarik perhatian musuh dan mengalihkan serangan mereka.",
+        "HP Baron Bunny didasarkan pada persentase tertentu dari Max HP Amber.",
+        "Saat dihancurkan atau durasi skill habis, Baron Bunny akan meledak dan mengakibatkan <pyro>Pyro DMG Area</pyro>."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Mode Tahan</strong>",
+      "6": "Mengatur arah lemparan Baron Bunny.",
+      "7": "Semakin lama tombolnya ditahan, semakin jauh juga jarak lemparannya.",
+      "8": "<br/>",
+      "9": "<i>Baron Bunny datang dari keluarga dengan garis keturunan yang sangat panjang, tapi Amber sudah berhenti menghitungnya sejak Baron Bunny ke-893.</i>"
+    },
+    "skillParams": {
+      "0": "HP Terwariskan",
+      "1": "DMG Ledakan",
+      "2": "Cooldown",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Fiery Rain",
+    "description": {
+      "0": "Menembakkan hujan panah untuk mengakibatkan <pyro>Pyro DMG Area</pyro>.",
+      "1": "<br/>",
+      "2": "<i>Semangat Amber benar-benar membara.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Fiery Rain per Serangan",
+      "1": "DMG Total Fiery Rain",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Every Arrow Finds Its Target",
+    "description": {
+      "0": "Meningkatkan 10% CRIT Rate skill<strong>Fiery Rain</strong> dan memperluas area efek skill sebesar 30%."
+    }
+  },
+  "passive2": {
+    "name": "Precise Shot",
+    "description": {
+      "0": "Meningkatkan 15% ATK selama 10 detik saat Serangan Membidik mengenai titik lemah musuh."
+    }
+  },
+  "passive3": {
+    "name": "Gliding Champion",
+    "description": {
+      "0": "Mengurangi 20% konsumsi Stamina Karakter sendiri saat meluncur.",
+      "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
+    }
+  },
+  "constellation1": {
+    "name": "One Arrow to Rule Them All",
+    "description": {
+      "0": "Amber akan menembakkan 2 anak panah saat menggunakan <strong>Serangan Membidik</strong>. Anak panah kedua mengakibatkan DMG sebesar 20% dari DMG anak panah pertama."
+    }
+  },
+  "constellation2": {
+    "name": "Bunny Triggered",
+    "description": {
+      "0": "Baron Bunny, kini hadir dengan lebih canggih! Menyerang kaki Baron Bunny dengan Serangan Membidik yang terisi penuh akan langsung meledakkan Baron Bunny.",
+      "1": "Meledakkan Baron Bunny dengan cara ini akan mengakibatkan 200% DMG tambahan."
+    }
+  },
+  "constellation3": {
+    "name": "It Burns!",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Fiery Rain</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "It's Not Just Any Doll...",
+    "description": {
+      "0": "Mengurangi 20% waktu cooldown skill <strong>Explosive Puppet</strong> dan menambah jumlah penggunaannya 1 kali."
+    }
+  },
+  "constellation5": {
+    "name": "It's Baron Bunny!",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Explosive Puppet</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Wildfire",
+    "description": {
+      "0": "Melancarkan <strong>Fiery Rain</strong> akan meningkatkan 15% Movement SPD dan 15% ATK milik seluruh anggota party selama 10 detik."
+    }
+  }
+}

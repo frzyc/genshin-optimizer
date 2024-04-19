@@ -1,8 +1,8 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   GetUserDocument,
   useCreateUsernameMutation,
-} from '@genshin-optimizer/gi-frontend-gql'
-import { CardThemed } from '@genshin-optimizer/ui-common'
+} from '@genshin-optimizer/gi/frontend-gql'
 import LoadingButton from '@mui/lab/LoadingButton'
 
 import { CardContent, Stack, TextField, Typography } from '@mui/material'

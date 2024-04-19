@@ -1,6 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "genshin-optimizer",
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",
@@ -9,7 +8,6 @@
           "load-dm",
           "gen-file",
           "build",
-          "build-webpack",
           "build-vite",
           "build-ts",
           "lint",
@@ -21,7 +19,7 @@
   },
   "targetDefaults": {
     "load-dm": {
-      "executor": "@genshin-optimizer/plugin:sync-repo",
+      "executor": "@genshin-optimizer/common/plugin:sync-repo",
       "outputs": ["{workspaceRoot}/{options.outputPath}.hash"]
     },
     "gen-file": {
@@ -31,11 +29,7 @@
     },
     "build": {
       "executor": "nx:noop",
-      "dependsOn": ["build-webpack", "build-vite", "build-ts"],
-      "inputs": ["production", "^production"]
-    },
-    "build-webpack": {
-      "dependsOn": ["gen-file", "^gen-file"],
+      "dependsOn": ["build-vite", "build-ts"],
       "inputs": ["production", "^production"]
     },
     "build-vite": {
@@ -53,7 +47,6 @@
           "mode": "production"
         }
       },
-      "dependsOn": ["gen-file", "^gen-file", "^build"],
       "inputs": ["production", "^production"]
     },
     "build-ts": {
@@ -64,7 +57,6 @@
         "main": "{projectRoot}/src/index.ts",
         "tsConfig": "{projectRoot}/tsconfig.lib.json"
       },
-      "dependsOn": ["gen-file", "^gen-file", "^build"],
       "inputs": ["production", "^production"]
     },
     "e2e": {
@@ -77,8 +69,7 @@
         "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx,js,jsx}"],
         "fix": true
       },
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
-      "dependsOn": ["gen-file", "^gen-file"]
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "test": {
       "executor": "@nx/jest:jest",
@@ -89,8 +80,14 @@
         "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}",
         "passWithNoTests": true
       },
-      "dependsOn": ["gen-file", "^gen-file"],
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "forwardAllArgs": false,
+        "description": "Type check with tsc"
+      }
     },
     "publish": {
       "dependsOn": ["build"]

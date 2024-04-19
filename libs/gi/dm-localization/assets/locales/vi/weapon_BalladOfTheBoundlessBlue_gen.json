@@ -1,0 +1,24 @@
+{
+  "name": "Khúc Ca Xanh Bao La",
+  "description": {
+    "0": "Tập thơ với thiết kế tinh xảo, trong đó sưu tầm rất nhiều thơ ca về trời cao, bồ công anh... mà người Mondstadt rất yêu thích."
+  },
+  "passiveName": "Bầu Trời Trong Xanh",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong 6s sau khi tấn công thường hoặc trọng kích trúng địch, sát thương tấn công thường tăng <cryo>8%</cryo>, sát thương trọng kích tăng <cryo>6%</cryo>. Hiệu quả này tối đa cộng dồn 3 lần, mỗi 0.3s tối đa kích hoạt một lần."
+    },
+    "1": {
+      "0": "Trong 6s sau khi tấn công thường hoặc trọng kích trúng địch, sát thương tấn công thường tăng <cryo>10%</cryo>, sát thương trọng kích tăng <cryo>7.5%</cryo>. Hiệu quả này tối đa cộng dồn 3 lần, mỗi 0.3s tối đa kích hoạt một lần."
+    },
+    "2": {
+      "0": "Trong 6s sau khi tấn công thường hoặc trọng kích trúng địch, sát thương tấn công thường tăng <cryo>12%</cryo>, sát thương trọng kích tăng <cryo>9%</cryo>. Hiệu quả này tối đa cộng dồn 3 lần, mỗi 0.3s tối đa kích hoạt một lần."
+    },
+    "3": {
+      "0": "Trong 6s sau khi tấn công thường hoặc trọng kích trúng địch, sát thương tấn công thường tăng <cryo>14%</cryo>, sát thương trọng kích tăng <cryo>10.5%</cryo>. Hiệu quả này tối đa cộng dồn 3 lần, mỗi 0.3s tối đa kích hoạt một lần."
+    },
+    "4": {
+      "0": "Trong 6s sau khi tấn công thường hoặc trọng kích trúng địch, sát thương tấn công thường tăng <cryo>16%</cryo>, sát thương trọng kích tăng <cryo>12%</cryo>. Hiệu quả này tối đa cộng dồn 3 lần, mỗi 0.3s tối đa kích hoạt một lần."
+    }
+  }
+}

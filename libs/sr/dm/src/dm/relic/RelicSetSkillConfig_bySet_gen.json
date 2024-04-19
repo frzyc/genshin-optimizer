@@ -1,0 +1,1036 @@
+{
+  "101": [
+    {
+      "SetID": 101,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1012",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "HealRatioBase",
+          "IEDALJJJBCE": {
+            "Value": 0.1
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        }
+      ]
+    },
+    {
+      "SetID": 101,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1014",
+      "PropertyList": [],
+      "AbilityName": "Ability51011",
+      "AbilityParamList": []
+    }
+  ],
+  "102": [
+    {
+      "SetID": 102,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1022",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "AttackAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.12
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        }
+      ]
+    },
+    {
+      "SetID": 102,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1024",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "SpeedAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.06
+          }
+        }
+      ],
+      "AbilityName": "Ability51021",
+      "AbilityParamList": [
+        {
+          "Value": 0.06
+        },
+        {
+          "Value": 0.1
+        }
+      ]
+    }
+  ],
+  "103": [
+    {
+      "SetID": 103,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1032",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "DefenceAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.15
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.15
+        }
+      ]
+    },
+    {
+      "SetID": 103,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1034",
+      "PropertyList": [],
+      "AbilityName": "Ability51031",
+      "AbilityParamList": [
+        {
+          "Value": 0.2
+        }
+      ]
+    }
+  ],
+  "104": [
+    {
+      "SetID": 104,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1042",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "IceAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.1
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        }
+      ]
+    },
+    {
+      "SetID": 104,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1044",
+      "PropertyList": [],
+      "AbilityName": "Ability51041",
+      "AbilityParamList": [
+        {
+          "Value": 0.25
+        },
+        {
+          "Value": 2
+        }
+      ]
+    }
+  ],
+  "105": [
+    {
+      "SetID": 105,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1052",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "PhysicalAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.1
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        }
+      ]
+    },
+    {
+      "SetID": 105,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1054",
+      "PropertyList": [],
+      "AbilityName": "Ability51051",
+      "AbilityParamList": [
+        {
+          "Value": 0.05
+        },
+        {
+          "Value": 5
+        }
+      ]
+    }
+  ],
+  "106": [
+    {
+      "SetID": 106,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1062",
+      "PropertyList": [],
+      "AbilityName": "Ability51060",
+      "AbilityParamList": [
+        {
+          "Value": 0.08
+        }
+      ]
+    },
+    {
+      "SetID": 106,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1064",
+      "PropertyList": [],
+      "AbilityName": "Ability51061",
+      "AbilityParamList": [
+        {
+          "Value": 0.5
+        },
+        {
+          "Value": 0.08
+        },
+        {
+          "Value": 5
+        }
+      ]
+    }
+  ],
+  "107": [
+    {
+      "SetID": 107,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1072",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "FireAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.1
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        }
+      ]
+    },
+    {
+      "SetID": 107,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1074",
+      "PropertyList": [],
+      "AbilityName": "Ability51071",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 0.12
+        }
+      ]
+    }
+  ],
+  "108": [
+    {
+      "SetID": 108,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1082",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "QuantumAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.1
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        }
+      ]
+    },
+    {
+      "SetID": 108,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1084",
+      "PropertyList": [],
+      "AbilityName": "Ability51081",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        },
+        {
+          "Value": 0.1
+        }
+      ]
+    }
+  ],
+  "109": [
+    {
+      "SetID": 109,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1092",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "ThunderAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.1
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        }
+      ]
+    },
+    {
+      "SetID": 109,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1094",
+      "PropertyList": [],
+      "AbilityName": "Ability51091",
+      "AbilityParamList": [
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 1
+        }
+      ]
+    }
+  ],
+  "110": [
+    {
+      "SetID": 110,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1102",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "WindAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.1
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        }
+      ]
+    },
+    {
+      "SetID": 110,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1104",
+      "PropertyList": [],
+      "AbilityName": "Ability51101",
+      "AbilityParamList": [
+        {
+          "Value": 0.25
+        }
+      ]
+    }
+  ],
+  "111": [
+    {
+      "SetID": 111,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1112",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "BreakDamageAddedRatioBase",
+          "IEDALJJJBCE": {
+            "Value": 0.16
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.16
+        }
+      ]
+    },
+    {
+      "SetID": 111,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1114",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "BreakDamageAddedRatioBase",
+          "IEDALJJJBCE": {
+            "Value": 0.16
+          }
+        }
+      ],
+      "AbilityName": "Ability51111",
+      "AbilityParamList": [
+        {
+          "Value": 0.16
+        },
+        {
+          "Value": 3
+        }
+      ]
+    }
+  ],
+  "112": [
+    {
+      "SetID": 112,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1122",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "ImaginaryAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.1
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        }
+      ]
+    },
+    {
+      "SetID": 112,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1124",
+      "PropertyList": [],
+      "AbilityName": "Ability51121",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        },
+        {
+          "Value": 0.2
+        }
+      ]
+    }
+  ],
+  "113": [
+    {
+      "SetID": 113,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1132",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "HPAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.12
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        }
+      ]
+    },
+    {
+      "SetID": 113,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1134",
+      "PropertyList": [],
+      "AbilityName": "Ability51131",
+      "AbilityParamList": [
+        {
+          "Value": 0.08
+        },
+        {
+          "Value": 2
+        },
+        {
+          "Value": 2
+        }
+      ]
+    }
+  ],
+  "114": [
+    {
+      "SetID": 114,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1142",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "SpeedAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.06
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.06
+        }
+      ]
+    },
+    {
+      "SetID": 114,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1144",
+      "PropertyList": [],
+      "AbilityName": "Ability51141",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 1
+        }
+      ]
+    }
+  ],
+  "115": [
+    {
+      "SetID": 115,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1152",
+      "PropertyList": [],
+      "AbilityName": "Ability51150",
+      "AbilityParamList": [
+        {
+          "Value": 0.2
+        }
+      ]
+    },
+    {
+      "SetID": 115,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1154",
+      "PropertyList": [],
+      "AbilityName": "Ability51151",
+      "AbilityParamList": [
+        {
+          "Value": 0.06
+        },
+        {
+          "Value": 8
+        },
+        {
+          "Value": 3
+        }
+      ]
+    }
+  ],
+  "116": [
+    {
+      "SetID": 116,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1162",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "AttackAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.12
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        }
+      ]
+    },
+    {
+      "SetID": 116,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1164",
+      "PropertyList": [],
+      "AbilityName": "Ability51161",
+      "AbilityParamList": [
+        {
+          "Value": 0.06
+        },
+        {
+          "Value": 3
+        }
+      ]
+    }
+  ],
+  "117": [
+    {
+      "SetID": 117,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1172",
+      "PropertyList": [],
+      "AbilityName": "Ability51170",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        }
+      ]
+    },
+    {
+      "SetID": 117,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1174",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "CriticalChanceBase",
+          "IEDALJJJBCE": {
+            "Value": 0.04
+          }
+        }
+      ],
+      "AbilityName": "Ability51171",
+      "AbilityParamList": [
+        {
+          "Value": 0.04
+        },
+        {
+          "Value": 0.08
+        },
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 2
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ]
+    }
+  ],
+  "118": [
+    {
+      "SetID": 118,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1182",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "BreakDamageAddedRatioBase",
+          "IEDALJJJBCE": {
+            "Value": 0.16
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.16
+        }
+      ]
+    },
+    {
+      "SetID": 118,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1184",
+      "PropertyList": [],
+      "AbilityName": "Ability51181",
+      "AbilityParamList": [
+        {
+          "Value": 0.3
+        },
+        {
+          "Value": 2
+        }
+      ]
+    }
+  ],
+  "301": [
+    {
+      "SetID": 301,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3012",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "AttackAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.12
+          }
+        }
+      ],
+      "AbilityName": "Ability53011",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 120
+        },
+        {
+          "Value": 0.12
+        }
+      ]
+    }
+  ],
+  "302": [
+    {
+      "SetID": 302,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3022",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "HPAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.12
+          }
+        }
+      ],
+      "AbilityName": "Ability53021",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 120
+        },
+        {
+          "Value": 0.08
+        }
+      ]
+    }
+  ],
+  "303": [
+    {
+      "SetID": 303,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3032",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "StatusProbabilityBase",
+          "IEDALJJJBCE": {
+            "Value": 0.1
+          }
+        }
+      ],
+      "AbilityName": "Ability53031",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        },
+        {
+          "Value": 0.25
+        },
+        {
+          "Value": 0.25
+        }
+      ]
+    }
+  ],
+  "304": [
+    {
+      "SetID": 304,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3042",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "DefenceAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.15
+          }
+        }
+      ],
+      "AbilityName": "Ability53041",
+      "AbilityParamList": [
+        {
+          "Value": 0.15
+        },
+        {
+          "Value": 0.5
+        },
+        {
+          "Value": 0.15
+        }
+      ]
+    }
+  ],
+  "305": [
+    {
+      "SetID": 305,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3052",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "CriticalDamageBase",
+          "IEDALJJJBCE": {
+            "Value": 0.16
+          }
+        }
+      ],
+      "AbilityName": "Ability53051",
+      "AbilityParamList": [
+        {
+          "Value": 0.16
+        },
+        {
+          "Value": 1.2
+        },
+        {
+          "Value": 0.6
+        }
+      ]
+    }
+  ],
+  "306": [
+    {
+      "SetID": 306,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3062",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "CriticalChanceBase",
+          "IEDALJJJBCE": {
+            "Value": 0.08
+          }
+        }
+      ],
+      "AbilityName": "Ability53061",
+      "AbilityParamList": [
+        {
+          "Value": 0.08
+        },
+        {
+          "Value": 0.5
+        },
+        {
+          "Value": 0.15
+        }
+      ]
+    }
+  ],
+  "307": [
+    {
+      "SetID": 307,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3072",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "BreakDamageAddedRatioBase",
+          "IEDALJJJBCE": {
+            "Value": 0.16
+          }
+        }
+      ],
+      "AbilityName": "Ability53071",
+      "AbilityParamList": [
+        {
+          "Value": 0.16
+        },
+        {
+          "Value": 145
+        },
+        {
+          "Value": 0.2
+        }
+      ]
+    }
+  ],
+  "308": [
+    {
+      "SetID": 308,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3082",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "SPRatioBase",
+          "IEDALJJJBCE": {
+            "Value": 0.05
+          }
+        }
+      ],
+      "AbilityName": "Ability53081",
+      "AbilityParamList": [
+        {
+          "Value": 0.05
+        },
+        {
+          "Value": 120
+        },
+        {
+          "Value": 0.4
+        }
+      ]
+    }
+  ],
+  "309": [
+    {
+      "SetID": 309,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3092",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "CriticalChanceBase",
+          "IEDALJJJBCE": {
+            "Value": 0.08
+          }
+        }
+      ],
+      "AbilityName": "Ability53091",
+      "AbilityParamList": [
+        {
+          "Value": 0.08
+        },
+        {
+          "Value": 0.7
+        },
+        {
+          "Value": 0.2
+        }
+      ]
+    }
+  ],
+  "310": [
+    {
+      "SetID": 310,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3102",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "StatusResistanceBase",
+          "IEDALJJJBCE": {
+            "Value": 0.1
+          }
+        }
+      ],
+      "AbilityName": "Ability53101",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        },
+        {
+          "Value": 0.3
+        },
+        {
+          "Value": 0.1
+        }
+      ]
+    }
+  ],
+  "311": [
+    {
+      "SetID": 311,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3112",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "AttackAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.12
+          }
+        }
+      ],
+      "AbilityName": "Ability53111",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 135
+        },
+        {
+          "Value": 160
+        },
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 0.18
+        }
+      ]
+    }
+  ],
+  "312": [
+    {
+      "SetID": 312,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3122",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "SPRatioBase",
+          "IEDALJJJBCE": {
+            "Value": 0.05
+          }
+        }
+      ],
+      "AbilityName": "Ability53121",
+      "AbilityParamList": [
+        {
+          "Value": 0.05
+        },
+        {
+          "Value": 0.1
+        }
+      ]
+    }
+  ],
+  "313": [
+    {
+      "SetID": 313,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3132",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "CriticalChanceBase",
+          "IEDALJJJBCE": {
+            "Value": 0.04
+          }
+        }
+      ],
+      "AbilityName": "Ability53131",
+      "AbilityParamList": [
+        {
+          "Value": 0.04
+        },
+        {
+          "Value": 10
+        },
+        {
+          "Value": 0.04
+        }
+      ]
+    }
+  ],
+  "314": [
+    {
+      "SetID": 314,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3142",
+      "PropertyList": [
+        {
+          "IMHNJLJDLLH": "AttackAddedRatio",
+          "IEDALJJJBCE": {
+            "Value": 0.12
+          }
+        }
+      ],
+      "AbilityName": "Ability53141",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 0.12
+        }
+      ]
+    }
+  ]
+}

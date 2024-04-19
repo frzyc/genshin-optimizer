@@ -1,0 +1,24 @@
+{
+  "name": "Jade sacrificiel",
+  "description": {
+    "0": "Un ancien pendentif en jade qui brille comme de l'eau claire. Il semble avoir été utilisé dans des cérémonies anciennes."
+  },
+  "passiveName": "Circulation du jade",
+  "passiveDescription": {
+    "0": {
+      "0": "Après avoir fait partie de l'équipe sans être déployé pendant plus de 5 s, les PV max augmentent de <cryo>32 %</cryo> et la maîtrise élémentaire de <cryo>40</cryo> pts. L'effet prend fin dès que le personnage équipé de l'arme est déployé et passe 10 s sur le terrain."
+    },
+    "1": {
+      "0": "Après avoir fait partie de l'équipe sans être déployé pendant plus de 5 s, les PV max augmentent de <cryo>40 %</cryo> et la maîtrise élémentaire de <cryo>50</cryo> pts. L'effet prend fin dès que le personnage équipé de l'arme est déployé et passe 10 s sur le terrain."
+    },
+    "2": {
+      "0": "Après avoir fait partie de l'équipe sans être déployé pendant plus de 5 s, les PV max augmentent de <cryo>48 %</cryo> et la maîtrise élémentaire de <cryo>60</cryo> pts. L'effet prend fin dès que le personnage équipé de l'arme est déployé et passe 10 s sur le terrain."
+    },
+    "3": {
+      "0": "Après avoir fait partie de l'équipe sans être déployé pendant plus de 5 s, les PV max augmentent de <cryo>56 %</cryo> et la maîtrise élémentaire de <cryo>70</cryo> pts. L'effet prend fin dès que le personnage équipé de l'arme est déployé et passe 10 s sur le terrain."
+    },
+    "4": {
+      "0": "Après avoir fait partie de l'équipe sans être déployé pendant plus de 5 s, les PV max augmentent de <cryo>64 %</cryo> et la maîtrise élémentaire de <cryo>80</cryo> pts. L'effet prend fin dès que le personnage équipé de l'arme est déployé et passe 10 s sur le terrain."
+    }
+  }
+}

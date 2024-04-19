@@ -1,0 +1,29 @@
+{
+  "setName": "Domatore di tuoni",
+  "setEffects": {
+    "2": "RES a Electro +40%.",
+    "4": "Aumenta di un 35% i DAN contro gli avversari sotto l'effetto di Electro."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Cuore del Domatore di tuoni",
+      "desc": "Un fiore che sboccia persino in balia di tuoni e fulmini. Ancora oggi conferisce coraggio ai viaggiatori che affrontano le tempeste."
+    },
+    "plume": {
+      "name": "Piuma del Domatore di tuoni",
+      "desc": "La piuma di un uccello predatore che si libra attraverso tempeste di fulmini. Si dice che sia divenuta il simbolo dell'eroe leggendario che pacificò i tuoni e i fulmini."
+    },
+    "sands": {
+      "name": "Clessidra del Domatore di tuoni",
+      "desc": "Una clessidra custodita dall'eroe che conquistò tuoni e fulmini. I minuscoli frammenti di Cristalli di Electro scorrono avanti e indietro con il passare del tempo."
+    },
+    "goblet": {
+      "name": "Calice del Domatore di tuoni",
+      "desc": "Il calice da vino da cui una volta il Domatore di tuoni, che sconfisse la bestia tonante, bevve dei fulmini viola."
+    },
+    "circlet": {
+      "name": "Diadema del Domatore di tuoni",
+      "desc": "La corona conferita al Domatore di tuoni per aver sconfitto la Bestia tonante che aveva scatenato il caos sulla terraferma."
+    }
+  }
+}

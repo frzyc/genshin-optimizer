@@ -1,0 +1,24 @@
+{
+  "name": "Sao Đêm Rong Ruổi",
+  "description": {
+    "0": "Vốn là món đồ được các học giả sử dụng để quan trắc và tính toán thiên tượng. Có năng lực truyền dẫn sức mạnh để làm pháp khí."
+  },
+  "passiveName": "Sao Đêm Rừng Hoang",
+  "passiveDescription": {
+    "0": {
+      "0": "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào <cryo>24%</cryo> Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng."
+    },
+    "1": {
+      "0": "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào <cryo>30%</cryo> Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng."
+    },
+    "2": {
+      "0": "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào <cryo>36%</cryo> Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng."
+    },
+    "3": {
+      "0": "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào <cryo>42%</cryo> Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng."
+    },
+    "4": {
+      "0": "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào <cryo>48%</cryo> Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng."
+    }
+  }
+}

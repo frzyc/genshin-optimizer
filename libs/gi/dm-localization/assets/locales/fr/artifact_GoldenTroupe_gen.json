@@ -1,0 +1,29 @@
+{
+  "setName": "Troupe dorée",
+  "setEffects": {
+    "2": "Augmente les DGT infligés par la compétence élémentaire de 20 %.",
+    "4": "Les DGT infligés par les compétences élémentaires augmentent de 25 %. De plus, lorsque le personnage fait partie de l'équipe mais n'est pas déployé, les DGT infligés par ses compétences élémentaires augmentent de 25 % supplémentaires, cet effet prenant fin 2 s après le déploiement du personnage."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Variation de la mélodie dorée",
+      "desc": "Une fleur faite de palourde, de nacre et de feuille d'or, qui fleurit fièrement."
+    },
+    "plume": {
+      "name": "Mue de l'oiseau d'or",
+      "desc": "Une plume d'or en filigrane d'argent et d'or. Un saphir cristallin est monté dessus."
+    },
+    "sands": {
+      "name": "Prélude de l'ère dorée",
+      "desc": "Ce joli cadran solaire est incrusté d'argent et d'or. Il semble que le temps s'est arrêté de couler sur sa façade."
+    },
+    "goblet": {
+      "name": "Agitation de la nuit dorée",
+      "desc": "Une ancienne urne en argent qui était autrefois remplie de vin raffiné aussi rouge que le rubis. Maintenant, elle ne contient que de l'eau de mer amère."
+    },
+    "circlet": {
+      "name": "Récompense de la Troupe dorée",
+      "desc": "Une ancienne couronne qui ressemble plus à un accessoire de scène qu'à un ornement de suzerain."
+    }
+  }
+}

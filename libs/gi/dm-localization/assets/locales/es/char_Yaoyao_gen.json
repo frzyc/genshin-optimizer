@@ -1,0 +1,180 @@
+{
+  "name": "Yaoyao",
+  "title": "La Flor Grácil",
+  "description": "La discípula más joven de Caminante Errante. Es una “pequeña adulta” de lo más dulce y considerada.",
+  "constellationName": "Osmanthus",
+  "auto": {
+    "name": "Giralanza",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzarse al frente e infligir daño a los enemigos en el camino."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Rabanal de las nubes",
+    "description": {
+      "0": "Invoca un dispositivo llamado “Lanzador Yuegui” creado por cierta Adeptus para que saque a Yaoyao de apuros.",
+      "1": "Esta habilidad se libera de manera distinta al mantener pulsado.",
+      "2": "<br/>",
+      "3": "<strong>Mantener pulsado</strong>",
+      "4": "Apunta para ajustar la dirección en la que lanza.",
+      "5": "<br/>",
+      "6": "<strong>Lanzador Yuegui</strong>",
+      "7": "Lanza rábanos jadeados que, al golpear a un personaje o un enemigo, explotan e infligen <dendro>Daño Dendro</dendro> contra los enemigos dentro de cierta AdE y restauran Vida para los personajes dentro de esa AdE en función de la Vida Máx. de Yaoyao. Si no golpean a ningún personaje o enemigo en el momento en que se lanzan, los rábanos jadeados permanecen en la misma ubicación hasta que explotan al entrar en contacto con un personaje, un enemigo o al terminar su duración.",
+      "8": "El Lanzador Yuegui escoge el objetivo contra el que lanza los rábanos jadeados según la situación cercana:",
+      "9": [
+        "Si todos los personajes cercanos tienen más del 70% de Vida, lanza los rábanos contra un enemigo cercano.",
+        "Si algún personaje cercano tiene el 70% de Vida o menos, los lanza contra el personaje cercano con el menor porcentaje de Vida. Si la Vida de todos los personajes es superior al 70% pero inferior al 100% y no hay enemigos cerca, también lanza los rábanos jadeados contra un personaje. De lo contrario, los lanzará aleatoriamente alrededor."
+      ],
+      "10": "<br/>",
+      "11": "Solo puede haber un máximo de 2 Lanzadores Yuegui al mismo tiempo.",
+      "12": "<br/>",
+      "13": "<i>¡Un rábano al día mantiene al doctor en la lejanía! Bueno, no es que los rábanos curen enfermedades ni nada de eso, ¡pero comer rábanos tiene muchos beneficios para la salud!</i>"
+    },
+    "skillParams": {
+      "0": "Daño de rábano jadeado",
+      "1": "Curación de rábano jadeado",
+      "2": "Duración de Lanzador Yuegui",
+      "3": "Duración de rábano jadeado",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Jadestello fugaz",
+    "description": {
+      "0": "Según el consejo de cierta Adeptus, en situaciones de emergencia se puede llegar a liberar todo el potencial de Yuegui para que inflija <dendro>Daño Dendro</dendro> contra los enemigos cercanos y entre en el (en cierta medida) invencible estado de “iluminación adéptica”.",
+      "1": "<br/>",
+      "2": "<strong>Iluminación adéptica</strong>",
+      "3": [
+        "Los rábanos jadeados que lanza pasan a infligir daño y curar según los Atributos de esta habilidad. Al explotar, restauran Vida para todos los personajes cercanos del equipo y pasan a infligir un <dendro>Daño Dendro</dendro> que se considera daño de Habilidad Definitiva.",
+        "Invoca cada cierto tiempo al Saltimbanqui Yuegui hasta alcanzar la cantidad máxima posible. El Saltimbanqui Yuegui funciona igual que el Lanzador Yuegui de Rabanal de las nubes. Solo puede haber un total de 3 Saltimbanquis Yuegui al mismo tiempo.",
+        "Aumenta en un 15% la Vel. Movimiento de Yaoyao.",
+        "Aumenta la <dendro>RES Dendro</dendro> de Yaoyao."
+      ],
+      "4": "<br/>",
+      "5": "El estado de iluminación adéptica terminará cuando Yaoyao abandone el campo de batalla. Al terminar la duración de dicho estado, desaparecerán todos los Saltimbanquis Yuegui restantes.",
+      "6": "<br/>",
+      "7": "<i>“¿Que cuál es el auténtico Yuegui, si este o el otro? ¡Qué cosas tan raras dices! ¡Todos son Yuegui!</i>”."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de rábano jadeado de iluminación adéptica",
+      "2": "Curación de rábano jadeado de iluminación adéptica",
+      "3": "Aumento de RES Dendro",
+      "4": "Duración de iluminación adéptica",
+      "5": "TdE",
+      "6": "Energía Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Propagación estelar",
+    "description": {
+      "0": "Cuando Yaoyao está en el estado de iluminación adéptica de <strong>Jadestello fugaz</strong>, al esprintar, saltar o correr, lanza rábanos jadeados de manera continua a los enemigos cercanos. Solo se puede lanzar 1 rábano jadeado de esta manera una vez cada 0.6 s."
+    }
+  },
+  "passive2": {
+    "name": "Circunspección",
+    "description": {
+      "0": "Cuando explota un <strong>rábano jadeado</strong>, el personaje en uso dentro del AdE de dicho rábano recupera Vida una vez por segundo en una cantidad equivalente al 0.8% de la Vida Máx. de Yaoyao. Este efecto dura 5 s."
+    }
+  },
+  "passive3": {
+    "name": "Rastreo sigiloso",
+    "description": {
+      "0": "Cuando Yaoyao está en el equipo, tus personajes no asustarán a los cristalópteros u otras criaturas.",
+      "1": "Puedes consultar cuáles son estas criaturas en Archivo - Seres vivos - Fauna - Otros."
+    }
+  },
+  "constellation1": {
+    "name": "Tutelaje adéptico",
+    "description": {
+      "0": "Cuando explota un <strong>rábano jadeado</strong>, el personaje en uso dentro del AdE de la explosión obtiene un 15% de <dendro>Bono de Daño Dendro</dendro> durante 8 s y recupera 15 pts. de Aguante. Solo se puede recuperar Aguante de esta manera una vez cada 5 s."
+    }
+  },
+  "constellation2": {
+    "name": "Rectitud inocente",
+    "description": {
+      "0": "Si un rábano jadeado explota y golpea a un enemigo cuando Yaoyao está en el estado de iluminación adéptica de <strong>Jadestello fugaz</strong>, Yaoyao recupera 3 pts. de Energía Elemental. Solo se puede regenerar Energía Elemental de esta manera una vez cada 0.8 s."
+    }
+  },
+  "constellation3": {
+    "name": "Lealtad bondadosa",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Rabanal de las nubes</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tierna dulzura",
+    "description": {
+      "0": "Tras usar <strong>Rabanal de las nubes</strong> o <strong>Jadestello fugaz</strong>, la Maestría Elemental de Yaoyao aumenta en una cantidad equivalente al 0.3% de su Vida Máx. durante 8 s. La Maestría Elemental solo puede aumentar en un máximo de 120 pts. de esta manera."
+    }
+  },
+  "constellation5": {
+    "name": "Compasión pura",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Jadestello fugaz</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Benevolente caridad",
+    "description": {
+      "0": "Por cada 2 rábanos jadeados que dispare el <strong>Lanzador Yuegui</strong>, la próxima vez que lance un rábano jadeado disparará adicionalmente 1 megarrábano superpoderoso. La explosión de este megarrábano tiene un AdE más grande y produce los siguientes efectos:",
+      "1": [
+        "Inflige <dendro>Daño Dendro en el AdE</dendro> en una cantidad equivalente al 75% del ATQ de Yaoyao.",
+        "Restaura Vida al personaje en uso en una cantidad equivalente al 7.5% de la Vida Máx. de Yaoyao."
+      ],
+      "2": "<br/>",
+      "3": "Cada Lanzador Yuegui solo puede lanzar un máximo de 2 megarrábanos superpoderosos."
+    }
+  }
+}

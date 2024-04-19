@@ -1,0 +1,29 @@
+{
+  "setName": "Fiamma fioca",
+  "setEffects": {
+    "2": "DAN fisici +25%.",
+    "4": "Quando un'abilità elementale colpisce un avversario, l'ATT aumenta di un 9% per 7 s. Cumulabile fino a 2 volte, si può attivare una volta ogni 0,3 s. Raggiunta la quantità massima cumulabile, l'effetto del set da 2 pezzi aumenta di un 100%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fiore inossidabile",
+      "desc": "Un fiore blu artificiale. I suoi petali non appassiranno mai, e il suo colore brillerà in eterno."
+    },
+    "plume": {
+      "name": "Piuma del dottore saggio",
+      "desc": "Una piuma dall'aspetto sinistro con bordi aguzzi. Potrebbe rappresentare un'indole artificialmente disinibita."
+    },
+    "sands": {
+      "name": "Tempo sospeso",
+      "desc": "Un orologio con un coperchio impossibile da aprire. Il suo ticchettio continua inesorabilmente ad accompagnare lo scorrere del tempo."
+    },
+    "goblet": {
+      "name": "Calice della trascendenza",
+      "desc": "Un calice dalla forma particolare. Il suo aspetto non svela la sua età a un ipotetico osservatore."
+    },
+    "circlet": {
+      "name": "Maschera beffarda",
+      "desc": "Una maschera che ricopre il volto, nascondendo qualsiasi smorfia dallo sguardo altrui."
+    }
+  }
+}

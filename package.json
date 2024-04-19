@@ -1,13 +1,14 @@
 {
   "name": "genshin-optimizer",
-  "version": "9.21.0",
+  "version": "10.5.2",
   "license": "MIT",
   "private": true,
   "scripts": {
     "frontend": "nx serve frontend",
     "build-all": "nx run-many -t build",
-    "mini-ci": "nx format:write && nx affected -t test,lint --max-warnings=0",
-    "reload-dm": "git submodule update --init"
+    "mini-ci": "nx format:write && nx affected -t typecheck && nx affected -t test,lint --max-warnings=0",
+    "reload-dm": "git submodule update --init",
+    "update-dm": "git submodule update --remote"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
@@ -36,6 +37,7 @@
     "@nx/webpack": "16.10.0",
     "@nx/workspace": "16.10.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
+    "@prisma/nextjs-monorepo-workaround-plugin": "^5.12.1",
     "@svgr/webpack": "8.0.1",
     "@swc-node/register": "1.4.2",
     "@swc/cli": "~0.1.62",
@@ -71,6 +73,7 @@
     "jsdom": "22.1.0",
     "nx": "16.10.0",
     "prettier": "^2.8.4",
+    "prettier-plugin-organize-imports": "^3.2.4",
     "prisma": "^5.5.2",
     "react-refresh": "^0.10.0",
     "swc-loader": "0.1.15",
@@ -81,6 +84,7 @@
     "vite": "^4.3.9",
     "vite-plugin-dts": "2.3.0",
     "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-static-copy": "^1.0.1",
     "vite-tsconfig-paths": "4.2.0",
     "vitest": "^0.32.0",
     "yaml": "^2.3.4"
@@ -115,7 +119,7 @@
     "i18next-http-backend": "^2.1.1",
     "i18next-resources-to-backend": "^1.1.4",
     "jsonwebtoken": "^9.0.2",
-    "next": "14.0.3",
+    "next": "^14.2.1",
     "next-auth": "^4.23.2",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",

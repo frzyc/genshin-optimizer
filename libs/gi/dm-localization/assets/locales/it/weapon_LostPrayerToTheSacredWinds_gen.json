@@ -1,0 +1,24 @@
+{
+  "name": "Origine dei venti sacri",
+  "description": {
+    "0": "Un tomo educativo scritto dai primi abitanti che veneravano il vento, da cui è stato benedetto per la sua fedeltà e la sua influenza nel corso di millenni."
+  },
+  "passiveName": "Benedizione smisurata",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta la VEL di movimento di un 10%. In battaglia, ottieni un <cryo>8%</cryo> di bonus DAN elementali ogni 4 s. Cumulabile fino a 4 volte. Dura finché il personaggio non muore o abbandona il combattimento."
+    },
+    "1": {
+      "0": "Aumenta la VEL di movimento di un 10%. In battaglia, ottieni un <cryo>10%</cryo> di bonus DAN elementali ogni 4 s. Cumulabile fino a 4 volte. Dura finché il personaggio non muore o abbandona il combattimento."
+    },
+    "2": {
+      "0": "Aumenta la VEL di movimento di un 10%. In battaglia, ottieni un <cryo>12%</cryo> di bonus DAN elementali ogni 4 s. Cumulabile fino a 4 volte. Dura finché il personaggio non muore o abbandona il combattimento."
+    },
+    "3": {
+      "0": "Aumenta la VEL di movimento di un 10%. In battaglia, ottieni un <cryo>14%</cryo> di bonus DAN elementali ogni 4 s. Cumulabile fino a 4 volte. Dura finché il personaggio non muore o abbandona il combattimento."
+    },
+    "4": {
+      "0": "Aumenta la VEL di movimento di un 10%. In battaglia, ottieni un <cryo>16%</cryo> di bonus DAN elementali ogni 4 s. Cumulabile fino a 4 volte. Dura finché il personaggio non muore o abbandona il combattimento."
+    }
+  }
+}

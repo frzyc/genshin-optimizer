@@ -1,0 +1,24 @@
+{
+  "name": "The Viridescent Hunt",
+  "description": {
+    "0": "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest."
+  },
+  "passiveName": "Verdant Wind",
+  "passiveDescription": {
+    "0": {
+      "0": "Upon hit, Normal and Charged Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing <cryo>40%</cryo> of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every <cryo>14</cryo>s."
+    },
+    "1": {
+      "0": "Upon hit, Normal and Charged Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing <cryo>50%</cryo> of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every <cryo>13</cryo>s."
+    },
+    "2": {
+      "0": "Upon hit, Normal and Charged Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing <cryo>60%</cryo> of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every <cryo>12</cryo>s."
+    },
+    "3": {
+      "0": "Upon hit, Normal and Charged Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing <cryo>70%</cryo> of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every <cryo>11</cryo>s."
+    },
+    "4": {
+      "0": "Upon hit, Normal and Charged Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing <cryo>80%</cryo> of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every <cryo>10</cryo>s."
+    }
+  }
+}

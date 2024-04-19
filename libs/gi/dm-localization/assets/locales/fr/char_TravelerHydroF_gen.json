@@ -1,0 +1,154 @@
+{
+  "auto": {
+    "name": "Débordement étranger",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sabre d'ondulation",
+    "description": {
+      "0": "Libère un torrent qui peut purifier le monde.",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Envoie un courant torrentiel vers l'avant, infligeant des <hydro>DGT Hydro</hydro> aux ennemis touchés.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Bascule en mode visée pour lancer de façon continue des gouttes de rosée dans la direction ciblée, infligeant des <hydro>DGT Hydro</hydro> aux ennemis touchés.",
+      "7": "Lorsque le mode visée se termine, un courant torrentiel est envoyé vers l'avant, infligeant des <hydro>DGT Hydro</hydro> aux ennemis touchés.",
+      "8": "Profusion : lors de l'appui long, si les PV {M#du voyageur}{F#de la voyageuse} sont supérieurs à 50 %, les DGT de ses gouttes de rosée augmentent en fonction de ses PV max et {M#il}{F#elle} perd une quantité fixe de PV à chaque seconde.",
+      "9": "<br/>",
+      "10": "<strong>Arkhe : Pneuma</strong>",
+      "11": "Régulièrement, après avoir envoyé un courant torrentiel, une épine d'inhalation qui transperce les ennemis est libérée pour infliger des <hydro>DGT Hydro</hydro> chargés d'énergie pneuma.",
+      "12": "<br/>",
+      "13": "<i>Paimon et vous avez étudié les ondulations qui parcourent l'eau.</i>"
+    },
+    "skillParams": {
+      "0": "DGT courant torrentiel",
+      "1": "DGT goutte de rosée",
+      "2": "DGT épine d'inhalation",
+      "3": "Intervalle d'épine d'inhalation",
+      "4": "Coût de PV de profusion",
+      "5": "Bonus de DGT de profusion",
+      "6": "Durée d'appui long",
+      "7": "Temps de recharge",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Montée des eaux",
+    "description": {
+      "0": "Libère une bulle flottante lente qui inflige de façon continue des <hydro>DGT Hydro</hydro> aux ennemis proches.",
+      "1": "<br/>",
+      "2": "<i>Paimon et vous avez étudié les fluctuations qui rythment les marées...</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Durée",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Eau pure",
+    "description": {
+      "0": "Lorsqu'une goutte de rosée lancée en maintenant <strong>Sabre d'ondulation</strong> a touché un ennemi, une goutte d'eau de source apparaît à proximité {M#du voyageur}{F#de la voyageuse}. En la ramassant, {M#ce dernier}{F#cette dernière} récupère 7 % de PV.",
+      "1": "Une goutte d'eau de source peut être créée de cette manière une fois toutes les secondes, et chaque utilisation de Sabre d'ondulation permet de créer un maximum de 4 gouttes d'eau de source."
+    }
+  },
+  "passive2": {
+    "name": "Eau claire",
+    "description": {
+      "0": "Si des PV ont été consommés lors d'une profusion en maintenant <strong>Sabre d'ondulation</strong>, les DGT du courant torrentiel à la fin augmentent d'une valeur équivalant à 45 % de PV consommés par {M#le voyageur}{F#la voyageuse} lors de la profusion en question.",
+      "1": "Les DGT peuvent être augmentés d'un maximum de 5 000 pts de cette manière."
+    }
+  },
+  "constellation1": {
+    "name": "Eau ondulante de lac",
+    "description": {
+      "0": "Ramasser une goutte d'eau de source restaure 2 pts d'énergie élémentaire {M#au voyageur}{F#à la voyageuse}.",
+      "1": "L'aptitude passive « Eau pure » doit être déjà débloquée."
+    }
+  },
+  "constellation2": {
+    "name": "Eau ruisselante de pureté",
+    "description": {
+      "0": "Diminue la VIT de déplacement des bulles flottantes de <strong>Montée des eaux</strong> de 30 % et augmente leur durée de 3 s."
+    }
+  },
+  "constellation3": {
+    "name": "Eau turbulente d'ondulation",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Sabre d'ondulation</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Eau tombante d'averse",
+    "description": {
+      "0": "Lors de l'utilisation de <strong>Sabre d'ondulation</strong>, {M#le voyageur}{F#la voyageuse} obtient un bouclier d'ondulations qui absorbe une quantité de DGT équivalant à 10 % de ses PV max. Le bouclier est efficace à 250 % contre les <hydro>DGT Hydro</hydro> et dure jusqu'à la fin de la capacité.",
+      "1": "Une fois toutes les 2 s, lorsqu'une goutte de rosée a touché un ennemi, si {M#le voyageur est protégé}{F#la voyageuse est protégée} par un bouclier d'ondulations, l'absorption du bouclier est restaurée à 10 % des PV max {M#du voyageur}{F#de la voyageuse} ; si {M#le voyageur n'est pas protégé}{F#la voyageuse n'est pas protégée} par un bouclier d'ondulations, un tel bouclier est généré."
+    }
+  },
+  "constellation5": {
+    "name": "Eau tournoyante de vortex",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Montée des eaux</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Eau montante de justice",
+    "description": {
+      "0": "Lorsque {M#le voyageur}{F#la voyageuse} récupère une goutte d'eau de source, {M#il}{F#elle} restaure 6 % de PV max au personnage de l'équipe à proximité ayant le pourcentage de PV le plus bas."
+    }
+  }
+}

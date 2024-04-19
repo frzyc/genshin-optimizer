@@ -1,0 +1,152 @@
+{
+  "auto": {
+    "name": "Foreign Fieldcleaver",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan pedang berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Razorgrass Blade",
+    "description": {
+      "0": "Mengayunkan senjata dan menyebarkan dedaunan yang tajam, mengakibatkan <dendro>Dendro DMG</dendro>.",
+      "1": "<br/>",
+      "2": "<i>Kamu dan Paimon pernah mengamati tepian ujung rumput dan daun yang tajam.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Surgent Manifestation",
+    "description": {
+      "0": "Mengondensasikan kekuatan tumbuh-tumbuhan untuk menciptakan Lea Lotus Lamp.",
+      "1": "Lea Lotus Lamp akan menyerang musuh di dalam areanya secara terus-menerus dan mengakibatkan <dendro>Dendro DMG</dendro>.",
+      "2": "<br/>",
+      "3": "<strong>Lotuslight Transfiguration</strong>",
+      "4": "Setelah bersentuhan dengan <hydro>Hydro</hydro>/<electro>Electro</electro>/<pyro>Pyro</pyro>, Lea Lotus Lamp akan mengalami transformasi sebagai berikut:",
+      "5": [
+        "<hydro>Hydro</hydro>: memperluas cakupan area Lotuslight Transfiguration dan jangkauan serangannya;",
+        "<electro>Electro</electro>: Meningkatkan ATK SPD Lea Lotus Lamp;",
+        "<pyro>Pyro</pyro>: Setelah jeda waktu yang singkat, Lea Lotus Lamp akan menghilang dalam ledakan dahsyat, dan mengakibatkan <dendro>Dendro DMG Area</dendro>."
+      ],
+      "6": "Pada durasi keberadaannya, Lea Lotus Lamp hanya dapat mengalami Lotuslight Transfiguration sebanyak 1 kali.",
+      "7": "<br/>",
+      "8": "Pada saat yang bersamaan, hanya bisa terdapat satu Lea Lotus Lamp saja yang diciptakan oleh Pengembara sendiri.",
+      "9": "<br/>",
+      "10": "<i>Kamu dan Paimon meneliti suara rumput yang merekah sehabis hujan bersama-sama.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Attack Lea Lotus Lamp",
+      "1": "DMG Explosion",
+      "2": "Durasi Aktif Lea Lotus Lamp",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Verdant Overgrowth",
+    "description": {
+      "0": "<strong>Lea Lotus Lamp</strong> akan memperoleh satu lapis Overflowing Lotuslight saat berada di medan pertempuran setiap detiknya, meningkatkan 6 poin Elemental Mastery Karakter aktif di dalam areanya. Efek Overflowing Lotuslight dari Lea Lotus Lamp dapat ditumpuk sampai 10 lapis."
+    }
+  },
+  "passive2": {
+    "name": "Verdant Luxury",
+    "description": {
+      "0": "Setiap poin Elemental Mastery yang dimiliki oleh Pengembara sendiri akan meningkatkan 0,15% DMG yang diakibatkan oleh <strong>Razorgrass Blade</strong>, dan meningkatkan 0,1% DMG yang diakibatkan oleh <strong>Surgent Manifestation</strong>."
+    }
+  },
+  "constellation1": {
+    "name": "Symbiotic Creeper",
+    "description": {
+      "0": "Setelah <strong>Razorgrass Blade</strong> mengenai musuh, memulihkan 3,5 Energy untuk Pengembara."
+    }
+  },
+  "constellation2": {
+    "name": "Green Resilience",
+    "description": {
+      "0": "Durasi <strong>Lea Lotus Lamp</strong> meningkat 3 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Whirling Weeds",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Razorgrass Blade</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Treacle Grass",
+    "description": {
+      "0": "Setelah <strong>Lea Lotus Lamp</strong> memicu Lotuslight Transfiguration, akan mendapatkan 5 lapis efek Overflowing Lotuslight dari Talenta Pasif \"Verdant Overgrowth\".",
+      "1": "Harus sudah membuka Talenta Pasif \"Verdant Overgrowth\" lebih dulu."
+    }
+  },
+  "constellation5": {
+    "name": "Viridian Transience",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Surgent Manifestation</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Withering Aggregation",
+    "description": {
+      "0": "<dendro>Dendro DMG Bonus</dendro> Karakter yang terpengaruh oleh efek Overflowing Lotuslight yang diciptakan oleh <strong>Lea Lotus Lamp</strong> meningkat 12%. Jika Lea Lotus Lamp sudah pernah memicu Lotuslight Transfiguration sebelumnya, juga akan mendapatkan 12% DMG Bonus untuk elemen yang sesuai."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Ejdersırtı Mızrak",
+  "description": {
+    "0": "Bu mızrak bir ejderin dişinden yapıldı. Etrafına tuhaf bir sıcaklık yayar."
+  },
+  "passiveName": "Buzul Mezar",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir düşmana Normal veya Yüklü Saldırılarla vurmak <cryo>%60</cryo> ihtimalle düşmanın üzerine bir Hepbuzul Sarkıtı düşürerek <cryo>%80</cryo> Saldırı kadar bir Alan Hasarı verir. Buz etkisi altındaki düşmanların aldığı hasar <cryo>%200</cryo> Saldırı kadar olur. 10 saniyede bir uygulanabilir."
+    },
+    "1": {
+      "0": "Bir düşmana Normal veya Yüklü Saldırılarla vurmak <cryo>%70</cryo> ihtimalle düşmanın üzerine bir Hepbuzul Sarkıtı düşürerek <cryo>%95</cryo> Saldırı kadar bir Alan Hasarı verir. Buz etkisi altındaki düşmanların aldığı hasar <cryo>%240</cryo> Saldırı kadar olur. 10 saniyede bir uygulanabilir."
+    },
+    "2": {
+      "0": "Bir düşmana Normal veya Yüklü Saldırılarla vurmak <cryo>%80</cryo> ihtimalle düşmanın üzerine bir Hepbuzul Sarkıtı düşürerek <cryo>%110</cryo> Saldırı kadar bir Alan Hasarı verir. Buz etkisi altındaki düşmanların aldığı hasar <cryo>%280</cryo> Saldırı kadar olur. 10 saniyede bir uygulanabilir."
+    },
+    "3": {
+      "0": "Bir düşmana Normal veya Yüklü Saldırılarla vurmak <cryo>%90</cryo> ihtimalle düşmanın üzerine bir Hepbuzul Sarkıtı düşürerek <cryo>%125</cryo> Saldırı kadar bir Alan Hasarı verir. Buz etkisi altındaki düşmanların aldığı hasar <cryo>%320</cryo> Saldırı kadar olur. 10 saniyede bir uygulanabilir."
+    },
+    "4": {
+      "0": "Bir düşmana Normal veya Yüklü Saldırılarla vurmak <cryo>%100</cryo> ihtimalle düşmanın üzerine bir Hepbuzul Sarkıtı düşürerek <cryo>%140</cryo> Saldırı kadar bir Alan Hasarı verir. Buz etkisi altındaki düşmanların aldığı hasar <cryo>%360</cryo> Saldırı kadar olur. 10 saniyede bir uygulanabilir."
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "name": "Yelan",
+  "title": "Orchidée de la vallée",
+  "description": "Une mystérieuse personne qui prétend travailler pour le Bureau des affaires civiles. Cependant, elle n'apparaît nulle part dans leur registre.",
+  "constellationName": "Umbrabilis Orchis",
+  "auto": {
+    "name": "Sagette furtive",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la flèche se charge de flux d'eau, infligeant des <hydro>DGT Hydro</hydro> quand elle est complètement chargée."
+      },
+      "breakthrough": {
+        "0": "<strong>Percée</strong>",
+        "1": "Si l'équipe est hors combat pendant 5 s, Yelan entre dans l'état Percée permettant de diminuer le temps de charge de son prochain tir visé de 80 %, et une fois le tir complètement chargé, elle peut tirer une flèche perçante qui inflige des <hydro>DGT Hydro de zone</hydro> selon ses PV max."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT tir visé",
+      "5": "DGT tir visé (pleine charge)",
+      "6": "DGT flèche perçante",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ligne vitale persistante",
+    "description": {
+      "0": "Tire une ligne vitale et court à grande vitesse, enchevêtrant et marquant les ennemis sur son chemin.",
+      "1": "À la fin du déplacement, la ligne vitale explose, infligeant des <hydro>DGT Hydro</hydro> aux ennemis marqués selon les PV max de Yelan.",
+      "2": "<br/>",
+      "3": "<strong>Appui simple</strong>",
+      "4": "Avance rapidement sur une certaine distance.",
+      "5": "<br/>",
+      "6": "<strong>Appui long</strong>",
+      "7": "Avance rapidement de façon continue, tout en augmentant la RÉS à l'interruption de Yelan pendant son mouvement.",
+      "8": "Pendant ce déplacement, Yelan peut contrôler la direction de sa course et peut s'arrêter en utilisant à nouveau la compétence.",
+      "9": "<br/>",
+      "10": "De plus, chaque ennemi marqué par la ligne vitale lorsqu'elle explose accorde à Yelan 34 % de chances d'obtenir l'état Percée.",
+      "11": "<br/>",
+      "12": "<i>Ce n'est que lorsqu'elle commence à tirer sur la corde que les malfaiteurs, les escrocs et les tricheurs se rendent compte qu'il n'y a pas d'échappatoire...</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Durée max (appui long)",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dé exquis des profondeurs",
+    "description": {
+      "0": "Inflige des <hydro>DGT Hydro de zone</hydro> et crée un dé exquis pour aider en combat.",
+      "1": "<br/>",
+      "2": "<strong>Dé exquis</strong>",
+      "3": "Suit le personnage et déclenche une attaque coordonnée dans les circonstances suivantes, infligeant des <hydro>DGT Hydro</hydro> selon les PV max de Yelan :",
+      "4": [
+        " Chaque fois que votre personnage déployé utilise une attaque normale, cet effet pouvant être déclenché une fois toutes les secondes.",
+        " Chaque fois que la ligne vitale de Yelan explose et touche des ennemis."
+      ],
+      "5": "<br/>",
+      "6": "<i>« Devenir accro au jeu ne vous fera aucun bien... Je veux dire, je suis la croupière, alors faites le calcul : selon vous, quelles sont vos chances de me battre, alors que j'ai sept dés et que vous n'en avez qu'un seul ? »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT dé exquis",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Contrôle stratégique",
+    "description": {
+      "0": "Si l'équipe comprend des personnages de 1/2/3/4 types élémentaires, les PV max de Yelan augmentent de 6 %/12 %/18 %/30 %."
+    }
+  },
+  "passive2": {
+    "name": "Adaptation aisée",
+    "description": {
+      "0": "Tant qu'un <strong>dé exquis</strong> est en combat, les DGT infligés par votre personnage déployé augmentent de 1 %, puis de 3,5 % supplémentaires toutes les secondes. Les DGT peuvent être augmentés d'un maximum de 50 % de cette manière.",
+      "1": "Utiliser à nouveau Dé exquis des profondeurs pendant la durée de l'effet décrit ci-dessus dissipera ce dernier."
+    }
+  },
+  "passive3": {
+    "name": "Longue considération",
+    "description": {
+      "0": "Augmente les récompenses d'une expédition de 20 h à Liyue de 25 %."
+    }
+  },
+  "constellation1": {
+    "name": "Tricheur en jeu",
+    "description": {
+      "0": "Confère une utilisation supplémentaire de <strong>Ligne vitale persistante</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Offert par la maison",
+    "description": {
+      "0": "Lorsqu'un <strong>dé exquis</strong> déclenche une attaque coordonnée, une flèche d'eau supplémentaire est envoyée pour infliger des DGT Hydro équivalant à 14 % des PV max de Yelan.",
+      "1": "Cet effet peut être déclenché une fois toutes les 1,8 s."
+    }
+  },
+  "constellation3": {
+    "name": "Dé pipé",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Dé exquis des profondeurs</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Tour de passe-passe",
+    "description": {
+      "0": "Augmente les PV max de tous les personnages de l'équipe de 10 % pendant 25 s pour chaque ennemi marqué par la <strong>ligne vitale</strong> lorsqu'elle explose. Les PV max peuvent être augmentés jusqu'à 40 % de cette manière."
+    }
+  },
+  "constellation5": {
+    "name": "Dextérité de la croupière",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Ligne vitale persistante</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Tout pour le vainqueur",
+    "description": {
+      "0": "Après avoir utilisé <strong>Dé exquis des profondeurs</strong>, Yelan entre dans l'état Stratège.",
+      "1": "Ses attaques normales deviennent alors des flèches perçantes spéciales. Ces flèches possèdent les mêmes capacités que les flèches perçantes normales, et les DGT qu'elles infligent sont considérés comme des DGT d'attaque chargée infligeant 156 % des DGT des flèches perçantes normales.",
+      "2": "<br/>",
+      "3": "L'état Stratège dure 20 s maximum ou est annulé après avoir tiré 5 flèches."
+    }
+  }
+}

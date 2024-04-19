@@ -1,0 +1,24 @@
+{
+  "name": "Stab der roten Sande",
+  "description": {
+    "0": "Eines der zwei Szepter, die aus Obsidian gefertigt wurden. In der Legende verleiht es seinem Besitzer das Recht, die Wüstenbewohner zu führen, aber heute lebt kein Untergebener mehr, der das Königsszepter wieder erkennen kann."
+  },
+  "passiveName": "Traum am Ende des Hitzedunsts",
+  "passiveDescription": {
+    "0": {
+      "0": "Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von <cryo>52 %</cryo> der Elementarkunde, die sie besitzt. Löst nach dem Treffen von Gegnern mit der Elementarfähigkeit den Effekt „Traum roter Sande“ aus, der 10 s hält: Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von <cryo>28 %</cryo> der Elementarkunde, die sie besitzt, dieser Effekt ist 3-fach stapelbar."
+    },
+    "1": {
+      "0": "Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von <cryo>65 %</cryo> der Elementarkunde, die sie besitzt. Löst nach dem Treffen von Gegnern mit der Elementarfähigkeit den Effekt „Traum roter Sande“ aus, der 10 s hält: Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von <cryo>35 %</cryo> der Elementarkunde, die sie besitzt, dieser Effekt ist 3-fach stapelbar."
+    },
+    "2": {
+      "0": "Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von <cryo>78 %</cryo> der Elementarkunde, die sie besitzt. Löst nach dem Treffen von Gegnern mit der Elementarfähigkeit den Effekt „Traum roter Sande“ aus, der 10 s hält: Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von <cryo>42 %</cryo> der Elementarkunde, die sie besitzt, dieser Effekt ist 3-fach stapelbar."
+    },
+    "3": {
+      "0": "Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von <cryo>91 %</cryo> der Elementarkunde, die sie besitzt. Löst nach dem Treffen von Gegnern mit der Elementarfähigkeit den Effekt „Traum roter Sande“ aus, der 10 s hält: Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von <cryo>49 %</cryo> der Elementarkunde, die sie besitzt, dieser Effekt ist 3-fach stapelbar."
+    },
+    "4": {
+      "0": "Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von <cryo>104 %</cryo> der Elementarkunde, die sie besitzt. Löst nach dem Treffen von Gegnern mit der Elementarfähigkeit den Effekt „Traum roter Sande“ aus, der 10 s hält: Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von <cryo>56 %</cryo> der Elementarkunde, die sie besitzt, dieser Effekt ist 3-fach stapelbar."
+    }
+  }
+}

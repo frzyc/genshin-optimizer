@@ -1,0 +1,147 @@
+{
+  "auto": {
+    "name": "Lamaroccia straniera",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lama stellare",
+    "description": {
+      "0": "Dissotterra un meteorite dalle profondità del suolo, infliggendo <geo>DAN da Geo ad area</geo>.",
+      "1": "Il meteorite è considerato un <geo>costrutto di Geo</geo> e si può scalare o usare per bloccare gli attacchi.",
+      "2": "<br/>",
+      "3": "<strong>Pressione prolungata</strong>",
+      "4": "Regola la posizione dell'abilità.",
+      "5": "<br/>",
+      "6": "<i>Hai parlato con Paimon della meta ultima delle stelle cadenti.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Durata meteorite",
+      "2": "TdR",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Risveglio terrestre",
+    "description": {
+      "0": "Stimolando l'energia di Geo che giace in profondità, scatena onde d'urto che si espandono, respingendo gli avversari circostanti e infliggendo <geo>DAN da Geo ad area</geo>.",
+      "1": "Un muro di pietra si erge lungo il limite delle onde d'urto.",
+      "2": "Tale muro è considerato un <geo>costrutto di Geo</geo> e si può usare per bloccare gli attacchi.",
+      "3": "<br/>",
+      "4": "<i>Tu e Paimon avete studiato il battito delle montagne.</i>"
+    },
+    "skillParams": {
+      "0": "DAN per singola onda d'urto",
+      "1": "Durata muro di pietra",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Rocciascura frantumata",
+    "description": {
+      "0": "Riduce il TdR di <strong>Lama stellare</strong> di 2 s."
+    }
+  },
+  "passive2": {
+    "name": "Smottamento frenetico",
+    "description": {
+      "0": "Il colpo finale di una combo d'attacco normale innesca un crollo, infliggendo un 60% dell'ATT come <geo>DAN da Geo ad area</geo>."
+    }
+  },
+  "constellation1": {
+    "name": "Muro invalicabile",
+    "description": {
+      "0": "I membri del gruppo nel raggio di <strong>Risveglio terrestre</strong> ricevono un aumento del tasso di CRIT di un 10% e un aumento della loro resistenza all'interruzione."
+    }
+  },
+  "constellation2": {
+    "name": "Fusione esplosiva",
+    "description": {
+      "0": "Quando il meteorite creato da <strong>Lama stellare</strong> viene distrutto, esplode infliggendo <geo>DAN da Geo ad area</geo> extra pari alla quantità di danni inflitti da Lama stellare."
+    }
+  },
+  "constellation3": {
+    "name": "Volontà di pietra",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Risveglio terrestre</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Azione e reazione",
+    "description": {
+      "0": "L'onda d'urto sprigionata da <strong>Risveglio terrestre</strong> rigenera l'energia di 5 per ogni avversario colpito.",
+      "1": "In questo modo è possibile rigenerare l'energia fino a un massimo di 25 alla volta."
+    }
+  },
+  "constellation5": {
+    "name": "Impatto meteoritico",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Lama stellare</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Macigno perpetuo",
+    "description": {
+      "0": "La barriera generata da <strong>Risveglio terrestre</strong> dura 5 s in più.",
+      "1": "Il meteorite generato da <strong>Lama stellare</strong> dura 10 s in più."
+    }
+  }
+}

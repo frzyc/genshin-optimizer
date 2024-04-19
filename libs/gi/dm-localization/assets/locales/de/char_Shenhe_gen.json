@@ -1,0 +1,171 @@
+{
+  "name": "Shenhe",
+  "title": "Einsame Abgeschiedenheit",
+  "description": "Eine adeptische Schülerin mit einer übernatürlichen Aura, die ihr das langjährige eremitenhafte Leben in den Bergen von Liyue verleiht. Ihr Charakter ist von dem Gleichmut und der Distanzierung der Adepten zutiefst geprägt.",
+  "constellationName": "Crista Doloris",
+  "auto": {
+    "name": "Morgensternstachel",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Mantra der Geisterbeschwörung",
+    "description": {
+      "0": "Fester und silberner eisiger Tau möge das Böse vertreiben.",
+      "1": "Verleiht allen Truppenmitgliedern in der Nähe den Effekt „Eisfeder“ und verursacht je nachdem, ob gedrückt oder gedrückt gehalten wird, auf unterschiedliche Weise <cryo>Kryo-Schaden</cryo>.",
+      "2": "<br/>",
+      "3": "<strong>Drücken</strong>",
+      "4": "Stößt gemeinsam mit einem „Talismangeist“ vor und fügt Gegnern in der Bahn <cryo>Kryo-Schaden</cryo> zu.",
+      "5": "<br/>",
+      "6": "<strong>Gedrückt halten</strong>",
+      "7": "Befielt dem Talismangeist, <cryo>Kryo-Flächenschaden</cryo> zu verursachen.",
+      "8": "<br/>",
+      "9": "<strong>Eisfeder</strong>",
+      "10": "Erhöht den Gegnern mit Standardangriffen, heftigen Schlägen, Angriffen aus dem Fall, Elementarfähigkeiten und Spezialfähigkeiten zugefügten <cryo>Kryo-Schaden</cryo> basierend auf Shenhes eigenem aktuellen ANG.",
+      "11": "<br/>",
+      "12": "Der Effekt „Eisfeder“ erlischt nach dem Ende der Wirkungsdauer oder nach dem Inkrafttreten einer bestimmten Menge an Stapelungen. Eisfeder hält beim Gedrückthalten länger und verleiht mehr Stapelungen als beim Drücken.",
+      "13": "Verbraucht beim Treffen mehrerer Gegner mit einem einzelnen <cryo>Kryo-Schaden</cryo> eine der Anzahl der getroffenen Gegner entsprechende Menge an wirksamen Stapelungen. Die wirksamen Stapelungen jedes Truppenmitglieds mit dem Effekt Eisfeder werden unabhängig voneinander berechnet.",
+      "14": "<br/>",
+      "15": "<i>„Die Macht der Geister ist keine Täuschung. Hunderte von ihnen arbeiten für mich. Die göttliche Jungfrau befielt, in den Talisman zu eilen! Los!“</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "SCH bei Gedrückthalten",
+      "2": "SCH-Bonus",
+      "3": "Dauer bei Drücken/Gedrückthalten",
+      "4": "Wirksame Stapelungen bei Drücken/Gedrückthalten",
+      "5": "Abklingzeit für Drücken",
+      "6": "Abklingzeit für Gedrückthalten",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Geisterbefehligung der göttlichen Jungfrau",
+    "description": {
+      "0": "Entfesselt die Kraft des „Talismangeists“, lässt ihn auf die Welt los und verursacht <cryo>Kryo-Flächenschaden</cryo>.",
+      "1": "Der Talismangeist erschafft ein Feld, das den <cryo>Kryo-WDS</cryo> sowie den physischen WDS von Gegnern darin verringert und ihnen fortlaufend <cryo>Kryo-Schaden</cryo> zufügt.",
+      "2": "<br/>",
+      "3": "<i>„Der Weg der Adepten ist kein dunkles Mysterium, sondern kann begriffen werden, wenn man die Wandlungen von Himmel und Erde beobachtet und die Zusammenhänge in der Welt versteht.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "WDS-Malus",
+      "2": "Fortlaufender SCH",
+      "3": "Dauer",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Göttliche Umarmung",
+    "description": {
+      "0": "Erhöht den <cryo>Kryo-Schadensbonus</cryo> aktueller Figuren im Wirkungsbereich von <strong>Geisterbefehligung der göttlichen Jungfrau</strong> um 15 %."
+    }
+  },
+  "passive2": {
+    "name": "Siegel der Geisterbindung",
+    "description": {
+      "0": "Verleiht nach Anwendung von <strong>Mantra der Geisterbeschwörung</strong> durch Shenhe allen Truppenmitgliedern in der Nähe folgende Effekte:",
+      "1": [
+        " Drücken: Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden 10 s lang um 15 %.",
+        " Gedrückt halten: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall verursachten Schaden 15 s lang um 15 %."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Kenntnisse von der Umgebung",
+    "description": {
+      "0": "Bringt bei 20-stündigen Erkundungsentsendungen in Liyue 25 % mehr Belohnungen."
+    }
+  },
+  "constellation1": {
+    "name": "Klarheiten im Herzen",
+    "description": {
+      "0": "Ermöglicht 1 weitere Anwendung von <strong>Mantra der Geisterbeschwörung</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Fixierung des Geistes",
+    "description": {
+      "0": "Verlängert die Wirkungsdauer von <strong>Geisterbefehligung der göttlichen Jungfrau</strong> um 6 s. Erhöht KSCH des <cryo>Kryo-Schadens</cryo> aktueller Figuren im Wirkungsbereich um 15 %."
+    }
+  },
+  "constellation3": {
+    "name": "Zurückgezogenheit",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Mantra der Geisterbeschwörung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Durchdringender Blick",
+    "description": {
+      "0": "Verleiht Shenhe beim Auslösen des Schadensbonus von „Eisfeder“ durch Figuren im von Shenhe selbst verliehenen Zustand <strong>Eisfeder</strong> eine Stapelung „Frosthimmelmantra“:",
+      "1": [
+        " Entfernt beim Auslösen von <strong>Mantra der Geisterbeschwörung</strong> durch Shenhe alle Stapelungen von Frosthimmelmantra und erhöht den mit diesem Mantra der Geisterbeschwörung verursachten Schaden je nach der Menge an entfernten Stapelungen um 5 %.",
+        " Dieser Effekt ist 50-fach stapelbar und hält 60 s."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Erlangung von Göttlichkeit",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Geisterbefehligung der göttlichen Jungfrau</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Mystische Verlassenheit",
+    "description": {
+      "0": "Verringert beim Auslösen von <strong>Eisfeder</strong> mit dem Schaden von Standardangriffen und heftigen Schlägen von Figuren keine Stapelungen von Eisfeder mehr."
+    }
+  }
+}

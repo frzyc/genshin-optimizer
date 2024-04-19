@@ -1,0 +1,29 @@
+{
+  "setName": "Nymph's Dream",
+  "setEffects": {
+    "2": "Hydro DMG Bonus +15%",
+    "4": "After Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts hit opponents, 1 stack of Mirrored Nymph will be triggered, lasting 8s. When under the effect of 1, 2, or 3 or more Mirrored Nymph stacks, ATK will be increased by 7%/16%/25%, and Hydro DMG Bonus will be increased by 4%/9%/15%. Mirrored Nymph stacks created by Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts exist independently."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Odyssean Flower",
+      "desc": "The story must end, and even fresh flowers will wither. But the flower within one's dreams will always remain in full and fragrant bloom."
+    },
+    "plume": {
+      "name": "Wicked Mage's Plumule",
+      "desc": "This was once a decorative feather in someone's hat. Being dark green, it is quite eye-catching indeed."
+    },
+    "sands": {
+      "name": "Nymph's Constancy",
+      "desc": "A pocket watch that has long stopped working. It seems to have borne witness to many a passing year as its hands spun in vain."
+    },
+    "goblet": {
+      "name": "Heroes' Tea Party",
+      "desc": "A lovely teacup. Perhaps it was once used by people enjoying a leisurely afternoon together."
+    },
+    "circlet": {
+      "name": "Fell Dragon's Monocle",
+      "desc": "An exquisitely-made monocle. Ancient anecdotes say that one might be able to see the future through it."
+    }
+  }
+}

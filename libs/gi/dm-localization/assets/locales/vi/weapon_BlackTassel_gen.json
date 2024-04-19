@@ -1,0 +1,24 @@
+{
+  "name": "Hắc Anh Thương",
+  "description": {
+    "0": "Tuyệt thế hảo thương giải quyết được việc Bạch Anh Thương dễ bị bẩn."
+  },
+  "passiveName": "Khắc Nhu",
+  "passiveDescription": {
+    "0": {
+      "0": "Tăng <cryo>40%</cryo> sát thương với kẻ địch là Slime."
+    },
+    "1": {
+      "0": "Tăng <cryo>50%</cryo> sát thương với kẻ địch là Slime."
+    },
+    "2": {
+      "0": "Tăng <cryo>60%</cryo> sát thương với kẻ địch là Slime."
+    },
+    "3": {
+      "0": "Tăng <cryo>70%</cryo> sát thương với kẻ địch là Slime."
+    },
+    "4": {
+      "0": "Tăng <cryo>80%</cryo> sát thương với kẻ địch là Slime."
+    }
+  }
+}

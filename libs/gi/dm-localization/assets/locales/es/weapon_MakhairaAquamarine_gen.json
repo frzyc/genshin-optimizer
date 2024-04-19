@@ -1,0 +1,24 @@
+{
+  "name": "Májaira Aguamarina",
+  "description": {
+    "0": "Un antiguo mandoble que brilla como el agua. A pesar de haber sufrido la erosión de la arena durante tanto tiempo, su hoja no ha perdido el filo."
+  },
+  "passiveName": "Pabellón de las arenas",
+  "passiveDescription": {
+    "0": {
+      "0": "Cada 10 s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>24%</cryo> de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Cada 10 s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>30%</cryo> de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Cada 10 s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>36%</cryo> de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Cada 10 s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>42%</cryo> de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Cada 10 s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12 s en un <cryo>48%</cryo> de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    }
+  }
+}

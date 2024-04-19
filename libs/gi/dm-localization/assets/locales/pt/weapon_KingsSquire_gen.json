@@ -1,0 +1,24 @@
+{
+  "name": "Vassalo do Rei",
+  "description": {
+    "0": "Uma arma obtida através de uma das histórias dos Aranara. Ela tomou a forma de um arco que é capaz de perfurar os inimigos da floresta."
+  },
+  "passiveName": "Instruções do Rei do Labirinto",
+  "passiveDescription": {
+    "0": {
+      "0": "Obtém o efeito \"Ensinamentos da Floresta\" ao desencadear Habilidades Elementais e Supremos, aumentando a Proficiência Elemental em <cryo>60</cryo> por 12s. Este efeito será removido ao trocar de personagens. Quando o efeito de Ensinamentos da Floresta termina ou é removido, irá causar <cryo>100%</cryo> de ATQ como Dano a 1 oponente próximo. O efeito de Ensinamentos da Floresta pode ser desencadeado uma vez a cada 20s."
+    },
+    "1": {
+      "0": "Obtém o efeito \"Ensinamentos da Floresta\" ao desencadear Habilidades Elementais e Supremos, aumentando a Proficiência Elemental em <cryo>80</cryo> por 12s. Este efeito será removido ao trocar de personagens. Quando o efeito de Ensinamentos da Floresta termina ou é removido, irá causar <cryo>120%</cryo> de ATQ como Dano a 1 oponente próximo. O efeito de Ensinamentos da Floresta pode ser desencadeado uma vez a cada 20s."
+    },
+    "2": {
+      "0": "Obtém o efeito \"Ensinamentos da Floresta\" ao desencadear Habilidades Elementais e Supremos, aumentando a Proficiência Elemental em <cryo>100</cryo> por 12s. Este efeito será removido ao trocar de personagens. Quando o efeito de Ensinamentos da Floresta termina ou é removido, irá causar <cryo>140%</cryo> de ATQ como Dano a 1 oponente próximo. O efeito de Ensinamentos da Floresta pode ser desencadeado uma vez a cada 20s."
+    },
+    "3": {
+      "0": "Obtém o efeito \"Ensinamentos da Floresta\" ao desencadear Habilidades Elementais e Supremos, aumentando a Proficiência Elemental em <cryo>120</cryo> por 12s. Este efeito será removido ao trocar de personagens. Quando o efeito de Ensinamentos da Floresta termina ou é removido, irá causar <cryo>160%</cryo> de ATQ como Dano a 1 oponente próximo. O efeito de Ensinamentos da Floresta pode ser desencadeado uma vez a cada 20s."
+    },
+    "4": {
+      "0": "Obtém o efeito \"Ensinamentos da Floresta\" ao desencadear Habilidades Elementais e Supremos, aumentando a Proficiência Elemental em <cryo>140</cryo> por 12s. Este efeito será removido ao trocar de personagens. Quando o efeito de Ensinamentos da Floresta termina ou é removido, irá causar <cryo>180%</cryo> de ATQ como Dano a 1 oponente próximo. O efeito de Ensinamentos da Floresta pode ser desencadeado uma vez a cada 20s."
+    }
+  }
+}

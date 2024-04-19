@@ -1,0 +1,183 @@
+{
+  "name": "Furina",
+  "title": "Assolo solitario e sempiterno",
+  "description": "La protagonista assoluta della scena del giudizio, fino all'applauso finale.",
+  "constellationName": "Animula Choragi",
+  "auto": {
+    "name": "Solista sollecita",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per eseguire un assolo di danza che infligge DAN fisici agli avversari nelle vicinanze e modifica la polarità Archè di Furina. Se i Membri del Salon o il Cantante delle Mille Acque evocati dalla sua abilità elementale Salon Solitaire sono presenti in campo, le loro rispettive formazioni si scambiano di conseguenza."
+      },
+      "arkhe": {
+        "0": "<strong>Archè: Seggi sacri e secolari</strong>",
+        "1": "Dopo aver colpito gli avversari con attacchi normali, e in base alla sua polarità Archè attuale, Furina genera a determinati intervalli un Aculeo spettrale o una Lama nascente, infliggendo <hydro>DAN da Hydro</hydro> della polarità corrispondente.",
+        "2": "Quando Furina entra in campo, il suo Archè di partenza è Ousia."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore attacco caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "DAN da Aculeo spettrale/Lama nascente",
+      "9": "Intervallo DAN da Aculeo spettrale/Lama nascente",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Salon Solitaire",
+    "description": {
+      "0": "Furina invita gli ospiti del Salon Solitaire ad avvicinarsi per assistere alla sua esibizione. Evoca i Membri del Salon o il Cantante delle Mille Acque in base alla <strong>polarità Archè</strong> attuale di Furina.",
+      "1": "<br/>",
+      "2": "<strong>Ousia</strong>",
+      "3": "Delle bolle spumose danzano giubilanti, infliggendo <hydro>DAN da Hydro ad area</hydro> in base ai PS max di Furina ed evocando 3 Membri del Salon: Gentilhomme Usher, a forma di Polpotondo; Surintendante Chevalmarine, a forma di Ippocampo gorgogliante; e Mademoiselle Granchilette, a forma di Granchio corazzato.",
+      "4": "I Membri del Salon attaccano gli avversari circostanti a intervalli regolari, dando priorità al bersaglio del personaggio attivo, infliggendo <hydro>DAN da Hydro</hydro> in base ai PS max.",
+      "5": "Quando attaccano, se sono presenti nelle vicinanze uno o più personaggi con più di un 50% di PS, i Membri del Salon aumentano la propria potenza d'attacco in base al numero di tali personaggi, consumandone i PS. Se i personaggi che rispettano questo criterio sono 1/2/3/4 (o più), gli attacchi dei Membri del Salon infliggono un 110%/120%/130%/140% dei loro DAN originali.",
+      "6": "<br/>",
+      "7": "<strong>Pneuma</strong>",
+      "8": "Evoca il Cantante delle Mille Acque, che ripristina i PS dei personaggi attivi nelle vicinanze a intervalli regolari, in base ai PS max.",
+      "9": "<br/>",
+      "10": "I Membri del Salon e il Cantante delle Mille Acque condividono la medesima durata, e quando Furina usa il suo attacco caricato per cambiare il tipo di ospiti presenti, i nuovi ospiti ereditano la durata rimanente di quelli precedenti.",
+      "11": "<br/>",
+      "12": "Mentre i Membri del Salon o il Cantante delle Mille Acque sono in campo, Furina può muoversi sulle superfici acquatiche.",
+      "13": "<br/>",
+      "14": "<i>Il Salon Solitaire di Furina è frequentato da un numero fisso di ospiti abituali. A giorni alterni, vengono a trovarla Mademoiselle Granchilette, la Surintendante Chevalmarine e il Gentilhomme Usher; nei mercoledì uggiosi, invece, è il Cantante a tenerle compagnia.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da bolla di Ousia",
+      "1": "Durata",
+      "2": "DAN da Gentilhomme Usher",
+      "3": "DAN da Surintendante Chevalmarine",
+      "4": "DAN da Mademoiselle Granchilette",
+      "5": "Consumo PS Gentilhomme Usher",
+      "6": "Consumo PS Surintendante Chevalmarine",
+      "7": "Consumo PS Mademoiselle Granchilette",
+      "8": "Guarigione da Cantante delle Mille Acque",
+      "9": "TdR",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Si rallegri il popolo",
+    "description": {
+      "0": "Risveglia lo spirito festaiolo dei presenti creando un palco di schiuma che infligge <hydro>DAN da Hydro ad area</hydro> in base ai PS max di Furina, e applica ai membri del gruppo nelle vicinanze lo stato di Baldoria universale. Mentre questo stato è attivo, quando i PS dei membri del gruppo nelle vicinanze aumentano o diminuiscono, Furina riceve 1 punto Fanfara per ogni 1% di PS che i personaggi guadagnano o perdono in relazione ai loro PS max.",
+      "1": "Contemporaneamente, in base al numero di punti Fanfara in suo possesso, Furina aumenta sia i DAN inflitti da tutti i membri del gruppo nelle vicinanze sia il loro bonus di guarigione ricevuta.",
+      "2": "Quando la durata dello stato si esaurisce, i punti Fanfara di Furina svaniscono.",
+      "3": "<br/>",
+      "4": "<i>\"Gioite! Rendete lode! Lasciatevi estasiare! Levate in alto i calici! Una notte priva di gozzoviglie dopo un mesto giorno è un sordido sperpero della sua luce... E quelli, ehm... quelli ancora troppo giovani possono sempre bere del succo d'uva!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Durata",
+      "2": "Punti Fanfara massimi",
+      "3": "Tasso conversione Fanfara in DAN aumentati",
+      "4": "Tasso conversione Fanfara in bonus di guarigione ricevuta",
+      "5": "TdR",
+      "6": "Costo energia",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Valzer infinito",
+    "description": {
+      "0": "Quando il personaggio attivo del gruppo riceve effetti di guarigione, se l'effetto non è apportato da Furina e la guarigione supera il limite massimo, Furina guarisce i membri vicini del gruppo di una quantità pari a un 2% dei PS max del membro in questione, una volta ogni 2 s per i 4 s successivi."
+    }
+  },
+  "passive2": {
+    "name": "Confessione inascoltata",
+    "description": {
+      "0": "Per ogni 1.000 PS max di Furina, le polarità Archè di <strong>Salon Solitaire</strong> possono essere potenziate nei seguenti modi:",
+      "1": [
+        " i DAN inflitti dai Membri del Salon aumentano di uno 0,7%, fino a un 28% massimo;",
+        " l'intervallo di guarigione del Cantante delle Mille Acque per i personaggi attivi vicini si riduce di uno 0,4%, fino a un 16% massimo."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Il mare è il mio palcoscenico",
+    "description": {
+      "0": "Il TdR delle abilità degli Aberranti del Fontemer xenocromatici si riduce di un 30%."
+    }
+  },
+  "constellation1": {
+    "name": "\"L'amore è un uccello ribelle che nessuno può domare\"",
+    "description": {
+      "0": "Quando usa <strong>Si rallegri il popolo</strong>, Furina ottiene 150 punti Fanfara.",
+      "1": "In più, il suo limite di punti Fanfara aumenta di 100."
+    }
+  },
+  "constellation2": {
+    "name": "\"La donna è mobile qual piuma al vento\"",
+    "description": {
+      "0": "Per la durata di <strong>Si rallegri il popolo</strong>, Furina ottiene un 250% di punti Fanfara in più quando i PS dei personaggi nelle vicinanze aumentano o diminuiscono. Ogni punto Fanfara al di sopra del limite aumenta i PS max di Furina di uno 0,35%. L'aumento dei PS max non può superare un 140%."
+    }
+  },
+  "constellation3": {
+    "name": "\"Ma il mio mistero è chiuso in me, il nome mio nessun saprà!\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Si rallegri il popolo</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Ché ci è gradita soltanto qui la vita, nel gran regno infernal!\"",
+    "description": {
+      "0": "Quando i Membri del <strong>Salon Solitaire</strong> colpiscono un avversario, o quando il Cantante delle Mille Acque ripristina i PS dei personaggi attivi vicini, l'energia di Furina si ripristina di 4. Quest'effetto può attivarsi una volta ogni 5 s."
+    }
+  },
+  "constellation5": {
+    "name": "\"Conosco il nome dello straniero! Il suo nome è...\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Salon Solitaire</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Libiamo ne' lieti calici!\"",
+    "description": {
+      "0": "Quando usa l'abilità elementale <strong>Salon Solitaire</strong>, Furina entra nello stato di Centro dell'attenzione per 10 s.",
+      "1": "Per la sua durata, gli attacchi normali, caricati e in picchiata di Furina infliggono <hydro>DAN da Hydro</hydro> che non possono essere contrastati da altre infusioni elementali. In più, i DAN inflitti aumentano di un 18% dei suoi PS max.",
+      "2": "Mentre lo stato è attivo, gli attacchi normali (esclusi quelli di Archè: Seggi sacri e secolari), caricati e in picchiata di Furina che colpiscono gli avversari causano vari effetti ogni 0,1 s, in base alla polarità Archè attuale del personaggio.",
+      "3": "<br/>",
+      "4": "Archè: Ousia",
+      "5": "Ogni 1 s, i PS di tutti i personaggi del gruppo presenti nelle vicinanze vengono ripristinati in base a un 4% dei PS max di Furina. L'effetto dura 2,9 s e la sua durata si estende quando viene riattivato.",
+      "6": "<br/>",
+      "7": "Archè: Pneuma",
+      "8": "I DAN inflitti da attacchi normali (esclusi quelli di Archè: Seggi sacri e secolari), attacchi caricati o impatti di attacchi in picchiata aumentano di un 25% dei PS max di Furina. Quando uno qualsiasi di questi attacchi colpisce un avversario, tutti i personaggi vicini presenti nel gruppo consumano un 1% dei propri PS attuali.",
+      "9": "<br/>",
+      "10": "Per ogni iterazione di Centro dell'attenzione, gli effetti descritti possono attivarsi fino a 6 volte. Centro dell'attenzione termina quando i suoi effetti vengono attivati 6 volte o quando la sua durata totale si esaurisce."
+    }
+  }
+}

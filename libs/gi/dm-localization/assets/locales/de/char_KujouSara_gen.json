@@ -1,0 +1,160 @@
+{
+  "name": "Kujou Sara",
+  "title": "Krähenfeder-Kaburaya",
+  "description": "Eine Generalin der „Tenryou-Verwaltung“, kühn, entschlossen und geschickt im Kampf.",
+  "constellationName": "Flabellum",
+  "auto": {
+    "name": "Tengu-Schießkunst",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Pfeilschüsse hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
+        "2": "Konzentriert die Kraft der Blitze während des Zielens an der Pfeilspitze, die voll aufgeladen beim Treffen von Gegnern <electro>Elektro-Schaden</electro> verursacht.",
+        "3": "Jeder voll aufgeladene Pfeil hinterlässt im Zustand „Krähenfederhaube“ beim Treffen von Gegnern eine „Krähenfeder“."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "Gezielte Schüsse",
+      "6": "Voll aufgeladene gezielte Schüsse",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Tengu-Sturmbeschwörung",
+    "description": {
+      "0": "Zieht sich geschwind mit der Schnelligkeit eines Tengu zurück und beschwört den Schutz der Krähenfedern.",
+      "1": "Erhält eine 18 s anhaltende „Krähenfederhaube“. Sobald Kujou Sara einen voll aufgeladenen Pfeil abschießt, verbraucht sie die Krähenfederhaube und hinterlässt an der Stelle des Treffers des Pfeils eine Krähenfeder.",
+      "2": "Krähenfedern lösen nach kurzer Zeit Tengu Juurai – Hinterhalt aus, fügen allen Gegnern im Wirkungsbereich <electro>Elektro-Schaden</electro> zu und erhöhen den Angriff aktueller Figuren im Wirkungsbereich basierend auf Kujou Saras Basis-ANG.",
+      "3": "<br/>",
+      "4": "Die ANG-Boni verschiedener Tengu Juurai sind nicht stapelbar und Effekt sowie Wirkungsdauer hängen vom zuletzt in Kraft getretenen Tengu Juurai ab.",
+      "5": "<br/>",
+      "6": "<i>Den Tengu hat es nie an außergewöhnlichen Talenten gefehlt, die Göttliche Augen mit Elektro-Kraft erhielten. Es ist nur so, dass sie der Göttin der Blitze oft Lobgesänge darbieten, während sie die Elektro-Kraft nutzen. Die Gesänge gehen in etwa so:</i>",
+      "7": "<i>„O Große Narukami, zeige deine Macht! Gewähre deinen Jüngern die Kraft der Blitze! Sowaka!“</i>"
+    },
+    "skillParams": {
+      "0": "SCH von Tengu Juurai – Hinterhalt",
+      "1": "ANG-Bonus-Rate",
+      "2": "ANG-Bonus-Dauer",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Unterwerfung – Koukou Sendou",
+    "description": {
+      "0": "Beschwört an der Stelle des Ziels einen Tengu Juurai – Titanenbrecher und verursacht <electro>Elektro-Flächenschaden</electro>. Der Tengu Juurai – Titanenbrecher spaltet sich danach in 4 aufeinanderfolgende Tengu Juurai – Blitzbündel auf und verursacht <electro>Elektro-Flächenschaden</electro>.",
+      "1": "Tengu Juurai – Titanenbrecher sowie Tengu Juurai – Blitzbündel verleihen aktuellen Figuren im Wirkungsbereich den gleichen ANG-Bonus wie die Elementarfähigkeit Tengu-Sturmbeschwörung.",
+      "2": "<br/>",
+      "3": "Die ANG-Boni verschiedener Tengu Juurai sind nicht stapelbar und Effekt sowie Wirkungsdauer hängen vom zuletzt in Kraft getretenen Tengu Juurai ab.",
+      "4": "<br/>",
+      "5": "<i>Sara kehrte sich von ihrem Volk, den Tengu, ab und verlor auch ihr Vertrauen in die Tenryou-Verwaltung. Nachdem sie aber Klarheit gefunden hatte, erkannte sie erneut ihr eigenes Blitzleuchten.</i>"
+    },
+    "skillParams": {
+      "0": "SCH von Tengu Juurai – Titanenbrecher",
+      "1": "SCH von Tengu Juurai – Blitzbündel",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Besonnenheit",
+    "description": {
+      "0": "Verringert die Aufladezeit für gezielte Schüsse im Zustand „Krähenfederhaube“ von <strong>Tengu-Sturmbeschwörung</strong> um 60 %."
+    }
+  },
+  "passive2": {
+    "name": "Anstand",
+    "description": {
+      "0": "Stellt beim Treffen von Gegnern mit Tengu Juurai – Hinterhalt allen Truppenmitgliedern 1,2 Punkte Elementarenergie für je 100 % von Kujou Saras Aufladerate wieder her. 3 s Abklingzeit."
+    }
+  },
+  "passive3": {
+    "name": "Landvermessung",
+    "description": {
+      "0": "Verkürzt die bei Erkundungen innerhalb des Einflussbereichs von Inazuma verbrauchte Zeit um 25 %."
+    }
+  },
+  "constellation1": {
+    "name": "Krähenauge",
+    "description": {
+      "0": "Verkürzt beim Verleihen von ANG-Boni für Figuren oder Treffen von Gegnern durch Tengu Juurai die Abklingzeit von <strong>Tengu-Sturmbeschwörung</strong> um 1 s.",
+      "1": "3 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Schwarze Flügel",
+    "description": {
+      "0": "Hinterlässt beim Auslösen von <strong>Tengu-Sturmbeschwörung</strong> eine schwächere Krähenfeder an Kujou Saras ursprünglicher Stelle, die Schaden in Höhe von 30 % des eigentlichen Schadens verursacht."
+    }
+  },
+  "constellation3": {
+    "name": "Innerer Dämon",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Unterwerfung – Koukou Sendou</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Schlüssiger Beweis",
+    "description": {
+      "0": "Erschafft beim Angriff mit <strong>Unterwerfung – Koukou Sendou</strong> 6 Juurai – Blitzbündel."
+    }
+  },
+  "constellation5": {
+    "name": "Beschwörungsgesang",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Tengu-Sturmbeschwörung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sünde des Stolzes",
+    "description": {
+      "0": "Erhöht den Kritischen Schaden von <electro>Elektro-SCH</electro> der Figuren mit dem ANG-Bonus von Tengu Juurai um 60 %."
+    }
+  }
+}

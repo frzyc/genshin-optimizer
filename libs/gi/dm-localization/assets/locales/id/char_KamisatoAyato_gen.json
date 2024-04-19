@@ -1,0 +1,168 @@
+{
+  "name": "Kamisato Ayato",
+  "title": "Pillar of Fortitude",
+  "description": "Kepala Klan Kamisato dari Yashiro Commission yang masih muda namun sangat berprestasi. Sangat berbudaya dan sopan, dia adalah seorang pria yang berbudi luhur dan mempunyai banyak cara.",
+  "constellationName": "Cypressus Custos",
+  "auto": {
+    "name": "Kamisato Art - Marobashi",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan pedang."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk bergerak ke depan dan melancarkan tebasan iai."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kamisato Art: Kyouka",
+    "description": {
+      "0": "Kamisato Ayato menggeser posisinya dan memasuki kondisi Takimeguri Kanka.",
+      "1": "Setelah berpindah posisi, Ayato akan meninggalkan ilusi air di posisi sebelumnya. Setelah terbentuk, ilusi air akan meledak saat ada musuh di sekitar atau setelah durasinya habis, mengakibatkan <hydro>Hydro DMG Area</hydro>.",
+      "2": "<br/>",
+      "3": "<strong>Takimeguri Kanka</strong>",
+      "4": "Dalam kondisi ini, Kamisato Ayato menggunakan Shunsuiken miliknya untuk melakukan serangan yang sangat cepat, mengakibatkan DMG Normal Attack berubah menjadi <hydro>Hydro DMG Area</hydro> yang tidak bisa ditimpa Elemental Infusion lainnya.",
+      "5": "Lalu juga mempunyai efek berikut:",
+      "6": [
+        "Setelah serangan Shunsuiken mengenai musuh, Ayato akan mendapatkan efek Namisen, yang meningkatkan DMG yang diakibatkan oleh Shunsuiken berdasarkan dari Max HP Ayato saat ini. Namisen dapat ditumpuk hingga 4 lapis, dan setiap 0,1 detik bisa mendapatkan 1 lapis dari serangan Shunsuiken. Efek ini akan hilang saat Takimeguri Kanka berakhir.",
+        "Meningkatkan ketahanan Kamisato Ayato terhadap interupsi.",
+        "Tidak bisa melancarkan Charged dan Plunging Attack."
+      ],
+      "7": "<br/>",
+      "8": "Takimeguri Kanka akan selesai saat Ayato meninggalkan medan pertempuran. Jika Kamisato Art: Kyouka dilancarkan lagi saat masih dalam kondisi Takimeguri Kanka, maka kondisi Takimeguri Kanka tersebut akan berakhir dan diganti dengan yang baru.",
+      "9": "<br/>",
+      "10": "<i>Sudah merasa menang? Halusinasi ya?</i>",
+      "11": "<i> Demikianlah perilaku seorang Ayato baik dari segi bela diri maupun kecakapannya dalam berpolitik, tapi untuk menjaga agar Komisaris lainnya tidak tersinggung, dia tidak bicara seperti itu di depan mereka. Hanya Thoma, Itto, dan Ayaka yang pernah mendengar kalimat ini keluar dari mulutnya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1 Shunsuiken",
+      "1": "DMG Tahap 2 Shunsuiken",
+      "2": "DMG Tahap 3 Shunsuiken",
+      "3": "Durasi Takimeguri Kanka",
+      "4": "Bonus DMG Namisen",
+      "5": "DMG Water Illusion",
+      "6": "Durasi Water Illusion",
+      "7": "Cooldown",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kamisato Art: Suiyuu",
+    "description": {
+      "0": "Mengungkap sebuah taman penyucian yang menyingkirkan segala hiruk pikuk di dalamnya.",
+      "1": "Saat taman tersebut ada, Bloomwater Blade akan terus menghujani dan menyerang musuh di dalam areanya, mengakibatkan <hydro>Hydro DMG</hydro> dan meningkatkan DMG Normal Attack Karakter di dalamnya.",
+      "2": "<br/>",
+      "3": "<i>\"Aku bisa melihatnya. Riak dari detak jantungmu di dunia air yang tenang ini\".</i>"
+    },
+    "skillParams": {
+      "0": "DMG Bloomwater Blade",
+      "1": "Bonus DMG Normal Attack",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Kamisato Art: Mine Wo Matoishi Kiyotaki",
+    "description": {
+      "0": "<strong>Kamisato Art: Kyouka</strong> memiliki karakteristik berikut:",
+      "1": [
+        "Kamisato Ayato akan mendapatkan 2 lapis Namisen saat melancarkan skill ini."
+      ],
+      "2": "Setelah ilusi air meledak, Kamisato Ayato akan mendapatkan efek Namisen setara dengan jumlah tumpukan maksimum lapisan."
+    }
+  },
+  "passive2": {
+    "name": "Kamisato Art: Michiyuku Hagetsu",
+    "description": {
+      "0": "Saat Kamisato Ayato ada di dalam party tapi tidak sedang aktif di medan pertempuran, dan jika jumlah Energy-nya kurang dari 40 poin, maka dia akan memulihkan 2 Energy-nya sendiri setiap detik."
+    }
+  },
+  "passive3": {
+    "name": "Kamisato Art: Daily Cooking",
+    "description": {
+      "0": "Saat Ayato memasak makanan dengan sempurna, terdapat 18% kemungkinan mendapatkan hasil tambahan makanan \"Suspicious\" dari jenis makanan yang sama."
+    }
+  },
+  "constellation1": {
+    "name": "Kyouka Fuushi",
+    "description": {
+      "0": "Meningkatkan 40% DMG <strong>Shunsuiken</strong> pada musuh dengan HP 50% atau kurang."
+    }
+  },
+  "constellation2": {
+    "name": "World Source",
+    "description": {
+      "0": "Tumpukan maksimum <strong>Namisen</strong> bertambah menjadi 5 lapis. Max HP Kamisato Ayato akan bertambah 50% saat memiliki setidaknya 3 lapis Namisen."
+    }
+  },
+  "constellation3": {
+    "name": "To Admire the Flowers",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Kamisato Art: Kyouka</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Endless Flow",
+    "description": {
+      "0": "Setelah melancarkan <strong>Kamisato Art: Suiyuu</strong>, ATK SPD Normal Attack anggota party di sekitar akan meningkat 15% selama 15 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Bansui Ichiro",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Kamisato Art: Suiyuu</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Boundless Origin",
+    "description": {
+      "0": "Setelah menggunakan <strong>Kamisato Art: Kyouka</strong>, Serangan Shunsuiken milik Ayato selanjutnya akan membuat 2 serangan Shunsuiken tambahan saat mengenai musuh, setiap serangannya mengakibatkan DMG sebesar 450% ATK Ayato.",
+      "1": "Kedua serangan Shunsuiken ini tidak akan terpengaruh oleh Namisen."
+    }
+  }
+}

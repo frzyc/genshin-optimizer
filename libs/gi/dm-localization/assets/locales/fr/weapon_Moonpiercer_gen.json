@@ -1,0 +1,24 @@
+{
+  "name": "Perce-lune",
+  "description": {
+    "0": "Une arme que vous avez obtenue dans un conte d'aranara. Elle a la forme d'une flèche géante et peut être utilisée comme lance."
+  },
+  "passiveName": "Ombre lunaire en forêt",
+  "passiveDescription": {
+    "0": {
+      "0": "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d'Exubérance ou de Bourgeonnement, une feuille de renouveau est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente l'ATQ du personnage de <cryo>16 %</cryo> pendant 12 s. Une feuille de renouveau peut être créée de cette manière une fois toutes les 20 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d'Exubérance ou de Bourgeonnement, une feuille de renouveau est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente l'ATQ du personnage de <cryo>20 %</cryo> pendant 12 s. Une feuille de renouveau peut être créée de cette manière une fois toutes les 20 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d'Exubérance ou de Bourgeonnement, une feuille de renouveau est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente l'ATQ du personnage de <cryo>24 %</cryo> pendant 12 s. Une feuille de renouveau peut être créée de cette manière une fois toutes les 20 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d'Exubérance ou de Bourgeonnement, une feuille de renouveau est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente l'ATQ du personnage de <cryo>28 %</cryo> pendant 12 s. Une feuille de renouveau peut être créée de cette manière une fois toutes les 20 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d'Exubérance ou de Bourgeonnement, une feuille de renouveau est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente l'ATQ du personnage de <cryo>32 %</cryo> pendant 12 s. Une feuille de renouveau peut être créée de cette manière une fois toutes les 20 s. L'effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

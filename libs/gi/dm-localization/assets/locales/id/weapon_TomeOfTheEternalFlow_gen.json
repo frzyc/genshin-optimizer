@@ -1,0 +1,24 @@
+{
+  "name": "Tome of the Eternal Flow",
+  "description": {
+    "0": "Buku manual yang diturunkan dari generasi ke generasi di pusat pelatihan bawah air. Keberadaannya sudah tidak diketahui oleh orang saat ini."
+  },
+  "passiveName": "Aeon Wave",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan HP <cryo>16%</cryo>. Saat HP meningkat atau berkurang, DMG Charged Attack meningkat <cryo>14%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 3 lapis, dan dapat terpicu sekali setiap 0,3 detik. Saat memiliki 3 lapis atau saat durasi lapisan ke-3 diperbarui, akan memulihkan <cryo>8</cryo> poin Energy. Pemulihan Energy yang dapat diperoleh dengan cara ini dapat terpicu sekali setiap 12 detik."
+    },
+    "1": {
+      "0": "Meningkatkan HP <cryo>20%</cryo>. Saat HP meningkat atau berkurang, DMG Charged Attack meningkat <cryo>18%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 3 lapis, dan dapat terpicu sekali setiap 0,3 detik. Saat memiliki 3 lapis atau saat durasi lapisan ke-3 diperbarui, akan memulihkan <cryo>9</cryo> poin Energy. Pemulihan Energy yang dapat diperoleh dengan cara ini dapat terpicu sekali setiap 12 detik."
+    },
+    "2": {
+      "0": "Meningkatkan HP <cryo>24%</cryo>. Saat HP meningkat atau berkurang, DMG Charged Attack meningkat <cryo>22%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 3 lapis, dan dapat terpicu sekali setiap 0,3 detik. Saat memiliki 3 lapis atau saat durasi lapisan ke-3 diperbarui, akan memulihkan <cryo>10</cryo> poin Energy. Pemulihan Energy yang dapat diperoleh dengan cara ini dapat terpicu sekali setiap 12 detik."
+    },
+    "3": {
+      "0": "Meningkatkan HP <cryo>28%</cryo>. Saat HP meningkat atau berkurang, DMG Charged Attack meningkat <cryo>26%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 3 lapis, dan dapat terpicu sekali setiap 0,3 detik. Saat memiliki 3 lapis atau saat durasi lapisan ke-3 diperbarui, akan memulihkan <cryo>11</cryo> poin Energy. Pemulihan Energy yang dapat diperoleh dengan cara ini dapat terpicu sekali setiap 12 detik."
+    },
+    "4": {
+      "0": "Meningkatkan HP <cryo>32%</cryo>. Saat HP meningkat atau berkurang, DMG Charged Attack meningkat <cryo>30%</cryo>. Efek ini berlangsung selama 4 detik, dapat ditumpuk sampai 3 lapis, dan dapat terpicu sekali setiap 0,3 detik. Saat memiliki 3 lapis atau saat durasi lapisan ke-3 diperbarui, akan memulihkan <cryo>12</cryo> poin Energy. Pemulihan Energy yang dapat diperoleh dengan cara ini dapat terpicu sekali setiap 12 detik."
+    }
+  }
+}

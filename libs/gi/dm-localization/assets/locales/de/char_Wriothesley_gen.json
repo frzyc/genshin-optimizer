@@ -1,0 +1,174 @@
+{
+  "name": "Wriothesley",
+  "title": "Gesandter der einsamen Sünde",
+  "description": "Herzog vom Fort Méropide. Ein Herrscher, der sich in den finsteren Tiefen des Ozeans verborgen hält.",
+  "constellationName": "Cerberus",
+  "auto": {
+    "name": "Flinke Frostfaust",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Wriothesley kondensiert Eis in seinen Fäusten und führt bis zu 5 blitzschnelle Angriffe mit seinen <strong>„Sturmfäusten“</strong> aus, die <cryo>Kryo-Schaden</cryo> verursachen.",
+        "2": "Außerdem wird die Angriffsphase des Standardangriffs nach dem Auslösen der Elementarfähigkeit „Eiszahn-Ansturm“ oder dem Rennen für kurze Zeit nicht zurückgesetzt."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, springt in die Luft und führt eine <strong>„Gefrierende Sprungfaust“</strong> aus, die <cryo>Kryo-Flächenschaden</cryo> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <cryo>Kryo-Flächenschaden</cryo>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Eiszahn-Ansturm",
+    "description": {
+      "0": "Wriothesley reguliert seine Atmung, Rhythmus und Tempo, legt einen kurzen Sprint nach vorn hin, wechselt in den Zustand <strong>„Eiskalte Bestrafung“</strong> und wendet einen ungestümen Angriff an.",
+      "1": "<br/>",
+      "2": "<strong>Eiskalte Bestrafung</strong>",
+      "3": [
+        " Erhöht Wriothesleys Unterbrechungs-WDS.",
+        " Verstärkt Wriothesleys Sturmfäuste von <strong>Standardangriff: Flinke Frostfaust</strong> bei mehr als 50 % LP, wodurch sich der durch die Sturmfäuste verursachte Schaden erhöht. Bei Treffern wird eine bestimmte Menge an LP von Wriothesley verbraucht. Auf diese Weise können höchstens einmal alle 0,1 s LP verbraucht werden."
+      ],
+      "4": "Dieser Effekt wird aufgehoben, wenn Wriothesley ausgewechselt wird.",
+      "5": "<br/>",
+      "6": "<i>„Die Vergangenheit ward besiegelt, die Zukunft jedoch liegt in unserer Hand.“",
+      "7": "„Wenn du nicht willst, dass dein Schicksal von den Sünden des Moments verschlungen wird, dann solltest du das Licht eben jenes gegenwärtigen Moments wertschätzen.“</i>"
+    },
+    "skillParams": {
+      "0": "SCH der verstärkten Sturmfäuste",
+      "1": "LP-Verbrauch",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Schwarzgoldener Wolfsbiss",
+    "description": {
+      "0": "Wriothesley aktiviert seine Handschuhe und schlägt eine Gerade, die kontinuierlich den Bereich vor ihm mit Eiszapfen eindeckt, und mehrfach <cryo>Kryo-Flächenschaden</cryo> verursacht.",
+      "1": "<br/>",
+      "2": "<strong>Arkhe: Ousia</strong>",
+      "3": "Nachdem die Eiszapfen-Angriffe beendet wurden, geht eine Wogenklinge auf die Position des Gegners nieder, die mit Ousia versehenen <cryo>Kryo-Schaden</cryo> verursacht.",
+      "4": "<br/>",
+      "5": "<i>Es gibt ein paar Dinge, gegen die selbst der Herzog des Forts Méropide nichts auszurichten vermag ... zum Beispiel lästiger Papierkram, behördliche Pflichten, oder ... die Kleinen, die heimlich süße, aber schwer zu entfernende Sticker auf seine Handschuhe kleben.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Wogenklinge-SCH",
+      "2": "Abklingzeit",
+      "3": "Wogenklinge-Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tag des Plädoyers der Gerechtigkeit",
+    "description": {
+      "0": "Wriothesley erhält bei weniger als 60 % LP „Gebot der Gnade“, wodurch sein nächster heftiger Schlag von <strong>Standardangriff: Flinke Frostfaust</strong> zu „Rüge – Gefrierende Sprungfaust“ verstärkt wird. Es wird keine Ausdauer verbraucht, erhöht den Schaden um 50 % und stellt Wriothesley bei Treffern 30 % der max. LP wieder her.",
+      "1": "5 s Abklingzeit."
+    }
+  },
+  "passive2": {
+    "name": "Stunde der Vergeltung der Sünde",
+    "description": {
+      "0": "Befindet sich Wriothesley beim Erhöhen oder Verringern seiner aktuellen LP im Zustand „Eiskalte Bestrafung“ von <strong>Eiszahn-Ansturm</strong>, erhält „Eiskalte Bestrafung“ einen Stapel „Erlass der Anklage“. 5-fach stapelbar, jeder Stapel erhöht Wriothesleys ANG um 6 %."
+    }
+  },
+  "passive3": {
+    "name": "Die Gunst des Herzogs",
+    "description": {
+      "0": "Stellt beim Zusammensetzen von Material zum Aufstieg von Waffen mit einer Wahrscheinlichkeit von 10 % den 2-fachen Ertrag her."
+    }
+  },
+  "constellation1": {
+    "name": "Angst den Übeltätern",
+    "description": {
+      "0": "Ändert den Effekt „Gebot der Gnade“ von dem passiven Talent „Tag des Plädoyers der Gerechtigkeit“ wie folgt:",
+      "1": "Wriothesley erhält „Gebot der Gnade“, sobald der fünfte Angriff einer Kombo seiner Sturmfäuste trifft, während seine LP unter 60 % liegen oder er sich im Zustand „Eiskalte Bestrafung“ von <strong>Eiszahn-Ansturm</strong> befindet. 2,5 s Abklingzeit.",
+      "2": "<br/>",
+      "3": "Außerdem wird Rüge – Gefrierende Sprungfaust wie folgt verstärkt:",
+      "4": [
+        " Verursachter Schaden wird weiter auf bis zu 200 % erhöht.",
+        " Verlängert die Dauer von „Eiskalter Bestrafung“ um 4 s, wenn in diesem Zustand ein Treffer gelandet wird. Die Dauer von „Eiskalter Bestrafung“ kann während der Dauer eines Zustands nur einmal auf diese Weise verlängert werden."
+      ],
+      "5": "<br/>",
+      "6": "Das passive Talent „Tag des Plädoyers der Gerechtigkeit“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation2": {
+    "name": "Fesseln den Hochmütigen",
+    "description": {
+      "0": "Erhöht beim Auslösen von <strong>Schwarzgoldener Wolfsbiss</strong> den verursachten Schaden für jede Stapelung von „Erlass der Anklage“ des passiven Talents „Stunde der Vergeltung der Sünde“ um 40 %.",
+      "1": "Das passive Talent „Stunde der Vergeltung der Sünde“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "Bestrafung den Betrügern",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Standardangriff – Flinke Frostfaust</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Erlösung den Leidenden",
+    "description": {
+      "0": "Erhöht die Menge an LP, die Wriothesley durch Rüge – Gefrierende Sprungfaust wiederherstellt, auf 50 % seiner max. LP. Das passive Talent „Tag des Plädoyers der Gerechtigkeit“ muss zuerst freigeschaltet werden.",
+      "1": "Außerdem treten unterschiedliche Effekte in Kraft, wenn die so wiederhergestellten LP einen Überschuss aufweisen, abhängig davon, ob Wriothesley die aktuelle Figur ist oder nicht: Ist Wriothesley die aktuelle Figur, erhöht sich seine Angriffs-GSW 4 s lang um 20 %; befindet er sich inaktiv in der Truppe, erhöht sich die Angriffs-GSW aller eigenen Truppenmitglieder 6 s lang um 10 %. Die beiden Boni der Angriffs-GSW können nicht gestapelt werden."
+    }
+  },
+  "constellation5": {
+    "name": "Vergebung den zu Unrecht Beschuldigten",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Schwarzgoldener Wolfsbiss</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Trost den Unschuldigen",
+    "description": {
+      "0": "Erhöht die KT von Rüge – Gefrierende Sprungfaust um 10 %, den kritischen Schaden davon um 80 % und kann zusätzlich Eiszapfen erschaffen, die 100 % des ursprünglichen Schadens als <cryo>Kryo-Schaden</cryo> verursachen. Der auf diese Weise verursachte Schaden wird als Schaden des heftigen Schlags betrachtet.",
+      "1": "Das passive Talent „Tag des Plädoyers der Gerechtigkeit“ muss zuerst freigeschaltet werden."
+    }
+  }
+}

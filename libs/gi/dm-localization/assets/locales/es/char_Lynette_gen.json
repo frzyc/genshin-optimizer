@@ -1,0 +1,171 @@
+{
+  "name": "Lynette",
+  "title": "La Elegancia de las Sombras",
+  "description": "Una ayudante de magia poco habladora y expresiva. Es tan impredecible como un felino.",
+  "constellationName": "Felis Alba",
+  "auto": {
+    "name": "Estocada veloz",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ahora me ves...",
+    "description": {
+      "0": "Se cubre con una capa y ejecuta una acometida enigmática que inflige <anemo>Daño Anemo</anemo>.",
+      "1": "Cuando la acometida enigmática golpee a un enemigo, Lynette recupera Vida en función de su Vida Máx. y, en los 4 s siguientes, perderá cierta cantidad de Vida por segundo.",
+      "2": "La acometida enigmática producirá un efecto distinto dependiendo de si pulsas una vez o mantienes pulsada la habilidad.",
+      "3": "<br/>",
+      "4": "<strong>Pulsar una vez</strong>",
+      "5": "Ejecuta una acometida enigmática de manera inmediata.",
+      "6": "<br/>",
+      "7": "<strong>Mantener pulsado</strong>",
+      "8": "Lynette entra en el estado de “sombra enigmática”, durante el cual se mueve a toda velocidad y aplica una “marca de estoque sombrío” a un enemigo cercano. Mientras se mueve, puede controlar la dirección en la que esprinta y, al volver a pulsar una vez la habilidad, terminará de correr.",
+      "9": "Cuando dicho estado termina, Lynette ejecuta una acometida enigmática. Si hay algún enemigo cercano con una marca de estoque sombrío, Lynette se acercará a él en un instante antes de ejecutar la acometida enigmática.",
+      "10": "<br/>",
+      "11": "Como máximo, Lynette solo puede aplicar una marca de estoque sombrío a un enemigo, y si dicho enemigo se encuentra demasiado lejos de ella, la marca desaparecerá.",
+      "12": "<br/>",
+      "13": "<strong>Arjé: ousía</strong>",
+      "14": "Cada cierto tiempo, cuando Lynette ejecuta una acometida enigmática, en su lugar libera un filo fluyente cargado de energía ousía que inflige <anemo>Daño Anemo</anemo>.",
+      "15": "<br/>",
+      "16": "<i>“Y ahora, mira hacia el escenario y sigue disfrutando del espectáculo. La próxima vez que aparezca, será donde menos te lo esperes”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de acometida enigmática",
+      "1": "Daño de filo fluyente",
+      "2": "Intervalo de filo fluyente",
+      "3": "Curación al golpear",
+      "4": "Consumo de Vida",
+      "5": "Duración máx. al mantener pulsado",
+      "6": "TdE",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Truco: Desvío de atención",
+    "description": {
+      "0": "Lynette alza su capa para infligir <anemo>Daño Anemo en el AdE</anemo> y, con un hábil juego de manos, ¡hace aparecer una michicaja sorpresa gigante!",
+      "1": "<br/>",
+      "2": "<strong>Michicaja sorpresa</strong>",
+      "3": [
+        "Provoca a los enemigos cercanos para que la ataquen.",
+        "Inflige <anemo>Daño Anemo</anemo> periódicamente a los enemigos cercanos.",
+        "Cuando la michicaja sorpresa entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, cambiará al elemento correspondiente y cada cierto tiempo disparará contra un enemigo un proyectil michicromático que inflige daño de dicho elemento."
+      ],
+      "4": "Este tipo de cambio elemental solo puede ocurrir una vez mientras dura la habilidad.",
+      "5": "<br/>",
+      "6": "<i>“Mira aquí, fíjate bien. Es nuestro momento: el momento del milagro”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de michicaja sorpresa",
+      "2": "Daño de proyectil michicromático",
+      "3": "Duración de michicaja sorpresa",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sinergia oportuna",
+    "description": {
+      "0": "En los 10 s siguientes tras utilizar <strong>Truco: Desvío de atención</strong>, si en el equipo hay 1/2/3/4 personajes de tipos elementales distintos, el ATQ de todos los miembros del equipo aumenta en un 8/12/16/20%."
+    }
+  },
+  "passive2": {
+    "name": "Atrezo preparado",
+    "description": {
+      "0": "Cuando la michicaja sorpresa de <strong>Truco: Desvío de atención</strong> sufre un cambio elemental, el daño de la Habilidad Definitiva de Lynette aumenta en un 15% hasta que termine la duración de la michicaja."
+    }
+  },
+  "passive3": {
+    "name": "Hidrolocalización",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>bancos de peces revitalizantes</strong> cercanos en el minimapa y aumenta en un 25% la Resistencia Acuática y la Vida recuperados al tocar uno."
+    }
+  },
+  "constellation1": {
+    "name": "Filo revelasombras",
+    "description": {
+      "0": "Cuando la acometida enigmática de <strong>Ahora me ves...</strong> golpea a un enemigo con una marca de estoque sombrío, crea un vórtice en la ubicación del enemigo que atrae a los enemigos cercanos."
+    }
+  },
+  "constellation2": {
+    "name": "Enigmas sin fin",
+    "description": {
+      "0": "Cuando la michicaja sorpresa de <strong>Truco: Desvío de atención</strong> dispara un proyectil michicromático, saldrá disparado un proyectil adicional."
+    }
+  },
+  "constellation3": {
+    "name": "Cognición ilusoria",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Truco: Desvío de atención</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Sincronía perfecta",
+    "description": {
+      "0": "Aumenta en 1 las cargas de <strong>Ahora me ves...</strong>"
+    }
+  },
+  "constellation5": {
+    "name": "Oscuridad obstaculizadora",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Ahora me ves...</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "El ojo de la verdad",
+    "description": {
+      "0": "Cuando Lynette libera la acometida enigmática de <strong>Ahora me ves...</strong>, se <anemo>imbuye del elemento Anemo</anemo> y obtiene un 20% de <anemo>Bono de Daño Anemo</anemo> durante 6 s."
+    }
+  }
+}

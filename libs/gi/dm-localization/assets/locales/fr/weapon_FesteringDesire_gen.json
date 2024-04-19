@@ -1,0 +1,24 @@
+{
+  "name": "Croc suppurant",
+  "description": {
+    "0": "Une épée droite maléfique qui a soif de vie. Elle renferme un poison qui aurait le pouvoir de neutraliser un dragon."
+  },
+  "passiveName": "Soif insatiable",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT de la compétence élémentaire de <cryo>16 %</cryo> et son taux CRIT de <cryo>6 %</cryo>."
+    },
+    "1": {
+      "0": "Augmente les DGT de la compétence élémentaire de <cryo>20 %</cryo> et son taux CRIT de <cryo>7,5 %</cryo>."
+    },
+    "2": {
+      "0": "Augmente les DGT de la compétence élémentaire de <cryo>24 %</cryo> et son taux CRIT de <cryo>9 %</cryo>."
+    },
+    "3": {
+      "0": "Augmente les DGT de la compétence élémentaire de <cryo>28 %</cryo> et son taux CRIT de <cryo>10,5 %</cryo>."
+    },
+    "4": {
+      "0": "Augmente les DGT de la compétence élémentaire de <cryo>32 %</cryo> et son taux CRIT de <cryo>12 %</cryo>."
+    }
+  }
+}

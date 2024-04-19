@@ -1,0 +1,24 @@
+{
+  "name": "Final des profondeurs",
+  "description": {
+    "0": "Cette longue épée est aussi silencieuse que les profondeurs mystérieuses de l'océan. Elle est encore plus ancienne que son style ne le laisse supposer."
+  },
+  "passiveName": "Un ultime sublime",
+  "passiveDescription": {
+    "0": {
+      "0": "Libérer une compétence élémentaire augmente l'ATQ de <cryo>12 %</cryo> pendant 15 s et accorde un engagement vital d'une valeur équivalant à 25 % des PV max, cet effet pouvant être déclenché une fois toutes les 10 s. Lorsque l'engagement vital disparaît, l'ATQ augmente pendant 15 s d'une valeur équivalant à <cryo>2,4 %</cryo> de la valeur de l'engagement dissipé, l'ATQ pouvant être augmentée d'un maximum de <cryo>150</cryo> pts de cette manière."
+    },
+    "1": {
+      "0": "Libérer une compétence élémentaire augmente l'ATQ de <cryo>15 %</cryo> pendant 15 s et accorde un engagement vital d'une valeur équivalant à 25 % des PV max, cet effet pouvant être déclenché une fois toutes les 10 s. Lorsque l'engagement vital disparaît, l'ATQ augmente pendant 15 s d'une valeur équivalant à <cryo>3 %</cryo> de la valeur de l'engagement dissipé, l'ATQ pouvant être augmentée d'un maximum de <cryo>187,5</cryo> pts de cette manière."
+    },
+    "2": {
+      "0": "Libérer une compétence élémentaire augmente l'ATQ de <cryo>18 %</cryo> pendant 15 s et accorde un engagement vital d'une valeur équivalant à 25 % des PV max, cet effet pouvant être déclenché une fois toutes les 10 s. Lorsque l'engagement vital disparaît, l'ATQ augmente pendant 15 s d'une valeur équivalant à <cryo>3,6 %</cryo> de la valeur de l'engagement dissipé, l'ATQ pouvant être augmentée d'un maximum de <cryo>225</cryo> pts de cette manière."
+    },
+    "3": {
+      "0": "Libérer une compétence élémentaire augmente l'ATQ de <cryo>21 %</cryo> pendant 15 s et accorde un engagement vital d'une valeur équivalant à 25 % des PV max, cet effet pouvant être déclenché une fois toutes les 10 s. Lorsque l'engagement vital disparaît, l'ATQ augmente pendant 15 s d'une valeur équivalant à <cryo>4,2 %</cryo> de la valeur de l'engagement dissipé, l'ATQ pouvant être augmentée d'un maximum de <cryo>262,5</cryo> pts de cette manière."
+    },
+    "4": {
+      "0": "Libérer une compétence élémentaire augmente l'ATQ de <cryo>24 %</cryo> pendant 15 s et accorde un engagement vital d'une valeur équivalant à 25 % des PV max, cet effet pouvant être déclenché une fois toutes les 10 s. Lorsque l'engagement vital disparaît, l'ATQ augmente pendant 15 s d'une valeur équivalant à <cryo>4,8 %</cryo> de la valeur de l'engagement dissipé, l'ATQ pouvant être augmentée d'un maximum de <cryo>300</cryo> pts de cette manière."
+    }
+  }
+}

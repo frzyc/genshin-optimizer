@@ -1,0 +1,163 @@
+{
+  "name": "Navia",
+  "title": "Leiterin der leuchtenden Rose",
+  "description": "Die amtierende Präsidentin der Spina di Rosula, eine liebenswerte, pflichtbewusste und großartige Chefin.",
+  "constellationName": "Rosa Multiflora",
+  "auto": {
+    "name": "Freimütige Verweigerung",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht fortlaufend Ausdauer, wirbelt das Großschwert und greift Gegner in der Umgebung an.",
+        "2": "Schwingt das Schwert am Ende mit besonders großer Wucht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge pro Runde",
+      "5": "SCH heftiger Schläge am Ende",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "Höchstdauer",
+      "8": "SCH beim Fallen",
+      "9": "SCH beim Fallen aus niedriger/großer Höhe",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Zeremonieller Kristallschuss",
+    "description": {
+      "0": "Wenn eine Figur in der Truppe einen Elementarsplitter erhält, der durch die Reaktion „Kristallisation“ erzeugt wurde, erhält Navia einen „kristallscharfen Splitter“. Navia kann bis zu 6 Splitter ansammeln. Bei jedem Auslösen wird die Wirkungsdauer der vorhandenen „kristallscharfen Splitter“ aktualisiert.",
+      "1": "Wenn sie feuert, verbraucht Navia alle „kristallscharfen Splitter“ und öffnet ihren eleganten, aber tödlichen Musketenschirm, der mehrere Rosenkristallkugeln abfeuert, die Gegner durchdringen können und getroffenen Gegnern <geo>Geo-Schaden</geo> zufügen.",
+      "2": "Wenn 0/1/2/3 oder mehr „kristallscharfe Splitter“ verbraucht sind, werden 5/7/9/11 Rosenkristallkugeln abgefeuert. Je mehr Rosenkristallkugeln einen Gegner treffen, desto höher ist der verursachte Schaden. Wenn alle 11 Rosenkristallkugeln ein einzelnes Ziel treffen, verursachen sie 200 % des ursprünglichen Schadens.",
+      "3": "Wenn mehr als 3 „kristallscharfe Splitter“ verbraucht werden, erhöht jeder weitere „kristallscharfe Splitter“ den von diesem Schuss verursachten Schaden zusätzlich um 15 %.",
+      "4": "<br/>",
+      "5": "<strong>Gedrückt halten</strong>",
+      "6": "Tritt in den Zielmodus ein und sammelt fortlaufend Elementarsplitter in der Nähe ein, die durch die Reaktion „Kristallisation“ entstehen. Feuert beim Loslassen nach dem Gedrückthalten Rosenkristallkugeln mit demselben Effekt ab, wie wenn die Fähigkeit gedrückt wird.",
+      "7": "<br/>",
+      "8": "Kann anfänglich 2-mal angewendet werden.",
+      "9": "<br/>",
+      "10": "<strong>Arkhe: Ousia</strong>",
+      "11": "Navia beschwört in regelmäßigen Abständen beim Schuss mit ihrem Musketenschirm eine Wogenklinge, die mit Ousia versehenen <geo>Geo-Schaden</geo> verursacht.",
+      "12": "<br/>",
+      "13": "<i>„Ein wesentlicher Bestandteil der Etikette ist es, den angemessenen Abstand zu denjenigen zu wahren, die auf Distanz gehalten werden sollen. Natürlich gibt es viele Möglichkeiten, dies zu tun ...“</i>"
+    },
+    "skillParams": {
+      "0": "Basis-SCH Rosenkristallkugel",
+      "1": "Dauer der kristallscharfen Splitter",
+      "2": "Wogenklinge-SCH",
+      "3": "Wogenklinge-Intervall",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Wie die sich über den klaren Himmel ausbreitende Ehrensalve",
+    "description": {
+      "0": "Schießt als Präsidentin der Spina di Rosula eine prächtige goldene Ehrensalve ab. Entfesselt ein massives Kanonenbombardement auf die Gegner vor sich, das <geo>Geo-Flächenschaden</geo> verursacht und danach eine Zeit lang fortlaufend Kanonenfeuerunterstützung bietet, die in regelmäßigen Abständen in der Nähe befindlichen Gegnern <geo>Geo-Schaden</geo> zufügt.",
+      "1": "Wenn die Kanone einen Gegner trifft, erhält Navia 1 „kristallscharfen Splitter“, 2,4 s Abklingzeit.",
+      "2": "<br/>",
+      "3": "<i>„Die Ehrensalve der Spina di Rosula ist eine Vorfeier des erfolgreichen Abschlusses unserer Verhandlungen und wird kurz vor Beginn der Gespräche abgefeuert. Bitte nicht falsch verstehen, sie stellt in keiner Weise eine Drohung dar.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH der Feuerunterstützung",
+      "2": "Dauer der Feuerunterstützung",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Unbekannte Vertriebskanäle",
+    "description": {
+      "0": "Wandelt den durch Navias Standardangriffe, heftige Schläge und Angriffe aus dem Fall verursachten Schaden 4 s lang nach dem Einsatz von <strong>Zeremonieller Kristallschuss</strong> in <geo>Geo-Schaden</geo> um, der nicht von anderen Elementen überdeckt werden kann. Erhöht außerdem den durch Navias Standardangriffe, heftige Schläge und Angriffe aus dem Fall verursachten Schaden um 40 %."
+    }
+  },
+  "passive2": {
+    "name": "Netzwerk der gegenseitigen Unterstützung",
+    "description": {
+      "0": "Erhöht für jede <pyro>Pyro</pyro>-/<electro>Elektro</electro>-/<cryo>Kryo</cryo>-/<hydro>Hydro</hydro>-Figur in der Truppe den ANG von Navia um 20 %, 2-fach stapelbar."
+    }
+  },
+  "passive3": {
+    "name": "Sorgfältig durchgeführte Transaktion",
+    "description": {
+      "0": "Bringt bei 20-stündigen Erkundungsentsendungen in Fontaine 25 % mehr Belohnungen."
+    }
+  },
+  "constellation1": {
+    "name": "Die Regeln einer Dame zur Aufrechterhaltung einer höflichen Distanz",
+    "description": {
+      "0": "Stellt Navia für jeden „kristallscharfen Splitter“, der während des Einsetzens von <strong>„Zeremonieller Kristallschuss“</strong> verbraucht wird, 3 Punkte Elementarenergie wieder her und verringert die Abklingzeit von <strong>„Wie die sich über den klaren Himmel ausbreitende Ehrensalve“</strong> um 1 s. Bis zu 9 Punkte Elementarenergie können auf diese Weise gewonnen werden und die Abklingzeit von „Wie die sich über den klaren Himmel ausbreitende Ehrensalve“ kann um bis zu 3 s verringert werden."
+    }
+  },
+  "constellation2": {
+    "name": "Das Streben der Chefin nach dem Sieg",
+    "description": {
+      "0": "Erhöht für jeden „kristallscharfen Splitter“, der während des Einsetzens von <strong>„Zeremonieller Kristallschuss“</strong> verbraucht wird, die KT für die diesmalige Anwendung von „Zeremonieller Kristallschuss“ um 12 %. Auf diese Weise können die KT um bis zu 36 % erhöht werden.",
+      "1": "Löst, wenn der Schuss von „Zeremonieller Kristallschuss“ einen Gegner trifft, zusätzlich einen Schuss der Kanonenfeuerunterstützung von <strong>„Wie die sich über den klaren Himmel ausbreitende Ehrensalve“</strong> in der Nähe des getroffenen Gegners aus. Höchstens eine solche Kanonenfeuerunterstützung kann jedes Mal ausgelöst werden, wenn „Zeremonieller Kristallschuss“ verwendet wird, und der auf diese Weise durch „Kanonenfeuerunterstützung“ verursachte Schaden wird als Schaden der Spezialfähigkeit betrachtet."
+    }
+  },
+  "constellation3": {
+    "name": "Der weitreichende Horizont einer Geschäftsfrau",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Zeremonieller Kristallschuss</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Die Eidverpflichtete kapituliert nie",
+    "description": {
+      "0": "Verringert, wenn <strong>„Wie die sich über den klaren Himmel ausbreitende Ehrensalve“</strong> einen Gegner trifft, dessen <geo>Geo-WDS</geo> 8 s lang um 20 %."
+    }
+  },
+  "constellation5": {
+    "name": "Entschlossene Verhandlungen der Unterhändlerin",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Wie die sich über den klaren Himmel ausbreitende Ehrensalve</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Die flexible Finesse der Chefin der Spina",
+    "description": {
+      "0": "Erhöht für jeden „kristallscharfen Splitter“ nach den ersten 3 verbrauchten Splittern, der während des Einsetzens des <strong>Zeremonieller Kristallschuss</strong> verbraucht wird, den KSCH des diesmaligen „Zeremonieller Kristallschuss“ um 45 %. Alle Splitter, die nach den ersten drei verbraucht werden, werden nach dem Einsetzen der Fähigkeit an Navia zurückgegeben."
+    }
+  }
+}

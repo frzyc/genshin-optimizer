@@ -1,0 +1,24 @@
+{
+  "name": "Kanlı Büyük Kılıç",
+  "description": {
+    "0": "Ejder kanıyla kaplandığı için dokunulmaz olduğu söylenen bir çelik kılıç. Ancak bu silahı kuşanan kişi için aynı şey söylenemez."
+  },
+  "passiveName": "Ateş ve Yıldırımın Laneti",
+  "passiveDescription": {
+    "0": {
+      "0": "Ateş veya Elektrikten etkilenen düşmanlara verilen Hasarı <cryo>%12</cryo> artırır."
+    },
+    "1": {
+      "0": "Ateş veya Elektrikten etkilenen düşmanlara verilen Hasarı <cryo>%15</cryo> artırır."
+    },
+    "2": {
+      "0": "Ateş veya Elektrikten etkilenen düşmanlara verilen Hasarı <cryo>%18</cryo> artırır."
+    },
+    "3": {
+      "0": "Ateş veya Elektrikten etkilenen düşmanlara verilen Hasarı <cryo>%21</cryo> artırır."
+    },
+    "4": {
+      "0": "Ateş veya Elektrikten etkilenen düşmanlara verilen Hasarı <cryo>%24</cryo> artırır."
+    }
+  }
+}

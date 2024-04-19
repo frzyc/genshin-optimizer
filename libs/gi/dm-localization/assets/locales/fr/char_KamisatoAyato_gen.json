@@ -1,0 +1,168 @@
+{
+  "name": "Kamisato Ayato",
+  "title": "Pilier de vaillance",
+  "description": "Le jeune, mais néanmoins très talentueux, chef du Clan Kamisato de la Commission culturelle. Cultivé et poli, c'est un homme aux multiples facettes.",
+  "constellationName": "Cypressus Custos",
+  "auto": {
+    "name": "École Kamisato - Transition",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour se propulser en avant et déclencher un iai."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "École Kamisato : Beauté réfléchie",
+    "description": {
+      "0": "Kamisato Ayato change d'emplacement et entre dans l'état Réflexion torrentielle.",
+      "1": "Après ce déplacement, il laisse une illusion aqueuse à son emplacement d'origine, qui, une fois complètement formée, explose après un certain temps ou si des ennemis sont à proximité, infligeant des <hydro>DGT Hydro de zone</hydro>.",
+      "2": "<br/>",
+      "3": "<strong>Réflexion torrentielle</strong>",
+      "4": "Dans cet état, Ayato utilise son Shunsuiken pour attaquer avec une rapidité aveuglante, convertissant les DGT infligés par ses attaques normales en <hydro>DGT Hydro de zone</hydro> ne pouvant pas être enchantés.",
+      "5": "Les propriétés suivantes sont également appliquées :",
+      "6": [
+        " Après avoir touché un ennemi avec une attaque de Shunsuiken, Ayato obtient l'effet Flash onduleux, augmentant les DGT infligés par son Shunsuiken en fonction de ses PV max actuels. Le flash onduleux peut être initialement cumulé 4 fois maximum, et 1 cumul peut être obtenu une fois toutes les 0,1 s grâce à une attaque de Shunsuiken. Cet effet prend fin quand l'état Réflexion torrentielle se termine.",
+        " La RÉS à l'interruption d'Ayato augmente.",
+        " Il est impossible d'utiliser des attaques chargées ou plongeantes."
+      ],
+      "7": "<br/>",
+      "8": "L'état Réflexion torrentielle cesse lorsqu'Ayato quitte le champ de bataille. Utiliser à nouveau École Kamisato : Beauté réfléchie dans l'état Réflexion torrentielle y mettra fin.",
+      "9": "<br/>",
+      "10": "<i>« Quand, je me demande, en êtes-vous arrivé à penser que vous aviez le dessus ? »</i>",
+      "11": "<i>Ayato est ainsi qu'il s'agisse de prouesses martiales ou d'intrigues politiques... Cependant, afin de préserver la dignité des autres Commissaires, il ne leur dit pas de telles choses en face. Ainsi, seuls Thomas, Itto et Ayaka ont déjà entendu ces mots.</i>"
+    },
+    "skillParams": {
+      "0": "DGT 1er coup de Shunsuiken",
+      "1": "DGT 2e coup de Shunsuiken",
+      "2": "DGT 3e coup de Shunsuiken",
+      "3": "Durée Réflexion torrentielle",
+      "4": "Bonus de DGT flash onduleux",
+      "5": "DGT illusion aqueuse",
+      "6": "Durée illusion aqueuse",
+      "7": "Temps de recharge",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "École Kamisato : Jardin d'eau",
+    "description": {
+      "0": "Dévoile un jardin de pureté qui étouffe toute cacophonie en son sein.",
+      "1": "Tant que cet espace existe, des lames de rosée pleuvent de façon continue pour attaquer les adversaires dans la zone, leur infligeant des <hydro>DGT Hydro</hydro> et augmentant les DGT des attaques normales des personnages à l'intérieur.",
+      "2": "<br/>",
+      "3": "<i>« Je peux les voir, vous savez... Les ondulations de votre cœur battant dans ce royaume aux eaux calmes. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT lame de rosée",
+      "1": "Bonus ATQ normale",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "École Kamisato : Clarté de bruine",
+    "description": {
+      "0": "<strong>École Kamisato : Beauté réfléchie</strong> obtient les propriétés suivantes :",
+      "1": [
+        " 2 cumuls de flash onduleux sont accordés lors de l'utilisation.",
+        " Quand une illusion aqueuse explose, Ayato obtient un effet de flash onduleux équivalant au nombre maximum de cumuls possible."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "École Kamisato : Avènement de la pleine lune",
+    "description": {
+      "0": "Lorsque Kamisato Ayato fait partie de l'équipe mais n'est pas déployé, et s'il possède moins de 40 pts d'énergie élémentaire, il en récupère 2 pts toutes les secondes."
+    }
+  },
+  "passive3": {
+    "name": "École Kamisato : Cuisine du jour",
+    "description": {
+      "0": "18 % de chances d'obtenir un plat suspect supplémentaire du même type lorsque vous cuisinez un plat parfait."
+    }
+  },
+  "constellation1": {
+    "name": "Reflet gracieux",
+    "description": {
+      "0": "Les DGT infligés par une attaque de <strong>Shunsuiken</strong> augmentent de 40 % contre les ennemis dont les PV sont inférieurs ou égaux à 50 %."
+    }
+  },
+  "constellation2": {
+    "name": "Source du monde",
+    "description": {
+      "0": "Le <strong>flash onduleux</strong> peut maintenant être cumulé 5 fois maximum. Lorsqu'Ayato possède au moins 3 cumuls de flash onduleux, ses PV max augmentent de 50 %."
+    }
+  },
+  "constellation3": {
+    "name": "Contemplation des fleurs",
+    "description": {
+      "0": "Niveau d'aptitude <strong>École Kamisato : Beauté réfléchie</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Flux ininterrompu",
+    "description": {
+      "0": "Après avoir utilisé <strong>École Kamisato : Jardin d'eau</strong>, la VIT d'attaque des attaques normales des personnages de l'équipe à proximité augmente de 15 % pendant 15 s."
+    }
+  },
+  "constellation5": {
+    "name": "Rosée de mille gouttes",
+    "description": {
+      "0": "Niveau d'aptitude <strong>École Kamisato : Jardin d'eau</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Origine illimitée",
+    "description": {
+      "0": "Après avoir utilisé <strong>École Kamisato : Beauté réfléchie</strong>, la prochaine attaque de Shunsuiken d'Ayato déclenche 2 attaques supplémentaires de Shunsuiken en touchant un ennemi, chaque attaque supplémentaire infligeant des DGT d'une valeur équivalant à 450 % de l'ATQ d'Ayato.",
+      "1": "Ces deux attaques supplémentaires ne seront pas affectées par l'effet Flash onduleux."
+    }
+  }
+}

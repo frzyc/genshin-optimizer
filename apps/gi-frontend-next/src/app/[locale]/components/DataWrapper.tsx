@@ -1,9 +1,9 @@
 'use client'
-import type { ReactNode } from 'react'
 import {
   GenshinUserDataWrapper,
   UserDataWrapper,
-} from '@genshin-optimizer/gi-ui-next'
+} from '@genshin-optimizer/gi/ui-next'
+import type { ReactNode } from 'react'
 
 export default function DataWrapper({ children }: { children: ReactNode }) {
   return (

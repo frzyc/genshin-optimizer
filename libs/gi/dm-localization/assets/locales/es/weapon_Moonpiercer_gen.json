@@ -1,0 +1,24 @@
+{
+  "name": "Perforalunas",
+  "description": {
+    "0": "Un arma obtenida a través de una de las historias de los aranara. Al tener la forma de una punta de flecha gigante, se puede usar como lanza."
+  },
+  "passiveName": "Sombras de la luna",
+  "passiveDescription": {
+    "0": {
+      "0": "Al causar una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar, se crea cerca del personaje una hoja de la reencarnación que existirá durante 10 s. El ATQ del personaje que la recoja aumentará en un <cryo>16%</cryo> durante 12 s. Solo se puede crear una hoja de la reencarnación cada 20 s de esta manera. Este efecto también se puede activar cuando el personaje está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Al causar una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar, se crea cerca del personaje una hoja de la reencarnación que existirá durante 10 s. El ATQ del personaje que la recoja aumentará en un <cryo>20%</cryo> durante 12 s. Solo se puede crear una hoja de la reencarnación cada 20 s de esta manera. Este efecto también se puede activar cuando el personaje está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Al causar una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar, se crea cerca del personaje una hoja de la reencarnación que existirá durante 10 s. El ATQ del personaje que la recoja aumentará en un <cryo>24%</cryo> durante 12 s. Solo se puede crear una hoja de la reencarnación cada 20 s de esta manera. Este efecto también se puede activar cuando el personaje está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Al causar una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar, se crea cerca del personaje una hoja de la reencarnación que existirá durante 10 s. El ATQ del personaje que la recoja aumentará en un <cryo>28%</cryo> durante 12 s. Solo se puede crear una hoja de la reencarnación cada 20 s de esta manera. Este efecto también se puede activar cuando el personaje está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Al causar una reacción de Quemadura, Aceleración, Intensificación, Propagación, Florecimiento, Sobreflorecimiento o Crepitar, se crea cerca del personaje una hoja de la reencarnación que existirá durante 10 s. El ATQ del personaje que la recoja aumentará en un <cryo>32%</cryo> durante 12 s. Solo se puede crear una hoja de la reencarnación cada 20 s de esta manera. Este efecto también se puede activar cuando el personaje está en tu equipo pero no en uso."
+    }
+  }
+}

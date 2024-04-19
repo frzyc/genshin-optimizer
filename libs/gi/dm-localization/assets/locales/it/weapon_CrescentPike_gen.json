@@ -1,0 +1,24 @@
+{
+  "name": "Lancia di mezzaluna",
+  "description": {
+    "0": "Un'arma esotica con una lama estremamente lunga alla sommità e un'altra a forma di mezzaluna alla base. Trasportata a Liyue da mercanti stranieri. Con la pratica, può infliggere gravi danni."
+  },
+  "passiveName": "Ago energizzante",
+  "passiveDescription": {
+    "0": {
+      "0": "Dopo aver raccolto una sfera o particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>20%</cryo> dell'ATT per 5 s."
+    },
+    "1": {
+      "0": "Dopo aver raccolto una sfera o particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>25%</cryo> dell'ATT per 5 s."
+    },
+    "2": {
+      "0": "Dopo aver raccolto una sfera o particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>30%</cryo> dell'ATT per 5 s."
+    },
+    "3": {
+      "0": "Dopo aver raccolto una sfera o particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>35%</cryo> dell'ATT per 5 s."
+    },
+    "4": {
+      "0": "Dopo aver raccolto una sfera o particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>40%</cryo> dell'ATT per 5 s."
+    }
+  }
+}

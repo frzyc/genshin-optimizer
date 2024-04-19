@@ -1,0 +1,173 @@
+{
+  "name": "Bennett",
+  "title": "Prince de la guigne",
+  "description": "Un jeune aventurier originaire de Mondstadt. Sa gentillesse n'a d'égale que sa guigne.",
+  "constellationName": "Rota Calamitas",
+  "auto": {
+    "name": "Épée chanceuse",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Surpassion",
+    "description": {
+      "0": "Bennett concentre l'élément Pyro et sa passion pour l'aventure sur son épée. Différentes choses se produisent selon le niveau de passion atteint...",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Bennett exécute un coup rapide de sa lame enflammée, infligeant des <pyro>DGT Pyro</pyro> aux ennemis en face.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Bennett effectue une charge qui donne des résultats différents selon le niveau de charge.",
+      "7": [
+        " Niveau 1 : Bennett exécute une seconde attaque, qui inflige des <pyro>DGT Pyro</pyro> et projette les ennemis en l'air."
+      ],
+      "8": "<br/>",
+      "9": "Niveau 2 : Une troisième attaque complète l'enchaînement, celle-ci infligeant d'importants <pyro>DGT Pyro</pyro>. L'attaque se termine par une explosion, qui projette simultanément Bennett et les ennemis dans les airs.",
+      "10": "Bennett ne subit pas de DGT lorsqu'il est projeté.",
+      "11": "<br/>",
+      "12": "<i>Une attaque Pyro emplie de la passion et des espoirs de Bennett, mais passion débordante signifie surcharge, et qui dit surcharge dit explosion.</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "DGT après 1e charge",
+      "2": "DGT après 2e charge",
+      "3": "DGT explosion",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Merveilleux voyage",
+    "description": {
+      "0": "Bennett exécute une attaque sautée qui inflige des <pyro>DGT Pyro</pyro> et génère un champ vertueux.",
+      "1": "<br/>",
+      "2": "<strong>Champ vertueux</strong>",
+      "3": [
+        " Les personnages se trouvant dans le champ et ayant moins de 70 % de PV sont soignés d'une quantité de PV proportionnelle aux PV max de Bennett.",
+        " Les personnages se trouvant dans le champ et dont les PV sont supérieurs à 70 % obtiennent un bonus d'ATQ proportionnel à l'ATQ de base de Bennett.",
+        " Le champ vertueux applique l'<pyro>élément Pyro</pyro> à tous les personnages qui s'y trouvent."
+      ],
+      "4": "<br/>",
+      "5": "<i>Malgré tous les dangers qui ne manquent jamais de venir ponctuer chaque périple de la Bande à Benny, Bennett, son unique membre, préfère continuer à dire qu'il n'y a rien de tel qu'un peu d'inattendu pour pimenter une aventure, bien sûr.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Soins continus",
+      "2": "Bonus d'ATQ",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Renouveau de la passion",
+    "description": {
+      "0": "Diminue le TdR de <strong>Surpassion</strong> de 20 %."
+    }
+  },
+  "passive2": {
+    "name": "Enthousiasme intrépide",
+    "description": {
+      "0": "Dans le champ de <strong>Merveilleux voyage</strong>, <strong>Surpassion</strong> bénéficie des effets suivants :",
+      "1": [
+        " Diminue le TdR de 50 %.",
+        " Ne projette pas Bennett en l'air en niveau 2 de charge."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "R.A.S.",
+    "description": {
+      "0": "Diminue la durée d'une expédition de 25 % lorsqu'elle se déroule à Mondstadt."
+    }
+  },
+  "constellation1": {
+    "name": "Perspective de voyage",
+    "description": {
+      "0": "Le bonus d'ATQ conféré par <strong>Merveilleux voyage</strong> n'est plus soumis à la restriction de PV, et augmente numériquement l'ATQ de base de Bennett de 20 %."
+    }
+  },
+  "constellation2": {
+    "name": "Brise-désespoir",
+    "description": {
+      "0": "La recharge d'énergie de Bennett augmente de 30 % lorsque ses PV sont inférieurs à 70 %."
+    }
+  },
+  "constellation3": {
+    "name": "Passion ardente",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Surpassion</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Enthousiasme éternel",
+    "description": {
+      "0": "L'utilisation d'une attaque normale lors de l'exécution de la deuxième attaque du niveau 1 de charge de <strong>Surpassion</strong> permet d'effectuer une attaque supplémentaire.",
+      "1": "Celle-ci inflige 135 % des DGT de la deuxième attaque."
+    }
+  },
+  "constellation5": {
+    "name": "Ouverture d'âme",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Merveilleux voyage</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Feu et courage",
+    "description": {
+      "0": "Le champ de <strong>Merveilleux voyage</strong> confère à tous les personnages de l'équipe déployés et armés d'une épée à une main, à deux mains ou d'une arme d'hast qui s'y trouvent un <pyro>bonus de DGT Pyro</pyro> de 15 %, ainsi qu'un <pyro>enchantement Pyro</pyro>."
+    }
+  }
+}

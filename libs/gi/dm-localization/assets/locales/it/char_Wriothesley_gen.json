@@ -1,0 +1,174 @@
+{
+  "name": "Wriothesley",
+  "title": "Emissario di colpe silenti",
+  "description": "Il Duca di Forte Méropide, misterioso signore delle torbide profondità.",
+  "constellationName": "Cerberus",
+  "auto": {
+    "name": "Pugni del gelo veemente",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Wriothesley convoglia il gelo sul suo pugno per sferrare dei potenti <strong>Pugni espulsori</strong>, eseguendo fino a 5 attacchi rapidi che infliggono <cryo>DAN da Cryo</cryo>.",
+        "2": "Anche dopo aver usato un Assalto della zanna di ghiaccio o uno Scatto, la combo di attacchi normali non si azzera per alcuni istanti."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una data quantità di vigore per eseguire un balzo e sferrare un <strong>Pugno guizzante</strong>, infliggendo <cryo>DAN da Cryo ad area</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e <cryo>DAN da Cryo ad area</cryo> all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Assalto della zanna di ghiaccio",
+    "description": {
+      "0": "Regolando il respiro, il ritmo e l'andatura, Wriothesley esegue uno Scatto in avanti per un breve tratto ed entra nello stato di <strong>Punizione rigente</strong>, scatenando attacchi più potenti del normale.",
+      "1": "<br/>",
+      "2": "<strong>Punizione rigente</strong>",
+      "3": [
+        " Aumenta la resistenza all'interruzione di Wriothesley.",
+        " Se i suoi PS sono superiori a un 50%, potenzia i Pugni espulsori di <strong>Attacco normale: Pugni del gelo veemente</strong> aumentando i DAN inflitti. Quando uno di tali attacchi va a segno, una certa quantità dei PS di Wriothesley si consuma. Tale perdita di PS può verificarsi solo una volta ogni 0,1 s."
+      ],
+      "4": "Questo effetto viene annullato se Wriothesley lascia il campo.",
+      "5": "<br/>",
+      "6": "<i>\"Le condanne del passato sono solo un ricordo. Ciò che davvero importa sono le scelte future.",
+      "7": "Se non vuoi che il peccato di un singolo istante ti consumi, allora fai tesoro di quell'istante.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Pugno espulsore potenziato",
+      "1": "Costo PS",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Morso del lupo brunauro",
+    "description": {
+      "0": "Attivando i suoi guantoni da pugile, Wriothesley sferra un diretto di ghiaccio condensato, dopodiché usa un Impatto glaciale per infliggere più iterazioni di <cryo>DAN da Cryo ad area</cryo> di fronte a sé.",
+      "1": "<br/>",
+      "2": "<strong>Archè: Ousia</strong>",
+      "3": "Quando l'effetto dell'Impatto glaciale termina, una Lama nascente precipita nella posizione dell'avversario, infliggendo <cryo>DAN da Cryo</cryo> di polarità Ousia.",
+      "4": "<br/>",
+      "5": "<i>Ci sono cose su cui perfino il Duca di Forte Méropide non ha alcun controllo... Le scartoffie complicate, per esempio. O le frivolezze di un supervisore. Oppure... i bambini che incollano sui guantoni da pugile una sfilza di adesivi bellissimi da vedere ma difficili da rimuovere.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Lama nascente",
+      "2": "TdR",
+      "3": "TdR Lama nascente",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Supplica di giustizia",
+    "description": {
+      "0": "Se Wriothesley possiede meno di un 60% dei PS, il personaggio ottiene un Rimprovero magnanimo. Il successivo attacco caricato di <strong>Attacco normale: Pugni del gelo veemente</strong> si potenzia per diventare Rimprovero: Pugno guizzante. Quest'ultimo non consuma vigore, infligge un 50% di DAN in più e ripristina un 30% dei PS max di Wriothesley all'impatto.",
+      "1": "È possibile ottenere Rimprovero magnanimo in questo modo ogni 5 s."
+    }
+  },
+  "passive2": {
+    "name": "Ascrizione del peccato",
+    "description": {
+      "0": "Quando i PS attuali di Wriothesley aumentano o diminuiscono mentre è nello stato di Punizione rigente conferito da <strong>Assalto della zanna di ghiaccio</strong>, Punizione rigente ottiene 1 accumulo di Editto d'accusa, fino a un massimo di 5. Ogni accumulo aumenta di un 6% l'ATT di Wriothesley."
+    }
+  },
+  "passive3": {
+    "name": "Grazia del Duca",
+    "description": {
+      "0": "Quando Wriothesley crea materiali d'ascensione delle armi, ha un 10% di probabilità di ricevere il doppio del prodotto."
+    }
+  },
+  "constellation1": {
+    "name": "Terrore per i malfattori",
+    "description": {
+      "0": "Il Rimprovero magnanimo del talento passivo Supplica di giustizia riceve le seguenti modifiche.",
+      "1": "Quando i PS di Wriothesley sono inferiori a un 60%, o se il personaggio è nello stato di Punizione rigente scatenato da <strong>Assalto della zanna di ghiaccio</strong>, quando il quinto Pugno espulsore va a segno, il personaggio ottiene 1 effetto di Rimprovero magnanimo. È possibile ottenere tale effetto una volta ogni 2,5 s.",
+      "2": "<br/>",
+      "3": "Inoltre, Rimprovero: Pugno guizzante ottiene i seguenti potenziamenti:",
+      "4": [
+        " il bonus DAN ottenuto aumenta ulteriormente a 200%;",
+        " quando lo si usa per colpire un nemico mentre Wriothesley è in stato di Punizione rigente, la durata dello stato viene estesa di 4 s. È possibile ottenere solo una di tali estensioni in tutta la durata di Punizione rigente."
+      ],
+      "5": "<br/>",
+      "6": "Richiede il talento passivo Supplica di giustizia."
+    }
+  },
+  "constellation2": {
+    "name": "Catene per gli arroganti",
+    "description": {
+      "0": "Durante l'uso di <strong>Morso del lupo brunauro</strong>, ogni accumulo di Editto d'accusa derivante dal talento passivo Ascrizione del peccato aumenta di un 40% i DAN inflitti dalla suddetta abilità.",
+      "1": "Richiede il talento passivo Ascrizione del peccato."
+    }
+  },
+  "constellation3": {
+    "name": "Castigo per gli impostori",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Attacco normale: Pugni del gelo veemente</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Redenzione per i sofferenti",
+    "description": {
+      "0": "I PS ripristinati tramite Rimprovero: Pugno guizzante aumentano di un 50% dei PS max di Wriothesley. Richiede il talento passivo Supplica di giustizia.",
+      "1": "Inoltre, quando i PS di Wriothesley si ripristinano, se la quantità di PS ripristinati supera il limite massimo, si verificano i seguenti effetti in base a se il personaggio è in campo o meno. Se Wriothesley è in campo, la sua VEL d'ATT aumenta di un 20% per 4 s. Se non è in campo, la VEL d'ATT di tutti i personaggi del tuo gruppo aumenta di un 10% per 6 s. Questi due metodi di aumento della VEL d'ATT non possono accumularsi."
+    }
+  },
+  "constellation5": {
+    "name": "Pietà per i denigrati",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Morso del lupo brunauro</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Salvaguardia per gli innocenti",
+    "description": {
+      "0": "Il tasso di CRIT e i DAN da CRIT di Rimprovero: Pugno guizzante aumentano rispettivamente di un 10% e di un 80%. Quando viene sprigionato, si materializza un ulteriore spuntone di ghiaccio che infligge un 100% dei DAN di base di Rimprovero: Pugno guizzante come <cryo>DAN da Cryo</cryo>. I DAN inflitti in questo modo sono considerati DAN da attacco caricato.",
+      "1": "Richiede il talento passivo Supplica di giustizia."
+    }
+  }
+}

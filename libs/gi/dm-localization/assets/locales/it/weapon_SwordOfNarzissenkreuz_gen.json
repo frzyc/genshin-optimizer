@@ -1,0 +1,24 @@
+{
+  "name": "Spada di Narzissenkreuz",
+  "description": {
+    "0": "Una spada che ha perso tutta la sua potenza una volta raggiunto l'epilogo della storia. Ora, col potere residuo in essa racchiuso, è destinata a intraprendere un nuovo viaggio atto a commemorare un grande sogno."
+  },
+  "passiveName": "Lama degli eroi",
+  "passiveDescription": {
+    "0": {
+      "0": "Se il personaggio che equipaggia l'arma non possiede un Archè, i suoi attacchi normali, caricati o in picchiata innescano un'esplosione energetica di Pneuma o Ousia che infligge DAN pari a un <cryo>160%</cryo> dell'ATT. Quest'effetto può attivarsi una volta ogni 12 s. Il tipo di esplosione energetica dipende dal tipo attuale della Spada di Narzissenkreuz."
+    },
+    "1": {
+      "0": "Se il personaggio che equipaggia l'arma non possiede un Archè, i suoi attacchi normali, caricati o in picchiata innescano un'esplosione energetica di Pneuma o Ousia che infligge DAN pari a un <cryo>200%</cryo> dell'ATT. Quest'effetto può attivarsi una volta ogni 12 s. Il tipo di esplosione energetica dipende dal tipo attuale della Spada di Narzissenkreuz."
+    },
+    "2": {
+      "0": "Se il personaggio che equipaggia l'arma non possiede un Archè, i suoi attacchi normali, caricati o in picchiata innescano un'esplosione energetica di Pneuma o Ousia che infligge DAN pari a un <cryo>240%</cryo> dell'ATT. Quest'effetto può attivarsi una volta ogni 12 s. Il tipo di esplosione energetica dipende dal tipo attuale della Spada di Narzissenkreuz."
+    },
+    "3": {
+      "0": "Se il personaggio che equipaggia l'arma non possiede un Archè, i suoi attacchi normali, caricati o in picchiata innescano un'esplosione energetica di Pneuma o Ousia che infligge DAN pari a un <cryo>280%</cryo> dell'ATT. Quest'effetto può attivarsi una volta ogni 12 s. Il tipo di esplosione energetica dipende dal tipo attuale della Spada di Narzissenkreuz."
+    },
+    "4": {
+      "0": "Se il personaggio che equipaggia l'arma non possiede un Archè, i suoi attacchi normali, caricati o in picchiata innescano un'esplosione energetica di Pneuma o Ousia che infligge DAN pari a un <cryo>320%</cryo> dell'ATT. Quest'effetto può attivarsi una volta ogni 12 s. Il tipo di esplosione energetica dipende dal tipo attuale della Spada di Narzissenkreuz."
+    }
+  }
+}

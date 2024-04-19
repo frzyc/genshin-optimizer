@@ -1,0 +1,24 @@
+{
+  "name": "Lithic Spear",
+  "description": {
+    "0": "Tombak panjang yang ditempa dari bebatuan di Guyun Stone Forest. Tingkat kekerasan tombak ini sungguh tiada duanya."
+  },
+  "passiveName": "Lithic Axiom: Unity",
+  "passiveDescription": {
+    "0": {
+      "0": "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan <cryo>7%</cryo> ATK dan <cryo>3%</cryo> CRIT Rate. Efek ini dapat ditumpuk hingga 4 lapis."
+    },
+    "1": {
+      "0": "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan <cryo>8%</cryo> ATK dan <cryo>4%</cryo> CRIT Rate. Efek ini dapat ditumpuk hingga 4 lapis."
+    },
+    "2": {
+      "0": "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan <cryo>9%</cryo> ATK dan <cryo>5%</cryo> CRIT Rate. Efek ini dapat ditumpuk hingga 4 lapis."
+    },
+    "3": {
+      "0": "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan <cryo>10%</cryo> ATK dan <cryo>6%</cryo> CRIT Rate. Efek ini dapat ditumpuk hingga 4 lapis."
+    },
+    "4": {
+      "0": "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan <cryo>11%</cryo> ATK dan <cryo>7%</cryo> CRIT Rate. Efek ini dapat ditumpuk hingga 4 lapis."
+    }
+  }
+}

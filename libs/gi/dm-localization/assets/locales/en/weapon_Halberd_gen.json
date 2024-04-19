@@ -1,0 +1,24 @@
+{
+  "name": "Halberd",
+  "description": {
+    "0": "A polearm with an axe blade mounted on top that can deal quite a lot of damage. It's favored by the Millelith officers."
+  },
+  "passiveName": "Heavy",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal Attacks deal an additional <cryo>160%</cryo> ATK as DMG. Can only occur once every 10s."
+    },
+    "1": {
+      "0": "Normal Attacks deal an additional <cryo>200%</cryo> ATK as DMG. This effect can only occur once every 10s."
+    },
+    "2": {
+      "0": "Normal Attacks deal an additional <cryo>240%</cryo> ATK as DMG. This effect can only occur once every 10s."
+    },
+    "3": {
+      "0": "Normal Attacks deal an additional <cryo>280%</cryo> ATK as DMG. This effect can only occur once every 10s."
+    },
+    "4": {
+      "0": "Normal Attacks deal an additional <cryo>320%</cryo> ATK as DMG. This effect can only occur once every 10s."
+    }
+  }
+}

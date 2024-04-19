@@ -1,0 +1,25 @@
+{
+  "name": "Dodoco Tales",
+  "description": {
+    "0": "A children's book filled with childish short stories at which one cannot help but laugh.",
+    "1": "Even those readers who have long reached adulthood cannot help but be absorbed by the innocent, naive little adventures portrayed within."
+  },
+  "passiveName": "Dodoventure!",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal Attack hits on opponents increase Charged Attack DMG by <cryo>16%</cryo> for 6s. Charged Attack hits on opponents increase ATK by <cryo>8%</cryo> for 6s."
+    },
+    "1": {
+      "0": "Normal Attack hits on opponents increase Charged Attack DMG by <cryo>20%</cryo> for 6s. Charged Attack hits on opponents increase ATK by <cryo>10%</cryo> for 6s."
+    },
+    "2": {
+      "0": "Normal Attack hits on opponents increase Charged Attack DMG by <cryo>24%</cryo> for 6s. Charged Attack hits on opponents increase ATK by <cryo>12%</cryo> for 6s."
+    },
+    "3": {
+      "0": "Normal Attack hits on opponents increase Charged Attack DMG by <cryo>28%</cryo> for 6s. Charged Attack hits on opponents increase ATK by <cryo>14%</cryo> for 6s."
+    },
+    "4": {
+      "0": "Normal Attack hits on opponents increase Charged Attack DMG by <cryo>32%</cryo> for 6s. Charged Attack hits on opponents increase ATK by <cryo>16%</cryo> for 6s."
+    }
+  }
+}

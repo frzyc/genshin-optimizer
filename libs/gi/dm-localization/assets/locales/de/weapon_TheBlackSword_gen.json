@@ -1,0 +1,24 @@
+{
+  "name": "Schwarzes Schwert",
+  "description": {
+    "0": "Ein tiefschwarzes Langschwert, das nach Streit und Schlacht dürstet. Es soll seinen Träger dazu bringen, ekstatisch im Blut der Niedergemetzelten zu baden."
+  },
+  "passiveName": "„Gerechtigkeit“",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um <cryo>20 %</cryo>. Stellt bei KT von Standardangriffen und heftigen Schlägen LP in Höhe von <cryo>60 %</cryo> ANG wieder her. 5 s Abklingzeit."
+    },
+    "1": {
+      "0": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um <cryo>25 %</cryo>. Stellt bei KT von Standardangriffen und heftigen Schlägen LP in Höhe von <cryo>70 %</cryo> ANG wieder her. 5 s Abklingzeit."
+    },
+    "2": {
+      "0": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um <cryo>30 %</cryo>. Stellt bei KT von Standardangriffen und heftigen Schlägen LP in Höhe von <cryo>80 %</cryo> ANG wieder her. 5 s Abklingzeit."
+    },
+    "3": {
+      "0": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um <cryo>35 %</cryo>. Stellt bei KT von Standardangriffen und heftigen Schlägen LP in Höhe von <cryo>90 %</cryo> ANG wieder her. 5 s Abklingzeit."
+    },
+    "4": {
+      "0": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um <cryo>40 %</cryo>. Stellt bei KT von Standardangriffen und heftigen Schlägen LP in Höhe von <cryo>100 %</cryo> ANG wieder her. 5 s Abklingzeit."
+    }
+  }
+}

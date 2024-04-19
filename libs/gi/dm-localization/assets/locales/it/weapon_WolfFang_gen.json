@@ -1,0 +1,24 @@
+{
+  "name": "Zanna di lupo",
+  "description": {
+    "0": "Alcune leggende affermano che, in un remoto passato, questo spadone sia appartenuto a un certo cavaliere errante."
+  },
+  "passiveName": "Lupo del Vento del Nord",
+  "passiveDescription": {
+    "0": {
+      "0": "I DAN inflitti dall'abilità elementale e dal Tripudio elementale aumentano di un <cryo>16%</cryo>. Colpendo un avversario con un'abilità elementale, il tasso di CRIT di quest'ultima aumenta di un <cryo>2%</cryo>. Colpendo un avversario con un Tripudio elementale, il tasso di CRIT di quest'ultimo aumenta di un <cryo>2%</cryo>. Entrambi gli effetti durano 10 s ciascuno, sono cumulabili fino a 4 volte e possono essere attivati una volta ogni 0,1 s."
+    },
+    "1": {
+      "0": "I DAN inflitti dall'abilità elementale e dal Tripudio elementale aumentano di un <cryo>20%</cryo>. Colpendo un avversario con un'abilità elementale, il tasso di CRIT di quest'ultima aumenta di un <cryo>2,5%</cryo>. Colpendo un avversario con un Tripudio elementale, il tasso di CRIT di quest'ultimo aumenta di un <cryo>2,5%</cryo>. Entrambi gli effetti durano 10 s ciascuno, sono cumulabili fino a 4 volte e possono essere attivati una volta ogni 0,1 s."
+    },
+    "2": {
+      "0": "I DAN inflitti dall'abilità elementale e dal Tripudio elementale aumentano di un <cryo>24%</cryo>. Colpendo un avversario con un'abilità elementale, il tasso di CRIT di quest'ultima aumenta di un <cryo>3%</cryo>. Colpendo un avversario con un Tripudio elementale, il tasso di CRIT di quest'ultimo aumenta di un <cryo>3%</cryo>. Entrambi gli effetti durano 10 s ciascuno, sono cumulabili fino a 4 volte e possono essere attivati una volta ogni 0,1 s."
+    },
+    "3": {
+      "0": "I DAN inflitti dall'abilità elementale e dal Tripudio elementale aumentano di un <cryo>28%</cryo>. Colpendo un avversario con un'abilità elementale, il tasso di CRIT di quest'ultima aumenta di un <cryo>3,5%</cryo>. Colpendo un avversario con un Tripudio elementale, il tasso di CRIT di quest'ultimo aumenta di un <cryo>3,5%</cryo>. Entrambi gli effetti durano 10 s ciascuno, sono cumulabili fino a 4 volte e possono essere attivati una volta ogni 0,1 s."
+    },
+    "4": {
+      "0": "I DAN inflitti dall'abilità elementale e dal Tripudio elementale aumentano di un <cryo>32%</cryo>. Colpendo un avversario con un'abilità elementale, il tasso di CRIT di quest'ultima aumenta di un <cryo>4%</cryo>. Colpendo un avversario con un Tripudio elementale, il tasso di CRIT di quest'ultimo aumenta di un <cryo>4%</cryo>. Entrambi gli effetti durano 10 s ciascuno, sono cumulabili fino a 4 volte e possono essere attivati una volta ogni 0,1 s."
+    }
+  }
+}

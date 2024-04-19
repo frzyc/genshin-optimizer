@@ -1,0 +1,148 @@
+{
+  "auto": {
+    "name": "Foreign Rockblade",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 5 rapid strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Starfell Sword",
+    "description": {
+      "0": "You disgorge a meteorite from the depths of the earth, dealing <geo>AoE Geo DMG</geo>.",
+      "1": "The meteorite is considered a <geo>Geo Construct</geo>, and can be climbed or used to block attacks.",
+      "2": "<br/>",
+      "3": "<strong>Hold</strong>",
+      "4": "This skill's positioning may be adjusted.",
+      "5": "<br/>",
+      "6": "<i>You spoke with Paimon about the final destination of falling stars.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Meteorite Duration",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Wake of Earth",
+    "description": {
+      "0": "Energizing the Geo deep underground, you set off expanding shockwaves.",
+      "1": "Launches surrounding opponents back and deals <geo>AoE Geo DMG</geo>.",
+      "2": "A stone wall is erected at the edges of the shockwave.",
+      "3": "The stone wall is considered a <geo>Geo Construct</geo>, and may be used to block attacks.",
+      "4": "<br/>",
+      "5": "<i>You and Paimon studied the pulse of the mountains.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Per Shockwave",
+      "1": "Stonewall Duration",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Shattered Darkrock",
+    "description": {
+      "0": "Reduces <strong>Starfell Sword</strong>'s CD by 2s."
+    }
+  },
+  "passive2": {
+    "name": "Frenzied Rockslide",
+    "description": {
+      "0": "The final hit of a Normal Attack combo triggers a collapse, dealing 60% of ATK as <geo>AoE Geo DMG</geo>."
+    }
+  },
+  "constellation1": {
+    "name": "Invincible Stonewall",
+    "description": {
+      "0": "Party members within the radius of <strong>Wake of Earth</strong> have their CRIT Rate increased by 10% and have increased resistance against interruption."
+    }
+  },
+  "constellation2": {
+    "name": "Rockcore Meltdown",
+    "description": {
+      "0": "When the meteorite created by <strong>Starfell Sword</strong> is destroyed, it will also explode, dealing additional <geo>AoE Geo DMG</geo> equal to the amount of damage dealt by Starfell Sword."
+    }
+  },
+  "constellation3": {
+    "name": "Will of the Rock",
+    "description": {
+      "0": "Increases the Level of <strong>Wake of Earth</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Reaction Force",
+    "description": {
+      "0": "The shockwave triggered by <strong>Wake of Earth</strong> regenerates 5 Energy for every opponent hit.",
+      "1": "A maximum of 25 Energy can be regenerated in this manner at any one time."
+    }
+  },
+  "constellation5": {
+    "name": "Meteorite Impact",
+    "description": {
+      "0": "Increases the Level of <strong>Starfell Sword</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Everlasting Boulder",
+    "description": {
+      "0": "The barrier created by <strong>Wake of Earth</strong> lasts 5s longer.",
+      "1": "The meteorite created by <strong>Starfell Sword</strong> lasts 10s longer."
+    }
+  }
+}

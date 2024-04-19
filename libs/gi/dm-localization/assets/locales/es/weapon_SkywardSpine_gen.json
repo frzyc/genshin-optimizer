@@ -1,0 +1,24 @@
+{
+  "name": "Púa Celestial",
+  "description": {
+    "0": "Una lanza que simboliza la firme resolución de Dvalin. La recta asta de esta arma, que apunta hacia los cielos, está revestida con el poder del cielo y del viento."
+  },
+  "passiveName": "Colmillo quebrantador",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta la Prob. CRIT en un <cryo>8%</cryo> y aumenta la Vel. de Ataque Normal en un <cryo>12%</cryo>. Además, los Ataques Normales y Cargados contra los enemigos tienen una probabilidad del <cryo>50%</cryo> de disparar una cuchilla de vacío que inflige un <cryo>40%</cryo> de daño de ATQ en una pequeña AdE. Este efecto solo puede ocurrir una vez cada 2 s."
+    },
+    "1": {
+      "0": "Aumenta la Prob. CRIT en un <cryo>10%</cryo> y aumenta la Vel. de Ataque Normal en un <cryo>12%</cryo>. Además, los Ataques Normales y Cargados contra los enemigos tienen una probabilidad del <cryo>50%</cryo> de disparar una cuchilla de vacío que inflige un <cryo>55%</cryo> de daño de ATQ en una pequeña AdE. Este efecto solo puede ocurrir una vez cada 2 s."
+    },
+    "2": {
+      "0": "Aumenta la Prob. CRIT en un <cryo>12%</cryo> y aumenta la Vel. de Ataque Normal en un <cryo>12%</cryo>. Además, los Ataques Normales y Cargados contra los enemigos tienen una probabilidad del <cryo>50%</cryo> de disparar una cuchilla de vacío que inflige un <cryo>70%</cryo> de daño de ATQ en una pequeña AdE. Este efecto solo puede ocurrir una vez cada 2 s."
+    },
+    "3": {
+      "0": "Aumenta la Prob. CRIT en un <cryo>14%</cryo> y aumenta la Vel. de Ataque Normal en un <cryo>12%</cryo>. Además, los Ataques Normales y Cargados contra los enemigos tienen una probabilidad del <cryo>50%</cryo> de disparar una cuchilla de vacío que inflige un <cryo>85%</cryo> de daño de ATQ en una pequeña AdE. Este efecto solo puede ocurrir una vez cada 2 s."
+    },
+    "4": {
+      "0": "Aumenta la Prob. CRIT en un <cryo>16%</cryo> y aumenta la Vel. de Ataque Normal en un <cryo>12%</cryo>. Además, los Ataques Normales y Cargados contra los enemigos tienen una probabilidad del <cryo>50%</cryo> de disparar una cuchilla de vacío que inflige un <cryo>100%</cryo> de daño de ATQ en una pequeña AdE. Este efecto solo puede ocurrir una vez cada 2 s."
+    }
+  }
+}

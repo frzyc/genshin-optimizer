@@ -1,0 +1,29 @@
+{
+  "setName": "Deepwood Memories",
+  "setEffects": {
+    "2": "Dendro DMG Bonus +15%.",
+    "4": "Setelah Elemental Skill atau Elemental Burst mengenai musuh, Dendro RES dari target yang terkena akan berkurang 30% selama 8 detik. Efek ini tetap dapat terpicu meskipun penggunanya ada dalam party namun sedang tidak berada di medan pertempuran."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Labyrinth Wayfarer",
+      "desc": "Bunga emas yang dipetik dari mahkota raja hutan."
+    },
+    "plume": {
+      "name": "Scholar of Vines",
+      "desc": "Daun zamrud yang anggun bagaikan bulu diambil dari pakaian orang bijak yang berada di dalam hutan."
+    },
+    "sands": {
+      "name": "A Time of Insight",
+      "desc": "Penunjuk waktu yang digunakan oleh orang yang mengabdikan dirinya pada jalan kebijaksanaan tidak dipenuhi oleh kerikil yang tandus, melainkan oleh biji sesawi kecil."
+    },
+    "goblet": {
+      "name": "Lamp of the Lost",
+      "desc": "Aslinya benda ini hanyalah lampu minyak yang bentuknya menyerupai padang pasir. Tapi sekarang tumbuhlah daun berwarna hijau neon di atasnya."
+    },
+    "circlet": {
+      "name": "Laurel Coronet",
+      "desc": "Mahkota yang dianugerahkan oleh Archon Dendro, diturunkan dari generasi ke generasi di antara raja-raja labirin, dan akhirnya diwarisi oleh pelayan raja."
+    }
+  }
+}

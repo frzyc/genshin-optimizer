@@ -1,0 +1,29 @@
+{
+  "setName": "Roccia arcaica",
+  "setEffects": {
+    "2": "Bonus DAN da Geo +15%.",
+    "4": "Quando si ottiene un frammento elementale generato con la reazione della Cristallizzazione, tutti i membri del gruppo ricevono un 35% di bonus DAN per quel particolare elemento della durata di 10 s. È possibile ottenere un solo bonus DAN elementali alla volta."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fiore rupestre",
+      "desc": "Un fiore sbocciato tra le rocce e le crepe di una rupe. Il brillio dei suoi petali al vento sembra portarlo in vita."
+    },
+    "plume": {
+      "name": "Piuma dei picchi aguzzi",
+      "desc": "La piuma pietrificata di un grosso falco rupestre. Di tanto in tanto, sulla sua punta di basalto risplendono gocce di rugiada."
+    },
+    "sands": {
+      "name": "Meridiana di giada perenne",
+      "desc": "Una meridiana scolpita da un grosso blocco di giada. L'ombra che proietta segna silenziosamente il passare del tempo."
+    },
+    "goblet": {
+      "name": "Calice di falesia",
+      "desc": "Un calice da vino splendente e raffinato, in epoca ormai lontana riempito fino all'orlo."
+    },
+    "circlet": {
+      "name": "Maschera di basalto inerte",
+      "desc": "Una maschera solenne squisitamente scolpita nel basalto. I suoi occhi infossati osservano l'orizzonte in modo freddo e inespressivo."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Fluorescence",
+  "description": {
+    "0": "Une grande épée sans tranchant qui dégage une pâle lueur fluorescente. Idéale pour ceux qui aiment utiliser la force brute pour écraser leurs ennemis."
+  },
+  "passiveName": "Fléau d'eau et de foudre",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Électro de <cryo>20 %</cryo>."
+    },
+    "1": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Électro de <cryo>24 %</cryo>."
+    },
+    "2": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Électro de <cryo>28 %</cryo>."
+    },
+    "3": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Électro de <cryo>32 %</cryo>."
+    },
+    "4": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Électro de <cryo>36 %</cryo>."
+    }
+  }
+}

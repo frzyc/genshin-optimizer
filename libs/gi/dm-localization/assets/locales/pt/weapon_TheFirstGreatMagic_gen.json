@@ -1,0 +1,24 @@
+{
+  "name": "Arcana Original",
+  "description": {
+    "0": "Um adereço de performance usada pela antiga \"Incrível Mágica\", que acabou revelando-se um notável armamento."
+  },
+  "passiveName": "Parsifal, a Incrível",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano do Ataque Carregado em <cryo>16%</cryo>. Para cada personagem na equipe com o mesmo Tipo Elemental que o personagem que está com essa arma equipada (incluindo o personagem que está com a arma equipada), obtém 1 acúmulo do efeito \"Método\". Para cada personagem de Tipo Elemental diferente, obtém 1 acúmulo do efeito \"Atuação\". Quando possuir 1/2/3 ou mais acúmulos do efeito \"Método\", o ATQ aumentará <cryo>16%/32%/48%</cryo>. Quando possuir 1/2/3 ou mais acúmulos do efeito \"Atuação\", aumenta a Veloc. Mov. em <cryo>4%/7%/10%</cryo>."
+    },
+    "1": {
+      "0": "Aumenta o Dano do Ataque Carregado em <cryo>20%</cryo>. Para cada personagem na equipe com o mesmo Tipo Elemental que o personagem que está com essa arma equipada (incluindo o personagem que está com a arma equipada), obtém 1 acúmulo do efeito \"Método\". Para cada personagem de Tipo Elemental diferente, obtém 1 acúmulo do efeito \"Atuação\". Quando possuir 1/2/3 ou mais acúmulos do efeito \"Método\", o ATQ aumentará <cryo>20%/40%/60%</cryo>. Quando possuir 1/2/3 ou mais acúmulos do efeito \"Atuação\", aumenta a Veloc. Mov. em <cryo>6%/9%/12%</cryo>."
+    },
+    "2": {
+      "0": "Aumenta o Dano do Ataque Carregado em <cryo>24%</cryo>. Para cada personagem na equipe com o mesmo Tipo Elemental que o personagem que está com essa arma equipada (incluindo o personagem que está com a arma equipada), obtém 1 acúmulo do efeito \"Método\". Para cada personagem de Tipo Elemental diferente, obtém 1 acúmulo do efeito \"Atuação\". Quando possuir 1/2/3 ou mais acúmulos do efeito \"Método\", o ATQ aumentará <cryo>24%/48%/72%</cryo>. Quando possuir 1/2/3 ou mais acúmulos do efeito \"Atuação\", aumenta a Veloc. Mov. em <cryo>8%/11%/14%</cryo>."
+    },
+    "3": {
+      "0": "Aumenta o Dano do Ataque Carregado em <cryo>28%</cryo>. Para cada personagem na equipe com o mesmo Tipo Elemental que o personagem que está com essa arma equipada (incluindo o personagem que está com a arma equipada), obtém 1 acúmulo do efeito \"Método\". Para cada personagem de Tipo Elemental diferente, obtém 1 acúmulo do efeito \"Atuação\". Quando possuir 1/2/3 ou mais acúmulos do efeito \"Método\", o ATQ aumentará <cryo>28%/56%/84%</cryo>. Quando possuir 1/2/3 ou mais acúmulos do efeito \"Atuação\", aumenta a Veloc. Mov. em <cryo>10%/13%/16%</cryo>."
+    },
+    "4": {
+      "0": "Aumenta o Dano do Ataque Carregado em <cryo>32%</cryo>. Para cada personagem na equipe com o mesmo Tipo Elemental que o personagem que está com essa arma equipada (incluindo o personagem que está com a arma equipada), obtém 1 acúmulo do efeito \"Método\". Para cada personagem de Tipo Elemental diferente, obtém 1 acúmulo do efeito \"Atuação\". Quando possuir 1/2/3 ou mais acúmulos do efeito \"Método\", o ATQ aumentará <cryo>32%/64%/96%</cryo>. Quando possuir 1/2/3 ou mais acúmulos do efeito \"Atuação\", aumenta a Veloc. Mov. em <cryo>12%/15%/18%</cryo>."
+    }
+  }
+}

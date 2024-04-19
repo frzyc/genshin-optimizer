@@ -1,0 +1,24 @@
+{
+  "name": "Aquila Favonia",
+  "description": {
+    "0": "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil — just like the last heroine who wielded it."
+  },
+  "passiveName": "Falcon's Defiance",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK is increased by <cryo>20%</cryo>. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to <cryo>100%</cryo> of ATK and dealing <cryo>200%</cryo> of ATK as DMG to surrounding opponents. This effect can only occur once every 15s."
+    },
+    "1": {
+      "0": "ATK is increased by <cryo>25%</cryo>. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to <cryo>115%</cryo> of ATK and dealing <cryo>230%</cryo> of ATK as DMG to surrounding opponents. This effect can only occur once every 15s."
+    },
+    "2": {
+      "0": "ATK is increased by <cryo>30%</cryo>. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to <cryo>130%</cryo> of ATK and dealing <cryo>260%</cryo> of ATK as DMG to surrounding opponents. This effect can only occur once every 15s."
+    },
+    "3": {
+      "0": "ATK is increased by <cryo>35%</cryo>. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to <cryo>145%</cryo> of ATK and dealing <cryo>290%</cryo> of ATK as DMG to surrounding opponents. This effect can only occur once every 15s."
+    },
+    "4": {
+      "0": "ATK is increased by <cryo>40%</cryo>. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to <cryo>160%</cryo> of ATK and dealing <cryo>320%</cryo> of ATK as DMG to surrounding opponents. This effect can only occur once every 15s."
+    }
+  }
+}

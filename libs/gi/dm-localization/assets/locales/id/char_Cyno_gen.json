@@ -1,0 +1,168 @@
+{
+  "name": "Cyno",
+  "title": "Judicator of Secrets",
+  "description": "\"Mahamatra Agung\" yang mengawasi para peneliti di Akademiya. Saat bekerja, lebih efisien daripada \"Vayuvyastra Agung\" buatan Kshahrewar.",
+  "constellationName": "Lupus Aureus",
+  "auto": {
+    "name": "Invoker's Spear",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalur terjangan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Secret Rite: Chasmic Soulfarer",
+    "description": {
+      "0": "Menerjang ke arah depan dan mengakibatkan <electro>Electro DMG</electro> terhadap musuh di dalam jalurnya.",
+      "1": "<br/>",
+      "2": "Saat Cyno berada dalam status Pactsworn Pathclearer yang terpicu oleh Elemental Burst Sacred Rite: Wolf's Swiftness, sebagai gantinya, Cyno akan melepaskan sebuah <strong>Mortuary Rite</strong> yang akan melepaskan kekuatan petir yang sangat kuat dan mengakibatkan <electro>Electro DMG Area</electro> serta memperpanjang durasi Pactsworn Pathclearer.",
+      "3": "<br/>",
+      "4": "<i>\"Penghakiman ini tidak memberikan pilihan. Tidak ada penolakan atau penerimaan di sini ... Kita berdua sudah lama terikat dalam keyakinan ini.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Mortuary Rite",
+      "2": "Bonus Durasi Pactsworn Pathclearer",
+      "3": "Cooldown",
+      "4": "Cooldown Mortuary Rite",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sacred Rite: Wolf's Swiftness",
+    "description": {
+      "0": "Memanggil sebuah roh yang suci untuk mengambil alih dirinya dan berubah menjadi Pactsworn Pathclearer.",
+      "1": "<br/>",
+      "2": "<strong>Pactsworn Pathclearer</strong>",
+      "3": "DMG yang diakibatkan oleh Normal Attack, Charged Attack, dan Plunging Attack Cyno akan dikonversi menjadi <electro>Electro DMG</electro> yang tidak bisa ditimpa Elemental Infusion lainnya.",
+      "4": "Elemental Mastery dan ketahanan terhadap interupsi Cyno akan meningkat, Cyno juga menjadi kebal terhadap DMG yang diakibatkan oleh reaksi Electro-Charged.",
+      "5": "<br/>",
+      "6": "Efek ini akan hilang saat Cyno meninggalkan medan pertempuran, dan bisa berlangsung selama maksimal 18 detik.",
+      "7": "<br/>",
+      "8": "<i>Ritual rahasia yang diturunkan dari bangsa kuno adalah bentuk penghakiman terakhir kepada Mahamatra Agung.</i>",
+      "9": "<i>Entah itu sekarang atau masa lalu, badai besar atau ular raksasa, tidak akan ada yang bisa menggoyahkan kemuliaan hukum. </i>"
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "Bonus Elemental Mastery",
+      "10": "Durasi Awal",
+      "11": "Cooldown",
+      "12": "Konsumsi Energy",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Featherfall Judgment",
+    "description": {
+      "0": "Ketika Cyno ada dalam kondisi Pactsworn Pathclearer yang diaktifkan oleh skill <strong>Sacred Rite: Wolf's Swiftness</strong>, Cyno akan memasuki kondisi Endseer dengan interval tertentu. Jika dia mengaktifkan <strong>Secret Rite: Chasmic Soulfarer</strong> saat berada dalam kondisi tersebut, maka efek Judication akan terpicu, DMG yang diakibatkan Secret Rite: Chasmic Soulfarer akan meningkat sebanyak 35%, dan 3 buah Duststalker Bolt yang mengakibatkan <electro>Electro DMG</electro> sejumlah 100% ATK Cyno akan ditembakkan.",
+      "1": "DMG Duststalker Bolt dianggap sebagai DMG Elemental Skill."
+    }
+  },
+  "passive2": {
+    "name": "Authority Over the Nine Bows",
+    "description": {
+      "0": "DMG yang diakibatkan Cyno akan meningkat berdasarkan jumlah Elemental Mastery diri sendiri, dengan peningkatan sebagai berikut:",
+      "1": [
+        "DMG Normal Attack Pactsworn Pathclearer akan meningkat sebanyak 150% jumlah Elemental Mastery.",
+        "DMG Duststalker Bolt dari Talenta Pasif Featherfall Judgment akan meningkat sebanyak 250% Elemental Mastery."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "The Gift of Silence",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Sumeru selama 20 jam, hadiah yang didapatkan akan bertambah 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Ordinance: Unceasing Vigil",
+    "description": {
+      "0": "Setelah menggunakan <strong>Sacred Rite: Wolf's Swiftness</strong>, akan meningkatkan 20% Normal Attack SPD Cyno selama 10 detik. Jika efek Judication dari Talenta Pasif Featherfall Judgment terpicu selama <strong>Secret Rite: Chasmic Soulfarer</strong>, maka durasi kenaikan ini akan diperbarui.",
+      "1": "Harus membuka Talenta Pasif \"Featherfall Judgment\" terlebih dahulu."
+    }
+  },
+  "constellation2": {
+    "name": "Ceremony: Homecoming of Spirits",
+    "description": {
+      "0": "Setelah Normal Attack Cyno mengenai musuh, <electro>Electro DMG</electro> Bonus akan meningkat 10% selama 4 detik. Efek ini dapat terpicu setiap 0,1 detik, maksimum 5 lapis."
+    }
+  },
+  "constellation3": {
+    "name": "Precept: Lawful Enforcer",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Sacred Rite: Wolf's Swiftness</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Austerity: Forbidding Guard",
+    "description": {
+      "0": "Saat Cyno berada dalam status Pactsworn Pathclearer yang terpicu oleh <strong>Sacred Rite: Wolf's Swiftness</strong>, setelah dia memicu Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, atau reaksi Electro Swirl, Cyno akan memulihkan 3 Elemental Energy untuk semua anggota party di sekitar (kecuali Cyno sendiri.)",
+      "1": "Efek ini dapat muncul 5 kali dalam satu kali penggunaan <strong>Sacred Rite: Wolf's Swiftness</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Funerary Rite: The Passing of Starlight",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Secret Rite: Chasmic Soulfarer</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Raiment: Just Scales",
+    "description": {
+      "0": "Setelah melancarkan <strong>Sacred Rite: Wolf's Swiftness</strong> atau memicu Judication dari Talenta Pasif Featherfall Judgment, Cyno akan mendapatkan 4 lapis efek \"Day of the Jackal\". Saat Normal Attack Cyno mengenai musuh, akan mengonsumsi 1 lapis \"Day of the Jackal\" dan menembakkan 1 Duststalker Bolt.",
+      "1": "Day of the Jackal berlangsung selama 8 detik, dapat ditumpuk sampai 8 lapis, dan akan hilang pada saat status Pactsworn Pathclearer dari Sacred Rite: Wolf's Swiftness berakhir.",
+      "2": "Duststalker Bolt yang dapat ditembakkan dengan cara ini adalah maksimal satu setiap 0,4 detik.",
+      "3": "Harus membuka Talenta Pasif \"Featherfall Judgment\" terlebih dahulu."
+    }
+  }
+}

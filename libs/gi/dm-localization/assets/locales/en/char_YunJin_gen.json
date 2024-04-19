@@ -1,0 +1,164 @@
+{
+  "name": "Yun Jin",
+  "title": "Stage Lucida",
+  "description": "A renowned Liyue opera singer who is skilled in both playwriting and singing. Her style is one-of-a-kind, exquisite and delicate, much like the person herself.",
+  "constellationName": "Opera Grandis",
+  "auto": {
+    "name": "Cloud-Grazing Strike",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 5 consecutive spear strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Opening Flourish",
+    "description": {
+      "0": "Ms. Yun may just be acting out fights on stage, but her skills with the spear are real enough to defend against her foes.",
+      "1": "<br/>",
+      "2": "<strong>Press</strong>",
+      "3": "Flourishes her polearm in a cloud-grasping stance, dealing <geo>Geo DMG</geo>.",
+      "4": "<br/>",
+      "5": "<strong>Hold</strong>",
+      "6": "Takes up the Opening Flourish stance and charges up, forming a shield. DMG Absorption is based on Yun Jin's Max HP and has 150% effectiveness against all Elemental DMG and Physical DMG. The shield lasts until she finishes unleashing her Elemental Skill.",
+      "7": "When the skill is released, when its duration ends, or when the shield breaks, Yun Jin will unleash the charged energy as an attack, dealing <geo>Geo DMG</geo>.",
+      "8": "Based on the time spent charging, it will either unleash an attack at Charge Level 1 or Level 2.",
+      "9": "<br/>",
+      "10": "<i>One glorious moment on-stage, a decade of preparation behind it.</i>"
+    },
+    "skillParams": {
+      "0": "Press DMG",
+      "1": "Charge Level 1 DMG",
+      "2": "Charge Level 2 DMG",
+      "3": "Shield DMG Absorption",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Cliffbreaker's Banner",
+    "description": {
+      "0": "Deals <geo>AoE Geo DMG</geo> and grants all nearby party members a Flying Cloud Flag Formation.",
+      "1": "<br/>",
+      "2": "<strong>Flying Cloud Flag Formation</strong>",
+      "3": "When Normal Attack DMG is dealt to opponents, Bonus DMG will be dealt based on Yun Jin's current DEF.",
+      "4": "<br/>",
+      "5": "The effects of this skill will be cleared after a set duration or after being triggered a specific number of times.",
+      "6": "When one Normal Attack hits multiple opponents, the effect is triggered multiple times according to the number of opponents hit. The number of times that the effect is triggered is counted independently for each member of the party with Flying Cloud Flag Formation.",
+      "7": "<br/>",
+      "8": "<i>As the drums resound, as swords and halberds weave and clash, the doyenne is transformed into a mighty general.</i>",
+      "9": "<i>As the instruments on stage strum in unison, lo, see how she vanquishes these demons!</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "DMG Increase",
+      "2": "Duration",
+      "3": "Trigger Quota",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "True to Oneself",
+    "description": {
+      "0": "Using <strong>Opening Flourish</strong> at the precise moment when Yun Jin is attacked will unleash its Level 2 Charged (Hold) form."
+    }
+  },
+  "passive2": {
+    "name": "Breaking Conventions",
+    "description": {
+      "0": "The Normal Attack DMG Bonus granted by <strong>Flying Cloud Flag Formation</strong> is further increased by 2.5%/5%/7.5%/11.5% of Yun Jin's DEF when the party contains characters of 1/2/3/4 Elemental Types, respectively."
+    }
+  },
+  "passive3": {
+    "name": "Light Nourishment",
+    "description": {
+      "0": "When Perfect Cooking is achieved on Food with Adventure-related effects, there is a 12% chance to obtain double the product."
+    }
+  },
+  "constellation1": {
+    "name": "Thespian Gallop",
+    "description": {
+      "0": "<strong>Opening Flourish's</strong> CD is decreased by 18%."
+    }
+  },
+  "constellation2": {
+    "name": "Myriad Mise-En-Scène",
+    "description": {
+      "0": "After <strong>Cliffbreaker's Banner</strong> is unleashed, all nearby party members' Normal Attack DMG is increased by 15% for 12s."
+    }
+  },
+  "constellation3": {
+    "name": "Seafaring General",
+    "description": {
+      "0": "Increases the Level of <strong>Cliffbreaker's Banner</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Flower and a Fighter",
+    "description": {
+      "0": "When Yun Jin triggers the Crystallize Reaction, her DEF is increased by 20% for 12s."
+    }
+  },
+  "constellation5": {
+    "name": "Famed Throughout the Land",
+    "description": {
+      "0": "Increases the Level of <strong>Opening Flourish</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Decorous Harmony",
+    "description": {
+      "0": "Characters under the effects of the <strong>Flying Cloud Flag Formation</strong> have their Normal ATK SPD increased by 12%."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Haran Geppaku Futsu",
+  "description": {
+    "0": "Sebuah karya terkenal dari keturunan pandai besi Futsu. Nama \"Haran\" berasal dari bentuknya yang menyerupai ombak yang ganas dan bergejolak."
+  },
+  "passiveName": "Honed Flow",
+  "passiveDescription": {
+    "0": {
+      "0": "Mendapatkan <cryo>12%</cryo> Elemental DMG Bonus untuk semua elemen. Saat anggota party lain menggunakan Elemental Skill, Karakter yang mengenakan senjata ini akan mendapatkan satu lapis Wavespike. Maksimal 2 lapis. Efek ini terpicu setiap 0,3 detik. Jika ada efek Wavespike yang telah terakumulasi saat Karakter yang mengenakan senjata ini melancarkan Elemental Skill-nya, maka semua lapisan Wavespike akan terkonsumsi dan Karakter akan mendapatkan Ripping Upheaval. Berdasarkan jumlah lapisan yang dikonsumsinya, setiap lapis Wavespike akan meningkatkan <cryo>20%</cryo> DMG Normal Attack selama 8 detik."
+    },
+    "1": {
+      "0": "Mendapatkan <cryo>15%</cryo> Elemental DMG Bonus untuk semua elemen. Saat anggota party lain menggunakan Elemental Skill, Karakter yang mengenakan senjata ini akan mendapatkan satu lapis Wavespike. Maksimal 2 lapis. Efek ini terpicu setiap 0,3 detik. Jika ada efek Wavespike yang telah terakumulasi saat Karakter yang mengenakan senjata ini melancarkan Elemental Skill-nya, maka semua lapisan Wavespike akan terkonsumsi dan Karakter akan mendapatkan Ripping Upheaval. Berdasarkan jumlah lapisan yang dikonsumsinya, setiap lapis Wavespike akan meningkatkan <cryo>25%</cryo> DMG Normal Attack selama 8 detik."
+    },
+    "2": {
+      "0": "Mendapatkan <cryo>18%</cryo> Elemental DMG Bonus untuk semua elemen. Saat anggota party lain menggunakan Elemental Skill, Karakter yang mengenakan senjata ini akan mendapatkan satu lapis Wavespike. Maksimal 2 lapis. Efek ini terpicu setiap 0,3 detik. Jika ada efek Wavespike yang telah terakumulasi saat Karakter yang mengenakan senjata ini melancarkan Elemental Skill-nya, maka semua lapisan Wavespike akan terkonsumsi dan Karakter akan mendapatkan Ripping Upheaval. Berdasarkan jumlah lapisan yang dikonsumsinya, setiap lapis Wavespike akan meningkatkan <cryo>30%</cryo> DMG Normal Attack selama 8 detik."
+    },
+    "3": {
+      "0": "Mendapatkan <cryo>21%</cryo> Elemental DMG Bonus untuk semua elemen. Saat anggota party lain menggunakan Elemental Skill, Karakter yang mengenakan senjata ini akan mendapatkan satu lapis Wavespike. Maksimal 2 lapis. Efek ini terpicu setiap 0,3 detik. Jika ada efek Wavespike yang telah terakumulasi saat Karakter yang mengenakan senjata ini melancarkan Elemental Skill-nya, maka semua lapisan Wavespike akan terkonsumsi dan Karakter akan mendapatkan Ripping Upheaval. Berdasarkan jumlah lapisan yang dikonsumsinya, setiap lapis Wavespike akan meningkatkan <cryo>35%</cryo> DMG Normal Attack selama 8 detik."
+    },
+    "4": {
+      "0": "Mendapatkan <cryo>24%</cryo> Elemental DMG Bonus untuk semua elemen. Saat anggota party lain menggunakan Elemental Skill, Karakter yang mengenakan senjata ini akan mendapatkan satu lapis Wavespike. Maksimal 2 lapis. Efek ini terpicu setiap 0,3 detik. Jika ada efek Wavespike yang telah terakumulasi saat Karakter yang mengenakan senjata ini melancarkan Elemental Skill-nya, maka semua lapisan Wavespike akan terkonsumsi dan Karakter akan mendapatkan Ripping Upheaval. Berdasarkan jumlah lapisan yang dikonsumsinya, setiap lapis Wavespike akan meningkatkan <cryo>40%</cryo> DMG Normal Attack selama 8 detik."
+    }
+  }
+}

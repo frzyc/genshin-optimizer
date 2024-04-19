@@ -1,0 +1,34 @@
+{
+  "ProtectiveCanopy": {
+    "name": "Tettoia protettiva",
+    "desc": "RES a tutti gli elementi +15%, RES fisica +15%."
+  },
+  "FerventFlames": {
+    "name": "Fiamme impetuose",
+    "desc": "Riduce la durata dell'effetto di Cryo di un 40%. Aumenta l'ATT di un 25%."
+  },
+  "SoothingWater": {
+    "name": "Placide acque",
+    "desc": "Riduce la durata dell'effetto di Pyro di un 40%. Aumenta i PS max di un 25%."
+  },
+  "ShatteringIce": {
+    "name": "Ghiaccio dirompente",
+    "desc": "Riduce la durata dell'effetto di Electro di un 40%. Aumenta di un 15% il tasso di CRIT contro gli avversari affetti da Congelamento o sotto l'effetto di Cryo."
+  },
+  "HighVoltage": {
+    "name": "Alta tensione",
+    "desc": "Riduce la durata dell'effetto di Hydro di un 40%. Superconduzione, Sovraccarico, Electrocarica, Vivificazione, Accentuazione o Iperfioritura hanno un 100% di probabilità di generare una particella elementale di Electro (TdR: 5 s)."
+  },
+  "ImpetuousWinds": {
+    "name": "Venti impetuosi",
+    "desc": "Riduce il consumo di vigore di un 15%. Aumenta la VEL di movimento di un 10%. Riduce il TdR dell'abilità di un 5%."
+  },
+  "EnduringRock": {
+    "name": "Roccia infrangibile",
+    "desc": "Aumenta l'efficacia dello scudo di un 15%. Inoltre, i personaggi protetti da uno scudo otterranno i seguenti effetti speciali: i DAN inflitti aumentano di un 15%, e infliggere DAN ai nemici ridurrà la loro RES a Geo di un 20% per 15 s."
+  },
+  "SprawlingGreenery": {
+    "name": "Vegetazione proliferante",
+    "desc": "La maestria elementale aumenta di 50. Dopo aver attivato reazioni di Ustione, Vivificazione o Fioritura, la maestria elementale di tutti i membri del gruppo vicini aumenta di 30 per 6 s. Dopo aver attivato le reazioni di Accentuazione, Propagazione, Iperfioritura o Germinazione, la maestria elementale di tutti i membri del gruppo aumenta di 20 per 6 sec. La durata di ciascun effetto è contata in modo indipendente."
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "name": "Ningguang",
+  "title": "Verdeckter Mond",
+  "description": "Der „Tianquan“ unter den „Qixing von Liyue“. Ihr Reichtum ist enorm und nur wenige können es auf dem ganzen Kontinent mit ihr aufnehmen.",
+  "constellationName": "Opus Aequilibrium",
+  "auto": {
+    "name": "Teure Geschosse",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Verschießt Edelsteine, die <geo>Geo-Schaden</geo> verursachen.",
+        "2": "Verleiht Ningguang bei Treffern eine Sternjade."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht Ausdauer und wirft einen gewaltigen Edelstein, der <geo>Geo-Schaden</geo> verursacht.",
+        "2": "Verschießt während eines heftigen Schlags bei Vorhandensein von Sternjade die gesamte Sternjade und verursacht zusätzlichen Schaden."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft des Gesteins, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <geo>Geo-Flächenschaden</geo>."
+      }
+    },
+    "skillParams": {
+      "0": "Standardangriffs-SCH",
+      "1": "SCH heftiger Schläge",
+      "2": "SCH pro Sternjade",
+      "3": "Ausdauerverbrauch heftiger Schläge",
+      "4": "SCH beim Fallen",
+      "5": "SCH beim Fallen aus niedriger/großer Höhe",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Jadeschirm",
+    "description": {
+      "0": "Errichtet einen stabilen Jadeschirm aus Gold, Obsidian und dem Willen eines Kämpfers, der <geo>Geo-Flächenschaden</geo> verursacht.",
+      "1": "<br/>",
+      "2": "<strong>Jadeschirm</strong>",
+      "3": [
+        " Hält gegnerische Geschosse ab.",
+        " Beständigkeit hängt von Ninguangs max. LP ab."
+      ],
+      "4": "<br/>",
+      "5": "Der Jadeschirm gilt als <geo>Geo-Objekt</geo>, hält einen Teil Angriffe ab und kann nicht erklommen werden. Zu einem Zeitpunkt kann nur ein Jadeschirm existieren.",
+      "6": "<br/>",
+      "7": "<i>Leuchtend wie die Sterne am Himmel, zusammengesetzt aus wertvoller Jade.</i>"
+    },
+    "skillParams": {
+      "0": "Erhaltene LP",
+      "1": "Fähigkeits-SCH",
+      "2": "Abklingzeit",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sternensplitter",
+    "description": {
+      "0": "Ningguang sammelt unzählige Edelsteine, die auf einen Schlag auf Gegner in der Umgebung zufliegen und hohen <geo>Geo-Schaden</geo> verursachen.",
+      "1": "Lässt einen eventuell anwesenden Jadeschirm in der Nähe bei Anwendung von Sternensplitter zusätzlich viele kleine Edelsteine abschießen.",
+      "2": "<br/>",
+      "3": "<i>Sterne zerbrechen. Stille fällt.</i>"
+    },
+    "skillParams": {
+      "0": "SCH pro Edelstein",
+      "1": "Abklingzeit",
+      "2": "Elementarenergie",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ausweichplan",
+    "description": {
+      "0": "Ningguang verbraucht bei Vorhandensein von Sternjade für die Anwendung heftiger Schläge keine Ausdauer."
+    }
+  },
+  "passive2": {
+    "name": "Rücklagen für alle Fälle",
+    "description": {
+      "0": "Erhöht den <geo>Geo-Schaden</geo> von Figuren, die den <strong>Jadeschirm</strong> durchdringen, 10 s lang um 12 %."
+    }
+  },
+  "passive3": {
+    "name": "Edelsteinhort",
+    "description": {
+      "0": "Zeigt alle <strong>Erzadern mit zum Schmieden geeignetem Erz</strong> in der Nähe auf der Minikarte an."
+    }
+  },
+  "constellation1": {
+    "name": "Berstende Splitter",
+    "description": {
+      "0": "Verursacht bei Treffern mit Standardangriffen Flächenschaden."
+    }
+  },
+  "constellation2": {
+    "name": "Erschütterung",
+    "description": {
+      "0": "Überspringt die Abklingzeit, wenn der <strong>Jadeschirm</strong> zerspringt.",
+      "1": "6 s Abklingzeit."
+    }
+  },
+  "constellation3": {
+    "name": "Anordnung der Sterne",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Sternensplitter</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Verteidigungsformation",
+    "description": {
+      "0": "Erhöht den WDS der Figuren in der Umgebung gegen alle Elemente bei Anwendung von <strong>Jadeschirm</strong> um 10 %."
+    }
+  },
+  "constellation5": {
+    "name": "Majestätischer Jadeschirm",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Jadeschirm</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Leuchten der Sieben Sterne",
+    "description": {
+      "0": "Erschafft bei Anwendung von <strong>Sternensplitter</strong> sieben Stück Sternjade für Ningguang."
+    }
+  }
+}

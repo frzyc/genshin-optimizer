@@ -1,0 +1,24 @@
+{
+  "name": "Royal Longsword",
+  "description": {
+    "0": "Pedang panjang tua milik bangsawan Mondstadt di masa lampau. Memiliki ukiran dan ornamen yang elegan yang melambangkan status dari pemiliknya."
+  },
+  "passiveName": "Focus",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat mengakibatkan DMG pada musuh, meningkatkan <cryo>8%</cryo> CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
+    },
+    "1": {
+      "0": "Saat mengakibatkan DMG pada musuh, meningkatkan <cryo>10%</cryo> CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
+    },
+    "2": {
+      "0": "Saat mengakibatkan DMG pada musuh, meningkatkan <cryo>12%</cryo> CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
+    },
+    "3": {
+      "0": "Saat mengakibatkan DMG pada musuh, meningkatkan <cryo>14%</cryo> CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan efek akan hilang."
+    },
+    "4": {
+      "0": "Saat mengakibatkan DMG pada musuh, meningkatkan <cryo>16%</cryo> CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan efek akan hilang."
+    }
+  }
+}

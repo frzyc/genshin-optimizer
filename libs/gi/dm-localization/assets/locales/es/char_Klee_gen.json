@@ -1,0 +1,157 @@
+{
+  "name": "Klee",
+  "title": "El Sol Fugitivo",
+  "description": "Una visitante frecuente de los calabozos de los Caballeros de Favonius, la maestra de explosiones de Mondstadt. La llaman “el Sol Fugitivo”.",
+  "constellationName": "Trifolium",
+  "auto": {
+    "name": "¡Buuum!",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 ataques explosivos que infligen <pyro>Daño Pyro en el AdE</pyro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para infligir <pyro>Daño Pyro en el AdE</pyro> después de un corto tiempo de canalización."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder del fuego, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <pyro>Daño Pyro en el AdE</pyro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Bomba saltarina",
+    "description": {
+      "0": "¡La bomba saltarina es superdivertida!",
+      "1": "Arroja una poderosa Bomba saltarina que rebota hasta tres veces. Cada vez que rebota genera una explosión que inflige <pyro>Daño Pyro en el AdE</pyro>.",
+      "2": "<br/>",
+      "3": "Después de rebotar tres veces, se dividirá en varias minas.",
+      "4": "Al entrar en contacto con el enemigo, las minas explotarán, infligiendo <pyro>Daño Pyro en el AdE</pyro>.",
+      "5": "<br/>",
+      "6": "Puede ser usado 2 veces consecutivas.",
+      "7": "<br/>",
+      "8": "<i>La bomba saltarina es la nueva amiga de Klee... ¡Todos mueren por conocerla!</i>"
+    },
+    "skillParams": {
+      "0": "Daño de Bomba saltarina",
+      "1": "Daño de mina",
+      "2": "Duración de minas",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Chispas explosivas",
+    "description": {
+      "0": "¡Klee a la carga! Mientras dure la habilidad, invoca constantemente Chispas explosivas que hacen daño a los enemigos cercanos, infligiendo <pyro>Daño Pyro en el AdE</pyro>.",
+      "1": "<br/>",
+      "2": "<i>Los Caballeros de Favonius creen que si Klee nunca se ha hecho daño con sus propias bombas es porque debe tener una buena estrella que la protege...</i>"
+    },
+    "skillParams": {
+      "0": "Daño de Chispas explosivas",
+      "1": "Duración",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Regalo explosivo",
+    "description": {
+      "0": "Cuando se inflige daño con <strong>Bomba saltarina</strong> y Ataque Normal, hay una probabilidad del 50% de que Klee obtenga una flor explosiva.",
+      "1": "El siguiente Ataque Cargado consumirá esta flor explosiva sin ningún Coste de Aguante y tendrá un aumento de daño del 50%."
+    }
+  },
+  "passive2": {
+    "name": "Estallido incesante",
+    "description": {
+      "0": "Cuando Klee asesta un golpe CRIT con su Ataque Cargado, todos los miembros del equipo recuperan 2 pts. de Energía Elemental."
+    }
+  },
+  "passive3": {
+    "name": "Todos mis tesoros",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Mondstadt</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Explosión en cadena",
+    "description": {
+      "0": "Al atacar o usar una habilidad, hay una probabilidad de invocar chispas que atacan al enemigo, las cuales infligen daño equivalente al 120% del daño de <strong>Chispas explosivas</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Fragmentos de metralla",
+    "description": {
+      "0": "Las minas de <strong>Bomba saltarina</strong> reducen la DEF de los enemigos en un 23% durante 10 s."
+    }
+  },
+  "constellation3": {
+    "name": "Mezcla especial de Klee",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Bomba saltarina</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "¡Bomba va!",
+    "description": {
+      "0": "Si Klee se retira de combate mientras la habilidad <strong>Chispas explosivas</strong> está activa, creará una explosión que inflige un 555% de <pyro>Daño Pyro en el AdE</pyro>."
+    }
+  },
+  "constellation5": {
+    "name": "Estrella de los bombardeos",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Chispas explosivas</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "¡Klee a la carga!",
+    "description": {
+      "0": "Mientras las <strong>Chispas explosivas</strong> estén activas, Klee hará que todos los miembros del equipo (a excepción de Klee) recuperen 3 pts. de Energía Elemental cada 3 s.",
+      "1": "Después de activar <strong>Chispas explosivas</strong>, todos los miembros del equipo reciben un 10% de <pyro>Bono de Daño Pyro</pyro> durante 25 s."
+    }
+  }
+}

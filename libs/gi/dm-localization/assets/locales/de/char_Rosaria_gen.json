@@ -1,0 +1,154 @@
+{
+  "name": "Rosaria",
+  "title": "Dornige Gnade",
+  "description": "Eine Ordensschwester, die vielleicht so aussieht, sich aber überhaupt nicht so verhält wie eine. Sie ist bekannt für ihre kalten Worte und ihre abweisende Art. Außerdem arbeitet sie ausschließlich allein.",
+  "constellationName": "Spinea Corona",
+  "auto": {
+    "name": "Speer der Kathedrale",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Erschütterndes Geständnis",
+    "description": {
+      "0": "Rosaria bewegt sich mit hoher Geschwindigkeit hinter ihr Ziel, sticht mit ihrer Waffe zu und schwingt sie und verursacht <cryo>Kryo-Schaden</cryo>.",
+      "1": "Es ist nicht möglich, mit dieser Fähigkeit hinter größere Gegner zu gelangen.",
+      "2": "<br/>",
+      "3": "<i>Diejenigen, die Schwester Rosaria ihre Sünden gestehen, erhalten keine Absolution. Alle Sünder werden stattdessen mit einer strafenden Kälte konfrontiert, die dem Gewicht ihrer Sünden entspricht.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Letzte Salbung",
+    "description": {
+      "0": "Dies ist Rosarias besonderes Gebetsritual. Zunächst fegt sie mit ihrer Waffe die Gegner neben ihr fort und konzentriert eisige Kälte direkt vor ihr, womit sie jeweils <cryo>Kryo-Schaden</cryo> verursacht.",
+      "1": "Während der Wirkungsdauer der Eislanze wird in gleichmäßigen Abständen Kälte freigegeben, die Gegnern in der Nähe <cryo>Kryo-Schaden</cryo> zufügt.",
+      "2": "<br/>",
+      "3": "<i>Das Fällen eines Urteils ist mühsam. Doch viel einfacher ist es, direkt zum letzten Gebet zu springen. Rosaria war dem Anemo-Archon sowieso nie sehr ergeben, weshalb ihr das Ganze noch leichter fällt.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Fortlaufender SCH von Eislanzen",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Schatten der Beichte",
+    "description": {
+      "0": "Erhöht Rosarias KT bei Angriffen von Gegnern mit <strong>Erschütterndes Geständnis</strong> von hinten 5 s lang um 12 %."
+    }
+  },
+  "passive2": {
+    "name": "Beistand aus der Dunkelheit",
+    "description": {
+      "0": "Erhöht die KT aller Truppenmitglieder in der Nähe (außer Rosarias selbst) bei Anwendung von <strong>Letzte Salbung</strong> 10 s lang um 15 % ihrer eigenen KT.",
+      "1": "Die KT können auf diese Weise nicht um mehr als 15 % erhöht werden."
+    }
+  },
+  "passive3": {
+    "name": "Nachtwanderin",
+    "description": {
+      "0": "Verleiht den eigenen Figuren in der Truppe nachts (18 bis 6 Uhr) den Effekt „Schneller Schritt“: Erhöht die Bewegungs-GSW um 10 %.",
+      "1": "Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund und ist nicht stapelbar."
+    }
+  },
+  "constellation1": {
+    "name": "Lenkung der Sünden",
+    "description": {
+      "0": "Erhöht Rosarias Angriffs-GSW nach Auslösen eines KT mit einem ihrer Angriffe 4 s lang um 10 % und den mit Standardangriffen verursachten Schaden um 10 %."
+    }
+  },
+  "constellation2": {
+    "name": "Land des Unheils",
+    "description": {
+      "0": "Verlängert die Wirkungsdauer der mit <strong>Letzte Salbung</strong> erschaffenen Eislanze um 4 s."
+    }
+  },
+  "constellation3": {
+    "name": "Beichtritual",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Erschütterndes Geständnis</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Bittere Gnade",
+    "description": {
+      "0": "Stellt Rosaria beim Auslösen eines KT mit <strong>Erschütterndes Geständnis</strong> 5 punkte Elementarenergie wieder her.",
+      "1": "Dieser Effekt kann pro Erschütterndes Geständnis nur 1-mal ausgelöst werden."
+    }
+  },
+  "constellation5": {
+    "name": "Letztes Gebet",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Letzte Salbung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Im Namen der Götter",
+    "description": {
+      "0": "Verringert mit den Angriffen von <strong>Letzte Salbung</strong> den physischen WDS von Gegnern 10 s lang um 20 %."
+    }
+  }
+}

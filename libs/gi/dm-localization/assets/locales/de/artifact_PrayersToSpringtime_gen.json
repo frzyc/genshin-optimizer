@@ -1,0 +1,12 @@
+{
+  "setName": "Eisopfer",
+  "setEffects": {
+    "1": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Kryo-Attribut um 40 %."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Eisopferdiadem",
+      "desc": "Ein ritueller Kopfschmuck, den Priester in alter Zeit während ihrer Zeremonien trugen. Da er lange Jahre in eisiger Kälte ruhte, hat er eine erstaunliche Widerstandskraft entwickelt."
+    }
+  }
+}

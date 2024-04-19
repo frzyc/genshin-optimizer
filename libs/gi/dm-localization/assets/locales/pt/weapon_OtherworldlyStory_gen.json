@@ -1,0 +1,24 @@
+{
+  "name": "Histórias de Outros Mundos",
+  "description": {
+    "0": "Um romance de fantasia barato sem valor referencial. Os seus poderes, obviamente, também servem apenas na sua imaginação."
+  },
+  "passiveName": "Imersão de Energia",
+  "passiveDescription": {
+    "0": {
+      "0": "Coletar um Orbe ou Partícula Elemental restaura <cryo>1%</cryo> da Vida."
+    },
+    "1": {
+      "0": "Coletar um Orbe ou Partícula Elemental restaura <cryo>1.25%</cryo> da Vida."
+    },
+    "2": {
+      "0": "Coletar um Orbe ou Partícula Elemental restaura <cryo>1.5%</cryo> da Vida."
+    },
+    "3": {
+      "0": "Coletar um Orbe ou Partícula Elemental restaura <cryo>1.75%</cryo> da Vida."
+    },
+    "4": {
+      "0": "Coletar um Orbe ou Partícula Elemental restaura <cryo>2%</cryo> da Vida."
+    }
+  }
+}

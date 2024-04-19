@@ -1,0 +1,24 @@
+{
+  "name": "Pacificadora del Desastre",
+  "description": {
+    "0": "Una afilada arma forjada con extraños minerales. Su tenue brillo azul parece estar contando incontables historias del pasado."
+  },
+  "passiveName": "Ley de la aniquilación",
+  "passiveDescription": {
+    "0": {
+      "0": "Otorga un <cryo>12%</cryo> a todos los Bonos de Daño Elemental. Al lanzar la Habilidad Elemental, se obtiene el efecto “consumación” durante 20 s, el cual aumenta el ATQ en un <cryo>3.2%</cryo> por segundo. Este efecto puede acumularse hasta 6 veces. Cuando el personaje que equipa esta arma está en tu equipo pero no en uso, el aumento de ataque otorgado por consumación se dobla."
+    },
+    "1": {
+      "0": "Otorga un <cryo>15%</cryo> a todos los Bonos de Daño Elemental. Al lanzar la Habilidad Elemental, se obtiene el efecto “consumación” durante 20 s, el cual aumenta el ATQ en un <cryo>4%</cryo> por segundo. Este efecto puede acumularse hasta 6 veces. Cuando el personaje que equipa esta arma está en tu equipo pero no en uso, el aumento de ataque otorgado por consumación se dobla."
+    },
+    "2": {
+      "0": "Otorga un <cryo>18%</cryo> a todos los Bonos de Daño Elemental. Al lanzar la Habilidad Elemental, se obtiene el efecto “consumación” durante 20 s, el cual aumenta el ATQ en un <cryo>4.8%</cryo> por segundo. Este efecto puede acumularse hasta 6 veces. Cuando el personaje que equipa esta arma está en tu equipo pero no en uso, el aumento de ataque otorgado por consumación se dobla."
+    },
+    "3": {
+      "0": "Otorga un <cryo>21%</cryo> a todos los Bonos de Daño Elemental. Al lanzar la Habilidad Elemental, se obtiene el efecto “consumación” durante 20 s, el cual aumenta el ATQ en un <cryo>5.6%</cryo> por segundo. Este efecto puede acumularse hasta 6 veces. Cuando el personaje que equipa esta arma está en tu equipo pero no en uso, el aumento de ataque otorgado por consumación se dobla."
+    },
+    "4": {
+      "0": "Otorga un <cryo>24%</cryo> a todos los Bonos de Daño Elemental. Al lanzar la Habilidad Elemental, se obtiene el efecto “consumación” durante 20 s, el cual aumenta el ATQ en un <cryo>6.4%</cryo> por segundo. Este efecto puede acumularse hasta 6 veces. Cuando el personaje que equipa esta arma está en tu equipo pero no en uso, el aumento de ataque otorgado por consumación se dobla."
+    }
+  }
+}

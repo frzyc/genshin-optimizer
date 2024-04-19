@@ -1,0 +1,167 @@
+{
+  "name": "Charlotte",
+  "title": "Linse der Wahrheit",
+  "description": "Die tüchtige Reporterin vom Dampfvogel ist stets auf der Suche nach der „Wahrheit“.",
+  "constellationName": "Hualina Veritas",
+  "auto": {
+    "name": "Erfassung der kalten Farben",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Zielt mit „Herrn Vérité“, einem Spezialfotoapparat, auf die Gegner und führt bis zu 3 aufeinanderfolgende Angriffe aus, die <cryo>Kryo-Schaden</cryo> verursachen."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und setzt „Herrn Vérité“ nach einer kurzen Vorbereitung ein, der dann <cryo>Kryo-Flächenschaden</cryo> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft des Eises, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <cryo>Kryo-Flächenschaden</cryo>."
+      },
+      "arkhe": {
+        "0": "<strong>Arkhe: Pneuma</strong>",
+        "1": "Erzeugt nach Auslösen des heftigen Schlags von Charlotte in gewissen Zeitabständen einen Geisterstachel, der auf Gegner herabfällt, diese durchbohrt und mit Pneuma versehenen <cryo>Kryo-Flächenschaden</cryo> verursacht."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "Geisterstachel-SCH",
+      "8": "Geisterstachel-SCH-Intervall",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Aufnahme – Gefrierpunkt-Komposition",
+    "description": {
+      "0": "Mit dem feinen Gespür einer Spitzenreporterin lässt Charlotte ihre fotografischen Fähigkeiten erstrahlen. Je nachdem, ob gedrückt oder gedrückt gehalten wird, wird ein anderer Effekt erzeugt.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Macht einen Schnappschuss mit „Herrn Vérité“, fügt Gegnern vor sich <cryo>Kryo-Flächenschaden</cryo> zu und verleiht bis zu 5 getroffenen Gegnern den Effekt „Scharfe Silhouette“, der während der Wirkungsdauer den betroffenen Gegnern in gewissen Abständen <cryo>Kryo-Schaden</cryo> zufügt.",
+      "4": "<br/>",
+      "5": "<strong>Gedrückt halten</strong>",
+      "6": "Klappt den Sucher von „Herrn Vérité“ auf und wechselt in den Kompositionsmodus. Während des Gedrückthaltens vergrößert sich der Sucherrahmen fortlaufend, bis der Zustand der Großformatfotografie erreicht wird. In diesem Modus kann Charlotte sich weiterhin bewegen und ihre Richtung ändern.",
+      "7": "Sobald nicht mehr gedrückt gehalten wird, fügt „Herr Vérité“ allen Gegnern, die mit dem Sucherrahmen erfasst wurden, <cryo>Kryo-Schaden</cryo> zu und verleiht ihnen denselben Effekt „Scharfe Silhouette“ wie beim Drücken. Wenn diese Fähigkeit erst nach Erreichen der Großformatfotografie ausgelöst wird, wird stattdessen „Fokussierter Eindruck“ verliehen, der länger anhält und höheren Schaden verursacht. Außerdem wird die diesmalige Abklingzeit der Fähigkeit verlängert.",
+      "8": "Der Kompositionsmodus dauert höchstens 15 s und es können bis zu 5 Gegner erfasst werden.",
+      "9": "<br/>",
+      "10": "<i>„Pressefotografie erfordert einfache Aufnahmen mit außergewöhnlichen Motiven, aber vor allem muss man ein Händchen dafür haben, den Moment einzufangen!“</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken des Auslösers",
+      "1": "SCH bei Gedrückthalten des Auslösers",
+      "2": "„Scharfe Silhouette“-Siegel-SCH",
+      "3": "„Scharfe Silhouette“-Siegel-Intervall",
+      "4": "„Scharfe Silhouette“-Siegel-Dauer",
+      "5": "„Fokussierter Eindruck“-Siegel-SCH",
+      "6": "„Fokussierter Eindruck“-Siegel-Intervall",
+      "7": "„Fokussierter Eindruck“-Siegel-Dauer",
+      "8": "Abklingzeit",
+      "9": "Abklingzeit der Großformatfotografie",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Standbild – Umfassende Bestätigung",
+    "description": {
+      "0": "Konzentriert die Kryo-Kraft, erschafft das Aushängeschild des Dampfvogels und erzeugt einen „Feuilleton-Bereich“, der <cryo>Kryo-Flächenschaden</cryo> verursacht und die LP aller Truppenmitglieder in der Nähe basierend auf Charlottes ANG wiederherstellt.",
+      "1": "<br/>",
+      "2": "<strong>Feuilleton-Bereich</strong>",
+      "3": [
+        " Während der Dauer des Bereichs fügt „Herr Vérité“ den Gegnern darin in gewissen Abständen <cryo>Kryo-Schaden</cryo> zu.",
+        " Stellt den aktiven Figuren darin fortlaufend LP basierend auf Charlottes ANG wieder her."
+      ],
+      "4": "<br/>",
+      "5": "<i>„Der Schlüssel zu einem guten Bericht ist es, die Geschichten aus verschiedenen Perspektiven zu hören, um zu erfahren, was wirklich passiert ist ... Ich meine, so kannst du den besten Blickwinkel für deinen Artikel auswählen!“</i>"
+    },
+    "skillParams": {
+      "0": "Heilung bei Auslösen",
+      "1": "Fähigkeits-SCH",
+      "2": "Fortlaufende Heilung durch Fotoapparat",
+      "3": "Fotoapparat-SCH",
+      "4": "Dauer von „Feuilleton-Bereich“",
+      "5": "Abklingzeit",
+      "6": "Elementarenergie",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Moment des Erstaunens",
+    "description": {
+      "0": "Verringert die Abklingzeit der Fähigkeit <strong>„Aufnahme – Gefrierpunkt-Komposition“</strong> um 2 s, wenn ein Gegner mit „Fokussierter Eindruck“ besiegt wird. Diese Verringerung der Abklingzeit kann alle 12 s 4-mal ausgelöst werden."
+    }
+  },
+  "passive2": {
+    "name": "Untersuchung der Diversität",
+    "description": {
+      "0": "Erhält für jeweils 1/2/3 Truppenmitglied(er) aus Fontaine (außer sich selbst) einen Heilungsbonus von 5/10/15 %. Erhält für jeweils 1/2/3 Truppenmitglied(er), die nicht aus Fontaine stammen, einen Kryo-SCH-Bonus von 5/10/15 %."
+    }
+  },
+  "passive3": {
+    "name": "Ich-Verschluss",
+    "description": {
+      "0": "Nach dem Aktivieren des Spezial-Analyse-Zoomobjektivs kann Charlottes „Aufnahme – Gefrierpunkt-Komposition“ beim Gedrückthalten nicht mehr die ursprünglichen Effekte auslösen, nimmt dafür aber Fotos auf eine ganz besondere Art und Weise auf ..."
+    }
+  },
+  "constellation1": {
+    "name": "Notwendigkeit der Überprüfung",
+    "description": {
+      "0": "Verleiht der Figur das Siegel „Überprüft“, das dieser Figur alle 2 s LP in Höhe von 80 % von Charlottes ANG wiederherstellt, sobald die Figur durch <strong>„Standbild – Umfassende Bestätigung“</strong> geheilt wird, hält 6 s."
+    }
+  },
+  "constellation2": {
+    "name": "Pflicht der Wahrheitssuche",
+    "description": {
+      "0": "Erhöht beim Anwenden von <strong>Aufnahme – Gefrierpunkt-Komposition</strong>, wenn Herr Vérités Angriff 1/2/3 (oder mehr) Gegner trifft, Charlottes ANG 12 s lang um 10/20/30 %."
+    }
+  },
+  "constellation3": {
+    "name": "Gebot der Unabhängigkeit",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Standbild – Umfassende Bestätigung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Verantwortung der Ermahnung",
+    "description": {
+      "0": "Wenn die Fähigkeit <strong>Standbild – Umfassende Bestätigung</strong> einen Gegner trifft, der durch „Scharfe Silhouette“ oder „Fokussierter Eindruck“ markiert ist, fügt sie 10 % mehr Schaden zu und stellt Charlotte 2 Punkte Elementarenergie wieder her. Diese Wiederherstellung der Elementarenergie kann alle 20 s 5-mal ausgelöst werden."
+    }
+  },
+  "constellation5": {
+    "name": "Prinzip des Gewissens",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Aufnahme – Gefrierpunkt-Komposition</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Gleichgewicht von Sachlichkeit und Sensation",
+    "description": {
+      "0": "Wenn der Standardangriff oder heftige Schlag der aktiven Figur einen Gegner trifft, der von „Fokussierter Eindruck“ der Fähigkeit <strong>Aufnahme – Gefrierpunkt-Komposition</strong> markiert wurde, wird Herr Vérité einen abgestimmten Angriff auslösen, der <cryo>Kryo-Flächenschaden</cryo> in Höhe von 180 % ANG von Charlotte verursacht, und LP der aktiven Figuren in der Angriffsreichweite in Höhe von 42 % des ANG von Charlotte wiederherstellen, 6 s Abklingzeit. Auf diese Weise verursachter Schaden und Heilung werden als Schaden und Heilung der Spezialfähigkeit von Charlotte betrachtet."
+    }
+  }
+}

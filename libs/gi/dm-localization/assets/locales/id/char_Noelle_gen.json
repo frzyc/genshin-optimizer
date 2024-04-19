@@ -1,0 +1,170 @@
+{
+  "skill": {
+    "triggerChance": "Persentase Pemulihan Terpicu",
+    "name": "Breastplate",
+    "description": {
+      "0": "Menciptakan zirah batu yang mengakibatkan <geo>Geo DMG</geo> pada musuh di sekitar dan membentuk perisai. DMG yang ditahan perisai berdasarkan DEF Noelle.",
+      "1": "Perisainya memiliki ciri-ciri berikut:",
+      "2": [
+        "Saat Normal dan Charged Attack Noelle mengenai target, berkemungkinan memulihkan HP untuk semua karakter.",
+        "Memiliki 150% Efisiensi Penahanan DMG terhadap semua Elemental dan Physical DMG."
+      ],
+      "3": "<br/>",
+      "4": "Jumlah HP yang dipulihkan meningkat berdasarkan DEF Noelle.",
+      "5": "<br/>",
+      "6": "<i>Noelle adalah seorang pelayan yang sangat sigap, dan juga seorang Knight yang sangat gagah.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Penahanan DMG",
+      "2": "Pemulihan HP",
+      "3": "Persentase Pemulihan Terpicu",
+      "4": "Durasi",
+      "5": "Cooldown",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "atkBonus": "Peningkatan ATK",
+    "name": "Sweeping Time",
+    "description": {
+      "0": "Mengumpulkan kekuatan Geo di sekitar senjatanya, Noelle menghantam musuh di sekitarnya dengan serangan dalam area besar, mengakibatkan <geo>Geo DMG</geo>.",
+      "1": "Setelahnya, Noelle mendapatkan efek berikut:",
+      "2": [
+        "Serangan area yang lebih besar.",
+        "Mengonversi serangan menjadi <geo>Geo DMG</geo>, konversi ini tidak bisa ditimpa oleh Elemental Infusion lainnya.",
+        "Peningkatan ATK yang meningkat berdasarkan DEF dia."
+      ],
+      "3": "<br/>",
+      "4": "<i>Terkadang, bukan hanya debu yang harus dibersihkan...</i>"
+    },
+    "skillParams": {
+      "0": "DMG Burst",
+      "1": "DMG Skill",
+      "2": "Peningkatan ATK",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Noelle",
+  "title": "Chivalric Blossom",
+  "description": "Seorang pelayan yang bekerja di Knights of Favonius, memiliki impian untuk menjadi seorang Knight suatu hari kelak.",
+  "constellationName": "Parma Cordis",
+  "auto": {
+    "name": "Favonius Bladework - Maid",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 tebasan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar.",
+        "2": "Diakhiri dengan sebuah tebasan yang kuat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Berputar Charged Attack",
+      "5": "DMG Akhir Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "Durasi Maksimum",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Devotion",
+    "description": {
+      "0": "Saat Noelle berada dalam party, tetapi tidak sedang bertarung, skill ini akan terpicu secara otomatis ketika HP karakter yang sedang digunakan kurang dari 30%:",
+      "1": "Karakter tersebut akan mendapatkan perisai yang dapat menahan DMG sebesar 400% dari DEF Noelle selama 20 detik.",
+      "2": "Perisai ini memiliki bonus 150% efektivitas Penahanan DMG untuk semua Elemental dan Physical DMG.",
+      "3": "Efek ini dapat terpicu setiap 60 detik."
+    }
+  },
+  "passive2": {
+    "name": "Nice and Clean",
+    "description": {
+      "0": "Saat Normal Attack atau Charged Attack Noelle mengenai musuh 4 kali, CD skill <strong>Breastplate</strong> akan berkurang 1 detik.",
+      "1": "Serangan Noelle dapat dihitung sebagai 1 kali setiap 0,1 detik."
+    }
+  },
+  "passive3": {
+    "name": "Maid's Knighthood",
+    "description": {
+      "0": "Saat masakan jenis pertahanan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "I Got Your Back",
+    "description": {
+      "0": "Saat <strong>Sweeping Time</strong> dan <strong>Breastplate</strong> aktif bersamaan, serangan memiliki 100% persentase untuk memicu efek pemulihan."
+    }
+  },
+  "constellation2": {
+    "name": "Combat Maid",
+    "description": {
+      "0": "Mengurangi 20% konsumsi stamina Charged Attack dan meningkatkan 15% DMG Charged Attack Noelle."
+    }
+  },
+  "constellation3": {
+    "name": "Invulnerable Maid",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Breastplate</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "To Be Cleaned",
+    "description": {
+      "0": "<strong>Breastplate</strong> mengakibatkan <geo>Geo DMG</geo> sebesar 400% ATK ke musuh di sekitar saat hancur atau saat durasi selesai."
+    }
+  },
+  "constellation5": {
+    "name": "Favonius Sweeper Master",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Sweeping Time</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Must Be Spotless",
+    "description": {
+      "0": "<strong>Sweeping Time</strong> meningkatkan ATK Noelle dengan tambahan 50% dari DEF Noelle.",
+      "1": "Durasi skill meningkat 1 detik setiap mengalahkan musuh saat skill masih aktif, hingga 10 detik."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Ballata dei fiordi",
+  "description": {
+    "0": "Un'arma ad asta usata da chi vuole pescare nella tundra. Non lascia scampo a nessuno."
+  },
+  "passiveName": "Racconti della tundra",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando nel gruppo sono presenti personaggi di almeno 3 tipi elementali diversi, la maestria elementale aumenta di <cryo>120</cryo>."
+    },
+    "1": {
+      "0": "Quando nel gruppo sono presenti personaggi di almeno 3 tipi elementali diversi, la maestria elementale aumenta di <cryo>150</cryo>."
+    },
+    "2": {
+      "0": "Quando nel gruppo sono presenti personaggi di almeno 3 tipi elementali diversi, la maestria elementale aumenta di <cryo>180</cryo>."
+    },
+    "3": {
+      "0": "Quando nel gruppo sono presenti personaggi di almeno 3 tipi elementali diversi, la maestria elementale aumenta di <cryo>210</cryo>."
+    },
+    "4": {
+      "0": "Quando nel gruppo sono presenti personaggi di almeno 3 tipi elementali diversi, la maestria elementale aumenta di <cryo>240</cryo>."
+    }
+  }
+}

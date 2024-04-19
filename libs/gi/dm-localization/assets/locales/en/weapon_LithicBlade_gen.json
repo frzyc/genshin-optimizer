@@ -1,0 +1,24 @@
+{
+  "name": "Lithic Blade",
+  "description": {
+    "0": "A greatsword carved and chiseled from the very bedrock of Liyue."
+  },
+  "passiveName": "Lithic Axiom: Unity",
+  "passiveDescription": {
+    "0": {
+      "0": "For every character in the party who hails from Liyue, the character who equips this weapon gains a <cryo>7%</cryo> ATK increase and a <cryo>3%</cryo> CRIT Rate increase. This effect stacks up to 4 times."
+    },
+    "1": {
+      "0": "For every character in the party who hails from Liyue, the character who equips this weapon gains a <cryo>8%</cryo> ATK increase and a <cryo>4%</cryo> CRIT Rate increase. This effect stacks up to 4 times."
+    },
+    "2": {
+      "0": "For every character in the party who hails from Liyue, the character who equips this weapon gains a <cryo>9%</cryo> ATK increase and a <cryo>5%</cryo> CRIT Rate increase. This effect stacks up to 4 times."
+    },
+    "3": {
+      "0": "For every character in the party who hails from Liyue, the character who equips this weapon gains a <cryo>10%</cryo> ATK increase and a <cryo>6%</cryo> CRIT Rate increase. This effect stacks up to 4 times."
+    },
+    "4": {
+      "0": "For every character in the party who hails from Liyue, the character who equips this weapon gains a <cryo>11%</cryo> ATK increase and a <cryo>7%</cryo> CRIT Rate increase. This effect stacks up to 4 times."
+    }
+  }
+}

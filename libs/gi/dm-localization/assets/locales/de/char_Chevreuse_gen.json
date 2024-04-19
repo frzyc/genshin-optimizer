@@ -1,0 +1,164 @@
+{
+  "name": "Chevreuse",
+  "title": "Vollstreckerin des Gesetzes",
+  "description": "Truppenführerin der Sonderpatrouille für Sicherheit und Überwachung, deren Herz stets für die „Gerechtigkeit“ schlägt, während ihre Muskete sich nur auf die Schuldigen richtet.",
+  "constellationName": "Sclopetum Ensiferum",
+  "auto": {
+    "name": "Bajonettangriff der Lineartaktik – Modifiziert",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden auf, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Schnelles Unterdrückungsfeuer auf kurze Distanz",
+    "description": {
+      "0": "Chevreuse hebt schnell ihre Muskete an die Schulter und feuert auf ihre Gegner, wobei sie <pyro>Pyro-Flächenschaden</pyro> verursacht.",
+      "1": "Nachdem Chevreuse einen Schuss abgefeuert hat, stellt sie der aktuellen eigenen Figur auf dem Feld für kurze Zeit fortlaufend LP basierend auf Chevreuses max. LP wieder her.",
+      "2": "Beim Gedrückthalten nimmt diese Fähigkeit einen anderen Modus an.",
+      "3": "<br/>",
+      "4": "<strong>Gedrückt halten</strong>",
+      "5": "Tritt in den Zielmodus ein und visiert einen Gegner an, um einen präzisen Unterdrückungsschuss abzufeuern. Wenn Chevreuse eine überladene Kugel hat, feuert sie stattdessen die überladene Kugel ab, die mehr <pyro>Pyro-Schaden</pyro> in einem größeren Bereich verursacht.",
+      "6": "Chevreuse erhält jedes Mal eine „überladene Kugel“, wenn ein in der Nähe befindliches Truppenmitglied die Reaktion „Überladen“ auslöst, und kann bis zu 1 „überladene Kugel“ auf einmal tragen.",
+      "7": "<br/>",
+      "8": "<strong>Arkhe: Ousia</strong>",
+      "9": "Beschwört in regelmäßigen Abständen beim Vollführen von „Schnelles Unterdrückungsfeuer auf kurze Distanz“ eine Wogenklinge, die mit Ousia versehenen <pyro>Pyro-Schaden</pyro> verursacht.",
+      "10": "<br/>",
+      "11": "<i>„Eigentlich stand in den Ausbildungsvorschriften nur ‚Unterdrückungsfeuer‘, aber der Protagonist eines Romans ist der Meinung, dass auch eine stilvolle Terminologie Einfluss auf die Motivation der Truppen hat und die Gegner von Anfang an in die Enge getrieben werden können ... Ich denke, das ist ein gutes Argument, also habe ich die Vorschriften geändert!“</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "SCH bei Gedrückthalten",
+      "2": "SCH überladener Kugel",
+      "3": "Fortlaufende Heilung",
+      "4": "Heilungsdauer",
+      "5": "Wogenklinge-SCH",
+      "6": "Wogenklinge-Intervall",
+      "7": "Abklingzeit",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kreisförmiger Kartätschenangriff",
+    "description": {
+      "0": "Chevreuse feuert mit ihrer Muskete eine Kartätsche auf die Gegner ab und verursacht <pyro>Pyro-Flächenschaden</pyro>. Nachdem die Kartätsche getroffen hat, teilt sie sich in viele sekundäre Explosivgeschosse auf.",
+      "1": "Die sekundären Explosivgeschosse explodieren nach einem kurzen Intervall und fügen Gegnern in der Nähe <pyro>Pyro-Schaden</pyro> zu.",
+      "2": "<br/>",
+      "3": "<i>„Theoretisch wäre eine rechteckige Explosion am effizientesten, um feindliche Formationen zu zerschlagen. Allerdings ist der Querschnitt der explosiven Schockwelle rund, wie bei den meisten Torten. Daher können die sekundären Explosivgeschosse nur wie die Früchte auf einer Torte angeordnet werden und einen Ring um den Rand bilden.“</i>"
+    },
+    "skillParams": {
+      "0": "Kartätschen-SCH",
+      "1": "SCH der sekundären Explosivgeschosse",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Koordinierte Taktik der Vorhut",
+    "description": {
+      "0": "Wenn die Truppe nur aus <pyro>Pyro</pyro>- und <electro>Elektro</electro>-Figuren besteht und sich mindestens 1 Pyro- und 1 Elektro-Figur darin befinden:",
+      "1": "Chevreuse gewährt Truppenmitgliedern in der Nähe den Effekt „Koordinierte Taktik“, wodurch der <pyro>Pyro</pyro>- und <electro>Elektro</electro>-WDS der von der diesmaligen Reaktion „Überladen“ betroffenen Gegner 6 s lang um 40 % verringert wird, wenn diese Reaktion von den oben genannten Truppenmitgliedern ausgelöst wird.",
+      "2": "Wenn die Elementartypen der Figuren in der Truppe die Bedingungen dieses passiven Talents nicht erfüllen, wird der vorhandene Effekt „Koordinierte Taktik“ entfernt."
+    }
+  },
+  "passive2": {
+    "name": "Vertikale Kraftkoordination",
+    "description": {
+      "0": "Erhöht, nachdem Chevreuse eine überladene Kugel von <strong>„Schnelles Unterdrückungsfeuer auf kurze Distanz“</strong> abgefeuert hat, den ANG aller in der Nähe befindlichen <pyro>Pyro</pyro>- und <electro>Elektro</electro>-Figuren in der Truppe basierend auf den max. LP von Chevreuse 30 s lang, und zwar je 1.000 von Chevreuses max. LP um 1 %. Bis zu 40 % ANG-Bonus auf diese Weise möglich."
+    }
+  },
+  "passive3": {
+    "name": "Strategie des schnellen Vormarschs",
+    "description": {
+      "0": "Verringert die beim Rennen verbrauchte Ausdauer aller eigenen Truppenmitglieder um 20 %.",
+      "1": "Nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar."
+    }
+  },
+  "constellation1": {
+    "name": "Die Frontlinie stabilisierende Entschlossenheit",
+    "description": {
+      "0": "Gibt den aktuellen Figuren mit dem Effekt „Koordinierte Taktik“ (außer Chevreuse selbst), die die Reaktion „Überladen“ auslösen, 6 Punkte Elementarenergie, 10 s Abklingzeit.",
+      "1": "Das passive Talent „Koordinierte Taktik der Vorhut“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation2": {
+    "name": "Zur Explosion führender Schuss",
+    "description": {
+      "0": "Löst, nachdem <strong>Schnelles Unterdrückungsfeuer auf kurze Distanz</strong> durch Gedrückthalten eingesetzt wurde und getroffen hat, 2 Kettenexplosionen in der Nähe der getroffenen Stelle aus. Jede Explosion verursacht <pyro>Pyro-Schaden</pyro> in Höhe von 120 % ANG von Chevreuse, 10 s Abklingzeit. Hierdurch verursachter Schaden wird als Schaden der Elementarfähigkeit gewertet."
+    }
+  },
+  "constellation3": {
+    "name": "Das Überleben sichernde Schlachtfeldtechnik",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Schnelles Unterdrückungsfeuer auf kurze Distanz</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Geheimnis für schnelle Multischüsse",
+    "description": {
+      "0": "Überspringt nach dem Einsetzen von <strong>Kreisförmiger Kartätschenangriff</strong> die Abklingzeit für das Gedrückthalten von <strong>Schnelles Unterdrückungsfeuer auf kurze Distanz</strong> von Chevreuse. Dieser Effekt wird entfernt, nachdem „Schnelles Unterdrückungsfeuer auf kurze Distanz“ zweimal durch Gedrückthalten angewendet wurde, oder nach 6 s."
+    }
+  },
+  "constellation5": {
+    "name": "Zerstörung verursachende verstärkte Feuerkraft",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Kreisförmiger Kartätschenangriff</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Das Böse beendende Verfolgung",
+    "description": {
+      "0": "Stellt allen Truppenmitgliedern in der Nähe LP in Höhe von 10 % der max. LP von Chevreuse wieder her, nachdem der Heileffekt von <strong>„Schnelles Unterdrückungsfeuer auf kurze Distanz“</strong> 12 s lang existiert hat.",
+      "1": "Verleiht Truppenmitgliedern, die durch „Schnelles Unterdrückungsfeuer auf kurze Distanz“ geheilt wurden, 8 s lang einen <pyro>Pyro-SCH-Bonus</pyro> sowie einen <electro>Elektro-SCH-Bonus</electro> von 20 %, 3-fach stapelbar. Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Monetäre Aufsichtseinheit",
+  "description": {
+    "0": "Ein schwebendes Gerät zur Beobachtung bestimmter Phänomene. Nachdem es ausrangiert wurde, hat der Finder es für seine Zwecke umgestaltet."
+  },
+  "passiveName": "Goldene Gezeiten des Blutes",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den ANG um <cryo>16 %</cryo>. Erhöht den mit Standardangriffen verursachten Schaden um <cryo>16 %</cryo> und den mit heftigen Schlägen verursachten Schaden um <cryo>14 %</cryo>, wenn sich die aktuellen LP erhöhen oder verringern. Hält 4 s, 3-fach stapelbar, 0,3 s Abklingzeit. Erhöht bei Erreichen von 3 Stapelungen die Angriffs-GSW um <cryo>8 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den ANG um <cryo>20 %</cryo>. Erhöht den mit Standardangriffen verursachten Schaden um <cryo>20 %</cryo> und den mit heftigen Schlägen verursachten Schaden um <cryo>17,5 %</cryo>, wenn sich die aktuellen LP erhöhen oder verringern. Hält 4 s, 3-fach stapelbar, 0,3 s Abklingzeit. Erhöht bei Erreichen von 3 Stapelungen die Angriffs-GSW um <cryo>10 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den ANG um <cryo>24 %</cryo>. Erhöht den mit Standardangriffen verursachten Schaden um <cryo>24 %</cryo> und den mit heftigen Schlägen verursachten Schaden um <cryo>21 %</cryo>, wenn sich die aktuellen LP erhöhen oder verringern. Hält 4 s, 3-fach stapelbar, 0,3 s Abklingzeit. Erhöht bei Erreichen von 3 Stapelungen die Angriffs-GSW um <cryo>12 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den ANG um <cryo>28 %</cryo>. Erhöht den mit Standardangriffen verursachten Schaden um <cryo>28 %</cryo> und den mit heftigen Schlägen verursachten Schaden um <cryo>24,5 %</cryo>, wenn sich die aktuellen LP erhöhen oder verringern. Hält 4 s, 3-fach stapelbar, 0,3 s Abklingzeit. Erhöht bei Erreichen von 3 Stapelungen die Angriffs-GSW um <cryo>14 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den ANG um <cryo>32 %</cryo>. Erhöht den mit Standardangriffen verursachten Schaden um <cryo>32 %</cryo> und den mit heftigen Schlägen verursachten Schaden um <cryo>28 %</cryo>, wenn sich die aktuellen LP erhöhen oder verringern. Hält 4 s, 3-fach stapelbar, 0,3 s Abklingzeit. Erhöht bei Erreichen von 3 Stapelungen die Angriffs-GSW um <cryo>16 %</cryo>."
+    }
+  }
+}

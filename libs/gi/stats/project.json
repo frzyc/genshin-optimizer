@@ -1,0 +1,17 @@
+{
+  "name": "gi-stats",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi/stats/src",
+  "projectType": "library",
+  "targets": {
+    "gen-file": {
+      "executor": "@genshin-optimizer/gi/stats:gen-stats",
+      "outputs": [
+        "{projectRoot}/Data/**/*",
+        "{projectRoot}/src/allStat_gen.json"
+      ]
+    },
+    "lint": {}
+  },
+  "tags": []
+}

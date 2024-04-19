@@ -1,0 +1,24 @@
+{
+  "name": "Serment de la liberté",
+  "description": {
+    "0": "Une épée droite à lame bleue, aussi inébranlable que le serment de la liberté du royaume du vent."
+  },
+  "passiveName": "Ode de l'appel à la révolte",
+  "passiveDescription": {
+    "0": {
+      "0": "Partie du « Concert du millénaire ». Augmente les DGT infligés de <cryo>10 %</cryo>. Si le personnage déclenche une réaction élémentaire, il obtient un talisman de résistance, à raison d'un talisman toutes les 0,5 s maximum, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Une fois 2 talismans cumulés, ils sont consommés et font bénéficier pendant 12 s tous les personnages de l'équipe à proximité de l'effet « Concert du millénaire - Ode à la révolte », ce qui augmente les DGT infligés par les attaques normales, les attaques chargées et les attaques plongeantes de <cryo>16 %</cryo> et l'ATQ de <cryo>20 %</cryo>. Il n'est plus possible de gagner de talismans de résistance pendant 20 s après l'activation de cet effet. Les différents effets du « Concert du millénaire » ne peuvent pas être cumulés."
+    },
+    "1": {
+      "0": "Partie du « Concert du millénaire ». Augmente les DGT infligés de <cryo>12,5 %</cryo>. Si le personnage déclenche une réaction élémentaire, il obtient un talisman de résistance, à raison d'un talisman toutes les 0,5 s maximum, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Une fois 2 talismans cumulés, ils sont consommés et font bénéficier pendant 12 s tous les personnages de l'équipe à proximité de l'effet « Concert du millénaire - Ode à la révolte », ce qui augmente les DGT infligés par les attaques normales, les attaques chargées et les attaques plongeantes de <cryo>20 %</cryo> et l'ATQ de <cryo>25 %</cryo>. Il n'est plus possible de gagner de talismans de résistance pendant 20 s après l'activation de cet effet. Les différents effets du « Concert du millénaire » ne peuvent pas être cumulés."
+    },
+    "2": {
+      "0": "Partie du « Concert du millénaire ». Augmente les DGT infligés de <cryo>15 %</cryo>. Si le personnage déclenche une réaction élémentaire, il obtient un talisman de résistance, à raison d'un talisman toutes les 0,5 s maximum, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Une fois 2 talismans cumulés, ils sont consommés et font bénéficier pendant 12 s tous les personnages de l'équipe à proximité de l'effet « Concert du millénaire - Ode à la révolte », ce qui augmente les DGT infligés par les attaques normales, les attaques chargées et les attaques plongeantes de <cryo>24 %</cryo> et l'ATQ de <cryo>30 %</cryo>. Il n'est plus possible de gagner de talismans de résistance pendant 20 s après l'activation de cet effet. Les différents effets du « Concert du millénaire » ne peuvent pas être cumulés."
+    },
+    "3": {
+      "0": "Partie du « Concert du millénaire ». Augmente les DGT infligés de <cryo>17,5 %</cryo>. Si le personnage déclenche une réaction élémentaire, il obtient un talisman de résistance, à raison d'un talisman toutes les 0,5 s maximum, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Une fois 2 talismans cumulés, ils sont consommés et font bénéficier pendant 12 s tous les personnages de l'équipe à proximité de l'effet « Concert du millénaire - Ode à la révolte », ce qui augmente les DGT infligés par les attaques normales, les attaques chargées et les attaques plongeantes de <cryo>28 %</cryo> et l'ATQ de <cryo>35 %</cryo>. Il n'est plus possible de gagner de talismans de résistance pendant 20 s après l'activation de cet effet. Les différents effets du « Concert du millénaire » ne peuvent pas être cumulés."
+    },
+    "4": {
+      "0": "Partie du « Concert du millénaire ». Augmente les DGT infligés de <cryo>20 %</cryo>. Si le personnage déclenche une réaction élémentaire, il obtient un talisman de résistance, à raison d'un talisman toutes les 0,5 s maximum, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Une fois 2 talismans cumulés, ils sont consommés et font bénéficier pendant 12 s tous les personnages de l'équipe à proximité de l'effet « Concert du millénaire - Ode à la révolte », ce qui augmente les DGT infligés par les attaques normales, les attaques chargées et les attaques plongeantes de <cryo>32 %</cryo> et l'ATQ de <cryo>40 %</cryo>. Il n'est plus possible de gagner de talismans de résistance pendant 20 s après l'activation de cet effet. Les différents effets du « Concert du millénaire » ne peuvent pas être cumulés."
+    }
+  }
+}

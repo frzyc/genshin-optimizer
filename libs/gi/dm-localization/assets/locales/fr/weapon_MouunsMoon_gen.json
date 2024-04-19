@@ -1,0 +1,24 @@
+{
+  "name": "Lune de Mouun",
+  "description": {
+    "0": "Un élégant arc de guerre fait de coquillages et de corail. Un éclat mélancolique se répand le long de ses branches couleur clair de lune."
+  },
+  "passiveName": "Marchevague de Watatsumi",
+  "passiveDescription": {
+    "0": {
+      "0": "Pour chaque point de l'énergie élémentaire combinée de tous les personnages de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de <cryo>0,12 %</cryo>. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à <cryo>40 %</cryo> de cette manière."
+    },
+    "1": {
+      "0": "Pour chaque point de l'énergie élémentaire combinée de tous les personnages de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de <cryo>0,15 %</cryo>. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à <cryo>50 %</cryo> de cette manière."
+    },
+    "2": {
+      "0": "Pour chaque point de l'énergie élémentaire combinée de tous les personnages de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de <cryo>0,18 %</cryo>. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à <cryo>60 %</cryo> de cette manière."
+    },
+    "3": {
+      "0": "Pour chaque point de l'énergie élémentaire combinée de tous les personnages de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de <cryo>0,21 %</cryo>. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à <cryo>70 %</cryo> de cette manière."
+    },
+    "4": {
+      "0": "Pour chaque point de l'énergie élémentaire combinée de tous les personnages de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de <cryo>0,24 %</cryo>. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à <cryo>80 %</cryo> de cette manière."
+    }
+  }
+}

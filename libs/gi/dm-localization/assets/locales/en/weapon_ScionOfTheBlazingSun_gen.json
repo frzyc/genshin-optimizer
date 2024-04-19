@@ -1,0 +1,24 @@
+{
+  "name": "Scion of the Blazing Sun",
+  "description": {
+    "0": "An ancient longbow that is a remnant of King Deshret's ancient era. An indecipherable ancient text and solemn patterns have been carved into it."
+  },
+  "passiveName": "The Way of Sunfire",
+  "passiveDescription": {
+    "0": {
+      "0": "After a Charged Attack hits an opponent, a Sunfire Arrow will descend upon the opponent hit, dealing <cryo>60%</cryo> ATK as DMG, and applying the Heartsearer effect to the opponent damaged by said Arrow for 10s. Opponents affected by Heartsearer take <cryo>28%</cryo> more Charged Attack DMG from the wielder. A Sunfire Arrow can be triggered once every 10s."
+    },
+    "1": {
+      "0": "After a Charged Attack hits an opponent, a Sunfire Arrow will descend upon the opponent hit, dealing <cryo>75%</cryo> ATK as DMG, and applying the Heartsearer effect to the opponent damaged by said Arrow for 10s. Opponents affected by Heartsearer take <cryo>35%</cryo> more Charged Attack DMG from the wielder. A Sunfire Arrow can be triggered once every 10s."
+    },
+    "2": {
+      "0": "After a Charged Attack hits an opponent, a Sunfire Arrow will descend upon the opponent hit, dealing <cryo>90%</cryo> ATK as DMG, and applying the Heartsearer effect to the opponent damaged by said Arrow for 10s. Opponents affected by Heartsearer take <cryo>42%</cryo> more Charged Attack DMG from the wielder. A Sunfire Arrow can be triggered once every 10s."
+    },
+    "3": {
+      "0": "After a Charged Attack hits an opponent, a Sunfire Arrow will descend upon the opponent hit, dealing <cryo>105%</cryo> ATK as DMG, and applying the Heartsearer effect to the opponent damaged by said Arrow for 10s. Opponents affected by Heartsearer take <cryo>49%</cryo> more Charged Attack DMG from the wielder. A Sunfire Arrow can be triggered once every 10s."
+    },
+    "4": {
+      "0": "After a Charged Attack hits an opponent, a Sunfire Arrow will descend upon the opponent hit, dealing <cryo>120%</cryo> ATK as DMG, and applying the Heartsearer effect to the opponent damaged by said Arrow for 10s. Opponents affected by Heartsearer take <cryo>56%</cryo> more Charged Attack DMG from the wielder. A Sunfire Arrow can be triggered once every 10s."
+    }
+  }
+}

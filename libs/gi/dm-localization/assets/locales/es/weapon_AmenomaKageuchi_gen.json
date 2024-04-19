@@ -1,0 +1,24 @@
+{
+  "name": "Espada Amenoma Gemela",
+  "description": {
+    "0": "Una espada que, según la leyenda, fue forjada a medida bajo petición de un famoso samurái que podía incluso clavársela en el aire a un guerrero tengu, conocidos por ser extremadamente veloces."
+  },
+  "passiveName": "Legado Iwakura",
+  "passiveDescription": {
+    "0": {
+      "0": "Al lanzar una Habilidad Elemental, el personaje obtiene una semilla de la sucesión. Este efecto puede activarse como máximo una vez cada 5 s, dura 30 s y pueden poseerse 3 semillas de la sucesión al mismo tiempo. Al lanzar una Habilidad Definitiva, se consumirán todas las semillas disponibles y, 2 s después, el personaje que lleva esta arma equipada regenerará <cryo>6</cryo> pts. de Energía Elemental por cada semilla consumida."
+    },
+    "1": {
+      "0": "Al lanzar una Habilidad Elemental, el personaje obtiene una semilla de la sucesión. Este efecto puede activarse como máximo una vez cada 5 s, dura 30 s y pueden poseerse 3 semillas de la sucesión al mismo tiempo. Al lanzar una Habilidad Definitiva, se consumirán todas las semillas disponibles y, 2 s después, el personaje que lleva esta arma equipada regenerará <cryo>7.5</cryo> pts. de Energía Elemental por cada semilla consumida."
+    },
+    "2": {
+      "0": "Al lanzar una Habilidad Elemental, el personaje obtiene una semilla de la sucesión. Este efecto puede activarse como máximo una vez cada 5 s, dura 30 s y pueden poseerse 3 semillas de la sucesión al mismo tiempo. Al lanzar una Habilidad Definitiva, se consumirán todas las semillas disponibles y, 2 s después, el personaje que lleva esta arma equipada regenerará <cryo>9</cryo> pts. de Energía Elemental por cada semilla consumida."
+    },
+    "3": {
+      "0": "Al lanzar una Habilidad Elemental, el personaje obtiene una semilla de la sucesión. Este efecto puede activarse como máximo una vez cada 5 s, dura 30 s y pueden poseerse 3 semillas de la sucesión al mismo tiempo. Al lanzar una Habilidad Definitiva, se consumirán todas las semillas disponibles y, 2 s después, el personaje que lleva esta arma equipada regenerará <cryo>10.5</cryo> pts. de Energía Elemental por cada semilla consumida."
+    },
+    "4": {
+      "0": "Al lanzar una Habilidad Elemental, el personaje obtiene una semilla de la sucesión. Este efecto puede activarse como máximo una vez cada 5 s, dura 30 s y pueden poseerse 3 semillas de la sucesión al mismo tiempo. Al lanzar una Habilidad Definitiva, se consumirán todas las semillas disponibles y, 2 s después, el personaje que lleva esta arma equipada regenerará <cryo>12</cryo> pts. de Energía Elemental por cada semilla consumida."
+    }
+  }
+}

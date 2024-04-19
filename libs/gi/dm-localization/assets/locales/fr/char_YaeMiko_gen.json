@@ -1,0 +1,161 @@
+{
+  "name": "Yae Miko",
+  "title": "Frivolité ingénieuse",
+  "description": "La Guuji Yae du Sanctuaire de Narukami est également responsable éditoriale de la Chambre Yae. Une intelligence et une ruse inimaginables sont cachées sous son apparence gracieuse.",
+  "constellationName": "Divina Vulpes",
+  "auto": {
+    "name": "Vulpes mangeur de péchés",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Invoque des esprits Kitsunes, enchaînant jusqu'à 3 attaques qui infligent des <electro>DGT Électro</electro>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour infliger des <electro>DGT Électro de zone</electro> après un court délai."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant la puissance du tonnerre, infligeant des DGT aux ennemis en chemin et des <electro>DGT Électro de zone</electro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Évocation des yakan : Sakura dévastateur",
+    "description": {
+      "0": "Pour Yae, les tâches ennuyeuses qui peuvent être réglées en chassant les esprits n'ont pas besoin d'être accomplies personnellement.",
+      "1": "Se déplace rapidement, en laissant derrière elle un sakura dévastateur.",
+      "2": "<br/>",
+      "3": "<strong>Sakura dévastateur</strong>",
+      "4": "Les caractéristiques suivantes s'appliquent :",
+      "5": [
+        " Frappe un ennemi proche d'un éclair de façon intermittente, infligeant des <electro>DGT Électro</electro>.",
+        " Lorsqu'il y a d'autres sakura dévastateurs à proximité, leur niveau augmente, améliorant les DGT qu'ils infligent."
+      ],
+      "6": "<br/>",
+      "7": "Cette capacité peut être utilisée 3 fois.",
+      "8": "Un maximum de 3 sakura dévastateurs peut exister en même temps. Le niveau initial d'un sakura dévastateur est 1, et le niveau le plus élevé qu'un sakura peut atteindre est 3. Si un sakura dévastateur est créé trop près d'un autre sakura, l'ancien sakura est détruit.",
+      "9": "<br/>",
+      "10": "<i>« Les esprits Kitsunes scellés dans les branches sont tous des yakan qui aspirent à chasser les humains. Les yakan sont deux grades plus bas que nous, les Kitsunes célestes, et donc, je vois à peine le problème si je les... mets à mes ordres. Néanmoins, cela ne signifie pas que vous, les humains, devriez copier notre système de grade. Que nenni... Et quant à qui d'entre nous, Kitsunes ou humains, est le plus haut placé dans l'ordre hiérarchique... Héhé... »</i>"
+    },
+    "skillParams": {
+      "0": "DGT sakura dévastateur Niv.1",
+      "1": "DGT sakura dévastateur Niv.2",
+      "2": "DGT sakura dévastateur Niv.3",
+      "3": "DGT sakura dévastateur Niv.4",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Technique secrète : Incarnation de tenko",
+    "description": {
+      "0": "La légende du « kitsunetsuki », ou la possession par un Kitsune, est l'un des contes populaires d'Inazuma. Parmi eux, celui du Kitsune céleste est considéré comme spécial, accablant les ennemis du Sanctuaire de Narukami sous la forme d'un éclair qui s'abat, infligeant des <electro>DGT Électro de zone</electro>.",
+      "1": "En utilisant cette compétence, Yae Miko descelle les sakura dévastateurs à proximité pour détruire leurs formes extérieures et les transformer en éclairs de tenko descendant du ciel, infligeant des <electro>DGT Électro de zone</electro>. Chaque sakura dévastateur détruit de cette manière déclenche un éclair.",
+      "2": "<br/>",
+      "3": "<i>Yae n'utilise sa quintessence de Kitsune céleste que dans ces moments-là, brandissant elle-même la foudre. Tous ceux qui ont vu les queues de la guuji ont été réduits en cendres, alors rappelez-vous que dame Yae n'a pas de queue !</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT éclair de tenko",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ombre sacrée du sanctuaire",
+    "description": {
+      "0": "Lors de l'utilisation de <strong>Technique secrète : Incarnation de tenko</strong>, le TdR d'<strong>Évocation des yakan : Sakura dévastateur</strong> se réinitialise une fois pour chaque sakura dévastateur détruit."
+    }
+  },
+  "passive2": {
+    "name": "Bénédiction éveillée",
+    "description": {
+      "0": "Chaque point de maîtrise élémentaire que Yae Miko possède augmente les DGT des <strong>sakura dévastateurs</strong> de 0,15 %."
+    }
+  },
+  "passive3": {
+    "name": "Méditation d'une yako",
+    "description": {
+      "0": "25 % de chances de synthétiser un matériau d'aptitude aléatoire supplémentaire (même rareté et région que les matériaux consommés)."
+    }
+  },
+  "constellation1": {
+    "name": "Offrande des yakan",
+    "description": {
+      "0": "Lorsque <strong>Technique secrète : Incarnation de tenko</strong> déclenche un éclair de tenko, Yae Miko récupère 8 pts d'énergie élémentaire."
+    }
+  },
+  "constellation2": {
+    "name": "Glapissement sous la lune",
+    "description": {
+      "0": "Les <strong>sakura dévastateurs</strong> commencent au Niv.2 et peuvent monter jusqu'au Niv.4, et leur portée d'attaque augmente de 60 %."
+    }
+  },
+  "constellation3": {
+    "name": "Les sept glamours",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Évocation des yakan : Sakura dévastateur</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Canalisation de sakura",
+    "description": {
+      "0": "Lorsque l'éclair d'un <strong>sakura dévastateur</strong> a touché un ennemi, tous les membres de l'équipe à proximité obtiennent un <electro>bonus de DGT Électro</electro> de 20 % pendant 5 s."
+    }
+  },
+  "constellation5": {
+    "name": "Moquerie implacable",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Technique secrète : Incarnation de tenko</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Art tabou : Daisesshou",
+    "description": {
+      "0": "Les attaques des <strong>sakura dévastateurs</strong> ignorent 60 % de la DÉF de l'ennemi."
+    }
+  }
+}

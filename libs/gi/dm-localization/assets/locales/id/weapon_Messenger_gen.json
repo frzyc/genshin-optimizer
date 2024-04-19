@@ -1,0 +1,24 @@
+{
+  "name": "Messenger",
+  "description": {
+    "0": "Busur kayu yang sederhana. Konon busur ini biasanya digunakan hanya untuk mengirimkan pesan surat."
+  },
+  "passiveName": "Message by Flying Arrow",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar <cryo>100%</cryo> ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik."
+    },
+    "1": {
+      "0": "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar <cryo>125%</cryo> ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik."
+    },
+    "2": {
+      "0": "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar <cryo>150%</cryo> ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik."
+    },
+    "3": {
+      "0": "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar <cryo>175%</cryo> ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik."
+    },
+    "4": {
+      "0": "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar <cryo>200%</cryo> ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik."
+    }
+  }
+}

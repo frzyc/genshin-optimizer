@@ -1,0 +1,157 @@
+{
+  "name": "Kaveh",
+  "title": "Lăng Kính Vòm Trời",
+  "description": "Kiến trúc sư nổi tiếng ở Sumeru, quan tâm tất cả con người và sự việc một cách thái quá. Người theo đuổi thẩm mỹ, gặp vướng mắc bởi hiện thực.",
+  "constellationName": "Cung Thiên Đường Điểu",
+  "auto": {
+    "name": "Thiết Lập Lực Quay",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Sử dụng Mehrak để thực hiện tối đa 4 lần tấn công liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực liên tục để chém nhanh liên tiếp.",
+        "2": "Sau khi Trọng Kích kết thúc, sẽ bổ một nhát cực mạnh."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích Tuần Hoàn",
+      "5": "Sát Thương Trọng Kích Chí Mạng",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Thời Gian Kéo Dài Tối Đa",
+      "8": "Sát Thương Khi Đáp",
+      "9": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nghệ Thuật Tinh Tế",
+    "description": {
+      "0": "Chuyển tính năng phác họa của \"Mehrak\" thành tấn công, tiến hành quét vòng tròn, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro>, đồng thời kích nổ tất cả Hạt Nhân Thảo trong phạm vi quét.",
+      "1": "<br/>",
+      "2": "<i>\"Mehrak\" được tạo ra dựa trên công nghệ cổ xưa, vì vậy nó sẽ còn có tác dụng khác thay vì chỉ hỗ trợ phác họa...</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Mái Vòm Rực Rỡ",
+    "description": {
+      "0": "Phóng thích hoàn toàn năng lượng của \"Mehrak\", vạch ra không gian phác họa lập thể, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> cho kẻ địch trong đó và kích nổ toàn bộ Hạt Nhân Thảo trong phạm vi, đồng thời cường hóa năng lực tác chiến của Kaveh trong một thời gian nhất định:",
+      "1": [
+        "Tăng phạm vi đánh của Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp của Kaveh, chuyển hóa sát thương tấn công thành <dendro>Sát Thương Nguyên Tố Thảo</dendro> không thể bị thay thế;",
+        "Hạt Nhân Thảo được sinh ra khi nhân vật của bản thân trong đội kích hoạt phản ứng Sum Suê, sẽ tăng sát thương gây ra khi phát nổ;",
+        "Tăng khả năng kháng gián đoạn của Kaveh."
+      ],
+      "2": "Hiệu quả này sẽ bị hủy khi Kaveh rời trận.",
+      "3": "<br/>",
+      "4": "<i>\"Mỗi tòa kiến trúc đều chất chứa những suy nghĩ độc đáo của kiến trúc sư đối với thế giới. Từ góc độ này, có thể thấy bản thân kiến trúc chính là ký ức ngưng đọng của con người.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Thời Gian Kéo Dài",
+      "2": "Tăng Sát Thương Nổ Hạt Nhân Thảo",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Phần Trách Nhiệm Của Kiến Trúc Sư",
+    "description": {
+      "0": "Sát thương của Hạt Nhân Thảo (Bao gồm sát thương từ Bung Tỏa, Nở Rộ) khi trúng Kaveh sẽ hồi phục HP cho Kaveh, lượng HP hồi phục tương ứng với 300% Tinh Thông Nguyên Tố của Kaveh. Hiệu quả này mỗi 0.5s tối đa kích hoạt một lần."
+    }
+  },
+  "passive2": {
+    "name": "Vẻ Tò Mò Của Thợ Thủ Công",
+    "description": {
+      "0": "Trong thời gian duy trì <strong>Mái Vòm Rực Rỡ</strong>, Tấn Công Thường, Trọng Kích hoặc Tấn Công Khi Đáp của Kaveh khi trúng kẻ địch, Tinh Thông Nguyên Tố sẽ tăng 25 điểm. Hiệu quả này mỗi 0.1s tối đa kích hoạt một lần, cộng dồn 4 tầng.",
+      "1": "Khi hiệu ứng \"Mái Vòm Rực Rỡ\" kết thúc, hiệu quả này cũng sẽ bị hủy."
+    }
+  },
+  "passive3": {
+    "name": "Tính Nghệ Thuật Của Người Dự Toán",
+    "description": {
+      "0": "Khi chế tạo đồ trang trí loại cảnh quan, kiến trúc, đình viện, có 100% tỷ lệ hoàn trả một phần nguyên liệu."
+    }
+  },
+  "constellation1": {
+    "name": "Lời Chào Cao Quý",
+    "description": {
+      "0": "Trong 3s sau khi thi triển <strong>Nghệ Thuật Tinh Tế</strong>, <dendro>Kháng Nguyên Tố Thảo</dendro> của Kaveh tăng 50%, lượng trị liệu nhận được tăng 25%."
+    }
+  },
+  "constellation2": {
+    "name": "Đại Lộ Thênh Thang",
+    "description": {
+      "0": "Trong thời gian duy trì <strong>Mái Vòm Rực Rỡ</strong>, tốc độ Tấn Công Thường của Kaveh tăng 15%."
+    }
+  },
+  "constellation3": {
+    "name": "Tế Lễ Dur Untash",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Mái Vòm Rực Rỡ</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Bữa Tiệc Apadana",
+    "description": {
+      "0": "Hạt Nhân Thảo sinh ra khi Kaveh kích hoạt phản ứng Sum Suê sẽ tăng 60% sát thương gây ra khi phát nổ."
+    }
+  },
+  "constellation5": {
+    "name": "Kho Tàng Bonkhanak",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Nghệ Thuật Tinh Tế</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Lý Tưởng Pairidaeza",
+    "description": {
+      "0": "Trong thời gian duy trì <strong>Mái Vòm Rực Rỡ</strong>, Tấn Công Thường, Trọng Kích hoặc Tấn Công Khi Đáp của Kaveh khi trúng kẻ địch, sẽ kích hoạt Vòng Sáng Pairidaeza ở vị trí kẻ địch, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> tương ứng với 61.8% tấn công của Kaveh, đồng thời kích nổ tất cả Hạt Nhân Thảo trong phạm vi ảnh hưởng. Hiệu quả này mỗi 3s tối đa kích hoạt một lần."
+    }
+  }
+}

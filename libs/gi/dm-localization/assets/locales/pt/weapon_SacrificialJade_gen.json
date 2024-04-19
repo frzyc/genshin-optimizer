@@ -1,0 +1,24 @@
+{
+  "name": "Sacrifício de Jade",
+  "description": {
+    "0": "Um antigo pingente de jade que brilha como água cristalina. Parece ter sido usado em cerimônias antigas."
+  },
+  "passiveName": "Circulação de Jade",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando não estiver em campo por mais de 5s, aumenta a Vida Máxima em <cryo>32%</cryo> e a Proficiência Elemental em <cryo>40</cryo> pontos. Quando o personagem com esta arma equipada entrar no campo de batalha, este efeito desaparecerá após 10s."
+    },
+    "1": {
+      "0": "Quando não estiver em campo por mais de 5s, aumenta a Vida Máxima em <cryo>40%</cryo> e a Proficiência Elemental em <cryo>50</cryo> pontos. Quando o personagem com esta arma equipada entrar no campo de batalha, este efeito desaparecerá após 10s."
+    },
+    "2": {
+      "0": "Quando não estiver em campo por mais de 5s, aumenta a Vida Máxima em <cryo>48%</cryo> e a Proficiência Elemental em <cryo>60</cryo> pontos. Quando o personagem com esta arma equipada entrar no campo de batalha, este efeito desaparecerá após 10s."
+    },
+    "3": {
+      "0": "Quando não estiver em campo por mais de 5s, aumenta a Vida Máxima em <cryo>56%</cryo> e a Proficiência Elemental em <cryo>70</cryo> pontos. Quando o personagem com esta arma equipada entrar no campo de batalha, este efeito desaparecerá após 10s."
+    },
+    "4": {
+      "0": "Quando não estiver em campo por mais de 5s, aumenta a Vida Máxima em <cryo>64%</cryo> e a Proficiência Elemental em <cryo>80</cryo> pontos. Quando o personagem com esta arma equipada entrar no campo de batalha, este efeito desaparecerá após 10s."
+    }
+  }
+}

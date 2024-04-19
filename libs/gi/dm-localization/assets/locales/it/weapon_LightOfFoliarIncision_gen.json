@@ -1,0 +1,24 @@
+{
+  "name": "Lume del Taglio frondoso",
+  "description": {
+    "0": "Una lama dorata fabbricata con preziosi rami bianchi. Un tempo veniva impiegata per estirpare gli innumerevoli veleni che infestavano le selve."
+  },
+  "passiveName": "Setola Lunabianca",
+  "passiveDescription": {
+    "0": {
+      "0": "Il tasso di CRIT aumenta di un <cryo>4%</cryo>. Quando gli attacchi normali infliggono DAN elementali, si ottiene l'effetto Taglio frondoso che aumenta i DAN inflitti dagli attacchi normali e dalle abilità elementali di un <cryo>120%</cryo> della maestria elementale. Questo effetto svanisce dopo aver inflitto DAN per 28 volte oppure dopo 12 s. È possibile ottenere Taglio frondoso una volta ogni 12 s."
+    },
+    "1": {
+      "0": "Il tasso di CRIT aumenta di un <cryo>5%</cryo>. Quando gli attacchi normali infliggono DAN elementali, si ottiene l'effetto Taglio frondoso che aumenta i DAN inflitti dagli attacchi normali e dalle abilità elementali di un <cryo>150%</cryo> della maestria elementale. Questo effetto svanisce dopo aver inflitto DAN per 28 volte oppure dopo 12 s. È possibile ottenere Taglio frondoso una volta ogni 12 s."
+    },
+    "2": {
+      "0": "Il tasso di CRIT aumenta di un <cryo>6%</cryo>. Quando gli attacchi normali infliggono DAN elementali, si ottiene l'effetto Taglio frondoso che aumenta i DAN inflitti dagli attacchi normali e dalle abilità elementali di un <cryo>180%</cryo> della maestria elementale. Questo effetto svanisce dopo aver inflitto DAN per 28 volte oppure dopo 12 s. È possibile ottenere Taglio frondoso una volta ogni 12 s."
+    },
+    "3": {
+      "0": "Il tasso di CRIT aumenta di un <cryo>7%</cryo>. Quando gli attacchi normali infliggono DAN elementali, si ottiene l'effetto Taglio frondoso che aumenta i DAN inflitti dagli attacchi normali e dalle abilità elementali di un <cryo>210%</cryo> della maestria elementale. Questo effetto svanisce dopo aver inflitto DAN per 28 volte oppure dopo 12 s. È possibile ottenere Taglio frondoso una volta ogni 12 s."
+    },
+    "4": {
+      "0": "Il tasso di CRIT aumenta di un <cryo>8%</cryo>. Quando gli attacchi normali infliggono DAN elementali, si ottiene l'effetto Taglio frondoso che aumenta i DAN inflitti dagli attacchi normali e dalle abilità elementali di un <cryo>240%</cryo> della maestria elementale. Questo effetto svanisce dopo aver inflitto DAN per 28 volte oppure dopo 12 s. È possibile ottenere Taglio frondoso una volta ogni 12 s."
+    }
+  }
+}

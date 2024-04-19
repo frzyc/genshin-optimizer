@@ -1,0 +1,87 @@
+{
+  "normal": {
+    "hit1": "1 Vuruş Hasarı",
+    "hit2": "2 Vuruş Hasarı",
+    "hit3": "3 Vuruş Hasarı",
+    "hit4": "4 Vuruş Hasarı",
+    "hit5": "5 Vuruş Hasarı",
+    "hit6": "6 Vuruş Hasarı"
+  },
+  "charged": {
+    "dmg": "Yüklü Saldırı Hasarı",
+    "spinning": "Yüklü Saldırı Döngüsel Hasarı",
+    "final": "Yüklü Saldırı Son Vuruş Hasarı",
+    "stamina": "Yüklü Saldırı Dayanıklılık Maliyeti",
+    "aimed": "Hedefli Atış",
+    "fullyAimed": "Tam Yüklü Hedefli Atış"
+  },
+  "plunging": {
+    "dmg": "Havadan Saldırı Hasarı",
+    "low": "Havadan Saldırı Hasarı (Alçaktan",
+    "high": "Havadan Saldırı Hasarı Yüksekten)"
+  },
+  "maxDuration": "Maks. Süre",
+  "maxStacks": "Maks. Kademe Sayısı",
+  "skillDMG": "Beceri Hasarı",
+  "burstDMG": "Patlama Hasarı",
+  "dmgAbsorption": "Kalkanın Hasar Emilimi",
+  "healing": "İyileştirme",
+  "contHealing": "Sürekli İyileştirme",
+  "duration": "Süre",
+  "cd": "BS",
+  "energyCost": "Enerji Maliyeti",
+  "energyRegen": "Enerji Yenilenmesi",
+  "baseDMG": "Temel Hasar",
+  "dot": "Süreli Hasar",
+  "addEleDMG": "Ek Element Hasarı",
+  "hpRegenPerHit": "Vuruş Başına Yenilenen Can",
+  "press": {
+    "dmg": "Basma Hasarı",
+    "cd": "Basma BS"
+  },
+  "hold": {
+    "dmg": "Basılı Tutma Hasarı",
+    "cd": "BS (Basılı Tutma)"
+  },
+  "element": {
+    "anemo": "Rüzgar",
+    "geo": "Toprak",
+    "pyro": "Ateş",
+    "hydro": "Su",
+    "cryo": "Buz",
+    "electro": "Elektrik",
+    "dendro": "Doğa"
+  },
+  "reaction": {
+    "swirl": "Girdapta",
+    "crystallize": "Kristalleşti",
+    "overloaded": "Yüksek Voltajlı",
+    "electrocharged": "Elektrik Yüklendi",
+    "superconduct": "Süper İletim",
+    "vaporize": "Buharlaştı",
+    "melt": "Eridi",
+    "bloom": "Çiçeklenme",
+    "burgeon": "Filizlenme",
+    "hyperbloom": "Aşırı Çiçeklenme",
+    "quicken": "Hızlandı",
+    "aggravate": "Şiddetlenme",
+    "spread": "Yayılma"
+  },
+  "stat": {
+    "def": "Savunma",
+    "base": {
+      "atk": "Temel Saldırı"
+    }
+  },
+  "constellationLvl": "Takımyıldız Sv. {{level}}",
+  "talentLvl": "Yetenek Sv. {{level}}",
+  "talents": {
+    "auto": "Normal Saldırı",
+    "skill": "Element Becerisi",
+    "burst": "Element Patlaması",
+    "altSprint": "Alternatif Depar"
+  },
+  "unlockPassive1": "1. Karakter Yükseltme Aşamasında açılır",
+  "unlockPassive2": "4. Karakter Yükseltme Aşamasında açılır",
+  "unlockPassive3": "Pasif Yetenek"
+}

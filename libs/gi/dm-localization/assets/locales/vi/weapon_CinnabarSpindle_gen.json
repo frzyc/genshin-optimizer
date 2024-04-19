@@ -1,0 +1,24 @@
+{
+  "name": "Con Thoi Chu Sa",
+  "description": {
+    "0": "Thanh kiếm có vẻ như được chế tạo từ thứ vật chất không thuộc thế giới này, sức mạnh của nó có thể chế ngự cả chất độc của rồng."
+  },
+  "passiveName": "Trái Tim Hoàn Mỹ",
+  "passiveDescription": {
+    "0": {
+      "0": "Tăng sát thương do Kỹ Năng Nguyên Tố gây ra, lượng tăng thêm tương đương <cryo>40%</cryo> phòng ngự. Hiệu quả này mỗi 1.5s tối đa kích hoạt 1 lần, sau 0.1s khi Kỹ Năng Nguyên Tố gây ra sát thương, hiệu quả này sẽ biến mất."
+    },
+    "1": {
+      "0": "Tăng sát thương do Kỹ Năng Nguyên Tố gây ra, lượng tăng thêm tương đương <cryo>50%</cryo> phòng ngự. Hiệu quả này mỗi 1.5s tối đa kích hoạt 1 lần, sau 0.1s khi Kỹ Năng Nguyên Tố gây ra sát thương, hiệu quả này sẽ biến mất."
+    },
+    "2": {
+      "0": "Tăng sát thương do Kỹ Năng Nguyên Tố gây ra, lượng tăng thêm tương đương <cryo>60%</cryo> phòng ngự. Hiệu quả này mỗi 1.5s tối đa kích hoạt 1 lần, sau 0.1s khi Kỹ Năng Nguyên Tố gây ra sát thương, hiệu quả này sẽ biến mất."
+    },
+    "3": {
+      "0": "Tăng sát thương do Kỹ Năng Nguyên Tố gây ra, lượng tăng thêm tương đương <cryo>70%</cryo> phòng ngự. Hiệu quả này mỗi 1.5s tối đa kích hoạt 1 lần, sau 0.1s khi Kỹ Năng Nguyên Tố gây ra sát thương, hiệu quả này sẽ biến mất."
+    },
+    "4": {
+      "0": "Tăng sát thương do Kỹ Năng Nguyên Tố gây ra, lượng tăng thêm tương đương <cryo>80%</cryo> phòng ngự. Hiệu quả này mỗi 1.5s tối đa kích hoạt 1 lần, sau 0.1s khi Kỹ Năng Nguyên Tố gây ra sát thương, hiệu quả này sẽ biến mất."
+    }
+  }
+}
