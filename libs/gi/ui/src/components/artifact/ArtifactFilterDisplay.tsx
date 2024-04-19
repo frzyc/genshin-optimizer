@@ -228,20 +228,20 @@ export function ArtifactFilterDisplay({
             </SolidToggleButtonGroup>
           </Stack>
           <Stack spacing={1.5} pt={1.5}>
-            {/* Main stat dropdown */}
-            <ArtifactMainStatMultiAutocomplete
-              totals={mainStatTotal}
-              mainStatKeys={mainStatKeys}
-              setMainStatKeys={(mainStatKeys) =>
-                filterOptionDispatch({ mainStatKeys })
-              }
-            />
             {/* Artifact set dropdown */}
             <ArtifactSetMultiAutocomplete
               totals={setTotal}
               artSetKeys={artSetKeys}
               setArtSetKeys={(artSetKeys) =>
                 filterOptionDispatch({ artSetKeys })
+              }
+            />
+            {/* Main stat dropdown */}
+            <ArtifactMainStatMultiAutocomplete
+              totals={mainStatTotal}
+              mainStatKeys={mainStatKeys}
+              setMainStatKeys={(mainStatKeys) =>
+                filterOptionDispatch({ mainStatKeys })
               }
             />
             {/* Sub stat dropdown */}
