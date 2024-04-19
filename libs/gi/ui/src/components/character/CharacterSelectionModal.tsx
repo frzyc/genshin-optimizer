@@ -190,9 +190,19 @@ export function CharacterSelectionModal({
         setSearchTerm('')
         onHide()
       }}
+      containerProps={{
+        sx: {
+          height: '100vh',
+          p: { xs: 1 },
+        },
+      }}
     >
       <CardThemed
-        sx={{ display: 'flex', flexDirection: 'column', flex: '1' }}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100%',
+        }}
       >
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
@@ -252,7 +262,7 @@ export function CharacterSelectionModal({
         </CardContent>
         <Divider />
         <DataContext.Provider value={{ teamData: undefined } as any}>
-          <CardContent>
+          <CardContent sx={{ flex: '1', overflow: 'auto' }}>
             <Grid
               container
               spacing={1}
@@ -324,7 +334,9 @@ function SelectionCard({
           bgt="light"
           sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
         >
-          <Box sx={{ position: 'absolute', opacity: 0.7, zIndex: 2 }}>
+          <Box
+            sx={{ height: '0px', overflow: 'visible', zIndex: 2, opacity: 0.7 }}
+          >
             <IconButton
               sx={{ p: 0.25 }}
               onClick={(_) => {
@@ -341,19 +353,9 @@ function SelectionCard({
               position="relative"
               className={!banner ? `grad-${rarity}star` : undefined}
               sx={{
-                '&::before': {
-                  content: '""',
-                  display: 'block',
-                  position: 'absolute',
-                  left: 0,
-                  top: 0,
-                  width: '100%',
-                  height: '100%',
-                  opacity: 0.7,
-                  backgroundImage: `url(${banner})`,
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                },
+                backgroundImage: `url(${banner})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
               }}
               width="100%"
             >
