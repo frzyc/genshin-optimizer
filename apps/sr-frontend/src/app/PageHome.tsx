@@ -1,5 +1,6 @@
 import {
   LightConeEditor,
+  LightConeInventory,
   RelicEditor,
   RelicInventory,
 } from '@genshin-optimizer/sr/ui'
@@ -16,6 +17,7 @@ export default function PageHome() {
       <CharacterSelector />
       <CharacterEditor />
       <LightConeEditor />
+      <LightConeInventory />
       <RelicEditor />
       <RelicInventory />
       <Optimize />

@@ -3,26 +3,18 @@ import {
   CalcProvider,
   CharacterProvider,
   DatabaseProvider,
-  LightConeEditor,
-  LightConeInventory,
-  RelicEditor,
 } from '@genshin-optimizer/sr/ui'
 import {
   Box,
   Container,
   CssBaseline,
   Skeleton,
-  Stack,
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material'
 import { Suspense } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
-import Character from './Character'
-import CharacterSelector from './CharacterSelector'
-import Database from './Database'
 import Header from './Header'
-import Optimize from './Optimize'
 import PageHome from './PageHome'
 import { theme } from './Theme'
 
@@ -35,16 +27,6 @@ export default function App() {
         <DatabaseProvider>
           <CharacterProvider>
             <CalcProvider>
-              <CssBaseline />
-              <Stack gap={1} pt={1}>
-                <CharacterSelector />
-                <Character />
-                <LightConeEditor />
-                <LightConeInventory />
-                <RelicEditor />
-                <Optimize />
-                <Database />
-              </Stack>
               <HashRouter basename="/">
                 <Content />
                 <ScrollTop />
