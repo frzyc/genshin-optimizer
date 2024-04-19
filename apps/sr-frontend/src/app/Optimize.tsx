@@ -2,8 +2,8 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import type { Read } from '@genshin-optimizer/sr/formula'
-import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr/opt'
-import { MAX_BUILDS, Optimizer } from '@genshin-optimizer/sr/opt'
+import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr/solver'
+import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
 import {
   BuildDisplay,
   OptimizationTargetSelector,
@@ -76,7 +76,7 @@ export default function Optimize() {
     setProgress(undefined)
     setOptimizing(true)
 
-    const optimizer = new Optimizer(
+    const optimizer = new Solver(
       calc,
       optTarget,
       relicsBySlot,

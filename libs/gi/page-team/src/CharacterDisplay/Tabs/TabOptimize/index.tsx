@@ -29,7 +29,7 @@ import type {
   GeneratedBuild,
   ICachedArtifact,
 } from '@genshin-optimizer/gi/db'
-import { defThreads, maxBuildsToShowList } from '@genshin-optimizer/gi/db'
+import { maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useDBMeta,
@@ -57,14 +57,13 @@ import {
   OptimizationTargetContext,
   ReactionToggle,
   getTeamData,
+  resolveInfo,
   useGlobalError,
+  useNumWorkers,
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
-import {
-  resolveInfo,
-  uiDataForTeam,
-  type UIData,
-} from '@genshin-optimizer/gi/uidata'
+import type { UIData } from '@genshin-optimizer/gi/uidata'
+import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import {
@@ -156,19 +155,7 @@ export default function TabBuild() {
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
-  const [{ threads = defThreads }, setDisplayOptimize] = useState(
-    database.displayOptimize.get()
-  )
-  useEffect(
-    () => database.displayOptimize.follow((_r, to) => setDisplayOptimize(to)),
-    [database, setDisplayOptimize]
-  )
-
-  const maxWorkers = threads > defThreads ? defThreads : threads
-  const setMaxWorkers = useCallback(
-    (threads: number) => database.displayOptimize.set({ threads }),
-    [database]
-  )
+  const [maxWorkers, nativeThreads, setMaxWorkers] = useNumWorkers()
 
   // Clear state when changing characters
   useEffect(() => {
@@ -851,7 +838,7 @@ export default function TabBuild() {
             </Typography>
           </MenuItem>
           <Divider />
-          {range(1, defThreads)
+          {range(1, nativeThreads)
             .reverse()
             .map((v) => (
               <MenuItem key={v} onClick={() => setMaxWorkers(v)}>

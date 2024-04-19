@@ -16,7 +16,6 @@ import {
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -32,7 +31,7 @@ import {
 } from '@mui/material'
 import { grey } from '@mui/material/colors'
 import { useContext } from 'react'
-import { DataContext } from '../../context'
+import { DataContext, SillyContext } from '../../context'
 import { CharacterName } from './Trans'
 
 export function CharacterCompactTalent() {

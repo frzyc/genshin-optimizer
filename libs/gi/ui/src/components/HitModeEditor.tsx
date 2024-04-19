@@ -126,7 +126,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
     <SolidToggleButtonGroup
       exclusive
       baseColor="secondary"
-      value={reaction}
+      value={reaction || ''}
       onChange={(_, reaction) =>
         database.teamChars.set(teamCharId, { reaction })
       }

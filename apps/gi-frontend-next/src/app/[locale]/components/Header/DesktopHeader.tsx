@@ -1,5 +1,5 @@
 'use client'
-import { SillyContext } from '@genshin-optimizer/gi/ui-next'
+import { SillyContext } from '@genshin-optimizer/gi/ui'
 import {
   AppBar,
   Avatar,

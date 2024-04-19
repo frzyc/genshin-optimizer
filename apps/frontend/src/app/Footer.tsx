@@ -14,7 +14,12 @@ export default function Footer() {
 function FooterContent() {
   const { t } = useTranslation('ui')
   return (
-    <AppBar position="static" sx={{ bgcolor: '#343a40' }} elevation={0}>
+    <AppBar
+      component="footer"
+      position="static"
+      sx={{ bgcolor: '#343a40' }}
+      elevation={0}
+    >
       <Box
         display="flex"
         justifyContent="space-between"

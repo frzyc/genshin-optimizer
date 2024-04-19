@@ -4,16 +4,13 @@ import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
-import {
-  computeUIData,
-  nodeVStr,
-  resolveInfo,
-} from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+import { computeUIData } from '@genshin-optimizer/gi/uidata'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
+import { getCalcDisplay, resolveInfo } from '../../util'
 import { WeaponNameTooltip } from './WeaponNameTooltip'
 
 export function WeaponCardPico({ weaponId }: { weaponId: string }) {
@@ -101,11 +98,11 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
     </CardThemed>
   )
 }
-function WeaponStatPico({ node }: { node: NodeDisplay }) {
+function WeaponStatPico({ node }: { node: CalcResult }) {
   const { icon } = resolveInfo(node.info)
   return (
     <Typography>
-      {icon} {nodeVStr(node)}
+      {icon} {getCalcDisplay(node).valueString}
     </Typography>
   )
 }

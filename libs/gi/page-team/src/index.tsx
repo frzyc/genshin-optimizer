@@ -19,17 +19,24 @@ import {
   DataContext,
   FormulaDataWrapper,
   GraphContext,
+  SillyContext,
   useTeamDataNoContext,
   useTitle,
   type ChartData,
   type GraphContextObj,
   type dataContextObj,
 } from '@genshin-optimizer/gi/ui'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
 import { Box, CardContent, Skeleton } from '@mui/material'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Navigate, Route, Routes, useMatch, useParams } from 'react-router-dom'
+import {
+  Navigate,
+  Route,
+  Routes,
+  useMatch,
+  useNavigate,
+  useParams,
+} from 'react-router-dom'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
@@ -59,6 +66,8 @@ export default function PageTeam() {
 }
 function PageLoadoutWrapper({ teamId }: { teamId: string }) {
   const database = useDatabase()
+  const navigate = useNavigate()
+
   const team = useTeam(teamId)!
   const { loadoutData } = team
   // use the current URL as the "source of truth" for characterKey and tab.
@@ -85,13 +94,19 @@ function PageLoadoutWrapper({ teamId }: { teamId: string }) {
     return loadoutDatum
   }, [loadoutData, database.teamChars, characterKeyRaw])
 
-  // make sure the characterKey path is valid
-  if ((characterKeyRaw && !loadoutDatum) || (loadoutData[0] && !loadoutDatum)) {
-    const ld = loadoutData[0]
-    const ck = ld && database.teamChars.get(ld.teamCharId)?.key
-    if (ck) return <Navigate to={ck} replace />
-    else return <Navigate to="" replace />
-  }
+  useEffect(() => {
+    // make sure the characterKey path is valid
+    if (
+      (characterKeyRaw && !loadoutDatum) ||
+      (loadoutData[0] && !loadoutDatum)
+    ) {
+      const ld = loadoutData[0]
+      const ck = ld && database.teamChars.get(ld.teamCharId)?.key
+      if (ck) return navigate(ck, { replace: true })
+      else return navigate('', { replace: true })
+    }
+  }, [characterKeyRaw, database, loadoutData, loadoutDatum, navigate])
+
   return <Page loadoutDatum={loadoutDatum} teamId={teamId} tab={tab} />
 }
 

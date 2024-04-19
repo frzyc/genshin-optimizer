@@ -32,10 +32,11 @@ import {
   NoArtWarning,
   ReactionToggle,
   getTeamData,
+  resolveInfo,
   shouldShowDevComponents,
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
-import { resolveInfo, uiDataForTeam } from '@genshin-optimizer/gi/uidata'
+import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'
@@ -54,7 +55,6 @@ import {
   useCallback,
   useContext,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -89,12 +89,6 @@ export default function TabUpopt() {
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
   const [artsDirty] = useForceUpdate()
-  // const [{ equipmentPriority, threads = defThreads }, setDisplayOptimize] = useState(database.displayOptimize.get())
-  const [, setDisplayOptimize] = useState(database.displayOptimize.get())
-  useEffect(
-    () => database.displayOptimize.follow((_r, to) => setDisplayOptimize(to)),
-    [database, setDisplayOptimize]
-  )
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
   const filteredArts = useMemo(() => {

@@ -6,6 +6,7 @@ import {
   ConditionalWrapper,
   InfoTooltip,
   InfoTooltipInline,
+  NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { clamp, clamp01, getUnitStr } from '@genshin-optimizer/common/util'
@@ -257,11 +258,12 @@ export function ArtifactCardObj({
               sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}
             >
               <Box
-                component="img"
+                component={NextImage ? NextImage : 'img'}
+                alt="Artifact Piece Image"
                 src={artifactAsset(setKey, slotKey)}
-                width="auto"
-                height="110%"
                 sx={{
+                  width: 'auto',
+                  height: '110%',
                   float: 'right',
                   marginBottom: '-5%',
                   marginTop: '-5%',

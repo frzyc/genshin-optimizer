@@ -2,31 +2,27 @@ import {
   DBLocalStorage,
   SandboxStorage,
 } from '@genshin-optimizer/common/database'
+import { ScrollTop } from '@genshin-optimizer/common/ui'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import '@genshin-optimizer/gi/i18n' // import to load translations
 import { theme } from '@genshin-optimizer/gi/theme'
 import {
+  SillyContext,
   SnowContext,
   useSilly,
   useSnow,
   useTitle,
 } from '@genshin-optimizer/gi/ui'
-import { SillyContext } from '@genshin-optimizer/gi/uidata'
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import {
   Box,
   Container,
   CssBaseline,
-  Fab,
-  Grid,
   Skeleton,
   StyledEngineProvider,
   ThemeProvider,
-  Zoom,
-  useScrollTrigger,
 } from '@mui/material'
-import React, { Suspense, lazy, useCallback, useMemo, useState } from 'react'
+import { Suspense, lazy, useCallback, useMemo, useState } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
 import ErrorBoundary from './ErrorBoundary'
@@ -47,39 +43,6 @@ const PageCharacters = lazy(
 )
 const PageTeams = lazy(() => import('@genshin-optimizer/gi/page-teams'))
 const PageTeam = lazy(() => import('@genshin-optimizer/gi/page-team'))
-
-function ScrollTop({ children }: { children: React.ReactElement }) {
-  const trigger = useScrollTrigger({
-    target: window,
-    disableHysteresis: true,
-    threshold: 100,
-  })
-
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    const anchor = (
-      (event.target as HTMLDivElement).ownerDocument || document
-    ).querySelector('#back-to-top-anchor')
-
-    if (anchor) {
-      anchor.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      })
-    }
-  }
-
-  return (
-    <Zoom in={trigger}>
-      <Box
-        onClick={handleClick}
-        role="presentation"
-        sx={{ position: 'fixed', bottom: 85, right: 16 }}
-      >
-        {children}
-      </Box>
-    </Zoom>
-  )
-}
 
 function App() {
   const dbIndex = parseInt(localStorage.getItem('dbIndex') || '1')
@@ -126,15 +89,7 @@ function App() {
               <ErrorBoundary>
                 <HashRouter basename="/">
                   <Content />
-                  <ScrollTop>
-                    <Fab
-                      color="secondary"
-                      size="small"
-                      aria-label="scroll back to top"
-                    >
-                      <KeyboardArrowUpIcon />
-                    </Fab>
-                  </ScrollTop>
+                  <ScrollTop />
                 </HashRouter>
               </ErrorBoundary>
             </DatabaseContext.Provider>
@@ -147,10 +102,14 @@ function App() {
 function Content() {
   useTitle()
   return (
-    <Grid container direction="column" minHeight="100vh" position="relative">
-      <Grid item>
-        <Header anchor="back-to-top-anchor" />
-      </Grid>
+    <Box
+      display="flex"
+      flexDirection="column"
+      minHeight="100vh"
+      position="relative"
+    >
+      <Header anchor="back-to-top-anchor" />
+
       <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1 } }}>
         <Suspense
           fallback={
@@ -178,12 +137,10 @@ function Content() {
         </Suspense>
       </Container>
       {/* make sure footer is always at bottom */}
-      <Grid item flexGrow={1} />
+      <Box flexGrow={1} />
       <Snow />
-      <Grid item>
-        <Footer />
-      </Grid>
-    </Grid>
+      <Footer />
+    </Box>
   )
 }
 export default App

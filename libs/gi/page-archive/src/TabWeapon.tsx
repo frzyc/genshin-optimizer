@@ -8,13 +8,13 @@ import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { i18n } from '@genshin-optimizer/gi/i18n'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
-import { WeaponName } from '@genshin-optimizer/gi/ui'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
 import {
-  computeUIData,
-  nodeVStr,
+  WeaponName,
+  getCalcDisplay,
   resolveInfo,
-} from '@genshin-optimizer/gi/uidata'
+} from '@genshin-optimizer/gi/ui'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+import { computeUIData } from '@genshin-optimizer/gi/uidata'
 import { dataObjForWeapon, input } from '@genshin-optimizer/gi/wr'
 import SearchIcon from '@mui/icons-material/Search'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
@@ -224,7 +224,7 @@ const WeaponRow = memo(function WeaponRow({
     </Suspense>
   )
 })
-function StatDisplay({ node }: { node: NodeDisplay<number> }) {
+function StatDisplay({ node }: { node: CalcResult }) {
   const { name, icon } = resolveInfo(node.info)
   if (Number.isNaN(node.value)) return null
   return (
@@ -232,7 +232,7 @@ function StatDisplay({ node }: { node: NodeDisplay<number> }) {
       <Typography flexGrow={1}>
         {icon} {name}
       </Typography>
-      <Typography>{nodeVStr(node)}</Typography>
+      <Typography>{getCalcDisplay(node).valueString}</Typography>
     </Box>
   )
 }

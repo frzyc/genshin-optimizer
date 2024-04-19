@@ -8,7 +8,7 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { getCharSheet } from '@genshin-optimizer/gi/sheets'
-import { type NodeDisplay, type UIData } from '@genshin-optimizer/gi/uidata'
+import type { CalcResult, UIData } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
@@ -79,14 +79,14 @@ export function getDisplayHeader(
   }
   return errHeader
 }
+
+type DisplaySections = Array<[key: string, results: DisplaySub<CalcResult>]>
 /**
  * Use this function to reorganize the sections to have basic stats, custom at the beginning, and reaction at the end.
  * @param data
  * @returns
  */
-export function getDisplaySections(
-  data: UIData
-): [string, DisplaySub<NodeDisplay>][] {
+export function getDisplaySections(data: UIData): DisplaySections {
   const display = data.getDisplay()
   const sections = Object.entries(display)
   const basic = sections.filter(([k]) => k === 'basic')
@@ -103,5 +103,12 @@ export function getDisplaySections(
       k !== 'custom'
   )
 
-  return [...basic, ...reaction, ...custom, ...rest, ...weapon, ...artifact]
+  return [
+    ...basic,
+    ...reaction,
+    ...custom,
+    ...rest,
+    ...weapon,
+    ...artifact,
+  ] as DisplaySections
 }

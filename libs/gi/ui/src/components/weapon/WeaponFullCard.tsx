@@ -6,16 +6,13 @@ import { useWeapon } from '@genshin-optimizer/gi/db-ui'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
-import type { NodeDisplay } from '@genshin-optimizer/gi/uidata'
-import {
-  computeUIData,
-  nodeVStr,
-  resolveInfo,
-} from '@genshin-optimizer/gi/uidata'
+import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+import { computeUIData } from '@genshin-optimizer/gi/uidata'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
+import { getCalcDisplay, resolveInfo } from '../../util'
 import { WeaponName } from './WeaponTrans'
 export function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
@@ -87,11 +84,11 @@ export function WeaponFullCardObj({
     </CardThemed>
   )
 }
-function WeaponStat({ node }: { node: NodeDisplay }) {
+function WeaponStat({ node }: { node: CalcResult }) {
   const { icon } = resolveInfo(node.info)
   return Number.isNaN(node.value) ? null : (
     <SqBadge color="secondary">
-      {icon} {nodeVStr(node)}
+      {icon} {getCalcDisplay(node).valueString}
     </SqBadge>
   )
 }
