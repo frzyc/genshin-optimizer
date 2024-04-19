@@ -1,5 +1,5 @@
-import type { UISheet } from '@genshin-optimizer/pando-ui-sheet'
-import { conditionals } from '@genshin-optimizer/sr-formula'
+import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
+import { conditionals } from '@genshin-optimizer/sr/formula'
 
 const sheet: UISheet = {
   documents: [

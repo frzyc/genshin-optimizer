@@ -2,13 +2,8 @@ import type {
   CharacterKey,
   HitModeKey,
   RelicSlotKey,
-<<<<<<< HEAD:libs/sr-db/src/Interfaces/ISroCharacter.ts
-} from '@genshin-optimizer/sr-consts'
-import type { ICharacter } from '@genshin-optimizer/sr-srod'
-=======
 } from '@genshin-optimizer/sr/consts'
 import type { ICharacter } from '@genshin-optimizer/sr/srod'
->>>>>>> origin/master:libs/sr/db/src/Interfaces/ISroCharacter.ts
 
 export interface ISroCharacter extends ICharacter {
   hitMode: HitModeKey

@@ -5,6 +5,7 @@ import { DocumentDisplay } from '@genshin-optimizer/pando/ui'
 import { allEidolonKeys, type AscensionKey } from '@genshin-optimizer/sr/consts'
 import type { ICachedSroCharacter } from '@genshin-optimizer/sr/db'
 import { convert, selfTag } from '@genshin-optimizer/sr/formula'
+import { uiSheets } from '@genshin-optimizer/sr/formula-ui'
 import {
   AbilityDropdown,
   BuildDisplay,

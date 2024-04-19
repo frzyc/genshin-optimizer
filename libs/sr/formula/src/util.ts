@@ -3,15 +3,9 @@ import type { RelicSetKey, StatKey } from '@genshin-optimizer/sr/consts'
 import {
   allBonusAbilityKeys,
   allStatBoostKeys,
-<<<<<<< HEAD:libs/sr-formula/src/util.ts
-} from '@genshin-optimizer/sr-consts'
-import type { ICharacter, ILightCone } from '@genshin-optimizer/sr-srod'
-import type { Member, Preset, Source, TagMapNodeEntries } from './data/util'
-=======
 } from '@genshin-optimizer/sr/consts'
 import type { ICharacter, ILightCone } from '@genshin-optimizer/sr/srod'
-import type { Member, Preset, TagMapNodeEntries } from './data/util'
->>>>>>> origin/master:libs/sr/formula/src/util.ts
+import type { Member, Preset, Source, TagMapNodeEntries } from './data/util'
 import {
   conditionalEntries,
   convert,

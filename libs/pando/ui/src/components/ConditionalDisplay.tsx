@@ -1,10 +1,10 @@
-import type { ConditionalDocument } from '@genshin-optimizer/pando-ui-sheet'
+import type { ConditionalDocument } from '@genshin-optimizer/pando/ui-sheet'
 import { Button, Typography } from '@mui/material'
 // TODO: Move this type to a pando lib
 // TODO: Create some context that specifies if we should use gi or sr data.
 // Then also create a helper function that will pull the correct calc context depending on what is specified
-import type { Tag } from '@genshin-optimizer/pando'
-import { useCalcContext } from '@genshin-optimizer/sr-ui'
+import type { Tag } from '@genshin-optimizer/pando/engine'
+import { useCalcContext } from '@genshin-optimizer/sr/ui'
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 
 export type SetCondCallback = (
