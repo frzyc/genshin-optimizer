@@ -48,6 +48,7 @@ export default function CharacterEditor() {
 
   const setCond = useCallback<SetCondCallback>(
     (src, name, value) => {
+      if (!characterKey) return
       const conditional = deepClone(character?.conditional)
       layeredAssignment(conditional, [src, name], value)
       database.chars.set(characterKey, { conditional })

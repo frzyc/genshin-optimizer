@@ -1,4 +1,4 @@
-import type { Document } from '@genshin-optimizer/pando-ui-sheet'
+import type { Document } from '@genshin-optimizer/pando/ui-sheet'
 import type { SetCondCallback } from './ConditionalDisplay'
 import { ConditionalDisplay } from './ConditionalDisplay'
 export function DocumentDisplay({

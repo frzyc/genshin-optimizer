@@ -48,6 +48,7 @@
       ],
       "@genshin-optimizer/common/ui": ["libs/common/ui/src/index.ts"],
       "@genshin-optimizer/common/util": ["libs/common/util/src/index.ts"],
+
       "@genshin-optimizer/gi/art-scanner": ["libs/gi/art-scanner/src/index.ts"],
       "@genshin-optimizer/gi/assets": ["libs/gi/assets/src/index.ts"],
       "@genshin-optimizer/gi/char-cards": ["libs/gi/char-cards/src/index.ts"],
@@ -113,15 +114,17 @@
       "@genshin-optimizer/gi/uidata": ["libs/gi/uidata/src/index.ts"],
       "@genshin-optimizer/gi/util": ["libs/gi/util/src/index.ts"],
       "@genshin-optimizer/gi/wr": ["libs/gi/wr/src/index.ts"],
+
       "@genshin-optimizer/pando/engine": ["libs/pando/engine/src/index.ts"],
-      "@genshin-optimizer/pando/ui": ["libs/pando/ui/src/index.ts"],
+      "@genshin-optimizer/pando/ui": ["libs/pando/ui/src/index.tsx"],
       "@genshin-optimizer/pando/ui-sheet": ["libs/pando/ui-sheet/src/index.ts"],
+
       "@genshin-optimizer/sr/assets": ["libs/sr/assets/src/index.ts"],
       "@genshin-optimizer/sr/consts": ["libs/sr/consts/src/index.ts"],
       "@genshin-optimizer/sr/db": ["libs/sr/db/src/index.ts"],
       "@genshin-optimizer/sr/dm": ["libs/sr/dm/src/index.ts"],
       "@genshin-optimizer/sr/formula": ["libs/sr/formula/src/index.ts"],
-      "@genshin-optimizer/sr/formula-ui": ["libs/sr/formula-ui/src/index.ts"],
+      "@genshin-optimizer/sr/formula-ui": ["libs/sr/formula-ui/src/index.tsx"],
       "@genshin-optimizer/sr/solver": ["libs/sr/solver/src/index.ts"],
       "@genshin-optimizer/sr/srod": ["libs/sr/srod/src/index.ts"],
       "@genshin-optimizer/sr/stats": ["libs/sr/stats/src/index.ts"],

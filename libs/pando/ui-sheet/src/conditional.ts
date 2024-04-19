@@ -1,4 +1,4 @@
-import type { Tag } from '@genshin-optimizer/pando'
+import type { Tag } from '@genshin-optimizer/pando/engine'
 import type { Field } from './field'
 
 export type Conditional = {
