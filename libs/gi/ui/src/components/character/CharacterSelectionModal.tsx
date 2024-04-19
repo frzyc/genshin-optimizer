@@ -204,24 +204,32 @@ export function CharacterSelectionModal({
           height: '100%',
         }}
       >
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-            <WeaponToggle
-              sx={{ height: '100%' }}
-              onChange={(weaponType) =>
-                database.displayCharacter.set({ weaponType })
-              }
-              value={weaponType}
-              totals={weaponTotals}
-              size="small"
-            />
-            <ElementToggle
-              sx={{ height: '100%' }}
-              onChange={(element) => database.displayCharacter.set({ element })}
-              value={element}
-              totals={elementTotals}
-              size="small"
-            />
+        <CardContent
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 1,
+          }}
+        >
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+              <WeaponToggle
+                onChange={(weaponType) =>
+                  database.displayCharacter.set({ weaponType })
+                }
+                value={weaponType}
+                totals={weaponTotals}
+                size="small"
+              />
+              <ElementToggle
+                onChange={(element) =>
+                  database.displayCharacter.set({ element })
+                }
+                value={element}
+                totals={elementTotals}
+                size="small"
+              />
+            </Box>
             <IconButton
               sx={{ ml: 'auto' }}
               onClick={() => {
