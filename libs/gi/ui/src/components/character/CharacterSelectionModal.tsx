@@ -191,7 +191,9 @@ export function CharacterSelectionModal({
         onHide()
       }}
     >
-      <CardThemed>
+      <CardThemed
+        sx={{ display: 'flex', flexDirection: 'column', flex: '1' }}
+      >
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
             <WeaponToggle
