@@ -118,8 +118,9 @@ export class OptConfigDataManager extends DataManager<
     )
       mainStatKeys = deepClone(initialBuildSettings.mainStatKeys)
     else {
+      const slots = ['body', 'feet', 'sphere', 'rope'] as const
       // make sure the arrays are not empty
-      (['body', 'feet', 'sphere', 'rope'] as const).forEach((sk) => {
+      slots.forEach((sk) => {
         if (!mainStatKeys[sk].length)
           mainStatKeys[sk] = [...relicSlotToMainStatKeys[sk]]
       })

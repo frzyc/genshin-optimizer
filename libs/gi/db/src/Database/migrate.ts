@@ -435,7 +435,7 @@ export function migrate(storage: DBStorage) {
         storage.set(teamCharMainId, teamCharMain)
         teamCharIds.push(teamCharMainId)
         if (charTeam) {
-          (charTeam.filter((c) => c) as CharacterKey[]).forEach((charK) => {
+          charTeam.filter(notEmpty).forEach((charK) => {
             const teamChar: TeamCharacter = {
               key: charK,
               conditional: teamConditional[charK] as any,
