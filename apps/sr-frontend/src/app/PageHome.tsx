@@ -1,4 +1,8 @@
-import { LightConeEditor, RelicEditor } from '@genshin-optimizer/sr/ui'
+import {
+  LightConeEditor,
+  RelicEditor,
+  RelicInventory,
+} from '@genshin-optimizer/sr/ui'
 import { Stack } from '@mui/material'
 import CharacterEditor from './Character'
 import CharacterSelector from './CharacterSelector'
@@ -13,6 +17,7 @@ export default function PageHome() {
       <CharacterEditor />
       <LightConeEditor />
       <RelicEditor />
+      <RelicInventory />
       <Optimize />
       <Database />
     </Stack>
