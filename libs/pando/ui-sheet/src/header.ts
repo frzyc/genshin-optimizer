@@ -2,6 +2,6 @@ import type { ReactNode } from 'react'
 
 export type Header = {
   icon: ReactNode
-  text: Displayable
+  text: ReactNode
   additional: ReactNode
 }

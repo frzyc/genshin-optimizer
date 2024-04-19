@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import type { Conditional } from './conditional'
 import type { Field } from './field'
 import type { Header } from './header'
@@ -6,7 +7,7 @@ export type Document = TextDocument | FieldsDocument | ConditionalDocument
 
 export interface TextDocument extends BaseDocument {
   type: 'text'
-  text: Displayable
+  text: ReactNode
 }
 export interface FieldsDocument extends BaseDocument {
   type: 'fields'
