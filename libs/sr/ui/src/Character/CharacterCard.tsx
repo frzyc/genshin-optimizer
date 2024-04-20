@@ -28,6 +28,8 @@ export function CharacterCard({
           <Typography>Eidolon: {character.eidolon} </Typography>
           <Typography>Level: {character.level} </Typography>
 
+          <Typography>ATK: {calc.compute(member0.final.atk).val} </Typography>
+
           <Typography>
             Break effect: {calc.compute(member0.final.brEff_).val}
           </Typography>
