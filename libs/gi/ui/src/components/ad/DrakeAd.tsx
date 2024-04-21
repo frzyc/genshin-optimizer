@@ -1,6 +1,6 @@
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
-import drake from './drake.jpg'
+import drake from './drake.png'
 export function DrakeAd({ children }: { children: ReactNode }) {
   return (
     <Box
@@ -18,7 +18,7 @@ export function DrakeAd({ children }: { children: ReactNode }) {
       }
     >
       {children}
-      <Box component="img" src={drake} />
+      <Box component="img" src={drake} maxWidth="100%" maxHeight="100%" />
     </Box>
   )
 }
