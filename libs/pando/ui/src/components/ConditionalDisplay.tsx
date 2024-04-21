@@ -4,6 +4,7 @@ import { Button, Typography } from '@mui/material'
 // TODO: Create some context that specifies if we should use gi or sr data.
 // Then also create a helper function that will pull the correct calc context depending on what is specified
 import type { Tag } from '@genshin-optimizer/pando/engine'
+import { convert, selfTag } from '@genshin-optimizer/sr/formula'
 import { useCalcContext } from '@genshin-optimizer/sr/ui'
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 
@@ -41,16 +42,11 @@ function BoolConditionalDisplay({
   setCond: SetCondCallback
 }) {
   const { calc } = useCalcContext()
-  const conditionalValue =
-    calc?.get({
-      ...cond,
-      dst: 'member0',
-      et: 'self',
-      member: 'member0',
-      qt: 'cond',
-    })[0]?.val === 1
-      ? true
-      : false
+  const member0 = convert(selfTag, {
+    member: 'member0',
+    et: 'self',
+  })
+  const conditionalValue = calc?.compute(member0.withTag(cond)).val
   const src = cond['src']
   const name = cond['q']
   if (!name || !src)
