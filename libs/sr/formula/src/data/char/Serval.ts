@@ -62,7 +62,7 @@ const sheet = register(
   ...dmg('basicDmg', baseTag, 'atk', dm.basic.dmg, 'basic'),
 
   // Buffs
-  selfBuff.premod.dmg_.add(cmpGE(char.eidolon, 6, boolConditional.ifOn(1))),
+  selfBuff.premod.atk.add(cmpGE(char.eidolon, 5, boolConditional.ifOn(1000))),
   teamBuff.premod.dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
   enemyDebuff.common.defIgn_.add(numConditional)
 )

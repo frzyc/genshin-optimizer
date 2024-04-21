@@ -1,7 +1,11 @@
 import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
+import { deepClone, layeredAssignment } from '@genshin-optimizer/common/util'
+import type { SetCondCallback } from '@genshin-optimizer/pando/ui'
+import { DocumentDisplay } from '@genshin-optimizer/pando/ui'
 import { allEidolonKeys, type AscensionKey } from '@genshin-optimizer/sr/consts'
 import type { ICachedSroCharacter } from '@genshin-optimizer/sr/db'
 import { convert, selfTag } from '@genshin-optimizer/sr/formula'
+import { uiSheets } from '@genshin-optimizer/sr/formula-ui'
 import {
   AbilityDropdown,
   BuildDisplay,
@@ -28,6 +32,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
+import { useCallback } from 'react'
 
 export default function CharacterEditor() {
   const { characterKey } = useCharacterContext()
@@ -40,6 +45,16 @@ export default function CharacterEditor() {
 
   const { calc } = useCalcContext()
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
+
+  const setCond = useCallback<SetCondCallback>(
+    (src, name, value) => {
+      if (!characterKey) return
+      const conditional = deepClone(character?.conditional)
+      layeredAssignment(conditional, [src, name], value)
+      database.chars.set(characterKey, { conditional })
+    },
+    [character?.conditional, characterKey, database.chars]
+  )
 
   return (
     <Container>
@@ -248,6 +263,13 @@ export default function CharacterEditor() {
               </Stack>
             </AccordionDetails>
           </Accordion>
+          {characterKey === 'Serval' ? (
+            <Box>
+              {uiSheets.Serval!.documents.map((doc) => (
+                <DocumentDisplay document={doc} setCond={setCond} />
+              ))}
+            </Box>
+          ) : undefined}
         </CardContent>
       </CardThemed>
     </Container>

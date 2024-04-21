@@ -1,0 +1,16 @@
+{
+  "name": "pando-ui-sheet",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/pando/ui-sheet/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/pando/ui-sheet/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
