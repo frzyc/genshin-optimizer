@@ -1,6 +1,5 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
-import { shouldShowDevComponents } from '@genshin-optimizer/gi/ui'
 import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import { Menu as MenuIcon } from '@mui/icons-material'
 import {
@@ -217,11 +216,6 @@ function MobileHeader({
             <Typography variant="h6" noWrap component="div">
               Star Rail Optimizer
             </Typography>
-            {shouldShowDevComponents ? (
-              <Typography variant="body1" sx={{ px: 1 }}>
-                (Dev Mode)
-              </Typography>
-            ) : undefined}
           </Button>
           <Box flexGrow={1} />
           <IconButton

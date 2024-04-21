@@ -120,7 +120,7 @@
       "@genshin-optimizer/sr/dm": ["libs/sr/dm/src/index.ts"],
       "@genshin-optimizer/sr/formula": ["libs/sr/formula/src/index.ts"],
       "@genshin-optimizer/sr/page-lightcones": [
-        "libs/sr/page-lightcones/src/index.ts"
+        "libs/sr/page-lightcones/src/index.tsx"
       ],
       "@genshin-optimizer/sr/solver": ["libs/sr/solver/src/index.ts"],
       "@genshin-optimizer/sr/srod": ["libs/sr/srod/src/index.ts"],
