@@ -25,10 +25,12 @@ export function LoadoutDropdown({
   teamCharId,
   onChangeTeamCharId,
   dropdownBtnProps = {},
+  label = false,
 }: {
   teamCharId: string
   onChangeTeamCharId: (teamCharId: string) => void
   dropdownBtnProps?: Omit<DropdownButtonProps, 'children' | 'title'>
+  label?: boolean
 }) {
   const database = useDatabase()
   const { key: characterKey, name } = database.teamChars.get(teamCharId)!
@@ -108,7 +110,13 @@ export function LoadoutDropdown({
               justifyContent: 'center',
             }}
           >
-            <span>{name}</span>
+            {label ? (
+              <span>
+                Loadout: <strong>{name}</strong>
+              </span>
+            ) : (
+              <span>{name}</span>
+            )}
           </Box>
         }
         {...dropdownBtnProps}

@@ -229,7 +229,7 @@ function InTeam() {
     database.teams.set(teamId, (team) => {
       team.loadoutData[0] = { teamCharId } as LoadoutDatum
     })
-    navigate(`/teams/${teamId}`, { state: { openSetting: true } })
+    navigate(`/teams/${teamId}`)
   }
   // TODO: Translation
   return (
