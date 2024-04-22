@@ -11,11 +11,11 @@ import { useNavigate } from 'react-router-dom'
 export default function TeamCharacterSelector({
   teamId,
   characterKey,
-  tab,
+  tab = '',
 }: {
   teamId: string
   characterKey?: CharacterKey
-  tab: string
+  tab?: string
 }) {
   const navigate = useNavigate()
   const database = useDatabase()

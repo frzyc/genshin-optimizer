@@ -85,11 +85,10 @@ function Page({ teamId }: { teamId: string }) {
     params: {},
   }
   const {
-    params: { tab: tabRaw },
+    params: { tab },
   } = useMatch({ path: '/teams/:teamId/:characterKey/:tab' }) ?? {
     params: {},
   }
-  const tab = tabRaw ?? 'overview'
 
   // validate characterKey
   const loadoutDatum = useMemo(() => {
@@ -199,7 +198,7 @@ function Page({ teamId }: { teamId: string }) {
     </Box>
   )
 }
-function InnerContent({ tab }: { tab: string }) {
+function InnerContent({ tab }: { tab?: string }) {
   const {
     teamCharId,
     teamChar: { key: characterKey },
