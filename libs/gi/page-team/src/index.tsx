@@ -2,7 +2,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
-import type { GeneratedBuild, LoadoutDatum } from '@genshin-optimizer/gi/db'
+import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
 import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
   CharacterContext,
@@ -59,14 +59,22 @@ export default function PageTeam() {
       <Suspense
         fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}
       >
-        {teamId && <PageLoadoutWrapper teamId={teamId} />}
+        {teamId && <Page teamId={teamId} />}
       </Suspense>
     </Box>
   )
 }
-function PageLoadoutWrapper({ teamId }: { teamId: string }) {
+
+const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
+// Stored per teamCharId
+const chartDataAll: Record<string, ChartData> = {}
+const graphBuildAll: Record<string, GeneratedBuild[]> = {}
+
+function Page({ teamId }: { teamId: string }) {
   const database = useDatabase()
   const navigate = useNavigate()
+  const { silly } = useContext(SillyContext)
+  const { gender } = useDBMeta()
 
   const team = useTeam(teamId)!
   const { loadoutData } = team
@@ -95,40 +103,8 @@ function PageLoadoutWrapper({ teamId }: { teamId: string }) {
   }, [loadoutData, database.teamChars, characterKeyRaw])
 
   useEffect(() => {
-    // make sure the characterKey path is valid
-    if (
-      (characterKeyRaw && !loadoutDatum) ||
-      (loadoutData[0] && !loadoutDatum)
-    ) {
-      const ld = loadoutData[0]
-      const ck = ld && database.teamChars.get(ld.teamCharId)?.key
-      if (ck) return navigate(ck, { replace: true })
-      else return navigate('', { replace: true })
-    }
-  }, [characterKeyRaw, database, loadoutData, loadoutDatum, navigate])
-
-  return <Page loadoutDatum={loadoutDatum} teamId={teamId} tab={tab} />
-}
-
-const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
-// Stored per teamCharId
-const chartDataAll: Record<string, ChartData> = {}
-const graphBuildAll: Record<string, GeneratedBuild[]> = {}
-
-function Page({
-  teamId,
-  tab,
-  loadoutDatum,
-}: {
-  teamId: string
-  tab: string
-  loadoutDatum?: LoadoutDatum
-}) {
-  const { silly } = useContext(SillyContext)
-  const database = useDatabase()
-  const { gender } = useDBMeta()
-
-  const team = useTeam(teamId)!
+    if (!loadoutDatum) navigate('', { replace: true })
+  }, [loadoutDatum, navigate])
 
   const teamCharId = loadoutDatum?.teamCharId
   const characterKey = database.teamChars.get(teamCharId)?.key
@@ -182,21 +158,12 @@ function Page({
 
   return (
     <Box sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>
-      <Box sx={{ display: 'flex', gap: 1 }}>
-        <TeamSetting
-          teamId={teamId}
-          teamData={teamData}
-          buttonProps={{
-            sx: {
-              flexGrow: 1,
-              backgroundColor: 'contentLight.main',
-            },
-            variant: 'outlined',
-            color: 'info',
-          }}
-        />
-      </Box>
       <CardThemed>
+        <TeamCharacterSelector
+          teamId={teamId}
+          characterKey={characterKey}
+          tab={tab}
+        />
         <Box
           sx={(theme) => {
             const elementKey = characterKey && getCharEle(characterKey)
@@ -210,28 +177,23 @@ function Page({
             }
           }}
         >
-          <TeamCharacterSelector
-            teamId={teamId}
-            characterKey={characterKey}
-            tab={tab}
-          />
-          <CardContent
-            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-          >
-            {teamCharacterContextValue ? (
-              dataContextValue ? (
-                <TeamCharacterContext.Provider
-                  value={teamCharacterContextValue}
-                >
-                  <DataContext.Provider value={dataContextValue}>
+          {teamCharacterContextValue ? (
+            dataContextValue ? (
+              <TeamCharacterContext.Provider value={teamCharacterContextValue}>
+                <DataContext.Provider value={dataContextValue}>
+                  <CardContent
+                    sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+                  >
                     <InnerContent tab={tab} />
-                  </DataContext.Provider>
-                </TeamCharacterContext.Provider>
-              ) : (
-                fallback
-              )
-            ) : null}
-          </CardContent>
+                  </CardContent>
+                </DataContext.Provider>
+              </TeamCharacterContext.Provider>
+            ) : (
+              fallback
+            )
+          ) : (
+            <TeamSetting teamId={teamId} teamData={teamData} />
+          )}
         </Box>
       </CardThemed>
     </Box>

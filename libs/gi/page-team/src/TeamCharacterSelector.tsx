@@ -1,11 +1,12 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import { CharIconSide, CharacterName } from '@genshin-optimizer/gi/ui'
+import GroupsIcon from '@mui/icons-material/Groups'
 import PersonIcon from '@mui/icons-material/Person'
-import { Box, Tab, Tabs } from '@mui/material'
+import { Box, CardContent, Tab, Tabs, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 export default function TeamCharacterSelector({
   teamId,
@@ -20,7 +21,8 @@ export default function TeamCharacterSelector({
   const database = useDatabase()
 
   const { gender } = useDBMeta()
-  const { loadoutData } = useTeam(teamId)!
+  const team = useTeam(teamId)!
+  const { loadoutData } = team
 
   const elementArray: Array<ElementKey | undefined> = loadoutData.map(
     (loadoutDatum) => {
@@ -36,79 +38,103 @@ export default function TeamCharacterSelector({
       database.teamChars.get(loadoutDatum?.teamCharId)?.key === characterKey
   )
   const selectedEle = elementArray[selectedIndex]
-  return (
-    <Box>
-      <CardThemed sx={{ borderRadius: 0 }}>
-        <Tabs
-          variant="fullWidth"
-          value={characterKey ?? 0}
-          sx={(theme) => {
-            const rgbas = elementArray.map((ele, i) => {
-              if (!ele) return `rgba(0,0,0,0)`
 
-              const hex = theme.palette[ele].main as string
-              const color = hexToColor(hex)
-              if (!color) return `rgba(0,0,0,0)`
-              return colorToRgbaString(color, selectedIndex === i ? 0.5 : 0.15)
-            })
-            const selectedRgb =
-              selectedEle && hexToColor(theme.palette[selectedEle].main)
-            const rgba = selectedRgb && colorToRgbaString(selectedRgb, 0.3)
-            return {
-              // will be in the form of `linear-gradient(to right, red 12.5%, orange 27.5%, yellow 62.5%, green 87.5%)`
-              background: `linear-gradient(to right, ${rgbas
-                .map((rgba, i) => `${rgba} ${i * 25 + 12.5}%`)
-                .join(', ')})`,
-              borderBottom: rgba && `1px ${rgba} solid`,
-              '& .MuiTab-root:hover': {
-                transition: 'background-color 0.25s ease',
-                backgroundColor: 'rgba(255,255,255,0.1)',
-              },
-              '& .Mui-selected': {
-                color: 'white !important',
-              },
-              '& .MuiTabs-indicator': {
-                height: '4px',
-                backgroundColor:
-                  selectedEle && theme.palette[selectedEle]?.main,
-              },
-            }
-          }}
-        >
-          {loadoutData.map((loadoutDatum, ind) => {
-            const teamCharKey =
-              loadoutDatum &&
-              database.teamChars.get(loadoutDatum?.teamCharId)?.key
-            return (
-              <Tab
-                icon={
-                  teamCharKey ? (
-                    <CharIconSide characterKey={teamCharKey} sideMargin />
-                  ) : (
-                    <PersonIcon />
-                  )
-                }
-                iconPosition="start"
-                value={teamCharKey ?? ind}
-                key={ind}
-                disabled={!loadoutData[ind]}
-                label={
-                  teamCharKey ? (
-                    <CharacterName characterKey={teamCharKey} gender={gender} />
-                  ) : (
-                    `Character ${ind + 1}` // TODO: Translation
-                  )
-                }
-                onClick={() =>
-                  // conserve the current tab when switching to another character
-                  teamCharKey &&
-                  navigate(`/teams/${teamId}/${teamCharKey}/${tab}`)
-                }
-              />
-            )
-          })}
-        </Tabs>
-      </CardThemed>
+  return (
+    <Box
+      sx={(theme) => {
+        const rgbas = [
+          colorToRgbaString(
+            hexToColor(theme.palette['contentLight'].main)!,
+            !characterKey ? 1 : 0.5
+          )!, // color for team setting
+          ...elementArray.map((ele, i) => {
+            if (!ele) return `rgba(0,0,0,0)`
+
+            const hex = theme.palette[ele].main as string
+            const color = hexToColor(hex)
+            if (!color) return `rgba(0,0,0,0)`
+            return colorToRgbaString(color, selectedIndex === i ? 0.5 : 0.15)
+          }),
+        ]
+        const selectedRgb =
+          selectedEle && hexToColor(theme.palette[selectedEle].main)
+        const rgba = selectedRgb && colorToRgbaString(selectedRgb, 0.3)
+        return {
+          // will be in the form of `linear-gradient(to right, red xx%, orange xx%, yellow xx%, green xx%)`
+          background: `linear-gradient(to right, ${rgbas
+            .map((rgba, i) => `${rgba} ${i * 20 + 10}%`)
+            .join(', ')})`,
+          borderBottom: `1px ${rgba ?? 'rgb(200,200,200,0.3)'} solid`,
+          '& .MuiTab-root:hover': {
+            transition: 'background-color 0.25s ease',
+            backgroundColor: 'rgba(255,255,255,0.1)',
+          },
+          '& .Mui-selected': {
+            color: 'white !important',
+          },
+          '& .MuiTabs-indicator': {
+            height: '4px',
+            backgroundColor:
+              (selectedEle && theme.palette[selectedEle]?.main) ??
+              'rgb(200,200,200,0.5)', //team settings
+          },
+        }
+      }}
+    >
+      <BootstrapTooltip
+        title={
+          team.description ? (
+            <Typography>{team.description}</Typography>
+          ) : undefined
+        }
+      >
+        <CardContent sx={{ display: 'flex', justifyContent: 'center', pb: 0 }}>
+          <Typography variant="h5" display="flex">
+            {team.name}
+          </Typography>
+        </CardContent>
+      </BootstrapTooltip>
+      <Tabs variant="fullWidth" value={characterKey ?? 'team'}>
+        <Tab
+          icon={<GroupsIcon />}
+          iconPosition="start"
+          value={'team'}
+          label={'Team Settings'}
+          onClick={() => navigate(`/teams/${teamId}/`)}
+        />
+        {loadoutData.map((loadoutDatum, ind) => {
+          const teamCharKey =
+            loadoutDatum &&
+            database.teamChars.get(loadoutDatum?.teamCharId)?.key
+          return (
+            <Tab
+              icon={
+                teamCharKey ? (
+                  <CharIconSide characterKey={teamCharKey} sideMargin />
+                ) : (
+                  <PersonIcon />
+                )
+              }
+              iconPosition="start"
+              value={teamCharKey ?? ind}
+              key={ind}
+              disabled={!loadoutData[ind]}
+              label={
+                teamCharKey ? (
+                  <CharacterName characterKey={teamCharKey} gender={gender} />
+                ) : (
+                  `Character ${ind + 1}` // TODO: Translation
+                )
+              }
+              onClick={() =>
+                // conserve the current tab when switching to another character
+                teamCharKey &&
+                navigate(`/teams/${teamId}/${teamCharKey}/${tab}`)
+              }
+            />
+          )
+        })}
+      </Tabs>
     </Box>
   )
 }

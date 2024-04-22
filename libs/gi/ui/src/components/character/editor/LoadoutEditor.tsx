@@ -78,7 +78,7 @@ export function LoadoutEditor({
     database.teams.set(teamId, (team) => {
       team.loadoutData[0] = { teamCharId } as LoadoutDatum
     })
-    navigate(`/teams/${teamId}`, { state: { openSetting: true } })
+    navigate(`/teams/${teamId}`)
   }
   const conditionalCount = useMemo(() => {
     let count = 0
