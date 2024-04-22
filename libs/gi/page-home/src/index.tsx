@@ -29,7 +29,7 @@ export default function PageHome() {
   ReactGA.send({ hitType: 'pageview', page: '/home' })
   if (lg)
     return (
-      <Grid container spacing={2} direction={'row-reverse'} sx={{ my: 2 }}>
+      <Grid container spacing={2} direction={'row-reverse'}>
         <Grid
           item
           xs={12}
