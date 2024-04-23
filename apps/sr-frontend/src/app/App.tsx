@@ -12,11 +12,15 @@ import {
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material'
-import { Suspense } from 'react'
+import { Suspense, lazy } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import Header from './Header'
 import PageHome from './PageHome'
 import { theme } from './Theme'
+
+const PageLightCones = lazy(
+  () => import('@genshin-optimizer/sr/page-lightcones')
+)
 
 export default function App() {
   return (
@@ -60,6 +64,7 @@ function Content() {
         >
           <Routes>
             <Route index element={<PageHome />} />
+            <Route path="/lightcones" element={<PageLightCones />} />
           </Routes>
         </Suspense>
       </Container>

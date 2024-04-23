@@ -1,8 +1,3 @@
-import {
-  BootstrapTooltip,
-  CardThemed,
-  ModalWrapper,
-} from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import type { TeamCharacterContextObj } from '@genshin-optimizer/gi/db-ui'
@@ -25,23 +20,18 @@ import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import GroupsIcon from '@mui/icons-material/Groups'
-import SettingsIcon from '@mui/icons-material/Settings'
 import type { ButtonProps } from '@mui/material'
 import {
   Alert,
   Box,
   Button,
   CardContent,
-  CardHeader,
-  Divider,
   Grid,
-  IconButton,
   TextField,
   Typography,
 } from '@mui/material'
 import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import BuildDropdown from '../BuildDropdown'
 import { LoadoutDropdown } from '../LoadoutDropdown'
 import { ResonanceDisplay, TeammateDisplay } from './TeamComponents'
@@ -50,7 +40,6 @@ import { ResonanceDisplay, TeammateDisplay } from './TeamComponents'
 export default function TeamSetting({
   teamId,
   teamData,
-  buttonProps = {},
 }: {
   teamId: string
   teamData?: TeamData
@@ -60,15 +49,6 @@ export default function TeamSetting({
   const database = useDatabase()
   const team = database.teams.get(teamId)!
   const noChars = team.loadoutData.every((id) => !id)
-
-  const location = useLocation()
-
-  const { openSetting = false } = (location.state ?? {
-    openSetting: false,
-  }) as {
-    openSetting?: boolean
-  }
-  const [open, setOpen] = useState(openSetting || noChars)
 
   const [name, setName] = useState(team.name)
   const nameDeferred = useDeferredValue(name)
@@ -124,106 +104,59 @@ export default function TeamSetting({
   }
 
   return (
-    <>
-      <BootstrapTooltip
-        title={
-          team.description ? (
-            <Typography>{team.description}</Typography>
-          ) : undefined
-        }
-      >
+    <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+      <TeamInfoAlert />
+      <TextField
+        fullWidth
+        label="Team Name"
+        placeholder="Team Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <TextField
+        fullWidth
+        label="Team Description"
+        value={desc}
+        onChange={(e) => setDesc(e.target.value)}
+        multiline
+        minRows={2}
+      />
+      <Box sx={{ display: 'flex', gap: 1 }}>
         <Button
-          startIcon={<GroupsIcon />}
-          endIcon={<SettingsIcon />}
-          onClick={() => setOpen((open) => !open)}
-          {...buttonProps}
+          color="info"
+          sx={{ flexGrow: 1 }}
+          startIcon={<ContentPasteIcon />}
+          disabled={noChars}
+          onClick={onExport}
         >
-          <Typography variant="h5" display="flex" gap={1}>
-            <strong>{team.name}</strong>
-            <Divider orientation="vertical" variant="middle" flexItem />
-            <span>Team Settings</span>
-          </Typography>
+          Export Team
         </Button>
-      </BootstrapTooltip>
-
-      <ModalWrapper
-        open={open}
-        onClose={() => setOpen(false)}
-        containerProps={{ maxWidth: 'xl' }}
-      >
-        <CardThemed>
-          <CardHeader
-            title={
-              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                <GroupsIcon />
-                <span>Team Settings</span>
-              </Box>
-            }
-            action={
-              <IconButton onClick={() => setOpen(false)}>
-                <CloseIcon />
-              </IconButton>
-            }
-          />
-          <Divider />
-          <CardContent
-            sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-          >
-            <TeamInfoAlert />
-            <TextField
-              fullWidth
-              label="Team Name"
-              placeholder="Team Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <TextField
-              fullWidth
-              label="Team Description"
-              value={desc}
-              onChange={(e) => setDesc(e.target.value)}
-              multiline
-              minRows={2}
-            />
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              <Button
-                color="info"
-                sx={{ flexGrow: 1 }}
-                startIcon={<ContentPasteIcon />}
-                disabled={noChars}
-                onClick={onExport}
-              >
-                Export Team
-              </Button>
-              <Button
-                color="info"
-                sx={{ flexGrow: 1 }}
-                disabled={noChars}
-                onClick={onDup}
-                startIcon={<ContentCopyIcon />}
-              >
-                Duplicate Team
-              </Button>
-              <Button
-                color="error"
-                sx={{ flexGrow: 1 }}
-                onClick={onDel}
-                startIcon={<DeleteForeverIcon />}
-              >
-                Delete Team
-              </Button>
-            </Box>
-            <EnemyExpandCard teamId={teamId} />
-            <Typography variant="h6">Team Editor</Typography>
-            <Alert severity="info">
-              The first character in the team receives any "active on-field
-              character" buffs, and cannot be empty.
-            </Alert>
-            <TeamCharacterSelector teamId={teamId} teamData={teamData} />
-          </CardContent>
-        </CardThemed>
-      </ModalWrapper>
-    </>
+        <Button
+          color="info"
+          sx={{ flexGrow: 1 }}
+          disabled={noChars}
+          onClick={onDup}
+          startIcon={<ContentCopyIcon />}
+        >
+          Duplicate Team
+        </Button>
+        <Button
+          color="error"
+          sx={{ flexGrow: 1 }}
+          onClick={onDel}
+          startIcon={<DeleteForeverIcon />}
+        >
+          Delete Team
+        </Button>
+      </Box>
+      <EnemyExpandCard teamId={teamId} />
+      <Typography variant="h6">Team Editor</Typography>
+      <Alert severity="info">
+        The first character in the team receives any "active on-field character"
+        buffs, and cannot be empty.
+      </Alert>
+      <TeamCharacterSelector teamId={teamId} teamData={teamData} />
+    </CardContent>
   )
 }
 function TeamCharacterSelector({
