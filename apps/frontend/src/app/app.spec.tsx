@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import { expect, vi } from 'vitest'
-import App from './app'
+import App from './App'
 
 const MockIntersectionObserver = vi.fn(() => ({
   disconnect: vi.fn(),
