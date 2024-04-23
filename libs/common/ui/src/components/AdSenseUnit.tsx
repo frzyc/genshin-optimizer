@@ -11,9 +11,9 @@ export function AdSenseUnit({
 }) {
   useEffect(() => {
     try {
-      ;((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
-        {}
-      )
+      const w = window as any
+      w.adsbygoogle = (window as any).adsbygoogle || []
+      w.adsbygoogle.push({})
     } catch (e) {
       console.error(e)
     }
