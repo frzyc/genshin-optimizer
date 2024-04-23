@@ -1,21 +1,16 @@
-/// <reference types="vitest" />
-import { resolve } from 'path'
-import { defineConfig } from 'vite'
-
+/// <reference types='vitest' />
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import react from '@vitejs/plugin-react'
-
-import viteTsConfigPaths from 'vite-tsconfig-paths'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   base: '',
-  cacheDir: '../../node_modules/.vite/sr-frontend',
+  root: __dirname,
+  cacheDir: '../../node_modules/.vite/apps/viteapp',
 
   server: {
     port: 4200,
     host: 'localhost',
-    fs: {
-      allow: ['../../'],
-    },
   },
 
   preview: {
@@ -23,35 +18,26 @@ export default defineConfig({
     host: 'localhost',
   },
 
-  plugins: [
-    viteTsConfigPaths({
-      root: '../../',
-    }),
-    react(),
-  ],
+  plugins: [react(), nxViteTsPaths()],
 
   define: {
     'process.env': process.env,
   },
 
-  // Resolve aliases. If we ever alias to non-libs folder, need to update this
-  resolve: {
-    alias: [
-      // e.g. Resolves '@genshin-optimizer/pando/engine' -> 'libs/pando/engine/src'
-      {
-        find: /@genshin-optimizer\/([a-zA-Z0-9-]*)\/([a-zA-Z0-9-]*)/,
-        replacement: resolve('libs/$1/$2/src'),
-      },
-    ],
-  },
-
   // Uncomment this if you are using workers.
   worker: {
     // https://vitejs.dev/guide/migration#worker-plugins-is-now-a-function
-    plugins: () => [
-      viteTsConfigPaths({
-        root: '../../',
-      }),
-    ],
+    plugins: () => [nxViteTsPaths()],
+  },
+  test: {
+    globals: true,
+    cache: { dir: '../../node_modules/.vitest' },
+    environment: 'jsdom',
+    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    reporters: ['default'],
+    coverage: {
+      reportsDirectory: '../../coverage/apps/sr-frontend',
+      provider: 'v8',
+    },
   },
 })

@@ -4,13 +4,5 @@
   "sourceRoot": "libs/gi/page-archive/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi/page-archive/**/*.{ts,tsx,js,jsx}"]
-      }
-    }
-  }
+  "targets": {}
 }

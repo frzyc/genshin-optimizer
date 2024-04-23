@@ -7,7 +7,7 @@ import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/libs/gi-assets',
+  cacheDir: '../../node_modules/.vite/libs/sr/solver',
 
   plugins: [
     react(),
@@ -19,7 +19,7 @@ export default defineConfig({
   ],
 
   // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
+  worker: {
+    plugins: () => [nxViteTsPaths()],
+  },
 })

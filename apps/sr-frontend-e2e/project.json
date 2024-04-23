@@ -16,8 +16,7 @@
           "devServerTarget": "sr-frontend:serve:production"
         }
       }
-    },
-    "lint": {}
+    }
   },
   "tags": [],
   "implicitDependencies": ["sr-frontend"]

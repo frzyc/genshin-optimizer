@@ -4,13 +4,5 @@
   "sourceRoot": "libs/gi/page-tools/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi/page-tools/**/*.{ts,tsx,js,jsx}"]
-      }
-    }
-  }
+  "targets": {}
 }

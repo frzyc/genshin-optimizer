@@ -60,7 +60,7 @@
           "dev": false
         }
       },
-      "dependsOn": ["^gen-file"]
+      "dependsOn": ["^gen-prisma"]
     },
     "export": {
       "executor": "@nx/next:export",
@@ -80,13 +80,6 @@
           "ci": true,
           "codeCoverage": true
         }
-      }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/gi-frontend-next/**/*.{ts,tsx,js,jsx}"]
       }
     }
   }

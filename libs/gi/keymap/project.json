@@ -4,13 +4,5 @@
   "sourceRoot": "libs/gi/keymap/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi/keymap/**/*.ts"]
-      }
-    }
-  }
+  "targets": {}
 }

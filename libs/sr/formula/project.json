@@ -10,7 +10,6 @@
         "outputPath": "libs/sr/formula/src/meta.ts"
       }
     },
-    "lint": {},
     "test": {
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],

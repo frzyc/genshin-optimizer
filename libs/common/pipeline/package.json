@@ -1,5 +1,9 @@
 {
   "name": "@genshin-optimizer/common/pipeline",
   "version": "0.0.1",
-  "type": "commonjs"
+  "dependencies": {},
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "typings": "./index.d.ts",
+  "private": true
 }

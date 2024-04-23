@@ -4,7 +4,6 @@
   "sourceRoot": "libs/gi/util/src",
   "projectType": "library",
   "targets": {
-    "lint": {},
     "test": {
       "configurations": {
         "ci": {

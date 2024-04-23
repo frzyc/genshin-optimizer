@@ -16,7 +16,6 @@
         "command": "node tools/scripts/publish.mjs gi-formula {args.ver} {args.tag}"
       }
     },
-    "lint": {},
     "test": {
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],

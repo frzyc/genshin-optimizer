@@ -4,13 +4,5 @@
   "sourceRoot": "libs/sr/srod/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/sr/srod/**/*.ts"]
-      }
-    }
-  }
+  "targets": {}
 }

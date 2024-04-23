@@ -9,8 +9,7 @@
       "options": {
         "command": "node tools/scripts/publish.mjs sr-consts {args.ver} {args.tag}"
       }
-    },
-    "lint": {}
+    }
   },
   "tags": []
 }
