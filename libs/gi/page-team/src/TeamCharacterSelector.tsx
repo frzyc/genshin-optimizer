@@ -6,7 +6,15 @@ import { getCharEle } from '@genshin-optimizer/gi/stats'
 import { CharIconSide, CharacterName } from '@genshin-optimizer/gi/ui'
 import GroupsIcon from '@mui/icons-material/Groups'
 import PersonIcon from '@mui/icons-material/Person'
-import { Box, CardContent, Tab, Tabs, Typography } from '@mui/material'
+import {
+  Box,
+  CardContent,
+  Tab,
+  Tabs,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 export default function TeamCharacterSelector({
   teamId,
@@ -38,15 +46,18 @@ export default function TeamCharacterSelector({
       database.teamChars.get(loadoutDatum?.teamCharId)?.key === characterKey
   )
   const selectedEle = elementArray[selectedIndex]
-
+  const theme = useTheme()
+  const isXs = useMediaQuery(theme.breakpoints.down('md'))
   return (
     <Box
       sx={(theme) => {
+        const backrgba = colorToRgbaString(
+          hexToColor(theme.palette['contentLight'].main)!,
+          !characterKey ? 1 : 0.5
+        )!
         const rgbas = [
-          colorToRgbaString(
-            hexToColor(theme.palette['contentLight'].main)!,
-            !characterKey ? 1 : 0.5
-          )!, // color for team setting
+          // color for team setting
+          ...(isXs ? [backrgba, backrgba] : [backrgba]),
           ...elementArray.map((ele, i) => {
             if (!ele) return `rgba(0,0,0,0)`
 
@@ -61,8 +72,11 @@ export default function TeamCharacterSelector({
         const rgba = selectedRgb && colorToRgbaString(selectedRgb, 0.3)
         return {
           // will be in the form of `linear-gradient(to right, red xx%, orange xx%, yellow xx%, green xx%)`
-          background: `linear-gradient(to right, ${rgbas
-            .map((rgba, i) => `${rgba} ${i * 20 + 10}%`)
+          background: `linear-gradient(to ${isXs ? 'bottom' : 'right'}, ${rgbas
+            .map(
+              (rgba, i, arr) =>
+                `${rgba} ${i * (100 / arr.length) + 50 / arr.length}%`
+            )
             .join(', ')})`,
           borderBottom: `1px ${rgba ?? 'rgb(200,200,200,0.3)'} solid`,
           '& .MuiTab-root:hover': {
@@ -94,7 +108,11 @@ export default function TeamCharacterSelector({
           </Typography>
         </CardContent>
       </BootstrapTooltip>
-      <Tabs variant="fullWidth" value={characterKey ?? 'team'}>
+      <Tabs
+        variant="fullWidth"
+        value={characterKey ?? 'team'}
+        orientation={isXs ? 'vertical' : 'horizontal'}
+      >
         <Tab
           icon={<GroupsIcon />}
           iconPosition="start"
