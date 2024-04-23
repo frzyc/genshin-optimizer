@@ -29,6 +29,15 @@ export default defineConfig({
     // https://vitejs.dev/guide/migration#worker-plugins-is-now-a-function
     plugins: () => [nxViteTsPaths()],
   },
+
+  build: {
+    outDir: '../../dist/apps/sr-frontend',
+    reportCompressedSize: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
+
   test: {
     globals: true,
     cache: { dir: '../../node_modules/.vitest' },
