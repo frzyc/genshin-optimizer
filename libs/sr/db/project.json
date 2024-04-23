@@ -3,20 +3,14 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/sr/db/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/sr/db/**/*.ts"]
-      }
-    },
     "test": {
       "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "config": "libs/sr/db/vitest.config.ts"
+        "reportsDirectory": "../../../coverage/libs/test"
       }
     }
-  },
-  "tags": []
+  }
 }

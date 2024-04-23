@@ -3,6 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/common/plugin/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
@@ -33,18 +34,6 @@
             "glob": "executors.json",
             "output": "."
           }
-        ],
-        "updateBuildableProjectDepsInPackageJson": true
-      }
-    },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "libs/common/plugin/**/*.ts",
-          "libs/common/plugin/package.json",
-          "libs/common/plugin/executors.json"
         ]
       }
     },
@@ -62,6 +51,5 @@
         }
       }
     }
-  },
-  "tags": []
+  }
 }

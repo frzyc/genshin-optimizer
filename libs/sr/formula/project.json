@@ -10,11 +10,11 @@
         "outputPath": "libs/sr/formula/src/meta.ts"
       }
     },
-    "lint": {},
     "test": {
       "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "config": "libs/sr/formula/vitest.config.ts"
+        "reportsDirectory": "../../../coverage/libs/test"
       }
     }
   },

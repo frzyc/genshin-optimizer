@@ -4,44 +4,6 @@
   "projectType": "application",
   "sourceRoot": "apps/sr-frontend/src",
   "tags": [],
-  "targets": {
-    "build": {},
-    "build-vite": {},
-    "serve": {
-      "executor": "@nx/vite:dev-server",
-      "defaultConfiguration": "development",
-      "options": {
-        "buildTarget": "sr-frontend:build-vite"
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "sr-frontend:build-vite:development",
-          "hmr": true
-        },
-        "production": {
-          "buildTarget": "sr-frontend:build-vite:production",
-          "hmr": false
-        }
-      }
-    },
-    "preview": {
-      "executor": "@nx/vite:preview-server",
-      "defaultConfiguration": "development",
-      "options": {
-        "buildTarget": "sr-frontend:build-vite"
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "sr-frontend:build-vite:development"
-        },
-        "production": {
-          "buildTarget": "sr-frontend:build-vite:production"
-        }
-      }
-    },
-    "test": {
-      "executor": "@nx/vite:test"
-    },
-    "lint": {}
-  }
+  "// targets": "to see all targets run: nx show project sr-frontend --web",
+  "targets": {}
 }

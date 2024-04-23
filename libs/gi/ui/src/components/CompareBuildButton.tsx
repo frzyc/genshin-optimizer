@@ -1,6 +1,6 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ModalWrapper } from '@genshin-optimizer/common/ui'
-import { objMap } from '@genshin-optimizer/common/util'
+import { notEmpty, objMap } from '@genshin-optimizer/common/util'
 import {
   CharacterContext,
   TeamCharacterContext,
@@ -89,7 +89,7 @@ function TeamWrapper({ artId, weaponId, onHide }: WrapperProps) {
     const artmap = objMap(equippedArtifacts, (art, slot) =>
       slot === newArt?.slotKey ? newArt : art
     )
-    return Object.values(artmap).filter((a) => a)
+    return Object.values(artmap).filter(notEmpty)
   }, [database, loadoutDatum, artId])
   const teamData = useTeamData(
     mainStatAssumptionLevel,
@@ -120,7 +120,7 @@ function CharacterWrapper({ artId, weaponId, onHide }: WrapperProps) {
     const artmap = objMap(equippedArtifacts, (id, slot) =>
       slot === newArt?.slotKey ? newArt : database.arts.get(id)
     )
-    return Object.values(artmap).filter((a) => a)
+    return Object.values(artmap).filter(notEmpty)
   }, [database, equippedArtifacts, artId])
   const teamData = useCharData(
     characterKey,

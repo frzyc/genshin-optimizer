@@ -3,6 +3,13 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/gi-frontend-next",
   "projectType": "application",
+  "tags": [],
+  "implicitDependencies": [
+    "gi-prisma-schema",
+    "gi-localization",
+    "gi-dm-localization",
+    "gi-silly-wisher-names"
+  ],
   "targets": {
     "build": {
       "executor": "@nx/next:build",
@@ -53,7 +60,7 @@
           "dev": false
         }
       },
-      "dependsOn": ["^gen-file"]
+      "dependsOn": ["^gen-prisma"]
     },
     "export": {
       "executor": "@nx/next:export",
@@ -74,20 +81,6 @@
           "codeCoverage": true
         }
       }
-    },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/gi-frontend-next/**/*.{ts,tsx,js,jsx}"]
-      }
     }
-  },
-  "tags": [],
-  "implicitDependencies": [
-    "gi-prisma-schema",
-    "gi-localization",
-    "gi-dm-localization",
-    "gi-silly-wisher-names"
-  ]
+  }
 }

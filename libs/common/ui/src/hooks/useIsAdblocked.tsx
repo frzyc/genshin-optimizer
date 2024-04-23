@@ -10,7 +10,7 @@ export function useIsAdblocked() {
   const [adBlockEnabled, setAdBlockEnabled] = useState(false)
 
   useEffect(() => {
-    ;(async () => {
+    const fetchUrl = async () => {
       try {
         await fetch(new Request(googleAdsURL)).catch((_) => {
           setAdBlockEnabled(true)
@@ -18,7 +18,8 @@ export function useIsAdblocked() {
       } catch (err) {
         setAdBlockEnabled(true)
       }
-    })()
+    }
+    fetchUrl()
     setTimeout(() => {
       const eles = document.getElementsByClassName('adsbygoogle')
       const allEmpty = Array.from(eles).every((e) => e.innerHTML.trim() === '')

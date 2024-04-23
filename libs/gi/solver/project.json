@@ -1,22 +1,9 @@
 {
   "name": "gi-solver",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/solver/src",
   "projectType": "library",
-  "targets": {
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi/solver/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nx/vite:test",
-      "options": {
-        "config": "libs/gi/solver/vitest.config.mts"
-      }
-    }
-  },
-  "tags": []
+  "tags": [],
+  "// targets": "to see all targets run: nx show project gi-solver --web",
+  "targets": {}
 }

@@ -1,10 +1,13 @@
 {
   "presets": [
     [
-      "@nx/web/babel",
+      "@nx/react/babel",
       {
-        "useBuiltIns": "usage"
+        "runtime": "automatic",
+        "useBuiltIns": "usage",
+        "importSource": "@emotion/react"
       }
     ]
-  ]
+  ],
+  "plugins": ["@emotion/babel-plugin"]
 }

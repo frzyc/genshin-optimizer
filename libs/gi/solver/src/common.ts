@@ -1,5 +1,6 @@
 import {
   assertUnreachable,
+  notEmpty,
   objKeyMap,
   objMap,
   range,
@@ -559,16 +560,21 @@ export function mergePlot(plots: PlotData[]): PlotData {
     maxCount = 1500
   let keys = new Set(
     plots.flatMap((x) =>
-      Object.values(x).map((v) => Math.round(v.plot! / scale))
+      Object.values(x).map((v) => v && Math.round(v.plot! / scale))
     )
   )
   while (keys.size > maxCount) {
     scale *= reductionScaling
-    keys = new Set([...keys].map((key) => Math.round(key / reductionScaling)))
+    keys = new Set(
+      [...keys]
+        .filter(notEmpty)
+        .map((key) => Math.round(key / reductionScaling))
+    )
   }
   const result: PlotData = {}
   for (const plot of plots)
     for (const build of Object.values(plot)) {
+      if (!build) continue
       const x = Math.round(build.plot! / scale) * scale
       if (!result[x] || result[x]!.value < build.value) result[x] = build
     }

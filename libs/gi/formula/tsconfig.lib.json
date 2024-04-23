@@ -9,5 +9,5 @@
     "src/generators/**/*.ts",
     "src/executors/**/*.ts"
   ],
-  "exclude": ["**/*.spec.ts", "vitest.config.ts", "src/example/test.json"]
+  "exclude": ["vite.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

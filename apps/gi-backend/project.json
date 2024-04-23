@@ -3,6 +3,8 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/gi-backend/src",
   "projectType": "application",
+  "tags": [],
+  "implicitDependencies": ["gi-prisma-schema"],
   "targets": {
     "build": {
       "executor": "@nx/webpack:webpack",
@@ -39,13 +41,6 @@
       },
       "dependsOn": ["^gen-file"]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/gi-backend/**/*.ts"]
-      }
-    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -60,7 +55,5 @@
         }
       }
     }
-  },
-  "tags": [],
-  "implicitDependencies": ["gi-prisma-schema"]
+  }
 }

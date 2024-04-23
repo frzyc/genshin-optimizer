@@ -16,7 +16,7 @@
         "cwd": "libs/gi/prisma-schema"
       }
     },
-    "gen-file": {
+    "gen-prisma": {
       "command": "prisma generate",
       "options": {
         "cwd": "libs/gi/prisma-schema"

@@ -385,7 +385,8 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
 
     // Add the traveler variants to charNames_gen
     allGenderKeys.forEach((gender) => {
-      ;(['Anemo', 'Geo', 'Electro', 'Dendro'] as const).forEach((ele) => {
+      const keys = ['Anemo', 'Geo', 'Electro', 'Dendro'] as const
+      keys.forEach((ele) => {
         const transLocGenKey =
           languageData[lang as Language].charNames[
             `Traveler${gender}` as LocationGenderedCharacterKey

@@ -53,7 +53,7 @@ jobs:
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
           NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
-          yarn run nx run ${{inputs.frontend_name}}:build-vite:production --base-href=""
+          yarn run nx run ${{inputs.frontend_name}}:build:production
           echo ${{inputs.frontend_name}} > frontend_name
           echo ${{inputs.deployment_name}} > deployment_name
           echo $(git rev-parse HEAD) > ref

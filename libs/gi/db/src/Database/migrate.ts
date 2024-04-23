@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { DBStorage } from '@genshin-optimizer/common/database'
+import { notEmpty } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
@@ -190,7 +191,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
       ;(good as any).teamchars.push({ ...teamCharMain, id: teamCharMainId })
       teamCharIds.push(teamCharMainId)
       if (charTeam) {
-        ;(charTeam.filter((c) => c) as CharacterKey[]).forEach((charK) => {
+        charTeam.filter(notEmpty).forEach((charK) => {
           const teamChar: TeamCharacter = {
             key: charK,
             conditional: teamConditional[charK] as any,
@@ -434,7 +435,7 @@ export function migrate(storage: DBStorage) {
         storage.set(teamCharMainId, teamCharMain)
         teamCharIds.push(teamCharMainId)
         if (charTeam) {
-          ;(charTeam.filter((c) => c) as CharacterKey[]).forEach((charK) => {
+          charTeam.filter(notEmpty).forEach((charK) => {
             const teamChar: TeamCharacter = {
               key: charK,
               conditional: teamConditional[charK] as any,

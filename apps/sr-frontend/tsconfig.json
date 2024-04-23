@@ -1,6 +1,4 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "files": [],
   "compilerOptions": {
     "jsx": "react-jsx",
     "target": "ESNext",
@@ -18,7 +16,8 @@
     "exactOptionalPropertyTypes": false,
     "types": ["vite/client", "vitest"]
   },
-  "include": ["src"],
+  "files": [],
+  "include": [],
   "references": [
     {
       "path": "./tsconfig.app.json"
@@ -26,5 +25,6 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ]
+  ],
+  "extends": "../../tsconfig.base.json"
 }

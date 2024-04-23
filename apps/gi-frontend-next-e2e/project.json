@@ -3,6 +3,8 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/gi-frontend-next-e2e/src",
   "projectType": "application",
+  "tags": [],
+  "implicitDependencies": ["gi-frontend-next"],
   "targets": {
     "e2e": {
       "executor": "@nx/cypress:cypress",
@@ -16,15 +18,6 @@
           "devServerTarget": "gi-frontend-next:serve:production"
         }
       }
-    },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/gi-frontend-next-e2e/**/*.{js,ts}"]
-      }
     }
-  },
-  "tags": [],
-  "implicitDependencies": ["gi-frontend-next"]
+  }
 }
