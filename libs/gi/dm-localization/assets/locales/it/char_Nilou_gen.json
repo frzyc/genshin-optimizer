@@ -42,7 +42,7 @@
     "name": "Danza di Haftkarsvar",
     "description": {
       "0": "Nilou entra nello stato di Piroetta, infliggendo <hydro>DAN da Hydro</hydro> ai nemici vicini in base ai suoi PS max.",
-      "1": "Quando si trova in questo stato, gli attacchi normali e le abilità elementali permettono a Nilou di assumere rispettivamente le pose Danza della spada e Passi vorticosi, convertendo i DAN inflitti in <hydro>DAN da Hydro</hydro> che non possono essere contrastati da altre infusioni elementali, e i DAN inflitti vengono considerati DAN da abilità elementale.",
+      "1": "Quando si trova in questo stato, gli attacchi normali e le abilità elementali permettono a Nilou di assumere rispettivamente le pose Danza della spada e Passi vorticosi, convertendo i DAN inflitti in <hydro>DAN da Hydro</hydro> non influenzabili da altre infusioni elementali, e i DAN inflitti vengono considerati DAN da abilità elementale.",
       "2": "<br/>",
       "3": "Quando assume tali pose, il terzo passo di danza di Nilou pone fine allo stato Piroetta e genera gli effetti di seguito elencati in base al passo di danza in questione.",
       "4": [

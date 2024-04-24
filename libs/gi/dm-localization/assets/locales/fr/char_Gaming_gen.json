@@ -103,7 +103,7 @@
   "passive1": {
     "name": "Danse d'entente",
     "description": {
-      "0": "Après avoir touché un ennemi avec l'attaque plongeante « Augure nébuleux » d'<strong>Ascension bestiale</strong>, Gaming récupère des PV pour une valeur équivalant à 1,5 % de ses PV max une fois toutes les 0,2 s pendant 0,8 s."
+      "0": "Après avoir touché un ennemi avec l'attaque plongeante « Augure nébuleux » d'<strong>Ascension bestiale</strong>, Gaming récupère des PV d'une valeur équivalant à 1,5 % de ses PV max une fois toutes les 0,2 s pendant 0,8 s."
     }
   },
   "passive2": {
