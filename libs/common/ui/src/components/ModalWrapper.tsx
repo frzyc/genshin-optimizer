@@ -3,6 +3,9 @@ import type { ContainerProps, ModalProps } from '@mui/material'
 import { Container, Modal, styled } from '@mui/material'
 
 const ModalContainer = styled(Container)(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
   minHeight: '100vh',
   ':focus': {
     outline: 'None',
