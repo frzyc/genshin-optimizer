@@ -36,6 +36,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config pull.rebase false
           git rm -r ./${{ steps.build-info.outputs.deploy_path }}
           git commit -m "clean ${{ steps.build-info.outputs.deploy_path }}"
         working-directory: gh-pages
