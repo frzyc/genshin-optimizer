@@ -115,7 +115,9 @@
       ],
       "4": "<br/>",
       "5": "<strong>Costura</strong>",
-      "6": "Chiori se <geo>imbuye del elemento Geo</geo> durante 5 s.",
+      "6": [
+        "Chiori se <geo>imbuye del elemento Geo</geo> durante 5 s."
+      ],
       "7": "<br/>",
       "8": "Si Chiori está en uso y no vuelves a pulsar una vez la Habilidad Elemental o a ejecutar un Ataque Normal durante el breve periodo de tiempo tras efectuar el ataque ascendente de “Caricia de mangas”, se activará directamente el efecto de “costura”."
     }

@@ -70,7 +70,7 @@
     "description": {
       "0": "Scatena tutta l'energia di Mehrak e crea uno spazio cubico scansionato, infliggendo <dendro>DAN da Dendro ad area</dendro> a tutti gli avversari al suo interno, causando l'esplosione di tutti i nuclei di Dendro all'interno dell'area d'effetto e fornendo a Kaveh i seguenti potenziamenti per uno specifico lasso di tempo.",
       "1": [
-        " L'area d'effetto degli attacchi normali, caricati e in picchiata di Kaveh aumenta, e i DAN dei suoi attacchi vengono convertiti in <dendro>DAN da Dendro</dendro> che non possono essere contrastati da altre infusioni elementali.",
+        " L'area d'effetto degli attacchi normali, caricati e in picchiata di Kaveh aumenta, e i DAN dei suoi attacchi vengono convertiti in <dendro>DAN da Dendro</dendro> non influenzabili da altre infusioni elementali.",
         " Tutti i nuclei di Dendro creati dai membri del tuo gruppo tramite reazioni di Fioritura infliggono DAN aggiuntivi quando esplodono.",
         " La resistenza all'interruzione di Kaveh aumenta."
       ],

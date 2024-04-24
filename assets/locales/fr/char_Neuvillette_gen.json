@@ -28,7 +28,7 @@
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",
-        "1": "Concentre la puissance de l'élément Hydro avant de plonger depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des <hydro>DGT Hydro de zone</hydro> à l'impact."
+        "1": "Concentre la puissance de l'élément Hydro avant de plonger depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des <hydro>DGT Hydro de zone</hydro> à l'impact."
       }
     },
     "skillParams": {

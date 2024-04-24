@@ -1,0 +1,29 @@
+{
+  "setName": "Fragmento da Harmonia Fantástica",
+  "setEffects": {
+    "2": "ATQ +18%",
+    "4": "Quando o valor de um Contrato de Vida aumenta ou diminui, aumenta o Dano causado por esse personagem em 18% por 6s. Acumula até 3 vezes."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Prelúdio da Sinfonia Harmoniosa",
+      "desc": "Uma flor em plena floração adornada com ouro e pedras azuis, outrora um emblema concedido aos imortais."
+    },
+    "plume": {
+      "name": "Reflexão Noturna do Mar Antigo",
+      "desc": "Uma pena ornamental esculpida para imitar as asas da lendária abelha dourada, parece tremer com a brisa suave."
+    },
+    "sands": {
+      "name": "A Grande Farsa da Volta do Destino",
+      "desc": "Um relógio feito à semelhança da Roda do Destino, que agora já não consegue mais girar."
+    },
+    "goblet": {
+      "name": "Rapsódia da Chuva de Icor",
+      "desc": "Um copo feito com base de cobre, que no passado era cheio do vinho fino do paraíso."
+    },
+    "circlet": {
+      "name": "Valsa Divergente dos Caídos",
+      "desc": "Uma máscara que já foi coberta com folha de ouro, possivelmente uma relíquia de um antigo líder militar."
+    }
+  }
+}

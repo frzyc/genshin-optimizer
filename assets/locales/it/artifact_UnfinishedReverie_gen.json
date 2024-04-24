@@ -1,0 +1,29 @@
+{
+  "setName": "Fantasmagoria incompiuta",
+  "setEffects": {
+    "2": "ATT +18%.",
+    "4": "Dopo aver lasciato il combattimento per 3 s, i DAN inflitti aumentano di un 50%. Quando il personaggio è in combattimento, se nelle vicinanze non sono presenti avversari affetti da Ustione per più di 6 s, il bonus DAN diminuisce di un 10% al secondo fino ad azzerarsi. Se è presente almeno un avversario affetto da Ustione, invece, il bonus DAN aumenta di un 10% al secondo fino a raggiungere il 50%. Quest'effetto può attivarsi anche se il personaggio che equipaggia il set non è in campo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Frutto fosco di fiori limpidi",
+      "desc": "Un fiore scolpito dalla pietra grigia e laminato in oro. Leggenda vuole che, durante una certa guerra, sia stata usata per distingue gli alleati dai nemici."
+    },
+    "plume": {
+      "name": "Coda smeraldina scolorita",
+      "desc": "Un accessorio a forma di penna rettrice che ha ormai da tempo perduto il suo lustro originale. I motivi che la decorano si dice siano opera di un antico e abile artigiano."
+    },
+    "sands": {
+      "name": "Momento di conquista",
+      "desc": "Una meridiana usata in un antico regno per tenere traccia del tempo. Presenta dei piccoli solchi visibili solo dopo una scrupolosa osservazione."
+    },
+    "goblet": {
+      "name": "Calice dell'escogitativa",
+      "desc": "Una coppa a tre gambi. In passato, un gran numero di eroi si radunava attorno al fuoco per brindare ognuno col proprio calice, discutendo dei propri desideri e delle proprie ambizioni."
+    },
+    "circlet": {
+      "name": "Corona senza corona",
+      "desc": "Una corona d'oro ornata con piume turchesi e smeraldine. È rimasta da sempre riposta sopra un cuscino di velluto, e non ha mai sormontato il capo di alcun governante."
+    }
+  }
+}

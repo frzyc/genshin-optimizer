@@ -6,19 +6,19 @@
   "passiveName": "Flor bordada y espada consagrada",
   "passiveDescription": {
     "0": {
-      "0": "El daño de los Ataques Normales y Cargados aumenta en un <cryo>16%</cryo>, y el de la Habilidad Elemental aumenta en un <cryo>24%</cryo>. Cuando un personaje en uso cercano inflige Daño Geo, los anteriores efectos aumentan en un 100% durante 15 s. Además, la DEF del portador de esta arma aumenta en un <cryo>20%</cryo>."
+      "0": "El daño de los Ataques Normales aumenta en un <cryo>16%</cryo>, y el de la Habilidad Elemental aumenta en un <cryo>24%</cryo>. Cuando un personaje en uso cercano inflige Daño Geo, los anteriores efectos aumentan en un 100% durante 15 s. Además, la DEF del portador de esta arma aumenta en un <cryo>20%</cryo>."
     },
     "1": {
-      "0": "El daño de los Ataques Normales y Cargados aumenta en un <cryo>20%</cryo>, y el de la Habilidad Elemental aumenta en un <cryo>30%</cryo>. Cuando un personaje en uso cercano inflige Daño Geo, los anteriores efectos aumentan en un 100% durante 15 s. Además, la DEF del portador de esta arma aumenta en un <cryo>25%</cryo>."
+      "0": "El daño de los Ataques Normales aumenta en un <cryo>20%</cryo>, y el de la Habilidad Elemental aumenta en un <cryo>30%</cryo>. Cuando un personaje en uso cercano inflige Daño Geo, los anteriores efectos aumentan en un 100% durante 15 s. Además, la DEF del portador de esta arma aumenta en un <cryo>25%</cryo>."
     },
     "2": {
-      "0": "El daño de los Ataques Normales y Cargados aumenta en un <cryo>24%</cryo>, y el de la Habilidad Elemental aumenta en un <cryo>36%</cryo>. Cuando un personaje en uso cercano inflige Daño Geo, los anteriores efectos aumentan en un 100% durante 15 s. Además, la DEF del portador de esta arma aumenta en un <cryo>30%</cryo>."
+      "0": "El daño de los Ataques Normales aumenta en un <cryo>24%</cryo>, y el de la Habilidad Elemental aumenta en un <cryo>36%</cryo>. Cuando un personaje en uso cercano inflige Daño Geo, los anteriores efectos aumentan en un 100% durante 15 s. Además, la DEF del portador de esta arma aumenta en un <cryo>30%</cryo>."
     },
     "3": {
-      "0": "El daño de los Ataques Normales y Cargados aumenta en un <cryo>28%</cryo>, y el de la Habilidad Elemental aumenta en un <cryo>42%</cryo>. Cuando un personaje en uso cercano inflige Daño Geo, los anteriores efectos aumentan en un 100% durante 15 s. Además, la DEF del portador de esta arma aumenta en un <cryo>35%</cryo>."
+      "0": "El daño de los Ataques Normales aumenta en un <cryo>28%</cryo>, y el de la Habilidad Elemental aumenta en un <cryo>42%</cryo>. Cuando un personaje en uso cercano inflige Daño Geo, los anteriores efectos aumentan en un 100% durante 15 s. Además, la DEF del portador de esta arma aumenta en un <cryo>35%</cryo>."
     },
     "4": {
-      "0": "El daño de los Ataques Normales y Cargados aumenta en un <cryo>32%</cryo>, y el de la Habilidad Elemental aumenta en un <cryo>48%</cryo>. Cuando un personaje en uso cercano inflige Daño Geo, los anteriores efectos aumentan en un 100% durante 15 s. Además, la DEF del portador de esta arma aumenta en un <cryo>40%</cryo>."
+      "0": "El daño de los Ataques Normales aumenta en un <cryo>32%</cryo>, y el de la Habilidad Elemental aumenta en un <cryo>48%</cryo>. Cuando un personaje en uso cercano inflige Daño Geo, los anteriores efectos aumentan en un 100% durante 15 s. Además, la DEF del portador de esta arma aumenta en un <cryo>40%</cryo>."
     }
   }
 }

@@ -1,0 +1,29 @@
+{
+  "setName": "Unfinished Reverie",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "3 detik setelah meninggalkan medan pertempuran, DMG yang diakibatkan meningkat 50%. Dalam kondisi bertempur, jika tidak ada musuh yang berada dalam status Burning di sekitar selama lebih dari 6 detik, maka efek peningkatan DMG di atas akan berkurang 10% setiap detiknya, hingga mencapai 0%; Jika ada musuh yang berada dalam status Burning di sekitar, maka Damage meningkat 10% setiap detiknya, hingga mencapai 50%. Efek ini akan tetap terpicu saat Karakter yang mengenakan Artefak ini ada di dalam party namun sedang tidak berada di medan pertempuran."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Dark Fruit of Bright Flowers",
+      "desc": "Bunga berlapis emas yang diukir dari batu abu-abu. Menurut legenda, saat perang berlangsung, ini digunakan untuk membedakan musuh dan teman."
+    },
+    "plume": {
+      "name": "Faded Emerald Tail",
+      "desc": "Hiasan ekor yang sudah memudar. Dikatakan bahwa ukiran di atasnya dibuat oleh seorang pengrajin di masa lampau."
+    },
+    "sands": {
+      "name": "Moment of Attainment",
+      "desc": "Sebuah jam matahari kuno yang digunakan untuk menghitung waktu. Jika diperhatikan baik-baik, terdapat tanda-tanda kecil pada benda tersebut."
+    },
+    "goblet": {
+      "name": "The Wine-Flask Over Which the Plan Was Hatched",
+      "desc": "Cangkir berkaki tiga. Dulunya banyak pahlawan mengangkat cangkir mereka untuk bersulang dan minum di samping api unggun sambil berbincang mengenai ambisi dan harapan masing-masing."
+    },
+    "circlet": {
+      "name": "Crownless Crown",
+      "desc": "Mahkota emas dihiasi dengan batu toska dan bulu-bulu zamrud. Tidak pernah muncul dalam upacara mana pun dan hanya berdiri di atas bantal merah beludru."
+    }
+  }
+}

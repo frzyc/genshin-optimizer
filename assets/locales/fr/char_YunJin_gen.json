@@ -12,11 +12,11 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route."
+        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis en chemin."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",
-        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
       }
     },
     "skillParams": {

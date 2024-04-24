@@ -191,6 +191,9 @@
   "Funds": {
     "name": "資金"
   },
+  "IridescenceTourTickets": {
+    "name": "「イリデッセンスツアーチケット」"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -521,6 +524,9 @@
   "Chiori": {
     "name": "千織"
   },
+  "Arlecchino": {
+    "name": "アルレッキーノ"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "神里綾華の星屑"
   },
@@ -763,6 +769,9 @@
   },
   "ChiorisStellaFortuna": {
     "name": "千織の星屑"
+  },
+  "ArlecchinosStellaFortuna": {
+    "name": "アルレッキーノの星屑"
   },
   "GnosticHymnOldNotes": {
     "name": "天空紀行·原稿"
@@ -6917,6 +6926,21 @@
   "FashionShow": {
     "name": "「ファッションショー」"
   },
+  "RockNRollDangoMilk": {
+    "name": "ロック団子牛乳"
+  },
+  "SuspiciousBulleSouffle": {
+    "name": "微妙なバブルスフレ"
+  },
+  "BulleSouffle": {
+    "name": "バブルスフレ"
+  },
+  "DeliciousBulleSouffle": {
+    "name": "美味しそうなバブルスフレ"
+  },
+  "HearthfiresTrail": {
+    "name": "炉火の昔語り"
+  },
   "RecipeItem": {
     "name": "レシピアイテム"
   },
@@ -7493,6 +7517,9 @@
   "RecipeMegaMeatySushi": {
     "name": "レシピ：お肉たっぷり寿司"
   },
+  "RecipeBulleSouffle": {
+    "name": "レシピ：バブルスフレ"
+  },
   "CraftedItems": {
     "name": "合成産物"
   },
@@ -7904,6 +7931,15 @@
   "ChasmlightFin": {
     "name": "淵光の羽鰭"
   },
+  "RuinedHilt": {
+    "name": "砕けた剣の柄"
+  },
+  "SplinteredHilt": {
+    "name": "折れた剣の柄"
+  },
+  "StillSmolderingHilt": {
+    "name": "光揺らぐ剣の柄"
+  },
   "HurricaneSeed": {
     "name": "暴風の種"
   },
@@ -8077,6 +8113,18 @@
   },
   "CloudseamScale": {
     "name": "凝雲の鱗甲"
+  },
+  "FragmentOfAGoldenMelody": {
+    "name": "金色の旋律の断章"
+  },
+  "FadingCandle": {
+    "name": "残火の灯燭"
+  },
+  "SilkenFeather": {
+    "name": "絹織りの羽"
+  },
+  "DenialAndJudgment": {
+    "name": "否定と裁決"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔の王の瓦"
@@ -10022,8 +10070,20 @@
   "OurChenyuValeTrekAlbum": {
     "name": "「沈玉の旅」記念アルバム"
   },
+  "AncientAutoharmonicMusicBox": {
+    "name": "古いオルゴール"
+  },
   "StrangeKey": {
     "name": "変わった鍵"
+  },
+  "BlankScore": {
+    "name": "空白の譜面"
+  },
+  "AncientScore": {
+    "name": "古い楽譜"
+  },
+  "LostGrimoire": {
+    "name": "失われた魔導書"
   },
   "ShootingPracticeOpticalLenses": {
     "name": "「射撃訓練光学レンズ」"
@@ -10033,6 +10093,15 @@
   },
   "PerinheriII": {
     "name": "ペリンヘリ·2"
+  },
+  "AnecdotaSeptentrionalisI": {
+    "name": "北方秘史·1"
+  },
+  "AnecdotaSeptentrionalisII": {
+    "name": "北方秘史·2"
+  },
+  "AnecdotaSeptentrionalisIII": {
+    "name": "北方秘史·3"
   },
   "HelpMePlease": {
     "name": "助けておくれ！"
@@ -10151,6 +10220,9 @@
   "ChizhangMap": {
     "name": "赤璋の地図"
   },
+  "MiniPhonograph": {
+    "name": "小型レコーダー"
+  },
   "AncientCityKey": {
     "name": "古い石垣の鍵"
   },
@@ -10163,11 +10235,29 @@
   "FishSeizedFromAPelicansMouth": {
     "name": "「ペリカン」の口から奪った魚"
   },
+  "InvitationFromTheAratakiGang": {
+    "name": "荒瀧派の招待状"
+  },
   "FelixFelicium": {
     "name": "「幸運の祝福」"
   },
+  "ShikanoinHeizousMessage": {
+    "name": "鹿野院平蔵のメッセージ"
+  },
+  "PuppyUnionAdmissionDetails": {
+    "name": "「狗子商会」の収容·治療明細"
+  },
   "LynettesEnvelope": {
     "name": "リネットの封筒"
+  },
+  "RestoredScore": {
+    "name": "修復された楽譜"
+  },
+  "PagesFromALostScoreI": {
+    "name": "失われた譜面の断片·1"
+  },
+  "ARidiculouslyCommonBranch": {
+    "name": "どこにでもある枝"
   },
   "CultivationAreaExpansionVII": {
     "name": "栽培エリア拡張·Ⅶ"
@@ -10183,6 +10273,51 @@
   },
   "Manuscript": {
     "name": "手書き原稿"
+  },
+  "IGotReincarnatedAsAnOnikabutoAndFlippedTheWorldUpsideDown": {
+    "name": "『最強オニカブトムシに転生して 世界をひっくり返してやった』"
+  },
+  "CynosLetter": {
+    "name": "セノの手紙"
+  },
+  "DamagedScore": {
+    "name": "破損した楽譜"
+  },
+  "RuggierosNotesII": {
+    "name": "ルッジェロのノート·2"
+  },
+  "PagesFromALostScoreII": {
+    "name": "失われた譜面の断片·2"
+  },
+  "AncientEngravings": {
+    "name": "古き碑文"
+  },
+  "HarmostsNotesII": {
+    "name": "調律師のノート·下"
+  },
+  "TatteredNavigationLog": {
+    "name": "ボロボロの航海日誌"
+  },
+  "RuggierosNotesI": {
+    "name": "ルッジェロのノート·1"
+  },
+  "SomeonesNotes": {
+    "name": "誰かのノート"
+  },
+  "RuggierosNotesIII": {
+    "name": "ルッジェロのノート·3"
+  },
+  "InvestigationOfTheNorthernBarbarians": {
+    "name": "北境の蛮族に関する考察"
+  },
+  "HarmostsNotesI": {
+    "name": "調律師のノート·上"
+  },
+  "AncientInscription": {
+    "name": "古い刻印"
+  },
+  "AncientPieceOfPaper": {
+    "name": "古い紙切れ"
   },
   "TearsAmongTheStars": {
     "name": "星間の涙"
@@ -10849,6 +10984,21 @@
   },
   "RadiantSpincrystal125": {
     "name": "旋曜玉帛·125"
+  },
+  "RadiantSpincrystal126": {
+    "name": "旋曜玉帛·126"
+  },
+  "RadiantSpincrystal127": {
+    "name": "旋曜玉帛·127"
+  },
+  "RadiantSpincrystal128": {
+    "name": "旋曜玉帛·128"
+  },
+  "RadiantSpincrystal129": {
+    "name": "旋曜玉帛·129"
+  },
+  "RadiantSpincrystal130": {
+    "name": "旋曜玉帛·130"
   },
   "LanternFiber": {
     "name": "紙の繊維"
@@ -11639,6 +11789,21 @@
   "TravelNotesArcaneAmassing": {
     "name": "紀行·魔萃"
   },
+  "ArlecchinoEdict": {
+    "name": "アルレッキーノ·規則"
+  },
+  "FontaineAttunement": {
+    "name": "フォンテーヌ·調律"
+  },
+  "AchievementWhalewrangler": {
+    "name": "アチーブメント·掣鯨"
+  },
+  "FontaineLucine": {
+    "name": "フォンテーヌ·ルキナ"
+  },
+  "TravelNotesTheRealmsRocked": {
+    "name": "紀行·邦魂"
+  },
   "AnemoculusResonanceStone": {
     "name": "風神の瞳の共鳴石"
   },
@@ -11878,6 +12043,9 @@
   },
   "MiniSeelieBrilliance": {
     "name": "小さな仙霊·燦光"
+  },
+  "NightwindHorn": {
+    "name": "ナイトウィンド·ホルン"
   },
   "Fateometer": {
     "name": "「運命指示器」"
@@ -12119,6 +12287,12 @@
   "FatuiElectroCicinMage": {
     "name": "ファデュイ·雷蛍術師"
   },
+  "AbyssHeraldWickedTorrents": {
+    "name": "アビスの使徒·激流"
+  },
+  "EmperorOfFireAndIron": {
+    "name": "鉄甲熔炎帝王"
+  },
   "UndividedHeart": {
     "name": "唯一の心"
   },
@@ -12356,6 +12530,18 @@
   "ElectroCicinsFlicker": {
     "name": "雷蛍閃光"
   },
+  "ToWardWeakness": {
+    "name": "捨て去りし軟弱な心"
+  },
+  "TheWondrousPathOfTruth": {
+    "name": "妙道合一"
+  },
+  "SurgingUndercurrent": {
+    "name": "渦巻く暗流"
+  },
+  "MoltenMail": {
+    "name": "熔炎鉄甲"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -12572,6 +12758,12 @@
   "GoldenTroupesReward": {
     "name": "黄金の劇団の褒賞"
   },
+  "RightfulReward": {
+    "name": "正義の報酬"
+  },
+  "AmethystCrown": {
+    "name": "紫晶の花冠"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -12697,6 +12889,15 @@
   },
   "FortressOfMeropide": {
     "name": "メロピデ要塞"
+  },
+  "SeiraiIsland": {
+    "name": "セイライ島"
+  },
+  "Taroumaru": {
+    "name": "太郎丸"
+  },
+  "TheWhiteGloveAndTheFisherman": {
+    "name": "白手袋と漁師"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交錯の氷"
@@ -12862,6 +13063,9 @@
   },
   "ControlledDirectionalBlast": {
     "name": "可制御性無害化型指向性爆発"
+  },
+  "UnderwaterTreasureHunt": {
+    "name": "海底の宝探し"
   },
   "Origin": {
     "name": "原初"
@@ -13409,6 +13613,9 @@
   "CiderLakelight": {
     "name": "「シードル湖の光」"
   },
+  "MusicTownsStreetlampSafetyLighting": {
+    "name": "音楽の町の街灯-「夜道照らす安心の光」"
+  },
   "EfflorescentIllumination": {
     "name": "「花葉百相の光」"
   },
@@ -13898,6 +14105,12 @@
   "TeahouseToolClearView": {
     "name": "茶房の道具-「展示の道」"
   },
+  "HotelRailingFreshMintLeaves": {
+    "name": "ホテルの欄干-「ミントの新芽」"
+  },
+  "HotelRailingPerfectViewingArc": {
+    "name": "ホテルの欄干-「広がるアークの風景」"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "モンドカーペット-「赤い熱意」"
   },
@@ -13940,6 +14153,9 @@
   "RestaurantRugBathingInTheBreeze": {
     "name": "ホテルカーペット-「風のように」"
   },
+  "FontainianCarpetFairAndSquare": {
+    "name": "フォンテーヌのカーペット-「公平方正」"
+  },
   "TrustyPortableLamp": {
     "name": "光り続く提灯"
   },
@@ -13972,6 +14188,9 @@
   },
   "TwoWayIronLamp": {
     "name": "ツーウェイ鋳鉄置き灯籠"
+  },
+  "SimpleLightingLocallySourcedMaterials": {
+    "name": "シンプルなランプ-「適材適所」"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "花瓶-「水色の落着き」"
@@ -14237,6 +14456,9 @@
   "IndoorLampTheTwilightSea": {
     "name": "ルームライト-「黄昏の海の眺め」"
   },
+  "MekaLuminaireSilentNightsContemplation": {
+    "name": "枢機の照明-「静夜の想い」"
+  },
   "LingeringMoment": {
     "name": "「絆の時」"
   },
@@ -14455,6 +14677,9 @@
   },
   "PoissonsSeasonalProduce": {
     "name": "「ポワソン町の旬の魚」"
+  },
+  "MusicTownsHutMardouceHarmony": {
+    "name": "音楽の町の小屋-「ルミドゥースとマルコットのハーモニー」"
   },
   "HilichurlOutpostHut": {
     "name": "ヒルチャールの前哨小屋"
@@ -14797,6 +15022,18 @@
   },
   "ASimpleResidenceInPoisson": {
     "name": "「ポワソン町の簡素な家」"
+  },
+  "TollingOfTheMusicmakingTown": {
+    "name": "「音楽の町の鐘」"
+  },
+  "PeacefulResidenceInTheMusicmakingTown": {
+    "name": "「音楽の町の平和な住居」"
+  },
+  "WorkshopInTheMusicmakingTown": {
+    "name": "「音楽の町の精巧な住居」"
+  },
+  "ResourcefulResidenceInTheMusicmakingTown": {
+    "name": "「音楽の町の巧緻な住居」"
   },
   "BirdAndBlossomDesignFountain": {
     "name": "花鳥の噴水"
@@ -15308,6 +15545,12 @@
   "RoyalPurple": {
     "name": "「ロイヤル·バイオレットブルー」"
   },
+  "InspirationsPureWhiteBlossoms": {
+    "name": "「ひらめく純白」"
+  },
+  "SalubriousFragrance": {
+    "name": "「癒しの芳香」"
+  },
   "FirShelves": {
     "name": "杉の物置台"
   },
@@ -15662,6 +15905,21 @@
   "CleverlyCraftedContraptionBornInBlessedBitterness": {
     "name": "匠の道具-「苦味から生まれるもの」"
   },
+  "OriginOfMusic": {
+    "name": "「メロディーの始まり」"
+  },
+  "LegionsFuriousHorns": {
+    "name": "「軍団の怒りの角笛」"
+  },
+  "HiddenSerpent": {
+    "name": "「暗闇に潜む蛇」"
+  },
+  "MirrorReflectionLyre": {
+    "name": "「鏡のようなハープ」"
+  },
+  "CrystallineGlory": {
+    "name": "「きらめく栄光」"
+  },
   "BookshelfFreeReading": {
     "name": "ブックラック-「ご自由にお読みください」"
   },
@@ -15697,6 +15955,9 @@
   },
   "TeaHarvestsSunDriedFragrance": {
     "name": "「茶穫の陽の香り」"
+  },
+  "MallowWoodMailboxStorage": {
+    "name": "マロウ材の郵便ポスト「物入れ」"
   },
   "WeatheredBambooFence": {
     "name": "長い年月を経た竹の柵"
@@ -15740,6 +16001,12 @@
   "StandardRailingScatteredStructure": {
     "name": "標準的な欄干-「ちぐはぐ構造」"
   },
+  "MallowWoodDoorframeGentleMelody": {
+    "name": "マロウ材の門「柔らかなメロディー」"
+  },
+  "MallowWoodFenceTides": {
+    "name": "マロウ材の欄干「海の潮」"
+  },
   "SmoothWoodenBench": {
     "name": "平らな木製ベンチ"
   },
@@ -15772,6 +16039,12 @@
   },
   "TeaVillageStoneBenchSafeSpaciousSturdy": {
     "name": "茶荘の石の椅子-「従容たる安寧」"
+  },
+  "MallowWoodBenchHiddenMelody": {
+    "name": "マロウ材のベンチ「ささやかなメロディー」"
+  },
+  "MallowWoodChairEZFold": {
+    "name": "マロウ材の椅子「折り畳み」"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "ヒルチャールの二階建て監視塔"
@@ -15836,6 +16109,12 @@
   "TeaVillageStoneTableCulturedLeisure": {
     "name": "茶荘の石机-「優雅な趣」"
   },
+  "MallowWoodLongTableEngravedMemories": {
+    "name": "マロウ材の長机「記憶を彫る」"
+  },
+  "MallowWoodRoundTableASharedDrink": {
+    "name": "マロウ材の丸テーブル「一緒に呑もう」"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "酒屋の商品棚-「百杯飲み」"
   },
@@ -15865,5 +16144,8 @@
   },
   "TearstoneTilePerspectiveTheory": {
     "name": "ティアストーンブロック-「パース理論」"
+  },
+  "SwordBearingStatueEternalWatch": {
+    "name": "剣を持つ石像-「永遠の護り」"
   }
 }

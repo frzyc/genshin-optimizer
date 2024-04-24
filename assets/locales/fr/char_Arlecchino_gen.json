@@ -1,0 +1,172 @@
+{
+  "name": "Arlecchino",
+  "title": "Lune sinistre",
+  "description": "Quatrième Exécutrice des Fatui, Arlecchino est une diplomate posée et impitoyable. Pour les enfants du Foyer de l'âtre, elle est leur « Père » redoutée mais fiable.",
+  "constellationName": "Ignis Purgatorius",
+  "auto": {
+    "name": "Invitation au supplice",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 6 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour charger vers un ennemi proche et le trancher une fois.",
+        "2": "En maintenant le bouton, Arlecchino consomme de l'endurance pour se déplacer rapidement pendant un maximum de 5 s."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      },
+      "infusion": {
+        "0": "<strong>Masque de la mort rouge</strong>",
+        "1": "Lorsque Arlecchino est sous l'effet d'un engagement vital dont la valeur est supérieure ou égale à 30 % de ses PV max, elle entre dans l'état Masque de la mort rouge et ses attaques normales, chargées et plongeantes sont imprégnées de <pyro>DGT Pyro</pyro> ne pouvant pas être enchantés.",
+        "2": "Sous l'effet du masque de la mort rouge, toucher un ennemi avec une attaque normale augmente les DGT de l'attaque d'une valeur équivalant à un pourcentage de l'ATQ d'Arlecchino multipliée par le pourcentage de son engagement vital actuel et consomme 7,5 % de l'engagement vital actuel. Un engagement vital peut être consommé de cette manière une fois toutes les 0,03 s. Lorsqu'un engagement vital est consommé de cette manière, le TdR de la compétence élémentaire « Pulvérisation totale » diminue de 0,8 s."
+      }
+    },
+    "skillParams": {
+      "0": "Bonus de masque de la mort rouge",
+      "1": "DGT 1er coup",
+      "2": "DGT 2e coup",
+      "3": "DGT 3e coup",
+      "4": "DGT 4e coup",
+      "5": "DGT 5e coup",
+      "6": "DGT 6e coup",
+      "7": "DGT attaque chargée",
+      "8": "Coût d'endurance attaque chargée",
+      "9": "Coût d'endurance de déplacement rapide",
+      "10": "DGT durant la chute",
+      "11": "DGT chute basse/élevée",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Pulvérisation totale",
+    "description": {
+      "0": "Invoque le feu lunatique, infligeant des <pyro>DGT Pyro</pyro> à plusieurs ennemis proches, et charge vers un ennemi pour le trancher, infligeant des <pyro>DGT Pyro de zone</pyro>.",
+      "1": "Les ennemis touchés par cette attaque subissent une dette sanguinaire.",
+      "2": "<br/>",
+      "3": "<strong>Dette sanguinaire</strong>",
+      "4": [
+        " Une dette sanguinaire dure 30 s. Toutes les 5 s, elle inflige 1 instance de <pyro>DGT Pyro</pyro> à l'ennemi, pour un maximum de 2 instances de DGT. Ces DGT sont considérés comme des DGT de compétence élémentaire.",
+        " Quand Arlecchino utilise une attaque chargée ou le déchaînement élémentaire « Ascension lunatique », elle absorbe et annule les dettes sanguinaires à proximité, chaque dette sanguinaire lui accordant un engagement vital d'une valeur équivalant à 65 % de ses PV max.",
+        " Pendant 35 s après avoir utilisé une compétence élémentaire, Arlecchino peut obtenir grâce aux dettes sanguinaires un engagement vital atteignant au maximum 145 % de ses PV max. Utiliser à nouveau une compétence élémentaire pendant cette durée réinitialise la durée et la limite d'engagement vital pouvant être obtenu grâce aux dettes sanguinaires."
+      ],
+      "5": "<br/>",
+      "6": "<i>Selon elle, tous les grains de blé qui tombent sur la terre ne se transforment pas en épi, tandis que ceux qui la dérangent, une fois réduits en cendres, peuvent certainement être utilisés pour nourrir les fleurs.</i>"
+    },
+    "skillParams": {
+      "0": "DGT de pic",
+      "1": "DGT d'entaille",
+      "2": "DGT de dette sanguinaire",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ascension lunatique",
+    "description": {
+      "0": "Arlecchino déploie les grandes ailes du feu lunatique, absorbant et annulant les dettes sanguinaires à portée et infligeant des <pyro>DGT Pyro de zone</pyro>, avant d'annuler le TdR de la compétence élémentaire « Pulvérisation totale » et de restaurer ses PV d'une valeur dépendant de son engagement vital et de son ATQ.",
+      "1": "<br/>",
+      "2": "<i>Il est communément admis dans tout Teyvat que les phases de la lune autres que la pleine lune ne sont que de simples métaphores de mauvais augure, utilisées uniquement par ceux qui pratiquent l'alchimie et l'astrologie.",
+      "3": "Elle a vu cette lune écarlate dans ses rêves à plusieurs reprises. Étaient-ce des présages de désastre ? En effet, c'était le cas, mais les catastrophes prévues appartenaient à ceux qui la mettaient en colère.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Soins",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Seule la douleur peut rembourser",
+    "description": {
+      "0": "Les <strong>dettes sanguinaires</strong> possèdent les caractéristiques suivantes :",
+      "1": [
+        " Lorsqu'un ennemi affligé d'une dette sanguinaire infligée par Arlecchino elle-même est éliminé, elle obtient immédiatement un engagement vital d'une valeur équivalant à 130 % de ses PV max.",
+        " 5 s après son application, une dette sanguinaire est améliorée en dette sanguinaire à échéance qui, lorsqu'elle est absorbée, accorde à la place un engagement vital de 130 % à Arlecchino."
+      ],
+      "2": "La valeur des engagements vitaux obtenus de ces manières ne peut pas dépasser la limite d'origine de <strong>Pulvérisation totale</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Seule la force peut protéger",
+    "description": {
+      "0": "Les RÉS élémentaires et physique d'Arlecchino augmentent de 1 % pour chaque tranche de 100 pts d'ATQ qu'elle possède au-dessus de 1 000 pts. Les RÉS peuvent être augmentées d'un maximum de 20 % de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Seule la lune peut savoir",
+    "description": {
+      "0": "Au combat, Arlecchino bénéficie d'un <pyro>bonus de DGT Pyro</pyro> de 40 % et peut uniquement récupérer des PV grâce à <strong>Ascension lunatique</strong>."
+    }
+  },
+  "constellation1": {
+    "name": "« À moi de supporter toute haine et toute dette... »",
+    "description": {
+      "0": "L'augmentation du masque de la mort rouge s'améliore davantage de 100 %. De plus, la RÉS à l'interruption d'Arlecchino augmente lorsqu'elle utilise une attaque normale ou chargée sous l'effet du masque de la mort rouge."
+    }
+  },
+  "constellation2": {
+    "name": "« À moi d'accorder toute récompense et toute punition... »",
+    "description": {
+      "0": "Les <strong>dettes sanguinaires</strong> commencent désormais comme des dettes sanguinaires à échéance.",
+      "1": "Lorsque Arlecchino absorbe une dette à échéance, elle envoie un feu lunatique vers l'avant, infligeant des <pyro>DGT Pyro de zone</pyro> d'une valeur équivalant à 900 % de son ATQ et augmentant ses RÉS élémentaires et physique de 20 % pendant 15 s. Cet effet peut être déclenché une fois toutes les 10 s.",
+      "2": "L'aptitude passive « Seule la douleur peut rembourser » doit être déjà débloquée."
+    }
+  },
+  "constellation3": {
+    "name": "« Vous deviendrez notre nouvelle famille... »",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Attaque normale : Invitation au supplice</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "« Désormais, vous devez vous aimer et vous protéger... »",
+    "description": {
+      "0": "Lorsque Arlecchino absorbe une dette sanguinaire, le TdR d'<strong>Ascension lunatique</strong> diminue de 2 s et elle récupère 15 pts d'énergie élémentaire. Cet effet peut être déclenché une fois toutes les 10 s."
+    }
+  },
+  "constellation5": {
+    "name": "« Car seuls, c'est la mort qui nous attend... »",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Ascension lunatique</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "« Désormais, nous vivrons ensemble une nouvelle vie. »",
+    "description": {
+      "0": "Les DGT infligés par <strong>Ascension lunatique</strong> augmentent d'une valeur équivalant à l'ATQ d'Arlecchino multipliée par 700 % du pourcentage de son engagement vital actuel.",
+      "1": "Pendant 20 s après avoir utilisé <strong>Pulvérisation totale</strong>, le taux CRIT des attaques normales et des déchaînements élémentaires d'Arlecchino augmente de 10 % et leurs DGT CRIT de 70 %. Cet effet peut être déclenché une fois toutes les 15 s."
+    }
+  }
+}

@@ -106,7 +106,7 @@
   "passive2": {
     "name": "Conceitos Criativos do Artesão",
     "description": {
-      "0": "Durante o <strong>Palácio Resplandecente</strong>, quando Ataque Normal, Ataque Carregado ou Ataque Imersivo de Kaveh atingem os oponentes, sua Proficiência Elemental aumenta em 25. Este efeito pode ser ativado uma vez a cada 0.1s, com o máximo de 4 acúmulos.",
+      "0": "Durante o <strong>Palácio Resplandecente</strong>, quando o Ataque Normal, Ataque Carregado ou Ataque Imersivo de Kaveh atinge os oponentes, sua Proficiência Elemental aumenta em 25. Este efeito pode ser ativado uma vez a cada 0.1s, com o máximo de 4 acúmulos.",
       "1": "Este efeito é cancelado quando o efeito de Palácio Resplandecente acaba."
     }
   },

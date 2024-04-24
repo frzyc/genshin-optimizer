@@ -50,7 +50,7 @@
       "6": "<strong>Specchio cesellaluce</strong>",
       "7": "Quando quest'abilità viene scatenata, Alhaitham genera 1 Specchio cesellaluce. Se non sono presenti specchi in quel momento, genera 1 specchio aggiuntivo. Gli Specchi cesellaluce hanno le seguenti proprietà.",
       "8": [
-        " Quando Alhaitham è in possesso di Specchi cesellaluce, i DAN dei suoi attacchi normali, caricati e in picchiata vengono convertiti in <dendro>DAN da Dendro</dendro> che non possono essere contrastati da altre infusioni elementali.",
+        " Quando Alhaitham è in possesso di Specchi cesellaluce, i DAN dei suoi attacchi normali, caricati e in picchiata vengono convertiti in <dendro>DAN da Dendro</dendro> non influenzabili da altre infusioni elementali.",
         " Quando i suddetti tipi di attacco colpiscono gli avversari, gli Specchi cesellaluce scatenano un Attacco proiettante che infligge <dendro>DAN da Dendro ad area</dendro> a seconda del numero di Specchi presenti sul campo.",
         " Possono esistere fino a 3 Specchi cesellaluce contemporaneamente.",
         " Gli Specchi cesellaluce spariscono uno dopo l'altro col tempo, e scompaiono all'istante se Alhaitham abbandona il campo."

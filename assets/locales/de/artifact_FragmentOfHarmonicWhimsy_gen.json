@@ -1,0 +1,29 @@
+{
+  "setName": "Fragment harmonischer Launen",
+  "setEffects": {
+    "2": "Erhöht den ANG um 18 %.",
+    "4": "Erhöht beim Erhöhen oder Verringern des Werts von Eid des Lebens den von der Figur verursachten Schaden um 18 %, hält 6 s, 3-fach stapelbar."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Vorspiel der harmonischen Sinfonie",
+      "desc": "Eine in voller Blüte stehende Blume, ehedem ein Ehrenzeichen jener, die Unsterblichkeit erlangt hatten."
+    },
+    "plume": {
+      "name": "Nächtliches Grübeln der uralten See",
+      "desc": "Eine geschnitzte Feder, die den Flügeln der legendären goldenen Bienen nachempfunden ist und im sanften Wind zu flattern scheint."
+    },
+    "sands": {
+      "name": "Rätsel der Wendung des Schicksals",
+      "desc": "Eine Uhr, die nach dem Rad des Schicksals gestaltet wurde und längst aufgehört hat, sich zu bewegen."
+    },
+    "goblet": {
+      "name": "Rhapsodie des sprudelnden Ichors",
+      "desc": "Ein gebranntes Rhyton mit einem Sockel aus Bronze, einst bis zum Rand mit den köstlichsten Weinen des Paradieses gefüllt."
+    },
+    "circlet": {
+      "name": "Reigen vereinzelter Launen",
+      "desc": "Eine früher mit Blattgold überzogene Maske, die vielleicht von einem Feldherrn stammt, der einst Legionen lenkte."
+    }
+  }
+}

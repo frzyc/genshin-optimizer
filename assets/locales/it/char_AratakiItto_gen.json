@@ -88,7 +88,7 @@
       "0": "È ora di mostrare la forza della Banda di Arataki! Per un lasso di tempo, Itto scatena la sua Furia del Re oni interiore, brandendo la sua Kanabou del Re oni in battaglia.",
       "1": "Questo stato ha le seguenti proprietà speciali:",
       "2": [
-        " gli attacchi normali, caricati e in picchiata di Itto infliggono <geo>DAN da Geo</geo> che non possono essere contrastati da altre infusioni elementali;",
+        " gli attacchi normali, caricati e in picchiata di Itto infliggono <geo>DAN da Geo</geo> non influenzabili da altre infusioni elementali;",
         " aumenta la VEL d'attacco normale di Itto e il suo ATT in base alla sua DIF;",
         " quando vanno a segno, il primo e il terzo colpo della combo d'attacco conferiscono ad Arataki Itto 1 accumulo di Superforza superlativa;",
         " riduce la RES fisica ed elementale di Itto di un 20%."

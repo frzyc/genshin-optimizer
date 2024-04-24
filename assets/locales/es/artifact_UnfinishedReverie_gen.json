@@ -1,0 +1,29 @@
+{
+  "setName": "Ensoñación Inacabada",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "3 s después de salir de combate, el daño infligido aumenta en un 50%. Si estando en combate han pasado más de 6 s sin que haya ningún enemigo cercano quemado, dicho aumento de daño irá disminuyendo en un 10% por segundo, hasta llegar al 0%. Si hay algún enemigo cercano quemado, el daño infligido aumenta en un 10% por segundo, hasta llegar al 50%. Estos efectos se pueden activar incluso cuando el personaje que lleva equipado este conjunto de artefactos está en tu equipo pero no en uso."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor Secreta Rutilante",
+      "desc": "Una flor hecha de roca gris y decorada con pan de oro. Cuenta la leyenda que sirvió para diferenciar entre aliados y enemigos durante una guerra."
+    },
+    "plume": {
+      "name": "Cola Esmeralda Descolorida",
+      "desc": "Una pluma de cola ornamental cuyos colores ya están muy apagados. Al parecer, los patrones que hay en ella fueron obra de un artesano de la antigüedad."
+    },
+    "sands": {
+      "name": "Momento de Aprehensión",
+      "desc": "Un reloj de sol de una antigua nación. Tiene unas diminutas marcas que solo se llegan a apreciar si uno se fija muy bien."
+    },
+    "goblet": {
+      "name": "Jarra del Gran Plan",
+      "desc": "Una jarra de cerámica con tres patas. En el pasado, numerosos héroes bebieron vino de ella al lado de hogueras mientras hablaban de sus ambiciones y anhelos."
+    },
+    "circlet": {
+      "name": "Corona Descoronada",
+      "desc": "Una corona de oro decorada con turquesas y plumas esmeralda. Nunca la han colocado sobre un cojín de terciopelo ni la han usado en una coronación."
+    }
+  }
+}

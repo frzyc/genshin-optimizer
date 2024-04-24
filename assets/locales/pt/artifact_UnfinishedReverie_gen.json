@@ -1,0 +1,29 @@
+{
+  "setName": "Reminiscência Incompleta",
+  "setEffects": {
+    "2": "ATQ +18%",
+    "4": "Depois de sair do combate por 3s, aumenta o Dano causado em 50%. Em combate, se não houverem inimigos Queimando por mais que 6s, esse Bônus de Dano reduzirá 10% por segundo até 0%. Quando existir um oponente Queimando, aumentará 10% até alcançar 50%. Esse efeito pode ser desencadeado mesmo que o personagem com este conjunto de artefatos equipado não esteja ativo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fruto Sombrio de Flores Brilhantes",
+      "desc": "Uma flor esculpida em pedra cinza e habilmente revestida com folha de ouro, que, segundo a lenda, serviu como uma prova de identificação entre os lados inimigos durante uma guerra."
+    },
+    "plume": {
+      "name": "Cauda de Esmeralda Desbotada",
+      "desc": "Uma decoração de penas cujo esplendor se desvaneceu, cujos padrões, diz-se, foram criados por um artesão habilidoso de tempos antigos."
+    },
+    "sands": {
+      "name": "Momento de Conquista",
+      "desc": "Um relógio de sol usado para medir o tempo em um antigo reino, que possui uma marca minúscula em uma de suas escalas, visível apenas com observação cuidadosa."
+    },
+    "goblet": {
+      "name": "A Garrafa de Vinho Sobre a Qual o Plano Foi Concebido",
+      "desc": "Uma taça de três pés feita de cerâmica, onde muitos heróis já levantaram seus brindes ao lado da fogueira, discutindo suas ambições e esperanças."
+    },
+    "circlet": {
+      "name": "Coroa Descoroada",
+      "desc": "Uma coroa dourada decorada com turquesa e penas verdes, que repousa sobre uma almofada de veludo, mas nunca foi usada em uma cerimônia de coroação."
+    }
+  }
+}
