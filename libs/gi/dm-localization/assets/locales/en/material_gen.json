@@ -191,6 +191,9 @@
   "Funds": {
     "name": "Funds"
   },
+  "IridescenceTourTickets": {
+    "name": "Iridescence Tour Tickets"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -521,6 +524,9 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Arlecchino": {
+    "name": "Arlecchino"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna"
   },
@@ -763,6 +769,9 @@
   },
   "ChiorisStellaFortuna": {
     "name": "Chiori's Stella Fortuna"
+  },
+  "ArlecchinosStellaFortuna": {
+    "name": "Arlecchino's Stella Fortuna"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostic Hymn - Old Notes"
@@ -6917,6 +6926,21 @@
   "FashionShow": {
     "name": "\"Fashion Show\""
   },
+  "RockNRollDangoMilk": {
+    "name": "Rock 'n' Roll Dango Milk"
+  },
+  "SuspiciousBulleSouffle": {
+    "name": "Suspicious Bulle Souffle"
+  },
+  "BulleSouffle": {
+    "name": "Bulle Souffle"
+  },
+  "DeliciousBulleSouffle": {
+    "name": "Delicious Bulle Souffle"
+  },
+  "HearthfiresTrail": {
+    "name": "Hearthfire's Trail"
+  },
   "RecipeItem": {
     "name": "Recipe Item"
   },
@@ -7493,6 +7517,9 @@
   "RecipeMegaMeatySushi": {
     "name": "Recipe: Mega-Meaty Sushi"
   },
+  "RecipeBulleSouffle": {
+    "name": "Recipe: Bulle Souffle"
+  },
   "CraftedItems": {
     "name": "Crafted Items"
   },
@@ -7904,6 +7931,15 @@
   "ChasmlightFin": {
     "name": "Chasmlight Fin"
   },
+  "RuinedHilt": {
+    "name": "Ruined Hilt"
+  },
+  "SplinteredHilt": {
+    "name": "Splintered Hilt"
+  },
+  "StillSmolderingHilt": {
+    "name": "Still-Smoldering Hilt"
+  },
   "HurricaneSeed": {
     "name": "Hurricane Seed"
   },
@@ -8077,6 +8113,18 @@
   },
   "CloudseamScale": {
     "name": "Cloudseam Scale"
+  },
+  "FragmentOfAGoldenMelody": {
+    "name": "Fragment of a Golden Melody"
+  },
+  "FadingCandle": {
+    "name": "Fading Candle"
+  },
+  "SilkenFeather": {
+    "name": "Silken Feather"
+  },
+  "DenialAndJudgment": {
+    "name": "Denial and Judgment"
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
@@ -10022,8 +10070,20 @@
   "OurChenyuValeTrekAlbum": {
     "name": "\"Our Chenyu Vale Trek\" Album"
   },
+  "AncientAutoharmonicMusicBox": {
+    "name": "Ancient Autoharmonic Music Box"
+  },
   "StrangeKey": {
     "name": "Strange Key"
+  },
+  "BlankScore": {
+    "name": "Blank Score"
+  },
+  "AncientScore": {
+    "name": "Ancient Score"
+  },
+  "LostGrimoire": {
+    "name": "Lost Grimoire"
   },
   "ShootingPracticeOpticalLenses": {
     "name": "Shooting Practice Optical Lenses"
@@ -10033,6 +10093,15 @@
   },
   "PerinheriII": {
     "name": "Perinheri (II)"
+  },
+  "AnecdotaSeptentrionalisI": {
+    "name": "Anecdota Septentrionalis (I)"
+  },
+  "AnecdotaSeptentrionalisII": {
+    "name": "Anecdota Septentrionalis (II)"
+  },
+  "AnecdotaSeptentrionalisIII": {
+    "name": "Anecdota Septentrionalis (III)"
   },
   "HelpMePlease": {
     "name": "Help Me, Please!"
@@ -10151,6 +10220,9 @@
   "ChizhangMap": {
     "name": "Chizhang Map"
   },
+  "MiniPhonograph": {
+    "name": "Mini Phonograph"
+  },
   "AncientCityKey": {
     "name": "Ancient City Key"
   },
@@ -10163,11 +10235,29 @@
   "FishSeizedFromAPelicansMouth": {
     "name": "Fish Seized From a Pelican's Mouth"
   },
+  "InvitationFromTheAratakiGang": {
+    "name": "Invitation From the Arataki Gang"
+  },
   "FelixFelicium": {
     "name": "Felix Felicium"
   },
+  "ShikanoinHeizousMessage": {
+    "name": "Shikanoin Heizou's Message"
+  },
+  "PuppyUnionAdmissionDetails": {
+    "name": "Puppy Union Admission Details"
+  },
   "LynettesEnvelope": {
     "name": "Lynette's Envelope"
+  },
+  "RestoredScore": {
+    "name": "Restored Score"
+  },
+  "PagesFromALostScoreI": {
+    "name": "Pages From a Lost Score (I)"
+  },
+  "ARidiculouslyCommonBranch": {
+    "name": "A Ridiculously Common Branch"
   },
   "CultivationAreaExpansionVII": {
     "name": "Cultivation Area Expansion (VII)"
@@ -10183,6 +10273,51 @@
   },
   "Manuscript": {
     "name": "Manuscript"
+  },
+  "IGotReincarnatedAsAnOnikabutoAndFlippedTheWorldUpsideDown": {
+    "name": "\"I Got Reincarnated as an Onikabuto... And Flipped the World Upside Down\""
+  },
+  "CynosLetter": {
+    "name": "Cyno's Letter"
+  },
+  "DamagedScore": {
+    "name": "Damaged Score"
+  },
+  "RuggierosNotesII": {
+    "name": "Ruggiero's Notes (II)"
+  },
+  "PagesFromALostScoreII": {
+    "name": "Pages From a Lost Score (II)"
+  },
+  "AncientEngravings": {
+    "name": "Ancient Engravings"
+  },
+  "HarmostsNotesII": {
+    "name": "Harmost's Notes (II)"
+  },
+  "TatteredNavigationLog": {
+    "name": "Tattered Navigation Log"
+  },
+  "RuggierosNotesI": {
+    "name": "Ruggiero's Notes (I)"
+  },
+  "SomeonesNotes": {
+    "name": "Someone's Notes"
+  },
+  "RuggierosNotesIII": {
+    "name": "Ruggiero's Notes (III)"
+  },
+  "InvestigationOfTheNorthernBarbarians": {
+    "name": "Investigation of the Northern Barbarians"
+  },
+  "HarmostsNotesI": {
+    "name": "Harmost's Notes (I)"
+  },
+  "AncientInscription": {
+    "name": "Ancient Inscription"
+  },
+  "AncientPieceOfPaper": {
+    "name": "Ancient Piece of Paper"
   },
   "TearsAmongTheStars": {
     "name": "Tears Among the Stars"
@@ -10849,6 +10984,21 @@
   },
   "RadiantSpincrystal125": {
     "name": "Radiant Spincrystal 125"
+  },
+  "RadiantSpincrystal126": {
+    "name": "Radiant Spincrystal 126"
+  },
+  "RadiantSpincrystal127": {
+    "name": "Radiant Spincrystal 127"
+  },
+  "RadiantSpincrystal128": {
+    "name": "Radiant Spincrystal 128"
+  },
+  "RadiantSpincrystal129": {
+    "name": "Radiant Spincrystal 129"
+  },
+  "RadiantSpincrystal130": {
+    "name": "Radiant Spincrystal 130"
   },
   "LanternFiber": {
     "name": "Lantern Fiber"
@@ -11639,6 +11789,21 @@
   "TravelNotesArcaneAmassing": {
     "name": "Travel Notes: Arcane Amassing"
   },
+  "ArlecchinoEdict": {
+    "name": "Arlecchino: Edict"
+  },
+  "FontaineAttunement": {
+    "name": "Fontaine: Attunement"
+  },
+  "AchievementWhalewrangler": {
+    "name": "Achievement: Whalewrangler"
+  },
+  "FontaineLucine": {
+    "name": "Fontaine: Lucine"
+  },
+  "TravelNotesTheRealmsRocked": {
+    "name": "Travel Notes: The Realms Rocked"
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone"
   },
@@ -11878,6 +12043,9 @@
   },
   "MiniSeelieBrilliance": {
     "name": "Mini Seelie: Brilliance"
+  },
+  "NightwindHorn": {
+    "name": "Nightwind Horn"
   },
   "Fateometer": {
     "name": "\"Fateometer\""
@@ -12119,6 +12287,12 @@
   "FatuiElectroCicinMage": {
     "name": "Fatui Electro Cicin Mage"
   },
+  "AbyssHeraldWickedTorrents": {
+    "name": "Abyss Herald: Wicked Torrents"
+  },
+  "EmperorOfFireAndIron": {
+    "name": "Emperor of Fire and Iron"
+  },
   "UndividedHeart": {
     "name": "Undivided Heart"
   },
@@ -12356,6 +12530,18 @@
   "ElectroCicinsFlicker": {
     "name": "Electro Cicin's Flicker"
   },
+  "ToWardWeakness": {
+    "name": "To Ward Weakness"
+  },
+  "TheWondrousPathOfTruth": {
+    "name": "The Wondrous Path of Truth"
+  },
+  "SurgingUndercurrent": {
+    "name": "Surging Undercurrent"
+  },
+  "MoltenMail": {
+    "name": "Molten Mail"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -12572,6 +12758,12 @@
   "GoldenTroupesReward": {
     "name": "Golden Troupe's Reward"
   },
+  "RightfulReward": {
+    "name": "Rightful Reward"
+  },
+  "AmethystCrown": {
+    "name": "Amethyst Crown"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -12697,6 +12889,15 @@
   },
   "FortressOfMeropide": {
     "name": "Fortress of Meropide"
+  },
+  "SeiraiIsland": {
+    "name": "Seirai Island"
+  },
+  "Taroumaru": {
+    "name": "Taroumaru"
+  },
+  "TheWhiteGloveAndTheFisherman": {
+    "name": "The White Glove and the Fisherman"
   },
   "ElementalResonanceWovenIce": {
     "name": "Elemental Resonance: Woven Ice"
@@ -12862,6 +13063,9 @@
   },
   "ControlledDirectionalBlast": {
     "name": "Controlled Directional Blast"
+  },
+  "UnderwaterTreasureHunt": {
+    "name": "Underwater Treasure Hunt"
   },
   "Origin": {
     "name": "Origin"
@@ -13409,6 +13613,9 @@
   "CiderLakelight": {
     "name": "\"Cider Lakelight\""
   },
+  "MusicTownsStreetlampSafetyLighting": {
+    "name": "Music Town's Streetlamp: \"Safety Lighting\""
+  },
   "EfflorescentIllumination": {
     "name": "Efflorescent Illumination"
   },
@@ -13898,6 +14105,12 @@
   "TeahouseToolClearView": {
     "name": "Teahouse Tool: Clear View"
   },
+  "HotelRailingFreshMintLeaves": {
+    "name": "Hotel Railing: \"Fresh Mint Leaves\""
+  },
+  "HotelRailingPerfectViewingArc": {
+    "name": "Hotel Railing: \"Perfect Viewing Arc\""
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Mondstadt Rug: Crimson Ardor"
   },
@@ -13940,6 +14153,9 @@
   "RestaurantRugBathingInTheBreeze": {
     "name": "Restaurant Rug: \"Bathing in the Breeze\""
   },
+  "FontainianCarpetFairAndSquare": {
+    "name": "Fontainian Carpet: \"Fair and Square\""
+  },
   "TrustyPortableLamp": {
     "name": "Trusty Portable Lamp"
   },
@@ -13972,6 +14188,9 @@
   },
   "TwoWayIronLamp": {
     "name": "Two-Way Iron Lamp"
+  },
+  "SimpleLightingLocallySourcedMaterials": {
+    "name": "Simple Lighting: \"Locally Sourced Materials\""
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Flower Arrangement: Baby Blue Tranquility"
@@ -14237,6 +14456,9 @@
   "IndoorLampTheTwilightSea": {
     "name": "Indoor Lamp: The Twilight Sea"
   },
+  "MekaLuminaireSilentNightsContemplation": {
+    "name": "Meka Luminaire: \"Silent Night's Contemplation\""
+  },
   "LingeringMoment": {
     "name": "Lingering Moment"
   },
@@ -14455,6 +14677,9 @@
   },
   "PoissonsSeasonalProduce": {
     "name": "\"Poisson's Seasonal Produce\""
+  },
+  "MusicTownsHutMardouceHarmony": {
+    "name": "Music Town's Hut: \"Mardouce Harmony\""
   },
   "HilichurlOutpostHut": {
     "name": "Hilichurl Outpost Hut"
@@ -14797,6 +15022,18 @@
   },
   "ASimpleResidenceInPoisson": {
     "name": "\"A Simple Residence in Poisson\""
+  },
+  "TollingOfTheMusicmakingTown": {
+    "name": "\"Tolling of the Musicmaking Town\""
+  },
+  "PeacefulResidenceInTheMusicmakingTown": {
+    "name": "\"Peaceful Residence in the Musicmaking Town\""
+  },
+  "WorkshopInTheMusicmakingTown": {
+    "name": "\"Workshop in the Musicmaking Town\""
+  },
+  "ResourcefulResidenceInTheMusicmakingTown": {
+    "name": "\"Resourceful Residence in the Musicmaking Town\""
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Bird and Blossom Design Fountain"
@@ -15308,6 +15545,12 @@
   "RoyalPurple": {
     "name": "\"Royal Purple\""
   },
+  "InspirationsPureWhiteBlossoms": {
+    "name": "\"Inspiration's Pure White Blossoms\""
+  },
+  "SalubriousFragrance": {
+    "name": "\"Salubrious Fragrance\""
+  },
   "FirShelves": {
     "name": "Fir Shelves"
   },
@@ -15662,6 +15905,21 @@
   "CleverlyCraftedContraptionBornInBlessedBitterness": {
     "name": "Cleverly Crafted Contraption: Born in Blessed Bitterness"
   },
+  "OriginOfMusic": {
+    "name": "\"Origin of Music\""
+  },
+  "LegionsFuriousHorns": {
+    "name": "\"Legion's Furious Horns\""
+  },
+  "HiddenSerpent": {
+    "name": "\"Hidden Serpent\""
+  },
+  "MirrorReflectionLyre": {
+    "name": "\"Mirror-Reflection Lyre\""
+  },
+  "CrystallineGlory": {
+    "name": "\"Crystalline Glory\""
+  },
   "BookshelfFreeReading": {
     "name": "Bookshelf: Free Reading"
   },
@@ -15697,6 +15955,9 @@
   },
   "TeaHarvestsSunDriedFragrance": {
     "name": "\"Tea Harvest's Sun-Dried Fragrance\""
+  },
+  "MallowWoodMailboxStorage": {
+    "name": "Mallow Wood Mailbox: \"Storage\""
   },
   "WeatheredBambooFence": {
     "name": "Weathered Bamboo Fence"
@@ -15740,6 +16001,12 @@
   "StandardRailingScatteredStructure": {
     "name": "Standard Railing: Scattered Structure"
   },
+  "MallowWoodDoorframeGentleMelody": {
+    "name": "Mallow Wood Doorframe: \"Gentle Melody\""
+  },
+  "MallowWoodFenceTides": {
+    "name": "Mallow Wood Fence: \"Tides\""
+  },
   "SmoothWoodenBench": {
     "name": "Smooth Wooden Bench"
   },
@@ -15772,6 +16039,12 @@
   },
   "TeaVillageStoneBenchSafeSpaciousSturdy": {
     "name": "\"Tea Village Stone Bench: Safe, Spacious, Sturdy\""
+  },
+  "MallowWoodBenchHiddenMelody": {
+    "name": "Mallow Wood Bench: \"Hidden Melody\""
+  },
+  "MallowWoodChairEZFold": {
+    "name": "Mallow Wood Chair: \"E-Z Fold\""
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "Two-Story Hilichurl Sentry Tower"
@@ -15836,6 +16109,12 @@
   "TeaVillageStoneTableCulturedLeisure": {
     "name": "Tea Village Stone Table: Cultured Leisure"
   },
+  "MallowWoodLongTableEngravedMemories": {
+    "name": "Mallow Wood Long Table: \"Engraved Memories\""
+  },
+  "MallowWoodRoundTableASharedDrink": {
+    "name": "Mallow Wood Round Table: \"A Shared Drink\""
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Wine Shop Display Counter: To Your Heart's Content"
   },
@@ -15865,5 +16144,8 @@
   },
   "TearstoneTilePerspectiveTheory": {
     "name": "Tearstone Tile: Perspective Theory"
+  },
+  "SwordBearingStatueEternalWatch": {
+    "name": "Sword-Bearing Statue: \"Eternal Watch\""
   }
 }

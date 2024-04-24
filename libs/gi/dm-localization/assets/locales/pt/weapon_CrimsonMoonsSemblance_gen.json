@@ -1,0 +1,24 @@
+{
+  "name": "Semblante da Lua Carmesim",
+  "description": {
+    "0": "Uma arma de gume afiado, brilho deslumbrante como a Lua Carmesim. Dizem que uma antiga dinastia a considerava um objeto ritual que poderia unir dois mundos, mas ninguém mais se lembra das crenças e cerimônias daquela era passada."
+  },
+  "passiveName": "Sombra do Sol de Cinzas",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando um Ataque Carregado atinge um inimigo, ganha um Contrato de Vida equivalente a 25% da Vida Máxima. Esse efeito pode ser desencadeado uma vez a cada 14s. Além disso, quando o personagem que está com essa arma equipada tem um Contrato de Vida, aumenta o Dano em <cryo>12%</cryo>. Se o valor do Contrato de Vida for maior ou igual a 30% da Vida Máxima, então ganha <cryo>24%</cryo> de aumento de Dano adicional."
+    },
+    "1": {
+      "0": "Quando um Ataque Carregado atinge um inimigo, ganha um Contrato de Vida equivalente a 25% da Vida Máxima. Esse efeito pode ser desencadeado uma vez a cada 14s. Além disso, quando o personagem que está com essa arma equipada tem um Contrato de Vida, aumenta o Dano em <cryo>16%</cryo>. Se o valor do Contrato de Vida for maior ou igual a 30% da Vida Máxima, então ganha <cryo>32%</cryo> de aumento de Dano adicional."
+    },
+    "2": {
+      "0": "Quando um Ataque Carregado atinge um inimigo, ganha um Contrato de Vida equivalente a 25% da Vida Máxima. Esse efeito pode ser desencadeado uma vez a cada 14s. Além disso, quando o personagem que está com essa arma equipada tem um Contrato de Vida, aumenta o Dano em <cryo>20%</cryo>. Se o valor do Contrato de Vida for maior ou igual a 30% da Vida Máxima, então ganha <cryo>40%</cryo> de aumento de Dano adicional."
+    },
+    "3": {
+      "0": "Quando um Ataque Carregado atinge um inimigo, ganha um Contrato de Vida equivalente a 25% da Vida Máxima. Esse efeito pode ser desencadeado uma vez a cada 14s. Além disso, quando o personagem que está com essa arma equipada tem um Contrato de Vida, aumenta o Dano em <cryo>24%</cryo>. Se o valor do Contrato de Vida for maior ou igual a 30% da Vida Máxima, então ganha <cryo>48%</cryo> de aumento de Dano adicional."
+    },
+    "4": {
+      "0": "Quando um Ataque Carregado atinge um inimigo, ganha um Contrato de Vida equivalente a 25% da Vida Máxima. Esse efeito pode ser desencadeado uma vez a cada 14s. Além disso, quando o personagem que está com essa arma equipada tem um Contrato de Vida, aumenta o Dano em <cryo>28%</cryo>. Se o valor do Contrato de Vida for maior ou igual a 30% da Vida Máxima, então ganha <cryo>56%</cryo> de aumento de Dano adicional."
+    }
+  }
+}

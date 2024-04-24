@@ -1,0 +1,29 @@
+{
+  "setName": "Rêverie incomplète",
+  "setEffects": {
+    "2": "Augmente l'ATQ de 18 %.",
+    "4": "Après avoir été hors combat pendant 3 s, les DGT infligés augmentent de 50 %. En combat, si aucun ennemi brûlé n'est à proximité pendant plus de 6 s, cette augmentation de DGT diminue de 10 % toutes les secondes, jusqu'à atteindre 0 % ; si un ennemi brûlé est à proximité, elle augmente de 10 % toutes les secondes, jusqu'à atteindre 50 %. Cet effet peut être déclenché même lorsque le personnage équipé de ce set d'artéfacts fait partie de l'équipe mais n'est pas déployé."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fleur de nœuds dissimulés",
+      "desc": "Une fleur sculptée dans une pierre grise, recouverte d'une feuille d'or. Les légendes disent que pendant une guerre, elle était utilisée pour différencier les amis des ennemis."
+    },
+    "plume": {
+      "name": "Queue émeraude de fanaison",
+      "desc": "Un ornement de queue en plumes dont l'éclat s'est depuis longtemps estompé. On dit que les motifs qui y figurent ont été gravés par la main d'un artisan qualifié d'il y a longtemps."
+    },
+    "sands": {
+      "name": "Instant de réalisation",
+      "desc": "Un cadran solaire utilisé par un ancien royaume pour indiquer l'heure. De minuscules marques ont été laissées à certains endroits, ces dernières ne pouvant être vues qu'après une observation attentive."
+    },
+    "goblet": {
+      "name": "Coupe commune de stratégie",
+      "desc": "Une coupe à trois pieds. Autrefois, de nombreux héros se rassemblaient autour du feu de joie, levant leurs tasses et buvant à loisir tout en discutant de leurs souhaits et de leurs ambitions."
+    },
+    "circlet": {
+      "name": "Couronne sans couronne",
+      "desc": "Une couronne dorée, ornée de plumes turquoise et d'émeraudes, qui n'a jamais été utilisée lors d'un couronnement, vivant seule sur son coussin de velours."
+    }
+  }
+}

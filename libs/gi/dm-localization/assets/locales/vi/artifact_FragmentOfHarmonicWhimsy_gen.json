@@ -1,0 +1,29 @@
+{
+  "setName": "Mảnh Hài Hòa Bất Thường",
+  "setEffects": {
+    "2": "Tấn công tăng 18%",
+    "4": "Khi giá trị Khế Ước Sinh Mệnh tăng hoặc giảm, sát thương nhân vật gây ra sẽ tăng 18% trong 6s. Tối đa cộng dồn 3 lần."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Dạo Đầu Của Giao Hưởng",
+      "desc": "Đóa hoa nở rộ được điểm xuyết bằng vàng và đá xanh, từng là huy chương ban cho những người bất tử."
+    },
+    "plume": {
+      "name": "Dạ Tấu Của Biển Xưa",
+      "desc": "Lông vũ được chạm khắc mô phỏng theo cánh của ong vàng trong truyền thuyết, dường như sẽ rung chuyển theo làn gió nhẹ."
+    },
+    "sands": {
+      "name": "Trêu Ngươi Của Vận Mệnh",
+      "desc": "Đồng hồ được chế tạo dựa theo hình dáng của bánh xe vận mệnh, đến nay đã không thể xoay chuyển nữa."
+    },
+    "goblet": {
+      "name": "Áng Thơ Của Linh Lộ",
+      "desc": "Chiếc ly được làm từ đồng, từng đựng đầy rượu ngon của địa đàng."
+    },
+    "circlet": {
+      "name": "Vũ Điệu Của Tàn Phai",
+      "desc": "Mặt nạ từng được phủ lớp vỏ vàng, có lẽ là di vật của những vị chỉ huy quân đoàn thời xa xưa."
+    }
+  }
+}

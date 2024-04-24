@@ -1,0 +1,24 @@
+{
+  "name": "Forma della Luna cremisi",
+  "description": {
+    "0": "Un'arma dalla lama tagliente, che riluce di uno sfolgorio simile a quello della Luna cremisi. Si dice che fosse un oggetto rituale impiegato da una remota dinastia per collegare due mondi, ma si tratta di credenze e cerimonie troppo antiche perché qualcuno possa ricordarsene."
+  },
+  "passiveName": "Ombra del sole cinereo",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando un attacco caricato colpisce un avversario, il personaggio che equipaggia l'arma ottiene un Legame vitale pari a un 25% dei PS max. Quest'effetto può attivarsi una sola volta ogni 14 s. In più, quando il personaggio possiede un Legame vitale, ottiene un <cryo>12%</cryo> di bonus DAN; se il valore del Legame vitale è maggiore o uguale a un 30% dei PS max, il bonus DAN aumenta di un ulteriore <cryo>24%</cryo>."
+    },
+    "1": {
+      "0": "Quando un attacco caricato colpisce un avversario, il personaggio che equipaggia l'arma ottiene un Legame vitale pari a un 25% dei PS max. Quest'effetto può attivarsi una sola volta ogni 14 s. In più, quando il personaggio possiede un Legame vitale, ottiene un <cryo>16%</cryo> di bonus DAN; se il valore del Legame vitale è maggiore o uguale a un 30% dei PS max, il bonus DAN aumenta di un ulteriore <cryo>32%</cryo>."
+    },
+    "2": {
+      "0": "Quando un attacco caricato colpisce un avversario, il personaggio che equipaggia l'arma ottiene un Legame vitale pari a un 25% dei PS max. Quest'effetto può attivarsi una sola volta ogni 14 s. In più, quando il personaggio possiede un Legame vitale, ottiene un <cryo>20%</cryo> di bonus DAN; se il valore del Legame vitale è maggiore o uguale a un 30% dei PS max, il bonus DAN aumenta di un ulteriore <cryo>40%</cryo>."
+    },
+    "3": {
+      "0": "Quando un attacco caricato colpisce un avversario, il personaggio che equipaggia l'arma ottiene un Legame vitale pari a un 25% dei PS max. Quest'effetto può attivarsi una sola volta ogni 14 s. In più, quando il personaggio possiede un Legame vitale, ottiene un <cryo>24%</cryo> di bonus DAN; se il valore del Legame vitale è maggiore o uguale a un 30% dei PS max, il bonus DAN aumenta di un ulteriore <cryo>48%</cryo>."
+    },
+    "4": {
+      "0": "Quando un attacco caricato colpisce un avversario, il personaggio che equipaggia l'arma ottiene un Legame vitale pari a un 25% dei PS max. Quest'effetto può attivarsi una sola volta ogni 14 s. In più, quando il personaggio possiede un Legame vitale, ottiene un <cryo>28%</cryo> di bonus DAN; se il valore del Legame vitale è maggiore o uguale a un 30% dei PS max, il bonus DAN aumenta di un ulteriore <cryo>56%</cryo>."
+    }
+  }
+}

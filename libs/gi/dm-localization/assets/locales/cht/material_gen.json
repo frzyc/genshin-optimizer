@@ -191,6 +191,9 @@
   "Funds": {
     "name": "資金"
   },
+  "IridescenceTourTickets": {
+    "name": "「虹色巡迴券」"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -521,6 +524,9 @@
   "Chiori": {
     "name": "千織"
   },
+  "Arlecchino": {
+    "name": "阿蕾奇諾"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "神里綾華的命星"
   },
@@ -763,6 +769,9 @@
   },
   "ChiorisStellaFortuna": {
     "name": "千織的命星"
+  },
+  "ArlecchinosStellaFortuna": {
+    "name": "阿蕾奇諾的命星"
   },
   "GnosticHymnOldNotes": {
     "name": "珍珠紀行·初稿"
@@ -6917,6 +6926,21 @@
   "FashionShow": {
     "name": "「時裝秀」"
   },
+  "RockNRollDangoMilk": {
+    "name": "搖滾糰子牛奶"
+  },
+  "SuspiciousBulleSouffle": {
+    "name": "奇怪的泡泡舒芙蕾"
+  },
+  "BulleSouffle": {
+    "name": "泡泡舒芙蕾"
+  },
+  "DeliciousBulleSouffle": {
+    "name": "美味的泡泡舒芙蕾"
+  },
+  "HearthfiresTrail": {
+    "name": "爐火的往跡"
+  },
   "RecipeItem": {
     "name": "食譜道具"
   },
@@ -7493,6 +7517,9 @@
   "RecipeMegaMeatySushi": {
     "name": "食譜：肉滿滿壽司"
   },
+  "RecipeBulleSouffle": {
+    "name": "食譜：泡泡舒芙蕾"
+  },
   "CraftedItems": {
     "name": "合成產物"
   },
@@ -7904,6 +7931,15 @@
   "ChasmlightFin": {
     "name": "淵光鰭翅"
   },
+  "RuinedHilt": {
+    "name": "殘毀的劍柄"
+  },
+  "SplinteredHilt": {
+    "name": "裂斷的劍柄"
+  },
+  "StillSmolderingHilt": {
+    "name": "未熄的劍柄"
+  },
   "HurricaneSeed": {
     "name": "颶風之種"
   },
@@ -8077,6 +8113,18 @@
   },
   "CloudseamScale": {
     "name": "凝雲鱗甲"
+  },
+  "FragmentOfAGoldenMelody": {
+    "name": "金色旋律的斷章"
+  },
+  "FadingCandle": {
+    "name": "殘火燈燭"
+  },
+  "SilkenFeather": {
+    "name": "絲織之羽"
+  },
+  "DenialAndJudgment": {
+    "name": "否定裁斷"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦"
@@ -10022,8 +10070,20 @@
   "OurChenyuValeTrekAlbum": {
     "name": "「沉玉之旅」紀念冊"
   },
+  "AncientAutoharmonicMusicBox": {
+    "name": "古老的自鳴音樂盒"
+  },
   "StrangeKey": {
     "name": "奇特的鑰匙"
+  },
+  "BlankScore": {
+    "name": "空白曲譜"
+  },
+  "AncientScore": {
+    "name": "古老的曲譜"
+  },
+  "LostGrimoire": {
+    "name": "遺落的魔導書"
   },
   "ShootingPracticeOpticalLenses": {
     "name": "「射擊演練光學鏡片」"
@@ -10033,6 +10093,15 @@
   },
   "PerinheriII": {
     "name": "裴倫埃里·卷二"
+  },
+  "AnecdotaSeptentrionalisI": {
+    "name": "北境秘史·卷一"
+  },
+  "AnecdotaSeptentrionalisII": {
+    "name": "北境秘史·卷二"
+  },
+  "AnecdotaSeptentrionalisIII": {
+    "name": "北境秘史·卷三"
   },
   "HelpMePlease": {
     "name": "救救我！"
@@ -10151,6 +10220,9 @@
   "ChizhangMap": {
     "name": "赤璋輿圖"
   },
+  "MiniPhonograph": {
+    "name": "小型留聲機"
+  },
   "AncientCityKey": {
     "name": "古城垣鑰匙"
   },
@@ -10163,11 +10235,29 @@
   "FishSeizedFromAPelicansMouth": {
     "name": "從「鵜鶘」嘴裡搶下的魚"
   },
+  "InvitationFromTheAratakiGang": {
+    "name": "荒瀧派的邀請函"
+  },
   "FelixFelicium": {
     "name": "「幸運祝福」"
   },
+  "ShikanoinHeizousMessage": {
+    "name": "鹿野院平藏的留言"
+  },
+  "PuppyUnionAdmissionDetails": {
+    "name": "「小狗商會」的收治明細"
+  },
   "LynettesEnvelope": {
     "name": "琳妮特的信封"
+  },
+  "RestoredScore": {
+    "name": "修復完好的曲譜"
+  },
+  "PagesFromALostScoreI": {
+    "name": "遺落的曲譜殘頁·其一"
+  },
+  "ARidiculouslyCommonBranch": {
+    "name": "隨處可見的樹枝"
   },
   "CultivationAreaExpansionVII": {
     "name": "培育區域擴充套件·其七"
@@ -10183,6 +10273,51 @@
   },
   "Manuscript": {
     "name": "手稿"
+  },
+  "IGotReincarnatedAsAnOnikabutoAndFlippedTheWorldUpsideDown": {
+    "name": "《轉生成為鬼兜蟲然後撞翻世界》"
+  },
+  "CynosLetter": {
+    "name": "賽諾的信"
+  },
+  "DamagedScore": {
+    "name": "破損的曲譜"
+  },
+  "RuggierosNotesII": {
+    "name": "魯傑羅的筆記·其二"
+  },
+  "PagesFromALostScoreII": {
+    "name": "遺落的曲譜殘頁·其二"
+  },
+  "AncientEngravings": {
+    "name": "古老的碑銘"
+  },
+  "HarmostsNotesII": {
+    "name": "調律師的筆記·下"
+  },
+  "TatteredNavigationLog": {
+    "name": "殘破的航海日誌"
+  },
+  "RuggierosNotesI": {
+    "name": "魯傑羅的筆記·其一"
+  },
+  "SomeonesNotes": {
+    "name": "誰人的筆記"
+  },
+  "RuggierosNotesIII": {
+    "name": "魯傑羅的筆記·其三"
+  },
+  "InvestigationOfTheNorthernBarbarians": {
+    "name": "關於北境蠻族的考察"
+  },
+  "HarmostsNotesI": {
+    "name": "調律師的筆記·上"
+  },
+  "AncientInscription": {
+    "name": "古舊的銘刻"
+  },
+  "AncientPieceOfPaper": {
+    "name": "古舊的紙條"
   },
   "TearsAmongTheStars": {
     "name": "星間之淚"
@@ -10850,6 +10985,21 @@
   "RadiantSpincrystal125": {
     "name": "旋曜玉帛·其一百二十五"
   },
+  "RadiantSpincrystal126": {
+    "name": "旋曜玉帛·其一百二十六"
+  },
+  "RadiantSpincrystal127": {
+    "name": "旋曜玉帛·其一百二十七"
+  },
+  "RadiantSpincrystal128": {
+    "name": "旋曜玉帛·其一百二十八"
+  },
+  "RadiantSpincrystal129": {
+    "name": "旋曜玉帛·其一百二十九"
+  },
+  "RadiantSpincrystal130": {
+    "name": "旋曜玉帛·其一百三十"
+  },
   "LanternFiber": {
     "name": "燈紙纖維"
   },
@@ -11073,7 +11223,7 @@
     "name": "原神·印象"
   },
   "TravelNotesCatchTheWind": {
-    "name": "紀行·補風"
+    "name": "紀行·捕風"
   },
   "AmberBunny": {
     "name": "安柏·兔兔"
@@ -11639,6 +11789,21 @@
   "TravelNotesArcaneAmassing": {
     "name": "紀行·魔萃"
   },
+  "ArlecchinoEdict": {
+    "name": "阿蕾奇諾·法度"
+  },
+  "FontaineAttunement": {
+    "name": "楓丹·調律"
+  },
+  "AchievementWhalewrangler": {
+    "name": "成就·掣鯨"
+  },
+  "FontaineLucine": {
+    "name": "楓丹·露泉"
+  },
+  "TravelNotesTheRealmsRocked": {
+    "name": "紀行·邦搖"
+  },
   "AnemoculusResonanceStone": {
     "name": "風神瞳共鳴石"
   },
@@ -11879,8 +12044,11 @@
   "MiniSeelieBrilliance": {
     "name": "迷你仙靈·璨光"
   },
+  "NightwindHorn": {
+    "name": "晚風圓號"
+  },
   "Fateometer": {
-    "name": "「命運計數器」"
+    "name": "「命運示數器」"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "說明：風神瞳共鳴石"
@@ -12119,6 +12287,12 @@
   "FatuiElectroCicinMage": {
     "name": "愚人眾·雷螢術士"
   },
+  "AbyssHeraldWickedTorrents": {
+    "name": "深淵使徒·激流"
+  },
+  "EmperorOfFireAndIron": {
+    "name": "鐵甲熔火帝皇"
+  },
   "UndividedHeart": {
     "name": "唯此一心"
   },
@@ -12356,6 +12530,18 @@
   "ElectroCicinsFlicker": {
     "name": "雷螢閃爍"
   },
+  "ToWardWeakness": {
+    "name": "割捨軟弱之心"
+  },
+  "TheWondrousPathOfTruth": {
+    "name": "妙道合真"
+  },
+  "SurgingUndercurrent": {
+    "name": "暗流湧動"
+  },
+  "MoltenMail": {
+    "name": "熔火鐵甲"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -12572,6 +12758,12 @@
   "GoldenTroupesReward": {
     "name": "黃金劇團的獎賞"
   },
+  "RightfulReward": {
+    "name": "公義的酬報"
+  },
+  "AmethystCrown": {
+    "name": "紫晶的花冠"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -12696,7 +12888,16 @@
     "name": "西爾弗和邁勒斯"
   },
   "FortressOfMeropide": {
-    "name": "梅洛彼德堡"
+    "name": "梅洛彼得堡"
+  },
+  "SeiraiIsland": {
+    "name": "清籟島"
+  },
+  "Taroumaru": {
+    "name": "太郎丸"
+  },
+  "TheWhiteGloveAndTheFisherman": {
+    "name": "白手套和漁夫"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交織之冰"
@@ -12862,6 +13063,9 @@
   },
   "ControlledDirectionalBlast": {
     "name": "可控性去危害化式定向爆破"
+  },
+  "UnderwaterTreasureHunt": {
+    "name": "海底尋寶"
   },
   "Origin": {
     "name": "原初"
@@ -13409,6 +13613,9 @@
   "CiderLakelight": {
     "name": "「果酒湖光」"
   },
+  "MusicTownsStreetlampSafetyLighting": {
+    "name": "樂鎮路燈-「安行明光」"
+  },
   "EfflorescentIllumination": {
     "name": "「花葉百相之光」"
   },
@@ -13898,6 +14105,12 @@
   "TeahouseToolClearView": {
     "name": "茶坊用具-「覽示有道」"
   },
+  "HotelRailingFreshMintLeaves": {
+    "name": "飯店護欄-「薄荷新葉」"
+  },
+  "HotelRailingPerfectViewingArc": {
+    "name": "飯店護欄-「無餘弧景」"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "蒙德地毯-「明紅的熱忱」"
   },
@@ -13940,6 +14153,9 @@
   "RestaurantRugBathingInTheBreeze": {
     "name": "飯店地毯-「如沐風中」"
   },
+  "FontainianCarpetFairAndSquare": {
+    "name": "楓丹地毯-「平允方正」"
+  },
   "TrustyPortableLamp": {
     "name": "恆亮不熄的提燈"
   },
@@ -13972,6 +14188,9 @@
   },
   "TwoWayIronLamp": {
     "name": "鑄鐵雙用擺燈"
+  },
+  "SimpleLightingLocallySourcedMaterials": {
+    "name": "簡易提燈-「因地施材」"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "花卉瓶栽-「淡藍的從容」"
@@ -14237,6 +14456,9 @@
   "IndoorLampTheTwilightSea": {
     "name": "室內掛燈-「昏黃海景」"
   },
+  "MekaLuminaireSilentNightsContemplation": {
+    "name": "機樞燈具-「靜夜沉思」"
+  },
   "LingeringMoment": {
     "name": "「縈絆之刻」"
   },
@@ -14455,6 +14677,9 @@
   },
   "PoissonsSeasonalProduce": {
     "name": "「白淞街鎮的時鮮」"
+  },
+  "MusicTownsHutMardouceHarmony": {
+    "name": "樂鎮棚屋—「柔茉和聲」"
   },
   "HilichurlOutpostHut": {
     "name": "丘丘前哨小屋"
@@ -14797,6 +15022,18 @@
   },
   "ASimpleResidenceInPoisson": {
     "name": "「白淞街鎮的簡居」"
+  },
+  "TollingOfTheMusicmakingTown": {
+    "name": "「制樂之鎮的鐘聲」"
+  },
+  "PeacefulResidenceInTheMusicmakingTown": {
+    "name": "「制樂之鎮的安住」"
+  },
+  "WorkshopInTheMusicmakingTown": {
+    "name": "「制樂之鎮的匠屋」"
+  },
+  "ResourcefulResidenceInTheMusicmakingTown": {
+    "name": "「制樂之鎮的巧居」"
   },
   "BirdAndBlossomDesignFountain": {
     "name": "花鳥噴泉"
@@ -15308,6 +15545,12 @@
   "RoyalPurple": {
     "name": "「貴重的靛紫」"
   },
+  "InspirationsPureWhiteBlossoms": {
+    "name": "「靈感的純白」"
+  },
+  "SalubriousFragrance": {
+    "name": "「健療的醇芳」"
+  },
   "FirShelves": {
     "name": "杉木置物架"
   },
@@ -15662,6 +15905,21 @@
   "CleverlyCraftedContraptionBornInBlessedBitterness": {
     "name": "巧煉秘具-「誕於清苦」"
   },
+  "OriginOfMusic": {
+    "name": "「樂律的源始」"
+  },
+  "LegionsFuriousHorns": {
+    "name": "「軍團的怒角」"
+  },
+  "HiddenSerpent": {
+    "name": "「暗藏的遊蛇」"
+  },
+  "MirrorReflectionLyre": {
+    "name": "「如鏡的詩琴」"
+  },
+  "CrystallineGlory": {
+    "name": "「粼粼的榮彩」"
+  },
   "BookshelfFreeReading": {
     "name": "書報架-「自由取閱」"
   },
@@ -15697,6 +15955,9 @@
   },
   "TeaHarvestsSunDriedFragrance": {
     "name": "「茗獲的日曬著香」"
+  },
+  "MallowWoodMailboxStorage": {
+    "name": "懸鈴木「儲物」信箱"
   },
   "WeatheredBambooFence": {
     "name": "飽經風雨的竹製圍籬"
@@ -15740,6 +16001,12 @@
   "StandardRailingScatteredStructure": {
     "name": "標準護欄-「錯落結構」"
   },
+  "MallowWoodDoorframeGentleMelody": {
+    "name": "懸鈴木「柔律」門框"
+  },
+  "MallowWoodFenceTides": {
+    "name": "懸鈴木「海潮」欄杆"
+  },
   "SmoothWoodenBench": {
     "name": "平整的木製長凳"
   },
@@ -15772,6 +16039,12 @@
   },
   "TeaVillageStoneBenchSafeSpaciousSturdy": {
     "name": "茶莊石凳-「寬安敦實」"
+  },
+  "MallowWoodBenchHiddenMelody": {
+    "name": "懸鈴木「隱樂」長椅"
+  },
+  "MallowWoodChairEZFold": {
+    "name": "懸鈴木「簡摺」座椅"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "丘丘雙層警戒台"
@@ -15836,6 +16109,12 @@
   "TeaVillageStoneTableCulturedLeisure": {
     "name": "茶莊石桌-「悠雅閒趣」"
   },
+  "MallowWoodLongTableEngravedMemories": {
+    "name": "懸鈴木「雕憶」長桌"
+  },
+  "MallowWoodRoundTableASharedDrink": {
+    "name": "懸鈴木「共飲」圓桌"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "酒肆貨櫃-「會須百杯飲」"
   },
@@ -15865,5 +16144,8 @@
   },
   "TearstoneTilePerspectiveTheory": {
     "name": "淚斑岩磚-「透視理論」"
+  },
+  "SwordBearingStatueEternalWatch": {
+    "name": "持劍石像-「永恆宿衛」"
   }
 }

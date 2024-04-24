@@ -1,0 +1,172 @@
+{
+  "name": "Arlecchino",
+  "title": "Unheil verkündender Mond",
+  "description": "Die „Bedienstete“, die Vierte unter den Elf der Fatui. Sie ist eine souveräne und rücksichtslose Diplomatin, die als „Vater“ von den Kindern des Hauses des Kamins gefürchtet wird und von der sie zugleich abhängig sind.",
+  "constellationName": "Ignis Purgatorius",
+  "auto": {
+    "name": "Einladung zur Enthauptung",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 6 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, stürzt auf Gegner in der Nähe zu und führt einen schwungvollen Hieb aus.",
+        "2": "Verbraucht bei fortlaufendem Gedrückthalten Ausdauer und bewegt sich bis zu 5 s lang mit erhöhter Geschwindigkeit."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      },
+      "infusion": {
+        "0": "<strong>Maske des roten Todes</strong>",
+        "1": "Geht bei einem Wert von Eid des Lebens in Höhe von mindestens 30 % der max. LP in den Zustand „Maske des roten Todes“ über: Wandelt den mit Arlecchinos Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall verursachten Schaden in <pyro>Pyro-Schaden</pyro> um, der nicht von anderen Elementen überdeckt werden kann.",
+        "2": "Erhöht im Zustand „Maske des roten Todes“ beim Treffen von Gegnern mit Arlecchinos Standardangriff den mit diesem Angriff verursachten Schaden um das Produkt aus Arlecchinos ANG und einem gewissen Teil des aktuellen Werts von Eid des Lebens und verbraucht 7,5 % des aktuellen Werts von Eid des Lebens. Verbraucht auf diese Weise höchstens alle 0,03 s einmal einen Teil von Eid des Lebens. Verringert daraufhin für jedes Verbrauchen des Werts von Eid des Lebens auf diese Weise die Abklingzeit der Elementarfähigkeit „Alles wird zu Staub“ um 0,8 s."
+      }
+    },
+    "skillParams": {
+      "0": "Bonus durch Maske des roten Todes",
+      "1": "SCH Phase 1",
+      "2": "SCH Phase 2",
+      "3": "SCH Phase 3",
+      "4": "SCH Phase 4",
+      "5": "SCH Phase 5",
+      "6": "SCH Phase 6",
+      "7": "SCH heftiger Schläge",
+      "8": "Ausdauerverbrauch heftiger Schläge",
+      "9": "Ausdauerverbrauch bei Beschleunigung",
+      "10": "SCH beim Fallen",
+      "11": "SCH beim Fallen aus niedriger/großer Höhe",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Alles wird zu Staub",
+    "description": {
+      "0": "Ruft die Blutflammen des Mondes des Verderbens herbei, um Unheil zu stiften, und fügt mehreren Gegnern in der Nähe <pyro>Pyro-Schaden</pyro> zu. Stößt außerdem auf einen dieser Gegner zu und verursacht <pyro>Pyro-Flächenschaden</pyro>.",
+      "1": "Fügt beim Treffen von Gegnern mit diesem Angriff diesen Gegnern „Blutige Vergeltung“ zu.",
+      "2": "<br/>",
+      "3": "<strong>Blutige Vergeltung</strong>",
+      "4": [
+        " Hält 30 s, fügt Gegnern alle 5 s 1-mal, aber insgesamt bis zu 2-mal <pyro>Pyro-Schaden</pyro> zu. Hierdurch verursachter Schaden wird als Schaden der Elementarfähigkeit gewertet.",
+        " Arlecchino sammelt beim Einsatz von heftigen Schlägen oder beim Anwenden ihrer Spezialfähigkeit „Aufgehen des Mondes des Verderbens“ die „Blutige Vergeltung“ in der Umgebung ein und entfernt sie damit. Erhält für jede eingesammelte „Blutige Vergeltung“ Eid des Lebens in Höhe von 65 % ihrer max. LP.",
+        " Bringt Arlecchino innerhalb von 35 s nach dem Anwenden der Elementarfähigkeit durch „Blutige Vergeltung“ höchstens Eid des Lebens in Höhe von 145 % ihrer max. LP. Wenn die Elementarfähigkeit während der Dauer erneut angewendet wird, werden die Dauer und der max. Wert von „Eid des Lebens“, den „Blutige Vergeltung“ gewähren kann, neu berechnet."
+      ],
+      "5": "<br/>",
+      "6": "<i>Sie ist der Meinung, dass nicht jedes einzelne Weizenkorn, das auf die Erde fällt, zu einer Ähre heranwächst, sondern eventuell einfach lautlos verrottet. Diejenigen, die sich ihr in den Weg stellen, können auf diese Weise aber sicherlich als Nährstoff für die Blumen dienen.</i>"
+    },
+    "skillParams": {
+      "0": "Stachel-SCH",
+      "1": "Vorstoßangriff-SCH",
+      "2": "SCH „Blutige Vergeltung“",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Aufgehen des Mondes des Verderbens",
+    "description": {
+      "0": "Schwingt die Flügel aus Blutflammen des Mondes des Verderbens, sammelt die Blutige Vergeltung in ihrer Umgebung ein, entfernt sie und verursacht <pyro>Pyro-Flächenschaden</pyro>, überspringt danach die Abklingzeit der Elementarfähigkeit „Alles wird zu Staub“ und stellt sich selbst LP basierend auf dem Wert von „Eid des Lebens“ und ihrem ANG wieder her.",
+      "1": "<br/>",
+      "2": "<i>In Teyvat geht man allgemein davon aus, dass alle Mondphasen außer dem Vollmond für Verderben stehen und nur in der Alchimie und Astrologie verwendet werden.",
+      "3": "In ihren Träumen hat sie diesen blutroten Mond schon häufig gesehen. Doch ist dies ein Zeichen des Verderbens? Ja, und zwar für diejenigen, die sie verärgern.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Wiederhergestellte LP",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Nur Qualen vergelten",
+    "description": {
+      "0": "<strong>„Blutige Vergeltung“</strong> besitzt die folgenden Eigenschaften:",
+      "1": [
+        " Verleiht Arlecchino Eid des Lebens in Höhe von 130 % ihrer max. LP, wenn ein Gegner, dem Arlecchino selbst „Blutige Vergeltung“ zugefügt hat, besiegt wird.",
+        " 5 s nach dem Zufügen der „Blutige Vergeltung“ wird diese zu „Blutige Vergeltung – Abrechnung“ hochgestuft, die beim Einsammeln Arlecchino Eid des Lebens in Höhe von 130 % ihrer max. LP verleiht."
+      ],
+      "2": "Der auf diese Weise verliehene Wert von Eid des Lebens kann die eigentliche Obergrenze von <strong>Alles wird zu Staub</strong> nicht überschreiten."
+    }
+  },
+  "passive2": {
+    "name": "Kraft allein schützt",
+    "description": {
+      "0": "Verleiht Arlecchino für je 100 Punkte ANG über 1.000 Punkten 1 % WDS gegen alle Elemente sowie phys. WDS. Arlecchinos WDS gegen alle Elemente sowie phys. WDS können auf diese Weise um bis zu 20 % erhöht werden."
+    }
+  },
+  "passive3": {
+    "name": "Nur der Mond des Verderbens weiß",
+    "description": {
+      "0": "Erhöht den von Arlecchino im Kampf verursachten <pyro>Pyro-Schaden</pyro> um 40 % und kann nur von <strong>„Aufgehen des Mondes des Verderbens“</strong> geheilt werden."
+    }
+  },
+  "constellation1": {
+    "name": "„Jeden Groll und alle Schulden werde ich begleichen ...“",
+    "description": {
+      "0": "Der von „Maske des roten Todes“ gewährte Bonus wird weiter um 100 % erhöht. Erhöht daraufhin Arlecchinos Unterbrechungs-WDS, wenn sie im Zustand „Maske des roten Todes“ Standardangriffe oder heftige Schläge ausführt."
+    }
+  },
+  "constellation2": {
+    "name": "„Jede Belohnung und Vergeltung wird von mir vergeben ...“",
+    "description": {
+      "0": "<strong>„Blutige Vergeltung“</strong> wird beim Verleihen zu „Blutige Vergeltung – Abrechnung“.",
+      "1": "Erschafft, wenn Arlecchino „Blutige Vergeltung – Abrechnung“ einsammelt, vor ihr Blutflammen des Mondes des Verderbens, verursacht <pyro>Pyro-Flächenschaden</pyro> in Höhe von 900 % von Arlecchinos ANG und erhöht ihren WDS gegen alle Elemente sowie phys. WDS um 20 %, hält 15 s, 10 s Abklingzeit.",
+      "2": "Das passive Talent „Nur Qualen vergelten“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "„Du wirst Teil unserer Familie werden ...“",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Standardangriff: Einladung zur Enthauptung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "„Von nun an müsst ihr euch gegenseitig lieben und beschützen ...“",
+    "description": {
+      "0": "Verringert die Abklingzeit von <strong>„Aufgehen des Mondes des Verderbens“</strong> beim erfolgreichen Einsammeln der „Blutige Vergeltung“ von Arlecchino um 2 s und stellt ihr zugleich 15 Punkte Elementarenergie wieder her, 10 s Abklingzeit."
+    }
+  },
+  "constellation5": {
+    "name": "„Allein sind wir so gut wie tot ...“",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Aufgehen des Mondes des Verderbens</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "„Von nun an werden wir gemeinsam ein neues Leben führen.“",
+    "description": {
+      "0": "Erhöht den mit <strong>Aufgehen des Mondes des Verderbens</strong> verursachten Schaden um das Produkt aus Arlecchinos ANG und 700 % des prozentualen Wertes von Eid des Lebens.",
+      "1": "Erhöht innerhalb von 20 s nach dem Anwenden von <strong>Alles wird zu Staub</strong> die KT von Arlecchinos Standardangriffen und Spezialfähigkeiten um 10 % sowie deren KSCH um 70 %, 15 s Abklingzeit."
+    }
+  }
+}

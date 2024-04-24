@@ -1,0 +1,29 @@
+{
+  "setName": "Unvollendete Träumerei",
+  "setEffects": {
+    "2": "Erhöht den ANG um 18 %.",
+    "4": "Erhöht den verursachten Schaden um 50 %, sobald der Träger den Kampf für 3 s verlassen hat. Verringert diesen Schadensbonus im Kampf jede s um 10 %, sobald 6 s lang keine Gegner in Flammen in der Nähe sind, bis auf 0 %. Erhöht den Schadensbonus jede s um 10 %, wenn Gegner in Flammen in der Nähe sind, bis auf 50 %. Der Effekt kann auch noch ausgelöst werden, wenn der Träger inaktiv in der Truppe ist."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Helle Blüte dunkler Früchte",
+      "desc": "Eine aus grauem Stein gehauene, kunstvoll mit Blattgold überzogene Blume, die der Legende nach während eines Krieges als Zeichen diente, um Freund und Feind zu unterscheiden."
+    },
+    "plume": {
+      "name": "Verblasste Smaragdschwanzfeder",
+      "desc": "Ein Federschmuck von verblasster Pracht, dessen Muster, so heißt es, von einem versierten Handwerker in längst vergangenen Tagen geschaffen wurde."
+    },
+    "sands": {
+      "name": "Augenblick des Erfolgs",
+      "desc": "Ein Gnomon zur Zeitmessung aus einem alten Reich, auf dem nur bei genauem Hinsehen winzige Markierungen an einer bestimmten Stelle erkennbar sind."
+    },
+    "goblet": {
+      "name": "Weinflasche der Planung",
+      "desc": "Ein dreibeiniger Tonkrug, mit dem schon viele Helden am Lagerfeuer angestoßen haben, ihre kühnen Visionen und Hoffnungen verkündend."
+    },
+    "circlet": {
+      "name": "Kronenlose Krone",
+      "desc": "Eine goldene, mit Türkis und smaragdgrünen Federn verzierte Krone, die auf einem Samtkissen ruht, aber nie bei einer Krönungszeremonie verwendet wurde."
+    }
+  }
+}

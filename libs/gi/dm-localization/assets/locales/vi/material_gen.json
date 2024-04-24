@@ -191,6 +191,9 @@
   "Funds": {
     "name": "Vốn"
   },
+  "IridescenceTourTickets": {
+    "name": "Vé Sắc Màu Lưu Động"
+  },
   "Primogem": {
     "name": "Nguyên Thạch"
   },
@@ -521,6 +524,9 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Arlecchino": {
+    "name": "Arlecchino"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Chòm Sao Của Kamisato Ayaka"
   },
@@ -763,6 +769,9 @@
   },
   "ChiorisStellaFortuna": {
     "name": "Chòm Sao Của Chiori"
+  },
+  "ArlecchinosStellaFortuna": {
+    "name": "Chòm Sao Của Arlecchino"
   },
   "GnosticHymnOldNotes": {
     "name": "Nhật Ký Hành Trình Trân Châu - Khởi Đầu"
@@ -6917,6 +6926,21 @@
   "FashionShow": {
     "name": "\"Buổi Trình Diễn Thời Trang\""
   },
+  "RockNRollDangoMilk": {
+    "name": "Sữa Dango Rock&Roll"
+  },
+  "SuspiciousBulleSouffle": {
+    "name": "Souffle Bồng Bềnh Kỳ Lạ"
+  },
+  "BulleSouffle": {
+    "name": "Souffle Bồng Bềnh"
+  },
+  "DeliciousBulleSouffle": {
+    "name": "Souffle Bồng Bềnh Ngon"
+  },
+  "HearthfiresTrail": {
+    "name": "Vết Tích Của Lửa Ấm"
+  },
   "RecipeItem": {
     "name": "Đạo Cụ Công Thức"
   },
@@ -7493,6 +7517,9 @@
   "RecipeMegaMeatySushi": {
     "name": "Công Thức: Sushi Ngập Thịt"
   },
+  "RecipeBulleSouffle": {
+    "name": "Công Thức: Souffle Bồng Bềnh"
+  },
   "CraftedItems": {
     "name": "Sản Phẩm Ghép"
   },
@@ -7904,6 +7931,15 @@
   "ChasmlightFin": {
     "name": "Vây Thú Ánh Sáng Vực Thẳm"
   },
+  "RuinedHilt": {
+    "name": "Cán Kiếm Nát Vụn"
+  },
+  "SplinteredHilt": {
+    "name": "Cán Kiếm Nứt Vỡ"
+  },
+  "StillSmolderingHilt": {
+    "name": "Cán Kiếm Chưa Tắt"
+  },
   "HurricaneSeed": {
     "name": "Hạt Giống Bão"
   },
@@ -8077,6 +8113,18 @@
   },
   "CloudseamScale": {
     "name": "Vảy Giáp Tụ Mây"
+  },
+  "FragmentOfAGoldenMelody": {
+    "name": "Mảnh Giai Điệu Vàng"
+  },
+  "FadingCandle": {
+    "name": "Ngọn Nến Lửa Tàn"
+  },
+  "SilkenFeather": {
+    "name": "Lông Vũ Tơ Lụa"
+  },
+  "DenialAndJudgment": {
+    "name": "Phủ Định Và Phán Quyết"
   },
   "TileOfDecarabiansTower": {
     "name": "Ngói Vỡ Tháp Cô Vương"
@@ -10022,8 +10070,20 @@
   "OurChenyuValeTrekAlbum": {
     "name": "Tập Ảnh \"Hành Trình Trầm Ngọc\""
   },
+  "AncientAutoharmonicMusicBox": {
+    "name": "Hộp Nhạc Cổ Tự Vang"
+  },
   "StrangeKey": {
     "name": "Chìa Khóa Kỳ Lạ"
+  },
+  "BlankScore": {
+    "name": "Nhạc Phổ Trống"
+  },
+  "AncientScore": {
+    "name": "Nhạc Phổ Cổ Xưa"
+  },
+  "LostGrimoire": {
+    "name": "Sách Ma Pháp Thất Lạc"
   },
   "ShootingPracticeOpticalLenses": {
     "name": "Ống Kính Quang Học Tập Bắn"
@@ -10033,6 +10093,15 @@
   },
   "PerinheriII": {
     "name": "Perinheri II"
+  },
+  "AnecdotaSeptentrionalisI": {
+    "name": "Bí Sử Phương Bắc I"
+  },
+  "AnecdotaSeptentrionalisII": {
+    "name": "Bí Sử Phương Bắc II"
+  },
+  "AnecdotaSeptentrionalisIII": {
+    "name": "Bí Sử Phương Bắc III"
   },
   "HelpMePlease": {
     "name": "Cứu, Cứu Tôi!"
@@ -10151,6 +10220,9 @@
   "ChizhangMap": {
     "name": "Xích Chương Dư Đồ"
   },
+  "MiniPhonograph": {
+    "name": "Máy Ghi Âm Nhỏ"
+  },
   "AncientCityKey": {
     "name": "Chìa Khóa Thành Cổ"
   },
@@ -10163,11 +10235,29 @@
   "FishSeizedFromAPelicansMouth": {
     "name": "Cá Cướp Từ Miệng Bồ Nông"
   },
+  "InvitationFromTheAratakiGang": {
+    "name": "Thư Mời Của Bang Arataki"
+  },
   "FelixFelicium": {
     "name": "Chúc Phúc May Mắn"
   },
+  "ShikanoinHeizousMessage": {
+    "name": "Tin Nhắn Của Shikanoin Heizou"
+  },
+  "PuppyUnionAdmissionDetails": {
+    "name": "Chi Tiết Xử Lý Của \"Thương Hội Cún Con\""
+  },
   "LynettesEnvelope": {
     "name": "Phong Thư Của Lynette"
+  },
+  "RestoredScore": {
+    "name": "Nhạc Phổ Đã Sửa"
+  },
+  "PagesFromALostScoreI": {
+    "name": "Mảnh Nhạc Phổ Thất Lạc I"
+  },
+  "ARidiculouslyCommonBranch": {
+    "name": "Cành Cây Dễ Thấy Ở Mọi Nơi"
   },
   "CultivationAreaExpansionVII": {
     "name": "Mở Rộng Canh Tác VII"
@@ -10183,6 +10273,51 @@
   },
   "Manuscript": {
     "name": "Bản Thảo"
+  },
+  "IGotReincarnatedAsAnOnikabutoAndFlippedTheWorldUpsideDown": {
+    "name": "\"Chuyển Sinh Thành Onikabuto Rồi Lật Đổ Thế Giới\""
+  },
+  "CynosLetter": {
+    "name": "Thư Của Cyno"
+  },
+  "DamagedScore": {
+    "name": "Nhạc Phổ Bị Hỏng"
+  },
+  "RuggierosNotesII": {
+    "name": "Ghi Chép Của Ruggiero II"
+  },
+  "PagesFromALostScoreII": {
+    "name": "Mảnh Nhạc Phổ Thất Lạc II"
+  },
+  "AncientEngravings": {
+    "name": "Bia Đá Cổ Xưa"
+  },
+  "HarmostsNotesII": {
+    "name": "Ghi Chép Của Người Chỉnh Âm II"
+  },
+  "TatteredNavigationLog": {
+    "name": "Nhật Ký Hàng Hải Cũ Nát"
+  },
+  "RuggierosNotesI": {
+    "name": "Ghi Chép Của Ruggiero I"
+  },
+  "SomeonesNotes": {
+    "name": "Ghi Chép Của Ai Đó"
+  },
+  "RuggierosNotesIII": {
+    "name": "Ghi Chép Của Ruggiero III"
+  },
+  "InvestigationOfTheNorthernBarbarians": {
+    "name": "Về Khảo Sát Man Tộc Phía Bắc"
+  },
+  "HarmostsNotesI": {
+    "name": "Ghi Chép Của Người Chỉnh Âm I"
+  },
+  "AncientInscription": {
+    "name": "Chữ Khắc Cũ Kỹ"
+  },
+  "AncientPieceOfPaper": {
+    "name": "Mảnh Giấy Cũ Kỹ"
   },
   "TearsAmongTheStars": {
     "name": "Giọt Lệ Giữa Những Vì Sao"
@@ -10849,6 +10984,21 @@
   },
   "RadiantSpincrystal125": {
     "name": "Ngọc Thạch Âm Vang 125"
+  },
+  "RadiantSpincrystal126": {
+    "name": "Ngọc Thạch Âm Vang 126"
+  },
+  "RadiantSpincrystal127": {
+    "name": "Ngọc Thạch Âm Vang 127"
+  },
+  "RadiantSpincrystal128": {
+    "name": "Ngọc Thạch Âm Vang 128"
+  },
+  "RadiantSpincrystal129": {
+    "name": "Ngọc Thạch Âm Vang 129"
+  },
+  "RadiantSpincrystal130": {
+    "name": "Ngọc Thạch Âm Vang 130"
   },
   "LanternFiber": {
     "name": "Giấy Đèn"
@@ -11639,6 +11789,21 @@
   "TravelNotesArcaneAmassing": {
     "name": "Nhật Ký Hành Trình - Hóa Kỹ"
   },
+  "ArlecchinoEdict": {
+    "name": "Arlecchino - Sắc Lệnh"
+  },
+  "FontaineAttunement": {
+    "name": "Fontaine - Chỉnh Âm"
+  },
+  "AchievementWhalewrangler": {
+    "name": "Thành Tựu - Săn Cá Voi"
+  },
+  "FontaineLucine": {
+    "name": "Fontaine - Suối Sương"
+  },
+  "TravelNotesTheRealmsRocked": {
+    "name": "Nhật Ký Hành Trình - Rung Chuyển"
+  },
   "AnemoculusResonanceStone": {
     "name": "Đá Cộng Hưởng Phong Thần Đồng"
   },
@@ -11878,6 +12043,9 @@
   },
   "MiniSeelieBrilliance": {
     "name": "Tiên Linh Nhỏ Bé - Rực Rỡ"
+  },
+  "NightwindHorn": {
+    "name": "Kèn Gió Đêm"
   },
   "Fateometer": {
     "name": "\"Máy Chỉ Số Vận Mệnh\""
@@ -12119,6 +12287,12 @@
   "FatuiElectroCicinMage": {
     "name": "Fatui - Thuật Sĩ Cicin Lôi"
   },
+  "AbyssHeraldWickedTorrents": {
+    "name": "Sứ Đồ Vực Sâu - Kích Lưu"
+  },
+  "EmperorOfFireAndIron": {
+    "name": "Hoàng Đế Thép Lửa"
+  },
   "UndividedHeart": {
     "name": "Duy Thử Nhất Tâm"
   },
@@ -12356,6 +12530,18 @@
   "ElectroCicinsFlicker": {
     "name": "Cicin Lôi Lấp Lánh"
   },
+  "ToWardWeakness": {
+    "name": "Từ Bỏ Nhu Nhược"
+  },
+  "TheWondrousPathOfTruth": {
+    "name": "Đường Chân Lý Kỳ Diệu"
+  },
+  "SurgingUndercurrent": {
+    "name": "Dòng Nước Ngầm Trào Dâng"
+  },
+  "MoltenMail": {
+    "name": "Thiết Giáp Nóng Chảy"
+  },
   "MagicGuide": {
     "name": "Tóm Tắt Ma Pháp"
   },
@@ -12572,6 +12758,12 @@
   "GoldenTroupesReward": {
     "name": "Phần Thưởng Đoàn Kịch Hoàng Kim"
   },
+  "RightfulReward": {
+    "name": "Thù Lao Của Chính Nghĩa"
+  },
+  "AmethystCrown": {
+    "name": "Vương Miện Tử Tinh"
+  },
   "LiyueHarborWharf": {
     "name": "Bến Cảng Liyue"
   },
@@ -12697,6 +12889,15 @@
   },
   "FortressOfMeropide": {
     "name": "Pháo Đài Meropide"
+  },
+  "SeiraiIsland": {
+    "name": "Đảo Seirai"
+  },
+  "Taroumaru": {
+    "name": "Taroumaru"
+  },
+  "TheWhiteGloveAndTheFisherman": {
+    "name": "Găng Tay Trắng Và Ngư Dân"
   },
   "ElementalResonanceWovenIce": {
     "name": "Cộng Hưởng Nguyên Tố: Băng Giao Thoa"
@@ -12862,6 +13063,9 @@
   },
   "ControlledDirectionalBlast": {
     "name": "Nổ Định Hướng Có Kiểm Soát"
+  },
+  "UnderwaterTreasureHunt": {
+    "name": "Tìm Kho Báu Đáy Biển"
   },
   "Origin": {
     "name": "Nguyên Sơ"
@@ -13409,6 +13613,9 @@
   "CiderLakelight": {
     "name": "Ánh Sáng Hồ Rượu Trái Cây"
   },
+  "MusicTownsStreetlampSafetyLighting": {
+    "name": "Đèn Đường Phố Nhạc - Ánh Sáng An Toàn"
+  },
   "EfflorescentIllumination": {
     "name": "Ánh Sáng Trăm Hoa"
   },
@@ -13898,6 +14105,12 @@
   "TeahouseToolClearView": {
     "name": "Dụng Cụ Phòng Trà - Ngắm Nhìn Quy Củ"
   },
+  "HotelRailingFreshMintLeaves": {
+    "name": "Lan Can Khách Sạn - Bạc Hà Lá Mới"
+  },
+  "HotelRailingPerfectViewingArc": {
+    "name": "Lan Can Khách Sạn - Cảnh Vòm Hoàn Hảo"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Thảm Mondstadt - Ngọn Lửa Nhiệt Tình"
   },
@@ -13940,6 +14153,9 @@
   "RestaurantRugBathingInTheBreeze": {
     "name": "Thảm Nhà Hàng: Tắm Trong Làn Gió"
   },
+  "FontainianCarpetFairAndSquare": {
+    "name": "Thảm Fontaine - Công Bằng Ngay Ngắn"
+  },
   "TrustyPortableLamp": {
     "name": "Đèn Treo Ánh Sáng Bất Tận"
   },
@@ -13972,6 +14188,9 @@
   },
   "TwoWayIronLamp": {
     "name": "Đèn Sắt Đa Dụng"
+  },
+  "SimpleLightingLocallySourcedMaterials": {
+    "name": "Đèn Đơn Giản - Có Gì Dùng Nấy"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Bình Hoa - Ung Dung Nhạt Nhòa"
@@ -14237,6 +14456,9 @@
   "IndoorLampTheTwilightSea": {
     "name": "Đèn Trong Nhà - \"Hoàng Hôn Trên Biển\""
   },
+  "MekaLuminaireSilentNightsContemplation": {
+    "name": "Đèn Dây Cót - Đêm Yên Trầm Tư"
+  },
   "LingeringMoment": {
     "name": "Thời Khắc Nhớ Nhung"
   },
@@ -14455,6 +14677,9 @@
   },
   "PoissonsSeasonalProduce": {
     "name": "Đồ Tươi Đầu Mùa Phố Poisson"
+  },
+  "MusicTownsHutMardouceHarmony": {
+    "name": "Lều Phố Nhạc - Hòa Âm Dịu Nhẹ"
   },
   "HilichurlOutpostHut": {
     "name": "Trạm Gác Hilichurl"
@@ -14797,6 +15022,18 @@
   },
   "ASimpleResidenceInPoisson": {
     "name": "Căn Nhà Đơn Sơ Phố Poisson"
+  },
+  "TollingOfTheMusicmakingTown": {
+    "name": "\"Tiếng Chuông Của Thị Trấn Âm Nhạc\""
+  },
+  "PeacefulResidenceInTheMusicmakingTown": {
+    "name": "\"Bình Yên Của Thị Trấn Âm Nhạc\""
+  },
+  "WorkshopInTheMusicmakingTown": {
+    "name": "\"Nhà Xưởng Của Thị Trấn Âm Nhạc\""
+  },
+  "ResourcefulResidenceInTheMusicmakingTown": {
+    "name": "\"Nhà Ở Của Thị Trấn Âm Nhạc\""
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Đài Phun Nước Hoa Và Chim"
@@ -15308,6 +15545,12 @@
   "RoyalPurple": {
     "name": "Sắc Tím Quý Tộc"
   },
+  "InspirationsPureWhiteBlossoms": {
+    "name": "\"Linh Cảm Thuần Khiết\""
+  },
+  "SalubriousFragrance": {
+    "name": "\"Hương Thơm Chữa Lành\""
+  },
   "FirShelves": {
     "name": "Kệ Đồ Gỗ Sam"
   },
@@ -15662,6 +15905,21 @@
   "CleverlyCraftedContraptionBornInBlessedBitterness": {
     "name": "Công Cụ Khéo Léo - Sinh Từ Khốn Khó"
   },
+  "OriginOfMusic": {
+    "name": "\"Khởi Nguồn Của Âm Nhạc\""
+  },
+  "LegionsFuriousHorns": {
+    "name": "\"Tù Và Giận Dữ Của Quân Đoàn\""
+  },
+  "HiddenSerpent": {
+    "name": "\"Rắn Lẩn Trốn\""
+  },
+  "MirrorReflectionLyre": {
+    "name": "\"Cung Đàn Như Gương\""
+  },
+  "CrystallineGlory": {
+    "name": "\"Vinh Quang Trong Trẻo\""
+  },
   "BookshelfFreeReading": {
     "name": "Kệ Sách Báo - \"Tự Do Lấy Đọc\""
   },
@@ -15697,6 +15955,9 @@
   },
   "TeaHarvestsSunDriedFragrance": {
     "name": "Thu Hoạch Trà Và Phơi Nắng"
+  },
+  "MallowWoodMailboxStorage": {
+    "name": "Hòm Thư Gỗ Ngô Đồng - Vật Chứa"
   },
   "WeatheredBambooFence": {
     "name": "Hàng Rào Trúc Sờn Cũ"
@@ -15740,6 +16001,12 @@
   "StandardRailingScatteredStructure": {
     "name": "Lan Can Tiêu Chuẩn - Bất Quy Tắc"
   },
+  "MallowWoodDoorframeGentleMelody": {
+    "name": "Khung Cửa Gỗ Ngô Đồng - Giai Điệu Nhẹ"
+  },
+  "MallowWoodFenceTides": {
+    "name": "Lan Can Gỗ Ngô Đồng - Thủy Triều"
+  },
   "SmoothWoodenBench": {
     "name": "Ghế Gỗ Dài"
   },
@@ -15772,6 +16039,12 @@
   },
   "TeaVillageStoneBenchSafeSpaciousSturdy": {
     "name": "Ghế Đá Vườn Trà - Yên Bình Vững Chắc"
+  },
+  "MallowWoodBenchHiddenMelody": {
+    "name": "Ghế Dài Gỗ Ngô Đồng - Nhạc Ẩn"
+  },
+  "MallowWoodChairEZFold": {
+    "name": "Ghế Gỗ Ngô Đồng - Gấp Gọn"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "Tháp Canh Hilichurl Hai Tầng"
@@ -15836,6 +16109,12 @@
   "TeaVillageStoneTableCulturedLeisure": {
     "name": "Bàn Đá Vườn Trà - Nhàn Nhã Thanh Lịch"
   },
+  "MallowWoodLongTableEngravedMemories": {
+    "name": "Bàn Dài Gỗ Ngô Đồng - Khắc Ghi Hồi Ức"
+  },
+  "MallowWoodRoundTableASharedDrink": {
+    "name": "Bàn Tròn Gỗ Ngô Đồng - Cùng Uống"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Tủ Rượu - Uống Cạn Trăm Ly"
   },
@@ -15865,5 +16144,8 @@
   },
   "TearstoneTilePerspectiveTheory": {
     "name": "Gạch Đá Nước Mắt: Lý Thuyết Trong Suốt"
+  },
+  "SwordBearingStatueEternalWatch": {
+    "name": "Tượng Đá Cầm Kiếm - Hộ Vệ Vĩnh Hằng"
   }
 }
