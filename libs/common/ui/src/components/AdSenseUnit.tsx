@@ -1,13 +1,13 @@
+import type { BoxProps } from '@mui/material'
+import { Box } from '@mui/material'
 import { useEffect } from 'react'
 
 export function AdSenseUnit({
   dataAdSlot,
-  height,
-  width,
+  sx = {},
 }: {
   dataAdSlot: string
-  height?: number
-  width?: number
+  sx?: BoxProps['sx']
 }) {
   useEffect(() => {
     try {
@@ -20,13 +20,12 @@ export function AdSenseUnit({
   }, [])
 
   return (
-    <ins
+    <Box
+      component="ins"
       className="adsbygoogle"
-      style={{ display: 'block', height: `${height}px`, width: `${width}px` }}
+      sx={{ display: 'block', margin: 'auto', ...sx }}
       data-ad-client="ca-pub-2443965532085844"
       data-ad-slot={dataAdSlot}
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>
+    />
   )
 }

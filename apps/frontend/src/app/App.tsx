@@ -121,9 +121,18 @@ function Content() {
     >
       <Header anchor="back-to-top-anchor" />
       {/* Top banner ad */}
-      <Box className="ad-wrapper" m={1} display="flex" justifyContent="center">
-        {/* limit the height of top banner ad */}
-        <AdWrapper dataAdSlot="3477080462" height={90} />
+      <Box m={1}>
+        {width && (
+          <AdWrapper
+            dataAdSlot="3477080462"
+            sx={{
+              height: 90,
+              minWidth: 300,
+              maxWidth: Math.min(1000, width - 20),
+              width: '100%',
+            }}
+          />
+        )}
       </Box>
       {/* Main content */}
       <Box
@@ -133,14 +142,18 @@ function Content() {
         alignItems="flex-start"
       >
         {/* left Rail ad */}
-        <Box
-          className="ad-wrapper"
-          sx={{ flexShrink: 1, position: 'sticky', top: 0 }}
-        >
-          {adWidth >= 160 && (
+        {/* Adding a padding of 60 ensures that there is at least 60px between ads (from top or bottom) */}
+        <Box sx={{ flexShrink: 1, position: 'sticky', top: 0, py: '60px' }}>
+          {width && adWidth >= 160 && (
             <AdWrapper
               dataAdSlot="2411728037"
-              width={adWidth >= 160 && adWidth <= 320 ? adWidth : adWidth * 0.5}
+              sx={{
+                minWidth: 160,
+                maxWidth:
+                  adWidth >= 160 && adWidth <= 320 ? adWidth : adWidth * 0.5,
+                height: 600,
+                width: '100%',
+              }}
             />
           )}
         </Box>
@@ -172,12 +185,18 @@ function Content() {
           </Suspense>
         </Container>
         {/* right rail ad */}
-        <Box
-          className="ad-wrapper"
-          sx={{ flexShrink: 1, position: 'sticky', top: 0 }}
-        >
-          {adWidth > 320 && (
-            <AdWrapper dataAdSlot="2411728037" width={adWidth * 0.5} />
+        {/* Adding a padding of 60 ensures that there is at least 60px between ads (from top or bottom) */}
+        <Box sx={{ flexShrink: 1, position: 'sticky', top: 0, py: '60px' }}>
+          {width && adWidth > 320 && (
+            <AdWrapper
+              dataAdSlot="2411728037"
+              sx={{
+                minWidth: 160,
+                maxWidth: adWidth * 0.5,
+                height: 600,
+                width: '100%',
+              }}
+            />
           )}
         </Box>
       </Box>
@@ -186,8 +205,19 @@ function Content() {
       <Box flexGrow={1} />
       <Snow />
       {/* Footer Ad */}
-      <Box className="ad-wrapper" m={1} display="flex" justifyContent="center">
-        <AdWrapper dataAdSlot="2396256483" />
+      <Box m={1}>
+        {width && (
+          <AdWrapper
+            dataAdSlot="2396256483"
+            sx={{
+              mx: 'auto',
+              height: 90,
+              minWidth: 300,
+              maxWidth: Math.min(1000, width - 20),
+              width: '100%',
+            }}
+          />
+        )}
       </Box>
       <Footer />
     </Box>
