@@ -9,7 +9,7 @@ type ReliquarySetExcelConfigData = {
   //   2,
   //   4
   // ],
-  EquipAffixId: number //215008,
+  equipAffixId: number //215008,
   containsList: number[]
   // [
   //   82340,
