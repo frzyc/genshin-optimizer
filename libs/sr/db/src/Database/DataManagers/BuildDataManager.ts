@@ -3,8 +3,8 @@ import {
   allRelicSlotKeys,
   type RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
-import type { SroDatabase } from '../Database'
 import { DataManager } from '../DataManager'
+import type { SroDatabase } from '../Database'
 export interface Build {
   name: string
   description: string
