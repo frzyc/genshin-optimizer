@@ -52,7 +52,7 @@
     "name": "Eredità immonda: Marea infuriata",
     "description": {
       "0": "Scatena un set di armi fatte di pura acqua, infliggendo <hydro>DAN da Hydro</hydro> agli avversari circostanti e assumendo la posizione da mischia.",
-      "1": "In questa posizione, gli attacchi normali e caricati di Tartaglia si trasformano in <hydro>DAN da Hydro</hydro> che non possono essere contrastati da altre infusioni elementali e cambiano come segue:",
+      "1": "In questa posizione, gli attacchi normali e caricati di Tartaglia si trasformano in <hydro>DAN da Hydro</hydro> non influenzabili da altre infusioni elementali e cambiano come segue:",
       "2": "<br/>",
       "3": "<strong>Attacco normale</strong>",
       "4": "Sferra fino a 6 colpi di <hydro>Hydro</hydro> consecutivi.",

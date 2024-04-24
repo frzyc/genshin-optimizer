@@ -1,0 +1,24 @@
+{
+  "name": "Hình Thái Xích Nguyệt",
+  "description": {
+    "0": "Vũ khí sắc bén có màu chói lóa như vầng trăng đỏ. Nghe nói trong vương triều cổ xưa từng được xem là vật nghi lễ nối liền hai thế giới, nhưng nay đã không còn ai nhớ đến tín ngưỡng và nghi lễ năm xưa nữa."
+  },
+  "passiveName": "Bóng Tối Mặt Trời Tàn",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi Trọng Kích trúng kẻ địch sẽ cung cấp Khế Ước Sinh Mệnh tương đương với 25% Giới Hạn HP, hiệu quả này mỗi 14s tối đa kích hoạt một lần. Ngoài ra, người trang bị khi có Khế Ước Sinh Mệnh, sát thương gây ra sẽ tăng <cryo>12%</cryo>; Nếu giá trị Khế Ước Sinh Mệnh lớn hơn hoặc bằng 30% Giới Hạn HP, sát thương gây ra sẽ tăng thêm <cryo>24%</cryo>."
+    },
+    "1": {
+      "0": "Khi Trọng Kích trúng kẻ địch sẽ cung cấp Khế Ước Sinh Mệnh tương đương với 25% Giới Hạn HP, hiệu quả này mỗi 14s tối đa kích hoạt một lần. Ngoài ra, người trang bị khi có Khế Ước Sinh Mệnh, sát thương gây ra sẽ tăng <cryo>16%</cryo>; Nếu giá trị Khế Ước Sinh Mệnh lớn hơn hoặc bằng 30% Giới Hạn HP, sát thương gây ra sẽ tăng thêm <cryo>32%</cryo>."
+    },
+    "2": {
+      "0": "Khi Trọng Kích trúng kẻ địch sẽ cung cấp Khế Ước Sinh Mệnh tương đương với 25% Giới Hạn HP, hiệu quả này mỗi 14s tối đa kích hoạt một lần. Ngoài ra, người trang bị khi có Khế Ước Sinh Mệnh, sát thương gây ra sẽ tăng <cryo>20%</cryo>; Nếu giá trị Khế Ước Sinh Mệnh lớn hơn hoặc bằng 30% Giới Hạn HP, sát thương gây ra sẽ tăng thêm <cryo>40%</cryo>."
+    },
+    "3": {
+      "0": "Khi Trọng Kích trúng kẻ địch sẽ cung cấp Khế Ước Sinh Mệnh tương đương với 25% Giới Hạn HP, hiệu quả này mỗi 14s tối đa kích hoạt một lần. Ngoài ra, người trang bị khi có Khế Ước Sinh Mệnh, sát thương gây ra sẽ tăng <cryo>24%</cryo>; Nếu giá trị Khế Ước Sinh Mệnh lớn hơn hoặc bằng 30% Giới Hạn HP, sát thương gây ra sẽ tăng thêm <cryo>48%</cryo>."
+    },
+    "4": {
+      "0": "Khi Trọng Kích trúng kẻ địch sẽ cung cấp Khế Ước Sinh Mệnh tương đương với 25% Giới Hạn HP, hiệu quả này mỗi 14s tối đa kích hoạt một lần. Ngoài ra, người trang bị khi có Khế Ước Sinh Mệnh, sát thương gây ra sẽ tăng <cryo>28%</cryo>; Nếu giá trị Khế Ước Sinh Mệnh lớn hơn hoặc bằng 30% Giới Hạn HP, sát thương gây ra sẽ tăng thêm <cryo>56%</cryo>."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Ảo Mộng Chưa Hoàn Thành",
+  "setEffects": {
+    "2": "Tấn công tăng 18%",
+    "4": "Sau khi rời khỏi chiến đấu 3s, sát thương gây ra tăng 50%. Khi trong trạng thái chiến đấu, nếu trên 6s mà xung quanh không có kẻ địch bị trạng thái Thiêu Đốt, thì hiệu quả tăng sát thương nêu trên sẽ giảm 10% mỗi giây cho đến khi giảm còn 0%; Nếu có kẻ địch bị trạng thái Thiêu Đốt thì mỗi giây sẽ tăng 10% cho đến khi tăng đến 50%. Nhân vật trang bị Thánh Di Vật này khi không ra trận vẫn có thể kích hoạt hiệu quả này."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hoa Sáng Của Quả Đen",
+      "desc": "Đóa hoa được chạm khắc bằng đá xám, từng là minh chứng cho sự khác biệt giữa hai phe trong trận chiến nào đó."
+    },
+    "plume": {
+      "name": "Đuôi Phỉ Thúy Phai Màu",
+      "desc": "Lông đuôi trang trí đã mất đi ánh hào quang. Hoa văn trên đó nghe nói được chế tác từ tay nghề của người thợ thời xưa."
+    },
+    "sands": {
+      "name": "Thời Khắc Của Đạt Thành",
+      "desc": "Bảng ghi chép thời gian của vương quốc cổ xưa. Ở một thời điểm nào đó sẽ để lại dấu ấn nhỏ mà chỉ có thể nhìn thấy khi quan sát kỹ."
+    },
+    "goblet": {
+      "name": "Ly Rượu Cùng Bày Mưu",
+      "desc": "Ly ba chân làm bằng gốm, từng có rất nhiều anh hùng nâng ly uống rượu bên lửa trại, nói về tham vọng và kỳ vọng của mỗi người."
+    },
+    "circlet": {
+      "name": "Vương Miện Quý Không Ngai",
+      "desc": "Vương miện vàng được trang trí bằng lam ngọc và lá phỉ thúy, nhưng nó luôn nằm trên đệm nhung trống, chưa bao giờ xuất hiện trong lễ trao vương miện."
+    }
+  }
+}

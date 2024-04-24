@@ -1,0 +1,172 @@
+{
+  "name": "Arlecchino",
+  "title": "Uğursuz Ayın Karanlığı",
+  "description": "Fatui Habercilerinin Dördüncüsü \"Yaver\". Soğukkanlı ve acımasız bir diplomat. Taş Yuva çocukları içinse korkulan ancak güvenilir bir \"Baba\".",
+  "constellationName": "Arındıran Alevler",
+  "auto": {
+    "name": "İnfaza Çağrı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 6 mızrak saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli bir miktar Dayanıklılık tüketerek yakındaki bir düşmana doğru atılır ve bir vuruş yapar.",
+        "2": "Butona sürekli olarak basılı tutulduğunda Arlecchino, Dayanıklılık tüketerek 5 saniyeye kadar yüksek hızda hareket eder."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      },
+      "infusion": {
+        "0": "<strong>Kızıl Ölümün Maskesi</strong>",
+        "1": "Arlecchino, Maks. Canının %30'u kadar veya üzeri Hayat Bağına sahip olduğunda \"Kızıl Ölümün Maskesi\" durumuna girer. Bu durumdayken Normal, Yüklü ve Havadan Saldırılarıyla verilen Hasar <pyro>Ateş Hasarına</pyro> dönüşür. Bu sonradan değiştirilemez.",
+        "2": "\"Kızıl Ölümün Maskesi\" durumundayken Arlecchino'nun Normal Saldırısı, isabet ettiği düşmanlara Arlecchino'nun Saldırısı ile mevcut Hayat Bağı yüzdesinin belirli bir oranı çarpılarak hesaplanan bir ek Hasar verir. Bu durum mevcut Hayat Bağının %7,5'ini tüketir. Hayat Bağı bu şekilde her 0,03 saniyede bir tüketilebilir. Hayat Bağı bu şekilde tüketildiğinde Hepsi Kül Oldu becerisinin Bekleme Süresi 0,8sn azalır."
+      }
+    },
+    "skillParams": {
+      "0": "Kızıl Ölümün Maskesi Artışı",
+      "1": "1 Vuruş Hasarı",
+      "2": "2 Vuruş Hasarı",
+      "3": "3 Vuruş Hasarı",
+      "4": "4 Vuruş Hasarı",
+      "5": "5 Vuruş Hasarı",
+      "6": "6 Vuruş Hasarı",
+      "7": "Yüklü Saldırı Hasarı",
+      "8": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "9": "Yüksek Hızda Hareket Dayanıklılık Maliyeti",
+      "10": "Havadan Saldırı Hasarı",
+      "11": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hepsi Kül Oldu",
+    "description": {
+      "0": "Uğursuz Ayın Kanlı Ateşini çağırarak yakında bulunan birden fazla düşmana <pyro>Ateş Hasarı</pyro> verir, bu düşmanlardan birine doğru atılarak keskin bir vuruş yapar ve <pyro>Ateş Alan Hasarı</pyro> verir.",
+      "1": "Bu saldırının isabet ettiği düşmanlara Kan Borcu Fermanı uygulanır.",
+      "2": "<br/>",
+      "3": "<strong>Kan Borcu Fermanı</strong>",
+      "4": [
+        "30sn sürer. En fazla 2 defa olmak üzere düşmana her 5 saniyede 1 defa <pyro>Ateş Hasarı</pyro> verir. Bu Hasar, Element Becerisi Hasarı sayılır.",
+        "Arlecchino bir Yüklü Saldırı yaptığında veya Element Patlaması Uğursuz Ayın Doğuşunu kullandığında yakındaki Kan Borcu Fermanlarını geri alır. Geri aldığı her Ferman, Arlecchino'ya Maks. Canının %65'i kadar Hayat Bağı kazandırır.",
+        "Element Becerisi kullandıktan sonra 35sn içinde Kan Borcu Fermanı ile kazanabileceği en fazla Hayat Bağı değeri Maks. Canının %145'i kadardır. Bu süre boyunca Element Becerisi tekrar kullanıldığında hem süresi hem de Arlecchino'nun Kan Borcu Fermanı ile kazanabileceği Hayat Bağı değerinin sınırı sıfırlanır."
+      ],
+      "5": "<br/>",
+      "6": "<i>Ona göre toprağa düşen her buğday tanesi serpilip büyümez ancak ona engel olanlar, yanıp kül oldukları zaman çiçekleri beslemek üzere kullanılabilir.</i>"
+    },
+    "skillParams": {
+      "0": "Diken Hasarı",
+      "1": "Kesik Hasarı",
+      "2": "Kan Borcu Fermanı Hasarı",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Uğursuz Ayın Doğuşu",
+    "description": {
+      "0": "Arlecchino, Uğursuz Ayın Kanlı Ateşinin büyük kanadıyla yakındaki Kan Borcu Fermanlarını geri alarak <pyro>Ateş Alan Hasarı</pyro> verir, Hepsi Kül Oldu becerisinin Bekleme Süresini sıfırlar ve kendini iyileştirir. Bu iyileştirme onun Hayat Bağı değerine ve Saldırısına bağlıdır.",
+      "1": "<br/>",
+      "2": "<i>Teyvat'taki yaygın bir düşünceye göre ayın dolunay dışındaki evreleri, yalnızca simya ve astrolojiyle uğraşanlar tarafından kullanılır ve uğursuz bir anlama sahiptir.",
+      "3": "Bu kızıl ayı birçok defa rüyasında görmüştü. O rüyalar bir felaketin mi habercisiydi? Öyleydi evet ancak kaderde yazılı olan bu felaket, esasında onu öfkelendirenler içindi.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Yenilenen Can Miktarı",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Yalnızca Acı Telafi Edebilir",
+    "description": {
+      "0": "<strong>Kan Borcu Fermanı</strong> şu özelliklere sahiptir:",
+      "1": [
+        "Arlecchino'nun Ferman uyguladığı bir düşman yenildiğinde Arlecchino Maks. Canının %130'u kadar Hayat Bağı kazanır.",
+        "Bir Ferman, uygulandıktan 5sn sonra Kan Borcu Vadesine yükseltilir. Vade geri alındığında Arlecchino %130 oranında Hayat Bağı kazanır."
+      ],
+      "2": "Yukarıda belirtilen şekillerde oluşturulan Hayat Bağı, <strong>Hepsi Kül Oldu</strong> becerisi ile elde edilebilen Hayat Bağı sınırını aşamaz."
+    }
+  },
+  "passive2": {
+    "name": "Yalnızca Kuvvet Savunabilir",
+    "description": {
+      "0": "Arlecchino, 1.000'in üzerinde sahip olduğu her 100 Saldırı için %1 Tüm Element Direnci ve Fiziksel Direnç kazanır. İki Direnç türü için de kazanabileceği maksimum artış %20'dir."
+    }
+  },
+  "passive3": {
+    "name": "Yalnızca Uğursuz Ay Bilebilir",
+    "description": {
+      "0": "Arlecchino savaştayken %40 <pyro>Ateş Hasarı Bonusu</pyro> kazanır ve yalnızca <strong>Uğursuz Ayın Doğuşu</strong> ile iyileştirilebilir."
+    }
+  },
+  "constellation1": {
+    "name": "\"Tüm İntikamlar ve Borçlar Bana Aittir...\"",
+    "description": {
+      "0": "Kızıl Ölümün Maskesi daha da gelişir, artış değeri %100 olur. Ayrıca Arlecchino, Kızıl Ölümün Maskesi etkisindeyken Normal veya Yüklü Saldırı yaptığında müdahaleye karşı direnci artar."
+    }
+  },
+  "constellation2": {
+    "name": "\"Tüm Ödüller ve Cezalar Bendendir...\"",
+    "description": {
+      "0": "<strong>Kan Borcu Fermanları</strong> ilk uygulandığında Kan Borcu Vadesi olur.",
+      "1": "Arlecchino bir Vade geri aldığında önünde Saldırısının %900'ü kadar <pyro>Ateş Alan Hasarı</pyro> veren ve 15 saniyeliğine Arlecchino'nun Tüm Element Direnci ve Fiziksel Direncini %20 artıran bir Uğursuz Ayın Kanlı Ateşi çıkarır. Bu etki her 10 saniyede bir tetiklenebilir.",
+      "2": "\"Yalnızca Acı Telafi Edebilir\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation3": {
+    "name": "\"Ailemizin Yeni Üyesi Olacaksın...\"",
+    "description": {
+      "0": "<strong>Normal Saldırı: İnfaza Çağrı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "\"Bundan Böyle Birbirinizi Sevip Koruyun...\"",
+    "description": {
+      "0": "Arlecchino bir Kan Borcu Fermanını geri aldığında <strong>Uğursuz Ayın Doğuşu</strong> becerisinin Bekleme Süresi 2sn azalır ve Arlecchino 15 Element Enerjisi yeniler. Bu etki her 10 saniyede bir uygulanabilir."
+    }
+  },
+  "constellation5": {
+    "name": "\"Yalnızlığımız Ölümle Birdir...\"",
+    "description": {
+      "0": "<strong>Uğursuz Ayın Doğuşu</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "\"Bugünden İtibaren Yeni Bir Hayatın Tadını Çıkaralım.\"",
+    "description": {
+      "0": "<strong>Uğursuz Ayın Doğuşu</strong> ile verilen Hasar, Arlecchino'nun Saldırısının, mevcut Hayat Bağı oranının %700'ü ile çarpımı kadar artar.",
+      "1": "Arlecchino, <strong>Hepsi Kül Oldu</strong> kullandıktan sonra 20 saniyeliğine Normal Saldırısının ve Element Patlamasının Kritik Oranı %10, Kritik Hasarı %70 artar. Bu etki her 15 saniyede bir tetiklenebilir."
+    }
+  }
+}

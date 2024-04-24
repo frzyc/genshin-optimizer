@@ -191,6 +191,9 @@
   "Funds": {
     "name": "เงินทุน"
   },
+  "IridescenceTourTickets": {
+    "name": "\"บัตรทัวร์แสงสีตระการตา\""
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -521,6 +524,9 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Arlecchino": {
+    "name": "Arlecchino"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Kamisato Ayaka"
   },
@@ -763,6 +769,9 @@
   },
   "ChiorisStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Chiori"
+  },
+  "ArlecchinosStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Arlecchino"
   },
   "GnosticHymnOldNotes": {
     "name": "BP อัศวิน-ฉบับร่าง"
@@ -1371,7 +1380,7 @@
     "name": "เศษผ้าขาด"
   },
   "BreezeAmidstTheForestSupplementTheDragonTome": {
-    "name": "ลมหวนในป่าเขา - หนังสือแห่งมังกร"
+    "name": "สายลมในป่าเขา - หนังสือแห่งมังกร"
   },
   "LetterFromTheAbyssOrder": {
     "name": "จดหมายจาก Abyss Order"
@@ -6917,6 +6926,21 @@
   "FashionShow": {
     "name": "\"แฟชั่นโชว์\""
   },
+  "RockNRollDangoMilk": {
+    "name": "Rock 'n' Roll Dango Milk"
+  },
+  "SuspiciousBulleSouffle": {
+    "name": "Bulle Souffle รสประหลาด"
+  },
+  "BulleSouffle": {
+    "name": "Bulle Souffle"
+  },
+  "DeliciousBulleSouffle": {
+    "name": "Bulle Souffle แสนอร่อย"
+  },
+  "HearthfiresTrail": {
+    "name": "Hearthfire's Trail"
+  },
   "RecipeItem": {
     "name": "Cooking Ingredients"
   },
@@ -7493,6 +7517,9 @@
   "RecipeMegaMeatySushi": {
     "name": "สูตรอาหาร: Mega-Meaty Sushi"
   },
+  "RecipeBulleSouffle": {
+    "name": "สูตรอาหาร: Bulle Souffle"
+  },
   "CraftedItems": {
     "name": "ไอเทมจากการสร้าง"
   },
@@ -7904,6 +7931,15 @@
   "ChasmlightFin": {
     "name": "Chasmlight Fin"
   },
+  "RuinedHilt": {
+    "name": "Ruined Hilt"
+  },
+  "SplinteredHilt": {
+    "name": "Splintered Hilt"
+  },
+  "StillSmolderingHilt": {
+    "name": "Still-Smoldering Hilt"
+  },
   "HurricaneSeed": {
     "name": "Hurricane Seed"
   },
@@ -8077,6 +8113,18 @@
   },
   "CloudseamScale": {
     "name": "Cloudseam Scale"
+  },
+  "FragmentOfAGoldenMelody": {
+    "name": "Fragment of a Golden Melody"
+  },
+  "FadingCandle": {
+    "name": "Fading Candle"
+  },
+  "SilkenFeather": {
+    "name": "Silken Feather"
+  },
+  "DenialAndJudgment": {
+    "name": "Denial and Judgment"
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
@@ -10022,8 +10070,20 @@
   "OurChenyuValeTrekAlbum": {
     "name": "อัลบั้มที่ระลึก \"เส้นทางแห่ง Chenyu\""
   },
+  "AncientAutoharmonicMusicBox": {
+    "name": "กล่องดนตรีโบราณเล่นอัตโนมัติ"
+  },
   "StrangeKey": {
     "name": "กุญแจประหลาด"
+  },
+  "BlankScore": {
+    "name": "โน้ตเพลงเปล่า"
+  },
+  "AncientScore": {
+    "name": "โน้ตเพลงโบราณ"
+  },
+  "LostGrimoire": {
+    "name": "คัมภีร์กรีมัวร์ที่หายไป"
   },
   "ShootingPracticeOpticalLenses": {
     "name": "\"เลนส์สายตาฝึกยิง\""
@@ -10033,6 +10093,15 @@
   },
   "PerinheriII": {
     "name": "Perinheri (II)"
+  },
+  "AnecdotaSeptentrionalisI": {
+    "name": "ประวัติศาสตร์ลับตอนเหนือ I"
+  },
+  "AnecdotaSeptentrionalisII": {
+    "name": "ประวัติศาสตร์ลับตอนเหนือ II"
+  },
+  "AnecdotaSeptentrionalisIII": {
+    "name": "ประวัติศาสตร์ลับตอนเหนือ III"
   },
   "HelpMePlease": {
     "name": "ช่วยฉันด้วย!"
@@ -10151,6 +10220,9 @@
   "ChizhangMap": {
     "name": "แผนที่ Chizhang"
   },
+  "MiniPhonograph": {
+    "name": "เครื่องเล่นแผ่นเสียงขนาดเล็ก"
+  },
   "AncientCityKey": {
     "name": "กุญแจกำแพงเมืองโบราณ"
   },
@@ -10163,11 +10235,29 @@
   "FishSeizedFromAPelicansMouth": {
     "name": "ปลาที่แย่งออกมาจากปากของ \"นกกระทุง\""
   },
+  "InvitationFromTheAratakiGang": {
+    "name": "จดหมายเชิญจากแก๊ง Arataki"
+  },
   "FelixFelicium": {
     "name": "\"พรแห่งโชค\""
   },
+  "ShikanoinHeizousMessage": {
+    "name": "ข้อความจาก Shikanoin Heizou"
+  },
+  "PuppyUnionAdmissionDetails": {
+    "name": "รายละเอียดการรับสมัครของ \"สมาคมน้องหมา\""
+  },
   "LynettesEnvelope": {
     "name": "ซองจดหมายถึง Lynette"
+  },
+  "RestoredScore": {
+    "name": "โน้ตเพลงที่ซ่อมแซมแล้ว"
+  },
+  "PagesFromALostScoreI": {
+    "name": "เศษหน้ากระดาษโน้ตเพลงที่สาบสูญ I"
+  },
+  "ARidiculouslyCommonBranch": {
+    "name": "กิ่งไม้ที่พบเห็นได้ทั่วไป"
   },
   "CultivationAreaExpansionVII": {
     "name": "ส่วนขยายพื้นที่เพาะปลูก 7"
@@ -10183,6 +10273,51 @@
   },
   "Manuscript": {
     "name": "ต้นฉบับ"
+  },
+  "IGotReincarnatedAsAnOnikabutoAndFlippedTheWorldUpsideDown": {
+    "name": "\"เกิดใหม่เป็น Onikabuto... จากนั้นก็ชนโลกให้พลิกคว่ำ\""
+  },
+  "CynosLetter": {
+    "name": "จดหมายของ Cyno"
+  },
+  "DamagedScore": {
+    "name": "โน้ตเพลงที่เสียหาย"
+  },
+  "RuggierosNotesII": {
+    "name": "บันทึกของ Ruggiero (II)"
+  },
+  "PagesFromALostScoreII": {
+    "name": "เศษหน้ากระดาษโน้ตเพลงที่สาบสูญ II"
+  },
+  "AncientEngravings": {
+    "name": "แผ่นศิลาจารึกโบราณ"
+  },
+  "HarmostsNotesII": {
+    "name": "บันทึกของช่างจูนเสียง (II)"
+  },
+  "TatteredNavigationLog": {
+    "name": "บันทึกการเดินเรือที่เสียหาย"
+  },
+  "RuggierosNotesI": {
+    "name": "บันทึกของ Ruggiero (I)"
+  },
+  "SomeonesNotes": {
+    "name": "บันทึกของใครสักคน"
+  },
+  "RuggierosNotesIII": {
+    "name": "บันทึกของ Ruggiero (III)"
+  },
+  "InvestigationOfTheNorthernBarbarians": {
+    "name": "การตรวจสอบเกี่ยวกับพวกอนารยชนในตอนเหนือ"
+  },
+  "HarmostsNotesI": {
+    "name": "บันทึกของช่างจูนเสียง (I)"
+  },
+  "AncientInscription": {
+    "name": "ตราจารึกโบราณ"
+  },
+  "AncientPieceOfPaper": {
+    "name": "กระดาษโน้ตโบราณ"
   },
   "TearsAmongTheStars": {
     "name": "น้ำตาแห่งดวงดาว"
@@ -10849,6 +10984,21 @@
   },
   "RadiantSpincrystal125": {
     "name": "Radiant Spincrystal 125"
+  },
+  "RadiantSpincrystal126": {
+    "name": "Radiant Spincrystal 126"
+  },
+  "RadiantSpincrystal127": {
+    "name": "Radiant Spincrystal 127"
+  },
+  "RadiantSpincrystal128": {
+    "name": "Radiant Spincrystal 128"
+  },
+  "RadiantSpincrystal129": {
+    "name": "Radiant Spincrystal 129"
+  },
+  "RadiantSpincrystal130": {
+    "name": "Radiant Spincrystal 130"
   },
   "LanternFiber": {
     "name": "Lantern Fiber"
@@ -11639,6 +11789,21 @@
   "TravelNotesArcaneAmassing": {
     "name": "บันทึก - ศาสตร์หลอมรวม"
   },
+  "ArlecchinoEdict": {
+    "name": "Arlecchino - กฎเกณฑ์"
+  },
+  "FontaineAttunement": {
+    "name": "Fontaine - ปรับจูน"
+  },
+  "AchievementWhalewrangler": {
+    "name": "ความสำเร็จ - ล่าวาฬ"
+  },
+  "FontaineLucine": {
+    "name": "Fontaine - สระน้ำพุ"
+  },
+  "TravelNotesTheRealmsRocked": {
+    "name": "บันทึก - สั่นสะท้าน"
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone"
   },
@@ -11878,6 +12043,9 @@
   },
   "MiniSeelieBrilliance": {
     "name": "Mini Seelie - Brilliance"
+  },
+  "NightwindHorn": {
+    "name": "ฮอร์นลมราตรี"
   },
   "Fateometer": {
     "name": "\"เครื่องอ่านค่าโชคชะตา\""
@@ -12119,6 +12287,12 @@
   "FatuiElectroCicinMage": {
     "name": "Fatui - Electro Cicin Mage"
   },
+  "AbyssHeraldWickedTorrents": {
+    "name": "Abyss Herald - Wicked Torrents"
+  },
+  "EmperorOfFireAndIron": {
+    "name": "Emperor of Fire and Iron"
+  },
   "UndividedHeart": {
     "name": "Undivided Heart"
   },
@@ -12356,6 +12530,18 @@
   "ElectroCicinsFlicker": {
     "name": "Electro Cicin's Flicker"
   },
+  "ToWardWeakness": {
+    "name": "To Ward Weakness"
+  },
+  "TheWondrousPathOfTruth": {
+    "name": "The Wondrous Path of Truth"
+  },
+  "SurgingUndercurrent": {
+    "name": "Surging Undercurrent"
+  },
+  "MoltenMail": {
+    "name": "Molten Mail"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -12572,6 +12758,12 @@
   "GoldenTroupesReward": {
     "name": "Golden Troupe's Reward"
   },
+  "RightfulReward": {
+    "name": "Rightful Reward"
+  },
+  "AmethystCrown": {
+    "name": "Amethyst Crown"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -12696,7 +12888,16 @@
     "name": "Silver and Melus"
   },
   "FortressOfMeropide": {
-    "name": "ป้อมปราการ Meropide"
+    "name": "Fortress of Meropide"
+  },
+  "SeiraiIsland": {
+    "name": "Seirai Island"
+  },
+  "Taroumaru": {
+    "name": "Taroumaru"
+  },
+  "TheWhiteGloveAndTheFisherman": {
+    "name": "The White Glove and the Fisherman"
   },
   "ElementalResonanceWovenIce": {
     "name": "Elemental Resonance: Woven Ice"
@@ -12862,6 +13063,9 @@
   },
   "ControlledDirectionalBlast": {
     "name": "Controlled Directional Blast"
+  },
+  "UnderwaterTreasureHunt": {
+    "name": "Underwater Treasure Hunt"
   },
   "Origin": {
     "name": "แรกเริ่ม"
@@ -13409,6 +13613,9 @@
   "CiderLakelight": {
     "name": "\"แสง Cider Lake\""
   },
+  "MusicTownsStreetlampSafetyLighting": {
+    "name": "โคมไฟถนนเมืองแห่งเสียงดนตรี - \"แสงอันสงบ\""
+  },
   "EfflorescentIllumination": {
     "name": "\"กลีบดอกทอแสง\""
   },
@@ -13898,6 +14105,12 @@
   "TeahouseToolClearView": {
     "name": "อุปกรณ์โรงน้ำชา - \"เส้นทางการแสดง\""
   },
+  "HotelRailingFreshMintLeaves": {
+    "name": "รั้วโรงแรม - \"ใบมิ้นต์สด\""
+  },
+  "HotelRailingPerfectViewingArc": {
+    "name": "รั้วโรงแรม - \"วิวโค้งสมมาตร\""
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "พรม Mondstadt - \"สีแดงสุดร้อนแรง\""
   },
@@ -13940,6 +14153,9 @@
   "RestaurantRugBathingInTheBreeze": {
     "name": "พรมโรงแรม - \"เหมือนอยู่ในสายลม\""
   },
+  "FontainianCarpetFairAndSquare": {
+    "name": "พรม Fontaine - \"เสมอและเท่าเทียม\""
+  },
   "TrustyPortableLamp": {
     "name": "โคมที่ไม่เคยมอดดับ"
   },
@@ -13972,6 +14188,9 @@
   },
   "TwoWayIronLamp": {
     "name": "โคมไฟเหล็กคู่"
+  },
+  "SimpleLightingLocallySourcedMaterials": {
+    "name": "โคมไฟแบบเรียบง่าย - \"วัสดุจากท้องถิ่น\""
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "ดอกไม้ขวดแก้ว - \"สีฟ้าแห่งความเงียบสงบ\""
@@ -14237,6 +14456,9 @@
   "IndoorLampTheTwilightSea": {
     "name": "ไฟแขวนในห้อง - \"วิวทะเลยามสนธยา\""
   },
+  "MekaLuminaireSilentNightsContemplation": {
+    "name": "โคมไฟจักรกล - \"ใคร่ครวญยามราตรี\""
+  },
   "LingeringMoment": {
     "name": "\"ช่วงเวลาที่ผ่อนคลาย\""
   },
@@ -14455,6 +14677,9 @@
   },
   "PoissonsSeasonalProduce": {
     "name": "\"ของสดใหม่แห่งเมือง Poisson\""
+  },
+  "MusicTownsHutMardouceHarmony": {
+    "name": "เพิงเมืองแห่งเสียงดนตรี - \"เสียงอันนุ่มนวล\""
   },
   "HilichurlOutpostHut": {
     "name": "กระท่อมด่าน Hilichurl"
@@ -14797,6 +15022,18 @@
   },
   "ASimpleResidenceInPoisson": {
     "name": "\"บ้านพักเรียบง่ายในเมือง Poisson\""
+  },
+  "TollingOfTheMusicmakingTown": {
+    "name": "\"เสียงระฆังในเมืองแห่งเสียงดนตรี\""
+  },
+  "PeacefulResidenceInTheMusicmakingTown": {
+    "name": "\"สถานพักผ่อนอันสงบในเมืองแห่งเสียงดนตรี\""
+  },
+  "WorkshopInTheMusicmakingTown": {
+    "name": "\"เวิร์กช็อปในเมืองแห่งเสียงดนตรี\""
+  },
+  "ResourcefulResidenceInTheMusicmakingTown": {
+    "name": "\"บ้านอัจฉริยะในเมืองแห่งเสียงดนตรี\""
   },
   "BirdAndBlossomDesignFountain": {
     "name": "น้ำพุกลางสวน"
@@ -15308,6 +15545,12 @@
   "RoyalPurple": {
     "name": "\"สีครามอันล้ำค่า\""
   },
+  "InspirationsPureWhiteBlossoms": {
+    "name": "\"แรงบันดาลใจสีขาวบริสุทธิ์\""
+  },
+  "SalubriousFragrance": {
+    "name": "\"กลิ่นหอมของการรักษา\""
+  },
   "FirShelves": {
     "name": "ชั้นวางของไม้สนหนาม"
   },
@@ -15662,6 +15905,21 @@
   "CleverlyCraftedContraptionBornInBlessedBitterness": {
     "name": "เครื่องมือหลอมลับ - \"กำเนิดจากความขมขื่น\""
   },
+  "OriginOfMusic": {
+    "name": "\"ต้นกำเนิดแห่งเสียงดนตรี\""
+  },
+  "LegionsFuriousHorns": {
+    "name": "\"แตรโทสะของกองทัพ\""
+  },
+  "HiddenSerpent": {
+    "name": "\"อสรพิษที่ซ่อนเร้น\""
+  },
+  "MirrorReflectionLyre": {
+    "name": "\"พิณเก่าแก่ดั่งกระจก\""
+  },
+  "CrystallineGlory": {
+    "name": "\"ประกายเกียรติยศ\""
+  },
   "BookshelfFreeReading": {
     "name": "ชั้นวางหนังสือ - \"อ่านอิสระ\""
   },
@@ -15697,6 +15955,9 @@
   },
   "TeaHarvestsSunDriedFragrance": {
     "name": "\"กลิ่นหอมของชาที่ตากแดด\""
+  },
+  "MallowWoodMailboxStorage": {
+    "name": "กล่องจดหมายไม้ Mallow: \"เก็บของ\""
   },
   "WeatheredBambooFence": {
     "name": "รั้วไม้ไผ่ทนสภาพอากาศ"
@@ -15740,6 +16001,12 @@
   "StandardRailingScatteredStructure": {
     "name": "รั้วมาตรฐาน - \"โครงสร้างสลับทับซ้อน\""
   },
+  "MallowWoodDoorframeGentleMelody": {
+    "name": "กรอบประตูไม้ Mallow: \"เมโลดี้นุ่มนวล\""
+  },
+  "MallowWoodFenceTides": {
+    "name": "ราวไม้ Mallow: \"คลื่นทะเล\""
+  },
   "SmoothWoodenBench": {
     "name": "ม้านั่งยาวไม้ผิวเรียบ"
   },
@@ -15772,6 +16039,12 @@
   },
   "TeaVillageStoneBenchSafeSpaciousSturdy": {
     "name": "ม้านั่งหินโรงน้ำชา - \"กว้างขวางและมั่นคง\""
+  },
+  "MallowWoodBenchHiddenMelody": {
+    "name": "ม้านั่งไม้ Mallow: \"เมโลดี้ซ่อนเร้น\""
+  },
+  "MallowWoodChairEZFold": {
+    "name": "เก้าอี้ไม้ Mallow: \"พับง่าย\""
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "ป้อมรักษาการณ์ Hilichurl สองชั้น"
@@ -15836,6 +16109,12 @@
   "TeaVillageStoneTableCulturedLeisure": {
     "name": "โต๊ะหินโรงน้ำชา - \"สง่างามและสนุกสนาน\""
   },
+  "MallowWoodLongTableEngravedMemories": {
+    "name": "โต๊ะยาวไม้ Mallow: \"รำลึก\""
+  },
+  "MallowWoodRoundTableASharedDrink": {
+    "name": "โต๊ะกลมไม้ Mallow: \"ร่วมดื่ม\""
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "ตู้โชว์ไวน์ - \"เครื่องดื่มที่รู้ใจนับร้อยแก้ว\""
   },
@@ -15865,5 +16144,8 @@
   },
   "TearstoneTilePerspectiveTheory": {
     "name": "แผ่น Tearstone - \"ทฤษฎีมุมมอง\""
+  },
+  "SwordBearingStatueEternalWatch": {
+    "name": "รูปปั้นถือดาบ - \"ผู้พิทักษ์ชั่วนิรันดร์\""
   }
 }

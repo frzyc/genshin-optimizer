@@ -1,0 +1,24 @@
+{
+  "name": "Semblante de la Luna Carmesí",
+  "description": {
+    "0": "Una afilada arma de un color tan deslumbrante como el de una luna carmesí. Dicen que, en una dinastía de la antigüedad, se consideraba un objeto ritual que conectaba dos mundos, pero ya nadie recuerda ni esa creencia ni ese ritual."
+  },
+  "passiveName": "Sombra del sol cenizo",
+  "passiveDescription": {
+    "0": {
+      "0": "Golpear a un enemigo con un Ataque Cargado otorga un pacto vital equivalente al 25% de la Vida Máx. Este efecto solo puede ocurrir una vez cada 14 s. Además, cuando el portador de esta arma tiene un pacto vital, su daño aumenta en un <cryo>12%</cryo>. Si el valor del pacto vital es mayor o igual al 30% de la Vida Máx., el daño infligido aumenta en un <cryo>24%</cryo> adicional."
+    },
+    "1": {
+      "0": "Golpear a un enemigo con un Ataque Cargado otorga un pacto vital equivalente al 25% de la Vida Máx. Este efecto solo puede ocurrir una vez cada 14 s. Además, cuando el portador de esta arma tiene un pacto vital, su daño aumenta en un <cryo>16%</cryo>. Si el valor del pacto vital es mayor o igual al 30% de la Vida Máx., el daño infligido aumenta en un <cryo>32%</cryo> adicional."
+    },
+    "2": {
+      "0": "Golpear a un enemigo con un Ataque Cargado otorga un pacto vital equivalente al 25% de la Vida Máx. Este efecto solo puede ocurrir una vez cada 14 s. Además, cuando el portador de esta arma tiene un pacto vital, su daño aumenta en un <cryo>20%</cryo>. Si el valor del pacto vital es mayor o igual al 30% de la Vida Máx., el daño infligido aumenta en un <cryo>40%</cryo> adicional."
+    },
+    "3": {
+      "0": "Golpear a un enemigo con un Ataque Cargado otorga un pacto vital equivalente al 25% de la Vida Máx. Este efecto solo puede ocurrir una vez cada 14 s. Además, cuando el portador de esta arma tiene un pacto vital, su daño aumenta en un <cryo>24%</cryo>. Si el valor del pacto vital es mayor o igual al 30% de la Vida Máx., el daño infligido aumenta en un <cryo>48%</cryo> adicional."
+    },
+    "4": {
+      "0": "Golpear a un enemigo con un Ataque Cargado otorga un pacto vital equivalente al 25% de la Vida Máx. Este efecto solo puede ocurrir una vez cada 14 s. Además, cuando el portador de esta arma tiene un pacto vital, su daño aumenta en un <cryo>28%</cryo>. Si el valor del pacto vital es mayor o igual al 30% de la Vida Máx., el daño infligido aumenta en un <cryo>56%</cryo> adicional."
+    }
+  }
+}

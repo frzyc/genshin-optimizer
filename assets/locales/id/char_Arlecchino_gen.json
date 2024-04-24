@@ -1,0 +1,172 @@
+{
+  "name": "Arlecchino",
+  "title": "Dire Balemoon",
+  "description": "Fatui Harbinger ke-4 \"The Knave\". Diplomat yang tenang dan kejam. Dikenal sebagai \"Ayah\" yang dihormati dan dapat diandalkan oleh anak-anak di House of the Hearth.",
+  "constellationName": "Ignis Purgatorius",
+  "auto": {
+    "name": "Invitation to a Beheading",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 6 serangan tombak beruntun."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke arah musuh di sekitar dan melancarkan satu kali tebasan.",
+        "2": "Saat terus ditahan, Arlecchino akan mengonsumsi Stamina untuk bergerak dengan kecepatan tinggi selama maksimum 5 detik."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      },
+      "infusion": {
+        "0": "<strong>Masque of the Red Death</strong>",
+        "1": "Saat Bond of Life yang dimiliki Arlecchino lebih besar atau sama dengan 30% Max HP-nya, akan memasuki status \"Masque of the Red Death\": DMG yang disebabkan Normal Attack, Charged Attack, dan Plunging Attack Arlecchino akan dikonversi menjadi <pyro>Pyro DMG</pyro> yang tidak bisa ditimpa oleh Elemental Infusion lainnya.",
+        "2": "Saat berada dalam status \"Masque of the Red Death\", saat Normal Attack Arlecchino mengenai musuh, DMG yang disebabkan serangan kali ini meningkat sebesar persentase Bond of Life saat ini. Juga akan mengurangi 7,5% Bond of Life saat ini. Bond of Life bisa berkurang dengan cara ini maksimum sekali setiap 0,03 detik; Saat Bond of Life berkurang dengan cara ini, CD Elemental Skill All is Ash berkurang 0,8 detik."
+      }
+    },
+    "skillParams": {
+      "0": "Peningkatan Masque of the Red Death",
+      "1": "DMG Tahap 1",
+      "2": "DMG Tahap 2",
+      "3": "DMG Tahap 3",
+      "4": "DMG Tahap 4",
+      "5": "DMG Tahap 5",
+      "6": "DMG Tahap 6",
+      "7": "DMG Charged Attack",
+      "8": "Konsumsi Stamina Charged Attack",
+      "9": "Konsumsi Stamina Pergerakan Cepat",
+      "10": "DMG Selama Plunging",
+      "11": "DMG Plunging Attack Rendah/Tinggi",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "All is Ash",
+    "description": {
+      "0": "Memanggil Balemoon Bloodfire, mengakibatkan <pyro>Pyro DMG</pyro> terhadap banyak musuh di sekitar, lalu menerjang dan menebas salah satu musuh di antaranya, mengakibatkan <pyro>Pyro DMG Area</pyro>.",
+      "1": "Saat serangan di atas mengenai musuh, akan memberikan Blood-Debt Directive kepada musuh yang bersangkutan.",
+      "2": "<br/>",
+      "3": "<strong>Blood-Debt Directive</strong>",
+      "4": [
+        "Blood-Debt Directive bertahan 30 detik. Setiap 5 detik, Blood-Debt Directive akan mengakibatkan satu kali <pyro>Pyro DMG</pyro> terhadap musuh, hingga maksimum 2 kali. DMG ini dianggap sebagai DMG Elemental Skill;",
+        "Saat Arlecchino melancarkan Charged Attack atau Elemental Burst \"Balemoon Rising\", Blood-Debt Directive di sekitar akan diserap dan dihapus. Untuk setiap Blood-Debt Directive yang diserap, Arlecchino akan mendapatkan Bond of Life sebesar 65% Max HP-nya;",
+        "Dalam 35 detik setelah melancarkan Elemental Skill, Arlecchino bisa mendapatkan maksimum 145% Bond of Life melalui Blood-Debt Directive. Melancarkan Elemental Skill sekali lagi selama masa ini akan mengulang durasi berlangsung dan batas maksimum Bond of Life yang diberikan oleh Blood-Debt Directive."
+      ],
+      "5": "<br/>",
+      "6": "<i>Baginya, tidak setiap butir beras yang jatuh ke tanah akan bertumbuh. Sedangkan mereka yang menghalanginya, begitu dibakar menjadi abu, pasti akan bisa digunakan untuk memelihara bunga.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Duri",
+      "1": "DMG Tebasan",
+      "2": "DMG Blood-Debt Directive",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Balemoon Rising",
+    "description": {
+      "0": "Arlecchino mengepakkan sayap Balemoon Bloodfire, menyerap dan membersihkan Blood-Debt Directive di sekitar, mengakibatkan <pyro>Pyro DMG Area</pyro>, setelahnya, menghapus CD Elemental Skill All is Ash dan memulihkan HP diri sendiri sebesar penjumlahan dari nilai Bond of Life dan ATK miliknya.",
+      "1": "<br/>",
+      "2": "<i>Sudah banyak yang percaya di Teyvat kalau fase bulan selain bulan purnama itu hanya perumpamaan untuk pertanda buruk yang digunakan alkimia dan astrologi.",
+      "3": "Dia pernah melihat bulan merah beberapa kali di dalam mimpinya, apa itu pertanda bencana? Ya, benar. Tapi itu adalah bencana milik orang-orang yang membuatnya marah.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pemulihan",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Agony Alone May Be Repaid",
+    "description": {
+      "0": "<strong>Blood-Debt Directives</strong> memiliki ciri khas sebagai berikut:",
+      "1": [
+        "Saat musuh yang memiliki Blood-Debt Directive yang diberikan oleh Arlecchino sendiri dikalahkan, Arlecchino akan mendapatkan Bond of Life sebesar 130% Max HP-nya;",
+        "5 detik setelah diberikan, akan meningkat menjadi Blood-Debt Due. Saat diserap, akan dikonversi dan memberikan Bond of Life kepada Arlecchino sebesar 130%."
+      ],
+      "2": "Nilai pemulihan Bond of Life yang diciptakan dengan cara di atas tidak akan bisa melebihi batasan awal <strong>All is Ash</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Strength Alone Can Defend",
+    "description": {
+      "0": "Arlecchino mendapatkan 1% Elemental RES dari semua elemen dan Physical RES untuk setiap 100 poin ATK yang melebihi 1.000 poin. Peningkatan RES maksimum yang bisa didapatkan dengan cara ini adalah 20% untuk masing-masing RES."
+    }
+  },
+  "passive3": {
+    "name": "The Balemoon Alone May Know",
+    "description": {
+      "0": "Saat bertempur, Arlecchino mendapatkan 40% <pyro>Pyro DMG Bonus</pyro> dan hanya bisa dipulihkan melalui <strong>Balemoon Rising</strong>."
+    }
+  },
+  "constellation1": {
+    "name": "\"All Reprisals and Arrears, Mine to Bear...\"",
+    "description": {
+      "0": "Masque of the Red Death ditingkatkan sebesar 100%; Selain itu, saat melancarkan Normal Attack atau Charged Attack dalam status Masque of the Red Death, ketahanan terhadap interupsi Arlecchino akan meningkat."
+    }
+  },
+  "constellation2": {
+    "name": "\"All Rewards and Retribution, Mine to Bestow...\"",
+    "description": {
+      "0": "<strong>Blood-Debt Directive</strong> akan langsung menjadi Blood-Debt Due saat diberikan.",
+      "1": "Saat Arlecchino menyerap Blood-Debt Due, akan memanggil Balemoon Bloodfire di depannya yang mengakibatkan <pyro>Pyro DMG Area</pyro> sebesar 900% ATK Arlecchino dan meningkatkan Elemental RES dari semua elemen dan Physical RES miliknya sebesar 20% selama 15 detik. Efek ini dapat terpicu sekali setiap 10 detik.",
+      "2": "Harus membuka Talenta Pasif \"Agony Alone May Be Repaid\" terlebih dahulu."
+    }
+  },
+  "constellation3": {
+    "name": "\"You Shall Become a New Member of Our Family ...\"",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Normal Attack: Invitation to a Beheading</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"You Shall Love and Protect Each Other Henceforth ...\"",
+    "description": {
+      "0": "Saat Arlecchino berhasil menyerap Blood-Debt Directive, CD <strong>Balemoon Rising</strong> akan diperpendek 2 detik, dan akan memulihkan 15 Energy. Efek ini dapat terpicu sekali setiap 10 detik."
+    }
+  },
+  "constellation5": {
+    "name": "\"For Alone, We Are as Good as Dead ...\"",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Balemoon Rising</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"From This Day On, We Shall Delight in New Life Together.\"",
+    "description": {
+      "0": "DMG <strong>Balemoon Rising</strong> meningkat sebesar ATK Arlecchino yang dikali dengan 700% persentase Bond of Life Arlecchino saat ini.",
+      "1": "Selama 20 detik setelah Arlecchino melancarkan <strong>All is Ash</strong>, Normal Attack dan Elemental Burst Arlecchino akan mendapatkan peningkatan 10% CRIT Rate dan 70% CRIT DMG. Efek ini dapat terpicu sekali setiap 15 detik."
+    }
+  }
+}

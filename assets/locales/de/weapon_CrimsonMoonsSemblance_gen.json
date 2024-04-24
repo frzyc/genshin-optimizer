@@ -1,0 +1,24 @@
+{
+  "name": "Form des scharlachroten Mondes",
+  "description": {
+    "0": "Eine scharfe Waffe von der grellen Farbe des scharlachroten Mondes. Es heißt, zur Zeit einer uralten Herrscherdynastie wurde sie als ein zeremonielles Instrument angesehen, das zwei Welten verband. Schon lange gibt es niemanden mehr, der sich an den Glauben und die Rituale jener Tage erinnert."
+  },
+  "passiveName": "Schatten der äschernen Sonne",
+  "passiveDescription": {
+    "0": {
+      "0": "Verleiht beim Treffen von Gegnern mit heftigen Schlägen „Eid des Lebens“ in Höhe von 25 % der max. LP. 14 s Abklingzeit. Erhöht, wenn der Träger Eid des Lebens innehat, den verursachten Schaden um <cryo>12 %</cryo>. Erhöht, wenn Eid des Lebens mindestens 30 % der max. LP entspricht, den verursachten Schaden zusätzlich um <cryo>24 %</cryo>."
+    },
+    "1": {
+      "0": "Verleiht beim Treffen von Gegnern mit heftigen Schlägen „Eid des Lebens“ in Höhe von 25 % der max. LP. 14 s Abklingzeit. Erhöht, wenn der Träger Eid des Lebens innehat, den verursachten Schaden um <cryo>16 %</cryo>. Erhöht, wenn Eid des Lebens mindestens 30 % der max. LP entspricht, den verursachten Schaden zusätzlich um <cryo>32 %</cryo>."
+    },
+    "2": {
+      "0": "Verleiht beim Treffen von Gegnern mit heftigen Schlägen „Eid des Lebens“ in Höhe von 25 % der max. LP. 14 s Abklingzeit. Erhöht, wenn der Träger Eid des Lebens innehat, den verursachten Schaden um <cryo>20 %</cryo>. Erhöht, wenn Eid des Lebens mindestens 30 % der max. LP entspricht, den verursachten Schaden zusätzlich um <cryo>40 %</cryo>."
+    },
+    "3": {
+      "0": "Verleiht beim Treffen von Gegnern mit heftigen Schlägen „Eid des Lebens“ in Höhe von 25 % der max. LP. 14 s Abklingzeit. Erhöht, wenn der Träger Eid des Lebens innehat, den verursachten Schaden um <cryo>24 %</cryo>. Erhöht, wenn Eid des Lebens mindestens 30 % der max. LP entspricht, den verursachten Schaden zusätzlich um <cryo>48 %</cryo>."
+    },
+    "4": {
+      "0": "Verleiht beim Treffen von Gegnern mit heftigen Schlägen „Eid des Lebens“ in Höhe von 25 % der max. LP. 14 s Abklingzeit. Erhöht, wenn der Träger Eid des Lebens innehat, den verursachten Schaden um <cryo>28 %</cryo>. Erhöht, wenn Eid des Lebens mindestens 30 % der max. LP entspricht, den verursachten Schaden zusätzlich um <cryo>56 %</cryo>."
+    }
+  }
+}

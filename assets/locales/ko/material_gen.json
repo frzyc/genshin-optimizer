@@ -191,6 +191,9 @@
   "Funds": {
     "name": "자금"
   },
+  "IridescenceTourTickets": {
+    "name": "「무지갯빛 투어 티켓」"
+  },
   "Primogem": {
     "name": "원석"
   },
@@ -521,6 +524,9 @@
   "Chiori": {
     "name": "치오리"
   },
+  "Arlecchino": {
+    "name": "아를레키노"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "카미사토 아야카의 운명의 별"
   },
@@ -763,6 +769,9 @@
   },
   "ChiorisStellaFortuna": {
     "name": "치오리의 운명의 별"
+  },
+  "ArlecchinosStellaFortuna": {
+    "name": "아를레키노의 운명의 별"
   },
   "GnosticHymnOldNotes": {
     "name": "진주 기행·초안"
@@ -6917,6 +6926,21 @@
   "FashionShow": {
     "name": "「패션쇼」"
   },
+  "RockNRollDangoMilk": {
+    "name": "로큰롤 경단 우유"
+  },
+  "SuspiciousBulleSouffle": {
+    "name": "이상한 풍선 수플레"
+  },
+  "BulleSouffle": {
+    "name": "풍선 수플레"
+  },
+  "DeliciousBulleSouffle": {
+    "name": "맛있는 풍선 수플레"
+  },
+  "HearthfiresTrail": {
+    "name": "난롯불의 궤적"
+  },
   "RecipeItem": {
     "name": "레시피 아이템"
   },
@@ -7493,6 +7517,9 @@
   "RecipeMegaMeatySushi": {
     "name": "레시피: 고기 듬뿍 초밥"
   },
+  "RecipeBulleSouffle": {
+    "name": "레시피: 풍선 수플레"
+  },
   "CraftedItems": {
     "name": "합성 산물"
   },
@@ -7904,6 +7931,15 @@
   "ChasmlightFin": {
     "name": "그윽한 지느러미"
   },
+  "RuinedHilt": {
+    "name": "파손된 검자루"
+  },
+  "SplinteredHilt": {
+    "name": "부러진 검자루"
+  },
+  "StillSmolderingHilt": {
+    "name": "꺼지지 않은 검자루"
+  },
   "HurricaneSeed": {
     "name": "폭풍의 씨앗"
   },
@@ -8077,6 +8113,18 @@
   },
   "CloudseamScale": {
     "name": "구름 비늘"
+  },
+  "FragmentOfAGoldenMelody": {
+    "name": "금빛 선율의 단편"
+  },
+  "FadingCandle": {
+    "name": "타고 남은 촛불"
+  },
+  "SilkenFeather": {
+    "name": "거미 비단깃"
+  },
+  "DenialAndJudgment": {
+    "name": "기각과 판정"
   },
   "TileOfDecarabiansTower": {
     "name": "고탑 왕의 잔해"
@@ -10022,8 +10070,20 @@
   "OurChenyuValeTrekAlbum": {
     "name": "「침옥곡 여행」 기념 앨범"
   },
+  "AncientAutoharmonicMusicBox": {
+    "name": "고대 자동 오르골"
+  },
   "StrangeKey": {
     "name": "특이한 열쇠"
+  },
+  "BlankScore": {
+    "name": "빈 악보"
+  },
+  "AncientScore": {
+    "name": "오래된 악보"
+  },
+  "LostGrimoire": {
+    "name": "잃어버린 마도서"
   },
   "ShootingPracticeOpticalLenses": {
     "name": "「사격 훈련용 광학 렌즈」"
@@ -10033,6 +10093,15 @@
   },
   "PerinheriII": {
     "name": "페룬에리·2권"
+  },
+  "AnecdotaSeptentrionalisI": {
+    "name": "북방의 비사·1권"
+  },
+  "AnecdotaSeptentrionalisII": {
+    "name": "북방의 비사·2권"
+  },
+  "AnecdotaSeptentrionalisIII": {
+    "name": "북방의 비사·3권"
   },
   "HelpMePlease": {
     "name": "날 구해줘!"
@@ -10151,6 +10220,9 @@
   "ChizhangMap": {
     "name": "적장 지도"
   },
+  "MiniPhonograph": {
+    "name": "소형 축음기"
+  },
   "AncientCityKey": {
     "name": "옛 성벽의 열쇠"
   },
@@ -10163,11 +10235,29 @@
   "FishSeizedFromAPelicansMouth": {
     "name": "「사다새」의 입속에서 뺏은 물고기"
   },
+  "InvitationFromTheAratakiGang": {
+    "name": "아라타키파의 초대장"
+  },
   "FelixFelicium": {
     "name": "「행운의 축복」"
   },
+  "ShikanoinHeizousMessage": {
+    "name": "시카노인 헤이조가 남긴 메시지"
+  },
+  "PuppyUnionAdmissionDetails": {
+    "name": "「강아지 상회」의 접수 명세서"
+  },
   "LynettesEnvelope": {
     "name": "리넷의 봉투"
+  },
+  "RestoredScore": {
+    "name": "완벽하게 복원된 악보"
+  },
+  "PagesFromALostScoreI": {
+    "name": "잃어버린 악보의 찢어진 페이지·첫 번째"
+  },
+  "ARidiculouslyCommonBranch": {
+    "name": "어디서나 볼 수 있는 나뭇가지"
   },
   "CultivationAreaExpansionVII": {
     "name": "재배 구역 확장·VII"
@@ -10183,6 +10273,51 @@
   },
   "Manuscript": {
     "name": "원고"
+  },
+  "IGotReincarnatedAsAnOnikabutoAndFlippedTheWorldUpsideDown": {
+    "name": "《귀신풍뎅이로 환생해서 세상을 뒤집어버리자》"
+  },
+  "CynosLetter": {
+    "name": "사이노의 편지"
+  },
+  "DamagedScore": {
+    "name": "파손된 악보"
+  },
+  "RuggierosNotesII": {
+    "name": "루지에로의 노트·두 번째"
+  },
+  "PagesFromALostScoreII": {
+    "name": "잃어버린 악보의 찢어진 페이지·두 번째"
+  },
+  "AncientEngravings": {
+    "name": "오래된 비문"
+  },
+  "HarmostsNotesII": {
+    "name": "조율사의 노트·하"
+  },
+  "TatteredNavigationLog": {
+    "name": "훼손된 항해 일지"
+  },
+  "RuggierosNotesI": {
+    "name": "루지에로의 노트·첫 번째"
+  },
+  "SomeonesNotes": {
+    "name": "누군가의 수첩"
+  },
+  "RuggierosNotesIII": {
+    "name": "루지에로의 노트·세 번째"
+  },
+  "InvestigationOfTheNorthernBarbarians": {
+    "name": "북방 야만족에 관한 고찰"
+  },
+  "HarmostsNotesI": {
+    "name": "조율사의 노트·상"
+  },
+  "AncientInscription": {
+    "name": "오래된 각명"
+  },
+  "AncientPieceOfPaper": {
+    "name": "오래된 쪽지"
   },
   "TearsAmongTheStars": {
     "name": "뭇별 사이의 눈물"
@@ -10849,6 +10984,21 @@
   },
   "RadiantSpincrystal125": {
     "name": "빛나는 결정·125"
+  },
+  "RadiantSpincrystal126": {
+    "name": "빛나는 결정·126"
+  },
+  "RadiantSpincrystal127": {
+    "name": "빛나는 결정·127"
+  },
+  "RadiantSpincrystal128": {
+    "name": "빛나는 결정·128"
+  },
+  "RadiantSpincrystal129": {
+    "name": "빛나는 결정·129"
+  },
+  "RadiantSpincrystal130": {
+    "name": "빛나는 결정·130"
   },
   "LanternFiber": {
     "name": "등불 종이 섬유"
@@ -11639,6 +11789,21 @@
   "TravelNotesArcaneAmassing": {
     "name": "기행·응축된 신비"
   },
+  "ArlecchinoEdict": {
+    "name": "아를레키노·규칙"
+  },
+  "FontaineAttunement": {
+    "name": "폰타인·조율"
+  },
+  "AchievementWhalewrangler": {
+    "name": "업적·포경"
+  },
+  "FontaineLucine": {
+    "name": "폰타인·루키나 분수"
+  },
+  "TravelNotesTheRealmsRocked": {
+    "name": "기행·로큰롤"
+  },
   "AnemoculusResonanceStone": {
     "name": "바람 신의 눈동자 공명석"
   },
@@ -11878,6 +12043,9 @@
   },
   "MiniSeelieBrilliance": {
     "name": "작은 선령·찬란한 빛"
+  },
+  "NightwindHorn": {
+    "name": "밤바람 호른"
   },
   "Fateometer": {
     "name": "「운명 계시기」"
@@ -12119,6 +12287,12 @@
   "FatuiElectroCicinMage": {
     "name": "우인단·번개 치친 술사"
   },
+  "AbyssHeraldWickedTorrents": {
+    "name": "심연 사도·격류"
+  },
+  "EmperorOfFireAndIron": {
+    "name": "용암철갑 제왕"
+  },
   "UndividedHeart": {
     "name": "단 하나의 마음"
   },
@@ -12356,6 +12530,18 @@
   "ElectroCicinsFlicker": {
     "name": "반짝이는 번개 치친"
   },
+  "ToWardWeakness": {
+    "name": "나약을 떨쳐내는 마음"
+  },
+  "TheWondrousPathOfTruth": {
+    "name": "진리로 통하는 길"
+  },
+  "SurgingUndercurrent": {
+    "name": "솟구치는 암류"
+  },
+  "MoltenMail": {
+    "name": "용암철갑"
+  },
   "MagicGuide": {
     "name": "마도 서론"
   },
@@ -12572,6 +12758,12 @@
   "GoldenTroupesReward": {
     "name": "황금 극단의 보상"
   },
+  "RightfulReward": {
+    "name": "공의의 보상"
+  },
+  "AmethystCrown": {
+    "name": "자수정 화관"
+  },
   "LiyueHarborWharf": {
     "name": "리월항"
   },
@@ -12697,6 +12889,15 @@
   },
   "FortressOfMeropide": {
     "name": "메로피드 요새"
+  },
+  "SeiraiIsland": {
+    "name": "세이라이섬"
+  },
+  "Taroumaru": {
+    "name": "타로마루"
+  },
+  "TheWhiteGloveAndTheFisherman": {
+    "name": "흰 장갑과 어부"
   },
   "ElementalResonanceWovenIce": {
     "name": "원소 공명: 뒤엉킨 얼음"
@@ -12863,8 +13064,11 @@
   "ControlledDirectionalBlast": {
     "name": "제어 가능한 위험 제거용 지향 폭발"
   },
+  "UnderwaterTreasureHunt": {
+    "name": "해저 보물찾기"
+  },
   "Origin": {
-    "name": "태초"
+    "name": "원초"
   },
   "Mondstadt": {
     "name": "몬드"
@@ -13409,6 +13613,9 @@
   "CiderLakelight": {
     "name": "「시드르 호숫빛」"
   },
+  "MusicTownsStreetlampSafetyLighting": {
+    "name": "음악 마을의 가로등-「안전등」"
+  },
   "EfflorescentIllumination": {
     "name": "「백만 꽃잎의 빛」"
   },
@@ -13898,6 +14105,12 @@
   "TeahouseToolClearView": {
     "name": "차 공방의 도구-「관찰법」"
   },
+  "HotelRailingFreshMintLeaves": {
+    "name": "호텔 울타리-「새잎 민트」"
+  },
+  "HotelRailingPerfectViewingArc": {
+    "name": "호텔 울타리-「완벽한 부채꼴」"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "몬드풍 카펫-「정열의 빨강」"
   },
@@ -13940,6 +14153,9 @@
   "RestaurantRugBathingInTheBreeze": {
     "name": "식당 카펫-「산들바람」"
   },
+  "FontainianCarpetFairAndSquare": {
+    "name": "폰타인 카펫-「네모반듯」"
+  },
   "TrustyPortableLamp": {
     "name": "꺼지지 않는 휴대용 등불"
   },
@@ -13972,6 +14188,9 @@
   },
   "TwoWayIronLamp": {
     "name": "무쇠 양용 등불"
+  },
+  "SimpleLightingLocallySourcedMaterials": {
+    "name": "간의 휴대용 등불-「현지 조달」"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "화초용 꽃병-「담청색의 여유」"
@@ -14237,6 +14456,9 @@
   "IndoorLampTheTwilightSea": {
     "name": "실내 조명-「해 질 녘의 바다 풍경」"
   },
+  "MekaLuminaireSilentNightsContemplation": {
+    "name": "핵심 조명-「조용한 밤의 사색」"
+  },
   "LingeringMoment": {
     "name": "「유대의 순간」"
   },
@@ -14455,6 +14677,9 @@
   },
   "PoissonsSeasonalProduce": {
     "name": "「푸아송 마을의 신선함」"
+  },
+  "MusicTownsHutMardouceHarmony": {
+    "name": "음악 마을의 텐트-「부드러운 화음」"
   },
   "HilichurlOutpostHut": {
     "name": "츄츄족 초소"
@@ -14797,6 +15022,18 @@
   },
   "ASimpleResidenceInPoisson": {
     "name": "「푸아송 마을의 간소한 거처」"
+  },
+  "TollingOfTheMusicmakingTown": {
+    "name": "「작곡 마을의 종소리」"
+  },
+  "PeacefulResidenceInTheMusicmakingTown": {
+    "name": "「작곡 마을의 안락」"
+  },
+  "WorkshopInTheMusicmakingTown": {
+    "name": "「작곡 마을의 작업실」"
+  },
+  "ResourcefulResidenceInTheMusicmakingTown": {
+    "name": "「작곡 마을의 정교한 거처」"
   },
   "BirdAndBlossomDesignFountain": {
     "name": "꽃과 새 장식 분수"
@@ -15308,6 +15545,12 @@
   "RoyalPurple": {
     "name": "「귀중한 보랏빛」"
   },
+  "InspirationsPureWhiteBlossoms": {
+    "name": "「영감을 주는 순백의 꽃」"
+  },
+  "SalubriousFragrance": {
+    "name": "「치유의 향」"
+  },
   "FirShelves": {
     "name": "삼나무 거치대"
   },
@@ -15662,6 +15905,21 @@
   "CleverlyCraftedContraptionBornInBlessedBitterness": {
     "name": "연금용 도구-「쓰디쓴 탄생」"
   },
+  "OriginOfMusic": {
+    "name": "「악률의 기원」"
+  },
+  "LegionsFuriousHorns": {
+    "name": "「군단의 포효하는 나팔」"
+  },
+  "HiddenSerpent": {
+    "name": "「숨은 뱀」"
+  },
+  "MirrorReflectionLyre": {
+    "name": "「거울 대칭 리라」"
+  },
+  "CrystallineGlory": {
+    "name": "「빛나는 영광」"
+  },
   "BookshelfFreeReading": {
     "name": "출판물 진열대-「자유 접근」"
   },
@@ -15697,6 +15955,9 @@
   },
   "TeaHarvestsSunDriedFragrance": {
     "name": "「수확한 차의 햇살 향기」"
+  },
+  "MallowWoodMailboxStorage": {
+    "name": "버즘나무 원목 「보관」 우편함"
   },
   "WeatheredBambooFence": {
     "name": "풍파를 겪은 대나무 울타리"
@@ -15740,6 +16001,12 @@
   "StandardRailingScatteredStructure": {
     "name": "표준 울타리-「어긋난 구조」"
   },
+  "MallowWoodDoorframeGentleMelody": {
+    "name": "버즘나무 원목 「부드러운 선율」 문틀"
+  },
+  "MallowWoodFenceTides": {
+    "name": "버즘나무 원목 「파도」 울타리"
+  },
   "SmoothWoodenBench": {
     "name": "평평한 나무 벤치"
   },
@@ -15772,6 +16039,12 @@
   },
   "TeaVillageStoneBenchSafeSpaciousSturdy": {
     "name": "차 마을의 돌 의자-「야무진 편안함」"
+  },
+  "MallowWoodBenchHiddenMelody": {
+    "name": "버즘나무 원목 「숨은 선율」 벤치"
+  },
+  "MallowWoodChairEZFold": {
+    "name": "버즘나무 원목 「접이식」 의자"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "츄츄족 이층 경계탑"
@@ -15836,6 +16109,12 @@
   "TeaVillageStoneTableCulturedLeisure": {
     "name": "차 마을의 돌 탁자-「한적한 휴식」"
   },
+  "MallowWoodLongTableEngravedMemories": {
+    "name": "버즘나무 원목 「새겨진 기억」 대형 탁자"
+  },
+  "MallowWoodRoundTableASharedDrink": {
+    "name": "버즘나무 원목 「함께 마시는 차」 원탁"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "술 진열대-「백 잔의 술」"
   },
@@ -15865,5 +16144,8 @@
   },
   "TearstoneTilePerspectiveTheory": {
     "name": "눈물 반암 타일-「투시 이론」"
+  },
+  "SwordBearingStatueEternalWatch": {
+    "name": "검을 든 석상-「영원한 수호자」"
   }
 }

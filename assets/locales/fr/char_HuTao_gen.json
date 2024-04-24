@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route."
+        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis en chemin."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",

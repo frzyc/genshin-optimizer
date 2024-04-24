@@ -106,7 +106,7 @@
   "passive1": {
     "name": "Canali di distribuzione segreti",
     "description": {
-      "0": "Per 4 s dopo aver usato <strong>Salva cristallina</strong>, i DAN inflitti dagli attacchi normali, caricati e in picchiata di Navia vengono convertiti in <geo>DAN da Geo</geo> che non possono essere contrastati da altre infusioni elementali. Inoltre, i DAN inflitti dai suoi attacchi normali, caricati e in picchiata aumentano di un 40%."
+      "0": "Per 4 s dopo aver usato <strong>Salva cristallina</strong>, i DAN inflitti dagli attacchi normali, caricati e in picchiata di Navia vengono convertiti in <geo>DAN da Geo</geo> non influenzabili da altre infusioni elementali. Inoltre, i DAN inflitti dai suoi attacchi normali, caricati e in picchiata aumentano di un 40%."
     }
   },
   "passive2": {
