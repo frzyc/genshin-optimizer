@@ -1,12 +1,9 @@
 'use client'
 import type { ContainerProps, ModalProps } from '@mui/material'
-import { Box, Container, Modal, styled } from '@mui/material'
+import { Container, Modal, styled } from '@mui/material'
 
 const ModalContainer = styled(Container)(() => ({
-  display: 'flex',
-  flexDirection: 'column',
   minHeight: '100vh',
-  justifyContent: 'center',
   ':focus': {
     outline: 'None',
   },
@@ -27,7 +24,6 @@ export function ModalWrapper({
 }: ModalWrapperProps) {
   return (
     <Modal
-      component={Box}
       sx={{
         overflow: 'auto',
       }}

@@ -1,5 +1,5 @@
 'use client'
-import { createTheme, darkScrollbar } from '@mui/material'
+import { createTheme } from '@mui/material'
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -154,11 +154,6 @@ export const theme = createTheme({
     },
   },
   components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        body: defaultTheme.palette.mode === 'dark' ? darkScrollbar() : null,
-      },
-    },
     MuiAppBar: {
       defaultProps: {
         enableColorOnDark: true,

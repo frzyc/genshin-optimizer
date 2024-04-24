@@ -21,7 +21,7 @@ export default function NewTab() {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
+        <CssBaseline enableColorScheme />
         <Box
           display="flex"
           minWidth="100vw"
