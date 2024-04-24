@@ -1,4 +1,3 @@
-import { extrapolateFloat } from '@genshin-optimizer/common/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/common/util'
 import type { DSubstatKey, SubstatKey } from '../../mapping'
 import { SubStatPropTypeMap } from '../../mapping'
@@ -32,7 +31,7 @@ artifactSubstatDataSrc.forEach(({ depotId, propType, propValue }) => {
   const rank = Math.round(depotId / 100)
   if (rank > 5) return
   const substatKey = SubStatPropTypeMap[propType]
-  artifactSubstatData[rank][substatKey].push(extrapolateFloat(propValue))
+  artifactSubstatData[rank][substatKey].push(propValue)
 })
 
 export { artifactSubstatData }

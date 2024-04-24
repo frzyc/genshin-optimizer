@@ -6,19 +6,19 @@
   "passiveName": "Brocado Florescente, Espada do Santuário",
   "passiveDescription": {
     "0": {
-      "0": "Aumenta o Dano do Ataque Normal em <cryo>16%</cryo>. Aumenta o Dano da Habilidade Elemental em<cryo>24%</cryo>. Quando um personagem ativo próximo causa Dano Geo, os efeitos mencionados acima serão aumentados em 100% por 15s. Além disso, a DEF do personagem que está com essa arma equipada aumenta em <cryo>20%</cryo>."
+      "0": "Aumenta o Dano do Ataque Normal em <cryo>16%</cryo>. Aumenta o Dano da Habilidade Elemental em <cryo>24%</cryo>. Quando um personagem ativo próximo causa Dano Geo, os efeitos mencionados acima serão aumentados em 100% por 15s. Além disso, a DEF do personagem que está com essa arma equipada aumenta em <cryo>20%</cryo>."
     },
     "1": {
-      "0": "Aumenta o Dano do Ataque Normal em <cryo>20%</cryo>. Aumenta o Dano da Habilidade Elemental em<cryo>30%</cryo>. Quando um personagem ativo próximo causa Dano Geo, os efeitos mencionados acima serão aumentados em 100% por 15s. Além disso, a DEF do personagem que está com essa arma equipada aumenta em <cryo>25%</cryo>."
+      "0": "Aumenta o Dano do Ataque Normal em <cryo>20%</cryo>. Aumenta o Dano da Habilidade Elemental em <cryo>30%</cryo>. Quando um personagem ativo próximo causa Dano Geo, os efeitos mencionados acima serão aumentados em 100% por 15s. Além disso, a DEF do personagem que está com essa arma equipada aumenta em <cryo>25%</cryo>."
     },
     "2": {
-      "0": "Aumenta o Dano do Ataque Normal em <cryo>24%</cryo>. Aumenta o Dano da Habilidade Elemental em<cryo>36%</cryo>. Quando um personagem ativo próximo causa Dano Geo, os efeitos mencionados acima serão aumentados em 100% por 15s. Além disso, a DEF do personagem que está com essa arma equipada aumenta em <cryo>30%</cryo>."
+      "0": "Aumenta o Dano do Ataque Normal em <cryo>24%</cryo>. Aumenta o Dano da Habilidade Elemental em <cryo>36%</cryo>. Quando um personagem ativo próximo causa Dano Geo, os efeitos mencionados acima serão aumentados em 100% por 15s. Além disso, a DEF do personagem que está com essa arma equipada aumenta em <cryo>30%</cryo>."
     },
     "3": {
-      "0": "Aumenta o Dano do Ataque Normal em <cryo>28%</cryo>. Aumenta o Dano da Habilidade Elemental em<cryo>42%</cryo>. Quando um personagem ativo próximo causa Dano Geo, os efeitos mencionados acima serão aumentados em 100% por 15s. Além disso, a DEF do personagem que está com essa arma equipada aumenta em <cryo>35%</cryo>."
+      "0": "Aumenta o Dano do Ataque Normal em <cryo>28%</cryo>. Aumenta o Dano da Habilidade Elemental em <cryo>42%</cryo>. Quando um personagem ativo próximo causa Dano Geo, os efeitos mencionados acima serão aumentados em 100% por 15s. Além disso, a DEF do personagem que está com essa arma equipada aumenta em <cryo>35%</cryo>."
     },
     "4": {
-      "0": "Aumenta o Dano do Ataque Normal em <cryo>32%</cryo>. Aumenta o Dano da Habilidade Elemental em<cryo>48%</cryo>. Quando um personagem ativo próximo causa Dano Geo, os efeitos mencionados acima serão aumentados em 100% por 15s. Além disso, a DEF do personagem que está com essa arma equipada aumenta em <cryo>40%</cryo>."
+      "0": "Aumenta o Dano do Ataque Normal em <cryo>32%</cryo>. Aumenta o Dano da Habilidade Elemental em <cryo>48%</cryo>. Quando um personagem ativo próximo causa Dano Geo, os efeitos mencionados acima serão aumentados em 100% por 15s. Além disso, a DEF do personagem que está com essa arma equipada aumenta em <cryo>40%</cryo>."
     }
   }
 }

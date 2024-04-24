@@ -1,0 +1,29 @@
+{
+  "setName": "Fragmento de la Armonía Fantasiosa",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Cuando el valor de un pacto vital aumenta o disminuye, el daño que inflige el personaje aumenta en un 18%. Este efecto dura 6 s y puede acumularse hasta 3 veces."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Preludio de la Sinfonía Armónica",
+      "desc": "Una flor plenamente abierta con decoraciones de oro y basalto azul. Antiguamente, era una medalla de honor otorgada a los humanos inmortales."
+    },
+    "plume": {
+      "name": "Nocturno del Mar de Antaño",
+      "desc": "Una pluma ornamental hecha a semejanza de las alas de la legendaria abeja dorada. Hasta la brisa más suave la hace zarandearse."
+    },
+    "sands": {
+      "name": "Gran Burla del Giro del Destino",
+      "desc": "Un reloj que emula la rueda del destino. En la actualidad, no tiene forma de girar."
+    },
+    "goblet": {
+      "name": "Rapsodia del Icor Derramado",
+      "desc": "Un ritón con base de cobre hecho en un horno que, en el pasado, estaba lleno del vino del paraíso."
+    },
+    "circlet": {
+      "name": "Vals Fantasioso de la Ruina",
+      "desc": "Una máscara cubierta con pan de oro. Podría tratarse de una reliquia perteneciente al comandante de alguna legión."
+    }
+  }
+}

@@ -29,7 +29,7 @@
         "0": "<strong>Chapéu do Gato Brincalhão</strong>",
         "1": [
           " Ridiculariza os inimigos próximos, atraindo seus ataques. Cada inimigo só pode ser provocado pelo Chapéu do Gato Brincalhão uma vez a cada 5s.",
-          " Sua durabilidade é proporcional a Vida Máxima de Lyney.",
+          " Sua durabilidade é proporcional à Vida Máxima de Lyney.",
           " Ao ser destruído ou quando sua duração acabar, disparará <strong>Fogos de Artifício Mágicos</strong> contra os inimigos ao redor, causando <pyro>Dano Pyro</pyro>."
         ],
         "2": "Só é possível existir 1 Chapéu do Gato Brincalhão ao mesmo tempo."
@@ -144,13 +144,13 @@
     "name": "Truque Aéreo",
     "description": {
       "0": "Você pode ter até 2 <strong>Chapéus do Gato Brincalhão</strong> ao mesmo tempo.",
-      "1": "Além disso, quando a Flecha da Magia Secreta atingir um inimigo, invocará 2 Chapéus do Gato Brincalhão, e obterá um acúmulo extra de \"Resquício Mágico\". Esse efeito pode ser desencadeado uma vez a cada 15s."
+      "1": "Além disso, quando a Flecha da Magia Secreta atingir um inimigo, invocará 2 Chapéus do Gato Brincalhão e obterá um acúmulo extra de \"Resquício Mágico\". Esse efeito pode ser desencadeado uma vez a cada 15s."
     }
   },
   "constellation2": {
     "name": "Truque Atrativo",
     "description": {
-      "0": "Quando Lyney está no campo de batalha, a cada 2s obterá um acúmulo do efeito \"Foco Atento\", aumentando o Dano CRIT de Lyney em 20%. Esse efeito pode acumular até 3 vezes, e será removido quando Lyney sair do campo de batalha."
+      "0": "Quando Lyney está no campo de batalha, obterá um acúmulo do efeito \"Foco Atento\" a cada 2s, aumentando o Dano CRIT de Lyney em 20%. Esse efeito pode acumular até 3 vezes e será removido quando Lyney sair do campo de batalha."
     }
   },
   "constellation3": {

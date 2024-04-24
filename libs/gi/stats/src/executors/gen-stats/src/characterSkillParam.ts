@@ -1,4 +1,3 @@
-import { extrapolateFloat } from '@genshin-optimizer/common/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/common/util'
 import type { NonTravelerCharacterKey } from '@genshin-optimizer/gi/consts'
 import type {
@@ -75,7 +74,7 @@ export default function characterSkillParam() {
         arr.forEach((value, j) => {
           if (!skillParamUntrimmed[j]) skillParamUntrimmed[j] = []
           //The assumption is that any value >10 is a "flat" value that is not a percent.
-          skillParamUntrimmed[j][i] = extrapolateFloat(value)
+          skillParamUntrimmed[j][i] = value
         })
       })
       //filter out empty entries
@@ -140,7 +139,7 @@ export default function characterSkillParam() {
         [...keys, `constellation${i + 1}`],
         avatarTalentExcelConfigData[skId].paramList
           .filter((i) => i)
-          .map((value) => extrapolateFloat(value))
+          .map((value) => value)
       )
     )
   }

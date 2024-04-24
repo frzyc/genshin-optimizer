@@ -1,0 +1,24 @@
+{
+  "name": "Crimson Moon's Semblance",
+  "description": {
+    "0": "Senjata tajam dengan warna merah terang seperti bulan merah. Dikatakan bahwa zaman dulu di sebuah dinasti kuno, senjata ini pernah menjadi salah satu alat upacara yang menghubungkan dua dunia, namun kini sudah tidak ada lagi yang mengingat kepercayaan dan ritual di masa itu."
+  },
+  "passiveName": "Ashen Sun's Shadow",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat Charged Attack mengenai musuh, memberikan Bond of Life sebesar 25% Max HP, efek ini dapat terpicu sekali setiap 14 detik. Selain itu, saat Karakter yang mengenakan memiliki Bond of Life, DMG yang diakibatkan meningkat <cryo>12%</cryo>; Jika nilai Bond of Life lebih tinggi atau sama dengan 30% Max HP, maka akan mendapatkan lagi tambahan DMG Bonus <cryo>24%</cryo>."
+    },
+    "1": {
+      "0": "Saat Charged Attack mengenai musuh, memberikan Bond of Life sebesar 25% Max HP, efek ini dapat terpicu sekali setiap 14 detik. Selain itu, saat Karakter yang mengenakan memiliki Bond of Life, DMG yang diakibatkan meningkat <cryo>16%</cryo>; Jika nilai Bond of Life lebih tinggi atau sama dengan 30% Max HP, maka akan mendapatkan lagi tambahan DMG Bonus <cryo>32%</cryo>."
+    },
+    "2": {
+      "0": "Saat Charged Attack mengenai musuh, memberikan Bond of Life sebesar 25% Max HP, efek ini dapat terpicu sekali setiap 14 detik. Selain itu, saat Karakter yang mengenakan memiliki Bond of Life, DMG yang diakibatkan meningkat <cryo>20%</cryo>; Jika nilai Bond of Life lebih tinggi atau sama dengan 30% Max HP, maka akan mendapatkan lagi tambahan DMG Bonus <cryo>40%</cryo>."
+    },
+    "3": {
+      "0": "Saat Charged Attack mengenai musuh, memberikan Bond of Life sebesar 25% Max HP, efek ini dapat terpicu sekali setiap 14 detik. Selain itu, saat Karakter yang mengenakan memiliki Bond of Life, DMG yang diakibatkan meningkat <cryo>24%</cryo>; Jika nilai Bond of Life lebih tinggi atau sama dengan 30% Max HP, maka akan mendapatkan lagi tambahan DMG Bonus <cryo>48%</cryo>."
+    },
+    "4": {
+      "0": "Saat Charged Attack mengenai musuh, memberikan Bond of Life sebesar 25% Max HP, efek ini dapat terpicu sekali setiap 14 detik. Selain itu, saat Karakter yang mengenakan memiliki Bond of Life, DMG yang diakibatkan meningkat <cryo>28%</cryo>; Jika nilai Bond of Life lebih tinggi atau sama dengan 30% Max HP, maka akan mendapatkan lagi tambahan DMG Bonus <cryo>56%</cryo>."
+    }
+  }
+}

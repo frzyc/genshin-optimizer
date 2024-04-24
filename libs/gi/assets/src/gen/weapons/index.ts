@@ -25,6 +25,7 @@ import CompoundBow from './CompoundBow'
 import CoolSteel from './CoolSteel'
 import CranesEchoingCall from './CranesEchoingCall'
 import CrescentPike from './CrescentPike'
+import CrimsonMoonsSemblance from './CrimsonMoonsSemblance'
 import DarkIronSword from './DarkIronSword'
 import Deathmatch from './Deathmatch'
 import DebateClub from './DebateClub'
@@ -209,6 +210,7 @@ const data = {
   CoolSteel,
   CranesEchoingCall,
   CrescentPike,
+  CrimsonMoonsSemblance,
   DarkIronSword,
   Deathmatch,
   DebateClub,

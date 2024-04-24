@@ -105,9 +105,9 @@
   "passive2": {
     "name": "Kalbin Sessizliği",
     "description": {
-      "0": "<strong>Kutsal Çember</strong>'in becerileri Shinobu'nun Element Ustalığına göre güçlenir:",
+      "0": "<strong>Kutsal Çemberin</strong> becerileri Shinobu'nun Element Ustalığına göre güçlenir:",
       "1": [
-        "İyileştirme oranı Element Ustalığının %75'i kadar artar.",
+        "İyileştirme miktarı Element Ustalığının %75'i kadar artar.",
         "Hasar oranı Element Ustalığının %25'i kadar artar."
       ]
     }
@@ -140,7 +140,7 @@
   "constellation4": {
     "name": "Mührü Boz",
     "description": {
-      "0": "Karakterin, Shinobu'nun <strong>Kutsal Ot Çemberi</strong> becerisinden etkilenen Normal, Yüklü veya Havadan Saldırıları bir düşmana çarparsa o düşmanın üzerine Yıldırım Otu İşareti düşer ve Shinobu'nun Maks. Canının %9,7'si oranında <electro>Elektrik Alan Hasarı</electro> verir.",
+      "0": "Shinobu'nun <strong>Kutsal Ot Çemberi</strong> becerisinden etkilenen karakterin Normal, Yüklü veya Havadan Saldırıları bir düşmana isabet ettiğinde o düşmanın üzerine Yıldırım Otu İşareti düşer ve Shinobu'nun Maks. Canının %9,7'si oranında <electro>Elektrik Alan Hasarı</electro> verir.",
       "1": "Bu etkinin 5 saniye bekleme süresi vardır."
     }
   },

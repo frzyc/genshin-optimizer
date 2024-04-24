@@ -1,0 +1,24 @@
+{
+  "name": "Kızıl Ayın Sureti",
+  "description": {
+    "0": "Parıltısıyla tıpkı kızıl ay gibi göz kamaştıran keskin bir silah. Kadim bir hanedanlığın bu mızrağı iki dünya arasında bir köprü görevi görmesi için ayinlerde kullandığı söylenir. Ancak o kadim çağa ait inançları ve törenleri artık hatırlayan kalmadı."
+  },
+  "passiveName": "Solgun Güneşin Gölgesi",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Yüklü Saldırı bir düşmana isabet ettiğinde karakter, Maks. Canının %25'i kadar Hayat Bağı kazanır. Bu etki her 14 saniyede bir tetiklenebilir. Ayrıca kuşanan karakterin Hayat Bağı olduğunda karakter <cryo>%12</cryo> Hasar Bonusu kazanır. Hayat Bağı değeri Maks. Canın %30'u kadar veya üzerindeyse karakter ek olarak <cryo>%24</cryo> Hasar Bonusu daha kazanır."
+    },
+    "1": {
+      "0": "Bir Yüklü Saldırı bir düşmana isabet ettiğinde karakter, Maks. Canının %25'i kadar Hayat Bağı kazanır. Bu etki her 14 saniyede bir tetiklenebilir. Ayrıca kuşanan karakterin Hayat Bağı olduğunda karakter <cryo>%16</cryo> Hasar Bonusu kazanır. Hayat Bağı değeri Maks. Canın %30'u kadar veya üzerindeyse karakter ek olarak <cryo>%32</cryo> Hasar Bonusu daha kazanır."
+    },
+    "2": {
+      "0": "Bir Yüklü Saldırı bir düşmana isabet ettiğinde karakter, Maks. Canının %25'i kadar Hayat Bağı kazanır. Bu etki her 14 saniyede bir tetiklenebilir. Ayrıca kuşanan karakterin Hayat Bağı olduğunda karakter <cryo>%20</cryo> Hasar Bonusu kazanır. Hayat Bağı değeri Maks. Canın %30'u kadar veya üzerindeyse karakter ek olarak <cryo>%40</cryo> Hasar Bonusu daha kazanır."
+    },
+    "3": {
+      "0": "Bir Yüklü Saldırı bir düşmana isabet ettiğinde karakter, Maks. Canının %25'i kadar Hayat Bağı kazanır. Bu etki her 14 saniyede bir tetiklenebilir. Ayrıca kuşanan karakterin Hayat Bağı olduğunda karakter <cryo>%24</cryo> Hasar Bonusu kazanır. Hayat Bağı değeri Maks. Canın %30'u kadar veya üzerindeyse karakter ek olarak <cryo>%48</cryo> Hasar Bonusu daha kazanır."
+    },
+    "4": {
+      "0": "Bir Yüklü Saldırı bir düşmana isabet ettiğinde karakter, Maks. Canının %25'i kadar Hayat Bağı kazanır. Bu etki her 14 saniyede bir tetiklenebilir. Ayrıca kuşanan karakterin Hayat Bağı olduğunda karakter <cryo>%28</cryo> Hasar Bonusu kazanır. Hayat Bağı değeri Maks. Canın %30'u kadar veya üzerindeyse karakter ek olarak <cryo>%56</cryo> Hasar Bonusu daha kazanır."
+    }
+  }
+}

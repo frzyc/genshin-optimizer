@@ -1,4 +1,3 @@
-import { extrapolateFloat } from '@genshin-optimizer/common/pipeline'
 import { readDMJSON } from '../../util'
 
 type WeaponCurveExcelConfigData = {
@@ -130,7 +129,7 @@ const weaponCurveExcelConfigData = {} as WeaponExpCurveData
 weaponCurveExcelConfigDataSrc.forEach(({ level, curveInfos }) =>
   curveInfos.forEach(({ type, value }) => {
     if (!weaponCurveExcelConfigData[type]) weaponCurveExcelConfigData[type] = {} // TODO: [0]
-    weaponCurveExcelConfigData[type][level] = extrapolateFloat(value)
+    weaponCurveExcelConfigData[type][level] = value
   })
 )
 

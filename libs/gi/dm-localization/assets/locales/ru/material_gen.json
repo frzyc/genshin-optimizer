@@ -191,6 +191,9 @@
   "Funds": {
     "name": "Средства"
   },
+  "IridescenceTourTickets": {
+    "name": "Билеты на тур «Многоцветье»"
+  },
   "Primogem": {
     "name": "Камень Истока"
   },
@@ -521,6 +524,9 @@
   "Chiori": {
     "name": "Тиори"
   },
+  "Arlecchino": {
+    "name": "Арлекино"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Удача Камисато Аяки"
   },
@@ -763,6 +769,9 @@
   },
   "ChiorisStellaFortuna": {
     "name": "Удача Тиори"
+  },
+  "ArlecchinosStellaFortuna": {
+    "name": "Удача Арлекино"
   },
   "GnosticHymnOldNotes": {
     "name": "Жемчужный гимн - Черновик"
@@ -6917,6 +6926,21 @@
   "FashionShow": {
     "name": "«Модный показ»"
   },
+  "RockNRollDangoMilk": {
+    "name": "Рок-н-ролльное молоко с данго"
+  },
+  "SuspiciousBulleSouffle": {
+    "name": "Странное пузыринное суфле"
+  },
+  "BulleSouffle": {
+    "name": "Пузыринное суфле"
+  },
+  "DeliciousBulleSouffle": {
+    "name": "Вкусное пузыринное суфле"
+  },
+  "HearthfiresTrail": {
+    "name": "Следы огня"
+  },
   "RecipeItem": {
     "name": "Ингредиенты"
   },
@@ -7493,6 +7517,9 @@
   "RecipeMegaMeatySushi": {
     "name": "Рецепт: Мегамясные суши"
   },
+  "RecipeBulleSouffle": {
+    "name": "Рецепт: Пузыринное суфле"
+  },
   "CraftedItems": {
     "name": "Созданные Предметы"
   },
@@ -7904,6 +7931,15 @@
   "ChasmlightFin": {
     "name": "Глубинный плавник"
   },
+  "RuinedHilt": {
+    "name": "Сломанный эфес"
+  },
+  "SplinteredHilt": {
+    "name": "Расщеплённый эфес"
+  },
+  "StillSmolderingHilt": {
+    "name": "Неугасающий эфес"
+  },
   "HurricaneSeed": {
     "name": "Семя урагана"
   },
@@ -8077,6 +8113,18 @@
   },
   "CloudseamScale": {
     "name": "Облачные доспехи"
+  },
+  "FragmentOfAGoldenMelody": {
+    "name": "Фрагмент золотой мелодии"
+  },
+  "FadingCandle": {
+    "name": "Угасающая свеча"
+  },
+  "SilkenFeather": {
+    "name": "Шелковистое перо"
+  },
+  "DenialAndJudgment": {
+    "name": "Отрицание и вердикт"
   },
   "TileOfDecarabiansTower": {
     "name": "Плитка башни Декарабиана"
@@ -10022,8 +10070,20 @@
   "OurChenyuValeTrekAlbum": {
     "name": "Альбом «Путешествие по Чэньюй»"
   },
+  "AncientAutoharmonicMusicBox": {
+    "name": "Древняя автогармоническая музыкальная шкатулка"
+  },
   "StrangeKey": {
     "name": "Странный ключ"
+  },
+  "BlankScore": {
+    "name": "Пустая партитура"
+  },
+  "AncientScore": {
+    "name": "Древняя партитура"
+  },
+  "LostGrimoire": {
+    "name": "Утерянный гримуар"
   },
   "ShootingPracticeOpticalLenses": {
     "name": "Оптическая линза для тренировочной стрельбы"
@@ -10033,6 +10093,15 @@
   },
   "PerinheriII": {
     "name": "Переньери II"
+  },
+  "AnecdotaSeptentrionalisI": {
+    "name": "Северные хроники I"
+  },
+  "AnecdotaSeptentrionalisII": {
+    "name": "Северные хроники II"
+  },
+  "AnecdotaSeptentrionalisIII": {
+    "name": "Северные хроники III"
   },
   "HelpMePlease": {
     "name": "Помогите!"
@@ -10151,6 +10220,9 @@
   "ChizhangMap": {
     "name": "Стена Чичжан"
   },
+  "MiniPhonograph": {
+    "name": "Мини-фонограф"
+  },
   "AncientCityKey": {
     "name": "Древний городской ключ"
   },
@@ -10163,11 +10235,29 @@
   "FishSeizedFromAPelicansMouth": {
     "name": "Рыба из клюва пеликана"
   },
+  "InvitationFromTheAratakiGang": {
+    "name": "Приглашение от банды Аратаки"
+  },
   "FelixFelicium": {
     "name": "Пожелание удачи"
   },
+  "ShikanoinHeizousMessage": {
+    "name": "Сообщение от Сиканоина Хэйдзо"
+  },
+  "PuppyUnionAdmissionDetails": {
+    "name": "О принятии в Щенячий союз"
+  },
   "LynettesEnvelope": {
     "name": "Конверт Линетт"
+  },
+  "RestoredScore": {
+    "name": "Восстановленная партитура"
+  },
+  "PagesFromALostScoreI": {
+    "name": "Фрагмент потерянной партитуры I"
+  },
+  "ARidiculouslyCommonBranch": {
+    "name": "Невероятно простая ветка"
   },
   "CultivationAreaExpansionVII": {
     "name": "Расширение области культивации VII"
@@ -10183,6 +10273,51 @@
   },
   "Manuscript": {
     "name": "Рукопись"
+  },
+  "IGotReincarnatedAsAnOnikabutoAndFlippedTheWorldUpsideDown": {
+    "name": "«Я переродился в оникабуто... и перевернул мир»"
+  },
+  "CynosLetter": {
+    "name": "Письмо Сайно"
+  },
+  "DamagedScore": {
+    "name": "Повреждённая партитура"
+  },
+  "RuggierosNotesII": {
+    "name": "Записки Руджеро II"
+  },
+  "PagesFromALostScoreII": {
+    "name": "Фрагмент потерянной партитуры II"
+  },
+  "AncientEngravings": {
+    "name": "Древняя надпись"
+  },
+  "HarmostsNotesII": {
+    "name": "Записи гармоста II"
+  },
+  "TatteredNavigationLog": {
+    "name": "Потрёпанный мореходный журнал"
+  },
+  "RuggierosNotesI": {
+    "name": "Записки Руджеро I"
+  },
+  "SomeonesNotes": {
+    "name": "Чьи-то записи"
+  },
+  "RuggierosNotesIII": {
+    "name": "Записки Руджеро III"
+  },
+  "InvestigationOfTheNorthernBarbarians": {
+    "name": "«О северных варварах»"
+  },
+  "HarmostsNotesI": {
+    "name": "Записи гармоста I"
+  },
+  "AncientInscription": {
+    "name": "Древняя выгравированная надпись"
+  },
+  "AncientPieceOfPaper": {
+    "name": "Древняя записка"
   },
   "TearsAmongTheStars": {
     "name": "Слёзы средь звёзд"
@@ -10849,6 +10984,21 @@
   },
   "RadiantSpincrystal125": {
     "name": "Лучистый кристалл 125"
+  },
+  "RadiantSpincrystal126": {
+    "name": "Лучистый кристалл 126"
+  },
+  "RadiantSpincrystal127": {
+    "name": "Лучистый кристалл 127"
+  },
+  "RadiantSpincrystal128": {
+    "name": "Лучистый кристалл 128"
+  },
+  "RadiantSpincrystal129": {
+    "name": "Лучистый кристалл 129"
+  },
+  "RadiantSpincrystal130": {
+    "name": "Лучистый кристалл 130"
   },
   "LanternFiber": {
     "name": "Волокно для фонарей"
@@ -11639,6 +11789,21 @@
   "TravelNotesArcaneAmassing": {
     "name": "Мистическое скопление"
   },
+  "ArlecchinoEdict": {
+    "name": "Правила"
+  },
+  "FontaineAttunement": {
+    "name": "Настройка инструмента"
+  },
+  "AchievementWhalewrangler": {
+    "name": "Укротитель китов"
+  },
+  "FontaineLucine": {
+    "name": "Люсин"
+  },
+  "TravelNotesTheRealmsRocked": {
+    "name": "Рок-королевства"
+  },
   "AnemoculusResonanceStone": {
     "name": "Камень эха анемокула"
   },
@@ -11878,6 +12043,9 @@
   },
   "MiniSeelieBrilliance": {
     "name": "Малая фея Великолепие"
+  },
+  "NightwindHorn": {
+    "name": "Горн ночного ветра"
   },
   "Fateometer": {
     "name": "«Судьбометр»"
@@ -12119,6 +12287,12 @@
   "FatuiElectroCicinMage": {
     "name": "Фатуи: Маг Электро цицинов"
   },
+  "AbyssHeraldWickedTorrents": {
+    "name": "Вестник Бездны: Злые течения"
+  },
+  "EmperorOfFireAndIron": {
+    "name": "Император огня и железа"
+  },
   "UndividedHeart": {
     "name": "Неразделённое сердце"
   },
@@ -12356,6 +12530,18 @@
   "ElectroCicinsFlicker": {
     "name": "Мерцание Электро цицина"
   },
+  "ToWardWeakness": {
+    "name": "Отказ от слабости"
+  },
+  "TheWondrousPathOfTruth": {
+    "name": "Дивный путь истины"
+  },
+  "SurgingUndercurrent": {
+    "name": "Скрытое течение"
+  },
+  "MoltenMail": {
+    "name": "Оплавленная кольчуга"
+  },
   "MagicGuide": {
     "name": "Руководство по магии"
   },
@@ -12572,6 +12758,12 @@
   "GoldenTroupesReward": {
     "name": "Награда Золотой труппы"
   },
+  "RightfulReward": {
+    "name": "Справедливая награда"
+  },
+  "AmethystCrown": {
+    "name": "Аметистовый венец"
+  },
   "LiyueHarborWharf": {
     "name": "Гавань Ли Юэ"
   },
@@ -12697,6 +12889,15 @@
   },
   "FortressOfMeropide": {
     "name": "Крепость Меропид"
+  },
+  "SeiraiIsland": {
+    "name": "Остров Сэйрай"
+  },
+  "Taroumaru": {
+    "name": "Таромару"
+  },
+  "TheWhiteGloveAndTheFisherman": {
+    "name": "Белая Перчатка и Рыбак"
   },
   "ElementalResonanceWovenIce": {
     "name": "Элементальный резонанс: Переплетение Крио"
@@ -12862,6 +13063,9 @@
   },
   "ControlledDirectionalBlast": {
     "name": "Контролируемый направленный взрыв"
+  },
+  "UnderwaterTreasureHunt": {
+    "name": "Поиск подводных сокровищ"
   },
   "Origin": {
     "name": "Изначальный"
@@ -13409,6 +13613,9 @@
   "CiderLakelight": {
     "name": "«Свет Сидрового озера»"
   },
+  "MusicTownsStreetlampSafetyLighting": {
+    "name": "Фонарь Музыкального города: Пешеходная подсветка"
+  },
   "EfflorescentIllumination": {
     "name": "Флуоресцентное освещение"
   },
@@ -13898,6 +14105,12 @@
   "TeahouseToolClearView": {
     "name": "Чайная утварь: Хороший обзор"
   },
+  "HotelRailingFreshMintLeaves": {
+    "name": "Перила отеля: Листья мяты"
+  },
+  "HotelRailingPerfectViewingArc": {
+    "name": "Перила отеля: Идеальные изгибы"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Мондштадтский коврик: Пылающий энтузиазм"
   },
@@ -13935,10 +14148,13 @@
     "name": "Ковёр в таверне - Мудрость дуэлянта"
   },
   "RestaurantRugEqualDialogue": {
-    "name": "Ковёр в ресторане: «Диалог о равенстве»"
+    "name": "Ковёр в ресторане: Диалог о равенстве"
   },
   "RestaurantRugBathingInTheBreeze": {
-    "name": "Ковёр в ресторане: «Купание в бризе»"
+    "name": "Ковёр в ресторане: Купание в бризе"
+  },
+  "FontainianCarpetFairAndSquare": {
+    "name": "Фонтейнский ковёр: Строгость и справедливость"
   },
   "TrustyPortableLamp": {
     "name": "Надёжная переносная лампа"
@@ -13972,6 +14188,9 @@
   },
   "TwoWayIronLamp": {
     "name": "Двойная железная лампа"
+  },
+  "SimpleLightingLocallySourcedMaterials": {
+    "name": "Простой фонарь: Из местных материалов"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Цветочная композиция: Бледно-голубое спокойствие"
@@ -14148,13 +14367,13 @@
     "name": "«Искусство сохранения воды»"
   },
   "FloralArrangementNearlyAquamarine": {
-    "name": "Цветочная композиция: «Почти аквамарин»"
+    "name": "Цветочная композиция: Почти аквамарин"
   },
   "FloralArrangementBloomingPurity": {
-    "name": "Цветочная композиция: «Чистота цветения»"
+    "name": "Цветочная композиция: Чистота цветения"
   },
   "FloralArrangementArtOfContrast": {
-    "name": "Цветочная композиция: «Искусство контраста»"
+    "name": "Цветочная композиция: Искусство контраста"
   },
   "LandscapePaintingCountryHome": {
     "name": "Пейзажная живопись: Деревенский дом"
@@ -14237,6 +14456,9 @@
   "IndoorLampTheTwilightSea": {
     "name": "Комнатный светильник: Сумеречное море"
   },
+  "MekaLuminaireSilentNightsContemplation": {
+    "name": "Механистическая лампа: Полуночные думы"
+  },
   "LingeringMoment": {
     "name": "Затянувшееся мгновение"
   },
@@ -14292,7 +14514,7 @@
     "name": "Торговая лавка: Отдых за чашкой чая"
   },
   "ValleyStageBillowingCloudWaves": {
-    "name": "Торговая лавка: Облачные волны"
+    "name": "Сцена долины: Облачные волны"
   },
   "ValleyVerandaDistantBeginnings": {
     "name": "Галерея в долине: Далёкие истоки"
@@ -14456,6 +14678,9 @@
   "PoissonsSeasonalProduce": {
     "name": "Сезонные продукты Пуассона"
   },
+  "MusicTownsHutMardouceHarmony": {
+    "name": "Навес Музыкального города: Мелодичная гармония"
+  },
   "HilichurlOutpostHut": {
     "name": "Сторожевая хижина хиличурлов"
   },
@@ -14505,10 +14730,10 @@
     "name": "Лавка с фонарями: Рубин"
   },
   "FestivalBoothStrangeWonders": {
-    "name": "Праздничная палатка «Необычные чудеса»"
+    "name": "Праздничная палатка: Необычные чудеса"
   },
   "FestivalBoothLiteraryTalent": {
-    "name": "Праздничная палатка «Литературное дарование»"
+    "name": "Праздничная палатка: Литературное дарование"
   },
   "DodocosSummertime": {
     "name": "Летняя пора Додоко"
@@ -14797,6 +15022,18 @@
   },
   "ASimpleResidenceInPoisson": {
     "name": "«Скромное жилище в Пуассоне»"
+  },
+  "TollingOfTheMusicmakingTown": {
+    "name": "Звон Музыкального города"
+  },
+  "PeacefulResidenceInTheMusicmakingTown": {
+    "name": "Безмятежная жизнь в Музыкальном городе"
+  },
+  "WorkshopInTheMusicmakingTown": {
+    "name": "Мастерская в Музыкальном городе"
+  },
+  "ResourcefulResidenceInTheMusicmakingTown": {
+    "name": "Уютный дом в Музыкальном городе"
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Фонтан с птицами и цветами"
@@ -15308,6 +15545,12 @@
   "RoyalPurple": {
     "name": "Королевский индиго"
   },
+  "InspirationsPureWhiteBlossoms": {
+    "name": "Белоснежное вдохновение"
+  },
+  "SalubriousFragrance": {
+    "name": "Целебный аромат"
+  },
   "FirShelves": {
     "name": "Полки из пихты"
   },
@@ -15555,7 +15798,7 @@
     "name": "Лампа теней: Раскрашенная тень"
   },
   "StoneLanternFudoumyousLight": {
-    "name": "Каменный фонарный столб «Неподвижный светильник»"
+    "name": "Каменный фонарный столб: Неподвижный светильник"
   },
   "ThreeReachesBright": {
     "name": "Путь к озарению"
@@ -15662,6 +15905,21 @@
   "CleverlyCraftedContraptionBornInBlessedBitterness": {
     "name": "Искусная утварь: Рождённый в горечи"
   },
+  "OriginOfMusic": {
+    "name": "Истоки музыки"
+  },
+  "LegionsFuriousHorns": {
+    "name": "Яростный рог легиона"
+  },
+  "HiddenSerpent": {
+    "name": "Затаившаяся змея"
+  },
+  "MirrorReflectionLyre": {
+    "name": "Зеркальная лира"
+  },
+  "CrystallineGlory": {
+    "name": "Хрустальная слава"
+  },
   "BookshelfFreeReading": {
     "name": "Книжная полка: Свободное чтение"
   },
@@ -15697,6 +15955,9 @@
   },
   "TeaHarvestsSunDriedFragrance": {
     "name": "«Чайный урожай: Солнечный аромат»"
+  },
+  "MallowWoodMailboxStorage": {
+    "name": "Почтовый ящик из древесины мальвы: Хранилище"
   },
   "WeatheredBambooFence": {
     "name": "Ветхая бамбуковая ограда"
@@ -15740,6 +16001,12 @@
   "StandardRailingScatteredStructure": {
     "name": "Стандартное ограждение: Разрозненная структура"
   },
+  "MallowWoodDoorframeGentleMelody": {
+    "name": "Дверная рама из древесины мальвы: Нежная мелодия"
+  },
+  "MallowWoodFenceTides": {
+    "name": "Забор из древесины мальвы: Приливы"
+  },
   "SmoothWoodenBench": {
     "name": "Гладкая деревянная скамейка"
   },
@@ -15771,7 +16038,13 @@
     "name": "Стул для чаепитий: Прохладный ветерок"
   },
   "TeaVillageStoneBenchSafeSpaciousSturdy": {
-    "name": "«Скамья чайной деревни: Спокойствие и долговечность»"
+    "name": "Скамья чайной деревни: Спокойствие и долговечность"
+  },
+  "MallowWoodBenchHiddenMelody": {
+    "name": "Скамейка из древесины мальвы: Скрытая мелодия"
+  },
+  "MallowWoodChairEZFold": {
+    "name": "Стул из древесины мальвы: Раскладной"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "Двухъярусная караульная башня хиличурлов"
@@ -15836,6 +16109,12 @@
   "TeaVillageStoneTableCulturedLeisure": {
     "name": "Деревенский чайный столик: Культурный отдых"
   },
+  "MallowWoodLongTableEngravedMemories": {
+    "name": "Длинный стол из древесины мальвы: Вырезанные воспоминания"
+  },
+  "MallowWoodRoundTableASharedDrink": {
+    "name": "Круглый стол из древесины мальвы: Застолье"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Витрина для вина: Сколько душе угодно"
   },
@@ -15864,6 +16143,9 @@
     "name": "Основание из камня: Великий замысел"
   },
   "TearstoneTilePerspectiveTheory": {
-    "name": "Слезорит: «Теория открытости»"
+    "name": "Слезорит: Теория открытости"
+  },
+  "SwordBearingStatueEternalWatch": {
+    "name": "Статуя с мечом: Вечный дозор"
   }
 }

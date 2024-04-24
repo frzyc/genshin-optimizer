@@ -1,0 +1,29 @@
+{
+  "setName": "Fragment of Harmonic Whimsy",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "When the value of a Bond of Life increases or decreases, this character deals 18% increased DMG for 6s. Max 3 stacks."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Harmonious Symphony Prelude",
+      "desc": "An honorary medal in the shape of a blooming flower. Adorned with blue stone and gold, it was once bestowed upon immortals."
+    },
+    "plume": {
+      "name": "Ancient Sea's Nocturnal Musing",
+      "desc": "A feather accessory carved in the shape of the wings of the golden bees of legend. They seem to flutter with the slightest breeze."
+    },
+    "sands": {
+      "name": "The Grand Jape of the Turning of Fate",
+      "desc": "A timepiece made in imitation of the wheel of fate. It ceased turning long ago."
+    },
+    "goblet": {
+      "name": "Ichor Shower Rhapsody",
+      "desc": "A rhyton fired with copper as the base, that was once filled with fine wine from paradise."
+    },
+    "circlet": {
+      "name": "Whimsical Dance of the Withered",
+      "desc": "A mask once covered in gold leaf. Perhaps it is a relic from some ancient officer of the legions."
+    }
+  }
+}

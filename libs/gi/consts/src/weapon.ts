@@ -101,6 +101,7 @@ export const allWeaponPolearmKeys = [
   'BlackTassel',
   'CalamityQueller',
   'CrescentPike',
+  'CrimsonMoonsSemblance',
   'Deathmatch',
   'DialoguesOfTheDesertSages',
   'DragonsBane',
