@@ -66,7 +66,7 @@ class ErrorBoundary extends Component<Props, State> {
         <Suspense>
           <StyledEngineProvider injectFirst>
             <ThemeProvider theme={theme}>
-              <CssBaseline />
+              <CssBaseline enableColorScheme />
               <Box
                 display="flex"
                 minWidth="100vw"

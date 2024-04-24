@@ -88,7 +88,7 @@ function App() {
     <StyledEngineProvider injectFirst>
       {/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
       <ThemeProvider theme={theme}>
-        <CssBaseline />
+        <CssBaseline enableColorScheme />
         <SillyContext.Provider value={SillyContextObj}>
           <SnowContext.Provider value={SnowContextObj}>
             <DatabaseContext.Provider value={dbContextObj}>

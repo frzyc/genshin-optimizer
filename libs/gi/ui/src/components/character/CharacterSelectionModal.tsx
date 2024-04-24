@@ -340,30 +340,41 @@ function SelectionCard({
       <Box>
         <CardThemed
           bgt="light"
-          sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+          sx={{
+            position: 'relative',
+            flexGrow: 1,
+            display: 'flex',
+            flexDirection: 'column',
+          }}
         >
-          <Box
-            sx={{ height: '0px', overflow: 'visible', zIndex: 2, opacity: 0.7 }}
+          <IconButton
+            sx={{ p: 0.25, position: 'absolute', zIndex: 2, opacity: 0.7 }}
+            onClick={(_) => {
+              onClose()
+              database.charMeta.set(characterKey, { favorite: !favorite })
+            }}
           >
-            <IconButton
-              sx={{ p: 0.25 }}
-              onClick={(_) => {
-                onClose()
-                database.charMeta.set(characterKey, { favorite: !favorite })
-              }}
-            >
-              {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
-            </IconButton>
-          </Box>
+            {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+          </IconButton>
           <CardActionArea onClick={onClick}>
             <Box
               display="flex"
               position="relative"
               className={!banner ? `grad-${rarity}star` : undefined}
               sx={{
-                backgroundImage: `url(${banner})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
+                '&::before': {
+                  content: '""',
+                  display: 'block',
+                  position: 'absolute',
+                  left: 0,
+                  top: 0,
+                  width: '100%',
+                  height: '100%',
+                  opacity: 0.7,
+                  backgroundImage: `url(${banner})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                },
               }}
               width="100%"
             >

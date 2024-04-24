@@ -27,7 +27,7 @@ export default function App() {
     <StyledEngineProvider injectFirst>
       {/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
       <ThemeProvider theme={theme}>
-        <CssBaseline />
+        <CssBaseline enableColorScheme />
         <DatabaseProvider>
           <CharacterProvider>
             <CalcProvider>
