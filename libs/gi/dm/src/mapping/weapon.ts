@@ -127,6 +127,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   13507: 'CalamityQueller',
   13509: 'EngulfingLightning',
   13511: 'StaffOfTheScarletSands',
+  13512: 'CrimsonMoonsSemblance',
 
   //catalyst
   14101: 'ApprenticesNotes',

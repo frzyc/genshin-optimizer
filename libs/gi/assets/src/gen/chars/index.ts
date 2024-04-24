@@ -4,6 +4,7 @@ import Alhaitham from './Alhaitham'
 import Aloy from './Aloy'
 import Amber from './Amber'
 import AratakiItto from './AratakiItto'
+import Arlecchino from './Arlecchino'
 import Baizhu from './Baizhu'
 import Barbara from './Barbara'
 import Beidou from './Beidou'
@@ -93,6 +94,7 @@ const data = {
   Aloy,
   Amber,
   AratakiItto,
+  Arlecchino,
   Baizhu,
   Barbara,
   Beidou,

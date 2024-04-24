@@ -17,6 +17,7 @@ import DesertPavilionChronicle from './DesertPavilionChronicle'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import FlowerOfParadiseLost from './FlowerOfParadiseLost'
+import FragmentOfHarmonicWhimsy from './FragmentOfHarmonicWhimsy'
 import Gambler from './Gambler'
 import GildedDreams from './GildedDreams'
 import GladiatorsFinale from './GladiatorsFinale'
@@ -49,6 +50,7 @@ import ThunderingFury from './ThunderingFury'
 import Thundersoother from './Thundersoother'
 import TinyMiracle from './TinyMiracle'
 import TravelingDoctor from './TravelingDoctor'
+import UnfinishedReverie from './UnfinishedReverie'
 import VermillionHereafter from './VermillionHereafter'
 import ViridescentVenerer from './ViridescentVenerer'
 import VourukashasGlow from './VourukashasGlow'
@@ -68,6 +70,7 @@ export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
   FlowerOfParadiseLost,
+  FragmentOfHarmonicWhimsy,
   Gambler,
   GildedDreams,
   GladiatorsFinale,
@@ -100,6 +103,7 @@ export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
   Thundersoother,
   TinyMiracle,
   TravelingDoctor,
+  UnfinishedReverie,
   VermillionHereafter,
   ViridescentVenerer,
   VourukashasGlow,

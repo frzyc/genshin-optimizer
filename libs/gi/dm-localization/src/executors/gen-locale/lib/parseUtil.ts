@@ -146,6 +146,10 @@ export const parsingFunctions: {
         const [normal, charged, plunging, arkhe] = strings
         return { normal, charged, plunging, arkhe } as any
       }
+      if (charkey === 'Arlecchino') {
+        const [normal, charged, plunging, infusion] = strings
+        return { normal, charged, plunging, infusion } as any
+      }
     } else if (strings.length === 5) {
       const [, charkey] = keys as any
       if (charkey === 'Neuvillette') {
