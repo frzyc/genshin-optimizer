@@ -20,6 +20,8 @@ import {
   Tab,
   Tabs,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material'
 import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -95,6 +97,8 @@ function TabNav({
   const { gender } = useDBMeta()
   const elementKey = getCharEle(characterKey)
   const banner = characterAsset(characterKey, 'banner', gender)
+  const theme = useTheme()
+  const isXs = useMediaQuery(theme.breakpoints.down('md'))
   return (
     <CardThemed
       sx={(theme) => {
@@ -151,7 +155,7 @@ function TabNav({
       )}
       <Tabs
         value={tab ?? 'setting'}
-        variant="fullWidth"
+        variant={isXs ? 'scrollable' : 'fullWidth'}
         allowScrollButtonsMobile
         sx={(theme) => {
           return {
