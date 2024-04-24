@@ -10,6 +10,7 @@ export function DrakeAd({ children }: { children: ReactNode }) {
         justifyContent: 'center',
         cursor: 'pointer',
         position: 'relative',
+        backgroundColor: 'white !important',
       }}
       onClick={() =>
         window.alert(
