@@ -10188,7 +10188,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^2.18.0, commander@npm:^2.20.0, commander@npm:^2.20.3":
+"commander@npm:^11.0.0":
+  version: 11.1.0
+  resolution: "commander@npm:11.1.0"
+  checksum: fd1a8557c6b5b622c89ecdfde703242ab7db3b628ea5d1755784c79b8e7cb0d74d65b4a262289b533359cd58e1bfc0bf50245dfbcd2954682a6f367c828b79ef
+  languageName: node
+  linkType: hard
+
+"commander@npm:^2.20.0, commander@npm:^2.20.3":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
   checksum: ab8c07884e42c3a8dbc5dd9592c606176c7eb5c1ca5ff274bcf907039b2c41de3626f684ea75ccf4d361ba004bbaff1f577d5384c155f3871e456bdf27becf9e
@@ -13124,14 +13131,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^8.1.0":
-  version: 8.1.0
-  resolution: "fs-extra@npm:8.1.0"
+"fs-extra@npm:^11.1.1":
+  version: 11.2.0
+  resolution: "fs-extra@npm:11.2.0"
   dependencies:
     graceful-fs: ^4.2.0
-    jsonfile: ^4.0.0
-    universalify: ^0.1.0
-  checksum: bf44f0e6cea59d5ce071bba4c43ca76d216f89e402dc6285c128abc0902e9b8525135aa808adad72c9d5d218e9f4bcc63962815529ff2f684ad532172a284880
+    jsonfile: ^6.0.1
+    universalify: ^2.0.0
+  checksum: b12e42fa40ba47104202f57b8480dd098aa931c2724565e5e70779ab87605665594e76ee5fb00545f772ab9ace167fe06d2ab009c416dc8c842c5ae6df7aa7e8
   languageName: node
   linkType: hard
 
@@ -13344,7 +13351,7 @@ __metadata:
     eslint-plugin-jsx-a11y: 6.7.1
     eslint-plugin-react: 7.32.2
     eslint-plugin-react-hooks: 4.6.0
-    gh-pages: ^5.0.0
+    gh-pages: ^6.1.1
     graphql: ^16.8.1
     i18next: ^23.6.0
     i18next-browser-languagedetector: ^7.0.1
@@ -13508,21 +13515,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gh-pages@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "gh-pages@npm:5.0.0"
+"gh-pages@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "gh-pages@npm:6.1.1"
   dependencies:
     async: ^3.2.4
-    commander: ^2.18.0
+    commander: ^11.0.0
     email-addresses: ^5.0.0
     filenamify: ^4.3.0
     find-cache-dir: ^3.3.1
-    fs-extra: ^8.1.0
+    fs-extra: ^11.1.1
     globby: ^6.1.0
   bin:
     gh-pages: bin/gh-pages.js
     gh-pages-clean: bin/gh-pages-clean.js
-  checksum: d766aef02d2859bd2fa89b183a7cb7cdb4b86401369c734e9a76875afbdcf9132142b2cdf35a835ed056131a9cdc4b4d9c551cdc353a9a248ff3cec6346a36d8
+  checksum: 2c0209d7ae6bd497b8c5d11c083bb7c22e2ac165eaf6773afc789bb3d3064137de9c2cadd1d2249e7df9c2420562b55721a69bbb5b68a1de8d8a4b0a5d88ab73
   languageName: node
   linkType: hard
 

@@ -12,18 +12,32 @@ import type {
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
-import type {
-  ICachedArtifact,
-  ICachedCharacter,
-  ICachedWeapon,
-  Team,
-  TeamCharacter,
+import {
+  type CustomTarget,
+  type EnclosingOperation,
+  type ExpressionOperation,
+  type ExpressionUnit,
+  type ICachedArtifact,
+  type ICachedCharacter,
+  type ICachedWeapon,
+  type Team,
+  type TeamCharacter,
 } from '@genshin-optimizer/gi/db'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import { input, tally } from './formula'
 import type { Data, Info, NumNode, ReadNode, StrNode } from './type'
-import { constant, data, infoMut, none, percent, prod, sum } from './utils'
+import {
+  constant,
+  data,
+  infoMut,
+  max,
+  min,
+  none,
+  percent,
+  prod,
+  sum,
+} from './utils'
 
 export function inferInfoMut(data: Data, source?: Info['source']): Data {
   crawlObject(
@@ -160,7 +174,10 @@ export function dataObjForCharacterNew(
       ...objKeyMap(
         allElementWithPhyKeys.map((ele) => `${ele}_res_`),
         (ele) =>
-          percent((enemyOverride[`${ele.slice(0, -5)}_enemyRes_`] ?? 10) / 100)
+          percent(
+            ((enemyOverride as any)[`${ele.slice(0, -5)}_enemyRes_`] ?? 10) /
+              100
+          )
       ),
       level: constant(enemyOverride.enemyLevel ?? level),
     },
@@ -172,7 +189,7 @@ export function dataObjForCharacterNew(
   }
 
   for (const [key, value] of Object.entries(bonusStats))
-    result.customBonus![key] = key.endsWith('_')
+    (result.customBonus! as any)[key] = key.endsWith('_')
       ? percent(value / 100)
       : constant(value)
 
@@ -189,43 +206,201 @@ export function dataObjForCharacterNew(
   )
 
   if (sheetData?.display) {
-    sheetData.display.custom = {}
-    customMultiTargets.forEach(({ name, targets }, i) => {
-      const targetNodes = targets.map(
-        ({ weight, path, hitMode, reaction, infusionAura, bonusStats }) => {
-          const targetNode = objPathValue(sheetData.display, path) as
-            | NumNode
-            | undefined
-          if (!targetNode) return constant(0)
-          if (hitMode === 'global') hitMode = globalHitMode
+    sheetData.display['custom'] = {}
 
-          return prod(
-            constant(weight),
-            infoMut(
-              data(targetNode, {
-                premod: objMap(bonusStats, (v, k) =>
-                  k.endsWith('_') ? percent(v / 100) : constant(v)
-                ),
-                hit: {
-                  hitMode: constant(hitMode),
-                  reaction: reaction ? constant(reaction) : none,
-                },
-                infusion: {
-                  team: infusionAura ? constant(infusionAura) : none,
-                },
-              }),
-              { pivot: true }
-            )
-          )
-        }
+    const parseCustomTarget = (
+      target: CustomTarget,
+      useWeight = true
+    ): NumNode => {
+      let { weight, path, hitMode, reaction, infusionAura, bonusStats } = target
+      const targetNode = objPathValue(sheetData.display, path) as
+        | NumNode
+        | undefined
+      if (!targetNode) return constant(0)
+      if (hitMode === 'global') hitMode = globalHitMode
+
+      let result = infoMut(
+        data(targetNode, {
+          premod: objMap(bonusStats, (v, k) =>
+            k.endsWith('_') ? percent(v / 100) : constant(v)
+          ),
+          hit: {
+            hitMode: constant(hitMode),
+            reaction: reaction ? constant(reaction) : none,
+          },
+          infusion: {
+            team: infusionAura ? constant(infusionAura) : none,
+          },
+        }),
+        { pivot: true }
       )
+      if (useWeight) result = prod(constant(weight), result)
+      return result
+    }
 
-      // Make the variant "invalid" because its not easy to determine variants in multitarget
-      const multiTargetNode = infoMut(sum(...targetNodes), {
-        name,
-        variant: 'invalid',
-      })
-      sheetData.display!.custom[i] = multiTargetNode
+    const parseCustomExpression = (e: ExpressionUnit[]): NumNode => {
+      const expression = [...e]
+      const operationPriority = {
+        addition: 1,
+        subtraction: 1,
+        multiplication: 2,
+        division: 2,
+        minimum: 3,
+        maximum: 3,
+        average: 3,
+        priority: 3,
+      } as const
+      const handled = [] as ExpressionUnit[]
+      const stack = [] as EnclosingOperation[]
+      let parts = [[]] as ExpressionUnit[][]
+      let currentOperation: ExpressionOperation | undefined
+      let lastUnit: ExpressionUnit | undefined
+      let enclosingMode = false
+
+      while (expression.length) {
+        if (lastUnit) handled.push(lastUnit)
+        const unit = expression.shift() as ExpressionUnit
+        lastUnit = unit
+        if (stack.length) {
+          parts[parts.length - 1].push(unit)
+          if (unit.type === 'enclosing') {
+            if (unit.part === 'head') stack.push(unit.operation)
+            if (unit.part === 'tail') stack.pop()
+          }
+          continue
+        }
+        if (unit.type === 'enclosing') {
+          if (unit.part === 'head') {
+            if (!handled.length) {
+              // Special case for enclosing as first unit
+              currentOperation = unit.operation
+              enclosingMode = true
+              continue
+            }
+            stack.push(unit.operation)
+            parts[parts.length - 1].push(unit)
+            continue
+          }
+          if (unit.part === 'comma') {
+            // We can only be here if the stack is empty and currentOperation is an enclosing operation
+            parts.push([])
+            continue
+          }
+          if (unit.part === 'tail') {
+            // We can only be here if current enclosing is closed
+            if (expression.length) {
+              enclosingMode = false
+              currentOperation = undefined
+              parts[parts.length - 1].push(unit)
+            }
+            continue
+          }
+        }
+        if (enclosingMode) {
+          parts[parts.length - 1].push(unit)
+          continue
+        }
+        if (unit.type === 'operation') {
+          // Operations with lower priority first, so they will go to a higher node and will be calculated last
+          if (
+            !currentOperation ||
+            operationPriority[unit.operation] <
+              operationPriority[currentOperation]
+          ) {
+            currentOperation = unit.operation
+            parts = [[...handled], []]
+            continue
+          }
+          if (unit.operation === currentOperation) {
+            parts.push([])
+            continue
+          }
+        }
+        if (unit.type === 'null' && unit.kind === 'operation') {
+          if (!currentOperation) {
+            currentOperation = 'addition'
+            parts = [[...handled], []]
+            continue
+          }
+          if (currentOperation === 'addition') {
+            parts.push([])
+            continue
+          }
+        }
+        parts[parts.length - 1].push(unit)
+      }
+
+      if (stack.length) throw new Error(`Unclosed enclosing stack ${stack}`)
+
+      if (!currentOperation) {
+        // It means we are at the very end of the recursion, we need to process operands
+        if (!e.length) return constant(1)
+        const operand = e[0]
+        if (operand.type === 'constant') return constant(operand.value)
+        if (operand.type === 'target')
+          return parseCustomTarget(operand.target, false)
+        if (operand.type === 'null') return constant(1)
+        throw new Error(`Unexpected operand type ${operand.type}`)
+      }
+
+      const parsedParts = parts.map(parseCustomExpression)
+
+      if (currentOperation === 'addition') {
+        return sum(...parsedParts)
+      }
+      if (currentOperation === 'subtraction') {
+        // TODO: Properly implement subtraction
+        return sum(parsedParts[0], prod(constant(-1), ...parsedParts.slice(1)))
+      }
+      if (currentOperation === 'multiplication') {
+        return prod(...parsedParts)
+      }
+      if (currentOperation === 'division') {
+        // TODO: Implement division
+        return prod(
+          parsedParts[0],
+          ...parsedParts.slice(1).map((x) => prod(-1, x))
+        )
+      }
+      if (currentOperation === 'minimum') {
+        return min(...parsedParts)
+      }
+      if (currentOperation === 'maximum') {
+        return max(...parsedParts)
+      }
+      if (currentOperation === 'average') {
+        // TODO: Properly implement average
+        return sum(
+          constant(0),
+          prod(constant(1 / parsedParts.length), ...parsedParts)
+        )
+      }
+      if (currentOperation === 'priority') {
+        // TODO: Properly implement priority
+        return sum(constant(0), ...parsedParts)
+      }
+      ;((_: never) => {
+        throw new Error(`Unexpected operation ${currentOperation}`)
+      })(currentOperation)
+    }
+
+    customMultiTargets.forEach(({ name, targets, expression }, i) => {
+      if (expression) {
+        const multiTargetNode = parseCustomExpression(expression)
+        sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
+          name,
+          variant: 'invalid',
+        })
+      } else {
+        const targetNodes = targets.map((target) => parseCustomTarget(target))
+
+        // Make the variant "invalid" because its not easy to determine variants in multitarget
+        const multiTargetNode = infoMut(sum(...targetNodes), {
+          name,
+          variant: 'invalid',
+        })
+        sheetData.display!['custom'][i] = multiTargetNode
+      }
     })
   }
   return result

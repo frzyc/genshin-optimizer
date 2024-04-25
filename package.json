@@ -6,6 +6,7 @@
   "scripts": {
     "frontend": "nx serve frontend",
     "build-all": "nx run-many -t build",
+    "silent-release": "nx build frontend; gh-pages -d dist/apps/frontend --silent",
     "mini-ci": "nx format:write && nx affected -t test,eslint:lint,typecheck",
     "reload-dm": "git submodule update --init",
     "update-dm": "git submodule update --remote",
@@ -68,7 +69,7 @@
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
-    "gh-pages": "^5.0.0",
+    "gh-pages": "^6.1.1",
     "jest": "29.4.3",
     "jest-environment-jsdom": "29.4.3",
     "jest-environment-node": "^29.4.1",

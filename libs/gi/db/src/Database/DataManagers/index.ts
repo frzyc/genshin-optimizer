@@ -6,6 +6,7 @@ import {
   MAX_NAME_LENGTH,
   initCustomMultiTarget,
   initCustomTarget,
+  initExpressionUnit,
   validateCustomMultiTarget,
 } from './CustomMultiTarget'
 import type {
@@ -41,6 +42,7 @@ export {
   initCharTC,
   initCustomMultiTarget,
   initCustomTarget,
+  initExpressionUnit,
   initialWeapon,
   maxBuildsToShowList,
   minTotalStatKeys,
