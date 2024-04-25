@@ -379,7 +379,7 @@ export function dataObjForCharacterNew(
         // TODO: Properly implement priority
         return sum(constant(0), ...parsedParts)
       }
-      ;((_: never) => {
+      const _ = ((_: never) => {
         throw new Error(`Unexpected operation ${currentOperation}`)
       })(currentOperation)
     }
