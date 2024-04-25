@@ -3,6 +3,13 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import { useInfScroll } from '@genshin-optimizer/common/ui'
+import { sortFunction } from '@genshin-optimizer/common/util'
+import { allPathKeys, allRarityKeys } from '@genshin-optimizer/sr/consts'
+import {
+  lightConeSortConfigs,
+  lightConeSortKeys,
+  lightConeSortMap,
+} from '@genshin-optimizer/sr/util'
 import { Box, Container, Grid, Skeleton, Typography } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
 import { useDatabaseContext } from '../Context'
@@ -15,6 +22,19 @@ export function LightConeInventory() {
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
 
+  // lives here until DB storage for UI sort/filter options is created
+  const initialSort = () => ({
+    sortType: lightConeSortKeys[0],
+    ascending: false,
+    rarity: [...allRarityKeys],
+    path: [...allPathKeys],
+  })
+
+  // no way to currently change state of sort until
+  // ability to store UI sort/filter options get added to DB storage
+  // until then, initialize a default sort
+  const { sortType, ascending } = initialSort()
+
   useEffect(
     () => database.lightCones.followAny(setDirtyDatabase),
     [database, setDirtyDatabase]
@@ -23,9 +43,17 @@ export function LightConeInventory() {
   const { lightConeIds, totalLightConeNum } = useMemo(() => {
     const lightCones = database.lightCones.values
     const totalLightConeNum = lightCones.length
-    const lightConeIds = database.lightCones.keys
+    const lightConeIds = lightCones
+      .sort(
+        sortFunction(
+          lightConeSortMap[sortType] ?? [],
+          ascending,
+          lightConeSortConfigs()
+        )
+      )
+      .map((lc) => lc.id)
     return dirtyDatabase && { lightConeIds, totalLightConeNum }
-  }, [database, dirtyDatabase])
+  }, [database, dirtyDatabase, sortType, ascending])
 
   const brPt = useMediaQueryUp()
 
@@ -71,18 +99,11 @@ export function LightConeInventory() {
         </Box>
         <Box my={1} display="flex" flexDirection="column" gap={1}>
           <Grid container spacing={1} columns={columns}>
-            {lightConeIdsToShow
-              // extremely basic sort by db string ID/db insert order for now
-              // due to hard refresh of page changing db state and shuffling card order
-              // will be replaced later with actual sortFilters in follow-up PR
-              .sort((lightConeId1, lightConeId2) =>
-                lightConeId1.localeCompare(lightConeId2)
-              )
-              .map((lightConeId) => (
-                <Grid item key={lightConeId} xs={1}>
-                  <LightConeCard lightConeId={lightConeId} />
-                </Grid>
-              ))}
+            {lightConeIdsToShow.map((lightConeId) => (
+              <Grid item key={lightConeId} xs={1}>
+                <LightConeCard lightConeId={lightConeId} />
+              </Grid>
+            ))}
           </Grid>
 
           {lightConeIds.length !== lightConeIdsToShow.length && (
