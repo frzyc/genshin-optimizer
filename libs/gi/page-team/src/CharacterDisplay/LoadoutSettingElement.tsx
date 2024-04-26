@@ -5,9 +5,11 @@ import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   BuildInfoAlert,
+  EquippedBuildInfoAlert,
   FormulaDataContext,
   LoadoutInfoAlert,
   LoadoutNameDesc,
+  TCBuildInfoAlert,
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import BarChartIcon from '@mui/icons-material/BarChart'
@@ -117,7 +119,7 @@ function BuildManagementContent() {
         }
       />
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        <BuildInfoAlert />
+        <EquippedBuildInfoAlert />
         <Grid container columns={columns} spacing={2}>
           <Grid item xs={1}>
             <BuildEquipped active={loadoutDatum?.buildType === 'equipped'} />
@@ -135,7 +137,7 @@ function BuildManagementContent() {
             New Build
           </Button>
         </Box>
-
+        <BuildInfoAlert />
         <Box>
           <Grid container columns={columns} spacing={2}>
             {buildIds.map((id) => (
@@ -165,7 +167,7 @@ function BuildManagementContent() {
             New TC Build
           </Button>
         </Box>
-
+        <TCBuildInfoAlert />
         <Box>
           <Grid container columns={columns} spacing={2}>
             {buildTcIds.map((id) => (

@@ -23,6 +23,7 @@ import { useCallback, useContext, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { DataContext, SillyContext } from '../../../context'
+import { AddTeamInfo } from '../../AddTeamInfo'
 import { LevelSelect } from '../../LevelSelect'
 import {
   CharacterCompactConstSelector,
@@ -238,6 +239,7 @@ function InTeam() {
         Team Loadouts with{' '}
         <CharacterName characterKey={characterKey} gender={gender} />
       </Typography>
+      {!Object.values(loadoutTeamMap).length && <AddTeamInfo />}
 
       {Object.entries(loadoutTeamMap).map(([teamCharId, teamIds]) => (
         <LoadoutCard
