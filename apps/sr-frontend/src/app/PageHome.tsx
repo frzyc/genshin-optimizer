@@ -1,10 +1,20 @@
-import { CharacterInventory, RelicEditor, RelicInventory } from '@genshin-optimizer/sr/ui'
-import { Accordion, AccordionDetails, AccordionSummary, Container, Stack } from '@mui/material'
+import {
+  CharacterInventory,
+  RelicEditor,
+  RelicInventory,
+} from '@genshin-optimizer/sr/ui'
+import { ExpandMore } from '@mui/icons-material'
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Container,
+  Stack,
+} from '@mui/material'
 import CharacterEditor from './Character'
 import CharacterSelector from './CharacterSelector'
 import Database from './Database'
 import Optimize from './Optimize'
-import { ExpandMore } from '@mui/icons-material'
 
 // TODO: Move this to a lib once the components below are moved.
 export default function PageHome() {
