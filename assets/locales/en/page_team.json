@@ -1,0 +1,7 @@
+{
+  "buildInfo": {
+    "equipped": "This is the build currently equipped to your character, this represents in-game equipement and is persistent outside of the Loadout.",
+    "build": "A <strong>Build</strong> is comprised of a weapon and 5 artifacts.",
+    "tcbuild": "A <strong>Theorycraft Build</strong> allows defining a build by raw stats."
+  }
+}
