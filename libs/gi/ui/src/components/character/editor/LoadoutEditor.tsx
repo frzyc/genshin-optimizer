@@ -31,7 +31,7 @@ import {
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { DocumentDisplay } from '../../DocumentDisplay'
-import { BuildInfoAlert } from '../../build'
+import { BuildInfoAlert, TCBuildInfoAlert } from '../../build'
 import { LoadoutInfoAlert, LoadoutNameDesc } from '../../loadout'
 import { TeamCard, TeamInfoAlert } from '../../team'
 import { BuildRealSimplified } from './BuildRealSimplified'
@@ -203,6 +203,7 @@ export function LoadoutEditor({
             </Grid>
           </Box>
 
+          <TCBuildInfoAlert />
           <Box>
             <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
               {buildTcIds.map((id) => (

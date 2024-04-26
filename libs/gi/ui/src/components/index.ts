@@ -1,4 +1,5 @@
 export * from './AddArtInfo'
+export * from './AddTeamInfo'
 export * from './AdditiveReactionModeText'
 export * from './AmpReactionModeText'
 export * from './DocumentDisplay'
