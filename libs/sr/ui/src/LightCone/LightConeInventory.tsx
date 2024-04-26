@@ -2,7 +2,7 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { useInfScroll } from '@genshin-optimizer/common/ui'
+import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { sortFunction } from '@genshin-optimizer/common/util'
 import { allPathKeys, allRarityKeys } from '@genshin-optimizer/sr/consts'
 import {
@@ -10,7 +10,7 @@ import {
   lightConeSortKeys,
   lightConeSortMap,
 } from '@genshin-optimizer/sr/util'
-import { Box, Container, Grid, Skeleton, Typography } from '@mui/material'
+import { Box, CardContent, Grid, Skeleton, Typography } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
 import { useDatabaseContext } from '../Context'
 import { LightConeCard } from './LightConeCard'
@@ -77,7 +77,23 @@ export function LightConeInventory() {
   }
 
   return (
-    <Container>
+    <>
+      <CardThemed bgt="dark">
+        <CardContent>
+          <Box
+            pb={2}
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            <Typography color="text.secondary">
+              Showing <b>{showingTextProps.numShowing}</b> out of{' '}
+              {showingTextProps.total} Items
+            </Typography>
+          </Box>
+        </CardContent>
+      </CardThemed>
       <Suspense
         fallback={
           <Skeleton
@@ -86,40 +102,27 @@ export function LightConeInventory() {
           />
         }
       >
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          flexWrap="wrap"
-        >
-          <Typography color="text.secondary">
-            Showing <b>{showingTextProps.numShowing}</b> out of{' '}
-            {showingTextProps.total} Items
-          </Typography>
-        </Box>
-        <Box my={1} display="flex" flexDirection="column" gap={1}>
-          <Grid container spacing={1} columns={columns}>
-            {lightConeIdsToShow.map((lightConeId) => (
-              <Grid item key={lightConeId} xs={1}>
-                <LightConeCard lightConeId={lightConeId} />
-              </Grid>
-            ))}
-          </Grid>
+        <Grid container spacing={1} columns={columns}>
+          {lightConeIdsToShow.map((lightConeId) => (
+            <Grid item key={lightConeId} xs={1}>
+              <LightConeCard lightConeId={lightConeId} />
+            </Grid>
+          ))}
+        </Grid>
 
-          {lightConeIds.length !== lightConeIdsToShow.length && (
-            <Skeleton
-              ref={(node) => {
-                if (!node) return
-                setTriggerElement(node)
-              }}
-              sx={{ borderRadius: 1 }}
-              variant="rectangular"
-              width="100%"
-              height={100}
-            />
-          )}
-        </Box>
+        {lightConeIds.length !== lightConeIdsToShow.length && (
+          <Skeleton
+            ref={(node) => {
+              if (!node) return
+              setTriggerElement(node)
+            }}
+            sx={{ borderRadius: 1 }}
+            variant="rectangular"
+            width="100%"
+            height={100}
+          />
+        )}
       </Suspense>
-    </Container>
+    </>
   )
 }
