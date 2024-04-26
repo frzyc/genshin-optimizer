@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
+import { toMSite } from './util'
 
 export function GOAd({ children }: { children: ReactNode }) {
   return (
@@ -15,11 +16,7 @@ export function GOAd({ children }: { children: ReactNode }) {
         cursor: 'pointer',
         minHeight: 60,
       }}
-      onClick={() =>
-        window.alert(
-          'Why did you click on this? You are already on Genshin optimizer!'
-        )
-      }
+      onClick={toMSite}
     >
       {children}
       <Typography color="black">

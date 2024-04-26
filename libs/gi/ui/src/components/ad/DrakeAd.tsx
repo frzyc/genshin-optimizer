@@ -1,6 +1,7 @@
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
 import drake from './drake.png'
+import { toMSite } from './util'
 export function DrakeAd({ children }: { children: ReactNode }) {
   return (
     <Box
@@ -12,11 +13,7 @@ export function DrakeAd({ children }: { children: ReactNode }) {
         position: 'relative',
         backgroundColor: 'white !important',
       }}
-      onClick={() =>
-        window.alert(
-          'Why did you click on this? You are already on Genshin optimizer!'
-        )
-      }
+      onClick={toMSite}
     >
       {children}
       <Box component="img" src={drake} maxWidth="100%" maxHeight="100%" />

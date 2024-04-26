@@ -2,6 +2,7 @@ import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
 import sro from './sro.png'
+import { toDiscord } from './util'
 export function SRODevAd({ children }: { children: ReactNode }) {
   return (
     <Box
@@ -16,7 +17,7 @@ export function SRODevAd({ children }: { children: ReactNode }) {
         cursor: 'pointer',
         gap: 1,
       }}
-      onClick={() => window.open('https://discord.gg/CXUbQXyfUs', '_blank')}
+      onClick={toDiscord}
     >
       {children}
       <Typography variant="h5" color="darkred">
