@@ -1,7 +1,7 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
-import { Menu as MenuIcon } from '@mui/icons-material'
+import { Diamond, Menu as MenuIcon } from '@mui/icons-material'
 import {
   AppBar,
   Box,
@@ -34,12 +34,35 @@ type ITab = {
   value: string
   textSuffix?: ReactNode
 }
+const relics: ITab = {
+  i18Key: 'tabs.relics',
+  // No SRO icons exist right now, replace later with real relics icon
+  icon: <Diamond />,
+  to: '/relics',
+  value: 'relics',
+  textSuffix: <RelicChip key="relicsAdd" />,
+}
+
 const lightCones: ITab = {
   i18Key: 'tabs.lightcones',
   icon: <AnvilIcon />,
   to: '/lightcones',
   value: 'lightcones',
   textSuffix: <LightConeChip key="lightConeAdd" />,
+}
+
+function RelicChip() {
+  const { database } = useDatabaseContext()
+  const [dirty, setDirty] = useForceUpdate()
+  useEffect(
+    () => database.relics.followAny(() => setDirty()),
+    [database, setDirty]
+  )
+  const total = useMemo(
+    () => dirty && database.relics.keys.length,
+    [dirty, database]
+  )
+  return <Chip label={<strong>{total}</strong>} size="small" />
 }
 
 function LightConeChip() {
@@ -64,7 +87,7 @@ export default function Header({ anchor }: { anchor: string }) {
   )
 }
 
-const maincontent = [lightCones] as const
+const maincontent = [relics, lightCones] as const
 
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
@@ -144,7 +167,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
   )
 }
 
-const mobileContent = [lightCones] as const
+const mobileContent = [relics, lightCones] as const
 function MobileHeader({
   anchor,
   currentTab,
