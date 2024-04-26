@@ -172,6 +172,8 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
       const optConfig =
         buildSettings.find(({ id }: { id: string }) => id === characterKey) ??
         {}
+      // Only migrate characters with either a mtarget or an opttarget
+      if (!customMultiTarget.length && !optConfig.optimizationTarget) return
       const optConfigId = `optConfig_${optConfigInd++}`
       ;(good as any).optConfigs.push({ ...optConfig, id: optConfigId })
 
@@ -416,6 +418,8 @@ export function migrate(storage: DBStorage) {
           teamConditional,
         } = storage.get(key) as IGOCharacter
         const optConfig = storage.get(`buildSetting_${characterKey}`) ?? {}
+        // Only migrate characters with either a mtarget or an opttarget
+        if (!customMultiTarget.length && !optConfig.optimizationTarget) continue
         const optConfigId = `optConfig_${optConfigInd++}`
         storage.set(optConfigId, optConfig)
 
