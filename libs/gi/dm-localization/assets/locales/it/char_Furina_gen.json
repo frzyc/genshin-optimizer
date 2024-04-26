@@ -168,7 +168,7 @@
     "name": "\"Libiamo ne' lieti calici!\"",
     "description": {
       "0": "Quando usa l'abilità elementale <strong>Salon Solitaire</strong>, Furina entra nello stato di Centro dell'attenzione per 10 s.",
-      "1": "Per la sua durata, gli attacchi normali, caricati e in picchiata di Furina infliggono <hydro>DAN da Hydro</hydro> che non possono essere contrastati da altre infusioni elementali. In più, i DAN inflitti aumentano di un 18% dei suoi PS max.",
+      "1": "Per la sua durata, gli attacchi normali, caricati e in picchiata di Furina infliggono <hydro>DAN da Hydro</hydro> non influenzabili da altre infusioni elementali. In più, i DAN inflitti aumentano di un 18% dei suoi PS max.",
       "2": "Mentre lo stato è attivo, gli attacchi normali (esclusi quelli di Archè: Seggi sacri e secolari), caricati e in picchiata di Furina che colpiscono gli avversari causano vari effetti ogni 0,1 s, in base alla polarità Archè attuale del personaggio.",
       "3": "<br/>",
       "4": "Archè: Ousia",

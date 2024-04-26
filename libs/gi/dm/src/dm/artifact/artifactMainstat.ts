@@ -1,4 +1,3 @@
-import { extrapolateFloat } from '@genshin-optimizer/common/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/common/util'
 import type { MainStatKey, PropTypeKey } from '../../mapping'
 import { MainPropMap, propTypeMap } from '../../mapping'
@@ -43,7 +42,7 @@ artifactMainstatDataSrc.forEach(({ rank = 0, level, addProps }) => {
       layeredAssignment(
         artifactMainstatData,
         [rank, propTypeMap[propType], level - 1],
-        extrapolateFloat(value)
+        value
       )
     else console.warn(`MainPropMap.${propType} is not a valid key.`)
   })

@@ -1,5 +1,5 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { objMap } from '@genshin-optimizer/common/util'
+import { notEmpty, objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
@@ -205,7 +205,7 @@ export function getTeamData(
           return getBuildTcArtifactData(database.buildTcs.get(buildTcId)!)
         return Object.values(
           database.teams.getLoadoutArtifacts(loadoutDatum)
-        ).filter((a) => a) as ICachedArtifact[]
+        ).filter(notEmpty) as ICachedArtifact[]
       })()
       const mainLevel = (() => {
         if (mainStatAssumptionLevel && isActiveTeamChar)

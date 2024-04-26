@@ -4,11 +4,11 @@
   "sourceRoot": "libs/sr/assets/src",
   "projectType": "library",
   "tags": [],
+  "// targets": "to see all targets run: nx show project sr-assets --web",
   "targets": {
     "gen-file": {
       "executor": "@genshin-optimizer/sr/assets:gen-assets",
       "outputs": ["{workspaceRoot}/${projectRoot}/src/gen/**/*"]
-    },
-    "lint": {}
+    }
   }
 }

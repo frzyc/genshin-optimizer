@@ -37,7 +37,8 @@ export function InfoComponent({
   children: JSX.Element
 }) {
   const [show, onTrue, onFalse] = useBoolState(
-    localStorage.getItem(`infoShown_${pageKey}`) !== 'true'
+    typeof window !== 'undefined' &&
+      localStorage.getItem(`infoShown_${pageKey}`) !== 'true'
   )
 
   const [displayText] = useState(

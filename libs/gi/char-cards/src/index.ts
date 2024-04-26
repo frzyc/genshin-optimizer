@@ -4,6 +4,7 @@ import Alhaitham from './Character_Alhaitham_Card.jpg'
 import Aloy from './Character_Aloy_Card.png'
 import Amber from './Character_Amber_Card.jpg'
 import AratakiItto from './Character_Arataki_Itto_Card.jpg'
+import Arlecchino from './Character_Arlecchino_Card.jpg'
 import Baizhu from './Character_Baizhu_Card.jpg'
 import Barbara from './Character_Barbara_Card.jpg'
 import Beidou from './Character_Beidou_Card.jpg'
@@ -88,6 +89,7 @@ const charCards = {
   Aloy,
   Amber,
   AratakiItto,
+  Arlecchino,
   Baizhu,
   Barbara,
   Beidou,

@@ -59,7 +59,7 @@ export default function MainStatSelectionCard({
       slotTots: artifactsSlotsToSelectMainStats,
     } as const
     const catTotals = bulkCatTotal(catKeys, (ctMap) =>
-      Object.entries(database.arts.data).forEach(([id, art]) => {
+      database.arts.entries.forEach(([id, art]) => {
         const { slotKey, mainStatKey } = art
         if (
           (artifactsSlotsToSelectMainStats as readonly string[]).includes(

@@ -1,0 +1,29 @@
+{
+  "setName": "Fragment d'harmonie divergente",
+  "setEffects": {
+    "2": "Augmente l'ATQ de 18 %.",
+    "4": "Lorsque la valeur d'un engagement vital augmente ou diminue, les DGT infligés par le personnage augmentent de 18 % pendant 6 s. Cet effet peut être cumulé 3 fois maximum."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Prélude des symphonies harmoniques",
+      "desc": "Une médaille honorifique en forme de fleur épanouie, ornée de pierres bleues et d'or, qui était autrefois décernée aux immortels."
+    },
+    "plume": {
+      "name": "Rêverie des eaux antiques",
+      "desc": "Un accessoire en plumes sculpté dans la forme des ailes des abeilles dorées de légende. Elles semblent flotter à la moindre brise."
+    },
+    "sands": {
+      "name": "Farce des changements du destin",
+      "desc": "Un garde-temps réalisé en imitant la roue du destin. Aujourd'hui, il ne peut plus tourner."
+    },
+    "goblet": {
+      "name": "Rhapsodie de l'ichor déversé",
+      "desc": "Un rhyton cuit avec du cuivre comme base, qui était autrefois rempli de bon vin du paradis."
+    },
+    "circlet": {
+      "name": "Ronde des pensées fanées",
+      "desc": "Un masque autrefois recouvert de feuilles d'or. Peut-être s'agit-il d'une relique provenant d'un ancien officier des légions..."
+    }
+  }
+}

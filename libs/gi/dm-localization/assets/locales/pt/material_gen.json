@@ -191,6 +191,9 @@
   "Funds": {
     "name": "Fundos"
   },
+  "IridescenceTourTickets": {
+    "name": "Ingressos do Tour Iridescente"
+  },
   "Primogem": {
     "name": "Gema Essencial"
   },
@@ -521,6 +524,9 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Arlecchino": {
+    "name": "Arlecchino"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka"
   },
@@ -763,6 +769,9 @@
   },
   "ChiorisStellaFortuna": {
     "name": "Stella Fortuna de Chiori"
+  },
+  "ArlecchinosStellaFortuna": {
+    "name": "Stella Fortuna de Arlecchino"
   },
   "GnosticHymnOldNotes": {
     "name": "Canção do Gnóstico - Anotações Antigas"
@@ -6917,6 +6926,21 @@
   "FashionShow": {
     "name": "\"Show de Moda\""
   },
+  "RockNRollDangoMilk": {
+    "name": "Leite de Dango do Rock"
+  },
+  "SuspiciousBulleSouffle": {
+    "name": "Suflê de Bulle Estranho"
+  },
+  "BulleSouffle": {
+    "name": "Suflê de Bulle"
+  },
+  "DeliciousBulleSouffle": {
+    "name": "Suflê de Bulle Delicioso"
+  },
+  "HearthfiresTrail": {
+    "name": "Trilha do Fogo do Lar"
+  },
   "RecipeItem": {
     "name": "Ingredientes"
   },
@@ -7493,6 +7517,9 @@
   "RecipeMegaMeatySushi": {
     "name": "Receita: Sushi Supercarnudo"
   },
+  "RecipeBulleSouffle": {
+    "name": "Receita: Suflê de Bulle"
+  },
   "CraftedItems": {
     "name": "Produtos Combinados"
   },
@@ -7904,6 +7931,15 @@
   "ChasmlightFin": {
     "name": "Nadadeira Luz do Abismo"
   },
+  "RuinedHilt": {
+    "name": "Punho Danificado"
+  },
+  "SplinteredHilt": {
+    "name": "Punho Quebrado"
+  },
+  "StillSmolderingHilt": {
+    "name": "Punho Incandescente"
+  },
   "HurricaneSeed": {
     "name": "Semente de Furacão"
   },
@@ -8077,6 +8113,18 @@
   },
   "CloudseamScale": {
     "name": "Escamas de Linha das Nuvens"
+  },
+  "FragmentOfAGoldenMelody": {
+    "name": "Fragmento da Melodia Dourada"
+  },
+  "FadingCandle": {
+    "name": "Vela Desvanecendo"
+  },
+  "SilkenFeather": {
+    "name": "Pluma de Seda"
+  },
+  "DenialAndJudgment": {
+    "name": "Veredito Negado"
   },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de Azulejo de Decarabian"
@@ -10022,8 +10070,20 @@
   "OurChenyuValeTrekAlbum": {
     "name": "Álbum \"Nossa Caminhada Pelo Vale Chenyu\""
   },
+  "AncientAutoharmonicMusicBox": {
+    "name": "Caixa de Música Auto-Harmônica Antiga"
+  },
   "StrangeKey": {
     "name": "Chave Estranha"
+  },
+  "BlankScore": {
+    "name": "Partitura em Branco"
+  },
+  "AncientScore": {
+    "name": "Partitura Antiga"
+  },
+  "LostGrimoire": {
+    "name": "Grimório Perdido"
   },
   "ShootingPracticeOpticalLenses": {
     "name": "Lentes Ópticas de Prática de Tiro"
@@ -10033,6 +10093,15 @@
   },
   "PerinheriII": {
     "name": "Perinheri (II)"
+  },
+  "AnecdotaSeptentrionalisI": {
+    "name": "Crônicas Secretas do Reino do Norte I"
+  },
+  "AnecdotaSeptentrionalisII": {
+    "name": "Crônicas Secretas do Reino do Norte II"
+  },
+  "AnecdotaSeptentrionalisIII": {
+    "name": "Crônicas Secretas do Reino do Norte III"
   },
   "HelpMePlease": {
     "name": "Socorro!"
@@ -10151,6 +10220,9 @@
   "ChizhangMap": {
     "name": "Mapa de Pedra Vermelha"
   },
+  "MiniPhonograph": {
+    "name": "Mini Fonógrafo"
+  },
   "AncientCityKey": {
     "name": "Chave da Cidade Antiga"
   },
@@ -10163,11 +10235,29 @@
   "FishSeizedFromAPelicansMouth": {
     "name": "Peixe da Boca de um Pelicano"
   },
+  "InvitationFromTheAratakiGang": {
+    "name": "Convite da Gangue Arataki"
+  },
   "FelixFelicium": {
     "name": "Desejos de Boa Sorte"
   },
+  "ShikanoinHeizousMessage": {
+    "name": "Mensagem de Shikanoin Heizou"
+  },
+  "PuppyUnionAdmissionDetails": {
+    "name": "Detalhes de Recebimento da União dos Cachorrinhos"
+  },
   "LynettesEnvelope": {
     "name": "Envelope de Lynette"
+  },
+  "RestoredScore": {
+    "name": "Partitura Reparada"
+  },
+  "PagesFromALostScoreI": {
+    "name": "Páginas de uma Partitura Perdida I"
+  },
+  "ARidiculouslyCommonBranch": {
+    "name": "Um Galho Absurdamente Comum"
   },
   "CultivationAreaExpansionVII": {
     "name": "Expansão da Área de Cultivo (VII)"
@@ -10183,6 +10273,51 @@
   },
   "Manuscript": {
     "name": "Manuscrito"
+  },
+  "IGotReincarnatedAsAnOnikabutoAndFlippedTheWorldUpsideDown": {
+    "name": "\"Eu Reencarnei como um Onikabuto... E Virei o Mundo de Ponta-Cabeça\""
+  },
+  "CynosLetter": {
+    "name": "Carta de Cyno"
+  },
+  "DamagedScore": {
+    "name": "Partitura Danificada"
+  },
+  "RuggierosNotesII": {
+    "name": "Notas de Ruggiero (II)"
+  },
+  "PagesFromALostScoreII": {
+    "name": "Páginas de uma Partitura Perdida II"
+  },
+  "AncientEngravings": {
+    "name": "Inscrição Antiga"
+  },
+  "HarmostsNotesII": {
+    "name": "Notas de Harmosta (II)"
+  },
+  "TatteredNavigationLog": {
+    "name": "Registro de Navegação Danificado"
+  },
+  "RuggierosNotesI": {
+    "name": "Notas de Ruggiero (I)"
+  },
+  "SomeonesNotes": {
+    "name": "Notas de Alguém"
+  },
+  "RuggierosNotesIII": {
+    "name": "Notas de Ruggiero (III)"
+  },
+  "InvestigationOfTheNorthernBarbarians": {
+    "name": "Sobre a Inspeção das Tribos Bárbaras do Norte"
+  },
+  "HarmostsNotesI": {
+    "name": "Notas de Harmosta (I)"
+  },
+  "AncientInscription": {
+    "name": "Inscrição Velha"
+  },
+  "AncientPieceOfPaper": {
+    "name": "Nota Antiga"
   },
   "TearsAmongTheStars": {
     "name": "Lágrima das Estrelas"
@@ -10849,6 +10984,21 @@
   },
   "RadiantSpincrystal125": {
     "name": "Cristal Rodopiante Radiante 125"
+  },
+  "RadiantSpincrystal126": {
+    "name": "Cristal Rodopiante Radiante 126"
+  },
+  "RadiantSpincrystal127": {
+    "name": "Cristal Rodopiante Radiante 127"
+  },
+  "RadiantSpincrystal128": {
+    "name": "Cristal Rodopiante Radiante 128"
+  },
+  "RadiantSpincrystal129": {
+    "name": "Cristal Rodopiante Radiante 129"
+  },
+  "RadiantSpincrystal130": {
+    "name": "Cristal Rodopiante Radiante 130"
   },
   "LanternFiber": {
     "name": "Fibra de Lanterna"
@@ -11639,6 +11789,21 @@
   "TravelNotesArcaneAmassing": {
     "name": "Passe de Batalha: Coleção Arcana"
   },
+  "ArlecchinoEdict": {
+    "name": "Arlecchino: Édito"
+  },
+  "FontaineAttunement": {
+    "name": "Fontaine: Sintonia"
+  },
+  "AchievementWhalewrangler": {
+    "name": "Conquista: Destruidor de Baleias"
+  },
+  "FontaineLucine": {
+    "name": "Fontaine: Nascente do Orvalho"
+  },
+  "TravelNotesTheRealmsRocked": {
+    "name": "Passe de Batalha: Rock Pauleira"
+  },
   "AnemoculusResonanceStone": {
     "name": "Pedra de Ressonância de Anemoculus"
   },
@@ -11878,6 +12043,9 @@
   },
   "MiniSeelieBrilliance": {
     "name": "Mini Seelie - Brilhante"
+  },
+  "NightwindHorn": {
+    "name": "Corneta Vento Noturno"
   },
   "Fateometer": {
     "name": "\"Destinador\""
@@ -12119,6 +12287,12 @@
   "FatuiElectroCicinMage": {
     "name": "Fatui - Feiticeira Cicin Electro"
   },
+  "AbyssHeraldWickedTorrents": {
+    "name": "Apóstolo do Abismo - Corrente Torrencial"
+  },
+  "EmperorOfFireAndIron": {
+    "name": "Imperador do Fogo e Ferro"
+  },
   "UndividedHeart": {
     "name": "Com Todo Coração"
   },
@@ -12356,6 +12530,18 @@
   "ElectroCicinsFlicker": {
     "name": "Cintilação da Cicin Electro"
   },
+  "ToWardWeakness": {
+    "name": "Evitando a Fraqueza"
+  },
+  "TheWondrousPathOfTruth": {
+    "name": "Essência da Verdade"
+  },
+  "SurgingUndercurrent": {
+    "name": "Corrente Torrencial"
+  },
+  "MoltenMail": {
+    "name": "Cota Carbonizada"
+  },
   "MagicGuide": {
     "name": "Guia de Magia"
   },
@@ -12572,6 +12758,12 @@
   "GoldenTroupesReward": {
     "name": "Recompensa da Trupe Dourada"
   },
+  "RightfulReward": {
+    "name": "Justa Recompensa"
+  },
+  "AmethystCrown": {
+    "name": "Coroa Ametista"
+  },
   "LiyueHarborWharf": {
     "name": "Porto de Liyue"
   },
@@ -12697,6 +12889,15 @@
   },
   "FortressOfMeropide": {
     "name": "Fortaleza Meropide"
+  },
+  "SeiraiIsland": {
+    "name": "Ilha Seirai"
+  },
+  "Taroumaru": {
+    "name": "Taroumaru"
+  },
+  "TheWhiteGloveAndTheFisherman": {
+    "name": "Luva Branca e o Pescador"
   },
   "ElementalResonanceWovenIce": {
     "name": "Ressonância Elemental: Entrelaçamento Cryo"
@@ -12862,6 +13063,9 @@
   },
   "ControlledDirectionalBlast": {
     "name": "Explosão Direcionada Controlada"
+  },
+  "UnderwaterTreasureHunt": {
+    "name": "Caça ao Tesouro Submarino"
   },
   "Origin": {
     "name": "Primordial"
@@ -13409,6 +13613,9 @@
   "CiderLakelight": {
     "name": "Lago de Sidra"
   },
+  "MusicTownsStreetlampSafetyLighting": {
+    "name": "Lanterna de Estrada Amigável: \"Luz Instantânea\""
+  },
   "EfflorescentIllumination": {
     "name": "Luz Floral"
   },
@@ -13898,6 +14105,12 @@
   "TeahouseToolClearView": {
     "name": "Utensílio da Casa de Chá: Vista Clara"
   },
+  "HotelRailingFreshMintLeaves": {
+    "name": "Cerca do Hotel: \"Folhas de Menta Frescas\""
+  },
+  "HotelRailingPerfectViewingArc": {
+    "name": "Cerca do Hotel: \"Paisagem Circundante\""
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tapete de Mondstadt: \"Paixão Escarlate\""
   },
@@ -13940,6 +14153,9 @@
   "RestaurantRugBathingInTheBreeze": {
     "name": "Tapete do Restaurante \"Banho na Brisa\""
   },
+  "FontainianCarpetFairAndSquare": {
+    "name": "Tapete de Fontaine: \"Quadrado e Justo\""
+  },
   "TrustyPortableLamp": {
     "name": "Lâmpada Portátil Que Não Se Apaga"
   },
@@ -13972,6 +14188,9 @@
   },
   "TwoWayIronLamp": {
     "name": "Lâmpada Dupla de Ferro"
+  },
+  "SimpleLightingLocallySourcedMaterials": {
+    "name": "Iluminação Simples: \"Materiais de Origem Local\""
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Arranjo de Flores: \"Graciosidade Azul\""
@@ -14237,6 +14456,9 @@
   "IndoorLampTheTwilightSea": {
     "name": "Lanterna Interna: Mar Crepuscular"
   },
+  "MekaLuminaireSilentNightsContemplation": {
+    "name": "Lanterna Mecânica: \"Contemplação Noturna\""
+  },
   "LingeringMoment": {
     "name": "Momento Marcante"
   },
@@ -14455,6 +14677,9 @@
   },
   "PoissonsSeasonalProduce": {
     "name": "\"Produção Sazonal de Poisson\""
+  },
+  "MusicTownsHutMardouceHarmony": {
+    "name": "Cabana de Boas-vindas: \"Melodias Harmoniosas\""
   },
   "HilichurlOutpostHut": {
     "name": "Cabana de Acampamento Hilichurl"
@@ -14797,6 +15022,18 @@
   },
   "ASimpleResidenceInPoisson": {
     "name": "\"Uma Residência Simples em Poisson\""
+  },
+  "TollingOfTheMusicmakingTown": {
+    "name": "\"Sons de Campânulas da Cidade da Alegria\""
+  },
+  "PeacefulResidenceInTheMusicmakingTown": {
+    "name": "\"Residência Tranquila da Cidade da Alegria\""
+  },
+  "WorkshopInTheMusicmakingTown": {
+    "name": "\"Artesanato da Cidade da Alegria\""
+  },
+  "ResourcefulResidenceInTheMusicmakingTown": {
+    "name": "\"Casa Engenhosa da Cidade das Alegria\""
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Fonte com Pássaros e Flores"
@@ -15308,6 +15545,12 @@
   "RoyalPurple": {
     "name": "\"Púrpura Real\""
   },
+  "InspirationsPureWhiteBlossoms": {
+    "name": "\"Pureza da Inspiração\""
+  },
+  "SalubriousFragrance": {
+    "name": "\"Fragrância Curadora\""
+  },
   "FirShelves": {
     "name": "Prateleiras de Abeto"
   },
@@ -15662,6 +15905,21 @@
   "CleverlyCraftedContraptionBornInBlessedBitterness": {
     "name": "Caldeirão Refinado: Nascido no Amargor Abençoado"
   },
+  "OriginOfMusic": {
+    "name": "\"Origem da Melodia\""
+  },
+  "LegionsFuriousHorns": {
+    "name": "\"Chifre Furioso da Legião\""
+  },
+  "HiddenSerpent": {
+    "name": "\"Serpente Escondida\""
+  },
+  "MirrorReflectionLyre": {
+    "name": "\"Poema de Lira Como um Espelho\""
+  },
+  "CrystallineGlory": {
+    "name": "\"Glória do Andarilho\""
+  },
   "BookshelfFreeReading": {
     "name": "Prateleira de Livros: Leitura Livre"
   },
@@ -15697,6 +15955,9 @@
   },
   "TeaHarvestsSunDriedFragrance": {
     "name": "Fragrância do Chá Secada ao Sol"
+  },
+  "MallowWoodMailboxStorage": {
+    "name": "Caixa Postal de Madeira de Malva: \"Armazenamento\""
   },
   "WeatheredBambooFence": {
     "name": "Cerca de Bambu Desgastada"
@@ -15740,6 +16001,12 @@
   "StandardRailingScatteredStructure": {
     "name": "Barreira Padrão: Estrutura Dispersa"
   },
+  "MallowWoodDoorframeGentleMelody": {
+    "name": "Moldura de Porta de Madeira de Malva: \"Melodia Gentil\""
+  },
+  "MallowWoodFenceTides": {
+    "name": "Cerca de Madeira de Malva: \"Maré\""
+  },
   "SmoothWoodenBench": {
     "name": "Banco de Madeira Liso"
   },
@@ -15772,6 +16039,12 @@
   },
   "TeaVillageStoneBenchSafeSpaciousSturdy": {
     "name": "Banco de Pedra da Vila do Chá: Seguro, Espaçoso, Resistente"
+  },
+  "MallowWoodBenchHiddenMelody": {
+    "name": "Banco de Madeira de Malva: \"Orquestra Oculta\""
+  },
+  "MallowWoodChairEZFold": {
+    "name": "Cadeira de Madeira de Malva: \"Placa\""
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "Torre de Vigia Dupla dos Hilichurls"
@@ -15836,6 +16109,12 @@
   "TeaVillageStoneTableCulturedLeisure": {
     "name": "Mesa de Pedra da Vila do Chá: Passatempo Culto"
   },
+  "MallowWoodLongTableEngravedMemories": {
+    "name": "Mesa Longa de Madeira de Malva: \"Reminiscência Entalhada\""
+  },
+  "MallowWoodRoundTableASharedDrink": {
+    "name": "Mesa Redonda de Madeira de Malva: \"Bebidas Compartilhadas\""
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Balcão de Loja de Vinhos: \"Para Alegrar Seu Coração\""
   },
@@ -15865,5 +16144,8 @@
   },
   "TearstoneTilePerspectiveTheory": {
     "name": "Tijolo de Pedra da Lágrima \"Teoria da Transparência\""
+  },
+  "SwordBearingStatueEternalWatch": {
+    "name": "Estátua de Pedra: \"Guarda Eterno\""
   }
 }

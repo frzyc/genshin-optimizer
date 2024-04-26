@@ -1,0 +1,24 @@
+{
+  "name": "Crimson Moon's Semblance",
+  "description": {
+    "0": "A keen-edged weapon, luster dazzling as the crimson moon. It is said that an ancient dynasty once regarded it as a ritual object that could bridge two worlds, but none still remember the beliefs and ceremonies of that bygone age."
+  },
+  "passiveName": "Ashen Sun's Shadow",
+  "passiveDescription": {
+    "0": {
+      "0": "Grants a Bond of Life equal to 25% of Max HP when a Charged Attack hits an opponent. This effect can be triggered up to once every 14s. In addition, when the equipping character has a Bond of Life, they gain a <cryo>12%</cryo> DMG Bonus; if the value of the Bond of Life is greater than or equal to 30% of Max HP, then gain an additional <cryo>24%</cryo> DMG Bonus."
+    },
+    "1": {
+      "0": "Grants a Bond of Life equal to 25% of Max HP when a Charged Attack hits an opponent. This effect can be triggered up to once every 14s. In addition, when the equipping character has a Bond of Life, they gain a <cryo>16%</cryo> DMG Bonus; if the value of the Bond of Life is greater than or equal to 30% of Max HP, then gain an additional <cryo>32%</cryo> DMG Bonus."
+    },
+    "2": {
+      "0": "Grants a Bond of Life equal to 25% of Max HP when a Charged Attack hits an opponent. This effect can be triggered up to once every 14s. In addition, when the equipping character has a Bond of Life, they gain a <cryo>20%</cryo> DMG Bonus; if the value of the Bond of Life is greater than or equal to 30% of Max HP, then gain an additional <cryo>40%</cryo> DMG Bonus."
+    },
+    "3": {
+      "0": "Grants a Bond of Life equal to 25% of Max HP when a Charged Attack hits an opponent. This effect can be triggered up to once every 14s. In addition, when the equipping character has a Bond of Life, they gain a <cryo>24%</cryo> DMG Bonus; if the value of the Bond of Life is greater than or equal to 30% of Max HP, then gain an additional <cryo>48%</cryo> DMG Bonus."
+    },
+    "4": {
+      "0": "Grants a Bond of Life equal to 25% of Max HP when a Charged Attack hits an opponent. This effect can be triggered up to once every 14s. In addition, when the equipping character has a Bond of Life, they gain a <cryo>28%</cryo> DMG Bonus; if the value of the Bond of Life is greater than or equal to 30% of Max HP, then gain an additional <cryo>56%</cryo> DMG Bonus."
+    }
+  }
+}

@@ -1,16 +1,28 @@
+import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
+import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-
+import {
+  TeamCharacterContext,
+  useDBMeta,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
+import { getCharEle } from '@genshin-optimizer/gi/stats'
+import { shouldShowDevComponents } from '@genshin-optimizer/gi/ui'
+import CheckroomIcon from '@mui/icons-material/Checkroom'
 import FactCheckIcon from '@mui/icons-material/FactCheck'
 import PersonIcon from '@mui/icons-material/Person'
 import ScienceIcon from '@mui/icons-material/Science'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
-
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { characterAsset } from '@genshin-optimizer/gi/assets'
-import { TeamCharacterContext, useDBMeta } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
-import { shouldShowDevComponents } from '@genshin-optimizer/gi/ui'
-import { Skeleton, Tab, Tabs } from '@mui/material'
+import {
+  CardContent,
+  Divider,
+  Skeleton,
+  Tab,
+  Tabs,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material'
 import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route, Link as RouterLink, Routes } from 'react-router-dom'
@@ -21,8 +33,7 @@ import TabOverview from './Tabs/TabOverview'
 import TabTalent from './Tabs/TabTalent'
 import TabTheorycraft from './Tabs/TabTheorycraft'
 import TabUpopt from './Tabs/TabUpgradeOpt'
-
-export default function Content({ tab }: { tab: string }) {
+export default function Content({ tab }: { tab?: string }) {
   const {
     loadoutDatum,
     teamChar: { key: characterKey },
@@ -30,22 +41,17 @@ export default function Content({ tab }: { tab: string }) {
   const isTCBuild = !!(
     loadoutDatum.buildTcId && loadoutDatum.buildType === 'tc'
   )
-  const elementKey = getCharEle(characterKey)
   return (
     <>
       <FormulaModal />
-      <LoadoutSettingElement
-        buttonProps={{
-          fullWidth: true,
-          color: elementKey ?? 'info',
-          variant: 'outlined',
-          sx: { backgroundColor: 'contentLight.main' },
-        }}
-      />
-
       <TabNav tab={tab} characterKey={characterKey} isTCBuild={isTCBuild} />
       <CharacterPanel isTCBuild={isTCBuild} />
-      <TabNav tab={tab} characterKey={characterKey} isTCBuild={isTCBuild} />
+      <TabNav
+        tab={tab}
+        characterKey={characterKey}
+        isTCBuild={isTCBuild}
+        hideTitle
+      />
     </>
   )
 }
@@ -56,9 +62,10 @@ function CharacterPanel({ isTCBuild }: { isTCBuild: boolean }) {
       fallback={<Skeleton variant="rectangular" width="100%" height={500} />}
     >
       <Routes>
+        <Route path="" index element={<LoadoutSettingElement />} />
         {/* Character Panel */}
         {isTCBuild ? (
-          <Route path="overview" element={<TabTheorycraft />} />
+          <Route path="theorycraft" element={<TabTheorycraft />} />
         ) : (
           <Route path="overview" element={<TabOverview />} />
         )}
@@ -68,7 +75,7 @@ function CharacterPanel({ isTCBuild }: { isTCBuild: boolean }) {
         {!isTCBuild && shouldShowDevComponents && (
           <Route path="upopt" element={<TabUpopt />} />
         )}
-        <Route path="*" index element={<Navigate to="overview" replace />} />
+        <Route path="*" element={<Navigate to="" replace />} />
       </Routes>
     </Suspense>
   )
@@ -77,18 +84,23 @@ function TabNav({
   tab,
   characterKey,
   isTCBuild,
+  hideTitle = false,
 }: {
-  tab: string
+  tab?: string
   characterKey: CharacterKey
   isTCBuild: boolean
+  hideTitle?: boolean
 }) {
+  const { teamChar, loadoutDatum } = useContext(TeamCharacterContext)
+  const database = useDatabase()
   const { t } = useTranslation('page_character')
   const { gender } = useDBMeta()
   const elementKey = getCharEle(characterKey)
   const banner = characterAsset(characterKey, 'banner', gender)
+  const theme = useTheme()
+  const isXs = useMediaQuery(theme.breakpoints.down('md'))
   return (
     <CardThemed
-      bgt="light"
       sx={(theme) => {
         return {
           position: 'relative',
@@ -111,12 +123,43 @@ function TabNav({
         }
       }}
     >
+      {!hideTitle && (
+        <CardContent
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            pb: 0,
+            textShadow: '#000 0 0 10px !important',
+            position: 'relative',
+          }}
+        >
+          <BootstrapTooltip
+            title={
+              teamChar.description ? (
+                <Typography>{teamChar.description}</Typography>
+              ) : undefined
+            }
+          >
+            <Typography
+              variant="h6"
+              sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+            >
+              <PersonIcon />
+              <strong>{teamChar.name}</strong>
+              <Divider orientation="vertical" variant="middle" flexItem />
+              <CheckroomIcon />
+              {database.teams.getActiveBuildName(loadoutDatum)}
+            </Typography>
+          </BootstrapTooltip>
+        </CardContent>
+      )}
       <Tabs
-        value={tab}
-        variant="fullWidth"
+        value={tab ?? 'setting'}
+        variant={isXs ? 'scrollable' : 'fullWidth'}
         allowScrollButtonsMobile
         sx={(theme) => {
           return {
+            position: 'relative',
             '& .MuiTab-root:hover': {
               transition: 'background-color 0.25s ease',
               backgroundColor: 'rgba(255,255,255,0.1)',
@@ -134,13 +177,20 @@ function TabNav({
           }
         }}
       >
+        <Tab
+          value="setting"
+          label={t('tabs.setting')}
+          icon={<CheckroomIcon />}
+          component={RouterLink}
+          to=""
+        />
         {isTCBuild ? (
           <Tab
-            value="overview"
+            value="theorycraft"
             label={t('tabs.theorycraft')}
             icon={<ScienceIcon />}
             component={RouterLink}
-            to="overview"
+            to="theorycraft"
           />
         ) : (
           <Tab

@@ -74,8 +74,8 @@ export default async function runExecutor(
 
   // Get icons for each artifact piece
   Object.entries(reliquarySetExcelConfigData).forEach(([setId, data]) => {
-    const { EquipAffixId, containsList } = data
-    if (!EquipAffixId) return
+    const { equipAffixId, containsList } = data
+    if (!equipAffixId) return
 
     const pieces = Object.fromEntries(
       containsList.map((pieceId) => {

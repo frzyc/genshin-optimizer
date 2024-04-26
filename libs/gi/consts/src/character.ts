@@ -72,6 +72,7 @@ export const nonTravelerCharacterKeys = [
   'Aloy',
   'Amber',
   'AratakiItto',
+  'Arlecchino',
   'Baizhu',
   'Barbara',
   'Beidou',

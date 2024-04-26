@@ -6,6 +6,7 @@ import BlackTassel from './BlackTassel'
 import BlackcliffPole from './BlackcliffPole'
 import CalamityQueller from './CalamityQueller'
 import CrescentPike from './CrescentPike'
+import CrimsonMoonsSemblance from './CrimsonMoonsSemblance'
 import Deathmatch from './Deathmatch'
 import DialoguesOfTheDesertSages from './DialoguesOfTheDesertSages'
 import DragonsBane from './DragonsBane'
@@ -37,6 +38,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   BlackTassel,
   CalamityQueller,
   CrescentPike,
+  CrimsonMoonsSemblance,
   Deathmatch,
   DialoguesOfTheDesertSages,
   DragonsBane,

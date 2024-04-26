@@ -19,7 +19,7 @@
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",
-        "1": "Yanfei concentre son énergie Pyro et plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des <pyro>DGT Pyro de zone</pyro> à l'impact."
+        "1": "Yanfei concentre son énergie Pyro et plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des <pyro>DGT Pyro de zone</pyro> à l'impact."
       }
     },
     "skillParams": {

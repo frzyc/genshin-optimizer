@@ -138,8 +138,9 @@ export class OptConfigDataManager extends DataManager<
     )
       mainStatKeys = deepClone(initialBuildSettings.mainStatKeys)
     else {
+      const slots = ['sands', 'goblet', 'circlet'] as const
       // make sure the arrays are not empty
-      ;(['sands', 'goblet', 'circlet'] as const).forEach((sk) => {
+      slots.forEach((sk) => {
         if (!mainStatKeys[sk].length)
           mainStatKeys[sk] = [...artSlotMainKeys[sk]]
       })

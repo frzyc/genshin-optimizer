@@ -162,7 +162,7 @@ export default function PageWeapon() {
   const weaponTotals = useMemo(
     () =>
       catTotal(allWeaponTypeKeys, (ct) =>
-        Object.entries(database.weapons.data).forEach(([id, weapon]) => {
+        database.weapons.entries.forEach(([id, weapon]) => {
           const wtk = getWeaponStat(weapon.key).weaponType
           ct[wtk].total++
           if (weaponIds.includes(id)) ct[wtk].current++
@@ -174,7 +174,7 @@ export default function PageWeapon() {
   const weaponRarityTotals = useMemo(
     () =>
       catTotal(allRarityKeys, (ct) =>
-        Object.entries(database.weapons.data).forEach(([id, weapon]) => {
+        database.weapons.entries.forEach(([id, weapon]) => {
           const wr = getWeaponStat(weapon.key).rarity
           ct[wr].total++
           if (weaponIds.includes(id)) ct[wr].current++

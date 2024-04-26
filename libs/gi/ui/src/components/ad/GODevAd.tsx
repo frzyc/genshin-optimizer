@@ -1,0 +1,46 @@
+import { Typography } from '@mui/material'
+import { Box } from '@mui/system'
+import type { ReactNode } from 'react'
+import { toDiscord } from './util'
+
+export function GODevAd({ children }: { children: ReactNode }) {
+  return (
+    <Box
+      sx={{
+        backgroundColor: 'white !important',
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        p: '10px',
+        cursor: 'pointer',
+      }}
+      onClick={toDiscord}
+    >
+      {children}
+      <Typography variant="h5" color="darkred">
+        WE NEED HELP!
+      </Typography>
+      <Typography color="black">
+        Are you a web developer who is looking to contribute to the most
+        over-engineered Genshin website ever made? Can you distinguish which one
+        of the following is a pokemon?
+      </Typography>
+      <Typography color="darkgray" fontFamily="monospace">
+        React MaterialUI nx ekans GraphQL git metapod NextJS discord.js vite
+        nodeJS emotion prisma Agumon tessract.js typescript bun sawk webpack
+        next-auth jest
+      </Typography>
+      <Typography color="black">
+        If you have knowledge in some(or any) of those techonology mentioned
+        above, or are hoping to learn in an actively-developed app with
+        thousands of users, please join our Discord! We'd love to work with you.
+      </Typography>
+    </Box>
+  )
+}
+export function canshowGoDevAd(height: number) {
+  if (height < 120) return false
+  return true
+}

@@ -1,7 +1,7 @@
 {
   "name": "Cyno",
   "title": "Juiz dos Segredos",
-  "description": "O General Mahamatra responsável por supervisionar os pesquisadores da Academia.\\nDizem que quando ele está trabalhando, o General Mahamatra é ainda mais eficiente do que o \"Grande Vayuvyastra\" feito pelos Kshahrewar.",
+  "description": "O General Mahamatra responsável por supervisionar os pesquisadores da Academia.\\nDizem que quando ele está trabalhando, o General Mahamatra é ainda mais eficiente do que o \"Grande Vayuvyastra\" feito pelo Kshahrewar.",
   "constellationName": "Lupus Aureus",
   "auto": {
     "name": "Lança da Invocação",
@@ -43,7 +43,7 @@
     "description": {
       "0": "Avança rapidamente, infligindo <electro>Dano Electro</electro> contra os inimigos no caminho.",
       "1": "<br/>",
-      "2": "Quando Cyno está sob o estado \"Juramento Desbravador\" de seu Supremo \"Ritual Sagrado: Agilidade Lupina\", lançará <strong>Ritual Mortuário</strong>, usando o poder dos raios para infligir <electro>Dano Electro em AdE</electro>, e prolongar a duração de \"Juramento Desbravador\".",
+      "2": "Quando Cyno está sob o estado \"Juramento Desbravador\" de seu Supremo \"Ritual Sagrado: Agilidade Lupina\", lançará <strong>Ritual Mortuário</strong>, usando o poder dos raios para infligir <electro>Dano Electro em AdE</electro> e prolongar a duração de \"Juramento Desbravador\".",
       "3": "<br/>",
       "4": "<i>\"Esse julgamento não possui escolha. Não há rejeição ou aceitação... Pois já fomos julgados há muito tempo.\"</i>"
     },
@@ -147,7 +147,7 @@
   "constellation4": {
     "name": "Austeridade: Defesa Intimidante",
     "description": {
-      "0": "Quando Cyno está no estado Juramento Desbravador de <strong>Ritual Sagrado: Agilidade Lupina</strong>, ao desencadear as reações de Eletricamente Carregado, Supercondutor, Sobrecarga, Aceleração, Intensificação, Superflorescimento e Redemoinho Electro, regenerará 3 de Energia Elemental para todos os membros próximos da equipe (com exceção do próprio Cyno).",
+      "0": "Quando Cyno está no estado Juramento Desbravador de <strong>Ritual Sagrado: Agilidade Lupina</strong>, ao desencadear as reações Eletricamente Carregado, Supercondutor, Sobrecarga, Aceleração, Intensificação, Superflorescimento e Redemoinho Electro, regenerará 3 de Energia Elemental para todos os membros próximos da equipe (com exceção do próprio Cyno).",
       "1": "Esse efeito pode ser desencadeado até 5 vezes por uso de <strong>Ritual Sagrado: Agilidade Lupina</strong>."
     }
   },

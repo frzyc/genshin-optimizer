@@ -261,14 +261,14 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
 
   //generate the MapHashes for localization for artifacts
   Object.entries(reliquarySetExcelConfigData).forEach(([setId, data]) => {
-    const { EquipAffixId, setNeedNum, containsList } = data
-    if (!EquipAffixId) return
+    const { equipAffixId, setNeedNum, containsList } = data
+    if (!equipAffixId) return
 
     const setEffects = Object.fromEntries(
       setNeedNum.map((setNeed, i) => {
-        const equipAffixData = equipAffixExcelConfigData[EquipAffixId]?.[i]
+        const equipAffixData = equipAffixExcelConfigData[equipAffixId]?.[i]
         if (!equipAffixData)
-          throw `No data for EquipAffixId ${EquipAffixId} for setEffect ${setNeed}`
+          throw `No data for EquipAffixId ${equipAffixId} for setEffect ${setNeed}`
         return [setNeed, equipAffixData.descTextMapHash]
       })
     )
@@ -290,7 +290,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
     )
 
     const setName =
-      equipAffixExcelConfigData[EquipAffixId]?.[0]?.nameTextMapHash
+      equipAffixExcelConfigData[equipAffixId]?.[0]?.nameTextMapHash
 
     mapHashData.artifactNames[artifactIdMap[setId]] = setName
     mapHashData.artifact[artifactIdMap[setId]] = {
@@ -385,7 +385,8 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
 
     // Add the traveler variants to charNames_gen
     allGenderKeys.forEach((gender) => {
-      ;(['Anemo', 'Geo', 'Electro', 'Dendro'] as const).forEach((ele) => {
+      const keys = ['Anemo', 'Geo', 'Electro', 'Dendro'] as const
+      keys.forEach((ele) => {
         const transLocGenKey =
           languageData[lang as Language].charNames[
             `Traveler${gender}` as LocationGenderedCharacterKey

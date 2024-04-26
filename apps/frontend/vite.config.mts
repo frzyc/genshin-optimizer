@@ -1,24 +1,21 @@
 /// <reference types="vitest" />
+import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import { defineConfig, normalizePath } from 'vite'
-
-import react from '@vitejs/plugin-react'
 // viteStaticCopy contains some `require`, so we need to have our config as .mts instead of .ts.
 // https://vitejs.dev/guide/troubleshooting.html#this-package-is-esm-only
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
-import viteTsConfigPaths from 'vite-tsconfig-paths'
 import pkg from '../../package.json' assert { type: 'json' }
+
 export default defineConfig({
   base: '',
+  root: __dirname,
   cacheDir: '../../node_modules/.vite/frontend',
 
   server: {
     port: 4200,
     host: 'localhost',
-    // Allows workers to fetch the needed .ts file
-    fs: {
-      allow: ['../../'],
-    },
   },
 
   preview: {
@@ -27,33 +24,32 @@ export default defineConfig({
   },
 
   plugins: [
-    viteTsConfigPaths({
-      root: '../../',
-    }),
-    // Enables proper hot module reloading
-    react({
-      include: '**/*.tsx',
-    }),
+    react(),
+    nxViteTsPaths(),
     // Nx executor for vite does not support `assets` prop for copying files.
     // So we need to do it with this plugin. This works for both `build` and `serve`.
     viteStaticCopy({
       targets: [
         {
-          src: normalizePath(resolve('libs/gi/localization/assets/locales')),
-          dest: 'assets',
-        },
-        {
-          src: normalizePath(resolve('libs/gi/dm-localization/assets/locales')),
-          dest: 'assets',
-        },
-        {
           src: normalizePath(
-            resolve('libs/gi/silly-wisher-names/assets/locales')
+            resolve('../../libs/gi/localization/assets/locales')
           ),
           dest: 'assets',
         },
         {
-          src: normalizePath(resolve('apps/frontend/assets/*')),
+          src: normalizePath(
+            resolve('../../libs/gi/dm-localization/assets/locales')
+          ),
+          dest: 'assets',
+        },
+        {
+          src: normalizePath(
+            resolve('../../libs/gi/silly-wisher-names/assets/locales')
+          ),
+          dest: 'assets',
+        },
+        {
+          src: normalizePath(resolve('../../apps/frontend/assets/*')),
           dest: 'assets',
         },
       ],
@@ -69,23 +65,29 @@ export default defineConfig({
     __VERSION__: `"${pkg.version}"`,
   },
 
-  // Resolve aliases. If we ever alias to non-libs folder, need to update this
-  resolve: {
-    alias: [
-      // e.g. Resolves '@genshin-optimizer/pando/engine' -> 'libs/pando/engine/src'
-      {
-        find: /@genshin-optimizer\/([a-zA-Z0-9-]*)\/([a-zA-Z0-9-]*)/,
-        replacement: resolve('libs/$1/$2/src'),
-      },
-    ],
-  },
-
   // Uncomment this if you are using workers.
   worker: {
-    plugins: [
-      viteTsConfigPaths({
-        root: '../../',
-      }),
-    ],
+    // https://vitejs.dev/guide/migration#worker-plugins-is-now-a-function
+    plugins: () => [nxViteTsPaths()],
+  },
+
+  build: {
+    outDir: '../../dist/apps/frontend',
+    reportCompressedSize: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
+
+  test: {
+    globals: true,
+    cache: { dir: '../../node_modules/.vitest' },
+    environment: 'jsdom',
+    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    reporters: ['default'],
+    coverage: {
+      reportsDirectory: '../../coverage/apps/sr-frontend',
+      provider: 'v8',
+    },
   },
 })

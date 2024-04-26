@@ -4,7 +4,6 @@
   "sourceRoot": "libs/common/svgicons/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "lint": {}
-  }
+  "// targets": "to see all targets run: nx show project common-svgicons --web",
+  "targets": {}
 }

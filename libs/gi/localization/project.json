@@ -11,8 +11,7 @@
         "{projectRoot}/assets/locales",
         "{projectRoot}/main_gen.json"
       ]
-    },
-    "lint": {}
+    }
   },
   "tags": []
 }

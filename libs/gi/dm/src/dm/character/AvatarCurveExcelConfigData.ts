@@ -1,4 +1,3 @@
-import { extrapolateFloat } from '@genshin-optimizer/common/pipeline'
 import { readDMJSON } from '../../util'
 
 //exp curve
@@ -57,7 +56,7 @@ const avatarCurveExcelConfigData = {} as CharacterExpCurveData
 avatarCurveExcelConfigDataSrc.forEach(({ level, curveInfos }) =>
   curveInfos.forEach(({ type, value }) => {
     if (!avatarCurveExcelConfigData[type]) avatarCurveExcelConfigData[type] = {} // TODO: [0]
-    avatarCurveExcelConfigData[type][level] = extrapolateFloat(value)
+    avatarCurveExcelConfigData[type][level] = value
   })
 )
 

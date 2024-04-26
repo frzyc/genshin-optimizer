@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { DBStorage } from '@genshin-optimizer/common/database'
+import { notEmpty } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
@@ -171,6 +172,8 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
       const optConfig =
         buildSettings.find(({ id }: { id: string }) => id === characterKey) ??
         {}
+      // Only migrate characters with either a mtarget or an opttarget
+      if (!customMultiTarget?.length && !optConfig.optimizationTarget) return
       const optConfigId = `optConfig_${optConfigInd++}`
       ;(good as any).optConfigs.push({ ...optConfig, id: optConfigId })
 
@@ -190,7 +193,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
       ;(good as any).teamchars.push({ ...teamCharMain, id: teamCharMainId })
       teamCharIds.push(teamCharMainId)
       if (charTeam) {
-        ;(charTeam.filter((c) => c) as CharacterKey[]).forEach((charK) => {
+        charTeam.filter(notEmpty).forEach((charK) => {
           const teamChar: TeamCharacter = {
             key: charK,
             conditional: teamConditional[charK] as any,
@@ -415,6 +418,9 @@ export function migrate(storage: DBStorage) {
           teamConditional,
         } = storage.get(key) as IGOCharacter
         const optConfig = storage.get(`buildSetting_${characterKey}`) ?? {}
+        // Only migrate characters with either a mtarget or an opttarget
+        if (!customMultiTarget?.length && !optConfig.optimizationTarget)
+          continue
         const optConfigId = `optConfig_${optConfigInd++}`
         storage.set(optConfigId, optConfig)
 
@@ -434,7 +440,7 @@ export function migrate(storage: DBStorage) {
         storage.set(teamCharMainId, teamCharMain)
         teamCharIds.push(teamCharMainId)
         if (charTeam) {
-          ;(charTeam.filter((c) => c) as CharacterKey[]).forEach((charK) => {
+          charTeam.filter(notEmpty).forEach((charK) => {
             const teamChar: TeamCharacter = {
               key: charK,
               conditional: teamConditional[charK] as any,

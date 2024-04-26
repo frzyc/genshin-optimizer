@@ -1,0 +1,173 @@
+{
+  "name": "Arlecchino",
+  "title": "Mezzaluna di presagi nefasti",
+  "description": "La Fantesca, la quarta dei Messaggeri dei Fatui. Una diplomatica imperturbabile e spietata. Per i bambini della Casa del Focolare, è il loro temuto e affidabile \"Padre\".",
+  "constellationName": "Ignis Purgatorius",
+  "auto": {
+    "name": "Invito alla decapitazione",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 6 colpi di lancia consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una data quantità di vigore per compiere uno scatto verso un avversario vicino e colpirlo una volta.",
+        "2": "Tenendo premuto, Arlecchino consuma vigore per muoversi ad alta velocità per una durata massima di 5 s."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      },
+      "infusion": {
+        "0": "<strong>Maschera della morte rossa</strong>",
+        "1": "Quando Arlecchino possiede un Legame vitale pari o superiore a un 30% dei suoi PS max, entra nello stato di Maschera della morte rossa, e i DAN inflitti dai suoi attacchi normali, caricati e in picchiata vengono convertiti in <pyro>DAN da Pyro</pyro> non influenzabili da altre infusioni elementali.",
+        "2": "Se Arlecchino è in stato di Maschera della morte rossa, i suoi attacchi normali infliggono DAN aggiuntivi in base al suo ATT moltiplicato per una data percentuale del suo Legame vitale attuale. Ciascun attacco consuma un 7,5% del Legame vitale in questione. Il consumo del Legame vitale di Arlecchino può verificarsi una volta ogni 0,03 s. Quando il Legame vitale viene consumato in questo modo, il TdR di Cenere alla cenere si riduce di 0,8 s."
+      }
+    },
+    "skillParams": {
+      "0": "Incremento Maschera della morte rossa",
+      "1": "DAN da 1º colpo",
+      "2": "DAN da 2º colpo",
+      "3": "DAN da 3º colpo",
+      "4": "DAN da 4º colpo",
+      "5": "DAN da 5º colpo",
+      "6": "DAN da 6º colpo",
+      "7": "DAN da ATT caricato",
+      "8": "Costo vigore ATT caricato",
+      "9": "Costo vigore movimento ad alta velocità",
+      "10": "DAN da ATT in picchiata",
+      "11": "DAN da ATT in picchiata basso/alto",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cenere alla cenere",
+    "description": {
+      "0": "Evoca la Fiamma della Luna cruenta, infliggendo <pyro>DAN da Pyro</pyro> a più avversari vicini, e sferra un fendente in scatto contro uno di essi infliggendo <pyro>DAN da Pyro ad area</pyro>.",
+      "1": "Agli avversari colpiti dal suddetto attacco viene applicata una Direttiva del debito di sangue.",
+      "2": "<br/>",
+      "3": "<strong>Direttiva del debito di sangue</strong>",
+      "4": [
+        " Ciascuna Direttiva ha una durata di 30 s, e ogni 5 s infligge all'avversario 1 iterazione di <pyro>DAN da Pyro</pyro>, per un massimo di 2. I DAN inflitti in questo modo sono considerati DAN da abilità elementale.",
+        " Quando usa un attacco caricato o il Tripudio elementale Ascesa della Luna cruenta, Arlecchino assorbe e dissolve le Direttive del debito di sangue nelle vicinanze. Ciascuna Direttiva assorbita le conferisce un Legame vitale pari a un 65% dei suoi PS max.",
+        " Entro 35 s dall'utilizzo dell'abilità elementale, il valore massimo del Legame vitale che Arlecchino può ottenere tramite le Direttive del debito di sangue è pari a un 145% dei suoi PS max. Usare nuovamente l'abilità elementale in questo lasso di tempo reimposta il conteggio della durata e il limite massimo del Legame vitale che Arlecchino può ricevere dalle Direttive del debito di sangue."
+      ],
+      "5": "<br/>",
+      "6": "<i>Dal suo punto di vista, non tutti i chicchi di grano che cadono sulla terra sono destinati a diventare delle spighe. Coloro che provano a ostacolarla, invece, sono destinati a fare da nutrimento ai fiori, una volta ridotti in cenere.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da cuspide",
+      "1": "DAN da squarcio",
+      "2": "DAN da Direttiva del debito di sangue",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ascesa della Luna cruenta",
+    "description": {
+      "0": "Arlecchino dispiega la sua immensa ala della Fiamma della Luna cruenta per assorbire e dissolvere le Direttive del debito di sangue circostanti, infliggendo <pyro>DAN da Pyro ad area</pyro>. Al contempo, azzera il TdR di Cenere alla cenere e ripristina i propri PS in base all'ATT e al valore del suo Legame vitale.",
+      "1": "<br/>",
+      "2": "<i>È pensiero comune a Teyvat che le fasi lunari, a eccezione della luna piena, siano metafore di presagi nefasti, usate solo da chi pratica l'alchimia e l'astrologia.",
+      "3": "Più volte ella aveva visto nei suoi sogni quella luna cremisi. Erano forse profezie di disastri imminenti? In effetti è così, ma a subire tali catastrofi non sarebbe stata lei, bensì coloro che avrebbero osato scatenare la sua ira.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Quantità di PS ripristinati",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Agonia rivendicata",
+    "description": {
+      "0": "Le <strong>Direttive del debito di sangue</strong> acquisiscono le seguenti caratteristiche.",
+      "1": [
+        " Arlecchino riceve un Legame vitale pari a un 130% dei suoi PS max quando un nemico affetto da una sua Direttiva viene sconfitto.",
+        " 5 s dopo l'applicazione di una Direttiva, quest'ultima si potenzia per diventare un'Ingiunzione del debito di sangue. Quando viene assorbita, conferisce ad Arlecchino un 130% di Legame vitale."
+      ],
+      "2": "Un Legame vitale creato nei modi sopra descritti non può superare il valore limite originale del Legame vitale derivante da <strong>Cenere alla cenere</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Egida della forza",
+    "description": {
+      "0": "Arlecchino ottiene un 1% di RES fisica e a tutti gli elementi per ogni 100 di ATT superiore a 1.000. L'aumento di RES massimo che è possibile ottenere in questo modo è pari a un 20%."
+    }
+  },
+  "passive3": {
+    "name": "Cognizione della Luna cruenta",
+    "description": {
+      "0": "In combattimento, Arlecchino ottiene un 40% di <pyro>bonus DAN da Pyro</pyro> e può ricevere effetti di guarigione solo tramite <strong>Ascesa della Luna cruenta</strong>."
+    }
+  },
+  "constellation1": {
+    "name": "\"Sono io a sopportare ogni interesse o rappresaglia...\"",
+    "description": {
+      "0": "Il valore dell'incremento di Maschera della morte rossa sale di un ulteriore 100%. Inoltre, quando Arlecchino sferra attacchi normali o caricati sotto l'influsso di Maschera della morte rossa, la sua resistenza all'interruzione aumenta."
+    }
+  },
+  "constellation2": {
+    "name": "\"Sono io a conferire ogni punizione o ricompensa...\"",
+    "description": {
+      "0": "Quando vengono applicate, le <strong>Direttive del debito di sangue</strong> diventano immediatamente Ingiunzioni del debito di sangue.",
+      "1": "Quando Arlecchino assorbe un'Ingiunzione, sprigiona una Fiamma della Luna cruenta di fronte a sé che infligge <pyro>DAN da Pyro ad area</pyro> pari a un 900% del suo ATT, e la RES fisica e a tutti gli elementi aumenta di un 20% per 15 s. Quest'effetto può attivarsi una volta ogni 10 s.",
+      "2": "<br/>",
+      "3": "Richiede il talento passivo Agonia rivendicata."
+    }
+  },
+  "constellation3": {
+    "name": "\"Diventerai un nuovo membro della nostra famiglia...\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Attacco normale: Invito alla decapitazione</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"D'ora in avanti, amatevi e proteggetevi l'un l'altro...\"",
+    "description": {
+      "0": "Quando Arlecchino assorbe una Direttiva del debito di sangue, il TdR di <strong>Ascesa della Luna cruenta</strong> si riduce di 2 s e la sua energia elementale si ripristina di 15. Quest'effetto può attivarsi una volta ogni 10 s."
+    }
+  },
+  "constellation5": {
+    "name": "\"Nella solitudine, siamo come spoglie esanimi...\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Ascesa della Luna cruenta</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Da oggi in poi, potremo gioire insieme di una nuova vita.\"",
+    "description": {
+      "0": "I DAN da <strong>Ascesa della Luna cruenta</strong> aumentano in base all'ATT di Arlecchino moltiplicato per un 700% della percentuale del suo Legame vitale attuale.",
+      "1": "Per 20 s dopo aver usato <strong>Cenere alla cenere</strong>, il tasso di CRIT e i DAN da CRIT dell'attacco normale e del Tripudio elementale di Arlecchino aumentano rispettivamente di un 10% e di un 70%. Quest'effetto può attivarsi una volta ogni 15 s."
+    }
+  }
+}

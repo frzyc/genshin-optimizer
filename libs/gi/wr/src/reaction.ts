@@ -133,7 +133,7 @@ const trans = {
       info(`${ele}_swirl_hit`)
     )
   }),
-}
+} as any
 const infusionReactions = {
   overloaded: infoMut(
     greaterEq(

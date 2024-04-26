@@ -10,8 +10,7 @@
         "{projectRoot}/Data/**/*",
         "{projectRoot}/src/allStat_gen.json"
       ]
-    },
-    "lint": {}
+    }
   },
   "tags": []
 }

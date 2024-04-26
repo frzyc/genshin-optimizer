@@ -1,0 +1,16 @@
+{
+  "name": "sr-page-lightcones",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr/page-lightcones/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/sr/page-lightcones/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

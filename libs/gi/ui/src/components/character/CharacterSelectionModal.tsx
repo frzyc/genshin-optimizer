@@ -190,26 +190,46 @@ export function CharacterSelectionModal({
         setSearchTerm('')
         onHide()
       }}
+      containerProps={{
+        sx: {
+          height: '100vh',
+          p: { xs: 1 },
+        },
+      }}
     >
-      <CardThemed>
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-            <WeaponToggle
-              sx={{ height: '100%' }}
-              onChange={(weaponType) =>
-                database.displayCharacter.set({ weaponType })
-              }
-              value={weaponType}
-              totals={weaponTotals}
-              size="small"
-            />
-            <ElementToggle
-              sx={{ height: '100%' }}
-              onChange={(element) => database.displayCharacter.set({ element })}
-              value={element}
-              totals={elementTotals}
-              size="small"
-            />
+      <CardThemed
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100%',
+        }}
+      >
+        <CardContent
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 1,
+          }}
+        >
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+              <WeaponToggle
+                onChange={(weaponType) =>
+                  database.displayCharacter.set({ weaponType })
+                }
+                value={weaponType}
+                totals={weaponTotals}
+                size="small"
+              />
+              <ElementToggle
+                onChange={(element) =>
+                  database.displayCharacter.set({ element })
+                }
+                value={element}
+                totals={elementTotals}
+                size="small"
+              />
+            </Box>
             <IconButton
               sx={{ ml: 'auto' }}
               onClick={() => {
@@ -250,7 +270,7 @@ export function CharacterSelectionModal({
         </CardContent>
         <Divider />
         <DataContext.Provider value={{ teamData: undefined } as any}>
-          <CardContent>
+          <CardContent sx={{ flex: '1', overflow: 'auto' }}>
             <Grid
               container
               spacing={1}
@@ -320,19 +340,22 @@ function SelectionCard({
       <Box>
         <CardThemed
           bgt="light"
-          sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+          sx={{
+            position: 'relative',
+            flexGrow: 1,
+            display: 'flex',
+            flexDirection: 'column',
+          }}
         >
-          <Box sx={{ position: 'absolute', opacity: 0.7, zIndex: 2 }}>
-            <IconButton
-              sx={{ p: 0.25 }}
-              onClick={(_) => {
-                onClose()
-                database.charMeta.set(characterKey, { favorite: !favorite })
-              }}
-            >
-              {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
-            </IconButton>
-          </Box>
+          <IconButton
+            sx={{ p: 0.25, position: 'absolute', zIndex: 2, opacity: 0.7 }}
+            onClick={(_) => {
+              onClose()
+              database.charMeta.set(characterKey, { favorite: !favorite })
+            }}
+          >
+            {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+          </IconButton>
           <CardActionArea onClick={onClick}>
             <Box
               display="flex"

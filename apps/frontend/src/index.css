@@ -16,3 +16,8 @@ a {
   font-family: monospace;
   color: white;
 }
+
+/* Use Margin to move the google intent ad up so it does not overlap the footer */
+#google-anno-sa {
+  margin-bottom: 20px !important;
+}

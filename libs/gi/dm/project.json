@@ -14,8 +14,7 @@
         }
       ]
     },
-    "gen-file": {},
-    "lint": {}
+    "gen-file": {}
   },
   "tags": []
 }

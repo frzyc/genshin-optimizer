@@ -1,0 +1,29 @@
+{
+  "setName": "Armonik İlham Parçası",
+  "setEffects": {
+    "2": "+%18 Saldırı.",
+    "4": "Hayat Bağı değeri arttığında veya azaldığında 6 saniyeliğine bu karakterin verdiği Hasar %18 artar. 3 kademeye kadar birikir."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Ahenkli Senfoninin Başlangıcı",
+      "desc": "Açmış bir çiçek şeklinde bir onur madalyası. Mavi taş ve altın ile süslenen bu madalya, zamanında ölümsüzlere verilirdi."
+    },
+    "plume": {
+      "name": "Kadim Deniz'in Gece Düşünceleri",
+      "desc": "Efsanede bahsedilen altın arıların kanatlarına benzetilerek yapılmış tüyden bir aksesuar. En hafif esintide bile dalgalanır."
+    },
+    "sands": {
+      "name": "Kader Döngüsünün Büyük Oyunu",
+      "desc": "Kader çarkının taklidi olarak yapılan bir saat. Çalışmayı uzun zaman önce bırakmış."
+    },
+    "goblet": {
+      "name": "İkhor Yağmuru Rapsodisi",
+      "desc": "Bir zamanlar göklerin güzel şarabıyla dolup taşan, bakırdan bir şarap kabı."
+    },
+    "circlet": {
+      "name": "Solup Gidenin Tuhaf Dansı",
+      "desc": "Altın varakla kaplanmış bir maske. Belki de eski bir lejyon komutanından kalan bir yadigardır."
+    }
+  }
+}

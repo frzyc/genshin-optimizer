@@ -1,5 +1,5 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { objMap } from '@genshin-optimizer/common/util'
+import { notEmpty, objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import type {
   ArtCharDatabase,
@@ -192,7 +192,7 @@ function getCharDataBundle(
   mainStatAssumptionLevel: number,
   character: ICachedCharacter,
   weapon: ICachedWeapon,
-  artifacts: ICachedArtifact[] | Data
+  artifacts: (ICachedArtifact | undefined)[] | Data
 ): CharBundle | undefined {
   const characterSheet = getCharSheet(character.key, database.gender)
   if (!characterSheet) return undefined
@@ -216,7 +216,9 @@ function getCharDataBundle(
     allArtifactData,
   ])
   const artifactData = Array.isArray(artifacts)
-    ? artifacts.map((a) => dataObjForArtifact(a, mainStatAssumptionLevel))
+    ? artifacts
+        .filter(notEmpty)
+        .map((a) => dataObjForArtifact(a, mainStatAssumptionLevel))
     : [artifacts]
   const data = [
     ...artifactData,

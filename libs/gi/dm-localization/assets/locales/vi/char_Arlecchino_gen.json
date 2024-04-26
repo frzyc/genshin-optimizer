@@ -1,0 +1,172 @@
+{
+  "name": "Arlecchino",
+  "title": "Vầng Trăng Tai Họa",
+  "description": "Quan Chấp Hành thứ 4 của Fatui - Arlecchino. Nhà ngoại giao trầm tĩnh lạnh lùng, là \"Cha\" mà bọn trẻ vừa sợ hãi cũng vừa dựa dẫm trong Căn Nhà Hơi Ấm.",
+  "constellationName": "Cung Tịnh Luyện Hỏa",
+  "auto": {
+    "name": "Lời Mời Trảm Thủ",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 6 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, xông về phía kẻ địch gần đó và chém một nhát.",
+        "2": "Tiếp tục nhấn giữ, Arlecchino sẽ tiêu hao thể lực để thực hiện di chuyển nhanh tối đa 5s."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      },
+      "infusion": {
+        "0": "<strong>Bữa Tiệc Cái Chết Đỏ</strong>",
+        "1": "Khế Ước Sinh Mệnh vốn có của Arlecchino khi lớn hơn hoặc bằng 30% Giới Hạn HP thì cô ấy sẽ tiến vào trạng thái Bữa Tiệc Cái Chết Đỏ: Sát thương Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp gây ra sẽ chuyển thành <pyro>Sát Thương Nguyên Tố Hỏa</pyro> không thể bị thay thế.",
+        "2": "Trong trạng thái Bữa Tiệc Cái Chết Đỏ, Tấn Công Thường của Arlecchino khi trúng kẻ địch sẽ tăng sát thương gây ra của lần đó, mức tăng tương đương với Tấn Công của Arlecchino nhân với phần trăm nhất định của Khế Ước Sinh Mệnh hiện tại, đồng thời tiêu hao 7.5% Khế Ước Sinh Mệnh hiện có. Mỗi 0.03s tối đa tiêu hao một lần Khế Ước Sinh Mệnh theo cách này. Khi tiêu hao Khế Ước Sinh Mệnh theo cách này, sẽ khiến Kỹ Năng Nguyên Tố \"Vạn Vật Hóa Tro\" giảm 0.8s thời gian chờ."
+      }
+    },
+    "skillParams": {
+      "0": "Bữa Tiệc Cái Chết Đỏ Tăng",
+      "1": "Sát Thương Lần 1",
+      "2": "Sát Thương Lần 2",
+      "3": "Sát Thương Lần 3",
+      "4": "Sát Thương Lần 4",
+      "5": "Sát Thương Lần 5",
+      "6": "Sát Thương Lần 6",
+      "7": "Sát Thương Trọng Kích",
+      "8": "Thể lực Trọng Kích tiêu hao",
+      "9": "Thể lực Di Chuyển Nhanh tiêu hao",
+      "10": "Sát Thương Khi Đáp",
+      "11": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Vạn Vật Hóa Tro",
+    "description": {
+      "0": "Hiệu lệnh Ách Nguyệt Huyết Hỏa để gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> cho nhiều kẻ địch gần đó, đồng thời lao đến chém vào một kẻ địch trong số đó, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
+      "1": "Đòn tấn công nêu trên khi trúng kẻ địch sẽ khiến chúng chịu hiệu ứng Chỉ Lệnh Nợ Máu.",
+      "2": "<br/>",
+      "3": "<strong>Chỉ Lệnh Nợ Máu</strong>",
+      "4": [
+        "Chỉ Lệnh Nợ Máu duy trì 30s, mỗi 5s sẽ gây cho kẻ địch một lần <pyro>Sát Thương Nguyên Tố Hỏa</pyro>, tối đa gây ra 2 lần sát thương, sát thương này được xem là sát thương Kỹ Năng Nguyên Tố;",
+        "Khi Arlecchino thi triển Trọng Kích hoặc Kỹ Năng Nộ \"Ách Nguyệt Trỗi Dậy\", sẽ thu hồi và xóa Chỉ Lệnh Nợ Máu ở xung quanh, mỗi thu hồi một Chỉ Lệnh Nợ Máu sẽ cho Arlecchino Khế Ước Sinh Mệnh tương đương 65% Giới Hạn HP.",
+        "Trong 35s sau khi thi triển Kỹ Năng Nguyên Tố, tối đa có thể cung cấp cho Arlecchino Khế Ước Sinh Mệnh tương đương 145% Giới Hạn HP thông qua Chỉ Lệnh Nợ Máu. Trong thời gian duy trì, nếu lần nữa thi triển Kỹ Năng Nguyên Tố sẽ làm mới thời gian duy trì và giới hạn Khế Ước Sinh Mệnh mà Chỉ Lệnh Nợ Máu cung cấp."
+      ],
+      "5": "<br/>",
+      "6": "<i>Theo quan điểm của cô ấy, không phải hạt lúa mì nào rơi xuống đất cũng sẽ mọc thành bông lúa, có thể sẽ bị mục rữa trong im lặng. Nhưng những kẻ cản trở cô thì khi hóa thành tro chắc chắn có thể dùng để nuôi dưỡng hoa màu.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Đâm",
+      "1": "Sát Thương Chém",
+      "2": "Sát Thương Chỉ Lệnh Nợ Máu",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ách Nguyệt Trỗi Dậy",
+    "description": {
+      "0": "Arlecchino tung ra Ách Nguyệt Huyết Hỏa Dực, thu hồi và xóa Chỉ Lệnh Nợ Máu ở xung quanh, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>, đồng thời xóa thời gian chờ của Kỹ Năng Nguyên Tố \"Vạn Vật Hóa Tro\" và hồi phục HP cho bản thân, lượng hồi phục căn cứ vào giá trị Khế Ước Sinh Mệnh và Tấn Công.",
+      "1": "<br/>",
+      "2": "<i>Theo lý thuyết thường ngày của Teyvat thì mặt trăng ngoài trăng tròn ra đều là ẩn dụ của điềm xấu, chỉ được sử dụng bởi thuật giả kim và chiêm tinh.",
+      "3": "Liệu vầng trăng đỏ mà cô ấy mơ thấy có phải là điềm báo không? Phải, nhưng số phận bi thảm đó thuộc về những kẻ chọc giận cô.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Lượng Hồi Phục",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Chỉ Khổ Đau Mới Có Thể Bù Đắp",
+    "description": {
+      "0": "<strong>Chỉ Lệnh Nợ Máu</strong> có đặc tính sau:",
+      "1": [
+        "Khi đánh bại kẻ địch mang Chỉ Lệnh Nợ Máu do bản thân Arlecchino gán lên, sẽ cung cấp cho Arlecchino Khế Ước Sinh Mệnh tương đương 130% Giới Hạn HP;",
+        "5s sau khi gán ấn, sẽ tăng cấp thành Chỉ Lệnh Nợ Máu - Kết. Khi thu hồi sẽ chuyển thành cung cấp Khế Ước Sinh Mệnh cho Arlecchino tương đương 130%."
+      ],
+      "2": "Khế Ước Sinh Mệnh được cung cấp bằng cách thức trên, giới hạn giá trị Khế Ước Sinh Mệnh sẽ không thể vượt quá giới hạn vốn có của <strong>Vạn Vật Hóa Tro</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Chỉ Sức Mạnh Mới Có Thể Bảo Vệ",
+    "description": {
+      "0": "Căn cứ vào mức Tấn Công vượt quá 1000 của Arlecchino, mỗi 100 điểm Tấn Công sẽ khiến Arlecchino nhận được 1% Kháng Vật Lý và Kháng Tất Cả Nguyên Tố. Tối đa tăng đến 20% Kháng Vật Lý và Kháng Tất Cả Nguyên Tố bằng cách này."
+    }
+  },
+  "passive3": {
+    "name": "Chỉ Ách Nguyệt Mới Có Thể Thấu Hiểu",
+    "description": {
+      "0": "Trong trạng thái chiến đấu, Arlecchino nhận 40% <pyro>buff Sát Thương Nguyên Tố Hỏa</pyro>, đồng thời chỉ có thể hồi phục HP thông qua <strong>Ách Nguyệt Trỗi Dậy</strong>."
+    }
+  },
+  "constellation1": {
+    "name": "\"Tất Cả Thù Và Nợ Do Ta Tự Trả...\"",
+    "description": {
+      "0": "Bữa Tiệc Cái Chết Đỏ sẽ được cường hóa, giá trị gia tăng là 100%; Ngoài ra, khi Tấn Công Thường hoặc Trọng Kích trong trạng thái Bữa Tiệc Cái Chết Đỏ sẽ tăng khả năng Kháng Gián Đoạn của Arlecchino."
+    }
+  },
+  "constellation2": {
+    "name": "\"Tất Cả Thưởng Và Phạt Do Ta Tự Ra...\"",
+    "description": {
+      "0": "<strong>Chỉ Lệnh Nợ Máu</strong> khi thi triển sẽ là Chỉ Lệnh Nợ Máu - Kết.",
+      "1": "Khi Arlecchino thu hồi Chỉ Lệnh Nợ Máu - Kết sẽ triệu hồi Ách Nguyệt Huyết Hỏa ở phía trước, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> tương đương với 900% Tấn Công của cô ấy, đồng thời khiến kháng vật lý và kháng tất cả nguyên tố của cô ấy tăng 20%, duy trì 15s. Hiệu quả này mỗi 10s tối đa kích hoạt một lần.",
+      "2": "Cần mở khóa thiên phú \"Chỉ Khổ Đau Mới Có Thể Bù Đắp\"."
+    }
+  },
+  "constellation3": {
+    "name": "\"Ngươi Sẽ Trở Thành Thành Viên Mới Của Gia Đình Ta...\"",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tấn Công Thường - Lời Mời Trảm Thủ</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Sau Này, Các Ngươi Yêu Thương Tương Trợ Nhau...\"",
+    "description": {
+      "0": "Khi Arlecchino thu hồi Chỉ Lệnh Nợ Máu thành công, thời gian chờ của <strong>Ách Nguyệt Trỗi Dậy</strong> giảm 2s, đồng thời hồi phục 15 điểm Năng Lượng Nguyên Tố cho cô ấy. Hiệu quả này mỗi 10s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation5": {
+    "name": "\"Vì Một Mình Khác Gì Với Đã Chết...\"",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Ách Nguyệt Trỗi Dậy</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Từ Nay Về Sau, Chúng Ta Sẽ Cùng Đón Cuộc Sống Mới.\"",
+    "description": {
+      "0": "Tăng sát thương của <strong>Ách Nguyệt Trỗi Dậy</strong>, mức tăng tương đương với Tấn Công của Arlecchino nhân với 700% tỉ lệ phần trăm của Khế Ước Sinh Mệnh hiện tại.",
+      "1": "Trong 20s sau khi thi triển <strong>Vạn Vật Hóa Tro</strong>, Tấn Công Thường và Kỹ Năng Nộ của Arlecchino tăng 10% Tỷ Lệ Bạo Kích và 70% Sát Thương Bạo Kích. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    }
+  }
+}

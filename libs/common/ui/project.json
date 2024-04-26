@@ -4,15 +4,5 @@
   "sourceRoot": "libs/common/ui/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "lint": {},
-    "test": {
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
-      }
-    }
-  }
+  "targets": {}
 }

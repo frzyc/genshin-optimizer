@@ -1,0 +1,29 @@
+{
+  "setName": "Fragment of Harmonic Whimsy",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "Saat nilai Bond of Life bertambah atau berkurang, DMG yang diakibatkan Karakter meningkat 18% selama 6 detik, dapat ditumpuk sampai 3 kali."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Harmonious Symphony Prelude",
+      "desc": "Medali kehormatan berbentuk bunga mekar yang dihiasi dengan batu hijau dan emas yang dulunya diberikan kepada manusia fana."
+    },
+    "plume": {
+      "name": "Ancient Sea's Nocturnal Musing",
+      "desc": "Aksesori bulu berbentuk sayap lebah emas yang legendaris. Akan bergetar lembut saat diterpa oleh angin sepoi-sepoi."
+    },
+    "sands": {
+      "name": "The Grand Jape of the Turning of Fate",
+      "desc": "Sebuah jam yang dibuat meniru roda takdir. Kini jam itu sudah tidak berfungsi lagi."
+    },
+    "goblet": {
+      "name": "Ichor Shower Rhapsody",
+      "desc": "Sebuah cangkir kuno yang terbuat dari tembaga sebagai dasarnya, dulunya cangkir ini pernah diisi dengan anggur berkualitas dari langit."
+    },
+    "circlet": {
+      "name": "Whimsical Dance of the Withered",
+      "desc": "Topeng yang dulunya ditutupi oleh dedaunan emas. Mungkin ini peninggalan dari seorang perwira legiun di zaman kuno."
+    }
+  }
+}

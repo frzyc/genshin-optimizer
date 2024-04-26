@@ -3,9 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/common/util/src",
   "projectType": "library",
-  "targets": {
-    "lint": {},
-    "test": {}
-  },
-  "tags": []
+  "tags": [],
+  "// targets": "to see all targets run: nx show project common-util --web",
+  "targets": {}
 }

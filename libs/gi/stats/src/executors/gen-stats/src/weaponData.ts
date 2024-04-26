@@ -1,4 +1,3 @@
-import { extrapolateFloat } from '@genshin-optimizer/common/pipeline'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import type {
   StatKey,
@@ -52,7 +51,7 @@ export default function weaponData() {
           if (!(key in refinementBonus))
             refinementBonus[key] = [...emptyRefinement]
           // Refinement uses 1-based index, hence the +1
-          refinementBonus[key]![i + 1] += extrapolateFloat(value)
+          refinementBonus[key]![i + 1] += value
         }
       })
       const ascensionBonus: WeaponDataGen['ascensionBonus'] = {}
@@ -63,7 +62,7 @@ export default function weaponData() {
           const key = propTypeMap[propType]
           if (!(key in ascensionBonus))
             ascensionBonus[key] = [...emptyAscension]
-          ascensionBonus[key]![i] += extrapolateFloat(value)
+          ascensionBonus[key]![i] += value
         }
       })
 
@@ -72,27 +71,27 @@ export default function weaponData() {
         rarity: rankLevel,
         mainStat: {
           type: propTypeMap[main.propType],
-          base: extrapolateFloat(main.initValue),
+          base: main.initValue,
           curve: main.type,
         },
         subStat: sub.propType
           ? {
               type: propTypeMap[sub.propType],
-              base: extrapolateFloat(sub.initValue),
+              base: sub.initValue,
               curve: sub.type,
             }
           : undefined,
         lvlCurves: [
           {
             key: propTypeMap[main.propType],
-            base: extrapolateFloat(main.initValue),
+            base: main.initValue,
             curve: main.type,
           },
           ...(sub.propType
             ? [
                 {
                   key: propTypeMap[sub.propType],
-                  base: extrapolateFloat(sub.initValue),
+                  base: sub.initValue,
                   curve: sub.type,
                 },
               ]

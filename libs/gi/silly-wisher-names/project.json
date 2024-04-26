@@ -7,8 +7,7 @@
     "gen-file": {
       "executor": "@genshin-optimizer/gi/silly-wisher-names:gen-assets",
       "outputs": ["{projectRoot}/assets/locales", "{projectRoot}/Translated"]
-    },
-    "lint": {}
+    }
   },
   "tags": []
 }
