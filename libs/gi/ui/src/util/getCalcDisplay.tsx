@@ -125,12 +125,6 @@ function _getCalcDisplay(
 
     if (node.info.pivot || node.meta.op === 'const') {
       result.prec = Infinity
-      result.formula = (
-        <>
-          <span style={{ fontSize: '85%' }}>{result.name}</span>{' '}
-          {result.valueString}
-        </>
-      )
 
       if (result.assignment) {
         result.formulas = [result.assignment, ...result.formulas]
@@ -164,7 +158,14 @@ function computeFormulaDisplay(
   function addComponents(node: CalcResult<number>, p: number) {
     const display = getCalcDisplay(node)
     if (p > display.prec) components.push('(')
-    components.push(display.formula)
+    if (node.info.pivot && display.name)
+      components.push(
+        <>
+          <span style={{ fontSize: '85%' }}>{display.name}</span>{' '}
+          {display.valueString}
+        </>
+      )
+    else components.push(display.formula)
     if (p > display.prec) components.push(')')
   }
 
