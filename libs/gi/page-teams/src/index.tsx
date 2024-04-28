@@ -7,6 +7,7 @@ import {
 import {
   CardThemed,
   ModalWrapper,
+  ShowingAndSortOptionSelect,
   useInfScroll,
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
@@ -14,7 +15,6 @@ import { teamSortKeys } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   CharacterMultiAutocomplete,
-  ShowingAndSortOptionSelect,
   TeamCard,
   useTitle,
 } from '@genshin-optimizer/gi/ui'
