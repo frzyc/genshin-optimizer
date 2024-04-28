@@ -5,6 +5,7 @@ import {
 import {
   CardThemed,
   ModalWrapper,
+  SortByButton,
   SqBadge,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
@@ -59,7 +60,6 @@ import {
 import { useTranslation } from 'react-i18next'
 import { DataContext, SillyContext } from '../../context'
 import { iconAsset } from '../../util/iconAsset'
-import { SortByButton } from '../SortByButton'
 import { ElementToggle, WeaponToggle } from '../toggles'
 import { CharacterCard } from './CharacterCard'
 import type { CharacterSortKey } from './CharacterSort'

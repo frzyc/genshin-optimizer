@@ -2,7 +2,11 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ShowingAndSortOptionSelect,
+  useInfScroll,
+} from '@genshin-optimizer/common/ui'
 import {
   catTotal,
   filterFunction,
@@ -27,7 +31,6 @@ import {
   CharacterRarityToggle,
   CharacterSelectionModal,
   ElementToggle,
-  ShowingAndSortOptionSelect,
   SillyContext,
   WeaponToggle,
   characterFilterConfigs,

@@ -3,7 +3,11 @@ import {
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
-import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ShowingAndSortOptionSelect,
+  useInfScroll,
+} from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
@@ -12,7 +16,6 @@ import {
   ArtifactCard,
   ArtifactEditor,
   InfoComponent,
-  ShowingAndSortOptionSelect,
 } from '@genshin-optimizer/gi/ui'
 import {
   artifactFilterConfigs,
