@@ -1,14 +1,16 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { clamp, objPathValue } from '@genshin-optimizer/common/util'
-import type {
-  ArtifactSlotKey,
-  CharacterKey,
-} from '@genshin-optimizer/gi/consts'
+import {
+  clamp,
+  objKeyMap,
+  objPathValue,
+  range,
+} from '@genshin-optimizer/common/util'
+import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
+import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
@@ -16,7 +18,6 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
-import type { DynStat } from '@genshin-optimizer/gi/solver'
 import { dynamicData } from '@genshin-optimizer/gi/solver-tc'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
@@ -65,14 +66,14 @@ import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCa
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
-import type { UpOptBuild } from './upOpt'
-import { UpOptCalculator, toArtifact } from './upOpt'
+import { UpOptCalculator } from './upOpt'
 
 export default function TabUpopt() {
   const {
     teamId,
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
+    loadoutDatum,
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
@@ -88,8 +89,6 @@ export default function TabUpopt() {
   const teamData = useTeamData()
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
-  const [artsDirty] = useForceUpdate()
-  const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
   const filteredArts = useMemo(() => {
     const {
@@ -100,7 +99,7 @@ export default function TabUpopt() {
       levelHigh,
       allowLocationsState,
       useExcludedArts,
-    } = deferredArtsDirty && deferredBuildSetting
+    } = deferredBuildSetting
 
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
@@ -125,7 +124,7 @@ export default function TabUpopt() {
 
       return true
     })
-  }, [database, characterKey, deferredArtsDirty, deferredBuildSetting])
+  }, [database, characterKey, deferredBuildSetting])
   const filteredArtIdMap = useMemo(
     () => Object.fromEntries(filteredArts.map(({ id }) => [id, true])),
     [filteredArts]
@@ -135,8 +134,6 @@ export default function TabUpopt() {
     undefined as UpOptCalculator | undefined
   )
 
-  const [, setForceUpdate] = useForceUpdate()
-
   const [show20, setShow20] = useState(true)
   const [check4th, setCheck4th] = useState(true)
   const [useFilters, setUseMainStatFilter] = useState(false)
@@ -145,20 +142,22 @@ export default function TabUpopt() {
   const [pageIdex, setpageIdex] = useState(0)
 
   const artifactsToDisplayPerPage = 5
-  const { artifactsToShow, numPages, currentPageIndex, minObj0, maxObj0 } =
+  const { indexes, numPages, currentPageIndex, minObj0, maxObj0 } =
     useMemo(() => {
       if (!upOptCalc)
         return {
-          artifactsToShow: [],
+          indexes: [],
           numPages: 0,
           currentPageIndex: 0,
           toShow: 0,
           minObj0: 0,
           maxObj0: 0,
         }
+
       const numPages = Math.ceil(
         upOptCalc.artifacts.length / artifactsToDisplayPerPage
       )
+
       const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
       const toShow = upOptCalc.artifacts.slice(
         currentPageIndex * artifactsToDisplayPerPage,
@@ -167,7 +166,13 @@ export default function TabUpopt() {
       const thr = upOptCalc.thresholds[0]
 
       return {
-        artifactsToShow: toShow,
+        indexes: range(
+          currentPageIndex * artifactsToDisplayPerPage,
+          Math.min(
+            (currentPageIndex + 1) * artifactsToDisplayPerPage - 1,
+            upOptCalc.artifacts.length - 1
+          )
+        ),
         numPages,
         currentPageIndex,
         minObj0: toShow.reduce(
@@ -180,7 +185,6 @@ export default function TabUpopt() {
         ),
       }
     }, [pageIdex, upOptCalc])
-
   const setPage = useCallback(
     (e, value) => {
       if (!upOptCalc) return
@@ -235,40 +239,34 @@ export default function TabUpopt() {
         })
     )
 
-    const equippedArts =
-      database.chars.get(characterKey)?.equippedArtifacts ??
-      ({} as Record<ArtifactSlotKey, string>)
-    const curEquip: UpOptBuild = Object.fromEntries(
-      allArtifactSlotKeys.map((slotKey) => {
-        const art = database.arts.get(equippedArts[slotKey] ?? '')
-        return [slotKey, art ? toArtifact(art) : undefined]
-      })
-    ) as UpOptBuild
-    const curEquipSetKeys = Object.fromEntries(
-      allArtifactSlotKeys.map((slotKey) => {
-        const art = database.arts.get(equippedArts[slotKey] ?? '')
-        return [slotKey, art?.setKey ?? '']
-      })
+    const equippedArts = database.teams.getLoadoutArtifacts(loadoutDatum)
+    const curEquipSetKeys = objKeyMap(
+      allArtifactSlotKeys,
+      (slotKey) => equippedArts[slotKey]?.setKey
     )
     function respectSexExclusion(art: ICachedArtifact) {
       const newSK = { ...curEquipSetKeys }
       newSK[art.slotKey] = art.setKey
-      const skc: DynStat = {}
-      allArtifactSlotKeys.forEach(
-        (slotKey) => (skc[newSK[slotKey]] = (skc[newSK[slotKey]] ?? 0) + 1)
-      )
+      const skc: Partial<Record<ArtifactSetKey, number>> = {}
+      allArtifactSlotKeys.forEach((slotKey) => {
+        const setKey = newSK[slotKey]
+        if (!setKey) return
+        if (setKey.startsWith('Prayers')) return
+        skc[setKey] = (skc[setKey] ?? 0) + 1
+      })
       const pass = Object.entries(skc).every(([setKey, num]) => {
-        if (!artSetExclusion[setKey]) return true
+        const ex = artSetExclusion[setKey as ArtSetExclusionKey]
+        if (!ex) return true
         switch (num) {
           case 0:
           case 1:
             return true
           case 2:
           case 3:
-            return !artSetExclusion[setKey].includes(2)
+            return !ex.includes(2)
           case 4:
           case 5:
-            return !artSetExclusion[setKey].includes(4)
+            return !ex.includes(4)
           default:
             throw Error('error in respectSetExclude: num > 5')
         }
@@ -315,17 +313,15 @@ export default function TabUpopt() {
         (art) =>
           !useFilters || (levelLow <= art.level && art.level <= levelHigh)
       )
-
-    const upoptCalc = new UpOptCalculator(
-      nodes,
-      [-Infinity, ...valueFilter.map((x) => x.minimum)],
-      curEquip,
-      artifactsToConsider
+    setUpOptCalc(
+      new UpOptCalculator(
+        nodes,
+        [-Infinity, ...valueFilter.map((x) => x.minimum)],
+        equippedArts,
+        artifactsToConsider,
+        check4th
+      )
     )
-    upoptCalc.calc4th = check4th
-    upoptCalc.calcFastAll()
-    upoptCalc.calcSlowToIndex(5)
-    setUpOptCalc(upoptCalc)
   }, [
     buildSetting,
     characterKey,
@@ -334,6 +330,7 @@ export default function TabUpopt() {
     teamCharId,
     gender,
     activeCharKey,
+    loadoutDatum,
     check4th,
     show20,
     useFilters,
@@ -356,8 +353,8 @@ export default function TabUpopt() {
           </Grid>
           <Grid item>
             <ShowingArt
-              numShowing={artifactsToShow.length}
-              total={upOptCalc?.artifacts.length}
+              numShowing={indexes.length}
+              total={upOptCalc?.artifacts.length ?? 0}
             />
           </Grid>
         </Grid>
@@ -603,23 +600,24 @@ export default function TabUpopt() {
                 />
               }
             >
-              {artifactsToShow.map((art, i) => (
-                <Box key={art.id}>
-                  <UpgradeOptChartCard
-                    setArtifactIdToEdit={setArtifactIdToEdit}
-                    upgradeOpt={art}
-                    thresholds={upOptCalc?.thresholds ?? []}
-                    objMax={maxObj0}
-                    objMin={minObj0}
-                    calcExactCallback={() => {
-                      const ix =
-                        currentPageIndex * artifactsToDisplayPerPage + i
-                      upOptCalc?.calcExact(ix)
-                      setForceUpdate()
-                    }}
-                  />
-                </Box>
-              ))}
+              {!!upOptCalc &&
+                indexes.map((i) => (
+                  <Box key={i}>
+                    <UpgradeOptChartCard
+                      upOptCalc={upOptCalc}
+                      ix={i}
+                      setArtifactIdToEdit={setArtifactIdToEdit}
+                      thresholds={upOptCalc.thresholds ?? []}
+                      objMax={maxObj0}
+                      objMin={minObj0}
+                      calcExactCallback={() => {
+                        const ix =
+                          currentPageIndex * artifactsToDisplayPerPage + i
+                        upOptCalc?.calcExact(ix)
+                      }}
+                    />
+                  </Box>
+                ))}
             </Suspense>
             {pagination}
           </Stack>
@@ -629,7 +627,13 @@ export default function TabUpopt() {
   )
 }
 
-function ShowingArt({ numShowing, total }) {
+function ShowingArt({
+  numShowing,
+  total,
+}: {
+  numShowing: number
+  total: number
+}) {
   return (
     <Typography color="text.secondary">
       <Trans i18nKey="showingNum" count={numShowing} value={total}>

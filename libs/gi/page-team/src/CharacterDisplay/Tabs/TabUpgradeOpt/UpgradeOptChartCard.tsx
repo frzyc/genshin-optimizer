@@ -1,4 +1,4 @@
-import { useTimeout } from '@genshin-optimizer/common/react-util'
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { linspace } from '@genshin-optimizer/common/util'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
@@ -9,9 +9,8 @@ import {
   DataContext,
 } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
-import { Box, CardContent, Grid, Typography } from '@mui/material'
-import { useCallback, useContext, useMemo } from 'react'
-import type { TooltipProps } from 'recharts'
+import { Box, CardContent, Divider, Grid, Typography } from '@mui/material'
+import { useCallback, useContext, useEffect, useMemo } from 'react'
 import {
   Area,
   ComposedChart,
@@ -21,23 +20,22 @@ import {
   ReferenceDot,
   ReferenceLine,
   ResponsiveContainer,
-  Tooltip,
   XAxis,
   YAxis,
 } from 'recharts'
 import { erf } from './mathUtil'
-import type { UpOptArtifact } from './upOpt'
+import type { UpOptCalculator } from './upOpt'
 import { ResultType } from './upOpt'
 
 type Props = {
   setArtifactIdToEdit: (id: string | undefined) => void
-  upgradeOpt: UpOptArtifact
   showTrue?: boolean
   objMin: number
   objMax: number
   thresholds: number[]
-  ix?: number
+  ix: number
   calcExactCallback: () => void
+  upOptCalc: UpOptCalculator
 }
 type ChartData = {
   x: number
@@ -48,7 +46,7 @@ type ChartData = {
 const nbins = 50
 
 export default function UpgradeOptChartCard(props: Props) {
-  const id = props.upgradeOpt.id
+  const id = props.upOptCalc.artifacts[props.ix]?.id
   return (
     <Grid container spacing={1}>
       <Grid item xs={5} sm={4} md={4} lg={3} xl={3}>
@@ -65,17 +63,28 @@ export default function UpgradeOptChartCard(props: Props) {
 }
 
 function UpgradeOptChartCardGraph({
-  upgradeOpt,
   thresholds,
   objMin,
   objMax,
-  calcExactCallback,
+  upOptCalc,
+  ix,
 }: Props) {
+  const upgradeOpt = upOptCalc.artifacts[ix]
   const database = useDatabase()
+  const [, forceUpdate] = useForceUpdate()
   const bla = database.arts.get(upgradeOpt.id)
-  if (!bla) {
-    throw new Error(`artifact ${upgradeOpt.id} not found.`)
-  }
+
+  const updateUpOpt = useCallback(() => {
+    const art = database.arts.get(upgradeOpt.id)
+    if (!art) return
+    upOptCalc.reCalc(ix, art)
+    forceUpdate()
+  }, [database, forceUpdate, ix, upOptCalc, upgradeOpt.id])
+
+  useEffect(
+    () => database.arts.follow(upgradeOpt.id, updateUpOpt),
+    [database, updateUpOpt, upgradeOpt.id]
+  )
 
   const constrained = thresholds.length > 1
 
@@ -130,8 +139,11 @@ function UpgradeOptChartCardGraph({
     b < thr0 + reportD ? b : a
   )
   const reportY = integralCons(reportBin, reportBin + step)
-  const timeoutFunc = useTimeout()
-  if (!isExact) timeoutFunc(calcExactCallback, 1000) // lazy load the exact calculation
+  useEffect(() => {
+    if (isExact) return
+    upOptCalc.calcExact(ix)
+    forceUpdate()
+  }, [upOptCalc, isExact, ix, forceUpdate])
 
   const probUpgradeText = (
     <span>
@@ -148,33 +160,41 @@ function UpgradeOptChartCardGraph({
       </strong>
     </span>
   )
-  const CustomTooltip = ({ active }: TooltipProps<string, string>) => {
-    if (!active) return null
-    // I kinda want the [average increase] to only appear when hovering the white dot.
-    return (
-      <div className="custom-tooltip">
-        <p className="label"></p>
-        <p className="desc">{probUpgradeText}</p>
-        <p className="desc">{avgIncText}</p>
-      </div>
-    )
-  }
+  // const CustomTooltip = ({ active }: TooltipProps<string, string>) => {
+  //   if (!active) return null
+  //   // I kinda want the [average increase] to only appear when hovering the white dot.
+  //   return (
+  //     <div className="custom-tooltip">
+  //       <p className="label"></p>
+  //       <p className="desc">{probUpgradeText}</p>
+  //       <p className="desc">{avgIncText}</p>
+  //     </div>
+  //   )
+  // }
 
   return (
     <CardThemed bgt="light">
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-        <CardContent sx={{ flexGrow: 1 }}>
-          <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
-            <Typography>{probUpgradeText}</Typography>
-            <Typography sx={{ flexGrow: 1 }}>{avgIncText}</Typography>
-            <Typography>Currently Equipped</Typography>
-          </Box>
-        </CardContent>
         <Box sx={{ height: 50, width: 50 }}>
-          <EquippedArtifact slotKey={bla.slotKey} />
+          {!!bla?.slotKey && <EquippedArtifact slotKey={bla.slotKey} />}
+        </Box>
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 2,
+            px: 2,
+            py: 1,
+          }}
+        >
+          <Typography sx={{ flexGrow: 1 }}>Currently Equipped</Typography>
+          <Typography>{probUpgradeText}</Typography>
+          <Typography>{avgIncText}</Typography>
         </Box>
       </Box>
-
+      <Divider />
       <CardContent>
         <ResponsiveContainer width="100%" aspect={2.5} key={upgradeOpt.id}>
           <ComposedChart
@@ -189,7 +209,7 @@ function UpgradeOptChartCardGraph({
               tickFormatter={(v) => `${v <= 0 ? '' : '+'}${v}%`}
             >
               <Label
-                value="Relative Damage Potential"
+                value="Relative Increase to Target"
                 position="insideBottom"
                 style={{ fill: '#eaebed' }}
                 offset={-10}
@@ -267,7 +287,7 @@ function UpgradeOptChartCardGraph({
               shape={<circle radius={1} opacity={0.5} />}
             />
 
-            <Tooltip content={<CustomTooltip />} cursor={false} />
+            {/* <Tooltip content={<CustomTooltip />} cursor={false} /> */}
           </ComposedChart>
         </ResponsiveContainer>
       </CardContent>

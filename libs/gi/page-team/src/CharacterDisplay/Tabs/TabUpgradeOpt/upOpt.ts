@@ -1,4 +1,4 @@
-import { cartesian, range } from '@genshin-optimizer/common/util'
+import { cartesian, objMap, range } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   ArtifactSlotKey,
@@ -84,9 +84,7 @@ export enum ResultType {
   Slow,
   Exact,
 }
-export type UpOptBuild = {
-  [key in ArtifactSlotKey]: ArtifactBuildData | undefined
-}
+export type UpOptBuild = Record<ArtifactSlotKey, ArtifactBuildData | undefined>
 export type UpOptArtifact = {
   id: string
   rollsLeft: number
@@ -151,7 +149,7 @@ export class UpOptCalculator {
   baseBuild: UpOptBuild
   nodes: OptNode[]
   thresholds: number[]
-  calc4th = false
+  calc4th: boolean
 
   skippableDerivatives: boolean[]
   eval: (
@@ -172,12 +170,16 @@ export class UpOptCalculator {
   constructor(
     nodes: OptNode[],
     thresholds: number[],
-    build: UpOptBuild,
-    artifacts: ICachedArtifact[]
+    equippedBuild: Record<ArtifactSlotKey, ICachedArtifact | undefined>,
+    artifacts: ICachedArtifact[],
+    calc4th = false
   ) {
-    this.baseBuild = build
+    this.baseBuild = objMap(equippedBuild, (art) =>
+      art ? this.toArtifact(art) : undefined
+    )
     this.nodes = nodes
     this.thresholds = thresholds
+    this.calc4th = calc4th
 
     const toEval: OptNode[] = []
     nodes.forEach((n) => {
@@ -190,14 +192,14 @@ export class UpOptCalculator {
 
     const evalFn = precompute(evalOpt, {}, (f) => f.path[1], 5)
     thresholds[0] = evalFn(
-      Object.values(build) as ArtifactBuildData[] & { length: 5 }
+      Object.values(this.baseBuild) as ArtifactBuildData[] & { length: 5 }
     )[0] // dmg threshold is current objective value
 
     this.skippableDerivatives = allSubstatKeys.map((sub) =>
       nodes.every((n) => zero_deriv(n, (f) => f.path[1], sub))
     )
     this.eval = (stats: DynStat, slot: ArtifactSlotKey) => {
-      const b2 = { ...build, [slot]: { id: '', values: stats } }
+      const b2 = { ...this.baseBuild, [slot]: { id: '', values: stats } }
       const out = evalFn(
         Object.values(b2) as ArtifactBuildData[] & { length: 5 }
       )
@@ -211,14 +213,20 @@ export class UpOptCalculator {
     }
 
     artifacts.forEach((art) => this._addArtifact(art))
+
+    // Do all fast calc
+    this.calcFastAll()
+    this.calcSlowToIndex(5)
   }
 
   /** Adds an artifact to be tracked by UpOptCalc. It is initially un-evaluated. */
   _addArtifact(art: ICachedArtifact) {
+    this.artifacts.push(this.toUpOptArtifact(art))
+  }
+  toUpOptArtifact(art: ICachedArtifact): UpOptArtifact {
     const maxLevel = artMaxLevel[art.rarity]
     const mainStatVal = getMainStatValue(art.mainStatKey, art.rarity, maxLevel) // 5* only
-
-    this.artifacts.push({
+    return {
       id: art.id,
       rollsLeft: getRollsRemaining(art.level, art.rarity),
       slotKey: art.slotKey,
@@ -238,9 +246,12 @@ export class UpOptCalculator {
             ])
         ), // Assumes substats cannot match main stat key
       },
-    })
+    }
   }
-
+  reCalc(ix: number, art: ICachedArtifact) {
+    this.artifacts[ix] = this.toUpOptArtifact(art)
+    this.calcFast(ix, this.calc4th)
+  }
   /** Calcs all artifacts using Fast method */
   calcFastAll() {
     function score(a: UpOptArtifact) {
@@ -670,33 +681,33 @@ export class UpOptCalculator {
 
     this.artifacts[ix].result = this._toResultExact(distrs)
   }
-}
 
-/* ICachedArtifact to ArtifactBuildData. Maybe this should go in common? */
-export function toArtifact(art: ICachedArtifact): ArtifactBuildData {
-  const mainStatVal = getMainStatValue(art.mainStatKey, art.rarity, art.level) // 5* only
-  const buildData = {
-    id: art.id,
-    slot: art.slotKey,
-    level: art.level,
-    rarity: art.rarity,
-    values: {
-      [art.setKey]: 1,
-      [art.mainStatKey]: mainStatVal,
-      ...Object.fromEntries(
-        art.substats
-          .map((substat) => [
-            substat.key,
-            toDecimal(substat.key, substat.accurateValue),
-          ])
-          .filter(([, value]) => value !== 0)
-      ),
-    },
-    subs: art.substats.reduce((sub: SubstatKey[], x) => {
-      if (x.key !== '') sub.push(x.key)
-      return sub
-    }, []),
+  /* ICachedArtifact to ArtifactBuildData. */
+  toArtifact(art: ICachedArtifact): ArtifactBuildData {
+    const mainStatVal = getMainStatValue(art.mainStatKey, art.rarity, art.level) // 5* only
+    const buildData = {
+      id: art.id,
+      slot: art.slotKey,
+      level: art.level,
+      rarity: art.rarity,
+      values: {
+        [art.setKey]: 1,
+        [art.mainStatKey]: mainStatVal,
+        ...Object.fromEntries(
+          art.substats
+            .map((substat) => [
+              substat.key,
+              toDecimal(substat.key, substat.accurateValue),
+            ])
+            .filter(([, value]) => value !== 0)
+        ),
+      },
+      subs: art.substats.reduce((sub: SubstatKey[], x) => {
+        if (x.key !== '') sub.push(x.key)
+        return sub
+      }, []),
+    }
+    delete buildData.values['']
+    return buildData
   }
-  delete buildData.values['']
-  return buildData
 }
