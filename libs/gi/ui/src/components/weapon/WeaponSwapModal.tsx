@@ -6,6 +6,7 @@ import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
+  ShowingAndSortOptionSelect,
   SolidToggleButtonGroup,
   useInfScroll,
 } from '@genshin-optimizer/common/ui'
@@ -55,7 +56,6 @@ import {
   weaponSortMap,
 } from '../../util'
 import { CompareBuildButton } from '../CompareBuildButton'
-import { ShowingAndSortOptionSelect } from '../ShowingAndSortOptionSelect'
 import { WeaponCard } from './WeaponCard'
 import { WeaponEditor } from './WeaponEditor'
 import { WeaponSelectionModal } from './WeaponSelectionModal'
