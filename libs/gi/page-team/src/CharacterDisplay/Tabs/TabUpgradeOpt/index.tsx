@@ -590,6 +590,7 @@ export default function TabUpopt() {
               <ArtifactEditor
                 artifactIdToEdit={artifactIdToEdit}
                 cancelEdit={() => setArtifactIdToEdit(undefined)}
+                allowUpload
               />
             </Suspense>
             <Suspense
