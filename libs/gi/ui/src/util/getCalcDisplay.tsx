@@ -202,16 +202,16 @@ function computeFormulaDisplay(
       const [preRes] = ops
       if (preRes.value >= 0.75) {
         result.prec = details.mul.prec
-        components.push('1 / (1 + 4 * ')
+        components.push('100% / (100% + 4 * ')
         addComponents(preRes, details.mul.prec)
         components.push(')')
       } else if (preRes.value >= 0) {
         result.prec = details.add.prec
-        components.push('1 - ')
+        components.push('100% - ')
         addComponents(preRes, details.add.prec)
       } else {
         result.prec = details.add.prec
-        components.push('1 - ')
+        components.push('100% - ')
         addComponents(preRes, details.mul.prec)
         components.push(' / 2')
       }
