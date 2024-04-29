@@ -1,5 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { SqBadge } from '@genshin-optimizer/common/ui'
+import { SqBadge, TextFieldLazy } from '@genshin-optimizer/common/ui'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
@@ -8,7 +8,6 @@ import {
   EquippedBuildInfoAlert,
   FormulaDataContext,
   LoadoutInfoAlert,
-  LoadoutNameDesc,
   TCBuildInfoAlert,
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
@@ -37,7 +36,12 @@ import StatModal from './StatModal'
 const columns = { xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }
 export default function LoadoutSettingElement() {
   const database = useDatabase()
-  const { teamId, teamChar, teamCharId } = useContext(TeamCharacterContext)
+  const {
+    teamId,
+    teamChar,
+    teamChar: { name, description },
+    teamCharId,
+  } = useContext(TeamCharacterContext)
 
   const onChangeTeamCharId = (newTeamCharId: string) => {
     const index = database.teams
@@ -68,7 +72,23 @@ export default function LoadoutSettingElement() {
           }}
           label
         />
-        <LoadoutNameDesc teamCharId={teamCharId} />
+        <TextFieldLazy
+          fullWidth
+          label="Loadout Name"
+          placeholder="Loadout Name"
+          value={name}
+          onChange={(name) => database.teamChars.set(teamCharId, { name })}
+        />
+        <TextFieldLazy
+          fullWidth
+          label="Loadout Description"
+          value={description}
+          onChange={(description) =>
+            database.teamChars.set(teamCharId, { description })
+          }
+          multiline
+          minRows={2}
+        />
         <Box display="flex" gap={2} flexWrap="wrap">
           <DetailStatButton
             buttonProps={{
