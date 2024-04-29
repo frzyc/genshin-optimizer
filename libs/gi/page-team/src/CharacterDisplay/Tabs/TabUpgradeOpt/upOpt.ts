@@ -172,7 +172,7 @@ export class UpOptCalculator {
     thresholds: number[],
     equippedBuild: Record<ArtifactSlotKey, ICachedArtifact | undefined>,
     artifacts: ICachedArtifact[],
-    calc4th = false
+    calc4th = true
   ) {
     this.baseBuild = objMap(equippedBuild, (art) =>
       art ? this.toArtifact(art) : undefined

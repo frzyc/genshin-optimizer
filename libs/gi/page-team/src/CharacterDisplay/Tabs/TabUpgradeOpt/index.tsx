@@ -40,10 +40,11 @@ import {
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
-import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'
+import { Upgrade } from '@mui/icons-material'
 import {
   Box,
   Button,
+  ButtonGroup,
   CardContent,
   Grid,
   Pagination,
@@ -133,10 +134,6 @@ export default function TabUpopt() {
   const [upOptCalc, setUpOptCalc] = useState(
     undefined as UpOptCalculator | undefined
   )
-
-  const [show20, setShow20] = useState(true)
-  const [check4th, setCheck4th] = useState(true)
-  const [useFilters, setUseMainStatFilter] = useState(false)
 
   // Paging logic
   const [pageIdex, setpageIdex] = useState(0)
@@ -302,24 +299,18 @@ export default function TabUpopt() {
     const artifactsToConsider = database.arts.values
       .filter((art) => art.rarity === 5)
       .filter(respectSexExclusion)
-      .filter((art) => show20 || art.level !== 20)
       .filter(
         (art) =>
-          !useFilters ||
           !mainStatKeys[art.slotKey]?.length ||
           mainStatKeys[art.slotKey]?.includes(art.mainStatKey)
       )
-      .filter(
-        (art) =>
-          !useFilters || (levelLow <= art.level && art.level <= levelHigh)
-      )
+      .filter((art) => levelLow <= art.level && art.level <= levelHigh)
     setUpOptCalc(
       new UpOptCalculator(
         nodes,
         [-Infinity, ...valueFilter.map((x) => x.minimum)],
         equippedArts,
-        artifactsToConsider,
-        check4th
+        artifactsToConsider
       )
     )
   }, [
@@ -331,9 +322,6 @@ export default function TabUpopt() {
     gender,
     activeCharKey,
     loadoutDatum,
-    check4th,
-    show20,
-    useFilters,
   ])
 
   const dataContext: dataContextObj | undefined = useMemo(() => {
@@ -421,160 +409,83 @@ export default function TabUpopt() {
                   item
                   xs={12}
                   sm={6}
-                  lg={9}
+                  lg={4}
                   display="flex"
                   flexDirection="column"
                   gap={1}
                 >
-                  <Grid container spacing={1}>
-                    <Grid
-                      item
-                      lg={4}
-                      display="flex"
-                      flexDirection="column"
-                      gap={1}
-                    >
-                      <CardThemed bgt="light">
-                        <CardContent>
-                          <span>Optimization Target: </span>
-                          {
-                            <OptimizationTargetSelector
-                              optimizationTarget={optimizationTarget}
-                              setTarget={(target) =>
-                                database.optConfigs.set(optConfigId, {
-                                  optimizationTarget: target,
-                                })
-                              }
-                              disabled={false}
-                            />
-                          }
-                        </CardContent>
-                      </CardThemed>
-                      <CardThemed bgt="light">
-                        <CardContent>
-                          <StatFilterCard disabled={false} />
-                        </CardContent>
-                      </CardThemed>
-                      {useFilters && (
-                        <CardThemed bgt="light">
-                          <CardContent sx={{ py: 1 }}>
-                            Artifact Level Filter
-                          </CardContent>
-                          <ArtifactLevelSlider
-                            levelLow={levelLow}
-                            levelHigh={levelHigh}
-                            setLow={(levelLow) =>
-                              database.optConfigs.set(optConfigId, { levelLow })
-                            }
-                            setHigh={(levelHigh) =>
-                              database.optConfigs.set(optConfigId, {
-                                levelHigh,
-                              })
-                            }
-                            setBoth={(levelLow, levelHigh) =>
-                              database.optConfigs.set(optConfigId, {
-                                levelLow,
-                                levelHigh,
-                              })
-                            }
-                            disabled={false}
-                          />
-                          <CardContent>
-                            <MainStatSelectionCard
-                              disabled={false}
-                              filteredArtIdMap={filteredArtIdMap}
-                            />
-                          </CardContent>
-                        </CardThemed>
-                      )}
-                    </Grid>
-                    <Grid
-                      item
-                      lg={8}
-                      display="flex"
-                      flexDirection="column"
-                      gap={1}
-                    >
-                      <CardThemed bgt="light">
-                        <CardContent>
-                          <ArtifactSetConfig disabled={false} />
-                        </CardContent>
-                      </CardThemed>
-                      <CardThemed bgt="light">
-                        <CardContent>
-                          <Grid container spacing={1}>
-                            <Grid item>
-                              <Button
-                                startIcon={
-                                  show20 ? (
-                                    <CheckBox />
-                                  ) : (
-                                    <CheckBoxOutlineBlank />
-                                  )
-                                }
-                                color={show20 ? 'success' : 'secondary'}
-                                onClick={() => setShow20(!show20)}
-                              >
-                                show lvl 20
-                              </Button>
-                            </Grid>
-                            <Grid item>
-                              <Button
-                                startIcon={
-                                  check4th ? (
-                                    <CheckBox />
-                                  ) : (
-                                    <CheckBoxOutlineBlank />
-                                  )
-                                }
-                                color={check4th ? 'success' : 'secondary'}
-                                onClick={() => setCheck4th(!check4th)}
-                              >
-                                compute 4th sub
-                              </Button>
-                            </Grid>
-                            <Grid item>
-                              <Button
-                                startIcon={
-                                  useFilters ? (
-                                    <CheckBox />
-                                  ) : (
-                                    <CheckBoxOutlineBlank />
-                                  )
-                                }
-                                color={useFilters ? 'success' : 'secondary'}
-                                onClick={() =>
-                                  setUseMainStatFilter(!useFilters)
-                                }
-                              >
-                                enable filters
-                              </Button>
-                            </Grid>
-                          </Grid>
-                        </CardContent>
-                      </CardThemed>
-                    </Grid>
-                  </Grid>
+                  <CardThemed bgt="light">
+                    <CardContent sx={{ py: 1 }}>
+                      Artifact Level Filter
+                    </CardContent>
+                    <ArtifactLevelSlider
+                      levelLow={levelLow}
+                      levelHigh={levelHigh}
+                      setLow={(levelLow) =>
+                        database.optConfigs.set(optConfigId, { levelLow })
+                      }
+                      setHigh={(levelHigh) =>
+                        database.optConfigs.set(optConfigId, {
+                          levelHigh,
+                        })
+                      }
+                      setBoth={(levelLow, levelHigh) =>
+                        database.optConfigs.set(optConfigId, {
+                          levelLow,
+                          levelHigh,
+                        })
+                      }
+                      disabled={false}
+                    />
+                    <MainStatSelectionCard
+                      disabled={false}
+                      filteredArtIdMap={filteredArtIdMap}
+                    />
+                  </CardThemed>
+                </Grid>
+                {/* 3 */}
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={5}
+                  display="flex"
+                  flexDirection="column"
+                  gap={1}
+                >
+                  <ArtifactSetConfig disabled={false} />
+
+                  <StatFilterCard disabled={false} />
                 </Grid>
               </Grid>
             </Box>
+            <ButtonGroup>
+              <OptimizationTargetSelector
+                optimizationTarget={optimizationTarget}
+                setTarget={(target) =>
+                  database.optConfigs.set(optConfigId, {
+                    optimizationTarget: target,
+                  })
+                }
+                disabled={false}
+              />
+              <Button
+                disabled={
+                  !characterKey ||
+                  !optimizationTarget ||
+                  !objPathValue(data?.getDisplay(), optimizationTarget)
+                }
+                color={characterKey ? 'success' : 'warning'}
+                onClick={generateBuilds}
+                startIcon={<Upgrade />}
+              >
+                Calc Upgrade Priority
+              </Button>
+            </ButtonGroup>
             <CardThemed bgt="light">
               <CardContent>
                 <Grid container spacing={1}>
-                  <Grid item>
-                    <Button
-                      disabled={
-                        !characterKey ||
-                        !optimizationTarget ||
-                        !objPathValue(data?.getDisplay(), optimizationTarget)
-                      }
-                      color={characterKey ? 'success' : 'warning'}
-                      onClick={generateBuilds}
-                      startIcon={<Upgrade />}
-                    >
-                      Calc Upgrade Priority
-                    </Button>
-                  </Grid>
+                  <Grid item></Grid>
                   <Grid item>
                     <HitModeToggle size="small" />
                   </Grid>
