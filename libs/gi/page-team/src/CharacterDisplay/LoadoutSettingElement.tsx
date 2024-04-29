@@ -34,7 +34,7 @@ import { CustomMultiTargetButton } from './CustomMultiTarget'
 import StatModal from './StatModal'
 
 // TODO: Translation
-const columns = { xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }
+const columns = { xs: 1, sm: 1, md: 2, lg: 2 }
 export default function LoadoutSettingElement() {
   const database = useDatabase()
   const { teamId, teamChar, teamCharId } = useContext(TeamCharacterContext)
