@@ -158,7 +158,7 @@ function computeFormulaDisplay(
   function addComponents(node: CalcResult<number>, p: number) {
     const display = getCalcDisplay(node)
     if (p > display.prec) components.push('(')
-    if (node.info.pivot && display.name)
+    if (display.name && (node.info.pivot || node.meta.op === 'const'))
       components.push(
         <>
           <span style={{ fontSize: '85%' }}>{display.name}</span>{' '}
