@@ -9,7 +9,7 @@ import {
   DataContext,
 } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
-import { Box, CardContent, Divider, Grid, Typography } from '@mui/material'
+import { Box, Divider, Grid, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
 import {
   Area,
@@ -17,7 +17,6 @@ import {
   Label,
   Legend,
   Line,
-  ReferenceDot,
   ReferenceLine,
   ResponsiveContainer,
   XAxis,
@@ -48,17 +47,19 @@ const nbins = 50
 export default function UpgradeOptChartCard(props: Props) {
   const id = props.upOptCalc.artifacts[props.ix]?.id
   return (
-    <Grid container spacing={1}>
-      <Grid item xs={5} sm={4} md={4} lg={3} xl={3}>
-        <ArtifactCard
-          artifactId={id}
-          onEdit={() => props.setArtifactIdToEdit(id)}
-        />
+    <Box>
+      <Grid container spacing={1}>
+        <Grid item xs={12} sm={5} md={4} lg={3} xl={3}>
+          <ArtifactCard
+            artifactId={id}
+            onEdit={() => props.setArtifactIdToEdit(id)}
+          />
+        </Grid>
+        <Grid item xs={12} sm={7} md={8} lg={9} xl={9}>
+          <UpgradeOptChartCardGraph {...props} />
+        </Grid>
       </Grid>
-      <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
-        <UpgradeOptChartCardGraph {...props} />
-      </Grid>
-    </Grid>
+    </Box>
   )
 }
 
@@ -126,7 +127,7 @@ function UpgradeOptChartCardGraph({
   dataHist.unshift({ x: perc(objMin), est: 0, estCons: 0 })
   dataHist.push({ x: perc(objMax), est: 0, estCons: 0 })
 
-  const ymax = dataHist.reduce((max, { est }) => Math.max(max, est!), 0)
+  const ymax = dataHist.reduce((max, { est }) => Math.max(max, est!), 0) || 1
   const xpercent = (thr0 - objMin) / (objMax - objMin)
 
   // if trueP/E have been calculated, otherwise use upgradeOpt's estimate
@@ -135,10 +136,6 @@ function UpgradeOptChartCardGraph({
   const chartData = dataHist
   const isExact = upgradeOpt.result!.evalMode === ResultType.Exact
 
-  const reportBin = linspace(objMin, objMax, nbins, false).reduce((a, b) =>
-    b < thr0 + reportD ? b : a
-  )
-  const reportY = integralCons(reportBin, reportBin + step)
   useEffect(() => {
     if (isExact) return
     upOptCalc.calcExact(ix)
@@ -171,9 +168,8 @@ function UpgradeOptChartCardGraph({
   //     </div>
   //   )
   // }
-
   return (
-    <CardThemed bgt="light">
+    <CardThemed bgt="light" sx={{ height: '100%' }}>
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         <Box sx={{ height: 50, width: 50 }}>
           {!!bla?.slotKey && <EquippedArtifact slotKey={bla.slotKey} />}
@@ -195,102 +191,108 @@ function UpgradeOptChartCardGraph({
         </Box>
       </Box>
       <Divider />
-      <CardContent>
-        <ResponsiveContainer width="100%" aspect={2.5} key={upgradeOpt.id}>
-          <ComposedChart
-            data={chartData}
-            margin={{ top: 5, right: 30, left: 20, bottom: 20 }}
+      <ResponsiveContainer
+        width="100%"
+        height="100%"
+        maxHeight={300}
+        key={upgradeOpt.id}
+      >
+        <ComposedChart
+          data={chartData}
+          margin={{ top: 5, right: 30, left: 20, bottom: 20 }}
+        >
+          <XAxis
+            dataKey="x"
+            type="number"
+            domain={['auto', 'auto']}
+            allowDecimals={false}
+            tickFormatter={(v) => `${v <= 0 ? '' : '+'}${v}%`}
           >
-            <XAxis
-              dataKey="x"
-              type="number"
-              domain={['auto', 'auto']}
-              allowDecimals={false}
-              tickFormatter={(v) => `${v <= 0 ? '' : '+'}${v}%`}
+            <Label
+              value="Relative Increase to Target"
+              position="insideBottom"
+              style={{ fill: '#eaebed' }}
+              offset={-10}
+            />
+          </XAxis>
+          <YAxis
+            type="number"
+            domain={[0, ymax]}
+            tickFormatter={(v) => `${v * 100}%`}
+          >
+            <Label
+              value="Probability"
+              position="insideLeft"
+              angle={-90}
+              style={{ fill: '#eaebed' }}
+            />
+          </YAxis>
+          <Legend verticalAlign="top" height={36} />
+
+          <defs>
+            <linearGradient
+              id={`splitOpacity${upgradeOpt.id}`}
+              x1="0"
+              y1="0"
+              x2={xpercent}
+              y2="0"
             >
-              <Label
-                value="Relative Increase to Target"
-                position="insideBottom"
-                style={{ fill: '#eaebed' }}
-                offset={-10}
+              <stop
+                offset={1}
+                stopColor={isExact ? '#f17704' : 'orange'}
+                stopOpacity={0}
               />
-            </XAxis>
-            <YAxis type="number" domain={[0, ymax]} tick={false}>
-              <Label
-                value="Probability"
-                position="insideLeft"
-                angle={-90}
-                style={{ fill: '#eaebed' }}
+              <stop
+                offset={0}
+                stopColor={isExact ? '#f17704' : 'orange'}
+                stopOpacity={1}
               />
-            </YAxis>
-            <Legend verticalAlign="top" height={36} />
+            </linearGradient>
+          </defs>
 
-            <defs>
-              <linearGradient
-                id={`splitOpacity${upgradeOpt.id}`}
-                x1="0"
-                y1="0"
-                x2={xpercent}
-                y2="0"
-              >
-                <stop
-                  offset={1}
-                  stopColor={isExact ? '#f17704' : 'orange'}
-                  stopOpacity={0}
-                />
-                <stop
-                  offset={0}
-                  stopColor={isExact ? '#f17704' : 'orange'}
-                  stopOpacity={1}
-                />
-              </linearGradient>
-            </defs>
-
-            <Line dataKey="dne" stroke="red" name="Current Damage" />
-            {constrained && (
-              <Area
-                type="monotone"
-                dataKey="est"
-                stroke="grey"
-                dot={false}
-                fill="grey"
-                legendType="none"
-                tooltipType="none"
-                opacity={0.5}
-                activeDot={false}
-              />
-            )}
+          <Line dataKey="dne" stroke="red" name="Current Target Value" />
+          <Line dataKey="dne" stroke="rgba(0,200,0)" name="Average Increase" />
+          {constrained && (
             <Area
               type="monotone"
-              dataKey="estCons"
-              stroke={isExact ? '#f17704' : 'orange'}
+              dataKey="est"
+              stroke="grey"
               dot={false}
-              fill={`url(#splitOpacity${upgradeOpt.id})`}
+              fill="grey"
+              legendType="none"
+              tooltipType="none"
               opacity={0.5}
-              name={
-                isExact
-                  ? `Exact${constrained ? ' Constrained' : ''} Distribution`
-                  : `Estimated Distribution`
-              }
               activeDot={false}
             />
-
-            <ReferenceLine
-              x={perc(thr0)}
-              stroke="red"
-              strokeDasharray="3 3"
-              name="Current Damage"
-            />
-            <ReferenceDot
-              x={perc(thr0 + reportD)}
-              y={reportY / 2}
-              shape={<circle radius={1} opacity={0.5} />}
-            />
-
-            {/* <Tooltip content={<CustomTooltip />} cursor={false} /> */}
-          </ComposedChart>
-        </ResponsiveContainer>
-      </CardContent>
+          )}
+          <Area
+            type="monotone"
+            dataKey="estCons"
+            stroke={isExact ? '#f17704' : 'orange'}
+            dot={false}
+            fill={`url(#splitOpacity${upgradeOpt.id})`}
+            opacity={0.5}
+            name={
+              isExact
+                ? `Exact${constrained ? ' Constrained' : ''} Distribution`
+                : `Estimated Distribution`
+            }
+            activeDot={false}
+          />
+          <ReferenceLine
+            x={perc(thr0)}
+            stroke="red"
+            strokeDasharray="3 3"
+            name="Current Target"
+          />
+          <ReferenceLine
+            x={perc(thr0 + reportD)}
+            stroke="rgba(0,200,0,1)"
+            strokeDasharray="3 3"
+            name="Current Target"
+          />
+        </ComposedChart>
+      </ResponsiveContainer>
     </CardThemed>
   )
 }

@@ -258,6 +258,8 @@ export class UpOptCalculator {
       return a.result!.p * a.result!.upAvg
     }
     this.artifacts.forEach((_, i) => this.calcFast(i, this.calc4th))
+    // only store artifacts with possibility to increase score
+    this.artifacts = this.artifacts.filter((a) => score(a) > 0)
     this.artifacts.sort((a, b) => score(b) - score(a))
     this.fixedIx = 0
   }

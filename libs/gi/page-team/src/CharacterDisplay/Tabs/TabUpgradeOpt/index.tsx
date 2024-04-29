@@ -514,8 +514,9 @@ export default function TabUpopt() {
             >
               {!!upOptCalc &&
                 indexes.map((i) => (
-                  <Box key={i}>
+
                     <UpgradeOptChartCard
+                    key={i}
                       upOptCalc={upOptCalc}
                       ix={i}
                       setArtifactIdToEdit={setArtifactIdToEdit}
@@ -528,7 +529,6 @@ export default function TabUpopt() {
                         upOptCalc?.calcExact(ix)
                       }}
                     />
-                  </Box>
                 ))}
             </Suspense>
             {pagination}
