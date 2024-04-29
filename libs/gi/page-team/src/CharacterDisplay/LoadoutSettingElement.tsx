@@ -1,5 +1,10 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, SqBadge, TextFieldLazy, useRefSize } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  SqBadge,
+  TextFieldLazy,
+  useRefSize,
+} from '@genshin-optimizer/common/ui'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
