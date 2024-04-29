@@ -1,3 +1,4 @@
+import { TextFieldLazy } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import type { TeamCharacterContextObj } from '@genshin-optimizer/gi/db-ui'
@@ -27,10 +28,9 @@ import {
   Button,
   CardContent,
   Grid,
-  TextField,
   Typography,
 } from '@mui/material'
-import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
+import { Suspense, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import BuildDropdown from '../BuildDropdown'
 import { LoadoutDropdown } from '../LoadoutDropdown'
@@ -49,36 +49,7 @@ export default function TeamSetting({
   const database = useDatabase()
   const team = database.teams.get(teamId)!
   const noChars = team.loadoutData.every((id) => !id)
-
-  const [name, setName] = useState(team.name)
-  const nameDeferred = useDeferredValue(name)
-  const [desc, setDesc] = useState(team.description)
-  const descDeferred = useDeferredValue(desc)
-
-  // trigger on teamId change, to use the new team's name/desc
-  useEffect(() => {
-    const newTeam = database.teams.get(teamId)
-    if (!newTeam) return
-    const { name, description } = newTeam
-    setName(name)
-    setDesc(description)
-  }, [database, teamId])
-
-  useEffect(() => {
-    database.teams.set(teamId, (team) => {
-      team.name = nameDeferred
-    })
-    // Don't need to trigger when teamId is changed, only when the name is changed.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [database, nameDeferred])
-
-  useEffect(() => {
-    database.teams.set(teamId, (team) => {
-      team.description = descDeferred
-    })
-    // Don't need to trigger when teamId is changed, only when the name is changed.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [database, descDeferred])
+  const { name, description } = team
 
   const onDel = () => {
     if (
@@ -106,18 +77,18 @@ export default function TeamSetting({
   return (
     <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
       <TeamInfoAlert />
-      <TextField
+      <TextFieldLazy
         fullWidth
         label="Team Name"
         placeholder="Team Name"
         value={name}
-        onChange={(e) => setName(e.target.value)}
+        onChange={(name) => database.teams.set(teamId, { name })}
       />
-      <TextField
+      <TextFieldLazy
         fullWidth
         label="Team Description"
-        value={desc}
-        onChange={(e) => setDesc(e.target.value)}
+        value={description}
+        onChange={(description) => database.teams.set(teamId, { description })}
         multiline
         minRows={2}
       />
