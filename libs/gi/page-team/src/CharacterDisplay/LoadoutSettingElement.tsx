@@ -1,9 +1,10 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge, useRefSize } from '@genshin-optimizer/common/ui'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import {
+  AdWrapper,
   BuildInfoAlert,
   EquippedBuildInfoAlert,
   FormulaDataContext,
@@ -107,7 +108,6 @@ function BuildManagementContent() {
   } = useContext(TeamCharacterContext)
 
   const weaponTypeKey = getCharStat(characterKey).weaponType
-
   return (
     <>
       <CardHeader
@@ -123,6 +123,9 @@ function BuildManagementContent() {
         <Grid container columns={columns} spacing={2}>
           <Grid item xs={1}>
             <BuildEquipped active={loadoutDatum?.buildType === 'equipped'} />
+          </Grid>
+          <Grid item xs={1}>
+            <Ad />
           </Grid>
         </Grid>
 
@@ -224,5 +227,21 @@ function FormulasButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
     >
       Show Formulas {'&'} Calcs
     </Button>
+  )
+}
+function Ad() {
+  const { width, height, ref } = useRefSize()
+  console.log({ width, height })
+  return (
+    <CardThemed bgt="light" sx={{ height: '100%' }}>
+      <Box ref={ref} sx={{ height: '100%', width: '100%' }}>
+        {width && (
+          <AdWrapper
+            dataAdSlot="5385429639"
+            sx={{ width, height: Math.max(height, 250) }}
+          />
+        )}
+      </Box>
+    </CardThemed>
   )
 }

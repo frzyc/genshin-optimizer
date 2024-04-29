@@ -5,9 +5,11 @@ import { useEffect } from 'react'
 export function AdSenseUnit({
   dataAdSlot,
   sx = {},
+  fullWidth = false,
 }: {
   dataAdSlot: string
   sx?: BoxProps['sx']
+  fullWidth?: boolean
 }) {
   useEffect(() => {
     try {
@@ -26,6 +28,7 @@ export function AdSenseUnit({
       sx={{ display: 'block', margin: 'auto', ...sx }}
       data-ad-client="ca-pub-2443965532085844"
       data-ad-slot={dataAdSlot}
+      data-full-width-responsive={fullWidth ? 'true' : undefined}
     />
   )
 }
