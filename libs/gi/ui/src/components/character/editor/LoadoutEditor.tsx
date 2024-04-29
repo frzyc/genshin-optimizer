@@ -1,5 +1,9 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ModalWrapper,
+  TextFieldLazy,
+} from '@genshin-optimizer/common/ui'
 import { crawlObject, getUnitStr } from '@genshin-optimizer/common/util'
 import type { LoadoutDatum, TeamCharacter } from '@genshin-optimizer/gi/db'
 import {
@@ -32,7 +36,7 @@ import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { DocumentDisplay } from '../../DocumentDisplay'
 import { BuildInfoAlert, TCBuildInfoAlert } from '../../build'
-import { LoadoutInfoAlert, LoadoutNameDesc } from '../../loadout'
+import { LoadoutInfoAlert } from '../../loadout'
 import { TeamCard, TeamInfoAlert } from '../../team'
 import { BuildRealSimplified } from './BuildRealSimplified'
 import { BuildTcSimplified } from './BuildTcSimplified'
@@ -56,6 +60,7 @@ export function LoadoutEditor({
   const {
     key: characterKey,
     name,
+    description,
     buildIds,
     buildTcIds,
     customMultiTargets,
@@ -113,7 +118,23 @@ export function LoadoutEditor({
         <Divider />
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           <LoadoutInfoAlert />
-          <LoadoutNameDesc teamCharId={teamCharId} />
+          <TextFieldLazy
+            fullWidth
+            label="Loadout Name"
+            placeholder="Loadout Name"
+            value={name}
+            onChange={(name) => database.teamChars.set(teamCharId, { name })}
+          />
+          <TextFieldLazy
+            fullWidth
+            label="Loadout Description"
+            value={description}
+            onChange={(description) =>
+              database.teamChars.set(teamCharId, { description })
+            }
+            multiline
+            minRows={2}
+          />
           <Box>
             <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
               <Grid item xs={1}>
