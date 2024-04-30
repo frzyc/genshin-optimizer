@@ -514,21 +514,15 @@ export default function TabUpopt() {
             >
               {!!upOptCalc &&
                 indexes.map((i) => (
-
-                    <UpgradeOptChartCard
+                  <UpgradeOptChartCard
                     key={i}
-                      upOptCalc={upOptCalc}
-                      ix={i}
-                      setArtifactIdToEdit={setArtifactIdToEdit}
-                      thresholds={upOptCalc.thresholds ?? []}
-                      objMax={maxObj0}
-                      objMin={minObj0}
-                      calcExactCallback={() => {
-                        const ix =
-                          currentPageIndex * artifactsToDisplayPerPage + i
-                        upOptCalc?.calcExact(ix)
-                      }}
-                    />
+                    upOptCalc={upOptCalc}
+                    ix={i}
+                    setArtifactIdToEdit={setArtifactIdToEdit}
+                    thresholds={upOptCalc.thresholds ?? []}
+                    objMax={maxObj0}
+                    objMin={minObj0}
+                  />
                 ))}
             </Suspense>
             {pagination}
