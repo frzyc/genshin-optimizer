@@ -108,7 +108,7 @@ export function parseSubstats(texts: string[]): ISubstat[] {
         matches.push({
           key,
           value: parseFloat(
-            match[1].replace(/(,|.)(\d{3})/g, '$2').replace(/,/g, '.').replace(/\.{2,}/g, '.')
+            match[1].replace(/(,|\.)(\d{3})/g, '$2').replace(/,/g, '.').replace(/\.{2,}/g, '.')
           ),
         })
     })
