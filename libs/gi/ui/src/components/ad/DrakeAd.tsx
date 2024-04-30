@@ -12,11 +12,23 @@ export function DrakeAd({ children }: { children: ReactNode }) {
         cursor: 'pointer',
         position: 'relative',
         backgroundColor: 'white !important',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        width: '100%',
+        height: '100%',
       }}
       onClick={toMSite}
     >
       {children}
-      <Box component="img" src={drake} maxWidth="100%" maxHeight="100%" />
+      <Box
+        component="img"
+        src={drake}
+        maxWidth="100%"
+        maxHeight="100%"
+        width="100%"
+        height="100%"
+        sx={{ objectFit: 'contain' }}
+      />
     </Box>
   )
 }

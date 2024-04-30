@@ -13,19 +13,21 @@ import { SRODevAd, canshowSroDevAd } from './SRODevAd'
 
 export function AdWrapper({
   dataAdSlot,
+  fullWidth = false,
   sx,
 }: {
   dataAdSlot: string
   height?: number
   width?: number
   sx?: BoxProps['sx']
+  fullWidth?: boolean
 }) {
   const [show, _, onHide] = useBoolState(true)
   const adblockEnabled = useContext(IsAdBlockedContext)
   const hostname = window.location.hostname
 
   if (hostname === 'frzyc.github.io' && !adblockEnabled)
-    return <AdSenseUnit dataAdSlot={dataAdSlot} sx={sx} />
+    return <AdSenseUnit dataAdSlot={dataAdSlot} sx={sx} fullWidth={fullWidth} />
   if (!show) return null
   return (
     <GOAdWrapper sx={sx}>
