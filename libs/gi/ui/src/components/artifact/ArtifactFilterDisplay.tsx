@@ -148,11 +148,11 @@ export function ArtifactFilterDisplay({
   const { effFilter } = useDisplayArtifact()
 
   return (
-    <Grid container spacing={1}>
-      {/* left */}
-      <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
-        {/* General */}
-        <Box p={1}>
+    <Box>
+      <Grid container spacing={1}>
+        {/* left */}
+        <Grid item xs={12} md={6} display="flex" flexDirection="column">
+          {/* General */}
           <Trans t={t} i18nKey="subheadings.general" />
           <Stack spacing={1}>
             <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
@@ -251,113 +251,113 @@ export function ArtifactFilterDisplay({
               setSubstatKeys={(substats) => filterOptionDispatch({ substats })}
             />
           </Stack>
-        </Box>
-      </Grid>
-      {/* right */}
-      <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
-        {/* Inventory */}
-        <Box p={1}>
-          <Trans t={t} i18nKey="subheadings.inventory" />
-          <Stack spacing={1}>
-            <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
-            {/* exclusion + locked */}
-            <SolidToggleButtonGroup fullWidth value={locked} size="small">
-              {lockedValues.map((v, i) => (
-                <ToggleButton
-                  key={v}
-                  value={v}
-                  sx={{ display: 'flex', gap: 1 }}
-                  onClick={() =>
-                    filterOptionDispatch({ locked: lockedHandler(locked, v) })
-                  }
-                >
-                  {i ? <LockOpenIcon /> : <LockIcon />}
-                  <Trans i18nKey={`ui:${v}`} t={t} />
-                  <Chip
-                    label={lockedTotal[i ? 'unlocked' : 'locked']}
-                    size="small"
-                  />
-                </ToggleButton>
-              ))}
-            </SolidToggleButtonGroup>
-            {/* All inventory toggle */}
-            <Button
-              startIcon={<BusinessCenterIcon />}
-              color={showInventory ? 'success' : 'secondary'}
-              onClick={() =>
-                filterOptionDispatch({ showInventory: !showInventory })
-              }
-            >
-              {t`artInInv`}{' '}
-              <Chip
-                sx={{ ml: 1 }}
-                label={equippedTotal['unequipped']}
-                size="small"
-              />
-            </Button>
-            {/* All equipped toggle */}
-            <Button
-              startIcon={<PersonSearchIcon />}
-              color={showEquipped ? 'success' : 'secondary'}
-              onClick={() =>
-                filterOptionDispatch({ showEquipped: !showEquipped })
-              }
-            >
-              {t`equippedArt`}{' '}
-              <Chip
-                sx={{ ml: 1 }}
-                label={equippedTotal['equipped']}
-                size="small"
-              />
-            </Button>
-          </Stack>
-          <Stack spacing={1.5} pt={1.5}>
-            {/* Filter characters */}
-            <Suspense fallback={null}>
-              <BootstrapTooltip
-                title={showEquipped ? t`locationsTooltip` : ''}
-                placement="top"
-              >
-                <span>
-                  <LocationFilterMultiAutocomplete
-                    totals={locationTotal}
-                    locations={showEquipped ? [] : locations}
-                    setLocations={(locations) =>
-                      filterOptionDispatch({ locations })
+        </Grid>
+        {/* right */}
+        <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
+          {/* Inventory */}
+          <Box>
+            <Trans t={t} i18nKey="subheadings.inventory" />
+            <Stack spacing={1}>
+              <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
+              {/* exclusion + locked */}
+              <SolidToggleButtonGroup fullWidth value={locked} size="small">
+                {lockedValues.map((v, i) => (
+                  <ToggleButton
+                    key={v}
+                    value={v}
+                    sx={{ display: 'flex', gap: 1 }}
+                    onClick={() =>
+                      filterOptionDispatch({ locked: lockedHandler(locked, v) })
                     }
-                    disabled={showEquipped}
-                  />
-                </span>
-              </BootstrapTooltip>
-            </Suspense>
-          </Stack>
-        </Box>
-        {/* Role Value */}
-        <Box p={1}>
-          <Trans t={t} i18nKey="subheadings.rollvalue" />
-          <Stack spacing={1}>
-            <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
-            {/* RV slide */}
-            <RVSlide
-              showLevelText
-              rvLow={rvLow}
-              rvHigh={rvHigh}
-              useMaxRV={useMaxRV}
-              switchFilter={(useMaxRV) => filterOptionDispatch({ useMaxRV })}
-              setLow={(rvLow) => filterOptionDispatch({ rvLow })}
-              setHigh={(rvHigh) => filterOptionDispatch({ rvHigh })}
-              setBoth={(rvLow, rvHigh) =>
-                filterOptionDispatch({ rvLow, rvHigh })
-              }
-            />
-            {/* RV filter */}
-            <SubstatToggle
-              selectedKeys={effFilter}
-              onChange={(n) => database.displayArtifact.set({ effFilter: n })}
-            />
-          </Stack>
-        </Box>
+                  >
+                    {i ? <LockOpenIcon /> : <LockIcon />}
+                    <Trans i18nKey={`ui:${v}`} t={t} />
+                    <Chip
+                      label={lockedTotal[i ? 'unlocked' : 'locked']}
+                      size="small"
+                    />
+                  </ToggleButton>
+                ))}
+              </SolidToggleButtonGroup>
+              {/* All inventory toggle */}
+              <Button
+                startIcon={<BusinessCenterIcon />}
+                color={showInventory ? 'success' : 'secondary'}
+                onClick={() =>
+                  filterOptionDispatch({ showInventory: !showInventory })
+                }
+              >
+                {t`artInInv`}{' '}
+                <Chip
+                  sx={{ ml: 1 }}
+                  label={equippedTotal['unequipped']}
+                  size="small"
+                />
+              </Button>
+              {/* All equipped toggle */}
+              <Button
+                startIcon={<PersonSearchIcon />}
+                color={showEquipped ? 'success' : 'secondary'}
+                onClick={() =>
+                  filterOptionDispatch({ showEquipped: !showEquipped })
+                }
+              >
+                {t`equippedArt`}{' '}
+                <Chip
+                  sx={{ ml: 1 }}
+                  label={equippedTotal['equipped']}
+                  size="small"
+                />
+              </Button>
+            </Stack>
+            <Stack spacing={1.5} pt={1.5}>
+              {/* Filter characters */}
+              <Suspense fallback={null}>
+                <BootstrapTooltip
+                  title={showEquipped ? t`locationsTooltip` : ''}
+                  placement="top"
+                >
+                  <span>
+                    <LocationFilterMultiAutocomplete
+                      totals={locationTotal}
+                      locations={showEquipped ? [] : locations}
+                      setLocations={(locations) =>
+                        filterOptionDispatch({ locations })
+                      }
+                      disabled={showEquipped}
+                    />
+                  </span>
+                </BootstrapTooltip>
+              </Suspense>
+            </Stack>
+          </Box>
+          {/* Role Value */}
+          <Box>
+            <Trans t={t} i18nKey="subheadings.rollvalue" />
+            <Stack spacing={1}>
+              <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
+              {/* RV slide */}
+              <RVSlide
+                showLevelText
+                rvLow={rvLow}
+                rvHigh={rvHigh}
+                useMaxRV={useMaxRV}
+                switchFilter={(useMaxRV) => filterOptionDispatch({ useMaxRV })}
+                setLow={(rvLow) => filterOptionDispatch({ rvLow })}
+                setHigh={(rvHigh) => filterOptionDispatch({ rvHigh })}
+                setBoth={(rvLow, rvHigh) =>
+                  filterOptionDispatch({ rvLow, rvHigh })
+                }
+              />
+              {/* RV filter */}
+              <SubstatToggle
+                selectedKeys={effFilter}
+                onChange={(n) => database.displayArtifact.set({ effFilter: n })}
+              />
+            </Stack>
+          </Box>
+        </Grid>
       </Grid>
-    </Grid>
+    </Box>
   )
 }

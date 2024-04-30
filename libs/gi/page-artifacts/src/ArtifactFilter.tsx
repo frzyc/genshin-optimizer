@@ -53,11 +53,9 @@ export default function ArtifactFilter({
               justifyContent="center"
               alignItems="center"
             >
-              {numShowing !== total && (
-                <Typography>
-                  Filtered <strong>{numShowing}</strong> / {total}
-                </Typography>
-              )}
+              <Typography>
+                <strong>{numShowing}</strong> / {total}
+              </Typography>
             </Grid>
             <Grid item>
               <Button
@@ -74,7 +72,7 @@ export default function ArtifactFilter({
           </Grid>
           <Suspense
             fallback={
-              <Skeleton variant="rectangular" width="100%" height={200} />
+              <Skeleton variant="rectangular" width="100%" height={400} />
             }
           >
             <ArtifactFilterDisplay
