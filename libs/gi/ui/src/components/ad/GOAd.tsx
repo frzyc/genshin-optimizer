@@ -14,7 +14,8 @@ export function GOAd({ children }: { children: ReactNode }) {
         justifyContent: 'center',
         p: '10px',
         cursor: 'pointer',
-        minHeight: 60,
+        minHeight: '100%',
+        minWidth: '100%',
       }}
       onClick={toMSite}
     >
