@@ -33,7 +33,6 @@ type Props = {
   objMax: number
   thresholds: number[]
   ix: number
-  calcExactCallback: () => void
   upOptCalc: UpOptCalculator
 }
 type ChartData = {
