@@ -1,8 +1,6 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
-  allArtifactSlotKeys,
   charKeyToLocCharKey,
   type ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
@@ -10,22 +8,20 @@ import {
   CharacterContext,
   TeamCharacterContext,
   useBuild,
-  useDBMeta,
   useDatabase,
+  useEquippedInTeam,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   ArtifactCardNano,
-  ArtifactSlotName,
   BuildCard,
-  CharacterName,
   EquipBuildModal,
   EquippedGrid,
+  TeammateEquippedAlert,
   WeaponCardNano,
 } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
-  Alert,
   Box,
   CardContent,
   CardHeader,
@@ -33,7 +29,6 @@ import {
   Grid,
   IconButton,
   TextField,
-  Typography,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 
@@ -50,12 +45,10 @@ export default function BuildReal({
     teamId,
     teamCharId,
     teamChar: { key: characterKey },
-    team: { loadoutData },
   } = useContext(TeamCharacterContext)
   const {
     character: { equippedWeapon, equippedArtifacts },
   } = useContext(CharacterContext)
-  const { gender } = useDBMeta()
   const database = useDatabase()
   const { name, description, weaponId, artifactIds } = useBuild(buildId)!
   const onActive = () =>
@@ -106,27 +99,11 @@ export default function BuildReal({
       artifactIds: artifactIds,
       weaponId: weaponId,
     })
-  const weaponUsedInLoadoutDatum = loadoutData.find(
-    (loadoutDatum) =>
-      loadoutDatum &&
-      loadoutDatum.teamCharId !== teamCharId &&
-      database.teams.getLoadoutWeapon(loadoutDatum).id === weaponId
-  )
-  const weaponUsedInTeamCharKey =
-    weaponUsedInLoadoutDatum &&
-    database.teamChars.get(weaponUsedInLoadoutDatum?.teamCharId)!.key
 
-  const artUsedInTeamCharKeys = objKeyMap(allArtifactSlotKeys, (slotKey) => {
-    const artId = artifactIds[slotKey]
-    if (!artId) return undefined
-    const loadoutDatum = loadoutData.find(
-      (loadoutDatum) =>
-        loadoutDatum &&
-        loadoutDatum.teamCharId !== teamCharId &&
-        database.teams.getLoadoutArtifacts(loadoutDatum)[slotKey]?.id === artId
-    )
-    return loadoutDatum && database.teamChars.get(loadoutDatum.teamCharId)!.key
-  })
+  const { weaponUsedInTeamCharKey, artUsedInTeamCharKeys } = useEquippedInTeam(
+    weaponId!,
+    artifactIds
+  )
 
   const equipChangeProps = {
     currentName: 'Equipped',
@@ -178,7 +155,7 @@ export default function BuildReal({
                   height: '100%',
                   maxHeight: '8em',
                   boxShadow: weaponUsedInTeamCharKey
-                    ? '0px 0px 0px 2px red'
+                    ? '0px 0px 0px 2px yellow'
                     : undefined,
                 }}
               >
@@ -195,7 +172,7 @@ export default function BuildReal({
                     height: '100%',
                     maxHeight: '8em',
                     boxShadow: artUsedInTeamCharKeys[slotKey]
-                      ? '0px 0px 0px 2px red'
+                      ? '0px 0px 0px 2px yellow'
                       : undefined,
                   }}
                 >
@@ -204,31 +181,10 @@ export default function BuildReal({
               </Grid>
             ))}
           </Grid>
-          {(weaponUsedInTeamCharKey ||
-            Object.values(artUsedInTeamCharKeys).some((ck) => ck)) && (
-            <Alert variant="outlined" severity="warning">
-              {weaponUsedInTeamCharKey && (
-                <Typography>
-                  Teammate{' '}
-                  <CharacterName
-                    characterKey={weaponUsedInTeamCharKey}
-                    gender={gender}
-                  />{' '}
-                  is already using this weapon.
-                </Typography>
-              )}
-              {Object.entries(artUsedInTeamCharKeys).map(
-                ([slotKey, ck]) =>
-                  ck && (
-                    <Typography>
-                      Teammate{' '}
-                      <CharacterName characterKey={ck} gender={gender} /> is
-                      already using this <ArtifactSlotName slotKey={slotKey} />.
-                    </Typography>
-                  )
-              )}
-            </Alert>
-          )}
+          <TeammateEquippedAlert
+            weaponUsedInTeamCharKey={weaponUsedInTeamCharKey}
+            artUsedInTeamCharKeys={artUsedInTeamCharKeys}
+          />
         </Box>
       </BuildCard>
     </>

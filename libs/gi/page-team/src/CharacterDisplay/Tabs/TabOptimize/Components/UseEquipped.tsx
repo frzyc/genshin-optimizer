@@ -7,7 +7,6 @@ import {
   CardThemed,
   InfoTooltip,
   ModalWrapper,
-  SolidToggleButtonGroup,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { bulkCatTotal, filterFunction } from '@genshin-optimizer/common/util'
@@ -22,11 +21,7 @@ import {
   allWeaponTypeKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import type {
-  AllowLocationsState,
-  ICachedCharacter,
-} from '@genshin-optimizer/gi/db'
-import { allAllowLocationsState } from '@genshin-optimizer/gi/db'
+import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
 import {
   CharacterContext,
   TeamCharacterContext,
@@ -57,7 +52,6 @@ import {
   IconButton,
   Stack,
   TextField,
-  ToggleButton,
   Typography,
 } from '@mui/material'
 import type { ChangeEvent, MouseEvent } from 'react'
@@ -76,7 +70,7 @@ enum CharListMode {
   ToggleToExclude,
 }
 
-export default function AllowChar({
+export default function UseEquipped({
   disabled = false,
   allowListTotal,
 }: {
@@ -92,7 +86,7 @@ export default function AllowChar({
     character: { key: characterKey },
   } = useContext(CharacterContext)
   const { silly } = useContext(SillyContext)
-  const { excludedLocations, allowLocationsState } = useOptConfig(optConfigId)!
+  const { excludedLocations } = useOptConfig(optConfigId)!
   const database = useDatabase()
   const [show, onOpen, onClose] = useBoolState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -268,7 +262,6 @@ export default function AllowChar({
         excludedLocations: excludedLocations.filter(
           (key) => !locList.includes(key)
         ),
-        allowLocationsState: 'customList',
       }),
     [database, optConfigId, excludedLocations, locList]
   )
@@ -278,15 +271,8 @@ export default function AllowChar({
         excludedLocations: Array.from(
           new Set(excludedLocations.concat(locList))
         ),
-        allowLocationsState: 'customList',
       }),
     [database, optConfigId, excludedLocations, locList]
-  )
-
-  const setState = useCallback(
-    (_e: MouseEvent, state: AllowLocationsState) =>
-      database.optConfigs.set(optConfigId, { allowLocationsState: state }),
-    [database, optConfigId]
   )
 
   const toggleList = useCallback(
@@ -297,7 +283,6 @@ export default function AllowChar({
         .concat(excludedLocations.filter((lk) => !lkArray.includes(lk)))
       database.optConfigs.set(optConfigId, {
         excludedLocations: newExcludedLocations,
-        allowLocationsState: 'customList',
       })
     },
     [database, optConfigId, excludedLocations]
@@ -309,18 +294,6 @@ export default function AllowChar({
   const total = locListLength
   const useTot = total - excludedLocations.length
   const totalStr = useTot === total ? useTot : `${useTot}/${total}`
-  const charactersAllowed =
-    allowLocationsState === 'all'
-      ? total
-      : allowLocationsState === 'customList'
-      ? totalStr
-      : 0 // unequippedOnly
-  const stateBadgeColor =
-    allowLocationsState === 'all'
-      ? 'success'
-      : allowLocationsState === 'customList'
-      ? 'info'
-      : 'secondary' // unequippedOnly
 
   return (
     <Box display="flex" gap={1}>
@@ -355,39 +328,6 @@ export default function AllowChar({
             <Stack gap={1}>
               {/* State + Search box */}
               <Box display="flex" gap={1} flexWrap="wrap">
-                <SolidToggleButtonGroup
-                  exclusive
-                  baseColor="secondary"
-                  size="small"
-                  value={allowLocationsState}
-                  onChange={setState}
-                >
-                  {allAllowLocationsState.map((s) => (
-                    <ToggleButton
-                      key={s}
-                      value={s}
-                      disabled={allowLocationsState === s || disabled}
-                    >
-                      {t(`excludeChar.states.${s}`)}
-                    </ToggleButton>
-                  ))}
-                </SolidToggleButtonGroup>
-                <TextField
-                  autoFocus
-                  value={searchTerm}
-                  onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-                    setSearchTerm(e.target.value)
-                  }
-                  label={t_pc('characterName')}
-                  size="small"
-                  sx={{ height: '100%' }}
-                  InputProps={{
-                    sx: { height: '100%' },
-                  }}
-                />
-              </Box>
-              {/* Filter toggles */}
-              <Box display="flex" gap={1} flexWrap="wrap">
                 <WeaponToggle
                   sx={{ height: '100%' }}
                   onChange={setWeaponTypeKeys}
@@ -409,19 +349,30 @@ export default function AllowChar({
                   totals={characterRarityTotals}
                   size="small"
                 />
+                <TextField
+                  autoFocus
+                  value={searchTerm}
+                  onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+                    setSearchTerm(e.target.value)
+                  }
+                  label={t_pc('characterName')}
+                  size="small"
+                  sx={{ height: '100%' }}
+                  InputProps={{
+                    sx: { height: '100%' },
+                  }}
+                />
               </Box>
             </Stack>
           </CardContent>
           {/* Allow/Disallow + grid */}
-          <CardContent
-            sx={{ opacity: allowLocationsState === 'customList' ? 1 : 0.6 }}
-          >
+          <CardContent>
             <Grid container pb={1} gap={1} flexWrap="nowrap">
               <Grid item xs={6}>
                 <Button color="success" fullWidth onClick={allowAll}>
                   {t`excludeChar.modal.allow_all`}
                   <SqBadge sx={{ ml: 1 }}>
-                    <strong>{locListTotals.allowed}</strong>
+                    <strong>{locListTotals['allowed']}</strong>
                   </SqBadge>
                 </Button>
               </Grid>
@@ -429,7 +380,7 @@ export default function AllowChar({
                 <Button fullWidth color="error" onClick={disallowAll}>
                   {t`excludeChar.modal.disallow_All`}
                   <SqBadge sx={{ ml: 1 }}>
-                    <strong>{locListTotals.excluded}</strong>
+                    <strong>{locListTotals['excluded']}</strong>
                   </SqBadge>
                 </Button>
               </Grid>
@@ -453,15 +404,9 @@ export default function AllowChar({
               <strong>{t('excludeChar.title')}</strong>
             </Typography>
             <Typography>
-              {t('excludeChar.usingState')}{' '}
-              <SqBadge color={stateBadgeColor}>
-                {t(`excludeChar.states.${allowLocationsState}`)}
-              </SqBadge>
-            </Typography>
-            <Typography>
               {t('excludeChar.chars')}{' '}
               <SqBadge color="success">
-                {charactersAllowed} <ShowChartIcon {...iconInlineProps} />
+                {totalStr} <ShowChartIcon {...iconInlineProps} />
                 {t('artSetConfig.allowed')}
               </SqBadge>
             </Typography>
