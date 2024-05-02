@@ -1,15 +1,10 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import {
-  CardThemed,
-  SqBadge,
-  TextFieldLazy,
-  useRefSize,
-} from '@genshin-optimizer/common/ui'
+import { SqBadge, TextFieldLazy } from '@genshin-optimizer/common/ui'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import {
-  AdWrapper,
+  AdCard,
   BuildInfoAlert,
   EquippedBuildInfoAlert,
   FormulaDataContext,
@@ -150,7 +145,7 @@ function BuildManagementContent() {
             <BuildEquipped active={loadoutDatum?.buildType === 'equipped'} />
           </Grid>
           <Grid item xs={1}>
-            <Ad />
+            <AdCard dataAdSlot="5385429639" bgt="light" />
           </Grid>
         </Grid>
 
@@ -252,21 +247,5 @@ function FormulasButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
     >
       Show Formulas {'&'} Calcs
     </Button>
-  )
-}
-function Ad() {
-  const { width, height, ref } = useRefSize()
-  console.log({ width, height })
-  return (
-    <CardThemed bgt="light" sx={{ height: '100%' }}>
-      <Box ref={ref} sx={{ height: '100%', width: '100%' }}>
-        {width && (
-          <AdWrapper
-            dataAdSlot="5385429639"
-            sx={{ width, height: Math.max(height, 250) }}
-          />
-        )}
-      </Box>
-    </CardThemed>
   )
 }

@@ -1,7 +1,7 @@
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
+import { toMainSite } from '../util'
 import drake from './drake.png'
-import { toMSite } from './util'
 export function DrakeAd({ children }: { children: ReactNode }) {
   return (
     <Box
@@ -17,7 +17,7 @@ export function DrakeAd({ children }: { children: ReactNode }) {
         width: '100%',
         height: '100%',
       }}
-      onClick={toMSite}
+      onClick={toMainSite}
     >
       {children}
       <Box

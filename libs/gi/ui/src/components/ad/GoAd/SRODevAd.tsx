@@ -1,8 +1,8 @@
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
+import { toDiscord } from '../util'
 import sro from './sro.png'
-import { toDiscord } from './util'
 export function SRODevAd({ children }: { children: ReactNode }) {
   return (
     <Box
