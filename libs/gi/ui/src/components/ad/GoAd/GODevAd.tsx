@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
-import { toDiscord } from './util'
+import { toDiscord } from '../util'
 
 export function GODevAd({ children }: { children: ReactNode }) {
   return (

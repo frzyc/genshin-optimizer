@@ -1,4 +1,4 @@
-export function toMSite() {
+export function toMainSite() {
   if (
     window.location.hostname === 'frzyc.github.io' &&
     window.location.pathname === '/genshin-optimizer/'

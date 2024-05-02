@@ -6,10 +6,10 @@ import { Box } from '@mui/material'
 import type { FunctionComponent } from 'react'
 import { useContext, useMemo, type ReactNode } from 'react'
 import { AdButtons } from './AdButtons'
-import { DrakeAd, canShowDrakeAd } from './DrakeAd'
-import { GOAd } from './GOAd'
-import { GODevAd, canshowGoDevAd } from './GODevAd'
-import { SRODevAd, canshowSroDevAd } from './SRODevAd'
+import { DrakeAd, canShowDrakeAd } from './GoAd/DrakeAd'
+import { GOAd } from './GoAd/GOAd'
+import { GODevAd, canshowGoDevAd } from './GoAd/GODevAd'
+import { SRODevAd, canshowSroDevAd } from './GoAd/SRODevAd'
 
 export function AdWrapper({
   dataAdSlot,
