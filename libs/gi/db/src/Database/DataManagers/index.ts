@@ -9,7 +9,6 @@ import {
   validateCustomMultiTarget,
 } from './CustomMultiTarget'
 import type {
-  AllowLocationsState,
   ArtSetExclusion,
   ArtSetExclusionKey,
   GeneratedBuild,
@@ -17,7 +16,6 @@ import type {
   StatFilters,
 } from './OptConfigDataManager'
 import {
-  allAllowLocationsState,
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
   maxBuildsToShowList,
@@ -32,7 +30,6 @@ import {
 export {
   MAX_DESC_LENGTH,
   MAX_NAME_LENGTH,
-  allAllowLocationsState,
   allArtifactSetExclusionKeys,
   cachedArtifact,
   defaultInitialWeapon,
@@ -49,7 +46,6 @@ export {
   validateCustomMultiTarget,
 }
 export type {
-  AllowLocationsState,
   ArtSetExclusion,
   ArtSetExclusionKey,
   GeneratedBuild,

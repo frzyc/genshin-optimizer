@@ -22,13 +22,6 @@ import { DataManager } from '../DataManager'
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5
 
-export const allAllowLocationsState = [
-  'unequippedOnly',
-  'customList',
-  'all',
-] as const
-export type AllowLocationsState = (typeof allAllowLocationsState)[number]
-
 export const allArtifactSetExclusionKeys = [
   ...allArtifactSetKeys.filter(
     (key) =>
@@ -74,7 +67,6 @@ export interface OptConfig {
     plume?: never
   }
   excludedLocations: LocationCharacterKey[]
-  allowLocationsState: AllowLocationsState
   artExclusion: string[]
   useExcludedArts: boolean
   optimizationTarget?: string[]
@@ -116,7 +108,6 @@ export class OptConfigDataManager extends DataManager<
       optimizationTarget,
       mainStatAssumptionLevel,
       excludedLocations,
-      allowLocationsState,
       allowPartial,
       maxBuildsToShow,
       plotBase,
@@ -169,7 +160,6 @@ export class OptConfigDataManager extends DataManager<
       (lk) =>
         this.database.chars.get(this.database.chars.LocationToCharacterKey(lk)) // Remove characters who do not exist in the DB
     )
-    if (!allowLocationsState) allowLocationsState = 'unequippedOnly'
 
     if (
       !maxBuildsToShowList.includes(
@@ -222,7 +212,6 @@ export class OptConfigDataManager extends DataManager<
       optimizationTarget,
       mainStatAssumptionLevel,
       excludedLocations,
-      allowLocationsState,
       allowPartial,
       maxBuildsToShow,
       plotBase,
@@ -251,7 +240,6 @@ export class OptConfigDataManager extends DataManager<
       // remove user-specific data
       useExcludedArts,
       excludedLocations,
-      allowLocationsState,
       artExclusion,
       buildDate,
       builds,
@@ -279,7 +267,6 @@ const initialBuildSettings: OptConfig = deepFreeze({
   optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
   excludedLocations: [],
-  allowLocationsState: 'unequippedOnly',
   allowPartial: false,
   maxBuildsToShow: 5,
   plotBase: undefined,

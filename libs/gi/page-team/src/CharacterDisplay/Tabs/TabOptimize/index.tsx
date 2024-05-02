@@ -24,11 +24,7 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import type {
-  AllowLocationsState,
-  GeneratedBuild,
-  ICachedArtifact,
-} from '@genshin-optimizer/gi/db'
+import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
@@ -110,7 +106,6 @@ import React, {
 import { Trans, useTranslation } from 'react-i18next'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
-import AllowChar from './Components/AllowChar'
 import ArtifactSetConfig from './Components/ArtifactSetConfig'
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle'
 import BonusStatsCard from './Components/BonusStatsCard'
@@ -121,6 +116,7 @@ import ExcludeArt from './Components/ExcludeArt'
 import MainStatSelectionCard from './Components/MainStatSelectionCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
+import UseEquipped from './Components/UseEquipped'
 
 const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
@@ -182,7 +178,6 @@ export default function TabBuild() {
     builds: buildsDb,
     buildDate,
     useTeammateBuild,
-    allowLocationsState,
   } = buildSetting
 
   const builds = useConstObj(buildsDb)
@@ -225,7 +220,6 @@ export default function TabBuild() {
       artExclusion,
       levelLow,
       levelHigh,
-      allowLocationsState,
       useExcludedArts,
       useTeammateBuild,
     } = deferredArtsDirty && deferredBuildSetting
@@ -241,16 +235,12 @@ export default function TabBuild() {
         return false
 
       const locKey = charKeyToLocCharKey(characterKey)
-      const unequippedStateAndEquippedElsewhere =
-        allowLocationsState === 'unequippedOnly' &&
-        art.location &&
-        art.location !== locKey
-      const customListStateAndNotOnList =
-        allowLocationsState === 'customList' &&
+
+      if (
         art.location &&
         art.location !== locKey &&
         excludedLocations.includes(art.location)
-      if (unequippedStateAndEquippedElsewhere || customListStateAndNotOnList)
+      )
         return false
 
       return true
@@ -282,26 +272,18 @@ export default function TabBuild() {
       return bulkCatTotal(catKeys, (ctMap) =>
         database.arts.entries.forEach(([id, art]) => {
           const { level, location } = art
-          const {
-            levelLow,
-            levelHigh,
-            excludedLocations,
-            allowLocationsState,
-            artExclusion,
-          } = deferredArtsDirty && deferredBuildSetting
+          const { levelLow, levelHigh, excludedLocations, artExclusion } =
+            deferredArtsDirty && deferredBuildSetting
           if (level >= levelLow && level <= levelHigh) {
             ctMap.levelTotal.in.total++
             if (filteredArtIdMap[id]) ctMap.levelTotal.in.current++
           }
           const locKey = charKeyToLocCharKey(characterKey)
-          const allStateAndEquippedSomewhereElse =
-            allowLocationsState === 'all' && location && location !== locKey
-          const customListStateAndNotOnList =
-            allowLocationsState === 'customList' &&
+          if (
             location &&
             location !== locKey &&
             !excludedLocations.includes(location)
-          if (allStateAndEquippedSomewhereElse || customListStateAndNotOnList) {
+          ) {
             ctMap.allowListTotal.in.total++
             if (filteredArtIdMap[id]) ctMap.allowListTotal.in.current++
           }
@@ -787,7 +769,7 @@ export default function TabBuild() {
           </Button>
 
           {/* use equipped */}
-          <AllowChar
+          <UseEquipped
             disabled={generatingBuilds}
             allowListTotal={allowListTotal.in}
           />
@@ -964,7 +946,6 @@ export default function TabBuild() {
             getLabel={getGraphBuildLabel}
             setBuilds={setGraphBuilds}
             mainStatAssumptionLevel={mainStatAssumptionLevel}
-            allowLocationsState={allowLocationsState}
           />
         )}
         <BuildList
@@ -973,7 +954,6 @@ export default function TabBuild() {
           disabled={!!generatingBuilds}
           getLabel={getNormBuildLabel}
           mainStatAssumptionLevel={mainStatAssumptionLevel}
-          allowLocationsState={allowLocationsState}
         />
       </OptimizationTargetContext.Provider>
     </Box>
@@ -1070,7 +1050,6 @@ const BuildList = memo(function BuildList({
   disabled,
   getLabel,
   mainStatAssumptionLevel,
-  allowLocationsState,
 }: {
   builds: GeneratedBuild[]
   setBuilds?: (builds: GeneratedBuild[] | undefined) => void
@@ -1078,7 +1057,6 @@ const BuildList = memo(function BuildList({
   disabled: boolean
   getLabel: (index: number) => ReactNode
   mainStatAssumptionLevel: number
-  allowLocationsState: AllowLocationsState
 }) {
   const deleteBuild = useCallback(
     (index: number) => {
@@ -1114,7 +1092,6 @@ const BuildList = memo(function BuildList({
             disabled={disabled}
             deleteBuild={setBuilds ? deleteBuild : undefined}
             mainStatAssumptionLevel={mainStatAssumptionLevel}
-            allowLocationsState={allowLocationsState}
           />
         </DataContextWrapper>
       ))}
@@ -1128,7 +1105,6 @@ const BuildItemWrapper = memo(function BuildItemWrapper({
   disabled,
   deleteBuild,
   mainStatAssumptionLevel,
-  allowLocationsState,
 }: {
   index: number
   label: ReactNode
@@ -1136,7 +1112,6 @@ const BuildItemWrapper = memo(function BuildItemWrapper({
   disabled: boolean
   deleteBuild?: (index: number) => void
   mainStatAssumptionLevel: number
-  allowLocationsState: AllowLocationsState
 }) {
   const { t } = useTranslation('page_character_optimize')
   const extraButtonsLeft = useMemo(() => {
@@ -1163,7 +1138,6 @@ const BuildItemWrapper = memo(function BuildItemWrapper({
       disabled={disabled}
       extraButtonsLeft={extraButtonsLeft}
       mainStatAssumptionLevel={mainStatAssumptionLevel}
-      allowLocationsState={allowLocationsState}
     />
   )
 })

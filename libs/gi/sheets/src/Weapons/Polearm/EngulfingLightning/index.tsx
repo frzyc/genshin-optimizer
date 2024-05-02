@@ -26,7 +26,8 @@ const atk_ = equal(
       sum(input.premod.enerRech_, percent(-1))
     ),
     subscript(input.weapon.refinement, atkMax)
-  )
+  ),
+  { pivot: true }
 )
 
 const enerRech = [-1, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55]

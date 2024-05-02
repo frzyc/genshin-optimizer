@@ -139,7 +139,7 @@ function Content() {
       <Box
         display="flex"
         ref={ref}
-        justifyContent="space-between"
+        justifyContent="center"
         alignItems="flex-start"
       >
         {/* left Rail ad */}
@@ -159,7 +159,10 @@ function Content() {
           )}
         </Box>
         {/* Content */}
-        <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1 }, flexGrow: 1 }}>
+        <Container
+          maxWidth="xl"
+          sx={{ px: { xs: 0.5, sm: 1 }, flexGrow: 1, mx: 0 }}
+        >
           <Suspense
             fallback={
               <Skeleton
