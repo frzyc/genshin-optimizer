@@ -1,4 +1,3 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import { Diamond, Menu as MenuIcon } from '@mui/icons-material'
@@ -23,7 +22,7 @@ import {
   useTheme,
 } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'
-import { Suspense, useEffect, useMemo, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
 
@@ -53,28 +52,29 @@ const lightCones: ITab = {
 
 function RelicChip() {
   const { database } = useDatabaseContext()
-  const [dirty, setDirty] = useForceUpdate()
+  const [total, setTotal] = useState(database.relics.keys.length)
   useEffect(
-    () => database.relics.followAny(() => setDirty()),
-    [database, setDirty]
-  )
-  const total = useMemo(
-    () => dirty && database.relics.keys.length,
-    [dirty, database]
+    () =>
+      database.relics.followAny(
+        (_k, r) =>
+          ['new', 'remove'].includes(r) && setTotal(database.relics.keys.length)
+      ),
+    [database]
   )
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
 
 function LightConeChip() {
   const { database } = useDatabaseContext()
-  const [dirty, setDirty] = useForceUpdate()
+  const [total, setTotal] = useState(database.lightCones.keys.length)
   useEffect(
-    () => database.lightCones.followAny(() => setDirty()),
-    [database, setDirty]
-  )
-  const total = useMemo(
-    () => dirty && database.lightCones.keys.length,
-    [database, dirty]
+    () =>
+      database.lightCones.followAny(
+        (_k, r) =>
+          ['new', 'remove'].includes(r) &&
+          setTotal(database.lightCones.keys.length)
+      ),
+    [database]
   )
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
