@@ -36,7 +36,7 @@ type ITab = {
 }
 const relics: ITab = {
   i18Key: 'tabs.relics',
-  // No SRO icons exist right now, replace later with real relics icon
+  // TODO: replace with real relics icon later
   icon: <Diamond />,
   to: '/relics',
   value: 'relics',
