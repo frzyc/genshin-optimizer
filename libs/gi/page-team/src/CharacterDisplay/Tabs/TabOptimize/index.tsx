@@ -31,16 +31,15 @@ import {
   useDBMeta,
   useDatabase,
   useOptConfig,
+  useTeammateArtifactIds,
 } from '@genshin-optimizer/gi/db-ui'
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts, dynamicData } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
-  ArtifactCardPico,
   ArtifactLevelSlider,
   BuildDisplayItem,
-  CharIconSide,
   CharacterCardEquipmentRow,
   CharacterCardHeader,
   CharacterCardHeaderContent,
@@ -72,7 +71,6 @@ import {
 } from '@mui/icons-material'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
-import InfoIcon from '@mui/icons-material/Info'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff'
 import {
@@ -81,14 +79,12 @@ import {
   ButtonGroup,
   CardContent,
   CardHeader,
-  Chip,
   Divider,
   Grid,
   IconButton,
   MenuItem,
   Skeleton,
   TextField,
-  Tooltip,
   Typography,
 } from '@mui/material'
 import type { FormEventHandler, ReactNode } from 'react'
@@ -117,6 +113,7 @@ import MainStatSelectionCard from './Components/MainStatSelectionCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
 import UseEquipped from './Components/UseEquipped'
+import { UseTeammateArt } from './Components/UseTeammateArt'
 
 const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
@@ -126,7 +123,6 @@ export default function TabBuild() {
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
     teamId,
-    team: { loadoutData },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
@@ -196,23 +192,7 @@ export default function TabBuild() {
 
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
-  const teammateArtifactIds = useMemo(
-    () =>
-      Array.from(
-        new Set(
-          loadoutData
-            .filter(notEmpty)
-            .filter((loadoutDatum) => loadoutDatum.teamCharId !== teamCharId)
-            .map((loadoutDatum) =>
-              database.teams.getLoadoutArtifacts(loadoutDatum)
-            )
-            .flatMap((arts) => Object.values(arts))
-            .filter(notEmpty)
-            .map(({ id }) => id)
-        )
-      ),
-    [database, loadoutData, teamCharId]
-  )
+  const teammateArtifactIds = useTeammateArtifactIds()
   const filteredArts = useMemo(() => {
     const {
       mainStatKeys,
@@ -655,105 +635,13 @@ export default function TabBuild() {
           {/* use excluded */}
           <ExcludeArt
             disabled={generatingBuilds}
-            excludedTotal={excludedTotal.in}
+            excludedTotal={excludedTotal['in']}
           />
-          <Tooltip
-            arrow
-            title={
-              <Box>
-                <Suspense
-                  fallback={
-                    <Skeleton variant="rectangular" width={400} height={400} />
-                  }
-                >
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: 1,
-                    }}
-                  >
-                    {loadoutData
-                      .filter(notEmpty)
-                      .filter(
-                        (loadoutDatum) => loadoutDatum.teamCharId !== teamCharId
-                      )
-                      .map((loadoutDatum) => {
-                        const characterKey = database.teamChars.get(
-                          loadoutDatum?.teamCharId
-                        )?.key
-                        const artifacts =
-                          loadoutDatum.buildType === 'tc'
-                            ? undefined
-                            : database.teams.getLoadoutArtifacts(loadoutDatum)
-                        return (
-                          <CardThemed
-                            sx={{
-                              p: 1,
-                              display: 'flex',
-                              flexDirection: 'column',
-                              gap: 1,
-                            }}
-                          >
-                            <Box display="flex" alignItems="center" gap={1}>
-                              {characterKey && (
-                                <CharIconSide characterKey={characterKey} />
-                              )}
-                              <Typography>
-                                {database.teams.getActiveBuildName(
-                                  loadoutDatum
-                                )}
-                              </Typography>
-                            </Box>
-                            {artifacts ? (
-                              <Grid container columns={5} spacing={1}>
-                                {Object.entries(artifacts).map(
-                                  ([slotKey, art]) => (
-                                    <Grid item key={slotKey} xs={1}>
-                                      <ArtifactCardPico
-                                        artifactObj={art}
-                                        slotKey={slotKey}
-                                      />
-                                    </Grid>
-                                  )
-                                )}
-                              </Grid>
-                            ) : (
-                              <Typography>
-                                <SqBadge sx={{ width: '100%' }}>
-                                  TC build
-                                </SqBadge>
-                              </Typography>
-                            )}
-                          </CardThemed>
-                        )
-                      })}
-                  </Box>
-                </Suspense>
-              </Box>
-            }
-          >
-            <Button
-              fullWidth
-              startIcon={
-                useTeammateBuild ? <CheckBox /> : <CheckBoxOutlineBlank />
-              }
-              endIcon={<InfoIcon />}
-              color={useTeammateBuild ? 'success' : 'secondary'}
-              onClick={() => {
-                database.optConfigs.set(optConfigId, {
-                  useTeammateBuild: !useTeammateBuild,
-                })
-              }}
-              disabled={generatingBuilds}
-            >
-              <Box display="flex" gap={1}>
-                {/* TODO: Translation */}
-                <span>Use artifacts in teammates' active builds</span>
-                <Chip label={teammateBuildTotal.in} size="small" />
-              </Box>
-            </Button>
-          </Tooltip>
+          <UseTeammateArt
+            totalTally={teammateBuildTotal['in']}
+            useTeammateBuild={useTeammateBuild}
+            disabled={generatingBuilds}
+          />
           <Button
             fullWidth
             startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />}
@@ -982,25 +870,23 @@ const LevelFilter = memo(function LevelFilter({
         <SqBadge color="info">{levelTotal}</SqBadge>
       </CardContent>
       <Divider />
-      <CardContent>
-        <ArtifactLevelSlider
-          levelLow={levelLow}
-          levelHigh={levelHigh}
-          setLow={(levelLow) =>
-            database.optConfigs.set(optConfigId, { levelLow })
-          }
-          setHigh={(levelHigh) =>
-            database.optConfigs.set(optConfigId, { levelHigh })
-          }
-          setBoth={(levelLow, levelHigh) =>
-            database.optConfigs.set(optConfigId, {
-              levelLow,
-              levelHigh,
-            })
-          }
-          disabled={disabled}
-        />
-      </CardContent>
+      <ArtifactLevelSlider
+        levelLow={levelLow}
+        levelHigh={levelHigh}
+        setLow={(levelLow) =>
+          database.optConfigs.set(optConfigId, { levelLow })
+        }
+        setHigh={(levelHigh) =>
+          database.optConfigs.set(optConfigId, { levelHigh })
+        }
+        setBoth={(levelLow, levelHigh) =>
+          database.optConfigs.set(optConfigId, {
+            levelLow,
+            levelHigh,
+          })
+        }
+        disabled={disabled}
+      />
     </CardThemed>
   )
 })

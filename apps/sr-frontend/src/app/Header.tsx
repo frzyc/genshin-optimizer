@@ -1,7 +1,6 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
-import { Menu as MenuIcon } from '@mui/icons-material'
+import { Diamond, Menu as MenuIcon } from '@mui/icons-material'
 import {
   AppBar,
   Box,
@@ -23,7 +22,7 @@ import {
   useTheme,
 } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'
-import { Suspense, useEffect, useMemo, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
 
@@ -34,6 +33,15 @@ type ITab = {
   value: string
   textSuffix?: ReactNode
 }
+const relics: ITab = {
+  i18Key: 'tabs.relics',
+  // TODO: replace with real relics icon later
+  icon: <Diamond />,
+  to: '/relics',
+  value: 'relics',
+  textSuffix: <RelicChip key="relicsAdd" />,
+}
+
 const lightCones: ITab = {
   i18Key: 'tabs.lightcones',
   icon: <AnvilIcon />,
@@ -42,16 +50,31 @@ const lightCones: ITab = {
   textSuffix: <LightConeChip key="lightConeAdd" />,
 }
 
+function RelicChip() {
+  const { database } = useDatabaseContext()
+  const [total, setTotal] = useState(database.relics.keys.length)
+  useEffect(
+    () =>
+      database.relics.followAny(
+        (_k, r) =>
+          ['new', 'remove'].includes(r) && setTotal(database.relics.keys.length)
+      ),
+    [database]
+  )
+  return <Chip label={<strong>{total}</strong>} size="small" />
+}
+
 function LightConeChip() {
   const { database } = useDatabaseContext()
-  const [dirty, setDirty] = useForceUpdate()
+  const [total, setTotal] = useState(database.lightCones.keys.length)
   useEffect(
-    () => database.lightCones.followAny(() => setDirty()),
-    [database, setDirty]
-  )
-  const total = useMemo(
-    () => dirty && database.lightCones.keys.length,
-    [database, dirty]
+    () =>
+      database.lightCones.followAny(
+        (_k, r) =>
+          ['new', 'remove'].includes(r) &&
+          setTotal(database.lightCones.keys.length)
+      ),
+    [database]
   )
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
@@ -64,7 +87,7 @@ export default function Header({ anchor }: { anchor: string }) {
   )
 }
 
-const maincontent = [lightCones] as const
+const maincontent = [relics, lightCones] as const
 
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
@@ -144,7 +167,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
   )
 }
 
-const mobileContent = [lightCones] as const
+const mobileContent = [relics, lightCones] as const
 function MobileHeader({
   anchor,
   currentTab,

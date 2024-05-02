@@ -24,7 +24,15 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
 import PersonSearchIcon from '@mui/icons-material/PersonSearch'
-import { Box, Button, Chip, Divider, Grid, ToggleButton } from '@mui/material'
+import {
+  Box,
+  Button,
+  Card,
+  Chip,
+  Divider,
+  Grid,
+  ToggleButton,
+} from '@mui/material'
 import Stack from '@mui/system/Stack'
 import { Suspense, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -157,16 +165,18 @@ export function ArtifactFilterDisplay({
           <Stack spacing={1}>
             <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
             {/* Artiface level filter */}
-            <ArtifactLevelSlider
-              showLevelText
-              levelLow={levelLow}
-              levelHigh={levelHigh}
-              setLow={(levelLow) => filterOptionDispatch({ levelLow })}
-              setHigh={(levelHigh) => filterOptionDispatch({ levelHigh })}
-              setBoth={(levelLow, levelHigh) =>
-                filterOptionDispatch({ levelLow, levelHigh })
-              }
-            />
+            <Card>
+              <ArtifactLevelSlider
+                showLevelText
+                levelLow={levelLow}
+                levelHigh={levelHigh}
+                setLow={(levelLow) => filterOptionDispatch({ levelLow })}
+                setHigh={(levelHigh) => filterOptionDispatch({ levelHigh })}
+                setBoth={(levelLow, levelHigh) =>
+                  filterOptionDispatch({ levelLow, levelHigh })
+                }
+              />
+            </Card>
             {/* Artifact rarity filter */}
             <SolidToggleButtonGroup fullWidth value={rarity} size="small">
               {allArtifactRarityKeys.map((star) => (
