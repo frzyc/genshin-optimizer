@@ -870,25 +870,23 @@ const LevelFilter = memo(function LevelFilter({
         <SqBadge color="info">{levelTotal}</SqBadge>
       </CardContent>
       <Divider />
-      <CardContent>
-        <ArtifactLevelSlider
-          levelLow={levelLow}
-          levelHigh={levelHigh}
-          setLow={(levelLow) =>
-            database.optConfigs.set(optConfigId, { levelLow })
-          }
-          setHigh={(levelHigh) =>
-            database.optConfigs.set(optConfigId, { levelHigh })
-          }
-          setBoth={(levelLow, levelHigh) =>
-            database.optConfigs.set(optConfigId, {
-              levelLow,
-              levelHigh,
-            })
-          }
-          disabled={disabled}
-        />
-      </CardContent>
+      <ArtifactLevelSlider
+        levelLow={levelLow}
+        levelHigh={levelHigh}
+        setLow={(levelLow) =>
+          database.optConfigs.set(optConfigId, { levelLow })
+        }
+        setHigh={(levelHigh) =>
+          database.optConfigs.set(optConfigId, { levelHigh })
+        }
+        setBoth={(levelLow, levelHigh) =>
+          database.optConfigs.set(optConfigId, {
+            levelLow,
+            levelHigh,
+          })
+        }
+        disabled={disabled}
+      />
     </CardThemed>
   )
 })
