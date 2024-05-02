@@ -1,7 +1,7 @@
 {
-  "name": "sr-page-lightcones",
+  "name": "sr-page-relics",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/sr/page-lightcones/src",
+  "sourceRoot": "libs/sr/page-relics/src",
   "projectType": "library",
   "tags": [],
   "targets": {}
