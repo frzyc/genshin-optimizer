@@ -1,5 +1,7 @@
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
+  bulkCatTotal,
   clamp,
   objKeyMap,
   objPathValue,
@@ -23,7 +25,6 @@ import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AddArtInfo,
   ArtifactEditor,
-  ArtifactLevelSlider,
   CharacterCardEquipmentRow,
   CharacterCardHeader,
   CharacterCardHeaderContent,
@@ -57,6 +58,7 @@ import {
   useCallback,
   useContext,
   useDeferredValue,
+  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -66,6 +68,7 @@ import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
+import { LevelFilter } from './LevelFilter'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
 import { UpOptCalculator } from './upOpt'
 
@@ -86,25 +89,33 @@ export default function TabUpopt() {
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
   const buildSetting = useOptConfig(optConfigId)!
-  const { optimizationTarget, levelLow, levelHigh } = buildSetting
+  const { optimizationTarget, upOptLevelLow, upOptLevelHigh } = buildSetting
   const teamData = useTeamData()
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
+  const [artsDirty, setArtsDirty] = useForceUpdate()
+  //register changes in artifact database
+  useEffect(
+    () => database.arts.followAny(setArtsDirty),
+    [setArtsDirty, database]
+  )
+
+  const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
   const filteredArts = useMemo(() => {
     const {
       mainStatKeys,
       excludedLocations,
       artExclusion,
-      levelLow,
-      levelHigh,
+      upOptLevelLow,
+      upOptLevelHigh,
       useExcludedArts,
     } = deferredBuildSetting
 
     return database.arts.values.filter((art) => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
-      if (art.level < levelLow) return false
-      if (art.level > levelHigh) return false
+      if (art.level < upOptLevelLow) return false
+      if (art.level > upOptLevelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
       if (mainStats?.length && !mainStats.includes(art.mainStatKey))
         return false
@@ -124,6 +135,23 @@ export default function TabUpopt() {
     () => Object.fromEntries(filteredArts.map(({ id }) => [id, true])),
     [filteredArts]
   )
+
+  const { levelTotal } = useMemo(() => {
+    const catKeys = {
+      levelTotal: ['in'],
+    } as const
+    return bulkCatTotal(catKeys, (ctMap) =>
+      database.arts.entries.forEach(([id, art]) => {
+        const { level } = art
+        const { upOptLevelLow, upOptLevelHigh } =
+          deferredArtsDirty && deferredBuildSetting
+        if (level >= upOptLevelLow && level <= upOptLevelHigh) {
+          ctMap['levelTotal']['in'].total++
+          if (filteredArtIdMap[id]) ctMap['levelTotal']['in'].current++
+        }
+      })
+    )
+  }, [database, deferredArtsDirty, deferredBuildSetting, filteredArtIdMap])
 
   const [upOptCalc, setUpOptCalc] = useState(
     undefined as UpOptCalculator | undefined
@@ -191,8 +219,8 @@ export default function TabUpopt() {
       statFilters,
       optimizationTarget,
       mainStatKeys,
-      levelLow,
-      levelHigh,
+      upOptLevelLow,
+      upOptLevelHigh,
       artSetExclusion,
     } = buildSetting
 
@@ -298,7 +326,9 @@ export default function TabUpopt() {
           !mainStatKeys[art.slotKey]?.length ||
           mainStatKeys[art.slotKey]?.includes(art.mainStatKey)
       )
-      .filter((art) => levelLow <= art.level && art.level <= levelHigh)
+      .filter(
+        (art) => upOptLevelLow <= art.level && art.level <= upOptLevelHigh
+      )
     setUpOptCalc(
       new UpOptCalculator(
         nodes,
@@ -408,29 +438,13 @@ export default function TabUpopt() {
                   flexDirection="column"
                   gap={1}
                 >
+                  <LevelFilter
+                    levelTotal={levelTotal['in']}
+                    upOptLevelLow={upOptLevelLow}
+                    upOptLevelHigh={upOptLevelHigh}
+                    optConfigId={optConfigId}
+                  />
                   <CardThemed bgt="light">
-                    <CardContent sx={{ py: 1 }}>
-                      Artifact Level Filter
-                    </CardContent>
-                    <ArtifactLevelSlider
-                      levelLow={levelLow}
-                      levelHigh={levelHigh}
-                      setLow={(levelLow) =>
-                        database.optConfigs.set(optConfigId, { levelLow })
-                      }
-                      setHigh={(levelHigh) =>
-                        database.optConfigs.set(optConfigId, {
-                          levelHigh,
-                        })
-                      }
-                      setBoth={(levelLow, levelHigh) =>
-                        database.optConfigs.set(optConfigId, {
-                          levelLow,
-                          levelHigh,
-                        })
-                      }
-                      disabled={false}
-                    />
                     <MainStatSelectionCard
                       disabled={false}
                       filteredArtIdMap={filteredArtIdMap}
