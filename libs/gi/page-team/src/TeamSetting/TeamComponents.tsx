@@ -1,11 +1,4 @@
-import {
-  CardThemed,
-  ColorText,
-  ImgIcon,
-  InfoTooltipInline,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
-import { objPathValue } from '@genshin-optimizer/common/util'
+import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import type {
@@ -43,7 +36,6 @@ import {
   AccordionSummary,
   Box,
   CardActionArea,
-  CardContent,
   Divider,
   Skeleton,
   Typography,
