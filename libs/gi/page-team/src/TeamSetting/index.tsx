@@ -1,18 +1,13 @@
 import { TextFieldLazy } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
-import type { TeamCharacterContextObj } from '@genshin-optimizer/gi/db-ui'
-import {
-  TeamCharacterContext,
-  useDBMeta,
-  useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { TeamData, dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
+  AdCard,
   CharIconSide,
   CharacterName,
   CharacterSelectionModal,
-  DataContext,
   EnemyExpandCard,
   TeamInfoAlert,
 } from '@genshin-optimizer/gi/ui'
@@ -22,19 +17,13 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import type { ButtonProps } from '@mui/material'
-import {
-  Alert,
-  Box,
-  Button,
-  CardContent,
-  Grid,
-  Typography,
-} from '@mui/material'
+import { Alert, Box, Button, CardContent, Grid } from '@mui/material'
 import { Suspense, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import BuildDropdown from '../BuildDropdown'
 import { LoadoutDropdown } from '../LoadoutDropdown'
-import { ResonanceDisplay, TeammateDisplay } from './TeamComponents'
+import { ResonanceDisplay } from './ResonanceDisplay'
+import { TeammateDisplay } from './TeamComponents'
 
 // TODO: Translation
 export default function TeamSetting({
@@ -121,16 +110,11 @@ export default function TeamSetting({
         </Button>
       </Box>
       <EnemyExpandCard teamId={teamId} />
-      <Typography variant="h6">Team Editor</Typography>
-      <Alert severity="info">
-        The first character in the team receives any "active on-field character"
-        buffs, and cannot be empty.
-      </Alert>
-      <TeamCharacterSelector teamId={teamId} teamData={teamData} />
+      <TeamEditor teamId={teamId} teamData={teamData} />
     </CardContent>
   )
 }
-function TeamCharacterSelector({
+function TeamEditor({
   teamId,
   teamData,
 }: {
@@ -182,18 +166,6 @@ function TeamCharacterSelector({
     loadoutData[charSelectIndex as number]?.teamCharId
   )?.key
 
-  // This context is only used by the ResonanceDisplay, which needs to attach conditional values to team data.
-  const teamCharContextObj = useMemo(
-    () =>
-      ({
-        teamId,
-        team,
-        teamCharId: '', // can be left blank since its only modifying team conditional
-        teamChar: {},
-      } as TeamCharacterContextObj),
-    [team, teamId]
-  )
-
   const firstTeamCharId = loadoutData[0]?.teamCharId
   const firstTeamCharKey =
     firstTeamCharId && database.teamChars.get(firstTeamCharId)?.key
@@ -218,20 +190,23 @@ function TeamCharacterSelector({
           onSelect={onSelect}
         />
       </Suspense>
-      <Grid container columns={{ xs: 1, md: 3, lg: 5 }} spacing={2}>
-        <Grid
-          item
-          xs={1}
-          sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-        >
-          {dataContextValue && (
-            <DataContext.Provider value={dataContextValue}>
-              <TeamCharacterContext.Provider value={teamCharContextObj}>
-                <ResonanceDisplay teamId={teamId} />
-              </TeamCharacterContext.Provider>
-            </DataContext.Provider>
-          )}
+      <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
+        <Grid item xs={1}>
+          <ResonanceDisplay
+            teamId={teamId}
+            team={team}
+            dataContextValue={dataContextValue}
+          />
         </Grid>
+        <Grid item xs={1}>
+          <AdCard dataAdSlot="5102492054" maxHeight={400} />
+        </Grid>
+      </Grid>
+      <Alert severity="info">
+        The first character in the team receives any "active on-field character"
+        buffs, and cannot be empty.
+      </Alert>
+      <Grid container columns={{ xs: 1, md: 2, lg: 4 }} spacing={2}>
         {loadoutData.map((loadoutDatum, ind) => (
           <Grid item xs={1} key={loadoutDatum?.teamCharId ?? ind}>
             {loadoutDatum ? (

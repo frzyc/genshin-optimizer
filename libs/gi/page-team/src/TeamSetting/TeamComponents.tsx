@@ -1,10 +1,4 @@
-import {
-  CardThemed,
-  ColorText,
-  ImgIcon,
-  InfoTooltipInline,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
@@ -22,11 +16,7 @@ import {
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
-import {
-  dataSetEffects,
-  getArtSheet,
-  resonanceSheets,
-} from '@genshin-optimizer/gi/sheets'
+import { dataSetEffects, getArtSheet } from '@genshin-optimizer/gi/sheets'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   ArtifactSetName,
@@ -46,15 +36,15 @@ import {
   AccordionDetails,
   AccordionSummary,
   Box,
+  CardActionArea,
   CardContent,
-  CardHeader,
   Divider,
   Grid,
   Skeleton,
   Typography,
 } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 export function TeamBuffDisplay() {
   const { data, compareData } = useContext(DataContext)
@@ -118,61 +108,6 @@ export function TeamBuffDisplay() {
     </Accordion>
   )
 }
-export function ResonanceDisplay({ teamId }: { teamId: string }) {
-  const { t } = useTranslation('page_character')
-  const { data } = useContext(DataContext)
-
-  const { loadoutData } = useTeam(teamId)!
-  const teamCount = loadoutData.reduce((a, t) => a + (t ? 1 : 0), 0)
-  return (
-    <>
-      <CardThemed bgt="light">
-        <CardHeader
-          title={
-            <span>
-              {t('tabTeambuff.team_reso')}{' '}
-              <strong>
-                <ColorText color={teamCount >= 4 ? 'success' : 'warning'}>
-                  ({teamCount}/4)
-                </ColorText>
-              </strong>{' '}
-              <InfoTooltipInline
-                title={<Typography>{t`tabTeambuff.resonance_tip`}</Typography>}
-              />
-            </span>
-          }
-          titleTypographyProps={{ variant: 'subtitle2' }}
-        />
-      </CardThemed>
-      {resonanceSheets.map((res, i) => (
-        <CardThemed
-          bgt="light"
-          key={i}
-          sx={{ opacity: res.canShow(data) ? 1 : 0.5 }}
-        >
-          <CardHeader
-            title={
-              <span>
-                {res.name}{' '}
-                <InfoTooltipInline
-                  title={<Typography>{res.desc}</Typography>}
-                />
-              </span>
-            }
-            action={res.icon}
-            titleTypographyProps={{ variant: 'subtitle2' }}
-          />
-          {res.canShow(data) && <Divider />}
-          {res.canShow(data) && (
-            <CardContent>
-              <DocumentDisplay sections={res.sections} teamBuffOnly hideDesc />
-            </CardContent>
-          )}
-        </CardThemed>
-      ))}
-    </>
-  )
-}
 export function TeammateDisplay({
   teamCharId,
   dataContextValue,
@@ -234,9 +169,15 @@ export function TeammateDisplay({
             }
           >
             <CardThemed bgt="light">
-              <CharacterCardHeader characterKey={characterKey}>
-                <CharacterCardHeaderContent characterKey={characterKey} />
-              </CharacterCardHeader>
+              <CardActionArea
+                component={Link}
+                to={`${characterKey}`}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                <CharacterCardHeader characterKey={characterKey}>
+                  <CharacterCardHeaderContent characterKey={characterKey} />
+                </CharacterCardHeader>
+              </CardActionArea>
             </CardThemed>
 
             <EquipmentRow loadoutDatum={loadoutDatum} />
