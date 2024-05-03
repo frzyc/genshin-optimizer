@@ -1,5 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
@@ -70,7 +70,7 @@ export default function OptimizationTargetSelector({
   } = (node?.info && resolveInfo(node?.info)) ?? {}
 
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
-  const iconDisplay = icon ? <ImgIcon src={icon} size={2} /> : nodeIcon
+  const iconDisplay = icon ? icon : nodeIcon
   return (
     <>
       <Button

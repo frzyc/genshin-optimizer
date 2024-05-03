@@ -1,4 +1,4 @@
-import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
@@ -54,7 +54,7 @@ export function OptimizationTargetDisplay({
   } = (node && resolveInfo(node.info)) ?? {}
 
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
-  const iconDisplay = icon ? <ImgIcon src={icon} size={2} /> : infoIcon
+  const iconDisplay = icon ? icon : infoIcon
   return (
     <CardThemed bgt="light">
       <CardHeader
