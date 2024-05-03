@@ -39,7 +39,7 @@ export function FieldsDisplay({
   return (
     <FieldDisplayList sx={{ m: 0 }} bgt={bgt}>
       {fields.map((field, i) => (
-        <FieldDisplay key={i} field={field} component={ListItem} />
+        <FieldDisplay key={i} field={field} />
       ))}
     </FieldDisplayList>
   )
@@ -47,7 +47,7 @@ export function FieldsDisplay({
 
 function FieldDisplay({
   field,
-  component,
+  component = ListItem,
 }: {
   field: IFieldDisplay
   component?: React.ElementType
@@ -106,7 +106,7 @@ export function BasicFieldDisplay({
 export function NodeFieldDisplay({
   node,
   compareValue,
-  component,
+  component = ListItem,
   emphasize,
 }: {
   node: CalcResult

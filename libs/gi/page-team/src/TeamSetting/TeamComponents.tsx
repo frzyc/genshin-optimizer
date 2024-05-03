@@ -1,4 +1,10 @@
-import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ColorText,
+  ImgIcon,
+  InfoTooltipInline,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
@@ -25,10 +31,10 @@ import {
   CharacterCardHeaderContent,
   DataContext,
   DocumentDisplay,
+  FieldDisplayList,
   NodeFieldDisplay,
   WeaponFullCardObj,
 } from '@genshin-optimizer/gi/ui'
-import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { input } from '@genshin-optimizer/gi/wr'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
@@ -39,7 +45,6 @@ import {
   CardActionArea,
   CardContent,
   Divider,
-  Grid,
   Skeleton,
   Typography,
 } from '@mui/material'
@@ -47,24 +52,18 @@ import { Suspense, useContext, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 
 export function TeamBuffDisplay() {
-  const { data, compareData } = useContext(DataContext)
-  const teamBuffs = data.getTeamBuff() as any
-  const nodes: Array<[string[], CalcResult]> = []
-  Object.entries(teamBuffs.total ?? {}).forEach(
-    ([key, node]: [key: string, node: any]) =>
-      !node.isEmpty && node.value !== 0 && nodes.push([['total', key], node])
-  )
-  Object.entries(teamBuffs.premod ?? {}).forEach(
-    ([key, node]: [key: string, node: any]) =>
-      !node.isEmpty && node.value !== 0 && nodes.push([['premod', key], node])
-  )
-  Object.entries(teamBuffs.enemy ?? {}).forEach(
-    ([key, node]: [key: string, node: any]) =>
-      !node.isEmpty &&
-      typeof node.value === 'number' &&
-      node.value !== 0 &&
-      nodes.push([['enemy', key], node as CalcResult])
-  )
+  const { data } = useContext(DataContext)
+  const nodes = useMemo(() => {
+    const teamBuffs = data.getTeamBuff()
+    const nodes = [
+      ...Object.values(teamBuffs.total ?? {}),
+      ...Object.values(teamBuffs.premod ?? {}),
+      ...Object.values(teamBuffs.enemy ?? {}),
+    ] as const
+
+    return nodes.filter((node) => !node.isEmpty && node.value !== 0)
+  }, [data])
+
   if (!nodes.length) return null
   return (
     <Accordion
@@ -77,33 +76,21 @@ export function TeamBuffDisplay() {
       })}
       disableGutters
     >
-      <AccordionSummary sx={{ py: 1 }} expandIcon={<ExpandMoreIcon />}>
-        <Typography>Received Team Buffs</Typography>
-        <SqBadge sx={{ ml: 1 }} color={nodes.length ? 'success' : 'info'}>
-          {nodes.length}
-        </SqBadge>
+      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Typography>Received Team Buffs</Typography>
+          <SqBadge sx={{ ml: 1 }} color={nodes.length ? 'success' : 'info'}>
+            {nodes.length}
+          </SqBadge>
+        </Box>
       </AccordionSummary>
       <AccordionDetails sx={{ p: 0 }}>
         <Divider />
-        <CardThemed bgt="light">
-          <CardContent>
-            <Grid container>
-              {nodes.map(
-                ([path, n]) =>
-                  n && (
-                    <Grid item xs={12} key={JSON.stringify(n.info)}>
-                      <NodeFieldDisplay
-                        node={n}
-                        compareValue={
-                          objPathValue(compareData?.getTeamBuff(), path)?.value
-                        }
-                      />
-                    </Grid>
-                  )
-              )}
-            </Grid>
-          </CardContent>
-        </CardThemed>
+        <FieldDisplayList bgt="light">
+          {nodes.map((n) => (
+            <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />
+          ))}
+        </FieldDisplayList>
       </AccordionDetails>
     </Accordion>
   )
