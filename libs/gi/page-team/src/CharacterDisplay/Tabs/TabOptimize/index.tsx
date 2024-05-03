@@ -24,27 +24,22 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import type {
-  AllowLocationsState,
-  GeneratedBuild,
-  ICachedArtifact,
-} from '@genshin-optimizer/gi/db'
+import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useDBMeta,
   useDatabase,
   useOptConfig,
+  useTeammateArtifactIds,
 } from '@genshin-optimizer/gi/db-ui'
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts, dynamicData } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
-  ArtifactCardPico,
   ArtifactLevelSlider,
   BuildDisplayItem,
-  CharIconSide,
   CharacterCardEquipmentRow,
   CharacterCardHeader,
   CharacterCardHeaderContent,
@@ -76,7 +71,6 @@ import {
 } from '@mui/icons-material'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
-import InfoIcon from '@mui/icons-material/Info'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff'
 import {
@@ -85,14 +79,12 @@ import {
   ButtonGroup,
   CardContent,
   CardHeader,
-  Chip,
   Divider,
   Grid,
   IconButton,
   MenuItem,
   Skeleton,
   TextField,
-  Tooltip,
   Typography,
 } from '@mui/material'
 import type { FormEventHandler, ReactNode } from 'react'
@@ -110,7 +102,6 @@ import React, {
 import { Trans, useTranslation } from 'react-i18next'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
-import AllowChar from './Components/AllowChar'
 import ArtifactSetConfig from './Components/ArtifactSetConfig'
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle'
 import BonusStatsCard from './Components/BonusStatsCard'
@@ -121,6 +112,8 @@ import ExcludeArt from './Components/ExcludeArt'
 import MainStatSelectionCard from './Components/MainStatSelectionCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
+import UseEquipped from './Components/UseEquipped'
+import { UseTeammateArt } from './Components/UseTeammateArt'
 
 const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
@@ -130,7 +123,6 @@ export default function TabBuild() {
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
     teamId,
-    team: { loadoutData },
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
@@ -182,7 +174,6 @@ export default function TabBuild() {
     builds: buildsDb,
     buildDate,
     useTeammateBuild,
-    allowLocationsState,
   } = buildSetting
 
   const builds = useConstObj(buildsDb)
@@ -201,23 +192,7 @@ export default function TabBuild() {
 
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
-  const teammateArtifactIds = useMemo(
-    () =>
-      Array.from(
-        new Set(
-          loadoutData
-            .filter(notEmpty)
-            .filter((loadoutDatum) => loadoutDatum.teamCharId !== teamCharId)
-            .map((loadoutDatum) =>
-              database.teams.getLoadoutArtifacts(loadoutDatum)
-            )
-            .flatMap((arts) => Object.values(arts))
-            .filter(notEmpty)
-            .map(({ id }) => id)
-        )
-      ),
-    [database, loadoutData, teamCharId]
-  )
+  const teammateArtifactIds = useTeammateArtifactIds()
   const filteredArts = useMemo(() => {
     const {
       mainStatKeys,
@@ -225,7 +200,6 @@ export default function TabBuild() {
       artExclusion,
       levelLow,
       levelHigh,
-      allowLocationsState,
       useExcludedArts,
       useTeammateBuild,
     } = deferredArtsDirty && deferredBuildSetting
@@ -241,16 +215,12 @@ export default function TabBuild() {
         return false
 
       const locKey = charKeyToLocCharKey(characterKey)
-      const unequippedStateAndEquippedElsewhere =
-        allowLocationsState === 'unequippedOnly' &&
-        art.location &&
-        art.location !== locKey
-      const customListStateAndNotOnList =
-        allowLocationsState === 'customList' &&
+
+      if (
         art.location &&
         art.location !== locKey &&
         excludedLocations.includes(art.location)
-      if (unequippedStateAndEquippedElsewhere || customListStateAndNotOnList)
+      )
         return false
 
       return true
@@ -282,26 +252,18 @@ export default function TabBuild() {
       return bulkCatTotal(catKeys, (ctMap) =>
         database.arts.entries.forEach(([id, art]) => {
           const { level, location } = art
-          const {
-            levelLow,
-            levelHigh,
-            excludedLocations,
-            allowLocationsState,
-            artExclusion,
-          } = deferredArtsDirty && deferredBuildSetting
+          const { levelLow, levelHigh, excludedLocations, artExclusion } =
+            deferredArtsDirty && deferredBuildSetting
           if (level >= levelLow && level <= levelHigh) {
             ctMap.levelTotal.in.total++
             if (filteredArtIdMap[id]) ctMap.levelTotal.in.current++
           }
           const locKey = charKeyToLocCharKey(characterKey)
-          const allStateAndEquippedSomewhereElse =
-            allowLocationsState === 'all' && location && location !== locKey
-          const customListStateAndNotOnList =
-            allowLocationsState === 'customList' &&
+          if (
             location &&
             location !== locKey &&
             !excludedLocations.includes(location)
-          if (allStateAndEquippedSomewhereElse || customListStateAndNotOnList) {
+          ) {
             ctMap.allowListTotal.in.total++
             if (filteredArtIdMap[id]) ctMap.allowListTotal.in.current++
           }
@@ -673,105 +635,13 @@ export default function TabBuild() {
           {/* use excluded */}
           <ExcludeArt
             disabled={generatingBuilds}
-            excludedTotal={excludedTotal.in}
+            excludedTotal={excludedTotal['in']}
           />
-          <Tooltip
-            arrow
-            title={
-              <Box>
-                <Suspense
-                  fallback={
-                    <Skeleton variant="rectangular" width={400} height={400} />
-                  }
-                >
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: 1,
-                    }}
-                  >
-                    {loadoutData
-                      .filter(notEmpty)
-                      .filter(
-                        (loadoutDatum) => loadoutDatum.teamCharId !== teamCharId
-                      )
-                      .map((loadoutDatum) => {
-                        const characterKey = database.teamChars.get(
-                          loadoutDatum?.teamCharId
-                        )?.key
-                        const artifacts =
-                          loadoutDatum.buildType === 'tc'
-                            ? undefined
-                            : database.teams.getLoadoutArtifacts(loadoutDatum)
-                        return (
-                          <CardThemed
-                            sx={{
-                              p: 1,
-                              display: 'flex',
-                              flexDirection: 'column',
-                              gap: 1,
-                            }}
-                          >
-                            <Box display="flex" alignItems="center" gap={1}>
-                              {characterKey && (
-                                <CharIconSide characterKey={characterKey} />
-                              )}
-                              <Typography>
-                                {database.teams.getActiveBuildName(
-                                  loadoutDatum
-                                )}
-                              </Typography>
-                            </Box>
-                            {artifacts ? (
-                              <Grid container columns={5} spacing={1}>
-                                {Object.entries(artifacts).map(
-                                  ([slotKey, art]) => (
-                                    <Grid item key={slotKey} xs={1}>
-                                      <ArtifactCardPico
-                                        artifactObj={art}
-                                        slotKey={slotKey}
-                                      />
-                                    </Grid>
-                                  )
-                                )}
-                              </Grid>
-                            ) : (
-                              <Typography>
-                                <SqBadge sx={{ width: '100%' }}>
-                                  TC build
-                                </SqBadge>
-                              </Typography>
-                            )}
-                          </CardThemed>
-                        )
-                      })}
-                  </Box>
-                </Suspense>
-              </Box>
-            }
-          >
-            <Button
-              fullWidth
-              startIcon={
-                useTeammateBuild ? <CheckBox /> : <CheckBoxOutlineBlank />
-              }
-              endIcon={<InfoIcon />}
-              color={useTeammateBuild ? 'success' : 'secondary'}
-              onClick={() => {
-                database.optConfigs.set(optConfigId, {
-                  useTeammateBuild: !useTeammateBuild,
-                })
-              }}
-              disabled={generatingBuilds}
-            >
-              <Box display="flex" gap={1}>
-                {/* TODO: Translation */}
-                <span>Use artifacts in teammates' active builds</span>
-                <Chip label={teammateBuildTotal.in} size="small" />
-              </Box>
-            </Button>
-          </Tooltip>
+          <UseTeammateArt
+            totalTally={teammateBuildTotal['in']}
+            useTeammateBuild={useTeammateBuild}
+            disabled={generatingBuilds}
+          />
           <Button
             fullWidth
             startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />}
@@ -787,7 +657,7 @@ export default function TabBuild() {
           </Button>
 
           {/* use equipped */}
-          <AllowChar
+          <UseEquipped
             disabled={generatingBuilds}
             allowListTotal={allowListTotal.in}
           />
@@ -964,7 +834,6 @@ export default function TabBuild() {
             getLabel={getGraphBuildLabel}
             setBuilds={setGraphBuilds}
             mainStatAssumptionLevel={mainStatAssumptionLevel}
-            allowLocationsState={allowLocationsState}
           />
         )}
         <BuildList
@@ -973,7 +842,6 @@ export default function TabBuild() {
           disabled={!!generatingBuilds}
           getLabel={getNormBuildLabel}
           mainStatAssumptionLevel={mainStatAssumptionLevel}
-          allowLocationsState={allowLocationsState}
         />
       </OptimizationTargetContext.Provider>
     </Box>
@@ -1002,25 +870,23 @@ const LevelFilter = memo(function LevelFilter({
         <SqBadge color="info">{levelTotal}</SqBadge>
       </CardContent>
       <Divider />
-      <CardContent>
-        <ArtifactLevelSlider
-          levelLow={levelLow}
-          levelHigh={levelHigh}
-          setLow={(levelLow) =>
-            database.optConfigs.set(optConfigId, { levelLow })
-          }
-          setHigh={(levelHigh) =>
-            database.optConfigs.set(optConfigId, { levelHigh })
-          }
-          setBoth={(levelLow, levelHigh) =>
-            database.optConfigs.set(optConfigId, {
-              levelLow,
-              levelHigh,
-            })
-          }
-          disabled={disabled}
-        />
-      </CardContent>
+      <ArtifactLevelSlider
+        levelLow={levelLow}
+        levelHigh={levelHigh}
+        setLow={(levelLow) =>
+          database.optConfigs.set(optConfigId, { levelLow })
+        }
+        setHigh={(levelHigh) =>
+          database.optConfigs.set(optConfigId, { levelHigh })
+        }
+        setBoth={(levelLow, levelHigh) =>
+          database.optConfigs.set(optConfigId, {
+            levelLow,
+            levelHigh,
+          })
+        }
+        disabled={disabled}
+      />
     </CardThemed>
   )
 })
@@ -1070,7 +936,6 @@ const BuildList = memo(function BuildList({
   disabled,
   getLabel,
   mainStatAssumptionLevel,
-  allowLocationsState,
 }: {
   builds: GeneratedBuild[]
   setBuilds?: (builds: GeneratedBuild[] | undefined) => void
@@ -1078,7 +943,6 @@ const BuildList = memo(function BuildList({
   disabled: boolean
   getLabel: (index: number) => ReactNode
   mainStatAssumptionLevel: number
-  allowLocationsState: AllowLocationsState
 }) {
   const deleteBuild = useCallback(
     (index: number) => {
@@ -1114,7 +978,6 @@ const BuildList = memo(function BuildList({
             disabled={disabled}
             deleteBuild={setBuilds ? deleteBuild : undefined}
             mainStatAssumptionLevel={mainStatAssumptionLevel}
-            allowLocationsState={allowLocationsState}
           />
         </DataContextWrapper>
       ))}
@@ -1128,7 +991,6 @@ const BuildItemWrapper = memo(function BuildItemWrapper({
   disabled,
   deleteBuild,
   mainStatAssumptionLevel,
-  allowLocationsState,
 }: {
   index: number
   label: ReactNode
@@ -1136,7 +998,6 @@ const BuildItemWrapper = memo(function BuildItemWrapper({
   disabled: boolean
   deleteBuild?: (index: number) => void
   mainStatAssumptionLevel: number
-  allowLocationsState: AllowLocationsState
 }) {
   const { t } = useTranslation('page_character_optimize')
   const extraButtonsLeft = useMemo(() => {
@@ -1163,7 +1024,6 @@ const BuildItemWrapper = memo(function BuildItemWrapper({
       disabled={disabled}
       extraButtonsLeft={extraButtonsLeft}
       mainStatAssumptionLevel={mainStatAssumptionLevel}
-      allowLocationsState={allowLocationsState}
     />
   )
 })

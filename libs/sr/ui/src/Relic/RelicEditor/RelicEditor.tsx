@@ -24,7 +24,6 @@ import {
   ButtonGroup,
   CardContent,
   CardHeader,
-  Container,
   Grid,
   MenuItem,
   Select,
@@ -151,7 +150,7 @@ export function RelicEditor({ relicIdToEdit = 'new' }: RelicEditorProps) {
   }, [relicIdToEdit])
 
   return (
-    <Container>
+    <Suspense fallback={false}>
       <CardThemed bgt="dark">
         <CardHeader title="Relic Editor" />
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -328,6 +327,6 @@ export function RelicEditor({ relicIdToEdit = 'new' }: RelicEditorProps) {
           </Grid>
         </CardContent>
       </CardThemed>
-    </Container>
+    </Suspense>
   )
 }

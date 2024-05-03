@@ -102,5 +102,10 @@
   "tabTeambuff": {
     "team_reso": "Team Resonance",
     "resonance_tip": "The party must be full with 4 characters in order for Elemental Resonance to take effect."
+  },
+  "noLoadout": "Looks like you haven't added any loadout/Teams with this character yet. You need to create a loadout+team with this character to <strong>create builds</strong>, <strong>theorycraft</strong>, or <strong>optimize</strong>.",
+  "teammateUsing": {
+    "weapon": "Teammate <strong><1></1></strong> is using this weapon.",
+    "artifact": "Teammate <strong><1></1></strong> is using this <3></3>"
   }
 }

@@ -122,6 +122,9 @@
       "@genshin-optimizer/sr/page-lightcones": [
         "libs/sr/page-lightcones/src/index.tsx"
       ],
+      "@genshin-optimizer/sr/page-relics": [
+        "libs/sr/page-relics/src/index.tsx"
+      ],
       "@genshin-optimizer/sr/solver": ["libs/sr/solver/src/index.ts"],
       "@genshin-optimizer/sr/srod": ["libs/sr/srod/src/index.ts"],
       "@genshin-optimizer/sr/stats": ["libs/sr/stats/src/index.ts"],

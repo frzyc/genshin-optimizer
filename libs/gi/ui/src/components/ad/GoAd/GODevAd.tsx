@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
+import { toDiscord } from '../util'
 
 export function GODevAd({ children }: { children: ReactNode }) {
   return (
@@ -14,8 +15,10 @@ export function GODevAd({ children }: { children: ReactNode }) {
         flexDirection: 'column',
         p: '10px',
         cursor: 'pointer',
+        minHeight: '100%',
+        minWidth: '100%',
       }}
-      onClick={() => window.open('https://discord.gg/CXUbQXyfUs', '_blank')}
+      onClick={toDiscord}
     >
       {children}
       <Typography variant="h5" color="darkred">

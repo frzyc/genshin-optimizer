@@ -150,9 +150,9 @@ function BuildDisplay({
   const {
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const { mainStatAssumptionLevel, allowLocationsState } = useOptConfig(
-    optConfigId
-  ) ?? { mainStatAssumptionLevel: 0, allowLocationsState: 'all' }
+  const { mainStatAssumptionLevel } = useOptConfig(optConfigId) ?? {
+    mainStatAssumptionLevel: 0,
+  }
   return (
     <Suspense
       fallback={<Skeleton variant="rectangular" width="100%" height={600} />}
@@ -172,7 +172,6 @@ function BuildDisplay({
               </IconButton>
             }
             mainStatAssumptionLevel={mainStatAssumptionLevel}
-            allowLocationsState={allowLocationsState}
           />
         </DataContext.Provider>
       )}

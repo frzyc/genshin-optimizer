@@ -95,8 +95,8 @@ export class DataManagerBase<
       this.trigger(key, 'invalid', value)
       return false
     }
-    if (!old && notify) this.trigger(key, 'new', cached)
     this.setCached(key, cached)
+    if (!old && notify) this.trigger(key, 'new', cached)
     return true
   }
   setCached(key: CacheKey, cached: CacheValue) {

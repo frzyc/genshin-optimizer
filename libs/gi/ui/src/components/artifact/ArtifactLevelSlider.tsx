@@ -1,6 +1,6 @@
 import { CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
-import { Box, Card, Divider, Slider } from '@mui/material'
+import { Box, Divider, Slider } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
 
 export function ArtifactLevelSlider({
@@ -37,7 +37,7 @@ export function ArtifactLevelSlider({
 
   useEffect(() => setsliderHigh(levelHigh), [setsliderHigh, levelHigh])
   return (
-    <Card
+    <Box
       sx={{
         width: '100%',
         display: 'flex',
@@ -75,7 +75,6 @@ export function ArtifactLevelSlider({
           sx={{
             px: 1,
             width: showLevelText ? '45%' : '100%',
-            borderRadius: showLevelText ? 0 : '4px 0 0 4px',
           }}
           inputProps={{ sx: { textAlign: showLevelText ? 'right' : 'center' } }}
           disabled={disabled}
@@ -99,10 +98,10 @@ export function ArtifactLevelSlider({
       <CustomNumberInput
         value={sliderHigh}
         onChange={(val) => setHigh(clamp(val ?? 0, levelLow, 20))}
-        sx={{ px: 1, width: 50, borderRadius: '0 4px 4px 0' }}
+        sx={{ px: 1, width: '3em' }}
         inputProps={{ sx: { textAlign: 'center' } }}
         disabled={disabled}
       />
-    </Card>
+    </Box>
   )
 }

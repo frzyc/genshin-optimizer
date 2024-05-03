@@ -1,13 +1,15 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { SqBadge } from '@genshin-optimizer/common/ui'
+import { SqBadge, TextFieldLazy } from '@genshin-optimizer/common/ui'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import {
+  AdCard,
   BuildInfoAlert,
+  EquippedBuildInfoAlert,
   FormulaDataContext,
   LoadoutInfoAlert,
-  LoadoutNameDesc,
+  TCBuildInfoAlert,
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import BarChartIcon from '@mui/icons-material/BarChart'
@@ -32,10 +34,15 @@ import { CustomMultiTargetButton } from './CustomMultiTarget'
 import StatModal from './StatModal'
 
 // TODO: Translation
-const columns = { xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }
+const columns = { xs: 1, sm: 1, md: 2, lg: 2 }
 export default function LoadoutSettingElement() {
   const database = useDatabase()
-  const { teamId, teamChar, teamCharId } = useContext(TeamCharacterContext)
+  const {
+    teamId,
+    teamChar,
+    teamChar: { name, description },
+    teamCharId,
+  } = useContext(TeamCharacterContext)
 
   const onChangeTeamCharId = (newTeamCharId: string) => {
     const index = database.teams
@@ -66,7 +73,23 @@ export default function LoadoutSettingElement() {
           }}
           label
         />
-        <LoadoutNameDesc teamCharId={teamCharId} />
+        <TextFieldLazy
+          fullWidth
+          label="Loadout Name"
+          placeholder="Loadout Name"
+          value={name}
+          onChange={(name) => database.teamChars.set(teamCharId, { name })}
+        />
+        <TextFieldLazy
+          fullWidth
+          label="Loadout Description"
+          value={description}
+          onChange={(description) =>
+            database.teamChars.set(teamCharId, { description })
+          }
+          multiline
+          minRows={2}
+        />
         <Box display="flex" gap={2} flexWrap="wrap">
           <DetailStatButton
             buttonProps={{
@@ -105,7 +128,6 @@ function BuildManagementContent() {
   } = useContext(TeamCharacterContext)
 
   const weaponTypeKey = getCharStat(characterKey).weaponType
-
   return (
     <>
       <CardHeader
@@ -117,10 +139,13 @@ function BuildManagementContent() {
         }
       />
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        <BuildInfoAlert />
+        <EquippedBuildInfoAlert />
         <Grid container columns={columns} spacing={2}>
           <Grid item xs={1}>
             <BuildEquipped active={loadoutDatum?.buildType === 'equipped'} />
+          </Grid>
+          <Grid item xs={1}>
+            <AdCard dataAdSlot="5385429639" bgt="light" />
           </Grid>
         </Grid>
 
@@ -135,7 +160,7 @@ function BuildManagementContent() {
             New Build
           </Button>
         </Box>
-
+        <BuildInfoAlert />
         <Box>
           <Grid container columns={columns} spacing={2}>
             {buildIds.map((id) => (
@@ -165,7 +190,7 @@ function BuildManagementContent() {
             New TC Build
           </Button>
         </Box>
-
+        <TCBuildInfoAlert />
         <Box>
           <Grid container columns={columns} spacing={2}>
             {buildTcIds.map((id) => (

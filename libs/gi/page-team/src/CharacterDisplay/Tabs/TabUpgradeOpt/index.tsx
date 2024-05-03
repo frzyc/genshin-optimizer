@@ -98,7 +98,6 @@ export default function TabUpopt() {
       artExclusion,
       levelLow,
       levelHigh,
-      allowLocationsState,
       useExcludedArts,
     } = deferredArtsDirty && deferredBuildSetting
 
@@ -111,16 +110,11 @@ export default function TabUpopt() {
         return false
 
       const locKey = charKeyToLocCharKey(characterKey)
-      const unequippedStateAndEquippedElsewhere =
-        allowLocationsState === 'unequippedOnly' &&
-        art.location &&
-        art.location !== locKey
-      const customListStateAndNotOnList =
-        allowLocationsState === 'customList' &&
+      if (
         art.location &&
         art.location !== locKey &&
         excludedLocations.includes(art.location)
-      if (unequippedStateAndEquippedElsewhere || customListStateAndNotOnList)
+      )
         return false
 
       return true

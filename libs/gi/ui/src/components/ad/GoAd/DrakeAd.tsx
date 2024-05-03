@@ -1,5 +1,6 @@
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
+import { toMainSite } from '../util'
 import drake from './drake.png'
 export function DrakeAd({ children }: { children: ReactNode }) {
   return (
@@ -11,15 +12,23 @@ export function DrakeAd({ children }: { children: ReactNode }) {
         cursor: 'pointer',
         position: 'relative',
         backgroundColor: 'white !important',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        width: '100%',
+        height: '100%',
       }}
-      onClick={() =>
-        window.alert(
-          'Why did you click on this? You are already on Genshin optimizer!'
-        )
-      }
+      onClick={toMainSite}
     >
       {children}
-      <Box component="img" src={drake} maxWidth="100%" maxHeight="100%" />
+      <Box
+        component="img"
+        src={drake}
+        maxWidth="100%"
+        maxHeight="100%"
+        width="100%"
+        height="100%"
+        sx={{ objectFit: 'contain' }}
+      />
     </Box>
   )
 }
