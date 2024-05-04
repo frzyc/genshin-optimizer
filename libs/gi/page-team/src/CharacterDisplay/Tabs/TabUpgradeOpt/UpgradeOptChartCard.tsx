@@ -217,7 +217,7 @@ function UpgradeOptChartCardGraph({
           <YAxis
             type="number"
             domain={[0, ymax]}
-            tickFormatter={(v) => `${v * 100}%`}
+            tickFormatter={(v) => `${(v * 100).toFixed()}%`}
           >
             <Label
               value="Probability"
