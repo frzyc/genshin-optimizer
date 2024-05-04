@@ -23,7 +23,6 @@ import {
   Button,
   CardContent,
   CardHeader,
-  Container,
   Grid,
   MenuItem,
   Skeleton,
@@ -124,7 +123,7 @@ export function LightConeEditor({
   }, [lightConeIdToEdit])
 
   return (
-    <Container>
+    <Suspense fallback={false}>
       <CardThemed bgt="dark">
         <CardHeader title="Light Cone Editor" />
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -211,7 +210,7 @@ export function LightConeEditor({
           </Grid>
         </CardContent>
       </CardThemed>
-    </Container>
+    </Suspense>
   )
 }
 

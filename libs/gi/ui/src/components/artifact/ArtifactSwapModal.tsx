@@ -7,6 +7,7 @@ import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
+  ShowingAndSortOptionSelect,
   useInfScroll,
 } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
@@ -33,7 +34,6 @@ import {
 import { Suspense, useCallback, useEffect, useMemo, useReducer } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CompareBuildButton } from '../CompareBuildButton'
-import { ShowingAndSortOptionSelect } from '../ShowingAndSortOptionSelect'
 import { ArtifactCard } from './ArtifactCard'
 import { ArtifactFilterDisplay } from './ArtifactFilterDisplay'
 import { ArtifactEditor } from './editor'

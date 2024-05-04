@@ -136,7 +136,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
             (loc) => !allowLocations.includes(loc)
           )
           delete b.allowLocations
-          return { ...b, excludedLocations, allowLocationsState: 'customList' }
+          return { ...b, excludedLocations }
         }
         return b
       })
@@ -389,7 +389,6 @@ export function migrate(storage: DBStorage) {
           storage.set(key, {
             ...b,
             excludedLocations,
-            allowLocationsState: 'customList',
           })
         }
       }

@@ -1,7 +1,7 @@
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
+import { toMainSite } from '../util'
 import drake from './drake.png'
-import { toMSite } from './util'
 export function DrakeAd({ children }: { children: ReactNode }) {
   return (
     <Box
@@ -12,11 +12,23 @@ export function DrakeAd({ children }: { children: ReactNode }) {
         cursor: 'pointer',
         position: 'relative',
         backgroundColor: 'white !important',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        width: '100%',
+        height: '100%',
       }}
-      onClick={toMSite}
+      onClick={toMainSite}
     >
       {children}
-      <Box component="img" src={drake} maxWidth="100%" maxHeight="100%" />
+      <Box
+        component="img"
+        src={drake}
+        maxWidth="100%"
+        maxHeight="100%"
+        width="100%"
+        height="100%"
+        sx={{ objectFit: 'contain' }}
+      />
     </Box>
   )
 }

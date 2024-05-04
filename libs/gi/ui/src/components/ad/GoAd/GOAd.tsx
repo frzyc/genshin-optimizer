@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
-import { toMSite } from './util'
+import { toMainSite } from '../util'
 
 export function GOAd({ children }: { children: ReactNode }) {
   return (
@@ -14,9 +14,10 @@ export function GOAd({ children }: { children: ReactNode }) {
         justifyContent: 'center',
         p: '10px',
         cursor: 'pointer',
-        minHeight: 60,
+        minHeight: '100%',
+        minWidth: '100%',
       }}
-      onClick={toMSite}
+      onClick={toMainSite}
     >
       {children}
       <Typography color="black">

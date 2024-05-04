@@ -3,6 +3,7 @@ import {
   CardThemed,
   InfoTooltip,
   ModalWrapper,
+  TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
 import { arrayMove, deepClone } from '@genshin-optimizer/common/util'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
@@ -24,17 +25,9 @@ import {
   Chip,
   Divider,
   IconButton,
-  TextField,
   Typography,
 } from '@mui/material'
-import type { Dispatch, SetStateAction } from 'react'
-import {
-  useCallback,
-  useDeferredValue,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelectorModal'
 import CustomTargetDisplay from './CustomTargetDisplay'
@@ -50,10 +43,10 @@ export default function CustomMultiTargetCard({
   onDup: () => void
 }) {
   const { t } = useTranslation('page_character')
-  const [target, setTarget] = useState(targetProp)
+  const [target, setTarget] = useState(structuredClone(targetProp))
   useEffect(() => {
     if (JSON.stringify(targetProp) !== JSON.stringify(target))
-      setTarget(targetProp)
+      setTarget(structuredClone(targetProp))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [targetProp])
 
@@ -194,7 +187,31 @@ export default function CustomMultiTargetCard({
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
           >
-            <NameDesc name={name} desc={description} setTarget={setTarget} />
+            <TextFieldLazy
+              fullWidth
+              label="Custom Multi-target Name"
+              value={name}
+              onChange={(name) =>
+                setTarget((target) => ({
+                  ...target,
+                  name,
+                }))
+              }
+            />
+            <TextFieldLazy
+              fullWidth
+              label="Custom Multi-target Description"
+              value={description}
+              onChange={(description) =>
+                setTarget((target) => ({
+                  ...target,
+                  description,
+                }))
+              }
+              multiline
+              minRows={2}
+            />
+
             <Box display="flex" gap={2}>
               <Button
                 onClick={onDup}
@@ -226,65 +243,6 @@ export default function CustomMultiTargetCard({
           </CardContent>
         </CardThemed>
       </ModalWrapper>
-    </>
-  )
-}
-function NameDesc({
-  name: nameProp,
-  desc: descProp,
-  setTarget,
-}: {
-  name: string
-  desc?: string
-  setTarget: Dispatch<SetStateAction<CustomMultiTarget>>
-}) {
-  const [name, setName] = useState(nameProp)
-  const nameDeferred = useDeferredValue(name)
-  const [desc, setDesc] = useState(descProp)
-  const descDeferred = useDeferredValue(desc)
-
-  useEffect(() => {
-    setName(nameProp)
-  }, [nameProp])
-
-  useEffect(() => {
-    setDesc(descProp)
-  }, [descProp])
-
-  useEffect(() => {
-    setTarget((target) => ({
-      ...target,
-      name: nameDeferred,
-    }))
-    // Don't need to trigger when teamCharId is changed, only when the name is changed.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setTarget, nameDeferred])
-
-  useEffect(() => {
-    setTarget((target) => ({
-      ...target,
-      description: descDeferred,
-    }))
-    // Don't need to trigger when teamCharId is changed, only when the name is changed.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setTarget, descDeferred])
-
-  return (
-    <>
-      <TextField
-        fullWidth
-        label="Custom Multi-target Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <TextField
-        fullWidth
-        label="Custom Multi-target Description"
-        value={desc}
-        onChange={(e) => setDesc(e.target.value)}
-        multiline
-        minRows={2}
-      />
     </>
   )
 }

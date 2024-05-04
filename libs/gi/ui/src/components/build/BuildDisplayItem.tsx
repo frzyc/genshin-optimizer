@@ -17,10 +17,7 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import type {
-  AllowLocationsState,
-  ArtSetExclusionKey,
-} from '@genshin-optimizer/gi/db'
+import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
 import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi/db'
 import {
   CharacterContext,
@@ -28,6 +25,7 @@ import {
   useArtifact,
   useDBMeta,
   useDatabase,
+  useEquippedInTeam,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -68,6 +66,7 @@ import { CharacterName } from '../character'
 import { StatDisplayComponent } from '../character/StatDisplayComponent'
 import { WeaponCard, WeaponCardNano } from '../weapon'
 import { EquipBuildModal } from './EquipBuildModal'
+import { TeammateEquippedAlert } from './TeammateEquippedAlert'
 type NewOld = {
   newId: string
   oldId?: string
@@ -79,7 +78,6 @@ type BuildDisplayItemProps = {
   extraButtonsRight?: JSX.Element
   extraButtonsLeft?: JSX.Element
   mainStatAssumptionLevel: number
-  allowLocationsState: AllowLocationsState
 }
 
 // TODO: Translation for build UI
@@ -90,7 +88,6 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   extraButtonsLeft,
   disabled,
   mainStatAssumptionLevel,
-  allowLocationsState,
 }: BuildDisplayItemProps) {
   const {
     loadoutDatum: { buildType, buildId },
@@ -166,50 +163,68 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
       })
   }, [characterKey, buildEquip, buildId, data, database])
 
-  const artifactIdsBySlot = useMemo(
+  const artifactIds = useMemo(
     () =>
-      Object.fromEntries(
-        allArtifactSlotKeys.map((slotKey) => [
-          slotKey,
-          data.get(input.art[slotKey].id).value?.toString(),
-        ])
+      objKeyMap(allArtifactSlotKeys, (slotKey) =>
+        data.get(input.art[slotKey].id).value?.toString()
       ),
     [data]
   )
   const artifacts = useMemo(
     () =>
-      artifactIdsBySlot &&
-      Object.values(artifactIdsBySlot)
+      Object.values(artifactIds)
         .filter(notEmpty)
         .map((artiId: string) => database.arts.get(artiId))
         .filter(notEmpty),
-    [artifactIdsBySlot, database.arts]
+    [artifactIds, database.arts]
+  )
+  const weaponId = data.get(input.weapon.id).value!
+
+  const { weaponUsedInTeamCharKey, artUsedInTeamCharKeys } = useEquippedInTeam(
+    weaponId!,
+    artifactIds
   )
 
   const weapNano = useMemo(() => {
     return (
       <Grid item xs={1}>
-        <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+        <CardThemed
+          sx={{
+            height: '100%',
+            maxHeight: '8em',
+            boxShadow: weaponUsedInTeamCharKey
+              ? '0px 0px 0px 2px yellow'
+              : undefined,
+          }}
+        >
           <WeaponCardNano
             showLocation
-            weaponId={data.get(input.weapon.id).value!}
+            weaponId={weaponId}
             onClick={onShowWeapon}
           />
         </CardThemed>
       </Grid>
     )
-  }, [data, onShowWeapon])
+  }, [weaponUsedInTeamCharKey, weaponId, onShowWeapon])
 
   // Memoize Arts because of its dynamic onClick
   const artNanos = useMemo(
     () =>
       allArtifactSlotKeys.map((slotKey) => (
         <Grid item xs={1} key={slotKey}>
-          <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+          <CardThemed
+            sx={{
+              height: '100%',
+              maxHeight: '8em',
+              boxShadow: artUsedInTeamCharKeys[slotKey]
+                ? '0px 0px 0px 2px yellow'
+                : undefined,
+            }}
+          >
             <ArtifactCardNano
               showLocation
               slotKey={slotKey}
-              artifactId={artifactIdsBySlot[slotKey]}
+              artifactId={artifactIds[slotKey]}
               mainStatAssumptionLevel={mainStatAssumptionLevel}
               onClick={() => {
                 const oldId = artifactNewOldBySlot[slotKey].oldId
@@ -224,16 +239,16 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
         </Grid>
       )),
     [
-      setArtNewOld,
-      artifactNewOldBySlot,
+      artUsedInTeamCharKeys,
+      artifactIds,
       mainStatAssumptionLevel,
-      artifactIdsBySlot,
+      artifactNewOldBySlot,
     ]
   )
 
   const currentlyEquipped =
     allArtifactSlotKeys.every(
-      (slotKey) => artifactIdsBySlot[slotKey] === equippedArtifacts[slotKey]
+      (slotKey) => artifactIds[slotKey] === equippedArtifacts[slotKey]
     ) && data.get(input.weapon.id).value === equippedWeapon
 
   const sameAsBuildIds = useMemo(
@@ -242,14 +257,14 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
       buildIds.filter((buildId) => {
         const build = database.builds.get(buildId)
         if (!build) return false
-        const { artifactIds, weaponId } = build
+        const { artifactIds: buildArtIds, weaponId: buildWeaponId } = build
         return (
           allArtifactSlotKeys.every(
-            (slotKey) => artifactIdsBySlot[slotKey] === artifactIds[slotKey]
-          ) && data.get(input.weapon.id).value === weaponId
+            (slotKey) => artifactIds[slotKey] === buildArtIds[slotKey]
+          ) && weaponId === buildWeaponId
         )
       }),
-    [dbDirty, database, buildIds, artifactIdsBySlot, data]
+    [dbDirty, database, buildIds, artifactIds, weaponId]
   )
 
   const isActiveBuild = buildType === 'real' && sameAsBuildIds.includes(buildId)
@@ -332,7 +347,6 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
             newOld={artNewOld}
             mainStatAssumptionLevel={mainStatAssumptionLevel}
             onClose={closeArt}
-            allowLocationsState={allowLocationsState}
             compareFromCharEditor={compareFromCharEditor}
           />
         )}
@@ -418,6 +432,10 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
               {artNanos}
             </Grid>
           </Box>
+          <TeammateEquippedAlert
+            weaponUsedInTeamCharKey={weaponUsedInTeamCharKey}
+            artUsedInTeamCharKeys={artUsedInTeamCharKeys}
+          />
           <StatDisplayComponent />
         </CardContent>
       </Suspense>
@@ -498,13 +516,11 @@ function CompareArtifactModal({
   newOld: { newId, oldId },
   mainStatAssumptionLevel,
   onClose,
-  allowLocationsState,
   compareFromCharEditor,
 }: {
   newOld: NewOld
   mainStatAssumptionLevel: number
   onClose: () => void
-  allowLocationsState: AllowLocationsState
   compareFromCharEditor: boolean
 }) {
   const database = useDatabase()
@@ -602,11 +618,9 @@ function CompareArtifactModal({
             {!compareFromCharEditor && (
               <>
                 {newArtifact && <ArtInclusionButton id={newId} />}
-                {newLoc &&
-                  newLoc !== charKeyToLocCharKey(characterKey) &&
-                  allowLocationsState !== 'all' && (
-                    <ExcludeEquipButton locationKey={newLoc} />
-                  )}
+                {newLoc && newLoc !== charKeyToLocCharKey(characterKey) && (
+                  <ExcludeEquipButton locationKey={newLoc} />
+                )}
                 {newArtifact &&
                   allArtifactSetExclusionKeys.includes(
                     newArtifact.setKey as ArtSetExclusionKey
