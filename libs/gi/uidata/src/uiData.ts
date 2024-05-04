@@ -358,18 +358,16 @@ export class UIData {
     operands: CalcResult<number>[]
   ): CalcResult<number> {
     const info = accumulateInfo(operands)
+    const isEmpty = operands.every((x) => x.isEmpty)
     switch (operation) {
       case 'add':
       case 'mul':
       case 'min':
       case 'max': {
-        const identity = allOperations[operation]([])
-        if (process.env['NODE_ENV'] !== 'development')
+        if (process.env['NODE_ENV'] !== 'development') {
+          const identity = allOperations[operation]([])
           operands = operands.filter((operand) => operand.value !== identity)
-        if (!operands.length)
-          return Object.values(info).some((x) => x)
-            ? { ...this._constant(identity), info }
-            : this._constant(identity)
+        }
       }
     }
 
@@ -381,7 +379,7 @@ export class UIData {
         conds: operands.flatMap((op) => op.meta.conds),
       },
       info,
-      isEmpty: operands.every((x) => x.isEmpty),
+      isEmpty,
     }
   }
 }
