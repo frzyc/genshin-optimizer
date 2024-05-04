@@ -53,7 +53,7 @@ function Content() {
     >
       <Header anchor="back-to-top-anchor" />
 
-      <Container maxWidth="xl" sx={{ px: { xs: -1.5, sm: 1 } }}>
+      <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1 } }}>
         <Suspense
           fallback={
             <Skeleton
