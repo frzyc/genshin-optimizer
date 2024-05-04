@@ -1,6 +1,10 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
-import { DataContext, NodeFieldDisplay } from '@genshin-optimizer/gi/ui'
+import {
+  DataContext,
+  FieldDisplayList,
+  NodeFieldDisplay,
+} from '@genshin-optimizer/gi/ui'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { CardContent, Divider, Typography } from '@mui/material'
@@ -26,11 +30,11 @@ export default function BonusStatsCard() {
         >{t`bonusStats.title`}</Typography>
       </CardContent>
       <Divider />
-      <CardContent>
+      <FieldDisplayList bgt="light">
         {nodes.map((n) => (
           <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />
         ))}
-      </CardContent>
+      </FieldDisplayList>
     </CardThemed>
   )
 }

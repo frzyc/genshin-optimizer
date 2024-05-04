@@ -23,10 +23,6 @@ import {
   AddArtInfo,
   ArtifactEditor,
   ArtifactLevelSlider,
-  CharacterCardEquipmentRow,
-  CharacterCardHeader,
-  CharacterCardHeaderContent,
-  CharacterCardStats,
   DataContext,
   HitModeToggle,
   NoArtWarning,
@@ -62,6 +58,7 @@ import { Trans } from 'react-i18next'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
+import { OptCharacterCard } from '../TabOptimize/Components/OptCharacterCard'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
@@ -379,37 +376,7 @@ export default function TabUpopt() {
                   gap={1}
                 >
                   {/* character card */}
-                  <Box>
-                    <Suspense
-                      fallback={
-                        <Skeleton
-                          variant="rectangular"
-                          width="100%"
-                          height={600}
-                        />
-                      }
-                    >
-                      <CardThemed bgt="light">
-                        <CharacterCardHeader characterKey={characterKey}>
-                          <CharacterCardHeaderContent
-                            characterKey={characterKey}
-                          />
-                        </CharacterCardHeader>
-                        <Box
-                          sx={{
-                            p: 1,
-                            width: '100%',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: 1,
-                          }}
-                        >
-                          <CharacterCardEquipmentRow />
-                          <CharacterCardStats />
-                        </Box>
-                      </CardThemed>
-                    </Suspense>
-                  </Box>
+                  <OptCharacterCard characterKey={characterKey} />
                   <BonusStatsCard />
                 </Grid>
 
