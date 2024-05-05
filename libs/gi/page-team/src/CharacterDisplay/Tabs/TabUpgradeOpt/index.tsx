@@ -57,7 +57,6 @@ import {
   Suspense,
   useCallback,
   useContext,
-  useDeferredValue,
   useEffect,
   useMemo,
   useState,
@@ -89,20 +88,25 @@ export default function TabUpopt() {
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
-  const buildSetting = useOptConfig(optConfigId)!
-  const { optimizationTarget, upOptLevelLow, upOptLevelHigh } = buildSetting
+  const optConfig = useOptConfig(optConfigId)!
+  const { optimizationTarget, upOptLevelLow, upOptLevelHigh } = optConfig
   const teamData = useTeamData()
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
-  //register changes in artifact database
+  /**
+   * Only register new/removal for artifact, so that changes to artifact will not cause upopt recalc.
+   * Artifact updates are captured in UpgradeOptChartCard.
+   * This makes updating an calculated artifact will not update the calculator list.
+   */
   useEffect(
-    () => database.arts.followAny(setArtsDirty),
+    () =>
+      database.arts.followAny(
+        (_, reason) =>
+          (reason === 'new' || reason === 'remove') && setArtsDirty()
+      ),
     [setArtsDirty, database]
   )
-
-  const deferredArtsDirty = useDeferredValue(artsDirty)
-  const deferredBuildSetting = useDeferredValue(buildSetting)
   const filteredArts = useMemo(() => {
     const {
       mainStatKeys,
@@ -111,27 +115,30 @@ export default function TabUpopt() {
       upOptLevelLow,
       upOptLevelHigh,
       useExcludedArts,
-    } = deferredBuildSetting
+    } = optConfig
 
-    return database.arts.values.filter((art) => {
-      if (!useExcludedArts && artExclusion.includes(art.id)) return false
-      if (art.level < upOptLevelLow) return false
-      if (art.level > upOptLevelHigh) return false
-      const mainStats = mainStatKeys[art.slotKey]
-      if (mainStats?.length && !mainStats.includes(art.mainStatKey))
-        return false
+    return (
+      artsDirty &&
+      database.arts.values.filter((art) => {
+        if (!useExcludedArts && artExclusion.includes(art.id)) return false
+        if (art.level < upOptLevelLow) return false
+        if (art.level > upOptLevelHigh) return false
+        const mainStats = mainStatKeys[art.slotKey]
+        if (mainStats?.length && !mainStats.includes(art.mainStatKey))
+          return false
 
-      const locKey = charKeyToLocCharKey(characterKey)
-      if (
-        art.location &&
-        art.location !== locKey &&
-        excludedLocations.includes(art.location)
-      )
-        return false
+        const locKey = charKeyToLocCharKey(characterKey)
+        if (
+          art.location &&
+          art.location !== locKey &&
+          excludedLocations.includes(art.location)
+        )
+          return false
 
-      return true
-    })
-  }, [database, characterKey, deferredBuildSetting])
+        return true
+      })
+    )
+  }, [optConfig, artsDirty, database, characterKey])
   const filteredArtIdMap = useMemo(
     () =>
       objKeyMap(
@@ -148,15 +155,14 @@ export default function TabUpopt() {
     return bulkCatTotal(catKeys, (ctMap) =>
       database.arts.entries.forEach(([id, art]) => {
         const { level } = art
-        const { upOptLevelLow, upOptLevelHigh } =
-          deferredArtsDirty && deferredBuildSetting
+        const { upOptLevelLow, upOptLevelHigh } = optConfig
         if (level >= upOptLevelLow && level <= upOptLevelHigh) {
           ctMap['levelTotal']['in'].total++
           if (filteredArtIdMap[id]) ctMap['levelTotal']['in'].current++
         }
       })
     )
-  }, [database, deferredArtsDirty, deferredBuildSetting, filteredArtIdMap])
+  }, [database, optConfig, filteredArtIdMap])
 
   const equippedArts = useBuildArtifacts(loadoutDatum)
 
@@ -168,7 +174,7 @@ export default function TabUpopt() {
       upOptLevelLow,
       upOptLevelHigh,
       artSetExclusion,
-    } = deferredBuildSetting
+    } = optConfig
 
     if (!optimizationTarget) return
     // FIXME: Use teamData here because teamData recalcs upon dependency update. Its kind of jank since there are some redundant calcs
@@ -198,7 +204,7 @@ export default function TabUpopt() {
             workerData.display ?? {},
             JSON.parse(pathStr)
           )
-          const infoResolved = filterNode.info && resolveInfo(filterNode.info)
+          const infoResolved = filterNode?.info && resolveInfo(filterNode.info)
           const minimum =
             infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
           return { value: filterNode, minimum }
@@ -278,8 +284,14 @@ export default function TabUpopt() {
       equippedArts,
       artifactsToConsider
     )
+    /**
+     * WARNING:
+     * Due to the violatile nature of the calculations above,
+     * the dependency for this useMemo needs to be updated within the same render cycle as LoadoutDatum,
+     * or crashes may occur when swapping charA upOpt -> charB upOpt
+     */
   }, [
-    deferredBuildSetting,
+    optConfig,
     teamData,
     database,
     teamId,
