@@ -62,7 +62,7 @@ import {
   useMemo,
   useState,
 } from 'react'
-import { Trans } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
@@ -73,6 +73,7 @@ import UpgradeOptChartCard from './UpgradeOptChartCard'
 import { UpOptCalculator } from './upOpt'
 
 export default function TabUpopt() {
+  const { t } = useTranslation('page_character_optimize')
   const {
     teamId,
     teamCharId,
@@ -253,16 +254,6 @@ export default function TabUpopt() {
           throw Error('error in respectSex: nRainbow > 5')
       }
     }
-
-    const nodesPreOpt = [
-      optimizationTargetNode,
-      ...valueFilter.map((x) => x.value),
-    ]
-    const nodes = optimize(
-      nodesPreOpt,
-      workerData,
-      ({ path: [p] }) => p !== 'dyn'
-    )
     const artifactsToConsider = filteredArts
       .filter((art) => art.rarity === 5)
       .filter(respectSexExclusion)
@@ -274,6 +265,13 @@ export default function TabUpopt() {
       .filter(
         (art) => upOptLevelLow <= art.level && art.level <= upOptLevelHigh
       )
+    if (!artifactsToConsider.length) return
+    const nodes = optimize(
+      [optimizationTargetNode, ...valueFilter.map((x) => x.value)],
+      workerData,
+      ({ path: [p] }) => p !== 'dyn'
+    )
+
     return new UpOptCalculator(
       nodes,
       [-Infinity, ...valueFilter.map((x) => x.minimum)],
@@ -516,6 +514,9 @@ export default function TabUpopt() {
                 allowUpload
               />
             </Suspense>
+            {!upOptCalc?.artifacts.length && (
+              <Alert severity="warning">{t`upOptNoResults`}</Alert>
+            )}
             <Suspense
               fallback={
                 <Skeleton
@@ -525,17 +526,20 @@ export default function TabUpopt() {
               }
             >
               {!!upOptCalc &&
-                indexes.map((i) => (
-                  <UpgradeOptChartCard
-                    key={`${i}+${upOptCalc.artifacts[i].id}`}
-                    upOptCalc={upOptCalc}
-                    ix={i}
-                    setArtifactIdToEdit={setArtifactIdToEdit}
-                    thresholds={upOptCalc.thresholds ?? []}
-                    objMax={maxObj0}
-                    objMin={minObj0}
-                  />
-                ))}
+                indexes.map(
+                  (i) =>
+                    upOptCalc.artifacts[i] && (
+                      <UpgradeOptChartCard
+                        key={`${i}+${upOptCalc.artifacts[i].id}`}
+                        upOptCalc={upOptCalc}
+                        ix={i}
+                        setArtifactIdToEdit={setArtifactIdToEdit}
+                        thresholds={upOptCalc.thresholds ?? []}
+                        objMax={maxObj0}
+                        objMin={minObj0}
+                      />
+                    )
+                )}
             </Suspense>
             {pagination}
           </Stack>

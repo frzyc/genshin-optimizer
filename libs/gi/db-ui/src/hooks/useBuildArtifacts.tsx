@@ -7,7 +7,12 @@ export function useBuildArtifacts(loadoutDatum: LoadoutDatum) {
   const [arts, setArts] = useState(
     database.teams.getLoadoutArtifacts(loadoutDatum)
   )
+  // for when the entire loadoutDatum is changed.
+  useEffect(() => {
+    setArts(database.teams.getLoadoutArtifacts(loadoutDatum))
+  }, [database, loadoutDatum])
 
+  // for smaller artifact/build changes.
   useEffect(() => {
     const unfollows = Object.values(arts).map((art) =>
       art?.id

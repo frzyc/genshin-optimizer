@@ -215,8 +215,7 @@ export class UpOptCalculator {
     artifacts.forEach((art) => this._addArtifact(art))
 
     // Do all fast calc
-    this.calcFastAll()
-    this.calcSlowToIndex(5)
+    this.initCalc()
   }
 
   /** Adds an artifact to be tracked by UpOptCalc. It is initially un-evaluated. */
@@ -253,11 +252,14 @@ export class UpOptCalculator {
     this.calcFast(ix, this.calc4th)
   }
   /** Calcs all artifacts using Fast method */
-  calcFastAll() {
+  initCalc() {
     function score(a: UpOptArtifact) {
       return a.result!.p * a.result!.upAvg
     }
     this.artifacts.forEach((_, i) => this.calcFast(i, this.calc4th))
+
+    // do slow calc for the first page
+    this.calcSlowToIndex(5)
     // only store artifacts with possibility to increase score
     this.artifacts = this.artifacts.filter((a) => score(a) > 0)
     this.artifacts.sort((a, b) => score(b) - score(a))
