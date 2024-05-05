@@ -63,7 +63,17 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   const numChar = database.chars.keys.length
   const numArt = database.arts.values.length
   const numWeapon = database.weapons.values.length
-  const hasData = Boolean(numChar || numArt || numWeapon)
+  const numTeams = database.teams.values.length
+  let numLoadouts = 0;
+  const loadoutTeamMap: Record<string, string[]> = {};
+  database.teamChars.entries.forEach(([id]) => loadoutTeamMap[id] = loadoutTeamMap[id] || []);
+  database.teams.entries.forEach(([teamId, { loadoutData }]) => {
+    const teamCharId = loadoutData.find(Boolean)?.teamCharId;
+    if (teamCharId) loadoutTeamMap[teamCharId].push(teamId);
+  });
+  Object.entries(loadoutTeamMap).forEach(() => numLoadouts += 1);
+
+  const hasData = Boolean(numChar || numArt || numWeapon || numTeams || numLoadouts)
   const copyToClipboard = useCallback(
     () =>
       navigator.clipboard
@@ -162,6 +172,12 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
             <Typography noWrap>
               <Trans t={t} i18nKey="count.weapons" />{' '}
               <strong>{numWeapon}</strong>
+            </Typography>
+            <Typography noWrap>
+              <Trans t={t} i18nKey="Teams" /> <strong>{numTeams}</strong>
+            </Typography>
+            <Typography noWrap>
+              <Trans t={t} i18nKey="Loadouts" /> <strong>{numLoadouts}</strong>
             </Typography>
             {!!lastEdit && (
               <Typography noWrap>
