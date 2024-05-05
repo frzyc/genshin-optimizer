@@ -25,9 +25,11 @@ export const LevelFilter = memo(function LevelFilter({
   return (
     <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex', gap: 1 }}>
-        <Typography sx={{ fontWeight: 'bold' }}>{t`levelFilter`}</Typography>
+        <Typography
+          sx={{ fontWeight: 'bold' }}
+        >{t`upOptLevelFilter`}</Typography>
         <SqBadge color="info">{levelTotal}</SqBadge>
-        <Tooltip title="This Level filter is not synced with Optimize config.">
+        <Tooltip title={t`upOptLevelFilterTooltip`}>
           <InfoIcon />
         </Tooltip>
       </CardContent>
