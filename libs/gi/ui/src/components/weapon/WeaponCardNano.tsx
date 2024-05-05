@@ -18,7 +18,7 @@ import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo } from 'react'
 import { getCalcDisplay, resolveInfo } from '../../util'
-import { LocationIcon } from '../LocationIcon'
+import { CharIconSide } from '../character'
 import { WeaponNameTooltip } from './WeaponNameTooltip'
 
 type Data = {
@@ -140,10 +140,11 @@ export function WeaponCardNanoObj({
                 size="small"
                 label={
                   location ? (
-                    <LocationIcon
+                    <CharIconSide
                       characterKey={database.chars.LocationToCharacterKey(
                         location
                       )}
+                      sideMargin
                     />
                   ) : (
                     <BusinessCenterIcon />
