@@ -16,6 +16,7 @@ import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
+  useBuildArtifacts,
   useDBMeta,
   useDatabase,
   useOptConfig,
@@ -42,10 +43,8 @@ import {
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
-import { Upgrade } from '@mui/icons-material'
 import {
   Box,
-  Button,
   ButtonGroup,
   CardContent,
   Grid,
@@ -133,7 +132,11 @@ export default function TabUpopt() {
     })
   }, [database, characterKey, deferredBuildSetting])
   const filteredArtIdMap = useMemo(
-    () => Object.fromEntries(filteredArts.map(({ id }) => [id, true])),
+    () =>
+      objKeyMap(
+        filteredArts.map(({ id }) => id),
+        (_) => true
+      ),
     [filteredArts]
   )
 
@@ -154,68 +157,9 @@ export default function TabUpopt() {
     )
   }, [database, deferredArtsDirty, deferredBuildSetting, filteredArtIdMap])
 
-  const [upOptCalc, setUpOptCalc] = useState(
-    undefined as UpOptCalculator | undefined
-  )
+  const equippedArts = useBuildArtifacts(loadoutDatum)
 
-  // Paging logic
-  const [pageIdex, setpageIdex] = useState(0)
-
-  const artifactsToDisplayPerPage = 5
-  const { indexes, numPages, currentPageIndex, minObj0, maxObj0 } =
-    useMemo(() => {
-      if (!upOptCalc)
-        return {
-          indexes: [],
-          numPages: 0,
-          currentPageIndex: 0,
-          toShow: 0,
-          minObj0: 0,
-          maxObj0: 0,
-        }
-
-      const numPages = Math.ceil(
-        upOptCalc.artifacts.length / artifactsToDisplayPerPage
-      )
-
-      const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
-      const toShow = upOptCalc.artifacts.slice(
-        currentPageIndex * artifactsToDisplayPerPage,
-        (currentPageIndex + 1) * artifactsToDisplayPerPage
-      )
-      const thr = upOptCalc.thresholds[0]
-
-      return {
-        indexes: range(
-          currentPageIndex * artifactsToDisplayPerPage,
-          Math.min(
-            (currentPageIndex + 1) * artifactsToDisplayPerPage - 1,
-            upOptCalc.artifacts.length - 1
-          )
-        ),
-        numPages,
-        currentPageIndex,
-        minObj0: toShow.reduce(
-          (a, b) => Math.min(b.result!.distr.lower, a),
-          thr
-        ),
-        maxObj0: toShow.reduce(
-          (a, b) => Math.max(b.result!.distr.upper, a),
-          thr
-        ),
-      }
-    }, [pageIdex, upOptCalc])
-  const setPage = useCallback(
-    (e, value) => {
-      if (!upOptCalc) return
-      const end = value * artifactsToDisplayPerPage
-      upOptCalc.calcSlowToIndex(end)
-      setpageIdex(value - 1)
-    },
-    [upOptCalc]
-  )
-
-  const generateBuilds = useCallback(async () => {
+  const upOptCalc = useMemo(() => {
     const {
       statFilters,
       optimizationTarget,
@@ -223,15 +167,19 @@ export default function TabUpopt() {
       upOptLevelLow,
       upOptLevelHigh,
       artSetExclusion,
-    } = buildSetting
+    } = deferredBuildSetting
 
     if (!shouldShowDevComponents) return
-    if (!characterKey || !optimizationTarget) return
-    const teamData = getTeamData(database, teamId, teamCharId, 0, [])
-    if (!teamData) return
-    const workerData = uiDataForTeam(teamData.teamData, gender, activeCharKey)[
-      characterKey
-    ]?.target.data![0]
+    if (!optimizationTarget) return
+    // Use teamData here because teamData recalcs upon dependency update. Its kind of jank since there are some redundant calcs
+    const teamDataLocal =
+      teamData && getTeamData(database, teamId, teamCharId, 0, [])
+    if (!teamDataLocal) return
+    const workerData = uiDataForTeam(
+      teamDataLocal.teamData,
+      gender,
+      activeCharKey
+    )[characterKey]?.target.data![0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const optimizationTargetNode = objPathValue(
@@ -239,8 +187,6 @@ export default function TabUpopt() {
       optimizationTarget
     ) as NumNode | undefined
     if (!optimizationTargetNode) return
-    setUpOptCalc(undefined)
-    setpageIdex(0)
 
     const valueFilter: { value: NumNode; minimum: number }[] = Object.entries(
       statFilters
@@ -259,7 +205,6 @@ export default function TabUpopt() {
         })
     )
 
-    const equippedArts = database.teams.getLoadoutArtifacts(loadoutDatum)
     const curEquipSetKeys = objKeyMap(
       allArtifactSlotKeys,
       (slotKey) => equippedArts[slotKey]?.setKey
@@ -319,7 +264,7 @@ export default function TabUpopt() {
       workerData,
       ({ path: [p] }) => p !== 'dyn'
     )
-    const artifactsToConsider = database.arts.values
+    const artifactsToConsider = filteredArts
       .filter((art) => art.rarity === 5)
       .filter(respectSexExclusion)
       .filter(
@@ -330,24 +275,86 @@ export default function TabUpopt() {
       .filter(
         (art) => upOptLevelLow <= art.level && art.level <= upOptLevelHigh
       )
-    setUpOptCalc(
-      new UpOptCalculator(
-        nodes,
-        [-Infinity, ...valueFilter.map((x) => x.minimum)],
-        equippedArts,
-        artifactsToConsider
-      )
+    return new UpOptCalculator(
+      nodes,
+      [-Infinity, ...valueFilter.map((x) => x.minimum)],
+      equippedArts,
+      artifactsToConsider
     )
   }, [
-    buildSetting,
-    characterKey,
+    deferredBuildSetting,
+    teamData,
     database,
     teamId,
     teamCharId,
     gender,
     activeCharKey,
-    loadoutDatum,
+    characterKey,
+    filteredArts,
+    equippedArts,
   ])
+
+  // Paging logic
+  const [pageIdex, setpageIdex] = useState(0)
+
+  useEffect(() => {
+    // reset paging on new upOptCalc
+    setpageIdex(0)
+  }, [upOptCalc])
+
+  const artifactsToDisplayPerPage = 5
+  const { indexes, numPages, currentPageIndex, minObj0, maxObj0 } =
+    useMemo(() => {
+      if (!upOptCalc)
+        return {
+          indexes: [],
+          numPages: 0,
+          currentPageIndex: 0,
+          toShow: 0,
+          minObj0: 0,
+          maxObj0: 0,
+        }
+
+      const numPages = Math.ceil(
+        upOptCalc.artifacts.length / artifactsToDisplayPerPage
+      )
+
+      const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
+      const toShow = upOptCalc.artifacts.slice(
+        currentPageIndex * artifactsToDisplayPerPage,
+        (currentPageIndex + 1) * artifactsToDisplayPerPage
+      )
+      const thr = upOptCalc.thresholds[0]
+
+      return {
+        indexes: range(
+          currentPageIndex * artifactsToDisplayPerPage,
+          Math.min(
+            (currentPageIndex + 1) * artifactsToDisplayPerPage - 1,
+            upOptCalc.artifacts.length - 1
+          )
+        ),
+        numPages,
+        currentPageIndex,
+        minObj0: toShow.reduce(
+          (a, b) => Math.min(b.result!.distr.lower, a),
+          thr
+        ),
+        maxObj0: toShow.reduce(
+          (a, b) => Math.max(b.result!.distr.upper, a),
+          thr
+        ),
+      }
+    }, [pageIdex, upOptCalc])
+  const setPage = useCallback(
+    (e, value) => {
+      if (!upOptCalc) return
+      const end = value * artifactsToDisplayPerPage
+      upOptCalc.calcSlowToIndex(end)
+      setpageIdex(value - 1)
+    },
+    [upOptCalc]
+  )
 
   const dataContext: dataContextObj | undefined = useMemo(() => {
     return data && teamData && { data, teamData }
@@ -479,18 +486,6 @@ export default function TabUpopt() {
                 }
                 disabled={false}
               />
-              <Button
-                disabled={
-                  !characterKey ||
-                  !optimizationTarget ||
-                  !objPathValue(data?.getDisplay(), optimizationTarget)
-                }
-                color={characterKey ? 'success' : 'warning'}
-                onClick={generateBuilds}
-                startIcon={<Upgrade />}
-              >
-                Calc Upgrade Priority
-              </Button>
             </ButtonGroup>
             <CardThemed bgt="light">
               <CardContent>

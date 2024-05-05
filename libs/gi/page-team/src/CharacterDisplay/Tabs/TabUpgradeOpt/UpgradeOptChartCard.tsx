@@ -82,7 +82,11 @@ function UpgradeOptChartCardGraph({
   }, [database, forceUpdate, ix, upOptCalc, upgradeOpt.id])
 
   useEffect(
-    () => database.arts.follow(upgradeOpt.id, updateUpOpt),
+    () =>
+      database.arts.follow(
+        upgradeOpt.id,
+        (_, reason) => reason === 'update' && updateUpOpt()
+      ),
     [database, updateUpOpt, upgradeOpt.id]
   )
 
