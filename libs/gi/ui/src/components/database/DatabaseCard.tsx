@@ -64,16 +64,11 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   const numArt = database.arts.values.length
   const numWeapon = database.weapons.values.length
   const numTeams = database.teams.values.length
-  let numLoadouts = 0;
-  const loadoutTeamMap: Record<string, string[]> = {};
-  database.teamChars.entries.forEach(([id]) => loadoutTeamMap[id] = loadoutTeamMap[id] || []);
-  database.teams.entries.forEach(([teamId, { loadoutData }]) => {
-    const teamCharId = loadoutData.find(Boolean)?.teamCharId;
-    if (teamCharId) loadoutTeamMap[teamCharId].push(teamId);
-  });
-  Object.entries(loadoutTeamMap).forEach(() => numLoadouts += 1);
-
-  const hasData = Boolean(numChar || numArt || numWeapon || numTeams || numLoadouts)
+  const numLoadouts = database.teamChars.values.length
+  const numBuilds = database.builds.values.length
+  const hasData = Boolean(
+    numChar || numArt || numWeapon || numTeams || numLoadouts || numBuilds
+  )
   const copyToClipboard = useCallback(
     () =>
       navigator.clipboard
@@ -177,9 +172,13 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
               <Trans t={t} i18nKey="count.teams" /> <strong>{numTeams}</strong>
             </Typography>
             <Typography noWrap>
-              <Trans t={t} i18nKey="count.loadouts" /> <strong>{numLoadouts}</strong>
+              <Trans t={t} i18nKey="count.loadouts" />{' '}
+              <strong>{numLoadouts}</strong>
             </Typography>
-
+            <Typography noWrap>
+              <Trans t={t} i18nKey="count.builds" />{' '}
+              <strong>{numBuilds}</strong>
+            </Typography>
           </Box>
           <Box>
             <Grid container spacing={1} columns={{ xs: 2 }}>
@@ -232,7 +231,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
               </Grid>
             </Grid>
             {!!lastEdit && (
-              <Typography noWrap align="center" style={{ paddingTop: '1em' }}>
+              <Typography noWrap align="center" style={{ paddingTop: '1.5em' }}>
                 <strong>{new Date(lastEdit).toLocaleString()}</strong>
               </Typography>
             )}
