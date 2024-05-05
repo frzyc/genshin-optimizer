@@ -37,13 +37,13 @@ import {
   ReactionToggle,
   getTeamData,
   resolveInfo,
-  shouldShowDevComponents,
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import {
+  Alert,
   Box,
   ButtonGroup,
   CardContent,
@@ -169,9 +169,8 @@ export default function TabUpopt() {
       artSetExclusion,
     } = deferredBuildSetting
 
-    if (!shouldShowDevComponents) return
     if (!optimizationTarget) return
-    // Use teamData here because teamData recalcs upon dependency update. Its kind of jank since there are some redundant calcs
+    // FIXME: Use teamData here because teamData recalcs upon dependency update. Its kind of jank since there are some redundant calcs
     const teamDataLocal =
       teamData && getTeamData(database, teamId, teamCharId, 0, [])
     if (!teamDataLocal) return
@@ -487,6 +486,14 @@ export default function TabUpopt() {
                 disabled={false}
               />
             </ButtonGroup>
+            <Alert severity="info">
+              The Artifact Upgrade Optimizer identifies artifacts with high
+              potential to boost the Optimization Target's value, guiding you to
+              artifacts worth leveling up.
+              <br />
+              As it only swaps one artifact at a time, for the best overall
+              build across all artifacts, use the main artifact optimizer.
+            </Alert>
             <CardThemed bgt="light">
               <CardContent>
                 <Grid container spacing={1}>
@@ -520,7 +527,7 @@ export default function TabUpopt() {
               {!!upOptCalc &&
                 indexes.map((i) => (
                   <UpgradeOptChartCard
-                    key={i}
+                    key={`${i}+${upOptCalc.artifacts[i].id}`}
                     upOptCalc={upOptCalc}
                     ix={i}
                     setArtifactIdToEdit={setArtifactIdToEdit}

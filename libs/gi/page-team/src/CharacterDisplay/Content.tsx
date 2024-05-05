@@ -7,12 +7,12 @@ import {
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
-import { shouldShowDevComponents } from '@genshin-optimizer/gi/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import FactCheckIcon from '@mui/icons-material/FactCheck'
 import PersonIcon from '@mui/icons-material/Person'
 import ScienceIcon from '@mui/icons-material/Science'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
+import UpgradeIcon from '@mui/icons-material/Upgrade'
 import {
   CardContent,
   Divider,
@@ -72,9 +72,7 @@ function CharacterPanel({ isTCBuild }: { isTCBuild: boolean }) {
         <Route path="talent" element={<TabTalent />} />
         {!isTCBuild && <Route path="optimize" element={<TabBuild />} />}
 
-        {!isTCBuild && shouldShowDevComponents && (
-          <Route path="upopt" element={<TabUpopt />} />
-        )}
+        {!isTCBuild && <Route path="upopt" element={<TabUpopt />} />}
         <Route path="*" element={<Navigate to="" replace />} />
       </Routes>
     </Suspense>
@@ -217,12 +215,11 @@ function TabNav({
             to="optimize"
           />
         )}
-
-        {!isTCBuild && shouldShowDevComponents && (
+        {!isTCBuild && (
           <Tab
             value="upopt"
             label={t('tabs.upgradeopt')}
-            icon={<TrendingUpIcon />}
+            icon={<UpgradeIcon />}
             component={RouterLink}
             to="upopt"
           />

@@ -1,15 +1,23 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { linspace } from '@genshin-optimizer/common/util'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  useBoolState,
+  useForceUpdate,
+} from '@genshin-optimizer/common/react-util'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { linspace, objMap } from '@genshin-optimizer/common/util'
+import {
+  charKeyToLocCharKey,
+  type ArtifactSlotKey,
+} from '@genshin-optimizer/gi/consts'
+import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   ArtifactCard,
   ArtifactCardPico,
   DataContext,
+  EquipBuildModal,
 } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
-import { Box, Divider, Grid, Typography } from '@mui/material'
+import CheckroomIcon from '@mui/icons-material/Checkroom'
+import { Box, Button, Divider, Grid, Tooltip, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
 import {
   Area,
@@ -44,7 +52,13 @@ type ChartData = {
 const nbins = 50
 
 export default function UpgradeOptChartCard(props: Props) {
+  const database = useDatabase()
   const id = props.upOptCalc.artifacts[props.ix]?.id
+  const upArt = database.arts.get(id)
+  const { data } = useContext(DataContext)
+  const currentlyEquippedArtId =
+    upArt?.slotKey && data.get(input.art[upArt.slotKey].id).value
+  const isEquipped = id === currentlyEquippedArtId
   return (
     <Box>
       <Grid container spacing={1}>
@@ -52,6 +66,7 @@ export default function UpgradeOptChartCard(props: Props) {
           <ArtifactCard
             artifactId={id}
             onEdit={() => props.setArtifactIdToEdit(id)}
+            extraButtons={<EquipButton newArtId={id} disabled={isEquipped} />}
           />
         </Grid>
         <Grid item xs={12} sm={7} md={8} lg={9} xl={9}>
@@ -59,6 +74,71 @@ export default function UpgradeOptChartCard(props: Props) {
         </Grid>
       </Grid>
     </Box>
+  )
+}
+function EquipButton({
+  newArtId,
+  disabled,
+}: {
+  newArtId: string
+  disabled: boolean
+}) {
+  const database = useDatabase()
+  const {
+    loadoutDatum,
+    loadoutDatum: { buildType, buildId },
+    teamChar: { key: characterKey },
+  } = useContext(TeamCharacterContext)
+  const [show, onShow, onHide] = useBoolState()
+  const weapon = database.teams.getLoadoutWeapon(loadoutDatum)
+  const artifactids = objMap(
+    database.teams.getLoadoutArtifacts(loadoutDatum),
+    (art) => art?.id
+  )
+  const newArt = database.arts.get(newArtId)
+  if (!newArt) return
+
+  return (
+    <>
+      <EquipBuildModal
+        equipChangeProps={{
+          currentName:
+            buildType === 'real'
+              ? database.builds.get(buildId)!.name
+              : 'Equipped',
+          currentWeapon: weapon?.id,
+          currentArtifacts: artifactids,
+          newWeapon: weapon?.id,
+          newArtifacts: objMap(artifactids, (art, slotKey) =>
+            slotKey === newArt.slotKey ? newArtId : art
+          ),
+        }}
+        showPrompt={show}
+        onEquip={() => {
+          if (buildType === 'equipped')
+            database.arts.set(newArtId, {
+              location: charKeyToLocCharKey(characterKey),
+            })
+          else if (buildType === 'real')
+            database.builds.set(buildId, (build) => {
+              build.artifactIds[newArt.slotKey] = newArtId
+            })
+        }}
+        OnHidePrompt={onHide}
+      />
+      <Tooltip title={<Typography>Equip</Typography>} placement="top" arrow>
+        <Box>
+          <Button
+            color="info"
+            size="small"
+            onClick={onShow}
+            disabled={disabled}
+          >
+            <CheckroomIcon />
+          </Button>
+        </Box>
+      </Tooltip>
+    </>
   )
 }
 
@@ -69,39 +149,39 @@ function UpgradeOptChartCardGraph({
   upOptCalc,
   ix,
 }: Props) {
-  const upgradeOpt = upOptCalc.artifacts[ix]
+  const upArt = upOptCalc.artifacts[ix]
   const database = useDatabase()
   const [, forceUpdate] = useForceUpdate()
-  const bla = database.arts.get(upgradeOpt.id)
+  const equippedArt = database.arts.get(upArt.id)
 
   const updateUpOpt = useCallback(() => {
-    const art = database.arts.get(upgradeOpt.id)
+    const art = database.arts.get(upArt.id)
     if (!art) return
     upOptCalc.reCalc(ix, art)
     forceUpdate()
-  }, [database, forceUpdate, ix, upOptCalc, upgradeOpt.id])
+  }, [database, forceUpdate, ix, upOptCalc, upArt.id])
 
   useEffect(
     () =>
       database.arts.follow(
-        upgradeOpt.id,
+        upArt.id,
         (_, reason) => reason === 'update' && updateUpOpt()
       ),
-    [database, updateUpOpt, upgradeOpt.id]
+    [database, updateUpOpt, upArt.id]
   )
 
   const constrained = thresholds.length > 1
 
   // Returns P(a < DMG < b)
   const integral = (a: number, b: number) =>
-    upgradeOpt.result!.distr.gmm.reduce((pv, { phi, mu, sig2 }) => {
+    upArt.result!.distr.gmm.reduce((pv, { phi, mu, sig2 }) => {
       const sig = Math.sqrt(sig2)
       if (sig < 1e-3) return a <= mu && mu < b ? phi + pv : pv
       const P = erf((mu - a) / sig) - erf((mu - b) / sig)
       return pv + (phi * P) / 2
     }, 0)
   const integralCons = (a: number, b: number) =>
-    upgradeOpt.result!.distr.gmm.reduce((pv, { cp, phi, mu, sig2 }) => {
+    upArt.result!.distr.gmm.reduce((pv, { cp, phi, mu, sig2 }) => {
       const sig = Math.sqrt(sig2)
       if (sig < 1e-3) return a <= mu && mu < b ? cp * phi + pv : pv
       const P = erf((mu - a) / sig) - erf((mu - b) / sig)
@@ -134,10 +214,10 @@ function UpgradeOptChartCardGraph({
   const xpercent = (thr0 - objMin) / (objMax - objMin)
 
   // if trueP/E have been calculated, otherwise use upgradeOpt's estimate
-  const reportP = upgradeOpt.result!.p
-  const reportD = upgradeOpt.result!.upAvg
+  const reportP = upArt.result!.p
+  const reportD = upArt.result!.upAvg
   const chartData = dataHist
-  const isExact = upgradeOpt.result!.evalMode === ResultType.Exact
+  const isExact = upArt.result!.evalMode === ResultType.Exact
 
   useEffect(() => {
     if (isExact) return
@@ -160,22 +240,17 @@ function UpgradeOptChartCardGraph({
       </strong>
     </span>
   )
-  // const CustomTooltip = ({ active }: TooltipProps<string, string>) => {
-  //   if (!active) return null
-  //   // I kinda want the [average increase] to only appear when hovering the white dot.
-  //   return (
-  //     <div className="custom-tooltip">
-  //       <p className="label"></p>
-  //       <p className="desc">{probUpgradeText}</p>
-  //       <p className="desc">{avgIncText}</p>
-  //     </div>
-  //   )
-  // }
+  const { data } = useContext(DataContext)
+  const currentlyEquippedArtId =
+    equippedArt?.slotKey && data.get(input.art[equippedArt.slotKey].id).value
+  const isCurrentlyEquipped = currentlyEquippedArtId === upArt.id
   return (
     <CardThemed bgt="light" sx={{ height: '100%' }}>
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         <Box sx={{ height: 50, width: 50 }}>
-          {!!bla?.slotKey && <EquippedArtifact slotKey={bla.slotKey} />}
+          {!!equippedArt?.slotKey && (
+            <EquippedArtifact slotKey={equippedArt.slotKey} />
+          )}
         </Box>
         <Box
           sx={{
@@ -188,7 +263,14 @@ function UpgradeOptChartCardGraph({
             py: 1,
           }}
         >
-          <Typography sx={{ flexGrow: 1 }}>Currently Equipped</Typography>
+          <Box flexGrow={1}>
+            {isCurrentlyEquipped ? (
+              <SqBadge color="secondary">Equipped</SqBadge>
+            ) : (
+              <Typography>{'Current on Build'}</Typography>
+            )}
+          </Box>
+
           <Typography>{probUpgradeText}</Typography>
           <Typography>{avgIncText}</Typography>
         </Box>
@@ -198,7 +280,7 @@ function UpgradeOptChartCardGraph({
         width="100%"
         height="100%"
         maxHeight={300}
-        key={upgradeOpt.id}
+        key={upArt.id}
       >
         <ComposedChart
           data={chartData}
@@ -234,7 +316,7 @@ function UpgradeOptChartCardGraph({
 
           <defs>
             <linearGradient
-              id={`splitOpacity${upgradeOpt.id}`}
+              id={`splitOpacity${upArt.id}`}
               x1="0"
               y1="0"
               x2={xpercent}
@@ -273,7 +355,7 @@ function UpgradeOptChartCardGraph({
             dataKey="estCons"
             stroke={isExact ? '#f17704' : 'orange'}
             dot={false}
-            fill={`url(#splitOpacity${upgradeOpt.id})`}
+            fill={`url(#splitOpacity${upArt.id})`}
             opacity={0.5}
             name={
               isExact
