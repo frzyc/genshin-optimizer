@@ -84,7 +84,7 @@ export enum ResultType {
   Slow,
   Exact,
 }
-export type UpOptBuild = Record<ArtifactSlotKey, ArtifactBuildData | undefined>
+export type UpOptBuild = Record<ArtifactSlotKey, ArtifactBuildData>
 export type UpOptArtifact = {
   id: string
   rollsLeft: number
@@ -175,7 +175,7 @@ export class UpOptCalculator {
     calc4th = true
   ) {
     this.baseBuild = objMap(equippedBuild, (art) =>
-      art ? this.toArtifact(art) : undefined
+      art ? this.toArtifact(art) : { id: '', values: {} }
     )
     this.nodes = nodes
     this.thresholds = thresholds
