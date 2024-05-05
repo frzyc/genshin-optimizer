@@ -174,16 +174,12 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
               <strong>{numWeapon}</strong>
             </Typography>
             <Typography noWrap>
-              <Trans t={t} i18nKey="Teams" /> <strong>{numTeams}</strong>
+              <Trans t={t} i18nKey="count.teams" /> <strong>{numTeams}</strong>
             </Typography>
             <Typography noWrap>
-              <Trans t={t} i18nKey="Loadouts" /> <strong>{numLoadouts}</strong>
+              <Trans t={t} i18nKey="count.loadouts" /> <strong>{numLoadouts}</strong>
             </Typography>
-            {!!lastEdit && (
-              <Typography noWrap>
-                <strong>{new Date(lastEdit).toLocaleString()}</strong>
-              </Typography>
-            )}
+
           </Box>
           <Box>
             <Grid container spacing={1} columns={{ xs: 2 }}>
@@ -235,6 +231,11 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                 </Button>
               </Grid>
             </Grid>
+            {!!lastEdit && (
+              <Typography noWrap align="center" style={{ paddingTop: '1em' }}>
+                <strong>{new Date(lastEdit).toLocaleString()}</strong>
+              </Typography>
+            )}
           </Box>
         </Box>
       </CardContent>
