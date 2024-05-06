@@ -97,7 +97,7 @@ export default function TabUpopt() {
   /**
    * Only register new/removal for artifact, so that changes to artifact will not cause upopt recalc.
    * Artifact updates are captured in UpgradeOptChartCard.
-   * This makes updating an calculated artifact will not update the calculator list.
+   * This makes updating an calculated artifact will not update the calculator list.(and will not change place in the list)
    */
   useEffect(
     () =>
@@ -497,13 +497,25 @@ export default function TabUpopt() {
               />
             </ButtonGroup>
             <Alert severity="info">
-              The Artifact Upgrade Optimizer identifies artifacts with high
-              potential to boost the Optimization Target's value, guiding you to
-              artifacts worth leveling up.
-              <br />
-              As it only swaps one artifact at a time, for the best overall
-              build across all artifacts, use the main artifact optimizer.
+              <Trans t={t} i18nKey={'upOptInfo'}>
+                The Artifact Upgrade Optimizer identifies artifacts with high
+                potential to boost the Optimization Target's value, guiding you
+                to artifacts worth leveling up.
+                <br />
+                As it only swaps one artifact at a time, for the best overall
+                build across all artifacts, use the main artifact optimizer.
+              </Trans>
             </Alert>
+            {Object.values(equippedArts).some((a) => !a) && (
+              <Alert severity="warning">
+                <Trans t={t} i18nKey={'upOptEmptyBuild'}>
+                  You're using a partially empty build. Since the Artifact
+                  Upgrade Optimizer only swaps artifacts individually,
+                  completing a set is unlikely. It's recommended to begin with a
+                  base build, preferably generated from the main Optimizer.
+                </Trans>
+              </Alert>
+            )}
             <CardThemed bgt="light">
               <CardContent>
                 <Grid container spacing={1}>
