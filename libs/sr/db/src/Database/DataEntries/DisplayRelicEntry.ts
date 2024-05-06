@@ -72,7 +72,7 @@ export function initialFilterOption(): FilterOption {
     showInventory: true,
     locked: ['locked', 'unlocked'],
     rvLow: 0,
-    rvHigh: 900,
+    rvHigh: 900, // TODO: Figure out RVs for SRO
     useMaxRV: false,
     lines: [1, 2, 3, 4],
   }
@@ -138,7 +138,7 @@ export class DisplayRelicEntry extends DataEntry<
       locked = validateArr(locked, ['locked', 'unlocked'])
 
       if (typeof rvLow !== 'number') rvLow = 0
-      if (typeof rvHigh !== 'number') rvHigh = 900
+      if (typeof rvHigh !== 'number') rvHigh = 900 // TODO: Figure out RVs for SRO
 
       if (typeof useMaxRV !== 'boolean') useMaxRV = false
 
