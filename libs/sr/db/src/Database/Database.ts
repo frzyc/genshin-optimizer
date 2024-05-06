@@ -5,6 +5,9 @@ import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
 import type { ISroDatabase } from '../Interfaces'
 import { SroSource } from '../Interfaces'
 import { DBMetaEntry } from './DataEntries/DBMetaEntry'
+import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
+import { DisplayLightConeEntry } from './DataEntries/DisplayLightConeEntry'
+import { DisplayRelicEntry } from './DataEntries/DisplayRelicEntry'
 import { BuildDataManager } from './DataManagers/BuildDataManager'
 import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
 import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
@@ -33,6 +36,9 @@ export class SroDatabase extends Database {
   teams: TeamDataManager
 
   dbMeta: DBMetaEntry
+  displayCharacter: DisplayCharacterEntry
+  displayLightCone: DisplayLightConeEntry
+  displayRelic: DisplayRelicEntry
   dbIndex: 1 | 2 | 3 | 4
   dbVer: number
 
@@ -72,6 +78,9 @@ export class SroDatabase extends Database {
 
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
+    this.displayCharacter = new DisplayCharacterEntry(this)
+    this.displayLightCone = new DisplayLightConeEntry(this)
+    this.displayRelic = new DisplayRelicEntry(this)
 
     this.chars.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
@@ -98,7 +107,12 @@ export class SroDatabase extends Database {
     ] as const
   }
   get dataEntries() {
-    return [this.dbMeta] as const
+    return [
+      this.dbMeta,
+      this.displayCharacter,
+      this.displayLightCone,
+      this.displayRelic,
+    ] as const
   }
 
   clear() {
