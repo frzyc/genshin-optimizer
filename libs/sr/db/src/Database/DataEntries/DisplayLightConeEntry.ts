@@ -6,7 +6,6 @@ import type { SroDatabase } from '../Database'
 export const lightConeSortKeys = ['level', 'rarity', 'name'] as const
 export type LightConeSortKey = (typeof lightConeSortKeys)[number]
 export interface IDisplayLightCone {
-  editLightConeId: string
   sortType: LightConeSortKey
   ascending: boolean
   rarity: RarityKey[]
@@ -14,7 +13,6 @@ export interface IDisplayLightCone {
 }
 
 const initialState = () => ({
-  editLightConeId: '',
   sortType: lightConeSortKeys[0],
   ascending: false,
   rarity: [...allRarityKeys],
@@ -33,8 +31,6 @@ export class DisplayLightConeEntry extends DataEntry<
   override validate(obj: any): IDisplayLightCone | undefined {
     if (typeof obj !== 'object') return undefined
     let { sortType, ascending, rarity, path } = obj
-    const { editLightConeId } = obj
-    if (typeof editLightConeId !== 'string') return editLightConeId
     if (
       typeof sortType !== 'string' ||
       !lightConeSortKeys.includes(sortType as any)
@@ -46,7 +42,6 @@ export class DisplayLightConeEntry extends DataEntry<
     if (!Array.isArray(path)) path = [...allPathKeys]
     else path = path.filter((r) => allPathKeys.includes(r))
     const data: IDisplayLightCone = {
-      editLightConeId,
       sortType,
       ascending,
       rarity,
