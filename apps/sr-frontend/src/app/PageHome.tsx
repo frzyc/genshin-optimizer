@@ -1,8 +1,4 @@
-import {
-  CharacterInventory,
-  RelicEditor,
-  RelicInventory,
-} from '@genshin-optimizer/sr/ui'
+import { CharacterInventory } from '@genshin-optimizer/sr/ui'
 import { ExpandMore } from '@mui/icons-material'
 import {
   Accordion,
@@ -32,8 +28,6 @@ export default function PageHome() {
           </AccordionDetails>
         </Accordion>
       </Container>
-      <RelicEditor />
-      <RelicInventory />
       <Optimize />
       <Database />
     </Stack>
