@@ -498,9 +498,9 @@ export default function TabUpopt() {
             </ButtonGroup>
             <Alert severity="info">
               <Trans t={t} i18nKey={'upOptInfo'}>
-                The Artifact Upgrade Optimizer identifies artifacts with high
-                potential to boost the Optimization Target's value, guiding you
-                to artifacts worth leveling up.
+                The Artifact Upgrader identifies artifacts with high potential
+                to boost the Optimization Target's value, guiding you to
+                artifacts worth leveling up.
                 <br />
                 As it only swaps one artifact at a time, for the best overall
                 build across all artifacts, use the main artifact optimizer.
@@ -510,9 +510,9 @@ export default function TabUpopt() {
               <Alert severity="warning">
                 <Trans t={t} i18nKey={'upOptEmptyBuild'}>
                   You're using a partially empty build. Since the Artifact
-                  Upgrade Optimizer only swaps artifacts individually,
-                  completing a set is unlikely. It's recommended to begin with a
-                  base build, preferably generated from the main Optimizer.
+                  Upgrader only swaps artifacts individually, completing a set
+                  is unlikely. It's recommended to begin with a base build,
+                  preferably generated from the main Optimizer.
                 </Trans>
               </Alert>
             )}
