@@ -1,7 +1,6 @@
 import {
   CardHeaderCustom,
   CardThemed,
-  ImgIcon,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { objMap } from '@genshin-optimizer/common/util'
@@ -68,7 +67,7 @@ function Section({
   return (
     <CardThemed>
       <CardHeaderCustom
-        avatar={icon && <ImgIcon size={2} src={icon} />}
+        avatar={icon}
         title={title}
         action={action && <SqBadge>{action}</SqBadge>}
       />

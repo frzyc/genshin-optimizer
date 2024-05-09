@@ -1,9 +1,4 @@
-import {
-  CardThemed,
-  ImgIcon,
-  ModalWrapper,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   DataContext,
@@ -109,7 +104,7 @@ function SelectorSection({
     <CardThemed bgt="light" key={sectionKey as string}>
       {header && (
         <CardHeader
-          avatar={header.icon && <ImgIcon size={2} src={header.icon} />}
+          avatar={header.icon}
           title={header.title}
           action={header.action && <SqBadge>{header.action}</SqBadge>}
           titleTypographyProps={{ variant: 'subtitle1' }}

@@ -1,4 +1,4 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
+import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { artifactDefIcon, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type {
@@ -11,9 +11,11 @@ import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import type { CalcResult, UIData } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
+import BarChartIcon from '@mui/icons-material/BarChart'
+import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
+import GroupsIcon from '@mui/icons-material/Groups'
 import type { ReactNode } from 'react'
 import { ArtifactSetName, WeaponName } from '../components'
-
 const errHeader = {
   title: <ColorText color="warning">ERROR</ColorText>,
 }
@@ -39,12 +41,17 @@ export function getDisplayHeader(
   database: ArtCharDatabase
 ): {
   title: ReactNode
-  icon?: string
+  icon?: ReactNode
   action?: ReactNode
 } {
   if (!sectionKey) return errHeader
   if (sectionKey === 'basic') return { title: 'Basic Stats' }
-  if (sectionKey === 'custom') return { title: 'Custom Multi Target' }
+  if (sectionKey === 'bounsStats')
+    return { title: 'Bonus Stats', icon: <BarChartIcon /> }
+  if (sectionKey === 'custom')
+    return { title: 'Custom Multi Target', icon: <DashboardCustomizeIcon /> }
+  if (sectionKey === 'teamBuff')
+    return { title: 'Received Team Buffs', icon: <GroupsIcon /> }
   else if (sectionKey === 'reaction')
     return { title: 'Transformative Reactions' }
   else if (sectionKey.includes(':')) {
@@ -52,13 +59,15 @@ export function getDisplayHeader(
     if (namespace === 'artifact') {
       return {
         title: <ArtifactSetName setKey={key as ArtifactSetKey} />,
-        icon: artifactDefIcon(key as ArtifactSetKey),
+        icon: <ImgIcon size={2} src={artifactDefIcon(key as ArtifactSetKey)} />,
       }
     } else if (namespace === 'weapon') {
       const asc = data.get(input.weapon.asc).value
       return {
         title: <WeaponName weaponKey={key as WeaponKey} />,
-        icon: weaponAsset(key as WeaponKey, asc >= 2),
+        icon: (
+          <ImgIcon size={2} src={weaponAsset(key as WeaponKey, asc >= 2)} />
+        ),
       }
     }
   } else {
@@ -72,7 +81,7 @@ export function getDisplayHeader(
     if (!talent) return errHeader
     const actionText = talentMap[sectionKey as keyof typeof talentMap]
     return {
-      icon: talent.img,
+      icon: <ImgIcon size={2} src={talent.img} />,
       title: talent.name,
       action: actionText,
     }
@@ -88,6 +97,7 @@ type DisplaySections = Array<[key: string, results: DisplaySub<CalcResult>]>
  */
 export function getDisplaySections(data: UIData): DisplaySections {
   const display = data.getDisplay()
+  const teamBuff = data.getTeamBuff()
   const sections = Object.entries(display)
   const basic = sections.filter(([k]) => k === 'basic')
   const reaction = sections.filter(([k]) => k === 'reaction')
@@ -102,13 +112,21 @@ export function getDisplaySections(data: UIData): DisplaySections {
       !k.startsWith('artifact') &&
       k !== 'custom'
   )
-
   return [
     ...basic,
+    ['bounsStats', data.getBonusStats()],
     ...reaction,
     ...custom,
     ...rest,
     ...weapon,
     ...artifact,
+    [
+      'teamBuff',
+      [
+        ...Object.values(teamBuff.total ?? {}),
+        ...Object.values(teamBuff.premod ?? {}),
+        ...Object.values(teamBuff.enemy ?? {}),
+      ],
+    ],
   ] as DisplaySections
 }
