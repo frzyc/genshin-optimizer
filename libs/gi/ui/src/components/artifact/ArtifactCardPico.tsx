@@ -69,7 +69,6 @@ export function ArtifactCardPico({
             position: 'absolute',
             fontSize: '0.75rem',
             lineHeight: 1,
-            opacity: 0.85,
             pointerEvents: 'none',
             bottom: 0,
             right: 0,
