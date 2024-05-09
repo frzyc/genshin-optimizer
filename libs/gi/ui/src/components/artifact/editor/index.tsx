@@ -837,7 +837,8 @@ export function ArtifactEditor({
                   startIcon={<Update />}
                   onClick={() => {
                     artifact && database.arts.set(old.id, artifact)
-                    allowEmpty ? reset() : setShow(false)
+                    reset()
+                    if (!allowEmpty) setShow(false)
                   }}
                   disabled={!artifact || !isValid}
                   color="success"

@@ -350,7 +350,8 @@ export default function TabBuild() {
               workerData.display ?? {},
               JSON.parse(pathStr)
             )
-            const infoResolved = filterNode.info && resolveInfo(filterNode.info)
+            const infoResolved =
+              filterNode?.info && resolveInfo(filterNode.info)
             const minimum =
               infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
             return { value: filterNode, minimum: minimum }

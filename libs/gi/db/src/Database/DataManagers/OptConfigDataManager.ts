@@ -1,4 +1,5 @@
 import {
+  clamp,
   deepClone,
   deepFreeze,
   objKeyMap,
@@ -82,6 +83,10 @@ export interface OptConfig {
   //generated opt builds
   builds: Array<GeneratedBuild>
   buildDate: number
+
+  // upOpt
+  upOptLevelLow: number
+  upOptLevelHigh: number
 }
 
 export class OptConfigDataManager extends DataManager<
@@ -117,6 +122,8 @@ export class OptConfigDataManager extends DataManager<
       builds,
       buildDate,
       useTeammateBuild,
+      upOptLevelLow,
+      upOptLevelHigh,
     } = obj as OptConfig
 
     if (typeof statFilters !== 'object') statFilters = {}
@@ -169,8 +176,21 @@ export class OptConfigDataManager extends DataManager<
       maxBuildsToShow = maxBuildsToShowDefault
     if (!plotBase || !Array.isArray(plotBase)) plotBase = undefined
     if (compareBuild === undefined) compareBuild = false
-    if (levelLow === undefined) levelLow = 0
-    if (levelHigh === undefined) levelHigh = 20
+
+    if (typeof levelLow !== 'number') levelLow = 0
+    if (typeof levelHigh !== 'number') levelHigh = 20
+    levelLow = clamp(levelLow, 0, 20)
+    levelHigh = clamp(levelHigh, 0, 20)
+    levelLow = clamp(levelLow, levelLow, levelHigh)
+    levelHigh = clamp(levelHigh, levelLow, levelHigh)
+
+    if (typeof upOptLevelLow !== 'number') upOptLevelLow = 0
+    if (typeof upOptLevelHigh !== 'number') upOptLevelHigh = 19
+    upOptLevelLow = clamp(upOptLevelLow, 0, 20)
+    upOptLevelHigh = clamp(upOptLevelHigh, 0, 20)
+    upOptLevelLow = clamp(upOptLevelLow, upOptLevelLow, upOptLevelHigh)
+    upOptLevelHigh = clamp(upOptLevelHigh, upOptLevelLow, upOptLevelHigh)
+
     if (!artSetExclusion) artSetExclusion = {}
     if (useExcludedArts === undefined) useExcludedArts = false
     if (!allowPartial) allowPartial = false
@@ -221,6 +241,8 @@ export class OptConfigDataManager extends DataManager<
       builds,
       buildDate,
       useTeammateBuild,
+      upOptLevelLow,
+      upOptLevelHigh,
     }
   }
   new(data: Partial<OptConfig> = {}) {
@@ -274,6 +296,8 @@ const initialBuildSettings: OptConfig = deepFreeze({
   levelLow: 0,
   levelHigh: 20,
   useTeammateBuild: false,
+  upOptLevelLow: 0,
+  upOptLevelHigh: 19,
 
   builds: [],
   buildDate: 0,
