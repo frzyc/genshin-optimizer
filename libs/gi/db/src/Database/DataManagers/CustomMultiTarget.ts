@@ -8,7 +8,7 @@ import {
 
 import {
   EnclosingOperations,
-  NonenclosingOperations,
+  NonEnclosingOperations,
   type CustomMultiTarget,
   type CustomTarget,
   type EnclosingOperation,
@@ -170,7 +170,7 @@ export function validateCustomExpression(
       if (!target_) return undefined
     } else if (type === 'operation') {
       const { operation } = unit
-      if (!NonenclosingOperations.includes(operation)) return undefined
+      if (!NonEnclosingOperations.includes(operation)) return undefined
     } else if (type === 'enclosing') {
       const { part } = unit
       if (part === 'head') {

@@ -15,11 +15,12 @@ import {
   objPathValue,
 } from '@genshin-optimizer/common/util'
 import type {
+  BinaryOperation,
   CustomTarget,
   EnclosingOperation,
   ExpressionOperation,
   ExpressionUnit,
-  NonenclosingOperation,
+  NonEnclosingOperation,
 } from '@genshin-optimizer/gi/db'
 import {
   EnclosingOperations,
@@ -298,13 +299,13 @@ export default function CustomMultiTargetCard({
   )
 }
 
-const operationSymbols = {
+const operationSymbols: Record<BinaryOperation, string> = {
   addition: '+',
   subtraction: '-',
   multiplication: '*',
   division: '/',
 }
-const enclosingNames = {
+const enclosingNames: Record<EnclosingOperation, string> = {
   minimum: 'min',
   maximum: 'max',
   average: 'avg',
@@ -545,7 +546,7 @@ function ScreenKeyboard({
               'subtraction',
               'multiplication',
               // 'division', // Division is not supported yet.
-            ] as NonenclosingOperation[]
+            ] as NonEnclosingOperation[]
           ).map((operation) => (
             <Grid item xs={1.5} key={operation}>
               <Button

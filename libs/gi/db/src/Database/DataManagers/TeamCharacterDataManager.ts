@@ -66,6 +66,12 @@ export interface CustomTarget {
   bonusStats: Partial<Record<InputPremodKey, number>>
 }
 
+export const UnaryOperations = [
+  'priority',
+  // 'ceil',
+] as const
+export type UnaryOperation = (typeof UnaryOperations)[number]
+
 export const BinaryOperations = [
   'addition',
   'subtraction',
@@ -74,22 +80,37 @@ export const BinaryOperations = [
 ] as const
 export type BinaryOperation = (typeof BinaryOperations)[number]
 
+export const VariadicOperations = ['minimum', 'maximum', 'average'] as const
+export type VariadicOperation = (typeof VariadicOperations)[number]
+
+export const ExpressionOperations = [
+  ...UnaryOperations,
+  ...BinaryOperations,
+  ...VariadicOperations,
+] as const
+export type ExpressionOperation = (typeof ExpressionOperations)[number]
+
 export const EnclosingOperations = [
   'minimum',
   'maximum',
   'average',
   'priority',
+  // 'ceil',
 ] as const
 export type EnclosingOperation = (typeof EnclosingOperations)[number]
 
-export const NonenclosingOperations = [...BinaryOperations] as const
-export type NonenclosingOperation = (typeof NonenclosingOperations)[number]
+export const isEnclosingOperation = (op: unknown): op is EnclosingOperation =>
+  EnclosingOperations.includes(op as EnclosingOperation)
 
-export const ExpressionOperations = [
-  ...NonenclosingOperations,
-  ...EnclosingOperations,
+export const NonEnclosingOperations = [
+  ...ExpressionOperations.filter(
+    (op: unknown): op is NonEnclosingOperation => !isEnclosingOperation(op)
+  ),
 ] as const
-export type ExpressionOperation = (typeof ExpressionOperations)[number]
+export type NonEnclosingOperation = Exclude<
+  ExpressionOperation,
+  EnclosingOperation
+>
 
 export const ExpressionUnitTypes = [
   'constant',
@@ -119,7 +140,7 @@ export interface TargetUnit {
 
 export interface OperationUnit {
   type: 'operation'
-  operation: NonenclosingOperation
+  operation: NonEnclosingOperation
 }
 
 export type EnclosingUnit =
