@@ -14,11 +14,11 @@ import {
   allWeaponKeys,
   artMaxLevel,
   substatTypeKeys,
-  weaponMaxLevel,
   weaponMaxAscension,
+  weaponMaxLevel,
 } from '@genshin-optimizer/gi/consts'
-import { validateLevelAsc } from '@genshin-optimizer/gi/util'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import { validateLevelAsc } from '@genshin-optimizer/gi/util'
 import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { BuildTc } from '../../Interfaces/BuildTc'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
