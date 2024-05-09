@@ -69,7 +69,7 @@ export function TeamCard({
         }}
       >
         <CardActionArea onClick={() => onClick()} sx={{ p: 1 }}>
-          <Typography sx={{ display: 'flex', gap: 1 }}>
+          <Typography sx={{ display: 'flex', gap: 1 }} variant="h6">
             <span>{name}</span>{' '}
             {description && (
               <BootstrapTooltip title={<Typography>{description}</Typography>}>
