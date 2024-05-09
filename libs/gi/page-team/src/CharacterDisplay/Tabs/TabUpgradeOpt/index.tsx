@@ -258,6 +258,9 @@ export default function TabUpopt() {
       }
     }
     const artifactsToConsider = filteredArts
+      // retrieve the artifacts again, just incase there is an update that is not captured by UpgradeOptChartCard
+      .map((art) => database.arts.get(art.id))
+      .filter(notEmpty)
       .filter((art) => art.rarity === 5)
       .filter(respectSexExclusion)
       .filter(
