@@ -14,8 +14,11 @@ import {
   allWeaponKeys,
   artMaxLevel,
   substatTypeKeys,
+  weaponMaxLevel,
+  weaponMaxAscension,
 } from '@genshin-optimizer/gi/consts'
 import { validateLevelAsc } from '@genshin-optimizer/gi/util'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { BuildTc } from '../../Interfaces/BuildTc'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -152,7 +155,13 @@ function validateCharTCWeapon(weapon: unknown): BuildTc['weapon'] | undefined {
   if (typeof weapon !== 'object') return undefined
   const { key } = weapon as BuildTc['weapon']
   let { level, ascension, refinement } = weapon as BuildTc['weapon']
+
   if (!allWeaponKeys.includes(key)) return undefined
+  const { rarity } = allStats.weapon.data[key]
+  if (level > weaponMaxLevel[rarity]) {
+    level = weaponMaxLevel[rarity]
+    ascension = weaponMaxAscension[rarity]
+  }
   if (typeof refinement !== 'number' || refinement < 1 || refinement > 5)
     refinement = 1
   const { level: _level, ascension: _ascension } = validateLevelAsc(
