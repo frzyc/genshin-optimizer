@@ -25,8 +25,8 @@ import {
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'
-import { LocationIcon } from '../LocationIcon'
 import { StatColoredWithUnit } from '../StatDisplay'
+import { CharIconSide } from '../character'
 import { ArtifactTooltip } from './ArtifactTooltip'
 import { artifactLevelVariant } from './util'
 
@@ -128,11 +128,11 @@ export function ArtifactCardNano({
                 size="small"
                 label={
                   location ? (
-                    <LocationIcon
-                      characterKey={
-                        location &&
-                        database.chars.LocationToCharacterKey(location)
-                      }
+                    <CharIconSide
+                      characterKey={database.chars.LocationToCharacterKey(
+                        location
+                      )}
+                      sideMargin
                     />
                   ) : (
                     <BusinessCenterIcon />
