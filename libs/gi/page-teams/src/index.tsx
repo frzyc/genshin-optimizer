@@ -239,7 +239,6 @@ export default function PageTeams() {
                   teamId={tid}
                   bgt="light"
                   onClick={(cid) => navigate(`${tid}${cid ? `/${cid}` : ''}`)}
-                  hoverCard
                 />
               </Suspense>
             </Grid>
