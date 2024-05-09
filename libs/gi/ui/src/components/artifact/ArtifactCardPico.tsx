@@ -1,12 +1,10 @@
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { Box, Typography } from '@mui/material'
 import { ArtifactTooltip } from './ArtifactTooltip'
-import { artifactLevelVariant } from './util'
 
 export function ArtifactCardPico({
   artifactObj: art,
@@ -41,10 +39,6 @@ export function ArtifactCardPico({
 
   // Actual artifact icon + info
   const { mainStatKey, rarity, level } = art
-  const element = allElementWithPhyKeys.find((ele) =>
-    art.mainStatKey.includes(ele)
-  )
-  const color = element ?? 'secondary'
 
   return (
     <ArtifactTooltip art={art}>
@@ -65,31 +59,23 @@ export function ArtifactCardPico({
             lineHeight: 1,
             opacity: 0.85,
             pointerEvents: 'none',
+            p: 0.25,
           }}
         >
-          <strong>
-            <SqBadge sx={{ p: 0.5 }} color={artifactLevelVariant(level)}>
-              <strong>+{level}</strong>
-            </SqBadge>
-          </strong>
+          <strong>+{level}</strong>
         </Typography>
         <Typography
           sx={{
             position: 'absolute',
             fontSize: '0.75rem',
             lineHeight: 1,
-            opacity: 0.85,
             pointerEvents: 'none',
             bottom: 0,
             right: 0,
+            p: 0.25,
           }}
         >
-          <SqBadge color={color} sx={{ p: 0.5 }}>
-            <StatIcon
-              statKey={mainStatKey}
-              iconProps={{ fontSize: 'inherit' }}
-            />
-          </SqBadge>
+          <StatIcon statKey={mainStatKey} iconProps={{ fontSize: 'inherit' }} />
         </Typography>
       </CardThemed>
     </ArtifactTooltip>

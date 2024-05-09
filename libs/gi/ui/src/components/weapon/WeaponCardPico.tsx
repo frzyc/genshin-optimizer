@@ -1,4 +1,4 @@
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useWeapon } from '@genshin-optimizer/gi/db-ui'
@@ -70,13 +70,10 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
           lineHeight: 1,
           opacity: 0.85,
           pointerEvents: 'none',
+          p: 0.25,
         }}
       >
-        <strong>
-          <SqBadge color="primary">
-            {getLevelString(weapon.level, weapon.ascension)}
-          </SqBadge>
-        </strong>
+        <strong>{getLevelString(weapon.level, weapon.ascension)}</strong>
       </Typography>
       {weaponHasRefinement(weapon.key) && (
         <Typography
@@ -88,11 +85,10 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
             pointerEvents: 'none',
             bottom: 0,
             right: 0,
+            p: 0.25,
           }}
         >
-          <strong>
-            <SqBadge color="secondary">R{weapon.refinement}</SqBadge>
-          </strong>
+          <strong>R{weapon.refinement}</strong>
         </Typography>
       )}
     </CardThemed>

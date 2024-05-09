@@ -67,15 +67,17 @@ export function CharacterCardEquipmentRowTC({
         <Grid item xs={5}>
           <Card
             sx={{
-              backgroundColor: 'info.main',
-              height: '44px',
+              backgroundColor: 'secondary.main',
+              height: '100%',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
             }}
           >
             {/* TODO: Translation */}
-            <Typography>TC Build</Typography>
+            <Typography>
+              <strong>TC Build</strong>
+            </Typography>
           </Card>
         </Grid>
       </Grid>
