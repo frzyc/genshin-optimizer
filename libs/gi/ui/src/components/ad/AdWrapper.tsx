@@ -48,16 +48,17 @@ function GOAdWrapper({
   children: ReactNode
 }) {
   const maxHeight = (sx as any)?.['maxHeight'] || (sx as any)?.['height']
+  const maxWidth = (sx as any)?.['maxWidth'] || (sx as any)?.['width']
   const Comp = useMemo(() => {
     const components: Array<FunctionComponent<{ children: ReactNode }>> = [GOAd]
     if (maxHeight === undefined || canshowGoDevAd(maxHeight))
       components.push(GODevAd)
     if (maxHeight === undefined || canshowSroDevAd(maxHeight))
       components.push(SRODevAd)
-    if (maxHeight === undefined || canShowDrakeAd(maxHeight))
+    if (maxHeight === undefined || canShowDrakeAd(maxHeight, maxWidth))
       components.push(DrakeAd)
     return getRandomElementFromArray(components)
-  }, [maxHeight])
+  }, [maxHeight, maxWidth])
   return (
     <Box className="go-ad-wrapper" sx={{ margin: 'auto', ...sx }}>
       <Comp>{children}</Comp>

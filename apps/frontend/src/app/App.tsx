@@ -36,6 +36,9 @@ import Footer from './Footer'
 import Header from './Header'
 import Snow from './Snow'
 
+const AD_RAIL_MAXWIDTH = 300
+const AD_RAIL_HEIGHT = 600
+
 const PageHome = lazy(() => import('@genshin-optimizer/gi/page-home'))
 const PageArtifacts = lazy(() => import('@genshin-optimizer/gi/page-artifacts'))
 const PageTools = lazy(() => import('@genshin-optimizer/gi/page-tools'))
@@ -150,9 +153,11 @@ function Content() {
               dataAdSlot="2411728037"
               sx={{
                 minWidth: 160,
-                maxWidth:
+                maxWidth: Math.min(
                   adWidth >= 160 && adWidth <= 320 ? adWidth : adWidth * 0.5,
-                height: 600,
+                  AD_RAIL_MAXWIDTH
+                ),
+                height: AD_RAIL_HEIGHT,
                 width: '100%',
               }}
             />
@@ -196,8 +201,8 @@ function Content() {
               dataAdSlot="2411728037"
               sx={{
                 minWidth: 160,
-                maxWidth: adWidth * 0.5,
-                height: 600,
+                maxWidth: Math.min(adWidth * 0.5, AD_RAIL_MAXWIDTH),
+                height: AD_RAIL_HEIGHT,
                 width: '100%',
               }}
             />
