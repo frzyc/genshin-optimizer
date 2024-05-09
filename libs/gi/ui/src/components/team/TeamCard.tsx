@@ -316,6 +316,7 @@ function CharacterArea({
                   display: 'flex',
                   gap: 1,
                   alignItems: 'center',
+                  textShadow: '0 0 5px black',
                 }}
               >
                 <PersonIcon />
@@ -324,7 +325,12 @@ function CharacterArea({
 
               <Typography
                 noWrap
-                sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  alignItems: 'center',
+                  textShadow: '0 0 5px black',
+                }}
               >
                 <CheckroomIcon />
                 <span>{buildname}</span>
