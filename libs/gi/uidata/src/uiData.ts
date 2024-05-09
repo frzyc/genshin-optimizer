@@ -76,6 +76,7 @@ export class UIData {
 
   display: any = undefined
   teamBuff: any = undefined
+  bonusStats: any = undefined
 
   constructor(data: Data, parent: UIData | undefined) {
     if (data === undefined) {
@@ -113,6 +114,16 @@ export class UIData {
       this.teamBuff = result
     }
     return this.teamBuff
+  }
+  getBonusStats() {
+    if (!this.bonusStats)
+      this.bonusStats = Object.fromEntries(
+        Object.entries(input.customBonus)
+          .map(([key, node]) => [key, this.get(node)] as const)
+          .filter(([, result]) => !result.isEmpty && result.value)
+      )
+
+    return this.bonusStats
   }
   private getAll(prefix: string[]): any {
     const result = {}
@@ -347,18 +358,16 @@ export class UIData {
     operands: CalcResult<number>[]
   ): CalcResult<number> {
     const info = accumulateInfo(operands)
+    const isEmpty = operands.every((x) => x.isEmpty)
     switch (operation) {
       case 'add':
       case 'mul':
       case 'min':
       case 'max': {
-        const identity = allOperations[operation]([])
-        if (process.env['NODE_ENV'] !== 'development')
+        if (process.env['NODE_ENV'] !== 'development') {
+          const identity = allOperations[operation]([])
           operands = operands.filter((operand) => operand.value !== identity)
-        if (!operands.length)
-          return Object.values(info).some((x) => x)
-            ? { ...this._constant(identity), info }
-            : this._constant(identity)
+        }
       }
     }
 
@@ -370,7 +379,7 @@ export class UIData {
         conds: operands.flatMap((op) => op.meta.conds),
       },
       info,
-      isEmpty: operands.every((x) => x.isEmpty),
+      isEmpty,
     }
   }
 }

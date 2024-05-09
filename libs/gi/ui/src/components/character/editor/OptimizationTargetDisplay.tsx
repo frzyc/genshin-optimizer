@@ -1,5 +1,6 @@
-import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
+import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import TrackChangesIcon from '@mui/icons-material/TrackChanges'
@@ -12,49 +13,39 @@ import {
   Typography,
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
 import { DataContext } from '../../../context'
 import { getDisplayHeader, resolveInfo } from '../../../util'
 export function OptimizationTargetDisplay({
   optimizationTarget,
-  showEmptyTargets = false,
+  customMultiTargets,
 }: {
-  optimizationTarget?: string[]
-  showEmptyTargets?: boolean
+  optimizationTarget: string[]
+  customMultiTargets: CustomMultiTarget[]
 }) {
-  const { t } = useTranslation('page_character_optimize')
-
   const { data } = useContext(DataContext)
   const database = useDatabase()
   const displayHeader = useMemo(
-    () =>
-      optimizationTarget &&
-      getDisplayHeader(data, optimizationTarget[0], database),
+    () => getDisplayHeader(data, optimizationTarget[0], database),
     [data, optimizationTarget, database]
   )
 
-  const defaultText = t('targetSelector.selectOptTarget')
-
   const { title, icon, action } = displayHeader ?? {}
-  const node: CalcResult | undefined =
-    optimizationTarget &&
-    (objPathValue(data.getDisplay(), optimizationTarget) as any)
+  const node: CalcResult | undefined = objPathValue(
+    data.getDisplay(),
+    optimizationTarget
+  ) as any
 
-  const invalidTarget =
-    !optimizationTarget ||
-    !displayHeader ||
-    !node ||
-    // Make sure the opt target is valid, if we are not in multi-target
-    (!showEmptyTargets && node.isEmpty)
   const {
-    variant = invalidTarget ? 'secondary' : undefined,
     textSuffix,
     icon: infoIcon,
-    name,
+    // Since mtargets are not passed in the character UIData, retrieve the name manually.
+    name = optimizationTarget[0] === 'custom'
+      ? customMultiTargets[parseInt(optimizationTarget[1] ?? '')]?.name
+      : undefined,
   } = (node && resolveInfo(node.info)) ?? {}
 
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
-  const iconDisplay = icon ? <ImgIcon src={icon} size={2} /> : infoIcon
+  const iconDisplay = icon ? icon : infoIcon
   return (
     <CardThemed bgt="light">
       <CardHeader
@@ -73,37 +64,29 @@ export function OptimizationTargetDisplay({
       />
       <Divider />
       <CardContent>
-        {invalidTarget ? (
-          <strong>{defaultText}</strong>
-        ) : (
-          <Stack
-            // direction="row"
-            divider={<Divider orientation="vertical" flexItem />}
-            spacing={1}
-          >
-            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-              {iconDisplay}
-              <span>{title}</span>
-              {!!action && (
-                <SqBadge color="success" sx={{ whiteSpace: 'normal' }}>
-                  {action}
-                </SqBadge>
-              )}
-            </Box>
-            <Typography
-              variant="h6"
-              sx={{ display: 'flex', alignItems: 'center' }}
-            >
-              <SqBadge
-                color={variant === 'invalid' ? undefined : variant}
-                sx={{ whiteSpace: 'normal' }}
-              >
-                <strong>{name}</strong>
-                {suffixDisplay}
+        <Stack
+          divider={<Divider orientation="vertical" flexItem />}
+          spacing={1}
+        >
+          <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            {iconDisplay}
+            <span>{title}</span>
+            {!!action && (
+              <SqBadge color="success" sx={{ whiteSpace: 'normal' }}>
+                {action}
               </SqBadge>
-            </Typography>
-          </Stack>
-        )}
+            )}
+          </Box>
+          <Typography
+            variant="h6"
+            sx={{ display: 'flex', alignItems: 'center' }}
+          >
+            <SqBadge sx={{ whiteSpace: 'normal' }}>
+              <strong>{name}</strong>
+              {suffixDisplay}
+            </SqBadge>
+          </Typography>
+        </Stack>
       </CardContent>
     </CardThemed>
   )

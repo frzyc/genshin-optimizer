@@ -179,6 +179,7 @@ export function LoadoutEditor({
                 <Grid item xs={1}>
                   <OptimizationTargetDisplay
                     optimizationTarget={optimizationTarget}
+                    customMultiTargets={customMultiTargets}
                   />
                 </Grid>
               )}
