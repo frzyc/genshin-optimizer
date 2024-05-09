@@ -69,7 +69,7 @@ export function LoadoutCard({
           </CardContent>
         </CardActionArea>
         <Divider />
-        <CardContent>
+        <CardContent sx={{ p: 1 }}>
           <Grid container columns={columns} spacing={1}>
             {teamIds.map((teamId) => (
               <Grid item xs={1} key={teamId}>
