@@ -25,13 +25,14 @@ export function ArtifactTooltip({
   art: ICachedArtifact
   children: JSX.Element
 }) {
-  const fallback = (
-    <Box>
-      <Skeleton variant="rectangular" width={100} height={100} />
-    </Box>
-  )
   const title = (
-    <Suspense fallback={fallback}>
+    <Suspense
+      fallback={
+        <Box>
+          <Skeleton variant="rectangular" width={100} height={100} />
+        </Box>
+      }
+    >
       <ArtifactData art={art} />
     </Suspense>
   )

@@ -38,12 +38,9 @@ import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts, dynamicData } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
+  AdCard,
   ArtifactLevelSlider,
   BuildDisplayItem,
-  CharacterCardEquipmentRow,
-  CharacterCardHeader,
-  CharacterCardHeaderContent,
-  CharacterCardStats,
   CharacterName,
   DataContext,
   GraphContext,
@@ -110,6 +107,7 @@ import BuildAlert from './Components/BuildAlert'
 import ChartCard from './Components/ChartCard'
 import ExcludeArt from './Components/ExcludeArt'
 import MainStatSelectionCard from './Components/MainStatSelectionCard'
+import { OptCharacterCard } from './Components/OptCharacterCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
 import UseEquipped from './Components/UseEquipped'
@@ -352,7 +350,8 @@ export default function TabBuild() {
               workerData.display ?? {},
               JSON.parse(pathStr)
             )
-            const infoResolved = filterNode.info && resolveInfo(filterNode.info)
+            const infoResolved =
+              filterNode?.info && resolveInfo(filterNode.info)
             const minimum =
               infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
             return { value: filterNode, minimum: minimum }
@@ -560,7 +559,8 @@ export default function TabBuild() {
           flexDirection="column"
           gap={1}
         >
-          <CharacterCard characterKey={characterKey} />
+          <OptCharacterCard characterKey={characterKey} />
+          <BonusStatsCard />
         </Grid>
         {/* 2 */}
         <Grid
@@ -618,19 +618,6 @@ export default function TabBuild() {
               filteredArtIdMap={filteredArtIdMap}
             />
           </CardThemed>
-        </Grid>
-
-        {/* 3 */}
-        <Grid
-          item
-          xs={12}
-          sm={6}
-          lg={5}
-          display="flex"
-          flexDirection="column"
-          gap={1}
-        >
-          <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use excluded */}
           <ExcludeArt
@@ -655,6 +642,19 @@ export default function TabBuild() {
           >
             {t`allowPartial`}
           </Button>
+        </Grid>
+
+        {/* 3 */}
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          lg={5}
+          display="flex"
+          flexDirection="column"
+          gap={1}
+        >
+          <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use equipped */}
           <UseEquipped
@@ -664,6 +664,7 @@ export default function TabBuild() {
 
           {/*Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />
+          <AdCard dataAdSlot="7724855772" />
         </Grid>
       </Grid>
       {/* Footer */}
@@ -671,7 +672,7 @@ export default function TabBuild() {
       <ButtonGroup>
         {!isSM && targetSelector}
         <DropdownButton
-          disabled={generatingBuilds || !characterKey}
+          disabled={generatingBuilds || !characterKey || !optimizationTarget}
           title={
             <Trans t={t} i18nKey="build" count={maxBuildsToShow}>
               {{ count: maxBuildsToShow }} Builds
@@ -698,7 +699,7 @@ export default function TabBuild() {
           ))}
         </DropdownButton>
         <DropdownButton
-          disabled={generatingBuilds || !characterKey}
+          disabled={generatingBuilds || !characterKey || !optimizationTarget}
           sx={{ borderRadius: '4px 0px 0px 4px' }}
           title={
             <Trans t={t} i18nKey="thread" count={maxWorkers}>
@@ -723,17 +724,20 @@ export default function TabBuild() {
             ))}
         </DropdownButton>
         <BootstrapTooltip placement="top" title={t`notifyTooltip`}>
-          <Button
-            sx={{ borderRadius: 0 }}
-            color="warning"
-            onClick={() => setnotification((n) => !n)}
-          >
-            {notification ? (
-              <NotificationsActiveIcon />
-            ) : (
-              <NotificationsOffIcon />
-            )}
-          </Button>
+          <Box>
+            <Button
+              sx={{ borderRadius: 0 }}
+              color="warning"
+              onClick={() => setnotification((n) => !n)}
+              disabled={!optimizationTarget}
+            >
+              {notification ? (
+                <NotificationsActiveIcon />
+              ) : (
+                <NotificationsOffIcon />
+              )}
+            </Button>
+          </Box>
         </BootstrapTooltip>
         <BootstrapTooltip
           placement="top"
@@ -766,64 +770,68 @@ export default function TabBuild() {
           {...{ status: buildStatus, characterName, maxBuildsToShow }}
         />
       )}
-      <Box>
-        <ChartCard
-          disabled={generatingBuilds || !optimizationTarget}
-          plotBase={plotBase}
-          setPlotBase={setPlotBase}
-          showTooltip={!optimizationTarget}
-        />
-      </Box>
-      <CardThemed bgt="light">
-        <CardContent>
-          <Box display="flex" alignItems="center" gap={1} mb={1}>
-            <Typography sx={{ flexGrow: 1 }}>
-              {builds ? (
-                <span>
-                  Showing{' '}
-                  <strong>
-                    {builds.length + (graphBuilds ? graphBuilds.length : 0)}
-                  </strong>{' '}
-                  build generated for {characterName}.{' '}
-                  {!!buildDate && (
-                    <span>
-                      Build generated on:{' '}
-                      <strong>{new Date(buildDate).toLocaleString()}</strong>
-                    </span>
-                  )}
-                </span>
-              ) : (
-                <span>Select a character to generate builds.</span>
-              )}
-            </Typography>
-            <Button
-              disabled={!builds.length}
-              color="error"
-              onClick={() => {
-                setGraphBuilds(undefined)
-                database.optConfigs.set(optConfigId, {
-                  builds: [],
-                  buildDate: 0,
-                })
-              }}
-            >
-              Clear Builds
-            </Button>
-          </Box>
-          <Grid container display="flex" spacing={1}>
-            <Grid item>
-              <HitModeToggle size="small" />
+      {optimizationTarget && (
+        <Box>
+          <ChartCard
+            disabled={generatingBuilds || !optimizationTarget}
+            plotBase={plotBase}
+            setPlotBase={setPlotBase}
+            showTooltip={!optimizationTarget}
+          />
+        </Box>
+      )}
+      {optimizationTarget && (
+        <CardThemed bgt="light">
+          <CardContent>
+            <Box display="flex" alignItems="center" gap={1} mb={1}>
+              <Typography sx={{ flexGrow: 1 }}>
+                {builds ? (
+                  <span>
+                    Showing{' '}
+                    <strong>
+                      {builds.length + (graphBuilds ? graphBuilds.length : 0)}
+                    </strong>{' '}
+                    build generated for {characterName}.{' '}
+                    {!!buildDate && (
+                      <span>
+                        Build generated on:{' '}
+                        <strong>{new Date(buildDate).toLocaleString()}</strong>
+                      </span>
+                    )}
+                  </span>
+                ) : (
+                  <span>Select a character to generate builds.</span>
+                )}
+              </Typography>
+              <Button
+                disabled={!builds.length}
+                color="error"
+                onClick={() => {
+                  setGraphBuilds(undefined)
+                  database.optConfigs.set(optConfigId, {
+                    builds: [],
+                    buildDate: 0,
+                  })
+                }}
+              >
+                Clear Builds
+              </Button>
+            </Box>
+            <Grid container display="flex" spacing={1}>
+              <Grid item>
+                <HitModeToggle size="small" />
+              </Grid>
+              <Grid item>
+                <ReactionToggle size="small" />
+              </Grid>
+              <Grid item flexGrow={1} />
+              <Grid item>
+                <CompareBtn />
+              </Grid>
             </Grid>
-            <Grid item>
-              <ReactionToggle size="small" />
-            </Grid>
-            <Grid item flexGrow={1} />
-            <Grid item>
-              <CompareBtn />
-            </Grid>
-          </Grid>
-        </CardContent>
-      </CardThemed>
+          </CardContent>
+        </CardThemed>
+      )}
 
       <OptimizationTargetContext.Provider value={optimizationTarget}>
         {graphBuilds && (
@@ -888,44 +896,6 @@ const LevelFilter = memo(function LevelFilter({
         disabled={disabled}
       />
     </CardThemed>
-  )
-})
-
-const CharacterCard = memo(function CharacterCard({
-  characterKey,
-}: {
-  characterKey: CharacterKey
-}) {
-  return (
-    <>
-      {/* character card */}
-      <Box>
-        <Suspense
-          fallback={
-            <Skeleton variant="rectangular" width="100%" height={600} />
-          }
-        >
-          <CardThemed bgt="light">
-            <CharacterCardHeader characterKey={characterKey}>
-              <CharacterCardHeaderContent characterKey={characterKey} />
-            </CharacterCardHeader>
-            <Box
-              sx={{
-                p: 1,
-                width: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 1,
-              }}
-            >
-              <CharacterCardEquipmentRow />
-              <CharacterCardStats />
-            </Box>
-          </CardThemed>
-        </Suspense>
-      </Box>
-      <BonusStatsCard />
-    </>
   )
 })
 

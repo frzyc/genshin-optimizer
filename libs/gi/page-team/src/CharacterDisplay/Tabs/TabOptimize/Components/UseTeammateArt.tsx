@@ -69,6 +69,7 @@ export const UseTeammateArt = memo(function UseTeammateArt({
                         flexDirection: 'column',
                         gap: 1,
                       }}
+                      key={loadoutDatum.teamCharId}
                     >
                       <Box display="flex" alignItems="center" gap={1}>
                         {characterKey && (

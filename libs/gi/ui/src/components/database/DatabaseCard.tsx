@@ -63,7 +63,12 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   const numChar = database.chars.keys.length
   const numArt = database.arts.values.length
   const numWeapon = database.weapons.values.length
-  const hasData = Boolean(numChar || numArt || numWeapon)
+  const numTeams = database.teams.values.length
+  const numLoadouts = database.teamChars.values.length
+  const numBuilds = database.builds.values.length
+  const hasData = Boolean(
+    numChar || numArt || numWeapon || numTeams || numLoadouts || numBuilds
+  )
   const copyToClipboard = useCallback(
     () =>
       navigator.clipboard
@@ -163,11 +168,17 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
               <Trans t={t} i18nKey="count.weapons" />{' '}
               <strong>{numWeapon}</strong>
             </Typography>
-            {!!lastEdit && (
-              <Typography noWrap>
-                <strong>{new Date(lastEdit).toLocaleString()}</strong>
-              </Typography>
-            )}
+            <Typography noWrap>
+              <Trans t={t} i18nKey="count.teams" /> <strong>{numTeams}</strong>
+            </Typography>
+            <Typography noWrap>
+              <Trans t={t} i18nKey="count.loadouts" />{' '}
+              <strong>{numLoadouts}</strong>
+            </Typography>
+            <Typography noWrap>
+              <Trans t={t} i18nKey="count.builds" />{' '}
+              <strong>{numBuilds}</strong>
+            </Typography>
           </Box>
           <Box>
             <Grid container spacing={1} columns={{ xs: 2 }}>
@@ -219,6 +230,11 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                 </Button>
               </Grid>
             </Grid>
+            {!!lastEdit && (
+              <Typography noWrap align="center" style={{ paddingTop: '1.5em' }}>
+                <strong>{new Date(lastEdit).toLocaleString()}</strong>
+              </Typography>
+            )}
           </Box>
         </Box>
       </CardContent>

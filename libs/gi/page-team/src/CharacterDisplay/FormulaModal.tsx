@@ -1,7 +1,6 @@
 import {
   CardHeaderCustom,
   CardThemed,
-  ImgIcon,
   ModalWrapper,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
@@ -105,7 +104,7 @@ function FormulaCalc({
   return (
     <CardThemed bgt="light" sx={{ mb: 1 }}>
       <CardHeaderCustom
-        avatar={icon && <ImgIcon size={2} src={icon} />}
+        avatar={icon}
         title={title}
         action={action && <SqBadge>{action}</SqBadge>}
       />

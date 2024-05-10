@@ -1,43 +1,47 @@
-import { useTimeout } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { linspace } from '@genshin-optimizer/common/util'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  useBoolState,
+  useForceUpdate,
+} from '@genshin-optimizer/common/react-util'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { linspace, objMap } from '@genshin-optimizer/common/util'
+import {
+  charKeyToLocCharKey,
+  type ArtifactSlotKey,
+} from '@genshin-optimizer/gi/consts'
+import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   ArtifactCard,
   ArtifactCardPico,
   DataContext,
+  EquipBuildModal,
 } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
-import { Box, CardContent, Grid, Typography } from '@mui/material'
-import { useCallback, useContext, useMemo } from 'react'
-import type { TooltipProps } from 'recharts'
+import CheckroomIcon from '@mui/icons-material/Checkroom'
+import { Box, Button, Divider, Grid, Tooltip, Typography } from '@mui/material'
+import { useCallback, useContext, useEffect, useMemo } from 'react'
 import {
   Area,
   ComposedChart,
   Label,
   Legend,
   Line,
-  ReferenceDot,
   ReferenceLine,
   ResponsiveContainer,
-  Tooltip,
   XAxis,
   YAxis,
 } from 'recharts'
 import { erf } from './mathUtil'
-import type { UpOptArtifact } from './upOpt'
+import type { UpOptCalculator } from './upOpt'
 import { ResultType } from './upOpt'
 
 type Props = {
   setArtifactIdToEdit: (id: string | undefined) => void
-  upgradeOpt: UpOptArtifact
   showTrue?: boolean
   objMin: number
   objMax: number
   thresholds: number[]
-  ix?: number
-  calcExactCallback: () => void
+  ix: number
+  upOptCalc: UpOptCalculator
 }
 type ChartData = {
   x: number
@@ -48,47 +52,136 @@ type ChartData = {
 const nbins = 50
 
 export default function UpgradeOptChartCard(props: Props) {
-  const id = props.upgradeOpt.id
+  const database = useDatabase()
+  const id = props.upOptCalc.artifacts[props.ix]?.id
+  const upArt = database.arts.get(id)
+  const { data } = useContext(DataContext)
+  const currentlyEquippedArtId =
+    upArt?.slotKey && data.get(input.art[upArt.slotKey].id).value
+  const isEquipped = id === currentlyEquippedArtId
   return (
-    <Grid container spacing={1}>
-      <Grid item xs={5} sm={4} md={4} lg={3} xl={3}>
-        <ArtifactCard
-          artifactId={id}
-          onEdit={() => props.setArtifactIdToEdit(id)}
-        />
+    <Box>
+      <Grid container spacing={1}>
+        <Grid item xs={12} sm={5} md={4} lg={3} xl={3}>
+          <ArtifactCard
+            artifactId={id}
+            onEdit={() => props.setArtifactIdToEdit(id)}
+            extraButtons={<EquipButton newArtId={id} disabled={isEquipped} />}
+          />
+        </Grid>
+        <Grid item xs={12} sm={7} md={8} lg={9} xl={9}>
+          <UpgradeOptChartCardGraph {...props} />
+        </Grid>
       </Grid>
-      <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
-        <UpgradeOptChartCardGraph {...props} />
-      </Grid>
-    </Grid>
+    </Box>
+  )
+}
+function EquipButton({
+  newArtId,
+  disabled,
+}: {
+  newArtId: string
+  disabled: boolean
+}) {
+  const database = useDatabase()
+  const {
+    loadoutDatum,
+    loadoutDatum: { buildType, buildId },
+    teamChar: { key: characterKey },
+  } = useContext(TeamCharacterContext)
+  const [show, onShow, onHide] = useBoolState()
+  const weapon = database.teams.getLoadoutWeapon(loadoutDatum)
+  const artifactids = objMap(
+    database.teams.getLoadoutArtifacts(loadoutDatum),
+    (art) => art?.id
+  )
+  const newArt = database.arts.get(newArtId)
+  if (!newArt) return
+
+  return (
+    <>
+      <EquipBuildModal
+        equipChangeProps={{
+          currentName:
+            buildType === 'real'
+              ? database.builds.get(buildId)!.name
+              : 'Equipped',
+          currentWeapon: weapon?.id,
+          currentArtifacts: artifactids,
+          newWeapon: weapon?.id,
+          newArtifacts: objMap(artifactids, (art, slotKey) =>
+            slotKey === newArt.slotKey ? newArtId : art
+          ),
+        }}
+        showPrompt={show}
+        onEquip={() => {
+          if (buildType === 'equipped')
+            database.arts.set(newArtId, {
+              location: charKeyToLocCharKey(characterKey),
+            })
+          else if (buildType === 'real')
+            database.builds.set(buildId, (build) => {
+              build.artifactIds[newArt.slotKey] = newArtId
+            })
+        }}
+        OnHidePrompt={onHide}
+      />
+      <Tooltip title={<Typography>Equip</Typography>} placement="top" arrow>
+        <Box>
+          <Button
+            color="info"
+            size="small"
+            onClick={onShow}
+            disabled={disabled}
+          >
+            <CheckroomIcon />
+          </Button>
+        </Box>
+      </Tooltip>
+    </>
   )
 }
 
 function UpgradeOptChartCardGraph({
-  upgradeOpt,
   thresholds,
   objMin,
   objMax,
-  calcExactCallback,
+  upOptCalc,
+  ix,
 }: Props) {
+  const upArt = upOptCalc.artifacts[ix]
   const database = useDatabase()
-  const bla = database.arts.get(upgradeOpt.id)
-  if (!bla) {
-    throw new Error(`artifact ${upgradeOpt.id} not found.`)
-  }
+  const [, forceUpdate] = useForceUpdate()
+  const equippedArt = database.arts.get(upArt.id)
+
+  const updateUpOpt = useCallback(() => {
+    const art = database.arts.get(upArt.id)
+    if (!art) return
+    upOptCalc.reCalc(ix, art)
+    forceUpdate()
+  }, [database, forceUpdate, ix, upOptCalc, upArt.id])
+
+  useEffect(
+    () =>
+      database.arts.follow(
+        upArt.id,
+        (_, reason) => reason === 'update' && updateUpOpt()
+      ),
+    [database, updateUpOpt, upArt.id]
+  )
 
   const constrained = thresholds.length > 1
 
   // Returns P(a < DMG < b)
   const integral = (a: number, b: number) =>
-    upgradeOpt.result!.distr.gmm.reduce((pv, { phi, mu, sig2 }) => {
+    upArt.result!.distr.gmm.reduce((pv, { phi, mu, sig2 }) => {
       const sig = Math.sqrt(sig2)
       if (sig < 1e-3) return a <= mu && mu < b ? phi + pv : pv
       const P = erf((mu - a) / sig) - erf((mu - b) / sig)
       return pv + (phi * P) / 2
     }, 0)
   const integralCons = (a: number, b: number) =>
-    upgradeOpt.result!.distr.gmm.reduce((pv, { cp, phi, mu, sig2 }) => {
+    upArt.result!.distr.gmm.reduce((pv, { cp, phi, mu, sig2 }) => {
       const sig = Math.sqrt(sig2)
       if (sig < 1e-3) return a <= mu && mu < b ? cp * phi + pv : pv
       const P = erf((mu - a) / sig) - erf((mu - b) / sig)
@@ -117,21 +210,20 @@ function UpgradeOptChartCardGraph({
   dataHist.unshift({ x: perc(objMin), est: 0, estCons: 0 })
   dataHist.push({ x: perc(objMax), est: 0, estCons: 0 })
 
-  const ymax = dataHist.reduce((max, { est }) => Math.max(max, est!), 0)
+  const ymax = dataHist.reduce((max, { est }) => Math.max(max, est!), 0) || 1
   const xpercent = (thr0 - objMin) / (objMax - objMin)
 
   // if trueP/E have been calculated, otherwise use upgradeOpt's estimate
-  const reportP = upgradeOpt.result!.p
-  const reportD = upgradeOpt.result!.upAvg
+  const reportP = upArt.result!.p
+  const reportD = upArt.result!.upAvg
   const chartData = dataHist
-  const isExact = upgradeOpt.result!.evalMode === ResultType.Exact
+  const isExact = upArt.result!.evalMode === ResultType.Exact
 
-  const reportBin = linspace(objMin, objMax, nbins, false).reduce((a, b) =>
-    b < thr0 + reportD ? b : a
-  )
-  const reportY = integralCons(reportBin, reportBin + step)
-  const timeoutFunc = useTimeout()
-  if (!isExact) timeoutFunc(calcExactCallback, 1000) // lazy load the exact calculation
+  useEffect(() => {
+    if (isExact) return
+    upOptCalc.calcExact(ix)
+    forceUpdate()
+  }, [upOptCalc, isExact, ix, forceUpdate])
 
   const probUpgradeText = (
     <span>
@@ -148,129 +240,144 @@ function UpgradeOptChartCardGraph({
       </strong>
     </span>
   )
-  const CustomTooltip = ({ active }: TooltipProps<string, string>) => {
-    if (!active) return null
-    // I kinda want the [average increase] to only appear when hovering the white dot.
-    return (
-      <div className="custom-tooltip">
-        <p className="label"></p>
-        <p className="desc">{probUpgradeText}</p>
-        <p className="desc">{avgIncText}</p>
-      </div>
-    )
-  }
-
+  const { data } = useContext(DataContext)
+  const currentlyEquippedArtId =
+    equippedArt?.slotKey && data.get(input.art[equippedArt.slotKey].id).value
+  const isCurrentlyEquipped = currentlyEquippedArtId === upArt.id
   return (
-    <CardThemed bgt="light">
+    <CardThemed bgt="light" sx={{ height: '100%' }}>
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-        <CardContent sx={{ flexGrow: 1 }}>
-          <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
-            <Typography>{probUpgradeText}</Typography>
-            <Typography sx={{ flexGrow: 1 }}>{avgIncText}</Typography>
-            <Typography>Currently Equipped</Typography>
-          </Box>
-        </CardContent>
         <Box sx={{ height: 50, width: 50 }}>
-          <EquippedArtifact slotKey={bla.slotKey} />
+          {!!equippedArt?.slotKey && (
+            <EquippedArtifact slotKey={equippedArt.slotKey} />
+          )}
+        </Box>
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 2,
+            px: 2,
+            py: 1,
+          }}
+        >
+          <Box flexGrow={1}>
+            {isCurrentlyEquipped ? (
+              <SqBadge color="secondary">Equipped</SqBadge>
+            ) : (
+              <Typography>{'Current on Build'}</Typography>
+            )}
+          </Box>
+
+          <Typography>{probUpgradeText}</Typography>
+          <Typography>{avgIncText}</Typography>
         </Box>
       </Box>
-
-      <CardContent>
-        <ResponsiveContainer width="100%" aspect={2.5} key={upgradeOpt.id}>
-          <ComposedChart
-            data={chartData}
-            margin={{ top: 5, right: 30, left: 20, bottom: 20 }}
+      <Divider />
+      <ResponsiveContainer
+        width="100%"
+        height="100%"
+        maxHeight={300}
+        key={upArt.id}
+      >
+        <ComposedChart
+          data={chartData}
+          margin={{ top: 5, right: 30, left: 20, bottom: 20 }}
+        >
+          <XAxis
+            dataKey="x"
+            type="number"
+            domain={['auto', 'auto']}
+            allowDecimals={false}
+            tickFormatter={(v) => `${v <= 0 ? '' : '+'}${v}%`}
           >
-            <XAxis
-              dataKey="x"
-              type="number"
-              domain={['auto', 'auto']}
-              allowDecimals={false}
-              tickFormatter={(v) => `${v <= 0 ? '' : '+'}${v}%`}
+            <Label
+              value="Relative Increase to Target"
+              position="insideBottom"
+              style={{ fill: '#eaebed' }}
+              offset={-10}
+            />
+          </XAxis>
+          <YAxis
+            type="number"
+            domain={[0, ymax]}
+            tickFormatter={(v) => `${(v * 100).toFixed()}%`}
+          >
+            <Label
+              value="Probability"
+              position="insideLeft"
+              angle={-90}
+              style={{ fill: '#eaebed' }}
+            />
+          </YAxis>
+          <Legend verticalAlign="top" height={36} />
+
+          <defs>
+            <linearGradient
+              id={`splitOpacity${upArt.id}`}
+              x1="0"
+              y1="0"
+              x2={xpercent}
+              y2="0"
             >
-              <Label
-                value="Relative Damage Potential"
-                position="insideBottom"
-                style={{ fill: '#eaebed' }}
-                offset={-10}
+              <stop
+                offset={1}
+                stopColor={isExact ? '#f17704' : 'orange'}
+                stopOpacity={0}
               />
-            </XAxis>
-            <YAxis type="number" domain={[0, ymax]} tick={false}>
-              <Label
-                value="Probability"
-                position="insideLeft"
-                angle={-90}
-                style={{ fill: '#eaebed' }}
+              <stop
+                offset={0}
+                stopColor={isExact ? '#f17704' : 'orange'}
+                stopOpacity={1}
               />
-            </YAxis>
-            <Legend verticalAlign="top" height={36} />
+            </linearGradient>
+          </defs>
 
-            <defs>
-              <linearGradient
-                id={`splitOpacity${upgradeOpt.id}`}
-                x1="0"
-                y1="0"
-                x2={xpercent}
-                y2="0"
-              >
-                <stop
-                  offset={1}
-                  stopColor={isExact ? '#f17704' : 'orange'}
-                  stopOpacity={0}
-                />
-                <stop
-                  offset={0}
-                  stopColor={isExact ? '#f17704' : 'orange'}
-                  stopOpacity={1}
-                />
-              </linearGradient>
-            </defs>
-
-            <Line dataKey="dne" stroke="red" name="Current Damage" />
-            {constrained && (
-              <Area
-                type="monotone"
-                dataKey="est"
-                stroke="grey"
-                dot={false}
-                fill="grey"
-                legendType="none"
-                tooltipType="none"
-                opacity={0.5}
-                activeDot={false}
-              />
-            )}
+          <Line dataKey="dne" stroke="red" name="Current Target Value" />
+          <Line dataKey="dne" stroke="rgba(0,200,0)" name="Average Increase" />
+          {constrained && (
             <Area
               type="monotone"
-              dataKey="estCons"
-              stroke={isExact ? '#f17704' : 'orange'}
+              dataKey="est"
+              stroke="grey"
               dot={false}
-              fill={`url(#splitOpacity${upgradeOpt.id})`}
+              fill="grey"
+              legendType="none"
+              tooltipType="none"
               opacity={0.5}
-              name={
-                isExact
-                  ? `Exact${constrained ? ' Constrained' : ''} Distribution`
-                  : `Estimated Distribution`
-              }
               activeDot={false}
             />
-
-            <ReferenceLine
-              x={perc(thr0)}
-              stroke="red"
-              strokeDasharray="3 3"
-              name="Current Damage"
-            />
-            <ReferenceDot
-              x={perc(thr0 + reportD)}
-              y={reportY / 2}
-              shape={<circle radius={1} opacity={0.5} />}
-            />
-
-            <Tooltip content={<CustomTooltip />} cursor={false} />
-          </ComposedChart>
-        </ResponsiveContainer>
-      </CardContent>
+          )}
+          <Area
+            type="monotone"
+            dataKey="estCons"
+            stroke={isExact ? '#f17704' : 'orange'}
+            dot={false}
+            fill={`url(#splitOpacity${upArt.id})`}
+            opacity={0.5}
+            name={
+              isExact
+                ? `Exact${constrained ? ' Constrained' : ''} Distribution`
+                : `Estimated Distribution`
+            }
+            activeDot={false}
+          />
+          <ReferenceLine
+            x={perc(thr0)}
+            stroke="red"
+            strokeDasharray="3 3"
+            name="Current Target"
+          />
+          <ReferenceLine
+            x={perc(thr0 + reportD)}
+            stroke="rgba(0,200,0,1)"
+            strokeDasharray="3 3"
+            name="Current Target"
+          />
+        </ComposedChart>
+      </ResponsiveContainer>
     </CardThemed>
   )
 }

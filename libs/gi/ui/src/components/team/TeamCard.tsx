@@ -1,32 +1,41 @@
-import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
-import { hexToColor } from '@genshin-optimizer/common/util'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  ColorText,
+} from '@genshin-optimizer/common/ui'
+import { characterAsset, imgAssets } from '@genshin-optimizer/gi/assets'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
   CharacterContext,
   useCharacter,
+  useDBMeta,
   useDatabase,
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
+import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
+import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
+import { getLevelString } from '@genshin-optimizer/gi/util'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import InfoIcon from '@mui/icons-material/Info'
 import PersonIcon from '@mui/icons-material/Person'
-import { Box, CardActionArea, Grid, Skeleton, Typography } from '@mui/material'
-import { Suspense, useMemo } from 'react'
-import type { dataContextObj } from '../../context'
-import { DataContext } from '../../context'
-import { useCharData } from '../../hooks'
-import { getBuildTcArtifactData } from '../../util'
 import {
-  BlankCharacterCardPico,
+  Box,
+  CardActionArea,
+  Divider,
+  Skeleton,
+  Typography,
+} from '@mui/material'
+import React, { Suspense, useContext, useMemo } from 'react'
+import type { dataContextObj } from '../../context'
+import { DataContext, SillyContext } from '../../context'
+import { useCharData } from '../../hooks'
+import { getBuildTcArtifactData, iconAsset } from '../../util'
+import {
   CharacterCardEquipmentRow,
   CharacterCardEquipmentRowTC,
-  CharacterCardHeader,
-  CharacterCardHeaderContent,
-  CharacterCardPico,
 } from '../character'
 
 // TODO: Translation
@@ -34,56 +43,33 @@ import {
 export function TeamCard({
   teamId,
   onClick,
-  hoverCard = false,
   bgt,
 }: {
   teamId: string
   bgt?: 'light' | 'dark'
-  hoverCard?: boolean
   onClick: (cid?: CharacterKey) => void
 }) {
   const team = useTeam(teamId)!
   const { name, description, loadoutData } = team
   const database = useDatabase()
 
-  const elementArray: Array<ElementKey | undefined> = loadoutData.map(
-    (loadoutDatum) => {
-      if (!loadoutDatum) return
-      const teamChar = database.teamChars.get(loadoutDatum.teamCharId)
-      if (!teamChar) return
-      return getCharEle(teamChar.key)
-    }
-  )
   return (
     <CardThemed
       bgt={bgt}
       sx={{
         height: '100%',
+        border: '1px rgba(200,200,200,0.4) solid',
       }}
     >
       <Box
-        sx={(theme) => {
-          const rgbas = elementArray.map((ele) => {
-            if (!ele) return `rgba(0,0,0,0)`
-
-            const hex = theme.palette[ele].main as string
-            const color = hexToColor(hex)
-            if (!color) return `rgba(0,0,0,0)`
-            return `rgba(${color.r},${color.g},${color.b},0.25)`
-          })
-          return {
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            // will be in the form of `linear-gradient(to right, red 12.5%, orange 27.5%, yellow 62.5%, green 87.5%)`
-            background: `linear-gradient(to right, ${rgbas
-              .map((rgba, i) => `${rgba} ${i * 25 + 12.5}%`)
-              .join(', ')})`,
-          }
+        sx={{
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
         <CardActionArea onClick={() => onClick()} sx={{ p: 1 }}>
-          <Typography sx={{ display: 'flex', gap: 1 }}>
+          <Typography sx={{ display: 'flex', gap: 1 }} variant="h6">
             <span>{name}</span>{' '}
             {description && (
               <BootstrapTooltip title={<Typography>{description}</Typography>}>
@@ -93,45 +79,60 @@ export function TeamCard({
           </Typography>
         </CardActionArea>
 
-        <Box sx={{ p: 1, marginTop: 'auto' }}>
-          <Grid container columns={4} spacing={1}>
-            {loadoutData.map((loadoutDatum, i) => {
-              const teamCharId = loadoutDatum?.teamCharId
-              const characterKey =
-                teamCharId && database.teamChars.get(teamCharId)?.key
-              return (
-                <Grid key={i} item xs={1} height="100%">
-                  {characterKey ? (
-                    <CardActionArea onClick={() => onClick(characterKey)}>
-                      <CharacterCardPico
-                        characterKey={characterKey}
-                        hoverChild={
-                          hoverCard && (
-                            <HoverCard
-                              characterKey={characterKey}
-                              teamCharId={teamCharId}
-                              teamId={teamId}
-                            />
-                          )
-                        }
-                        hideFav
+        <Box sx={{ marginTop: 'auto' }}>
+          {loadoutData.map((loadoutDatum, i) => {
+            const teamCharId = loadoutDatum?.teamCharId
+            const characterKey =
+              teamCharId && database.teamChars.get(teamCharId)?.key
+            return (
+              <React.Fragment key={i}>
+                <Divider />
+                {characterKey ? (
+                  <CardActionArea onClick={() => onClick(characterKey)}>
+                    <CharacterArea
+                      characterKey={characterKey}
+                      teamId={teamId}
+                      teamCharId={teamCharId}
+                    />
+                  </CardActionArea>
+                ) : (
+                  <CardActionArea
+                    onClick={() => onClick()}
+                    sx={{ height: 120, position: 'relative' }}
+                  >
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        // py: '12.5%',
+                        height: 120,
+                      }}
+                    >
+                      <Box
+                        component="img"
+                        src={imgAssets.team[`team${i + 1}` as any]}
+                        sx={{
+                          width: 'auto',
+                          my: '15px',
+                          height: 90,
+                          opacity: 0.7,
+                          mx: 'auto',
+                        }}
                       />
-                    </CardActionArea>
-                  ) : (
-                    <CardActionArea onClick={() => onClick()}>
-                      <BlankCharacterCardPico index={i} />
-                    </CardActionArea>
-                  )}
-                </Grid>
-              )
-            })}
-          </Grid>
+                    </Box>
+                  </CardActionArea>
+                )}
+              </React.Fragment>
+            )
+          })}
         </Box>
       </Box>
     </CardThemed>
   )
 }
-function HoverCard({
+
+function CharacterArea({
   characterKey,
   teamId,
   teamCharId,
@@ -142,6 +143,9 @@ function HoverCard({
 }) {
   const database = useDatabase()
   const character = useCharacter(characterKey)
+  const { gender } = useDBMeta()
+  const { silly } = useContext(SillyContext)
+  const charStat = getCharStat(characterKey)
 
   const { name } = useTeamChar(teamCharId)!
   const loadoutDatum = database.teams.getLoadoutDatum(teamId, teamCharId)!
@@ -177,45 +181,168 @@ function HoverCard({
       },
     [data, teamData]
   )
+  const banner = characterAsset(characterKey, 'banner', gender)
+  const element = getCharEle(characterKey)
   if (!characterContextObj || !dataContextObj) return null
   return (
     <CharacterContext.Provider value={characterContextObj}>
       <DataContext.Provider value={dataContextObj}>
-        <Box sx={{ width: 300, m: -1 }}>
-          <Suspense
-            fallback={
-              <Skeleton variant="rectangular" width="100%" height={300} />
-            }
+        <Suspense
+          fallback={
+            <Skeleton variant="rectangular" width="100%" height={300} />
+          }
+        >
+          {/*
+           * This Element has very specific layering
+           * 0 banner
+           * 1 character icon
+           * 2 dark gradient
+           * 3 everything else
+           */}
+          <Box
+            className={!banner ? `grad-${charStat.rarity}star` : undefined}
+            sx={{
+              display: 'flex',
+              '&::before': {
+                content: '""',
+                display: 'block',
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: '100%',
+                height: '100%',
+                opacity: 0.5,
+                backgroundImage: `url(${banner})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                zIndex: 0,
+              },
+            }}
           >
-            <CardThemed>
-              <CharacterCardHeader characterKey={characterKey}>
-                <CharacterCardHeaderContent characterKey={characterKey} />
-              </CharacterCardHeader>
+            {/* Left */}
+            <Box
+              sx={{
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                zIndex: 2,
+                top: 0,
+                // dark gradient
+                background: `linear-gradient(to top, rgba(50,50,50,0.7), rgba(0,0,0,0) 25% )`,
+              }}
+            />
+            <Box
+              sx={{
+                height: 120,
+                width: 120,
+                position: 'relative',
+              }}
+            >
               <Box
-                sx={{ p: 1, display: 'flex', flexDirection: 'column', gap: 1 }}
+                component="img"
+                src={iconAsset(characterKey, gender, silly)}
+                sx={{
+                  height: 120,
+                  width: 120,
+                  zIndex: 1,
+                }}
+              />
+              {character && (
+                <Typography
+                  sx={{
+                    position: 'absolute',
+                    lineHeight: 1,
+                    bottom: 0,
+                    p: 0.5,
+                    textShadow: '0 0 5px black',
+                    zIndex: 3,
+                  }}
+                >
+                  <strong>
+                    {getLevelString(character.level, character.ascension)}
+                  </strong>
+                </Typography>
+              )}
+              {character && (
+                <Typography
+                  sx={{
+                    position: 'absolute',
+                    lineHeight: 1,
+                    bottom: 0,
+                    right: 0,
+                    p: 0.5,
+                    textShadow: '0 0 5px black',
+                    zIndex: 3,
+                  }}
+                >
+                  <strong>C{character.constellation}</strong>
+                </Typography>
+              )}
+              {characterKey.startsWith('Traveler') && (
+                <Typography
+                  sx={{
+                    position: 'absolute',
+                    lineHeight: 1,
+                    top: 0,
+                    left: 0,
+                    p: 0.5,
+                    textShadow: '0 0 5px black',
+                    zIndex: 3,
+                  }}
+                >
+                  <ColorText color={element}>
+                    <ElementIcon ele={element} />
+                  </ColorText>
+                </Typography>
+              )}
+            </Box>
+            {/* Right */}
+            <Box
+              sx={{
+                pr: 0.5,
+                py: 0.5,
+                display: 'flex',
+                flexDirection: 'column',
+                flexGrow: 1,
+                width: '100%',
+                minWidth: 0,
+                justifyContent: 'space-between',
+                zIndex: 3,
+              }}
+            >
+              <Typography
+                noWrap
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  alignItems: 'center',
+                  textShadow: '0 0 5px black',
+                }}
               >
-                <Typography
-                  sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
-                >
-                  <PersonIcon />
-                  <span>{name}</span>
-                </Typography>
+                <PersonIcon />
+                <span>{name}</span>
+              </Typography>
 
-                <Typography
-                  sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
-                >
-                  <CheckroomIcon />
-                  <span>{buildname}</span>
-                </Typography>
-                {loadoutDatum?.buildType === 'tc' && loadoutDatum?.buildTcId ? (
-                  <CharacterCardEquipmentRowTC weapon={weapon} />
-                ) : (
-                  <CharacterCardEquipmentRow />
-                )}
-              </Box>
-            </CardThemed>
-          </Suspense>
-        </Box>
+              <Typography
+                noWrap
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  alignItems: 'center',
+                  textShadow: '0 0 5px black',
+                }}
+              >
+                <CheckroomIcon />
+                <span>{buildname}</span>
+              </Typography>
+              {loadoutDatum?.buildType === 'tc' && loadoutDatum?.buildTcId ? (
+                <CharacterCardEquipmentRowTC weapon={weapon} />
+              ) : (
+                <CharacterCardEquipmentRow />
+              )}
+            </Box>
+          </Box>
+        </Suspense>
       </DataContext.Provider>
     </CharacterContext.Provider>
   )

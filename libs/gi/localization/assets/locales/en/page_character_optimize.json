@@ -23,6 +23,11 @@
     "buildAlreadyInList": "Build is already in the list"
   },
   "levelFilter": "Artifact Level Filter",
+  "upOptLevelFilter": "Artifact Upgrader Level Filter",
+  "upOptLevelFilterTooltip": "This Level filter is not synced with Optimize config.",
+  "upOptNoResults": "It looks like there aren't any artifacts available for upgrading that could enhance your setup. Your artifact filters might be too restrictive. Alternatively, try the main artifact optimizer to find a better build.",
+  "upOptInfo": "The Artifact Upgrader identifies artifacts with high potential to boost the Optimization Target's value, guiding you to artifacts worth leveling up.<br/>As it only swaps one artifact at a time, for the best overall build across all artifacts, use the main artifact optimizer.",
+  "upOptEmptyBuild": "You're using a partially empty build. Since the Artifact Upgrader only swaps artifacts individually, completing a set is unlikely. It's recommended to begin with a base build, preferably generated from the main Optimizer.",
   "excludeArt": {
     "title_exclude": "Excluded Artifacts",
     "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
