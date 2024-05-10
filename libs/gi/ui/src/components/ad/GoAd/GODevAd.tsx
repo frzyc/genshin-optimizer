@@ -35,7 +35,7 @@ export function GODevAd({ children }: { children: ReactNode }) {
         next-auth jest
       </Typography>
       <Typography color="black">
-        If you have knowledge in some(or any) of those techonology mentioned
+        If you have knowledge in some(or any) of those technologies mentioned
         above, or are hoping to learn in an actively-developed app with
         thousands of users, please join our Discord! We'd love to work with you.
       </Typography>
