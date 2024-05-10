@@ -17,7 +17,7 @@ import {
   weaponMaxAscension,
   weaponMaxLevel,
 } from '@genshin-optimizer/gi/consts'
-import { allStats, getWeaponStat } from '@genshin-optimizer/gi/stats'
+import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import { validateLevelAsc } from '@genshin-optimizer/gi/util'
 import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { BuildTc } from '../../Interfaces/BuildTc'
