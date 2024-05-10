@@ -1,3 +1,4 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { CardThemed, useRefSize } from '@genshin-optimizer/common/ui'
 import { Box } from '@mui/material'
@@ -13,11 +14,18 @@ export function AdCard({
   maxHeight?: number
 }) {
   const { width, height, ref } = useRefSize()
+  const [show, _, onHide] = useBoolState(true)
+
+  if (!show) return null
   return (
     <CardThemed bgt={bgt} sx={{ height: '100%', maxHeight }}>
       <Box ref={ref} sx={{ height: '100%', width: '100%' }}>
         {width && (
           <AdWrapper
+            onClose={(e) => {
+              e.stopPropagation()
+              onHide()
+            }}
             dataAdSlot={dataAdSlot}
             sx={{ width, height: Math.max(height, maxHeight) }}
           />
