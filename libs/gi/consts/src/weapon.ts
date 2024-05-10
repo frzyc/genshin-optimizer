@@ -1,4 +1,4 @@
-import { AscensionKey } from './character'
+import type { AscensionKey } from './character'
 import type { RarityKey } from './common'
 
 export const allWeaponTypeKeys = [
