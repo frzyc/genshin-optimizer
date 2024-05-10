@@ -4,7 +4,6 @@ import {
   Backpack,
   Computer,
   Download,
-  Gamepad,
   InsertLink,
   PersonSearch,
   SendToMobile,
@@ -29,6 +28,7 @@ import { Link as RouterLink } from 'react-router-dom'
 import AdScanner from './AdeptiScanner.png'
 import GIScanner from './GIScanner.png'
 import Artiscan from './artiscan.png'
+
 export default function PageScanner() {
   const { t } = useTranslation('page_scanner')
   ReactGA.send({ hitType: 'pageview', page: '/scanner' })
@@ -91,13 +91,6 @@ export default function PageScanner() {
                 variant="subtitle2"
                 sx={{ display: 'flex', gap: 1, py: 1, flexWrap: 'wrap' }}
               >
-                <SqBadge
-                  color="success"
-                  sx={{ display: 'flex', alignItems: 'center' }}
-                >
-                  <Gamepad sx={{ pr: 0.5 }} />
-                  4.4
-                </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
                   {t('tags.pc') as string}
@@ -149,13 +142,6 @@ export default function PageScanner() {
                 variant="subtitle2"
                 sx={{ display: 'flex', gap: 1, py: 1, flexWrap: 'wrap' }}
               >
-                <SqBadge
-                  color="success"
-                  sx={{ display: 'flex', alignItems: 'center' }}
-                >
-                  <Gamepad sx={{ pr: 0.5 }} />
-                  4.4
-                </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
                   {t('tags.pc') as string}
@@ -236,13 +222,6 @@ export default function PageScanner() {
                 variant="subtitle2"
                 sx={{ display: 'flex', gap: 1, py: 1, flexWrap: 'wrap' }}
               >
-                <SqBadge
-                  color="success"
-                  sx={{ display: 'flex', alignItems: 'center' }}
-                >
-                  <Gamepad sx={{ pr: 0.5 }} />
-                  4.4
-                </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
                   {t('tags.pc') as string}
