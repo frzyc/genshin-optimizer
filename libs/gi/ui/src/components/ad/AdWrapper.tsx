@@ -3,7 +3,7 @@ import { AdSenseUnit, IsAdBlockedContext } from '@genshin-optimizer/common/ui'
 import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
 import type { BoxProps } from '@mui/material'
 import { Box } from '@mui/material'
-import type { FunctionComponent } from 'react'
+import type { FunctionComponent, MouseEventHandler } from 'react'
 import { useContext, useMemo, type ReactNode } from 'react'
 import { AdButtons } from './AdButtons'
 import { DrakeAd, canShowDrakeAd } from './GoAd/DrakeAd'
@@ -15,12 +15,14 @@ export function AdWrapper({
   dataAdSlot,
   fullWidth = false,
   sx,
+  onClose,
 }: {
   dataAdSlot: string
   height?: number
   width?: number
   sx?: BoxProps['sx']
   fullWidth?: boolean
+  onClose?: MouseEventHandler
 }) {
   const [show, _, onHide] = useBoolState(true)
   const adblockEnabled = useContext(IsAdBlockedContext)
@@ -32,10 +34,13 @@ export function AdWrapper({
   return (
     <GOAdWrapper sx={sx}>
       <AdButtons
-        onClose={(e) => {
-          e.stopPropagation()
-          onHide()
-        }}
+        onClose={
+          onClose ??
+          ((e) => {
+            e.stopPropagation()
+            onHide()
+          })
+        }
       />
     </GOAdWrapper>
   )
