@@ -56,6 +56,10 @@ export default function TabArtifact() {
     () => artSetKeys.filter((sk) => !sk.startsWith('Prayers')),
     [artSetKeys]
   )
+  const artSetKeysOnlyPrayer = useMemo(
+    () => artSetKeys.filter((sk) => sk.startsWith('Prayers')),
+    [artSetKeys]
+  )
   const { numShow, setTriggerElement } = useInfScroll(
     10,
     artSetKeysWithoutPrayer.length
@@ -178,18 +182,17 @@ export default function TabArtifact() {
         </TableBody>
       </Table>
       {/* Table for Prayers pieces */}
-      <Table sx={{ mt: 2 }}>
-        <TableHead>
-          <TableRow>
-            <TableCell>Set</TableCell>
-            <TableCell>Rarity</TableCell>
-            <TableCell>1-piece Bonus</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {artSetKeys
-            .filter((sk) => sk.startsWith('Prayers'))
-            .map((setKey) => {
+      {artSetKeysOnlyPrayer.length !== 0 && (
+        <Table sx={{ mt: 2 }}>
+          <TableHead>
+            <TableRow>
+              <TableCell>Set</TableCell>
+              <TableCell>Rarity</TableCell>
+              <TableCell>1-piece Bonus</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {artSetKeysOnlyPrayer.map((setKey) => {
               const { rarities } = getArtSetStat(setKey)
               return (
                 <TableRow key={setKey}>
@@ -223,9 +226,10 @@ export default function TabArtifact() {
                 </TableRow>
               )
             })}
-          {/* TODO: prayer table? */}
-        </TableBody>
-      </Table>
+            {/* TODO: prayer table? */}
+          </TableBody>
+        </Table>
+      )}
     </Box>
   )
 }
