@@ -316,7 +316,7 @@ export function cachedRelic(
     efficiency: 0,
     accurateValue: substat.value,
   }))
-  // Carry over the probability, since its a cached value calculated outside of the relic.
+
   const validated: ICachedRelic = {
     id,
     setKey,
