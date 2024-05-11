@@ -66,7 +66,10 @@ export function LocationAutocomplete({
 
   const [charListDirty, setCharListDirty] = useForceUpdate()
   useEffect(
-    () => database.arts.followAny(() => setCharListDirty()),
+    () =>
+      database.arts.followAny(
+        (_, r) => ['new', 'remove'].includes(r) && setCharListDirty()
+      ),
     [database, setCharListDirty]
   )
 
