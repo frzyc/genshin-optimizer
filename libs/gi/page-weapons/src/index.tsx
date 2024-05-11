@@ -202,7 +202,7 @@ export default function PageWeapon() {
   }
 
   return (
-    <Box my={1} display="flex" flexDirection="column" gap={1}>
+    <Box display="flex" flexDirection="column" gap={1}>
       <Suspense fallback={false}>
         <WeaponSelectionModal
           show={newWeaponModalShow}

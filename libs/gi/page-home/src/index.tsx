@@ -1,5 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { AdCard } from '@genshin-optimizer/gi/ui'
+import { AdResponsive } from '@genshin-optimizer/gi/ui'
 import DescriptionIcon from '@mui/icons-material/Description'
 import {
   Box,
@@ -40,7 +40,7 @@ export default function PageHome() {
         >
           <QuickLinksCard />
           <ResinCard />
-          <AdCard dataAdSlot="6687816711" />
+          <AdResponsive dataAdSlot="6687816711" />
         </Grid>
         <Grid
           item

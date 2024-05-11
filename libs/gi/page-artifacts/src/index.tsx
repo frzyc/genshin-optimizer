@@ -157,7 +157,7 @@ export default function PageArtifact() {
     onChangeAsc: (ascending) => database.displayArtifact.set({ ascending }),
   }
   return (
-    <Box display="flex" flexDirection="column" gap={1} my={1}>
+    <Box display="flex" flexDirection="column" gap={1}>
       <Suspense fallback={false}>
         <ArtifactEditor
           artifactIdToEdit={artifactIdToEdit}

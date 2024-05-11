@@ -33,7 +33,7 @@ export default function PageScanner() {
   const { t } = useTranslation('page_scanner')
   ReactGA.send({ hitType: 'pageview', page: '/scanner' })
   return (
-    <Box display="flex" flexDirection="column" gap={2} my={1}>
+    <Box display="flex" flexDirection="column" gap={2}>
       <CardThemed>
         <CardContent>
           <Trans t={t} i18nKey="intro">
