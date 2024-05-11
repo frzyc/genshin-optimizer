@@ -6,7 +6,7 @@ import { toMainSite } from '../util'
 import go from './go.png'
 
 export function GOAd({ children }: { children: ReactNode }) {
-  const {  height, ref } = useRefSize()
+  const { height, ref } = useRefSize()
 
   return (
     <Box
