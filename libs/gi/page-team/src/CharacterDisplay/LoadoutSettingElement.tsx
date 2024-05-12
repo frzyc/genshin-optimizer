@@ -4,7 +4,7 @@ import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import {
-  AdCard,
+  AdResponsive,
   BuildInfoAlert,
   EquippedBuildInfoAlert,
   FormulaDataContext,
@@ -145,7 +145,7 @@ function BuildManagementContent() {
             <BuildEquipped active={loadoutDatum?.buildType === 'equipped'} />
           </Grid>
           <Grid item xs={1}>
-            <AdCard dataAdSlot="5385429639" bgt="light" />
+            <AdResponsive dataAdSlot="5385429639" bgt="light" />
           </Grid>
         </Grid>
 

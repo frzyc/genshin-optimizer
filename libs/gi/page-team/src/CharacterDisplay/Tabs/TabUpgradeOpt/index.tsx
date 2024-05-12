@@ -25,7 +25,7 @@ import {
 import { dynamicData } from '@genshin-optimizer/gi/solver-tc'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
-  AdCard,
+  AdResponsive,
   AddArtInfo,
   ArtifactEditor,
   DataContext,
@@ -452,7 +452,7 @@ export default function TabUpopt() {
                   <ArtifactSetConfig disabled={false} />
 
                   <StatFilterCard disabled={false} />
-                  <AdCard dataAdSlot="3955015620" />
+                  <AdResponsive bgt="light" dataAdSlot="3955015620" />
                 </Grid>
               </Grid>
             </Box>

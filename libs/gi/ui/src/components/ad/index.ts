@@ -1,2 +1,2 @@
-export * from './AdCard'
+export * from './AdResponsive'
 export * from './AdWrapper'

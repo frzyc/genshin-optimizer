@@ -7,7 +7,6 @@ export function SRODevAd({ children }: { children: ReactNode }) {
   return (
     <Box
       sx={{
-        backgroundColor: 'white !important',
         position: 'relative',
         display: 'flex',
         alignItems: 'center',
@@ -22,12 +21,12 @@ export function SRODevAd({ children }: { children: ReactNode }) {
       onClick={toDiscord}
     >
       {children}
-      <Typography variant="h5" color="darkred">
+      <Typography variant="h5" color="crimson">
         DO YOU WANT A STAR RAIL OPTIMIZER?
       </Typography>
       <Box component="img" src={sro} maxWidth={100} />
 
-      <Typography color="black">
+      <Typography>
         Exciting News! We're currently developing the Star Rail Optimizer, and
         we're on the lookout for talented web developers to join our team. If
         you're passionate about shaping the future of rail optimization, come be

@@ -141,7 +141,7 @@ export default function PageTeams() {
   }
 
   return (
-    <Box my={1} display="flex" flexDirection="column" gap={1}>
+    <Box display="flex" flexDirection="column" gap={1}>
       <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box display="flex" gap={1} alignItems="stretch">

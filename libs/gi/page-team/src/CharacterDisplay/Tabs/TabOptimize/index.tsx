@@ -38,7 +38,7 @@ import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts, dynamicData } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
-  AdCard,
+  AdResponsive,
   ArtifactLevelSlider,
   BuildDisplayItem,
   CharacterName,
@@ -664,7 +664,7 @@ export default function TabBuild() {
 
           {/*Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />
-          <AdCard dataAdSlot="7724855772" />
+          <AdResponsive dataAdSlot="7724855772" bgt="light" />
         </Grid>
       </Grid>
       {/* Footer */}
