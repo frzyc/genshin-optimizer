@@ -8,6 +8,7 @@ import { WeaponRarityToggle, WeaponToggle } from '@genshin-optimizer/gi/ui'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
+import ReplayIcon from '@mui/icons-material/Replay'
 import {
   Box,
   Button,
@@ -88,6 +89,19 @@ function WeaponFilter({
             <Typography>
               <strong>{numShowing}</strong> / {total}
             </Typography>
+          </Grid>
+          <Grid item>
+            <Button
+              size="small"
+              color="error"
+              onClick={() => {
+                setSearchTerm('')
+                database.displayWeapon.set({ action: 'reset' })
+              }}
+              startIcon={<ReplayIcon />}
+            >
+              <Trans t={t} i18nKey="ui:reset" />
+            </Button>
           </Grid>
         </Grid>
         <Box display="flex" flexWrap="wrap" gap={1} alignItems="stretch">
