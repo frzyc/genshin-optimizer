@@ -54,6 +54,12 @@ describe('export and import test', () => {
         convertTcBuilds: [],
         exportCustomMultiTarget: [],
       },
+      {
+        convertbuilds: [],
+        convertEquipped: true,
+        convertTcBuilds: [],
+        exportCustomMultiTarget: [],
+      },
     ])
     expect(exp).toBeTruthy()
     expect((exp as any).loadoutData[0].key).toEqual('RaidenShogun')
