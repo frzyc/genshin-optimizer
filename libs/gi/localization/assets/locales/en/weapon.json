@@ -1,0 +1,8 @@
+{
+  "button": {
+    "deleteWeapons": "Delete Weapons",
+    "lockWeapons": "Lock Weapons",
+    "unlockWeapons": "Unlock Weapons"
+  },
+  "buttonHint": "Note: the red buttons above only apply to <1>filtered weapons<1>"
+}

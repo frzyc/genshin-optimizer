@@ -47,6 +47,7 @@ import {
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
+import WeaponRedButtons from './WeaponRedButtons'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
@@ -67,7 +68,8 @@ export default function PageWeapon() {
   useEffect(() => {
     ReactGA.send({ hitType: 'pageview', page: '/weapon' })
     return database.weapons.followAny(
-      (k, r) => (r === 'new' || r === 'remove') && forceUpdate()
+      (k, r) =>
+        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
     )
   }, [forceUpdate, database])
 
@@ -252,6 +254,10 @@ export default function PageWeapon() {
               }}
             />
           </Box>
+        </CardContent>
+      </CardThemed>
+      <CardThemed>
+        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box
             display="flex"
             justifyContent="space-between"
@@ -263,6 +269,7 @@ export default function PageWeapon() {
               sortByButtonProps={sortByButtonProps}
             />
           </Box>
+          <WeaponRedButtons weaponIds={weaponIds} />
         </CardContent>
       </CardThemed>
       <Suspense
