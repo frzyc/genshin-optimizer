@@ -2,47 +2,52 @@ import {
   CardThemed,
   SolidToggleButtonGroup,
   SqBadge,
+  theme,
 } from '@genshin-optimizer/common/ui'
-import { bulkCatTotal, catTotal } from '@genshin-optimizer/common/util'
+import {
+  bulkCatTotal,
+  catTotal,
+  handleMultiSelect,
+} from '@genshin-optimizer/common/util'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import { WeaponRarityToggle, WeaponToggle } from '@genshin-optimizer/gi/ui'
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
+import PersonSearchIcon from '@mui/icons-material/PersonSearch'
 import ReplayIcon from '@mui/icons-material/Replay'
 import {
   Box,
   Button,
   CardContent,
   Chip,
+  Divider,
   Grid,
-  TextField,
+  Stack,
   ToggleButton,
   Typography,
 } from '@mui/material'
-import type { ChangeEvent, Dispatch, SetStateAction } from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
 const lockedValues = ['locked', 'unlocked'] as const
 
+const lockedHandler = handleMultiSelect([...lockedValues])
+
 function WeaponFilter({
   numShowing,
   total,
   weaponIds,
-  searchTerm,
-  setSearchTerm,
 }: {
   numShowing: number
   total: number
   weaponIds: string[]
-  searchTerm: string
-  setSearchTerm: Dispatch<SetStateAction<string>>
 }) {
-  const { t } = useTranslation(['page_weapon', 'ui'])
+  const { t } = useTranslation(['page_weapon', 'ui', 'weapon'])
   const database = useDatabase()
   const [state, setState] = useState(database.displayWeapon.get())
 
@@ -50,7 +55,7 @@ function WeaponFilter({
     database.displayWeapon.follow((r, dbMeta) => setState(dbMeta))
   }, [database])
 
-  const { weaponType, rarity, locked } = state
+  const { weaponType, rarity, locked, showEquipped, showInventory } = state
 
   const weaponTotals = useMemo(
     () =>
@@ -76,16 +81,20 @@ function WeaponFilter({
     [database, weaponIds]
   )
 
-  const { lockedTotal } = useMemo(() => {
+  const { lockedTotal, equippedTotal } = useMemo(() => {
     const catKeys = {
       lockedTotal: ['locked', 'unlocked'],
+      equippedTotal: ['equipped', 'unequipped'],
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
       database.weapons.entries.forEach(([id, weapon]) => {
         const lock = weapon.lock ? 'locked' : 'unlocked'
+        const equipped = weapon.location ? 'equipped' : 'unequipped'
         ctMap['lockedTotal'][lock].total++
+        ctMap['equippedTotal'][equipped].total++
         if (weaponIds.includes(id)) {
           ctMap['lockedTotal'][lock].current++
+          ctMap['equippedTotal'][equipped].current++
         }
       })
     )
@@ -117,63 +126,109 @@ function WeaponFilter({
             <Button
               size="small"
               color="error"
-              onClick={() => {
-                setSearchTerm('')
-                database.displayWeapon.set({ action: 'reset' })
-              }}
+              onClick={() => database.displayWeapon.set({ action: 'reset' })}
               startIcon={<ReplayIcon />}
             >
               <Trans t={t} i18nKey="ui:reset" />
             </Button>
           </Grid>
         </Grid>
-        <Box display="flex" flexWrap="wrap" gap={1} alignItems="stretch">
-          <WeaponToggle
-            onChange={(weaponType) =>
-              database.displayWeapon.set({ weaponType })
-            }
-            value={weaponType}
-            totals={weaponTotals}
-            size="small"
-          />
-          <WeaponRarityToggle
-            sx={{ height: '100%' }}
-            onChange={(rarity) => database.displayWeapon.set({ rarity })}
-            value={rarity}
-            totals={weaponRarityTotals}
-            size="small"
-          />
-          <Box flexGrow={1} />
-          <TextField
-            autoFocus
-            size="small"
-            value={searchTerm}
-            onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-              setSearchTerm(e.target.value)
-            }
-            label={t('weaponName')}
-            sx={{ height: '100%' }}
-            InputProps={{ sx: { height: '100%' } }}
-          />
-        </Box>
-        <Box display="flex" flexWrap="wrap" gap={1} alignItems="stretch">
-          <SolidToggleButtonGroup fullWidth value={locked} size="small">
-            {lockedValues.map((v, i) => (
-              <ToggleButton
-                key={v}
-                value={v}
-                sx={{ display: 'flex', gap: 1 }}
-                onClick={() => database.displayWeapon.set({ locked: locked })}
-              >
-                {i ? <LockOpenIcon /> : <LockIcon />}
-                <Trans t={t} i18nKey={`ui:${v}`} />
-                <Chip
-                  label={lockedTotal[i ? 'unlocked' : 'locked']}
+        <Box>
+          <Grid container spacing={1}>
+            <Grid item xs={12} md={6} display="flex" flexDirection="column">
+              <Trans t={t} i18nKey="weapon:subheadings.general" />
+              <Stack spacing={1}>
+                <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
+                <WeaponToggle
+                  fullWidth
+                  onChange={(weaponType) =>
+                    database.displayWeapon.set({ weaponType })
+                  }
+                  value={weaponType}
+                  totals={weaponTotals}
                   size="small"
                 />
-              </ToggleButton>
-            ))}
-          </SolidToggleButtonGroup>
+                <WeaponRarityToggle
+                  sx={{ height: '100%' }}
+                  fullWidth
+                  onChange={(rarity) => database.displayWeapon.set({ rarity })}
+                  value={rarity}
+                  totals={weaponRarityTotals}
+                  size="small"
+                />
+              </Stack>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              display="flex"
+              flexDirection="column"
+              gap={1}
+            >
+              <Box>
+                <Trans t={t} i18nKey="weapon:subheadings.inventory" />
+                <Stack spacing={1}>
+                  <Divider
+                    sx={{ bgcolor: theme.palette.contentNormal.light }}
+                  />
+                  <SolidToggleButtonGroup fullWidth value={locked} size="small">
+                    {lockedValues.map((v, i) => (
+                      <ToggleButton
+                        key={v}
+                        value={v}
+                        sx={{ display: 'flex', gap: 1 }}
+                        onClick={() =>
+                          database.displayWeapon.set({
+                            locked: lockedHandler(locked, v),
+                          })
+                        }
+                      >
+                        {i ? <LockOpenIcon /> : <LockIcon />}
+                        <Trans t={t} i18nKey={`ui:${v}`} />
+                        <Chip
+                          label={lockedTotal[i ? 'unlocked' : 'locked']}
+                          size="small"
+                        />
+                      </ToggleButton>
+                    ))}
+                  </SolidToggleButtonGroup>
+                  <Button
+                    startIcon={<BusinessCenterIcon />}
+                    color={showInventory ? 'success' : 'secondary'}
+                    onClick={() =>
+                      database.displayWeapon.set({
+                        showInventory: !showInventory,
+                      })
+                    }
+                  >
+                    {t`weapon:weaponInInv`}{' '}
+                    <Chip
+                      sx={{ ml: 1 }}
+                      label={equippedTotal['unequipped']}
+                      size="small"
+                    />
+                  </Button>
+                  <Button
+                    startIcon={<PersonSearchIcon />}
+                    color={showEquipped ? 'success' : 'secondary'}
+                    onClick={() =>
+                      database.displayWeapon.set({
+                        showEquipped: !showEquipped,
+                      })
+                    }
+                  >
+                    {t`weapon:equippedWeapon`}{' '}
+                    <Chip
+                      sx={{ ml: 1 }}
+                      label={equippedTotal['equipped']}
+                      size="small"
+                    />
+                  </Button>
+                </Stack>
+              </Box>
+            </Grid>
+          </Grid>
         </Box>
       </CardContent>
     </CardThemed>

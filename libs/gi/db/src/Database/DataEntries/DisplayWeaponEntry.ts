@@ -13,6 +13,8 @@ export interface IDisplayWeapon {
   rarity: RarityKey[]
   weaponType: WeaponTypeKey[]
   locked: Array<'locked' | 'unlocked'>
+  showInventory: boolean
+  showEquipped: boolean
 }
 
 const initialState = (): IDisplayWeapon => ({
@@ -22,6 +24,8 @@ const initialState = (): IDisplayWeapon => ({
   rarity: [...allRarityKeys],
   weaponType: [...allWeaponTypeKeys],
   locked: ['locked', 'unlocked'],
+  showEquipped: true,
+  showInventory: true,
 })
 
 export class DisplayWeaponEntry extends DataEntry<
@@ -35,7 +39,15 @@ export class DisplayWeaponEntry extends DataEntry<
   }
   override validate(obj: any): IDisplayWeapon | undefined {
     if (typeof obj !== 'object') return undefined
-    let { sortType, ascending, rarity, weaponType, locked } = obj
+    let {
+      sortType,
+      ascending,
+      rarity,
+      weaponType,
+      locked,
+      showEquipped,
+      showInventory,
+    } = obj
     const { editWeaponId } = obj
     if (typeof editWeaponId !== 'string') return editWeaponId
     if (
@@ -48,6 +60,8 @@ export class DisplayWeaponEntry extends DataEntry<
     else rarity = rarity.filter((r) => allRarityKeys.includes(r))
     if (!Array.isArray(weaponType)) weaponType = [...allWeaponTypeKeys]
     else weaponType = weaponType.filter((r) => allWeaponTypeKeys.includes(r))
+    if (typeof showEquipped !== 'boolean') showEquipped = true
+    if (typeof showInventory !== 'boolean') showInventory = true
     locked = validateArr(locked, ['locked', 'unlocked'])
     const data: IDisplayWeapon = {
       editWeaponId,
@@ -56,6 +70,8 @@ export class DisplayWeaponEntry extends DataEntry<
       rarity,
       weaponType,
       locked,
+      showEquipped,
+      showInventory,
     }
     return data
   }

@@ -20,7 +20,15 @@ import {
   weaponSortMap,
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
-import { Box, Button, CardContent, Grid, Skeleton } from '@mui/material'
+import {
+  Box,
+  Button,
+  CardContent,
+  Grid,
+  Skeleton,
+  TextField,
+} from '@mui/material'
+import type { ChangeEvent } from 'react'
 import {
   Suspense,
   useCallback,
@@ -90,14 +98,30 @@ export default function PageWeapon() {
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
-  const { sortType, ascending, weaponType, rarity } = state
+  const {
+    sortType,
+    ascending,
+    weaponType,
+    rarity,
+    locked,
+    showEquipped,
+    showInventory,
+  } = state
+
   const { weaponIds, totalWeaponNum } = useMemo(() => {
     const weapons = database.weapons.values
     const totalWeaponNum = weapons.length
     const weaponIds = weapons
       .filter(
         filterFunction(
-          { weaponType, rarity, name: deferredSearchTerm },
+          {
+            weaponType,
+            rarity,
+            name: deferredSearchTerm,
+            locked,
+            showInventory,
+            showEquipped,
+          },
           weaponFilterConfigs()
         )
       )
@@ -117,6 +141,9 @@ export default function PageWeapon() {
     ascending,
     rarity,
     weaponType,
+    locked,
+    showInventory,
+    showEquipped,
     deferredSearchTerm,
   ])
 
@@ -185,8 +212,6 @@ export default function PageWeapon() {
         numShowing={weaponIds.length}
         total={totalWeaponNum}
         weaponIds={weaponIds}
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
       />
       <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -196,6 +221,17 @@ export default function PageWeapon() {
             alignItems="center"
             flexWrap="wrap"
           >
+            <TextField
+              autoFocus
+              size="small"
+              value={searchTerm}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+                setSearchTerm(e.target.value)
+              }
+              label={t('weaponName')}
+              sx={{ height: '100%' }}
+              InputProps={{ sx: { height: '100%' } }}
+            />
             <ShowingAndSortOptionSelect
               showingTextProps={showingTextProps}
               sortByButtonProps={sortByButtonProps}
