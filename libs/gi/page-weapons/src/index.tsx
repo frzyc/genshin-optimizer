@@ -7,37 +7,20 @@ import {
   ShowingAndSortOptionSelect,
   useInfScroll,
 } from '@genshin-optimizer/common/ui'
-import {
-  catTotal,
-  filterFunction,
-  sortFunction,
-} from '@genshin-optimizer/common/util'
+import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
   WeaponCard,
   WeaponEditor,
-  WeaponRarityToggle,
   WeaponSelectionModal,
-  WeaponToggle,
   weaponFilterConfigs,
   weaponSortConfigs,
   weaponSortMap,
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
-import {
-  Box,
-  Button,
-  CardContent,
-  Grid,
-  Skeleton,
-  TextField,
-  Typography,
-} from '@mui/material'
-import type { ChangeEvent } from 'react'
+import { Box, Button, CardContent, Grid, Skeleton } from '@mui/material'
 import {
   Suspense,
   useCallback,
@@ -47,8 +30,8 @@ import {
   useState,
 } from 'react'
 import ReactGA from 'react-ga4'
-import { Trans, useTranslation } from 'react-i18next'
-import { WeaponRedButtons } from './WeaponFilter'
+import { useTranslation } from 'react-i18next'
+import WeaponFilter, { WeaponRedButtons } from './WeaponFilter'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
@@ -165,30 +148,6 @@ export default function PageWeapon() {
     if (!database.weapons.get(editWeaponId)) resetEditWeapon()
   }, [database, editWeaponId, resetEditWeapon])
 
-  const weaponTotals = useMemo(
-    () =>
-      catTotal(allWeaponTypeKeys, (ct) =>
-        database.weapons.entries.forEach(([id, weapon]) => {
-          const wtk = getWeaponStat(weapon.key).weaponType
-          ct[wtk].total++
-          if (weaponIds.includes(id)) ct[wtk].current++
-        })
-      ),
-    [database, weaponIds]
-  )
-
-  const weaponRarityTotals = useMemo(
-    () =>
-      catTotal(allRarityKeys, (ct) =>
-        database.weapons.entries.forEach(([id, weapon]) => {
-          const wr = getWeaponStat(weapon.key).rarity
-          ct[wr].total++
-          if (weaponIds.includes(id)) ct[wr].current++
-        })
-      ),
-    [database, weaponIds]
-  )
-
   const showingTextProps = {
     numShowing: weaponIdsToShow.length,
     total: totalShowing,
@@ -222,61 +181,13 @@ export default function PageWeapon() {
         />
       </Suspense>
 
-      <CardThemed>
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Grid container>
-            <Grid item>
-              <Typography variant="h6">
-                <Trans t={t} i18nKey="weaponFilter">
-                  Weapon Filter
-                </Trans>
-              </Typography>
-            </Grid>
-            <Grid
-              item
-              flexGrow={1}
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-            >
-              <Typography>
-                <strong>{weaponIds.length}</strong> / {totalWeaponNum}
-              </Typography>
-            </Grid>
-          </Grid>
-          <Box display="flex" flexWrap="wrap" gap={1} alignItems="stretch">
-            <WeaponToggle
-              onChange={(weaponType) =>
-                database.displayWeapon.set({ weaponType })
-              }
-              value={weaponType}
-              totals={weaponTotals}
-              size="small"
-            />
-            <WeaponRarityToggle
-              sx={{ height: '100%' }}
-              onChange={(rarity) => database.displayWeapon.set({ rarity })}
-              value={rarity}
-              totals={weaponRarityTotals}
-              size="small"
-            />
-            <Box flexGrow={1} />
-            <TextField
-              autoFocus
-              size="small"
-              value={searchTerm}
-              onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-                setSearchTerm(e.target.value)
-              }
-              label={t('weaponName')}
-              sx={{ height: '100%' }}
-              InputProps={{
-                sx: { height: '100%' },
-              }}
-            />
-          </Box>
-        </CardContent>
-      </CardThemed>
+      <WeaponFilter
+        numShowing={weaponIds.length}
+        total={totalWeaponNum}
+        weaponIds={weaponIds}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
       <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box
