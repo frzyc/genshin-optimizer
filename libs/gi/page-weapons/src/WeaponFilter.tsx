@@ -236,7 +236,7 @@ function WeaponFilter({
 }
 
 function WeaponRedButtons({ weaponIds }: { weaponIds: string[] }) {
-  const { t } = useTranslation(['weapon', 'ui'])
+  const { t } = useTranslation(['page_weapon', 'ui'])
   const database = useDatabase()
   const { numDelete, numUnlock, numLock } = useMemo(() => {
     const weapons = weaponIds.map((id) =>
