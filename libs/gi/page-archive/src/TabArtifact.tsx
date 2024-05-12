@@ -23,12 +23,19 @@ import {
   ToggleButtonGroup,
 } from '@mui/material'
 import { Suspense, useDeferredValue, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 const maxRarities = [5, 4, 3] as const
 export default function TabArtifact() {
   const [rarityFilter, setRarityFilter] = useState([...maxRarities])
   const [searchTerm, setSearchTerm] = useState('')
   const searchTermDeferred = useDeferredValue(searchTerm)
   const handleRarity = handleMultiSelect([...maxRarities])
+  //load namespaces for artifact set effects
+  const { t } = useTranslation(
+    allArtifactSetKeys.map((key) => {
+      return `artifact_${key}_gen`
+    })
+  )
   const artSetKeys = useMemo(() => {
     return allArtifactSetKeys.filter(
       (setKey) => {
@@ -39,19 +46,28 @@ export default function TabArtifact() {
           )
         )
           return false
-        const setKeyStr = i18n.t(`artifactNames_gen:${setKey}`)
+
+        const setKeyStr = i18n
+          .t(`artifactNames_gen:${setKey}`)
+          .toLocaleLowerCase()
+        const set4KeyDesc = t('setEffects.4', {
+          ns: `artifact_${setKey}_gen`,
+        }).toLocaleLowerCase()
+        const set2KeyDesc = t('setEffects.2', {
+          ns: `artifact_${setKey}_gen`,
+        }).toLocaleLowerCase()
         if (
           searchTermDeferred &&
-          !setKeyStr
-            .toLocaleLowerCase()
-            .includes(searchTermDeferred.toLocaleLowerCase())
+          !setKeyStr.includes(searchTermDeferred.toLocaleLowerCase()) &&
+          !set2KeyDesc.includes(searchTermDeferred.toLocaleLowerCase()) &&
+          !set4KeyDesc.includes(searchTermDeferred.toLocaleLowerCase())
         )
           return false
         return true
       },
       [rarityFilter]
     )
-  }, [rarityFilter, searchTermDeferred])
+  }, [rarityFilter, searchTermDeferred, t])
   const artSetKeysWithoutPrayer = useMemo(
     () => artSetKeys.filter((sk) => !sk.startsWith('Prayers')),
     [artSetKeys]
