@@ -472,7 +472,9 @@ function LoadoutSetting({
         <>
           <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <CustomMultiTargetIcon />
-            <Typography>Mtargets to Export</Typography>
+            <Typography>
+              <strong>Mtargets to Export</strong>
+            </Typography>
           </CardContent>
           <FieldDisplayList bgt="light">
             {customMultiTargets.map((mtarget, i) => {
@@ -506,7 +508,9 @@ function LoadoutSetting({
       )}
       <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
         <BuildIcon />
-        <Typography>Builds to Export</Typography>
+        <Typography>
+          <strong>Builds to Export</strong>
+        </Typography>
       </CardContent>
       <FieldDisplayList bgt="light">
         <ListItem sx={{ p: 0 }}>
