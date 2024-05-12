@@ -44,7 +44,13 @@ export interface Team {
   loadoutData: Array<LoadoutDatum | undefined>
   lastEdit: number
 }
-
+export type LoadoutExportSetting = {
+  convertEquipped: boolean
+  convertbuilds: string[]
+  convertTcBuilds: string[]
+  exportCustomMultiTarget: number[]
+}
+export type LoadoutDataExportSetting = Array<LoadoutExportSetting>
 export class TeamDataManager extends DataManager<
   string,
   'teams',
@@ -188,7 +194,20 @@ export class TeamDataManager extends DataManager<
       lastEdit,
     }
   }
-
+  override remove(teamId: string, notify?: boolean): Team | undefined {
+    const rem = super.remove(teamId, notify)
+    if (!rem) return
+    // handle removal of loadouts that are only in this team.
+    rem.loadoutData.forEach(loadoutDatum=>{
+      if(!loadoutDatum) return
+      const {teamCharId} = loadoutDatum
+      // check if there is another team that has this loadout, if so, do not remove it
+      if(this.database.teams.values.some(({loadoutData})=>loadoutData.some(loadoutDatum=>loadoutDatum?.teamCharId===teamCharId)))
+        return
+      this.database.teamChars.remove(teamCharId)
+    })
+    return rem
+  }
   new(value: Partial<Team> = {}): string {
     const id = this.generateKey()
     this.set(id, value)
@@ -205,16 +224,22 @@ export class TeamDataManager extends DataManager<
     team.name = `${team.name} (duplicated)`
     return this.new(team)
   }
-  export(teamId: string): object {
+  export(
+    teamId: string,
+    loadoutDataExportSetting: LoadoutDataExportSetting
+  ): object {
     const team = this.database.teams.get(teamId)
     if (!team) return {}
     const { loadoutData, ...rest } = team
     return {
       ...rest,
       loadoutData: loadoutData.map(
-        (loadoutData) =>
+        (loadoutData, i) =>
           loadoutData?.teamCharId &&
-          this.database.teamChars.export(loadoutData?.teamCharId)
+          this.database.teamChars.export(
+            loadoutData?.teamCharId,
+            loadoutDataExportSetting[i]
+          )
       ),
     }
   }

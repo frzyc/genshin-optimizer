@@ -1,5 +1,5 @@
 import type { DataManagerCallback } from '@genshin-optimizer/common/database'
-import { deepClone } from '@genshin-optimizer/common/util'
+import { deepClone, notEmpty } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   HitModeKey,
@@ -26,6 +26,7 @@ import { DataManager } from '../DataManager'
 import type { Build } from './BuildDataManager'
 import { initCharTC, toBuildTc } from './BuildTcDataManager'
 import { validateCustomMultiTarget } from './CustomMultiTarget'
+import type { LoadoutExportSetting } from './TeamDataManager'
 import { defaultInitialWeaponKey, initialWeapon } from './WeaponDataManager'
 
 type CondKey = CharacterKey | ArtifactSetKey | WeaponKey
@@ -300,14 +301,67 @@ export class TeamCharacterDataManager extends DataManager<
     return buildTcId
   }
 
-  export(teamCharId: string): object {
+  export(teamCharId: string, settings: LoadoutExportSetting): object {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return {}
-    const { buildIds, buildTcIds, optConfigId, ...rest } = teamChar
+    const { buildIds, buildTcIds, optConfigId, customMultiTargets, ...rest } =
+      teamChar
+    const { weaponType } = getCharStat(teamChar.key)
+    const {
+      convertEquipped,
+      convertbuilds,
+      convertTcBuilds,
+      exportCustomMultiTarget,
+    } = settings
     return {
       ...rest,
-      buildTcs: buildTcIds.map((buildTcId) =>
-        this.database.buildTcs.export(buildTcId)
+      buildTcs: [
+        ...(convertEquipped
+          ? [
+              (() => {
+                const char = this.database.chars.get(teamChar.key)
+                if (!char) return
+                const { equippedArtifacts, equippedWeapon } = char
+                const weapon = this.database.weapons.get(equippedWeapon)
+                const arts = Object.values(equippedArtifacts).map((id) =>
+                  this.database.arts.get(id)
+                )
+                const buildTC = toBuildTc(
+                  initCharTC(defaultInitialWeaponKey(weaponType)),
+                  weapon,
+                  arts
+                )
+                buildTC.name = 'Equipped(Converted)'
+                buildTC.description = 'Converted from Equipped'
+                return buildTC
+              })(),
+            ]
+          : []),
+        ...convertbuilds
+          .filter((id) => buildIds.includes(id))
+          .map((buildId) => {
+            const build = this.database.builds.get(buildId)
+            if (!build) return
+            const { name, description, weaponId, artifactIds } = build
+            const weapon = this.database.weapons.get(weaponId)
+            const arts = Object.values(artifactIds).map((id) =>
+              this.database.arts.get(id)
+            )
+            const buildTC = toBuildTc(
+              initCharTC(defaultInitialWeaponKey(weaponType)),
+              weapon,
+              arts
+            )
+            buildTC.name = name
+            buildTC.description = description
+            return buildTC
+          }),
+        ...convertTcBuilds
+          .filter((id) => buildTcIds.includes(id))
+          .map((buildTcId) => this.database.buildTcs.export(buildTcId)),
+      ].filter(notEmpty),
+      customMultiTargets: customMultiTargets.filter((_, i) =>
+        exportCustomMultiTarget.includes(i)
       ),
       optConfig: this.database.optConfigs.export(optConfigId),
     }
