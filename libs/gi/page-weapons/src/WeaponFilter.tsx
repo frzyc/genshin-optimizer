@@ -1,5 +1,9 @@
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
-import { catTotal } from '@genshin-optimizer/common/util'
+import {
+  CardThemed,
+  SolidToggleButtonGroup,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
+import { bulkCatTotal, catTotal } from '@genshin-optimizer/common/util'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -13,13 +17,17 @@ import {
   Box,
   Button,
   CardContent,
+  Chip,
   Grid,
   TextField,
+  ToggleButton,
   Typography,
 } from '@mui/material'
 import type { ChangeEvent, Dispatch, SetStateAction } from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+
+const lockedValues = ['locked', 'unlocked'] as const
 
 function WeaponFilter({
   numShowing,
@@ -42,7 +50,7 @@ function WeaponFilter({
     database.displayWeapon.follow((r, dbMeta) => setState(dbMeta))
   }, [database])
 
-  const { weaponType, rarity } = state
+  const { weaponType, rarity, locked } = state
 
   const weaponTotals = useMemo(
     () =>
@@ -67,6 +75,21 @@ function WeaponFilter({
       ),
     [database, weaponIds]
   )
+
+  const { lockedTotal } = useMemo(() => {
+    const catKeys = {
+      lockedTotal: ['locked', 'unlocked'],
+    } as const
+    return bulkCatTotal(catKeys, (ctMap) =>
+      database.weapons.entries.forEach(([id, weapon]) => {
+        const lock = weapon.lock ? 'locked' : 'unlocked'
+        ctMap['lockedTotal'][lock].total++
+        if (weaponIds.includes(id)) {
+          ctMap['lockedTotal'][lock].current++
+        }
+      })
+    )
+  }, [database, weaponIds])
 
   return (
     <CardThemed>
@@ -132,6 +155,25 @@ function WeaponFilter({
             sx={{ height: '100%' }}
             InputProps={{ sx: { height: '100%' } }}
           />
+        </Box>
+        <Box display="flex" flexWrap="wrap" gap={1} alignItems="stretch">
+          <SolidToggleButtonGroup fullWidth value={locked} size="small">
+            {lockedValues.map((v, i) => (
+              <ToggleButton
+                key={v}
+                value={v}
+                sx={{ display: 'flex', gap: 1 }}
+                onClick={() => database.displayWeapon.set({ locked: locked })}
+              >
+                {i ? <LockOpenIcon /> : <LockIcon />}
+                <Trans t={t} i18nKey={`ui:${v}`} />
+                <Chip
+                  label={lockedTotal[i ? 'unlocked' : 'locked']}
+                  size="small"
+                />
+              </ToggleButton>
+            ))}
+          </SolidToggleButtonGroup>
         </Box>
       </CardContent>
     </CardThemed>

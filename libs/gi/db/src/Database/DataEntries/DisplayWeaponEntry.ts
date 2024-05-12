@@ -1,3 +1,4 @@
+import { validateArr } from '@genshin-optimizer/common/util'
 import type { RarityKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -11,14 +12,16 @@ export interface IDisplayWeapon {
   ascending: boolean
   rarity: RarityKey[]
   weaponType: WeaponTypeKey[]
+  locked: Array<'locked' | 'unlocked'>
 }
 
-const initialState = () => ({
+const initialState = (): IDisplayWeapon => ({
   editWeaponId: '',
   sortType: weaponSortKeys[0],
   ascending: false,
   rarity: [...allRarityKeys],
   weaponType: [...allWeaponTypeKeys],
+  locked: ['locked', 'unlocked'],
 })
 
 export class DisplayWeaponEntry extends DataEntry<
@@ -32,7 +35,7 @@ export class DisplayWeaponEntry extends DataEntry<
   }
   override validate(obj: any): IDisplayWeapon | undefined {
     if (typeof obj !== 'object') return undefined
-    let { sortType, ascending, rarity, weaponType } = obj
+    let { sortType, ascending, rarity, weaponType, locked } = obj
     const { editWeaponId } = obj
     if (typeof editWeaponId !== 'string') return editWeaponId
     if (
@@ -45,12 +48,14 @@ export class DisplayWeaponEntry extends DataEntry<
     else rarity = rarity.filter((r) => allRarityKeys.includes(r))
     if (!Array.isArray(weaponType)) weaponType = [...allWeaponTypeKeys]
     else weaponType = weaponType.filter((r) => allWeaponTypeKeys.includes(r))
+    locked = validateArr(locked, ['locked', 'unlocked'])
     const data: IDisplayWeapon = {
       editWeaponId,
       sortType,
       ascending,
       rarity,
       weaponType,
+      locked,
     }
     return data
   }
