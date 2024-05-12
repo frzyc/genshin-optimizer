@@ -2,7 +2,7 @@ import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import { People } from '@mui/icons-material'
-import { Box, Divider, Skeleton, Tab, Tabs } from '@mui/material'
+import { Divider, Skeleton, Tab, Tabs } from '@mui/material'
 import type { ReactElement } from 'react'
 import { Suspense, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -58,52 +58,48 @@ export default function PageArchive() {
   }, [tabRaw])
 
   return (
-    <Box my={1}>
-      <CardThemed>
-        <Tabs
-          variant="fullWidth"
-          value={tab}
-          sx={{
-            '& .MuiTab-root:hover': {
-              transition: 'background-color 0.25s ease',
-              backgroundColor: 'rgba(255,255,255,0.1)',
-            },
-            '& .Mui-selected': {
-              color: 'white !important',
-            },
-            '& .MuiTabs-indicator': {
-              height: '4px',
-            },
-          }}
-        >
-          {tabs.map(({ i18Key, icon, value, to }) => {
-            return (
-              <Tab
-                icon={icon}
-                iconPosition="start"
-                value={value}
-                key={value}
-                label={t(i18Key)}
-                component={RouterLink}
-                to={`/archive${to}`}
-              />
-            )
-          })}
-        </Tabs>
-        <Divider />
-        <Suspense
-          fallback={
-            <Skeleton variant="rectangular" width="100%" height={1000} />
-          }
-        >
-          <Routes>
-            <Route path="artifacts" element={<TabArtifact />} />
-            <Route path="weapons" element={<TabWeapon />} />
-            <Route path="characters" element={<TabCharacter />} />
-            <Route path="*" element={<Navigate to="artifacts" />} />
-          </Routes>
-        </Suspense>
-      </CardThemed>
-    </Box>
+    <CardThemed>
+      <Tabs
+        variant="fullWidth"
+        value={tab}
+        sx={{
+          '& .MuiTab-root:hover': {
+            transition: 'background-color 0.25s ease',
+            backgroundColor: 'rgba(255,255,255,0.1)',
+          },
+          '& .Mui-selected': {
+            color: 'white !important',
+          },
+          '& .MuiTabs-indicator': {
+            height: '4px',
+          },
+        }}
+      >
+        {tabs.map(({ i18Key, icon, value, to }) => {
+          return (
+            <Tab
+              icon={icon}
+              iconPosition="start"
+              value={value}
+              key={value}
+              label={t(i18Key)}
+              component={RouterLink}
+              to={`/archive${to}`}
+            />
+          )
+        })}
+      </Tabs>
+      <Divider />
+      <Suspense
+        fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}
+      >
+        <Routes>
+          <Route path="artifacts" element={<TabArtifact />} />
+          <Route path="weapons" element={<TabWeapon />} />
+          <Route path="characters" element={<TabCharacter />} />
+          <Route path="*" element={<Navigate to="artifacts" />} />
+        </Routes>
+      </Suspense>
+    </CardThemed>
   )
 }

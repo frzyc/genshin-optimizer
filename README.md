@@ -23,9 +23,9 @@ If you have knowledge in some(or any) of those techonology mentioned above, or a
 ### Main site https://frzyc.github.io/genshin-optimizer/
 
 - New characters and content will continue to be added as Genshin updates
-- Artifact upgrade damage probability calculator - **Q1 2024**
+- ~~Artifact upgrade damage probability calculator - Q1 2024~~
 - ~~Teams + Loadouts - Q2 2024~~
-- ~~Optimal substat solver for TC mode - **Q2 2024**~~
+- ~~Optimal substat solver for TC mode - Q2 2024~~
 
 ### GO-next
 

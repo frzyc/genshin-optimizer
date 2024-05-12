@@ -1,8 +1,4 @@
-import {
-  clamp,
-  validateArr,
-  validateObject,
-} from '@genshin-optimizer/common/util'
+import { clamp, validateArr } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
@@ -18,19 +14,12 @@ import {
   allLocationCharacterKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
-
+import {
+  artifactSortKeys,
+  type ArtifactSortKey,
+} from '@genshin-optimizer/gi/util'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
-
-export const artifactSortKeys = [
-  'rarity',
-  'level',
-  'artsetkey',
-  'efficiency',
-  'mefficiency',
-  'probability',
-] as const
-export type ArtifactSortKey = (typeof artifactSortKeys)[number]
 
 export type FilterOption = {
   artSetKeys: ArtifactSetKey[]
@@ -55,7 +44,6 @@ export type IDisplayArtifact = {
   ascending: boolean
   sortType: ArtifactSortKey
   effFilter: SubstatKey[]
-  probabilityFilter: Partial<Record<SubstatKey, number>>
 }
 
 export function initialFilterOption(): FilterOption {
@@ -84,7 +72,6 @@ function initialState(): IDisplayArtifact {
     ascending: false,
     sortType: artifactSortKeys[0],
     effFilter: [...allSubstatKeys],
-    probabilityFilter: {},
   }
 }
 
@@ -99,7 +86,7 @@ export class DisplayArtifactEntry extends DataEntry<
   }
   override validate(obj: unknown): IDisplayArtifact | undefined {
     if (typeof obj !== 'object') return undefined
-    let { filterOption, ascending, sortType, effFilter, probabilityFilter } =
+    let { filterOption, ascending, sortType, effFilter } =
       obj as IDisplayArtifact
 
     if (typeof filterOption !== 'object') filterOption = initialFilterOption()
@@ -168,18 +155,11 @@ export class DisplayArtifactEntry extends DataEntry<
 
     effFilter = validateArr(effFilter, allSubstatKeys)
 
-    probabilityFilter = validateObject(
-      probabilityFilter,
-      (k) => allSubstatKeys.includes(k as SubstatKey),
-      (e) => typeof e === 'number'
-    )
-
     return {
       filterOption,
       ascending,
       sortType,
       effFilter,
-      probabilityFilter,
     } as IDisplayArtifact
   }
   override set(
