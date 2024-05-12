@@ -198,11 +198,17 @@ export class TeamDataManager extends DataManager<
     const rem = super.remove(teamId, notify)
     if (!rem) return
     // handle removal of loadouts that are only in this team.
-    rem.loadoutData.forEach(loadoutDatum=>{
-      if(!loadoutDatum) return
-      const {teamCharId} = loadoutDatum
+    rem.loadoutData.forEach((loadoutDatum) => {
+      if (!loadoutDatum) return
+      const { teamCharId } = loadoutDatum
       // check if there is another team that has this loadout, if so, do not remove it
-      if(this.database.teams.values.some(({loadoutData})=>loadoutData.some(loadoutDatum=>loadoutDatum?.teamCharId===teamCharId)))
+      if (
+        this.database.teams.values.some(({ loadoutData }) =>
+          loadoutData.some(
+            (loadoutDatum) => loadoutDatum?.teamCharId === teamCharId
+          )
+        )
+      )
         return
       this.database.teamChars.remove(teamCharId)
     })
