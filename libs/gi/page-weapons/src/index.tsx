@@ -35,6 +35,7 @@ import {
   Grid,
   Skeleton,
   TextField,
+  Typography,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import {
@@ -46,7 +47,7 @@ import {
   useState,
 } from 'react'
 import ReactGA from 'react-ga4'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import WeaponRedButtons from './WeaponRedButtons'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
@@ -223,6 +224,26 @@ export default function PageWeapon() {
 
       <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+          <Grid container>
+            <Grid item>
+              <Typography variant="h6">
+                <Trans t={t} i18nKey="weaponFilter">
+                  Weapon Filter
+                </Trans>
+              </Typography>
+            </Grid>
+            <Grid
+              item
+              flexGrow={1}
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Typography>
+                <strong>{weaponIds.length}</strong> / {totalWeaponNum}
+              </Typography>
+            </Grid>
+          </Grid>
           <Box display="flex" flexWrap="wrap" gap={1} alignItems="stretch">
             <WeaponToggle
               onChange={(weaponType) =>
