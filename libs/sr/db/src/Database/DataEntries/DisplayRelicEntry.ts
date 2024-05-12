@@ -1,8 +1,4 @@
-import {
-  clamp,
-  validateArr,
-  validateObject,
-} from '@genshin-optimizer/common/util'
+import { clamp, validateArr } from '@genshin-optimizer/common/util'
 import type {
   LocationKey,
   RelicMainStatKey,
@@ -28,7 +24,6 @@ export const relicSortKeys = [
   'relicsetkey',
   'efficiency',
   'mefficiency',
-  'probability',
 ] as const
 export type RelicSortKey = (typeof relicSortKeys)[number]
 
@@ -55,7 +50,6 @@ export type IDisplayRelic = {
   ascending: boolean
   sortType: RelicSortKey
   effFilter: RelicSubStatKey[]
-  probabilityFilter: Partial<Record<RelicSubStatKey, number>>
 }
 
 export function initialFilterOption(): FilterOption {
@@ -84,7 +78,6 @@ function initialState(): IDisplayRelic {
     ascending: false,
     sortType: relicSortKeys[0],
     effFilter: [...allRelicSubStatKeys],
-    probabilityFilter: {},
   }
 }
 
@@ -99,8 +92,7 @@ export class DisplayRelicEntry extends DataEntry<
   }
   override validate(obj: unknown): IDisplayRelic | undefined {
     if (typeof obj !== 'object') return undefined
-    let { filterOption, ascending, sortType, effFilter, probabilityFilter } =
-      obj as IDisplayRelic
+    let { filterOption, ascending, sortType, effFilter } = obj as IDisplayRelic
 
     if (typeof filterOption !== 'object') filterOption = initialFilterOption()
     else {
@@ -168,18 +160,11 @@ export class DisplayRelicEntry extends DataEntry<
 
     effFilter = validateArr(effFilter, allRelicSubStatKeys)
 
-    probabilityFilter = validateObject(
-      probabilityFilter,
-      (k) => allRelicSubStatKeys.includes(k as RelicSubStatKey),
-      (e) => typeof e === 'number'
-    )
-
     return {
       filterOption,
       ascending,
       sortType,
       effFilter,
-      probabilityFilter,
     } as IDisplayRelic
   }
   override set(
