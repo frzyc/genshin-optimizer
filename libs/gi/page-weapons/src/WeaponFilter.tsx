@@ -104,4 +104,4 @@ function WeaponRedButtons({ weaponIds }: { weaponIds: string[] }) {
   )
 }
 
-export default WeaponRedButtons
+export { WeaponRedButtons }

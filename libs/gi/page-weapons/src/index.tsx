@@ -48,7 +48,7 @@ import {
 } from 'react'
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
-import WeaponRedButtons from './WeaponRedButtons'
+import { WeaponRedButtons } from './WeaponFilter'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
