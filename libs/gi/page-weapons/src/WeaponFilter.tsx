@@ -47,7 +47,7 @@ function WeaponFilter({
   total: number
   weaponIds: string[]
 }) {
-  const { t } = useTranslation(['page_weapon', 'ui', 'weapon'])
+  const { t } = useTranslation(['page_weapon', 'ui'])
   const database = useDatabase()
   const [state, setState] = useState(database.displayWeapon.get())
 
@@ -136,7 +136,7 @@ function WeaponFilter({
         <Box>
           <Grid container spacing={1}>
             <Grid item xs={12} md={6} display="flex" flexDirection="column">
-              <Trans t={t} i18nKey="weapon:subheadings.general" />
+              <Trans t={t} i18nKey="subheadings.general" />
               <Stack spacing={1}>
                 <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
                 <WeaponToggle
@@ -167,7 +167,7 @@ function WeaponFilter({
               gap={1}
             >
               <Box>
-                <Trans t={t} i18nKey="weapon:subheadings.inventory" />
+                <Trans t={t} i18nKey="subheadings.inventory" />
                 <Stack spacing={1}>
                   <Divider
                     sx={{ bgcolor: theme.palette.contentNormal.light }}
@@ -202,7 +202,7 @@ function WeaponFilter({
                       })
                     }
                   >
-                    {t`weapon:weaponInInv`}{' '}
+                    {t`weaponInInv`}{' '}
                     <Chip
                       sx={{ ml: 1 }}
                       label={equippedTotal['unequipped']}
@@ -218,7 +218,7 @@ function WeaponFilter({
                       })
                     }
                   >
-                    {t`weapon:equippedWeapon`}{' '}
+                    {t`equippedWeapon`}{' '}
                     <Chip
                       sx={{ ml: 1 }}
                       label={equippedTotal['equipped']}
