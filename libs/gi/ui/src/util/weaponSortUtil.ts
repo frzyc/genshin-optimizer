@@ -6,7 +6,7 @@ import { allStats } from '@genshin-optimizer/gi/stats'
 
 export function weaponSortConfigs(): SortConfigs<WeaponSortKey, IWeapon> {
   return {
-    level: (wp) => wp.level * (wp.ascension + 1) ?? 0,
+    level: (wp) => wp.level * (wp.ascension + 1),
     rarity: (wp) => allStats.weapon.data[wp.key].rarity,
     name: (wp) => i18n.t(`weaponNames_gen:${wp.key}`) as string,
   }
