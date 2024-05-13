@@ -17,15 +17,19 @@ export interface IDisplayWeapon {
   showEquipped: boolean
 }
 
-const initialState = (): IDisplayWeapon => ({
+const initialOption = (): Omit<IDisplayWeapon, 'ascending' | 'sortType'> => ({
   editWeaponId: '',
-  sortType: weaponSortKeys[0],
-  ascending: false,
   rarity: [...allRarityKeys],
   weaponType: [...allWeaponTypeKeys],
   locked: ['locked', 'unlocked'],
   showEquipped: true,
   showInventory: true,
+})
+
+const initialState = (): IDisplayWeapon => ({
+  ...initialOption(),
+  sortType: weaponSortKeys[0],
+  ascending: false,
 })
 
 export class DisplayWeaponEntry extends DataEntry<
@@ -82,7 +86,7 @@ export class DisplayWeaponEntry extends DataEntry<
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {
-      if (value.action === 'reset') return super.set(initialState())
+      if (value.action === 'reset') return super.set(initialOption())
       return false
     } else return super.set(value)
   }
