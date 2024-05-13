@@ -244,15 +244,17 @@ export default function CustomMultiTargetCard({
           >
             {customTargetDisplays}
             <AddCustomTargetBtn setTarget={addTarget} />
-            <MTargetEditor
-              customTarget={target.targets[selectedTargetValid]}
-              setCustomTarget={setCustomTarget(selectedTargetValid)}
-              deleteCustomTarget={deleteCustomTarget(selectedTargetValid)}
-              rank={selectedTargetValid + 1}
-              maxRank={target.targets.length}
-              setTargetIndex={setTargetIndex(selectedTargetValid)}
-              onDup={dupCustomTarget(selectedTargetValid)}
-            />
+            {target.targets[selectedTargetValid] && (
+              <MTargetEditor
+                customTarget={target.targets[selectedTargetValid]}
+                setCustomTarget={setCustomTarget(selectedTargetValid)}
+                deleteCustomTarget={deleteCustomTarget(selectedTargetValid)}
+                rank={selectedTargetValid + 1}
+                maxRank={target.targets.length}
+                setTargetIndex={setTargetIndex(selectedTargetValid)}
+                onDup={dupCustomTarget(selectedTargetValid)}
+              />
+            )}
           </CardContent>
         </CardThemed>
       </ModalWrapper>
