@@ -14,36 +14,36 @@ import {
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 
-export interface IArtifactOption {
+export interface ArchiveArtifactOption {
   rarity: ArtifactRarity[]
 }
 
-export interface ICharacterOption {
+export interface ArchiveCharacterOption {
   rarity: CharacterRarityKey[]
   weaponType: WeaponTypeKey[]
 }
 
-export interface IWeaponOption {
+export interface ArchiveWeaponOption {
   rarity: RarityKey[]
   weaponType: WeaponTypeKey[]
 }
 
 export interface IDisplayArchiveEntry {
-  artifact: IArtifactOption
-  character: ICharacterOption
-  weapon: IWeaponOption
+  artifact: ArchiveArtifactOption
+  character: ArchiveCharacterOption
+  weapon: ArchiveWeaponOption
 }
 
-const initialArtifactOption = (): IArtifactOption => ({
+const initialArtifactOption = (): ArchiveArtifactOption => ({
   rarity: [...allArtifactRarityKeys],
 })
 
-const initialCharacterOption = (): ICharacterOption => ({
+const initialCharacterOption = (): ArchiveCharacterOption => ({
   rarity: [...allCharacterRarityKeys],
   weaponType: [...allWeaponTypeKeys],
 })
 
-const initialWeaponOption = (): IWeaponOption => ({
+const initialWeaponOption = (): ArchiveWeaponOption => ({
   rarity: [...allRarityKeys],
   weaponType: [...allWeaponTypeKeys],
 })
