@@ -12,6 +12,7 @@ export interface CustomTarget {
   infusionAura?: InfusionAuraElementKey
   // TODO: Partial<Record<InputPremodKey, number>>
   bonusStats: Record<string, number>
+  description: string
 }
 export interface CustomMultiTarget {
   name: string

@@ -5,7 +5,7 @@ import {
   ModalWrapper,
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
-import { arrayMove, deepClone } from '@genshin-optimizer/common/util'
+import { arrayMove, clamp, deepClone } from '@genshin-optimizer/common/util'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
 import {
   initCustomTarget,
@@ -31,6 +31,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelectorModal'
 import CustomTargetDisplay from './CustomTargetDisplay'
+import MTargetEditor from './MTargetEditor'
 export default function CustomMultiTargetCard({
   customMultiTarget: targetProp,
   setTarget: setTargetProp,
@@ -95,13 +96,16 @@ export default function CustomMultiTargetCard({
     [target, setTarget]
   )
 
+  const [selectedTarget, setSelectedTarget] = useState(0)
   const setTargetIndex = useCallback(
     (oldInd: number) => (newRank?: number) => {
       if (newRank === undefined || newRank === 0) return
+      newRank = clamp(newRank, 1, target.targets.length)
       const newInd = newRank - 1
       const targets = [...target.targets]
       arrayMove(targets, oldInd, newInd)
       setTarget({ ...target, targets })
+      setSelectedTarget(newRank - 1)
     },
     [target, setTarget]
   )
@@ -126,24 +130,19 @@ export default function CustomMultiTargetCard({
       target.targets.map((t, i) => (
         <CustomTargetDisplay
           key={t.path.join() + i}
+          selected={selectedTarget === i}
+          setSelect={() => setSelectedTarget(i)}
           customTarget={t}
-          setCustomTarget={setCustomTarget(i)}
-          deleteCustomTarget={deleteCustomTarget(i)}
           rank={i + 1}
-          maxRank={target.targets.length}
-          setTargetIndex={setTargetIndex(i)}
-          onDup={dupCustomTarget(i)}
         />
       )),
-    [
-      deleteCustomTarget,
-      dupCustomTarget,
-      setCustomTarget,
-      setTargetIndex,
-      target.targets,
-    ]
+    [selectedTarget, target.targets]
   )
-
+  const selectedTargetValid = clamp(
+    selectedTarget,
+    0,
+    target.targets.length - 1
+  )
   return (
     <>
       <CardThemed bgt="light">
@@ -174,7 +173,7 @@ export default function CustomMultiTargetCard({
         </CardActionArea>
       </CardThemed>
       <ModalWrapper open={show} onClose={onSave}>
-        <CardThemed>
+        <CardThemed sx={{ overflow: 'visible' }}>
           <CardHeader
             title={name}
             action={
@@ -236,10 +235,24 @@ export default function CustomMultiTargetCard({
           </CardContent>
           <Divider />
           <CardContent
-            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+              position: 'relative',
+            }}
           >
             {customTargetDisplays}
             <AddCustomTargetBtn setTarget={addTarget} />
+            <MTargetEditor
+              customTarget={target.targets[selectedTargetValid]}
+              setCustomTarget={setCustomTarget(selectedTargetValid)}
+              deleteCustomTarget={deleteCustomTarget(selectedTargetValid)}
+              rank={selectedTargetValid + 1}
+              maxRank={target.targets.length}
+              setTargetIndex={setTargetIndex(selectedTargetValid)}
+              onDup={dupCustomTarget(selectedTargetValid)}
+            />
           </CardContent>
         </CardThemed>
       </ModalWrapper>
