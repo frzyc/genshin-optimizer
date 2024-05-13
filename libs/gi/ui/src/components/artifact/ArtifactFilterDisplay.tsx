@@ -36,11 +36,11 @@ import {
 import Stack from '@mui/system/Stack'
 import { Suspense, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { LocationFilterMultiAutocomplete } from '../character/LocationFilterMultiAutocomplete'
 import { ArtifactLevelSlider } from './ArtifactLevelSlider'
 import { ArtifactMainStatMultiAutocomplete } from './ArtifactMainStatMultiAutocomplete'
 import { ArtifactSetMultiAutocomplete } from './ArtifactSetMultiAutocomplete'
 import { ArtifactSubstatMultiAutocomplete } from './ArtifactSubstatMultiAutocomplete'
-import { LocationFilterMultiAutocomplete } from '../character/LocationFilterMultiAutocomplete'
 import { RVSlide } from './RVSlide'
 import { SubstatToggle } from './SubstatToggle'
 
