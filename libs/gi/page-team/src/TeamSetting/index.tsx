@@ -1,34 +1,15 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import {
-  BootstrapTooltip,
-  CardThemed,
-  ModalWrapper,
-  SqBadge,
-  TextFieldLazy,
-} from '@genshin-optimizer/common/ui'
-import { toggleInArr } from '@genshin-optimizer/common/util'
+import { TextFieldLazy } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import type {
-  LoadoutDataExportSetting,
-  LoadoutDatum,
-  LoadoutExportSetting,
-} from '@genshin-optimizer/gi/db'
-import {
-  useDBMeta,
-  useDatabase,
-  useTeam,
-  useTeamChar,
-} from '@genshin-optimizer/gi/db-ui'
+import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { TeamData, dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AdResponsive,
-  BuildIcon,
   CharIconSide,
   CharacterName,
   CharacterSelectionModal,
-  CustomMultiTargetIcon,
   EnemyExpandCard,
-  FieldDisplayList,
   TeamInfoAlert,
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
@@ -36,29 +17,15 @@ import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import InfoIcon from '@mui/icons-material/Info'
 import type { ButtonProps } from '@mui/material'
-import {
-  Alert,
-  Box,
-  Button,
-  CardContent,
-  CardHeader,
-  Checkbox,
-  Divider,
-  Grid,
-  IconButton,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Typography,
-} from '@mui/material'
+import { Alert, Box, Button, CardContent, Grid } from '@mui/material'
 import { Suspense, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import BuildDropdown from '../BuildDropdown'
 import { LoadoutDropdown } from '../LoadoutDropdown'
 import { ResonanceDisplay } from './ResonanceDisplay'
 import { TeammateDisplay } from './TeamComponents'
+import TeamExportModal from './TeamExportModal'
 
 // TODO: Translation
 export default function TeamSetting({
@@ -355,233 +322,5 @@ function CharSelButton({
         />
       )}
     </Box>
-  )
-}
-function TeamExportModal({
-  show,
-  onHide,
-  teamId,
-}: {
-  show: boolean
-  onHide: () => void
-  teamId: string
-}) {
-  const database = useDatabase()
-  const team = useTeam(teamId)!
-  const { loadoutData } = team
-
-  const [loadoutDataExportSetting, setLoadoutDataExportSetting] =
-    useState<LoadoutDataExportSetting>(() =>
-      loadoutData.map(() => ({
-        convertEquipped: false,
-        convertbuilds: [],
-        convertTcBuilds: [],
-        exportCustomMultiTarget: [],
-      }))
-    )
-  const onExport = () => {
-    const data = database.teams.export(teamId, loadoutDataExportSetting)
-    const dataStr = JSON.stringify(data)
-    navigator.clipboard
-      .writeText(dataStr)
-      .then(() => alert('Copied team data to clipboard.'))
-      .catch(console.error)
-  }
-  return (
-    <ModalWrapper open={show} onClose={onHide}>
-      <CardThemed>
-        <CardHeader
-          title="Team Export"
-          action={
-            <IconButton onClick={onHide}>
-              <CloseIcon />
-            </IconButton>
-          }
-        />
-        <Divider />
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Alert severity="info">
-            Export the team data to be imported by another user. All the team
-            and loadout data (bonus stats, enemy config, optimize config) are
-            exported. All exported non-TC builds are converted to TC builds.
-          </Alert>
-          <Grid container columns={{ xs: 2, md: 4 }} spacing={1}>
-            {loadoutData.map(
-              (loadout, i) =>
-                !!loadout && (
-                  <Grid item xs={1} key={i}>
-                    <LoadoutSetting
-                      loadout={loadout}
-                      setting={loadoutDataExportSetting[i]}
-                      setSetting={(loadoutExportSetting) =>
-                        setLoadoutDataExportSetting((settings) => {
-                          const data = structuredClone(settings)
-                          data[i] = {
-                            ...data[i],
-                            ...loadoutExportSetting,
-                          }
-                          return data
-                        })
-                      }
-                    />
-                  </Grid>
-                )
-            )}
-          </Grid>
-        </CardContent>
-        <Divider />
-        <CardContent>
-          <Button onClick={onExport}>Export</Button>
-        </CardContent>
-      </CardThemed>
-    </ModalWrapper>
-  )
-}
-function LoadoutSetting({
-  loadout,
-  setting,
-  setSetting,
-}: {
-  loadout: LoadoutDatum
-  setting: LoadoutExportSetting
-  setSetting: (loadoutExportSetting: Partial<LoadoutExportSetting>) => void
-}) {
-  const database = useDatabase()
-  const teamChar = useTeamChar(loadout.teamCharId)!
-  const {
-    key: characterKey,
-    name,
-    description,
-    buildIds,
-    buildTcIds,
-    customMultiTargets,
-  } = teamChar
-  return (
-    <CardThemed bgt="light">
-      <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <CharIconSide characterKey={characterKey} />
-        <Typography>{name}</Typography>
-        {!!description && (
-          <BootstrapTooltip title={description}>
-            <InfoIcon />
-          </BootstrapTooltip>
-        )}
-      </CardContent>
-      <Divider />
-      {!!customMultiTargets.length && (
-        <>
-          <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <CustomMultiTargetIcon />
-            <Typography>
-              <strong>Mtargets to Export</strong>
-            </Typography>
-          </CardContent>
-          <FieldDisplayList bgt="light">
-            {customMultiTargets.map((mtarget, i) => {
-              const { name } = mtarget
-              return (
-                <ListItem key={i} sx={{ p: 0 }}>
-                  <ListItemButton
-                    onClick={() =>
-                      setSetting({
-                        exportCustomMultiTarget: toggleInArr(
-                          setting.exportCustomMultiTarget,
-                          i
-                        ),
-                      })
-                    }
-                  >
-                    <Checkbox
-                      edge="start"
-                      checked={setting.exportCustomMultiTarget.includes(i)}
-                      tabIndex={-1}
-                      disableRipple
-                    />
-                    <ListItemText primary={name} />
-                  </ListItemButton>
-                </ListItem>
-              )
-            })}
-          </FieldDisplayList>
-          <Divider />
-        </>
-      )}
-      <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <BuildIcon />
-        <Typography>
-          <strong>Builds to Export</strong>
-        </Typography>
-      </CardContent>
-      <FieldDisplayList bgt="light">
-        <ListItem sx={{ p: 0 }}>
-          <ListItemButton
-            onClick={() =>
-              setSetting({ convertEquipped: !setting.convertEquipped })
-            }
-          >
-            <Checkbox
-              edge="start"
-              checked={setting.convertEquipped}
-              tabIndex={-1}
-              disableRipple
-            />
-            <ListItemText primary={`Equipped Build`} />
-          </ListItemButton>
-        </ListItem>
-        {buildIds.map((buildId) => {
-          const build = database.builds.get(buildId)!
-          return (
-            <ListItem key={buildId} sx={{ p: 0 }}>
-              <ListItemButton
-                onClick={() =>
-                  setSetting({
-                    convertbuilds: toggleInArr(setting.convertbuilds, buildId),
-                  })
-                }
-              >
-                <Checkbox
-                  edge="start"
-                  checked={setting.convertbuilds.includes(buildId)}
-                  tabIndex={-1}
-                  disableRipple
-                />
-                <ListItemText primary={build.name} />
-              </ListItemButton>
-            </ListItem>
-          )
-        })}
-        {buildTcIds.map((buildTcId) => {
-          const buildTc = database.buildTcs.get(buildTcId)!
-          return (
-            <ListItem key={buildTcId} sx={{ p: 0 }}>
-              <ListItemButton
-                onClick={() =>
-                  setSetting({
-                    convertTcBuilds: toggleInArr(
-                      setting.convertTcBuilds,
-                      buildTcId
-                    ),
-                  })
-                }
-              >
-                <Checkbox
-                  edge="start"
-                  checked={setting.convertTcBuilds.includes(buildTcId)}
-                  tabIndex={-1}
-                  disableRipple
-                />
-                <ListItemText
-                  primary={
-                    <Box>
-                      {buildTc.name} <SqBadge>TC Build</SqBadge>
-                    </Box>
-                  }
-                />
-              </ListItemButton>
-            </ListItem>
-          )
-        })}
-      </FieldDisplayList>
-    </CardThemed>
   )
 }
