@@ -50,6 +50,12 @@ export type LoadoutExportSetting = {
   convertTcBuilds: string[]
   exportCustomMultiTarget: number[]
 }
+export const defLoadoutExportSetting = () => ({
+  convertEquipped: false,
+  convertbuilds: [],
+  convertTcBuilds: [],
+  exportCustomMultiTarget: [],
+})
 export type LoadoutDataExportSetting = Array<LoadoutExportSetting>
 export class TeamDataManager extends DataManager<
   string,

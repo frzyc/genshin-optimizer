@@ -5,10 +5,11 @@ import {
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { toggleInArr } from '@genshin-optimizer/common/util'
-import type {
-  LoadoutDataExportSetting,
-  LoadoutDatum,
-  LoadoutExportSetting,
+import {
+  defLoadoutExportSetting,
+  type LoadoutDataExportSetting,
+  type LoadoutDatum,
+  type LoadoutExportSetting,
 } from '@genshin-optimizer/gi/db'
 import { useDatabase, useTeam, useTeamChar } from '@genshin-optimizer/gi/db-ui'
 import {
@@ -52,12 +53,7 @@ export default function TeamExportModal({
 
   const [loadoutDataExportSetting, setLoadoutDataExportSetting] =
     useState<LoadoutDataExportSetting>(() =>
-      loadoutData.map(() => ({
-        convertEquipped: false,
-        convertbuilds: [],
-        convertTcBuilds: [],
-        exportCustomMultiTarget: [],
-      }))
+      loadoutData.map(() => defLoadoutExportSetting())
     )
   const onExport = () => {
     const data = database.teams.export(teamId, loadoutDataExportSetting)
@@ -67,6 +63,33 @@ export default function TeamExportModal({
       .then(() => alert('Copied team data to clipboard.'))
       .catch(console.error)
   }
+  const [selEverything, setSelEverything] = useState(true)
+  const unselectEverything = () => {
+    setSelEverything(true)
+    setLoadoutDataExportSetting(
+      loadoutData.map(() => defLoadoutExportSetting())
+    )
+  }
+
+  const selectEverything = () => {
+    setSelEverything(false)
+    setLoadoutDataExportSetting(
+      loadoutData.map((loadoutDatum) => {
+        if (!loadoutDatum) return defLoadoutExportSetting()
+
+        const loadout = database.teamChars.get(loadoutDatum.teamCharId)
+        if (!loadout) return defLoadoutExportSetting()
+        const { buildIds, buildTcIds, customMultiTargets } = loadout
+        return {
+          convertEquipped: true,
+          convertbuilds: buildIds,
+          convertTcBuilds: buildTcIds,
+          exportCustomMultiTarget: customMultiTargets?.map((_, i) => i) ?? [],
+        }
+      })
+    )
+  }
+
   return (
     <ModalWrapper open={show} onClose={onHide}>
       <CardThemed>
@@ -110,8 +133,18 @@ export default function TeamExportModal({
           </Grid>
         </CardContent>
         <Divider />
-        <CardContent>
-          <Button onClick={onExport}>Export</Button>
+        <CardContent
+          sx={{ display: 'flex', gap: 2, justifyContent: 'flex-end' }}
+        >
+          <Button
+            color="info"
+            onClick={selEverything ? selectEverything : unselectEverything}
+          >
+            {selEverything ? 'Select Everything' : 'Unselect Everything'}
+          </Button>
+          <Button color="success" onClick={onExport}>
+            Export
+          </Button>
         </CardContent>
       </CardThemed>
     </ModalWrapper>

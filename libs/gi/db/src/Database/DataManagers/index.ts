@@ -27,6 +27,7 @@ import type {
   LoadoutExportSetting,
   Team,
 } from './TeamDataManager'
+import { defLoadoutExportSetting } from './TeamDataManager'
 import {
   defaultInitialWeapon,
   defaultInitialWeaponKey,
@@ -37,6 +38,7 @@ export {
   MAX_NAME_LENGTH,
   allArtifactSetExclusionKeys,
   cachedArtifact,
+  defLoadoutExportSetting,
   defaultInitialWeapon,
   defaultInitialWeaponKey,
   handleArtSetExclusion,
