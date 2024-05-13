@@ -12,7 +12,7 @@ import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SillyContext } from '../../context'
-import { CharIconSide } from '../character'
+import { CharIconSide } from '.'
 
 export function LocationFilterMultiAutocomplete({
   locations,

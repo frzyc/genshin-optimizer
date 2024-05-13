@@ -40,7 +40,7 @@ import { ArtifactLevelSlider } from './ArtifactLevelSlider'
 import { ArtifactMainStatMultiAutocomplete } from './ArtifactMainStatMultiAutocomplete'
 import { ArtifactSetMultiAutocomplete } from './ArtifactSetMultiAutocomplete'
 import { ArtifactSubstatMultiAutocomplete } from './ArtifactSubstatMultiAutocomplete'
-import { LocationFilterMultiAutocomplete } from './LocationFilterMultiAutocomplete'
+import { LocationFilterMultiAutocomplete } from '../character/LocationFilterMultiAutocomplete'
 import { RVSlide } from './RVSlide'
 import { SubstatToggle } from './SubstatToggle'
 
