@@ -1,6 +1,14 @@
 import { validateArr } from '@genshin-optimizer/common/util'
-import type { RarityKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
-import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
+import type {
+  LocationCharacterKey,
+  RarityKey,
+  WeaponTypeKey,
+} from '@genshin-optimizer/gi/consts'
+import {
+  allLocationCharacterKeys,
+  allRarityKeys,
+  allWeaponTypeKeys,
+} from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 
@@ -15,6 +23,7 @@ export interface IDisplayWeapon {
   locked: Array<'locked' | 'unlocked'>
   showInventory: boolean
   showEquipped: boolean
+  locations: LocationCharacterKey[]
 }
 
 const initialOption = (): Omit<IDisplayWeapon, 'ascending' | 'sortType'> => ({
@@ -24,6 +33,7 @@ const initialOption = (): Omit<IDisplayWeapon, 'ascending' | 'sortType'> => ({
   locked: ['locked', 'unlocked'],
   showEquipped: true,
   showInventory: true,
+  locations: [],
 })
 
 const initialState = (): IDisplayWeapon => ({
@@ -51,6 +61,7 @@ export class DisplayWeaponEntry extends DataEntry<
       locked,
       showEquipped,
       showInventory,
+      locations,
     } = obj
     const { editWeaponId } = obj
     if (typeof editWeaponId !== 'string') return editWeaponId
@@ -67,6 +78,7 @@ export class DisplayWeaponEntry extends DataEntry<
     if (typeof showEquipped !== 'boolean') showEquipped = true
     if (typeof showInventory !== 'boolean') showInventory = true
     locked = validateArr(locked, ['locked', 'unlocked'])
+    locations = validateArr(locations, allLocationCharacterKeys)
     const data: IDisplayWeapon = {
       editWeaponId,
       sortType,
@@ -76,6 +88,7 @@ export class DisplayWeaponEntry extends DataEntry<
       locked,
       showEquipped,
       showInventory,
+      locations,
     }
     return data
   }

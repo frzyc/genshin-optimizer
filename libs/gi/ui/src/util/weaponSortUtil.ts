@@ -17,7 +17,8 @@ export function weaponFilterConfigs(): FilterConfigs<
   | 'name'
   | 'locked'
   | 'showInventory'
-  | 'showEquipped',
+  | 'showEquipped'
+  | 'locations',
   IWeapon
 > {
   return {
@@ -35,8 +36,12 @@ export function weaponFilterConfigs(): FilterConfigs<
       if (filter.includes('unlocked') && !wp.lock) return true
       return false
     },
-    showEquipped: (wp, filter) => (wp.location ? filter : true),
+    showEquipped: () => true, // Per character filtering is applied in `locations`
     showInventory: (wp, filter) => (!wp.location ? filter : true),
+    locations: (wp, filter, filters) =>
+      wp.location && !filters['showEquipped']
+        ? filter.includes(wp.location)
+        : true,
   }
 }
 
