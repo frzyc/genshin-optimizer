@@ -78,7 +78,7 @@ export class DisplayWeaponEntry extends DataEntry<
     if (typeof showEquipped !== 'boolean') showEquipped = true
     if (typeof showInventory !== 'boolean') showInventory = true
     locked = validateArr(locked, ['locked', 'unlocked'])
-    locations = validateArr(locations, allLocationCharacterKeys)
+    locations = validateArr(locations, allLocationCharacterKeys, [])
     const data: IDisplayWeapon = {
       editWeaponId,
       sortType,
