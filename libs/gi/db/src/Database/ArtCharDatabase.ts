@@ -118,6 +118,7 @@ export class ArtCharDatabase extends Database {
       this.displayCharacter,
       this.displayTool,
       this.displayTeam,
+      this.displayArchive
     ] as const
   }
 
