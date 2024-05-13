@@ -12,7 +12,12 @@ export function weaponSortConfigs(): SortConfigs<WeaponSortKey, IWeapon> {
   }
 }
 export function weaponFilterConfigs(): FilterConfigs<
-  'rarity' | 'weaponType' | 'name',
+  | 'rarity'
+  | 'weaponType'
+  | 'name'
+  | 'locked'
+  | 'showInventory'
+  | 'showEquipped',
   IWeapon
 > {
   return {
@@ -25,6 +30,13 @@ export function weaponFilterConfigs(): FilterConfigs<
         .t(`weaponNames_gen:${wp.key}`)
         .toLowerCase()
         .includes(filter.toLowerCase()),
+    locked: (wp, filter) => {
+      if (filter.includes('locked') && wp.lock) return true
+      if (filter.includes('unlocked') && !wp.lock) return true
+      return false
+    },
+    showEquipped: (wp, filter) => (wp.location ? filter : true),
+    showInventory: (wp, filter) => (!wp.location ? filter : true),
   }
 }
 

@@ -1,3 +1,4 @@
+import { validateArr } from '@genshin-optimizer/common/util'
 import type { RarityKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -11,14 +12,24 @@ export interface IDisplayWeapon {
   ascending: boolean
   rarity: RarityKey[]
   weaponType: WeaponTypeKey[]
+  locked: Array<'locked' | 'unlocked'>
+  showInventory: boolean
+  showEquipped: boolean
 }
 
-const initialState = () => ({
+const initialOption = (): Omit<IDisplayWeapon, 'ascending' | 'sortType'> => ({
   editWeaponId: '',
-  sortType: weaponSortKeys[0],
-  ascending: false,
   rarity: [...allRarityKeys],
   weaponType: [...allWeaponTypeKeys],
+  locked: ['locked', 'unlocked'],
+  showEquipped: true,
+  showInventory: true,
+})
+
+const initialState = (): IDisplayWeapon => ({
+  ...initialOption(),
+  sortType: weaponSortKeys[0],
+  ascending: false,
 })
 
 export class DisplayWeaponEntry extends DataEntry<
@@ -32,7 +43,15 @@ export class DisplayWeaponEntry extends DataEntry<
   }
   override validate(obj: any): IDisplayWeapon | undefined {
     if (typeof obj !== 'object') return undefined
-    let { sortType, ascending, rarity, weaponType } = obj
+    let {
+      sortType,
+      ascending,
+      rarity,
+      weaponType,
+      locked,
+      showEquipped,
+      showInventory,
+    } = obj
     const { editWeaponId } = obj
     if (typeof editWeaponId !== 'string') return editWeaponId
     if (
@@ -45,13 +64,30 @@ export class DisplayWeaponEntry extends DataEntry<
     else rarity = rarity.filter((r) => allRarityKeys.includes(r))
     if (!Array.isArray(weaponType)) weaponType = [...allWeaponTypeKeys]
     else weaponType = weaponType.filter((r) => allWeaponTypeKeys.includes(r))
+    if (typeof showEquipped !== 'boolean') showEquipped = true
+    if (typeof showInventory !== 'boolean') showInventory = true
+    locked = validateArr(locked, ['locked', 'unlocked'])
     const data: IDisplayWeapon = {
       editWeaponId,
       sortType,
       ascending,
       rarity,
       weaponType,
+      locked,
+      showEquipped,
+      showInventory,
     }
     return data
+  }
+  override set(
+    value:
+      | Partial<IDisplayWeapon>
+      | ((v: IDisplayWeapon) => Partial<IDisplayWeapon> | void)
+      | { action: 'reset' }
+  ): boolean {
+    if ('action' in value) {
+      if (value.action === 'reset') return super.set(initialOption())
+      return false
+    } else return super.set(value)
   }
 }
