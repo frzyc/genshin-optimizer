@@ -1,4 +1,3 @@
-import { useTheme } from '@emotion/react'
 import { SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -8,7 +7,7 @@ import {
   resolveInfo,
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import { Box, Divider, Stack, useMediaQuery } from '@mui/material'
+import { Box, Divider, Stack, useMediaQuery, useTheme } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
