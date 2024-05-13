@@ -4,7 +4,11 @@ import { handleMultiSelect } from '@genshin-optimizer/common/util'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allWeaponKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
-import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
+import type {
+  ArchiveWeaponOption,
+  ICachedWeapon,
+} from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { i18n } from '@genshin-optimizer/gi/i18n'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
@@ -34,24 +38,39 @@ import {
   ToggleButtonGroup,
   Typography,
 } from '@mui/material'
-import { Suspense, memo, useDeferredValue, useMemo, useState } from 'react'
+import {
+  Suspense,
+  memo,
+  useCallback,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { WeaponView } from './WeaponView'
 const rarities = [5, 4, 3, 2, 1] as const
 export default function TabWeapon() {
-  const [rarityFilter, setRarityFilter] = useState([...rarities])
-  const [weaponTypeFilter, setWeaponTypeFilter] = useState([
-    ...allWeaponTypeKeys,
-  ])
+  const database = useDatabase()
+  const [state, setState] = useState(database.displayArchive.get())
+  useEffect(() =>
+    database.displayArchive.follow((r, dbMeta) => setState(dbMeta))
+  )
   const handleRarity = handleMultiSelect([...rarities])
   const handleType = handleMultiSelect([...allWeaponTypeKeys])
   const [searchTerm, setSearchTerm] = useState('')
   const searchTermDeferred = useDeferredValue(searchTerm)
+  const { weapon } = state
+  const weaponOptionDispatch = useCallback(
+    (option: Partial<ArchiveWeaponOption>) =>
+      database.displayArchive.set({ weapon: { ...weapon, ...option } }),
+    [database, weapon]
+  )
   const weaponKeys = useMemo(() => {
     return allWeaponKeys.filter(
       (wKey) => {
         const { rarity, weaponType } = getWeaponStat(wKey)
-        if (!rarityFilter.includes(rarity)) return false
-        if (!weaponTypeFilter.includes(weaponType)) return false
+        if (!weapon.rarity.includes(rarity)) return false
+        if (!weapon.weaponType.includes(weaponType)) return false
         const setKeyStr = i18n.t(`weaponNames_gen:${wKey}`)
         if (
           searchTermDeferred &&
@@ -62,9 +81,9 @@ export default function TabWeapon() {
           return false
         return true
       },
-      [rarityFilter]
+      [weapon]
     )
-  }, [rarityFilter, searchTermDeferred, weaponTypeFilter])
+  }, [weapon, searchTermDeferred])
   const { numShow, setTriggerElement } = useInfScroll(10, weaponKeys.length)
   const weaponKeysToShow = useMemo(
     () => weaponKeys.slice(0, numShow),
@@ -73,12 +92,14 @@ export default function TabWeapon() {
   return (
     <Box>
       <CardContent sx={{ display: 'flex', gap: 2 }}>
-        <ToggleButtonGroup value={rarityFilter}>
+        <ToggleButtonGroup value={weapon.rarity}>
           {rarities.map((r) => (
             <ToggleButton
               key={r}
               value={r}
-              onClick={() => setRarityFilter((old) => handleRarity(old, r))}
+              onClick={() =>
+                weaponOptionDispatch({ rarity: handleRarity(weapon.rarity, r) })
+              }
             >
               <ColorText color={`rarity${r}` as keyof Palette}>
                 <StarRoundedIcon sx={{ verticalAlign: 'text-top' }} />
@@ -86,12 +107,16 @@ export default function TabWeapon() {
             </ToggleButton>
           ))}
         </ToggleButtonGroup>
-        <ToggleButtonGroup value={weaponTypeFilter}>
+        <ToggleButtonGroup value={weapon.weaponType}>
           {allWeaponTypeKeys.map((wt) => (
             <ToggleButton
               key={wt}
               value={wt}
-              onClick={() => setWeaponTypeFilter((old) => handleType(old, wt))}
+              onClick={() =>
+                weaponOptionDispatch({
+                  weaponType: handleType(weapon.weaponType, wt),
+                })
+              }
             >
               <ImgIcon src={imgAssets.weaponTypes?.[wt]} size={2} />
             </ToggleButton>

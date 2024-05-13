@@ -90,11 +90,13 @@ export class DisplayArchiveEntry extends DataEntry<
 
       if (typeof weapon !== 'object') weapon = initialWeaponOption()
       else {
-        let { rarity } = weapon
+        let { rarity, weaponType } = weapon
         rarity = validateArr(rarity, allRarityKeys)
+        weaponType = validateArr(weaponType, allWeaponTypeKeys)
 
         weapon = {
           rarity,
+          weaponType,
         }
       }
     }
