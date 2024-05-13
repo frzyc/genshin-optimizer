@@ -3,6 +3,7 @@ import { Database, SandboxStorage } from '@genshin-optimizer/common/database'
 import type { GenderKey } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { DBMetaEntry } from './DataEntries/DBMetaEntry'
+import { DisplayArchiveEntry } from './DataEntries/DisplayArchiveEntry'
 import { DisplayArtifactEntry } from './DataEntries/DisplayArtifactEntry'
 import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
 import { DisplayTeamEntry } from './DataEntries/DisplayTeamEntry'
@@ -35,6 +36,7 @@ export class ArtCharDatabase extends Database {
   displayWeapon: DisplayWeaponEntry
   displayArtifact: DisplayArtifactEntry
   displayCharacter: DisplayCharacterEntry
+  displayArchive: DisplayArchiveEntry
   displayTool: DisplayToolEntry
   displayTeam: DisplayTeamEntry
   dbIndex: 1 | 2 | 3 | 4
@@ -81,6 +83,7 @@ export class ArtCharDatabase extends Database {
     this.displayCharacter = new DisplayCharacterEntry(this)
     this.displayTool = new DisplayToolEntry(this)
     this.displayTeam = new DisplayTeamEntry(this)
+    this.displayArchive = new DisplayArchiveEntry(this)
 
     // invalidates character when things change.
     this.chars.followAny(() => {
