@@ -1,3 +1,4 @@
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
 import { handleMultiSelect } from '@genshin-optimizer/common/util'
@@ -43,7 +44,6 @@ import {
   useCallback,
   useContext,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -52,17 +52,13 @@ const rarties = [5, 4] as const
 export default function TabCharacter() {
   const { silly } = useContext(SillyContext)
   const database = useDatabase()
-  const [state, setState] = useState(database.displayArchive.get())
-  useEffect(
-    () => database.displayArchive.follow((r, dbMeta) => setState(dbMeta)),
-    [database]
-  )
+  const archive = useDataEntryBase(database.displayArchive)
   const handleRarity = handleMultiSelect([...rarties])
   const handleType = handleMultiSelect([...allWeaponTypeKeys])
   const [searchTerm, setSearchTerm] = useState('')
   const searchTermDeferred = useDeferredValue(searchTerm)
 
-  const { character } = state
+  const { character } = archive
   const characterOptionDispatch = useCallback(
     (option: Partial<ArchiveCharacterOption>) =>
       database.displayArchive.set({ character: { ...character, ...option } }),

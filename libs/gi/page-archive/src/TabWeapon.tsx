@@ -1,3 +1,4 @@
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
 import { handleMultiSelect } from '@genshin-optimizer/common/util'
@@ -43,7 +44,6 @@ import {
   memo,
   useCallback,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -51,15 +51,12 @@ import { WeaponView } from './WeaponView'
 const rarities = [5, 4, 3, 2, 1] as const
 export default function TabWeapon() {
   const database = useDatabase()
-  const [state, setState] = useState(database.displayArchive.get())
-  useEffect(() =>
-    database.displayArchive.follow((r, dbMeta) => setState(dbMeta))
-  )
+  const archive = useDataEntryBase(database.displayArchive)
   const handleRarity = handleMultiSelect([...rarities])
   const handleType = handleMultiSelect([...allWeaponTypeKeys])
   const [searchTerm, setSearchTerm] = useState('')
   const searchTermDeferred = useDeferredValue(searchTerm)
-  const { weapon } = state
+  const { weapon } = archive
   const weaponOptionDispatch = useCallback(
     (option: Partial<ArchiveWeaponOption>) =>
       database.displayArchive.set({ weapon: { ...weapon, ...option } }),

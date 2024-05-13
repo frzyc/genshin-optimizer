@@ -1,3 +1,4 @@
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
 import { handleMultiSelect } from '@genshin-optimizer/common/util'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
@@ -28,7 +29,6 @@ import {
   Suspense,
   useCallback,
   useDeferredValue,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -36,12 +36,7 @@ import { useTranslation } from 'react-i18next'
 const maxRarities = [5, 4, 3] as const
 export default function TabArtifact() {
   const database = useDatabase()
-  const [state, setState] = useState(database.displayArchive.get())
-  useEffect(
-    () => database.displayArchive.follow((r, dbMeta) => setState(dbMeta)),
-    [database]
-  )
-
+  const archive = useDataEntryBase(database.displayArchive)
   const [searchTerm, setSearchTerm] = useState('')
   const searchTermDeferred = useDeferredValue(searchTerm)
   const handleRarity = handleMultiSelect([...maxRarities])
@@ -52,7 +47,7 @@ export default function TabArtifact() {
     })
   )
 
-  const { artifact } = state
+  const { artifact } = archive
   const artifactOptionDispatch = useCallback(
     (option: Partial<ArchiveArtifactOption>) =>
       database.displayArchive.set({ artifact: { ...artifact, ...option } }),
