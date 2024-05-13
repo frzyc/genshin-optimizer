@@ -1,4 +1,5 @@
 import {
+  BootstrapTooltip,
   CardThemed,
   SolidToggleButtonGroup,
   SqBadge,
@@ -9,11 +10,19 @@ import {
   catTotal,
   handleMultiSelect,
 } from '@genshin-optimizer/common/util'
-import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
+import {
+  allLocationCharacterKeys,
+  allRarityKeys,
+  allWeaponTypeKeys,
+} from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
-import { WeaponRarityToggle, WeaponToggle } from '@genshin-optimizer/gi/ui'
+import {
+  LocationFilterMultiAutocomplete,
+  WeaponRarityToggle,
+  WeaponToggle,
+} from '@genshin-optimizer/gi/ui'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
@@ -31,7 +40,7 @@ import {
   ToggleButton,
   Typography,
 } from '@mui/material'
-import { useEffect, useMemo, useState } from 'react'
+import { Suspense, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
 const lockedValues = ['locked', 'unlocked'] as const
@@ -55,7 +64,8 @@ function WeaponFilter({
     database.displayWeapon.follow((r, dbMeta) => setState(dbMeta))
   }, [database])
 
-  const { weaponType, rarity, locked, showEquipped, showInventory } = state
+  const { weaponType, rarity, locked, showEquipped, showInventory, locations } =
+    state
 
   const weaponTotals = useMemo(
     () =>
@@ -81,20 +91,24 @@ function WeaponFilter({
     [database, weaponIds]
   )
 
-  const { lockedTotal, equippedTotal } = useMemo(() => {
+  const { lockedTotal, equippedTotal, locationTotal } = useMemo(() => {
     const catKeys = {
       lockedTotal: ['locked', 'unlocked'],
       equippedTotal: ['equipped', 'unequipped'],
+      locationTotal: [...allLocationCharacterKeys, ''],
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
       database.weapons.entries.forEach(([id, weapon]) => {
+        const location = weapon.location
         const lock = weapon.lock ? 'locked' : 'unlocked'
-        const equipped = weapon.location ? 'equipped' : 'unequipped'
+        const equipped = location ? 'equipped' : 'unequipped'
         ctMap['lockedTotal'][lock].total++
         ctMap['equippedTotal'][equipped].total++
+        ctMap['locationTotal'][location].total++
         if (weaponIds.includes(id)) {
           ctMap['lockedTotal'][lock].current++
           ctMap['equippedTotal'][equipped].current++
+          ctMap['locationTotal'][location].current++
         }
       })
     )
@@ -225,6 +239,25 @@ function WeaponFilter({
                       size="small"
                     />
                   </Button>
+                </Stack>
+                <Stack spacing={1.5} pt={1.5}>
+                  <Suspense fallback={null}>
+                    <BootstrapTooltip
+                      title={showEquipped ? t`locationsTooltip` : ''}
+                      placement="top"
+                    >
+                      <span>
+                        <LocationFilterMultiAutocomplete
+                          totals={locationTotal}
+                          locations={showEquipped ? [] : locations}
+                          setLocations={(locations) =>
+                            database.displayWeapon.set({ locations })
+                          }
+                          disabled={showEquipped}
+                        />
+                      </span>
+                    </BootstrapTooltip>
+                  </Suspense>
                 </Stack>
               </Box>
             </Grid>

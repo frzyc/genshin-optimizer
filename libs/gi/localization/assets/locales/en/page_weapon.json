@@ -14,6 +14,7 @@
   "buttonHint": "Note: the red buttons above only apply to <1>filtered weapons<1>",
   "equippedWeapon": "All Equipped Weapons",
   "weaponInInv": "All Unequipped Weapons",
+  "locationsTooltip": "Disable \"All Equipped Weapon\" to filter by specific characters",
   "subheadings": {
     "general": "General",
     "inventory": "Inventory"
