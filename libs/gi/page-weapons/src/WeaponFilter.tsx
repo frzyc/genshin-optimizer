@@ -262,7 +262,7 @@ function WeaponRedButtons({ weaponIds }: { weaponIds: string[] }) {
     })
 
   const lockWeapons = () =>
-    window.confirm(`Are you sure you want to lock ${numLock} weapons ?`) &&
+    window.confirm(`Are you sure you want to lock ${numUnlock} weapons ?`) &&
     weaponIds.map((id) => database.weapons.set(id, { lock: true }))
 
   const unlockWeapons = () =>
