@@ -275,18 +275,28 @@ export default function CustomMultiTargetCard({
               position: 'relative',
             }}
           >
-            {customTargetDisplays}
-            <AddCustomTargetBtn setTarget={addTarget} />
-            {target.targets[selectedTargetValid] && (
-              <MTargetEditor
-                customTarget={target.targets[selectedTargetValid]}
-                setCustomTarget={setCustomTarget(selectedTargetValid)}
-                deleteCustomTarget={deleteCustomTarget(selectedTargetValid)}
-                rank={selectedTargetValid + 1}
-                maxRank={target.targets.length}
-                setTargetIndex={setTargetIndex(selectedTargetValid)}
-                onDup={dupCustomTarget(selectedTargetValid)}
+            {target.expression && (
+              <ExpressionNavbar
+                expression={target.expression}
+                setCMT={setTarget}
               />
+            )}
+            {!target.expression && (
+              <>
+              {customTargetDisplays}
+              <AddCustomTargetBtn setTarget={addTarget} />
+              {target.targets[selectedTargetValid] && (
+                <MTargetEditor
+                  customTarget={target.targets[selectedTargetValid]}
+                  setCustomTarget={setCustomTarget(selectedTargetValid)}
+                  deleteCustomTarget={deleteCustomTarget(selectedTargetValid)}
+                  rank={selectedTargetValid + 1}
+                  maxRank={target.targets.length}
+                  setTargetIndex={setTargetIndex(selectedTargetValid)}
+                  onDup={dupCustomTarget(selectedTargetValid)}
+                />
+              )}
+              </>
             )}
           </CardContent>
         </CardThemed>
