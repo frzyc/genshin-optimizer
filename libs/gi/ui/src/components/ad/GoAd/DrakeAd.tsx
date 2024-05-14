@@ -11,7 +11,6 @@ export function DrakeAd({ children }: { children: ReactNode }) {
         justifyContent: 'center',
         cursor: 'pointer',
         position: 'relative',
-        backgroundColor: 'white !important',
         maxWidth: '100%',
         maxHeight: '100%',
         width: '100%',

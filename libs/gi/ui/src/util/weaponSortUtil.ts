@@ -6,13 +6,19 @@ import { allStats } from '@genshin-optimizer/gi/stats'
 
 export function weaponSortConfigs(): SortConfigs<WeaponSortKey, IWeapon> {
   return {
-    level: (wp) => wp.level * (wp.ascension + 1) ?? 0,
+    level: (wp) => wp.level * (wp.ascension + 1),
     rarity: (wp) => allStats.weapon.data[wp.key].rarity,
     name: (wp) => i18n.t(`weaponNames_gen:${wp.key}`) as string,
   }
 }
 export function weaponFilterConfigs(): FilterConfigs<
-  'rarity' | 'weaponType' | 'name',
+  | 'rarity'
+  | 'weaponType'
+  | 'name'
+  | 'locked'
+  | 'showInventory'
+  | 'showEquipped'
+  | 'locations',
   IWeapon
 > {
   return {
@@ -25,6 +31,17 @@ export function weaponFilterConfigs(): FilterConfigs<
         .t(`weaponNames_gen:${wp.key}`)
         .toLowerCase()
         .includes(filter.toLowerCase()),
+    locked: (wp, filter) => {
+      if (filter.includes('locked') && wp.lock) return true
+      if (filter.includes('unlocked') && !wp.lock) return true
+      return false
+    },
+    showEquipped: () => true, // Per character filtering is applied in `locations`
+    showInventory: (wp, filter) => (!wp.location ? filter : true),
+    locations: (wp, filter, filters) =>
+      wp.location && !filters['showEquipped']
+        ? filter.includes(wp.location)
+        : true,
   }
 }
 

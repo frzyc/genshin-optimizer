@@ -337,12 +337,6 @@ export function ArtifactCardObj({
               </Typography>
             )}
             <Box flexGrow={1} />
-            {artifact.probability !== undefined &&
-              artifact.probability >= 0 && (
-                <strong>
-                  Probability: {(artifact.probability * 100).toFixed(2)}%
-                </strong>
-              )}
             <Typography color="success.main">
               {(setKey && <ArtifactSetName setKey={setKey} />) ||
                 'Artifact Set'}{' '}

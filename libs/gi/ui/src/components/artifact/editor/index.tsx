@@ -39,6 +39,7 @@ import {
   Update,
 } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import HelpIcon from '@mui/icons-material/Help'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
@@ -397,6 +398,8 @@ export function ArtifactEditor({
       queue.callback = () => {}
     }
   }, [queue])
+
+  const removeId = (artifactIdToEdit !== 'new' && artifactIdToEdit) || old?.id
   return (
     <ModalWrapper open={show} onClose={onClose}>
       <CardThemed>
@@ -769,83 +772,88 @@ export function ArtifactEditor({
             </Alert>
           )}
           {/* Buttons */}
-          <Grid container spacing={2}>
-            <Grid item>
-              {oldType === 'edit' ? (
-                <Button
-                  startIcon={<Add />}
-                  onClick={() => {
-                    artifact && database.arts.set(old!.id, artifact)
-                    if (!allowEmpty) {
-                      setShow(false)
-                      cancelEdit()
-                    }
-                    reset()
-                  }}
-                  disabled={!artifact || !isValid}
-                  color="primary"
-                >
-                  {t`editor.btnSave`}
-                </Button>
-              ) : (
-                <Button
-                  startIcon={<Add />}
-                  onClick={() => {
-                    database.arts.new(artifact!)
-                    if (!allowEmpty) {
-                      setShow(false)
-                      cancelEdit()
-                    }
-                    reset()
-                  }}
-                  disabled={!artifact || !isValid}
-                  color={oldType === 'duplicate' ? 'warning' : 'primary'}
-                >
-                  {t`editor.btnAdd`}
-                </Button>
-              )}
-            </Grid>
-            <Grid item flexGrow={1}>
-              {allowEmpty && (
-                <Button
-                  startIcon={<Replay />}
-                  disabled={!artifact}
-                  onClick={() => {
-                    canClearArtifact() && reset()
-                  }}
-                  color="error"
-                >{t`editor.btnClear`}</Button>
-              )}
-            </Grid>
-            <Grid item>
-              {process.env['NODE_ENV'] === 'development' && (
-                <Button
-                  color="info"
-                  startIcon={<Shuffle />}
-                  onClick={() =>
-                    artifactDispatch({
-                      type: 'overwrite',
-                      artifact: randomizeArtifact(),
-                    })
+          <Box display="flex" gap={2}>
+            {oldType === 'edit' ? (
+              <Button
+                startIcon={<Add />}
+                onClick={() => {
+                  artifact && database.arts.set(old!.id, artifact)
+                  if (!allowEmpty) {
+                    setShow(false)
+                    cancelEdit()
                   }
-                >{t`editor.btnRandom`}</Button>
-              )}
-            </Grid>
-            {old && oldType !== 'edit' && (
-              <Grid item>
-                <Button
-                  startIcon={<Update />}
-                  onClick={() => {
-                    artifact && database.arts.set(old.id, artifact)
-                    reset()
-                    if (!allowEmpty) setShow(false)
-                  }}
-                  disabled={!artifact || !isValid}
-                  color="success"
-                >{t`editor.btnUpdate`}</Button>
-              </Grid>
+                  reset()
+                }}
+                disabled={!artifact || !isValid}
+                color="primary"
+              >
+                {t`editor.btnSave`}
+              </Button>
+            ) : (
+              <Button
+                startIcon={<Add />}
+                onClick={() => {
+                  database.arts.new(artifact!)
+                  if (!allowEmpty) {
+                    setShow(false)
+                    cancelEdit()
+                  }
+                  reset()
+                }}
+                disabled={!artifact || !isValid}
+                color={oldType === 'duplicate' ? 'warning' : 'primary'}
+              >
+                {t`editor.btnAdd`}
+              </Button>
             )}
-          </Grid>
+            {allowEmpty && (
+              <Button
+                startIcon={<Replay />}
+                disabled={!artifact}
+                onClick={() => {
+                  canClearArtifact() && reset()
+                }}
+                color="error"
+              >{t`editor.btnClear`}</Button>
+            )}
+            {process.env['NODE_ENV'] === 'development' && (
+              <Button
+                color="info"
+                startIcon={<Shuffle />}
+                onClick={() =>
+                  artifactDispatch({
+                    type: 'overwrite',
+                    artifact: randomizeArtifact(),
+                  })
+                }
+              >{t`editor.btnRandom`}</Button>
+            )}
+            {old && oldType !== 'edit' && (
+              <Button
+                startIcon={<Update />}
+                onClick={() => {
+                  artifact && database.arts.set(old.id, artifact)
+                  reset()
+                  if (!allowEmpty) setShow(false)
+                }}
+                disabled={!artifact || !isValid}
+                color="success"
+              >{t`editor.btnUpdate`}</Button>
+            )}
+            {!!removeId && (
+              <Button
+                startIcon={<DeleteForeverIcon />}
+                onClick={() => {
+                  if (!window.confirm(t`editor.confirmDelete`)) return
+                  database.arts.remove(removeId)
+                  reset()
+                  if (!allowEmpty) setShow(false)
+                }}
+                disabled={!artifact || !isValid}
+                color="error"
+              >{t`editor.delete`}</Button>
+            )}
+          </Box>
         </CardContent>
       </CardThemed>
     </ModalWrapper>

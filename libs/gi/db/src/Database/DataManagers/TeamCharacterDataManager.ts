@@ -16,10 +16,14 @@ import {
   type AmpReactionKey,
   type CharacterKey,
   type InfusionAuraElementKey,
-  type MultiOptHitModeKey,
 } from '@genshin-optimizer/gi/consts'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import type { BuildTc, ICachedArtifact, ICachedWeapon } from '../../Interfaces'
+import type {
+  BuildTc,
+  CustomMultiTarget,
+  ICachedArtifact,
+  ICachedWeapon,
+} from '../../Interfaces'
 import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
@@ -55,20 +59,6 @@ export interface TeamCharacter {
 
   buildTcIds: string[]
   optConfigId: string
-}
-
-export interface CustomTarget {
-  weight: number
-  path: string[]
-  hitMode: MultiOptHitModeKey
-  reaction?: AmpReactionKey | AdditiveReactionKey
-  infusionAura?: InfusionAuraElementKey
-  bonusStats: Partial<Record<InputPremodKey, number>>
-}
-export interface CustomMultiTarget {
-  name: string
-  description?: string
-  targets: CustomTarget[]
 }
 
 export class TeamCharacterDataManager extends DataManager<
