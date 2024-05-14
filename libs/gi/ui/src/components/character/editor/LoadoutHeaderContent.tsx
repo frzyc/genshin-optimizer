@@ -6,14 +6,17 @@ import InfoIcon from '@mui/icons-material/Info'
 import PersonIcon from '@mui/icons-material/Person'
 import SettingsIcon from '@mui/icons-material/Settings'
 import { Box, CardContent, Typography } from '@mui/material'
+import type { ReactNode } from 'react'
 import { OptimizationIcon } from '../../../consts'
 import { OptimizationTargetDisplay } from './OptimizationTargetDisplay'
 export function LoadoutHeaderContent({
   teamCharId,
   showSetting = false,
+  children,
 }: {
   teamCharId: string
   showSetting?: boolean
+  children?: ReactNode
 }) {
   const database = useDatabase()
   const {
@@ -69,6 +72,7 @@ export function LoadoutHeaderContent({
           />
         </Typography>
       )}
+      {children}
     </CardContent>
   )
 }
