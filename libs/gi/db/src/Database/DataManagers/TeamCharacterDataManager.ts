@@ -313,52 +313,52 @@ export class TeamCharacterDataManager extends DataManager<
       convertTcBuilds,
       exportCustomMultiTarget,
     } = settings
+
+    const equippedBuildToTCBuild = () => {
+      const char = this.database.chars.get(teamChar.key)
+      if (!char) return
+      const { equippedArtifacts, equippedWeapon } = char
+      const weapon = this.database.weapons.get(equippedWeapon)
+      const arts = Object.values(equippedArtifacts).map((id) =>
+        this.database.arts.get(id)
+      )
+      const buildTC = toBuildTc(
+        initCharTC(defaultInitialWeaponKey(weaponType)),
+        weapon,
+        arts
+      )
+      buildTC.name = 'Equipped(Converted)'
+      buildTC.description = 'Converted from Equipped'
+      return buildTC
+    }
+    const convertedBuilds = convertbuilds
+      .filter((id) => buildIds.includes(id))
+      .map((buildId) => {
+        const build = this.database.builds.get(buildId)
+        if (!build) return
+        const { name, description, weaponId, artifactIds } = build
+        const weapon = this.database.weapons.get(weaponId)
+        const arts = Object.values(artifactIds).map((id) =>
+          this.database.arts.get(id)
+        )
+        const buildTC = toBuildTc(
+          initCharTC(defaultInitialWeaponKey(weaponType)),
+          weapon,
+          arts
+        )
+        buildTC.name = name
+        buildTC.description = description
+        return buildTC
+      })
+    const convertedTcBuilds = convertTcBuilds
+      .filter((id) => buildTcIds.includes(id))
+      .map((buildTcId) => this.database.buildTcs.export(buildTcId))
     return {
       ...rest,
       buildTcs: [
-        ...(convertEquipped
-          ? [
-              (() => {
-                const char = this.database.chars.get(teamChar.key)
-                if (!char) return
-                const { equippedArtifacts, equippedWeapon } = char
-                const weapon = this.database.weapons.get(equippedWeapon)
-                const arts = Object.values(equippedArtifacts).map((id) =>
-                  this.database.arts.get(id)
-                )
-                const buildTC = toBuildTc(
-                  initCharTC(defaultInitialWeaponKey(weaponType)),
-                  weapon,
-                  arts
-                )
-                buildTC.name = 'Equipped(Converted)'
-                buildTC.description = 'Converted from Equipped'
-                return buildTC
-              })(),
-            ]
-          : []),
-        ...convertbuilds
-          .filter((id) => buildIds.includes(id))
-          .map((buildId) => {
-            const build = this.database.builds.get(buildId)
-            if (!build) return
-            const { name, description, weaponId, artifactIds } = build
-            const weapon = this.database.weapons.get(weaponId)
-            const arts = Object.values(artifactIds).map((id) =>
-              this.database.arts.get(id)
-            )
-            const buildTC = toBuildTc(
-              initCharTC(defaultInitialWeaponKey(weaponType)),
-              weapon,
-              arts
-            )
-            buildTC.name = name
-            buildTC.description = description
-            return buildTC
-          }),
-        ...convertTcBuilds
-          .filter((id) => buildTcIds.includes(id))
-          .map((buildTcId) => this.database.buildTcs.export(buildTcId)),
+        ...(convertEquipped ? [equippedBuildToTCBuild()] : []),
+        ...convertedBuilds,
+        ...convertedTcBuilds,
       ].filter(notEmpty),
       customMultiTargets: customMultiTargets.filter((_, i) =>
         exportCustomMultiTarget.includes(i)

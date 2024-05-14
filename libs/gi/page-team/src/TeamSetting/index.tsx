@@ -46,7 +46,7 @@ export default function TeamSetting({
   const onDel = () => {
     if (
       !window.confirm(
-        'Removing the team will remove select builds, resonance buffs, enemy config, and loadouts. Loadouts that are used in another team will not be removed.'
+        'Removing the team will not remove the loadouts, but will remove select builds, resonance buffs, and enemy config.'
       )
     )
       return

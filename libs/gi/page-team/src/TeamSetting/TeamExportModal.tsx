@@ -18,6 +18,8 @@ import {
   CustomMultiTargetIcon,
   FieldDisplayList,
 } from '@genshin-optimizer/gi/ui'
+import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CloseIcon from '@mui/icons-material/Close'
 import InfoIcon from '@mui/icons-material/Info'
 import {
@@ -103,11 +105,23 @@ export default function TeamExportModal({
         />
         <Divider />
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Alert severity="info">
-            Export the team data to be imported by another user. All the team
-            and loadout data (bonus stats, enemy config, optimize config) are
-            exported. All exported non-TC builds are converted to TC builds.
-          </Alert>
+          <Box sx={{ display: 'flex', gap: 1 }}>
+            <Alert severity="info">
+              Export the team data to be imported by another user. All the team
+              and loadout data (bonus stats, enemy config, optimize config) are
+              exported. All exported non-TC builds are converted to TC builds.
+            </Alert>
+            <Button
+              color="info"
+              onClick={selEverything ? selectEverything : unselectEverything}
+              startIcon={
+                selEverything ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
+              }
+            >
+              {selEverything ? 'Select Everything' : 'Unselect Everything'}
+            </Button>
+          </Box>
+
           <Grid container columns={{ xs: 2, md: 4 }} spacing={1}>
             {loadoutData.map(
               (loadout, i) =>
@@ -136,12 +150,6 @@ export default function TeamExportModal({
         <CardContent
           sx={{ display: 'flex', gap: 2, justifyContent: 'flex-end' }}
         >
-          <Button
-            color="info"
-            onClick={selEverything ? selectEverything : unselectEverything}
-          >
-            {selEverything ? 'Select Everything' : 'Unselect Everything'}
-          </Button>
           <Button color="success" onClick={onExport}>
             Export
           </Button>
