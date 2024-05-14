@@ -399,7 +399,7 @@ export function ArtifactEditor({
     }
   }, [queue])
 
-  const removeId = (artifactIdToEdit && artifactIdToEdit !== 'new') || old?.id
+  const removeId = (artifactIdToEdit !== 'new' && artifactIdToEdit) || old?.id
   return (
     <ModalWrapper open={show} onClose={onClose}>
       <CardThemed>
