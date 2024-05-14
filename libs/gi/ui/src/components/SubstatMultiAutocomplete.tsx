@@ -11,10 +11,12 @@ export function SubstatMultiAutocomplete({
   substatKeys,
   setSubstatKeys,
   totals,
+  fullWidth = false
 }: {
   substatKeys: SubstatKey[]
   setSubstatKeys: (keys: SubstatKey[]) => void
   totals: Record<SubstatKey, string>
+  fullWidth?: boolean
 }) {
   const { t } = useTranslation('artifact')
   const { t: tk } = useTranslation('statKey_gen')
@@ -42,6 +44,7 @@ export function SubstatMultiAutocomplete({
   )
   return (
     <GeneralAutocompleteMulti
+      fullWidth={fullWidth}
       options={options}
       toImg={toImg}
       toExLabel={toExLabel}
