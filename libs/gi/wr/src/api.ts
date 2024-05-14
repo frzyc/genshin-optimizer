@@ -238,155 +238,9 @@ export function dataObjForCharacterNew(
       return result
     }
 
-    const parseCustomExpression = (e: ExpressionUnit[]): NumNode => {
-      const expression = [...e]
-      const operationPriority = {
-        addition: 1,
-        subtraction: 1,
-        multiplication: 2,
-        division: 2,
-        minimum: 3,
-        maximum: 3,
-        average: 3,
-        priority: 3,
-      } as const
-      const handled = [] as ExpressionUnit[]
-      const stack = [] as EnclosingOperation[]
-      let parts = [[]] as ExpressionUnit[][]
-      let currentOperation: ExpressionOperation | undefined
-      let lastUnit: ExpressionUnit | undefined
-      let enclosingMode = false
-
-      while (expression.length) {
-        if (lastUnit) handled.push(lastUnit)
-        const unit = expression.shift() as ExpressionUnit
-        lastUnit = unit
-        if (stack.length) {
-          parts[parts.length - 1].push(unit)
-          if (unit.type === 'enclosing') {
-            if (unit.part === 'head') stack.push(unit.operation)
-            if (unit.part === 'tail') stack.pop()
-          }
-          continue
-        }
-        if (unit.type === 'enclosing') {
-          if (unit.part === 'head') {
-            if (!handled.length) {
-              // Special case for enclosing as first unit
-              currentOperation = unit.operation
-              enclosingMode = true
-              continue
-            }
-            stack.push(unit.operation)
-            parts[parts.length - 1].push(unit)
-            continue
-          }
-          if (unit.part === 'comma') {
-            // We can only be here if the stack is empty and currentOperation is an enclosing operation
-            parts.push([])
-            continue
-          }
-          if (unit.part === 'tail') {
-            // We can only be here if current enclosing is closed
-            if (expression.length) {
-              enclosingMode = false
-              currentOperation = undefined
-              parts[parts.length - 1].push(unit)
-            }
-            continue
-          }
-        }
-        if (enclosingMode) {
-          parts[parts.length - 1].push(unit)
-          continue
-        }
-        if (unit.type === 'operation') {
-          // Operations with lower priority first, so they will go to a higher node and will be calculated last
-          if (
-            !currentOperation ||
-            operationPriority[unit.operation] <
-              operationPriority[currentOperation]
-          ) {
-            currentOperation = unit.operation
-            parts = [[...handled], []]
-            continue
-          }
-          if (unit.operation === currentOperation) {
-            parts.push([])
-            continue
-          }
-        }
-        if (unit.type === 'null' && unit.kind === 'operation') {
-          if (!currentOperation) {
-            currentOperation = 'addition'
-            parts = [[...handled], []]
-            continue
-          }
-          if (currentOperation === 'addition') {
-            parts.push([])
-            continue
-          }
-        }
-        parts[parts.length - 1].push(unit)
-      }
-
-      if (stack.length) throw new Error(`Unclosed enclosing stack ${stack}`)
-
-      if (!currentOperation) {
-        // It means we are at the very end of the recursion, we need to process operands
-        if (!e.length) return constant(1)
-        const operand = e[0]
-        if (operand.type === 'constant') return constant(operand.value)
-        if (operand.type === 'target')
-          return parseCustomTarget(operand.target, false)
-        if (operand.type === 'null') return constant(1)
-        throw new Error(`Unexpected operand type ${operand.type}`)
-      }
-
-      const parsedParts = parts.map(parseCustomExpression)
-
-      if (currentOperation === 'addition') {
-        return sum(...parsedParts)
-      }
-      if (currentOperation === 'subtraction') {
-        // TODO: Properly implement subtraction
-        return sum(parsedParts[0], prod(constant(-1), ...parsedParts.slice(1)))
-      }
-      if (currentOperation === 'multiplication') {
-        return prod(...parsedParts)
-      }
-      if (currentOperation === 'division') {
-        // TODO: Implement division
-        return prod(
-          parsedParts[0],
-          ...parsedParts.slice(1).map((x) => prod(-1, x))
-        )
-      }
-      if (currentOperation === 'minimum') {
-        return min(...parsedParts)
-      }
-      if (currentOperation === 'maximum') {
-        return max(...parsedParts)
-      }
-      if (currentOperation === 'average') {
-        // TODO: Properly implement average
-        return sum(
-          constant(0),
-          prod(constant(1 / parsedParts.length), ...parsedParts)
-        )
-      }
-      if (currentOperation === 'priority') {
-        // TODO: Properly implement priority
-        return sum(constant(0), ...parsedParts)
-      }
-      return ((_: never) => {
-        throw new Error(`Unexpected operation ${currentOperation}`)
-      })(currentOperation)
-    }
-
     customMultiTargets.forEach(({ name, targets, expression }, i) => {
       if (expression) {
-        const multiTargetNode = parseCustomExpression(expression)
+        const multiTargetNode = parseCustomExpression(expression, parseCustomTarget)
         sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
           name,
           variant: 'invalid',
@@ -450,4 +304,150 @@ export function mergeData(data: Data[]): Data {
     }
   }
   return data.length ? internal(data, []) : {}
+}
+
+const parseCustomExpression = (e: ExpressionUnit[], parseCustomTarget: (t: CustomTarget, useWeight: boolean) => NumNode): NumNode => {
+  const expression = [...e]
+  const operationPriority = {
+    addition: 1,
+    subtraction: 1,
+    multiplication: 2,
+    division: 2,
+    minimum: 3,
+    maximum: 3,
+    average: 3,
+    priority: 3,
+  } as const
+  const handled = [] as ExpressionUnit[]
+  const stack = [] as EnclosingOperation[]
+  let parts = [[]] as ExpressionUnit[][]
+  let currentOperation: ExpressionOperation | undefined
+  let lastUnit: ExpressionUnit | undefined
+  let enclosingMode = false
+
+  while (expression.length) {
+    if (lastUnit) handled.push(lastUnit)
+    const unit = expression.shift() as ExpressionUnit
+    lastUnit = unit
+    if (stack.length) {
+      parts[parts.length - 1].push(unit)
+      if (unit.type === 'enclosing') {
+        if (unit.part === 'head') stack.push(unit.operation)
+        if (unit.part === 'tail') stack.pop()
+      }
+      continue
+    }
+    if (unit.type === 'enclosing') {
+      if (unit.part === 'head') {
+        if (!handled.length) {
+          // Special case for enclosing as first unit
+          currentOperation = unit.operation
+          enclosingMode = true
+          continue
+        }
+        stack.push(unit.operation)
+        parts[parts.length - 1].push(unit)
+        continue
+      }
+      if (unit.part === 'comma') {
+        // We can only be here if the stack is empty and currentOperation is an enclosing operation
+        parts.push([])
+        continue
+      }
+      if (unit.part === 'tail') {
+        // We can only be here if current enclosing is closed
+        if (expression.length) {
+          enclosingMode = false
+          currentOperation = undefined
+          parts[parts.length - 1].push(unit)
+        }
+        continue
+      }
+    }
+    if (enclosingMode) {
+      parts[parts.length - 1].push(unit)
+      continue
+    }
+    if (unit.type === 'operation') {
+      // Operations with lower priority first, so they will go to a higher node and will be calculated last
+      if (
+        !currentOperation ||
+        operationPriority[unit.operation] <
+          operationPriority[currentOperation]
+      ) {
+        currentOperation = unit.operation
+        parts = [[...handled], []]
+        continue
+      }
+      if (unit.operation === currentOperation) {
+        parts.push([])
+        continue
+      }
+    }
+    if (unit.type === 'null' && unit.kind === 'operation') {
+      if (!currentOperation) {
+        currentOperation = 'addition'
+        parts = [[...handled], []]
+        continue
+      }
+      if (currentOperation === 'addition') {
+        parts.push([])
+        continue
+      }
+    }
+    parts[parts.length - 1].push(unit)
+  }
+
+  if (stack.length) throw new Error(`Unclosed enclosing stack ${stack}`)
+
+  if (!currentOperation) {
+    // It means we are at the very end of the recursion, we need to process operands
+    if (!e.length) return constant(1)
+    const operand = e[0]
+    if (operand.type === 'constant') return constant(operand.value)
+    if (operand.type === 'target')
+      return parseCustomTarget(operand.target, false)
+    if (operand.type === 'null') return constant(1)
+    throw new Error(`Unexpected operand type ${operand.type}`)
+  }
+
+  const parsedParts = parts.map((part) => parseCustomExpression(part, parseCustomTarget))
+
+  if (currentOperation === 'addition') {
+    return sum(...parsedParts)
+  }
+  if (currentOperation === 'subtraction') {
+    // TODO: Properly implement subtraction
+    return sum(parsedParts[0], prod(constant(-1), ...parsedParts.slice(1)))
+  }
+  if (currentOperation === 'multiplication') {
+    return prod(...parsedParts)
+  }
+  if (currentOperation === 'division') {
+    // TODO: Implement division
+    return prod(
+      parsedParts[0],
+      ...parsedParts.slice(1).map((x) => prod(-1, x))
+    )
+  }
+  if (currentOperation === 'minimum') {
+    return min(...parsedParts)
+  }
+  if (currentOperation === 'maximum') {
+    return max(...parsedParts)
+  }
+  if (currentOperation === 'average') {
+    // TODO: Properly implement average
+    return sum(
+      constant(0),
+      prod(constant(1 / parsedParts.length), ...parsedParts)
+    )
+  }
+  if (currentOperation === 'priority') {
+    // TODO: Properly implement priority
+    return sum(constant(0), ...parsedParts)
+  }
+  return ((_: never) => {
+    throw new Error(`Unexpected operation ${currentOperation}`)
+  })(currentOperation)
 }

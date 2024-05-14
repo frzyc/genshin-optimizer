@@ -63,68 +63,77 @@ export interface CustomTarget {
   hitMode: MultiOptHitModeKey
   reaction?: AmpReactionKey | AdditiveReactionKey
   infusionAura?: InfusionAuraElementKey
-  bonusStats: Partial<Record<InputPremodKey, number>>
+  // TODO: Partial<Record<InputPremodKey, number>>
+  bonusStats: Record<string, number>
 }
 
-export const UnaryOperations = [
-  'priority',
-  // 'ceil',
-] as const
-export type UnaryOperation = (typeof UnaryOperations)[number]
-
-export const BinaryOperations = [
+export const ExpressionOperations = [
   'addition',
   'subtraction',
   'multiplication',
   'division',
-] as const
-export type BinaryOperation = (typeof BinaryOperations)[number]
-
-export const VariadicOperations = ['minimum', 'maximum', 'average'] as const
-export type VariadicOperation = (typeof VariadicOperations)[number]
-
-export const ExpressionOperations = [
-  ...UnaryOperations,
-  ...BinaryOperations,
-  ...VariadicOperations,
-] as const
-export type ExpressionOperation = (typeof ExpressionOperations)[number]
-
-export const EnclosingOperations = [
+  'priority',
   'minimum',
   'maximum',
   'average',
-  'priority',
   // 'ceil',
+  // 'floor',
+  // 'clamp',
+] as const
+export type ExpressionOperation = (typeof ExpressionOperations)[number]
+export const isExpressionOperation = (op: unknown): op is ExpressionOperation =>
+  ExpressionOperations.includes(op as ExpressionOperation)
+
+export const EnclosingOperations = [
+  'priority',
+  'minimum',
+  'maximum',
+  'average',
 ] as const
 export type EnclosingOperation = (typeof EnclosingOperations)[number]
-
 export const isEnclosingOperation = (op: unknown): op is EnclosingOperation =>
   EnclosingOperations.includes(op as EnclosingOperation)
 
-export const NonEnclosingOperations = [
-  ...ExpressionOperations.filter(
-    (op: unknown): op is NonEnclosingOperation => !isEnclosingOperation(op)
-  ),
-] as const
-export type NonEnclosingOperation = Exclude<
-  ExpressionOperation,
-  EnclosingOperation
->
+export const OperationSpecs: Record<Exclude<ExpressionOperation, EnclosingOperation>, {
+  symbol: string
+  precedence: number
+  arity: { min: number; max: number }
+  enclosing: false
+}> & Record<EnclosingOperation, {
+  symbol: string
+  precedence: number
+  arity: { min: number; max: number }
+  enclosing: { left: string; right: string }
+}> = {
+  addition: { symbol: '+', precedence: 1, arity: { min: 2, max: Infinity }, enclosing: false },
+  subtraction: { symbol: '-', precedence: 1, arity: { min: 2, max: Infinity }, enclosing: false },
+  multiplication: { symbol: '*', precedence: 2, arity: { min: 2, max: Infinity }, enclosing: false },
+  division: { symbol: '/', precedence: 2, arity: { min: 2, max: Infinity }, enclosing: false },
+  priority: { symbol: '', precedence: 3, arity: { min: 1, max: 1 }, enclosing: { left: '(', right: ')' } },
+  minimum: { symbol: 'min', precedence: 3, arity: { min: 1, max: Infinity }, enclosing: { left: '(', right: ')' } },
+  maximum: { symbol: 'max', precedence: 3, arity: { min: 1, max: Infinity }, enclosing: { left: '(', right: ')' } },
+  average: { symbol: 'avg', precedence: 3, arity: { min: 1, max: Infinity }, enclosing: { left: '(', right: ')' } },
+} as const
 
 export const ExpressionUnitTypes = [
   'constant',
   'target',
   'operation',
+  'function',
   'enclosing',
   'null',
 ] as const
-export type ExpressionUnitType = (typeof ExpressionUnitTypes)[number]
+export type ExpressionUnitType = ExpressionUnit['type']
+(_: readonly ExpressionUnitType[] = ExpressionUnitTypes) => {}
+export const isExpressionUnitType = (type: unknown): type is ExpressionUnitType => {
+  return ExpressionUnitTypes.includes(type as ExpressionUnitType)
+}
 
 export type ExpressionUnit =
   | ConstantUnit
   | TargetUnit
   | OperationUnit
+  | FunctionUnit
   | EnclosingUnit
   | NullUnit
 
@@ -140,28 +149,25 @@ export interface TargetUnit {
 
 export interface OperationUnit {
   type: 'operation'
-  operation: NonEnclosingOperation
+  operation: Exclude<ExpressionOperation, EnclosingOperation>
 }
 
-export type EnclosingUnit =
-  | EnclosingUnitHead
-  | EnclosingUnitComma
-  | EnclosingUnitTail
+export interface FunctionUnit {
+  type: 'function'
+  name: string
+}
 
-export interface EnclosingUnitHead {
+export type EnclosingUnit = EnclosingHeadUnit | EnclosingPartUnit
+
+export interface EnclosingHeadUnit {
   type: 'enclosing'
-  operation: EnclosingOperation
   part: 'head'
+  operation: EnclosingOperation
 }
 
-export interface EnclosingUnitComma {
+export interface EnclosingPartUnit {
   type: 'enclosing'
-  part: 'comma'
-}
-
-export interface EnclosingUnitTail {
-  type: 'enclosing'
-  part: 'tail'
+  part: 'comma' | 'tail'
 }
 
 export interface NullUnit {
@@ -169,10 +175,17 @@ export interface NullUnit {
   kind: 'operand' | 'operation'
 }
 
+export interface CustomFunction {
+  name: string
+  args: string[]
+  expression: ExpressionUnit[]
+}
+
 export interface CustomMultiTarget {
   name: string
   description?: string
   targets: CustomTarget[]
+  functions?: CustomFunction[]
   expression?: ExpressionUnit[]
 }
 
