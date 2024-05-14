@@ -36,6 +36,8 @@ import {
   ListItemButton,
   ListItemText,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material'
 import { useState } from 'react'
 
@@ -92,6 +94,8 @@ export default function TeamExportModal({
     )
   }
 
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
   return (
     <ModalWrapper open={show} onClose={onHide}>
       <CardThemed>
@@ -105,7 +109,13 @@ export default function TeamExportModal({
         />
         <Divider />
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Box sx={{ display: 'flex', gap: 1 }}>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 1,
+              flexDirection: isMobile ? 'column' : 'row',
+            }}
+          >
             <Alert severity="info">
               Export the team data to be imported by another user. All the team
               and loadout data (bonus stats, enemy config, optimize config) are
@@ -122,7 +132,7 @@ export default function TeamExportModal({
             </Button>
           </Box>
 
-          <Grid container columns={{ xs: 2, md: 4 }} spacing={1}>
+          <Grid container columns={{ xs: 1, sm: 2, md: 4 }} spacing={1}>
             {loadoutData.map(
               (loadout, i) =>
                 !!loadout && (
