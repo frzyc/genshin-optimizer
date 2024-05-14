@@ -55,36 +55,33 @@ export default function TabArtifact() {
   )
 
   const artSetKeys = useMemo(() => {
-    return allArtifactSetKeys.filter(
-      (setKey) => {
-        const { rarities } = getArtSetStat(setKey)
-        if (
-          !artifact.rarity.includes(
-            Math.max(...rarities) as (typeof maxRarities)[number]
-          )
+    return allArtifactSetKeys.filter((setKey) => {
+      const { rarities } = getArtSetStat(setKey)
+      if (
+        !artifact.rarity.includes(
+          Math.max(...rarities) as (typeof maxRarities)[number]
         )
-          return false
+      )
+        return false
 
-        const setKeyStr = i18n
-          .t(`artifactNames_gen:${setKey}`)
-          .toLocaleLowerCase()
-        const set4KeyDesc = t('setEffects.4', {
-          ns: `artifact_${setKey}_gen`,
-        }).toLocaleLowerCase()
-        const set2KeyDesc = t('setEffects.2', {
-          ns: `artifact_${setKey}_gen`,
-        }).toLocaleLowerCase()
-        if (
-          searchTermDeferred &&
-          !setKeyStr.includes(searchTermDeferred.toLocaleLowerCase()) &&
-          !set2KeyDesc.includes(searchTermDeferred.toLocaleLowerCase()) &&
-          !set4KeyDesc.includes(searchTermDeferred.toLocaleLowerCase())
-        )
-          return false
-        return true
-      },
-      [artifact]
-    )
+      const setKeyStr = i18n
+        .t(`artifactNames_gen:${setKey}`)
+        .toLocaleLowerCase()
+      const set4KeyDesc = t('setEffects.4', {
+        ns: `artifact_${setKey}_gen`,
+      }).toLocaleLowerCase()
+      const set2KeyDesc = t('setEffects.2', {
+        ns: `artifact_${setKey}_gen`,
+      }).toLocaleLowerCase()
+      if (
+        searchTermDeferred &&
+        !setKeyStr.includes(searchTermDeferred.toLocaleLowerCase()) &&
+        !set2KeyDesc.includes(searchTermDeferred.toLocaleLowerCase()) &&
+        !set4KeyDesc.includes(searchTermDeferred.toLocaleLowerCase())
+      )
+        return false
+      return true
+    })
   }, [artifact, searchTermDeferred, t])
   const artSetKeysWithoutPrayer = useMemo(
     () => artSetKeys.filter((sk) => !sk.startsWith('Prayers')),

@@ -65,32 +65,29 @@ export default function TabCharacter() {
     [database, character]
   )
   const charKeys = useMemo(() => {
-    return allCharacterKeys.filter(
-      (cKey) => {
-        const { rarity, weaponType } = getCharStat(cKey)
-        if (!character.rarity.includes(rarity as (typeof rarties)[number]))
-          return false
-        if (!character.weaponType.includes(weaponType)) return false
+    return allCharacterKeys.filter((cKey) => {
+      const { rarity, weaponType } = getCharStat(cKey)
+      if (!character.rarity.includes(rarity as (typeof rarties)[number]))
+        return false
+      if (!character.weaponType.includes(weaponType)) return false
 
-        const nameStr = i18n.t(`charNames_gen:${cKey}`)
-        const sillyStr =
-          silly && i18n.exists(`sillyWisher_charNames:${cKey}`)
-            ? i18n.t(`sillyWisher_charNames:${cKey}`)
-            : ''
-        if (
-          searchTermDeferred &&
-          !nameStr
-            .toLocaleLowerCase()
-            .includes(searchTermDeferred.toLocaleLowerCase()) &&
-          !sillyStr
-            .toLocaleLowerCase()
-            .includes(searchTermDeferred.toLocaleLowerCase())
-        )
-          return false
-        return true
-      },
-      [character]
-    )
+      const nameStr = i18n.t(`charNames_gen:${cKey}`)
+      const sillyStr =
+        silly && i18n.exists(`sillyWisher_charNames:${cKey}`)
+          ? i18n.t(`sillyWisher_charNames:${cKey}`)
+          : ''
+      if (
+        searchTermDeferred &&
+        !nameStr
+          .toLocaleLowerCase()
+          .includes(searchTermDeferred.toLocaleLowerCase()) &&
+        !sillyStr
+          .toLocaleLowerCase()
+          .includes(searchTermDeferred.toLocaleLowerCase())
+      )
+        return false
+      return true
+    })
   }, [character, searchTermDeferred, silly])
 
   const { numShow, setTriggerElement } = useInfScroll(10, charKeys.length)

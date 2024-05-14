@@ -63,23 +63,20 @@ export default function TabWeapon() {
     [database, weapon]
   )
   const weaponKeys = useMemo(() => {
-    return allWeaponKeys.filter(
-      (wKey) => {
-        const { rarity, weaponType } = getWeaponStat(wKey)
-        if (!weapon.rarity.includes(rarity)) return false
-        if (!weapon.weaponType.includes(weaponType)) return false
-        const setKeyStr = i18n.t(`weaponNames_gen:${wKey}`)
-        if (
-          searchTermDeferred &&
-          !setKeyStr
-            .toLocaleLowerCase()
-            .includes(searchTermDeferred.toLocaleLowerCase())
-        )
-          return false
-        return true
-      },
-      [weapon]
-    )
+    return allWeaponKeys.filter((wKey) => {
+      const { rarity, weaponType } = getWeaponStat(wKey)
+      if (!weapon.rarity.includes(rarity)) return false
+      if (!weapon.weaponType.includes(weaponType)) return false
+      const setKeyStr = i18n.t(`weaponNames_gen:${wKey}`)
+      if (
+        searchTermDeferred &&
+        !setKeyStr
+          .toLocaleLowerCase()
+          .includes(searchTermDeferred.toLocaleLowerCase())
+      )
+        return false
+      return true
+    })
   }, [weapon, searchTermDeferred])
   const { numShow, setTriggerElement } = useInfScroll(10, weaponKeys.length)
   const weaponKeysToShow = useMemo(
