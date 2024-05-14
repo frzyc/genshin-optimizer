@@ -22,3 +22,4 @@ export * from './loadout'
 export * from './team'
 export * from './toggles'
 export * from './weapon'
+export * from "./SubstatMultiAutocomplete"

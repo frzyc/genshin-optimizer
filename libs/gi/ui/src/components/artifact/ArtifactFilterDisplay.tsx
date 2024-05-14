@@ -36,11 +36,11 @@ import {
 import Stack from '@mui/system/Stack'
 import { Suspense, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { SubstatMultiAutocomplete } from '../SubstatMultiAutocomplete'
 import { LocationFilterMultiAutocomplete } from '../character/LocationFilterMultiAutocomplete'
 import { ArtifactLevelSlider } from './ArtifactLevelSlider'
 import { ArtifactMainStatMultiAutocomplete } from './ArtifactMainStatMultiAutocomplete'
 import { ArtifactSetMultiAutocomplete } from './ArtifactSetMultiAutocomplete'
-import { ArtifactSubstatMultiAutocomplete } from './ArtifactSubstatMultiAutocomplete'
 import { RVSlide } from './RVSlide'
 import { SubstatToggle } from './SubstatToggle'
 
@@ -255,7 +255,7 @@ export function ArtifactFilterDisplay({
               }
             />
             {/* Sub stat dropdown */}
-            <ArtifactSubstatMultiAutocomplete
+            <SubstatMultiAutocomplete
               totals={subStatTotal}
               substatKeys={substats}
               setSubstatKeys={(substats) => filterOptionDispatch({ substats })}

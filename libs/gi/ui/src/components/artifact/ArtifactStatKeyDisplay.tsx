@@ -5,7 +5,7 @@ import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import { artStatPercent } from './util'
+import { statPercent } from '../util'
 
 // Special consideration for artifact stats, by displaying % behind hp_, atk_ and def_.
 export function ArtifactStatWithUnit({
@@ -17,7 +17,7 @@ export function ArtifactStatWithUnit({
   return (
     <span>
       {tk(statKey)}
-      {artStatPercent(statKey)}
+      {statPercent(statKey)}
     </span>
   )
 }
