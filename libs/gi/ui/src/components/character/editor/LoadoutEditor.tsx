@@ -29,11 +29,13 @@ import {
   Divider,
   Grid,
   IconButton,
+  Stack,
   Tooltip,
   Typography,
 } from '@mui/material'
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { OptimizationIcon } from '../../../consts'
 import { DocumentDisplay } from '../../DocumentDisplay'
 import { BuildInfoAlert, TCBuildInfoAlert } from '../../build'
 import { LoadoutInfoAlert } from '../../loadout'
@@ -177,10 +179,34 @@ export function LoadoutEditor({
               )}
               {!!optimizationTarget && (
                 <Grid item xs={1}>
-                  <OptimizationTargetDisplay
-                    optimizationTarget={optimizationTarget}
-                    customMultiTargets={customMultiTargets}
-                  />
+                  <CardThemed bgt="light">
+                    <CardHeader
+                      title={
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 1,
+                          }}
+                        >
+                          <OptimizationIcon />
+                          <span>Optimization Target</span>
+                        </Box>
+                      }
+                    />
+                    <Divider />
+                    <CardContent>
+                      <Stack
+                        divider={<Divider orientation="vertical" flexItem />}
+                        spacing={1}
+                      >
+                        <OptimizationTargetDisplay
+                          optimizationTarget={optimizationTarget}
+                          customMultiTargets={customMultiTargets}
+                        />
+                      </Stack>
+                    </CardContent>
+                  </CardThemed>
                 </Grid>
               )}
               {!!customMultiTargets.length && (

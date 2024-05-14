@@ -11,15 +11,23 @@ import {
   type LoadoutDatum,
   type LoadoutExportSetting,
 } from '@genshin-optimizer/gi/db'
-import { useDatabase, useTeam, useTeamChar } from '@genshin-optimizer/gi/db-ui'
+import {
+  useDatabase,
+  useOptConfig,
+  useTeam,
+  useTeamChar,
+} from '@genshin-optimizer/gi/db-ui'
+import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   BuildIcon,
   CharIconSide,
   CustomMultiTargetIcon,
+  DataContext,
   FieldDisplayList,
+  OptimizationIcon,
+  OptimizationTargetDisplay,
+  useCharData,
 } from '@genshin-optimizer/gi/ui'
-import CheckBoxIcon from '@mui/icons-material/CheckBox'
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CloseIcon from '@mui/icons-material/Close'
 import InfoIcon from '@mui/icons-material/Info'
 import {
@@ -39,7 +47,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 // TODO: Translation
 export default function TeamExportModal({
@@ -55,9 +63,30 @@ export default function TeamExportModal({
   const team = useTeam(teamId)!
   const { loadoutData } = team
 
+  // If a mtarget is selected as opt-target, enforce it must be selected
+  const enforceOptTargetMtarget = (
+    loadoutDatum: LoadoutDatum,
+    setting: LoadoutExportSetting
+  ) => {
+    const teamChar = database.teamChars.get(loadoutDatum.teamCharId)!
+    const optConfig = database.optConfigs.get(teamChar.optConfigId)!
+    const { optimizationTarget } = optConfig
+    if (!optimizationTarget) return setting
+    if (optimizationTarget[0] !== 'custom') return setting
+    const ind = parseInt(optimizationTarget[1])
+    if (isNaN(ind)) return setting
+    if (setting.exportCustomMultiTarget.includes(ind)) return setting
+    setting.exportCustomMultiTarget.push(ind)
+    return setting
+  }
+
   const [loadoutDataExportSetting, setLoadoutDataExportSetting] =
     useState<LoadoutDataExportSetting>(() =>
-      loadoutData.map(() => defLoadoutExportSetting())
+      loadoutData.map((loadoutDatum) =>
+        loadoutDatum
+          ? enforceOptTargetMtarget(loadoutDatum, defLoadoutExportSetting())
+          : defLoadoutExportSetting()
+      )
     )
   const onExport = () => {
     const data = database.teams.export(teamId, loadoutDataExportSetting)
@@ -68,10 +97,15 @@ export default function TeamExportModal({
       .catch(console.error)
   }
   const [selEverything, setSelEverything] = useState(true)
+
   const unselectEverything = () => {
     setSelEverything(true)
     setLoadoutDataExportSetting(
-      loadoutData.map(() => defLoadoutExportSetting())
+      loadoutData.map((loadoutDatum) =>
+        loadoutDatum
+          ? enforceOptTargetMtarget(loadoutDatum, defLoadoutExportSetting())
+          : defLoadoutExportSetting()
+      )
     )
   }
 
@@ -84,12 +118,12 @@ export default function TeamExportModal({
         const loadout = database.teamChars.get(loadoutDatum.teamCharId)
         if (!loadout) return defLoadoutExportSetting()
         const { buildIds, buildTcIds, customMultiTargets } = loadout
-        return {
+        return enforceOptTargetMtarget(loadoutDatum, {
           convertEquipped: true,
           convertbuilds: buildIds,
           convertTcBuilds: buildTcIds,
           exportCustomMultiTarget: customMultiTargets?.map((_, i) => i) ?? [],
-        }
+        })
       })
     )
   }
@@ -124,9 +158,6 @@ export default function TeamExportModal({
             <Button
               color="info"
               onClick={selEverything ? selectEverything : unselectEverything}
-              startIcon={
-                selEverything ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
-              }
             >
               {selEverything ? 'Select Everything' : 'Unselect Everything'}
             </Button>
@@ -187,6 +218,28 @@ function LoadoutSetting({
     buildTcIds,
     customMultiTargets,
   } = teamChar
+  const optConfig = useOptConfig(teamChar.optConfigId)!
+  const { optimizationTarget } = optConfig
+
+  const selMtargetInd =
+    optimizationTarget && optimizationTarget[0] === 'custom'
+      ? parseInt(optimizationTarget[1])
+      : -1
+
+  // FIXME: Kind of annoying to have to do a whole calc to show opt target, will likely get addressed in Pando.
+
+  const teamData = useCharData(characterKey)
+  const { target: charUIData } = teamData?.[characterKey] ?? {}
+
+  const dataContextValue: dataContextObj | undefined = useMemo(() => {
+    if (!teamData || !charUIData) return undefined
+    return {
+      data: charUIData,
+      teamData,
+      compareData: undefined,
+    }
+  }, [charUIData, teamData])
+
   return (
     <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -199,6 +252,30 @@ function LoadoutSetting({
         )}
       </CardContent>
       <Divider />
+      {dataContextValue && (
+        <DataContext.Provider value={dataContextValue}>
+          {optimizationTarget && (
+            <>
+              <CardContent>
+                <Typography
+                  sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+                >
+                  <OptimizationIcon />
+                  <Box>Optimization Target:</Box>
+                </Typography>
+                <Typography>
+                  <OptimizationTargetDisplay
+                    customMultiTargets={customMultiTargets}
+                    optimizationTarget={optimizationTarget}
+                  />
+                </Typography>
+              </CardContent>
+              <Divider />
+            </>
+          )}
+        </DataContext.Provider>
+      )}
+
       {!!customMultiTargets.length && (
         <>
           <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -211,8 +288,15 @@ function LoadoutSetting({
             {customMultiTargets.map((mtarget, i) => {
               const { name, description } = mtarget
               return (
-                <ListItem key={i} sx={{ p: 0 }}>
+                <ListItem
+                  key={i}
+                  sx={{
+                    p: 0,
+                    border: selMtargetInd === i ? '2px solid green' : undefined,
+                  }}
+                >
                   <ListItemButton
+                    disabled={selMtargetInd === i}
                     onClick={() =>
                       setSetting({
                         exportCustomMultiTarget: toggleInArr(

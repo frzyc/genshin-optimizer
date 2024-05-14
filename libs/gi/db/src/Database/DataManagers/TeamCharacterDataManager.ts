@@ -306,6 +306,7 @@ export class TeamCharacterDataManager extends DataManager<
     if (!teamChar) return {}
     const { buildIds, buildTcIds, optConfigId, customMultiTargets, ...rest } =
       teamChar
+    const { optimizationTarget } = this.database.optConfigs.get(optConfigId)!
     const { weaponType } = getCharStat(teamChar.key)
     const {
       convertEquipped,
@@ -353,6 +354,19 @@ export class TeamCharacterDataManager extends DataManager<
     const convertedTcBuilds = convertTcBuilds
       .filter((id) => buildTcIds.includes(id))
       .map((buildTcId) => this.database.buildTcs.export(buildTcId))
+
+    let overrideOptTarget = undefined
+    if (optimizationTarget?.[0] === 'custom') {
+      const ind = parseInt(optimizationTarget[1])
+      if (!isNaN(ind)) {
+        const newInd = exportCustomMultiTarget.findIndex((i) => i === ind)
+        if (newInd !== -1) {
+          overrideOptTarget = structuredClone(optimizationTarget)
+          overrideOptTarget[1] = newInd.toString()
+        }
+      }
+    }
+
     return {
       ...rest,
       buildTcs: [
@@ -363,7 +377,10 @@ export class TeamCharacterDataManager extends DataManager<
       customMultiTargets: customMultiTargets.filter((_, i) =>
         exportCustomMultiTarget.includes(i)
       ),
-      optConfig: this.database.optConfigs.export(optConfigId),
+      optConfig: this.database.optConfigs.export(
+        optConfigId,
+        overrideOptTarget
+      ),
     }
   }
   import(data: object): string {
