@@ -7,22 +7,14 @@ import {
   ShowingAndSortOptionSelect,
   useInfScroll,
 } from '@genshin-optimizer/common/ui'
-import {
-  catTotal,
-  filterFunction,
-  sortFunction,
-} from '@genshin-optimizer/common/util'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
+import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
+import { type WeaponKey } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
   WeaponCard,
   WeaponEditor,
-  WeaponRarityToggle,
   WeaponSelectionModal,
-  WeaponToggle,
   weaponFilterConfigs,
   weaponSortConfigs,
   weaponSortMap,
@@ -47,6 +39,7 @@ import {
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
+import WeaponFilter, { WeaponRedButtons } from './WeaponFilter'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
@@ -67,7 +60,8 @@ export default function PageWeapon() {
   useEffect(() => {
     ReactGA.send({ hitType: 'pageview', page: '/weapon' })
     return database.weapons.followAny(
-      (k, r) => (r === 'new' || r === 'remove') && forceUpdate()
+      (k, r) =>
+        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
     )
   }, [forceUpdate, database])
 
@@ -104,14 +98,32 @@ export default function PageWeapon() {
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
-  const { sortType, ascending, weaponType, rarity } = state
+  const {
+    sortType,
+    ascending,
+    weaponType,
+    rarity,
+    locked,
+    showEquipped,
+    showInventory,
+    locations,
+  } = state
+
   const { weaponIds, totalWeaponNum } = useMemo(() => {
     const weapons = database.weapons.values
     const totalWeaponNum = weapons.length
     const weaponIds = weapons
       .filter(
         filterFunction(
-          { weaponType, rarity, name: deferredSearchTerm },
+          {
+            weaponType,
+            rarity,
+            name: deferredSearchTerm,
+            locked,
+            showInventory,
+            showEquipped,
+            locations,
+          },
           weaponFilterConfigs()
         )
       )
@@ -131,6 +143,10 @@ export default function PageWeapon() {
     ascending,
     rarity,
     weaponType,
+    locked,
+    showInventory,
+    showEquipped,
+    locations,
     deferredSearchTerm,
   ])
 
@@ -161,30 +177,6 @@ export default function PageWeapon() {
     if (!editWeaponId) return
     if (!database.weapons.get(editWeaponId)) resetEditWeapon()
   }, [database, editWeaponId, resetEditWeapon])
-
-  const weaponTotals = useMemo(
-    () =>
-      catTotal(allWeaponTypeKeys, (ct) =>
-        database.weapons.entries.forEach(([id, weapon]) => {
-          const wtk = getWeaponStat(weapon.key).weaponType
-          ct[wtk].total++
-          if (weaponIds.includes(id)) ct[wtk].current++
-        })
-      ),
-    [database, weaponIds]
-  )
-
-  const weaponRarityTotals = useMemo(
-    () =>
-      catTotal(allRarityKeys, (ct) =>
-        database.weapons.entries.forEach(([id, weapon]) => {
-          const wr = getWeaponStat(weapon.key).rarity
-          ct[wr].total++
-          if (weaponIds.includes(id)) ct[wr].current++
-        })
-      ),
-    [database, weaponIds]
-  )
 
   const showingTextProps = {
     numShowing: weaponIdsToShow.length,
@@ -219,25 +211,19 @@ export default function PageWeapon() {
         />
       </Suspense>
 
+      <WeaponFilter
+        numShowing={weaponIds.length}
+        total={totalWeaponNum}
+        weaponIds={weaponIds}
+      />
       <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Box display="flex" flexWrap="wrap" gap={1} alignItems="stretch">
-            <WeaponToggle
-              onChange={(weaponType) =>
-                database.displayWeapon.set({ weaponType })
-              }
-              value={weaponType}
-              totals={weaponTotals}
-              size="small"
-            />
-            <WeaponRarityToggle
-              sx={{ height: '100%' }}
-              onChange={(rarity) => database.displayWeapon.set({ rarity })}
-              value={rarity}
-              totals={weaponRarityTotals}
-              size="small"
-            />
-            <Box flexGrow={1} />
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            flexWrap="wrap"
+          >
             <TextField
               autoFocus
               size="small"
@@ -247,22 +233,14 @@ export default function PageWeapon() {
               }
               label={t('weaponName')}
               sx={{ height: '100%' }}
-              InputProps={{
-                sx: { height: '100%' },
-              }}
+              InputProps={{ sx: { height: '100%' } }}
             />
-          </Box>
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            flexWrap="wrap"
-          >
             <ShowingAndSortOptionSelect
               showingTextProps={showingTextProps}
               sortByButtonProps={sortByButtonProps}
             />
           </Box>
+          <WeaponRedButtons weaponIds={weaponIds} />
         </CardContent>
       </CardThemed>
       <Suspense
