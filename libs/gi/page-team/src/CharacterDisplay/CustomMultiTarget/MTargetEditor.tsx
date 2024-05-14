@@ -44,7 +44,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { useCallback, useContext, useMemo, useState } from 'react'
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import OptimizationTargetSelector from '../Tabs/TabOptimize/Components/OptimizationTargetSelector'
 
@@ -99,6 +99,10 @@ export default function MTargetEditor({
       setCustomTarget({ ...customTarget, bonusStats }),
     [customTarget, setCustomTarget]
   )
+  // Expand editor on change of custom target
+  useEffect(() => {
+    setcollapse(false)
+  }, [customTarget])
 
   const statEditorList = useMemo(
     () => (

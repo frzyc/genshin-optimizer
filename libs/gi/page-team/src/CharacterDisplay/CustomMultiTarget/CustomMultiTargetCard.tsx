@@ -96,7 +96,7 @@ export default function CustomMultiTargetCard({
     [target, setTarget]
   )
 
-  const [selectedTarget, setSelectedTarget] = useState(0)
+  const [selectedTarget, setSelectedTarget] = useState(-1)
   const setTargetIndex = useCallback(
     (oldInd: number) => (newRank?: number) => {
       if (newRank === undefined || newRank === 0) return
@@ -131,7 +131,9 @@ export default function CustomMultiTargetCard({
         <CustomTargetDisplay
           key={t.path.join() + i}
           selected={selectedTarget === i}
-          setSelect={() => setSelectedTarget(i)}
+          setSelect={() =>
+            selectedTarget === i ? setSelectedTarget(-1) : setSelectedTarget(i)
+          }
           customTarget={t}
           rank={i + 1}
         />
@@ -140,7 +142,7 @@ export default function CustomMultiTargetCard({
   )
   const selectedTargetValid = clamp(
     selectedTarget,
-    0,
+    -1,
     target.targets.length - 1
   )
   return (
