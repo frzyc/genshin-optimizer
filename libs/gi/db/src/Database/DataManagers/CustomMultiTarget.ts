@@ -31,6 +31,7 @@ export function initCustomTarget(path: string[], multi = 1): CustomTarget {
     path,
     hitMode: 'avgHit',
     bonusStats: {},
+    description: '',
   }
 }
 
@@ -91,8 +92,15 @@ function validateOptTarget(path: string[]): string[] {
 }
 function validateCustomTarget(ct: unknown): CustomTarget | undefined {
   if (typeof ct !== 'object') return undefined
-  let { weight, path, hitMode, reaction, infusionAura, bonusStats } =
-    ct as CustomTarget
+  let {
+    weight,
+    path,
+    hitMode,
+    reaction,
+    infusionAura,
+    bonusStats,
+    description,
+  } = ct as CustomTarget
 
   if (typeof weight !== 'number' || weight <= 0) weight = 1
 
@@ -119,6 +127,8 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
 
   if (!bonusStats) bonusStats = {}
 
+  if (typeof description !== 'string') description = ''
+
   bonusStats = Object.fromEntries(
     Object.entries(bonusStats).filter(
       ([key, value]) =>
@@ -127,7 +137,15 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
     )
   )
 
-  return { weight, path, hitMode, reaction, infusionAura, bonusStats }
+  return {
+    weight,
+    path,
+    hitMode,
+    reaction,
+    infusionAura,
+    bonusStats,
+    description,
+  }
 }
 
 export function validateCustomExpression(

@@ -34,7 +34,7 @@ export default function PageDocumentation() {
   } = useMatch('/doc/:currentTab') ?? { params: { currentTab: '' } }
 
   return (
-    <CardThemed sx={{ my: 1 }}>
+    <CardThemed>
       <Grid container sx={{ px: 2, py: 1 }}>
         <Grid item flexGrow={1}>
           <Typography variant="h6">Documentation</Typography>

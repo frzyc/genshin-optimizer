@@ -3,7 +3,6 @@ export interface ICachedArtifact extends IArtifact {
   id: string
   mainStatVal: number
   substats: ICachedSubstat[]
-  probability?: number
 }
 
 export interface ICachedSubstat extends ISubstat {

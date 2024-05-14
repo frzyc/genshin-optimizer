@@ -62,7 +62,7 @@ export default function BuildDropdown({
             key={btcId}
             disabled={buildType === 'tc' && btcId === buildTcId}
             onClick={() =>
-              onChangeLoadoutDatum({ buildType: 'tc', buildId: btcId })
+              onChangeLoadoutDatum({ buildType: 'tc', buildTcId: btcId })
             }
             sx={{ display: 'flex', gap: 1 }}
           >
