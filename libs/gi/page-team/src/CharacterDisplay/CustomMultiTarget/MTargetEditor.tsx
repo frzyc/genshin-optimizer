@@ -29,17 +29,22 @@ import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { allInputPremodKeys } from '@genshin-optimizer/gi/wr'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import {
   Box,
-  CardContent,
+  CardActionArea,
+  Collapse,
   Divider,
   Grid,
   IconButton,
   InputAdornment,
   MenuItem,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material'
-import { useCallback, useContext, useMemo } from 'react'
+import { useCallback, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import OptimizationTargetSelector from '../Tabs/TabOptimize/Components/OptimizationTargetSelector'
 
@@ -81,6 +86,9 @@ export default function MTargetEditor({
     bonusStats,
     description,
   } = customTarget
+
+  const [collapse, setcollapse] = useState(true)
+
   const setWeight = useCallback(
     (weight: number) => setCustomTarget({ ...customTarget, weight }),
     [customTarget, setCustomTarget]
@@ -109,6 +117,9 @@ export default function MTargetEditor({
     isCharMelee(characterKey) &&
     (path[0] === 'normal' || path[0] === 'charged' || path[0] === 'plunging')
   const isTransformativeReaction = path[0] === 'reaction'
+
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
   return (
     <CardThemed
       bgt="light"
@@ -119,14 +130,27 @@ export default function MTargetEditor({
         zIndex: 1000,
       }}
     >
-      <CardContent sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-        <Typography sx={{ flexGrow: 1 }} variant="h6">
-          Target Editor
-        </Typography>
+      <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+        <CardActionArea
+          sx={{
+            display: 'flex',
+            flexGrow: 1,
+            gap: 1,
+            height: '100%',
+            py: 1,
+            alignItems: 'center',
+          }}
+          onClick={() => setcollapse((c) => !c)}
+        >
+          <Typography variant="h6">Target Editor</Typography>
+          {collapse ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+        </CardActionArea>
         <TextFieldLazy
           InputProps={{
             startAdornment: (
-              <InputAdornment position="start">Rank #</InputAdornment>
+              <InputAdornment position="start">
+                {isMobile ? '#' : 'Rank #'}
+              </InputAdornment>
             ),
           }}
           inputProps={{
@@ -138,6 +162,7 @@ export default function MTargetEditor({
           value={rank.toString()}
           onChange={(v) => setTargetIndex(parseInt(v))}
           size="small"
+          sx={{ minWidth: isMobile ? '4em' : '6em' }}
         />
 
         <IconButton color="info" onClick={onDup}>
@@ -146,122 +171,128 @@ export default function MTargetEditor({
         <IconButton color="error" onClick={deleteCustomTarget}>
           <DeleteForeverIcon />
         </IconButton>
-      </CardContent>
-      <Divider />
-      <Box display="flex">
-        <Box sx={{ p: 1, flexGrow: 1 }}>
-          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-            <TextFieldLazy
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">x</InputAdornment>
-                ),
-              }}
-              inputProps={{
-                sx: { width: '2em' },
-              }}
-              type="number"
-              value={weight.toString()}
-              onChange={(v) => setWeight(parseFloat(v))}
-              size="small"
-            />
-            <OptimizationTargetSelector
-              optimizationTarget={path}
-              setTarget={(path) =>
-                setCustomTarget({
-                  ...customTarget,
-                  path,
-                  reaction: undefined,
-                  infusionAura: undefined,
-                })
-              }
-              showEmptyTargets
-              targetSelectorModalProps={{
-                flatOnly: true,
-                excludeSections: ['basic', 'custom'],
-              }}
-            />
-            {node && (
-              <ReactionDropdown
-                reaction={reaction}
-                setReactionMode={(rm) =>
-                  setCustomTarget({ ...customTarget, reaction: rm })
-                }
-                node={node}
-                infusionAura={infusionAura}
-              />
-            )}
-            <DropdownButton title={t(`hitmode.${hitMode}`)}>
-              {allMultiOptHitModeKeys.map((hm) => (
-                <MenuItem
-                  key={hm}
-                  value={hm}
-                  disabled={hitMode === hm}
-                  onClick={() =>
-                    setCustomTarget({ ...customTarget, hitMode: hm })
-                  }
-                >
-                  {t(`hitmode.${hm}`)}
-                </MenuItem>
-              ))}
-            </DropdownButton>
-          </Box>
-          <Grid container columns={{ xs: 1, md: 2 }} spacing={1}>
-            <Grid item xs={1}>
-              <Box>
-                <Grid container columns={{ xs: 1 }} sx={{ pt: 1 }} spacing={1}>
-                  {(isMeleeAuto || isTransformativeReaction) && (
-                    <Grid item xs={1}>
-                      <DropdownButton
-                        title={infusionVals[infusionAura ?? '']}
-                        color={infusionAura || 'secondary'}
-                        disableElevation
-                        fullWidth
-                      >
-                        {Object.entries(infusionVals).map(([key, text]) => (
-                          <MenuItem
-                            key={key}
-                            sx={key ? { color: `${key}.main` } : undefined}
-                            selected={key === infusionAura}
-                            disabled={key === infusionAura}
-                            onClick={() =>
-                              setCustomTarget({
-                                ...customTarget,
-                                infusionAura: key ? key : undefined,
-                                reaction: undefined,
-                              })
-                            }
-                          >
-                            {text}
-                          </MenuItem>
-                        ))}
-                      </DropdownButton>
-                    </Grid>
-                  )}
-                  {statEditorList}
-                </Grid>
-              </Box>
-            </Grid>
-            <Grid item xs={1}>
-              <TextFieldLazy
-                fullWidth
-                label="Target Description"
-                value={description}
-                onChange={(description) =>
-                  setCustomTarget({ ...customTarget, description })
-                }
-                multiline
-                minRows={2}
-                sx={{ mt: 1 }}
-              />
-            </Grid>
-          </Grid>
-        </Box>
       </Box>
+      <Divider />
+      <Collapse in={!collapse}>
+        <Box display="flex">
+          <Box sx={{ p: 1, flexGrow: 1 }}>
+            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+              <TextFieldLazy
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">x</InputAdornment>
+                  ),
+                }}
+                inputProps={{
+                  sx: { width: '2em' },
+                }}
+                type="number"
+                value={weight.toString()}
+                onChange={(v) => setWeight(parseFloat(v))}
+                size="small"
+              />
+              <OptimizationTargetSelector
+                optimizationTarget={path}
+                setTarget={(path) =>
+                  setCustomTarget({
+                    ...customTarget,
+                    path,
+                    reaction: undefined,
+                    infusionAura: undefined,
+                  })
+                }
+                showEmptyTargets
+                targetSelectorModalProps={{
+                  flatOnly: true,
+                  excludeSections: ['basic', 'custom'],
+                }}
+              />
+              {node && (
+                <ReactionDropdown
+                  reaction={reaction}
+                  setReactionMode={(rm) =>
+                    setCustomTarget({ ...customTarget, reaction: rm })
+                  }
+                  node={node}
+                  infusionAura={infusionAura}
+                />
+              )}
+              <DropdownButton title={t(`hitmode.${hitMode}`)}>
+                {allMultiOptHitModeKeys.map((hm) => (
+                  <MenuItem
+                    key={hm}
+                    value={hm}
+                    disabled={hitMode === hm}
+                    onClick={() =>
+                      setCustomTarget({ ...customTarget, hitMode: hm })
+                    }
+                  >
+                    {t(`hitmode.${hm}`)}
+                  </MenuItem>
+                ))}
+              </DropdownButton>
+            </Box>
+            <Grid container columns={{ xs: 1, md: 2 }} spacing={1}>
+              <Grid item xs={1}>
+                <Box>
+                  <Grid
+                    container
+                    columns={{ xs: 1 }}
+                    sx={{ pt: 1 }}
+                    spacing={1}
+                  >
+                    {(isMeleeAuto || isTransformativeReaction) && (
+                      <Grid item xs={1}>
+                        <DropdownButton
+                          title={infusionVals[infusionAura ?? '']}
+                          color={infusionAura || 'secondary'}
+                          disableElevation
+                          fullWidth
+                        >
+                          {Object.entries(infusionVals).map(([key, text]) => (
+                            <MenuItem
+                              key={key}
+                              sx={key ? { color: `${key}.main` } : undefined}
+                              selected={key === infusionAura}
+                              disabled={key === infusionAura}
+                              onClick={() =>
+                                setCustomTarget({
+                                  ...customTarget,
+                                  infusionAura: key ? key : undefined,
+                                  reaction: undefined,
+                                })
+                              }
+                            >
+                              {text}
+                            </MenuItem>
+                          ))}
+                        </DropdownButton>
+                      </Grid>
+                    )}
+                    {statEditorList}
+                  </Grid>
+                </Box>
+              </Grid>
+              <Grid item xs={1}>
+                <TextFieldLazy
+                  fullWidth
+                  label="Target Description"
+                  value={description}
+                  onChange={(description) =>
+                    setCustomTarget({ ...customTarget, description })
+                  }
+                  multiline
+                  minRows={2}
+                  sx={{ mt: 1 }}
+                />
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Collapse>
     </CardThemed>
   )
 }
-
 function ReactionDropdown({
   node,
   reaction,

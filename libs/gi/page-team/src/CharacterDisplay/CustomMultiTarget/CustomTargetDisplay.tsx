@@ -44,6 +44,7 @@ export default function CustomTargetDisplay({
     >
       <CardActionArea sx={{ p: 1, flexGrow: 1 }} onClick={setSelect}>
         <Typography
+          component="div"
           sx={{
             display: 'flex',
             gap: 1,
