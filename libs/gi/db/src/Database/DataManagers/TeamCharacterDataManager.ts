@@ -355,7 +355,7 @@ export class TeamCharacterDataManager extends DataManager<
       .filter((id) => buildTcIds.includes(id))
       .map((buildTcId) => this.database.buildTcs.export(buildTcId))
 
-    let overrideOptTarget = undefined
+    let overrideOptTarget: string[] | undefined = undefined
     if (optimizationTarget?.[0] === 'custom') {
       const ind = parseInt(optimizationTarget[1])
       if (!isNaN(ind)) {

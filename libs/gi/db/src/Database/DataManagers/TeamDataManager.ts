@@ -50,7 +50,7 @@ export type LoadoutExportSetting = {
   convertTcBuilds: string[]
   exportCustomMultiTarget: number[]
 }
-export const defLoadoutExportSetting = ():LoadoutExportSetting => ({
+export const defLoadoutExportSetting = (): LoadoutExportSetting => ({
   convertEquipped: false,
   convertbuilds: [],
   convertTcBuilds: [],
