@@ -44,7 +44,19 @@ export interface Team {
   loadoutData: Array<LoadoutDatum | undefined>
   lastEdit: number
 }
-
+export type LoadoutExportSetting = {
+  convertEquipped: boolean
+  convertbuilds: string[]
+  convertTcBuilds: string[]
+  exportCustomMultiTarget: number[]
+}
+export const defLoadoutExportSetting = (): LoadoutExportSetting => ({
+  convertEquipped: false,
+  convertbuilds: [],
+  convertTcBuilds: [],
+  exportCustomMultiTarget: [],
+})
+export type LoadoutDataExportSetting = Array<LoadoutExportSetting>
 export class TeamDataManager extends DataManager<
   string,
   'teams',
@@ -188,7 +200,6 @@ export class TeamDataManager extends DataManager<
       lastEdit,
     }
   }
-
   new(value: Partial<Team> = {}): string {
     const id = this.generateKey()
     this.set(id, value)
@@ -205,16 +216,22 @@ export class TeamDataManager extends DataManager<
     team.name = `${team.name} (duplicated)`
     return this.new(team)
   }
-  export(teamId: string): object {
+  export(
+    teamId: string,
+    loadoutDataExportSetting: LoadoutDataExportSetting
+  ): object {
     const team = this.database.teams.get(teamId)
     if (!team) return {}
     const { loadoutData, ...rest } = team
     return {
       ...rest,
       loadoutData: loadoutData.map(
-        (loadoutData) =>
+        (loadoutData, i) =>
           loadoutData?.teamCharId &&
-          this.database.teamChars.export(loadoutData?.teamCharId)
+          this.database.teamChars.export(
+            loadoutData?.teamCharId,
+            loadoutDataExportSetting[i]
+          )
       ),
     }
   }
