@@ -72,9 +72,8 @@ export default function TabWeapon() {
       const { rarity, subStat, weaponType } = getWeaponStat(wKey)
       if (!weapon.rarity.includes(rarity)) return false
       if (
-        subStat &&
         weapon.subStat.length &&
-        !weapon.subStat.includes(subStat.type as WeaponSubstatKey)
+        (!subStat || !weapon.subStat.includes(subStat.type as WeaponSubstatKey))
       )
         return false
       if (!weapon.weaponType.includes(weaponType)) return false
