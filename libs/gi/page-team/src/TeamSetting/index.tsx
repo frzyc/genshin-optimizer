@@ -1,3 +1,4 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { TextFieldLazy } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
@@ -24,6 +25,7 @@ import BuildDropdown from '../BuildDropdown'
 import { LoadoutDropdown } from '../LoadoutDropdown'
 import { ResonanceDisplay } from './ResonanceDisplay'
 import { TeammateDisplay } from './TeamComponents'
+import TeamExportModal from './TeamExportModal'
 
 // TODO: Translation
 export default function TeamSetting({
@@ -36,6 +38,7 @@ export default function TeamSetting({
 }) {
   const navigate = useNavigate()
   const database = useDatabase()
+  const [show, onShow, onHide] = useBoolState()
   const team = database.teams.get(teamId)!
   const noChars = team.loadoutData.every((id) => !id)
   const { name, description } = team
@@ -50,14 +53,7 @@ export default function TeamSetting({
     database.teams.remove(teamId)
     navigate(`/teams`)
   }
-  const onExport = () => {
-    const data = database.teams.export(teamId)
-    const dataStr = JSON.stringify(data)
-    navigator.clipboard
-      .writeText(dataStr)
-      .then(() => alert('Copied team data to clipboard.'))
-      .catch(console.error)
-  }
+
   const onDup = () => {
     const newTeamId = database.teams.duplicate(teamId)
     navigate(`/teams/${newTeamId}`)
@@ -82,12 +78,13 @@ export default function TeamSetting({
         minRows={2}
       />
       <Box sx={{ display: 'flex', gap: 1 }}>
+        <TeamExportModal show={show} teamId={teamId} onHide={onHide} />
         <Button
           color="info"
           sx={{ flexGrow: 1 }}
           startIcon={<ContentPasteIcon />}
           disabled={noChars}
-          onClick={onExport}
+          onClick={onShow}
         >
           Export Team
         </Button>

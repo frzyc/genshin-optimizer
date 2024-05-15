@@ -255,7 +255,7 @@ export class OptConfigDataManager extends DataManager<
     if (!optConfig) return ''
     return this.new(structuredClone(optConfig))
   }
-  export(optConfigId: string): object {
+  export(optConfigId: string, overrideOptTarget?: string[]): object {
     const optConfig = this.database.optConfigs.get(optConfigId)
     if (!optConfig) return {}
     const {
@@ -267,7 +267,11 @@ export class OptConfigDataManager extends DataManager<
       builds,
       ...rest
     } = optConfig
-    return rest
+    if (!overrideOptTarget) return rest
+    return {
+      ...rest,
+      optimizationTarget: overrideOptTarget,
+    }
   }
   import(data: object): string {
     const id = this.generateKey()

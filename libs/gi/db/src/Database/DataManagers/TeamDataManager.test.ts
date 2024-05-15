@@ -41,7 +41,26 @@ describe('export and import test', () => {
     expect(dbTeam.loadoutData[0]?.teamCharId).toEqual(raidenId)
     expect(dbTeam.loadoutData[2]?.teamCharId).toEqual(bennettId)
 
-    const exp = database.teams.export(teamId)
+    const exp = database.teams.export(teamId, [
+      {
+        convertbuilds: [],
+        convertEquipped: true,
+        convertTcBuilds: [],
+        exportCustomMultiTarget: [],
+      },
+      {
+        convertbuilds: [],
+        convertEquipped: true,
+        convertTcBuilds: [],
+        exportCustomMultiTarget: [],
+      },
+      {
+        convertbuilds: [],
+        convertEquipped: true,
+        convertTcBuilds: [],
+        exportCustomMultiTarget: [],
+      },
+    ])
     expect(exp).toBeTruthy()
     expect((exp as any).loadoutData[0].key).toEqual('RaidenShogun')
     expect((exp as any).loadoutData[0].optConfig.optimizationTarget).toEqual([
