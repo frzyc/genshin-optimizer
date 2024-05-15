@@ -25,6 +25,7 @@ import BuildDropdown from '../BuildDropdown'
 import { LoadoutDropdown } from '../LoadoutDropdown'
 import { ResonanceDisplay } from './ResonanceDisplay'
 import { TeammateDisplay } from './TeamComponents'
+import TeamDelModal from './TeamDelModal'
 import TeamExportModal from './TeamExportModal'
 
 // TODO: Translation
@@ -43,13 +44,7 @@ export default function TeamSetting({
   const noChars = team.loadoutData.every((id) => !id)
   const { name, description } = team
 
-  const onDel = () => {
-    if (
-      !window.confirm(
-        'Removing the team will not remove the loadouts, but will remove select builds, resonance buffs, and enemy config.'
-      )
-    )
-      return
+  const onDelNoChars = () => {
     database.teams.remove(teamId)
     navigate(`/teams`)
   }
@@ -58,7 +53,7 @@ export default function TeamSetting({
     const newTeamId = database.teams.duplicate(teamId)
     navigate(`/teams/${newTeamId}`)
   }
-
+  const [showDel, onShowDel, onHideDel] = useBoolState()
   return (
     <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
       <TeamInfoAlert />
@@ -97,10 +92,16 @@ export default function TeamSetting({
         >
           Duplicate Team
         </Button>
+        <TeamDelModal
+          teamId={teamId}
+          show={showDel}
+          onHide={onHideDel}
+          onDel={() => navigate(`/teams`)}
+        />
         <Button
           color="error"
           sx={{ flexGrow: 1 }}
-          onClick={onDel}
+          onClick={noChars ? onDelNoChars : onShowDel}
           startIcon={<DeleteForeverIcon />}
         >
           Delete Team
