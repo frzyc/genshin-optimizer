@@ -33,7 +33,9 @@
     "btnClear": "Clear",
     "btnRandom": "Randomize",
     "btnUpdate": "Update Artifact",
-    "clearPrompt": "There is an artifact being edited. Are you sure you want to clear the editor?"
+    "clearPrompt": "There is an artifact being edited. Are you sure you want to clear the editor?",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure you want to delete this artifact?"
   },
   "slot": "Slot",
   "setEffectNum": "{{setNum}}-Set",
