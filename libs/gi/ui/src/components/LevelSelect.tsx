@@ -1,4 +1,4 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
+import { DropdownButton, NumberInputLazy } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import type { AscensionKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -11,7 +11,7 @@ import {
   milestoneLevels,
   milestoneLevelsLow,
 } from '@genshin-optimizer/gi/util'
-import { Box, Button, InputAdornment, MenuItem, TextField } from '@mui/material'
+import { Box, Button, InputAdornment, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -50,15 +50,12 @@ export function LevelSelect({
   }, [setBoth, ascensionMaxLevels, ascension, level])
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap', rowGap: '4px' }}>
-      <TextField
+      <NumberInputLazy
         variant="filled"
-        value={level.toString()}
+        value={level}
         disabled={disabled}
         onChange={(e) => {
-          const newLevel = parseInt(e.target.value)
-          // Handle non chromium browsers not being able to filter on `type='number'`
-          if (!isNaN(newLevel)) setLevel(newLevel)
-          else setLevel(1)
+          setLevel(e || 1)
         }}
         type="number"
         InputProps={{
