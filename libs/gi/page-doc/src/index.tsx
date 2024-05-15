@@ -7,7 +7,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { artStatPercent } from '@genshin-optimizer/gi/ui'
+import { statPercent } from '@genshin-optimizer/gi/ui'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import {
   Box,
@@ -305,7 +305,7 @@ function StatKeyPane() {
     'dendro_dmg_',
   ] as const
   const statKeysCode = `type StatKey\n  = ${statKeys
-    .map((k) => `"${k}" //${tk(k)}${artStatPercent(k)}`)
+    .map((k) => `"${k}" //${tk(k)}${statPercent(k)}`)
     .join(`\n  | `)}`
   return (
     <>
