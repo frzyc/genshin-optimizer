@@ -259,6 +259,7 @@ export function ArtifactFilterDisplay({
               totals={subStatTotal}
               substatKeys={substats}
               setSubstatKeys={(substats) => filterOptionDispatch({ substats })}
+              allSubstatKeys={[...allSubstatKeys]}
             />
           </Stack>
         </Grid>

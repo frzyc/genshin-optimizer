@@ -1,22 +1,25 @@
 import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
-import type { SubstatKey } from '@genshin-optimizer/gi/consts'
-import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import type { SubstatKey, WeaponSubstatKey } from '@genshin-optimizer/gi/consts'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { Chip } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { statPercent } from './util'
 
-export function SubstatMultiAutocomplete({
+export function SubstatMultiAutocomplete<
+  SubstatKeyParam extends SubstatKey | WeaponSubstatKey
+>({
   substatKeys,
   setSubstatKeys,
   totals,
-  fullWidth = false
+  fullWidth = false,
+  allSubstatKeys,
 }: {
-  substatKeys: SubstatKey[]
-  setSubstatKeys: (keys: SubstatKey[]) => void
-  totals: Record<SubstatKey, string>
+  substatKeys: SubstatKeyParam[]
+  setSubstatKeys: (keys: SubstatKeyParam[]) => void
+  totals: Record<SubstatKeyParam, string>
   fullWidth?: boolean
+  allSubstatKeys: SubstatKeyParam[]
 }) {
   const { t } = useTranslation('artifact')
   const { t: tk } = useTranslation('statKey_gen')
@@ -26,20 +29,20 @@ export function SubstatMultiAutocomplete({
         key,
         label: `${tk(key)}${statPercent(key)}`,
       })),
-    [tk]
+    [tk, allSubstatKeys]
   )
   const toImg = useCallback(
-    (key: SubstatKey) => (
+    (key: SubstatKeyParam) => (
       <StatIcon statKey={key} iconProps={{ sx: { ml: 1 } }} />
     ),
     []
   )
   const toExLabel = useCallback(
-    (key: SubstatKey) => <strong>{totals[key]}</strong>,
+    (key: SubstatKeyParam) => <strong>{totals[key]}</strong>,
     [totals]
   )
   const toExItemLabel = useCallback(
-    (key: SubstatKey) => <Chip size="small" label={totals[key]} />,
+    (key: SubstatKeyParam) => <Chip size="small" label={totals[key]} />,
     [totals]
   )
   return (
