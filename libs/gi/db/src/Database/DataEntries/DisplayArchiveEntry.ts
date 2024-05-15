@@ -3,12 +3,14 @@ import type {
   ArtifactRarity,
   CharacterRarityKey,
   RarityKey,
+  WeaponSubstatKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
   allCharacterRarityKeys,
   allRarityKeys,
+  allWeaponSubstatKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -26,6 +28,7 @@ export interface ArchiveCharacterOption {
 export interface ArchiveWeaponOption {
   rarity: RarityKey[]
   weaponType: WeaponTypeKey[]
+  subStat: WeaponSubstatKey[]
 }
 
 export interface IDisplayArchiveEntry {
@@ -46,6 +49,7 @@ const initialCharacterOption = (): ArchiveCharacterOption => ({
 const initialWeaponOption = (): ArchiveWeaponOption => ({
   rarity: [...allRarityKeys],
   weaponType: [...allWeaponTypeKeys],
+  subStat: [],
 })
 
 const initialState = (): IDisplayArchiveEntry => ({
@@ -90,12 +94,14 @@ export class DisplayArchiveEntry extends DataEntry<
 
       if (typeof weapon !== 'object') weapon = initialWeaponOption()
       else {
-        let { rarity, weaponType } = weapon
+        let { rarity, subStat, weaponType } = weapon
         rarity = validateArr(rarity, allRarityKeys)
+        subStat = validateArr(subStat, allWeaponSubstatKeys, [])
         weaponType = validateArr(weaponType, allWeaponTypeKeys)
 
         weapon = {
           rarity,
+          subStat,
           weaponType,
         }
       }
