@@ -94,11 +94,10 @@ export default function PageArchive() {
         fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}
       >
         <Routes>
-          <Route index element={<TabArtifact />} />
           <Route path="artifacts" element={<TabArtifact />} />
           <Route path="weapons" element={<TabWeapon />} />
           <Route path="characters" element={<TabCharacter />} />
-          <Route path="*" element={<Navigate to="artifacts" />} />
+          <Route path="*" element={<Navigate to="artifacts" replace/>} />
         </Routes>
       </Suspense>
     </CardThemed>
