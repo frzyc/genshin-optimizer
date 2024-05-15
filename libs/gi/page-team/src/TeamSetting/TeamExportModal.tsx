@@ -96,10 +96,10 @@ export default function TeamExportModal({
       .then(() => alert('Copied team data to clipboard.'))
       .catch(console.error)
   }
-  const [selEverything, setSelEverything] = useState(true)
+  const [selAll, setSelAll] = useState(true)
 
-  const unselectEverything = () => {
-    setSelEverything(true)
+  const onUnselAll = () => {
+    setSelAll(true)
     setLoadoutDataExportSetting(
       loadoutData.map((loadoutDatum) =>
         loadoutDatum
@@ -109,8 +109,8 @@ export default function TeamExportModal({
     )
   }
 
-  const selectEverything = () => {
-    setSelEverything(false)
+  const onSelAll = () => {
+    setSelAll(false)
     setLoadoutDataExportSetting(
       loadoutData.map((loadoutDatum) => {
         if (!loadoutDatum) return defLoadoutExportSetting()
@@ -155,11 +155,8 @@ export default function TeamExportModal({
               and loadout data (bonus stats, enemy config, optimize config) are
               exported. All exported non-TC builds are converted to TC builds.
             </Alert>
-            <Button
-              color="info"
-              onClick={selEverything ? selectEverything : unselectEverything}
-            >
-              {selEverything ? 'Select Everything' : 'Unselect Everything'}
+            <Button color="info" onClick={selAll ? onSelAll : onUnselAll}>
+              {selAll ? 'Select All' : 'Unselect All'}
             </Button>
           </Box>
 
