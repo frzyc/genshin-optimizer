@@ -1,6 +1,4 @@
-import {
-  DropdownButton,
-} from '@genshin-optimizer/common/ui'
+import { DropdownButton } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import type { AscensionKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -51,10 +49,10 @@ export function LevelSelect({
     else setBoth({ ascension: lowerAscension })
   }, [setBoth, ascensionMaxLevels, ascension, level])
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', rowGap: '4px'}}>
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', rowGap: '4px' }}>
       <TextField
-        variant='filled'
-        value={level}
+        variant="filled"
+        value={level.toString()}
         disabled={disabled}
         onChange={(e) => {
           const newLevel = parseInt(e.target.value)
@@ -62,7 +60,7 @@ export function LevelSelect({
           if (!isNaN(newLevel)) setLevel(newLevel)
           else setLevel(1)
         }}
-        type='number'
+        type="number"
         InputProps={{
           inputProps: {
             min: 0,
@@ -73,20 +71,23 @@ export function LevelSelect({
             <InputAdornment position="end" sx={{ width: '100%' }}>
               <Button
                 sx={{ ml: 'auto' }}
-                disabled={!(useLow ? ambiguousLevelLow : ambiguousLevel)(level) || disabled}
+                disabled={
+                  !(useLow ? ambiguousLevelLow : ambiguousLevel)(level) ||
+                  disabled
+                }
                 onClick={setAscension}
               >
                 <strong>/ {ascensionMaxLevel[ascension]}</strong>
               </Button>
             </InputAdornment>
-          )
+          ),
         }}
         sx={{ height: '100%', mr: '4px', flexGrow: 1 }}
-        label='Level'
+        label="Level"
       />
       <DropdownButton
         title={t('selectlevel')}
-        sx={{ borderRadius: "4px", width: '100px', flexGrow: 1}}
+        sx={{ borderRadius: '4px', width: '100px', flexGrow: 1 }}
         disabled={disabled}
       >
         {[...(useLow ? milestoneLevelsLow : milestoneLevels)].map(
