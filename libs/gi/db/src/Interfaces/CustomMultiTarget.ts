@@ -44,7 +44,12 @@ export type EnclosingOperation = (typeof EnclosingOperations)[number]
 export const isEnclosing = (op: unknown): op is EnclosingOperation =>
   EnclosingOperations.includes(op as EnclosingOperation)
 
-export const OperationSpecs: Record<Exclude<ExpressionOperation, EnclosingOperation>, {
+export type NonEnclosingOperation = Exclude<ExpressionOperation, EnclosingOperation>
+export const isNonEnclosing = (op: unknown): op is NonEnclosingOperation =>
+  isExpressionOperation(op) && !isEnclosing(op)
+export const NonEnclosingOperations = ExpressionOperations.filter(isNonEnclosing)
+
+export const OperationSpecs: Record<NonEnclosingOperation, {
   symbol: string
   precedence: number
   arity?: { min: 2; max: typeof Infinity }
@@ -99,7 +104,7 @@ export interface TargetUnit {
 
 export interface OperationUnit {
   type: 'operation'
-  operation: Exclude<ExpressionOperation, EnclosingOperation>
+  operation: NonEnclosingOperation
 }
 
 export interface FunctionUnit {
