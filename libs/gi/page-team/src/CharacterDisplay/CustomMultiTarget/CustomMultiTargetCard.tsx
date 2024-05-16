@@ -11,7 +11,6 @@ import {
   initCustomTarget,
   type CustomMultiTarget,
 } from '@genshin-optimizer/gi/db'
-import { JsonDescWarning } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
@@ -32,6 +31,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelectorModal'
 import CustomTargetDisplay from './CustomTargetDisplay'
+import JsonDescWarning from './JsonDescWarning'
 import MTargetEditor from './MTargetEditor'
 export default function CustomMultiTargetCard({
   customMultiTarget: targetProp,

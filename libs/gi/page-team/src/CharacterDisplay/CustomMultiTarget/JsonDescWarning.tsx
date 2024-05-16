@@ -1,7 +1,7 @@
 import { Alert } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
 
-export function JsonDescWarning() {
+export default function JsonDescWarning() {
   const { t } = useTranslation('page_character')
   return (
     <Alert severity="warning" variant="filled">
