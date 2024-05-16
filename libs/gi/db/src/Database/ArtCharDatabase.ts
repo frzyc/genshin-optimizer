@@ -88,6 +88,8 @@ export class ArtCharDatabase extends Database {
     // invalidates character when things change.
     const updateLastEdit = () => this.dbMeta.set({ lastEdit: Date.now() })
 
+    // IMPORTANT: do not follow changes made to dbMeta,
+    // as it would end in infinite loop
     this.chars.followAny(updateLastEdit)
     this.arts.followAny(updateLastEdit)
     this.weapons.followAny(updateLastEdit)
