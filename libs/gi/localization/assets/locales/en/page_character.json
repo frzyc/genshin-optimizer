@@ -40,7 +40,8 @@
     "description": "Description",
     "duplicate": "Duplicate",
     "target_one": "<0>{{count}}</0> Target",
-    "target_other": "<0>{{count}}</0> Targets"
+    "target_other": "<0>{{count}}</0> Targets",
+    "jsonDescWarning": "Looks like you're trying to import a multi-opt config; go back a modal and press <strong>Import Multi-Opt</strong>. Paste the config there."
   },
   "addStats": {
     "title": "Bonus Stats",

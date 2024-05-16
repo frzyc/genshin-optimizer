@@ -11,6 +11,7 @@ import {
   initCustomTarget,
   type CustomMultiTarget,
 } from '@genshin-optimizer/gi/db'
+import { JsonDescWarning } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
@@ -53,6 +54,7 @@ export default function CustomMultiTargetCard({
 
   const { name, description } = target
   const [show, onShow, onHide] = useBoolState()
+  const [descIsJson, setDescIsJson] = useState(false)
 
   const onDup = () => {
     onDupProp()
@@ -199,16 +201,29 @@ export default function CustomMultiTargetCard({
                 }))
               }
             />
+            {description && descIsJson && <JsonDescWarning />}
             <TextFieldLazy
               fullWidth
               label="Custom Multi-target Description"
               value={description}
-              onChange={(description) =>
+              onChange={(description) => {
+                setDescIsJson(
+                  description
+                    ? (() => {
+                        try {
+                          JSON.parse(description)
+                          return true
+                        } catch (e) {
+                          return false
+                        }
+                      })()
+                    : false
+                )
                 setTarget((target) => ({
                   ...target,
                   description,
                 }))
-              }
+              }}
               multiline
               minRows={2}
             />
