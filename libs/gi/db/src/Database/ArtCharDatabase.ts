@@ -86,15 +86,25 @@ export class ArtCharDatabase extends Database {
     this.displayArchive = new DisplayArchiveEntry(this)
 
     // invalidates character when things change.
-    this.chars.followAny(() => {
-      this.dbMeta.set({ lastEdit: Date.now() })
-    })
-    this.arts.followAny(() => {
-      this.dbMeta.set({ lastEdit: Date.now() })
-    })
-    this.weapons.followAny(() => {
-      this.dbMeta.set({ lastEdit: Date.now() })
-    })
+    const updateLastEdit = () => this.dbMeta.set({ lastEdit: Date.now() })
+
+    // IMPORTANT: do not follow changes made to dbMeta,
+    // as it would end in infinite loop
+    this.chars.followAny(updateLastEdit)
+    this.arts.followAny(updateLastEdit)
+    this.weapons.followAny(updateLastEdit)
+    this.optConfigs.followAny(updateLastEdit)
+    this.buildTcs.followAny(updateLastEdit)
+    this.charMeta.followAny(updateLastEdit)
+    this.builds.followAny(updateLastEdit)
+    this.teamChars.followAny(updateLastEdit)
+    this.teams.followAny(updateLastEdit)
+    this.displayWeapon.follow(updateLastEdit)
+    this.displayArtifact.follow(updateLastEdit)
+    this.displayCharacter.follow(updateLastEdit)
+    this.displayTool.follow(updateLastEdit)
+    this.displayTeam.follow(updateLastEdit)
+    this.displayArchive.follow(updateLastEdit)
   }
   get dataManagers() {
     // IMPORTANT: it must be chars, weapon, arts in order, to respect import order
