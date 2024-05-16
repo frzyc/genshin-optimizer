@@ -97,7 +97,7 @@ export default function PageArchive() {
           <Route path="artifacts" element={<TabArtifact />} />
           <Route path="weapons" element={<TabWeapon />} />
           <Route path="characters" element={<TabCharacter />} />
-          <Route path="*" element={<Navigate to="artifacts" />} />
+          <Route path="*" element={<Navigate to="artifacts" replace />} />
         </Routes>
       </Suspense>
     </CardThemed>
