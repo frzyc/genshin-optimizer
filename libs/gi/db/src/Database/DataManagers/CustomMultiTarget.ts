@@ -54,6 +54,12 @@ export function initExpressionUnit(
         type: 'operation',
         operation: args.operation ?? 'addition',
       }
+    case 'function':
+      return {
+        ...args,
+        type: 'function',
+        name: args.name ?? 'Some Function',
+      }
     case 'enclosing':
       switch (args.part) {
         case 'head':
@@ -189,6 +195,10 @@ export function validateCustomExpression(
     } else if (type === 'operation') {
       const { operation } = unit
       if (!NonEnclosingOperations.includes(operation)) return undefined
+    } else if (type === 'function') {
+      // Just ignore functions for now
+      // TODO: Implement function support
+      continue
     } else if (type === 'enclosing') {
       const { part } = unit
       if (part === 'head') {

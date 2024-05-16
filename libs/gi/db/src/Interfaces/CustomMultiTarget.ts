@@ -78,8 +78,7 @@ export const ExpressionUnitTypes = [
   'enclosing',
   'null',
 ] as const
-export type ExpressionUnitType = ExpressionUnit['type']
-(_: readonly ExpressionUnitType[] = ExpressionUnitTypes) => {}
+export type ExpressionUnitType = (typeof ExpressionUnitTypes)[number]
 export const isExpressionUnitType = (type: unknown): type is ExpressionUnitType => {
   return ExpressionUnitTypes.includes(type as ExpressionUnitType)
 }
@@ -92,17 +91,22 @@ export type ExpressionUnit =
   | EnclosingUnit
   | NullUnit
 
-export interface ConstantUnit {
+interface BaseUnit {
+  type: ExpressionUnitType
+  description?: string
+}
+
+export interface ConstantUnit extends BaseUnit {
   type: 'constant'
   value: number
 }
 
-export interface TargetUnit {
+export interface TargetUnit extends BaseUnit {
   type: 'target'
   target: CustomTarget
 }
 
-export interface OperationUnit {
+export interface OperationUnit extends BaseUnit {
   type: 'operation'
   operation: NonEnclosingOperation
 }
@@ -114,18 +118,18 @@ export interface FunctionUnit {
 
 export type EnclosingUnit = EnclosingHeadUnit | EnclosingPartUnit
 
-export interface EnclosingHeadUnit {
+export interface EnclosingHeadUnit extends BaseUnit {
   type: 'enclosing'
   part: 'head'
   operation: EnclosingOperation
 }
 
-export interface EnclosingPartUnit {
+export interface EnclosingPartUnit extends BaseUnit {
   type: 'enclosing'
   part: 'comma' | 'tail'
 }
 
-export interface NullUnit {
+export interface NullUnit extends BaseUnit {
   type: 'null'
   kind: 'operand' | 'operation'
 }
@@ -134,6 +138,7 @@ export interface CustomFunction {
   name: string
   args: string[]
   expression: ExpressionUnit[]
+  description?: string
 }
 
 export interface CustomMultiTarget {

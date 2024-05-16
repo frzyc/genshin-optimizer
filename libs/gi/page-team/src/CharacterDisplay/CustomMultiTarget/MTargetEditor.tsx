@@ -297,6 +297,197 @@ export default function MTargetEditor({
     </CardThemed>
   )
 }
+
+export function TargetUnitEditor({
+  customTarget,
+  setCustomTarget,
+  onDup,
+}: {
+  customTarget: CustomTarget
+  setCustomTarget: (t: CustomTarget) => void
+  onDup: () => void
+}): JSX.Element {
+  const { t } = useTranslation('page_character')
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
+  const {
+    path,
+    hitMode,
+    reaction,
+    infusionAura,
+    bonusStats,
+    description,
+  } = customTarget
+
+  const [collapse, setcollapse] = useState(true)
+
+  const node = objPathValue(data.getDisplay(), path) as CalcResult | undefined
+  const setFilter = useCallback(
+    (bonusStats: CustomTarget['bonusStats']) =>
+      setCustomTarget({ ...customTarget, bonusStats }),
+    [customTarget, setCustomTarget]
+  )
+  // Expand editor on change of custom target
+  useEffect(() => {
+    setcollapse(false)
+  }, [customTarget])
+
+  const statEditorList = useMemo(
+    () => (
+      <StatEditorList
+        statKeys={keys}
+        statFilters={bonusStats}
+        setStatFilters={setFilter}
+        wrapperFunc={wrapperFunc}
+        label={t('addStats.label')}
+      />
+    ),
+    [bonusStats, setFilter, t]
+  )
+
+  const isMeleeAuto =
+    isCharMelee(characterKey) &&
+    (path[0] === 'normal' || path[0] === 'charged' || path[0] === 'plunging')
+  const isTransformativeReaction = path[0] === 'reaction'
+  return (
+    <CardThemed
+      bgt="light"
+      sx={{
+        boxShadow: '0 0 10px black',
+        position: 'sticky',
+        bottom: `10px`,
+        zIndex: 1000,
+      }}
+    >
+      <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+        <CardActionArea
+          sx={{
+            display: 'flex',
+            flexGrow: 1,
+            gap: 1,
+            height: '100%',
+            py: 1,
+            alignItems: 'center',
+          }}
+          onClick={() => setcollapse((c) => !c)}
+        >
+          <Typography variant="h6">Target Editor</Typography>
+          {collapse ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+        </CardActionArea>
+
+        <IconButton color="info" onClick={onDup}>
+          <ContentCopyIcon />
+        </IconButton>
+      </Box>
+      <Divider />
+      <Collapse in={!collapse}>
+        <Box display="flex">
+          <Box sx={{ p: 1, flexGrow: 1 }}>
+            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+              <OptimizationTargetSelector
+                optimizationTarget={path}
+                setTarget={(path) =>
+                  setCustomTarget({
+                    ...customTarget,
+                    path,
+                    reaction: undefined,
+                    infusionAura: undefined,
+                  })
+                }
+                showEmptyTargets
+                targetSelectorModalProps={{
+                  excludeSections: ['custom'],
+                }}
+              />
+              {node && (
+                <ReactionDropdown
+                  reaction={reaction}
+                  setReactionMode={(rm) =>
+                    setCustomTarget({ ...customTarget, reaction: rm })
+                  }
+                  node={node}
+                  infusionAura={infusionAura}
+                />
+              )}
+              <DropdownButton title={t(`hitmode.${hitMode}`)}>
+                {allMultiOptHitModeKeys.map((hm) => (
+                  <MenuItem
+                    key={hm}
+                    value={hm}
+                    disabled={hitMode === hm}
+                    onClick={() =>
+                      setCustomTarget({ ...customTarget, hitMode: hm })
+                    }
+                  >
+                    {t(`hitmode.${hm}`)}
+                  </MenuItem>
+                ))}
+              </DropdownButton>
+            </Box>
+            <Grid container columns={{ xs: 1, md: 2 }} spacing={1}>
+              <Grid item xs={1}>
+                <Box>
+                  <Grid
+                    container
+                    columns={{ xs: 1 }}
+                    sx={{ pt: 1 }}
+                    spacing={1}
+                  >
+                    {(isMeleeAuto || isTransformativeReaction) && (
+                      <Grid item xs={1}>
+                        <DropdownButton
+                          title={infusionVals[infusionAura ?? '']}
+                          color={infusionAura || 'secondary'}
+                          disableElevation
+                          fullWidth
+                        >
+                          {Object.entries(infusionVals).map(([key, text]) => (
+                            <MenuItem
+                              key={key}
+                              sx={key ? { color: `${key}.main` } : undefined}
+                              selected={key === infusionAura}
+                              disabled={key === infusionAura}
+                              onClick={() =>
+                                setCustomTarget({
+                                  ...customTarget,
+                                  infusionAura: key ? key : undefined,
+                                  reaction: undefined,
+                                })
+                              }
+                            >
+                              {text}
+                            </MenuItem>
+                          ))}
+                        </DropdownButton>
+                      </Grid>
+                    )}
+                    {statEditorList}
+                  </Grid>
+                </Box>
+              </Grid>
+              <Grid item xs={1}>
+                <TextFieldLazy
+                  fullWidth
+                  label="Target Description"
+                  value={description}
+                  onChange={(description) =>
+                    setCustomTarget({ ...customTarget, description })
+                  }
+                  multiline
+                  minRows={2}
+                  sx={{ mt: 1 }}
+                />
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Collapse>
+    </CardThemed>
+  )
+}
+
 function ReactionDropdown({
   node,
   reaction,

@@ -9,13 +9,12 @@ import {
   SolidToggleButtonGroup,
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
-import { arrayMove, clamp, deepClone } from '@genshin-optimizer/common/util'
-import type { CustomTarget } from '@genshin-optimizer/gi/db'
+import { arrayMove, clamp, deepClone, objPathValue } from '@genshin-optimizer/common/util'
+import type { CustomTarget, CustomMultiTarget, EnclosingOperation, NonEnclosingOperation, ExpressionUnit, ExpressionOperation } from '@genshin-optimizer/gi/db'
 import {
   EnclosingOperations,
   initCustomTarget,
   initExpressionUnit,
-  type CustomMultiTarget,
 } from '@genshin-optimizer/gi/db'
 import { DataContext, resolveInfo } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
@@ -42,7 +41,7 @@ import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelectorModal'
 import CustomTargetDisplay from './CustomTargetDisplay'
-import MTargetEditor from './MTargetEditor'
+import MTargetEditor, { TargetUnitEditor } from './MTargetEditor'
 export default function CustomMultiTargetCard({
   customMultiTarget: targetProp,
   setTarget: setTargetProp,
@@ -276,7 +275,7 @@ export default function CustomMultiTargetCard({
             }}
           >
             {target.expression && (
-              <ExpressionNavbar
+              <ExpressionDisplay
                 expression={target.expression}
                 setCMT={setTarget}
               />
@@ -305,7 +304,7 @@ export default function CustomMultiTargetCard({
   )
 }
 
-const operationSymbols: Record<BinaryOperation, string> = {
+const operationSymbols: Record<NonEnclosingOperation, string> = {
   addition: '+',
   subtraction: '-',
   multiplication: '*',
@@ -318,7 +317,7 @@ const enclosingNames: Record<EnclosingOperation, string> = {
   priority: '',
 }
 
-function ExpressionNavbar({
+function ExpressionDisplay({
   expression,
   setCMT,
 }: {
@@ -664,8 +663,7 @@ function UnitConfig({
         </ButtonGroup>
       )}
       {unit.type === 'target' && (
-        <CustomTargetDisplay
-          mode="expression"
+        <TargetUnitEditor
           customTarget={unit.target}
           setCustomTarget={(t) =>
             setUnit(initExpressionUnit({ type: 'target', target: t }))
