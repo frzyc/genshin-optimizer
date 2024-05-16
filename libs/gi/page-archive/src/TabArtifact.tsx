@@ -1,7 +1,10 @@
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
 import { handleMultiSelect } from '@genshin-optimizer/common/util'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
+import type { ArchiveArtifactOption } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Translate, i18n } from '@genshin-optimizer/gi/i18n'
 import { getArtSetStat } from '@genshin-optimizer/gi/stats'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
@@ -22,38 +25,70 @@ import {
   ToggleButton,
   ToggleButtonGroup,
 } from '@mui/material'
-import { Suspense, useDeferredValue, useMemo, useState } from 'react'
+import {
+  Suspense,
+  useCallback,
+  useDeferredValue,
+  useMemo,
+  useState,
+} from 'react'
+import { useTranslation } from 'react-i18next'
 const maxRarities = [5, 4, 3] as const
 export default function TabArtifact() {
-  const [rarityFilter, setRarityFilter] = useState([...maxRarities])
+  const database = useDatabase()
+  const archive = useDataEntryBase(database.displayArchive)
   const [searchTerm, setSearchTerm] = useState('')
   const searchTermDeferred = useDeferredValue(searchTerm)
   const handleRarity = handleMultiSelect([...maxRarities])
+  //load namespaces for artifact set effects
+  const { t } = useTranslation(
+    allArtifactSetKeys.map((key) => {
+      return `artifact_${key}_gen`
+    })
+  )
+
+  const { artifact } = archive
+  const artifactOptionDispatch = useCallback(
+    (option: Partial<ArchiveArtifactOption>) =>
+      database.displayArchive.set({ artifact: { ...artifact, ...option } }),
+    [database, artifact]
+  )
+
   const artSetKeys = useMemo(() => {
-    return allArtifactSetKeys.filter(
-      (setKey) => {
-        const { rarities } = getArtSetStat(setKey)
-        if (
-          !rarityFilter.includes(
-            Math.max(...rarities) as (typeof maxRarities)[number]
-          )
+    return allArtifactSetKeys.filter((setKey) => {
+      const { rarities } = getArtSetStat(setKey)
+      if (
+        !artifact.rarity.includes(
+          Math.max(...rarities) as (typeof maxRarities)[number]
         )
-          return false
-        const setKeyStr = i18n.t(`artifactNames_gen:${setKey}`)
-        if (
-          searchTermDeferred &&
-          !setKeyStr
-            .toLocaleLowerCase()
-            .includes(searchTermDeferred.toLocaleLowerCase())
-        )
-          return false
-        return true
-      },
-      [rarityFilter]
-    )
-  }, [rarityFilter, searchTermDeferred])
+      )
+        return false
+
+      const setKeyStr = i18n
+        .t(`artifactNames_gen:${setKey}`)
+        .toLocaleLowerCase()
+      const set4KeyDesc = t('setEffects.4', {
+        ns: `artifact_${setKey}_gen`,
+      }).toLocaleLowerCase()
+      const set2KeyDesc = t('setEffects.2', {
+        ns: `artifact_${setKey}_gen`,
+      }).toLocaleLowerCase()
+      if (
+        searchTermDeferred &&
+        !setKeyStr.includes(searchTermDeferred.toLocaleLowerCase()) &&
+        !set2KeyDesc.includes(searchTermDeferred.toLocaleLowerCase()) &&
+        !set4KeyDesc.includes(searchTermDeferred.toLocaleLowerCase())
+      )
+        return false
+      return true
+    })
+  }, [artifact, searchTermDeferred, t])
   const artSetKeysWithoutPrayer = useMemo(
     () => artSetKeys.filter((sk) => !sk.startsWith('Prayers')),
+    [artSetKeys]
+  )
+  const artSetKeysOnlyPrayer = useMemo(
+    () => artSetKeys.filter((sk) => sk.startsWith('Prayers')),
     [artSetKeys]
   )
   const { numShow, setTriggerElement } = useInfScroll(
@@ -67,12 +102,16 @@ export default function TabArtifact() {
   return (
     <Box>
       <CardContent sx={{ display: 'flex', gap: 2 }}>
-        <ToggleButtonGroup value={rarityFilter}>
+        <ToggleButtonGroup value={artifact.rarity}>
           {maxRarities.map((r) => (
             <ToggleButton
               key={r}
               value={r}
-              onClick={() => setRarityFilter((old) => handleRarity(old, r))}
+              onClick={() =>
+                artifactOptionDispatch({
+                  rarity: handleRarity(artifact.rarity, r),
+                })
+              }
             >
               <ColorText color={`rarity${r}` as keyof Palette}>
                 <StarRoundedIcon sx={{ verticalAlign: 'text-top' }} />
@@ -178,18 +217,17 @@ export default function TabArtifact() {
         </TableBody>
       </Table>
       {/* Table for Prayers pieces */}
-      <Table sx={{ mt: 2 }}>
-        <TableHead>
-          <TableRow>
-            <TableCell>Set</TableCell>
-            <TableCell>Rarity</TableCell>
-            <TableCell>1-piece Bonus</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {artSetKeys
-            .filter((sk) => sk.startsWith('Prayers'))
-            .map((setKey) => {
+      {artSetKeysOnlyPrayer.length !== 0 && (
+        <Table sx={{ mt: 2 }}>
+          <TableHead>
+            <TableRow>
+              <TableCell>Set</TableCell>
+              <TableCell>Rarity</TableCell>
+              <TableCell>1-piece Bonus</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {artSetKeysOnlyPrayer.map((setKey) => {
               const { rarities } = getArtSetStat(setKey)
               return (
                 <TableRow key={setKey}>
@@ -223,9 +261,10 @@ export default function TabArtifact() {
                 </TableRow>
               )
             })}
-          {/* TODO: prayer table? */}
-        </TableBody>
-      </Table>
+            {/* TODO: prayer table? */}
+          </TableBody>
+        </Table>
+      )}
     </Box>
   )
 }

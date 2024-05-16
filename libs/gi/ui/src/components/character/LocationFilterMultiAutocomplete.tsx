@@ -11,8 +11,8 @@ import { getCharEle } from '@genshin-optimizer/gi/stats'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { CharIconSide } from '.'
 import { SillyContext } from '../../context'
-import { CharIconSide } from '../character'
 
 export function LocationFilterMultiAutocomplete({
   locations,

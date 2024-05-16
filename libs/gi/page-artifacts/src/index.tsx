@@ -22,25 +22,16 @@ import {
   artifactSortConfigs,
   artifactSortKeys,
   artifactSortMap,
-  probability,
 } from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import { Box, Button, CardContent, Grid, Skeleton } from '@mui/material'
-import {
-  Suspense,
-  useCallback,
-  useDeferredValue,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter'
 import DupModal from './DupModal'
 import ArtifactInfoDisplay from './InfoDisplay'
-import ProbabilityFilter from './ProbabilityFilter'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 5, sm: 6, md: 12, lg: 12, xl: 12 }
@@ -56,9 +47,7 @@ export default function PageArtifact() {
 
   const brPt = useMediaQueryUp()
 
-  const { sortType, effFilter, ascending, probabilityFilter } =
-    artifactDisplayState
-  const showProbability = sortType === 'probability'
+  const { sortType, effFilter, ascending } = artifactDisplayState
 
   const [dbDirty, forceUpdate] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)
@@ -72,35 +61,16 @@ export default function PageArtifact() {
     return database.arts.followAny(() => forceUpdate())
   }, [database, forceUpdate])
 
-  const setProbabilityFilter = useCallback(
-    (probabilityFilter) => database.displayArtifact.set({ probabilityFilter }),
-    [database]
-  )
-
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
   const sortConfigs = useMemo(
-    () => artifactSortConfigs(effFilterSet, probabilityFilter),
-    [effFilterSet, probabilityFilter]
+    () => artifactSortConfigs(effFilterSet),
+    [effFilterSet]
   )
   const filterConfigs = useMemo(
     () => artifactFilterConfigs(effFilterSet),
     [effFilterSet]
   )
   const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState)
-  const deferredProbabilityFilter = useDeferredValue(probabilityFilter)
-  useEffect(() => {
-    if (!showProbability) return undefined
-    database.arts.values.forEach((art) =>
-      database.arts.setProbability(
-        art.id,
-        probability(art, deferredProbabilityFilter)
-      )
-    )
-    return () =>
-      database.arts.values.forEach((art) =>
-        database.arts.setProbability(art.id, -1)
-      )
-  }, [database, showProbability, deferredProbabilityFilter])
 
   const { artifactIds, totalArtNum } = useMemo(() => {
     const {
@@ -108,12 +78,7 @@ export default function PageArtifact() {
       ascending = false,
       filterOption,
     } = deferredArtifactDisplayState
-    let allArtifacts = database.arts.values
-    //in probability mode, filter out the artifacts that already reach criteria
-    if (showProbability)
-      allArtifacts = allArtifacts.filter(
-        (art) => art.probability && art.probability !== 1
-      )
+    const allArtifacts = database.arts.values
     const artifactIds = allArtifacts
       .filter(filterFunction(filterOption, filterConfigs))
       .sort(
@@ -127,7 +92,6 @@ export default function PageArtifact() {
     database,
     sortConfigs,
     filterConfigs,
-    showProbability,
   ])
 
   const { numShow, setTriggerElement } = useInfScroll(
@@ -157,7 +121,7 @@ export default function PageArtifact() {
     onChangeAsc: (ascending) => database.displayArtifact.set({ ascending }),
   }
   return (
-    <Box display="flex" flexDirection="column" gap={1} my={1}>
+    <Box display="flex" flexDirection="column" gap={1}>
       <Suspense fallback={false}>
         <ArtifactEditor
           artifactIdToEdit={artifactIdToEdit}
@@ -205,12 +169,6 @@ export default function PageArtifact() {
           <ArtifactRedButtons artifactIds={artifactIds} />
         </CardContent>
       </CardThemed>
-      {showProbability && (
-        <ProbabilityFilter
-          probabilityFilter={probabilityFilter}
-          setProbabilityFilter={setProbabilityFilter}
-        />
-      )}
       <Grid container columns={columns} spacing={1}>
         <Grid item xs>
           <Button

@@ -38,7 +38,7 @@ import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts, dynamicData } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
-  AdCard,
+  AdResponsive,
   ArtifactLevelSlider,
   BuildDisplayItem,
   CharacterName,
@@ -350,7 +350,8 @@ export default function TabBuild() {
               workerData.display ?? {},
               JSON.parse(pathStr)
             )
-            const infoResolved = filterNode.info && resolveInfo(filterNode.info)
+            const infoResolved =
+              filterNode?.info && resolveInfo(filterNode.info)
             const minimum =
               infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
             return { value: filterNode, minimum: minimum }
@@ -663,7 +664,7 @@ export default function TabBuild() {
 
           {/*Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />
-          <AdCard dataAdSlot="7724855772" />
+          <AdResponsive dataAdSlot="7724855772" bgt="light" />
         </Grid>
       </Grid>
       {/* Footer */}

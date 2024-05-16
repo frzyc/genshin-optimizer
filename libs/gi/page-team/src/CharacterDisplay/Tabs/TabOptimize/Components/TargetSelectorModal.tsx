@@ -1,9 +1,4 @@
-import {
-  CardThemed,
-  ImgIcon,
-  ModalWrapper,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   DataContext,
@@ -14,15 +9,18 @@ import {
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
+import CloseIcon from '@mui/icons-material/Close'
 import { Masonry } from '@mui/lab'
 import {
   CardContent,
   CardHeader,
   Divider,
+  IconButton,
   MenuItem,
   MenuList,
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export interface TargetSelectorModalProps {
   show: boolean
@@ -43,6 +41,7 @@ export function TargetSelectorModal({
   excludeHeal = false,
 }: TargetSelectorModalProps) {
   const { data } = useContext(DataContext)
+  const { t } = useTranslation('page_character_optimize')
 
   const sections = useMemo(() => {
     return (
@@ -73,6 +72,15 @@ export function TargetSelectorModal({
   return (
     <ModalWrapper open={show} onClose={onClose}>
       <CardThemed>
+        <CardHeader
+          title={t`targetSelectorTitle`}
+          action={
+            <IconButton onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
+          }
+        />
+        <Divider />
         <CardContent>
           <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={1}>
             {sections.map(([key, Nodes]) => (
@@ -109,7 +117,7 @@ function SelectorSection({
     <CardThemed bgt="light" key={sectionKey as string}>
       {header && (
         <CardHeader
-          avatar={header.icon && <ImgIcon size={2} src={header.icon} />}
+          avatar={header.icon}
           title={header.title}
           action={header.action && <SqBadge>{header.action}</SqBadge>}
           titleTypographyProps={{ variant: 'subtitle1' }}

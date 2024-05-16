@@ -14,14 +14,12 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact } from '@genshin-optimizer/gi/good'
 import { getArtifactEfficiency } from './artifact'
-import { probability } from './rollProbabilityUtil'
 export const artifactSortKeys = [
   'rarity',
   'level',
   'artsetkey',
   'efficiency',
   'mefficiency',
-  'probability',
 ] as const
 export type ArtifactSortKey = (typeof artifactSortKeys)[number]
 
@@ -64,8 +62,7 @@ export function initialArtifactFilterOption(): ArtifactFilterOption {
 }
 
 export function artifactSortConfigs(
-  effFilterSet: Set<SubstatKey>,
-  probabilityFilter: Partial<Record<SubstatKey, number>>
+  effFilterSet: Set<SubstatKey>
 ): SortConfigs<ArtifactSortKey, IArtifact> {
   return {
     rarity: (art) => art.rarity ?? 0,
@@ -75,12 +72,6 @@ export function artifactSortConfigs(
       getArtifactEfficiency(art, effFilterSet).currentEfficiency,
     mefficiency: (art) =>
       getArtifactEfficiency(art, effFilterSet).maxEfficiency,
-    probability: (art) => {
-      if (!Object.keys(probabilityFilter).length) return 0
-      const prob = (art as any).probability
-      if (prob === undefined) return probability(art, probabilityFilter)
-      return prob
-    },
   }
 }
 export function artifactFilterConfigs(
@@ -151,5 +142,4 @@ export const artifactSortMap: Partial<
   artsetkey: ['artsetkey', 'rarity', 'level'],
   efficiency: ['efficiency'],
   mefficiency: ['mefficiency'],
-  probability: ['probability'],
 }

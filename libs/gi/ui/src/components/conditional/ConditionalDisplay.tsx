@@ -1,6 +1,7 @@
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
+import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
 import type {
   DocumentConditional,
   DocumentSection,
@@ -28,7 +29,9 @@ export function ConditionalDisplay({
   bgt = 'normal',
 }: ConditionalDisplayProps) {
   const { data } = useContext(DataContext)
+  const { teamId } = useContext(TeamCharacterContext)
   if (!data) return null
+  if (!teamId) return null
   let fields
   if ('path' in conditional) {
     const condVal = data.get(conditional.value).value

@@ -5,5 +5,18 @@
   "weaponName": "Weapon Name",
   "removeWeapon": "Are you sure you want to remove {{value}}?",
   "addWeapon": "Add New Weapon",
-  "cantDeleteLock": "Cannot delete weapon because it is locked"
+  "cantDeleteLock": "Cannot delete weapon because it is locked",
+  "button": {
+    "deleteWeapons": "Delete Weapons",
+    "lockWeapons": "Lock Weapons",
+    "unlockWeapons": "Unlock Weapons"
+  },
+  "buttonHint": "Note: the red buttons above only apply to <1>filtered weapons<1>",
+  "equippedWeapon": "All Equipped Weapons",
+  "weaponInInv": "All Unequipped Weapons",
+  "locationsTooltip": "Disable \"All Equipped Weapon\" to filter by specific characters",
+  "subheadings": {
+    "general": "General",
+    "inventory": "Inventory"
+  }
 }

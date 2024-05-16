@@ -37,7 +37,7 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { teamFilterConfigs, teamSortConfigs, teamSortMap } from './TeamSort'
 
-const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 3 }
+const columns = { xs: 1, sm: 2, md: 2, lg: 3, xl: 3 }
 const numToShowMap = { xs: 6, sm: 12, md: 18, lg: 24, xl: 24 }
 
 // TODO: Translation
@@ -141,7 +141,7 @@ export default function PageTeams() {
   }
 
   return (
-    <Box my={1} display="flex" flexDirection="column" gap={1}>
+    <Box display="flex" flexDirection="column" gap={1}>
       <CardThemed>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Box display="flex" gap={1} alignItems="stretch">
@@ -239,7 +239,6 @@ export default function PageTeams() {
                   teamId={tid}
                   bgt="light"
                   onClick={(cid) => navigate(`${tid}${cid ? `/${cid}` : ''}`)}
-                  hoverCard
                 />
               </Suspense>
             </Grid>

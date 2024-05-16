@@ -102,16 +102,16 @@ export function Content({ onClose }: { onClose?: () => void }) {
                   setBoth={(data) => database.chars.set(characterKey, data)}
                 />
               </Box>
-              <Box sx={{ px: 2 }}>
-                <CharacterCardStats />
-              </Box>
+              <CharacterCardStats bgt="light" />
               <Typography sx={{ textAlign: 'center', pb: -1 }} variant="h6">
                 <CharacterConstellationName
                   characterKey={characterKey}
                   gender={gender}
                 />
               </Typography>
-              <CharacterCompactConstSelector />
+              <Box sx={{ px: 1 }}>
+                <CharacterCompactConstSelector />
+              </Box>
             </CardThemed>
           </Grid>
           <Grid

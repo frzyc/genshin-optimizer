@@ -1,5 +1,5 @@
 import type { DataManagerCallback } from '@genshin-optimizer/common/database'
-import { deepClone } from '@genshin-optimizer/common/util'
+import { deepClone, notEmpty } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   HitModeKey,
@@ -16,16 +16,21 @@ import {
   type AmpReactionKey,
   type CharacterKey,
   type InfusionAuraElementKey,
-  type MultiOptHitModeKey,
 } from '@genshin-optimizer/gi/consts'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import type { BuildTc, ICachedArtifact, ICachedWeapon } from '../../Interfaces'
+import type {
+  BuildTc,
+  CustomMultiTarget,
+  ICachedArtifact,
+  ICachedWeapon,
+} from '../../Interfaces'
 import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { Build } from './BuildDataManager'
 import { initCharTC, toBuildTc } from './BuildTcDataManager'
 import { validateCustomMultiTarget } from './CustomMultiTarget'
+import type { LoadoutExportSetting } from './TeamDataManager'
 import { defaultInitialWeaponKey, initialWeapon } from './WeaponDataManager'
 
 type CondKey = CharacterKey | ArtifactSetKey | WeaponKey
@@ -55,20 +60,6 @@ export interface TeamCharacter {
 
   buildTcIds: string[]
   optConfigId: string
-}
-
-export interface CustomTarget {
-  weight: number
-  path: string[]
-  hitMode: MultiOptHitModeKey
-  reaction?: AmpReactionKey | AdditiveReactionKey
-  infusionAura?: InfusionAuraElementKey
-  bonusStats: Partial<Record<InputPremodKey, number>>
-}
-export interface CustomMultiTarget {
-  name: string
-  description?: string
-  targets: CustomTarget[]
 }
 
 export class TeamCharacterDataManager extends DataManager<
@@ -300,16 +291,86 @@ export class TeamCharacterDataManager extends DataManager<
     return buildTcId
   }
 
-  export(teamCharId: string): object {
+  export(teamCharId: string, settings: LoadoutExportSetting): object {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return {}
-    const { buildIds, buildTcIds, optConfigId, ...rest } = teamChar
+    const { buildIds, buildTcIds, optConfigId, customMultiTargets, ...rest } =
+      teamChar
+    const { optimizationTarget } = this.database.optConfigs.get(optConfigId)!
+    const { weaponType } = getCharStat(teamChar.key)
+    const {
+      convertEquipped,
+      convertbuilds,
+      convertTcBuilds,
+      exportCustomMultiTarget,
+    } = settings
+
+    const equippedBuildToTCBuild = () => {
+      const char = this.database.chars.get(teamChar.key)
+      if (!char) return
+      const { equippedArtifacts, equippedWeapon } = char
+      const weapon = this.database.weapons.get(equippedWeapon)
+      const arts = Object.values(equippedArtifacts).map((id) =>
+        this.database.arts.get(id)
+      )
+      const buildTC = toBuildTc(
+        initCharTC(defaultInitialWeaponKey(weaponType)),
+        weapon,
+        arts
+      )
+      buildTC.name = 'Equipped(Converted)'
+      buildTC.description = 'Converted from Equipped'
+      return buildTC
+    }
+    const convertedBuilds = convertbuilds
+      .filter((id) => buildIds.includes(id))
+      .map((buildId) => {
+        const build = this.database.builds.get(buildId)
+        if (!build) return
+        const { name, description, weaponId, artifactIds } = build
+        const weapon = this.database.weapons.get(weaponId)
+        const arts = Object.values(artifactIds).map((id) =>
+          this.database.arts.get(id)
+        )
+        const buildTC = toBuildTc(
+          initCharTC(defaultInitialWeaponKey(weaponType)),
+          weapon,
+          arts
+        )
+        buildTC.name = name
+        buildTC.description = description
+        return buildTC
+      })
+    const convertedTcBuilds = convertTcBuilds
+      .filter((id) => buildTcIds.includes(id))
+      .map((buildTcId) => this.database.buildTcs.export(buildTcId))
+
+    let overrideOptTarget: string[] | undefined = undefined
+    if (optimizationTarget?.[0] === 'custom') {
+      const ind = parseInt(optimizationTarget[1])
+      if (!isNaN(ind)) {
+        const newInd = exportCustomMultiTarget.findIndex((i) => i === ind)
+        if (newInd !== -1) {
+          overrideOptTarget = structuredClone(optimizationTarget)
+          overrideOptTarget[1] = newInd.toString()
+        }
+      }
+    }
+
     return {
       ...rest,
-      buildTcs: buildTcIds.map((buildTcId) =>
-        this.database.buildTcs.export(buildTcId)
+      buildTcs: [
+        ...(convertEquipped ? [equippedBuildToTCBuild()] : []),
+        ...convertedBuilds,
+        ...convertedTcBuilds,
+      ].filter(notEmpty),
+      customMultiTargets: customMultiTargets.filter((_, i) =>
+        exportCustomMultiTarget.includes(i)
       ),
-      optConfig: this.database.optConfigs.export(optConfigId),
+      optConfig: this.database.optConfigs.export(
+        optConfigId,
+        overrideOptTarget
+      ),
     }
   }
   import(data: object): string {

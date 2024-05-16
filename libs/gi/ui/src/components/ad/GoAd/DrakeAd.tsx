@@ -11,7 +11,6 @@ export function DrakeAd({ children }: { children: ReactNode }) {
         justifyContent: 'center',
         cursor: 'pointer',
         position: 'relative',
-        backgroundColor: 'white !important',
         maxWidth: '100%',
         maxHeight: '100%',
         width: '100%',
@@ -32,7 +31,8 @@ export function DrakeAd({ children }: { children: ReactNode }) {
     </Box>
   )
 }
-export function canShowDrakeAd(height: number) {
+export function canShowDrakeAd(height: number, width: number) {
   if (height < 120) return false
+  if (width < 300) return false
   return true
 }

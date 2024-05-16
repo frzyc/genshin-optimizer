@@ -13,11 +13,11 @@ import frzyc from './teamIcons/frzyc.png'
 import lantua from './teamIcons/lantua.png'
 import polomo from './teamIcons/polomo.png'
 import qbe from './teamIcons/qbe.png'
-import reens from './teamIcons/reens.png'
 import sin from './teamIcons/sin.png'
 import stain from './teamIcons/stain.png'
 import toofless from './teamIcons/toofless.png'
 import van from './teamIcons/van.webp'
+import vlad from './teamIcons/vlad.jpg'
 import yae from './teamIcons/yae.png'
 
 import GroupsIcon from '@mui/icons-material/Groups'
@@ -87,10 +87,10 @@ const team = [
     url: '',
   },
   {
-    name: 'Reens',
-    img: reens,
+    name: 'Vlad',
+    img: vlad,
     title: (t) => t`teamCard.jobTitle.TC`,
-    subtitle: 'Keqing NERD',
+    subtitle: 'Spreadsheet Renegade',
     url: '',
   },
   {

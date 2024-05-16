@@ -1,4 +1,5 @@
 import {
+  clamp,
   deepClone,
   deepFreeze,
   objKeyMap,
@@ -82,6 +83,10 @@ export interface OptConfig {
   //generated opt builds
   builds: Array<GeneratedBuild>
   buildDate: number
+
+  // upOpt
+  upOptLevelLow: number
+  upOptLevelHigh: number
 }
 
 export class OptConfigDataManager extends DataManager<
@@ -117,6 +122,8 @@ export class OptConfigDataManager extends DataManager<
       builds,
       buildDate,
       useTeammateBuild,
+      upOptLevelLow,
+      upOptLevelHigh,
     } = obj as OptConfig
 
     if (typeof statFilters !== 'object') statFilters = {}
@@ -169,8 +176,21 @@ export class OptConfigDataManager extends DataManager<
       maxBuildsToShow = maxBuildsToShowDefault
     if (!plotBase || !Array.isArray(plotBase)) plotBase = undefined
     if (compareBuild === undefined) compareBuild = false
-    if (levelLow === undefined) levelLow = 0
-    if (levelHigh === undefined) levelHigh = 20
+
+    if (typeof levelLow !== 'number') levelLow = 0
+    if (typeof levelHigh !== 'number') levelHigh = 20
+    levelLow = clamp(levelLow, 0, 20)
+    levelHigh = clamp(levelHigh, 0, 20)
+    levelLow = clamp(levelLow, levelLow, levelHigh)
+    levelHigh = clamp(levelHigh, levelLow, levelHigh)
+
+    if (typeof upOptLevelLow !== 'number') upOptLevelLow = 0
+    if (typeof upOptLevelHigh !== 'number') upOptLevelHigh = 19
+    upOptLevelLow = clamp(upOptLevelLow, 0, 20)
+    upOptLevelHigh = clamp(upOptLevelHigh, 0, 20)
+    upOptLevelLow = clamp(upOptLevelLow, upOptLevelLow, upOptLevelHigh)
+    upOptLevelHigh = clamp(upOptLevelHigh, upOptLevelLow, upOptLevelHigh)
+
     if (!artSetExclusion) artSetExclusion = {}
     if (useExcludedArts === undefined) useExcludedArts = false
     if (!allowPartial) allowPartial = false
@@ -221,6 +241,8 @@ export class OptConfigDataManager extends DataManager<
       builds,
       buildDate,
       useTeammateBuild,
+      upOptLevelLow,
+      upOptLevelHigh,
     }
   }
   new(data: Partial<OptConfig> = {}) {
@@ -233,7 +255,7 @@ export class OptConfigDataManager extends DataManager<
     if (!optConfig) return ''
     return this.new(structuredClone(optConfig))
   }
-  export(optConfigId: string): object {
+  export(optConfigId: string, overrideOptTarget?: string[]): object {
     const optConfig = this.database.optConfigs.get(optConfigId)
     if (!optConfig) return {}
     const {
@@ -245,7 +267,11 @@ export class OptConfigDataManager extends DataManager<
       builds,
       ...rest
     } = optConfig
-    return rest
+    if (!overrideOptTarget) return rest
+    return {
+      ...rest,
+      optimizationTarget: overrideOptTarget,
+    }
   }
   import(data: object): string {
     const id = this.generateKey()
@@ -274,6 +300,8 @@ const initialBuildSettings: OptConfig = deepFreeze({
   levelLow: 0,
   levelHigh: 20,
   useTeammateBuild: false,
+  upOptLevelLow: 0,
+  upOptLevelHigh: 19,
 
   builds: [],
   buildDate: 0,

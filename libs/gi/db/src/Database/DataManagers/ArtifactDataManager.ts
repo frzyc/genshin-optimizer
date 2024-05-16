@@ -147,10 +147,6 @@ export class ArtifactDataManager extends DataManager<
         this.database.chars.setEquippedArtifact(art.location, art.slotKey, '')
     return art
   }
-  setProbability(id: string, probability?: number) {
-    const art = this.get(id)
-    if (art) this.setCached(id, { ...art, probability })
-  }
   override clear(): void {
     super.clear()
   }
@@ -338,7 +334,6 @@ export function cachedArtifact(
     efficiency: 0,
     accurateValue: substat.value,
   }))
-  // Carry over the probability, since its a cached value calculated outside of the artifact.
   const validated: ICachedArtifact = {
     id,
     setKey,
@@ -350,7 +345,6 @@ export function cachedArtifact(
     level,
     substats,
     mainStatVal,
-    probability: (flex as any).probability,
   }
 
   const allPossibleRolls: { index: number; substatRolls: number[][] }[] = []

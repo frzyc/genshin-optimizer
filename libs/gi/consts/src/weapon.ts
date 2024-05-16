@@ -1,3 +1,4 @@
+import type { AscensionKey } from './character'
 import type { RarityKey } from './common'
 
 export const allWeaponTypeKeys = [
@@ -232,6 +233,14 @@ export const weaponMaxLevel: Record<RarityKey, number> = {
   3: 90,
   4: 90,
   5: 90,
+} as const
+
+export const weaponMaxAscension: Record<RarityKey, AscensionKey> = {
+  1: 4,
+  2: 4,
+  3: 6,
+  4: 6,
+  5: 6,
 } as const
 
 export const allRefinementKeys = [1, 2, 3, 4, 5] as const
