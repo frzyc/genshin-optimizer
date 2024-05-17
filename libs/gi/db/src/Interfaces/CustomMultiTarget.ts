@@ -44,30 +44,59 @@ export type EnclosingOperation = (typeof EnclosingOperations)[number]
 export const isEnclosing = (op: unknown): op is EnclosingOperation =>
   EnclosingOperations.includes(op as EnclosingOperation)
 
-export type NonEnclosingOperation = Exclude<ExpressionOperation, EnclosingOperation>
+export type NonEnclosingOperation = Exclude<
+  ExpressionOperation,
+  EnclosingOperation
+>
 export const isNonEnclosing = (op: unknown): op is NonEnclosingOperation =>
   isExpressionOperation(op) && !isEnclosing(op)
-export const NonEnclosingOperations = ExpressionOperations.filter(isNonEnclosing)
+export const NonEnclosingOperations =
+  ExpressionOperations.filter(isNonEnclosing)
 
-export const OperationSpecs: Record<NonEnclosingOperation, {
-  symbol: string
-  precedence: number
-  arity?: { min: 2; max: typeof Infinity }
-  enclosing?: false
-}> & Record<EnclosingOperation, {
-  symbol: string
-  precedence: number
-  arity: { min: number; max: number }
-  enclosing: { left: string; right: string }
-}> = {
+export const OperationSpecs: Record<
+  NonEnclosingOperation,
+  {
+    symbol: string
+    precedence: number
+  }
+> &
+  Record<
+    EnclosingOperation,
+    {
+      symbol: string
+      precedence: number
+      arity: { min: number; max: number }
+      enclosing: { left: string; right: string }
+    }
+  > = {
   addition: { symbol: '+', precedence: 1 },
   subtraction: { symbol: '-', precedence: 1 },
   multiplication: { symbol: '*', precedence: 2 },
   division: { symbol: '/', precedence: 2 },
-  priority: { symbol: '', precedence: 3, arity: { min: 1, max: 1 }, enclosing: { left: '(', right: ')' } },
-  minimum: { symbol: 'min', precedence: 3, arity: { min: 1, max: Infinity }, enclosing: { left: '(', right: ')' } },
-  maximum: { symbol: 'max', precedence: 3, arity: { min: 1, max: Infinity }, enclosing: { left: '(', right: ')' } },
-  average: { symbol: 'avg', precedence: 3, arity: { min: 1, max: Infinity }, enclosing: { left: '(', right: ')' } },
+  priority: {
+    symbol: '',
+    precedence: 3,
+    arity: { min: 1, max: 1 },
+    enclosing: { left: '(', right: ')' },
+  },
+  minimum: {
+    symbol: 'min',
+    precedence: 3,
+    arity: { min: 1, max: Infinity },
+    enclosing: { left: '(', right: ')' },
+  },
+  maximum: {
+    symbol: 'max',
+    precedence: 3,
+    arity: { min: 1, max: Infinity },
+    enclosing: { left: '(', right: ')' },
+  },
+  average: {
+    symbol: 'avg',
+    precedence: 3,
+    arity: { min: 1, max: Infinity },
+    enclosing: { left: '(', right: ')' },
+  },
 } as const
 
 export const ExpressionUnitTypes = [
@@ -79,7 +108,9 @@ export const ExpressionUnitTypes = [
   'null',
 ] as const
 export type ExpressionUnitType = (typeof ExpressionUnitTypes)[number]
-export const isExpressionUnitType = (type: unknown): type is ExpressionUnitType => {
+export const isExpressionUnitType = (
+  type: unknown
+): type is ExpressionUnitType => {
   return ExpressionUnitTypes.includes(type as ExpressionUnitType)
 }
 
@@ -111,7 +142,7 @@ export interface OperationUnit extends BaseUnit {
   operation: NonEnclosingOperation
 }
 
-export interface FunctionUnit {
+export interface FunctionUnit extends BaseUnit {
   type: 'function'
   name: string
 }

@@ -274,3 +274,73 @@ export function validateCustomMultiTarget(
   }
   return { name, description, targets, expression }
 }
+
+export function targetListToExpression(
+  cmt: CustomMultiTarget
+): CustomMultiTarget {
+  const expression: ExpressionUnit[] = []
+  cmt.targets.forEach((t, i) => {
+    if (i > 0) {
+      expression.push(
+        initExpressionUnit({ type: 'operation', operation: 'addition' })
+      )
+    }
+    expression.push(initExpressionUnit({ type: 'constant', value: t.weight }))
+    expression.push(
+      initExpressionUnit({ type: 'operation', operation: 'multiplication' })
+    )
+    expression.push(initExpressionUnit({ type: 'target', target: t }))
+  })
+  if (!expression.length)
+    expression.push(initExpressionUnit({ type: 'null', kind: 'operand' }))
+  return {
+    ...cmt,
+    targets: [],
+    expression,
+  }
+}
+
+export function partsFinder(
+  expression: ExpressionUnit[],
+  index: number
+): number[] {
+  const unit = expression[index]
+  const parts: number[] = [index]
+  if (!unit || unit.type !== 'enclosing') return parts
+  const directions: ('left' | 'right')[] = []
+  if (['head', 'comma'].includes(unit.part)) {
+    directions.push('right')
+  }
+  if (['comma', 'tail'].includes(unit.part)) {
+    directions.push('left')
+  }
+  directions.forEach((direction) => {
+    const dl = direction === 'left'
+    let stack = 0
+    for (
+      let i = index + (dl ? -1 : 1);
+      i >= 0 && i < expression.length;
+      dl ? i-- : i++
+    ) {
+      const unit_ = expression[i]
+      if (unit_.type !== 'enclosing') continue
+      if (unit_.part === 'head') {
+        if (stack === 0 && dl) {
+          parts.push(i)
+          break
+        }
+        stack++
+      } else if (unit_.part === 'comma') {
+        stack === 0 && parts.push(i)
+      } else if (unit_.part === 'tail') {
+        if (stack === 0 && !dl) {
+          parts.push(i)
+          break
+        }
+        stack--
+      }
+    }
+  })
+  if (unit.part !== 'head') parts.sort((a, b) => a - b)
+  return parts
+}
