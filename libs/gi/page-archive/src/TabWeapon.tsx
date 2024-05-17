@@ -1,10 +1,14 @@
 import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
-import { handleMultiSelect } from '@genshin-optimizer/common/util'
+import { catTotal, handleMultiSelect } from '@genshin-optimizer/common/util'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allWeaponKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
+import type { WeaponKey, WeaponSubstatKey } from '@genshin-optimizer/gi/consts'
+import {
+  allWeaponKeys,
+  allWeaponSubstatKeys,
+  allWeaponTypeKeys,
+} from '@genshin-optimizer/gi/consts'
 import type {
   ArchiveWeaponOption,
   ICachedWeapon,
@@ -14,6 +18,7 @@ import { i18n } from '@genshin-optimizer/gi/i18n'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
+  SubstatMultiAutocomplete,
   WeaponName,
   getCalcDisplay,
   resolveInfo,
@@ -64,8 +69,13 @@ export default function TabWeapon() {
   )
   const weaponKeys = useMemo(() => {
     return allWeaponKeys.filter((wKey) => {
-      const { rarity, weaponType } = getWeaponStat(wKey)
+      const { rarity, subStat, weaponType } = getWeaponStat(wKey)
       if (!weapon.rarity.includes(rarity)) return false
+      if (
+        weapon.subStat.length &&
+        (!subStat || !weapon.subStat.includes(subStat.type as WeaponSubstatKey))
+      )
+        return false
       if (!weapon.weaponType.includes(weaponType)) return false
       const setKeyStr = i18n.t(`weaponNames_gen:${wKey}`)
       if (
@@ -82,6 +92,19 @@ export default function TabWeapon() {
   const weaponKeysToShow = useMemo(
     () => weaponKeys.slice(0, numShow),
     [weaponKeys, numShow]
+  )
+  const weaponTotals = useMemo(
+    () =>
+      catTotal(allWeaponSubstatKeys, (ct) =>
+        allWeaponKeys.forEach((wKey) => {
+          const { subStat } = getWeaponStat(wKey)
+          if (!subStat) return
+          const { type } = subStat as { type: WeaponSubstatKey }
+          ct[type].total++
+          if (weaponKeys.includes(wKey)) ct[type].current++
+        })
+      ),
+    [weaponKeys]
   )
   return (
     <Box>
@@ -116,6 +139,15 @@ export default function TabWeapon() {
             </ToggleButton>
           ))}
         </ToggleButtonGroup>
+        <SubstatMultiAutocomplete
+          fullWidth
+          substatKeys={weapon.subStat}
+          setSubstatKeys={(subStat) => {
+            weaponOptionDispatch({ subStat: subStat })
+          }}
+          totals={weaponTotals}
+          allSubstatKeys={[...allWeaponSubstatKeys]}
+        />
         <TextField
           fullWidth
           variant="outlined"
