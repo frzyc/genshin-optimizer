@@ -10,8 +10,8 @@ import {
   CharacterName,
   CharacterSelectionModal,
   EnemyExpandCard,
-  TeamInfoAlert,
   TeamDelModal,
+  TeamInfoAlert,
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'

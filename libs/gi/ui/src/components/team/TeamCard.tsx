@@ -1,3 +1,4 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   CardThemed,
@@ -19,9 +20,9 @@ import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'
 import PersonIcon from '@mui/icons-material/Person'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,
   Button,
@@ -39,8 +40,6 @@ import {
   CharacterCardEquipmentRow,
   CharacterCardEquipmentRowTC,
 } from '../character'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { useNavigate } from 'react-router-dom'
 import { TeamDelModal } from './TeamDelModal'
 
 // TODO: Translation
@@ -55,7 +54,6 @@ export function TeamCard({
   onClick: (cid?: CharacterKey) => void
 }) {
   const team = useTeam(teamId)!
-  const navigate = useNavigate()
   const { name, description, loadoutData } = team
   const database = useDatabase()
   const [showDel, onShowDel, onHideDel] = useBoolState()
@@ -85,7 +83,9 @@ export function TeamCard({
             <Typography sx={{ display: 'flex', gap: 1 }} variant="h6">
               <span>{name}</span>{' '}
               {description && (
-                <BootstrapTooltip title={<Typography>{description}</Typography>}>
+                <BootstrapTooltip
+                  title={<Typography>{description}</Typography>}
+                >
                   <InfoIcon />
                 </BootstrapTooltip>
               )}
@@ -95,15 +95,20 @@ export function TeamCard({
             teamId={teamId}
             show={showDel}
             onHide={onHideDel}
-            onDel={function (): void {} }
+            onDel={function (): void {}}
           />
           <Button
-                color="error"
-                sx={{ flexGrow: 1, margin: 'auto', marginRight: '1%', justifyContent: 'flex-end' }}
-                onClick={onShowDel}
-                startIcon={<DeleteForeverIcon />}
+            color="error"
+            sx={{
+              flexGrow: 1,
+              margin: 'auto',
+              marginRight: '1%',
+              justifyContent: 'flex-end',
+            }}
+            onClick={onShowDel}
+            startIcon={<DeleteForeverIcon />}
           />
-      </Box>
+        </Box>
         <Box sx={{ marginTop: 'auto' }}>
           {loadoutData.map((loadoutDatum, i) => {
             const teamCharId = loadoutDatum?.teamCharId
