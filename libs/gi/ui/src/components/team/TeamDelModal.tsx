@@ -28,7 +28,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useMemo, useState } from 'react'
-export default function TeamDelModal({
+export function TeamDelModal({
   teamId,
   show,
   onHide,

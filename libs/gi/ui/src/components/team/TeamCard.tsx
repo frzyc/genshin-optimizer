@@ -21,8 +21,10 @@ import { getLevelString } from '@genshin-optimizer/gi/util'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import InfoIcon from '@mui/icons-material/Info'
 import PersonIcon from '@mui/icons-material/Person'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,
+  Button,
   CardActionArea,
   Divider,
   Skeleton,
@@ -37,6 +39,9 @@ import {
   CharacterCardEquipmentRow,
   CharacterCardEquipmentRowTC,
 } from '../character'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useNavigate } from 'react-router-dom'
+import { TeamDelModal } from './TeamDelModal'
 
 // TODO: Translation
 
@@ -50,8 +55,10 @@ export function TeamCard({
   onClick: (cid?: CharacterKey) => void
 }) {
   const team = useTeam(teamId)!
+  const navigate = useNavigate()
   const { name, description, loadoutData } = team
   const database = useDatabase()
+  const [showDel, onShowDel, onHideDel] = useBoolState()
 
   return (
     <CardThemed
@@ -68,17 +75,35 @@ export function TeamCard({
           flexDirection: 'column',
         }}
       >
-        <CardActionArea onClick={() => onClick()} sx={{ p: 1 }}>
-          <Typography sx={{ display: 'flex', gap: 1 }} variant="h6">
-            <span>{name}</span>{' '}
-            {description && (
-              <BootstrapTooltip title={<Typography>{description}</Typography>}>
-                <InfoIcon />
-              </BootstrapTooltip>
-            )}
-          </Typography>
-        </CardActionArea>
-
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+          }}
+        >
+          <CardActionArea onClick={() => onClick()} sx={{ p: 1 }}>
+            <Typography sx={{ display: 'flex', gap: 1 }} variant="h6">
+              <span>{name}</span>{' '}
+              {description && (
+                <BootstrapTooltip title={<Typography>{description}</Typography>}>
+                  <InfoIcon />
+                </BootstrapTooltip>
+              )}
+            </Typography>
+          </CardActionArea>
+          <TeamDelModal
+            teamId={teamId}
+            show={showDel}
+            onHide={onHideDel}
+            onDel={function (): void {} }
+          />
+          <Button
+                color="error"
+                sx={{ flexGrow: 1, margin: 'auto', marginRight: '1%', justifyContent: 'flex-end' }}
+                onClick={onShowDel}
+                startIcon={<DeleteForeverIcon />}
+          />
+      </Box>
         <Box sx={{ marginTop: 'auto' }}>
           {loadoutData.map((loadoutDatum, i) => {
             const teamCharId = loadoutDatum?.teamCharId

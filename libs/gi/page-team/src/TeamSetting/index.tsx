@@ -11,6 +11,7 @@ import {
   CharacterSelectionModal,
   EnemyExpandCard,
   TeamInfoAlert,
+  TeamDelModal,
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
@@ -25,7 +26,6 @@ import BuildDropdown from '../BuildDropdown'
 import { LoadoutDropdown } from '../LoadoutDropdown'
 import { ResonanceDisplay } from './ResonanceDisplay'
 import { TeammateDisplay } from './TeamComponents'
-import TeamDelModal from './TeamDelModal'
 import TeamExportModal from './TeamExportModal'
 
 // TODO: Translation
