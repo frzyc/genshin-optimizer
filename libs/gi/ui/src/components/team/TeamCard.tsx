@@ -25,9 +25,9 @@ import InfoIcon from '@mui/icons-material/Info'
 import PersonIcon from '@mui/icons-material/Person'
 import {
   Box,
-  Button,
   CardActionArea,
   Divider,
+  IconButton,
   Skeleton,
   Typography,
 } from '@mui/material'
@@ -97,17 +97,9 @@ export function TeamCard({
             onHide={onHideDel}
             onDel={function (): void {}}
           />
-          <Button
-            color="error"
-            sx={{
-              flexGrow: 1,
-              margin: 'auto',
-              marginRight: '1%',
-              justifyContent: 'flex-end',
-            }}
-            onClick={onShowDel}
-            startIcon={<DeleteForeverIcon />}
-          />
+          <IconButton onClick={onShowDel} color="error">
+            <DeleteForeverIcon />
+          </IconButton>
         </Box>
         <Box sx={{ marginTop: 'auto' }}>
           {loadoutData.map((loadoutDatum, i) => {
