@@ -117,6 +117,12 @@ export default function ResinCounter() {
                 -20
               </Button>
               <Button
+                onClick={() => setResin(resin - 30)}
+                disabled={resin < 30}
+              >
+                -30
+              </Button>
+              <Button
                 onClick={() => setResin(resin - 40)}
                 disabled={resin < 40}
               >
