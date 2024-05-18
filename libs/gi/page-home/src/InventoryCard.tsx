@@ -14,23 +14,32 @@ import {
   FlowerIcon,
   SlotIcon,
 } from '@genshin-optimizer/gi/svgicons'
+import {
+  BuildIcon,
+  LoadoutIcon,
+  TeamCardCompact,
+  TeamIcon,
+} from '@genshin-optimizer/gi/ui'
 import { BusinessCenter, People } from '@mui/icons-material'
+
 import {
   CardActionArea,
   CardContent,
   CardHeader,
   Chip,
   Divider,
+  Grid,
   Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink, useNavigate } from 'react-router-dom'
 
 export default function InventoryCard() {
   const { t } = useTranslation(['page_home', 'ui'])
+  const navigate = useNavigate()
   const database = useDatabase()
   const { characterTally, characterTotal } = useMemo(() => {
     const chars = database.chars.keys
@@ -61,9 +70,21 @@ export default function InventoryCard() {
     })
     return { artifactTally: tally, artifactTotal: arts.length }
   }, [database])
+
+  const numTeams = database.teams.keys.length
+  const numLoadout = database.teamChars.keys.length
+  const numBuilds = database.builds.keys.length + database.buildTcs.keys.length
   const theme = useTheme()
   const smaller = !useMediaQuery(theme.breakpoints.up('md'))
 
+  const latestBuilds = database.teams.entries
+    .sort((a, b) => {
+      const [, ateam] = a
+      const [, bteam] = b
+      return bteam.lastEdit - ateam.lastEdit
+    })
+    .map(([teamId]) => teamId)
+    .slice(0, 6)
   return (
     <CardThemed>
       <CardHeader
@@ -182,6 +203,67 @@ export default function InventoryCard() {
               />
             ))}
           </CardActionArea>
+        </CardThemed>
+        <CardThemed bgt="light">
+          <CardActionArea
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              p: 2,
+              gap: 1,
+              flexWrap: 'wrap',
+            }}
+            component={RouterLink}
+            to="/teams"
+          >
+            <Chip
+              sx={{ flexGrow: 1, cursor: 'pointer' }}
+              color={numTeams ? 'success' : 'secondary'}
+              icon={<TeamIcon />}
+              label={
+                <strong>
+                  {t(`ui:tabs.teams`)} {numTeams}
+                </strong>
+              }
+            />
+            <Chip
+              sx={{ flexGrow: 1, cursor: 'pointer' }}
+              color={numLoadout ? 'success' : 'secondary'}
+              icon={<LoadoutIcon />}
+              label={
+                <strong>
+                  {t(`ui:tabs.loadouts`)} {numLoadout}
+                </strong>
+              }
+            />
+            <Chip
+              sx={{ flexGrow: 1, cursor: 'pointer' }}
+              color={numBuilds ? 'success' : 'secondary'}
+              icon={<BuildIcon />}
+              label={
+                <strong>
+                  {t(`ui:tabs.teams`)} {numBuilds}
+                </strong>
+              }
+            />
+          </CardActionArea>
+          <Grid
+            container
+            columns={{ xs: 1, sm: 2 }}
+            sx={{ px: 1, pb: 1 }}
+            spacing={1}
+          >
+            {latestBuilds.map((teamId) => (
+              <Grid item key={teamId} xs={1}>
+                <TeamCardCompact
+                  teamId={teamId}
+                  onClick={(ck) =>
+                    navigate(ck ? `/teams/${teamId}/${ck}` : `/teams/${teamId}`)
+                  }
+                />
+              </Grid>
+            ))}
+          </Grid>
         </CardThemed>
       </CardContent>
     </CardThemed>
