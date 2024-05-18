@@ -91,7 +91,7 @@ export function SubstatInput({
   return (
     <CardThemed bgt="light">
       <Box sx={{ display: 'flex' }}>
-        <ButtonGroup size='small' sx={{ width: '100%', display: 'flex' }}>
+        <ButtonGroup size="small" sx={{ width: '100%', display: 'flex' }}>
           <DropdownButton
             startIcon={key ? <StatIcon statKey={key} /> : undefined}
             title={
@@ -129,10 +129,15 @@ export function SubstatInput({
               ))}
           </DropdownButton>
           <Box
-            sx={{ flexBasis: 30, flexGrow: 1, padding: 0, div: {
-              width: '100%',
-              height: '100%',
-            }, }}
+            sx={{
+              flexBasis: 30,
+              flexGrow: 1,
+              padding: 0,
+              div: {
+                width: '100%',
+                height: '100%',
+              },
+            }}
           >
             <NumberInputLazy
               float={unit === '%'}
