@@ -1,3 +1,4 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   CardThemed,
@@ -19,12 +20,14 @@ import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'
 import PersonIcon from '@mui/icons-material/Person'
 import {
   Box,
   CardActionArea,
   Divider,
+  IconButton,
   Skeleton,
   Typography,
 } from '@mui/material'
@@ -37,6 +40,7 @@ import {
   CharacterCardEquipmentRow,
   CharacterCardEquipmentRowTC,
 } from '../character'
+import { TeamDelModal } from './TeamDelModal'
 
 // TODO: Translation
 
@@ -52,6 +56,7 @@ export function TeamCard({
   const team = useTeam(teamId)!
   const { name, description, loadoutData } = team
   const database = useDatabase()
+  const [showDel, onShowDel, onHideDel] = useBoolState()
 
   return (
     <CardThemed
@@ -68,17 +73,34 @@ export function TeamCard({
           flexDirection: 'column',
         }}
       >
-        <CardActionArea onClick={() => onClick()} sx={{ p: 1 }}>
-          <Typography sx={{ display: 'flex', gap: 1 }} variant="h6">
-            <span>{name}</span>{' '}
-            {description && (
-              <BootstrapTooltip title={<Typography>{description}</Typography>}>
-                <InfoIcon />
-              </BootstrapTooltip>
-            )}
-          </Typography>
-        </CardActionArea>
-
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+          }}
+        >
+          <CardActionArea onClick={() => onClick()} sx={{ p: 1 }}>
+            <Typography sx={{ display: 'flex', gap: 1 }} variant="h6">
+              <span>{name}</span>{' '}
+              {description && (
+                <BootstrapTooltip
+                  title={<Typography>{description}</Typography>}
+                >
+                  <InfoIcon />
+                </BootstrapTooltip>
+              )}
+            </Typography>
+          </CardActionArea>
+          <TeamDelModal
+            teamId={teamId}
+            show={showDel}
+            onHide={onHideDel}
+            onDel={function (): void {}}
+          />
+          <IconButton onClick={onShowDel} color="error">
+            <DeleteForeverIcon />
+          </IconButton>
+        </Box>
         <Box sx={{ marginTop: 'auto' }}>
           {loadoutData.map((loadoutDatum, i) => {
             const teamCharId = loadoutDatum?.teamCharId
