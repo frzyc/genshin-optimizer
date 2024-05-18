@@ -90,7 +90,7 @@ export function SubstatInput({
 
   return (
     <CardThemed bgt="light">
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', height: '5vh' }}>
         <ButtonGroup size="small" sx={{ width: '100%', display: 'flex' }}>
           <DropdownButton
             startIcon={key ? <StatIcon statKey={key} /> : undefined}
@@ -128,7 +128,7 @@ export function SubstatInput({
                 </MenuItem>
               ))}
           </DropdownButton>
-          <Box
+          <NumberInputLazy
             sx={{
               flexBasis: 30,
               flexGrow: 1,
@@ -138,21 +138,16 @@ export function SubstatInput({
                 height: '100%',
               },
             }}
-          >
-            <NumberInputLazy
-              float={unit === '%'}
-              placeholder={t`editor.substat.selectSub`}
-              value={key ? value : 0}
-              onChange={(value) =>
-                setSubstat(index, { key, value: value ?? 0 })
-              }
-              disabled={!key}
-              error={!!error}
-              inputProps={{
-                sx: { textAlign: 'right', height: '1vh' },
-              }}
-            />
-          </Box>
+            float={unit === '%'}
+            placeholder={t`editor.substat.selectSub`}
+            value={key ? value : 0}
+            onChange={(value) => setSubstat(index, { key, value: value ?? 0 })}
+            disabled={!key}
+            error={!!error}
+            inputProps={{
+              sx: { textAlign: 'right' },
+            }}
+          />
           {!!rollData.length && (
             <TextButton>{t`editor.substat.nextRolls`}</TextButton>
           )}
