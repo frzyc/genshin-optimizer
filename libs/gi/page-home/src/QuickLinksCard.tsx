@@ -116,7 +116,9 @@ export default function QuickLinksCard() {
             return (
               <Box sx={{ display: 'flex', gap: 2 }}>
                 {icon}
-                <Link href={url}>{title(t)}</Link>
+                <Link target="_blank" rel="noopener" href={url}>
+                  {title(t)}
+                </Link>
               </Box>
             )
           })}
@@ -130,7 +132,9 @@ export default function QuickLinksCard() {
             return (
               <Box sx={{ display: 'flex', gap: 2 }}>
                 {icon}
-                <Link href={url}>{title()}</Link>
+                <Link target="_blank" rel="noopener" href={url}>
+                  {title()}
+                </Link>
               </Box>
             )
           })}
@@ -144,7 +148,9 @@ export default function QuickLinksCard() {
             return (
               <Box sx={{ display: 'flex', gap: 2 }}>
                 {icon}
-                <Link href={url}>{title(t)}</Link>
+                <Link target="_blank" rel="noopener" href={url}>
+                  {title(t)}
+                </Link>
               </Box>
             )
           })}
