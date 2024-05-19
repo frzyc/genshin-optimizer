@@ -90,7 +90,7 @@ export function SubstatInput({
 
   return (
     <CardThemed bgt="light">
-      <Box sx={{ display: 'flex', height: '5vh' }}>
+      <Box sx={{ display: 'flex', height: '2.5em'}}>
         <ButtonGroup size="small" sx={{ width: '100%', display: 'flex' }}>
           <DropdownButton
             startIcon={key ? <StatIcon statKey={key} /> : undefined}
