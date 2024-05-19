@@ -5,14 +5,16 @@ import {
   allInfusionAuraElementKeys,
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
-
+import type {
+  CustomFunction,
+  CustomMultiTarget,
+  CustomTarget,
+  ExpressionUnit,
+} from '../../Interfaces/CustomMultiTarget'
 import {
-  EnclosingOperations,
-  NonEnclosingOperations,
-  type CustomMultiTarget,
-  type CustomTarget,
-  type EnclosingOperation,
-  type ExpressionUnit,
+  OperationSpecs,
+  isEnclosing,
+  isNonEnclosing,
 } from '../../Interfaces/CustomMultiTarget'
 import type { InputPremodKey } from '../../legacy/keys'
 import { allInputPremodKeys } from '../../legacy/keys'
@@ -154,17 +156,124 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
   }
 }
 
-export function validateCustomExpression(
-  ce: unknown
+function validateCustomFunction(
+  cf: unknown,
+  pcf: CustomFunction[]
+): CustomFunction | undefined {
+  // cf is the custom function to validate
+  // pcf is the previous custom functions
+  // name must be different from the previous custom functions names
+  // args names must be different from the previous custom functions names
+  // args names must be different from the name of the current custom function
+  // args names must be different
+
+  if (typeof cf !== 'object') return undefined
+  const takenNames = pcf.map((cf) => cf.name)
+  const { args, expression } = cf as CustomFunction
+  let { name, description } = cf as CustomFunction
+  if (typeof name !== 'string' || name === '') return undefined
+  if (name.length > MAX_NAME_LENGTH) name = name.slice(0, MAX_NAME_LENGTH)
+  if (takenNames.includes(name)) return undefined
+  takenNames.push(name)
+  if (!Array.isArray(args)) return undefined
+  for (let arg of args) {
+    if (typeof arg !== 'string' || arg === '') return undefined
+    if (arg.length > MAX_NAME_LENGTH) arg = arg.slice(0, MAX_NAME_LENGTH)
+    if (takenNames.includes(arg)) return undefined
+    takenNames.push(arg)
+  }
+  const expression_ = validateCustomExpression(expression, pcf, args)
+  if (!expression_) return undefined
+  if (typeof description !== 'string' || description === '')
+    description = undefined
+  else if (description.length > MAX_DESC_LENGTH)
+    description = description.slice(0, MAX_DESC_LENGTH)
+  return { name, args, expression: expression_, description }
+}
+
+function validateExpressionUnit(
+  eu: unknown,
+  args: string[]
+): ExpressionUnit | undefined {
+  // eu is the expression unit to validate
+  // args are the available arguments
+  if (typeof eu !== 'object') return undefined
+  const unit = eu as ExpressionUnit
+  const { type } = unit
+  let { description } = unit
+  if (typeof type !== 'string') return undefined
+  if (typeof description !== 'string') description = undefined
+  else if (description.length > MAX_DESC_LENGTH)
+    description = description.slice(0, MAX_DESC_LENGTH)
+  let result: ExpressionUnit
+
+  if (type === 'constant') {
+    const { value } = unit
+    if (typeof value !== 'number') return undefined
+    result = { type, value }
+  } else if (type === 'target') {
+    const { target } = unit
+    const target_ = validateCustomTarget(target)
+    if (!target_) return undefined
+    result = { type, target: target_ }
+  } else if (type === 'operation') {
+    const { operation } = unit
+    if (!isNonEnclosing(operation)) return undefined
+    result = { type, operation }
+  } else if (type === 'function') {
+    const { name } = unit
+    if (typeof name !== 'string') return undefined
+    if (!args.includes(name)) return undefined
+    result = { type, name }
+  } else if (type === 'enclosing') {
+    const { part } = unit
+    if (part === 'head') {
+      const { operation } = unit
+      if (!isEnclosing(operation)) return undefined
+      result = { type, part, operation }
+    } else if (part === 'comma' || part === 'tail') {
+      result = { type, part }
+    } else {
+      return ((_: never) => undefined)(part)
+    }
+  } else if (type === 'null') {
+    const { kind } = unit
+    if (kind === 'operand' || kind === 'operation') result = { type, kind }
+    else return ((_: never) => undefined)(kind)
+  } else {
+    return ((_: never) => undefined)(type)
+  }
+  return { ...result, description }
+}
+
+function validateCustomExpression(
+  ce: unknown,
+  cf: CustomFunction[] = [],
+  args: string[] = []
 ): ExpressionUnit[] | undefined {
+  // ce is custom expression to validate
+  // cf is custom functions that are available
+  // args are arguments that are available
+  // Function assumes that all custom functions and arguments are already validated
   if (!Array.isArray(ce)) return undefined
-  // Need to ignore any null and enclosing(comma) units
-  // Need to ignore any enclosing(tail) unit if stack is empty
-  // Need to add null(operand) unit between any two non-operand units, and nothing is also considered a non-operand unit
-  // Need to add null(operation) or current enclosing(comma) unit between any two operand units
-  // Need to add enclosing(tail) units if stack is not empty
-  const stack: EnclosingOperation[] = []
-  let lastUnit = initExpressionUnit({ type: 'null', kind: 'operation' })
+  if (ce.length === 0)
+    return [initExpressionUnit({ type: 'null', kind: 'operand' })]
+
+  // If a function has no arguments, then it is a variable
+  const functions: Record<string, { min: number; max: number }> = {}
+  const variables: string[] = [...args]
+  for (const cf_ of cf) {
+    if (cf_.args.length)
+      functions[cf_.name] = { min: cf_.args.length, max: cf_.args.length }
+    else variables.push(cf_.name)
+  }
+
+  const ce_ = ce
+    .map((eu) =>
+      validateExpressionUnit(eu, [...variables, ...Object.keys(functions)])
+    )
+    .filter((eu): eu is NonNullable<ExpressionUnit> => eu !== undefined)
+
   // EnclosingUnit can be treated as an operand only from the outside
   const isOperand = (
     unit: ExpressionUnit,
@@ -172,6 +281,13 @@ export function validateCustomExpression(
   ) => {
     if (['constant', 'target'].includes(unit.type)) return true
     if (unit.type === 'null') return unit.kind === 'operand'
+    if (unit.type === 'function') {
+      // If it is a variable, then it's operand from any direction
+      if (variables.includes(unit.name)) return true
+      // Otherwise it's a function, then it's like an enclosing head unit
+      if (['any', 'left'].includes(from)) return true
+      return false
+    }
     if (unit.type === 'enclosing') {
       if (unit.part === 'comma') return false
       if (from === 'any') return true
@@ -181,76 +297,174 @@ export function validateCustomExpression(
     }
     return false
   }
+
   const expression: ExpressionUnit[] = []
-  for (const unit of ce as ExpressionUnit[]) {
-    const { type } = unit
-    const stack_ = [...stack]
-    if (type === 'constant') {
-      const { value } = unit
-      if (typeof value !== 'number') return undefined
-    } else if (type === 'target') {
-      const { target } = unit
-      const target_ = validateCustomTarget(target)
-      if (!target_) return undefined
-    } else if (type === 'operation') {
-      const { operation } = unit
-      if (!NonEnclosingOperations.includes(operation)) return undefined
-    } else if (type === 'function') {
-      // Just ignore functions for now
-      // TODO: Implement function support
+  const stack: {
+    operation: string
+    arity: { min: number; max: number }
+    argsCount: number
+  }[] = []
+  let prevUnit = initExpressionUnit({ type: 'null', kind: 'operation' })
+
+  for (let unit of ce_ as ExpressionUnit[]) {
+    const currentEnclosing: (typeof stack)[number] | undefined =
+      stack[stack.length - 1]
+
+    // Condition one
+    // Ignore enclosing(tail) or enclosing(comma) units if stack is empty
+    if (
+      unit.type === 'enclosing' &&
+      ['tail', 'comma'].includes(unit.part) &&
+      !currentEnclosing
+    ) {
       continue
-    } else if (type === 'enclosing') {
-      const { part } = unit
-      if (part === 'head') {
-        if (!EnclosingOperations.includes(unit.operation)) return undefined
-        stack.push(unit.operation)
-      } else if (part === 'comma') {
-        // Condition one
-        continue
-      } else if (part === 'tail') {
-        // Condition two
-        if (!stack.pop()) continue
-      }
-    } else if (type === 'null') {
-      const { kind } = unit
-      if (!['operand', 'operation'].includes(kind)) return undefined
-      // Condition one
+    }
+    // Replace enclosing(comma) unit with null(operation) unit if current enclosing argsCount >= max
+    if (
+      unit.type === 'enclosing' &&
+      unit.part === 'comma' &&
+      currentEnclosing &&
+      currentEnclosing.argsCount >= currentEnclosing.arity.max
+    ) {
+      unit = initExpressionUnit({ ...unit, type: 'null', kind: 'operation' })
+    }
+
+    // Condition two
+    // Ignore any null units if they are adjacent to each other
+    if (unit.type === 'null' && prevUnit.type === 'null') {
+      expression.pop()
+      prevUnit =
+        expression[expression.length - 1] ??
+        initExpressionUnit({ type: 'null', kind: 'operation' })
       continue
-    } else {
-      return ((_: never) => undefined)(unit)
+    }
+    // Ignore null(operand) unit if the previous or next unit is an operand
+    if (
+      unit.type === 'null' &&
+      unit.kind === 'operand' &&
+      isOperand(prevUnit, 'right')
+    ) {
+      continue
+    } else if (
+      prevUnit.type === 'null' &&
+      prevUnit.kind === 'operand' &&
+      isOperand(unit, 'left')
+    ) {
+      expression.pop()
+      prevUnit =
+        expression[expression.length - 1] ??
+        initExpressionUnit({ type: 'null', kind: 'operation' })
+    }
+    // Ignore null(operation) unit if the previous or next unit is an operation
+    if (
+      unit.type === 'null' &&
+      unit.kind === 'operation' &&
+      !isOperand(prevUnit, 'right')
+    ) {
+      continue
+    } else if (
+      prevUnit.type === 'null' &&
+      prevUnit.kind === 'operation' &&
+      !isOperand(unit, 'left')
+    ) {
+      expression.pop()
+      prevUnit =
+        expression[expression.length - 1] ??
+        initExpressionUnit({ type: 'null', kind: 'operation' })
     }
 
     // Condition three
-    if (!isOperand(lastUnit, 'right') && !isOperand(unit, 'left')) {
+    // Add null(operand) unit between any two non-operand units, and nothing is also considered a non-operand unit
+    if (!isOperand(prevUnit, 'right') && !isOperand(unit, 'left')) {
       expression.push(initExpressionUnit({ type: 'null', kind: 'operand' }))
     }
+
     // Condition four
-    if (isOperand(lastUnit, 'right') && isOperand(unit, 'left')) {
-      if (stack_.length && stack_[stack_.length - 1] !== 'priority') {
-        expression.push(
-          initExpressionUnit({
-            type: 'enclosing',
-            part: 'comma',
-          })
-        )
-      } else {
+    // Add null(operation) or current enclosing(comma) unit between any two operand units
+    //   null(operand) unit is added if the stack is empty or the current enclosing argsCount >= max
+    if (isOperand(prevUnit, 'right') && isOperand(unit, 'left')) {
+      if (
+        !currentEnclosing ||
+        currentEnclosing.argsCount >= currentEnclosing.arity.max
+      ) {
         expression.push(initExpressionUnit({ type: 'null', kind: 'operation' }))
+      } else {
+        expression.push(
+          initExpressionUnit({ type: 'enclosing', part: 'comma' })
+        )
       }
+      if (currentEnclosing) currentEnclosing.argsCount++
+    }
+
+    // Stack management block
+    if (unit.type === 'function' && functions[unit.name]) {
+      // argsCount is 1 because in any case we will add one operand even if it is not there (Condition three)
+      stack.push({
+        operation: unit.name,
+        arity: functions[unit.name],
+        argsCount: 1,
+      })
+    } else if (unit.type === 'enclosing') {
+      if (unit.part === 'head') {
+        stack.push({
+          operation: unit.operation,
+          arity: OperationSpecs[unit.operation].arity,
+          argsCount: 1,
+        })
+      } else if (unit.part === 'comma') {
+        if (currentEnclosing) currentEnclosing.argsCount++
+      } else if (unit.part === 'tail') {
+        // Condition five
+        // At the end of the enclosing or expression
+        // Add enclosing(comma) + null(operand) if the stack is not empty and the current enclosing argsCount < min
+        while (
+          currentEnclosing &&
+          currentEnclosing.argsCount < currentEnclosing.arity.min
+        ) {
+          expression.push(
+            initExpressionUnit({ type: 'enclosing', part: 'comma' }),
+            initExpressionUnit({ type: 'null', kind: 'operand' })
+          )
+          currentEnclosing.argsCount++
+        }
+        stack.pop()
+      }
+    } else if (
+      unit.type === 'null' &&
+      unit.kind === 'operation' &&
+      currentEnclosing
+    ) {
+      currentEnclosing.argsCount++
     }
 
     expression.push(unit)
-    lastUnit = unit
+    prevUnit = unit
   }
 
   // Condition three
-  if (!isOperand(lastUnit, 'right')) {
+  // Add null(operand) unit if the last unit is not an operand
+  if (!isOperand(prevUnit, 'right')) {
     expression.push(initExpressionUnit({ type: 'null', kind: 'operand' }))
   }
 
-  // Condition five
-  for (const _ of stack) {
+  while (stack.length) {
+    const currentEnclosing = stack.pop()!
+    // Condition five
+    // At the end of the enclosing or expression
+    // Add enclosing(comma) + null(operand) if the stack is not empty and the current enclosing argsCount < min
+    while (currentEnclosing.argsCount < currentEnclosing.arity.min) {
+      expression.push(
+        initExpressionUnit({ type: 'enclosing', part: 'comma' }),
+        initExpressionUnit({ type: 'null', kind: 'operand' })
+      )
+      currentEnclosing.argsCount++
+    }
+    // Condition six
+    // At the end of the expression
+    // Add enclosing(tail) units if stack is not empty
     expression.push(initExpressionUnit({ type: 'enclosing', part: 'tail' }))
   }
+
   return expression
 }
 
@@ -258,7 +472,8 @@ export function validateCustomMultiTarget(
   cmt: unknown
 ): CustomMultiTarget | undefined {
   if (typeof cmt !== 'object') return undefined
-  let { name, description, targets, expression } = cmt as CustomMultiTarget
+  let { name, description, targets, functions, expression } =
+    cmt as CustomMultiTarget
   if (typeof name !== 'string') name = 'New Custom Target'
   else if (name.length > MAX_NAME_LENGTH) name = name.slice(0, MAX_NAME_LENGTH)
   if (typeof description !== 'string') description = undefined
@@ -268,11 +483,20 @@ export function validateCustomMultiTarget(
   targets = targets
     .map((t) => validateCustomTarget(t))
     .filter((t): t is NonNullable<CustomTarget> => t !== undefined)
+  if (functions !== undefined) {
+    if (!Array.isArray(functions)) functions = []
+    const functions_: CustomFunction[] = []
+    for (const f of functions) {
+      const f_ = validateCustomFunction(f, functions_)
+      if (f_) functions_.push(f_)
+    }
+    functions = functions_
+  }
   if (expression !== undefined) {
-    expression = validateCustomExpression(expression)
+    expression = validateCustomExpression(expression, functions)
     if (!expression) return undefined
   }
-  return { name, description, targets, expression }
+  return { name, description, targets, functions, expression }
 }
 
 export function targetListToExpression(

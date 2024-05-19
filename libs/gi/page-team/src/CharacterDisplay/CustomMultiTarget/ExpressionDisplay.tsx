@@ -3,10 +3,7 @@ import {
   ColorText,
   SolidToggleButtonGroup,
 } from '@genshin-optimizer/common/ui'
-import {
-  arrayMove,
-  objPathValue,
-} from '@genshin-optimizer/common/util'
+import { arrayMove, objPathValue } from '@genshin-optimizer/common/util'
 import type {
   CustomMultiTarget,
   EnclosingOperation,
@@ -18,14 +15,11 @@ import {
   partsFinder,
 } from '@genshin-optimizer/gi/db'
 import { DataContext, resolveInfo } from '@genshin-optimizer/gi/ui'
-import {
-  Box,
-  ToggleButton,
-} from '@mui/material'
+import { Box, ToggleButton } from '@mui/material'
 import type { Dispatch, SetStateAction } from 'react'
 import { useContext, useEffect, useState } from 'react'
-import EUnitConfig from './EUnitConfig'
 import EControlPanel from './EControlPanel'
+import EUnitConfig from './EUnitConfig'
 
 export default function ExpressionDisplay({
   expression,
@@ -124,6 +118,8 @@ export default function ExpressionDisplay({
       text = getTargetName(unit.target.path)
     } else if (type === 'operation') {
       text = OperationSpecs[unit.operation].symbol
+      // } else if (type === 'function') {
+      //   text = unit.name + '('
     } else if (type === 'enclosing') {
       if (unit.part === 'head') {
         text =
@@ -141,6 +137,8 @@ export default function ExpressionDisplay({
       }
     } else if (type === 'null') {
       text = <ColorText color="burning">null</ColorText>
+    } else {
+      text = ((_: never) => _)(type)
     }
     return (
       <ToggleButton

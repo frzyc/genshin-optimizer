@@ -17,7 +17,7 @@ export interface CustomTarget {
   description: string
 }
 
-export const ExpressionOperations = [
+const ExpressionOperations = [
   'addition',
   'subtraction',
   'multiplication',
@@ -34,7 +34,7 @@ export type ExpressionOperation = (typeof ExpressionOperations)[number]
 export const isExpressionOperation = (op: unknown): op is ExpressionOperation =>
   ExpressionOperations.includes(op as ExpressionOperation)
 
-export const EnclosingOperations = [
+const EnclosingOperations = [
   'priority',
   'minimum',
   'maximum',
@@ -50,15 +50,19 @@ export type NonEnclosingOperation = Exclude<
 >
 export const isNonEnclosing = (op: unknown): op is NonEnclosingOperation =>
   isExpressionOperation(op) && !isEnclosing(op)
-export const NonEnclosingOperations =
-  ExpressionOperations.filter(isNonEnclosing)
+
+const enclosingSpec = (
+  symbol: string,
+  {
+    precedence = 3,
+    arity = { min: 1, max: Infinity },
+    enclosing = { left: '(', right: ')' },
+  } = {}
+) => ({ symbol, precedence, arity, enclosing })
 
 export const OperationSpecs: Record<
   NonEnclosingOperation,
-  {
-    symbol: string
-    precedence: number
-  }
+  { symbol: string; precedence: number }
 > &
   Record<
     EnclosingOperation,
@@ -73,33 +77,13 @@ export const OperationSpecs: Record<
   subtraction: { symbol: '-', precedence: 1 },
   multiplication: { symbol: '*', precedence: 2 },
   division: { symbol: '/', precedence: 2 },
-  priority: {
-    symbol: '',
-    precedence: 3,
-    arity: { min: 1, max: 1 },
-    enclosing: { left: '(', right: ')' },
-  },
-  minimum: {
-    symbol: 'min',
-    precedence: 3,
-    arity: { min: 1, max: Infinity },
-    enclosing: { left: '(', right: ')' },
-  },
-  maximum: {
-    symbol: 'max',
-    precedence: 3,
-    arity: { min: 1, max: Infinity },
-    enclosing: { left: '(', right: ')' },
-  },
-  average: {
-    symbol: 'avg',
-    precedence: 3,
-    arity: { min: 1, max: Infinity },
-    enclosing: { left: '(', right: ')' },
-  },
+  priority: enclosingSpec('', { arity: { min: 1, max: 1 } }),
+  minimum: enclosingSpec('min'),
+  maximum: enclosingSpec('max'),
+  average: enclosingSpec('avg'),
 } as const
 
-export const ExpressionUnitTypes = [
+const ExpressionUnitTypes = [
   'constant',
   'target',
   'operation',

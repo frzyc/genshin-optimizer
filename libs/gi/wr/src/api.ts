@@ -13,6 +13,7 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import {
+  OperationSpecs,
   type CustomTarget,
   type EnclosingOperation,
   type ExpressionOperation,
@@ -240,7 +241,10 @@ export function dataObjForCharacterNew(
 
     customMultiTargets.forEach(({ name, targets, expression }, i) => {
       if (expression) {
-        const multiTargetNode = parseCustomExpression(expression, parseCustomTarget)
+        const multiTargetNode = parseCustomExpression(
+          expression,
+          parseCustomTarget
+        )
         sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
           name,
           variant: 'invalid',
@@ -306,18 +310,13 @@ export function mergeData(data: Data[]): Data {
   return data.length ? internal(data, []) : {}
 }
 
-const parseCustomExpression = (e: ExpressionUnit[], parseCustomTarget: (t: CustomTarget, useWeight: boolean) => NumNode): NumNode => {
+const parseCustomExpression = (
+  e: ExpressionUnit[],
+  parseCustomTarget: (t: CustomTarget, useWeight: boolean) => NumNode
+): NumNode => {
+  // Function assumes that the expression is already validated
+  // Operands and operators must alternate and the first and last element must be an operand
   const expression = [...e]
-  const operationPriority = {
-    addition: 1,
-    subtraction: 1,
-    multiplication: 2,
-    division: 2,
-    minimum: 3,
-    maximum: 3,
-    average: 3,
-    priority: 3,
-  } as const
   const handled = [] as ExpressionUnit[]
   const stack = [] as EnclosingOperation[]
   let parts = [[]] as ExpressionUnit[][]
@@ -372,8 +371,8 @@ const parseCustomExpression = (e: ExpressionUnit[], parseCustomTarget: (t: Custo
       // Operations with lower priority first, so they will go to a higher node and will be calculated last
       if (
         !currentOperation ||
-        operationPriority[unit.operation] <
-          operationPriority[currentOperation]
+        OperationSpecs[unit.operation].precedence <
+          OperationSpecs[currentOperation].precedence
       ) {
         currentOperation = unit.operation
         parts = [[...handled], []]
@@ -395,6 +394,7 @@ const parseCustomExpression = (e: ExpressionUnit[], parseCustomTarget: (t: Custo
         continue
       }
     }
+
     parts[parts.length - 1].push(unit)
   }
 
@@ -411,7 +411,9 @@ const parseCustomExpression = (e: ExpressionUnit[], parseCustomTarget: (t: Custo
     throw new Error(`Unexpected operand type ${operand.type}`)
   }
 
-  const parsedParts = parts.map((part) => parseCustomExpression(part, parseCustomTarget))
+  const parsedParts = parts.map((part) =>
+    parseCustomExpression(part, parseCustomTarget)
+  )
 
   if (currentOperation === 'addition') {
     return sum(...parsedParts)
@@ -425,10 +427,7 @@ const parseCustomExpression = (e: ExpressionUnit[], parseCustomTarget: (t: Custo
   }
   if (currentOperation === 'division') {
     // TODO: Implement division
-    return prod(
-      parsedParts[0],
-      ...parsedParts.slice(1).map((x) => prod(-1, x))
-    )
+    return prod(parsedParts[0], ...parsedParts.slice(1).map((x) => prod(-1, x)))
   }
   if (currentOperation === 'minimum') {
     return min(...parsedParts)
