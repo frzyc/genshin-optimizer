@@ -15,6 +15,8 @@ import {
 } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
 
+const RESIN_COUNTER_VALUES = [0, -1, -10, -20, -30, -40, -60, 1, 60, RESIN_MAX]
+
 export default function ResinCounter() {
   const database = useDatabase()
   const [{ resin, resinDate }, setState] = useState(() =>
@@ -101,41 +103,47 @@ export default function ResinCounter() {
           </Grid>
           <Grid item flexGrow={1}>
             <ButtonGroup fullWidth>
-              <Button onClick={() => setResin(0)} disabled={resin === 0}>
-                0
-              </Button>
-              <Button
-                onClick={() => setResin(resin - 1)}
-                disabled={resin === 0}
-              >
-                -1
-              </Button>
-              <Button
-                onClick={() => setResin(resin - 20)}
-                disabled={resin < 20}
-              >
-                -20
-              </Button>
-              <Button
-                onClick={() => setResin(resin - 40)}
-                disabled={resin < 40}
-              >
-                -40
-              </Button>
-              <Button
-                onClick={() => setResin(resin - 60)}
-                disabled={resin < 60}
-              >
-                -60
-              </Button>
-              <Button onClick={() => setResin(resin + 1)}>+1</Button>
-              <Button onClick={() => setResin(resin + 60)}>+60</Button>
-              <Button
-                onClick={() => setResin(RESIN_MAX)}
-                disabled={resin === RESIN_MAX}
-              >
-                MAX {RESIN_MAX}
-              </Button>
+              {RESIN_COUNTER_VALUES.map((rcv) => {
+                if (rcv === 0) {
+                  return (
+                    <Button
+                      onClick={() => setResin(rcv)}
+                      disabled={resin === 0}
+                    >
+                      {rcv}
+                    </Button>
+                  )
+                }
+                if (rcv === RESIN_MAX) {
+                  return (
+                    <Button
+                      onClick={() => setResin(RESIN_MAX)}
+                      disabled={resin >= RESIN_MAX}
+                    >
+                      MAX {rcv}
+                    </Button>
+                  )
+                }
+                if (rcv > 0) {
+                  return (
+                    <Button
+                      onClick={() => setResin(resin + rcv)}
+                      disabled={resin >= RESIN_MAX}
+                    >
+                      {rcv}
+                    </Button>
+                  )
+                }
+
+                return (
+                  <Button
+                    onClick={() => setResin(resin + rcv)}
+                    disabled={resin < Math.abs(rcv)}
+                  >
+                    {rcv}
+                  </Button>
+                )
+              })}
             </ButtonGroup>
             <Typography variant="subtitle1" sx={{ mt: 2 }}>
               {resin < RESIN_MAX ? (
