@@ -1,7 +1,6 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   CardThemed,
-  CustomNumberInput,
   DropdownButton,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
@@ -26,6 +25,7 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { BuildTcContext } from '../BuildTcContext'
+import { ArtifactMainLevelTextField } from "./ArtifactMainLevelTextField"
 
 export function ArtifactMainLevelSlot({
   slotKey,
@@ -124,14 +124,10 @@ export function ArtifactMainLevelSlot({
           </MenuItem>
         ))}
       </DropdownButton>
-      <CustomNumberInput
-        startAdornment="+"
+      <ArtifactMainLevelTextField
         value={level}
-        color={artifactLevelVariant(level)}
         onChange={(l) => l !== undefined && setSlot({ level: l })}
-        sx={{ borderRadius: 1, pl: 1, my: 0, height: '100%' }}
-        inputProps={{ sx: { pl: 0.5, width: '2em' }, max: 20, min: 0 }}
-        disabled={disabled}
+        color={artifactLevelVariant(level)}
       />
       <CardThemed sx={{ height: '100%', minWidth: '4em' }}>
         <Box p={1} textAlign="center">{`${artDisplayValue(
