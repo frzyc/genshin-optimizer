@@ -75,6 +75,14 @@ export default function ResinCounter() {
 
   const nextDeltaString = timeString(Math.abs(nextResinDateNum - Date.now()))
 
+  const handleResinChange = (val: string) => {
+    const MAX_ORIGINAL_RESIN = 2000
+    const newResin = parseInt(val)
+    if (newResin >= 0 && newResin <= MAX_ORIGINAL_RESIN) {
+      setResin(newResin)
+    }
+  }
+
   return (
     <CardThemed>
       <Grid container sx={{ px: 2, py: 1 }} spacing={2}>
@@ -93,10 +101,10 @@ export default function ResinCounter() {
               <ImgIcon src={imgAssets.resin.fragile} />
               <InputBase
                 type="number"
-                sx={{ width: '2em', fontSize: '4rem' }}
+                sx={{ width: '2.5em', fontSize: '4rem' }}
                 value={resin}
                 inputProps={{ min: 0, max: 999, sx: { textAlign: 'right' } }}
-                onChange={(e) => setResin(parseInt(e.target.value))}
+                onChange={(e) => handleResinChange(e.target.value)}
               />
               <span>/{RESIN_MAX}</span>
             </Typography>
