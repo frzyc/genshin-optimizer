@@ -111,49 +111,55 @@ export default function QuickLinksCard() {
           <Typography marginBottom={1} variant="h6">
             Genshin Optimizer
           </Typography>
-          {genshin_optimizer_links.map((link) => {
-            const { title, icon, url } = link
-            return (
-              <Box sx={{ display: 'flex', gap: 2 }}>
-                {icon}
-                <Link target="_blank" rel="noopener" href={url}>
-                  {title(t)}
-                </Link>
-              </Box>
-            )
-          })}
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+            {genshin_optimizer_links.map((link) => {
+              const { title, icon, url } = link
+              return (
+                <Box sx={{ display: 'flex', gap: 2 }}>
+                  {icon}
+                  <Link target="_blank" rel="noopener" href={url}>
+                    {title(t)}
+                  </Link>
+                </Box>
+              )
+            })}
+          </Box>
         </Box>
         <Box sx={{ border: 1, borderRadius: 4, padding: 2 }}>
           <Typography marginBottom={1} variant="h6">
             frzyc
           </Typography>
-          {frzyc_links.map((link) => {
-            const { title, icon, url } = link
-            return (
-              <Box sx={{ display: 'flex', gap: 2 }}>
-                {icon}
-                <Link target="_blank" rel="noopener" href={url}>
-                  {title()}
-                </Link>
-              </Box>
-            )
-          })}
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+            {frzyc_links.map((link) => {
+              const { title, icon, url } = link
+              return (
+                <Box sx={{ display: 'flex', gap: 2 }}>
+                  {icon}
+                  <Link target="_blank" rel="noopener" href={url}>
+                    {title()}
+                  </Link>
+                </Box>
+              )
+            })}
+          </Box>
         </Box>
         <Box sx={{ border: 1, borderRadius: 4, padding: 2 }}>
           <Typography marginBottom={1} variant="h6">
             Other links
           </Typography>
-          {other_links.map((link) => {
-            const { title, icon, url } = link
-            return (
-              <Box sx={{ display: 'flex', gap: 2 }}>
-                {icon}
-                <Link target="_blank" rel="noopener" href={url}>
-                  {title(t)}
-                </Link>
-              </Box>
-            )
-          })}
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+            {other_links.map((link) => {
+              const { title, icon, url } = link
+              return (
+                <Box sx={{ display: 'flex', gap: 2 }}>
+                  {icon}
+                  <Link target="_blank" rel="noopener" href={url}>
+                    {title(t)}
+                  </Link>
+                </Box>
+              )
+            })}
+          </Box>
         </Box>
       </CardContent>
     </CardThemed>
