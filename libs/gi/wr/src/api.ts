@@ -23,10 +23,9 @@ import type {
   ICachedCharacter,
   ICachedWeapon,
   Team,
-  TeamCharacter} from '@genshin-optimizer/gi/db';
-import {
-  OperationSpecs
+  TeamCharacter,
 } from '@genshin-optimizer/gi/db'
+import { OperationSpecs } from '@genshin-optimizer/gi/db'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import { input, tally } from './formula'
@@ -212,46 +211,54 @@ export function dataObjForCharacterNew(
   if (sheetData?.display) {
     sheetData.display['custom'] = {}
 
-    customMultiTargets.forEach(({ name, targets, expression, functions }, i) => {
-      if (expression) {
-        const multiTargetNode = parseCustomExpression(
-          expression,
-          (target, useWeight) =>
-            parseCustomTarget(target, sheetData, globalHitMode, useWeight),
-          functions ?? []
-        )
-        sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
-          name,
-          variant: 'invalid',
-        })
-      } else {
-        const targetNodes = targets.map((target) => parseCustomTarget(target, sheetData, globalHitMode))
+    customMultiTargets.forEach(
+      ({ name, targets, expression, functions }, i) => {
+        if (expression) {
+          const multiTargetNode = parseCustomExpression(
+            expression,
+            (target, useWeight) =>
+              parseCustomTarget(target, sheetData, globalHitMode, useWeight),
+            functions ?? []
+          )
+          sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
+            name,
+            variant: 'invalid',
+          })
+        } else {
+          const targetNodes = targets.map((target) =>
+            parseCustomTarget(target, sheetData, globalHitMode)
+          )
 
-        // Make the variant "invalid" because its not easy to determine variants in multitarget
-        const multiTargetNode = infoMut(sum(...targetNodes), {
-          name,
-          variant: 'invalid',
-        })
-        sheetData.display!['custom'][i] = multiTargetNode
+          // Make the variant "invalid" because its not easy to determine variants in multitarget
+          const multiTargetNode = infoMut(sum(...targetNodes), {
+            name,
+            variant: 'invalid',
+          })
+          sheetData.display!['custom'][i] = multiTargetNode
+        }
       }
-    })
+    )
   }
   return result
 }
 
-function parseCustomTarget(target: CustomTarget,
+function parseCustomTarget(
+  target: CustomTarget,
   sheetData: Data,
   globalHitMode: MultiOptHitModeKey,
-  useWeight = true): NumNode {
+  useWeight = true
+): NumNode {
   let { weight, path, hitMode, reaction, infusionAura, bonusStats } = target
-  const targetNode = objPathValue(sheetData.display, path) as NumNode |
-    undefined
+  const targetNode = objPathValue(sheetData.display, path) as
+    | NumNode
+    | undefined
   if (!targetNode) return constant(0)
   if (hitMode === 'global') hitMode = globalHitMode
 
   let result = infoMut(
     data(targetNode, {
-      premod: objMap(bonusStats, (v, k) => k.endsWith('_') ? percent(v / 100) : constant(v)
+      premod: objMap(bonusStats, (v, k) =>
+        k.endsWith('_') ? percent(v / 100) : constant(v)
       ),
       hit: {
         hitMode: constant(hitMode),
@@ -314,7 +321,8 @@ export function mergeData(data: Data[]): Data {
   return data.length ? internal(data, []) : {}
 }
 
-function parseCustomExpression(e: ExpressionUnit[],
+function parseCustomExpression(
+  e: ExpressionUnit[],
   parseCustomTarget: (t: CustomTarget, useWeight: boolean) => NumNode,
   functions_: CustomFunction[],
   args: Record<string, ExpressionUnit[]> = {}
@@ -374,9 +382,11 @@ function parseCustomExpression(e: ExpressionUnit[],
       parts[parts.length - 1].push(unit)
     } else if (unit.type === 'operation') {
       // Operations with lower priority first, so they will go to a higher node and will be calculated last
-      if (!currentOperation ||
+      if (
+        !currentOperation ||
         OperationSpecs[unit.operation].precedence <
-        OperationSpecs[currentOperation].precedence) {
+          OperationSpecs[currentOperation].precedence
+      ) {
         currentOperation = unit.operation
         parts = [[...handled], []]
       } else if (unit.operation === currentOperation) {
@@ -422,19 +432,22 @@ function parseCustomExpression(e: ExpressionUnit[],
     if (operand.type === 'target')
       return parseCustomTarget(operand.target, false)
     if (operand.type === 'function') {
-      const expression_ = functions[operand.name].expression ?? args[operand.name]
+      const expression_ =
+        functions[operand.name].expression ?? args[operand.name]
       if (!expression_) throw new Error(`Missing argument ${operand.name}`)
       return parseCustomExpression(
         expression_,
         parseCustomTarget,
-        functions_.slice(0, functions_.indexOf(functions[operand.name])),
+        functions_.slice(0, functions_.indexOf(functions[operand.name]))
       )
     }
     if (operand.type === 'null') return constant(1)
     throw new Error(`Unexpected operand type ${operand.type}`)
   }
 
-  const parsedParts = parts.map((part) => parseCustomExpression(part, parseCustomTarget, functions_, args))
+  const parsedParts = parts.map((part) =>
+    parseCustomExpression(part, parseCustomTarget, functions_, args)
+  )
 
   if (currentOperation === 'addition') {
     return sum(...parsedParts)
