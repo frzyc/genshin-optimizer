@@ -2,6 +2,7 @@ import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   CardThemed,
   DropdownButton,
+  NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import type {
@@ -23,10 +24,9 @@ import {
 } from '@genshin-optimizer/gi/util'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, MenuItem } from '@mui/material'
+import InputAdornment from '@mui/material/InputAdornment'
 import { useCallback, useContext } from 'react'
 import { BuildTcContext } from '../BuildTcContext'
-import { NumberInputLazy } from '@genshin-optimizer/common/ui'
-import InputAdornment from '@mui/material/InputAdornment';
 
 export function ArtifactMainLevelSlot({
   slotKey,
@@ -129,14 +129,14 @@ export function ArtifactMainLevelSlot({
         value={level}
         onChange={(l) => l !== undefined && setSlot({ level: l })}
         color={artifactLevelVariant(level)}
-        size='small'
+        size="small"
         inputProps={{
           sx: { width: '2ch' },
           max: 20,
           min: 0,
         }}
         InputProps={{
-          startAdornment: <InputAdornment position='start'>+</InputAdornment>
+          startAdornment: <InputAdornment position="start">+</InputAdornment>,
         }}
         focused
       />
