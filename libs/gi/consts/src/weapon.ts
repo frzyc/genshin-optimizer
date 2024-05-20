@@ -245,3 +245,15 @@ export const weaponMaxAscension: Record<RarityKey, AscensionKey> = {
 
 export const allRefinementKeys = [1, 2, 3, 4, 5] as const
 export type RefinementKey = (typeof allRefinementKeys)[number]
+
+export const allWeaponSubstatKeys = [
+  'atk_',
+  'critDMG_',
+  'critRate_',
+  'def_',
+  'eleMas',
+  'enerRech_',
+  'hp_',
+  'physical_dmg_',
+] as const
+export type WeaponSubstatKey = (typeof allWeaponSubstatKeys)[number]

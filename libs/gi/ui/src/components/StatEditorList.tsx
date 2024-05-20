@@ -23,7 +23,7 @@ import {
 } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { artStatPercent } from './artifact'
+import { statPercent } from './util'
 
 export function StatEditorList({
   statKeys,
@@ -51,7 +51,7 @@ export function StatEditorList({
             label: (
               [...allMainStatKeys, ...allSubstatKeys] as string[]
             ).includes(statKey)
-              ? `${tk(statKey as MainStatKey | SubstatKey)}${artStatPercent(
+              ? `${tk(statKey as MainStatKey | SubstatKey)}${statPercent(
                   statKey as MainStatKey | SubstatKey
                 )}`
               : KeyMap.getStr(statKey) ?? 'ERROR',

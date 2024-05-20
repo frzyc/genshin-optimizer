@@ -31,6 +31,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelectorModal'
 import CustomTargetDisplay from './CustomTargetDisplay'
+import JsonDescWarning from './JsonDescWarning'
 import MTargetEditor from './MTargetEditor'
 export default function CustomMultiTargetCard({
   customMultiTarget: targetProp,
@@ -53,6 +54,7 @@ export default function CustomMultiTargetCard({
 
   const { name, description } = target
   const [show, onShow, onHide] = useBoolState()
+  const [descIsJson, setDescIsJson] = useState(false)
 
   const onDup = () => {
     onDupProp()
@@ -199,16 +201,29 @@ export default function CustomMultiTargetCard({
                 }))
               }
             />
+            {description && descIsJson && <JsonDescWarning />}
             <TextFieldLazy
               fullWidth
               label="Custom Multi-target Description"
               value={description}
-              onChange={(description) =>
+              onChange={(description) => {
+                setDescIsJson(
+                  description
+                    ? (() => {
+                        try {
+                          JSON.parse(description)
+                          return true
+                        } catch (e) {
+                          return false
+                        }
+                      })()
+                    : false
+                )
                 setTarget((target) => ({
                   ...target,
                   description,
                 }))
-              }
+              }}
               multiline
               minRows={2}
             />

@@ -7,12 +7,6 @@ import {
 import { notEmpty, toggleArr } from '@genshin-optimizer/common/util'
 import type { Team } from '@genshin-optimizer/gi/db'
 import { useDatabase, useTeam, useTeamChar } from '@genshin-optimizer/gi/db-ui'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui'
-import {
-  DataContext,
-  LoadoutHeaderContent,
-  useCharData,
-} from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'
@@ -28,7 +22,11 @@ import {
   Typography,
 } from '@mui/material'
 import { useMemo, useState } from 'react'
-export default function TeamDelModal({
+import type { dataContextObj } from '../../context/DataContext'
+import { DataContext } from '../../context/DataContext'
+import { useCharData } from '../../hooks/useCharData'
+import { LoadoutHeaderContent } from '../character/editor/LoadoutHeaderContent'
+export function TeamDelModal({
   teamId,
   show,
   onHide,

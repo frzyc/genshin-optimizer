@@ -1,8 +1,4 @@
-import {
-  CustomNumberInput,
-  CustomNumberInputButtonGroupWrapper,
-  DropdownButton,
-} from '@genshin-optimizer/common/ui'
+import { DropdownButton, NumberInputLazy } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import type { AscensionKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -15,7 +11,7 @@ import {
   milestoneLevels,
   milestoneLevelsLow,
 } from '@genshin-optimizer/gi/util'
-import { Button, ButtonGroup, MenuItem } from '@mui/material'
+import { Box, Button, InputAdornment, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -53,33 +49,42 @@ export function LevelSelect({
     else setBoth({ ascension: lowerAscension })
   }, [setBoth, ascensionMaxLevels, ascension, level])
   return (
-    <ButtonGroup sx={{ bgcolor: (t) => t.palette.contentNormal.main }}>
-      <CustomNumberInputButtonGroupWrapper>
-        <CustomNumberInput
-          onChange={setLevel}
-          value={level}
-          startAdornment="Lv. "
-          disabled={disabled}
-          inputProps={{
-            min: 1,
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', rowGap: '4px' }}>
+      <NumberInputLazy
+        variant="filled"
+        value={level}
+        disabled={disabled}
+        onChange={(e) => {
+          setLevel(e || 1)
+        }}
+        type="number"
+        InputProps={{
+          inputProps: {
+            min: 0,
             max: 90,
-            sx: { textAlign: 'center', width: '3em' },
-          }}
-          sx={{ height: '100%', pl: 2 }}
-        />
-      </CustomNumberInputButtonGroupWrapper>
-      <Button
-        sx={{ pl: 1, whiteSpace: 'nowrap' }}
-        disabled={
-          !(useLow ? ambiguousLevelLow : ambiguousLevel)(level) || disabled
-        }
-        onClick={setAscension}
-      >
-        <strong>/ {ascensionMaxLevel[ascension]}</strong>
-      </Button>
+            sx: { width: '4em' },
+          },
+          endAdornment: (
+            <InputAdornment position="end" sx={{ width: '100%' }}>
+              <Button
+                sx={{ ml: 'auto' }}
+                disabled={
+                  !(useLow ? ambiguousLevelLow : ambiguousLevel)(level) ||
+                  disabled
+                }
+                onClick={setAscension}
+              >
+                <strong>/ {ascensionMaxLevel[ascension]}</strong>
+              </Button>
+            </InputAdornment>
+          ),
+        }}
+        sx={{ height: '100%', mr: '4px', flexGrow: 1 }}
+        label="Level"
+      />
       <DropdownButton
         title={t('selectlevel')}
-        sx={{ flexGrow: 1 }}
+        sx={{ borderRadius: '4px', width: '100px', flexGrow: 1 }}
         disabled={disabled}
       >
         {[...(useLow ? milestoneLevelsLow : milestoneLevels)].map(
@@ -100,6 +105,6 @@ export function LevelSelect({
           }
         )}
       </DropdownButton>
-    </ButtonGroup>
+    </Box>
   )
 }
