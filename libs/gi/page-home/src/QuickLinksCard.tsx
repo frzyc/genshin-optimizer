@@ -17,6 +17,7 @@ import {
 } from '@mui/icons-material'
 import {
   Box,
+  CardActionArea,
   CardContent,
   CardHeader,
   Divider,
@@ -112,16 +113,31 @@ export default function QuickLinksCard() {
             <Typography marginBottom={1} variant="h6">
               Genshin Optimizer
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                gap: 0.5,
+              }}
+            >
               {genshin_optimizer_links.map((link) => {
                 const { title, icon, url } = link
                 return (
-                  <Box sx={{ display: 'flex', gap: 2 }}>
+                  <CardActionArea
+                    component={Link}
+                    href={url}
+                    target="_blank"
+                    rel="noopener"
+                    sx={{
+                      display: 'flex',
+                      gap: 1,
+                      justifyContent: 'flex-start',
+                    }}
+                  >
                     {icon}
-                    <Link target="_blank" rel="noopener" href={url}>
-                      {title(t)}
-                    </Link>
-                  </Box>
+                    {title(t)}
+                  </CardActionArea>
                 )
               })}
             </Box>
@@ -136,12 +152,20 @@ export default function QuickLinksCard() {
               {frzyc_links.map((link) => {
                 const { title, icon, url } = link
                 return (
-                  <Box sx={{ display: 'flex', gap: 2 }}>
+                  <CardActionArea
+                    component={Link}
+                    href={url}
+                    target="_blank"
+                    rel="noopener"
+                    sx={{
+                      display: 'flex',
+                      gap: 1,
+                      justifyContent: 'flex-start',
+                    }}
+                  >
                     {icon}
-                    <Link target="_blank" rel="noopener" href={url}>
-                      {title()}
-                    </Link>
-                  </Box>
+                    {title()}
+                  </CardActionArea>
                 )
               })}
             </Box>
@@ -156,12 +180,20 @@ export default function QuickLinksCard() {
               {other_links.map((link) => {
                 const { title, icon, url } = link
                 return (
-                  <Box sx={{ display: 'flex', gap: 2 }}>
+                  <CardActionArea
+                    component={Link}
+                    href={url}
+                    target="_blank"
+                    rel="noopener"
+                    sx={{
+                      display: 'flex',
+                      gap: 1,
+                      justifyContent: 'flex-start',
+                    }}
+                  >
                     {icon}
-                    <Link target="_blank" rel="noopener" href={url}>
-                      {title(t)}
-                    </Link>
-                  </Box>
+                    {title(t)}
+                  </CardActionArea>
                 )
               })}
             </Box>
