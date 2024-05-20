@@ -1,5 +1,9 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  DropdownButton,
+  ModalWrapper,
+} from '@genshin-optimizer/common/ui'
 import { clamp, deepClone } from '@genshin-optimizer/common/util'
 import type {
   RelicRarityKey,
@@ -15,6 +19,7 @@ import { cachedRelic } from '@genshin-optimizer/sr/db'
 import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr/util'
 import AddIcon from '@mui/icons-material/Add'
+import CloseIcon from '@mui/icons-material/Close'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
 import {
@@ -25,13 +30,22 @@ import {
   CardContent,
   CardHeader,
   Grid,
+  IconButton,
   MenuItem,
   Select,
   Skeleton,
   TextField,
   Typography,
 } from '@mui/material'
-import { Suspense, useCallback, useEffect, useMemo, useReducer } from 'react'
+import {
+  MouseEvent,
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useReducer,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character'
 import { useDatabaseContext } from '../../Context'
@@ -53,9 +67,14 @@ const tempRelicSheet: IRelicSheet = {
 // TODO: relic sheets, errors, autocomplete, display text, i18n, ...
 export type RelicEditorProps = {
   relicIdToEdit?: string
+  cancelEdit: () => void
 }
-export function RelicEditor({ relicIdToEdit = 'new' }: RelicEditorProps) {
+export function RelicEditor({
+  relicIdToEdit = 'new',
+  cancelEdit,
+}: RelicEditorProps) {
   const { t } = useTranslation('relic')
+
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
   useEffect(
@@ -63,13 +82,17 @@ export function RelicEditor({ relicIdToEdit = 'new' }: RelicEditorProps) {
     [database, setDirtyDatabase]
   )
 
+  const [showEditor, setShowEditor] = useState(false)
+
   useEffect(() => {
     if (relicIdToEdit === 'new') {
+      setShowEditor(true)
       dispatchRelic({ type: 'reset' })
     }
     const dbRelic =
       relicIdToEdit && dirtyDatabase && database.relics.get(relicIdToEdit)
     if (dbRelic) {
+      setShowEditor(true)
       dispatchRelic({
         type: 'overwrite',
         relic: deepClone(dbRelic),
@@ -133,200 +156,223 @@ export function RelicEditor({ relicIdToEdit = 'new' }: RelicEditorProps) {
     },
     [relic, sheet, dispatchRelic]
   )
+
   const reset = useCallback(() => {
+    cancelEdit?.()
     dispatchRelic({ type: 'reset' })
-  }, [])
+  }, [cancelEdit, dispatchRelic])
+
   const setSubstat = useCallback(
     (index: number, substat: ISubstat) =>
       dispatchRelic({ type: 'substat', index, substat }),
     []
   )
   const isValid = !errors.length
-
-  useEffect(() => {
-    if (relicIdToEdit === 'new') {
-      dispatchRelic({ type: 'reset' })
-    }
-  }, [relicIdToEdit])
+  const onClose = useCallback(
+    (e: MouseEvent) => {
+      if (
+        !relicIdToEdit &&
+        relic &&
+        !window.confirm(t`editor.clearPrompt` as string)
+      ) {
+        e?.preventDefault()
+        return
+      }
+      setShowEditor(false)
+      reset()
+    },
+    [t, relicIdToEdit, relic, setShowEditor, reset]
+  )
 
   return (
     <Suspense fallback={false}>
-      <CardThemed bgt="dark">
-        <CardHeader title="Relic Editor" />
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
-            {/* left column */}
-            <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
-              {/* set */}
-              <Box sx={{ display: 'flex', gap: 1 }}>
-                <Select
-                  value={relic?.setKey || ''}
-                  sx={{ flexGrow: 1 }}
-                  onChange={(e) =>
-                    update({ setKey: e.target.value as RelicSetKey })
-                  }
-                >
-                  {allRelicSetKeys.map((r) => (
-                    <MenuItem key={r} value={r}>
-                      {r}
-                    </MenuItem>
-                  ))}
-                </Select>
-                <RelicRarityDropdown
-                  rarity={relic ? rarity : undefined}
-                  onRarityChange={(rarity) => update({ rarity })}
-                  filter={(r) => !!sheet?.rarity?.includes?.(r)}
-                  disabled={!sheet}
-                />
-              </Box>
-
-              {/* level */}
-              <Box component="div" display="flex">
-                <TextField
-                  label="Level"
-                  variant="filled"
-                  sx={{ flexShrink: 1, flexGrow: 1, mr: 1, my: 0 }}
-                  margin="dense"
-                  size="small"
-                  value={level}
-                  disabled={!sheet}
-                  onChange={(e) => {
-                    const value = parseInt(e.target.value) || 0
-                    update({ level: value })
-                  }}
-                />
-                <ButtonGroup>
-                  <Button
-                    onClick={() => update({ level: level - 1 })}
-                    disabled={!sheet || level === 0}
+      <ModalWrapper open={showEditor} onClose={onClose}>
+        <CardThemed bgt="dark">
+          <CardHeader
+            title="Relic Editor"
+            action={
+              <IconButton onClick={onClose}>
+                <CloseIcon />
+              </IconButton>
+            }
+          />
+          <CardContent
+            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+          >
+            <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
+              {/* left column */}
+              <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
+                {/* set */}
+                <Box sx={{ display: 'flex', gap: 1 }}>
+                  <Select
+                    value={relic?.setKey || ''}
+                    sx={{ flexGrow: 1 }}
+                    onChange={(e) =>
+                      update({ setKey: e.target.value as RelicSetKey })
+                    }
                   >
-                    -
-                  </Button>
-                  {rarity
-                    ? [...Array(rarity + 1).keys()]
-                        .map((i) => 3 * i)
-                        .map((i) => (
-                          <Button
-                            key={i}
-                            onClick={() => update({ level: i })}
-                            disabled={!sheet || level === i}
-                          >
-                            {i}
-                          </Button>
-                        ))
-                    : null}
-                  <Button
-                    onClick={() => update({ level: level + 1 })}
-                    disabled={!sheet || level === rarity * 3}
-                  >
-                    +
-                  </Button>
-                </ButtonGroup>
-              </Box>
+                    {allRelicSetKeys.map((r) => (
+                      <MenuItem key={r} value={r}>
+                        {r}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                  <RelicRarityDropdown
+                    rarity={relic ? rarity : undefined}
+                    onRarityChange={(rarity) => update({ rarity })}
+                    filter={(r) => !!sheet?.rarity?.includes?.(r)}
+                    disabled={!sheet}
+                  />
+                </Box>
 
-              {/* slot */}
-              <Box component="div" display="flex">
-                <Select
-                  label="Slot"
-                  value={slotKey}
-                  onChange={(e) =>
-                    update({ slotKey: e.target.value as RelicSlotKey })
-                  }
-                  disabled={!sheet}
-                >
-                  {allRelicSlotKeys.map((s) => (
-                    <MenuItem key={s} value={s}>
-                      {s}
-                    </MenuItem>
-                  ))}
-                </Select>
-                <CardThemed bgt="light" sx={{ p: 1, ml: 1, flexGrow: 1 }}>
-                  <Suspense fallback={<Skeleton width="60%" />}>
-                    <Typography color="text.secondary">{slotKey}</Typography>
-                  </Suspense>
-                </CardThemed>
-              </Box>
-
-              {/* main stat */}
-              <Box component="div" display="flex" gap={1}>
-                <DropdownButton
-                  title={<b>{relic?.mainStatKey ?? 'Main Stat'}</b>}
-                  disabled={!sheet}
-                  color={relic ? 'success' : 'primary'}
-                >
-                  {relicSlotToMainStatKeys[slotKey].map((mainStatK) => (
-                    <MenuItem
-                      key={mainStatK}
-                      selected={relic?.mainStatKey === mainStatK}
-                      disabled={relic?.mainStatKey === mainStatK}
-                      onClick={() => update({ mainStatKey: mainStatK })}
+                {/* level */}
+                <Box component="div" display="flex">
+                  <TextField
+                    label="Level"
+                    variant="filled"
+                    sx={{ flexShrink: 1, flexGrow: 1, mr: 1, my: 0 }}
+                    margin="dense"
+                    size="small"
+                    value={level}
+                    disabled={!sheet}
+                    onChange={(e) => {
+                      const value = parseInt(e.target.value) || 0
+                      update({ level: value })
+                    }}
+                  />
+                  <ButtonGroup>
+                    <Button
+                      onClick={() => update({ level: level - 1 })}
+                      disabled={!sheet || level === 0}
                     >
-                      {mainStatK}
-                    </MenuItem>
-                  ))}
-                </DropdownButton>
-                <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>
-                  <Typography color="text.secondary">
-                    {relic
-                      ? getRelicMainStatDisplayVal(
-                          rarity,
-                          relic.mainStatKey,
-                          level
-                        )
-                      : t`mainStat`}
-                  </Typography>
-                </CardThemed>
-                <Button
-                  onClick={() => update({ lock: !relic?.lock })}
-                  color={relic?.lock ? 'success' : 'primary'}
-                  disabled={!relic}
-                >
-                  {relic?.lock ? <LockIcon /> : <LockOpenIcon />}
-                </Button>
-              </Box>
-              <LocationAutocomplete
-                locKey={cRelic?.location ?? ''}
-                setLocKey={(charKey) => update({ location: charKey })}
-              />
-            </Grid>
+                      -
+                    </Button>
+                    {rarity
+                      ? [...Array(rarity + 1).keys()]
+                          .map((i) => 3 * i)
+                          .map((i) => (
+                            <Button
+                              key={i}
+                              onClick={() => update({ level: i })}
+                              disabled={!sheet || level === i}
+                            >
+                              {i}
+                            </Button>
+                          ))
+                      : null}
+                    <Button
+                      onClick={() => update({ level: level + 1 })}
+                      disabled={!sheet || level === rarity * 3}
+                    >
+                      +
+                    </Button>
+                  </ButtonGroup>
+                </Box>
 
-            {/* right column */}
-            <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
-              {/* substat selections */}
-              {[0, 1, 2, 3].map((index) => (
-                <SubstatInput
-                  key={index}
-                  index={index}
-                  relic={cRelic}
-                  setSubstat={setSubstat}
+                {/* slot */}
+                <Box component="div" display="flex">
+                  <Select
+                    label="Slot"
+                    value={slotKey}
+                    onChange={(e) =>
+                      update({ slotKey: e.target.value as RelicSlotKey })
+                    }
+                    disabled={!sheet}
+                  >
+                    {allRelicSlotKeys.map((s) => (
+                      <MenuItem key={s} value={s}>
+                        {s}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                  <CardThemed bgt="light" sx={{ p: 1, ml: 1, flexGrow: 1 }}>
+                    <Suspense fallback={<Skeleton width="60%" />}>
+                      <Typography color="text.secondary">{slotKey}</Typography>
+                    </Suspense>
+                  </CardThemed>
+                </Box>
+
+                {/* main stat */}
+                <Box component="div" display="flex" gap={1}>
+                  <DropdownButton
+                    title={<b>{relic?.mainStatKey ?? 'Main Stat'}</b>}
+                    disabled={!sheet}
+                    color={relic ? 'success' : 'primary'}
+                  >
+                    {relicSlotToMainStatKeys[slotKey].map((mainStatK) => (
+                      <MenuItem
+                        key={mainStatK}
+                        selected={relic?.mainStatKey === mainStatK}
+                        disabled={relic?.mainStatKey === mainStatK}
+                        onClick={() => update({ mainStatKey: mainStatK })}
+                      >
+                        {mainStatK}
+                      </MenuItem>
+                    ))}
+                  </DropdownButton>
+                  <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>
+                    <Typography color="text.secondary">
+                      {relic
+                        ? getRelicMainStatDisplayVal(
+                            rarity,
+                            relic.mainStatKey,
+                            level
+                          )
+                        : t`mainStat`}
+                    </Typography>
+                  </CardThemed>
+                  <Button
+                    onClick={() => update({ lock: !relic?.lock })}
+                    color={relic?.lock ? 'success' : 'primary'}
+                    disabled={!relic}
+                  >
+                    {relic?.lock ? <LockIcon /> : <LockOpenIcon />}
+                  </Button>
+                </Box>
+                <LocationAutocomplete
+                  locKey={cRelic?.location ?? ''}
+                  setLocKey={(charKey) => update({ location: charKey })}
                 />
-              ))}
-            </Grid>
-          </Grid>
+              </Grid>
 
-          {/* Error alert */}
-          {!isValid && (
-            <Alert variant="filled" severity="error">
-              {errors.map((e, i) => (
-                <div key={i}>{e}</div>
-              ))}
-            </Alert>
-          )}
-          <Grid>
-            <Button
-              startIcon={<AddIcon />}
-              onClick={() => {
-                database.relics.new(relic!)
-                reset()
-              }}
-              disabled={!relic || !isValid}
-              color="primary"
-            >
-              {t`editor.btnAdd`}
-            </Button>
-          </Grid>
-        </CardContent>
-      </CardThemed>
+              {/* right column */}
+              <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
+                {/* substat selections */}
+                {[0, 1, 2, 3].map((index) => (
+                  <SubstatInput
+                    key={index}
+                    index={index}
+                    relic={cRelic}
+                    setSubstat={setSubstat}
+                  />
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* Error alert */}
+            {!isValid && (
+              <Alert variant="filled" severity="error">
+                {errors.map((e, i) => (
+                  <div key={i}>{e}</div>
+                ))}
+              </Alert>
+            )}
+            <Grid>
+              <Button
+                startIcon={<AddIcon />}
+                onClick={() => {
+                  database.relics.new(relic!)
+                  reset()
+                }}
+                disabled={!relic || !isValid}
+                color="primary"
+              >
+                {t`editor.btnAdd`}
+              </Button>
+            </Grid>
+          </CardContent>
+        </CardThemed>
+      </ModalWrapper>
     </Suspense>
   )
 }
