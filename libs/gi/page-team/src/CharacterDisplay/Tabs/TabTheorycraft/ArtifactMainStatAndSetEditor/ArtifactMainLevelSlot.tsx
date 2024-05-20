@@ -25,7 +25,8 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, MenuItem } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { BuildTcContext } from '../BuildTcContext'
-import { ArtifactMainLevelTextField } from "./ArtifactMainLevelTextField"
+import { NumberInputLazy } from '@genshin-optimizer/common/ui'
+import InputAdornment from '@mui/material/InputAdornment';
 
 export function ArtifactMainLevelSlot({
   slotKey,
@@ -124,10 +125,20 @@ export function ArtifactMainLevelSlot({
           </MenuItem>
         ))}
       </DropdownButton>
-      <ArtifactMainLevelTextField
+      <NumberInputLazy
         value={level}
         onChange={(l) => l !== undefined && setSlot({ level: l })}
         color={artifactLevelVariant(level)}
+        size='small'
+        inputProps={{
+          sx: { width: '2ch' },
+          max: 20,
+          min: 0,
+        }}
+        InputProps={{
+          startAdornment: <InputAdornment position='start'>+</InputAdornment>
+        }}
+        focused
       />
       <CardThemed sx={{ height: '100%', minWidth: '4em' }}>
         <Box p={1} textAlign="center">{`${artDisplayValue(
