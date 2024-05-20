@@ -149,9 +149,14 @@ export interface NullUnit extends BaseUnit {
   kind: 'operand' | 'operation'
 }
 
+export interface CustomFunctionArgument {
+  name: string
+  description?: string
+}
+
 export interface CustomFunction {
   name: string
-  args: string[]
+  args: CustomFunctionArgument[]
   expression: ExpressionUnit[]
   description?: string
 }

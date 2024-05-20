@@ -176,19 +176,30 @@ function validateCustomFunction(
   if (takenNames.includes(name)) return undefined
   takenNames.push(name)
   if (!Array.isArray(args)) return undefined
-  for (let arg of args) {
-    if (typeof arg !== 'string' || arg === '') return undefined
-    if (arg.length > MAX_NAME_LENGTH) arg = arg.slice(0, MAX_NAME_LENGTH)
-    if (takenNames.includes(arg)) return undefined
-    takenNames.push(arg)
+  const args_: CustomFunction['args'] = []
+  for (const arg of args) {
+    let { name, description } = arg
+    if (typeof name !== 'string' || name === '') continue
+    if (name.length > MAX_NAME_LENGTH) name = name.slice(0, MAX_NAME_LENGTH)
+    if (takenNames.includes(name)) continue
+    takenNames.push(name)
+    if (typeof description !== 'string' || description === '')
+      description = undefined
+    else if (description.length > MAX_DESC_LENGTH)
+      description = description.slice(0, MAX_DESC_LENGTH)
+    args_.push({ name, description })
   }
-  const expression_ = validateCustomExpression(expression, pcf, args)
+  const expression_ = validateCustomExpression(
+    expression,
+    pcf,
+    args_.map((a) => a.name)
+  )
   if (!expression_) return undefined
   if (typeof description !== 'string' || description === '')
     description = undefined
   else if (description.length > MAX_DESC_LENGTH)
     description = description.slice(0, MAX_DESC_LENGTH)
-  return { name, args, expression: expression_, description }
+  return { name, args: args_, expression: expression_, description }
 }
 
 function validateExpressionUnit(
@@ -253,7 +264,7 @@ function validateCustomExpression(
 ): ExpressionUnit[] | undefined {
   // ce is custom expression to validate
   // cf is custom functions that are available
-  // args are arguments that are available
+  // args are argument names that are available
   // Function assumes that all custom functions and arguments are already validated
   if (!Array.isArray(ce)) return undefined
   if (ce.length === 0)
@@ -484,6 +495,7 @@ export function validateCustomMultiTarget(
     .map((t) => validateCustomTarget(t))
     .filter((t): t is NonNullable<CustomTarget> => t !== undefined)
   if (functions !== undefined) {
+    // Functions on the left in the list are assumed to be accessible to functions on the right in the list, but not vice versa.
     if (!Array.isArray(functions)) functions = []
     const functions_: CustomFunction[] = []
     for (const f of functions) {

@@ -9,20 +9,23 @@ import {
 import type {
   ArtifactSetKey,
   MainStatKey,
+  MultiOptHitModeKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
+import type {
+  CustomFunction,
+  CustomTarget,
+  EnclosingOperation,
+  ExpressionOperation,
+  ExpressionUnit,
+  ICachedArtifact,
+  ICachedCharacter,
+  ICachedWeapon,
+  Team,
+  TeamCharacter} from '@genshin-optimizer/gi/db';
 import {
-  OperationSpecs,
-  type CustomTarget,
-  type EnclosingOperation,
-  type ExpressionOperation,
-  type ExpressionUnit,
-  type ICachedArtifact,
-  type ICachedCharacter,
-  type ICachedWeapon,
-  type Team,
-  type TeamCharacter,
+  OperationSpecs
 } from '@genshin-optimizer/gi/db'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
@@ -209,48 +212,20 @@ export function dataObjForCharacterNew(
   if (sheetData?.display) {
     sheetData.display['custom'] = {}
 
-    const parseCustomTarget = (
-      target: CustomTarget,
-      useWeight = true
-    ): NumNode => {
-      let { weight, path, hitMode, reaction, infusionAura, bonusStats } = target
-      const targetNode = objPathValue(sheetData.display, path) as
-        | NumNode
-        | undefined
-      if (!targetNode) return constant(0)
-      if (hitMode === 'global') hitMode = globalHitMode
-
-      let result = infoMut(
-        data(targetNode, {
-          premod: objMap(bonusStats, (v, k) =>
-            k.endsWith('_') ? percent(v / 100) : constant(v)
-          ),
-          hit: {
-            hitMode: constant(hitMode),
-            reaction: reaction ? constant(reaction) : none,
-          },
-          infusion: {
-            team: infusionAura ? constant(infusionAura) : none,
-          },
-        }),
-        { pivot: true }
-      )
-      if (useWeight) result = prod(constant(weight), result)
-      return result
-    }
-
-    customMultiTargets.forEach(({ name, targets, expression }, i) => {
+    customMultiTargets.forEach(({ name, targets, expression, functions }, i) => {
       if (expression) {
         const multiTargetNode = parseCustomExpression(
           expression,
-          parseCustomTarget
+          (target, useWeight) =>
+            parseCustomTarget(target, sheetData, globalHitMode, useWeight),
+          functions ?? []
         )
         sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
           name,
           variant: 'invalid',
         })
       } else {
-        const targetNodes = targets.map((target) => parseCustomTarget(target))
+        const targetNodes = targets.map((target) => parseCustomTarget(target, sheetData, globalHitMode))
 
         // Make the variant "invalid" because its not easy to determine variants in multitarget
         const multiTargetNode = infoMut(sum(...targetNodes), {
@@ -263,6 +238,35 @@ export function dataObjForCharacterNew(
   }
   return result
 }
+
+function parseCustomTarget(target: CustomTarget,
+  sheetData: Data,
+  globalHitMode: MultiOptHitModeKey,
+  useWeight = true): NumNode {
+  let { weight, path, hitMode, reaction, infusionAura, bonusStats } = target
+  const targetNode = objPathValue(sheetData.display, path) as NumNode |
+    undefined
+  if (!targetNode) return constant(0)
+  if (hitMode === 'global') hitMode = globalHitMode
+
+  let result = infoMut(
+    data(targetNode, {
+      premod: objMap(bonusStats, (v, k) => k.endsWith('_') ? percent(v / 100) : constant(v)
+      ),
+      hit: {
+        hitMode: constant(hitMode),
+        reaction: reaction ? constant(reaction) : none,
+      },
+      infusion: {
+        team: infusionAura ? constant(infusionAura) : none,
+      },
+    }),
+    { pivot: true }
+  )
+  if (useWeight) result = prod(constant(weight), result)
+  return result
+}
+
 export function dataObjForWeapon(weapon: ICachedWeapon): Data {
   return {
     weapon: {
@@ -310,110 +314,127 @@ export function mergeData(data: Data[]): Data {
   return data.length ? internal(data, []) : {}
 }
 
-const parseCustomExpression = (
-  e: ExpressionUnit[],
-  parseCustomTarget: (t: CustomTarget, useWeight: boolean) => NumNode
-): NumNode => {
+function parseCustomExpression(e: ExpressionUnit[],
+  parseCustomTarget: (t: CustomTarget, useWeight: boolean) => NumNode,
+  functions_: CustomFunction[],
+  args: Record<string, ExpressionUnit[]> = {}
+): NumNode {
+  // functions_ is a list of custom functions that can be used in the expression
+  // Functions on the left in the list are assumed to be accessible to functions on the right in the list, but not vice versa.
   // Function assumes that the expression is already validated
-  // Operands and operators must alternate and the first and last element must be an operand
   const expression = [...e]
+  const functions: Record<string, CustomFunction> = {}
+  functions_.forEach((f) => (functions[f.name] = f))
   const handled = [] as ExpressionUnit[]
-  const stack = [] as EnclosingOperation[]
+  const stack = [] as (EnclosingOperation | CustomFunction['name'])[]
   let parts = [[]] as ExpressionUnit[][]
   let currentOperation: ExpressionOperation | undefined
-  let lastUnit: ExpressionUnit | undefined
+  let customFunction: CustomFunction | undefined
   let enclosingMode = false
 
   while (expression.length) {
-    if (lastUnit) handled.push(lastUnit)
     const unit = expression.shift() as ExpressionUnit
-    lastUnit = unit
     if (stack.length) {
       parts[parts.length - 1].push(unit)
       if (unit.type === 'enclosing') {
         if (unit.part === 'head') stack.push(unit.operation)
         if (unit.part === 'tail') stack.pop()
       }
-      continue
-    }
-    if (unit.type === 'enclosing') {
+    } else if (unit.type === 'function' && functions[unit.name].args.length) {
+      if (!handled.length) {
+        // Special case for function with arguments as first unit
+        customFunction = functions[unit.name]
+        enclosingMode = true
+      } else {
+        stack.push(unit.name)
+        parts[parts.length - 1].push(unit)
+      }
+    } else if (unit.type === 'enclosing') {
       if (unit.part === 'head') {
         if (!handled.length) {
           // Special case for enclosing as first unit
           currentOperation = unit.operation
           enclosingMode = true
-          continue
+        } else {
+          stack.push(unit.operation)
+          parts[parts.length - 1].push(unit)
         }
-        stack.push(unit.operation)
-        parts[parts.length - 1].push(unit)
-        continue
-      }
-      if (unit.part === 'comma') {
+      } else if (unit.part === 'comma') {
         // We can only be here if the stack is empty and currentOperation is an enclosing operation
         parts.push([])
-        continue
-      }
-      if (unit.part === 'tail') {
+      } else if (unit.part === 'tail') {
         // We can only be here if current enclosing is closed
         if (expression.length) {
           enclosingMode = false
           currentOperation = undefined
           parts[parts.length - 1].push(unit)
         }
-        continue
       }
-    }
-    if (enclosingMode) {
+    } else if (enclosingMode) {
       parts[parts.length - 1].push(unit)
-      continue
-    }
-    if (unit.type === 'operation') {
+    } else if (unit.type === 'operation') {
       // Operations with lower priority first, so they will go to a higher node and will be calculated last
-      if (
-        !currentOperation ||
+      if (!currentOperation ||
         OperationSpecs[unit.operation].precedence <
-          OperationSpecs[currentOperation].precedence
-      ) {
+        OperationSpecs[currentOperation].precedence) {
         currentOperation = unit.operation
         parts = [[...handled], []]
-        continue
-      }
-      if (unit.operation === currentOperation) {
+      } else if (unit.operation === currentOperation) {
         parts.push([])
-        continue
       }
-    }
-    if (unit.type === 'null' && unit.kind === 'operation') {
+    } else if (unit.type === 'null' && unit.kind === 'operation') {
       if (!currentOperation) {
         currentOperation = 'addition'
         parts = [[...handled], []]
-        continue
-      }
-      if (currentOperation === 'addition') {
+      } else if (currentOperation === 'addition') {
         parts.push([])
-        continue
       }
+    } else {
+      // Only operands should remain here
+      // We process them below
+      parts[parts.length - 1].push(unit)
     }
-
-    parts[parts.length - 1].push(unit)
+    handled.push(unit)
   }
 
   if (stack.length) throw new Error(`Unclosed enclosing stack ${stack}`)
 
-  if (!currentOperation) {
+  if (customFunction !== undefined) {
+    const args_: Record<string, ExpressionUnit[]> = {}
+    for (const arg of customFunction.args) {
+      const argExpression = parts.shift()
+      if (!argExpression) throw new Error(`Missing argument ${arg.name}`)
+      args_[arg.name] = argExpression
+    }
+    return parseCustomExpression(
+      customFunction.expression,
+      parseCustomTarget,
+      functions_.slice(0, functions_.indexOf(customFunction)),
+      args_
+    )
+  }
+
+  if (currentOperation === undefined) {
     // It means we are at the very end of the recursion, we need to process operands
     if (!e.length) return constant(1)
     const operand = e[0]
     if (operand.type === 'constant') return constant(operand.value)
     if (operand.type === 'target')
       return parseCustomTarget(operand.target, false)
+    if (operand.type === 'function') {
+      const expression_ = functions[operand.name].expression ?? args[operand.name]
+      if (!expression_) throw new Error(`Missing argument ${operand.name}`)
+      return parseCustomExpression(
+        expression_,
+        parseCustomTarget,
+        functions_.slice(0, functions_.indexOf(functions[operand.name])),
+      )
+    }
     if (operand.type === 'null') return constant(1)
     throw new Error(`Unexpected operand type ${operand.type}`)
   }
 
-  const parsedParts = parts.map((part) =>
-    parseCustomExpression(part, parseCustomTarget)
-  )
+  const parsedParts = parts.map((part) => parseCustomExpression(part, parseCustomTarget, functions_, args))
 
   if (currentOperation === 'addition') {
     return sum(...parsedParts)

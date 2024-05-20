@@ -3,7 +3,7 @@ import { Button, InputBase, styled } from '@mui/material'
 import type { ChangeEvent, KeyboardEvent } from 'react'
 import { useCallback, useEffect, useState } from 'react'
 export type CustomNumberInputProps = Omit<InputProps, 'onChange'> & {
-  value?: number | undefined | null
+  value?: number | undefined
   onChange: (newValue: number | undefined) => void
   disabled?: boolean
   float?: boolean
