@@ -1,8 +1,7 @@
 import {
   CardThemed,
-  CustomNumberInput,
-  CustomNumberInputButtonGroupWrapper,
   DropdownButton,
+  NumberInputLazy,
   SqBadge,
   TextButton,
 } from '@genshin-optimizer/common/ui'
@@ -91,7 +90,7 @@ export function SubstatInput({
 
   return (
     <CardThemed bgt="light">
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', height: '2.5em' }}>
         <ButtonGroup size="small" sx={{ width: '100%', display: 'flex' }}>
           <DropdownButton
             startIcon={key ? <StatIcon statKey={key} /> : undefined}
@@ -129,26 +128,26 @@ export function SubstatInput({
                 </MenuItem>
               ))}
           </DropdownButton>
-          <CustomNumberInputButtonGroupWrapper
-            sx={{ flexBasis: 30, flexGrow: 1 }}
-          >
-            <CustomNumberInput
-              float={unit === '%'}
-              placeholder={t`editor.substat.selectSub`}
-              value={key ? value : undefined}
-              onChange={(value) =>
-                setSubstat(index, { key, value: value ?? 0 })
-              }
-              disabled={!key}
-              error={!!error}
-              sx={{
-                px: 1,
-              }}
-              inputProps={{
-                sx: { textAlign: 'right' },
-              }}
-            />
-          </CustomNumberInputButtonGroupWrapper>
+          <NumberInputLazy
+            sx={{
+              flexBasis: 30,
+              flexGrow: 1,
+              padding: 0,
+              div: {
+                width: '100%',
+                height: '100%',
+              },
+            }}
+            float={unit === '%'}
+            placeholder={t`editor.substat.selectSub`}
+            value={key ? value : 0}
+            onChange={(value) => setSubstat(index, { key, value: value ?? 0 })}
+            disabled={!key}
+            error={!!error}
+            inputProps={{
+              sx: { textAlign: 'right' },
+            }}
+          />
           {!!rollData.length && (
             <TextButton>{t`editor.substat.nextRolls`}</TextButton>
           )}
