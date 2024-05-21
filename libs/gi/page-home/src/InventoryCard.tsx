@@ -242,7 +242,7 @@ export default function InventoryCard() {
               icon={<BuildIcon />}
               label={
                 <strong>
-                  {t(`ui:tabs.teams`)} {numBuilds}
+                  {t(`ui:tabs.builds`)} {numBuilds}
                 </strong>
               }
             />
