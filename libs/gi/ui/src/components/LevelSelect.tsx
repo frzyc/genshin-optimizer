@@ -21,12 +21,14 @@ export function LevelSelect({
   setBoth,
   useLow = false,
   disabled = false,
+  warning = false,
 }: {
   level: number
   ascension: AscensionKey
   setBoth: (action: { level?: number; ascension?: AscensionKey }) => void
   useLow?: boolean
   disabled?: boolean
+  warning?: boolean
 }) {
   const { t } = useTranslation('ui')
   const ascensionMaxLevels = useLow ? ascensionMaxLevelLow : ascensionMaxLevel
@@ -73,12 +75,15 @@ export function LevelSelect({
                   disabled
                 }
                 onClick={setAscension}
+                color={warning ? 'warning' : undefined}
               >
                 <strong>/ {ascensionMaxLevel[ascension]}</strong>
               </Button>
             </InputAdornment>
           ),
         }}
+        color={warning ? 'warning' : undefined}
+        focused={warning ? true : undefined}
         sx={{ height: '100%', mr: '4px', flexGrow: 1 }}
         label="Level"
       />
@@ -86,6 +91,7 @@ export function LevelSelect({
         title={t('selectlevel')}
         sx={{ borderRadius: '4px', width: '100px', flexGrow: 1 }}
         disabled={disabled}
+        color={warning ? 'warning' : undefined}
       >
         {[...(useLow ? milestoneLevelsLow : milestoneLevels)].map(
           ([lv, as]) => {

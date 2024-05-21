@@ -1,19 +1,23 @@
-import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ConditionalWrapper,
+  DropdownButton,
+} from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
+  TeamCharacterContext,
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
-import type { ICharacter } from '@genshin-optimizer/gi/good'
+import { isTalentKey } from '@genshin-optimizer/gi/good'
 import {
   getCharSheet,
   type DocumentSection,
   type TalentSheetElementKey,
 } from '@genshin-optimizer/gi/sheets'
 import {
-  ConstellationDropdown,
   DataContext,
   DocumentDisplay,
   HitModeToggle,
@@ -28,6 +32,7 @@ import {
   CardActionArea,
   CardContent,
   Grid,
+  MenuItem,
   Typography,
   useMediaQuery,
   useTheme,
@@ -35,6 +40,7 @@ import {
 import type { ReactNode } from 'react'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { BuildTcContext } from '../../BuildTcContext'
 
 const talentSpacing = {
   xs: 12,
@@ -50,6 +56,7 @@ export default function CharacterTalentPane() {
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
   const { data } = useContext(DataContext)
+  const { buildTc, setBuildTc } = useContext(BuildTcContext)
   const database = useDatabase()
   const skillBurstList = [
     ['auto', t('talents.auto')],
@@ -77,13 +84,24 @@ export default function CharacterTalentPane() {
           talentKey={`constellation${i}` as TalentSheetElementKey}
           subtitle={t('constellationLvl', { level: i })}
           onClickTitle={() =>
-            database.chars.set(characterKey, {
-              constellation: i === constellation ? i - 1 : i,
-            })
+            buildTc?.character
+              ? setBuildTc((buildTc) => {
+                  if (buildTc.character) buildTc.character.constellation = i
+                })
+              : database.chars.set(characterKey, {
+                  constellation: i === constellation ? i - 1 : i,
+                })
           }
         />
       )),
-    [t, database, characterKey, constellation]
+    [
+      t,
+      buildTc?.character,
+      setBuildTc,
+      database.chars,
+      characterKey,
+      constellation,
+    ]
   )
 
   return (
@@ -195,7 +213,7 @@ function ReactionDisplay() {
                 <Grid item key={key}>
                   <CardThemed>
                     <CardContent sx={{ p: 1, '&:last-child': { pb: 1 } }}>
-                      <NodeFieldDisplay node={node} />
+                      <NodeFieldDisplay calcRes={node} />
                     </CardContent>
                   </CardThemed>
                 </Grid>
@@ -210,16 +228,19 @@ function ReactionDisplay() {
 type SkillDisplayCardProps = {
   talentKey: TalentSheetElementKey
   subtitle: string
-  onClickTitle?: (any) => any
+  onClickTitle?: () => void
 }
 function SkillDisplayCard({
   talentKey,
   subtitle,
   onClickTitle,
 }: SkillDisplayCardProps) {
+  const database = useDatabase()
   const {
-    character: { talent, key: characterKey },
-  } = useContext(CharacterContext)
+    teamChar: { key: characterKey },
+  } = useContext(TeamCharacterContext)
+  const { buildTc, setBuildTc } = useContext(BuildTcContext)
+
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
   const actionWrapperFunc = useCallback(
@@ -231,11 +252,26 @@ function SkillDisplayCard({
 
   let header: ReactNode = null
 
-  if (talentKey in talent) {
+  if (isTalentKey(talentKey)) {
     header = (
       <TalentDropdown
-        talentKey={talentKey as keyof ICharacter['talent']}
-        dropDownButtonProps={{ sx: { borderRadius: 0 } }}
+        talentKey={talentKey}
+        dropDownButtonProps={{
+          sx: {
+            borderRadius: 0,
+            color: buildTc?.character ? 'yellow' : undefined,
+          },
+        }}
+        setTalent={(talent) =>
+          buildTc?.character
+            ? setBuildTc((buildTc) => {
+                if (buildTc.character?.talent[talentKey])
+                  buildTc.character.talent[talentKey] = talent
+              })
+            : database.chars.set(characterKey, (char) => {
+                char.talent[talentKey] = talent
+              })
+        }
       />
     )
   }
@@ -284,5 +320,43 @@ function SkillDisplayCard({
         ) : null}
       </CardContent>
     </CardThemed>
+  )
+}
+
+export function ConstellationDropdown() {
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
+  const { buildTc, setBuildTc } = useContext(BuildTcContext)
+  const { t } = useTranslation('sheet_gen')
+  const database = useDatabase()
+  const constellation = data.get(input.constellation).value
+  return (
+    <DropdownButton
+      fullWidth
+      title={t('constellationLvl', { level: constellation })}
+      color="primary"
+      sx={{ color: buildTc?.character ? 'yellow' : undefined }}
+    >
+      {range(0, maxConstellationCount).map((i) => (
+        <MenuItem
+          key={i}
+          selected={constellation === i}
+          disabled={constellation === i}
+          onClick={() =>
+            buildTc?.character
+              ? setBuildTc((buildTc) => {
+                  if (buildTc.character) buildTc.character.constellation = i
+                })
+              : database.chars.set(characterKey, {
+                  constellation: i,
+                })
+          }
+        >
+          {t(`constellationLvl`, { level: i })}
+        </MenuItem>
+      ))}
+    </DropdownButton>
   )
 }

@@ -88,6 +88,11 @@ const baseMap = {
   base_def: 'Base DEF',
 
   level: 'Level',
+  ascension: 'Ascension',
+  constellation: 'Constellation',
+  auto: 'Normal Attack Lvl.',
+  skill: 'Elemental SKill Lvl.',
+  burst: 'Elemental Burst Lvl.',
 } as const
 
 const statMap = { ...baseMap } as Record<StatKey, string>

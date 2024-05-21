@@ -6,6 +6,7 @@ import {
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
+import type { ICharacter } from '@genshin-optimizer/gi/good'
 import {
   getBuildTcArtifactData,
   getTeamDataCalc,
@@ -68,18 +69,20 @@ export default function useCompareData(): undefined | UIData {
     const { compare, compareType, compareBuildId, compareBuildTcId } =
       loadoutDatum
     if (!compare) return undefined
-    const { overrideArt, overrideWeapon } = ((): {
+    const { overrideArt, overrideWeapon, overrideCharacter } = ((): {
       overrideArt: ICachedArtifact[] | Data
       overrideWeapon: ICachedWeapon
+      overrideCharacter: Omit<ICharacter, 'key'>
     } => {
+      const char = database.chars.get(characterKey)!
       switch (compareType) {
         case 'equipped': {
-          const char = database.chars.get(characterKey)!
           return {
             overrideArt: Object.values(char.equippedArtifacts)
               .map((id) => database.arts.get(id))
               .filter((a) => a) as ICachedArtifact[],
             overrideWeapon: database.weapons.get(char.equippedWeapon)!,
+            overrideCharacter: char,
           }
         }
         case 'real': {
@@ -89,6 +92,7 @@ export default function useCompareData(): undefined | UIData {
               .map((id) => database.arts.get(id))
               .filter((a) => a) as ICachedArtifact[],
             overrideWeapon: database.weapons.get(build.weaponId)!,
+            overrideCharacter: char,
           }
         }
         case 'tc': {
@@ -99,6 +103,7 @@ export default function useCompareData(): undefined | UIData {
               ...buildTc.weapon,
               location: charKeyToLocCharKey(characterKey),
             } as ICachedWeapon,
+            overrideCharacter: buildTc.character ?? char,
           }
         }
       }
@@ -110,7 +115,8 @@ export default function useCompareData(): undefined | UIData {
       teamCharId,
       0,
       overrideArt,
-      overrideWeapon
+      overrideWeapon,
+      overrideCharacter
     )
     if (!teamData) return undefined
     const charUIData = teamData[characterKey]!.target
