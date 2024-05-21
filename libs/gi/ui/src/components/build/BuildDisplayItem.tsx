@@ -600,7 +600,7 @@ function CompareArtifactModal({
           <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
             <CardThemed bgt="light" sx={{ p: 1 }}>
               <Typography variant="h6" textAlign="center">
-                New Artifact
+                {oldId ? 'New Artifact' : 'Already in Build'}
               </Typography>
             </CardThemed>
             <ArtifactCard
