@@ -341,6 +341,9 @@ export default function TabTheorycraft() {
                   disabled={solving}
                   optimizationTarget={optimizationTarget}
                   setTarget={(target) => setOptimizationTarget(target)}
+                  targetSelectorModalProps={{
+                    excludeSections: ['character', 'bounsStats', 'teamBuff'],
+                  }}
                 />
                 <CustomNumberInput
                   value={distributedSubstats}
