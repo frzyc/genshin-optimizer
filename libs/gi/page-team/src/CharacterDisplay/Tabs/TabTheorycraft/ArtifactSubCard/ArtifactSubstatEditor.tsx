@@ -157,9 +157,9 @@ export function ArtifactSubstatEditor({
           size="small"
           inputProps={{
             sx: {
-              width: '2ch',
+              width: '2em',
               textAlign: 'right',
-              pr: '1em',
+
              },
             min: 0,
             max: 99,  // 3 digits aren't visible
