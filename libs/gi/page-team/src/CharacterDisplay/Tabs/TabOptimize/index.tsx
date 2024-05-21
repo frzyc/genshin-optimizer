@@ -531,6 +531,9 @@ export default function TabBuild() {
         database.optConfigs.set(optConfigId, { optimizationTarget: target })
       }
       disabled={!!generatingBuilds}
+      targetSelectorModalProps={{
+        excludeSections: ['character', 'bounsStats', 'teamBuff'],
+      }}
     />
   )
 
