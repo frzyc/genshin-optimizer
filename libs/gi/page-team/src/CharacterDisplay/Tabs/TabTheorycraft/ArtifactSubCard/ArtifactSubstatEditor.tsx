@@ -124,7 +124,7 @@ export function ArtifactSubstatEditor({
           {KeyMap.getStr(statKey)}
           {getUnitStr(statKey)}
         </CardThemed>
-        <CustomNumberInput
+        {/* <CustomNumberInput
           color={value ? (invalid ? 'warning' : 'success') : 'primary'}
           float
           startAdornment={
@@ -148,7 +148,7 @@ export function ArtifactSubstatEditor({
           sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6.5em' }}
           inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
           disabled={disabled}
-        />
+        /> */}
         <NumberInputLazy
           color={value ? (invalid ? 'warning' : 'success') : 'primary'}
           float
@@ -156,9 +156,13 @@ export function ArtifactSubstatEditor({
           onChange={(v) => v !== undefined && setValue(v * substatValue)}
           size="small"
           inputProps={{
-            sx: { width: '2ch', pr: 0.5 },
+            sx: {
+              width: '2ch',
+              textAlign: 'right',
+              pr: '1em',
+             },
             min: 0,
-            max: 99,  // temp: put maximum possible number of rolls for single substat
+            max: 99,  // 3 digits aren't visible
           }}
           InputProps={{
             startAdornment: <InputAdornment position="start">
@@ -178,7 +182,7 @@ export function ArtifactSubstatEditor({
               </Box>
             </InputAdornment>,
           }}
-
+          focused
         />
         <CardThemed sx={{ textAlign: 'center', p: 0.5, minWidth: '6em' }}>
           <ColorText color={invalid ? 'warning' : undefined}>
@@ -264,7 +268,7 @@ export function ArtifactSubstatEditor({
           inputProps={{
             sx: { width: '2ch' },
             min: 0,
-            max: 99,  // temp: put maximum possible number of rolls for single substat
+            max: 99,  // 3 digits aren't visible
           }}
           InputProps={{
             startAdornment: <InputAdornment position="start">
