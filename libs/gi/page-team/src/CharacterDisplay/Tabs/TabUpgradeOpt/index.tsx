@@ -466,7 +466,7 @@ export default function TabUpopt() {
                 }
                 disabled={false}
                 targetSelectorModalProps={{
-                  excludeSections: ['character','bounsStats', 'teamBuff'],
+                  excludeSections: ['character', 'bounsStats', 'teamBuff'],
                 }}
               />
             </ButtonGroup>
