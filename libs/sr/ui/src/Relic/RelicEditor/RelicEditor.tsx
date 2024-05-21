@@ -38,6 +38,7 @@ import {
   Typography,
 } from '@mui/material'
 import {
+  MouseEvent,
   Suspense,
   useCallback,
   useEffect,
@@ -168,7 +169,7 @@ export function RelicEditor({
   )
   const isValid = !errors.length
   const onClose = useCallback(
-    (e) => {
+    (e: MouseEvent) => {
       if (
         !relicIdToEdit &&
         relic &&
