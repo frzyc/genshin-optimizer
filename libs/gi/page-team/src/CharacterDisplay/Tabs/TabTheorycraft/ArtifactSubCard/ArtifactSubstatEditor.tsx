@@ -14,6 +14,9 @@ import { Box, Slider, Stack, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BuildTcContext } from '../BuildTcContext'
+import { NumberInputLazy } from '@genshin-optimizer/common/ui'
+import InputAdornment from '@mui/material/InputAdornment'
+
 export function ArtifactSubstatEditor({
   statKey,
   disabled = false,
@@ -146,6 +149,37 @@ export function ArtifactSubstatEditor({
           inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
           disabled={disabled}
         />
+        <NumberInputLazy
+          color={value ? (invalid ? 'warning' : 'success') : 'primary'}
+          float
+          value={parseFloat(rolls.toFixed(2))}
+          onChange={(v) => v !== undefined && setValue(v * substatValue)}
+          size="small"
+          inputProps={{
+            sx: { width: '2ch', pr: 0.5 },
+            min: 0,
+            max: 99,  // temp: put maximum possible number of rolls for single substat
+          }}
+          InputProps={{
+            startAdornment: <InputAdornment position="start">
+              <Box
+                sx={{
+                  whiteSpace: 'nowrap',
+                  width: '3em',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <span>
+                  {artDisplayValue(substatValue, unit)}
+                  {unit}
+                </span>
+                <span>x</span>
+              </Box>
+            </InputAdornment>,
+          }}
+
+        />
         <CardThemed sx={{ textAlign: 'center', p: 0.5, minWidth: '6em' }}>
           <ColorText color={invalid ? 'warning' : undefined}>
             RV: <strong>{rv.toFixed()}%</strong>
@@ -198,7 +232,7 @@ export function ArtifactSubstatEditor({
           />
         </CardThemed>
 
-        <CustomNumberInput
+        {/* <CustomNumberInput
           value={maxSubstat}
           startAdornment={t`tabTheorycraft.substat.max`}
           onChange={(v) => v !== undefined && setMaxSubstat(v)}
@@ -213,7 +247,31 @@ export function ArtifactSubstatEditor({
           sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6em' }}
           inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
           disabled={disabled}
-        />
+        /> */}
+        <NumberInputLazy
+          value={maxSubstat}
+          onChange={(v) => v !== undefined && setMaxSubstat(v)}
+          size="small"
+          color={
+            // 0.0001 to nudge float comparasion
+            rolls - 0.0001 > maxSubstat
+              ? 'error'
+              : maxSubstat > maxRolls
+              ? 'warning'
+              : 'success'
+          }
+          focused
+          inputProps={{
+            sx: { width: '2ch' },
+            min: 0,
+            max: 99,  // temp: put maximum possible number of rolls for single substat
+          }}
+          InputProps={{
+            startAdornment: <InputAdornment position="start">
+              {t`tabTheorycraft.substat.max`}
+            </InputAdornment>,
+          }}
+          />
       </Box>
     </Stack>
   )
