@@ -172,6 +172,9 @@ function OptimizationTargetEditorItem({
         setTarget={(target) => setTarget(target, path, index)}
         defaultText={t('targetSelector.selectBuildTarget')}
         disabled={disabled}
+        targetSelectorModalProps={{
+          excludeSections: ['custom', 'bounsStats', 'character', 'teamBuff'],
+        }}
       />
       <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 150, flexGrow: 1 }}>
         <CustomNumberInput
