@@ -13,8 +13,13 @@ import {
   Tabs,
   Typography,
   useMediaQuery,
+  Dialog,
+  DialogTitle,
+  DialogContent,
   useTheme,
+  TextField,
 } from '@mui/material'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 export default function TeamCharacterSelector({
   teamId,
@@ -48,6 +53,16 @@ export default function TeamCharacterSelector({
   const selectedEle = elementArray[selectedIndex]
   const theme = useTheme()
   const isXs = useMediaQuery(theme.breakpoints.down('md'))
+  const [editMode, setEditMode] = useState(false);
+  const [teamName, setTeamName] = useState(team.name);
+  const [description, setDescription] = useState(team.description);
+  const handleClickAway = () => {
+    setEditMode(false);
+    database.teams.set(teamId, { name: teamName, description: description })
+  };
+  const handleClickOn = () => {
+    setEditMode(true);
+  };
   return (
     <Box
       sx={(theme) => {
@@ -102,10 +117,28 @@ export default function TeamCharacterSelector({
           ) : undefined
         }
       >
-        <CardContent sx={{ display: 'flex', justifyContent: 'center', pb: 0 }}>
-          <Typography variant="h5" display="flex">
-            {team.name}
-          </Typography>
+      <CardContent sx={{ display: 'flex', justifyContent: 'center', pb: 0 }}>
+        <Typography variant="h5" display="flex" onClick={handleClickOn}>
+          {teamName}
+        </Typography>
+        <Dialog open={editMode} onClose={handleClickAway} maxWidth='md' fullWidth>
+          <DialogTitle align="center">Edit Team Name</DialogTitle>
+            <DialogContent>
+            <Box display="flex" flexDirection="column" gap={2}>
+              <TextField
+                value={teamName}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => setTeamName(event.target.value)}
+                autoFocus
+              />
+              <TextField
+                value={description}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => setDescription(event.target.value)}
+                multiline
+                minRows={4}
+              />
+            </Box>
+            </DialogContent>
+          </Dialog>
         </CardContent>
       </BootstrapTooltip>
       <Tabs
