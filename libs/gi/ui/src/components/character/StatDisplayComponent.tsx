@@ -113,7 +113,8 @@ function Section({
     />
   ))
   // do not render empty sections
-  if (fields.every((t) => t.type(t.props) === null)) return null
+  // FIXME: there doesn't seem to be a "safe" way to determine if a section is empty without introducing issues in rendering
+  // if (fields.every((t) => t.type(t.props) === null)) return null
   return (
     <CardThemed>
       <CardHeaderCustom
