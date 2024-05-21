@@ -5,6 +5,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { arrayMove, objPathValue } from '@genshin-optimizer/common/util'
 import type {
+  CustomFunction,
   CustomMultiTarget,
   EnclosingOperation,
   ExpressionUnit,
@@ -24,9 +25,11 @@ import EUnitConfig from './EUnitConfig'
 export default function ExpressionDisplay({
   expression,
   setCMT,
+  functions,
 }: {
   expression: ExpressionUnit[]
   setCMT: Dispatch<SetStateAction<CustomMultiTarget>>
+  functions: CustomFunction[]
 }) {
   // Selected unit index
   const [sui, setSUI] = useState(0)
@@ -37,6 +40,8 @@ export default function ExpressionDisplay({
   useEffect(() => {
     setSURPI(partsFinder(expression, sui))
   }, [sui, expression, setSURPI])
+
+  const functionNames = functions.map((f) => f.name)
 
   const { data } = useContext(DataContext)
   const getTargetName = (path: string[]) => {
@@ -118,16 +123,57 @@ export default function ExpressionDisplay({
       text = getTargetName(unit.target.path)
     } else if (type === 'operation') {
       text = OperationSpecs[unit.operation].symbol
-      // } else if (type === 'function') {
-      //   text = unit.name + '('
+    } else if (type === 'function') {
+      if (functionNames.includes(unit.name)) {
+        text = unit.name
+      } else {
+        text = <ColorText color="burning">{unit.name}</ColorText>
+      }
+      const surpi_ = partsFinder(expression, index)
+      const tail = expression[surpi_[surpi_.length - 1]]
+      if (tail && tail.type === 'enclosing' && tail.part === 'tail') {
+        text = (
+          <>
+            {text}
+            {'('}
+          </>
+        )
+      } else {
+        text = (
+          <>
+            {text}
+            <ColorText color="burning">{'('}</ColorText>
+          </>
+        )
+      }
     } else if (type === 'enclosing') {
       if (unit.part === 'head') {
-        text =
-          OperationSpecs[unit.operation].symbol +
-          OperationSpecs[unit.operation].enclosing.left
+        text = OperationSpecs[unit.operation].symbol
+        const surpi_ = partsFinder(expression, index)
+        const tail = expression[surpi_[surpi_.length - 1]]
+        if (tail && tail.type === 'enclosing' && tail.part === 'tail') {
+          text = (
+            <>
+              {text}
+              {OperationSpecs[unit.operation].enclosing.left}
+            </>
+          )
+        } else {
+          text = (
+            <>
+              {text}
+              <ColorText color="burning">
+                {OperationSpecs[unit.operation].enclosing.left}
+              </ColorText>
+            </>
+          )
+        }
         enclosingStack.push(unit.operation)
       } else if (unit.part === 'comma') {
         text = ','
+        if (!enclosingStack.length) {
+          text = <ColorText color="burning">{','}</ColorText>
+        }
       } else if (unit.part === 'tail') {
         if (enclosingStack.length) {
           text = OperationSpecs[enclosingStack.pop()!].enclosing.right

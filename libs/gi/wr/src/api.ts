@@ -329,7 +329,7 @@ function parseCustomExpression(
 ): NumNode {
   // functions_ is a list of custom functions that can be used in the expression
   // Functions on the left in the list are assumed to be accessible to functions on the right in the list, but not vice versa.
-  // Function assumes that the expression is already validated
+  // Function assumes that the expression is already validated and is in a valid format
   const expression = [...e]
   const functions: Record<string, CustomFunction> = {}
   functions_.forEach((f) => (functions[f.name] = f))
@@ -340,16 +340,18 @@ function parseCustomExpression(
   let customFunction: CustomFunction | undefined
   let enclosingMode = false
 
-  while (expression.length) {
-    const unit = expression.shift() as ExpressionUnit
+  while (expression.length > 0) {
+    const unit = expression.shift()!
     if (stack.length) {
       parts[parts.length - 1].push(unit)
-      if (unit.type === 'enclosing') {
+      if (unit.type === 'function' && functions[unit.name].args.length) {
+        stack.push(unit.name)
+      } else if (unit.type === 'enclosing') {
         if (unit.part === 'head') stack.push(unit.operation)
         if (unit.part === 'tail') stack.pop()
       }
     } else if (unit.type === 'function' && functions[unit.name].args.length) {
-      if (!handled.length) {
+      if (handled.length === 0) {
         // Special case for function with arguments as first unit
         customFunction = functions[unit.name]
         enclosingMode = true
@@ -359,7 +361,7 @@ function parseCustomExpression(
       }
     } else if (unit.type === 'enclosing') {
       if (unit.part === 'head') {
-        if (!handled.length) {
+        if (handled.length === 0) {
           // Special case for enclosing as first unit
           currentOperation = unit.operation
           enclosingMode = true
@@ -368,15 +370,20 @@ function parseCustomExpression(
           parts[parts.length - 1].push(unit)
         }
       } else if (unit.part === 'comma') {
-        // We can only be here if the stack is empty and currentOperation is an enclosing operation
+        // We can only be here if the stack is empty and currentOperation is an enclosing operation or a custom function
         parts.push([])
       } else if (unit.part === 'tail') {
-        // We can only be here if current enclosing is closed
+        // We can only be here if current enclosing or custom function is closed
         if (expression.length) {
           enclosingMode = false
           currentOperation = undefined
+          customFunction = undefined
           parts[parts.length - 1].push(unit)
         }
+      } else {
+        throw new Error(
+          `Unexpected enclosing part ${((_: never) => _)(unit.part)}`
+        )
       }
     } else if (enclosingMode) {
       parts[parts.length - 1].push(unit)
@@ -391,6 +398,8 @@ function parseCustomExpression(
         parts = [[...handled], []]
       } else if (unit.operation === currentOperation) {
         parts.push([])
+      } else {
+        parts[parts.length - 1].push(unit)
       }
     } else if (unit.type === 'null' && unit.kind === 'operation') {
       if (!currentOperation) {
@@ -398,6 +407,8 @@ function parseCustomExpression(
         parts = [[...handled], []]
       } else if (currentOperation === 'addition') {
         parts.push([])
+      } else {
+        parts[parts.length - 1].push(unit)
       }
     } else {
       // Only operands should remain here
@@ -442,7 +453,7 @@ function parseCustomExpression(
       )
     }
     if (operand.type === 'null') return constant(1)
-    throw new Error(`Unexpected operand type ${operand.type}`)
+    throw new Error(`Unexpected operand type ${operand.type} ${operand}`)
   }
 
   const parsedParts = parts.map((part) =>
