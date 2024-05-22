@@ -17,7 +17,6 @@ import {
   DialogTitle,
   DialogContent,
   useTheme,
-  TextField,
 } from '@mui/material'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -54,14 +53,11 @@ export default function TeamCharacterSelector({
   const theme = useTheme()
   const isXs = useMediaQuery(theme.breakpoints.down('md'))
   const [editMode, setEditMode] = useState(false);
-  const [teamName, setTeamName] = useState(team.name);
-  const [description, setDescription] = useState(team.description);
+  const [teamName] = useState(team.name);
+  const [description] = useState(team.description);
   const handleClickAway = () => {
     setEditMode(false);
     database.teams.set(teamId, { name: teamName, description: description })
-  };
-  const handleClickOn = () => {
-    setEditMode(true);
   };
   return (
     <Box
@@ -118,7 +114,7 @@ export default function TeamCharacterSelector({
         }
       >
       <CardContent sx={{ display: 'flex', justifyContent: 'center', pb: 0 }}>
-        <Typography variant="h5" display="flex" onClick={handleClickOn}>
+        <Typography variant="h5" display="flex" onClick={() => setEditMode(true)}>
           {teamName}
         </Typography>
         <Dialog open={editMode} onClose={handleClickAway} maxWidth='md' fullWidth>
