@@ -1,4 +1,4 @@
-import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
+import { BootstrapTooltip, TextFieldLazy } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
@@ -122,21 +122,23 @@ export default function TeamCharacterSelector({
           {teamName}
         </Typography>
         <Dialog open={editMode} onClose={handleClickAway} maxWidth='md' fullWidth>
-          <DialogTitle align="center">Edit Team Name</DialogTitle>
+          <DialogTitle align="center">Edit Team</DialogTitle>
             <DialogContent>
-            <Box display="flex" flexDirection="column" gap={2}>
-              <TextField
-                value={teamName}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => setTeamName(event.target.value)}
-                autoFocus
-              />
-              <TextField
-                value={description}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => setDescription(event.target.value)}
-                multiline
-                minRows={4}
-              />
-            </Box>
+              <Box display="flex" flexDirection="column" gap={2} sx={{ mt: 2 }}>
+                <TextFieldLazy
+                  label="Team Name"
+                  value={teamName}
+                  onChange={(teamName) => database.teams.set(teamId, { name: teamName})}
+                  autoFocus
+                />
+                <TextFieldLazy
+                  label="Description"
+                  value={description}
+                  onChange={(description) => database.teams.set(teamId, { description })}
+                  multiline
+                  minRows={4}
+                />
+              </Box>
             </DialogContent>
           </Dialog>
         </CardContent>
