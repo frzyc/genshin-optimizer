@@ -1,5 +1,4 @@
 import {
-  ColorText,
   ConditionalWrapper,
   SqBadge,
   StarsDisplay,
@@ -93,8 +92,10 @@ export function CharacterCardHeader({
 
 export function CharacterCardHeaderContent({
   characterKey,
+  tcOverride = false,
 }: {
   characterKey: CharacterKey
+  tcOverride?: boolean
 }) {
   const { gender } = useDBMeta()
   const { data } = useContext(DataContext)
@@ -130,38 +131,61 @@ export function CharacterCardHeaderContent({
         alignItems="center"
       >
         <Box>
-          <Typography component="span" variant="h6" whiteSpace="nowrap">
+          <Typography
+            component="span"
+            variant="h6"
+            whiteSpace="nowrap"
+            color={tcOverride ? 'yellow ' : undefined}
+          >
             Lv. {characterLevel}
           </Typography>
-          <Typography component="span" variant="h6" color="text.secondary">
+          <Typography
+            component="span"
+            variant="h6"
+            color={tcOverride ? 'yellow ' : 'text.secondary'}
+          >
             /{ascensionMaxLevel[ascension]}
           </Typography>
         </Box>
-        <Typography component="span" whiteSpace="nowrap" sx={{ opacity: 0.85 }}>
+        <Typography
+          component="span"
+          whiteSpace="nowrap"
+          sx={{
+            opacity: 0.85,
+          }}
+        >
           <SqBadge
             color={
               `roll${constellation < 3 ? 3 : constellation}` as RollColorKey
             }
+            sx={{ color: tcOverride ? 'yellow ' : '#FFF' }}
           >
-            <ColorText color="white">
-              <strong>C{constellation}</strong>
-            </ColorText>
+            <strong>C{constellation}</strong>
           </SqBadge>
         </Typography>
       </Box>
-      <Box display="flex" gap={1} sx={{ opacity: 0.85 }}>
+      <Box
+        display="flex"
+        gap={1}
+        sx={{
+          opacity: 0.85,
+        }}
+      >
         <Chip
           size="small"
+          sx={{ color: tcOverride ? 'yellow ' : undefined }}
           color={autoBoost ? 'info' : 'secondary'}
           label={<strong>{tAuto}</strong>}
         />
         <Chip
           size="small"
+          sx={{ color: tcOverride ? 'yellow ' : undefined }}
           color={skillBoost ? 'info' : 'secondary'}
           label={<strong>{tSkill}</strong>}
         />
         <Chip
           size="small"
+          sx={{ color: tcOverride ? 'yellow ' : undefined }}
           color={burstBoost ? 'info' : 'secondary'}
           label={<strong>{tBurst}</strong>}
         />

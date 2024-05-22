@@ -13,7 +13,7 @@ export function CharacterCardStats({ bgt }: { bgt?: CardBackgroundColor }) {
   return (
     <FieldDisplayList bgt={bgt} sx={{ width: '100%', borderRadius: 0 }}>
       {Object.values(data.getDisplay()['basic']).map((n) => (
-        <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />
+        <NodeFieldDisplay key={JSON.stringify(n.info)} calcRes={n} />
       ))}
       {name && (
         <ListItem sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>

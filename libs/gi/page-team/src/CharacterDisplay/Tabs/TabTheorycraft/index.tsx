@@ -8,7 +8,6 @@ import {
 import type { BuildTc } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
-  useBuildTc,
   useDBMeta,
   useDatabase,
   useOptConfig,
@@ -43,6 +42,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import { Alert, Box, Button, Grid, Skeleton, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { BuildTcContext } from '../../../BuildTcContext'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
@@ -50,8 +50,6 @@ import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTa
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
 import { ArtifactSubCard } from './ArtifactSubCard'
 import { BuildConstaintCard } from './BuildConstaintCard'
-import type { SetBuildTcAction } from './BuildTcContext'
-import { BuildTcContext } from './BuildTcContext'
 import GcsimButton from './GcsimButton'
 import KQMSButton from './KQMSButton'
 import { WeaponEditorCard } from './WeaponEditorCard'
@@ -62,21 +60,11 @@ export default function TabTheorycraft() {
   const {
     teamId,
     teamCharId,
-    loadoutDatum,
     teamChar: { key: characterKey, optConfigId },
   } = useContext(TeamCharacterContext)
-  const buildTc = useBuildTc(loadoutDatum.buildTcId)!
+  const { buildTc, setBuildTc } = useContext(BuildTcContext)
   const { optimizationTarget } = useOptConfig(optConfigId)!
-  const setBuildTc = useCallback(
-    (data: SetBuildTcAction) => {
-      database.buildTcs.set(loadoutDatum.buildTcId, data)
-    },
-    [loadoutDatum, database]
-  )
-  const buildTCContextObj = useMemo(
-    () => ({ buildTc, setBuildTc }),
-    [buildTc, setBuildTc]
-  )
+
   const weaponTypeKey = getCharStat(characterKey).weaponType
 
   const dataContextValue = useContext(DataContext)
@@ -259,187 +247,184 @@ export default function TabTheorycraft() {
   }, [setBuildTc])
 
   return (
-    <BuildTcContext.Provider value={buildTCContextObj}>
-      <Stack spacing={1}>
-        <Box>
-          <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-            <Grid item xs={8} sm={8} md={3} lg={2.3}>
-              <CharacterProfileCard />
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={9}
-              lg={9.7}
-              sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-            >
-              <CardThemed bgt="light" sx={{ flexGrow: 1, p: 1 }}>
-                <OptimizationTargetContext.Provider value={optimizationTarget}>
-                  {dataContextValueWithCompare ? (
-                    <DataContext.Provider value={dataContextValueWithCompare}>
-                      <StatDisplayComponent
-                        columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
-                      />
-                    </DataContext.Provider>
-                  ) : (
-                    <Skeleton variant="rectangular" width="100%" height={500} />
-                  )}
-                </OptimizationTargetContext.Provider>
-              </CardThemed>
-            </Grid>
+    <Stack spacing={1}>
+      <Box>
+        <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
+          <Grid item xs={8} sm={8} md={3} lg={2.3}>
+            <CharacterProfileCard />
           </Grid>
-        </Box>
-        <CardThemed bgt="light">
-          <Box sx={{ display: 'flex', gap: 1, p: 1, flexWrap: 'wrap' }}>
-            <KQMSButton action={kqms} disabled={solving} />
-            <GcsimButton disabled={solving} />
-            <HitModeToggle size="small" />
-            <ReactionToggle size="small" />
-            <CompareBtn buttonGroupProps={{ sx: { marginLeft: 'auto' } }} />
-          </Box>
-        </CardThemed>
-        {dataContextValue ? (
-          <DataContext.Provider value={dataContextValue}>
-            <Box>
-              <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
-                <Grid item sx={{ flexGrow: -1, maxWidth: '350px' }}>
-                  <WeaponEditorCard
-                    weaponTypeKey={weaponTypeKey}
-                    disabled={solving}
-                  />
-                  <BuildConstaintCard disabled={solving} />
-                </Grid>
-                <Grid item sx={{ flexGrow: -1 }}>
-                  <ArtifactMainStatAndSetEditor disabled={solving} />
-                </Grid>
-                <Grid item sx={{ flexGrow: 1 }}>
-                  <ArtifactSubCard
-                    disabled={solving}
-                    maxTotalRolls={maxTotalRolls}
-                  />
-                </Grid>
-              </Grid>
-            </Box>
-            <Box display="flex" flexDirection="column" gap={1}>
-              {minOtherRolls > 0 && (
-                <Alert severity="warning" variant="filled">
-                  <Trans
-                    t={t}
-                    i18nKey="tabTheorycraft.feasibilityAlert"
-                    values={{ minSubLines, minOtherRolls }}
-                  >
-                    The current substat distribution requires at least{' '}
-                    <strong>{{ minSubLines } as any}</strong> lines of substats.
-                    Need to assign <strong>{{ minOtherRolls } as any}</strong>{' '}
-                    rolls to other substats for this solution to be feasible.
-                  </Trans>
-                </Alert>
-              )}
-              <Box display="flex" gap={1}>
-                <OptimizationTargetSelector
-                  disabled={solving}
-                  optimizationTarget={optimizationTarget}
-                  setTarget={(target) => setOptimizationTarget(target)}
-                  targetSelectorModalProps={{
-                    excludeSections: ['character', 'bounsStats', 'teamBuff'],
-                  }}
-                />
-                <CustomNumberInput
-                  value={distributedSubstats}
-                  disabled={!optimizationTarget || solving}
-                  onChange={(v) => v !== undefined && setDistributedSubstats(v)}
-                  endAdornment={'Substats'}
-                  sx={{
-                    borderRadius: 1,
-                    px: 1,
-                    textWrap: 'nowrap',
-                    flexShrink: 1,
-                  }}
-                  inputProps={{
-                    sx: {
-                      textAlign: 'right',
-                      px: 1,
-                      width: '3em',
-                      minWidth: '3em',
-                    },
-                    min: 0,
-                  }}
-                />
-                {!solving ? (
-                  <Button
-                    onClick={() => optimizeSubstats(true)}
-                    disabled={
-                      !optimizationTarget ||
-                      !distributedSubstats ||
-                      distributedSubstats > maxTotalRolls
-                    }
-                    color="success"
-                    startIcon={<CalculateIcon />}
-                  >
-                    {t`tabTheorycraft.distribute`}
-                  </Button>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={9}
+            lg={9.7}
+            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+          >
+            <CardThemed bgt="light" sx={{ flexGrow: 1, p: 1 }}>
+              <OptimizationTargetContext.Provider value={optimizationTarget}>
+                {dataContextValueWithCompare ? (
+                  <DataContext.Provider value={dataContextValueWithCompare}>
+                    <StatDisplayComponent
+                      columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
+                    />
+                  </DataContext.Provider>
                 ) : (
-                  <Button
-                    onClick={terminateWorker}
-                    color="error"
-                    startIcon={<CloseIcon />}
-                  >
-                    Cancel
-                  </Button>
+                  <Skeleton variant="rectangular" width="100%" height={500} />
                 )}
-              </Box>
-
-              {isDev && (
-                <Button
-                  onClick={() => optimizeSubstats(false)}
-                  disabled={!optimizationTarget || solving}
+              </OptimizationTargetContext.Provider>
+            </CardThemed>
+          </Grid>
+        </Grid>
+      </Box>
+      <CardThemed bgt="light">
+        <Box sx={{ display: 'flex', gap: 1, p: 1, flexWrap: 'wrap' }}>
+          <KQMSButton action={kqms} disabled={solving} />
+          <GcsimButton disabled={solving} />
+          <HitModeToggle size="small" />
+          <ReactionToggle size="small" />
+          <CompareBtn buttonGroupProps={{ sx: { marginLeft: 'auto' } }} />
+        </Box>
+      </CardThemed>
+      {dataContextValue ? (
+        <DataContext.Provider value={dataContextValue}>
+          <Box>
+            <Grid container spacing={1} sx={{ justifyContent: 'center' }}>
+              <Grid item sx={{ flexGrow: -1, maxWidth: '350px' }}>
+                <WeaponEditorCard
+                  weaponTypeKey={weaponTypeKey}
+                  disabled={solving}
+                />
+                <BuildConstaintCard disabled={solving} />
+              </Grid>
+              <Grid item sx={{ flexGrow: -1 }}>
+                <ArtifactMainStatAndSetEditor disabled={solving} />
+              </Grid>
+              <Grid item sx={{ flexGrow: 1 }}>
+                <ArtifactSubCard
+                  disabled={solving}
+                  maxTotalRolls={maxTotalRolls}
+                />
+              </Grid>
+            </Grid>
+          </Box>
+          <Box display="flex" flexDirection="column" gap={1}>
+            {minOtherRolls > 0 && (
+              <Alert severity="warning" variant="filled">
+                <Trans
+                  t={t}
+                  i18nKey="tabTheorycraft.feasibilityAlert"
+                  values={{ minSubLines, minOtherRolls }}
                 >
-                  Log Optimized Substats
+                  The current substat distribution requires at least{' '}
+                  <strong>{{ minSubLines } as any}</strong> lines of substats.
+                  Need to assign <strong>{{ minOtherRolls } as any}</strong>{' '}
+                  rolls to other substats for this solution to be feasible.
+                </Trans>
+              </Alert>
+            )}
+            <Box display="flex" gap={1}>
+              <OptimizationTargetSelector
+                disabled={solving}
+                optimizationTarget={optimizationTarget}
+                setTarget={(target) => setOptimizationTarget(target)}
+                targetSelectorModalProps={{
+                  excludeSections: ['character', 'bounsStats', 'teamBuff'],
+                }}
+              />
+              <CustomNumberInput
+                value={distributedSubstats}
+                disabled={!optimizationTarget || solving}
+                onChange={(v) => v !== undefined && setDistributedSubstats(v)}
+                endAdornment={'Substats'}
+                sx={{
+                  borderRadius: 1,
+                  px: 1,
+                  textWrap: 'nowrap',
+                  flexShrink: 1,
+                }}
+                inputProps={{
+                  sx: {
+                    textAlign: 'right',
+                    px: 1,
+                    width: '3em',
+                    minWidth: '3em',
+                  },
+                  min: 0,
+                }}
+              />
+              {!solving ? (
+                <Button
+                  onClick={() => optimizeSubstats(true)}
+                  disabled={
+                    !optimizationTarget ||
+                    !distributedSubstats ||
+                    distributedSubstats > maxTotalRolls
+                  }
+                  color="success"
+                  startIcon={<CalculateIcon />}
+                >
+                  {t`tabTheorycraft.distribute`}
+                </Button>
+              ) : (
+                <Button
+                  onClick={terminateWorker}
+                  color="error"
+                  startIcon={<CloseIcon />}
+                >
+                  Cancel
                 </Button>
               )}
-              {!!scalesWith.size && (
-                <Alert severity="info" variant="filled">
-                  <Trans t={t} i18nKey="tabTheorycraft.optAlert.scalesWith">
-                    The selected Optimization target and constraints scales
-                    with:{' '}
-                  </Trans>
-                  {[...scalesWith]
-                    .map((k) => (
-                      <strong key={k}>
-                        <StatIcon statKey={k} iconProps={iconInlineProps} />
-                        <ArtifactStatWithUnit statKey={k} />
-                      </strong>
-                    ))
-                    .flatMap((value, index, array) => {
-                      if (index === array.length - 2)
-                        return [value, <span key="and">, and </span>]
-                      if (index === array.length - 1) return value
-                      return [value, <span key={index}>, </span>]
-                    })}
-                  <Trans t={t} i18nKey="tabTheorycraft.optAlert.distribute">
-                    . The solver will only distribute stats to these substats.
-                  </Trans>{' '}
-                  {minOtherRolls > 0 && (
-                    <Trans t={t} i18nKey="tabTheorycraft.optAlert.feasibilty">
-                      There may be additional leftover substats that should be
-                      distributed to non-scaling stats to ensure the solution is
-                      feasible.
-                    </Trans>
-                  )}
-                </Alert>
-              )}
-              <BuildAlert
-                status={status}
-                characterKey={characterKey}
-                gender={gender}
-              />
             </Box>
-          </DataContext.Provider>
-        ) : (
-          <Skeleton variant="rectangular" width="100%" height={500} />
-        )}
-      </Stack>
-    </BuildTcContext.Provider>
+
+            {isDev && (
+              <Button
+                onClick={() => optimizeSubstats(false)}
+                disabled={!optimizationTarget || solving}
+              >
+                Log Optimized Substats
+              </Button>
+            )}
+            {!!scalesWith.size && (
+              <Alert severity="info" variant="filled">
+                <Trans t={t} i18nKey="tabTheorycraft.optAlert.scalesWith">
+                  The selected Optimization target and constraints scales with:{' '}
+                </Trans>
+                {[...scalesWith]
+                  .map((k) => (
+                    <strong key={k}>
+                      <StatIcon statKey={k} iconProps={iconInlineProps} />
+                      <ArtifactStatWithUnit statKey={k} />
+                    </strong>
+                  ))
+                  .flatMap((value, index, array) => {
+                    if (index === array.length - 2)
+                      return [value, <span key="and">, and </span>]
+                    if (index === array.length - 1) return value
+                    return [value, <span key={index}>, </span>]
+                  })}
+                <Trans t={t} i18nKey="tabTheorycraft.optAlert.distribute">
+                  . The solver will only distribute stats to these substats.
+                </Trans>{' '}
+                {minOtherRolls > 0 && (
+                  <Trans t={t} i18nKey="tabTheorycraft.optAlert.feasibilty">
+                    There may be additional leftover substats that should be
+                    distributed to non-scaling stats to ensure the solution is
+                    feasible.
+                  </Trans>
+                )}
+              </Alert>
+            )}
+            <BuildAlert
+              status={status}
+              characterKey={characterKey}
+              gender={gender}
+            />
+          </Box>
+        </DataContext.Provider>
+      ) : (
+        <Skeleton variant="rectangular" width="100%" height={500} />
+      )}
+    </Stack>
   )
 }

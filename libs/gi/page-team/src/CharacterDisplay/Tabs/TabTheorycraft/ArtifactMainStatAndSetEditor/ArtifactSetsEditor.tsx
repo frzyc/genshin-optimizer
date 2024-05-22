@@ -4,7 +4,7 @@ import { getArtSheet } from '@genshin-optimizer/gi/sheets'
 import { ArtifactSetAutocomplete } from '@genshin-optimizer/gi/ui'
 import { Stack } from '@mui/material'
 import { useCallback, useContext } from 'react'
-import { BuildTcContext } from '../BuildTcContext'
+import { BuildTcContext } from '../../../../BuildTcContext'
 import { ArtifactSetEditor } from './ArtifactSetEditor'
 
 export function ArtifactSetsEditor({

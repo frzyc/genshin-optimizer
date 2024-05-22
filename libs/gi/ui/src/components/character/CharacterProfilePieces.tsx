@@ -29,7 +29,7 @@ import {
   IconButton,
   Typography,
 } from '@mui/material'
-import { grey } from '@mui/material/colors'
+import { grey, yellow } from '@mui/material/colors'
 import { useContext } from 'react'
 import { DataContext, SillyContext } from '../../context'
 import { CharacterName } from './Trans'
@@ -93,11 +93,16 @@ export function CharacterCompactTalent() {
     </Box>
   )
 }
-export function CharacterCompactConstSelector() {
+export function CharacterCompactConstSelector({
+  setConstellation,
+  warning = false,
+}: {
+  setConstellation: (constellation: number) => void
+  warning?: boolean
+}) {
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const database = useDatabase()
   const { data } = useContext(DataContext)
   const constellation = data.get(input.constellation).value
   const { gender } = useDBMeta()
@@ -107,13 +112,9 @@ export function CharacterCompactConstSelector() {
       {range(1, 6).map((i) => (
         <Grid item xs={4} key={i}>
           <CardActionArea
-            onClick={() =>
-              database.chars.set(characterKey, {
-                constellation: i === constellation ? i - 1 : i,
-              })
-            }
+            onClick={() => setConstellation(i === constellation ? i - 1 : i)}
             style={{
-              border: `1px solid ${grey[200]}`,
+              border: `1px solid ${warning ? yellow[200] : grey[200]}`,
               borderRadius: '4px',
               overflow: 'hidden',
             }}
