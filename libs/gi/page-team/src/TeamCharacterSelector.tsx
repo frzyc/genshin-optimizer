@@ -9,13 +9,13 @@ import PersonIcon from '@mui/icons-material/Person'
 import {
   Box,
   CardContent,
+  Dialog,
+  DialogContent,
+  DialogTitle,
   Tab,
   Tabs,
   Typography,
   useMediaQuery,
-  Dialog,
-  DialogTitle,
-  DialogContent,
   useTheme,
 } from '@mui/material'
 import { useState } from 'react'
@@ -52,13 +52,13 @@ export default function TeamCharacterSelector({
   const selectedEle = elementArray[selectedIndex]
   const theme = useTheme()
   const isXs = useMediaQuery(theme.breakpoints.down('md'))
-  const [editMode, setEditMode] = useState(false);
-  const [teamName] = useState(team.name);
-  const [description] = useState(team.description);
+  const [editMode, setEditMode] = useState(false)
+  const [teamName] = useState(team.name)
+  const [description] = useState(team.description)
   const handleClickAway = () => {
-    setEditMode(false);
+    setEditMode(false)
     database.teams.set(teamId, { name: teamName, description: description })
-  };
+  }
   return (
     <Box
       sx={(theme) => {
@@ -113,24 +113,37 @@ export default function TeamCharacterSelector({
           ) : undefined
         }
       >
-      <CardContent sx={{ display: 'flex', justifyContent: 'center', pb: 0 }}>
-        <Typography variant="h5" display="flex" onClick={() => setEditMode(true)}>
-          {teamName}
-        </Typography>
-        <Dialog open={editMode} onClose={handleClickAway} maxWidth='md' fullWidth>
-          <DialogTitle align="center">Edit Team</DialogTitle>
+        <CardContent sx={{ display: 'flex', justifyContent: 'center', pb: 0 }}>
+          <Typography
+            variant="h5"
+            display="flex"
+            onClick={() => setEditMode(true)}
+          >
+            {teamName}
+          </Typography>
+          <Dialog
+            open={editMode}
+            onClose={handleClickAway}
+            maxWidth="md"
+            fullWidth
+          >
+            <DialogTitle align="center">Edit Team</DialogTitle>
             <DialogContent>
               <Box display="flex" flexDirection="column" gap={2} sx={{ mt: 2 }}>
                 <TextFieldLazy
                   label="Team Name"
                   value={teamName}
-                  onChange={(teamName) => database.teams.set(teamId, { name: teamName})}
+                  onChange={(teamName) =>
+                    database.teams.set(teamId, { name: teamName })
+                  }
                   autoFocus
                 />
                 <TextFieldLazy
                   label="Description"
                   value={description}
-                  onChange={(description) => database.teams.set(teamId, { description })}
+                  onChange={(description) =>
+                    database.teams.set(teamId, { description })
+                  }
                   multiline
                   minRows={4}
                 />
