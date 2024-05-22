@@ -94,9 +94,13 @@ export function WeaponCardNanoObj({
   )
   return (
     <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
-      <Box display="flex" height="100%" alignItems="stretch">
+      <Box
+        display="flex"
+        height="100%"
+        alignItems="stretch"
+        className={`grad-${getWeaponStat(weapon.key).rarity}star`}
+      >
         <Box
-          className={`grad-${getWeaponStat(weapon.key).rarity}star`}
           sx={{
             height: '100%',
             position: 'relative',
@@ -134,6 +138,9 @@ export function WeaponCardNanoObj({
                 </strong>
               }
               color="primary"
+              sx={{
+                backdropFilter: 'blur(2px)',
+              }}
             />
             {showLocation && (
               <Chip
@@ -144,7 +151,6 @@ export function WeaponCardNanoObj({
                       characterKey={database.chars.LocationToCharacterKey(
                         location
                       )}
-                      sideMargin
                     />
                   ) : (
                     <BusinessCenterIcon />
@@ -156,6 +162,8 @@ export function WeaponCardNanoObj({
                   '.MuiChip-label': {
                     overflow: 'visible',
                   },
+                  mr: 1,
+                  backdropFilter: 'blur(2px)',
                 }}
               />
             )}
@@ -177,6 +185,9 @@ export function WeaponCardNanoObj({
                 size="small"
                 color="info"
                 label={<strong>R{refinement}</strong>}
+                sx={{
+                  backdropFilter: 'blur(2px)',
+                }}
               />
             )}
           </Box>

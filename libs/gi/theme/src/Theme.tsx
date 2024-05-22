@@ -211,11 +211,11 @@ export const theme = createTheme({
   palette: {
     ...commonTheme.palette,
     roll1: commonTheme.palette.augmentColor({
-      color: { main: '#a3a7a9' },
+      color: { main: '#FFFFFF' },
       name: 'roll1',
     }),
     roll2: commonTheme.palette.augmentColor({
-      color: { main: '#6fa376' },
+      color: { main: '#B2FFBC' },
       name: 'roll2',
     }),
     roll3: commonTheme.palette.augmentColor({
