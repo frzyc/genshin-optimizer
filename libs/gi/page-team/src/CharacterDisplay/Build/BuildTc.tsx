@@ -21,16 +21,18 @@ import {
   StatWithUnit,
   WeaponCardNanoObj,
 } from '@genshin-optimizer/gi/ui'
-import { artDisplayValue } from '@genshin-optimizer/gi/util'
+import { artDisplayValue, getLevelString } from '@genshin-optimizer/gi/util'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   CardContent,
   CardHeader,
+  Chip,
   Divider,
   Grid,
   IconButton,
   TextField,
+  Typography,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 
@@ -87,6 +89,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
       substats: { stats: substats },
       sets,
     },
+    character,
   } = useBuildTc(buildTcId)!
   const weaponSheet = getWeaponSheet(weapon.key)
   const substatsArr = Object.entries(substats)
@@ -94,43 +97,70 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
   const substatsArr2 = substatsArr.slice(5)
   return (
     <Box>
+      {!!character && (
+        <CardThemed sx={{ mb: 1 }}>
+          <CardContent sx={{ display: 'flex', gap: 1 }}>
+            <Chip
+              size="small"
+              label={`Lv. ${getLevelString(
+                character.level,
+                character.ascension
+              )}`}
+              sx={{ color: 'yellow' }}
+            />
+
+            <Chip
+              size="small"
+              label={`C${character.constellation}`}
+              sx={{ color: 'yellow' }}
+            />
+            {/* Can't display talents because that would require a calculation for talent boost due to constellations */}
+            <Typography color="yellow">Character Overriden</Typography>
+          </CardContent>
+        </CardThemed>
+      )}
       <Grid
         container
         spacing={1}
         columns={{ xs: 2, sm: 2, md: 2, lg: 2, xl: 2 }}
       >
-        <Grid item xs={1}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <Grid
+          item
+          xs={1}
+          sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+        >
+          <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
             <WeaponCardNanoObj
               weapon={weapon as ICachedWeapon}
               weaponSheet={weaponSheet}
             />
-            {!!Object.keys(sets).length && (
-              <CardThemed sx={{ flexGrow: 1 }}>
-                <Box
-                  sx={{
-                    p: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 1,
-                  }}
-                >
-                  {Object.entries(sets).map(([setKey, number]) => (
-                    <Box
-                      key={setKey}
-                      sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-                    >
-                      <ImgIcon size={2} src={artifactAsset(setKey, 'flower')} />
-                      <span>
-                        <ArtifactSetName setKey={setKey} />
-                      </span>
-                      <SqBadge>x{number}</SqBadge>
-                    </Box>
-                  ))}
-                </Box>
-              </CardThemed>
-            )}
-          </Box>
+          </CardThemed>
+
+          {!!Object.keys(sets).length && (
+            <CardThemed sx={{ flexGrow: 1 }}>
+              <Box
+                sx={{
+                  p: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 1,
+                }}
+              >
+                {Object.entries(sets).map(([setKey, number]) => (
+                  <Box
+                    key={setKey}
+                    sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+                  >
+                    <ImgIcon size={2} src={artifactAsset(setKey, 'flower')} />
+                    <span>
+                      <ArtifactSetName setKey={setKey} />
+                    </span>
+                    <SqBadge>x{number}</SqBadge>
+                  </Box>
+                ))}
+              </Box>
+            </CardThemed>
+          )}
         </Grid>
 
         <Grid item xs={1}>

@@ -93,6 +93,8 @@ function Section({
 
   if (!header) return null
   if (!keys.length) return null
+  // Don't show character section unless there is a comparasion, a bandaid fix for the FIXME below.
+  if (sectionKey === 'character' && !compareData) return null
 
   const { title, icon, action } = header
   const fields = keys.map((key) => (
@@ -108,8 +110,11 @@ function Section({
           displayNs?.[key] ?? compareDisplayNs?.[key],
         ])
       }
-      diffOnly={sectionKey === 'character'}
-      showZero={sectionKey === 'baisc' && key === 'eleMas'}
+      showZero={
+        (sectionKey === 'basic' && key === 'eleMas') ||
+        (sectionKey === 'basic' && key.endsWith('dmg_')) ||
+        (sectionKey === 'basic' && key === 'heal_')
+      }
     />
   ))
   // do not render empty sections

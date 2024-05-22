@@ -107,15 +107,13 @@ export function NodeFieldDisplay({
   compareCalcRes,
   component = ListItem,
   emphasize,
-  diffOnly = false,
   showZero = false,
 }: {
   calcRes?: CalcResult
   compareCalcRes?: CalcResult
   component?: React.ElementType
   emphasize?: boolean
-  // only show field if the values are different
-  diffOnly?: boolean
+
   // Show field, even if the value is zero
   showZero?: boolean
 }) {
@@ -133,8 +131,6 @@ export function NodeFieldDisplay({
   const compareCalcValue = compareCalcRes?.value ?? 0
 
   if (!showZero && !calcValue && !compareCalcValue) return null
-  if (diffOnly && (calcValue === compareCalcValue || !compareCalcRes))
-    return null
 
   let fieldVal = false as ReactNode
   const { unit, fixed, variant, subVariant } = resolveInfo(
@@ -143,9 +139,12 @@ export function NodeFieldDisplay({
   const calcDisplay = getCalcDisplay((calcRes ?? compareCalcRes)!)
 
   const diff = calcValue - compareCalcValue
-  const pctDiff = compareCalcValue
-    ? valueString(diff / compareCalcValue, '%', fixed)
-    : null
+  const pctDiff =
+    compareCalcRes &&
+    unit !== '%' &&
+    (calcValue > 100 || compareCalcValue > 100)
+      ? valueString(diff / compareCalcValue, '%', fixed)
+      : null
 
   fieldVal = (
     <>
@@ -173,7 +172,7 @@ export function NodeFieldDisplay({
               ({diff > 0 ? '+' : ''}
               {valueString(diff, unit, fixed)})
             </span>
-            {unit !== '%' && compareCalcValue !== 0 && (
+            {!!pctDiff && (
               <span>
                 ({diff > 0 ? '+' : ''}
                 {pctDiff})

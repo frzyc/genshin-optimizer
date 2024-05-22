@@ -138,6 +138,10 @@ export function TeammateDisplay({
     !characterContext
   )
     return null
+
+  const isTCCharOverride =
+    loadoutDatum.buildType === 'tc' &&
+    !!database.buildTcs.get(loadoutDatum.buildTcId)?.character
   return (
     <TeamCharacterContext.Provider value={teammateCharacterContext}>
       <DataContext.Provider value={teamMateDataContext}>
@@ -154,7 +158,10 @@ export function TeammateDisplay({
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 <CharacterCardHeader characterKey={characterKey}>
-                  <CharacterCardHeaderContent characterKey={characterKey} />
+                  <CharacterCardHeaderContent
+                    characterKey={characterKey}
+                    tcOverride={isTCCharOverride}
+                  />
                 </CharacterCardHeader>
               </CardActionArea>
             </CardThemed>

@@ -84,7 +84,7 @@ function Content({ onClose }: { onClose?: () => void }) {
           <BootstrapTooltip
             title={
               <Typography>
-                Set a specific level,constellation, ascension, or talent level
+                Set a specific level, constellation, ascension, or talent level
                 for this TC build, that is different from the base character
               </Typography>
             }
