@@ -227,7 +227,7 @@ export default function PageTeams() {
           />
         }
       >
-        <Grid container spacing={1} columns={columns}>
+        <Grid container spacing={2} columns={columns}>
           {TeamIdsToShow.map((tid) => (
             <Grid item xs={1} key={tid}>
               <Suspense
