@@ -104,11 +104,7 @@ function Section({
       compareCalcRes={compareDisplayNs?.[key]}
       component={ListItem}
       emphasize={
-        JSON.stringify(optimizationTarget) ===
-        JSON.stringify([
-          sectionKey,
-          displayNs?.[key] ?? compareDisplayNs?.[key],
-        ])
+        JSON.stringify(optimizationTarget) === JSON.stringify([sectionKey, key])
       }
       showZero={
         (sectionKey === 'basic' && key === 'eleMas') ||
