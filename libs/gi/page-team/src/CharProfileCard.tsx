@@ -25,7 +25,7 @@ export default function CharacterProfileCard() {
 
   const [showEditor, onShowEditor, onHideEditor] = useBoolState()
   return (
-    <CardThemed bgt="light" sx={{ height: '100%' }}>
+    <CardThemed bgt="light" sx={{ height: 500 }}>
       <CharacterCoverArea />
       <Box p={1}>
         <CharProfileCharEditor show={showEditor} onClose={onHideEditor} />

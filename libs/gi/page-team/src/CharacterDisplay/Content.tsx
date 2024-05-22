@@ -16,7 +16,6 @@ import {
 import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import {
-  CharacterEditor,
   DataContext,
   SillyContext,
   iconAsset,
@@ -47,6 +46,7 @@ import {
 import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route, Link as RouterLink, Routes } from 'react-router-dom'
+import { CharProfileCharEditor } from '../CharProfileCharEditor'
 import FormulaModal from './FormulaModal'
 import LoadoutSettingElement from './LoadoutSettingElement'
 import TabBuild from './Tabs/TabOptimize'
@@ -320,14 +320,11 @@ function NewTabNav({
         }
       }}
     >
+      <CharProfileCharEditor show={showEditor} onClose={onHideEditor} />
       <CardActionArea
         sx={{ width: 120, height: 120, zIndex: 1 }}
         onClick={onShowEditor}
       >
-        <CharacterEditor
-          characterKey={showEditor ? characterKey : undefined}
-          onClose={onHideEditor}
-        />
         <Box
           component="img"
           src={iconAsset(characterKey, gender, silly)}
