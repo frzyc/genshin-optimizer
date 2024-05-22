@@ -23,7 +23,7 @@ import {
 } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { BuildTcContext } from './BuildTcContext'
+import { BuildTcContext } from '../../../BuildTcContext'
 
 export function BuildConstaintCard({ disabled }: { disabled: boolean }) {
   const { t } = useTranslation('page_character')

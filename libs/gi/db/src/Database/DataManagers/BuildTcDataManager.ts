@@ -17,8 +17,9 @@ import {
   weaponMaxAscension,
   weaponMaxLevel,
 } from '@genshin-optimizer/gi/consts'
+import type { ICharacter } from '@genshin-optimizer/gi/good'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
-import { validateLevelAsc } from '@genshin-optimizer/gi/util'
+import { validateLevelAsc, validateTalent } from '@genshin-optimizer/gi/util'
 import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { BuildTc } from '../../Interfaces/BuildTc'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -52,20 +53,21 @@ export class BuildTcDataManager extends DataManager<
   override validate(obj: unknown): BuildTc | undefined {
     if (typeof obj !== 'object') return undefined
     let { name, description } = obj as BuildTc
-    const { weapon, artifact, optimization } = obj as BuildTc
-
+    const { character, weapon, artifact, optimization } = obj as BuildTc
+    const _character = validateBuildTCChar(character)
     if (typeof name !== 'string') name = 'Build(TC) Name'
     if (typeof description !== 'string') description = 'Build(TC) Description'
-    const _weapon = validateCharTCWeapon(weapon)
+    const _weapon = validateBuildTCWeapon(weapon)
     if (!_weapon) return undefined
 
-    const _artifact = validateCharTCArtifact(artifact)
+    const _artifact = validateBuildTCArtifact(artifact)
     if (!_artifact) return undefined
-    const _optimization = validateCharTcOptimization(optimization)
+    const _optimization = validateBuildTcOptimization(optimization)
     if (!_optimization) return undefined
     return {
       name,
       description,
+      character: _character,
       artifact: _artifact,
       weapon: _weapon,
       optimization: _optimization,
@@ -134,7 +136,7 @@ export function initCharTC(weaponKey: WeaponKey): BuildTc {
     },
     optimization: {
       distributedSubstats: 45,
-      maxSubstats: initCharTcOptimizationMaxSubstats(),
+      maxSubstats: initBuildTcOptimizationMaxSubstats(),
       minTotal: {},
     },
   }
@@ -150,8 +152,31 @@ function initCharTCArtifactSlots() {
       : 'atk_') as MainStatKey,
   }))
 }
+function validateBuildTCChar(char: unknown): BuildTc['character'] {
+  if (typeof char !== 'object' || typeof char === 'undefined') return undefined
+  const { level: rawLevel, ascension: rawAscension } = char as Omit<
+    ICharacter,
+    'key'
+  >
+  let { constellation, talent } = char as Omit<ICharacter, 'key'>
+  if (
+    typeof constellation !== 'number' &&
+    constellation < 0 &&
+    constellation > 6
+  )
+    constellation = 0
 
-function validateCharTCWeapon(weapon: unknown): BuildTc['weapon'] | undefined {
+  const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
+  talent = validateTalent(ascension, talent)
+
+  return {
+    level,
+    ascension,
+    talent,
+    constellation,
+  }
+}
+function validateBuildTCWeapon(weapon: unknown): BuildTc['weapon'] | undefined {
   if (typeof weapon !== 'object') return undefined
   const { key } = weapon as BuildTc['weapon']
   let { level, ascension, refinement } = weapon as BuildTc['weapon']
@@ -171,7 +196,7 @@ function validateCharTCWeapon(weapon: unknown): BuildTc['weapon'] | undefined {
   ;[level, ascension] = [_level, _ascension]
   return { key, level, ascension, refinement }
 }
-function validateCharTCArtifact(
+function validateBuildTCArtifact(
   artifact: unknown
 ): BuildTc['artifact'] | undefined {
   if (typeof artifact !== 'object') return undefined
@@ -180,7 +205,7 @@ function validateCharTCArtifact(
     substats: { type, stats, rarity },
     sets,
   } = artifact as BuildTc['artifact']
-  const _slots = validateCharTCArtifactSlots(slots)
+  const _slots = validateBuildTCArtifactSlots(slots)
   if (!_slots) return undefined
   slots = _slots
   if (!substatTypeKeys.includes(type)) type = 'max'
@@ -195,7 +220,7 @@ function validateCharTCArtifact(
 
   return { slots, substats: { type, stats, rarity }, sets }
 }
-function validateCharTCArtifactSlots(
+function validateBuildTCArtifactSlots(
   slots: unknown
 ): BuildTc['artifact']['slots'] | undefined {
   if (typeof slots !== 'object') return initCharTCArtifactSlots()
@@ -219,7 +244,7 @@ function validateCharTCArtifactSlots(
     }
   )
 }
-function validateCharTcOptimization(
+function validateBuildTcOptimization(
   optimization: unknown
 ): BuildTc['optimization'] | undefined {
   if (typeof optimization !== 'object') return undefined
@@ -227,7 +252,7 @@ function validateCharTcOptimization(
     optimization as BuildTc['optimization']
   if (typeof distributedSubstats !== 'number') distributedSubstats = 20
   if (typeof maxSubstats !== 'object')
-    maxSubstats = initCharTcOptimizationMaxSubstats()
+    maxSubstats = initBuildTcOptimizationMaxSubstats()
   maxSubstats = objKeyMap([...allSubstatKeys], (k) =>
     typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0
   )
@@ -240,7 +265,7 @@ function validateCharTcOptimization(
 
   return { distributedSubstats, maxSubstats, minTotal }
 }
-function initCharTcOptimizationMaxSubstats(): BuildTc['optimization']['maxSubstats'] {
+function initBuildTcOptimizationMaxSubstats(): BuildTc['optimization']['maxSubstats'] {
   return objKeyMap(
     allSubstatKeys,
     (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5)
