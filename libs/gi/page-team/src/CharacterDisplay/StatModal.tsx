@@ -166,8 +166,8 @@ function StatDisplayContent({
         <NodeFieldDisplay
           component={ListItem}
           key={JSON.stringify(rn.info)}
-          node={data.get(rn)}
-          compareValue={compareData?.get(rn)?.value}
+          calcRes={data.get(rn)}
+          compareCalcRes={compareData?.get(rn)}
         />
       ))}
       {extra}

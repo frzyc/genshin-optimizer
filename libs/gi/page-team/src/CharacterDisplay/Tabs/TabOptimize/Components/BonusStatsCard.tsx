@@ -32,7 +32,7 @@ export default function BonusStatsCard() {
       <Divider />
       <FieldDisplayList bgt="light">
         {nodes.map((n) => (
-          <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />
+          <NodeFieldDisplay key={JSON.stringify(n.info)} calcRes={n} />
         ))}
       </FieldDisplayList>
     </CardThemed>

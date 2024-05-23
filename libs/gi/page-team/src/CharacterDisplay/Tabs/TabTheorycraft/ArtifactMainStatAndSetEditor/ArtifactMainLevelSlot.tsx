@@ -26,7 +26,7 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, MenuItem } from '@mui/material'
 import InputAdornment from '@mui/material/InputAdornment'
 import { useCallback, useContext } from 'react'
-import { BuildTcContext } from '../BuildTcContext'
+import { BuildTcContext } from '../../../../BuildTcContext'
 
 export function ArtifactMainLevelSlot({
   slotKey,
