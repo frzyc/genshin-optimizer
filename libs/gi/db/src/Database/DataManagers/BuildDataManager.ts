@@ -1,8 +1,10 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import type { IGOOD } from '@genshin-optimizer/gi/good'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
+import type { IGO, ImportResult } from '../exim'
 import { defaultInitialWeaponKey, initialWeapon } from './WeaponDataManager'
 export interface Build {
   name: string
@@ -91,5 +93,15 @@ export class BuildDataManager extends DataManager<
     )
 
     return build
+  }
+  override importGOOD(good: IGOOD & IGO, result: ImportResult): void {
+    result.builds.beforeMerge = this.entries.length
+
+    const builds = good[this.dataKey]
+    if (builds && Array.isArray(builds)) {
+      result.builds.import = builds.length
+    }
+
+    super.importGOOD(good, result)
   }
 }

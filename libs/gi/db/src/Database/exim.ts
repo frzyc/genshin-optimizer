@@ -16,6 +16,12 @@ function newCounter<T>(): ImportResultCounter<T> {
     beforeMerge: 0,
   }
 }
+function newPartialCounter(): ImportResultPartialCounter {
+  return {
+    import: 0,
+    beforeMerge: 0,
+  }
+}
 
 export function newImportResult(
   source: string,
@@ -28,6 +34,10 @@ export function newImportResult(
     artifacts: newCounter(),
     weapons: newCounter(),
     characters: newCounter(),
+    teams: newPartialCounter(),
+    builds: newPartialCounter(),
+    buildTcs: newPartialCounter(),
+    loadouts: newPartialCounter(),
     keepNotInImport,
     ignoreDups,
   }
@@ -50,12 +60,20 @@ export type ImportResultCounter<T> = {
   notInImport: number
   beforeMerge: number
 }
+export type ImportResultPartialCounter = Pick<
+  ImportResultCounter<any>,
+  'beforeMerge' | 'import'
+>
 export type ImportResult = {
   type: 'GOOD'
   source: string
   artifacts: ImportResultCounter<IArtifact>
   weapons: ImportResultCounter<IWeapon>
   characters: ImportResultCounter<ICharacter>
+  builds: ImportResultPartialCounter
+  buildTcs: ImportResultPartialCounter
+  loadouts: ImportResultPartialCounter
+  teams: ImportResultPartialCounter
   keepNotInImport: boolean
   ignoreDups: boolean
 }

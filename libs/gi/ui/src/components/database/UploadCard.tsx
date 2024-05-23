@@ -1,6 +1,7 @@
 import { SandboxStorage } from '@genshin-optimizer/common/database'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import type { ImportResultPartialCounter } from '@genshin-optimizer/gi/db'
 import {
   ArtCharDatabase,
   type ImportResult,
@@ -231,7 +232,16 @@ export function UploadCard({
 }
 
 function GOODUploadInfo({
-  importResult: { source, artifacts, characters, weapons },
+  importResult: {
+    source,
+    artifacts,
+    characters,
+    weapons,
+    builds,
+    buildTcs,
+    loadouts,
+    teams,
+  },
   importedDatabase,
 }: {
   importResult: ImportResult
@@ -249,26 +259,61 @@ function GOODUploadInfo({
       <Divider />
       <CardContent>
         <Grid container spacing={2}>
-          <Grid item flexGrow={1}>
-            <MergeResult
-              result={artifacts}
-              dbTotal={importedDatabase.arts.values.length}
-              type="arts"
-            />
+          <Grid container item spacing={2}>
+            <Grid item flexGrow={1}>
+              <MergeResult
+                result={artifacts}
+                dbTotal={importedDatabase.arts.values.length}
+                type="arts"
+              />
+            </Grid>
+            <Grid item flexGrow={1}>
+              <MergeResult
+                result={weapons}
+                dbTotal={importedDatabase.weapons.values.length}
+                type="weapons"
+              />
+            </Grid>
+            <Grid item flexGrow={1}>
+              <MergeResult
+                result={characters}
+                dbTotal={importedDatabase.chars.values.length}
+                type="chars"
+              />
+            </Grid>
           </Grid>
-          <Grid item flexGrow={1}>
-            <MergeResult
-              result={weapons}
-              dbTotal={importedDatabase.weapons.values.length}
-              type="weapons"
-            />
-          </Grid>
-          <Grid item flexGrow={1}>
-            <MergeResult
-              result={characters}
-              dbTotal={importedDatabase.chars.values.length}
-              type="chars"
-            />
+          <Grid container item spacing={2}>
+            <Grid item flexGrow={1}>
+              <MergeResult
+                result={teams}
+                dbTotal={importedDatabase.teams.values.length}
+                type="teams"
+              />
+            </Grid>
+            <Grid item flexGrow={1}>
+              <MergeResult
+                result={loadouts}
+                dbTotal={importedDatabase.teams.entries.reduce(
+                  (rTeam, [_name, team]) => rTeam + team.loadoutData.length,
+                  0
+                )}
+                type="loadouts"
+              />
+            </Grid>
+            <Grid item flexGrow={1}>
+              <MergeResult
+                result={builds}
+                dbTotal={importedDatabase.builds.entries.length}
+                type="builds"
+              />
+            </Grid>
+            <Grid item flexGrow={1}>
+              <MergeResult
+                result={buildTcs}
+                dbTotal={importedDatabase.buildTcs.entries.length}
+                type="buildTcs"
+              />
+            </Grid>
           </Grid>
         </Grid>
       </CardContent>
@@ -280,7 +325,7 @@ function MergeResult({
   dbTotal,
   type,
 }: {
-  result: ImportResultCounter<any>
+  result: ImportResultCounter<any> | ImportResultPartialCounter
   dbTotal: number
   type: string
 }) {
@@ -295,26 +340,32 @@ function MergeResult({
       </CardContent>
       <Divider />
       <CardContent>
-        <Typography>
-          <Trans t={t} i18nKey="count.new" />{' '}
-          <strong>{result.new.length}</strong> / {total}
-        </Typography>
-        <Typography>
-          <Trans t={t} i18nKey="count.unchanged" />{' '}
-          <strong>{result.unchanged.length}</strong> / {total}
-        </Typography>
-        <Typography>
-          <Trans t={t} i18nKey="count.upgraded" />{' '}
-          <strong>{result.upgraded.length}</strong> / {total}
-        </Typography>
+        {'new' in result && (
+          <Typography>
+            <Trans t={t} i18nKey="count.new" />{' '}
+            <strong>{result.new.length}</strong> / {total}
+          </Typography>
+        )}
+        {'unchanged' in result && (
+          <Typography>
+            <Trans t={t} i18nKey="count.unchanged" />{' '}
+            <strong>{result.unchanged.length}</strong> / {total}
+          </Typography>
+        )}
+        {'upgraded' in result && (
+          <Typography>
+            <Trans t={t} i18nKey="count.upgraded" />{' '}
+            <strong>{result.upgraded.length}</strong> / {total}
+          </Typography>
+        )}
         {/* <Typography><Trans t={t} i18nKey="count.updated" /> <strong>{result.update.length}</strong></Typography> */}
-        {!!result.remove.length && (
+        {'remove' in result && !!result.remove.length && (
           <Typography color="warning.main">
             <Trans t={t} i18nKey="count.removed" />{' '}
             <strong>{result.remove.length}</strong>
           </Typography>
         )}
-        {!!result.notInImport && (
+        {'notInImport' in result && !!result.notInImport && (
           <Typography>
             <Trans t={t} i18nKey="count.notInImport" />{' '}
             <strong>{result.notInImport}</strong>
@@ -324,7 +375,7 @@ function MergeResult({
           <Trans t={t} i18nKey="count.dbTotal" />{' '}
           <strong>{result.beforeMerge}</strong> -&gt; <strong>{dbTotal}</strong>
         </Typography>
-        {!!result.invalid?.length && (
+        {'invalid' in result && !!result.invalid?.length && (
           <div>
             <Typography color="error.main">
               <Trans t={t} i18nKey="count.invalid" />{' '}
