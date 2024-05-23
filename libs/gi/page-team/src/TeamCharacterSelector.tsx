@@ -1,4 +1,9 @@
-import { BootstrapTooltip, TextFieldLazy } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  ModalWrapper,
+  TextFieldLazy,
+} from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
@@ -8,10 +13,9 @@ import GroupsIcon from '@mui/icons-material/Groups'
 import PersonIcon from '@mui/icons-material/Person'
 import {
   Box,
+  CardActionArea,
   CardContent,
-  Dialog,
-  DialogContent,
-  DialogTitle,
+  CardHeader,
   Tab,
   Tabs,
   Typography,
@@ -114,42 +118,46 @@ export default function TeamCharacterSelector({
         }
       >
         <CardContent sx={{ display: 'flex', justifyContent: 'center', pb: 0 }}>
-          <Typography
-            variant="h5"
-            display="flex"
-            onClick={() => setEditMode(true)}
-          >
-            {teamName}
-          </Typography>
-          <Dialog
-            open={editMode}
-            onClose={handleClickAway}
-            maxWidth="md"
-            fullWidth
-          >
-            <DialogTitle align="center">Edit Team</DialogTitle>
-            <DialogContent>
-              <Box display="flex" flexDirection="column" gap={2} sx={{ mt: 2 }}>
-                <TextFieldLazy
-                  label="Team Name"
-                  value={teamName}
-                  onChange={(teamName) =>
-                    database.teams.set(teamId, { name: teamName })
-                  }
-                  autoFocus
-                />
-                <TextFieldLazy
-                  label="Description"
-                  value={description}
-                  onChange={(description) =>
-                    database.teams.set(teamId, { description })
-                  }
-                  multiline
-                  minRows={4}
-                />
-              </Box>
-            </DialogContent>
-          </Dialog>
+          <CardActionArea>
+            <Typography
+              variant="h5"
+              align="center"
+              onClick={() => setEditMode(true)}
+            >
+              {teamName}
+            </Typography>
+          </CardActionArea>
+          <ModalWrapper open={editMode} onClose={handleClickAway}>
+            <CardThemed>
+              <CardHeader align="center" title="Edit Team" />
+              <CardContent>
+                <Box
+                  display="flex"
+                  flexDirection="column"
+                  gap={2}
+                  sx={{ mt: 2 }}
+                >
+                  <TextFieldLazy
+                    label="Team Name"
+                    value={teamName}
+                    onChange={(teamName) =>
+                      database.teams.set(teamId, { name: teamName })
+                    }
+                    autoFocus
+                  />
+                  <TextFieldLazy
+                    label="Description"
+                    value={description}
+                    onChange={(description) =>
+                      database.teams.set(teamId, { description })
+                    }
+                    multiline
+                    minRows={4}
+                  />
+                </Box>
+              </CardContent>
+            </CardThemed>
+          </ModalWrapper>
         </CardContent>
       </BootstrapTooltip>
       <Tabs
