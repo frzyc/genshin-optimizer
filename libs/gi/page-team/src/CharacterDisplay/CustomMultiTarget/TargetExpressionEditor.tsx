@@ -12,7 +12,7 @@ import type {
 import { itemAddressValue, itemPartFinder } from '@genshin-optimizer/gi/db'
 import { Box } from '@mui/material'
 import type { Dispatch, SetStateAction } from 'react'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import ExpressionDisplay from './ExpressionDisplay'
 
 function isEqual(a: any, b: any) {
@@ -63,6 +63,10 @@ export default function TargetExpressionEditor({
     () => ({ ...itemAddressValue(expression, functions, sia) }),
     [sia, expression, functions]
   )
+
+  useEffect(() => {
+    if (sia && !selectedItem) setSIA(undefined)
+  }, [selectedItem, setSIA, sia])
 
   const addFunction = useCallback(
     (func: CustomFunction) => {
@@ -139,7 +143,12 @@ export default function TargetExpressionEditor({
       func.args.splice(sia.index, 1)
       return func
     })
-  }, [setFunction, sia])
+    setSIA((prev) => {
+      if (!prev || prev.type !== 'argument') return prev
+      if (prev.index < 1) return prev
+      return { ...prev, index: prev.index - 1 }
+    })
+  }, [setFunction, setSIA, sia])
 
   const setArgument = useCallback(
     (
@@ -239,7 +248,12 @@ export default function TargetExpressionEditor({
       expression.splice(sia.index, 1)
       setCMT({ ...CMT, expression })
     }
-  }, [CMT, expression, functions, setFunction, setCMT, sia])
+    setSIA((prev) => {
+      if (!prev || prev.type !== 'unit') return prev
+      if (prev.index < 1) return prev
+      return { ...prev, index: prev.index - 1 }
+    })
+  }, [sia, functions.length, setSIA, setFunction, expression, setCMT, CMT])
 
   const setUnit = useCallback(
     (
