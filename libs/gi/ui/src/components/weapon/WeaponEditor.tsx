@@ -242,7 +242,7 @@ export function WeaponEditor({
                         return (
                           <NodeFieldDisplay
                             key={JSON.stringify(n.info)}
-                            node={n}
+                            calcRes={n}
                             component={ListItem}
                           />
                         )

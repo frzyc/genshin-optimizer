@@ -60,15 +60,14 @@ function FieldDisplay({
     if (node.isEmpty) return null
     if (compareData) {
       const compareNode = compareData.get(field.node)
-      const compareValue = compareNode.isEmpty ? 0 : compareNode.value
       return (
         <NodeFieldDisplay
-          node={node}
-          compareValue={compareValue}
+          calcRes={node}
+          compareCalcRes={compareNode}
           component={component}
         />
       )
-    } else return <NodeFieldDisplay node={node} component={component} />
+    } else return <NodeFieldDisplay calcRes={node} component={component} />
   }
   return <BasicFieldDisplay field={field} component={component} />
 }
@@ -104,72 +103,86 @@ export function BasicFieldDisplay({
 }
 
 export function NodeFieldDisplay({
-  node,
-  compareValue,
+  calcRes,
+  compareCalcRes,
   component = ListItem,
   emphasize,
+  showZero = false,
 }: {
-  node: CalcResult
-  compareValue?: number
+  calcRes?: CalcResult
+  compareCalcRes?: CalcResult
   component?: React.ElementType
   emphasize?: boolean
+
+  // Show field, even if the value is zero
+  showZero?: boolean
 }) {
   const { data } = useContext(DataContext)
   const { setFormulaData } = useContext(FormulaDataContext)
   const onClick = useCallback(
-    () => setFormulaData(data, node),
-    [setFormulaData, data, node]
+    () => setFormulaData(data, calcRes),
+    [setFormulaData, data, calcRes]
   )
-
-  if (node.isEmpty) return null
-  const { multi } = node.info
+  if (!calcRes && !compareCalcRes) return null
+  const { multi } = calcRes?.info ?? compareCalcRes?.info ?? {}
 
   const multiDisplay = multi && <span>{multi}&#215;</span>
-  const nodeValue = node.value
+  const calcValue = calcRes?.value ?? 0
+  const compareCalcValue = compareCalcRes?.value ?? 0
+
+  if (!showZero && !calcValue && !compareCalcValue) return null
+
   let fieldVal = false as ReactNode
-  const { unit, fixed, variant, subVariant } = resolveInfo(node.info)
-  const calcDisplay = getCalcDisplay(node)
-  if (compareValue !== undefined) {
-    const diff = nodeValue - compareValue
-    const pctDiff = valueString(diff / compareValue, '%', fixed)
-    fieldVal = (
-      <>
-        <span>{valueString(nodeValue, unit, fixed)}</span>
-        {Math.abs(diff) > 0.0001 && (
-          <BootstrapTooltip
-            title={
-              <Typography>
-                Compare to{' '}
-                <strong>{valueString(compareValue, unit, fixed)}</strong>
-              </Typography>
-            }
+  const { unit, fixed, variant, subVariant } = resolveInfo(
+    (calcRes?.info ?? compareCalcRes?.info)!
+  )
+  const calcDisplay = getCalcDisplay((calcRes ?? compareCalcRes)!)
+
+  const diff = calcValue - compareCalcValue
+  const pctDiff =
+    compareCalcRes &&
+    unit !== '%' &&
+    (calcValue > 100 || compareCalcValue > 100)
+      ? valueString(diff / compareCalcValue, '%', fixed)
+      : null
+
+  fieldVal = (
+    <>
+      <span>{valueString(calcValue, unit, fixed)}</span>
+      {Math.abs(diff) > 0.0001 && compareCalcRes && (
+        <BootstrapTooltip
+          title={
+            <Typography>
+              Compare to{' '}
+              <strong>{valueString(compareCalcValue, unit, fixed)}</strong>
+            </Typography>
+          }
+        >
+          <ColorText
+            color={diff > 0 ? 'success' : 'error'}
+            sx={{
+              display: 'flex',
+              gap: 0.5,
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+              flexWrap: 'wrap',
+            }}
           >
-            <ColorText
-              color={diff > 0 ? 'success' : 'error'}
-              sx={{
-                display: 'flex',
-                gap: 0.5,
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-                flexWrap: 'wrap',
-              }}
-            >
+            <span>
+              ({diff > 0 ? '+' : ''}
+              {valueString(diff, unit, fixed)})
+            </span>
+            {!!pctDiff && (
               <span>
                 ({diff > 0 ? '+' : ''}
-                {valueString(diff, unit, fixed)})
+                {pctDiff})
               </span>
-              {unit !== '%' && compareValue !== 0 && (
-                <span>
-                  ({diff > 0 ? '+' : ''}
-                  {pctDiff})
-                </span>
-              )}
-            </ColorText>
-          </BootstrapTooltip>
-        )}
-      </>
-    )
-  } else fieldVal = <span>{calcDisplay.valueString}</span>
+            )}
+          </ColorText>
+        </BootstrapTooltip>
+      )}
+    </>
+  )
 
   return (
     <Box
@@ -179,10 +192,11 @@ export function NodeFieldDisplay({
         justifyContent: 'space-between',
         gap: 1,
         boxShadow: emphasize ? '0px 0px 0px 2px red inset' : undefined,
+        py: 0.25,
       }}
       component={component}
     >
-      <NodeFieldDisplayText node={node} />
+      <NodeFieldDisplayText node={(calcRes ?? compareCalcRes)!} />
       <Typography
         sx={{
           display: 'flex',

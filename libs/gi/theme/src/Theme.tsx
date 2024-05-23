@@ -145,6 +145,7 @@ declare module '@mui/material/Chip' {
     hyperbloom: true
   }
 }
+
 declare module '@mui/material/InputBase' {
   interface InputBasePropsColorOverrides {
     roll1: true
@@ -163,6 +164,17 @@ declare module '@mui/material/InputBase' {
     physical: true
     vaporize: true
     melt: true
+  }
+}
+
+declare module '@mui/material/TextField' {
+  interface TextFieldPropsColorOverrides {
+    roll1: true
+    roll2: true
+    roll3: true
+    roll4: true
+    roll5: true
+    roll6: true
   }
 }
 

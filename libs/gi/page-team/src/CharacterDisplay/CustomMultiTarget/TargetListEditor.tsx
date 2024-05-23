@@ -144,7 +144,13 @@ function AddCustomTargetBtn({
         show={show}
         onClose={onClose}
         setTarget={setTargetHandler}
-        excludeSections={['basic', 'custom']}
+        excludeSections={[
+          'basic',
+          'bounsStats',
+          'custom',
+          'character',
+          'teamBuff',
+        ]}
       />
     </>
   )

@@ -17,7 +17,7 @@ import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { Box, MenuItem, Stack, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { BuildTcContext } from '../BuildTcContext'
+import { BuildTcContext } from '../../../../BuildTcContext'
 import { ArtifactAllSubstatEditor } from './ArtifactAllSubstatEditor'
 import { ArtifactSubstatEditor } from './ArtifactSubstatEditor'
 

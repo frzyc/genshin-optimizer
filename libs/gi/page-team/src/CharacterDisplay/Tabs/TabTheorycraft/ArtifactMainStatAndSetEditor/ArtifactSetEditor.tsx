@@ -16,7 +16,7 @@ import ClearIcon from '@mui/icons-material/Clear'
 import InfoIcon from '@mui/icons-material/Info'
 import { Box, Button, ButtonGroup, MenuItem, Stack } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
-import { BuildTcContext } from '../BuildTcContext'
+import { BuildTcContext } from '../../../../BuildTcContext'
 
 export function ArtifactSetEditor({
   setKey,

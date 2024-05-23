@@ -14,6 +14,7 @@ import {
   useDatabase,
   useTeam,
 } from '@genshin-optimizer/gi/db-ui'
+import type { ICharacter } from '@genshin-optimizer/gi/good'
 import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {
   allArtifactData,
@@ -137,7 +138,8 @@ export function getTeamDataCalc(
   overrideTeamCharId: string,
   mainStatAssumptionLevel = 0,
   overrideArt?: ICachedArtifact[] | Data,
-  overrideWeapon?: ICachedWeapon
+  overrideWeapon?: ICachedWeapon,
+  overrideChar?: Omit<ICharacter, 'key'>
 ): TeamData | undefined {
   if (!teamId) return undefined
   const activeChar = database.teams.getActiveTeamChar(teamId)
@@ -150,7 +152,8 @@ export function getTeamDataCalc(
       overrideTeamCharId,
       mainStatAssumptionLevel,
       overrideArt,
-      overrideWeapon
+      overrideWeapon,
+      overrideChar
     ) ?? {}
   if (!teamData || !teamBundle) return undefined
 
@@ -170,7 +173,8 @@ export function getTeamData(
   mainStatAssumptionLevel = 0,
   // OverrideArt/overrideWeapon is only applied to the teamchar of activeTeamCharId
   overrideArt?: ICachedArtifact[] | Data,
-  overrideWeapon?: ICachedWeapon
+  overrideWeapon?: ICachedWeapon,
+  overrideChar?: Omit<ICharacter, 'key'>
 ): TeamDataBundle | undefined {
   if (!teamId) return undefined
   const team = database.teams.get(teamId)
@@ -191,10 +195,21 @@ export function getTeamData(
         hitMode,
         reaction,
       } = teamChar
-      const character = database.chars.get(characterKey)
-      if (!character) return undefined
-      const { key, level, constellation, ascension, talent } = character
+      const dbChar = database.chars.get(characterKey)
+      if (!dbChar) return undefined
+
       const isActiveTeamChar = teamCharId === activeTeamCharId
+
+      let char: Omit<ICharacter, 'key'> = dbChar
+      if (overrideChar && isActiveTeamChar) char = overrideChar
+      // tcbuild override
+      else if (buildType === 'tc' && buildTcId) {
+        const tcchar = database.buildTcs.get(buildTcId)!.character
+        if (tcchar) char = tcchar
+      }
+
+      const { level, constellation, ascension, talent } = char
+
       const weapon = (() => {
         if (overrideWeapon && isActiveTeamChar) return overrideWeapon
         return database.teams.getLoadoutWeapon(loadoutDatum)
@@ -218,7 +233,7 @@ export function getTeamData(
         isActiveTeamChar, // only true for the "main character"?
         mainLevel,
         {
-          key,
+          key: characterKey,
           level,
           constellation,
           ascension,

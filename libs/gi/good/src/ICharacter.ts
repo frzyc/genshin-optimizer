@@ -13,3 +13,9 @@ export interface ICharacter {
   ascension: AscensionKey
   talent: ICharacterTalent
 }
+
+export function isTalentKey(tKey: string): tKey is keyof ICharacterTalent {
+  return (['auto', 'skill', 'burst'] as const).includes(
+    tKey as keyof ICharacter['talent']
+  )
+}

@@ -1,14 +1,24 @@
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
-import { handleMultiSelect } from '@genshin-optimizer/common/util'
+import { catTotal, handleMultiSelect } from '@genshin-optimizer/common/util'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allWeaponKeys, allWeaponTypeKeys } from '@genshin-optimizer/gi/consts'
-import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
+import type { WeaponKey, WeaponSubstatKey } from '@genshin-optimizer/gi/consts'
+import {
+  allWeaponKeys,
+  allWeaponSubstatKeys,
+  allWeaponTypeKeys,
+} from '@genshin-optimizer/gi/consts'
+import type {
+  ArchiveWeaponOption,
+  ICachedWeapon,
+} from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { i18n } from '@genshin-optimizer/gi/i18n'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
+  SubstatMultiAutocomplete,
   WeaponName,
   getCalcDisplay,
   resolveInfo,
@@ -34,51 +44,79 @@ import {
   ToggleButtonGroup,
   Typography,
 } from '@mui/material'
-import { Suspense, memo, useDeferredValue, useMemo, useState } from 'react'
+import {
+  Suspense,
+  memo,
+  useCallback,
+  useDeferredValue,
+  useMemo,
+  useState,
+} from 'react'
 import { WeaponView } from './WeaponView'
 const rarities = [5, 4, 3, 2, 1] as const
 export default function TabWeapon() {
-  const [rarityFilter, setRarityFilter] = useState([...rarities])
-  const [weaponTypeFilter, setWeaponTypeFilter] = useState([
-    ...allWeaponTypeKeys,
-  ])
+  const database = useDatabase()
+  const archive = useDataEntryBase(database.displayArchive)
   const handleRarity = handleMultiSelect([...rarities])
   const handleType = handleMultiSelect([...allWeaponTypeKeys])
   const [searchTerm, setSearchTerm] = useState('')
   const searchTermDeferred = useDeferredValue(searchTerm)
+  const { weapon } = archive
+  const weaponOptionDispatch = useCallback(
+    (option: Partial<ArchiveWeaponOption>) =>
+      database.displayArchive.set({ weapon: { ...weapon, ...option } }),
+    [database, weapon]
+  )
   const weaponKeys = useMemo(() => {
-    return allWeaponKeys.filter(
-      (wKey) => {
-        const { rarity, weaponType } = getWeaponStat(wKey)
-        if (!rarityFilter.includes(rarity)) return false
-        if (!weaponTypeFilter.includes(weaponType)) return false
-        const setKeyStr = i18n.t(`weaponNames_gen:${wKey}`)
-        if (
-          searchTermDeferred &&
-          !setKeyStr
-            .toLocaleLowerCase()
-            .includes(searchTermDeferred.toLocaleLowerCase())
-        )
-          return false
-        return true
-      },
-      [rarityFilter]
-    )
-  }, [rarityFilter, searchTermDeferred, weaponTypeFilter])
+    return allWeaponKeys.filter((wKey) => {
+      const { rarity, subStat, weaponType } = getWeaponStat(wKey)
+      if (!weapon.rarity.includes(rarity)) return false
+      if (
+        weapon.subStat.length &&
+        (!subStat || !weapon.subStat.includes(subStat.type as WeaponSubstatKey))
+      )
+        return false
+      if (!weapon.weaponType.includes(weaponType)) return false
+      const setKeyStr = i18n.t(`weaponNames_gen:${wKey}`)
+      if (
+        searchTermDeferred &&
+        !setKeyStr
+          .toLocaleLowerCase()
+          .includes(searchTermDeferred.toLocaleLowerCase())
+      )
+        return false
+      return true
+    })
+  }, [weapon, searchTermDeferred])
   const { numShow, setTriggerElement } = useInfScroll(10, weaponKeys.length)
   const weaponKeysToShow = useMemo(
     () => weaponKeys.slice(0, numShow),
     [weaponKeys, numShow]
   )
+  const weaponTotals = useMemo(
+    () =>
+      catTotal(allWeaponSubstatKeys, (ct) =>
+        allWeaponKeys.forEach((wKey) => {
+          const { subStat } = getWeaponStat(wKey)
+          if (!subStat) return
+          const { type } = subStat as { type: WeaponSubstatKey }
+          ct[type].total++
+          if (weaponKeys.includes(wKey)) ct[type].current++
+        })
+      ),
+    [weaponKeys]
+  )
   return (
     <Box>
       <CardContent sx={{ display: 'flex', gap: 2 }}>
-        <ToggleButtonGroup value={rarityFilter}>
+        <ToggleButtonGroup value={weapon.rarity}>
           {rarities.map((r) => (
             <ToggleButton
               key={r}
               value={r}
-              onClick={() => setRarityFilter((old) => handleRarity(old, r))}
+              onClick={() =>
+                weaponOptionDispatch({ rarity: handleRarity(weapon.rarity, r) })
+              }
             >
               <ColorText color={`rarity${r}` as keyof Palette}>
                 <StarRoundedIcon sx={{ verticalAlign: 'text-top' }} />
@@ -86,17 +124,30 @@ export default function TabWeapon() {
             </ToggleButton>
           ))}
         </ToggleButtonGroup>
-        <ToggleButtonGroup value={weaponTypeFilter}>
+        <ToggleButtonGroup value={weapon.weaponType}>
           {allWeaponTypeKeys.map((wt) => (
             <ToggleButton
               key={wt}
               value={wt}
-              onClick={() => setWeaponTypeFilter((old) => handleType(old, wt))}
+              onClick={() =>
+                weaponOptionDispatch({
+                  weaponType: handleType(weapon.weaponType, wt),
+                })
+              }
             >
               <ImgIcon src={imgAssets.weaponTypes?.[wt]} size={2} />
             </ToggleButton>
           ))}
         </ToggleButtonGroup>
+        <SubstatMultiAutocomplete
+          fullWidth
+          substatKeys={weapon.subStat}
+          setSubstatKeys={(subStat) => {
+            weaponOptionDispatch({ subStat: subStat })
+          }}
+          totals={weaponTotals}
+          allSubstatKeys={[...allWeaponSubstatKeys]}
+        />
         <TextField
           fullWidth
           variant="outlined"

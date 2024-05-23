@@ -13,7 +13,7 @@ import InfoIcon from '@mui/icons-material/Info'
 import { Box, Slider, Stack, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { BuildTcContext } from '../BuildTcContext'
+import { BuildTcContext } from '../../../../BuildTcContext'
 export function ArtifactSubstatEditor({
   statKey,
   disabled = false,

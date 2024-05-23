@@ -1,17 +1,9 @@
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import TrackChangesIcon from '@mui/icons-material/TrackChanges'
-import {
-  Box,
-  CardContent,
-  CardHeader,
-  Divider,
-  Stack,
-  Typography,
-} from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { DataContext } from '../../../context'
 import { getDisplayHeader, resolveInfo } from '../../../util'
@@ -47,47 +39,22 @@ export function OptimizationTargetDisplay({
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
   const iconDisplay = icon ? icon : infoIcon
   return (
-    <CardThemed bgt="light">
-      <CardHeader
-        title={
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 1,
-            }}
-          >
-            <TrackChangesIcon />
-            <span>Optimization Target</span>
-          </Box>
-        }
-      />
-      <Divider />
-      <CardContent>
-        <Stack
-          divider={<Divider orientation="vertical" flexItem />}
-          spacing={1}
-        >
-          <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-            {iconDisplay}
-            <span>{title}</span>
-            {!!action && (
-              <SqBadge color="success" sx={{ whiteSpace: 'normal' }}>
-                {action}
-              </SqBadge>
-            )}
-          </Box>
-          <Typography
-            variant="h6"
-            sx={{ display: 'flex', alignItems: 'center' }}
-          >
-            <SqBadge sx={{ whiteSpace: 'normal' }}>
-              <strong>{name}</strong>
-              {suffixDisplay}
-            </SqBadge>
-          </Typography>
-        </Stack>
-      </CardContent>
-    </CardThemed>
+    <>
+      <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+        {iconDisplay}
+        <span>{title}</span>
+        {!!action && (
+          <SqBadge color="success" sx={{ whiteSpace: 'normal' }}>
+            {action}
+          </SqBadge>
+        )}
+      </Box>
+      <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+        <SqBadge sx={{ whiteSpace: 'normal' }}>
+          <strong>{name}</strong>
+          {suffixDisplay}
+        </SqBadge>
+      </Typography>
+    </>
   )
 }

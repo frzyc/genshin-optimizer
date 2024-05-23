@@ -197,7 +197,13 @@ export default function MTargetEditor({
                 showEmptyTargets
                 targetSelectorModalProps={{
                   flatOnly: true,
-                  excludeSections: ['basic', 'custom'],
+                  excludeSections: [
+                    'basic',
+                    'bounsStats',
+                    'custom',
+                    'character',
+                    'teamBuff',
+                  ],
                 }}
               />
               {node && (
