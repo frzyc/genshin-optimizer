@@ -16,104 +16,85 @@ import {
   YouTube,
 } from '@mui/icons-material'
 import {
-  Button,
+  Box,
+  CardActionArea,
   CardContent,
   CardHeader,
   Divider,
   Link,
-  Tooltip,
   Typography,
 } from '@mui/material'
 import type { TFunction } from 'i18next'
 import { useTranslation } from 'react-i18next'
-import { Link as RouterLink } from 'react-router-dom'
 
-const buttons = [
+const genshin_optimizer_links = [
   {
-    title: () => 'Genshin Optimizer Discord',
+    title: () => 'Discord',
     icon: <DiscordIcon />,
-    tooltip: () => '',
     url: process.env['NX_URL_DISCORD_GO'],
-    color: 'discord',
   },
   {
-    title: () => 'Genshin Optimizer Github',
+    title: () => 'Github',
     icon: <GitHub />,
-    tooltip: () => '',
     url: process.env['NX_URL_GITHUB_GO'],
-    color: 'white',
   },
   {
     title: (t: TFunction) => t`quickLinksCard.buttons.patchNotes.title`,
     icon: <Description />,
-    tooltip: (t: TFunction) => t`quickLinksCard.buttons.patchNotes.tooltip`,
     url: `${process.env['NX_URL_GITHUB_GO']}/releases`,
-    color: 'secondary',
   },
   {
     title: (t: TFunction) => t`quickLinksCard.buttons.tyGuide.title`,
     icon: <YouTube />,
-    tooltip: (t: TFunction) => t`quickLinksCard.buttons.tyGuide.tooltip`,
     url: process.env['NX_URL_YOUTUBE_TUTPL'],
-    color: 'red',
   },
+]
+
+const frzyc_links = [
   {
-    title: () => 'Twitch (frzyc)',
+    title: () => 'Twitch',
     icon: <TwitchIcon />,
-    tooltip: () => '',
     url: process.env['NX_URL_TWITCH_FRZYC'],
-    color: 'twitch',
   },
   {
-    title: () => 'Twitter (frzyc)',
+    title: () => 'Twitter',
     icon: <Twitter />,
-    tooltip: () => '',
     url: process.env['NX_URL_TWITTER_FRZYC'],
-    color: 'twitter',
   },
   {
-    title: () => 'Patreon (frzyc)',
+    title: () => 'Patreon',
     icon: <PatreonIcon />,
-    tooltip: () => '',
     url: process.env['NX_URL_PATREON_FRZYC'],
-    color: 'patreon',
   },
   {
-    title: () => 'PayPal (frzyc)',
+    title: () => 'PayPal',
     icon: <PaypalIcon />,
-    tooltip: () => '',
     url: process.env['NX_URL_PAYPAL_FRZYC'],
-    color: 'paypal',
   },
+]
+
+const other_links = [
   {
     title: (t: TFunction) => t`quickLinksCard.buttons.scanners.title`,
     icon: <Scanner />,
-    tooltip: (t: TFunction) => t`quickLinksCard.buttons.scanners.tooltip`,
-    to: '/scanner',
-    color: 'primary',
+    url: '/scanner',
   },
   {
     title: (t: TFunction) => t`quickLinksCard.buttons.kqm.title`,
     icon: <Handshake />,
-    tooltip: (t: TFunction) => t`quickLinksCard.buttons.kqm.tooltip`,
     url: process.env['NX_URL_WEBSITE_KQM'],
-    color: 'keqing',
   },
   {
     title: (t: TFunction) => t`quickLinksCard.buttons.devDiscord.title`,
     icon: <DiscordIcon />,
-    tooltip: (t: TFunction) => t`quickLinksCard.buttons.devDiscord.tooltip`,
     url: process.env['NX_URL_DISCORD_GDEV'],
-    color: 'discord',
   },
   {
     title: (t: TFunction) => t`quickLinksCard.buttons.good.title`,
     icon: <Article />,
-    tooltip: (t: TFunction) => t`quickLinksCard.buttons.good.tooltip`,
-    to: '/doc',
-    color: 'primary',
+    url: '/doc',
   },
-] as const
+]
 
 export default function QuickLinksCard() {
   const { t } = useTranslation(['page_home', 'ui'])
@@ -124,45 +105,100 @@ export default function QuickLinksCard() {
         avatar={<InsertLink fontSize="large" />}
       />
       <Divider />
-      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        {buttons.map((btnProps, i) => {
-          const { title, icon, tooltip, color } = btnProps
-          let button
-          if ('to' in btnProps)
-            button = (
-              <Button
-                fullWidth
-                key={i}
-                color={color}
-                component={RouterLink}
-                to={btnProps.to}
-                startIcon={icon}
-              >
-                {title(t)}
-              </Button>
-            )
-          if ('url' in btnProps)
-            button = (
-              <Button
-                fullWidth
-                key={i}
-                color={color}
-                component={Link}
-                href={btnProps.url}
-                target="_blank"
-                rel="noopener"
-                startIcon={icon}
-              >
-                {title(t)}
-              </Button>
-            )
-          if (!button) return null
-          return (
-            <Tooltip key={i} title={tooltip(t)} placement="top" arrow>
-              {button}
-            </Tooltip>
-          )
-        })}
+      <CardContent
+        sx={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 1 }}
+      >
+        <CardThemed bgt="light">
+          <CardContent>
+            <Typography marginBottom={1} variant="h6">
+              Genshin Optimizer
+            </Typography>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                gap: 0.5,
+              }}
+            >
+              {genshin_optimizer_links.map((link) => {
+                const { title, icon, url } = link
+                return (
+                  <CardActionArea
+                    component={Link}
+                    href={url}
+                    target="_blank"
+                    rel="noopener"
+                    sx={{
+                      display: 'flex',
+                      gap: 1,
+                      justifyContent: 'flex-start',
+                    }}
+                  >
+                    {icon}
+                    {title(t)}
+                  </CardActionArea>
+                )
+              })}
+            </Box>
+          </CardContent>
+        </CardThemed>
+        <CardThemed bgt="light">
+          <CardContent>
+            <Typography marginBottom={1} variant="h6">
+              frzyc
+            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+              {frzyc_links.map((link) => {
+                const { title, icon, url } = link
+                return (
+                  <CardActionArea
+                    component={Link}
+                    href={url}
+                    target="_blank"
+                    rel="noopener"
+                    sx={{
+                      display: 'flex',
+                      gap: 1,
+                      justifyContent: 'flex-start',
+                    }}
+                  >
+                    {icon}
+                    {title()}
+                  </CardActionArea>
+                )
+              })}
+            </Box>
+          </CardContent>
+        </CardThemed>
+        <CardThemed bgt="light">
+          <CardContent>
+            <Typography marginBottom={1} variant="h6">
+              Other links
+            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+              {other_links.map((link) => {
+                const { title, icon, url } = link
+                return (
+                  <CardActionArea
+                    component={Link}
+                    href={url}
+                    target="_blank"
+                    rel="noopener"
+                    sx={{
+                      display: 'flex',
+                      gap: 1,
+                      justifyContent: 'flex-start',
+                    }}
+                  >
+                    {icon}
+                    {title(t)}
+                  </CardActionArea>
+                )
+              })}
+            </Box>
+          </CardContent>
+        </CardThemed>
       </CardContent>
     </CardThemed>
   )

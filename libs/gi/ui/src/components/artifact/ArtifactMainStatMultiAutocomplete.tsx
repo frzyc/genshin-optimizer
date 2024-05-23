@@ -6,7 +6,7 @@ import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { Chip } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { artStatPercent } from './util'
+import { statPercent } from '../util'
 
 export function ArtifactMainStatMultiAutocomplete({
   mainStatKeys,
@@ -23,7 +23,7 @@ export function ArtifactMainStatMultiAutocomplete({
     () =>
       allMainStatKeys.map((key) => ({
         key,
-        label: `${tk(key)}${artStatPercent(key)}`,
+        label: `${tk(key)}${statPercent(key)}`,
         variant: KeyMap.getVariant(key),
       })),
     [tk]

@@ -17,7 +17,7 @@ import {
 } from '@mui/material'
 import { useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { BuildTcContext } from './BuildTcContext'
+import { BuildTcContext } from '../../../BuildTcContext'
 import gcsimIcon from './gcsim.png'
 
 // From https://github.com/genshinsim/gcsim/blob/68874fb693c4e959b336d106f201c29d100fc2c8/pkg/core/attributes/stats.go#L72

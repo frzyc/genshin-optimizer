@@ -148,7 +148,9 @@ export const allInputPremodKeys = [...allModStats, ...allNonModStats] as const
 
 export type InputPremodKey = (typeof allInputPremodKeys)[number]
 
-const talent = objKeyMap(allTalents, (_) => read())
+const talent = objKeyMap(allTalents, (t) =>
+  read(undefined, { ...info(t), prefix: 'char' })
+)
 const allModStatNodes = objKeyMap(allModStats, (key) =>
   read(undefined, info(key))
 )
@@ -209,8 +211,8 @@ const inputBase = {
   charEle: stringRead(),
   weaponType: stringRead(),
   lvl: read(undefined, { ...info('level'), prefix: 'char' }),
-  constellation: read(),
-  asc: read(),
+  constellation: read(undefined, { ...info('constellation'), prefix: 'char' }),
+  asc: read(undefined, { ...info('ascension'), prefix: 'char' }),
   special: read(),
 
   infusion: {

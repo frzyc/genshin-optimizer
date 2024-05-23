@@ -10,7 +10,7 @@ import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { Box, Slider } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { BuildTcContext } from '../BuildTcContext'
+import { BuildTcContext } from '../../../../BuildTcContext'
 
 function getMinRoll(charTC: BuildTc) {
   const {

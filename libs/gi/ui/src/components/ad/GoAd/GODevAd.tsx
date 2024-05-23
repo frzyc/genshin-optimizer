@@ -30,11 +30,11 @@ export function GODevAd({ children }: { children: ReactNode }) {
       </Typography>
       <Typography color="coral" fontFamily="monospace">
         React MaterialUI nx ekans GraphQL git metapod NextJS discord.js vite
-        nodeJS emotion prisma Agumon tessract.js typescript bun sawk webpack
+        nodeJS emotion prisma Agumon tesseract.js typescript bun sawk webpack
         next-auth jest
       </Typography>
       <Typography>
-        If you have knowledge in some(or any) of those techonology mentioned
+        If you have knowledge in some(or any) of those technologies mentioned
         above, or are hoping to learn in an actively-developed app with
         thousands of users, please join our Discord! We'd love to work with you.
       </Typography>

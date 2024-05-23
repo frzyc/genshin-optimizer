@@ -1,3 +1,4 @@
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
 import { handleMultiSelect } from '@genshin-optimizer/common/util'
@@ -7,8 +8,11 @@ import {
   allCharacterKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
-import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
-import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import type {
+  ArchiveCharacterOption,
+  ICachedCharacter,
+} from '@genshin-optimizer/gi/db'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { i18n } from '@genshin-optimizer/gi/i18n'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
@@ -37,6 +41,7 @@ import {
 import {
   Suspense,
   memo,
+  useCallback,
   useContext,
   useDeferredValue,
   useMemo,
@@ -46,42 +51,44 @@ import { CharacterView } from './CharacterView'
 const rarties = [5, 4] as const
 export default function TabCharacter() {
   const { silly } = useContext(SillyContext)
-  const [rarityFilter, setRarityFilter] = useState([...rarties])
-  const [weaponTypeFilter, setWeaponTypeFilter] = useState([
-    ...allWeaponTypeKeys,
-  ])
+  const database = useDatabase()
+  const archive = useDataEntryBase(database.displayArchive)
   const handleRarity = handleMultiSelect([...rarties])
   const handleType = handleMultiSelect([...allWeaponTypeKeys])
   const [searchTerm, setSearchTerm] = useState('')
   const searchTermDeferred = useDeferredValue(searchTerm)
-  const charKeys = useMemo(() => {
-    return allCharacterKeys.filter(
-      (cKey) => {
-        const { rarity, weaponType } = getCharStat(cKey)
-        if (!rarityFilter.includes(rarity as (typeof rarties)[number]))
-          return false
-        if (!weaponTypeFilter.includes(weaponType)) return false
 
-        const nameStr = i18n.t(`charNames_gen:${cKey}`)
-        const sillyStr =
-          silly && i18n.exists(`sillyWisher_charNames:${cKey}`)
-            ? i18n.t(`sillyWisher_charNames:${cKey}`)
-            : ''
-        if (
-          searchTermDeferred &&
-          !nameStr
-            .toLocaleLowerCase()
-            .includes(searchTermDeferred.toLocaleLowerCase()) &&
-          !sillyStr
-            .toLocaleLowerCase()
-            .includes(searchTermDeferred.toLocaleLowerCase())
-        )
-          return false
-        return true
-      },
-      [rarityFilter]
-    )
-  }, [rarityFilter, searchTermDeferred, silly, weaponTypeFilter])
+  const { character } = archive
+  const characterOptionDispatch = useCallback(
+    (option: Partial<ArchiveCharacterOption>) =>
+      database.displayArchive.set({ character: { ...character, ...option } }),
+    [database, character]
+  )
+  const charKeys = useMemo(() => {
+    return allCharacterKeys.filter((cKey) => {
+      const { rarity, weaponType } = getCharStat(cKey)
+      if (!character.rarity.includes(rarity as (typeof rarties)[number]))
+        return false
+      if (!character.weaponType.includes(weaponType)) return false
+
+      const nameStr = i18n.t(`charNames_gen:${cKey}`)
+      const sillyStr =
+        silly && i18n.exists(`sillyWisher_charNames:${cKey}`)
+          ? i18n.t(`sillyWisher_charNames:${cKey}`)
+          : ''
+      if (
+        searchTermDeferred &&
+        !nameStr
+          .toLocaleLowerCase()
+          .includes(searchTermDeferred.toLocaleLowerCase()) &&
+        !sillyStr
+          .toLocaleLowerCase()
+          .includes(searchTermDeferred.toLocaleLowerCase())
+      )
+        return false
+      return true
+    })
+  }, [character, searchTermDeferred, silly])
 
   const { numShow, setTriggerElement } = useInfScroll(10, charKeys.length)
   const charKeysToShow = useMemo(
@@ -91,12 +98,16 @@ export default function TabCharacter() {
   return (
     <Box>
       <CardContent sx={{ display: 'flex', gap: 2 }}>
-        <ToggleButtonGroup value={rarityFilter}>
+        <ToggleButtonGroup value={character.rarity}>
           {rarties.map((r) => (
             <ToggleButton
               key={r}
               value={r}
-              onClick={() => setRarityFilter((old) => handleRarity(old, r))}
+              onClick={() =>
+                characterOptionDispatch({
+                  rarity: handleRarity(character.rarity, r),
+                })
+              }
             >
               <ColorText color={`rarity${r}` as keyof Palette}>
                 <StarRoundedIcon sx={{ verticalAlign: 'text-top' }} />
@@ -104,12 +115,16 @@ export default function TabCharacter() {
             </ToggleButton>
           ))}
         </ToggleButtonGroup>
-        <ToggleButtonGroup value={weaponTypeFilter}>
+        <ToggleButtonGroup value={character.weaponType}>
           {allWeaponTypeKeys.map((wt) => (
             <ToggleButton
               key={wt}
               value={wt}
-              onClick={() => setWeaponTypeFilter((old) => handleType(old, wt))}
+              onClick={() =>
+                characterOptionDispatch({
+                  weaponType: handleType(character.weaponType, wt),
+                })
+              }
             >
               <ImgIcon src={imgAssets.weaponTypes?.[wt]} size={2} />
             </ToggleButton>
