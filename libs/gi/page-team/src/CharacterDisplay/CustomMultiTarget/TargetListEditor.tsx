@@ -3,7 +3,7 @@ import { arrayMove, clamp, deepClone } from '@genshin-optimizer/common/util'
 import type { CustomMultiTarget, CustomTarget } from '@genshin-optimizer/gi/db'
 import { initCustomTarget } from '@genshin-optimizer/gi/db'
 import AddIcon from '@mui/icons-material/Add'
-import { Button, CardContent } from '@mui/material'
+import { Button } from '@mui/material'
 import { useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelectorModal'
@@ -96,14 +96,7 @@ export default function TargetListEditor({
   )
 
   return (
-    <CardContent
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 1,
-        position: 'relative',
-      }}
-    >
+    <>
       {customTargetDisplays}
       <AddCustomTargetBtn setTarget={addTarget} />
       {customMultiTarget.targets[selectedTargetValid] && (
@@ -117,7 +110,7 @@ export default function TargetListEditor({
           onDup={dupCustomTarget(selectedTargetValid)}
         />
       )}
-    </CardContent>
+    </>
   )
 }
 

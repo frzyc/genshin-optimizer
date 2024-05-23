@@ -1,120 +1,141 @@
-import {
-  CardThemed,
-  ColorText,
-  SolidToggleButtonGroup,
-} from '@genshin-optimizer/common/ui'
-import { arrayMove, objPathValue } from '@genshin-optimizer/common/util'
+import { ColorText, SolidToggleButtonGroup } from '@genshin-optimizer/common/ui'
+import { objPathValue } from '@genshin-optimizer/common/util'
 import type {
+  ArgumentAddress,
   CustomFunction,
-  CustomMultiTarget,
-  EnclosingOperation,
   ExpressionUnit,
+  FunctionAddress,
+  ItemAddress,
+  UnitAddress,
 } from '@genshin-optimizer/gi/db'
 import {
   OperationSpecs,
-  initExpressionUnit,
-  partsFinder,
+  isEnclosing,
+  unitPartFinder,
 } from '@genshin-optimizer/gi/db'
 import { DataContext, resolveInfo } from '@genshin-optimizer/gi/ui'
 import { Box, ToggleButton } from '@mui/material'
 import type { Dispatch, SetStateAction } from 'react'
-import { useContext, useEffect, useState } from 'react'
-import EControlPanel from './EControlPanel'
-import EUnitConfig from './EUnitConfig'
+import { useCallback, useContext, useMemo } from 'react'
 
 export default function ExpressionDisplay({
   expression,
-  setCMT,
   functions,
+  layer,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  sia,
+  setSIA,
+  sirpa,
 }: {
   expression: ExpressionUnit[]
-  setCMT: Dispatch<SetStateAction<CustomMultiTarget>>
   functions: CustomFunction[]
-}) {
-  // Selected unit index
-  const [sui, setSUI] = useState(0)
-
-  // Selected unit related parts index list
-  const [surpi, setSURPI] = useState(partsFinder(expression, sui))
-
-  useEffect(() => {
-    setSURPI(partsFinder(expression, sui))
-  }, [sui, expression, setSURPI])
-
-  const functionNames = functions.map((f) => f.name)
-
+  layer: number
+  sia: ItemAddress | undefined
+  setSIA: Dispatch<SetStateAction<ItemAddress | undefined>>
+  sirpa: {
+    functions: FunctionAddress[]
+    args: ArgumentAddress[]
+    units: UnitAddress[]
+  }
+}): JSX.Element {
   const { data } = useContext(DataContext)
-  const getTargetName = (path: string[]) => {
-    const node = objPathValue(data.getDisplay(), path)
-    if (!node) return path.join('.')
-    return resolveInfo(node.info)?.name ?? path.join('.')
+  const getTargetName = useCallback(
+    (path: string[]) => {
+      const node = objPathValue(data.getDisplay(), path)
+      if (!node) return path.join('.')
+      return resolveInfo(node.info)?.name ?? path.join('.')
+    },
+    [data]
+  )
+
+  const sirpaList = useMemo(() => {
+    return [
+      ...sirpa.functions.map((f) => f.type + f.layer),
+      ...sirpa.args.map((a) => a.type + a.layer + a.index),
+      ...sirpa.units.map((a) => a.type + a.layer + a.index),
+    ]
+  }, [sirpa])
+
+  /** Current function */
+  const f = layer < functions.length && functions[layer]
+  /** Current expression */
+  const e = f ? f.expression : expression
+  /** Veritable function available names */
+  const vefuna = functions
+    .slice(0, layer)
+    .filter((f) => f.args.length > 0)
+    .map((f) => f.name)
+  /** Available variable names */
+  const avana = [
+    ...(f ? f.args.map((a) => a.name) : []),
+    ...functions
+      .slice(0, layer)
+      .filter((f) => f.args.length < 1)
+      .map((f) => f.name),
+  ]
+  /** All available names */
+  const alana = [...avana, ...vefuna]
+
+  const buttons: JSX.Element[] = []
+  if (f) {
+    /** Previous function names */
+    const prefuna = functions.slice(0, layer).map((f) => f.name)
+    let text = prefuna.includes(f.name) ? (
+      <ColorText color="burning">{f.name}</ColorText>
+    ) : (
+      f.name
+    )
+    if (f.args.length)
+      text = (
+        <>
+          {text}
+          {'('}
+        </>
+      )
+    else
+      text = (
+        <>
+          {text}
+          {/* {'\u00A0\u2A75\u00A0'} */}
+          {'  ='}
+        </>
+      )
+    const functionButton = (text: JSX.Element | string) => {
+      return (
+        <ToggleButton
+          key={'function' + layer}
+          value={'function' + layer}
+          sx={{ minWidth: '0', pl: 0.25, pr: 0.35, pt: 1, pb: 1 }}
+          onClick={() => setSIA({ type: 'function', layer })}
+        >
+          {text}
+        </ToggleButton>
+      )
+    }
+    buttons.push(functionButton(text))
+    for (const [i, arg] of f.args.entries()) {
+      const text = prefuna.includes(arg.name) ? (
+        <ColorText color="burning">{arg.name}</ColorText>
+      ) : (
+        arg.name
+      )
+      if (i > 0) buttons.push(functionButton(','))
+      buttons.push(
+        <ToggleButton
+          key={'argument' + layer + i}
+          value={'argument' + layer + i}
+          sx={{ minWidth: '0', pl: 0.25, pr: 0.35, pt: 1, pb: 1 }}
+          onClick={() => setSIA({ type: 'argument', layer, index: i })}
+        >
+          {text}
+        </ToggleButton>
+      )
+    }
+    if (f.args.length) buttons.push(functionButton(')  ='))
   }
 
-  const addUnits = (units: ExpressionUnit[], moveSUI = 0) => {
-    setCMT((cmt) => {
-      const expression_ = [...(cmt.expression ?? [])]
-      if (sui === expression_.length) {
-        expression_.push(...units)
-        moveSUI = expression_.length
-      } else if (expression_[sui].type === 'null') {
-        expression_.splice(sui, 1, ...units)
-      } else {
-        expression_.splice(sui + 1, 0, ...units)
-        moveSUI++
-      }
-      if (sui + moveSUI < 0) {
-        setSUI(0)
-      } else if (sui + moveSUI > expression_.length) {
-        setSUI(expression_.length)
-      } else {
-        setSUI(sui + moveSUI)
-      }
-      return { ...cmt, expression: expression_ }
-    })
-  }
-
-  const moveUnit = (direction: 'left' | 'right') => {
-    const unit = expression[sui]
-    if (!unit) return
-    if (direction === 'left' && sui === 0) return
-    if (direction === 'right' && sui === expression.length - 1) return
-    setCMT((cmt) => {
-      const expression_ = [...(cmt.expression ?? [])]
-      if (direction === 'left') {
-        arrayMove(expression_, sui, sui - 1)
-        setSUI(sui - 1)
-      } else {
-        arrayMove(expression_, sui, sui + 1)
-        setSUI(sui + 1)
-      }
-      return { ...cmt, expression: expression_ }
-    })
-  }
-
-  const onDelete = (replace?: ExpressionUnit) => {
-    setCMT((cmt) => {
-      const expression_ = [...(cmt.expression ?? [])]
-      if (replace) {
-        expression_.splice(sui, 1, replace)
-      } else if (expression_.length < 2) {
-        expression_.splice(0, 1, initExpressionUnit({ type: 'null' }))
-      } else {
-        expression_.splice(sui, 1)
-      }
-      return { ...cmt, expression: expression_ }
-    })
-  }
-
-  const setUnit = (unit: ExpressionUnit) => {
-    setCMT((cmt) => {
-      const expression_ = [...(cmt.expression ?? [])]
-      expression_.splice(sui, 1, unit)
-      return { ...cmt, expression: expression_ }
-    })
-  }
-
-  const enclosingStack: EnclosingOperation[] = []
-  const buttons = expression.map((unit, index) => {
+  const stack: string[] = []
+  for (const [i, unit] of e.entries()) {
     const { type } = unit
     let text: string | JSX.Element = ''
     if (type === 'constant') {
@@ -124,33 +145,36 @@ export default function ExpressionDisplay({
     } else if (type === 'operation') {
       text = OperationSpecs[unit.operation].symbol
     } else if (type === 'function') {
-      if (functionNames.includes(unit.name)) {
+      if (alana.includes(unit.name)) {
         text = unit.name
       } else {
         text = <ColorText color="burning">{unit.name}</ColorText>
       }
-      const surpi_ = partsFinder(expression, index)
-      const tail = expression[surpi_[surpi_.length - 1]]
-      if (tail && tail.type === 'enclosing' && tail.part === 'tail') {
-        text = (
-          <>
-            {text}
-            {'('}
-          </>
-        )
-      } else {
-        text = (
-          <>
-            {text}
-            <ColorText color="burning">{'('}</ColorText>
-          </>
-        )
+      if (vefuna.includes(unit.name)) {
+        const parts = unitPartFinder(i, e, functions)
+        const tail = e[parts[parts.length - 1]]
+        if (tail && tail.type === 'enclosing' && tail.part === 'tail') {
+          text = (
+            <>
+              {text}
+              {'('}
+            </>
+          )
+        } else {
+          text = (
+            <>
+              {text}
+              <ColorText color="burning">{'('}</ColorText>
+            </>
+          )
+        }
+        stack.push(unit.name)
       }
     } else if (type === 'enclosing') {
       if (unit.part === 'head') {
         text = OperationSpecs[unit.operation].symbol
-        const surpi_ = partsFinder(expression, index)
-        const tail = expression[surpi_[surpi_.length - 1]]
+        const parts = unitPartFinder(i, e, functions)
+        const tail = e[parts[parts.length - 1]]
         if (tail && tail.type === 'enclosing' && tail.part === 'tail') {
           text = (
             <>
@@ -168,15 +192,20 @@ export default function ExpressionDisplay({
             </>
           )
         }
-        enclosingStack.push(unit.operation)
+        stack.push(unit.operation)
       } else if (unit.part === 'comma') {
         text = ','
-        if (!enclosingStack.length) {
+        if (!stack.length) {
           text = <ColorText color="burning">{','}</ColorText>
         }
       } else if (unit.part === 'tail') {
-        if (enclosingStack.length) {
-          text = OperationSpecs[enclosingStack.pop()!].enclosing.right
+        if (stack.length) {
+          const enclosing = stack.pop()!
+          if (isEnclosing(enclosing)) {
+            text = OperationSpecs[enclosing].enclosing.right
+          } else {
+            text = ')'
+          }
         } else {
           text = <ColorText color="burning">{')'}</ColorText>
         }
@@ -186,51 +215,38 @@ export default function ExpressionDisplay({
     } else {
       text = ((_: never) => _)(type)
     }
-    return (
+    buttons.push(
       <ToggleButton
-        key={index}
-        value={index}
+        key={'unit' + layer + i}
+        value={'unit' + layer + i}
         sx={{ minWidth: '0', pl: 0.25, pr: 0.35, pt: 1, pb: 1 }}
-        onClick={() => setSUI(index)}
-        disabled={index === sui}
+        onClick={() => setSIA({ type: 'unit', layer, index: i })}
       >
         {text}
       </ToggleButton>
     )
-  })
+  }
+  // <CardThemed
+  //   bgt="light"
+  //   sx={{
+  //     boxShadow: '0 0 10px black',
+  //     position: 'sticky',
+  //     bottom: `10px`,
+  //     zIndex: 1000,
+  //   }}
+  // >
+  // </CardThemed>
 
   return (
-    <>
-      <Box display="flex" gap={1}>
-        <SolidToggleButtonGroup
-          sx={{ flexWrap: 'wrap', alignItems: 'flex-start' }}
-          value={surpi}
-          size={'small'}
-          baseColor="secondary"
-        >
-          {buttons}
-        </SolidToggleButtonGroup>
-      </Box>
-      <CardThemed
-        bgt="light"
-        sx={{
-          boxShadow: '0 0 10px black',
-          position: 'sticky',
-          bottom: `10px`,
-          zIndex: 1000,
-        }}
+    <Box display="flex" gap={1}>
+      <SolidToggleButtonGroup
+        sx={{ flexWrap: 'wrap', alignItems: 'flex-start' }}
+        value={sirpaList}
+        size={'small'}
+        baseColor="secondary"
       >
-        <EUnitConfig
-          unit={expression[sui]}
-          setUnit={setUnit}
-          addUnits={addUnits}
-        />
-        <EControlPanel
-          addUnits={addUnits}
-          moveUnit={moveUnit}
-          onDelete={onDelete}
-        />
-      </CardThemed>
-    </>
+        {buttons}
+      </SolidToggleButtonGroup>
+    </Box>
   )
 }

@@ -6,10 +6,15 @@ import {
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
 import type {
+  ArgumentAddress,
   CustomFunction,
+  CustomFunctionArgument,
   CustomMultiTarget,
   CustomTarget,
   ExpressionUnit,
+  FunctionAddress,
+  ItemAddress,
+  UnitAddress,
 } from '../../Interfaces/CustomMultiTarget'
 import {
   OperationSpecs,
@@ -207,7 +212,7 @@ function validateExpressionUnit(
   args: string[]
 ): ExpressionUnit | undefined {
   // eu is the expression unit to validate
-  // args are the available arguments
+  // args are the available arguments and function names
   if (typeof eu !== 'object') return undefined
   const unit = eu as ExpressionUnit
   const { type } = unit
@@ -536,18 +541,122 @@ export function targetListToExpression(
   }
 }
 
-export function partsFinder(
+export function itemAddressValue(
   expression: ExpressionUnit[],
-  index: number
+  functions: CustomFunction[],
+  address: ItemAddress | undefined
+): ExpressionUnit | CustomFunction | CustomFunctionArgument | undefined {
+  if (!address) return undefined
+  const { type, layer, index } = address
+  if (type === 'unit') {
+    const expression_ =
+      layer < functions.length ? functions[layer].expression : expression
+    return expression_[index]
+  } else if (type === 'function') {
+    return functions[layer]
+  } else if (type === 'argument') {
+    return functions[layer].args[index]
+  }
+  return undefined
+}
+
+export function itemPartFinder(
+  expression: ExpressionUnit[],
+  functions: CustomFunction[],
+  address: ItemAddress | undefined
+) {
+  const result: {
+    functions: FunctionAddress[]
+    args: ArgumentAddress[]
+    units: UnitAddress[]
+  } = { functions: [], args: [], units: [] }
+  if (!address) return result
+  const { type, layer, index } = address
+  const item = itemAddressValue(expression, functions, address)
+  if (!item) return result
+  if (type === 'unit') {
+    const unit = item as ExpressionUnit
+    const expression_ =
+      layer < functions.length ? functions[layer].expression : expression
+    for (const i of unitPartFinder(
+      index,
+      expression_,
+      functions.slice(0, layer)
+    )) {
+      result.units.push({ type: 'unit', layer, index: i })
+    }
+    if (unit.type === 'function') {
+      for (const [i, f] of functions.entries()) {
+        if (unit.name === f.name) {
+          result.functions.push({ type: 'function', layer: i })
+          break
+        }
+      }
+      if (result.functions.length === 0) {
+        // If the function is not found, maybe it's an argument
+        const args = functions[layer].args
+        for (const [i, a] of args.entries()) {
+          if (unit.name === a.name) {
+            result.args.push({ type: 'argument', layer, index: i })
+            break
+          }
+        }
+      }
+    }
+  } else if (type === 'function') {
+    result.functions.push(address)
+    const _function = item as CustomFunction
+    const matrix = [...functions.map((f) => f.expression), expression]
+    for (const [layer_i1, e] of matrix.entries()) {
+      if (layer <= layer_i1) continue
+      for (const [index_i2, u] of e.entries()) {
+        if (u.type === 'function' && u.name === _function.name) {
+          for (const part_index of unitPartFinder(
+            index_i2,
+            e,
+            functions.slice(0, layer_i1)
+          )) {
+            result.units.push({
+              type: 'unit',
+              layer: layer_i1,
+              index: part_index,
+            })
+          }
+        }
+      }
+    }
+  } else if (type === 'argument') {
+    result.args.push(address)
+    // An argument can only be used at its own layer
+    const arg = item as CustomFunctionArgument
+    const e = functions[layer].expression
+    for (const [i, u] of e.entries()) {
+      if (u.type === 'function' && u.name === arg.name) {
+        // An argument cannot be a function
+        result.units.push({ type: 'unit', layer, index: i })
+      }
+    }
+  }
+  return result
+}
+
+export function unitPartFinder(
+  index: number,
+  expression: ExpressionUnit[],
+  functions: CustomFunction[]
 ): number[] {
+  const funcNames = functions.filter((f) => f.args.length).map((f) => f.name)
   const unit = expression[index]
-  const parts: number[] = [index]
-  if (!unit || unit.type !== 'enclosing') return parts
+  const parts = [index]
+  if (!unit || (unit.type !== 'enclosing' && unit.type !== 'function'))
+    return parts
+  if (unit.type === 'function' && !funcNames.includes(unit.name)) return parts
+  const _part = unit.type === 'enclosing' ? unit.part : 'head'
   const directions: ('left' | 'right')[] = []
-  if (['head', 'comma'].includes(unit.part)) {
+  if (['head', 'comma'].includes(_part)) {
     directions.push('right')
   }
-  if (['comma', 'tail'].includes(unit.part)) {
+  if (['comma', 'tail'].includes(_part)) {
     directions.push('left')
   }
   directions.forEach((direction) => {
@@ -558,17 +667,19 @@ export function partsFinder(
       i >= 0 && i < expression.length;
       dl ? i-- : i++
     ) {
-      const unit_ = expression[i]
-      if (unit_.type !== 'enclosing') continue
-      if (unit_.part === 'head') {
+      const _unit = expression[i]
+      if (_unit.type !== 'enclosing' && _unit.type !== 'function') continue
+      if (_unit.type === 'function' && !funcNames.includes(_unit.name)) continue
+      const __part = _unit.type === 'enclosing' ? _unit.part : 'head'
+      if (__part === 'head') {
         if (stack === 0 && dl) {
           parts.push(i)
           break
         }
         stack++
-      } else if (unit_.part === 'comma') {
+      } else if (__part === 'comma') {
         stack === 0 && parts.push(i)
-      } else if (unit_.part === 'tail') {
+      } else if (__part === 'tail') {
         if (stack === 0 && !dl) {
           parts.push(i)
           break
@@ -577,6 +688,6 @@ export function partsFinder(
       }
     }
   })
-  if (unit.part !== 'head') parts.sort((a, b) => a - b)
+  if (_part !== 'head') parts.sort((a, b) => a - b)
   return parts
 }

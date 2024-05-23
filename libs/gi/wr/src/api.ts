@@ -465,7 +465,7 @@ function parseCustomExpression(
   }
   if (currentOperation === 'subtraction') {
     // TODO: Properly implement subtraction
-    return sum(parsedParts[0], prod(constant(-1), ...parsedParts.slice(1)))
+    return sum(parsedParts[0], ...parsedParts.slice(1).map((x) => prod(-1, x)))
   }
   if (currentOperation === 'multiplication') {
     return prod(...parsedParts)

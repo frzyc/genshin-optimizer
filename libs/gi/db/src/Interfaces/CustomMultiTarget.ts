@@ -149,6 +149,26 @@ export interface NullUnit extends BaseUnit {
   kind: 'operand' | 'operation'
 }
 
+export interface UnitAddress {
+  type: 'unit'
+  layer: number
+  index: number
+}
+
+export interface FunctionAddress {
+  type: 'function'
+  layer: number
+  index?: 0
+}
+
+export interface ArgumentAddress {
+  type: 'argument'
+  layer: number
+  index: number
+}
+
+export type ItemAddress = UnitAddress | FunctionAddress | ArgumentAddress
+
 export interface CustomFunctionArgument {
   name: string
   description?: string

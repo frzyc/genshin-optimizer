@@ -7,8 +7,10 @@ import {
   initCustomMultiTarget,
   initCustomTarget,
   initExpressionUnit,
-  partsFinder,
+  itemAddressValue,
+  itemPartFinder,
   targetListToExpression,
+  unitPartFinder,
   validateCustomMultiTarget,
 } from './CustomMultiTarget'
 import type {
@@ -43,11 +45,13 @@ export {
   initCustomTarget,
   initExpressionUnit,
   initialWeapon,
+  itemAddressValue,
+  itemPartFinder,
   maxBuildsToShowList,
   minTotalStatKeys,
-  partsFinder,
   targetListToExpression,
   toBuildTc,
+  unitPartFinder,
   validateArtifact,
   validateCustomMultiTarget,
 }

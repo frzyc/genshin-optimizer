@@ -193,17 +193,26 @@ export default function CustomMultiTargetCard({
             </Box>
           </CardContent>
           <Divider />
-          {target.expression ? (
-            <TargetExpressionEditor
-              customMultiTarget={target}
-              setCustomMultiTarget={setTarget}
-            />
-          ) : (
-            <TargetListEditor
-              customMultiTarget={target}
-              setCustomMultiTarget={setTarget}
-            />
-          )}
+          <CardContent
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+              position: 'relative',
+            }}
+          >
+            {target.expression ? (
+              <TargetExpressionEditor
+                customMultiTarget={target}
+                setCustomMultiTarget={setTarget}
+              />
+            ) : (
+              <TargetListEditor
+                customMultiTarget={target}
+                setCustomMultiTarget={setTarget}
+              />
+            )}
+          </CardContent>
         </CardThemed>
       </ModalWrapper>
     </>
