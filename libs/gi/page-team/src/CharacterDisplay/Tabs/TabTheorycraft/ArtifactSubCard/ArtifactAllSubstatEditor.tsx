@@ -11,6 +11,7 @@ import { Box, Slider } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BuildTcContext } from '../BuildTcContext'
+import { NumberInputLazy } from '@genshin-optimizer/common/ui'
 
 function getMinRoll(charTC: BuildTc) {
   const {
@@ -120,7 +121,7 @@ export function ArtifactAllSubstatEditor({
           disabled={disabled}
         />
       </CardThemed>
-      <CustomNumberInput
+      {/* <CustomNumberInput
         color={rolls && invalid ? 'warning' : 'primary'}
         float
         startAdornment={
@@ -131,6 +132,22 @@ export function ArtifactAllSubstatEditor({
         sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '7em' }}
         inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
         disabled={disabled}
+      /> */}
+      <NumberInputLazy
+        value={parseFloat((rolls ?? 0).toFixed(2))}
+        float
+        onChange={(v) => v !== undefined && setRolls([v])}
+        size="small"
+        inputProps={{
+          sx: { textAlign: 'right', width: '2em'},
+          min: 0,
+          max: 99,
+        }}
+        InputProps={{
+          startAdornment:
+            <Box sx={{whiteSpace: 'nowrap'}}>{t`tabTheorycraft.all.rolls`}</Box>
+        }}
+        focused
       />
       <CustomNumberInput
         value={maxSubstat ?? 0}
