@@ -32,6 +32,8 @@ import { initCharTC, toBuildTc } from './BuildTcDataManager'
 import { validateCustomMultiTarget } from './CustomMultiTarget'
 import type { LoadoutExportSetting } from './TeamDataManager'
 import { defaultInitialWeaponKey, initialWeapon } from './WeaponDataManager'
+import type { IGOOD } from '@genshin-optimizer/gi/good'
+import type { IGO, ImportResult } from '../exim'
 
 type CondKey = CharacterKey | ArtifactSetKey | WeaponKey
 export type IConditionalValues = Partial<
@@ -394,5 +396,15 @@ export class TeamCharacterDataManager extends DataManager<
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return () => {}
     return this.database.chars.follow(teamChar.key, callback)
+  }
+  override importGOOD(good: IGOOD & IGO, result: ImportResult): void {
+    result.loadouts.beforeMerge = this.entries.length
+
+    const loadouts = good[this.dataKey]
+    if (loadouts && Array.isArray(loadouts)) {
+      result.loadouts.import = loadouts.length
+    }
+
+    super.importGOOD(good, result)
   }
 }

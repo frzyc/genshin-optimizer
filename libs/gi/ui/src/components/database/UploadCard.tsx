@@ -293,10 +293,7 @@ function GOODUploadInfo({
             <Grid item flexGrow={1}>
               <MergeResult
                 result={loadouts}
-                dbTotal={importedDatabase.teams.entries.reduce(
-                  (rTeam, [_name, team]) => rTeam + team.loadoutData.length,
-                  0
-                )}
+                dbTotal={importedDatabase.teamChars.values.length}
                 type="loadouts"
               />
             </Grid>
