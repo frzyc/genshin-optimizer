@@ -1,6 +1,6 @@
 import {
   CardThemed,
-  CustomNumberInput,
+  NumberInputLazy,
   useIsMount,
 } from '@genshin-optimizer/common/ui'
 import { clamp, objMap } from '@genshin-optimizer/common/util'
@@ -11,7 +11,6 @@ import { Box, Slider } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BuildTcContext } from '../BuildTcContext'
-import { NumberInputLazy } from '@genshin-optimizer/common/ui'
 
 function getMinRoll(charTC: BuildTc) {
   const {
@@ -121,45 +120,25 @@ export function ArtifactAllSubstatEditor({
           disabled={disabled}
         />
       </CardThemed>
-      {/* <CustomNumberInput
-        color={rolls && invalid ? 'warning' : 'primary'}
-        float
-        startAdornment={
-          <Box sx={{ whiteSpace: 'nowrap' }}>{t`tabTheorycraft.all.rolls`}</Box>
-        }
-        value={parseFloat((rolls ?? 0).toFixed(2))}
-        onChange={(v) => v !== undefined && setRolls([v])}
-        sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '7em' }}
-        inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
-        disabled={disabled}
-      /> */}
       <NumberInputLazy
         value={parseFloat((rolls ?? 0).toFixed(2))}
         float
         onChange={(v) => v !== undefined && setRolls([v])}
         size="small"
         inputProps={{
-          sx: { textAlign: 'right', width: '1.5em'},
+          sx: { textAlign: 'right', width: '1.5em' },
           min: 0,
           max: 99,
         }}
         InputProps={{
-          startAdornment:
-            <Box sx={{whiteSpace: 'nowrap'}}>{t`tabTheorycraft.all.rolls`}</Box>
+          startAdornment: (
+            <Box
+              sx={{ whiteSpace: 'nowrap' }}
+            >{t`tabTheorycraft.all.rolls`}</Box>
+          ),
         }}
         focused
       />
-      {/* <CustomNumberInput
-        value={maxSubstat ?? 0}
-        startAdornment={
-          <Box sx={{ whiteSpace: 'nowrap' }}>{t`tabTheorycraft.all.max`}</Box>
-        }
-        onChange={(v) => v !== undefined && setMaxSubstat([v])}
-        color={(maxSubstat ?? 0) > maxRollsPerSub ? 'warning' : 'primary'}
-        sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6.5em' }}
-        inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
-        disabled={disabled}
-      /> */}
       <NumberInputLazy
         value={maxSubstat ?? 0}
         onChange={(v) => v !== undefined && setMaxSubstat([v])}
@@ -171,8 +150,9 @@ export function ArtifactAllSubstatEditor({
           max: 99,
         }}
         InputProps={{
-          startAdornment:
+          startAdornment: (
             <Box sx={{ whiteSpace: 'nowrap' }}>{t`tabTheorycraft.all.max`}</Box>
+          ),
         }}
         focused
       />
