@@ -124,6 +124,7 @@ export function ArtifactAllSubstatEditor({
         value={parseFloat((rolls ?? 0).toFixed(2))}
         float
         onChange={(v) => v !== undefined && setRolls([v])}
+        color={rolls && invalid ? 'warning' : 'primary'}
         size="small"
         inputProps={{
           sx: { textAlign: 'right', width: '1.5em' },
