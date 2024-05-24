@@ -139,7 +139,7 @@ export function ArtifactAllSubstatEditor({
         onChange={(v) => v !== undefined && setRolls([v])}
         size="small"
         inputProps={{
-          sx: { textAlign: 'right', width: '2em'},
+          sx: { textAlign: 'right', width: '1.5em'},
           min: 0,
           max: 99,
         }}
@@ -149,7 +149,7 @@ export function ArtifactAllSubstatEditor({
         }}
         focused
       />
-      <CustomNumberInput
+      {/* <CustomNumberInput
         value={maxSubstat ?? 0}
         startAdornment={
           <Box sx={{ whiteSpace: 'nowrap' }}>{t`tabTheorycraft.all.max`}</Box>
@@ -159,6 +159,22 @@ export function ArtifactAllSubstatEditor({
         sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6.5em' }}
         inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
         disabled={disabled}
+      /> */}
+      <NumberInputLazy
+        value={maxSubstat ?? 0}
+        onChange={(v) => v !== undefined && setMaxSubstat([v])}
+        color={(maxSubstat ?? 0) > maxRollsPerSub ? 'warning' : 'primary'}
+        size="small"
+        inputProps={{
+          sx: { textAlign: 'right', width: '1.5em' },
+          min: 0,
+          max: 99,
+        }}
+        InputProps={{
+          startAdornment:
+            <Box sx={{ whiteSpace: 'nowrap' }}>{t`tabTheorycraft.all.max`}</Box>
+        }}
+        focused
       />
     </Box>
   )
