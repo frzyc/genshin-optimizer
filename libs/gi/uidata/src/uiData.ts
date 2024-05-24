@@ -77,6 +77,7 @@ export class UIData {
   display: any = undefined
   teamBuff: any = undefined
   bonusStats: any = undefined
+  characterStats: any = undefined
 
   constructor(data: Data, parent: UIData | undefined) {
     if (data === undefined) {
@@ -118,12 +119,23 @@ export class UIData {
   getBonusStats() {
     if (!this.bonusStats)
       this.bonusStats = Object.fromEntries(
-        Object.entries(input.customBonus)
-          .map(([key, node]) => [key, this.get(node)] as const)
-          .filter(([, result]) => !result.isEmpty && result.value)
+        Object.entries(input.customBonus).map(
+          ([key, node]) => [key, this.get(node)] as const
+        )
       )
-
     return this.bonusStats
+  }
+  getCharacterStats() {
+    if (!this.characterStats)
+      this.characterStats = {
+        lvl: this.get(input.lvl),
+        asc: this.get(input.asc),
+        constellation: this.get(input.constellation),
+        talentAuto: this.get(input.total.auto),
+        talentSkill: this.get(input.total.skill),
+        talentBurst: this.get(input.total.burst),
+      }
+    return this.characterStats
   }
   private getAll(prefix: string[]): any {
     const result = {}

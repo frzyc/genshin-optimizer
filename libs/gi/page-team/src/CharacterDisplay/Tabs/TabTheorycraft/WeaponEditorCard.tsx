@@ -26,7 +26,7 @@ import {
   Stack,
 } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
-import { BuildTcContext } from './BuildTcContext'
+import { BuildTcContext } from '../../../BuildTcContext'
 
 export function WeaponEditorCard({
   weaponTypeKey,
@@ -127,7 +127,7 @@ export function WeaponEditorCard({
                   return (
                     <NodeFieldDisplay
                       key={JSON.stringify(n.info)}
-                      node={n}
+                      calcRes={n}
                       component={ListItem}
                     />
                   )

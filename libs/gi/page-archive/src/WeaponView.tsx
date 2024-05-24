@@ -128,7 +128,7 @@ export function WeaponView({
                         return (
                           <NodeFieldDisplay
                             key={JSON.stringify(n.info)}
-                            node={n}
+                            calcRes={n}
                             component={ListItem}
                           />
                         )

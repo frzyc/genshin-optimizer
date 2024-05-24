@@ -110,7 +110,13 @@ export function Content({ onClose }: { onClose?: () => void }) {
                 />
               </Typography>
               <Box sx={{ px: 1 }}>
-                <CharacterCompactConstSelector />
+                <CharacterCompactConstSelector
+                  setConstellation={(constellation) =>
+                    database.chars.set(characterKey, {
+                      constellation,
+                    })
+                  }
+                />
               </Box>
             </CardThemed>
           </Grid>
@@ -138,6 +144,11 @@ export function Content({ onClose }: { onClose?: () => void }) {
                           />
                         ),
                       }}
+                      setTalent={(talent) =>
+                        database.chars.set(characterKey, (char) => {
+                          char.talent[talentKey] = talent
+                        })
+                      }
                     />
                   </Grid>
                 ))}

@@ -7,6 +7,7 @@ import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
   CharacterContext,
   TeamCharacterContext,
+  useBuildTc,
   useCharacter,
   useDBMeta,
   useDatabase,
@@ -27,7 +28,14 @@ import {
   type dataContextObj,
 } from '@genshin-optimizer/gi/ui'
 import { Box, CardContent, Skeleton } from '@mui/material'
-import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
+import {
+  Suspense,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   Navigate,
@@ -37,6 +45,8 @@ import {
   useNavigate,
   useParams,
 } from 'react-router-dom'
+import type { BuildTcContexObj, SetBuildTcAction } from './BuildTcContext'
+import { BuildTcContext } from './BuildTcContext'
 import Content from './CharacterDisplay/Content'
 import TeamCharacterSelector from './TeamCharacterSelector'
 import TeamSetting from './TeamSetting'
@@ -199,9 +209,11 @@ function Page({ teamId }: { teamId: string }) {
   )
 }
 function InnerContent({ tab }: { tab?: string }) {
+  const database = useDatabase()
   const {
     teamCharId,
     teamChar: { key: characterKey },
+    loadoutDatum,
   } = useContext(TeamCharacterContext)
   const character = useCharacter(characterKey as CharacterKey)
   const CharacterContextValue: CharacterContextObj | undefined = useMemo(
@@ -243,18 +255,35 @@ function InnerContent({ tab }: { tab?: string }) {
     setChartDataState,
     setGraphBuildState,
   ])
+  const buildTc = useBuildTc(loadoutDatum.buildTcId)!
+  const setBuildTc = useCallback(
+    (data: SetBuildTcAction) => {
+      database.buildTcs.set(loadoutDatum.buildTcId, data)
+    },
+    [loadoutDatum.buildTcId, database]
+  )
+  const buildTCContextObj = useMemo(
+    () =>
+      ({
+        buildTc: loadoutDatum.buildType === 'tc' ? buildTc : undefined,
+        setBuildTc,
+      } as BuildTcContexObj),
+    [buildTc, loadoutDatum.buildType, setBuildTc]
+  )
   if (!CharacterContextValue) return fallback
   return (
     <CharacterContext.Provider value={CharacterContextValue}>
-      <GraphContext.Provider value={graphContextValue}>
-        <FormulaDataWrapper>
-          <Routes>
-            <Route path=":characterKey">
-              <Route path="*" index element={<Content tab={tab} />} />
-            </Route>
-          </Routes>
-        </FormulaDataWrapper>
-      </GraphContext.Provider>
+      <BuildTcContext.Provider value={buildTCContextObj}>
+        <GraphContext.Provider value={graphContextValue}>
+          <FormulaDataWrapper>
+            <Routes>
+              <Route path=":characterKey">
+                <Route path="*" index element={<Content tab={tab} />} />
+              </Route>
+            </Routes>
+          </FormulaDataWrapper>
+        </GraphContext.Provider>
+      </BuildTcContext.Provider>
     </CharacterContext.Provider>
   )
 }

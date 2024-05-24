@@ -3,7 +3,7 @@ import { createContext } from 'react'
 export type SetBuildTcAction =
   | Partial<BuildTc>
   | ((v: BuildTc) => Partial<BuildTc> | void)
-type BuildTcContexObj = {
+export type BuildTcContexObj = {
   buildTc: BuildTc
   setBuildTc: (action: SetBuildTcAction) => void
 }

@@ -235,6 +235,9 @@ export default function ChartCard({
                   setTarget={(target) => setPlotBase(target)}
                   defaultText={buttonText}
                   disabled={disabled}
+                  targetSelectorModalProps={{
+                    excludeSections: ['character', 'bounsStats', 'teamBuff'],
+                  }}
                 />
               </span>
             </BootstrapTooltip>
