@@ -115,7 +115,7 @@ export class BuildTcDataManager extends DataManager<
     return id
   }
   override importGOOD(good: IGOOD & IGO, result: ImportResult): void {
-    result.buildTcs.beforeMerge = this.entries.length
+    result.buildTcs.beforeImport = this.entries.length
 
     const buildTcs = good[this.dataKey]
     if (buildTcs && Array.isArray(buildTcs)) {

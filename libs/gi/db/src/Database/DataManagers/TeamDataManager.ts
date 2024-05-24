@@ -256,7 +256,7 @@ export class TeamDataManager extends DataManager<
     return id
   }
   override importGOOD(good: IGOOD & IGO, result: ImportResult): void {
-    result.teams.beforeMerge = this.entries.length
+    result.teams.beforeImport = this.entries.length
 
     const teams = good[this.dataKey]
     if (teams && Array.isArray(teams)) {

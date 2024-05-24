@@ -95,7 +95,7 @@ export class BuildDataManager extends DataManager<
     return build
   }
   override importGOOD(good: IGOOD & IGO, result: ImportResult): void {
-    result.builds.beforeMerge = this.entries.length
+    result.builds.beforeImport = this.entries.length
 
     const builds = good[this.dataKey]
     if (builds && Array.isArray(builds)) {

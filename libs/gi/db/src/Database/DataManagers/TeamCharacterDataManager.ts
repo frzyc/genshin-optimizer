@@ -17,6 +17,7 @@ import {
   type CharacterKey,
   type InfusionAuraElementKey,
 } from '@genshin-optimizer/gi/consts'
+import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import type {
   BuildTc,
@@ -27,13 +28,12 @@ import type {
 import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
+import type { IGO, ImportResult } from '../exim'
 import type { Build } from './BuildDataManager'
 import { initCharTC, toBuildTc } from './BuildTcDataManager'
 import { validateCustomMultiTarget } from './CustomMultiTarget'
 import type { LoadoutExportSetting } from './TeamDataManager'
 import { defaultInitialWeaponKey, initialWeapon } from './WeaponDataManager'
-import type { IGOOD } from '@genshin-optimizer/gi/good'
-import type { IGO, ImportResult } from '../exim'
 
 type CondKey = CharacterKey | ArtifactSetKey | WeaponKey
 export type IConditionalValues = Partial<
@@ -398,11 +398,11 @@ export class TeamCharacterDataManager extends DataManager<
     return this.database.chars.follow(teamChar.key, callback)
   }
   override importGOOD(good: IGOOD & IGO, result: ImportResult): void {
-    result.loadouts.beforeMerge = this.entries.length
+    result.teamChars.beforeImport = this.entries.length
 
     const loadouts = good[this.dataKey]
     if (loadouts && Array.isArray(loadouts)) {
-      result.loadouts.import = loadouts.length
+      result.teamChars.import = loadouts.length
     }
 
     super.importGOOD(good, result)

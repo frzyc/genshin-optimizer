@@ -3,7 +3,7 @@ import type { OptConfig } from './DataManagers/OptConfigDataManager'
 
 export const GOSource = 'Genshin Optimizer' as const
 
-function newCounter<T>(): ImportResultCounter<T> {
+function newMergeCounter<T>(): MergeResultCounter<T> {
   return {
     import: 0,
     invalid: [],
@@ -16,10 +16,10 @@ function newCounter<T>(): ImportResultCounter<T> {
     beforeMerge: 0,
   }
 }
-function newPartialCounter(): ImportResultPartialCounter {
+function newImportCounter(): ImportResultCounter {
   return {
     import: 0,
-    beforeMerge: 0,
+    beforeImport: 0,
   }
 }
 
@@ -31,13 +31,13 @@ export function newImportResult(
   return {
     type: 'GOOD',
     source,
-    artifacts: newCounter(),
-    weapons: newCounter(),
-    characters: newCounter(),
-    teams: newPartialCounter(),
-    builds: newPartialCounter(),
-    buildTcs: newPartialCounter(),
-    loadouts: newPartialCounter(),
+    artifacts: newMergeCounter(),
+    weapons: newMergeCounter(),
+    characters: newMergeCounter(),
+    builds: newImportCounter(),
+    buildTcs: newImportCounter(),
+    teams: newImportCounter(),
+    teamChars: newImportCounter(),
     keepNotInImport,
     ignoreDups,
   }
@@ -49,7 +49,12 @@ export type IGO = {
   [gokey: string]: unknown
 }
 
-export type ImportResultCounter<T> = {
+export type ImportResultCounter = {
+  import: number // total # in file
+  beforeImport: number
+}
+
+export type MergeResultCounter<T> = {
   import: number // total # in file
   new: T[]
   update: T[] // Use new object
@@ -60,20 +65,17 @@ export type ImportResultCounter<T> = {
   notInImport: number
   beforeMerge: number
 }
-export type ImportResultPartialCounter = Pick<
-  ImportResultCounter<any>,
-  'beforeMerge' | 'import'
->
+
 export type ImportResult = {
   type: 'GOOD'
   source: string
-  artifacts: ImportResultCounter<IArtifact>
-  weapons: ImportResultCounter<IWeapon>
-  characters: ImportResultCounter<ICharacter>
-  builds: ImportResultPartialCounter
-  buildTcs: ImportResultPartialCounter
-  loadouts: ImportResultPartialCounter
-  teams: ImportResultPartialCounter
+  artifacts: MergeResultCounter<IArtifact>
+  weapons: MergeResultCounter<IWeapon>
+  characters: MergeResultCounter<ICharacter>
+  builds: ImportResultCounter
+  buildTcs: ImportResultCounter
+  teams: ImportResultCounter
+  teamChars: ImportResultCounter
   keepNotInImport: boolean
   ignoreDups: boolean
 }

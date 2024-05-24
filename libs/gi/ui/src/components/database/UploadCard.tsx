@@ -1,11 +1,11 @@
 import { SandboxStorage } from '@genshin-optimizer/common/database'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import type { ImportResultPartialCounter } from '@genshin-optimizer/gi/db'
 import {
   ArtCharDatabase,
   type ImportResult,
   type ImportResultCounter,
+  type MergeResultCounter
 } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
@@ -239,7 +239,7 @@ function GOODUploadInfo({
     weapons,
     builds,
     buildTcs,
-    loadouts,
+    teamChars,
     teams,
   },
   importedDatabase,
@@ -292,7 +292,7 @@ function GOODUploadInfo({
             </Grid>
             <Grid item flexGrow={1}>
               <MergeResult
-                result={loadouts}
+                result={teamChars}
                 dbTotal={importedDatabase.teamChars.values.length}
                 type="loadouts"
               />
@@ -322,7 +322,7 @@ function MergeResult({
   dbTotal,
   type,
 }: {
-  result: ImportResultCounter<any> | ImportResultPartialCounter
+  result: MergeResultCounter<any> | ImportResultCounter
   dbTotal: number
   type: string
 }) {
@@ -370,7 +370,12 @@ function MergeResult({
         )}
         <Typography>
           <Trans t={t} i18nKey="count.dbTotal" />{' '}
-          <strong>{result.beforeMerge}</strong> -&gt; <strong>{dbTotal}</strong>
+          <strong>
+            {'beforeImport' in result
+              ? result.beforeImport
+              : result.beforeMerge}
+          </strong>{' '}
+          -&gt; <strong>{dbTotal}</strong>
         </Typography>
         {'invalid' in result && !!result.invalid?.length && (
           <div>
