@@ -16,6 +16,7 @@ import { useTranslation } from 'react-i18next'
 import { BuildTcContext } from '../BuildTcContext'
 import { NumberInputLazy } from '@genshin-optimizer/common/ui'
 import InputAdornment from '@mui/material/InputAdornment'
+import { ClassNames } from '@emotion/react'
 
 export function ArtifactSubstatEditor({
   statKey,
@@ -97,7 +98,7 @@ export function ArtifactSubstatEditor({
         justifyContent="space-between"
         alignItems="center"
       >
-        <CustomNumberInput
+        {/* <CustomNumberInput
           color={displayValue ? 'success' : 'primary'}
           float={getUnitStr(statKey) === '%'}
           endAdornment={
@@ -108,6 +109,28 @@ export function ArtifactSubstatEditor({
           sx={{ borderRadius: 1, px: 1, height: '100%', width: '5em' }}
           inputProps={{ sx: { textAlign: 'right' }, min: 0 }}
           disabled={disabled}
+        /> */}
+        <NumberInputLazy
+          color={displayValue ? 'success' : 'primary'}
+          float={getUnitStr(statKey) === '%'}
+          value={parseFloat(displayValue.toFixed(2))}
+          onChange={(v) => v !== undefined && setValue(v)}
+          size="small"
+          inputProps={{
+            sx: {
+              width: '3em',
+              textAlign: 'right',
+
+             },
+            min: 0,
+            max: 9999,
+          }}
+          InputProps={{
+            endAdornment:
+              getUnitStr(statKey) || <Box width='0.8em' component='span' />,
+          }}
+
+          focused
         />
         <CardThemed
           sx={{
