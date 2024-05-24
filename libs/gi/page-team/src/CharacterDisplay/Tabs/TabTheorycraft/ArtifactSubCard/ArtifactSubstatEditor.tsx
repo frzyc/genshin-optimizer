@@ -118,16 +118,15 @@ export function ArtifactSubstatEditor({
           size="small"
           inputProps={{
             sx: {
-              width: '3em',
+              width: '4em',
               textAlign: 'right',
-
              },
             min: 0,
             max: 9999,
           }}
           InputProps={{
             endAdornment:
-              getUnitStr(statKey) || <Box width='0.8em' component='span' />,
+              getUnitStr(statKey) || <Box width="0.8em" component="span"/>
           }}
 
           focused
