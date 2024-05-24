@@ -5,7 +5,7 @@ import {
   ArtCharDatabase,
   type ImportResult,
   type ImportResultCounter,
-  type MergeResultCounter
+  type MergeResultCounter,
 } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
