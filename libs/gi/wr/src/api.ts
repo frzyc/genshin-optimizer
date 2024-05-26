@@ -392,21 +392,22 @@ function parseCustomExpression(
       unit.type === 'operation' ||
       (unit.type === 'null' && unit.kind === 'operation')
     ) {
-      let operation: ExpressionOperation
-      if (unit.type === 'operation') {
-        operation = unit.operation
+      let unitOperation: ExpressionOperation
+      if (unit.type === 'null') {
+        unitOperation = 'addition'
       } else {
-        operation = 'addition'
+        unitOperation = unit.operation
       }
-      // Operations with lower priority first, so they will go to a higher node and will be calculated last
+      // Operations with lower or equal precedence should be parsed first, so they will go to a higher node and will be calculated last
       if (
-        !currentOperation ||
-        OperationSpecs[operation].precedence <
-          OperationSpecs[currentOperation].precedence
+        unitOperation !== currentOperation &&
+        (!currentOperation ||
+          OperationSpecs[unitOperation].precedence <=
+            OperationSpecs[currentOperation].precedence)
       ) {
-        currentOperation = operation
+        currentOperation = unitOperation
         parts = [[...handled], []]
-      } else if (operation === currentOperation) {
+      } else if (unitOperation === currentOperation) {
         parts.push([])
       } else {
         parts[parts.length - 1].push(unit)
@@ -461,12 +462,14 @@ function parseCustomExpression(
     parseCustomExpression(part, parseCustomTarget, functions_, args)
   )
 
+  console.log('currentOperation', currentOperation, parsedParts)
+
   if (currentOperation === 'addition') {
     return sum(...parsedParts)
   }
   if (currentOperation === 'subtraction') {
     // TODO: Properly implement subtraction
-    return sum(parsedParts[0], ...parsedParts.slice(1).map((x) => prod(-1, x)))
+    return sum(parsedParts[0], prod(-1, sum(...parsedParts.slice(1))))
   }
   if (currentOperation === 'multiplication') {
     return prod(...parsedParts)
