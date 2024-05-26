@@ -106,7 +106,7 @@ export default function AddItemsPanel({
   )
 
   const addConstant = useCallback(() => {
-    addUnit({ type: 'constant', value: newNumber ?? 1 })
+    addUnit({ type: 'constant', value: newNumber ?? 0 })
     setNewNumber(undefined)
   }, [addUnit, newNumber])
 
@@ -181,6 +181,7 @@ export default function AddItemsPanel({
   const addFunctionUnitButton = useMemo(() => {
     return (
       <Button
+        sx={{ flexGrow: 1 }}
         key={'addFunctionUnit'}
         onClick={() => addUnit({ type: 'function' })}
       >
@@ -202,35 +203,40 @@ export default function AddItemsPanel({
       <Box display="flex" gap={1}>
         <Box sx={{ flexGrow: 1 }} display="flex" flexDirection="column" gap={1}>
           <Box display="flex" gap={1}>
-            <Button
-              key={'addNewFunction'}
-              sx={{ flexGrow: 1 }}
-              onClick={() => addFunction({})}
-            >{t`multiTarget.addNewFunction`}</Button>
-            <Button
-              key={'addNewArgument'}
-              sx={{ flexGrow: 1 }}
-              onClick={() => addArgument({})}
-            >{t`multiTarget.addNewArgument`}</Button>
-            <Button
-              key={'addNewTarget'}
-              sx={{ flexGrow: 1 }}
-              onClick={onShow}
-            >{t`multiTarget.addNewTarget`}</Button>
-            {addFunctionUnitButton}
-            <ButtonGroup>
-              <Button key={'addConstant'} onClick={addConstant}>
-                {t`multiTarget.add`}
-              </Button>
-              <CustomNumberInputButtonGroupWrapper>
-                <CustomNumberInput
-                  float
-                  value={newNumber}
-                  onChange={setNewNumber}
-                  inputProps={{ sx: { pl: 1 } }}
-                />
-              </CustomNumberInputButtonGroupWrapper>
-            </ButtonGroup>
+              <Button
+                key={'addNewFunction'}
+                sx={{ flexGrow: 1 }}
+                onClick={() => addFunction({})}
+              >{t`multiTarget.addNewFunction`}</Button>
+              <Button
+                key={'addNewArgument'}
+                sx={{ flexGrow: 1 }}
+                onClick={() => addArgument({})}
+              >{t`multiTarget.addNewArgument`}</Button>
+              <Button
+                key={'addNewTarget'}
+                sx={{ flexGrow: 2 }}
+                onClick={onShow}
+              >{t`multiTarget.addNewTarget`}</Button>
+              {addFunctionUnitButton}
+              <ButtonGroup>
+                <Button key={'addConstant'} onClick={addConstant}>
+                  {t`multiTarget.add`}
+                </Button>
+                <CustomNumberInputButtonGroupWrapper>
+                  <CustomNumberInput
+                    float
+                    value={newNumber}
+                    onChange={setNewNumber}
+                    inputProps={{ sx: { pl: 1 } }}
+                  />
+                </CustomNumberInputButtonGroupWrapper>
+                <Button key={'addConstant'} onClick={
+                  () => addUnit({ type: 'constant', value: 1 })
+                }>
+                  {'1'}
+                </Button>
+              </ButtonGroup>
           </Box>
           <ButtonGroup fullWidth>
             {OperationButtons}
