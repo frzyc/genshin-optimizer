@@ -57,12 +57,19 @@ export default function TeamCharacterSelector({
   const theme = useTheme()
   const isXs = useMediaQuery(theme.breakpoints.down('md'))
   const [editMode, setEditMode] = useState(false)
-  const [teamName] = useState(team.name)
-  const [description] = useState(team.description)
-  const handleClickAway = () => {
-    setEditMode(false)
-    database.teams.set(teamId, { name: teamName, description: description })
+  const [teamName, setTeamName] = useState(team.name)
+  const [teamDesc, setTeamDesc] = useState(team.description)
+
+  const handleName = (teamName: string): void => {
+    setTeamName(teamName)
+    database.teams.set(teamId, { name: teamName })
   }
+
+  const handleDesc = (teamDesc: string): void => {
+    setTeamDesc(teamDesc)
+    database.teams.set(teamId, { description: teamDesc })
+  }
+
   return (
     <Box
       sx={(theme) => {
@@ -140,17 +147,13 @@ export default function TeamCharacterSelector({
                   <TextFieldLazy
                     label="Team Name"
                     value={teamName}
-                    onChange={(teamName) =>
-                      database.teams.set(teamId, { name: teamName })
-                    }
+                    onChange={(teamName) => handleName(teamName)}
                     autoFocus
                   />
                   <TextFieldLazy
                     label="Description"
-                    value={description}
-                    onChange={(description) =>
-                      database.teams.set(teamId, { description })
-                    }
+                    value={teamDesc}
+                    onChange={(teamDesc) => handleDesc(teamDesc)}
                     multiline
                     minRows={4}
                   />
