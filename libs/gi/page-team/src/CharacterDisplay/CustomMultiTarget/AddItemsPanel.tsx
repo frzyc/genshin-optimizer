@@ -1,16 +1,15 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
+  CardThemed,
   CustomNumberInput,
   CustomNumberInputButtonGroupWrapper,
 } from '@genshin-optimizer/common/ui'
 import type {
-  ArgumentAddress,
+  AddressItemTypesMap,
   CustomFunction,
   CustomFunctionArgument,
   ExpressionUnit,
-  FunctionAddress,
   ItemAddress,
-  UnitAddress,
 } from '@genshin-optimizer/gi/db'
 import {
   OperationSpecs,
@@ -32,15 +31,7 @@ export default function AddItemsPanel({
   functions,
   expression,
 }: {
-  addItem: <
-    T extends
-      | [FunctionAddress, CustomFunction]
-      | [ArgumentAddress, CustomFunctionArgument]
-      | [UnitAddress, ExpressionUnit]
-  >(
-    address: T[0],
-    item: T[1]
-  ) => void
+  addItem: <T extends AddressItemTypesMap>(address: T[0], item: T[1]) => void
   sia: ItemAddress
   setSIA: Dispatch<SetStateAction<ItemAddress>>
   functions: CustomFunction[]
@@ -55,6 +46,8 @@ export default function AddItemsPanel({
       let _sia = sia
       if (!_sia) {
         _sia = { type: 'function', layer: functions.length }
+      } else if (_sia.type !== 'function') {
+        _sia = { type: 'function', layer: _sia.layer }
       } else {
         _sia.layer++
       }
@@ -135,7 +128,7 @@ export default function AddItemsPanel({
   }, [addUnit])
 
   const EnclosingButtons = useMemo(() => {
-    const result = []
+    const result = [] as JSX.Element[]
     for (const enclosing of ['minimum', 'maximum', 'average'] as const) {
       result.push(
         <Grid item xs={1.5} key={enclosing}>
@@ -197,54 +190,64 @@ export default function AddItemsPanel({
   }, [addUnit])
 
   return (
-    <Box display="flex" gap={1}>
-      <Box sx={{ flexGrow: 1 }} display="flex" flexDirection="column" gap={1}>
-        <Box display="flex" gap={1}>
-          <Button
-            key={'addNewFunction'}
-            sx={{ flexGrow: 1 }}
-            onClick={() => addFunction({})}
-          >{t`multiTarget.addNewFunction`}</Button>
-          <Button
-            key={'addNewArgument'}
-            sx={{ flexGrow: 1 }}
-            onClick={() => addArgument({})}
-          >{t`multiTarget.addNewArgument`}</Button>
-          <Button
-            key={'addNewTarget'}
-            sx={{ flexGrow: 1 }}
-            onClick={onShow}
-          >{t`multiTarget.addNewTarget`}</Button>
-          {addFunctionUnitButton}
-          <ButtonGroup>
-            <Button key={'addConstant'} onClick={addConstant}>
-              {t`multiTarget.add`}
-            </Button>
-            <CustomNumberInputButtonGroupWrapper>
-              <CustomNumberInput
-                float
-                value={newNumber}
-                onChange={setNewNumber}
-                inputProps={{ sx: { pl: 1 } }}
-              />
-            </CustomNumberInputButtonGroupWrapper>
+    <CardThemed
+      bgt="light"
+      sx={{
+        boxShadow: '0 0 10px black',
+        position: 'sticky',
+        top: `10px`,
+        zIndex: 1000,
+      }}
+    >
+      <Box display="flex" gap={1}>
+        <Box sx={{ flexGrow: 1 }} display="flex" flexDirection="column" gap={1}>
+          <Box display="flex" gap={1}>
+            <Button
+              key={'addNewFunction'}
+              sx={{ flexGrow: 1 }}
+              onClick={() => addFunction({})}
+            >{t`multiTarget.addNewFunction`}</Button>
+            <Button
+              key={'addNewArgument'}
+              sx={{ flexGrow: 1 }}
+              onClick={() => addArgument({})}
+            >{t`multiTarget.addNewArgument`}</Button>
+            <Button
+              key={'addNewTarget'}
+              sx={{ flexGrow: 1 }}
+              onClick={onShow}
+            >{t`multiTarget.addNewTarget`}</Button>
+            {addFunctionUnitButton}
+            <ButtonGroup>
+              <Button key={'addConstant'} onClick={addConstant}>
+                {t`multiTarget.add`}
+              </Button>
+              <CustomNumberInputButtonGroupWrapper>
+                <CustomNumberInput
+                  float
+                  value={newNumber}
+                  onChange={setNewNumber}
+                  inputProps={{ sx: { pl: 1 } }}
+                />
+              </CustomNumberInputButtonGroupWrapper>
+            </ButtonGroup>
+          </Box>
+          <ButtonGroup fullWidth>
+            {OperationButtons}
+            {EnclosingButtons}
           </ButtonGroup>
         </Box>
-        <ButtonGroup fullWidth>
-          {OperationButtons}
-          {EnclosingButtons}
-        </ButtonGroup>
+        <TargetSelectorModal
+          showEmptyTargets
+          show={show}
+          onClose={onClose}
+          setTarget={(target, multi) => {
+            onClose()
+            addUnit({ type: 'target', target: initCustomTarget(target, multi) })
+          }}
+          excludeSections={['bounsStats', 'character', 'custom']}
+        />
       </Box>
-      <TargetSelectorModal
-        showEmptyTargets
-        show={show}
-        onClose={onClose}
-        setTarget={(target, multi) => {
-          onClose()
-          addUnit({ type: 'target', target: initCustomTarget(target, multi) })
-        }}
-        excludeSections={['bounsStats', 'character', 'custom']}
-      />
-    </Box>
+    </CardThemed>
   )
 }

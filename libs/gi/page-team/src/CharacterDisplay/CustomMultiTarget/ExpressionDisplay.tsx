@@ -24,6 +24,7 @@ export default function ExpressionDisplay({
   sia,
   setSIA,
   sirpa,
+  onFocused,
 }: {
   expression: ExpressionUnit[]
   functions: CustomFunction[]
@@ -31,6 +32,7 @@ export default function ExpressionDisplay({
   sia: ItemAddress
   setSIA: Dispatch<SetStateAction<ItemAddress>>
   sirpa: ItemRelations
+  onFocused: boolean
 }): JSX.Element {
   const { data } = useContext(DataContext)
   const getTargetName = useCallback(
@@ -47,7 +49,7 @@ export default function ExpressionDisplay({
     if (sia) {
       buttonRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' })
     }
-  }, [sia])
+  }, [sia, onFocused])
 
   const siaKey = useMemo(() => {
     if (sia) {
@@ -68,21 +70,30 @@ export default function ExpressionDisplay({
   const f = layer < functions.length && functions[layer]
   /** Current expression */
   const e = f ? f.expression : expression
-  /** Veritable function available names */
-  const vefuna = functions
-    .slice(0, layer)
-    .filter((f) => f.args.length > 0)
-    .map((f) => f.name)
-  /** Available variable names */
-  const avana = [
-    ...(f ? f.args.map((a) => a.name) : []),
-    ...functions
-      .slice(0, layer)
-      .filter((f) => f.args.length < 1)
-      .map((f) => f.name),
-  ]
   /** All available names */
-  const alana = [...avana, ...vefuna]
+  const alana = [] as string[]
+  /** Veritable function available names */
+  const vefuna = [] as string[]
+  /** Available variable names */
+  const avana = [] as string[]
+
+  for (const f of functions.slice(0, layer)) {
+    if (!alana.includes(f.name)) {
+      alana.push(f.name)
+      if (f.args.length) {
+        vefuna.push(f.name)
+      } else {
+        avana.push(f.name)
+      }
+    }
+  }
+
+  for (const arg of f ? f.args : []) {
+    if (!alana.includes(arg.name)) {
+      alana.push(arg.name)
+      avana.push(arg.name)
+    }
+  }
 
   const buttons: JSX.Element[] = []
   if (f) {
@@ -157,10 +168,9 @@ export default function ExpressionDisplay({
     } else if (type === 'operation') {
       text = OperationSpecs[unit.operation].symbol
     } else if (type === 'function') {
-      if (alana.includes(unit.name)) {
-        text = unit.name
-      } else {
-        text = <ColorText color="burning">{unit.name}</ColorText>
+      text = unit.name === '' ? '...' : unit.name
+      if (!alana.includes(unit.name)) {
+        text = <ColorText color="burning">{text}</ColorText>
       }
       if (vefuna.includes(unit.name)) {
         const parts = unitPartFinder(i, e, functions)

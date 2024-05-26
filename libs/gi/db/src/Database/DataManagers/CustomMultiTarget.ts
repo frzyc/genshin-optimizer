@@ -6,16 +6,21 @@ import {
   allMultiOptHitModeKeys,
 } from '@genshin-optimizer/gi/consts'
 import type {
-  ArgumentAddress,
+  AddressItemTypesMap,
+  ConstantUnit,
   CustomFunction,
   CustomFunctionArgument,
   CustomMultiTarget,
   CustomTarget,
+  EnclosingHeadUnit,
+  EnclosingPartUnit,
   ExpressionUnit,
-  FunctionAddress,
+  FunctionUnit,
   ItemAddress,
   ItemRelations,
-  UnitAddress,
+  NullUnit,
+  OperationUnit,
+  TargetUnit,
 } from '../../Interfaces/CustomMultiTarget'
 import {
   OperationSpecs,
@@ -47,57 +52,86 @@ export function initExpressionUnit(
   args: Partial<ExpressionUnit> = {}
 ): ExpressionUnit {
   const { type } = args
+  let result
   switch (type) {
     case 'constant':
-      return { ...args, type: 'constant', value: args.value ?? 1 }
+      result = {
+        ...args,
+        type: 'constant',
+        value: args.value ?? 1,
+      } as ConstantUnit
+      break
     case 'target':
-      return {
+      result = {
         ...args,
         type: 'target',
         target: args.target ?? initCustomTarget([]),
-      }
+      } as TargetUnit
+      break
     case 'operation':
-      return {
+      result = {
         ...args,
         type: 'operation',
         operation: args.operation ?? 'addition',
-      }
+      } as OperationUnit
+      break
     case 'function':
-      return {
+      result = {
         ...args,
         type: 'function',
         name: args.name ?? 'Unknown',
-      }
+      } as FunctionUnit
+      break
     case 'enclosing':
       switch (args.part) {
         case 'head':
-          return {
+          result = {
             ...args,
             type: 'enclosing',
             part: 'head',
             operation: args.operation ?? 'priority',
-          }
+          } as EnclosingHeadUnit
+          break
         case 'comma':
-          return { ...args, type: 'enclosing', part: 'comma' }
+          result = {
+            ...args,
+            type: 'enclosing',
+            part: 'comma',
+          } as EnclosingPartUnit
+          break
         case 'tail':
-          return { ...args, type: 'enclosing', part: 'tail' }
+          result = {
+            ...args,
+            type: 'enclosing',
+            part: 'tail',
+          } as EnclosingPartUnit
+          break
         default:
-          return {
+          result = {
             ...args,
             type: 'enclosing',
             part: 'head',
             operation: 'priority',
-          }
+          } as EnclosingHeadUnit
+          break
       }
+      break
     case 'null':
-      return { ...args, type: 'null', kind: args.kind ?? 'operation' }
+      result = {
+        ...args,
+        type: 'null',
+        kind: args.kind ?? 'operation',
+      } as NullUnit
+      break
     case undefined:
-      return { type: 'null', kind: 'operation' }
+      result = { type: 'null', kind: 'operation' } as NullUnit
+      break
     default:
-      return ((_: never) => {
-        return { type: 'null', kind: 'operation' }
+      result = ((_: never) => {
+        return { type: 'null', kind: 'operation' } as NullUnit
       })(type)
   }
+  return result
 }
 
 export function initCustomFunction(
@@ -243,10 +277,10 @@ function validateExpressionUnit(
   const { type } = unit
   let { description } = unit
   if (typeof type !== 'string') return undefined
-  if (typeof description !== 'string') description = undefined
+  if (typeof description !== 'string') description = ''
   else if (description.length > MAX_DESC_LENGTH)
     description = description.slice(0, MAX_DESC_LENGTH)
-  let result: ExpressionUnit
+  let result
 
   if (type === 'constant') {
     const { value } = unit
@@ -284,7 +318,7 @@ function validateExpressionUnit(
   } else {
     return ((_: never) => undefined)(type)
   }
-  return { ...result, description }
+  return description === '' ? result : { ...result, description }
 }
 
 function validateCustomExpression(
@@ -575,11 +609,7 @@ export function targetListToExpression(
 }
 
 export function itemAddressValue<
-  T extends
-    | [FunctionAddress, CustomFunction]
-    | [ArgumentAddress, CustomFunctionArgument]
-    | [UnitAddress, ExpressionUnit]
-    | [undefined, undefined]
+  T extends AddressItemTypesMap | [undefined, undefined]
 >(
   expression: ExpressionUnit[],
   functions: CustomFunction[],
@@ -644,31 +674,53 @@ export function itemPartFinder(
     }
   } else if (type === 'function') {
     const f = item as CustomFunction
-    const matrix = [...functions.map((f) => f.expression), expression]
-    for (const [layer_i1, e] of matrix.entries()) {
-      if (layer_i1 <= layer) continue
-      for (const [index_i2, u] of e.entries()) {
-        if (u.type === 'function' && u.name === f.name) {
-          for (const i of unitPartFinder(
-            index_i2,
-            e,
-            functions.slice(0, layer_i1)
-          )) {
-            result.dependent.push({ type: 'unit', layer: layer_i1, index: i })
+    if (!functions.slice(0, layer).some((f_) => f_.name === f.name)) {
+      const matrix = [...functions.map((f) => f.expression), expression]
+      for (const [layer_i1, e] of matrix.entries()) {
+        if (layer_i1 <= layer) continue
+        for (const [index_i2, u] of e.entries()) {
+          if (u.type === 'function' && u.name === f.name) {
+            for (const i of unitPartFinder(
+              index_i2,
+              e,
+              functions.slice(0, layer_i1)
+            )) {
+              result.dependent.push({ type: 'unit', layer: layer_i1, index: i })
+            }
           }
         }
       }
     }
   } else if (type === 'argument') {
     const a = item as CustomFunctionArgument
-    const e = functions[layer].expression
-    for (const [i, u] of e.entries()) {
-      if (u.type === 'function' && u.name === a.name) {
-        result.dependent.push({ type: 'unit', layer, index: i })
+    if (
+      !functions[layer].args.slice(0, index).some((a_) => a_.name === a.name)
+    ) {
+      const e = functions[layer].expression
+      for (const [i, u] of e.entries()) {
+        if (u.type === 'function' && u.name === a.name) {
+          result.dependent.push({ type: 'unit', layer, index: i })
+        }
       }
     }
   }
   result.all = [...result.related, ...result.dependent, ...result.independent]
+  return result
+}
+
+export function availableFunctionUnitNames(
+  functions: CustomFunction[],
+  layer: number
+): string[] {
+  const result: string[] = []
+  for (const f of functions.slice(0, layer)) {
+    if (result.includes(f.name)) continue
+    result.push(f.name)
+  }
+  for (const a of functions[layer]?.args ?? []) {
+    if (result.includes(a.name)) continue
+    result.push(a.name)
+  }
   return result
 }
 

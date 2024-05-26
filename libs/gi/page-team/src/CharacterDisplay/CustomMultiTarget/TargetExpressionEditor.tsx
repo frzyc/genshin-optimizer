@@ -1,14 +1,11 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { clamp, deepClone, range } from '@genshin-optimizer/common/util'
+import { clamp, range } from '@genshin-optimizer/common/util'
 import type {
-  ArgumentAddress,
+  AddressItemTypesMap,
   CustomFunction,
   CustomFunctionArgument,
   CustomMultiTarget,
   ExpressionUnit,
-  FunctionAddress,
   ItemAddress,
-  UnitAddress,
 } from '@genshin-optimizer/gi/db'
 import { itemAddressValue, itemPartFinder } from '@genshin-optimizer/gi/db'
 import { Box } from '@mui/material'
@@ -16,6 +13,7 @@ import type { Dispatch, SetStateAction } from 'react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import AddItemsPanel from './AddItemsPanel'
 import ExpressionDisplay from './ExpressionDisplay'
+import ItemConfigPanel from './ItemConfigPanel'
 
 function isEqual(a: any, b: any) {
   return JSON.stringify(a) === JSON.stringify(b)
@@ -43,18 +41,31 @@ function useSIA(address?: ItemAddress) {
 
 export default function TargetExpressionEditor({
   customMultiTarget: CMT,
-  setCustomMultiTarget: setCMT,
+  setCustomMultiTarget,
 }: {
   customMultiTarget: CustomMultiTarget
   setCustomMultiTarget: Dispatch<SetStateAction<CustomMultiTarget>>
 }) {
-  const functions = useMemo(() => [...(CMT.functions ?? [])], [CMT.functions])
-  const expression = useMemo(
-    () => [...(CMT.expression ?? [])],
-    [CMT.expression]
+  const functions = useMemo(() => [...(CMT.functions ?? [])], [CMT])
+  const expression = useMemo(() => [...(CMT.expression ?? [])], [CMT])
+
+  const setCMT = useCallback(
+    (
+      arg:
+        | Partial<CustomMultiTarget>
+        | ((CMT: CustomMultiTarget) => CustomMultiTarget)
+    ) => {
+      setCustomMultiTarget((prev) => {
+        if (arg instanceof Function) arg = arg(prev)
+        return { ...prev, ...arg }
+      })
+    },
+    [setCustomMultiTarget]
   )
 
   const [sia, setSIA] = useSIA()
+  const [onFocused, setOnFocus] = useState(false)
+  const focusToSIA = useCallback(() => setOnFocus((prev) => !prev), [])
 
   /** Selected item related parts addresses */
   const sirpa = useMemo(
@@ -84,12 +95,7 @@ export default function TargetExpressionEditor({
   )
 
   const setExpressionItem = useCallback(
-    <
-      T extends
-        | [FunctionAddress, CustomFunction]
-        | [ArgumentAddress, CustomFunctionArgument]
-        | [UnitAddress, ExpressionUnit]
-    >(
+    <T extends AddressItemTypesMap>(
       address: T[0] | undefined,
       arg: Partial<T[1]> | ((item: T[1]) => T[1])
     ) => {
@@ -113,29 +119,21 @@ export default function TargetExpressionEditor({
           })
         } else {
           expression.splice(address.index, 1, newItem as ExpressionUnit)
-          setCMT({ ...CMT, expression })
+          setCMT({ expression })
         }
       } else {
         return assertNever(address)
       }
     },
-    [CMT, expression, functions, setCMT, setFunction]
+    [expression, functions, setCMT, setFunction]
   )
 
   const addExpressionItem = useCallback(
-    <
-      T extends
-        | [FunctionAddress, CustomFunction]
-        | [ArgumentAddress, CustomFunctionArgument]
-        | [UnitAddress, ExpressionUnit]
-    >(
-      address: T[0],
-      item: T[1]
-    ) => {
+    <T extends AddressItemTypesMap>(address: T[0], item: T[1]) => {
       const layer = clamp(address.layer, 0, functions.length)
       if (address.type === 'function') {
         functions.splice(layer, 0, item as CustomFunction)
-        setCMT({ ...CMT, functions })
+        setCMT({ functions })
       } else if (address.type === 'argument') {
         setFunction(layer, (func) => {
           const index = clamp(address.index, 0, func.args.length)
@@ -151,13 +149,13 @@ export default function TargetExpressionEditor({
           })
         } else {
           expression.splice(index, 0, item as ExpressionUnit)
-          setCMT({ ...CMT, expression })
+          setCMT({ expression })
         }
       } else {
         return assertNever(address)
       }
     },
-    [CMT, expression, functions, setCMT, setFunction]
+    [expression, functions, setCMT, setFunction]
   )
 
   const removeExpressionItem = useCallback(
@@ -165,7 +163,7 @@ export default function TargetExpressionEditor({
       if (!address) return
       if (address.type === 'function') {
         functions.splice(address.layer, 1)
-        setCMT({ ...CMT, functions })
+        setCMT({ functions })
       } else if (address.type === 'argument') {
         setFunction(address.layer, (func) => {
           func.args.splice(address.index, 1)
@@ -179,13 +177,13 @@ export default function TargetExpressionEditor({
           })
         } else {
           expression.splice(address.index, 1)
-          setCMT({ ...CMT, expression })
+          setCMT({ expression })
         }
       } else {
         return assertNever(address)
       }
     },
-    [CMT, expression, functions, setCMT, setFunction]
+    [expression, functions, setCMT, setFunction]
   )
 
   // TODO: Drag and drop
@@ -199,16 +197,6 @@ export default function TargetExpressionEditor({
       addExpressionItem(to, item)
     },
     [addExpressionItem, expression, functions, removeExpressionItem]
-  )
-
-  const dupExpressionItem = useCallback(
-    (address: ItemAddress) => {
-      if (!address) return
-      const item = itemAddressValue(expression, functions, address)
-      if (!item) return
-      addExpressionItem(address, deepClone(item))
-    },
-    [addExpressionItem, expression, functions]
   )
 
   /** Set undefined if the same item is clicked again */
@@ -235,34 +223,57 @@ export default function TargetExpressionEditor({
           sia={sia}
           setSIA={re_setSIA}
           sirpa={sirpa}
+          onFocused={onFocused}
         />
       )),
-    [expression, functions, re_setSIA, sia, sirpa]
+    [expression, functions, onFocused, re_setSIA, sia, sirpa]
   )
+
+  const itemConfigPanel = useMemo(() => {
+    if (!sia) return null
+    const item = itemAddressValue(expression, functions, sia)
+    if (!item) return null
+    return (
+      <ItemConfigPanel
+        item={item}
+        setItem={setExpressionItem}
+        removeItem={removeExpressionItem}
+        moveItem={moveExpressionItem}
+        addItem={addExpressionItem}
+        sia={sia}
+        sirpa={sirpa}
+        functions={functions}
+        expression={expression}
+        setSIA={setSIA}
+        focusToSIA={focusToSIA}
+      />
+    )
+  }, [
+    addExpressionItem,
+    expression,
+    focusToSIA,
+    functions,
+    moveExpressionItem,
+    removeExpressionItem,
+    setExpressionItem,
+    setSIA,
+    sia,
+    sirpa,
+  ])
 
   return (
     <>
-      <CardThemed
-        bgt="light"
-        sx={{
-          boxShadow: '0 0 10px black',
-          position: 'sticky',
-          bottom: `10px`,
-          top: `10px`,
-          zIndex: 1000,
-        }}
-      >
-        <AddItemsPanel
-          expression={expression}
-          functions={functions}
-          sia={sia}
-          setSIA={setSIA}
-          addItem={addExpressionItem}
-        />
-      </CardThemed>
+      <AddItemsPanel
+        expression={expression}
+        functions={functions}
+        sia={sia}
+        setSIA={setSIA}
+        addItem={addExpressionItem}
+      />
       <Box display="flex" flexDirection="column" gap={1} pb={'10vh'}>
         {expressionDisplays}
       </Box>
+      {itemConfigPanel}
     </>
   )
 }

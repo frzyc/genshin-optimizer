@@ -184,6 +184,11 @@ export interface ItemRelations {
   all: NonNullable<ItemAddress>[]
 }
 
+export type AddressItemTypesMap =
+  | [FunctionAddress, CustomFunction]
+  | [ArgumentAddress, CustomFunctionArgument]
+  | [UnitAddress, ExpressionUnit]
+
 export type ExpressionItem =
   | CustomFunction
   | CustomFunctionArgument
