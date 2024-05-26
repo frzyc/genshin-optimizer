@@ -220,6 +220,7 @@ export function dataObjForCharacterNew(
               parseCustomTarget(target, sheetData, globalHitMode, useWeight),
             functions ?? []
           )
+          console.log(multiTargetNode)
           sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
             name,
             variant: 'invalid',
@@ -387,25 +388,25 @@ function parseCustomExpression(
       }
     } else if (enclosingMode) {
       parts[parts.length - 1].push(unit)
-    } else if (unit.type === 'operation') {
+    } else if (
+      unit.type === 'operation' ||
+      (unit.type === 'null' && unit.kind === 'operation')
+    ) {
+      let operation: ExpressionOperation
+      if (unit.type === 'operation') {
+        operation = unit.operation
+      } else {
+        operation = 'addition'
+      }
       // Operations with lower priority first, so they will go to a higher node and will be calculated last
       if (
         !currentOperation ||
-        OperationSpecs[unit.operation].precedence <
+        OperationSpecs[operation].precedence <
           OperationSpecs[currentOperation].precedence
       ) {
-        currentOperation = unit.operation
+        currentOperation = operation
         parts = [[...handled], []]
-      } else if (unit.operation === currentOperation) {
-        parts.push([])
-      } else {
-        parts[parts.length - 1].push(unit)
-      }
-    } else if (unit.type === 'null' && unit.kind === 'operation') {
-      if (!currentOperation) {
-        currentOperation = 'addition'
-        parts = [[...handled], []]
-      } else if (currentOperation === 'addition') {
+      } else if (operation === currentOperation) {
         parts.push([])
       } else {
         parts[parts.length - 1].push(unit)
