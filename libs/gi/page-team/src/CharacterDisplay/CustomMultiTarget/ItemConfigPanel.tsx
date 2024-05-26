@@ -219,7 +219,7 @@ export default function ItemConfigPanel({
     if (sia.type === 'function' || sia.type === 'argument') {
       const _item = item as CustomFunction | CustomFunctionArgument
       result.push(
-        <Box sx={{ display: 'flex', gap: 1 }}>
+        <Box sx={{ display: 'flex', gap: 1 }} flexDirection="column">
           <TextFieldLazy
             fullWidth
             label="Name"
@@ -229,7 +229,7 @@ export default function ItemConfigPanel({
           <TextFieldLazy
             fullWidth
             label="Description"
-            value={_item.description}
+            value={_item.description ?? ''}
             onChange={(description) => setItem(sia, { description })}
             multiline
           />
@@ -316,8 +316,14 @@ function UnitConfig({
   const config = useMemo(() => {
     const result: JSX.Element[] = []
     if (unit.type === 'function') {
+      let title = unit.name
+      if (avana.length === 0) {
+        title = 'No available names, add some function or argument'
+      } else if (!avana.includes(unit.name)) {
+        title = 'Select a name'
+      }
       result.push(
-        <DropdownButton title={unit.name || 'Select available name'}>
+        <DropdownButton title={title}>
           {avana.map((name) => (
             <MenuItem
               key={'avaibleNames' + sia.layer + sia.index + name}
@@ -358,7 +364,7 @@ function UnitConfig({
         <TextFieldLazy
           fullWidth
           label="Description"
-          value={unit.description}
+          value={unit.description ?? ''}
           onChange={(description) => setUnit({ description })}
           multiline
         />
@@ -368,12 +374,7 @@ function UnitConfig({
   }, [avana, focusToSIA, setUnit, sia.index, sia.layer, unit])
 
   return (
-    <Box
-      sx={{ p: 1, flexGrow: 1 }}
-      display="flex"
-      flexDirection="column"
-      gap={1}
-    >
+    <Box sx={{ flexGrow: 1 }} display="flex" flexDirection="column" gap={1}>
       {config}
     </Box>
   )
