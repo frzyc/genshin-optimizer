@@ -167,7 +167,27 @@ export interface ArgumentAddress {
   index: number
 }
 
-export type ItemAddress = UnitAddress | FunctionAddress | ArgumentAddress
+export type ItemAddress =
+  | UnitAddress
+  | FunctionAddress
+  | ArgumentAddress
+  | undefined
+
+/**
+ * `related`, `dependent`, `independent` and `all` should not contain `this`
+ */
+export interface ItemRelations {
+  this: ItemAddress
+  related: NonNullable<ItemAddress>[]
+  dependent: NonNullable<ItemAddress>[]
+  independent: NonNullable<ItemAddress>[]
+  all: NonNullable<ItemAddress>[]
+}
+
+export type ExpressionItem =
+  | CustomFunction
+  | CustomFunctionArgument
+  | ExpressionUnit
 
 export interface CustomFunctionArgument {
   name: string

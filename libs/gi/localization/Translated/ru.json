@@ -995,6 +995,8 @@
       "addNewTarget": "Добавить таргет",
       "addNewMTarget": "Доб. Новый Мультитаргет",
       "convertToExpression": "Преобразовать в Выражение",
+      "addNewFunction": "Новая ƒ",
+      "addNewArgument": "Добавить аргумент",
       "add": "Добавить"
     },
     "addStats": {

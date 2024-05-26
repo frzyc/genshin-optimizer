@@ -14,6 +14,7 @@ import type {
   ExpressionUnit,
   FunctionAddress,
   ItemAddress,
+  ItemRelations,
   UnitAddress,
 } from '../../Interfaces/CustomMultiTarget'
 import {
@@ -65,7 +66,7 @@ export function initExpressionUnit(
       return {
         ...args,
         type: 'function',
-        name: args.name ?? 'Some Function',
+        name: args.name ?? 'Unknown',
       }
     case 'enclosing':
       switch (args.part) {
@@ -96,6 +97,30 @@ export function initExpressionUnit(
       return ((_: never) => {
         return { type: 'null', kind: 'operation' }
       })(type)
+  }
+}
+
+export function initCustomFunction(
+  args: Partial<CustomFunction> = {},
+  functions?: CustomFunction[]
+): CustomFunction {
+  const n = functions?.length ?? 0
+  const name = args.name ?? `ƒ${n}`
+  return {
+    name,
+    args: args.args ?? [],
+    expression: args.expression ?? [],
+    description: args.description,
+  }
+}
+
+export function initCustomFunctionArgument(
+  args: Partial<CustomFunctionArgument> = {},
+  func?: CustomFunction
+): CustomFunctionArgument {
+  return {
+    name: args.name ?? `Arg${func?.args.length ?? 0}`,
+    description: args.description,
   }
 }
 
@@ -530,7 +555,15 @@ export function targetListToExpression(
     expression.push(
       initExpressionUnit({ type: 'operation', operation: 'multiplication' })
     )
-    expression.push(initExpressionUnit({ type: 'target', target: t }))
+    expression.push(
+      initExpressionUnit({
+        type: 'target',
+        target: t,
+        description: t.description,
+      })
+    )
+    t.weight = 1
+    t.description = ''
   })
   if (!expression.length)
     expression.push(initExpressionUnit({ type: 'null', kind: 'operand' }))
@@ -541,11 +574,17 @@ export function targetListToExpression(
   }
 }
 
-export function itemAddressValue(
+export function itemAddressValue<
+  T extends
+    | [FunctionAddress, CustomFunction]
+    | [ArgumentAddress, CustomFunctionArgument]
+    | [UnitAddress, ExpressionUnit]
+    | [undefined, undefined]
+>(
   expression: ExpressionUnit[],
   functions: CustomFunction[],
-  address: ItemAddress | undefined
-): ExpressionUnit | CustomFunction | CustomFunctionArgument | undefined {
+  address: T[0]
+): T[1] {
   if (!address) return undefined
   const { type, layer, index } = address
   if (type === 'unit') {
@@ -564,79 +603,72 @@ export function itemPartFinder(
   expression: ExpressionUnit[],
   functions: CustomFunction[],
   address: ItemAddress | undefined
-) {
-  const result: {
-    functions: FunctionAddress[]
-    args: ArgumentAddress[]
-    units: UnitAddress[]
-  } = { functions: [], args: [], units: [] }
+): ItemRelations {
+  const result: ItemRelations = {
+    this: undefined,
+    related: [],
+    dependent: [],
+    independent: [],
+    all: [],
+  }
   if (!address) return result
   const { type, layer, index } = address
   const item = itemAddressValue(expression, functions, address)
   if (!item) return result
+  result.this = address
   if (type === 'unit') {
     const unit = item as ExpressionUnit
-    const expression_ =
+    const e =
       layer < functions.length ? functions[layer].expression : expression
-    for (const i of unitPartFinder(
-      index,
-      expression_,
-      functions.slice(0, layer)
-    )) {
-      result.units.push({ type: 'unit', layer, index: i })
+    for (const i of unitPartFinder(index, e, functions.slice(0, layer))) {
+      if (i === index) continue
+      result.related.push({ type: 'unit', layer, index: i })
     }
     if (unit.type === 'function') {
       for (const [i, f] of functions.entries()) {
         if (unit.name === f.name) {
-          result.functions.push({ type: 'function', layer: i })
+          result.independent.push({ type: 'function', layer: i })
           break
         }
       }
-      if (result.functions.length === 0) {
-        // If the function is not found, maybe it's an argument
-        const args = functions[layer].args
+      // If the function is not found, maybe it's an argument
+      if (result.independent.length === 0) {
+        const args = functions[layer]?.args ?? []
         for (const [i, a] of args.entries()) {
           if (unit.name === a.name) {
-            result.args.push({ type: 'argument', layer, index: i })
+            result.independent.push({ type: 'argument', layer, index: i })
             break
           }
         }
       }
     }
   } else if (type === 'function') {
-    result.functions.push(address)
-    const _function = item as CustomFunction
+    const f = item as CustomFunction
     const matrix = [...functions.map((f) => f.expression), expression]
     for (const [layer_i1, e] of matrix.entries()) {
-      if (layer <= layer_i1) continue
+      if (layer_i1 <= layer) continue
       for (const [index_i2, u] of e.entries()) {
-        if (u.type === 'function' && u.name === _function.name) {
-          for (const part_index of unitPartFinder(
+        if (u.type === 'function' && u.name === f.name) {
+          for (const i of unitPartFinder(
             index_i2,
             e,
             functions.slice(0, layer_i1)
           )) {
-            result.units.push({
-              type: 'unit',
-              layer: layer_i1,
-              index: part_index,
-            })
+            result.dependent.push({ type: 'unit', layer: layer_i1, index: i })
           }
         }
       }
     }
   } else if (type === 'argument') {
-    result.args.push(address)
-    // An argument can only be used at its own layer
-    const arg = item as CustomFunctionArgument
+    const a = item as CustomFunctionArgument
     const e = functions[layer].expression
     for (const [i, u] of e.entries()) {
-      if (u.type === 'function' && u.name === arg.name) {
-        // An argument cannot be a function
-        result.units.push({ type: 'unit', layer, index: i })
+      if (u.type === 'function' && u.name === a.name) {
+        result.dependent.push({ type: 'unit', layer, index: i })
       }
     }
   }
+  result.all = [...result.related, ...result.dependent, ...result.independent]
   return result
 }
 

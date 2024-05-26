@@ -1,4 +1,5 @@
-import { arrayMove, range } from '@genshin-optimizer/common/util'
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import { clamp, deepClone, range } from '@genshin-optimizer/common/util'
 import type {
   ArgumentAddress,
   CustomFunction,
@@ -13,24 +14,22 @@ import { itemAddressValue, itemPartFinder } from '@genshin-optimizer/gi/db'
 import { Box } from '@mui/material'
 import type { Dispatch, SetStateAction } from 'react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import AddItemsPanel from './AddItemsPanel'
 import ExpressionDisplay from './ExpressionDisplay'
 
 function isEqual(a: any, b: any) {
   return JSON.stringify(a) === JSON.stringify(b)
 }
 
+function assertNever(_: never) {}
+
 /** Selected item address */
 function useSIA(address?: ItemAddress) {
-  const [sia, _setSIA] = useState<ItemAddress | undefined>(address)
+  const [sia, _setSIA] = useState<ItemAddress>(address)
   const oldSIA = useMemo(() => (sia ? { ...sia } : undefined), [sia])
 
-  const setSIA: Dispatch<SetStateAction<ItemAddress | undefined>> = useCallback(
-    (
-      arg:
-        | ItemAddress
-        | undefined
-        | ((address: ItemAddress | undefined) => ItemAddress | undefined)
-    ) => {
+  const setSIA: Dispatch<SetStateAction<ItemAddress>> = useCallback(
+    (arg: ItemAddress | ((address: ItemAddress) => ItemAddress)) => {
       if (arg instanceof Function) arg = arg(oldSIA ? { ...oldSIA } : undefined)
       if (!arg) return _setSIA(undefined)
       if (oldSIA && isEqual(oldSIA, arg)) return
@@ -49,8 +48,11 @@ export default function TargetExpressionEditor({
   customMultiTarget: CustomMultiTarget
   setCustomMultiTarget: Dispatch<SetStateAction<CustomMultiTarget>>
 }) {
-  const functions = useMemo(() => [...(CMT.functions ?? [])], [CMT])
-  const expression = useMemo(() => [...(CMT.expression ?? [])], [CMT])
+  const functions = useMemo(() => [...(CMT.functions ?? [])], [CMT.functions])
+  const expression = useMemo(
+    () => [...(CMT.expression ?? [])],
+    [CMT.expression]
+  )
 
   const [sia, setSIA] = useSIA()
 
@@ -59,231 +61,159 @@ export default function TargetExpressionEditor({
     () => itemPartFinder(expression, functions, sia),
     [sia, expression, functions]
   )
-  const selectedItem = useMemo(
-    () => ({ ...itemAddressValue(expression, functions, sia) }),
-    [sia, expression, functions]
-  )
 
   useEffect(() => {
-    if (sia && !selectedItem) setSIA(undefined)
-  }, [selectedItem, setSIA, sia])
-
-  const addFunction = useCallback(
-    (func: CustomFunction) => {
-      const layer = sia ? sia.layer + 1 : 0
-      functions.splice(layer, 0, func)
-      setCMT({ ...CMT, functions })
-      setSIA({ type: 'function', layer })
-    },
-    [CMT, functions, setCMT, setSIA, sia]
-  )
-
-  const moveFunction = useCallback(
-    (direction: 'up' | 'down') => {
-      if (!sia) return
-      const newLayer = sia.layer + (direction === 'up' ? -1 : +1)
-      if (newLayer < 0 || newLayer >= functions.length) return
-      setCMT({ ...CMT, functions: arrayMove(functions, sia.layer, newLayer) })
-      setSIA({ ...sia, layer: newLayer })
-    },
-    [CMT, functions, setCMT, setSIA, sia]
-  )
-
-  const removeFunction = useCallback(() => {
-    if (!sia) return
-    functions.splice(sia.layer, 1)
-    setCMT({ ...CMT, functions })
-    setSIA(undefined)
-  }, [CMT, functions, setCMT, setSIA, sia])
+    if (!itemAddressValue(expression, functions, sia)) setSIA(undefined)
+  }, [expression, functions, sia, setSIA])
 
   const setFunction = useCallback(
     (
-      address: FunctionAddress,
+      layer: number,
       arg: Partial<CustomFunction> | ((func: CustomFunction) => CustomFunction)
     ) => {
-      const func = functions[address.layer]
-      if (!func) return
-      if (arg instanceof Function) arg = arg(func)
-      functions.splice(address.layer, 1, { ...func, ...arg })
-      setCMT({ ...CMT, functions })
-    },
-    [CMT, functions, setCMT]
-  )
-
-  const addArgument = useCallback(
-    (arg: CustomFunctionArgument) => {
-      if (!sia) return
-      setFunction({ type: 'function', layer: sia.layer }, (func) => {
-        const index = sia.type === 'function' ? func.args.length : sia.index + 1
-        func.args.splice(index, 0, arg)
-        setSIA({ ...sia, type: 'argument', index })
-        return func
+      setCMT((prev) => {
+        const funcs = prev.functions ?? []
+        const func = funcs[layer]
+        if (!func) return prev
+        if (arg instanceof Function) arg = arg(func)
+        funcs.splice(layer, 1, { ...func, ...arg })
+        return prev
       })
     },
-    [setFunction, setSIA, sia]
+    [setCMT]
   )
 
-  const moveArgument = useCallback(
-    (direction: 'left' | 'right') => {
-      if (!sia || sia.type !== 'argument') return
-      const newI = sia.index + (direction === 'left' ? -1 : 1)
-      if (newI < 0 || newI >= functions[sia.layer].args.length) return
-      setFunction({ type: 'function', layer: sia.layer }, (func) => {
-        func.args = arrayMove(func.args, sia.index, newI)
-        setSIA({ ...sia, index: newI })
-        return func
-      })
-    },
-    [functions, setFunction, setSIA, sia]
-  )
-
-  const removeArgument = useCallback(() => {
-    if (!sia || sia.type !== 'argument') return
-    setFunction({ type: 'function', layer: sia.layer }, (func) => {
-      func.args.splice(sia.index, 1)
-      return func
-    })
-    setSIA((prev) => {
-      if (!prev || prev.type !== 'argument') return prev
-      if (prev.index < 1) return prev
-      return { ...prev, index: prev.index - 1 }
-    })
-  }, [setFunction, setSIA, sia])
-
-  const setArgument = useCallback(
-    (
-      address: ArgumentAddress,
-      arg:
-        | Partial<CustomFunctionArgument>
-        | ((arg: CustomFunctionArgument) => CustomFunctionArgument)
+  const setExpressionItem = useCallback(
+    <
+      T extends
+        | [FunctionAddress, CustomFunction]
+        | [ArgumentAddress, CustomFunctionArgument]
+        | [UnitAddress, ExpressionUnit]
+    >(
+      address: T[0] | undefined,
+      arg: Partial<T[1]> | ((item: T[1]) => T[1])
     ) => {
-      const _arg = functions[address.layer].args[address.index]
-      if (!_arg) return
-      setFunction({ type: 'function', layer: address.layer }, (func) => {
-        if (arg instanceof Function) arg = arg(_arg)
-        func.args.splice(address.index, 1, { ..._arg, ...arg })
-        return func
-      })
-    },
-    [functions, setFunction]
-  )
-
-  const addUnit = useCallback(
-    (unit: ExpressionUnit) => {
-      // If no item is selected, add to the beginning of the expression.
-      const layer = sia ? sia.layer : functions.length
-      const index = sia?.type === 'unit' ? sia.index + 1 : 0
-      if (layer < functions.length) {
-        setFunction({ type: 'function', layer }, (func) => {
-          func.expression.splice(index, 0, unit)
+      if (!address) return
+      const item = itemAddressValue<T>(expression, functions, address)
+      if (!item) return
+      if (arg instanceof Function) arg = arg(item)
+      const newItem = { ...item, ...arg }
+      if (address.type === 'function') {
+        setFunction(address.layer, newItem)
+      } else if (address.type === 'argument') {
+        setFunction(address.layer, (func) => {
+          func.args.splice(address.index, 1, newItem as CustomFunctionArgument)
           return func
         })
-        setSIA({ type: 'unit', layer, index })
-      } else {
-        expression.splice(index, 0, unit)
-        setCMT({ ...CMT, expression })
-        setSIA({ type: 'unit', layer, index })
-      }
-    },
-    [sia, functions.length, setFunction, setSIA, expression, setCMT, CMT]
-  )
-
-  const moveUnit = useCallback(
-    (from: UnitAddress, to: UnitAddress) => {
-      if (from.layer === to.layer && from.index === to.index) return
-      if (!itemAddressValue(expression, functions, from)) return
-      if (from.layer === to.layer) {
-        if (from.layer < functions.length) {
-          setFunction({ type: 'function', layer: from.layer }, (func) => {
-            func.expression = arrayMove(func.expression, from.index, to.index)
+      } else if (address.type === 'unit') {
+        if (address.layer < functions.length) {
+          setFunction(address.layer, (func) => {
+            func.expression.splice(address.index, 1, newItem as ExpressionUnit)
             return func
           })
         } else {
-          setCMT({
-            ...CMT,
-            expression: arrayMove(expression, from.index, to.index),
-          })
+          expression.splice(address.index, 1, newItem as ExpressionUnit)
+          setCMT({ ...CMT, expression })
         }
       } else {
-        const fromExpression =
-          from.layer < functions.length
-            ? functions[from.layer].expression
-            : expression
-        const toExpression =
-          to.layer < functions.length
-            ? functions[to.layer].expression
-            : expression
-        if (!toExpression) return
-        toExpression.splice(
-          to.index,
-          0,
-          fromExpression.splice(from.index, 1)[0]
-        )
-        if (from.layer < functions.length)
-          setFunction({ type: 'function', layer: from.layer }, (func) => ({
-            ...func,
-            expression: fromExpression,
-          }))
-        else setCMT({ ...CMT, expression: fromExpression })
-        if (to.layer < functions.length)
-          setFunction({ type: 'function', layer: to.layer }, (func) => ({
-            ...func,
-            expression: toExpression,
-          }))
-        else setCMT({ ...CMT, expression: toExpression })
+        return assertNever(address)
       }
-      setSIA({ type: 'unit', layer: to.layer, index: to.index })
     },
-    [expression, functions, setSIA, setFunction, setCMT, CMT]
+    [CMT, expression, functions, setCMT, setFunction]
   )
 
-  const removeUnit = useCallback(() => {
-    if (!sia || sia.type !== 'unit') return
-    if (sia.layer < functions.length) {
-      setFunction({ type: 'function', layer: sia.layer }, (func) => {
-        func.expression.splice(sia.index, 1)
-        return func
-      })
-    } else {
-      expression.splice(sia.index, 1)
-      setCMT({ ...CMT, expression })
-    }
-    setSIA((prev) => {
-      if (!prev || prev.type !== 'unit') return prev
-      if (prev.index < 1) return prev
-      return { ...prev, index: prev.index - 1 }
-    })
-  }, [sia, functions.length, setSIA, setFunction, expression, setCMT, CMT])
-
-  const setUnit = useCallback(
-    (
-      address: UnitAddress,
-      arg: ExpressionUnit | ((unit: ExpressionUnit) => ExpressionUnit)
+  const addExpressionItem = useCallback(
+    <
+      T extends
+        | [FunctionAddress, CustomFunction]
+        | [ArgumentAddress, CustomFunctionArgument]
+        | [UnitAddress, ExpressionUnit]
+    >(
+      address: T[0],
+      item: T[1]
     ) => {
-      const unit = itemAddressValue(expression, functions, address)
-      if (!unit || !('type' in unit)) return
-      if (arg instanceof Function) arg = arg(unit)
-      if (address.layer < functions.length) {
-        setFunction({ type: 'function', layer: address.layer }, (func) => {
-          func.expression.splice(address.index, 1, { ...unit, ...arg })
+      const layer = clamp(address.layer, 0, functions.length)
+      if (address.type === 'function') {
+        functions.splice(layer, 0, item as CustomFunction)
+        setCMT({ ...CMT, functions })
+      } else if (address.type === 'argument') {
+        setFunction(layer, (func) => {
+          const index = clamp(address.index, 0, func.args.length)
+          func.args.splice(index, 0, item as CustomFunctionArgument)
           return func
         })
+      } else if (address.type === 'unit') {
+        const index = clamp(address.index, 0, expression.length)
+        if (layer < functions.length) {
+          setFunction(layer, (func) => {
+            func.expression.splice(index, 0, item as ExpressionUnit)
+            return func
+          })
+        } else {
+          expression.splice(index, 0, item as ExpressionUnit)
+          setCMT({ ...CMT, expression })
+        }
       } else {
-        expression.splice(address.index, 1, { ...unit, ...arg })
-        setCMT({ ...CMT, expression })
+        return assertNever(address)
       }
     },
-    [CMT, expression, functions, setFunction, setCMT]
+    [CMT, expression, functions, setCMT, setFunction]
+  )
+
+  const removeExpressionItem = useCallback(
+    (address: ItemAddress) => {
+      if (!address) return
+      if (address.type === 'function') {
+        functions.splice(address.layer, 1)
+        setCMT({ ...CMT, functions })
+      } else if (address.type === 'argument') {
+        setFunction(address.layer, (func) => {
+          func.args.splice(address.index, 1)
+          return func
+        })
+      } else if (address.type === 'unit') {
+        if (address.layer < functions.length) {
+          setFunction(address.layer, (func) => {
+            func.expression.splice(address.index, 1)
+            return func
+          })
+        } else {
+          expression.splice(address.index, 1)
+          setCMT({ ...CMT, expression })
+        }
+      } else {
+        return assertNever(address)
+      }
+    },
+    [CMT, expression, functions, setCMT, setFunction]
+  )
+
+  // TODO: Drag and drop
+  const moveExpressionItem = useCallback(
+    <T extends ItemAddress>(from: T, to: T) => {
+      if (!from || !to) return
+      if (isEqual(from, to)) return
+      const item = itemAddressValue(expression, functions, from)
+      if (!item) return
+      removeExpressionItem(from)
+      addExpressionItem(to, item)
+    },
+    [addExpressionItem, expression, functions, removeExpressionItem]
+  )
+
+  const dupExpressionItem = useCallback(
+    (address: ItemAddress) => {
+      if (!address) return
+      const item = itemAddressValue(expression, functions, address)
+      if (!item) return
+      addExpressionItem(address, deepClone(item))
+    },
+    [addExpressionItem, expression, functions]
   )
 
   /** Set undefined if the same item is clicked again */
   const re_setSIA = useCallback(
-    (
-      address:
-        | ItemAddress
-        | undefined
-        | ((address: ItemAddress | undefined) => ItemAddress | undefined)
-    ) => {
+    (address: ItemAddress | ((address: ItemAddress) => ItemAddress)) => {
       setSIA((prev) => {
         if (address instanceof Function) address = address(prev)
         if (!address) return undefined
@@ -310,26 +240,29 @@ export default function TargetExpressionEditor({
     [expression, functions, re_setSIA, sia, sirpa]
   )
 
-  // For testing
-  if (functions.length === 0) {
-    addFunction({
-      name: 'test',
-      args: [{ name: 'arg1' }, { name: 'arg2' }],
-      expression: expression,
-    })
-    addFunction({
-      name: 'test2',
-      args: [],
-      expression: expression,
-    })
-  }
-
-  // return <Box display="flex" flexDirection="column" gap={1}>
-  //   {expressionDisplays}
-  // </Box>
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
-      {expressionDisplays}
-    </Box>
+    <>
+      <CardThemed
+        bgt="light"
+        sx={{
+          boxShadow: '0 0 10px black',
+          position: 'sticky',
+          bottom: `10px`,
+          top: `10px`,
+          zIndex: 1000,
+        }}
+      >
+        <AddItemsPanel
+          expression={expression}
+          functions={functions}
+          sia={sia}
+          setSIA={setSIA}
+          addItem={addExpressionItem}
+        />
+      </CardThemed>
+      <Box display="flex" flexDirection="column" gap={1} pb={'10vh'}>
+        {expressionDisplays}
+      </Box>
+    </>
   )
 }

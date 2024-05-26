@@ -9,7 +9,6 @@ export type CustomNumberInputProps = Omit<InputProps, 'onChange'> & {
   float?: boolean
   allowEmpty?: boolean
   disableNegative?: boolean
-  onEnter?: (e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
 
 export const StyledInputBase = styled(InputBase)(
@@ -27,7 +26,6 @@ export const StyledInputBase = styled(InputBase)(
     },
   })
 )
-
 const Wrapper = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   padding: 0,
@@ -37,7 +35,6 @@ const Wrapper = styled(Button)(({ theme }) => ({
     height: '100%',
   },
 }))
-
 // wrap the Input with this when using the input in a buttongroup
 export function CustomNumberInputButtonGroupWrapper({
   children,
@@ -54,61 +51,42 @@ export function CustomNumberInputButtonGroupWrapper({
 }
 
 export function CustomNumberInput({
-  value = undefined,
+  value = 0,
   onChange,
   disabled = false,
   float = false,
-  allowEmpty = false,
-  onEnter = () => {},
   ...props
 }: CustomNumberInputProps) {
-  if ((value === undefined || value === null) && !allowEmpty) value = 0
-  if (value === null) value = undefined
   const { inputProps = {}, ...restProps } = props
   const { min, max } = inputProps
-  const [display, setDisplay] = useState(
-    value === undefined ? '' : value.toString()
-  )
+  const [display, setDisplay] = useState(value.toString())
 
   const onInputChange = useCallback(
     (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setDisplay(e.target.value),
     []
   )
-
   const parseFunc = useCallback(
     (val: string) => (float ? parseFloat(val) : parseInt(val)),
     [float]
   )
   const onValidate = useCallback(() => {
-    const change = (v?: number) => {
-      setDisplay(v === undefined ? '' : v.toString())
+    const change = (v: number) => {
+      setDisplay(v.toString())
       onChange(v)
     }
-    let newNum = parseFunc(display)
-    if (isNaN(newNum)) {
-      if (allowEmpty) return change(undefined)
-      newNum = 0
-    }
-    if (newNum === undefined) return change(undefined)
+    const newNum = parseFunc(display) || 0
     if (min !== undefined && newNum < min) return change(min)
     if (max !== undefined && newNum > max) return change(max)
     return change(newNum)
-  }, [display, allowEmpty, parseFunc, min, max, onChange])
+  }, [min, max, parseFunc, onChange, display])
 
-  useEffect(
-    () => setDisplay(value === undefined ? '' : value.toString()),
-    [value, setDisplay]
-  ) // update value on value change
+  useEffect(() => setDisplay(value.toString()), [value, setDisplay]) // update value on value change
 
   const onKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      if (e.key === 'Enter') {
-        onValidate()
-        onEnter(e)
-      }
-    },
-    [onValidate, onEnter]
+    (e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      e.key === 'Enter' && onValidate(),
+    [onValidate]
   )
 
   return (

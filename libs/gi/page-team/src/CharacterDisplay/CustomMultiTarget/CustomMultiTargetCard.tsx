@@ -5,10 +5,8 @@ import {
   ModalWrapper,
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
-import {
-  targetListToExpression,
-  type CustomMultiTarget,
-} from '@genshin-optimizer/gi/db'
+import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
+import { targetListToExpression } from '@genshin-optimizer/gi/db'
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'

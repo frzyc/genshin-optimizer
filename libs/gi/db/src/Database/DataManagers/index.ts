@@ -4,6 +4,8 @@ import { initCharTC, minTotalStatKeys, toBuildTc } from './BuildTcDataManager'
 import {
   MAX_DESC_LENGTH,
   MAX_NAME_LENGTH,
+  initCustomFunction,
+  initCustomFunctionArgument,
   initCustomMultiTarget,
   initCustomTarget,
   initExpressionUnit,
@@ -48,6 +50,8 @@ export {
   defaultInitialWeaponKey,
   handleArtSetExclusion,
   initCharTC,
+  initCustomFunction,
+  initCustomFunctionArgument,
   initCustomMultiTarget,
   initCustomTarget,
   initExpressionUnit,

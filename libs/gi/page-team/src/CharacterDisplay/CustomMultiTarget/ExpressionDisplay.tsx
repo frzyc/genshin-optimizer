@@ -1,12 +1,10 @@
 import { ColorText, SolidToggleButtonGroup } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type {
-  ArgumentAddress,
   CustomFunction,
   ExpressionUnit,
-  FunctionAddress,
   ItemAddress,
-  UnitAddress,
+  ItemRelations,
 } from '@genshin-optimizer/gi/db'
 import {
   OperationSpecs,
@@ -16,13 +14,13 @@ import {
 import { DataContext, resolveInfo } from '@genshin-optimizer/gi/ui'
 import { Box, ToggleButton } from '@mui/material'
 import type { Dispatch, SetStateAction } from 'react'
-import { useCallback, useContext, useMemo } from 'react'
+import { useCallback, useContext, useEffect, useMemo, useRef } from 'react'
 
 export default function ExpressionDisplay({
   expression,
   functions,
   layer,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // TODO: Highlight sia and sirpa with different colors
   sia,
   setSIA,
   sirpa,
@@ -30,13 +28,9 @@ export default function ExpressionDisplay({
   expression: ExpressionUnit[]
   functions: CustomFunction[]
   layer: number
-  sia: ItemAddress | undefined
-  setSIA: Dispatch<SetStateAction<ItemAddress | undefined>>
-  sirpa: {
-    functions: FunctionAddress[]
-    args: ArgumentAddress[]
-    units: UnitAddress[]
-  }
+  sia: ItemAddress
+  setSIA: Dispatch<SetStateAction<ItemAddress>>
+  sirpa: ItemRelations
 }): JSX.Element {
   const { data } = useContext(DataContext)
   const getTargetName = useCallback(
@@ -48,12 +42,26 @@ export default function ExpressionDisplay({
     [data]
   )
 
-  const sirpaList = useMemo(() => {
-    return [
-      ...sirpa.functions.map((f) => f.type + f.layer),
-      ...sirpa.args.map((a) => a.type + a.layer + a.index),
-      ...sirpa.units.map((a) => a.type + a.layer + a.index),
-    ]
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  useEffect(() => {
+    if (sia) {
+      buttonRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+    }
+  }, [sia])
+
+  const siaKey = useMemo(() => {
+    if (sia) {
+      return sia.type + sia.layer + (sia.index ?? '')
+    }
+    return ''
+  }, [sia])
+
+  const sirpaList: string[] = useMemo(() => {
+    return [sirpa.this].concat(sirpa.all).map((a) => {
+      if (!a) return ''
+      const index = a.type !== 'function' ? a.index : ''
+      return a.type + a.layer + index
+    })
   }, [sirpa])
 
   /** Current function */
@@ -96,42 +104,46 @@ export default function ExpressionDisplay({
       text = (
         <>
           {text}
-          {/* {'\u00A0\u2A75\u00A0'} */}
           {'  ='}
         </>
       )
-    const functionButton = (text: JSX.Element | string) => {
+    const key = 'function' + layer
+    const functionButton = (text: JSX.Element | string, keySuffix: string) => {
       return (
         <ToggleButton
-          key={'function' + layer}
-          value={'function' + layer}
+          key={key + keySuffix}
+          value={key}
           sx={{ minWidth: '0', pl: 0.25, pr: 0.35, pt: 1, pb: 1 }}
           onClick={() => setSIA({ type: 'function', layer })}
+          ref={siaKey === key ? buttonRef : undefined}
         >
           {text}
         </ToggleButton>
       )
     }
-    buttons.push(functionButton(text))
+    buttons.push(functionButton(text, 'name'))
     for (const [i, arg] of f.args.entries()) {
       const text = prefuna.includes(arg.name) ? (
         <ColorText color="burning">{arg.name}</ColorText>
       ) : (
         arg.name
       )
-      if (i > 0) buttons.push(functionButton(','))
+      if (i > 0) buttons.push(functionButton(',', 'comma' + i))
+
+      const key = 'argument' + layer + i
       buttons.push(
         <ToggleButton
-          key={'argument' + layer + i}
-          value={'argument' + layer + i}
+          key={key}
+          value={key}
           sx={{ minWidth: '0', pl: 0.25, pr: 0.35, pt: 1, pb: 1 }}
           onClick={() => setSIA({ type: 'argument', layer, index: i })}
+          ref={siaKey === key ? buttonRef : undefined}
         >
           {text}
         </ToggleButton>
       )
     }
-    if (f.args.length) buttons.push(functionButton(')  ='))
+    if (f.args.length) buttons.push(functionButton(')  =', 'tail'))
   }
 
   const stack: string[] = []
@@ -215,27 +227,19 @@ export default function ExpressionDisplay({
     } else {
       text = ((_: never) => _)(type)
     }
+    const key = 'unit' + layer + i
     buttons.push(
       <ToggleButton
-        key={'unit' + layer + i}
-        value={'unit' + layer + i}
+        key={key}
+        value={key}
         sx={{ minWidth: '0', pl: 0.25, pr: 0.35, pt: 1, pb: 1 }}
         onClick={() => setSIA({ type: 'unit', layer, index: i })}
+        ref={siaKey === key ? buttonRef : undefined}
       >
         {text}
       </ToggleButton>
     )
   }
-  // <CardThemed
-  //   bgt="light"
-  //   sx={{
-  //     boxShadow: '0 0 10px black',
-  //     position: 'sticky',
-  //     bottom: `10px`,
-  //     zIndex: 1000,
-  //   }}
-  // >
-  // </CardThemed>
 
   return (
     <Box display="flex" gap={1}>
