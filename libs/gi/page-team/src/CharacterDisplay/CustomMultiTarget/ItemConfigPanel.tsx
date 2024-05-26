@@ -441,7 +441,7 @@ function TargetUnitConfig({
           }
           showEmptyTargets
           targetSelectorModalProps={{
-            excludeSections: ['custom'],
+            excludeSections: ['bounsStats', 'character', 'custom'],
           }}
         />
         {node && (

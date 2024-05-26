@@ -139,7 +139,7 @@ export function initCustomFunction(
   functions?: CustomFunction[]
 ): CustomFunction {
   const n = functions?.length ?? 0
-  const name = args.name ?? `ƒ${n}`
+  const name = args.name ?? `ƒ${n + 1}`
   return {
     name,
     args: args.args ?? [],
@@ -153,7 +153,7 @@ export function initCustomFunctionArgument(
   func?: CustomFunction
 ): CustomFunctionArgument {
   return {
-    name: args.name ?? `Arg${func?.args.length ?? 0}`,
+    name: args.name ?? `arg${(func?.args.length ?? 0) + 1}`,
     description: args.description,
   }
 }

@@ -220,7 +220,6 @@ export function dataObjForCharacterNew(
               parseCustomTarget(target, sheetData, globalHitMode, useWeight),
             functions ?? []
           )
-          console.log(multiTargetNode)
           sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
             name,
             variant: 'invalid',
@@ -326,7 +325,7 @@ function parseCustomExpression(
   e: ExpressionUnit[],
   parseCustomTarget: (t: CustomTarget, useWeight: boolean) => NumNode,
   functions_: CustomFunction[],
-  args: Record<string, ExpressionUnit[]> = {}
+  args: Record<string, NumNode> = {}
 ): NumNode {
   // functions_ is a list of custom functions that can be used in the expression
   // Functions on the left in the list are assumed to be accessible to functions on the right in the list, but not vice versa.
@@ -345,13 +344,13 @@ function parseCustomExpression(
     const unit = expression.shift()!
     if (stack.length) {
       parts[parts.length - 1].push(unit)
-      if (unit.type === 'function' && functions[unit.name].args.length) {
+      if (unit.type === 'function' && functions[unit.name]?.args.length) {
         stack.push(unit.name)
       } else if (unit.type === 'enclosing') {
         if (unit.part === 'head') stack.push(unit.operation)
         if (unit.part === 'tail') stack.pop()
       }
-    } else if (unit.type === 'function' && functions[unit.name].args.length) {
+    } else if (unit.type === 'function' && functions[unit.name]?.args.length) {
       if (handled.length === 0) {
         // Special case for function with arguments as first unit
         customFunction = functions[unit.name]
@@ -423,16 +422,24 @@ function parseCustomExpression(
   if (stack.length) throw new Error(`Unclosed enclosing stack ${stack}`)
 
   if (customFunction !== undefined) {
-    const args_: Record<string, ExpressionUnit[]> = {}
+    const args_: Record<string, NumNode> = {}
     for (const arg of customFunction.args) {
       const argExpression = parts.shift()
       if (!argExpression) throw new Error(`Missing argument ${arg.name}`)
-      args_[arg.name] = argExpression
+      args_[arg.name] = parseCustomExpression(
+        argExpression,
+        parseCustomTarget,
+        functions_,
+        args
+      )
     }
     return parseCustomExpression(
       customFunction.expression,
       parseCustomTarget,
-      functions_.slice(0, functions_.indexOf(customFunction)),
+      functions_.slice(
+        0,
+        functions_.map((f) => f.name).indexOf(customFunction.name)
+      ),
       args_
     )
   }
@@ -445,14 +452,21 @@ function parseCustomExpression(
     if (operand.type === 'target')
       return parseCustomTarget(operand.target, false)
     if (operand.type === 'function') {
-      const expression_ =
-        functions[operand.name].expression ?? args[operand.name]
-      if (!expression_) throw new Error(`Missing argument ${operand.name}`)
-      return parseCustomExpression(
-        expression_,
-        parseCustomTarget,
-        functions_.slice(0, functions_.indexOf(functions[operand.name]))
-      )
+      let result: NumNode | undefined
+      if (functions[operand.name]) {
+        result = parseCustomExpression(
+          functions[operand.name].expression,
+          parseCustomTarget,
+          functions_.slice(
+            0,
+            functions_.map((f) => f.name).indexOf(operand.name)
+          )
+        )
+      } else {
+        result = args[operand.name]
+      }
+      if (!result) throw new Error(`Missing argument ${operand.name}`)
+      return result
     }
     if (operand.type === 'null') return constant(1)
     throw new Error(`Unexpected operand type ${operand.type} ${operand}`)
@@ -461,8 +475,6 @@ function parseCustomExpression(
   const parsedParts = parts.map((part) =>
     parseCustomExpression(part, parseCustomTarget, functions_, args)
   )
-
-  console.log('currentOperation', currentOperation, parsedParts)
 
   if (currentOperation === 'addition') {
     return sum(...parsedParts)
