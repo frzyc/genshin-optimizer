@@ -1,6 +1,6 @@
 import type { TextFieldProps } from '@mui/material'
 import { TextField } from '@mui/material'
-import type { ChangeEvent } from 'react'
+import type { ChangeEvent, FocusEvent } from 'react'
 import { useEffect, useState } from 'react'
 
 /**
@@ -50,11 +50,18 @@ export function NumberInputLazy({
     setValue(val)
   }
 
+  const onFocus = (
+    event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    event.target.select()
+  }
+
   return (
     <TextField
       value={value?.toString()}
       onChange={handleChange}
       onBlur={saveValue}
+      onFocus={onFocus}
       onKeyDown={(e) => e.key === 'Enter' && !props.multiline && saveValue()}
       {...props}
       inputProps={{
