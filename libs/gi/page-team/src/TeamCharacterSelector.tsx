@@ -9,6 +9,7 @@ import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import { CharIconSide, CharacterName } from '@genshin-optimizer/gi/ui'
+import CloseIcon from '@mui/icons-material/Close'
 import GroupsIcon from '@mui/icons-material/Groups'
 import PersonIcon from '@mui/icons-material/Person'
 import {
@@ -16,6 +17,7 @@ import {
   CardActionArea,
   CardContent,
   CardHeader,
+  IconButton,
   Tab,
   Tabs,
   Typography,
@@ -134,9 +136,17 @@ export default function TeamCharacterSelector({
               {teamName}
             </Typography>
           </CardActionArea>
-          <ModalWrapper open={editMode} onClose={handleClickAway}>
+          <ModalWrapper open={editMode} onClose={() => setEditMode(false)}>
             <CardThemed>
-              <CardHeader align="center" title="Edit Team" />
+              <CardHeader
+                align="center"
+                title="Edit Team"
+                action={
+                  <IconButton onClick={() => setEditMode(false)}>
+                    <CloseIcon />
+                  </IconButton>
+                }
+              />
               <CardContent>
                 <Box
                   display="flex"
