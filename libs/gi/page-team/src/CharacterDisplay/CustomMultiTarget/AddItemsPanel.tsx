@@ -202,7 +202,7 @@ export default function AddItemsPanel({
     >
       <Box display="flex" gap={1}>
         <Box sx={{ flexGrow: 1 }} display="flex" flexDirection="column" gap={1}>
-          <Box display="flex" gap={1}>
+          <Box display="flex" gap={1} flexWrap="wrap">
             <Button
               key={'addNewFunction'}
               sx={{ flexGrow: 1 }}

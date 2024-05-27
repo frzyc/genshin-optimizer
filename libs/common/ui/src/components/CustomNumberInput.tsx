@@ -26,6 +26,7 @@ export const StyledInputBase = styled(InputBase)(
     },
   })
 )
+
 const Wrapper = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   padding: 0,
@@ -35,6 +36,7 @@ const Wrapper = styled(Button)(({ theme }) => ({
     height: '100%',
   },
 }))
+
 // wrap the Input with this when using the input in a buttongroup
 export function CustomNumberInputButtonGroupWrapper({
   children,
@@ -66,6 +68,7 @@ export function CustomNumberInput({
       setDisplay(e.target.value),
     []
   )
+
   const parseFunc = useCallback(
     (val: string) => (float ? parseFloat(val) : parseInt(val)),
     [float]

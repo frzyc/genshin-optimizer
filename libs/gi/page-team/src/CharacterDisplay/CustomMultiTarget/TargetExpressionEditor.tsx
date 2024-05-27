@@ -270,7 +270,7 @@ export default function TargetExpressionEditor({
         setSIA={setSIA}
         addItem={addExpressionItem}
       />
-      <Box display="flex" flexDirection="column" gap={1} pb={'50vh'}>
+      <Box display="flex" flexDirection="column" gap={1} pb={'60vh'}>
         {expressionDisplays}
       </Box>
       {itemConfigPanel}

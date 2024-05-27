@@ -593,11 +593,9 @@ export function targetListToExpression(
       initExpressionUnit({
         type: 'target',
         target: t,
-        description: t.description,
       })
     )
     t.weight = 1
-    t.description = ''
   })
   if (!expression.length)
     expression.push(initExpressionUnit({ type: 'null', kind: 'operand' }))

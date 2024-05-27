@@ -79,7 +79,7 @@ export default function ItemConfigPanel({
   setSIA: Dispatch<SetStateAction<ItemAddress>>
   focusToSIA: () => void
 }): JSX.Element {
-  const [collapse, setcollapse] = useState(true)
+  const [collapse, setcollapse] = useState(false)
 
   const onEdit = useCallback(
     <T extends AddressItemTypesMap>(
@@ -142,6 +142,26 @@ export default function ItemConfigPanel({
     },
     [expression, functions, moveItem, setSIA]
   )
+
+  const currentExpression = useMemo(() => {
+    if (sia.layer < functions.length) {
+      return functions[sia.layer].expression
+    } else {
+      return expression
+    }
+  }, [expression, functions, sia.layer])
+
+  const onRemove = useCallback(() => {
+    removeItem(sia)
+    if (sia.type === 'function') {
+      setSIA({ ...sia, layer: clamp(sia.layer - 1, 0, functions.length) })
+    } else {
+      setSIA({
+        ...sia,
+        index: clamp(sia.index - 1, 0, currentExpression.length),
+      })
+    }
+  }, [currentExpression, functions, removeItem, setSIA, sia])
 
   const moveButtons = useMemo(() => {
     // If the item is a function, it can be moved up or down
@@ -208,11 +228,11 @@ export default function ItemConfigPanel({
 
   const deleteButton = useMemo(() => {
     return (
-      <IconButton color="error" onClick={() => removeItem(sia)}>
+      <IconButton color="error" onClick={() => onRemove()}>
         <DeleteForeverIcon />
       </IconButton>
     )
-  }, [removeItem, sia])
+  }, [onRemove])
 
   const configs = useMemo(() => {
     const result: JSX.Element[] = []
@@ -259,7 +279,7 @@ export default function ItemConfigPanel({
         zIndex: 1000,
       }}
     >
-      <Collapse in={!collapse}>
+      <Collapse in={!collapse} onEntered={focusToSIA}>
         <Box sx={{ p: 1, flexGrow: 1 }}>{configs}</Box>
       </Collapse>
       <Divider />
@@ -276,7 +296,7 @@ export default function ItemConfigPanel({
           onClick={() => setcollapse((c) => !c)}
         >
           <Typography variant="h6">Item Config</Typography>
-          {collapse ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
+          {collapse ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
         </CardActionArea>
         {moveButtons}
         {duplicateButton}
