@@ -17,13 +17,14 @@ import {
   weaponMaxAscension,
   weaponMaxLevel,
 } from '@genshin-optimizer/gi/consts'
-import type { ICharacter } from '@genshin-optimizer/gi/good'
+import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import { validateLevelAsc, validateTalent } from '@genshin-optimizer/gi/util'
 import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { BuildTc } from '../../Interfaces/BuildTc'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
+import type { IGO, ImportResult } from '../exim'
 
 export type MinTotalStatKey = Exclude<SubstatKey, 'hp_' | 'atk_' | 'def_'>
 export const minTotalStatKeys: MinTotalStatKey[] = [
@@ -112,6 +113,16 @@ export class BuildTcDataManager extends DataManager<
     const id = this.generateKey()
     if (!this.set(id, data)) return ''
     return id
+  }
+  override importGOOD(good: IGOOD & IGO, result: ImportResult): void {
+    result.buildTcs.beforeImport = this.entries.length
+
+    const buildTcs = good[this.dataKey]
+    if (buildTcs && Array.isArray(buildTcs)) {
+      result.buildTcs.import = buildTcs.length
+    }
+
+    super.importGOOD(good, result)
   }
 }
 

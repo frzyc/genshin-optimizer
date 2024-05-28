@@ -17,6 +17,7 @@ import {
   type CharacterKey,
   type InfusionAuraElementKey,
 } from '@genshin-optimizer/gi/consts'
+import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import type {
   BuildTc,
@@ -27,6 +28,7 @@ import type {
 import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
+import type { IGO, ImportResult } from '../exim'
 import type { Build } from './BuildDataManager'
 import { initCharTC, toBuildTc } from './BuildTcDataManager'
 import { validateCustomMultiTarget } from './CustomMultiTarget'
@@ -394,5 +396,15 @@ export class TeamCharacterDataManager extends DataManager<
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return () => {}
     return this.database.chars.follow(teamChar.key, callback)
+  }
+  override importGOOD(good: IGOOD & IGO, result: ImportResult): void {
+    result.teamChars.beforeImport = this.entries.length
+
+    const loadouts = good[this.dataKey]
+    if (loadouts && Array.isArray(loadouts)) {
+      result.teamChars.import = loadouts.length
+    }
+
+    super.importGOOD(good, result)
   }
 }

@@ -3,7 +3,7 @@ import type { OptConfig } from './DataManagers/OptConfigDataManager'
 
 export const GOSource = 'Genshin Optimizer' as const
 
-function newCounter<T>(): ImportResultCounter<T> {
+function newMergeCounter<T>(): MergeResultCounter<T> {
   return {
     import: 0,
     invalid: [],
@@ -16,6 +16,12 @@ function newCounter<T>(): ImportResultCounter<T> {
     beforeMerge: 0,
   }
 }
+function newImportCounter(): ImportResultCounter {
+  return {
+    import: 0,
+    beforeImport: 0,
+  }
+}
 
 export function newImportResult(
   source: string,
@@ -25,9 +31,13 @@ export function newImportResult(
   return {
     type: 'GOOD',
     source,
-    artifacts: newCounter(),
-    weapons: newCounter(),
-    characters: newCounter(),
+    artifacts: newMergeCounter(),
+    weapons: newMergeCounter(),
+    characters: newMergeCounter(),
+    builds: newImportCounter(),
+    buildTcs: newImportCounter(),
+    teams: newImportCounter(),
+    teamChars: newImportCounter(),
     keepNotInImport,
     ignoreDups,
   }
@@ -39,7 +49,12 @@ export type IGO = {
   [gokey: string]: unknown
 }
 
-export type ImportResultCounter<T> = {
+export type ImportResultCounter = {
+  import: number // total # in file
+  beforeImport: number
+}
+
+export type MergeResultCounter<T> = {
   import: number // total # in file
   new: T[]
   update: T[] // Use new object
@@ -50,12 +65,17 @@ export type ImportResultCounter<T> = {
   notInImport: number
   beforeMerge: number
 }
+
 export type ImportResult = {
   type: 'GOOD'
   source: string
-  artifacts: ImportResultCounter<IArtifact>
-  weapons: ImportResultCounter<IWeapon>
-  characters: ImportResultCounter<ICharacter>
+  artifacts: MergeResultCounter<IArtifact>
+  weapons: MergeResultCounter<IWeapon>
+  characters: MergeResultCounter<ICharacter>
+  builds: ImportResultCounter
+  buildTcs: ImportResultCounter
+  teams: ImportResultCounter
+  teamChars: ImportResultCounter
   keepNotInImport: boolean
   ignoreDups: boolean
 }
