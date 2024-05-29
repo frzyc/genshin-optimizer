@@ -54,12 +54,17 @@ export function TargetSelectorModal({
               Object.fromEntries(
                 Object.entries(sectionObj).filter(([_sectionKey, node]) => {
                   const { path, unit, variant, source } = resolveInfo(node.info)
-                  console.log('source is ' + source +  ', path is ' + path);
+
                   if (flatOnly && unit === '%') return false
 
                   if (excludeHeal && variant === 'heal') return false
 
-                  if (!showEmptyTargets && node.isEmpty && (path !== 'eleMas' || source === 'KeyOfKhajNisut')) return false
+                  if (
+                    !showEmptyTargets &&
+                    node.isEmpty &&
+                    (path !== 'eleMas' || source === 'KeyOfKhajNisut')
+                  )
+                    return false
 
                   return true
                 })
