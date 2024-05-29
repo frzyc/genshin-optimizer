@@ -50,7 +50,8 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import Button, { ButtonProps } from '@mui/material/Button'
+import Button from '@mui/material/Button'
+import type { ButtonProps } from '@mui/material/Button'
 import { Stack } from '@mui/system'
 import {
   Suspense,
@@ -71,7 +72,7 @@ import { LevelFilter } from './LevelFilter'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
 import { UpOptCalculator } from './upOpt'
 
-// button gets its own type so multiple translations can be used
+// artifact button gets its own type so multiple translations can be used
 type AddArtifactButtonProps = Omit<ButtonProps, 'onClick'> & {
   onClick: () => void
 }
