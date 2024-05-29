@@ -86,7 +86,7 @@ function AddArtifactButton({ onClick }: AddArtifactButtonProps) {
 }
 
 export default function TabUpopt() {
-  const { t, i18n } = useTranslation('page_character_optimize')
+  const { t } = useTranslation('page_character_optimize')
   const {
     teamId,
     teamCharId,
