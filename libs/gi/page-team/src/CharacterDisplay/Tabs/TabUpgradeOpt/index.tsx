@@ -50,8 +50,8 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import Button from '@mui/material/Button'
 import type { ButtonProps } from '@mui/material/Button'
+import Button from '@mui/material/Button'
 import { Stack } from '@mui/system'
 import {
   Suspense,
