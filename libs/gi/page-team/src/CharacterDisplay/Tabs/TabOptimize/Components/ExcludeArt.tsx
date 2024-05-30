@@ -20,6 +20,8 @@ import {
   ArtifactCard,
   ArtifactCardNano,
   ArtifactFilterDisplay,
+  ExcludeIcon,
+  OptimizationIcon,
 } from '@genshin-optimizer/gi/ui'
 import {
   artifactFilterConfigs,
@@ -212,6 +214,39 @@ export default function ExcludeArt({
   )
 }
 
+function ExcludeArtRedButtons() {
+  const { t } = useTranslation(['artifact', 'ui'])
+
+  return (
+    <Grid container spacing={1} alignItems="center">
+      <Grid item xs={12} sm={6} md={6}>
+        <Button fullWidth color="error" startIcon={<ExcludeIcon />}>
+          <Trans t={t} i18nKey="button.excludeArtifacts">
+            Exclude Artifacts
+          </Trans>
+          <SqBadge sx={{ ml: 1 }} color="success"></SqBadge>
+        </Button>
+      </Grid>
+      <Grid item xs={12} sm={6} md={6}>
+        <Button fullWidth color="error" startIcon={<OptimizationIcon />}>
+          <Trans t={t} i18nKey={'button.includeArtifacts'}>
+            Include Artifacts
+          </Trans>
+          <SqBadge sx={{ ml: 1 }} color="success"></SqBadge>
+        </Button>
+      </Grid>
+      <Grid item xs={12} display="flex" justifyContent="space-around">
+        <Typography variant="caption" color="text.secondary">
+          <Trans t={t} i18nKey="buttonHint">
+            Note: the red buttons above only apply to
+            <b>currently filtered artifacts</b>
+          </Trans>
+        </Typography>
+      </Grid>
+    </Grid>
+  )
+}
+
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 const filterOptionReducer = (state, action) => ({ ...state, ...action })
 function ArtifactSelectModal({
@@ -287,6 +322,9 @@ function ArtifactSelectModal({
               filteredIds={artifactIds}
             />
           </Suspense>
+          <Box mt={1}>
+            <ExcludeArtRedButtons />
+          </Box>
           <Box mt={1}>
             <Suspense
               fallback={
