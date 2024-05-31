@@ -17,6 +17,7 @@ import {
   CardActionArea,
   CardContent,
   CardHeader,
+  Divider,
   IconButton,
   Tab,
   Tabs,
@@ -147,6 +148,7 @@ export default function TeamCharacterSelector({
                   </IconButton>
                 }
               />
+              <Divider />
               <CardContent>
                 <Box
                   display="flex"
