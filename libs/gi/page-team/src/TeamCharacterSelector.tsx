@@ -127,8 +127,8 @@ export default function TeamCharacterSelector({
           ) : undefined
         }
       >
-        <CardContent sx={{ display: 'flex', justifyContent: 'center', pb: 0 }}>
-          <CardActionArea>
+        <CardContent sx={{ display: 'flex', justifyContent: 'center', p: 0}}>
+          <CardActionArea sx={{ px: 2, pt: 2}}>
             <Typography
               variant="h5"
               align="center"
