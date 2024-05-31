@@ -39,6 +39,7 @@ import {
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
+import AddIcon from '@mui/icons-material/Add'
 import {
   Alert,
   Box,
@@ -49,6 +50,8 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
+import type { ButtonProps } from '@mui/material/Button'
+import Button from '@mui/material/Button'
 import { Stack } from '@mui/system'
 import {
   Suspense,
@@ -68,6 +71,20 @@ import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { LevelFilter } from './LevelFilter'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
 import { UpOptCalculator } from './upOpt'
+
+// artifact button gets its own type so multiple translations can be used
+type AddArtifactButtonProps = Omit<ButtonProps, 'onClick'> & {
+  onClick: () => void
+}
+
+function AddArtifactButton({ onClick }: AddArtifactButtonProps) {
+  const { t } = useTranslation(['artifact', 'ui'])
+  return (
+    <Button fullWidth onClick={onClick} color="info" startIcon={<AddIcon />}>
+      {t`addNew`}
+    </Button>
+  )
+}
 
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
@@ -450,7 +467,9 @@ export default function TabUpopt() {
                   gap={1}
                 >
                   <ArtifactSetConfig disabled={false} />
-
+                  <AddArtifactButton
+                    onClick={() => setArtifactIdToEdit('new')}
+                  />
                   <StatFilterCard disabled={false} />
                   <AdResponsive bgt="light" dataAdSlot="3955015620" />
                 </Grid>
