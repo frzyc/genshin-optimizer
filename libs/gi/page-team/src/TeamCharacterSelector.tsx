@@ -140,7 +140,6 @@ export default function TeamCharacterSelector({
           <ModalWrapper open={editMode} onClose={() => setEditMode(false)}>
             <CardThemed>
               <CardHeader
-                align="center"
                 title="Edit Team"
                 action={
                   <IconButton onClick={() => setEditMode(false)}>
