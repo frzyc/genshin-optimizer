@@ -4,6 +4,7 @@ import {
   CardThemed,
   DropdownButton,
   GeneralAutocomplete,
+  ModalWrapper,
 } from '@genshin-optimizer/common/ui'
 import { clamp, deepClone } from '@genshin-optimizer/common/util'
 import type {
@@ -18,17 +19,27 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
 import { ascensionMaxLevel, milestoneLevels } from '@genshin-optimizer/sr/util'
-import { Add } from '@mui/icons-material'
+import AddIcon from '@mui/icons-material/Add'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Button,
   CardContent,
   CardHeader,
   Grid,
+  IconButton,
   MenuItem,
   Skeleton,
   Typography,
 } from '@mui/material'
-import { Suspense, useCallback, useEffect, useMemo, useReducer } from 'react'
+import type { MouseEvent } from 'react'
+import {
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useReducer,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character'
 import { useDatabaseContext } from '../../Context'
@@ -46,10 +57,12 @@ const tempLightConeSheet: ILightConeSheet = {
 // TODO: light cone sheets, errors, autocomplete, display text, i18n, ...
 export type LightConeEditorProps = {
   lightConeIdToEdit?: string
+  cancelEdit: () => void
 }
 
 export function LightConeEditor({
   lightConeIdToEdit = 'new',
+  cancelEdit,
 }: LightConeEditorProps) {
   const { t } = useTranslation('lightCone')
   const { database } = useDatabaseContext()
@@ -60,8 +73,11 @@ export function LightConeEditor({
     [database, setDirtyDatabase]
   )
 
+  const [showEditor, setShowEditor] = useState(false)
+
   useEffect(() => {
     if (lightConeIdToEdit === 'new') {
+      setShowEditor(true)
       dispatchLightCone({ type: 'reset' })
     }
     const dbLightCone =
@@ -69,6 +85,7 @@ export function LightConeEditor({
       dirtyDatabase &&
       database.lightCones.get(lightConeIdToEdit)
     if (dbLightCone) {
+      setShowEditor(true)
       dispatchLightCone({
         type: 'overwrite',
         lightCone: deepClone(dbLightCone),
@@ -113,103 +130,125 @@ export function LightConeEditor({
   )
 
   const reset = useCallback(() => {
+    cancelEdit?.()
     dispatchLightCone({ type: 'reset' })
-  }, [])
+  }, [cancelEdit, dispatchLightCone])
 
-  useEffect(() => {
-    if (lightConeIdToEdit === 'new') {
-      dispatchLightCone({ type: 'reset' })
-    }
-  }, [lightConeIdToEdit])
+  const onClose = useCallback(
+    (e: MouseEvent) => {
+      if (
+        !lightConeIdToEdit &&
+        lightCone &&
+        !window.confirm(t`editor.clearPrompt` as string)
+      ) {
+        e?.preventDefault()
+        return
+      }
+      setShowEditor(false)
+      reset()
+    },
+    [t, lightConeIdToEdit, lightCone, setShowEditor, reset]
+  )
 
   return (
     <Suspense fallback={false}>
-      <CardThemed bgt="dark">
-        <CardHeader title="Light Cone Editor" />
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
-            {/* name */}
-            <Grid item xs={1} md={true} display="flex" flexDirection="column">
-              <LightConeAutocomplete
-                lcKey={lightCone?.key ?? ''}
-                setLCKey={(lcKey) => update({ key: lcKey as LightConeKey })}
-                label={lightCone?.key ? '' : t('editor.unknownLightCone')}
-              />
-            </Grid>
-
-            {/* superimpose */}
-            <Grid item xs={true} md="auto" display="flex">
-              <SuperimpositionDropdown
-                superimpose={lightCone?.superimpose}
-                setSuperimposition={(sk: SuperimposeKey) =>
-                  update({ superimpose: sk })
-                }
-                disabled={!lightCone}
-              />
-            </Grid>
-          </Grid>
-          <Grid
-            container
-            spacing={1}
-            columns={{ xs: 1, md: 4 }}
-            marginBottom={1}
+      <ModalWrapper open={showEditor} onClose={onClose}>
+        <CardThemed bgt="dark">
+          <CardHeader
+            title="Light Cone Editor"
+            action={
+              <IconButton onClick={onClose}>
+                <CloseIcon />
+              </IconButton>
+            }
+          />
+          <CardContent
+            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            {/* level */}
-            <Grid item xs={1} display="flex" flexDirection="row" gap={1}>
-              <LevelDropdown
-                level={lightCone?.level}
-                ascension={lightCone?.ascension}
-                setLevelAscension={(lv, as) => {
-                  update({ level: lv, ascension: as })
+            <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
+              {/* name */}
+              <Grid item xs={1} md={true} display="flex" flexDirection="column">
+                <LightConeAutocomplete
+                  lcKey={lightCone?.key ?? ''}
+                  setLCKey={(lcKey) => update({ key: lcKey as LightConeKey })}
+                  label={lightCone?.key ? '' : t('editor.unknownLightCone')}
+                />
+              </Grid>
+
+              {/* superimpose */}
+              <Grid item xs={true} md="auto" display="flex">
+                <SuperimpositionDropdown
+                  superimpose={lightCone?.superimpose}
+                  setSuperimposition={(sk: SuperimposeKey) =>
+                    update({ superimpose: sk })
+                  }
+                  disabled={!lightCone}
+                />
+              </Grid>
+            </Grid>
+            <Grid
+              container
+              spacing={1}
+              columns={{ xs: 1, md: 4 }}
+              marginBottom={1}
+            >
+              {/* level */}
+              <Grid item xs={1} display="flex" flexDirection="row" gap={1}>
+                <LevelDropdown
+                  level={lightCone?.level}
+                  ascension={lightCone?.ascension}
+                  setLevelAscension={(lv, as) => {
+                    update({ level: lv, ascension: as })
+                  }}
+                  disabled={!lightCone}
+                />
+              </Grid>
+
+              {/* ascension */}
+              <Grid item xs={1} display="flex" gap={1}>
+                <CardThemed
+                  bgt="light"
+                  sx={{ p: 1, flexGrow: 1, alignContent: 'center' }}
+                >
+                  <Suspense fallback={<Skeleton width="60%" />}>
+                    <Typography color="text.secondary" align="center">
+                      Ascension {lightCone?.ascension || 0}
+                    </Typography>
+                  </Suspense>
+                </CardThemed>
+              </Grid>
+
+              {/* character location */}
+              <Grid
+                item
+                xs={1}
+                md={2}
+                display="flex"
+                flexDirection="column"
+                gap={1}
+              >
+                <LocationAutocomplete
+                  locKey={lightCone?.location ?? ''}
+                  setLocKey={(charKey) => update({ location: charKey })}
+                />
+              </Grid>
+            </Grid>
+            <Grid>
+              <Button
+                startIcon={<AddIcon />}
+                onClick={() => {
+                  database.lightCones.new(lightCone!)
+                  reset()
                 }}
                 disabled={!lightCone}
-              />
-            </Grid>
-
-            {/* ascension */}
-            <Grid item xs={1} display="flex" gap={1}>
-              <CardThemed
-                bgt="light"
-                sx={{ p: 1, flexGrow: 1, alignContent: 'center' }}
+                color="primary"
               >
-                <Suspense fallback={<Skeleton width="60%" />}>
-                  <Typography color="text.secondary" align="center">
-                    Ascension {lightCone?.ascension || 0}
-                  </Typography>
-                </Suspense>
-              </CardThemed>
+                {t`editor.btnAdd`}
+              </Button>
             </Grid>
-
-            {/* character location */}
-            <Grid
-              item
-              xs={1}
-              md={2}
-              display="flex"
-              flexDirection="column"
-              gap={1}
-            >
-              <LocationAutocomplete
-                locKey={lightCone?.location ?? ''}
-                setLocKey={(charKey) => update({ location: charKey })}
-              />
-            </Grid>
-          </Grid>
-          <Grid>
-            <Button
-              startIcon={<Add />}
-              onClick={() => {
-                database.lightCones.new(lightCone!)
-                reset()
-              }}
-              disabled={!lightCone}
-              color="primary"
-            >
-              {t`editor.btnAdd`}
-            </Button>
-          </Grid>
-        </CardContent>
-      </CardThemed>
+          </CardContent>
+        </CardThemed>
+      </ModalWrapper>
     </Suspense>
   )
 }
