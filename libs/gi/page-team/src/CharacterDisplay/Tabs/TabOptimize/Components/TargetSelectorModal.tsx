@@ -53,7 +53,7 @@ export function TargetSelectorModal({
               key,
               Object.fromEntries(
                 Object.entries(sectionObj).filter(([_sectionKey, node]) => {
-                  const { path, unit, variant, source } = resolveInfo(node.info)
+                  const { path, unit, variant } = resolveInfo(node.info)
 
                   if (flatOnly && unit === '%') return false
 
@@ -62,7 +62,7 @@ export function TargetSelectorModal({
                   if (
                     !showEmptyTargets &&
                     node.isEmpty &&
-                    (path !== 'eleMas' || source === 'KeyOfKhajNisut')
+                    (path !== 'eleMas' || key !== 'basic')
                   )
                     return false
 
