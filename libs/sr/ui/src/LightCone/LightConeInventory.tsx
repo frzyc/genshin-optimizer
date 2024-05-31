@@ -10,15 +10,29 @@ import {
   lightConeSortKeys,
   lightConeSortMap,
 } from '@genshin-optimizer/sr/util'
-import { Box, CardContent, Grid, Skeleton, Typography } from '@mui/material'
+import AddIcon from '@mui/icons-material/Add'
+import {
+  Box,
+  Button,
+  CardContent,
+  Grid,
+  Skeleton,
+  Typography,
+} from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useDatabaseContext } from '../Context'
 import { LightConeCard } from './LightConeCard'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 
-export function LightConeInventory() {
+export type LightConeInventoryProps = {
+  onAdd?: () => void
+}
+
+export function LightConeInventory({ onAdd }: LightConeInventoryProps) {
+  const { t } = useTranslation('lightCone')
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
 
@@ -94,6 +108,18 @@ export function LightConeInventory() {
           </Box>
         </CardContent>
       </CardThemed>
+      <Grid container columns={columns} spacing={1}>
+        <Grid item xs>
+          <Button
+            fullWidth
+            onClick={onAdd}
+            color="info"
+            startIcon={<AddIcon />}
+          >
+            {t`addNew`}
+          </Button>
+        </Grid>
+      </Grid>
       <Suspense
         fallback={
           <Skeleton
@@ -102,7 +128,7 @@ export function LightConeInventory() {
           />
         }
       >
-        <Grid container spacing={1} columns={columns}>
+        <Grid container columns={columns} spacing={1}>
           {lightConeIdsToShow.map((lightConeId) => (
             <Grid item key={lightConeId} xs={1}>
               <LightConeCard lightConeId={lightConeId} />

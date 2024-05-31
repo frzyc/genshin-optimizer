@@ -37,8 +37,8 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
+import type { MouseEvent } from 'react'
 import {
-  MouseEvent,
   Suspense,
   useCallback,
   useEffect,
