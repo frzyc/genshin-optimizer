@@ -1,6 +1,8 @@
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
-import { Diamond, Menu as MenuIcon } from '@mui/icons-material'
+import DiamondIcon from '@mui/icons-material/Diamond'
+import MenuIcon from '@mui/icons-material/Menu'
+import PersonIcon from '@mui/icons-material/Person'
 import {
   AppBar,
   Box,
@@ -36,7 +38,7 @@ type ITab = {
 const relics: ITab = {
   i18Key: 'tabs.relics',
   // TODO: replace with real relics icon later
-  icon: <Diamond />,
+  icon: <DiamondIcon />,
   to: '/relics',
   value: 'relics',
   textSuffix: <RelicChip key="relicsAdd" />,
@@ -48,6 +50,14 @@ const lightCones: ITab = {
   to: '/lightcones',
   value: 'lightcones',
   textSuffix: <LightConeChip key="lightConeAdd" />,
+}
+
+const characters: ITab = {
+  i18Key: 'tabs.characters',
+  icon: <PersonIcon />,
+  to: '/characters',
+  value: 'characters',
+  textSuffix: <CharacterChip key="charactersAdd" />,
 }
 
 function RelicChip() {
@@ -79,6 +89,20 @@ function LightConeChip() {
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
 
+function CharacterChip() {
+  const { database } = useDatabaseContext()
+  const [total, setTotal] = useState(database.lightCones.keys.length)
+  useEffect(
+    () =>
+      database.chars.followAny(
+        (_k, r) =>
+          ['new', 'remove'].includes(r) && setTotal(database.chars.keys.length)
+      ),
+    [database]
+  )
+  return <Chip label={<strong>{total}</strong>} size="small" />
+}
+
 export default function Header({ anchor }: { anchor: string }) {
   return (
     <Suspense fallback={<Skeleton variant="rectangular" height={56} />}>
@@ -87,7 +111,7 @@ export default function Header({ anchor }: { anchor: string }) {
   )
 }
 
-const maincontent = [relics, lightCones] as const
+const maincontent = [relics, lightCones, characters] as const
 
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
