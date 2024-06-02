@@ -7,12 +7,20 @@ import {
   srCalculatorWithEntries,
   withMember,
 } from '@genshin-optimizer/sr/formula'
-import { CardContent, Stack, Typography } from '@mui/material'
+import {
+  CardActionArea,
+  CardContent,
+  Divider,
+  Stack,
+  Typography,
+} from '@mui/material'
 
 export function CharacterCard({
   character,
+  onClick,
 }: {
   character: ICachedSroCharacter
+  onClick?: () => void
 }) {
   const calc = srCalculatorWithEntries(
     withMember('member0', ...charData(character))
@@ -24,11 +32,18 @@ export function CharacterCard({
     <Stack>
       <CardThemed>
         <CardContent>
-          <Typography>Key: {character.key} </Typography>
-          <Typography>Eidolon: {character.eidolon} </Typography>
-          <Typography>Level: {character.level} </Typography>
+          {onClick ? (
+            <CardActionArea onClick={onClick}>
+              <Typography variant="h4">{character.key}</Typography>
+            </CardActionArea>
+          ) : (
+            <Typography variant="h4">{character.key}</Typography>
+          )}
+          <Divider />
+          <Typography>Eidolon: {character.eidolon}</Typography>
+          <Typography>Level: {character.level}</Typography>
 
-          <Typography>ATK: {calc.compute(member0.final.atk).val} </Typography>
+          <Typography>ATK: {calc.compute(member0.final.atk).val} \</Typography>
 
           <Typography>
             Break effect: {calc.compute(member0.final.brEff_).val}
