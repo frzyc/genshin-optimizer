@@ -1,6 +1,7 @@
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import { Diamond, Menu as MenuIcon } from '@mui/icons-material'
+import GroupsIcon from '@mui/icons-material/Groups'
 import {
   AppBar,
   Box,
@@ -50,6 +51,14 @@ const lightCones: ITab = {
   textSuffix: <LightConeChip key="lightConeAdd" />,
 }
 
+const teams: ITab = {
+  i18Key: 'tabs.teams',
+  icon: <GroupsIcon />,
+  to: '/teams',
+  value: 'teams',
+  textSuffix: <TeamChip key="charAdd" />,
+}
+
 function RelicChip() {
   const { database } = useDatabaseContext()
   const [total, setTotal] = useState(database.relics.keys.length)
@@ -79,6 +88,20 @@ function LightConeChip() {
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
 
+function TeamChip() {
+  const { database } = useDatabaseContext()
+  const [total, setTotal] = useState(database.teams.keys.length)
+  useEffect(
+    () =>
+      database.teams.followAny(
+        (_k, r) =>
+          ['new', 'remove'].includes(r) && setTotal(database.teams.keys.length)
+      ),
+    [database]
+  )
+  return <Chip label={<strong>{total}</strong>} size="small" />
+}
+
 export default function Header({ anchor }: { anchor: string }) {
   return (
     <Suspense fallback={<Skeleton variant="rectangular" height={56} />}>
@@ -87,7 +110,7 @@ export default function Header({ anchor }: { anchor: string }) {
   )
 }
 
-const maincontent = [relics, lightCones] as const
+const maincontent = [relics, lightCones, teams] as const
 
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
