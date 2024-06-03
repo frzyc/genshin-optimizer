@@ -54,11 +54,14 @@ export function TargetSelectorModal({
               Object.fromEntries(
                 Object.entries(sectionObj).filter(([_sectionKey, node]) => {
                   const { unit, variant } = resolveInfo(node.info)
+
                   if (flatOnly && unit === '%') return false
 
                   if (excludeHeal && variant === 'heal') return false
 
-                  if (!showEmptyTargets && node.isEmpty) return false
+                  if (!showEmptyTargets && node.isEmpty && key !== 'basic')
+                    return false
+
                   return true
                 })
               ) as DisplaySub<CalcResult>,
