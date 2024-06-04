@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync } from 'fs'
 import { dirname } from 'path'
+import * as prettier from 'prettier'
 
 export function dumpFile(filename: string, obj: unknown, print = false) {
   mkdirSync(dirname(filename), { recursive: true })
@@ -41,18 +42,23 @@ export function generateIndexFromObj(obj: object, path: string) {
     .map((k) => `  ${k},`)
     .join('\n')
 
-  const indexContent = `// This is a generated index file.
+  prettier.resolveConfig(path).then((prettierRc) => {
+    const indexContent = prettier.format(
+      `// This is a generated index file.
 ${imports}
 
 const data = {
 ${dataContent}
 } as const
 export default data
-`
-  mkdirSync(path, { recursive: true })
-  writeFileSync(`${path}/index.ts`, indexContent)
+`,
+      { ...prettierRc, parser: 'typescript' }
+    )
+    mkdirSync(path, { recursive: true })
+    writeFileSync(`${path}/index.ts`, indexContent)
 
-  Object.entries(obj).forEach(([key, val]) => {
-    if (typeof val === 'object') generateIndexFromObj(val, `${path}/${key}`)
+    Object.entries(obj).forEach(([key, val]) => {
+      if (typeof val === 'object') generateIndexFromObj(val, `${path}/${key}`)
+    })
   })
 }
