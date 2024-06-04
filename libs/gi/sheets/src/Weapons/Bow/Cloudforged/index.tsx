@@ -15,7 +15,7 @@ import { dataObjForWeaponSheet } from '../../util'
 const key: WeaponKey = 'Cloudforged'
 const [, trm] = trans('weapon', key)
 
-const eleMas_arr = [-1, 48, 60, 72, 84, 96]
+const eleMas_arr = [-1, 40, 50, 60, 70, 80]
 const energyStacksArr = range(1, 2)
 const [condEnergyStacksPath, condEnergyStacks] = cond(key, 'energyStacks')
 const eleMas = lookup(
