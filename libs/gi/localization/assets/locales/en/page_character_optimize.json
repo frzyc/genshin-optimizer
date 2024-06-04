@@ -127,7 +127,6 @@
   "compareArtModal": {
     "newArt": "New Artifact",
     "oldArt": "Old Artifact",
-    "sameArt": "Already in Build",
     "tcArt": "TC Artifact"
   }
 }
