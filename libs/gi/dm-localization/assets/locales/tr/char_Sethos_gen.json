@@ -1,0 +1,169 @@
+{
+  "name": "Sethos",
+  "title": "Bilgelik Timsali",
+  "description": "Sessizlik Tapınağının varisi. Sonsuz sırra sahip olmanın yükünü omuzlarında taşır ve çöllerden gelir.",
+  "constellationName": "Şen Halkası",
+  "auto": {
+    "name": "Kraliyet Saz Okçuluğu",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 3 ok atışı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Daha isabetli ve daha fazla Hasar veren bir <strong>Hedefli Atış</strong> yapar.",
+        "2": "Nişan alırken okun ucunda Elektrik gücü birikir. Gösterdiği etki, enerjinin ne kadar süre yük topladığına göre belirlenir:",
+        "3": [
+          "1. Seviye Yük: Yıldırım gücü taşıyan ve <electro>Elektrik Hasarı</electro> veren bir ok atar.",
+          "2. Seviye Yük: Atış yönündeki düşmanları delip geçerek <electro>Elektrik Hasarı</electro> veren bir <strong>Gölgedelen Atışı</strong> yapar. Gölgedelen Atışı tamamen yüklendikten sonra Sethos hareket edemez."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yaylım ok atışı yapar ve dalışa geçerek yere vurur. Yere vurduğunda Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Hedefli Atış",
+      "4": "1. Seviye Yüklü Hedefli Atış",
+      "5": "Gölgedelen Atışı Hasarı",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kadim Ayin: Gürleyen Kumlar",
+    "description": {
+      "0": "Yıldırımın gücünü toplar ve <electro>Elektrik Alan Hasarı</electro> vererek hızla geriye kaçar. Eğer bu saldırı bir Elektrik Yüklü, Süper İletim, Yüksek Voltaj, Hızlanma, Şiddetlenme, Aşırı Çiçeklenme veya Elektrik Girdabı tepkimesi tetiklerse Sethos belirli bir miktar Element Enerjisi yeniler.",
+      "1": "<br/>",
+      "2": "<i>\"İçinde Tanrıyı barındıran Rahip ile çukurları vahaya dönüştüren Büyücü. Kum denizi şarkıcıları onların hikayelerini anlatmaya devam ediyor... Ancak ben bilirim onların efsane olmadığını, çünkü onlar benim atalarım.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Enerji Yenilenmesi",
+      "2": "BS",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Saklı Ayin: Gölgedelen Alacakaranlık",
+    "description": {
+      "0": "Sethos gizli bir ayin gerçekleştirir ve \"Alacakaranlık Meditasyonu\" durumuna girer. Bu durumdayken Sethos'un Normal Saldırıları düşmanları delen <strong>Gün Batımı Oklarına</strong> dönüşür. Oklar, yoluna çıkan düşmanlara <electro>Elektrik Hasarı</electro> verir, verdiği Hasar miktarı Sethos'un Element Ustalığına göre artar.",
+      "1": "Sethos bu durumdayken Hedefli Atış yapamaz.",
+      "2": "Gün Batımı Oku ile verilen Hasar, Yüklü Saldırı Hasarı sayılır.",
+      "3": "Bu etki, Sethos savaş alanından ayrıldığında kaybolur.",
+      "4": "<br/>",
+      "5": "<i>Sessizlik Tapınağında Kral Deshret zamanından Akhtamun'un ardında bıraktığı birçok kitap saklanmaktadır. Bunların içerisinde kudretli gizli ayinler bulunmasına rağmen Tapınaktakiler dahil çok az kişi bunlarda ustalaşabilmiştir.</i>"
+    },
+    "skillParams": {
+      "0": "Gün Batımı Oku Hasar Artışı",
+      "1": "Alacakaranlık Meditasyonu Süresi",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Kara Çaylağın Sırrı",
+    "description": {
+      "0": "Nişan Alırkenki yükleme süresi, Sethos'un her Element Enerjisi puanı başına 0,285sn azalır. Bu yöntemle yükleme süresi en az 0,3 saniyeye kadar düşürülebilir ve en fazla 20 Enerji eklenebilir. Bir <strong>Gölgedelen Atışı</strong> ateşlendiğinde eklenen miktarda Element Enerjisi tüketilir. 1. Seviye Yük atışı yapılırsa eklenen miktardaki Element Enerjisinin %50'si tüketilir."
+    }
+  },
+  "passive2": {
+    "name": "Kum Kralının Nimeti",
+    "description": {
+      "0": "Sethos \"Kavurucu Kum Gölgesi\" etkisi kazanır ve <strong>Gölgedelen Atışı</strong> ile verdiği Hasar, Sethos'un Element Ustalığının %700'ü kadar artar.",
+      "1": "Şu koşullardan herhangi biri karşılandığında Kavurucu Kum Gölgesi etkisi kaldırılır:",
+      "2": [
+        "Gölgedelen Atışı bir düşmana ilk isabet ettikten 5sn sonra.",
+        "4 Gölgedelen Atışı düşmanlara isabet ettikten sonra."
+      ],
+      "3": "<br/>",
+      "4": "Kavurucu Kum Gölgesi etkisine sahip bir Gölgedelen Atışı düşmana ilk isabet ettikten 15sn sonra Sethos Kavurucu Kum Gölgesi etkisini yeniden kazanır."
+    }
+  },
+  "passive3": {
+    "name": "Thoth'un Keşfi",
+    "description": {
+      "0": "Yakınlardaki <strong>Sumeru'ya özgü kaynakların</strong> yerini mini haritada gösterir."
+    }
+  },
+  "constellation1": {
+    "name": "Mühürlü Tapınağın İlahisi",
+    "description": {
+      "0": "<strong>Gölgedelen Atışının</strong> Kritik Oranı %15 artar."
+    }
+  },
+  "constellation2": {
+    "name": "Papirüse Yazılı Yasaklı Sırlar",
+    "description": {
+      "0": "Aşağıdaki koşullar karşılandığında Sethos 10sn boyunca %15 <electro>Elektrik Hasarı Bonusu</electro> kazanır (2 kademeye kadar birikebilir, kademelerin süresi bağımsızdır):",
+      "1": [
+        "Hedefli Atışlar aracılığıyla Element Enerjisi tüketmek; bu koşulun tetiklenmesi için önce \"Kara Çaylağın Sırrı\" Pasif Yeteneğinin açılmış olması gerekir.",
+        "<strong>Kadim Ayin: Gürleyen Kumlar</strong> aracılığıyla Element Tepkimeleri tetikleyerek Element Enerjisi yenilemek.",
+        "<strong>Saklı Ayin: Gölgedelen Alacakaranlık</strong> kullanmak."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Yükselen Ay Bilgesine Övgü",
+    "description": {
+      "0": "<strong>Normal Saldırı: Kraliyet Saz Okçuluğu</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Uğurlu Tüyler",
+    "description": {
+      "0": "<strong>Gölgedelen Atışı</strong> ya da <strong>Gün Batımı Oku</strong> 2 veya daha fazla düşmana isabet ettiğinde yakındaki tüm grup üyeleri 10 saniyeliğine 80 Element Ustalığı kazanır."
+    }
+  },
+  "constellation5": {
+    "name": "Yalnız Tanrının Yakan Kum Günlükleri",
+    "description": {
+      "0": "<strong>Saklı Ayin: Gölgedelen Alacakaranlık</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Sürgün Güneş Tapınağının Büyük Kitabı",
+    "description": {
+      "0": "<strong>Gölgedelen Atışı</strong> bir düşmana isabet ettiğinde, \"Kara Çaylağın Sırrı\" Pasif Yeteneği tarafından tüketilen Element Enerjisi iade edilir. Bu etki her 15 saniyede bir tetiklenebilir. \"Kara Çaylağın Sırrı\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  }
+}

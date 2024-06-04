@@ -1,0 +1,183 @@
+{
+  "name": "Clorinde",
+  "title": "Candlebearer, Shadowhunter",
+  "description": "An undefeated Champion Duelist. Sword in hand, she defends justice in the Court of Fontaine.",
+  "constellationName": "Rapperia",
+  "auto": {
+    "name": "Oath of Hunting Shadows",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 5 rapid strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina and fires Suppressing Shots in a fan pattern with her pistolet."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hunter's Vigil",
+    "description": {
+      "0": "Preparing her pistolet, she enters the \"Night Vigil\" state, using steel and shot together. In this state, Clorinde's Normal Attacks will be transformed into \"Swift Hunt\" pistolet attacks, and the DMG dealt is converted into <electro>Electro DMG</electro> that cannot be overridden by infusions, and she will be unable to use Charged Attacks. Using her Elemental Skill will transform it into \"Impale the Night\": Perform a lunging attack, dealing <electro>Electro DMG</electro>. The DMG done through the aforementioned method is considered Normal Attack DMG.",
+      "1": "<br/>",
+      "2": "<strong>Swift Hunt</strong>",
+      "3": [
+        " When her Bond of Life is equal to or greater than 100% of her max HP: Performs a pistolet shot.",
+        " When her Bond of Life is less than 100%, firing her pistolet will grant her Bond of Life, with the amount gained based on her max HP. The shots she fires can pierce opponents, and DMG dealt to opponents in their path is increased."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Impale the Night</strong>",
+      "6": "The current percentage value of Clorinde's Bond of Life determines its effect:",
+      "7": [
+        " When the Bond of Life value is 0%, perform a normal lunging strike;",
+        " When the Bond of Life value is less than 100% of her max HP, Clorinde is healed based on the Bond of Life value, and the AoE of the lunging attack and the DMG dealt is increased;",
+        " When the value of the Bond of Life is equal to or greater than 100% of her max HP, use Impale the Night: Pact. The healing multiplier is increased, and the AoE and DMG dealt by the lunge is increased even further."
+      ],
+      "8": "<br/>",
+      "9": "In addition, when Clorinde is in the Night Vigil state, healing effects other than Impale the Night will not take effect and will instead be converted into a Bond of Life that is a percentage of the healing that would have been received.",
+      "10": "<br/>",
+      "11": "Clorinde will exit the \"Night Vigil\" state when she leaves the field.",
+      "12": "<br/>",
+      "13": "<strong>Arkhe: Ousia</strong>",
+      "14": "Periodically, when Clorinde's Swift Hunt shots strike opponents, she will summon a Surging Blade at the position hit that deals Ousia-aligned <electro>Electro DMG</electro>.",
+      "15": "<br/>",
+      "16": "<i>Though the evil that lurked in the shadows of the night had been purged across thousands of years, a shadow that the light could not reach clouded human hearts.",
+      "17": "Even now, the warning left by the Golden Hunter is etched into her memory: Those of the Night Vigil, carrying aloft lit candles against the blackness, have greater need still to remain vigilant. Be not corrupted by the cold dark.</i>"
+    },
+    "skillParams": {
+      "0": "Swift Hunt DMG",
+      "1": "Swift Hunt Bond of Life Gain",
+      "2": "Impale the Night DMG",
+      "3": "Impale the Night Healing",
+      "4": "Bond of Life Conversion",
+      "5": "Surging Blade DMG",
+      "6": "Surging Blade Interval",
+      "7": "Night Vigil Duration",
+      "8": "CD",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Last Lightfall",
+    "description": {
+      "0": "Grants herself a Bond of Life based upon her own max HP before swiftly evading and striking with saber and sidearm as one, dealing <electro>AoE Electro DMG</electro>.",
+      "1": "<br/>",
+      "2": "<i>It is said the legacy of the ancient art of resisting non-human beings with but a mortal body can be traced back to the Lochknights who resisted the Remurian Empire.",
+      "3": "Be that as it may, so long as one can find a way to control the level of force used, it's not as if it cannot be used in duels against ordinary opponents.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Bond of Life Gain",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dark-Shattering Flame",
+    "description": {
+      "0": "After a nearby party member triggers an <electro>Electro-related reaction</electro> against an opponent, <electro>Electro DMG</electro> dealt by Clorinde's Normal Attacks and <strong>Last Lightfall</strong> will be increased by 20% of Clorinde's ATK for 15s. Max 3 stacks. Each stack is counted independently. The Maximum DMG increase achievable this way for the above attacks is 1,800."
+    }
+  },
+  "passive2": {
+    "name": "Lawful Remuneration",
+    "description": {
+      "0": "If Clorinde's Bond of Life is equal to or greater than 100% of her Max HP, her CRIT Rate will increase by 10% for 15s whenever her Bond of Life value increases or decreases. Max 2 stacks. Each stack is counted independently.",
+      "1": "Additionally, <strong>Hunter's Vigil</strong>'s Night Vigil state is buffed: While it is active, the percent of healing converted to Bond of Life increases to 100%."
+    }
+  },
+  "passive3": {
+    "name": "Night Vigil's Harvest",
+    "description": {
+      "0": "Displays the location of nearby <strong>resources unique to Fontaine</strong> on the mini-map."
+    }
+  },
+  "constellation1": {
+    "name": "\"From This Day, I Pass the Candle's Shadow-Veil\"",
+    "description": {
+      "0": "While <strong>Hunter's Vigil</strong>'s Night Vigil state is active, when <electro>Electro DMG</electro> from Clorinde's Normal Attacks hit opponents, they will trigger 2 coordinated attacks from a Nightvigil Shade summoned near the hit opponent, each dealing 30% of Clorinde's ATK as <electro>Electro DMG</electro>.",
+      "1": "This effect can occur once every 1.2s. DMG dealt this way is considered Normal Attack DMG."
+    }
+  },
+  "constellation2": {
+    "name": "\"Now, As We Face the Perils of the Long Night\"",
+    "description": {
+      "0": "Enhance the Passive Talent \"Dark-Shattering Flame\": After a nearby party member triggers an <electro>Electro-related reaction</electro> against an opponent, <electro>Electro DMG</electro> dealt by Clorinde's Normal Attacks and <strong>Last Lightfall</strong> will be increased by 30% of Clorinde's ATK for 15s. Max 3 stacks. Each stack is counted independently. When you have 3 stacks, Clorinde's interruption resistance will be increased. The Maximum DMG increase achievable this way for the above attacks is 2,700.",
+      "1": "You must first unlock the Passive Talent \"Dark-Shattering Flame.\""
+    }
+  },
+  "constellation3": {
+    "name": "\"I Pledge to Remember the Oath of Daylight\"",
+    "description": {
+      "0": "Increases the Level of <strong>Hunter's Vigil</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"To Enshrine Tears, Life, and Love\"",
+    "description": {
+      "0": "When <strong>Last Lightfall</strong> deals DMG to opponent(s), DMG dealt is increased based on Clorinde's Bond of Life percentage. Every 1% of her current Bond of Life will increase <strong>Last Lightfall</strong> DMG by 2%. The maximum <strong>Last Lightfall</strong> DMG increase achievable this way is 200%."
+    }
+  },
+  "constellation5": {
+    "name": "\"Holding Dawn's Coming as My Votive\"",
+    "description": {
+      "0": "Increases the Level of <strong>Last Lightfall</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"And So Shall I Never Despair\"",
+    "description": {
+      "0": "For 12s after <strong>Hunter's Vigil</strong> is used, Clorinde's CRIT Rate will be increased by 10%, and her CRIT DMG by 70%.",
+      "1": "Additionally, while Night Vigil is active, a Glimbright Shade will appear under specific circumstances, executing an attack that deals 200% of Clorinde's ATK as <electro>Electro DMG</electro>. DMG dealt this way is considered Normal Attack DMG.",
+      "2": "The Glimbright Shade will appear under the following circumstances:",
+      "3": [
+        " When Clorinde is about to be hit by an attack.",
+        " When Clorinde uses Impale the Night: Pact."
+      ],
+      "4": "1 Glimbright Shade can be summoned in the aforementioned ways every 1s. 6 Shades can be summoned per single Night Vigil duration.",
+      "5": "In addition, while Night Vigil is active, the DMG Clorinde receives is decreased by 80% and her interruption resistance is increased. This effect will disappear after the Night Vigil state ends or 1s after she summons 6 Glimbright Shades."
+    }
+  }
+}

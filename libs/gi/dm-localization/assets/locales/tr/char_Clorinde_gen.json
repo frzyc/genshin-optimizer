@@ -1,0 +1,183 @@
+{
+  "name": "Clorinde",
+  "title": "Mum Işığının Muhafızı, Gölge Avcısı",
+  "description": "Yenilmez bir Düello Şampiyonu. Elinde kılıcıyla Fontaine'de adaleti savunur.",
+  "constellationName": "İnce Kılıç",
+  "auto": {
+    "name": "Gölge Avı Yemini",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla 5 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcar ve pistolet tabancasını yelpaze şeklinde ateşleyerek Baskılayıcı Atışlar yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Avcının Nöbeti",
+    "description": {
+      "0": "Pistolet tabancasını hazırlar ve çelik ile kurşunun birlikte kullanıldığı \"Gece Nöbeti\" durumuna girer. Bu durumdayken Clorinde'in Normal Saldırıları \"Çevik Av\" pistolet tabanca saldırıları haline gelir ve verdiği Hasar diğer element tesirleriyle değişmeyecek şekilde <electro>Elektrik Hasarına</electro> dönüşür, ayrıca Clorinde Yüklü Saldırılarını kullanamaz. Element Becerisi kullanıldığında saldırı \"Gece Yaran\" haline dönüşür: İleri atılıp kılıcını saplayarak <electro>Elektrik Hasarı</electro> verir. Yukarıdaki yöntem ile verilen Hasar, Normal Saldırı Hasarı sayılır.",
+      "1": "<br/>",
+      "2": "<strong>Çevik Av</strong>",
+      "3": [
+        "Maks. Canının %100'ü kadar veya üzeri Hayat Bağına sahip olduğunda bir pistolet tabanca atışı yapar.",
+        "Hayat Bağı %100'den az olduğu zaman pistolet tabancasını ateşlediğinde Maks. Canına göre Hayat Bağı kazanır. Ateşlediği mermiler düşmanlarını deler geçer ve atış yönündeki düşmanlara verdiği Hasar artar."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Gece Yaran</strong>",
+      "6": "Becerinin etkisi Clorinde'in mevcut Hayat Bağı değerine göre belirlenir:",
+      "7": [
+        "Hayat Bağı değeri %0 olduğunda ileri atılarak normal bir saldırı gerçekleştirir.",
+        "Hayat Bağı değeri, Clorinde'in Maks. Canının %100'ünden daha azsa Clorinde Hayat Bağı değerine göre iyileşir ve ileri atılma saldırısının Etki Alanı ile verdiği Hasar artar.",
+        "Hayat Bağı değeri Clorinde'in Maks. Canının %100'ü kadar veya üzeri olduğunda Gece Yaran: Ahit saldırısı yapar. İyileşme çarpanı yükselir, ileri atılma saldırısının Etki Alanı ve verdiği Hasar daha da artar."
+      ],
+      "8": "<br/>",
+      "9": "Ayrıca Clorinde Gece Nöbeti durumundayken Gece Yaran dışındaki iyileştirmeler etki etmez, bunun yerine alınan iyileşme etkisi yüzdelik oranında Hayat Bağına dönüştürülür.",
+      "10": "<br/>",
+      "11": "Clorinde savaş alanından ayrıldığında \"Gece Nöbeti\" durumu sona erer.",
+      "12": "<br/>",
+      "13": "<strong>Arkhe: Öz</strong>",
+      "14": "Belirli aralıklarla Clorinde, Çevik Av atışlarıyla düşmanları vurduğunda düşmanların olduğu yere Öz tesirli <electro>Elektrik Hasarı</electro> veren bir Çalkantılı Kılıç çağırır.",
+      "15": "<br/>",
+      "16": "<i>Gecenin karanlığına gizlenen kötülük binlerce yıldır temizleniyor olsa da ışığın ulaşamadığı bir gölge, insanların ruhunu karartmaya devam etti.",
+      "17": "Altın Avcı'nın uyarısı bugün dahi onun hafızasına kazınmış halde: Karanlığı delip geçen mumları taşıyan Gece Nöbetçileri her daim tetikte olmalıdır. Karanlığın soğuğunun sizi yozlaştırmasına izin vermeyin.</i>"
+    },
+    "skillParams": {
+      "0": "Çevik Av Hasarı",
+      "1": "Çevik Avdan Elde Edilen Hayat Bağı",
+      "2": "Gece Yaran Hasarı",
+      "3": "Gece Yaran İyileştirmesi",
+      "4": "Hayat Bağı Dönüşümü",
+      "5": "Çalkantılı Kılıç Hasarı",
+      "6": "Çalkantılı Kılıç Aralığı",
+      "7": "Gece Nöbeti Süresi",
+      "8": "BS",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Son Parıltı",
+    "description": {
+      "0": "Maks. Canına göre kendine Hayat Bağı sağlar ve darbelerden hızla kaçıp kılıç ve silah ile aynı anda bir vuruş gerçekleştirerek <electro>Elektrik Alan Hasarı</electro> verir.",
+      "1": "<br/>",
+      "2": "<i>İnsan olmayan varlıklara karşı ölümlü bir vücut ile karşı koymayı öğreten kadim sanatın, Remuria İmparatorluğuna karşı koyan Göl Şövalyelerinden miras kaldığı söylenir.",
+      "3": "Yine de kişi gücünü kontrol edebildiği sürece, bu tekniğin düellolarda sıradan rakiplere karşı kullanılmasında bir sakınca yoktur.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Elde Edilen Hayat Bağı",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Karanlığı Yaran Alev",
+    "description": {
+      "0": "Yakındaki bir grup üyesi, düşman üzerinde <electro>Elektrikle ilgili bir tepkime</electro> tetiklediğinde 15sn boyunca Clorinde'in Normal Saldırıları ve <strong>Son Parıltı</strong> ile verdiği <electro>Elektrik Hasarı</electro> Clorinde'in Saldırısının %20'si kadar artar. En fazla 3 kademeye kadar birikir, her kademenin süresi birbirinden bağımsızdır. Bu saldırılar için kazanılabilecek Maksimum Hasar artışı 1.800 olabilir."
+    }
+  },
+  "passive2": {
+    "name": "Hak Edilen Miktar",
+    "description": {
+      "0": "Clorinde'in Hayat Bağı, Maks. Canının %100'ü kadar veya üzeri olduğu zaman, Hayat Bağı değeri her arttığında ya da azaldığında 15 saniyeliğine Kritik Oranı %10 artar. En fazla 2 kademeye kadar birikir, her kademenin süresi birbirinden bağımsızdır.",
+      "1": "Ayrıca <strong>Avcının Nöbeti</strong> becerisinin Gece Nöbeti durumu güçlenir: Etkinleştiğinde Hayat Bağına dönüştürülen iyileştirme oranı %100 olur."
+    }
+  },
+  "passive3": {
+    "name": "Gece Nöbeti Hasılatı",
+    "description": {
+      "0": "Yakınlardaki <strong>Fontaine'e özgü kaynakların</strong> yerini mini haritada gösterir."
+    }
+  },
+  "constellation1": {
+    "name": "\"Bugün Mumun Gölgesinden Geçtim\"",
+    "description": {
+      "0": "<strong>Avcının Nöbeti</strong> becerisinin Gece Nöbeti durumu etkinken Clorinde, Normal Saldırıları ile bir düşmana <electro>Elektrik Hasarı</electro> verdiğinde düşmanın yakınına çağrılan bir Gece Nöbetçisinin Gölgesi 2 ortak saldırı yapar, her saldırı Clorinde'in Saldırısının %30'u kadar <electro>Elektrik Hasarı</electro> verir.",
+      "1": "Bu etki her 1,2 saniyede bir tetiklenebilir. Bu şekilde verilen Hasar, Normal Saldırı Hasarı sayılır."
+    }
+  },
+  "constellation2": {
+    "name": "\"Uzun Gecenin Tehlikeleriyle Yüzleştim\"",
+    "description": {
+      "0": "\"Karanlığı Yaran Alev\" Pasif Yeteneği güçlenir: Yakındaki bir grup üyesi düşman üzerinde <electro>Elektrikle ilgili bir tepkime</electro> tetiklediğinde 15sn boyunca Clorinde'in Normal Saldırıları ve <strong>Son Parıltı</strong> ile verilen <electro>Elektrik Hasarı</electro> Clorinde'in Saldırısının %30'u kadar artar. En fazla 3 kademeye kadar birikir, her kademenin süresi birbirinden bağımsızdır. 3 kademe biriktiğinde Clorinde'in müdahaleye karşı olan direnci artar. Bu saldırılar için kazanılabilecek Maksimum Hasar artışı 2.700 olabilir.",
+      "1": "\"Karanlığı Yaran Alev\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation3": {
+    "name": "\"Gün Işığı Yeminini Unutmayacağıma Ant İçtim\"",
+    "description": {
+      "0": "<strong>Avcının Nöbeti</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "\"Gözyaşı, Hayat ve Aşk Adına\"",
+    "description": {
+      "0": "<strong>Son Parıltı</strong> becerisiyle düşmana Hasar verildiğinde bu Hasar, Clorinde'in sahip olduğu Hayat Bağı yüzdesine göre artar. Mevcut her %1 Hayat Bağı için <strong>Son Parıltı</strong> Hasarı %2 artar. Bu şekilde elde edilebilecek en fazla <strong>Son Parıltı</strong> Hasarı artışı %200 olabilir."
+    }
+  },
+  "constellation5": {
+    "name": "\"Kendimi Doğacak Güneşe Adamayı Seçtim\"",
+    "description": {
+      "0": "<strong>Son Parıltının</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "\"Umutsuzluğa Kapılmayacağım Asla\"",
+    "description": {
+      "0": "<strong>Avcının Nöbeti</strong> kullanıldıktan sonra 12sn boyunca Clorinde'in Kritik Oranı %10, Kritik Hasarı %70 artar.",
+      "1": "Ayrıca Gece Nöbeti etkinken belirli koşullarda bir Mum Gölgesi ortaya çıkarak Clorinde'in Saldırısının %200'ü kadar <electro>Elektrik Hasarı</electro> veren bir saldırı gerçekleştirir. Bu şekilde verilen Hasar, Normal Saldırı Hasarı sayılır.",
+      "2": "Şu koşullar sağlandığında Mum Gölgesi ortaya çıkar:",
+      "3": [
+        "Clorinde bir saldırıdan isabet almak üzereyken.",
+        "Clorinde Gece Yaran: Ahit becerisini kullandığında."
+      ],
+      "4": "Yukarıdaki şekilde her 1 saniyede 1 Mum Gölgesi çağrılabilir. Bir Gece Nöbeti süresi boyunca 6 Mum Gölgesi çağrılabilir.",
+      "5": "Ayrıca Gece Nöbeti etkinken Clorinde'in aldığı Hasar %80 azalır ve müdahaleye karşı olan direnci artar. Bu etki Gece Nöbeti durumu sona erdiğinde veya 6 Mum Gölgesi çağrıldıktan 1sn sonra sona erer."
+    }
+  }
+}

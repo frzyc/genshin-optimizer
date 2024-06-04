@@ -194,6 +194,9 @@
   "IridescenceTourTickets": {
     "name": "Ingressos do Tour Iridescente"
   },
+  "AnalysisProgress": {
+    "name": "Progresso de Análise"
+  },
   "Primogem": {
     "name": "Gema Essencial"
   },
@@ -205,6 +208,9 @@
   },
   "RealmCurrency": {
     "name": "Moeda do Paraíso"
+  },
+  "ToyMedal": {
+    "name": "Medalha de Brinquedo"
   },
   "OriginalEssenceInvalidated": {
     "name": "Resina Original"
@@ -524,8 +530,17 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Sigewinne": {
+    "name": "Sigewinne"
+  },
   "Arlecchino": {
     "name": "Arlecchino"
+  },
+  "Sethos": {
+    "name": "Sethos"
+  },
+  "Clorinde": {
+    "name": "Clorinde"
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka"
@@ -770,8 +785,17 @@
   "ChiorisStellaFortuna": {
     "name": "Stella Fortuna de Chiori"
   },
+  "SigewinnesStellaFortuna": {
+    "name": "Stella Fortuna de Sigewinne"
+  },
   "ArlecchinosStellaFortuna": {
     "name": "Stella Fortuna de Arlecchino"
+  },
+  "SethossStellaFortuna": {
+    "name": "Stella Fortuna de Sethos"
+  },
+  "ClorindesStellaFortuna": {
+    "name": "Stella Fortuna de Clorinde"
   },
   "GnosticHymnOldNotes": {
     "name": "Canção do Gnóstico - Anotações Antigas"
@@ -6938,8 +6962,26 @@
   "DeliciousBulleSouffle": {
     "name": "Suflê de Bulle Delicioso"
   },
+  "WellBalancedMeal": {
+    "name": "Refeição Balanceada"
+  },
   "HearthfiresTrail": {
     "name": "Trilha do Fogo do Lar"
+  },
+  "SuspiciousBulleSauceDuckBreast": {
+    "name": "Peito de Pato ao Molho Bulle Estranho"
+  },
+  "BulleSauceDuckBreast": {
+    "name": "Peito de Pato ao Molho Bulle"
+  },
+  "DeliciousBulleSauceDuckBreast": {
+    "name": "Peito de Pato ao Molho Bulle Delicioso"
+  },
+  "TaggedAndBagged": {
+    "name": "\"Caçado e Capturado\""
+  },
+  "SuperDeeDuperDeliciousMeatRoll": {
+    "name": "Rolinho de Carne Mega Gostoso"
   },
   "RecipeItem": {
     "name": "Ingredientes"
@@ -7519,6 +7561,9 @@
   },
   "RecipeBulleSouffle": {
     "name": "Receita: Suflê de Bulle"
+  },
+  "RecipeBulleSauceDuckBreast": {
+    "name": "Receita: Peito de Pato ao Molho Bulle"
   },
   "CraftedItems": {
     "name": "Produtos Combinados"
@@ -10241,6 +10286,12 @@
   "FelixFelicium": {
     "name": "Desejos de Boa Sorte"
   },
+  "ConcentratedTransoceanicPearl": {
+    "name": "Pérola Transoceânica Concentrada"
+  },
+  "TaintedHydroPhantasmExtract": {
+    "name": "Extrato de Fantasma Hydro Corrompido"
+  },
   "ShikanoinHeizousMessage": {
     "name": "Mensagem de Shikanoin Heizou"
   },
@@ -10283,11 +10334,26 @@
   "DamagedScore": {
     "name": "Partitura Danificada"
   },
+  "CriminalsTestimony": {
+    "name": "Testemunho do Criminoso"
+  },
+  "RawatsNotes": {
+    "name": "Nota de Rawat"
+  },
+  "GroupPhotoFromAnUnknownTime": {
+    "name": "Foto em Grupo de um Tempo Desconhecido"
+  },
   "RuggierosNotesII": {
     "name": "Notas de Ruggiero (II)"
   },
   "PagesFromALostScoreII": {
     "name": "Páginas de uma Partitura Perdida II"
+  },
+  "TreasureMapWithTheVaultsLocation": {
+    "name": "\"Mapa do Tesouro\" Com a Localização do Cofre"
+  },
+  "MarechausseeHunterJudgmentDayCharacterAlbum": {
+    "name": "Álbum de Personagem \"Caçador das Sombras: Dia do Julgamento\""
   },
   "AncientEngravings": {
     "name": "Inscrição Antiga"
@@ -10318,6 +10384,57 @@
   },
   "AncientPieceOfPaper": {
     "name": "Nota Antiga"
+  },
+  "ProductionLog": {
+    "name": "Registros de Produção"
+  },
+  "ExperimentLog": {
+    "name": "Registros de Experimentos"
+  },
+  "TheLittleWitchAndTheUndyingFireI": {
+    "name": "A Bruxinha e as Chamas Eternas I"
+  },
+  "TheLittleWitchAndTheUndyingFireII": {
+    "name": "A Bruxinha e as Chamas Eternas II"
+  },
+  "TheLittleWitchAndTheUndyingFireIII": {
+    "name": "A Bruxinha e as Chamas Eternas III"
+  },
+  "TheLittleWitchAndTheUndyingFireIV": {
+    "name": "A Bruxinha e as Chamas Eternas IV"
+  },
+  "TheLittleWitchAndTheUndyingFireV": {
+    "name": "A Bruxinha e as Chamas Eternas V"
+  },
+  "TheLittleWitchAndTheUndyingFireVI": {
+    "name": "A Bruxinha e as Chamas Eternas VI"
+  },
+  "TheLittleWitchAndTheUndyingFireVII": {
+    "name": "A Bruxinha e as Chamas Eternas VII"
+  },
+  "TheFelineFirmI": {
+    "name": "Escritório de Gatos I"
+  },
+  "TheFelineFirmII": {
+    "name": "Escritório de Gatos II"
+  },
+  "TheFelineFirmIII": {
+    "name": "Escritório de Gatos III"
+  },
+  "TheFelineFirmIV": {
+    "name": "Escritório de Gatos IV"
+  },
+  "TheFelineFirmV": {
+    "name": "Escritório de Gatos V"
+  },
+  "TheFelineFirmVI": {
+    "name": "Escritório de Gatos VI"
+  },
+  "TheFelineFirmVII": {
+    "name": "Escritório de Gatos VII"
+  },
+  "TheFelineFirmVIII": {
+    "name": "Escritório de Gatos VIII"
   },
   "TearsAmongTheStars": {
     "name": "Lágrima das Estrelas"
@@ -11072,6 +11189,9 @@
   "ExaltedEarth": {
     "name": "Rei do Mundo"
   },
+  "CamAndCablesOfLaw": {
+    "name": "Câmera e Cabos da Lei"
+  },
   "FalconsDance": {
     "name": "Dança do Falcão"
   },
@@ -11804,6 +11924,21 @@
   "TravelNotesTheRealmsRocked": {
     "name": "Passe de Batalha: Rock Pauleira"
   },
+  "ClorindeRoleplay": {
+    "name": "Clorinde: Representação"
+  },
+  "SigewinneTreatment": {
+    "name": "Sigewinne: Tratamento"
+  },
+  "SethosBaFragment": {
+    "name": "Sethos: Fragmentos de Ba"
+  },
+  "AchievementPoeticPages": {
+    "name": "Conquista: Páginas Poéticas"
+  },
+  "TravelNotesSimulnation": {
+    "name": "Passe de Batalha: Teatro Caleidoscópico"
+  },
   "AnemoculusResonanceStone": {
     "name": "Pedra de Ressonância de Anemoculus"
   },
@@ -12236,6 +12371,21 @@
   "ObligingLittleYuegui": {
     "name": "Pequeno Yuegui ao resgate!"
   },
+  "UpbeatEncouragement": {
+    "name": "Encorajamento Animado"
+  },
+  "ElegantCountenance": {
+    "name": "Aparência Elegante"
+  },
+  "ReadyForBattle": {
+    "name": "Pronto Para Batalha"
+  },
+  "SolemnCountenance": {
+    "name": "Aparência Solene"
+  },
+  "LeisureTime": {
+    "name": "Tempo de Lazer"
+  },
   "RhodeiaOfLoch": {
     "name": "Oceanids - Rhodeia"
   },
@@ -12292,6 +12442,18 @@
   },
   "EmperorOfFireAndIron": {
     "name": "Imperador do Fogo e Ferro"
+  },
+  "AllDevouringNarwhal": {
+    "name": "Baleia Devoradora"
+  },
+  "ConsecratedScorpion": {
+    "name": "Escorpião da Ossada Sagrada"
+  },
+  "ConsecratedFlyingSerpent": {
+    "name": "Cobra Voadora da Ossada Sagrada"
+  },
+  "GuardianOfApepsOasis": {
+    "name": "Guardião do Oásis de Apep"
   },
   "UndividedHeart": {
     "name": "Com Todo Coração"
@@ -12542,6 +12704,33 @@
   "MoltenMail": {
     "name": "Cota Carbonizada"
   },
+  "TerrorForTheEvildoers": {
+    "name": "Aterrorizando Criminosos"
+  },
+  "HearMeLetUsRaiseTheChaliceOfLove": {
+    "name": "\"Senhores, Escutem-me, Ergamos a Taça do Amor!\""
+  },
+  "RockinInAFlamingWorld": {
+    "name": "Rockeando no Inferno"
+  },
+  "DecorousHarmony": {
+    "name": "Harmonia e Decoro"
+  },
+  "TheArtOfBudgeting": {
+    "name": "A Arte do Orçamento"
+  },
+  "LightlessFeeding": {
+    "name": "Predação Sem Luz"
+  },
+  "FatalFulmination": {
+    "name": "Fulminação Fatal"
+  },
+  "DeathlyCyclone": {
+    "name": "Ciclone Mortal"
+  },
+  "AThousandYoung": {
+    "name": "Crias Infinitas"
+  },
   "MagicGuide": {
     "name": "Guia de Magia"
   },
@@ -12764,6 +12953,27 @@
   "AmethystCrown": {
     "name": "Coroa Ametista"
   },
+  "CashflowSupervision": {
+    "name": "Supervisão de Caixa"
+  },
+  "EndOfTheLine": {
+    "name": "Águas Secas"
+  },
+  "ForestRegalia": {
+    "name": "Espada Real da Floresta"
+  },
+  "SplendorOfTranquilWaters": {
+    "name": "Esplendor das Águas Silenciosas"
+  },
+  "MarechausseeHunter": {
+    "name": "Caçador das Sombras"
+  },
+  "GoldenTroupe": {
+    "name": "Trupe Dourada"
+  },
+  "FlowerOfParadiseLost": {
+    "name": "Flor do Paraíso Perdido"
+  },
   "LiyueHarborWharf": {
     "name": "Porto de Liyue"
   },
@@ -12898,6 +13108,15 @@
   },
   "TheWhiteGloveAndTheFisherman": {
     "name": "Luva Branca e o Pescador"
+  },
+  "TheMausoleumOfKingDeshret": {
+    "name": "Mausoléu do Rei Deshret"
+  },
+  "CentralLaboratoryRuins": {
+    "name": "Ruínas do Laboratório Central"
+  },
+  "SirArthur": {
+    "name": "Monsieur Arthur"
   },
   "ElementalResonanceWovenIce": {
     "name": "Ressonância Elemental: Entrelaçamento Cryo"
@@ -13066,6 +13285,15 @@
   },
   "UnderwaterTreasureHunt": {
     "name": "Caça ao Tesouro Submarino"
+  },
+  "ViciousAncientBattle": {
+    "name": "Antiga Batalha Sangrenta"
+  },
+  "WaterAndJustice": {
+    "name": "Água e Justiça"
+  },
+  "CountdownToTheShow3": {
+    "name": "Contagem Regressiva até o Show: 3"
   },
   "Origin": {
     "name": "Primordial"
@@ -14155,6 +14383,9 @@
   },
   "FontainianCarpetFairAndSquare": {
     "name": "Tapete de Fontaine: \"Quadrado e Justo\""
+  },
+  "FadingAfterglow": {
+    "name": "\"Resplendor Desvanecido\""
   },
   "TrustyPortableLamp": {
     "name": "Lâmpada Portátil Que Não Se Apaga"
@@ -15527,6 +15758,9 @@
   "BoxingTargetOfTheForbiddenFortress": {
     "name": "\"Alvo de Boxe da Fortaleza Proibida\""
   },
+  "ImprovedCrococannon": {
+    "name": "Canhão Crocodilo Explosivo Melhorado"
+  },
   "PottedPlantVerdantVastness": {
     "name": "Planta em Vaso: \"Vastidão Verdejante\""
   },
@@ -15920,6 +16154,9 @@
   "CrystallineGlory": {
     "name": "\"Glória do Andarilho\""
   },
+  "MusicTownsBreezeBellsCheepingFinches": {
+    "name": "Sinos da Brisa da Cidade da Música: \"Passarinhos Cantarolando\""
+  },
   "BookshelfFreeReading": {
     "name": "Prateleira de Livros: Leitura Livre"
   },
@@ -15958,6 +16195,9 @@
   },
   "MallowWoodMailboxStorage": {
     "name": "Caixa Postal de Madeira de Malva: \"Armazenamento\""
+  },
+  "ModelContraptionStandardMusicalMode": {
+    "name": "Modelo Mecânico: Modo Musical Padrão"
   },
   "WeatheredBambooFence": {
     "name": "Cerca de Bambu Desgastada"
@@ -16147,5 +16387,8 @@
   },
   "SwordBearingStatueEternalWatch": {
     "name": "Estátua de Pedra: \"Guarda Eterno\""
+  },
+  "SwordBearingStatueAestheticsOfIncompleteness": {
+    "name": "Estátua com Espada: \"Estética da Incompletude\""
   }
 }

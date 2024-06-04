@@ -8,14 +8,12 @@ import banner from './UI_NameCardPic_Aloy_P.png'
 import passive1 from './UI_Talent_S_Aloy_05.png'
 import passive2 from './UI_Talent_S_Aloy_06.png'
 import passive3 from './UI_Talent_S_Aloy_07.png'
-import {
-  default as constellation1,
-  default as constellation2,
-  default as constellation3,
-  default as constellation4,
-  default as constellation5,
-  default as constellation6,
-} from './UI_Talent_S_Aloy_Lock.png'
+import constellation1 from './UI_Talent_S_Aloy_Lock.png'
+import constellation2 from './UI_Talent_S_Aloy_Lock.png'
+import constellation3 from './UI_Talent_S_Aloy_Lock.png'
+import constellation4 from './UI_Talent_S_Aloy_Lock.png'
+import constellation5 from './UI_Talent_S_Aloy_Lock.png'
+import constellation6 from './UI_Talent_S_Aloy_Lock.png'
 
 const data = {
   banner,

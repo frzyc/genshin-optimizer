@@ -1,0 +1,24 @@
+{
+  "name": "Trúc Vân",
+  "description": {
+    "0": "Mẫu binh khí thử nghiệm do Ngọc Hành Tinh ủy thác Hắc Nham Xưởng rèn ra sau khi phân tích cơ quan tiên gia từng bảo vệ Thiên Hoành Sơn."
+  },
+  "passiveName": "Khối Vuông Điêu Khắc",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi Năng Lượng Nguyên Tố giảm, Tinh Thông Nguyên Tố của người trang bị tăng <cryo>40</cryo> điểm. Hiệu quả này duy trì 18s, tối đa cộng dồn 2 tầng."
+    },
+    "1": {
+      "0": "Sau khi Năng Lượng Nguyên Tố giảm, Tinh Thông Nguyên Tố của người trang bị tăng <cryo>50</cryo> điểm. Hiệu quả này duy trì 18s, tối đa cộng dồn 2 tầng."
+    },
+    "2": {
+      "0": "Sau khi Năng Lượng Nguyên Tố giảm, Tinh Thông Nguyên Tố của người trang bị tăng <cryo>60</cryo> điểm. Hiệu quả này duy trì 18s, tối đa cộng dồn 2 tầng."
+    },
+    "3": {
+      "0": "Sau khi Năng Lượng Nguyên Tố giảm, Tinh Thông Nguyên Tố của người trang bị tăng <cryo>70</cryo> điểm. Hiệu quả này duy trì 18s, tối đa cộng dồn 2 tầng."
+    },
+    "4": {
+      "0": "Sau khi Năng Lượng Nguyên Tố giảm, Tinh Thông Nguyên Tố của người trang bị tăng <cryo>80</cryo> điểm. Hiệu quả này duy trì 18s, tối đa cộng dồn 2 tầng."
+    }
+  }
+}

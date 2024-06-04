@@ -1,0 +1,24 @@
+{
+  "name": "Assoluzione",
+  "description": {
+    "0": "Uno stocco che un tempo veniva impugnato da un impostore che aveva rinunciato a tutto, usandolo principalmente come strumento per celare la propria identità."
+  },
+  "passiveName": "Patto fatale",
+  "passiveDescription": {
+    "0": {
+      "0": "I DAN da CRIT aumentano di un <cryo>20%</cryo>. Aumentare il valore di un Legame vitale aumenta i DAN inflitti dal personaggio che equipaggia l'arma di un <cryo>16%</cryo> per 6 s. Massimo 3 accumuli."
+    },
+    "1": {
+      "0": "I DAN da CRIT aumentano di un <cryo>25%</cryo>. Aumentare il valore di un Legame vitale aumenta i DAN inflitti dal personaggio che equipaggia l'arma di un <cryo>20%</cryo> per 6 s. Massimo 3 accumuli."
+    },
+    "2": {
+      "0": "I DAN da CRIT aumentano di un <cryo>30%</cryo>. Aumentare il valore di un Legame vitale aumenta i DAN inflitti dal personaggio che equipaggia l'arma di un <cryo>24%</cryo> per 6 s. Massimo 3 accumuli."
+    },
+    "3": {
+      "0": "I DAN da CRIT aumentano di un <cryo>35%</cryo>. Aumentare il valore di un Legame vitale aumenta i DAN inflitti dal personaggio che equipaggia l'arma di un <cryo>28%</cryo> per 6 s. Massimo 3 accumuli."
+    },
+    "4": {
+      "0": "I DAN da CRIT aumentano di un <cryo>40%</cryo>. Aumentare il valore di un Legame vitale aumenta i DAN inflitti dal personaggio che equipaggia l'arma di un <cryo>32%</cryo> per 6 s. Massimo 3 accumuli."
+    }
+  }
+}

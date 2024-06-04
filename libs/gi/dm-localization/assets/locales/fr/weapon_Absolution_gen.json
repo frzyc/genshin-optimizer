@@ -1,0 +1,24 @@
+{
+  "name": "Absolution",
+  "description": {
+    "0": "Une rapière autrefois brandie par un menteur qui avait tout abandonné. Dans le passé, elle était principalement utilisée lorsqu'il devait dissimuler son identité."
+  },
+  "passiveName": "Pacte funeste",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT CRIT de <cryo>20 %</cryo>. Lorsque la valeur d'un engagement vital augmente, les DGT infligés par le personnage équipé de l'arme augmentent de <cryo>16 %</cryo> pendant 6 s, cet effet pouvant être cumulé 3 fois maximum."
+    },
+    "1": {
+      "0": "Augmente les DGT CRIT de <cryo>25 %</cryo>. Lorsque la valeur d'un engagement vital augmente, les DGT infligés par le personnage équipé de l'arme augmentent de <cryo>20 %</cryo> pendant 6 s, cet effet pouvant être cumulé 3 fois maximum."
+    },
+    "2": {
+      "0": "Augmente les DGT CRIT de <cryo>30 %</cryo>. Lorsque la valeur d'un engagement vital augmente, les DGT infligés par le personnage équipé de l'arme augmentent de <cryo>24 %</cryo> pendant 6 s, cet effet pouvant être cumulé 3 fois maximum."
+    },
+    "3": {
+      "0": "Augmente les DGT CRIT de <cryo>35 %</cryo>. Lorsque la valeur d'un engagement vital augmente, les DGT infligés par le personnage équipé de l'arme augmentent de <cryo>28 %</cryo> pendant 6 s, cet effet pouvant être cumulé 3 fois maximum."
+    },
+    "4": {
+      "0": "Augmente les DGT CRIT de <cryo>40 %</cryo>. Lorsque la valeur d'un engagement vital augmente, les DGT infligés par le personnage équipé de l'arme augmentent de <cryo>32 %</cryo> pendant 6 s, cet effet pouvant être cumulé 3 fois maximum."
+    }
+  }
+}

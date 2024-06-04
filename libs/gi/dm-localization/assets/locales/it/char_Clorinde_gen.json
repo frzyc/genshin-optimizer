@@ -1,0 +1,183 @@
+{
+  "name": "Clorinde",
+  "title": "Cacciatrice d'ombre",
+  "description": "Una campionessa duellante imbattuta. Difende la giustizia nella Corte di Fontaine brandendo la sua spada.",
+  "constellationName": "Rapperia",
+  "auto": {
+    "name": "Patto delle Ombre Cacciatrici",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sventagliare una Raffica di soppressione con la sua pistola."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Veglia della cacciatrice",
+    "description": {
+      "0": "Clorinde impugna la pistola ed entra nello stato di Vigilante della notte, attaccando al contempo con la lama e coi proiettili. Quando è in questo stato, gli attacchi normali di Clorinde si trasformano in colpi di pistola Caccia serrata, i DAN inflitti vengono convertiti in <electro>DAN da Electro</electro> non influenzabili da altre infusioni elementali, e Clorinde non può eseguire attacchi caricati. Quando usata, la sua abilità elementale viene convertita in Impalatrice della notte, con la quale Clorinde esegue un affondo che infligge <electro>DAN da Electro</electro>. Questi DAN sono considerati DAN da attacco normale.",
+      "1": "<br/>",
+      "2": "<strong>Caccia serrata</strong>",
+      "3": [
+        " Quando il Legame vitale è uguale o superiore al 100% dei propri PS max, Clorinde spara un colpo di pistola.",
+        " Quando il Legame vitale è inferiore al 100%, sparare conferisce a Clorinde un Legame vitale, il cui valore si basa sui suoi PS max. I colpi sparati possono trapassare gli avversari sulla loro traiettoria e infliggere DAN aumentati."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Impalatrice della notte</strong>",
+      "6": "La percentuale attuale del Legame vitale di Clorinde ne determina l'effetto.",
+      "7": [
+        " Quando il valore del Legame vitale è pari allo 0%, Clorinde esegue un affondo normale.",
+        " Quando il valore del Legame vitale è inferiore al 100% dei PS max di Clorinde, i suoi PS si ripristinano in base al valore del Legame vitale, mentre l'area d'effetto dell'affondo e i relativi DAN inflitti aumentano.",
+        " Quando il valore del Legame vitale è uguale o superiore al 100% dei PS max di Clorinde, quest'ultima esegue Impalatrice della notte: Patto, aumentando ulteriormente il moltiplicatore di ripristino dei PS, l'area d'effetto dell'affondo e i relativi DAN inflitti."
+      ],
+      "8": "<br/>",
+      "9": "In più, quando Clorinde è nello stato di Vigilante della notte, gli effetti di guarigione apportati da Impalatrice della notte sono gli unici ad avere efficacia; tutti gli altri vengono convertiti in un Legame vitale pari a una percentuale dell'ipotetica guarigione.",
+      "10": "<br/>",
+      "11": "Lo stato di Vigilante della notte termina se Clorinde esce dal campo.",
+      "12": "<br/>",
+      "13": "<strong>Archè: Ousia</strong>",
+      "14": "Quando Clorinde colpisce usando Caccia serrata, evoca a intervalli regolari una Lama nascente nella posizione dell'impatto, infliggendo <electro>DAN da Electro</electro> di polarità Ousia.",
+      "15": "<br/>",
+      "16": "<i>Il male che si annida nel buio della notte viene purificato fin dai tempi più remoti; ciononostante, il cuore degli uomini è stato ottenebrato da un'ombra che la luce non è mai riuscita a raggiungere.",
+      "17": "Il monito del Cacciatore dorato riecheggia tuttora nella sua mente: i Guardiani della notte, che illuminano le tenebre tenendo alte le loro candele, hanno più che mai il dovere di restare vigili. Non lasciate che la gelida oscurità vi corrompa.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Caccia serrata",
+      "1": "Acquisizione Legame vitale da Caccia serrata",
+      "2": "DAN da Impalatrice della notte",
+      "3": "Guarigione da Impalatrice della notte",
+      "4": "Conversione Legame vitale",
+      "5": "DAN da Lama nascente",
+      "6": "Intervallo Lama nascente",
+      "7": "Durata Vigilante della notte",
+      "8": "TdR",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Fulgore finale",
+    "description": {
+      "0": "Clorinde ottiene un Legame vitale in base ai suoi PS max, per poi schivare e colpire gli avversari con spada e pistola all'unisono, infliggendo <electro>DAN da Electro ad area</electro>.",
+      "1": "<br/>",
+      "2": "<i>Si dice che l'antica arte che permette di contrastare gli esseri inumani a chi possiede un mero fragile corpo mortale risalga all'epoca dei cavalieri di Loch, nella loro lotta contro l'Impero di Remuria.",
+      "3": "Cionondimeno, finché si è in grado di controllare la propria forza, nulla vieta di farne uso per affrontare gli avversari comuni.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Acquisizione Legame vitale",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Fiamma frangitenebre",
+    "description": {
+      "0": "Quando un membro vicino del gruppo innesca una <electro>reazione di Electro</electro> su un avversario, i <electro>DAN da Electro</electro> inflitti dagli attacchi normali di Clorinde e da <strong>Fulgore finale</strong> aumentano di un 20% del suo ATT per 15 s. L'effetto può accumularsi fino a 3 volte, e ciascun accumulo viene conteggiato in modo indipendente. L'aumento di DAN massimo che è possibile raggiungere con i suddetti attacchi è pari a 1.800."
+    }
+  },
+  "passive2": {
+    "name": "Compenso legittimo",
+    "description": {
+      "0": "Se il Legame vitale di Clorinde è uguale o superiore al 100% dei suoi PS max, il suo tasso di CRIT aumenta di un 10% per 15 s ogni volta che il suo Legame vitale aumenta o diminuisce. L'effetto può accumularsi fino a 2 volte, e ciascun accumulo viene conteggiato in modo indipendente.",
+      "1": "In più, lo stato Vigilante della notte di <strong>Veglia della cacciatrice</strong> riceve un potenziamento: la percentuale di guarigione convertita in Legame vitale aumenta al 100% mentre lo stato è attivo."
+    }
+  },
+  "passive3": {
+    "name": "Ricompensa della Vigilante della notte",
+    "description": {
+      "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Fontaine</strong>."
+    }
+  },
+  "constellation1": {
+    "name": "\"Da oggi, il velo d'ombra della candela non mi appartiene più\"",
+    "description": {
+      "0": "Mentre lo stato di Vigilante della notte di <strong>Veglia della cacciatrice</strong> è attivo, quando Clorinde infligge <electro>DAN da Electro</electro> agli avversari con degli attacchi normali, evoca accanto all'avversario colpito un'Ombra del Vigilante che esegue 2 attacchi coordinati, ognuno dei quali infligge <electro>DAN da Electro</electro> pari a un 30% dell'ATT di Clorinde.",
+      "1": "Quest'effetto può attivarsi una volta ogni 1,2 s. I DAN inflitti in questo modo sono considerati DAN da attacco normale."
+    }
+  },
+  "constellation2": {
+    "name": "\"Ora, nel fronteggiare i pericoli della lunga notte\"",
+    "description": {
+      "0": "Il talento passivo Fiamma frangitenebre riceve un potenziamento: quando un membro vicino del gruppo innesca una <electro>reazione di Electro</electro> su un avversario, i <electro>DAN da Electro</electro> inflitti dagli attacchi normali di Clorinde e da <strong>Fulgore finale</strong> aumentano di un 30% del suo ATT per 15 s. L'effetto può accumularsi fino a 3 volte, e ciascun accumulo viene conteggiato in modo indipendente. Raggiunti 3 accumuli, la resistenza all'interruzione di Clorinde aumenta. L'aumento di DAN massimo che è possibile raggiungere con i suddetti attacchi è pari a 2.700.",
+      "1": "Richiede il talento passivo Fiamma frangitenebre."
+    }
+  },
+  "constellation3": {
+    "name": "\"M'impegno a non dimenticare mai il giuramento dell'alba\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Veglia della cacciatrice</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Di custodire le lacrime, la vita e l'amore\"",
+    "description": {
+      "0": "Quando <strong>Fulgore finale</strong> infligge DAN a uno o più avversari, i DAN inflitti aumentano in base alla percentuale di Legame vitale di Clorinde. Per ogni 1% di Legame vitale, i DAN da <strong>Fulgore finale</strong> aumentano di un 2%. L'aumento massimo dei DAN da <strong>Fulgore finale</strong> che è possibile raggiungere in questo modo è pari a un 200%."
+    }
+  },
+  "constellation5": {
+    "name": "\"Affidandomi alla venuta dell'aurora\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Fulgore finale</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Non soccomberò mai alla disperazione\"",
+    "description": {
+      "0": "Per 12 s dopo aver usato <strong>Veglia della cacciatrice</strong>, il tasso di CRIT e i DAN da CRIT di Clorinde aumentano rispettivamente di un 10% e un 70%.",
+      "1": "Inoltre, mentre lo stato di Vigilante della notte è attivo, e in specifiche circostanze, appare un Barlume umbratile che esegue un attacco infliggendo <electro>DAN da Electro</electro> pari a un 200% dell'ATT di Clorinde. I DAN inflitti in questo modo sono considerati DAN da attacco normale.",
+      "2": "Il Barlume umbratile appare nelle seguenti situazioni:",
+      "3": [
+        " quando Clorinde sta per essere colpita da un attacco;",
+        " quando Clorinde usa Impalatrice della notte: Patto."
+      ],
+      "4": "È possibile evocare 1 Barlume umbratile nei modi sopra descritti ogni 1 s. In ciascuna iterazione di Vigilante della notte, possono essere evocati fino a 6 Barlumi umbratili.",
+      "5": "In più, mentre Vigilante della notte è attivo, i DAN subiti da Clorinde si riducono di un 80% e la sua resistenza all'interruzione aumenta. Questo effetto si annulla quando lo stato di Vigilante della notte termina o 1 s dopo aver evocato 6 Barlumi umbratili."
+    }
+  }
+}
