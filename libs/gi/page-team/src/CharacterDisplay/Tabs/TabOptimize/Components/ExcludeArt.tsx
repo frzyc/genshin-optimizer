@@ -230,7 +230,9 @@ function ExcludeArtRedButtons({
 }) {
   const { t } = useTranslation(['artifact', 'ui'])
   const { numExclude, numInclude } = useMemo(() => {
-    const numExclude = artifactIds.length - artExclusion.length
+    const excludedFiltered = artExclusion.filter((i) => artifactIds.includes(i))
+
+    const numExclude = artifactIds.length - excludedFiltered.length
     const numInclude = artifactIds.length - numExclude
 
     return { numExclude, numInclude }
