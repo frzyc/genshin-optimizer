@@ -220,11 +220,13 @@ function ExcludeArtRedButtons({
   artExclusion,
   onExclude,
   onInclude,
+  onClose,
 }: {
   artifactIds: string[]
   artExclusion: string[]
   onExclude: (ids: string[]) => void
   onInclude: (ids: string[]) => void
+  onClose: () => void
 }) {
   const { t } = useTranslation(['artifact', 'ui'])
   const { numExclude, numInclude } = useMemo(() => {
@@ -234,14 +236,26 @@ function ExcludeArtRedButtons({
     return { numExclude, numInclude }
   }, [artifactIds, artExclusion])
 
-  const excludeArtifacts = () =>
-    window.confirm(
+  const excludeArtifacts = () => {
+    const confirmation = window.confirm(
       `Are you sure you want to exclude ${numExclude} artifacts from build optimization?`
-    ) && onExclude(artifactIds)
-  const includeArtifacts = () =>
-    window.confirm(
+    )
+
+    if (confirmation) {
+      onExclude(artifactIds)
+      onClose()
+    }
+  }
+  const includeArtifacts = () => {
+    const confirmation = window.confirm(
       `Are you sure you want to include ${numInclude} artifacts to build optimization?`
-    ) && onInclude(artifactIds)
+    )
+
+    if (confirmation) {
+      onInclude(artifactIds)
+      onClose()
+    }
+  }
 
   return (
     <Grid container spacing={1} alignItems="center">
@@ -368,6 +382,7 @@ function ArtifactSelectModal({
               artExclusion={artExclusion}
               onExclude={onExclude}
               onInclude={onInclude}
+              onClose={onClose}
             />
           </Box>
           <Box mt={1}>
