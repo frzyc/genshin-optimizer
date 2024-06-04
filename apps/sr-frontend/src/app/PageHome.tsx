@@ -1,15 +1,7 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import {
-  CharacterEditor,
-  useCharacterContext,
-} from '@genshin-optimizer/sr/ui'
-import {
-  Button,
-  CardContent,
-  Container,
-  Stack,
-} from '@mui/material'
+import { CharacterEditor, useCharacterContext } from '@genshin-optimizer/sr/ui'
+import { Button, CardContent, Container, Stack } from '@mui/material'
 import { useState } from 'react'
 import CharacterSelector from './CharacterSelector'
 import Database from './Database'
