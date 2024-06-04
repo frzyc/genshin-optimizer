@@ -398,6 +398,7 @@ function ArtifactSelectModal({
                   <Grid item key={id} xs={1}>
                     <ArtifactCard
                       artifactId={id}
+                      excluded={artExclusion.includes(id)}
                       onClick={() => {
                         if (artExclusion.includes(id)) onInclude([id])
                         else onExclude([id])
