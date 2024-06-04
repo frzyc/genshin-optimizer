@@ -220,13 +220,11 @@ function ExcludeArtRedButtons({
   artExclusion,
   onExclude,
   onInclude,
-  onClose,
 }: {
   artifactIds: string[]
   artExclusion: string[]
   onExclude: (ids: string[]) => void
   onInclude: (ids: string[]) => void
-  onClose: () => void
 }) {
   const { t } = useTranslation(['artifact', 'ui'])
   const { numExclude, numInclude } = useMemo(() => {
@@ -238,26 +236,14 @@ function ExcludeArtRedButtons({
     return { numExclude, numInclude }
   }, [artifactIds, artExclusion])
 
-  const excludeArtifacts = () => {
-    const confirmation = window.confirm(
+  const excludeArtifacts = () =>
+    window.confirm(
       `Are you sure you want to exclude ${numExclude} artifacts from build optimization?`
-    )
-
-    if (confirmation) {
-      onExclude(artifactIds)
-      onClose()
-    }
-  }
-  const includeArtifacts = () => {
-    const confirmation = window.confirm(
+    ) && onExclude(artifactIds)
+  const includeArtifacts = () =>
+    window.confirm(
       `Are you sure you want to include ${numInclude} artifacts to build optimization?`
-    )
-
-    if (confirmation) {
-      onInclude(artifactIds)
-      onClose()
-    }
-  }
+    ) && onInclude(artifactIds)
 
   return (
     <Grid container spacing={1} alignItems="center">
@@ -389,7 +375,6 @@ function ArtifactSelectModal({
               artExclusion={artExclusion}
               onExclude={onExclude}
               onInclude={onInclude}
-              onClose={onClose}
             />
           </Box>
           <Box mt={1}>
@@ -404,12 +389,11 @@ function ArtifactSelectModal({
                     <ArtifactCard
                       artifactId={id}
                       excluded={artExclusion.includes(id)}
-                      onClick={() => {
-                        if (artExclusion.includes(id)) onInclude([id])
-                        else onExclude([id])
-
-                        onClose()
-                      }}
+                      onClick={() =>
+                        artExclusion.includes(id)
+                          ? onInclude([id])
+                          : onExclude([id])
+                      }
                     />
                   </Grid>
                 ))}
