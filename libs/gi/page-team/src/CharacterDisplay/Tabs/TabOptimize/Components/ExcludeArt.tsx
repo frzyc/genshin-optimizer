@@ -334,7 +334,10 @@ function ArtifactSelectModal({
 
   const brPt = useMediaQueryUp()
 
-  const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
+  const filterConfigs = useMemo(
+    () => artifactFilterConfigs({ excludedIds: artExclusion }),
+    [artExclusion]
+  )
   const artifactIds = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
     return (
@@ -376,6 +379,8 @@ function ArtifactSelectModal({
               filterOption={filterOption}
               filterOptionDispatch={filterOptionDispatch}
               filteredIds={artifactIds}
+              enableExclusionFilter={true}
+              excludedIds={artExclusion}
             />
           </Suspense>
           <Box mt={1}>
