@@ -11,6 +11,7 @@ export const allWeaponTypeKeys = [
 export type WeaponTypeKey = (typeof allWeaponTypeKeys)[number]
 
 export const allWeaponSwordKeys = [
+  'Absolution',
   'AmenomaKageuchi',
   'AquilaFavonia',
   'BlackcliffLongsword',
@@ -135,6 +136,7 @@ export const allWeaponBowKeys = [
   'AmosBow',
   'AquaSimulacra',
   'BlackcliffWarbow',
+  'Cloudforged',
   'CompoundBow',
   'ElegyForTheEnd',
   'EndOfTheLine',
