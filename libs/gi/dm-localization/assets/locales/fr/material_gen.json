@@ -194,6 +194,9 @@
   "IridescenceTourTickets": {
     "name": "Billet de tournée Iridescence"
   },
+  "AnalysisProgress": {
+    "name": "Progrès d'analyse"
+  },
   "Primogem": {
     "name": "Primo-gemme"
   },
@@ -205,6 +208,9 @@
   },
   "RealmCurrency": {
     "name": "Pièces du royaume"
+  },
+  "ToyMedal": {
+    "name": "Médaille-jouet"
   },
   "OriginalEssenceInvalidated": {
     "name": "Essence originale (jetée)"
@@ -524,8 +530,17 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Sigewinne": {
+    "name": "Sigewinne"
+  },
   "Arlecchino": {
     "name": "Arlecchino"
+  },
+  "Sethos": {
+    "name": "Sethos"
+  },
+  "Clorinde": {
+    "name": "Clorinde"
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka"
@@ -770,8 +785,17 @@
   "ChiorisStellaFortuna": {
     "name": "Stella Fortuna de Chiori"
   },
+  "SigewinnesStellaFortuna": {
+    "name": "Stella Fortuna de Sigewinne"
+  },
   "ArlecchinosStellaFortuna": {
     "name": "Stella Fortuna d'Arlecchino"
+  },
+  "SethossStellaFortuna": {
+    "name": "Stella Fortuna de Sethos"
+  },
+  "ClorindesStellaFortuna": {
+    "name": "Stella Fortuna de Clorinde"
   },
   "GnosticHymnOldNotes": {
     "name": "PB - Gnostique (ébauche)"
@@ -1368,7 +1392,7 @@
     "name": "La princesse sanglier - Tome VII"
   },
   "TheMondstadtTowerI": {
-    "name": "La Tour de Mondstadt - Tome I"
+    "name": "La tour de Mondstadt - Tome I"
   },
   "ElementalMark": {
     "name": "Marque élémentaire"
@@ -6938,8 +6962,26 @@
   "DeliciousBulleSouffle": {
     "name": "Soufflé bullé (délicieux)"
   },
+  "WellBalancedMeal": {
+    "name": "Repas équilibré"
+  },
   "HearthfiresTrail": {
     "name": "Traces du fourneau"
+  },
+  "SuspiciousBulleSauceDuckBreast": {
+    "name": "Magret de canard en sauce bullée (suspect)"
+  },
+  "BulleSauceDuckBreast": {
+    "name": "Magret de canard en sauce bullée"
+  },
+  "DeliciousBulleSauceDuckBreast": {
+    "name": "Magret de canard en sauce bullée (délicieux)"
+  },
+  "TaggedAndBagged": {
+    "name": "« Gibier en sac »"
+  },
+  "SuperDeeDuperDeliciousMeatRoll": {
+    "name": "Shawarma hyper-aromatique"
   },
   "RecipeItem": {
     "name": "Ingrédient"
@@ -7519,6 +7561,9 @@
   },
   "RecipeBulleSouffle": {
     "name": "Recette : Soufflé bullé"
+  },
+  "RecipeBulleSauceDuckBreast": {
+    "name": "Recette : Magret de canard en sauce bullée"
   },
   "CraftedItems": {
     "name": "Produit synthétisé"
@@ -10241,6 +10286,12 @@
   "FelixFelicium": {
     "name": "Felix Felicium"
   },
+  "ConcentratedTransoceanicPearl": {
+    "name": "Perle transocéanique concentrée"
+  },
+  "TaintedHydroPhantasmExtract": {
+    "name": "Extrait de Fantasme Hydro croupi"
+  },
   "ShikanoinHeizousMessage": {
     "name": "Message de Shikanoin Heizou"
   },
@@ -10283,11 +10334,26 @@
   "DamagedScore": {
     "name": "Partition endommagée"
   },
+  "CriminalsTestimony": {
+    "name": "Témoignages des criminels"
+  },
+  "RawatsNotes": {
+    "name": "Notes de Rawat"
+  },
+  "GroupPhotoFromAnUnknownTime": {
+    "name": "Photo de groupe de date inconnue"
+  },
   "RuggierosNotesII": {
     "name": "Notes de Ruggiero (2)"
   },
   "PagesFromALostScoreII": {
     "name": "Page d'une partition perdue (2)"
+  },
+  "TreasureMapWithTheVaultsLocation": {
+    "name": "Carte au trésor avec l'emplacement du coffre-fort"
+  },
+  "MarechausseeHunterJudgmentDayCharacterAlbum": {
+    "name": "Album des personnages de « Chasseur de la Maréchaussée : Le jour du jugement »"
   },
   "AncientEngravings": {
     "name": "Gravure ancienne"
@@ -10318,6 +10384,57 @@
   },
   "AncientPieceOfPaper": {
     "name": "Ancienne note"
+  },
+  "ProductionLog": {
+    "name": "Journal de production"
+  },
+  "ExperimentLog": {
+    "name": "Journal d'expérience"
+  },
+  "TheLittleWitchAndTheUndyingFireI": {
+    "name": "La petite sorcière et le feu inextinguible - Tome I"
+  },
+  "TheLittleWitchAndTheUndyingFireII": {
+    "name": "La petite sorcière et le feu inextinguible - Tome II"
+  },
+  "TheLittleWitchAndTheUndyingFireIII": {
+    "name": "La petite sorcière et le feu inextinguible - Tome III"
+  },
+  "TheLittleWitchAndTheUndyingFireIV": {
+    "name": "La petite sorcière et le feu inextinguible - Tome IV"
+  },
+  "TheLittleWitchAndTheUndyingFireV": {
+    "name": "La petite sorcière et le feu inextinguible - Tome V"
+  },
+  "TheLittleWitchAndTheUndyingFireVI": {
+    "name": "La petite sorcière et le feu inextinguible - Tome VI"
+  },
+  "TheLittleWitchAndTheUndyingFireVII": {
+    "name": "La petite sorcière et le feu inextinguible - Tome VII"
+  },
+  "TheFelineFirmI": {
+    "name": "La firme féline - Tome I"
+  },
+  "TheFelineFirmII": {
+    "name": "La firme féline - Tome II"
+  },
+  "TheFelineFirmIII": {
+    "name": "La firme féline - Tome III"
+  },
+  "TheFelineFirmIV": {
+    "name": "La firme féline - Tome IV"
+  },
+  "TheFelineFirmV": {
+    "name": "La firme féline - Tome V"
+  },
+  "TheFelineFirmVI": {
+    "name": "La firme féline - Tome VI"
+  },
+  "TheFelineFirmVII": {
+    "name": "La firme féline - Tome VII"
+  },
+  "TheFelineFirmVIII": {
+    "name": "La firme féline - Tome VIII"
   },
   "TearsAmongTheStars": {
     "name": "Larme parmi les étoiles"
@@ -11072,6 +11189,9 @@
   "ExaltedEarth": {
     "name": "Terre suprême"
   },
+  "CamAndCablesOfLaw": {
+    "name": "Pièce d'alignement"
+  },
   "FalconsDance": {
     "name": "Danse du faucon"
   },
@@ -11804,6 +11924,21 @@
   "TravelNotesTheRealmsRocked": {
     "name": "PB - Rock-athon"
   },
+  "ClorindeRoleplay": {
+    "name": "Clorinde - Jeu de rôle"
+  },
+  "SigewinneTreatment": {
+    "name": "Sigewinne - Traitement"
+  },
+  "SethosBaFragment": {
+    "name": "Sethos - Fragment de Ba"
+  },
+  "AchievementPoeticPages": {
+    "name": "Succès - Poésie"
+  },
+  "TravelNotesSimulnation": {
+    "name": "PB - Simulnation"
+  },
   "AnemoculusResonanceStone": {
     "name": "Pierre de résonance Anémoculus"
   },
@@ -12236,6 +12371,21 @@
   "ObligingLittleYuegui": {
     "name": "Petit Yuegui obligeant"
   },
+  "UpbeatEncouragement": {
+    "name": "Encouragement joyeux"
+  },
+  "ElegantCountenance": {
+    "name": "Apparence élégante"
+  },
+  "ReadyForBattle": {
+    "name": "Préparatif de combat"
+  },
+  "SolemnCountenance": {
+    "name": "Apparence solennelle"
+  },
+  "LeisureTime": {
+    "name": "Moment de repos"
+  },
   "RhodeiaOfLoch": {
     "name": "Océanide - Rhodeia"
   },
@@ -12292,6 +12442,18 @@
   },
   "EmperorOfFireAndIron": {
     "name": "Empereur du feu ferreux"
+  },
+  "AllDevouringNarwhal": {
+    "name": "Narval stellavore"
+  },
+  "ConsecratedScorpion": {
+    "name": "Scorpion sacralisé"
+  },
+  "ConsecratedFlyingSerpent": {
+    "name": "Serpent volant sacralisé"
+  },
+  "GuardianOfApepsOasis": {
+    "name": "Garde de l'oasis d'Apep"
   },
   "UndividedHeart": {
     "name": "Cœur indivisible"
@@ -12542,6 +12704,33 @@
   "MoltenMail": {
     "name": "Armure incandescente"
   },
+  "TerrorForTheEvildoers": {
+    "name": "Terreur pour les malfaiteurs"
+  },
+  "HearMeLetUsRaiseTheChaliceOfLove": {
+    "name": "« Entends-moi, et levons les coupes de l'amour ! »"
+  },
+  "RockinInAFlamingWorld": {
+    "name": "Rock infernal"
+  },
+  "DecorousHarmony": {
+    "name": "Harmonie esthétique"
+  },
+  "TheArtOfBudgeting": {
+    "name": "Finesse d'un financier"
+  },
+  "LightlessFeeding": {
+    "name": "Prédation ténébreuse"
+  },
+  "FatalFulmination": {
+    "name": "Fulmination fatale"
+  },
+  "DeathlyCyclone": {
+    "name": "Cyclone hurlant"
+  },
+  "AThousandYoung": {
+    "name": "Millier de descendances"
+  },
   "MagicGuide": {
     "name": "Guide de magie"
   },
@@ -12764,6 +12953,27 @@
   "AmethystCrown": {
     "name": "Couronne d'améthyste"
   },
+  "CashflowSupervision": {
+    "name": "Supervision de trésorerie"
+  },
+  "EndOfTheLine": {
+    "name": "Chalutier"
+  },
+  "ForestRegalia": {
+    "name": "Apparat de la forêt"
+  },
+  "SplendorOfTranquilWaters": {
+    "name": "Splendeur des eaux calmes"
+  },
+  "MarechausseeHunter": {
+    "name": "Chasseur de la Maréchaussée"
+  },
+  "GoldenTroupe": {
+    "name": "Troupe dorée"
+  },
+  "FlowerOfParadiseLost": {
+    "name": "Fleur du paradis perdu"
+  },
   "LiyueHarborWharf": {
     "name": "Quai du Port de Liyue"
   },
@@ -12898,6 +13108,15 @@
   },
   "TheWhiteGloveAndTheFisherman": {
     "name": "Le gant blanc et le pêcheur"
+  },
+  "TheMausoleumOfKingDeshret": {
+    "name": "Mausolée du roi Deshret"
+  },
+  "CentralLaboratoryRuins": {
+    "name": "Ruines du Laboratoire central"
+  },
+  "SirArthur": {
+    "name": "Monsieur Arthur"
   },
   "ElementalResonanceWovenIce": {
     "name": "Résonance élémentaire : Glace tissée"
@@ -13066,6 +13285,15 @@
   },
   "UnderwaterTreasureHunt": {
     "name": "Chasse au trésor sous-marine"
+  },
+  "ViciousAncientBattle": {
+    "name": "Ancienne bataille féroce"
+  },
+  "WaterAndJustice": {
+    "name": "Eau et justice"
+  },
+  "CountdownToTheShow3": {
+    "name": "Spectacle imminent : 3"
   },
   "Origin": {
     "name": "Origine"
@@ -14155,6 +14383,9 @@
   },
   "FontainianCarpetFairAndSquare": {
     "name": "Tapis fontainois « Carré et droit »"
+  },
+  "FadingAfterglow": {
+    "name": "« Lueur qui s'estompe »"
   },
   "TrustyPortableLamp": {
     "name": "Lanterne constamment allumée"
@@ -15527,6 +15758,9 @@
   "BoxingTargetOfTheForbiddenFortress": {
     "name": "« Pattes d'ours de la Forteresse interdite »"
   },
+  "ImprovedCrococannon": {
+    "name": "Crococanon amélioré"
+  },
   "PottedPlantVerdantVastness": {
     "name": "Plante en pot « Immensité verdoyante »"
   },
@@ -15920,6 +16154,9 @@
   "CrystallineGlory": {
     "name": "Gloire cristalline"
   },
+  "MusicTownsBreezeBellsCheepingFinches": {
+    "name": "Carillons du village musical « Passereau gazouillant »"
+  },
   "BookshelfFreeReading": {
     "name": "Présentoir à livres « Lecture libre »"
   },
@@ -15958,6 +16195,9 @@
   },
   "MallowWoodMailboxStorage": {
     "name": "Boîte aux lettres « Rangement » en bois d'hibiscus"
+  },
+  "ModelContraptionStandardMusicalMode": {
+    "name": "Engin modèle « Mode musical standard »"
   },
   "WeatheredBambooFence": {
     "name": "Clôture en bambou usagé"
@@ -16147,5 +16387,8 @@
   },
   "SwordBearingStatueEternalWatch": {
     "name": "Statue tenant une épée « Garde éternelle »"
+  },
+  "SwordBearingStatueAestheticsOfIncompleteness": {
+    "name": "Statue tenant une épée « Esthétique de l'incomplétude »"
   }
 }

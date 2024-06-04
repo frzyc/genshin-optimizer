@@ -1,0 +1,24 @@
+{
+  "name": "Absolution",
+  "description": {
+    "0": "Pedang tajam yang pernah digunakan oleh penipu yang merelakan semuanya. Dulu, senjata ini utamanya digunakan untuk menyamar saat hendak beraktivitas."
+  },
+  "passiveName": "Deathly Pact",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>20%</cryo> CRIT DMG. Saat nilai Bond of Life meningkat, DMG Karakter yang mengenakan meningkat <cryo>16%</cryo>. Efek ini berlangsung selama 6 detik dan dapat ditumpuk sampai 3 lapis."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>25%</cryo> CRIT DMG. Saat nilai Bond of Life meningkat, DMG Karakter yang mengenakan meningkat <cryo>20%</cryo>. Efek ini berlangsung selama 6 detik dan dapat ditumpuk sampai 3 lapis."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>30%</cryo> CRIT DMG. Saat nilai Bond of Life meningkat, DMG Karakter yang mengenakan meningkat <cryo>24%</cryo>. Efek ini berlangsung selama 6 detik dan dapat ditumpuk sampai 3 lapis."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>35%</cryo> CRIT DMG. Saat nilai Bond of Life meningkat, DMG Karakter yang mengenakan meningkat <cryo>28%</cryo>. Efek ini berlangsung selama 6 detik dan dapat ditumpuk sampai 3 lapis."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>40%</cryo> CRIT DMG. Saat nilai Bond of Life meningkat, DMG Karakter yang mengenakan meningkat <cryo>32%</cryo>. Efek ini berlangsung selama 6 detik dan dapat ditumpuk sampai 3 lapis."
+    }
+  }
+}

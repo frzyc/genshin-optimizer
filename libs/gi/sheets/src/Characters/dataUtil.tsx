@@ -133,9 +133,10 @@ export function dmgNode(
     | 'skill'
     | 'burst',
   additional: Data = {},
-  specialMultiplier?: NumNode
+  specialMultiplier?: NumNode,
+  overrideTalentType?: 'skill' | 'burst' | 'auto'
 ): NumNode {
-  const talentType = getTalentType(move)
+  const talentType = overrideTalentType ?? getTalentType(move)
   return customDmgNode(
     prod(
       subscript(input.total[`${talentType}Index`], lvlMultiplier, {

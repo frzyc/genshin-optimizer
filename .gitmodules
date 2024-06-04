@@ -2,6 +2,7 @@
 	path = libs/gi/dm/GenshinData
 	url = https://gitlab.com/Dimbreath/AnimeGameData.git
 	shallow = true
+	branch = master
 [submodule "libs/sr/dm/StarRailData"]
 	path = libs/sr/dm/StarRailData
 	url = https://github.com/Dimbreath/StarRailData.git

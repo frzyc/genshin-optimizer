@@ -14,6 +14,7 @@ import Charlotte from './Charlotte'
 import Chevreuse from './Chevreuse'
 import Chiori from './Chiori'
 import Chongyun from './Chongyun'
+import Clorinde from './Clorinde'
 import Collei from './Collei'
 import Cyno from './Cyno'
 import Dehya from './Dehya'
@@ -58,6 +59,7 @@ import Razor from './Razor'
 import Rosaria from './Rosaria'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
+import Sethos from './Sethos'
 import Shenhe from './Shenhe'
 import ShikanoinHeizou from './ShikanoinHeizou'
 import Somnia from './Somnia'
@@ -104,6 +106,7 @@ const data = {
   Chevreuse,
   Chiori,
   Chongyun,
+  Clorinde,
   Collei,
   Cyno,
   Dehya,
@@ -148,6 +151,7 @@ const data = {
   Rosaria,
   SangonomiyaKokomi,
   Sayu,
+  Sethos,
   Shenhe,
   ShikanoinHeizou,
   Somnia,

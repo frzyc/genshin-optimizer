@@ -25,6 +25,7 @@
   "members_other": "{{count}} Members",
   "times_one": "{{count}} Time",
   "times_other": "{{count}} Times",
+  "level": "Level {{count}}",
   "afterDefeatEnemy": "After defeating an opponent",
   "hitOp": {
     "none": "After hitting an opponent",
@@ -51,7 +52,8 @@
     "self": "After being hit by an opponent"
   },
   "teamHitOp": {
-    "geo": "After nearby party members deal <geo>Geo DMG</geo>"
+    "geo": "After nearby party members deal <geo>Geo DMG</geo>",
+    "electroReaction": "After nearby party members trigger an <electro>Electro-related reaction</electro>"
   },
   "afterUse": {
     "skill": "After using Elemental Skill",
@@ -193,5 +195,11 @@
   "otherHpChange": "After a teammate's HP changes",
   "afterHeal": "After being healed",
   "afterOverflow": "Healing has overflowed",
-  "currentBond": "Current Life Bond percentage"
+  "afterPerformHeal": "After performing healing",
+  "bond": {
+    "current": "Current Life Bond percentage",
+    "changes": "After the value of a Bond of Life increases or decreases",
+    "increases": "After the value of a Bond of Life increases",
+    "percentOf": "% of Bond of Life"
+  }
 }

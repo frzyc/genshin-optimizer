@@ -194,6 +194,9 @@
   "IridescenceTourTickets": {
     "name": "「イリデッセンスツアーチケット」"
   },
+  "AnalysisProgress": {
+    "name": "分析進捗"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -205,6 +208,9 @@
   },
   "RealmCurrency": {
     "name": "洞天宝銭"
+  },
+  "ToyMedal": {
+    "name": "おもちゃの勲章"
   },
   "OriginalEssenceInvalidated": {
     "name": "天然琥珀（廃棄）"
@@ -524,8 +530,17 @@
   "Chiori": {
     "name": "千織"
   },
+  "Sigewinne": {
+    "name": "シグウィン"
+  },
   "Arlecchino": {
     "name": "アルレッキーノ"
+  },
+  "Sethos": {
+    "name": "セトス"
+  },
+  "Clorinde": {
+    "name": "クロリンデ"
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "神里綾華の星屑"
@@ -770,8 +785,17 @@
   "ChiorisStellaFortuna": {
     "name": "千織の星屑"
   },
+  "SigewinnesStellaFortuna": {
+    "name": "シグウィンの星屑"
+  },
   "ArlecchinosStellaFortuna": {
     "name": "アルレッキーノの星屑"
+  },
+  "SethossStellaFortuna": {
+    "name": "セトスの星屑"
+  },
+  "ClorindesStellaFortuna": {
+    "name": "クロリンデの星屑"
   },
   "GnosticHymnOldNotes": {
     "name": "天空紀行·原稿"
@@ -6938,8 +6962,26 @@
   "DeliciousBulleSouffle": {
     "name": "美味しそうなバブルスフレ"
   },
+  "WellBalancedMeal": {
+    "name": "栄養たっぷりバランス食"
+  },
   "HearthfiresTrail": {
     "name": "炉火の昔語り"
+  },
+  "SuspiciousBulleSauceDuckBreast": {
+    "name": "微妙な鴨胸肉のオレンジソースソテー"
+  },
+  "BulleSauceDuckBreast": {
+    "name": "鴨胸肉のオレンジソースソテー"
+  },
+  "DeliciousBulleSauceDuckBreast": {
+    "name": "美味しそうな鴨胸肉のオレンジソースソテー"
+  },
+  "TaggedAndBagged": {
+    "name": "「狩りの収穫」"
+  },
+  "SuperDeeDuperDeliciousMeatRoll": {
+    "name": "ウマウマシャワルマサンド"
   },
   "RecipeItem": {
     "name": "レシピアイテム"
@@ -7519,6 +7561,9 @@
   },
   "RecipeBulleSouffle": {
     "name": "レシピ：バブルスフレ"
+  },
+  "RecipeBulleSauceDuckBreast": {
+    "name": "レシピ：鴨胸肉のオレンジソースソテー"
   },
   "CraftedItems": {
     "name": "合成産物"
@@ -10241,6 +10286,12 @@
   "FelixFelicium": {
     "name": "「幸運の祝福」"
   },
+  "ConcentratedTransoceanicPearl": {
+    "name": "濃縮された異海の露"
+  },
+  "TaintedHydroPhantasmExtract": {
+    "name": "濁水幻霊の抽出物"
+  },
   "ShikanoinHeizousMessage": {
     "name": "鹿野院平蔵のメッセージ"
   },
@@ -10283,11 +10334,26 @@
   "DamagedScore": {
     "name": "破損した楽譜"
   },
+  "CriminalsTestimony": {
+    "name": "犯罪者の供述"
+  },
+  "RawatsNotes": {
+    "name": "ラワットのノート"
+  },
+  "GroupPhotoFromAnUnknownTime": {
+    "name": "いつの間にか撮られていた集合写真"
+  },
   "RuggierosNotesII": {
     "name": "ルッジェロのノート·2"
   },
   "PagesFromALostScoreII": {
     "name": "失われた譜面の断片·2"
+  },
+  "TreasureMapWithTheVaultsLocation": {
+    "name": "宝物の在処を示す「宝の地図」"
+  },
+  "MarechausseeHunterJudgmentDayCharacterAlbum": {
+    "name": "『ファントムハンター：審判の時』キャラクター記念アルバム"
   },
   "AncientEngravings": {
     "name": "古き碑文"
@@ -10318,6 +10384,57 @@
   },
   "AncientPieceOfPaper": {
     "name": "古い紙切れ"
+  },
+  "ProductionLog": {
+    "name": "生産日誌"
+  },
+  "ExperimentLog": {
+    "name": "実験日誌"
+  },
+  "TheLittleWitchAndTheUndyingFireI": {
+    "name": "小さな魔女と消えない炎·1"
+  },
+  "TheLittleWitchAndTheUndyingFireII": {
+    "name": "小さな魔女と消えない炎·2"
+  },
+  "TheLittleWitchAndTheUndyingFireIII": {
+    "name": "小さな魔女と消えない炎·3"
+  },
+  "TheLittleWitchAndTheUndyingFireIV": {
+    "name": "小さな魔女と消えない炎·4"
+  },
+  "TheLittleWitchAndTheUndyingFireV": {
+    "name": "小さな魔女と消えない炎·5"
+  },
+  "TheLittleWitchAndTheUndyingFireVI": {
+    "name": "小さな魔女と消えない炎·6"
+  },
+  "TheLittleWitchAndTheUndyingFireVII": {
+    "name": "小さな魔女と消えない炎·7"
+  },
+  "TheFelineFirmI": {
+    "name": "ニャンコ事務所·1"
+  },
+  "TheFelineFirmII": {
+    "name": "ニャンコ事務所·2"
+  },
+  "TheFelineFirmIII": {
+    "name": "ニャンコ事務所·3"
+  },
+  "TheFelineFirmIV": {
+    "name": "ニャンコ事務所·4"
+  },
+  "TheFelineFirmV": {
+    "name": "ニャンコ事務所·5"
+  },
+  "TheFelineFirmVI": {
+    "name": "ニャンコ事務所·6"
+  },
+  "TheFelineFirmVII": {
+    "name": "ニャンコ事務所·7"
+  },
+  "TheFelineFirmVIII": {
+    "name": "ニャンコ事務所·8"
   },
   "TearsAmongTheStars": {
     "name": "星間の涙"
@@ -11072,6 +11189,9 @@
   "ExaltedEarth": {
     "name": "「大地の王」"
   },
+  "CamAndCablesOfLaw": {
+    "name": "衡儀機枢"
+  },
   "FalconsDance": {
     "name": "鷹の舞"
   },
@@ -11804,6 +11924,21 @@
   "TravelNotesTheRealmsRocked": {
     "name": "紀行·邦魂"
   },
+  "ClorindeRoleplay": {
+    "name": "クロリンデ·ロールプレイ"
+  },
+  "SigewinneTreatment": {
+    "name": "シグウィン·治療法"
+  },
+  "SethosBaFragment": {
+    "name": "セトス·跋霊"
+  },
+  "AchievementPoeticPages": {
+    "name": "アチーブメント·詩のページ"
+  },
+  "TravelNotesSimulnation": {
+    "name": "紀行·演習"
+  },
   "AnemoculusResonanceStone": {
     "name": "風神の瞳の共鳴石"
   },
@@ -12236,6 +12371,21 @@
   "ObligingLittleYuegui": {
     "name": "諸人救済小月桂"
   },
+  "UpbeatEncouragement": {
+    "name": "歓欣鼓舞"
+  },
+  "ElegantCountenance": {
+    "name": "優雅な立ち姿"
+  },
+  "ReadyForBattle": {
+    "name": "臨戦態勢"
+  },
+  "SolemnCountenance": {
+    "name": "荘厳な立ち姿"
+  },
+  "LeisureTime": {
+    "name": "穏やかな時間"
+  },
   "RhodeiaOfLoch": {
     "name": "純水精霊·ローデシア"
   },
@@ -12292,6 +12442,18 @@
   },
   "EmperorOfFireAndIron": {
     "name": "鉄甲熔炎帝王"
+  },
+  "AllDevouringNarwhal": {
+    "name": "呑星の鯨"
+  },
+  "ConsecratedScorpion": {
+    "name": "聖骸サソリ"
+  },
+  "ConsecratedFlyingSerpent": {
+    "name": "聖骸トビヘビ"
+  },
+  "GuardianOfApepsOasis": {
+    "name": "アペプのオアシス守護者"
   },
   "UndividedHeart": {
     "name": "唯一の心"
@@ -12542,6 +12704,33 @@
   "MoltenMail": {
     "name": "熔炎鉄甲"
   },
+  "TerrorForTheEvildoers": {
+    "name": "悪を為す者に恐れを"
+  },
+  "HearMeLetUsRaiseTheChaliceOfLove": {
+    "name": "「僕の歌を聴きたまえ——さあ 愛の杯を掲げよう！」"
+  },
+  "RockinInAFlamingWorld": {
+    "name": "地獄のシェーク"
+  },
+  "DecorousHarmony": {
+    "name": "荘諧併持"
+  },
+  "TheArtOfBudgeting": {
+    "name": "積算士の技巧"
+  },
+  "LightlessFeeding": {
+    "name": "光無き鯨の呑噬"
+  },
+  "FatalFulmination": {
+    "name": "死雷凝集"
+  },
+  "DeathlyCyclone": {
+    "name": "死風咆哮"
+  },
+  "AThousandYoung": {
+    "name": "幾千万の子孫"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -12764,6 +12953,27 @@
   "AmethystCrown": {
     "name": "紫晶の花冠"
   },
+  "CashflowSupervision": {
+    "name": "凛流の監視者"
+  },
+  "EndOfTheLine": {
+    "name": "竭沢"
+  },
+  "ForestRegalia": {
+    "name": "森林のレガリア"
+  },
+  "SplendorOfTranquilWaters": {
+    "name": "静水流転の輝き"
+  },
+  "MarechausseeHunter": {
+    "name": "ファントムハンター"
+  },
+  "GoldenTroupe": {
+    "name": "黄金の劇団"
+  },
+  "FlowerOfParadiseLost": {
+    "name": "楽園の絶花"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -12898,6 +13108,15 @@
   },
   "TheWhiteGloveAndTheFisherman": {
     "name": "白手袋と漁師"
+  },
+  "TheMausoleumOfKingDeshret": {
+    "name": "キングデシェレトの霊廟"
+  },
+  "CentralLaboratoryRuins": {
+    "name": "中央実験室跡地"
+  },
+  "SirArthur": {
+    "name": "サー·アーサー"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交錯の氷"
@@ -13065,7 +13284,16 @@
     "name": "可制御性無害化型指向性爆発"
   },
   "UnderwaterTreasureHunt": {
-    "name": "海底の宝探し"
+    "name": "海中の宝探し"
+  },
+  "ViciousAncientBattle": {
+    "name": "往日の激戦"
+  },
+  "WaterAndJustice": {
+    "name": "水と正義"
+  },
+  "CountdownToTheShow3": {
+    "name": "トリックカウントダウン：3"
   },
   "Origin": {
     "name": "原初"
@@ -14155,6 +14383,9 @@
   },
   "FontainianCarpetFairAndSquare": {
     "name": "フォンテーヌのカーペット-「公平方正」"
+  },
+  "FadingAfterglow": {
+    "name": "「褪せゆく残光」"
   },
   "TrustyPortableLamp": {
     "name": "光り続く提灯"
@@ -15527,6 +15758,9 @@
   "BoxingTargetOfTheForbiddenFortress": {
     "name": "「禁戒の砦のミット」"
   },
+  "ImprovedCrococannon": {
+    "name": "「改良版ワニワニバンバンキャノン」"
+  },
   "PottedPlantVerdantVastness": {
     "name": "盆栽-「翠色の縮図」"
   },
@@ -15920,6 +16154,9 @@
   "CrystallineGlory": {
     "name": "「きらめく栄光」"
   },
+  "MusicTownsBreezeBellsCheepingFinches": {
+    "name": "音楽の町の風鈴-「さえずり」"
+  },
   "BookshelfFreeReading": {
     "name": "ブックラック-「ご自由にお読みください」"
   },
@@ -15958,6 +16195,9 @@
   },
   "MallowWoodMailboxStorage": {
     "name": "マロウ材の郵便ポスト「物入れ」"
+  },
+  "ModelContraptionStandardMusicalMode": {
+    "name": "マシナリー模型-「標準旋法」"
   },
   "WeatheredBambooFence": {
     "name": "長い年月を経た竹の柵"
@@ -16147,5 +16387,8 @@
   },
   "SwordBearingStatueEternalWatch": {
     "name": "剣を持つ石像-「永遠の護り」"
+  },
+  "SwordBearingStatueAestheticsOfIncompleteness": {
+    "name": "剣を持つ石像-「不完全の美学」"
   }
 }

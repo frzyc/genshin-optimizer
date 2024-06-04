@@ -1,0 +1,24 @@
+{
+  "name": "Nimbus-forgé",
+  "description": {
+    "0": "Un prototype d'arme standard que Yuheng a commandé à la Forge de Rochenoire après avoir analysé les mécanismes qui protégeaient les demeures des Adeptes sur les Monts Tianheng."
+  },
+  "passiveName": "Carré de roche",
+  "passiveDescription": {
+    "0": {
+      "0": "La maîtrise élémentaire du personnage équipé de l'arme augmente de <cryo>40</cryo> pts pendant 18 s lorsque son énergie élémentaire a diminué. Cet effet peut être cumulé 2 fois maximum."
+    },
+    "1": {
+      "0": "La maîtrise élémentaire du personnage équipé de l'arme augmente de <cryo>50</cryo> pts pendant 18 s lorsque son énergie élémentaire a diminué. Cet effet peut être cumulé 2 fois maximum."
+    },
+    "2": {
+      "0": "La maîtrise élémentaire du personnage équipé de l'arme augmente de <cryo>60</cryo> pts pendant 18 s lorsque son énergie élémentaire a diminué. Cet effet peut être cumulé 2 fois maximum."
+    },
+    "3": {
+      "0": "La maîtrise élémentaire du personnage équipé de l'arme augmente de <cryo>70</cryo> pts pendant 18 s lorsque son énergie élémentaire a diminué. Cet effet peut être cumulé 2 fois maximum."
+    },
+    "4": {
+      "0": "La maîtrise élémentaire du personnage équipé de l'arme augmente de <cryo>80</cryo> pts pendant 18 s lorsque son énergie élémentaire a diminué. Cet effet peut être cumulé 2 fois maximum."
+    }
+  }
+}

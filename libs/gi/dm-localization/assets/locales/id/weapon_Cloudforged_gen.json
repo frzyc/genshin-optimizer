@@ -1,0 +1,24 @@
+{
+  "name": "Cloudforged",
+  "description": {
+    "0": "Sebuah senjata prototipe standar yang dipesan oleh Yuheng dari Blackcliff Forge setelah menganalisis mekanisme kuno yang melindungi tempat tinggal para Adeptus di Mt. Tianheng."
+  },
+  "passiveName": "Crag-Chiseled Forge",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Energy berkurang, Elemental Mastery Karakter yang mengenakan meningkat <cryo>40</cryo> poin. Efek ini berlangsung selama 18 detik dan dapat ditumpuk sampai 2 lapis."
+    },
+    "1": {
+      "0": "Setelah Energy berkurang, Elemental Mastery Karakter yang mengenakan meningkat <cryo>50</cryo> poin. Efek ini berlangsung selama 18 detik dan dapat ditumpuk sampai 2 lapis."
+    },
+    "2": {
+      "0": "Setelah Energy berkurang, Elemental Mastery Karakter yang mengenakan meningkat <cryo>60</cryo> poin. Efek ini berlangsung selama 18 detik dan dapat ditumpuk sampai 2 lapis."
+    },
+    "3": {
+      "0": "Setelah Energy berkurang, Elemental Mastery Karakter yang mengenakan meningkat <cryo>70</cryo> poin. Efek ini berlangsung selama 18 detik dan dapat ditumpuk sampai 2 lapis."
+    },
+    "4": {
+      "0": "Setelah Energy berkurang, Elemental Mastery Karakter yang mengenakan meningkat <cryo>80</cryo> poin. Efek ini berlangsung selama 18 detik dan dapat ditumpuk sampai 2 lapis."
+    }
+  }
+}

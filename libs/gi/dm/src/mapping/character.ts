@@ -147,6 +147,8 @@ export const characterIdMap: Record<
   10000093: 'Xianyun',
   10000094: 'Chiori',
   10000096: 'Arlecchino',
+  10000097: 'Sethos',
+  10000098: 'Clorinde',
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",

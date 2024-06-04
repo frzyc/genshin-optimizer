@@ -41,7 +41,7 @@
   "skill": {
     "name": "Bénédiction flamboyante",
     "description": {
-      "0": "Thomas utilise la pointe de sa lance comme point d'appui pour canaliser les flammes et effectuer un coup de pied qui inflige des <pyro>DGT Pyro de zone</pyro> et libère une barrière défensive brûlante. Au moment où elle se déclenche, la barrière applique <pyro>l'élément Pyro</pyro> à Thomas.",
+      "0": "Thomas utilise la pointe de sa lance comme point d'appui pour canaliser les flammes et effectuer un coup de pied qui inflige des <pyro>DGT Pyro de zone</pyro> et libère une barrière défensive brûlante. Au moment où elle se déclenche, la barrière applique l'<pyro>élément Pyro</pyro> à Thomas.",
       "1": "L'absorption de DGT de la barrière est fonction des PV max de Thomas.",
       "2": "La barrière brûlante possède les caractéristiques suivantes :",
       "3": [

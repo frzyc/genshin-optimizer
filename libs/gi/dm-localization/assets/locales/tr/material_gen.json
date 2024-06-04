@@ -194,6 +194,9 @@
   "IridescenceTourTickets": {
     "name": "Parıldayan Turne Bileti"
   },
+  "AnalysisProgress": {
+    "name": "Analiz İlerlemesi"
+  },
   "Primogem": {
     "name": "Köken Taşı"
   },
@@ -205,6 +208,9 @@
   },
   "RealmCurrency": {
     "name": "Çaydanlık Parası"
+  },
+  "ToyMedal": {
+    "name": "Oyuncak Madalya"
   },
   "OriginalEssenceInvalidated": {
     "name": ""
@@ -524,8 +530,17 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Sigewinne": {
+    "name": "Sigewinne"
+  },
   "Arlecchino": {
     "name": "Arlecchino"
+  },
+  "Sethos": {
+    "name": "Sethos"
+  },
+  "Clorinde": {
+    "name": "Clorinde"
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka'nın Yaşam Yıldızı"
@@ -770,8 +785,17 @@
   "ChiorisStellaFortuna": {
     "name": "Chiori'nin Yaşam Yıldızı"
   },
+  "SigewinnesStellaFortuna": {
+    "name": "Sigewinne'in Yaşam Yıldızı"
+  },
   "ArlecchinosStellaFortuna": {
     "name": "Arlecchino'nun Yaşam Yıldızı"
+  },
+  "SethossStellaFortuna": {
+    "name": "Sethos'un Yaşam Yıldızı"
+  },
+  "ClorindesStellaFortuna": {
+    "name": "Clorinde'in Yaşam Yıldızı"
   },
   "GnosticHymnOldNotes": {
     "name": "Aydınlanma Şarkısı - Eski Notalar"
@@ -6938,8 +6962,26 @@
   "DeliciousBulleSouffle": {
     "name": "Bulle Meyveli Sufle (Lezzetli)"
   },
+  "WellBalancedMeal": {
+    "name": "Dengeli Öğün"
+  },
   "HearthfiresTrail": {
     "name": "Alev İzleri"
+  },
+  "SuspiciousBulleSauceDuckBreast": {
+    "name": "Bulle Soslu Ördek Göğsü (Tuhaf)"
+  },
+  "BulleSauceDuckBreast": {
+    "name": "Bulle Soslu Ördek Göğsü"
+  },
+  "DeliciousBulleSauceDuckBreast": {
+    "name": "Bulle Soslu Ördek Göğsü (Lezzetli)"
+  },
+  "TaggedAndBagged": {
+    "name": "\"Gözaltı\""
+  },
+  "SuperDeeDuperDeliciousMeatRoll": {
+    "name": "Fevkaladenin Fevki Et Dürüm"
   },
   "RecipeItem": {
     "name": "Yemek Malzemesi"
@@ -7519,6 +7561,9 @@
   },
   "RecipeBulleSouffle": {
     "name": "Tarif: Bulle Meyveli Sufle"
+  },
+  "RecipeBulleSauceDuckBreast": {
+    "name": "Tarif: Bulle Soslu Ördek Göğsü"
   },
   "CraftedItems": {
     "name": "Üretilen Malzemeler"
@@ -10241,6 +10286,12 @@
   "FelixFelicium": {
     "name": "İyi Şanslar"
   },
+  "ConcentratedTransoceanicPearl": {
+    "name": "Okyanus Ötesi İncisi Konsantresi"
+  },
+  "TaintedHydroPhantasmExtract": {
+    "name": "Lekeli Su Tayfı Özütü"
+  },
   "ShikanoinHeizousMessage": {
     "name": "Shikanoin Heizou'nun Mesajı"
   },
@@ -10283,11 +10334,26 @@
   "DamagedScore": {
     "name": "Hasarlı Beste"
   },
+  "CriminalsTestimony": {
+    "name": "Suçluların İfadeleri"
+  },
+  "RawatsNotes": {
+    "name": "Rawat'ın Notları"
+  },
+  "GroupPhotoFromAnUnknownTime": {
+    "name": "Bilinmeyen Bir Zamandan Grup Fotoğrafı"
+  },
   "RuggierosNotesII": {
     "name": "Ruggiero'nun Notları (II)"
   },
   "PagesFromALostScoreII": {
     "name": "Kayıp Bestenin Sayfaları (II)"
+  },
+  "TreasureMapWithTheVaultsLocation": {
+    "name": "Kasanın Yerini Gösteren \"Hazine Haritası\""
+  },
+  "MarechausseeHunterJudgmentDayCharacterAlbum": {
+    "name": "\"Mareşose Avcısı: Kıyamet Günü\" Karakter Albümü"
   },
   "AncientEngravings": {
     "name": "Kadim Yazıtlar"
@@ -10318,6 +10384,57 @@
   },
   "AncientPieceOfPaper": {
     "name": "Eski Bir Kağıt Parçası"
+  },
+  "ProductionLog": {
+    "name": "Üretim Günlüğü"
+  },
+  "ExperimentLog": {
+    "name": "Deney Günlüğü"
+  },
+  "TheLittleWitchAndTheUndyingFireI": {
+    "name": "Küçük Cadı ve Sönmeyen Ateş (I)"
+  },
+  "TheLittleWitchAndTheUndyingFireII": {
+    "name": "Küçük Cadı ve Sönmeyen Ateş (II)"
+  },
+  "TheLittleWitchAndTheUndyingFireIII": {
+    "name": "Küçük Cadı ve Sönmeyen Ateş (III)"
+  },
+  "TheLittleWitchAndTheUndyingFireIV": {
+    "name": "Küçük Cadı ve Sönmeyen Ateş (IV)"
+  },
+  "TheLittleWitchAndTheUndyingFireV": {
+    "name": "Küçük Cadı ve Sönmeyen Ateş (V)"
+  },
+  "TheLittleWitchAndTheUndyingFireVI": {
+    "name": "Küçük Cadı ve Sönmeyen Ateş (VI)"
+  },
+  "TheLittleWitchAndTheUndyingFireVII": {
+    "name": "Küçük Cadı ve Sönmeyen Ateş (VII)"
+  },
+  "TheFelineFirmI": {
+    "name": "Kedi Ofisi (I)"
+  },
+  "TheFelineFirmII": {
+    "name": "Kedi Ofisi (II)"
+  },
+  "TheFelineFirmIII": {
+    "name": "Kedi Ofisi (III)"
+  },
+  "TheFelineFirmIV": {
+    "name": "Kedi Ofisi (IV)"
+  },
+  "TheFelineFirmV": {
+    "name": "Kedi Ofisi (V)"
+  },
+  "TheFelineFirmVI": {
+    "name": "Kedi Ofisi (VI)"
+  },
+  "TheFelineFirmVII": {
+    "name": "Kedi Ofisi (VII)"
+  },
+  "TheFelineFirmVIII": {
+    "name": "Kedi Ofisi (VIII)"
   },
   "TearsAmongTheStars": {
     "name": "Yıldızlar Arasındaki Gözyaşları"
@@ -11072,6 +11189,9 @@
   "ExaltedEarth": {
     "name": "\"Yüce Toprak\""
   },
+  "CamAndCablesOfLaw": {
+    "name": "Kalibrasyon Parçası"
+  },
   "FalconsDance": {
     "name": "Şahin Dansı"
   },
@@ -11804,6 +11924,21 @@
   "TravelNotesTheRealmsRocked": {
     "name": "Gezi Notları: Rock 'N' Roll Diyarlar"
   },
+  "ClorindeRoleplay": {
+    "name": "Clorinde: Rol Oyunu"
+  },
+  "SigewinneTreatment": {
+    "name": "Sigewinne: Tedavi"
+  },
+  "SethosBaFragment": {
+    "name": "Sethos: Ba Parçası"
+  },
+  "AchievementPoeticPages": {
+    "name": "Başarım: Şairane Sayfalar"
+  },
+  "TravelNotesSimulnation": {
+    "name": "Gezi Notları: Sahne Tozu"
+  },
   "AnemoculusResonanceStone": {
     "name": "Rüzgar Özü Rezonans Taşı"
   },
@@ -12236,6 +12371,21 @@
   "ObligingLittleYuegui": {
     "name": "Yardımcı Minik Yuegui"
   },
+  "UpbeatEncouragement": {
+    "name": "Coşkulu Cesaretlendirme"
+  },
+  "ElegantCountenance": {
+    "name": "Zarif Bir İfade"
+  },
+  "ReadyForBattle": {
+    "name": "Savaşa Hazır"
+  },
+  "SolemnCountenance": {
+    "name": "Ağırbaşlı Bir İfade"
+  },
+  "LeisureTime": {
+    "name": "Dinlenme Zamanı"
+  },
   "RhodeiaOfLoch": {
     "name": "Lochlu Rhodeia"
   },
@@ -12292,6 +12442,18 @@
   },
   "EmperorOfFireAndIron": {
     "name": "Ateş ve Demir İmparatoru"
+  },
+  "AllDevouringNarwhal": {
+    "name": "Yıldız Yutan Narval"
+  },
+  "ConsecratedScorpion": {
+    "name": "Kutsanmış Akrep"
+  },
+  "ConsecratedFlyingSerpent": {
+    "name": "Kutsanmış Uçan Yılan"
+  },
+  "GuardianOfApepsOasis": {
+    "name": "Apep Vahası'nın Muhafızı"
   },
   "UndividedHeart": {
     "name": "Tek Yürek"
@@ -12542,6 +12704,33 @@
   "MoltenMail": {
     "name": "Erimiş Zırh"
   },
+  "TerrorForTheEvildoers": {
+    "name": "Kötülere Eziyet"
+  },
+  "HearMeLetUsRaiseTheChaliceOfLove": {
+    "name": "\"Duyun Sesimi! Aşk Kadehini Kaldıralım!\""
+  },
+  "RockinInAFlamingWorld": {
+    "name": "Alevler İçinde Rock"
+  },
+  "DecorousHarmony": {
+    "name": "Zarif Bir Ahenk"
+  },
+  "TheArtOfBudgeting": {
+    "name": "Bütçe Planlama Sanatı"
+  },
+  "LightlessFeeding": {
+    "name": "Karanlıkta Av"
+  },
+  "FatalFulmination": {
+    "name": "Ölümcül İnfilak"
+  },
+  "DeathlyCyclone": {
+    "name": "Ölüm Kasırgası"
+  },
+  "AThousandYoung": {
+    "name": "Binbir Gençlik"
+  },
   "MagicGuide": {
     "name": "Büyü Rehberi"
   },
@@ -12764,6 +12953,27 @@
   "AmethystCrown": {
     "name": "Ametist Taç"
   },
+  "CashflowSupervision": {
+    "name": "Nakit Akışı İzleyici"
+  },
+  "EndOfTheLine": {
+    "name": "Yolun Sonu"
+  },
+  "ForestRegalia": {
+    "name": "Orman Nişanı"
+  },
+  "SplendorOfTranquilWaters": {
+    "name": "Sakin Suların İhtişamı"
+  },
+  "MarechausseeHunter": {
+    "name": "Mareşose Avcısı"
+  },
+  "GoldenTroupe": {
+    "name": "Altın Kumpanya"
+  },
+  "FlowerOfParadiseLost": {
+    "name": "Kayıp Cennet Çiçeği"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Limanı Rıhtımı"
   },
@@ -12898,6 +13108,15 @@
   },
   "TheWhiteGloveAndTheFisherman": {
     "name": "Beyaz Eldiven ve Balıkçı"
+  },
+  "TheMausoleumOfKingDeshret": {
+    "name": "Kral Deshret'in Anıt Mezarı"
+  },
+  "CentralLaboratoryRuins": {
+    "name": "Merkez Laboratuvar Harabeleri"
+  },
+  "SirArthur": {
+    "name": "Bay Arthur"
   },
   "ElementalResonanceWovenIce": {
     "name": "Element Rezonansı: Örülü Buzlar"
@@ -13066,6 +13285,15 @@
   },
   "UnderwaterTreasureHunt": {
     "name": "Su Altında Hazine Avı"
+  },
+  "ViciousAncientBattle": {
+    "name": "Vahşi Kadim Savaş"
+  },
+  "WaterAndJustice": {
+    "name": "Su ve Adalet"
+  },
+  "CountdownToTheShow3": {
+    "name": "Gösteriye Geri Sayım: 3"
   },
   "Origin": {
     "name": "Köken"
@@ -14155,6 +14383,9 @@
   },
   "FontainianCarpetFairAndSquare": {
     "name": "Fontaine Halısı: \"Doğru ve Dürüst\""
+  },
+  "FadingAfterglow": {
+    "name": "\"Solan Gün Batımı\""
   },
   "TrustyPortableLamp": {
     "name": "Sönmeyen Taşınabilir Lamba"
@@ -15527,6 +15758,9 @@
   "BoxingTargetOfTheForbiddenFortress": {
     "name": "\"Yasak Kalenin Dövüş Hedefi\""
   },
+  "ImprovedCrococannon": {
+    "name": "Gelişmiş Timsah Topu"
+  },
   "PottedPlantVerdantVastness": {
     "name": "Saksı Bitkisi: Sonsuz Yeşillik"
   },
@@ -15920,6 +16154,9 @@
   "CrystallineGlory": {
     "name": "\"Kristal Görkem\""
   },
+  "MusicTownsBreezeBellsCheepingFinches": {
+    "name": "Müzik Şehrinin Rüzgar Çanları: \"Cıvıldayan Serçeler\""
+  },
   "BookshelfFreeReading": {
     "name": "Kitaplık: Serbest Okuma"
   },
@@ -15958,6 +16195,9 @@
   },
   "MallowWoodMailboxStorage": {
     "name": "Çınar Posta Kutusu: \"Depolama\""
+  },
+  "ModelContraptionStandardMusicalMode": {
+    "name": "Düzenek Modeli: Standart Müzik Modu"
   },
   "WeatheredBambooFence": {
     "name": "Eski Bambu Çit"
@@ -16147,5 +16387,8 @@
   },
   "SwordBearingStatueEternalWatch": {
     "name": "Kılıç Tutan Heykel: \"Ebedi Nöbet\""
+  },
+  "SwordBearingStatueAestheticsOfIncompleteness": {
+    "name": "Kılıç Tutan Heykel: \"Tamamlanmamışlığın Güzelliği\""
   }
 }

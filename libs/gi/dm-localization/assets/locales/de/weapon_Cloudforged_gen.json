@@ -1,0 +1,24 @@
+{
+  "name": "Wolkenweber",
+  "description": {
+    "0": "Eine experimentelle Standardwaffe, die nach der eingehenden Analyse der adeptischen Maschinen, die Tianheng einst beschützten, von der Schwarzsteinschmiede im Auftrag vom Yuheng hergestellt wurde."
+  },
+  "passiveName": "Aus Fels wird Werkstatt",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die Elementarkunde des Trägers um <cryo>40</cryo> Punkte, wenn sich dessen Elementarenergie verringert, hält 18 s, 2-fach stapelbar."
+    },
+    "1": {
+      "0": "Erhöht die Elementarkunde des Trägers um <cryo>50</cryo> Punkte, wenn sich dessen Elementarenergie verringert, hält 18 s, 2-fach stapelbar."
+    },
+    "2": {
+      "0": "Erhöht die Elementarkunde des Trägers um <cryo>60</cryo> Punkte, wenn sich dessen Elementarenergie verringert, hält 18 s, 2-fach stapelbar."
+    },
+    "3": {
+      "0": "Erhöht die Elementarkunde des Trägers um <cryo>70</cryo> Punkte, wenn sich dessen Elementarenergie verringert, hält 18 s, 2-fach stapelbar."
+    },
+    "4": {
+      "0": "Erhöht die Elementarkunde des Trägers um <cryo>80</cryo> Punkte, wenn sich dessen Elementarenergie verringert, hält 18 s, 2-fach stapelbar."
+    }
+  }
+}
