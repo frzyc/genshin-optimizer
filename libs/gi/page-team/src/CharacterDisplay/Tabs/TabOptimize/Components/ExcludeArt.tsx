@@ -322,13 +322,9 @@ function ArtifactSelectModal({
   const artifactIds = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
     return (
-      dbDirty &&
-      database.arts.values
-        .filter(filterFunc)
-        .map((art) => art.id)
-        .filter((id) => !artExclusion.includes(id))
+      dbDirty && database.arts.values.filter(filterFunc).map((art) => art.id)
     )
-  }, [dbDirty, database, filterConfigs, filterOption, artExclusion])
+  }, [dbDirty, database, filterConfigs, filterOption])
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
