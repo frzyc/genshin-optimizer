@@ -76,7 +76,6 @@ export function CharacterInventory() {
                   </Grid>
                 ))}
               </Grid>
-
               {characters.length !== charactersInView.length && (
                 <Skeleton
                   ref={(node) => {

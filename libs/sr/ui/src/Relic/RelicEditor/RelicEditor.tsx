@@ -15,13 +15,16 @@ import {
   allRelicSlotKeys,
   relicSlotToMainStatKeys,
 } from '@genshin-optimizer/sr/consts'
+import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import { cachedRelic } from '@genshin-optimizer/sr/db'
 import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr/util'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
+import UpdateIcon from '@mui/icons-material/Update'
 import {
   Alert,
   Box,
@@ -68,10 +71,12 @@ const tempRelicSheet: IRelicSheet = {
 export type RelicEditorProps = {
   relicIdToEdit?: string
   cancelEdit: () => void
+  fixedSlotKey?: RelicSlotKey
 }
 export function RelicEditor({
   relicIdToEdit = 'new',
   cancelEdit,
+  fixedSlotKey,
 }: RelicEditorProps) {
   const { t } = useTranslation('relic')
 
@@ -106,7 +111,37 @@ export function RelicEditor({
     const validated = cachedRelic(relic, relicIdToEdit)
     return validated
   }, [relic, relicIdToEdit])
-  const { rarity = 5, level = 0, slotKey = 'head' } = relic ?? {}
+
+  const {
+    prev,
+    prevEditType,
+  }: {
+    prev: ICachedRelic | undefined
+    prevEditType: 'edit' | 'duplicate' | 'upgrade' | ''
+  } = useMemo(() => {
+    const dbRelic =
+      dirtyDatabase && relicIdToEdit && database.relics.get(relicIdToEdit)
+    if (dbRelic) return { prev: dbRelic, prevEditType: 'edit' }
+    if (relic === undefined) return { prev: undefined, prevEditType: '' }
+    const { duplicated, upgraded } =
+      dirtyDatabase && database.relics.findDups(relic)
+    return {
+      prev: duplicated[0] ?? upgraded[0],
+      prevEditType: duplicated.length !== 0 ? 'duplicate' : 'upgrade',
+    }
+  }, [relic, relicIdToEdit, database, dirtyDatabase])
+
+  const disableEditSlot =
+    (!['new', ''].includes(relicIdToEdit) && !!relic?.location) || // Disable slot for equipped relic
+    !!fixedSlotKey || // Disable slot if its fixed
+    // Disable editing slot of existing relics
+    // TODO: disable slot only for relics that are in a build?
+    (!!relicIdToEdit && relicIdToEdit !== 'new')
+
+  const { rarity = 5, level = 0 } = relic ?? {}
+  const slotKey = useMemo(() => {
+    return relic?.slotKey ?? fixedSlotKey ?? 'head'
+  }, [fixedSlotKey, relic])
   const sheet: IRelicSheet | undefined = relic ? tempRelicSheet : undefined
 
   const update = useCallback(
@@ -130,7 +165,7 @@ export function RelicEditor({
           newSheet.rarity,
           Math.max(...newSheet.rarity) as RelicRarityKey
         )
-        newValue.slotKey = pick(relic?.slotKey, ['hand', 'head'])
+        newValue.slotKey = pick(relic?.slotKey, ['head', 'hand'])
       }
       if (newValue.rarity) newValue.level = relic?.level ?? 0
       if (newValue.level)
@@ -184,6 +219,7 @@ export function RelicEditor({
     [t, relicIdToEdit, relic, setShowEditor, reset]
   )
 
+  const removeId = (relicIdToEdit !== 'new' && relicIdToEdit) || prev?.id
   return (
     <Suspense fallback={false}>
       <ModalWrapper open={showEditor} onClose={onClose}>
@@ -277,7 +313,7 @@ export function RelicEditor({
                     onChange={(e) =>
                       update({ slotKey: e.target.value as RelicSlotKey })
                     }
-                    disabled={!sheet}
+                    disabled={disableEditSlot || !sheet}
                   >
                     {allRelicSlotKeys.map((s) => (
                       <MenuItem key={s} value={s}>
@@ -358,17 +394,64 @@ export function RelicEditor({
               </Alert>
             )}
             <Grid>
-              <Button
-                startIcon={<AddIcon />}
-                onClick={() => {
-                  database.relics.new(relic!)
-                  reset()
-                }}
-                disabled={!relic || !isValid}
-                color="primary"
-              >
-                {t`editor.btnAdd`}
-              </Button>
+              <Box display="flex" gap={2}>
+                {prevEditType === 'edit' ? (
+                  <Button
+                    startIcon={<AddIcon />}
+                    onClick={() => {
+                      relic && database.relics.set(prev!.id, relic)
+                      // TODO: fix after substat verification gets built?
+                      // if (!allowEmpty) {
+                      //   setShowEditor(false)
+                      //   cancelEdit()
+                      // }
+                      reset()
+                    }}
+                    disabled={!relic || !isValid}
+                    color="primary"
+                  >
+                    {t`editor.btnSave`}
+                  </Button>
+                ) : (
+                  <Button
+                    startIcon={<AddIcon />}
+                    onClick={() => {
+                      database.relics.new(relic!)
+                      reset()
+                    }}
+                    disabled={!relic || !isValid}
+                    color="primary"
+                  >
+                    {t`editor.btnAdd`}
+                  </Button>
+                )}
+                {prev && prevEditType !== 'edit' && (
+                  <Button
+                    startIcon={<UpdateIcon />}
+                    onClick={() => {
+                      relic && database.relics.set(prev.id, relic)
+                      reset()
+                      // TODO: fix after substat verification gets added?
+                      // if (!allowEmpty) setShowEditor(false)
+                    }}
+                    disabled={!relic || !isValid}
+                    color="success"
+                  >{t`editor.btnUpdate`}</Button>
+                )}
+                {!!removeId && (
+                  <Button
+                    startIcon={<DeleteForeverIcon />}
+                    onClick={() => {
+                      if (!window.confirm(t`editor.confirmDelete`)) return
+                      database.relics.remove(removeId)
+                      reset()
+                      // if (!allowEmpty) setShowEditor(false)
+                    }}
+                    disabled={!relic || !isValid}
+                    color="error"
+                  >{t`editor.delete`}</Button>
+                )}
+              </Box>
             </Grid>
           </CardContent>
         </CardThemed>

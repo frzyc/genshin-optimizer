@@ -2,14 +2,9 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   CharacterEditor,
-  CharacterInventory,
   useCharacterContext,
 } from '@genshin-optimizer/sr/ui'
-import { ExpandMore } from '@mui/icons-material'
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
   Button,
   CardContent,
   Container,
@@ -33,16 +28,6 @@ export default function PageHome() {
         onClose={() => setCharacterKey(undefined)}
       />
       <Stack gap={1} pt={1}>
-        <Container>
-          <Accordion>
-            <AccordionSummary expandIcon={<ExpandMore />}>
-              Characters
-            </AccordionSummary>
-            <AccordionDetails>
-              <CharacterInventory />
-            </AccordionDetails>
-          </Accordion>
-        </Container>
         <Container>
           <CardThemed bgt="dark">
             <CardContent>
