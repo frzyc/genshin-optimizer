@@ -40,7 +40,7 @@ export function CharacterInventory() {
         <CardHeader title="Characters" />
         <CardContent>
           <Box
-            sx={{ overflow: 'auto', maxHeight: '50vh' }}
+            sx={{ overflow: 'auto' }}
             my={1}
             display="flex"
             flexDirection="column"

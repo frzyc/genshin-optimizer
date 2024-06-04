@@ -22,6 +22,9 @@ const PageRelics = lazy(() => import('@genshin-optimizer/sr/page-relics'))
 const PageLightCones = lazy(
   () => import('@genshin-optimizer/sr/page-lightcones')
 )
+const PageCharacters = lazy(
+  () => import('@genshin-optimizer/sr/page-characters')
+)
 const PageTeams = lazy(() => import('@genshin-optimizer/sr/page-teams'))
 
 export default function App() {
@@ -68,6 +71,7 @@ function Content() {
             <Route index element={<PageHome />} />
             <Route path="/relics" element={<PageRelics />} />
             <Route path="/lightcones" element={<PageLightCones />} />
+            <Route path="/characters" element={<PageCharacters />} />
             <Route path="/teams" element={<PageTeams />} />
           </Routes>
         </Suspense>
