@@ -22,9 +22,10 @@ const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 
 export type RelicInventoryProps = {
   onAdd?: () => void
+  onEdit?: (id: string) => void
 }
 
-export function RelicInventory({ onAdd }: RelicInventoryProps) {
+export function RelicInventory({ onAdd, onEdit }: RelicInventoryProps) {
   const { t } = useTranslation('relic')
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
@@ -101,7 +102,14 @@ export function RelicInventory({ onAdd }: RelicInventoryProps) {
         <Grid container columns={columns} spacing={1}>
           {relicsIdsToShow.map((relicId) => (
             <Grid item key={relicId} xs={1}>
-              <RelicCard relic={database.relics.get(relicId)!} />
+              <RelicCard
+                relic={database.relics.get(relicId)!}
+                onEdit={() => onEdit?.(relicId)}
+                onDelete={() => database.relics.remove(relicId)}
+                setLocation={(location) =>
+                  database.relics.set(relicId, { location })
+                }
+              />
             </Grid>
           ))}
         </Grid>

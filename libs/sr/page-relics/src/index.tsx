@@ -12,7 +12,10 @@ export default function PageRelics() {
         relicIdToEdit={relicIdToEdit}
         cancelEdit={() => setRelicIdToEdit('')}
       />
-      <RelicInventory onAdd={() => setRelicIdToEdit('new')} />
+      <RelicInventory
+        onAdd={() => setRelicIdToEdit('new')}
+        onEdit={setRelicIdToEdit}
+      />
     </Box>
   )
 }
