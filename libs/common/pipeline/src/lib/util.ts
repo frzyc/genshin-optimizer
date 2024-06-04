@@ -29,7 +29,11 @@ export function generateIndexFromObj(obj: object, path: string) {
   const isImg = typeof Object.values(obj)[0] === 'string'
   // generate a index.ts using keys
   const imports = Object.entries(obj)
-    .sort(([a], [b]) => (a as string).localeCompare(b))
+    .sort(([ak, av], [bk, bv]) =>
+      isImg
+        ? (av as string).localeCompare(bv)
+        : (ak as string).localeCompare(bk)
+    )
     .map(([k, v]) => `import ${k} from './${isImg ? `${v}.png` : k}'`)
     .join('\n')
   const dataContent = keys
