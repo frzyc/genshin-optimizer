@@ -134,7 +134,7 @@ export function dmgNode(
     | 'burst',
   additional: Data = {},
   specialMultiplier?: NumNode,
-  overrideTalentType?: "skill" | "burst" | "auto"
+  overrideTalentType?: 'skill' | 'burst' | 'auto'
 ): NumNode {
   const talentType = overrideTalentType ?? getTalentType(move)
   return customDmgNode(
