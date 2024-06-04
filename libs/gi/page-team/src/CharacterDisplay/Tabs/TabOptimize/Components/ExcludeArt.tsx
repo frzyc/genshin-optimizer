@@ -214,25 +214,51 @@ export default function ExcludeArt({
   )
 }
 
-function ExcludeArtRedButtons() {
+function ExcludeArtRedButtons({
+  artifactIds,
+  artExclusion,
+}: {
+  artifactIds: string[]
+  artExclusion: string[]
+}) {
   const { t } = useTranslation(['artifact', 'ui'])
+  const { numExclude, numInclude } = useMemo(() => {
+    const numExclude = artifactIds.length - artExclusion.length
+    const numInclude = artifactIds.length - numExclude
+
+    return { numExclude, numInclude }
+  }, [artifactIds, artExclusion])
 
   return (
     <Grid container spacing={1} alignItems="center">
       <Grid item xs={12} sm={6} md={6}>
-        <Button fullWidth color="error" startIcon={<ExcludeIcon />}>
+        <Button
+          fullWidth
+          color="error"
+          disabled={!numExclude}
+          startIcon={<ExcludeIcon />}
+        >
           <Trans t={t} i18nKey="button.excludeArtifacts">
             Exclude Artifacts
           </Trans>
-          <SqBadge sx={{ ml: 1 }} color="success"></SqBadge>
+          <SqBadge sx={{ ml: 1 }} color={numExclude ? 'success' : 'secondary'}>
+            {numExclude}
+          </SqBadge>
         </Button>
       </Grid>
       <Grid item xs={12} sm={6} md={6}>
-        <Button fullWidth color="error" startIcon={<OptimizationIcon />}>
+        <Button
+          fullWidth
+          color="error"
+          disabled={!numInclude}
+          startIcon={<OptimizationIcon />}
+        >
           <Trans t={t} i18nKey={'button.includeArtifacts'}>
             Include Artifacts
           </Trans>
-          <SqBadge sx={{ ml: 1 }} color="success"></SqBadge>
+          <SqBadge sx={{ ml: 1 }} color={numInclude ? 'success' : 'secondary'}>
+            {numInclude}
+          </SqBadge>
         </Button>
       </Grid>
       <Grid item xs={12} display="flex" justifyContent="space-around">
@@ -323,7 +349,10 @@ function ArtifactSelectModal({
             />
           </Suspense>
           <Box mt={1}>
-            <ExcludeArtRedButtons />
+            <ExcludeArtRedButtons
+              artifactIds={artifactIds}
+              artExclusion={artExclusion}
+            />
           </Box>
           <Box mt={1}>
             <Suspense
