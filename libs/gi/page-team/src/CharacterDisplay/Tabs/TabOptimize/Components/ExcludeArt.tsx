@@ -399,7 +399,9 @@ function ArtifactSelectModal({
                     <ArtifactCard
                       artifactId={id}
                       onClick={() => {
-                        onExclude([id])
+                        if (artExclusion.includes(id)) onInclude([id])
+                        else onExclude([id])
+
                         onClose()
                       }}
                     />
