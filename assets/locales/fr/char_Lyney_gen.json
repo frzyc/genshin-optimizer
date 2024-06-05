@@ -126,12 +126,12 @@
   "passive2": {
     "name": "Ovation concluante",
     "description": {
-      "0": "Les DGT infligés par Lyney aux ennemis affectés par l'élément <pyro>Pyro</pyro> bénéficient des augmentations suivantes :",
+      "0": "Les DGT infligés par Lyney aux ennemis affectés par l'<pyro>élément Pyro</pyro> bénéficient des augmentations suivantes :",
       "1": [
         " +60 % de base.",
         " +20 % pour chacun des personnages de type <pyro>Pyro</pyro> (hormis Lyney) dans l'équipe."
       ],
-      "2": "Les DGT infligés par Lyney aux ennemis affectés par l'élément <pyro>Pyro</pyro> peuvent être augmentés d'un maximum de 100 % de cette manière."
+      "2": "Les DGT infligés par Lyney aux ennemis affectés par l'<pyro>élément Pyro</pyro> peuvent être augmentés d'un maximum de 100 % de cette manière."
     }
   },
   "passive3": {

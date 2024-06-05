@@ -22,7 +22,7 @@
       "infusion": {
         "0": "<strong>Masque of the Red Death</strong>",
         "1": "Saat Bond of Life yang dimiliki Arlecchino lebih besar atau sama dengan 30% Max HP-nya, akan memasuki status \"Masque of the Red Death\": DMG yang disebabkan Normal Attack, Charged Attack, dan Plunging Attack Arlecchino akan dikonversi menjadi <pyro>Pyro DMG</pyro> yang tidak bisa ditimpa oleh Elemental Infusion lainnya.",
-        "2": "Saat berada dalam status \"Masque of the Red Death\", saat Normal Attack Arlecchino mengenai musuh, DMG yang disebabkan serangan kali ini meningkat sebesar persentase Bond of Life saat ini. Juga akan mengurangi 7,5% Bond of Life saat ini. Bond of Life bisa berkurang dengan cara ini maksimum sekali setiap 0,03 detik; Saat Bond of Life berkurang dengan cara ini, CD Elemental Skill All is Ash berkurang 0,8 detik."
+        "2": "Saat berada dalam status \"Masque of the Red Death\", saat Normal Attack Arlecchino mengenai musuh, DMG yang diakibatkan serangan kali ini meningkat sebesar ATK Arlecchino dikalikan sejumlah persentase Bond of Life saat ini. Serangan ini juga akan mengurangi 7,5% Bond of Life saat ini. Bond of Life bisa berkurang dengan cara ini maksimum sekali setiap 0,03 detik. Saat Bond of Life berkurang dengan cara ini, maka CD Elemental Skill \"All is Ash\" berkurang 0,8 detik."
       }
     },
     "skillParams": {
@@ -81,7 +81,7 @@
   "burst": {
     "name": "Balemoon Rising",
     "description": {
-      "0": "Arlecchino mengepakkan sayap Balemoon Bloodfire, menyerap dan membersihkan Blood-Debt Directive di sekitar, mengakibatkan <pyro>Pyro DMG Area</pyro>, setelahnya, menghapus CD Elemental Skill All is Ash dan memulihkan HP diri sendiri sebesar penjumlahan dari nilai Bond of Life dan ATK miliknya.",
+      "0": "Arlecchino mengepakkan sayap Balemoon Bloodfire, menyerap dan membersihkan Blood-Debt Directive di sekitar, serta mengakibatkan <pyro>Pyro DMG Area</pyro>. Setelahnya, juga akan menghapus CD Elemental Skill \"All is Ash\" dan memulihkan HP diri sendiri berdasarkan nilai Bond of Life dan ATK miliknya.",
       "1": "<br/>",
       "2": "<i>Sudah banyak yang percaya di Teyvat kalau fase bulan selain bulan purnama itu hanya perumpamaan untuk pertanda buruk yang digunakan alkimia dan astrologi.",
       "3": "Dia pernah melihat bulan merah beberapa kali di dalam mimpinya, apa itu pertanda bencana? Ya, benar. Tapi itu adalah bencana milik orang-orang yang membuatnya marah.</i>"
@@ -111,7 +111,7 @@
       "0": "<strong>Blood-Debt Directives</strong> memiliki ciri khas sebagai berikut:",
       "1": [
         "Saat musuh yang memiliki Blood-Debt Directive yang diberikan oleh Arlecchino sendiri dikalahkan, Arlecchino akan mendapatkan Bond of Life sebesar 130% Max HP-nya;",
-        "5 detik setelah diberikan, akan meningkat menjadi Blood-Debt Due. Saat diserap, akan dikonversi dan memberikan Bond of Life kepada Arlecchino sebesar 130%."
+        "5 detik setelah diberikan, akan meningkat menjadi Blood-Debt Due. Saat diserap, akan memberikan Bond of Life kepada Arlecchino sebesar 130%."
       ],
       "2": "Nilai pemulihan Bond of Life yang diciptakan dengan cara di atas tidak akan bisa melebihi batasan awal <strong>All is Ash</strong>."
     }
@@ -125,13 +125,13 @@
   "passive3": {
     "name": "The Balemoon Alone May Know",
     "description": {
-      "0": "Saat bertempur, Arlecchino mendapatkan 40% <pyro>Pyro DMG Bonus</pyro> dan hanya bisa dipulihkan melalui <strong>Balemoon Rising</strong>."
+      "0": "Saat bertempur, Arlecchino mendapatkan 40% <pyro>Pyro DMG Bonus</pyro> dan HP-nya hanya bisa dipulihkan melalui <strong>Balemoon Rising</strong>."
     }
   },
   "constellation1": {
     "name": "\"All Reprisals and Arrears, Mine to Bear...\"",
     "description": {
-      "0": "Masque of the Red Death ditingkatkan sebesar 100%; Selain itu, saat melancarkan Normal Attack atau Charged Attack dalam status Masque of the Red Death, ketahanan terhadap interupsi Arlecchino akan meningkat."
+      "0": "Kekuatan Masque of the Red Death ditingkatkan lagi dengan nilai peningkatan sebesar 100%. Selain itu, saat melancarkan Normal Attack atau Charged Attack dalam status Masque of the Red Death, ketahanan Arlecchino terhadap interupsi akan meningkat."
     }
   },
   "constellation2": {
@@ -152,7 +152,7 @@
   "constellation4": {
     "name": "\"You Shall Love and Protect Each Other Henceforth ...\"",
     "description": {
-      "0": "Saat Arlecchino berhasil menyerap Blood-Debt Directive, CD <strong>Balemoon Rising</strong> akan diperpendek 2 detik, dan akan memulihkan 15 Energy. Efek ini dapat terpicu sekali setiap 10 detik."
+      "0": "Saat Arlecchino berhasil menyerap Blood-Debt Directive, CD <strong>Balemoon Rising</strong> akan berkurang 2 detik dan memulihkan 15 Energy. Efek ini dapat terpicu sekali setiap 10 detik."
     }
   },
   "constellation5": {
@@ -165,7 +165,7 @@
   "constellation6": {
     "name": "\"From This Day On, We Shall Delight in New Life Together.\"",
     "description": {
-      "0": "DMG <strong>Balemoon Rising</strong> meningkat sebesar ATK Arlecchino yang dikali dengan 700% persentase Bond of Life Arlecchino saat ini.",
+      "0": "DMG <strong>Balemoon Rising</strong> meningkat sebesar ATK Arlecchino dikalikan 700% dari persentase Bond of Life Arlecchino saat ini.",
       "1": "Selama 20 detik setelah Arlecchino melancarkan <strong>All is Ash</strong>, Normal Attack dan Elemental Burst Arlecchino akan mendapatkan peningkatan 10% CRIT Rate dan 70% CRIT DMG. Efek ini dapat terpicu sekali setiap 15 detik."
     }
   }

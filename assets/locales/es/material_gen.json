@@ -194,6 +194,9 @@
   "IridescenceTourTickets": {
     "name": "Cupones del Tour Iridiscente"
   },
+  "AnalysisProgress": {
+    "name": "Progreso analítico"
+  },
   "Primogem": {
     "name": "Protogema"
   },
@@ -205,6 +208,9 @@
   },
   "RealmCurrency": {
     "name": "Intramora"
+  },
+  "ToyMedal": {
+    "name": "Medalla de juguete"
   },
   "OriginalEssenceInvalidated": {
     "name": "Esencia original (obsoleto)"
@@ -524,8 +530,17 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Sigewinne": {
+    "name": "Sigewinne"
+  },
   "Arlecchino": {
     "name": "Arlecchino"
+  },
+  "Sethos": {
+    "name": "Sethos"
+  },
+  "Clorinde": {
+    "name": "Clorinde"
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka"
@@ -770,8 +785,17 @@
   "ChiorisStellaFortuna": {
     "name": "Stella Fortuna de Chiori"
   },
+  "SigewinnesStellaFortuna": {
+    "name": "Stella Fortuna de Sigewinne"
+  },
   "ArlecchinosStellaFortuna": {
     "name": "Stella Fortuna de Arlecchino"
+  },
+  "SethossStellaFortuna": {
+    "name": "Stella Fortuna de Sethos"
+  },
+  "ClorindesStellaFortuna": {
+    "name": "Stella Fortuna de Clorinde"
   },
   "GnosticHymnOldNotes": {
     "name": "Pase de Batalla del Gnóstico - Borrador"
@@ -6938,8 +6962,26 @@
   "DeliciousBulleSouffle": {
     "name": "Suflé burbujeante delicioso"
   },
+  "WellBalancedMeal": {
+    "name": "Comida equilibrada"
+  },
   "HearthfiresTrail": {
     "name": "El pasado de la hoguera"
+  },
+  "SuspiciousBulleSauceDuckBreast": {
+    "name": "Pechuga de pato a la burburanja extraña"
+  },
+  "BulleSauceDuckBreast": {
+    "name": "Pechuga de pato a la burburanja"
+  },
+  "DeliciousBulleSauceDuckBreast": {
+    "name": "Pechuga de pato a la burburanja deliciosa"
+  },
+  "TaggedAndBagged": {
+    "name": "Ave que vuela, a la cazuela"
+  },
+  "SuperDeeDuperDeliciousMeatRoll": {
+    "name": "Shawarma supremo"
   },
   "RecipeItem": {
     "name": "Ingredientes"
@@ -7519,6 +7561,9 @@
   },
   "RecipeBulleSouffle": {
     "name": "Receta: suflé burbujeante"
+  },
+  "RecipeBulleSauceDuckBreast": {
+    "name": "Receta: pechuga de pato a la burburanja"
   },
   "CraftedItems": {
     "name": "Objeto sintetizado"
@@ -10241,6 +10286,12 @@
   "FelixFelicium": {
     "name": "Buen fario"
   },
+  "ConcentratedTransoceanicPearl": {
+    "name": "Condensado extramarino"
+  },
+  "TaintedHydroPhantasmExtract": {
+    "name": "Extracto de Ánima Legamosa"
+  },
   "ShikanoinHeizousMessage": {
     "name": "Mensaje de Shikanoin Heizou"
   },
@@ -10283,11 +10334,26 @@
   "DamagedScore": {
     "name": "Partitura dañada"
   },
+  "CriminalsTestimony": {
+    "name": "Testimonio criminal"
+  },
+  "RawatsNotes": {
+    "name": "Notas de Rawat"
+  },
+  "GroupPhotoFromAnUnknownTime": {
+    "name": "Imagen grupal de un momento desconocido"
+  },
   "RuggierosNotesII": {
     "name": "Notas de Ruggiero (II)"
   },
   "PagesFromALostScoreII": {
     "name": "Página perdida de una partitura (II)"
+  },
+  "TreasureMapWithTheVaultsLocation": {
+    "name": "Mapa del tesoro con ubicación de la cámara"
+  },
+  "MarechausseeHunterJudgmentDayCharacterAlbum": {
+    "name": "Álbum conmemorativo de “Cazador Fantasmal: Hora del juicio”"
   },
   "AncientEngravings": {
     "name": "Inscripción antigua"
@@ -10318,6 +10384,57 @@
   },
   "AncientPieceOfPaper": {
     "name": "Nota antigua"
+  },
+  "ProductionLog": {
+    "name": "Registro de producción"
+  },
+  "ExperimentLog": {
+    "name": "Registro de experimento"
+  },
+  "TheLittleWitchAndTheUndyingFireI": {
+    "name": "La brujita y el fuego inextinguible (I)"
+  },
+  "TheLittleWitchAndTheUndyingFireII": {
+    "name": "La brujita y el fuego inextinguible (II)"
+  },
+  "TheLittleWitchAndTheUndyingFireIII": {
+    "name": "La brujita y el fuego inextinguible (III)"
+  },
+  "TheLittleWitchAndTheUndyingFireIV": {
+    "name": "La brujita y el fuego inextinguible (IV)"
+  },
+  "TheLittleWitchAndTheUndyingFireV": {
+    "name": "La brujita y el fuego inextinguible (V)"
+  },
+  "TheLittleWitchAndTheUndyingFireVI": {
+    "name": "La brujita y el fuego inextinguible (VI)"
+  },
+  "TheLittleWitchAndTheUndyingFireVII": {
+    "name": "La brujita y el fuego inextinguible (VII)"
+  },
+  "TheFelineFirmI": {
+    "name": "El despacho de los gatos (I)"
+  },
+  "TheFelineFirmII": {
+    "name": "El despacho de los gatos (II)"
+  },
+  "TheFelineFirmIII": {
+    "name": "El despacho de los gatos (III)"
+  },
+  "TheFelineFirmIV": {
+    "name": "El despacho de los gatos (IV)"
+  },
+  "TheFelineFirmV": {
+    "name": "El despacho de los gatos (V)"
+  },
+  "TheFelineFirmVI": {
+    "name": "El despacho de los gatos (VI)"
+  },
+  "TheFelineFirmVII": {
+    "name": "El despacho de los gatos (VII)"
+  },
+  "TheFelineFirmVIII": {
+    "name": "El despacho de los gatos (VIII)"
   },
   "TearsAmongTheStars": {
     "name": "Lágrima estelar"
@@ -11072,6 +11189,9 @@
   "ExaltedEarth": {
     "name": "Rey del mundo"
   },
+  "CamAndCablesOfLaw": {
+    "name": "Pieza calibradora"
+  },
   "FalconsDance": {
     "name": "Danza del halcón"
   },
@@ -11804,6 +11924,21 @@
   "TravelNotesTheRealmsRocked": {
     "name": "PB - Tierra del rock"
   },
+  "ClorindeRoleplay": {
+    "name": "Clorinde - Rol"
+  },
+  "SigewinneTreatment": {
+    "name": "Sigewinne - Terapia"
+  },
+  "SethosBaFragment": {
+    "name": "Sethos - Fragmentos del Ba"
+  },
+  "AchievementPoeticPages": {
+    "name": "Logro - Páginas poéticas"
+  },
+  "TravelNotesSimulnation": {
+    "name": "PB - Que comience la función"
+  },
   "AnemoculusResonanceStone": {
     "name": "Roca de resonancia de anemóculus"
   },
@@ -12236,6 +12371,21 @@
   "ObligingLittleYuegui": {
     "name": "¡Pequeño Yuegui al rescate!"
   },
+  "UpbeatEncouragement": {
+    "name": "Exultación"
+  },
+  "ElegantCountenance": {
+    "name": "Apariencia elegante"
+  },
+  "ReadyForBattle": {
+    "name": "Prepárate para la batalla"
+  },
+  "SolemnCountenance": {
+    "name": "Apariencia solemne"
+  },
+  "LeisureTime": {
+    "name": "Tiempo de ocio"
+  },
   "RhodeiaOfLoch": {
     "name": "Oceánida - Rhodeia"
   },
@@ -12292,6 +12442,18 @@
   },
   "EmperorOfFireAndIron": {
     "name": "Emperador Piroacorazado"
+  },
+  "AllDevouringNarwhal": {
+    "name": "Narval Devoraestrellas"
+  },
+  "ConsecratedScorpion": {
+    "name": "Escorpión Sacróseo"
+  },
+  "ConsecratedFlyingSerpent": {
+    "name": "Aerofidio Sacróseo"
+  },
+  "GuardianOfApepsOasis": {
+    "name": "Guardián del Oasis de Apep"
   },
   "UndividedHeart": {
     "name": "Corazón indiviso"
@@ -12542,6 +12704,33 @@
   "MoltenMail": {
     "name": "Armadura fundente"
   },
+  "TerrorForTheEvildoers": {
+    "name": "Aterrorizar a los facinerosos"
+  },
+  "HearMeLetUsRaiseTheChaliceOfLove": {
+    "name": "¡Escuchen mis alabanzas y alcemos nuestras copas de amor!"
+  },
+  "RockinInAFlamingWorld": {
+    "name": "Roqueando en el infierno"
+  },
+  "DecorousHarmony": {
+    "name": "Armonía y decoro"
+  },
+  "TheArtOfBudgeting": {
+    "name": "El arte de la presupuestación"
+  },
+  "LightlessFeeding": {
+    "name": "Depredación en la oscuridad"
+  },
+  "FatalFulmination": {
+    "name": "Fulminación letal"
+  },
+  "DeathlyCyclone": {
+    "name": "Ciclón mortífero"
+  },
+  "AThousandYoung": {
+    "name": "Descendencia abundante"
+  },
   "MagicGuide": {
     "name": "Guía Mágica"
   },
@@ -12764,6 +12953,27 @@
   "AmethystCrown": {
     "name": "Corona de Amatista"
   },
+  "CashflowSupervision": {
+    "name": "Supervisor Flujoáurico"
+  },
+  "EndOfTheLine": {
+    "name": "Fin de las Aguas"
+  },
+  "ForestRegalia": {
+    "name": "Espada Real del Bosque"
+  },
+  "SplendorOfTranquilWaters": {
+    "name": "Fulgor de las Aguas Calmas"
+  },
+  "MarechausseeHunter": {
+    "name": "Cazador Fantasmal"
+  },
+  "GoldenTroupe": {
+    "name": "Compañía Dorada"
+  },
+  "FlowerOfParadiseLost": {
+    "name": "Flor Olvidada del Paraíso"
+  },
   "LiyueHarborWharf": {
     "name": "Puerto de Liyue"
   },
@@ -12898,6 +13108,15 @@
   },
   "TheWhiteGloveAndTheFisherman": {
     "name": "Guante Blanco y Pescador"
+  },
+  "TheMausoleumOfKingDeshret": {
+    "name": "Mausoleo del Rey Deshret"
+  },
+  "CentralLaboratoryRuins": {
+    "name": "Vestigios del Laboratorio Central"
+  },
+  "SirArthur": {
+    "name": "Monsieur Arthur"
   },
   "ElementalResonanceWovenIce": {
     "name": "Consonancia elemental: Hielo entrelazado"
@@ -13065,7 +13284,16 @@
     "name": "Explosión direccional de eliminación de peligro controlable"
   },
   "UnderwaterTreasureHunt": {
-    "name": "Búsqueda submarina del tesoro"
+    "name": "Caza de tesoros marinos"
+  },
+  "ViciousAncientBattle": {
+    "name": "Cruenta batalla ancestral"
+  },
+  "WaterAndJustice": {
+    "name": "Agua y justicia"
+  },
+  "CountdownToTheShow3": {
+    "name": "Cuenta atrás para la actuación: 3"
   },
   "Origin": {
     "name": "Origen"
@@ -14155,6 +14383,9 @@
   },
   "FontainianCarpetFairAndSquare": {
     "name": "Alfombra de Fontaine: Plana y cuadrada"
+  },
+  "FadingAfterglow": {
+    "name": "Resplandor apagado"
   },
   "TrustyPortableLamp": {
     "name": "Lámpara portátil inapagable"
@@ -15527,6 +15758,9 @@
   "BoxingTargetOfTheForbiddenFortress": {
     "name": "Poste de boxeo del fuerte recluido"
   },
+  "ImprovedCrococannon": {
+    "name": "Drilocañón 2.0"
+  },
   "PottedPlantVerdantVastness": {
     "name": "Maceta: Verdor abundante"
   },
@@ -15920,6 +16154,9 @@
   "CrystallineGlory": {
     "name": "Gloria cristalina"
   },
+  "MusicTownsBreezeBellsCheepingFinches": {
+    "name": "Campana de viento: Lenguaje de los pinzones"
+  },
   "BookshelfFreeReading": {
     "name": "Estante para periódicos: Libertad de lectura"
   },
@@ -15958,6 +16195,9 @@
   },
   "MallowWoodMailboxStorage": {
     "name": "Buzón de madera de malvavisco: Almacenamiento"
+  },
+  "ModelContraptionStandardMusicalMode": {
+    "name": "Modelo de mecanismo: Modo musical estándar"
   },
   "WeatheredBambooFence": {
     "name": "Valla de bambú desgastada"
@@ -16147,5 +16387,8 @@
   },
   "SwordBearingStatueEternalWatch": {
     "name": "Estatua de piedra: Guardián eterno"
+  },
+  "SwordBearingStatueAestheticsOfIncompleteness": {
+    "name": "Estatua de piedra con espada: Estética imperfecta"
   }
 }

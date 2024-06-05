@@ -2,7 +2,7 @@
   "setName": "Fantasmagoria incompiuta",
   "setEffects": {
     "2": "ATT +18%.",
-    "4": "Dopo aver lasciato il combattimento per 3 s, i DAN inflitti aumentano di un 50%. Quando il personaggio è in combattimento, se nelle vicinanze non sono presenti avversari affetti da Ustione per più di 6 s, il bonus DAN diminuisce di un 10% al secondo fino ad azzerarsi. Se è presente almeno un avversario affetto da Ustione, invece, il bonus DAN aumenta di un 10% al secondo fino a raggiungere il 50%. Quest'effetto può attivarsi anche se il personaggio che equipaggia il set non è in campo."
+    "4": "Dopo aver trascorso 3 s fuori da un combattimento, i DAN inflitti aumentano di un 50%. Durante un combattimento, se nelle vicinanze non sono presenti avversari affetti da Ustione per più di 6 s, il suddetto bonus DAN diminuisce di un 10% al secondo fino ad azzerarsi. Se è presente almeno un avversario affetto da Ustione, invece, il bonus DAN aumenta di un 10% al secondo fino a raggiungere il 50%. Quest'effetto può attivarsi anche se il personaggio che equipaggia il set non è in campo."
   },
   "pieces": {
     "flower": {

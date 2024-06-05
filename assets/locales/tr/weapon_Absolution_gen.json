@@ -1,0 +1,24 @@
+{
+  "name": "Müsamaha",
+  "description": {
+    "0": "Her şeyden vazgeçen düzenbazın bir zamanlar kuşandığı ince kılıç. Eskiden bunu, kimliğini gizlemek için bir araç olarak kullanırdı."
+  },
+  "passiveName": "Ölümcül Anlaşma",
+  "passiveDescription": {
+    "0": {
+      "0": "Kritik Hasar <cryo>%20</cryo> artar. Hayat Bağı değerinin artması 6sn boyunca, kuşanan karakterin verdiği Hasarın <cryo>%16</cryo> artmasını sağlar. En fazla 3 kademeye kadar birikir."
+    },
+    "1": {
+      "0": "Kritik Hasar <cryo>%25</cryo> artar. Hayat Bağı değerinin artması 6sn boyunca, kuşanan karakterin verdiği Hasarın <cryo>%20</cryo> artmasını sağlar. En fazla 3 kademeye kadar birikir."
+    },
+    "2": {
+      "0": "Kritik Hasar <cryo>%30</cryo> artar. Hayat Bağı değerinin artması 6sn boyunca, kuşanan karakterin verdiği Hasarın <cryo>%24</cryo> artmasını sağlar. En fazla 3 kademeye kadar birikir."
+    },
+    "3": {
+      "0": "Kritik Hasar <cryo>%35</cryo> artar. Hayat Bağı değerinin artması 6sn boyunca, kuşanan karakterin verdiği Hasarın <cryo>%28</cryo> artmasını sağlar. En fazla 3 kademeye kadar birikir."
+    },
+    "4": {
+      "0": "Kritik Hasar <cryo>%40</cryo> artar. Hayat Bağı değerinin artması 6sn boyunca, kuşanan karakterin verdiği Hasarın <cryo>%32</cryo> artmasını sağlar. En fazla 3 kademeye kadar birikir."
+    }
+  }
+}

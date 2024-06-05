@@ -194,6 +194,9 @@
   "IridescenceTourTickets": {
     "name": "「무지갯빛 투어 티켓」"
   },
+  "AnalysisProgress": {
+    "name": "분석 진도"
+  },
   "Primogem": {
     "name": "원석"
   },
@@ -205,6 +208,9 @@
   },
   "RealmCurrency": {
     "name": "선계 화폐"
+  },
+  "ToyMedal": {
+    "name": "장난감 메달"
   },
   "OriginalEssenceInvalidated": {
     "name": "퓨어 호박(폐기)"
@@ -524,8 +530,17 @@
   "Chiori": {
     "name": "치오리"
   },
+  "Sigewinne": {
+    "name": "시그윈"
+  },
   "Arlecchino": {
     "name": "아를레키노"
+  },
+  "Sethos": {
+    "name": "세토스"
+  },
+  "Clorinde": {
+    "name": "클로린드"
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "카미사토 아야카의 운명의 별"
@@ -770,8 +785,17 @@
   "ChiorisStellaFortuna": {
     "name": "치오리의 운명의 별"
   },
+  "SigewinnesStellaFortuna": {
+    "name": "시그윈의 운명의 별"
+  },
   "ArlecchinosStellaFortuna": {
     "name": "아를레키노의 운명의 별"
+  },
+  "SethossStellaFortuna": {
+    "name": "세토스의 운명의 별"
+  },
+  "ClorindesStellaFortuna": {
+    "name": "클로린드의 운명의 별"
   },
   "GnosticHymnOldNotes": {
     "name": "진주 기행·초안"
@@ -6938,8 +6962,26 @@
   "DeliciousBulleSouffle": {
     "name": "맛있는 풍선 수플레"
   },
+  "WellBalancedMeal": {
+    "name": "균형 잡힌 영양식"
+  },
   "HearthfiresTrail": {
     "name": "난롯불의 궤적"
+  },
+  "SuspiciousBulleSauceDuckBreast": {
+    "name": "이상한 귤향 오리 가슴살구이"
+  },
+  "BulleSauceDuckBreast": {
+    "name": "귤향 오리 가슴살구이"
+  },
+  "DeliciousBulleSauceDuckBreast": {
+    "name": "맛있는 귤향 오리 가슴살구이"
+  },
+  "TaggedAndBagged": {
+    "name": "「사냥감」"
+  },
+  "SuperDeeDuperDeliciousMeatRoll": {
+    "name": "향기 뿜뿜 샤와르마"
   },
   "RecipeItem": {
     "name": "레시피 아이템"
@@ -7519,6 +7561,9 @@
   },
   "RecipeBulleSouffle": {
     "name": "레시피: 풍선 수플레"
+  },
+  "RecipeBulleSauceDuckBreast": {
+    "name": "레시피: 귤향 오리 가슴살구이"
   },
   "CraftedItems": {
     "name": "합성 산물"
@@ -10241,6 +10286,12 @@
   "FelixFelicium": {
     "name": "「행운의 축복」"
   },
+  "ConcentratedTransoceanicPearl": {
+    "name": "농축된 기이한 바다의 방울"
+  },
+  "TaintedHydroPhantasmExtract": {
+    "name": "탁한 물의 환령 추출물"
+  },
   "ShikanoinHeizousMessage": {
     "name": "시카노인 헤이조가 남긴 메시지"
   },
@@ -10283,11 +10334,26 @@
   "DamagedScore": {
     "name": "파손된 악보"
   },
+  "CriminalsTestimony": {
+    "name": "수감자의 진술"
+  },
+  "RawatsNotes": {
+    "name": "라바트의 노트"
+  },
+  "GroupPhotoFromAnUnknownTime": {
+    "name": "언제 남겼는지 모를 단체 사진"
+  },
   "RuggierosNotesII": {
     "name": "루지에로의 노트·두 번째"
   },
   "PagesFromALostScoreII": {
     "name": "잃어버린 악보의 찢어진 페이지·두 번째"
+  },
+  "TreasureMapWithTheVaultsLocation": {
+    "name": "보물창고의 위치를 가리키는 「보물지도」"
+  },
+  "MarechausseeHunterJudgmentDayCharacterAlbum": {
+    "name": "《그림자 사냥꾼: 심판의 시간》 캐릭터 기념책"
   },
   "AncientEngravings": {
     "name": "오래된 비문"
@@ -10318,6 +10384,57 @@
   },
   "AncientPieceOfPaper": {
     "name": "오래된 쪽지"
+  },
+  "ProductionLog": {
+    "name": "생산 일지"
+  },
+  "ExperimentLog": {
+    "name": "실험 일지"
+  },
+  "TheLittleWitchAndTheUndyingFireI": {
+    "name": "꼬마 마녀와 꺼지지 않는 불·1권"
+  },
+  "TheLittleWitchAndTheUndyingFireII": {
+    "name": "꼬마 마녀와 꺼지지 않는 불·2권"
+  },
+  "TheLittleWitchAndTheUndyingFireIII": {
+    "name": "꼬마 마녀와 꺼지지 않는 불·3권"
+  },
+  "TheLittleWitchAndTheUndyingFireIV": {
+    "name": "꼬마 마녀와 꺼지지 않는 불·4권"
+  },
+  "TheLittleWitchAndTheUndyingFireV": {
+    "name": "꼬마 마녀와 꺼지지 않는 불·5권"
+  },
+  "TheLittleWitchAndTheUndyingFireVI": {
+    "name": "꼬마 마녀와 꺼지지 않는 불·6권"
+  },
+  "TheLittleWitchAndTheUndyingFireVII": {
+    "name": "꼬마 마녀와 꺼지지 않는 불·7권"
+  },
+  "TheFelineFirmI": {
+    "name": "야옹이 사무소· 1권"
+  },
+  "TheFelineFirmII": {
+    "name": "야옹이 사무소· 2권"
+  },
+  "TheFelineFirmIII": {
+    "name": "야옹이 사무소· 3권"
+  },
+  "TheFelineFirmIV": {
+    "name": "야옹이 사무소· 4권"
+  },
+  "TheFelineFirmV": {
+    "name": "야옹이 사무소· 5권"
+  },
+  "TheFelineFirmVI": {
+    "name": "야옹이 사무소· 6권"
+  },
+  "TheFelineFirmVII": {
+    "name": "야옹이 사무소· 7권"
+  },
+  "TheFelineFirmVIII": {
+    "name": "야옹이 사무소· 8권"
   },
   "TearsAmongTheStars": {
     "name": "뭇별 사이의 눈물"
@@ -11072,6 +11189,9 @@
   "ExaltedEarth": {
     "name": "「대지의 왕」"
   },
+  "CamAndCablesOfLaw": {
+    "name": "공평한 규범"
+  },
   "FalconsDance": {
     "name": "송골매의 춤"
   },
@@ -11804,6 +11924,21 @@
   "TravelNotesTheRealmsRocked": {
     "name": "기행·로큰롤"
   },
+  "ClorindeRoleplay": {
+    "name": "클로린드·역할극"
+  },
+  "SigewinneTreatment": {
+    "name": "시그윈·치료법"
+  },
+  "SethosBaFragment": {
+    "name": "세토스·바"
+  },
+  "AchievementPoeticPages": {
+    "name": "업적·환상 시편"
+  },
+  "TravelNotesSimulnation": {
+    "name": "기행·모의전"
+  },
   "AnemoculusResonanceStone": {
     "name": "바람 신의 눈동자 공명석"
   },
@@ -12236,6 +12371,21 @@
   "ObligingLittleYuegui": {
     "name": "친절하고 깜찍한 월계"
   },
+  "UpbeatEncouragement": {
+    "name": "기쁨의 격려"
+  },
+  "ElegantCountenance": {
+    "name": "우아한 자태"
+  },
+  "ReadyForBattle": {
+    "name": "전투 준비"
+  },
+  "SolemnCountenance": {
+    "name": "근엄한 자태"
+  },
+  "LeisureTime": {
+    "name": "여가 시간"
+  },
   "RhodeiaOfLoch": {
     "name": "물의 정령·로데이아"
   },
@@ -12292,6 +12442,18 @@
   },
   "EmperorOfFireAndIron": {
     "name": "용암철갑 제왕"
+  },
+  "AllDevouringNarwhal": {
+    "name": "별을 삼킨 고래"
+  },
+  "ConsecratedScorpion": {
+    "name": "성해 독전갈"
+  },
+  "ConsecratedFlyingSerpent": {
+    "name": "성해 날뱀"
+  },
+  "GuardianOfApepsOasis": {
+    "name": "아펩의 오아시스 파수꾼"
   },
   "UndividedHeart": {
     "name": "단 하나의 마음"
@@ -12542,6 +12704,33 @@
   "MoltenMail": {
     "name": "용암철갑"
   },
+  "TerrorForTheEvildoers": {
+    "name": "악행자에게 징벌을"
+  },
+  "HearMeLetUsRaiseTheChaliceOfLove": {
+    "name": "「모두 사랑의 축배를 들렴!」"
+  },
+  "RockinInAFlamingWorld": {
+    "name": "지옥의 연주"
+  },
+  "DecorousHarmony": {
+    "name": "장엄하고 익살스러운 노랫소리"
+  },
+  "TheArtOfBudgeting": {
+    "name": "예산의 마술사"
+  },
+  "LightlessFeeding": {
+    "name": "빛 없는 포식자"
+  },
+  "FatalFulmination": {
+    "name": "응축된 죽음의 번개"
+  },
+  "DeathlyCyclone": {
+    "name": "휩쓰는 죽음의 바람"
+  },
+  "AThousandYoung": {
+    "name": "수많은 자손"
+  },
   "MagicGuide": {
     "name": "마도 서론"
   },
@@ -12764,6 +12953,27 @@
   "AmethystCrown": {
     "name": "자수정 화관"
   },
+  "CashflowSupervision": {
+    "name": "현금 흐름 감독"
+  },
+  "EndOfTheLine": {
+    "name": "메마른 연못"
+  },
+  "ForestRegalia": {
+    "name": "숲의 리게일리어"
+  },
+  "SplendorOfTranquilWaters": {
+    "name": "고요히 샘솟는 빛"
+  },
+  "MarechausseeHunter": {
+    "name": "그림자 사냥꾼"
+  },
+  "GoldenTroupe": {
+    "name": "황금 극단"
+  },
+  "FlowerOfParadiseLost": {
+    "name": "잃어버린 낙원의 꽃"
+  },
   "LiyueHarborWharf": {
     "name": "리월항"
   },
@@ -12898,6 +13108,15 @@
   },
   "TheWhiteGloveAndTheFisherman": {
     "name": "흰 장갑과 어부"
+  },
+  "TheMausoleumOfKingDeshret": {
+    "name": "적왕의 무덤"
+  },
+  "CentralLaboratoryRuins": {
+    "name": "중앙 실험실 유적"
+  },
+  "SirArthur": {
+    "name": "아르튀르 씨"
   },
   "ElementalResonanceWovenIce": {
     "name": "원소 공명: 뒤엉킨 얼음"
@@ -13065,7 +13284,16 @@
     "name": "제어 가능한 위험 제거용 지향 폭발"
   },
   "UnderwaterTreasureHunt": {
-    "name": "해저 보물찾기"
+    "name": "바다 보물찾기"
+  },
+  "ViciousAncientBattle": {
+    "name": "지난날의 격전"
+  },
+  "WaterAndJustice": {
+    "name": "물과 정의"
+  },
+  "CountdownToTheShow3": {
+    "name": "마술쇼 카운트다운: 3"
   },
   "Origin": {
     "name": "원초"
@@ -14155,6 +14383,9 @@
   },
   "FontainianCarpetFairAndSquare": {
     "name": "폰타인 카펫-「네모반듯」"
+  },
+  "FadingAfterglow": {
+    "name": "「바래진 석양」"
   },
   "TrustyPortableLamp": {
     "name": "꺼지지 않는 휴대용 등불"
@@ -15527,6 +15758,9 @@
   "BoxingTargetOfTheForbiddenFortress": {
     "name": "「제한된 요새의 격투 과녁」"
   },
+  "ImprovedCrococannon": {
+    "name": "「개량판 악어 대포」"
+  },
   "PottedPlantVerdantVastness": {
     "name": "식물용 화분-「작고 푸른 낙원」"
   },
@@ -15920,6 +16154,9 @@
   "CrystallineGlory": {
     "name": "「빛나는 영광」"
   },
+  "MusicTownsBreezeBellsCheepingFinches": {
+    "name": "음악 마을 풍령-「참새는 짹짹」"
+  },
   "BookshelfFreeReading": {
     "name": "출판물 진열대-「자유 접근」"
   },
@@ -15958,6 +16195,9 @@
   },
   "MallowWoodMailboxStorage": {
     "name": "버즘나무 원목 「보관」 우편함"
+  },
+  "ModelContraptionStandardMusicalMode": {
+    "name": "장치 모형-「표준 조율」"
   },
   "WeatheredBambooFence": {
     "name": "풍파를 겪은 대나무 울타리"
@@ -16147,5 +16387,8 @@
   },
   "SwordBearingStatueEternalWatch": {
     "name": "검을 든 석상-「영원한 수호자」"
+  },
+  "SwordBearingStatueAestheticsOfIncompleteness": {
+    "name": "검을 든 석상-「불완전함의 미학」"
   }
 }

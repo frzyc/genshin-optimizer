@@ -130,7 +130,7 @@
   "constellation2": {
     "name": "Taxation sévère",
     "description": {
-      "0": "Les attaques normales et chargées de Keqing touchant un ennemi affecté par l'élément <electro>Électro</electro> ont 50 % de chances de générer une particule élémentaire.",
+      "0": "Les attaques normales et chargées de Keqing touchant un ennemi affecté par l'<electro>élément Électro</electro> ont 50 % de chances de générer une particule élémentaire.",
       "1": "Cet effet peut être déclenché une fois toutes les 5 s."
     }
   },

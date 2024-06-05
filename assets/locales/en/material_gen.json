@@ -194,6 +194,9 @@
   "IridescenceTourTickets": {
     "name": "Iridescence Tour Tickets"
   },
+  "AnalysisProgress": {
+    "name": "Analysis Progress"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -205,6 +208,9 @@
   },
   "RealmCurrency": {
     "name": "Realm Currency"
+  },
+  "ToyMedal": {
+    "name": "Toy Medal"
   },
   "OriginalEssenceInvalidated": {
     "name": "Original Essence (Invalidated)"
@@ -524,8 +530,17 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Sigewinne": {
+    "name": "Sigewinne"
+  },
   "Arlecchino": {
     "name": "Arlecchino"
+  },
+  "Sethos": {
+    "name": "Sethos"
+  },
+  "Clorinde": {
+    "name": "Clorinde"
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna"
@@ -770,8 +785,17 @@
   "ChiorisStellaFortuna": {
     "name": "Chiori's Stella Fortuna"
   },
+  "SigewinnesStellaFortuna": {
+    "name": "Sigewinne's Stella Fortuna"
+  },
   "ArlecchinosStellaFortuna": {
     "name": "Arlecchino's Stella Fortuna"
+  },
+  "SethossStellaFortuna": {
+    "name": "Sethos's Stella Fortuna"
+  },
+  "ClorindesStellaFortuna": {
+    "name": "Clorinde's Stella Fortuna"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostic Hymn - Old Notes"
@@ -6938,8 +6962,26 @@
   "DeliciousBulleSouffle": {
     "name": "Delicious Bulle Souffle"
   },
+  "WellBalancedMeal": {
+    "name": "Well-Balanced Meal"
+  },
   "HearthfiresTrail": {
     "name": "Hearthfire's Trail"
+  },
+  "SuspiciousBulleSauceDuckBreast": {
+    "name": "Suspicious Bulle Sauce Duck Breast"
+  },
+  "BulleSauceDuckBreast": {
+    "name": "Bulle Sauce Duck Breast"
+  },
+  "DeliciousBulleSauceDuckBreast": {
+    "name": "Delicious Bulle Sauce Duck Breast"
+  },
+  "TaggedAndBagged": {
+    "name": "\"Tagged and Bagged\""
+  },
+  "SuperDeeDuperDeliciousMeatRoll": {
+    "name": "Super-Dee-Duper Delicious Meat Roll"
   },
   "RecipeItem": {
     "name": "Recipe Item"
@@ -7519,6 +7561,9 @@
   },
   "RecipeBulleSouffle": {
     "name": "Recipe: Bulle Souffle"
+  },
+  "RecipeBulleSauceDuckBreast": {
+    "name": "Recipe: Bulle Sauce Duck Breast"
   },
   "CraftedItems": {
     "name": "Crafted Items"
@@ -10241,6 +10286,12 @@
   "FelixFelicium": {
     "name": "Felix Felicium"
   },
+  "ConcentratedTransoceanicPearl": {
+    "name": "Concentrated Transoceanic Pearl"
+  },
+  "TaintedHydroPhantasmExtract": {
+    "name": "Tainted Hydro Phantasm Extract"
+  },
   "ShikanoinHeizousMessage": {
     "name": "Shikanoin Heizou's Message"
   },
@@ -10283,11 +10334,26 @@
   "DamagedScore": {
     "name": "Damaged Score"
   },
+  "CriminalsTestimony": {
+    "name": "Criminal's Testimony"
+  },
+  "RawatsNotes": {
+    "name": "Rawat's Notes"
+  },
+  "GroupPhotoFromAnUnknownTime": {
+    "name": "Group Photo From an Unknown Time"
+  },
   "RuggierosNotesII": {
     "name": "Ruggiero's Notes (II)"
   },
   "PagesFromALostScoreII": {
     "name": "Pages From a Lost Score (II)"
+  },
+  "TreasureMapWithTheVaultsLocation": {
+    "name": "\"Treasure Map\" With the Vault's Location"
+  },
+  "MarechausseeHunterJudgmentDayCharacterAlbum": {
+    "name": "\"Marechaussee Hunter: Judgment Day\" Character Album"
   },
   "AncientEngravings": {
     "name": "Ancient Engravings"
@@ -10318,6 +10384,57 @@
   },
   "AncientPieceOfPaper": {
     "name": "Ancient Piece of Paper"
+  },
+  "ProductionLog": {
+    "name": "Production Log"
+  },
+  "ExperimentLog": {
+    "name": "Experiment Log"
+  },
+  "TheLittleWitchAndTheUndyingFireI": {
+    "name": "The Little Witch and the Undying Fire (I)"
+  },
+  "TheLittleWitchAndTheUndyingFireII": {
+    "name": "The Little Witch and the Undying Fire (II)"
+  },
+  "TheLittleWitchAndTheUndyingFireIII": {
+    "name": "The Little Witch and the Undying Fire (III)"
+  },
+  "TheLittleWitchAndTheUndyingFireIV": {
+    "name": "The Little Witch and the Undying Fire (IV)"
+  },
+  "TheLittleWitchAndTheUndyingFireV": {
+    "name": "The Little Witch and the Undying Fire (V)"
+  },
+  "TheLittleWitchAndTheUndyingFireVI": {
+    "name": "The Little Witch and the Undying Fire (VI)"
+  },
+  "TheLittleWitchAndTheUndyingFireVII": {
+    "name": "The Little Witch and the Undying Fire (VII)"
+  },
+  "TheFelineFirmI": {
+    "name": "The Feline Firm (I)"
+  },
+  "TheFelineFirmII": {
+    "name": "The Feline Firm (II)"
+  },
+  "TheFelineFirmIII": {
+    "name": "The Feline Firm (III)"
+  },
+  "TheFelineFirmIV": {
+    "name": "The Feline Firm (IV)"
+  },
+  "TheFelineFirmV": {
+    "name": "The Feline Firm (V)"
+  },
+  "TheFelineFirmVI": {
+    "name": "The Feline Firm (VI)"
+  },
+  "TheFelineFirmVII": {
+    "name": "The Feline Firm (VII)"
+  },
+  "TheFelineFirmVIII": {
+    "name": "The Feline Firm (VIII)"
   },
   "TearsAmongTheStars": {
     "name": "Tears Among the Stars"
@@ -11072,6 +11189,9 @@
   "ExaltedEarth": {
     "name": "\"Exalted Earth\""
   },
+  "CamAndCablesOfLaw": {
+    "name": "Cam and Cables of Law"
+  },
   "FalconsDance": {
     "name": "Falcon's Dance"
   },
@@ -11804,6 +11924,21 @@
   "TravelNotesTheRealmsRocked": {
     "name": "Travel Notes: The Realms Rocked"
   },
+  "ClorindeRoleplay": {
+    "name": "Clorinde: Roleplay"
+  },
+  "SigewinneTreatment": {
+    "name": "Sigewinne: Treatment"
+  },
+  "SethosBaFragment": {
+    "name": "Sethos: Ba Fragment"
+  },
+  "AchievementPoeticPages": {
+    "name": "Achievement: Poetic Pages"
+  },
+  "TravelNotesSimulnation": {
+    "name": "Travel Notes: Simulnation"
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone"
   },
@@ -12236,6 +12371,21 @@
   "ObligingLittleYuegui": {
     "name": "Obliging Little Yuegui"
   },
+  "UpbeatEncouragement": {
+    "name": "Upbeat Encouragement"
+  },
+  "ElegantCountenance": {
+    "name": "Elegant Countenance"
+  },
+  "ReadyForBattle": {
+    "name": "Ready for Battle"
+  },
+  "SolemnCountenance": {
+    "name": "Solemn Countenance"
+  },
+  "LeisureTime": {
+    "name": "Leisure Time"
+  },
   "RhodeiaOfLoch": {
     "name": "Rhodeia of Loch"
   },
@@ -12292,6 +12442,18 @@
   },
   "EmperorOfFireAndIron": {
     "name": "Emperor of Fire and Iron"
+  },
+  "AllDevouringNarwhal": {
+    "name": "All-Devouring Narwhal"
+  },
+  "ConsecratedScorpion": {
+    "name": "Consecrated Scorpion"
+  },
+  "ConsecratedFlyingSerpent": {
+    "name": "Consecrated Flying Serpent"
+  },
+  "GuardianOfApepsOasis": {
+    "name": "Guardian of Apep's Oasis"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -12542,6 +12704,33 @@
   "MoltenMail": {
     "name": "Molten Mail"
   },
+  "TerrorForTheEvildoers": {
+    "name": "Terror for the Evildoers"
+  },
+  "HearMeLetUsRaiseTheChaliceOfLove": {
+    "name": "\"Hear Me — Let Us Raise the Chalice of Love!\""
+  },
+  "RockinInAFlamingWorld": {
+    "name": "Rockin' in a Flaming World"
+  },
+  "DecorousHarmony": {
+    "name": "Decorous Harmony"
+  },
+  "TheArtOfBudgeting": {
+    "name": "The Art of Budgeting"
+  },
+  "LightlessFeeding": {
+    "name": "Lightless Feeding"
+  },
+  "FatalFulmination": {
+    "name": "Fatal Fulmination"
+  },
+  "DeathlyCyclone": {
+    "name": "Deathly Cyclone"
+  },
+  "AThousandYoung": {
+    "name": "A Thousand Young"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -12764,6 +12953,27 @@
   "AmethystCrown": {
     "name": "Amethyst Crown"
   },
+  "CashflowSupervision": {
+    "name": "Cashflow Supervision"
+  },
+  "EndOfTheLine": {
+    "name": "End of the Line"
+  },
+  "ForestRegalia": {
+    "name": "Forest Regalia"
+  },
+  "SplendorOfTranquilWaters": {
+    "name": "Splendor of Tranquil Waters"
+  },
+  "MarechausseeHunter": {
+    "name": "Marechaussee Hunter"
+  },
+  "GoldenTroupe": {
+    "name": "Golden Troupe"
+  },
+  "FlowerOfParadiseLost": {
+    "name": "Flower of Paradise Lost"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -12898,6 +13108,15 @@
   },
   "TheWhiteGloveAndTheFisherman": {
     "name": "The White Glove and the Fisherman"
+  },
+  "TheMausoleumOfKingDeshret": {
+    "name": "The Mausoleum of King Deshret"
+  },
+  "CentralLaboratoryRuins": {
+    "name": "Central Laboratory Ruins"
+  },
+  "SirArthur": {
+    "name": "Sir Arthur"
   },
   "ElementalResonanceWovenIce": {
     "name": "Elemental Resonance: Woven Ice"
@@ -13066,6 +13285,15 @@
   },
   "UnderwaterTreasureHunt": {
     "name": "Underwater Treasure Hunt"
+  },
+  "ViciousAncientBattle": {
+    "name": "Vicious Ancient Battle"
+  },
+  "WaterAndJustice": {
+    "name": "Water and Justice"
+  },
+  "CountdownToTheShow3": {
+    "name": "Countdown to the Show: 3"
   },
   "Origin": {
     "name": "Origin"
@@ -14155,6 +14383,9 @@
   },
   "FontainianCarpetFairAndSquare": {
     "name": "Fontainian Carpet: \"Fair and Square\""
+  },
+  "FadingAfterglow": {
+    "name": "\"Fading Afterglow\""
   },
   "TrustyPortableLamp": {
     "name": "Trusty Portable Lamp"
@@ -15527,6 +15758,9 @@
   "BoxingTargetOfTheForbiddenFortress": {
     "name": "\"Boxing Target of the Forbidden Fortress\""
   },
+  "ImprovedCrococannon": {
+    "name": "Improved Crococannon"
+  },
   "PottedPlantVerdantVastness": {
     "name": "Potted Plant: Verdant Vastness"
   },
@@ -15920,6 +16154,9 @@
   "CrystallineGlory": {
     "name": "\"Crystalline Glory\""
   },
+  "MusicTownsBreezeBellsCheepingFinches": {
+    "name": "Music Town's Breeze Bells: \"Cheeping Finches\""
+  },
   "BookshelfFreeReading": {
     "name": "Bookshelf: Free Reading"
   },
@@ -15958,6 +16195,9 @@
   },
   "MallowWoodMailboxStorage": {
     "name": "Mallow Wood Mailbox: \"Storage\""
+  },
+  "ModelContraptionStandardMusicalMode": {
+    "name": "Model Contraption: Standard Musical Mode"
   },
   "WeatheredBambooFence": {
     "name": "Weathered Bamboo Fence"
@@ -16147,5 +16387,8 @@
   },
   "SwordBearingStatueEternalWatch": {
     "name": "Sword-Bearing Statue: \"Eternal Watch\""
+  },
+  "SwordBearingStatueAestheticsOfIncompleteness": {
+    "name": "Sword-Bearing Statue: \"Aesthetics of Incompleteness\""
   }
 }
