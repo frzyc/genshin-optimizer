@@ -367,14 +367,12 @@ const sheet: TalentSheet = {
           node: infoMut(dmgFormulas.skill.thrust1Dmg, {
             name: ct.chg(`skill.skillParams.2`),
             textSuffix: st('level', { count: 1 }),
-            multi: 3,
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.thrust2Dmg, {
             name: ct.chg(`skill.skillParams.2`),
             textSuffix: st('level', { count: 2 }),
-            multi: 3,
           }),
         },
         {
@@ -451,6 +449,7 @@ const sheet: TalentSheet = {
         {
           node: infoMut(dmgFormulas.burst.skillDmg, {
             name: ct.chg(`burst.skillParams.0`),
+            multi: 5,
           }),
         },
         {
