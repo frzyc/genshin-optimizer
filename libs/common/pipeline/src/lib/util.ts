@@ -24,17 +24,12 @@ export function nameToKey(name: string) {
  * @param path The starting path
  * @returns
  */
-export function generateIndexFromObj(obj: object, path: string) {
+export async function generateIndexFromObj(obj: object, path: string) {
   const keys = Object.keys(obj)
   if (!keys.length) return
   const isImg = typeof Object.values(obj)[0] === 'string'
   // generate a index.ts using keys
   const imports = Object.entries(obj)
-    .sort(([ak, av], [bk, bv]) =>
-      isImg
-        ? (av as string).localeCompare(bv)
-        : (ak as string).localeCompare(bk)
-    )
     .map(([k, v]) => `import ${k} from './${isImg ? `${v}.png` : k}'`)
     .join('\n')
   const dataContent = keys
@@ -42,9 +37,9 @@ export function generateIndexFromObj(obj: object, path: string) {
     .map((k) => `  ${k},`)
     .join('\n')
 
-  prettier.resolveConfig(path).then((prettierRc) => {
-    const indexContent = prettier.format(
-      `// This is a generated index file.
+  const prettierRc = await prettier.resolveConfig(path)
+  const indexContent = prettier.format(
+    `// This is a generated index file.
 ${imports}
 
 const data = {
@@ -52,13 +47,15 @@ ${dataContent}
 } as const
 export default data
 `,
-      { ...prettierRc, parser: 'typescript' }
-    )
-    mkdirSync(path, { recursive: true })
-    writeFileSync(`${path}/index.ts`, indexContent)
+    { ...prettierRc, parser: 'typescript' }
+  )
+  mkdirSync(path, { recursive: true })
+  writeFileSync(`${path}/index.ts`, indexContent)
 
-    Object.entries(obj).forEach(([key, val]) => {
-      if (typeof val === 'object') generateIndexFromObj(val, `${path}/${key}`)
+  await Promise.all(
+    Object.entries(obj).map(async ([key, val]) => {
+      if (typeof val === 'object')
+        await generateIndexFromObj(val, `${path}/${key}`)
     })
-  })
+  )
 }

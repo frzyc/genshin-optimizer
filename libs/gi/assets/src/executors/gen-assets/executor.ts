@@ -248,6 +248,6 @@ export default async function runExecutor(
     icon: string
     awakenIcon: string
   }
-  generateIndexFromObj(AssetData, `${DEST_PROJ_PATH}/gen`)
+  await generateIndexFromObj(AssetData, `${DEST_PROJ_PATH}/gen`)
   return { success: true }
 }
