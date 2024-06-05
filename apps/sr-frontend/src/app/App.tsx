@@ -1,4 +1,5 @@
 import { ScrollTop } from '@genshin-optimizer/common/ui'
+import '@genshin-optimizer/sr/i18n' // import to load translations
 import {
   CalcProvider,
   CharacterProvider,
