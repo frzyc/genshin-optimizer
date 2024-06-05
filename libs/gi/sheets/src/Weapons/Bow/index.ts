@@ -5,6 +5,7 @@ import AlleyHunter from './AlleyHunter'
 import AmosBow from './AmosBow'
 import AquaSimulacra from './AquaSimulacra'
 import BlackcliffWarbow from './BlackcliffWarbow'
+import Cloudforged from './Cloudforged'
 import CompoundBow from './CompoundBow'
 import ElegyForTheEnd from './ElegyForTheEnd'
 import EndOfTheLine from './EndOfTheLine'
@@ -43,6 +44,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   AmosBow,
   AquaSimulacra,
   BlackcliffWarbow,
+  Cloudforged,
   CompoundBow,
   ElegyForTheEnd,
   FadingTwilight,

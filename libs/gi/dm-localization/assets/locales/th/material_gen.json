@@ -194,6 +194,9 @@
   "IridescenceTourTickets": {
     "name": "\"บัตรทัวร์แสงสีตระการตา\""
   },
+  "AnalysisProgress": {
+    "name": "ระดับการวิเคราะห์"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -205,6 +208,9 @@
   },
   "RealmCurrency": {
     "name": "Realm Currency"
+  },
+  "ToyMedal": {
+    "name": "เหรียญของเล่น"
   },
   "OriginalEssenceInvalidated": {
     "name": "Original Essence (ยกเลิก)"
@@ -524,8 +530,17 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Sigewinne": {
+    "name": "Sigewinne"
+  },
   "Arlecchino": {
     "name": "Arlecchino"
+  },
+  "Sethos": {
+    "name": "Sethos"
+  },
+  "Clorinde": {
+    "name": "Clorinde"
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Kamisato Ayaka"
@@ -770,8 +785,17 @@
   "ChiorisStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Chiori"
   },
+  "SigewinnesStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Sigewinne"
+  },
   "ArlecchinosStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Arlecchino"
+  },
+  "SethossStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Sethos"
+  },
+  "ClorindesStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Clorinde"
   },
   "GnosticHymnOldNotes": {
     "name": "BP อัศวิน-ฉบับร่าง"
@@ -1749,7 +1773,7 @@
     "name": "ประเพณีของ Liyue - ช่อดอกไม้"
   },
   "StoneTabletCompilationsVolI": {
-    "name": "คอลเลกชันหนังสือหิน (I)"
+    "name": "บันทึกรวมศิลา (I)"
   },
   "HumorFromTianheng": {
     "name": "อารมณ์ขันจาก Tianheng"
@@ -6938,8 +6962,26 @@
   "DeliciousBulleSouffle": {
     "name": "Bulle Souffle แสนอร่อย"
   },
+  "WellBalancedMeal": {
+    "name": "Well-Balanced Meal"
+  },
   "HearthfiresTrail": {
     "name": "Hearthfire's Trail"
+  },
+  "SuspiciousBulleSauceDuckBreast": {
+    "name": "Suspicious Bulle Sauce Duck Breast"
+  },
+  "BulleSauceDuckBreast": {
+    "name": "Bulle Sauce Duck Breast"
+  },
+  "DeliciousBulleSauceDuckBreast": {
+    "name": "Bulle Sauce Duck Breast แสนอร่อย"
+  },
+  "TaggedAndBagged": {
+    "name": "\"Tagged and Bagged\""
+  },
+  "SuperDeeDuperDeliciousMeatRoll": {
+    "name": "Super-Dee-Duper Delicious Meat Roll"
   },
   "RecipeItem": {
     "name": "Cooking Ingredients"
@@ -7519,6 +7561,9 @@
   },
   "RecipeBulleSouffle": {
     "name": "สูตรอาหาร: Bulle Souffle"
+  },
+  "RecipeBulleSauceDuckBreast": {
+    "name": "สูตรอาหาร: Bulle Sauce Duck Breast"
   },
   "CraftedItems": {
     "name": "ไอเทมจากการสร้าง"
@@ -10241,6 +10286,12 @@
   "FelixFelicium": {
     "name": "\"พรแห่งโชค\""
   },
+  "ConcentratedTransoceanicPearl": {
+    "name": "Concentrated Transoceanic Pearl"
+  },
+  "TaintedHydroPhantasmExtract": {
+    "name": "สารสกัด Tainted Hydro Phantasm"
+  },
   "ShikanoinHeizousMessage": {
     "name": "ข้อความจาก Shikanoin Heizou"
   },
@@ -10283,11 +10334,26 @@
   "DamagedScore": {
     "name": "โน้ตเพลงที่เสียหาย"
   },
+  "CriminalsTestimony": {
+    "name": "คำให้การของนักโทษ"
+  },
+  "RawatsNotes": {
+    "name": "บันทึกของ Rawat"
+  },
+  "GroupPhotoFromAnUnknownTime": {
+    "name": "รูปหมู่ที่ไม่รู้ถ่ายไว้ตอนไหน"
+  },
   "RuggierosNotesII": {
     "name": "บันทึกของ Ruggiero (II)"
   },
   "PagesFromALostScoreII": {
     "name": "เศษหน้ากระดาษโน้ตเพลงที่สาบสูญ II"
+  },
+  "TreasureMapWithTheVaultsLocation": {
+    "name": "\"แผนที่ขุมทรัพย์\" ที่ระบุตำแหน่งคลังสมบัติไว้"
+  },
+  "MarechausseeHunterJudgmentDayCharacterAlbum": {
+    "name": "อัลบั้มที่ระลึกของตัวละคร \"นักล่าเงา: เวลาแห่งการพิพากษา\""
   },
   "AncientEngravings": {
     "name": "แผ่นศิลาจารึกโบราณ"
@@ -10318,6 +10384,57 @@
   },
   "AncientPieceOfPaper": {
     "name": "กระดาษโน้ตโบราณ"
+  },
+  "ProductionLog": {
+    "name": "บันทึกการผลิต"
+  },
+  "ExperimentLog": {
+    "name": "บันทึกการทดลอง"
+  },
+  "TheLittleWitchAndTheUndyingFireI": {
+    "name": "แม่มดน้อยและเพลิงที่ไม่มีวันดับ (I)"
+  },
+  "TheLittleWitchAndTheUndyingFireII": {
+    "name": "แม่มดน้อยและเพลิงที่ไม่มีวันดับ (II)"
+  },
+  "TheLittleWitchAndTheUndyingFireIII": {
+    "name": "แม่มดน้อยและเพลิงที่ไม่มีวันดับ (III)"
+  },
+  "TheLittleWitchAndTheUndyingFireIV": {
+    "name": "แม่มดน้อยและเพลิงที่ไม่มีวันดับ (IV)"
+  },
+  "TheLittleWitchAndTheUndyingFireV": {
+    "name": "แม่มดน้อยและเพลิงที่ไม่มีวันดับ (V)"
+  },
+  "TheLittleWitchAndTheUndyingFireVI": {
+    "name": "แม่มดน้อยและเพลิงที่ไม่มีวันดับ (VI)"
+  },
+  "TheLittleWitchAndTheUndyingFireVII": {
+    "name": "แม่มดน้อยและเพลิงที่ไม่มีวันดับ (VII)"
+  },
+  "TheFelineFirmI": {
+    "name": "สำนักงานแมวเหมียว (I)"
+  },
+  "TheFelineFirmII": {
+    "name": "สำนักงานแมวเหมียว (II)"
+  },
+  "TheFelineFirmIII": {
+    "name": "สำนักงานแมวเหมียว (III)"
+  },
+  "TheFelineFirmIV": {
+    "name": "สำนักงานแมวเหมียว (IV)"
+  },
+  "TheFelineFirmV": {
+    "name": "สำนักงานแมวเหมียว (V)"
+  },
+  "TheFelineFirmVI": {
+    "name": "สำนักงานแมวเหมียว (VI)"
+  },
+  "TheFelineFirmVII": {
+    "name": "สำนักงานแมวเหมียว (VII)"
+  },
+  "TheFelineFirmVIII": {
+    "name": "สำนักงานแมวเหมียว (VIII)"
   },
   "TearsAmongTheStars": {
     "name": "น้ำตาแห่งดวงดาว"
@@ -11072,6 +11189,9 @@
   "ExaltedEarth": {
     "name": "\"Exalted Earth\""
   },
+  "CamAndCablesOfLaw": {
+    "name": "Cam and Cables of Law"
+  },
   "FalconsDance": {
     "name": "Falcon's Dance"
   },
@@ -11804,6 +11924,21 @@
   "TravelNotesTheRealmsRocked": {
     "name": "บันทึก - สั่นสะท้าน"
   },
+  "ClorindeRoleplay": {
+    "name": "Clorinde - บทบาทสมมติ"
+  },
+  "SigewinneTreatment": {
+    "name": "Sigewinne - การรักษา"
+  },
+  "SethosBaFragment": {
+    "name": "Sethos - เสี้ยวจิตแห่ง Ba"
+  },
+  "AchievementPoeticPages": {
+    "name": "ความสำเร็จ - หน้าบทกวี"
+  },
+  "TravelNotesSimulnation": {
+    "name": "บันทึก - เกมจำลอง"
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone"
   },
@@ -12236,6 +12371,21 @@
   "ObligingLittleYuegui": {
     "name": "Yuegui น้อยผู้ช่วยคนทุกข์ยาก"
   },
+  "UpbeatEncouragement": {
+    "name": "แจกความสดใส"
+  },
+  "ElegantCountenance": {
+    "name": "ท่วงท่าสง่างาม"
+  },
+  "ReadyForBattle": {
+    "name": "เตรียมพร้อมสู้รบ"
+  },
+  "SolemnCountenance": {
+    "name": "สีหน้าเคร่งขรึม"
+  },
+  "LeisureTime": {
+    "name": "ช่วงเวลาพักผ่อน"
+  },
   "RhodeiaOfLoch": {
     "name": "Oceanid - Rhodeia"
   },
@@ -12292,6 +12442,18 @@
   },
   "EmperorOfFireAndIron": {
     "name": "Emperor of Fire and Iron"
+  },
+  "AllDevouringNarwhal": {
+    "name": "All-Devouring Narwhal"
+  },
+  "ConsecratedScorpion": {
+    "name": "Consecrated Scorpion"
+  },
+  "ConsecratedFlyingSerpent": {
+    "name": "Consecrated Flying Serpent"
+  },
+  "GuardianOfApepsOasis": {
+    "name": "ผู้พิทักษ์โอเอซิสของ Apep"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -12542,6 +12704,33 @@
   "MoltenMail": {
     "name": "Molten Mail"
   },
+  "TerrorForTheEvildoers": {
+    "name": "Terror for the Evildoers"
+  },
+  "HearMeLetUsRaiseTheChaliceOfLove": {
+    "name": "\"Hear Me — Let Us Raise the Chalice of Love!\""
+  },
+  "RockinInAFlamingWorld": {
+    "name": "Rockin' in a Flaming World"
+  },
+  "DecorousHarmony": {
+    "name": "Decorous Harmony"
+  },
+  "TheArtOfBudgeting": {
+    "name": "The Art of Budgeting"
+  },
+  "LightlessFeeding": {
+    "name": "Lightless Feeding"
+  },
+  "FatalFulmination": {
+    "name": "Fatal Fulmination"
+  },
+  "DeathlyCyclone": {
+    "name": "Deathly Cyclone"
+  },
+  "AThousandYoung": {
+    "name": "A Thousand Young"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -12764,6 +12953,27 @@
   "AmethystCrown": {
     "name": "Amethyst Crown"
   },
+  "CashflowSupervision": {
+    "name": "Cashflow Supervision"
+  },
+  "EndOfTheLine": {
+    "name": "End of the Line"
+  },
+  "ForestRegalia": {
+    "name": "Forest Regalia"
+  },
+  "SplendorOfTranquilWaters": {
+    "name": "Splendor of Tranquil Waters"
+  },
+  "MarechausseeHunter": {
+    "name": "Marechaussee Hunter"
+  },
+  "GoldenTroupe": {
+    "name": "Golden Troupe"
+  },
+  "FlowerOfParadiseLost": {
+    "name": "Flower of Paradise Lost"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -12898,6 +13108,15 @@
   },
   "TheWhiteGloveAndTheFisherman": {
     "name": "The White Glove and the Fisherman"
+  },
+  "TheMausoleumOfKingDeshret": {
+    "name": "สุสานราชา Deshret"
+  },
+  "CentralLaboratoryRuins": {
+    "name": "Central Laboratory Ruins"
+  },
+  "SirArthur": {
+    "name": "คุณ Arthur"
   },
   "ElementalResonanceWovenIce": {
     "name": "Elemental Resonance: Woven Ice"
@@ -13066,6 +13285,15 @@
   },
   "UnderwaterTreasureHunt": {
     "name": "Underwater Treasure Hunt"
+  },
+  "ViciousAncientBattle": {
+    "name": "Vicious Ancient Battle"
+  },
+  "WaterAndJustice": {
+    "name": "Water and Justice"
+  },
+  "CountdownToTheShow3": {
+    "name": "Countdown to the Show: 3"
   },
   "Origin": {
     "name": "แรกเริ่ม"
@@ -14155,6 +14383,9 @@
   },
   "FontainianCarpetFairAndSquare": {
     "name": "พรม Fontaine - \"เสมอและเท่าเทียม\""
+  },
+  "FadingAfterglow": {
+    "name": "\"แสงระเรื่อที่จางหาย\""
   },
   "TrustyPortableLamp": {
     "name": "โคมที่ไม่เคยมอดดับ"
@@ -15527,6 +15758,9 @@
   "BoxingTargetOfTheForbiddenFortress": {
     "name": "\"เป้าชกในป้อมปราการต้องห้าม\""
   },
+  "ImprovedCrococannon": {
+    "name": "\"ปืนใหญ่เข้เข้ปิ้วปิ้วรุ่นใหม่\""
+  },
   "PottedPlantVerdantVastness": {
     "name": "กระถางปลูกพืช - หย่อมหญ้าที่เขียวขจี"
   },
@@ -15920,6 +16154,9 @@
   "CrystallineGlory": {
     "name": "\"ประกายเกียรติยศ\""
   },
+  "MusicTownsBreezeBellsCheepingFinches": {
+    "name": "กระดิ่งลมเมืองแห่งเสียงดนตรี - \"นกกระจอกจิ๊บจิ๊บ\""
+  },
   "BookshelfFreeReading": {
     "name": "ชั้นวางหนังสือ - \"อ่านอิสระ\""
   },
@@ -15958,6 +16195,9 @@
   },
   "MallowWoodMailboxStorage": {
     "name": "กล่องจดหมายไม้ Mallow: \"เก็บของ\""
+  },
+  "ModelContraptionStandardMusicalMode": {
+    "name": "โมเดลกลไก - \"โทนเสียงมาตรฐาน\""
   },
   "WeatheredBambooFence": {
     "name": "รั้วไม้ไผ่ทนสภาพอากาศ"
@@ -16147,5 +16387,8 @@
   },
   "SwordBearingStatueEternalWatch": {
     "name": "รูปปั้นถือดาบ - \"ผู้พิทักษ์ชั่วนิรันดร์\""
+  },
+  "SwordBearingStatueAestheticsOfIncompleteness": {
+    "name": "รูปปั้นถือดาบ - \"สุนทรียภาพที่ไม่สมบูรณ์\""
   }
 }

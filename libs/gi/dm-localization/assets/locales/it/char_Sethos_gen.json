@@ -1,0 +1,169 @@
+{
+  "name": "Sethos",
+  "title": "Misurazione del sapere",
+  "description": "L'erede del Tempio del Silenzio, proveniente dalle dune di sabbia e gravato dal peso dei segreti.",
+  "constellationName": "Basileos Delta",
+  "auto": {
+    "name": "Arco del giunco regale",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Esegue fino a 3 tiri consecutivi con l'arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>ATT mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, il potere di Electro si accumula sulla punta della freccia prima che venga scoccata. Ha diversi effetti in base al tempo di carica dell'energia.",
+        "3": [
+          " Livello di carica 1: scocca una freccia infusa col potere del fulmine che infligge <electro>DAN da Electro</electro>.",
+          " Livello di carica 2: scocca una <strong>Freccia squarciaombre</strong> che trapassa i nemici infliggendo <electro>DAN da Electro</electro> a tutti gli avversari sul suo percorso. Quando la Freccia squarciaombre è a piena carica, Sethos non può muoversi."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "ATT mirato",
+      "4": "ATT mirato a livello di carica 1",
+      "5": "DAN da Freccia squarciaombre",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Rito antico: Sabbie del tuono",
+    "description": {
+      "0": "Convoglia la potenza del fulmine, infliggendo <electro>DAN da Electro ad area</electro> per poi arretrare rapidamente. Se l'attacco innesca reazioni di Electrocarica, Superconduzione, Sovraccarico, Vivificazione, Accentuazione, Iperfioritura o Turbinio di Electro, l'energia elementale di Sethos si ripristina di una certa quantità.",
+      "1": "<br/>",
+      "2": "<i>\"I sacerdoti in cui risiede la luce divina, i Magi che tramutavano in sorgenti le aride lande, e i cantori del mare di sabbia che ancor oggi ne diffondono le storie... So bene che non si tratta di leggende, poiché loro sono i nostri antenati.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "RIGEN energia",
+      "2": "TdR",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rito arcano: Squarciaombre del tramonto",
+    "description": {
+      "0": "Tramite un rito arcano, Sethos entra nello stato di Meditazione del tramonto, convertendo gli attacchi normali in <strong>Dardi del crepuscolo</strong> che infliggono <electro>DAN da Electro</electro> agli avversari sul loro percorso.",
+      "1": "Mentre è in questo stato, Sethos non può eseguire attacchi mirati.",
+      "2": "I DAN da Dardi del crepuscolo aumentano in base alla maestria elementale di Sethos, e sono considerati DAN da attacco caricato.",
+      "3": "Questo effetto viene annullato quando Sethos lascia il campo.",
+      "4": "<br/>",
+      "5": "<i>Negli archivi del Tempio del Silenzio figurano un gran numero di tomi lasciati da Akhtamun risalenti all'era di Re Deshret. Tra le loro pagine sono conservati molti riti arcani dal potere smisurato; tuttavia, perfino tra i membri del Tempio del Silenzio, solo in pochi sono in grado di officiarli al meglio.</i>"
+    },
+    "skillParams": {
+      "0": "Incremento DAN Dardi del crepuscolo",
+      "1": "Durata Meditazione del tramonto",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Enigma del nibbio bruno",
+    "description": {
+      "0": "Il tempo di carica degli attacchi mirati diminuisce di 0,285 s per ogni punto di energia elementale di Sethos. In questo modo, è possibile ridurre il tempo di carica fino a un minimo di 0,3 s, ed è possibile conteggiare un massimo 20 punti di energia. Se viene scagliata una <strong>Freccia squarciaombre</strong>, la quantità conteggiata di energia elementale viene consumata. Se la freccia è di livello 1, viene consumato un 50% della quantità di energia elementale conteggiata."
+    }
+  },
+  "passive2": {
+    "name": "Manna del Re delle sabbie",
+    "description": {
+      "0": "Sethos ottiene l'effetto Ombra delle sabbie roventi, che aumenta i DAN inflitti dalle <strong>Frecce squarciaombre</strong> di un 700% della sua maestria elementale.",
+      "1": "L'effetto Ombra delle sabbie roventi si annulla quando si verifica una qualunque delle seguenti condizioni:",
+      "2": [
+        " trascorrono 5 s da quando la prima Freccia squarciaombre colpisce un avversario;",
+        " 4 Frecce squarciaombre colpiscono gli avversari."
+      ],
+      "3": "<br/>",
+      "4": "Quando una Freccia squarciaombre sotto l'effetto di Ombra delle sabbie roventi colpisce un avversario, Sethos ottiene nuovamente l'effetto Ombra delle sabbie roventi dopo 15 s."
+    }
+  },
+  "passive3": {
+    "name": "Rivelazione di Thoth",
+    "description": {
+      "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Sumeru</strong>."
+    }
+  },
+  "constellation1": {
+    "name": "Litania del santuario precluso",
+    "description": {
+      "0": "Il tasso di CRIT della <strong>Freccia squarciaombre</strong> aumenta di un 15%."
+    }
+  },
+  "constellation2": {
+    "name": "Papiri di segreti silenti",
+    "description": {
+      "0": "Sethos ottiene un 15% di <electro>bonus DAN da Electro</electro> per 10 s, cumulabile 2 volte e con la durata di ciascun accumulo calcolata in maniera indipendente, quando si verifica una qualunque delle seguenti condizioni:",
+      "1": [
+        " gli attacchi mirati consumano energia elementale (richiede il talento passivo Enigma del nibbio bruno);",
+        " l'energia elementale viene ripristinata innescando reazioni elementali tramite <strong>Rito antico: Sabbie del tuono</strong>;",
+        " viene usato <strong>Rito arcano: Squarciaombre del tramonto</strong>."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Ode al saggio della Luna nascente",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Attacco normale: Arco del giunco regale</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Piume benevole",
+    "description": {
+      "0": "Quando una <strong>Freccia squarciaombre</strong> o un <strong>Dardo del crepuscolo</strong> colpisce 2 o più avversari, la maestria elementale di tutti i membri del gruppo vicini aumenta di 80 per 10 s."
+    }
+  },
+  "constellation5": {
+    "name": "Cronache divine delle sabbie roventi",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Rito arcano: Squarciaombre del tramonto</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tomo del Tempio del Sole ramingo",
+    "description": {
+      "0": "Dopo aver colpito un nemico con una <strong>Freccia squarciaombre</strong>, l'energia elementale consumata dal talento passivo Enigma del nibbio bruno viene restituita. Questo effetto può attivarsi una volta ogni 15 s. Richiede il talento passivo Enigma del nibbio bruno."
+    }
+  }
+}

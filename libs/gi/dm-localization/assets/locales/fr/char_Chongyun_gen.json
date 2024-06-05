@@ -133,7 +133,7 @@
   "constellation4": {
     "name": "Cieux givrés",
     "description": {
-      "0": "Chongyun récupère 1 pt d'énergie à chaque fois qu'il touche un ennemi affecté par <cryo>Cryo</cryo>.",
+      "0": "Chongyun récupère 1 pt d'énergie à chaque fois qu'il touche un ennemi affecté par l'<cryo>élément Cryo</cryo>.",
       "1": "Cet effet peut être déclenché une fois toutes les 2 s."
     }
   },

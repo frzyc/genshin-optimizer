@@ -1,0 +1,183 @@
+{
+  "name": "Clorinde",
+  "title": "La Cazasombras Portavelas",
+  "description": "Una verduga del justiciazgo invicta que defiende la Corte de Fontaine a capa y espada.",
+  "constellationName": "Rapperia",
+  "auto": {
+    "name": "Credo fantasmal",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para disparar unas balas en forma de abanico con su pistola."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Caza noctámbula",
+    "description": {
+      "0": "Prepara su pistola y entra en el estado de “patrulla nocturna”, en el que combina el combate con espada y pistola. En este estado, Clorinde pasa a atacar con su pistola y su Ataque Normal se transforma en “caza galopante”, de manera que su daño se convierte en <electro>Daño Electro</electro>, el cual no puede sustituirse imbuyéndose de otro elemento, y no puede ejecutar Ataques Cargados. Por otro lado, su Habilidad Elemental se transforma en un “ensartamiento noctámbulo”, con el que arremete hacia delante con su espada para infligir <electro>Daño Electro</electro>. El daño infligido de esta manera se considera daño de Ataque Normal.",
+      "1": "<br/>",
+      "2": "<strong>Caza galopante</strong>",
+      "3": [
+        "Cuando el pacto vital sea superior o igual al 100% de la Vida Máx., ejecuta un disparo de pistola.",
+        "Cuando el pacto vital sea inferior al 100% de la Vida Máx., al ejecutar un disparo, Clorinde obtiene cierto pacto vital en función de su Vida Máx. y dispara unas balas penetrantes que infligen un mayor daño a los enemigos que haya en su trayectoria."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Ensartamiento noctámbulo</strong>",
+      "6": "Los efectos del ensartamiento noctámbulo varían dependiendo del porcentaje del pacto vital actual de Clorinde:",
+      "7": [
+        "Cuando el pacto vital es del 0%, ejecuta una arremetida con su espada.",
+        "Cuando el pacto vital es inferior al 100% de su Vida Máx., Clorinde recupera Vida en función del valor de su pacto vital, y aumenta tanto el AdE como el daño que inflige el ensartamiento noctámbulo.",
+        "Cuando el pacto vital es superior o igual al 100% de su Vida Máx., ejecuta un ensartamiento noctámbulo: mandato que restaura aún más Vida a Clorinde y aumenta aún más el rango de ataque y el daño del ensartamiento noctámbulo."
+      ],
+      "8": "<br/>",
+      "9": "Además, mientras Clorinde esté en el estado de patrulla nocturna, ninguna curación (exceptuando la del ensartamiento noctámbulo) surtirá efecto, y en su lugar le otorgará un pacto vital equivalente a cierto porcentaje de la Vida restaurada.",
+      "10": "<br/>",
+      "11": "El estado de patrulla nocturna se elimina cuando Clorinde se retira de combate.",
+      "12": "<br/>",
+      "13": "<strong>Arjé: ousía</strong>",
+      "14": "Cada cierto tiempo, cuando Clorinde golpee a un objetivo con caza galopante, en la ubicación golpeada caerá un filo fluyente que inflige <electro>Daño Electro</electro> cargado de energía ousía.",
+      "15": "<br/>",
+      "16": "<i>Aunque la maldad que acecha entre las sombras fue aniquilada hace miles de años, una sombra inalcanzable para la luz nubló el corazón de los humanos.",
+      "17": "En el presente, sigue recordando la advertencia del Cazador Dorado: aquellos que patrullan en la noche con una vela encendida deben permanecer alerta en todo momento, pues no han de ser contaminados por la fría oscuridad.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de caza galopante",
+      "1": "Pacto vital de caza galopante",
+      "2": "Daño de ensartamiento noctámbulo",
+      "3": "Curación de ensartamiento noctámbulo",
+      "4": "Conversión de pacto vital",
+      "5": "Daño de filo fluyente",
+      "6": "Intervalo de filo fluyente",
+      "7": "Duración de patrulla nocturna",
+      "8": "TdE",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Destello final",
+    "description": {
+      "0": "Obtiene un pacto vital en función de su Vida Máx. y, tras ello, esquiva y golpea con su espada y su pistola al mismo tiempo para infligir <electro>Daño Electro en el AdE</electro>.",
+      "1": "<br/>",
+      "2": "<i>Dicen que la antigua técnica de resistir contra seres no humanos teniendo un cuerpo mortal data de la época de los Caballeros Aguapura del imperio de Remuria.",
+      "3": "Aun así, nadie dice que esta técnica no se pueda usar en un duelo contra un oponente corriente si encuentras la forma de controlar tu poder.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Pacto vital obtenido",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Llama devastanoches",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo causa una <electro>Reacción Elemental Electro</electro> contra un enemigo, el <electro>Daño Electro</electro> del Ataque Normal y de <strong>Destello final</strong> de Clorinde aumenta en una cantidad equivalente al 20% de su ATQ. Este efecto dura 15 s, puede acumularse hasta 3 veces y la duración de cada acumulación se calcula de manera independiente. Como máximo, el daño de los anteriores ataques de Clorinde puede aumentar en 1800 pts. de esta manera."
+    }
+  },
+  "passive2": {
+    "name": "Retribución legítima",
+    "description": {
+      "0": "Si el pacto vital de Clorinde es superior o igual al 100% de su Vida Máx., cuando aumente o disminuya el valor de dicho pacto, la Prob. CRIT de Clorinde aumentará en un 10%. Este efecto dura 15 s, puede acumularse hasta 2 veces y la duración de cada acumulación se calcula de manera independiente.",
+      "1": "Además, el estado de patrulla nocturna de <strong>Caza noctámbula</strong> se fortalece, de manera que mientras está activo, la curación convertida en porcentaje de pacto vital aumenta hasta el 100%."
+    }
+  },
+  "passive3": {
+    "name": "Recompensa noctámbula",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Fontaine</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Desde hoy, cruzaré la sombra de las velas",
+    "description": {
+      "0": "Mientras esté activo el estado de patrulla nocturna de <strong>Caza noctámbula</strong>, cuando Clorinde golpea a un enemigo con el <electro>Daño Electro</electro> de sus Ataques Normales, invoca en la ubicación del enemigo una sombra noctívaga que ejecuta dos ataques coordinados, cada uno infligiendo <electro>Daño Electro</electro> equivalente al 30% del ATQ de Clorinde.",
+      "1": "Este efecto solo se puede activar una vez cada 1.2 s, y el daño infligido de esta manera se considera daño de Ataque Normal."
+    }
+  },
+  "constellation2": {
+    "name": "Desde hoy, afrontaré los peligros de la noche",
+    "description": {
+      "0": "Fortalece los efectos del talento pasivo “Llama devastanoches”: cuando un personaje cercano del equipo causa una <electro>Reacción Elemental Electro</electro> contra un enemigo, el <electro>Daño Electro</electro> del Ataque Normal de Clorinde y de <strong>Destello final</strong> aumenta en una cantidad equivalente al 30% de su ATQ. Este efecto dura 15 s, puede acumularse hasta 3 veces y la duración de cada acumulación se calcula de manera independiente. Al tener 3 acumulaciones, la RES a interrupción de Clorinde aumenta. Como máximo, el daño de los anteriores ataques de Clorinde puede aumentar en 2700 pts. de esta manera.",
+      "1": "Es necesario desbloquear el talento pasivo “Llama devastanoches”."
+    }
+  },
+  "constellation3": {
+    "name": "Recordaré mi juramento diurno",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Caza noctámbula</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Recordaré las lágrimas, la vida y la compasión",
+    "description": {
+      "0": "Al infligir daño a un enemigo con <strong>Destello final</strong>, dicho daño aumenta en un 2% por cada 1% de valor de pacto vital que tenga Clorinde. Como máximo el daño de <strong>Destello final</strong> solo puede aumentar en un 200% de esta manera."
+    }
+  },
+  "constellation5": {
+    "name": "Y recordaré que el alba siempre llegará",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Destello final</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Por eso, nunca abandonaré la esperanza",
+    "description": {
+      "0": "Durante 12 s tras usar <strong>Caza noctámbula</strong>, la Prob. CRIT de Clorinde aumenta en un 10%, y su Daño CRIT aumenta en un 70%.",
+      "1": "Además, mientras el estado de patrulla nocturna esté activo, aparecerá bajo ciertas condiciones una “sombra brillovela” que persigue a su objetivo para infligir <electro>Daño Electro</electro> equivalente al 200% del ATQ de Clorinde. El daño infligido de esta manera se considera daño de Ataque Normal.",
+      "2": "La sombra brillovela aparecerá en las siguientes situaciones:",
+      "3": [
+        "Cuando Clorinde vaya a ser golpeada por un ataque.",
+        "Cuando Clorinde ejecute un ensartamiento noctámbulo: mandato."
+      ],
+      "4": "Solo se puede invocar una sombra brillovela por segundo de esta manera y, mientras el estado de patrulla nocturna esté activo, se podrán invocar un máximo de 6 sombras.",
+      "5": "Además, mientras el estado de patrulla nocturna está activo, el daño que recibe Clorinde se reduce en un 80% y su RES a interrupción aumenta. Este efecto se elimina cuando termina la duración de patrulla nocturna o 1 s después de invocar 6 sombras brillovela."
+    }
+  }
+}

@@ -39,6 +39,7 @@ export type ArtifactFilterOption = {
   rvHigh: number
   useMaxRV: boolean
   lines: Array<1 | 2 | 3 | 4>
+  excluded?: Array<'excluded' | 'included'>
 }
 
 export function initialArtifactFilterOption(): ArtifactFilterOption {
@@ -58,6 +59,7 @@ export function initialArtifactFilterOption(): ArtifactFilterOption {
     rvHigh: 900,
     useMaxRV: false,
     lines: [1, 2, 3, 4],
+    excluded: ['excluded', 'included'],
   }
 }
 
@@ -74,9 +76,13 @@ export function artifactSortConfigs(
       getArtifactEfficiency(art, effFilterSet).maxEfficiency,
   }
 }
-export function artifactFilterConfigs(
-  effFilterSet: Set<SubstatKey> = new Set(allSubstatKeys)
-): FilterConfigs<keyof ArtifactFilterOption, IArtifact> {
+export function artifactFilterConfigs({
+  effFilterSet = new Set(allSubstatKeys),
+  excludedIds = [],
+}: {
+  effFilterSet?: Set<SubstatKey>
+  excludedIds?: string[]
+} = {}): FilterConfigs<keyof ArtifactFilterOption, IArtifact & { id: string }> {
   return {
     locked: (art, filter) => {
       if (!filter.includes('locked') && art.lock) return false
@@ -132,6 +138,13 @@ export function artifactFilterConfigs(
     },
     lines: (art, filter) =>
       [0, ...filter].includes(art.substats.filter((s) => s.value).length),
+    excluded: (art, filter) => {
+      if (!filter.includes('excluded') && excludedIds.includes(art.id))
+        return false
+      if (!filter.includes('included') && !excludedIds.includes(art.id))
+        return false
+      return true
+    },
   }
 }
 export const artifactSortMap: Partial<

@@ -1,0 +1,169 @@
+{
+  "name": "Sethos",
+  "title": "Maß aller Weisheit",
+  "description": "Nachfolger des Tempels des Schweigens, der Geheimnisse in sich trägt und aus der Wüste kommt.",
+  "constellationName": "Basileos Delta",
+  "auto": {
+    "name": "Königlicher Schilfschuss",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Pfeilschüsse hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
+        "2": "Konzentriert die Kraft des Donners während des Zielens an der Pfeilspitze und verursacht je nach Länge des Aufladens unterschiedliche Effekte:",
+        "3": [
+          " Phase 1: Schießt einen Elektro-Pfeil und verursacht <electro>Elektro-Schaden</electro>.",
+          " Phase 2: Schießt einen <strong>Schattenbohrerpfeil</strong>, der Gegner durchbohrt und Gegnern auf seiner Flugbahn <electro>Elektro-Schaden</electro> zufügt. Sethos kann sich nicht mehr bewegen, nachdem der Schattenbohrerpfeil voll aufgeladen ist."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "Gezielte Schüsse",
+      "4": "Gezielte Schüsse Aufladephase 1",
+      "5": "SCH Schattenbohrerpfeil",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Uraltes Ritual – Donnergebrüll des Sandes",
+    "description": {
+      "0": "Bündelt die Kraft des Donners, verursacht <electro>Elektro-Flächenschaden</electro> und zieht sich schnell zurück. Stellt Sethos einen Teil seiner Elementarenergie wieder her, wenn bei Gegnern die Reaktionen Unter Strom, Supraleiter, Überladen, Urwuchs, Suprawuchs, Supraspross oder Elektro-Verwirbelung ausgelöst werden.",
+      "1": "<br/>",
+      "2": "<i>„Die Priester, die den Göttern huldigten, die Meister, die Gruben zu Quellen werden ließen, Geschichten über sie kursieren unter den Dichtern des Sandmeeres ... Ich aber weiß, dass dies keine Legenden sind, denn sie waren unsere Vorväter.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Elementarenergie-Wiederherstellung",
+      "2": "Abklingzeit",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Geheimes Ritual – Zwielicht-Schattenbohrer",
+    "description": {
+      "0": "Führt ein geheimes Ritual aus und tritt in den Zustand der „Zwielicht-Meditation“ ein. In diesem wird Sethos’ Standardangriff durch <strong>Dämmerungspfeile</strong> ersetzt, die in der Lage sind, Gegner zu durchbohren: Diese fügen Gegnern auf ihrer Flugbahn <electro>Elektro-Schaden</electro> zu, der basierend auf Sethos’ Elementarkunde erhöht wird.",
+      "1": "Während der Wirkungsdauer kann Sethos keinen gezielten Schuss ausführen.",
+      "2": "Durch Dämmerungspfeile verursachter Schaden wird als Schaden des heftigen Schlags gewertet.",
+      "3": "Dieser Effekt wird aufgehoben, wenn Sethos ausgewechselt wird.",
+      "4": "<br/>",
+      "5": "<i>Die Bibliothek des Tempels des Schweigens birgt eine Vielzahl von Büchern von Akhtamun aus der Zeit Königs Deshret. Sie enthalten viele mächtige und geheime Rituale. Doch selbst im Tempel des Schweigens gab es nur wenige, die sie zu beherrschen vermochten.</i>"
+    },
+    "skillParams": {
+      "0": "SCH-Bonus vom Dämmerungspfeil",
+      "1": "Dauer Zwielicht-Meditation",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Metapher des Dunkelmilans",
+    "description": {
+      "0": "Verringert beim gezielten Schuss für jeden Punkt Elementarenergie von Sethos die Zeit zum Aufladen um 0,285 s. Auf diese Weise kann die Zeit auf höchstens 0,3 s verringert werden und es können bis zu 20 Punkte Elementarenergie gezählt werden. Die gezählte Menge Elementarenergie wird verbraucht, wenn es sich bei dem abgeschossenen Pfeil um einen <strong>Schattenbohrerpfeil</strong> handelt. Wird ein Pfeil der Aufladephase 1 abgeschossen, werden 50 % der gezählten Menge Elementarenergie verbraucht."
+    }
+  },
+  "passive2": {
+    "name": "Segen des Sandkönigs",
+    "description": {
+      "0": "Verleiht Sethos den Effekt „Sengender Sandschatten“, der den Schaden des <strong>Schattenbohrerpfeils</strong> um 700 % von Sethos’ Elementarkunde erhöht.",
+      "1": "Der Effekt Sengender Sandschatten wird entfernt, wenn während seiner Wirkungsdauer eine der folgenden Bedingungen erfüllt wird:",
+      "2": [
+        " 5 s nachdem der Schattenbohrerpfeil den ersten Gegner getroffen hat.",
+        " Nachdem 4 Schattenbohrerpfeile Gegner getroffen haben."
+      ],
+      "3": "<br/>",
+      "4": "15 s nachdem der Schattenbohrerpfeil während der Wirkungsdauer von Sengender Sandschatten den ersten Gegner getroffen hat, wird der Effekt von Sengender Sandschatten erneut gewährt."
+    }
+  },
+  "passive3": {
+    "name": "Gespiegelte Enthüllung",
+    "description": {
+      "0": "Zeigt alle <strong>Besonderheiten Sumerus</strong> in der Nähe auf der Minikarte an."
+    }
+  },
+  "constellation1": {
+    "name": "Spirituelles Lied des versiegelten Schreins",
+    "description": {
+      "0": "Erhöht die KT von <strong>Schattenbohrerpfeil</strong> um 15 %."
+    }
+  },
+  "constellation2": {
+    "name": "Papyrus-Schrift der schweigenden Geheimnisse",
+    "description": {
+      "0": "Erhöht Sethos’ <electro>Elektro-SCH-Bonus</electro> beim Erfüllen einer der folgenden Bedingungen 10 s lang um 15 %, 2-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
+      "1": [
+        " Es wird Elementarenergie durch einen gezielten Schuss verbraucht. Hierfür muss das passive Talent „Metapher des Dunkelmilans“ zuerst freigeschaltet werden.",
+        " Es wird durch <strong>Uraltes Ritual – Donnergebrüll des Sandes</strong> eine Elementarreaktion ausgelöst, wobei Elementarenergie wiederhergestellt wird.",
+        " Anwenden von <strong>Geheimes Ritual – Zwielicht-Schattenbohrer</strong>."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Ode des Weisen des aufsteigenden Mondes",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Standardangriff: Königlicher Schilfschuss</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Sammlung der wohlwollenden Federn",
+    "description": {
+      "0": "Erhöht, sobald 2 oder mehr Gegner durch <strong>Schattenbohrerpfeil</strong> oder <strong>Dämmerungspfeil</strong> getroffen werden, die Elementarkunde aller Truppenmitglieder in der Nähe 10 s lang um 80 Punkte."
+    }
+  },
+  "constellation5": {
+    "name": "Aufzeichnungen des trostlosen Gottes brennender Sande",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Geheimes Ritual – Zwielicht-Schattenbohrer</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Foliant des Tempels der wandernden Sonne",
+    "description": {
+      "0": "Erstattet, sobald ein Gegner vom <strong>Schattenbohrerpfeil</strong> getroffen wird, die Elementarenergie, die mit „Metapher des Dunkelmilans“ verbraucht wurde, zurück, 15 s Abklingzeit. Das passive Talent „Metapher des Dunkelmilans“ muss zuerst freigeschaltet werden."
+    }
+  }
+}

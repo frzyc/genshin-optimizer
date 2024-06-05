@@ -33,5 +33,8 @@ const data: TagMapNodeEntries = [
   selfBuff.common.cappedCrit_.add(
     max(min(self.final.crit_, percent(1)), percent(0))
   ),
+
+  // Default conditionals to 0
+  reader.with('qt', 'cond').add(0),
 ]
 export default data

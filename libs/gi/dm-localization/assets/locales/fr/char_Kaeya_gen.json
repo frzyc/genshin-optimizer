@@ -114,7 +114,7 @@
   "constellation1": {
     "name": "Lignée de l'excellence",
     "description": {
-      "0": "Le taux CRIT des attaques normales et chargées de Kaeya contre les ennemis affectés par <cryo>Cryo</cryo> augmente de 15 %."
+      "0": "Le taux CRIT des attaques normales et chargées de Kaeya contre les ennemis affectés par l'<cryo>élément Cryo</cryo> augmente de 15 %."
     }
   },
   "constellation2": {

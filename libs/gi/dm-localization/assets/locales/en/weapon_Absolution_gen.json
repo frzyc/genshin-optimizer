@@ -1,0 +1,24 @@
+{
+  "name": "Absolution",
+  "description": {
+    "0": "A rapier once wielded by a deceiver who had forsaken everything. In the past, it was primarily used as a tool when he had to disguise his identity."
+  },
+  "passiveName": "Deathly Pact",
+  "passiveDescription": {
+    "0": {
+      "0": "CRIT DMG increased by <cryo>20%</cryo>. Increasing the value of a Bond of Life increases the DMG the equipping character deals by <cryo>16%</cryo> for 6s. Max 3 stacks."
+    },
+    "1": {
+      "0": "CRIT DMG increased by <cryo>25%</cryo>. Increasing the value of a Bond of Life increases the DMG the equipping character deals by <cryo>20%</cryo> for 6s. Max 3 stacks."
+    },
+    "2": {
+      "0": "CRIT DMG increased by <cryo>30%</cryo>. Increasing the value of a Bond of Life increases the DMG the equipping character deals by <cryo>24%</cryo> for 6s. Max 3 stacks."
+    },
+    "3": {
+      "0": "CRIT DMG increased by <cryo>35%</cryo>. Increasing the value of a Bond of Life increases the DMG the equipping character deals by <cryo>28%</cryo> for 6s. Max 3 stacks."
+    },
+    "4": {
+      "0": "CRIT DMG increased by <cryo>40%</cryo>. Increasing the value of a Bond of Life increases the DMG the equipping character deals by <cryo>32%</cryo> for 6s. Max 3 stacks."
+    }
+  }
+}

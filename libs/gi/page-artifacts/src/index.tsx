@@ -67,7 +67,7 @@ export default function PageArtifact() {
     [effFilterSet]
   )
   const filterConfigs = useMemo(
-    () => artifactFilterConfigs(effFilterSet),
+    () => artifactFilterConfigs({ effFilterSet: effFilterSet }),
     [effFilterSet]
   )
   const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState)

@@ -194,6 +194,9 @@
   "IridescenceTourTickets": {
     "name": "Билеты на тур «Многоцветье»"
   },
+  "AnalysisProgress": {
+    "name": "Прогресс анализа"
+  },
   "Primogem": {
     "name": "Камень Истока"
   },
@@ -205,6 +208,9 @@
   },
   "RealmCurrency": {
     "name": "Сокровища обители"
+  },
+  "ToyMedal": {
+    "name": "Игрушечные медали"
   },
   "OriginalEssenceInvalidated": {
     "name": "Очищенный янтарь (выброшено)"
@@ -524,8 +530,17 @@
   "Chiori": {
     "name": "Тиори"
   },
+  "Sigewinne": {
+    "name": "Сиджвин"
+  },
   "Arlecchino": {
     "name": "Арлекино"
+  },
+  "Sethos": {
+    "name": "Сетос"
+  },
+  "Clorinde": {
+    "name": "Клоринда"
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Удача Камисато Аяки"
@@ -627,7 +642,7 @@
     "name": "Удача Ху Тао"
   },
   "KaedeharaKazuhasStellaFortuna": {
-    "name": "Удача Кадзухи"
+    "name": "Удача Каэдэхары Кадзухи"
   },
   "YanfeisStellaFortuna": {
     "name": "Удача Янь Фэй"
@@ -770,8 +785,17 @@
   "ChiorisStellaFortuna": {
     "name": "Удача Тиори"
   },
+  "SigewinnesStellaFortuna": {
+    "name": "Удача Сиджвин"
+  },
   "ArlecchinosStellaFortuna": {
     "name": "Удача Арлекино"
+  },
+  "SethossStellaFortuna": {
+    "name": "Удача Сетоса"
+  },
+  "ClorindesStellaFortuna": {
+    "name": "Удача Клоринды"
   },
   "GnosticHymnOldNotes": {
     "name": "Жемчужный гимн - Черновик"
@@ -6564,13 +6588,13 @@
     "name": "Вкусный луковый суп по-фонтейнски"
   },
   "SuspiciousIleFlottante": {
-    "name": "Странная белоснежая «роса»"
+    "name": "Странная белоснежная «роса»"
   },
   "IleFlottante": {
-    "name": "Белоснежая «роса»"
+    "name": "Белоснежная «роса»"
   },
   "DeliciousIleFlottante": {
-    "name": "Вкусная белоснежая «роса»"
+    "name": "Вкусная белоснежная «роса»"
   },
   "SuspiciousPoissonSeafoodSoup": {
     "name": "Странный суп де Пуассон"
@@ -6938,8 +6962,26 @@
   "DeliciousBulleSouffle": {
     "name": "Вкусное пузыринное суфле"
   },
+  "WellBalancedMeal": {
+    "name": "Сбалансированное питание"
+  },
   "HearthfiresTrail": {
     "name": "Следы огня"
+  },
+  "SuspiciousBulleSauceDuckBreast": {
+    "name": "Странная утиная грудка под соусом из пузырина"
+  },
+  "BulleSauceDuckBreast": {
+    "name": "Утиная грудка под соусом из пузырина"
+  },
+  "DeliciousBulleSauceDuckBreast": {
+    "name": "Вкусная утиная грудка под соусом из пузырина"
+  },
+  "TaggedAndBagged": {
+    "name": "«Промаркировано и упаковано»"
+  },
+  "SuperDeeDuperDeliciousMeatRoll": {
+    "name": "Ароматный мясной рулетик"
   },
   "RecipeItem": {
     "name": "Ингредиенты"
@@ -7410,7 +7452,7 @@
     "name": "Рецепт: Луковый суп по-фонтейнски"
   },
   "RecipeIleFlottante": {
-    "name": "Рецепт: Белоснежая «роса»"
+    "name": "Рецепт: Белоснежная «роса»"
   },
   "RecipePoissonSeafoodSoup": {
     "name": "Рецепт: Суп де Пуассон"
@@ -7519,6 +7561,9 @@
   },
   "RecipeBulleSouffle": {
     "name": "Рецепт: Пузыринное суфле"
+  },
+  "RecipeBulleSauceDuckBreast": {
+    "name": "Рецепт: Утиная грудка под соусом из пузырина"
   },
   "CraftedItems": {
     "name": "Созданные Предметы"
@@ -8478,7 +8523,7 @@
     "name": "Кошелёк Джазари"
   },
   "TheUltraInvincibleAdventureHandbook": {
-    "name": "Справочник приключений «Непобедимого»"
+    "name": "Дневник приключений «Непобедимого»"
   },
   "LostEnergyBlock": {
     "name": "Потерянный энергетический куб"
@@ -8508,31 +8553,31 @@
     "name": "Пастушок и волшебная бутылка"
   },
   "TheTaleOfShiruyehAndShirinI": {
-    "name": "История Шируе и Сирин I"
+    "name": "История Шируе и Сирин. Том I"
   },
   "TheTaleOfShiruyehAndShirinII": {
-    "name": "История Шируе и Сирин II"
+    "name": "История Шируе и Сирин. Том II"
   },
   "TheLayOfAlAhmar": {
     "name": "История аль-Ахмара"
   },
   "TheFolioOfFoliageI": {
-    "name": "Учение листвы I"
+    "name": "Учение листвы. Том I"
   },
   "TheFolioOfFoliageII": {
-    "name": "Учение листвы II"
+    "name": "Учение листвы. Том II"
   },
   "TheFolioOfFoliageIII": {
-    "name": "Учение листвы III"
+    "name": "Учение листвы. Том III"
   },
   "ScrollOfStreamingSongI": {
-    "name": "Плывущий свиток песен I"
+    "name": "Плывущий свиток песен. Том I"
   },
   "ScrollOfStreamingSongII": {
-    "name": "Плывущий свиток песен II"
+    "name": "Плывущий свиток песен. Том II"
   },
   "ScrollOfStreamingSongIII": {
-    "name": "Плывущий свиток песен III"
+    "name": "Плывущий свиток песен. Том III"
   },
   "AnOdeToKhvarena": {
     "name": "Ода Хварне"
@@ -9423,13 +9468,13 @@
     "name": "Бандиты и сыщики: Радужная брошь. Том III"
   },
   "TheFallOfTheFadedCastleI": {
-    "name": "Разрушение обветшалого замка I"
+    "name": "Разрушение обветшалого замка. Том I"
   },
   "TheFallOfTheFadedCastleII": {
-    "name": "Разрушение обветшалого замка II"
+    "name": "Разрушение обветшалого замка. Том II"
   },
   "TheFallOfTheFadedCastleIII": {
-    "name": "Разрушение обветшалого замка III"
+    "name": "Разрушение обветшалого замка. Том III"
   },
   "LaChansonDErinnyesI": {
     "name": "Песня Эриний I"
@@ -9441,22 +9486,22 @@
     "name": "Песня Эриний III"
   },
   "TalesOfASnowWingedGooseI": {
-    "name": "Сказки снежной Гусыни I"
+    "name": "Сказки снежной Гусыни. Том I"
   },
   "TalesOfASnowWingedGooseII": {
-    "name": "Сказки снежной Гусыни II"
+    "name": "Сказки снежной Гусыни. Том II"
   },
   "TalesOfASnowWingedGooseIII": {
-    "name": "Сказки снежной Гусыни III"
+    "name": "Сказки снежной Гусыни. Том III"
   },
   "TheTwoMusketeersI": {
-    "name": "Два мушкетёра I"
+    "name": "Два мушкетёра. Том I"
   },
   "TheTwoMusketeersII": {
-    "name": "Два мушкетёра II"
+    "name": "Два мушкетёра. Том II"
   },
   "TheTwoMusketeersIII": {
-    "name": "Два мушкетёра III"
+    "name": "Два мушкетёра. Том III"
   },
   "TimeTrekkerI": {
     "name": "Путешественник во времени: Том I"
@@ -10089,19 +10134,19 @@
     "name": "Оптическая линза для тренировочной стрельбы"
   },
   "PerinheriI": {
-    "name": "Переньери I"
+    "name": "Переньери. Том I"
   },
   "PerinheriII": {
-    "name": "Переньери II"
+    "name": "Переньери. Том II"
   },
   "AnecdotaSeptentrionalisI": {
-    "name": "Северные хроники I"
+    "name": "Северные хроники. Том I"
   },
   "AnecdotaSeptentrionalisII": {
-    "name": "Северные хроники II"
+    "name": "Северные хроники. Том II"
   },
   "AnecdotaSeptentrionalisIII": {
-    "name": "Северные хроники III"
+    "name": "Северные хроники. Том III"
   },
   "HelpMePlease": {
     "name": "Помогите!"
@@ -10241,6 +10286,12 @@
   "FelixFelicium": {
     "name": "Пожелание удачи"
   },
+  "ConcentratedTransoceanicPearl": {
+    "name": "Концентрированная жемчужина иноморья"
+  },
+  "TaintedHydroPhantasmExtract": {
+    "name": "Экстракт фантазма мутных вод"
+  },
   "ShikanoinHeizousMessage": {
     "name": "Сообщение от Сиканоина Хэйдзо"
   },
@@ -10283,11 +10334,26 @@
   "DamagedScore": {
     "name": "Повреждённая партитура"
   },
+  "CriminalsTestimony": {
+    "name": "Показания преступника"
+  },
+  "RawatsNotes": {
+    "name": "Записи Равата"
+  },
+  "GroupPhotoFromAnUnknownTime": {
+    "name": "Групповое фото из неизвестного времени"
+  },
   "RuggierosNotesII": {
     "name": "Записки Руджеро II"
   },
   "PagesFromALostScoreII": {
     "name": "Фрагмент потерянной партитуры II"
+  },
+  "TreasureMapWithTheVaultsLocation": {
+    "name": "Карта сокровищ с местоположением клада"
+  },
+  "MarechausseeHunterJudgmentDayCharacterAlbum": {
+    "name": "Альбом персонажей «Охотник Сумеречного двора: Судный день»"
   },
   "AncientEngravings": {
     "name": "Древняя надпись"
@@ -10318,6 +10384,57 @@
   },
   "AncientPieceOfPaper": {
     "name": "Древняя записка"
+  },
+  "ProductionLog": {
+    "name": "Производственный журнал"
+  },
+  "ExperimentLog": {
+    "name": "Журнал экспериментов"
+  },
+  "TheLittleWitchAndTheUndyingFireI": {
+    "name": "Маленькая ведьма и вечное пламя. Том I"
+  },
+  "TheLittleWitchAndTheUndyingFireII": {
+    "name": "Маленькая ведьма и вечное пламя. Том II"
+  },
+  "TheLittleWitchAndTheUndyingFireIII": {
+    "name": "Маленькая ведьма и вечное пламя. Том III"
+  },
+  "TheLittleWitchAndTheUndyingFireIV": {
+    "name": "Маленькая ведьма и вечное пламя. Том IV"
+  },
+  "TheLittleWitchAndTheUndyingFireV": {
+    "name": "Маленькая ведьма и вечное пламя. Том V"
+  },
+  "TheLittleWitchAndTheUndyingFireVI": {
+    "name": "Маленькая ведьма и вечное пламя. Том VI"
+  },
+  "TheLittleWitchAndTheUndyingFireVII": {
+    "name": "Маленькая ведьма и вечное пламя. Том VII"
+  },
+  "TheFelineFirmI": {
+    "name": "Кошачья канцелярия. Том I"
+  },
+  "TheFelineFirmII": {
+    "name": "Кошачья канцелярия. Том II"
+  },
+  "TheFelineFirmIII": {
+    "name": "Кошачья канцелярия. Том III"
+  },
+  "TheFelineFirmIV": {
+    "name": "Кошачья канцелярия. Том IV"
+  },
+  "TheFelineFirmV": {
+    "name": "Кошачья канцелярия. Том V"
+  },
+  "TheFelineFirmVI": {
+    "name": "Кошачья канцелярия. Том VI"
+  },
+  "TheFelineFirmVII": {
+    "name": "Кошачья канцелярия. Том VII"
+  },
+  "TheFelineFirmVIII": {
+    "name": "Кошачья канцелярия. Том VIII"
   },
   "TearsAmongTheStars": {
     "name": "Слёзы средь звёзд"
@@ -11072,6 +11189,9 @@
   "ExaltedEarth": {
     "name": "Одухотворённая земля"
   },
+  "CamAndCablesOfLaw": {
+    "name": "Камера и кабели закона"
+  },
   "FalconsDance": {
     "name": "Танец сокола"
   },
@@ -11804,6 +11924,21 @@
   "TravelNotesTheRealmsRocked": {
     "name": "Рок-королевства"
   },
+  "ClorindeRoleplay": {
+    "name": "Ролевая игра"
+  },
+  "SigewinneTreatment": {
+    "name": "Терапия"
+  },
+  "SethosBaFragment": {
+    "name": "Осколок Ба"
+  },
+  "AchievementPoeticPages": {
+    "name": "Поэтичные страницы"
+  },
+  "TravelNotesSimulnation": {
+    "name": "Симуляция"
+  },
   "AnemoculusResonanceStone": {
     "name": "Камень эха анемокула"
   },
@@ -12236,6 +12371,21 @@
   "ObligingLittleYuegui": {
     "name": "Услужливый маленький Юэгуй"
   },
+  "UpbeatEncouragement": {
+    "name": "Воодушевление"
+  },
+  "ElegantCountenance": {
+    "name": "Элегантный облик"
+  },
+  "ReadyForBattle": {
+    "name": "В боевой готовности"
+  },
+  "SolemnCountenance": {
+    "name": "Торжественный облик"
+  },
+  "LeisureTime": {
+    "name": "Время отдыха"
+  },
   "RhodeiaOfLoch": {
     "name": "Родия"
   },
@@ -12292,6 +12442,18 @@
   },
   "EmperorOfFireAndIron": {
     "name": "Император огня и железа"
+  },
+  "AllDevouringNarwhal": {
+    "name": "Всепожирающий нарвал"
+  },
+  "ConsecratedScorpion": {
+    "name": "Священный скорпион"
+  },
+  "ConsecratedFlyingSerpent": {
+    "name": "Священный летучий змей"
+  },
+  "GuardianOfApepsOasis": {
+    "name": "Страж оазиса Апеп"
   },
   "UndividedHeart": {
     "name": "Неразделённое сердце"
@@ -12542,6 +12704,33 @@
   "MoltenMail": {
     "name": "Оплавленная кольчуга"
   },
+  "TerrorForTheEvildoers": {
+    "name": "Держать злодеев в страхе"
+  },
+  "HearMeLetUsRaiseTheChaliceOfLove": {
+    "name": "«Высоко поднимем все кубок веселья!»"
+  },
+  "RockinInAFlamingWorld": {
+    "name": "Адский рок-н-ролл"
+  },
+  "DecorousHarmony": {
+    "name": "Гармоничное развитие"
+  },
+  "TheArtOfBudgeting": {
+    "name": "Искусство составления сметы"
+  },
+  "LightlessFeeding": {
+    "name": "Тёмное пожирание"
+  },
+  "FatalFulmination": {
+    "name": "Смертельная молния"
+  },
+  "DeathlyCyclone": {
+    "name": "Смертельный циклон"
+  },
+  "AThousandYoung": {
+    "name": "Тысячи преемников"
+  },
   "MagicGuide": {
     "name": "Руководство по магии"
   },
@@ -12764,6 +12953,27 @@
   "AmethystCrown": {
     "name": "Аметистовый венец"
   },
+  "CashflowSupervision": {
+    "name": "Казначейский надзор"
+  },
+  "EndOfTheLine": {
+    "name": "Иссушитель"
+  },
+  "ForestRegalia": {
+    "name": "Регалия леса"
+  },
+  "SplendorOfTranquilWaters": {
+    "name": "Блеск тихих вод"
+  },
+  "MarechausseeHunter": {
+    "name": "Охотник Сумеречного двора"
+  },
+  "GoldenTroupe": {
+    "name": "Золотая труппа"
+  },
+  "FlowerOfParadiseLost": {
+    "name": "Цветок потерянного рая"
+  },
   "LiyueHarborWharf": {
     "name": "Гавань Ли Юэ"
   },
@@ -12898,6 +13108,15 @@
   },
   "TheWhiteGloveAndTheFisherman": {
     "name": "Белая Перчатка и Рыбак"
+  },
+  "TheMausoleumOfKingDeshret": {
+    "name": "Гробница царя Дешрета"
+  },
+  "CentralLaboratoryRuins": {
+    "name": "Руины Центральной лаборатории"
+  },
+  "SirArthur": {
+    "name": "Месье Артур"
   },
   "ElementalResonanceWovenIce": {
     "name": "Элементальный резонанс: Переплетение Крио"
@@ -13066,6 +13285,15 @@
   },
   "UnderwaterTreasureHunt": {
     "name": "Поиск подводных сокровищ"
+  },
+  "ViciousAncientBattle": {
+    "name": "Древняя Яростная битва"
+  },
+  "WaterAndJustice": {
+    "name": "Вода и Справедливость"
+  },
+  "CountdownToTheShow3": {
+    "name": "Отсчёт до представления: 3"
   },
   "Origin": {
     "name": "Изначальный"
@@ -14155,6 +14383,9 @@
   },
   "FontainianCarpetFairAndSquare": {
     "name": "Фонтейнский ковёр: Строгость и справедливость"
+  },
+  "FadingAfterglow": {
+    "name": "Угасающее свечение"
   },
   "TrustyPortableLamp": {
     "name": "Надёжная переносная лампа"
@@ -15527,6 +15758,9 @@
   "BoxingTargetOfTheForbiddenFortress": {
     "name": "«Боксёрская мишень в Запретной крепости»"
   },
+  "ImprovedCrococannon": {
+    "name": "Улучшенная Крокодиловая пушка"
+  },
   "PottedPlantVerdantVastness": {
     "name": "Горшочное растение: Зелёные просторы"
   },
@@ -15920,6 +16154,9 @@
   "CrystallineGlory": {
     "name": "Хрустальная слава"
   },
+  "MusicTownsBreezeBellsCheepingFinches": {
+    "name": "Ветряные колокольчики Музыкального города: Щебечущие зяблики"
+  },
   "BookshelfFreeReading": {
     "name": "Книжная полка: Свободное чтение"
   },
@@ -15958,6 +16195,9 @@
   },
   "MallowWoodMailboxStorage": {
     "name": "Почтовый ящик из древесины мальвы: Хранилище"
+  },
+  "ModelContraptionStandardMusicalMode": {
+    "name": "Механическая модель: Стандартный музыкальный режим"
   },
   "WeatheredBambooFence": {
     "name": "Ветхая бамбуковая ограда"
@@ -16147,5 +16387,8 @@
   },
   "SwordBearingStatueEternalWatch": {
     "name": "Статуя с мечом: Вечный дозор"
+  },
+  "SwordBearingStatueAestheticsOfIncompleteness": {
+    "name": "Статуя с мечом: Эстетика несовершенства"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Xá Tội",
+  "description": {
+    "0": "Thanh kiếm từng được dùng bởi kẻ dối trá từ bỏ tất cả. Trước đây chủ yếu là công cụ mà anh ta dùng để ngụy trang thân phận của mình."
+  },
+  "passiveName": "Khế Ước Chết Chóc",
+  "passiveDescription": {
+    "0": {
+      "0": "Sát Thương Bạo Kích tăng <cryo>20%</cryo>; Khi giá trị của Khế Ước Sinh Mệnh gia tăng, sát thương gây ra của người trang bị tăng <cryo>16%</cryo> trong 6s. Hiệu quả này tối đa cộng dồn 3 tầng."
+    },
+    "1": {
+      "0": "Sát Thương Bạo Kích tăng <cryo>25%</cryo>; Khi giá trị của Khế Ước Sinh Mệnh gia tăng, sát thương gây ra của người trang bị tăng <cryo>20%</cryo> trong 6s. Hiệu quả này tối đa cộng dồn 3 tầng."
+    },
+    "2": {
+      "0": "Sát Thương Bạo Kích tăng <cryo>30%</cryo>; Khi giá trị của Khế Ước Sinh Mệnh gia tăng, sát thương gây ra của người trang bị tăng <cryo>24%</cryo> trong 6s. Hiệu quả này tối đa cộng dồn 3 tầng."
+    },
+    "3": {
+      "0": "Sát Thương Bạo Kích tăng <cryo>35%</cryo>; Khi giá trị của Khế Ước Sinh Mệnh gia tăng, sát thương gây ra của người trang bị tăng <cryo>28%</cryo> trong 6s. Hiệu quả này tối đa cộng dồn 3 tầng."
+    },
+    "4": {
+      "0": "Sát Thương Bạo Kích tăng <cryo>40%</cryo>; Khi giá trị của Khế Ước Sinh Mệnh gia tăng, sát thương gây ra của người trang bị tăng <cryo>32%</cryo> trong 6s. Hiệu quả này tối đa cộng dồn 3 tầng."
+    }
+  }
+}

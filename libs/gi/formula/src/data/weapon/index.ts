@@ -1,5 +1,6 @@
 import type { TagMapNodeEntries } from '../util'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
+import Absolution from './Absolution'
 import Akuoumaru from './Akuoumaru'
 import AlleyHunter from './AlleyHunter'
 import AmenomaKageuchi from './AmenomaKageuchi'
@@ -21,10 +22,12 @@ import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import CalamityQueller from './CalamityQueller'
 import CashflowSupervision from './CashflowSupervision'
 import CinnabarSpindle from './CinnabarSpindle'
+import Cloudforged from './Cloudforged'
 import CompoundBow from './CompoundBow'
 import CoolSteel from './CoolSteel'
 import CranesEchoingCall from './CranesEchoingCall'
 import CrescentPike from './CrescentPike'
+import CrimsonMoonsSemblance from './CrimsonMoonsSemblance'
 import DarkIronSword from './DarkIronSword'
 import Deathmatch from './Deathmatch'
 import DebateClub from './DebateClub'
@@ -183,6 +186,7 @@ import WolfsGravestone from './WolfsGravestone'
 import XiphosMoonlight from './XiphosMoonlight'
 
 const data: TagMapNodeEntries[] = [
+  Absolution,
   AmenomaKageuchi,
   AquilaFavonia,
   BlackcliffLongsword,
@@ -266,6 +270,7 @@ const data: TagMapNodeEntries[] = [
   BlackTassel,
   CalamityQueller,
   CrescentPike,
+  CrimsonMoonsSemblance,
   Deathmatch,
   DialoguesOfTheDesertSages,
   DragonsBane,
@@ -294,6 +299,7 @@ const data: TagMapNodeEntries[] = [
   AmosBow,
   AquaSimulacra,
   BlackcliffWarbow,
+  Cloudforged,
   CompoundBow,
   ElegyForTheEnd,
   EndOfTheLine,

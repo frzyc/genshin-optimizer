@@ -1,0 +1,169 @@
+{
+  "name": "Sethos",
+  "title": "Wisdom's Measure",
+  "description": "Penerus Temple of Silence yang menjaga rahasia dan berasal dari padang pasir.",
+  "constellationName": "Basileos Delta",
+  "auto": {
+    "name": "Royal Reed Archery",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan berturut-turut dengan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
+        "2": "Saat membidik, kekuatan Electro akan berkumpul di ujung anak panah. Memiliki efek yang berbeda tergantung dari lama serangannya ditahan:",
+        "3": [
+          "Charge Tahap 1: Menembakkan panah berisi elemen Electro dan mengakibatkan <electro>Electro DMG</electro>;",
+          "Charge Tahap 2: Menembakkan sebuah <strong>Shadowpiercing Shot</strong> yang bisa menembus musuh dan mengakibatkan <electro>Electro DMG</electro> terhadap musuh yang dilalui sepanjang jalurnya. Setelah selesai melakukan Charge terhadap Shadowpiercing Shot, Sethos tidak akan bisa bergerak."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Membidik",
+      "4": "Serangan Membidik Tahap 1",
+      "5": "DMG Shadowpiercing Shot",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ancient Rite: The Thundering Sands",
+    "description": {
+      "0": "Mengumpulkan kekuatan petir dan mengakibatkan <electro>Electro DMG Area</electro>, lalu bergerak mundur dengan cepat. Jika serangan kali ini memicu reaksi Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, atau Electro Swirl terhadap musuh, maka Sethos akan memulihkan sejumlah Energy.",
+      "1": "<br/>",
+      "2": "<i>\"Dewa tinggal di dalam Imam, Majus yang mengubah sumur menjadi mata air, para penyanyi lautan pasir yang masih menyebarkan cerita mereka ... Tapi aku tahu itu semua bukan legenda semata, karena mereka adalah leluhur kita.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pemulihan Energy",
+      "2": "Cooldown",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Secret Rite: Twilight Shadowpiercer",
+    "description": {
+      "0": "Melancarkan ritual rahasia dan memasuki status \"Twilight Meditation\". Selama masa ini, Normal Attack Sethos akan dikonversi menjadi <strong>Dusk Bolt</strong> yang bisa menembus musuh saat ditembakkan: Mengakibatkan <electro>Electro DMG</electro> terhadap musuh yang dilalui sepanjang jalurnya, dan meningkatkan DMG yang disebabkan berdasarkan Elemental Mastery Sethos.",
+      "1": "Selama durasi skill ini, Sethos tidak akan melakukan Tembakan Membidik.",
+      "2": "DMG yang diakibatkan Dusk Bolt akan dianggap sebagai DMG Charged Attack.",
+      "3": "Efek akan dihapus saat Sethos meninggalkan medan pertempuran.",
+      "4": "<br/>",
+      "5": "<i>Arsip Temple of Silence menyimpan banyak buku tebal peninggalan Akhtamun dari era Raja Deshret. Ada banyak ritual rahasia dengan kekuatan kuat yang tercatat di dalamnya, namun, bahkan sedikit sekali orang di dalam Temple of Silence yang bisa menguasainya.</i>"
+    },
+    "skillParams": {
+      "0": "Peningkatan DMG Dusk Bolt",
+      "1": "Durasi Twilight Meditation",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Black Kite's Enigma",
+    "description": {
+      "0": "Saat dalam Mode Membidik, untuk setiap 1 poin Energy Sethos saat ini, waktu Charge akan berkurang 0,285 detik. Dengan cara ini, waktu Charge bisa dikurangi hingga mencapai 0,3 detik, dan maksimum 20 Energy yang bisa dihitung dengan cara ini; Saat menembak, jika yang ditembakkan adalah <strong>Shadowpiercing Shot</strong>, akan mengonsumsi Energy yang terhitung; Jika yang ditembakkan adalah tembakan Charge Level 1, akan mengonsumsi 50% Energy yang terhitung."
+    }
+  },
+  "passive2": {
+    "name": "The Sand King's Boon",
+    "description": {
+      "0": "Sethos mendapatkan efek \"Scorching Sandshade\", membuat nilai DMG <strong>Shadowpiercing Shot</strong> yang ditembakkan meningkat sebesar 700% Elemental Mastery Sethos.",
+      "1": "Efek Scorching Sandshade akan dihapus setelah memenuhi salah satu kondisi berikut:",
+      "2": [
+        "Lima detik setelah Shadowpiercing Shot mengenai musuh untuk pertama kalinya;",
+        "Setelah ada 4 Shadowpiercing Shot yang mengenai musuh."
+      ],
+      "3": "<br/>",
+      "4": "Saat tembakan Shadowpiercing Shot dengan efek Scorching Sandshade pertama kali mengenai musuh, efek Scorching Sandshade bisa kembali diperoleh setelah 15 detik kemudian."
+    }
+  },
+  "passive3": {
+    "name": "Thoth's Revelation",
+    "description": {
+      "0": "Memperlihatkan lokasi <strong>produk khas Sumeru</strong> di sekitar pada peta kecil."
+    }
+  },
+  "constellation1": {
+    "name": "Sealed Shrine's Spiritsong",
+    "description": {
+      "0": "CRIT Rate <strong>Shadowpiercing Shot</strong> meningkat 15%."
+    }
+  },
+  "constellation2": {
+    "name": "Papyrus Scripture of Silent Secrets",
+    "description": {
+      "0": "Saat memenuhi salah satu kondisi berikut, <electro>Electro DMG Bonus</electro> Sethos meningkat 15% selama 10 detik, dapat ditumpuk sampai 2 lapis, durasi setiap lapisnya dihitung terpisah:",
+      "1": [
+        "Mengonsumsi Energy melalui serangan Membidik, kondisi ini harus membuka Talenta Pasif \"Black Kite's Enigma\" terlebih dahulu;",
+        "Memicu Reaksi Elemental dan memulihkan Energy melalui <strong>Ancient Rite: The Thundering Sands</strong>;",
+        "Melancarkan <strong>Secret Rite: Twilight Shadowpiercer</strong>."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Ode to the Moonrise Sage",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Normal Attack: Royal Reed Archery</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Beneficent Plumage",
+    "description": {
+      "0": "Saat <strong>Shadowpiercing Shot</strong> atau <strong>Dusk Bolt</strong> mengenai 2 musuh atau lebih, meningkatkan 80 poin Elemental Mastery seluruh anggota party di sekitar selama 10 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Record of the Desolate God's Burning Sands",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Secret Rite: Twilight Shadowpiercer</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Pylon of the Sojourning Sun Temple",
+    "description": {
+      "0": "Setelah <strong>Shadowpiercing Shot</strong> mengenai musuh, Energy yang dikonsumsi oleh Talenta Pasif \"Black Kite's Enigma\" akan dikembalikan. Efek ini dapat terpicu setiap 15 detik. Harus membuka Talenta Pasif \"Black Kite's Enigma\" terlebih dahulu."
+    }
+  }
+}
