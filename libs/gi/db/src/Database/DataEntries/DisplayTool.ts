@@ -2,7 +2,7 @@ import { HOUR_MS } from '@genshin-optimizer/common/util'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 
-export const RESIN_MAX = 160
+export const RESIN_MAX = 200
 export const timeZones = {
   America: -5 * HOUR_MS,
   Europe: HOUR_MS,
