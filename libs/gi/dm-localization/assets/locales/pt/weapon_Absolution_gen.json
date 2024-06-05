@@ -1,0 +1,24 @@
+{
+  "name": "Absolvição",
+  "description": {
+    "0": "Uma espada afiada utilizada por um trapaceiro que desistiu de tudo. No passado, ele a usava como um disfarce para a sua identidade."
+  },
+  "passiveName": "Pacto da Morte",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano CRIT em <cryo>20%</cryo>. Aumentar o valor de um Contrato de Vida aumentará o Dano causado pelo personagem que está com essa arma equipada em <cryo>16%</cryo> por 6s. Máximo de 3 acúmulos."
+    },
+    "1": {
+      "0": "Aumenta o Dano CRIT em <cryo>25%</cryo>. Aumentar o valor de um Contrato de Vida aumentará o Dano causado pelo personagem que está com essa arma equipada em <cryo>20%</cryo> por 6s. Máximo de 3 acúmulos."
+    },
+    "2": {
+      "0": "Aumenta o Dano CRIT em <cryo>30%</cryo>. Aumentar o valor de um Contrato de Vida aumentará o Dano causado pelo personagem que está com essa arma equipada em <cryo>24%</cryo> por 6s. Máximo de 3 acúmulos."
+    },
+    "3": {
+      "0": "Aumenta o Dano CRIT em <cryo>35%</cryo>. Aumentar o valor de um Contrato de Vida aumentará o Dano causado pelo personagem que está com essa arma equipada em <cryo>28%</cryo> por 6s. Máximo de 3 acúmulos."
+    },
+    "4": {
+      "0": "Aumenta o Dano CRIT em <cryo>40%</cryo>. Aumentar o valor de um Contrato de Vida aumentará o Dano causado pelo personagem que está com essa arma equipada em <cryo>32%</cryo> por 6s. Máximo de 3 acúmulos."
+    }
+  }
+}

@@ -10,10 +10,12 @@ import {
   allElementWithPhyKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
+import type { IGOOD } from '@genshin-optimizer/gi/good'
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
 import type { ICachedArtifact, ICachedWeapon } from '../../Interfaces'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
+import type { IGO, ImportResult } from '../exim'
 import { defaultInitialWeapon } from './WeaponDataManager'
 
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
@@ -252,6 +254,16 @@ export class TeamDataManager extends DataManager<
     )
       return ''
     return id
+  }
+  override importGOOD(good: IGOOD & IGO, result: ImportResult): void {
+    result.teams.beforeImport = this.entries.length
+
+    const teams = good[this.dataKey]
+    if (teams && Array.isArray(teams)) {
+      result.teams.import = teams.length
+    }
+
+    super.importGOOD(good, result)
   }
 
   getActiveTeamChar(teamId: string) {

@@ -50,6 +50,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11512: 'LightOfFoliarIncision',
   11513: 'SplendorOfTranquilWaters',
   11514: 'UrakuMisugiri',
+  11515: 'Absolution',
 
   //claymore
   12101: 'WasterGreatsword',
@@ -205,6 +206,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   15419: 'IbisPiercer',
   15424: 'ScionOfTheBlazingSun',
   15425: 'SongOfStillness',
+  15426: 'Cloudforged',
   15427: 'RangeGauge',
   15501: 'SkywardHarp',
   15502: 'AmosBow',

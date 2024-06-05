@@ -10,14 +10,13 @@ import {
   percent,
   prod,
 } from '@genshin-optimizer/gi/wr'
-import { cond, st, stg, trans } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'FragmentOfHarmonicWhimsy'
 const setHeader = setHeaderTemplate(key)
-const [, trm] = trans('artifact', key)
 
 const set2 = greaterEq(input.artSet.FragmentOfHarmonicWhimsy, 2, 0.18)
 
@@ -51,7 +50,7 @@ const sheet: SetEffectSheet = {
         header: setHeader(4),
         value: condStacks,
         path: condStacksPath,
-        name: trm('cond'),
+        name: st('bond.changes'),
         states: objKeyMap(set4Arr, (stacks) => ({
           name: st('times', { count: stacks }),
           fields: [

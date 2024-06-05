@@ -1,0 +1,24 @@
+{
+  "name": "Tocador de Nuvens",
+  "description": {
+    "0": "Após analisar os antigos mecanismos Adepti que protegem o Tianheng, a Yuheng comissionou a fabricação desse protótipo para a Forja do Penhasco Obscuro."
+  },
+  "passiveName": "Padrões Entalhados na Rocha",
+  "passiveDescription": {
+    "0": {
+      "0": "Depois que a Energia Elemental diminui, a Proficiência Elemental do personagem que está com essa arma equipada aumenta em <cryo>40</cryo>. Esse efeito dura 18s e pode ser acumulado até 2 vezes."
+    },
+    "1": {
+      "0": "Depois que a Energia Elemental diminui, a Proficiência Elemental do personagem que está com essa arma equipada aumenta em <cryo>50</cryo>. Esse efeito dura 18s e pode ser acumulado até 2 vezes."
+    },
+    "2": {
+      "0": "Depois que a Energia Elemental diminui, a Proficiência Elemental do personagem que está com essa arma equipada aumenta em <cryo>60</cryo>. Esse efeito dura 18s e pode ser acumulado até 2 vezes."
+    },
+    "3": {
+      "0": "Depois que a Energia Elemental diminui, a Proficiência Elemental do personagem que está com essa arma equipada aumenta em <cryo>70</cryo>. Esse efeito dura 18s e pode ser acumulado até 2 vezes."
+    },
+    "4": {
+      "0": "Depois que a Energia Elemental diminui, a Proficiência Elemental do personagem que está com essa arma equipada aumenta em <cryo>80</cryo>. Esse efeito dura 18s e pode ser acumulado até 2 vezes."
+    }
+  }
+}

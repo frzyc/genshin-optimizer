@@ -523,6 +523,7 @@ function CompareArtifactModal({
   onClose: () => void
   compareFromCharEditor: boolean
 }) {
+  const { t } = useTranslation('page_character_optimize')
   const database = useDatabase()
   const {
     character: { key: characterKey },
@@ -563,12 +564,12 @@ function CompareArtifactModal({
             <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
               <CardThemed bgt="light" sx={{ p: 1 }}>
                 <Typography variant="h6" textAlign="center">
-                  Old Artifact
+                  {t`compareArtModal.oldArt`}
                 </Typography>
               </CardThemed>
               {oldId === 'tc' ? (
                 <Typography variant="h6" textAlign="center" color="info">
-                  <SqBadge>TC Artifact</SqBadge>
+                  <SqBadge>{t`compareArtModal.tcArt`}</SqBadge>
                 </Typography>
               ) : (
                 <ArtifactCard
@@ -598,11 +599,13 @@ function CompareArtifactModal({
           )}
           {oldId && <Box display="flex" flexGrow={1} />}
           <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
-            <CardThemed bgt="light" sx={{ p: 1 }}>
-              <Typography variant="h6" textAlign="center">
-                New Artifact
-              </Typography>
-            </CardThemed>
+            {oldId && (
+              <CardThemed bgt="light" sx={{ p: 1 }}>
+                <Typography variant="h6" textAlign="center">
+                  {t`compareArtModal.newArt`}
+                </Typography>
+              </CardThemed>
+            )}
             <ArtifactCard
               artifactId={newId}
               onDelete={() => database.arts.remove(newId)}

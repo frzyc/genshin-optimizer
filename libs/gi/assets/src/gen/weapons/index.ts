@@ -1,4 +1,5 @@
 // This is a generated index file.
+import Absolution from './Absolution'
 import Akuoumaru from './Akuoumaru'
 import AlleyHunter from './AlleyHunter'
 import AmenomaKageuchi from './AmenomaKageuchi'
@@ -21,6 +22,7 @@ import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import CalamityQueller from './CalamityQueller'
 import CashflowSupervision from './CashflowSupervision'
 import CinnabarSpindle from './CinnabarSpindle'
+import Cloudforged from './Cloudforged'
 import CompoundBow from './CompoundBow'
 import CoolSteel from './CoolSteel'
 import CranesEchoingCall from './CranesEchoingCall'
@@ -185,6 +187,7 @@ import XiphosMoonlight from './XiphosMoonlight'
 
 const data = {
   AThousandFloatingDreams,
+  Absolution,
   Akuoumaru,
   AlleyHunter,
   AmenomaKageuchi,
@@ -206,6 +209,7 @@ const data = {
   CalamityQueller,
   CashflowSupervision,
   CinnabarSpindle,
+  Cloudforged,
   CompoundBow,
   CoolSteel,
   CranesEchoingCall,

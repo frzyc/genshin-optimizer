@@ -52,7 +52,7 @@
         " Une Dorsale rocheuse est créée si le nombre maximum de Dorsales rocheuses sur le terrain n'est pas atteint.",
         " Un bouclier de jade capable d'absorber une quantité de DGT proportionnelle aux PV max de Zhongli est généré.",
         " Inflige des <geo>DGT Géo de zone</geo>.",
-        " Absorbe l'<geo>élément Géo</geo> des cibles proches affectées par <geo>l'élément Géo</geo> (jusqu'à 2 cibles maximum). Cet effet n'inflige pas de DGT."
+        " Absorbe l'<geo>élément Géo</geo> des cibles proches affectées par l'<geo>élément Géo</geo> (jusqu'à 2 cibles maximum). Cet effet n'inflige pas de DGT."
       ],
       "8": "<br/>",
       "9": "<strong>Dorsale rocheuse</strong>",

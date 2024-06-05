@@ -1,0 +1,24 @@
+{
+  "name": "Expiadora",
+  "description": {
+    "0": "La espada ropera que solía empuñar un estafador que lo abandonó todo. En el pasado, la usaba principalmente para ocultar su identidad."
+  },
+  "passiveName": "Pacto letal",
+  "passiveDescription": {
+    "0": {
+      "0": "El Daño CRIT aumenta en un <cryo>20%</cryo>. Cuando se incrementa el valor del pacto vital, el daño que inflige el portador de esta arma aumenta en un <cryo>16%</cryo>. Este efecto dura 6 s y puede acumularse hasta 3 veces."
+    },
+    "1": {
+      "0": "El Daño CRIT aumenta en un <cryo>25%</cryo>. Cuando se incrementa el valor del pacto vital, el daño que inflige el portador de esta arma aumenta en un <cryo>20%</cryo>. Este efecto dura 6 s y puede acumularse hasta 3 veces."
+    },
+    "2": {
+      "0": "El Daño CRIT aumenta en un <cryo>30%</cryo>. Cuando se incrementa el valor del pacto vital, el daño que inflige el portador de esta arma aumenta en un <cryo>24%</cryo>. Este efecto dura 6 s y puede acumularse hasta 3 veces."
+    },
+    "3": {
+      "0": "El Daño CRIT aumenta en un <cryo>35%</cryo>. Cuando se incrementa el valor del pacto vital, el daño que inflige el portador de esta arma aumenta en un <cryo>28%</cryo>. Este efecto dura 6 s y puede acumularse hasta 3 veces."
+    },
+    "4": {
+      "0": "El Daño CRIT aumenta en un <cryo>40%</cryo>. Cuando se incrementa el valor del pacto vital, el daño que inflige el portador de esta arma aumenta en un <cryo>32%</cryo>. Este efecto dura 6 s y puede acumularse hasta 3 veces."
+    }
+  }
+}

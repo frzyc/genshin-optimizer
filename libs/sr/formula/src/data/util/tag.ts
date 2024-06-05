@@ -197,10 +197,7 @@ export const allBoolConditionals = (src: Source) =>
 export const allListConditionals = <T extends string>(src: Source, list: T[]) =>
   allCustoms(src, 'cond', { type: 'list', list }, ({ max: r }) => ({
     map: (table: Record<T, number>, def = 0) =>
-      subscript(
-        r,
-        list.map((v) => table[v] ?? def)
-      ),
+      subscript(r, [def, ...list.map((v) => table[v] ?? def)]),
     value: r,
   }))
 export const allNumConditionals = (

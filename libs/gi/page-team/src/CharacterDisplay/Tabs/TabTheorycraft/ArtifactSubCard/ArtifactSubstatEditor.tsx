@@ -2,7 +2,7 @@ import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
-  CustomNumberInput,
+  NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import { artMaxLevel, type SubstatKey } from '@genshin-optimizer/gi/consts'
@@ -11,6 +11,7 @@ import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { artDisplayValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import InfoIcon from '@mui/icons-material/Info'
 import { Box, Slider, Stack, Typography } from '@mui/material'
+import InputAdornment from '@mui/material/InputAdornment'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BuildTcContext } from '../../../../BuildTcContext'
@@ -94,17 +95,26 @@ export function ArtifactSubstatEditor({
         justifyContent="space-between"
         alignItems="center"
       >
-        <CustomNumberInput
+        <NumberInputLazy
           color={displayValue ? 'success' : 'primary'}
           float={getUnitStr(statKey) === '%'}
-          endAdornment={
-            getUnitStr(statKey) || <Box width="1em" component="span" />
-          }
           value={parseFloat(displayValue.toFixed(2))}
           onChange={(v) => v !== undefined && setValue(v)}
-          sx={{ borderRadius: 1, px: 1, height: '100%', width: '5em' }}
-          inputProps={{ sx: { textAlign: 'right' }, min: 0 }}
-          disabled={disabled}
+          size="small"
+          inputProps={{
+            sx: {
+              width: '4em',
+              textAlign: 'right',
+            },
+            min: 0,
+            max: 9999,
+          }}
+          InputProps={{
+            endAdornment: getUnitStr(statKey) || (
+              <Box width="0.8em" component="span" />
+            ),
+          }}
+          focused
         />
         <CardThemed
           sx={{
@@ -121,30 +131,41 @@ export function ArtifactSubstatEditor({
           {KeyMap.getStr(statKey)}
           {getUnitStr(statKey)}
         </CardThemed>
-        <CustomNumberInput
+        <NumberInputLazy
           color={value ? (invalid ? 'warning' : 'success') : 'primary'}
           float
-          startAdornment={
-            <Box
-              sx={{
-                whiteSpace: 'nowrap',
-                width: '6em',
-                display: 'flex',
-                justifyContent: 'space-between',
-              }}
-            >
-              <span>
-                {artDisplayValue(substatValue, unit)}
-                {unit}
-              </span>
-              <span>x</span>
-            </Box>
-          }
           value={parseFloat(rolls.toFixed(2))}
           onChange={(v) => v !== undefined && setValue(v * substatValue)}
-          sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6.5em' }}
-          inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
-          disabled={disabled}
+          size="small"
+          inputProps={{
+            sx: {
+              width: '2em',
+              textAlign: 'right',
+            },
+            min: 0,
+            max: 99, // 3 digits aren't visible
+          }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <Box
+                  sx={{
+                    whiteSpace: 'nowrap',
+                    width: '3em',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                  }}
+                >
+                  <span>
+                    {artDisplayValue(substatValue, unit)}
+                    {unit}
+                  </span>
+                  <span>x</span>
+                </Box>
+              </InputAdornment>
+            ),
+          }}
+          focused
         />
         <CardThemed sx={{ textAlign: 'center', p: 0.5, minWidth: '6em' }}>
           <ColorText color={invalid ? 'warning' : undefined}>
@@ -197,11 +218,10 @@ export function ArtifactSubstatEditor({
             disabled={disabled}
           />
         </CardThemed>
-
-        <CustomNumberInput
+        <NumberInputLazy
           value={maxSubstat}
-          startAdornment={t`tabTheorycraft.substat.max`}
           onChange={(v) => v !== undefined && setMaxSubstat(v)}
+          size="small"
           color={
             // 0.0001 to nudge float comparasion
             rolls - 0.0001 > maxSubstat
@@ -210,9 +230,19 @@ export function ArtifactSubstatEditor({
               ? 'warning'
               : 'success'
           }
-          sx={{ borderRadius: 1, px: 1, my: 0, height: '100%', width: '6em' }}
-          inputProps={{ sx: { textAlign: 'right', pr: 0.5 }, min: 0, step: 1 }}
-          disabled={disabled}
+          focused
+          inputProps={{
+            sx: { width: '2ch' },
+            min: 0,
+            max: 99, // 3 digits aren't visible
+          }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                {t`tabTheorycraft.substat.max`}
+              </InputAdornment>
+            ),
+          }}
         />
       </Box>
     </Stack>

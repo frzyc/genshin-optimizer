@@ -39,7 +39,7 @@ const sheet: IWeaponSheet = {
       value: condBond,
       path: condBondPath,
       header: headerTemplate(key, st('conditional')),
-      name: st('currentBond'),
+      name: st('bond.current'),
       states: {
         '1': {
           name: '< 30%',

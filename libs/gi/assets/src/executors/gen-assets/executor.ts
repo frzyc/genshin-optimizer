@@ -55,11 +55,13 @@ export const AssetData = {
 export default async function runExecutor(
   _options: GenAssetsExecutorSchema
 ): Promise<{ success: boolean }> {
-  // Best effort and silently fail since most of the time we don't use this
-
+  // Still continue working, so we can generate the asset index files.
+  let copyAssets = true
   if (!fs.existsSync(DM2D_PATH)) {
-    console.log(`Texture2D does not exist, no assets will be copied.`)
-    return { success: true }
+    console.log(
+      `Texture2D does not exist, no assets will be copied. Only index files will be generated.`
+    )
+    copyAssets = false
   }
   function copyFile(src: string, dest: string) {
     if (!fs.existsSync(src)) {
@@ -226,17 +228,19 @@ export default async function runExecutor(
   // Dump out the asset List.
 
   // dumpFile(`${__dirname}/AssetData_gen.json`, assetChar)
-  crawlObject(
-    AssetData,
-    [],
-    (s) => typeof s === 'string',
-    (icon, keys) => {
-      copyFile(
-        `${DM2D_PATH}/${icon}.png`,
-        `${DEST_PROJ_PATH}/gen/${keys.slice(0, -1).join('/')}/${icon}.png`
-      )
-    }
-  )
+  if (copyAssets) {
+    crawlObject(
+      AssetData,
+      [],
+      (s) => typeof s === 'string',
+      (icon, keys) => {
+        copyFile(
+          `${DM2D_PATH}/${icon}.png`,
+          `${DEST_PROJ_PATH}/gen/${keys.slice(0, -1).join('/')}/${icon}.png`
+        )
+      }
+    )
+  }
 
   // Add in manually added assets that can't be datamined
   AssetData.chars['Somnia'] = {} as CharacterIcon

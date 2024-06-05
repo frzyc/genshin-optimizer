@@ -1,0 +1,169 @@
+{
+  "name": "Sethos",
+  "title": "Mesure de la sagesse",
+  "description": "L'héritier du Temple du silence. Originaire du désert, il est porteur de secrets.",
+  "constellationName": "Basileos Delta",
+  "auto": {
+    "name": "Archerie royale des roseaux",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis et infligeant davantage de DGT.",
+        "2": "Lors du tir visé, la puissance du tonnerre vient se concentrer sur la pointe de la flèche. Les effets varient selon le nombre de charges :",
+        "3": [
+          " 1 charge : Tire une flèche tonitruante qui inflige des <electro>DGT Électro</electro>.",
+          " 2 charges : Tire une <strong>flèche de perce-ombre</strong> pouvant transpercer les ennemis qui inflige des <electro>DGT Électro</electro> aux ennemis en chemin. Sethos ne peut pas se déplacer lorsque sa flèche de perce-ombre est complètement chargée."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT tir visé",
+      "4": "DGT 1e charge",
+      "5": "DGT flèche de perce-ombre",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Rituel ancien : Clameur tonitruante des sables",
+    "description": {
+      "0": "Condense la puissance du tonnerre pour infliger des <electro>DGT Électro de zone</electro> et reculer rapidement. Lorsque l'attaque déclenche une réaction d'Électrocution, de Supraconduction, de Surcharge, de Stimulation, de Suractivation, d'Exubérance ou de Dispersion Électro sur un ennemi, Sethos récupère une certaine quantité d'énergie élémentaire.",
+      "1": "<br/>",
+      "2": "<i>« Les prêtres divinement habités et les magiciens transformant les fosses en sources... Les chanteurs des sables répandent encore leurs histoires... Mais je sais que ce ne sont pas des légendes, car ce sont nos ancêtres. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Restauration énergie élémentaire",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rituel secret : Percée crépusculaire des ombres",
+    "description": {
+      "0": "Sethos déclenche un rituel secret pour entrer dans l'état Méditation crépusculaire, ce qui convertit ses attaques normales pour lui permettre de tirer des <strong>carreaux crépusculaires</strong> pouvant transpercer les ennemis : inflige des <electro>DGT Électro</electro>, qui augmentent selon la maîtrise élémentaire de Sethos, aux ennemis en chemin.",
+      "1": "Sethos ne peut pas utiliser de tirs visés pendant cette durée.",
+      "2": "Les DGT infligés par les carreaux crépusculaires sont considérés comme des DGT d'attaque chargée.",
+      "3": "Cet effet cesse lorsque Sethos quitte le champ de bataille.",
+      "4": "<br/>",
+      "5": "<i>Les archives du Temple du silence conservent de nombreux tomes laissés par Akhtamun, de l'époque du roi Deshret. De nombreux rituels secrets de grande puissance y sont consignés, mais même au sein du Temple du silence, très peu pourraient les maîtriser.</i>"
+    },
+    "skillParams": {
+      "0": "Bonus de DGT carreau crépusculaire",
+      "1": "Durée méditation crépusculaire",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Énigme du milan noir",
+    "description": {
+      "0": "Pendant les tirs visés, le temps de charge diminue de 0,285 s pour chaque point d'énergie élémentaire que Sethos possède. Le temps de charge peut être diminué jusqu'à un minimum de 0,3 s de cette manière, et un maximum de 20 pts d'énergie élémentaire peut être comptabilisé. Tirer une <strong>flèche de perce-ombre</strong> consomme la quantité comptabilisée d'énergie élémentaire, et tirer une flèche de 1e charge consomme 50 % de la quantité comptabilisée d'énergie élémentaire."
+    }
+  },
+  "passive2": {
+    "name": "Bénédiction du roi des sables",
+    "description": {
+      "0": "Sethos obtient l'effet Ombre sableuse : augmente les DGT infligés par les <strong>flèches de perce-ombre</strong> d'une valeur équivalant à 700 % de sa maîtrise élémentaire.",
+      "1": "L'effet Ombre sableuse prendra fin :",
+      "2": [
+        " 5 s après qu'une flèche de perce-ombre touche pour la première fois un ennemi.",
+        " Après que 4 flèches de perce-ombre touchent un ennemi."
+      ],
+      "3": "<br/>",
+      "4": "Sethos obtient un nouvel effet Ombre sableuse 15 s après qu'une flèche de perce-ombre affectée par l'effet touche pour la première fois un ennemi."
+    }
+  },
+  "passive3": {
+    "name": "Révélation de Thoth",
+    "description": {
+      "0": "Affiche l'emplacement des <strong>produits de Sumeru</strong> sur la mini-carte."
+    }
+  },
+  "constellation1": {
+    "name": "Chant du sanctuaire scellé",
+    "description": {
+      "0": "Augmente le taux CRIT des <strong>flèches de perce-ombre</strong> de 15 %."
+    }
+  },
+  "constellation2": {
+    "name": "Papyrus du secret silencieux",
+    "description": {
+      "0": "Le <electro>bonus de DGT Électro</electro> de Sethos augmente de 15 % pendant 10 s en remplissant une des conditions suivantes (Cet effet peut être cumulé 2 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.) :",
+      "1": [
+        " En consommant de l'énergie élémentaire pendant un tir visé, l'aptitude passive « Énigme du milan noir » devant être déjà débloquée.",
+        " En restaurant de l'énergie élémentaire après avoir déclenché une réaction élémentaire avec <strong>Rituel ancien : Clameur tonitruante des sables</strong>.",
+        " En utilisant <strong>Rituel secret : Percée crépusculaire des ombres</strong>."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Ode de la lune ascendante",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Attaque normale : Archerie royale des roseaux</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Collection de la plume bienveillante",
+    "description": {
+      "0": "Lorsqu'une <strong>flèche de perce-ombre</strong> ou un <strong>carreau crépusculaire</strong> touchent 2 ennemis ou plus, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 80 pts pendant 10 s."
+    }
+  },
+  "constellation5": {
+    "name": "Chronique du sable divin",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Rituel secret : Percée crépusculaire des ombres</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Manuscrit du soleil vagabond",
+    "description": {
+      "0": "Toucher un ennemi avec une <strong>flèche de perce-ombre</strong> restaure l'énergie élémentaire consommée par l'aptitude passive « Énigme du milan noir ». Cet effet peut être déclenché une fois toutes les 15 s. L'aptitude passive « Énigme du milan noir » doit être déjà débloquée."
+    }
+  }
+}

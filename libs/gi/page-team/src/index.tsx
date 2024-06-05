@@ -112,6 +112,9 @@ function Page({ teamId }: { teamId: string }) {
   }, [loadoutData, database.teamChars, characterKeyRaw])
 
   useEffect(() => {
+    window.scrollTo({ top: 0 })
+  }, [])
+  useEffect(() => {
     if (!loadoutDatum) navigate('', { replace: true })
   }, [loadoutDatum, navigate])
 

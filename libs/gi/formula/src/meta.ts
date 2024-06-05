@@ -521,6 +521,43 @@ export const conditionals = {
       int_only: false,
     },
   },
+  FragmentOfHarmonicWhimsy: {
+    someBoolConditional: {
+      src: 'FragmentOfHarmonicWhimsy',
+      name: 'someBoolConditional',
+      tag: {
+        et: 'self',
+        src: 'FragmentOfHarmonicWhimsy',
+        qt: 'cond',
+        q: 'someBoolConditional',
+      },
+      type: 'bool',
+    },
+    _someListConditional: {
+      src: 'FragmentOfHarmonicWhimsy',
+      name: '_someListConditional',
+      tag: {
+        et: 'self',
+        src: 'FragmentOfHarmonicWhimsy',
+        qt: 'cond',
+        q: '_someListConditional',
+      },
+      type: 'list',
+      list: [],
+    },
+    _someNumConditional: {
+      src: 'FragmentOfHarmonicWhimsy',
+      name: '_someNumConditional',
+      tag: {
+        et: 'self',
+        src: 'FragmentOfHarmonicWhimsy',
+        qt: 'cond',
+        q: '_someNumConditional',
+      },
+      type: 'num',
+      int_only: false,
+    },
+  },
   Gambler: {
     someBoolConditional: {
       src: 'Gambler',
@@ -1656,6 +1693,43 @@ export const conditionals = {
       int_only: false,
     },
   },
+  UnfinishedReverie: {
+    someBoolConditional: {
+      src: 'UnfinishedReverie',
+      name: 'someBoolConditional',
+      tag: {
+        et: 'self',
+        src: 'UnfinishedReverie',
+        qt: 'cond',
+        q: 'someBoolConditional',
+      },
+      type: 'bool',
+    },
+    _someListConditional: {
+      src: 'UnfinishedReverie',
+      name: '_someListConditional',
+      tag: {
+        et: 'self',
+        src: 'UnfinishedReverie',
+        qt: 'cond',
+        q: '_someListConditional',
+      },
+      type: 'list',
+      list: [],
+    },
+    _someNumConditional: {
+      src: 'UnfinishedReverie',
+      name: '_someNumConditional',
+      tag: {
+        et: 'self',
+        src: 'UnfinishedReverie',
+        qt: 'cond',
+        q: '_someNumConditional',
+      },
+      type: 'num',
+      int_only: false,
+    },
+  },
   VermillionHereafter: {
     someBoolConditional: {
       src: 'VermillionHereafter',
@@ -1944,6 +2018,43 @@ export const conditionals = {
       int_only: false,
     },
   },
+  Arlecchino: {
+    _someBoolConditional: {
+      src: 'Arlecchino',
+      name: '_someBoolConditional',
+      tag: {
+        et: 'self',
+        src: 'Arlecchino',
+        qt: 'cond',
+        q: '_someBoolConditional',
+      },
+      type: 'bool',
+    },
+    _someListConditional: {
+      src: 'Arlecchino',
+      name: '_someListConditional',
+      tag: {
+        et: 'self',
+        src: 'Arlecchino',
+        qt: 'cond',
+        q: '_someListConditional',
+      },
+      type: 'list',
+      list: [],
+    },
+    _someNumConditional: {
+      src: 'Arlecchino',
+      name: '_someNumConditional',
+      tag: {
+        et: 'self',
+        src: 'Arlecchino',
+        qt: 'cond',
+        q: '_someNumConditional',
+      },
+      type: 'num',
+      int_only: false,
+    },
+  },
   Baizhu: {
     _someBoolConditional: {
       src: 'Baizhu',
@@ -2192,6 +2303,43 @@ export const conditionals = {
       tag: {
         et: 'self',
         src: 'Chongyun',
+        qt: 'cond',
+        q: '_someNumConditional',
+      },
+      type: 'num',
+      int_only: false,
+    },
+  },
+  Clorinde: {
+    _someBoolConditional: {
+      src: 'Clorinde',
+      name: '_someBoolConditional',
+      tag: {
+        et: 'self',
+        src: 'Clorinde',
+        qt: 'cond',
+        q: '_someBoolConditional',
+      },
+      type: 'bool',
+    },
+    _someListConditional: {
+      src: 'Clorinde',
+      name: '_someListConditional',
+      tag: {
+        et: 'self',
+        src: 'Clorinde',
+        qt: 'cond',
+        q: '_someListConditional',
+      },
+      type: 'list',
+      list: [],
+    },
+    _someNumConditional: {
+      src: 'Clorinde',
+      name: '_someNumConditional',
+      tag: {
+        et: 'self',
+        src: 'Clorinde',
         qt: 'cond',
         q: '_someNumConditional',
       },
@@ -3370,6 +3518,28 @@ export const conditionals = {
       int_only: false,
     },
   },
+  Sethos: {
+    _someBoolConditional: {
+      src: 'Sethos',
+      name: '_someBoolConditional',
+      tag: { et: 'self', src: 'Sethos', qt: 'cond', q: '_someBoolConditional' },
+      type: 'bool',
+    },
+    _someListConditional: {
+      src: 'Sethos',
+      name: '_someListConditional',
+      tag: { et: 'self', src: 'Sethos', qt: 'cond', q: '_someListConditional' },
+      type: 'list',
+      list: [],
+    },
+    _someNumConditional: {
+      src: 'Sethos',
+      name: '_someNumConditional',
+      tag: { et: 'self', src: 'Sethos', qt: 'cond', q: '_someNumConditional' },
+      type: 'num',
+      int_only: false,
+    },
+  },
   Shenhe: {
     _someBoolConditional: {
       src: 'Shenhe',
@@ -4226,6 +4396,43 @@ export const conditionals = {
       int_only: false,
     },
   },
+  Absolution: {
+    _someBoolConditional: {
+      src: 'Absolution',
+      name: '_someBoolConditional',
+      tag: {
+        et: 'self',
+        src: 'Absolution',
+        qt: 'cond',
+        q: '_someBoolConditional',
+      },
+      type: 'bool',
+    },
+    _someListConditional: {
+      src: 'Absolution',
+      name: '_someListConditional',
+      tag: {
+        et: 'self',
+        src: 'Absolution',
+        qt: 'cond',
+        q: '_someListConditional',
+      },
+      type: 'list',
+      list: [],
+    },
+    _someNumConditional: {
+      src: 'Absolution',
+      name: '_someNumConditional',
+      tag: {
+        et: 'self',
+        src: 'Absolution',
+        qt: 'cond',
+        q: '_someNumConditional',
+      },
+      type: 'num',
+      int_only: false,
+    },
+  },
   Akuoumaru: {
     _someBoolConditional: {
       src: 'Akuoumaru',
@@ -4972,6 +5179,43 @@ export const conditionals = {
       int_only: false,
     },
   },
+  Cloudforged: {
+    _someBoolConditional: {
+      src: 'Cloudforged',
+      name: '_someBoolConditional',
+      tag: {
+        et: 'self',
+        src: 'Cloudforged',
+        qt: 'cond',
+        q: '_someBoolConditional',
+      },
+      type: 'bool',
+    },
+    _someListConditional: {
+      src: 'Cloudforged',
+      name: '_someListConditional',
+      tag: {
+        et: 'self',
+        src: 'Cloudforged',
+        qt: 'cond',
+        q: '_someListConditional',
+      },
+      type: 'list',
+      list: [],
+    },
+    _someNumConditional: {
+      src: 'Cloudforged',
+      name: '_someNumConditional',
+      tag: {
+        et: 'self',
+        src: 'Cloudforged',
+        qt: 'cond',
+        q: '_someNumConditional',
+      },
+      type: 'num',
+      int_only: false,
+    },
+  },
   CompoundBow: {
     _someBoolConditional: {
       src: 'CompoundBow',
@@ -5113,6 +5357,43 @@ export const conditionals = {
       tag: {
         et: 'self',
         src: 'CrescentPike',
+        qt: 'cond',
+        q: '_someNumConditional',
+      },
+      type: 'num',
+      int_only: false,
+    },
+  },
+  CrimsonMoonsSemblance: {
+    _someBoolConditional: {
+      src: 'CrimsonMoonsSemblance',
+      name: '_someBoolConditional',
+      tag: {
+        et: 'self',
+        src: 'CrimsonMoonsSemblance',
+        qt: 'cond',
+        q: '_someBoolConditional',
+      },
+      type: 'bool',
+    },
+    _someListConditional: {
+      src: 'CrimsonMoonsSemblance',
+      name: '_someListConditional',
+      tag: {
+        et: 'self',
+        src: 'CrimsonMoonsSemblance',
+        qt: 'cond',
+        q: '_someListConditional',
+      },
+      type: 'list',
+      list: [],
+    },
+    _someNumConditional: {
+      src: 'CrimsonMoonsSemblance',
+      name: '_someNumConditional',
+      tag: {
+        et: 'self',
+        src: 'CrimsonMoonsSemblance',
         qt: 'cond',
         q: '_someNumConditional',
       },
@@ -10869,6 +11150,20 @@ export const formulas = {
       },
     },
   },
+  Arlecchino: {
+    normal1: {
+      src: 'Arlecchino',
+      name: 'normal1',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'Arlecchino',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Baizhu: {
     normal1: {
       src: 'Baizhu',
@@ -11169,6 +11464,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         src: 'Chongyun',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Clorinde: {
+    normal1: {
+      src: 'Clorinde',
+      name: 'normal1',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'Clorinde',
         move: 'normal',
         name: 'normal1',
       },
@@ -12097,6 +12406,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         src: 'Sayu',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Sethos: {
+    normal1: {
+      src: 'Sethos',
+      name: 'normal1',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        src: 'Sethos',
         move: 'normal',
         name: 'normal1',
       },

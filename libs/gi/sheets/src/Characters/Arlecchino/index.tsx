@@ -312,7 +312,7 @@ const sheet: TalentSheet = {
     ct.condTem('auto', {
       path: condBondPercentPath,
       value: condBondPercent,
-      name: st('currentBond'),
+      name: st('bond.current'),
       states: objKeyMap(bondPercentArr, (percent) => ({
         name: `${percent}%`,
         fields: [
@@ -417,7 +417,7 @@ const sheet: TalentSheet = {
     ct.condTem('constellation6', {
       path: condBondPercentPath,
       value: condBondPercent,
-      name: st('currentBond'),
+      name: st('bond.current'),
       states: objKeyMap(bondPercentArr, (percent) => ({
         name: `${percent}%`,
         fields: [

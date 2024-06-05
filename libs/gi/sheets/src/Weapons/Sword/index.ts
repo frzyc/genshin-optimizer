@@ -1,5 +1,6 @@
 import type { WeaponSwordKey } from '@genshin-optimizer/gi/consts'
 import type { WeaponSheet } from '../WeaponSheet'
+import Absolution from './Absolution'
 import AmenomaKageuchi from './AmenomaKageuchi'
 import AquilaFavonia from './AquilaFavonia'
 import BlackcliffLongsword from './BlackcliffLongsword'
@@ -43,6 +44,7 @@ import UrakuMisugiri from './UrakuMisugiri'
 import WolfFang from './WolfFang'
 import XiphosMoonlight from './XiphosMoonlight'
 const sword: Record<WeaponSwordKey, WeaponSheet> = {
+  Absolution,
   AmenomaKageuchi,
   AquilaFavonia,
   BlackcliffLongsword,

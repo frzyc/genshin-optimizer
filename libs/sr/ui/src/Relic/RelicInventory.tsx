@@ -3,15 +3,30 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
-import { Box, CardContent, Grid, Skeleton, Typography } from '@mui/material'
+import AddIcon from '@mui/icons-material/Add'
+import {
+  Box,
+  Button,
+  CardContent,
+  Grid,
+  Skeleton,
+  Typography,
+} from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useDatabaseContext } from '../Context'
 import { RelicCard } from './RelicCard'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 
-export function RelicInventory() {
+export type RelicInventoryProps = {
+  onAdd?: () => void
+  onEdit?: (id: string) => void
+}
+
+export function RelicInventory({ onAdd, onEdit }: RelicInventoryProps) {
+  const { t } = useTranslation('relic')
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
 
@@ -64,6 +79,18 @@ export function RelicInventory() {
           </Box>
         </CardContent>
       </CardThemed>
+      <Grid container columns={columns} spacing={1}>
+        <Grid item xs>
+          <Button
+            fullWidth
+            onClick={onAdd}
+            color="info"
+            startIcon={<AddIcon />}
+          >
+            {t`addNew`}
+          </Button>
+        </Grid>
+      </Grid>
       <Suspense
         fallback={
           <Skeleton
@@ -72,10 +99,17 @@ export function RelicInventory() {
           />
         }
       >
-        <Grid container spacing={1} columns={columns}>
+        <Grid container columns={columns} spacing={1}>
           {relicsIdsToShow.map((relicId) => (
             <Grid item key={relicId} xs={1}>
-              <RelicCard relic={database.relics.get(relicId)!} />
+              <RelicCard
+                relic={database.relics.get(relicId)!}
+                onEdit={() => onEdit?.(relicId)}
+                onDelete={() => database.relics.remove(relicId)}
+                setLocation={(location) =>
+                  database.relics.set(relicId, { location })
+                }
+              />
             </Grid>
           ))}
         </Grid>

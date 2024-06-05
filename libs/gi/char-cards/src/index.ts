@@ -14,6 +14,7 @@ import Charlotte from './Character_Charlotte_Card.jpg'
 import Chevreuse from './Character_Chevreuse_Card.jpg'
 import Chiori from './Character_Chiori_Card.jpg'
 import Chongyun from './Character_Chongyun_Card.jpg'
+import Clorinde from './Character_Clorinde_Card.jpg'
 import Collei from './Character_Collei_Card.jpg'
 import Cyno from './Character_Cyno_Card.jpg'
 import Dehya from './Character_Dehya_Card.jpg'
@@ -58,6 +59,7 @@ import Razor from './Character_Razor_Card.jpg'
 import Rosaria from './Character_Rosaria_Card.png'
 import SangonomiyaKokomi from './Character_Sangonomiya_Kokomi_Card.jpg'
 import Sayu from './Character_Sayu_Card.png'
+import Sethos from './Character_Sethos_Card.jpg'
 import Shenhe from './Character_Shenhe_Card.jpg'
 import ShikanoinHeizou from './Character_Shikanoin_Heizou_Card.png'
 import Somnia from './Character_Somnia_Card.png'
@@ -99,6 +101,7 @@ const charCards = {
   Chevreuse,
   Chiori,
   Chongyun,
+  Clorinde,
   Collei,
   Cyno,
   Dehya,
@@ -143,6 +146,7 @@ const charCards = {
   Rosaria,
   SangonomiyaKokomi,
   Sayu,
+  Sethos,
   Shenhe,
   ShikanoinHeizou,
   Somnia,

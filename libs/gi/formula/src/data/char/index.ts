@@ -4,6 +4,7 @@ import Alhaitham from './Alhaitham'
 import Aloy from './Aloy'
 import Amber from './Amber'
 import AratakiItto from './AratakiItto'
+import Arlecchino from './Arlecchino'
 import Baizhu from './Baizhu'
 import Barbara from './Barbara'
 import Beidou from './Beidou'
@@ -13,6 +14,7 @@ import Charlotte from './Charlotte'
 import Chevreuse from './Chevreuse'
 import Chiori from './Chiori'
 import Chongyun from './Chongyun'
+import Clorinde from './Clorinde'
 import Collei from './Collei'
 import Cyno from './Cyno'
 import Dehya from './Dehya'
@@ -57,6 +59,7 @@ import Razor from './Razor'
 import Rosaria from './Rosaria'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
+import Sethos from './Sethos'
 import Shenhe from './Shenhe'
 import ShikanoinHeizou from './ShikanoinHeizou'
 import Somnia from './Somnia'
@@ -91,6 +94,7 @@ const data: TagMapNodeEntries[] = [
   Aloy,
   Amber,
   AratakiItto,
+  Arlecchino,
   Baizhu,
   Barbara,
   Beidou,
@@ -100,6 +104,7 @@ const data: TagMapNodeEntries[] = [
   Chevreuse,
   Chiori,
   Chongyun,
+  Clorinde,
   Collei,
   Cyno,
   Dehya,
@@ -144,6 +149,7 @@ const data: TagMapNodeEntries[] = [
   Rosaria,
   SangonomiyaKokomi,
   Sayu,
+  Sethos,
   Shenhe,
   ShikanoinHeizou,
   Somnia,

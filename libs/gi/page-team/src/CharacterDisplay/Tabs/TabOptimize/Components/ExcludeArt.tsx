@@ -20,6 +20,8 @@ import {
   ArtifactCard,
   ArtifactCardNano,
   ArtifactFilterDisplay,
+  ExcludeIcon,
+  OptimizationIcon,
 } from '@genshin-optimizer/gi/ui'
 import {
   artifactFilterConfigs,
@@ -68,19 +70,19 @@ export default function ExcludeArt({
   const [show, onOpen, onClose] = useBoolState(false)
   const numExcludedArt = artExclusion.length
   const [showSel, onOpenSel, onCloseSel] = useBoolState(false)
-  const onSelect = useCallback(
-    (id: string) => {
+  const onExclude = useCallback(
+    (ids: string[]) => {
       database.optConfigs.set(optConfigId, {
-        artExclusion: [...artExclusion, id],
+        artExclusion: [...artExclusion, ...ids],
         useExcludedArts: false,
       })
     },
     [database, optConfigId, artExclusion]
   )
-  const onDelSelect = useCallback(
-    (id: string) => {
+  const onInclude = useCallback(
+    (ids: string[]) => {
       database.optConfigs.set(optConfigId, {
-        artExclusion: artExclusion.filter((i) => i !== id),
+        artExclusion: artExclusion.filter((i) => !ids.includes(i)),
         useExcludedArts: false,
       })
     },
@@ -124,7 +126,8 @@ export default function ExcludeArt({
             <ArtifactSelectModal
               show={showSel}
               onClose={onCloseSel}
-              onSelect={onSelect}
+              onExclude={onExclude}
+              onInclude={onInclude}
               artExclusion={artExclusion}
             />
             <Button
@@ -153,7 +156,7 @@ export default function ExcludeArt({
                     <ArtifactCardNano
                       artifactId={id}
                       slotKey="flower"
-                      onClick={() => onDelSelect(id)}
+                      onClick={() => onInclude([id])}
                       showLocation
                     />
                   </CardThemed>
@@ -212,15 +215,93 @@ export default function ExcludeArt({
   )
 }
 
+function ExcludeArtRedButtons({
+  artifactIds,
+  artExclusion,
+  onExclude,
+  onInclude,
+}: {
+  artifactIds: string[]
+  artExclusion: string[]
+  onExclude: (ids: string[]) => void
+  onInclude: (ids: string[]) => void
+}) {
+  const { t } = useTranslation(['artifact', 'ui'])
+  const { numExclude, numInclude } = useMemo(() => {
+    const excludedFiltered = artExclusion.filter((i) => artifactIds.includes(i))
+
+    const numExclude = artifactIds.length - excludedFiltered.length
+    const numInclude = artifactIds.length - numExclude
+
+    return { numExclude, numInclude }
+  }, [artifactIds, artExclusion])
+
+  const excludeArtifacts = () =>
+    window.confirm(
+      `Are you sure you want to exclude ${numExclude} artifacts from build optimization?`
+    ) && onExclude(artifactIds)
+  const includeArtifacts = () =>
+    window.confirm(
+      `Are you sure you want to include ${numInclude} artifacts to build optimization?`
+    ) && onInclude(artifactIds)
+
+  return (
+    <Grid container spacing={1} alignItems="center">
+      <Grid item xs={12} sm={6} md={6}>
+        <Button
+          fullWidth
+          color="error"
+          disabled={!numExclude}
+          onClick={excludeArtifacts}
+          startIcon={<ExcludeIcon />}
+        >
+          <Trans t={t} i18nKey="button.excludeArtifacts">
+            Exclude Artifacts
+          </Trans>
+          <SqBadge sx={{ ml: 1 }} color={numExclude ? 'success' : 'secondary'}>
+            {numExclude}
+          </SqBadge>
+        </Button>
+      </Grid>
+      <Grid item xs={12} sm={6} md={6}>
+        <Button
+          fullWidth
+          color="error"
+          disabled={!numInclude}
+          onClick={includeArtifacts}
+          startIcon={<OptimizationIcon />}
+        >
+          <Trans t={t} i18nKey={'button.includeArtifacts'}>
+            Include Artifacts
+          </Trans>
+          <SqBadge sx={{ ml: 1 }} color={numInclude ? 'success' : 'secondary'}>
+            {numInclude}
+          </SqBadge>
+        </Button>
+      </Grid>
+      <Grid item xs={12} display="flex" justifyContent="space-around">
+        <Typography variant="caption" color="text.secondary">
+          <Trans t={t} i18nKey="buttonHint">
+            Note: the red buttons above only apply to
+            <b>currently filtered artifacts</b>
+          </Trans>
+        </Typography>
+      </Grid>
+    </Grid>
+  )
+}
+
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 const filterOptionReducer = (state, action) => ({ ...state, ...action })
 function ArtifactSelectModal({
-  onSelect,
+  onExclude,
+  onInclude,
   show,
   onClose,
   artExclusion,
 }: {
-  onSelect: (id: string) => void
+  onExclude: (ids: string[]) => void
+  onInclude: (ids: string[]) => void
   show: boolean
   onClose: () => void
   artExclusion: string[]
@@ -239,17 +320,16 @@ function ArtifactSelectModal({
 
   const brPt = useMediaQueryUp()
 
-  const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
+  const filterConfigs = useMemo(
+    () => artifactFilterConfigs({ excludedIds: artExclusion }),
+    [artExclusion]
+  )
   const artifactIds = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
     return (
-      dbDirty &&
-      database.arts.values
-        .filter(filterFunc)
-        .map((art) => art.id)
-        .filter((id) => !artExclusion.includes(id))
+      dbDirty && database.arts.values.filter(filterFunc).map((art) => art.id)
     )
-  }, [dbDirty, database, filterConfigs, filterOption, artExclusion])
+  }, [dbDirty, database, filterConfigs, filterOption])
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
@@ -285,8 +365,18 @@ function ArtifactSelectModal({
               filterOption={filterOption}
               filterOptionDispatch={filterOptionDispatch}
               filteredIds={artifactIds}
+              enableExclusionFilter={true}
+              excludedIds={artExclusion}
             />
           </Suspense>
+          <Box mt={1}>
+            <ExcludeArtRedButtons
+              artifactIds={artifactIds}
+              artExclusion={artExclusion}
+              onExclude={onExclude}
+              onInclude={onInclude}
+            />
+          </Box>
           <Box mt={1}>
             <Suspense
               fallback={
@@ -298,10 +388,12 @@ function ArtifactSelectModal({
                   <Grid item key={id} xs={1}>
                     <ArtifactCard
                       artifactId={id}
-                      onClick={() => {
-                        onSelect(id)
-                        onClose()
-                      }}
+                      excluded={artExclusion.includes(id)}
+                      onClick={() =>
+                        artExclusion.includes(id)
+                          ? onInclude([id])
+                          : onExclude([id])
+                      }
                     />
                   </Grid>
                 ))}
