@@ -36,6 +36,7 @@ import {
 import Stack from '@mui/system/Stack'
 import { Suspense, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { ExcludeIcon, OptimizationIcon } from '../../consts'
 import { SubstatMultiAutocomplete } from '../SubstatMultiAutocomplete'
 import { LocationFilterMultiAutocomplete } from '../character/LocationFilterMultiAutocomplete'
 import { ArtifactLevelSlider } from './ArtifactLevelSlider'
@@ -45,23 +46,29 @@ import { RVSlide } from './RVSlide'
 import { SubstatToggle } from './SubstatToggle'
 
 const lockedValues = ['locked', 'unlocked'] as const
+const excludedValues = ['excluded', 'included'] as const
 
 const rarityHandler = handleMultiSelect([...allArtifactRarityKeys])
 const slotHandler = handleMultiSelect([...allArtifactSlotKeys])
 const lockedHandler = handleMultiSelect([...lockedValues])
 const lineHandler = handleMultiSelect([1, 2, 3, 4])
+const excludedHandler = handleMultiSelect([...excludedValues])
 
 interface ArtifactFilterDisplayProps {
   filterOption: ArtifactFilterOption
   filterOptionDispatch: (option: Partial<ArtifactFilterOption>) => void
   disableSlotFilter?: boolean
   filteredIds: string[]
+  enableExclusionFilter?: boolean
+  excludedIds?: string[]
 }
 export function ArtifactFilterDisplay({
   filterOption,
   filterOptionDispatch,
   filteredIds,
   disableSlotFilter = false,
+  enableExclusionFilter = false,
+  excludedIds = [],
 }: ArtifactFilterDisplayProps) {
   const { t } = useTranslation(['artifact', 'ui'])
 
@@ -86,6 +93,7 @@ export function ArtifactFilterDisplay({
     rvHigh = 900,
     useMaxRV = false,
     lines = [],
+    excluded = [...excludedValues],
   } = filterOption
 
   const database = useDatabase()
@@ -100,6 +108,7 @@ export function ArtifactFilterDisplay({
     mainStatTotal,
     subStatTotal,
     locationTotal,
+    excludedTotal,
   } = useMemo(() => {
     const catKeys = {
       rarityTotal: allArtifactRarityKeys,
@@ -111,6 +120,7 @@ export function ArtifactFilterDisplay({
       mainStatTotal: allMainStatKeys,
       subStatTotal: allSubstatKeys,
       locationTotal: [...allLocationCharacterKeys, ''],
+      excludedTotal: ['excluded', 'included'],
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
       database.arts.entries.forEach(([id, art]) => {
@@ -118,6 +128,7 @@ export function ArtifactFilterDisplay({
         const lock = art.lock ? 'locked' : 'unlocked'
         const lns = art.substats.filter((s) => s.value).length
         const equipped = location ? 'equipped' : 'unequipped'
+        const excluded = excludedIds.includes(id) ? 'excluded' : 'included'
         // The slot filter is disabled during artifact swapping, in which case our artifact total displayed by
         // the filter should reflect only the slot being swapped.
         if (!disableSlotFilter || art.slotKey === filterOption.slotKeys[0]) {
@@ -135,6 +146,7 @@ export function ArtifactFilterDisplay({
             if (filteredIdMap[id]) ctMap['subStatTotal'][subKey].current++
           })
           ctMap['locationTotal'][location].total++
+          ctMap['excludedTotal'][excluded].total++
         }
 
         if (filteredIdMap[id]) {
@@ -148,10 +160,11 @@ export function ArtifactFilterDisplay({
           // substats handled above
           // substats handled above
           ctMap['locationTotal'][location].current++
+          ctMap['excludedTotal'][excluded].current++
         }
       })
     )
-  }, [database, disableSlotFilter, filteredIdMap, filterOption])
+  }, [database, disableSlotFilter, excludedIds, filteredIdMap, filterOption])
 
   const { effFilter } = useDisplayArtifact()
 
@@ -290,6 +303,30 @@ export function ArtifactFilterDisplay({
                   </ToggleButton>
                 ))}
               </SolidToggleButtonGroup>
+              {/* Excluded from optimization */}
+              {enableExclusionFilter && (
+                <SolidToggleButtonGroup fullWidth value={excluded} size="small">
+                  {excludedValues.map((v, i) => (
+                    <ToggleButton
+                      key={v}
+                      value={v}
+                      sx={{ display: 'flex', gap: 1 }}
+                      onClick={() =>
+                        filterOptionDispatch({
+                          excluded: excludedHandler(excluded, v),
+                        })
+                      }
+                    >
+                      {i ? <OptimizationIcon /> : <ExcludeIcon />}
+                      <Trans i18nKey={`ui:${v}`} t={t} />
+                      <Chip
+                        label={excludedTotal[i ? 'included' : 'excluded']}
+                        size="small"
+                      />
+                    </ToggleButton>
+                  ))}
+                </SolidToggleButtonGroup>
+              )}
               {/* All inventory toggle */}
               <Button
                 startIcon={<BusinessCenterIcon />}

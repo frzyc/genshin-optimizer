@@ -41,11 +41,13 @@ import {
   Chip,
   IconButton,
   Skeleton,
+  SvgIcon,
   Typography,
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { ExcludeIcon } from '../../consts'
 import { PercentBadge } from '../PercentBadge'
 import { LocationAutocomplete, LocationName } from '../character'
 import { ArtifactSetTooltipContent } from './ArtifactSetTooltip'
@@ -66,6 +68,7 @@ type Data = {
   mainStatAssumptionLevel?: number
   effFilter?: Set<SubstatKey>
   extraButtons?: JSX.Element
+  excluded?: boolean
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
@@ -85,6 +88,7 @@ export function ArtifactCardObj({
   mainStatAssumptionLevel = 0,
   effFilter = allSubstatFilter,
   extraButtons,
+  excluded = false,
 }: {
   artifact: ICachedArtifact
 } & Data) {
@@ -193,6 +197,15 @@ export function ArtifactCardObj({
               >
                 {lock ? <Lock /> : <LockOpen />}
               </IconButton>
+            )}
+            {excluded && (
+              <SvgIcon
+                color="primary"
+                fontSize="large"
+                sx={{ position: 'absolute', right: 3, bottom: 3, zIndex: 2 }}
+              >
+                <ExcludeIcon />
+              </SvgIcon>
             )}
             <Box sx={{ pt: 2, px: 2, position: 'relative', zIndex: 1 }}>
               {/* header */}
