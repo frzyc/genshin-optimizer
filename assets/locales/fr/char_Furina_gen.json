@@ -83,7 +83,7 @@
   "burst": {
     "name": "Liesse populaire",
     "description": {
-      "0": "Éveille l'envie de se délecter, créant une scène d'écume qui inflige des <hydro>DGT Hydro de zone</hydro> selon les PV max de Furina et accorde l'état Réjouissance universelle aux personnages de l'équipe à proximité : pendant sa durée, lorsque les PV actuels d'un personnage augmentent ou diminuent, Furina obtient 1 pt de fanfare à chaque fois que le personnage obtient ou perd des PV d'une valeur équivalant à 1 % de ses PV Max.",
+      "0": "Éveille l'envie de se délecter, créant une scène d'écume qui inflige des <hydro>DGT Hydro de zone</hydro> selon les PV max de Furina et accorde l'état Réjouissance universelle aux personnages de l'équipe à proximité : pendant sa durée, lorsque les PV actuels d'un personnage augmentent ou diminuent, Furina obtient 1 pt de fanfare à chaque fois que le personnage obtient ou perd des PV d'une valeur équivalant à 1 % de ses PV max.",
       "1": "De plus, les DGT infligés et le bonus de soins reçus de tous les personnages de l'équipe à proximité augmentent selon la quantité de points de fanfare de Furina.",
       "2": "Une fois la durée terminée, la fanfare de Furina est annulée.",
       "3": "<br/>",

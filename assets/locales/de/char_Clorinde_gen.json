@@ -1,0 +1,183 @@
+{
+  "name": "Clorinde",
+  "title": "Kerzenträgerin, Häscherin der Schatten",
+  "description": "Eine unbesiegte Duellrepräsentantin. Mit dem Schwert in der Hand bewahrt sie die „Gerechtigkeit“ des Hofs von Fontaine.",
+  "constellationName": "Rapperia",
+  "auto": {
+    "name": "Eid der Schattenjäger",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und schießt ein fächerförmiges Unterdrückungsfeuer."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nächtliche Jagd",
+    "description": {
+      "0": "Clorinde macht ihre Pistole bereit und tritt in den Zustand „Nachtpatrouille“ ein, in dem sie Klinge- und Schusswaffe kombiniert. In diesem Zustand wird ihr Standardangriff zu „Wilde Jagd“ und der von ihr verursachte Schaden wird zu <electro>Elektro-SCH</electro>, der nicht von anderen Elementen überdeckt werden kann, wobei sie keine heftigen Schläge ausführen kann. Löst sie ihre Elementarfähigkeit aus, wird diese durch „Nächtliche Durchbohrung“ ersetzt: Hierbei führt sie einen Klingenvorstoß aus, womit sie ebenfalls <electro>Elektro-SCH</electro> verursacht. Der Schaden des oben Genannten wird als Schaden des Standardangriffs angesehen.",
+      "1": "<br/>",
+      "2": "<strong>Wilde Jagd</strong>",
+      "3": [
+        " Eid des Lebens ist größer oder gleich 100 % ihrer max. LP: Sie feuert ihre Pistole ab;",
+        " Eid des Lebens liegt unter 100 % ihrer max. LP: Die Schüsse, die Clorinde abfeuert, gewähren ihr eine gewisse Menge Eid des Lebens basierend auf ihren max. LP und durchschlagen Gegner, wobei der Schaden, den sie Gegnern auf ihrer Flugbahn zufügen, erhöht ist."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Nächtliche Durchbohrung</strong>",
+      "6": "Entsprechend des aktuellen prozentuellen Anteils von Clorindes Eid des Lebens wird der Effekt von Nächtliche Durchbohrung bestimmt:",
+      "7": [
+        " Beträgt Eid des Lebens 0 %, führt Clorinde einen Klingenvorstoß aus;",
+        " Liegt Eid des Lebens unter 100 % von Clorindes max. LP, werden Clorinde LP basierend auf dem Wert von Eid des Lebens wiederhergestellt und die Reichweite von Nächtliche Durchbohrung und deren verursachter Schaden werden erhöht;",
+        " Liegt Eid des Lebens über oder bei 100 % von Clorindes max. LP, führt sie „Nächtliche Durchbohrung – Pakt“ aus. Ihr werden noch mehr LP wiederhergestellt und die Angriffsreichweite von Nächtliche Durchbohrung, sowie der verursachte Schaden werden ebenfalls noch weiter erhöht."
+      ],
+      "8": "<br/>",
+      "9": "Befindet sich Clorinde außerdem im Zustand Nachtpatrouille, ist jede Heilung mit Ausnahme von der durch Nächtliche Durchbohrung wirkungslos. Stattdessen werden die ihr gewährten Heileffekte prozentual durch Eid des Lebens für sie ersetzt.",
+      "10": "<br/>",
+      "11": "Der Zustand Nachtpatrouille wird entfernt, wenn Clorinde ausgewechselt wird.",
+      "12": "<br/>",
+      "13": "<strong>Arkhe: Ousia</strong>",
+      "14": "In regelmäßigen Abständen geht beim Treffen mit Clorindes „Wilde Jagd“ an der getroffenen Stelle eine Wogenklinge nieder, die mit Ousia versehenen <electro>Elektro-Schaden</electro> verursacht.",
+      "15": "<br/>",
+      "16": "<i>Das Böse, das einst in den Schatten lauerte, ist bereits vor Tausenden von Jahren ausgemerzt worden. Doch in den Herzen der Menschen schlummern Schatten, die das Licht nur schwerlich zu erreichen vermag.",
+      "17": "Auch heute noch erinnert sie sich an die Warnung des „Goldenen Jägers“: Wer sich des Nachts mit brennender Kerze auf Patrouille begibt, der sollte stets Wachsamkeit walten lassen, auf dass er nicht von der eiskalten Dunkelheit durchtränkt werde.</i>"
+    },
+    "skillParams": {
+      "0": "SCH Wilde Jagd",
+      "1": "Eid des Lebens durch Wilde Jagd",
+      "2": "SCH Nächtliche Durchbohrung",
+      "3": "Heilung durch Nächtliche Durchbohrung",
+      "4": "Umwandlung Eid des Lebens",
+      "5": "Wogenklinge-SCH",
+      "6": "Wogenklinge-Intervall",
+      "7": "Dauer der Nachtpatrouille",
+      "8": "Abklingzeit",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sterbende Lichtstrahlen",
+    "description": {
+      "0": "Gewährt sich selbst auf Basis der eigenen max. LP Eid des Lebens, greift mit Schwert und Pistole im Einklang an, wobei sie <electro>Elektro-Flächenschaden</electro> verursacht.",
+      "1": "<br/>",
+      "2": "<i>Es heißt, das Erbe dieser uralten Kunst, Unmenschliches mit einem sterblichen Körper zu bekämpfen, reiche bis zu den Okeanidenrittern zurück, die gegen das Reich Remuria aufbegehrten.",
+      "3": "Allerdings ist es nicht völlig unmöglich, dies in einem Zweikampf gegen einen normalen Gegner einzusetzen, sofern man einen Weg findet, die Kraft zu kontrollieren.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Gewährter Eid des Lebens",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Finsternis zersetzende Flamme",
+    "description": {
+      "0": "Erhöht den mit dem Standardangriff und <strong>Sterbende Lichtstrahlen</strong> verursachten <electro>Elektro-Schaden</electro> um 20 % von Clorindes ANG, nachdem Truppenmitglieder in der Nähe bei Gegnern <electro>Elektro-Reaktionen</electro> ausgelöst haben. Dieser Effekt hält 15 s, 3-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet. Der max. Schaden-Bonus für die oben genannten Angriffe von Clorinde, der auf diese Weise erreicht werden kann, beträgt 1.800 Punkte."
+    }
+  },
+  "passive2": {
+    "name": "Vergütung des Paktes",
+    "description": {
+      "0": "Erhöht, wenn der Wert von Clorindes Eid des Lebens mindestens 100 % ihrer maximalen LP beträgt, ihre KT um 10 %, sobald sich der Wert ihres Eids des Lebens erhöht oder verringert. Hält 15 s, 2-fach stapelbar. Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
+      "1": "Verstärkt zusätzlich den Zustand Nachtpatrouille von <strong>Nächtliche Jagd</strong>: Erhöht während der Wirkungsdauer den Prozentsatz der Heilung, der in Eid des Lebens umgewandelt wird, auf 100 %."
+    }
+  },
+  "passive3": {
+    "name": "Beute der Nachtpatrouille",
+    "description": {
+      "0": "Zeigt alle <strong>Besonderheiten Fontaines</strong> in der Nähe auf der Minikarte an."
+    }
+  },
+  "constellation1": {
+    "name": "„Von heute an ziehe ich am Schattenschleier der Kerze vorbei“",
+    "description": {
+      "0": "Verursacht Clorinde mit ihrem Standardangriff beim Treffen von Gegnern während des Zustands Nachtpatrouille von <strong>Nächtliche Jagd</strong> <electro>Elektro-Schaden</electro>, beschwört sie in der Nähe des getroffenen Gegners den Schatten der Nachtpatrouille, der zwei abgestimmte Angriffe ausführt, wovon jeder <electro>Elektro-Schaden</electro> in Höhe von 30 % von Clorindes ANG verursacht.",
+      "1": "1,2 s Abklingzeit. Hierdurch verursachter Schaden wird als Schaden des Standardangriffs gewertet."
+    }
+  },
+  "constellation2": {
+    "name": "„Von nun an stelle ich mich den Gefahren der langen Nacht“",
+    "description": {
+      "0": "Verstärkt den Effekt des passiven Talents „Finsternis zersetzende Flamme“: Erhöht den von Clorinde verursachten <electro>Elektro-Schaden</electro> mit ihrem Standardangriff und den von <strong>Sterbende Lichtstrahlen</strong> um 30 % von Clorindes ANG, nachdem Truppenmitglieder in der Nähe bei Gegnern <electro>Elektro-Reaktionen</electro> ausgelöst haben. Dieser Effekt hält 15 s, 3-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet. Erhöht bei 3 Stapelungen Clorindes Unterbrechungs-WDS. Der max. Schaden-Bonus, der auf diese Weise für die oben genannten Angriffe erreicht werden kann, beträgt 2.700 Punkte.",
+      "1": "Das passive Talent „Finsternis zersetzende Flamme“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "„Ich gelobe, mich an den Eid des Tageslichts zu erinnern“",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Nächtliche Jagd</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "„In Erinnerung an die Tränen, das Leben und die Liebe“",
+    "description": {
+      "0": "Verstärkt, wenn Clorinde Gegnern Schaden mit <strong>Sterbende Lichtstrahlen</strong> zufügt, diesen Schaden basierend auf dem aktuellen Prozentwert ihres Eids des Lebens: Erhöht für je 1 % Eid des Lebens den mit <strong>Sterbende Lichtstrahlen</strong> zugefügten Schaden um 2 %. Hierdurch kann der Schaden von <strong>Sterbende Lichtstrahlen</strong> um bis zu 200 % erhöht werden."
+    }
+  },
+  "constellation5": {
+    "name": "„Auch in Erinnerung an die kommende Morgenröte“",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Sterbende Lichtstrahlen</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "„Lass die Hoffnung also niemals fahren“",
+    "description": {
+      "0": "Verstärkt für 12 s nach Einsatz von <strong>Nächtliche Jagd</strong> Clorindes KT um 10 % und den KSCH um 70 %.",
+      "1": "Außerdem wird während des Zustands Nachtpatrouille unter bestimmten Bedingungen ein Glimmlicht-Schatten erscheinen. Er greift Ziele an und fügt ihnen <electro>Elektro-Schaden</electro> in Höhe von 200 % von Clorindes ANG zu. Hierdurch verursachter Schaden wird als Schaden des Standardangriffs gewertet.",
+      "2": "Der Glimmlicht-Schatten erscheint unter folgenden Bedingungen:",
+      "3": [
+        " Clorinde wird bald von Angriffen getroffen.",
+        " Clorinde löst „Nächtliche Durchbohrung – Pakt“ aus."
+      ],
+      "4": "Hierdurch kann jede 1 s einmal ein Glimmlicht-Schatten beschworen werden. Während der Wirkungsdauer des Zustands Nachtpatrouille kann der Glimmlicht-Schatten bis zu 6 Mal beschworen werden.",
+      "5": "Außerdem wird während der Dauer des Zustands Nachtpatrouille Clorindes erlittener Schaden um 80 % verringert und ihr Unterbrechungs-WDS erhöht. Dieser Effekt wird bei Ablauf des Zustands Nachtpatrouille oder 1 s nach dem 6-maligen Beschwören des Glimmlicht-Schattens entfernt."
+    }
+  }
+}

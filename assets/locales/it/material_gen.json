@@ -194,6 +194,9 @@
   "IridescenceTourTickets": {
     "name": "Biglietti del Tour dell'arcobaleno"
   },
+  "AnalysisProgress": {
+    "name": "Progressi d'analisi"
+  },
   "Primogem": {
     "name": "Primogemma"
   },
@@ -205,6 +208,9 @@
   },
   "RealmCurrency": {
     "name": "Moneta del regno"
+  },
+  "ToyMedal": {
+    "name": "Medaglia giocattolo"
   },
   "OriginalEssenceInvalidated": {
     "name": ""
@@ -524,8 +530,17 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Sigewinne": {
+    "name": "Sigewinne"
+  },
   "Arlecchino": {
     "name": "Arlecchino"
+  },
+  "Sethos": {
+    "name": "Sethos"
+  },
+  "Clorinde": {
+    "name": "Clorinde"
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna di Kamisato Ayaka"
@@ -770,8 +785,17 @@
   "ChiorisStellaFortuna": {
     "name": "Stella Fortuna di Chiori"
   },
+  "SigewinnesStellaFortuna": {
+    "name": "Stella Fortuna di Sigewinne"
+  },
   "ArlecchinosStellaFortuna": {
     "name": "Stella Fortuna di Arlecchino"
+  },
+  "SethossStellaFortuna": {
+    "name": "Stella Fortuna di Sethos"
+  },
+  "ClorindesStellaFortuna": {
+    "name": "Stella Fortuna di Clorinde"
   },
   "GnosticHymnOldNotes": {
     "name": "Inno gnostico - Vecchi appunti"
@@ -6938,8 +6962,26 @@
   "DeliciousBulleSouffle": {
     "name": "Bulle soufflé delizioso"
   },
+  "WellBalancedMeal": {
+    "name": "Pasto bilanciato"
+  },
   "HearthfiresTrail": {
     "name": "Sentiero del focolare"
+  },
+  "SuspiciousBulleSauceDuckBreast": {
+    "name": "Petto d'anatra con salsa di Bulle sospetto"
+  },
+  "BulleSauceDuckBreast": {
+    "name": "Petto d'anatra con salsa di Bulle"
+  },
+  "DeliciousBulleSauceDuckBreast": {
+    "name": "Petto d'anatra con salsa di Bulle delizioso"
+  },
+  "TaggedAndBagged": {
+    "name": "Cacciato e cucinato"
+  },
+  "SuperDeeDuperDeliciousMeatRoll": {
+    "name": "Supershawarma delizioso"
   },
   "RecipeItem": {
     "name": "Ingrediente"
@@ -7519,6 +7561,9 @@
   },
   "RecipeBulleSouffle": {
     "name": "Ricetta: Bulle soufflé"
+  },
+  "RecipeBulleSauceDuckBreast": {
+    "name": "Ricetta: petto d'anatra con salsa di Bulle"
   },
   "CraftedItems": {
     "name": "Oggetti creati"
@@ -10241,6 +10286,12 @@
   "FelixFelicium": {
     "name": "Felix Felicium"
   },
+  "ConcentratedTransoceanicPearl": {
+    "name": "Perla transoceanica concentrata"
+  },
+  "TaintedHydroPhantasmExtract": {
+    "name": "Estratto di Fantasma di Hydro contaminato"
+  },
   "ShikanoinHeizousMessage": {
     "name": "Messaggio di Shikanoin Heizou"
   },
@@ -10283,11 +10334,26 @@
   "DamagedScore": {
     "name": "Spartito danneggiato"
   },
+  "CriminalsTestimony": {
+    "name": "Testimonianze dei criminali"
+  },
+  "RawatsNotes": {
+    "name": "Appunti di Rawat"
+  },
+  "GroupPhotoFromAnUnknownTime": {
+    "name": "Foto di gruppo in un momento ignoto"
+  },
   "RuggierosNotesII": {
     "name": "Appunti di Ruggiero (II)"
   },
   "PagesFromALostScoreII": {
     "name": "Pagine di uno spartito perduto (II)"
+  },
+  "TreasureMapWithTheVaultsLocation": {
+    "name": "Mappa con la posizione della camera del tesoro"
+  },
+  "MarechausseeHunterJudgmentDayCharacterAlbum": {
+    "name": "Album Cacciatore della Maréchaussée: Giorno del giudizio"
   },
   "AncientEngravings": {
     "name": "Incisioni antiche"
@@ -10318,6 +10384,57 @@
   },
   "AncientPieceOfPaper": {
     "name": "Pezzo di carta antico"
+  },
+  "ProductionLog": {
+    "name": "Registro di produzione"
+  },
+  "ExperimentLog": {
+    "name": "Registro di sperimentazione"
+  },
+  "TheLittleWitchAndTheUndyingFireI": {
+    "name": "La piccola strega e la fiamma perpetua (I)"
+  },
+  "TheLittleWitchAndTheUndyingFireII": {
+    "name": "La piccola strega e la fiamma perpetua (II)"
+  },
+  "TheLittleWitchAndTheUndyingFireIII": {
+    "name": "La piccola strega e la fiamma perpetua (III)"
+  },
+  "TheLittleWitchAndTheUndyingFireIV": {
+    "name": "La piccola strega e la fiamma perpetua (IV)"
+  },
+  "TheLittleWitchAndTheUndyingFireV": {
+    "name": "La piccola strega e la fiamma perpetua (V)"
+  },
+  "TheLittleWitchAndTheUndyingFireVI": {
+    "name": "La piccola strega e la fiamma perpetua (VI)"
+  },
+  "TheLittleWitchAndTheUndyingFireVII": {
+    "name": "La piccola strega e la fiamma perpetua (VII)"
+  },
+  "TheFelineFirmI": {
+    "name": "Agenzia Gactotum (I)"
+  },
+  "TheFelineFirmII": {
+    "name": "Agenzia Gactotum (II)"
+  },
+  "TheFelineFirmIII": {
+    "name": "Agenzia Gactotum (III)"
+  },
+  "TheFelineFirmIV": {
+    "name": "Agenzia Gactotum (IV)"
+  },
+  "TheFelineFirmV": {
+    "name": "Agenzia Gactotum (V)"
+  },
+  "TheFelineFirmVI": {
+    "name": "Agenzia Gactotum (VI)"
+  },
+  "TheFelineFirmVII": {
+    "name": "Agenzia Gactotum (VII)"
+  },
+  "TheFelineFirmVIII": {
+    "name": "Agenzia Gactotum (VIII)"
   },
   "TearsAmongTheStars": {
     "name": "Lacrime tra le stelle"
@@ -11072,6 +11189,9 @@
   "ExaltedEarth": {
     "name": "Terra sublime"
   },
+  "CamAndCablesOfLaw": {
+    "name": "Pesi e misure"
+  },
   "FalconsDance": {
     "name": "Danza del falco"
   },
@@ -11804,6 +11924,21 @@
   "TravelNotesTheRealmsRocked": {
     "name": "Appunti di viaggio: Regni del rock"
   },
+  "ClorindeRoleplay": {
+    "name": "Clorinde: Gioco di ruolo"
+  },
+  "SigewinneTreatment": {
+    "name": "Sigewinne: Terapia"
+  },
+  "SethosBaFragment": {
+    "name": "Sethos: Frammento di Ba"
+  },
+  "AchievementPoeticPages": {
+    "name": "Obiettivo: Pagine poetiche"
+  },
+  "TravelNotesSimulnation": {
+    "name": "Appunti di viaggio: Politeama"
+  },
   "AnemoculusResonanceStone": {
     "name": "Pietra di risonanza per Anemoculi"
   },
@@ -12236,6 +12371,21 @@
   "ObligingLittleYuegui": {
     "name": "Un aiuto per il Piccolo Yuegui"
   },
+  "UpbeatEncouragement": {
+    "name": "Incoraggiamento gioioso"
+  },
+  "ElegantCountenance": {
+    "name": "Aspetto elegante"
+  },
+  "ReadyForBattle": {
+    "name": "Pronto per la sfida"
+  },
+  "SolemnCountenance": {
+    "name": "Aspetto solenne"
+  },
+  "LeisureTime": {
+    "name": "Tempo libero"
+  },
   "RhodeiaOfLoch": {
     "name": "Rhodeia di Loch"
   },
@@ -12292,6 +12442,18 @@
   },
   "EmperorOfFireAndIron": {
     "name": "Imperatore del Fuoco e del Ferro"
+  },
+  "AllDevouringNarwhal": {
+    "name": "Narvalo Divoramondi"
+  },
+  "ConsecratedScorpion": {
+    "name": "Scorpione consacrato"
+  },
+  "ConsecratedFlyingSerpent": {
+    "name": "Serpente volante consacrato"
+  },
+  "GuardianOfApepsOasis": {
+    "name": "Guardiano dell'Oasi di Apep"
   },
   "UndividedHeart": {
     "name": "Cuore indivisibile"
@@ -12542,6 +12704,33 @@
   "MoltenMail": {
     "name": "Maglio incandescente"
   },
+  "TerrorForTheEvildoers": {
+    "name": "Terrore per i malfattori"
+  },
+  "HearMeLetUsRaiseTheChaliceOfLove": {
+    "name": "\"Libiamo ne' lieti calici!\""
+  },
+  "RockinInAFlamingWorld": {
+    "name": "Rock 'n' roll infernale"
+  },
+  "DecorousHarmony": {
+    "name": "Armonia e decoro"
+  },
+  "TheArtOfBudgeting": {
+    "name": "L'arte del risparmio"
+  },
+  "LightlessFeeding": {
+    "name": "Divoratore del buio"
+  },
+  "FatalFulmination": {
+    "name": "Fulminazione fatale"
+  },
+  "DeathlyCyclone": {
+    "name": "Ciclone mortale"
+  },
+  "AThousandYoung": {
+    "name": "Prole infinita"
+  },
   "MagicGuide": {
     "name": "Manuale di magia"
   },
@@ -12764,6 +12953,27 @@
   "AmethystCrown": {
     "name": "Corona d'ametista"
   },
+  "CashflowSupervision": {
+    "name": "Supervisione pecuniaria"
+  },
+  "EndOfTheLine": {
+    "name": "Pesce da lenza"
+  },
+  "ForestRegalia": {
+    "name": "Gloria della foresta"
+  },
+  "SplendorOfTranquilWaters": {
+    "name": "Fulgore delle placide acque"
+  },
+  "MarechausseeHunter": {
+    "name": "Cacciatore della Maréchaussée"
+  },
+  "GoldenTroupe": {
+    "name": "Compagnia dorata"
+  },
+  "FlowerOfParadiseLost": {
+    "name": "Fiore del paradiso perduto"
+  },
   "LiyueHarborWharf": {
     "name": "Molo del Porto di Liyue"
   },
@@ -12898,6 +13108,15 @@
   },
   "TheWhiteGloveAndTheFisherman": {
     "name": "Il Guanto bianco e il Pescatore"
+  },
+  "TheMausoleumOfKingDeshret": {
+    "name": "Mausoleo di Re Deshret"
+  },
+  "CentralLaboratoryRuins": {
+    "name": "Rovine del Laboratorio centrale"
+  },
+  "SirArthur": {
+    "name": "Sir Arthur"
   },
   "ElementalResonanceWovenIce": {
     "name": "Risonanza elementale: Ghiaccio intrecciato"
@@ -13066,6 +13285,15 @@
   },
   "UnderwaterTreasureHunt": {
     "name": "Caccia al tesoro sottomarina"
+  },
+  "ViciousAncientBattle": {
+    "name": "Antica battaglia feroce"
+  },
+  "WaterAndJustice": {
+    "name": "Acqua e Giustizia"
+  },
+  "CountdownToTheShow3": {
+    "name": "Conto alla rovescia dello spettacolo: 3"
   },
   "Origin": {
     "name": "Origine"
@@ -13923,7 +14151,7 @@
     "name": "\"Testimone di grande concentrazione\""
   },
   "ElationOfSocialDrinking": {
-    "name": "Giubilio del bere in compagnia"
+    "name": "Giubilo del bere in compagnia"
   },
   "MallowWoodViewingRitesChair": {
     "name": "Poltrone in legno di malva Galateo dello spettatore"
@@ -14155,6 +14383,9 @@
   },
   "FontainianCarpetFairAndSquare": {
     "name": "Tappeto di Fontaine Giustizia al quadrato"
+  },
+  "FadingAfterglow": {
+    "name": "Crepuscolo evanescente"
   },
   "TrustyPortableLamp": {
     "name": "Lampada perpetua portatile"
@@ -15519,13 +15750,16 @@
     "name": "Dispositivo di cottura comune"
   },
   "ModelContraptionRepair": {
-    "name": "Modello di meccanismo: Riparazione"
+    "name": "Modello di meccanismo Riparazione"
   },
   "ModelContraptionRockcrackerAnchor": {
-    "name": "Modello di meccanismo: Ancora penetrante"
+    "name": "Modello di meccanismo Ancora penetrante"
   },
   "BoxingTargetOfTheForbiddenFortress": {
     "name": "Bersaglio da boxe del Forte proibito"
+  },
+  "ImprovedCrococannon": {
+    "name": "Crococannone migliorato"
   },
   "PottedPlantVerdantVastness": {
     "name": "Vaso con pianta Immensità verdeggiante"
@@ -15920,6 +16154,9 @@
   "CrystallineGlory": {
     "name": "Gloria cristallina"
   },
+  "MusicTownsBreezeBellsCheepingFinches": {
+    "name": "Campane a vento della città musicale Fringuelli canterini"
+  },
   "BookshelfFreeReading": {
     "name": "Portalibri Lettura libera"
   },
@@ -15958,6 +16195,9 @@
   },
   "MallowWoodMailboxStorage": {
     "name": "Cassetta della posta in legno di malva Stoccaggio"
+  },
+  "ModelContraptionStandardMusicalMode": {
+    "name": "Modello di meccanismo Modalità musicale standard"
   },
   "WeatheredBambooFence": {
     "name": "Recinto in bambù consumato"
@@ -16147,5 +16387,8 @@
   },
   "SwordBearingStatueEternalWatch": {
     "name": "Statua di pietra Guardiano eterno"
+  },
+  "SwordBearingStatueAestheticsOfIncompleteness": {
+    "name": "Statua con spada Estetica dell'incompiutezza"
   }
 }

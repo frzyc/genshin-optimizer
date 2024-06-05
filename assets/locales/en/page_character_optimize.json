@@ -123,5 +123,10 @@
   "graphBuildLabel": "Graph #<1>{{count}}</1>",
   "buildCompleted": "Build Completed",
   "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out.",
-  "targetSelectorTitle": "Target Selector"
+  "targetSelectorTitle": "Target Selector",
+  "compareArtModal": {
+    "newArt": "New Artifact",
+    "oldArt": "Old Artifact",
+    "tcArt": "TC Artifact"
+  }
 }

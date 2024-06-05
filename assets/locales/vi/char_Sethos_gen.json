@@ -1,0 +1,169 @@
+{
+  "name": "Sethos",
+  "title": "Thước Đo Trí Tuệ",
+  "description": "Người thừa kế của Ngôi Đền Im Lặng. Mang theo bí mật, đến từ trong cát.",
+  "constellationName": "Cung Thánh Danh Hoàn",
+  "auto": {
+    "name": "Tiễn Thuật Lau Sậy Hoàng Gia",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần bắn tên liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "<strong>Ngắm bắn</strong> chuẩn hơn, sát thương cao hơn.",
+        "2": "Khi ngắm bắn, sức mạnh sấm sét sẽ ngưng tụ liên tục trên mũi tên và bắn ra. Căn cứ vào thời gian tụ lực dài hay ngắn sẽ gây ra hiệu quả khác nhau:",
+        "3": [
+          "Tụ lực lần 1: Bắn mũi tên nguyên tố Lôi gây <electro>Sát Thương Nguyên Tố Lôi</electro>;",
+          "Tụ lực lần 2: Bắn <strong>Mũi Tên Xuyên Bóng Tối</strong> có thể xuyên thấu kẻ địch, gây <electro>Sát Thương Nguyên Tố Lôi</electro> cho kẻ địch trên đường. Sau khi hoàn thành tụ lực Mũi Tên Xuyên Bóng Tối, Sethos sẽ không thể di chuyển."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên từ trên không, đồng thời lao nhanh xuống mặt đất, gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Ngắm Bắn",
+      "4": "Tụ Lực Ngắm Bắn Lần 1",
+      "5": "Sát Thương Mũi Tên Xuyên Bóng Tối",
+      "6": "Sát Thương Khi Đáp",
+      "7": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nghi Thức Cổ - Tiếng Sấm Của Cát",
+    "description": {
+      "0": "Tích tụ sấm sét, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> và nhanh chóng rút lui. Nếu lần tấn công đó kích hoạt phản ứng Điện Cảm, Siêu Dẫn, Quá Tải, Sinh Trưởng, Tăng Cường, Nở Rộ hoặc Khuếch Tán Lôi lên kẻ địch thì Sethos sẽ hồi phục một lượng Năng Lượng Nguyên Tố nhất định.",
+      "1": "<br/>",
+      "2": "<i>\"Tư tế bên cạnh thần linh, thuật sĩ biến hố sâu thành dòng suối, câu chuyện của họ được lan truyền bởi những người hát ca trong biển cát... Nhưng tôi biết đó không phải là truyền thuyết, do họ chính là tổ tiên của chúng tôi.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Năng Lượng Nguyên Tố Hồi Phục",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Nghi Thức Ẩn - Ánh Sáng Xuyên Bóng Tối",
+    "description": {
+      "0": "Thi triển nghi thức thần bí và tiến vào trạng thái \"Thiền Định Hoàng Hôn\". Trong thời gian này, Tấn Công Thường của Sethos sẽ chuyển thành <strong>Mũi Tên Chạng Vạng</strong> có thể xuyên thấu kẻ địch: Gây <electro>Sát Thương Nguyên Tố Lôi</electro> cho kẻ địch trên đường, đồng thời dựa vào Tinh Thông Nguyên Tố của Sethos để gia tăng sát thương gây ra.",
+      "1": "Trong thời gian duy trì, Sethos không thể tiến hành ngắm bắn.",
+      "2": "Sát thương gây ra từ Mũi Tên Chạng Vạng được xem là sát thương Trọng Kích.",
+      "3": "Hiệu quả sẽ xóa khi Sethos rời trận.",
+      "4": "<br/>",
+      "5": "<i>Thư viện của Ngôi Đền Im Lặng có lưu trữ không ít sách do Akhtamun để lại từ thời Vua Deshret. Trong sách có ghi chép lại những nghi thức bí mật có sức mạnh to lớn, nhưng chỉ có rất ít thành viên có thể làm chủ được chúng.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Mũi Tên Chạng Vạng Tăng",
+      "1": "Thiền Định Hoàng Hôn Duy Trì",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Thì Thầm Của Diều Đen",
+    "description": {
+      "0": "Khi ngắm bắn, với mỗi điểm Năng Lượng Nguyên Tố hiện có, Sethos sẽ giảm 0.285s thời gian tụ lực. Thông qua cách thức này tối đa có thể khiến thời gian tụ lực giảm còn 0.3s và tính vào 20 điểm Năng Lượng Nguyên Tố. Khi bắn, nếu bắn ra <strong>Mũi Tên Xuyên Bóng Tối</strong> thì sẽ tiêu hao Năng Lượng Nguyên Tố được tính vào đó; Nếu bắn ra mũi tên tụ lực lần 1 thì sẽ chỉ tiêu hao 50% Năng Lượng Nguyên Tố được tính."
+    }
+  },
+  "passive2": {
+    "name": "Quà Tặng Của Vua Cát",
+    "description": {
+      "0": "Sethos nhận được hiệu quả \"Ảo Ảnh Cát Nóng\", gia tăng sát thương gây ra từ <strong>Mũi Tên Xuyên Bóng Tối</strong>, mức độ gia tăng tương ứng với 700% Tinh Thông Nguyên Tố của Sethos.",
+      "1": "Hiệu quả Ảo Ảnh Cát Nóng sẽ bị xóa khi đạt bất kỳ điều kiện sau:",
+      "2": [
+        "Sau 5s từ lúc Mũi Tên Xuyên Bóng Tối đầu tiên trúng kẻ địch;",
+        "Sau khi 4 Mũi Tên Xuyên Bóng Tối bắn trúng kẻ địch."
+      ],
+      "3": "<br/>",
+      "4": "Sethos sẽ nhận lại hiệu quả Ảo Ảnh Cát Nóng sau 15s kể từ lúc Mũi Tên Xuyên Bóng Tối mang hiệu quả Ảo Ảnh Cát Nóng lần đầu bắn trúng kẻ địch."
+    }
+  },
+  "passive3": {
+    "name": "Di Tích Của Khải Huyền",
+    "description": {
+      "0": "Hiển thị <strong>đặc sản khu vực Sumeru</strong> trên bản đồ nhỏ."
+    }
+  },
+  "constellation1": {
+    "name": "Khúc Thánh Ca Của Đền Phong Ấn",
+    "description": {
+      "0": "Tỷ Lệ Bạo Kích của <strong>Mũi Tên Xuyên Bóng Tối</strong> tăng 15%."
+    }
+  },
+  "constellation2": {
+    "name": "Kinh Giấy Cói Của Điều Ẩn Mật",
+    "description": {
+      "0": "Khi đáp ứng bất kỳ các điều kiện sau, Sethos sẽ tăng 15% <electro>Buff Sát Thương Nguyên Tố Lôi</electro> trong 10s, tối đa cộng dồn 2 tầng, mỗi tầng tính giờ riêng:",
+      "1": [
+        "Tiêu hao Năng Lượng Nguyên Tố từ việc nhắm bắn, điều kiện này cần mở khóa thiên phú \"Thì Thầm Của Diều Đen\".",
+        "Thông qua <strong>Nghi Thức Cổ - Tiếng Sấm Của Cát</strong> kích hoạt phản ứng nguyên tố để hồi phục Năng Lượng Nguyên Tố.",
+        "Thi triển <strong>Nghi Thức Ẩn - Ánh Sáng Xuyên Bóng Tối</strong>."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Lời Triết Lý Của Mặt Trăng Lên",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tấn Công Thường - Tiễn Thuật Lau Sậy Hoàng Gia</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lông Đà Điểu Của Lòng Chánh Niệm",
+    "description": {
+      "0": "<strong>Mũi Tên Xuyên Bóng Tối</strong> hoặc <strong>Mũi Tên Chạng Vạng</strong> khi trúng 2 kẻ địch trở lên, Tinh Thông Nguyên Tố của tất cả nhân vật trong đội gần đó tăng 80 điểm, duy trì 10s."
+    }
+  },
+  "constellation5": {
+    "name": "Quyển Cát Nóng Của Thần Hoang Vu",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Nghi Thức Ẩn - Ánh Sáng Xuyên Bóng Tối</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sách Môn Đồ Của Tháp Mặt Trời",
+    "description": {
+      "0": "<strong>Mũi Tên Xuyên Bóng Tối</strong> khi trúng kẻ địch sẽ hoàn trả Năng Lượng Nguyên Tố tiêu hao bởi thiên phú \"Thì Thầm Của Diều Đen\". Hiệu quả này mỗi 15s tối đa kích hoạt một lần. Cần mở khóa thiên phú cố định \"Thì Thầm Của Diều Đen\"."
+    }
+  }
+}

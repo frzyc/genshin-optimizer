@@ -1,0 +1,24 @@
+{
+  "name": "Absolution",
+  "description": {
+    "0": "Ein Degen, der früher einmal von einem Betrüger getragen wurde, der alles hinter sich gelassen hatte. Einst diente er ihm vornehmlich als Utensil, um seine wahren Machenschaften zu verschleiern und seine Identität zu tarnen."
+  },
+  "passiveName": "Eid des Todes",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den KSCH um <cryo>20 %</cryo>. Erhöht den vom Träger verursachten Schaden um <cryo>16 %</cryo>, wenn Eid des Lebens erhöht wird. Hält 6 s, 3-fach stapelbar."
+    },
+    "1": {
+      "0": "Erhöht den KSCH um <cryo>25 %</cryo>. Erhöht den vom Träger verursachten Schaden um <cryo>20 %</cryo>, wenn Eid des Lebens erhöht wird. Hält 6 s, 3-fach stapelbar."
+    },
+    "2": {
+      "0": "Erhöht den KSCH um <cryo>30 %</cryo>. Erhöht den vom Träger verursachten Schaden um <cryo>24 %</cryo>, wenn Eid des Lebens erhöht wird. Hält 6 s, 3-fach stapelbar."
+    },
+    "3": {
+      "0": "Erhöht den KSCH um <cryo>35 %</cryo>. Erhöht den vom Träger verursachten Schaden um <cryo>28 %</cryo>, wenn Eid des Lebens erhöht wird. Hält 6 s, 3-fach stapelbar."
+    },
+    "4": {
+      "0": "Erhöht den KSCH um <cryo>40 %</cryo>. Erhöht den vom Träger verursachten Schaden um <cryo>32 %</cryo>, wenn Eid des Lebens erhöht wird. Hält 6 s, 3-fach stapelbar."
+    }
+  }
+}

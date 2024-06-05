@@ -194,6 +194,9 @@
   "IridescenceTourTickets": {
     "name": "„Regenbogen-Ticket“"
   },
+  "AnalysisProgress": {
+    "name": "Analysefortschritt"
+  },
   "Primogem": {
     "name": "Urgestein"
   },
@@ -205,6 +208,9 @@
   },
   "RealmCurrency": {
     "name": "Kannentaler"
+  },
+  "ToyMedal": {
+    "name": "Spielzeugmedaille"
   },
   "OriginalEssenceInvalidated": {
     "name": "Ursprünglicher Bernstein (obsolet)"
@@ -524,8 +530,17 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Sigewinne": {
+    "name": "Sigewinne"
+  },
   "Arlecchino": {
     "name": "Arlecchino"
+  },
+  "Sethos": {
+    "name": "Sethos"
+  },
+  "Clorinde": {
+    "name": "Clorinde"
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna von Kamisato Ayaka"
@@ -770,8 +785,17 @@
   "ChiorisStellaFortuna": {
     "name": "Stella Fortuna von Chiori"
   },
+  "SigewinnesStellaFortuna": {
+    "name": "Stella Fortuna von Sigewinne"
+  },
   "ArlecchinosStellaFortuna": {
     "name": "Stella Fortuna von Arlecchino"
+  },
+  "SethossStellaFortuna": {
+    "name": "Stella Fortuna von Sethos"
+  },
+  "ClorindesStellaFortuna": {
+    "name": "Stella Fortuna von Clorinde"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostiker-Erlebnispass – Erste Aufzeichnungen"
@@ -6938,8 +6962,26 @@
   "DeliciousBulleSouffle": {
     "name": "Leckeres Blasen-Soufflé"
   },
+  "WellBalancedMeal": {
+    "name": "Ausgewogene Mahlzeit"
+  },
   "HearthfiresTrail": {
     "name": "Spuren von Herdfeuer"
+  },
+  "SuspiciousBulleSauceDuckBreast": {
+    "name": "Misslungene Entenbrust an Blasenmandarinen-Soße"
+  },
+  "BulleSauceDuckBreast": {
+    "name": "Entenbrust an Blasenmandarinen-Soße"
+  },
+  "DeliciousBulleSauceDuckBreast": {
+    "name": "Leckere Entenbrust an Blasenmandarinen-Soße"
+  },
+  "TaggedAndBagged": {
+    "name": "„Der Kitzel der Jagd“"
+  },
+  "SuperDeeDuperDeliciousMeatRoll": {
+    "name": "Gegrillte ki-ka-köstliche Fleischröllchen"
   },
   "RecipeItem": {
     "name": "Objekt für Rezepte"
@@ -7519,6 +7561,9 @@
   },
   "RecipeBulleSouffle": {
     "name": "Rezept: Blasen-Soufflé"
+  },
+  "RecipeBulleSauceDuckBreast": {
+    "name": "Rezept: Entenbrust an Blasenmandarinen-Soße"
   },
   "CraftedItems": {
     "name": "Hergestelltes Produkt"
@@ -10241,6 +10286,12 @@
   "FelixFelicium": {
     "name": "„Felix Felicium“"
   },
+  "ConcentratedTransoceanicPearl": {
+    "name": "Konzentrierte Transozeanische Perle"
+  },
+  "TaintedHydroPhantasmExtract": {
+    "name": "Okeanospuk-Extrakt"
+  },
   "ShikanoinHeizousMessage": {
     "name": "Nachricht von Shikanoin Heizou"
   },
@@ -10283,11 +10334,26 @@
   "DamagedScore": {
     "name": "Beschädigte Partitur"
   },
+  "CriminalsTestimony": {
+    "name": "Geständnisse von Häftlingen"
+  },
+  "RawatsNotes": {
+    "name": "Rawats Notizen"
+  },
+  "GroupPhotoFromAnUnknownTime": {
+    "name": "Gruppenfoto aus einer nicht näher bekannten Zeit"
+  },
   "RuggierosNotesII": {
     "name": "Ruggieros Notizen II"
   },
   "PagesFromALostScoreII": {
     "name": "Zerrissene Partiturseite II"
+  },
+  "TreasureMapWithTheVaultsLocation": {
+    "name": "„Schatzkarte“ mit Standort einer Schatzkammer"
+  },
+  "MarechausseeHunterJudgmentDayCharacterAlbum": {
+    "name": "Figurengedenkalbum zu „Schattenjäger: Tag des Gerichts“"
   },
   "AncientEngravings": {
     "name": "Uralte Steleninschrift"
@@ -10318,6 +10384,57 @@
   },
   "AncientPieceOfPaper": {
     "name": "Uralter Zettel"
+  },
+  "ProductionLog": {
+    "name": "Produktionsprotokoll"
+  },
+  "ExperimentLog": {
+    "name": "Versuchsprotokoll"
+  },
+  "TheLittleWitchAndTheUndyingFireI": {
+    "name": "Die kleine Hexe und das unauslöschliche Feuer – Band I"
+  },
+  "TheLittleWitchAndTheUndyingFireII": {
+    "name": "Die kleine Hexe und das unauslöschliche Feuer – Band II"
+  },
+  "TheLittleWitchAndTheUndyingFireIII": {
+    "name": "Die kleine Hexe und das unauslöschliche Feuer – Band III"
+  },
+  "TheLittleWitchAndTheUndyingFireIV": {
+    "name": "Die kleine Hexe und das unauslöschliche Feuer – Band IV"
+  },
+  "TheLittleWitchAndTheUndyingFireV": {
+    "name": "Die kleine Hexe und das unauslöschliche Feuer – Band V"
+  },
+  "TheLittleWitchAndTheUndyingFireVI": {
+    "name": "Die kleine Hexe und das unauslöschliche Feuer – Band VI"
+  },
+  "TheLittleWitchAndTheUndyingFireVII": {
+    "name": "Die kleine Hexe und das unauslöschliche Feuer – Band VII"
+  },
+  "TheFelineFirmI": {
+    "name": "Das Kätzchenbüro – Band I"
+  },
+  "TheFelineFirmII": {
+    "name": "Das Kätzchenbüro – Band II"
+  },
+  "TheFelineFirmIII": {
+    "name": "Das Kätzchenbüro – Band III"
+  },
+  "TheFelineFirmIV": {
+    "name": "Das Kätzchenbüro – Band IV"
+  },
+  "TheFelineFirmV": {
+    "name": "Das Kätzchenbüro – Band V"
+  },
+  "TheFelineFirmVI": {
+    "name": "Das Kätzchenbüro – Band VI"
+  },
+  "TheFelineFirmVII": {
+    "name": "Das Kätzchenbüro – Band VII"
+  },
+  "TheFelineFirmVIII": {
+    "name": "Das Kätzchenbüro – Band VIII"
   },
   "TearsAmongTheStars": {
     "name": "Tränen zwischen den Sternen"
@@ -11072,6 +11189,9 @@
   "ExaltedEarth": {
     "name": "„König des Landes“"
   },
+  "CamAndCablesOfLaw": {
+    "name": "Mechanisches Stück von Mitte und Maß"
+  },
   "FalconsDance": {
     "name": "Falkentanz"
   },
@@ -11804,6 +11924,21 @@
   "TravelNotesTheRealmsRocked": {
     "name": "Erlebnispass – Rock ’n’ Roll"
   },
+  "ClorindeRoleplay": {
+    "name": "Clorinde: Rollenspiel"
+  },
+  "SigewinneTreatment": {
+    "name": "Sigewinne: Behandlung"
+  },
+  "SethosBaFragment": {
+    "name": "Sethos – Ba-Fragment"
+  },
+  "AchievementPoeticPages": {
+    "name": "Errungenschaften: Gedichtseiten"
+  },
+  "TravelNotesSimulnation": {
+    "name": "Erlebnispass – Szenarien"
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus-Resonanzstein"
   },
@@ -12236,6 +12371,21 @@
   "ObligingLittleYuegui": {
     "name": "Kleiner Yuegui, der Retter in der Not"
   },
+  "UpbeatEncouragement": {
+    "name": "Heitere Ermutigung"
+  },
+  "ElegantCountenance": {
+    "name": "Elegante Erscheinung"
+  },
+  "ReadyForBattle": {
+    "name": "Zum Kampf bereit"
+  },
+  "SolemnCountenance": {
+    "name": "Feierliche Erscheinung"
+  },
+  "LeisureTime": {
+    "name": "Freizeit"
+  },
   "RhodeiaOfLoch": {
     "name": "Okeanide Rhodeia"
   },
@@ -12292,6 +12442,18 @@
   },
   "EmperorOfFireAndIron": {
     "name": "Kaiser von Feuer und Eisen"
+  },
+  "AllDevouringNarwhal": {
+    "name": "Sternenverschlingender Narwal"
+  },
+  "ConsecratedScorpion": {
+    "name": "Skorpion heiliger Knochen"
+  },
+  "ConsecratedFlyingSerpent": {
+    "name": "Flugschlange heiliger Knochen"
+  },
+  "GuardianOfApepsOasis": {
+    "name": "Beschützer von Apeps Oase"
   },
   "UndividedHeart": {
     "name": "Eintracht"
@@ -12542,6 +12704,33 @@
   "MoltenMail": {
     "name": "Glühender Panzer"
   },
+  "TerrorForTheEvildoers": {
+    "name": "Angst den Übeltätern"
+  },
+  "HearMeLetUsRaiseTheChaliceOfLove": {
+    "name": "„Hört meinen Lobgesang und erhebt die Becher der Liebe!“"
+  },
+  "RockinInAFlamingWorld": {
+    "name": "Tanz in der Hölle"
+  },
+  "DecorousHarmony": {
+    "name": "Gemeinsame Unternehmung"
+  },
+  "TheArtOfBudgeting": {
+    "name": "Die Kunst der Budgetplanung"
+  },
+  "LightlessFeeding": {
+    "name": "Verschlinger des Lichtes"
+  },
+  "FatalFulmination": {
+    "name": "Totenblitz"
+  },
+  "DeathlyCyclone": {
+    "name": "Totensturm"
+  },
+  "AThousandYoung": {
+    "name": "Üppiger Nachwuchs"
+  },
   "MagicGuide": {
     "name": "Magieführer"
   },
@@ -12764,6 +12953,27 @@
   "AmethystCrown": {
     "name": "Amethystkrone"
   },
+  "CashflowSupervision": {
+    "name": "Monetäre Aufsichtseinheit"
+  },
+  "EndOfTheLine": {
+    "name": "Schwertfischer"
+  },
+  "ForestRegalia": {
+    "name": "Waldkönigsschwert"
+  },
+  "SplendorOfTranquilWaters": {
+    "name": "Pracht des stillen Wassers"
+  },
+  "MarechausseeHunter": {
+    "name": "Schattenjäger"
+  },
+  "GoldenTroupe": {
+    "name": "Goldtruppe"
+  },
+  "FlowerOfParadiseLost": {
+    "name": "Blumen des verlorenen Paradieses"
+  },
   "LiyueHarborWharf": {
     "name": "Hafen von Liyue"
   },
@@ -12898,6 +13108,15 @@
   },
   "TheWhiteGloveAndTheFisherman": {
     "name": "Weißer Handschuh und Fischer"
+  },
+  "TheMausoleumOfKingDeshret": {
+    "name": "Mausoleum von König Deshret"
+  },
+  "CentralLaboratoryRuins": {
+    "name": "Ruine des Zentrallaboratoriums"
+  },
+  "SirArthur": {
+    "name": "Herr Arthur"
   },
   "ElementalResonanceWovenIce": {
     "name": "Elementarer Einklang – Gebündeltes Eis"
@@ -13066,6 +13285,15 @@
   },
   "UnderwaterTreasureHunt": {
     "name": "Schatzsuche im Meer"
+  },
+  "ViciousAncientBattle": {
+    "name": "Vergangene Schlachten"
+  },
+  "WaterAndJustice": {
+    "name": "Wasser und Gerechtigkeit"
+  },
+  "CountdownToTheShow3": {
+    "name": "Countdown zur Show: 3"
   },
   "Origin": {
     "name": "Anbeginn"
@@ -14155,6 +14383,9 @@
   },
   "FontainianCarpetFairAndSquare": {
     "name": "Fontaine-Teppich – „Gerecht und quadratisch“"
+  },
+  "FadingAfterglow": {
+    "name": "„Verblassender Abglanz“"
   },
   "TrustyPortableLamp": {
     "name": "Zuverlässige tragbare Lampe"
@@ -15527,6 +15758,9 @@
   "BoxingTargetOfTheForbiddenFortress": {
     "name": "„Ziel in der verbotenen Festung“"
   },
+  "ImprovedCrococannon": {
+    "name": "„Verbesserte Krokokanone“"
+  },
   "PottedPlantVerdantVastness": {
     "name": "Topfpflanze – „Kleine Oase“"
   },
@@ -15920,6 +16154,9 @@
   "CrystallineGlory": {
     "name": "„Glänzender Ruhm“"
   },
+  "MusicTownsBreezeBellsCheepingFinches": {
+    "name": "Windspiel in der Stadt der Musik – „Spatzengezwitscher“"
+  },
   "BookshelfFreeReading": {
     "name": "Bücher- und Zeitschriftenregal – „Zur freien Verfügung“"
   },
@@ -15958,6 +16195,9 @@
   },
   "MallowWoodMailboxStorage": {
     "name": "Briefkasten „Aufbewahrung“ aus Platanenholz"
+  },
+  "ModelContraptionStandardMusicalMode": {
+    "name": "Vorrichtungsmodell – „Standardisierte Tonart“"
   },
   "WeatheredBambooFence": {
     "name": "Verwitterter Bambuszaun"
@@ -16147,5 +16387,8 @@
   },
   "SwordBearingStatueEternalWatch": {
     "name": "Steinstatue mit Schwert – „Wächter der Ewigkeit“"
+  },
+  "SwordBearingStatueAestheticsOfIncompleteness": {
+    "name": "Steinstatue mit Schwert – „Die Ästhetik des Unvollkommenen“"
   }
 }

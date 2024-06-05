@@ -1,0 +1,170 @@
+{
+  "name": "Sethos",
+  "title": "Medida da Sabedoria",
+  "description": "Herdeiro do Templo do Silêncio. Carrega segredos e vem das areias.",
+  "constellationName": "Basileos Delta",
+  "auto": {
+    "name": "Técnica do Arco Real",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 3 disparos consecutivos com um arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Realiza um <strong>Disparo com Mira</strong> mais preciso com Dano aumentado.",
+        "2": "Ao mirar, o poder do Electro irá se acumular na ponta da flecha antes que ela seja lançada. Possui diferentes efeitos baseados em quanto tempo a energia foi carregada:",
+        "3": [
+          " Carga Nv.1: Dispara uma flecha carregando o poder Electro que inflige <electro>Dano Electro</electro>.",
+          " Carga Nv.2: Dispara uma <strong>Flecha Perfura-Sombra</strong> que perfura os inimigos e causa <electro>Dano Electro</electro>. contra os inimigos. Depois da Flecha Perfura-Sombra carregar completamente, Sethos não pode mais se mover."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas do ar antes de cair e atingir o chão, causando Dano em uma AdE no impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Disparo com Mira",
+      "4": "Disparo Carregado com Mira Nv.1",
+      "5": "Dano da Flecha Perfura-Sombra",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ritual Antigo: Rugido Trovejante da Areia",
+    "description": {
+      "0": "Reúne o poder do trovão, causando <electro>Dano Electro em AdE</electro> contra os inimigos e recuando rapidamente. Se esse ataque desencadear Eletricamente Carregado, Supercondutor, Sobrecarga, Aceleração, Intensificação, Superflorescimento ou Redemoinho Electro, Sethos recupera uma certa quantidade de Energia Elemental.",
+      "1": "<br/>",
+      "2": "<i>\"O Deus que reside no Sacerdote, os magos que se viraram para as nascentes, os cantores do mar de areia ainda falavam suas histórias... Mas agora sei que isso não eram lendas, pois eles são nossos ancestrais.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Regeneração de Energia Elemental",
+      "2": "Tempo de Recarga",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ritual Secreto: Perfura-Sombra do Crepúsculo",
+    "description": {
+      "0": "Realiza um ritual secreto, entrando no estado \"Meditação do Ocaso\", em que os Ataques Normais de Sethos são convertidos em <strong>Flechas do Crepúsculo</strong> que perfuram os inimigos: causa <electro>Dano Electro</electro> contra os inimigos em seu caminho, com aumento de Dano baseado na Proficiência Elemental de Sethos.",
+      "1": "Durante a habilidade, Sethos não pode realizar Disparo com Mira .",
+      "2": "O Dano causado pelas Flechas do Crepúsculo é considerado Dano de Ataque Carregado.",
+      "3": "O efeito é removido quando Sethos sai de campo.",
+      "4": "<br/>",
+      "5": "<br/>",
+      "6": "<i>Os arquivos do Templo do Silêncio preservam muitos volumes deixados por Akhtamun, da era do Rei Deshret. Muitos dos rituais secretos de grande poder estão registrados dentro, mas até entre aqueles do Templo do Silêncio, poucos podem dominá-lo.</i>"
+    },
+    "skillParams": {
+      "0": "Aumento de Dano da Flecha do Crepúsculo",
+      "1": "Duração de Meditação do Ocaso",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Enigma da Pipa Escura",
+    "description": {
+      "0": "Ao mirar, o tempo de carregamento é reduzido em 0.285s baseado em cada ponto atual da Energia Elemental de Sethos. O tempo de carregamento pode ser reduzido no mínimo 0.3s dessa forma e um máximo de 20 de Energia Elemental pode ser contado. Se uma <strong>Flecha Perfura-Sombra</strong> for disparada, consome a quantidade contada de Energia Elemental. Se for uma Flecha de Carga nível 1, então consome 50% da quantidade contada de Energia Elemental."
+    }
+  },
+  "passive2": {
+    "name": "Bênção do Rei das Areias",
+    "description": {
+      "0": "Sethos ganha o efeito \"Sombra da Areia Escaldante\", aumentando o Dano causado por <strong>Flecha Perfura-Sombra</strong> em 700% da Proficiência Elemental de Sethos.",
+      "1": "O efeito Sombra da Areia Escaldante será cancelado quando alguma das seguintes condições for cumprida:",
+      "2": [
+        " 5s após uma Flecha Perfura-Sombra atingir o primeiro inimigo.",
+        " Depois de 4 Flechas Perfura-Sombra atingirem os oponentes."
+      ],
+      "3": "<br/>",
+      "4": "Quando uma Flecha Perfura-Sombra afetada pelo efeito Sombra da Areia Escaldante atinge um oponente pela primeira vez, Sethos obterá novamente o efeito Sombra da Areia Escaldante depois de 15s."
+    }
+  },
+  "passive3": {
+    "name": "Revelação Refletida",
+    "description": {
+      "0": "Mostra a localização de <strong>Especialidades de Sumeru</strong> próximas no mapa."
+    }
+  },
+  "constellation1": {
+    "name": "Canção Espiritual do Altar Selado",
+    "description": {
+      "0": "A Taxa CRIT de <strong>Flecha Perfura-Sombra</strong> é aumentada em 15%."
+    }
+  },
+  "constellation2": {
+    "name": "Escrituras de Papiro dos Segredos Silenciosos",
+    "description": {
+      "0": "Quando qualquer uma das seguintes condições são atingidas, Sethos ganha 15% de <electro>Bônus de Dano Electro</electro> por 10s que pode acumular duas vezes, com a duração de cada acúmulo sendo contada independentemente:",
+      "1": [
+        " Consumir Energia Elemental através de Disparo com Mira; você precisa primeiro desbloquear o Talento Passivo \"Enigma da Pipa Escura\" para desencadear essa condição.",
+        " Recuperando Energia Elemental ao desencadear Reações Elementais usando <strong>Ritual Antigo: Rugido Trovejante da Areia</strong>.",
+        " Usando <strong>Ritual Secreto: Perfura-Sombra do Crepúsculo</strong>."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Ode à Sabedoria do Luar",
+    "description": {
+      "0": "Aumenta o nível do <strong>Ataque Normal: Técnica do Arco Real</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Coleção das Penas Reais do Avestruz",
+    "description": {
+      "0": "Quando <strong>Flecha Perfura-Sombra</strong> ou <strong>Flecha do Crepúsculo</strong> atinge 2 ou mais oponentes, todos os membros próximos da equipe ganham 80 de Proficiência Elemental por 10s."
+    }
+  },
+  "constellation5": {
+    "name": "Registro das Areias Ardentes Solitárias",
+    "description": {
+      "0": "Aumenta o nível de habilidade da <strong>Ritual Secreto: Perfura-Sombra do Crepúsculo</strong> em 3 níveis. ",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Tomo do Templo do Sol Patrulhador",
+    "description": {
+      "0": "Depois que <strong>Flecha Perfura-Sombra</strong> atingir um oponente, a Energia Elemental consumida pelo Talento Passivo \"Enigma da Pipa Escura\" será retornada. Esse efeito pode ser desencadeado uma vez a cada 15s. É necessário ter desbloqueado o Talento Passivo \"Enigma da Pipa Escura\" primeiro."
+    }
+  }
+}

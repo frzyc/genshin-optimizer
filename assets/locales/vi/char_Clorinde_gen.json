@@ -1,0 +1,183 @@
+{
+  "name": "Clorinde",
+  "title": "Thắp Nến Diệt Bóng Tối",
+  "description": "Đấu Sĩ Đại Diện bất bại. Dùng thanh kiếm trong tay để bảo vệ \"chính nghĩa\" của Đại Sảnh Fontaine.",
+  "constellationName": "Cung Tấn Tiệp Kiếm",
+  "auto": {
+    "name": "Lời Thề Marechaussee",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, dùng súng hỏa mai để bắn áp chế một khu vực hình quạt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Thanh Trừng Bóng Tối",
+    "description": {
+      "0": "Chuẩn bị súng lục và tiến vào trạng thái \"Tuần Tra Đêm\", nơi kết hợp giữa kiếm và súng. Trong trạng thái này, Tấn Công Thường của Clorinde sẽ chuyển thành đòn bắn \"Thanh Trừng\", sát thương gây ra sẽ chuyển thành <electro>Sát Thương Nguyên Tố Lôi</electro> không thể bị thay thế, đồng thời không thể tiến hành trọng kích; Thi triển Kỹ Năng Nguyên Tố sẽ chuyển thành \"Xuyên Qua Màn Đêm\": Dùng kiếm đột kích, gây <electro>Sát Thương Nguyên Tố Lôi</electro>. Sát thương gây ra từ cách thức trên sẽ được tính là sát thương Tấn Công Thường.",
+      "1": "<br/>",
+      "2": "<strong>Thanh Trừng</strong>",
+      "3": [
+        "Khi Khế Ước Sinh Mệnh bằng hoặc lớn hơn 100% Giới Hạn HP của cô ấy: Tiến hành đòn bắn hỏa mai;",
+        "Khi Khế Ước Sinh Mệnh nhỏ hơn 100% Giới Hạn HP của cô ấy: Khi bắn sẽ cung cấp một lượng Khế Ước Sinh Mệnh nhất định dựa trên Giới Hạn HP của Clorinde, bắn ra viên đạn có thể xuyên thấu kẻ địch, gây sát thương cao hơn cho kẻ địch trên đường."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Xuyên Qua Màn Đêm</strong>",
+      "6": "Căn cứ vào phần trăm Khế Ước Sinh Mệnh hiện tại của Clorinde để quyết định hiệu quả Xuyên Qua Màn Đêm lần đó:",
+      "7": [
+        "Khi Khế Ước Sinh Mệnh là 0% sẽ dùng kiếm đột kích;",
+        "Khi Khế Ước Sinh Mệnh thấp hơn 100% Giới Hạn HP sẽ khiến Clorinde hồi phục HP, lượng hồi phục căn cứ vào giá trị Khế Ước Sinh Mệnh, đồng thời tăng phạm vi và sát thương gây ra của lần Xuyên Qua Màn Đêm đó;",
+        "Khi Khế Ước Sinh Mệnh cao hơn hoặc bằng 100% Giới Hạn HP sẽ tiến hành Xuyên Qua Màn Đêm - Hiệp Ước, hồi phục HP cho Clorinde với tỷ lệ cao hơn, đồng thời tăng thêm phạm vi tấn công và sát thương gây ra của lần Xuyên Qua Màn Đêm đó;"
+      ],
+      "8": "<br/>",
+      "9": "Ngoài ra, Clorinde khi ở trong trạng thái Tuần Tra Đêm, hiệu quả trị liệu khác ngoài Xuyên Qua Màn Đêm sẽ không có hiệu lực, đồng thời chuyển hóa thành Khế Ước Sinh Mệnh cho cô ấy dựa trên tỉ lệ HP hồi phục nhất định.",
+      "10": "<br/>",
+      "11": "Trạng thái Tuần Tra Đêm sẽ bị hủy khi Clorinde rời trận.",
+      "12": "<br/>",
+      "13": "<strong>Sức Mạnh Nền Tảng: Ousia</strong>",
+      "14": "Mỗi cách một khoảng thời gian, đòn Thanh Trừng của Clorinde khi trúng sẽ giáng Lưỡi Dao Nổi Sóng xuống vị trí trúng phải, gây <electro>Sát Thương Nguyên Tố Lôi</electro> thuộc tính Ousia.",
+      "15": "<br/>",
+      "16": "<i>Dù cái ác ẩn nấp trong bóng đêm đã bị thanh trừng qua hàng ngàn năm, thế nhưng trong lòng mỗi người cũng có những bóng tối khó có thể chạm tới.",
+      "17": "Cho đến ngày nay, cô ấy vẫn luôn ghi nhớ lời nhắc nhở của Thợ Săn Hoàng Kim: Người tuần đêm khi thắp nến càng phải cảnh giác, đừng để bị bóng tối lạnh lẽo chiếm hữu.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Thanh Trừng",
+      "1": "Khế Ước Sinh Mệnh Cung Cấp Bởi Thanh Trừng",
+      "2": "Sát Thương Xuyên Qua Màn Đêm",
+      "3": "Lượng Trị Liệu Xuyên Qua Màn Đêm",
+      "4": "Khế Ước Sinh Mệnh Chuyển Hóa",
+      "5": "Sát Thương Lưỡi Dao Nổi Sóng",
+      "6": "Giãn Cách Lưỡi Dao Nổi Sóng",
+      "7": "Tuần Tra Đêm Duy Trì",
+      "8": "CD",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Tia Sáng Cuối Cùng",
+    "description": {
+      "0": "Cung cấp Khế Ước Sinh Mệnh cho bản thân dựa trên Giới Hạn HP, sau đó tấn công thần tốc bằng cả kiếm và súng, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>.",
+      "1": "<br/>",
+      "2": "<i>Kỹ thuật cổ xưa dùng cơ thể người phàm để chống lại những thứ không phải người, nghe nói sự kế thừa này bắt nguồn từ những Kỵ Sĩ Nước Trong khi chống lại Đế Quốc Remuria.",
+      "3": "Dù vậy, nếu có thể kiểm soát được sức mạnh thì vẫn có thể dùng trong các cuộc đấu tay đôi với những đối thủ bình thường.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Khế Ước Sinh Mệnh Cung Cấp",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ngọn Lửa Xua Bóng Tối",
+    "description": {
+      "0": "Nhân vật trong đội gần đó sau khi kích hoạt <electro>phản ứng nguyên tố Lôi</electro> lên kẻ địch, sẽ căn cứ vào 20% Tấn Công của Clorinde để tăng <electro>Sát Thương Nguyên Tố Lôi</electro> từ Tấn Công Thường và <strong>Tia Sáng Cuối Cùng</strong> của cô ấy. Hiệu quả này duy trì 15s, tối đa cộng dồn 3 tầng, mỗi tầng tính giờ riêng. Thông qua cách thức này tối đa có thể khiến sát thương gây ra từ loại tấn công nêu trên của Clorinde tăng 1800."
+    }
+  },
+  "passive2": {
+    "name": "Thù Lao Của Khế Ước",
+    "description": {
+      "0": "Nếu Khế Ước Sinh Mệnh của Clorinde lớn hơn hoặc bằng 100% Giới Hạn HP, khi giá trị Khế Ước Sinh Mệnh tăng hoặc giảm, Tỷ Lệ Bạo Kích của Clorinde sẽ tăng 10%. Hiệu quả này duy trì 15s, tối đa cộng dồn 2 tầng, mỗi tầng tính giờ riêng.",
+      "1": "Ngoài ra, trạng thái Tuần Tra Đêm của <strong>Thanh Trừng Bóng Tối</strong> sẽ được cường hóa: Trong thời gian duy trì, tỉ lệ lượng trị liệu chuyển hóa thành Khế Ước Sinh Mệnh tăng đến 100%."
+    }
+  },
+  "passive3": {
+    "name": "Thu Hoạch Tuần Tra Đêm",
+    "description": {
+      "0": "Hiển thị <strong>đặc sản khu vực Fontaine</strong> trên bản đồ nhỏ."
+    }
+  },
+  "constellation1": {
+    "name": "\"Từ Nay, Tôi Vượt Qua Bức Màn Che Bóng Của Ngọn Nến\"",
+    "description": {
+      "0": "Trong thời gian duy trì trạng thái Tuần Tra Đêm của <strong>Thanh Trừng Bóng Tối</strong>, khi <electro>Sát Thương Nguyên Tố Lôi</electro> gây ra từ Tấn Công Thường của Clorinde trúng kẻ địch, sẽ triệu hồi Ảo Ảnh Tuần Tra gần kẻ địch để hỗ trợ tấn công hai lần, mỗi lần gây <electro>Sát Thương Nguyên Tố Lôi</electro> tương ứng với 30% Tấn Công của Clorinde.",
+      "1": "Hiệu quả này mỗi 1.2s tối đa kích hoạt một lần, sát thương gây ra từ cách thức này sẽ được xem là sát thương Tấn Công Thường."
+    }
+  },
+  "constellation2": {
+    "name": "\"Từ Nay, Đối Mặt Với Nguy Cơ Của Đêm Dài\"",
+    "description": {
+      "0": "Hiệu quả từ thiên phú \"Ngọn Lửa Xua Bóng Tối\" sẽ được cường hóa: Nhân vật trong đội gần đó sau khi kích hoạt <electro>phản ứng nguyên tố Lôi</electro> lên kẻ địch, sẽ căn cứ vào 30% Tấn Công của Clorinde để tăng <electro>Sát Thương Nguyên Tố Lôi</electro> từ Tấn Công Thường và <strong>Tia Sáng Cuối Cùng</strong> của Clorinde. Hiệu quả này duy trì 15s, tối đa cộng dồn 3 tầng, mỗi tầng tính giờ riêng. Khi có đủ 3 tầng, Clorinde sẽ tăng khả năng Kháng Gián Đoạn. Thông qua cách thức này tối đa có thể khiến sát thương gây ra từ loại tấn công nêu trên của Clorinde tăng 2700.",
+      "1": "Cần mở khóa thiên phú \"Ngọn Lửa Xua Bóng Tối\"."
+    }
+  },
+  "constellation3": {
+    "name": "\"Tôi Sẽ Khắc Ghi Lời Thề Của Ban Ngày\"",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Thanh Trừng Bóng Tối</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Để Ghi Nhớ Nước Mắt, Sinh Mệnh Và Tình Yêu\"",
+    "description": {
+      "0": "Khi <strong>Tia Sáng Cuối Cùng</strong> gây sát thương cho kẻ địch, sẽ căn cứ vào tỉ lệ Khế Ước Sinh Mệnh hiện tại của Clorinde để tăng sát thương cho lần đó, mỗi 1% Khế Ước Sinh Mệnh sẽ khiến sát thương gây ra của <strong>Tia Sáng Cuối Cùng</strong> lần đó tăng 2%; Thông qua cách thức này, tối đa khiến sát thương gây ra từ <strong>Tia Sáng Cuối Cùng</strong> tăng 200%."
+    }
+  },
+  "constellation5": {
+    "name": "\"Và Ghi Nhớ Bình Minh Rồi Cũng Sẽ Đến\"",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tia Sáng Cuối Cùng</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Vì Thế, Tôi Sẽ Không Bao Giờ Từ Bỏ Hy Vọng\"",
+    "description": {
+      "0": "Trong 12s sau khi thi triển <strong>Thanh Trừng Bóng Tối</strong>, Tỷ Lệ Bạo Kích của Clorinde tăng 10%, Sát Thương Bạo Kích tăng 70%.",
+      "1": "Ngoài ra, trong thời gian duy trì trạng thái Tuần Tra Đêm, Bóng Của Nến Sáng sẽ xuất hiện trong điều kiện đặc biệt và truy kích, gây <electro>Sát Thương Nguyên Tố Lôi</electro> tương ứng với 200% Tấn Công của Clorinde. Sát thương gây ra từ cách thức này sẽ được xem là sát thương Tấn Công Thường.",
+      "2": "Bóng Của Nến Sáng sẽ xuất hiện trong những tình huống sau:",
+      "3": [
+        "Khi Clorinde sắp bị tấn công trúng.",
+        "Khi Clorinde thi triển Xuyên Qua Màn Đêm - Hiệp Ước."
+      ],
+      "4": "Mỗi 1s tối đa triệu hồi 1 lần Bóng Của Nến Sáng thông qua cách thức trên. Trong một lần thời gian duy trì trạng thái Tuần Tra Đêm, tối đa triệu hồi 6 lần Bóng Của Nến Sáng.",
+      "5": "Ngoài ra, trong thời gian duy trì trạng thái Tuần Tra Đêm, Clorinde giảm 80% sát thương phải chịu và tăng Kháng Gián Đoạn. Hiệu quả này sẽ xóa sau 1s từ khi kết thúc trạng thái Tuần Tra Đêm hoặc triệu hồi 6 lần Bóng Của Nến Sáng."
+    }
+  }
+}

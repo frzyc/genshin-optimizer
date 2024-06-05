@@ -76,7 +76,7 @@
       "4": [
         " Récupère des PV de façon continue selon les PV max de Dori.",
         " Obtient continuellement de l'énergie élémentaire.",
-        " Est affecté par l'élément <electro>Électro</electro>."
+        " Est affecté par l'<electro>élément Électro</electro>."
       ],
       "5": "<br/>",
       "6": "Lorsque le lien entre le djinn et le personnage touche un ennemi, il lui inflige des <electro>DGT Électro</electro> une fois toutes les 0,4 s.",

@@ -194,6 +194,9 @@
   "IridescenceTourTickets": {
     "name": "Iridescence Tour Ticket"
   },
+  "AnalysisProgress": {
+    "name": "Kemajuan Analisis"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -205,6 +208,9 @@
   },
   "RealmCurrency": {
     "name": "Realm Currency"
+  },
+  "ToyMedal": {
+    "name": "Toy Medal"
   },
   "OriginalEssenceInvalidated": {
     "name": "Original Resin"
@@ -524,8 +530,17 @@
   "Chiori": {
     "name": "Chiori"
   },
+  "Sigewinne": {
+    "name": "Sigewinne"
+  },
   "Arlecchino": {
     "name": "Arlecchino"
+  },
+  "Sethos": {
+    "name": "Sethos"
+  },
+  "Clorinde": {
+    "name": "Clorinde"
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna"
@@ -770,8 +785,17 @@
   "ChiorisStellaFortuna": {
     "name": "Chiori's Stella Fortuna"
   },
+  "SigewinnesStellaFortuna": {
+    "name": "Sigewinne's Stella Fortuna"
+  },
   "ArlecchinosStellaFortuna": {
     "name": "Arlecchino's Stella Fortuna"
+  },
+  "SethossStellaFortuna": {
+    "name": "Sethos's Stella Fortuna"
+  },
+  "ClorindesStellaFortuna": {
+    "name": "Clorinde's Stella Fortuna"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostic Hymn - Old Notes"
@@ -6938,8 +6962,26 @@
   "DeliciousBulleSouffle": {
     "name": "Delicious Bulle Souffle"
   },
+  "WellBalancedMeal": {
+    "name": "Well-Balanced Meal"
+  },
   "HearthfiresTrail": {
     "name": "Hearthfire's Trail"
+  },
+  "SuspiciousBulleSauceDuckBreast": {
+    "name": "Suspicious Bulle Sauce Duck Breast"
+  },
+  "BulleSauceDuckBreast": {
+    "name": "Bulle Sauce Duck Breast"
+  },
+  "DeliciousBulleSauceDuckBreast": {
+    "name": "Delicious Bulle Sauce Duck Breast"
+  },
+  "TaggedAndBagged": {
+    "name": "\"Tagged and Bagged\""
+  },
+  "SuperDeeDuperDeliciousMeatRoll": {
+    "name": "Super-Dee-Duper Delicious Meat Roll"
   },
   "RecipeItem": {
     "name": "Bahan Resep"
@@ -7519,6 +7561,9 @@
   },
   "RecipeBulleSouffle": {
     "name": "Resep: Bulle Souffle"
+  },
+  "RecipeBulleSauceDuckBreast": {
+    "name": "Resep: Bulle Sauce Duck Breast"
   },
   "CraftedItems": {
     "name": "Hasil Craft"
@@ -10241,6 +10286,12 @@
   "FelixFelicium": {
     "name": "Felix Felicium"
   },
+  "ConcentratedTransoceanicPearl": {
+    "name": "Transoceanic Pearl Pekat"
+  },
+  "TaintedHydroPhantasmExtract": {
+    "name": "Ekstrak Tainted Hydro Phantasm"
+  },
   "ShikanoinHeizousMessage": {
     "name": "Pesan dari Shikanoin Heizou"
   },
@@ -10283,11 +10334,26 @@
   "DamagedScore": {
     "name": "Partitur yang Rusak"
   },
+  "CriminalsTestimony": {
+    "name": "Kesaksian Penjahat"
+  },
+  "RawatsNotes": {
+    "name": "Catatan Rawat"
+  },
+  "GroupPhotoFromAnUnknownTime": {
+    "name": "Foto Grup dari Waktu yang Tidak Diketahui"
+  },
   "RuggierosNotesII": {
     "name": "Catatan Ruggiero: II"
   },
   "PagesFromALostScoreII": {
     "name": "Halaman dari Partitur yang Hilang: II"
+  },
+  "TreasureMapWithTheVaultsLocation": {
+    "name": "\"Peta Harta Karun\" dengan Lokasi Gudang Harta"
+  },
+  "MarechausseeHunterJudgmentDayCharacterAlbum": {
+    "name": "Album Karakter \"Marechaussee Hunter: Hari Penghakiman\""
   },
   "AncientEngravings": {
     "name": "Ukiran Kuno"
@@ -10318,6 +10384,57 @@
   },
   "AncientPieceOfPaper": {
     "name": "Secarik Kertas Kuno"
+  },
+  "ProductionLog": {
+    "name": "Catatan Produksi"
+  },
+  "ExperimentLog": {
+    "name": "Catatan Eksperimen"
+  },
+  "TheLittleWitchAndTheUndyingFireI": {
+    "name": "Gadis Penyihir Kecil dan Api yang Tak Pernah Padam (I)"
+  },
+  "TheLittleWitchAndTheUndyingFireII": {
+    "name": "Gadis Penyihir Kecil dan Api yang Tak Pernah Padam (II)"
+  },
+  "TheLittleWitchAndTheUndyingFireIII": {
+    "name": "Gadis Penyihir Kecil dan Api yang Tak Pernah Padam (III)"
+  },
+  "TheLittleWitchAndTheUndyingFireIV": {
+    "name": "Gadis Penyihir Kecil dan Api yang Tak Pernah Padam (IV)"
+  },
+  "TheLittleWitchAndTheUndyingFireV": {
+    "name": "Gadis Penyihir Kecil dan Api yang Tak Pernah Padam (V)"
+  },
+  "TheLittleWitchAndTheUndyingFireVI": {
+    "name": "Gadis Penyihir Kecil dan Api yang Tak Pernah Padam (VI)"
+  },
+  "TheLittleWitchAndTheUndyingFireVII": {
+    "name": "Gadis Penyihir Kecil dan Api yang Tak Pernah Padam (VII)"
+  },
+  "TheFelineFirmI": {
+    "name": "Kantor Meong (I)"
+  },
+  "TheFelineFirmII": {
+    "name": "Kantor Meong (II)"
+  },
+  "TheFelineFirmIII": {
+    "name": "Kantor Meong (III)"
+  },
+  "TheFelineFirmIV": {
+    "name": "Kantor Meong (IV)"
+  },
+  "TheFelineFirmV": {
+    "name": "Kantor Meong (V)"
+  },
+  "TheFelineFirmVI": {
+    "name": "Kantor Meong (VI)"
+  },
+  "TheFelineFirmVII": {
+    "name": "Kantor Meong (VII)"
+  },
+  "TheFelineFirmVIII": {
+    "name": "Kantor Meong (VIII)"
   },
   "TearsAmongTheStars": {
     "name": "Air Mata di Lautan Bintang"
@@ -11072,6 +11189,9 @@
   "ExaltedEarth": {
     "name": "\"Exalted Earth\""
   },
+  "CamAndCablesOfLaw": {
+    "name": "Cam and Cables of Law"
+  },
   "FalconsDance": {
     "name": "Falcon's Dance"
   },
@@ -11804,6 +11924,21 @@
   "TravelNotesTheRealmsRocked": {
     "name": "Catatan Perjalanan: Alam Bergetar"
   },
+  "ClorindeRoleplay": {
+    "name": "Clorinde: Roleplay"
+  },
+  "SigewinneTreatment": {
+    "name": "Sigewinne: Treatment"
+  },
+  "SethosBaFragment": {
+    "name": "Sethos: Ba Fragment"
+  },
+  "AchievementPoeticPages": {
+    "name": "Achievement: Halaman Puisi"
+  },
+  "TravelNotesSimulnation": {
+    "name": "Catatan Perjalanan: Teater Kaleidoskop"
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone"
   },
@@ -12236,6 +12371,21 @@
   "ObligingLittleYuegui": {
     "name": "Obliging Little Yuegui"
   },
+  "UpbeatEncouragement": {
+    "name": "Bersuka Ria"
+  },
+  "ElegantCountenance": {
+    "name": "Tampilan Elegan"
+  },
+  "ReadyForBattle": {
+    "name": "Siap Berperang"
+  },
+  "SolemnCountenance": {
+    "name": "Tampilan Serius"
+  },
+  "LeisureTime": {
+    "name": "Waktu Santai"
+  },
   "RhodeiaOfLoch": {
     "name": "Rhodeia of Loch"
   },
@@ -12292,6 +12442,18 @@
   },
   "EmperorOfFireAndIron": {
     "name": "Emperor of Fire and Iron"
+  },
+  "AllDevouringNarwhal": {
+    "name": "All-Devouring Narwhal"
+  },
+  "ConsecratedScorpion": {
+    "name": "Consecrated Scorpion"
+  },
+  "ConsecratedFlyingSerpent": {
+    "name": "Consecrated Flying Serpent"
+  },
+  "GuardianOfApepsOasis": {
+    "name": "Guardian of Apep's Oasis"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -12542,6 +12704,33 @@
   "MoltenMail": {
     "name": "Molten Mail"
   },
+  "TerrorForTheEvildoers": {
+    "name": "Terror for the Evildoers"
+  },
+  "HearMeLetUsRaiseTheChaliceOfLove": {
+    "name": "\"Hear Me — Let Us Raise the Chalice of Love!\""
+  },
+  "RockinInAFlamingWorld": {
+    "name": "Rockin' in a Flaming World"
+  },
+  "DecorousHarmony": {
+    "name": "Decorous Harmony"
+  },
+  "TheArtOfBudgeting": {
+    "name": "The Art of Budgeting"
+  },
+  "LightlessFeeding": {
+    "name": "Lightless Feeding"
+  },
+  "FatalFulmination": {
+    "name": "Fatal Fulmination"
+  },
+  "DeathlyCyclone": {
+    "name": "Deathly Cyclone"
+  },
+  "AThousandYoung": {
+    "name": "A Thousand Young"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -12764,6 +12953,27 @@
   "AmethystCrown": {
     "name": "Amethyst Crown"
   },
+  "CashflowSupervision": {
+    "name": "Cashflow Supervision"
+  },
+  "EndOfTheLine": {
+    "name": "End of the Line"
+  },
+  "ForestRegalia": {
+    "name": "Forest Regalia"
+  },
+  "SplendorOfTranquilWaters": {
+    "name": "Splendor of Tranquil Waters"
+  },
+  "MarechausseeHunter": {
+    "name": "Marechaussee Hunter"
+  },
+  "GoldenTroupe": {
+    "name": "Golden Troupe"
+  },
+  "FlowerOfParadiseLost": {
+    "name": "Flower of Paradise Lost"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -12898,6 +13108,15 @@
   },
   "TheWhiteGloveAndTheFisherman": {
     "name": "The White Glove and the Fisherman"
+  },
+  "TheMausoleumOfKingDeshret": {
+    "name": "The Mausoleum of King Deshret"
+  },
+  "CentralLaboratoryRuins": {
+    "name": "Central Laboratory Ruins"
+  },
+  "SirArthur": {
+    "name": "Sir Arthur"
   },
   "ElementalResonanceWovenIce": {
     "name": "Resonansi Elemental: Woven Ice"
@@ -13066,6 +13285,15 @@
   },
   "UnderwaterTreasureHunt": {
     "name": "Underwater Treasure Hunt"
+  },
+  "ViciousAncientBattle": {
+    "name": "Vicious Ancient Battle"
+  },
+  "WaterAndJustice": {
+    "name": "Water and Justice"
+  },
+  "CountdownToTheShow3": {
+    "name": "Countdown to the Show: 3"
   },
   "Origin": {
     "name": "Origin"
@@ -14155,6 +14383,9 @@
   },
   "FontainianCarpetFairAndSquare": {
     "name": "Karpet Fontaine: Persegi Panjang Sempurna"
+  },
+  "FadingAfterglow": {
+    "name": "\"Perasaan Senang yang Memudar\""
   },
   "TrustyPortableLamp": {
     "name": "Lentera yang Tidak Pernah Padam"
@@ -15527,6 +15758,9 @@
   "BoxingTargetOfTheForbiddenFortress": {
     "name": "\"Target Tinju Benteng Terlarang\""
   },
+  "ImprovedCrococannon": {
+    "name": "Meriam Bubu yang Ditingkatkan"
+  },
   "PottedPlantVerdantVastness": {
     "name": "Pot Tanaman: Hamparan Hijau"
   },
@@ -15920,6 +16154,9 @@
   "CrystallineGlory": {
     "name": "\"Kemuliaan yang Berkilau\""
   },
+  "MusicTownsBreezeBellsCheepingFinches": {
+    "name": "Lonceng Angin Kota Musik: Bisikan Ketilang"
+  },
   "BookshelfFreeReading": {
     "name": "Rak Buku: Baca dengan Bebas"
   },
@@ -15958,6 +16195,9 @@
   },
   "MallowWoodMailboxStorage": {
     "name": "Kotak Pesan Kayu Mallow: Penyimpanan"
+  },
+  "ModelContraptionStandardMusicalMode": {
+    "name": "Model Kit: Mode Musikal Standar"
   },
   "WeatheredBambooFence": {
     "name": "Pagar Bambu Lapuk"
@@ -16147,5 +16387,8 @@
   },
   "SwordBearingStatueEternalWatch": {
     "name": "Patung Berpedang: Pengawal Abadi"
+  },
+  "SwordBearingStatueAestheticsOfIncompleteness": {
+    "name": "Patung Berpedang: Estetika Ketidakutuhan"
   }
 }

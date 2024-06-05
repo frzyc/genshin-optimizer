@@ -1,0 +1,24 @@
+{
+  "name": "Forgianuvole",
+  "description": {
+    "0": "Un prototipo di arma d'ordinanza, commissionato dalla Yuheng presso la Fucina di Rupenera dopo aver analizzato gli antichi meccanismi posti a difesa della dimora adeptica a Tianheng."
+  },
+  "passiveName": "Forgia della rupe",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando l'energia elementale si riduce, la maestria elementale del personaggio che equipaggia l'arma aumenta di <cryo>40</cryo> per 18 s. Massimo 2 accumuli."
+    },
+    "1": {
+      "0": "Quando l'energia elementale si riduce, la maestria elementale del personaggio che equipaggia l'arma aumenta di <cryo>50</cryo> per 18 s. Massimo 2 accumuli."
+    },
+    "2": {
+      "0": "Quando l'energia elementale si riduce, la maestria elementale del personaggio che equipaggia l'arma aumenta di <cryo>60</cryo> per 18 s. Massimo 2 accumuli."
+    },
+    "3": {
+      "0": "Quando l'energia elementale si riduce, la maestria elementale del personaggio che equipaggia l'arma aumenta di <cryo>70</cryo> per 18 s. Massimo 2 accumuli."
+    },
+    "4": {
+      "0": "Quando l'energia elementale si riduce, la maestria elementale del personaggio che equipaggia l'arma aumenta di <cryo>80</cryo> per 18 s. Massimo 2 accumuli."
+    }
+  }
+}
