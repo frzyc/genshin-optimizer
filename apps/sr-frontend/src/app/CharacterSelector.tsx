@@ -1,11 +1,9 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   CharacterAutocomplete,
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/ui'
-import { CardContent, Container } from '@mui/material'
 import { useCallback } from 'react'
 
 export default function CharacterSelector() {
@@ -21,15 +19,9 @@ export default function CharacterSelector() {
   )
 
   return (
-    <Container>
-      <CardThemed bgt="dark">
-        <CardContent>
-          <CharacterAutocomplete
-            charKey={characterKey}
-            setCharKey={setOrCreateCharacter}
-          />
-        </CardContent>
-      </CardThemed>
-    </Container>
+    <CharacterAutocomplete
+      charKey={characterKey}
+      setCharKey={setOrCreateCharacter}
+    />
   )
 }
