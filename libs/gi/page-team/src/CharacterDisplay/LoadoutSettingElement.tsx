@@ -73,23 +73,6 @@ export default function LoadoutSettingElement() {
           }}
           label
         />
-        <TextFieldLazy
-          fullWidth
-          label="Loadout Name"
-          placeholder="Loadout Name"
-          value={name}
-          onChange={(name) => database.teamChars.set(teamCharId, { name })}
-        />
-        <TextFieldLazy
-          fullWidth
-          label="Loadout Description"
-          value={description}
-          onChange={(description) =>
-            database.teamChars.set(teamCharId, { description })
-          }
-          multiline
-          minRows={2}
-        />
         <Box display="flex" gap={2} flexWrap="wrap">
           <DetailStatButton
             buttonProps={{
