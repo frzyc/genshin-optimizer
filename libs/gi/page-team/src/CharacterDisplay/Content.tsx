@@ -1,4 +1,4 @@
-import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
+import { BootstrapTooltip, CardThemed, ModalWrapper, TextFieldLazy } from '@genshin-optimizer/common/ui'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -14,8 +14,12 @@ import ScienceIcon from '@mui/icons-material/Science'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import UpgradeIcon from '@mui/icons-material/Upgrade'
 import {
+  Box,
+  CardActionArea,
   CardContent,
+  CardHeader,
   Divider,
+  IconButton,
   Skeleton,
   Tab,
   Tabs,
@@ -23,7 +27,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { Suspense, useContext } from 'react'
+import { Suspense, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route, Link as RouterLink, Routes } from 'react-router-dom'
 import FormulaModal from './FormulaModal'
@@ -33,6 +37,7 @@ import TabOverview from './Tabs/TabOverview'
 import TabTalent from './Tabs/TabTalent'
 import TabTheorycraft from './Tabs/TabTheorycraft'
 import TabUpopt from './Tabs/TabUpgradeOpt'
+import CloseIcon from '@mui/icons-material/Close'
 export default function Content({ tab }: { tab?: string }) {
   const {
     loadoutDatum,
@@ -89,7 +94,7 @@ function TabNav({
   isTCBuild: boolean
   hideTitle?: boolean
 }) {
-  const { teamChar, loadoutDatum } = useContext(TeamCharacterContext)
+  const { teamChar, loadoutDatum, teamCharId } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { t } = useTranslation('page_character')
   const { gender } = useDBMeta()
@@ -97,6 +102,19 @@ function TabNav({
   const banner = characterAsset(characterKey, 'banner', gender)
   const theme = useTheme()
   const isXs = useMediaQuery(theme.breakpoints.down('md'))
+  const [editMode, setEditMode] = useState(false)
+  const [loadoutName, setloadoutName] = useState(teamChar.name)
+  const [loudoutDesc, setloadoutDesc] = useState(teamChar.description)
+  const handleName = (loadoutName: string): void => {
+    setloadoutName(loadoutName)
+    database.teamChars.set(teamCharId, { name: loadoutName})
+  }
+
+  const handleDesc = (loudoutDesc: string): void => {
+    setloadoutDesc(loudoutDesc)
+    database.teamChars.set(teamCharId, { description: loudoutDesc})
+  }
+
   return (
     <CardThemed
       sx={(theme) => {
@@ -122,34 +140,73 @@ function TabNav({
       }}
     >
       {!hideTitle && (
-        <CardContent
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            pb: 0,
-            textShadow: '#000 0 0 10px !important',
-            position: 'relative',
-          }}
-        >
-          <BootstrapTooltip
-            title={
-              teamChar.description ? (
-                <Typography>{teamChar.description}</Typography>
-              ) : undefined
-            }
+          <CardContent
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              pb: 0,
+              textShadow: '#000 0 0 10px !important',
+              position: 'relative',
+            }}
           >
-            <Typography
-              variant="h6"
-              sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
-            >
-              <PersonIcon />
-              <strong>{teamChar.name}</strong>
-              <Divider orientation="vertical" variant="middle" flexItem />
-              <CheckroomIcon />
-              {database.teams.getActiveBuildName(loadoutDatum)}
-            </Typography>
-          </BootstrapTooltip>
-        </CardContent>
+            <CardActionArea onClick={() => setEditMode(true)}>
+              <BootstrapTooltip
+                title={
+                  teamChar.description ? (
+                    <Typography>{teamChar.description}</Typography>
+                  ) : undefined
+                }
+              >
+                <Typography
+                  variant="h6"
+                  sx={{ display: 'flex', gap: 1, alignItems: 'center', justifyContent: 'center' }}
+                >
+                  <PersonIcon />
+                  <strong>{teamChar.name}</strong>
+                  <Divider orientation="vertical" variant="middle" flexItem />
+                  <CheckroomIcon />
+                  {database.teams.getActiveBuildName(loadoutDatum)}
+                </Typography>
+              </BootstrapTooltip>
+            </CardActionArea>
+            <ModalWrapper open={editMode} onClose={() => setEditMode(false)}>
+              <CardThemed>
+                <CardHeader
+                  title="Edit Loadout"
+                  action={
+                    <IconButton onClick={() => setEditMode(false)}>
+                      <CloseIcon />
+                    </IconButton>
+                  }
+                />
+                <Divider />
+                <CardContent>
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    gap={2}
+                    sx={{ mt: 2 }}
+                  >
+                    <TextFieldLazy
+                      label="Loadout Name"
+                      placeholder='Loadout Name'
+                      value={teamChar.name}
+                      onChange={(loadoutName) => handleName(loadoutName)}
+                      autoFocus
+                    />
+                    <TextFieldLazy
+                      label="Loadout Description"
+                      placeholder='Loadout Description'
+                      value={teamChar.description}
+                      onChange={(loadoutDesc) => handleDesc(loadoutDesc)}
+                      multiline
+                      minRows={4}
+                    />
+                  </Box>
+                </CardContent>
+              </CardThemed>
+            </ModalWrapper>
+          </CardContent>
       )}
       <Tabs
         value={tab ?? 'setting'}
