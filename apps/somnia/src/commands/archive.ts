@@ -5,8 +5,7 @@ import * as path from 'path';
 import { EmbedBuilder } from '@discordjs/builders';
 import type { ApplicationCommandOptionChoiceData, AutocompleteInteraction, ChatInputCommandInteraction} from 'discord.js';
 import { SlashCommandBuilder } from 'discord.js';
-//import { getCharStat, getWeaponStat, getArtSetStat } from '@genshin-optimizer/gi/stats'
-//import { CharacterKey, WeaponKey, ArtifactSetKey, allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
+import { CharacterKey, WeaponKey, ArtifactSetKey, allArtifactSetKeys, allCharacterKeys, allWeaponKeys, ElementKey } from '@genshin-optimizer/gi/consts'
 import { error } from '../lib/error';
 
 export const slashcommand = new SlashCommandBuilder()
@@ -59,7 +58,22 @@ function clean(s : string) {
     return s;
 }
 
-const archivepath = path.join(process.env['NX_WORKSPACE_ROOT'] ?? process.cwd(), '/libs/gi/dm-localization/assets/locales/en');
+const cwd = process.env['NX_WORKSPACE_ROOT'] ?? process.cwd();
+const allStat_gen = require(path.join(cwd, '/libs/gi/stats/src/allStat_gen.json'));
+const colors = {
+    rarity: [0x818486, 0x5a977a, 0x5987ad, 0x9470bb, 0xc87c24],
+    element: {
+        physical: 0xAAAAAA,
+        anemo: 0x61DBBB,
+        geo: 0xF8BA4E,
+        electro: 0xB25DCD,
+        hydro: 0x5680FF,
+        pyro: 0xFF3C32,
+        cryo: 0x77A2E6,
+        dendro: 0xA5C83B,
+    }
+}
+const archivepath = path.join(cwd, '/libs/gi/dm-localization/assets/locales/en');
 const archive : Record<string, any> = {
     key: {
         char: require(path.join(archivepath, '/charNames_gen.json')),
@@ -122,10 +136,12 @@ export async function run(interaction : ChatInputCommandInteraction) {
     const embed = new EmbedBuilder();
     let text = '';
 
-    //reply = JSON.stringify(archive[subcommand][name]).replaceAll(/(<\/?\w+\/?>)+/g, '**').slice(0,2000);
     if (subcommand === 'char') {
+        const char = name as CharacterKey;
+        if (!allCharacterKeys.includes(char)) return error(interaction, 'Invalid character name.');
+        const element = allStat_gen.char.data[char].ele as ElementKey;
+        embed.setColor(colors.element[element]);
         const talent = (interaction.options.getString('talent', false) ?? '');
-
         if (talent === '') {
             embed
             .setTitle(data.name)
@@ -133,7 +149,7 @@ export async function run(interaction : ChatInputCommandInteraction) {
                 `> ${data.title}\n\n${data.description}`
             ))
         }
-        else if (['n','na','ca','p'].includes(talent)) {
+        else if (talent === 'n') {
             embed
             .setAuthor({name: data.name})
             .setTitle(data.auto.name)
@@ -184,10 +200,13 @@ export async function run(interaction : ChatInputCommandInteraction) {
             .setTitle(data.constellationName)
             .setDescription(clean(text))
         }
+        else error(interaction, 'Invalid talent name.');
     }
     else if (subcommand === 'weapon') {
+        const weapon = name as WeaponKey;
+        if (!allWeaponKeys.includes(weapon)) return error(interaction, 'Invalid weapon name.');
+        const rarity = allStat_gen.weapon.data[weapon].rarity;
         const refine = (interaction.options.getInteger('refine', false) ?? 1) - 1;
-        console.log(refine.toString(), data.passiveDescription)
         embed
         .setTitle(data.name)
         .setDescription(clean(
@@ -195,16 +214,20 @@ export async function run(interaction : ChatInputCommandInteraction) {
             `\n\n**${data.passiveName}:** ` +
             Object.values(data.passiveDescription[refine.toString()]).join('\n')
         ))
+        .setColor(colors.rarity[rarity-1]);
     }
     else if (subcommand === 'artifact') {
-        //if (!(name in allArtifactSetKeys)) return error(interaction, 'Invalid artifact name!');
-        //const rarity = getArtSetStat(name as ArtifactSetKey);
+        const set = name as ArtifactSetKey;
+        if (!allArtifactSetKeys.includes(set)) return error(interaction, 'Invalid artifact set name.');
+        const rarities = allStat_gen.art.data[set].rarities;
+        const rarity = rarities[rarities.length - 1];
         embed
         .setTitle(data.setName)
         .setDescription(clean(
             `**2-Pieces:** ${data.setEffects['2']}\n`+
             `**4-Pieces:** ${data.setEffects['4']}`
         ))
+        .setColor(colors.rarity[rarity-1]);
     }
 
     return interaction.reply({content: '', embeds:[embed]});

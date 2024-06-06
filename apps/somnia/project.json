@@ -21,11 +21,7 @@
           "apps/somnia/src/data",
           "apps/somnia/src/commands",
           "apps/somnia/src/lib",
-          {
-            "input": "./apps/somnia/src",
-            "output": "apps/somnia/src/",
-            "glob": "config.json"
-          }
+          {"input": "./apps/somnia/src", "output": "apps/somnia/src", "glob": "config.json"}
         ],
         "generatePackageJson": true,
         "esbuildOptions": {
