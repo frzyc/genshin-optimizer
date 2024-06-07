@@ -1,5 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { SqBadge, TextFieldLazy } from '@genshin-optimizer/common/ui'
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
@@ -37,12 +37,7 @@ import StatModal from './StatModal'
 const columns = { xs: 1, sm: 1, md: 2, lg: 2 }
 export default function LoadoutSettingElement() {
   const database = useDatabase()
-  const {
-    teamId,
-    teamChar,
-    teamChar: { name, description },
-    teamCharId,
-  } = useContext(TeamCharacterContext)
+  const { teamId, teamChar, teamCharId } = useContext(TeamCharacterContext)
 
   const onChangeTeamCharId = (newTeamCharId: string) => {
     const index = database.teams
