@@ -150,7 +150,7 @@ function TabNav({
           sx={{
             display: 'flex',
             justifyContent: 'center',
-            pb: 0,
+            p: 0,
             textShadow: '#000 0 0 10px !important',
             position: 'relative',
           }}
