@@ -155,7 +155,7 @@ function TabNav({
             position: 'relative',
           }}
         >
-          <CardActionArea onClick={() => setEditMode(true)}>
+          <CardActionArea onClick={() => setEditMode(true)} sx={{ p: 2 }}>
             <BootstrapTooltip
               title={
                 teamChar.description ? (
