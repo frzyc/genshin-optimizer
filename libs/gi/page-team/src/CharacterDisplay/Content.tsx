@@ -5,13 +5,15 @@ import {
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import {
   TeamCharacterContext,
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
+import { LoadoutIcon } from '@genshin-optimizer/gi/ui'
+import BorderColorIcon from '@mui/icons-material/BorderColor'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
 import FactCheckIcon from '@mui/icons-material/FactCheck'
@@ -102,12 +104,11 @@ function TabNav({
   const { teamChar, loadoutDatum, teamCharId } =
     useContext(TeamCharacterContext)
   const database = useDatabase()
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('page_team')
   const { gender } = useDBMeta()
   const elementKey = getCharEle(characterKey)
   const banner = characterAsset(characterKey, 'banner', gender)
-  const theme = useTheme()
-  const isXs = useMediaQuery(theme.breakpoints.down('md'))
+
   const [editMode, setEditMode] = useState(false)
   const [, setloadoutName] = useState(teamChar.name)
   const [, setloadoutDesc] = useState(teamChar.description)
@@ -146,44 +147,58 @@ function TabNav({
       }}
     >
       {!hideTitle && (
-        <CardContent
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            p: 0,
-            textShadow: '#000 0 0 10px !important',
-            position: 'relative',
-          }}
-        >
-          <CardActionArea onClick={() => setEditMode(true)} sx={{ p: 2 }}>
+        <>
+          <CardActionArea onClick={() => setEditMode(true)}>
             <BootstrapTooltip
               title={
-                teamChar.description ? (
-                  <Typography>{teamChar.description}</Typography>
-                ) : undefined
+                <Box>
+                  <Box sx={{ display: 'flex', color: 'info.light', gap: 1 }}>
+                    <BorderColorIcon />
+                    <Typography>
+                      <strong>{t`loadout.editNameDesc`}</strong>
+                    </Typography>
+                  </Box>
+                  {!!teamChar.description && (
+                    <Typography>{teamChar.description}</Typography>
+                  )}
+                </Box>
               }
             >
-              <Typography
-                variant="h6"
+              <CardContent
                 sx={{
                   display: 'flex',
-                  gap: 1,
-                  alignItems: 'center',
                   justifyContent: 'center',
+                  position: 'relative',
+                  '&:hover': {
+                    color: 'info.light',
+                  },
                 }}
               >
-                <PersonIcon />
-                <strong>{teamChar.name}</strong>
-                <Divider orientation="vertical" variant="middle" flexItem />
-                <CheckroomIcon />
-                {database.teams.getActiveBuildName(loadoutDatum)}
-              </Typography>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    display: 'flex',
+                    gap: 1,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    textShadow: '#000 0 0 10px !important',
+                  }}
+                >
+                  <PersonIcon />
+                  <strong>{teamChar.name}</strong>
+                  <Divider orientation="vertical" variant="middle" flexItem />
+                  <CheckroomIcon />
+                  {database.teams.getActiveBuildName(loadoutDatum)}
+                </Typography>
+              </CardContent>
             </BootstrapTooltip>
           </CardActionArea>
           <ModalWrapper open={editMode} onClose={() => setEditMode(false)}>
             <CardThemed>
               <CardHeader
-                title="Edit Loadout"
+                title={t`loadout.editNameDesc`}
+                avatar={<LoadoutIcon />}
+                titleTypographyProps={{ variant: 'h6' }}
                 action={
                   <IconButton onClick={() => setEditMode(false)}>
                     <CloseIcon />
@@ -199,15 +214,13 @@ function TabNav({
                   sx={{ mt: 2 }}
                 >
                   <TextFieldLazy
-                    label="Loadout Name"
-                    placeholder="Loadout Name"
+                    label={t`loadout.name`}
                     value={teamChar.name}
                     onChange={handleName}
                     autoFocus
                   />
                   <TextFieldLazy
-                    label="Loadout Description"
-                    placeholder="Loadout Description"
+                    label={t`loadout.desc`}
                     value={teamChar.description}
                     onChange={handleDesc}
                     multiline
@@ -217,82 +230,99 @@ function TabNav({
               </CardContent>
             </CardThemed>
           </ModalWrapper>
-        </CardContent>
+          <Divider />
+        </>
       )}
-      <Tabs
-        value={tab ?? 'setting'}
-        variant={isXs ? 'scrollable' : 'fullWidth'}
-        allowScrollButtonsMobile
-        sx={(theme) => {
-          return {
-            position: 'relative',
-            '& .MuiTab-root:hover': {
-              transition: 'background-color 0.25s ease',
-              backgroundColor: 'rgba(255,255,255,0.1)',
-            },
-            '& .MuiTab-root.Mui-selected': {
-              color: 'white !important',
-            },
-            '& .MuiTab-root': {
-              textShadow: '#000 0 0 10px !important',
-            },
-            '& .MuiTabs-indicator': {
-              backgroundColor: elementKey && theme.palette[elementKey]?.main,
-              height: '4px',
-            },
-          }
-        }}
-      >
-        <Tab
-          value="setting"
-          label={t('tabs.setting')}
-          icon={<CheckroomIcon />}
-          component={RouterLink}
-          to=""
-        />
-        {isTCBuild ? (
-          <Tab
-            value="theorycraft"
-            label={t('tabs.theorycraft')}
-            icon={<ScienceIcon />}
-            component={RouterLink}
-            to="theorycraft"
-          />
-        ) : (
-          <Tab
-            value="overview"
-            label={t('tabs.overview')}
-            icon={<PersonIcon />}
-            component={RouterLink}
-            to="overview"
-          />
-        )}
-        <Tab
-          value="talent"
-          label={t('tabs.talent')}
-          icon={<FactCheckIcon />}
-          component={RouterLink}
-          to="talent"
-        />
-        {!isTCBuild && (
-          <Tab
-            value="optimize"
-            label={t('tabs.optimize')}
-            icon={<TrendingUpIcon />}
-            component={RouterLink}
-            to="optimize"
-          />
-        )}
-        {!isTCBuild && (
-          <Tab
-            value="upopt"
-            label={t('tabs.upgradeopt')}
-            icon={<UpgradeIcon />}
-            component={RouterLink}
-            to="upopt"
-          />
-        )}
-      </Tabs>
+      <LoadoutTabs tab={tab} isTCBuild={isTCBuild} elementKey={elementKey} />
     </CardThemed>
+  )
+}
+function LoadoutTabs({
+  tab,
+  elementKey,
+  isTCBuild,
+}: {
+  tab?: string
+  elementKey?: ElementKey
+  isTCBuild: boolean
+}) {
+  const { t } = useTranslation('page_character')
+  const theme = useTheme()
+  const isXs = useMediaQuery(theme.breakpoints.down('md'))
+  return (
+    <Tabs
+      value={tab ?? 'setting'}
+      variant={isXs ? 'scrollable' : 'fullWidth'}
+      allowScrollButtonsMobile
+      sx={(theme) => {
+        return {
+          position: 'relative',
+          '& .MuiTab-root:hover': {
+            transition: 'background-color 0.25s ease',
+            backgroundColor: 'rgba(255,255,255,0.1)',
+          },
+          '& .MuiTab-root.Mui-selected': {
+            color: 'white !important',
+          },
+          '& .MuiTab-root': {
+            textShadow: '#000 0 0 10px !important',
+          },
+          '& .MuiTabs-indicator': {
+            backgroundColor: elementKey && theme.palette[elementKey]?.main,
+            height: '4px',
+          },
+        }
+      }}
+    >
+      <Tab
+        value="setting"
+        label={t('tabs.setting')}
+        icon={<CheckroomIcon />}
+        component={RouterLink}
+        to=""
+      />
+      {isTCBuild ? (
+        <Tab
+          value="theorycraft"
+          label={t('tabs.theorycraft')}
+          icon={<ScienceIcon />}
+          component={RouterLink}
+          to="theorycraft"
+        />
+      ) : (
+        <Tab
+          value="overview"
+          label={t('tabs.overview')}
+          icon={<PersonIcon />}
+          component={RouterLink}
+          to="overview"
+        />
+      )}
+      <Tab
+        value="talent"
+        label={t('tabs.talent')}
+        icon={<FactCheckIcon />}
+        component={RouterLink}
+        to="talent"
+      />
+      {!isTCBuild && (
+        <Tab
+          value="optimize"
+          label={t('tabs.optimize')}
+          icon={<TrendingUpIcon />}
+          component={RouterLink}
+          to="optimize"
+        />
+      )}
+      {!isTCBuild && (
+        <Tab
+          value="upopt"
+          label={t('tabs.upgradeopt')}
+          icon={<UpgradeIcon />}
+          component={RouterLink}
+          to="upopt"
+        />
+      )}
+    </Tabs>
   )
 }
