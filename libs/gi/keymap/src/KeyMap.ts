@@ -90,9 +90,9 @@ const baseMap = {
   level: 'Level',
   ascension: 'Ascension',
   constellation: 'Constellation',
-  auto: 'Normal Attack Lvl.',
-  skill: 'Elemental SKill Lvl.',
-  burst: 'Elemental Burst Lvl.',
+  auto: 'Normal Attack Lv.',
+  skill: 'Elemental Skill Lv.',
+  burst: 'Elemental Burst Lv.',
 } as const
 
 const statMap = { ...baseMap } as Record<StatKey, string>
