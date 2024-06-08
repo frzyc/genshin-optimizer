@@ -1,5 +1,5 @@
 {
-  "name": "@genshin-optimizer/gi/localization",
+  "name": "@genshin-optimizer/common/localization",
   "version": "0.0.1",
   "type": "commonjs",
   "executors": "./executors.json"

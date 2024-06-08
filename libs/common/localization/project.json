@@ -1,0 +1,24 @@
+{
+  "name": "common-localization",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/common/localization/src",
+  "projectType": "library",
+  "targets": {
+    "gen-file": {
+      "executor": "@genshin-optimizer/common/localization:gen-locale",
+      "outputs": [
+        "{projectRoot}/Translated",
+        "{projectRoot}/assets/locales",
+        "{projectRoot}/main_gen.json",
+        "{workspaceRoot}/libs/gi/localization/assets/locales",
+        "{workspaceRoot}/libs/sr/localization/assets/locales"
+      ],
+      "inputs": [
+        "default",
+        "{workspaceRoot}/libs/gi/localization/assets/locales/en/**/*",
+        "{workspaceRoot}/libs/sr/localization/assets/locales/en/**/*"
+      ]
+    }
+  },
+  "tags": []
+}

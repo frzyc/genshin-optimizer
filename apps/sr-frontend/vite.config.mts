@@ -1,4 +1,4 @@
-/// <reference types="vitest" />
+/// <reference types='vitest' />
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import { defineConfig, normalizePath } from 'vite'
@@ -6,12 +6,11 @@ import { defineConfig, normalizePath } from 'vite'
 // https://vitejs.dev/guide/troubleshooting.html#this-package-is-esm-only
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
-import pkg from '../../package.json' assert { type: 'json' }
 
 export default defineConfig({
   base: '',
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/frontend',
+  cacheDir: '../../node_modules/.vite/apps/viteapp',
 
   server: {
     port: 4200,
@@ -38,24 +37,18 @@ export default defineConfig({
         },
         {
           src: normalizePath(
-            resolve('../../libs/gi/localization/assets/locales')
+            resolve('../../libs/sr/localization/assets/locales')
           ),
           dest: 'assets',
         },
         {
           src: normalizePath(
-            resolve('../../libs/gi/dm-localization/assets/locales')
+            resolve('../../libs/sr/dm-localization/assets/locales')
           ),
           dest: 'assets',
         },
         {
-          src: normalizePath(
-            resolve('../../libs/gi/silly-wisher-names/assets/locales')
-          ),
-          dest: 'assets',
-        },
-        {
-          src: normalizePath(resolve('../../apps/frontend/assets/*')),
+          src: normalizePath(resolve('../../apps/sr-frontend/assets/*')),
           dest: 'assets',
         },
       ],
@@ -68,7 +61,6 @@ export default defineConfig({
 
   define: {
     'process.env': process.env,
-    __VERSION__: `"${pkg.version}"`,
   },
 
   // Uncomment this if you are using workers.
@@ -78,7 +70,7 @@ export default defineConfig({
   },
 
   build: {
-    outDir: '../../dist/apps/frontend',
+    outDir: '../../dist/apps/sr-frontend',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,

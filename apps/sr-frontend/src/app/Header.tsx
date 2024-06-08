@@ -140,7 +140,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
   const isXL = useMediaQuery(theme.breakpoints.up('xl'))
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
-  const { t } = useTranslation('ui')
+  const { t } = useTranslation('header')
   const {
     params: { currentTab },
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
@@ -176,7 +176,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
           label={
             <Box display="flex" alignItems="center">
               <Typography variant="h6" sx={{ px: 1 }}>
-                Star Rail Optimizer
+                {t('pageTitle')}
               </Typography>
             </Box>
           }
@@ -228,7 +228,7 @@ function MobileHeader({
     setMobileOpen(!mobileOpen)
   }
 
-  const { t } = useTranslation('ui')
+  const { t } = useTranslation('header')
   // Allow navigating back to the teams page when on a specific team.
   const inTeam = useMatch({ path: '/teams/:teamId/*' })
   return (
