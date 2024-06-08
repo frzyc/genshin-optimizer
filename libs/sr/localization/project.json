@@ -1,7 +1,7 @@
 {
-  "name": "gi-localization",
+  "name": "sr-localization",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/gi/localization/src",
+  "sourceRoot": "libs/sr/localization/src",
   "projectType": "library",
   "tags": [],
   "implicitDependencies": ["common-localization"]

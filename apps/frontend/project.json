@@ -16,6 +16,7 @@
     "dependsOn": ["eslint:lint"]
   },
   "implicitDependencies": [
+    "common-localization",
     "gi-localization",
     "gi-dm-localization",
     "gi-silly-wisher-names"
