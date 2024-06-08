@@ -1,5 +1,4 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { TextFieldLazy } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -42,7 +41,6 @@ export default function TeamSetting({
   const [show, onShow, onHide] = useBoolState()
   const team = database.teams.get(teamId)!
   const noChars = team.loadoutData.every((id) => !id)
-  const { name, description } = team
 
   const onDelNoChars = () => {
     database.teams.remove(teamId)
@@ -57,21 +55,6 @@ export default function TeamSetting({
   return (
     <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
       <TeamInfoAlert />
-      <TextFieldLazy
-        fullWidth
-        label="Team Name"
-        placeholder="Team Name"
-        value={name}
-        onChange={(name) => database.teams.set(teamId, { name })}
-      />
-      <TextFieldLazy
-        fullWidth
-        label="Team Description"
-        value={description}
-        onChange={(description) => database.teams.set(teamId, { description })}
-        multiline
-        minRows={2}
-      />
       <Box sx={{ display: 'flex', gap: 1 }}>
         <TeamExportModal show={show} teamId={teamId} onHide={onHide} />
         <Button
