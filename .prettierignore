@@ -17,3 +17,5 @@ apps/gi-backend/src/app/schema_gen.graphql
 
 # nx
 /.nx/cache
+
+/.nx/workspace-data
