@@ -186,15 +186,18 @@ export default function QuickLinksCard() {
                     href={to ? undefined : url}
                     target={to ? undefined : '_blank'}
                     rel="noopener"
-                    sx={{
-                      display: 'flex',
-                      gap: 1,
-                      justifyContent: 'flex-start',
-                    }}
                     to={to ? to : undefined}
                   >
-                    {icon}
-                    {title(t)}
+                    <Typography
+                      sx={{
+                        display: 'flex',
+                        gap: 1,
+                        justifyContent: 'flex-start',
+                      }}
+                    >
+                      {icon}
+                      {title(t)}
+                    </Typography>
                   </CardActionArea>
                 )
               })}
