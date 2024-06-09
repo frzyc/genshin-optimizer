@@ -10,10 +10,15 @@ import { useDatabaseContext } from '../Context'
 type LocationAutocompleteProps = {
   locKey: CharacterLocationKey | ''
   setLocKey: (v: CharacterLocationKey | '') => void
+  props?: Omit<
+    GeneralAutocompleteOption<CharacterLocationKey | ''>,
+    'options' | 'valueKey' | 'onChange' | 'toImg'
+  >
 }
 export function LocationAutocomplete({
   locKey,
   setLocKey,
+  ...props
 }: LocationAutocompleteProps) {
   const { t } = useTranslation(['character', 'charNames_gen'])
   const { database } = useDatabaseContext()
@@ -54,10 +59,12 @@ export function LocationAutocomplete({
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>
       <GeneralAutocomplete
+        size="small"
         options={options}
         toImg={() => <> </>} // TODO
         valueKey={locKey}
         onChange={(k) => setLocKey(k ?? '')}
+        {...props}
       />
     </Suspense>
   )
