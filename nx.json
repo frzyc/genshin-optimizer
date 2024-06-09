@@ -119,6 +119,15 @@
         "previewTargetName": "preview",
         "serveStaticTargetName": "serve-static"
       }
+    },
+    {
+      "plugin": "@nx/cypress/plugin",
+      "options": {
+        "targetName": "cypress:e2e",
+        "openTargetName": "open-cypress",
+        "componentTestingTargetName": "component-test",
+        "ciTargetName": "e2e-ci"
+      }
     }
   ],
   "nxCloudAccessToken": "MTMwNzFkNGItNDI5OC00MTAwLTliMzItMDYzYzhjNzRiMTVifHJlYWQtd3JpdGU="

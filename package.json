@@ -78,6 +78,7 @@
     "prettier-plugin-organize-imports": "^3.2.4",
     "prisma": "^5.5.2",
     "react-refresh": "^0.10.0",
+    "supabase": "^1.172.2",
     "swc-loader": "0.1.15",
     "ts-jest": "29.1.0",
     "ts-node": "10.9.1",
