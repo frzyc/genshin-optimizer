@@ -139,7 +139,15 @@ export default function TeamCharacterSelector({
             </Box>
           }
         >
-          <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
+          <CardContent
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              '&:hover': {
+                color: 'info.light',
+              },
+            }}
+          >
             <Typography
               variant="h5"
               onClick={() => setEditMode(true)}
