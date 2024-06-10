@@ -125,6 +125,7 @@ export default function TeamCharacterSelector({
     >
       <CardActionArea>
         <BootstrapTooltip
+          placement="top"
           title={
             <Box>
               <Box sx={{ display: 'flex', color: 'info.light', gap: 1 }}>
