@@ -26,6 +26,7 @@ import {
 } from '@mui/material'
 import type { TFunction } from 'i18next'
 import { useTranslation } from 'react-i18next'
+import { Link as RouterLink } from 'react-router-dom'
 
 const genshin_optimizer_links = [
   {
@@ -77,7 +78,7 @@ const other_links = [
   {
     title: (t: TFunction) => t`quickLinksCard.buttons.scanners.title`,
     icon: <Scanner />,
-    url: '/scanner',
+    to: '/scanner',
   },
   {
     title: (t: TFunction) => t`quickLinksCard.buttons.kqm.title`,
@@ -92,7 +93,7 @@ const other_links = [
   {
     title: (t: TFunction) => t`quickLinksCard.buttons.good.title`,
     icon: <Article />,
-    url: '/doc',
+    to: '/doc',
   },
 ]
 
@@ -178,21 +179,25 @@ export default function QuickLinksCard() {
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
               {other_links.map((link) => {
-                const { title, icon, url } = link
+                const { title, icon, url, to } = link
                 return (
                   <CardActionArea
-                    component={Link}
-                    href={url}
-                    target="_blank"
+                    component={to ? RouterLink : Link}
+                    href={to ? undefined : url}
+                    target={to ? undefined : '_blank'}
                     rel="noopener"
-                    sx={{
-                      display: 'flex',
-                      gap: 1,
-                      justifyContent: 'flex-start',
-                    }}
+                    to={to ? to : undefined}
                   >
-                    {icon}
-                    {title(t)}
+                    <Typography
+                      sx={{
+                        display: 'flex',
+                        gap: 1,
+                        justifyContent: 'flex-start',
+                      }}
+                    >
+                      {icon}
+                      {title(t)}
+                    </Typography>
                   </CardActionArea>
                 )
               })}
