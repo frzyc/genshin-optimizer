@@ -1,3 +1,4 @@
+'use client'
 import { Box, styled } from '@mui/material'
 
 type LineNumberProps = {

@@ -1,3 +1,5 @@
+import { Container } from '@mui/material'
+
 export default function Index() {
   /*
    * Replace the elements below with your own.
@@ -5,7 +7,7 @@ export default function Index() {
    * Note: The corresponding styles are in the ./index.none file.
    */
   return (
-    <>
+    <Container>
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
@@ -462,6 +464,6 @@ export default function Index() {
           </p>
         </div>
       </div>
-    </>
+    </Container>
   )
 }
