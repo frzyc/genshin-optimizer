@@ -10,7 +10,10 @@ import {
 } from 'discord.js'
 import * as fs from 'fs'
 import * as path from 'path'
+import * as process from 'process'
 import { clientid, token } from './config.json'
+
+export const cwd = process.env['NX_WORKSPACE_ROOT'] ?? process.cwd()
 
 const client = new Client({
   intents: [

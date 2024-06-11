@@ -1,0 +1,115 @@
+import type { ElementKey } from '@genshin-optimizer/gi/consts'
+import type { Interaction } from 'discord.js'
+import { EmbedBuilder } from 'discord.js'
+import type { archiveargs } from '../archive'
+import { allStat_gen, clean, colors } from '../archive'
+
+export function chararchive(
+  interaction: Interaction,
+  id: string,
+  name: string,
+  data: any,
+  args: archiveargs
+) {
+  //get element
+  let element = 'none'
+  const travelerelement = id.match(/Traveler(.*)F/)
+  if (!travelerelement) element = allStat_gen.char.data[id].ele
+  else element = travelerelement[1].toLowerCase()
+  //setup embed
+  const embed = new EmbedBuilder()
+    .setFooter({
+      text: 'Character Archive',
+    })
+    .setAuthor({
+      name: name,
+      iconURL: colors.element[element as ElementKey | 'none'].img,
+    })
+    .setColor(colors.element[element as ElementKey | 'none'].color)
+  //set contents
+  let text = ''
+  const talent = args.talent
+
+  //character profile
+  if (talent === 'p') {
+    text =
+      data.description ??
+      'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.'
+    if (data.title) embed.setTitle(data.title)
+    embed.setDescription(clean(text))
+  }
+  //normal/charged/plunging attacks
+  else if (talent === 'n') {
+    embed
+      .setTitle(data.auto.name)
+      .setDescription(
+        clean(
+          Object.values(data.auto.fields.normal).join('\n') +
+            '\n\n' +
+            Object.values(data.auto.fields.charged).join('\n') +
+            '\n\n' +
+            Object.values(data.auto.fields.plunging).join('\n') +
+            '\n\n'
+        )
+      )
+  }
+  //elemental skill
+  else if (talent === 'e') {
+    embed
+      .setTitle(data.skill.name)
+      .setDescription(
+        clean(Object.values(data.skill.description).flat().join('\n'))
+      )
+  }
+  //elemental burst
+  else if (talent === 'q') {
+    embed
+      .setTitle(data.burst.name)
+      .setDescription(
+        clean(Object.values(data.burst.description).flat().join('\n'))
+      )
+  }
+  //passives
+  else if (talent.match(/a\d?/)) {
+    //list all passives
+    let list = Object.keys(data).filter((e) => e.startsWith('passive'))
+    //input to select a passive
+    if (talent.length > 1) {
+      if (talent[1] === '1') list = ['passive1']
+      else if (talent[1] === '4') list = ['passive2']
+      else list = list.slice(2)
+    }
+    //make embed
+    for (const passive of list) {
+      const e = data[passive]
+      //ascension 1
+      if (passive === 'passive1') text += `**${e.name}** (A1)\n`
+      //ascension 4
+      else if (passive === 'passive2') text += `**${e.name}** (A4)\n`
+      //innate passives
+      else text += `**${e.name}** \n`
+      text += Object.values(e.description).flat().join('\n') + '\n\n'
+    }
+    embed.setDescription(clean(text))
+  }
+  //constellations
+  else if (talent.match(/c[123456]?/)) {
+    let arr = ['1', '2', '3', '4', '5', '6']
+    if (talent.length > 1) arr = [talent[1]]
+    for (const n of arr) {
+      const e = data[`constellation${n}`]
+      text +=
+        `**${n}. ${e.name}** ` +
+        Object.values(e.description).flat().join('\n') +
+        '\n\n'
+    }
+    //make embed
+    if (data.constellationName) embed.setTitle(data.constellationName)
+    embed.setAuthor({ name: name }).setDescription(clean(text))
+  } else throw 'Invalid talent name.'
+
+  return {
+    content: '',
+    embeds: [embed],
+  }
+}

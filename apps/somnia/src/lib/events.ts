@@ -6,41 +6,34 @@ export async function ready(client: Client) {
 }
 
 export async function interactionCreate(interaction: Interaction) {
-  if (interaction.isChatInputCommand()) {
-    const command = Commands.get(interaction.commandName)
-    if (!command) {
-      console.error(`No command matching ${interaction.commandName} was found.`)
-      return
-    }
-    try {
+  let args: string[]
+  try {
+    if (interaction.isChatInputCommand()) {
+      const command = Commands.get(interaction.commandName)
+      if (!command)
+        return console.error(`Command ${interaction.commandName} not found.`)
       await command.run(interaction)
-    } catch (error) {
-      console.error(`Error executing ${interaction.commandName}`)
-      console.error(error)
-    }
-  } else if (interaction.isAutocomplete()) {
-    const command = Commands.get(interaction.commandName)
-    if (!command) {
-      console.error(
-        `No autocomplete matching ${interaction.commandName} was found.`
-      )
-      return
-    }
-    try {
+    } else if (interaction.isAutocomplete()) {
+      const command = Commands.get(interaction.commandName)
+      if (!command)
+        return console.error(
+          `Autocomplete ${interaction.commandName} not found.`
+        )
       await command.autocomplete(interaction)
-    } catch (error) {
-      console.error(error)
+    } else if (interaction.isButton()) {
+      args = interaction.customId.split(' ')
+      const command = Commands.get(args[0])
+      if (!command)
+        return console.error(`Button ${interaction.customId} not found.`)
+      await command.button(interaction, args)
+    } else if (interaction.isStringSelectMenu()) {
+      args = interaction.customId.split(' ')
+      const command = Commands.get(args[0])
+      if (!command)
+        return console.error(`Selectmenu ${interaction.customId} not found.`)
+      await command.selectmenu(interaction, args)
     }
-  } else if (interaction.isButton()) {
-    const command = Commands.get(interaction.customId.split('.')[0])
-    if (!command) {
-      console.error(`No button matching ${interaction.customId} was found.`)
-      return
-    }
-    try {
-      await command.button(interaction)
-    } catch (error) {
-      console.error(error)
-    }
+  } catch (e) {
+    console.error(e)
   }
 }

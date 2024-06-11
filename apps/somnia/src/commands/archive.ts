@@ -1,16 +1,21 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { EmbedBuilder } from '@discordjs/builders'
-import type { ElementKey } from '@genshin-optimizer/gi/consts'
 import type {
   ApplicationCommandOptionChoiceData,
   AutocompleteInteraction,
   ChatInputCommandInteraction,
+  Interaction,
+  StringSelectMenuInteraction,
 } from 'discord.js'
 import { SlashCommandBuilder } from 'discord.js'
 import * as fs from 'fs'
 import * as path from 'path'
-import * as process from 'process'
-import { error } from '../lib/error'
+
+import { error } from '../lib/message'
+import { cwd } from '../main'
+
+import { artifactarchive } from './archive/artifact'
+import { chararchive } from './archive/char'
+import { weaponarchive } from './archive/weapon'
 
 export const slashcommand = new SlashCommandBuilder()
   .setName('archive')
@@ -62,7 +67,6 @@ export const slashcommand = new SlashCommandBuilder()
       )
   )
 
-const cwd = process.env['NX_WORKSPACE_ROOT'] ?? process.cwd()
 const allStat_gen = require(path.join(
   cwd,
   '/libs/gi/stats/src/allStat_gen.json'
@@ -83,11 +87,12 @@ const archive: Record<string, any> = {
 //traveler data
 for (const name in archive['key']['char']) {
   if (name.match(/Traveler/)) delete archive['key']['char'][name]
-  archive['key']['char']['TravelerAnemoF'] = 'Traveler (Anemo)'
-  archive['key']['char']['TravelerGeoF'] = 'Traveler (Geo)'
-  archive['key']['char']['TravelerElectroF'] = 'Traveler (Electro)'
-  archive['key']['char']['TravelerDendroF'] = 'Traveler (Dendro)'
 }
+archive['key']['char']['TravelerAnemoF'] = 'Traveler (Anemo)'
+archive['key']['char']['TravelerGeoF'] = 'Traveler (Geo)'
+archive['key']['char']['TravelerElectroF'] = 'Traveler (Electro)'
+archive['key']['char']['TravelerDendroF'] = 'Traveler (Dendro)'
+archive['key']['char']['TravelerHydroF'] = 'Traveler (Hydro)'
 //get all the data from keys
 for (const category in archive['key']) {
   for (const name in archive['key'][category]) {
@@ -99,14 +104,38 @@ for (const category in archive['key']) {
 const colors = {
   rarity: [0x818486, 0x5a977a, 0x5987ad, 0x9470bb, 0xc87c24],
   element: {
-    physical: 0xaaaaaa,
-    anemo: 0x61dbbb,
-    geo: 0xf8ba4e,
-    electro: 0xb25dcd,
-    hydro: 0x5680ff,
-    pyro: 0xff3c32,
-    cryo: 0x77a2e6,
-    dendro: 0xa5c83b,
+    none: {
+      img: 'https://api.ambr.top/assets/UI/UI_Icon_Item_Temp.png',
+      color: 0xaaaaaa,
+    },
+    anemo: {
+      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Wind.png',
+      color: 0x61dbbb,
+    },
+    geo: {
+      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Rock.png',
+      color: 0xf8ba4e,
+    },
+    electro: {
+      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Electric.png',
+      color: 0xb25dcd,
+    },
+    hydro: {
+      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Water.png',
+      color: 0x5680ff,
+    },
+    pyro: {
+      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Fire.png',
+      color: 0xff3c32,
+    },
+    cryo: {
+      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Ice.png',
+      color: 0x77a2e6,
+    },
+    dendro: {
+      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Grass.png',
+      color: 0xa5c83b,
+    },
   },
 }
 const talentlist = {
@@ -121,11 +150,20 @@ const talentlist = {
 //clean tags from input
 //discord has no colored text, so just bold everything instead
 function clean(s: string) {
+  //keep italic tags
+  s = s.replaceAll(/(<\/?i>)+/g, '*')
+  //turn rest into bold
   s = s.replaceAll(/(<\/?\w+>)+/g, '**')
   //ignore <br/> tags
   s = s.replaceAll(/<\w+\/>/g, '')
   //remove extra whitespace
   return s.trim()
+}
+
+export { allStat_gen, archive, clean, colors, talentlist }
+export type archiveargs = {
+  talent: string
+  refine: number | null
 }
 
 export async function autocomplete(interaction: AutocompleteInteraction) {
@@ -146,7 +184,7 @@ export async function autocomplete(interaction: AutocompleteInteraction) {
 
   //character talent suggestions
   if (focus.name === 'talent') {
-    const talent = focus.value
+    const talent = focus.value.toLowerCase()
     //direct reference
     if (talent in talentlist)
       reply = [talentlist[talent as keyof typeof talentlist]]
@@ -165,137 +203,63 @@ export async function autocomplete(interaction: AutocompleteInteraction) {
   interaction.respond(reply)
 }
 
+export function archivemsg(
+  interaction: Interaction,
+  subcommand: string,
+  id: string,
+  args: archiveargs
+) {
+  const name = archive['key'][subcommand][id]
+  const data = archive[subcommand][id]
+
+  //handle invalid names
+  if (!(id in archive[subcommand])) throw `Invalid ${subcommand} name.`
+  //character archive
+  if (subcommand === 'char') {
+    return chararchive(interaction, id, name, data, args)
+  }
+  //weapons archive
+  else if (subcommand === 'weapon') {
+    return weaponarchive(interaction, id, name, data, args)
+  }
+  //artifacts archive
+  else if (subcommand === 'artifact') {
+    return artifactarchive(interaction, id, name, data)
+  } else throw 'Invalid selection'
+}
+
 export async function run(interaction: ChatInputCommandInteraction) {
   const subcommand = interaction.options.getSubcommand()
   const id = interaction.options.getString('name', true)
-  const name = archive['key'][subcommand][id]
 
-  const data = archive[subcommand][id]
-  const embed = new EmbedBuilder()
-  let text = ''
-
-  //handle invalid names
-  if (!(id in archive[subcommand]))
-    return error(interaction, `Invalid ${subcommand} name.`)
-
-  if (subcommand === 'char') {
-    //character archive
-    let element = 'physical'
-    if (!id.match(/Traveler/)) element = allStat_gen.char.data[id].ele
-    //set element color
-    embed.setColor(colors.element[element as ElementKey | 'physical'])
-    //set contents
-    const talent = interaction.options.getString('talent', false) ?? 'p'
-    if (talent === 'p') {
-      //character profile
-      if (data.title?.length > 1) text = `> ${data.title}\n\n`
-      embed
-        .setTitle(archive['key']['char'][id])
-        .setDescription(clean(`${data.description}`))
-    } else if (talent === 'n') {
-      //normal/charged/plunging attacks
-      embed
-        .setAuthor({ name: name })
-        .setTitle(data.auto.name)
-        .setDescription(
-          clean(
-            Object.values(data.auto.fields.normal).join('\n') +
-              '\n\n' +
-              Object.values(data.auto.fields.charged).join('\n') +
-              '\n\n' +
-              Object.values(data.auto.fields.plunging).join('\n') +
-              '\n\n'
-          )
-        )
-    } else if (talent === 'e') {
-      //elemental skill
-      embed
-        .setAuthor({ name: name })
-        .setTitle(data.skill.name)
-        .setDescription(
-          clean(Object.values(data.skills.description).flat().join('\n'))
-        )
-    } else if (talent === 'q') {
-      //elemental burst
-      embed
-        .setAuthor({ name: name })
-        .setTitle(data.burst.name)
-        .setDescription(
-          clean(Object.values(data.burst.description).flat().join('\n'))
-        )
-    } else if (talent.match(/a\d?/)) {
-      //passives
-      //list all passives
-      let list = Object.keys(data).filter((e) => e.startsWith('passive'))
-      //input to select a passive
-      if (talent.length > 1) {
-        if (talent[1] === '1') list = ['passive1']
-        else if (talent[1] === '4') list = ['passive2']
-        else list = list.slice(2)
-      }
-      //make embed
-      for (const passive of list) {
-        const e = data[passive]
-        //ascension 1
-        if (passive === 'passive1') text += `**${e.name}** (A1)\n`
-        //ascension 4
-        else if (passive === 'passive2') text += `**${e.name}** (A4)\n`
-        //innate passives
-        else text += `**${e.name}** \n`
-        text += Object.values(e.description).flat().join('\n') + '\n\n'
-      }
-      embed.setAuthor({ name: name }).setDescription(clean(text))
-    } else if (talent.match(/c[123456]?/)) {
-      //constellations
-      let arr = ['1', '2', '3', '4', '5', '6']
-      if (talent.length > 1) arr = [talent[1]]
-      for (const n of arr) {
-        const e = data[`constellation${n}`]
-        text +=
-          `**${n}. ${e.name}** ` +
-          Object.values(e.description).flat().join('\n') +
-          '\n\n'
-      }
-      //make embed
-      if (data.constellationName) embed.setTitle(data.constellationName)
-      embed.setAuthor({ name: name }).setDescription(clean(text))
-    } else error(interaction, 'Invalid talent name.')
+  const talent = interaction.options.getString('talent', false) ?? 'p'
+  const refine = interaction.options.getInteger('refine', false)
+  const args = {
+    talent: talent.toLowerCase(),
+    refine: refine,
   }
 
-  else if (subcommand === 'weapon') {
-    //weapons archive
-    //weapon rarity color
-    const rarity = allStat_gen.weapon.data[id].rarity
-    const refine = (interaction.options.getInteger('refine', false) ?? 1) - 1
-    //set content
-    embed
-      .setTitle(`${data.name} (R${refine + 1})`)
-      .setColor(colors.rarity[rarity - 1])
-      .setDescription(
-        clean(
-          Object.values(data.description).join('\n') +
-            `\n\n**${data.passiveName}:** ` +
-            Object.values(data.passiveDescription[refine.toString()]).join('\n')
-        )
-      )
+  try {
+    interaction.reply(archivemsg(interaction, subcommand, id, args))
+  } catch (e) {
+    error(interaction, e)
+  }
+}
+
+export async function selectmenu(
+  interaction: StringSelectMenuInteraction,
+  args: string[]
+) {
+  const subcommand = args[1]
+  const id = args[2]
+  const a = {
+    talent: args[3],
+    refine: parseInt(interaction.values[0]),
   }
 
-  else if (subcommand === 'artifact') {
-    //artifacts archive
-    //artifact rarity color
-    const rarities = allStat_gen.art.data[id].rarities
-    const rarity = rarities[rarities.length - 1]
-    //set content
-    embed
-      .setTitle(data.setName)
-      .setColor(colors.rarity[rarity - 1])
-      .setDescription(
-        clean(
-          `**2-Pieces:** ${data.setEffects['2']}\n` +
-            `**4-Pieces:** ${data.setEffects['4']}`
-        )
-      )
+  try {
+    interaction.update(archivemsg(interaction, subcommand, id, a))
+  } catch (e) {
+    error(interaction, e)
   }
-  //send embed
-  return interaction.reply({ content: '', embeds: [embed] })
 }
