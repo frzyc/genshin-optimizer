@@ -46,21 +46,18 @@ export default function TargetExpressionEditor({
   customMultiTarget: CustomMultiTarget
   setCustomMultiTarget: Dispatch<SetStateAction<CustomMultiTarget>>
 }) {
-  const functions = useMemo(
-    () => [...(CMT.functions ?? [])] as const,
-    [CMT.functions]
-  )
-  const expression = useMemo(
-    () => [...(CMT.expression ?? [])] as const,
-    [CMT.expression]
-  )
+  const functions = useMemo(() => [...(CMT.functions ?? [])], [CMT])
+  const expression = useMemo(() => [...(CMT.expression ?? [])], [CMT])
 
-  const setExpression = useCallback(
-    ({ e, f }: { e?: ExpressionUnit[]; f?: CustomFunction[] }) => {
+  const setCMT = useCallback(
+    (
+      arg:
+        | Partial<CustomMultiTarget>
+        | ((CMT: CustomMultiTarget) => CustomMultiTarget)
+    ) => {
       setCustomMultiTarget((prev) => {
-        if (e) prev.expression = e
-        if (f) prev.functions = f
-        return prev
+        if (arg instanceof Function) arg = arg(prev)
+        return { ...prev, ...arg }
       })
     },
     [setCustomMultiTarget]
@@ -85,14 +82,16 @@ export default function TargetExpressionEditor({
       layer: number,
       arg: Partial<CustomFunction> | ((func: CustomFunction) => CustomFunction)
     ) => {
-      const func = functions[layer]
-      if (!func) return
-      if (arg instanceof Function) arg = arg(func)
-      const funcs = [...functions]
-      funcs.splice(layer, 1, { ...func, ...arg })
-      setExpression({ f: funcs })
+      setCMT((prev) => {
+        const funcs = prev.functions ?? []
+        const func = funcs[layer]
+        if (!func) return prev
+        if (arg instanceof Function) arg = arg(func)
+        funcs.splice(layer, 1, { ...func, ...arg })
+        return prev
+      })
     },
-    [functions, setExpression]
+    [setCMT]
   )
 
   const setExpressionItem = useCallback(
@@ -119,24 +118,22 @@ export default function TargetExpressionEditor({
             return func
           })
         } else {
-          const e = [...expression]
-          e.splice(address.index, 1, newItem as ExpressionUnit)
-          setExpression({ e })
+          expression.splice(address.index, 1, newItem as ExpressionUnit)
+          setCMT({ expression })
         }
       } else {
         return assertNever(address)
       }
     },
-    [expression, functions, setExpression, setFunction]
+    [expression, functions, setCMT, setFunction]
   )
 
   const addExpressionItem = useCallback(
     <T extends AddressItemTypesMap>(address: T[0], item: T[1]) => {
       const layer = clamp(address.layer, 0, functions.length)
       if (address.type === 'function') {
-        const funcs = [...functions]
-        funcs.splice(layer, 0, item as CustomFunction)
-        setExpression({ f: funcs })
+        functions.splice(layer, 0, item as CustomFunction)
+        setCMT({ functions })
       } else if (address.type === 'argument') {
         setFunction(layer, (func) => {
           const index = clamp(address.index, 0, func.args.length)
@@ -144,32 +141,29 @@ export default function TargetExpressionEditor({
           return func
         })
       } else if (address.type === 'unit') {
-        const e = [
-          ...(address.layer < functions.length
-            ? functions[address.layer].expression
-            : expression),
-        ]
-        const index = clamp(address.index, 0, e.length)
-        e.splice(index, 0, item as ExpressionUnit)
+        const index = clamp(address.index, 0, expression.length)
         if (layer < functions.length) {
-          setFunction(layer, { expression: e })
+          setFunction(layer, (func) => {
+            func.expression.splice(index, 0, item as ExpressionUnit)
+            return func
+          })
         } else {
-          setExpression({ e })
+          expression.splice(index, 0, item as ExpressionUnit)
+          setCMT({ expression })
         }
       } else {
         return assertNever(address)
       }
     },
-    [expression, functions, setExpression, setFunction]
+    [expression, functions, setCMT, setFunction]
   )
 
   const removeExpressionItem = useCallback(
     (address: ItemAddress) => {
       if (!address) return
       if (address.type === 'function') {
-        const funcs = [...functions]
-        funcs.splice(address.layer, 1)
-        setExpression({ f: funcs })
+        functions.splice(address.layer, 1)
+        setCMT({ functions })
       } else if (address.type === 'argument') {
         setFunction(address.layer, (func) => {
           func.args.splice(address.index, 1)
@@ -182,15 +176,14 @@ export default function TargetExpressionEditor({
             return func
           })
         } else {
-          const e = [...expression]
-          e.splice(address.index, 1)
-          setExpression({ e })
+          expression.splice(address.index, 1)
+          setCMT({ expression })
         }
       } else {
         return assertNever(address)
       }
     },
-    [expression, functions, setExpression, setFunction]
+    [expression, functions, setCMT, setFunction]
   )
 
   // TODO: Drag and drop
@@ -224,8 +217,8 @@ export default function TargetExpressionEditor({
       range(0, functions.length).map((layer) => (
         <ExpressionDisplay
           key={layer}
-          expression={[...expression]}
-          functions={[...functions]}
+          expression={expression}
+          functions={functions}
           layer={layer}
           sia={sia}
           setSIA={re_setSIA}
@@ -249,8 +242,8 @@ export default function TargetExpressionEditor({
         addItem={addExpressionItem}
         sia={sia}
         sirpa={sirpa}
-        functions={[...functions]}
-        expression={[...expression]}
+        functions={functions}
+        expression={expression}
         setSIA={setSIA}
         focusToSIA={focusToSIA}
       />
@@ -271,8 +264,8 @@ export default function TargetExpressionEditor({
   return (
     <>
       <AddItemsPanel
-        expression={[...expression]}
-        functions={[...functions]}
+        expression={expression}
+        functions={functions}
         sia={sia}
         setSIA={setSIA}
         addItem={addExpressionItem}

@@ -609,8 +609,8 @@ export function targetListToExpression(
 export function itemAddressValue<
   T extends AddressItemTypesMap | [undefined, undefined]
 >(
-  expression: readonly ExpressionUnit[],
-  functions: readonly CustomFunction[],
+  expression: ExpressionUnit[],
+  functions: CustomFunction[],
   address: T[0]
 ): T[1] {
   if (!address) return undefined
@@ -628,8 +628,8 @@ export function itemAddressValue<
 }
 
 export function itemPartFinder(
-  expression: readonly ExpressionUnit[],
-  functions: readonly CustomFunction[],
+  expression: ExpressionUnit[],
+  functions: CustomFunction[],
   address: ItemAddress | undefined
 ): ItemRelations {
   const result: ItemRelations = {
@@ -707,7 +707,7 @@ export function itemPartFinder(
 }
 
 export function availableFunctionUnitNames(
-  functions: readonly CustomFunction[],
+  functions: CustomFunction[],
   layer: number
 ): string[] {
   const result: string[] = []
@@ -724,8 +724,8 @@ export function availableFunctionUnitNames(
 
 export function unitPartFinder(
   index: number,
-  expression: readonly ExpressionUnit[],
-  functions: readonly CustomFunction[]
+  expression: ExpressionUnit[],
+  functions: CustomFunction[]
 ): number[] {
   const funcNames = functions.filter((f) => f.args.length).map((f) => f.name)
   const unit = expression[index]
