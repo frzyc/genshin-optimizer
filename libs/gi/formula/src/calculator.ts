@@ -40,6 +40,8 @@ export class Calculator extends Base<CalcMeta> {
     }
 
     if (op === 'read' && ex !== undefined) {
+      if (ex == 'min' || ex == 'max')
+        return { ...x.find((x) => x?.val === val)!.meta, conds }
       op = ex
       ex = undefined
     }

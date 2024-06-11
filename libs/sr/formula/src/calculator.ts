@@ -35,6 +35,8 @@ export class Calculator extends Base<Output> {
     const conds = preConds.length <= 1 ? preConds[0] ?? [] : preConds.flat()
 
     if (op === 'read' && ex !== undefined) {
+      if (ex == 'min' || ex == 'max')
+        return { ...x.find((x) => x?.val === val)!.meta, conds }
       op = ex
       ex = undefined
     }
