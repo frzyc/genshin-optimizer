@@ -141,7 +141,8 @@ export default function TargetExpressionEditor({
           return func
         })
       } else if (address.type === 'unit') {
-        const index = clamp(address.index, 0, expression.length)
+        const e = functions[layer]?.expression ?? expression
+        const index = clamp(address.index, 0, e.length)
         if (layer < functions.length) {
           setFunction(layer, (func) => {
             func.expression.splice(index, 0, item as ExpressionUnit)
