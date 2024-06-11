@@ -129,7 +129,12 @@ export default function AddItemsPanel({
 
   const EnclosingButtons = useMemo(() => {
     const result = [] as JSX.Element[]
-    for (const enclosing of ['clamp', 'minimum', 'maximum', 'average'] as const) {
+    for (const enclosing of [
+      'clamp',
+      'minimum',
+      'maximum',
+      'average',
+    ] as const) {
       result.push(
         <Grid item xs={1.5} key={enclosing}>
           <Button
