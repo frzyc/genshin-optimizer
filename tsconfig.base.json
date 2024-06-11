@@ -36,6 +36,9 @@
       "@genshin-optimizer/common/img-util": [
         "libs/common/img-util/src/index.ts"
       ],
+      "@genshin-optimizer/common/localization": [
+        "libs/common/localization/src/index.ts"
+      ],
       "@genshin-optimizer/common/pipeline": [
         "libs/common/pipeline/src/index.ts"
       ],
@@ -119,6 +122,7 @@
       "@genshin-optimizer/sr/db": ["libs/sr/db/src/index.ts"],
       "@genshin-optimizer/sr/dm": ["libs/sr/dm/src/index.ts"],
       "@genshin-optimizer/sr/formula": ["libs/sr/formula/src/index.ts"],
+      "@genshin-optimizer/sr/i18n": ["libs/sr/i18n/src/index.ts"],
       "@genshin-optimizer/sr/page-characters": [
         "libs/sr/page-characters/src/index.tsx"
       ],

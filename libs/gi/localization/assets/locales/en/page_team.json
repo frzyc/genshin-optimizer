@@ -6,5 +6,15 @@
   },
   "buildTcCharOverride": {
     "btn": "Override Character Data for This TC build"
+  },
+  "team": {
+    "editNameDesc": "Edit Team Name & Description",
+    "name": "Team Name",
+    "desc": "Team Description"
+  },
+  "loadout": {
+    "editNameDesc": "Edit Loadout Name & Description",
+    "name": "Loadout Name",
+    "desc": "Loadout Description"
   }
 }

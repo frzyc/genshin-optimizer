@@ -3,15 +3,6 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/localization/src",
   "projectType": "library",
-  "targets": {
-    "gen-file": {
-      "executor": "@genshin-optimizer/gi/localization:gen-locale",
-      "outputs": [
-        "{projectRoot}/Translated",
-        "{projectRoot}/assets/locales",
-        "{projectRoot}/main_gen.json"
-      ]
-    }
-  },
-  "tags": []
+  "tags": [],
+  "implicitDependencies": ["common-localization"]
 }

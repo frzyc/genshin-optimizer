@@ -32,6 +32,12 @@ export default defineConfig({
       targets: [
         {
           src: normalizePath(
+            resolve('../../libs/common/localization/assets/locales')
+          ),
+          dest: 'assets',
+        },
+        {
+          src: normalizePath(
             resolve('../../libs/gi/localization/assets/locales')
           ),
           dest: 'assets',

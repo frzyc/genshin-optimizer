@@ -11,6 +11,7 @@ export default function PageRelics() {
       <RelicEditor
         relicIdToEdit={relicIdToEdit}
         cancelEdit={() => setRelicIdToEdit('')}
+        allowEmpty
       />
       <RelicInventory
         onAdd={() => setRelicIdToEdit('new')}
