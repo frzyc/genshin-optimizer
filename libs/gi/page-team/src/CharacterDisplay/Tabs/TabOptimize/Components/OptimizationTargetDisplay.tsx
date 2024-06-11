@@ -42,9 +42,7 @@ export default function OptimizationTargetDisplay({
   const invalidTarget =
     !optimizationTarget ||
     !displayHeader ||
-    !node ||
-    // Make sure the opt target is valid, if we are not in multi-target
-    (!showEmptyTargets && node.isEmpty)
+    !node
 
   const {
     name,

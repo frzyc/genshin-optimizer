@@ -751,8 +751,7 @@ export default function TabBuild() {
               disabled={
                 !characterKey ||
                 !optimizationTarget ||
-                !optimizationTargetNode ||
-                optimizationTargetNode.isEmpty
+                !optimizationTargetNode
               }
               color={generatingBuilds ? 'error' : 'success'}
               onClick={
