@@ -39,10 +39,7 @@ export default function OptimizationTargetDisplay({
     optimizationTarget &&
     (objPathValue(data.getDisplay(), optimizationTarget) as any)
 
-  const invalidTarget =
-    !optimizationTarget ||
-    !displayHeader ||
-    !node
+  const invalidTarget = !optimizationTarget || !displayHeader || !node
 
   const {
     name,
