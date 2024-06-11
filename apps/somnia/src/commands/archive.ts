@@ -139,7 +139,7 @@ const colors = {
   },
 }
 const talentlist = {
-  profile: { name: 'Character Profile', value: '' },
+  p: { name: 'Character Profile', value: 'p' },
   n: { name: 'Normal/Charged/Plunging Attack', value: 'n' },
   e: { name: 'Elemental Skill', value: 'e' },
   q: { name: 'Elemental Burst', value: 'q' },
@@ -161,10 +161,6 @@ function clean(s: string) {
 }
 
 export { allStat_gen, archive, clean, colors, talentlist }
-export type archiveargs = {
-  talent: string
-  refine: number | null
-}
 
 export async function autocomplete(interaction: AutocompleteInteraction) {
   const subcommand = interaction.options.getSubcommand()
@@ -207,7 +203,7 @@ export function archivemsg(
   interaction: Interaction,
   subcommand: string,
   id: string,
-  args: archiveargs
+  args: string
 ) {
   const name = archive['key'][subcommand][id]
   const data = archive[subcommand][id]
@@ -232,12 +228,9 @@ export async function run(interaction: ChatInputCommandInteraction) {
   const subcommand = interaction.options.getSubcommand()
   const id = interaction.options.getString('name', true)
 
-  const talent = interaction.options.getString('talent', false) ?? 'p'
-  const refine = interaction.options.getInteger('refine', false)
-  const args = {
-    talent: talent.toLowerCase(),
-    refine: refine,
-  }
+  let args = ''
+  if (subcommand === 'char') args = interaction.options.getString('talent', false) ?? 'p'
+  if (subcommand === 'weapon') args = String(interaction.options.getInteger('refine', false))
 
   try {
     interaction.reply(archivemsg(interaction, subcommand, id, args))
@@ -252,13 +245,10 @@ export async function selectmenu(
 ) {
   const subcommand = args[1]
   const id = args[2]
-  const a = {
-    talent: args[3],
-    refine: parseInt(interaction.values[0]),
-  }
+  const arg = interaction.values[0]
 
   try {
-    interaction.update(archivemsg(interaction, subcommand, id, a))
+    interaction.update(archivemsg(interaction, subcommand, id, arg))
   } catch (e) {
     error(interaction, e)
   }

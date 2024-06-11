@@ -5,7 +5,6 @@ import {
   StringSelectMenuBuilder,
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
-import type { archiveargs } from '../archive'
 import { allStat_gen, clean, colors } from '../archive'
 
 export function weaponarchive(
@@ -13,7 +12,7 @@ export function weaponarchive(
   id: string,
   name: string,
   data: any,
-  args: archiveargs
+  args: string
 ) {
   const msg: any = {}
   name = data.name
@@ -21,44 +20,37 @@ export function weaponarchive(
   //weapon rarity color
   const rarity = allStat_gen.weapon.data[id].rarity
   //default r1 5stars and r5 others
-  let refine = 1
+  let refine = '1'
   //no refinements for 1/2 star weapons
   if (rarity > 2) {
-    //r5 for 3/4 star weapons
-    refine = 5
     //r1 for 5 star weapons
-    if (rarity > 4) refine = 1
+    if (rarity > 4) refine = '1'
+    //r5 for 3/4 star weapons
+    else refine = '5'
     //user input override
-    refine = args.refine ?? refine
+    if (args) refine = args
     name += ` (R${refine})`
     //create dropdown menu
+    const options = []
+    for (let i = 1; i <= 5; i++) {
+      const r = String(i)
+      const option = new StringSelectMenuOptionBuilder()
+        .setLabel(`Refinement ${r}`)
+        .setValue(r)
+      if (refine === r) option.setDefault(true)
+      options.push(option)
+    }
     msg['components'] = [
       new ActionRowBuilder().addComponents(
         new StringSelectMenuBuilder()
           .setCustomId(`archive weapon ${id} ${refine}`)
           .setPlaceholder(`Refinement ${refine}`)
-          .addOptions(
-            new StringSelectMenuOptionBuilder()
-              .setLabel('Refinement 1')
-              .setValue('1'),
-            new StringSelectMenuOptionBuilder()
-              .setLabel('Refinement 2')
-              .setValue('2'),
-            new StringSelectMenuOptionBuilder()
-              .setLabel('Refinement 3')
-              .setValue('3'),
-            new StringSelectMenuOptionBuilder()
-              .setLabel('Refinement 4')
-              .setValue('4'),
-            new StringSelectMenuOptionBuilder()
-              .setLabel('Refinement 5')
-              .setValue('5')
-          )
+          .addOptions(options)
       ) as ActionRowBuilder<MessageActionRowComponentBuilder>,
     ]
     text +=
       `\n\n**${data.passiveName}:** ` +
-      Object.values(data.passiveDescription[(refine - 1).toString()]).join('\n')
+      Object.values(data.passiveDescription[String.fromCharCode(refine.charCodeAt(0)-1)]).join('\n')
   }
   //set content
   msg['embeds'] = [

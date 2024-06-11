@@ -1,15 +1,14 @@
 import type { ElementKey } from '@genshin-optimizer/gi/consts'
-import type { Interaction } from 'discord.js'
-import { EmbedBuilder } from 'discord.js'
-import type { archiveargs } from '../archive'
-import { allStat_gen, clean, colors } from '../archive'
+import type { Interaction, MessageActionRowComponentBuilder } from 'discord.js'
+import { ActionRowBuilder, EmbedBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } from 'discord.js'
+import { allStat_gen, clean, colors, talentlist } from '../archive'
 
 export function chararchive(
   interaction: Interaction,
   id: string,
   name: string,
   data: any,
-  args: archiveargs
+  args: string
 ) {
   //get element
   let element = 'none'
@@ -28,7 +27,7 @@ export function chararchive(
     .setColor(colors.element[element as ElementKey | 'none'].color)
   //set contents
   let text = ''
-  const talent = args.talent
+  const talent = args
 
   //character profile
   if (talent === 'p') {
@@ -108,8 +107,25 @@ export function chararchive(
     embed.setAuthor({ name: name }).setDescription(clean(text))
   } else throw 'Invalid talent name.'
 
+  //create dropdown menu
+  const options = []
+  for (const t of Object.values(talentlist)) {
+    const menu = new StringSelectMenuOptionBuilder()
+      .setLabel(t.name)
+      .setValue(t.value)
+    if (t.value === talent) menu.setDefault(true)
+    options.push(menu)
+  }
+  const components = new ActionRowBuilder().addComponents(
+      new StringSelectMenuBuilder()
+        .setCustomId(`archive char ${id} ${args}`)
+        .setPlaceholder(talentlist[args as keyof typeof talentlist].name)
+        .addOptions(options)
+    ) as ActionRowBuilder<MessageActionRowComponentBuilder>
+
   return {
     content: '',
     embeds: [embed],
+    components: [components]
   }
 }
