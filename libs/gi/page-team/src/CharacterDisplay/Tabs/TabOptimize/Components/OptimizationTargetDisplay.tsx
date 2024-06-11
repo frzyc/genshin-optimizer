@@ -13,8 +13,6 @@ import { useTranslation } from 'react-i18next'
 
 export default function OptimizationTargetDisplay({
   optimizationTarget,
-  // TODO: does this do anything here?
-  showEmptyTargets = false,
   defaultText,
 }: {
   optimizationTarget?: string[]
