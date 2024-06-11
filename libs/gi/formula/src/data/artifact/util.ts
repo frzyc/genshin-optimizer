@@ -22,7 +22,7 @@ export function registerArt(
     // Add `key:art` to the tag and add `tag(key:<<key>>, value)` to set tags for calculation
     if (value.op === 'reread' || value.op === 'tag' || value.op === 'read')
       // Reuses `value` since it is already changing tags
-      value = { ...value, tag: { ...value.tag, key } }
+      value = { ...value, tag: { ...value.tag, src: key } }
     else value = tag(value, { src: key })
     return { tag: { ...oldTag, src: 'art' }, value }
   }

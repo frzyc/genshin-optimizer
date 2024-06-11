@@ -4,6 +4,7 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import {
   fixedTags,
+  hiddenEntries,
   queryTypes,
   usedNames,
   usedQ,
@@ -14,7 +15,12 @@ import charData from './char'
 import common from './common'
 import lcData from './lightCone'
 
-export const data: TagMapNodeEntries = [...charData, ...lcData, ...common]
+export const data: TagMapNodeEntries = [
+  ...charData,
+  ...lcData,
+  ...common,
+  ...hiddenEntries,
+]
 export const keys = compileTagMapKeys([
   { category: 'qt', values: queryTypes },
   { category: 'q', values: usedQ },

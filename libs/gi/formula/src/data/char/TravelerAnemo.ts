@@ -6,7 +6,6 @@ import {
   allBoolConditionals,
   allListConditionals,
   allNumConditionals,
-  allStacks,
   enemyDebuff,
   register,
   self,
@@ -41,8 +40,6 @@ const {
 const { _someBoolConditional } = allBoolConditionals(info.key)
 const { _someListConditional } = allListConditionals(info.key, [])
 const { _someNumConditional } = allNumConditionals(info.key, 'unique', false)
-// TODO: Non-stack values
-const { _someStack } = allStacks(info.key)
 
 const _count = team.common.count
 

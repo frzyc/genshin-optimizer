@@ -1,4 +1,3 @@
-import { cmpEq, cmpGE } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey, StatKey } from '@genshin-optimizer/sr/consts'
 import {
   allBonusAbilityKeys,
@@ -108,7 +107,6 @@ export function relicsData(
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
   const { self, teamBuff } = reader.src('agg').withAll('et', [])
-  const { stackIn, stackInt, stackOut } = reader.withAll('qt', [])
   return [
     // Team Buff
     members.flatMap((dst) => {
@@ -117,13 +115,6 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
         entry.reread(teamBuff.withTag({ dst, member: src }))
       )
     }),
-    // Stacking
-    members.map((member, i) =>
-      stackInt.add(cmpGE(stackIn.withTag({ member }).max, 1, i + 1))
-    ),
-    members.map((member, i) =>
-      stackOut.withTag({ member }).add(cmpEq(stackInt.max, i + 1, 1))
-    ),
     // Total Team Stat
     //
     // CAUTION:

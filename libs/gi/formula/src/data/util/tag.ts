@@ -202,12 +202,6 @@ export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
 // Custom tags
 export const allStatics = (src: Source) =>
   allCustoms(src, 'misc', undefined, (x) => x)
-export const allStacks = (src: Source) =>
-  allCustoms(src, 'stackOut', undefined, (out) => ({
-    add: (cond: NumNode | number) => out.with('qt', 'stackIn').add(cond),
-    apply: (val: NumNode | number, otherwise: NumNode | number = 0) =>
-      cmpEq(out, 1, val, otherwise),
-  }))
 export const allBoolConditionals = (src: Source) =>
   allCustoms(src, 'cond', { type: 'bool' }, ({ sum: r }) => ({
     ifOn: (node: NumNode | number, off?: NumNode | number) =>
@@ -258,9 +252,7 @@ export const queryTypes = new Set([
   ...Object.keys(enemyTag),
   'cond',
   'misc',
-  'stackIn',
-  'stackInt',
-  'stackOut',
+  'stack',
 ])
 // Register `q:`
 for (const values of [...Object.values(selfTag), ...Object.values(enemyTag)])

@@ -6,7 +6,7 @@ import artifact from './artifact'
 import character from './char'
 import common from './common'
 import type { TagMapNodeEntries } from './util'
-import { fixedTags, queryTypes, usedNames, usedQ } from './util'
+import { fixedTags, hiddenEntries, queryTypes, usedNames, usedQ } from './util'
 import weapon from './weapon'
 
 const entries: TagMapNodeEntries = [
@@ -14,6 +14,7 @@ const entries: TagMapNodeEntries = [
   ...artifact,
   ...character,
   ...weapon,
+  ...hiddenEntries,
 ]
 const keys = compileTagMapKeys([
   { category: 'qt', values: queryTypes },

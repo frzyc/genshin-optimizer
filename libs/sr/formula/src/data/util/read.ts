@@ -13,7 +13,7 @@ import {
   constant,
   reread,
 } from '@genshin-optimizer/pando/engine'
-import type { DamageType, TagMapNodeEntry } from '.'
+import type { DamageType, TagMapNodeEntries, TagMapNodeEntry } from '.'
 import {
   damageTypes,
   elementalTypes,
@@ -23,6 +23,13 @@ import {
   srcs,
   type Source,
 } from './listing'
+
+let uniqueId = 0
+function getUnique() {
+  const result = uniqueId
+  uniqueId += 1
+  return `${result}`
+}
 
 export const fixedTags = {
   preset: presets,
@@ -61,6 +68,28 @@ export class Read extends TypedRead<Tag, Read> {
       tag: this.tag,
       value: typeof value === 'object' ? value : constant(value),
     }
+  }
+  addOnce(
+    value: NumNode | number,
+    ex: Read['ex'] = 'max',
+    q?: string
+  ): TagMapNodeEntry {
+    if (this.tag.et != 'teamBuff')
+      throw new Error('Non-stack only support team buff for now')
+    if (q === undefined) q = getUnique()
+    /**
+     * Note:
+     * We're mimicking `self.*` and `team.*` here instead of
+     * actually using them to avoid cyclical dependencies
+     */
+    const interim = this.withTag({ src: 'static', qt: 'stack', q })
+    // 1. Apply `value` to `self.<new q:>`
+    hiddenEntries.push(interim.with('et', 'self').add(value))
+    // 3. Apply result from 2. to `selfBuff.<target>`
+    return this.withTag({ et: 'self' }).add(
+      // 2. Get actual value with `team.<new q:>`
+      interim.with('et', 'team')[ex]
+    )
   }
   addWithDmgType(
     dmgType: DamageType,
@@ -211,3 +240,4 @@ export function tagStr(tag: Tag, ex?: any): string {
 export const reader = new Read({}, undefined)
 export const usedNames = new Set<string>()
 export const usedQ = new Set('_')
+export const hiddenEntries: TagMapNodeEntries = []

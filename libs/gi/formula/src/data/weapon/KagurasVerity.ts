@@ -4,7 +4,6 @@ import {
   allBoolConditionals,
   allListConditionals,
   allNumConditionals,
-  allStacks,
   register,
   self,
 } from '../util'
@@ -19,8 +18,6 @@ const {
 const { _someBoolConditional } = allBoolConditionals(key)
 const { _someListConditional } = allListConditionals(key, [])
 const { _someNumConditional } = allNumConditionals(key, 'unique', false)
-// TODO: Non-stack values
-const { _someStack } = allStacks(key)
 
 export default register(
   key,
