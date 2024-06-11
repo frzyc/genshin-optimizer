@@ -262,7 +262,7 @@ describe('example', () => {
     const debugCalc = calc.toDebug()
 
     // Print calculation steps
-    console.log(debugCalc.debugCompute(normal0).join('\n'))
+    console.log(JSON.stringify(debugCalc.compute(normal0)))
   })
 })
 describe('weapon-only example', () => {
