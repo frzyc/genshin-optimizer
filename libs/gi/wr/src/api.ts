@@ -498,10 +498,7 @@ function parseCustomExpression(
   }
   if (currentOperation === 'average') {
     // TODO: Properly implement average
-    return sum(
-      constant(0),
-      prod(constant(1 / parsedParts.length), ...parsedParts)
-    )
+    return prod(constant(1 / parsedParts.length), sum(...parsedParts))
   }
   if (currentOperation === 'priority') {
     // TODO: Properly implement priority
