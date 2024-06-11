@@ -504,6 +504,9 @@ function parseCustomExpression(
     // TODO: Properly implement priority
     return sum(constant(0), ...parsedParts)
   }
+  if (currentOperation === 'clamp') {
+    return min(parsedParts[1], max(parsedParts[0], parsedParts[2]))
+  }
   return ((_: never) => {
     throw new Error(`Unexpected operation ${currentOperation}`)
   })(currentOperation)

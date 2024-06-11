@@ -26,9 +26,9 @@ const ExpressionOperations = [
   'minimum',
   'maximum',
   'average',
+  'clamp',
   // 'ceil',
   // 'floor',
-  // 'clamp',
 ] as const
 export type ExpressionOperation = (typeof ExpressionOperations)[number]
 export const isExpressionOperation = (op: unknown): op is ExpressionOperation =>
@@ -39,6 +39,7 @@ const EnclosingOperations = [
   'minimum',
   'maximum',
   'average',
+  'clamp',
 ] as const
 export type EnclosingOperation = (typeof EnclosingOperations)[number]
 export const isEnclosing = (op: unknown): op is EnclosingOperation =>
@@ -81,6 +82,7 @@ export const OperationSpecs: Record<
   minimum: enclosingSpec('min'),
   maximum: enclosingSpec('max'),
   average: enclosingSpec('avg'),
+  clamp: enclosingSpec('clamp', { arity: { min: 3, max: 3 } }),
 } as const
 
 const ExpressionUnitTypes = [
