@@ -7,7 +7,7 @@
     "name": "부동류 격투술",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "강풍의 힘을 받아 적과 격투를 펼친다. 최대 5번 공격해 <anemo>바람 원소 피해</anemo>를 준다."
       },
       "charged": {

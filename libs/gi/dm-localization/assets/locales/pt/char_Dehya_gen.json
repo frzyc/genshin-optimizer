@@ -7,7 +7,7 @@
     "name": "Técnica da Espada Dourada",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza até 4 golpes consecutivos com seu Espadão e artes marciais."
       },
       "charged": {

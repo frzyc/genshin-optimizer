@@ -7,7 +7,7 @@
     "name": "Phototype à froid",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Visant ses cibles à l'aide de Monsieur Vérité, son Daguerréotype personnalisé, Charlotte enchaîne jusqu'à 3 attaques qui infligent des <cryo>DGT Cryo</cryo>."
       },
       "charged": {

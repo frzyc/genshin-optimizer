@@ -7,7 +7,7 @@
     "name": "Palabra vientofloral",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Crea remolinos de viento para realizar hasta 4 ataques consecutivos, los cuales infligen <anemo>Daño Anemo</anemo>."
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Lancia dell'evocatore",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferra fino a 4 colpi di lancia consecutivi."
       },
       "charged": {

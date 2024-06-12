@@ -7,7 +7,7 @@
     "name": "Lance de Favonius - Carreau filant",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Enchaîne jusqu'à 5 coups d'arbalète et de lance."
       },
       "charged": {

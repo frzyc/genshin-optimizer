@@ -7,7 +7,7 @@
     "name": "Teure Geschosse",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Verschießt Edelsteine, die <geo>Geo-Schaden</geo> verursachen.",
         "2": "Verleiht Ningguang bei Treffern eine Sternjade."
       },

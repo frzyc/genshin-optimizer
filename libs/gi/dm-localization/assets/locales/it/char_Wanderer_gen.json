@@ -7,7 +7,7 @@
     "name": "Yuuban Meigen",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferra fino a 3 attacchi usando lame di vento, infliggendo <anemo>DAN da Anemo</anemo>."
       },
       "charged": {

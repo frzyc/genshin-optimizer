@@ -7,7 +7,7 @@
     "name": "Lärmende Legende",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus.",
         "2": "Gibt Itto beim Treffen von Gegnern mit den Angriffen Phase 2 und Phase 4 1 bzw. 2 Stapelungen des Effekts „superstarke Superkraft“.",
         "3": "5-fach stapelbar. Erneuert die Wirkungsdauer der superstarken Superkraft bei jedem Auslösen.",

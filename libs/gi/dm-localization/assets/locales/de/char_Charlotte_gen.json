@@ -7,7 +7,7 @@
     "name": "Erfassung der kalten Farben",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Zielt mit „Herrn Vérité“, einem Spezialfotoapparat, auf die Gegner und führt bis zu 3 aufeinanderfolgende Angriffe aus, die <cryo>Kryo-Schaden</cryo> verursachen."
       },
       "charged": {

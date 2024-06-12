@@ -7,7 +7,7 @@
     "name": "Marvelous Sword-Dance (Modified)",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "ฟาดฟันต่อเนื่องมากสุด 3 ครั้ง"
       },
       "charged": {

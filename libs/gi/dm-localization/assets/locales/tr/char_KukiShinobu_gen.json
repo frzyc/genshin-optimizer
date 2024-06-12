@@ -7,7 +7,7 @@
     "name": "Shinobu'nun Gölge Kılıcı",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "En fazla 4 hızlı saldırı yapar."
       },
       "charged": {

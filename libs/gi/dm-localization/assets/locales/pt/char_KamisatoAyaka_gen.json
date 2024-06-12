@@ -39,7 +39,7 @@
     "name": "Naname",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza até 5 golpes rápidos."
       },
       "charged": {

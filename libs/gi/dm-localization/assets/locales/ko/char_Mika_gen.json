@@ -7,7 +7,7 @@
     "name": "페보니우스 창술·화살촉",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "석궁과 창술을 결합해서 최대 5번 공격한다."
       },
       "charged": {

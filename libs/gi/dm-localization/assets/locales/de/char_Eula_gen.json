@@ -47,7 +47,7 @@
     "name": "Favonius-Schwertkunst – Adelshaus",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Führt bis zu 5 Schwünge mit dem Schwert hintereinander aus."
       },
       "charged": {

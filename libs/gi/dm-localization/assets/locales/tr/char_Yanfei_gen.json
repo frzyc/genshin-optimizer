@@ -7,7 +7,7 @@
     "name": "Tasdik Mührü",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "En fazla üç defa <pyro>Ateş Hasarı</pyro> veren ateş topları fırlatır.",
         "2": "Yanfei'nin Normal Saldırıları düşmanlara isabet ettiğinde Yanfei bir Kızıl Mühür elde eder. Yanfei en fazla 3 Kızıl Mühre sahip olabilir. Bu etki her tetiklendiğinde mevcut Kızıl Mühürlerin süresi yenilenir.",
         "3": "Her Kızıl Mühür, Yanfei'nin Dayanıklılık tüketimini azaltır ve Yanfei alandan ayrıldığında kaybolur."

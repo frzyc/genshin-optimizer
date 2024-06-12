@@ -7,7 +7,7 @@
     "name": "Punho Gelado Destruidor",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Concentra gelo nos punhos, desferindo poderosos <strong>Socos Repulsores</strong>, dando até cinco golpes rápidos e causando <cryo>Dano Cryo</cryo>.",
         "2": "Além disso, o Combo de Ataques Normais não será redefinido por um curto tempo após correr ou após lançar a Habilidade Elemental \"Corrida da Presa Gelada\"."
       },

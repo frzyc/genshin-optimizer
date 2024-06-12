@@ -7,7 +7,7 @@
     "name": "Sello ígneo",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Lanza bolas de fuego que infligen hasta tres golpes de <pyro>Daño Pyro</pyro>.",
         "2": "Al golpear a un enemigo, Yanfei obtiene un sello escarlata. Inicialmente se puede tener un máximo de 3 sellos escarlatas y, cada vez que este efecto se active, la duración de los sellos que posea Yanfei en ese momento se reiniciará.",
         "3": "Cada sello reducirá el Coste de Aguante de Yanfei, pero desaparecerán cuando ella se retire del combate."

@@ -7,7 +7,7 @@
     "name": "云来剑法",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻击</strong>",
+        "0": "<strong>普通攻击</strong>",
         "1": "进行至多五段的连续剑击。"
       },
       "charged": {
