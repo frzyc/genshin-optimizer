@@ -7,7 +7,7 @@
     "name": "Whisper of Water",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Performs up to 4 water splash attacks that deal <hydro>Hydro DMG</hydro>."
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Võ Thuật Fudou",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Tấn công kẻ địch với sức mạnh gió bão, thực hiện tối đa 5 lần tấn công, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
       },
       "charged": {

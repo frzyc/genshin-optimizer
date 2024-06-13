@@ -7,7 +7,7 @@
     "name": "Supplicant's Bowmanship",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "ยิงธนูโจมตีอย่างต่อเนื่องมากสุด 4 ครั้ง"
       },
       "charged": {

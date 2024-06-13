@@ -7,7 +7,7 @@
     "name": "Spiritfox Sin-Eater",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "เรียกวิญญาณจิ้งจอกออกมา ทำการโจมตีต่อเนื่องมากสุด 3 ครั้ง เพื่อสร้าง<electro>ความเสียหายไฟฟ้า</electro>"
       },
       "charged": {

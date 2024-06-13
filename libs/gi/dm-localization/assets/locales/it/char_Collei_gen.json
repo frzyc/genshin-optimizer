@@ -7,7 +7,7 @@
     "name": "Freccia del supplicante",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Esegue fino a 4 tiri consecutivi con l'arco."
       },
       "charged": {

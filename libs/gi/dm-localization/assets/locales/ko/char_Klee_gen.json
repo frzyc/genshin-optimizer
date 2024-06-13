@@ -7,7 +7,7 @@
     "name": "펑펑",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "무언가에 부딪히면 펑하고 폭발하는 물건을 던진다! 폭발 공격을 최대 3회까지 진행해 <pyro>불 원소 범위 피해</pyro>를 준다."
       },
       "charged": {

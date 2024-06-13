@@ -7,7 +7,7 @@
     "name": "Spada del Sentiero radioso",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferra fino a 3 colpi rapidi."
       },
       "charged": {

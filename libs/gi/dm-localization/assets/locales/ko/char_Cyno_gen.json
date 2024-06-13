@@ -7,7 +7,7 @@
     "name": "일곱 성인의 창술",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "창으로 최대 4번 공격한다."
       },
       "charged": {

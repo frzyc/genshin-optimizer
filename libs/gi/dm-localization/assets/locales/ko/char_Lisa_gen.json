@@ -7,7 +7,7 @@
     "name": "손끝의 뇌폭",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "전격으로 최대 4번 공격해 <electro>번개 원소 피해</electro>를 준다."
       },
       "charged": {

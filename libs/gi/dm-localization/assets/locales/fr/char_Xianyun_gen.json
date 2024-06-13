@@ -7,7 +7,7 @@
     "name": "Murmures floraux au vent",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Crée des tourbillons de vent pour enchaîner jusqu'à 4 attaques qui infligent des <anemo>DGT Anémo</anemo>."
       },
       "charged": {

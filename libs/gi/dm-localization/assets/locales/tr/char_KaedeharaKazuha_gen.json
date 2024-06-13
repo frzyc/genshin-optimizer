@@ -39,7 +39,7 @@
     "name": "Garyuu Kılıç Tekniği",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "En fazla 5 hızlı saldırı yapar."
       },
       "charged": {

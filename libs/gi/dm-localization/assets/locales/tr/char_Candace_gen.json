@@ -7,7 +7,7 @@
     "name": "Işıltılı Mızrak - Muhafız Duruşu",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Arka arkaya en fazla 4 mızrak saldırısı yapar."
       },
       "charged": {

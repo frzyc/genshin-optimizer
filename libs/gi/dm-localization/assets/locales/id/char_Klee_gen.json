@@ -7,7 +7,7 @@
     "name": "Kaboom!",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Melempar benda yang akan meledak saat mengenai sesuatu! Melancarkan hingga 3 serangan ledakan yang mengakibatkan <pyro>Pyro DMG Area</pyro>."
       },
       "charged": {

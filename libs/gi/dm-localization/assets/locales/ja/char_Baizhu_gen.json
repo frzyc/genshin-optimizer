@@ -7,7 +7,7 @@
     "name": "金匱鍼解",
     "fields": {
       "normal": {
-        "0": "<strong><strong>通常攻撃</strong>",
+        "0": "<strong>通常攻撃</strong>",
         "1": "前方に最大4段の連続攻撃を行い、<dendro>草元素ダメージ</dendro>を与える。"
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Torrente cortante",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal",
+        "0": "<strong>Ataque Normal",
         "1": "</strong>Realiza hasta 6 disparos consecutivos con arco."
       },
       "charged": {

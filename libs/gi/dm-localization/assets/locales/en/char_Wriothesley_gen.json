@@ -7,7 +7,7 @@
     "name": "Forceful Fists of Frost",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Coalescing frost about his fist, Wriothesley will unleash powerful <strong>Repelling Fists</strong>, performing up to 5 rapid attacks that deal <cryo>Cryo DMG</cryo>.",
         "2": "Apart from this, Normal Attack combo count will not reset for a short time after using Icefang Rush or sprinting."
       },

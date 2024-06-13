@@ -7,7 +7,7 @@
     "name": "청풍의 산화 공양가",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "회전 청풍으로 최대 4번 공격해 <anemo>바람 원소 피해</anemo>를 준다."
       },
       "charged": {

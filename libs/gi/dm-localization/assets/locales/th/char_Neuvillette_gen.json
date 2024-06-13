@@ -7,7 +7,7 @@
     "name": "As Water Seeks Equilibrium",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "โบกไม้เท้าแผ่วเบา และปล่อยคลื่นโจมตีต่อเนื่องมากสุด 3 ครั้ง เพื่อสร้าง<hydro>ความเสียหายน้ำ</hydro>"
       },
       "chargedLegal": {

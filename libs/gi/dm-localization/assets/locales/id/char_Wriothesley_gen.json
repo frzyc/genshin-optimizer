@@ -7,7 +7,7 @@
     "name": "Forceful Fists of Frost",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Mengumpulkan es di ujung kepalan tangannya, melancarkan <strong>Repelling Fist</strong> yang kuat dan cepat, melancarkan maksimum 5 pukulan berturut-turut dan mengakibatkan <cryo>Cryo DMG</cryo>.",
         "2": "Selain itu, jumlah kombo Normal Attack tidak akan diulang untuk waktu yang singkat setelah berlari atau setelah melancarkan Elemental Skill \"Icefang Rush\"."
       },

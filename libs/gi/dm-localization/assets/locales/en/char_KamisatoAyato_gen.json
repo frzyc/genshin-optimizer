@@ -7,7 +7,7 @@
     "name": "Kamisato Art - Marobashi",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Performs up to 5 rapid strikes."
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Wie stille Wasser",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Neuvillette schwingt sein Zepter und treibt die Wellen dazu an, bis zu dreimal anzugreifen und <hydro>Hydro-Schaden</hydro> zu verursachen."
       },
       "chargedLegal": {

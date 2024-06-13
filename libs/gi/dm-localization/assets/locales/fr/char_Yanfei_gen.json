@@ -7,7 +7,7 @@
     "name": "Sceau embrasé",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Tire des boules de feu qui infligent jusqu'à 3 vagues de <pyro>DGT Pyro</pyro>.",
         "2": "Lorsqu'une attaque normale touche un ennemi, Yanfei obtient un sceau écarlate. Yanfei peut détenir un maximum de 3 sceaux écarlates, et chaque fois que cet effet se déclenche, la durée des sceaux en sa possession est réinitialisée.",
         "3": "Chaque sceau écarlate diminue la consommation d'endurance de Yanfei, et disparaît lorsque Yanfei quitte le champ de bataille."
