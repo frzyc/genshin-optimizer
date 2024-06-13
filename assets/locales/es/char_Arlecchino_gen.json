@@ -7,7 +7,7 @@
     "name": "Invitación a una decapitación",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza hasta 6 ataques rápidos con lanza."
       },
       "charged": {

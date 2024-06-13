@@ -7,7 +7,7 @@
     "name": "Creación del espíritu del viento",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza hasta 4 ataques usando espíritus del viento, los cuales infligen <anemo>Daño Anemo</anemo>."
       },
       "charged": {

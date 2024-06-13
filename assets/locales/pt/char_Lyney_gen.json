@@ -7,7 +7,7 @@
     "name": "Translocação de Carta Forçada",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza até 4 disparos consecutivos com seu arco."
       },
       "charged": {

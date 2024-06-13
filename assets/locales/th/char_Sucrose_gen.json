@@ -7,7 +7,7 @@
     "name": "Wind Spirit Creation",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "ทำการโจมตีด้วย Wind Spirit ต่อเนื่องมากสุด 4 ครั้ง เกิดเป็น<anemo>ความเสียหายลม</anemo>"
       },
       "charged": {

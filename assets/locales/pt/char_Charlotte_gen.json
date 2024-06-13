@@ -7,7 +7,7 @@
     "name": "Foto de Cores Frias",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Mira nos alvos com o Monsieur Verite, e com sua câmera personalizada, Charlotte desfere 3 golpes consecutivos, causando <cryo>Dano Cryo.</cryo>"
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Nghi Thức Tốc Hành",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Thực hiện tối đa 4 lần đánh kiếm liên tiếp."
       },
       "charged": {

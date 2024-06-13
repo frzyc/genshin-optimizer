@@ -7,7 +7,7 @@
     "name": "Kaboom!",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque normal</strong>",
+        "0": "<strong>Ataque normal</strong>",
         "1": "Atira coisas que fazem boom quando acertam coisas! Realiza até 3 ataques explosivos, infligindo <pyro>Dano Pyro em uma AdE</pyro>."
       },
       "charged": {

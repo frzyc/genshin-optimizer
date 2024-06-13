@@ -7,7 +7,7 @@
     "name": "Yıldırım Dokunuşu",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "<electro>Elektrik Hasarı</electro> veren en fazla 4 yıldırım saldırısı yapar."
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Boceto esquemático",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Usa a Mehrak para realizar hasta 4 tajos de espada consecutivos."
       },
       "charged": {

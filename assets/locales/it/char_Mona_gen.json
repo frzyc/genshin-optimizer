@@ -7,7 +7,7 @@
     "name": "Increspatura del fato",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferra fino a 4 attacchi d'acqua che infliggono <hydro>DAN da Hydro</hydro>."
       },
       "charged": {

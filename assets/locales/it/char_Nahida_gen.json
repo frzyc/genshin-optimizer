@@ -7,7 +7,7 @@
     "name": "Akara",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferra fino a 4 attacchi che infliggono <dendro>DAN da Dendro</dendro> agli avversari davanti a lei."
       },
       "charged": {

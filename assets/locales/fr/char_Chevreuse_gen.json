@@ -7,7 +7,7 @@
     "name": "Pique de baïonnette (modifiée)",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Enchaîne jusqu'à 4 coups de lance."
       },
       "charged": {

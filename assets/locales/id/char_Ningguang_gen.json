@@ -7,7 +7,7 @@
     "name": "Sparkling Scatter",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Menembakkan batu permata yang mengakibatkan <geo>Geo DMG</geo>.",
         "2": "Saat mengenai musuh, akan memberikan 1 Star Jade kepada Ningguang."
       },

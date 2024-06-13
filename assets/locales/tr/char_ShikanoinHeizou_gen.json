@@ -7,7 +7,7 @@
     "name": "Fudou Tarzı Dövüş Sanatı",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Kudretli rüzgarla güçlendirilmiş yumruklarını kullanarak en fazla 5 saldırı yapar ve <anemo>Rüzgar Hasarı</anemo> verir."
       },
       "charged": {

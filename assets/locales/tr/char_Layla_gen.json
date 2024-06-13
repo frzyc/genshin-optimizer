@@ -7,7 +7,7 @@
     "name": "Işıltılı Yolun Kılıcı",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "En fazla 3 hızlı saldırı yapar."
       },
       "charged": {

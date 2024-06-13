@@ -7,7 +7,7 @@
     "name": "Arte Marcial Fudou",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza até 5 ataques de punhos de vento, infligindo <anemo>Dano Anemo</anemo>."
       },
       "charged": {
