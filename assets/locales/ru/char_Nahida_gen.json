@@ -7,7 +7,7 @@
     "name": "Акара",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Обычная атака:</strong>",
+        "0": "<strong>Обычная атака:</strong>",
         "1": "До четырёх ударов перед собой, наносящих <dendro>Дендро урон</dendro>."
       },
       "charged": {

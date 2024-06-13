@@ -74,7 +74,7 @@
     "name": "Tecnica di Favonius - Domestica",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferra fino a 4 colpi consecutivi."
       },
       "charged": {

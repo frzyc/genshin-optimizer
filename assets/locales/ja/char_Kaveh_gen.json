@@ -7,7 +7,7 @@
     "name": "円規定則",
     "fields": {
       "normal": {
-        "0": "<strong><strong>通常攻撃</strong>",
+        "0": "<strong>通常攻撃</strong>",
         "1": "メラックを動かし、最大4段の連続攻撃を行う。"
       },
       "charged": {

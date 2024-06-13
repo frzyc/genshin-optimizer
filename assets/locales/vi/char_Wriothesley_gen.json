@@ -7,7 +7,7 @@
     "name": "Liệt Sương Quyền",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Tích tụ băng giá vào nắm đấm để tung ra <strong>Cú Đấm Bài Xích</strong> mạnh mẽ, tiến hành tối đa 5 lần tấn công nhanh, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
         "2": "Ngoài ra, trong một thời gian ngắn sau khi thi triển kỹ năng \"Nanh Băng Càn Quét\" hoặc xung kích, số lần liên kích tấn công thường sẽ không bị tái lập."
       },

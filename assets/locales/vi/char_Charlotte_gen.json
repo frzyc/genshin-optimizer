@@ -7,7 +7,7 @@
     "name": "Phối Màu Lạnh",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Dùng máy ảnh đặc chế là \"Ngài Verite\" để ngắm chuẩn mục tiêu, tiến hành tối đa 3 lần tấn công, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>."
       },
       "charged": {

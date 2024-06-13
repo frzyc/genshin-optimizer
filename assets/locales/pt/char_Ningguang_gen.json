@@ -7,7 +7,7 @@
     "name": "Dispersão Espumante",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Dispara gemas que causam <geo>Dano Geo</geo>.",
         "2": "Ao acertar, concede a Ningguang 1 Jade de Estrela."
       },

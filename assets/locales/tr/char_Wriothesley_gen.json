@@ -7,7 +7,7 @@
     "name": "Güçlü Buz Yumrukları",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Wriothesley yumruğunda buzun gücünü toplayarak bir dizi güçlü <strong>Püskürtücü Yumruk</strong> saldırısı yapar. Bu şekilde <cryo>Buz Hasarı</cryo> veren en fazla 5 saldırı yapabilir.",
         "2": "Ayrıca Normal Saldırı kombo sayısı, depar veya Buzdiş Saldırısı kullandıktan sonra kısa bir süre boyunca sıfırlanmaz."
       },

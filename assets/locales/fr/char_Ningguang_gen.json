@@ -7,7 +7,7 @@
     "name": "Géo-dispersion",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Tire des gemmes qui infligent des <geo>DGT Géo</geo>.",
         "2": "Ningguang obtient un Jade d'étoile à chaque fois qu'une gemme touche un ennemi."
       },

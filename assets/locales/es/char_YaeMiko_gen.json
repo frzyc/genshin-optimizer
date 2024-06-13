@@ -7,7 +7,7 @@
     "name": "Kitsune devorapecados",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Invoca espíritus kitsune para realizar hasta 3 ataques que infligen <electro>Daño Electro</electro>."
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Suyun Şekli",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Arka arkaya, yüzen balıkların şekline bürünen 3 saldırı yaparak <hydro>Su Hasarı</hydro> verir."
       },
       "charged": {

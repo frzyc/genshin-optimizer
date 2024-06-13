@@ -7,7 +7,7 @@
     "name": "Bằng Bằng",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Ném ra những thứ phát nổ khi va chạm! Tấn công nổ tối đa 3 lần, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>."
       },
       "charged": {

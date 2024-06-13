@@ -7,7 +7,7 @@
     "name": "行幡鸣弦",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻击</strong>",
+        "0": "<strong>普通攻击</strong>",
         "1": "释放风刃，进行至多三段的攻击，造成<anemo>风元素伤害</anemo>。"
       },
       "charged": {

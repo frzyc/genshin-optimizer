@@ -7,7 +7,7 @@
     "name": "Yuuban Meigen",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "ทำการโจมตีด้วยดาบลม มากสุด 3 ครั้ง เพื่อสร้าง<anemo>ความเสียหายลม</anemo>"
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Configuration schématique",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Utilise Mehrak pour enchaîner jusqu'à 4 attaques."
       },
       "charged": {

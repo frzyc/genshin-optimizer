@@ -7,7 +7,7 @@
     "name": "Ngôn Từ Hoa Và Gió",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Nổi gió để tấn công tối đa bốn lần, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
       },
       "charged": {

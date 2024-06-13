@@ -7,7 +7,7 @@
     "name": "Cool-Color Capture",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Taking aim at targets using Monsieur Verite, her custom Kamera, Charlotte performs up to 3 consecutive attacks, dealing <cryo>Cryo DMG</cryo>."
       },
       "charged": {

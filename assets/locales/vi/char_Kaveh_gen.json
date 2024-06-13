@@ -7,7 +7,7 @@
     "name": "Thiết Lập Lực Quay",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Sử dụng Mehrak để thực hiện tối đa 4 lần tấn công liên tiếp."
       },
       "charged": {

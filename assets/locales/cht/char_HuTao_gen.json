@@ -7,7 +7,7 @@
     "name": "往生秘傳槍法",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻擊</strong>",
+        "0": "<strong>普通攻擊</strong>",
         "1": "進行至多六段的連續槍擊。"
       },
       "charged": {
