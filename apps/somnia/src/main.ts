@@ -8,12 +8,9 @@ import {
   REST,
   Routes,
 } from 'discord.js'
-import * as fs from 'fs'
-import * as path from 'path'
-import * as process from 'process'
+import * as archive from './commands/archive'
+import * as button from './commands/button'
 import { clientid, token } from './config.json'
-
-export const cwd = process.env['NX_WORKSPACE_ROOT'] ?? process.cwd()
 
 const client = new Client({
   intents: [
@@ -36,21 +33,12 @@ client.on(Events.InteractionCreate, (...args) =>
 
 //collect commands
 export const Commands: Collection<string, any> = new Collection()
-const setcommands: any[] = []
-const commandsPath = path.join(__dirname, 'commands')
-const commandFiles = fs
-  .readdirSync(commandsPath)
-  .filter((file) => file.match(/\.[tj]s$/))
-for (const file of commandFiles) {
-  const command = require(path.join(commandsPath, file))
-  if ('slashcommand' in command && 'run' in command) {
-    Commands.set(command.slashcommand.name, command)
-    setcommands.push(command.slashcommand.toJSON())
-    console.log(`/${file} loaded`)
-  } else {
-    console.log(`/${file} couldn't load`)
-  }
-}
+Commands.set(archive.slashcommand.name, archive)
+Commands.set(button.slashcommand.name, button)
+const setcommands = [
+  archive.slashcommand.toJSON(),
+  button.slashcommand.toJSON(),
+]
 
 //register commands
 const rest = new REST().setToken(token)

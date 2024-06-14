@@ -13,7 +13,7 @@
         "platform": "node",
         "outputPath": "dist/apps/somnia",
         "format": ["cjs"],
-        "bundle": false,
+        "bundle": true,
         "main": "apps/somnia/src/main.ts",
         "tsConfig": "apps/somnia/tsconfig.app.json",
         "assets": [

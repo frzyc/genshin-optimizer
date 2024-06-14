@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import type {
   ApplicationCommandOptionChoiceData,
   AutocompleteInteraction,
@@ -11,8 +10,13 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 import { error } from '../lib/message'
-import { cwd } from '../main'
+import { cwd } from '../util'
 
+import {
+  ArtifactSetKey,
+  LocationCharacterKey,
+  WeaponKey,
+} from '@genshin-optimizer/gi/consts'
 import { artifactarchive } from './archive/artifact'
 import { chararchive } from './archive/char'
 import { weaponarchive } from './archive/weapon'
@@ -67,10 +71,6 @@ export const slashcommand = new SlashCommandBuilder()
       )
   )
 
-const allStat_gen = require(path.join(
-  cwd,
-  '/libs/gi/stats/src/allStat_gen.json'
-))
 //requiring all the data because imports dont work
 const archivepath = path.join(cwd, '/libs/gi/dm-localization/assets/locales/en')
 //get keys
@@ -160,7 +160,7 @@ function clean(s: string) {
   return s.trim()
 }
 
-export { allStat_gen, archive, clean, colors, talentlist }
+export { archive, clean, colors, talentlist }
 
 export async function autocomplete(interaction: AutocompleteInteraction) {
   const subcommand = interaction.options.getSubcommand()
@@ -212,15 +212,21 @@ export function archivemsg(
   if (!(id in archive[subcommand])) throw `Invalid ${subcommand} name.`
   //character archive
   if (subcommand === 'char') {
-    return chararchive(interaction, id, name, data, args)
+    return chararchive(
+      interaction,
+      id as LocationCharacterKey,
+      name,
+      data,
+      args
+    )
   }
   //weapons archive
   else if (subcommand === 'weapon') {
-    return weaponarchive(interaction, id, name, data, args)
+    return weaponarchive(interaction, id as WeaponKey, name, data, args)
   }
   //artifacts archive
   else if (subcommand === 'artifact') {
-    return artifactarchive(interaction, id, name, data)
+    return artifactarchive(interaction, id as ArtifactSetKey, name, data)
   } else throw 'Invalid selection'
 }
 
@@ -229,8 +235,10 @@ export async function run(interaction: ChatInputCommandInteraction) {
   const id = interaction.options.getString('name', true)
 
   let args = ''
-  if (subcommand === 'char') args = interaction.options.getString('talent', false) ?? 'p'
-  if (subcommand === 'weapon') args = String(interaction.options.getInteger('refine', false))
+  if (subcommand === 'char')
+    args = interaction.options.getString('talent', false) ?? 'p'
+  if (subcommand === 'weapon')
+    args = String(interaction.options.getInteger('refine', false))
 
   try {
     interaction.reply(archivemsg(interaction, subcommand, id, args))
