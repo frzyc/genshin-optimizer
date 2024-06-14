@@ -1,4 +1,4 @@
-import { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allRefinementKeys, type WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Interaction, MessageActionRowComponentBuilder } from 'discord.js'
 import {
@@ -8,6 +8,7 @@ import {
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
 import { clean, colors } from '../archive'
+import { range } from '@genshin-optimizer/common/util'
 
 export function weaponarchive(
   interaction: Interaction,
@@ -23,7 +24,7 @@ export function weaponarchive(
   const rarity = allStats.weapon.data[id].rarity
   //default r1 5stars and r5 others
   let refine = '1'
-  //no refinements for 1/2 star weapons
+  //no refinements or dropdown for 1/2 star weapons
   if (rarity > 2) {
     //r1 for 5 star weapons
     if (rarity > 4) refine = '1'
@@ -33,15 +34,15 @@ export function weaponarchive(
     if (args) refine = args
     name += ` (R${refine})`
     //create dropdown menu
-    const options = []
-    for (let i = 1; i <= 5; i++) {
+    const options: StringSelectMenuOptionBuilder[] = []
+    range(1, 5).forEach(i => {
       const r = String(i)
       const option = new StringSelectMenuOptionBuilder()
         .setLabel(`Refinement ${r}`)
         .setValue(r)
       if (refine === r) option.setDefault(true)
       options.push(option)
-    }
+    })
     msg['components'] = [
       new ActionRowBuilder().addComponents(
         new StringSelectMenuBuilder()

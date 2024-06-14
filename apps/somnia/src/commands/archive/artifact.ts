@@ -1,4 +1,4 @@
-import { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Interaction } from 'discord.js'
 import { EmbedBuilder } from 'discord.js'

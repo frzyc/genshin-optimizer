@@ -98,7 +98,8 @@ archive['key']['char']['TravelerHydro'] = 'Traveler (Hydro)'
 for (const category in archive['key']) {
   for (const name in archive['key'][category]) {
     let file = name;
-    if (name.match(/Traveler/)) file += 'F'
+    //why does traveler have to be gendered smh
+    if (category === 'char' && name.match(/Traveler/)) file += 'F'
     const itempath = path.join(archivepath, `/${category}_${file}_gen.json`)
     if (fs.existsSync(itempath)) archive[category][name] = require(itempath)
   }
@@ -234,7 +235,7 @@ export async function run(interaction: ChatInputCommandInteraction) {
   if (subcommand === 'char')
     args = interaction.options.getString('talent', false) ?? 'p'
   if (subcommand === 'weapon')
-    args = String(interaction.options.getInteger('refine', false))
+    args = String(interaction.options.getInteger('refine', false) ?? '')
 
   try {
     interaction.reply(archivemsg(interaction, subcommand, id, args))
