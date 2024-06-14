@@ -1,8 +1,8 @@
 import type {
+  CharacterKey,
   ElementKey,
-  LocationCharacterKey,
 } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
+import { getCharEle } from '@genshin-optimizer/gi/stats'
 import type { Interaction, MessageActionRowComponentBuilder } from 'discord.js'
 import {
   ActionRowBuilder,
@@ -12,18 +12,17 @@ import {
 } from 'discord.js'
 import { clean, colors, talentlist } from '../archive'
 
+
+
 export function chararchive(
   interaction: Interaction,
-  id: LocationCharacterKey,
+  id: CharacterKey,
   name: string,
   data: any,
   args: string
 ) {
   //get element
-  let element = 'none'
-  const travelerelement = id.match(/Traveler(.*)F/)
-  if (!travelerelement) element = allStats.char.data[id].ele!
-  else element = travelerelement[1].toLowerCase()
+  const element = getCharEle(id)
   //setup embed
   const embed = new EmbedBuilder()
     .setFooter({
@@ -31,9 +30,9 @@ export function chararchive(
     })
     .setAuthor({
       name: name,
-      iconURL: colors.element[element as ElementKey | 'none'].img,
+      iconURL: colors.element[element].img,
     })
-    .setColor(colors.element[element as ElementKey | 'none'].color)
+    .setColor(colors.element[element].color)
   //set contents
   let text = ''
   const talent = args

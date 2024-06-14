@@ -10,13 +10,14 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 import { error } from '../lib/message'
-import { cwd } from '../util'
+import { cwd } from '../lib/util'
 
-import {
+import type {
   ArtifactSetKey,
-  LocationCharacterKey,
+  CharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
+import { allWeaponKeys, allCharacterKeys, allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
 import { artifactarchive } from './archive/artifact'
 import { chararchive } from './archive/char'
 import { weaponarchive } from './archive/weapon'
@@ -88,20 +89,23 @@ const archive: Record<string, any> = {
 for (const name in archive['key']['char']) {
   if (name.match(/Traveler/)) delete archive['key']['char'][name]
 }
-archive['key']['char']['TravelerAnemoF'] = 'Traveler (Anemo)'
-archive['key']['char']['TravelerGeoF'] = 'Traveler (Geo)'
-archive['key']['char']['TravelerElectroF'] = 'Traveler (Electro)'
-archive['key']['char']['TravelerDendroF'] = 'Traveler (Dendro)'
-archive['key']['char']['TravelerHydroF'] = 'Traveler (Hydro)'
+archive['key']['char']['TravelerAnemo'] = 'Traveler (Anemo)'
+archive['key']['char']['TravelerGeo'] = 'Traveler (Geo)'
+archive['key']['char']['TravelerElectro'] = 'Traveler (Electro)'
+archive['key']['char']['TravelerDendro'] = 'Traveler (Dendro)'
+archive['key']['char']['TravelerHydro'] = 'Traveler (Hydro)'
 //get all the data from keys
 for (const category in archive['key']) {
   for (const name in archive['key'][category]) {
-    const itempath = path.join(archivepath, `/${category}_${name}_gen.json`)
+    let file = name;
+    if (name.match(/Traveler/)) file += 'F'
+    const itempath = path.join(archivepath, `/${category}_${file}_gen.json`)
     if (fs.existsSync(itempath)) archive[category][name] = require(itempath)
   }
 }
+export {archive}
 
-const colors = {
+export const colors = {
   rarity: [0x818486, 0x5a977a, 0x5987ad, 0x9470bb, 0xc87c24],
   element: {
     none: {
@@ -138,7 +142,7 @@ const colors = {
     },
   },
 }
-const talentlist = {
+export const talentlist = {
   p: { name: 'Character Profile', value: 'p' },
   n: { name: 'Normal/Charged/Plunging Attack', value: 'n' },
   e: { name: 'Elemental Skill', value: 'e' },
@@ -149,7 +153,7 @@ const talentlist = {
 
 //clean tags from input
 //discord has no colored text, so just bold everything instead
-function clean(s: string) {
+export function clean(s: string) {
   //keep italic tags
   s = s.replaceAll(/(<\/?i>)+/g, '*')
   //turn rest into bold
@@ -159,8 +163,6 @@ function clean(s: string) {
   //remove extra whitespace
   return s.trim()
 }
-
-export { archive, clean, colors, talentlist }
 
 export async function autocomplete(interaction: AutocompleteInteraction) {
   const subcommand = interaction.options.getSubcommand()
@@ -212,13 +214,7 @@ export function archivemsg(
   if (!(id in archive[subcommand])) throw `Invalid ${subcommand} name.`
   //character archive
   if (subcommand === 'char') {
-    return chararchive(
-      interaction,
-      id as LocationCharacterKey,
-      name,
-      data,
-      args
-    )
+    return chararchive(interaction, id as CharacterKey, name, data, args)
   }
   //weapons archive
   else if (subcommand === 'weapon') {
