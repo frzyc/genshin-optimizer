@@ -1,4 +1,4 @@
-import { allRefinementKeys, type WeaponKey } from '@genshin-optimizer/gi/consts'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Interaction, MessageActionRowComponentBuilder } from 'discord.js'
 import {

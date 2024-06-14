@@ -17,7 +17,6 @@ import type {
   CharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
-import { allWeaponKeys, allCharacterKeys, allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
 import { artifactarchive } from './archive/artifact'
 import { chararchive } from './archive/char'
 import { weaponarchive } from './archive/weapon'
