@@ -1,3 +1,5 @@
+import { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Interaction, MessageActionRowComponentBuilder } from 'discord.js'
 import {
   ActionRowBuilder,
@@ -5,11 +7,11 @@ import {
   StringSelectMenuBuilder,
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
-import { allStat_gen, clean, colors } from '../archive'
+import { clean, colors } from '../archive'
 
 export function weaponarchive(
   interaction: Interaction,
-  id: string,
+  id: WeaponKey,
   name: string,
   data: any,
   args: string
@@ -18,7 +20,7 @@ export function weaponarchive(
   name = data.name
   let text = Object.values(data.description).join('\n')
   //weapon rarity color
-  const rarity = allStat_gen.weapon.data[id].rarity
+  const rarity = allStats.weapon.data[id].rarity
   //default r1 5stars and r5 others
   let refine = '1'
   //no refinements for 1/2 star weapons
@@ -50,7 +52,9 @@ export function weaponarchive(
     ]
     text +=
       `\n\n**${data.passiveName}:** ` +
-      Object.values(data.passiveDescription[String.fromCharCode(refine.charCodeAt(0)-1)]).join('\n')
+      Object.values(
+        data.passiveDescription[String.fromCharCode(refine.charCodeAt(0) - 1)]
+      ).join('\n')
   }
   //set content
   msg['embeds'] = [

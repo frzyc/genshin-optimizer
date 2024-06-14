@@ -1,15 +1,17 @@
+import { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Interaction } from 'discord.js'
 import { EmbedBuilder } from 'discord.js'
-import { allStat_gen, clean, colors } from '../archive'
+import { clean, colors } from '../archive'
 
 export function artifactarchive(
   interaction: Interaction,
-  id: string,
+  id: ArtifactSetKey,
   name: string,
   data: any
 ) {
   //artifact rarity color
-  const rarities = allStat_gen.art.data[id].rarities
+  const rarities = allStats.art.data[id].rarities
   const rarity = rarities[rarities.length - 1]
   //set content
   let text = ''

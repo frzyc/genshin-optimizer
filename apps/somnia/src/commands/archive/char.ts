@@ -1,11 +1,20 @@
-import type { ElementKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ElementKey,
+  LocationCharacterKey,
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Interaction, MessageActionRowComponentBuilder } from 'discord.js'
-import { ActionRowBuilder, EmbedBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } from 'discord.js'
-import { allStat_gen, clean, colors, talentlist } from '../archive'
+import {
+  ActionRowBuilder,
+  EmbedBuilder,
+  StringSelectMenuBuilder,
+  StringSelectMenuOptionBuilder,
+} from 'discord.js'
+import { clean, colors, talentlist } from '../archive'
 
 export function chararchive(
   interaction: Interaction,
-  id: string,
+  id: LocationCharacterKey,
   name: string,
   data: any,
   args: string
@@ -13,7 +22,7 @@ export function chararchive(
   //get element
   let element = 'none'
   const travelerelement = id.match(/Traveler(.*)F/)
-  if (!travelerelement) element = allStat_gen.char.data[id].ele
+  if (!travelerelement) element = allStats.char.data[id].ele!
   else element = travelerelement[1].toLowerCase()
   //setup embed
   const embed = new EmbedBuilder()
@@ -117,15 +126,15 @@ export function chararchive(
     options.push(menu)
   }
   const components = new ActionRowBuilder().addComponents(
-      new StringSelectMenuBuilder()
-        .setCustomId(`archive char ${id} ${args}`)
-        .setPlaceholder(talentlist[args as keyof typeof talentlist].name)
-        .addOptions(options)
-    ) as ActionRowBuilder<MessageActionRowComponentBuilder>
+    new StringSelectMenuBuilder()
+      .setCustomId(`archive char ${id} ${args}`)
+      .setPlaceholder(talentlist[args as keyof typeof talentlist].name)
+      .addOptions(options)
+  ) as ActionRowBuilder<MessageActionRowComponentBuilder>
 
   return {
     content: '',
     embeds: [embed],
-    components: [components]
+    components: [components],
   }
 }

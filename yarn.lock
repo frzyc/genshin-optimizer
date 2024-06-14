@@ -13509,8 +13509,8 @@ __metadata:
     axios: ^1.6.0
     babel-jest: 29.4.3
     core-js: ^3.28.0
-    discord.js: ^14.15.3
     cypress: 13.8.0
+    discord.js: ^14.15.3
     esbuild: 0.19.2
     eslint: 8.57.0
     eslint-config-next: 14.2.3
