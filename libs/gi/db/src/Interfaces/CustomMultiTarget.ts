@@ -60,8 +60,14 @@ const enclosingSpec = (
     precedence = 3,
     arity = { min: 1, max: Infinity },
     enclosing = { left: '(', right: ')' },
-  } = {}
-) => ({ symbol, precedence, arity, enclosing })
+    description = null,
+  }: Partial<{
+    precedence: number
+    arity: { min: number; max: number }
+    enclosing: { left: string; right: string }
+    description: string | null
+  }> = {}
+) => ({ symbol, precedence, arity, enclosing, description })
 
 export const OperationSpecs: Record<
   NonEnclosingOperation,
@@ -74,6 +80,7 @@ export const OperationSpecs: Record<
       precedence: number
       arity: { min: number; max: number }
       enclosing: { left: string; right: string }
+      description: string | null
     }
   > = {
   addition: { symbol: '+', precedence: 1 },
@@ -84,8 +91,14 @@ export const OperationSpecs: Record<
   minimum: enclosingSpec('min'),
   maximum: enclosingSpec('max'),
   average: enclosingSpec('avg'),
-  clamp: enclosingSpec('clamp', { arity: { min: 3, max: 3 } }),
-  sum_fraction: enclosingSpec('sum_fraction', { arity: { min: 2, max: 2 } }),
+  clamp: enclosingSpec('clamp', {
+    arity: { min: 3, max: 3 },
+    description: 'clamp(min, max, value)',
+  }),
+  sum_fraction: enclosingSpec('sum_fraction', {
+    arity: { min: 2, max: 2 },
+    description: 'x1 / (x1 + x2)',
+  }),
 } as const
 
 const ExpressionUnitTypes = [

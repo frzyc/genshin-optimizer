@@ -18,7 +18,7 @@ import type {
   ItemRelations,
   UnitAddress,
 } from '@genshin-optimizer/gi/db'
-import { itemAddressValue } from '@genshin-optimizer/gi/db'
+import { OperationSpecs, itemAddressValue } from '@genshin-optimizer/gi/db'
 import { CharacterContext } from '@genshin-optimizer/gi/db-ui'
 import { isCharMelee } from '@genshin-optimizer/gi/stats'
 import {
@@ -378,6 +378,16 @@ function UnitConfig({
           setCustomTarget={(t) => setUnit({ target: t })}
         />
       )
+    } else if (unit.type === 'enclosing' && unit.part === 'head') {
+      const { operation } = unit
+      const description = OperationSpecs[operation].description
+      if (description) {
+        result.push(
+          <Typography key="description" variant="body1">
+            {description}
+          </Typography>
+        )
+      }
     }
     if (unit.type !== 'target') {
       result.push(
