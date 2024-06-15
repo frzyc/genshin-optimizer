@@ -33,6 +33,7 @@ import type { Data, Info, NumNode, ReadNode, StrNode } from './type'
 import {
   constant,
   data,
+  frac,
   infoMut,
   max,
   min,
@@ -501,11 +502,15 @@ function parseCustomExpression(
     return prod(constant(1 / parsedParts.length), sum(...parsedParts))
   }
   if (currentOperation === 'priority') {
-    // TODO: Properly implement priority
-    return sum(constant(0), ...parsedParts)
+    if (parsedParts.length > 1)
+      throw new Error('Priority should have only 1 operand')
+    return sum(constant(0), parsedParts[0])
   }
   if (currentOperation === 'clamp') {
     return min(parsedParts[1], max(parsedParts[0], parsedParts[2]))
+  }
+  if (currentOperation === 'sum_fraction') {
+    return frac(parsedParts[0], parsedParts[1])
   }
   return ((_: never) => {
     throw new Error(`Unexpected operation ${currentOperation}`)

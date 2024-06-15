@@ -27,6 +27,7 @@ const ExpressionOperations = [
   'maximum',
   'average',
   'clamp',
+  'sum_fraction',
   // 'ceil',
   // 'floor',
 ] as const
@@ -40,6 +41,7 @@ const EnclosingOperations = [
   'maximum',
   'average',
   'clamp',
+  'sum_fraction',
 ] as const
 export type EnclosingOperation = (typeof EnclosingOperations)[number]
 export const isEnclosing = (op: unknown): op is EnclosingOperation =>
@@ -83,6 +85,7 @@ export const OperationSpecs: Record<
   maximum: enclosingSpec('max'),
   average: enclosingSpec('avg'),
   clamp: enclosingSpec('clamp', { arity: { min: 3, max: 3 } }),
+  sum_fraction: enclosingSpec('sum_fraction', { arity: { min: 2, max: 2 } }),
 } as const
 
 const ExpressionUnitTypes = [
