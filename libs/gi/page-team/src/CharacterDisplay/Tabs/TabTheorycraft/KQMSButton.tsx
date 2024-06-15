@@ -39,7 +39,7 @@ export default function KQMSButton({
                 This will replace your current <strong>substat setup</strong>{' '}
                 with one that adheres to the{' '}
                 <Link
-                  href="https://compendium.keqingmains.com/kqm-standards"
+                  href="https://compendium.keqingmains.com/"
                   target="_blank"
                 >
                   KQM Standards

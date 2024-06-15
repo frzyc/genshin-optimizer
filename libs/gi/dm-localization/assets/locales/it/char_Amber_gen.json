@@ -7,7 +7,7 @@
     "name": "Tiratore scelto",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Effettua fino a 5 tiri consecutivi con un arco."
       },
       "charged": {

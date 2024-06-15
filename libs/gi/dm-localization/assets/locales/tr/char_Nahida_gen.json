@@ -7,7 +7,7 @@
     "name": "Akara",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Önündeki düşmanlara <dendro>Doğa Hasarı</dendro> veren en fazla 4 saldırı yapar."
       },
       "charged": {

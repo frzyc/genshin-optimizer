@@ -7,7 +7,7 @@
     "name": "Sparkling Scatter",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Shoots gems that deal <geo>Geo DMG</geo>.",
         "2": "Upon hit, this grants Ningguang 1 Star Jade."
       },

@@ -7,7 +7,7 @@
     "name": "不動流格闘術",
     "fields": {
       "normal": {
-        "0": "<strong><strong>通常攻撃</strong>",
+        "0": "<strong>通常攻撃</strong>",
         "1": "強風が宿る強力な技で敵と格闘する。最大5段の連続攻撃を行い、<anemo>風元素ダメージ</anemo>を与える。"
       },
       "charged": {

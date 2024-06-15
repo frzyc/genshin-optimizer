@@ -7,7 +7,7 @@
     "name": "Cool-Color Capture",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Menggunakan Kamera buatan khusus, \"Monsieur Verite\", untuk membidik target dan melancarkan maksimum 3 serangan berturut-turut dan mengakibatkan <cryo>Cryo DMG</cryo>."
       },
       "charged": {

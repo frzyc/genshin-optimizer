@@ -7,7 +7,7 @@
     "name": "Toque do Relâmpago",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza até 4 ataques de relâmpago que infligem <electro>Dano Electro</electro>."
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Flechas da Culpa",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong> Realiza até 5 tiros consecutivos com um arco."
+        "0": "<strong>Ataque Normal</strong> Realiza até 5 tiros consecutivos com um arco."
       },
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",

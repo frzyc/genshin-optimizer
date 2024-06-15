@@ -7,7 +7,7 @@
     "name": "Yuuban Meigen",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Entfesselt Windklingen, um bis zu 3 Angriffe auszuführen und verursacht <anemo>Anemo-Schaden</anemo>."
       },
       "charged": {

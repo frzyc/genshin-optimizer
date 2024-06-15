@@ -7,7 +7,7 @@
     "name": "Pioggia di pietra",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferra fino a 6 colpi di lancia consecutivi."
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Héroe del combate",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza hasta 4 tajos de espada consecutivos.",
         "2": "Al golpear a un enemigo con el segundo y el cuarto tajo, crea respectivamente 1 y 2 cargas del efecto “fuerza sobrenatural”, el cual puede acumularse un máximo de 5 veces. Al activar este efecto, se reiniciará la duración de las cargas existentes.",
         "3": "<br/>",

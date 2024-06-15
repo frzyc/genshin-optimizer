@@ -7,7 +7,7 @@
     "name": "Légende de la baston",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Enchaîne jusqu'à 4 coups d'épée.",
         "2": "Lorsque son 2e et 4e coup touchent un ennemi, Itto obtient respectivement 1 et 2 cumuls de mégaforce superlative.",
         "3": "Itto peut détenir un maximum de 5 cumuls de mégaforce superlative, et chaque fois que cet effet se déclenche, la durée des cumuls en sa possession est réinitialisée.",

@@ -7,7 +7,7 @@
     "name": "악멸의 사식",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "대검으로 최대 4번 공격한다."
       },
       "charged": {

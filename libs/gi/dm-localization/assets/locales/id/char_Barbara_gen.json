@@ -7,7 +7,7 @@
     "name": "Whisper of Water",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Melancarkan hingga 4 serangan air yang mengakibatkan <hydro>Hydro DMG</hydro>."
       },
       "charged": {

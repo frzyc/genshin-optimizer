@@ -7,7 +7,7 @@
     "name": "Remanso acuático",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Blande ligeramente su bastón para hacer que las olas del mar ejecuten hasta un máximo de 3 ataques que infligen <hydro>Daño Hydro</hydro>."
       },
       "chargedLegal": {

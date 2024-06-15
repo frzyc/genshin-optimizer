@@ -7,7 +7,7 @@
     "name": "Artes marciales Fudou",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Ejecuta hasta 5 golpes marciales fortalecidos con el poder del viento para infligir <anemo>Daño Anemo</anemo>."
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Lanzamiento centelleante",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal </strong>",
+        "0": "<strong>Ataque Normal </strong>",
         "1": "Dispara gemas que infligen <geo>Daño Geo</geo>.",
         "2": "Al golpear, esto le otorga a Ninguang un jade estelar."
       },

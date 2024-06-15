@@ -7,7 +7,7 @@
     "name": "Kaboom!",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Throws things that go boom when they hit things! Performs up to 3 explosive attacks, dealing <pyro>AoE Pyro DMG</pyro>."
       },
       "charged": {
