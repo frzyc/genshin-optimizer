@@ -107,6 +107,34 @@ export default function TabWeapon() {
     setOrderBy(property)
   }
 
+  const weaponDataCache: Map<WeaponKey, { main: string; sub: string }> =
+    useMemo(() => {
+      const cache = new Map<WeaponKey, { main: string; sub: string }>()
+      allWeaponKeys.forEach((wKey) => {
+        const { rarity } = getWeaponStat(wKey)
+        const weapon: ICachedWeapon = {
+          id: 'invalid',
+          ascension: rarity > 2 ? 6 : 4,
+          key: wKey,
+          level: rarity > 2 ? 90 : 70,
+          refinement: 1,
+          location: '',
+          lock: false,
+        }
+        const weaponUIData = computeUIData([
+          getWeaponSheet(wKey).data,
+          dataObjForWeapon(weapon),
+        ])
+        const mainNode = weaponUIData.get(input.weapon.main)
+        const subNode = weaponUIData.get(input.weapon.sub)
+        cache.set(wKey, {
+          main: getCalcDisplay(mainNode).valueString,
+          sub: getCalcDisplay(subNode).valueString,
+        })
+      })
+      return cache
+    }, [])
+
   const { t } = useTranslation(`weaponNames_gen`)
   const sortedWeaponKeys = useMemo(
     () =>
@@ -117,46 +145,12 @@ export default function TabWeapon() {
           name: (wKey: WeaponKey) => t(`weaponNames_gen:${wKey}`),
           type: (wKey: WeaponKey) => getWeaponStat(wKey).weaponType,
           rarity: (wKey: WeaponKey) => getWeaponStat(wKey).rarity,
-          main: (wKey: WeaponKey) => {
-            const { rarity } = getWeaponStat(wKey)
-            const weapon: ICachedWeapon = {
-              id: 'invalid',
-              ascension: rarity > 2 ? 6 : 4,
-              key: wKey,
-              level: rarity > 2 ? 90 : 70,
-              refinement: 1,
-              location: '',
-              lock: false,
-            }
-            const weaponUIData = computeUIData([
-              getWeaponSheet(wKey).data,
-              dataObjForWeapon(weapon),
-            ])
-            const node = weaponUIData.get(input.weapon.main)
-            return getCalcDisplay(node).valueString
-          },
-          sub: (wKey: WeaponKey) => {
-            const { rarity } = getWeaponStat(wKey)
-            const weapon: ICachedWeapon = {
-              id: 'invalid',
-              ascension: rarity > 2 ? 6 : 4,
-              key: wKey,
-              level: rarity > 2 ? 90 : 70,
-              refinement: 1,
-              location: '',
-              lock: false,
-            }
-            const weaponUIData = computeUIData([
-              getWeaponSheet(wKey).data,
-              dataObjForWeapon(weapon),
-            ])
-            const node = weaponUIData.get(input.weapon.sub)
-            return getCalcDisplay(node).valueString
-          },
+          main: (wKey: WeaponKey) => weaponDataCache.get(wKey)?.main ?? '',
+          sub: (wKey: WeaponKey) => weaponDataCache.get(wKey)?.sub ?? '',
           subType: (wKey: WeaponKey) => getWeaponStat(wKey).subStat?.type ?? '',
         } as SortConfigs<SortKey, WeaponKey>
       ),
-    [order, orderBy, t]
+    [order, orderBy, t, weaponDataCache]
   )
 
   const { numShow, setTriggerElement } = useInfScroll(10, weaponKeys.length)
