@@ -5,7 +5,6 @@ import {
 } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
 import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
@@ -70,8 +69,6 @@ function Page({ teamId }: { teamId: string }) {
 
   const teamCharId = loadoutDatum?.teamCharId
   const characterKey = database.teamChars.get(teamCharId)?.key
-
-  const { t } = useTranslation(['charNames_gen', 'page_character'])
 
   return (
     <Box
