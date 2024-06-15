@@ -50,12 +50,17 @@ export const slashcommand = new SlashCommandBuilder()
           .setAutocomplete(true)
           .setRequired(true)
       )
-      .addIntegerOption((o) =>
+      .addStringOption((o) =>
         o
           .setName('refine')
           .setDescription('Refinement level (1-5)')
-          .setMinValue(1)
-          .setMaxValue(5)
+          .addChoices(
+            { name: 'Refinement 1', value: '0' },
+            { name: 'Refinement 2', value: '1' },
+            { name: 'Refinement 3', value: '2' },
+            { name: 'Refinement 4', value: '3' },
+            { name: 'Refinement 5', value: '4' },
+          )
       )
   )
   .addSubcommand((s) =>
@@ -197,7 +202,6 @@ export async function autocomplete(interaction: AutocompleteInteraction) {
       reply = Object.values(talentlist).filter((e) => e.name.includes(talent))
     }
   }
-
   interaction.respond(reply)
 }
 
@@ -205,7 +209,7 @@ export function archivemsg(
   interaction: Interaction,
   subcommand: string,
   id: string,
-  args: string
+  arg: string
 ) {
   const name = archive['key'][subcommand][id]
   const data = archive[subcommand][id]
@@ -214,11 +218,11 @@ export function archivemsg(
   if (!(id in archive[subcommand])) throw `Invalid ${subcommand} name.`
   //character archive
   if (subcommand === 'char') {
-    return chararchive(interaction, id as CharacterKey, name, data, args)
+    return chararchive(interaction, id as CharacterKey, name, data, arg)
   }
   //weapons archive
   else if (subcommand === 'weapon') {
-    return weaponarchive(interaction, id as WeaponKey, name, data, args)
+    return weaponarchive(interaction, id as WeaponKey, name, data, arg)
   }
   //artifacts archive
   else if (subcommand === 'artifact') {
@@ -230,14 +234,14 @@ export async function run(interaction: ChatInputCommandInteraction) {
   const subcommand = interaction.options.getSubcommand()
   const id = interaction.options.getString('name', true)
 
-  let args = ''
+  let arg = ''
   if (subcommand === 'char')
-    args = interaction.options.getString('talent', false) ?? 'p'
+    arg = interaction.options.getString('talent', false) ?? 'p'
   if (subcommand === 'weapon')
-    args = String(interaction.options.getInteger('refine', false) ?? '')
+    arg = interaction.options.getString('refine', false) ?? ''
 
   try {
-    interaction.reply(archivemsg(interaction, subcommand, id, args))
+    interaction.reply(archivemsg(interaction, subcommand, id, arg))
   } catch (e) {
     error(interaction, e)
   }

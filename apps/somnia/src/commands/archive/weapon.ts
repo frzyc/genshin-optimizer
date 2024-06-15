@@ -10,6 +10,8 @@ import {
 import { clean, colors } from '../archive'
 import { range } from '@genshin-optimizer/common/util'
 
+const refinedisplay : Record<string, string> = {0: '1', 1: '2', 2: '3', 3: '4', 4: '5'}
+
 export function weaponarchive(
   interaction: Interaction,
   id: WeaponKey,
@@ -22,23 +24,22 @@ export function weaponarchive(
   let text = Object.values(data.description).join('\n')
   //weapon rarity color
   const rarity = allStats.weapon.data[id].rarity
-  //default r1 5stars and r5 others
-  let refine = '1'
+  //default r1 5stars
+  let refine = '0'
   //no refinements or dropdown for 1/2 star weapons
   if (rarity > 2) {
-    //r1 for 5 star weapons
-    if (rarity > 4) refine = '1'
     //r5 for 3/4 star weapons
-    else refine = '5'
+    if (rarity < 5) refine = '4'
     //user input override
-    if (args) refine = args
-    name += ` (R${refine})`
+    if (args in refinedisplay) refine = args
+    else throw 'invalid refine'
+    name += ` (R${refinedisplay[refine]})`
     //create dropdown menu
     const options: StringSelectMenuOptionBuilder[] = []
     range(1, 5).forEach(i => {
-      const r = String(i)
+      const r = String(i-1)
       const option = new StringSelectMenuOptionBuilder()
-        .setLabel(`Refinement ${r}`)
+        .setLabel(`Refinement ${i}`)
         .setValue(r)
       if (refine === r) option.setDefault(true)
       options.push(option)
@@ -54,7 +55,7 @@ export function weaponarchive(
     text +=
       `\n\n**${data.passiveName}:** ` +
       Object.values(
-        data.passiveDescription[String.fromCharCode(refine.charCodeAt(0) - 1)]
+        data.passiveDescription[refine]
       ).join('\n')
   }
   //set content

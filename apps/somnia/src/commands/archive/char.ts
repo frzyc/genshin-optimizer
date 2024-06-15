@@ -9,7 +9,7 @@ import {
 } from 'discord.js'
 import { clean, colors, talentlist } from '../archive'
 
-function profileEmbed(embed: EmbedBuilder, name: string, data: any) {
+function profileEmbed(embed: EmbedBuilder, id: CharacterKey, data: any) {
   const text = data.description ??
   'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.'
   if (data.title) embed.setTitle(data.title)
@@ -17,7 +17,7 @@ function profileEmbed(embed: EmbedBuilder, name: string, data: any) {
   return embed
 }
 
-function normalsEmbed(embed: EmbedBuilder, name: string, data: any) {
+function normalsEmbed(embed: EmbedBuilder, id: CharacterKey, data: any) {
   embed
   .setTitle(data.auto.name)
   .setDescription(
@@ -33,7 +33,7 @@ function normalsEmbed(embed: EmbedBuilder, name: string, data: any) {
   return embed
 }
 
-function skillEmbed(embed: EmbedBuilder, name: string, data: any) {
+function skillEmbed(embed: EmbedBuilder, id: CharacterKey, data: any) {
   embed
   .setTitle(data.skill.name)
   .setDescription(
@@ -42,7 +42,7 @@ function skillEmbed(embed: EmbedBuilder, name: string, data: any) {
   return embed
 }
 
-function burstEmbed(embed: EmbedBuilder, name: string, data: any) {
+function burstEmbed(embed: EmbedBuilder, id: CharacterKey, data: any) {
   embed
   .setTitle(data.burst.name)
   .setDescription(
@@ -51,7 +51,7 @@ function burstEmbed(embed: EmbedBuilder, name: string, data: any) {
   return embed
 }
 
-function passivesEmbed(embed: EmbedBuilder, name: string, data: any, talent: string) {
+function passivesEmbed(embed: EmbedBuilder, id: CharacterKey, data: any, talent: string) {
   let text = ''
   //list all passives
   let list = Object.keys(data).filter((e) => e.startsWith('passive'))
@@ -76,7 +76,7 @@ function passivesEmbed(embed: EmbedBuilder, name: string, data: any, talent: str
   return embed
 }
 
-function constellationsEmbed(embed: EmbedBuilder, name: string, data: any, talent: string) {
+function constellationsEmbed(embed: EmbedBuilder, id: CharacterKey, data: any, talent: string) {
   let text = ''
   let arr = ['1', '2', '3', '4', '5', '6']
   if (talent.length > 1) arr = [talent[1]]
@@ -89,7 +89,7 @@ function constellationsEmbed(embed: EmbedBuilder, name: string, data: any, talen
   }
   //make embed
   if (data.constellationName) embed.setTitle(data.constellationName)
-  embed.setAuthor({ name: name }).setDescription(clean(text))
+  embed.setDescription(clean(text))
   return embed
 }
 
@@ -117,27 +117,27 @@ export function chararchive(
 
   //character profile
   if (talent === 'p') {
-    embed = profileEmbed(embed, name, data)
+    embed = profileEmbed(embed, id, data)
   }
   //normal/charged/plunging attacks
   else if (talent === 'n') {
-    embed = normalsEmbed(embed, name, data)
+    embed = normalsEmbed(embed, id, data)
   }
   //elemental skill
   else if (talent === 'e') {
-    embed = skillEmbed(embed, name, data)
+    embed = skillEmbed(embed, id, data)
   }
   //elemental burst
   else if (talent === 'q') {
-    embed = burstEmbed(embed, name, data)
+    embed = burstEmbed(embed, id, data)
   }
   //passives
   else if (talent.match(/a\d?/)) {
-    embed = passivesEmbed(embed, name, data, talent)
+    embed = passivesEmbed(embed, id, data, talent)
   }
   //constellations
   else if (talent.match(/c[123456]?/)) {
-    embed = constellationsEmbed(embed, name, data, talent)
+    embed = constellationsEmbed(embed, id, data, talent)
   }
   else throw 'Invalid talent name.'
 
