@@ -23,6 +23,8 @@ export interface ArchiveArtifactOption {
 export interface ArchiveCharacterOption {
   rarity: CharacterRarityKey[]
   weaponType: WeaponTypeKey[]
+  sortOrder: 'asc' | 'desc'
+  sortOrderBy: 'name' | 'rarity' | 'element' | 'type'
 }
 
 export interface ArchiveWeaponOption {
@@ -46,6 +48,8 @@ const initialArtifactOption = (): ArchiveArtifactOption => ({
 const initialCharacterOption = (): ArchiveCharacterOption => ({
   rarity: [...allCharacterRarityKeys],
   weaponType: [...allWeaponTypeKeys],
+  sortOrder: 'desc',
+  sortOrderBy: 'name',
 })
 
 const initialWeaponOption = (): ArchiveWeaponOption => ({
@@ -86,13 +90,20 @@ export class DisplayArchiveEntry extends DataEntry<
 
       if (typeof character !== 'object') character = initialCharacterOption()
       else {
-        let { rarity, weaponType } = character
+        let { rarity, weaponType, sortOrder, sortOrderBy } = character
         rarity = validateArr(rarity, allCharacterRarityKeys)
         weaponType = validateArr(weaponType, allWeaponTypeKeys)
-
+        if (!['asc', 'desc'].includes(sortOrder)) {
+          sortOrder = 'desc'
+        }
+        if (!['name', 'rarity', 'element', 'type'].includes(sortOrderBy)) {
+          sortOrderBy = 'name'
+        }
         character = {
           rarity,
           weaponType,
+          sortOrder,
+          sortOrderBy,
         }
       }
 

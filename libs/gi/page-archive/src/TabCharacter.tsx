@@ -1,7 +1,8 @@
 import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
-import { handleMultiSelect } from '@genshin-optimizer/common/util'
+import type { SortConfigs } from '@genshin-optimizer/common/util'
+import { handleMultiSelect, sortFunction } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -34,6 +35,7 @@ import {
   TableCell,
   TableHead,
   TableRow,
+  TableSortLabel,
   TextField,
   ToggleButton,
   ToggleButtonGroup,
@@ -47,6 +49,7 @@ import {
   useMemo,
   useState,
 } from 'react'
+import { useTranslation } from 'react-i18next'
 import { CharacterView } from './CharacterView'
 const rarties = [5, 4] as const
 export default function TabCharacter() {
@@ -91,10 +94,37 @@ export default function TabCharacter() {
   }, [character, searchTermDeferred, silly])
 
   const { numShow, setTriggerElement } = useInfScroll(10, charKeys.length)
-  const charKeysToShow = useMemo(
-    () => charKeys.slice(0, numShow),
-    [charKeys, numShow]
+  type SortKey = 'name' | 'rarity' | 'element' | 'type'
+  const handleSort = (property: SortKey) => {
+    const isAsc =
+      character.sortOrderBy === property && character.sortOrder === 'asc'
+    characterOptionDispatch({
+      sortOrder: isAsc ? 'desc' : 'asc',
+      sortOrderBy: property,
+    })
+  }
+  const { t } = useTranslation(`charNames_gen`)
+
+  const sortedCharKeys = useMemo(
+    () =>
+      sortFunction([character.sortOrderBy], character.sortOrder === 'asc', {
+        name: (cKey: CharacterKey) => t(cKey),
+        rarity: (cKey: CharacterKey) => getCharStat(cKey).rarity,
+        element: (cKey: CharacterKey) => getCharEle(cKey),
+        type: (cKey: CharacterKey) => getCharStat(cKey).weaponType,
+      } as SortConfigs<SortKey, CharacterKey>),
+    [character.sortOrder, character.sortOrderBy, t]
   )
+  const charKeysToShow = useMemo(
+    () => charKeys.sort(sortedCharKeys).slice(0, numShow),
+    [charKeys, numShow, sortedCharKeys]
+  )
+  const columns: { key: SortKey; label: string }[] = [
+    { key: 'name', label: 'Name' },
+    { key: 'rarity', label: 'Rarity' },
+    { key: 'element', label: 'Element' },
+    { key: 'type', label: 'Type' },
+  ]
   return (
     <Box>
       <CardContent sx={{ display: 'flex', gap: 2 }}>
@@ -147,10 +177,23 @@ export default function TabCharacter() {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Rarity</TableCell>
-            <TableCell>Element</TableCell>
-            <TableCell>Type</TableCell>
+            {columns.map(({ key, label }) => (
+              <TableCell
+                sortDirection={
+                  character.sortOrderBy === key ? character.sortOrder : false
+                }
+              >
+                <TableSortLabel
+                  active={character.sortOrderBy === key}
+                  direction={
+                    character.sortOrderBy === key ? character.sortOrder : 'asc'
+                  }
+                  onClick={() => handleSort(key)}
+                >
+                  {label}
+                </TableSortLabel>
+              </TableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>
