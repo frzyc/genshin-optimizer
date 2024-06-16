@@ -93,11 +93,11 @@ export const OperationSpecs: Record<
   average: enclosingSpec('avg'),
   clamp: enclosingSpec('clamp', {
     arity: { min: 3, max: 3 },
-    description: 'clamp(min, max, value)',
+    description: 'clamp(min, max, value) = min(max, max(min, value))',
   }),
   sum_fraction: enclosingSpec('sum_fraction', {
     arity: { min: 2, max: 2 },
-    description: 'x1 / (x1 + x2)',
+    description: 'sum_fraction(x1, x2) = x1 / (x1 + x2)',
   }),
 } as const
 
