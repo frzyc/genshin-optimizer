@@ -100,7 +100,7 @@ export const OperationSpecs: Record<
   NonEnclosingOperation,
   NonEnclosingOperationSpec
 > &
-  Record<EnclosingOperation, NonEnclosingOperationSpec> = {
+  Record<EnclosingOperation, EnclosingOperationSpec> = {
   addition: nonEnclosingSpecConstructor('+', { precedence: 1 }),
   subtraction: nonEnclosingSpecConstructor('-', { precedence: 1 }),
   multiplication: nonEnclosingSpecConstructor('*', { precedence: 2 }),
