@@ -58,7 +58,6 @@ import {
   useMemo,
   useState,
 } from 'react'
-import { useTranslation } from 'react-i18next'
 import { WeaponView } from './WeaponView'
 
 const rarities = [5, 4, 3, 2, 1] as const
@@ -134,7 +133,6 @@ export default function TabWeapon() {
       return cache
     }, [])
 
-  const { t } = useTranslation(`weaponNames_gen`)
   const sortedWeaponKeys = useMemo(
     () =>
       sortFunction(
@@ -143,7 +141,7 @@ export default function TabWeapon() {
           : [weapon.sortOrderBy],
         weapon.sortOrder === 'asc',
         {
-          name: (wKey: WeaponKey) => t(`weaponNames_gen:${wKey}`),
+          name: (wKey: WeaponKey) => i18n.t(`weaponNames_gen:${wKey}`),
           type: (wKey: WeaponKey) => getWeaponStat(wKey).weaponType,
           rarity: (wKey: WeaponKey) => getWeaponStat(wKey).rarity,
           main: (wKey: WeaponKey) => weaponDataCache.get(wKey)?.main ?? '',
@@ -151,7 +149,7 @@ export default function TabWeapon() {
           subType: (wKey: WeaponKey) => getWeaponStat(wKey).subStat?.type ?? '',
         } as SortConfigs<SortKey, WeaponKey>
       ),
-    [t, weapon.sortOrder, weapon.sortOrderBy, weaponDataCache]
+    [weapon.sortOrder, weapon.sortOrderBy, weaponDataCache]
   )
 
   const { numShow, setTriggerElement } = useInfScroll(10, weaponKeys.length)
