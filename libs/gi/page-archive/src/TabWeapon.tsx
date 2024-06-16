@@ -172,12 +172,12 @@ export default function TabWeapon() {
       ),
     [weaponKeys]
   )
-  const columns: { key: SortKey; label: string }[] = [
-    { key: 'name', label: 'Name' },
-    { key: 'type', label: 'Type' },
-    { key: 'rarity', label: 'Rarity' },
-    { key: 'main', label: 'Main' },
-    { key: 'sub', label: 'Secondary' },
+  const columns: { key: SortKey; label: string; width: number }[] = [
+    { key: 'name', label: 'Name', width: 30 },
+    { key: 'type', label: 'Type', width: 10 },
+    { key: 'rarity', label: 'Rarity', width: 10 },
+    { key: 'main', label: 'Main', width: 20 },
+    { key: 'sub', label: 'Secondary', width: 30 },
   ]
   return (
     <Box>
@@ -238,11 +238,12 @@ export default function TabWeapon() {
       <Table>
         <TableHead>
           <TableRow>
-            {columns.map(({ key, label }) => (
+            {columns.map(({ key, label, width }) => (
               <TableCell
                 sortDirection={
                   weapon.sortOrderBy === key ? weapon.sortOrder : false
                 }
+                width={`${width}%`}
               >
                 <TableSortLabel
                   active={weapon.sortOrderBy === key}

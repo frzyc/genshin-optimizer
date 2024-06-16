@@ -119,11 +119,11 @@ export default function TabCharacter() {
     () => charKeys.sort(sortedCharKeys).slice(0, numShow),
     [charKeys, numShow, sortedCharKeys]
   )
-  const columns: { key: SortKey; label: string }[] = [
-    { key: 'name', label: 'Name' },
-    { key: 'rarity', label: 'Rarity' },
-    { key: 'element', label: 'Element' },
-    { key: 'type', label: 'Type' },
+  const columns: { key: SortKey; label: string; width: number }[] = [
+    { key: 'name', label: 'Name', width: 40 },
+    { key: 'rarity', label: 'Rarity', width: 20 },
+    { key: 'element', label: 'Element', width: 20 },
+    { key: 'type', label: 'Type', width: 20 },
   ]
   return (
     <Box>
@@ -177,11 +177,12 @@ export default function TabCharacter() {
       <Table>
         <TableHead>
           <TableRow>
-            {columns.map(({ key, label }) => (
+            {columns.map(({ key, label, width }) => (
               <TableCell
                 sortDirection={
                   character.sortOrderBy === key ? character.sortOrder : false
                 }
+                width={`${width}%`}
               >
                 <TableSortLabel
                   active={character.sortOrderBy === key}
