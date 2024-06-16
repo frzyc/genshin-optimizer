@@ -54,48 +54,68 @@ export type NonEnclosingOperation = Exclude<
 export const isNonEnclosing = (op: unknown): op is NonEnclosingOperation =>
   isExpressionOperation(op) && !isEnclosing(op)
 
-const enclosingSpec = (
+interface NonEnclosingOperationSpec {
+  symbol: string
+  precedence: number
+  description: string | null
+}
+
+interface EnclosingOperationSpec {
+  symbol: string
+  precedence: number
+  arity: { min: number; max: number }
+  enclosing: { left: string; right: string }
+  description: string | null
+}
+
+const enclosingSpecConstructor = (
   symbol: string,
   {
     precedence = 3,
     arity = { min: 1, max: Infinity },
     enclosing = { left: '(', right: ')' },
     description = null,
-  }: Partial<{
-    precedence: number
-    arity: { min: number; max: number }
-    enclosing: { left: string; right: string }
-    description: string | null
-  }> = {}
-) => ({ symbol, precedence, arity, enclosing, description })
+  }: Partial<EnclosingOperationSpec> = {}
+) => ({
+  symbol,
+  precedence,
+  arity,
+  enclosing,
+  description,
+})
+
+const nonEnclosingSpecConstructor = (
+  symbol: string,
+  {
+    precedence = 3,
+    description = null,
+  }: Partial<NonEnclosingOperationSpec> = {}
+) => ({
+  symbol,
+  precedence,
+  description,
+})
 
 export const OperationSpecs: Record<
   NonEnclosingOperation,
-  { symbol: string; precedence: number }
+  NonEnclosingOperationSpec
 > &
-  Record<
-    EnclosingOperation,
-    {
-      symbol: string
-      precedence: number
-      arity: { min: number; max: number }
-      enclosing: { left: string; right: string }
-      description: string | null
-    }
-  > = {
-  addition: { symbol: '+', precedence: 1 },
-  subtraction: { symbol: '-', precedence: 1 },
-  multiplication: { symbol: '*', precedence: 2 },
-  division: { symbol: '/', precedence: 2 },
-  priority: enclosingSpec('', { arity: { min: 1, max: 1 } }),
-  minimum: enclosingSpec('min'),
-  maximum: enclosingSpec('max'),
-  average: enclosingSpec('avg'),
-  clamp: enclosingSpec('clamp', {
+  Record<EnclosingOperation, NonEnclosingOperationSpec> = {
+  addition: nonEnclosingSpecConstructor('+', { precedence: 1 }),
+  subtraction: nonEnclosingSpecConstructor('-', { precedence: 1 }),
+  multiplication: nonEnclosingSpecConstructor('*', { precedence: 2 }),
+  division: nonEnclosingSpecConstructor('/', { precedence: 2 }),
+  priority: enclosingSpecConstructor('', { arity: { min: 1, max: 1 } }),
+  minimum: enclosingSpecConstructor('min'),
+  maximum: enclosingSpecConstructor('max'),
+  average: enclosingSpecConstructor('avg', {
+    description: 'avg(x1, x2, ..., xn) = (x1 + x2 + ... + xn) / n',
+  }),
+  clamp: enclosingSpecConstructor('clamp', {
     arity: { min: 3, max: 3 },
     description: 'clamp(min, max, value) = min(max, max(min, value))',
   }),
-  sum_fraction: enclosingSpec('sum_fraction', {
+  sum_fraction: enclosingSpecConstructor('sum_fraction', {
     arity: { min: 2, max: 2 },
     description: 'sum_fraction(x1, x2) = x1 / (x1 + x2)',
   }),
