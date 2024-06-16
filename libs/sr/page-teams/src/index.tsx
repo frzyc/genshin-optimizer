@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 
 export default function PageTeams() {
   return (
-    <Box>
+    <Box sx={{ mt: 1 }}>
       <TeamInventory />
     </Box>
   )
