@@ -98,13 +98,12 @@ export default function TabWeapon() {
   }, [weapon, searchTermDeferred])
   type SortKey = 'name' | 'type' | 'rarity' | 'main' | 'sub' | 'subType'
 
-  const [order, setOrder] = useState<'asc' | 'desc'>('asc')
-  const [orderBy, setOrderBy] = useState<SortKey>('name')
-
   const handleSort = (property: SortKey) => {
-    const isAsc = orderBy === property && order === 'asc'
-    setOrder(isAsc ? 'desc' : 'asc')
-    setOrderBy(property)
+    const isAsc = weapon.sortOrderBy === property && weapon.sortOrder === 'asc'
+    weaponOptionDispatch({
+      sortOrder: isAsc ? 'desc' : 'asc',
+      sortOrderBy: property,
+    })
   }
 
   const weaponDataCache: Map<WeaponKey, { main: string; sub: string }> =
@@ -139,8 +138,8 @@ export default function TabWeapon() {
   const sortedWeaponKeys = useMemo(
     () =>
       sortFunction(
-        orderBy === 'sub' ? ['subType', orderBy] : [orderBy],
-        order === 'asc',
+        weapon.sortOrderBy === 'sub' ? ['subType', weapon.sortOrderBy] : [weapon.sortOrderBy],
+        weapon.sortOrder === 'asc',
         {
           name: (wKey: WeaponKey) => t(`weaponNames_gen:${wKey}`),
           type: (wKey: WeaponKey) => getWeaponStat(wKey).weaponType,
@@ -150,7 +149,7 @@ export default function TabWeapon() {
           subType: (wKey: WeaponKey) => getWeaponStat(wKey).subStat?.type ?? '',
         } as SortConfigs<SortKey, WeaponKey>
       ),
-    [order, orderBy, t, weaponDataCache]
+    [t, weapon.sortOrder, weapon.sortOrderBy, weaponDataCache]
   )
 
   const { numShow, setTriggerElement } = useInfScroll(10, weaponKeys.length)
@@ -238,10 +237,10 @@ export default function TabWeapon() {
         <TableHead>
           <TableRow>
             {columns.map(({ key, label }) => (
-              <TableCell sortDirection={orderBy === key ? order : false}>
+              <TableCell sortDirection={weapon.sortOrderBy === key ? weapon.sortOrder : false}>
                 <TableSortLabel
-                  active={orderBy === key}
-                  direction={orderBy === key ? order : 'asc'}
+                  active={weapon.sortOrderBy === key}
+                  direction={weapon.sortOrderBy === key ? weapon.sortOrder : 'asc'}
                   onClick={() => handleSort(key)}
                 >
                   {label}

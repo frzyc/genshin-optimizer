@@ -29,6 +29,8 @@ export interface ArchiveWeaponOption {
   rarity: RarityKey[]
   weaponType: WeaponTypeKey[]
   subStat: WeaponSubstatKey[]
+  sortOrder: 'asc' | 'desc'
+  sortOrderBy: 'name' | 'type' | 'rarity' | 'main' | 'sub' | 'subType'
 }
 
 export interface IDisplayArchiveEntry {
@@ -50,6 +52,8 @@ const initialWeaponOption = (): ArchiveWeaponOption => ({
   rarity: [...allRarityKeys],
   weaponType: [...allWeaponTypeKeys],
   subStat: [],
+  sortOrder: 'desc',
+  sortOrderBy: 'name',
 })
 
 const initialState = (): IDisplayArchiveEntry => ({
@@ -94,15 +98,23 @@ export class DisplayArchiveEntry extends DataEntry<
 
       if (typeof weapon !== 'object') weapon = initialWeaponOption()
       else {
-        let { rarity, subStat, weaponType } = weapon
+        let { rarity, subStat, weaponType, sortOrder, sortOrderBy } = weapon
         rarity = validateArr(rarity, allRarityKeys)
         subStat = validateArr(subStat, allWeaponSubstatKeys, [])
         weaponType = validateArr(weaponType, allWeaponTypeKeys)
+        if (!['asc', 'desc'].includes(sortOrder)) {
+          sortOrder = 'desc'
+        }
+        if (!['name', 'type', 'rarity', 'main', 'sub'].includes(sortOrderBy)) {
+          sortOrderBy = 'name'
+        }
 
         weapon = {
           rarity,
           subStat,
           weaponType,
+          sortOrder,
+          sortOrderBy,
         }
       }
     }
