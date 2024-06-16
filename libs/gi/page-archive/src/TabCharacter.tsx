@@ -49,7 +49,6 @@ import {
   useMemo,
   useState,
 } from 'react'
-import { useTranslation } from 'react-i18next'
 import { CharacterView } from './CharacterView'
 const rarties = [5, 4] as const
 export default function TabCharacter() {
@@ -103,17 +102,19 @@ export default function TabCharacter() {
       sortOrderBy: property,
     })
   }
-  const { t } = useTranslation(`charNames_gen`)
 
   const sortedCharKeys = useMemo(
     () =>
       sortFunction([character.sortOrderBy], character.sortOrder === 'asc', {
-        name: (cKey: CharacterKey) => t(cKey),
+        name: (cKey: CharacterKey) =>
+          silly && i18n.exists(`sillyWisher_charNames:${cKey}`)
+            ? i18n.t(`sillyWisher_charNames:${cKey}`)
+            : i18n.t(`charNames_gen:${cKey}`),
         rarity: (cKey: CharacterKey) => getCharStat(cKey).rarity,
         element: (cKey: CharacterKey) => getCharEle(cKey),
         type: (cKey: CharacterKey) => getCharStat(cKey).weaponType,
       } as SortConfigs<SortKey, CharacterKey>),
-    [character.sortOrder, character.sortOrderBy, t]
+    [character.sortOrder, character.sortOrderBy, silly]
   )
   const charKeysToShow = useMemo(
     () => charKeys.sort(sortedCharKeys).slice(0, numShow),
