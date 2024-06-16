@@ -111,20 +111,20 @@ export default function AddItemsPanel({
   }, [addUnit, newNumber])
 
   const OperationButtons = useMemo(() => {
-    return (['addition', 'subtraction', 'multiplication'] as const).map(
-      (operation) => {
-        return (
-          <Grid item xs={1.5} key={operation}>
-            <Button
-              key={operation}
-              onClick={() => addUnit({ type: 'operation', operation })}
-            >
-              {OperationSpecs[operation].symbol}
-            </Button>
-          </Grid>
-        )
-      }
-    )
+    return (
+      ['addition', 'subtraction', 'multiplication', 'division'] as const
+    ).map((operation) => {
+      return (
+        <Grid item xs={1.5} key={operation}>
+          <Button
+            key={operation}
+            onClick={() => addUnit({ type: 'operation', operation })}
+          >
+            {OperationSpecs[operation].symbol}
+          </Button>
+        </Grid>
+      )
+    })
   }, [addUnit])
 
   const EnclosingButtons = useMemo(() => {

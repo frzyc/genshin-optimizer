@@ -488,8 +488,13 @@ function parseCustomExpression(
     return prod(...parsedParts)
   }
   if (currentOperation === 'division') {
-    // TODO: Implement division
-    return prod(parsedParts[0], ...parsedParts.slice(1).map((x) => prod(-1, x)))
+    // TODO: Properly implement division
+    if (parsedParts.length < 2)
+      throw new Error('Division has less than 2 operands')
+    return prod(
+      parsedParts[0],
+      ...parsedParts.slice(1).map((x) => frac(1, sum(constant(-1), x)))
+    )
   }
   if (currentOperation === 'minimum') {
     return min(...parsedParts)
