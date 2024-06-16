@@ -138,7 +138,9 @@ export default function TabWeapon() {
   const sortedWeaponKeys = useMemo(
     () =>
       sortFunction(
-        weapon.sortOrderBy === 'sub' ? ['subType', weapon.sortOrderBy] : [weapon.sortOrderBy],
+        weapon.sortOrderBy === 'sub'
+          ? ['subType', weapon.sortOrderBy]
+          : [weapon.sortOrderBy],
         weapon.sortOrder === 'asc',
         {
           name: (wKey: WeaponKey) => t(`weaponNames_gen:${wKey}`),
@@ -237,10 +239,16 @@ export default function TabWeapon() {
         <TableHead>
           <TableRow>
             {columns.map(({ key, label }) => (
-              <TableCell sortDirection={weapon.sortOrderBy === key ? weapon.sortOrder : false}>
+              <TableCell
+                sortDirection={
+                  weapon.sortOrderBy === key ? weapon.sortOrder : false
+                }
+              >
                 <TableSortLabel
                   active={weapon.sortOrderBy === key}
-                  direction={weapon.sortOrderBy === key ? weapon.sortOrder : 'asc'}
+                  direction={
+                    weapon.sortOrderBy === key ? weapon.sortOrder : 'asc'
+                  }
                   onClick={() => handleSort(key)}
                 >
                   {label}
