@@ -1,10 +1,11 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
 import {
   TeamCharacterSelector,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
@@ -69,6 +70,19 @@ function Page({ teamId }: { teamId: string }) {
 
   const teamCharId = loadoutDatum?.teamCharId
   const characterKey = database.teamChars.get(teamCharId)?.key
+
+  const { t } = useTranslation(['charNames_gen', 'page_character'])
+
+  useTitle(
+    useMemo(
+      () =>
+        // TODO: replace Character with CharKeyToName function once it's ported
+        `${team.name} - ${t('charNames_gen:Character')} - ${t(
+          `page_character:tabs.${tab}`
+        )}`,
+      [t, team.name, tab]
+    )
+  )
 
   return (
     <Box
