@@ -56,7 +56,7 @@ export function UploadCard({
         return undefined
       }
       // Figure out the file format
-      if (parsed.format === 'SROD') {
+      if (parsed.format === 'SROD' || parsed.format === 'SRO') {
         // Parse as SROD format
         const copyStorage = new SandboxStorage(undefined, 'sro')
         copyStorage.copyFrom(database.storage)
