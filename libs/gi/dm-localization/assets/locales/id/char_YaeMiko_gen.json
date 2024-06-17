@@ -7,7 +7,7 @@
     "name": "Spiritfox Sin-Eater",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Memanggil roh kitsune untuk melancarkan hingga 3 serangan yang mengakibatkan <electro>Electro DMG</electro>."
       },
       "charged": {

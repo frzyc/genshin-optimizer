@@ -7,7 +7,7 @@
     "name": "Forma dell'acqua",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferra fino a 3 attacchi consecutivi che assumono la forma di pesci, infliggendo <hydro>DAN da Hydro</hydro>."
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "拂金劍鬥術",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻擊</strong>",
+        "0": "<strong>普通攻擊</strong>",
         "1": "結合雙手劍與體術，進行至多四段的連續攻擊。"
       },
       "charged": {

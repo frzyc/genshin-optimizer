@@ -7,7 +7,7 @@
     "name": "Combo glaciodemoledor",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Acumula hielo en los puños para ejecutar hasta 5 potentes <strong>puñetazos expeledores</strong> que infligen <cryo>Daño Cryo</cryo>.",
         "2": "Además, al usar la Habilidad Elemental, “Envite ateridor”, o durante un breve periodo de tiempo después de esprintar, la secuencia de los Ataques Normales no se reiniciará."
       },

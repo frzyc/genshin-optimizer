@@ -7,7 +7,7 @@
     "name": "Hồ Linh Thực Tội Thức",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Triệu hồi linh hồn hồ ly, thực hiện tối đa 3 lần tấn công, gây <electro>Sát Thương Nguyên Tố Lôi</electro>."
       },
       "charged": {

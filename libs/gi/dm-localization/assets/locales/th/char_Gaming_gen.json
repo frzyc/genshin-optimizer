@@ -7,7 +7,7 @@
     "name": "Stellar Rend",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "โจมตีต่อเนื่องมากสุด 4 ครั้ง"
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Volpe espiatoria",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Evoca degli spiriti di kitsune, dando inizio a un massimo di 3 attacchi che infliggono <electro>DAN da Electro</electro>."
       },
       "charged": {

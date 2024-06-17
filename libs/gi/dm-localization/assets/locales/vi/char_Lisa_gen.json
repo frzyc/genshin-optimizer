@@ -7,7 +7,7 @@
     "name": "Sấm Sét Cảm Ứng",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Thực hiện tối đa 4 lần chích điện, gây <electro>Sát Thương Nguyên Tố Lôi</electro>."
       },
       "charged": {

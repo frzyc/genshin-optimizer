@@ -3,7 +3,7 @@
     "name": "Mannarino da campo",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferri fino a 5 colpi rapidi."
       },
       "charged": {

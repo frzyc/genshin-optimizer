@@ -6,6 +6,7 @@ import {
   AdBlockContextWrapper,
   ScrollTop,
   useRefSize,
+  useTitle,
 } from '@genshin-optimizer/common/ui'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
@@ -17,7 +18,6 @@ import {
   SnowContext,
   useSilly,
   useSnow,
-  useTitle,
 } from '@genshin-optimizer/gi/ui'
 import {
   Box,

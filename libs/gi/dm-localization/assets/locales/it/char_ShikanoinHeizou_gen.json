@@ -7,7 +7,7 @@
     "name": "Arti marziali stile Fudou",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferra fino a 5 colpi col potere di un vento impetuoso, infliggendo <anemo>DAN da Anemo</anemo>."
       },
       "charged": {

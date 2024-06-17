@@ -7,7 +7,7 @@
     "name": "Sparkling Scatter",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "ยิงอัญมณีออกมาเพื่อสร้าง <geo>ความเสียหายหิน</geo>",
         "2": "เมื่อถูกเป้าหมายจะเป็นการมอบ Star Jade ให้แก่ Ningguang 1 ลูก"
       },

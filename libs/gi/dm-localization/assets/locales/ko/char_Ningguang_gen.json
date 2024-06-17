@@ -7,7 +7,7 @@
     "name": "천금투",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "보석을 발사해 <geo>바위 원소 피해</geo>를 준다.",
         "2": "명중 시 응광에게 별을 한 개 부여한다."
       },

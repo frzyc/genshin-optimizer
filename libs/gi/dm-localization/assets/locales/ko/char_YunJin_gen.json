@@ -7,7 +7,7 @@
     "name": "구름을 스치는 격투",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "창으로 최대 5번 공격한다."
       },
       "charged": {

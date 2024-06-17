@@ -7,7 +7,7 @@
     "name": "Lança Secreta de Wangsheng",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza até 6 golpes com a lança."
       },
       "charged": {

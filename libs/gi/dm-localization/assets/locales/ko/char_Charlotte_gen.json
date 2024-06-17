@@ -7,7 +7,7 @@
     "name": "차가운 촬영법",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "특제 사진기 「베리떼 씨」로 목표를 조준하고 최대 3번 공격해 <cryo>얼음 원소 피해</cryo>를 준다."
       },
       "charged": {

@@ -74,7 +74,7 @@
     "name": "西風劍術·女僕",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻擊</strong>",
+        "0": "<strong>普通攻擊</strong>",
         "1": "進行至多四段的連續揮砍。"
       },
       "charged": {

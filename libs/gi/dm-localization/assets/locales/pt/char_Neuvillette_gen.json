@@ -7,7 +7,7 @@
     "name": "Como Águas Paradas",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Brande seu bastão, movendo as ondas dos mares para desferir até 3 golpes que causam <hydro>Dano Hydro</hydro>."
       },
       "chargedLegal": {

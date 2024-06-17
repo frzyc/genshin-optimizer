@@ -7,7 +7,7 @@
     "name": "Kraliyet Saz Okçuluğu",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Arka arkaya en fazla 3 ok atışı yapar."
       },
       "charged": {

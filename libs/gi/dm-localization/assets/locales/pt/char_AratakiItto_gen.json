@@ -7,7 +7,7 @@
     "name": "Lenda do Combate",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza até 4 golpes consecutivos.",
         "2": "Quando seu 2º e 4º ataque atingirem os oponentes, Itto vai gerar 1 e 2 cargas de Superforça Superlativa respectivamente. ",
         "3": "Máximo de 5 cargas. O acionamento deste efeito reiniciará a duração atual de qualquer acúmulo existente.",

@@ -7,7 +7,7 @@
     "name": "Tocco di fulmine",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Effettua fino a 4 attacchi di fulmine che infliggono <electro>DAN da Electro</electro>."
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "狐灵食罪式",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻击</strong>",
+        "0": "<strong>普通攻击</strong>",
         "1": "驱役狐灵，进行至多三段的攻击，造成<electro>雷元素伤害</electro>。"
       },
       "charged": {
