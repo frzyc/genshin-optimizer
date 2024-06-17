@@ -1,7 +1,11 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, StyledInputBase } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ModalWrapper,
+  StyledInputBase,
+} from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
-import { Delete, ImportExport, Upload } from '@mui/icons-material'
+import { Delete, Download, ImportExport, Upload } from '@mui/icons-material'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import {
   Box,
@@ -15,9 +19,10 @@ import {
 import { useCallback, useEffect, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useDatabaseContext } from '../Context'
+import { UploadCard } from './UploadCard'
 
 export function DatabaseCard() {
-  const { t } = useTranslation(['settings'])
+  const { t } = useTranslation('page_settings')
 
   return (
     <CardThemed bgt="light">
@@ -39,9 +44,7 @@ export function DatabaseCard() {
 }
 
 function DataCard({ index }: { index: number }) {
-  const databaseTest = useDatabaseContext()
-  console.log(databaseTest)
-  const { databases, database: mainDB, setDatabase } = databaseTest
+  const { databases, database: mainDB, setDatabase } = useDatabaseContext()
   const database = databases[index]
   const [{ name, lastEdit }, setDBMeta] = useState(database.dbMeta.get())
   useEffect(
@@ -53,7 +56,7 @@ function DataCard({ index }: { index: number }) {
 
   const current = mainDB === database
   const [uploadOpen, onOpen, onClose] = useBoolState()
-  const { t } = useTranslation(['settings'])
+  const { t } = useTranslation('page_settings')
   const numChar = database.chars.keys.length
   const numRelics = database.relics.keys.length
   const numLightCones = database.lightCones.keys.length
@@ -120,7 +123,11 @@ function DataCard({ index }: { index: number }) {
       }}
     >
       <CardContent
-        sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}
+        sx={{
+          display: 'flex',
+          gap: 1,
+          justifyContent: 'space-between',
+        }}
       >
         <StyledInputBase
           value={tempName}
@@ -138,6 +145,7 @@ function DataCard({ index }: { index: number }) {
         )}
         <Chip
           color={current ? 'success' : 'secondary'}
+          sx={{ alignSelf: 'center' }}
           label={
             current
               ? t`DatabaseCard.currentDB`
@@ -182,9 +190,9 @@ function DataCard({ index }: { index: number }) {
                 </Button>
               </Grid>
               <Grid item xs={1}>
-                {/* Missing upload card? */}
-                {/* <ModalWrapper open={uploadOpen} onClose={onClose}>
-                </ModalWrapper> */}
+                <ModalWrapper open={uploadOpen} onClose={onClose}>
+                  <UploadCard index={index} onReplace={onClose} />
+                </ModalWrapper>
                 <Button
                   fullWidth
                   component="span"
@@ -193,6 +201,16 @@ function DataCard({ index }: { index: number }) {
                   onClick={onOpen}
                 >
                   {t`DatabaseCard.button.upload`}
+                </Button>
+              </Grid>
+              <Grid item xs={1}>
+                <Button
+                  fullWidth
+                  disabled={!hasData}
+                  onClick={download}
+                  startIcon={<Download />}
+                >
+                  {t`DatabaseCard.button.download`}
                 </Button>
               </Grid>
               <Grid item xs={1}>
