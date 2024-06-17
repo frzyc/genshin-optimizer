@@ -28,6 +28,7 @@ const PageCharacters = lazy(
 )
 const PageTeams = lazy(() => import('@genshin-optimizer/sr/page-teams'))
 const PageTeam = lazy(() => import('@genshin-optimizer/sr/page-team'))
+const PageSettings = lazy(() => import('@genshin-optimizer/sr/page-settings'))
 
 export default function App() {
   return (
@@ -78,6 +79,7 @@ function Content() {
               <Route index element={<PageTeams />} />
               <Route path=":teamId/*" element={<PageTeam />} />
             </Route>
+            <Route path="/settings" element={<PageSettings />} />
           </Routes>
         </Suspense>
       </Container>

@@ -4,7 +4,6 @@ import { CharacterEditor, useCharacterContext } from '@genshin-optimizer/sr/ui'
 import { Button, CardContent, Container, Stack } from '@mui/material'
 import { useState } from 'react'
 import CharacterSelector from './CharacterSelector'
-import Database from './Database'
 import Optimize from './Optimize'
 
 // TODO: Move this to a lib once the components below are moved.
@@ -34,7 +33,6 @@ export default function PageHome() {
           </CardThemed>
         </Container>
         <Optimize />
-        <Database />
       </Stack>
     </>
   )
