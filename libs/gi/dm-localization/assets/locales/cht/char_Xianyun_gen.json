@@ -7,7 +7,7 @@
     "name": "清風散花詞",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻擊</strong>",
+        "0": "<strong>普通攻擊</strong>",
         "1": "旋捲清風，進行至多四段的攻擊，造成<anemo>風元素傷害</anemo>。"
       },
       "charged": {

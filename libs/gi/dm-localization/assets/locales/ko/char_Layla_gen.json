@@ -7,7 +7,7 @@
     "name": "빛나는 궤도의 검",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "검으로 최대 3번 공격한다."
       },
       "charged": {

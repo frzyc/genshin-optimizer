@@ -14,7 +14,15 @@ import {
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import BarChartIcon from '@mui/icons-material/BarChart'
-import { Box, CardActionArea, Chip, Typography } from '@mui/material'
+import CommentIcon from '@mui/icons-material/Comment'
+import {
+  Avatar,
+  Box,
+  CardActionArea,
+  Chip,
+  Tooltip,
+  Typography,
+} from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import OptimizationTargetDisplay from '../Tabs/TabOptimize/Components/OptimizationTargetDisplay'
@@ -32,8 +40,15 @@ export default function CustomTargetDisplay({
 }) {
   const { t } = useTranslation('page_character')
   const { data } = useContext(DataContext)
-  const { path, weight, hitMode, reaction, infusionAura, bonusStats } =
-    customTarget
+  const {
+    path,
+    weight,
+    hitMode,
+    reaction,
+    infusionAura,
+    bonusStats,
+    description,
+  } = customTarget
 
   const node = objPathValue(data.getDisplay(), path) as CalcResult | undefined
 
@@ -74,11 +89,26 @@ export default function CustomTargetDisplay({
             />
           )}
           <Chip label={t(`hitmode.${hitMode}`)} />
+          {description && (
+            <Tooltip
+              arrow
+              title={
+                description.length > 100
+                  ? `${description.slice(0, 100)}...`
+                  : description
+              }
+            >
+              <Avatar style={{ backgroundColor: '#4C566A' }}>
+                <CommentIcon style={{ color: 'white' }} />
+              </Avatar>
+            </Tooltip>
+          )}
         </Typography>
       </CardActionArea>
     </CardThemed>
   )
 }
+
 function ReactionChip({
   node,
   reaction,

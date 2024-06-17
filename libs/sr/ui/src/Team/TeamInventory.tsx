@@ -12,6 +12,7 @@ import {
   Skeleton,
 } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useDatabaseContext } from '../Context'
 import { TeamCard } from './TeamCard'
 
@@ -26,26 +27,31 @@ export function TeamInventory() {
     [database, setDirtyDatabase]
   )
 
-  const { teams } = useMemo(() => {
-    const teams = database.teams.values
-    return dirtyDatabase && { teams }
-  }, [database.teams.values, dirtyDatabase])
+  const navigate = useNavigate()
+
+  const { teamIds } = useMemo(() => {
+    const teamIds = database.teams.keys
+    return dirtyDatabase && { teamIds }
+  }, [database, dirtyDatabase])
 
   const size = useMediaQueryUp()
 
   const { numShow, setTriggerElement } = useInfScroll(
     amtPerSize[size],
-    teams.length
+    teamIds.length
   )
 
-  const teamsInView = useMemo(() => teams.slice(0, numShow), [teams, numShow])
+  const teamsIdsToShow = useMemo(
+    () => teamIds.slice(0, numShow),
+    [teamIds, numShow]
+  )
 
   return (
     <Suspense
       fallback={
         <Skeleton
           variant="rectangular"
-          sx={{ widht: '100%', height: '100%', minHeight: 300 }}
+          sx={{ width: '100%', height: '100%', minHeight: 300 }}
         />
       }
     >
@@ -61,14 +67,19 @@ export function TeamInventory() {
             gap={1}
           >
             <Grid container spacing={1} columns={columns}>
-              {teamsInView.map((t, i) => (
-                <Grid item key={i} xs={1}>
-                  <TeamCard team={t} />
+              {teamsIdsToShow.map((teamId) => (
+                <Grid item key={teamId} xs={1}>
+                  <TeamCard
+                    teamId={teamId}
+                    onClick={(charId) =>
+                      navigate(`${teamId}${charId ? `/${charId}` : ''}`)
+                    }
+                  />
                 </Grid>
               ))}
             </Grid>
 
-            {teams.length !== teamsInView.length && (
+            {teamIds.length !== teamsIdsToShow.length && (
               <Skeleton
                 ref={(node) => {
                   if (!node) return

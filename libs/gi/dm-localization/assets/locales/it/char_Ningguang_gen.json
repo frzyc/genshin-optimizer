@@ -7,7 +7,7 @@
     "name": "Dispersione scintillante",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Scaglia gemme che infliggono <geo>DAN da Geo</geo>.",
         "2": "Quando il colpo va a segno, Ningguang ottiene 1 Giada stellare."
       },

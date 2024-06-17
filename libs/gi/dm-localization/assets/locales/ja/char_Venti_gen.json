@@ -7,7 +7,7 @@
     "name": "神代の射術",
     "fields": {
       "normal": {
-        "0": "<strong><strong>通常攻撃</strong>",
+        "0": "<strong>通常攻撃</strong>",
         "1": "最大6段の連続射撃を行う。"
       },
       "charged": {

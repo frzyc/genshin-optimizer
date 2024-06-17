@@ -74,7 +74,7 @@
     "name": "Tây Phong Kiếm Thuật - Hầu Gái",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Thực hiện tối đa 4 lần chém liên tiếp."
       },
       "charged": {

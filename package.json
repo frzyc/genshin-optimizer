@@ -1,12 +1,12 @@
 {
   "name": "genshin-optimizer",
-  "version": "10.9.1",
+  "version": "10.9.3",
   "license": "MIT",
   "private": true,
   "scripts": {
     "frontend": "nx serve frontend",
     "build-all": "nx run-many -t build",
-    "mini-ci": "nx format:write && nx affected -t test,eslint:lint,typecheck",
+    "mini-ci": "nx format:write && nx affected -t typecheck && nx affected -t eslint:lint --max-warnings=0 && CI=true nx affected -t test",
     "reload-dm": "git submodule update --init",
     "update-dm": "git submodule update --remote",
     "test": "nx run-many -t test"

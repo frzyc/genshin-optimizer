@@ -7,7 +7,7 @@
     "name": "Sigillo d'approvazione",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Lancia sfere di fuoco che infliggono <pyro>DAN da Pyro</pyro> fino a 3 volte.",
         "2": "Quando gli attacchi normali di Yanfei colpiscono i nemici, le conferiscono un singolo Sigillo scarlatto. Yanfei può possedere un massimo di 3 Sigilli scarlatti e, ogni volta che questo effetto si attiva, la durata dei Sigilli scarlatti posseduti in quel momento si ripristina.",
         "3": "Ogni Sigillo scarlatto riduce il consumo di vigore di Yanfei e svanisce quando lei lascia il campo di battaglia."

@@ -7,7 +7,7 @@
     "name": "Kitsune Devora-pecados",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Evoca espíritos kitsune que realizam até 3 ataques que infligem <electro>Dano Electro</electro>."
       },
       "charged": {

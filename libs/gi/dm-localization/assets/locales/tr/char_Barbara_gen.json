@@ -7,7 +7,7 @@
     "name": "Suyun Fısıltısı",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "<hydro>Su Hasarı</hydro> veren en fazla 4 su fırlatma saldırısı yapar."
       },
       "charged": {

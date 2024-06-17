@@ -7,7 +7,7 @@
     "name": "千金擲",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻擊</strong>",
+        "0": "<strong>普通攻擊</strong>",
         "1": "發射寶石，造成<geo>岩元素傷害</geo>。",
         "2": "命中時，賦予凝光一枚星璇。"
       },

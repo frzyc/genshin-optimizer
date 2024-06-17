@@ -11,9 +11,12 @@
       "options": {
         "cwd": "apps/frontend",
         "commands": ["tsc -p tsconfig.app.json --noEmit"]
-      }
+      },
+      "dependsOn": ["eslint:lint"]
     },
-    "dependsOn": ["eslint:lint"]
+    "build": {
+      "cache": false
+    }
   },
   "implicitDependencies": [
     "common-localization",

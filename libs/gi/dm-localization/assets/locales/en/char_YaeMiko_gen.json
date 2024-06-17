@@ -7,7 +7,7 @@
     "name": "Spiritfox Sin-Eater",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Summons forth kitsune spirits, initiating a maximum of 3 attacks that deal <electro>Electro DMG</electro>."
       },
       "charged": {

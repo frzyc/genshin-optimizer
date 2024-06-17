@@ -7,7 +7,7 @@
     "name": "Tây Phong Thương Thuật - Kế Thừa",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Kết hợp giữa nỏ và thương, thực hiện tối đa 5 lần đánh liên tiếp."
       },
       "charged": {

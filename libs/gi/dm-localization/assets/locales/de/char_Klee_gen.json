@@ -7,7 +7,7 @@
     "name": "Bumm-Bumm",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Wirft eine nette, effektvolle Bombe! Führt bis zu 3 Bombenangriffe aus und verursacht <pyro>Pyro-Flächenschaden</pyro>."
       },
       "charged": {

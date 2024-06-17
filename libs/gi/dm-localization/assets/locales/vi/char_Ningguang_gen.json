@@ -7,7 +7,7 @@
     "name": "Ngàn Vàng Lấp Lánh",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Bắn ra bảo thạch, gây <geo>Sát Thương Nguyên Tố Nham</geo>.",
         "2": "Khi trúng, ban cho Ningguang 1 Tinh Thạch."
       },

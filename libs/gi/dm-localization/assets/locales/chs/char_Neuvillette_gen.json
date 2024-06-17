@@ -7,7 +7,7 @@
     "name": "如水从平",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻击</strong>",
+        "0": "<strong>普通攻击</strong>",
         "1": "轻挥权杖，驱动浪涛进行至多三段的攻击，造成<hydro>水元素伤害</hydro>。"
       },
       "chargedLegal": {

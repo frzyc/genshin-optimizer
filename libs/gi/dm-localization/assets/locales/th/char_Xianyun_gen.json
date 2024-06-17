@@ -7,7 +7,7 @@
     "name": "Word of Wind and Flower",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "เรียกพายุหมุนออกมาเพื่อทำการโจมตีต่อเนื่องมากสุด 4 ครั้ง สร้าง<anemo>ความเสียหายลม</anemo>"
       },
       "charged": {

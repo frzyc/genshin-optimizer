@@ -7,7 +7,7 @@
     "name": "Der Anbeterin Schießkunst",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Führt bis zu 4 Pfeilschüsse hintereinander aus."
       },
       "charged": {

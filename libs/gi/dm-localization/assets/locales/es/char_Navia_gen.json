@@ -7,7 +7,7 @@
     "name": "Declinación directa",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza hasta 4 tajos de espada consecutivos."
       },
       "charged": {

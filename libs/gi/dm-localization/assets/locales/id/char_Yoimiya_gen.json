@@ -7,7 +7,7 @@
     "name": "Firework Flare-Up",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Melancarkan maks. 5 serangan berturut-turut dengan busur."
       },
       "charged": {

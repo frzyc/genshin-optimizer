@@ -7,7 +7,7 @@
     "name": "Seal of Approval",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Shoots fireballs that deal up to three counts of <pyro>Pyro DMG</pyro>.",
         "2": "When Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh.",
         "3": "Each Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field."

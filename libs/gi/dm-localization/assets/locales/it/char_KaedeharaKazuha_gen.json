@@ -39,7 +39,7 @@
     "name": "Tecnica di Garyuu",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferra fino a 5 colpi rapidi."
       },
       "charged": {

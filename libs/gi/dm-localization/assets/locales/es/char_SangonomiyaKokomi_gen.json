@@ -7,7 +7,7 @@
     "name": "La forma del agua",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza hasta 3 ataques con forma de pez nadador que infligen <hydro>Daño Hydro</hydro>."
       },
       "charged": {

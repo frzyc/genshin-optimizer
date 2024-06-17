@@ -7,7 +7,7 @@
     "name": "Dardo partico",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Scocca fino a 4 frecce consecutive con un arco."
       },
       "charged": {

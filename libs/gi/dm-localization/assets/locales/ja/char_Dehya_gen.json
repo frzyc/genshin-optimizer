@@ -7,7 +7,7 @@
     "name": "剣闘術·金砂塵",
     "fields": {
       "normal": {
-        "0": "<strong><strong>通常攻撃</strong>",
+        "0": "<strong>通常攻撃</strong>",
         "1": "両手剣と体術の組み合わせによる最大4段の連続攻撃を行う。"
       },
       "charged": {

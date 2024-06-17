@@ -7,7 +7,7 @@
     "name": "Lightning Touch",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "ทำการโจมตีด้วยสายฟ้ามากสุด 4 ครั้ง เพื่อสร้าง<electro>ความเสียหายไฟฟ้า</electro>"
       },
       "charged": {

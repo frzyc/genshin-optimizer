@@ -7,7 +7,7 @@
     "name": "Selo Ardente",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Dispara bolas de fogo continuamente, causando no máximo três <pyro>Danos Pyro</pyro>.",
         "2": "Quando o Ataque Normal atinge os inimigos, Yanfei obtém uma Insígnia de Chamas. Inicialmente, pode ter no máximo três Insígnias de Chamas. A cada vez que o efeito ocorre, a duração da Insígnia de Chamas atual será renovada.",
         "3": "Cada Insígnia de Chamas reduzirá o consumo de Stamina de Yanfei e desaparecerá quando Yanfei sair do combate."

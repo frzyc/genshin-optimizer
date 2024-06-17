@@ -74,7 +74,7 @@
     "name": "Favonius-Schwertkunst – Magd",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus."
       },
       "charged": {
