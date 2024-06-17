@@ -7,7 +7,7 @@
     "name": "Cutting Torrent",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Melancarkan hingga 6 serangan berturut-turut dengan menggunakan busur."
       },
       "charged": {

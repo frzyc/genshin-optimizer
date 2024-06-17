@@ -7,7 +7,7 @@
     "name": "Lied des Windes und der Blume",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Beschwört wirbelnde Winde herbei, um bis zu 4 Angriffe auszuführen, die <anemo>Anemo-Schaden</anemo> verursachen."
       },
       "charged": {

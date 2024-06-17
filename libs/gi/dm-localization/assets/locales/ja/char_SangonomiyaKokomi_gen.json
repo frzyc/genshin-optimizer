@@ -7,7 +7,7 @@
     "name": "水の常形",
     "fields": {
       "normal": {
-        "0": "<strong><strong>通常攻撃</strong>",
+        "0": "<strong>通常攻撃</strong>",
         "1": "水元素で形成した遊魚による最大3段の連続攻撃を行い、<hydro>水元素ダメージ</hydro>を与える。"
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "リトロダクション",
     "fields": {
       "normal": {
-        "0": "<strong><strong>通常攻撃</strong>",
+        "0": "<strong>通常攻撃</strong>",
         "1": "剣による最大5段の連続攻撃を行う。"
       },
       "charged": {

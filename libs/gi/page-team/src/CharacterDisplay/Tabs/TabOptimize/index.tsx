@@ -749,10 +749,7 @@ export default function TabBuild() {
           <span>
             <Button
               disabled={
-                !characterKey ||
-                !optimizationTarget ||
-                !optimizationTargetNode ||
-                optimizationTargetNode.isEmpty
+                !characterKey || !optimizationTarget || !optimizationTargetNode
               }
               color={generatingBuilds ? 'error' : 'success'}
               onClick={

@@ -9,15 +9,12 @@ import {
   ModalWrapper,
   ShowingAndSortOptionSelect,
   useInfScroll,
+  useTitle,
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import { teamSortKeys } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import {
-  CharacterMultiAutocomplete,
-  TeamCard,
-  useTitle,
-} from '@genshin-optimizer/gi/ui'
+import { CharacterMultiAutocomplete, TeamCard } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import UploadIcon from '@mui/icons-material/Upload'
 import {

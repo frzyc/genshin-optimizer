@@ -7,7 +7,7 @@
     "name": "狐霊罪喰い式",
     "fields": {
       "normal": {
-        "0": "<strong><strong>通常攻撃</strong>",
+        "0": "<strong>通常攻撃</strong>",
         "1": "狐霊を駆役し、最大3段の連続攻撃を行い、<electro>雷元素ダメージ</electro>を与える。"
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "깃발과 메이겐",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "바람의 칼날로 3단 공격을 날려서 <anemo>바람 원소 피해</anemo>를 준다."
       },
       "charged": {

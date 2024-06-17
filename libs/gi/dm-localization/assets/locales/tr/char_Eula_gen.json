@@ -47,7 +47,7 @@
     "name": "Favonius Kılıç Tekniği - Edel",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Arka arkaya en fazla 5 saldırı yapar."
       },
       "charged": {

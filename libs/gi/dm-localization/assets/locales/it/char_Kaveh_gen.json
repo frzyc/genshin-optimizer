@@ -7,7 +7,7 @@
     "name": "Installazione schematica",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Usa Mehrak per sferrare fino a 4 attacchi consecutivi."
       },
       "charged": {

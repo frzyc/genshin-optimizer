@@ -7,7 +7,7 @@
     "name": "Lưỡi Lê Cải Tiến",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Thực hiện tối đa 4 lần đánh liên tiếp."
       },
       "charged": {

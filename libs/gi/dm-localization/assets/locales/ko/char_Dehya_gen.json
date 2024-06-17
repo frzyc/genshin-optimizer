@@ -7,7 +7,7 @@
     "name": "모래폭풍 검투술",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "양손검 검술과 체술을 결합해서 최대 4번 공격한다."
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Standardangriff – Schwertkunst des Goldenen Sturms",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Führt durch Kombination des Zweihänders mit körperlichen Fähigkeiten bis zu 4 Angriffe hintereinander aus."
       },
       "charged": {

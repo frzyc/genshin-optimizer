@@ -7,7 +7,7 @@
     "name": "Göttliche Schießkunst",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Führt bis zu 6 Pfeilschüsse hintereinander aus."
       },
       "charged": {

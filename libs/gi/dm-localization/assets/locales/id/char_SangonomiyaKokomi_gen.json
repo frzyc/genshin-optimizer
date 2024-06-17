@@ -7,7 +7,7 @@
     "name": "The Shape of Water",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Melancarkan hingga 3 serangan beruntun dalam wujud ikan yang berenang dan mengakibatkan <hydro>Hydro DMG</hydro>."
       },
       "charged": {

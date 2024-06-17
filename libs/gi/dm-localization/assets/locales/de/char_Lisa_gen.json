@@ -7,7 +7,7 @@
     "name": "Elektrisierende Berührung",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Führt bis zu 4 Elektro-Angriffe aus und verursacht <electro>Elektro-Schaden</electro>."
       },
       "charged": {

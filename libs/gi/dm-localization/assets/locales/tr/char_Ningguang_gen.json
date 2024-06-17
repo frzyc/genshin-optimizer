@@ -7,7 +7,7 @@
     "name": "Parıldayan Parçacıklar",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "<geo>Toprak Hasarı</geo> veren mücevherler fırlatır.",
         "2": "İsabet ettiğinde Ningguang'a 1 Yıldız Yeşimi verir."
       },

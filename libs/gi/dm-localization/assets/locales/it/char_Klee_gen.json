@@ -7,7 +7,7 @@
     "name": "Megaboom!",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Lancia oggetti che fanno boom quando entrano in contatto con cose o persone! Effettua fino a 3 attacchi esplosivi, infliggendo <pyro>DAN da Pyro ad area</pyro>."
       },
       "charged": {

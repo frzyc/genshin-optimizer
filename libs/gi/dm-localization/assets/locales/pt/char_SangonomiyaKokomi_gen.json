@@ -7,7 +7,7 @@
     "name": "Forma da Água",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza até 3 ataques consecutivos que assumem a forma de peixes nadando, infligindo <hydro>Dano Hydro</hydro>."
       },
       "charged": {

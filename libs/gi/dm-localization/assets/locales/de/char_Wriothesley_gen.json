@@ -7,7 +7,7 @@
     "name": "Flinke Frostfaust",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Wriothesley kondensiert Eis in seinen Fäusten und führt bis zu 5 blitzschnelle Angriffe mit seinen <strong>„Sturmfäusten“</strong> aus, die <cryo>Kryo-Schaden</cryo> verursachen.",
         "2": "Außerdem wird die Angriffsphase des Standardangriffs nach dem Auslösen der Elementarfähigkeit „Eiszahn-Ansturm“ oder dem Rennen für kurze Zeit nicht zurückgesetzt."
       },

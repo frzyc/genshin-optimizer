@@ -7,7 +7,7 @@
     "name": "Seal of Approval",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Melancarkan hingga 3 serangan bola api yang mengakibatkan <pyro>Pyro DMG</pyro>.",
         "2": "Ketika Normal Attack Yanfei mengenai musuh, Yanfei akan mendapatkan 1 Scarlet Seal. Scarlet Seal maksimum yang bisa dikumpulkan Yanfei adalah 3 buah. Setiap kali efek ini terpicu, durasi dari Scarlet Seal yang telah terkumpul akan diperbarui.",
         "3": "Setiap Scarlet Seal akan mengurangi konsumsi Stamina Yanfei dan akan menghilang jika Yanfei meninggalkan medan pertempuran."

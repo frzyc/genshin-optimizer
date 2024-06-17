@@ -7,7 +7,7 @@
     "name": "Soğuk Renk Fotoğrafçılığı",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Charlotte, özel Kamerası Mösyö Verite ile hedefe nişan alarak <cryo>Buz Hasarı</cryo> veren art arda 3 saldırı yapar."
       },
       "charged": {

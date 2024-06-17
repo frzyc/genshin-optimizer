@@ -7,7 +7,7 @@
     "name": "Boum ! Boum !",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Une bombe qui explose au contact, ça c'est un bel objet ! Klee jette jusqu'à 3 bombes consécutives, qui infligent des <pyro>DGT Pyro de zone</pyro>."
       },
       "charged": {

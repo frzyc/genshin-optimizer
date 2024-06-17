@@ -7,7 +7,7 @@
     "name": "Dövüş Kulübü Efsanesi",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Arka arkaya en fazla 4 saldırı yapar.",
         "2": "Itto, ikinci ve dördüncü saldırılarla düşmanlara vurduğunda sırasıyla 1 veya 2 adet Doğaüstü Güç kademesi kazanır.",
         "3": "En fazla 5 kademe birikebilir. Bu etki tetiklendiğinde mevcut kademelerin süresi yenilenir.",

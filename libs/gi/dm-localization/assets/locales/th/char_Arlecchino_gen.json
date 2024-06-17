@@ -7,7 +7,7 @@
     "name": "Invitation to a Beheading",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "ใช้หอกโจมตีต่อเนื่องได้สูงสุด 6 ครั้ง"
       },
       "charged": {

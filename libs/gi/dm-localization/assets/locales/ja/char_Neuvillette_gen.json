@@ -7,7 +7,7 @@
     "name": "清きこと水の如し",
     "fields": {
       "normal": {
-        "0": "<strong><strong>通常攻撃</strong>",
+        "0": "<strong>通常攻撃</strong>",
         "1": "杖を軽く振り、波を駆使して最大3段の攻撃を行い、<hydro>水元素ダメージ</hydro>を与える。"
       },
       "chargedLegal": {

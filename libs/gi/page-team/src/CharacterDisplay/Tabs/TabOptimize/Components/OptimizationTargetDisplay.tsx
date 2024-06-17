@@ -13,8 +13,6 @@ import { useTranslation } from 'react-i18next'
 
 export default function OptimizationTargetDisplay({
   optimizationTarget,
-  // TODO: does this do anything here?
-  showEmptyTargets = false,
   defaultText,
 }: {
   optimizationTarget?: string[]
@@ -39,12 +37,7 @@ export default function OptimizationTargetDisplay({
     optimizationTarget &&
     (objPathValue(data.getDisplay(), optimizationTarget) as any)
 
-  const invalidTarget =
-    !optimizationTarget ||
-    !displayHeader ||
-    !node ||
-    // Make sure the opt target is valid, if we are not in multi-target
-    (!showEmptyTargets && node.isEmpty)
+  const invalidTarget = !optimizationTarget || !displayHeader || !node
 
   const {
     name,

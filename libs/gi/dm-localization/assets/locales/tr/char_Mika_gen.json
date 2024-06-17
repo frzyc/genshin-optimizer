@@ -7,7 +7,7 @@
     "name": "Favonius Mızrağı - Ok Geçişi",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Arbaletini ve mızrağını kullanarak arka arkaya en fazla 5 saldırı yapar."
       },
       "charged": {

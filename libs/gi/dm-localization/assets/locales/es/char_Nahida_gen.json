@@ -7,7 +7,7 @@
     "name": "Akara",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Ataca hasta 4 veces hacia el frente para infligir <dendro>Daño Dendro</dendro>."
       },
       "charged": {
