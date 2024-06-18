@@ -19,6 +19,15 @@
         "commands": ["npx supabase stop"],
         "cwd": "libs/gi/supabase"
       }
+    },
+    "gen-types": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npx supabase gen types typescript --local > src/lib/types.ts"
+        ],
+        "cwd": "libs/gi/supabase"
+      }
     }
   }
 }

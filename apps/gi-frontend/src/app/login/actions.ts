@@ -2,16 +2,13 @@
 
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-import { createClient } from '../../utils/supabase/server'
+import { getSupabase } from '../../utils/supabase/server'
 
 export async function login(formData: FormData) {
-  const supabase = createClient()
-
-  // type-casting here for convenience
-  // in practice, you should validate your inputs
+  const supabase = getSupabase()
   const data = {
-    email: formData.get('email') as string,
-    password: formData.get('password') as string,
+    email: String(formData.get('email')),
+    password: String(formData.get('password')),
   }
 
   const { error } = await supabase.auth.signInWithPassword(data)
@@ -25,13 +22,11 @@ export async function login(formData: FormData) {
 }
 
 export async function signup(formData: FormData) {
-  const supabase = createClient()
+  const supabase = getSupabase()
 
-  // type-casting here for convenience
-  // in practice, you should validate your inputs
   const data = {
-    email: formData.get('email') as string,
-    password: formData.get('password') as string,
+    email: String(formData.get('email')),
+    password: String(formData.get('password')),
   }
 
   const { error } = await supabase.auth.signUp(data)

@@ -1,3 +1,4 @@
+'use client'
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { useEffect, useMemo } from 'react'

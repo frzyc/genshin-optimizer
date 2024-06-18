@@ -1,9 +1,9 @@
 import { revalidatePath } from 'next/cache'
 import { NextResponse, type NextRequest } from 'next/server'
-import { createClient } from '../../../utils/supabase/server'
+import { getSupabase } from '../../../utils/supabase/server'
 
 export async function POST(req: NextRequest) {
-  const supabase = createClient()
+  const supabase = getSupabase()
 
   // Check if a user's logged in
   const {
