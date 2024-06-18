@@ -40,7 +40,7 @@ describe('calculator', () => {
       const { hp: test3, hp_: test4 } = allStacks('NoblesseOblige')
       const members: Member[] = ['0', '1', '2'],
         data: TagMapNodeEntries = [
-          ...teamData(['0', '2'], members),
+          ...teamData(members),
           // Multiple members with 1
           ...withMember('1', test1.add(1)),
           ...withMember('2', test1.add(1)),

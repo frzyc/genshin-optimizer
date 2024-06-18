@@ -2,7 +2,6 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import {
-  activeCharBuff,
   allBoolConditionals,
   allListConditionals,
   allNumConditionals,
@@ -57,8 +56,6 @@ export default register(
   selfBuff.premod.atk.add(1),
   // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
   teamBuff.premod.atk.add(1),
-  // - Add active buff formulas using `activeCharBuff.<buff target>.add(<buff value>)`
-  activeCharBuff.premod.atk.add(1),
   // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
   enemyDebuff.common.defRed_.add(1),
   //

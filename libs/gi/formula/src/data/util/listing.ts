@@ -34,7 +34,6 @@ export const presets = [
 export const entryTypes = [
   'self',
   'teamBuff',
-  'active',
   'enemy',
   'team',
   'target',

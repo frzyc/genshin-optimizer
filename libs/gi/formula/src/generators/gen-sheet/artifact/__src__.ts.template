@@ -26,7 +26,6 @@ export default registerArt(
   // TODO:
   // - Add self-buff formulas using `selfBuff.<buff target>.add(<buff value>)`
   // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add active buff formulas using `activeCharBuff.<buff target>.add(<buff value>)`
   // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
   //
   // Check for 2-set effect using `cmpGE(count, 2, ...)`

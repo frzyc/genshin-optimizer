@@ -3,7 +3,6 @@ import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   cmpEq,
   cmpGE,
-  cmpNE,
   max,
   min,
   prod,
@@ -11,7 +10,6 @@ import {
   sum,
 } from '@genshin-optimizer/pando/engine'
 import {
-  activeCharBuff,
   allBoolConditionals,
   allNumConditionals,
   allStatics,
@@ -21,7 +19,6 @@ import {
   register,
   self,
   selfBuff,
-  target,
   team,
   teamBuff,
 } from '../util'
@@ -106,9 +103,8 @@ const {
   final,
   char: { skill, burst, ascension, constellation },
 } = self
-const { a1ActiveInBurst, c2Bloom, c2QSA, partyInBurst } = allBoolConditionals(
-  info.key
-)
+const { a1ActiveInBurst, c2Bloom, c2QSA, partyInBurst, isActive } =
+  allBoolConditionals(info.key)
 const { c4Count } = allNumConditionals(info.key, 'sum', true, 0, 4)
 const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = allStatics(info.key)
 
@@ -168,7 +164,7 @@ const a1InBurst_eleMas = cmpGE(
   a1ActiveInBurst.ifOn(
     // Either party is in burst, or this is a teammate
     cmpGE(
-      sum(partyInBurst.ifOn(1), cmpNE(target.common.isActive, 1, 1)),
+      sum(partyInBurst.ifOn(1), isActive.ifOff(1)),
       1,
       min(
         prod(percent(dm.passive1.eleMas_), team.premod.eleMas.max),
@@ -206,7 +202,7 @@ const t = register(
     )
   ),
 
-  activeCharBuff.final.eleMas.add(a1InBurst_eleMas),
+  teamBuff.final.eleMas.add(a1InBurst_eleMas),
 
   c2_critRate_.add(
     cmpGE(constellation, 2, c2Bloom.ifOn(percent(dm.constellation2.critRate_)))

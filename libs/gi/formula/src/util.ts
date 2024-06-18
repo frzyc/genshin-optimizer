@@ -108,22 +108,11 @@ export function conditionalData(
   })
 }
 
-export function teamData(
-  activeMembers: readonly Member[],
-  members: readonly Member[]
-): TagMapNodeEntries {
+export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { active, self, teamBuff } = reader.sheet('agg').withAll('et', [])
+  const { self, teamBuff } = reader.sheet('agg').withAll('et', [])
   const { stackIn, stackInt, stackOut } = reader.withAll('qt', [])
   return [
-    // Active Member Buff
-    activeMembers.flatMap((dst) => {
-      const entry = self.with('src', dst)
-      return members.map((src) => entry.reread(active.withTag({ dst, src })))
-    }),
-    activeMembers.map((src) =>
-      selfBuff.common.isActive.withTag({ src }).add(1)
-    ),
     // Team Buff
     members.flatMap((dst) => {
       const entry = self.with('src', dst)
