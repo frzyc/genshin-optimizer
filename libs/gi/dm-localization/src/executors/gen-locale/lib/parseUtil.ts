@@ -86,7 +86,7 @@ const autoFields = (string: string) => {
   const strings = string
     .split('\\n\\n<strong>')
     .filter((s) => s)
-    .map((s) => '<strong>' + s)
+    .map((s, i) => (i ? '<strong>' : '') + s)
   return strings.map((s) => ({ ...paragraph(s) }))
 }
 

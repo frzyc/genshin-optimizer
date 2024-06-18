@@ -7,7 +7,7 @@
     "name": "砰砰",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻擊</strong>",
+        "0": "<strong>普通攻擊</strong>",
         "1": "投擲在碰撞後會爆炸的好東西！進行至多三段的炸彈攻擊，造成<pyro>火元素範圍傷害</pyro>。"
       },
       "charged": {

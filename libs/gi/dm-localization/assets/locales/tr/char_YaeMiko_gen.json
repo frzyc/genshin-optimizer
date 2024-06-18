@@ -7,7 +7,7 @@
     "name": "Günah Yiyen Kitsune",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Kitsune ruhlarını çağırır ve en fazla 3 saldırı yaparak <electro>Elektrik Hasarı</electro> verir."
       },
       "charged": {

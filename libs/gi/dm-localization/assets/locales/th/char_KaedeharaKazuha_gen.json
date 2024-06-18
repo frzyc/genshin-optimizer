@@ -39,7 +39,7 @@
     "name": "Garyuu Bladework",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "สามารถโจมตีต่อเนื่องได้ถึง 5 ครั้ง"
       },
       "charged": {

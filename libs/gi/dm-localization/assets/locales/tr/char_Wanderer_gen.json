@@ -7,7 +7,7 @@
     "name": "Yuuban Meigen",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Rüzgar kılıçlarıyla en fazla 3 saldırı yaparak <anemo>Rüzgar Hasarı</anemo> verir."
       },
       "charged": {

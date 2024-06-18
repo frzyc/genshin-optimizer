@@ -7,7 +7,7 @@
     "name": "Pugni del gelo veemente",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Wriothesley convoglia il gelo sul suo pugno per sferrare dei potenti <strong>Pugni espulsori</strong>, eseguendo fino a 5 attacchi rapidi che infliggono <cryo>DAN da Cryo</cryo>.",
         "2": "Anche dopo aver usato un Assalto della zanna di ghiaccio o uno Scatto, la combo di attacchi normali non si azzera per alcuni istanti."
       },

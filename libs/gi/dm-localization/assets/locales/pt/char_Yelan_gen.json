@@ -7,7 +7,7 @@
     "name": "Flecha Oculta",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza até quatro disparos consecutivos com o arco."
       },
       "charged": {

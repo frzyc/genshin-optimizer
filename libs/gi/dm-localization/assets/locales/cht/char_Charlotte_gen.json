@@ -7,7 +7,7 @@
     "name": "冷色攝影律",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻擊</strong>",
+        "0": "<strong>普通攻擊</strong>",
         "1": "以特製留影機「溫亨廷先生」瞄準目標，進行至多三段的攻擊，造成<cryo>冰元素傷害</cryo>。"
       },
       "charged": {

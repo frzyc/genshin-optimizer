@@ -7,7 +7,7 @@
     "name": "Stabilité de l'eau",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Agite légèrement sa canne, ordonnant aux marées de déclencher jusqu'à 3 attaques qui infligent des <hydro>DGT Hydro</hydro>."
       },
       "chargedLegal": {

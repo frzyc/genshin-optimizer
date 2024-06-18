@@ -7,7 +7,7 @@
     "name": "Kampf im Fudou-Stil",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Kämpft mit der Kraft eines starken Windes gegen den Feind, führt bis zu 5 Angriffe aus und verursacht <anemo>Anemo-Schaden</anemo>."
       },
       "charged": {

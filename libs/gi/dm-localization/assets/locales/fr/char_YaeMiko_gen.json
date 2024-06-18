@@ -7,7 +7,7 @@
     "name": "Vulpes mangeur de péchés",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Invoque des esprits Kitsunes, enchaînant jusqu'à 3 attaques qui infligent des <electro>DGT Électro</electro>."
       },
       "charged": {

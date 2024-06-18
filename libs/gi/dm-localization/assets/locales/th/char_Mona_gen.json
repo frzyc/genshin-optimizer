@@ -7,7 +7,7 @@
     "name": "Ripple of Fate",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "ปล่อยการโจมตีน้ำต่อเนื่องมากสุด 4 ครั้ง เพื่อสร้าง<hydro>ความเสียหายน้ำ</hydro>"
       },
       "charged": {

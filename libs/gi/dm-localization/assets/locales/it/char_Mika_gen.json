@@ -7,7 +7,7 @@
     "name": "Lancia di Favonius - Perforazione pungente",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferra fino a 5 colpi di lancia e balestra consecutivi."
       },
       "charged": {

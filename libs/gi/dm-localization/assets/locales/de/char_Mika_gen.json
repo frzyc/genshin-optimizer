@@ -7,7 +7,7 @@
     "name": "Favonius-Speerkunst – Erbe der Bolzen",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Kombiniert die Armbrust mit dem Speer und führt bis zu 5 Kombos hintereinander aus."
       },
       "charged": {

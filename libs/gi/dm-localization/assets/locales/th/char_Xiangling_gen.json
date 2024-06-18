@@ -7,7 +7,7 @@
     "name": "Dough-Fu",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "โจมตีต่อเนื่องมากสุด 5 ครั้ง"
       },
       "charged": {

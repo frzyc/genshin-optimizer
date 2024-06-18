@@ -7,7 +7,7 @@
     "name": "Funkelnde Speertechnik – Abwehr",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Führt bis zu 4 Lanzenstiche hintereinander aus."
       },
       "charged": {

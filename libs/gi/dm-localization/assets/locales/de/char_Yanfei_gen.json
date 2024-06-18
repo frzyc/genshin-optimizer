@@ -7,7 +7,7 @@
     "name": "Flammendes Siegel",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Schießt mehrere Feuerbälle nacheinander ab und verursacht bis zu dreimal <pyro>Pyro-Schaden</pyro>.",
         "2": "Jeder Treffer gibt Yanfei ein Flammensiegel. Kann anfänglich bis zu drei Flammensiegel besitzen. Bei jedem Auslösen wird die Dauer der vorhandenen Flammensiegel aktualisiert.",
         "3": "Jedes Flammensiegel verringert Yanfeis Ausdauerverbrauch und verschwindet, wenn sie ausgewechselt wird."

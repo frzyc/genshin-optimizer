@@ -7,7 +7,7 @@
     "name": "Hỏa Ấn",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Bắn cầu lửa liên tục, gây tối đa 3 lần <pyro>Sát Thương Nguyên Tố Hỏa</pyro>.",
         "2": "Khi đánh thường trúng địch sẽ tạo cho Yanfei 1 Đan Hỏa Ấn. Ban đầu tối đa chỉ được 3 Đan Hỏa Ấn, mỗi lần kích hoạt sẽ làm mới thời gian duy trì Đan Hỏa Ấn đã có.",
         "3": "Mỗi Đan Hỏa Ấn sẽ giảm thể lực tiêu hao cho Yanfei, đồng thời sẽ biến mất khi Yanfei rời trận."

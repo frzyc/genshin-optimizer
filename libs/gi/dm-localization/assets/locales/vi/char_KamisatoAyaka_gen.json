@@ -41,7 +41,7 @@
     "name": "Naname",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn công thường</strong>",
+        "0": "<strong>Tấn công thường</strong>",
         "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
       },
       "charged": {

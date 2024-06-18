@@ -7,7 +7,7 @@
     "name": "指先の雷",
     "fields": {
       "normal": {
-        "0": "<strong><strong>通常攻撃</strong>",
+        "0": "<strong>通常攻撃</strong>",
         "1": "雷電による最大4段の連続攻撃を行い、<electro>雷元素ダメージ</electro>を与える。"
       },
       "charged": {

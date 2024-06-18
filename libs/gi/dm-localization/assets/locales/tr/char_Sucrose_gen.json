@@ -7,7 +7,7 @@
     "name": "Rüzgar Ruhu Saldırısı",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Rüzgar Ruhlarıyla en fazla 4 saldırı yaparak <anemo>Rüzgar Hasarı</anemo> verir."
       },
       "charged": {

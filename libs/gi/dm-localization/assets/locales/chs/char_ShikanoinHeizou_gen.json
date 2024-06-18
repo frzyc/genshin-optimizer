@@ -7,7 +7,7 @@
     "name": "不动流格斗术",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻击</strong>",
+        "0": "<strong>普通攻击</strong>",
         "1": "以强风加持的招式与敌人格斗，进行至多五段的攻击，造成<anemo>风元素伤害</anemo>。"
       },
       "charged": {
