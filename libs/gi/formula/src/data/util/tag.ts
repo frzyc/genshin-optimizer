@@ -5,7 +5,7 @@ import {
   constant,
   subscript,
 } from '@genshin-optimizer/pando/engine'
-import type { Source, Stat } from './listing'
+import type { Sheet, Stat } from './listing'
 import type { Read, Tag } from './read'
 import { reader, tag } from './read'
 
@@ -36,7 +36,7 @@ export function priorityTable(
  *
  * *--------*-----------------------------------------------------*
  * |        |                      Affected By                    |
- * |  src:  *-----------*-----*----------*--------*------*--------*
+ * | sheet: *-----------*-----*----------*--------*------*--------*
  * |        | Team Buff | Art | Reaction | Weapon | Char | Custom |
  * *--------*-----------*-----*----------*--------*------*--------*
  * |  agg   |    YES    | YES |   YES    |  YES   | YES  |  YES   |
@@ -53,29 +53,29 @@ export function priorityTable(
  *   }
  * }
  *
- * The correct "final" value of a query must have `src:` be as specified
- * by the corresponding `Desc`. They are treated as a rendezvous point
- * for calculation to gather relevant components. Each of the `src:` here
- * gather different values as shown in the table above. The "gathering"
- * are done by adding appropriate entries, such as `src:agg <= src:custom`
- * in `common/index`. Many of the entries are in either `common/index` or
- * in dynamic util functions, e.g., `src:agg <= src:art` in `artifactsData`,
- * and `src:agg <= src:<team member>` in `teamData`.
+ * The correct "final" value of a query must have `sheet:` be as specified
+ * by the corresponding `Desc`. They are treated as a rendezvous point for
+ * calculation to gather relevant components. Each of the `sheet:` here gather
+ * different values as shown in the table above. The "gathering" are done by
+ * adding appropriate entries, such as `sheet:agg <= sheet:custom` in
+ * `common/index`. Many of the entries are in either `common/index` or in
+ * dynamic util functions, e.g., `sheet:agg <= sheet:art` in `artifactsData`,
+ * and `sheet:agg <= src:<team member>` in `teamData`.
  *
- * In effect, `read`ing a `src:agg` entry will include contributions from
- * team member, weapon, custom values, etc., while `read`ing a `src:iso` only
- * include contributions from character and custom values.
+ * In effect, `read`ing a `sheet:agg` entry will include contributions from
+ * team member, weapon, custom values, etc., while `read`ing a `sheet:iso`
+ * only include contributions from character and custom values.
  */
 
-type Desc = { src: Source | undefined; accu: Read['accu'] }
-const aggStr: Desc = { src: 'agg', accu: 'unique' }
-const agg: Desc = { src: 'agg', accu: 'sum' }
-const iso: Desc = { src: 'iso', accu: 'unique' }
-const isoSum: Desc = { src: 'iso', accu: 'sum' }
-/** `src:`-agnostic calculation */
-const fixed: Desc = { src: 'static', accu: 'unique' }
-/** The calculation must have a matching `src:` */
-const prep: Desc = { src: undefined, accu: 'unique' }
+type Desc = { sheet: Sheet | undefined; accu: Read['accu'] }
+const aggStr: Desc = { sheet: 'agg', accu: 'unique' }
+const agg: Desc = { sheet: 'agg', accu: 'sum' }
+const iso: Desc = { sheet: 'iso', accu: 'unique' }
+const isoSum: Desc = { sheet: 'iso', accu: 'sum' }
+/** `sheet:`-agnostic calculation */
+const fixed: Desc = { sheet: 'static', accu: 'unique' }
+/** The calculation must have a matching `sheet:` */
+const prep: Desc = { sheet: undefined, accu: 'unique' }
 
 const stats: Record<Stat, Desc> = {
   hp: agg,
@@ -177,9 +177,9 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
     (r, qt) =>
       r.withAll('q', Object.keys(v[qt]), (r, q) => {
         if (!v[qt][q]) console.error(`Invalid { qt:${qt} q:${q} }`)
-        const { src, accu } = v[qt][q]
-        // `tag.src` overrides `Desc`
-        if (src && !tag.src) r = r.src(src)
+        const { sheet, accu } = v[qt][q]
+        // `tag.sheet` overrides `Desc`
+        if (sheet && !tag.sheet) r = r.sheet(sheet)
         return r[accu]
       }),
     { withTag: (tag: Tag) => r.withTag(tag) }
@@ -197,25 +197,28 @@ export const selfBuff = convert(selfTag, { et: 'self' })
 export const teamBuff = convert(selfTag, { et: 'teamBuff' })
 export const activeCharBuff = convert(selfTag, { et: 'active' })
 export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
-export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
+export const userBuff = convert(selfTag, { et: 'self', sheet: 'custom' })
 
 // Custom tags
-export const allStatics = (src: Source) =>
-  allCustoms(src, 'misc', undefined, (x) => x)
-export const allStacks = (src: Source) =>
-  allCustoms(src, 'stackOut', undefined, (out) => ({
+export const allStatics = (sheet: Sheet) =>
+  allCustoms(sheet, 'misc', undefined, (x) => x)
+export const allStacks = (sheet: Sheet) =>
+  allCustoms(sheet, 'stackOut', undefined, (out) => ({
     add: (cond: NumNode | number) => out.with('qt', 'stackIn').add(cond),
     apply: (val: NumNode | number, otherwise: NumNode | number = 0) =>
       cmpEq(out, 1, val, otherwise),
   }))
-export const allBoolConditionals = (src: Source) =>
-  allCustoms(src, 'cond', { type: 'bool' }, ({ sum: r }) => ({
+export const allBoolConditionals = (sheet: Sheet) =>
+  allCustoms(sheet, 'cond', { type: 'bool' }, ({ sum: r }) => ({
     ifOn: (node: NumNode | number, off?: NumNode | number) =>
       cmpNE(r, 0, node, off),
     ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
   }))
-export const allListConditionals = <T extends string>(src: Source, list: T[]) =>
-  allCustoms(src, 'cond', { type: 'list', list }, ({ max: r }) => ({
+export const allListConditionals = <T extends string>(
+  sheet: Sheet,
+  list: T[]
+) =>
+  allCustoms(sheet, 'cond', { type: 'list', list }, ({ max: r }) => ({
     map: (table: Record<T, number>, def = 0) => {
       subscript(
         r,
@@ -225,32 +228,35 @@ export const allListConditionals = <T extends string>(src: Source, list: T[]) =>
     value: r,
   }))
 export const allNumConditionals = (
-  src: Source,
+  sheet: Sheet,
   ex: Read['accu'],
   int_only: boolean,
   min?: number,
   max?: number
-) => allCustoms(src, 'cond', { type: 'num', int_only, min, max }, (r) => r[ex])
+) =>
+  allCustoms(sheet, 'cond', { type: 'num', int_only, min, max }, (r) => r[ex])
 
-export const conditionalEntries = (src: Source) => {
-  const base = allCustoms(src, 'cond', undefined, (r) => r)
+export const conditionalEntries = (sheet: Sheet) => {
+  const base = allCustoms(sheet, 'cond', undefined, (r) => r)
   return (name: string, val: string | number) => base[name].add(val)
 }
 
 function allCustoms<T>(
-  src: Source,
+  sheet: Sheet,
   qt: string,
   meta: object | undefined,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
   if (meta && metaList.conditionals) {
     const { conditionals } = metaList
-    return reader.withTag({ et: 'self', src, qt }).withAll('q', [], (r, q) => {
-      conditionals.push({ tag: r.tag, meta })
-      return transform(r, q)
-    })
+    return reader
+      .withTag({ et: 'self', sheet, qt })
+      .withAll('q', [], (r, q) => {
+        conditionals.push({ tag: r.tag, meta })
+        return transform(r, q)
+      })
   }
-  return reader.withTag({ et: 'self', src, qt }).withAll('q', [], transform)
+  return reader.withTag({ et: 'self', sheet, qt }).withAll('q', [], transform)
 }
 
 export const queryTypes = new Set([

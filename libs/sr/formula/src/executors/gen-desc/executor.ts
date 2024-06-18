@@ -23,18 +23,18 @@ export default async function runExecutor(
   // Massage data from `metaList`
   const conditionals: Record<string, Record<string, any>> = {}
   for (const { tag, meta } of metaList.conditionals!) {
-    const { src, q } = tag // Conditionals guarantee `src-q` pair uniqueness
-    if (!conditionals[src!]) conditionals[src!] = {}
-    if (!conditionals[src!][q!])
-      conditionals[src!][q!] = { src, name: q, tag, ...meta }
-    else console.log(`Duplicated conditionals for ${src}:${q}`)
+    const { sheet, q } = tag // Conditionals guarantee `sheet-q` pair uniqueness
+    if (!conditionals[sheet!]) conditionals[sheet!] = {}
+    if (!conditionals[sheet!][q!])
+      conditionals[sheet!][q!] = { sheet, name: q, tag, ...meta }
+    else console.log(`Duplicated conditionals for ${sheet}:${q}`)
   }
 
   // Crawl for formulas in sheet-specific formula listing
   for (const { tag, value } of data as typeof Data) {
     if (
       // sheet-specific
-      tag['src'] != 'agg' &&
+      tag['sheet'] != 'agg' &&
       // formula listing
       tag['qt'] == 'listing' &&
       tag['q'] == 'formulas' &&
@@ -43,12 +43,16 @@ export default async function runExecutor(
       'name' in value.tag &&
       'q' in value.tag
     ) {
-      const src = tag.src!
+      const sheet = tag.sheet!
       const name = value.tag['name']!
-      if (!formulas[src]) formulas[src] = {}
-      if (formulas[src][name])
-        console.error(`Duplicated formula definition for ${src}:${name}`)
-      formulas[src][name] = { src, name, tag: { ...tag, ...value.tag } }
+      if (!formulas[sheet]) formulas[sheet] = {}
+      if (formulas[sheet][name])
+        console.error(`Duplicated formula definition for ${sheet}:${name}`)
+      formulas[sheet][name] = {
+        sheet,
+        name,
+        tag: { ...tag, ...value.tag },
+      }
     }
   }
 
@@ -63,7 +67,7 @@ export type IConditionalData =
   | IListConditionalData
   | INumConditionalData
 export type IFormulaData = {
-  src: string // entity
+  sheet: string // entity
   name: string // formula name
   tag: Tag // tag used to access value
 }
@@ -71,7 +75,7 @@ export type IFormulaData = {
 /// Conditional whose values are True (1.0) and False (0.0)
 export type IBoolConditionalData = {
   type: 'bool' // type discriminator
-  src: string // entity
+  sheet: string // entity
   name: string // conditional name
   tag: Tag // tag used to access value
 }
@@ -79,7 +83,7 @@ export type IBoolConditionalData = {
 /// entry, use the (0-based) position in the list
 export type IListConditionalData = {
   type: 'list' // type discriminator
-  src: string // entity
+  sheet: string // entity
   name: string // conditional name
   tag: Tag // tag used to access value
 
@@ -88,7 +92,7 @@ export type IListConditionalData = {
 /// Conditional whose values are regular numbers
 export type INumConditionalData = {
   type: 'num' // type discriminator
-  src: string // entity
+  sheet: string // entity
   name: string // conditional name
   tag: Tag // tag used to access value
 

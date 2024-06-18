@@ -8,7 +8,7 @@ export function entriesForRelic(
   key: RelicSetKey,
   dataGen: RelicSetDatum
 ): TagMapNodeEntries {
-  const relicCount = self.common.count.src(key)
+  const relicCount = self.common.count.sheet(key)
   return [
     // Passive stats
     ...dataGen.setEffects.flatMap(({ numRequired, passiveStats }) =>

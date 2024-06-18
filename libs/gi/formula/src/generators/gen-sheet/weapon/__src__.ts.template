@@ -10,7 +10,7 @@ import {
 } from '../util'
 import { entriesForWeapon } from './util'
 
-const key: WeaponKey = '<%= src %>'
+const key: WeaponKey = '<%= sheet %>'
 
 const {
   weapon: { refinement: _refinement },

@@ -4,7 +4,7 @@ import { cmpEq, cmpGE } from '@genshin-optimizer/pando/engine'
 import type {
   Member,
   Preset,
-  Source,
+  Sheet,
   Stat,
   TagMapNodeEntries,
 } from './data/util'
@@ -23,18 +23,18 @@ export function withPreset(
   return data.map(({ tag, value }) => ({ tag: { ...tag, preset }, value }))
 }
 export function withMember(
-  member: Member,
+  src: Member,
   ...data: TagMapNodeEntries
 ): TagMapNodeEntries {
-  return data.map(({ tag, value }) => ({ tag: { ...tag, member }, value }))
+  return data.map(({ tag, value }) => ({ tag: { ...tag, src }, value }))
 }
 
 export function charData(data: ICharacter): TagMapNodeEntries {
   const { lvl, auto, skill, burst, ascension, constellation } = selfBuff.char
 
   return [
-    reader.src('agg').reread(reader.src(data.key)),
-    reader.withTag({ src: 'iso', et: 'self' }).reread(reader.src(data.key)),
+    reader.sheet('agg').reread(reader.sheet(data.key)),
+    reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet(data.key)),
 
     lvl.add(data.level),
     auto.add(data.talent.auto),
@@ -53,7 +53,7 @@ export function weaponData(data: IWeapon): TagMapNodeEntries {
   const { lvl, ascension, refinement } = selfBuff.weapon
 
   return [
-    reader.src('agg').reread(reader.src(data.key)),
+    reader.sheet('agg').reread(reader.sheet(data.key)),
 
     lvl.add(data.level),
     ascension.add(data.ascension),
@@ -70,7 +70,7 @@ export function artifactsData(
   const {
     common: { count },
     premod,
-  } = convert(selfTag, { src: 'art', et: 'self' })
+  } = convert(selfTag, { sheet: 'art', et: 'self' })
   const sets: Partial<Record<ArtifactSetKey, number>> = {},
     stats: Partial<Record<Stat, number>> = {}
   for (const { set: setKey, stats: stat } of data) {
@@ -85,25 +85,25 @@ export function artifactsData(
   }
   return [
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
-    reader.src('agg').reread(reader.src('art')),
+    reader.sheet('agg').reread(reader.sheet('art')),
 
-    // Add `src:dyn` between the stat and the buff so that we can `detach` them easily
-    reader.withTag({ src: 'art', qt: 'premod' }).reread(reader.src('dyn')),
+    // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
+    reader.withTag({ sheet: 'art', qt: 'premod' }).reread(reader.sheet('dyn')),
     ...Object.entries(stats).map(([k, v]) =>
-      premod[k as Stat].src('dyn').add(v)
+      premod[k as Stat].sheet('dyn').add(v)
     ),
 
     ...Object.entries(sets).map(([k, v]) =>
-      count.src(k as ArtifactSetKey).add(v)
+      count.sheet(k as ArtifactSetKey).add(v)
     ),
   ]
 }
 
 export function conditionalData(
-  data: Partial<Record<Source, Record<string, string | number>>>
+  data: Partial<Record<Sheet, Record<string, string | number>>>
 ) {
   return Object.entries(data).flatMap(([key, entries]) => {
-    const conds = conditionalEntries(key as Source)
+    const conds = conditionalEntries(key as Sheet)
     return Object.entries(entries).map(([k, v]) => conds(k, v))
   })
 }
@@ -113,32 +113,28 @@ export function teamData(
   members: readonly Member[]
 ): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { active, self, teamBuff } = reader.src('agg').withAll('et', [])
+  const { active, self, teamBuff } = reader.sheet('agg').withAll('et', [])
   const { stackIn, stackInt, stackOut } = reader.withAll('qt', [])
   return [
     // Active Member Buff
     activeMembers.flatMap((dst) => {
-      const entry = self.with('member', dst)
-      return members.map((src) =>
-        entry.reread(active.withTag({ dst, member: src }))
-      )
+      const entry = self.with('src', dst)
+      return members.map((src) => entry.reread(active.withTag({ dst, src })))
     }),
-    activeMembers.map((member) =>
-      selfBuff.common.isActive.withTag({ member }).add(1)
+    activeMembers.map((src) =>
+      selfBuff.common.isActive.withTag({ src }).add(1)
     ),
     // Team Buff
     members.flatMap((dst) => {
-      const entry = self.with('member', dst)
-      return members.map((src) =>
-        entry.reread(teamBuff.withTag({ dst, member: src }))
-      )
+      const entry = self.with('src', dst)
+      return members.map((src) => entry.reread(teamBuff.withTag({ dst, src })))
     }),
     // Stacking
-    members.map((member, i) =>
-      stackInt.add(cmpGE(stackIn.withTag({ member }).max, 1, i + 1))
+    members.map((src, i) =>
+      stackInt.add(cmpGE(stackIn.withTag({ src }).max, 1, i + 1))
     ),
-    members.map((member, i) =>
-      stackOut.withTag({ member }).add(cmpEq(stackInt.max, i + 1, 1))
+    members.map((src, i) =>
+      stackOut.withTag({ src }).add(cmpEq(stackInt.max, i + 1, 1))
     ),
     // Total Team Stat
     //
@@ -149,8 +145,8 @@ export function teamData(
     // use different accumulators from the inner query. Such is the case for maximum team
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
-    members.map((member) =>
-      teamEntry.add(reader.withTag({ member, et: 'self' }).sum)
+    members.map((src) =>
+      teamEntry.add(reader.withTag({ src, et: 'self' }).sum)
     ),
   ].flat()
 }

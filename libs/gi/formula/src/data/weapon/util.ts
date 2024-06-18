@@ -32,11 +32,13 @@ export function entriesForWeapon(key: WeaponKey): TagMapNodeEntries {
     ),
 
     // Listing (specialized)
-    // All items here are sheet-specific data (i.e., `src:<key>`)
-    self.listing.specialized.add(listingItem(self.base[primaryStat].src(key))),
+    // All items here are sheet-specific data (i.e., `sheet:<key>`)
+    self.listing.specialized.add(
+      listingItem(self.base[primaryStat].sheet(key))
+    ),
     ...[...nonPrimaryStat].map((stat) =>
       self.listing.specialized.add(
-        listingItem(readStat(self.premod, stat).src(key))
+        listingItem(readStat(self.premod, stat).sheet(key))
       )
     ),
     ...[...Object.keys(gen.refinementBonus)].map((stat) =>
@@ -45,7 +47,7 @@ export function entriesForWeapon(key: WeaponKey): TagMapNodeEntries {
           readStat(
             self.weaponRefinement,
             stat as keyof typeof gen.refinementBonus
-          ).src(key)
+          ).sheet(key)
         )
       )
     ),

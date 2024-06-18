@@ -12,19 +12,19 @@ export default async function genSheetGenerator(
   tree: Tree,
   options: GenSheetGeneratorSchema
 ) {
-  const { sheet_type, src } = options
+  const { sheet_type, sheet } = options
   switch (sheet_type) {
     case 'char':
-      if (!isIn(allCharacterKeys, src))
-        return console.error(`Character with key ${src} does not exist.`)
+      if (!isIn(allCharacterKeys, sheet))
+        return console.error(`Character with key ${sheet} does not exist.`)
       break
     case 'weapon':
-      if (!isIn(allWeaponKeys, src))
-        return console.error(`Weapon with key ${src} does not exist.`)
+      if (!isIn(allWeaponKeys, sheet))
+        return console.error(`Weapon with key ${sheet} does not exist.`)
       break
     case 'artifact':
-      if (!isIn(allArtifactSetKeys, src))
-        return console.error(`Artifact set with key ${src} does not exist.`)
+      if (!isIn(allArtifactSetKeys, sheet))
+        return console.error(`Artifact set with key ${sheet} does not exist.`)
       break
     default:
       console.error('Invalid sheet type')

@@ -28,7 +28,7 @@ const dm = {
   },
 }
 
-const relicCount = self.common.count.src(key)
+const relicCount = self.common.count.sheet(key)
 
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)

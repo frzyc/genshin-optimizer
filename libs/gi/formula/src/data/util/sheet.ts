@@ -7,7 +7,7 @@ import type {
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { NumNode, StrNode } from '@genshin-optimizer/pando/engine'
 import { prod } from '@genshin-optimizer/pando/engine'
-import type { Source, Stat } from './listing'
+import type { Sheet, Stat } from './listing'
 import type { Read } from './read'
 import { reader, tag } from './read'
 import { self, selfBuff, teamBuff } from './tag'
@@ -15,11 +15,11 @@ import type { TagMapNodeEntries, TagMapNodeEntry } from './tagMapType'
 
 // Use `registerArt` for artifacts
 export function register(
-  src: Exclude<Source, ArtifactSetKey>,
+  sheet: Exclude<Sheet, ArtifactSetKey>,
   ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
 ): TagMapNodeEntries {
   const internal = ({ tag, value }: TagMapNodeEntry) => ({
-    tag: { ...tag, src },
+    tag: { ...tag, sheet },
     value,
   })
   return data.flatMap((data) =>

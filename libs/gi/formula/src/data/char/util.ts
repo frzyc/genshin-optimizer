@@ -175,8 +175,8 @@ export function entriesForChar(
     // Listing (specialized)
     ...[...specialized].map((stat) =>
       selfBuff.listing.specialized.add(
-        // Sheet-specific data (i.e., `src:<key>`)
-        listingItem(readStat(self.premod, stat).src(key))
+        // Sheet-specific data (i.e., `sheet:<key>`)
+        listingItem(readStat(self.premod, stat).sheet(key))
       )
     ),
   ]

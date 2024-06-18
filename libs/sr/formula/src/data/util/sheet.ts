@@ -14,7 +14,7 @@ import {
   type TagMapNodeEntries,
   type TagMapNodeEntry,
 } from '.'
-import type { ElementalType, Source } from './listing'
+import type { ElementalType, Sheet } from './listing'
 
 export type FormulaArg = {
   team?: boolean // true if applies to every member, and false (default) if applies only to self
@@ -24,11 +24,11 @@ export type FormulaArg = {
 export type DmgTag = Pick<Tag, 'damageType1' | 'damageType2' | 'elementalType'>
 
 export function register(
-  src: Source,
+  sheet: Sheet,
   ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
 ): TagMapNodeEntries {
   const internal = ({ tag, value }: TagMapNodeEntry) => ({
-    tag: { ...tag, src },
+    tag: { ...tag, sheet },
     value,
   })
   return data.flatMap((data) =>

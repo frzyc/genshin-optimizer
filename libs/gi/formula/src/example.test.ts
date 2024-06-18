@@ -38,10 +38,10 @@ Object.assign(values, compileTagMapValues(keys, entries))
 // Should a test here fail, extract a minimized version to `correctness` test.
 describe('example', () => {
   const data: TagMapNodeEntries = [
-      ...teamData(['member0'], ['member0', 'member1']),
+      ...teamData(['0'], ['0', '1']),
 
       ...withMember(
-        'member0',
+        '0',
         ...charData(rawData[0].char as ICharacter),
         ...weaponData(rawData[0].weapon as IWeapon),
         ...artifactsData([
@@ -53,7 +53,7 @@ describe('example', () => {
         userBuff.premod.def.add(30)
       ),
       ...withMember(
-        'member1',
+        '1',
         ...charData(rawData[1].char as ICharacter),
         ...weaponData(rawData[1].weapon as IWeapon),
         ...artifactsData([
@@ -71,8 +71,8 @@ describe('example', () => {
     ],
     calc = genshinCalculatorWithEntries(data)
 
-  const member0 = convert(selfTag, { member: 'member0', et: 'self' })
-  const member1 = convert(selfTag, { member: 'member1', et: 'self' })
+  const member0 = convert(selfTag, { src: '0', et: 'self' })
+  const member1 = convert(selfTag, { src: '1', et: 'self' })
 
   test('enumerate all tags', () => {
     expect(Object.keys(member0).sort()).toEqual(Object.keys(selfTag).sort())
@@ -120,9 +120,9 @@ describe('example', () => {
      * Each entry in listing is a `Tag` in the shape of
      * ```
      * {
-     *   member: 'member'
+     *   src: <member>
      *   et: 'self'
-     *   src: <sheet that defines the formula>
+     *   sheet: <sheet that defines the formula>
      *   qt: 'formula'
      *   q: < 'dmg' / 'trans' / 'shield' / 'heal' >
      *   name: <formula name>
@@ -136,16 +136,16 @@ describe('example', () => {
     // Simple check that all tags are in the correct format
     const names: string[] = []
     for (const { name, move, ...tag } of listing.filter(
-      (x) => x.src === 'Nahida' && x.qt == 'formula' // exclude stats
+      (x) => x.sheet === 'Nahida' && x.qt == 'formula' // exclude stats
     )) {
       names.push(name!)
       expect(name).toBeTruthy()
       expect(move).toBeTruthy()
       test(`with name ${name}`, () => {
         expect(tag).toEqual({
-          member: 'member0',
+          src: '0',
           et: 'self',
-          src: 'Nahida',
+          sheet: 'Nahida',
           qt: 'formula',
           q: 'dmg', // DMG formula
         })
@@ -164,7 +164,7 @@ describe('example', () => {
       'skill_hold',
       'skill_press',
     ])
-    expect(listing.filter((x) => x.src === 'static').length).toEqual(5)
+    expect(listing.filter((x) => x.sheet === 'static').length).toEqual(5)
   })
   test('calculate formulas in a listing', () => {
     const read = calc
@@ -173,7 +173,7 @@ describe('example', () => {
     const tag = read.tag
 
     expect(read).toBeTruthy()
-    expect(tag.src).toEqual('Nahida') // Formula from Nahida
+    expect(tag.sheet).toEqual('Nahida') // Formula from Nahida
     expect(tag.q).toEqual('dmg') // DMG formula
     expect(tag.name).toEqual('normal_0') // Formula name
 
@@ -195,10 +195,10 @@ describe('example', () => {
     expect(conds.length).toEqual(2)
     expect(conds[0]).toEqual({
       et: 'self',
-      member: 'member0',
+      src: '0',
       trans: 'burgeon',
-      dst: 'member0',
-      src: 'Nahida',
+      dst: '0',
+      sheet: 'Nahida',
       qt: 'cond',
       q: 'c2Bloom',
     })
@@ -220,13 +220,13 @@ describe('example', () => {
     // Step 2: Detach nodes from Calculator
     const allArts = new Set(allArtifactSetKeys) // Cache for fast lookup, put in global
     let detached = detach(nodes, calc, (tag: Tag) => {
-      if (tag['member'] != 'member0') return undefined // Wrong member
+      if (tag['src'] != '0') return undefined // Wrong member
       if (tag['et'] != 'self') return undefined // Not applied (only) to self
 
-      if (tag['src'] === 'dyn' && tag['qt'] === 'premod')
+      if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
         return { q: tag['q']! } // Art stat bonus
-      if (tag['q'] === 'count' && allArts.has(tag['src'] as any))
-        return { q: tag['src']! } // Art set counter
+      if (tag['q'] === 'count' && allArts.has(tag['sheet'] as any))
+        return { q: tag['sheet']! } // Art set counter
       return undefined
     })
 

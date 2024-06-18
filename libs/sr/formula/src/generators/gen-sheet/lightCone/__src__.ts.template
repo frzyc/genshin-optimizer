@@ -13,7 +13,7 @@ import {
 } from '../util'
 import { entriesForLightCone } from './util'
 
-const key: LightConeKey = '<%= src %>'
+const key: LightConeKey = '<%= sheet %>'
 const data_gen = allStats.lightCone[key]
 
 let i = 0

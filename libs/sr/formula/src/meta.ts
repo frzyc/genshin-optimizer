@@ -5,7 +5,7 @@ export type IConditionalData =
   | IListConditionalData
   | INumConditionalData
 export type IFormulaData = {
-  src: string // entity
+  sheet: string // entity
   name: string // formula name
   tag: Tag // tag used to access value
 }
@@ -13,7 +13,7 @@ export type IFormulaData = {
 /// Conditional whose values are True (1.0) and False (0.0)
 export type IBoolConditionalData = {
   type: 'bool' // type discriminator
-  src: string // entity
+  sheet: string // entity
   name: string // conditional name
   tag: Tag // tag used to access value
 }
@@ -21,7 +21,7 @@ export type IBoolConditionalData = {
 /// entry, use the (0-based) position in the list
 export type IListConditionalData = {
   type: 'list' // type discriminator
-  src: string // entity
+  sheet: string // entity
   name: string // conditional name
   tag: Tag // tag used to access value
 
@@ -30,7 +30,7 @@ export type IListConditionalData = {
 /// Conditional whose values are regular numbers
 export type INumConditionalData = {
   type: 'num' // type discriminator
-  src: string // entity
+  sheet: string // entity
   name: string // conditional name
   tag: Tag // tag used to access value
 
@@ -42,22 +42,22 @@ export type INumConditionalData = {
 export const conditionals = {
   Acheron: {
     boolConditional: {
-      src: 'Acheron',
+      sheet: 'Acheron',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Acheron', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Acheron', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Acheron',
+      sheet: 'Acheron',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Acheron', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Acheron', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Acheron',
+      sheet: 'Acheron',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Acheron', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Acheron', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -66,22 +66,22 @@ export const conditionals = {
   },
   Argenti: {
     boolConditional: {
-      src: 'Argenti',
+      sheet: 'Argenti',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Argenti', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Argenti', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Argenti',
+      sheet: 'Argenti',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Argenti', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Argenti', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Argenti',
+      sheet: 'Argenti',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Argenti', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Argenti', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -90,22 +90,22 @@ export const conditionals = {
   },
   Arlan: {
     boolConditional: {
-      src: 'Arlan',
+      sheet: 'Arlan',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Arlan', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Arlan', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Arlan',
+      sheet: 'Arlan',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Arlan', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Arlan', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Arlan',
+      sheet: 'Arlan',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Arlan', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Arlan', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -114,22 +114,22 @@ export const conditionals = {
   },
   Asta: {
     boolConditional: {
-      src: 'Asta',
+      sheet: 'Asta',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Asta', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Asta', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Asta',
+      sheet: 'Asta',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Asta', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Asta', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Asta',
+      sheet: 'Asta',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Asta', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Asta', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -138,22 +138,32 @@ export const conditionals = {
   },
   Aventurine: {
     boolConditional: {
-      src: 'Aventurine',
+      sheet: 'Aventurine',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Aventurine', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'Aventurine',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'Aventurine',
+      sheet: 'Aventurine',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Aventurine', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'Aventurine',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Aventurine',
+      sheet: 'Aventurine',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Aventurine', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Aventurine', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -162,22 +172,22 @@ export const conditionals = {
   },
   Bailu: {
     boolConditional: {
-      src: 'Bailu',
+      sheet: 'Bailu',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Bailu', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Bailu', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Bailu',
+      sheet: 'Bailu',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Bailu', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Bailu', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Bailu',
+      sheet: 'Bailu',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Bailu', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Bailu', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -186,22 +196,22 @@ export const conditionals = {
   },
   BlackSwan: {
     boolConditional: {
-      src: 'BlackSwan',
+      sheet: 'BlackSwan',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'BlackSwan', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'BlackSwan', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'BlackSwan',
+      sheet: 'BlackSwan',
       name: 'listConditional',
-      tag: { et: 'self', src: 'BlackSwan', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'BlackSwan', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'BlackSwan',
+      sheet: 'BlackSwan',
       name: 'numConditional',
-      tag: { et: 'self', src: 'BlackSwan', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'BlackSwan', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -210,22 +220,22 @@ export const conditionals = {
   },
   Blade: {
     boolConditional: {
-      src: 'Blade',
+      sheet: 'Blade',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Blade', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Blade', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Blade',
+      sheet: 'Blade',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Blade', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Blade', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Blade',
+      sheet: 'Blade',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Blade', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Blade', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -234,22 +244,22 @@ export const conditionals = {
   },
   Bronya: {
     boolConditional: {
-      src: 'Bronya',
+      sheet: 'Bronya',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Bronya', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Bronya', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Bronya',
+      sheet: 'Bronya',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Bronya', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Bronya', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Bronya',
+      sheet: 'Bronya',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Bronya', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Bronya', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -258,22 +268,22 @@ export const conditionals = {
   },
   Clara: {
     boolConditional: {
-      src: 'Clara',
+      sheet: 'Clara',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Clara', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Clara', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Clara',
+      sheet: 'Clara',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Clara', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Clara', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Clara',
+      sheet: 'Clara',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Clara', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Clara', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -282,22 +292,22 @@ export const conditionals = {
   },
   DanHeng: {
     boolConditional: {
-      src: 'DanHeng',
+      sheet: 'DanHeng',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'DanHeng', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'DanHeng', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'DanHeng',
+      sheet: 'DanHeng',
       name: 'listConditional',
-      tag: { et: 'self', src: 'DanHeng', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'DanHeng', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'DanHeng',
+      sheet: 'DanHeng',
       name: 'numConditional',
-      tag: { et: 'self', src: 'DanHeng', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'DanHeng', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -306,22 +316,22 @@ export const conditionals = {
   },
   DanHengImbibitorLunae: {
     boolConditional: {
-      src: 'DanHengImbibitorLunae',
+      sheet: 'DanHengImbibitorLunae',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'DanHengImbibitorLunae',
+        sheet: 'DanHengImbibitorLunae',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'DanHengImbibitorLunae',
+      sheet: 'DanHengImbibitorLunae',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'DanHengImbibitorLunae',
+        sheet: 'DanHengImbibitorLunae',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -329,11 +339,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'DanHengImbibitorLunae',
+      sheet: 'DanHengImbibitorLunae',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'DanHengImbibitorLunae',
+        sheet: 'DanHengImbibitorLunae',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -345,22 +355,22 @@ export const conditionals = {
   },
   DrRatio: {
     boolConditional: {
-      src: 'DrRatio',
+      sheet: 'DrRatio',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'DrRatio', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'DrRatio', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'DrRatio',
+      sheet: 'DrRatio',
       name: 'listConditional',
-      tag: { et: 'self', src: 'DrRatio', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'DrRatio', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'DrRatio',
+      sheet: 'DrRatio',
       name: 'numConditional',
-      tag: { et: 'self', src: 'DrRatio', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'DrRatio', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -369,22 +379,22 @@ export const conditionals = {
   },
   FuXuan: {
     boolConditional: {
-      src: 'FuXuan',
+      sheet: 'FuXuan',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'FuXuan', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'FuXuan', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'FuXuan',
+      sheet: 'FuXuan',
       name: 'listConditional',
-      tag: { et: 'self', src: 'FuXuan', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'FuXuan', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'FuXuan',
+      sheet: 'FuXuan',
       name: 'numConditional',
-      tag: { et: 'self', src: 'FuXuan', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'FuXuan', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -393,22 +403,22 @@ export const conditionals = {
   },
   Gallagher: {
     boolConditional: {
-      src: 'Gallagher',
+      sheet: 'Gallagher',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Gallagher', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Gallagher', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Gallagher',
+      sheet: 'Gallagher',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Gallagher', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Gallagher', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Gallagher',
+      sheet: 'Gallagher',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Gallagher', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Gallagher', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -417,22 +427,22 @@ export const conditionals = {
   },
   Gepard: {
     boolConditional: {
-      src: 'Gepard',
+      sheet: 'Gepard',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Gepard', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Gepard', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Gepard',
+      sheet: 'Gepard',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Gepard', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Gepard', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Gepard',
+      sheet: 'Gepard',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Gepard', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Gepard', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -441,22 +451,22 @@ export const conditionals = {
   },
   Guinaifen: {
     boolConditional: {
-      src: 'Guinaifen',
+      sheet: 'Guinaifen',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Guinaifen', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Guinaifen', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Guinaifen',
+      sheet: 'Guinaifen',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Guinaifen', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Guinaifen', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Guinaifen',
+      sheet: 'Guinaifen',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Guinaifen', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Guinaifen', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -465,22 +475,22 @@ export const conditionals = {
   },
   Hanya: {
     boolConditional: {
-      src: 'Hanya',
+      sheet: 'Hanya',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Hanya', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Hanya', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Hanya',
+      sheet: 'Hanya',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Hanya', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Hanya', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Hanya',
+      sheet: 'Hanya',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Hanya', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Hanya', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -489,22 +499,22 @@ export const conditionals = {
   },
   Herta: {
     boolConditional: {
-      src: 'Herta',
+      sheet: 'Herta',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Herta', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Herta', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Herta',
+      sheet: 'Herta',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Herta', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Herta', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Herta',
+      sheet: 'Herta',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Herta', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Herta', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -513,22 +523,22 @@ export const conditionals = {
   },
   Himeko: {
     boolConditional: {
-      src: 'Himeko',
+      sheet: 'Himeko',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Himeko', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Himeko', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Himeko',
+      sheet: 'Himeko',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Himeko', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Himeko', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Himeko',
+      sheet: 'Himeko',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Himeko', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Himeko', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -537,22 +547,22 @@ export const conditionals = {
   },
   Hook: {
     boolConditional: {
-      src: 'Hook',
+      sheet: 'Hook',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Hook', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Hook', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Hook',
+      sheet: 'Hook',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Hook', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Hook', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Hook',
+      sheet: 'Hook',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Hook', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Hook', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -561,22 +571,22 @@ export const conditionals = {
   },
   Huohuo: {
     boolConditional: {
-      src: 'Huohuo',
+      sheet: 'Huohuo',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Huohuo', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Huohuo', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Huohuo',
+      sheet: 'Huohuo',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Huohuo', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Huohuo', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Huohuo',
+      sheet: 'Huohuo',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Huohuo', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Huohuo', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -585,22 +595,22 @@ export const conditionals = {
   },
   JingYuan: {
     boolConditional: {
-      src: 'JingYuan',
+      sheet: 'JingYuan',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'JingYuan', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'JingYuan', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'JingYuan',
+      sheet: 'JingYuan',
       name: 'listConditional',
-      tag: { et: 'self', src: 'JingYuan', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'JingYuan', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'JingYuan',
+      sheet: 'JingYuan',
       name: 'numConditional',
-      tag: { et: 'self', src: 'JingYuan', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'JingYuan', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -609,22 +619,22 @@ export const conditionals = {
   },
   Jingliu: {
     boolConditional: {
-      src: 'Jingliu',
+      sheet: 'Jingliu',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Jingliu', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Jingliu', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Jingliu',
+      sheet: 'Jingliu',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Jingliu', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Jingliu', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Jingliu',
+      sheet: 'Jingliu',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Jingliu', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Jingliu', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -633,22 +643,22 @@ export const conditionals = {
   },
   Kafka: {
     boolConditional: {
-      src: 'Kafka',
+      sheet: 'Kafka',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Kafka', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Kafka', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Kafka',
+      sheet: 'Kafka',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Kafka', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Kafka', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Kafka',
+      sheet: 'Kafka',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Kafka', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Kafka', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -657,22 +667,22 @@ export const conditionals = {
   },
   Luka: {
     boolConditional: {
-      src: 'Luka',
+      sheet: 'Luka',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Luka', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Luka', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Luka',
+      sheet: 'Luka',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Luka', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Luka', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Luka',
+      sheet: 'Luka',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Luka', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Luka', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -681,22 +691,22 @@ export const conditionals = {
   },
   Luocha: {
     boolConditional: {
-      src: 'Luocha',
+      sheet: 'Luocha',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Luocha', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Luocha', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Luocha',
+      sheet: 'Luocha',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Luocha', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Luocha', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Luocha',
+      sheet: 'Luocha',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Luocha', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Luocha', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -705,22 +715,22 @@ export const conditionals = {
   },
   Lynx: {
     boolConditional: {
-      src: 'Lynx',
+      sheet: 'Lynx',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Lynx', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Lynx', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Lynx',
+      sheet: 'Lynx',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Lynx', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Lynx', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Lynx',
+      sheet: 'Lynx',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Lynx', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Lynx', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -729,22 +739,22 @@ export const conditionals = {
   },
   Misha: {
     boolConditional: {
-      src: 'Misha',
+      sheet: 'Misha',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Misha', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Misha', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Misha',
+      sheet: 'Misha',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Misha', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Misha', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Misha',
+      sheet: 'Misha',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Misha', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Misha', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -753,22 +763,22 @@ export const conditionals = {
   },
   Natasha: {
     boolConditional: {
-      src: 'Natasha',
+      sheet: 'Natasha',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Natasha', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Natasha', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Natasha',
+      sheet: 'Natasha',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Natasha', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Natasha', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Natasha',
+      sheet: 'Natasha',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Natasha', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Natasha', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -777,22 +787,22 @@ export const conditionals = {
   },
   Pela: {
     boolConditional: {
-      src: 'Pela',
+      sheet: 'Pela',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Pela', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Pela', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Pela',
+      sheet: 'Pela',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Pela', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Pela', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Pela',
+      sheet: 'Pela',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Pela', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Pela', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -801,22 +811,22 @@ export const conditionals = {
   },
   Qingque: {
     boolConditional: {
-      src: 'Qingque',
+      sheet: 'Qingque',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Qingque', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Qingque', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Qingque',
+      sheet: 'Qingque',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Qingque', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Qingque', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Qingque',
+      sheet: 'Qingque',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Qingque', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Qingque', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -825,22 +835,22 @@ export const conditionals = {
   },
   RuanMei: {
     boolConditional: {
-      src: 'RuanMei',
+      sheet: 'RuanMei',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'RuanMei', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'RuanMei', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'RuanMei',
+      sheet: 'RuanMei',
       name: 'listConditional',
-      tag: { et: 'self', src: 'RuanMei', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'RuanMei', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'RuanMei',
+      sheet: 'RuanMei',
       name: 'numConditional',
-      tag: { et: 'self', src: 'RuanMei', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'RuanMei', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -849,22 +859,22 @@ export const conditionals = {
   },
   Sampo: {
     boolConditional: {
-      src: 'Sampo',
+      sheet: 'Sampo',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Sampo', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Sampo', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Sampo',
+      sheet: 'Sampo',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Sampo', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Sampo', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Sampo',
+      sheet: 'Sampo',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Sampo', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Sampo', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -873,22 +883,22 @@ export const conditionals = {
   },
   Seele: {
     boolConditional: {
-      src: 'Seele',
+      sheet: 'Seele',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Seele', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Seele', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Seele',
+      sheet: 'Seele',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Seele', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Seele', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Seele',
+      sheet: 'Seele',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Seele', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Seele', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -897,22 +907,22 @@ export const conditionals = {
   },
   Serval: {
     boolConditional: {
-      src: 'Serval',
+      sheet: 'Serval',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Serval', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Serval', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Serval',
+      sheet: 'Serval',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Serval', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Serval', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Serval',
+      sheet: 'Serval',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Serval', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Serval', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -921,22 +931,32 @@ export const conditionals = {
   },
   SilverWolf: {
     boolConditional: {
-      src: 'SilverWolf',
+      sheet: 'SilverWolf',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'SilverWolf', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'SilverWolf',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'SilverWolf',
+      sheet: 'SilverWolf',
       name: 'listConditional',
-      tag: { et: 'self', src: 'SilverWolf', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'SilverWolf',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'SilverWolf',
+      sheet: 'SilverWolf',
       name: 'numConditional',
-      tag: { et: 'self', src: 'SilverWolf', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'SilverWolf', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -945,22 +965,22 @@ export const conditionals = {
   },
   Sparkle: {
     boolConditional: {
-      src: 'Sparkle',
+      sheet: 'Sparkle',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Sparkle', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Sparkle', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Sparkle',
+      sheet: 'Sparkle',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Sparkle', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Sparkle', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Sparkle',
+      sheet: 'Sparkle',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Sparkle', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Sparkle', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -969,22 +989,22 @@ export const conditionals = {
   },
   Sushang: {
     boolConditional: {
-      src: 'Sushang',
+      sheet: 'Sushang',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Sushang', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Sushang', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Sushang',
+      sheet: 'Sushang',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Sushang', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Sushang', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Sushang',
+      sheet: 'Sushang',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Sushang', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Sushang', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -993,22 +1013,22 @@ export const conditionals = {
   },
   Tingyun: {
     boolConditional: {
-      src: 'Tingyun',
+      sheet: 'Tingyun',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Tingyun', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Tingyun', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Tingyun',
+      sheet: 'Tingyun',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Tingyun', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Tingyun', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Tingyun',
+      sheet: 'Tingyun',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Tingyun', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Tingyun', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1017,22 +1037,22 @@ export const conditionals = {
   },
   TopazAndNumby: {
     boolConditional: {
-      src: 'TopazAndNumby',
+      sheet: 'TopazAndNumby',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'TopazAndNumby',
+        sheet: 'TopazAndNumby',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'TopazAndNumby',
+      sheet: 'TopazAndNumby',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'TopazAndNumby',
+        sheet: 'TopazAndNumby',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1040,11 +1060,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'TopazAndNumby',
+      sheet: 'TopazAndNumby',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'TopazAndNumby',
+        sheet: 'TopazAndNumby',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1056,22 +1076,22 @@ export const conditionals = {
   },
   Welt: {
     boolConditional: {
-      src: 'Welt',
+      sheet: 'Welt',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Welt', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Welt', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Welt',
+      sheet: 'Welt',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Welt', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Welt', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Welt',
+      sheet: 'Welt',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Welt', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Welt', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1080,22 +1100,22 @@ export const conditionals = {
   },
   Xueyi: {
     boolConditional: {
-      src: 'Xueyi',
+      sheet: 'Xueyi',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Xueyi', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Xueyi', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Xueyi',
+      sheet: 'Xueyi',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Xueyi', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Xueyi', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Xueyi',
+      sheet: 'Xueyi',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Xueyi', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Xueyi', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1104,22 +1124,22 @@ export const conditionals = {
   },
   Yanqing: {
     boolConditional: {
-      src: 'Yanqing',
+      sheet: 'Yanqing',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Yanqing', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Yanqing', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Yanqing',
+      sheet: 'Yanqing',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Yanqing', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Yanqing', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Yanqing',
+      sheet: 'Yanqing',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Yanqing', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Yanqing', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1128,22 +1148,22 @@ export const conditionals = {
   },
   Yukong: {
     boolConditional: {
-      src: 'Yukong',
+      sheet: 'Yukong',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Yukong', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Yukong', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Yukong',
+      sheet: 'Yukong',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Yukong', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Yukong', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Yukong',
+      sheet: 'Yukong',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Yukong', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Yukong', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1152,22 +1172,32 @@ export const conditionals = {
   },
   ASecretVow: {
     boolConditional: {
-      src: 'ASecretVow',
+      sheet: 'ASecretVow',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'ASecretVow', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'ASecretVow',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'ASecretVow',
+      sheet: 'ASecretVow',
       name: 'listConditional',
-      tag: { et: 'self', src: 'ASecretVow', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'ASecretVow',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'ASecretVow',
+      sheet: 'ASecretVow',
       name: 'numConditional',
-      tag: { et: 'self', src: 'ASecretVow', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'ASecretVow', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1176,22 +1206,37 @@ export const conditionals = {
   },
   Adversarial: {
     boolConditional: {
-      src: 'Adversarial',
+      sheet: 'Adversarial',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Adversarial', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'Adversarial',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'Adversarial',
+      sheet: 'Adversarial',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Adversarial', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'Adversarial',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Adversarial',
+      sheet: 'Adversarial',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Adversarial', qt: 'cond', q: 'numConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'Adversarial',
+        qt: 'cond',
+        q: 'numConditional',
+      },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1200,22 +1245,22 @@ export const conditionals = {
   },
   AlongThePassingShore: {
     boolConditional: {
-      src: 'AlongThePassingShore',
+      sheet: 'AlongThePassingShore',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'AlongThePassingShore',
+        sheet: 'AlongThePassingShore',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'AlongThePassingShore',
+      sheet: 'AlongThePassingShore',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'AlongThePassingShore',
+        sheet: 'AlongThePassingShore',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1223,11 +1268,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'AlongThePassingShore',
+      sheet: 'AlongThePassingShore',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'AlongThePassingShore',
+        sheet: 'AlongThePassingShore',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1239,22 +1284,22 @@ export const conditionals = {
   },
   Amber: {
     boolConditional: {
-      src: 'Amber',
+      sheet: 'Amber',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Amber', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Amber', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Amber',
+      sheet: 'Amber',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Amber', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Amber', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Amber',
+      sheet: 'Amber',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Amber', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Amber', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1263,22 +1308,22 @@ export const conditionals = {
   },
   AnInstantBeforeAGaze: {
     boolConditional: {
-      src: 'AnInstantBeforeAGaze',
+      sheet: 'AnInstantBeforeAGaze',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'AnInstantBeforeAGaze',
+        sheet: 'AnInstantBeforeAGaze',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'AnInstantBeforeAGaze',
+      sheet: 'AnInstantBeforeAGaze',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'AnInstantBeforeAGaze',
+        sheet: 'AnInstantBeforeAGaze',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1286,11 +1331,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'AnInstantBeforeAGaze',
+      sheet: 'AnInstantBeforeAGaze',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'AnInstantBeforeAGaze',
+        sheet: 'AnInstantBeforeAGaze',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1302,22 +1347,22 @@ export const conditionals = {
   },
   Arrows: {
     boolConditional: {
-      src: 'Arrows',
+      sheet: 'Arrows',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Arrows', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Arrows', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Arrows',
+      sheet: 'Arrows',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Arrows', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Arrows', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Arrows',
+      sheet: 'Arrows',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Arrows', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Arrows', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1326,22 +1371,22 @@ export const conditionals = {
   },
   BaptismOfPureThought: {
     boolConditional: {
-      src: 'BaptismOfPureThought',
+      sheet: 'BaptismOfPureThought',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'BaptismOfPureThought',
+        sheet: 'BaptismOfPureThought',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'BaptismOfPureThought',
+      sheet: 'BaptismOfPureThought',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'BaptismOfPureThought',
+        sheet: 'BaptismOfPureThought',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1349,11 +1394,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'BaptismOfPureThought',
+      sheet: 'BaptismOfPureThought',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'BaptismOfPureThought',
+        sheet: 'BaptismOfPureThought',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1365,22 +1410,32 @@ export const conditionals = {
   },
   BeforeDawn: {
     boolConditional: {
-      src: 'BeforeDawn',
+      sheet: 'BeforeDawn',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'BeforeDawn', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'BeforeDawn',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'BeforeDawn',
+      sheet: 'BeforeDawn',
       name: 'listConditional',
-      tag: { et: 'self', src: 'BeforeDawn', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'BeforeDawn',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'BeforeDawn',
+      sheet: 'BeforeDawn',
       name: 'numConditional',
-      tag: { et: 'self', src: 'BeforeDawn', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'BeforeDawn', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1389,22 +1444,22 @@ export const conditionals = {
   },
   BeforeTheTutorialMissionStarts: {
     boolConditional: {
-      src: 'BeforeTheTutorialMissionStarts',
+      sheet: 'BeforeTheTutorialMissionStarts',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'BeforeTheTutorialMissionStarts',
+        sheet: 'BeforeTheTutorialMissionStarts',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'BeforeTheTutorialMissionStarts',
+      sheet: 'BeforeTheTutorialMissionStarts',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'BeforeTheTutorialMissionStarts',
+        sheet: 'BeforeTheTutorialMissionStarts',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1412,11 +1467,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'BeforeTheTutorialMissionStarts',
+      sheet: 'BeforeTheTutorialMissionStarts',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'BeforeTheTutorialMissionStarts',
+        sheet: 'BeforeTheTutorialMissionStarts',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1428,22 +1483,22 @@ export const conditionals = {
   },
   BrighterThanTheSun: {
     boolConditional: {
-      src: 'BrighterThanTheSun',
+      sheet: 'BrighterThanTheSun',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'BrighterThanTheSun',
+        sheet: 'BrighterThanTheSun',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'BrighterThanTheSun',
+      sheet: 'BrighterThanTheSun',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'BrighterThanTheSun',
+        sheet: 'BrighterThanTheSun',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1451,11 +1506,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'BrighterThanTheSun',
+      sheet: 'BrighterThanTheSun',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'BrighterThanTheSun',
+        sheet: 'BrighterThanTheSun',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1467,22 +1522,22 @@ export const conditionals = {
   },
   ButTheBattleIsntOver: {
     boolConditional: {
-      src: 'ButTheBattleIsntOver',
+      sheet: 'ButTheBattleIsntOver',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'ButTheBattleIsntOver',
+        sheet: 'ButTheBattleIsntOver',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'ButTheBattleIsntOver',
+      sheet: 'ButTheBattleIsntOver',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'ButTheBattleIsntOver',
+        sheet: 'ButTheBattleIsntOver',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1490,11 +1545,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'ButTheBattleIsntOver',
+      sheet: 'ButTheBattleIsntOver',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'ButTheBattleIsntOver',
+        sheet: 'ButTheBattleIsntOver',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1506,22 +1561,22 @@ export const conditionals = {
   },
   CarveTheMoonWeaveTheClouds: {
     boolConditional: {
-      src: 'CarveTheMoonWeaveTheClouds',
+      sheet: 'CarveTheMoonWeaveTheClouds',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'CarveTheMoonWeaveTheClouds',
+        sheet: 'CarveTheMoonWeaveTheClouds',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'CarveTheMoonWeaveTheClouds',
+      sheet: 'CarveTheMoonWeaveTheClouds',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'CarveTheMoonWeaveTheClouds',
+        sheet: 'CarveTheMoonWeaveTheClouds',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1529,11 +1584,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'CarveTheMoonWeaveTheClouds',
+      sheet: 'CarveTheMoonWeaveTheClouds',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'CarveTheMoonWeaveTheClouds',
+        sheet: 'CarveTheMoonWeaveTheClouds',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1545,22 +1600,22 @@ export const conditionals = {
   },
   Chorus: {
     boolConditional: {
-      src: 'Chorus',
+      sheet: 'Chorus',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Chorus', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Chorus', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Chorus',
+      sheet: 'Chorus',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Chorus', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Chorus', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Chorus',
+      sheet: 'Chorus',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Chorus', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Chorus', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1569,22 +1624,22 @@ export const conditionals = {
   },
   CollapsingSky: {
     boolConditional: {
-      src: 'CollapsingSky',
+      sheet: 'CollapsingSky',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'CollapsingSky',
+        sheet: 'CollapsingSky',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'CollapsingSky',
+      sheet: 'CollapsingSky',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'CollapsingSky',
+        sheet: 'CollapsingSky',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1592,11 +1647,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'CollapsingSky',
+      sheet: 'CollapsingSky',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'CollapsingSky',
+        sheet: 'CollapsingSky',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1608,22 +1663,22 @@ export const conditionals = {
   },
   ConcertForTwo: {
     boolConditional: {
-      src: 'ConcertForTwo',
+      sheet: 'ConcertForTwo',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'ConcertForTwo',
+        sheet: 'ConcertForTwo',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'ConcertForTwo',
+      sheet: 'ConcertForTwo',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'ConcertForTwo',
+        sheet: 'ConcertForTwo',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1631,11 +1686,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'ConcertForTwo',
+      sheet: 'ConcertForTwo',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'ConcertForTwo',
+        sheet: 'ConcertForTwo',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1647,22 +1702,32 @@ export const conditionals = {
   },
   Cornucopia: {
     boolConditional: {
-      src: 'Cornucopia',
+      sheet: 'Cornucopia',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Cornucopia', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'Cornucopia',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'Cornucopia',
+      sheet: 'Cornucopia',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Cornucopia', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'Cornucopia',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Cornucopia',
+      sheet: 'Cornucopia',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Cornucopia', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Cornucopia', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1671,22 +1736,22 @@ export const conditionals = {
   },
   CruisingInTheStellarSea: {
     boolConditional: {
-      src: 'CruisingInTheStellarSea',
+      sheet: 'CruisingInTheStellarSea',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'CruisingInTheStellarSea',
+        sheet: 'CruisingInTheStellarSea',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'CruisingInTheStellarSea',
+      sheet: 'CruisingInTheStellarSea',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'CruisingInTheStellarSea',
+        sheet: 'CruisingInTheStellarSea',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1694,11 +1759,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'CruisingInTheStellarSea',
+      sheet: 'CruisingInTheStellarSea',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'CruisingInTheStellarSea',
+        sheet: 'CruisingInTheStellarSea',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1710,22 +1775,22 @@ export const conditionals = {
   },
   DanceDanceDance: {
     boolConditional: {
-      src: 'DanceDanceDance',
+      sheet: 'DanceDanceDance',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'DanceDanceDance',
+        sheet: 'DanceDanceDance',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'DanceDanceDance',
+      sheet: 'DanceDanceDance',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'DanceDanceDance',
+        sheet: 'DanceDanceDance',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1733,11 +1798,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'DanceDanceDance',
+      sheet: 'DanceDanceDance',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'DanceDanceDance',
+        sheet: 'DanceDanceDance',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1749,22 +1814,22 @@ export const conditionals = {
   },
   DartingArrow: {
     boolConditional: {
-      src: 'DartingArrow',
+      sheet: 'DartingArrow',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'DartingArrow',
+        sheet: 'DartingArrow',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'DartingArrow',
+      sheet: 'DartingArrow',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'DartingArrow',
+        sheet: 'DartingArrow',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1772,9 +1837,14 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'DartingArrow',
+      sheet: 'DartingArrow',
       name: 'numConditional',
-      tag: { et: 'self', src: 'DartingArrow', qt: 'cond', q: 'numConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'DartingArrow',
+        qt: 'cond',
+        q: 'numConditional',
+      },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1783,22 +1853,22 @@ export const conditionals = {
   },
   DataBank: {
     boolConditional: {
-      src: 'DataBank',
+      sheet: 'DataBank',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'DataBank', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'DataBank', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'DataBank',
+      sheet: 'DataBank',
       name: 'listConditional',
-      tag: { et: 'self', src: 'DataBank', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'DataBank', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'DataBank',
+      sheet: 'DataBank',
       name: 'numConditional',
-      tag: { et: 'self', src: 'DataBank', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'DataBank', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1807,22 +1877,22 @@ export const conditionals = {
   },
   DayOneOfMyNewLife: {
     boolConditional: {
-      src: 'DayOneOfMyNewLife',
+      sheet: 'DayOneOfMyNewLife',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'DayOneOfMyNewLife',
+        sheet: 'DayOneOfMyNewLife',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'DayOneOfMyNewLife',
+      sheet: 'DayOneOfMyNewLife',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'DayOneOfMyNewLife',
+        sheet: 'DayOneOfMyNewLife',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1830,11 +1900,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'DayOneOfMyNewLife',
+      sheet: 'DayOneOfMyNewLife',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'DayOneOfMyNewLife',
+        sheet: 'DayOneOfMyNewLife',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1846,22 +1916,22 @@ export const conditionals = {
   },
   Defense: {
     boolConditional: {
-      src: 'Defense',
+      sheet: 'Defense',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Defense', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Defense', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Defense',
+      sheet: 'Defense',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Defense', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Defense', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Defense',
+      sheet: 'Defense',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Defense', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Defense', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -1870,22 +1940,22 @@ export const conditionals = {
   },
   DestinysThreadsForewoven: {
     boolConditional: {
-      src: 'DestinysThreadsForewoven',
+      sheet: 'DestinysThreadsForewoven',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'DestinysThreadsForewoven',
+        sheet: 'DestinysThreadsForewoven',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'DestinysThreadsForewoven',
+      sheet: 'DestinysThreadsForewoven',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'DestinysThreadsForewoven',
+        sheet: 'DestinysThreadsForewoven',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1893,11 +1963,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'DestinysThreadsForewoven',
+      sheet: 'DestinysThreadsForewoven',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'DestinysThreadsForewoven',
+        sheet: 'DestinysThreadsForewoven',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1909,22 +1979,22 @@ export const conditionals = {
   },
   DreamvilleAdventure: {
     boolConditional: {
-      src: 'DreamvilleAdventure',
+      sheet: 'DreamvilleAdventure',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'DreamvilleAdventure',
+        sheet: 'DreamvilleAdventure',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'DreamvilleAdventure',
+      sheet: 'DreamvilleAdventure',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'DreamvilleAdventure',
+        sheet: 'DreamvilleAdventure',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1932,11 +2002,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'DreamvilleAdventure',
+      sheet: 'DreamvilleAdventure',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'DreamvilleAdventure',
+        sheet: 'DreamvilleAdventure',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1948,22 +2018,22 @@ export const conditionals = {
   },
   EarthlyEscapade: {
     boolConditional: {
-      src: 'EarthlyEscapade',
+      sheet: 'EarthlyEscapade',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'EarthlyEscapade',
+        sheet: 'EarthlyEscapade',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'EarthlyEscapade',
+      sheet: 'EarthlyEscapade',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'EarthlyEscapade',
+        sheet: 'EarthlyEscapade',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -1971,11 +2041,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'EarthlyEscapade',
+      sheet: 'EarthlyEscapade',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'EarthlyEscapade',
+        sheet: 'EarthlyEscapade',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -1987,22 +2057,22 @@ export const conditionals = {
   },
   EchoesOfTheCoffin: {
     boolConditional: {
-      src: 'EchoesOfTheCoffin',
+      sheet: 'EchoesOfTheCoffin',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'EchoesOfTheCoffin',
+        sheet: 'EchoesOfTheCoffin',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'EchoesOfTheCoffin',
+      sheet: 'EchoesOfTheCoffin',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'EchoesOfTheCoffin',
+        sheet: 'EchoesOfTheCoffin',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2010,11 +2080,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'EchoesOfTheCoffin',
+      sheet: 'EchoesOfTheCoffin',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'EchoesOfTheCoffin',
+        sheet: 'EchoesOfTheCoffin',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2026,22 +2096,22 @@ export const conditionals = {
   },
   EyesOfThePrey: {
     boolConditional: {
-      src: 'EyesOfThePrey',
+      sheet: 'EyesOfThePrey',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'EyesOfThePrey',
+        sheet: 'EyesOfThePrey',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'EyesOfThePrey',
+      sheet: 'EyesOfThePrey',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'EyesOfThePrey',
+        sheet: 'EyesOfThePrey',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2049,11 +2119,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'EyesOfThePrey',
+      sheet: 'EyesOfThePrey',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'EyesOfThePrey',
+        sheet: 'EyesOfThePrey',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2065,22 +2135,22 @@ export const conditionals = {
   },
   Fermata: {
     boolConditional: {
-      src: 'Fermata',
+      sheet: 'Fermata',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Fermata', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Fermata', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Fermata',
+      sheet: 'Fermata',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Fermata', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Fermata', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Fermata',
+      sheet: 'Fermata',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Fermata', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Fermata', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2089,22 +2159,37 @@ export const conditionals = {
   },
   FinalVictor: {
     boolConditional: {
-      src: 'FinalVictor',
+      sheet: 'FinalVictor',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'FinalVictor', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'FinalVictor',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'FinalVictor',
+      sheet: 'FinalVictor',
       name: 'listConditional',
-      tag: { et: 'self', src: 'FinalVictor', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'FinalVictor',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'FinalVictor',
+      sheet: 'FinalVictor',
       name: 'numConditional',
-      tag: { et: 'self', src: 'FinalVictor', qt: 'cond', q: 'numConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'FinalVictor',
+        qt: 'cond',
+        q: 'numConditional',
+      },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2113,22 +2198,22 @@ export const conditionals = {
   },
   FineFruit: {
     boolConditional: {
-      src: 'FineFruit',
+      sheet: 'FineFruit',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'FineFruit', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'FineFruit', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'FineFruit',
+      sheet: 'FineFruit',
       name: 'listConditional',
-      tag: { et: 'self', src: 'FineFruit', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'FineFruit', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'FineFruit',
+      sheet: 'FineFruit',
       name: 'numConditional',
-      tag: { et: 'self', src: 'FineFruit', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'FineFruit', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2137,22 +2222,32 @@ export const conditionals = {
   },
   FlamesAfar: {
     boolConditional: {
-      src: 'FlamesAfar',
+      sheet: 'FlamesAfar',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'FlamesAfar', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'FlamesAfar',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'FlamesAfar',
+      sheet: 'FlamesAfar',
       name: 'listConditional',
-      tag: { et: 'self', src: 'FlamesAfar', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'FlamesAfar',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'FlamesAfar',
+      sheet: 'FlamesAfar',
       name: 'numConditional',
-      tag: { et: 'self', src: 'FlamesAfar', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'FlamesAfar', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2161,22 +2256,22 @@ export const conditionals = {
   },
   GeniusesRepose: {
     boolConditional: {
-      src: 'GeniusesRepose',
+      sheet: 'GeniusesRepose',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'GeniusesRepose',
+        sheet: 'GeniusesRepose',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'GeniusesRepose',
+      sheet: 'GeniusesRepose',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'GeniusesRepose',
+        sheet: 'GeniusesRepose',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2184,11 +2279,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'GeniusesRepose',
+      sheet: 'GeniusesRepose',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'GeniusesRepose',
+        sheet: 'GeniusesRepose',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2200,22 +2295,22 @@ export const conditionals = {
   },
   GoodNightAndSleepWell: {
     boolConditional: {
-      src: 'GoodNightAndSleepWell',
+      sheet: 'GoodNightAndSleepWell',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'GoodNightAndSleepWell',
+        sheet: 'GoodNightAndSleepWell',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'GoodNightAndSleepWell',
+      sheet: 'GoodNightAndSleepWell',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'GoodNightAndSleepWell',
+        sheet: 'GoodNightAndSleepWell',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2223,11 +2318,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'GoodNightAndSleepWell',
+      sheet: 'GoodNightAndSleepWell',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'GoodNightAndSleepWell',
+        sheet: 'GoodNightAndSleepWell',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2239,22 +2334,37 @@ export const conditionals = {
   },
   HeyOverHere: {
     boolConditional: {
-      src: 'HeyOverHere',
+      sheet: 'HeyOverHere',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'HeyOverHere', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'HeyOverHere',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'HeyOverHere',
+      sheet: 'HeyOverHere',
       name: 'listConditional',
-      tag: { et: 'self', src: 'HeyOverHere', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'HeyOverHere',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'HeyOverHere',
+      sheet: 'HeyOverHere',
       name: 'numConditional',
-      tag: { et: 'self', src: 'HeyOverHere', qt: 'cond', q: 'numConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'HeyOverHere',
+        qt: 'cond',
+        q: 'numConditional',
+      },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2263,22 +2373,22 @@ export const conditionals = {
   },
   HiddenShadow: {
     boolConditional: {
-      src: 'HiddenShadow',
+      sheet: 'HiddenShadow',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'HiddenShadow',
+        sheet: 'HiddenShadow',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'HiddenShadow',
+      sheet: 'HiddenShadow',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'HiddenShadow',
+        sheet: 'HiddenShadow',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2286,9 +2396,14 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'HiddenShadow',
+      sheet: 'HiddenShadow',
       name: 'numConditional',
-      tag: { et: 'self', src: 'HiddenShadow', qt: 'cond', q: 'numConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'HiddenShadow',
+        qt: 'cond',
+        q: 'numConditional',
+      },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2297,22 +2412,22 @@ export const conditionals = {
   },
   IShallBeMyOwnSword: {
     boolConditional: {
-      src: 'IShallBeMyOwnSword',
+      sheet: 'IShallBeMyOwnSword',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'IShallBeMyOwnSword',
+        sheet: 'IShallBeMyOwnSword',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'IShallBeMyOwnSword',
+      sheet: 'IShallBeMyOwnSword',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'IShallBeMyOwnSword',
+        sheet: 'IShallBeMyOwnSword',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2320,11 +2435,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'IShallBeMyOwnSword',
+      sheet: 'IShallBeMyOwnSword',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'IShallBeMyOwnSword',
+        sheet: 'IShallBeMyOwnSword',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2336,22 +2451,22 @@ export const conditionals = {
   },
   InTheNameOfTheWorld: {
     boolConditional: {
-      src: 'InTheNameOfTheWorld',
+      sheet: 'InTheNameOfTheWorld',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'InTheNameOfTheWorld',
+        sheet: 'InTheNameOfTheWorld',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'InTheNameOfTheWorld',
+      sheet: 'InTheNameOfTheWorld',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'InTheNameOfTheWorld',
+        sheet: 'InTheNameOfTheWorld',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2359,11 +2474,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'InTheNameOfTheWorld',
+      sheet: 'InTheNameOfTheWorld',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'InTheNameOfTheWorld',
+        sheet: 'InTheNameOfTheWorld',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2375,22 +2490,32 @@ export const conditionals = {
   },
   InTheNight: {
     boolConditional: {
-      src: 'InTheNight',
+      sheet: 'InTheNight',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'InTheNight', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'InTheNight',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'InTheNight',
+      sheet: 'InTheNight',
       name: 'listConditional',
-      tag: { et: 'self', src: 'InTheNight', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'InTheNight',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'InTheNight',
+      sheet: 'InTheNight',
       name: 'numConditional',
-      tag: { et: 'self', src: 'InTheNight', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'InTheNight', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2399,22 +2524,22 @@ export const conditionals = {
   },
   IncessantRain: {
     boolConditional: {
-      src: 'IncessantRain',
+      sheet: 'IncessantRain',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'IncessantRain',
+        sheet: 'IncessantRain',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'IncessantRain',
+      sheet: 'IncessantRain',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'IncessantRain',
+        sheet: 'IncessantRain',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2422,11 +2547,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'IncessantRain',
+      sheet: 'IncessantRain',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'IncessantRain',
+        sheet: 'IncessantRain',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2438,22 +2563,22 @@ export const conditionals = {
   },
   IndeliblePromise: {
     boolConditional: {
-      src: 'IndeliblePromise',
+      sheet: 'IndeliblePromise',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'IndeliblePromise',
+        sheet: 'IndeliblePromise',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'IndeliblePromise',
+      sheet: 'IndeliblePromise',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'IndeliblePromise',
+        sheet: 'IndeliblePromise',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2461,11 +2586,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'IndeliblePromise',
+      sheet: 'IndeliblePromise',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'IndeliblePromise',
+        sheet: 'IndeliblePromise',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2477,22 +2602,22 @@ export const conditionals = {
   },
   InherentlyUnjustDestiny: {
     boolConditional: {
-      src: 'InherentlyUnjustDestiny',
+      sheet: 'InherentlyUnjustDestiny',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'InherentlyUnjustDestiny',
+        sheet: 'InherentlyUnjustDestiny',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'InherentlyUnjustDestiny',
+      sheet: 'InherentlyUnjustDestiny',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'InherentlyUnjustDestiny',
+        sheet: 'InherentlyUnjustDestiny',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2500,11 +2625,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'InherentlyUnjustDestiny',
+      sheet: 'InherentlyUnjustDestiny',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'InherentlyUnjustDestiny',
+        sheet: 'InherentlyUnjustDestiny',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2516,22 +2641,37 @@ export const conditionals = {
   },
   ItsShowtime: {
     boolConditional: {
-      src: 'ItsShowtime',
+      sheet: 'ItsShowtime',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'ItsShowtime', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'ItsShowtime',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'ItsShowtime',
+      sheet: 'ItsShowtime',
       name: 'listConditional',
-      tag: { et: 'self', src: 'ItsShowtime', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'ItsShowtime',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'ItsShowtime',
+      sheet: 'ItsShowtime',
       name: 'numConditional',
-      tag: { et: 'self', src: 'ItsShowtime', qt: 'cond', q: 'numConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'ItsShowtime',
+        qt: 'cond',
+        q: 'numConditional',
+      },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2540,22 +2680,22 @@ export const conditionals = {
   },
   LandausChoice: {
     boolConditional: {
-      src: 'LandausChoice',
+      sheet: 'LandausChoice',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'LandausChoice',
+        sheet: 'LandausChoice',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'LandausChoice',
+      sheet: 'LandausChoice',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'LandausChoice',
+        sheet: 'LandausChoice',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2563,11 +2703,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'LandausChoice',
+      sheet: 'LandausChoice',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'LandausChoice',
+        sheet: 'LandausChoice',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2579,22 +2719,22 @@ export const conditionals = {
   },
   Loop: {
     boolConditional: {
-      src: 'Loop',
+      sheet: 'Loop',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Loop', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Loop', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Loop',
+      sheet: 'Loop',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Loop', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Loop', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Loop',
+      sheet: 'Loop',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Loop', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Loop', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2603,22 +2743,22 @@ export const conditionals = {
   },
   MakeTheWorldClamor: {
     boolConditional: {
-      src: 'MakeTheWorldClamor',
+      sheet: 'MakeTheWorldClamor',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'MakeTheWorldClamor',
+        sheet: 'MakeTheWorldClamor',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'MakeTheWorldClamor',
+      sheet: 'MakeTheWorldClamor',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'MakeTheWorldClamor',
+        sheet: 'MakeTheWorldClamor',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2626,11 +2766,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'MakeTheWorldClamor',
+      sheet: 'MakeTheWorldClamor',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'MakeTheWorldClamor',
+        sheet: 'MakeTheWorldClamor',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2642,22 +2782,22 @@ export const conditionals = {
   },
   Mediation: {
     boolConditional: {
-      src: 'Mediation',
+      sheet: 'Mediation',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Mediation', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Mediation', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Mediation',
+      sheet: 'Mediation',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Mediation', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Mediation', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Mediation',
+      sheet: 'Mediation',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Mediation', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Mediation', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2666,22 +2806,22 @@ export const conditionals = {
   },
   MemoriesOfThePast: {
     boolConditional: {
-      src: 'MemoriesOfThePast',
+      sheet: 'MemoriesOfThePast',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'MemoriesOfThePast',
+        sheet: 'MemoriesOfThePast',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'MemoriesOfThePast',
+      sheet: 'MemoriesOfThePast',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'MemoriesOfThePast',
+        sheet: 'MemoriesOfThePast',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2689,11 +2829,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'MemoriesOfThePast',
+      sheet: 'MemoriesOfThePast',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'MemoriesOfThePast',
+        sheet: 'MemoriesOfThePast',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2705,22 +2845,37 @@ export const conditionals = {
   },
   MeshingCogs: {
     boolConditional: {
-      src: 'MeshingCogs',
+      sheet: 'MeshingCogs',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'MeshingCogs', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'MeshingCogs',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'MeshingCogs',
+      sheet: 'MeshingCogs',
       name: 'listConditional',
-      tag: { et: 'self', src: 'MeshingCogs', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'MeshingCogs',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'MeshingCogs',
+      sheet: 'MeshingCogs',
       name: 'numConditional',
-      tag: { et: 'self', src: 'MeshingCogs', qt: 'cond', q: 'numConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'MeshingCogs',
+        qt: 'cond',
+        q: 'numConditional',
+      },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2729,22 +2884,22 @@ export const conditionals = {
   },
   MomentOfVictory: {
     boolConditional: {
-      src: 'MomentOfVictory',
+      sheet: 'MomentOfVictory',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'MomentOfVictory',
+        sheet: 'MomentOfVictory',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'MomentOfVictory',
+      sheet: 'MomentOfVictory',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'MomentOfVictory',
+        sheet: 'MomentOfVictory',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2752,11 +2907,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'MomentOfVictory',
+      sheet: 'MomentOfVictory',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'MomentOfVictory',
+        sheet: 'MomentOfVictory',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2768,22 +2923,22 @@ export const conditionals = {
   },
   Multiplication: {
     boolConditional: {
-      src: 'Multiplication',
+      sheet: 'Multiplication',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'Multiplication',
+        sheet: 'Multiplication',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'Multiplication',
+      sheet: 'Multiplication',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'Multiplication',
+        sheet: 'Multiplication',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2791,11 +2946,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Multiplication',
+      sheet: 'Multiplication',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'Multiplication',
+        sheet: 'Multiplication',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2807,22 +2962,22 @@ export const conditionals = {
   },
   MutualDemise: {
     boolConditional: {
-      src: 'MutualDemise',
+      sheet: 'MutualDemise',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'MutualDemise',
+        sheet: 'MutualDemise',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'MutualDemise',
+      sheet: 'MutualDemise',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'MutualDemise',
+        sheet: 'MutualDemise',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2830,9 +2985,14 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'MutualDemise',
+      sheet: 'MutualDemise',
       name: 'numConditional',
-      tag: { et: 'self', src: 'MutualDemise', qt: 'cond', q: 'numConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'MutualDemise',
+        qt: 'cond',
+        q: 'numConditional',
+      },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2841,22 +3001,22 @@ export const conditionals = {
   },
   NightOfFright: {
     boolConditional: {
-      src: 'NightOfFright',
+      sheet: 'NightOfFright',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'NightOfFright',
+        sheet: 'NightOfFright',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'NightOfFright',
+      sheet: 'NightOfFright',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'NightOfFright',
+        sheet: 'NightOfFright',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2864,11 +3024,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'NightOfFright',
+      sheet: 'NightOfFright',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'NightOfFright',
+        sheet: 'NightOfFright',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2880,22 +3040,22 @@ export const conditionals = {
   },
   NightOnTheMilkyWay: {
     boolConditional: {
-      src: 'NightOnTheMilkyWay',
+      sheet: 'NightOnTheMilkyWay',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'NightOnTheMilkyWay',
+        sheet: 'NightOnTheMilkyWay',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'NightOnTheMilkyWay',
+      sheet: 'NightOnTheMilkyWay',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'NightOnTheMilkyWay',
+        sheet: 'NightOnTheMilkyWay',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2903,11 +3063,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'NightOnTheMilkyWay',
+      sheet: 'NightOnTheMilkyWay',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'NightOnTheMilkyWay',
+        sheet: 'NightOnTheMilkyWay',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2919,22 +3079,22 @@ export const conditionals = {
   },
   NowhereToRun: {
     boolConditional: {
-      src: 'NowhereToRun',
+      sheet: 'NowhereToRun',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'NowhereToRun',
+        sheet: 'NowhereToRun',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'NowhereToRun',
+      sheet: 'NowhereToRun',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'NowhereToRun',
+        sheet: 'NowhereToRun',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2942,9 +3102,14 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'NowhereToRun',
+      sheet: 'NowhereToRun',
       name: 'numConditional',
-      tag: { et: 'self', src: 'NowhereToRun', qt: 'cond', q: 'numConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'NowhereToRun',
+        qt: 'cond',
+        q: 'numConditional',
+      },
       type: 'num',
       int_only: true,
       min: 0,
@@ -2953,22 +3118,22 @@ export const conditionals = {
   },
   OnTheFallOfAnAeon: {
     boolConditional: {
-      src: 'OnTheFallOfAnAeon',
+      sheet: 'OnTheFallOfAnAeon',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'OnTheFallOfAnAeon',
+        sheet: 'OnTheFallOfAnAeon',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'OnTheFallOfAnAeon',
+      sheet: 'OnTheFallOfAnAeon',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'OnTheFallOfAnAeon',
+        sheet: 'OnTheFallOfAnAeon',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -2976,11 +3141,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'OnTheFallOfAnAeon',
+      sheet: 'OnTheFallOfAnAeon',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'OnTheFallOfAnAeon',
+        sheet: 'OnTheFallOfAnAeon',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -2992,22 +3157,22 @@ export const conditionals = {
   },
   OnlySilenceRemains: {
     boolConditional: {
-      src: 'OnlySilenceRemains',
+      sheet: 'OnlySilenceRemains',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'OnlySilenceRemains',
+        sheet: 'OnlySilenceRemains',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'OnlySilenceRemains',
+      sheet: 'OnlySilenceRemains',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'OnlySilenceRemains',
+        sheet: 'OnlySilenceRemains',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3015,11 +3180,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'OnlySilenceRemains',
+      sheet: 'OnlySilenceRemains',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'OnlySilenceRemains',
+        sheet: 'OnlySilenceRemains',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3031,22 +3196,22 @@ export const conditionals = {
   },
   Passkey: {
     boolConditional: {
-      src: 'Passkey',
+      sheet: 'Passkey',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Passkey', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Passkey', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Passkey',
+      sheet: 'Passkey',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Passkey', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Passkey', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Passkey',
+      sheet: 'Passkey',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Passkey', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Passkey', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -3055,22 +3220,22 @@ export const conditionals = {
   },
   PastAndFuture: {
     boolConditional: {
-      src: 'PastAndFuture',
+      sheet: 'PastAndFuture',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'PastAndFuture',
+        sheet: 'PastAndFuture',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'PastAndFuture',
+      sheet: 'PastAndFuture',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'PastAndFuture',
+        sheet: 'PastAndFuture',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3078,11 +3243,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'PastAndFuture',
+      sheet: 'PastAndFuture',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'PastAndFuture',
+        sheet: 'PastAndFuture',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3094,22 +3259,22 @@ export const conditionals = {
   },
   PastSelfInMirror: {
     boolConditional: {
-      src: 'PastSelfInMirror',
+      sheet: 'PastSelfInMirror',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'PastSelfInMirror',
+        sheet: 'PastSelfInMirror',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'PastSelfInMirror',
+      sheet: 'PastSelfInMirror',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'PastSelfInMirror',
+        sheet: 'PastSelfInMirror',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3117,11 +3282,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'PastSelfInMirror',
+      sheet: 'PastSelfInMirror',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'PastSelfInMirror',
+        sheet: 'PastSelfInMirror',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3133,22 +3298,22 @@ export const conditionals = {
   },
   PatienceIsAllYouNeed: {
     boolConditional: {
-      src: 'PatienceIsAllYouNeed',
+      sheet: 'PatienceIsAllYouNeed',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'PatienceIsAllYouNeed',
+        sheet: 'PatienceIsAllYouNeed',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'PatienceIsAllYouNeed',
+      sheet: 'PatienceIsAllYouNeed',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'PatienceIsAllYouNeed',
+        sheet: 'PatienceIsAllYouNeed',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3156,11 +3321,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'PatienceIsAllYouNeed',
+      sheet: 'PatienceIsAllYouNeed',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'PatienceIsAllYouNeed',
+        sheet: 'PatienceIsAllYouNeed',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3172,22 +3337,22 @@ export const conditionals = {
   },
   PerfectTiming: {
     boolConditional: {
-      src: 'PerfectTiming',
+      sheet: 'PerfectTiming',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'PerfectTiming',
+        sheet: 'PerfectTiming',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'PerfectTiming',
+      sheet: 'PerfectTiming',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'PerfectTiming',
+        sheet: 'PerfectTiming',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3195,11 +3360,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'PerfectTiming',
+      sheet: 'PerfectTiming',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'PerfectTiming',
+        sheet: 'PerfectTiming',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3211,22 +3376,32 @@ export const conditionals = {
   },
   Pioneering: {
     boolConditional: {
-      src: 'Pioneering',
+      sheet: 'Pioneering',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Pioneering', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'Pioneering',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'Pioneering',
+      sheet: 'Pioneering',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Pioneering', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'Pioneering',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Pioneering',
+      sheet: 'Pioneering',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Pioneering', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Pioneering', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -3235,22 +3410,22 @@ export const conditionals = {
   },
   PlanetaryRendezvous: {
     boolConditional: {
-      src: 'PlanetaryRendezvous',
+      sheet: 'PlanetaryRendezvous',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'PlanetaryRendezvous',
+        sheet: 'PlanetaryRendezvous',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'PlanetaryRendezvous',
+      sheet: 'PlanetaryRendezvous',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'PlanetaryRendezvous',
+        sheet: 'PlanetaryRendezvous',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3258,11 +3433,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'PlanetaryRendezvous',
+      sheet: 'PlanetaryRendezvous',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'PlanetaryRendezvous',
+        sheet: 'PlanetaryRendezvous',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3274,22 +3449,22 @@ export const conditionals = {
   },
   PostOpConversation: {
     boolConditional: {
-      src: 'PostOpConversation',
+      sheet: 'PostOpConversation',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'PostOpConversation',
+        sheet: 'PostOpConversation',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'PostOpConversation',
+      sheet: 'PostOpConversation',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'PostOpConversation',
+        sheet: 'PostOpConversation',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3297,11 +3472,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'PostOpConversation',
+      sheet: 'PostOpConversation',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'PostOpConversation',
+        sheet: 'PostOpConversation',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3313,22 +3488,32 @@ export const conditionals = {
   },
   QuidProQuo: {
     boolConditional: {
-      src: 'QuidProQuo',
+      sheet: 'QuidProQuo',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'QuidProQuo', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'QuidProQuo',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'QuidProQuo',
+      sheet: 'QuidProQuo',
       name: 'listConditional',
-      tag: { et: 'self', src: 'QuidProQuo', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'QuidProQuo',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'QuidProQuo',
+      sheet: 'QuidProQuo',
       name: 'numConditional',
-      tag: { et: 'self', src: 'QuidProQuo', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'QuidProQuo', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -3337,22 +3522,22 @@ export const conditionals = {
   },
   ReforgedRemembrance: {
     boolConditional: {
-      src: 'ReforgedRemembrance',
+      sheet: 'ReforgedRemembrance',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'ReforgedRemembrance',
+        sheet: 'ReforgedRemembrance',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'ReforgedRemembrance',
+      sheet: 'ReforgedRemembrance',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'ReforgedRemembrance',
+        sheet: 'ReforgedRemembrance',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3360,11 +3545,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'ReforgedRemembrance',
+      sheet: 'ReforgedRemembrance',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'ReforgedRemembrance',
+        sheet: 'ReforgedRemembrance',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3376,22 +3561,22 @@ export const conditionals = {
   },
   ResolutionShinesAsPearlsOfSweat: {
     boolConditional: {
-      src: 'ResolutionShinesAsPearlsOfSweat',
+      sheet: 'ResolutionShinesAsPearlsOfSweat',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'ResolutionShinesAsPearlsOfSweat',
+        sheet: 'ResolutionShinesAsPearlsOfSweat',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'ResolutionShinesAsPearlsOfSweat',
+      sheet: 'ResolutionShinesAsPearlsOfSweat',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'ResolutionShinesAsPearlsOfSweat',
+        sheet: 'ResolutionShinesAsPearlsOfSweat',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3399,11 +3584,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'ResolutionShinesAsPearlsOfSweat',
+      sheet: 'ResolutionShinesAsPearlsOfSweat',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'ResolutionShinesAsPearlsOfSweat',
+        sheet: 'ResolutionShinesAsPearlsOfSweat',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3415,22 +3600,22 @@ export const conditionals = {
   },
   ReturnToDarkness: {
     boolConditional: {
-      src: 'ReturnToDarkness',
+      sheet: 'ReturnToDarkness',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'ReturnToDarkness',
+        sheet: 'ReturnToDarkness',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'ReturnToDarkness',
+      sheet: 'ReturnToDarkness',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'ReturnToDarkness',
+        sheet: 'ReturnToDarkness',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3438,11 +3623,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'ReturnToDarkness',
+      sheet: 'ReturnToDarkness',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'ReturnToDarkness',
+        sheet: 'ReturnToDarkness',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3454,22 +3639,22 @@ export const conditionals = {
   },
   RiverFlowsInSpring: {
     boolConditional: {
-      src: 'RiverFlowsInSpring',
+      sheet: 'RiverFlowsInSpring',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'RiverFlowsInSpring',
+        sheet: 'RiverFlowsInSpring',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'RiverFlowsInSpring',
+      sheet: 'RiverFlowsInSpring',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'RiverFlowsInSpring',
+        sheet: 'RiverFlowsInSpring',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3477,11 +3662,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'RiverFlowsInSpring',
+      sheet: 'RiverFlowsInSpring',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'RiverFlowsInSpring',
+        sheet: 'RiverFlowsInSpring',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3493,22 +3678,22 @@ export const conditionals = {
   },
   Sagacity: {
     boolConditional: {
-      src: 'Sagacity',
+      sheet: 'Sagacity',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Sagacity', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Sagacity', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Sagacity',
+      sheet: 'Sagacity',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Sagacity', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Sagacity', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Sagacity',
+      sheet: 'Sagacity',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Sagacity', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Sagacity', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -3517,22 +3702,22 @@ export const conditionals = {
   },
   SharedFeeling: {
     boolConditional: {
-      src: 'SharedFeeling',
+      sheet: 'SharedFeeling',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'SharedFeeling',
+        sheet: 'SharedFeeling',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'SharedFeeling',
+      sheet: 'SharedFeeling',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'SharedFeeling',
+        sheet: 'SharedFeeling',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3540,11 +3725,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'SharedFeeling',
+      sheet: 'SharedFeeling',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'SharedFeeling',
+        sheet: 'SharedFeeling',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3556,22 +3741,22 @@ export const conditionals = {
   },
   ShatteredHome: {
     boolConditional: {
-      src: 'ShatteredHome',
+      sheet: 'ShatteredHome',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'ShatteredHome',
+        sheet: 'ShatteredHome',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'ShatteredHome',
+      sheet: 'ShatteredHome',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'ShatteredHome',
+        sheet: 'ShatteredHome',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3579,11 +3764,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'ShatteredHome',
+      sheet: 'ShatteredHome',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'ShatteredHome',
+        sheet: 'ShatteredHome',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3595,22 +3780,22 @@ export const conditionals = {
   },
   SheAlreadyShutHerEyes: {
     boolConditional: {
-      src: 'SheAlreadyShutHerEyes',
+      sheet: 'SheAlreadyShutHerEyes',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'SheAlreadyShutHerEyes',
+        sheet: 'SheAlreadyShutHerEyes',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'SheAlreadyShutHerEyes',
+      sheet: 'SheAlreadyShutHerEyes',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'SheAlreadyShutHerEyes',
+        sheet: 'SheAlreadyShutHerEyes',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3618,11 +3803,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'SheAlreadyShutHerEyes',
+      sheet: 'SheAlreadyShutHerEyes',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'SheAlreadyShutHerEyes',
+        sheet: 'SheAlreadyShutHerEyes',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3634,22 +3819,22 @@ export const conditionals = {
   },
   SleepLikeTheDead: {
     boolConditional: {
-      src: 'SleepLikeTheDead',
+      sheet: 'SleepLikeTheDead',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'SleepLikeTheDead',
+        sheet: 'SleepLikeTheDead',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'SleepLikeTheDead',
+      sheet: 'SleepLikeTheDead',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'SleepLikeTheDead',
+        sheet: 'SleepLikeTheDead',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3657,11 +3842,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'SleepLikeTheDead',
+      sheet: 'SleepLikeTheDead',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'SleepLikeTheDead',
+        sheet: 'SleepLikeTheDead',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3673,22 +3858,22 @@ export const conditionals = {
   },
   SolitaryHealing: {
     boolConditional: {
-      src: 'SolitaryHealing',
+      sheet: 'SolitaryHealing',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'SolitaryHealing',
+        sheet: 'SolitaryHealing',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'SolitaryHealing',
+      sheet: 'SolitaryHealing',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'SolitaryHealing',
+        sheet: 'SolitaryHealing',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3696,11 +3881,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'SolitaryHealing',
+      sheet: 'SolitaryHealing',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'SolitaryHealing',
+        sheet: 'SolitaryHealing',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3712,22 +3897,22 @@ export const conditionals = {
   },
   SomethingIrreplaceable: {
     boolConditional: {
-      src: 'SomethingIrreplaceable',
+      sheet: 'SomethingIrreplaceable',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'SomethingIrreplaceable',
+        sheet: 'SomethingIrreplaceable',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'SomethingIrreplaceable',
+      sheet: 'SomethingIrreplaceable',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'SomethingIrreplaceable',
+        sheet: 'SomethingIrreplaceable',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3735,11 +3920,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'SomethingIrreplaceable',
+      sheet: 'SomethingIrreplaceable',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'SomethingIrreplaceable',
+        sheet: 'SomethingIrreplaceable',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3751,22 +3936,22 @@ export const conditionals = {
   },
   SubscribeForMore: {
     boolConditional: {
-      src: 'SubscribeForMore',
+      sheet: 'SubscribeForMore',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'SubscribeForMore',
+        sheet: 'SubscribeForMore',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'SubscribeForMore',
+      sheet: 'SubscribeForMore',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'SubscribeForMore',
+        sheet: 'SubscribeForMore',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3774,11 +3959,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'SubscribeForMore',
+      sheet: 'SubscribeForMore',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'SubscribeForMore',
+        sheet: 'SubscribeForMore',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3790,22 +3975,22 @@ export const conditionals = {
   },
   Swordplay: {
     boolConditional: {
-      src: 'Swordplay',
+      sheet: 'Swordplay',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Swordplay', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Swordplay', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Swordplay',
+      sheet: 'Swordplay',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Swordplay', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Swordplay', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Swordplay',
+      sheet: 'Swordplay',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Swordplay', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Swordplay', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -3814,22 +3999,22 @@ export const conditionals = {
   },
   TextureOfMemories: {
     boolConditional: {
-      src: 'TextureOfMemories',
+      sheet: 'TextureOfMemories',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'TextureOfMemories',
+        sheet: 'TextureOfMemories',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'TextureOfMemories',
+      sheet: 'TextureOfMemories',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'TextureOfMemories',
+        sheet: 'TextureOfMemories',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3837,11 +4022,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'TextureOfMemories',
+      sheet: 'TextureOfMemories',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'TextureOfMemories',
+        sheet: 'TextureOfMemories',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3853,22 +4038,22 @@ export const conditionals = {
   },
   TheBirthOfTheSelf: {
     boolConditional: {
-      src: 'TheBirthOfTheSelf',
+      sheet: 'TheBirthOfTheSelf',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'TheBirthOfTheSelf',
+        sheet: 'TheBirthOfTheSelf',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'TheBirthOfTheSelf',
+      sheet: 'TheBirthOfTheSelf',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'TheBirthOfTheSelf',
+        sheet: 'TheBirthOfTheSelf',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3876,11 +4061,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'TheBirthOfTheSelf',
+      sheet: 'TheBirthOfTheSelf',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'TheBirthOfTheSelf',
+        sheet: 'TheBirthOfTheSelf',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3892,22 +4077,22 @@ export const conditionals = {
   },
   TheDayTheCosmosFell: {
     boolConditional: {
-      src: 'TheDayTheCosmosFell',
+      sheet: 'TheDayTheCosmosFell',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'TheDayTheCosmosFell',
+        sheet: 'TheDayTheCosmosFell',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'TheDayTheCosmosFell',
+      sheet: 'TheDayTheCosmosFell',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'TheDayTheCosmosFell',
+        sheet: 'TheDayTheCosmosFell',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3915,11 +4100,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'TheDayTheCosmosFell',
+      sheet: 'TheDayTheCosmosFell',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'TheDayTheCosmosFell',
+        sheet: 'TheDayTheCosmosFell',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3931,22 +4116,22 @@ export const conditionals = {
   },
   TheMolesWelcomeYou: {
     boolConditional: {
-      src: 'TheMolesWelcomeYou',
+      sheet: 'TheMolesWelcomeYou',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'TheMolesWelcomeYou',
+        sheet: 'TheMolesWelcomeYou',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'TheMolesWelcomeYou',
+      sheet: 'TheMolesWelcomeYou',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'TheMolesWelcomeYou',
+        sheet: 'TheMolesWelcomeYou',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -3954,11 +4139,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'TheMolesWelcomeYou',
+      sheet: 'TheMolesWelcomeYou',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'TheMolesWelcomeYou',
+        sheet: 'TheMolesWelcomeYou',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -3970,11 +4155,11 @@ export const conditionals = {
   },
   TheSeriousnessOfBreakfast: {
     stackCount: {
-      src: 'TheSeriousnessOfBreakfast',
+      sheet: 'TheSeriousnessOfBreakfast',
       name: 'stackCount',
       tag: {
         et: 'self',
-        src: 'TheSeriousnessOfBreakfast',
+        sheet: 'TheSeriousnessOfBreakfast',
         qt: 'cond',
         q: 'stackCount',
       },
@@ -3986,22 +4171,22 @@ export const conditionals = {
   },
   TheUnreachableSide: {
     boolConditional: {
-      src: 'TheUnreachableSide',
+      sheet: 'TheUnreachableSide',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'TheUnreachableSide',
+        sheet: 'TheUnreachableSide',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'TheUnreachableSide',
+      sheet: 'TheUnreachableSide',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'TheUnreachableSide',
+        sheet: 'TheUnreachableSide',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -4009,11 +4194,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'TheUnreachableSide',
+      sheet: 'TheUnreachableSide',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'TheUnreachableSide',
+        sheet: 'TheUnreachableSide',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -4025,22 +4210,22 @@ export const conditionals = {
   },
   ThisIsMe: {
     boolConditional: {
-      src: 'ThisIsMe',
+      sheet: 'ThisIsMe',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'ThisIsMe', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'ThisIsMe', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'ThisIsMe',
+      sheet: 'ThisIsMe',
       name: 'listConditional',
-      tag: { et: 'self', src: 'ThisIsMe', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'ThisIsMe', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'ThisIsMe',
+      sheet: 'ThisIsMe',
       name: 'numConditional',
-      tag: { et: 'self', src: 'ThisIsMe', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'ThisIsMe', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -4049,22 +4234,22 @@ export const conditionals = {
   },
   TimeWaitsForNoOne: {
     boolConditional: {
-      src: 'TimeWaitsForNoOne',
+      sheet: 'TimeWaitsForNoOne',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'TimeWaitsForNoOne',
+        sheet: 'TimeWaitsForNoOne',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'TimeWaitsForNoOne',
+      sheet: 'TimeWaitsForNoOne',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'TimeWaitsForNoOne',
+        sheet: 'TimeWaitsForNoOne',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -4072,11 +4257,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'TimeWaitsForNoOne',
+      sheet: 'TimeWaitsForNoOne',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'TimeWaitsForNoOne',
+        sheet: 'TimeWaitsForNoOne',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -4088,22 +4273,22 @@ export const conditionals = {
   },
   TodayIsAnotherPeacefulDay: {
     boolConditional: {
-      src: 'TodayIsAnotherPeacefulDay',
+      sheet: 'TodayIsAnotherPeacefulDay',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'TodayIsAnotherPeacefulDay',
+        sheet: 'TodayIsAnotherPeacefulDay',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'TodayIsAnotherPeacefulDay',
+      sheet: 'TodayIsAnotherPeacefulDay',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'TodayIsAnotherPeacefulDay',
+        sheet: 'TodayIsAnotherPeacefulDay',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -4111,11 +4296,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'TodayIsAnotherPeacefulDay',
+      sheet: 'TodayIsAnotherPeacefulDay',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'TodayIsAnotherPeacefulDay',
+        sheet: 'TodayIsAnotherPeacefulDay',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -4127,22 +4312,22 @@ export const conditionals = {
   },
   TrendOfTheUniversalMarket: {
     boolConditional: {
-      src: 'TrendOfTheUniversalMarket',
+      sheet: 'TrendOfTheUniversalMarket',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'TrendOfTheUniversalMarket',
+        sheet: 'TrendOfTheUniversalMarket',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'TrendOfTheUniversalMarket',
+      sheet: 'TrendOfTheUniversalMarket',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'TrendOfTheUniversalMarket',
+        sheet: 'TrendOfTheUniversalMarket',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -4150,11 +4335,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'TrendOfTheUniversalMarket',
+      sheet: 'TrendOfTheUniversalMarket',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'TrendOfTheUniversalMarket',
+        sheet: 'TrendOfTheUniversalMarket',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -4166,22 +4351,22 @@ export const conditionals = {
   },
   UnderTheBlueSky: {
     boolConditional: {
-      src: 'UnderTheBlueSky',
+      sheet: 'UnderTheBlueSky',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'UnderTheBlueSky',
+        sheet: 'UnderTheBlueSky',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'UnderTheBlueSky',
+      sheet: 'UnderTheBlueSky',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'UnderTheBlueSky',
+        sheet: 'UnderTheBlueSky',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -4189,11 +4374,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'UnderTheBlueSky',
+      sheet: 'UnderTheBlueSky',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'UnderTheBlueSky',
+        sheet: 'UnderTheBlueSky',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -4205,22 +4390,22 @@ export const conditionals = {
   },
   Void: {
     boolConditional: {
-      src: 'Void',
+      sheet: 'Void',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'Void', qt: 'cond', q: 'boolConditional' },
+      tag: { et: 'self', sheet: 'Void', qt: 'cond', q: 'boolConditional' },
       type: 'bool',
     },
     listConditional: {
-      src: 'Void',
+      sheet: 'Void',
       name: 'listConditional',
-      tag: { et: 'self', src: 'Void', qt: 'cond', q: 'listConditional' },
+      tag: { et: 'self', sheet: 'Void', qt: 'cond', q: 'listConditional' },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'Void',
+      sheet: 'Void',
       name: 'numConditional',
-      tag: { et: 'self', src: 'Void', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'Void', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -4229,22 +4414,22 @@ export const conditionals = {
   },
   WarmthShortensColdNights: {
     boolConditional: {
-      src: 'WarmthShortensColdNights',
+      sheet: 'WarmthShortensColdNights',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'WarmthShortensColdNights',
+        sheet: 'WarmthShortensColdNights',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'WarmthShortensColdNights',
+      sheet: 'WarmthShortensColdNights',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'WarmthShortensColdNights',
+        sheet: 'WarmthShortensColdNights',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -4252,11 +4437,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'WarmthShortensColdNights',
+      sheet: 'WarmthShortensColdNights',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'WarmthShortensColdNights',
+        sheet: 'WarmthShortensColdNights',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -4268,22 +4453,22 @@ export const conditionals = {
   },
   WeAreWildfire: {
     boolConditional: {
-      src: 'WeAreWildfire',
+      sheet: 'WeAreWildfire',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'WeAreWildfire',
+        sheet: 'WeAreWildfire',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'WeAreWildfire',
+      sheet: 'WeAreWildfire',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'WeAreWildfire',
+        sheet: 'WeAreWildfire',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -4291,11 +4476,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'WeAreWildfire',
+      sheet: 'WeAreWildfire',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'WeAreWildfire',
+        sheet: 'WeAreWildfire',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -4307,22 +4492,22 @@ export const conditionals = {
   },
   WeWillMeetAgain: {
     boolConditional: {
-      src: 'WeWillMeetAgain',
+      sheet: 'WeWillMeetAgain',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'WeWillMeetAgain',
+        sheet: 'WeWillMeetAgain',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'WeWillMeetAgain',
+      sheet: 'WeWillMeetAgain',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'WeWillMeetAgain',
+        sheet: 'WeWillMeetAgain',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -4330,11 +4515,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'WeWillMeetAgain',
+      sheet: 'WeWillMeetAgain',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'WeWillMeetAgain',
+        sheet: 'WeWillMeetAgain',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -4346,22 +4531,32 @@ export const conditionals = {
   },
   WhatIsReal: {
     boolConditional: {
-      src: 'WhatIsReal',
+      sheet: 'WhatIsReal',
       name: 'boolConditional',
-      tag: { et: 'self', src: 'WhatIsReal', qt: 'cond', q: 'boolConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'WhatIsReal',
+        qt: 'cond',
+        q: 'boolConditional',
+      },
       type: 'bool',
     },
     listConditional: {
-      src: 'WhatIsReal',
+      sheet: 'WhatIsReal',
       name: 'listConditional',
-      tag: { et: 'self', src: 'WhatIsReal', qt: 'cond', q: 'listConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'WhatIsReal',
+        qt: 'cond',
+        q: 'listConditional',
+      },
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'WhatIsReal',
+      sheet: 'WhatIsReal',
       name: 'numConditional',
-      tag: { et: 'self', src: 'WhatIsReal', qt: 'cond', q: 'numConditional' },
+      tag: { et: 'self', sheet: 'WhatIsReal', qt: 'cond', q: 'numConditional' },
       type: 'num',
       int_only: true,
       min: 0,
@@ -4370,22 +4565,22 @@ export const conditionals = {
   },
   WoofWalkTime: {
     boolConditional: {
-      src: 'WoofWalkTime',
+      sheet: 'WoofWalkTime',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'WoofWalkTime',
+        sheet: 'WoofWalkTime',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'WoofWalkTime',
+      sheet: 'WoofWalkTime',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'WoofWalkTime',
+        sheet: 'WoofWalkTime',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -4393,9 +4588,14 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'WoofWalkTime',
+      sheet: 'WoofWalkTime',
       name: 'numConditional',
-      tag: { et: 'self', src: 'WoofWalkTime', qt: 'cond', q: 'numConditional' },
+      tag: {
+        et: 'self',
+        sheet: 'WoofWalkTime',
+        qt: 'cond',
+        q: 'numConditional',
+      },
       type: 'num',
       int_only: true,
       min: 0,
@@ -4404,22 +4604,22 @@ export const conditionals = {
   },
   WorrisomeBlissful: {
     boolConditional: {
-      src: 'WorrisomeBlissful',
+      sheet: 'WorrisomeBlissful',
       name: 'boolConditional',
       tag: {
         et: 'self',
-        src: 'WorrisomeBlissful',
+        sheet: 'WorrisomeBlissful',
         qt: 'cond',
         q: 'boolConditional',
       },
       type: 'bool',
     },
     listConditional: {
-      src: 'WorrisomeBlissful',
+      sheet: 'WorrisomeBlissful',
       name: 'listConditional',
       tag: {
         et: 'self',
-        src: 'WorrisomeBlissful',
+        sheet: 'WorrisomeBlissful',
         qt: 'cond',
         q: 'listConditional',
       },
@@ -4427,11 +4627,11 @@ export const conditionals = {
       list: ['val1', 'val2'],
     },
     numConditional: {
-      src: 'WorrisomeBlissful',
+      sheet: 'WorrisomeBlissful',
       name: 'numConditional',
       tag: {
         et: 'self',
-        src: 'WorrisomeBlissful',
+        sheet: 'WorrisomeBlissful',
         qt: 'cond',
         q: 'numConditional',
       },
@@ -4445,708 +4645,708 @@ export const conditionals = {
 export const formulas = {
   Acheron: {
     basicDmg_0: {
-      src: 'Acheron',
+      sheet: 'Acheron',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Acheron',
+        sheet: 'Acheron',
         name: 'basicDmg_0',
       },
     },
   },
   Argenti: {
     basicDmg_0: {
-      src: 'Argenti',
+      sheet: 'Argenti',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Argenti',
+        sheet: 'Argenti',
         name: 'basicDmg_0',
       },
     },
   },
   Arlan: {
     basicDmg_0: {
-      src: 'Arlan',
+      sheet: 'Arlan',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Arlan',
+        sheet: 'Arlan',
         name: 'basicDmg_0',
       },
     },
   },
   Asta: {
     basicDmg_0: {
-      src: 'Asta',
+      sheet: 'Asta',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Asta',
+        sheet: 'Asta',
         name: 'basicDmg_0',
       },
     },
   },
   Aventurine: {
     basicDmg_0: {
-      src: 'Aventurine',
+      sheet: 'Aventurine',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Aventurine',
+        sheet: 'Aventurine',
         name: 'basicDmg_0',
       },
     },
   },
   Bailu: {
     basicDmg_0: {
-      src: 'Bailu',
+      sheet: 'Bailu',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Bailu',
+        sheet: 'Bailu',
         name: 'basicDmg_0',
       },
     },
   },
   BlackSwan: {
     basicDmg_0: {
-      src: 'BlackSwan',
+      sheet: 'BlackSwan',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'BlackSwan',
+        sheet: 'BlackSwan',
         name: 'basicDmg_0',
       },
     },
   },
   Blade: {
     basicDmg_0: {
-      src: 'Blade',
+      sheet: 'Blade',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Blade',
+        sheet: 'Blade',
         name: 'basicDmg_0',
       },
     },
   },
   Bronya: {
     basicDmg_0: {
-      src: 'Bronya',
+      sheet: 'Bronya',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Bronya',
+        sheet: 'Bronya',
         name: 'basicDmg_0',
       },
     },
   },
   Clara: {
     basicDmg_0: {
-      src: 'Clara',
+      sheet: 'Clara',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Clara',
+        sheet: 'Clara',
         name: 'basicDmg_0',
       },
     },
   },
   DanHeng: {
     basicDmg_0: {
-      src: 'DanHeng',
+      sheet: 'DanHeng',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'DanHeng',
+        sheet: 'DanHeng',
         name: 'basicDmg_0',
       },
     },
   },
   DanHengImbibitorLunae: {
     basicDmg_0: {
-      src: 'DanHengImbibitorLunae',
+      sheet: 'DanHengImbibitorLunae',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'DanHengImbibitorLunae',
+        sheet: 'DanHengImbibitorLunae',
         name: 'basicDmg_0',
       },
     },
   },
   DrRatio: {
     basicDmg_0: {
-      src: 'DrRatio',
+      sheet: 'DrRatio',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'DrRatio',
+        sheet: 'DrRatio',
         name: 'basicDmg_0',
       },
     },
   },
   FuXuan: {
     basicDmg_0: {
-      src: 'FuXuan',
+      sheet: 'FuXuan',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'FuXuan',
+        sheet: 'FuXuan',
         name: 'basicDmg_0',
       },
     },
   },
   Gallagher: {
     basicDmg_0: {
-      src: 'Gallagher',
+      sheet: 'Gallagher',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Gallagher',
+        sheet: 'Gallagher',
         name: 'basicDmg_0',
       },
     },
   },
   Gepard: {
     basicDmg_0: {
-      src: 'Gepard',
+      sheet: 'Gepard',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Gepard',
+        sheet: 'Gepard',
         name: 'basicDmg_0',
       },
     },
   },
   Guinaifen: {
     basicDmg_0: {
-      src: 'Guinaifen',
+      sheet: 'Guinaifen',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Guinaifen',
+        sheet: 'Guinaifen',
         name: 'basicDmg_0',
       },
     },
   },
   Hanya: {
     basicDmg_0: {
-      src: 'Hanya',
+      sheet: 'Hanya',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Hanya',
+        sheet: 'Hanya',
         name: 'basicDmg_0',
       },
     },
   },
   Herta: {
     basicDmg_0: {
-      src: 'Herta',
+      sheet: 'Herta',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Herta',
+        sheet: 'Herta',
         name: 'basicDmg_0',
       },
     },
   },
   Himeko: {
     basicDmg_0: {
-      src: 'Himeko',
+      sheet: 'Himeko',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Himeko',
+        sheet: 'Himeko',
         name: 'basicDmg_0',
       },
     },
   },
   Hook: {
     basicDmg_0: {
-      src: 'Hook',
+      sheet: 'Hook',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Hook',
+        sheet: 'Hook',
         name: 'basicDmg_0',
       },
     },
   },
   Huohuo: {
     basicDmg_0: {
-      src: 'Huohuo',
+      sheet: 'Huohuo',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Huohuo',
+        sheet: 'Huohuo',
         name: 'basicDmg_0',
       },
     },
   },
   JingYuan: {
     basicDmg_0: {
-      src: 'JingYuan',
+      sheet: 'JingYuan',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'JingYuan',
+        sheet: 'JingYuan',
         name: 'basicDmg_0',
       },
     },
   },
   Jingliu: {
     basicDmg_0: {
-      src: 'Jingliu',
+      sheet: 'Jingliu',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Jingliu',
+        sheet: 'Jingliu',
         name: 'basicDmg_0',
       },
     },
   },
   Kafka: {
     basicDmg_0: {
-      src: 'Kafka',
+      sheet: 'Kafka',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Kafka',
+        sheet: 'Kafka',
         name: 'basicDmg_0',
       },
     },
   },
   Luka: {
     basicDmg_0: {
-      src: 'Luka',
+      sheet: 'Luka',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Luka',
+        sheet: 'Luka',
         name: 'basicDmg_0',
       },
     },
   },
   Luocha: {
     basicDmg_0: {
-      src: 'Luocha',
+      sheet: 'Luocha',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Luocha',
+        sheet: 'Luocha',
         name: 'basicDmg_0',
       },
     },
   },
   Lynx: {
     basicDmg_0: {
-      src: 'Lynx',
+      sheet: 'Lynx',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Lynx',
+        sheet: 'Lynx',
         name: 'basicDmg_0',
       },
     },
   },
   March7th: {
     basicDmg_0: {
-      src: 'March7th',
+      sheet: 'March7th',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'March7th',
+        sheet: 'March7th',
         name: 'basicDmg_0',
       },
     },
     skillShield: {
-      src: 'March7th',
+      sheet: 'March7th',
       name: 'skillShield',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'shield',
-        src: 'March7th',
+        sheet: 'March7th',
         name: 'skillShield',
       },
     },
     ultDmg_0: {
-      src: 'March7th',
+      sheet: 'March7th',
       name: 'ultDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'March7th',
+        sheet: 'March7th',
         name: 'ultDmg_0',
       },
     },
     ultDmg_1: {
-      src: 'March7th',
+      sheet: 'March7th',
       name: 'ultDmg_1',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'March7th',
+        sheet: 'March7th',
         name: 'ultDmg_1',
       },
     },
     ultDmg_2: {
-      src: 'March7th',
+      sheet: 'March7th',
       name: 'ultDmg_2',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'March7th',
+        sheet: 'March7th',
         name: 'ultDmg_2',
       },
     },
     ultDmg_3: {
-      src: 'March7th',
+      sheet: 'March7th',
       name: 'ultDmg_3',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'March7th',
+        sheet: 'March7th',
         name: 'ultDmg_3',
       },
     },
     ultFreeze_0: {
-      src: 'March7th',
+      sheet: 'March7th',
       name: 'ultFreeze_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'March7th',
+        sheet: 'March7th',
         name: 'ultFreeze_0',
       },
     },
     talentDmg_0: {
-      src: 'March7th',
+      sheet: 'March7th',
       name: 'talentDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'March7th',
+        sheet: 'March7th',
         name: 'talentDmg_0',
       },
     },
     techniqueFreeze_0: {
-      src: 'March7th',
+      sheet: 'March7th',
       name: 'techniqueFreeze_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'March7th',
+        sheet: 'March7th',
         name: 'techniqueFreeze_0',
       },
     },
     e1Shield: {
-      src: 'March7th',
+      sheet: 'March7th',
       name: 'e1Shield',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'shield',
-        src: 'March7th',
+        sheet: 'March7th',
         name: 'e1Shield',
       },
     },
     e6Heal: {
-      src: 'March7th',
+      sheet: 'March7th',
       name: 'e6Heal',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'heal',
-        src: 'March7th',
+        sheet: 'March7th',
         name: 'e6Heal',
       },
     },
   },
   Misha: {
     basicDmg_0: {
-      src: 'Misha',
+      sheet: 'Misha',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Misha',
+        sheet: 'Misha',
         name: 'basicDmg_0',
       },
     },
   },
   Natasha: {
     basicDmg_0: {
-      src: 'Natasha',
+      sheet: 'Natasha',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Natasha',
+        sheet: 'Natasha',
         name: 'basicDmg_0',
       },
     },
   },
   Pela: {
     basicDmg_0: {
-      src: 'Pela',
+      sheet: 'Pela',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Pela',
+        sheet: 'Pela',
         name: 'basicDmg_0',
       },
     },
   },
   Qingque: {
     basicDmg_0: {
-      src: 'Qingque',
+      sheet: 'Qingque',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Qingque',
+        sheet: 'Qingque',
         name: 'basicDmg_0',
       },
     },
   },
   RuanMei: {
     basicDmg_0: {
-      src: 'RuanMei',
+      sheet: 'RuanMei',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'RuanMei',
+        sheet: 'RuanMei',
         name: 'basicDmg_0',
       },
     },
   },
   Sampo: {
     basicDmg_0: {
-      src: 'Sampo',
+      sheet: 'Sampo',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Sampo',
+        sheet: 'Sampo',
         name: 'basicDmg_0',
       },
     },
   },
   Seele: {
     basicDmg_0: {
-      src: 'Seele',
+      sheet: 'Seele',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Seele',
+        sheet: 'Seele',
         name: 'basicDmg_0',
       },
     },
   },
   Serval: {
     basicDmg_0: {
-      src: 'Serval',
+      sheet: 'Serval',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Serval',
+        sheet: 'Serval',
         name: 'basicDmg_0',
       },
     },
   },
   SilverWolf: {
     basicDmg_0: {
-      src: 'SilverWolf',
+      sheet: 'SilverWolf',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'SilverWolf',
+        sheet: 'SilverWolf',
         name: 'basicDmg_0',
       },
     },
   },
   Sparkle: {
     basicDmg_0: {
-      src: 'Sparkle',
+      sheet: 'Sparkle',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Sparkle',
+        sheet: 'Sparkle',
         name: 'basicDmg_0',
       },
     },
   },
   Sushang: {
     basicDmg_0: {
-      src: 'Sushang',
+      sheet: 'Sushang',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Sushang',
+        sheet: 'Sushang',
         name: 'basicDmg_0',
       },
     },
   },
   Tingyun: {
     basicDmg_0: {
-      src: 'Tingyun',
+      sheet: 'Tingyun',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Tingyun',
+        sheet: 'Tingyun',
         name: 'basicDmg_0',
       },
     },
   },
   TopazAndNumby: {
     basicDmg_0: {
-      src: 'TopazAndNumby',
+      sheet: 'TopazAndNumby',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'TopazAndNumby',
+        sheet: 'TopazAndNumby',
         name: 'basicDmg_0',
       },
     },
   },
   Welt: {
     basicDmg_0: {
-      src: 'Welt',
+      sheet: 'Welt',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Welt',
+        sheet: 'Welt',
         name: 'basicDmg_0',
       },
     },
   },
   Xueyi: {
     basicDmg_0: {
-      src: 'Xueyi',
+      sheet: 'Xueyi',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Xueyi',
+        sheet: 'Xueyi',
         name: 'basicDmg_0',
       },
     },
   },
   Yanqing: {
     basicDmg_0: {
-      src: 'Yanqing',
+      sheet: 'Yanqing',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Yanqing',
+        sheet: 'Yanqing',
         name: 'basicDmg_0',
       },
     },
   },
   Yukong: {
     basicDmg_0: {
-      src: 'Yukong',
+      sheet: 'Yukong',
       name: 'basicDmg_0',
       tag: {
         et: 'self',
         qt: 'formula',
         q: 'dmg',
-        src: 'Yukong',
+        sheet: 'Yukong',
         name: 'basicDmg_0',
       },
     },

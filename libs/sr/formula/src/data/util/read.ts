@@ -20,16 +20,16 @@ import {
   entryTypes,
   members,
   presets,
-  srcs,
-  type Source,
+  sheets,
+  type Sheet,
 } from './listing'
 
 export const fixedTags = {
   preset: presets,
-  member: members,
+  src: members,
   dst: members,
   et: entryTypes,
-  src: srcs,
+  sheet: sheets,
 
   elementalType: elementalTypes,
   damageType1: damageTypes,
@@ -52,8 +52,8 @@ export class Read extends TypedRead<Tag, Read> {
   name(name: string): Read {
     return super.with('name', name)
   }
-  src(src: Source): Read {
-    return super.with('src', src)
+  sheet(sheet: Sheet): Read {
+    return super.with('sheet', sheet)
   }
 
   add(value: number | string | AnyNode): TagMapNodeEntry {
@@ -161,10 +161,10 @@ export function tagStr(tag: Tag, ex?: any): string {
   const {
     name,
     preset,
-    member,
+    src,
     dst,
     et,
-    src,
+    sheet,
     q,
     qt,
     elementalType,
@@ -193,9 +193,9 @@ export function tagStr(tag: Tag, ex?: any): string {
   }
   required(name && `#${name}`)
   required(preset)
-  required(member)
-  required(dst && `(${dst})`)
   required(src)
+  required(dst && `(${dst})`)
+  required(sheet)
   required(et)
   if (qt && q) required(`${qt}.${q}`)
   else if (qt) required(`${qt}.`)

@@ -72,7 +72,7 @@ export const entryTypes = [
   'team',
   'target',
 ] as const
-export const srcs = [
+export const sheets = [
   'agg',
   'iso',
   'static',
@@ -86,7 +86,7 @@ export const srcs = [
   'enemy',
   'custom',
 ] as const
-export const members = ['member0', 'member1', 'member2', 'member3'] as const
+export const members = ['0', '1', '2', '3'] as const
 export const presets = [
   'preset0',
   'preset1',
@@ -106,7 +106,7 @@ export type StatBoost = (typeof statBoosts)[number]
 export type ElementalType = (typeof elementalTypes)[number]
 export type DamageType = (typeof damageTypes)[number]
 export type EntryType = (typeof entryTypes)[number]
-export type Source = (typeof srcs)[number]
+export type Sheet = (typeof sheets)[number]
 export type Member = (typeof members)[number]
 export type Preset = (typeof presets)[number]
 

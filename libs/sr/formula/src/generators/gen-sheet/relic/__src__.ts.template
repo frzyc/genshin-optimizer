@@ -13,7 +13,7 @@ import {
 } from '../util'
 import { entriesForRelic } from './util'
 
-const key: RelicSetKey = '<%= src %>'
+const key: RelicSetKey = '<%= sheet %>'
 const data_gen = allStats.relic[key]
 
 let t = 0,
@@ -28,7 +28,7 @@ const dm = {
   },
 }
 
-const relicCount = self.common.count.src(key)
+const relicCount = self.common.count.sheet(key)
 
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)

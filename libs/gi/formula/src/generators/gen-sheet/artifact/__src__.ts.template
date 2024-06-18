@@ -11,7 +11,7 @@ import {
 } from '../util'
 import { artCount, registerArt } from './util'
 
-const key: ArtifactSetKey = '<%= src %>'
+const key: ArtifactSetKey = '<%= sheet %>'
 const count = artCount(key)
 // TODO: Conditionals
 const { someBoolConditional } = allBoolConditionals(key)

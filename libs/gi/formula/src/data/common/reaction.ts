@@ -365,7 +365,7 @@ const data: TagMapNodeEntries = [
       const name = trans === 'swirl' ? `swirl_${ele}` : trans
       return [
         selfBuff.listing.formulas.add(
-          tag(cond, { trans, qt: 'formula', q, ele, src: 'static', name })
+          tag(cond, { trans, qt: 'formula', q, ele, sheet: 'static', name })
         ),
         selfBuff.prep.ele.name(name).add(ele),
       ]

@@ -20,7 +20,7 @@ import {
   entriesForChar,
 } from './util'
 
-const key: CharacterKey = '<%= src %>'
+const key: CharacterKey = '<%= sheet %>'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
 

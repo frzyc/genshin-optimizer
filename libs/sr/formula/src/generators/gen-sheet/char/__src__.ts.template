@@ -13,7 +13,7 @@ import {
 } from '../util'
 import { dmg, entriesForChar, getBaseTag, scalingParams } from './util'
 
-const key: CharacterKey = '<%= src %>'
+const key: CharacterKey = '<%= sheet %>'
 const data_gen = allStats.char[key]
 const baseTag = getBaseTag(data_gen)
 const { basic, skill, ult, talent, technique, eidolon } =

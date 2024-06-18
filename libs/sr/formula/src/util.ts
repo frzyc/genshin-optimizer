@@ -21,18 +21,18 @@ export function withPreset(
   return data.map(({ tag, value }) => ({ tag: { ...tag, preset }, value }))
 }
 export function withMember(
-  member: Member,
+  src: Member,
   ...data: TagMapNodeEntries
 ): TagMapNodeEntries {
-  return data.map(({ tag, value }) => ({ tag: { ...tag, member }, value }))
+  return data.map(({ tag, value }) => ({ tag: { ...tag, src }, value }))
 }
 
 export function charData(data: ICharacter): TagMapNodeEntries {
   const { lvl, basic, skill, ult, talent, ascension, eidolon } = selfBuff.char
 
   return [
-    reader.src('char').reread(reader.src(data.key)),
-    reader.withTag({ src: 'iso', et: 'self' }).reread(reader.src(data.key)),
+    reader.sheet('char').reread(reader.sheet(data.key)),
+    reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet(data.key)),
 
     lvl.add(data.level),
     basic.add(data.basic),
@@ -61,7 +61,7 @@ export function lightConeData(data: ILightCone | undefined): TagMapNodeEntries {
   const { lvl, ascension, superimpose } = selfBuff.lightCone
 
   return [
-    reader.src('lightCone').reread(reader.src(data.key)),
+    reader.sheet('lightCone').reread(reader.sheet(data.key)),
 
     lvl.add(data.level),
     ascension.add(data.ascension),
@@ -78,7 +78,7 @@ export function relicsData(
   const {
     common: { count },
     premod,
-  } = convert(selfTag, { src: 'relic', et: 'self' })
+  } = convert(selfTag, { sheet: 'relic', et: 'self' })
   const sets: Partial<Record<RelicSetKey, number>> = {},
     stats: Partial<Record<StatKey, number>> = {}
   for (const { set: setKey, stats: stat } of data) {
@@ -93,36 +93,38 @@ export function relicsData(
   }
   return [
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
-    reader.src('agg').reread(reader.src('relic')),
+    reader.sheet('agg').reread(reader.sheet('relic')),
 
-    // Add `src:dyn` between the stat and the buff so that we can `detach` them easily
-    reader.withTag({ src: 'relic', qt: 'premod' }).reread(reader.src('dyn')),
+    // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
+    reader
+      .withTag({ sheet: 'relic', qt: 'premod' })
+      .reread(reader.sheet('dyn')),
     ...Object.entries(stats).map(([k, v]) =>
-      getStatFromStatKey(premod, k).src('dyn').add(v)
+      getStatFromStatKey(premod, k).sheet('dyn').add(v)
     ),
 
-    ...Object.entries(sets).map(([k, v]) => count.src(k as RelicSetKey).add(v)),
+    ...Object.entries(sets).map(([k, v]) =>
+      count.sheet(k as RelicSetKey).add(v)
+    ),
   ]
 }
 
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { self, teamBuff } = reader.src('agg').withAll('et', [])
+  const { self, teamBuff } = reader.sheet('agg').withAll('et', [])
   const { stackIn, stackInt, stackOut } = reader.withAll('qt', [])
   return [
     // Team Buff
     members.flatMap((dst) => {
-      const entry = self.with('member', dst)
-      return members.map((src) =>
-        entry.reread(teamBuff.withTag({ dst, member: src }))
-      )
+      const entry = self.with('src', dst)
+      return members.map((src) => entry.reread(teamBuff.withTag({ dst, src })))
     }),
     // Stacking
-    members.map((member, i) =>
-      stackInt.add(cmpGE(stackIn.withTag({ member }).max, 1, i + 1))
+    members.map((src, i) =>
+      stackInt.add(cmpGE(stackIn.withTag({ src }).max, 1, i + 1))
     ),
-    members.map((member, i) =>
-      stackOut.withTag({ member }).add(cmpEq(stackInt.max, i + 1, 1))
+    members.map((src, i) =>
+      stackOut.withTag({ src }).add(cmpEq(stackInt.max, i + 1, 1))
     ),
     // Total Team Stat
     //
@@ -133,8 +135,8 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // use different accumulators from the inner query. Such is the case for maximum team
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
-    members.map((member) =>
-      teamEntry.add(reader.withTag({ member, et: 'self' }).sum)
+    members.map((src) =>
+      teamEntry.add(reader.withTag({ src, et: 'self' }).sum)
     ),
   ].flat()
 }
