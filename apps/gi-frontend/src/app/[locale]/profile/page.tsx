@@ -1,7 +1,7 @@
 'use client'
 import { redirect } from 'next/navigation'
 import { useContext } from 'react'
-import { UserProfileContext } from '../context/UserProfileContext'
+import { UserProfileContext } from '../../context/UserProfileContext'
 import ProfileContent from './ProfileContent'
 
 export default function Profile() {

@@ -1,11 +1,18 @@
 import { Container } from '@mui/material'
+import initTranslations from '../../i18n'
 
-export default function Index() {
+export default async function Index({
+  params: { locale },
+}: {
+  params: { locale: string }
+}) {
   /*
    * Replace the elements below with your own.
    *
    * Note: The corresponding styles are in the ./index.none file.
    */
+  // Trying out server side i18n
+  const { t } = await initTranslations(locale, ['ui'])
   return (
     <Container>
       <div className="wrapper">
@@ -15,6 +22,7 @@ export default function Index() {
               <span> Hello there, </span>
               Welcome gi-frontend 👋
             </h1>
+            <h1>{t('tabs.artifacts')}</h1>
           </div>
 
           <div id="hero" className="rounded">

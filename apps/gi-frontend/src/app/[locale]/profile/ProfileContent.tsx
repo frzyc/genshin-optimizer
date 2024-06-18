@@ -17,8 +17,8 @@ import {
 } from '@mui/material'
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { useCallback, useContext, useEffect, useState } from 'react'
-import { useSupabase } from '../../utils/supabase/client'
-import { UserProfileContext } from '../context/UserProfileContext'
+import { useSupabase } from '../../../utils/supabase/client'
+import { UserProfileContext } from '../../context/UserProfileContext'
 
 export default function ProfileContent() {
   const { user, profile } = useContext(UserProfileContext)

@@ -2,14 +2,17 @@ import { CssBaseline } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import ThemeProvider from '@mui/material/styles/ThemeProvider'
 import type { Metadata, Viewport } from 'next'
-import theme from '../theme'
-import { getSupabase } from '../utils/supabase/server'
-import Header from './components/Header'
-import { UserProfileContextProvider } from './context/UserProfileContext'
+import TranslationsProvider from '../../components/TranslationsProvider'
+import initTranslations from '../../i18n'
+import { locales } from '../../i18nConfig'
+import theme from '../../theme'
+import { getSupabase } from '../../utils/supabase/server'
+import Header from '../components/Header'
+import { UserProfileContextProvider } from '../context/UserProfileContext'
+import getAccount from '../util/getAccount'
+import getProfile from '../util/getProfile'
+import getUser from '../util/getUser'
 import './global.css'
-import getAccount from './util/getAccount'
-import getProfile from './util/getProfile'
-import getUser from './util/getUser'
 
 export const metadata: Metadata = {
   title: 'Welcome to gi-frontend',
@@ -19,16 +22,27 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: '#0c1020',
 }
+const i18nNamespaces = ['home']
+
+// Allow static generation of pages for each language
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
+}
 
 export default async function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode
+  params: { locale: string }
 }) {
+  console.log({ locale })
   const supabase = getSupabase()
   const user = await getUser(supabase)
   const profile = await getProfile(supabase, user)
   const account = await getAccount(supabase, profile)
+  const { resources } = await initTranslations(locale, i18nNamespaces)
+  console.log({ resources })
   return (
     <html lang="en">
       <body
@@ -46,7 +60,13 @@ export default async function RootLayout({
               profile={profile}
               account={account}
             >
-              <Content>{children}</Content>
+              <TranslationsProvider
+                namespaces={i18nNamespaces}
+                locale={locale}
+                resources={resources}
+              >
+                <Content>{children}</Content>
+              </TranslationsProvider>
             </UserProfileContextProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>

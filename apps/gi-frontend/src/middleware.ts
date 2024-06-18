@@ -1,9 +1,13 @@
+import { i18nRouter } from 'next-i18n-router'
 import { type NextRequest } from 'next/server'
+import { i18nConfig } from './i18nConfig'
 import { updateSession } from './utils/supabase/middleware'
 
 export async function middleware(request: NextRequest) {
   // update user's auth session
-  return await updateSession(request)
+  const response = i18nRouter(request, i18nConfig)
+
+  return await updateSession(request, response)
 }
 
 export const config = {
