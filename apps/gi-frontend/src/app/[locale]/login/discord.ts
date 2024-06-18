@@ -1,6 +1,6 @@
 'use server'
 import { redirect } from 'next/navigation'
-import { getSupabase } from '../../utils/supabase/server'
+import { getSupabase } from '../../../utils/supabase/server'
 
 export async function discordOAuth() {
   const supabase = getSupabase()

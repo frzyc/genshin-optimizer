@@ -2851,7 +2851,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.19.4, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.5, @babel/runtime@npm:^7.22.5, @babel/runtime@npm:^7.22.6, @babel/runtime@npm:^7.23.1, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.19.4, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.22.6, @babel/runtime@npm:^7.23.1, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7":
   version: 7.23.2
   resolution: "@babel/runtime@npm:7.23.2"
   dependencies:
@@ -3580,6 +3580,15 @@ __metadata:
   version: 5.0.13
   resolution: "@fontsource/roboto@npm:5.0.13"
   checksum: a3ce1e090ec27ae3962c8c6fa5d53f622cee366ccd57514067e9bd612d79d7eb8440b396236e9e76bd2ea89b18cb08ab6d15dcc5cc198ccc8b92f7df0651a784
+  languageName: node
+  linkType: hard
+
+"@formatjs/intl-localematcher@npm:^0.5.2":
+  version: 0.5.4
+  resolution: "@formatjs/intl-localematcher@npm:0.5.4"
+  dependencies:
+    tslib: ^2.4.0
+  checksum: a0af57874fcd163add5f7a0cb1c008e9b09feb1d24cbce1263379ae0393cddd6681197a7f2f512f351a97666fc8675ed52cc17d1834266ee8fc65e9edf3435f6
   languageName: node
   linkType: hard
 
@@ -13551,10 +13560,10 @@ __metadata:
     eslint-plugin-react-hooks: 4.6.0
     gh-pages: ^5.0.0
     graphql: ^16.8.1
-    i18next: ^23.6.0
+    i18next: ^23.11.5
     i18next-browser-languagedetector: ^7.0.1
     i18next-http-backend: ^2.1.1
-    i18next-resources-to-backend: ^1.1.4
+    i18next-resources-to-backend: ^1.2.1
     jest: 29.4.3
     jest-environment-jsdom: 29.4.3
     jest-environment-node: ^29.4.1
@@ -13562,6 +13571,7 @@ __metadata:
     jsonwebtoken: ^9.0.2
     next: 14.2.3
     next-auth: ^4.23.2
+    next-i18n-router: ^5.5.0
     nx: 19.2.2
     passport: ^0.6.0
     passport-jwt: ^4.0.1
@@ -13572,7 +13582,7 @@ __metadata:
     react-cookie: ^6.1.1
     react-dom: 18.3.1
     react-ga4: ^1.4.1
-    react-i18next: ^13.3.1
+    react-i18next: ^14.1.2
     react-markdown: ^8.0.5
     react-refresh: ^0.10.0
     react-router-dom: 6.11.2
@@ -14423,21 +14433,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next-resources-to-backend@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "i18next-resources-to-backend@npm:1.1.4"
+"i18next-resources-to-backend@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "i18next-resources-to-backend@npm:1.2.1"
   dependencies:
-    "@babel/runtime": ^7.21.5
-  checksum: 4f3f25de0d9c96b109dfdc9259864898ac9d140a80a372925e0c5a34b13bd95dcb4c682c6255a5f3bb4c4dc40c20d0f9d1b82c491ebe2f8f245ae149fe911a1d
+    "@babel/runtime": ^7.23.2
+  checksum: a2f338c4eec8d5ba09846ae1abdd23afb72086f6395d6160c748d010c82f5c28c30133f6487f0fd3a65e710231d7750b324785f15cac4baf6d24b33227840341
   languageName: node
   linkType: hard
 
-"i18next@npm:^23.6.0":
-  version: 23.6.0
-  resolution: "i18next@npm:23.6.0"
+"i18next@npm:^23.11.5":
+  version: 23.11.5
+  resolution: "i18next@npm:23.11.5"
   dependencies:
-    "@babel/runtime": ^7.22.5
-  checksum: 0898be75ce56a5901eb9763c8cd941a23cfc24fbe7b32ba0479c08f58c40c1c88c95596430154a6250087ec76d150335144b2cb637ebaa443490b9af7b6e275e
+    "@babel/runtime": ^7.23.2
+  checksum: e9ec83703af59205af81f10929fd420314c0c976d1f4c42a191dc4d13f1284d13517105325286772571292953839c7183baa92e9bb43f41efe87dbc50c9aed1c
   languageName: node
   linkType: hard
 
@@ -17861,6 +17871,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-i18n-router@npm:^5.5.0":
+  version: 5.5.0
+  resolution: "next-i18n-router@npm:5.5.0"
+  dependencies:
+    "@formatjs/intl-localematcher": ^0.5.2
+    negotiator: ^0.6.3
+  checksum: 2cf59441044e9fd8739613de2e8c595de153e119d207157241d04027a06f82325b1855c14c282b416d65331d00c95cad11d8bc1610689c521a3273ab65580a6a
+  languageName: node
+  linkType: hard
+
 "next@npm:14.2.3":
   version: 14.2.3
   resolution: "next@npm:14.2.3"
@@ -19856,11 +19876,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:^13.3.1":
-  version: 13.3.1
-  resolution: "react-i18next@npm:13.3.1"
+"react-i18next@npm:^14.1.2":
+  version: 14.1.2
+  resolution: "react-i18next@npm:14.1.2"
   dependencies:
-    "@babel/runtime": ^7.22.5
+    "@babel/runtime": ^7.23.9
     html-parse-stringify: ^3.0.1
   peerDependencies:
     i18next: ">= 23.2.3"
@@ -19870,7 +19890,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 71a9ae4968d701aa8c11009389f49548058abb16e96d0e0f4107206fe2dfd2df6c43e44b3209824ea42b8d2aefa8fe5ebc56e019a40947b39c3cb703e5293a87
+  checksum: 1e943bc1537136a0054801f2df8cd114e0789aa94dd7397e0b98e2848371a2bb5c7d855e99393ac9381fe5d8242bb4e2c27cc6d8e7f3a0e9c1b241ecd2d4bdab
   languageName: node
   linkType: hard
 
