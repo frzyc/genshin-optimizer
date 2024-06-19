@@ -7,7 +7,7 @@
     "name": "Bom!",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Bir şeye çarpınca havaya uçan patlayıcılar fırlatır! Arka arkaya, <pyro>Ateş Alan Hasarı</pyro> veren en fazla 3 patlayıcı saldırı yapar."
       },
       "charged": {

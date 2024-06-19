@@ -7,7 +7,7 @@
     "name": "Thủ Thuật Tráo Bài",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Thực hiện tối đa 4 lần bắn tên liên tiếp."
       },
       "charged": {

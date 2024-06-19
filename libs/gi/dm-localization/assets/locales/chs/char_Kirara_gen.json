@@ -7,7 +7,7 @@
     "name": "箱纸切削术",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻击</strong>",
+        "0": "<strong>普通攻击</strong>",
         "1": "进行至多四段的连续攻击。"
       },
       "charged": {

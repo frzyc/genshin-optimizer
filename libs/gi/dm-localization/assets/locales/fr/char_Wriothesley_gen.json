@@ -7,7 +7,7 @@
     "name": "Poing vigoureux du givre",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Condense du givre sur son poing et déclenche un puissant <strong>poing de réprimande</strong>, enchaînant jusqu'à 5 attaques rapides qui infligent des <cryo>DGT Cryo</cryo>.",
         "2": "De plus, l'enchaînement d'attaques normales ne sera pas réinitialisé pendant une courte période après la compétence élémentaire « Ruée glaciale du croc » ou l'initiation d'un sprint."
       },

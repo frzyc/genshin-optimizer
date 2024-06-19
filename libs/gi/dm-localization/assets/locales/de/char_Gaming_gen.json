@@ -7,7 +7,7 @@
     "name": "Des Sternenzerreißenden Klauen",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Standardangriff</strong>",
+        "0": "<strong>Standardangriff</strong>",
         "1": "Führt bis zu 4 Angriffe mit dem Schwert hintereinander aus."
       },
       "charged": {

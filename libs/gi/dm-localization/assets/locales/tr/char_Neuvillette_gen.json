@@ -7,7 +7,7 @@
     "name": "Suyun Dengesi",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Neuvillette, hafif hareketlerle dalgalara hükmeder ve <hydro>Su Hasarı</hydro> veren en fazla 3 saldırı gerçekleştirir."
       },
       "chargedLegal": {

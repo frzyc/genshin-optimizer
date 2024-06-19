@@ -1,4 +1,4 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
@@ -22,7 +22,6 @@ import {
   GraphContext,
   SillyContext,
   useTeamDataNoContext,
-  useTitle,
   type ChartData,
   type GraphContextObj,
   type dataContextObj,

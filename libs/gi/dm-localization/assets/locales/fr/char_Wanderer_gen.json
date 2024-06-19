@@ -7,7 +7,7 @@
     "name": "Battement flottant",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Utilise des lames de vent pour enchaîner jusqu'à 3 attaques qui infligent des <anemo>DGT Anémo</anemo>."
       },
       "charged": {

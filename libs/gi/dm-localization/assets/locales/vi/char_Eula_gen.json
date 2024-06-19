@@ -47,7 +47,7 @@
     "name": "Tây Phong Kiếm - Tông Thất",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Thực hiện tối đa 5 lần chém liên tiếp."
       },
       "charged": {

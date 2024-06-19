@@ -7,7 +7,7 @@
     "name": "好運劍",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻擊</strong>",
+        "0": "<strong>普通攻擊</strong>",
         "1": "進行至多五段的連續劍擊。"
       },
       "charged": {

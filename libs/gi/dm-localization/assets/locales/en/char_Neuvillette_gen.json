@@ -7,7 +7,7 @@
     "name": "As Water Seeks Equilibrium",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "With light flourishes, Neuvillette commands the tides to unleash a maximum of 3 attacks, dealing <hydro>Hydro DMG</hydro>."
       },
       "chargedLegal": {

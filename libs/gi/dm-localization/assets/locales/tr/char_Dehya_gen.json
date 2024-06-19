@@ -7,7 +7,7 @@
     "name": "Kum Fırtınası Saldırısı",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Saldırı</strong>",
+        "0": "<strong>Normal Saldırı</strong>",
         "1": "Çift Elli Kılıcını ve dövüş sanatlarını kullanarak arka arkaya en fazla 4 saldırı yapar."
       },
       "charged": {

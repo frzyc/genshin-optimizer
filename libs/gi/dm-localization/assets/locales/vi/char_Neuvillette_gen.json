@@ -7,7 +7,7 @@
     "name": "Tĩnh Lặng Như Nước",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Vung quyền trượng, triệu hồi sóng nước tấn công tối đa 3 lần, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>."
       },
       "chargedLegal": {

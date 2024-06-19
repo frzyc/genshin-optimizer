@@ -7,7 +7,7 @@
     "name": "断雨",
     "fields": {
       "normal": {
-        "0": "<strong><strong>普通攻击</strong>",
+        "0": "<strong>普通攻击</strong>",
         "1": "进行至多六段的连续弓箭射击。"
       },
       "charged": {

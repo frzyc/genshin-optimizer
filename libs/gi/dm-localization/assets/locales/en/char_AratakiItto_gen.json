@@ -7,7 +7,7 @@
     "name": "Fight Club Legend",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Performs up to 4 consecutive strikes.",
         "2": "When the 2nd and 4th strikes hit opponents, Itto will gain 1 and 2 stacks of Superlative Superstrength, respectively.",
         "3": "Max 5 stacks. Triggering this effect will refresh the current duration of any existing stacks.",

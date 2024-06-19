@@ -7,7 +7,7 @@
     "name": "금궤 침술",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "전방을 향해 최대 4번 공격해 <dendro>풀 원소 피해</dendro>를 준다."
       },
       "charged": {

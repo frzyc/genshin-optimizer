@@ -7,7 +7,7 @@
     "name": "Leggenda della lotta",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Sferra fino a 4 colpi consecutivi.",
         "2": "Quando il secondo e il quarto colpo colpiscono gli avversari, Itto ottiene rispettivamente 1 e 2 accumuli di Superforza superlativa.",
         "3": "L'effetto è cumulabile fino a 5 volte. Attivare questo effetto ripristina la durata attuale degli accumuli esistenti.",

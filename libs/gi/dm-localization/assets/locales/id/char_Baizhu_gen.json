@@ -7,7 +7,7 @@
     "name": "The Classics of Acupuncture",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Melancarkan hingga 4 serangan ke arah depan dan mengakibatkan <dendro>Dendro DMG</dendro>."
       },
       "charged": {

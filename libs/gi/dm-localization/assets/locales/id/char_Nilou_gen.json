@@ -7,7 +7,7 @@
     "name": "Dance of Samser",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Melancarkan maksimum hingga 3 serangan pedang beruntun."
       },
       "charged": {

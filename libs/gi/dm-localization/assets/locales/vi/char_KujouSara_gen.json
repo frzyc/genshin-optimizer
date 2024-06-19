@@ -7,7 +7,7 @@
     "name": "Cung Thuật Tengu",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Thực hiện tối đa 5 lần bắn tên liên tiếp."
       },
       "charged": {

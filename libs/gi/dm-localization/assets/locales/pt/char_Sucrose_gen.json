@@ -7,7 +7,7 @@
     "name": "Criação do Espírito do Vento",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza até 4 ataques usando os Espíritos dos Ventos, infligindo <anemo>Dano Anemo</anemo>."
       },
       "charged": {

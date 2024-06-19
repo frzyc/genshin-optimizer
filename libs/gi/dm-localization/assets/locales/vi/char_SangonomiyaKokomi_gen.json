@@ -7,7 +7,7 @@
     "name": "Hình Dạng Nước Trong",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "0": "<strong>Tấn Công Thường</strong>",
         "1": "Dùng cá tạo thành bởi nước để thực hiện tối đa 3 lần tấn công, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>."
       },
       "charged": {

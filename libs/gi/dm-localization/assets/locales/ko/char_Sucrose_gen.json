@@ -7,7 +7,7 @@
     "name": "약식 풍령 작성",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "풍령으로 최대 4번 공격해 <anemo>바람 원소 피해</anemo>를 준다."
       },
       "charged": {

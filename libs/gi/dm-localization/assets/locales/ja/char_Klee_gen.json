@@ -7,7 +7,7 @@
     "name": "バンバン",
     "fields": {
       "normal": {
-        "0": "<strong><strong>通常攻撃</strong>",
+        "0": "<strong>通常攻撃</strong>",
         "1": "ぶつかると爆発するものを投げ出す！最大3段の爆弾攻撃を行い、<pyro>炎元素範囲ダメージ</pyro>を与える。"
       },
       "charged": {

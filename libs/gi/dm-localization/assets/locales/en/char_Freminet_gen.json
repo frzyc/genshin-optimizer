@@ -7,7 +7,7 @@
     "name": "Flowing Eddies",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Performs up to 4 consecutive strikes."
       },
       "charged": {

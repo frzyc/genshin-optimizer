@@ -7,7 +7,7 @@
     "name": "Acque chete",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Agitando elegantemente il suo bastone, Neuvillette governa le maree per scagliare fino a 3 attacchi che infliggono <hydro>DAN da Hydro</hydro>."
       },
       "chargedLegal": {

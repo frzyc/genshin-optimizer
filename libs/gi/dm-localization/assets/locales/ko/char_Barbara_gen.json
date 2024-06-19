@@ -7,7 +7,7 @@
     "name": "물의 노래",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "물보라로 최대 4번 공격해 <hydro>물 원소 피해</hydro>를 준다."
       },
       "charged": {

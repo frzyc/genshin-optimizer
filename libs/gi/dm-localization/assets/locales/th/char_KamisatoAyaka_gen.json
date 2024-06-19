@@ -41,7 +41,7 @@
     "name": "Kamisato Art - Kabuki",
     "fields": {
       "normal": {
-        "0": "<strong><strong>โจมตีปกติ</strong>",
+        "0": "<strong>โจมตีปกติ</strong>",
         "1": "ใช้ดาบโจมตีต่อเนื่องมากสุดห้าครั้ง"
       },
       "charged": {

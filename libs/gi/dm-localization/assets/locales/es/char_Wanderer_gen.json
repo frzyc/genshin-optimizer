@@ -7,7 +7,7 @@
     "name": "Ondeo de estandartes",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Ataque Normal</strong>",
+        "0": "<strong>Ataque Normal</strong>",
         "1": "Libera ráfagas de viento cortante para realizar hasta 3 ataques que infligen <anemo>Daño Anemo</anemo>."
       },
       "charged": {

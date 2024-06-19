@@ -7,7 +7,7 @@
     "name": "Fotografia a colori freddi",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attacco normale</strong>",
+        "0": "<strong>Attacco normale</strong>",
         "1": "Charlotte inquadra gli avversari con Monsieur Vérité, la sua Fotokamera personalizzata, per eseguire 3 attacchi consecutivi che infliggono <cryo>DAN da Cryo</cryo>."
       },
       "charged": {

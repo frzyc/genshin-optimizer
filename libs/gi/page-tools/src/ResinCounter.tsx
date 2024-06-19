@@ -138,7 +138,7 @@ export default function ResinCounter() {
                       onClick={() => setResin(resin + rcv)}
                       disabled={resin >= RESIN_MAX}
                     >
-                      {rcv}
+                      +{rcv}
                     </Button>
                   )
                 }

@@ -7,7 +7,7 @@
     "name": "물의 형태",
     "fields": {
       "normal": {
-        "0": "<strong><strong>일반 공격</strong>",
+        "0": "<strong>일반 공격</strong>",
         "1": "물 원소로 만들어낸 환영 물고기로 최대 3번 공격하여 <hydro>물 원소 피해</hydro>를 준다."
       },
       "charged": {

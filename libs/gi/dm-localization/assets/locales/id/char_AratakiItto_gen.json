@@ -7,7 +7,7 @@
     "name": "Fight Club Legend",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong>",
+        "0": "<strong>Normal Attack</strong>",
         "1": "Melancarkan hingga 4 serangan berturut-turut.",
         "2": "Serangan ke-2 dan ke-4 yang mengenai musuh masing-masing akan menghasilkan 1 lapis dan 2 lapis efek Superlative Superstrength.",
         "3": "Maksimum dapat ditumpuk hingga 5 lapis. Setiap kali memicu efek ini akan memperbarui durasi Superlative Superstrength yang sudah dimiliki.",

@@ -7,7 +7,7 @@
     "name": "Ondes du destin",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Attaque normale</strong>",
+        "0": "<strong>Attaque normale</strong>",
         "1": "Enchaîne jusqu'à 4 attaques d'eau qui infligent des <hydro>DGT Hydro</hydro>."
       },
       "charged": {

@@ -7,7 +7,7 @@
     "name": "Marvelous Sword-Dance (Modified)",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong> Melancarkan hingga 3 tebasan berturut-turut."
+        "0": "<strong>Normal Attack</strong> Melancarkan hingga 3 tebasan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",

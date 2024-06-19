@@ -123,7 +123,7 @@ export default function TeamCharacterSelector({
         }
       }}
     >
-      <CardActionArea>
+      <CardActionArea onClick={() => setEditMode(true)}>
         <BootstrapTooltip
           placement="top"
           title={
@@ -151,7 +151,6 @@ export default function TeamCharacterSelector({
           >
             <Typography
               variant="h5"
-              onClick={() => setEditMode(true)}
               sx={{
                 display: 'flex',
                 gap: 1,
