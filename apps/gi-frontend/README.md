@@ -4,7 +4,8 @@ A NextJS project for Genshin Optimizer, using apps router and supabase. This App
 
 # Running the stack in local development
 
-Make sure gi-supabase is running:
+Make sure `gi-supabase` is running:
+For more details, visit [gi-supbase README.md](../../libs/gi/supabase/README.md)
 
 ```
 nx start gi-supabase

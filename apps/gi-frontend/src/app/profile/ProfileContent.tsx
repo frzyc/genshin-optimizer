@@ -98,7 +98,7 @@ type InputAccount = {
   id: string | null
 }
 function Accounts() {
-  const { profile, ac } = useContext(UserProfileContext)
+  const { profile } = useContext(UserProfileContext)
   const supabase = useSupabase()
   const [accounts, setAccounts] = useState<Accounts>(null)
   const [show, onShow, onHide] = useBoolState(false)
@@ -123,7 +123,7 @@ function Accounts() {
   }, [fetchAccounts])
 
   const upSertAccount = useCallback(
-    async ({ name, uid, id }: InputAccount) => {
+    async ({ name, uid }: InputAccount) => {
       if (!profile) return
       try {
         const { error } = await supabase.from('accounts').upsert({
