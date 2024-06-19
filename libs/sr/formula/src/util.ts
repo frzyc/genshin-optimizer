@@ -114,6 +114,12 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const { self, teamBuff } = reader.sheet('agg').withAll('et', [])
   const { stackIn, stackInt, stackOut } = reader.withAll('qt', [])
   return [
+    // Target Entries
+    members.map((dst) =>
+      reader
+        .withTag({ et: 'target', dst })
+        .reread(reader.withTag({ et: 'self', dst: null, src: dst }))
+    ),
     // Team Buff
     members.flatMap((dst) => {
       const entry = self.with('src', dst)

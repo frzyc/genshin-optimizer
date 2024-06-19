@@ -178,33 +178,33 @@ export function tagStr(tag: Tag, ex?: any): string {
   let result = '{ ',
     includedRequired = false,
     includedBar = false
-  function required(str: string | undefined | null) {
-    if (!str) return
-    result += str + ' '
+  function required(str: string | undefined | null, name: string) {
+    if (!str && str !== null) return
+    result += str === null ? `!${name} ` : str + ' '
     includedRequired = true
   }
-  function optional(str: string | undefined | null) {
-    if (!str) return
+  function optional(str: string | undefined | null, name: string) {
+    if (!str && str !== null) return
     if (includedRequired && !includedBar) {
       includedBar = true
       result += '| '
     }
-    result += str + ' '
+    result += str === null ? `!${name} ` : str + ' '
   }
-  required(name && `#${name}`)
-  required(preset)
-  required(src)
-  required(dst && `(${dst})`)
-  required(sheet)
-  required(et)
-  if (qt && q) required(`${qt}.${q}`)
-  else if (qt) required(`${qt}.`)
-  else if (q) required(`.${q}`)
+  required(name && `#${name}`, 'name')
+  required(preset, 'preset')
+  required(src, 'src')
+  required(dst && `(${dst})`, 'dst')
+  required(sheet, 'sheet')
+  required(et, 'et')
+  if (qt && q) required(`${qt}.${q}`, '')
+  else if (qt) required(`${qt}.`, '')
+  else if (q) required(`.${q}`, '')
 
-  optional(elementalType)
-  optional(`1:${damageType1}`)
-  optional(`2:${damageType2}`)
-  required(ex && `[${ex}]`)
+  optional(elementalType, 'ele')
+  optional(`1:${damageType1}`, 'dmg1')
+  optional(`2:${damageType2}`, 'dmg2')
+  if (ex) result += `[${ex}] `
   return result + '}'
 }
 

@@ -42,7 +42,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     }
     if (n.op === 'read') {
       result.formula = `[${valStr(val)}] match ${tagStr(
-        tag!
+        Object.fromEntries(Object.entries(tag!).filter(([_, v]) => v))
       )} for read ${nodeString(n)}`
       result.deps = (x as CalcResult<number | string, DebugMeta>[]).map(
         ({ meta, rereadSeq }) => {
