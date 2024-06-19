@@ -22,7 +22,7 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import type { Sheet } from './listing'
 import { entryTypes, members, presets, sheets } from './listing'
-import type { TagMapNodeEntry } from './tagMapType'
+import type { TagMapNodeEntries, TagMapNodeEntry } from './tagMapType'
 
 export const fixedTags = {
   preset: presets,
@@ -61,6 +61,24 @@ export class Read extends TypedRead<Tag, Read> {
 
   add(value: number | string | AnyNode): TagMapNodeEntry {
     return super.toEntry(typeof value === 'object' ? value : constant(value))
+  }
+  addOnce(
+    sheet: Sheet,
+    value: number | NumNode,
+    accu: typeof this.accu = 'max'
+  ): TagMapNodeEntries {
+    if (this.tag.et !== 'teamBuff' || !sheet)
+      throw new Error('Unsupported non-stacking entry')
+    const q = `${uniqueId(sheet)}`
+    // Use raw tags here instead of `self.*` to avoid cyclic dependency
+    return [
+      // self.stack.<q>.add(..)
+      this.withTag({ et: 'self', qt: 'stack', q }).add(value),
+      this.with('et', 'self').add(
+        // team.<stack.q>[accu]
+        reader.withTag({ et: 'team', qt: 'stack', q })[accu]
+      ),
+    ]
   }
   reread(r: Read): TagMapNodeEntry {
     return super.toEntry(reread(r.tag))
@@ -257,6 +275,14 @@ export function tag(
 }
 export function tagVal(cat: keyof Tag): TagValRead {
   return baseTagVal(cat)
+}
+
+const counters: Record<string, number> = {}
+function uniqueId(namespace: string): number {
+  if (!counters[namespace]) counters[namespace] = 0
+  const result = counters[namespace]!
+  counters[namespace] += 1
+  return result
 }
 
 export const reader = new Read({}, undefined)

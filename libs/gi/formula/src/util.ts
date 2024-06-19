@@ -1,6 +1,5 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
-import { cmpEq, cmpGE } from '@genshin-optimizer/pando/engine'
 import type {
   Member,
   Preset,
@@ -105,7 +104,6 @@ export function conditionalData(
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
   const { self, teamBuff } = reader.sheet('agg').withAll('et', [])
-  const { stackIn, stackInt, stackOut } = reader.withAll('qt', [])
   return [
     // Target Entries
     members.map((dst) =>
@@ -122,13 +120,6 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       const entry = self.with('src', dst)
       return members.map((src) => entry.reread(teamBuff.withTag({ dst, src })))
     }),
-    // Stacking
-    members.map((src, i) =>
-      stackInt.add(cmpGE(stackIn.withTag({ src }).max, 1, i + 1))
-    ),
-    members.map((src, i) =>
-      stackOut.withTag({ src }).add(cmpEq(stackInt.max, i + 1, 1))
-    ),
     // Total Team Stat
     //
     // CAUTION:

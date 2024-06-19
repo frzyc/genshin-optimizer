@@ -13,7 +13,7 @@ import {
   constant,
   reread,
 } from '@genshin-optimizer/pando/engine'
-import type { DamageType, TagMapNodeEntry } from '.'
+import type { DamageType, TagMapNodeEntries, TagMapNodeEntry } from '.'
 import {
   damageTypes,
   elementalTypes,
@@ -61,6 +61,24 @@ export class Read extends TypedRead<Tag, Read> {
       tag: this.tag,
       value: typeof value === 'object' ? value : constant(value),
     }
+  }
+  addOnce(
+    sheet: Sheet,
+    value: number | NumNode,
+    accu: typeof this.accu = 'max'
+  ): TagMapNodeEntries {
+    if (this.tag.et !== 'teamBuff' || !sheet)
+      throw new Error('Unsupported non-stacking entry')
+    const q = `${uniqueId(sheet)}`
+    // Use raw tags here instead of `self.*` to avoid cyclic dependency
+    return [
+      // self.stack.<q>.add(..)
+      this.withTag({ et: 'self', qt: 'stack', q }).add(value),
+      this.with('et', 'self').add(
+        // team.<stack.q>[accu]
+        reader.withTag({ et: 'team', qt: 'stack', q })[accu]
+      ),
+    ]
   }
   addWithDmgType(
     dmgType: DamageType,
@@ -206,6 +224,14 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(`2:${damageType2}`, 'dmg2')
   if (ex) result += `[${ex}] `
   return result + '}'
+}
+
+const counters: Record<string, number> = {}
+function uniqueId(namespace: string): number {
+  if (!counters[namespace]) counters[namespace] = 0
+  const result = counters[namespace]!
+  counters[namespace] += 1
+  return result
 }
 
 export const reader = new Read({}, undefined)

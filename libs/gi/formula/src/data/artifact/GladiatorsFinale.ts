@@ -4,7 +4,6 @@ import {
   allBoolConditionals,
   allListConditionals,
   allNumConditionals,
-  allStacks,
   percent,
   selfBuff,
   teamBuff,
@@ -17,8 +16,6 @@ const count = artCount(key)
 const { someBoolConditional } = allBoolConditionals(key)
 const { _someListConditional } = allListConditionals(key, [])
 const { _someNumConditional } = allNumConditionals(key, 'unique', false)
-// TODO: Non-stack values
-const { someStack } = allStacks(key)
 
 export default registerArt(
   key,
@@ -32,6 +29,8 @@ export default registerArt(
   selfBuff.premod.atk_.add(cmpGE(count, 2, percent(1))),
   // Check for 4-set effect using `cmpGE(count, 4, ...)`
   // Applies non-stacking teambuff
-  someStack.add(someBoolConditional.ifOn(cmpGE(count, 4, 1))),
-  teamBuff.premod.atk_.add(someStack.apply(percent(1)))
+  teamBuff.premod.atk_.addOnce(
+    key,
+    someBoolConditional.ifOn(cmpGE(count, 4, percent(1)))
+  )
 )

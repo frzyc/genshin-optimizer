@@ -2,11 +2,10 @@ import { compileTagMapValues } from '@genshin-optimizer/pando/engine'
 import { Calculator } from './calculator'
 import { entries, keys, values } from './data'
 import type { Member, Sheet, TagMapNodeEntries } from './data/util'
-import { allStacks, selfTag, sheets, tag, tagStr } from './data/util'
+import { self, selfTag, sheets, tagStr, teamBuff } from './data/util'
 import { teamData, withMember } from './util'
 
 import { fail } from 'assert'
-import {} from './debug'
 
 describe('calculator', () => {
   describe('correctness', () => {
@@ -36,47 +35,26 @@ describe('calculator', () => {
       throw new Error('Add test')
     })
     test('stacking', () => {
-      // Use existing `q:`
-      const { hp: test1, hp_: test2 } = allStacks('CalamityQueller')
-      const { hp: test3, hp_: test4 } = allStacks('NoblesseOblige')
       const members: Member[] = ['0', '1', '2'],
+        // Use existing `q:hp` and `q:eleMas` for stacking key
         data: TagMapNodeEntries = [
           ...teamData(members),
-          // Multiple members with 1
-          ...withMember('1', test1.add(1)),
-          ...withMember('2', test1.add(1)),
+          // Multiple members with non-zero values
+          ...withMember('0', self.premod.hp.add(5)),
+          ...withMember('1', self.premod.hp.add(3)),
+          ...withMember('2', self.premod.hp.add(3)),
+          ...teamBuff.final.atk.addOnce('static', self.premod.hp),
 
-          // Multiple members with 1
-          ...withMember('2', test2.add(1)),
-          ...withMember('3', test2.add(1)),
-
-          // One member with 1
-          ...withMember('0', test3.add(1)),
+          // No member with value
+          ...teamBuff.final.def.addOnce('static', self.premod.eleMas),
         ],
         calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-      // Exactly one member gets `val` if some members have `stack.in` set to `1`
-      expect(
-        members
-          .map((src) => calc.compute(tag(test1.apply(3, 5), { src })).val)
-          .sort()
-      ).toEqual([3, 5, 5])
-      expect(
-        members
-          .map((src) => calc.compute(tag(test2.apply(1), { src })).val)
-          .sort()
-      ).toEqual([0, 0, 1])
-      expect(
-        members
-          .map((src) => calc.compute(tag(test3.apply(1), { src })).val)
-          .sort()
-      ).toEqual([0, 0, 1])
-      // Every member gets `0` if `stack.in` is `0`
-      expect(
-        members
-          .map((src) => calc.compute(tag(test4.apply(1), { src })).val)
-          .sort()
-      ).toEqual([0, 0, 0])
+      // Every member got buffed by exactly once with the highest value
+      for (const src of members) {
+        expect(calc.compute(self.final.atk.withTag({ src })).val).toEqual(5)
+        expect(calc.compute(self.final.def.withTag({ src })).val).toEqual(0)
+      }
     })
   })
 })

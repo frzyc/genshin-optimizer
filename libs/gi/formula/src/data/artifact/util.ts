@@ -4,7 +4,7 @@ import type { TagMapNodeEntries, TagMapNodeEntry } from '../util'
 import { self, tag } from '../util'
 
 export function registerArt(
-  key: ArtifactSetKey,
+  sheet: ArtifactSetKey,
   ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
 ): TagMapNodeEntries {
   /* Unlike character and weapon, artifact buff is all-or-nothing, so we can register every
@@ -15,15 +15,15 @@ export function registerArt(
    */
 
   function internal({ tag: oldTag, value }: TagMapNodeEntry): TagMapNodeEntry {
-    if (oldTag.sheet === key)
+    if (oldTag.sheet === sheet)
       // Special entries (usually stack count) that override `stack`
       return { tag: oldTag, value }
 
     // Add `key:art` to the tag and add `tag(key:<<key>>, value)` to set tags for calculation
     if (value.op === 'reread' || value.op === 'tag' || value.op === 'read')
       // Reuses `value` since it is already changing tags
-      value = { ...value, tag: { ...value.tag, key } }
-    else value = tag(value, { sheet: key })
+      value = { ...value, tag: { ...value.tag, sheet } }
+    else value = tag(value, { sheet })
     return { tag: { ...oldTag, sheet: 'art' }, value }
   }
   return data.flatMap((data) =>
