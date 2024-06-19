@@ -8,6 +8,7 @@ import type { Read, Tag } from '.'
 import {
   percent,
   reader,
+  self,
   selfBuff,
   tag,
   teamBuff,
@@ -46,7 +47,9 @@ function registerFormula(
   reader.name(name) // register name:<name>
   const listing = (team ? teamBuff : selfBuff).listing.formulas
   return [
-    listing.add(listingItem(reader.withTag({ name, qt: 'formula', q }), cond)),
+    listing.add(
+      listingItem(reader.withTag({ name, et: 'self', qt: 'formula', q }), cond)
+    ),
     ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
   ]
 }
@@ -75,14 +78,13 @@ export function customDmg(
   { team, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
-  const buff = team ? teamBuff : selfBuff
   return splits.map((split, index) =>
     registerFormula(
       `${name}_${index}`,
       team,
       'dmg',
       tag(cond, dmgTag),
-      buff.formula.base.add(prod(base, percent(split))),
+      self.formula.base.add(prod(base, percent(split))),
       ...extra
     )
   )
@@ -104,13 +106,12 @@ export function customShield(
   { team, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
-  const buff = team ? teamBuff : selfBuff
   return registerFormula(
     name,
     team,
     'shield',
     cond,
-    buff.formula.base.add(base),
+    self.formula.base.add(base),
     ...extra
   )
 }
@@ -131,13 +132,12 @@ export function customHeal(
   { team, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
-  const buff = team ? teamBuff : selfBuff
   return registerFormula(
     name,
     team,
     'heal',
     cond,
-    buff.formula.base.add(base),
+    self.formula.base.add(base),
     ...extra
   )
 }

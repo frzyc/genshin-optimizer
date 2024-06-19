@@ -40,14 +40,13 @@ export function customDmg(
   { team, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
-  const buff = team ? teamBuff : selfBuff
   return registerFormula(
     name,
     team,
     'dmg',
     tag(cond, { move }),
-    buff.formula.base.add(base),
-    buff.prep.ele.add(eleOverride ?? self.reaction.infusion),
+    self.formula.base.add(base),
+    self.prep.ele.add(eleOverride ?? self.reaction.infusion),
     ...extra
   )
 }
@@ -69,13 +68,12 @@ export function customShield(
       base = prod(tag(2.5, reader[ele].tag), base)
   }
 
-  const buff = team ? teamBuff : selfBuff
   return registerFormula(
     name,
     team,
     'shield',
     ele ? tag(cond, { ele }) : cond,
-    buff.formula.base.add(base),
+    self.formula.base.add(base),
     ...extra
   )
 }
@@ -86,13 +84,12 @@ export function customHeal(
   { team, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
-  const buff = team ? teamBuff : selfBuff
   return registerFormula(
     name,
     team,
     'heal',
     cond,
-    buff.formula.base.add(base),
+    self.formula.base.add(base),
     ...extra
   )
 }
@@ -107,7 +104,9 @@ function registerFormula(
   reader.name(name) // register name:<name>
   const listing = (team ? teamBuff : selfBuff).listing.formulas
   return [
-    listing.add(listingItem(reader.withTag({ name, qt: 'formula', q }), cond)),
+    listing.add(
+      listingItem(reader.withTag({ name, et: 'self', qt: 'formula', q }), cond)
+    ),
     ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
   ]
 }

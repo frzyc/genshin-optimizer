@@ -67,6 +67,7 @@ export const damageTypes = [
 
 export const entryTypes = [
   'self',
+  'selfBuff',
   'teamBuff',
   'enemy',
   'team',

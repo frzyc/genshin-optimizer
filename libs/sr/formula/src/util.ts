@@ -6,13 +6,7 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { ICharacter, ILightCone } from '@genshin-optimizer/sr/srod'
 import type { Member, Preset, TagMapNodeEntries } from './data/util'
-import {
-  convert,
-  getStatFromStatKey,
-  reader,
-  selfBuff,
-  selfTag,
-} from './data/util'
+import { convert, getStatFromStatKey, reader, self, selfTag } from './data/util'
 
 export function withPreset(
   preset: Preset,
@@ -28,7 +22,7 @@ export function withMember(
 }
 
 export function charData(data: ICharacter): TagMapNodeEntries {
-  const { lvl, basic, skill, ult, talent, ascension, eidolon } = selfBuff.char
+  const { lvl, basic, skill, ult, talent, ascension, eidolon } = self.char
 
   return [
     reader.sheet('char').reread(reader.sheet(data.key)),
@@ -42,23 +36,21 @@ export function charData(data: ICharacter): TagMapNodeEntries {
     ascension.add(data.ascension),
     eidolon.add(data.eidolon),
     ...allStatBoostKeys.map((index) =>
-      selfBuff.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0)
+      self.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0)
     ),
     ...allBonusAbilityKeys.map((index) =>
-      selfBuff.char[`bonusAbility${index}`].add(
-        data.bonusAbilities[index] ? 1 : 0
-      )
+      self.char[`bonusAbility${index}`].add(data.bonusAbilities[index] ? 1 : 0)
     ),
 
     // Default char
-    selfBuff.premod.crit_.add(0.05),
-    selfBuff.premod.crit_dmg_.add(0.5),
+    self.premod.crit_.add(0.05),
+    self.premod.crit_dmg_.add(0.5),
   ]
 }
 
 export function lightConeData(data: ILightCone | undefined): TagMapNodeEntries {
   if (!data) return []
-  const { lvl, ascension, superimpose } = selfBuff.lightCone
+  const { lvl, ascension, superimpose } = self.lightCone
 
   return [
     reader.sheet('lightCone').reread(reader.sheet(data.key)),

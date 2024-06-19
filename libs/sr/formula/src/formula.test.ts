@@ -4,10 +4,11 @@ import type {
   CharacterKey,
   LightConeKey,
 } from '@genshin-optimizer/sr/consts'
+import { fail } from 'assert'
 import { charData, lightConeData, withMember } from '.'
 import { Calculator } from './calculator'
-import { keys, values } from './data'
-import { convert, selfTag, type TagMapNodeEntries } from './data/util'
+import { data, keys, values } from './data'
+import { convert, selfTag, tagStr, type TagMapNodeEntries } from './data/util'
 
 describe('character test', () => {
   it.each([
@@ -122,5 +123,21 @@ describe('char+lightCone test', () => {
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     const member0 = convert(selfTag, { src: '0', et: 'self' })
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(81.6)
+  })
+})
+describe('sheet', () => {
+  test('buff entries', () => {
+    for (const { tag } of data) {
+      if (tag.et && tag.qt && tag.q) {
+        switch (tag.et) {
+          case 'selfBuff':
+          case 'teamBuff': {
+            const { sheet } = (selfTag as any)[tag.qt][tag.q]
+            if (sheet !== 'agg') fail(`Ineffective entry ${tagStr(tag)}`)
+            break
+          }
+        }
+      }
+    }
   })
 })

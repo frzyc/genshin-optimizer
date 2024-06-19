@@ -2,9 +2,10 @@ import { compileTagMapValues } from '@genshin-optimizer/pando/engine'
 import { Calculator } from './calculator'
 import { entries, keys, values } from './data'
 import type { Member, Sheet, TagMapNodeEntries } from './data/util'
-import { allStacks, sheets, tag } from './data/util'
+import { allStacks, selfTag, sheets, tag, tagStr } from './data/util'
 import { teamData, withMember } from './util'
 
+import { fail } from 'assert'
 import {} from './debug'
 
 describe('calculator', () => {
@@ -77,27 +78,43 @@ describe('calculator', () => {
           .sort()
       ).toEqual([0, 0, 0])
     })
-    test('name uniqueness', () => {
-      const namesBySheet = Object.fromEntries(
-        sheets.map((s) => [s, new Set()])
-      ) as Record<Sheet, Set<string>>
-      for (const { tag, value } of entries)
-        if (tag.qt === 'formula' && tag.q === 'listing') {
-          // `name` has a specific structure; it must be the top `tag` in the entry
-          const s = tag.sheet!,
-            name = (value.op === 'tag' && value.tag['name']) || tag.name!
-
-          if (value.tag?.['qt'] === 'base' || value.tag?.['qt'] === 'premod')
-            continue // stat listing
-
-          expect(s).toBeTruthy()
-          expect(name).toBeTruthy()
-
-          // Listing entry
-          if (namesBySheet[s].has(name))
-            throw new Error(`Duplicated formula names ${s}:${name}`)
-          namesBySheet[s].add(name)
+  })
+})
+describe('sheet', () => {
+  test('buff entries', () => {
+    for (const { tag } of entries) {
+      if (tag.et && tag.qt && tag.q) {
+        switch (tag.et) {
+          case 'selfBuff':
+          case 'teamBuff': {
+            const { sheet } = (selfTag as any)[tag.qt][tag.q]
+            if (sheet !== 'agg') fail(`Ineffective entry ${tagStr(tag)}`)
+            break
+          }
         }
-    })
+      }
+    }
+  })
+  test('name uniqueness', () => {
+    const namesBySheet = Object.fromEntries(
+      sheets.map((s) => [s, new Set()])
+    ) as Record<Sheet, Set<string>>
+    for (const { tag, value } of entries)
+      if (tag.qt === 'formula' && tag.q === 'listing') {
+        // `name` has a specific structure; it must be the top `tag` in the entry
+        const s = tag.sheet!,
+          name = (value.op === 'tag' && value.tag['name']) || tag.name!
+
+        if (value.tag?.['qt'] === 'base' || value.tag?.['qt'] === 'premod')
+          continue // stat listing
+
+        expect(s).toBeTruthy()
+        expect(name).toBeTruthy()
+
+        // Listing entry
+        if (namesBySheet[s].has(name))
+          throw new Error(`Duplicated formula names ${s}:${name}`)
+        namesBySheet[s].add(name)
+      }
   })
 })

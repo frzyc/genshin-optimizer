@@ -19,7 +19,6 @@ import {
   percent,
   readStat,
   self,
-  selfBuff,
 } from '../util'
 
 export interface CharInfo {
@@ -139,42 +138,44 @@ export function entriesForChar(
   specialized.delete('def')
   specialized.delete('hp')
 
+  // Use `self` here instead of `selfBuff` so that the number is
+  // still available even when the buff mechanism does not apply
   const { ascension } = self.char
   return [
     // Stats
     ...lvlCurves.map(({ key, base, curve }) =>
-      selfBuff.base[key].add(prod(base, allStatics('static')[curve]))
+      self.base[key].add(prod(base, allStatics('static')[curve]))
     ),
     ...Object.entries(ascensionBonus).map(([key, values]) =>
       (baseStats.has(key)
-        ? selfBuff.base[key as 'atk' | 'def' | 'hp']
-        : readStat(selfBuff.premod, key as keyof typeof ascensionBonus)
+        ? self.base[key as 'atk' | 'def' | 'hp']
+        : readStat(self.premod, key as keyof typeof ascensionBonus)
       ).add(subscript(ascension, values))
     ),
 
     // Constants
-    selfBuff.common.weaponType.add(weaponType),
-    selfBuff.char.ele.add(ele),
+    self.common.weaponType.add(weaponType),
+    self.char.ele.add(ele),
 
     // Counters
-    selfBuff.common.count[ele].add(1),
-    ...(region !== '' ? [selfBuff.common.count[region].add(1)] : []),
+    self.common.count[ele].add(1),
+    ...(region !== '' ? [self.common.count[region].add(1)] : []),
 
     // Listing (formulas)
-    selfBuff.listing.formulas.add(listingItem(self.final.hp)),
-    selfBuff.listing.formulas.add(listingItem(self.final.atk)),
-    selfBuff.listing.formulas.add(listingItem(self.final.def)),
-    selfBuff.listing.formulas.add(listingItem(self.final.eleMas)),
-    selfBuff.listing.formulas.add(listingItem(self.final.enerRech_)),
-    selfBuff.listing.formulas.add(listingItem(self.common.cappedCritRate_)),
-    selfBuff.listing.formulas.add(listingItem(self.final.critDMG_)),
-    selfBuff.listing.formulas.add(listingItem(self.final.heal_)),
-    selfBuff.listing.formulas.add(listingItem(self.final.dmg_[ele])),
-    selfBuff.listing.formulas.add(listingItem(self.final.dmg_.physical)),
+    self.listing.formulas.add(listingItem(self.final.hp)),
+    self.listing.formulas.add(listingItem(self.final.atk)),
+    self.listing.formulas.add(listingItem(self.final.def)),
+    self.listing.formulas.add(listingItem(self.final.eleMas)),
+    self.listing.formulas.add(listingItem(self.final.enerRech_)),
+    self.listing.formulas.add(listingItem(self.common.cappedCritRate_)),
+    self.listing.formulas.add(listingItem(self.final.critDMG_)),
+    self.listing.formulas.add(listingItem(self.final.heal_)),
+    self.listing.formulas.add(listingItem(self.final.dmg_[ele])),
+    self.listing.formulas.add(listingItem(self.final.dmg_.physical)),
 
     // Listing (specialized)
     ...[...specialized].map((stat) =>
-      selfBuff.listing.specialized.add(
+      self.listing.specialized.add(
         // Sheet-specific data (i.e., `sheet:<key>`)
         listingItem(readStat(self.premod, stat).sheet(key))
       )

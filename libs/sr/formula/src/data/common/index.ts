@@ -1,6 +1,6 @@
 import { max, min, prod } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { percent, reader, self, selfBuff } from '../util'
+import { percent, reader, self } from '../util'
 import dmg from './dmg'
 import prep from './prep'
 
@@ -10,6 +10,9 @@ const data: TagMapNodeEntries = [
 
   reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet('custom')),
   reader.withTag({ sheet: 'agg', et: 'self' }).reread(reader.sheet('custom')),
+  reader
+    .withTag({ sheet: 'agg', et: 'self' })
+    .reread(reader.with('et', 'selfBuff')),
 
   // convert sheet:<char/lightCone> to sheet:agg for accumulation
   // sheet:<relic> is reread in src/util.ts:relicsData()
@@ -26,11 +29,11 @@ const data: TagMapNodeEntries = [
 
   // premod X += base X * premod X%
   ...(['atk', 'def', 'hp', 'spd'] as const).map((s) =>
-    selfBuff.premod[s].add(prod(self.base[s], self.premod[`${s}_`]))
+    self.premod[s].add(prod(self.base[s], self.premod[`${s}_`]))
   ),
 
   // Capped CR = Max(Min(Final CR, 1), 0)
-  selfBuff.common.cappedCrit_.add(
+  self.common.cappedCrit_.add(
     max(min(self.final.crit_, percent(1)), percent(0))
   ),
 
