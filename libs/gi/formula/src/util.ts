@@ -103,7 +103,7 @@ export function conditionalData(
 
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { self, teamBuff } = reader.sheet('agg').withAll('et', [])
+  const { self, teamBuff, notSelfBuff } = reader.sheet('agg').withAll('et', [])
   return [
     // Target Entries
     members.map((dst) =>
@@ -119,6 +119,13 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     members.flatMap((dst) => {
       const entry = self.with('src', dst)
       return members.map((src) => entry.reread(teamBuff.withTag({ dst, src })))
+    }),
+    // Not Self Buff
+    members.flatMap((dst) => {
+      const entry = self.with('src', dst)
+      return members
+        .map((src) => entry.reread(notSelfBuff.withTag({ dst, src })))
+        .filter(({ value }) => value.tag!['dst'] != value.tag!['src'])
     }),
     // Total Team Stat
     //

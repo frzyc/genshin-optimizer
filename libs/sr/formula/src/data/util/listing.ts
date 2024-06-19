@@ -69,6 +69,7 @@ export const entryTypes = [
   'self',
   'selfBuff',
   'teamBuff',
+  'notSelfBuff',
   'enemy',
   'team',
   'target',
