@@ -14,9 +14,6 @@ const data: TagMapNodeEntries = [
 
   reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet('custom')),
   reader.withTag({ sheet: 'agg', et: 'self' }).reread(reader.sheet('custom')),
-  reader
-    .withTag({ sheet: 'agg', et: 'self' })
-    .reread(reader.with('et', 'selfBuff')),
 
   // Final <= Premod <= Base + WeaponRefinement
   reader

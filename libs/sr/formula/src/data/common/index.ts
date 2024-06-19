@@ -10,9 +10,6 @@ const data: TagMapNodeEntries = [
 
   reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet('custom')),
   reader.withTag({ sheet: 'agg', et: 'self' }).reread(reader.sheet('custom')),
-  reader
-    .withTag({ sheet: 'agg', et: 'self' })
-    .reread(reader.with('et', 'selfBuff')),
 
   // convert sheet:<char/lightCone> to sheet:agg for accumulation
   // sheet:<relic> is reread in src/util.ts:relicsData()

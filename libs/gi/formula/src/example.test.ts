@@ -155,6 +155,7 @@ describe('example', () => {
       test(`with name ${name}`, () => {
         expect(tag).toEqual({
           src: '0',
+          dst: '0',
           et: 'self',
           sheet: 'Nahida',
           qt: 'formula',
