@@ -76,10 +76,11 @@ export const slashcommand = new SlashCommandBuilder()
       )
   )
 
-//TODO: use generated imports instead of require
 //requiring all the data because imports dont work
+//TODO: use generated imports instead of require
 const archivepath = path.join(cwd, '/libs/gi/dm-localization/assets/locales/en')
 //get keys
+//TODO: fix any typing
 const archive: Record<string, any> = {
   key: {
     char: require(path.join(archivepath, '/charNames_gen.json')),
