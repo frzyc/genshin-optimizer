@@ -59,7 +59,7 @@ export const slashcommand = new SlashCommandBuilder()
             { name: 'Refinement 2', value: '1' },
             { name: 'Refinement 3', value: '2' },
             { name: 'Refinement 4', value: '3' },
-            { name: 'Refinement 5', value: '4' },
+            { name: 'Refinement 5', value: '4' }
           )
       )
   )
@@ -76,6 +76,7 @@ export const slashcommand = new SlashCommandBuilder()
       )
   )
 
+//TODO: use generated imports instead of require
 //requiring all the data because imports dont work
 const archivepath = path.join(cwd, '/libs/gi/dm-localization/assets/locales/en')
 //get keys
@@ -101,15 +102,16 @@ archive['key']['char']['TravelerHydro'] = 'Traveler (Hydro)'
 //get all the data from keys
 for (const category in archive['key']) {
   for (const name in archive['key'][category]) {
-    let file = name;
+    let file = name
     //why does traveler have to be gendered smh
     if (category === 'char' && name.match(/Traveler/)) file += 'F'
     const itempath = path.join(archivepath, `/${category}_${file}_gen.json`)
     if (fs.existsSync(itempath)) archive[category][name] = require(itempath)
   }
 }
-export {archive}
+export { archive }
 
+//TODO: replace with lib constants
 export const colors = {
   rarity: [0x818486, 0x5a977a, 0x5987ad, 0x9470bb, 0xc87c24],
   element: {
@@ -175,6 +177,7 @@ export async function autocomplete(interaction: AutocompleteInteraction) {
   let reply: ApplicationCommandOptionChoiceData[] = []
 
   //character/weapon/artifact name autocomplete
+  //TODO: better search
   if (focus.name === 'name') {
     const text = focus.value.toLowerCase()
     reply = Object.keys(archive['key'][subcommand])

@@ -9,49 +9,83 @@ import {
 } from 'discord.js'
 import { clean, colors, talentlist } from '../archive'
 
-function profileEmbed(embed: EmbedBuilder, id: CharacterKey, data: any) {
-  const text = data.description ??
-  'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.'
+function getEmbed(id: CharacterKey, name: string, data: any, talent: string) {
+  //character profile
+  if (talent === 'p') return profileEmbed(id, name, data)
+  //normal/charged/plunging attacks
+  else if (talent === 'n') return normalsEmbed(id, name, data)
+  //elemental skill
+  else if (talent === 'e') return skillEmbed(id, name, data)
+  //elemental burst
+  else if (talent === 'q') return burstEmbed(id, name, data)
+  //passives
+  else if (talent.match(/a\d?/)) return passivesEmbed(id, name, data, talent)
+  //constellations
+  else if (talent.match(/c[123456]?/))
+    return constellationsEmbed(id, name, data, talent)
+  else throw 'Invalid talent name.'
+}
+
+function baseEmbed(id: CharacterKey, name: string) {
+  const element = getCharEle(id)
+  return new EmbedBuilder()
+    .setFooter({
+      text: 'Character Archive',
+    })
+    .setAuthor({
+      name: name,
+      iconURL: colors.element[element].img,
+    })
+    .setColor(colors.element[element].color)
+}
+
+function profileEmbed(id: CharacterKey, name: string, data: any) {
+  const text =
+    data.description ??
+    'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.'
+  const embed = baseEmbed(id, name)
   if (data.title) embed.setTitle(data.title)
   embed.setDescription(clean(text))
   return embed
 }
 
-function normalsEmbed(embed: EmbedBuilder, id: CharacterKey, data: any) {
-  embed
-  .setTitle(data.auto.name)
-  .setDescription(
-    clean(
-      Object.values(data.auto.fields.normal).join('\n') +
-        '\n\n' +
-        Object.values(data.auto.fields.charged).join('\n') +
-        '\n\n' +
-        Object.values(data.auto.fields.plunging).join('\n') +
-        '\n\n'
+function normalsEmbed(id: CharacterKey, name: string, data: any) {
+  return baseEmbed(id, name)
+    .setTitle(data.auto.name)
+    .setDescription(
+      clean(
+        Object.values(data.auto.fields.normal).join('\n') +
+          '\n\n' +
+          Object.values(data.auto.fields.charged).join('\n') +
+          '\n\n' +
+          Object.values(data.auto.fields.plunging).join('\n') +
+          '\n\n'
+      )
     )
-  )
-  return embed
 }
 
-function skillEmbed(embed: EmbedBuilder, id: CharacterKey, data: any) {
-  embed
-  .setTitle(data.skill.name)
-  .setDescription(
-    clean(Object.values(data.skill.description).flat().join('\n'))
-  )
-  return embed
+function skillEmbed(id: CharacterKey, name: string, data: any) {
+  return baseEmbed(id, name)
+    .setTitle(data.skill.name)
+    .setDescription(
+      clean(Object.values(data.skill.description).flat().join('\n'))
+    )
 }
 
-function burstEmbed(embed: EmbedBuilder, id: CharacterKey, data: any) {
-  embed
-  .setTitle(data.burst.name)
-  .setDescription(
-    clean(Object.values(data.burst.description).flat().join('\n'))
-  )
-  return embed
+function burstEmbed(id: CharacterKey, name: string, data: any) {
+  return baseEmbed(id, name)
+    .setTitle(data.burst.name)
+    .setDescription(
+      clean(Object.values(data.burst.description).flat().join('\n'))
+    )
 }
 
-function passivesEmbed(embed: EmbedBuilder, id: CharacterKey, data: any, talent: string) {
+function passivesEmbed(
+  id: CharacterKey,
+  name: string,
+  data: any,
+  talent: string
+) {
   let text = ''
   //list all passives
   let list = Object.keys(data).filter((e) => e.startsWith('passive'))
@@ -72,11 +106,15 @@ function passivesEmbed(embed: EmbedBuilder, id: CharacterKey, data: any, talent:
     else text += `**${e.name}** \n`
     text += Object.values(e.description).flat().join('\n') + '\n\n'
   }
-  embed.setDescription(clean(text))
-  return embed
+  return baseEmbed(id, name).setDescription(clean(text))
 }
 
-function constellationsEmbed(embed: EmbedBuilder, id: CharacterKey, data: any, talent: string) {
+function constellationsEmbed(
+  id: CharacterKey,
+  name: string,
+  data: any,
+  talent: string
+) {
   let text = ''
   let arr = ['1', '2', '3', '4', '5', '6']
   if (talent.length > 1) arr = [talent[1]]
@@ -88,6 +126,7 @@ function constellationsEmbed(embed: EmbedBuilder, id: CharacterKey, data: any, t
       '\n\n'
   }
   //make embed
+  const embed = baseEmbed(id, name)
   if (data.constellationName) embed.setTitle(data.constellationName)
   embed.setDescription(clean(text))
   return embed
@@ -100,46 +139,8 @@ export function chararchive(
   data: any,
   args: string
 ) {
-  //get element
-  const element = getCharEle(id)
-  //setup embed
-  let embed = new EmbedBuilder()
-    .setFooter({
-      text: 'Character Archive',
-    })
-    .setAuthor({
-      name: name,
-      iconURL: colors.element[element].img,
-    })
-    .setColor(colors.element[element].color)
-  //set contents
   const talent = args
-
-  //character profile
-  if (talent === 'p') {
-    embed = profileEmbed(embed, id, data)
-  }
-  //normal/charged/plunging attacks
-  else if (talent === 'n') {
-    embed = normalsEmbed(embed, id, data)
-  }
-  //elemental skill
-  else if (talent === 'e') {
-    embed = skillEmbed(embed, id, data)
-  }
-  //elemental burst
-  else if (talent === 'q') {
-    embed = burstEmbed(embed, id, data)
-  }
-  //passives
-  else if (talent.match(/a\d?/)) {
-    embed = passivesEmbed(embed, id, data, talent)
-  }
-  //constellations
-  else if (talent.match(/c[123456]?/)) {
-    embed = constellationsEmbed(embed, id, data, talent)
-  }
-  else throw 'Invalid talent name.'
+  const embed = getEmbed(id, name, data, talent)
 
   //create dropdown menu
   const options = []

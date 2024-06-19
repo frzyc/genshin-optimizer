@@ -1,3 +1,4 @@
+import { range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Interaction, MessageActionRowComponentBuilder } from 'discord.js'
@@ -8,9 +9,34 @@ import {
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
 import { clean, colors } from '../archive'
-import { range } from '@genshin-optimizer/common/util'
 
-const refinedisplay : Record<string, string> = {0: '1', 1: '2', 2: '3', 3: '4', 4: '5'}
+const refinedisplay: Record<string, string> = {
+  0: '1',
+  1: '2',
+  2: '3',
+  3: '4',
+  4: '5',
+}
+
+function getDropdown(id: string, refine: string) {
+  const options: StringSelectMenuOptionBuilder[] = []
+  range(1, 5).forEach((i) => {
+    const r = String(i - 1)
+    const option = new StringSelectMenuOptionBuilder()
+      .setLabel(`Refinement ${i}`)
+      .setValue(r)
+    if (refine === r) option.setDefault(true)
+    options.push(option)
+  })
+  return [
+    new ActionRowBuilder().addComponents(
+      new StringSelectMenuBuilder()
+        .setCustomId(`archive weapon ${id} ${refine}`)
+        .setPlaceholder(`Refinement ${refine}`)
+        .addOptions(options)
+    ) as ActionRowBuilder<MessageActionRowComponentBuilder>,
+  ]
+}
 
 export function weaponarchive(
   interaction: Interaction,
@@ -33,30 +59,13 @@ export function weaponarchive(
     //user input override
     if (args in refinedisplay) refine = args
     else throw 'invalid refine'
+    //name and passive
     name += ` (R${refinedisplay[refine]})`
-    //create dropdown menu
-    const options: StringSelectMenuOptionBuilder[] = []
-    range(1, 5).forEach(i => {
-      const r = String(i-1)
-      const option = new StringSelectMenuOptionBuilder()
-        .setLabel(`Refinement ${i}`)
-        .setValue(r)
-      if (refine === r) option.setDefault(true)
-      options.push(option)
-    })
-    msg['components'] = [
-      new ActionRowBuilder().addComponents(
-        new StringSelectMenuBuilder()
-          .setCustomId(`archive weapon ${id} ${refine}`)
-          .setPlaceholder(`Refinement ${refine}`)
-          .addOptions(options)
-      ) as ActionRowBuilder<MessageActionRowComponentBuilder>,
-    ]
     text +=
       `\n\n**${data.passiveName}:** ` +
-      Object.values(
-        data.passiveDescription[refine]
-      ).join('\n')
+      Object.values(data.passiveDescription[refine]).join('\n')
+    //create dropdown menu
+    msg['components'] = getDropdown(id, refine)
   }
   //set content
   msg['embeds'] = [
