@@ -148,7 +148,7 @@ export function chararchive(
     const menu = new StringSelectMenuOptionBuilder()
       .setLabel(t.name)
       .setValue(t.value)
-    if (t.value === talent[0]) menu.setDefault(true)
+    if (t.value === talent) menu.setDefault(true)
     options.push(menu)
   }
   const components = new ActionRowBuilder().addComponents(

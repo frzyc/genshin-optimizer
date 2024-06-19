@@ -2,7 +2,8 @@ import type { Client, Interaction } from 'discord.js'
 import { Commands } from '../main'
 
 export async function ready(client: Client) {
-  console.log(`ready`)
+  const name = client.user?.username
+  console.log(`${name} ready`)
 }
 
 export async function interactionCreate(interaction: Interaction) {
