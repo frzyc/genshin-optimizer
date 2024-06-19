@@ -74,6 +74,19 @@ describe('example', () => {
   const member0 = convert(selfTag, { src: '0', et: 'self' })
   const member1 = convert(selfTag, { src: '1', et: 'self' })
 
+  test.skip('debug formula', () => {
+    // Pick formula
+    const normal0 = calc
+      .listFormulas(member1.listing.formulas)
+      .find((x) => x.tag.name === 'normal_0')!
+
+    // Get a debug calculator
+    const debugCalc = calc.toDebug()
+
+    // Print calculation steps
+    console.log(JSON.stringify(debugCalc.compute(normal0)))
+  })
+
   test('enumerate all tags', () => {
     expect(Object.keys(member0).sort()).toEqual(Object.keys(selfTag).sort())
     for (const [qt, values] of Object.entries(member0)) {
@@ -248,19 +261,6 @@ describe('example', () => {
 
     // Step 5: Calculate the value
     compiled([{ atk: 10 }, { atk_: 0.5 }])
-  })
-
-  test.skip('debug formula', () => {
-    // Pick formula
-    const normal0 = calc
-      .listFormulas(member1.listing.formulas)
-      .find((x) => x.tag.name === 'normal_0')!
-
-    // Get a debug calculator
-    const debugCalc = calc.toDebug()
-
-    // Print calculation steps
-    console.log(JSON.stringify(debugCalc.compute(normal0)))
   })
 })
 describe('weapon-only example', () => {
