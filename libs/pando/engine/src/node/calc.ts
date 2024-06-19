@@ -78,9 +78,9 @@ export class Calculator<M = any> {
             ? this._preread(cache.with(n.tag)).pre.map((x) =>
                 // Must be a new object in case `reread` entry is shared with a regular `read`.
                 // They would have the same `val` and `meta` but different `debugTag`.
-                ({ ...x, entryTag: [tags[i], n.tag, ...(x.rereadSeq ?? [])] })
+                ({ ...x, rereadSeq: [tags[i], n.tag, ...(x.rereadSeq ?? [])] })
               )
-            : [{ ...this._compute(n, cache), entryTag: [tags[i]] }]
+            : [{ ...this._compute(n, cache), rereadSeq: [tags[i]] }]
         ),
         computed: {},
       })
