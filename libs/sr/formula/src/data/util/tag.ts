@@ -182,9 +182,9 @@ export const userBuff = convert(selfTag, { et: 'self', sheet: 'custom' })
 
 // Custom tags
 export const allStatics = (sheet: Sheet) =>
-  allCustoms(sheet, 'misc', undefined, (x) => x)
+  reader.withTag({ et: 'self', sheet, qt: 'misc' }).withAll('q', [])
 export const allBoolConditionals = (sheet: Sheet) =>
-  allCustoms(sheet, 'cond', { type: 'bool' }, ({ sum: r }) => ({
+  allConditionals(sheet, 'sum', { type: 'bool' }, (r) => ({
     ifOn: (node: NumNode | number, off?: NumNode | number) =>
       cmpNE(r, 0, node, off),
     ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
@@ -193,7 +193,7 @@ export const allListConditionals = <T extends string>(
   sheet: Sheet,
   list: T[]
 ) =>
-  allCustoms(sheet, 'cond', { type: 'list', list }, ({ max: r }) => ({
+  allConditionals(sheet, 'max', { type: 'list', list }, (r) => ({
     map: (table: Record<T, number>, def = 0) =>
       subscript(r, [def, ...list.map((v) => table[v] ?? def)]),
     value: r,
@@ -204,30 +204,39 @@ export const allNumConditionals = (
   int_only: boolean,
   min?: number,
   max?: number
-) =>
-  allCustoms(sheet, 'cond', { type: 'num', int_only, min, max }, (r) => r[ex])
+) => allConditionals(sheet, ex, { type: 'num', int_only, min, max }, (r) => r)
 
 export const conditionalEntries = (sheet: Sheet) => {
-  const base = allCustoms(sheet, 'cond', undefined, (r) => r)
+  const base = self.withTag({ sheet, qt: 'cond' }).withAll('q', [])
   return (name: string, val: string | number) => base[name].add(val)
 }
 
-function allCustoms<T>(
+function allConditionals<T>(
   sheet: Sheet,
-  qt: string,
-  meta: object | undefined,
+  accu: Read['accu'],
+  meta: object,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
+  // Keep the base tag "full" here so that `cond` returns consistent tags
+  const baseTag: Omit<Required<Tag>, 'preset' | 'src' | 'dst' | 'q'> = {
+    et: 'self',
+    sheet,
+    qt: 'cond',
+    // Remove irrelevant tags
+    name: null,
+    elementalType: null,
+    damageType1: null,
+    damageType2: null,
+  }
+  const base = reader[accu].withTag(baseTag)
   if (meta && metaList.conditionals) {
     const { conditionals } = metaList
-    return reader
-      .withTag({ et: 'self', sheet, qt })
-      .withAll('q', [], (r, q) => {
-        conditionals.push({ tag: r.tag, meta })
-        return transform(r, q)
-      })
+    return base.withAll('q', [], (r, q) => {
+      conditionals.push({ tag: r.tag, meta })
+      return transform(r, q)
+    })
   }
-  return reader.withTag({ et: 'self', sheet, qt }).withAll('q', [], transform)
+  return base.withAll('q', [], transform)
 }
 
 export const queryTypes = new Set([

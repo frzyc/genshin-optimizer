@@ -20,6 +20,7 @@ import {
 } from './data/util'
 import rawData from './example.test.json'
 import { genshinCalculatorWithEntries } from './index'
+import { conditionals, type IConditionalData } from './meta'
 import {
   artifactsData,
   charData,
@@ -205,19 +206,40 @@ describe('example', () => {
     const conds = result.meta.conds
 
     expect(conds.length).toEqual(2)
-    expect(conds[0]).toEqual({
-      et: 'self',
-      src: '0',
-      trans: 'burgeon',
-      dst: '0',
-      sheet: 'Nahida',
-      qt: 'cond',
-      q: 'c2Bloom',
-    })
+    // current value
+    expect(calc.compute(member0.withTag(conds[0])).val).toEqual(1) // c2Bloom
     // It is duplicated because this conditional affects two distinct
     // stats, `critRate_` and `critDMG_`. Deduplicating this requires
     // tag equality, which may not be worth it.
     expect(conds[1]).toEqual(conds[0])
+  })
+  test('list conditionals affecting a member', () => {
+    // all conditionals affecting all formulas
+    const formulas = calc.listFormulas(member0.listing.formulas)
+    const conds = formulas.flatMap((f) => calc.compute(f).meta.conds)
+
+    // deduplicate list
+    const uniqueConds: Record<string, Tag> = {}
+    for (const cond of conds) {
+      const { src, dst, sheet, q } = cond
+      uniqueConds[`${dst}<-${src}:${sheet}:${q}`] = cond
+    }
+
+    const keys = Object.keys(uniqueConds)
+    expect(keys.length).toEqual(7)
+    // This is for testing purpose only. Normally one simply uses `Object.values(uniqueConds)`
+    expect(keys).toContain('0<-0:TulaytullahsRemembrance:timePassive')
+    expect(keys).toContain('0<-0:TulaytullahsRemembrance:hitPassive')
+    expect(keys).toContain('0<-0:Nahida:c2QSA')
+    expect(keys).toContain('0<-0:Nahida:partyInBurst')
+    expect(keys).toContain('0<-1:KeyOfKhajNisut:afterSkillStacks')
+    expect(keys).toContain('0<-1:Nilou:a1AfterHit')
+    expect(keys).toContain('null<-0:static:cata')
+
+    // Grab metadata from an entry
+    const tag = uniqueConds['0<-1:Nilou:a1AfterHit']
+    const meta: IConditionalData = (conditionals as any)[tag.sheet!][tag.q!]
+    expect(meta).not.toBeUndefined()
   })
   test('create optimization calculation', () => {
     // Step 1: Pick formula(s); anything that `calc.compute` can handle will work
@@ -265,10 +287,7 @@ describe('example', () => {
   })
 })
 describe('weapon-only example', () => {
-  const data: TagMapNodeEntries = [
-      ...weaponData(rawData[1].weapon as IWeapon),
-      ...conditionalData(rawData[1].conditionals),
-    ],
+  const data: TagMapNodeEntries = [...weaponData(rawData[1].weapon as IWeapon)],
     calc = genshinCalculatorWithEntries(data)
 
   const self = convert(selfTag, { et: 'self' })

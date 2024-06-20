@@ -26,7 +26,7 @@ export default async function runExecutor(
     const { sheet, q } = tag // Conditionals guarantee `sheet-q` pair uniqueness
     if (!conditionals[sheet!]) conditionals[sheet!] = {}
     if (!conditionals[sheet!][q!])
-      conditionals[sheet!][q!] = { sheet, name: q, tag, ...meta }
+      conditionals[sheet!][q!] = { sheet, name: q, ...meta }
     else console.log(`Duplicated conditionals for ${sheet}:${q}`)
   }
 
@@ -73,7 +73,6 @@ export type IBoolConditionalData = {
   type: 'bool' // type discriminator
   sheet: string // entity
   name: string // conditional name
-  tag: Tag // tag used to access value
 }
 /// Conditional whose values are those in the list. When inputting the
 /// entry, use the (0-based) position in the list
@@ -81,7 +80,6 @@ export type IListConditionalData = {
   type: 'list' // type discriminator
   sheet: string // entity
   name: string // conditional name
-  tag: Tag // tag used to access value
 
   list: [string] // feasible values
 }
@@ -90,7 +88,6 @@ export type INumConditionalData = {
   type: 'num' // type discriminator
   sheet: string // entity
   name: string // conditional name
-  tag: Tag // tag used to access value
 
   int_only: boolean // whether the value must be an integer
   min?: number // smallest feasible value, if applicable
