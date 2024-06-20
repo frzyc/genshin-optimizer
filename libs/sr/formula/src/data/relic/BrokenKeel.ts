@@ -33,7 +33,7 @@ const relicCount = self.common.count.sheet(key)
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)
 const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, 'sum', true, 0, 2)
+const { numConditional } = allNumConditionals(key, true, 0, 2)
 
 const sheet = register(
   key,

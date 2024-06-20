@@ -206,8 +206,8 @@ describe('example', () => {
     const conds = result.meta.conds
 
     expect(conds.length).toEqual(2)
-    // current value
-    expect(calc.compute(member0.withTag(conds[0])).val).toEqual(1) // c2Bloom
+    // Read current value
+    expect(calc.compute(member0.withTag(conds[0]).sum).val).toEqual(1) // c2Bloom
     // It is duplicated because this conditional affects two distinct
     // stats, `critRate_` and `critDMG_`. Deduplicating this requires
     // tag equality, which may not be worth it.
@@ -239,7 +239,10 @@ describe('example', () => {
     // Grab metadata from an entry
     const tag = uniqueConds['0<-1:Nilou:a1AfterHit']
     const meta: IConditionalData = (conditionals as any)[tag.sheet!][tag.q!]
-    expect(meta).not.toBeUndefined()
+    expect(meta).toEqual({ sheet: 'Nilou', name: 'a1AfterHit', type: 'bool' })
+
+    // Read current value
+    expect(calc.compute(member0.withTag(tag).sum).val).toEqual(0)
   })
   test('create optimization calculation', () => {
     // Step 1: Pick formula(s); anything that `calc.compute` can handle will work

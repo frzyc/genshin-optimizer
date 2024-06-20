@@ -184,7 +184,7 @@ export const userBuff = convert(selfTag, { et: 'self', sheet: 'custom' })
 export const allStatics = (sheet: Sheet) =>
   reader.withTag({ et: 'self', sheet, qt: 'misc' }).withAll('q', [])
 export const allBoolConditionals = (sheet: Sheet) =>
-  allConditionals(sheet, 'sum', { type: 'bool' }, (r) => ({
+  allConditionals(sheet, { type: 'bool' }, (r) => ({
     ifOn: (node: NumNode | number, off?: NumNode | number) =>
       cmpNE(r, 0, node, off),
     ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
@@ -193,18 +193,17 @@ export const allListConditionals = <T extends string>(
   sheet: Sheet,
   list: T[]
 ) =>
-  allConditionals(sheet, 'max', { type: 'list', list }, (r) => ({
+  allConditionals(sheet, { type: 'list', list }, (r) => ({
     map: (table: Record<T, number>, def = 0) =>
       subscript(r, [def, ...list.map((v) => table[v] ?? def)]),
     value: r,
   }))
 export const allNumConditionals = (
   sheet: Sheet,
-  ex: Read['accu'],
   int_only: boolean,
   min?: number,
   max?: number
-) => allConditionals(sheet, ex, { type: 'num', int_only, min, max }, (r) => r)
+) => allConditionals(sheet, { type: 'num', int_only, min, max }, (r) => r)
 
 export const conditionalEntries = (sheet: Sheet) => {
   const base = self.withTag({ sheet, qt: 'cond' }).withAll('q', [])
@@ -213,7 +212,6 @@ export const conditionalEntries = (sheet: Sheet) => {
 
 function allConditionals<T>(
   sheet: Sheet,
-  accu: Read['accu'],
   meta: object,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
@@ -228,7 +226,7 @@ function allConditionals<T>(
     damageType1: null,
     damageType2: null,
   }
-  const base = reader[accu].withTag(baseTag)
+  const base = reader.sum.withTag(baseTag)
   if (meta && metaList.conditionals) {
     const { conditionals } = metaList
     return base.withAll('q', [], (r, q) => {

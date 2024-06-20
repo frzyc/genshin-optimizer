@@ -38,7 +38,7 @@ const {
 // TODO: Conditionals
 const { _someBoolConditional } = allBoolConditionals(info.key)
 const { _someListConditional } = allListConditionals(info.key, [])
-const { _someNumConditional } = allNumConditionals(info.key, 'unique', false)
+const { _someNumConditional } = allNumConditionals(info.key, false)
 
 const _count = team.common.count
 
