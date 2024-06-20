@@ -158,7 +158,7 @@ export const enemyTag = {
     preRes: agg,
     postRes: fixed,
   },
-  cond: { amp: fixed, cata: fixed },
+  reaction: { amp: fixed, cata: fixed },
 } as const
 
 export function convert<V extends Record<string, Record<string, Desc>>>(

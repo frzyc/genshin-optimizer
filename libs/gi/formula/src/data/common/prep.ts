@@ -62,10 +62,10 @@ const data: TagMapNodeEntries = [
     lookup(
       self.prep.ele,
       {
-        cryo: cmpEq(enemy.cond.amp, 'melt', 'melt', ''),
-        hydro: cmpEq(enemy.cond.amp, 'vaporize', 'vaporize', ''),
+        cryo: cmpEq(enemy.reaction.amp, 'melt', 'melt', ''),
+        hydro: cmpEq(enemy.reaction.amp, 'vaporize', 'vaporize', ''),
         pyro: lookup(
-          enemy.cond.amp,
+          enemy.reaction.amp,
           { melt: 'melt', vaporize: 'vaporize' },
           ''
         ),
@@ -77,8 +77,8 @@ const data: TagMapNodeEntries = [
     lookup(
       self.prep.ele,
       {
-        dendro: cmpEq(enemy.cond.cata, 'spread', 'spread', ''),
-        electro: cmpEq(enemy.cond.cata, 'aggravate', 'aggravate', ''),
+        dendro: cmpEq(enemy.reaction.cata, 'spread', 'spread', ''),
+        electro: cmpEq(enemy.reaction.cata, 'aggravate', 'aggravate', ''),
       },
       ''
     )

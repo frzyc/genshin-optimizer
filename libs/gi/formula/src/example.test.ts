@@ -66,8 +66,8 @@ describe('example', () => {
       ...conditionalData('1', rawData[1].conditionals),
 
       // Enemy
-      enemyDebuff.cond.cata.add('spread'),
-      enemyDebuff.cond.amp.add(''),
+      enemyDebuff.reaction.cata.add('spread'),
+      enemyDebuff.reaction.amp.add(''),
       enemyDebuff.common.lvl.add(12),
       enemyDebuff.common.preRes.add(0.1),
       self.common.critMode.add('avg'),
@@ -228,7 +228,7 @@ describe('example', () => {
     }
 
     const keys = Object.keys(uniqueConds)
-    expect(keys.length).toEqual(7)
+    expect(keys.length).toEqual(6)
     // This is for testing purpose only. Normally one simply uses `Object.values(uniqueConds)`
     expect(keys).toContain('0<-0:TulaytullahsRemembrance:timePassive')
     expect(keys).toContain('0<-0:TulaytullahsRemembrance:hitPassive')
@@ -236,7 +236,6 @@ describe('example', () => {
     expect(keys).toContain('0<-0:Nahida:partyInBurst')
     expect(keys).toContain('0<-1:KeyOfKhajNisut:afterSkillStacks')
     expect(keys).toContain('0<-1:Nilou:a1AfterHit')
-    expect(keys).toContain('null<-0:static:cata')
 
     // Grab metadata from an entry
     const tag = uniqueConds['0<-1:Nilou:a1AfterHit']
