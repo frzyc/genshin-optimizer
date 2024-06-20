@@ -23,12 +23,16 @@ export interface ArchiveArtifactOption {
 export interface ArchiveCharacterOption {
   rarity: CharacterRarityKey[]
   weaponType: WeaponTypeKey[]
+  sortOrder: 'asc' | 'desc'
+  sortOrderBy: 'name' | 'rarity' | 'element' | 'type'
 }
 
 export interface ArchiveWeaponOption {
   rarity: RarityKey[]
   weaponType: WeaponTypeKey[]
   subStat: WeaponSubstatKey[]
+  sortOrder: 'asc' | 'desc'
+  sortOrderBy: 'name' | 'type' | 'rarity' | 'main' | 'sub' | 'subType'
 }
 
 export interface IDisplayArchiveEntry {
@@ -44,12 +48,16 @@ const initialArtifactOption = (): ArchiveArtifactOption => ({
 const initialCharacterOption = (): ArchiveCharacterOption => ({
   rarity: [...allCharacterRarityKeys],
   weaponType: [...allWeaponTypeKeys],
+  sortOrder: 'desc',
+  sortOrderBy: 'name',
 })
 
 const initialWeaponOption = (): ArchiveWeaponOption => ({
   rarity: [...allRarityKeys],
   weaponType: [...allWeaponTypeKeys],
   subStat: [],
+  sortOrder: 'desc',
+  sortOrderBy: 'name',
 })
 
 const initialState = (): IDisplayArchiveEntry => ({
@@ -82,27 +90,42 @@ export class DisplayArchiveEntry extends DataEntry<
 
       if (typeof character !== 'object') character = initialCharacterOption()
       else {
-        let { rarity, weaponType } = character
+        let { rarity, weaponType, sortOrder, sortOrderBy } = character
         rarity = validateArr(rarity, allCharacterRarityKeys)
         weaponType = validateArr(weaponType, allWeaponTypeKeys)
-
+        if (!['asc', 'desc'].includes(sortOrder)) {
+          sortOrder = 'desc'
+        }
+        if (!['name', 'rarity', 'element', 'type'].includes(sortOrderBy)) {
+          sortOrderBy = 'name'
+        }
         character = {
           rarity,
           weaponType,
+          sortOrder,
+          sortOrderBy,
         }
       }
 
       if (typeof weapon !== 'object') weapon = initialWeaponOption()
       else {
-        let { rarity, subStat, weaponType } = weapon
+        let { rarity, subStat, weaponType, sortOrder, sortOrderBy } = weapon
         rarity = validateArr(rarity, allRarityKeys)
         subStat = validateArr(subStat, allWeaponSubstatKeys, [])
         weaponType = validateArr(weaponType, allWeaponTypeKeys)
+        if (!['asc', 'desc'].includes(sortOrder)) {
+          sortOrder = 'desc'
+        }
+        if (!['name', 'type', 'rarity', 'main', 'sub'].includes(sortOrderBy)) {
+          sortOrderBy = 'name'
+        }
 
         weapon = {
           rarity,
           subStat,
           weaponType,
+          sortOrder,
+          sortOrderBy,
         }
       }
     }
