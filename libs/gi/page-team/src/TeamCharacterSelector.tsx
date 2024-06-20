@@ -26,7 +26,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 export default function TeamCharacterSelector({
@@ -63,16 +63,14 @@ export default function TeamCharacterSelector({
   const theme = useTheme()
   const isXs = useMediaQuery(theme.breakpoints.down('md'))
   const [editMode, setEditMode] = useState(false)
-  const [teamName, setTeamName] = useState(team.name)
-  const [teamDesc, setTeamDesc] = useState(team.description)
+  const teamName = useMemo(() => team.name, [team.name])
+  const teamDesc = useMemo(() => team.description, [team.description])
 
   const handleName = (teamName: string): void => {
-    setTeamName(teamName)
     database.teams.set(teamId, { name: teamName })
   }
 
   const handleDesc = (teamDesc: string): void => {
-    setTeamDesc(teamDesc)
     database.teams.set(teamId, { description: teamDesc })
   }
 
