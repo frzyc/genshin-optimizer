@@ -105,7 +105,7 @@ const {
 } = self
 const { a1ActiveInBurst, c2Bloom, c2QSA, partyInBurst, isActive } =
   allBoolConditionals(info.key)
-const { c4Count } = allNumConditionals(info.key, 'sum', true, 0, 4)
+const { c4Count } = allNumConditionals(info.key, true, 0, 4)
 const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = allStatics(info.key)
 
 const count = team.common.count

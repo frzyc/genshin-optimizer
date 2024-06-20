@@ -16,7 +16,7 @@ const dm = {
 
 const { superimpose } = self.lightCone
 
-const { stackCount } = allNumConditionals(key, 'sum', true, 0, dm.numStacks)
+const { stackCount } = allNumConditionals(key, true, 0, dm.numStacks)
 
 const sheet = register(
   key,

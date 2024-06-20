@@ -236,7 +236,7 @@ describe('example', () => {
     expect(keys).toContain('0<-0:Nahida:partyInBurst')
     expect(keys).toContain('0<-1:KeyOfKhajNisut:afterSkillStacks')
     expect(keys).toContain('0<-1:Nilou:a1AfterHit')
-    expect(keys).toContain('undefined<-0:static:cata')
+    expect(keys).toContain('null<-0:static:cata')
 
     // Grab metadata from an entry
     const tag = uniqueConds['0<-1:Nilou:a1AfterHit']
