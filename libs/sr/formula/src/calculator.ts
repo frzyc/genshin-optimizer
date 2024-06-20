@@ -28,13 +28,15 @@ export class Calculator extends Base<Output> {
     function constOverride(): Output {
       return { tag, op: 'const', ops: [], conds: [] }
     }
-    const preConds = [
-      // TODO: include [tag] if it is marked as conditional. It is `tag.qt === 'cond'` in `formula`
-      ...[...x, ..._br].map((x) => x?.meta.conds as Tag[]),
-    ].filter((x) => x && x.length)
+    const preConds = [...x, ..._br]
+      .map((x) => x?.meta.conds as Tag[])
+      .filter((x) => x && x.length)
+    if (tag?.qt === 'cond') preConds.push([tag])
     const conds = preConds.length <= 1 ? preConds[0] ?? [] : preConds.flat()
 
     if (op === 'read' && ex !== undefined) {
+      if (ex === 'min' || ex === 'max')
+        return { ...x.find((x) => x!.val === val)!.meta, conds }
       op = ex
       ex = undefined
     }

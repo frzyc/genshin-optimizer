@@ -93,12 +93,17 @@ export function artifactsData(
 }
 
 export function conditionalData(
-  data: Partial<Record<Sheet, Record<string, string | number>>>
+  dst: Member,
+  data: Partial<
+    Record<Member, Partial<Record<Sheet, Record<string, string | number>>>>
+  >
 ) {
-  return Object.entries(data).flatMap(([key, entries]) => {
-    const conds = conditionalEntries(key as Sheet)
-    return Object.entries(entries).map(([k, v]) => conds(k, v))
-  })
+  return Object.entries(data).flatMap(([src, entries]) =>
+    Object.entries(entries).flatMap(([key, entries]) => {
+      const conds = conditionalEntries(key as Sheet, src as Member, dst)
+      return Object.entries(entries).map(([k, v]) => conds(k, v))
+    })
+  )
 }
 
 export function teamData(members: readonly Member[]): TagMapNodeEntries {

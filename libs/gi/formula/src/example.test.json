@@ -20,8 +20,15 @@
       "lock": false
     },
     "conditionals": {
-      "Nahida": {
-        "c2Bloom": 1
+      "0": {
+        "Nahida": {
+          "c2Bloom": 1
+        }
+      },
+      "1": {
+        "KeyOfKhajNisut": {
+          "afterSkillStacks": 3
+        }
       }
     }
   },
@@ -45,10 +52,6 @@
       "location": "Nilou",
       "lock": false
     },
-    "conditionals": {
-      "KeyOfKhajNisut": {
-        "afterSkillStacks": 3
-      }
-    }
+    "conditionals": {}
   }
 ]

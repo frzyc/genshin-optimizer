@@ -6,7 +6,8 @@ import {
   constant,
   subscript,
 } from '@genshin-optimizer/pando/engine'
-import { bonusAbilities, statBoosts, type Sheet, type Stat } from './listing'
+import type { Member, Sheet, Stat } from './listing'
+import { bonusAbilities, statBoosts } from './listing'
 import type { Read, Tag } from './read'
 import { reader, tag } from './read'
 
@@ -205,8 +206,8 @@ export const allNumConditionals = (
   max?: number
 ) => allConditionals(sheet, { type: 'num', int_only, min, max }, (r) => r)
 
-export const conditionalEntries = (sheet: Sheet) => {
-  const base = self.withTag({ sheet, qt: 'cond' }).withAll('q', [])
+export const conditionalEntries = (sheet: Sheet, src: Member, dst: Member) => {
+  const base = self.withTag({ src, dst, sheet, qt: 'cond' }).withAll('q', [])
   return (name: string, val: string | number) => base[name].add(val)
 }
 
@@ -230,7 +231,10 @@ function allConditionals<T>(
   if (meta && metaList.conditionals) {
     const { conditionals } = metaList
     return base.withAll('q', [], (r, q) => {
-      conditionals.push({ tag: r.tag, meta })
+      const tag = Object.fromEntries(
+        Object.entries(r.tag).filter(([_, v]) => v)
+      )
+      conditionals.push({ meta, tag })
       return transform(r, q)
     })
   }

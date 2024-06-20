@@ -29,10 +29,10 @@ export class Calculator extends Base<CalcMeta> {
     _br: CalcResult<number | string, CalcMeta>[],
     tag: Tag | undefined
   ): CalcMeta {
-    const preConds = [
-      tag?.qt === 'cond' ? [tag] : [],
-      ...[...x, ..._br].map((x) => x?.meta.conds as Tag[]),
-    ].filter((x) => x && x.length)
+    const preConds = [...x, ..._br]
+      .map((x) => x?.meta.conds as Tag[])
+      .filter((x) => x && x.length)
+    if (tag?.qt === 'cond') preConds.push([tag])
     const conds = preConds.length <= 1 ? preConds[0] ?? [] : preConds.flat()
 
     function constOverride(): CalcMeta {
@@ -40,6 +40,8 @@ export class Calculator extends Base<CalcMeta> {
     }
 
     if (op === 'read' && ex !== undefined) {
+      if (ex === 'min' || ex === 'max')
+        return { ...x.find((x) => x!.val === val)!.meta, conds }
       op = ex
       ex = undefined
     }
