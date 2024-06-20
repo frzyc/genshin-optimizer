@@ -1,0 +1,73 @@
+{
+  "name": "somnia",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/somnia/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/somnia",
+        "format": ["cjs"],
+        "bundle": true,
+        "main": "apps/somnia/src/main.ts",
+        "tsConfig": "apps/somnia/tsconfig.app.json",
+        "assets": [
+          "apps/somnia/src/assets",
+          "apps/somnia/src/data",
+          "apps/somnia/src/commands",
+          "apps/somnia/src/lib",
+          {
+            "input": "./apps/somnia/src",
+            "output": "apps/somnia/src",
+            "glob": "config.json"
+          }
+        ],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "somnia:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "somnia:build:development"
+        },
+        "production": {
+          "buildTarget": "somnia:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/somnia/jest.config.ts"
+      }
+    }
+  }
+}
