@@ -205,7 +205,10 @@ export function WeaponCard({
                 location={location}
                 setLocation={setLocation}
                 filter={filter}
-                autoCompleteProps={{ getOptionDisabled: (t) => !t.key }}
+                autoCompleteProps={{
+                  getOptionDisabled: (t) => !t.key,
+                  disableClearable: true,
+                }}
               />
             ) : (
               <LocationName location={location} />
