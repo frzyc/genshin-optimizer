@@ -26,7 +26,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 export default function TeamCharacterSelector({
@@ -63,8 +63,6 @@ export default function TeamCharacterSelector({
   const theme = useTheme()
   const isXs = useMediaQuery(theme.breakpoints.down('md'))
   const [editMode, setEditMode] = useState(false)
-  const teamName = useMemo(() => team.name, [team.name])
-  const teamDesc = useMemo(() => team.description, [team.description])
 
   const handleName = (teamName: string): void => {
     database.teams.set(teamId, { name: teamName })
@@ -158,7 +156,7 @@ export default function TeamCharacterSelector({
               }}
             >
               <TeamIcon />
-              {teamName}
+              {team.name}
             </Typography>
           </CardContent>
         </BootstrapTooltip>
@@ -180,13 +178,13 @@ export default function TeamCharacterSelector({
             <Box display="flex" flexDirection="column" gap={2} sx={{ mt: 2 }}>
               <TextFieldLazy
                 label={t`team.name`}
-                value={teamName}
+                value={team.name}
                 onChange={(teamName) => handleName(teamName)}
                 autoFocus
               />
               <TextFieldLazy
                 label={t`team.desc`}
-                value={teamDesc}
+                value={team.description}
                 onChange={(teamDesc) => handleDesc(teamDesc)}
                 multiline
                 minRows={4}
