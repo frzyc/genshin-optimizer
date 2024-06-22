@@ -63,16 +63,12 @@ export default function TeamCharacterSelector({
   const theme = useTheme()
   const isXs = useMediaQuery(theme.breakpoints.down('md'))
   const [editMode, setEditMode] = useState(false)
-  const [teamName, setTeamName] = useState(team.name)
-  const [teamDesc, setTeamDesc] = useState(team.description)
 
   const handleName = (teamName: string): void => {
-    setTeamName(teamName)
     database.teams.set(teamId, { name: teamName })
   }
 
   const handleDesc = (teamDesc: string): void => {
-    setTeamDesc(teamDesc)
     database.teams.set(teamId, { description: teamDesc })
   }
 
@@ -160,7 +156,7 @@ export default function TeamCharacterSelector({
               }}
             >
               <TeamIcon />
-              {teamName}
+              {team.name}
             </Typography>
           </CardContent>
         </BootstrapTooltip>
@@ -182,13 +178,13 @@ export default function TeamCharacterSelector({
             <Box display="flex" flexDirection="column" gap={2} sx={{ mt: 2 }}>
               <TextFieldLazy
                 label={t`team.name`}
-                value={teamName}
+                value={team.name}
                 onChange={(teamName) => handleName(teamName)}
                 autoFocus
               />
               <TextFieldLazy
                 label={t`team.desc`}
-                value={teamDesc}
+                value={team.description}
                 onChange={(teamDesc) => handleDesc(teamDesc)}
                 multiline
                 minRows={4}
