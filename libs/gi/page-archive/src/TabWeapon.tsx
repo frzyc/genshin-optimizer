@@ -1,7 +1,12 @@
 import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
-import { catTotal, handleMultiSelect } from '@genshin-optimizer/common/util'
+import type { SortConfigs } from '@genshin-optimizer/common/util'
+import {
+  catTotal,
+  handleMultiSelect,
+  sortFunction,
+} from '@genshin-optimizer/common/util'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponKey, WeaponSubstatKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -39,6 +44,7 @@ import {
   TableCell,
   TableHead,
   TableRow,
+  TableSortLabel,
   TextField,
   ToggleButton,
   ToggleButtonGroup,
@@ -53,6 +59,7 @@ import {
   useState,
 } from 'react'
 import { WeaponView } from './WeaponView'
+
 const rarities = [5, 4, 3, 2, 1] as const
 export default function TabWeapon() {
   const database = useDatabase()
@@ -88,10 +95,67 @@ export default function TabWeapon() {
       return true
     })
   }, [weapon, searchTermDeferred])
+  type SortKey = 'name' | 'type' | 'rarity' | 'main' | 'sub' | 'subType'
+
+  const handleSort = (property: SortKey) => {
+    const isAsc = weapon.sortOrderBy === property && weapon.sortOrder === 'asc'
+    weaponOptionDispatch({
+      sortOrder: isAsc ? 'desc' : 'asc',
+      sortOrderBy: property,
+    })
+  }
+
+  const weaponDataCache: Map<WeaponKey, { main: string; sub: string }> =
+    useMemo(() => {
+      const cache = new Map<WeaponKey, { main: string; sub: string }>()
+      allWeaponKeys.forEach((wKey) => {
+        const { rarity } = getWeaponStat(wKey)
+        const weapon: ICachedWeapon = {
+          id: 'invalid',
+          ascension: rarity > 2 ? 6 : 4,
+          key: wKey,
+          level: rarity > 2 ? 90 : 70,
+          refinement: 1,
+          location: '',
+          lock: false,
+        }
+        const weaponUIData = computeUIData([
+          getWeaponSheet(wKey).data,
+          dataObjForWeapon(weapon),
+        ])
+        const mainNode = weaponUIData.get(input.weapon.main)
+        const subNode = weaponUIData.get(input.weapon.sub)
+        cache.set(wKey, {
+          main: getCalcDisplay(mainNode).valueString,
+          sub: getCalcDisplay(subNode).valueString,
+        })
+      })
+      return cache
+    }, [])
+
+  const sortedWeaponKeys = useMemo(
+    () =>
+      sortFunction(
+        weapon.sortOrderBy === 'sub'
+          ? ['subType', weapon.sortOrderBy]
+          : [weapon.sortOrderBy],
+        weapon.sortOrder === 'asc',
+        {
+          name: (wKey: WeaponKey) => i18n.t(`weaponNames_gen:${wKey}`),
+          type: (wKey: WeaponKey) => getWeaponStat(wKey).weaponType,
+          rarity: (wKey: WeaponKey) => getWeaponStat(wKey).rarity,
+          main: (wKey: WeaponKey) => weaponDataCache.get(wKey)?.main ?? '',
+          sub: (wKey: WeaponKey) => weaponDataCache.get(wKey)?.sub ?? '',
+          subType: (wKey: WeaponKey) => getWeaponStat(wKey).subStat?.type ?? '',
+        } as SortConfigs<SortKey, WeaponKey>
+      ),
+    [weapon.sortOrder, weapon.sortOrderBy, weaponDataCache]
+  )
+
   const { numShow, setTriggerElement } = useInfScroll(10, weaponKeys.length)
   const weaponKeysToShow = useMemo(
-    () => weaponKeys.slice(0, numShow),
-    [weaponKeys, numShow]
+    () => weaponKeys.sort(sortedWeaponKeys).slice(0, numShow),
+    [weaponKeys, sortedWeaponKeys, numShow]
   )
   const weaponTotals = useMemo(
     () =>
@@ -106,6 +170,13 @@ export default function TabWeapon() {
       ),
     [weaponKeys]
   )
+  const columns: { key: SortKey; label: string; width: number }[] = [
+    { key: 'name', label: 'Name', width: 30 },
+    { key: 'type', label: 'Type', width: 10 },
+    { key: 'rarity', label: 'Rarity', width: 10 },
+    { key: 'main', label: 'Main', width: 20 },
+    { key: 'sub', label: 'Secondary', width: 30 },
+  ]
   return (
     <Box>
       <CardContent sx={{ display: 'flex', gap: 2 }}>
@@ -165,11 +236,24 @@ export default function TabWeapon() {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Type</TableCell>
-            <TableCell>Rarity</TableCell>
-            <TableCell>Main</TableCell>
-            <TableCell>Secondary</TableCell>
+            {columns.map(({ key, label, width }) => (
+              <TableCell
+                sortDirection={
+                  weapon.sortOrderBy === key ? weapon.sortOrder : false
+                }
+                width={`${width}%`}
+              >
+                <TableSortLabel
+                  active={weapon.sortOrderBy === key}
+                  direction={
+                    weapon.sortOrderBy === key ? weapon.sortOrder : 'asc'
+                  }
+                  onClick={() => handleSort(key)}
+                >
+                  {label}
+                </TableSortLabel>
+              </TableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>

@@ -266,7 +266,10 @@ export function WeaponEditor({
                   location={location}
                   setLocation={setLocation}
                   filter={filter}
-                  autoCompleteProps={{ getOptionDisabled: (t) => !t.key }}
+                  autoCompleteProps={{
+                    getOptionDisabled: (t) => !t.key,
+                    disableClearable: true,
+                  }}
                 />
               </Grid>
             </Grid>

@@ -1,5 +1,6 @@
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
+import { Settings } from '@mui/icons-material'
 import DiamondIcon from '@mui/icons-material/Diamond'
 import GroupsIcon from '@mui/icons-material/Groups'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -69,6 +70,13 @@ const teams: ITab = {
   textSuffix: <TeamChip key="charAdd" />,
 }
 
+const settings: ITab = {
+  i18Key: 'tabs.settings',
+  icon: <Settings />,
+  to: '/settings',
+  value: 'settings',
+}
+
 function RelicChip() {
   const { database } = useDatabaseContext()
   const [total, setTotal] = useState(database.relics.keys.length)
@@ -134,7 +142,7 @@ export default function Header({ anchor }: { anchor: string }) {
   )
 }
 
-const maincontent = [relics, lightCones, characters, teams] as const
+const maincontent = [relics, lightCones, characters, teams, settings] as const
 
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
@@ -205,7 +213,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
                   </Box>
                 ) : undefined
               }
-              sx={{ ml: value === 'setting' ? 'auto' : undefined }}
+              sx={{ ml: value === 'settings' ? 'auto' : undefined }}
             />
           )
         })}
@@ -214,7 +222,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
   )
 }
 
-const mobileContent = [relics, lightCones] as const
+const mobileContent = [relics, lightCones, settings] as const
 function MobileHeader({
   anchor,
   currentTab,

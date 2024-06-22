@@ -30,7 +30,7 @@ type LocationAutocompleteProps = {
     AutocompleteProps<
       GeneralAutocompleteOption<LocationKey>,
       false,
-      false,
+      boolean,
       false
     >,
     'renderInput' | 'onChange' | 'options'

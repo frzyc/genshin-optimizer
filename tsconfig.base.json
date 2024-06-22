@@ -133,6 +133,9 @@
       "@genshin-optimizer/sr/page-relics": [
         "libs/sr/page-relics/src/index.tsx"
       ],
+      "@genshin-optimizer/sr/page-settings": [
+        "libs/sr/page-settings/src/index.tsx"
+      ],
       "@genshin-optimizer/sr/page-team": ["libs/sr/page-team/src/index.tsx"],
       "@genshin-optimizer/sr/page-teams": ["libs/sr/page-teams/src/index.tsx"],
       "@genshin-optimizer/sr/solver": ["libs/sr/solver/src/index.ts"],

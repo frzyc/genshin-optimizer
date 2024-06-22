@@ -1,6 +1,6 @@
 {
   "name": "genshin-optimizer",
-  "version": "10.9.3",
+  "version": "10.9.4",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -118,6 +118,7 @@
     "accept-language": "^3.0.18",
     "axios": "^1.6.0",
     "core-js": "^3.28.0",
+    "discord.js": "^14.15.3",
     "graphql": "^16.8.1",
     "i18next": "^23.6.0",
     "i18next-browser-languagedetector": "^7.0.1",
