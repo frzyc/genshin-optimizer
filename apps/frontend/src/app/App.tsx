@@ -121,6 +121,9 @@ function Content() {
       flexDirection="column"
       minHeight="100vh"
       position="relative"
+      sx={(theme) => ({
+        background: `radial-gradient(ellipse at top, ${theme.palette.neutral700.main} 0%, ${theme.palette.neutral800.main} 100%)`,
+      })}
     >
       <Header anchor="back-to-top-anchor" />
       {/* Top banner ad */}

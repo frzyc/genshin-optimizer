@@ -1,5 +1,4 @@
 import { AppBar, Box, Skeleton, Typography } from '@mui/material'
-import { grey } from '@mui/material/colors'
 import { Suspense } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
@@ -17,7 +16,7 @@ function FooterContent() {
     <AppBar
       component="footer"
       position="static"
-      sx={{ bgcolor: '#343a40' }}
+      sx={{ bgcolor: 'neutral800.main' }}
       elevation={0}
     >
       <Box
@@ -26,14 +25,14 @@ function FooterContent() {
         sx={{ px: 2, py: 1 }}
         gap={2}
       >
-        <Typography variant="caption" sx={{ color: grey[200] }}>
+        <Typography variant="caption" sx={{ color: 'neutral400.main' }}>
           <Trans t={t} i18nKey="ui:rightsDisclaimer">
             Genshin Optimizer is not affiliated with or endorsed by HoYoverse.
           </Trans>
         </Typography>
         <Typography
           variant="caption"
-          sx={{ color: grey[200], textAlign: 'right' }}
+          sx={{ color: 'neutral400.main', textAlign: 'right' }}
         >
           <Trans
             t={t}
@@ -48,6 +47,7 @@ function FooterContent() {
               }
               target="_blank"
               rel="noreferrer"
+              style={{ color: 'inherit' }}
             >
               {{ version: __VERSION__ } as any}
             </a>

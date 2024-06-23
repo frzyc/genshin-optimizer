@@ -4,6 +4,13 @@ import { theme as commonTheme } from '@genshin-optimizer/common/ui'
 
 declare module '@mui/material/styles' {
   interface Palette {
+    brandGO500: Palette['primary']
+    neutral200: Palette['primary']
+    neutral300: Palette['primary']
+    neutral400: Palette['primary']
+    neutral700: Palette['primary']
+    neutral800: Palette['primary']
+
     roll1: Palette['primary']
     roll2: Palette['primary']
     roll3: Palette['primary']
@@ -40,6 +47,13 @@ declare module '@mui/material/styles' {
     hyperbloom: Palette['primary']
   }
   interface PaletteOptions {
+    brandGO500?: Palette['primary']
+    neutral200?: Palette['primary']
+    neutral300?: Palette['primary']
+    neutral400?: Palette['primary']
+    neutral700?: Palette['primary']
+    neutral800?: Palette['primary']
+
     roll1?: PaletteOptions['primary']
     roll2?: PaletteOptions['primary']
     roll3?: PaletteOptions['primary']
@@ -210,6 +224,27 @@ export const theme = createTheme({
   ...commonTheme,
   palette: {
     ...commonTheme.palette,
+    brandGO500: commonTheme.palette.augmentColor({
+      color: { main: '#324599' },
+      name: 'primary',
+    }),
+    neutral200: commonTheme.palette.augmentColor({
+      color: { main: '#CBCFE1' },
+    }),
+    neutral300: commonTheme.palette.augmentColor({
+      color: { main: '#A2A6BB' },
+    }),
+    neutral400: commonTheme.palette.augmentColor({
+      color: { main: '#777B8E' },
+    }),
+    neutral700: commonTheme.palette.augmentColor({
+      color: { main: '#191C2B' },
+      name: 'primary',
+    }),
+    neutral800: commonTheme.palette.augmentColor({
+      color: { main: '#0C0F1A' },
+      name: 'primary',
+    }),
     roll1: commonTheme.palette.augmentColor({
       color: { main: '#a3a7a9' },
       name: 'roll1',
