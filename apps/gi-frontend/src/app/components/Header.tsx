@@ -21,6 +21,14 @@ const pages = [
     title: 'Artifacts',
     href: '/artifacts',
   },
+  {
+    title: 'Weapons',
+    href: '/weapons',
+  },
+  {
+    title: 'Characters',
+    href: '/characters',
+  },
 ]
 const settings = [
   { title: 'Profile', href: '/profile' },
@@ -142,7 +150,7 @@ export default function Header() {
                 component={Link}
                 href={href}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'inherit', display: 'block' }}
               >
                 {title}
               </Button>

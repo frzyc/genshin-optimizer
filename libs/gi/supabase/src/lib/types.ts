@@ -58,107 +58,189 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: 'public_accounts_profile_fkey'
-            columns: ['profile']
+            foreignKeyName: "public_accounts_profile_fkey"
+            columns: ["profile"]
             isOneToOne: false
-            referencedRelation: 'profiles'
-            referencedColumns: ['id']
-          }
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
         ]
       }
       artifacts: {
         Row: {
           account: string
+          character: Database["public"]["Enums"]["characterKey"] | null
           created_at: string
           id: string
           level: number
-          location: string | null
           lock: boolean
-          mainStatKey: Database['public']['Enums']['artifactMainStatKey']
+          mainStatKey: Database["public"]["Enums"]["artifactMainStatKey"]
           rarity: number
-          setKey: Database['public']['Enums']['artifactsetkey']
-          slotKey: Database['public']['Enums']['artifactslotkey']
+          setKey: Database["public"]["Enums"]["artifactsetkey"]
+          slotKey: Database["public"]["Enums"]["artifactslotkey"]
           substats: Json[]
         }
         Insert: {
           account: string
+          character?: Database["public"]["Enums"]["characterKey"] | null
           created_at?: string
           id?: string
           level: number
-          location?: string | null
           lock?: boolean
-          mainStatKey: Database['public']['Enums']['artifactMainStatKey']
+          mainStatKey: Database["public"]["Enums"]["artifactMainStatKey"]
           rarity: number
-          setKey: Database['public']['Enums']['artifactsetkey']
-          slotKey: Database['public']['Enums']['artifactslotkey']
+          setKey: Database["public"]["Enums"]["artifactsetkey"]
+          slotKey: Database["public"]["Enums"]["artifactslotkey"]
           substats: Json[]
         }
         Update: {
           account?: string
+          character?: Database["public"]["Enums"]["characterKey"] | null
           created_at?: string
           id?: string
           level?: number
-          location?: string | null
           lock?: boolean
-          mainStatKey?: Database['public']['Enums']['artifactMainStatKey']
+          mainStatKey?: Database["public"]["Enums"]["artifactMainStatKey"]
           rarity?: number
-          setKey?: Database['public']['Enums']['artifactsetkey']
-          slotKey?: Database['public']['Enums']['artifactslotkey']
+          setKey?: Database["public"]["Enums"]["artifactsetkey"]
+          slotKey?: Database["public"]["Enums"]["artifactslotkey"]
           substats?: Json[]
         }
         Relationships: [
           {
-            foreignKeyName: 'public_artifacts_account_fkey'
-            columns: ['account']
+            foreignKeyName: "public_artifacts_account_fkey"
+            columns: ["account"]
             isOneToOne: false
-            referencedRelation: 'accounts'
-            referencedColumns: ['id']
-          }
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      characters: {
+        Row: {
+          account: string
+          ascension: number
+          constellation: number
+          created_at: string
+          id: number
+          key: Database["public"]["Enums"]["characterKey"]
+          level: number
+          talent_auto: number
+          talent_burst: number
+          talent_skill: number
+        }
+        Insert: {
+          account: string
+          ascension: number
+          constellation: number
+          created_at?: string
+          id?: number
+          key: Database["public"]["Enums"]["characterKey"]
+          level: number
+          talent_auto: number
+          talent_burst: number
+          talent_skill: number
+        }
+        Update: {
+          account?: string
+          ascension?: number
+          constellation?: number
+          created_at?: string
+          id?: number
+          key?: Database["public"]["Enums"]["characterKey"]
+          level?: number
+          talent_auto?: number
+          talent_burst?: number
+          talent_skill?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "public_characters_account_fkey"
+            columns: ["account"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
         ]
       }
       profiles: {
         Row: {
           active_account: string | null
-          avatar_url: string | null
-          full_name: string | null
           id: string
           updated_at: string | null
           username: string | null
-          website: string | null
         }
         Insert: {
           active_account?: string | null
-          avatar_url?: string | null
-          full_name?: string | null
           id: string
           updated_at?: string | null
           username?: string | null
-          website?: string | null
         }
         Update: {
           active_account?: string | null
-          avatar_url?: string | null
-          full_name?: string | null
           id?: string
           updated_at?: string | null
           username?: string | null
-          website?: string | null
         }
         Relationships: [
           {
-            foreignKeyName: 'profiles_id_fkey'
-            columns: ['id']
+            foreignKeyName: "profiles_id_fkey"
+            columns: ["id"]
             isOneToOne: true
-            referencedRelation: 'users'
-            referencedColumns: ['id']
+            referencedRelation: "users"
+            referencedColumns: ["id"]
           },
           {
-            foreignKeyName: 'public_profiles_active_account_fkey'
-            columns: ['active_account']
+            foreignKeyName: "public_profiles_active_account_fkey"
+            columns: ["active_account"]
             isOneToOne: false
-            referencedRelation: 'accounts'
-            referencedColumns: ['id']
-          }
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      weapons: {
+        Row: {
+          account: string
+          ascension: number
+          created_at: string
+          id: string
+          key: Database["public"]["Enums"]["weaponKey"]
+          level: number
+          location: Database["public"]["Enums"]["characterKey"] | null
+          lock: boolean
+          refinement: number
+        }
+        Insert: {
+          account: string
+          ascension: number
+          created_at?: string
+          id?: string
+          key: Database["public"]["Enums"]["weaponKey"]
+          level: number
+          location?: Database["public"]["Enums"]["characterKey"] | null
+          lock?: boolean
+          refinement: number
+        }
+        Update: {
+          account?: string
+          ascension?: number
+          created_at?: string
+          id?: string
+          key?: Database["public"]["Enums"]["weaponKey"]
+          level?: number
+          location?: Database["public"]["Enums"]["characterKey"] | null
+          lock?: boolean
+          refinement?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "public_weapons_account_fkey"
+            columns: ["account"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
         ]
       }
     }
@@ -170,88 +252,363 @@ export type Database = {
     }
     Enums: {
       artifactMainStatKey:
-        | 'hp'
-        | 'hp_'
-        | 'atk'
-        | 'atk_'
-        | 'def_'
-        | 'eleMas'
-        | 'enerRech_'
-        | 'critRate_'
-        | 'critDMG_'
-        | 'physical_dmg_'
-        | 'anemo_dmg_'
-        | 'geo_dmg_'
-        | 'electro_dmg_'
-        | 'hydro_dmg_'
-        | 'pyro_dmg_'
-        | 'cryo_dmg_'
-        | 'dendro_dmg_'
-        | 'heal_'
+        | "hp"
+        | "hp_"
+        | "atk"
+        | "atk_"
+        | "def_"
+        | "eleMas"
+        | "enerRech_"
+        | "critRate_"
+        | "critDMG_"
+        | "physical_dmg_"
+        | "anemo_dmg_"
+        | "geo_dmg_"
+        | "electro_dmg_"
+        | "hydro_dmg_"
+        | "pyro_dmg_"
+        | "cryo_dmg_"
+        | "dendro_dmg_"
+        | "heal_"
       artifactsetkey:
-        | 'Adventurer'
-        | 'ArchaicPetra'
-        | 'Berserker'
-        | 'BlizzardStrayer'
-        | 'BloodstainedChivalry'
-        | 'BraveHeart'
-        | 'CrimsonWitchOfFlames'
-        | 'DeepwoodMemories'
-        | 'DefendersWill'
-        | 'DesertPavilionChronicle'
-        | 'EchoesOfAnOffering'
-        | 'EmblemOfSeveredFate'
-        | 'FlowerOfParadiseLost'
-        | 'FragmentOfHarmonicWhimsy'
-        | 'Gambler'
-        | 'GildedDreams'
-        | 'GladiatorsFinale'
-        | 'GoldenTroupe'
-        | 'HeartOfDepth'
-        | 'HuskOfOpulentDreams'
-        | 'Instructor'
-        | 'Lavawalker'
-        | 'LuckyDog'
-        | 'MaidenBeloved'
-        | 'MarechausseeHunter'
-        | 'MartialArtist'
-        | 'NighttimeWhispersInTheEchoingWoods'
-        | 'NoblesseOblige'
-        | 'NymphsDream'
-        | 'OceanHuedClam'
-        | 'PaleFlame'
-        | 'PrayersForDestiny'
-        | 'PrayersForIllumination'
-        | 'PrayersForWisdom'
-        | 'PrayersToSpringtime'
-        | 'ResolutionOfSojourner'
-        | 'RetracingBolide'
-        | 'Scholar'
-        | 'ShimenawasReminiscence'
-        | 'SongOfDaysPast'
-        | 'TenacityOfTheMillelith'
-        | 'TheExile'
-        | 'ThunderingFury'
-        | 'Thundersoother'
-        | 'TinyMiracle'
-        | 'TravelingDoctor'
-        | 'UnfinishedReverie'
-        | 'VermillionHereafter'
-        | 'ViridescentVenerer'
-        | 'VourukashasGlow'
-        | 'WanderersTroupe'
-      artifactslotkey: 'flower' | 'plume' | 'sands' | 'goblet' | 'circlet'
+        | "Adventurer"
+        | "ArchaicPetra"
+        | "Berserker"
+        | "BlizzardStrayer"
+        | "BloodstainedChivalry"
+        | "BraveHeart"
+        | "CrimsonWitchOfFlames"
+        | "DeepwoodMemories"
+        | "DefendersWill"
+        | "DesertPavilionChronicle"
+        | "EchoesOfAnOffering"
+        | "EmblemOfSeveredFate"
+        | "FlowerOfParadiseLost"
+        | "FragmentOfHarmonicWhimsy"
+        | "Gambler"
+        | "GildedDreams"
+        | "GladiatorsFinale"
+        | "GoldenTroupe"
+        | "HeartOfDepth"
+        | "HuskOfOpulentDreams"
+        | "Instructor"
+        | "Lavawalker"
+        | "LuckyDog"
+        | "MaidenBeloved"
+        | "MarechausseeHunter"
+        | "MartialArtist"
+        | "NighttimeWhispersInTheEchoingWoods"
+        | "NoblesseOblige"
+        | "NymphsDream"
+        | "OceanHuedClam"
+        | "PaleFlame"
+        | "PrayersForDestiny"
+        | "PrayersForIllumination"
+        | "PrayersForWisdom"
+        | "PrayersToSpringtime"
+        | "ResolutionOfSojourner"
+        | "RetracingBolide"
+        | "Scholar"
+        | "ShimenawasReminiscence"
+        | "SongOfDaysPast"
+        | "TenacityOfTheMillelith"
+        | "TheExile"
+        | "ThunderingFury"
+        | "Thundersoother"
+        | "TinyMiracle"
+        | "TravelingDoctor"
+        | "UnfinishedReverie"
+        | "VermillionHereafter"
+        | "ViridescentVenerer"
+        | "VourukashasGlow"
+        | "WanderersTroupe"
+      artifactslotkey: "flower" | "plume" | "sands" | "goblet" | "circlet"
       artifactSubstatKey:
-        | 'hp'
-        | 'hp_'
-        | 'atk'
-        | 'atk_'
-        | 'def'
-        | 'def_'
-        | 'eleMas'
-        | 'enerRech_'
-        | 'critRate_'
-        | 'critDMG_'
+        | "hp"
+        | "hp_"
+        | "atk"
+        | "atk_"
+        | "def"
+        | "def_"
+        | "eleMas"
+        | "enerRech_"
+        | "critRate_"
+        | "critDMG_"
+      characterKey:
+        | "Albedo"
+        | "Alhaitham"
+        | "Aloy"
+        | "Amber"
+        | "AratakiItto"
+        | "Arlecchino"
+        | "Baizhu"
+        | "Barbara"
+        | "Beidou"
+        | "Bennett"
+        | "Candace"
+        | "Charlotte"
+        | "Chevreuse"
+        | "Chiori"
+        | "Chongyun"
+        | "Clorinde"
+        | "Collei"
+        | "Cyno"
+        | "Dehya"
+        | "Diluc"
+        | "Diona"
+        | "Dori"
+        | "Eula"
+        | "Faruzan"
+        | "Fischl"
+        | "Freminet"
+        | "Furina"
+        | "Gaming"
+        | "Ganyu"
+        | "Gorou"
+        | "HuTao"
+        | "Jean"
+        | "KaedeharaKazuha"
+        | "Kaeya"
+        | "KamisatoAyaka"
+        | "KamisatoAyato"
+        | "Kaveh"
+        | "Keqing"
+        | "Kirara"
+        | "Klee"
+        | "KujouSara"
+        | "KukiShinobu"
+        | "Layla"
+        | "Lisa"
+        | "Lynette"
+        | "Lyney"
+        | "Mika"
+        | "Mona"
+        | "Nahida"
+        | "Navia"
+        | "Neuvillette"
+        | "Nilou"
+        | "Ningguang"
+        | "Noelle"
+        | "Qiqi"
+        | "RaidenShogun"
+        | "Razor"
+        | "Rosaria"
+        | "SangonomiyaKokomi"
+        | "Sayu"
+        | "Sethos"
+        | "Shenhe"
+        | "ShikanoinHeizou"
+        | "Somnia"
+        | "Sucrose"
+        | "Tartaglia"
+        | "Thoma"
+        | "Tighnari"
+        | "Venti"
+        | "Wanderer"
+        | "Wriothesley"
+        | "Xiangling"
+        | "Xianyun"
+        | "Xiao"
+        | "Xingqiu"
+        | "Xinyan"
+        | "YaeMiko"
+        | "Yanfei"
+        | "Yaoyao"
+        | "Yelan"
+        | "Yoimiya"
+        | "YunJin"
+        | "Zhongli"
+        | "TravelerAnemo"
+        | "TravelerGeo"
+        | "TravelerElectro"
+        | "TravelerDendro"
+        | "TravelerHydro"
+      weaponKey:
+        | "Absolution"
+        | "AmenomaKageuchi"
+        | "AquilaFavonia"
+        | "BlackcliffLongsword"
+        | "CinnabarSpindle"
+        | "CoolSteel"
+        | "DarkIronSword"
+        | "DullBlade"
+        | "FavoniusSword"
+        | "FesteringDesire"
+        | "FilletBlade"
+        | "FinaleOfTheDeep"
+        | "FleuveCendreFerryman"
+        | "FreedomSworn"
+        | "HaranGeppakuFutsu"
+        | "HarbingerOfDawn"
+        | "IronSting"
+        | "KagotsurubeIsshin"
+        | "KeyOfKhajNisut"
+        | "LightOfFoliarIncision"
+        | "LionsRoar"
+        | "MistsplitterReforged"
+        | "PrimordialJadeCutter"
+        | "PrototypeRancour"
+        | "RoyalLongsword"
+        | "SacrificialSword"
+        | "SapwoodBlade"
+        | "SilverSword"
+        | "SkyriderSword"
+        | "SkywardBlade"
+        | "SplendorOfTranquilWaters"
+        | "SummitShaper"
+        | "SwordOfDescension"
+        | "SwordOfNarzissenkreuz"
+        | "TheAlleyFlash"
+        | "TheBlackSword"
+        | "TheDockhandsAssistant"
+        | "TheFlute"
+        | "ToukabouShigure"
+        | "TravelersHandySword"
+        | "UrakuMisugiri"
+        | "WolfFang"
+        | "XiphosMoonlight"
+        | "Akuoumaru"
+        | "BeaconOfTheReedSea"
+        | "BlackcliffSlasher"
+        | "BloodtaintedGreatsword"
+        | "DebateClub"
+        | "FavoniusGreatsword"
+        | "FerrousShadow"
+        | "ForestRegalia"
+        | "KatsuragikiriNagamasa"
+        | "LithicBlade"
+        | "LuxuriousSeaLord"
+        | "MailedFlower"
+        | "MakhairaAquamarine"
+        | "OldMercsPal"
+        | "PortablePowerSaw"
+        | "PrototypeArchaic"
+        | "Rainslasher"
+        | "RedhornStonethresher"
+        | "RoyalGreatsword"
+        | "SacrificialGreatsword"
+        | "SerpentSpine"
+        | "SkyriderGreatsword"
+        | "SkywardPride"
+        | "SnowTombedStarsilver"
+        | "SongOfBrokenPines"
+        | "TalkingStick"
+        | "TheBell"
+        | "TheUnforged"
+        | "TidalShadow"
+        | "UltimateOverlordsMegaMagicSword"
+        | "Verdict"
+        | "WasterGreatsword"
+        | "Whiteblind"
+        | "WhiteIronGreatsword"
+        | "WolfsGravestone"
+        | "BalladOfTheFjords"
+        | "BeginnersProtector"
+        | "BlackcliffPole"
+        | "BlackTassel"
+        | "CalamityQueller"
+        | "CrescentPike"
+        | "CrimsonMoonsSemblance"
+        | "Deathmatch"
+        | "DialoguesOfTheDesertSages"
+        | "DragonsBane"
+        | "DragonspineSpear"
+        | "EngulfingLightning"
+        | "FavoniusLance"
+        | "Halberd"
+        | "IronPoint"
+        | "KitainCrossSpear"
+        | "LithicSpear"
+        | "MissiveWindspear"
+        | "Moonpiercer"
+        | "PrimordialJadeWingedSpear"
+        | "ProspectorsDrill"
+        | "PrototypeStarglitter"
+        | "RightfulReward"
+        | "RoyalSpear"
+        | "SkywardSpine"
+        | "StaffOfHoma"
+        | "StaffOfTheScarletSands"
+        | "TheCatch"
+        | "VortexVanquisher"
+        | "WavebreakersFin"
+        | "WhiteTassel"
+        | "AlleyHunter"
+        | "AmosBow"
+        | "AquaSimulacra"
+        | "BlackcliffWarbow"
+        | "Cloudforged"
+        | "CompoundBow"
+        | "ElegyForTheEnd"
+        | "EndOfTheLine"
+        | "FadingTwilight"
+        | "FavoniusWarbow"
+        | "Hamayumi"
+        | "HuntersBow"
+        | "HuntersPath"
+        | "IbisPiercer"
+        | "KingsSquire"
+        | "Messenger"
+        | "MitternachtsWaltz"
+        | "MouunsMoon"
+        | "PolarStar"
+        | "Predator"
+        | "PrototypeCrescent"
+        | "RangeGauge"
+        | "RavenBow"
+        | "RecurveBow"
+        | "RoyalBow"
+        | "Rust"
+        | "SacrificialBow"
+        | "ScionOfTheBlazingSun"
+        | "SeasonedHuntersBow"
+        | "SharpshootersOath"
+        | "SkywardHarp"
+        | "Slingshot"
+        | "SongOfStillness"
+        | "TheFirstGreatMagic"
+        | "TheStringless"
+        | "TheViridescentHunt"
+        | "ThunderingPulse"
+        | "WindblumeOde"
+        | "ApprenticesNotes"
+        | "AThousandFloatingDreams"
+        | "BalladOfTheBoundlessBlue"
+        | "BlackcliffAgate"
+        | "CashflowSupervision"
+        | "CranesEchoingCall"
+        | "DodocoTales"
+        | "EmeraldOrb"
+        | "EverlastingMoonglow"
+        | "EyeOfPerception"
+        | "FavoniusCodex"
+        | "FlowingPurity"
+        | "Frostbearer"
+        | "FruitOfFulfillment"
+        | "HakushinRing"
+        | "JadefallsSplendor"
+        | "KagurasVerity"
+        | "LostPrayerToTheSacredWinds"
+        | "MagicGuide"
+        | "MappaMare"
+        | "MemoryOfDust"
+        | "OathswornEye"
+        | "OtherworldlyStory"
+        | "PocketGrimoire"
+        | "PrototypeAmber"
+        | "QuantumCatalyst"
+        | "RoyalGrimoire"
+        | "SacrificialFragments"
+        | "SacrificialJade"
+        | "SkywardAtlas"
+        | "SolarPearl"
+        | "TheWidsith"
+        | "ThrillingTalesOfDragonSlayers"
+        | "TomeOfTheEternalFlow"
+        | "TulaytullahsRemembrance"
+        | "TwinNephrite"
+        | "WanderingEvenstar"
+        | "WineAndSong"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -361,12 +718,12 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: 'objects_bucketId_fkey'
-            columns: ['bucket_id']
+            foreignKeyName: "objects_bucketId_fkey"
+            columns: ["bucket_id"]
             isOneToOne: false
-            referencedRelation: 'buckets'
-            referencedColumns: ['id']
-          }
+            referencedRelation: "buckets"
+            referencedColumns: ["id"]
+          },
         ]
       }
       s3_multipart_uploads: {
@@ -402,12 +759,12 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: 's3_multipart_uploads_bucket_id_fkey'
-            columns: ['bucket_id']
+            foreignKeyName: "s3_multipart_uploads_bucket_id_fkey"
+            columns: ["bucket_id"]
             isOneToOne: false
-            referencedRelation: 'buckets'
-            referencedColumns: ['id']
-          }
+            referencedRelation: "buckets"
+            referencedColumns: ["id"]
+          },
         ]
       }
       s3_multipart_uploads_parts: {
@@ -449,19 +806,19 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: 's3_multipart_uploads_parts_bucket_id_fkey'
-            columns: ['bucket_id']
+            foreignKeyName: "s3_multipart_uploads_parts_bucket_id_fkey"
+            columns: ["bucket_id"]
             isOneToOne: false
-            referencedRelation: 'buckets'
-            referencedColumns: ['id']
+            referencedRelation: "buckets"
+            referencedColumns: ["id"]
           },
           {
-            foreignKeyName: 's3_multipart_uploads_parts_upload_id_fkey'
-            columns: ['upload_id']
+            foreignKeyName: "s3_multipart_uploads_parts_upload_id_fkey"
+            columns: ["upload_id"]
             isOneToOne: false
-            referencedRelation: 's3_multipart_uploads'
-            referencedColumns: ['id']
-          }
+            referencedRelation: "s3_multipart_uploads"
+            referencedColumns: ["id"]
+          },
         ]
       }
     }
@@ -564,84 +921,85 @@ export type Database = {
   }
 }
 
-type PublicSchema = Database[Extract<keyof Database, 'public'>]
+type PublicSchema = Database[Extract<keyof Database, "public">]
 
 export type Tables<
   PublicTableNameOrOptions extends
-    | keyof (PublicSchema['Tables'] & PublicSchema['Views'])
+    | keyof (PublicSchema["Tables"] & PublicSchema["Views"])
     | { schema: keyof Database },
   TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
-    ? keyof (Database[PublicTableNameOrOptions['schema']]['Tables'] &
-        Database[PublicTableNameOrOptions['schema']]['Views'])
-    : never = never
+    ? keyof (Database[PublicTableNameOrOptions["schema"]]["Tables"] &
+        Database[PublicTableNameOrOptions["schema"]]["Views"])
+    : never = never,
 > = PublicTableNameOrOptions extends { schema: keyof Database }
-  ? (Database[PublicTableNameOrOptions['schema']]['Tables'] &
-      Database[PublicTableNameOrOptions['schema']]['Views'])[TableName] extends {
+  ? (Database[PublicTableNameOrOptions["schema"]]["Tables"] &
+      Database[PublicTableNameOrOptions["schema"]]["Views"])[TableName] extends {
       Row: infer R
     }
     ? R
     : never
-  : PublicTableNameOrOptions extends keyof (PublicSchema['Tables'] &
-      PublicSchema['Views'])
-  ? (PublicSchema['Tables'] &
-      PublicSchema['Views'])[PublicTableNameOrOptions] extends {
-      Row: infer R
-    }
-    ? R
+  : PublicTableNameOrOptions extends keyof (PublicSchema["Tables"] &
+        PublicSchema["Views"])
+    ? (PublicSchema["Tables"] &
+        PublicSchema["Views"])[PublicTableNameOrOptions] extends {
+        Row: infer R
+      }
+      ? R
+      : never
     : never
-  : never
 
 export type TablesInsert<
   PublicTableNameOrOptions extends
-    | keyof PublicSchema['Tables']
+    | keyof PublicSchema["Tables"]
     | { schema: keyof Database },
   TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
-    ? keyof Database[PublicTableNameOrOptions['schema']]['Tables']
-    : never = never
+    ? keyof Database[PublicTableNameOrOptions["schema"]]["Tables"]
+    : never = never,
 > = PublicTableNameOrOptions extends { schema: keyof Database }
-  ? Database[PublicTableNameOrOptions['schema']]['Tables'][TableName] extends {
+  ? Database[PublicTableNameOrOptions["schema"]]["Tables"][TableName] extends {
       Insert: infer I
     }
     ? I
     : never
-  : PublicTableNameOrOptions extends keyof PublicSchema['Tables']
-  ? PublicSchema['Tables'][PublicTableNameOrOptions] extends {
-      Insert: infer I
-    }
-    ? I
+  : PublicTableNameOrOptions extends keyof PublicSchema["Tables"]
+    ? PublicSchema["Tables"][PublicTableNameOrOptions] extends {
+        Insert: infer I
+      }
+      ? I
+      : never
     : never
-  : never
 
 export type TablesUpdate<
   PublicTableNameOrOptions extends
-    | keyof PublicSchema['Tables']
+    | keyof PublicSchema["Tables"]
     | { schema: keyof Database },
   TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
-    ? keyof Database[PublicTableNameOrOptions['schema']]['Tables']
-    : never = never
+    ? keyof Database[PublicTableNameOrOptions["schema"]]["Tables"]
+    : never = never,
 > = PublicTableNameOrOptions extends { schema: keyof Database }
-  ? Database[PublicTableNameOrOptions['schema']]['Tables'][TableName] extends {
+  ? Database[PublicTableNameOrOptions["schema"]]["Tables"][TableName] extends {
       Update: infer U
     }
     ? U
     : never
-  : PublicTableNameOrOptions extends keyof PublicSchema['Tables']
-  ? PublicSchema['Tables'][PublicTableNameOrOptions] extends {
-      Update: infer U
-    }
-    ? U
+  : PublicTableNameOrOptions extends keyof PublicSchema["Tables"]
+    ? PublicSchema["Tables"][PublicTableNameOrOptions] extends {
+        Update: infer U
+      }
+      ? U
+      : never
     : never
-  : never
 
 export type Enums<
   PublicEnumNameOrOptions extends
-    | keyof PublicSchema['Enums']
+    | keyof PublicSchema["Enums"]
     | { schema: keyof Database },
   EnumName extends PublicEnumNameOrOptions extends { schema: keyof Database }
-    ? keyof Database[PublicEnumNameOrOptions['schema']]['Enums']
-    : never = never
+    ? keyof Database[PublicEnumNameOrOptions["schema"]]["Enums"]
+    : never = never,
 > = PublicEnumNameOrOptions extends { schema: keyof Database }
-  ? Database[PublicEnumNameOrOptions['schema']]['Enums'][EnumName]
-  : PublicEnumNameOrOptions extends keyof PublicSchema['Enums']
-  ? PublicSchema['Enums'][PublicEnumNameOrOptions]
-  : never
+  ? Database[PublicEnumNameOrOptions["schema"]]["Enums"][EnumName]
+  : PublicEnumNameOrOptions extends keyof PublicSchema["Enums"]
+    ? PublicSchema["Enums"][PublicEnumNameOrOptions]
+    : never
+
