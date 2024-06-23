@@ -130,6 +130,7 @@ export const nonTravelerCharacterKeys = [
   'Sethos',
   'Shenhe',
   'ShikanoinHeizou',
+  'Sigewinne',
   'Somnia',
   'Sucrose',
   'Tartaglia',
