@@ -380,6 +380,7 @@ function validateCustomExpression(
     argsCount: number
   }[] = []
   let prevUnit = initExpressionUnit({ type: 'null', kind: 'operation' })
+  const currentEnclosing_ = () => stack[stack.length - 1]
 
   for (let unit of ce_ as ExpressionUnit[]) {
     const currentEnclosing: (typeof stack)[number] | undefined =
@@ -464,20 +465,32 @@ function validateCustomExpression(
     }
 
     // Condition four
-    // Add null(operation) or current enclosing(comma) unit between any two operand units
-    //   null(operand) unit is added if the stack is empty or the current enclosing argsCount >= max
+    // Add null(operation), enclosing(comma) or enclosing(tail) unit between any two operand units
     if (isOperand(prevUnit, 'right') && isOperand(unit, 'left')) {
-      if (
-        !currentEnclosing ||
-        currentEnclosing.argsCount >= currentEnclosing.arity.max
-      ) {
-        expression.push(initExpressionUnit({ type: 'null', kind: 'operation' }))
-      } else {
-        expression.push(
-          initExpressionUnit({ type: 'enclosing', part: 'comma' })
-        )
+      while (true) {
+        if (!currentEnclosing_()) {
+          // Add null(operation) unit if the stack is empty
+          expression.push(
+            initExpressionUnit({ type: 'null', kind: 'operation' })
+          )
+        } else if (
+          currentEnclosing_().argsCount < currentEnclosing_().arity.max
+        ) {
+          // Add enclosing(comma) unit if the current enclosing argsCount < max
+          expression.push(
+            initExpressionUnit({ type: 'enclosing', part: 'comma' })
+          )
+          currentEnclosing_().argsCount++
+        } else {
+          // Add enclosing(tail) unit if the current enclosing argsCount >= max
+          expression.push(
+            initExpressionUnit({ type: 'enclosing', part: 'tail' })
+          )
+          stack.pop()
+          continue
+        }
+        break
       }
-      if (currentEnclosing) currentEnclosing.argsCount++
     }
 
     // Stack management block

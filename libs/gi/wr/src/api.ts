@@ -394,7 +394,7 @@ function parseCustomExpression(
     ) {
       let unitOperation: ExpressionOperation
       if (unit.type === 'null') {
-        unitOperation = 'addition'
+        unitOperation = 'multiplication'
       } else {
         unitOperation = unit.operation
       }
