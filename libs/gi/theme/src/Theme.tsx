@@ -10,6 +10,7 @@ declare module '@mui/material/styles' {
     neutral400: Palette['primary']
     neutral700: Palette['primary']
     neutral800: Palette['primary']
+    neutral900: Palette['primary']
 
     roll1: Palette['primary']
     roll2: Palette['primary']
@@ -53,6 +54,7 @@ declare module '@mui/material/styles' {
     neutral400?: Palette['primary']
     neutral700?: Palette['primary']
     neutral800?: Palette['primary']
+    neutral900?: Palette['primary']
 
     roll1?: PaletteOptions['primary']
     roll2?: PaletteOptions['primary']
@@ -243,6 +245,10 @@ export const theme = createTheme({
     }),
     neutral800: commonTheme.palette.augmentColor({
       color: { main: '#0C0F1A' },
+      name: 'primary',
+    }),
+    neutral900: commonTheme.palette.augmentColor({
+      color: { main: '#020515' },
       name: 'primary',
     }),
     roll1: commonTheme.palette.augmentColor({

@@ -204,13 +204,13 @@ function HeaderContent({ anchor }: { anchor: string }) {
     <Box>
       <AppBar
         position="static"
-        sx={{ bgcolor: 'neutral800.main' }}
+        sx={{ bgcolor: 'neutral900.main' }}
         elevation={0}
         id={anchor}
       >
         <Tabs
           value={currentTab}
-          sx={{
+          sx={(theme) => ({
             '& .MuiTab-root': {
               p: 1,
               minWidth: 'auto',
@@ -220,7 +220,11 @@ function HeaderContent({ anchor }: { anchor: string }) {
               transition: 'background-color 0.5s ease',
               backgroundColor: 'rgba(255,255,255,0.1)',
             },
-          }}
+            '& .Mui-selected': {
+              backgroundImage: `linear-gradient(to top, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
+              color: 'white !important',
+            },
+          })}
         >
           <Tab
             value=""
@@ -310,7 +314,7 @@ function MobileHeader({
     <>
       <AppBar
         position="fixed"
-        sx={{ bgcolor: 'neutral800.main' }}
+        sx={{ bgcolor: 'neutral900.main' }}
         elevation={0}
       >
         <Drawer
@@ -339,7 +343,7 @@ function MobileHeader({
             }}
             sx={(theme) => ({
               '& .Mui-selected': {
-                backgroundImage: `linear-gradient(to right, ${theme.palette.brandGO500.main}, rgba(0,0,0,0))`,
+                backgroundImage: `linear-gradient(to right, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
                 color: 'white !important',
               },
             })}
