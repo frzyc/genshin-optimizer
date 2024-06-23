@@ -1,0 +1,168 @@
+{
+  "name": "Sigewinne",
+  "title": "Wondrous Dragonheir",
+  "description": "A Melusine and the Fortress of Meropide's head nurse. She cares equally for every convict locked in the undersea prison.",
+  "constellationName": "Nereides",
+  "auto": {
+    "name": "Targeted Treatment",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 3 consecutive attacks."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Performs a more precise <strong>Aimed Shot</strong> with increased DMG.",
+        "2": "While aiming, the power of Hydro will continually accumulate on the arrow. After fully charging, Sigewinne will periodically fire slow-moving Mini-Stration Bubbles toward the target, dealing <hydro>Hydro DMG</hydro>. When released, an arrow imbued with torrential energy will deal <hydro>Hydro DMG</hydro> to the opponent hit."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "Aimed Shot",
+      "4": "Fully-Charged Aimed Shot",
+      "5": "Mini-Stration Bubble DMG",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Rebound Hydrotherapy",
+    "description": {
+      "0": "Blows a <strong>Bolstering Bubblebalm</strong> that can stimulate blood flow and help patients drift off to sleep using a bubblegun specially made in the Fortress of Meropide.",
+      "1": "Bolstering Bubblebalms will bounce between nearby opponents, dealing <hydro>Hydro DMG</hydro> based on Sigewinne's max HP to opponents it hits. When it bounces, it will restore HP to all nearby party members except Sigewinne herself. The amount healed is based on Sigewinne's max HP.",
+      "2": "After bouncing 5 times, the Bolstering Bubblebalm will disappear and restore HP to Sigewinne based on her max HP value.",
+      "3": "When no opponents are present, the Bolstering Bubblebalm will bounce nearby. Only one Bolstering Bubblebalm created by a Sigewinne may exist at once.",
+      "4": "When Held, the Bolstering Bubblebalm can be boosted to an even bigger size.",
+      "5": "<br/>",
+      "6": "<strong>Hold</strong>",
+      "7": "Enter Aiming Mode to begin blowing an even bigger, even more breathtaking Bolstering Bubblebalm!",
+      "8": "The Bolstering Bubblebalm will grow bigger the longer the skill is Held, until it grows up to two tiers in size. Each tier it grows increases its DMG by 5% and healing by 5%. When a Bolstering Bubblebalm bounces, it will drop down a tier in size, until it returns to being a normal Bolstering Bubblebalm.",
+      "9": "After weaker opponents are hit by big Bolstering Bubblebalms, they will be imprisoned and will be unable to move.",
+      "10": "<br/>",
+      "11": "In addition, 2 Sourcewater Droplets will be created near Sigewinne when she uses this Skill. Each Sourcewater Droplet Sigewinne collects will grant her a Bond of Life worth 10% of her Max HP.",
+      "12": "When Sigewinne's Bond of Life is cleared, she regains 1 Elemental Energy for every 2,000 HP worth of the Bond of Life that was cleared. Sigewinne can regain up to 5 Elemental Energy in this way.",
+      "13": "<br/>",
+      "14": "<strong>Arkhe: Ousia</strong>",
+      "15": "Bolstering Bubblebalms periodically call down a Surging Blade on the position they hit, dealing Ousia-aligned <hydro>Hydro DMG</hydro> based on Sigewinne's max HP.",
+      "16": "<br/>",
+      "17": "<i>\"What do you think? Not only can this kind of hydrotherapy stimulate the circulatory system, but it can also cheer patients up, ooh, and that's not all, it can even help patients who ought to get some rest have a nice nap...\"</i>"
+    },
+    "skillParams": {
+      "0": "Bolstering Bubblebalm DMG",
+      "1": "Bolstering Bubblebalm Healing",
+      "2": "Final Bounce Healing",
+      "3": "Surging Blade DMG",
+      "4": "Surging Blade Interval",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Super Saturated Syringing",
+    "description": {
+      "0": "Take out a special Fortress of Meropide-made syringe and assault the area in front with waves of kindness and medicine, dealing <hydro>AoE Hydro DMG</hydro> based on Sigewinne's max HP.",
+      "1": "In addition, Sigewinne absorbs up to 2 nearby Sourcewater Droplets within a certain range right before using the skill.",
+      "2": "<br/>",
+      "3": "<i>\"Hey, overdosing on medicine is no different from poison, you know, it's real dangerous! But patients need care and concern, and nobody can overdose on that!\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Duration",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Requires Appropriate Rest",
+    "description": {
+      "0": "Sigewinne grants herself the \"Semi-Strict Bedrest\" effect for 18s after using <strong>Rebound Hydrotherapy</strong>: Sigewinne gains an 8% <hydro>Hydro DMG Bonus</hydro> and 10 stacks of Convalescence. When the Elemental Skills of your nearby off-field party members other than Sigewinne deal DMG, consume 1 stack of Convalescence, and increase the DMG dealt by this instance of Elemental Skill DMG. Every 1,000 Max HP Sigewinne has above 30,000 increases the DMG by 80. The maximum DMG increase for Elemental Skills that can be gained in this way is 2,800."
+    }
+  },
+  "passive2": {
+    "name": "Detailed Diagnosis, Thorough Treatment",
+    "description": {
+      "0": "When Sigewinne performs healing, the amount healed for this instance is increased based on the total current value of the Bonds of Life on all party members: For each 1,000 HP worth of Bonds of Life, the outgoing healing is increased by 3%. The amount of healing provided can be increased by up to 30% in this way."
+    }
+  },
+  "passive3": {
+    "name": "Emergency Dose",
+    "description": {
+      "0": "While underwater, heal your active character over 2.5s when their HP falls under 50%. The amount healed is equal to 50% of their Max HP, and their All Elemental and Physical RES will be decreased by 10% for 10s. This effect can be triggered up to once every 20s."
+    }
+  },
+  "constellation1": {
+    "name": "\"Can the Happiest of Spirits Understand Anxiety?\"",
+    "description": {
+      "0": "<strong>Rebound Hydrotherapy</strong>'s Bolstering Bubblebalm can bounce 3 extra times, and the first 3 bounces will not cause big Bubblebalms to become smaller.",
+      "1": "The Passive Talent \"Requires Appropriate Rest\" is enhanced: Each Bubblebalm bounce adds 1 stack to her Convalescence tally, and the values for the Convalescence stacks' DMG bonus will be modified to: Every 1,000 max HP Sigewinne has above 30,000 increases the DMG by 100. The maximum DMG increase for Elemental Skills that can be gained in this way is 3,500. You must first unlock the Passive Talent \"Requires Appropriate Rest.\""
+    }
+  },
+  "constellation2": {
+    "name": "\"Can the Most Merciful of Spirits Defeat Its Foes?\"",
+    "description": {
+      "0": "When using <strong>Rebound Hydrotherapy</strong> and <strong>Super Saturated Syringing</strong>, Sigewinne can create a Bubbly Shield worth 30% of her Max HP that absorbs <hydro>Hydro DMG</hydro> with 250% efficiency. The Bubbly Shield will persist until Sigewinne finishes using relevant skills.",
+      "1": "Additionally, after Rebound Hydrotherapy's Bolstering Bubblebalm or Super Saturated Syringing hits an opponent, that opponent's <hydro>Hydro RES</hydro> will be decreased by 35% for 8s."
+    }
+  },
+  "constellation3": {
+    "name": "\"Can the Healthiest of Spirits Cure Fevers?\"",
+    "description": {
+      "0": "Increases the Level of <strong>Rebound Hydrotherapy</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Can the Loveliest of Spirits Keep Decay at Bay?\"",
+    "description": {
+      "0": "The duration of <strong>Super Saturated Syringing</strong> is extended by 3s."
+    }
+  },
+  "constellation5": {
+    "name": "\"Can the Most Joyful of Spirits Alleviate Agony?\"",
+    "description": {
+      "0": "Increases the Level of <strong>Super Saturated Syringing</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Can the Most Radiant of Spirits Pray For Me?\"",
+    "description": {
+      "0": "When Sigewinne performs healing, she will increase the CRIT Rate and CRIT DMG of her <strong>Super Saturated Syringing</strong> based on her Max HP. Every 1,000 Max HP she has will increase CRIT Rate by 0.4% and CRIT DMG by 2.2% for 15s. The maximum increase achievable this way is 20% CRIT Rate and 110% CRIT DMG."
+    }
+  }
+}
