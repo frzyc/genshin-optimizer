@@ -46,8 +46,8 @@ export default function ExpressionDisplay({
 
   const buttonRef = useRef<HTMLButtonElement>(null)
   useEffect(() => {
-    if (sia) {
-      buttonRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+    if (sia && buttonRef.current) {
+      // buttonRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
   }, [sia, onFocused])
 

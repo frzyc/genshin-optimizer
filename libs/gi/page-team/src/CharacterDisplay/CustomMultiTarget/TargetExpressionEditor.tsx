@@ -265,7 +265,6 @@ export default function TargetExpressionEditor({
   return (
     <>
       <AddItemsPanel
-        expression={expression}
         functions={functions}
         sia={sia}
         setSIA={setSIA}

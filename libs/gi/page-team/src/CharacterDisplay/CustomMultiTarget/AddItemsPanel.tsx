@@ -4,6 +4,7 @@ import {
   CustomNumberInput,
   CustomNumberInputButtonGroupWrapper,
 } from '@genshin-optimizer/common/ui'
+import { clamp } from '@genshin-optimizer/common/util'
 import type {
   AddressItemTypesMap,
   CustomFunction,
@@ -29,13 +30,11 @@ export default function AddItemsPanel({
   sia,
   setSIA,
   functions,
-  expression,
 }: {
   addItem: <T extends AddressItemTypesMap>(address: T[0], item: T[1]) => void
   sia: ItemAddress
   setSIA: Dispatch<SetStateAction<ItemAddress>>
   functions: CustomFunction[]
-  expression: ExpressionUnit[]
 }) {
   const { t } = useTranslation('page_character')
   const [show, onShow, onClose] = useBoolState(false)
@@ -45,9 +44,12 @@ export default function AddItemsPanel({
     (func: Partial<CustomFunction>) => {
       let _sia = sia
       if (!_sia) {
-        _sia = { type: 'function', layer: functions.length }
+        _sia = { type: 'function', layer: 0 }
       } else if (_sia.type !== 'function') {
-        _sia = { type: 'function', layer: _sia.layer }
+        _sia = {
+          type: 'function',
+          layer: clamp(_sia.layer + 1, 0, functions.length),
+        }
       } else {
         _sia.layer++
       }
@@ -62,12 +64,8 @@ export default function AddItemsPanel({
       let _sia = sia
       if (!_sia || _sia.type !== 'argument') {
         if (functions.length === 0) return
-        const layer =
-          _sia && _sia.layer < functions.length
-            ? _sia.layer
-            : functions.length - 1
-        const func = functions[layer]
-        _sia = { type: 'argument', layer, index: func.args.length }
+        const layer = _sia && _sia.layer < functions.length ? _sia.layer : 0
+        _sia = { type: 'argument', layer, index: 0 }
       } else {
         _sia.index++
       }
@@ -82,9 +80,7 @@ export default function AddItemsPanel({
       let _sia = sia
       if (!_sia || _sia.type !== 'unit') {
         const layer = _sia?.layer ?? functions.length
-        const e =
-          layer < functions.length ? functions[layer].expression : expression
-        _sia = { type: 'unit', layer, index: e.length }
+        _sia = { type: 'unit', layer, index: 0 }
       } else {
         _sia.index++
       }
@@ -102,7 +98,7 @@ export default function AddItemsPanel({
       addItem(_sia, initExpressionUnit(unit))
       setSIA(_sia)
     },
-    [addItem, expression, functions, setSIA, sia]
+    [addItem, functions, setSIA, sia]
   )
 
   const addConstant = useCallback(() => {

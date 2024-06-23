@@ -143,25 +143,26 @@ export default function ItemConfigPanel({
     [expression, functions, moveItem, setSIA]
   )
 
-  const currentExpression = useMemo(() => {
-    if (sia.layer < functions.length) {
-      return functions[sia.layer].expression
-    } else {
-      return expression
-    }
-  }, [expression, functions, sia.layer])
-
   const onRemove = useCallback(() => {
     removeItem(sia)
     if (sia.type === 'function') {
-      setSIA({ ...sia, layer: clamp(sia.layer - 1, 0, functions.length) })
+      if (sia.layer < 1) {
+        setSIA(undefined)
+      } else {
+        setSIA({ ...sia, layer: sia.layer - 1 })
+      }
     } else {
-      setSIA({
-        ...sia,
-        index: clamp(sia.index - 1, 0, currentExpression.length),
-      })
+      if (sia.index < 1) {
+        if (sia.layer < functions.length) {
+          setSIA({ type: 'function', layer: sia.layer })
+        } else {
+          setSIA(undefined)
+        }
+      } else {
+        setSIA({ ...sia, index: sia.index - 1 })
+      }
     }
-  }, [currentExpression, functions, removeItem, setSIA, sia])
+  }, [functions.length, removeItem, setSIA, sia])
 
   const moveButtons = useMemo(() => {
     // If the item is a function, it can be moved up or down

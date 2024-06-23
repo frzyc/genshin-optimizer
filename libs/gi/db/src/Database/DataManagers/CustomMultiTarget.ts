@@ -403,6 +403,15 @@ function validateCustomExpression(
     ) {
       unit = initExpressionUnit({ ...unit, type: 'null', kind: 'operation' })
     }
+    // Replace null(operation) unit with enclosing(comma) unit if current enclosing argsCount < min
+    if (
+      unit.type === 'null' &&
+      unit.kind === 'operation' &&
+      currentEnclosing &&
+      currentEnclosing.argsCount < currentEnclosing.arity.min
+    ) {
+      unit = initExpressionUnit({ ...unit, type: 'enclosing', part: 'comma' })
+    }
 
     // Condition two
     // Ignore any null units if they are adjacent to each other
@@ -504,12 +513,6 @@ function validateCustomExpression(
         }
         stack.pop()
       }
-    } else if (
-      unit.type === 'null' &&
-      unit.kind === 'operation' &&
-      currentEnclosing
-    ) {
-      currentEnclosing.argsCount++
     }
 
     expression.push(unit)

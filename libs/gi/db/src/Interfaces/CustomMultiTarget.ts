@@ -68,7 +68,8 @@ interface EnclosingOperationSpec {
   description: string | null
 }
 
-const enclosingSpecConstructor = (
+/** Typical Enclosing Specifications */
+const tes = (
   symbol: string,
   {
     precedence = 3,
@@ -84,7 +85,8 @@ const enclosingSpecConstructor = (
   description,
 })
 
-const nonEnclosingSpecConstructor = (
+/** Typical Non-Enclosing Specifications */
+const tnes = (
   symbol: string,
   {
     precedence = 3,
@@ -101,21 +103,21 @@ export const OperationSpecs: Record<
   NonEnclosingOperationSpec
 > &
   Record<EnclosingOperation, EnclosingOperationSpec> = {
-  addition: nonEnclosingSpecConstructor('+', { precedence: 1 }),
-  subtraction: nonEnclosingSpecConstructor('-', { precedence: 1 }),
-  multiplication: nonEnclosingSpecConstructor('*', { precedence: 2 }),
-  division: nonEnclosingSpecConstructor('/', { precedence: 2 }),
-  priority: enclosingSpecConstructor('', { arity: { min: 1, max: 1 } }),
-  minimum: enclosingSpecConstructor('min'),
-  maximum: enclosingSpecConstructor('max'),
-  average: enclosingSpecConstructor('avg', {
+  addition: tnes('+', { precedence: 1 }),
+  subtraction: tnes('-', { precedence: 1 }),
+  multiplication: tnes('*', { precedence: 2 }),
+  division: tnes('/', { precedence: 2 }),
+  priority: tes('', { arity: { min: 1, max: 1 } }),
+  minimum: tes('min'),
+  maximum: tes('max'),
+  average: tes('avg', {
     description: 'avg(x1, x2, ..., xn) = (x1 + x2 + ... + xn) / n',
   }),
-  clamp: enclosingSpecConstructor('clamp', {
+  clamp: tes('clamp', {
     arity: { min: 3, max: 3 },
     description: 'clamp(min, max, value) = min(max, max(min, value))',
   }),
-  sum_fraction: enclosingSpecConstructor('sum_fraction', {
+  sum_fraction: tes('sum_fraction', {
     arity: { min: 2, max: 2 },
     description: 'sum_fraction(x1, x2) = x1 / (x1 + x2)',
   }),
