@@ -222,7 +222,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
             },
             '& .Mui-selected': {
               backgroundImage: `linear-gradient(to top, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
-              color: 'white !important',
+              color: `${theme.palette.neutral100.main} !important`,
             },
           })}
         >
@@ -344,7 +344,7 @@ function MobileHeader({
             sx={(theme) => ({
               '& .Mui-selected': {
                 backgroundImage: `linear-gradient(to right, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
-                color: 'white !important',
+                color: `${theme.palette.neutral100.main} !important`,
               },
             })}
           >

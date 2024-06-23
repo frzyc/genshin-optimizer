@@ -5,6 +5,7 @@ import { theme as commonTheme } from '@genshin-optimizer/common/ui'
 declare module '@mui/material/styles' {
   interface Palette {
     brandGO500: Palette['primary']
+    neutral100: Palette['primary']
     neutral200: Palette['primary']
     neutral300: Palette['primary']
     neutral400: Palette['primary']
@@ -49,6 +50,7 @@ declare module '@mui/material/styles' {
   }
   interface PaletteOptions {
     brandGO500?: Palette['primary']
+    neutral100?: Palette['primary']
     neutral200?: Palette['primary']
     neutral300?: Palette['primary']
     neutral400?: Palette['primary']
@@ -229,6 +231,9 @@ export const theme = createTheme({
     brandGO500: commonTheme.palette.augmentColor({
       color: { main: '#324599' },
       name: 'primary',
+    }),
+    neutral100: commonTheme.palette.augmentColor({
+      color: { main: '#E9EBF5' },
     }),
     neutral200: commonTheme.palette.augmentColor({
       color: { main: '#CBCFE1' },
