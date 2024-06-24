@@ -1,3 +1,4 @@
+'use client'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import type { CalcResult, UIData } from '@genshin-optimizer/gi/uidata'
 import { createContext, useCallback, useState } from 'react'

@@ -1,3 +1,4 @@
+'use client'
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { notEmpty, objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'

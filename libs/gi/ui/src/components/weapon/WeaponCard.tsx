@@ -10,6 +10,7 @@ import type {
   CharacterKey,
   LocationCharacterKey,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharStat, getWeaponStat } from '@genshin-optimizer/gi/stats'
@@ -29,32 +30,36 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
+import type { ReactNode } from 'react'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getCalcDisplay, resolveInfo } from '../../util'
 import { LocationAutocomplete, LocationName } from '../character'
 import { WeaponName } from './WeaponTrans'
 
-type WeaponCardProps = {
-  weaponId: string
+type Props = {
   onClick?: (weaponId: string) => void
   onEdit?: (weaponId: string) => void
   onDelete?: (weaponId: string) => void
   canEquip?: boolean
   extraButtons?: JSX.Element
 }
-export function WeaponCard({
-  weaponId,
+export function WeaponCard(props: Props & { weaponId: string }) {
+  const { weaponId, ...rest } = props
+  const weapon = useWeapon(weaponId)
+  if (!weapon) return null
+  return <WeaponCardObj weapon={weapon} {...rest} />
+}
+export function WeaponCardObj({
+  weapon,
   onClick,
   onEdit,
   onDelete,
   canEquip = false,
   extraButtons,
-}: WeaponCardProps) {
+}: Props & { weapon: ICachedWeapon }) {
   const { t } = useTranslation(['page_weapon', 'ui'])
   const database = useDatabase()
-  const databaseWeapon = useWeapon(weaponId)
-  const weapon = databaseWeapon
   const weaponKey = weapon?.key
   const weaponSheet = weaponKey && getWeaponSheet(weaponKey)
 
@@ -66,18 +71,21 @@ export function WeaponCard({
   )
 
   const wrapperFunc = useCallback(
-    (children) => (
-      <CardActionArea onClick={() => onClick?.(weaponId)}>
+    (children: ReactNode) => (
+      <CardActionArea onClick={() => onClick?.(weapon.id)}>
         {children}
       </CardActionArea>
     ),
-    [onClick, weaponId]
+    [onClick, weapon.id]
   )
-  const falseWrapperFunc = useCallback((children) => <Box>{children}</Box>, [])
+  const falseWrapperFunc = useCallback(
+    (children: ReactNode) => <Box>{children}</Box>,
+    []
+  )
   const setLocation = useCallback(
     (k: LocationCharacterKey | '') =>
-      weaponId && database.weapons.set(weaponId, { location: k }),
-    [database, weaponId]
+      weapon.id && database.weapons.set(weapon.id, { location: k }),
+    [database, weapon.id]
   )
 
   const UIData = useMemo(
