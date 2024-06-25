@@ -17,7 +17,7 @@ const {
 // TODO: Conditionals
 const { _someBoolConditional } = allBoolConditionals(key)
 const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key, false)
+const { _someNumConditional } = allNumConditionals(key)
 
 export default register(
   key,

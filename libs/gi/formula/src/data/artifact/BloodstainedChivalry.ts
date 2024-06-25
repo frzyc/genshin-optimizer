@@ -15,7 +15,7 @@ const count = artCount(key)
 // TODO: Conditionals
 const { someBoolConditional } = allBoolConditionals(key)
 const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key, false)
+const { _someNumConditional } = allNumConditionals(key)
 
 export default registerArt(
   key,

@@ -201,17 +201,18 @@ export const userBuff = convert(selfTag, { et: 'self', sheet: 'custom' })
 // Custom tags
 export const allStatics = (sheet: Sheet) =>
   reader.withTag({ et: 'self', sheet, qt: 'misc' }).withAll('q', [])
-export const allBoolConditionals = (sheet: Sheet) =>
-  allConditionals(sheet, { type: 'bool' }, (r) => ({
+export const allBoolConditionals = (sheet: Sheet, shared?: boolean) =>
+  allConditionals(sheet, shared, { type: 'bool' }, (r) => ({
     ifOn: (node: NumNode | number, off?: NumNode | number) =>
       cmpNE(r, 0, node, off),
     ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
   }))
 export const allListConditionals = <T extends string>(
   sheet: Sheet,
-  list: T[]
+  list: T[],
+  shared?: boolean
 ) =>
-  allConditionals(sheet, { type: 'list', list }, (r) => ({
+  allConditionals(sheet, shared, { type: 'list', list }, (r) => ({
     map: (table: Record<T, number>, def = 0) => {
       subscript(
         r,
@@ -222,10 +223,12 @@ export const allListConditionals = <T extends string>(
   }))
 export const allNumConditionals = (
   sheet: Sheet,
-  int_only: boolean,
+  int_only = true,
   min?: number,
-  max?: number
-) => allConditionals(sheet, { type: 'num', int_only, min, max }, (r) => r)
+  max?: number,
+  shared?: boolean
+) =>
+  allConditionals(sheet, shared, { type: 'num', int_only, min, max }, (r) => r)
 
 export const conditionalEntries = (sheet: Sheet, src: Member, dst: Member) => {
   const base = self.withTag({ src, dst, sheet, qt: 'cond' }).withAll('q', [])
@@ -234,6 +237,7 @@ export const conditionalEntries = (sheet: Sheet, src: Member, dst: Member) => {
 
 function allConditionals<T>(
   sheet: Sheet,
+  shared = true,
   meta: object,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
@@ -251,8 +255,9 @@ function allConditionals<T>(
     amp: null,
     cata: null,
   }
-  const base = reader.sum.withTag(baseTag)
-  if (meta && metaList.conditionals) {
+  let base = reader.sum.withTag(baseTag)
+  if (shared) base = base.with('dst', 'all')
+  if (metaList.conditionals) {
     const { conditionals } = metaList
     return base.withAll('q', [], (r, q) => {
       const tag = Object.fromEntries(
