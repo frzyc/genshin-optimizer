@@ -1,0 +1,168 @@
+{
+  "name": "Sigewinne",
+  "title": "Muhteşem Ejdervarisi",
+  "description": "Bir Melusina ve Meropide Kalesi'nin başhemşiresi. Deniz altındaki hapishanede yatan tüm mahkumlarla eşit şekilde ilgilenir.",
+  "constellationName": "Deniz Perisi",
+  "auto": {
+    "name": "Odaklı Tedavi",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 3 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Daha isabetli ve daha fazla Hasar veren bir <strong>Hedefli Atış</strong> yapar.",
+        "2": "Nişan alırken okta devamlı olarak Su gücü birikir. Tamamen yüklendikten sonra Sigewinne, belirli aralıklarla yavaşça hedefe doğru hareket eden ve <hydro>Su Hasarı</hydro> veren \"Hemşire Baloncuklar\" oluşturur. Ok bırakıldığında sağanak enerjisi kazanır ve isabet ettiği düşmana <hydro>Su Hasarı</hydro> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yaylım ok atışı yapar ve dalışa geçerek yere vurur. Yere vurduğunda Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Hedefli Atış",
+      "4": "Tam Yüklü Hedefli Atış",
+      "5": "Hemşire Baloncuk Hasarı",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Zıplayan Hidroterapi",
+    "description": {
+      "0": "Sigewinne, Meropide Kalesi'nde özel olarak üretilmiş, kan dolaşımını hızlandırıp hastaların uykuya dalmasına yardımcı olan özel baloncuk tabancası ile bir <strong>Canlandıran Baloncuk</strong> şişirir.",
+      "1": "Canlandıran Baloncuklar yakındaki düşmanlar arasında sekerek isabet ettiği düşmanlara Sigewinne'in Maks. Canına göre <hydro>Su Hasarı</hydro> verir. Baloncuk sektiğinde Sigewinne'in kendisi hariç yakındaki tüm grup üyelerinin Canı yenilenir. İyileştirme miktarı Sigewinne'in Maks. Canına göre belirlenir.",
+      "2": "Canlandıran Baloncuk 5 defa sektikten sonra kaybolur ve Sigewinne'in Maks. Canına göre Sigewinne'in Canını yeniler.",
+      "3": "Etrafta bir düşman olmadığında Canlandıran Baloncuk yakınlarda seker. Aynı anda Sigewinne tarafından oluşturulan sadece bir Canlandıran Baloncuk bulunabilir.",
+      "4": "Basılı Tutulduğunda Canlandıran Baloncuk daha da büyük hale gelir.",
+      "5": "<br/>",
+      "6": "<strong>Basılı Tut</strong>",
+      "7": "Nişan Alma Moduna girerek daha büyük ve daha müthiş bir Canlandıran Baloncuk şişirmeye başla!",
+      "8": "Beceri ne kadar uzun süre Basılı Tutulursa Canlandıran Baloncuk da o kadar büyür, en fazla iki kademe daha büyüyebilir. Her büyüme kademesiyle verilen Hasar %5 ve iyileştirme de %5 artar. Canlandıran Baloncuk her sektiğinde bir kademe küçülür, en son normal Canlandıran Baloncuk boyutuna geri döner.",
+      "9": "Güçsüz düşmanlara büyük bir Canlandıran Baloncuk isabet ettiğinde baloncuğun içine hapsolurlar ve hareket edemezler.",
+      "10": "<br/>",
+      "11": "Ayrıca Sigewinne bu Beceriyi her kullandığında yakınında 2 Kaynak Suyu Damlacığı oluşur. Sigewinne topladığı her bir Kaynak Suyu Damlacığı için Maks. Canının %10'u oranında Hayat Bağı kazanır.",
+      "12": "Sigewinne'in Hayat Bağı sona erdiğinde, kaldırılan her 2.000 Can değerindeki Hayat Bağı için 1 Element Enerjisi kazanır. Sigewinne bu şekilde en fazla 5 Element Enerjisi kazanabilir.",
+      "13": "<br/>",
+      "14": "<strong>Arkhe: Öz</strong>",
+      "15": "Canlandıran Baloncuklar, isabet ettikleri noktada belirli aralıklarla bir Çalkantılı Kılıç çıkarır ve Sigewinne'in Maks. Canına göre Öz tesirli <hydro>Su Hasarı</hydro> verir.",
+      "16": "<br/>",
+      "17": "<i>\"Nasıl ama? Böyle bir hidroterapi dolaşım sistemini harekete geçirmekle kalmaz, aynı zamanda hastaların keyfini de yerine getirir. Hepsi bu kadar da değil, dinlenmesi gereken hastaların uykuya dalmasına da yardımcı olur...\"</i>"
+    },
+    "skillParams": {
+      "0": "Canlandıran Baloncuk Hasarı",
+      "1": "Canlandıran Baloncuk İyileştirmesi",
+      "2": "Son Sekme İyileştirmesi",
+      "3": "Çalkantılı Kılıç Hasarı",
+      "4": "Çalkantılı Kılıç Aralığı",
+      "5": "BS",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Aşırı Doygun Şırınga",
+    "description": {
+      "0": "Meropide Kalesi'nde üretilen özel bir şırınga çıkararak önündeki alana saldırır ve Sigewinne'in Maks. Canına göre <hydro>Su Alan Hasarı</hydro> veren iyilik ve ilaç dolu dalgalar gönderir.",
+      "1": "Ayrıca Sigewinne beceriyi kullanmadan hemen önce belirli bir mesafede bulunan en fazla 2 Kaynak Suyu Damlacığını emer.",
+      "2": "<br/>",
+      "3": "<i>\"Aşırı ilaç almanın zehir içmekten bir farkı yoktur ve bu gerçekten çok tehlikelidir! Öte yandan hastalara aşırı ilgi ve alaka göstermeninse hiçbir tehlikesi yoktur!\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Süre",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Bol Bol İstirahat",
+    "description": {
+      "0": "Sigewinne <strong>Zıplayan Hidroterapi</strong> kullandıktan sonra 18sn boyunca kendisine \"Yarı Zorunlu Yatak İstirahati\" etkisi verir: Sigewinne %8 <hydro>Su Hasarı Bonusu</hydro> ve 10 kademe Toparlanma kazanır. Sigewinne dışında alanda olmayan yakındaki grup üyelerinin Element Becerileri Hasar verdiğinde 1 kademe Toparlanma tüketilir ve bu Element Becerisinin verdiği Hasar artar. Sigewinne'in 30.000'in üzerindeki her 1.000 Maks. Canı için Hasar 80 artar. Element Becerileri için bu şekilde en fazla 2.800 Hasar artışı kazanılabilir."
+    }
+  },
+  "passive2": {
+    "name": "Detaylı Muayene, Kapsamlı Tedavi",
+    "description": {
+      "0": "Sigewinne bir iyileştirme yaptığında bu seferki verdiği iyileştirme miktarı, tüm grup üyelerinin mevcut Hayat Bağı değerine göre artar: Her 1.000 Can değerindeki Hayat Bağı için verilen iyileştirme %3 artar. Bu şekilde sağlanabilecek iyileştirme artışı en fazla %30 olabilir."
+    }
+  },
+  "passive3": {
+    "name": "Acil Durum Dozu",
+    "description": {
+      "0": "Su altındayken aktif karakterinin Canı %50'nin altına düştüğünde karakterin 2,5sn boyunca iyileştirilir. İyileştirme miktarı karakterin Maks. Canının %50'si kadardır ve 10 saniyeliğine karakterin Tüm Element Direnci ve Fiziksel Direnci %10 azalır. Bu etki her 20 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation1": {
+    "name": "\"Ruhların En Mutlusu Endişe Nedir Bilir Mi?\"",
+    "description": {
+      "0": "<strong>Zıplayan Hidroterapi</strong> becerisiyle oluşan Canlandıran Baloncuk 3 defa daha seker ve ilk 3 sekme sırasında büyük Baloncuklar küçülmez.",
+      "1": "\"Bol Bol İstirahat\" Pasif Yeteneği güçlenir: Baloncuk her sektiğinde 1 kademe Toparlanma eklenir ve Toparlanma kademelerinin verdiği Hasar bonusu değerleri şu şekilde değişir: Sigewinne'in 30.000'in üzerindeki her 1.000 Maks. Canı için Hasar 100 artar. Element Becerileri için bu şekilde en fazla 3.500 Hasar artışı kazanılabilir. \"Bol Bol İstirahat\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation2": {
+    "name": "\"Ruhların En Merhametlisi Düşmanı Yenebilir Mi?\"",
+    "description": {
+      "0": "Sigewinne <strong>Zıplayan Hidroterapi</strong> ve <strong>Aşırı Doygun Şırınga</strong> kullandığında Maks. Canının %30'una denk miktarda bir Baloncuk Kalkanı oluşturur. Bu kalkan <hydro>Su Hasarını</hydro> %250 verimlilikle emer. Baloncuk Kalkanı, Sigewinne ilgili becerileri kullanmayı bitirene kadar sürer.",
+      "1": "Ayrıca Zıplayan Hidroterapi becerisi ile oluşan Canlandıran Baloncuk veya Aşırı Doygun Şırınga bir düşmana isabet ettikten sonra 8sn boyunca düşmanın <hydro>Su Direnci</hydro> %35 azalır."
+    }
+  },
+  "constellation3": {
+    "name": "\"Ruhların En Sağlıklısı Ateşi Düşürebilir Mi?\"",
+    "description": {
+      "0": "<strong>Zıplayan Hidroterapi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "\"Ruhların En Sevimlisi Çürümeyi Yavaşlatabilir Mi?\"",
+    "description": {
+      "0": "<strong>Aşırı Doygun Şırınga</strong> süresi 3sn uzar."
+    }
+  },
+  "constellation5": {
+    "name": "\"Ruhların En Neşelisi Acıyı Dindirebilir Mi?\"",
+    "description": {
+      "0": "<strong>Aşırı Doygun Şırınga</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "\"Ruhların En Parlağı Benim İçin Dua Edebilir Mi?\"",
+    "description": {
+      "0": "Sigewinne bir iyileştirme gerçekleştirdiğinde kendi Maks. Canına bağlı olarak <strong>Aşırı Doygun Şırınga</strong> becerisinin Kritik Oranı ve Kritik Hasarı artar. 15sn boyunca sahip olduğu her 1.000 Maks. Can başına Kritik Oranı %0,4, Kritik Hasarı %2,2 artar. Bu şekilde alınabilecek en yüksek Kritik Oranı artışı %20, Kritik Hasar artışı %110 olabilir."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Tröpfelnde Herzsaiten",
+  "description": {
+    "0": "Ein legendärer Bogen der Feen. Er rührt das Herz der Zuhörer, ob auf der Bühne oder auf dem Schlachtfeld."
+  },
+  "passiveName": "Dryas’ Nachtmusik",
+  "passiveDescription": {
+    "0": {
+      "0": "Verleiht dem Träger „Behandlung“. Erhöht die max. LP des Trägers bei 1/2/3 Stapelungen Behandlung um jeweils <cryo>12/24/40 %</cryo>. Bedingungen zum Verleihen einer Stapelung Behandlung: Beim Auslösen der Elementarfähigkeit, hält 25 s; bei Erhöhung des Werts von Eid des Lebens, hält 25 s; bei aktiver Heilung durch den Träger, hält 20 s. Kann auch dann ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet. Die Wirkungsdauer jeder Stapelung Behandlung wird unabhängig voneinander berechnet. Erhöht bei 3 Stapelungen Behandlung außerdem die KT der Spezialfähigkeit um <cryo>28 %</cryo>. Bei weniger als 3 Stapelungen Behandlung wird der Effekt nach 4 s entfernt."
+    },
+    "1": {
+      "0": "Verleiht dem Träger „Behandlung“. Erhöht die max. LP des Trägers bei 1/2/3 Stapelungen Behandlung um jeweils <cryo>15/30/50 %</cryo>. Bedingungen zum Verleihen einer Stapelung Behandlung: Beim Auslösen der Elementarfähigkeit, hält 25 s; bei Erhöhung des Werts von Eid des Lebens, hält 25 s; bei aktiver Heilung durch den Träger, hält 20 s. Kann auch dann ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet. Die Wirkungsdauer jeder Stapelung Behandlung wird unabhängig voneinander berechnet. Erhöht bei 3 Stapelungen Behandlung außerdem die KT der Spezialfähigkeit um <cryo>35 %</cryo>. Bei weniger als 3 Stapelungen Behandlung wird der Effekt nach 4 s entfernt."
+    },
+    "2": {
+      "0": "Verleiht dem Träger „Behandlung“. Erhöht die max. LP des Trägers bei 1/2/3 Stapelungen Behandlung um jeweils <cryo>18/36/60 %</cryo>. Bedingungen zum Verleihen einer Stapelung Behandlung: Beim Auslösen der Elementarfähigkeit, hält 25 s; bei Erhöhung des Werts von Eid des Lebens, hält 25 s; bei aktiver Heilung durch den Träger, hält 20 s. Kann auch dann ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet. Die Wirkungsdauer jeder Stapelung Behandlung wird unabhängig voneinander berechnet. Erhöht bei 3 Stapelungen Behandlung außerdem die KT der Spezialfähigkeit um <cryo>42 %</cryo>. Bei weniger als 3 Stapelungen Behandlung wird der Effekt nach 4 s entfernt."
+    },
+    "3": {
+      "0": "Verleiht dem Träger „Behandlung“. Erhöht die max. LP des Trägers bei 1/2/3 Stapelungen Behandlung um jeweils <cryo>21/42/70 %</cryo>. Bedingungen zum Verleihen einer Stapelung Behandlung: Beim Auslösen der Elementarfähigkeit, hält 25 s; bei Erhöhung des Werts von Eid des Lebens, hält 25 s; bei aktiver Heilung durch den Träger, hält 20 s. Kann auch dann ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet. Die Wirkungsdauer jeder Stapelung Behandlung wird unabhängig voneinander berechnet. Erhöht bei 3 Stapelungen Behandlung außerdem die KT der Spezialfähigkeit um <cryo>49 %</cryo>. Bei weniger als 3 Stapelungen Behandlung wird der Effekt nach 4 s entfernt."
+    },
+    "4": {
+      "0": "Verleiht dem Träger „Behandlung“. Erhöht die max. LP des Trägers bei 1/2/3 Stapelungen Behandlung um jeweils <cryo>24/48/80 %</cryo>. Bedingungen zum Verleihen einer Stapelung Behandlung: Beim Auslösen der Elementarfähigkeit, hält 25 s; bei Erhöhung des Werts von Eid des Lebens, hält 25 s; bei aktiver Heilung durch den Träger, hält 20 s. Kann auch dann ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet. Die Wirkungsdauer jeder Stapelung Behandlung wird unabhängig voneinander berechnet. Erhöht bei 3 Stapelungen Behandlung außerdem die KT der Spezialfähigkeit um <cryo>56 %</cryo>. Bei weniger als 3 Stapelungen Behandlung wird der Effekt nach 4 s entfernt."
+    }
+  }
+}

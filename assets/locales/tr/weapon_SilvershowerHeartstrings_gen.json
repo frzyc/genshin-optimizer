@@ -1,0 +1,24 @@
+{
+  "name": "Gönül Yayları",
+  "description": {
+    "0": "Efsanevi peri yayı. İster sahnede ister savaş alanında olsun, kolaylıkla dinleyenlerin yüreğine dokunabilir."
+  },
+  "passiveName": "Dryas Ezgisi",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter Deva etkisi kazanır. Karakter 1/2/3 Deva kademesine sahip olduğunda Maks. Canı <cryo>%12/%24/%40</cryo> artar. Karakter, şu koşullar karşılandığında 1 kademe kazanır: Element Becerisi kullandığında 25sn için 1 kademe, Hayat Bağı değeri arttığında 25sn için 1 kademe, iyileştirme yaptığında 20sn için 1 kademe. Kuşanan karakter savaş alanında olmasa da kademeler tetiklenebilir. Her kademenin süresi birbirinden bağımsızdır. Ayrıca aktif 3 kademe olduğunda Element Patlamasının Kritik Oranı <cryo>%28</cryo> artar. 3 kademenin altına düştükten 4sn sonra bu etki kaybolur."
+    },
+    "1": {
+      "0": "Kuşanan karakter Deva etkisi kazanır. Karakter 1/2/3 Deva kademesine sahip olduğunda Maks. Canı <cryo>%15/%30/%50</cryo> artar. Karakter, şu koşullar karşılandığında 1 kademe kazanır: Element Becerisi kullandığında 25sn için 1 kademe, Hayat Bağı değeri arttığında 25sn için 1 kademe, iyileştirme yaptığında 20sn için 1 kademe. Kuşanan karakter savaş alanında olmasa da kademeler tetiklenebilir. Her kademenin süresi birbirinden bağımsızdır. Ayrıca aktif 3 kademe olduğunda Element Patlamasının Kritik Oranı <cryo>%35</cryo> artar. 3 kademenin altına düştükten 4sn sonra bu etki kaybolur."
+    },
+    "2": {
+      "0": "Kuşanan karakter Deva etkisi kazanır. Karakter 1/2/3 Deva kademesine sahip olduğunda Maks. Canı <cryo>%18/%36/%60</cryo> artar. Karakter, şu koşullar karşılandığında 1 kademe kazanır: Element Becerisi kullandığında 25sn için 1 kademe, Hayat Bağı değeri arttığında 25sn için 1 kademe, iyileştirme yaptığında 20sn için 1 kademe. Kuşanan karakter savaş alanında olmasa da kademeler tetiklenebilir. Her kademenin süresi birbirinden bağımsızdır. Ayrıca aktif 3 kademe olduğunda Element Patlamasının Kritik Oranı <cryo>%42</cryo> artar. 3 kademenin altına düştükten 4sn sonra bu etki kaybolur."
+    },
+    "3": {
+      "0": "Kuşanan karakter Deva etkisi kazanır. Karakter 1/2/3 Deva kademesine sahip olduğunda Maks. Canı <cryo>%21/%42/%70</cryo> artar. Karakter, şu koşullar karşılandığında 1 kademe kazanır: Element Becerisi kullandığında 25sn için 1 kademe, Hayat Bağı değeri arttığında 25sn için 1 kademe, iyileştirme yaptığında 20sn için 1 kademe. Kuşanan karakter savaş alanında olmasa da kademeler tetiklenebilir. Her kademenin süresi birbirinden bağımsızdır. Ayrıca aktif 3 kademe olduğunda Element Patlamasının Kritik Oranı <cryo>%49</cryo> artar. 3 kademenin altına düştükten 4sn sonra bu etki kaybolur."
+    },
+    "4": {
+      "0": "Kuşanan karakter Deva etkisi kazanır. Karakter 1/2/3 Deva kademesine sahip olduğunda Maks. Canı <cryo>%24/%48/%80</cryo> artar. Karakter, şu koşullar karşılandığında 1 kademe kazanır: Element Becerisi kullandığında 25sn için 1 kademe, Hayat Bağı değeri arttığında 25sn için 1 kademe, iyileştirme yaptığında 20sn için 1 kademe. Kuşanan karakter savaş alanında olmasa da kademeler tetiklenebilir. Her kademenin süresi birbirinden bağımsızdır. Ayrıca aktif 3 kademe olduğunda Element Patlamasının Kritik Oranı <cryo>%56</cryo> artar. 3 kademenin altına düştükten 4sn sonra bu etki kaybolur."
+    }
+  }
+}

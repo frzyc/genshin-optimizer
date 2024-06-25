@@ -1,0 +1,24 @@
+{
+  "name": "Corde de pluie blanche",
+  "description": {
+    "0": "Un arc féerique des légendes. Que ce soit sur scène ou sur le champ de bataille, il peut facilement toucher le cœur des spectateurs."
+  },
+  "passiveName": "Nocturne de dryas",
+  "passiveDescription": {
+    "0": {
+      "0": "Le personnage équipé de l'arme obtient l'effet Traitement. Avec 1/2/3 cumuls de traitement, ses PV max augmentent respectivement de <cryo>12 %/24 %/40 %</cryo>. Le personnage équipé de l'arme peut obtenir un cumul de traitement des façons suivantes : utiliser une compétence élémentaire accorde un cumul de 25 s ; augmenter la valeur d'un engagement vital accorde un cumul de 25 s ; et effectuer des soins accorde un cumul de 20 s. Cet effet peut être déclenché même si le personnage fait partie de l'équipe mais n'est pas déployé, et la durée de chaque cumul de traitement est calculée indépendamment. De plus, posséder 3 cumuls de traitement augmente le taux CRIT des déchaînements élémentaires de <cryo>28 %</cryo>, cet effet prenant fin 4 s après que le nombre de cumuls tombe en dessous de 3."
+    },
+    "1": {
+      "0": "Le personnage équipé de l'arme obtient l'effet Traitement. Avec 1/2/3 cumuls de traitement, ses PV max augmentent respectivement de <cryo>15 %/30 %/50 %</cryo>. Le personnage équipé de l'arme peut obtenir un cumul de traitement des façons suivantes : utiliser une compétence élémentaire accorde un cumul de 25 s ; augmenter la valeur d'un engagement vital accorde un cumul de 25 s ; et effectuer des soins accorde un cumul de 20 s. Cet effet peut être déclenché même si le personnage fait partie de l'équipe mais n'est pas déployé, et la durée de chaque cumul de traitement est calculée indépendamment. De plus, posséder 3 cumuls de traitement augmente le taux CRIT des déchaînements élémentaires de <cryo>35 %</cryo>, cet effet prenant fin 4 s après que le nombre de cumuls tombe en dessous de 3."
+    },
+    "2": {
+      "0": "Le personnage équipé de l'arme obtient l'effet Traitement. Avec 1/2/3 cumuls de traitement, ses PV max augmentent respectivement de <cryo>18 %/36 %/60 %</cryo>. Le personnage équipé de l'arme peut obtenir un cumul de traitement des façons suivantes : utiliser une compétence élémentaire accorde un cumul de 25 s ; augmenter la valeur d'un engagement vital accorde un cumul de 25 s ; et effectuer des soins accorde un cumul de 20 s. Cet effet peut être déclenché même si le personnage fait partie de l'équipe mais n'est pas déployé, et la durée de chaque cumul de traitement est calculée indépendamment. De plus, posséder 3 cumuls de traitement augmente le taux CRIT des déchaînements élémentaires de <cryo>42 %</cryo>, cet effet prenant fin 4 s après que le nombre de cumuls tombe en dessous de 3."
+    },
+    "3": {
+      "0": "Le personnage équipé de l'arme obtient l'effet Traitement. Avec 1/2/3 cumuls de traitement, ses PV max augmentent respectivement de <cryo>21 %/42 %/70 %</cryo>. Le personnage équipé de l'arme peut obtenir un cumul de traitement des façons suivantes : utiliser une compétence élémentaire accorde un cumul de 25 s ; augmenter la valeur d'un engagement vital accorde un cumul de 25 s ; et effectuer des soins accorde un cumul de 20 s. Cet effet peut être déclenché même si le personnage fait partie de l'équipe mais n'est pas déployé, et la durée de chaque cumul de traitement est calculée indépendamment. De plus, posséder 3 cumuls de traitement augmente le taux CRIT des déchaînements élémentaires de <cryo>49 %</cryo>, cet effet prenant fin 4 s après que le nombre de cumuls tombe en dessous de 3."
+    },
+    "4": {
+      "0": "Le personnage équipé de l'arme obtient l'effet Traitement. Avec 1/2/3 cumuls de traitement, ses PV max augmentent respectivement de <cryo>24 %/48 %/80 %</cryo>. Le personnage équipé de l'arme peut obtenir un cumul de traitement des façons suivantes : utiliser une compétence élémentaire accorde un cumul de 25 s ; augmenter la valeur d'un engagement vital accorde un cumul de 25 s ; et effectuer des soins accorde un cumul de 20 s. Cet effet peut être déclenché même si le personnage fait partie de l'équipe mais n'est pas déployé, et la durée de chaque cumul de traitement est calculée indépendamment. De plus, posséder 3 cumuls de traitement augmente le taux CRIT des déchaînements élémentaires de <cryo>56 %</cryo>, cet effet prenant fin 4 s après que le nombre de cumuls tombe en dessous de 3."
+    }
+  }
+}
