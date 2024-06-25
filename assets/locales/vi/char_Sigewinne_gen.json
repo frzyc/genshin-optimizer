@@ -1,0 +1,168 @@
+{
+  "name": "Sigewinne",
+  "title": "Long Nữ Diệu Biến",
+  "description": "Y tá trưởng Melusine của Pháo Đài Meropide, quan tâm và yêu quý mọi tù nhân trong nhà tù dưới đáy biển một cách bình đẳng.",
+  "constellationName": "Cung Hải Tinh",
+  "auto": {
+    "name": "Trị Liệu Theo Mục Tiêu",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần tấn công liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "<strong>Ngắm bắn</strong> gây sát thương cao hơn và chính xác hơn.",
+        "2": "Khi ngắm bắn, mũi tên sẽ tích đầy sức mạnh nguyên tố Thủy. Sau khi hoàn thành tụ lực, mỗi cách một khoảng thời gian, Sigewinne sẽ bắn \"Bong Bóng Quan Tâm Nhỏ\" di chuyển chậm về phía mục tiêu, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>. Khi thi triển, mũi tên tích tụ sức mạnh của nước khi trúng kẻ địch sẽ gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên liên tiếp xuống mặt đất, đồng thời lao nhanh xuống đất và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Ngắm Bắn",
+      "4": "Tụ Lực Ngắm Bắn",
+      "5": "Sát Thương Bong Bóng Quan Tâm Nhỏ",
+      "6": "Sát Thương Khi Đáp",
+      "7": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Trị Liệu Nảy Nảy Nảy",
+    "description": {
+      "0": "Sử dụng súng bong bóng đặc chế của Pháo Đài Meropide để thổi ra một <strong>Bong Bóng Chữa Trị</strong> có thể kích thích tuần hoàn máu và giúp bệnh nhân ngủ ngon.",
+      "1": "Bong Bóng Chữa Trị sẽ nảy giữa những kẻ địch gần đó, khi trúng kẻ địch sẽ gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> dựa trên Giới Hạn HP của Sigewinne; Khi nảy, sẽ hồi phục HP cho tất cả nhân vật trong đội gần đó ngoài bản thân Sigewinne, lượng hồi phục căn cứ vào Giới Hạn HP của Sigewinne.",
+      "2": "Sau khi nảy 5 lần thì Bong Bóng Chữa Trị sẽ biến mất, đồng thời hồi phục HP cho Sigewinne dựa vào Giới Hạn HP của cô ấy.",
+      "3": "Khi không có kẻ địch, Bong Bóng Chữa Trị sẽ nảy ở gần đó. Cùng lúc chỉ tồn tại một Bong Bóng Chữa Trị do bản thân Sigewinne tạo ra.",
+      "4": "Khi nhấn giữ sẽ tụ lực để thi triển Bong Bóng Chữa Trị.",
+      "5": "<br/>",
+      "6": "<strong>Nhấn Giữ</strong>",
+      "7": "Tiến hành tụ lực ngắm chuẩn để thổi ra Bong Bóng Chữa Trị lớn hơn và lợi hại hơn!",
+      "8": "Bong Bóng Chữa Trị sẽ to ra theo thời gian cho đến khi gia tăng kích cỡ hai lần. Mỗi cấp sẽ khiến sát thương gây ra tăng 5%, lượng hồi phục tăng 5%; Sau khi nảy sẽ nhỏ lại một cấp, cho đến khi khôi phục thành Bong Bóng Chữa Trị bình thường.",
+      "9": "Kẻ địch yếu khi bị Bong Bóng Chữa Trị lớn va trúng sẽ bị giam cầm, không thể di chuyển.",
+      "10": "<br/>",
+      "11": "Ngoài ra, khi thi triển sẽ sản sinh 2 Nguồn Nước Trong ở gần Sigewinne. Mỗi hấp thụ một Nguồn Nước Trong sẽ cung cấp Khế Ước Sinh Mệnh tương đương với 10% Giới Hạn HP cho Sigewinne.",
+      "12": "Khế Ước Sinh Mệnh của Sigewinne khi bị xóa, mỗi xóa 2000 điểm Khế Ước Sinh Mệnh sẽ hồi phục 1 điểm Năng Lượng Nguyên Tố cho cô ấy. Tối đa hồi phục 5 điểm Năng Lượng Nguyên Tố thông qua cách thức này.",
+      "13": "<br/>",
+      "14": "<strong>Sức Mạnh Nền Tảng: Ousia</strong>",
+      "15": "Mỗi cách một khoảng thời gian, Bong Bóng Chữa Trị sẽ giáng Lưỡi Dao Nổi Sóng xuống vị trí trúng phải, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> thuộc tính Ousia dựa trên Giới Hạn HP của Sigewinne.",
+      "16": "<br/>",
+      "17": "<i>\"Thế nào, loại thủy trị liệu này không chỉ có thể kích thích hệ tuần hoàn, mà còn có thể làm cho bệnh nhân phấn chấn hơn đó. Với lại, cũng sẽ khiến cho bệnh nhân ngủ ngon hơn...\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Bong Bóng Chữa Trị",
+      "1": "Lượng Trị Liệu Bong Bóng Chữa Trị",
+      "2": "Lượng Trị Liệu Kết Thúc Nảy",
+      "3": "Sát Thương Lưỡi Dao Nổi Sóng",
+      "4": "Giãn Cách Lưỡi Dao Nổi Sóng",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ống Tiêm Siêu Bão Hòa",
+    "description": {
+      "0": "Lấy ra ống tiêm đặc chế của Pháo Đài Meropide, để làn sóng tràn ngập tấm lòng và dược liệu xung kích vào khu vực phía trước, liên tục gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> dựa trên Giới Hạn HP của Sigewinne.",
+      "1": "Ngoài ra, khi thi triển, Sigewinne sẽ hấp thụ tối đa 2 Nguồn Nước Trong trong một phạm vi nhất định ở xung quanh.",
+      "2": "<br/>",
+      "3": "<i>\"Này, dùng thuốc quá liều sẽ không khác gì thuốc độc cả, rất nguy hiểm đó! Nhưng sự quan tâm và chăm sóc mà bệnh nhân cần thì bao nhiêu cũng không đủ đâu.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Thời Gian Kéo Dài",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Nghỉ Ngơi Hợp Lý",
+    "description": {
+      "0": "Khi thi triển <strong>Trị Liệu Nảy Nảy Nảy</strong>, Sigewinne sẽ áp dụng hiệu quả \"Tịnh Dưỡng Bán Cưỡng Chế\" cho bản thân trong 18s: Trong thời gian duy trì, Sigewinne nhận 8% <hydro>Buff Sát Thương Nguyên Tố Thủy</hydro> và 10 tầng Tịnh Dưỡng. Khi Kỹ Năng Nguyên Tố của nhân vật dự bị trong đội gần đó ngoài Sigewinne gây sát thương, sẽ tiêu hao 1 tầng Tịnh Dưỡng để gia tăng sát thương cho lần Kỹ Năng Nguyên Tố đó: Với mỗi 1000 điểm Giới Hạn HP vượt quá mốc 30000 Giới Hạn HP của Sigewinne sẽ gia tăng 80 điểm sát thương, thông qua cách thức này tối đa tăng 2800 điểm sát thương cho lần Kỹ Năng Nguyên Tố đó gây ra."
+    }
+  },
+  "passive2": {
+    "name": "Điều Trị Triệt Để",
+    "description": {
+      "0": "Khi Sigewinne trị liệu, sẽ căn cứ vào tổng Khế Ước Sinh Mệnh hiện tại của tất cả nhân vật trong đội để tăng lượng trị liệu lần đó: Mỗi 1000 điểm Khế Ước Sinh Mệnh sẽ tăng 3% lượng trị liệu, tối đa tăng 30% lượng trị liệu bằng cách này."
+    }
+  },
+  "passive3": {
+    "name": "Liều Lượng Khẩn Cấp",
+    "description": {
+      "0": "Khi ở dưới nước, lúc HP nhân vật trong trận của bản thân giảm đến dưới 50% thì sẽ hồi phục HP cho họ trong 2.5s. Tổng lượng hồi phục sẽ tương đương 50% Giới Hạn HP của họ, đồng thời khiến nhân vật đó giảm 10% kháng vật lý và kháng tất cả nguyên tố trong 10s. Hiệu quả này mỗi 20s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation1": {
+    "name": "\"Tinh Linh Vui Vẻ Nhất, Liệu Có Hiểu Được Lo Âu?\"",
+    "description": {
+      "0": "Bong Bóng Chữa Trị của <strong>Trị Liệu Nảy Nảy Nảy</strong> có thể nảy thêm 3 lần; 3 lần nảy đầu tiên sẽ không khiến Bong Bóng Chữa Trị lớn bị nhỏ đi.",
+      "1": "Ngoài ra sẽ tăng hiệu quả của thiên phú \"Nghỉ Ngơi Hợp Lý\": Khi Bong Bóng Chữa Trị nảy, sẽ cung cấp 1 tầng cộng dồn Tịnh Dưỡng cho Sigewinne, đồng thời thay đổi sát thương tăng thêm sản sinh từ Tịnh Dưỡng thành: Với mỗi 1000 điểm Giới Hạn HP vượt quá mốc 30000 Giới Hạn HP của Sigewinne sẽ gia tăng 100 điểm sát thương, thông qua cách thức này tối đa tăng 3500 điểm sát thương. Hiệu quả này cần mở khóa thiên phú \"Nghỉ Ngơi Hợp Lý\"."
+    }
+  },
+  "constellation2": {
+    "name": "\"Tinh Linh Nhân Từ Nhất, Liệu Có Hóa Giải Thù Địch?\"",
+    "description": {
+      "0": "Khi thi triển <strong>Trị Liệu Nảy Nảy Nảy</strong> và <strong>Ống Tiêm Siêu Bão Hòa</strong>, sẽ sản sinh một Khiên Bong Bóng tương đương với 30% Giới Hạn HP, có 250% hiệu quả hấp thụ với <hydro>Sát Thương Nguyên Tố Thủy</hydro>, duy trì đến khi hoàn thành thi triển.",
+      "1": "Ngoài ra, Bong Bóng Chữa Trị của Trị Liệu Nảy Nảy Nảy hoặc Ống Tiêm Siêu Bão Hòa sau khi trúng kẻ địch, <hydro>Kháng Nguyên Tố Thủy</hydro> của kẻ địch đó giảm 35% trong 8s."
+    }
+  },
+  "constellation3": {
+    "name": "\"Tinh Linh Khỏe Mạnh Nhất, Liệu Có Chữa Khỏi Bệnh Tật?\"",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Trị Liệu Nảy Nảy Nảy</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Tinh Linh Xinh Đẹp Nhất, Liệu Có Miễn Dịch Hao Mòn?\"",
+    "description": {
+      "0": "Thời gian duy trì của <strong>Ống Tiêm Siêu Bão Hòa</strong> kéo dài thêm 3s."
+    }
+  },
+  "constellation5": {
+    "name": "\"Tinh Linh Hạnh Phúc Nhất, Liệu Có Xóa Bỏ Giày Vò?\"",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Ống Tiêm Siêu Bão Hòa</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Tinh Linh Lung Linh Nhất, Liệu Có Cầu Nguyện Cho Tôi?\"",
+    "description": {
+      "0": "Khi Sigewinne tiến hành trị liệu, sẽ gia tăng Tỷ Lệ Bạo Kích và Sát Thương Bạo Kích của <strong>Ống Tiêm Siêu Bão Hòa</strong> dựa trên Giới Hạn HP của bản thân: Mỗi 1000 điểm Giới Hạn HP sẽ tăng 0.4% Tỷ Lệ Bạo Kích và 2.2% Sát Thương Bạo Kích, duy trì 15s. Tối đa tăng 20% Tỷ Lệ Bạo Kích và 110% Sát Thương Bạo Kích thông qua cách thức này."
+    }
+  }
+}

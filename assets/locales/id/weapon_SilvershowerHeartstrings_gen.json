@@ -1,0 +1,24 @@
+{
+  "name": "Silvershower Heartstrings",
+  "description": {
+    "0": "Konon katanya merupakan busur peri. Bisa menyentuh senar hati pendengarnya dengan mudah, baik di atas panggung maupun di medan pertempuran."
+  },
+  "passiveName": "Dryas's Nocturne",
+  "passiveDescription": {
+    "0": {
+      "0": "Karakter yang mengenakan bisa mendapatkan efek Remedy. Saat memiliki 1/2/3 lapis Remedy, Max HP meningkat <cryo>12%/24%/40%</cryo>. Dalam kondisi berikut, Karakter yang mengenakan akan mendapatkan 1 lapis Remedy untuk masing-masing situasi: Saat melancarkan Elemental Skill, berlangsung 25 detik; Saat nilai Bond of Life bertambah, berlangsung 25 detik; Saat melakukan pemulihan HP, berlangsung 20 detik; Tetap akan bisa terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran. Durasi setiap lapis Remedy dihitung terpisah. Selain itu, saat memiliki 3 lapis status Remedy, CRIT Rate Elemental Burst meningkat <cryo>28%</cryo>. Efek ini akan dihapus 4 detik setelah Remedy kurang dari 3 lapis."
+    },
+    "1": {
+      "0": "Karakter yang mengenakan bisa mendapatkan efek Remedy. Saat memiliki 1/2/3 lapis Remedy, Max HP meningkat <cryo>15%/30%/50%</cryo>. Dalam kondisi berikut, Karakter yang mengenakan akan mendapatkan 1 lapis Remedy untuk masing-masing situasi: Saat melancarkan Elemental Skill, berlangsung 25 detik; Saat nilai Bond of Life bertambah, berlangsung 25 detik; Saat melakukan pemulihan HP, berlangsung 20 detik; Tetap akan bisa terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran. Durasi setiap lapis Remedy dihitung terpisah. Selain itu, saat memiliki 3 lapis status Remedy, CRIT Rate Elemental Burst meningkat <cryo>35%</cryo>. Efek ini akan dihapus 4 detik setelah Remedy kurang dari 3 lapis."
+    },
+    "2": {
+      "0": "Karakter yang mengenakan bisa mendapatkan efek Remedy. Saat memiliki 1/2/3 lapis Remedy, Max HP meningkat <cryo>18%/36%/60%</cryo>. Dalam kondisi berikut, Karakter yang mengenakan akan mendapatkan 1 lapis Remedy untuk masing-masing situasi: Saat melancarkan Elemental Skill, berlangsung 25 detik; Saat nilai Bond of Life bertambah, berlangsung 25 detik; Saat melakukan pemulihan HP, berlangsung 20 detik; Tetap akan bisa terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran. Durasi setiap lapis Remedy dihitung terpisah. Selain itu, saat memiliki 3 lapis status Remedy, CRIT Rate Elemental Burst meningkat <cryo>42%</cryo>. Efek ini akan dihapus 4 detik setelah Remedy kurang dari 3 lapis."
+    },
+    "3": {
+      "0": "Karakter yang mengenakan bisa mendapatkan efek Remedy. Saat memiliki 1/2/3 lapis Remedy, Max HP meningkat <cryo>21%/42%/70%</cryo>. Dalam kondisi berikut, Karakter yang mengenakan akan mendapatkan 1 lapis Remedy untuk masing-masing situasi: Saat melancarkan Elemental Skill, berlangsung 25 detik; Saat nilai Bond of Life bertambah, berlangsung 25 detik; Saat melakukan pemulihan HP, berlangsung 20 detik; Tetap akan bisa terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran. Durasi setiap lapis Remedy dihitung terpisah. Selain itu, saat memiliki 3 lapis status Remedy, CRIT Rate Elemental Burst meningkat <cryo>49%</cryo>. Efek ini akan dihapus 4 detik setelah Remedy kurang dari 3 lapis."
+    },
+    "4": {
+      "0": "Karakter yang mengenakan bisa mendapatkan efek Remedy. Saat memiliki 1/2/3 lapis Remedy, Max HP meningkat <cryo>24%/48%/80%</cryo>. Dalam kondisi berikut, Karakter yang mengenakan akan mendapatkan 1 lapis Remedy untuk masing-masing situasi: Saat melancarkan Elemental Skill, berlangsung 25 detik; Saat nilai Bond of Life bertambah, berlangsung 25 detik; Saat melakukan pemulihan HP, berlangsung 20 detik; Tetap akan bisa terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran. Durasi setiap lapis Remedy dihitung terpisah. Selain itu, saat memiliki 3 lapis status Remedy, CRIT Rate Elemental Burst meningkat <cryo>56%</cryo>. Efek ini akan dihapus 4 detik setelah Remedy kurang dari 3 lapis."
+    }
+  }
+}
