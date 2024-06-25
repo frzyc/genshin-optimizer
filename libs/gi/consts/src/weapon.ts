@@ -162,6 +162,7 @@ export const allWeaponBowKeys = [
   'ScionOfTheBlazingSun',
   'SeasonedHuntersBow',
   'SharpshootersOath',
+  'SilvershowerHeartstrings',
   'SkywardHarp',
   'Slingshot',
   'SongOfStillness',

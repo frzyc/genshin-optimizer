@@ -70,6 +70,7 @@ import Sayu from './Sayu'
 import Sethos from './Sethos'
 import Shenhe from './Shenhe'
 import ShikanoinHeizou from './ShikanoinHeizou'
+import Sigewinne from './Sigewinne'
 import Somnia from './Somnia'
 import Sucrose from './Sucrose'
 import Tartaglia from './Tartaglia'
@@ -165,6 +166,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Sethos,
   Shenhe,
   ShikanoinHeizou,
+  Sigewinne,
   Somnia,
   Sucrose,
   Tartaglia,

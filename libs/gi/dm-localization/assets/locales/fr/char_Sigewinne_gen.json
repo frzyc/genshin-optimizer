@@ -1,0 +1,168 @@
+{
+  "name": "Sigewinne",
+  "title": "Merveilleuse fille-dragonne",
+  "description": "L'infirmière en chef mélusine de la Forteresse de Méropide. Elle s'occupe de tous les prisonniers de manière équitable.",
+  "constellationName": "Nereides",
+  "auto": {
+    "name": "Traitement ciblé",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 attaques consécutives."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la flèche se charge en élément Hydro. Une fois la charge terminée, Sigewinne tire à intervalles réguliers des mini-délicabulles qui se déplacent lentement vers la cible, infligeant des <hydro>DGT Hydro</hydro>. En relâchant, une flèche imprégnée de la puissance des torrents inflige des <hydro>DGT Hydro</hydro> à l'ennemi touché."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT tir visé",
+      "4": "DGT tir visé (pleine charge)",
+      "5": "DGT mini-délicabulle",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hydrothérapie rebondissante",
+    "description": {
+      "0": "Sigewinne utilise un pistolet à bulles spécialement conçu dans la Forteresse de Méropide pour souffler des <strong>bulles d'eau curative</strong> pouvant stimuler la circulation sanguine et aider les patients à dormir paisiblement.",
+      "1": "Les bulles d'eau curative rebondissent entre les ennemis proches, infligeant des <hydro>DGT Hydro</hydro> selon les PV max de Sigewinne aux ennemis touchés. En rebondissant, les bulles d'eau curative restaurent les PV de tous les personnages de l'équipe à proximité (hormis Sigewinne) selon les PV max de Sigewinne.",
+      "2": "Une bulle d'eau curative disparaît et restaure les PV de Sigewinne selon ses PV max après avoir rebondi 5 fois.",
+      "3": "Si aucun ennemi n'est à proximité, les bulles d'eau curative rebondissent aux alentours. Il ne peut exister qu'une seule bulle d'eau curative créée par Sigewinne à la fois.",
+      "4": "En cas d'appui long, les bulles d'eau curative peuvent être chargées.",
+      "5": "<br/>",
+      "6": "<strong>Appui long</strong>",
+      "7": "Effectue une charge en mode visée pour souffler une bulle d'eau curative encore plus grosse et plus puissante !",
+      "8": "La bulle d'eau curative grandit à mesure que l'appui long est maintenu, jusqu'à grossir deux fois, chaque fois augmentant les DGT infligés de 5 % et les soins prodigués de 5 %. Lorsqu'une grande bulle d'eau curative rebondit, elle se rapetisse d'un cran, jusqu'à ce qu'elle redevienne une bulle d'eau curative normale.",
+      "9": "Les ennemis les plus faibles qui se font toucher par des grandes bulles d'eau curative sont immobilisés et incapables de bouger.",
+      "10": "<br/>",
+      "11": "De plus, utiliser cette capacité permet à Sigewinne de générer 2 gouttes d'eau de source à proximité. Chaque goutte d'eau de source que Sigewinne absorbe lui accorde un engagement vital d'une valeur équivalant à 10 % de ses PV max.",
+      "12": "Lorsque l'engagement vital de Sigewinne est annulé, chaque tranche de 2 000 pts d'engagement vital restaure son énergie élémentaire de 1 pt. Sigewinne peut récupérer un maximum de 5 pts d'énergie élémentaire de cette manière.",
+      "13": "<br/>",
+      "14": "<strong>Arkhe : Ousia</strong>",
+      "15": "Régulièrement, une lame fluide descend à l'emplacement touché par une bulle d'eau curative pour infliger des <hydro>DGT Hydro</hydro> chargés d'énergie ousia selon les PV max de Sigewinne.",
+      "16": "<br/>",
+      "17": "<i>« Alors ? Non seulement ce type d'hydrothérapie peut stimuler le système circulatoire, mais ça peut aussi remonter le moral des patients. Oh, et ce n'est pas tout : ça aide même les patients qui devraient se reposer à faire un bon dodo... »</i>"
+    },
+    "skillParams": {
+      "0": "DGT bulle d'eau curative",
+      "1": "Soins de bulle d'eau curative",
+      "2": "Soins de fin de rebond",
+      "3": "DGT lame fluide",
+      "4": "Intervalle de lame fluide",
+      "5": "Temps de recharge",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Injection sur-saturée",
+    "description": {
+      "0": "Sigewinne sort une seringue spécialement conçue dans la Forteresse de Méropide pour attaquer la zone en face d'elle avec des vagues de gentillesse et de médicaments, infligeant des <hydro>DGT Hydro de zone</hydro> de façon continue selon ses PV max.",
+      "1": "De plus, utiliser cette capacité permet à Sigewinne d'absorber jusqu'à 2 gouttes d'eau de source à portée.",
+      "2": "<br/>",
+      "3": "<i>« Hé, prendre trop de médicaments, c'est comme prendre du poison : c'est vraiment dangereux ! Mais les patients ont aussi besoin de soins et d'attention, et avec ça au moins, pas de risque d'overdose ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Durée",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Repos adéquat requis",
+    "description": {
+      "0": "Utiliser <strong>Hydrothérapie rebondissante</strong> accorde à Sigewinne l'effet Repos semi-forcé pendant 18 s : accorde un <hydro>bonus de DGT Hydro</hydro> de 8 % et 10 cumuls d'analepsie. Lorsqu'une compétence élémentaire d'un personnage faisant partie d'une équipe à proximité mais n'étant pas déployé (hormis Sigewinne) inflige des DGT, un cumul d'analepsie est consommé pour augmenter cette instance de DGT : chaque tranche de 1 000 PV max au-dessus de 30 000 que Sigewinne possède augmente les DGT de 80 pts, une instance de DGT pouvant être augmentée d'un maximum de 2 800 pts de cette manière."
+    }
+  },
+  "passive2": {
+    "name": "Traitement minutieux prescrit",
+    "description": {
+      "0": "Lorsque Sigewinne effectue des soins, la quantité de soins augmente selon le total des engagements vitaux actuels de tous les personnages de l'équipe : chaque tranche de 1 000 pts d'engagement vital augmente les soins de 3 %. Les soins peuvent être augmentés d'un maximum de 30 % de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Dose d'urgence",
+    "description": {
+      "0": "Sous l'eau, si les PV de votre personnage déployé tombent en dessous de 50 %, il récupère des PV pour une valeur totale équivalant à 50 % de ses PV max en 2,5 s, mais ses RÉS élémentaires et physique diminuent de 10 % pendant 10 s. Cet effet peut se déclencher une fois toutes les 20 s."
+    }
+  },
+  "constellation1": {
+    "name": "« Le plus heureux des esprits peut-il comprendre l'anxiété ? »",
+    "description": {
+      "0": "Les bulles d'eau curative d'<strong>Hydrothérapie rebondissante</strong> peuvent rebondir 3 fois supplémentaires et les 3 premiers rebonds ne font pas rapetisser les grandes bulles d'eau curative.",
+      "1": "De plus, l'aptitude passive « Repos adéquat requis » est améliorée : chaque rebond des bulles d'eau curative accorde 1 cumul d'analepsie à Sigewinne et le bonus de DGT généré par l'analepsie est modifié, chaque tranche de 1 000 PV max au-dessus de 30 000 que Sigewinne possède augmentant maintenant les DGT de 100 pts. Les DGT peuvent être augmentés d'un maximum de 3 500 pts de cette manière. L'aptitude passive « Repos adéquat requis » doit être déjà débloquée."
+    }
+  },
+  "constellation2": {
+    "name": "« Le plus miséricordieux des esprits peut-il vaincre les ennemis ? »",
+    "description": {
+      "0": "Pendant la durée d'<strong>Hydrothérapie rebondissante</strong> et d'<strong>Injection sur-saturée</strong>, Sigewinne génère un bouclier bulleux pouvant absorber des DGT équivalant à 30 % de ses PV max et efficace à 250 % contre les <hydro>DGT Hydro</hydro>.",
+      "1": "De plus, lorsqu'une bulle d'eau curative d'Hydrothérapie rebondissante ou Injection sur-saturée a touché un ennemi, la <hydro>RÉS Hydro</hydro> de ce dernier diminue de 35 % pendant 8 s."
+    }
+  },
+  "constellation3": {
+    "name": "« Le plus sain des esprits peut-il guérir la fièvre ? »",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Hydrothérapie rebondissante</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "« Le plus beau des esprits peut-il contrer la décrépitude ? »",
+    "description": {
+      "0": "La durée d'<strong>Injection sur-saturée</strong> augmente de 3 s."
+    }
+  },
+  "constellation5": {
+    "name": "« Le plus joyeux des esprits peut-il soulager l'agonie ? »",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Injection sur-saturée</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "« Le plus radieux des esprits peut-il prier pour moi ? »",
+    "description": {
+      "0": "Lorsque Sigewinne effectue des soins, elle augmente le taux CRIT et les DGT CRIT d'<strong>Injection sur-saturée</strong> selon ses PV max : chaque tranche de 1 000 PV max qu'elle possède augmente le taux CRIT de 0,4 % et les DGT CRIT de 2,2 %, le tout pendant 15 s. Le taux CRIT peut être augmenté d'un maximum de 20 % et les DGT CRIT d'un maximum de 110 % de cette manière."
+    }
+  }
+}

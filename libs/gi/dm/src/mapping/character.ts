@@ -146,6 +146,7 @@ export const characterIdMap: Record<
   10000092: 'Gaming',
   10000093: 'Xianyun',
   10000094: 'Chiori',
+  10000095: 'Sigewinne',
   10000096: 'Arlecchino',
   10000097: 'Sethos',
   10000098: 'Clorinde',

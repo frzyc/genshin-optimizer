@@ -1,0 +1,24 @@
+{
+  "name": "Silvershower Heartstrings",
+  "description": {
+    "0": "Legendary bow of the fairies. Whether on the stage or the battlefield, it can easily touch the hearts of the listener."
+  },
+  "passiveName": "Dryas's Nocturne",
+  "passiveDescription": {
+    "0": {
+      "0": "The equipping character can gain the Remedy effect. When they possess 1/2/3 Remedy stacks, Max HP will increase by <cryo>12%/24%/40%</cryo>. 1 stack may be gained when the following conditions are met: 1 stack for 25s when using an Elemental Skill; 1 stack for 25s when the value of a Bond of Life value increases; 1 stack for 20s for performing healing. Stacks can still be triggered when the equipping character is not on the field. Each stack's duration is counted independently. In addition, when 3 stacks are active, Elemental Burst CRIT Rate will be increased by <cryo>28%</cryo>. This effect will be canceled 4s after falling under 3 stacks."
+    },
+    "1": {
+      "0": "The equipping character can gain the Remedy effect. When they possess 1/2/3 Remedy stacks, Max HP will increase by <cryo>15%/30%/50%</cryo>. 1 stack may be gained when the following conditions are met: 1 stack for 25s when using an Elemental Skill; 1 stack for 25s when the value of a Bond of Life value increases; 1 stack for 20s for performing healing. Stacks can still be triggered when the equipping character is not on the field. Each stack's duration is counted independently. In addition, when 3 stacks are active, Elemental Burst CRIT Rate will be increased by <cryo>35%</cryo>. This effect will be canceled 4s after falling under 3 stacks."
+    },
+    "2": {
+      "0": "The equipping character can gain the Remedy effect. When they possess 1/2/3 Remedy stacks, Max HP will increase by <cryo>18%/36%/60%</cryo>. 1 stack may be gained when the following conditions are met: 1 stack for 25s when using an Elemental Skill; 1 stack for 25s when the value of a Bond of Life value increases; 1 stack for 20s for performing healing. Stacks can still be triggered when the equipping character is not on the field. Each stack's duration is counted independently. In addition, when 3 stacks are active, Elemental Burst CRIT Rate will be increased by <cryo>42%</cryo>. This effect will be canceled 4s after falling under 3 stacks."
+    },
+    "3": {
+      "0": "The equipping character can gain the Remedy effect. When they possess 1/2/3 Remedy stacks, Max HP will increase by <cryo>21%/42%/70%</cryo>. 1 stack may be gained when the following conditions are met: 1 stack for 25s when using an Elemental Skill; 1 stack for 25s when the value of a Bond of Life value increases; 1 stack for 20s for performing healing. Stacks can still be triggered when the equipping character is not on the field. Each stack's duration is counted independently. In addition, when 3 stacks are active, Elemental Burst CRIT Rate will be increased by <cryo>49%</cryo>. This effect will be canceled 4s after falling under 3 stacks."
+    },
+    "4": {
+      "0": "The equipping character can gain the Remedy effect. When they possess 1/2/3 Remedy stacks, Max HP will increase by <cryo>24%/48%/80%</cryo>. 1 stack may be gained when the following conditions are met: 1 stack for 25s when using an Elemental Skill; 1 stack for 25s when the value of a Bond of Life value increases; 1 stack for 20s for performing healing. Stacks can still be triggered when the equipping character is not on the field. Each stack's duration is counted independently. In addition, when 3 stacks are active, Elemental Burst CRIT Rate will be increased by <cryo>56%</cryo>. This effect will be canceled 4s after falling under 3 stacks."
+    }
+  }
+}
