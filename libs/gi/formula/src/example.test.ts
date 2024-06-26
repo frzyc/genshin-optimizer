@@ -20,7 +20,7 @@ import {
 } from './data/util'
 import rawData from './example.test.json'
 import { genshinCalculatorWithEntries } from './index'
-import { conditionals, type IConditionalData } from './meta'
+import { conditionals } from './meta'
 import {
   artifactsData,
   charData,
@@ -207,42 +207,19 @@ describe('example', () => {
     const result = calc.compute(member0.dmg.critMulti.burgeon)
     const conds = result.meta.conds
 
-    expect(conds.length).toEqual(2)
-    // Read current value
-    expect(calc.compute(member0.withTag(conds[0]).sum).val).toEqual(1) // c2Bloom
-    // It is duplicated because this conditional affects two distinct
-    // stats, `critRate_` and `critDMG_`. Deduplicating this requires
-    // tag equality, which may not be worth it.
-    expect(conds[1]).toEqual(conds[0])
+    // conds[dst][src][sheet][name] == cond value
+    expect(conds).toEqual({ 0: { all: { Nahida: { c2Bloom: 1 } } } })
   })
   test('list conditionals affecting a member', () => {
     // all conditionals affecting all formulas
-    const formulas = calc.listFormulas(member0.listing.formulas)
-    const conds = formulas.flatMap((f) => calc.compute(f).meta.conds)
+    const conds = calc.listCondFormulas(member0.listing.formulas)
 
-    // deduplicate list
-    const uniqueConds: Record<string, Tag> = {}
-    for (const cond of conds) {
-      const { src, dst, sheet, q } = cond
-      uniqueConds[`${dst}<-${src}:${sheet}:${q}`] = cond
-    }
-
-    const keys = Object.keys(uniqueConds)
-    // This is for testing purpose only. Normally one simply uses `Object.values(uniqueConds)`
-    expect(keys).toContain('0<-all:TulaytullahsRemembrance:timePassive')
-    expect(keys).toContain('0<-all:TulaytullahsRemembrance:hitPassive')
-    expect(keys).toContain('0<-all:Nahida:c2QSA')
-    expect(keys).toContain('0<-all:Nahida:partyInBurst')
-    expect(keys).toContain('0<-all:KeyOfKhajNisut:afterSkillStacks')
-    expect(keys).toContain('0<-all:Nilou:a1AfterHit')
+    // Read current value: all -s> member0 Nilou:a1AfterHit
+    expect(conds['0']?.['all']?.['Nilou']?.['a1AfterHit']).toEqual(0)
 
     // Grab metadata from an entry
-    const tag = uniqueConds['0<-all:Nilou:a1AfterHit']
-    const meta: IConditionalData = (conditionals as any)[tag.sheet!][tag.q!]
+    const meta = conditionals.Nilou.a1AfterHit
     expect(meta).toEqual({ sheet: 'Nilou', name: 'a1AfterHit', type: 'bool' })
-
-    // Read current value
-    expect(calc.compute(member0.withTag(tag).sum).val).toEqual(0)
   })
   test('create optimization calculation', () => {
     // Step 1: Pick formula(s); anything that `calc.compute` can handle will work
