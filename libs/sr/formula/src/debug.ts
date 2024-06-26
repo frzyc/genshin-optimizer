@@ -41,7 +41,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
       ].flatMap((x) => (x[opSym] != 'read' ? x.deps : [x])),
     }
     if (n.op === 'read') {
-      result.formula = `[${valStr(val)}] match ${tagStr(
+      result.formula = `[${valStr(val)}] gather ${tagStr(
         Object.fromEntries(Object.entries(tag!).filter(([_, v]) => v))
       )} for read ${nodeString(n)}`
       result.deps = (x as CalcResult<number | string, DebugMeta>[]).map(
