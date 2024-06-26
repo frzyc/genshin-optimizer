@@ -1,3 +1,4 @@
+'use client'
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,

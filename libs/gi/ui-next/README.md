@@ -1,3 +1,6 @@
+> [!WARNING]
+> This lib is deprecated. It is only being kept for reference and will likely be removed in the future
+
 # gi-ui-next
 
 This library was generated with [Nx](https://nx.dev).

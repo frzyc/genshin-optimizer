@@ -31,6 +31,7 @@ import SacrificialBow from './SacrificialBow'
 import ScionOfTheBlazingSun from './ScionOfTheBlazingSun'
 import SeasonedHuntersBow from './SeasonedHuntersBow'
 import SharpshootersOath from './SharpshootersOath'
+import SilvershowerHeartstrings from './SilvershowerHeartstrings'
 import SkywardHarp from './SkywardHarp'
 import Slingshot from './Slingshot'
 import SongOfStillness from './SongOfStillness'
@@ -58,6 +59,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   MitternachtsWaltz,
   MouunsMoon,
   PolarStar,
+  SilvershowerHeartstrings,
   Predator,
   PrototypeCrescent,
   RangeGauge,

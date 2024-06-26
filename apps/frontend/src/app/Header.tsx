@@ -21,10 +21,6 @@ import {
   Chip,
   Drawer,
   IconButton,
-  List,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
   Skeleton,
   Tab,
   Tabs,
@@ -38,6 +34,7 @@ import type { ReactElement, ReactNode } from 'react'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
+import go_icon from './go_icon.png'
 import silly_icon from './silly_icon.png'
 type ITab = {
   i18Key: string
@@ -108,9 +105,15 @@ const setting: ITab = {
 
 function DBChip() {
   const { name } = useDBMeta()
-  return <Chip color="success" label={name} />
+  return <Chip label={name} />
 }
-
+function Tally({ children }: { children: ReactNode }) {
+  return (
+    <Typography sx={{ opacity: 0.7, lineHeight: 1 }} variant="caption">
+      {children}
+    </Typography>
+  )
+}
 function ArtifactChip() {
   const database = useDatabase()
   const [dirty, setDirty] = useForceUpdate()
@@ -122,7 +125,7 @@ function ArtifactChip() {
     () => dirty && database.arts.keys.length,
     [dirty, database]
   )
-  return <Chip label={<strong>{total}</strong>} size="small" />
+  return <Tally>{total}</Tally>
 }
 function CharacterChip() {
   const database = useDatabase()
@@ -135,7 +138,7 @@ function CharacterChip() {
     () => dirty && database.chars.keys.length,
     [dirty, database]
   )
-  return <Chip label={<strong>{total}</strong>} size="small" />
+  return <Tally>{total}</Tally>
 }
 function TeamChip() {
   const database = useDatabase()
@@ -148,7 +151,7 @@ function TeamChip() {
     () => dirty && database.teams.keys.length,
     [dirty, database]
   )
-  return <Chip label={<strong>{total}</strong>} size="small" />
+  return <Tally>{total}</Tally>
 }
 function WeaponChip() {
   const database = useDatabase()
@@ -161,7 +164,7 @@ function WeaponChip() {
     () => dirty && database.weapons.keys.length,
     [database, dirty]
   )
-  return <Chip label={<strong>{total}</strong>} size="small" />
+  return <Tally>{total}</Tally>
 }
 
 export default function Header({ anchor }: { anchor: string }) {
@@ -201,13 +204,13 @@ function HeaderContent({ anchor }: { anchor: string }) {
     <Box>
       <AppBar
         position="static"
-        sx={{ bgcolor: '#343a40' }}
+        sx={{ bgcolor: 'neutral900.main' }}
         elevation={0}
         id={anchor}
       >
         <Tabs
           value={currentTab}
-          sx={{
+          sx={(theme) => ({
             '& .MuiTab-root': {
               p: 1,
               minWidth: 'auto',
@@ -217,37 +220,34 @@ function HeaderContent({ anchor }: { anchor: string }) {
               transition: 'background-color 0.5s ease',
               backgroundColor: 'rgba(255,255,255,0.1)',
             },
-          }}
+            '& .Mui-selected': {
+              backgroundImage: `linear-gradient(to top, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
+              color: `${theme.palette.neutral100.main} !important`,
+            },
+          })}
         >
           <Tab
             value=""
             component={RouterLink}
             to="/"
             label={
-              silly ? (
-                <Box display="flex" alignItems="center">
-                  <Avatar src={silly_icon} />
-                  <Typography variant="h6" sx={{ px: 1 }}>
-                    {t('sillyPageTitle')}
-                  </Typography>
-                  {shouldShowDevComponents ? (
-                    <Typography variant="body1" sx={{ px: 1 }}>
-                      (Dev Mode)
-                    </Typography>
-                  ) : undefined}
-                </Box>
-              ) : (
-                <Box display="flex" alignItems="center">
-                  <Typography variant="h6" sx={{ px: 1 }}>
-                    {t('pageTitle')}
-                  </Typography>
-                  {shouldShowDevComponents ? (
-                    <Typography variant="body1" sx={{ px: 1 }}>
-                      (Dev Mode)
-                    </Typography>
-                  ) : undefined}
-                </Box>
-              )
+              <Box display="flex" alignItems="center">
+                <Avatar
+                  src={silly ? silly_icon : go_icon}
+                  variant="rounded"
+                  sx={(theme) => ({
+                    height: '24px',
+                    width: '24px',
+                    boxShadow: `0 0 10px 1px ${theme.palette.brandGO500.main}`,
+                  })}
+                />
+                <Typography variant="h6" sx={{ px: 1 }}>
+                  {t(silly ? 'sillyPageTitle' : 'pageTitle')}
+                </Typography>
+                {shouldShowDevComponents && (
+                  <Typography variant="body1">(Dev Mode)</Typography>
+                )}
+              </Box>
             }
           />
           {maincontent.map(({ i18Key, value, to, icon, textSuffix }) => {
@@ -268,8 +268,8 @@ function HeaderContent({ anchor }: { anchor: string }) {
                 iconPosition="start"
                 label={
                   isXL || textSuffix ? (
-                    <Box display="flex" gap={1} alignItems="center">
-                      {isXL && <span>{t(i18Key)}</span>}
+                    <Box display="flex" gap={0.5} alignItems="center">
+                      {isXL && <Typography>{t(i18Key)}</Typography>}
                       {textSuffix}
                     </Box>
                   ) : undefined
@@ -310,11 +310,13 @@ function MobileHeader({
 
   const { t } = useTranslation('ui')
   const { silly } = useContext(SillyContext)
-  // Allow navigating back to the teams page when on a specific team.
-  const inTeam = useMatch({ path: '/teams/:teamId/*' })
   return (
     <>
-      <AppBar position="fixed" sx={{ bgcolor: '#343a40' }} elevation={0}>
+      <AppBar
+        position="fixed"
+        sx={{ bgcolor: 'neutral900.main' }}
+        elevation={0}
+      >
         <Drawer
           anchor="right"
           variant="temporary"
@@ -323,57 +325,97 @@ function MobileHeader({
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
+          PaperProps={{
+            sx: (theme) => ({
+              // backgroundColor: 'neutral700.main',
+              backgroundImage: `linear-gradient(to right, ${theme.palette.neutral700.main}, ${theme.palette.neutral700.main})`,
+            }),
+          }}
         >
-          <List>
-            <ListItemButton
-              key="home"
+          <Tabs
+            value={currentTab}
+            orientation="vertical"
+            TabIndicatorProps={{
+              sx: {
+                left: 0,
+                width: '4px',
+              },
+            }}
+            sx={(theme) => ({
+              '& .Mui-selected': {
+                backgroundImage: `linear-gradient(to right, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
+                color: `${theme.palette.neutral100.main} !important`,
+              },
+            })}
+          >
+            <Tab
+              value=""
               component={RouterLink}
               to={'/'}
-              selected={currentTab === ''}
-              disabled={currentTab === ''}
               onClick={handleDrawerToggle}
-            >
-              <ListItemText>
-                {silly ? t('sillyPageTitle') : t('pageTitle')}
-              </ListItemText>
-            </ListItemButton>
-            {mobileContent.map(
-              ({ i18Key, value, to, icon, textSuffix: extra }) => (
-                <ListItemButton
-                  key={value}
-                  component={RouterLink}
-                  to={to}
-                  selected={currentTab === value}
-                  disabled={currentTab === value && !inTeam}
-                  onClick={handleDrawerToggle}
-                >
-                  <ListItemIcon>{icon}</ListItemIcon>
-                  <ListItemText>
-                    <Box display="flex" gap={1} alignItems="center">
-                      {t(i18Key)}
-                      {extra}
-                    </Box>
-                  </ListItemText>
-                </ListItemButton>
-              )
-            )}
-          </List>
+              icon={
+                <Avatar
+                  src={silly ? silly_icon : go_icon}
+                  variant="rounded"
+                  sx={(theme) => ({
+                    height: '24px',
+                    width: '24px',
+                    boxShadow: `0 0 10px 1px ${theme.palette.brandGO500.main}`,
+                  })}
+                />
+              }
+              iconPosition="start"
+              label={
+                <Typography>
+                  {silly ? t('sillyPageTitle') : t('pageTitle')}
+                </Typography>
+              }
+            />
+            {mobileContent.map(({ i18Key, value, to, icon, textSuffix }) => (
+              <Tab
+                key={value}
+                value={value}
+                component={RouterLink}
+                to={to}
+                onClick={handleDrawerToggle}
+                icon={icon as ReactElement}
+                iconPosition="start"
+                label={
+                  <Box display="flex" gap={0.5} alignItems="center">
+                    <Typography>{t(i18Key)}</Typography>
+                    {textSuffix}
+                  </Box>
+                }
+                sx={{ justifyContent: 'flex-start' }}
+              />
+            ))}
+          </Tabs>
         </Drawer>
         <Toolbar>
           <Button
             variant="text"
-            sx={{ color: 'white' }}
+            sx={(theme) => ({
+              color: `${theme.palette.neutral200.main} !important`,
+            })}
             component={RouterLink}
             to="/"
-            startIcon={silly ? <Avatar src={silly_icon} /> : undefined}
+            startIcon={
+              <Avatar
+                src={silly ? silly_icon : go_icon}
+                variant="rounded"
+                sx={(theme) => ({
+                  height: '24px',
+                  width: '24px',
+                  boxShadow: `0 0 10px 1px ${theme.palette.brandGO500.main}`,
+                })}
+              />
+            }
           >
-            <Typography variant="h6" noWrap component="div">
+            <Typography variant="h6" noWrap component="div" sx={{ px: 1 }}>
               {silly ? t('sillyPageTitle') : t('pageTitle')}
             </Typography>
             {shouldShowDevComponents ? (
-              <Typography variant="body1" sx={{ px: 1 }}>
-                (Dev Mode)
-              </Typography>
+              <Typography variant="body1">(Dev Mode)</Typography>
             ) : undefined}
           </Button>
           <Box flexGrow={1} />
@@ -382,6 +424,7 @@ function MobileHeader({
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerToggle}
+            size="large"
           >
             <MenuIcon />
           </IconButton>

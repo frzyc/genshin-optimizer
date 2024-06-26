@@ -1,3 +1,4 @@
+'use client'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useMatch } from 'react-router-dom'

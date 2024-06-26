@@ -44,7 +44,7 @@ export type GeneralAutocompleteProps<T extends string> =
     valueKey: T | null
     onChange: (v: T | null) => void
   } & Omit<
-      AutocompleteProps<GeneralAutocompleteOption<T>, false, false, false>,
+      AutocompleteProps<GeneralAutocompleteOption<T>, false, boolean, false>,
       | 'renderInput'
       | 'isOptionEqualToValue'
       | 'renderOption'

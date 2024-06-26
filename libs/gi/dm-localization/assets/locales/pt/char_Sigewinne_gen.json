@@ -1,0 +1,168 @@
+{
+  "name": "Sigewinne",
+  "title": "A Filha Transmutada do Dragão",
+  "description": "Uma Melusine e a Enfermeira-Chefe da Fortaleza Meropide. Ela cuida igualmente de todo presidiário da prisão submarina.",
+  "constellationName": "Nereides",
+  "auto": {
+    "name": "Tratamento Direcionado",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 3 ataques consecutivos com um arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Realiza um <strong>Disparo com Mira </strong> mais preciso com dano aumentado.",
+        "2": "Enquanto mira, o poder Hydro acumulará continuamente na flecha. Após carregamento completo, Sigewinne disparará periodicamente \"Pequenas Bolhas de Compaixão\" em direção ao alvo, causando <hydro>Dano Hydro</hydro>. Ao ser solta, uma flecha imbuída com energia torrencial causará <hydro>Dano Hydro</hydro> ao oponente atingido."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas no ar antes de cair e atingir o chão, causando Dano em uma AdE."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Disparo com Mira",
+      "4": "Disparo com Mira com Energização Completa",
+      "5": "Dano das Pequenas Bolhas de Compaixão",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Terapia de Água Saltitante",
+    "description": {
+      "0": "Estoura uma <strong>Bolha Revigorante</strong> que estimula o fluxo sanguíneo e ajuda os pacientes a adormecerem com uma pistola de bolhas feita na Fortaleza Meropide.",
+      "1": "Bolhas Revigorantes vão ricochetear entre oponentes próximos, causando <hydro>Dano Hydro</hydro> baseado na Vida Máxima de Sigewinne nos inimigos que atingir. Ao atingir um inimigo, regenera Vida para todos os membros próximos da equipe, exceto Sigewinne. A quantidade curada é baseada na Vida Máxima de Sigewinne.",
+      "2": "Depois de ricochetear 5 vezes, a Bolha Revigorante desaparecerá e regenerará Vida para Sigewinne segundo sua Vida Máxima.",
+      "3": "Quando não há oponentes presentes, a Bolha Revigorante criada por Sigewinne ricocheteará por perto. Somente uma Bolha Revigorante criada por Sigewinne pode existir simultaneamente.",
+      "4": "Mantenha Pressionado para carregar o lançamento da Bolha Revigorante.",
+      "5": "<br/>",
+      "6": "<strong>Manter Pressionado</strong>",
+      "7": "Entra no modo de mira e carrega para soprar uma Bolha Revigorante ainda maior!",
+      "8": "A Bolha Revigorante vai ficar maior em quanto mais tempo a Habilidade for pressionada, até ficar com o tamanho aumentado em dois níveis. Para cada nível que cresce, o Dano é aumentado em 5%, e a Cura fornecida é aumentada em 5%. Quando a Bolha Revigorante ricocheteia, vai cair um nível de tamanho até retornar ao tamanho normal de Bolhas Revigorantes.",
+      "9": "Depois que oponentes mais fracos são atingidos por uma Bolha Revigorante grande, serão aprisionados e não poderão se mover.",
+      "10": "<br/>",
+      "11": "Além disso, 2 Gotas d'Água Primordial serão criadas perto de Sigewinne quando ela lançar. Para cada Gota d'Água Primordial que ela obter, vai obter um Contrato de Vida equivalente a 10% de sua Vida Máxima.",
+      "12": "Quando o Contrato de Vida de Sigewinne é removido, ela ganha 1 de Energia Elemental para cada 2.000 de Vida do Contrato de Vida removido. Sigewinne pode ganhar até 5 de Energia Elemental desta maneira.",
+      "13": "<br/>",
+      "14": "<strong>Arkhe: Ousia</strong>",
+      "15": "Bolhas Revigorantes periodicamente invocam uma Lâmina da Fluidez na posição que atingirem o ponente, causando <hydro>Dano Hydro</hydro> com Ousia baseado na Vida Máxima de Sigewinne.",
+      "16": "<br/>",
+      "17": "<i>\"O que você acha? Esse tipo de hidroterapia pode estimular o sistema circulatório, e também pode animar os pacientes, e além disso, pode ajudar eles a terem um bom descanso...</i>"
+    },
+    "skillParams": {
+      "0": "Dano da Bolha Revigorante",
+      "1": "Cura da Bolha Revigorante",
+      "2": "Cura do Ricochete Final",
+      "3": "Dano da Lâmina da Fluidez",
+      "4": "Intervalo de Lâmina da Fluidez",
+      "5": "Recarga",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Injeção Super Saturada",
+    "description": {
+      "0": "Tira uma seringa especial feita na Fortaleza Meropide e ataca a área em frente com ondas de gentileza e remédio, causando <hydro>Dano Hydro em AdE</hydro> baseado na Vida Máxima de Sigewinne.",
+      "1": "Além disso, Sigewinne absorve até 2 Gotas d'Água Primordial próximas antes de usar essa habilidade.",
+      "2": "<br/>",
+      "3": "<i>\"Ei, exagerar no remédio é o mesmo que se envenenar, é perigoso! Mas pacientes precisam de cuidado e carinho, e ninguém pode se superdosar nisso!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Duração",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Requer Descanso Apropriado",
+    "description": {
+      "0": "Sigewinne concede a si mesma o efeito \"Descanso de Cama Restrito\" por 18s após usar <strong>Terapia de Água Saltitante</strong>: Sigewinne ganha 8% de <hydro>Bônus de Dano Hydro</hydro> e 10 acúmulos de Convalescença. Quando a Habilidade Elemental de seu próprio personagem próximo não ativo, menos Sigewinne, causar Dano, consome 1 acúmulo de Convalescença, e aumenta o Dano causado pela Habilidade Elemental desta vez. Para cada 1.000 de Vida que Sigewinne tem acima de 30.000, aumenta o Dano em 80. O máximo de aumento de Dano para Habilidades Elementais que pode ser ganho dessa forma é 2.800."
+    }
+  },
+  "passive2": {
+    "name": "Diagnóstico Detalhado, Tratamento Meticuloso",
+    "description": {
+      "0": "Quando Sigewinne cura, a quantidade curada é aumentada segundo o valor total atual do Contrato de Vida de todos os membros da equipe: para cada 1.000 de Vida de Contrato de Vida, a cura é aumentada em 3%. A quantidade de cura fornecida pode ser aumentada em até 30% dessa forma."
+    }
+  },
+  "passive3": {
+    "name": "Dose Urgente",
+    "description": {
+      "0": "Enquanto debaixo d'água, quando a Vida do personagem ativo reduz abaixo de 50%, cura seu personagem ao longo de 2.5s. A quantidade curada é equivalente a 50% da Vida Máxima, e as suas RES contra todos os Elementos e RES Física será reduzida em 10% por 10s. Esse efeito pode ser desencadeado uma vez a cada 20s."
+    }
+  },
+  "constellation1": {
+    "name": "\"Pode o Mais Alegre dos Espíritos Entender a Ansiedade?\"",
+    "description": {
+      "0": "A Bolha Revigorante da <strong>Terapia de Água Saltitante</strong> pode ricochetear mais 3 vezes, e os 3 primeiros ricochetes não farão as Bolhas Revigorantes diminuírem.",
+      "1": "O Talento Passivo \"Requer Descanso Apropriado\" é fortalecido: cada ricochete da Bolha Revigorante adiciona 1 acúmulo a sua contagem de Convalescença, e muda os acúmulos de Dano de Convalescença para: a cada 1.000 de Vida que Sigewinne tem acima de 30.000, aumenta o Dano em 100. É possível aumentar o Dano da Habilidade Elemental até 3.500 dessa forma. Primeiro é necessário desbloquear o Talento Passivo \"Requer Descanso Apropriado\" para usar esse efeito."
+    }
+  },
+  "constellation2": {
+    "name": "\"Pode o Mais Misericordioso Espírito Derrotar seus Inimigos?\"",
+    "description": {
+      "0": "Ao usar <strong>Terapia de Água Saltitante</strong>e <strong>Injeção Super Saturada</strong>, Sigewinne pode criar um Escudo de Bolhas equivalente a 30% de sua Vida Máxima e que absorve <hydro>Dano Hydro</hydro> com 250% de eficiência.",
+      "1": "Além disso, após as Bolhas Revigorantes de Terapia de Água Saltitante ou de Injeção Super Saturada atingirem oponentes, a <hydro>RES Hydro</hydro> desse oponente será reduzida em 35% por 8s."
+    }
+  },
+  "constellation3": {
+    "name": "\"Pode o mais Saudável Espírito Curar Febres?\"",
+    "description": {
+      "0": "Aumenta o nível de <strong>Terapia de Água Saltitante</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Pode o mais Adorável Espírito Conter a Queda?\"",
+    "description": {
+      "0": "Duração de <strong>Injeção Super Saturada</strong> é estendida em 3s."
+    }
+  },
+  "constellation5": {
+    "name": "\"Pode o mais Alegre Espírito Aliviar a Agonia?\"",
+    "description": {
+      "0": "Aumenta o nível do <strong>Injeção Super Saturada</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"O Espírito mais Radiante Rezaria por Mim?\"",
+    "description": {
+      "0": "Quando Sigewinne cura, ela aumentará a Taxa CRIT e Dano CRIT de sua <strong>Injeção Super Saturada</strong> baseado em sua Vida Máxima. Para cada 1.000 de Vida Máxima que ela tem, aumentará a Taxa CRIT em 0.4% e o Dano CRIT em 2.2% por 15s. O aumento máximo que pode ser obtido dessa forma é 20% de Taxa CRIT e 110% de Dano CRIT."
+    }
+  }
+}

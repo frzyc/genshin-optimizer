@@ -13,7 +13,7 @@ export function LocationName({
 }: { location: LocationKey } & TypographyProps) {
   const { t } = useTranslation('ui')
   const database = useDatabase()
-  const { gender } = useDBMeta()
+  const { gender } = useDBMeta() ?? { gender: 'F' }
 
   const characterKey =
     location && database.chars.LocationToCharacterKey(location)
