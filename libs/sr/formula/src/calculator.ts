@@ -4,35 +4,50 @@ import {
   Calculator as Base,
   calculation,
 } from '@genshin-optimizer/pando/engine'
-import type { Tag } from './data/util'
-import { reader, type Read } from './data/util'
+import type { Member, Read, Sheet, Tag } from './data/util'
+import { reader } from './data/util'
 import { DebugCalculator } from './debug'
 
 const { arithmetic } = calculation
+const emptyCond: CondInfo = {}
 
-type Output = {
+type CondInfo = Partial<
+  Record<
+    Member,
+    Partial<Record<Member, Partial<Record<Sheet, Record<string, number>>>>>
+  >
+>
+export type CalcMeta = {
   tag: Tag | undefined
   op: 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
-  ops: CalcResult<number, Output>[]
-  conds: Tag[]
+  ops: CalcResult<number, CalcMeta>[]
+  /// conds[dst][src][sheet][name]
+  conds: CondInfo
 }
 
-export class Calculator extends Base<Output> {
+export class Calculator extends Base<CalcMeta> {
   override computeMeta(
     { op, ex }: AnyNode,
     val: number | string,
-    x: (CalcResult<number | string, Output> | undefined)[],
-    _br: CalcResult<number | string, Output>[],
+    x: (CalcResult<number | string, CalcMeta> | undefined)[],
+    _br: CalcResult<number | string, CalcMeta>[],
     tag: Tag | undefined
-  ): Output {
-    function constOverride(): Output {
-      return { tag, op: 'const', ops: [], conds: [] }
+  ): CalcMeta {
+    let conds = emptyCond
+    for (const v of [...x, ..._br]) {
+      if (!v) continue
+      conds = merge(conds, v.meta.conds)
     }
-    const preConds = [...x, ..._br]
-      .map((x) => x?.meta.conds as Tag[])
-      .filter((x) => x && x.length)
-    if (tag?.qt === 'cond') preConds.push([tag])
-    const conds = preConds.length <= 1 ? preConds[0] ?? [] : preConds.flat()
+    if (tag?.qt === 'cond') {
+      const { src, dst, sheet, q } = tag
+      conds = merge(conds, {
+        [dst!]: { [src!]: { [sheet!]: { [q!]: val } } },
+      })
+    }
+
+    function constOverride(): CalcMeta {
+      return { tag, op: 'const', ops: [], conds }
+    }
 
     if (op === 'read' && ex !== undefined) {
       if (ex === 'min' || ex === 'max')
@@ -49,9 +64,14 @@ export class Calculator extends Base<Output> {
         const empty = arithmetic[op]([], ex)
         const ops = x.filter((x) => x!.val !== empty) as CalcResult<
           number,
-          Output
+          CalcMeta
         >[]
-        if (ops.length <= 1) return ops[0]?.meta ?? constOverride()
+        if (ops.length <= 1) {
+          let meta = ops[0]?.meta ?? constOverride()
+          if (meta.conds !== conds) meta = { ...meta, conds } // Use parent `conds` when short-circuiting
+          if (!meta.tag && tag) meta = { ...meta, tag }
+          return meta
+        }
         if (op === 'prod' && val === 0) return constOverride()
         return { tag, op, ops, conds }
       }
@@ -70,17 +90,47 @@ export class Calculator extends Base<Output> {
         const { tag: baseTag, op, ops } = x[0]!.meta
         return { tag: baseTag ?? tag, op, ops, conds }
       }
+      case 'custom':
+        throw new Error(`Unsupported operation ${ex}`)
       default:
-        if (op === 'custom') throw new Error(`Unsupported operation ${ex}`)
         assertUnreachable(op)
     }
   }
-  toDebug(): DebugCalculator {
-    return new DebugCalculator(this)
-  }
+
   listFormulas(read: Read): Read[] {
     return this.get(read.tag)
       .filter((x) => x.val)
       .map(({ val, meta }) => reader.withTag(meta.tag!)[val as Read['accu']])
   }
+  listCondFormulas(read: Read): CondInfo {
+    return this.listFormulas(read)
+      .map((x) => this.compute(x).meta.conds)
+      .reduce(merge, emptyCond)
+  }
+  toDebug(): DebugCalculator {
+    return new DebugCalculator(this)
+  }
+}
+
+function merge<T extends Record<string, any>>(a: T, b: T): T {
+  if (Object.keys(a).length < Object.keys(b).length) [a, b] = [b, a]
+  if (Object.keys(b).length === 0) return a
+
+  let dirty = false
+  const result: any = { ...a }
+  for (const [key, val] of Object.entries(b)) {
+    if (result[key] === val) continue
+    if (result[key]) {
+      const new_val = merge(result[key], val)
+      if (new_val !== result[key]) {
+        dirty = true
+        result[key] = val
+      }
+    } else {
+      dirty = true
+      result[key] = val
+    }
+  }
+
+  return dirty ? result : a
 }
