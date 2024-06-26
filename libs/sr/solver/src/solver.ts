@@ -104,13 +104,13 @@ export class Solver {
     // Step 2: Detach nodes from Calculator
     const relicSetKeys = new Set(allRelicSetKeys)
     const detachedNodes = detach([this.optTarget], this.calc, (tag: Tag) => {
-      if (tag['member'] !== 'member0') return undefined // Wrong member
+      if (tag['src'] !== '0') return undefined // Wrong member
       if (tag['et'] !== 'self') return undefined // Not applied (only) to self
 
-      if (tag['src'] === 'dyn' && tag['qt'] === 'premod')
+      if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
         return { q: tag['q']! } // Relic stat bonus
-      if (tag['q'] === 'count' && relicSetKeys.has(tag['src'] as any))
-        return { q: tag['src']! } // Relic set counter
+      if (tag['q'] === 'count' && relicSetKeys.has(tag['sheet'] as any))
+        return { q: tag['sheet']! } // Relic set counter
       return undefined
     })
     return detachedNodes

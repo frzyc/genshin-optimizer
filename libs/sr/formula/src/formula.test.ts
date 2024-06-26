@@ -4,10 +4,11 @@ import type {
   CharacterKey,
   LightConeKey,
 } from '@genshin-optimizer/sr/consts'
+import { fail } from 'assert'
 import { charData, lightConeData, withMember } from '.'
 import { Calculator } from './calculator'
-import { keys, values } from './data'
-import { convert, selfTag, type TagMapNodeEntries } from './data/util'
+import { data, keys, values } from './data'
+import { convert, selfTag, tagStr, type TagMapNodeEntries } from './data/util'
 
 describe('character test', () => {
   it.each([
@@ -19,7 +20,7 @@ describe('character test', () => {
     const charKey: CharacterKey = 'March7th'
     const data: TagMapNodeEntries = [
       ...withMember(
-        'member0',
+        '0',
         ...charData({
           level: lvl,
           ascension: ascension as AscensionKey,
@@ -36,7 +37,7 @@ describe('character test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    const member0 = convert(selfTag, { member: 'member0', et: 'self' })
+    const member0 = convert(selfTag, { src: '0', et: 'self' })
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(atk)
     expect(calc.compute(member0.final.def).val).toBeCloseTo(def)
     expect(calc.compute(member0.final.hp).val).toBeCloseTo(hp)
@@ -53,7 +54,7 @@ describe('lightCone test', () => {
     const lcKey: LightConeKey = 'Arrows'
     const data: TagMapNodeEntries = [
       ...withMember(
-        'member0',
+        '0',
         ...charData({
           level: 1,
           ascension: 0,
@@ -78,10 +79,14 @@ describe('lightCone test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    const member0 = convert(selfTag, { member: 'member0', et: 'self' })
-    expect(calc.compute(member0.base.atk.src('lightCone')).val).toBeCloseTo(atk)
-    expect(calc.compute(member0.base.def.src('lightCone')).val).toBeCloseTo(def)
-    expect(calc.compute(member0.base.hp.src('lightCone')).val).toBeCloseTo(hp)
+    const member0 = convert(selfTag, { src: '0', et: 'self' })
+    expect(calc.compute(member0.base.atk.sheet('lightCone')).val).toBeCloseTo(
+      atk
+    )
+    expect(calc.compute(member0.base.def.sheet('lightCone')).val).toBeCloseTo(
+      def
+    )
+    expect(calc.compute(member0.base.hp.sheet('lightCone')).val).toBeCloseTo(hp)
   })
 })
 
@@ -92,7 +97,7 @@ describe('char+lightCone test', () => {
 
     const data: TagMapNodeEntries = [
       ...withMember(
-        'member0',
+        '0',
         ...charData({
           level: 1,
           ascension: 0,
@@ -116,7 +121,23 @@ describe('char+lightCone test', () => {
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    const member0 = convert(selfTag, { member: 'member0', et: 'self' })
+    const member0 = convert(selfTag, { src: '0', et: 'self' })
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(81.6)
+  })
+})
+describe('sheet', () => {
+  test('buff entries', () => {
+    for (const { tag } of data) {
+      if (tag.et && tag.qt && tag.q) {
+        switch (tag.et) {
+          case 'selfBuff':
+          case 'teamBuff': {
+            const { sheet } = (selfTag as any)[tag.qt][tag.q]
+            if (sheet !== 'agg') fail(`Ineffective entry ${tagStr(tag)}`)
+            break
+          }
+        }
+      }
+    }
   })
 })

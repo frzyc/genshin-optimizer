@@ -10,7 +10,7 @@ type Output = {
 type FormulaText = {
   name: string | undefined
   formula: string
-  src: string | undefined
+  sheet: string | undefined
   prec: number
 
   deps: FormulaText[]
@@ -63,18 +63,18 @@ export function translate(
       prec = details.prod.prec
     }
   }
-  let name: string | undefined, src: string | undefined
+  let name: string | undefined, sheet: string | undefined
   if (tag) {
     // TODO: Compute from tag
     name = `Untitled ${val}`
-    src = undefined
+    sheet = undefined
   }
 
   const result: FormulaText = {
     name,
     formula,
     prec,
-    src,
+    sheet,
     deps: [...new Set(deps)],
   }
   cache.set(data, result)

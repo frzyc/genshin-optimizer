@@ -25,7 +25,6 @@ import {
   listingItem,
   percent,
   self,
-  selfBuff,
   type TagMapNodeEntries,
 } from '../util'
 
@@ -164,7 +163,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
       const basePerAsc = data_gen.ascension.map((p) => p[sk].base)
       const addPerAsc = data_gen.ascension.map((p) => p[sk].add)
-      return selfBuff.base[sk].add(
+      return self.base[sk].add(
         sum(
           subscript(ascension, basePerAsc),
           prod(readLvl, subscript(ascension, addPerAsc))
@@ -173,9 +172,9 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     }),
     ...(['crit_', 'crit_dmg_'] as const).map((sk) => {
       const statAsc = data_gen.ascension.map((p) => p[sk])
-      return selfBuff.premod[sk].add(subscript(ascension, statAsc))
+      return self.premod[sk].add(subscript(ascension, statAsc))
     }),
-    selfBuff.base.spd.add(
+    self.base.spd.add(
       subscript(
         ascension,
         data_gen.ascension.map((p) => p.spd)
@@ -184,7 +183,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     // Small trace stat boosts
     ...statBoosts.flatMap((statBoost) =>
       Object.entries(statBoost).map(([key, amt], index) => {
-        return getStatFromStatKey(selfBuff.premod, key).add(
+        return getStatFromStatKey(self.premod, key).add(
           cmpEq(char[`statBoost${(index + 1) as StatBoostKey}`], 1, amt)
         )
       })
@@ -193,25 +192,25 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ...([3, 5] as const).flatMap((ei) =>
       Object.entries(data_gen.rankMap[3].skillTypeAddLevel).map(
         ([abilityKey, levelBoost]) =>
-          selfBuff.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
+          self.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
       )
     ),
     // Formula listings for stats
     // TODO: Reorder this
-    selfBuff.listing.formulas.add(listingItem(self.final.hp)),
-    selfBuff.listing.formulas.add(listingItem(self.final.atk)),
-    selfBuff.listing.formulas.add(listingItem(self.final.def)),
-    selfBuff.listing.formulas.add(listingItem(self.final.spd)),
-    selfBuff.listing.formulas.add(listingItem(self.final.enerRegen_)),
-    selfBuff.listing.formulas.add(listingItem(self.final.eff_)),
-    selfBuff.listing.formulas.add(listingItem(self.final.eff_res_)),
-    selfBuff.listing.formulas.add(listingItem(self.final.brEff_)),
-    selfBuff.listing.formulas.add(listingItem(self.common.cappedCrit_)),
-    selfBuff.listing.formulas.add(listingItem(self.final.crit_dmg_)),
-    selfBuff.listing.formulas.add(listingItem(self.final.heal_)),
-    selfBuff.listing.formulas.add(
+    self.listing.formulas.add(listingItem(self.final.hp)),
+    self.listing.formulas.add(listingItem(self.final.atk)),
+    self.listing.formulas.add(listingItem(self.final.def)),
+    self.listing.formulas.add(listingItem(self.final.spd)),
+    self.listing.formulas.add(listingItem(self.final.enerRegen_)),
+    self.listing.formulas.add(listingItem(self.final.eff_)),
+    self.listing.formulas.add(listingItem(self.final.eff_res_)),
+    self.listing.formulas.add(listingItem(self.final.brEff_)),
+    self.listing.formulas.add(listingItem(self.common.cappedCrit_)),
+    self.listing.formulas.add(listingItem(self.final.crit_dmg_)),
+    self.listing.formulas.add(listingItem(self.final.heal_)),
+    self.listing.formulas.add(
       listingItem(self.final.dmg_[TypeKeyToListingType[data_gen.damageType]])
     ),
-    selfBuff.listing.formulas.add(listingItem(self.final.dmg_.physical)),
+    self.listing.formulas.add(listingItem(self.final.dmg_.physical)),
   ]
 }

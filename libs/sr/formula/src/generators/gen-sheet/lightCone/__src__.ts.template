@@ -13,7 +13,7 @@ import {
 } from '../util'
 import { entriesForLightCone } from './util'
 
-const key: LightConeKey = '<%= src %>'
+const key: LightConeKey = '<%= sheet %>'
 const data_gen = allStats.lightCone[key]
 
 let i = 0
@@ -27,7 +27,7 @@ const { superimpose } = self.lightCone
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)
 const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, 'sum', true, 0, 2)
+const { numConditional } = allNumConditionals(key, true, 0, 2)
 
 const sheet = register(
   key,

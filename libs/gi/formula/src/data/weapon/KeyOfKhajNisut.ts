@@ -18,7 +18,7 @@ const {
   final,
   weapon: { refinement },
 } = self
-const { afterSkillStacks } = allNumConditionals(key, 'sum', true, 0, 3)
+const { afterSkillStacks } = allNumConditionals(key, true, 0, 3)
 const selfElemas = prod(
   afterSkillStacks,
   percent(subscript(refinement, selfEmSrc)),

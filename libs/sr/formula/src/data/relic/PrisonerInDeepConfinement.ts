@@ -19,7 +19,7 @@ const dm = {
   },
 }
 
-const relicCount = self.common.count.src(key)
+const relicCount = self.common.count.sheet(key)
 
 const { stackCount } = allNumConditionals(key, 'sum', true, 0, dm[4].numStacks)
 

@@ -5,7 +5,7 @@ import {
   constant,
   subscript,
 } from '@genshin-optimizer/pando/engine'
-import type { Source, Stat } from './listing'
+import type { Member, Sheet, Stat } from './listing'
 import type { Read, Tag } from './read'
 import { reader, tag } from './read'
 
@@ -36,7 +36,7 @@ export function priorityTable(
  *
  * *--------*-----------------------------------------------------*
  * |        |                      Affected By                    |
- * |  src:  *-----------*-----*----------*--------*------*--------*
+ * | sheet: *-----------*-----*----------*--------*------*--------*
  * |        | Team Buff | Art | Reaction | Weapon | Char | Custom |
  * *--------*-----------*-----*----------*--------*------*--------*
  * |  agg   |    YES    | YES |   YES    |  YES   | YES  |  YES   |
@@ -53,29 +53,29 @@ export function priorityTable(
  *   }
  * }
  *
- * The correct "final" value of a query must have `src:` be as specified
- * by the corresponding `Desc`. They are treated as a rendezvous point
- * for calculation to gather relevant components. Each of the `src:` here
- * gather different values as shown in the table above. The "gathering"
- * are done by adding appropriate entries, such as `src:agg <= src:custom`
- * in `common/index`. Many of the entries are in either `common/index` or
- * in dynamic util functions, e.g., `src:agg <= src:art` in `artifactsData`,
- * and `src:agg <= src:<team member>` in `teamData`.
+ * The correct "final" value of a query must have `sheet:` be as specified
+ * by the corresponding `Desc`. They are treated as a rendezvous point for
+ * calculation to gather relevant components. Each of the `sheet:` here gather
+ * different values as shown in the table above. The "gathering" are done by
+ * adding appropriate entries, such as `sheet:agg <= sheet:custom` in
+ * `common/index`. Many of the entries are in either `common/index` or in
+ * dynamic util functions, e.g., `sheet:agg <= sheet:art` in `artifactsData`,
+ * and `sheet:agg <= src:<team member>` in `teamData`.
  *
- * In effect, `read`ing a `src:agg` entry will include contributions from
- * team member, weapon, custom values, etc., while `read`ing a `src:iso` only
- * include contributions from character and custom values.
+ * In effect, `read`ing a `sheet:agg` entry will include contributions from
+ * team member, weapon, custom values, etc., while `read`ing a `sheet:iso`
+ * only include contributions from character and custom values.
  */
 
-type Desc = { src: Source | undefined; accu: Read['accu'] }
-const aggStr: Desc = { src: 'agg', accu: 'unique' }
-const agg: Desc = { src: 'agg', accu: 'sum' }
-const iso: Desc = { src: 'iso', accu: 'unique' }
-const isoSum: Desc = { src: 'iso', accu: 'sum' }
-/** `src:`-agnostic calculation */
-const fixed: Desc = { src: 'static', accu: 'unique' }
-/** The calculation must have a matching `src:` */
-const prep: Desc = { src: undefined, accu: 'unique' }
+type Desc = { sheet: Sheet | undefined; accu: Read['accu'] }
+const aggStr: Desc = { sheet: 'agg', accu: 'unique' }
+const agg: Desc = { sheet: 'agg', accu: 'sum' }
+const iso: Desc = { sheet: 'iso', accu: 'unique' }
+const isoSum: Desc = { sheet: 'iso', accu: 'sum' }
+/** `sheet:`-agnostic calculation */
+const fixed: Desc = { sheet: 'static', accu: 'unique' }
+/** The calculation must have a matching `sheet:` */
+const prep: Desc = { sheet: undefined, accu: 'unique' }
 
 const stats: Record<Stat, Desc> = {
   hp: agg,
@@ -108,7 +108,6 @@ export const selfTag = {
   },
   weapon: { lvl: iso, refinement: iso, ascension: iso },
   common: {
-    isActive: isoSum,
     weaponType: iso,
     critMode: fixed,
     cappedCritRate_: iso,
@@ -159,7 +158,7 @@ export const enemyTag = {
     preRes: agg,
     postRes: fixed,
   },
-  cond: { amp: fixed, cata: fixed },
+  reaction: { amp: fixed, cata: fixed },
 } as const
 
 export function convert<V extends Record<string, Record<string, Desc>>>(
@@ -177,9 +176,9 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
     (r, qt) =>
       r.withAll('q', Object.keys(v[qt]), (r, q) => {
         if (!v[qt][q]) console.error(`Invalid { qt:${qt} q:${q} }`)
-        const { src, accu } = v[qt][q]
-        // `tag.src` overrides `Desc`
-        if (src && !tag.src) r = r.src(src)
+        const { sheet, accu } = v[qt][q]
+        // `tag.sheet` overrides `Desc`
+        if (sheet && !tag.sheet) r = r.sheet(sheet)
         return r[accu]
       }),
     { withTag: (tag: Tag) => r.withTag(tag) }
@@ -187,35 +186,33 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
 }
 
 // Default queries
-export const self = convert(selfTag, { et: 'self' })
-export const team = convert(selfTag, { et: 'team' })
-export const target = convert(selfTag, { et: 'target' })
+export const self = convert(selfTag, { et: 'self', dst: null })
+export const team = convert(selfTag, { et: 'team', dst: null, src: null })
+export const target = convert(selfTag, { et: 'target', src: null })
 export const enemy = convert(enemyTag, { et: 'enemy' })
 
 // Default tag DB keys
-export const selfBuff = convert(selfTag, { et: 'self' })
+export const selfBuff = convert(selfTag, { et: 'selfBuff' })
 export const teamBuff = convert(selfTag, { et: 'teamBuff' })
-export const activeCharBuff = convert(selfTag, { et: 'active' })
+export const notSelfBuff = convert(selfTag, { et: 'notSelfBuff' })
 export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
-export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
+export const userBuff = convert(selfTag, { et: 'self', sheet: 'custom' })
 
 // Custom tags
-export const allStatics = (src: Source) =>
-  allCustoms(src, 'misc', undefined, (x) => x)
-export const allStacks = (src: Source) =>
-  allCustoms(src, 'stackOut', undefined, (out) => ({
-    add: (cond: NumNode | number) => out.with('qt', 'stackIn').add(cond),
-    apply: (val: NumNode | number, otherwise: NumNode | number = 0) =>
-      cmpEq(out, 1, val, otherwise),
-  }))
-export const allBoolConditionals = (src: Source) =>
-  allCustoms(src, 'cond', { type: 'bool' }, ({ sum: r }) => ({
+export const allStatics = (sheet: Sheet) =>
+  reader.withTag({ et: 'self', sheet, qt: 'misc' }).withAll('q', [])
+export const allBoolConditionals = (sheet: Sheet, shared?: boolean) =>
+  allConditionals(sheet, shared, { type: 'bool' }, (r) => ({
     ifOn: (node: NumNode | number, off?: NumNode | number) =>
       cmpNE(r, 0, node, off),
     ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
   }))
-export const allListConditionals = <T extends string>(src: Source, list: T[]) =>
-  allCustoms(src, 'cond', { type: 'list', list }, ({ max: r }) => ({
+export const allListConditionals = <T extends string>(
+  sheet: Sheet,
+  list: T[],
+  shared?: boolean
+) =>
+  allConditionals(sheet, shared, { type: 'list', list }, (r) => ({
     map: (table: Record<T, number>, def = 0) => {
       subscript(
         r,
@@ -225,32 +222,52 @@ export const allListConditionals = <T extends string>(src: Source, list: T[]) =>
     value: r,
   }))
 export const allNumConditionals = (
-  src: Source,
-  ex: Read['accu'],
-  int_only: boolean,
+  sheet: Sheet,
+  int_only = true,
   min?: number,
-  max?: number
-) => allCustoms(src, 'cond', { type: 'num', int_only, min, max }, (r) => r[ex])
+  max?: number,
+  shared?: boolean
+) =>
+  allConditionals(sheet, shared, { type: 'num', int_only, min, max }, (r) => r)
 
-export const conditionalEntries = (src: Source) => {
-  const base = allCustoms(src, 'cond', undefined, (r) => r)
+export const conditionalEntries = (sheet: Sheet, src: Member, dst: Member) => {
+  const base = self.withTag({ src, dst, sheet, qt: 'cond' }).withAll('q', [])
   return (name: string, val: string | number) => base[name].add(val)
 }
 
-function allCustoms<T>(
-  src: Source,
-  qt: string,
-  meta: object | undefined,
+function allConditionals<T>(
+  sheet: Sheet,
+  shared = true,
+  meta: object,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
-  if (meta && metaList.conditionals) {
+  // Keep the base tag "full" here so that `cond` returns consistent tags
+  const baseTag: Omit<Required<Tag>, 'preset' | 'src' | 'dst' | 'q'> = {
+    et: 'self',
+    sheet,
+    qt: 'cond',
+    // Remove irrelevant tags
+    name: null,
+    region: null,
+    ele: null,
+    move: null,
+    trans: null,
+    amp: null,
+    cata: null,
+  }
+  let base = reader.sum.withTag(baseTag)
+  if (shared) base = base.with('src', 'all')
+  if (metaList.conditionals) {
     const { conditionals } = metaList
-    return reader.withTag({ et: 'self', src, qt }).withAll('q', [], (r, q) => {
-      conditionals.push({ tag: r.tag, meta })
+    return base.withAll('q', [], (r, q) => {
+      const tag = Object.fromEntries(
+        Object.entries(r.tag).filter(([_, v]) => v)
+      )
+      conditionals.push({ meta, tag })
       return transform(r, q)
     })
   }
-  return reader.withTag({ et: 'self', src, qt }).withAll('q', [], transform)
+  return base.withAll('q', [], transform)
 }
 
 export const queryTypes = new Set([
@@ -259,7 +276,7 @@ export const queryTypes = new Set([
   'cond',
   'misc',
   'stackIn',
-  'stackInt',
+  'stackTmp',
   'stackOut',
 ])
 // Register `q:`
