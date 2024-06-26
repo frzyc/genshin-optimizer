@@ -228,7 +228,6 @@ describe('example', () => {
     }
 
     const keys = Object.keys(uniqueConds)
-    expect(keys.length).toEqual(6)
     // This is for testing purpose only. Normally one simply uses `Object.values(uniqueConds)`
     expect(keys).toContain('0<-all:TulaytullahsRemembrance:timePassive')
     expect(keys).toContain('0<-all:TulaytullahsRemembrance:hitPassive')

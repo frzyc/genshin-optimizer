@@ -34,27 +34,34 @@ describe('calculator', () => {
     test.skip('custom buff', () => {
       throw new Error('Add test')
     })
-    test('stacking', () => {
-      const members: Member[] = ['0', '1', '2'],
-        // Use existing `q:hp` and `q:eleMas` for stacking key
-        data: TagMapNodeEntries = [
-          ...teamData(members),
-          // Multiple members with non-zero values
-          ...withMember('0', self.premod.hp.add(5)),
-          ...withMember('1', self.premod.hp.add(3)),
-          ...withMember('2', self.premod.hp.add(3)),
-          ...teamBuff.final.atk.addOnce('static', self.premod.hp),
+    describe('stacking', () => {
+      const members: Member[] = ['0', '1', '2', '3']
+      const stack = teamBuff.final.atk.addOnce('static', self.premod.hp)
+      test('multiple non-zero entries', () => {
+        const data: TagMapNodeEntries = [
+            ...teamData(members),
+            // Multiple members with non-zero values
+            ...withMember('0', self.premod.hp.add(5)),
+            ...withMember('1', self.premod.hp.add(3)),
+            ...withMember('2', self.premod.hp.add(4)),
+            ...stack,
+          ],
+          calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-          // No member with value
-          ...teamBuff.final.def.addOnce('static', self.premod.eleMas),
-        ],
-        calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-
-      // Every member got buffed by exactly once with the highest value
-      for (const src of members) {
-        expect(calc.compute(self.final.atk.withTag({ src })).val).toEqual(5)
-        expect(calc.compute(self.final.def.withTag({ src })).val).toEqual(0)
-      }
+        // Every member got buffed by exactly once with the last member value
+        for (const src of members)
+          expect(calc.compute(self.final.atk.withTag({ src })).val).toEqual(4)
+      })
+      test('no non-zero entries', () => {
+        const data: TagMapNodeEntries = [
+            ...teamData(members),
+            // No members with non-zero values
+            ...stack,
+          ],
+          calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+        for (const src of members)
+          expect(calc.compute(self.final.atk.withTag({ src })).val).toEqual(0)
+      })
     })
   })
 })

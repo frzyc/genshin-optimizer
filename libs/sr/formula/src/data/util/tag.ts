@@ -251,7 +251,9 @@ export const queryTypes = new Set([
   ...Object.keys(enemyTag),
   'cond',
   'misc',
-  'stack',
+  'stackIn',
+  'stackTmp',
+  'stackOut',
 ])
 
 // Register q:

@@ -62,22 +62,19 @@ export class Read extends TypedRead<Tag, Read> {
       value: typeof value === 'object' ? value : constant(value),
     }
   }
-  addOnce(
-    sheet: Sheet,
-    value: number | NumNode,
-    accu: typeof this.accu = 'max'
-  ): TagMapNodeEntries {
+  addOnce(sheet: Sheet, value: number | NumNode): TagMapNodeEntries {
     if (this.tag.et !== 'teamBuff' || !sheet)
       throw new Error('Unsupported non-stacking entry')
     const q = `${uniqueId(sheet)}`
     // Use raw tags here instead of `self.*` to avoid cyclic dependency
+    // Entries in TeamData need `member:` for priority
     return [
-      // self.stack.<q>.add(..)
-      this.withTag({ et: 'self', qt: 'stack', q }).add(value),
-      this.with('et', 'self').add(
-        // team.<stack.q>[accu]
-        reader.withTag({ et: 'team', qt: 'stack', q })[accu]
-      ),
+      // 1) self.stackIn.<q>.add(value)
+      this.withTag({ et: 'self', sheet, qt: 'stackIn', q }).add(value),
+      // 2) In TeamData: self.stackTmp.<q>.add(cmpNE(self.stackIn.<q>, 0, /* priority */))
+      // 3) In TeamData: self.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, self.stackIn))
+      // 4) teamBuff.<stat>.add(self.stackOut.<q>)
+      this.add(reader.withTag({ et: 'self', sheet, qt: 'stackOut', q })),
     ]
   }
   addWithDmgType(

@@ -1,5 +1,6 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
+import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
 import type {
   Member,
   Preset,
@@ -132,6 +133,21 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
         .map((src) => entry.reread(notSelfBuff.withTag({ dst, src })))
         .filter(({ value }) => value.tag!['dst'] != value.tag!['src'])
     }),
+    // Non-stacking
+    members.slice(0, 4).flatMap((_, i) => {
+      const { stackIn, stackTmp } = reader.withAll('qt', [])
+      const src = `${i}` as '0' | '1' | '2' | '3'
+      // Make sure not to use `sheet:agg` here to match `stackOut` on the `reader.addOnce` side
+      const self = reader.withTag({ src, et: 'self' })
+      // Use `i + 1` for priority so that `0` means no buff
+      return [
+        self.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
+        self
+          .with('qt', 'stackOut')
+          .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
+      ]
+    }),
+
     // Total Team Stat
     //
     // CAUTION:
