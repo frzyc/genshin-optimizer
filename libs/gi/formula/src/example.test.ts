@@ -230,15 +230,15 @@ describe('example', () => {
     const keys = Object.keys(uniqueConds)
     expect(keys.length).toEqual(6)
     // This is for testing purpose only. Normally one simply uses `Object.values(uniqueConds)`
-    expect(keys).toContain('0<-0:TulaytullahsRemembrance:timePassive')
-    expect(keys).toContain('0<-0:TulaytullahsRemembrance:hitPassive')
-    expect(keys).toContain('0<-0:Nahida:c2QSA')
-    expect(keys).toContain('0<-0:Nahida:partyInBurst')
-    expect(keys).toContain('0<-1:KeyOfKhajNisut:afterSkillStacks')
-    expect(keys).toContain('0<-1:Nilou:a1AfterHit')
+    expect(keys).toContain('0<-all:TulaytullahsRemembrance:timePassive')
+    expect(keys).toContain('0<-all:TulaytullahsRemembrance:hitPassive')
+    expect(keys).toContain('0<-all:Nahida:c2QSA')
+    expect(keys).toContain('0<-all:Nahida:partyInBurst')
+    expect(keys).toContain('0<-all:KeyOfKhajNisut:afterSkillStacks')
+    expect(keys).toContain('0<-all:Nilou:a1AfterHit')
 
     // Grab metadata from an entry
-    const tag = uniqueConds['0<-1:Nilou:a1AfterHit']
+    const tag = uniqueConds['0<-all:Nilou:a1AfterHit']
     const meta: IConditionalData = (conditionals as any)[tag.sheet!][tag.q!]
     expect(meta).toEqual({ sheet: 'Nilou', name: 'a1AfterHit', type: 'bool' })
 

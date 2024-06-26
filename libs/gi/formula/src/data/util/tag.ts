@@ -256,7 +256,7 @@ function allConditionals<T>(
     cata: null,
   }
   let base = reader.sum.withTag(baseTag)
-  if (shared) base = base.with('dst', 'all')
+  if (shared) base = base.with('src', 'all')
   if (metaList.conditionals) {
     const { conditionals } = metaList
     return base.withAll('q', [], (r, q) => {
