@@ -53,7 +53,7 @@ export const conditionals = {
       sheet: 'Adventurer',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ArchaicPetra: {
@@ -72,7 +72,7 @@ export const conditionals = {
       sheet: 'ArchaicPetra',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Berserker: {
@@ -91,7 +91,7 @@ export const conditionals = {
       sheet: 'Berserker',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BlizzardStrayer: {
@@ -110,7 +110,7 @@ export const conditionals = {
       sheet: 'BlizzardStrayer',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BloodstainedChivalry: {
@@ -129,7 +129,7 @@ export const conditionals = {
       sheet: 'BloodstainedChivalry',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BraveHeart: {
@@ -148,7 +148,7 @@ export const conditionals = {
       sheet: 'BraveHeart',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   CrimsonWitchOfFlames: {
@@ -167,7 +167,7 @@ export const conditionals = {
       sheet: 'CrimsonWitchOfFlames',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   DeepwoodMemories: {
@@ -186,7 +186,7 @@ export const conditionals = {
       sheet: 'DeepwoodMemories',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   DefendersWill: {
@@ -205,7 +205,7 @@ export const conditionals = {
       sheet: 'DefendersWill',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   DesertPavilionChronicle: {
@@ -224,7 +224,7 @@ export const conditionals = {
       sheet: 'DesertPavilionChronicle',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   EchoesOfAnOffering: {
@@ -243,7 +243,7 @@ export const conditionals = {
       sheet: 'EchoesOfAnOffering',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   EmblemOfSeveredFate: {
@@ -262,7 +262,7 @@ export const conditionals = {
       sheet: 'EmblemOfSeveredFate',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FlowerOfParadiseLost: {
@@ -281,7 +281,7 @@ export const conditionals = {
       sheet: 'FlowerOfParadiseLost',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FragmentOfHarmonicWhimsy: {
@@ -300,7 +300,7 @@ export const conditionals = {
       sheet: 'FragmentOfHarmonicWhimsy',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Gambler: {
@@ -319,7 +319,7 @@ export const conditionals = {
       sheet: 'Gambler',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   GildedDreams: {
@@ -338,7 +338,7 @@ export const conditionals = {
       sheet: 'GildedDreams',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   GladiatorsFinale: {
@@ -357,7 +357,7 @@ export const conditionals = {
       sheet: 'GladiatorsFinale',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   GoldenTroupe: {
@@ -376,7 +376,7 @@ export const conditionals = {
       sheet: 'GoldenTroupe',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   HeartOfDepth: {
@@ -395,7 +395,7 @@ export const conditionals = {
       sheet: 'HeartOfDepth',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   HuskOfOpulentDreams: {
@@ -414,7 +414,7 @@ export const conditionals = {
       sheet: 'HuskOfOpulentDreams',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Instructor: {
@@ -433,7 +433,7 @@ export const conditionals = {
       sheet: 'Instructor',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Lavawalker: {
@@ -452,7 +452,7 @@ export const conditionals = {
       sheet: 'Lavawalker',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   LuckyDog: {
@@ -471,7 +471,7 @@ export const conditionals = {
       sheet: 'LuckyDog',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   MaidenBeloved: {
@@ -490,7 +490,7 @@ export const conditionals = {
       sheet: 'MaidenBeloved',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   MarechausseeHunter: {
@@ -509,7 +509,7 @@ export const conditionals = {
       sheet: 'MarechausseeHunter',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   MartialArtist: {
@@ -528,7 +528,7 @@ export const conditionals = {
       sheet: 'MartialArtist',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   NighttimeWhispersInTheEchoingWoods: {
@@ -547,7 +547,7 @@ export const conditionals = {
       sheet: 'NighttimeWhispersInTheEchoingWoods',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   NoblesseOblige: {
@@ -569,7 +569,7 @@ export const conditionals = {
       sheet: 'NymphsDream',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   OceanHuedClam: {
@@ -588,7 +588,7 @@ export const conditionals = {
       sheet: 'OceanHuedClam',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PaleFlame: {
@@ -607,7 +607,7 @@ export const conditionals = {
       sheet: 'PaleFlame',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PrayersForDestiny: {
@@ -626,7 +626,7 @@ export const conditionals = {
       sheet: 'PrayersForDestiny',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PrayersForIllumination: {
@@ -645,7 +645,7 @@ export const conditionals = {
       sheet: 'PrayersForIllumination',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PrayersForWisdom: {
@@ -664,7 +664,7 @@ export const conditionals = {
       sheet: 'PrayersForWisdom',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PrayersToSpringtime: {
@@ -683,7 +683,7 @@ export const conditionals = {
       sheet: 'PrayersToSpringtime',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ResolutionOfSojourner: {
@@ -702,7 +702,7 @@ export const conditionals = {
       sheet: 'ResolutionOfSojourner',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   RetracingBolide: {
@@ -721,7 +721,7 @@ export const conditionals = {
       sheet: 'RetracingBolide',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Scholar: {
@@ -740,7 +740,7 @@ export const conditionals = {
       sheet: 'Scholar',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ShimenawasReminiscence: {
@@ -759,7 +759,7 @@ export const conditionals = {
       sheet: 'ShimenawasReminiscence',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SongOfDaysPast: {
@@ -778,7 +778,7 @@ export const conditionals = {
       sheet: 'SongOfDaysPast',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TenacityOfTheMillelith: {
@@ -797,7 +797,7 @@ export const conditionals = {
       sheet: 'TenacityOfTheMillelith',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TheExile: {
@@ -816,7 +816,7 @@ export const conditionals = {
       sheet: 'TheExile',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ThunderingFury: {
@@ -835,7 +835,7 @@ export const conditionals = {
       sheet: 'ThunderingFury',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Thundersoother: {
@@ -854,7 +854,7 @@ export const conditionals = {
       sheet: 'Thundersoother',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TinyMiracle: {
@@ -873,7 +873,7 @@ export const conditionals = {
       sheet: 'TinyMiracle',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TravelingDoctor: {
@@ -892,7 +892,7 @@ export const conditionals = {
       sheet: 'TravelingDoctor',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   UnfinishedReverie: {
@@ -911,7 +911,7 @@ export const conditionals = {
       sheet: 'UnfinishedReverie',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   VermillionHereafter: {
@@ -930,7 +930,7 @@ export const conditionals = {
       sheet: 'VermillionHereafter',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ViridescentVenerer: {
@@ -949,7 +949,7 @@ export const conditionals = {
       sheet: 'ViridescentVenerer',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   VourukashasGlow: {
@@ -968,7 +968,7 @@ export const conditionals = {
       sheet: 'VourukashasGlow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   WanderersTroupe: {
@@ -987,7 +987,7 @@ export const conditionals = {
       sheet: 'WanderersTroupe',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Albedo: {
@@ -1006,7 +1006,7 @@ export const conditionals = {
       sheet: 'Albedo',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Alhaitham: {
@@ -1025,7 +1025,7 @@ export const conditionals = {
       sheet: 'Alhaitham',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Aloy: {
@@ -1044,7 +1044,7 @@ export const conditionals = {
       sheet: 'Aloy',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Amber: {
@@ -1063,7 +1063,7 @@ export const conditionals = {
       sheet: 'Amber',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   AratakiItto: {
@@ -1082,7 +1082,7 @@ export const conditionals = {
       sheet: 'AratakiItto',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Arlecchino: {
@@ -1101,7 +1101,7 @@ export const conditionals = {
       sheet: 'Arlecchino',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Baizhu: {
@@ -1120,7 +1120,7 @@ export const conditionals = {
       sheet: 'Baizhu',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Barbara: {
@@ -1139,7 +1139,7 @@ export const conditionals = {
       sheet: 'Barbara',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Beidou: {
@@ -1158,7 +1158,7 @@ export const conditionals = {
       sheet: 'Beidou',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Bennett: {
@@ -1177,7 +1177,7 @@ export const conditionals = {
       sheet: 'Bennett',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Candace: {
@@ -1204,7 +1204,7 @@ export const conditionals = {
       sheet: 'Charlotte',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Chevreuse: {
@@ -1223,7 +1223,7 @@ export const conditionals = {
       sheet: 'Chevreuse',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Chiori: {
@@ -1242,7 +1242,7 @@ export const conditionals = {
       sheet: 'Chiori',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Chongyun: {
@@ -1261,7 +1261,7 @@ export const conditionals = {
       sheet: 'Chongyun',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Clorinde: {
@@ -1280,7 +1280,7 @@ export const conditionals = {
       sheet: 'Clorinde',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Collei: {
@@ -1299,7 +1299,7 @@ export const conditionals = {
       sheet: 'Collei',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Cyno: {
@@ -1318,7 +1318,7 @@ export const conditionals = {
       sheet: 'Cyno',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Dehya: {
@@ -1337,7 +1337,7 @@ export const conditionals = {
       sheet: 'Dehya',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Diluc: {
@@ -1356,7 +1356,7 @@ export const conditionals = {
       sheet: 'Diluc',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Diona: {
@@ -1375,7 +1375,7 @@ export const conditionals = {
       sheet: 'Diona',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Dori: {
@@ -1394,7 +1394,7 @@ export const conditionals = {
       sheet: 'Dori',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Eula: {
@@ -1413,7 +1413,7 @@ export const conditionals = {
       sheet: 'Eula',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Faruzan: {
@@ -1432,7 +1432,7 @@ export const conditionals = {
       sheet: 'Faruzan',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Fischl: {
@@ -1451,7 +1451,7 @@ export const conditionals = {
       sheet: 'Fischl',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Freminet: {
@@ -1470,7 +1470,7 @@ export const conditionals = {
       sheet: 'Freminet',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Furina: {
@@ -1489,7 +1489,7 @@ export const conditionals = {
       sheet: 'Furina',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Gaming: {
@@ -1508,7 +1508,7 @@ export const conditionals = {
       sheet: 'Gaming',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Ganyu: {
@@ -1527,7 +1527,7 @@ export const conditionals = {
       sheet: 'Ganyu',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Gorou: {
@@ -1546,7 +1546,7 @@ export const conditionals = {
       sheet: 'Gorou',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   HuTao: {
@@ -1565,7 +1565,7 @@ export const conditionals = {
       sheet: 'HuTao',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Jean: {
@@ -1584,7 +1584,7 @@ export const conditionals = {
       sheet: 'Jean',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   KaedeharaKazuha: {
@@ -1603,7 +1603,7 @@ export const conditionals = {
       sheet: 'KaedeharaKazuha',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Kaeya: {
@@ -1622,7 +1622,7 @@ export const conditionals = {
       sheet: 'Kaeya',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   KamisatoAyaka: {
@@ -1641,7 +1641,7 @@ export const conditionals = {
       sheet: 'KamisatoAyaka',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   KamisatoAyato: {
@@ -1660,7 +1660,7 @@ export const conditionals = {
       sheet: 'KamisatoAyato',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Kaveh: {
@@ -1679,7 +1679,7 @@ export const conditionals = {
       sheet: 'Kaveh',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Keqing: {
@@ -1698,7 +1698,7 @@ export const conditionals = {
       sheet: 'Keqing',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Kirara: {
@@ -1717,7 +1717,7 @@ export const conditionals = {
       sheet: 'Kirara',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Klee: {
@@ -1736,7 +1736,7 @@ export const conditionals = {
       sheet: 'Klee',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   KujouSara: {
@@ -1755,7 +1755,7 @@ export const conditionals = {
       sheet: 'KujouSara',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   KukiShinobu: {
@@ -1774,7 +1774,7 @@ export const conditionals = {
       sheet: 'KukiShinobu',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Layla: {
@@ -1793,7 +1793,7 @@ export const conditionals = {
       sheet: 'Layla',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Lisa: {
@@ -1812,7 +1812,7 @@ export const conditionals = {
       sheet: 'Lisa',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Lynette: {
@@ -1831,7 +1831,7 @@ export const conditionals = {
       sheet: 'Lynette',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Lyney: {
@@ -1850,7 +1850,7 @@ export const conditionals = {
       sheet: 'Lyney',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Mika: {
@@ -1869,7 +1869,7 @@ export const conditionals = {
       sheet: 'Mika',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Mona: {
@@ -1888,7 +1888,7 @@ export const conditionals = {
       sheet: 'Mona',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Nahida: {
@@ -1922,7 +1922,7 @@ export const conditionals = {
       sheet: 'Navia',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Neuvillette: {
@@ -1941,7 +1941,7 @@ export const conditionals = {
       sheet: 'Neuvillette',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Nilou: {
@@ -1967,7 +1967,7 @@ export const conditionals = {
       sheet: 'Ningguang',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Noelle: {
@@ -1986,7 +1986,7 @@ export const conditionals = {
       sheet: 'Noelle',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Qiqi: {
@@ -2005,7 +2005,7 @@ export const conditionals = {
       sheet: 'Qiqi',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   RaidenShogun: {
@@ -2024,7 +2024,7 @@ export const conditionals = {
       sheet: 'RaidenShogun',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Razor: {
@@ -2043,7 +2043,7 @@ export const conditionals = {
       sheet: 'Razor',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Rosaria: {
@@ -2062,7 +2062,7 @@ export const conditionals = {
       sheet: 'Rosaria',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SangonomiyaKokomi: {
@@ -2081,7 +2081,7 @@ export const conditionals = {
       sheet: 'SangonomiyaKokomi',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Sayu: {
@@ -2100,7 +2100,7 @@ export const conditionals = {
       sheet: 'Sayu',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Sethos: {
@@ -2119,7 +2119,7 @@ export const conditionals = {
       sheet: 'Sethos',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Shenhe: {
@@ -2138,7 +2138,7 @@ export const conditionals = {
       sheet: 'Shenhe',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ShikanoinHeizou: {
@@ -2157,7 +2157,7 @@ export const conditionals = {
       sheet: 'ShikanoinHeizou',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Somnia: {
@@ -2176,7 +2176,7 @@ export const conditionals = {
       sheet: 'Somnia',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Sucrose: {
@@ -2195,7 +2195,7 @@ export const conditionals = {
       sheet: 'Sucrose',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Tartaglia: {
@@ -2214,7 +2214,7 @@ export const conditionals = {
       sheet: 'Tartaglia',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Thoma: {
@@ -2233,7 +2233,7 @@ export const conditionals = {
       sheet: 'Thoma',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Tighnari: {
@@ -2252,7 +2252,7 @@ export const conditionals = {
       sheet: 'Tighnari',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TravelerAnemo: {
@@ -2271,7 +2271,7 @@ export const conditionals = {
       sheet: 'TravelerAnemo',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TravelerDendro: {
@@ -2290,7 +2290,7 @@ export const conditionals = {
       sheet: 'TravelerDendro',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TravelerElectro: {
@@ -2309,7 +2309,7 @@ export const conditionals = {
       sheet: 'TravelerElectro',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TravelerGeo: {
@@ -2328,7 +2328,7 @@ export const conditionals = {
       sheet: 'TravelerGeo',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TravelerHydro: {
@@ -2347,7 +2347,7 @@ export const conditionals = {
       sheet: 'TravelerHydro',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Venti: {
@@ -2366,7 +2366,7 @@ export const conditionals = {
       sheet: 'Venti',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Wanderer: {
@@ -2385,7 +2385,7 @@ export const conditionals = {
       sheet: 'Wanderer',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Wriothesley: {
@@ -2404,7 +2404,7 @@ export const conditionals = {
       sheet: 'Wriothesley',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Xiangling: {
@@ -2423,7 +2423,7 @@ export const conditionals = {
       sheet: 'Xiangling',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Xianyun: {
@@ -2442,7 +2442,7 @@ export const conditionals = {
       sheet: 'Xianyun',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Xiao: {
@@ -2461,7 +2461,7 @@ export const conditionals = {
       sheet: 'Xiao',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Xingqiu: {
@@ -2480,7 +2480,7 @@ export const conditionals = {
       sheet: 'Xingqiu',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Xinyan: {
@@ -2499,7 +2499,7 @@ export const conditionals = {
       sheet: 'Xinyan',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   YaeMiko: {
@@ -2518,7 +2518,7 @@ export const conditionals = {
       sheet: 'YaeMiko',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Yanfei: {
@@ -2537,7 +2537,7 @@ export const conditionals = {
       sheet: 'Yanfei',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Yaoyao: {
@@ -2556,7 +2556,7 @@ export const conditionals = {
       sheet: 'Yaoyao',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Yelan: {
@@ -2575,7 +2575,7 @@ export const conditionals = {
       sheet: 'Yelan',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Yoimiya: {
@@ -2594,7 +2594,7 @@ export const conditionals = {
       sheet: 'Yoimiya',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   YunJin: {
@@ -2613,7 +2613,7 @@ export const conditionals = {
       sheet: 'YunJin',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Zhongli: {
@@ -2632,7 +2632,7 @@ export const conditionals = {
       sheet: 'Zhongli',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   AThousandFloatingDreams: {
@@ -2651,7 +2651,7 @@ export const conditionals = {
       sheet: 'AThousandFloatingDreams',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Absolution: {
@@ -2670,7 +2670,7 @@ export const conditionals = {
       sheet: 'Absolution',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Akuoumaru: {
@@ -2689,7 +2689,7 @@ export const conditionals = {
       sheet: 'Akuoumaru',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   AlleyHunter: {
@@ -2708,7 +2708,7 @@ export const conditionals = {
       sheet: 'AlleyHunter',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   AmenomaKageuchi: {
@@ -2727,7 +2727,7 @@ export const conditionals = {
       sheet: 'AmenomaKageuchi',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   AmosBow: {
@@ -2746,7 +2746,7 @@ export const conditionals = {
       sheet: 'AmosBow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ApprenticesNotes: {
@@ -2765,7 +2765,7 @@ export const conditionals = {
       sheet: 'ApprenticesNotes',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   AquaSimulacra: {
@@ -2784,7 +2784,7 @@ export const conditionals = {
       sheet: 'AquaSimulacra',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   AquilaFavonia: {
@@ -2803,7 +2803,7 @@ export const conditionals = {
       sheet: 'AquilaFavonia',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BalladOfTheBoundlessBlue: {
@@ -2822,7 +2822,7 @@ export const conditionals = {
       sheet: 'BalladOfTheBoundlessBlue',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BalladOfTheFjords: {
@@ -2841,7 +2841,7 @@ export const conditionals = {
       sheet: 'BalladOfTheFjords',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BeaconOfTheReedSea: {
@@ -2860,7 +2860,7 @@ export const conditionals = {
       sheet: 'BeaconOfTheReedSea',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BeginnersProtector: {
@@ -2879,7 +2879,7 @@ export const conditionals = {
       sheet: 'BeginnersProtector',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BlackTassel: {
@@ -2898,7 +2898,7 @@ export const conditionals = {
       sheet: 'BlackTassel',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BlackcliffAgate: {
@@ -2917,7 +2917,7 @@ export const conditionals = {
       sheet: 'BlackcliffAgate',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BlackcliffLongsword: {
@@ -2936,7 +2936,7 @@ export const conditionals = {
       sheet: 'BlackcliffLongsword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BlackcliffPole: {
@@ -2955,7 +2955,7 @@ export const conditionals = {
       sheet: 'BlackcliffPole',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BlackcliffSlasher: {
@@ -2974,7 +2974,7 @@ export const conditionals = {
       sheet: 'BlackcliffSlasher',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BlackcliffWarbow: {
@@ -2993,7 +2993,7 @@ export const conditionals = {
       sheet: 'BlackcliffWarbow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   BloodtaintedGreatsword: {
@@ -3012,7 +3012,7 @@ export const conditionals = {
       sheet: 'BloodtaintedGreatsword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   CalamityQueller: {
@@ -3042,7 +3042,7 @@ export const conditionals = {
       sheet: 'CashflowSupervision',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   CinnabarSpindle: {
@@ -3061,7 +3061,7 @@ export const conditionals = {
       sheet: 'CinnabarSpindle',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Cloudforged: {
@@ -3080,7 +3080,7 @@ export const conditionals = {
       sheet: 'Cloudforged',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   CompoundBow: {
@@ -3099,7 +3099,7 @@ export const conditionals = {
       sheet: 'CompoundBow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   CoolSteel: {
@@ -3118,7 +3118,7 @@ export const conditionals = {
       sheet: 'CoolSteel',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   CranesEchoingCall: {
@@ -3137,7 +3137,7 @@ export const conditionals = {
       sheet: 'CranesEchoingCall',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   CrescentPike: {
@@ -3156,7 +3156,7 @@ export const conditionals = {
       sheet: 'CrescentPike',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   CrimsonMoonsSemblance: {
@@ -3175,7 +3175,7 @@ export const conditionals = {
       sheet: 'CrimsonMoonsSemblance',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   DarkIronSword: {
@@ -3194,7 +3194,7 @@ export const conditionals = {
       sheet: 'DarkIronSword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Deathmatch: {
@@ -3213,7 +3213,7 @@ export const conditionals = {
       sheet: 'Deathmatch',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   DebateClub: {
@@ -3232,7 +3232,7 @@ export const conditionals = {
       sheet: 'DebateClub',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   DialoguesOfTheDesertSages: {
@@ -3251,7 +3251,7 @@ export const conditionals = {
       sheet: 'DialoguesOfTheDesertSages',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   DodocoTales: {
@@ -3270,7 +3270,7 @@ export const conditionals = {
       sheet: 'DodocoTales',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   DragonsBane: {
@@ -3289,7 +3289,7 @@ export const conditionals = {
       sheet: 'DragonsBane',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   DragonspineSpear: {
@@ -3308,7 +3308,7 @@ export const conditionals = {
       sheet: 'DragonspineSpear',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   DullBlade: {
@@ -3327,7 +3327,7 @@ export const conditionals = {
       sheet: 'DullBlade',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ElegyForTheEnd: {
@@ -3346,7 +3346,7 @@ export const conditionals = {
       sheet: 'ElegyForTheEnd',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   EmeraldOrb: {
@@ -3365,7 +3365,7 @@ export const conditionals = {
       sheet: 'EmeraldOrb',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   EndOfTheLine: {
@@ -3384,7 +3384,7 @@ export const conditionals = {
       sheet: 'EndOfTheLine',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   EngulfingLightning: {
@@ -3403,7 +3403,7 @@ export const conditionals = {
       sheet: 'EngulfingLightning',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   EverlastingMoonglow: {
@@ -3422,7 +3422,7 @@ export const conditionals = {
       sheet: 'EverlastingMoonglow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   EyeOfPerception: {
@@ -3441,7 +3441,7 @@ export const conditionals = {
       sheet: 'EyeOfPerception',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FadingTwilight: {
@@ -3460,7 +3460,7 @@ export const conditionals = {
       sheet: 'FadingTwilight',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FavoniusCodex: {
@@ -3479,7 +3479,7 @@ export const conditionals = {
       sheet: 'FavoniusCodex',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FavoniusGreatsword: {
@@ -3498,7 +3498,7 @@ export const conditionals = {
       sheet: 'FavoniusGreatsword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FavoniusLance: {
@@ -3517,7 +3517,7 @@ export const conditionals = {
       sheet: 'FavoniusLance',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FavoniusSword: {
@@ -3536,7 +3536,7 @@ export const conditionals = {
       sheet: 'FavoniusSword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FavoniusWarbow: {
@@ -3555,7 +3555,7 @@ export const conditionals = {
       sheet: 'FavoniusWarbow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FerrousShadow: {
@@ -3574,7 +3574,7 @@ export const conditionals = {
       sheet: 'FerrousShadow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FesteringDesire: {
@@ -3593,7 +3593,7 @@ export const conditionals = {
       sheet: 'FesteringDesire',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FilletBlade: {
@@ -3612,7 +3612,7 @@ export const conditionals = {
       sheet: 'FilletBlade',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FinaleOfTheDeep: {
@@ -3631,7 +3631,7 @@ export const conditionals = {
       sheet: 'FinaleOfTheDeep',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FleuveCendreFerryman: {
@@ -3650,7 +3650,7 @@ export const conditionals = {
       sheet: 'FleuveCendreFerryman',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FlowingPurity: {
@@ -3669,7 +3669,7 @@ export const conditionals = {
       sheet: 'FlowingPurity',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ForestRegalia: {
@@ -3688,7 +3688,7 @@ export const conditionals = {
       sheet: 'ForestRegalia',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FreedomSworn: {
@@ -3707,7 +3707,7 @@ export const conditionals = {
       sheet: 'FreedomSworn',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Frostbearer: {
@@ -3726,7 +3726,7 @@ export const conditionals = {
       sheet: 'Frostbearer',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   FruitOfFulfillment: {
@@ -3745,7 +3745,7 @@ export const conditionals = {
       sheet: 'FruitOfFulfillment',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   HakushinRing: {
@@ -3764,7 +3764,7 @@ export const conditionals = {
       sheet: 'HakushinRing',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Halberd: {
@@ -3783,7 +3783,7 @@ export const conditionals = {
       sheet: 'Halberd',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Hamayumi: {
@@ -3802,7 +3802,7 @@ export const conditionals = {
       sheet: 'Hamayumi',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   HaranGeppakuFutsu: {
@@ -3821,7 +3821,7 @@ export const conditionals = {
       sheet: 'HaranGeppakuFutsu',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   HarbingerOfDawn: {
@@ -3840,7 +3840,7 @@ export const conditionals = {
       sheet: 'HarbingerOfDawn',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   HuntersBow: {
@@ -3859,7 +3859,7 @@ export const conditionals = {
       sheet: 'HuntersBow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   HuntersPath: {
@@ -3878,7 +3878,7 @@ export const conditionals = {
       sheet: 'HuntersPath',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   IbisPiercer: {
@@ -3897,7 +3897,7 @@ export const conditionals = {
       sheet: 'IbisPiercer',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   IronPoint: {
@@ -3916,7 +3916,7 @@ export const conditionals = {
       sheet: 'IronPoint',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   IronSting: {
@@ -3935,7 +3935,7 @@ export const conditionals = {
       sheet: 'IronSting',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   JadefallsSplendor: {
@@ -3954,7 +3954,7 @@ export const conditionals = {
       sheet: 'JadefallsSplendor',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   KagotsurubeIsshin: {
@@ -3973,7 +3973,7 @@ export const conditionals = {
       sheet: 'KagotsurubeIsshin',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   KagurasVerity: {
@@ -3992,7 +3992,7 @@ export const conditionals = {
       sheet: 'KagurasVerity',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   KatsuragikiriNagamasa: {
@@ -4011,7 +4011,7 @@ export const conditionals = {
       sheet: 'KatsuragikiriNagamasa',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   KeyOfKhajNisut: {
@@ -4040,7 +4040,7 @@ export const conditionals = {
       sheet: 'KingsSquire',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   KitainCrossSpear: {
@@ -4059,7 +4059,7 @@ export const conditionals = {
       sheet: 'KitainCrossSpear',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   LightOfFoliarIncision: {
@@ -4078,7 +4078,7 @@ export const conditionals = {
       sheet: 'LightOfFoliarIncision',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   LionsRoar: {
@@ -4097,7 +4097,7 @@ export const conditionals = {
       sheet: 'LionsRoar',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   LithicBlade: {
@@ -4116,7 +4116,7 @@ export const conditionals = {
       sheet: 'LithicBlade',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   LithicSpear: {
@@ -4135,7 +4135,7 @@ export const conditionals = {
       sheet: 'LithicSpear',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   LostPrayerToTheSacredWinds: {
@@ -4154,7 +4154,7 @@ export const conditionals = {
       sheet: 'LostPrayerToTheSacredWinds',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   LuxuriousSeaLord: {
@@ -4173,7 +4173,7 @@ export const conditionals = {
       sheet: 'LuxuriousSeaLord',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   MagicGuide: {
@@ -4192,7 +4192,7 @@ export const conditionals = {
       sheet: 'MagicGuide',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   MailedFlower: {
@@ -4211,7 +4211,7 @@ export const conditionals = {
       sheet: 'MailedFlower',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   MakhairaAquamarine: {
@@ -4230,7 +4230,7 @@ export const conditionals = {
       sheet: 'MakhairaAquamarine',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   MappaMare: {
@@ -4249,7 +4249,7 @@ export const conditionals = {
       sheet: 'MappaMare',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   MemoryOfDust: {
@@ -4268,7 +4268,7 @@ export const conditionals = {
       sheet: 'MemoryOfDust',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Messenger: {
@@ -4287,7 +4287,7 @@ export const conditionals = {
       sheet: 'Messenger',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   MissiveWindspear: {
@@ -4306,7 +4306,7 @@ export const conditionals = {
       sheet: 'MissiveWindspear',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   MistsplitterReforged: {
@@ -4325,7 +4325,7 @@ export const conditionals = {
       sheet: 'MistsplitterReforged',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   MitternachtsWaltz: {
@@ -4344,7 +4344,7 @@ export const conditionals = {
       sheet: 'MitternachtsWaltz',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Moonpiercer: {
@@ -4363,7 +4363,7 @@ export const conditionals = {
       sheet: 'Moonpiercer',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   MouunsMoon: {
@@ -4382,7 +4382,7 @@ export const conditionals = {
       sheet: 'MouunsMoon',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   OathswornEye: {
@@ -4401,7 +4401,7 @@ export const conditionals = {
       sheet: 'OathswornEye',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   OldMercsPal: {
@@ -4420,7 +4420,7 @@ export const conditionals = {
       sheet: 'OldMercsPal',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   OtherworldlyStory: {
@@ -4439,7 +4439,7 @@ export const conditionals = {
       sheet: 'OtherworldlyStory',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PocketGrimoire: {
@@ -4458,7 +4458,7 @@ export const conditionals = {
       sheet: 'PocketGrimoire',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PolarStar: {
@@ -4477,7 +4477,7 @@ export const conditionals = {
       sheet: 'PolarStar',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PortablePowerSaw: {
@@ -4496,7 +4496,7 @@ export const conditionals = {
       sheet: 'PortablePowerSaw',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Predator: {
@@ -4515,7 +4515,7 @@ export const conditionals = {
       sheet: 'Predator',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PrimordialJadeCutter: {
@@ -4534,7 +4534,7 @@ export const conditionals = {
       sheet: 'PrimordialJadeCutter',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PrimordialJadeWingedSpear: {
@@ -4553,7 +4553,7 @@ export const conditionals = {
       sheet: 'PrimordialJadeWingedSpear',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ProspectorsDrill: {
@@ -4572,7 +4572,7 @@ export const conditionals = {
       sheet: 'ProspectorsDrill',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PrototypeArchaic: {
@@ -4591,7 +4591,7 @@ export const conditionals = {
       sheet: 'PrototypeArchaic',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PrototypeCrescent: {
@@ -4610,7 +4610,7 @@ export const conditionals = {
       sheet: 'PrototypeCrescent',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PrototypeRancour: {
@@ -4629,7 +4629,7 @@ export const conditionals = {
       sheet: 'PrototypeRancour',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   PrototypeStarglitter: {
@@ -4648,7 +4648,7 @@ export const conditionals = {
       sheet: 'PrototypeStarglitter',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   QuantumCatalyst: {
@@ -4667,7 +4667,7 @@ export const conditionals = {
       sheet: 'QuantumCatalyst',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Rainslasher: {
@@ -4686,7 +4686,7 @@ export const conditionals = {
       sheet: 'Rainslasher',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   RangeGauge: {
@@ -4705,7 +4705,7 @@ export const conditionals = {
       sheet: 'RangeGauge',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   RavenBow: {
@@ -4724,7 +4724,7 @@ export const conditionals = {
       sheet: 'RavenBow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   RecurveBow: {
@@ -4743,7 +4743,7 @@ export const conditionals = {
       sheet: 'RecurveBow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   RedhornStonethresher: {
@@ -4762,7 +4762,7 @@ export const conditionals = {
       sheet: 'RedhornStonethresher',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   RightfulReward: {
@@ -4781,7 +4781,7 @@ export const conditionals = {
       sheet: 'RightfulReward',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   RoyalBow: {
@@ -4800,7 +4800,7 @@ export const conditionals = {
       sheet: 'RoyalBow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   RoyalGreatsword: {
@@ -4819,7 +4819,7 @@ export const conditionals = {
       sheet: 'RoyalGreatsword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   RoyalGrimoire: {
@@ -4838,7 +4838,7 @@ export const conditionals = {
       sheet: 'RoyalGrimoire',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   RoyalLongsword: {
@@ -4857,7 +4857,7 @@ export const conditionals = {
       sheet: 'RoyalLongsword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   RoyalSpear: {
@@ -4876,7 +4876,7 @@ export const conditionals = {
       sheet: 'RoyalSpear',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Rust: {
@@ -4895,7 +4895,7 @@ export const conditionals = {
       sheet: 'Rust',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SacrificialBow: {
@@ -4914,7 +4914,7 @@ export const conditionals = {
       sheet: 'SacrificialBow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SacrificialFragments: {
@@ -4933,7 +4933,7 @@ export const conditionals = {
       sheet: 'SacrificialFragments',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SacrificialGreatsword: {
@@ -4952,7 +4952,7 @@ export const conditionals = {
       sheet: 'SacrificialGreatsword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SacrificialJade: {
@@ -4971,7 +4971,7 @@ export const conditionals = {
       sheet: 'SacrificialJade',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SacrificialSword: {
@@ -4990,7 +4990,7 @@ export const conditionals = {
       sheet: 'SacrificialSword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SapwoodBlade: {
@@ -5009,7 +5009,7 @@ export const conditionals = {
       sheet: 'SapwoodBlade',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ScionOfTheBlazingSun: {
@@ -5028,7 +5028,7 @@ export const conditionals = {
       sheet: 'ScionOfTheBlazingSun',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SeasonedHuntersBow: {
@@ -5047,7 +5047,7 @@ export const conditionals = {
       sheet: 'SeasonedHuntersBow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SerpentSpine: {
@@ -5066,7 +5066,7 @@ export const conditionals = {
       sheet: 'SerpentSpine',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SharpshootersOath: {
@@ -5085,7 +5085,7 @@ export const conditionals = {
       sheet: 'SharpshootersOath',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SilverSword: {
@@ -5104,7 +5104,7 @@ export const conditionals = {
       sheet: 'SilverSword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SkyriderGreatsword: {
@@ -5123,7 +5123,7 @@ export const conditionals = {
       sheet: 'SkyriderGreatsword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SkyriderSword: {
@@ -5142,7 +5142,7 @@ export const conditionals = {
       sheet: 'SkyriderSword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SkywardAtlas: {
@@ -5161,7 +5161,7 @@ export const conditionals = {
       sheet: 'SkywardAtlas',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SkywardBlade: {
@@ -5180,7 +5180,7 @@ export const conditionals = {
       sheet: 'SkywardBlade',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SkywardHarp: {
@@ -5199,7 +5199,7 @@ export const conditionals = {
       sheet: 'SkywardHarp',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SkywardPride: {
@@ -5218,7 +5218,7 @@ export const conditionals = {
       sheet: 'SkywardPride',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SkywardSpine: {
@@ -5237,7 +5237,7 @@ export const conditionals = {
       sheet: 'SkywardSpine',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Slingshot: {
@@ -5256,7 +5256,7 @@ export const conditionals = {
       sheet: 'Slingshot',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SnowTombedStarsilver: {
@@ -5275,7 +5275,7 @@ export const conditionals = {
       sheet: 'SnowTombedStarsilver',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SolarPearl: {
@@ -5294,7 +5294,7 @@ export const conditionals = {
       sheet: 'SolarPearl',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SongOfBrokenPines: {
@@ -5313,7 +5313,7 @@ export const conditionals = {
       sheet: 'SongOfBrokenPines',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SongOfStillness: {
@@ -5332,7 +5332,7 @@ export const conditionals = {
       sheet: 'SongOfStillness',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SplendorOfTranquilWaters: {
@@ -5351,7 +5351,7 @@ export const conditionals = {
       sheet: 'SplendorOfTranquilWaters',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   StaffOfHoma: {
@@ -5370,7 +5370,7 @@ export const conditionals = {
       sheet: 'StaffOfHoma',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   StaffOfTheScarletSands: {
@@ -5389,7 +5389,7 @@ export const conditionals = {
       sheet: 'StaffOfTheScarletSands',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SummitShaper: {
@@ -5408,7 +5408,7 @@ export const conditionals = {
       sheet: 'SummitShaper',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SwordOfDescension: {
@@ -5427,7 +5427,7 @@ export const conditionals = {
       sheet: 'SwordOfDescension',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   SwordOfNarzissenkreuz: {
@@ -5446,7 +5446,7 @@ export const conditionals = {
       sheet: 'SwordOfNarzissenkreuz',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TalkingStick: {
@@ -5465,7 +5465,7 @@ export const conditionals = {
       sheet: 'TalkingStick',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TheAlleyFlash: {
@@ -5484,7 +5484,7 @@ export const conditionals = {
       sheet: 'TheAlleyFlash',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TheBell: {
@@ -5503,7 +5503,7 @@ export const conditionals = {
       sheet: 'TheBell',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TheBlackSword: {
@@ -5522,7 +5522,7 @@ export const conditionals = {
       sheet: 'TheBlackSword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TheCatch: {
@@ -5541,7 +5541,7 @@ export const conditionals = {
       sheet: 'TheCatch',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TheDockhandsAssistant: {
@@ -5560,7 +5560,7 @@ export const conditionals = {
       sheet: 'TheDockhandsAssistant',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TheFirstGreatMagic: {
@@ -5579,7 +5579,7 @@ export const conditionals = {
       sheet: 'TheFirstGreatMagic',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TheFlute: {
@@ -5598,7 +5598,7 @@ export const conditionals = {
       sheet: 'TheFlute',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TheStringless: {
@@ -5617,7 +5617,7 @@ export const conditionals = {
       sheet: 'TheStringless',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TheUnforged: {
@@ -5636,7 +5636,7 @@ export const conditionals = {
       sheet: 'TheUnforged',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TheViridescentHunt: {
@@ -5655,7 +5655,7 @@ export const conditionals = {
       sheet: 'TheViridescentHunt',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TheWidsith: {
@@ -5674,7 +5674,7 @@ export const conditionals = {
       sheet: 'TheWidsith',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ThrillingTalesOfDragonSlayers: {
@@ -5693,7 +5693,7 @@ export const conditionals = {
       sheet: 'ThrillingTalesOfDragonSlayers',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ThunderingPulse: {
@@ -5712,7 +5712,7 @@ export const conditionals = {
       sheet: 'ThunderingPulse',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TidalShadow: {
@@ -5731,7 +5731,7 @@ export const conditionals = {
       sheet: 'TidalShadow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TomeOfTheEternalFlow: {
@@ -5750,7 +5750,7 @@ export const conditionals = {
       sheet: 'TomeOfTheEternalFlow',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   ToukabouShigure: {
@@ -5769,7 +5769,7 @@ export const conditionals = {
       sheet: 'ToukabouShigure',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TravelersHandySword: {
@@ -5788,7 +5788,7 @@ export const conditionals = {
       sheet: 'TravelersHandySword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   TulaytullahsRemembrance: {
@@ -5825,7 +5825,7 @@ export const conditionals = {
       sheet: 'TwinNephrite',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   UltimateOverlordsMegaMagicSword: {
@@ -5844,7 +5844,7 @@ export const conditionals = {
       sheet: 'UltimateOverlordsMegaMagicSword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   UrakuMisugiri: {
@@ -5863,7 +5863,7 @@ export const conditionals = {
       sheet: 'UrakuMisugiri',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Verdict: {
@@ -5882,7 +5882,7 @@ export const conditionals = {
       sheet: 'Verdict',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   VortexVanquisher: {
@@ -5901,7 +5901,7 @@ export const conditionals = {
       sheet: 'VortexVanquisher',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   WanderingEvenstar: {
@@ -5920,7 +5920,7 @@ export const conditionals = {
       sheet: 'WanderingEvenstar',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   WasterGreatsword: {
@@ -5939,7 +5939,7 @@ export const conditionals = {
       sheet: 'WasterGreatsword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   WavebreakersFin: {
@@ -5958,7 +5958,7 @@ export const conditionals = {
       sheet: 'WavebreakersFin',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   WhiteIronGreatsword: {
@@ -5977,7 +5977,7 @@ export const conditionals = {
       sheet: 'WhiteIronGreatsword',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   WhiteTassel: {
@@ -5996,7 +5996,7 @@ export const conditionals = {
       sheet: 'WhiteTassel',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   Whiteblind: {
@@ -6015,7 +6015,7 @@ export const conditionals = {
       sheet: 'Whiteblind',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   WindblumeOde: {
@@ -6034,7 +6034,7 @@ export const conditionals = {
       sheet: 'WindblumeOde',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   WineAndSong: {
@@ -6053,7 +6053,7 @@ export const conditionals = {
       sheet: 'WineAndSong',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   WolfFang: {
@@ -6072,7 +6072,7 @@ export const conditionals = {
       sheet: 'WolfFang',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   WolfsGravestone: {
@@ -6091,7 +6091,7 @@ export const conditionals = {
       sheet: 'WolfsGravestone',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
   XiphosMoonlight: {
@@ -6110,7 +6110,7 @@ export const conditionals = {
       sheet: 'XiphosMoonlight',
       name: '_someNumConditional',
       type: 'num',
-      int_only: false,
+      int_only: true,
     },
   },
 }
