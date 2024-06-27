@@ -269,7 +269,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
                 label={
                   isXL || textSuffix ? (
                     <Box display="flex" gap={0.5} alignItems="center">
-                      {isXL && <Typography>{t(i18Key)}</Typography>}
+                      {isXL && <Typography sx={{ fontWeight: currentTab === value ? 'bold' : 'normal' }} >{t(i18Key)}</Typography>}
                       {textSuffix}
                     </Box>
                   ) : undefined
