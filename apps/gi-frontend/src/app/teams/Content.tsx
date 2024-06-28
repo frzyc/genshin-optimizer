@@ -1,30 +1,25 @@
 'use client'
-import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import type { Tables } from '@genshin-optimizer/gi/supabase'
-import { WeaponCardObj } from '@genshin-optimizer/gi/ui'
-import { randomizeWeapon } from '@genshin-optimizer/gi/util'
 import { Button, Container, Grid, Skeleton, Typography } from '@mui/material'
 import { Suspense, useEffect, useState } from 'react'
 import { useSupabase } from '../../utils/supabase/client'
+import { TeamCard } from './TeamCard'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 // const numToShowMap = { xs: 5, sm: 6, md: 12, lg: 12, xl: 12 }
 
 export default function Content({
-  weapons: serverWeapons,
+  teams: serverTeams,
   accountId,
 }: {
-  weapons: Array<Tables<'weapons'>>
+  teams: Array<Tables<'teams'>>
   accountId: string
 }) {
   const supabase = useSupabase()
-  const [weapons, setWeapons] = useState(serverWeapons)
-  const addWeapon = async () => {
+  const [teams, setTeams] = useState(serverTeams)
+  const addTeam = async () => {
     try {
-      const randWeapon = randomizeWeapon()
-      if (!randWeapon.location) (randWeapon as any).location = null
-      const { error } = await supabase.from('weapons').insert({
-        ...randWeapon,
+      const { error } = await supabase.from('teams').insert({
         account_id: accountId,
       } as any)
       if (error) console.error(error)
@@ -34,19 +29,19 @@ export default function Content({
   }
   useEffect(() => {
     const channel = supabase
-      .channel('weapon updates')
+      .channel('team updates')
       .on(
         'postgres_changes',
         {
           event: '*',
           schema: 'public',
-          table: 'weapons',
+          table: 'teams',
           filter: `account_id=eq.${accountId}`,
         },
         (payload) => {
           if (payload.new)
-            setWeapons(
-              (weapons) => [...weapons, payload.new] as Array<Tables<'weapons'>>
+            setTeams(
+              (teams) => [...teams, payload.new] as Array<Tables<'teams'>>
             )
         }
       )
@@ -58,8 +53,8 @@ export default function Content({
   })
   return (
     <Container>
-      <Button onClick={addWeapon}> Add Weapon</Button>
-      <Typography>Weapons</Typography>
+      <Button onClick={addTeam}> Add Team</Button>
+      <Typography>Teams</Typography>
 
       <Suspense
         fallback={
@@ -70,9 +65,9 @@ export default function Content({
         }
       >
         <Grid container spacing={1} columns={columns}>
-          {weapons.map((weapon) => (
-            <Grid item key={weapon.id} xs={1}>
-              <WeaponCardObj weapon={weapon as unknown as ICachedWeapon} />
+          {teams.map((team) => (
+            <Grid item key={team.id} xs={1}>
+              <TeamCard team={team} />
             </Grid>
           ))}
         </Grid>
