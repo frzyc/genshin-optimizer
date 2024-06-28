@@ -223,6 +223,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
             '& .Mui-selected': {
               backgroundImage: `linear-gradient(to top, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
               color: `${theme.palette.neutral100.main} !important`,
+              textShadow: '0.5px 0 0 currentColor, -0.5px 0 0 currentColor, 0 0.5px 0 currentColor, 0 -0.5px 0',
             },
           })}
         >
