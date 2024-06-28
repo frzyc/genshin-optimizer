@@ -335,6 +335,8 @@ function MobileHeader({
           <Tabs
             value={currentTab}
             orientation="vertical"
+            variant="scrollable"
+            scrollButtons={false}
             TabIndicatorProps={{
               sx: {
                 left: 0,
