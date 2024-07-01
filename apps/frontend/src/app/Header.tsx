@@ -223,8 +223,9 @@ function HeaderContent({ anchor }: { anchor: string }) {
             '& .Mui-selected': {
               backgroundImage: `linear-gradient(to top, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
               color: `${theme.palette.neutral100.main} !important`,
-              textShadow: '0.5px 0 0 currentColor, -0.5px 0 0 currentColor, 0 0.5px 0 currentColor, 0 -0.5px 0',
-            },
+              textShadow:
+                '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0',
+              },
           })}
         >
           <Tab
@@ -242,7 +243,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
                     boxShadow: `0 0 10px 1px ${theme.palette.brandGO500.main}`,
                   })}
                 />
-                <Typography variant="h6" sx={{ px: 1 }}>
+                <Typography variant="h6" sx={{ px: 1 , fontWeight: 'Normal'}}>
                   {t(silly ? 'sillyPageTitle' : 'pageTitle')}
                 </Typography>
                 {shouldShowDevComponents && (
@@ -340,12 +341,16 @@ function MobileHeader({
               sx: {
                 left: 0,
                 width: '4px',
+
               },
             }}
             sx={(theme) => ({
               '& .Mui-selected': {
                 backgroundImage: `linear-gradient(to right, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
                 color: `${theme.palette.neutral100.main} !important`,
+                fontWeight: 'Bold',
+                textShadow:
+                '0.1px 0 0 currentColor, -0.1px 0 0 currentColor, 0 0.1px 0 currentColor, 0 -0.1px 0',
               },
             })}
           >
@@ -367,7 +372,7 @@ function MobileHeader({
               }
               iconPosition="start"
               label={
-                <Typography>
+                <Typography >
                   {silly ? t('sillyPageTitle') : t('pageTitle')}
                 </Typography>
               }
