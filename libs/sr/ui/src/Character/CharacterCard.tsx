@@ -22,11 +22,9 @@ export function CharacterCard({
   character: ICachedSroCharacter
   onClick?: () => void
 }) {
-  const calc = srCalculatorWithEntries(
-    withMember('member0', ...charData(character))
-  )
+  const calc = srCalculatorWithEntries(withMember('0', ...charData(character)))
 
-  const member0 = convert(selfTag, { member: 'member0', et: 'self' })
+  const member0 = convert(selfTag, { src: '0', et: 'self' })
 
   return (
     <Stack>
