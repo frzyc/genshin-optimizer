@@ -35,6 +35,7 @@ const swKeyMap = {
   aloy: 'Aloy',
   amber: 'Amber',
   itto: 'AratakiItto',
+  arlecchino: 'Arlecchino',
   baizhu: 'Baizhu',
   barbara: 'Barbara',
   beidou: 'Beidou',
