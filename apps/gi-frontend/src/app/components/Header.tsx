@@ -29,6 +29,10 @@ const pages = [
     title: 'Characters',
     href: '/characters',
   },
+  {
+    title: 'Teams',
+    href: '/teams',
+  },
 ]
 const settings = [
   { title: 'Profile', href: '/profile' },

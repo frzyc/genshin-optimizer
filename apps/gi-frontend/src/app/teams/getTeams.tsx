@@ -1,15 +1,29 @@
 'use server'
 import type { Database } from '@genshin-optimizer/gi/supabase'
 import type { SupabaseClient } from '@supabase/supabase-js'
-export default async function getCharacters(
+export default async function getTeams(
   supabase: SupabaseClient<Database>,
   accountId: string | null
 ) {
   if (!accountId) return []
   const { data, error } = await supabase
-    .from('characters')
+    .from('teams')
     .select(
-      `id, created_at, key, level, ascension, talent_auto, talent_skill, talent_burst, constellation`
+      `
+      id,
+      created_at,
+      name,
+      description,
+      team_loadouts(
+        loadouts(
+          id,
+          character_id,
+          character_key,name,
+          description
+        ),
+        index,
+        build_type
+      ) `
     )
     .eq('account_id', accountId)
 

@@ -31,7 +31,7 @@ export default function Content({
 
       const { error } = await supabase.from('characters').insert({
         ...ranChar,
-        account: accountId,
+        account_id: accountId,
       } as any)
       if (error) console.error(error)
     } catch (error) {
@@ -47,7 +47,7 @@ export default function Content({
           event: '*',
           schema: 'public',
           table: 'characters',
-          filter: `account=eq.${accountId}`,
+          filter: `account_id=eq.${accountId}`,
         },
         (payload) => {
           if (payload.new)

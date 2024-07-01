@@ -68,8 +68,8 @@ export type Database = {
       }
       artifacts: {
         Row: {
-          account: string
-          character: Database['public']['Enums']['characterKey'] | null
+          account_id: string
+          character_id: string | null
           created_at: string
           id: string
           level: number
@@ -78,11 +78,10 @@ export type Database = {
           rarity: number
           setKey: Database['public']['Enums']['artifactsetkey']
           slotKey: Database['public']['Enums']['artifactslotkey']
-          substats: Json[]
         }
         Insert: {
-          account: string
-          character?: Database['public']['Enums']['characterKey'] | null
+          account_id: string
+          character_id?: string | null
           created_at?: string
           id?: string
           level: number
@@ -91,11 +90,10 @@ export type Database = {
           rarity: number
           setKey: Database['public']['Enums']['artifactsetkey']
           slotKey: Database['public']['Enums']['artifactslotkey']
-          substats: Json[]
         }
         Update: {
-          account?: string
-          character?: Database['public']['Enums']['characterKey'] | null
+          account_id?: string
+          character_id?: string | null
           created_at?: string
           id?: string
           level?: number
@@ -104,25 +102,31 @@ export type Database = {
           rarity?: number
           setKey?: Database['public']['Enums']['artifactsetkey']
           slotKey?: Database['public']['Enums']['artifactslotkey']
-          substats?: Json[]
         }
         Relationships: [
           {
             foreignKeyName: 'public_artifacts_account_fkey'
-            columns: ['account']
+            columns: ['account_id']
             isOneToOne: false
             referencedRelation: 'accounts'
+            referencedColumns: ['id']
+          },
+          {
+            foreignKeyName: 'public_artifacts_character_id_fkey'
+            columns: ['character_id']
+            isOneToOne: false
+            referencedRelation: 'characters'
             referencedColumns: ['id']
           }
         ]
       }
       characters: {
         Row: {
-          account: string
+          account_id: string
           ascension: number
           constellation: number
           created_at: string
-          id: number
+          id: string
           key: Database['public']['Enums']['characterKey']
           level: number
           talent_auto: number
@@ -130,11 +134,11 @@ export type Database = {
           talent_skill: number
         }
         Insert: {
-          account: string
+          account_id: string
           ascension: number
           constellation: number
           created_at?: string
-          id?: number
+          id?: string
           key: Database['public']['Enums']['characterKey']
           level: number
           talent_auto: number
@@ -142,11 +146,11 @@ export type Database = {
           talent_skill: number
         }
         Update: {
-          account?: string
+          account_id?: string
           ascension?: number
           constellation?: number
           created_at?: string
-          id?: number
+          id?: string
           key?: Database['public']['Enums']['characterKey']
           level?: number
           talent_auto?: number
@@ -156,9 +160,54 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: 'public_characters_account_fkey'
-            columns: ['account']
+            columns: ['account_id']
             isOneToOne: false
             referencedRelation: 'accounts'
+            referencedColumns: ['id']
+          }
+        ]
+      }
+      loadouts: {
+        Row: {
+          account_id: string
+          character_id: string
+          character_key: Database['public']['Enums']['characterKey']
+          created_at: string
+          description: string | null
+          id: string
+          name: string | null
+        }
+        Insert: {
+          account_id: string
+          character_id: string
+          character_key: Database['public']['Enums']['characterKey']
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string | null
+        }
+        Update: {
+          account_id?: string
+          character_id?: string
+          character_key?: Database['public']['Enums']['characterKey']
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: 'public_loadouts_account_id_fkey'
+            columns: ['account_id']
+            isOneToOne: false
+            referencedRelation: 'accounts'
+            referencedColumns: ['id']
+          },
+          {
+            foreignKeyName: 'public_loadouts_character_id_fkey'
+            columns: ['character_id']
+            isOneToOne: false
+            referencedRelation: 'characters'
             referencedColumns: ['id']
           }
         ]
@@ -166,18 +215,24 @@ export type Database = {
       profiles: {
         Row: {
           active_account: string | null
+          avatar_url: string | null
+          full_name: string | null
           id: string
           updated_at: string | null
           username: string | null
         }
         Insert: {
           active_account?: string | null
+          avatar_url?: string | null
+          full_name?: string | null
           id: string
           updated_at?: string | null
           username?: string | null
         }
         Update: {
           active_account?: string | null
+          avatar_url?: string | null
+          full_name?: string | null
           id?: string
           updated_at?: string | null
           username?: string | null
@@ -199,46 +254,159 @@ export type Database = {
           }
         ]
       }
+      substats: {
+        Row: {
+          artifact_id: string
+          id: number
+          index: number
+          key: Database['public']['Enums']['artifactSubstatKey']
+          value: number
+        }
+        Insert: {
+          artifact_id: string
+          id?: number
+          index: number
+          key: Database['public']['Enums']['artifactSubstatKey']
+          value: number
+        }
+        Update: {
+          artifact_id?: string
+          id?: number
+          index?: number
+          key?: Database['public']['Enums']['artifactSubstatKey']
+          value?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: 'public_substats_artifact_id_fkey'
+            columns: ['artifact_id']
+            isOneToOne: false
+            referencedRelation: 'artifacts'
+            referencedColumns: ['id']
+          }
+        ]
+      }
+      team_loadouts: {
+        Row: {
+          build_type: Database['public']['Enums']['buildtypekey']
+          created_at: string
+          id: number
+          index: number
+          loadout_id: string
+          team_id: string
+        }
+        Insert: {
+          build_type?: Database['public']['Enums']['buildtypekey']
+          created_at?: string
+          id?: number
+          index: number
+          loadout_id: string
+          team_id: string
+        }
+        Update: {
+          build_type?: Database['public']['Enums']['buildtypekey']
+          created_at?: string
+          id?: number
+          index?: number
+          loadout_id?: string
+          team_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: 'public_team_loadouts_loadout_id_fkey'
+            columns: ['loadout_id']
+            isOneToOne: false
+            referencedRelation: 'loadouts'
+            referencedColumns: ['id']
+          },
+          {
+            foreignKeyName: 'public_team_loadouts_team_id_fkey'
+            columns: ['team_id']
+            isOneToOne: false
+            referencedRelation: 'teams'
+            referencedColumns: ['id']
+          }
+        ]
+      }
+      teams: {
+        Row: {
+          account_id: string
+          created_at: string
+          description: string | null
+          id: string
+          name: string | null
+        }
+        Insert: {
+          account_id: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string | null
+        }
+        Update: {
+          account_id?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: 'public_teams_account_id_fkey'
+            columns: ['account_id']
+            isOneToOne: false
+            referencedRelation: 'accounts'
+            referencedColumns: ['id']
+          }
+        ]
+      }
       weapons: {
         Row: {
-          account: string
+          account_id: string
           ascension: number
+          character_id: string | null
           created_at: string
           id: string
           key: Database['public']['Enums']['weaponKey']
           level: number
-          location: Database['public']['Enums']['characterKey'] | null
           lock: boolean
           refinement: number
         }
         Insert: {
-          account: string
+          account_id: string
           ascension: number
+          character_id?: string | null
           created_at?: string
           id?: string
           key: Database['public']['Enums']['weaponKey']
           level: number
-          location?: Database['public']['Enums']['characterKey'] | null
           lock?: boolean
           refinement: number
         }
         Update: {
-          account?: string
+          account_id?: string
           ascension?: number
+          character_id?: string | null
           created_at?: string
           id?: string
           key?: Database['public']['Enums']['weaponKey']
           level?: number
-          location?: Database['public']['Enums']['characterKey'] | null
           lock?: boolean
           refinement?: number
         }
         Relationships: [
           {
             foreignKeyName: 'public_weapons_account_fkey'
-            columns: ['account']
+            columns: ['account_id']
             isOneToOne: false
             referencedRelation: 'accounts'
+            referencedColumns: ['id']
+          },
+          {
+            foreignKeyName: 'public_weapons_character_id_fkey'
+            columns: ['character_id']
+            isOneToOne: false
+            referencedRelation: 'characters'
             referencedColumns: ['id']
           }
         ]
@@ -334,6 +502,7 @@ export type Database = {
         | 'enerRech_'
         | 'critRate_'
         | 'critDMG_'
+      buildtypekey: 'equipped' | 'real' | 'tc'
       characterKey:
         | 'Albedo'
         | 'Alhaitham'

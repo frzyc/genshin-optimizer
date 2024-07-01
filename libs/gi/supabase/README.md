@@ -34,3 +34,9 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=<anon key>
 ```
 nx stop gi-supabase
 ```
+
+# generate types
+
+```
+nx gen-types gi-supabase
+```

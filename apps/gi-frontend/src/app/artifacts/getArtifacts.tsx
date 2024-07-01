@@ -9,9 +9,9 @@ export default async function getArtifacts(
   const { data, error } = await supabase
     .from('artifacts')
     .select(
-      `id, created_at, setKey, slotKey, level, rarity, substats, lock, mainStatKey`
+      `id, created_at, setKey, slotKey, level, rarity, substats(key, value), lock, mainStatKey`
     )
-    .eq('account', accountId)
+    .eq('account_id', accountId)
 
   if (error) console.error(error)
   return data

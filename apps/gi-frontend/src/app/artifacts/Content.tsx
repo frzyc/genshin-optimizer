@@ -21,11 +21,29 @@ export default function Content({
   const [artifacts, setArtifacts] = useState(serverArtifacts)
   const addArtifact = async () => {
     try {
-      const { error } = await supabase.from('artifacts').insert({
-        ...randomizeArtifact(),
-        account: accountId,
-      } as any)
-      if (error) console.error(error)
+      const randArtifact = randomizeArtifact()
+      const { substats, location, ...rest } = randArtifact
+      const { error, data } = await supabase
+        .from('artifacts')
+        .insert({
+          ...rest,
+          location: location || null,
+          account_id: accountId,
+        } as any)
+        .select()
+      if (error) return console.error(error)
+      const art = data[0]
+      if (!art.id) return
+      // TODO: is there a better way to add substats? this sends like 5 requests per artifact...
+      substats.map(async (substat, index) => {
+        if (!substat.key) return
+        const { error } = await supabase.from('substats').insert({
+          ...substat,
+          index,
+          artifact_id: art.id,
+        })
+        if (error) return console.error(error)
+      })
     } catch (error) {
       console.error(error)
     }
@@ -39,13 +57,26 @@ export default function Content({
           event: '*',
           schema: 'public',
           table: 'artifacts',
-          filter: `account=eq.${accountId}`,
+          filter: `account_id=eq.${accountId}`,
         },
-        (payload) => {
-          if (payload.new)
+        async (payload) => {
+          // TODO: probably need to listen to other changes? the issue is that we are not listening to changes to substats
+          if (payload.new) {
+            // TODO: is there a better way to update this? doing an extra lookup seems kind of excessive, but the payload.new does not include substats.
+            const { error, data } = await supabase
+              .from('artifacts')
+              .select(
+                'id, created_at, setKey, slotKey, level, rarity, substats(key, value), lock, mainStatKey'
+              )
+              .eq('id', payload.new.id)
+              .eq('account_id', accountId)
+            if (error) return console.error(error)
+            const artifact = data[0]
+            if (!artifact) return
             setArtifacts(
-              (arts) => [...arts, payload.new] as Array<Tables<'artifacts'>>
+              (arts) => [...arts, artifact] as Array<Tables<'artifacts'>>
             )
+          }
         }
       )
       .subscribe()
