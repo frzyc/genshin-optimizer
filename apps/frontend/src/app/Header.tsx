@@ -223,8 +223,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
             '& .Mui-selected': {
               backgroundImage: `linear-gradient(to top, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
               color: `${theme.palette.neutral100.main} !important`,
-              textShadow:
-                '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0',
+              textShadow: '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0',
               },
           })}
         >
@@ -348,7 +347,7 @@ function MobileHeader({
               '& .Mui-selected': {
                 backgroundImage: `linear-gradient(to right, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
                 color: `${theme.palette.neutral100.main} !important`,
-                fontWeight: 'Bold',
+                // fontWeight: 'Bold',
                 textShadow:
                 '0.1px 0 0 currentColor, -0.1px 0 0 currentColor, 0 0.1px 0 currentColor, 0 -0.1px 0',
               },
