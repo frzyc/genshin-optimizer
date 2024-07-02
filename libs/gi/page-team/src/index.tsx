@@ -129,17 +129,23 @@ function Page({ teamId }: { teamId: string }) {
   ])
 
   useTitle(
-    useMemo(
-      () =>
-        `${team.name} - ${t(
-          `${silly ? 'sillyWisher_charNames' : 'charNames_gen'}:${
-            characterKey
-              ? charKeyToLocGenderedCharKey(characterKey, gender)
-              : 'Character'
-          }`
-        )} - ${t(`page_character:tabs.${tab}`)}`,
-      [t, team.name, silly, characterKey, gender, tab]
-    )
+    useMemo(() => {
+      const charName = characterKey
+        ? t(
+            `${
+              silly ? 'sillyWisher_charNames' : 'charNames_gen'
+            }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
+          )
+        : t('Team Settings')
+      const tabName = tab
+        ? t(`page_character:tabs.${tab}`)
+        : characterKey
+        ? t('Loadout/Build')
+        : tab
+      return tabName
+        ? `${team.name} - ${charName} - ${tabName}`
+        : `${team.name} - ${charName}`
+    }, [t, team.name, silly, characterKey, gender, tab])
   )
 
   const teamCharacterContextValue: TeamCharacterContextObj | undefined =
