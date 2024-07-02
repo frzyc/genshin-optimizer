@@ -83,13 +83,12 @@ export function ArtifactCardNano({
     art.mainStatKey.includes(ele)
   )
   const color = element
-    ? alpha(theme.palette[element].main, 0.6)
-    : alpha(theme.palette.secondary.main, 0.6)
+    ? alpha(theme.palette[element].main, 0.5)
+    : alpha(theme.palette.secondary.main, 0.5)
   return (
     <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
-      <Box display="flex" height="100%">
+      <Box display="flex" height="100%" className={`grad-${rarity}star`}>
         <Box
-          className={`grad-${rarity}star`}
           sx={{
             position: 'relative',
             flexGrow: 1,
@@ -122,6 +121,9 @@ export function ArtifactCardNano({
               size="small"
               label={<strong>{` +${level}`}</strong>}
               color={artifactLevelVariant(level)}
+              sx={{
+                backdropFilter: 'blur(2px)',
+              }}
             />
             {showLocation && (
               <Chip
@@ -132,7 +134,6 @@ export function ArtifactCardNano({
                       characterKey={database.chars.LocationToCharacterKey(
                         location
                       )}
-                      sideMargin
                     />
                   ) : (
                     <BusinessCenterIcon />
@@ -144,6 +145,8 @@ export function ArtifactCardNano({
                   '.MuiChip-label': {
                     overflow: 'visible',
                   },
+                  mr: 1,
+                  backdropFilter: 'blur(2px)',
                 }}
               />
             )}
@@ -156,6 +159,7 @@ export function ArtifactCardNano({
               bottom: 0,
               mb: 1,
               backgroundColor: color,
+              backdropFilter: 'blur(2px)',
               p: 1,
             }}
             icon={
@@ -192,7 +196,10 @@ export function ArtifactCardNano({
           display="flex"
           flexDirection="column"
           justifyContent="space-between"
-          sx={{ p: 1 }}
+          sx={{
+            py: 1,
+            pr: 1,
+          }}
         >
           {substats.map((stat: ICachedSubstat, i: number) => (
             <SubstatDisplay key={i + stat.key} stat={stat} />
