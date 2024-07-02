@@ -12,7 +12,8 @@
     "scanner": "Scanners",
     "archive": "Archive",
     "loadouts": "Loadouts",
-    "builds": "Builds"
+    "builds": "Builds",
+    "upopt" : "Artifact Upgrader"
   },
   "social": {
     "paypal": "PayPal",
