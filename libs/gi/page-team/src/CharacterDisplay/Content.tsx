@@ -318,7 +318,7 @@ function LoadoutTabs({
       {!isTCBuild && (
         <Tab
           value="upopt"
-          label={t('tabs.upgradeopt')}
+          label={t('tabs.upopt')}
           icon={<UpgradeIcon />}
           component={RouterLink}
           to="upopt"
