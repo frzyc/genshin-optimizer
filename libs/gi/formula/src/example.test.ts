@@ -13,13 +13,14 @@ import type { Tag, TagMapNodeEntries } from './data/util'
 import {
   convert,
   enemyDebuff,
-  selfBuff,
+  self,
   selfTag,
   team,
   userBuff,
 } from './data/util'
 import rawData from './example.test.json'
 import { genshinCalculatorWithEntries } from './index'
+import { conditionals } from './meta'
 import {
   artifactsData,
   charData,
@@ -38,41 +39,56 @@ Object.assign(values, compileTagMapValues(keys, entries))
 // Should a test here fail, extract a minimized version to `correctness` test.
 describe('example', () => {
   const data: TagMapNodeEntries = [
-      ...teamData(['member0'], ['member0', 'member1']),
+      ...teamData(['0', '1']),
 
       ...withMember(
-        'member0',
+        '0',
         ...charData(rawData[0].char as ICharacter),
         ...weaponData(rawData[0].weapon as IWeapon),
         ...artifactsData([
           /* per art stat */
         ]),
-        ...conditionalData(rawData[0].conditionals),
 
         // custom buff
         userBuff.premod.def.add(30)
       ),
       ...withMember(
-        'member1',
+        '1',
         ...charData(rawData[1].char as ICharacter),
         ...weaponData(rawData[1].weapon as IWeapon),
         ...artifactsData([
           /* per art stat */
-        ]),
-        ...conditionalData(rawData[1].conditionals)
+        ])
       ),
 
+      // Conditionals
+      ...conditionalData('0', rawData[0].conditionals),
+      ...conditionalData('1', rawData[1].conditionals),
+
       // Enemy
-      enemyDebuff.cond.cata.add('spread'),
-      enemyDebuff.cond.amp.add(''),
+      enemyDebuff.reaction.cata.add('spread'),
+      enemyDebuff.reaction.amp.add(''),
       enemyDebuff.common.lvl.add(12),
       enemyDebuff.common.preRes.add(0.1),
-      selfBuff.common.critMode.add('avg'),
+      self.common.critMode.add('avg'),
     ],
     calc = genshinCalculatorWithEntries(data)
 
-  const member0 = convert(selfTag, { member: 'member0', et: 'self' })
-  const member1 = convert(selfTag, { member: 'member1', et: 'self' })
+  const member0 = convert(selfTag, { src: '0', et: 'self' })
+  const member1 = convert(selfTag, { src: '1', et: 'self' })
+
+  test.skip('debug formula', () => {
+    // Pick formula
+    const normal0 = calc
+      .listFormulas(member1.listing.formulas)
+      .find((x) => x.tag.name === 'normal_0')!
+
+    // Get a debug calculator
+    const debugCalc = calc.toDebug()
+
+    // Print calculation steps
+    console.log(JSON.stringify(debugCalc.compute(normal0)))
+  })
 
   test('enumerate all tags', () => {
     expect(Object.keys(member0).sort()).toEqual(Object.keys(selfTag).sort())
@@ -85,8 +101,6 @@ describe('example', () => {
     }
   })
   test('calculate stats', () => {
-    expect(calc.compute(member0.common.isActive).val).toBe(1)
-    expect(calc.compute(member1.common.isActive).val).toBe(0)
     expect(calc.compute(member1.final.hp).val).toBeCloseTo(9479.7, 1)
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(346.21, 2)
     expect(calc.compute(member0.final.def).val).toBeCloseTo(124.15, 2)
@@ -120,9 +134,9 @@ describe('example', () => {
      * Each entry in listing is a `Tag` in the shape of
      * ```
      * {
-     *   member: 'member'
+     *   src: <member>
      *   et: 'self'
-     *   src: <sheet that defines the formula>
+     *   sheet: <sheet that defines the formula>
      *   qt: 'formula'
      *   q: < 'dmg' / 'trans' / 'shield' / 'heal' >
      *   name: <formula name>
@@ -136,16 +150,17 @@ describe('example', () => {
     // Simple check that all tags are in the correct format
     const names: string[] = []
     for (const { name, move, ...tag } of listing.filter(
-      (x) => x.src === 'Nahida' && x.qt == 'formula' // exclude stats
+      (x) => x.sheet === 'Nahida' && x.qt == 'formula' // exclude stats
     )) {
       names.push(name!)
       expect(name).toBeTruthy()
       expect(move).toBeTruthy()
       test(`with name ${name}`, () => {
         expect(tag).toEqual({
-          member: 'member0',
+          src: '0',
+          dst: '0',
           et: 'self',
-          src: 'Nahida',
+          sheet: 'Nahida',
           qt: 'formula',
           q: 'dmg', // DMG formula
         })
@@ -164,7 +179,7 @@ describe('example', () => {
       'skill_hold',
       'skill_press',
     ])
-    expect(listing.filter((x) => x.src === 'static').length).toEqual(5)
+    expect(listing.filter((x) => x.sheet === 'static').length).toEqual(5)
   })
   test('calculate formulas in a listing', () => {
     const read = calc
@@ -173,7 +188,7 @@ describe('example', () => {
     const tag = read.tag
 
     expect(read).toBeTruthy()
-    expect(tag.src).toEqual('Nahida') // Formula from Nahida
+    expect(tag.sheet).toEqual('Nahida') // Formula from Nahida
     expect(tag.q).toEqual('dmg') // DMG formula
     expect(tag.name).toEqual('normal_0') // Formula name
 
@@ -192,20 +207,19 @@ describe('example', () => {
     const result = calc.compute(member0.dmg.critMulti.burgeon)
     const conds = result.meta.conds
 
-    expect(conds.length).toEqual(2)
-    expect(conds[0]).toEqual({
-      et: 'self',
-      member: 'member0',
-      trans: 'burgeon',
-      dst: 'member0',
-      src: 'Nahida',
-      qt: 'cond',
-      q: 'c2Bloom',
-    })
-    // It is duplicated because this conditional affects two distinct
-    // stats, `critRate_` and `critDMG_`. Deduplicating this requires
-    // tag equality, which may not be worth it.
-    expect(conds[1]).toEqual(conds[0])
+    // conds[dst][src][sheet][name] == cond value
+    expect(conds).toEqual({ 0: { all: { Nahida: { c2Bloom: 1 } } } })
+  })
+  test('list conditionals affecting a member', () => {
+    // all conditionals affecting all formulas
+    const conds = calc.listCondFormulas(member0.listing.formulas)
+
+    // Read current value: all -s> member0 Nilou:a1AfterHit
+    expect(conds['0']?.['all']?.['Nilou']?.['a1AfterHit']).toEqual(0)
+
+    // Grab metadata from an entry
+    const meta = conditionals.Nilou.a1AfterHit
+    expect(meta).toEqual({ sheet: 'Nilou', name: 'a1AfterHit', type: 'bool' })
   })
   test('create optimization calculation', () => {
     // Step 1: Pick formula(s); anything that `calc.compute` can handle will work
@@ -220,13 +234,13 @@ describe('example', () => {
     // Step 2: Detach nodes from Calculator
     const allArts = new Set(allArtifactSetKeys) // Cache for fast lookup, put in global
     let detached = detach(nodes, calc, (tag: Tag) => {
-      if (tag['member'] != 'member0') return undefined // Wrong member
+      if (tag['src'] != '0') return undefined // Wrong member
       if (tag['et'] != 'self') return undefined // Not applied (only) to self
 
-      if (tag['src'] === 'dyn' && tag['qt'] === 'premod')
+      if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
         return { q: tag['q']! } // Art stat bonus
-      if (tag['q'] === 'count' && allArts.has(tag['src'] as any))
-        return { q: tag['src']! } // Art set counter
+      if (tag['q'] === 'count' && allArts.has(tag['sheet'] as any))
+        return { q: tag['sheet']! } // Art set counter
       return undefined
     })
 
@@ -251,25 +265,9 @@ describe('example', () => {
     // Step 5: Calculate the value
     compiled([{ atk: 10 }, { atk_: 0.5 }])
   })
-
-  test.skip('debug formula', () => {
-    // Pick formula
-    const normal0 = calc
-      .listFormulas(member1.listing.formulas)
-      .find((x) => x.tag.name === 'normal_0')!
-
-    // Get a debug calculator
-    const debugCalc = calc.toDebug()
-
-    // Print calculation steps
-    console.log(debugCalc.debugCompute(normal0).join('\n'))
-  })
 })
 describe('weapon-only example', () => {
-  const data: TagMapNodeEntries = [
-      ...weaponData(rawData[1].weapon as IWeapon),
-      ...conditionalData(rawData[1].conditionals),
-    ],
+  const data: TagMapNodeEntries = [...weaponData(rawData[1].weapon as IWeapon)],
     calc = genshinCalculatorWithEntries(data)
 
   const self = convert(selfTag, { et: 'self' })

@@ -1,0 +1,24 @@
+{
+  "name": "Màn Mưa Tơ Lòng",
+  "description": {
+    "0": "Cung tinh linh trong truyền thuyết. Dù là trên sân khấu hay trong chiến trường, cũng đều có thể dễ dàng lay động người nghe."
+  },
+  "passiveName": "Dạ Khúc Của Dryas",
+  "passiveDescription": {
+    "0": {
+      "0": "Người chơi nhận được hiệu quả \"Khôi Phục\". Mỗi khi có 1/2/3 tầng Khôi Phục, Giới Hạn HP tăng <cryo>12%/24%/40%</cryo>. Người trang bị sẽ nhận 1 tầng Khôi Phục cho mỗi tình huống sau: Khi thi triển Kỹ Năng Nguyên Tố, duy trì 25s; Khi tăng giá trị Khế Ước Sinh Mệnh, duy trì 25s; Khi tiến hành trị liệu, duy trì 20s. Nhân vật không ra trận vẫn có thể kích hoạt. Thời gian duy trì của mỗi tầng Khôi Phục sẽ tính giờ riêng. Ngoài ra, khi có 3 tầng Khôi Phục, Tỷ Lệ Bạo Kích của Kỹ Năng Nộ tăng <cryo>28%</cryo>, hiệu quả này sẽ bị xóa khi không có đủ 3 tầng Khôi Phục trong 4s."
+    },
+    "1": {
+      "0": "Người chơi nhận được hiệu quả \"Khôi Phục\". Mỗi khi có 1/2/3 tầng Khôi Phục, Giới Hạn HP tăng <cryo>15%/30%/50%</cryo>. Người trang bị sẽ nhận 1 tầng Khôi Phục cho mỗi tình huống sau: Khi thi triển Kỹ Năng Nguyên Tố, duy trì 25s; Khi tăng giá trị Khế Ước Sinh Mệnh, duy trì 25s; Khi tiến hành trị liệu, duy trì 20s. Nhân vật không ra trận vẫn có thể kích hoạt. Thời gian duy trì của mỗi tầng Khôi Phục sẽ tính giờ riêng. Ngoài ra, khi có 3 tầng Khôi Phục, Tỷ Lệ Bạo Kích của Kỹ Năng Nộ tăng <cryo>35%</cryo>, hiệu quả này sẽ bị xóa khi không có đủ 3 tầng Khôi Phục trong 4s."
+    },
+    "2": {
+      "0": "Người chơi nhận được hiệu quả \"Khôi Phục\". Mỗi khi có 1/2/3 tầng Khôi Phục, Giới Hạn HP tăng <cryo>18%/36%/60%</cryo>. Người trang bị sẽ nhận 1 tầng Khôi Phục cho mỗi tình huống sau: Khi thi triển Kỹ Năng Nguyên Tố, duy trì 25s; Khi tăng giá trị Khế Ước Sinh Mệnh, duy trì 25s; Khi tiến hành trị liệu, duy trì 20s. Nhân vật không ra trận vẫn có thể kích hoạt. Thời gian duy trì của mỗi tầng Khôi Phục sẽ tính giờ riêng. Ngoài ra, khi có 3 tầng Khôi Phục, Tỷ Lệ Bạo Kích của Kỹ Năng Nộ tăng <cryo>42%</cryo>, hiệu quả này sẽ bị xóa khi không có đủ 3 tầng Khôi Phục trong 4s."
+    },
+    "3": {
+      "0": "Người chơi nhận được hiệu quả \"Khôi Phục\". Mỗi khi có 1/2/3 tầng Khôi Phục, Giới Hạn HP tăng <cryo>21%/42%/70%</cryo>. Người trang bị sẽ nhận 1 tầng Khôi Phục cho mỗi tình huống sau: Khi thi triển Kỹ Năng Nguyên Tố, duy trì 25s; Khi tăng giá trị Khế Ước Sinh Mệnh, duy trì 25s; Khi tiến hành trị liệu, duy trì 20s. Nhân vật không ra trận vẫn có thể kích hoạt. Thời gian duy trì của mỗi tầng Khôi Phục sẽ tính giờ riêng. Ngoài ra, khi có 3 tầng Khôi Phục, Tỷ Lệ Bạo Kích của Kỹ Năng Nộ tăng <cryo>49%</cryo>, hiệu quả này sẽ bị xóa khi không có đủ 3 tầng Khôi Phục trong 4s."
+    },
+    "4": {
+      "0": "Người chơi nhận được hiệu quả \"Khôi Phục\". Mỗi khi có 1/2/3 tầng Khôi Phục, Giới Hạn HP tăng <cryo>24%/48%/80%</cryo>. Người trang bị sẽ nhận 1 tầng Khôi Phục cho mỗi tình huống sau: Khi thi triển Kỹ Năng Nguyên Tố, duy trì 25s; Khi tăng giá trị Khế Ước Sinh Mệnh, duy trì 25s; Khi tiến hành trị liệu, duy trì 20s. Nhân vật không ra trận vẫn có thể kích hoạt. Thời gian duy trì của mỗi tầng Khôi Phục sẽ tính giờ riêng. Ngoài ra, khi có 3 tầng Khôi Phục, Tỷ Lệ Bạo Kích của Kỹ Năng Nộ tăng <cryo>56%</cryo>, hiệu quả này sẽ bị xóa khi không có đủ 3 tầng Khôi Phục trong 4s."
+    }
+  }
+}

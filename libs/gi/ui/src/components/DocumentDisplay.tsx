@@ -1,3 +1,4 @@
+'use client'
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import {
   CardHeaderCustom,

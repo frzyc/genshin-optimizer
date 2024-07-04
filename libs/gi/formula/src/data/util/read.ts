@@ -20,16 +20,16 @@ import {
   constant,
   reread,
 } from '@genshin-optimizer/pando/engine'
-import type { Source } from './listing'
-import { entryTypes, members, presets, srcs } from './listing'
-import type { TagMapNodeEntry } from './tagMapType'
+import type { Sheet } from './listing'
+import { entryTypes, members, presets, sheets } from './listing'
+import type { TagMapNodeEntries, TagMapNodeEntry } from './tagMapType'
 
 export const fixedTags = {
   preset: presets,
-  member: members,
+  src: members,
   dst: members,
   et: entryTypes,
-  src: srcs,
+  sheet: sheets,
 
   region: allRegionKeys,
   ele: allElementWithPhyKeys,
@@ -55,12 +55,27 @@ export class Read extends TypedRead<Tag, Read> {
   name(name: string): Read {
     return super.with('name', name)
   }
-  src(src: Source): Read {
-    return super.with('src', src)
+  sheet(sheet: Sheet): Read {
+    return super.with('sheet', sheet)
   }
 
   add(value: number | string | AnyNode): TagMapNodeEntry {
     return super.toEntry(typeof value === 'object' ? value : constant(value))
+  }
+  addOnce(sheet: Sheet, value: number | NumNode): TagMapNodeEntries {
+    if (this.tag.et !== 'teamBuff' || !sheet)
+      throw new Error('Unsupported non-stacking entry')
+    const q = `${uniqueId(sheet)}`
+    // Use raw tags here instead of `self.*` to avoid cyclic dependency
+    // Entries in TeamData need `member:` for priority
+    return [
+      // 1) self.stackIn.<q>.add(value)
+      this.withTag({ et: 'self', sheet, qt: 'stackIn', q }).add(value),
+      // 2) In TeamData: self.stackTmp.<q>.add(cmpNE(self.stackIn.<q>, 0, /* priority */))
+      // 3) In TeamData: self.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, self.stackIn))
+      // 4) teamBuff.<stat>.add(self.stackOut.<q>)
+      this.add(reader.withTag({ et: 'self', sheet, qt: 'stackOut', q })),
+    ]
   }
   reread(r: Read): TagMapNodeEntry {
     return super.toEntry(reread(r.tag))
@@ -189,10 +204,10 @@ export function tagStr(tag: Tag, ex?: any): string {
   const {
     name,
     preset,
-    member,
+    src,
     dst,
     et,
-    src,
+    sheet,
     region,
     ele,
     q,
@@ -209,36 +224,36 @@ export function tagStr(tag: Tag, ex?: any): string {
   let result = '{ ',
     includedRequired = false,
     includedBar = false
-  function required(str: string | undefined | null) {
-    if (!str) return
-    result += str + ' '
+  function required(str: string | undefined | null, name: string) {
+    if (!str && str !== null) return
+    result += str === null ? `!${name} ` : str + ' '
     includedRequired = true
   }
-  function optional(str: string | undefined | null) {
-    if (!str) return
+  function optional(str: string | undefined | null, name: string) {
+    if (!str && str !== null) return
     if (includedRequired && !includedBar) {
       includedBar = true
       result += '| '
     }
-    result += str + ' '
+    result += str === null ? `!${name} ` : str + ' '
   }
-  required(name && `#${name}`)
-  required(preset)
-  required(member)
-  required(dst && `(${dst})`)
-  required(src)
-  required(et)
-  if (qt && q) required(`${qt}.${q}`)
-  else if (qt) required(`${qt}.`)
-  else if (q) required(`.${q}`)
+  required(name && `#${name}`, 'name')
+  required(preset, 'preset')
+  required(src, 'src')
+  required(dst && `(${dst})`, 'dst')
+  required(sheet, 'sheet')
+  required(et, 'et')
+  if (qt && q) required(`${qt}.${q}`, '')
+  else if (qt) required(`${qt}.`, '')
+  else if (q) required(`.${q}`, '')
 
-  optional(region)
-  optional(move)
-  optional(ele)
-  optional(trans)
-  optional(amp)
-  optional(cata)
-  required(ex && `[${ex}]`)
+  optional(region, 'region')
+  optional(move, 'move')
+  optional(ele, 'ele')
+  optional(trans, 'trans')
+  optional(amp, 'amp')
+  optional(cata, 'cata')
+  if (ex) result += `[${ex}] `
   return result + '}'
 }
 export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
@@ -257,6 +272,14 @@ export function tag(
 }
 export function tagVal(cat: keyof Tag): TagValRead {
   return baseTagVal(cat)
+}
+
+const counters: Record<string, number> = {}
+function uniqueId(namespace: string): number {
+  if (!counters[namespace]) counters[namespace] = 0
+  const result = counters[namespace]!
+  counters[namespace] += 1
+  return result
 }
 
 export const reader = new Read({}, undefined)

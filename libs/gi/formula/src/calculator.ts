@@ -4,17 +4,25 @@ import {
   Calculator as Base,
   calculation,
 } from '@genshin-optimizer/pando/engine'
-import type { Read, Tag } from './data/util'
+import type { Member, Read, Sheet, Tag } from './data/util'
 import { reader } from './data/util'
 import { DebugCalculator } from './debug'
 
 const { arithmetic } = calculation
+const emptyCond: CondInfo = {}
 
+type CondInfo = Partial<
+  Record<
+    Member,
+    Partial<Record<Member, Partial<Record<Sheet, Record<string, number>>>>>
+  >
+>
 export type CalcMeta = {
   tag: Tag | undefined
   op: 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac' | 'res'
   ops: CalcResult<number, CalcMeta>[]
-  conds: Tag[]
+  /// conds[dst][src][sheet][name]
+  conds: CondInfo
 }
 
 export class Calculator extends Base<CalcMeta> {
@@ -29,17 +37,25 @@ export class Calculator extends Base<CalcMeta> {
     _br: CalcResult<number | string, CalcMeta>[],
     tag: Tag | undefined
   ): CalcMeta {
-    const preConds = [
-      tag?.qt === 'cond' ? [tag] : [],
-      ...[...x, ..._br].map((x) => x?.meta.conds as Tag[]),
-    ].filter((x) => x && x.length)
-    const conds = preConds.length <= 1 ? preConds[0] ?? [] : preConds.flat()
+    let conds = emptyCond
+    for (const v of [...x, ..._br]) {
+      if (!v) continue
+      conds = merge(conds, v.meta.conds)
+    }
+    if (tag?.qt === 'cond') {
+      const { src, dst, sheet, q } = tag
+      conds = merge(conds, {
+        [dst!]: { [src!]: { [sheet!]: { [q!]: val } } },
+      })
+    }
 
     function constOverride(): CalcMeta {
       return { tag, op: 'const', ops: [], conds }
     }
 
     if (op === 'read' && ex !== undefined) {
+      if (ex === 'min' || ex === 'max')
+        return { ...x.find((x) => x!.val === val)!.meta, conds }
       op = ex
       ex = undefined
     }
@@ -94,6 +110,11 @@ export class Calculator extends Base<CalcMeta> {
       .filter((x) => x.val)
       .map(({ val, meta }) => reader.withTag(meta.tag!)[val as Read['accu']])
   }
+  listCondFormulas(read: Read): CondInfo {
+    return this.listFormulas(read)
+      .map((x) => this.compute(x).meta.conds)
+      .reduce(merge, emptyCond)
+  }
   toDebug(): DebugCalculator {
     return new DebugCalculator(this)
   }
@@ -102,4 +123,27 @@ export function res(x: number): number {
   if (x >= 0.75) return 1 / (1 + 4 * x)
   if (x >= 0) return 1 - x
   return 1 - 0.5 * x
+}
+
+function merge<T extends Record<string, any>>(a: T, b: T): T {
+  if (Object.keys(a).length < Object.keys(b).length) [a, b] = [b, a]
+  if (Object.keys(b).length === 0) return a
+
+  let dirty = false
+  const result: any = { ...a }
+  for (const [key, val] of Object.entries(b)) {
+    if (result[key] === val) continue
+    if (result[key]) {
+      const new_val = merge(result[key], val)
+      if (new_val !== result[key]) {
+        dirty = true
+        result[key] = val
+      }
+    } else {
+      dirty = true
+      result[key] = val
+    }
+  }
+
+  return dirty ? result : a
 }

@@ -33,13 +33,14 @@ export const presets = [
 ] as const
 export const entryTypes = [
   'self',
+  'selfBuff',
   'teamBuff',
-  'active',
+  'notSelfBuff',
   'enemy',
   'team',
   'target',
 ] as const
-export const srcs = [
+export const sheets = [
   'agg',
   'iso',
   'static',
@@ -51,10 +52,10 @@ export const srcs = [
   'enemy',
   'custom',
 ] as const
-export const members = ['member0', 'member1', 'member2', 'member3'] as const
+export const members = ['all', '0', '1', '2', '3'] as const
 
 export type Stat = (typeof stats)[number]
 export type Preset = (typeof presets)[number]
 export type EntryType = (typeof entryTypes)[number]
-export type Source = (typeof srcs)[number]
+export type Sheet = (typeof sheets)[number]
 export type Member = (typeof members)[number]

@@ -1,3 +1,4 @@
+'use client'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import { createContext } from 'react'
 import type { TeamData } from '../type/TeamData'

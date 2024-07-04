@@ -281,25 +281,13 @@ export function mapBottomUp<I extends OP, O extends OP>(
   return dedupMapArray(n, internal)
 }
 
-export function map<I extends OP, O extends OP>(
-  n: NumNode<I>[],
-  map: (n: AnyNode<I>, map: (n: AnyNode<I>) => AnyNode<O>) => AnyNode<O>
-): NumNode<O>[]
-export function map<I extends OP, O extends OP>(
-  n: StrNode<I>[],
-  map: (n: AnyNode<I>, map: (n: AnyNode<I>) => AnyNode<O>) => AnyNode<O>
-): StrNode<O>[]
-export function map<I extends OP, O extends OP>(
+export function map<I extends TaggedOP, O>(
   n: AnyNode<I>[],
-  map: (n: AnyNode<I>, map: (n: AnyNode<I>) => AnyNode<O>) => AnyNode<O>
-): AnyNode<O>[]
-export function map<I extends OP, O extends OP>(
-  n: AnyNode<I>[],
-  map: (n: AnyNode<I>, map: (n: AnyNode<I>) => AnyNode<O>) => AnyNode<O>
-): AnyNode<O>[] {
-  const cache = new Map<AnyNode<I>, AnyNode<O>>()
+  map: (n: AnyNode<I>, map: (n: AnyNode<I>) => O) => O
+): O[] {
+  const cache = new Map<AnyNode<I>, O>()
 
-  function internal(n: AnyNode<I>): AnyNode<O> {
+  function internal(n: AnyNode<I>): O {
     const old = cache.get(n)
     if (old) return old
 

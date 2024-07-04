@@ -14,8 +14,8 @@ const max_normal_dmg_arr = [0.48, 0.6, 0.72, 0.84, 0.96]
 const {
   weapon: { refinement },
 } = self
-const { timePassive } = allNumConditionals(key, 'sum', false, 0, 12)
-const { hitPassive } = allNumConditionals(key, 'sum', true, 0, 5)
+const { timePassive } = allNumConditionals(key, false, 0, 12)
+const { hitPassive } = allNumConditionals(key, true, 0, 5)
 
 const time_normal_dmg_ = prod(
   timePassive,

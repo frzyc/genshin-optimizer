@@ -13,7 +13,7 @@
       },
       "x-prompt": "What is the sheet type (char/artifact/weapon)?"
     },
-    "src": {
+    "sheet": {
       "type": "string",
       "description": "Sheet name",
       "$default": {
@@ -23,5 +23,5 @@
       "x-prompt": "What is the sheet name?"
     }
   },
-  "required": ["sheet_type", "src"]
+  "required": ["sheet_type", "sheet"]
 }

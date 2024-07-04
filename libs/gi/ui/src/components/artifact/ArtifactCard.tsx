@@ -445,22 +445,27 @@ function SubstatDisplay({
   const effOpacity = clamp01(0.5 + (efficiency / 5) * 0.5) //divide by 6 because an substat can have max 6 rolls
   const unit = getUnitStr(stat.key)
   const progresses = useMemo(
-    () => (
-      <Box
-        display="flex"
-        gap={0.25}
-        height="1.3em"
-        sx={{ opacity: inFilter ? 1 : 0.3 }}
-      >
-        {[...stat.rolls].sort().map((v, i) => (
-          <SmolProgress
-            key={`${i}${v}`}
-            value={(100 * v) / maxRoll}
-            color={`roll${clamp(rollOffset + rollData.indexOf(v), 1, 6)}.main`}
-          />
-        ))}
-      </Box>
-    ),
+    () =>
+      stat?.rolls && (
+        <Box
+          display="flex"
+          gap={0.25}
+          height="1.3em"
+          sx={{ opacity: inFilter ? 1 : 0.3 }}
+        >
+          {[...stat.rolls].sort().map((v, i) => (
+            <SmolProgress
+              key={`${i}${v}`}
+              value={(100 * v) / maxRoll}
+              color={`roll${clamp(
+                rollOffset + rollData.indexOf(v),
+                1,
+                6
+              )}.main`}
+            />
+          ))}
+        </Box>
+      ),
     [inFilter, stat.rolls, maxRoll, rollData, rollOffset]
   )
   return (

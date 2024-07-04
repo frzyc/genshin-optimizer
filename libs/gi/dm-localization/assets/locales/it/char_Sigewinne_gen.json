@@ -1,0 +1,168 @@
+{
+  "name": "Sigewinne",
+  "title": "Prodigiosa erede del drago",
+  "description": "Una Melusina, nonché caposala dell'infermeria di Forte Méropide. Si prende cura ugualmente di ogni prigioniero rinchiuso nella prigione sottomarina.",
+  "constellationName": "Nereides",
+  "auto": {
+    "name": "Terapia mirata",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Esegue fino a 3 colpi consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, il potere di Hydro si accumula sulla punta della freccia. Al termine della carica, Sigewinne rilascia periodicamente delle Bolle d'assistenza che avanzano lentamente verso il bersaglio, infliggendo <hydro>DAN da Hydro</hydro>. Una volta scagliata, la freccia infusa di energia infligge <hydro>DAN da Hydro</hydro> all'impatto."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "ATT mirato",
+      "4": "ATT mirato a piena carica",
+      "5": "DAN da Bolla d'assistenza",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Idroterapia rimbalzante",
+    "description": {
+      "0": "Usando una pistola sparabolle fabbricata a Forte Méropide, Sigewinne crea una <strong>Bollaschiuma rinvigorente</strong> che stimola il flusso sanguigno e aiuta i pazienti ad addormentarsi.",
+      "1": "La Bollaschiuma rinvigorente rimbalza tra gli avversari circostanti infliggendo <hydro>DAN da Hydro</hydro> in base ai PS max di Sigewinne. Ogni volta che rimbalza, ripristina i PS di tutti i membri del gruppo vicini, Sigewinne esclusa. L'efficacia della guarigione aumenta in base ai suoi PS max.",
+      "2": "Compiuti 5 rimbalzi, la Bollaschiuma rinvigorente svanisce e ripristina i PS di Sigewinne in base al valore dei suoi PS max.",
+      "3": "Quando non sono presenti avversari, la Bollaschiuma rinvigorente continua a rimbalzare nelle vicinanze. Non può esserci più di 1 Bollaschiuma rinvigorente in campo.",
+      "4": "La pressione prolungata dell'abilità consente di potenziare la Bollaschiuma e renderla più grande.",
+      "5": "<br/>",
+      "6": "<strong>Pressione prolungata</strong>",
+      "7": "Entra in modalità di mira per creare una Bollaschiuma rinvigorente ancora più grande e portentosa!",
+      "8": "La Bollaschiuma rinvigorente si ingrandisce sempre di più in base alla durata della pressione, fino a raggiungere due livelli di grandezza superiori. Ciascun livello aumenta di un 5% sia i DAN inflitti sia la quantità di PS ripristinati. A ogni rimbalzo, la grandezza della Bollaschiuma si riduce di un livello, fino a tornare a quella iniziale.",
+      "9": "Quando una Bollaschiuma rinvigorente grande colpisce avversari deboli, questi rimangono imprigionati al suo interno, incapaci di muoversi.",
+      "10": "<br/>",
+      "11": "In più, quando Sigewinne usa quest'abilità, si materializzano accanto a lei 2 Gocce d'acqua sorgiva da raccogliere, ciascuna delle quali le conferisce un Legame vitale pari a un 10% dei suoi PS max.",
+      "12": "Quando il Legame vitale si dissolve, Sigewinne ottiene 1 punto di energia elementale per ogni 2.000 PS del Legame vitale dissolto. In questo modo, Sigewinne può ottenere fino a 5 punti di energia elementale.",
+      "13": "<br/>",
+      "14": "<strong>Archè: Ousia</strong>",
+      "15": "La Bollaschiuma rinvigorente genera a intervalli regolari una Lama nascente nella posizione colpita, infliggendo <hydro>DAN da Hydro</hydro> di polarità Ousia in base ai PS max di Sigewinne.",
+      "16": "<br/>",
+      "17": "<i>\"Che te ne pare? Questo tipo di idroterapia non solo stimola il sistema circolatorio, ma è anche un toccasana per l'umore dei pazienti. Ah, e non è tutto: favorisce anche il buon sonno ai malati che hanno bisogno di riposo...\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Bollaschiuma rinvigorente",
+      "1": "Guarigione da Bollaschiuma rinvigorente",
+      "2": "Guarigione da rimbalzo finale",
+      "3": "DAN da Lama nascente",
+      "4": "Intervallo Lama nascente",
+      "5": "TdR",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Siringa supersaturata",
+    "description": {
+      "0": "Estrae una speciale siringa costruita a Forte Méropide, assaltando l'area di fronte a sé con ondate di bontà e medicinali per infliggere <hydro>DAN da Hydro ad area</hydro> basati sui PS max di Sigewinne.",
+      "1": "Inoltre, appena prima di usare l'abilità, Sigewinne assorbe 2 Gocce d'acqua sorgiva presenti in un dato raggio d'azione.",
+      "2": "<br/>",
+      "3": "<i>\"Ehi, l'overdose da medicine non è diversa dall'avvelenamento, è pericolosissima! Ma i pazienti hanno bisogno di cure premurose, e di quelle non ce ne sono mai troppe!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Durata",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Riposo adeguato",
+    "description": {
+      "0": "Sigewinne si concede un Riposo semirigoroso della durata di 18 s dopo aver usato <strong>Idroterapia rimbalzante</strong>. Sigewinne ottiene un 8% di <hydro>bonus DAN da Hydro</hydro> e 10 accumuli di Convalescenza. Quando i membri non attivi del gruppo presenti nelle vicinanze, tranne Sigewinne, infliggono un'iterazione di DAN da abilità elementale, viene consumato 1 accumulo di Convalescenza per aumentare i DAN inflitti dalla suddetta iterazione. Per ogni 1.000 PS max di Sigewinne al di sopra di 30.000, i DAN aumentano di 80. L'aumento di DAN da abilità elementale massimo che è possibile ottenere in questo modo è pari a 2.800."
+    }
+  },
+  "passive2": {
+    "name": "Diagnosi dettagliata, terapia approfondita",
+    "description": {
+      "0": "Quando Sigewinne apporta effetti di guarigione, la quantità di PS ripristinati aumenta in base al valore attuale dei Legami vitali di tutto il gruppo: con questo metodo, la quantità di guarigione apportata aumenta di un 3% per ogni 1.000 PS di Legame vitale, fino a un 30% massimo."
+    }
+  },
+  "passive3": {
+    "name": "Dose d'emergenza",
+    "description": {
+      "0": "Sott'acqua, i PS del personaggio attivo si ripristinano per 2,5 s quando scendono al di sotto di un 50%. La quantità di PS ripristinati è pari a un 50% dei PS max del personaggio in questione. Tuttavia, la RES fisica e a tutti gli elementi del personaggio attivo diminuisce di un 10% per 10 s. Questo effetto può attivarsi una volta ogni 20 s."
+    }
+  },
+  "constellation1": {
+    "name": "\"Lo spirito più sereno può conoscere l'ansia?\"",
+    "description": {
+      "0": "La Bollaschiuma rinvigorente di <strong>Idroterapia rimbalzante</strong> può rimbalzare 3 volte in più, e i primi 3 rimbalzi non ne riducono le dimensioni.",
+      "1": "Il talento passivo Riposo adeguato riceve un potenziamento. Ogni rimbalzo della Bollaschiuma conferisce a Sigewinne 1 accumulo di Convalescenza, e i valori del bonus DAN conferito da ciascun accumulo si modificano nel modo seguente: per ogni 1.000 PS max di Sigewinne al di sopra di 30.000, i DAN aumentano di 100. L'aumento di DAN da abilità elementale massimo che è possibile ottenere in questo modo è pari a 3.500. Richiede il talento passivo Riposo adeguato."
+    }
+  },
+  "constellation2": {
+    "name": "\"Lo spirito più clemente può sconfiggere i propri nemici?\"",
+    "description": {
+      "0": "Quando usa <strong>Idroterapia rimbalzante</strong> e <strong>Siringa supersaturata</strong>, Sigewinne può creare una Scudobolla pari a un 30% dei suoi PS max, in grado di assorbire i <hydro>DAN da Hydro</hydro> con un 250% di efficienza. La Scudobolla persiste fino al termine della relativa abilità usata da Sigewinne.",
+      "1": "In più, dopo che la Bollaschiuma rinvigorente di Idroterapia rimbalzante o Siringa supersaturata colpisce un avversario, la <hydro>RES a Hydro</hydro> di quest'ultimo si riduce di un 35% per 8 s."
+    }
+  },
+  "constellation3": {
+    "name": "\"Lo spirito più sano può guarire le malattie?\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Idroterapia rimbalzante</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Lo spirito più incantevole può evitare il declino?\"",
+    "description": {
+      "0": "La durata di <strong>Siringa supersaturata</strong> si estende di 3 s."
+    }
+  },
+  "constellation5": {
+    "name": "\"Lo spirito più festoso può alleviare l'agonia?\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Siringa supersaturata</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Gli spiriti più radiosi pregherebbero per me?\"",
+    "description": {
+      "0": "Quando Sigewinne apporta effetti di guarigione, il tasso di CRIT e i DAN da CRIT di <strong>Siringa supersaturata</strong> aumentano in base ai suoi PS max: per ogni 1.000 di questi ultimi, il tasso di CRIT e i DAN da CRIT aumentano rispettivamente di uno 0,4% e un 2,2% per 15 s. L'aumento massimo che è possibile ottenere in questo modo è pari a un 20% di tasso di CRIT e un 110% di DAN da CRIT."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Candido cuore della pioggia",
+  "description": {
+    "0": "Un leggendario arco fatato. Che venga usato sul palco o sul campo di battaglia, è in grado di toccare facilmente il cuore di coloro che ne ascoltano il suono."
+  },
+  "passiveName": "Notturno di Dryas",
+  "passiveDescription": {
+    "0": {
+      "0": "Il personaggio che equipaggia l'arma ottiene l'effetto Rimedio. Quando possiede 1/2/3 accumuli di Rimedio, i PS max aumentano di un <cryo>12%/24%/40%</cryo>. Il personaggio può ottenere tali accumuli nelle seguenti situazioni: 1 accumulo per 25 s quando usa l'abilità elementale; 1 accumulo per 25 s quando riceve un incremento del Legame vitale; 1 accumulo per 20 s quando apporta effetti di guarigione. È possibile ottenere accumuli anche se il personaggio non si trova in campo, e la durata di ciascun accumulo viene calcolata in modo indipendente. Inoltre, quando il personaggio possiede 3 accumuli, il tasso di CRIT del suo Tripudio elementale aumenta di un <cryo>28%</cryo>. Questo effetto si annulla 4 s dopo che il numero di accumuli cala al di sotto di 3."
+    },
+    "1": {
+      "0": "Il personaggio che equipaggia l'arma ottiene l'effetto Rimedio. Quando possiede 1/2/3 accumuli di Rimedio, i PS max aumentano di un <cryo>15%/30%/50%</cryo>. Il personaggio può ottenere tali accumuli nelle seguenti situazioni: 1 accumulo per 25 s quando usa l'abilità elementale; 1 accumulo per 25 s quando riceve un incremento del Legame vitale; 1 accumulo per 20 s quando apporta effetti di guarigione. È possibile ottenere accumuli anche se il personaggio non si trova in campo, e la durata di ciascun accumulo viene calcolata in modo indipendente. Inoltre, quando il personaggio possiede 3 accumuli, il tasso di CRIT del suo Tripudio elementale aumenta di un <cryo>35%</cryo>. Questo effetto si annulla 4 s dopo che il numero di accumuli cala al di sotto di 3."
+    },
+    "2": {
+      "0": "Il personaggio che equipaggia l'arma ottiene l'effetto Rimedio. Quando possiede 1/2/3 accumuli di Rimedio, i PS max aumentano di un <cryo>18%/36%/60%</cryo>. Il personaggio può ottenere tali accumuli nelle seguenti situazioni: 1 accumulo per 25 s quando usa l'abilità elementale; 1 accumulo per 25 s quando riceve un incremento del Legame vitale; 1 accumulo per 20 s quando apporta effetti di guarigione. È possibile ottenere accumuli anche se il personaggio non si trova in campo, e la durata di ciascun accumulo viene calcolata in modo indipendente. Inoltre, quando il personaggio possiede 3 accumuli, il tasso di CRIT del suo Tripudio elementale aumenta di un <cryo>42%</cryo>. Questo effetto si annulla 4 s dopo che il numero di accumuli cala al di sotto di 3."
+    },
+    "3": {
+      "0": "Il personaggio che equipaggia l'arma ottiene l'effetto Rimedio. Quando possiede 1/2/3 accumuli di Rimedio, i PS max aumentano di un <cryo>21%/42%/70%</cryo>. Il personaggio può ottenere tali accumuli nelle seguenti situazioni: 1 accumulo per 25 s quando usa l'abilità elementale; 1 accumulo per 25 s quando riceve un incremento del Legame vitale; 1 accumulo per 20 s quando apporta effetti di guarigione. È possibile ottenere accumuli anche se il personaggio non si trova in campo, e la durata di ciascun accumulo viene calcolata in modo indipendente. Inoltre, quando il personaggio possiede 3 accumuli, il tasso di CRIT del suo Tripudio elementale aumenta di un <cryo>49%</cryo>. Questo effetto si annulla 4 s dopo che il numero di accumuli cala al di sotto di 3."
+    },
+    "4": {
+      "0": "Il personaggio che equipaggia l'arma ottiene l'effetto Rimedio. Quando possiede 1/2/3 accumuli di Rimedio, i PS max aumentano di un <cryo>24%/48%/80%</cryo>. Il personaggio può ottenere tali accumuli nelle seguenti situazioni: 1 accumulo per 25 s quando usa l'abilità elementale; 1 accumulo per 25 s quando riceve un incremento del Legame vitale; 1 accumulo per 20 s quando apporta effetti di guarigione. È possibile ottenere accumuli anche se il personaggio non si trova in campo, e la durata di ciascun accumulo viene calcolata in modo indipendente. Inoltre, quando il personaggio possiede 3 accumuli, il tasso di CRIT del suo Tripudio elementale aumenta di un <cryo>56%</cryo>. Questo effetto si annulla 4 s dopo che il numero di accumuli cala al di sotto di 3."
+    }
+  }
+}

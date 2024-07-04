@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, type ReactNode } from 'react'
 import { IsAdBlockedContext } from '../context'
 import { useIsAdblocked } from '../hooks/useIsAdblocked'

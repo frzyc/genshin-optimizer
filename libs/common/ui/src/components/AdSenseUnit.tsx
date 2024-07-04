@@ -1,3 +1,4 @@
+'use client'
 import type { BoxProps } from '@mui/material'
 import { Box } from '@mui/material'
 import { useEffect } from 'react'

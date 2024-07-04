@@ -11,13 +11,13 @@ export default async function genSheet(
 ) {
   const { sheet_type } = options
   const file_location = `libs/gi/formula/src/data/${sheet_type}`
-  const dest = path.join(tree.root, file_location, `${options.src}.ts`)
+  const dest = path.join(tree.root, file_location, `${options.sheet}.ts`)
   if (existsSync(dest)) {
     verbose &&
       console.warn(
         `Sheet at ${path.join(
           file_location,
-          `${options.src}.ts`
+          `${options.sheet}.ts`
         )} already exists.`
       )
     return
