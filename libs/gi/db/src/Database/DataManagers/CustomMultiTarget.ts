@@ -380,11 +380,14 @@ function validateCustomExpression(
     argsCount: number
   }[] = []
   let prevUnit = initExpressionUnit({ type: 'null', kind: 'operation' })
-  const currentEnclosing_ = () => stack[stack.length - 1]
+  let currentEnclosing: (typeof stack)[number] | undefined
+  const updateCurrentEnclosing = () => {
+    currentEnclosing = stack[stack.length - 1] as typeof currentEnclosing
+    return currentEnclosing
+  }
 
   for (let unit of ce_ as ExpressionUnit[]) {
-    const currentEnclosing: (typeof stack)[number] | undefined =
-      stack[stack.length - 1]
+    updateCurrentEnclosing()
 
     // Condition one
     // Ignore enclosing(tail) or enclosing(comma) units if stack is empty
@@ -468,19 +471,18 @@ function validateCustomExpression(
     // Add null(operation), enclosing(comma) or enclosing(tail) unit between any two operand units
     if (isOperand(prevUnit, 'right') && isOperand(unit, 'left')) {
       while (true) {
-        if (!currentEnclosing_()) {
+        updateCurrentEnclosing()
+        if (!currentEnclosing) {
           // Add null(operation) unit if the stack is empty
           expression.push(
             initExpressionUnit({ type: 'null', kind: 'operation' })
           )
-        } else if (
-          currentEnclosing_().argsCount < currentEnclosing_().arity.max
-        ) {
+        } else if (currentEnclosing.argsCount < currentEnclosing.arity.max) {
           // Add enclosing(comma) unit if the current enclosing argsCount < max
           expression.push(
             initExpressionUnit({ type: 'enclosing', part: 'comma' })
           )
-          currentEnclosing_().argsCount++
+          currentEnclosing.argsCount++
         } else {
           // Add enclosing(tail) unit if the current enclosing argsCount >= max
           expression.push(

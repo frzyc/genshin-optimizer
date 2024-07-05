@@ -191,6 +191,7 @@ export function dataObjForCharacterNew(
     },
     customBonus: {},
   }
+  console.log('sheetData', sheetData)
 
   for (const [key, value] of Object.entries(bonusStats))
     (result.customBonus! as any)[key] = key.endsWith('_')
@@ -250,9 +251,24 @@ function parseCustomTarget(
   useWeight = true
 ): NumNode {
   let { weight, path, hitMode, reaction, infusionAura, bonusStats } = target
-  const targetNode = objPathValue(sheetData.display, path) as
-    | NumNode
-    | undefined
+  let targetNode: NumNode | undefined
+  const _path = [] as string[]
+  for (const step of path) {
+    if (step === 'meta') {
+      continue
+    }
+    if (step === 'ops') {
+      _path.push('operands')
+      continue
+    }
+    _path.push(step)
+  }
+  path = _path
+  if (path[0] === 'teamBuff') {
+    targetNode = objPathValue(sheetData.teamBuff, path[1].split(':'))
+  } else {
+    targetNode = objPathValue(sheetData.display, path)
+  }
   if (!targetNode) return constant(0)
   if (hitMode === 'global') hitMode = globalHitMode
 
