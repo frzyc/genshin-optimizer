@@ -191,7 +191,6 @@ export function dataObjForCharacterNew(
     },
     customBonus: {},
   }
-  console.log('sheetData', sheetData)
 
   for (const [key, value] of Object.entries(bonusStats))
     (result.customBonus! as any)[key] = key.endsWith('_')

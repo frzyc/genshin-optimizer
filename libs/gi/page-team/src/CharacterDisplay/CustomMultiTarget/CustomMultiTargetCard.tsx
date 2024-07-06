@@ -175,7 +175,7 @@ export default function CustomMultiTargetCard({
                 startIcon={<ContentPasteIcon />}
                 sx={{ flexGrow: 1 }}
               >
-                Export
+                {t('multiTarget.export')}
               </Button>
               {!target.expression && (
                 <Button

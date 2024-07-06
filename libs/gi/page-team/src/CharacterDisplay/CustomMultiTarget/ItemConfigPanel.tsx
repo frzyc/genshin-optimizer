@@ -11,6 +11,7 @@ import type {
   AddressItemTypesMap,
   CustomFunction,
   CustomFunctionArgument,
+  CustomMultiTarget,
   CustomTarget,
   ExpressionItem,
   ExpressionUnit,
@@ -18,7 +19,12 @@ import type {
   ItemRelations,
   UnitAddress,
 } from '@genshin-optimizer/gi/db'
-import { OperationSpecs, itemAddressValue } from '@genshin-optimizer/gi/db'
+import {
+  OperationSpecs,
+  initCustomMultiTarget,
+  initExpressionUnit,
+  itemAddressValue,
+} from '@genshin-optimizer/gi/db'
 import { CharacterContext } from '@genshin-optimizer/gi/db-ui'
 import { isCharMelee } from '@genshin-optimizer/gi/stats'
 import {
@@ -29,6 +35,7 @@ import {
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { allInputPremodKeys } from '@genshin-optimizer/gi/wr'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
@@ -36,6 +43,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import {
   Box,
+  Button,
   ButtonGroup,
   CardActionArea,
   Collapse,
@@ -50,6 +58,13 @@ import { useCallback, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import OptimizationTargetSelector from '../Tabs/TabOptimize/Components/OptimizationTargetSelector'
 import ReactionDropdown from './ReactionDropdown'
+
+function copyToClipboard(target: any) {
+  return navigator.clipboard
+    .writeText(JSON.stringify(target))
+    .then(() => alert('Copied configuration to clipboard.'))
+    .catch(console.error)
+}
 
 export default function ItemConfigPanel({
   item,
@@ -79,6 +94,7 @@ export default function ItemConfigPanel({
   setSIA: Dispatch<SetStateAction<ItemAddress>>
   focusToSIA: () => void
 }): JSX.Element {
+  const { t } = useTranslation('page_character')
   const [collapse, setcollapse] = useState(false)
 
   const onEdit = useCallback(
@@ -102,6 +118,29 @@ export default function ItemConfigPanel({
     addItem(_sia, deepClone(item))
     setSIA(_sia)
   }, [addItem, item, setSIA, sia])
+
+  const onFunctionExport = useCallback(() => {
+    if (sia.type !== 'function') return
+    const func = item as CustomFunction
+    const functionsToExport = [func.name]
+    const functionsToCheck = functions.slice(sia.layer + 1)
+    while (functionsToCheck.length) {
+      const f1 = functionsToCheck.pop() as CustomFunction
+      if (!functionsToExport.includes(f1.name)) continue
+      for (const u of f1.expression) {
+        if (u.type === 'function' && !functionsToExport.includes(u.name)) {
+          functionsToExport.push(u.name)
+        }
+      }
+    }
+    const exportData: CustomMultiTarget = {
+      ...initCustomMultiTarget(),
+      name: func.name,
+      functions: functions.filter((f) => functionsToExport.includes(f.name)),
+      expression: [initExpressionUnit({ type: 'function', name: func.name })],
+    }
+    copyToClipboard(exportData)
+  }, [functions, item, sia])
 
   // When function or argument name is changed, update the names in the expressions
   const onNameChange = useCallback(
@@ -241,12 +280,22 @@ export default function ItemConfigPanel({
       const _item = item as CustomFunction | CustomFunctionArgument
       result.push(
         <Box sx={{ display: 'flex', gap: 1 }} flexDirection="column">
-          <TextFieldLazy
-            fullWidth
-            label="Name"
-            value={_item.name}
-            onChange={onNameChange}
-          />
+          <Box sx={{ display: 'flex', gap: 1 }}>
+            <TextFieldLazy
+              fullWidth
+              label="Name"
+              value={_item.name}
+              onChange={onNameChange}
+            />
+            <Button
+              color="info"
+              onClick={onFunctionExport}
+              startIcon={<ContentPasteIcon />}
+              sx={{ flexGrow: 1 }}
+            >
+              {t('multiTarget.export')}
+            </Button>
+          </Box>
           <TextFieldLazy
             fullWidth
             label="Description"
@@ -268,7 +317,17 @@ export default function ItemConfigPanel({
       )
     }
     return result
-  }, [focusToSIA, functions, item, onEdit, onNameChange, setItem, sia])
+  }, [
+    focusToSIA,
+    functions,
+    item,
+    onEdit,
+    onFunctionExport,
+    onNameChange,
+    setItem,
+    sia,
+    t,
+  ])
 
   return (
     <CardThemed
