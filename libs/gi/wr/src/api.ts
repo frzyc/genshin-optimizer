@@ -450,14 +450,21 @@ function parseCustomExpression(
         args
       )
     }
-    return parseCustomExpression(
-      customFunction.expression,
-      parseCustomTarget,
-      functions_.slice(
-        0,
-        functions_.map((f) => f.name).indexOf(customFunction.name)
+    return infoMut(
+      parseCustomExpression(
+        customFunction.expression,
+        parseCustomTarget,
+        functions_.slice(
+          0,
+          functions_.map((f) => f.name).indexOf(customFunction.name)
+        ),
+        args_
       ),
-      args_
+      {
+        name: customFunction.name,
+        variant: 'invalid',
+        pivot: true,
+      }
     )
   }
 
@@ -479,6 +486,11 @@ function parseCustomExpression(
             functions_.map((f) => f.name).indexOf(operand.name)
           )
         )
+        result = infoMut(result, {
+          name: operand.name,
+          variant: 'invalid',
+          pivot: true,
+        })
       } else {
         result = args[operand.name]
       }
