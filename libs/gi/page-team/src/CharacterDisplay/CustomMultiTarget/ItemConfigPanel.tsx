@@ -59,11 +59,13 @@ import { useTranslation } from 'react-i18next'
 import OptimizationTargetSelector from '../Tabs/TabOptimize/Components/OptimizationTargetSelector'
 import ReactionDropdown from './ReactionDropdown'
 
-function copyToClipboard(target: any) {
-  return navigator.clipboard
-    .writeText(JSON.stringify(target))
-    .then(() => alert('Copied configuration to clipboard.'))
-    .catch(console.error)
+async function copyToClipboard(target: any) {
+  try {
+    await navigator.clipboard.writeText(JSON.stringify(target))
+    return alert('Copied configuration to clipboard.')
+  } catch (message_1) {
+    return console.error(message_1)
+  }
 }
 
 export default function ItemConfigPanel({
@@ -123,7 +125,8 @@ export default function ItemConfigPanel({
     if (sia.type !== 'function') return
     const func = item as CustomFunction
     const functionsToExport = [func.name]
-    const functionsToCheck = functions.slice(sia.layer + 1)
+    const functionsToCheck = functions.slice(0, sia.layer + 1)
+    console.log(sia.layer)
     while (functionsToCheck.length) {
       const f1 = functionsToCheck.pop() as CustomFunction
       if (!functionsToExport.includes(f1.name)) continue
@@ -343,7 +346,9 @@ export default function ItemConfigPanel({
         <Box sx={{ p: 1, flexGrow: 1 }}>{configs}</Box>
       </Collapse>
       <Divider />
-      <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+      <Box
+        sx={{ display: 'flex', gap: 1, alignItems: 'center', flexWrap: 'wrap' }}
+      >
         <CardActionArea
           sx={{
             display: 'flex',
@@ -352,6 +357,7 @@ export default function ItemConfigPanel({
             height: '100%',
             py: 1,
             alignItems: 'center',
+            width: 'auto',
           }}
           onClick={() => setcollapse((c) => !c)}
         >

@@ -44,6 +44,7 @@
     "addNewFunction": "New ƒ",
     "addNewArgument": "New Arg",
     "export": "Export",
+    "importCustomFunctions": "Import ƒ",
     "target_one": "<0>{{count}}</0> Target",
     "target_other": "<0>{{count}}</0> Targets",
     "jsonDescWarning": "It seems like you're trying to import a multi-opt config. This isn't the right place for that! Please go back one modal and press <strong>Import Multi-Opt.</strong>"

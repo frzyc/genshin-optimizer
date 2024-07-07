@@ -428,7 +428,7 @@ function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
       case 'invalid':
         return -1
       default:
-        assertUnreachable(variant as never)
+        assertUnreachable(variant)
     }
   }
   const variants = new Set(

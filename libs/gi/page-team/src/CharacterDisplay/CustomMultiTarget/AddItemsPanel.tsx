@@ -3,6 +3,7 @@ import {
   CardThemed,
   CustomNumberInput,
   CustomNumberInputButtonGroupWrapper,
+  ModalWrapper,
 } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import type {
@@ -18,8 +19,21 @@ import {
   initCustomFunctionArgument,
   initCustomTarget,
   initExpressionUnit,
+  validateCustomMultiTarget,
 } from '@genshin-optimizer/gi/db'
-import { Box, Button, ButtonGroup, Grid } from '@mui/material'
+import UploadIcon from '@mui/icons-material/Upload'
+import type { ButtonProps } from '@mui/material'
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  CardContent,
+  CardHeader,
+  Divider,
+  Grid,
+  TextField,
+  Typography,
+} from '@mui/material'
 import type { Dispatch, SetStateAction } from 'react'
 import { useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -41,10 +55,11 @@ export default function AddItemsPanel({
   const [newNumber, setNewNumber] = useState<number | undefined>()
 
   const addFunction = useCallback(
-    (func: Partial<CustomFunction>) => {
+    (func: Partial<CustomFunction>, isImport = false) => {
       let _sia = sia
       if (!_sia) {
         _sia = { type: 'function', layer: 0 }
+        if (isImport) _sia.layer = functions.length
       } else if (_sia.type !== 'function') {
         _sia = {
           type: 'function',
@@ -226,6 +241,9 @@ export default function AddItemsPanel({
               onClick={onShow}
             >{t`multiTarget.addNewTarget`}</Button>
             {addFunctionUnitButton}
+            {ImportCustomFunctionBtn({
+              addFunction: (func) => addFunction(func, true),
+            })}
             <ButtonGroup>
               <Button key={'addConstant'} onClick={addConstant}>
                 {t`multiTarget.add`}
@@ -264,5 +282,71 @@ export default function AddItemsPanel({
         />
       </Box>
     </CardThemed>
+  )
+}
+
+function ImportCustomFunctionBtn({
+  addFunction,
+  btnProps = {},
+}: {
+  addFunction: (func: Partial<CustomFunction>) => void
+  btnProps?: ButtonProps
+}) {
+  const { t } = useTranslation('page_character')
+  const [show, onShow, onClose] = useBoolState()
+  const [data, setData] = useState('')
+
+  const importData = () => {
+    try {
+      const dataObj = JSON.parse(data)
+      const validated = validateCustomMultiTarget(dataObj)
+      if (!validated) window.alert('Invalid Multi-Optimization Config')
+      else {
+        for (const func of validated.functions ?? []) {
+          addFunction(func)
+        }
+        onClose()
+      }
+    } catch (e) {
+      window.alert(`Data Import failed. ${e}`)
+      return
+    }
+  }
+
+  return (
+    <>
+      <Button {...btnProps} onClick={onShow}>
+        {t`multiTarget.importCustomFunctions`}
+      </Button>
+      <ModalWrapper open={show} onClose={onClose}>
+        <CardThemed>
+          <CardHeader title="Import Custom Functions" />
+          <Divider />
+          <CardContent
+            sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+          >
+            <Typography>
+              Import Custom Functions from Custom Multi-Opt in JSON form below.
+            </Typography>
+            <TextField
+              fullWidth
+              label="JSON Data"
+              placeholder="Paste your Custom Function JSON here"
+              value={data}
+              onChange={(e) => setData(e.target.value)}
+              multiline
+              rows={4}
+            />
+            <Button
+              startIcon={<UploadIcon />}
+              disabled={!data}
+              onClick={importData}
+            >
+              Import
+            </Button>
+          </CardContent>
+        </CardThemed>
+      </ModalWrapper>
+    </>
   )
 }
