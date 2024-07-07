@@ -1,6 +1,7 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
+import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+import { AssetData } from '@genshin-optimizer/gi/assets-data'
 import type { Interaction, MessageActionRowComponentBuilder } from 'discord.js'
 import {
   ActionRowBuilder,
@@ -8,7 +9,8 @@ import {
   StringSelectMenuBuilder,
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
-import { clean, colors } from '../archive'
+import { clean } from '../archive'
+import { rarityColors } from '../../assets/assets'
 
 const refinedisplay: Record<string, string> = {
   0: '1',
@@ -49,7 +51,7 @@ export function weaponarchive(
   name = data.name
   let text = Object.values(data.description).join('\n')
   //weapon rarity color
-  const rarity = allStats.weapon.data[id].rarity
+  const rarity = getWeaponStat(id).rarity
   //default r1 5stars
   let refine = '0'
   //no refinements or dropdown for 1/2 star weapons
@@ -71,11 +73,12 @@ export function weaponarchive(
   msg['embeds'] = [
     new EmbedBuilder()
       .setTitle(name)
-      .setColor(colors.rarity[rarity - 1])
+      .setColor(rarityColors[rarity - 1])
       .setFooter({
         text: 'Weapon Archive',
       })
-      .setDescription(clean(text)),
+      .setDescription(clean(text))
+      .setThumbnail(`https://api.ambr.top/assets/UI/${AssetData.weapons[id].icon}.png`)
   ]
   return msg
 }

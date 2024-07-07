@@ -1,8 +1,10 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
+import { getArtSetStat } from '@genshin-optimizer/gi/stats'
+import { AssetData } from '@genshin-optimizer/gi/assets-data'
 import type { Interaction } from 'discord.js'
 import { EmbedBuilder } from 'discord.js'
-import { clean, colors } from '../archive'
+import { clean } from '../archive'
+import { rarityColors } from '../../assets/assets'
 
 export function artifactarchive(
   interaction: Interaction,
@@ -11,7 +13,7 @@ export function artifactarchive(
   data: any
 ) {
   //artifact rarity color
-  const rarities = allStats.art.data[id].rarities
+  const rarities = getArtSetStat(id).rarities
   const rarity = rarities[rarities.length - 1]
   //set content
   let text = ''
@@ -22,11 +24,12 @@ export function artifactarchive(
   }
   const embed = new EmbedBuilder()
     .setTitle(data.setName)
-    .setColor(colors.rarity[rarity - 1])
+    .setColor(rarityColors[rarity - 1])
     .setFooter({
       text: 'Artifact Archive',
     })
     .setDescription(clean(text))
+    .setThumbnail(`https://api.ambr.top/assets/UI/reliquary/${AssetData.artifacts[id].flower}.png`)
 
   return {
     content: '',

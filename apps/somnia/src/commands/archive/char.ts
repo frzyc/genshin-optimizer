@@ -1,5 +1,6 @@
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
+import type { CharacterKey, LocationGenderedCharacterKey, TravelerKey } from '@genshin-optimizer/gi/consts'
+import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
+import { AssetData } from '@genshin-optimizer/gi/assets-data'
 import type { Interaction, MessageActionRowComponentBuilder } from 'discord.js'
 import {
   ActionRowBuilder,
@@ -7,7 +8,8 @@ import {
   StringSelectMenuBuilder,
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
-import { clean, colors, talentlist } from '../archive'
+import { clean, talentlist } from '../archive'
+import { elementAssets } from '../../assets/assets'
 
 function getEmbed(id: CharacterKey, name: string, data: any, talent: string) {
   //character profile
@@ -26,6 +28,17 @@ function getEmbed(id: CharacterKey, name: string, data: any, talent: string) {
   else throw 'Invalid talent name.'
 }
 
+function getassets(id: CharacterKey) {
+  let genderedid : LocationGenderedCharacterKey | TravelerKey = id;
+  if (id.includes('Traveler')) {
+    if (Math.random() < 0.5)
+      genderedid = 'TravelerM'
+    else
+      genderedid = 'TravelerF'
+  }
+  return AssetData.chars[genderedid]
+}
+
 function baseEmbed(id: CharacterKey, name: string) {
   const element = getCharEle(id)
   return new EmbedBuilder()
@@ -34,22 +47,29 @@ function baseEmbed(id: CharacterKey, name: string) {
     })
     .setAuthor({
       name: name,
-      iconURL: colors.element[element].img,
+      iconURL: `https://api.ambr.top/assets/UI/${getassets(id).icon}.png`,
     })
-    .setColor(colors.element[element].color)
+    .setColor(elementAssets[element].color)
 }
 
 function profileEmbed(id: CharacterKey, name: string, data: any) {
+  const element = getCharEle(id)
   const text =
     data.description ??
     'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.'
   const embed = baseEmbed(id, name)
   if (data.title) embed.setTitle(data.title)
-  embed.setDescription(clean(text))
   return embed
+    .setAuthor({
+      name: name,
+      iconURL: elementAssets[element].img,
+    })
+    .setThumbnail(`https://api.ambr.top/assets/UI/${getassets(id).icon}.png`)
+    .setDescription(clean(text))
 }
 
 function normalsEmbed(id: CharacterKey, name: string, data: any) {
+  const weapon = getCharStat(id).weaponType
   return baseEmbed(id, name)
     .setTitle(data.auto.name)
     .setDescription(
@@ -62,6 +82,7 @@ function normalsEmbed(id: CharacterKey, name: string, data: any) {
           '\n\n'
       )
     )
+    .setThumbnail(`https://api.ambr.top/assets/UI/${AssetData.normalIcons[weapon]}.png`)
 }
 
 function skillEmbed(id: CharacterKey, name: string, data: any) {
@@ -70,6 +91,7 @@ function skillEmbed(id: CharacterKey, name: string, data: any) {
     .setDescription(
       clean(Object.values(data.skill.description).flat().join('\n'))
     )
+    .setThumbnail(`https://api.ambr.top/assets/UI/${getassets(id).skill}.png`)
 }
 
 function burstEmbed(id: CharacterKey, name: string, data: any) {
@@ -78,6 +100,7 @@ function burstEmbed(id: CharacterKey, name: string, data: any) {
     .setDescription(
       clean(Object.values(data.burst.description).flat().join('\n'))
     )
+    .setThumbnail(`https://api.ambr.top/assets/UI/${getassets(id).burst}.png`)
 }
 
 function passivesEmbed(
@@ -88,7 +111,7 @@ function passivesEmbed(
 ) {
   let text = ''
   //list all passives
-  let list = Object.keys(data).filter((e) => e.startsWith('passive'))
+  let list = Object.keys(data).filter((e) => e.startsWith('passive')) as ('passive1' | 'passive2' | 'passive3' | 'passive')[]
   //input to select a passive
   if (talent.length > 1) {
     if (talent[1] === '1') list = ['passive1']
@@ -106,7 +129,9 @@ function passivesEmbed(
     else text += `**${e.name}** \n`
     text += Object.values(e.description).flat().join('\n') + '\n\n'
   }
-  return baseEmbed(id, name).setDescription(clean(text))
+  return baseEmbed(id, name)
+    .setDescription(clean(text))
+    .setThumbnail(`https://api.ambr.top/assets/UI/${getassets(id)[list[0]]}.png`)
 }
 
 function constellationsEmbed(
@@ -116,20 +141,22 @@ function constellationsEmbed(
   talent: string
 ) {
   let text = ''
-  let arr = ['1', '2', '3', '4', '5', '6']
-  if (talent.length > 1) arr = [talent[1]]
-  for (const n of arr) {
+  let list = ['1', '2', '3', '4', '5', '6']
+  if (talent.length > 1 && talent[1] in list) list = [talent[1]]
+  for (const n of list) {
     const e = data[`constellation${n}`]
     text +=
       `**${n}. ${e.name}** ` +
       Object.values(e.description).flat().join('\n') +
       '\n\n'
   }
+  const thumbid = `constellation${list[0]}` as 'constellation1' | 'constellation2' | 'constellation3' | 'constellation4' | 'constellation5' | 'constellation6'
   //make embed
   const embed = baseEmbed(id, name)
   if (data.constellationName) embed.setTitle(data.constellationName)
-  embed.setDescription(clean(text))
   return embed
+    .setDescription(clean(text))
+    .setThumbnail(`https://api.ambr.top/assets/UI/${getassets(id)[thumbid]}.png`)
 }
 
 export function chararchive(
