@@ -53,3 +53,14 @@ export const allAbilityLimits: Record<
   ult: abilityLimits,
   talent: abilityLimits,
 } as const
+
+export const allPathKeys = [
+  'Erudition',
+  'Preservation',
+  'Abundance',
+  'Nihility',
+  'Destruction',
+  'Harmony',
+  'TheHunt',
+] as const
+export type PathKey = (typeof allPathKeys)[number]
