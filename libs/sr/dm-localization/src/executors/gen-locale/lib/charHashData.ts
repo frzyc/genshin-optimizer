@@ -10,12 +10,12 @@ import {
   characterIdMap,
 } from '@genshin-optimizer/sr/dm'
 
-export type CharData = {
+type CharData = {
   name: string
   abilities: Partial<Record<AbilityKey, AbilityData[]>>
 }
 
-export type AbilityData = {
+type AbilityData = {
   name: string
   fullDesc: string
   shortDesc: string
