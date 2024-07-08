@@ -1,5 +1,13 @@
-import type { Client, Interaction } from 'discord.js'
+import type {
+  Client,
+  Interaction,
+  MessageReaction,
+  PartialMessageReaction,
+  PartialUser,
+  User,
+} from 'discord.js'
 import { Commands } from '../main'
+import perms from './permissions'
 
 export async function ready(client: Client) {
   const name = client.user?.username
@@ -12,29 +20,37 @@ export async function interactionCreate(interaction: Interaction) {
     if (interaction.isChatInputCommand()) {
       const command = Commands.get(interaction.commandName)
       if (!command)
-        return console.error(`Command ${interaction.commandName} not found.`)
+        return console.error(`No command ${interaction.commandName}`)
       await command.run(interaction)
     } else if (interaction.isAutocomplete()) {
       const command = Commands.get(interaction.commandName)
       if (!command)
-        return console.error(
-          `Autocomplete ${interaction.commandName} not found.`
-        )
+        return console.error(`No autocomplete ${interaction.commandName}`)
       await command.autocomplete(interaction)
     } else if (interaction.isButton()) {
       args = interaction.customId.split(' ')
       const command = Commands.get(args[0])
-      if (!command)
-        return console.error(`Button ${interaction.customId} not found.`)
+      if (!command) return console.error(`No button ${interaction.customId}`)
       await command.button(interaction, args)
     } else if (interaction.isStringSelectMenu()) {
       args = interaction.customId.split(' ')
       const command = Commands.get(args[0])
       if (!command)
-        return console.error(`Selectmenu ${interaction.customId} not found.`)
+        return console.error(`No selectmenu ${interaction.customId}`)
       await command.selectmenu(interaction, args)
     }
   } catch (e) {
     console.error(e)
   }
+}
+
+export async function messageReactionAdd(
+  reaction: MessageReaction | PartialMessageReaction,
+  user: User | PartialUser
+) {
+  //ignore other bot reactions
+  if (perms.bot(user)) return
+  const message = reaction.message
+  //only act on messages from self
+  if (!perms.self(message)) return
 }

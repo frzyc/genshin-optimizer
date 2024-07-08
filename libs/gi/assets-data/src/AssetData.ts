@@ -3,6 +3,7 @@ import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   LocationGenderedCharacterKey,
+  TravelerKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import type {
@@ -29,8 +30,8 @@ import {
 } from '@genshin-optimizer/gi/dm'
 
 type CharacterIcon = {
-  icon: string
-  iconSide: string
+  icon?: string
+  iconSide?: string
   banner?: string
   bar?: string
   skill?: string
@@ -47,7 +48,10 @@ type CharacterIcon = {
   constellation5?: string
   constellation6?: string
 }
-type CharacterIconData = Record<LocationGenderedCharacterKey, CharacterIcon>
+type CharacterIconData = Record<
+  LocationGenderedCharacterKey | TravelerKey,
+  CharacterIcon
+>
 //An object to store all the asset related data.
 export const AssetData = {
   weapons: {} as Record<WeaponKey, { icon: string; awakenIcon: string }>,
@@ -56,6 +60,25 @@ export const AssetData = {
     Partial<Record<ArtifactSlotKey, string>>
   >,
   chars: {} as CharacterIconData,
+}
+
+export const CommonAssetData = {
+  normalIcons: {
+    sword: 'Skill_A_01',
+    bow: 'Skill_A_02',
+    polearm: 'Skill_A_03',
+    claymore: 'Skill_A_04',
+    catalyst: 'Skill_A_Catalyst_MD',
+  },
+  elemIcons: {
+    anemo: 'UI_Buff_Element_Wind',
+    geo: 'UI_Buff_Element_Rock',
+    electro: 'UI_Buff_Element_Electric',
+    hydro: 'UI_Buff_Element_Water',
+    pyro: 'UI_Buff_Element_Fire',
+    cryo: 'UI_Buff_Element_Ice',
+    dendro: 'UI_Buff_Element_Grass',
+  },
 }
 
 // Get icons for each artifact piece
@@ -138,8 +161,7 @@ Object.entries(avatarExcelConfigData).forEach(([charid, charData]) => {
       inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
     } = depot
 
-    // auto icons are shared.
-    // layeredAssignment(characterAssetDump, [cKey, "auto"], talents[normal].skillIcon)
+    // skill icon
     layeredAssignment(
       assetChar,
       [ck, 'skill'],
