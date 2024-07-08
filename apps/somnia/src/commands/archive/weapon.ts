@@ -1,16 +1,16 @@
 import { range } from '@genshin-optimizer/common/util'
+import { AssetData } from '@genshin-optimizer/gi/assets-data'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
-import { AssetData } from '@genshin-optimizer/gi/assets-data'
-import type { Interaction, MessageActionRowComponentBuilder } from 'discord.js'
 import {
   ActionRowBuilder,
   EmbedBuilder,
   StringSelectMenuBuilder,
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
-import { clean } from '../archive'
 import { rarityColors } from '../../assets/assets'
+import { createAmbrUrl } from '../../lib/util'
+import { clean } from '../archive'
 
 const refinedisplay: Record<string, string> = {
   0: '1',
@@ -36,19 +36,17 @@ function getDropdown(id: string, refine: string) {
         .setCustomId(`archive weapon ${id} ${refine}`)
         .setPlaceholder(`Refinement ${refine}`)
         .addOptions(options)
-    ) as ActionRowBuilder<MessageActionRowComponentBuilder>,
+    ),
   ]
 }
 
-export function weaponarchive(
-  interaction: Interaction,
+export function weaponArchive(
   id: WeaponKey,
   name: string,
   data: any,
   args: string
 ) {
   const msg: any = {}
-  name = data.name
   let text = Object.values(data.description).join('\n')
   //weapon rarity color
   const rarity = getWeaponStat(id).rarity
@@ -78,7 +76,7 @@ export function weaponarchive(
         text: 'Weapon Archive',
       })
       .setDescription(clean(text))
-      .setThumbnail(`https://api.ambr.top/assets/UI/${AssetData.weapons[id].icon}.png`)
+      .setThumbnail(createAmbrUrl(AssetData.weapons[id].icon)),
   ]
   return msg
 }

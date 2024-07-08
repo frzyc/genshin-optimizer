@@ -2,7 +2,6 @@ import type {
   ApplicationCommandOptionChoiceData,
   AutocompleteInteraction,
   ChatInputCommandInteraction,
-  Interaction,
   StringSelectMenuInteraction,
 } from 'discord.js'
 import { SlashCommandBuilder } from 'discord.js'
@@ -17,9 +16,9 @@ import type {
   CharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
-import { artifactarchive } from './archive/artifact'
-import { chararchive } from './archive/char'
-import { weaponarchive } from './archive/weapon'
+import { artifactArchive } from './archive/artifact'
+import { charArchive } from './archive/char'
+import { weaponArchive } from './archive/weapon'
 
 export const slashcommand = new SlashCommandBuilder()
   .setName('archive')
@@ -170,12 +169,7 @@ export async function autocomplete(interaction: AutocompleteInteraction) {
   interaction.respond(reply)
 }
 
-export function archivemsg(
-  interaction: Interaction,
-  subcommand: string,
-  id: string,
-  arg: string
-) {
+export function archiveMessage(subcommand: string, id: string, arg: string) {
   const name = archive['key'][subcommand][id]
   const data = archive[subcommand][id]
 
@@ -183,15 +177,15 @@ export function archivemsg(
   if (!(id in archive[subcommand])) throw `Invalid ${subcommand} name.`
   //character archive
   if (subcommand === 'char') {
-    return chararchive(interaction, id as CharacterKey, name, data, arg)
+    return charArchive(id as CharacterKey, name, data, arg)
   }
   //weapons archive
   else if (subcommand === 'weapon') {
-    return weaponarchive(interaction, id as WeaponKey, name, data, arg)
+    return weaponArchive(id as WeaponKey, name, data, arg)
   }
   //artifacts archive
   else if (subcommand === 'artifact') {
-    return artifactarchive(interaction, id as ArtifactSetKey, name, data)
+    return artifactArchive(id as ArtifactSetKey, name, data)
   } else throw 'Invalid selection'
 }
 
@@ -206,7 +200,7 @@ export async function run(interaction: ChatInputCommandInteraction) {
     arg = interaction.options.getString('refine', false) ?? ''
 
   try {
-    interaction.reply(archivemsg(interaction, subcommand, id, arg))
+    interaction.reply(archiveMessage(subcommand, id, arg))
   } catch (e) {
     error(interaction, e)
   }
@@ -221,7 +215,7 @@ export async function selectmenu(
   const arg = interaction.values[0]
 
   try {
-    interaction.update(archivemsg(interaction, subcommand, id, arg))
+    interaction.update(archiveMessage(subcommand, id, arg))
   } catch (e) {
     error(interaction, e)
   }

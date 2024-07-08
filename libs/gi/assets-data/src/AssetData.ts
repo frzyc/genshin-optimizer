@@ -30,8 +30,8 @@ import {
 } from '@genshin-optimizer/gi/dm'
 
 type CharacterIcon = {
-  icon: string
-  iconSide: string
+  icon?: string
+  iconSide?: string
   banner?: string
   bar?: string
   skill?: string
@@ -48,7 +48,10 @@ type CharacterIcon = {
   constellation5?: string
   constellation6?: string
 }
-type CharacterIconData = Record<LocationGenderedCharacterKey | TravelerKey, CharacterIcon>
+type CharacterIconData = Record<
+  LocationGenderedCharacterKey | TravelerKey,
+  CharacterIcon
+>
 //An object to store all the asset related data.
 export const AssetData = {
   weapons: {} as Record<WeaponKey, { icon: string; awakenIcon: string }>,
@@ -63,7 +66,16 @@ export const AssetData = {
     polearm: 'Skill_A_03',
     claymore: 'Skill_A_04',
     catalyst: 'Skill_A_Catalyst_MD',
-  }
+  },
+  elemIcons: {
+    anemo: 'UI_Buff_Element_Wind',
+    geo: 'UI_Buff_Element_Rock',
+    electro: 'UI_Buff_Element_Electric',
+    hydro: 'UI_Buff_Element_Water',
+    pyro: 'UI_Buff_Element_Fire',
+    cryo: 'UI_Buff_Element_Ice',
+    dendro: 'UI_Buff_Element_Grass',
+  },
 }
 
 // Get icons for each artifact piece
