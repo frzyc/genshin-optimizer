@@ -116,12 +116,9 @@ function burstEmbed(id: CharacterKey, name: string, data: any) {
 function passivesEmbed(id: CharacterKey, name: string, data: any, arg: string) {
   let text = ''
   //list all passives
-  let showPassives = Object.keys(data).filter((e) => e.startsWith('passive')) as (
-    | 'passive1'
-    | 'passive2'
-    | 'passive3'
-    | 'passive'
-  )[]
+  let showPassives = Object.keys(data).filter((e) =>
+    e.startsWith('passive')
+  ) as ('passive1' | 'passive2' | 'passive3' | 'passive')[]
   //input to select a passive
   if (arg.length > 1) {
     if (arg[1] === '1') showPassives = ['passive1']
@@ -153,7 +150,8 @@ function constellationsEmbed(
 ) {
   let text = ''
   const allCons = ['1', '2', '3', '4', '5', '6'] as const
-  const showCons = arg === 'c' ? allCons : allCons.filter((e) => e.includes(arg[1]))
+  const showCons =
+    arg === 'c' ? allCons : allCons.filter((e) => e.includes(arg[1]))
   for (const constellationId of showCons) {
     const constellation = data[`constellation${constellationId}`]
     text +=
