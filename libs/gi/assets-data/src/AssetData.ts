@@ -60,6 +60,9 @@ export const AssetData = {
     Partial<Record<ArtifactSlotKey, string>>
   >,
   chars: {} as CharacterIconData,
+}
+
+export const CommonAssetData = {
   normalIcons: {
     sword: 'Skill_A_01',
     bow: 'Skill_A_02',

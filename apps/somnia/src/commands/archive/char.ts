@@ -1,4 +1,4 @@
-import { AssetData } from '@genshin-optimizer/gi/assets-data'
+import { AssetData, CommonAssetData } from '@genshin-optimizer/gi/assets-data'
 import type {
   CharacterKey,
   LocationGenderedCharacterKey,
@@ -44,7 +44,7 @@ function getAssets(id: CharacterKey) {
 function baseEmbed(id: CharacterKey, name: string) {
   const element = getCharEle(id)
   let icon = getAssets(id).icon
-  if (!icon) icon = AssetData.elemIcons[element]
+  if (!icon) icon = CommonAssetData.elemIcons[element]
   return new EmbedBuilder()
     .setFooter({
       text: 'Character Archive',
@@ -66,7 +66,7 @@ function profileEmbed(id: CharacterKey, name: string, data: any) {
   embed
     .setAuthor({
       name: name,
-      iconURL: createAmbrUrl(AssetData.elemIcons[element]),
+      iconURL: createAmbrUrl(CommonAssetData.elemIcons[element]),
     })
     .setDescription(clean(text))
   const thumbnail = getAssets(id).icon
@@ -88,7 +88,7 @@ function normalsEmbed(id: CharacterKey, name: string, data: any) {
           '\n\n'
       )
     )
-    .setThumbnail(createAmbrUrl(AssetData.normalIcons[weapon]))
+    .setThumbnail(createAmbrUrl(CommonAssetData.normalIcons[weapon]))
 }
 
 function skillEmbed(id: CharacterKey, name: string, data: any) {
