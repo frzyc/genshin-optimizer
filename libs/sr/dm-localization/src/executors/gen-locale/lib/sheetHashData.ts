@@ -1,0 +1,36 @@
+export const sheetHashData = {
+  type: {
+    Physical: '-1101149179',
+    Quantum: '88513016',
+    Lightning: '-250814279',
+    Ice: '-756819502',
+    Wind: '-1513894875',
+    Fire: '-1474263915',
+    Imaginary: '118034640',
+  },
+  path: {
+    Erudition: '-953720572',
+    Preservation: '-1357005099',
+    Abundance: '1371878256',
+    Nihility: '-1760289626',
+    Destruction: '209078842',
+    Harmony: '-194205685',
+    TheHunt: '612363369',
+  },
+  ability: {
+    basic: '216145179',
+    skill: '216145178',
+    ult: '216145177',
+    talent: '216145176',
+    technique: '216145173',
+  },
+  // TODO: Get proper keys
+  dmgType: {
+    single: '-811923716',
+    aoe: '-408639189',
+    bounce: '-1571438603',
+    blast: '1157444752',
+    support: '1560729279',
+    impair: '397929865',
+  },
+}
