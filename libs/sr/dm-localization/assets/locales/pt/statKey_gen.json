@@ -6,7 +6,7 @@
   "crit_": "Chance de CRIT",
   "crit_dmg_": "Dano CRIT",
   "brEff_": "Efeito de Quebra",
-  "eff_": "Efeito de Quebra",
+  "eff_": "Taxa de Acerto de Efeito",
   "eff_res_": "RES a Efeito",
   "enerRegen_": "Taxa de Regeneração de Energia",
   "heal_": "Bônus de Cura Realizada",

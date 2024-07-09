@@ -6,7 +6,7 @@
   "crit_": "KRIT-Rate",
   "crit_dmg_": "KRIT-SCH",
   "brEff_": "Brucheffekt",
-  "eff_": "Brucheffekt",
+  "eff_": "Effekt-Trefferrate",
   "eff_res_": "Effekt-WDS",
   "enerRegen_": "Energie-Wiederherstellungsrate",
   "heal_": "Bonus für bewirkte Heilung",
