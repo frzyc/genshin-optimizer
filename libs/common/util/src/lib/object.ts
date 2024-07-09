@@ -155,6 +155,14 @@ export class ObjNotMatchError extends Error {
     this.missingKeys = missingKeys
   }
 }
+
+/**
+ * Checks if an object has exactly the keys provided.
+ * Narrows the object type using a type predicate on success.
+ * Throws an error otherwise
+ * @param obj Object to check
+ * @param keys Exact keys to be present in the object
+ */
 export function verifyObjKeys<K extends string, V>(
   obj: Partial<Record<K, V>>,
   keys: readonly K[]

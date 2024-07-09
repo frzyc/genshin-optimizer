@@ -1,4 +1,8 @@
-import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
+import {
+  crawlObject,
+  layeredAssignment,
+  verifyObjKeys,
+} from '@genshin-optimizer/common/util'
 import {
   TrailblazerPathMap,
   allElementalTypeKeys,
@@ -6,7 +10,7 @@ import {
   allTrailblazerKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { LanguageKey } from '@genshin-optimizer/sr/dm'
-import { languageMap } from '@genshin-optimizer/sr/dm'
+import { allLanguageKeys, languageMap } from '@genshin-optimizer/sr/dm'
 import { HashData, type LanguageData } from './hashData'
 
 const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
@@ -20,7 +24,7 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
     (hash: string, path) => layeredAssignment(data, path, strings[hash])
   )
 
-  // TODO: Trailblazer name handling
+  // Trailblazer name handling
   allTrailblazerGenderedKeys.forEach((key) => {
     const type = allElementalTypeKeys.find((typeKey) => key.includes(typeKey))
     if (!type)
@@ -50,4 +54,6 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
   return tuple
 })
 
-export const StringData = Object.fromEntries(langArray)
+const data = Object.fromEntries(langArray)
+verifyObjKeys(data, allLanguageKeys)
+export const StringData = data

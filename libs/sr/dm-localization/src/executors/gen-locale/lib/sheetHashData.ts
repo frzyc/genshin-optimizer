@@ -24,7 +24,6 @@ export const sheetHashData = {
     talent: '216145176',
     technique: '216145173',
   },
-  // TODO: Get proper keys
   dmgType: {
     single: '-811923716',
     aoe: '-408639189',

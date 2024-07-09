@@ -1,19 +1,30 @@
+import { verifyObjKeys } from '@genshin-optimizer/common/util'
+import {
+  allCharacterDataKeys,
+  allRelicSetKeys,
+} from '@genshin-optimizer/sr/consts'
 import { charHashData } from './charHashData'
 import { relicHashData } from './relicHashData'
 import { sheetHashData } from './sheetHashData'
 
 export type LanguageData = typeof HashData
 
+const charNames = Object.fromEntries(
+  Object.entries(charHashData).map(([key, data]) => [key, data.name])
+)
+verifyObjKeys(charNames, allCharacterDataKeys)
+
+const relicNames = Object.fromEntries(
+  Object.entries(relicHashData).map(([key, data]) => [key, data.setName])
+)
+verifyObjKeys(relicNames, allRelicSetKeys)
+
 export const HashData = {
   char: charHashData,
-  charNames: Object.fromEntries(
-    Object.entries(charHashData).map(([key, data]) => [key, data.name])
-  ),
+  charNames,
 
   relic: relicHashData,
-  // relicNames: Object.fromEntries(
-  //   Object.entries(relicHashData).map(([key, data]) => [key, data.name])
-  // ),
+  relicNames,
 
   sheet: sheetHashData,
   statKey: {

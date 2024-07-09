@@ -19,7 +19,7 @@ const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
           'sheet',
           'charNames',
           'lightConeNames',
-          'relicnames',
+          'relicNames',
           'statKey',
         ].includes(type)
       )
