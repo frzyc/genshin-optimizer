@@ -1,9 +1,11 @@
 import { verifyObjKeys } from '@genshin-optimizer/common/util'
 import {
   allCharacterDataKeys,
+  allLightConeKeys,
   allRelicSetKeys,
 } from '@genshin-optimizer/sr/consts'
 import { charHashData } from './charHashData'
+import { lightConeHashData } from './lightConeHashData'
 import { relicHashData } from './relicHashData'
 import { sheetHashData } from './sheetHashData'
 
@@ -19,12 +21,20 @@ const relicNames = Object.fromEntries(
 )
 verifyObjKeys(relicNames, allRelicSetKeys)
 
+const lightConeNames = Object.fromEntries(
+  Object.entries(lightConeHashData).map(([key, data]) => [key, data.name])
+)
+verifyObjKeys(lightConeNames, allLightConeKeys)
+
 export const HashData = {
   char: charHashData,
   charNames,
 
   relic: relicHashData,
   relicNames,
+
+  lightCone: lightConeHashData,
+  lightConeNames,
 
   sheet: sheetHashData,
   statKey: {
