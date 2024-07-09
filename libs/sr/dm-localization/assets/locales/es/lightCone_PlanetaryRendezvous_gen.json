@@ -1,0 +1,7 @@
+{
+  "name": "Encuentro planetario",
+  "passive": {
+    "name": "Salida",
+    "description": "Tras entrar en combate, cuando un aliado inflige un daño del mismo tipo que el portador, el daño infligido aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+  }
+}

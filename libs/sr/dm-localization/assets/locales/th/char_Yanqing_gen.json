@@ -1,0 +1,39 @@
+{
+  "name": "Yanqing",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Frost Thorn",
+        "fullDesc": "สร้าง DMG น้ำแข็ง <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Yanqing แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "สร้าง DMG น้ำแข็งเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Darting Ironthorn",
+        "fullDesc": "สร้าง DMG น้ำแข็ง <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Yanqing แก่ศัตรูที่กำหนดหนึ่งตัว และเพิ่ม Soulsteel Sync ให้กับ Yanqing เป็นเวลา 1 เทิร์น",
+        "shortDesc": "สร้าง DMG น้ำแข็งแก่ฝ่ายศัตรูหนึ่งตัว และเพิ่ม \"Soulsteel Sync\" ให้กับตัวเอง"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Amidst the Raining Bliss",
+        "fullDesc": "เพิ่มอัตราคริติคอลของตัวเอง <unbreak>#1[i]%</unbreak> หาก Yanqing อยู่ภายใต้เอฟเฟกต์ \"Soulsteel Sync\" จะทำให้ DMG คริติคอล เพิ่มขึ้นอีก <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> โดย<u>เอฟเฟกต์ Buff</u> จะคงอยู่เป็นเวลา 1 เทิร์น จากนั้นจะสร้าง DMG น้ำแข็ง <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> ของ ATK ของ Yanqing แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "เพิ่มอัตราคริติคอลของตัวเอง พร้อมทั้งเสริมพลังให้กับ \"Soulsteel Sync\" และสร้าง DMG น้ำแข็งอย่างรุนแรงแก่ศัตรูหนึ่งตัว"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "The One True Sword",
+        "fullDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป Yanqing จะสร้าง DMG เพิ่มขึ้น <unbreak>#2[i]%</unbreak> แก่ศัตรูเป้าหมายที่มีเปอร์เซ็นต์ HP ปัจจุบันเท่ากับหรือมากกว่า <unbreak>#1[i]%</unbreak> เป็นเวลา <unbreak>#3[i]</unbreak> เทิร์น",
+        "shortDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป ตัวเองจะสร้าง DMG แก่ศัตรูเป้าหมายที่มี HP มากกว่าหรือเท่ากับ <unbreak>50%</unbreak> เพิ่มขึ้น"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย"
+      }
+    }
+  }
+}

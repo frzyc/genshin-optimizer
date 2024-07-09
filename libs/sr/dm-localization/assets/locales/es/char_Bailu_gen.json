@@ -1,0 +1,39 @@
+{
+  "name": "Bailu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Patada diagnóstica",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Bailu como Daño de Rayo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Cantando entre las nubes",
+        "fullDesc": "Cura a un aliado con una cantidad de PV equivalente al <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> de los PV máx. de Bailu + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>. Después, Bailu cura <unbreak>#4[i]</unbreak> veces a aliados al azar. Cada vez que cura, los PV que regenera la siguiente curación realizada se reducen en un <unbreak>#3[i]%</unbreak>.",
+        "shortDesc": "Regenera PV a un aliado y después cura a aliados al azar."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Salto del dragón del marjal",
+        "fullDesc": "Cura a todos los aliados con una cantidad de PV equivalente al <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> de los PV máx. de Bailu + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>.\\nAplica Vigor a los aliados que no lo tienen y alarga el efecto en 1 turno a los que lo tienen.\\nVigor dura <unbreak>#3[i]</unbreak> turnos y no se puede acumular.",
+        "shortDesc": "Regenera PV a todos los aliados y les aplica Vigor o extiende su duración."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Paseando bajo la lluvia",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, todos los aliados obtienen Vigor durante <unbreak>#1[i]</unbreak> turnos.",
+        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, todos los aliados obtienen Vigor."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

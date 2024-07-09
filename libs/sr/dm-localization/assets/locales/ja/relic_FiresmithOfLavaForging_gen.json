@@ -1,0 +1,7 @@
+{
+  "setName": "溶岩で鍛造する火匠",
+  "setEffects": {
+    "2": "炎属性ダメージ+<unbreak>#1[i]%</unbreak>。",
+    "4": "装備キャラの戦闘スキルの与ダメージ+<unbreak>#1[i]%</unbreak>。必殺技を発動した後、次の攻撃の炎属性与ダメージ+<unbreak>#2[i]%</unbreak>。"
+  }
+}

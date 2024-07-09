@@ -1,0 +1,7 @@
+{
+  "name": "Verborgener Schatten",
+  "passive": {
+    "name": "Mechanismus",
+    "description": "Nach dem Einsatz der Fertigkeit fügt der nächste Standardangriff des Trägers dem Gegner zusätzlichen SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> seines ANG zu."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Yukong",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lanzaflechas",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Yukong como Daño Imaginario a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Salva alentadora",
+        "fullDesc": "Obtiene <unbreak>#1[i]</unbreak> acumulaciones de Sonido de cuerda (se pueden tener 2 como máximo). Cuando Yukong tiene Sonido de cuerda, el ATQ de todos los aliados aumenta en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Cada vez que un aliado termina su turno, Yukong pierde 1 acumulación de Sonido de cuerda.\\nDurante el turno en el que Yukong usa su habilidad básica y obtiene Sonido de cuerda, no pierde ninguna acumulación de Sonido de cuerda.",
+        "shortDesc": "Obtiene 2 acumulaciones de Sonido de cuerda. El <color=#f29e38ff>ATQ de todos los aliados aumenta</color> cuando Sonido de cuerda está activo."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Cernícalo en picado",
+        "fullDesc": "Tras usar la habilidad definitiva, si Yukong tiene Sonido de cuerda, la Prob. CRIT de todos los aliados aumenta en un <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> y el Daño CRIT en un <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>. Además, inflige a un enemigo un Daño Imaginario equivalente al <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Yukong.",
+        "shortDesc": "Si tiene Sonido de cuerda, <color=#f29e38ff>aumenta la Prob. CRIT y el Daño CRIT</color> de todos los aliados. Inflige una gran cantidad de Daño Imaginario a un enemigo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Persiguiendo el viento",
+        "fullDesc": "Tras usar la técnica, entra en modo de esprintar durante <unbreak>#1[i]</unbreak> s. En este estado, su VEL de movimiento aumenta en un <unbreak>#2[i]%</unbreak>. Además, al entrar en combate tras atacar a un enemigo, Yukong obtiene <unbreak>#3[i]</unbreak> acumulaciones de Sonido de cuerda.",
+        "shortDesc": "<color=#f29e38ff>Aumenta su VEL de movimiento</color>. Tras atacar al enemigo y entrar en combate, obtiene 2 acumulaciones de Sonido de Cuerda."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

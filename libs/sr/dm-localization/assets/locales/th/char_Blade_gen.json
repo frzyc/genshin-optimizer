@@ -1,0 +1,44 @@
+{
+  "name": "Blade",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Shard Sword",
+        "fullDesc": "สร้าง DMG ลม <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Blade แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "สร้าง DMG ลมเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+      },
+      "1": {
+        "name": "Forest of Swords",
+        "fullDesc": "ใช้ HP <unbreak>#1[i]%</unbreak> ของ HP สูงสุดของ Blade สร้าง DMG ลม <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ของ ATK ของ Blade +<color=#f29e38ff><unbreak>#4[i]%</unbreak></color> ของ HP สูงสุด แก่ศัตรูที่กำหนดหนึ่งตัว พร้อมทั้งสร้าง DMG ลม <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> ของ ATK ของ Blade +<color=#f29e38ff><unbreak>#5[i]%</unbreak></color> ของ HP สูงสุดแก่ตัวที่อยู่ติดกับเป้าหมายด้วย\\nหาก HP ปัจจุบันไม่เพียงพอ หลังจากใช้ \"Forest of Swords\" แล้ว HP ปัจจุบันของ Blade จะลดลงจนเหลือ 1 หน่วย\\n\"Forest of Swords\" จะไม่สามารถฟื้นฟูแต้มสกิลต่อสู้",
+        "shortDesc": "ใช้ HP ของตัวเองเพื่อสร้าง DMG ลมแก่ฝ่ายศัตรูหนึ่งตัว พร้อมทั้งสร้าง DMG ลมเล็กน้อยแก่ศัตรูที่อยู่ติดกับเป้าหมาย"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Hellscape",
+        "fullDesc": "ใช้ HP <unbreak>#1[i]%</unbreak> ของ HP สูงสุดของ Blade เพื่อเข้าสู่สถานะ \"Hellscape\"\\nเมื่ออยู่ในสถานะ \"Hellscape\" จะไม่สามารถปล่อยสกิลต่อสู้ พร้อมทั้งทำให้ตัวเองสร้าง DMG เพิ่มขึ้น <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> และการโจมตีปกติ \"Shard Sword\" จะได้รับการเสริมพลังเป็น \"Forest of Swords\" เป็นเวลา <unbreak>#2[i]</unbreak> เทิร์น\\nหาก HP ปัจจุบันไม่เพียงพอ หลังจากปล่อยสกิลต่อสู้แล้ว HP ปัจจุบันของ Blade จะลดลงเหลือ 1 หน่วย\\nสกิลต่อสู้นี้ไม่สามารถฟื้นฟูพลังงาน และหลังจากที่ปล่อยสกิลต่อสู้ดังกล่าวแล้ว เทิร์นนี้จะไม่สิ้นสุดลง",
+        "shortDesc": "ใช้ HP ของตัวเองเพื่อ<color=#f29e38ff>เสริมพลังการโจมตีปกติ</color> อีกทั้งเทิร์นนี้จะไม่สิ้นสุดลง"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Death Sentence",
+        "fullDesc": "แปลง HP ปัจจุบันของ Blade ให้เป็น <unbreak>50%</unbreak> ของ HP สูงสุด และสร้าง DMG ลม <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Blade +<color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ของ HP สูงสุด +<color=#f29e38ff><unbreak>#5[i]%</unbreak></color> ของจำนวน HP ที่เสียไปในการต่อสู้ครั้งนี้ แก่ฝ่ายศัตรูหนึ่งตัว พร้อมทั้งสร้าง DMG ลม <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> ของ ATK ของ Blade +<color=#f29e38ff><unbreak>#4[i]%</unbreak></color> ของ HP สูงสุด +<color=#f29e38ff><unbreak>#6[i]%</unbreak></color> ของจำนวน HP ที่เสียไปในการต่อสู้ครั้งนี้ แก่ศัตรูที่อยู่ใกล้เคียงกับเป้าหมายด้วย\\nจำนวน HP ที่เสียไปในการต่อสู้ครั้งนี้ สูงสุดจะไม่เกิน <unbreak>#7[i]%</unbreak> ของ HP สูงสุดของ Blade โดยจะถูกรีเซ็ตและสะสมใหม่ หลังจากที่ปล่อยท่าไม้ตาย",
+        "shortDesc": "ทำให้ HP ในปัจจุบันเปลี่ยนเป็น <unbreak>50%</unbreak> ของ HP สูงสุด พร้อมทั้งสร้าง DMG ลมอย่างรุนแรงแก่ฝ่ายศัตรูหนึ่งตัว และสร้าง DMG ลมแก่ศัตรูที่อยู่ใกล้เคียง กับเป้าหมายด้วย"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Karma Wind",
+        "fullDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะใช้ HP <unbreak>#2[i]%</unbreak> ของ HP สูงสุดของ Blade พร้อมทั้งสร้าง DMG ลม <unbreak>#1[i]%</unbreak> ของ HP สูงสุดของ Blade แก่ศัตรูทั้งหมด\\nหาก HP ในปัจจุบันไม่เพียงพอ หลังจากใช้เทคนิค HP ปัจจุบันของ Blade จะลดลงจนเหลือ 1 หน่วย",
+        "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะใช้ HP ของตัวเองสร้าง DMG ลมแก่ฝ่ายศัตรูทั้งหมด"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย"
+      }
+    }
+  }
+}

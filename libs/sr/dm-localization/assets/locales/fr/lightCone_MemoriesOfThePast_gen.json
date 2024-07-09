@@ -1,0 +1,7 @@
+{
+  "name": "Souvenirs du passé",
+  "passive": {
+    "name": "Vieille photo",
+    "description": "Augmente l'effet de Rupture du porteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Le porteur régénère <color=#f29e38ff><unbreak>#2[i]</unbreak></color> points d'énergie supplémentaires lorsqu'il attaque. Cet effet ne peut pas être déclenché plus d'une fois par tour."
+  }
+}

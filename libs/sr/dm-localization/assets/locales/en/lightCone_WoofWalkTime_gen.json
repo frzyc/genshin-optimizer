@@ -1,0 +1,7 @@
+{
+  "name": "Woof! Walk Time!",
+  "passive": {
+    "name": "Run!",
+    "description": "Increases the wearer's ATK by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, and increases their DMG to enemies afflicted with Burn or Bleed by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. This also applies to DoT."
+  }
+}

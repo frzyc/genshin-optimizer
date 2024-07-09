@@ -1,0 +1,6 @@
+{
+  "setName": "Celestial Differentiator",
+  "setEffects": {
+    "2": "Meningkatkan <unbreak>#1[i]%</unbreak> CRIT DMG pengguna. Saat CRIT DMG pengguna lebih dari atau sama dengan <unbreak>#2[i]%</unbreak>, CRIT Rate pengguna akan meningkat <unbreak>#3[i]%</unbreak> setelah memasuki pertempuran, efek ini akan hilang setelah pengguna melancarkan serangan pertamanya dalam pertempuran."
+  }
+}

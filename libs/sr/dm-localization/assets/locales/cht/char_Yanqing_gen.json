@@ -1,0 +1,39 @@
+{
+  "name": "彥卿",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "霜鋒點寒芒",
+        "fullDesc": "對指定敵方單體造成等同於彥卿<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的冰屬性傷害。",
+        "shortDesc": "對敵方單體造成少量冰屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "遙擊三尺水",
+        "fullDesc": "對指定敵方單體造成等同於彥卿<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的冰屬性傷害，並為彥卿附加【智劍連心】，持續1回合。",
+        "shortDesc": "對敵方單體造成冰屬性傷害，並為自身附加【智劍連心】。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "快雨燕相逐",
+        "fullDesc": "提高自身<unbreak>#1[i]%</unbreak>暴擊率，若彥卿擁有【智劍連心】效果，則使其暴擊傷害額外提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，<u>增益效果</u>持續1回合。隨後對指定敵方單體造成等同於彥卿<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>攻擊力的冰屬性傷害。",
+        "shortDesc": "提高自身暴擊率，並強化【智劍連心】，對敵方單體造成大量冰屬性傷害。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "御劍真訣",
+        "fullDesc": "使用秘技後，下一次戰鬥開始時彥卿對目前生命值百分比大於等於<unbreak>#1[i]%</unbreak>的敵方目標造成的傷害提高<unbreak>#2[i]%</unbreak>，持續<unbreak>#3[i]</unbreak>回合。",
+        "shortDesc": "使用秘技，下一次戰鬥開始時自身對生命值百分比大於等於<unbreak>50%</unbreak>的敵方目標造成的傷害提高。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

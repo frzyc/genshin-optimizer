@@ -1,0 +1,7 @@
+{
+  "name": "쇼타임",
+  "passive": {
+    "name": "스스로 찾는 즐거움",
+    "description": "장착한 캐릭터가 적에게 디버프 상태를 부여한 후 [트릭]을 1스택 획득한다. [트릭] 스택당 장착한 캐릭터가 가하는 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 최대 중첩수: <unbreak>#2[i]</unbreak>스택, 지속 시간: <unbreak>#3[i]</unbreak>턴. 장착한 캐릭터의 효과 명중이 <unbreak>#4[i]%</unbreak> 이상일 시, 공격력이 <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> 증가한다"
+  }
+}

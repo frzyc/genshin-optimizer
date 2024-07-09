@@ -1,0 +1,7 @@
+{
+  "name": "Que el mundo clame",
+  "passive": {
+    "name": "El poder del sonido",
+    "description": "Cuando el portador entra en combate, recupera inmediatamente <color=#f29e38ff><unbreak>#2[i]</unbreak></color> pts. de energía y el daño que inflige su habilidad definitiva aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+  }
+}

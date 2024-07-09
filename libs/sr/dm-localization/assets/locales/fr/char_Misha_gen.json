@@ -1,0 +1,39 @@
+{
+  "name": "Micha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "P—Pardon de vous déranger !",
+        "fullDesc": "Inflige des DGT de glace équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Micha à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "À votre service !",
+        "fullDesc": "Augmente de <unbreak>#3[i]</unbreak> le nombre de frappes par action du prochain ultime de Micha. Inflige des DGT de glace équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Micha à une cible ennemie unique, et des DGT de glace équivalents à <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de l'ATQ de Micha aux cibles adjacentes.",
+        "shortDesc": "Inflige des DGT de glace à un ennemi et des DGT de glace mineurs aux ennemis adjacents. D'autre part, augmente le nombre de <color=#f29e38ff>frappes par action du prochain ultime de Micha</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "J—Je vais être en retard !",
+        "fullDesc": "L'ultime de Micha inflige <unbreak>#1[i]</unbreak> frappes par action par défaut. La première frappe inflige des DGT de glace équivalents à <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de l'ATQ de Micha à une cible ennemie unique. Puis, le reste des frappes inflige chacune des DGT de glace équivalents à <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de l'ATQ de Micha à un ennemi unique aléatoire. Il y a <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> de <u>chances de base</u> de geler la cible pendant 1 tour avant chaque frappe.\\nLes cibles ennemies gelées ne peuvent pas agir et subissent des <u>DGT de glace additionnels</u> équivalents à <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> de l'ATQ de Micha au début de leur tour.\\nL'ultime de Micha peut infliger jusqu'à <unbreak>#5[i]</unbreak> frappes par action. Le nombre de frappes par action retourne à sa valeur par défaut après utilisation de l'ultime.",
+        "shortDesc": "Inflige des DGT de glace mineurs à des ennemis uniques. L'attaque rebondit <color=#f29e38ff><unbreak>#1[i]</unbreak></color> fois par défaut jusqu'à un maximum de <color=#f29e38ff><unbreak>#5[i]</unbreak></color> fois. Il y a une faible chance de <color=#f29e38ff>geler</color> la cible avant chaque frappe."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Pas si vite !",
+        "fullDesc": "Crée une dimension qui dure <unbreak>#1[i]</unbreak> secondes après avoir utilisé la technique. Les ennemis pris dans la dimension sont affectés par Prison onirique et arrêtent toutes leurs actions. Le nombre de frappes par action du prochain ultime de Micha augmente de <unbreak>#2[i]</unbreak> lorsqu'il entre en combat contre des ennemis affectés par Prison onirique. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "shortDesc": "Crée une dimension qui arrête tous les ennemis qui s'y trouvent. Le <color=#f29e38ff>prochain ultime de Micha inflige plus de frappes par action</color> après être entré en combat contre des ennemis à l'intérieur de la dimension."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

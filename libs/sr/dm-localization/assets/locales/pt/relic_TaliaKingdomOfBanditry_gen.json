@@ -1,0 +1,6 @@
+{
+  "setName": "Talia: Reino do Banditismo",
+  "setEffects": {
+    "2": "Aumenta em <unbreak>#1[i]%</unbreak> o Efeito de Quebra do usuário. Quando a VEL do usuário chegar a <unbreak>#2[i]</unbreak> ou mais, aumenta em mais <unbreak>#3[i]%</unbreak> o Efeito de Quebra do usuário."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Baptism of Pure Thought",
+  "passive": {
+    "name": "Mental Training",
+    "description": "Increases the wearer's CRIT DMG by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. For every debuff on the enemy target, the wearer's CRIT DMG dealt against this target additionally increases by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, stacking up to <unbreak>#3[i]</unbreak> times. When using Ultimate to attack the enemy target, the wearer receives the Disputation effect, which increases DMG dealt by <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> and enables their follow-up attacks to ignore <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> of the target's DEF. This effect lasts for <unbreak>#6[i]</unbreak> turns."
+  }
+}

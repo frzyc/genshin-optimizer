@@ -1,0 +1,7 @@
+{
+  "name": "Cruising in the Stellar Sea",
+  "passive": {
+    "name": "Chase",
+    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> CRIT Rate pengguna. Pengguna akan mendapatkan <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> CRIT Rate tambahan terhadap target musuh dengan persentase HP kurang dari atau sama dengan <unbreak>#2[i]%</unbreak>. Setelah pengguna mengalahkan target musuh, ATK pengguna akan meningkat <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> selama <unbreak>#5[i]</unbreak> giliran."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Эй, я здесь",
+  "passive": {
+    "name": "Мне не страшно!",
+    "description": "Макс. HP владельца повышается на <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Когда владелец использует навык, его исходящее исцеление повышается на <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> на <unbreak>#3[i]</unbreak> хода."
+  }
+}

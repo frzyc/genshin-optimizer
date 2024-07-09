@@ -1,0 +1,7 @@
+{
+  "name": "Tiếng Vọng Của Quan Tài",
+  "passive": {
+    "name": "Gai Góc",
+    "description": "Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> tấn công của người trang bị. Sau khi người trang bị tấn công, mỗi khi đánh trúng một kẻ địch khác nhau, sẽ hồi <color=#f29e38ff><unbreak>#3[f1]</unbreak></color> Năng Lượng, tối đa hồi năng lượng <unbreak>#4[i]</unbreak> lần bằng cách này. Sau khi người trang bị thi triển Tuyệt Kỹ, sẽ khiến toàn bộ phe ta tăng <color=#f29e38ff><unbreak>#2[i]</unbreak></color> tốc độ, duy trì 1 hiệp."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#じゅんすい}純粋{RUBY_E#}なる{RUBY_B#しい}思惟{RUBY_E#}の{RUBY_B#せんれい}洗礼{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#しそうくんれん}思想訓練{RUBY_E#}",
+    "description": "装備キャラの会心ダメージ+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。敵にあるデバフ1つにつき、装備キャラがその敵に与える会心ダメージ+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>、最大で<unbreak>#3[i]</unbreak>層累積できる。必殺技で敵を攻撃する時、装備キャラは「論弁」効果を獲得し、与ダメージ+<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>、追加攻撃が敵の防御力を<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>無視する、この効果は<unbreak>#6[i]</unbreak>ターン継続する。"
+  }
+}

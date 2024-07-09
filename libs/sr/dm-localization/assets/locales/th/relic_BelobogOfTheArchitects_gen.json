@@ -1,0 +1,6 @@
+{
+  "setName": "Belobog of the Architects",
+  "setEffects": {
+    "2": "DEF ของผู้สวมใส่เพิ่มขึ้น <unbreak>#1[i]%</unbreak> เมื่ออัตราสร้างสถานะของผู้สวมใส่มากกว่าหรือเท่ากับ <unbreak>#2[i]%</unbreak> DEF จะเพิ่มขึ้นอีก <unbreak>#3[i]%</unbreak>"
+  }
+}

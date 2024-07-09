@@ -1,0 +1,7 @@
+{
+  "name": "행성과의 만남",
+  "passive": {
+    "name": "출발",
+    "description": "전투 진입 후 아군이 장착한 캐릭터와 동일한 속성의 피해를 가할 시 가하는 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "砂金",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "直观投注",
+        "fullDesc": "对指定敌方单体造成等同于砂金<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>防御力的虚数属性伤害。",
+        "shortDesc": "对指定敌方单体造成少量虚数属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "繁荣基石",
+        "fullDesc": "为我方全体提供能够抵消等同于砂金<color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>防御力+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>伤害的护盾【坚垣筹码】，持续<unbreak>#3[i]</unbreak>回合。重复获得【坚垣筹码】时，护盾量可以叠加，最高不超过当前战技提供的护盾量的<unbreak>#4[i]%</unbreak>。",
+        "shortDesc": "为我方全体提供<color=#f29e38ff>可叠加护盾量</color>的护盾【坚垣筹码】。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "轮盘勋爵",
+        "fullDesc": "随机获得1到<unbreak>#1[i]</unbreak>点【盲注】，随后使指定敌方单体陷入【惊惶】状态，持续<unbreak>#4[i]</unbreak>回合，并对指定敌方单体造成等同于砂金<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>防御力的虚数属性伤害。我方目标击中【惊惶】状态下的敌方目标时，造成的暴击伤害提高<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>。",
+        "shortDesc": "随机获得【盲注】，使敌方单体陷入【惊惶】状态，并对目标造成虚数属性伤害，我方目标击中【惊惶】状态下的敌方目标时，造成的<color=#f29e38ff>暴击伤害提高</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "红黑之间",
+        "fullDesc": "使用秘技后获得以下1种效果：\\n一定概率获得防御力提高<unbreak>#1[i]%</unbreak>；\\n大概率获得防御力提高<unbreak>#2[i]%</unbreak>；\\n小概率获得防御力提高<unbreak>#3[i]%</unbreak>。\\n重复使用时保留数值最高的效果。\\n下一次战斗开始时，使我方全体提高对应数值的防御力，持续<unbreak>#4[i]</unbreak>回合。",
+        "shortDesc": "使用秘技，随机获得3种防御力提高效果中的1种，下一次进战后使我方全体提高对应数值的防御力。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

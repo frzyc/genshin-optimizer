@@ -1,0 +1,39 @@
+{
+  "name": "Xueyi",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Sovela Quebra-mara",
+        "fullDesc": "Causa <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Xueyi como Dano Quântico a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano Quântico leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Obliteração de Iniquidade",
+        "fullDesc": "Causa Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Xueyi a um único inimigo e <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do ATQ de Xueyi como Dano Quântico aos inimigos adjacentes.",
+        "shortDesc": "Causa Dano Quântico a um único inimigo e Dano Quântico leve a inimigos adjacentes a ele."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Castigo Divino",
+        "fullDesc": "Causa Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Xueyi a um único inimigo-alvo. Este ataque ignora os Tipos de Fraqueza e reduz a Tenacidade do inimigo. Quando o inimigo sofrer a Quebra de Fraqueza, o efeito Quebra de Fraqueza contra Quântico é ativado.\\nNeste ataque, quanto mais Tenacidade for reduzida, maior será o Dano causado, até um máximo de <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> de aumento.",
+        "shortDesc": "Causa Dano Quântico massivo a um único inimigo. Este ataque <color=#f29e38ff>ignora Tipos de Fraqueza</color> e reduz a Tenacidade do alvo. Quanto mais Tenacidade é reduzida, mais alto é o Dano causado."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Execução Sumária",
+        "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar no combate, causa <unbreak>#1[i]%</unbreak> do ATQ de Xueyi como Dano Quântico a todos os inimigos.",
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Quântico leve a todos os inimigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente."
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "setName": "Talia, paraíso de los forajidos",
+  "setEffects": {
+    "2": "El efecto de Ruptura del portador aumenta en un <unbreak>#1[i]%</unbreak>. Cuando su VEL es igual o superior a <unbreak>#2[i]</unbreak>, el efecto especial de Ruptura aumenta en un <unbreak>#3[i]%</unbreak> adicional."
+  }
+}

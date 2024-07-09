@@ -1,0 +1,43 @@
+{
+  "name": "Trailblazer (Fire • Preservation)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ice-Breaking Light",
+        "fullDesc": "Deals Fire DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of the Trailblazer's ATK to a single enemy and gains 1 stack of Magma Will.",
+        "shortDesc": "Deals minor Fire DMG to a single enemy and gains Magma Will."
+      },
+      "1": {
+        "name": "Ice-Breaking Light",
+        "fullDesc": "Consumes 4 stacks of Magma Will to enhance Basic ATK, dealing Fire DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of the Trailblazer's ATK to a single enemy and Fire DMG to equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of the Trailblazer's ATK to enemies adjacent to it.",
+        "shortDesc": "Consumes Magma Will, then deals Fire DMG to a single enemy and minor Fire DMG to enemies adjacent to it."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Ever-Burning Amber",
+        "fullDesc": "Increases the Trailblazer's DMG Reduction by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> and gains 1 stack of Magma Will, with a <unbreak>#2[i]%</unbreak> <u>base chance</u> to Taunt all enemies for <unbreak>#3[i]</unbreak> turn(s).",
+        "shortDesc": "Reduces DMG taken and gains Magma Will, with a high chance to Taunt all enemies."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "War-Flaming Lance",
+        "fullDesc": "Deals Fire DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of the Trailblazer's ATK plus <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of the Trailblazer's DEF to all enemies. The next Basic ATK will be automatically enhanced and does not cost Magma Will.",
+        "shortDesc": "Deals Fire DMG to all enemies and enhances the next Basic ATK."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Call of the Guardian",
+        "fullDesc": "After using Technique, at the start of the next battle, gains a Shield that absorbs DMG equal to <unbreak>#1[i]%</unbreak> of the Trailblazer's DEF plus <unbreak>#2[i]</unbreak> for <unbreak>#3[i]</unbreak> turn(s)."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+      }
+    }
+  }
+}

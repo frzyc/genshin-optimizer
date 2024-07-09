@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#いま}今{RUBY_E#}が{RUBY_B#ちょうど}丁度{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#くっせつ}屈折{RUBY_E#}する{RUBY_B#しせん}視線{RUBY_E#}",
+    "description": "装備キャラの効果抵抗+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。装備キャラの治癒量が、効果抵抗の<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>分アップする、最大で<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>アップできる。"
+  }
+}

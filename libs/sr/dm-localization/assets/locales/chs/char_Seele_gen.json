@@ -1,0 +1,39 @@
+{
+  "name": "希儿",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "强袭",
+        "fullDesc": "对指定敌方单体造成等同于希儿<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的量子属性伤害。",
+        "shortDesc": "对敌方单体造成少量量子属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "归刃",
+        "fullDesc": "使希儿的速度提高<unbreak>#2[i]%</unbreak>，并对指定敌方单体造成等同于希儿<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的量子属性伤害，速度提高效果持续<unbreak>#3[i]</unbreak>回合。",
+        "shortDesc": "对敌方单体造成量子属性伤害，并使自身速度提高。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "乱蝶",
+        "fullDesc": "立即进入增幅状态，并对指定敌方单体造成等同于希儿<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的量子属性伤害。",
+        "shortDesc": "进入<color=#f29e38ff>增幅状态</color>，对敌方单体造成大量量子属性伤害。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "幻身",
+        "fullDesc": "使用秘技后进入持续<unbreak>#1[i]</unbreak>秒的隐身状态。隐身状态下不会被敌人发现，且主动攻击敌人进入战斗时，希儿立即进入增幅状态。",
+        "shortDesc": "进入<color=#f29e38ff>隐身</color>状态。攻击敌人进入战斗后立即进入<color=#f29e38ff>增幅状态</color>。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

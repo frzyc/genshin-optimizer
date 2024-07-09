@@ -1,0 +1,39 @@
+{
+  "name": "Kafka",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Midnight Tumult",
+        "fullDesc": "Deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Kafka's ATK to a single enemy.",
+        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Caressing Moonlight",
+        "fullDesc": "Deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Kafka's ATK to a target enemy and Lightning DMG equal to <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> of Kafka's ATK to enemies adjacent to it.\\nIf the target enemy is currently receiving DoT, all DoTs currently placed on that enemy immediately produce DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of their original DMG.",
+        "shortDesc": "Deals Lightning DMG to a single enemy and minor Lightning DMG to adjacent targets.\\nIf the main target is currently afflicted with a DoT effect, the DoT <color=#f29e38ff>deals DMG 1 extra time</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Twilight Trill",
+        "fullDesc": "Deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Kafka's ATK to all enemies, with a <unbreak>#2[i]%</unbreak> <u>base chance</u> for enemies hit to become Shocked and immediately take DMG from their current Shock state, equal to <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> of its original DMG. Shock lasts for <unbreak>#3[i]</unbreak> turn(s).\\nWhile Shocked, enemies receive Lightning DoT equal to <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> of Kafka's ATK at the beginning of each turn.",
+        "shortDesc": "Deals minor Lightning DMG to all enemies, with a high chance of <color=#f29e38ff>Shocking them</color>.\\nIf the enemies are currently Shocked, the Shock status <color=#f29e38ff>deals DMG 1 extra time</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Mercy Is Not Forgiveness",
+        "fullDesc": "Immediately attacks all enemies within a set range. After entering battle, deals Lightning DMG equal to <unbreak>#3[i]%</unbreak> of Kafka's ATK to all enemies, with a <unbreak>#1[i]%</unbreak> <u>base chance</u> to inflict Shock equivalent to that applied by her Ultimate on every enemy target for <unbreak>#2[i]</unbreak> turn(s).",
+        "shortDesc": "Attacks all enemies within range. After entering battle, deals minor Lightning DMG to all enemies, with a high chance to <color=#f29e38ff>Shock</color> them."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+      }
+    }
+  }
+}

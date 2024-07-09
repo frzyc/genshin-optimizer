@@ -1,0 +1,7 @@
+{
+  "name": "기억의 소재",
+  "passive": {
+    "name": "간직",
+    "description": "장착한 캐릭터의 효과 저항이 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 장착한 캐릭터는 피격 후 자신이 실드를 보유하지 않았다면 장착한 캐릭터 HP 최대치 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>만큼의 실드를 획득한다. 지속 시간: <unbreak>#3[i]</unbreak>턴. 해당 효과는 <unbreak>#4[i]</unbreak>턴마다 1회만 발동할 수 있다. 장착한 캐릭터가 실드를 보유하면 자신이 받는 피해가 <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> 감소한다"
+  }
+}

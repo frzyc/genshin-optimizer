@@ -1,0 +1,7 @@
+{
+  "name": "嘿，我在这儿",
+  "passive": {
+    "name": "不怕不怕啦",
+    "description": "使装备者的生命上限提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。当装备者施放战技时，治疗量提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，持续<unbreak>#3[i]</unbreak>回合。"
+  }
+}

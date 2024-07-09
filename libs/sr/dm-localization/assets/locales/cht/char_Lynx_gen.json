@@ -1,0 +1,39 @@
+{
+  "name": "玲可",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "冰攀前齒技術",
+        "fullDesc": "對指定敵方單體造成等同於自身<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>生命上限的量子屬性傷害。",
+        "shortDesc": "對敵方單體造成少量量子屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "鹽漬野營罐頭",
+        "fullDesc": "為指定我方單體附加【求生反應】，提高等同於玲可<color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>生命上限+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>的生命上限，若該目標為「毀滅」或「存護」命途，則被敵方攻擊的機率大幅提高，【求生反應】持續<unbreak>#3[i]</unbreak>回合。\\n使該目標回復等同於玲可<color=#f29e38ff><unbreak>#4[f1]%</unbreak></color>生命上限+<color=#f29e38ff><unbreak>#5[i]</unbreak></color>的生命值。",
+        "shortDesc": "使我方單體獲得【求生反應】，使其<color=#f29e38ff>生命上限提高</color>，同時為其回復生命值。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "雪原急救方案",
+        "fullDesc": "解除我方全體的<unbreak>#1[i]</unbreak>個<u>負面效果</u>，並立即為我方全體回復等同於玲可<color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>生命上限+<color=#f29e38ff><unbreak>#3[i]</unbreak></color>的生命值。",
+        "shortDesc": "解除<color=#f29e38ff>我方全體1個<u>負面效果</u></color>，並為我方全體回復生命值。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "巧克力能量棒",
+        "fullDesc": "使用秘技後，下一次戰鬥開始時為我方全體附加玲可天賦的持續治療效果，持續<unbreak>#1[i]</unbreak>回合。",
+        "shortDesc": "使用秘技，下一次戰鬥開始時為我方全體附上持續治療效果。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

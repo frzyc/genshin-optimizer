@@ -1,0 +1,7 @@
+{
+  "name": "餘生的第一天",
+  "passive": {
+    "name": "此刻定格",
+    "description": "使裝備者的防禦力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。進入戰鬥後，使我方全體的全屬性抗性提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。同類技能無法重複生效。"
+  }
+}

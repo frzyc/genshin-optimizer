@@ -1,0 +1,7 @@
+{
+  "name": "Dreamville Adventure",
+  "passive": {
+    "name": "Solidarity",
+    "description": "Setelah pengguna melancarkan salah satu jenis Kemampuan antara Basic Attack, Skill, atau Ultimate, akan menambahkan efek \"Childishness\" pada seluruh rekan tim. \"Childishness\" akan meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> DMG yang diakibatkan dari jenis Kemampuan yang terkait. \"Childishness\" hanya akan efektif pada jenis Kemampuan terakhir yang digunakan oleh pengguna, efek ini tidak dapat ditumpuk."
+  }
+}

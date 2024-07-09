@@ -1,0 +1,7 @@
+{
+  "name": "Les yeux de la proie",
+  "passive": {
+    "name": "Confiance en soi",
+    "description": "Augmente les chances d'appliquer des effets du porteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> et les dégâts sur la durée de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+  }
+}

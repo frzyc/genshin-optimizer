@@ -1,0 +1,39 @@
+{
+  "name": "Ruan Mei",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Threading Fragrance",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Ruan Mei pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "String Sings Slow Swirls",
+        "fullDesc": "Setelah Ruan Mei melancarkan Skill, Ruan Mei akan memperoleh \"Overtone\" yang berlangsung selama <unbreak>#3[i]</unbreak> giliran. Setiap giliran Ruan Mei dimulai, durasi giliran akan berkurang 1. Saat Ruan Mei memiliki \"Overtone\", seluruh rekan tim akan mendapat peningkatan <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> DMG dan <unbreak>#2[i]%</unbreak> Weakness Break Efficiency.",
+        "shortDesc": "Setelah melancarkan Skill-nya, Ruan Mei akan memperoleh \"Overtone\". Saat Ruan Mei memiliki \"Overtone\", <color=#f29e38ff>DMG</color> dan <color=#f29e38ff>Weakness Break Efficiency</color> seluruh rekan tim meningkat."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Petals to Stream, Repose in Dream",
+        "fullDesc": "Ruan Mei membuka sebuah Field yang berlangsung selama <unbreak>#2[i]</unbreak> giliran. Durasi giliran Field akan berkurang 1 setiap kali giliran Ruan Mei dimulai.\\nSeluruh rekan tim yang berada dalam Field akan mendapat peningkatan <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> RES PEN Seluruh Tipe, dan setelah menyerang, akan menambahkan \"Thanatoplum Rebloom\" pada target musuh.\\n\"Thanatoplum Rebloom\" akan terpicu saat target musuh mencoba pulih dari status Weakness Break, memperpanjang status Weakness Break yang dimilikinya dan menunda aksinya. Penundaan aksinya adalah sebesar <unbreak>#3[i]%</unbreak> Break Effect Ruan Mei + <unbreak>#4[i]%</unbreak>, serta mengakibatkan Break DMG pada target tersebut sebesar <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> Ice Break DMG Ruan Mei.\\nTarget musuh yang belum pulih dari status Weakness Break tidak dapat terkena \"Thanatoplum Rebloom\" lagi.",
+        "shortDesc": "Meningkatkan <color=#f29e38ff>RES PEN Seluruh Tipe</color> dari seluruh rekan tim. Setelah menyerang, akan menambahkan \"Thanatoplum Rebloom\" pada target musuh."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Silken Serenade",
+        "fullDesc": "Setelah menggunakan Technique, akan memperoleh \"Silken Serenade\". Saat pertempuran berikutnya dimulai, akan otomatis memicu Skill dirinya sebanyak <unbreak>#1[i]</unbreak> kali, dan pemicuan kali ini tidak akan mengonsumsi Poin Skill.\\nSaat Ruan Mei memiliki \"Silken Serenade\" di Simulated Universe, saat rekan tim menyerang musuh secara aktif, akan selalu dianggap menyerang Weakness saat memasuki pertempuran, dan serangan kali ini akan mengurangi Toughness seluruh musuh tanpa memedulikan Tipe Weakness-nya. Saat mengakibatkan Weakness Break, akan memicu efek Weakness Break yang sesuai dengan Tipe Serangan penyerang. Untuk setiap 1 Blessing yang dimiliki, Toughness-Reducing DMG (DMG terhadap Toughness) yang diakibatkan serangan kali ini akan meningkat ekstra <unbreak>#2[i]%</unbreak>. Jika serangan ini mengakibatkan Weakness Break, maka akan mengakibatkan Break DMG tambahan sebesar <unbreak>#3[i]%</unbreak> Ice Break DMG Ruan Mei pada target musuh tersebut. Berlaku untuk maksimal <unbreak>#4[i]</unbreak> Blessing.",
+        "shortDesc": "Saat memasuki pertempuran berikutnya, akan otomatis memicu Skill sebanyak <color=#f29e38ff><unbreak>#1[i]</unbreak></color> kali. Setelah melancarkan Technique, saat menyerang musuh di Simulated Universe, akan selalu dianggap menyerang Weakness saat memasuki pertempuran, dan serangan kali ini akan mengurangi Toughness musuh <color=#f29e38ff>tanpa memedulikan Tipe Weakness-nya</color>. Untuk setiap 1 Blessing yang dimiliki, Toughness-Reducing DMG (DMG terhadap Toughness) akan meningkat dan jika serangan ini mengakibatkan Weakness Break, maka akan mengakibatkan Break DMG tambahan."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya."
+      }
+    }
+  }
+}

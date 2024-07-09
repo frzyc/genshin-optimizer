@@ -1,0 +1,7 @@
+{
+  "name": "Before the Tutorial Mission Starts",
+  "passive": {
+    "name": "Quick on the Draw",
+    "description": "ทำให้อัตราสร้างสถานะของผู้สวมใส่ เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> เมื่อผู้สวมใส่โจมตีศัตรูเป้าหมายที่ถูกลด DEF จะฟื้นฟูพลังงาน <color=#f29e38ff><unbreak>#2[i]</unbreak></color> หน่วย"
+  }
+}

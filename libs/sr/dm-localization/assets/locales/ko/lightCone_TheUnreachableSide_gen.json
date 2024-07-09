@@ -1,0 +1,7 @@
+{
+  "name": "닿을 수 없는 저편",
+  "passive": {
+    "name": "불능",
+    "description": "장착한 캐릭터의 치명타 확률이 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가하고, HP 최대치가 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다. 장착한 캐릭터가 피격되거나 자신의 HP를 소모한 후 가하는 피해가 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> 증가한다. 해당 효과는 장착한 캐릭터가 공격을 발동한 후 해제된다"
+  }
+}

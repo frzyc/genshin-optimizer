@@ -1,0 +1,7 @@
+{
+  "name": "到不了的彼岸",
+  "passive": {
+    "name": "不得",
+    "description": "使裝備者的暴擊率提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，生命上限提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。當裝備者受到攻擊或裝備者消耗自身生命值後，造成的傷害提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>，該效果在裝備者發動攻擊後解除。"
+  }
+}

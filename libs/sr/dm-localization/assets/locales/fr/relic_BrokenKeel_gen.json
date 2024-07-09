@@ -1,0 +1,6 @@
+{
+  "setName": "Quille brisée",
+  "setEffects": {
+    "2": "Augmente la RÉS aux effets du porteur de <unbreak>#1[i]%</unbreak>. Lorsque sa RÉS aux effets est supérieure ou égale à <unbreak>#2[i]%</unbreak>, les DGT critiques de tous les alliés augmentent de <unbreak>#3[i]%</unbreak>."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Jingliu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lucent Moonglow",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Jingliu pada 1 musuh yang ditarget.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh yang ditargetkan."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Transcendent Flash",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Jingliu pada 1 musuh yang ditarget dan memperoleh <unbreak>#2[i]</unbreak> lapis \"Syzygy\".",
+        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh yang ditarget dan memperoleh <color=#f29e38ff>1 lapis \"Syzygy\"</color>."
+      },
+      "1": {
+        "name": "Moon On Glacial River",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Jingliu pada 1 musuh yang ditarget, serta mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> ATK Jingliu pada musuh di sekitar target. Mengonsumsi <unbreak>#2[i]</unbreak> lapis \"Syzygy\". Melancarkan kemampuan ini tidak akan mengonsumsi Poin Skill.",
+        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh yang ditargetkan, dan Ice DMG pada musuh di sekitar target, serta mengonsumsi 1 lapis \"Syzygy\"."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Florephemeral Dreamflux",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Jingliu pada 1 musuh yang ditarget, serta mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> ATK Jingliu pada musuh di sekitar target. Setelah serangan berakhir, akan memperoleh <unbreak>#2[i]</unbreak> lapis \"Syzygy\".",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah besar pada 1 musuh yang ditarget dan mengakibatkan Ice DMG pada musuh di sekitar target, serta <color=#f29e38ff>memperoleh 1 lapis \"Syzygy\"</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Shine of Truth",
+        "fullDesc": "Setelah menggunakan Technique, karakter akan menciptakan Dimension di sekelilingnya selama <unbreak>#3[i]</unbreak> detik, dan musuh yang berada dalam Dimension akan memasuki status Frozen. Setelah memasuki pertempuran dengan musuh dalam Dimension, akan segera memulihkan <unbreak>#6[i]</unbreak> Energy diri sendiri, memperoleh <unbreak>#1[i]</unbreak> lapis \"Syzygy\", dan memiliki <unbreak>#2[i]%</unbreak> <u>peluang dasar</u> untuk membuat target musuh memasuki status Frozen yang berlangsung selama <unbreak>#4[i]</unbreak> giliran. Selama dalam status Frozen, target musuh tidak dapat beraksi, dan akan menerima Ice <u>DMG tambahan</u> sebesar <unbreak>#5[i]%</unbreak> ATK Jingliu setiap saat gilirannya dimulai. Hanya boleh ada 1 efek Dimension ciptaan rekan tim dalam satu waktu.",
+        "shortDesc": "Menciptakan Dimension di sekelilingnya. Musuh yang berada dalam Dimension akan memasuki <color=#f29e38ff>status Frozen</color>. Setelah memasuki pertempuran dengan musuh dalam Dimension, akan memulihkan Energy diri sendiri, memperoleh 1 lapis Syzygy, dan berpeluang besar membuat target musuh memasuki <color=#f29e38ff>status Frozen</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya."
+      }
+    }
+  }
+}

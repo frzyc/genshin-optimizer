@@ -1,0 +1,7 @@
+{
+  "setName": "Paladina de la Iglesia de la Corte Inmaculada",
+  "setEffects": {
+    "2": "DEF +<unbreak>#1[i]%</unbreak>.",
+    "4": "El efecto de escudo otorgado por el portador aumenta en un <unbreak>#1[i]%</unbreak>."
+  }
+}

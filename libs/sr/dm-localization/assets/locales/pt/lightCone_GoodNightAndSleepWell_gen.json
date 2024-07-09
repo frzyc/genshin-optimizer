@@ -1,0 +1,7 @@
+{
+  "name": "Boa Noite e Durma Bem",
+  "passive": {
+    "name": "Diligente",
+    "description": "Para cada penalidade do inimigo-alvo, aumenta em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> o Dano causado pelo usuário, podendo acumular até <unbreak>#2[i]</unbreak> vez(es). O efeito também se aplica ao Dano Contínuo."
+  }
+}

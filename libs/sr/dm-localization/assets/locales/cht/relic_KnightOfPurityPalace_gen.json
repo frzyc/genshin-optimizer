@@ -1,0 +1,7 @@
+{
+  "setName": "淨庭教宗的聖騎士",
+  "setEffects": {
+    "2": "防禦力提高<unbreak>#1[i]%</unbreak>。",
+    "4": "使裝備者提供的護盾量提高<unbreak>#1[i]%</unbreak>。"
+  }
+}

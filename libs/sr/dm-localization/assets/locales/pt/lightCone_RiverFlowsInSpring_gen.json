@@ -1,0 +1,7 @@
+{
+  "name": "O Rio Corre na Primavera",
+  "passive": {
+    "name": "Combata o Frio Persistente",
+    "description": "Após entrar na batalha, aumenta a VEL do usuário em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> e o seu Dano em <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Quando o usuário recebe Dano, este efeito desaparece. O efeito retorna após o fim da próxima rodada do usuário."
+  }
+}

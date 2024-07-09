@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#とうかこうかん}等価交換{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#ここち}心地{RUBY_E#}よい",
+    "description": "装備キャラのターンが回って来た時、自身以外のEPが<unbreak>#1[i]%</unbreak>未満の味方からランダムに1人選択し、EPを<color=#f29e38ff><unbreak>#2[i]</unbreak></color>回復させる。"
+  }
+}

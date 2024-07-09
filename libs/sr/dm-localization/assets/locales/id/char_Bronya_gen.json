@@ -1,0 +1,39 @@
+{
+  "name": "Bronya",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Windrider Bullet",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Bronya pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Combat Redeployment",
+        "fullDesc": "Menghapus 1 <u>Debuff</u> milik 1 rekan tim, membuat target tersebut segera beraksi dan meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> DMG-nya selama <unbreak>#3[i]</unbreak> giliran.\\nSaat skill digunakan pada diri sendiri, efek pendahuluan aksi tidak akan terpicu.",
+        "shortDesc": "<color=#f29e38ff>Menghapus</color> 1 <color=#f29e38ff><u>efek Debuff</u></color> dari 1 rekan tim, dan <color=#f29e38ff>meningkatkan DMG yang diakibatkan</color> rekan tersebut, serta membuatnya <color=#f29e38ff>segera beraksi</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "The Belobog March",
+        "fullDesc": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK seluruh rekan tim serta meningkatkan CRIT DMG seluruh rekan tim sebesar <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> CRIT DMG Bronya +<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> selama <unbreak>#4[i]</unbreak> giliran.",
+        "shortDesc": "Meningkatkan <color=#f29e38ff>ATK</color> dan <color=#f29e38ff>CRIT DMG</color> seluruh rekan tim"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Banner of Command",
+        "fullDesc": "Setelah menggunakan Technique, meningkatkan <unbreak>#1[i]%</unbreak> ATK seluruh rekan tim selama <unbreak>#2[i]</unbreak> giliran pada saat pertempuran selanjutnya dimulai.",
+        "shortDesc": "Setelah menggunakan Technique, meningkatkan ATK seluruh rekan tim saat pertempuran selanjutnya dimulai."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+      }
+    }
+  }
+}

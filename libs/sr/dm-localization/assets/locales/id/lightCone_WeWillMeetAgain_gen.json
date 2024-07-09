@@ -1,0 +1,7 @@
+{
+  "name": "We Will Meet Again",
+  "passive": {
+    "name": "A Discourse in Arms",
+    "description": "Setelah pengguna melancarkan Basic Attack atau Skill, mengakibatkan DMG tambahan secara acak pada 1 musuh yang terserang sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK dirinya."
+  }
+}

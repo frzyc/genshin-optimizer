@@ -1,0 +1,7 @@
+{
+  "name": "Memories of the Past",
+  "passive": {
+    "name": "Old Photo",
+    "description": "Increases the wearer's Break Effect by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. When the wearer attacks, additionally regenerates <color=#f29e38ff><unbreak>#2[i]</unbreak></color> Energy. This effect cannot be repeatedly triggered in a single turn."
+  }
+}

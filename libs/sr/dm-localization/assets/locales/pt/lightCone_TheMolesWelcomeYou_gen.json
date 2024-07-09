@@ -1,0 +1,7 @@
+{
+  "name": "As Toupeiras Te Dão Boas-vindas",
+  "passive": {
+    "name": "Aventura Fantástica",
+    "description": "Quando o usuário usa o ATQ Básico, a Perícia, ou a Perícia Suprema para atacar inimigos, o usuário ganha um acúmulo de Mordaz. Cada acúmulo aumenta o ATQ do usuário em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+  }
+}

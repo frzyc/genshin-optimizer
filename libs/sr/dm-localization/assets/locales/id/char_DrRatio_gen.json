@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Ratio",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Mind is Might",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Dr. Ratio pada 1 musuh yang ditarget.",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh yang ditargetkan."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Intellectual Midwifery",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Dr. Ratio pada 1 musuh yang ditarget.",
+        "shortDesc": "Mengakibatkan Imaginary DMG pada 1 musuh yang ditargetkan."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Syllogistic Paradox",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Dr. Ratio pada satu musuh yang ditarget, dan menambahkan \"Wiseman's Folly\". Saat rekan tim Dr. Ratio menyerang target yang memiliki \"Wiseman's Folly\", Dr. Ratio akan melancarkan 1 kali <u>Serangan Lanjutan</u> dari Talent kepada target tersebut.\\nEfek \"Wiseman's Folly\" dapat dipicu paling banyak <unbreak>#2[i]</unbreak> kali dan hanya berlaku pada target Ultimate Dr. Ratio yang terbaru. Setelah melancarkan Ultimate Dr. Ratio, jumlah pemicuan efek ini akan direset.",
+        "shortDesc": "Mengakibatkan Imaginary DMG pada satu musuh yang ditarget dan menambahkan status \"Wiseman's Folly\" pada target. Saat rekan tim Dr. Ratio menyerang target berstatus \"Wiseman's Folly\", Dr. Ratio akan memicu 1 kali <color=#f29e38ff><u>Serangan Lanjutan</u></color> pada target tersebut."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Mold of Idolatry",
+        "fullDesc": "Setelah menggunakan Technique, akan menciptakan sebuah Dimension yang akan memancing (Taunt) musuh di sekitar, berlangsung selama <unbreak>#1[i]</unbreak> detik. Setelah memasuki pertempuran dengan musuh di dalam Dimension, ada <unbreak>#2[i]%</unbreak> <u>peluang dasar</u> untuk membuat SPD setiap target musuh berkurang <unbreak>#3[i]%</unbreak>, berlangsung selama <unbreak>#4[i]</unbreak> giliran. Hanya boleh ada 1 efek Dimension ciptaan rekan tim dalam satu waktu.",
+        "shortDesc": "Menciptakan sebuah Dimension. Musuh di dalam Dimension akan terpancing (terkena Taunt). Setelah memasuki pertempuran dengan musuh di dalam Dimension, berpeluang besar untuk <color=#f29e38ff>mengurangi SPD</color> target musuh."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya."
+      }
+    }
+  }
+}

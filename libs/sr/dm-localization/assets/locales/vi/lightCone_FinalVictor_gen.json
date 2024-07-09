@@ -1,0 +1,7 @@
+{
+  "name": "Người Chiến Thắng Cuối Cùng",
+  "passive": {
+    "name": "Đặt Cược",
+    "description": "Khiến Tấn Công của người trang bị tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Sau khi người trang bị gây ra bạo kích lên kẻ địch, sẽ nhận 1 tầng May Mắn, tối đa cộng dồn <unbreak>#3[i]</unbreak> tầng. Mỗi tầng May Mắn khiến Sát Thương Bạo Kích của người trang bị tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, May Mắn sẽ mất khi kết thúc hiệp của người trang bị."
+  }
+}

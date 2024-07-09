@@ -1,0 +1,39 @@
+{
+  "name": "Bailu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Nhìn, Nghe, Hỏi... Đá!",
+        "fullDesc": "Gây Sát Thương Lôi bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> tấn công của Bailu cho kẻ địch chỉ định.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Châu Rơi Giữa Mây Ngàn",
+        "fullDesc": "Hồi ngay cho 1 đồng đội chỉ định một lượng HP bằng <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> Giới Hạn HP của Bailu +<color=#f29e38ff><unbreak>#2[i]</unbreak></color>. Sau đó Bailu sẽ trị liệu <unbreak>#4[i]</unbreak> lần cho 1 đồng đội ngẫu nhiên, mỗi 1 lần trị liệu thì lượng HP hồi phục cho lần sau sẽ giảm <unbreak>#3[i]%</unbreak>.",
+        "shortDesc": "Hồi HP cho 1 đồng đội, sau đó trị liệu cho đồng đội ngẫu nhiên của phe ta."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Rồng Vượt Vực Sâu",
+        "fullDesc": "Lập tức hồi cho toàn phe ta lượng HP bằng <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> Giới Hạn HP của Bailu +<color=#f29e38ff><unbreak>#2[i]</unbreak></color>.\\nĐối với mục tiêu không có Sinh Mệnh của phe ta, Bailu sẽ cộng Sinh Mệnh vào cho mục tiêu đó, còn mục tiêu đã có Sinh Mệnh, sẽ được kéo dài thời gian Sinh Mệnh thêm 1 hiệp.\\n\"Sinh Mệnh\" có thể duy trì <unbreak>#3[i]</unbreak> hiệp, hiệu ứng này không thể cộng dồn.",
+        "shortDesc": "Hồi HP cho toàn thể phe ta, đồng thời kèm thêm Sinh Mệnh hoặc kéo dài thời gian duy trì Sinh Mệnh."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Thong Thả Trong Mưa",
+        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo sẽ kèm thêm Sinh Mệnh cho toàn phe ta, duy trì <unbreak>#1[i]</unbreak> hiệp.",
+        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu trận kế tiếp sẽ kèm thêm \"Sinh Mệnh\" cho toàn bộ phe ta."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+      }
+    }
+  }
+}

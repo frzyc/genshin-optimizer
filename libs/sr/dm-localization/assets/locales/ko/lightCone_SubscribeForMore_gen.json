@@ -1,0 +1,7 @@
+{
+  "name": "팔로우를 부탁해!",
+  "passive": {
+    "name": "좋아요도 안 하고 가려고?",
+    "description": "장착한 캐릭터의 일반 공격 혹은 전투 스킬이 가하는 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가하며, 장착한 캐릭터의 현재 에너지가 에너지 최대치일 시, 해당 효과는 추가로 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다"
+  }
+}

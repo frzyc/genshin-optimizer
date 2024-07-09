@@ -1,0 +1,44 @@
+{
+  "name": "青雀",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "門前清",
+        "fullDesc": "使用1張目前花色最少的瓊玉牌，對指定敵方單體造成等同於青雀<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的量子屬性傷害。",
+        "shortDesc": "使用1張牌，對敵方單體造成少量量子屬性傷害。"
+      },
+      "1": {
+        "name": "槓上開花！",
+        "fullDesc": "對指定敵方單體造成等同於青雀<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的量子屬性傷害，並對其相鄰目標造成等同於青雀<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻擊力的量子屬性傷害。\\n【槓上開花！】無法恢復戰技點。",
+        "shortDesc": "對敵方單體造成量子屬性傷害，並對相鄰目標造成少量量子屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "海底撈月",
+        "fullDesc": "立即抽取<unbreak>#1[i]</unbreak>張瓊玉牌，使自身造成的傷害提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，持續至本回合結束。該效果可以疊加<unbreak>#3[i]</unbreak>層。施放該戰技後，本回合不會結束。",
+        "shortDesc": "<color=#f29e38ff>抽牌</color>，使自身造成的傷害提高，且<color=#f29e38ff>本回合不會結束</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "四么暗刻？胡！",
+        "fullDesc": "對敵方全體造成等同於青雀<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的量子屬性傷害，並獲得4張相同花色的瓊玉牌。",
+        "shortDesc": "對敵方全體造成量子屬性傷害，獲得4張相同花色的牌。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "獨弈之樂",
+        "fullDesc": "使用秘技後，進入戰鬥時青雀會抽取<unbreak>#1[i]</unbreak>張瓊玉牌。",
+        "shortDesc": "使用秘技，下一次進入戰鬥時抽牌。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

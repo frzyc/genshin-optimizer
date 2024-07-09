@@ -1,0 +1,7 @@
+{
+  "name": "輪契",
+  "passive": {
+    "name": "速決",
+    "description": "使裝備者在發動攻擊或受到攻擊後，額外恢復<color=#f29e38ff><unbreak>#1[i]</unbreak></color>點能量。該效果單一回合內不可重複觸發。"
+  }
+}

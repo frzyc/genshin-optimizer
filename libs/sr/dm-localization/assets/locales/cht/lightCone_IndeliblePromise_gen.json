@@ -1,0 +1,7 @@
+{
+  "name": "銘記於心的約定",
+  "passive": {
+    "name": "傳承",
+    "description": "使裝備者的擊破特攻提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。當裝備者施放終結技時，暴擊率提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，持續<unbreak>#3[i]</unbreak>回合。"
+  }
+}

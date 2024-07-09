@@ -1,0 +1,7 @@
+{
+  "name": "Traversée impossible",
+  "passive": {
+    "name": "Envie inassouvie",
+    "description": "Augmente les chances de coup critique du porteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> et ses PV max de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Ses DGT augmentent de <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> lorsqu'il est attaqué ou qu'il consomme ses propres PV. Cet effet disparaît lorsque le porteur lance une attaque."
+  }
+}

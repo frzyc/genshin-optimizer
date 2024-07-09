@@ -1,0 +1,7 @@
+{
+  "setName": "Grão-Duque em Brasas",
+  "setEffects": {
+    "2": "Aumenta o Dano causado pelos Ataques Extras em <unbreak>#1[i]%</unbreak>.",
+    "4": "Quando o usuário usa Ataques Extras, aumenta o ATQ do usuário em <unbreak>#1[i]%</unbreak> a cada vez que o Ataque Extra causa Dano. Este efeito pode ser acumulado até o máximo de <unbreak>#2[i]</unbreak> vez(es) e dura por <unbreak>#3[i]</unbreak> rodada(s). Este efeito é removido da próxima vez que o usuário utilizar um Ataque Extra."
+  }
+}

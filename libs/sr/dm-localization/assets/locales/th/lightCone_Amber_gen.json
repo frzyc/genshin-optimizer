@@ -1,0 +1,7 @@
+{
+  "name": "Amber",
+  "passive": {
+    "name": "Stasis",
+    "description": "ทำให้ DEF ของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> เมื่อเปอร์เซ็นต์ HP ปัจจุบันของผู้สวมใส่น้อยกว่า <unbreak>#2[i]%</unbreak> DEF จะเพิ่มขึ้นอีก <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "¡Guau! ¡Hora de pasear!",
+  "passive": {
+    "name": "¡Corre!",
+    "description": "El ATQ del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> y el daño que inflige a los enemigos afectados por Quemadura o Sangrado aumenta en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Este efecto también es válido para el Daño con el tiempo."
+  }
+}

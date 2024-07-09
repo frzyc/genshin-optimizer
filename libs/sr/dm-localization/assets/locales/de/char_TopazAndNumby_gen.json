@@ -1,0 +1,39 @@
+{
+  "name": "Topaz & Kontie",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Defizit ...",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des ANG von Topaz zu.",
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Schwierigkeiten beim Bezahlen?",
+        "fullDesc": "Verursacht bei einem anvisierten Gegner „Schuldennachweis“ und erhöht den erlittenen SCH des Ziels aus <u>Folgeangriffen</u> um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Der „Schuldennachweis“ wirkt nur auf das letzte Ziel, auf das er angewendet wird. Wenn sich zu Beginn der Runde eines Verbündeten oder während der Aktion eines Verbündeten keine Gegner mit „Schuldennachweis“ auf dem Feld befinden, verursacht Topaz bei einem zufälligen Gegner „Schuldennachweis“.\\nKontie fügt diesem Ziel Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des ANG von Topaz zu. Der Einsatz dieser Fertigkeit, um SCH zu verursachen, wird als ein <u>Folgeangriff</u> gewertet.",
+        "shortDesc": "Verursacht bei einem Gegner den Status „Schuldennachweis“ und lässt ihn <color=#f29e38ff>bei Folgeangriffen mehr SCH erleiden</color>. Kontie fügt dem Ziel Feuer-SCH zu."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Vom Verlust zum Gewinn!",
+        "fullDesc": "Kontie tritt in den Status „Erstaunlicher Aufstieg!“ ein. Sein SCH-Multiplikator wird um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> und der KRIT-SCH wird um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> erhöht. Außerdem wird Konties Aktion um <unbreak>#3[i]%</unbreak> vorgezogen, wenn Gegner mit „Schuldennachweis“ von Standardangriff, Fertigkeit oder Ultimate eines Verbündeten getroffen werden. Nachdem Kontie <unbreak>#4[i]</unbreak>-mal Angriff eingesetzt hat, wird der Status „Erstaunlicher Aufstieg!“ beendet.",
+        "shortDesc": "Kontie tritt in den Status „Erstaunlicher Aufstieg!“ ein und sein <color=#f29e38ff>SCH-Multiplikator und KRIT-SCH werden</color> erhöht."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Explizite Subvention",
+        "fullDesc": "Beschwört Kontie, wenn Topaz die Karte betritt. Kontie sucht automatisch nach gewöhnlichen Schätzen und Sparschweinen in einer bestimmten Reichweite.\\nNach dem aktiven Einsatz der Technik wird Topaz‘ Energie nach Konties erstem Angriff im nächsten Kampf um <unbreak>#1[i]</unbreak> Pkt. wiederhergestellt.\\nNach dem aktiven Einsatz der Technik und dem Besiegen von Gegnern auf der offenen Karte wird zusätzlich eine kleine Menge Credits erhalten, wenn Topaz noch im Team ist. Nur <unbreak>#2[i]</unbreak> zusätzliche Credits können pro Standardtag erhalten werden.\\nNach dem aktiven Einsatz der Technik und dem Besiegen von Gegnern in der Universum-Simulation wird zusätzlich eine kleine Menge an Kosmischen Fragmenten erhalten. Außerdem besteht eine geringe Chance, 1 zufällige Kuriosität zu erhalten.",
+        "shortDesc": "<color=#f29e38ff>Beschwört Kontie, sich in einem Labyrinth anzuschließen</color>. Kontie wird automatisch <color=#f29e38ff>nach gewöhnlichen Schätzen und Sparschweinen in der Nähe suchen</color>. Beim Einsatz der Technik wird die Energie für Topaz nach Konties erstem Angriff im nächsten Kampf wiederhergestellt."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

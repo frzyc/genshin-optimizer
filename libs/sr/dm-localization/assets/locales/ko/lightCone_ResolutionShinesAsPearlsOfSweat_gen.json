@@ -1,0 +1,7 @@
+{
+  "name": "땀방울처럼 빛나는 결심",
+  "passive": {
+    "name": "뒤돌아봄",
+    "description": "장착한 캐릭터는 적 명중 시 만일 해당 목표가 [함락] 상태가 아닐 경우 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>의 기본 확률로 대상을 [함락] 상태에 빠트린다. [함락] 상태의 적은 방어력이 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 감소한다. 지속 시간: <unbreak>#3[i]</unbreak>턴"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Расколовшийся дом",
+  "passive": {
+    "name": "Искоренение",
+    "description": "Урон владельца, наносимый противникам, чьё HP выше <unbreak>#1[i]%</unbreak>, повышается на <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+  }
+}

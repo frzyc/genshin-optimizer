@@ -1,0 +1,44 @@
+{
+  "name": "虎克",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "喂！小心火燭",
+        "fullDesc": "對指定敵方單體造成等同於虎克<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的火屬性傷害。",
+        "shortDesc": "對敵方單體造成少量火屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "嘿！記得虎克嗎",
+        "fullDesc": "對指定敵方單體造成等同於虎克<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的火屬性傷害，同時有<unbreak>#2[i]%</unbreak>的<u>基礎機率</u>使其陷入灼燒狀態，持續<unbreak>#3[i]</unbreak>回合。\\n灼燒狀態下，敵方目標每回合開始時受到等同於虎克<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>攻擊力的火屬性持續傷害。",
+        "shortDesc": "對敵方單體造成火屬性傷害，高機率對目標施加灼燒狀態。"
+      },
+      "1": {
+        "name": "嘿！記得虎克嗎",
+        "fullDesc": "對指定敵方單體造成等同於虎克<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的火屬性傷害，同時有<unbreak>#2[i]%</unbreak>的<u>基礎機率</u>使其陷入灼燒狀態，持續<unbreak>#3[i]</unbreak>回合。此外對其相鄰目標造成等同於虎克<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>攻擊力的火屬性傷害。\\n灼燒狀態下，敵方目標每回合開始時受到等同於虎克<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>攻擊力的火屬性持續傷害。",
+        "shortDesc": "對敵方單體造成火屬性傷害，高機率對目標施加灼燒狀態，對相鄰目標造成少量火屬性傷害。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "轟！飛來焰火",
+        "fullDesc": "對指定敵方單體造成等同於虎克<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的火屬性傷害。\\n施放終結技後，下一次施放的戰技得到強化，強化後的戰技能夠同時對指定敵方單體及其相鄰目標造成傷害。",
+        "shortDesc": "對敵方單體造成大量火屬性傷害，並<color=#f29e38ff>強化自身下一次的戰技</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "唉！瞧這一團糟",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方隨機單體造成等同於虎克<unbreak>#4[i]%</unbreak>攻擊力的火屬性傷害，同時有<unbreak>#1[i]%</unbreak>的<u>基礎機率</u>使敵方每個單體目標陷入灼燒狀態，持續<unbreak>#3[i]</unbreak>回合。\\n灼燒狀態下，敵方目標每回合開始時受到等同於虎克<unbreak>#2[i]%</unbreak>攻擊力的火屬性持續傷害。",
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方隨機單體造成火屬性傷害，並有高機率使敵方每個單體陷入灼燒狀態。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

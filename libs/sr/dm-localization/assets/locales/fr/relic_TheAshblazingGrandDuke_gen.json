@@ -1,0 +1,7 @@
+{
+  "setName": "Grand duc incandescendre",
+  "setEffects": {
+    "2": "Augmente de <unbreak>#1[i]%</unbreak> les DGT infligés par les attaques de suivi.",
+    "4": "Augmente l'ATQ du porteur de <unbreak>#1[i]%</unbreak> chaque fois que ses attaques de suivi infligent des DGT. Cet effet est cumulable jusqu'à <unbreak>#2[i]</unbreak> fois pour une durée de <unbreak>#3[i]</unbreak> tours. Cet effet disparaît à la prochaine attaque de suivi lancée par le porteur."
+  }
+}

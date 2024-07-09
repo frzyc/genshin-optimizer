@@ -1,0 +1,39 @@
+{
+  "name": "Himeko",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Sägeblatt-Justierung",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Himekos ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Geschmolzene Explosion",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Himekos ANG zu und fügt den angrenzenden Zielen Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> von Himekos ANG zu.",
+        "shortDesc": "Fügt einem Gegner Feuer-SCH zu und fügt den angrenzenden Zielen geringen Feuer-SCH zu."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Himmlisches Leuchtsignal",
+        "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Himekos ANG zu. Für jeden besiegten Gegner erhält Himeko zusätzlich <unbreak>#2[i]</unbreak> Pkt. Energie zurück.",
+        "shortDesc": "Fügt allen Gegnern Feuer-SCH zu und stellt Energie beim Besiegen des Gegners wieder her."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Unvollständige Verbrennung",
+        "fullDesc": "Erzeugt nach dem Einsatz der Technik für <unbreak>#4[i]</unbreak> s eine spezielle Dimension. Nach Kampfeintritt mit Gegnern in dieser Dimension besteht eine <u>Grundchance</u> von <unbreak>#1[i]%</unbreak>, den von den Gegnern erlittenen Feuer-SCH für <unbreak>#3[i]</unbreak> Rd. um <unbreak>#2[i]%</unbreak> zu erhöhen. Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
+        "shortDesc": "Erschafft eine Dimension. Wenn du mit Gegnern in der Dimension kämpfst, besteht eine hohe Chance, dass <color=#f29e38ff>der ihnen zugefügte Feuer-SCH erhöht wird</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Gute Nacht, schlaf schön",
+  "passive": {
+    "name": "Malocher",
+    "description": "Erhöht für jeden Debuff des anvisierten Gegners den zugefügten SCH des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Dieser Effekt ist bis zu <unbreak>#2[i]</unbreak>-mal stapelbar und gilt auch für DoT."
+  }
+}

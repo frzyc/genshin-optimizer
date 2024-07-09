@@ -1,0 +1,7 @@
+{
+  "name": "最後的贏家",
+  "passive": {
+    "name": "下注",
+    "description": "使裝備者的攻擊力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。當裝備者對敵方目標造成暴擊後獲得一層【好運】，最多疊加<unbreak>#3[i]</unbreak>層。每層【好運】使裝備者的暴擊傷害提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。【好運】在裝備者的回合結束時移除。"
+  }
+}

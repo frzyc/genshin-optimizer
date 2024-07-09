@@ -1,0 +1,7 @@
+{
+  "name": "Day One of My New Life",
+  "passive": {
+    "name": "At This Very Moment",
+    "description": "ทำให้ DEF ของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> หลังจากเข้าสู่การต่อสู้ จะทำให้ความต้านทานทุกประเภทของฝ่ายตัวเองทั้งหมดเพิ่มขึ้น <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> โดยสกิลชนิดเดียวกันจะไม่สามารถซ้อนทับได้"
+  }
+}

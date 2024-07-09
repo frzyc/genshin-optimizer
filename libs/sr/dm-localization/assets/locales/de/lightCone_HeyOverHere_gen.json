@@ -1,0 +1,7 @@
+{
+  "name": "Hey, ich bin hier",
+  "passive": {
+    "name": "Hab keine Angst",
+    "description": "Erhöht die max. LP des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Erhöht beim Einsatz der Fertigkeit die bewirkte Heilung für <unbreak>#3[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+  }
+}

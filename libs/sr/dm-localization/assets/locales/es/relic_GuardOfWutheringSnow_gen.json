@@ -1,0 +1,7 @@
+{
+  "setName": "Guardia de la nieve borrascosa",
+  "setEffects": {
+    "2": "Daño recibido -<unbreak>#1[i]%</unbreak>.",
+    "4": "Al comienzo del turno, si el portador tiene un porcentaje de PV igual o inferior al <unbreak>#1[i]%</unbreak>, regenera una cantidad de PV equivalente al <unbreak>#2[i]%</unbreak> de sus PV máx. y recupera <unbreak>#3[i]</unbreak> pts. de energía."
+  }
+}

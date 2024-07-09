@@ -1,0 +1,7 @@
+{
+  "name": "Tendencias del mercado universal",
+  "passive": {
+    "name": "Nueva partida",
+    "description": "La DEF del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Cuando recibe un ataque, tiene una probabilidad base del <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de afectar con Quemadura al enemigo e infligir un Daño con el tiempo equivalente al <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> de la DEF del portador en cada turno durante <unbreak>#4[i]</unbreak> turnos."
+  }
+}

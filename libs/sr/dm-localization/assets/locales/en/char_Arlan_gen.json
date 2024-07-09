@@ -1,0 +1,39 @@
+{
+  "name": "Arlan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lightning Rush",
+        "fullDesc": "Deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Arlan's ATK to a single enemy.",
+        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Shackle Breaker",
+        "fullDesc": "Consumes Arlan's HP equal to <unbreak>#1[i]%</unbreak> of his Max HP to deal Lightning DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of Arlan's ATK to a single enemy. If Arlan does not have sufficient HP, his HP will be reduced to 1 after using his Skill.",
+        "shortDesc": "Consumes a portion of HP to deal Lightning DMG to a single enemy."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Frenzied Punishment",
+        "fullDesc": "Deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Arlan's ATK to a single enemy and Lightning DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of Arlan's ATK to enemies adjacent to it.",
+        "shortDesc": "Deals massive Lightning DMG to a single enemy and Lightning DMG to enemies adjacent to it."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Swift Harvest",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Lightning DMG equal to <unbreak>#1[i]%</unbreak> of Arlan's ATK to all enemies.",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor Lightning DMG to all enemies."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+      }
+    }
+  }
+}

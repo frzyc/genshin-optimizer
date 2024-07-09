@@ -1,0 +1,7 @@
+{
+  "name": "Vazio",
+  "passive": {
+    "name": "Caído",
+    "description": "No início da batalha, aumenta em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> a Taxa de Acerto de Efeito do usuário por <unbreak>#2[i]</unbreak> rodada(s)."
+  }
+}

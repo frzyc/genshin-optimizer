@@ -1,0 +1,44 @@
+{
+  "name": "Blade",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Kiếm Vỡ Nát",
+        "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Blade.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch."
+      },
+      "1": {
+        "name": "Rừng Kiếm",
+        "fullDesc": "Tiêu hao HP bằng <unbreak>#1[i]%</unbreak> Giới Hạn HP của Blade, gây cho 1 kẻ địch chỉ định Sát Thương Phong bằng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Tấn Công +<color=#f29e38ff><unbreak>#4[i]%</unbreak></color> Giới Hạn HP của Blade, đồng thời gây cho mục tiêu lân cận Sát Thương Phong bằng <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> Tấn Công +<color=#f29e38ff><unbreak>#5[i]%</unbreak></color> Giới Hạn HP của Blade.\\nNếu HP hiện tại không đủ, khi thi triển Rừng Kiếm, HP hiện tại của Blade sẽ giảm còn 1 điểm.\\nRừng Kiếm không thể hồi điểm Chiến Kỹ.",
+        "shortDesc": "Tiêu hao HP của bản thân, gây Sát Thương Phong lên 1 kẻ địch đồng thời gây lượng nhỏ Sát Thương Phong lên mục tiêu lân cận."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Địa Ngục Biến",
+        "fullDesc": "Tiêu hao HP bằng <unbreak>#1[i]%</unbreak> Giới Hạn HP của Blade, vào trạng thái Địa Ngục Biến.\\nKhi ở trạng thái Địa Ngục Biến không thể thi triển Chiến Kỹ, đồng thời khiến sát thương do bản thân gây ra tăng <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>, Tấn Công Thường \"Kiếm Vỡ Nát\" cường hóa thành \"Rừng Kiếm\", duy trì <unbreak>#2[i]</unbreak> hiệp.\\nNếu HP hiện tại không đủ, khi thi triển Chiến Kỹ, HP hiện tại của Blade sẽ giảm còn 1 điểm.\\nChiến Kỹ này không thể hồi năng lượng. Sau khi thi triển Chiến Kỹ này, hiệp này sẽ không kết thúc.",
+        "shortDesc": "Tiêu hao HP của bản thân để <color=#f29e38ff>cường hóa Tấn Công Thường</color>, và hiệp này sẽ không kết thúc."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Đáng Chết Vạn Lần",
+        "fullDesc": "Chuyển hóa HP hiện tại của Blade thành <unbreak>50%</unbreak> Giới Hạn HP, đồng thời gây cho 1 kẻ địch Sát Thương Phong bằng tổng của <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công +<color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Giới Hạn HP +<color=#f29e38ff><unbreak>#5[i]%</unbreak></color> HP đã mất tích lũy trong trận này của Blade, đồng thời gây cho mục tiêu lân cận Sát Thương Phong bằng tổng của <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> Tấn Công +<color=#f29e38ff><unbreak>#4[i]%</unbreak></color> Giới Hạn HP +<color=#f29e38ff><unbreak>#6[i]%</unbreak></color> HP đã mất tích lũy trong trận này của Blade.\\nHP đã mất tích lũy trong trận này tối đa không vượt quá <unbreak>#7[i]%</unbreak> Giới Hạn HP của Blade, sau khi thi triển Tuyệt Kỹ sẽ xóa và tích lũy lại.",
+        "shortDesc": "Chuyển hóa HP hiện tại thành <unbreak>50%</unbreak> Giới Hạn HP đồng thời gây lượng lớn Sát Thương Phong cho 1 kẻ địch, gây Sát Thương Phong cho mục tiêu lân cận."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Cơn Gió Nghiệp Chướng",
+        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, tiêu hao HP bằng <unbreak>#2[i]%</unbreak> Giới Hạn HP của Blade, đồng thời gây Sát Thương Phong cho toàn bộ kẻ địch bằng <unbreak>#1[i]%</unbreak> Giới Hạn HP của Blade.\\nNếu HP hiện tại không đủ, khi thi triển Bí Kỹ, HP hiện tại của Blade sẽ giảm còn 1 điểm.",
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ tiêu hao HP của bản thân, và gây Sát Thương Phong cho toàn bộ kẻ địch."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch."
+      }
+    }
+  }
+}

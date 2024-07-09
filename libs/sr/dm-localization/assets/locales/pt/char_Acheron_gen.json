@@ -1,0 +1,55 @@
+{
+  "name": "Acheron",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Caminhos Definhados Trilaterais",
+        "fullDesc": "Causa Dano de Raio igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Acheron a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Brilho de Oito Trovões",
+        "fullDesc": "Ganha <unbreak>#3[i]</unbreak> ponto(s) de Sonho Retalhado. Inflige <unbreak>#3[i]</unbreak> acúmulo(s) de Nó Rubro a um único inimigo-alvo e causa Dano de Raio igual <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Acheron a este alvo, assim como Dano de Raio igual a <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do ATQ de Acheron a alvos adjacentes.",
+        "shortDesc": "Ganha <color=#f29e38ff><unbreak>#3[i]</unbreak></color> ponto(s) de Sonho Retalhado. Inflige <color=#f29e38ff><unbreak>#3[i]</unbreak></color> acúmulo(s) de Nó Rubro a um único inimigo e causa Dano de Raio a ele, assim como Dano de Raio leve a alvos adjacentes."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lágrimas Vermelhas do Sonho Retalhado",
+        "fullDesc": "Utiliza sequencialmente Lâmina Pluvial 3 vezes e Ressurreição Estígia 1 vez, causando Dano de Raio até <color=#f29e38ff><unbreak>#6[i]%</unbreak></color> do ATQ de Acheron a um único inimigo-alvo, e causa Dano de Raio até de <color=#f29e38ff><unbreak>#7[i]%</unbreak></color> do ATQ de Acheron a todos os outros inimigos.\\nLâmina Pluvial: Causa Dano de Raio igual a <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> do ATQ de Acheron a um único inimigo-alvo e remove até 3 acúmulos de Nó Rubro do alvo. Quando o Nó Rubro é removido, imediatamente causa Dano de Raio igual a <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> do ATQ de Acheron a todos os inimigos. Para cada acúmulo de Nó Rubro removido, o Multiplicador de Dano desta aplicação de Dano é adicionalmente aumentado, até um aumento de <color=#f29e38ff><unbreak>#5[f1]%</unbreak></color>.\\nRessurreição Estígia: Causa Dano de Raio igual a <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> do ATQ de Acheron a todos os inimigos e remove todos os Nós Rubros.\\nNós Rubros não podem ser aplicados a inimigos durante a Perícia Suprema.",
+        "shortDesc": "Causa 3 golpes de Dano de Raio Leve a um único inimigo. Se Nó Rubro for removido do alvo, então causa Dano de Raio leve a todos os inimigos. Finalmente, causa 1 golpe de Dano de Raio a todos os inimigos e remove Nó Rubro."
+      },
+      "1": {
+        "name": "Lâmina Pluvial",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo e remove até 3 acúmulos de Nó Rubro do alvo. Quando Nó Rubro é removido, causa Dano de Raio leve a todos os inimigos 1 vez, com o multiplicador de Dano para este ataque sendo aumentado para cada acúmulo de Nó Rubro removido."
+      },
+      "2": {
+        "name": "Lâmina Pluvial",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo e remove até 3 acúmulos de Nó Rubro do alvo. Quando Nó Rubro é removido, causa Dano de Raio leve a todos os inimigos 1 vez, com o multiplicador de Dano para este ataque sendo aumentado para cada acúmulo de Nó Rubro removido."
+      },
+      "3": {
+        "name": "Lâmina Pluvial",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo e remove até 3 acúmulos de Nó Rubro do alvo. Quando Nó Rubro é removido, causa Dano de Raio leve a todos os inimigos 1 vez, com o multiplicador de Dano para este ataque sendo aumentado para cada acúmulo de Nó Rubro removido."
+      },
+      "4": {
+        "name": "Ressurreição Estígia",
+        "shortDesc": "Causa Dano de Raio a todos os inimigos e remove todos os acúmulos de Nó Rubro."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ascendência Quadrivalente",
+        "fullDesc": "Imediatamente ataca o inimigo. No início de cada onda, ganha Ascendência Quadrivalente, causando Dano de Raio igual a <unbreak>#1[i]%</unbreak> do ATQ de Acheron a todos os inimigos e reduzindo a Tenacidade te todos os inimigos independentemente dos Tipos de Fraqueza. Ao infligir Quebra de Fraqueza, aciona o efeito de Quebra de Fraqueza de Raio.\\nAscendência Quadrivalente: depois de usar sua Perícia Suprema, Acheron ganha <unbreak>#2[i]</unbreak> ponto(s) de Sonho Retalhado e inflige <unbreak>#2[i]</unbreak> acúmulo(s) de Nó Rubro em um único inimigo aleatório.\\nSe o ataque for realizado contra um inimigo normal, ele é derrotado imediatamente sem entrar em combate. Nenhum Ponto de Técnica será consumido caso nenhum inimigo seja atingido.",
+        "shortDesc": "Ataca o inimigo. Recebe Ascendência Quadrivalente no início de cada onda, causando Dano de Raio a todos os inimigos e reduzindo sua Tenacidade <color=#f29e38ff>independentemente dos Tipos de Fraqueza</color>.\\nSe estiver atacando um inimigo comum, <color=#f29e38ff>imediatamente o derrota</color> sem entrar em combate. O Ponto de Técnica não é gasto se o ataque não atingir um inimigo."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente."
+      }
+    }
+  }
+}

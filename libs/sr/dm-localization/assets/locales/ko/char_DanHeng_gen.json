@@ -1,0 +1,39 @@
+{
+  "name": "단항",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "운기 창술•삭풍",
+        "fullDesc": "지정된 단일 적에게 단항 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 바람 속성 피해를 가한다",
+        "shortDesc": "단일 적에게 소량의 바람 속성 피해를 가한다"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "운기 창술•질우",
+        "fullDesc": "지정된 단일 적에게 단항 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 바람 속성 피해를 가한다.\\n전투 스킬 피해로 치명타 발동 시 <unbreak>#4[i]%</unbreak>의 <u>기본 확률</u>로 피격된 적의 속도를 <unbreak>#2[i]%</unbreak> 감소시킨다. 지속 시간: <unbreak>#3[i]</unbreak>턴",
+        "shortDesc": "단일 적에게 바람 속성 피해를 주고, 치명타 발생 시 높은 확률로 감속 상태를 부여한다"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "동천환화, 기나긴 꿈",
+        "fullDesc": "지정된 단일 적에게 단항 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 바람 속성 피해를 가한다. 피격된 적이 감속 상태인 경우 필살기로 가하는 피해 배율이 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다",
+        "shortDesc": "단일 적에게 대량의 바람 속성 피해를 주고, 감속 상태의 적에게 가하는 피해 배율이 증가한다"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "섬멸의 칼날",
+        "fullDesc": "비술 발동 후 다음 전투 시작 시 단항의 공격력이 <unbreak>#1[i]%</unbreak> 증가한다. 지속 시간: <unbreak>#2[i]</unbreak>턴",
+        "shortDesc": "비술을 발동하며, 다음 전투 진입 후 공격력이 증가한다"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "공격",
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+      }
+    }
+  }
+}

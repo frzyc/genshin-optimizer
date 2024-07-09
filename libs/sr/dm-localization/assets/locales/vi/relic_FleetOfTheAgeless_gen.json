@@ -1,0 +1,6 @@
+{
+  "setName": "Xianzhou Không Có Tuổi",
+  "setEffects": {
+    "2": "Tăng <unbreak>#1[i]%</unbreak> Giới Hạn HP của người trang bị. Khi tốc độ của người trang bị từ <unbreak>#2[i]</unbreak> trở lên, Tấn Công của toàn phe ta tăng <unbreak>#3[i]%</unbreak>."
+  }
+}

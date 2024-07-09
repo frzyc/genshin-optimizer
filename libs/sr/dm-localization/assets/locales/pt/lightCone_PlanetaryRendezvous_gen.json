@@ -1,0 +1,7 @@
+{
+  "name": "Encontro Planetário",
+  "passive": {
+    "name": "Partida",
+    "description": "Após entrar na batalha, se qualquer aliado causar o mesmo tipo de Dano que o usuário, aumenta o Dano causado em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+  }
+}

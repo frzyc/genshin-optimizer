@@ -1,0 +1,39 @@
+{
+  "name": "Clara",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ich will helfen",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Claras ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Svarogs Auge ruht auf dir",
+        "fullDesc": "Fügt allen Gegnern physischen SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Claras ANG zu. Gegner mit Svarogs „Kontermarkierung“ erleiden zusätzlichen physischen SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> von Claras ANG.\\nAlle „Kontermarkierungen“ werden nach dem Einsatz der Fertigkeit entfernt.",
+        "shortDesc": "Fügt allen Gegnern physischen SCH zu. Bei Gegnern mit Kontermarkierung wird zusätzlich <color=#f29e38ff>physischer SCH bewirkt</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ein Versprechen, kein Befehl",
+        "fullDesc": "Reduziert nach dem Einsatz des Ultimates den von Clara erlittenen SCH zusätzlich um <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> und erhöht stark für <unbreak>#3[i]</unbreak> Rd. die Chance, von Gegnern angegriffen zu werden.\\nAußerdem wird Svarogs <u>Konter</u> verstärkt. Wird ein Verbündeter angegriffen, führt Svarog sofort einen <u>Konter</u> aus. Dieser Konter erhöht den SCH-Multiplikator gegen den Gegner um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> und fügt angrenzenden Zielen <unbreak>50</unbreak> % des vom anvisierten Gegner erlittenen SCH zu. Der verstärkte <u>Konter</u> kann <unbreak>#5[i]</unbreak>-mal ausgelöst werden.",
+        "shortDesc": "<color=#f29e38ff>Reduziert den selbst erlittenen SCH</color> und erhöht die Chance, angegriffen zu werden. Der Effekt von <u>Konter</u> wird verstärkt."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ein geringer Preis für den Sieg",
+        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt wird Clara für <unbreak>#1[i]</unbreak> Rd. mit höherer Chance angegriffen.",
+        "shortDesc": "Greift den Gegner an. Nach Kampfeintritt wird die Chance erhöht, von Gegnern angegriffen zu werden."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "骇域漫游的信使",
+  "setEffects": {
+    "2": "速度提高<unbreak>#1[i]%</unbreak>。",
+    "4": "当装备者对我方目标施放终结技时，我方全体速度提高<unbreak>#1[i]%</unbreak>，持续<unbreak>#2[i]</unbreak>回合，该效果无法叠加。"
+  }
+}

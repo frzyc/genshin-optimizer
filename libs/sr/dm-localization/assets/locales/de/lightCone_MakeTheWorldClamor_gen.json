@@ -1,0 +1,7 @@
+{
+  "name": "Die Welt in Aufruhr versetzen",
+  "passive": {
+    "name": "Die Macht des Klangs",
+    "description": "Stellt beim Kampfeintritt sofort <color=#f29e38ff><unbreak>#2[i]</unbreak></color> Pkt. Energie wieder her und erhöht den durch Ultimate verursachten SCH um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+  }
+}

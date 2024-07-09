@@ -1,0 +1,38 @@
+{
+  "name": "Herta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "¿Y tú qué miras?",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Herta como Daño de Hielo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Oferta única",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Herta como Daño de Hielo a todos los enemigos. Si el porcentaje de PV del enemigo es igual o superior al <unbreak>#2[i]%</unbreak>, el daño infligido a ese objetivo aumenta en un <unbreak>#3[i]%</unbreak>.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a todos los enemigos. Los enemigos con más PV reciben más daño."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Es magia, le puse algo de magia",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Herta como Daño de Hielo a todos los enemigos.",
+        "shortDesc": "Inflige Daño de Hielo a todos los enemigos."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Todavía se puede optimizar",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el ATQ de Herta aumenta en un <unbreak>#1[i]%</unbreak> durante <unbreak>#2[i]</unbreak> turnos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

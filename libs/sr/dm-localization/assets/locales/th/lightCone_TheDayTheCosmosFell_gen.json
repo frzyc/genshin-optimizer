@@ -1,0 +1,7 @@
+{
+  "name": "The Day The Cosmos Fell",
+  "passive": {
+    "name": "Stratagem",
+    "description": "ทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> เมื่อผู้สวมใส่ทำการโจมตี หากศัตรูเป้าหมายที่ถูกโจมตีไม่น้อยกว่า 2 ตัว มีประเภทของจุดอ่อนที่สอดคล้องกัน DMG คริติคอลของผู้สวมใส่จะเพิ่มขึ้น <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> เป็นเวลา <unbreak>#3[i]</unbreak> เทิร์น"
+  }
+}

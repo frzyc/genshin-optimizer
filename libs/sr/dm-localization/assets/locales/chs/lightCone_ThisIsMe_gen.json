@@ -1,0 +1,7 @@
+{
+  "name": "这就是我啦！",
+  "passive": {
+    "name": "新篇章",
+    "description": "使装备者防御力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。使装备者施放终结技时造成的伤害值提高，提高数值等同于装备者防御力的<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，该效果每次施放终结技时对每个敌方目标仅生效1次。"
+  }
+}

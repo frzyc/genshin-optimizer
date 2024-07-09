@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#とき}時間{RUBY_E#}の{RUBY_B#きおく}記憶{RUBY_E#}を{RUBY_B#さいこうちく}再構築{RUBY_E#}して",
+  "passive": {
+    "name": "{RUBY_B#けっしょう}結晶{RUBY_E#}",
+    "description": "装備キャラの効果命中+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。装備キャラが風化、燃焼、感電、または裂創状態の敵にダメージを与える時、それぞれ「予見」を1層獲得する、最大で<unbreak>#4[i]</unbreak>層累積できる。一度の戦闘において、各種類の持続ダメージ系デバフがそれぞれ累積できる「予見」は1層のみ。「予見」1層につき、装備キャラの攻撃力+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>、与える持続ダメージが敵の防御力を<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>無視する。"
+  }
+}

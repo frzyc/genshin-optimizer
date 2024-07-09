@@ -1,0 +1,7 @@
+{
+  "name": "同一種心情",
+  "passive": {
+    "name": "救治與維修",
+    "description": "使裝備者的治療量提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，並在施放戰技時為我方全體恢復<color=#f29e38ff><unbreak>#2[f1]</unbreak></color>點能量。"
+  }
+}

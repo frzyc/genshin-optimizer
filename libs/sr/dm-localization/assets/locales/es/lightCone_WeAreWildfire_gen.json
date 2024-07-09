@@ -1,0 +1,7 @@
+{
+  "name": "Somos Llamarada",
+  "passive": {
+    "name": "Entre lágrimas",
+    "description": "Al comenzar la batalla, el daño que reciben todos los aliados se reduce en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> durante <unbreak>#3[i]</unbreak> turnos. Además, todos los aliados regeneran un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de los PV que haya perdido cada uno."
+  }
+}

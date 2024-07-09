@@ -1,0 +1,7 @@
+{
+  "name": "이 몸이 검이니",
+  "passive": {
+    "name": "옥을 쥐고",
+    "description": "장착한 캐릭터의 치명타 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 동료가 공격을 받거나 HP를 소모하면 장착한 캐릭터는 [월식]을 1스택 획득한다. 최대 중첩수: <unbreak>#2[i]</unbreak>스택. [월식] 스택당 장착한 캐릭터의 다음번 공격이 가하는 피해가 <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> 증가한다. <unbreak>#2[i]</unbreak>스택까지 중첩 시, 이번 공격은 추가로 목표의 방어력을 <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> 무시한다. 해당 효과는 장착한 캐릭터가 공격을 발동하면 해제된다"
+  }
+}

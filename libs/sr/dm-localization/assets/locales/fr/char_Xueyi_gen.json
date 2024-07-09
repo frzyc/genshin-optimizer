@@ -1,0 +1,39 @@
+{
+  "name": "Xueyi",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Pique scindemara",
+        "fullDesc": "Inflige des DGT quantiques à hauteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Xueyi à une cible unique.",
+        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Éradication des péchés",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Xueyi à un ennemi unique et des DGT quantiques équivalents à <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de son ATQ aux ennemis adjacents.",
+        "shortDesc": "Inflige des DGT quantiques à un ennemi unique et des DGT quantiques mineurs aux ennemis adjacents."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Châtiment divin",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Xueyi à un ennemi unique. Cette attaque ignore les types de faiblesse et réduit la robustesse de la cible. L'effet de la Rupture de faiblesse quantique se déclenche en cas de Rupture de faiblesse.\\nPlus la robustesse est faible, plus les DGT infligés par cette attaque sont élevés, jusqu'à un maximum de <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>.",
+        "shortDesc": "Inflige des DGT quantiques massifs à un ennemi. Cette attaque <color=#f29e38ff>ignore les types de faiblesse</color> et réduit la robustesse de la cible. Plus la robustesse de l'ennemi est réduite, plus les DGT sont élevés."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Exécution sommaire",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT quantiques équivalents à <unbreak>#1[i]%</unbreak> de l'ATQ de Xueyi à tous les ennemis après être entré en combat.",
+        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT quantiques mineurs à tous les ennemis après être entré en combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

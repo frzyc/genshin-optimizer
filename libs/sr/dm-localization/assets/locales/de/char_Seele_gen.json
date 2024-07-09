@@ -1,0 +1,39 @@
+{
+  "name": "Seele",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Prügel",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Seeles ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Ungezückte Klinge",
+        "fullDesc": "Erhöht Seeles GES für <unbreak>#3[i]</unbreak> Rd. um <unbreak>#2[i]%</unbreak> und fügt einem anvisierten Gegner Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ihres ANG zu.",
+        "shortDesc": "Fügt einem Gegner Quanten-SCH zu und erhöht die GES."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Schmetterlingssturm",
+        "fullDesc": "Tritt in den verstärkten Zustand ein und fügt einem anvisierten Gegner Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Seeles ANG zu.",
+        "shortDesc": "Tritt in den <color=#f29e38ff>verstärkten Zustand</color> ein und fügt einem Gegner massiven Quanten-SCH zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Phantomillusion",
+        "fullDesc": "Nach dem Einsatz der Technik erhält Seele für <unbreak>#1[i]</unbreak> s Tarnung. Während Tarnung aktiv ist, ist Seele für Gegner unsichtbar und tritt zu Beginn des Kampfs sofort in den verstärkten Zustand ein, wenn sie einen Gegner aktiv angreift.",
+        "shortDesc": "Tritt in den Zustand <color=#f29e38ff>Tarnung</color> ein. Seele tritt zu Beginn des Kampfs sofort in den <color=#f29e38ff>verstärkten Zustand</color> ein, wenn sie einen Gegner aktiv angreift."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Xueyi",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Mara-Sunder Awl",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Xueyi pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Iniquity Obliteration",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Xueyi pada satu musuh yang ditarget, serta mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ATK Xueyi pada musuh di sekitar target.",
+        "shortDesc": "Mengakibatkan Quantum DMG pada satu musuh, dan Quantum DMG dalam jumlah kecil pada target di sekitarnya."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Divine Castigation",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Xueyi pada 1 target musuh. Serangan ini mengabaikan Tipe Weakness dan mengurangi Toughness musuh tersebut. Jika mengakibatkan Weakness Break dengan cara ini, maka akan memicu efek Quantum Weakness Break.\\nDalam serangan kali ini, semakin banyak Toughness yang berkurang, semakin tinggi DMG yang diakibatkan, maksimal hingga <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>.",
+        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah besar pada satu musuh. Serangan ini <color=#f29e38ff>mengabaikan Tipe Weakness</color> dan mengurangi Toughness musuh tersebut. Semakin banyak Toughness yang berkurang, semakin tinggi DMG yang diakibatkan."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Summary Execution",
+        "fullDesc": "Segera menyerang musuh, dan setelah memasuki pertempuran, mengakibatkan Quantum DMG sebesar <unbreak>#1[i]%</unbreak> ATK Xueyi pada seluruh musuh.",
+        "shortDesc": "Menyerang musuh dan mengakibatkan Quantum DMG dalam jumlah kecil pada seluruh musuh setelah memasuki pertempuran."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya."
+      }
+    }
+  }
+}

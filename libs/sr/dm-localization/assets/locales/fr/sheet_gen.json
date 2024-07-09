@@ -1,0 +1,35 @@
+{
+  "type": {
+    "Physical": "Physique",
+    "Quantum": "Quantique",
+    "Lightning": "Foudre",
+    "Ice": "Glace",
+    "Wind": "Vent",
+    "Fire": "Feu",
+    "Imaginary": "Imaginaire"
+  },
+  "path": {
+    "Erudition": "L'Érudition",
+    "Preservation": "La Préservation",
+    "Abundance": "L'Abondance",
+    "Nihility": "La Nihilité",
+    "Destruction": "La Destruction",
+    "Harmony": "L'Harmonie",
+    "TheHunt": "La Chasse"
+  },
+  "ability": {
+    "basic": "ATQ normale",
+    "skill": "Compétence",
+    "ult": "Ultime",
+    "talent": "Talent",
+    "technique": "Technique"
+  },
+  "dmgType": {
+    "single": "Cible unique",
+    "aoe": "ZdE",
+    "bounce": "Rebond",
+    "blast": "Propagation",
+    "support": "Soutien",
+    "impair": "Incapacitation"
+  }
+}

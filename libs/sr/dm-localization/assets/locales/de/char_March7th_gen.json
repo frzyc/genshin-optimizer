@@ -1,0 +1,39 @@
+{
+  "name": "7. März",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Bitterkalter Pfeil",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von 7. März’ ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Die Macht der Niedlichkeit",
+        "fullDesc": "Gewährt einem anvisierten Verbündeten einen Schild, der <unbreak>#2[i]</unbreak> Rd. hält und SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von 7. März’ VTD plus <color=#f29e38ff><unbreak>#4[i]</unbreak></color> absorbieren kann.\\nWenn der Verbündete aktuell min. <unbreak>#3[i]%</unbreak> seiner LP hat, wird die Chance, vom Gegner angegriffen zu werden, stark erhöht.",
+        "shortDesc": "Gewährt einem Verbündeten einen <color=#f29e38ff>Schild</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Gletscherkaskade",
+        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von 7. März’ ANG zu und friert die getroffenen Gegner mit einer <u>Grundchance</u> von <unbreak>#2[i]%</unbreak> für <unbreak>#3[i]</unbreak> Rd. ein.\\nEingefrorene Gegner können keine Aktionen ausführen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> von 7. März’ ANG.",
+        "shortDesc": "Fügt <color=#f29e38ff>allen Gegnern</color> Eis-SCH zu und <color=#f29e38ff>hat eine Chance, sie einzufrieren</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Eiskalte Schönheit",
+        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt besteht eine <u>Grundchance</u> von <unbreak>#1[i]%</unbreak>, einen zufällig ausgewählten Gegner für <unbreak>#2[i]</unbreak> Rd. einzufrieren.\\nEingefrorene Gegner können sich nicht bewegen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <unbreak>#3[i]%</unbreak> von 7. März’ ANG.",
+        "shortDesc": "Greift den Gegner an. Hat eine hohe Chance, einen zufälligen Gegner nach Kampfeintritt einzufrieren."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

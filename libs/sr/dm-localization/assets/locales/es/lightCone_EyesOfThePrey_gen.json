@@ -1,0 +1,7 @@
+{
+  "name": "Visión de presa",
+  "passive": {
+    "name": "Confianza",
+    "description": "El acierto de efecto del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> y el Daño con el tiempo que inflige aumenta en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+  }
+}

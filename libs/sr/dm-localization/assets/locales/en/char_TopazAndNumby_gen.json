@@ -1,0 +1,39 @@
+{
+  "name": "Topaz & Numby",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Deficit...",
+        "fullDesc": "Deals Fire DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Topaz's ATK to a single enemy.",
+        "shortDesc": "Deals minor Fire DMG to an enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Difficulty Paying?",
+        "fullDesc": "Inflicts a single target enemy with a Proof of Debt status, increasing the DMG it takes from <u>follow-up attacks</u> by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Proof of Debt only takes effect on the most recent target it is applied to. If there are no enemies inflicted with Proof of Debt on the field when an ally's turn starts or when an ally takes action, Topaz will inflict a random enemy with Proof of Debt.\\nNumby deals Fire DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Topaz's ATK to this target. Using this Skill to deal DMG is considered as launching a <u>follow-up attack</u>.",
+        "shortDesc": "Inflicts a single enemy with a Proof of Debt status and causes it to <color=#f29e38ff>receive increased DMG from follow-up attacks</color>. Numby deals Fire DMG to the target."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Turn a Profit!",
+        "fullDesc": "Numby enters the Windfall Bonanza! state and its DMG multiplier increases by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> and CRIT DMG increases by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Also, when enemies with Proof of Debt are hit by an ally's Basic ATK, Skill, or Ultimate, Numby's action is Advanced Forward by <unbreak>#3[i]%</unbreak>. Numby exits the Windfall Bonanza! state after using <unbreak>#4[i]</unbreak> attacks.",
+        "shortDesc": "Numby enters the Windfall Bonanza! state and <color=#f29e38ff>increases its DMG multiplier and CRIT DMG</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Explicit Subsidy",
+        "fullDesc": "Summons Numby when Topaz enters the overworld. Numby will automatically search for Basic Treasures and Trotters within a set radius.\\nUsing her Technique will regenerate <unbreak>#1[i]</unbreak> Energy for Topaz after Numby's first attack in the next battle.\\nIf Topaz is still in the team after using her Technique and defeating overworld enemies, a small bonus amount of credits will be added to the earned credits. A maximum of <unbreak>#2[i]</unbreak> bonus credits can be received per calendar day.\\nAfter using her Technique and defeating enemies in Simulated Universe, additionally receive a small amount of Cosmic Fragments with a small chance to obtain 1 random Curio.",
+        "shortDesc": "<color=#f29e38ff>Summons Numby to tag along</color> in a Maze. Numby will automatically <color=#f29e38ff>search for Basic Treasures and Trotters nearby</color>. Using Technique will regenerate Energy for Topaz after Numby's first attack in the next battle."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+      }
+    }
+  }
+}

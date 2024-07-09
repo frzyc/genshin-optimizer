@@ -1,0 +1,7 @@
+{
+  "name": "Démultiplication",
+  "passive": {
+    "name": "Peuples de l'Abondance",
+    "description": "La prochaine action du porteur est avancée de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> lorsqu'il utilise son ATQ normale."
+  }
+}

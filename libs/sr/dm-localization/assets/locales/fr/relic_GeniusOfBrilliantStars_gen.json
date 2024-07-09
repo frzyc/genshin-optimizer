@@ -1,0 +1,7 @@
+{
+  "setName": "Génies des étoiles",
+  "setEffects": {
+    "2": "Augmente les DGT quantiques de <unbreak>#1[i]%</unbreak>.",
+    "4": "Lorsque le porteur inflige des DGT à une cible ennemie, il ignore <unbreak>#1[i]%</unbreak> de sa DÉF. Si la cible ennemie présente une Faiblesse quantique, il ignore <unbreak>#2[i]%</unbreak> supplémentaires de sa DÉF."
+  }
+}

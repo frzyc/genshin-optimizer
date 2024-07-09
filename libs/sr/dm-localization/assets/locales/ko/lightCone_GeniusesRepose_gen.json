@@ -1,0 +1,7 @@
+{
+  "name": "천재들의 휴식",
+  "passive": {
+    "name": "각자 제자리에",
+    "description": "장착한 캐릭터의 공격력이 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 장착한 캐릭터는 적을 처치한 후 치명타 피해가 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다. 지속 시간: <unbreak>#3[i]</unbreak>턴"
+  }
+}

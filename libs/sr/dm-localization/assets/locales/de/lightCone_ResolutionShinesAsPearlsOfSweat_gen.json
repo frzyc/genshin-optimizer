@@ -1,0 +1,7 @@
+{
+  "name": "Die Entschlusskraft glitzert als Schweißperlen",
+  "passive": {
+    "name": "Zurückblicken",
+    "description": "Beim Treffer eines nicht verstrickten Gegners besteht eine Grundchance von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, dem Ziel Verstrickung zu verursachen. Die VTD des verstrickten Gegners wird für <unbreak>#3[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> reduziert."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "驚魂夜",
+  "passive": {
+    "name": "深度深呼吸",
+    "description": "使裝備者的能量恢復效率提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。我方目標施放終結技時，裝備者為現有生命值百分比最低的我方目標回復等同於其<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>生命上限的生命值。當裝備者為我方目標提供治療時，使該目標的攻擊力提高<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>，該效果最多疊加<unbreak>#4[i]</unbreak>層，持續<unbreak>#5[i]</unbreak>回合。"
+  }
+}

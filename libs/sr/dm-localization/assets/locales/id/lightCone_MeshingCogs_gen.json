@@ -1,0 +1,7 @@
+{
+  "name": "Meshing Cogs",
+  "passive": {
+    "name": "Fleet Triumph",
+    "description": "Memulihkan <color=#f29e38ff><unbreak>#1[i]</unbreak></color> Energy tambahan setelah pengguna melancarkan serangan atau terkena serangan. Efek ini hanya dapat terpicu sekali setiap giliran."
+  }
+}

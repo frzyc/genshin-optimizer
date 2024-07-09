@@ -1,0 +1,7 @@
+{
+  "name": "Arrows",
+  "passive": {
+    "name": "Crisis",
+    "description": "At the start of the battle, the wearer's CRIT Rate increases by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> for <unbreak>#2[i]</unbreak> turn(s)."
+  }
+}

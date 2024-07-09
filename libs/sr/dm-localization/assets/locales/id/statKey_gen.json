@@ -1,0 +1,20 @@
+{
+  "spd": "SPD",
+  "hp": "HP",
+  "atk": "ATK",
+  "def": "DEF",
+  "crit_": "CRIT Rate",
+  "crit_dmg_": "CRIT DMG",
+  "brEff_": "Break Effect",
+  "eff_": "Break Effect",
+  "eff_res_": "Effect RES",
+  "enerRegen_": "Energy Regeneration Rate",
+  "heal_": "Outgoing Healing Boost",
+  "physical_dmg_": "Physical DMG Meningkat",
+  "fire_dmg_": "Fire DMG Meningkat",
+  "ice_dmg_": "Ice DMG Meningkat",
+  "wind_dmg_": "Wind DMG Meningkat",
+  "lightning_dmg_": "Lightning DMG Meningkat",
+  "quantum_dmg_": "Quantum DMG Meningkat",
+  "imaginary_dmg_": "Imaginary DMG Meningkat"
+}

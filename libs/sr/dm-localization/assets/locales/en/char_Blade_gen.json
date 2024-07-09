@@ -1,0 +1,44 @@
+{
+  "name": "Blade",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Shard Sword",
+        "fullDesc": "Deals <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Blade's ATK as Wind DMG to a target enemy.",
+        "shortDesc": "Deals minor Wind DMG to an enemy."
+      },
+      "1": {
+        "name": "Forest of Swords",
+        "fullDesc": "Consumes HP equal to <unbreak>#1[i]%</unbreak> of Blade's Max HP and deals Wind DMG equal to the sum of <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of his ATK and <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> of his Max HP to a single enemy. In addition, deals Wind DMG equal to the sum of <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> of Blade's ATK and <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> of his Max HP to adjacent targets.\\nIf Blade's current HP is insufficient, his HP will be reduced to 1 when using Forest of Swords.\\nForest of Swords cannot regenerate Skill Points.",
+        "shortDesc": "Consumes HP and deals Wind DMG to an enemy, as well as minor Wind DMG to adjacent targets."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Hellscape",
+        "fullDesc": "Consumes HP equal to <unbreak>#1[i]%</unbreak> of Blade's Max HP to enter the Hellscape state.\\nWhen Hellscape is active, his Skill cannot be used, his DMG dealt increases by <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>, and his Basic ATK Shard Sword is enhanced to Forest of Swords for <unbreak>#2[i]</unbreak> turn(s).\\nIf Blade's current HP is insufficient, his HP will be reduced to 1 when he uses his Skill.\\nThis Skill does not regenerate Energy. Using this Skill does not end the current turn.",
+        "shortDesc": "Consumes HP to <color=#f29e38ff>Enhance Basic ATK</color>, and this turn does not end after this Skill is used."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Death Sentence",
+        "fullDesc": "Sets Blade's current HP to <unbreak>50%</unbreak> of his Max HP and deals Wind DMG to a single enemy equal to the sum of <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of his ATK, <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of his Max HP, and <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> of the tally of Blade's HP loss in the current battle. At the same time, deals Wind DMG to adjacent targets equal to the sum of <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> of his ATK, <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> of his Max HP, and <color=#f29e38ff><unbreak>#6[i]%</unbreak></color> of the tally of his HP loss in the current battle.\\nThe tally of Blade's HP loss in the current battle is capped at <unbreak>#7[i]%</unbreak> of his Max HP. This value will be reset and re-accumulated after his Ultimate has been used.",
+        "shortDesc": "Sets current HP to <unbreak>50%</unbreak> of Max HP, and deals massive Wind DMG to a single enemy and Wind DMG to adjacent targets."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Karma Wind",
+        "fullDesc": "Immediately attacks the enemy. After entering combat, consumes <unbreak>#2[i]%</unbreak> of Blade's Max HP while dealing Wind DMG equal to <unbreak>#1[i]%</unbreak> of his Max HP to all enemies.\\nIf Blade's current HP is insufficient, his HP will be reduced to 1 when this Technique is used.",
+        "shortDesc": "Attacks the enemy. After entering combat, consumes own HP and deals Wind DMG to all enemies."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+      }
+    }
+  }
+}

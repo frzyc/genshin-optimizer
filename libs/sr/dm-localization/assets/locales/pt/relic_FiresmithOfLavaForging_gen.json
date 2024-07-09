@@ -1,0 +1,7 @@
+{
+  "setName": "Artesão de Fogo da Forja de Lava",
+  "setEffects": {
+    "2": "Aumenta o Dano de Fogo em <unbreak>#1[i]%</unbreak>.",
+    "4": "Aumenta o Dano da Perícia do usuário em <unbreak>#1[i]%</unbreak>. Após usar a Perícia Suprema, aumenta o Dano de Fogo do próximo ataque em <unbreak>#2[i]%</unbreak>."
+  }
+}

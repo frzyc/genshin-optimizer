@@ -1,0 +1,7 @@
+{
+  "name": "Lluvia incesante",
+  "passive": {
+    "name": "Espejismo de la realidad",
+    "description": "El acierto de efecto del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Cuando el portador inflige daño a un enemigo que tenga <unbreak>#4[i]</unbreak> o más estados negativos, su Prob. CRIT aumenta en un <color=#f29e38ff><unbreak>#5[i]%</unbreak></color>. Después de usar el ATQ básico, la habilidad básica o la habilidad definitiva, el portador tiene un <unbreak>#2[i]%</unbreak> de probabilidad base de aplicar Código de éter a 1 objetivo al azar de los golpeados que no lo tenga ya aplicado. El daño que reciben los enemigos con Código de éter aumenta en un <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> durante 1 turno."
+  }
+}

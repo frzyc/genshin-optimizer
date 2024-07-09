@@ -1,0 +1,39 @@
+{
+  "name": "艾絲妲",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "光譜射線",
+        "fullDesc": "對指定敵方單體造成等同於艾絲妲<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的火屬性傷害。",
+        "shortDesc": "對敵方單體造成少量火屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "流星群落",
+        "fullDesc": "對指定敵方單體造成等同於艾絲妲<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的火屬性傷害，並額外造成4次傷害。每次傷害對隨機敵方單體造成等同於艾絲妲<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的火屬性傷害。",
+        "shortDesc": "對敵方單體造成少量火屬性傷害，共彈射5次。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "星空祝言",
+        "fullDesc": "使我方全體速度提高<color=#f29e38ff><unbreak>#1[i]</unbreak></color>點，持續<unbreak>#2[i]</unbreak>回合。",
+        "shortDesc": "使我方全體<color=#f29e38ff>速度提高</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "靈光一現",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方全體目標造成等同於艾絲妲<unbreak>#1[i]%</unbreak>攻擊力的火屬性傷害。",
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方全體造成少量傷害。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

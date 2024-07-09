@@ -1,0 +1,7 @@
+{
+  "name": "Final Victor",
+  "passive": {
+    "name": "Wager",
+    "description": "Increases the wearer's ATK by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. When the wearer lands a CRIT hit on enemies, gains 1 stack of Good Fortune. This can stack up to <unbreak>#3[i]</unbreak> time(s). Every stack of Good Fortune increases the wearer's CRIT DMG by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Good Fortune will be removed at the end of the wearer's turn."
+  }
+}

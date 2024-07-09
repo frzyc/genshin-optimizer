@@ -1,0 +1,39 @@
+{
+  "name": "Yukong",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Arrowslinger",
+        "fullDesc": "สร้าง DMG จินตภาพ <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Yukong แก่ศัตรูเป้าหมายที่กำหนดหนึ่งตัว",
+        "shortDesc": "สร้าง DMG จินตภาพเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Emboldening Salvo",
+        "fullDesc": "ได้รับ \"Roaring Bowstrings\" <unbreak>#1[i]</unbreak> ชั้น โดยสูงสุดไม่เกิน 2 ชั้น เมื่อ Yukong มี \"Roaring Bowstrings\" แล้ว ATK ของฝ่ายเราทั้งหมดจะเพิ่มขึ้น <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ทุกครั้งที่เทิร์นของเป้าหมายฝ่ายเราสิ้นสุดลง จะลบ \"Roaring Bowstrings\" ของ Yukong ออก 1 ชั้น\\nโดยในเทิร์นที่ Yukong ใช้สกิลต่อสู้และได้รับ \"Roaring Bowstrings\" จะไม่มีการลบ \"Roaring Bowstrings\" ออก",
+        "shortDesc": "ได้รับ \"Roaring Bowstrings\" 2 ชั้น เมื่อตัวเองมี \"Roaring Bowstrings\" แล้ว <color=#f29e38ff>ATK</color> ของฝ่ายเราทั้งหมดจะเพิ่มขึ้น"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Diving Kestrel",
+        "fullDesc": "เมื่อใช้ท่าไม้ตาย หาก Yukong มี \"Roaring Bowstrings\" จะทำให้อัตราคริติคอลของฝ่ายตัวเองทั้งหมด เพิ่มขึ้นอีก <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> และ DMG คริติคอลเพิ่มขึ้น <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> พร้อมทั้งสร้าง DMG จินตภาพ <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Yukong แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "เมื่อตัวเองได้รับ \"Roaring Bowstrings\" <color=#f29e38ff>อัตราคริติคอลและ DMG คริติคอล</color> ของฝ่ายตัวเองทั้งหมดจะเพิ่มขึ้น และสร้าง DMG จินตภาพอย่างรุนแรงแก่ศัตรูหนึ่งตัว"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Chasing the Wind",
+        "fullDesc": "หลังจากใช้เทคนิคแล้ว จะติดสถานะพุ่งถลาเป็นเวลา <unbreak>#1[i]</unbreak> วินาที ขณะที่ติดสถานะพุ่งถลา ความเร็วในการเคลื่อนที่ของตัวเอง จะเพิ่มขึ้น <unbreak>#2[i]%</unbreak> และเมื่อเข้าสู่การต่อสู้ โดยเป็นฝ่ายโจมตีศัตรูก่อน Yukong จะได้รับ \"Roaring Bowstrings\" <unbreak>#3[i]</unbreak> ชั้น",
+        "shortDesc": "ทำให้<color=#f29e38ff>ความเร็วในการเคลื่อนที่ของตัวเองเพิ่มขึ้น</color> หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะได้รับ \"Roaring Bowstrings\" 2 ชั้น"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย"
+      }
+    }
+  }
+}

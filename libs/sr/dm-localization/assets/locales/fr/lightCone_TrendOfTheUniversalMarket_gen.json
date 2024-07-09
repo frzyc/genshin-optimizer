@@ -1,0 +1,7 @@
+{
+  "name": "Tendance du marché cosmique",
+  "passive": {
+    "name": "Redistribution des cartes",
+    "description": "Augmente la DÉF du porteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Il y a <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de chances de base de brûler l'ennemi lorsque le porteur est attaqué. À chaque tour, le porteur inflige des dégâts sur la durée équivalents à <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> de sa DÉF pendant <unbreak>#4[i]</unbreak> tours."
+  }
+}

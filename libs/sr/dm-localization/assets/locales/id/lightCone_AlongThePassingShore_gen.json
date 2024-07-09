@@ -1,0 +1,7 @@
+{
+  "name": "Along the Passing Shore",
+  "passive": {
+    "name": "Steerer",
+    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> CRIT DMG pengguna. Saat serangan pengguna mengenai target musuh, akan membuat musuh memasuki status \"Mirage Fizzle\" selama 1 giliran. Setiap kali pengguna melancarkan serangan, efek ini hanya dapat dipicu 1 kali terhadap setiap target. DMG yang diakibatkan pengguna terhadap target yang memasuki status \"Mirage Fizzle\" meningkat <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, dan DMG yang diakibatkan Ultimate pengguna meningkat ekstra <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+  }
+}

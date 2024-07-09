@@ -1,0 +1,7 @@
+{
+  "setName": "草の穂ガンマン",
+  "setEffects": {
+    "2": "攻撃力+<unbreak>#1[i]%</unbreak>。",
+    "4": "装備キャラの速度+<unbreak>#1[i]%</unbreak>、通常攻撃の与ダメージ+<unbreak>#2[i]%</unbreak>。"
+  }
+}

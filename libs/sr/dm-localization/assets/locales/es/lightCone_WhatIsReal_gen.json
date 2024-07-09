@@ -1,0 +1,7 @@
+{
+  "name": "Cuestión de verdad",
+  "passive": {
+    "name": "Hipótesis",
+    "description": "El efecto de Ruptura del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Tras usar el ATQ básico, el portador regenera una cantidad de PV equivalente al <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> de sus PV máx. + <unbreak>#3[i]</unbreak>."
+  }
+}

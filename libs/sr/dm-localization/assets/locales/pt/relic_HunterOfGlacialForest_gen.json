@@ -1,0 +1,7 @@
+{
+  "setName": "Caçador da Floresta Glacial",
+  "setEffects": {
+    "2": "Aumenta o Dano de Gelo em <unbreak>#1[i]%</unbreak>.",
+    "4": "Após o usuário utilizar sua Perícia Suprema, aumenta em <unbreak>#1[i]%</unbreak> o Dano CRIT por <unbreak>#2[i]</unbreak> rodada(s)."
+  }
+}

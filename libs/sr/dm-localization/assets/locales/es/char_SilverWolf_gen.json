@@ -1,0 +1,39 @@
+{
+  "name": "Silver Wolf",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Alerta del sistema",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Silver Wolf como Daño Cuántico a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "¿Permitir los cambios?",
+        "fullDesc": "Tiene una <u>probabilidad base</u> del <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de aplicar a un enemigo 1 Debilidad del mismo tipo que el de algún aliado en el campo de batalla y reducir su RES al tipo de esa Debilidad en un <unbreak>#4[i]%</unbreak> durante <unbreak>#3[i]</unbreak> turnos. Si el objetivo enemigo ya tenía ese tipo de Debilidad, entonces no se activará la reducción de RES al tipo correspondiente a esa Debilidad.\\nSilver Wolf solo puede aplicar 1 Debilidad a un mismo objetivo. Si vuelve a aplicarle una Debilidad, el objetivo solo conservará la más reciente. \\nAdemás, tiene una <u>probabilidad base</u> del <unbreak>#5[i]%</unbreak> de reducir la RES a todos los tipos de ese mismo objetivo en un <color=#f29e38ff><unbreak>#6[f1]%</unbreak></color> durante <unbreak>#7[i]</unbreak> turnos.\\nInflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Silver Wolf como Daño Cuántico a ese objetivo.",
+        "shortDesc": "Gran probabilidad de <color=#f29e38ff>aplicar una Debilidad adicional</color> a un enemigo. Además, le inflige Daño Cuántico."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Cuenta baneada",
+        "fullDesc": "Tiene una <u>probabilidad base</u> del <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de reducir la DEF de un enemigo en un <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> durante <unbreak>#4[i]</unbreak> turnos. Además, inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Silver Wolf como Daño Cuántico a ese objetivo.",
+        "shortDesc": "Gran probabilidad de <color=#f29e38ff>reducir la DEF</color> de un enemigo. Además, le inflige una gran cantidad de Daño Cuántico."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Cierre forzoso del proceso",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un <unbreak>#1[i]%</unbreak> del ATQ de Silver Wolf como Daño Cuántico a todos los enemigos y reduce su Firmeza ignorando sus tipos de Debilidad. Al romper la Debilidad de un enemigo, activa el efecto de Ruptura Cuántica.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de daño a todos los enemigos y reduce su Firmeza ignorando sus tipos de Debilidad."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

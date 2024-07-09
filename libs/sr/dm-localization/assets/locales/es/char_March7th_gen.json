@@ -1,0 +1,39 @@
+{
+  "name": "Siete de Marzo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Flecha helada",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Siete de Marzo como Daño de Hielo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "El poder de la belleza",
+        "fullDesc": "Otorga a un aliado un escudo que absorbe un daño equivalente al <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de la DEF de Siete de Marzo + <color=#f29e38ff><unbreak>#4[i]</unbreak></color> durante <unbreak>#2[i]</unbreak> turnos.\\nSi el porcentaje de PV de ese aliado es igual o superior al <unbreak>#3[i]%</unbreak>, la probabilidad de que reciba un ataque enemigo será mucho mayor.",
+        "shortDesc": "Otorga un <color=#f29e38ff>escudo</color> a un aliado."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lluvia glacial",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Siete de Marzo como Daño de Hielo a todos los enemigos. Cada enemigo atacado tiene un <unbreak>#2[i]%</unbreak> de <u>probabilidad base</u> de ser afectado por Congelación durante <unbreak>#3[i]</unbreak> turno.\\nLos enemigos congelados no pueden actuar, y al principio de cada turno reciben un <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> del ATQ de Siete de Marzo como Daño de Hielo <u>adicional</u>.",
+        "shortDesc": "Inflige Daño de Hielo a <color=#f29e38ff>todos los enemigos</color> y hay una <color=#f29e38ff>probabilidad de congelarlos</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Belleza heladora",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Tiene un <unbreak>#1[i]%</unbreak> de <u>probabilidad base</u> de afectar con Congelación a un enemigo al azar durante <unbreak>#2[i]</unbreak> turno.\\nLos enemigos congelados no pueden actuar, y al principio de cada turno reciben un <unbreak>#3[i]%</unbreak> del ATQ de Siete de Marzo como Daño de Hielo <u>adicional</u>.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Gran probabilidad de afectar con Congelación a un enemigo al azar."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

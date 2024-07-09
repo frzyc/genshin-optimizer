@@ -1,0 +1,6 @@
+{
+  "setName": "繁星竞技场",
+  "setEffects": {
+    "2": "使装备者的暴击率提高<unbreak>#1[i]%</unbreak>。当装备者的当前暴击率大于等于<unbreak>#2[i]%</unbreak>时，普攻和战技造成的伤害提高<unbreak>#3[i]%</unbreak>。"
+  }
+}

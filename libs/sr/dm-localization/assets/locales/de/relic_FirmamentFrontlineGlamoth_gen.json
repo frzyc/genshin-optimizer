@@ -1,0 +1,6 @@
+{
+  "setName": "Himmelsfront Glamoth",
+  "setEffects": {
+    "2": "Erhöht den ANG des Trägers um <unbreak>#1[i]%</unbreak>. Wenn die GES des Trägers <unbreak>#2[i]</unbreak>/<unbreak>#3[i]</unbreak> oder höher erreicht, wird sein verursachter SCH um <unbreak>#4[i]%</unbreak>/<unbreak>#5[i]%</unbreak> erhöht."
+  }
+}

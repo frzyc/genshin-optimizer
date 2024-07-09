@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#せかい}世界{RUBY_E#}の{RUBY_B#な}名{RUBY_E#}を{RUBY_B#もっ}以{RUBY_E#}て",
+  "passive": {
+    "name": "{RUBY_B#でんしょうしゃ}伝承者{RUBY_E#}",
+    "description": "デバフ状態の敵に対して、装備キャラの与ダメージ+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。装備キャラが戦闘スキルを発動した時、その攻撃の効果命中+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>、攻撃力+<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>。"
+  }
+}

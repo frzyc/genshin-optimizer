@@ -1,0 +1,39 @@
+{
+  "name": "Schwarzer Schwan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Einblick, stilles Morgengrauen",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des ANG von Schwarzer Schwan zu und hat eine <u>Grundchance</u> von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, das Ziel mit 1 Stapelung <u>Arkana</u> zu belegen. Sollte das angegriffene Ziel sich im Status Windscherung, Bluten, Brennen oder Schock befinden, besteht jeweils eine <u>Grundchance</u> von <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>, es zusätzlich mit 1 Stapelung <u>Arkana</u> zu belegen.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu und hat die Chance, das Ziel mit <u>Arkana</u> zu belegen. Nachdem das Ziel in den Status <color=#f29e38ff>Windscherung, Bluten, Brennen oder Schock</color> eingetreten ist, besteht jeweils die Chance, es <color=#f29e38ff>zusätzlich mit <u>Arkana</u> zu belegen</color>."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Verlust, falsche Abenddämmerung",
+        "fullDesc": "Fügt einem anvisierten Gegner und angrenzenden Einheiten Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des ANG von Schwarzer Schwan zu und hat eine <u>Grundchance</u> von <unbreak>#2[i]%</unbreak>, die Ziele mit 1 Stapelung <u>Arkana</u> zu belegen. Hat außerdem eine <u>Grundchance</u> von <unbreak>#3[i]%</unbreak>, die VTD der Ziele für <unbreak>#5[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> zu reduzieren.",
+        "shortDesc": "Fügt einem Gegner und angrenzenden Einheiten geringen Wind-SCH zu. Es besteht eine hohe Chance, dass die Ziele <color=#f29e38ff>mit <u>Arkana</u> belegt werden</color> und ihre VTD reduziert wird."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Schwelgend in den Armen der Anderwelt",
+        "fullDesc": "Belegt alle Gegner für <unbreak>#2[i]</unbreak> Rd. mit „Enthüllung“.\\nDer von Gegnern mit dem Status Enthüllung erlittene SCH wird während ihrer Runde um <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> erhöht. Zudem werden Gegner, die sich im Status <u>Arkana</u> befinden, als gleichzeitig im Status Windscherung, Bluten, Brennen und Schock betrachtet. Wenn <u>Arkana</u> zu Beginn jeder Runde SCH verursacht, wird außerdem die Stapelzahl nicht zurückgesetzt. Dieser Effekt des Bewahrens von Stapelungen von <u>Arkana</u> kann während der Dauer von Enthüllung nur bis zu <unbreak>#4[i]</unbreak>-mal ausgelöst werden. Die Auslösungsanzahl wird aktualisiert, wenn der Gegner erneut mit Enthüllung belegt wird.\\nFügt allen Gegnern Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des ANG von Schwarzer Schwan zu.",
+        "shortDesc": "Belegt alle Gegner mit dem Status „Enthüllung“, wodurch der erlittene SCH während ihrer Runde erhöht wird. Zudem <color=#f29e38ff>wird <u>Arkana</u> als gleichwertig mit den Status Windscherung, Bluten, Brennen und Schock betrachtet</color>. Wenn <u>Arkana</u> zu Beginn der nächsten Runde SCH verursacht, wird außerdem die Stapelzahl nicht zurückgesetzt. Fügt allen Gegnern Wind-SCH zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Her mit Wahrheit, weg mit Fassade",
+        "fullDesc": "Nach dem Einsatz der Technik besteht zu Beginn des nächsten Kampfes eine <u>Grundchance</u> von <unbreak>#1[i]%</unbreak>, jeden Gegner mit 1 Stapelung <u>Arkana</u> zu belegen. Für jedes erfolgreiche Verursachen von <u>Arkana</u> wird das Ziel mit 1 zusätzlicher Stapelung belegt; dies wird wiederholt, bis die Anwendung von <u>Arkana</u> fehlschlägt. Die <u>Grundchance</u> für jedes aufeinanderfolgende Verursachen von <u>Arkana</u> entspricht <unbreak>#2[i]%</unbreak> der <u>Grundchance</u> des vorherigen erfolgreichen Verursachens von <u>Arkana</u> an diesem Ziel.",
+        "shortDesc": "Nach dem Einsatz der Technik besteht zu Beginn des nächsten Kampfes eine hohe Chance, jeden Gegner <color=#f29e38ff>mit <u>Arkana</u> zu belegen und dies zu wiederholen, bis die Anwendung fehlschlägt</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

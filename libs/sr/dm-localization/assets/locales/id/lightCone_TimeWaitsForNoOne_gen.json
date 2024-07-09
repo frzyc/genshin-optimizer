@@ -1,0 +1,7 @@
+{
+  "name": "Time Waits for No One",
+  "passive": {
+    "name": "Morn, Noon, Dusk, and Night",
+    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Max HP dan <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Outgoing Healing pengguna. Saat pengguna menyembuhkan rekan tim, jumlah Outgoing Healing akan tercatat. Setelah salah satu rekan melancarkan serangan, akan ada DMG tambahan pada 1 musuh secara acak dengan berdasarkan <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> jumlah Outgoing Healing yang tercatat. DMG tambahan ini satu Tipe dengan pengguna, tidak terkena dampak buff lain, dan hanya dapat terjadi 1 kali per giliran."
+  }
+}

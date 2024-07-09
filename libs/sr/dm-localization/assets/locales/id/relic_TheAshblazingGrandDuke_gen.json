@@ -1,0 +1,7 @@
+{
+  "setName": "The Ashblazing Grand Duke",
+  "setEffects": {
+    "2": "Meningkatkan <unbreak>#1[i]%</unbreak> DMG yang diakibatkan Serangan Lanjutan.",
+    "4": "Saat pengguna melancarkan Serangan Lanjutan, meningkatkan <unbreak>#1[i]%</unbreak> ATK pengguna setiap kali Serangan Lanjutan tersebut mengakibatkan DMG. Efek ini dapat ditumpuk hingga <unbreak>#2[i]</unbreak> kali dan berlangsung selama <unbreak>#3[i]</unbreak> giliran. Efek ini akan dihapus saat pengguna melancarkan Serangan Lanjutan yang berikutnya."
+  }
+}

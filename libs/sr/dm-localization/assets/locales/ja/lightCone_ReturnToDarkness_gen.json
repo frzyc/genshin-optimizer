@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#ゆうめい}幽冥{RUBY_E#}に{RUBY_B#き}帰{RUBY_E#}す",
+  "passive": {
+    "name": "{RUBY_B#きょうゆう}洶湧{RUBY_E#}",
+    "description": "装備キャラの会心率+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。会心が発生した後、<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>の固定確率で攻撃を受けた敵のバフを1つ解除する、この効果は1回の攻撃で1回まで発動できる。"
+  }
+}

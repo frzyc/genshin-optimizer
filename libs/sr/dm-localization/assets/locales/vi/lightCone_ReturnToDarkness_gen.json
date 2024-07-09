@@ -1,0 +1,7 @@
+{
+  "name": "U Tối Trở Lại",
+  "passive": {
+    "name": "Sóng Cuồng",
+    "description": "Khiến Tỷ Lệ Bạo Kích của người trang bị tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Sau khi bạo kích có <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> xác suất cố định giải trừ 1 buff hiện có của kẻ địch bị tấn công, hiệu ứng này mỗi lần tấn công chỉ có thể kích hoạt 1 lần."
+  }
+}

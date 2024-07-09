@@ -1,0 +1,6 @@
+{
+  "setName": "Rutilant Arena",
+  "setEffects": {
+    "2": "Increases the wearer's CRIT Rate by <unbreak>#1[i]%</unbreak>. When the wearer's current CRIT Rate reaches <unbreak>#2[i]%</unbreak> or higher, the wearer's Basic ATK and Skill DMG increase by <unbreak>#3[i]%</unbreak>."
+  }
+}

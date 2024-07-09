@@ -1,0 +1,7 @@
+{
+  "setName": "街头出身的拳王",
+  "setEffects": {
+    "2": "物理属性伤害提高<unbreak>#1[i]%</unbreak>。",
+    "4": "当装备者施放攻击或受到攻击后，其在本场战斗中攻击力提高<unbreak>#1[i]%</unbreak>，最多叠加<unbreak>#2[i]</unbreak>层。"
+  }
+}

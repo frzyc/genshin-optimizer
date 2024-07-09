@@ -1,0 +1,39 @@
+{
+  "name": "瓦尔特",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "重力压制",
+        "fullDesc": "对指定敌方单体造成等同于瓦尔特<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的虚数属性伤害。",
+        "shortDesc": "对敌方单体造成少量虚数属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "虚空断界",
+        "fullDesc": "对指定敌方单体造成等同于瓦尔特<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的虚数属性伤害，并额外造成2次伤害。每次伤害对敌方随机单体造成等同于瓦尔特<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的虚数属性伤害。攻击命中时有<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>的<u>基础概率</u>使受到攻击的敌方目标速度降低<unbreak>#3[i]%</unbreak>，持续<unbreak>#4[i]</unbreak>回合。",
+        "shortDesc": "对敌方单体造成少量虚数属性伤害，共弹射3次，有概率对目标<color=#f29e38ff>施加减速状态</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "拟似黑洞",
+        "fullDesc": "对敌方全体造成等同于瓦尔特<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的虚数属性伤害，有<unbreak>#3[i]%</unbreak>的<u>基础概率</u>使受到攻击的敌方目标陷入禁锢状态，持续1回合。\\n禁锢状态下，敌方目标<u>行动延后</u><color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>，速度降低<unbreak>#4[i]%</unbreak>。",
+        "shortDesc": "对敌方全体造成虚数属性伤害，<color=#f29e38ff>大概率施加禁锢效果</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "画地为牢",
+        "fullDesc": "使用秘技后，制造1片持续<unbreak>#4[i]</unbreak>秒的特殊领域。处于特殊领域内的敌人移动速度降低<unbreak>#5[i]%</unbreak>。与处于特殊领域内的敌人进入战斗后，有<unbreak>#1[i]%</unbreak>的<u>基础概率</u>使敌方目标陷入禁锢状态，持续1回合。\\n禁锢状态下，敌方目标<u>行动延后</u><unbreak>#2[i]%</unbreak>，速度降低<unbreak>#3[i]%</unbreak>。我方制造的领域效果最多存在1个。",
+        "shortDesc": "制造特殊领域。领域内敌人移动速度降低。与领域内敌人进入战斗后，<color=#f29e38ff>大概率使敌方目标陷入禁锢状态</color>。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

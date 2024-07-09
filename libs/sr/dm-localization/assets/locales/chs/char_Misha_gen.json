@@ -1,0 +1,39 @@
+{
+  "name": "米沙",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "请…请让一下！",
+        "fullDesc": "对指定敌方单体造成等同于米沙<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的冰属性伤害。",
+        "shortDesc": "对敌方单体造成少量冰属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "客…客房服务！",
+        "fullDesc": "增加<unbreak>#3[i]</unbreak>段米沙下一次终结技的攻击段数。对指定敌方单体造成等同于米沙<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的冰属性伤害，并对其相邻目标造成等同于米沙<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻击力的冰属性伤害。",
+        "shortDesc": "对敌方单体造成冰属性伤害，对相邻目标造成少量冰属性伤害，增加米沙下一次<color=#f29e38ff>终结技的攻击段数</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "要…要迟到了！",
+        "fullDesc": "初始拥有<unbreak>#1[i]</unbreak>段攻击段数。首先施放1段攻击对指定敌方单体造成等同于米沙<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻击力的冰属性伤害，其余每段攻击对敌方随机单体造成等同于米沙<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻击力的冰属性伤害。每段攻击前有<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>的<u>基础概率</u>使目标陷入冻结状态，持续1回合。\\n冻结状态下，敌方目标不能行动，同时每回合开始时受到等同于米沙<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>攻击力的冰属性<u>附加伤害</u>。\\n终结技最多累计<unbreak>#5[i]</unbreak>段攻击段数，施放终结技后攻击段数恢复至初始状态。",
+        "shortDesc": "对敌方单体造成少量冰属性伤害，初始共弹射<color=#f29e38ff><unbreak>#1[i]</unbreak></color>次，最多共弹射<color=#f29e38ff><unbreak>#5[i]</unbreak></color>次。每段攻击前小概率使目标<color=#f29e38ff>冻结</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "停一停吧，你真美丽！",
+        "fullDesc": "使用秘技后，制造1片持续<unbreak>#1[i]</unbreak>秒的特殊领域。处于特殊领域内的敌人陷入【梦境监牢】状态。【梦境监牢】状态下的敌人会停止所有行动。与处于【梦境监牢】状态下的敌人进入战斗后，增加<unbreak>#2[i]</unbreak>段米沙下一次终结技的攻击段数。我方制造的领域效果最多存在1个。",
+        "shortDesc": "制造特殊领域。领域内敌人行动停止。与领域内敌人进入战斗后，增加米沙下一次<color=#f29e38ff>终结技的攻击段数</color>。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "Garde des neiges hurlantes",
+  "setEffects": {
+    "2": "Réduit les DGT subis de <unbreak>#1[i]%</unbreak>.",
+    "4": "Au début du tour, si les PV du porteur sont inférieurs ou égaux à <unbreak>#1[i]%</unbreak>, restaure une quantité de PV équivalente à <unbreak>#2[i]%</unbreak> de ses PV max et régénère <unbreak>#3[i]</unbreak> points d'énergie."
+  }
+}

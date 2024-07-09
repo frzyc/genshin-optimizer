@@ -1,0 +1,39 @@
+{
+  "name": "Guinaifen",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Stehende Ovation",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Guinaifens ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Herzliche Begrüßung",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> und angrenzenden Einheiten Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> von Guinaifens ANG zu. Verursacht beim Ziel und angrenzenden Einheiten mit einer <u>Grundchance</u> von <unbreak>#3[i]%</unbreak> Brennen. Brennende Gegner erleiden für <unbreak>#5[i]</unbreak> Rd. zu Beginn jeder Runde Feuer-DoT in Höhe von <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> von Guinaifens ANG.",
+        "shortDesc": "Fügt einem Gegner Feuer-SCH und angrenzenden Einheiten geringen Feuer-SCH zu. Verursacht mit hoher Chance <color=#f29e38ff>Brennen</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Erstklassige Show",
+        "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> von Guinaifens ANG zu. Wenn Ziele von Brennen betroffen sind, verursacht das Brennen sofort SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> des ursprünglichen SCH.",
+        "shortDesc": "Fügt allen Gegnern Feuer-SCH zu. Gegner mit dem Status Brennen erleiden zusätzlich 1-mal SCH durch Brennen."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Demonstration der Fähigkeiten",
+        "fullDesc": "Greift den Gegner unmittelbar an. Verursacht nach Kampfeintritt <unbreak>#2[i]</unbreak>-mal SCH, wobei jedes Mal einem zufälligen Gegner Feuer-SCH in Höhe von <unbreak>#1[i]%</unbreak> von Guinaifens ANG zugefügt wird und eine <u>Grundchance</u> von <unbreak>#3[i]%</unbreak> besteht, „Feuer spucken“ bei ihm zu verursachen.",
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem Gegner geringen Feuer-SCH zu und verursacht <color=#f29e38ff>„Feuer spucken“</color>. Dieser Angriff prallt 4-mal ab."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

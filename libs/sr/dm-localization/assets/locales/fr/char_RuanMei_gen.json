@@ -1,0 +1,39 @@
+{
+  "name": "Ruan Mei",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Parfum entêtant",
+        "fullDesc": "Inflige des DGT de glace équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Ruan Mei à une cible unique.",
+        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Chant lancinant des cordes",
+        "fullDesc": "Ruan Mei gagne Tonalité après avoir utilisé sa compétence, pour une durée de <unbreak>#3[i]</unbreak> tours. Cette durée diminue de 1 au début du tour de Ruan Mei. Les DGT de tous les alliés augmentent de <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> lorsque Ruan Mei bénéficie de Tonalité et leur efficacité de Rupture de faiblesse de <unbreak>#2[i]%</unbreak>.",
+        "shortDesc": "Ruan Mei gagne Tonalité après avoir utilisé sa compétence. Les <color=#f29e38ff>DGT</color> et l'<color=#f29e38ff>efficacité de Rupture de faiblesse</color> de tous les alliés augmentent quand Ruan Mei bénéficie de cet effet."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ondée de pétales",
+        "fullDesc": "Ruan Mei déploie un champ qui dure <unbreak>#2[i]</unbreak> tours. La durée de ce champ diminue de 1 au début de son tour.\\nLa PÉN de RÉS à tous les types de tous les alliés augmente de <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> lorsqu'ils se trouvent à l'intérieur du champ et leurs attaques appliquent Floraison incomplète aux ennemis touchés.\\nFloraison incomplète se déclenche lorsque ces ennemis tentent de se rétablir d'une Rupture de faiblesse, ce qui prolonge la durée de leur état de Rupture de faiblesse et retarde leur action à hauteur de <unbreak>#3[i]%</unbreak> de l'effet de Rupture de Ruan Mei + <unbreak>#4[i]%</unbreak>, tout en infligeant des DGT de rupture équivalents à <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> des DGT de rupture de glace de Ruan Mei.\\nLes cibles ennemies ne peuvent pas subir à nouveau Floraison incomplète tant qu'elles n'ont pas récupéré de l'état de Rupture de faiblesse.",
+        "shortDesc": "Augmente la <color=#f29e38ff>PÉN de RÉS à tous les types</color> pour tous les alliés. Leurs attaques appliquent Floraison incomplète aux ennemis touchés."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Sérénade de soie",
+        "fullDesc": "Obtient Sérénade de soie après avoir utilisé la technique. Déclenche automatiquement la compétence sans utiliser de point de compétence <unbreak>#1[i]</unbreak> fois au début du combat suivant.\\nDans l'Univers simulé, lorsque Ruan Mei bénéficie de Sérénade de soie et que l'équipe attaque activement une cible ennemie, la Faiblesse de l'ennemi est toujours considérée comme ayant été attaquée pour entrer en combat, et cette attaque peut réduire la robustesse de tous les ennemis quel que soit leur type de faiblesse. Lorsque vous infligez une Rupture de faiblesse, vous déclenchez l'effet de Rupture correspondant au type de faiblesse de l'assaillant. Augmente les DGT à la robustesse de cette attaque de <unbreak>#2[i]%</unbreak> pour chaque bénédiction possédée (jusqu'à <unbreak>#4[i]</unbreak> bénédictions). D'autre part, inflige à l'ennemi des DGT de rupture équivalents à <unbreak>#3[i]%</unbreak> des DGT de rupture de glace de Ruan Mei si cette attaque provoque une Rupture de faiblesse à un ennemi.",
+        "shortDesc": "Déclenche automatiquement la compétence de ce personnage <color=#f29e38ff><unbreak>#1[i]</unbreak></color> fois la prochaine fois qu'il entre en combat. Après avoir utilisé la technique, les alliés qui attaquent des ennemis dans l'Univers simulé sont toujours considérés comme entrant en combat après avoir attaqué la Faiblesse des ennemis, et la robustesse des ennemis est réduite <color=#f29e38ff>quel que soit leur type de faiblesse</color>. Augmente les DGT à la robustesse et les DGT de rupture infligés lors de l'entrée en combat pour chaque bénédiction possédée."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

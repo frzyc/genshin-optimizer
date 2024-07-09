@@ -1,0 +1,39 @@
+{
+  "name": "Clara",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "I Want to Help",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Clara pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Svarog Watches Over You",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Clara pada seluruh musuh, dan mengakibatkan Physical DMG tambahan sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ATK Clara pada target musuh yang ditandai \"Mark of Counter\" oleh Svarog.\\nSemua \"Mark of Counter\" akan dihapus setelah Skill ini dilancarkan.",
+        "shortDesc": "Mengakibatkan Physical DMG pada seluruh musuh dan <color=#f29e38ff>mengakibatkan Physical DMG tambahan</color> pada target dengan \"Mark of Counter\"."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Promise, Not Command",
+        "fullDesc": "Setelah melancarkan Ultimate, DMG yang diterima Clara mengalami <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> pengurangan DMG tambahan, dan peluang Clara terkena serangan musuh meningkat pesat selama <unbreak>#3[i]</unbreak> giliran.\\nSelain itu, <u>Serangan Balasan</u> Svarog akan diperkuat. Saat rekan tim terkena serangan, Svarog akan segera melancarkan <u>Serangan Balasan</u> pada penyerang, dan DMG Multiplier pada penyerang meningkat <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Target di sekitar penyerang juga akan terkena <unbreak>50%</unbreak> DMG yang diterima penyerang. Efek <u>Serangan Balasan</u> yang diperkuat berlaku <unbreak>#5[i]</unbreak> kali.",
+        "shortDesc": "<color=#f29e38ff>Mengurangi DMG yang diterima</color> diri sendiri, meningkatkan peluang terkena serangan, dan meningkatkan efek <u>Serangan Balasan</u>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "A Small Price for Victory",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, meningkatkan peluang Clara untuk diserang musuh selama <unbreak>#1[i]</unbreak> giliran.",
+        "shortDesc": "Menyerang musuh dan meningkatkan peluang untuk diserang oleh musuh setelah memasuki pertempuran."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+      }
+    }
+  }
+}

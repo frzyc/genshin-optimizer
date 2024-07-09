@@ -1,0 +1,7 @@
+{
+  "setName": "Transeunte da Nuvem Errante",
+  "setEffects": {
+    "2": "Aumenta Cura Realizada em <unbreak>#1[i]%</unbreak>.",
+    "4": "No início da batalha, regenera imediatamente 1 Ponto de Perícia."
+  }
+}

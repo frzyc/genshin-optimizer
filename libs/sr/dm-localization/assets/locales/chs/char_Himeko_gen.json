@@ -1,0 +1,39 @@
+{
+  "name": "姬子",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "武装调律",
+        "fullDesc": "对指定敌方单体造成等同于姬子<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的火属性伤害。",
+        "shortDesc": "对敌方单体造成少量火属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "熔核爆裂",
+        "fullDesc": "对指定敌方单体造成等同于姬子<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的火属性伤害，同时对其相邻目标造成等同于姬子<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻击力的火属性伤害。",
+        "shortDesc": "对敌方单体造成火属性伤害，对相邻目标造成少量火属性伤害。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "天坠之火",
+        "fullDesc": "对敌方全体造成等同于姬子<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的火属性伤害，每消灭1个敌方目标额外恢复姬子<unbreak>#2[i]</unbreak>点能量。",
+        "shortDesc": "对敌方全体造成火属性伤害，消灭敌人时恢复能量。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "不完全燃烧",
+        "fullDesc": "使用秘技后，制造1片持续<unbreak>#4[i]</unbreak>秒的特殊领域。与处于特殊领域内的敌人进入战斗后，有<unbreak>#1[i]%</unbreak>的<u>基础概率</u>使敌方目标受到的火属性伤害提高<unbreak>#2[i]%</unbreak>，持续<unbreak>#3[i]</unbreak>回合。我方制造的领域效果最多存在1个。",
+        "shortDesc": "制造特殊领域。与领域内敌人进入战斗后，大概率使敌方目标<color=#f29e38ff>受到的火属性伤害提高</color>。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

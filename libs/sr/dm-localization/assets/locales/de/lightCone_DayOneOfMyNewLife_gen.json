@@ -1,0 +1,7 @@
+{
+  "name": "Der erste Tag meines neuen Lebens",
+  "passive": {
+    "name": "Genau in diesem Moment",
+    "description": "Erhöht die VTD des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Erhöht nach Kampfeintritt den WDS aller Typen von allen Verbündeten um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Effekte desselben Typs sind nicht stapelbar."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "Messager du hackerspace",
+  "setEffects": {
+    "2": "Augmente la VIT de <unbreak>#1[i]%</unbreak>.",
+    "4": "Lorsque le porteur utilise son ultime sur un allié, la VIT de tous les alliés augmente de <unbreak>#1[i]%</unbreak> pendant <unbreak>#2[i]</unbreak> tour. Cet effet n'est pas cumulable."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "Genius of Brilliant Stars",
+  "setEffects": {
+    "2": "Quantum DMG +<unbreak>#1[i]%</unbreak>.",
+    "4": "Saat pengguna mengakibatkan DMG pada target musuh, <unbreak>#1[i]%</unbreak> DEF target tersebut akan diabaikan. Jika target memiliki Quantum Weakness, maka jumlah DEF yang diabaikan bertambah <unbreak>#2[i]%</unbreak> lagi."
+  }
+}

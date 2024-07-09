@@ -1,0 +1,39 @@
+{
+  "name": "Sparkle",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Mélodrame",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Sparkle à une cible unique.",
+        "shortDesc": "Inflige des DGT quantiques mineurs à une cible unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Anguille sous roche",
+        "fullDesc": "Augmente les DGT critiques d'une cible alliée unique à hauteur de <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> des DGT critiques de Sparkle + <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> pendant <unbreak>#3[i]</unbreak> tour et avance de <unbreak>#4[i]%</unbreak> l'action de cet allié.\\nLorsque Sparkle utilise cette capacité sur elle-même, son action n'est pas avancée.",
+        "shortDesc": "Augmente les <color=#f29e38ff>DGT critiques</color> d'un allié et avance son action."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Personnage aux mille visages",
+        "fullDesc": "Régénère <unbreak>#2[i]</unbreak> points de compétence pour l'équipe et accorde Énigme à tous les alliés. Chaque cumul de l'effet d'augmentation de DGT accordé par le talent de Sparkle augmente de <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> supplémentaires pour les alliés qui bénéficient d'Énigme. Dure <unbreak>#4[i]</unbreak> tours.",
+        "shortDesc": "Régénère des <color=#f29e38ff>points de compétence</color> pour l'équipe et permet d'accroître l'augmentation de DGT accordée par son talent."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Histoire bancale",
+        "fullDesc": "L'utilisation de cette technique accorde Tromperie à tous les alliés pendant <unbreak>#2[i]</unbreak> secondes. Les personnages qui bénéficient de l'effet Tromperie ne sont pas détectés par les ennemis, et le fait d'engager le combat dans cet état permet de récupérer <unbreak>#1[i]</unbreak> points de compétence pour l'équipe.",
+        "shortDesc": "L'utilisation de cette technique accorde Tromperie à tous les alliés. Les personnages qui bénéficient de l'effet Tromperie ne sont pas détectés par les ennemis, et le fait d'engager le combat dans cet état permet de récupérer des <color=#f29e38ff>points de compétence</color> pour les alliés."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

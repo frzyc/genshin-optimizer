@@ -1,0 +1,7 @@
+{
+  "name": "The Unreachable Side",
+  "passive": {
+    "name": "Unfulfilled Yearning",
+    "description": "Increases the wearer's CRIT rate by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> and increases their Max HP by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. When the wearer is attacked or consumes their own HP, their DMG increases by <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>. This effect is removed after the wearer uses an attack."
+  }
+}

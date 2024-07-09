@@ -1,0 +1,7 @@
+{
+  "setName": "Wachen des stürmischen Schnees",
+  "setEffects": {
+    "2": "Verringert erlittenen SCH um <unbreak>#1[i]%</unbreak>.",
+    "4": "Liegt der LP-Prozentsatz des Trägers zu Beginn seiner Runde bei <unbreak>#1[i]%</unbreak> oder niedriger, werden LP in Höhe von <unbreak>#2[i]%</unbreak> seiner max. LP und <unbreak>#3[i]</unbreak> Pkt. Energie wiederhergestellt."
+  }
+}

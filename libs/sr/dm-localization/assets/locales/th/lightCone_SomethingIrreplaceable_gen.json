@@ -1,0 +1,7 @@
+{
+  "name": "Something Irreplaceable",
+  "passive": {
+    "name": "Kinship",
+    "description": "ทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> หลังจากผู้สวมใส่กำจัดศัตรูเป้าหมาย หรือถูกโจมตีแล้ว จะฟื้นฟู HP <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ของ ATK ของผู้สวมใส่ทันที พร้อมทั้งสร้าง DMG เพิ่มขึ้น <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> จนกว่าเทิร์นถัดไปของตัวเองจะสิ้นสุดลง โดยเอฟเฟกต์นี้จะไม่สามารถซ้อนทับได้ และสามารถเกิดขึ้นได้แค่เทิร์นละครั้งเท่านั้น"
+  }
+}

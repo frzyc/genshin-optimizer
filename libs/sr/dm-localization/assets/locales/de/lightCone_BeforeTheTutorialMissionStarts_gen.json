@@ -1,0 +1,7 @@
+{
+  "name": "Bevor das Tutorial beginnt",
+  "passive": {
+    "name": "Flinke Hände",
+    "description": "Erhöht die Effekt-Trefferrate des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Wenn der Träger Gegner mit reduzierter VTD angreift, wird <color=#f29e38ff><unbreak>#2[i]</unbreak></color> Pkt. Energie wiederhergestellt."
+  }
+}

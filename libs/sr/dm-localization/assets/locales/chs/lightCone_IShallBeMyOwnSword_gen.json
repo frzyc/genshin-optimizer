@@ -1,0 +1,7 @@
+{
+  "name": "此身为剑",
+  "passive": {
+    "name": "执此宵玉",
+    "description": "使装备者的暴击伤害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。当队友受到攻击或消耗生命值后，装备者获得1层【月蚀】，最多叠加<unbreak>#2[i]</unbreak>层。每层【月蚀】使装备者下一次攻击造成的伤害提高<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>。叠满<unbreak>#2[i]</unbreak>层时，额外使该次攻击无视目标<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>的防御力。该效果在装备者施放攻击后解除。"
+  }
+}

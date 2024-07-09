@@ -1,0 +1,7 @@
+{
+  "name": "Quid Pro Quo",
+  "passive": {
+    "name": "Enjoy With Rapture",
+    "description": "เมื่อเริ่มต้นเทิร์นของผู้สวมใส่ จะสุ่มฟื้นฟูพลังงาน <color=#f29e38ff><unbreak>#2[i]</unbreak></color> หน่วย ให้กับเป้าหมายอื่นในฝ่ายตัวเอง 1 ตัวที่มีเปอร์เซ็นต์พลังงานในปัจจุบันน้อยกว่า <unbreak>#1[i]%</unbreak>"
+  }
+}

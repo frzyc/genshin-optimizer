@@ -1,0 +1,39 @@
+{
+  "name": "アーラン",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#しっこう}疾行{RUBY_E#}する{RUBY_B#かみなり}雷{RUBY_E#}の{RUBY_B#ごと}如{RUBY_E#}し",
+        "fullDesc": "指定した敵単体にアーランの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の雷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の雷属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#きんこ}禁錮{RUBY_E#}{RUBY_B#かいじょ}解除{RUBY_E#}",
+        "fullDesc": "アーランのHPを最大HP<unbreak>#1[i]%</unbreak>分消費して、指定した敵単体にアーランの攻撃力<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>分の雷属性ダメージを与える。残りHPが足りない場合、戦闘スキルを発動する時、アーランの残りHPが1になる。",
+        "shortDesc": "自身のHPを消費し、敵単体に雷属性ダメージを与える。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#きょうしゃ}狂者{RUBY_E#}の{RUBY_B#せいさい}制裁{RUBY_E#}",
+        "fullDesc": "指定した敵単体にアーランの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の雷属性ダメージを与え、隣接する敵にアーランの攻撃力<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>分の雷属性ダメージを与える。",
+        "shortDesc": "敵単体に大量の雷属性ダメージを与え、隣接する敵に雷属性ダメージを与える。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#とっきゅう}特急{RUBY_E#}ハーベスト",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵全体にアーランの攻撃力<unbreak>#1[i]%</unbreak>分の雷属性ダメージを与える。",
+        "shortDesc": "敵を攻撃。戦闘に入った後、敵全体に少量の雷属性ダメージを与える。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+      }
+    }
+  }
+}

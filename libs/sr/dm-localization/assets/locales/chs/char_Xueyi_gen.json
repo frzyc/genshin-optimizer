@@ -1,0 +1,39 @@
+{
+  "name": "雪衣",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "破魔锥",
+        "fullDesc": "对指定敌方单体造成等同于雪衣<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的量子属性伤害。",
+        "shortDesc": "对敌方单体造成少量量子属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "摄伏诸恶",
+        "fullDesc": "对指定敌方单体造成等同于雪衣<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的量子属性伤害，同时对其相邻目标造成等同于雪衣<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻击力的量子属性伤害。",
+        "shortDesc": "对敌方单体造成量子属性伤害，对相邻目标造成少量量子属性伤害。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "天罚贯身",
+        "fullDesc": "对指定敌方单体造成等同于雪衣<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的量子属性伤害，本次攻击无视弱点属性削减敌方单体的韧性。击破弱点时，触发量子属性的弱点击破效果。\\n在本次攻击中，削减的韧性越多，造成的伤害越高，最多提高<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>。",
+        "shortDesc": "对敌方单体造成大量量子属性伤害，本次攻击<color=#f29e38ff>无视弱点属性</color>削减敌方单体的韧性，削减的韧性越多造成的伤害越高。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "斩立决",
+        "fullDesc": "立即攻击敌人，进入战斗后对敌方全体造成等同于雪衣<unbreak>#1[i]%</unbreak>攻击力的量子属性伤害。",
+        "shortDesc": "攻击敌人，进战后对敌方全体造成少量量子属性伤害。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

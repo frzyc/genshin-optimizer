@@ -1,0 +1,7 @@
+{
+  "name": "Luận Kiếm",
+  "passive": {
+    "name": "Câu Trả Lời Của Riêng Họ",
+    "description": "Khi người trang bị đánh trúng cùng một kẻ địch nhiều lần, sát thương gây ra mỗi lần sẽ tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, hiệu quả này tối đa cộng dồn <unbreak>#2[i]</unbreak> tầng. Nếu mục tiêu tấn công có thay đổi, sẽ xóa ngay hiệu ứng buff hiện tại."
+  }
+}

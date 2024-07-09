@@ -1,0 +1,39 @@
+{
+  "name": "Himeko",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Afinación de sierra",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Himeko como Daño de Fuego a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Detonación fundida",
+        "fullDesc": "Himeko inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de su ATQ como Daño de Fuego a un enemigo y un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de su ATQ como Daño de Fuego a los enemigos adyacentes.",
+        "shortDesc": "Inflige Daño de Fuego a un enemigo y una pequeña cantidad de Daño de Fuego a los enemigos adyacentes."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Llamas celestiales",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Himeko como Daño de Fuego a todos los enemigos. Por cada enemigo eliminado, Himeko recupera <unbreak>#2[i]</unbreak> pts. de energía adicionales.",
+        "shortDesc": "Inflige Daño de Fuego a todos los enemigos y recupera energía si elimina a alguno."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Combustión incompleta",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que dura <unbreak>#4[i]</unbreak> s. Al entrar en combate con enemigos dentro de la zona especial, tiene una <u>probabilidad base</u> del <unbreak>#1[i]%</unbreak> de que los objetivos enemigos reciban un <unbreak>#2[i]%</unbreak> más de Daño de Fuego durante <unbreak>#3[i]</unbreak> turnos. Solo puede haber 1 zona especial creada por los aliados a la vez.",
+        "shortDesc": "Crea una zona especial. Al entrar en combate con enemigos en la zona especial, hay una gran probabilidad de que <color=#f29e38ff>el Daño de Fuego que reciben los enemigos aumente</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

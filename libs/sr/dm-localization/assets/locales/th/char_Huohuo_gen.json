@@ -1,0 +1,39 @@
+{
+  "name": "Huohuo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Banner: Stormcaller",
+        "fullDesc": "สร้าง DMG ลม <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ HP สูงสุดของ Huohuo แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "สร้าง DMG ลมเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Talisman: Protection",
+        "fullDesc": "ลบล้าง<u>เอฟเฟกต์ Debuff</u> <unbreak>#5[i]</unbreak> เอฟเฟกต์ของฝ่ายเราที่กำหนดหนึ่งตัว และฟื้นฟู HP <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> ของ HP สูงสุดของ Huohuo +<color=#f29e38ff><unbreak>#2[i]</unbreak></color> แก่ฝ่ายเราที่กำหนดหนึ่งตัวทันที พร้อมทั้งฟื้นฟู HP <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> ของ HP สูงสุดของ Huohuo +<color=#f29e38ff><unbreak>#4[i]</unbreak></color> แก่ตัวที่อยู่ใกล้เคียงกับเป้าหมายด้วย",
+        "shortDesc": "ลบล้าง<u>เอฟเฟกต์ Debuff</u> 1 เอฟเฟกต์ของฝ่ายเราหนึ่งตัว และ<color=#f29e38ff>ฟื้นฟู HP</color> ให้แก่ฝ่ายเราหนึ่งตัว รวมถึงตัวที่อยู่ใกล้เคียงด้วย"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Tail: Spiritual Domination",
+        "fullDesc": "ฟื้นฟูพลังงานให้กับเพื่อนในทีม ที่นอกเหนือจากตัวเอง <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> ของพลังงานสูงสุดของแต่ละตัว พร้อมทั้งทำให้ ATK ของเป้าหมายดังกล่าว เพิ่มขึ้น <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> เป็นเวลา <unbreak>#3[i]</unbreak> เทิร์น",
+        "shortDesc": "<color=#f29e38ff>ฟื้นฟูพลังงาน</color>ให้กับเพื่อนในทีม ที่นอกเหนือไปจากตัวเอง และทำให้ <color=#f29e38ff>ATK</color> ของเป้าหมายดังกล่าวเพิ่มขึ้น"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Fiend: Impeachment of Evil",
+        "fullDesc": "Huohuo ข่มขู่ศัตรูรอบตัว และทำให้ศัตรูติดสถานะ \"Horror-Struck\" ซึ่งศัตรูที่ติดสถานะ \"Horror-Struck\" จะหลบหนีไปยังทิศทางที่อยู่ห่างจาก Huohuo เป็นเวลา <unbreak>#4[i]</unbreak> วินาที เมื่อเข้าสู่การต่อสู้ พร้อมกับศัตรูที่ติดสถานะ \"Horror-Struck\" จะมี <u>โอกาสพื้นฐาน</u> <unbreak>#1[i]%</unbreak> ที่จะทำให้ ATK ของศัตรูเป้าหมายแต่ละตัวลดลง <unbreak>#2[i]%</unbreak> เป็นเวลา <unbreak>#3[i]</unbreak> เทิร์น",
+        "shortDesc": "ทำให้ศัตรูรอบๆ ติดสถานะ \"Horror-Struck\" เมื่อเข้าสู่การต่อสู้ พร้อมศัตรูที่ติดสถานะ \"Horror-Struck\" จะมีโอกาสอย่างมาก ที่จะทำให้ <color=#f29e38ff>ATK ของศัตรูเป้าหมายลดลง</color>"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภท ที่สอดคล้องกับศัตรูเป้าหมาย"
+      }
+    }
+  }
+}

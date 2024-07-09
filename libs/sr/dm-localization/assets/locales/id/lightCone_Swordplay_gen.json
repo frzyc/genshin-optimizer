@@ -1,0 +1,7 @@
+{
+  "name": "Swordplay",
+  "passive": {
+    "name": "Answers of Their Own",
+    "description": "Saat pengguna menyerang target musuh yang sama berulang kali, setiap DMG yang diakibatkan akan meningkat <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, efek ini dapat ditumpuk hingga <unbreak>#2[i]</unbreak> lapis. Jika target serangan berubah, efek Buff yang ada saat ini akan hilang."
+  }
+}

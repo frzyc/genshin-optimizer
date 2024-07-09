@@ -1,0 +1,7 @@
+{
+  "name": "La solemnidad del desayuno",
+  "passive": {
+    "name": "A sus puestos",
+    "description": "El daño que inflige el portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Por cada enemigo que elimina, su ATQ aumenta en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Este efecto se puede acumular hasta <unbreak>#3[i]</unbreak> veces."
+  }
+}

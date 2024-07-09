@@ -1,0 +1,7 @@
+{
+  "name": "Flecha Veloz",
+  "passive": {
+    "name": "Grito de Guerra",
+    "description": "Quando o usuário derrota um inimigo, aumenta o ATQ em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> por <unbreak>#2[i]</unbreak> rodada(s)."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "페르마타",
+  "passive": {
+    "name": "쉼표",
+    "description": "장착한 캐릭터의 격파 특수효과가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가하고, 감전이나 풍화 상태의 적에게 가하는 피해가 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다. 해당 효과는 지속 피해에도 적용된다"
+  }
+}

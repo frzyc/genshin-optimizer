@@ -1,0 +1,6 @@
+{
+  "setName": "不老者的仙舟",
+  "setEffects": {
+    "2": "使裝備者的生命上限提高<unbreak>#1[i]%</unbreak>。當裝備者的速度大於等於<unbreak>#2[i]</unbreak>時，我方全體攻擊力提高<unbreak>#3[i]%</unbreak>。"
+  }
+}

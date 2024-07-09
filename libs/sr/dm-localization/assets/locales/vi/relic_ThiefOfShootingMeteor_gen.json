@@ -1,0 +1,7 @@
+{
+  "setName": "Kẻ Cướp Vệt Sao Băng",
+  "setEffects": {
+    "2": "Tăng Tấn Công Kích Phá <unbreak>#1[i]%</unbreak>.",
+    "4": "Tăng <unbreak>#1[i]%</unbreak> Tấn Công Kích Phá của người trang bị. Sau khi người trang bị phá vỡ điểm yếu của kẻ địch, sẽ hồi <unbreak>#2[i]</unbreak> điểm Năng Lượng."
+  }
+}

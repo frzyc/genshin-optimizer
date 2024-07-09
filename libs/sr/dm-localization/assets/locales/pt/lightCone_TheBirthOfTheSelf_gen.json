@@ -1,0 +1,7 @@
+{
+  "name": "Meu Próprio Nascimento",
+  "passive": {
+    "name": "A Donzela no Retrato",
+    "description": "Aumenta em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> o Dano causado por Ataques Extras do usuário. Se os PV atuais do inimigo-alvo estiverem abaixo ou iguais a <unbreak>#2[i]%</unbreak> dos PV máximos, aumenta em mais <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> o Dano causado por Ataques Extras."
+  }
+}

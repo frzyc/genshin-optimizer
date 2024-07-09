@@ -1,0 +1,6 @@
+{
+  "setName": "Himmlischer Differenziator",
+  "setEffects": {
+    "2": "Erhöht den KRIT-SCH des Trägers um <unbreak>#1[i]%</unbreak>. Wenn der aktuelle KRIT-SCH des Trägers <unbreak>#2[i]%</unbreak> oder höher erreicht, wird die KRIT-Rate nach Kampfeintritt um <unbreak>#3[i]%</unbreak> erhöht, bis zum Ende seines ersten Angriffs."
+  }
+}

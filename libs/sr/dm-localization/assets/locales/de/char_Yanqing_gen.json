@@ -1,0 +1,39 @@
+{
+  "name": "Yanqing",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Kaltes Licht, kalte Klinge",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Yanqings ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Schwertwurf",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Yanqings ANG zu und aktiviert für 1 Rd. „Empathische Schwertverbindung“.",
+        "shortDesc": "Fügt einem Gegner Eis-SCH zu und aktiviert „Empathische Schwertverbindung“."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Regenreiche Schwalbenjagd",
+        "fullDesc": "Erhöht Yanqings KRIT-Rate um <unbreak>#1[i]%</unbreak>. Erhöht Yanqings KRIT-SCH bei aktiver „Empathischer Schwertverbindung“ zusätzlich für 1 Rd. um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Der <u>Buff</u> hält 1 Rd. an. Fügt dann einem anvisierten Gegner Eis-SCH in Höhe von <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> von Yanqings ANG zu.",
+        "shortDesc": "Erhöht KRIT-Rate, verstärkt „Empathische Schwertverbindung“ und fügt einem Gegner massiven Eis-SCH zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Meisterfechter",
+        "fullDesc": "Fügt nach dem Einsatz der Technik Gegnern mit LP-Prozentsatz von <unbreak>#1[i]%</unbreak> oder höher zu Beginn des nächsten Kampfs <unbreak>#2[i]%</unbreak> mehr SCH für <unbreak>#3[i]</unbreak> Rd. zu.",
+        "shortDesc": "Der Einsatz der Technik erhöht zu Beginn des nächsten Kampfes den verursachten SCH bei Gegnern mit LP-Prozentsatz von <unbreak>50</unbreak> % oder höher."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

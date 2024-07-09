@@ -1,0 +1,7 @@
+{
+  "name": "Entlang am vorbeiziehenden Ufer",
+  "passive": {
+    "name": "Fährmann",
+    "description": "Erhöht den KRIT-SCH des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Wenn der Träger einen Gegner trifft, wird das Ziel für 1 Rd. mit „Luftschloss“ belegt. Jedes Mal, wenn der Träger angreift, kann dieser Effekt bei jedem Ziel nur 1-mal ausgelöst werden. Der verursachte SCH des Trägers bei Gegnern mit Luftschloss wird um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> und der durch den Ultimate verursachte SCH zusätzlich um <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> erhöht."
+  }
+}

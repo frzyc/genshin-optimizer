@@ -1,0 +1,7 @@
+{
+  "name": "Ein Gespräch nach der OP",
+  "passive": {
+    "name": "Gegenseitiges Heilen",
+    "description": "Erhöht die Energie-Regenerationsrate des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> und die bewirkte Heilung beim Einsatz des Ultimates um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+  }
+}

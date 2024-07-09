@@ -1,0 +1,44 @@
+{
+  "name": "アルジェンティ",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#せつな}刹那{RUBY_E#}の{RUBY_B#ふんぽう}芬芳{RUBY_E#}",
+        "fullDesc": "指定した敵単体にアルジェンティの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "敵単体に少量の物理ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#こうせい}公正{RUBY_E#}、ここに{RUBY_B#さ}咲{RUBY_E#}き{RUBY_B#ほこ}誇{RUBY_E#}る",
+        "fullDesc": "敵全体にアルジェンティの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "敵全体に少量の物理ダメージを与える。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#はなぞの}花園{RUBY_E#}にて{RUBY_B#ささ}捧{RUBY_E#}げる{RUBY_B#び}美{RUBY_E#}の{RUBY_B#さいげん}際限{RUBY_E#}",
+        "fullDesc": "EPを<unbreak>#2[i]</unbreak>消費し、敵全体にアルジェンティの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "EPを<color=#f29e38ff><unbreak>#2[i]</unbreak></color>消費し、敵全体に物理ダメージを与える。"
+      },
+      "1": {
+        "name": "「{RUBY_B#われ}我{RUBY_E#}」が{RUBY_B#さず}授{RUBY_E#}けし{RUBY_B#しじょう}至上{RUBY_E#}の{RUBY_B#くんしょう}勲章{RUBY_E#}",
+        "fullDesc": "EPを<unbreak>#4[i]</unbreak>消費し、敵全体にアルジェンティの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与え、さらに<unbreak>#2[i]</unbreak>ヒットする。1ヒットごとに、ランダムな敵単体にアルジェンティの攻撃力<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "EPを<color=#f29e38ff><unbreak>#4[i]</unbreak></color>消費し、敵全体に物理ダメージを与える。さらにランダムな敵単体に少量の物理ダメージを与える、6回バウンドする。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#じゅんすい}純粋{RUBY_E#}で{RUBY_B#こうけつ}高潔{RUBY_E#}なる{RUBY_B#せんげん}宣言{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、一定区域内の敵を<unbreak>#1[i]</unbreak>秒間の目眩状態にする。目眩状態の敵は味方を攻撃しない。\\n目眩状態の敵を先制攻撃して戦闘に入った時、敵全体にアルジェンティの攻撃力<unbreak>#2[i]%</unbreak>分の物理ダメージを与え、アルジェンティのEPを<unbreak>#3[i]</unbreak>回復する。",
+        "shortDesc": "一定範囲内の敵を目眩状態にする。目眩状態の敵を攻撃して戦闘に入った後、敵全体に少量の物理ダメージを与え、アルジェンティのEPを回復する。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+      }
+    }
+  }
+}

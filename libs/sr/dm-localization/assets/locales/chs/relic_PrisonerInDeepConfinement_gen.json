@@ -1,0 +1,7 @@
+{
+  "setName": "幽锁深牢的系囚",
+  "setEffects": {
+    "2": "攻击力提高<unbreak>#1[i]%</unbreak>。",
+    "4": "敌方目标每承受1个持续伤害效果，装备者对其造成伤害时就无视其<unbreak>#1[i]%</unbreak>的防御力，最多计入<unbreak>#2[i]</unbreak>个持续伤害效果。"
+  }
+}

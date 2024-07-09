@@ -1,0 +1,7 @@
+{
+  "name": "In the Name of the World",
+  "passive": {
+    "name": "Inheritor",
+    "description": "Increases the wearer's DMG to debuffed enemies by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. When the wearer uses their Skill, the Effect Hit Rate for this attack increases by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, and ATK increases by <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+  }
+}

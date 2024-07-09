@@ -1,0 +1,7 @@
+{
+  "setName": "Bote im Hackerspace",
+  "setEffects": {
+    "2": "Erhöht GES um <unbreak>#1[i]%</unbreak>.",
+    "4": "Wenn der Träger ein Ultimate auf einen Verbündeten anwendet, erhöht sich die GES aller Verbündeten für <unbreak>#2[i]</unbreak> Rd. um <unbreak>#1[i]%</unbreak>. Dieser Effekt ist nicht stapelbar."
+  }
+}

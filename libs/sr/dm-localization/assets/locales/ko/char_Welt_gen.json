@@ -1,0 +1,39 @@
+{
+  "name": "웰트",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "중력 압박",
+        "fullDesc": "지정된 단일 적에게 웰트 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 허수 속성 피해를 가한다",
+        "shortDesc": "단일 적에게 소량의 허수 속성 피해를 준다"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "허공 단열",
+        "fullDesc": "지정된 단일 적에게 웰트 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 허수 속성 피해를 주고, 추가로 피해를 2회 가한다. 피해를 가할 때마다 임의의 단일 적에게 웰트 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 허수 속성 피해를 준다. 공격이 명중하면 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>의 <u>기본 확률</u>로 피격된 적의 속도를 <unbreak>#3[i]%</unbreak> 감소시킨다. 지속 시간: <unbreak>#4[i]</unbreak>턴",
+        "shortDesc": "단일 적에게 소량의 허수 속성 피해를 가하고 총 3회 바운스한다. 일정 확률로 해당 적에게 <color=#f29e38ff>감속 상태를 부여</color>한다"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "유사 블랙홀",
+        "fullDesc": "모든 적에게 웰트 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 허수 속성 피해를 주고 <unbreak>#3[i]%</unbreak>의 <u>기본 확률</u>로 피격된 적을 속박 상태에 빠트린다. 지속 시간: 1턴.\\n속박 상태에서 적의 <u>행동 게이지가 <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> 감소</u>하고, 속도가 <unbreak>#4[i]%</unbreak> 감소한다",
+        "shortDesc": "모든 적에게 허수 속성 피해를 가하고 <color=#f29e38ff>높은 확률로 속박 효과를 부여</color>한다"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "범위 제한",
+        "fullDesc": "비술 사용 후 <unbreak>#4[i]</unbreak>초 동안 지속되는 특수 영역을 하나 만든다. 특수 영역 안에 있는 적은 이동 속도가 <unbreak>#5[i]%</unbreak> 감소한다. 특수 영역 안에 있는 적은 전투 진입 후 <unbreak>#1[i]%</unbreak>의 <u>기본 확률</u>로 속박 상태에 빠진다. 지속 시간: 1턴.\\n속박 상태의 적은 <u>행동 게이지가 <unbreak>#2[i]%</unbreak> 감소</u>하고, 속도가 <unbreak>#3[i]%</unbreak> 감소한다. 아군이 만든 영역 효과는 최대 1개만 존재할 수 있다",
+        "shortDesc": "특수 영역을 만든다. 영역 내의 적은 이동 속도가 감소한다. 영역 내의 적과 전투에 진입하면 <color=#f29e38ff>높은 확률로 적을 속박 상태에 빠트린다</color>"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "공격",
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "setName": "Space Sealing Station",
+  "setEffects": {
+    "2": "Meningkatkan <unbreak>#1[i]%</unbreak> ATK pengguna. Meningkatkan <unbreak>#3[i]%</unbreak> ATK tambahan ketika SPD pengguna lebih dari atau sama dengan <unbreak>#2[i]</unbreak>."
+  }
+}

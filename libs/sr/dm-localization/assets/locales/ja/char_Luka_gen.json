@@ -1,0 +1,44 @@
+{
+  "name": "ルカ",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#れっちけん}裂地拳{RUBY_E#}",
+        "fullDesc": "指定した敵単体にルカの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "敵単体に少量の物理ダメージを与える。"
+      },
+      "1": {
+        "name": "{RUBY_B#れっちさいてんけん}裂地砕天拳{RUBY_E#}",
+        "fullDesc": "「闘志」を2層消費し、「裂地拳」で3段の攻撃を行う。1段の攻撃で指定した敵単体にルカの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与える。\\nそして「砕天拳」で1段の攻撃を行い、指定した敵単体にルカの攻撃力<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "「闘志」を2層消費し、敵単体に物理ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#れっそうけん}裂創拳{RUBY_E#}",
+        "fullDesc": "指定した敵単体にルカの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与え、<unbreak>#2[i]%</unbreak>の<u>基礎確率</u>で敵を裂創状態にする、<unbreak>#5[i]</unbreak>ターン継続。\\n裂創状態の敵はターンが回ってくるたびに、自身の最大HP<unbreak>#3[f1]%</unbreak>分の物理持続ダメージを受ける。このダメージは最大でルカの攻撃力の<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>を超えない。",
+        "shortDesc": "敵単体に物理ダメージを与え、高確率で敵を<color=#f29e38ff>裂創状態</color>にする。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#しょうり}勝利{RUBY_E#}の{RUBY_B#いちげき}一撃{RUBY_E#}",
+        "fullDesc": "「闘志」を<unbreak>#5[i]</unbreak>層獲得し、<unbreak>#2[i]%</unbreak>の<u>基礎確率</u>で指定した敵単体の被ダメージ+<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>、<unbreak>#4[i]</unbreak>ターン継続。その後、指定した敵単体にルカの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "「闘志」を<color=#f29e38ff><unbreak>#5[i]</unbreak></color>層獲得する。高確率で敵単体の被ダメージをアップし、大量の物理ダメージを与える。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#さき}先{RUBY_E#}を{RUBY_B#い}行{RUBY_E#}く{RUBY_B#もの}者{RUBY_E#}",
+        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にルカの攻撃力<unbreak>#1[i]%</unbreak>分の物理ダメージを与え、<unbreak>#2[i]%</unbreak>の<u>基礎確率</u>でその敵を、戦闘スキルが与えるものと同じ裂創状態にする。その後、ルカは「闘志」をさらに1層獲得する。",
+        "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に少量の物理ダメージを与え、高確率でその敵を<color=#f29e38ff>裂創状態</color>にする。その後、「闘志」をさらに1層獲得する。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+      }
+    }
+  }
+}

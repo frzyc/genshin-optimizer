@@ -1,0 +1,39 @@
+{
+  "name": "Welt",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Supresión de la gravedad",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Welt como Daño Imaginario a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Filo del vacío",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Welt como Daño Imaginario a un enemigo e inflige daño 2 veces más. Cada golpe inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Welt como Daño Imaginario a un enemigo al azar. Al acertar a un enemigo, hay una <u>probabilidad base</u> del <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de reducir la VEL del objetivo atacado en un <unbreak>#3[i]%</unbreak> durante <unbreak>#4[i]</unbreak> turnos.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo. Se dispara 3 veces y tiene una probabilidad de <color=#f29e38ff>causar Ralentización</color> al objetivo."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Agujero negro artificial",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Welt como Daño Imaginario a todos los enemigos y tiene una <u>probabilidad base</u> del <unbreak>#3[i]%</unbreak> de afectar con Prisión a los enemigos atacados durante 1 turno.\\nLas acciones de los enemigos aprisionados se <u>retrasan</u> un <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> y su VEL se reduce en un <unbreak>#4[i]%</unbreak>.",
+        "shortDesc": "Inflige Daño Imaginario a todos los enemigos y tiene una <color=#f29e38ff>gran probabilidad de aprisionarlos</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Prisión gravitacional",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que dura <unbreak>#4[i]</unbreak> s. La VEL de movimiento de los enemigos que estén en la zona especial se reduce en un <unbreak>#5[i]%</unbreak>. Tras entrar en combate con enemigos en la zona especial, tiene una <u>probabilidad base</u> del <unbreak>#1[i]%</unbreak> de afectarlos con Prisión durante 1 turno.\\nLas acciones de los enemigos aprisionados se <u>retrasan</u> un <unbreak>#2[i]%</unbreak> y su VEL se reduce en un <unbreak>#3[i]%</unbreak>. Solo puede haber 1 zona especial creada por los aliados a la vez.",
+        "shortDesc": "Crea una zona especial. La VEL de movimiento de los enemigos que estén en la zona se reduce. Al entrar en combate contra los enemigos en la zona, tiene una <color=#f29e38ff>gran probabilidad de afectarlos con Prisión</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

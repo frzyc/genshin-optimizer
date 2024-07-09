@@ -1,0 +1,6 @@
+{
+  "setName": "Sigonia, terre vierge désolée",
+  "setEffects": {
+    "2": "Augmente de <unbreak>#3[i]%</unbreak> les chances de coup critique du porteur. Les DGT critiques du porteur augmentent de <unbreak>#1[i]%</unbreak>, jusqu'à un maximum de <unbreak>#2[i]</unbreak> fois, lorsque des cibles ennemies sont éliminées."
+  }
+}

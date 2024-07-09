@@ -1,0 +1,39 @@
+{
+  "name": "Lynx",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ice Crampon Technique",
+        "fullDesc": "Deals Quantum DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of this character's Max HP to a single enemy.",
+        "shortDesc": "Deals minor Quantum DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Salted Camping Cans",
+        "fullDesc": "Applies \"Survival Response\" to a single target ally and increases their Max HP by <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> of Lynx's Max HP plus <color=#f29e38ff><unbreak>#2[i]</unbreak></color>. If the target ally is a character on the Path of Destruction or Preservation, the chance of them being attacked by enemies will greatly increase. \"Survival Response\" lasts for <unbreak>#3[i]</unbreak> turn(s).\\nRestores the target's HP by <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> of Lynx's Max HP plus <color=#f29e38ff><unbreak>#5[i]</unbreak></color>.",
+        "shortDesc": "Applies \"Survival Response\" to a single ally, <color=#f29e38ff>increases their Max HP</color>, and restores their HP."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Snowfield First Aid",
+        "fullDesc": "Dispels <unbreak>#1[i]</unbreak> <u>debuff(s)</u> from all allies and immediately restores their respective HP by an amount equal to <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> of Lynx's Max HP plus <color=#f29e38ff><unbreak>#3[i]</unbreak></color>.",
+        "shortDesc": "Dispels <color=#f29e38ff>1 <u>debuff</u> from all allies</color> and restores their HP."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Chocolate Energy Bar",
+        "fullDesc": "After Lynx uses her Technique, at the start of the next battle, all allies are granted her Talent's continuous healing effect, lasting for <unbreak>#1[i]</unbreak> turn(s).",
+        "shortDesc": "After this character uses her Technique, at the start of the next battle, all allies are granted a continuous healing effect."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+      }
+    }
+  }
+}

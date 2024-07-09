@@ -1,0 +1,39 @@
+{
+  "name": "Luocha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Espinas del abismo",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Luocha como Daño Imaginario a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Oración de la flor abisal",
+        "fullDesc": "Tras usar la habilidad básica, regenera a un aliado determinado una cantidad de PV equivalente al <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Luocha + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>. Luocha obtiene una acumulación de Flor abisal.\\nCuando cualquiera de los aliados tiene un porcentaje de PV igual o inferior al <unbreak>#3[i]%</unbreak>, Luocha le aplica una vez un efecto igual al de su habilidad básica y no consume pts. de habilidad básica. Este efecto se puede volver a activar después de <unbreak>#4[i]</unbreak> turnos.",
+        "shortDesc": "<color=#f29e38ff>Regenera</color> los PV de un aliado y obtiene una acumulación de Flor abisal."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Deseo de muerte",
+        "fullDesc": "Elimina <unbreak>#2[i]</unbreak> <u>efecto positivo</u> de todos los enemigos y les inflige un Daño Imaginario equivalente al <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Luocha. Además, Luocha obtiene 1 acumulación de Flor abisal.",
+        "shortDesc": "<color=#f29e38ff>Elimina</color> 1 <color=#f29e38ff><u>efecto positivo</u></color> de todos los enemigos y les inflige Daño Imaginario. Obtiene 1 acumulación de Flor abisal."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Compasión del necio",
+        "fullDesc": "Tras usar la técnica, el talento se activa inmediatamente al comenzar la siguiente batalla.",
+        "shortDesc": "Al usar la técnica, el talento se activa inmediatamente en la siguiente batalla."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Hun Đúc Ký Ức Thời Gian",
+  "passive": {
+    "name": "Kết Tinh",
+    "description": "Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Chính Xác Hiệu Ứng của người trang bị. Khi người trang bị gây sát thương cho kẻ địch đang trong trạng thái Bào Mòn, Thiêu Đốt, Sốc Điện, Chảy Máu, sẽ lần lượt nhận 1 tầng Tiên Tri, tối đa cộng dồn <unbreak>#4[i]</unbreak> tầng. Trong 1 trận đấu, mỗi loại trạng thái Sát Thương Duy Trì chỉ có thể cộng dồn hiệu ứng Tiên Tri 1 lần. Mỗi tầng Tiên Tri tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Tấn Công của người trang bị, Sát Thương Duy Trì gây ra bỏ qua <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> Phòng Thủ của mục tiêu."
+  }
+}

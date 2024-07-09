@@ -1,0 +1,7 @@
+{
+  "name": "Indelible Promise",
+  "passive": {
+    "name": "Inheritance",
+    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Break Effect pengguna. Saat pengguna melancarkan Ultimate, CRIT Rate meningkat <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, berlangsung selama <unbreak>#3[i]</unbreak> giliran."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "Champion of Streetwise Boxing",
+  "setEffects": {
+    "2": "DMG กายภาพเพิ่มขึ้น <unbreak>#1[i]%</unbreak>",
+    "4": "หลังจากที่ผู้สวมใส่ทำการโจมตีหรือถูกโจมตี ATK ของผู้ที่อยู่ในการต่อสู้จะเพิ่มขึ้น <unbreak>#1[i]%</unbreak> ซึ่งสามารถซ้อนทับได้สูงสุด <unbreak>#2[i]</unbreak> ชั้น"
+  }
+}

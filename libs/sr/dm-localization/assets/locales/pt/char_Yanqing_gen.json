@@ -1,0 +1,39 @@
+{
+  "name": "Yanqing",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Espinho Congelado",
+        "fullDesc": "Causa Dano de Gelo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Yanqing a um único inimigo.",
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Espinho de Ferro Veloz",
+        "fullDesc": "Causa Dano de Gelo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Yanqing a um único inimigo e ativa a Sincronia d'Alma de Ferro por 1 rodada.",
+        "shortDesc": "Causa Dano de Gelo a um único inimigo e ativa a Sincronia d'Alma de Ferro."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Em Meio à Chuva de Bênçãos",
+        "fullDesc": "Aumenta a Chance de CRIT de Yanqing em <unbreak>#1[i]%</unbreak>. Quando a Sincronia d'Alma de Ferro está ativa, aumenta o Dano CRIT de Yanqing em mais <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Essa <u>melhoria</u> dura por uma rodada. Depois, causa Dano de Gelo igual a <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> do ATQ de Yanqing a um único inimigo.",
+        "shortDesc": "Aumenta a Chance de CRIT de Yanqing. Aprimora a Sincronia d'Alma de Ferro e causa Dano de Gelo massivo a um único inimigo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "A Verdadeira Espada",
+        "fullDesc": "Após usar sua Técnica, no início da próxima batalha, Yanqing causa <unbreak>#2[i]%</unbreak> a mais de Dano por <unbreak>#3[i]</unbreak> rodada(s) a inimigos que, no momento, têm PV igual ou superior a <unbreak>#1[i]%</unbreak>.",
+        "shortDesc": "Depois que este personagem usa sua Técnica, no início da próxima batalha, aumenta o Dano causado por este personagem a inimigos-alvo com PV em <unbreak>50%</unbreak> ou mais."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+      }
+    }
+  }
+}

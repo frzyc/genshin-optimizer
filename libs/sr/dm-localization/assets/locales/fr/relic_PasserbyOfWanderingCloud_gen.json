@@ -1,0 +1,7 @@
+{
+  "setName": "Vagabond foulenuage",
+  "setEffects": {
+    "2": "Augmente les soins prodigués de <unbreak>#1[i]%</unbreak>.",
+    "4": "Récupère immédiatement 1 point de compétence en début de combat."
+  }
+}

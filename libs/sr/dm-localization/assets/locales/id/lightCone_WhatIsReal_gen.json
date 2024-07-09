@@ -1,0 +1,7 @@
+{
+  "name": "What Is Real?",
+  "passive": {
+    "name": "Hypothesis",
+    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Break Effect pengguna. Setelah melancarkan Basic Attack, pengguna akan memulihkan HP diri sendiri sebesar <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> Max HP + <unbreak>#3[i]</unbreak>."
+  }
+}

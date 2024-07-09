@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#しゅんすい}春水{RUBY_E#}に{RUBY_B#しょせい}初生{RUBY_E#}する",
+  "passive": {
+    "name": "{RUBY_B#よかん}余寒{RUBY_E#}を{RUBY_B#はら}払{RUBY_E#}いのけ",
+    "description": "戦闘に入った後、装備キャラの速度+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>、与ダメージ+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。この効果は装備キャラがダメージを受けた後に失効し、装備キャラの次のターンが終了した時に再度効力を発生する。"
+  }
+}

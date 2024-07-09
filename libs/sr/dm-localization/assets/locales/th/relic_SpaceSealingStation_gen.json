@@ -1,0 +1,6 @@
+{
+  "setName": "Space Sealing Station",
+  "setEffects": {
+    "2": "ATK ของผู้สวมใส่เพิ่มขึ้น <unbreak>#1[i]%</unbreak> เมื่อความเร็วของผู้สวมใส่เท่ากับหรือมากกว่า <unbreak>#2[i]</unbreak> ATK จะเพิ่มขึ้นอีก <unbreak>#3[i]%</unbreak>"
+  }
+}

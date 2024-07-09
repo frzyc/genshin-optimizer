@@ -1,0 +1,7 @@
+{
+  "setName": "Pistolera de la espiga silvestre",
+  "setEffects": {
+    "2": "ATQ +<unbreak>#1[i]%</unbreak>.",
+    "4": "La VEL del portador aumenta en un <unbreak>#1[i]%</unbreak> y el daño de sus ATQ básicos aumenta en un <unbreak>#2[i]%</unbreak>."
+  }
+}

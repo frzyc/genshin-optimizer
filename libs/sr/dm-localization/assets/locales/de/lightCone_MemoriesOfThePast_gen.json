@@ -1,0 +1,7 @@
+{
+  "name": "Erinnerungen an die Vergangenheit",
+  "passive": {
+    "name": "Altes Foto",
+    "description": "Erhöht den Brucheffekt des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Nach dem Angriff werden zusätzlich <color=#f29e38ff><unbreak>#2[i]</unbreak></color> Pkt. Energie wiederhergestellt. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden."
+  }
+}

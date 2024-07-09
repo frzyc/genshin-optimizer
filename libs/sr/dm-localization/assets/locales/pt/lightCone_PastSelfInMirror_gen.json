@@ -1,0 +1,7 @@
+{
+  "name": "Meu Passado no Espelho",
+  "passive": {
+    "name": "A Fragrância de Ameixa em Meus Ossos",
+    "description": "Aumenta o Efeito de Quebra do usuário em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Quando o usuário utiliza sua Perícia Suprema, aumenta o Dano de todos os aliados em <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, durando por <unbreak>#3[i]</unbreak> rodada(s). Se o Efeito de Quebra for igual ou maior a <unbreak>#4[i]%</unbreak>, 1 Ponto de Perícia será recuperado.\\nNo início de cada onda, todos os aliados regeneram <color=#f29e38ff><unbreak>#5[f1]</unbreak></color> de Energia imediatamente. Os efeitos do mesmo tipo não podem ser acumulados."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "纯粹思维的洗礼",
+  "passive": {
+    "name": "思想训练",
+    "description": "使装备者的暴击伤害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。敌方目标每承受1个负面效果，装备者对其造成的暴击伤害额外提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，最多叠加<unbreak>#3[i]</unbreak>层。施放终结技攻击敌方目标时，使装备者获得【论辩】效果，造成的伤害提高<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>，追加攻击无视目标<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>的防御力，该效果持续<unbreak>#6[i]</unbreak>回合。"
+  }
+}

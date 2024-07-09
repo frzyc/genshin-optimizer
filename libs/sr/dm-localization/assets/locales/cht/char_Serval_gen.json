@@ -1,0 +1,39 @@
+{
+  "name": "希露瓦",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "雷鳴音階",
+        "fullDesc": "對指定敵方單體造成等同於希露瓦<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的雷屬性傷害。",
+        "shortDesc": "對敵方單體造成少量雷屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "電光石火間",
+        "fullDesc": "對指定敵方單體造成等同於希露瓦<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的雷屬性傷害，同時對其相鄰目標造成等同於希露瓦<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻擊力的雷屬性傷害，此外有<unbreak>#3[i]%</unbreak>的<u>基礎機率</u>使受到攻擊的敵方目標陷入觸電狀態，持續<unbreak>#4[i]</unbreak>回合。\\n觸電狀態下，敵方目標每回合開始時受到等同於希露瓦<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>攻擊力的雷屬性持續傷害。",
+        "shortDesc": "對敵方單體及其相鄰目標造成少量雷屬性傷害，有高機率對目標<color=#f29e38ff>施加觸電狀態</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "機械熱潮登場！",
+        "fullDesc": "對全體造成等同於希露瓦<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的雷屬性傷害，並使觸電狀態下的敵方目標延長<unbreak>#2[i]</unbreak>回合的觸電狀態。",
+        "shortDesc": "對敵方全體造成雷屬性傷害，並延長目標觸電狀態的持續時間。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "晚安，貝洛伯格",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方隨機單體造成等同於希露瓦<unbreak>#4[i]%</unbreak>攻擊力的雷屬性傷害，同時有<unbreak>#1[i]%</unbreak>的<u>基礎機率</u>使敵方每個單體目標陷入觸電狀態，持續<unbreak>#3[i]</unbreak>回合。\\n觸電狀態下，敵方目標每回合開始時受到等同於希露瓦<unbreak>#2[i]%</unbreak>攻擊力的雷屬性持續傷害。",
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方隨機單體造成少量雷屬性傷害，並有高機率使敵方每個單體目標<color=#f29e38ff>陷入觸電狀態</color>。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

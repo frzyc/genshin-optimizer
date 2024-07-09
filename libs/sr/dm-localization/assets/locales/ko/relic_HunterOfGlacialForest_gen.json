@@ -1,0 +1,7 @@
+{
+  "setName": "혹한 밀림의 사냥꾼",
+  "setEffects": {
+    "2": "얼음 속성 피해 <unbreak>#1[i]%</unbreak> 증가",
+    "4": "장착한 캐릭터는 필살기 발동 시 치명타 피해가 <unbreak>#1[i]%</unbreak> 증가한다. 지속 시간: <unbreak>#2[i]</unbreak>턴"
+  }
+}

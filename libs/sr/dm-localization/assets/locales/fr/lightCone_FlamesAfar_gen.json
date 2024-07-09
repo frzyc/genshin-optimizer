@@ -1,0 +1,7 @@
+{
+  "name": "Flammes lointaines",
+  "passive": {
+    "name": "Déflagration",
+    "description": "Lorsque le porteur perd un montant de PV supérieur à <unbreak>#1[i]%</unbreak> de ses PV max en une attaque, ou qu'il consomme un montant de PV supérieur à <unbreak>#1[i]%</unbreak> de ses PV max, soigne immédiatement un montant de PV équivalent à <unbreak>#3[i]%</unbreak> de ses PV max en plus d'augmenter de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> les DGT qu'il inflige pendant <unbreak>#4[i]</unbreak> tours. Cet effet ne peut être activé qu'une seule fois tous les <unbreak>#5[i]</unbreak> tours."
+  }
+}

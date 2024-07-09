@@ -1,0 +1,39 @@
+{
+  "name": "Bailu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Diagnostic Kick",
+        "fullDesc": "Deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Bailu's ATK to a single enemy.",
+        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Singing Among Clouds",
+        "fullDesc": "Heals a single ally for <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> of Bailu's Max HP plus <color=#f29e38ff><unbreak>#2[i]</unbreak></color>. Bailu then heals random allies <unbreak>#4[i]</unbreak> time(s). After each healing, HP restored from the next healing is reduced by <unbreak>#3[i]%</unbreak>.",
+        "shortDesc": "Restores HP for a single ally, then heals random allies."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Felicitous Thunderleap",
+        "fullDesc": "Heals all allies for <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> of Bailu's Max HP plus <color=#f29e38ff><unbreak>#2[i]</unbreak></color>.\\nBailu applies Invigoration to allies that are not already Invigorated. For those already Invigorated, Bailu extends the duration of their Invigoration by 1 turn.\\nThe effect of Invigoration can last for <unbreak>#3[i]</unbreak> turn(s). This effect cannot stack.",
+        "shortDesc": "Restores HP for all allies, and grants them Invigoration, or prolongs the duration of their Invigoration."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Saunter in the Rain",
+        "fullDesc": "After Technique is used, at the start of the next battle, all allies are granted Invigoration for <unbreak>#1[i]</unbreak> turn(s).",
+        "shortDesc": "After this character uses Technique, at the start of the next battle, all allies are granted Invigoration."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+      }
+    }
+  }
+}

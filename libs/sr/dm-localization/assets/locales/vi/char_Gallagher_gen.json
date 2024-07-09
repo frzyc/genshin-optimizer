@@ -1,0 +1,44 @@
+{
+  "name": "Gallagher",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Phí Mở Chai",
+        "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Gallagher.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch."
+      },
+      "1": {
+        "name": "Hoa Rượu Tuôn Trào",
+        "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Gallagher. Đồng thời giảm <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> Tấn Công của mục tiêu, duy trì <unbreak>#3[i]</unbreak> hiệp.",
+        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, và giảm Tấn Công của kẻ này."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Thức Uống Ủ Đặc Biệt",
+        "fullDesc": "Hồi phục ngay <color=#f29e38ff><unbreak>#1[i]</unbreak></color> HP cho 1 đồng đội chỉ định.",
+        "shortDesc": "Lập tức hồi phục HP cho 1 đồng đội phe ta."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Nghi Lễ Champagne",
+        "fullDesc": "Khiến toàn bộ phe địch rơi vào trạng thái \"Say Mèm\", duy trì <unbreak>#2[i]</unbreak> hiệp, đồng thời gây Sát Thương Hỏa cho toàn bộ phe địch bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Gallagher, và cường hóa Tấn Công Thường lần sau thành \"Hoa Rượu Tuôn Trào\".",
+        "shortDesc": "Khiến toàn bộ kẻ địch <color=#f29e38ff>rơi vào trạng thái \"Say Mèm\"</color>, đồng thời gây Sát Thương Hỏa cho toàn bộ kẻ địch. Tấn Công Thường lần sau cường hóa thành \"Hoa Rượu Tuôn Trào\"."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Rượu Ngọt Thủ Công",
+        "fullDesc": "Lập tức tấn công kẻ địch, sau khi vào chiến đấu khiến toàn thể phe địch rơi vào trạng thái Say Mèm, duy trì <unbreak>#1[i]</unbreak> hiệp, đồng thời gây Sát Thương Hỏa lên toàn bộ phe địch bằng <unbreak>#2[i]%</unbreak> Tấn Công của Gallagher.",
+        "shortDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ khiến toàn bộ phe địch <color=#f29e38ff>rơi vào trạng thái \"Say Mèm\"</color>, và gây lượng nhỏ Sát Thương Hỏa lên toàn bộ phe địch."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch."
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Yanqing",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Sương Giá Đầy Trời",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Yanqing.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Xuyên Ba Tấc Nước",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Yanqing, kèm thêm cho Yanqing Kiếm Khôn Hiểu Lòng Người, duy trì 1 hiệp.",
+        "shortDesc": "Gây Sát Thương Băng cho 1 kẻ địch, kèm thêm cho bản thân Kiếm Khôn Hiểu Lòng Người."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Chim Én Vỗ Mưa",
+        "fullDesc": "Tăng cho bản thân <unbreak>#1[i]%</unbreak> Tỷ Lệ Bạo Kích, nếu Yanqing đang ở hiệu ứng Kiếm Khôn Hiểu Lòng Người, sẽ giúp sát thương Bạo Kích của Yanqing tăng thêm <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, <u>hiệu ứng buff</u> duy trì 1 hiệp. Sau đó gây cho 1 kẻ địch chỉ định Sát Thương Băng bằng <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> Tấn Công của Yanqing.",
+        "shortDesc": "Tăng Tỷ Lệ Bạo Kích cho bản thân và cường hóa Kiếm Khôn Hiểu Lòng Người, gây lượng lớn Sát Thương Băng cho 1 kẻ địch."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ngự Kiếm Chân Quyết",
+        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu trận tiếp theo, sát thương Yanqing gây cho kẻ địch có Phần Trăm HP hiện tại lớn hơn hoặc bằng <unbreak>#1[i]%</unbreak> sẽ tăng <unbreak>#2[i]%</unbreak>, duy trì <unbreak>#3[i]</unbreak> hiệp.",
+        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu trận kế tiếp, sẽ tăng sát thương mà bản thân gây ra cho kẻ địch có Phần Trăm HP từ <unbreak>50%</unbreak> trở lên."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+      }
+    }
+  }
+}

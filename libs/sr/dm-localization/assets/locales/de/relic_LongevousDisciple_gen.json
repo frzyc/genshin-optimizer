@@ -1,0 +1,7 @@
+{
+  "setName": "Langlebige Jüngerin",
+  "setEffects": {
+    "2": "Erhöht die max. LP um <unbreak>#1[i]%</unbreak>.",
+    "4": "Wenn der Träger getroffen wird oder seine LP von einem Verbündeten verbraucht werden, wird seine KRIT-Rate für <unbreak>#2[i]</unbreak> Rd. um <unbreak>#1[i]%</unbreak> erhöht. Dieser Effekt ist bis zu <unbreak>#3[i]</unbreak>-fach stapelbar."
+  }
+}

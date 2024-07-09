@@ -1,0 +1,7 @@
+{
+  "name": "Rueda mecánica",
+  "passive": {
+    "name": "Triunfo rápido",
+    "description": "Tras atacar o recibir un golpe, el portador recupera <color=#f29e38ff><unbreak>#1[i]</unbreak></color> pts. de energía adicionales. Este efecto solo se puede activar una vez por turno."
+  }
+}

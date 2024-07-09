@@ -1,0 +1,44 @@
+{
+  "name": "Qingque",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Flower Pick",
+        "fullDesc": "Tosses 1 jade tile from the suit with the fewest tiles in hand to deal Quantum DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Qingque's ATK to a single enemy.",
+        "shortDesc": "Tosses a tile to deal minor Quantum DMG to a single enemy."
+      },
+      "1": {
+        "name": "Cherry on Top!",
+        "fullDesc": "Deals Quantum DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Qingque's ATK to a single enemy, and deals Quantum DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of Qingque's ATK to enemies adjacent to it.\\n\"Cherry on Top!\" cannot recover Skill Points.",
+        "shortDesc": "Deals Quantum DMG to a single enemy and minor Quantum DMG to enemies adjacent to it."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "A Scoop of Moon",
+        "fullDesc": "Immediately draws <unbreak>#1[i]</unbreak> jade tile(s) and increases DMG by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> until the end of the current turn. This effect can stack up to <unbreak>#3[i]</unbreak> time(s). The turn will not end after this Skill is used.",
+        "shortDesc": "<color=#f29e38ff>Draws tiles</color> and increases DMG dealt. <color=#f29e38ff>This turn does not end</color> after this action."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "A Quartet? Woo-hoo!",
+        "fullDesc": "Deals Quantum DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Qingque's ATK to all enemies, and obtains 4 jade tiles of the same suit.",
+        "shortDesc": "Deals Quantum DMG to all enemies, then obtains 4 tiles of the same suit."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Game Solitaire",
+        "fullDesc": "After using Technique, Qingque draws <unbreak>#1[i]</unbreak> jade tile(s) when the battle starts.",
+        "shortDesc": "After they use their Technique, draw tile(s) at the start of the next battle."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+      }
+    }
+  }
+}

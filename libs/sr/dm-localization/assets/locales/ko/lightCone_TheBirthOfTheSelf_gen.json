@@ -1,0 +1,7 @@
+{
+  "name": "「나」의 탄생",
+  "passive": {
+    "name": "그림 속 소녀",
+    "description": "장착한 캐릭터의 추가 공격으로 가하는 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 해당 적의 현재 HP 백분율이 <unbreak>#2[i]%</unbreak> 이하일 경우, 추가 공격으로 가하는 피해가 추가로 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> 증가한다"
+  }
+}

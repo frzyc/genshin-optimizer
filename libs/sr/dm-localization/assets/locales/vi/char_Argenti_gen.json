@@ -1,0 +1,44 @@
+{
+  "name": "Argenti",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Hương Thơm Bay Xa",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Argenti.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Công Lý, Nở Rộ Từ Đây",
+        "fullDesc": "Gây Sát Thương Vật Lý cho toàn bộ kẻ địch tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Argenti.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý lên toàn bộ địch."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Khu Vườn Ban Tặng Cái Đẹp",
+        "fullDesc": "Tiêu hao <unbreak>#2[i]</unbreak> điểm Năng Lượng, gây Sát Thương Vật Lý cho toàn bộ kẻ địch tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Argenti.",
+        "shortDesc": "Tiêu hao <color=#f29e38ff><unbreak>#2[i]</unbreak></color> Năng Lượng, gây Sát Thương Vật Lý lên toàn bộ địch."
+      },
+      "1": {
+        "name": "Ở Vườn Của Ta, Trao Tặng Công Đức",
+        "fullDesc": "Tiêu hao <unbreak>#4[i]</unbreak> điểm Năng Lượng, gây Sát Thương Vật Lý lên toàn bộ địch tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Argenti, đồng thời gây thêm <unbreak>#2[i]</unbreak> lần sát thương, mỗi lần sát thương gây ra Sát Thương Vật Lý lên 1 kẻ địch ngẫu nhiên tương đương <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> Tấn Công của Argenti.",
+        "shortDesc": "Tiêu hao <color=#f29e38ff><unbreak>#4[i]</unbreak></color> Năng Lượng, gây Sát Thương Vật Lý lên toàn bộ địch, đồng thời gây thêm lượng nhỏ Sát Thương Vật Lý lên 1 kẻ địch ngẫu nhiên, tổng cộng Nảy Bật 6 lần."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Tuyên Ngôn Thuần Khiết",
+        "fullDesc": "Sau khi dùng Bí Kỹ, khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Choáng <unbreak>#1[i]</unbreak> giây, kẻ địch ở trạng thái Choáng sẽ không chủ động tấn công mục tiêu phe ta.\\nNếu chủ động tấn công kẻ địch ở trạng thái Choáng, khi vào chiến đấu, sẽ gây Sát Thương Vật Lý lên toàn bộ địch tương đương <unbreak>#2[i]%</unbreak> Tấn Công của Argenti, đồng thời khiến Argenti hồi <unbreak>#3[i]</unbreak> điểm Năng Lượng.",
+        "shortDesc": "Khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Choáng. Tấn công kẻ địch đang ở trạng thái Choáng, vào chiến đấu sẽ gây lượng nhỏ Sát Thương Vật Lý lên toàn bộ địch, Argenti hồi Năng Lượng."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm sức bền thuộc tính tương ứng của kẻ địch."
+      }
+    }
+  }
+}

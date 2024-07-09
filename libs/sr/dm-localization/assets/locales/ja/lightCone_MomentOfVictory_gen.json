@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#しょうり}勝利{RUBY_E#}の{RUBY_B#せつな}刹那{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#けつだん}決断{RUBY_E#}",
+    "description": "装備キャラの防御力+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>、効果命中+<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>。自身が攻撃を受ける確率がアップする。装備キャラが攻撃を受けた後、さらに防御力+<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>、効果は自身のターンが終了するまで継続。"
+  }
+}

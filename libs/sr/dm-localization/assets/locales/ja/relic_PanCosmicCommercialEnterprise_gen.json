@@ -1,0 +1,6 @@
+{
+  "setName": "汎銀河商事会社",
+  "setEffects": {
+    "2": "装備キャラの効果命中+<unbreak>#1[i]%</unbreak>。装備キャラの攻撃力が、現在の効果命中<unbreak>#2[i]%</unbreak>分アップ、最大で+<unbreak>#3[i]%</unbreak>。"
+  }
+}

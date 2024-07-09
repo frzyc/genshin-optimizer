@@ -1,0 +1,7 @@
+{
+  "setName": "Band des knisternden Donners",
+  "setEffects": {
+    "2": "Erhöht Blitz-SCH um <unbreak>#1[i]%</unbreak>.",
+    "4": "Erhöht beim Einsatz der Fertigkeit den ANG des Trägers für <unbreak>#2[i]</unbreak> Rd. um <unbreak>#1[i]%</unbreak>."
+  }
+}

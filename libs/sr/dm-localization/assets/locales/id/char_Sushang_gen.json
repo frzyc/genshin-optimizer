@@ -1,0 +1,39 @@
+{
+  "name": "Sushang",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Cloudfencer Art: Starshine",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Sushang pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Cloudfencer Art: Mountainfall",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Sushang pada 1 target musuh. Setelah serangan terakhir, memiliki <unbreak>#3[i]%</unbreak> peluang untuk melancarkan \"Sword Stance\", mengakibatkan Physical <u>DMG tambahan</u> sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ATK Sushang pada target.\\nJika target tersebut dalam <u>status Weakness Break</u>, maka dijamin akan melancarkan \"Sword Stance\".",
+        "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh dan memiliki <color=#f29e38ff>peluang kecil untuk melancarkan \"Sword Stance\"</color>. Jika target dalam <u>status Weakness Break</u>, maka <color=#f29e38ff>dijamin akan melancarkan \"Sword Stance\"</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Shape of Taixu: Dawn Herald",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Sushang pada 1 target musuh dan membuat Sushang segera beraksi lagi. Selain itu, ATK Sushang meningkat <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>. Saat melancarkan Skill, akan ada 2 kesempatan tambahan untuk memicu \"Sword Stance\", berlangsung selama <unbreak>#2[i]</unbreak> giliran.\\n\"Sword Stance\" yang dilancarkan dari kesempatan tambahan akan mengakibatkan DMG sebesar <unbreak>#3[i]%</unbreak> dari DMG awal.",
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah besar pada 1 musuh, meningkatkan efek \"Sword Stance\", dan <color=#f29e38ff>segera beraksi</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Cloudfencer Art: Warcry",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Physical DMG sebesar <unbreak>#1[i]%</unbreak> ATK Sushang pada seluruh musuh.",
+        "shortDesc": "Menyerang musuh dan mengakibatkan Physical DMG dalam jumlah kecil pada seluruh musuh setelah memasuki pertempuran."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+      }
+    }
+  }
+}

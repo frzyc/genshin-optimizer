@@ -1,0 +1,7 @@
+{
+  "setName": "Banda del trueno crepitante",
+  "setEffects": {
+    "2": "Daño de Rayo +<unbreak>#1[i]%</unbreak>.",
+    "4": "Cuando el portador utiliza la habilidad básica, su ATQ aumenta en un <unbreak>#1[i]%</unbreak> durante <unbreak>#2[i]</unbreak> turno."
+  }
+}

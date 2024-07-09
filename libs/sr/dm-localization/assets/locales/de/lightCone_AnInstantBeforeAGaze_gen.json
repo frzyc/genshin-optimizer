@@ -1,0 +1,7 @@
+{
+  "name": "Ein unvergesslicher Augenblick",
+  "passive": {
+    "name": "Ritterreise",
+    "description": "Erhöht den KRIT-SCH des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Erhöht beim Einsatz des Ultimates den vom Träger verursachten SCH basierend auf seiner max. Energie: Jeder Pkt. Energie erhöht den SCH um <color=#f29e38ff><unbreak>#2[f2]%</unbreak></color>, bis max. <unbreak>#3[i]</unbreak> Pkt."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "В ночи",
+  "passive": {
+    "name": "Цветы и бабочки",
+    "description": "Крит. шанс владельца повышается на <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Если скорость владельца во время боя выше <unbreak>100</unbreak>, за каждые доп. <unbreak>#2[i]</unbreak> ед. скорости урон базовой атаки и урон навыка владельца повышается на <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>, а крит. урон сверхспособности - на <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>. Этот эффект может складываться до <unbreak>#5[i]</unbreak> раз."
+  }
+}

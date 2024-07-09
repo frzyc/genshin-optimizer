@@ -1,0 +1,39 @@
+{
+  "name": "Serval",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Roaring Thunderclap",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Serval pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lightning Flash",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Serval pada 1 target musuh, dan di saat bersamaan mengakibatkan Lightning DMG sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ATK Serval pada musuh di sekitar target. Selain itu, target musuh yang terkena serangan memiliki <unbreak>#3[i]%</unbreak> <u>peluang dasar</u> untuk memasuki status Shock selama <unbreak>#4[i]</unbreak> giliran.\\nSelama dalam status Shock, target musuh akan menerima Lightning DoT sebesar <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> ATK Serval setiap gilirannya dimulai.",
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil terhadap 1 musuh dan target di sekitarnya, dan berpeluang besar <color=#f29e38ff>menambahkan status Shock</color> pada target."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Here Comes the Mechanical Fever",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Serval pada seluruh musuh, dan menambah durasi status Shock musuh selama <unbreak>#2[i]</unbreak> giliran.",
+        "shortDesc": "Mengakibatkan Lightning DMG pada seluruh musuh dan memperpanjang durasi status Shock musuh."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Good Night, Belobog",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Lightning DMG sebesar <unbreak>#4[i]%</unbreak> ATK Serval pada musuh secara acak, dan di saat bersamaan memiliki <unbreak>#1[i]%</unbreak> <u>peluang dasar</u> untuk membuat setiap target musuh memasuki status Shock selama <unbreak>#3[i]</unbreak> giliran.\\nDalam status Shock, target musuh akan menerima Lightning DoT sebesar <unbreak>#2[i]%</unbreak> ATK Serval setiap gilirannya dimulai.",
+        "shortDesc": "Menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Lightning DMG dalam jumlah kecil pada musuh secara acak, dan berpeluang besar membuat setiap target musuh <color=#f29e38ff>memasuki status Shock</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+      }
+    }
+  }
+}

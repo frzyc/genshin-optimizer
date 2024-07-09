@@ -1,0 +1,38 @@
+{
+  "name": "Herta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "What Are You Looking At?",
+        "fullDesc": "สร้าง DMG น้ำแข็ง <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Herta แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "สร้าง DMG น้ำแข็งเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "One-Time Offer",
+        "fullDesc": "สร้าง DMG น้ำแข็ง <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Herta แก่ศัตรูทั้งหมด หากเปอร์เซ็นต์ HP ปัจจุบันของศัตรูเป้าหมายเท่ากับหรือมากกว่า <unbreak>#2[i]%</unbreak> จะสร้าง DMG เพิ่มขึ้น <unbreak>#3[i]%</unbreak> ให้กับเป้าหมายดังกล่าว",
+        "shortDesc": "สร้าง DMG น้ำแข็งเล็กน้อยแก่ฝ่ายศัตรูทั้งหมด และสร้าง DMG แก่เป้าหมายที่มี HP ค่อนข้างสูงเพิ่มขึ้น"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "It's Magic, I Added Some Magic",
+        "fullDesc": "สร้าง DMG น้ำแข็ง <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Herta แก่ศัตรูทั้งหมด",
+        "shortDesc": "สร้าง DMG น้ำแข็งแก่ฝ่ายศัตรูทั้งหมด"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "It Can Still Be Optimized",
+        "fullDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป ATK ของ Herta จะเพิ่มขึ้น <unbreak>#1[i]%</unbreak> เป็นเวลา <unbreak>#2[i]</unbreak> เทิร์น"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย"
+      }
+    }
+  }
+}

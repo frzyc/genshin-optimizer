@@ -1,0 +1,7 @@
+{
+  "name": "O Dia em que o Cosmos Caiu",
+  "passive": {
+    "name": "Artimanha",
+    "description": "Aumenta o ATQ do usuário em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Quando o usuário usa um ataque e pelo menos 2 inimigos atacados possuem a Fraqueza correspondente, o Dano CRIT do usuário é aumentado em <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, durando por <unbreak>#3[i]</unbreak> rodada(s)."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "雪衣",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "破魔錐",
+        "fullDesc": "對指定敵方單體造成等同於雪衣<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的量子屬性傷害。",
+        "shortDesc": "對敵方單體造成少量量子屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "攝伏諸惡",
+        "fullDesc": "對指定敵方單體造成等同於雪衣<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的量子屬性傷害，同時對其相鄰目標造成等同於雪衣<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻擊力的量子屬性傷害。",
+        "shortDesc": "對敵方單體造成量子屬性傷害，對相鄰目標造成少量量子屬性傷害。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "天罰貫身",
+        "fullDesc": "對指定敵方單體造成等同於雪衣<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的量子屬性傷害，本次攻擊無視弱點屬性削減敵方單體的韌性。擊破弱點時，觸發量子屬性的弱點擊破效果。\\n在本次攻擊中，削減的韌性越多，造成的傷害越高，最多提高<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>。",
+        "shortDesc": "對敵方單體造成大量量子屬性傷害，本次攻擊<color=#f29e38ff>無視弱點屬性</color>削減敵方單體的韌性，削減的韌性越多，造成的傷害越高。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "斬立決",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方全體造成等同於雪衣<unbreak>#1[i]%</unbreak>攻擊力的量子屬性傷害。",
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方全體造成少量量子屬性傷害。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

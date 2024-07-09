@@ -1,0 +1,6 @@
+{
+  "setName": "Inert Salsotto",
+  "setEffects": {
+    "2": "Meningkatkan <unbreak>#1[i]%</unbreak> CRIT Rate pengguna. Meningkatkan <unbreak>#3[i]%</unbreak> DMG Ultimate dan Serangan Lanjutan ketika CRIT Rate pengguna saat ini lebih dari atau sama dengan <unbreak>#2[i]%</unbreak>."
+  }
+}

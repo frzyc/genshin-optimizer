@@ -1,0 +1,39 @@
+{
+  "name": "Gepard",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Fist of Conviction",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Gepard pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Daunting Smite",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Gepard pada 1 target musuh. Di saat bersamaan, target musuh yang terkena serangan memiliki <unbreak>#2[i]%</unbreak> <u>peluang dasar</u> untuk memasuki status Frozen selama <unbreak>#3[i]</unbreak> giliran.\\nSelama dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima <u>Ice DMG tambahan</u> sebesar <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> ATK Gepard setiap gilirannya dimulai.",
+        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh dan <color=#f29e38ff>berpeluang untuk memberikan status Frozen pada target</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Enduring Bulwark",
+        "fullDesc": "Memberikan Shield yang dapat menahan DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> DEF Gepard +<color=#f29e38ff><unbreak>#3[i]</unbreak></color> pada seluruh rekan tim selama <unbreak>#2[i]</unbreak> giliran.",
+        "shortDesc": "<color=#f29e38ff>Memberikan Shield</color> pada seluruh rekan tim."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Comradery",
+        "fullDesc": "Setelah menggunakan Technique, saat pertempuran selanjutnya dimulai, akan memberikan Shield yang dapat menahan DMG sebesar <unbreak>#1[i]%</unbreak> DEF Gepard + <unbreak>#3[i]</unbreak> kepada seluruh rekan selama <unbreak>#2[i]</unbreak> giliran.",
+        "shortDesc": "Setelah menggunakan Technique, seluruh rekan tim memperoleh Shield saat pertempuran selanjutnya dimulai."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+      }
+    }
+  }
+}

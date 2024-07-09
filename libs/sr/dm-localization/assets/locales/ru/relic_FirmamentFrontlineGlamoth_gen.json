@@ -1,0 +1,6 @@
+{
+  "setName": "Небесный фронт Глатирамер",
+  "setEffects": {
+    "2": "Повышает силу атаки владельца на <unbreak>#1[i]%</unbreak>. Если скорость владельца выше или равна <unbreak>#2[i]</unbreak>/<unbreak>#3[i]</unbreak> ед., то наносимый им урон повышается на <unbreak>#4[i]%</unbreak>/<unbreak>#5[i]%</unbreak>."
+  }
+}

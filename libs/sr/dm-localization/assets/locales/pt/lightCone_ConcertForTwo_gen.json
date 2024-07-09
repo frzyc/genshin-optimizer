@@ -1,0 +1,7 @@
+{
+  "name": "Concerto para Dois",
+  "passive": {
+    "name": "Inspirar",
+    "description": "Aumenta a DEF do usuário em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Para cada personagem com um Escudo em campo, o Dano causado pelo usuário aumenta em <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Planetary Rendezvous",
+  "passive": {
+    "name": "Departure",
+    "description": "After entering battle, if an ally deals the same DMG Type as the wearer, DMG dealt increases by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+  }
+}

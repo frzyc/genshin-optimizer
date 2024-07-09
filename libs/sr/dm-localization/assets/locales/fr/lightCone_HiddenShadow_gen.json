@@ -1,0 +1,7 @@
+{
+  "name": "Ombre cachée",
+  "passive": {
+    "name": "Mécanisme",
+    "description": "Après avoir utilisé sa compétence, la prochaine ATQ normale du porteur inflige des DGT additionnels équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de son ATQ à la cible ennemie."
+  }
+}

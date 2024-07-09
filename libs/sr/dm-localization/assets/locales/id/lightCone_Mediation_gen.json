@@ -1,0 +1,7 @@
+{
+  "name": "Mediation",
+  "passive": {
+    "name": "Family",
+    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]</unbreak></color> SPD seluruh rekan tim selama <unbreak>#2[i]</unbreak> giliran saat memasuki pertempuran."
+  }
+}

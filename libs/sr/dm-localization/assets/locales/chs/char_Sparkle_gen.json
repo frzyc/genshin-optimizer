@@ -1,0 +1,39 @@
+{
+  "name": "花火",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "独角戏",
+        "fullDesc": "对指定敌方单体造成等同于花火<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的量子属性伤害。",
+        "shortDesc": "对敌方单体造成少量量子属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "梦游鱼",
+        "fullDesc": "使指定我方单体的暴击伤害提高，提高数值等同于花火<color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>暴击伤害+<color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>，持续<unbreak>#3[i]</unbreak>回合，并使该目标行动提前<unbreak>#4[i]%</unbreak>。\\n当花火对自身施放该技能时，无法触发行动提前效果。",
+        "shortDesc": "使我方单体<color=#f29e38ff>暴击伤害</color>提高，并使该目标行动提前。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "一人千役",
+        "fullDesc": "为我方恢复<unbreak>#2[i]</unbreak>个战技点，并使我方全体获得【谜诡】。持有【谜诡】的我方目标触发花火天赋造成的伤害提高效果每层额外提高<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>，持续<unbreak>#4[i]</unbreak>回合。",
+        "shortDesc": "为我方恢复<color=#f29e38ff>战技点</color>，使触发花火天赋的伤害提高效果额外提高。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "不可靠叙事者",
+        "fullDesc": "使用秘技后，我方全体进入持续<unbreak>#2[i]</unbreak>秒的【迷误】状态。【迷误】状态下不会被敌人发现。【迷误】状态期间进入战斗时为我方恢复<unbreak>#1[i]</unbreak>个战技点。",
+        "shortDesc": "使用秘技后，我方全体进入【迷误】状态。【迷误】状态下不会被敌人发现。【迷误】状态期间进入战斗时为我方恢复<color=#f29e38ff>战技点</color>。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

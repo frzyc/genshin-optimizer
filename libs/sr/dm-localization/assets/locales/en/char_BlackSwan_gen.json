@@ -1,0 +1,39 @@
+{
+  "name": "Black Swan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Percipience, Silent Dawn",
+        "fullDesc": "Deals Wind DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Black Swan's ATK to a single target enemy, with a <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> <u>base chance</u> of inflicting 1 stack of <u>Arcana</u> on the target. Additionally, when attacking a target that suffers Wind Shear, Bleed, Burn, or Shock, there is respectively a <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> <u>base chance</u> of inflicting 1 extra stack of <u>Arcana</u> on the target.",
+        "shortDesc": "Deals minor Wind DMG to a single enemy and has a chance of applying <u>Arcana</u> to the target. After attacking a target that suffers <color=#f29e38ff>Wind Shear, Bleed, Burn, or Shock</color>, there is respectively a chance of <color=#f29e38ff>additionally applying <u>Arcana</u></color>."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Decadence, False Twilight",
+        "fullDesc": "Deals Wind DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Black Swan's ATK to a single target enemy and any adjacent targets. At the same time, there is a <unbreak>#2[i]%</unbreak> <u>base chance</u> of inflicting 1 stack of <u>Arcana</u> on the target enemy and the adjacent targets. Additionally, there is a <unbreak>#3[i]%</unbreak> <u>base chance</u> of reducing the DEF of the target enemy and the adjacent targets by <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color>, lasting for <unbreak>#5[i]</unbreak> turn(s).",
+        "shortDesc": "Deals minor Wind DMG to a single enemy target and any adjacent targets, with a high chance of <color=#f29e38ff>inflicting <u>Arcana</u></color> on the targets and lowering their DEF."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Bliss of Otherworld's Embrace",
+        "fullDesc": "Inflicts Epiphany on all enemies for <unbreak>#2[i]</unbreak> turn(s).\\nWhile afflicted with Epiphany, enemies take <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> increased DMG in their turn. Additionally, if enemies are also inflicted with <u>Arcana</u>, they are considered to be simultaneously afflicted with Wind Shear, Bleed, Burn, and Shock. After <u>Arcana</u> causes DMG at the start of each turn, its stacks are not reset. This non-reset effect of <u>Arcana</u> stacks can be triggered up to <unbreak>#4[i]</unbreak> time(s) for the duration of Epiphany. And the trigger count resets when Epiphany is applied again.\\nDeals Wind DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Black Swan's ATK to all enemies.",
+        "shortDesc": "Inflicts Epiphany on all enemies, increasing the DMG the targets take in their turn. Additionally, <color=#f29e38ff>having <u>Arcana</u> is regarded as having Wind Shear, Bleed, Burn, and Shock</color>. Furthermore, <u>Arcana</u> will not reset its stacks after causing DMG at the start of the next turn. Deals Wind DMG to all enemies."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "From Façade to Vérité",
+        "fullDesc": "After this Technique is used, there is a <unbreak>#1[i]%</unbreak> <u>base chance</u> for each enemy to be inflicted with 1 stack of <u>Arcana</u> at the start of the next battle. For each successful application of <u>Arcana</u> on a target, inflicts another stack of <u>Arcana</u> on the same target. This process repeats until <u>Arcana</u> fails to be inflicted on this target. For each successive application of <u>Arcana</u> on a target, its <u>base chance</u> of success is equal to <unbreak>#2[i]%</unbreak> of the <u>base chance</u> of the previous successful infliction of <u>Arcana</u> on that target.",
+        "shortDesc": "After this Technique is used, at the start of the next battle, there is a high chance for each enemy to be <color=#f29e38ff>inflicted with Arcana repeatedly until <u>Arcana</u> fails to be inflicted</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Inscreva-se Para Mais!",
+  "passive": {
+    "name": "Curta Antes de Sair!",
+    "description": "Aumenta em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> o Dano do ATQ Básico e da Perícia do usuário. Este efeito aumenta mais <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> quando o usuário estiver com o nível máximo de Energia."
+  }
+}

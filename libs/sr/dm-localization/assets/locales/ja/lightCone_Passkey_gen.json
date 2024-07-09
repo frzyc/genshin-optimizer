@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#れいけん}霊鍵{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#ごどう}悟道{RUBY_E#}",
+    "description": "装備キャラが戦闘スキルを発動した後、さらにEPを<color=#f29e38ff><unbreak>#1[i]</unbreak></color>回復する、この効果は1ターンに1回まで発動できる。"
+  }
+}

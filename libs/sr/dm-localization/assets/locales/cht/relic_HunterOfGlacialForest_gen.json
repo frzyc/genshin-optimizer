@@ -1,0 +1,7 @@
+{
+  "setName": "密林臥雪的獵人",
+  "setEffects": {
+    "2": "冰屬性傷害提高<unbreak>#1[i]%</unbreak>。",
+    "4": "當裝備者施放終結技時，暴擊傷害提高<unbreak>#1[i]%</unbreak>，持續<unbreak>#2[i]</unbreak>回合。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "침묵만이",
+  "passive": {
+    "name": "기록",
+    "description": "장착한 캐릭터의 공격력이 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 필드 위의 적이 2명 이하일 경우, 장착한 캐릭터의 치명타 확률이 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다"
+  }
+}

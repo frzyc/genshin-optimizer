@@ -1,0 +1,39 @@
+{
+  "name": "銀狼",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "|系統警告|",
+        "fullDesc": "對指定敵方單體造成等同於銀狼<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的量子屬性傷害。",
+        "shortDesc": "對敵方單體造成少量量子屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "是否允許更改？",
+        "fullDesc": "有<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>的<u>基礎機率</u>向指定敵方單體目標附加1個場上我方目標持有屬性的弱點，且該弱點對應屬性的抗性降低<unbreak>#4[i]%</unbreak>，持續<unbreak>#3[i]</unbreak>回合。若附加的是敵方目標原有屬性的弱點，則不會觸發對應屬性的抗性降低效果。\\n同一敵方目標僅能被銀狼附加1個弱點，當銀狼對其再次附加弱點時，僅保留最新附加的弱點。\\n有<unbreak>#5[i]%</unbreak>的<u>基礎機率</u>額外使該目標的全屬性抗性降低<color=#f29e38ff><unbreak>#6[f1]%</unbreak></color>，持續<unbreak>#7[i]</unbreak>回合。\\n對該目標造成等同於銀狼<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的量子屬性傷害。",
+        "shortDesc": "有高機率向敵方單體<color=#f29e38ff>附加額外的弱點</color>，並對其造成量子屬性傷害。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "|帳號封鎖|",
+        "fullDesc": "有<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>的<u>基礎機率</u>使指定敵方單體防禦力降低<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>，持續<unbreak>#4[i]</unbreak>回合，同時對該目標造成等同於銀狼<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的量子屬性傷害。",
+        "shortDesc": "有高機率使敵方單體<color=#f29e38ff>防禦力降低</color>，並對其造成大量量子屬性傷害。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "|強制結束程式|",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方全體造成等同於銀狼<unbreak>#1[i]%</unbreak>攻擊力的量子屬性傷害，並無視弱點屬性削減敵方全體的韌性，擊破弱點時，觸發量子屬性的弱點擊破效果。",
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方全體造成少量傷害，並無視弱點屬性削減韌性。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

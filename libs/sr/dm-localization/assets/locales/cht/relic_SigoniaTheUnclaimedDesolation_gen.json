@@ -1,0 +1,6 @@
+{
+  "setName": "無主荒星茨岡尼亞",
+  "setEffects": {
+    "2": "使裝備者的暴擊率提高<unbreak>#3[i]%</unbreak>。當敵方目標被消滅時，裝備者暴擊傷害提高<unbreak>#1[i]%</unbreak>，最多疊加<unbreak>#2[i]</unbreak>層。"
+  }
+}

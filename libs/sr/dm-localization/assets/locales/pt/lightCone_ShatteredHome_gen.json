@@ -1,0 +1,7 @@
+{
+  "name": "Casa Destruída",
+  "passive": {
+    "name": "Erradicação",
+    "description": "O usuário causa <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> a mais de Dano a inimigos-alvo com porcentagem de PV maior do que <unbreak>#1[i]%</unbreak>."
+  }
+}

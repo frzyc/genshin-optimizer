@@ -1,0 +1,7 @@
+{
+  "setName": "Quyền Vương Đường Phố",
+  "setEffects": {
+    "2": "Sát Thương Vật Lý tăng <unbreak>#1[i]%</unbreak>.",
+    "4": "Sau khi người trang bị tấn công hoặc bị tấn công, tấn công của người trang bị trong trận này tăng <unbreak>#1[i]%</unbreak>, tối đa cộng dồn <unbreak>#2[i]</unbreak> tầng."
+  }
+}

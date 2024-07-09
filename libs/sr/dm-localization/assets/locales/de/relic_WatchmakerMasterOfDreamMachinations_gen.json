@@ -1,0 +1,7 @@
+{
+  "setName": "Uhrmacher der maschinellen Traumspiele",
+  "setEffects": {
+    "2": "Erhöht Brucheffekt um <unbreak>#1[i]%</unbreak>.",
+    "4": "Wenn der Träger seinen Ultimate auf einen Verbündeten anwendet, wird der Brucheffekt aller Verbündeten für <unbreak>#2[i]</unbreak> Rd. um <unbreak>#1[i]%</unbreak> erhöht. Dieser Effekt ist nicht stapelbar."
+  }
+}

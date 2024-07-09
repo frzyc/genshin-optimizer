@@ -1,0 +1,39 @@
+{
+  "name": "Fu Xuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Novaestallido",
+        "fullDesc": "Inflige un Daño Cuántico equivalente al <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de los PV máx. de Fu Xuan a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Maravilla astronómica",
+        "fullDesc": "Activa Matriz del Presagio y todos los aliados de Fu Xuan <u>traspasan</u> un <unbreak>#1[i]%</unbreak> del daño que reciben (antes de que un escudo mitigue el daño) a Fu Xuan durante <unbreak>#3[i]</unbreak> turnos.\\nMientras están afectados por Matriz del Presagio, todos los aliados obtienen Conocimiento. En este estado, los PV máx. de los aliados aumentan en una cantidad equivalente al <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> de los PV máx. de Fu Xuan y su Prob. CRIT aumenta en un <color=#f29e38ff><unbreak>#5[f1]%</unbreak></color>.\\nCuando Fu Xuan es <u>derrotada</u>, Matriz del Presagio se disipa.",
+        "shortDesc": "Activa Matriz del Presagio y los aliados <u>traspasan</u> a Fu Xuan <color=#f29e38ff>parte del daño que reciben</color>. Además, aumentan los PV máx. y la <color=#f29e38ff>Prob. CRIT</color> de todos los aliados."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Evolución definitiva",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de los PV máx. de Fu Xuan como Daño Cuántico a todos los enemigos y obtiene 1 activación adicional de la regeneración de PV del talento de Fu Xuan.",
+        "shortDesc": "Inflige Daño Cuántico a todos los enemigos y aumenta las veces que se puede activar el talento de Fu Xuan."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "De la fortuna viene el destino",
+        "fullDesc": "Tras usar la técnica, todos los aliados obtienen una barrera durante <unbreak>#1[i]</unbreak> segundos. Esta barrera bloquea los ataques de los enemigos e impide que se entre en combate al recibir un ataque. Si se entra en combate mientras la barrera está activa, Fu Xuan activa automáticamente Matriz del Presagio durante <unbreak>#2[i]</unbreak> turnos.",
+        "shortDesc": "Activa una barrera y no se entra en combate al recibir ataques de los enemigos. Al entrar en combate, Matriz del Presagio se activa de manera automática."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

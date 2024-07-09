@@ -1,0 +1,7 @@
+{
+  "name": "Planetary Rendezvous",
+  "passive": {
+    "name": "Departure",
+    "description": "Setelah memasuki pertempuran, saat rekan dalam tim mengakibatkan DMG yang sama dengan tipe pengguna, DMG yang diakibatkan akan meningkat <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+  }
+}

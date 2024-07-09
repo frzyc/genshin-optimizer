@@ -1,0 +1,44 @@
+{
+  "name": "銀枝",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "芬芳一現",
+        "fullDesc": "對指定敵方單體造成等同於銀枝<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害。",
+        "shortDesc": "對敵方單體造成少量物理屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "公正，此處盛放",
+        "fullDesc": "對敵方全體造成等同於銀枝<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害。",
+        "shortDesc": "對敵方全體造成少量物理屬性傷害。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "駐於花庭，賜與盡美",
+        "fullDesc": "消耗<unbreak>#2[i]</unbreak>點能量，對敵方全體造成等同於銀枝<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害。",
+        "shortDesc": "消耗<color=#f29e38ff><unbreak>#2[i]</unbreak></color>點能量，對敵方全體造成物理屬性傷害。"
+      },
+      "1": {
+        "name": "駐「我」華庭，授予至勳",
+        "fullDesc": "消耗<unbreak>#4[i]</unbreak>點能量，對敵方全體造成等同於銀枝<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害，並額外造成<unbreak>#2[i]</unbreak>次傷害，每次傷害對敵方隨機單體造成等同於銀枝<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>攻擊力的物理屬性傷害。",
+        "shortDesc": "消耗<color=#f29e38ff><unbreak>#4[i]</unbreak></color>點能量，對敵方全體造成物理屬性傷害，並額外對敵方隨機單體造成少量物理屬性傷害，共彈射6次。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "純粹高潔宣言",
+        "fullDesc": "使用秘技後使一定區域內的敵人陷入<unbreak>#1[i]</unbreak>秒的暈眩狀態，暈眩狀態下敵人不會主動攻擊我方目標。\\n若主動攻擊陷入暈眩狀態的敵人，則進入戰鬥時，對敵方全體造成等同於銀枝<unbreak>#2[i]%</unbreak>攻擊力的物理屬性傷害，並使銀枝恢復<unbreak>#3[i]</unbreak>點能量。",
+        "shortDesc": "使一定區域內敵人陷入暈眩狀態。攻擊陷入暈眩狀態的敵人，進入戰鬥後對敵方全體造成少量物理屬性傷害，銀枝恢復能量。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

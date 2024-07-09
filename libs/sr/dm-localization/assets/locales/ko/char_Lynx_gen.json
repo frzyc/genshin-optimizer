@@ -1,0 +1,39 @@
+{
+  "name": "링스",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "얼음 등반 갈고리 기술",
+        "fullDesc": "지정된 단일 적에게 자신의 HP 최대치의 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼 양자 속성 피해를 준다",
+        "shortDesc": "단일 적에게 소량의 양자 속성 피해를 가한다"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "캠핑용 절임 통조림",
+        "fullDesc": "지정된 단일 아군에게 [생존 반응]을 부여하며, HP 최대치가 링스 HP 최대치의 <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>만큼 증가하고, 해당 목표가 「파멸」 혹은 「보존」 운명의 길이면 적에게 피격될 확률이 대폭 증가한다. [생존 반응]은 <unbreak>#3[i]</unbreak>턴간 지속된다.\\n해당 목표의 HP를 링스 HP 최대치의 <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#5[i]</unbreak></color>만큼 회복시킨다",
+        "shortDesc": "단일 아군에게 [생존 반응]을 부여하고, 대상의 <color=#f29e38ff>HP 최대치를 증가</color>시키며 동시에 HP를 회복시킨다"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "설원 구급 방침",
+        "fullDesc": "모든 아군의 <u>디버프 효과</u>를 <unbreak>#1[i]</unbreak>개 해제하고, 모든 아군의 HP를 즉시 링스 HP 최대치의 <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#3[i]</unbreak></color>만큼 회복시킨다",
+        "shortDesc": "<color=#f29e38ff>모든 아군의 <u>디버프 효과</u>를 1개</color> 해제하고, 모든 아군의 HP를 회복시킨다"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "초콜릿 에너지바",
+        "fullDesc": "비술 발동 후 다음 전투 시작 시 모든 아군에게 링스 특성과 동일한 지속 치유 효과를 부여한다. 지속 시간: <unbreak>#1[i]</unbreak>턴",
+        "shortDesc": "비술을 발동하면 다음 전투 시작 시 모든 아군에게 지속 치유 효과를 부여한다"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "공격",
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+      }
+    }
+  }
+}

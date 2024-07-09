@@ -1,0 +1,7 @@
+{
+  "name": "Ngày Đầu Tiên",
+  "passive": {
+    "name": "Tạm Dừng Thời Khắc Này",
+    "description": "Phòng Thủ của người trang bị tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Sau khi vào chiến đấu, Kháng Toàn Thuộc Tính của toàn bộ phe ta tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Hiệu ứng cùng loại sẽ không thể cộng dồn."
+  }
+}

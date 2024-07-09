@@ -1,0 +1,7 @@
+{
+  "name": "记忆的质料",
+  "passive": {
+    "name": "珍存",
+    "description": "使装备者的效果抵抗提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，当装备者受到攻击后，如果自身未持有护盾，则获得1个等同于装备者<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>生命上限的护盾，持续<unbreak>#3[i]</unbreak>回合。该效果每<unbreak>#4[i]</unbreak>回合只能触发1次。如果装备者持有护盾，则使自身受到的伤害降低<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "아직 전투는 끝나지 않았다",
+  "passive": {
+    "name": "계승자",
+    "description": "장착한 캐릭터의 에너지 회복효율이 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가하고, 아군에게 필살기 발동 시 전투 스킬 포인트를 1pt 회복한다. 해당 효과는 필살기를 2회 발동할 때마다 1회 발동할 수 있다. 장착한 캐릭터가 전투 스킬 발동 후 다음에 행동하는 다른 아군이 가하는 피해가 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다. 지속 시간: <unbreak>#3[i]</unbreak>턴"
+  }
+}

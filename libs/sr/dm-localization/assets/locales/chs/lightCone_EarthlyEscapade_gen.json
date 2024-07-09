@@ -1,0 +1,7 @@
+{
+  "name": "游戏尘寰",
+  "passive": {
+    "name": "善变",
+    "description": "使装备者的暴击伤害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。战斗开始时，使装备者获得【假面】，持续<unbreak>#6[i]</unbreak>回合。当装备者持有【假面】时，装备者的队友暴击率提高<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>，暴击伤害提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。装备者每恢复1个战技点，获得1层【彩焰】，恢复时溢出的战技点也会被计算在内。当【彩焰】达到<unbreak>#4[i]</unbreak>层后，移除所有【彩焰】并获得【假面】，持续<unbreak>#3[i]</unbreak>回合。"
+  }
+}

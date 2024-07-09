@@ -1,0 +1,39 @@
+{
+  "name": "罗刹",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "黑渊的棘刺",
+        "fullDesc": "对指定敌方单体造成等同于罗刹<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的虚数属性伤害。",
+        "shortDesc": "对敌方单体造成少量虚数属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "白花的祈望",
+        "fullDesc": "施放战技后立即为指定我方单体回复等同于罗刹<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>的生命值，并使罗刹获得1层【白花之刻】。\\n当我方任意单体当前生命值百分比小于等于<unbreak>#3[i]%</unbreak>时，罗刹会立即对其触发1次等同于战技的效果，此次触发不消耗战技点。该效果在<unbreak>#4[i]</unbreak>回合后可再次触发。",
+        "shortDesc": "为我方单体<color=#f29e38ff>回复</color>生命值，获得1层【白花之刻】。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "归葬的遂愿",
+        "fullDesc": "解除敌方全体<unbreak>#2[i]</unbreak>个<u>增益效果</u>，并对敌方全体造成等同于罗刹<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的虚数属性伤害，同时使罗刹获得1层【白花之刻】。",
+        "shortDesc": "<color=#f29e38ff>解除</color>敌方全体1个<color=#f29e38ff><u>增益效果</u></color>，并对敌方全体造成虚数属性伤害，获得1层【白花之刻】。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "愚者的悲悯",
+        "fullDesc": "使用秘技后，下一次战斗开始时立即触发天赋。",
+        "shortDesc": "使用秘技，下一次进战后立即触发天赋效果。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "加拉赫",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "開瓶費",
+        "fullDesc": "對指定敵方單體造成等同於加拉赫<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的火屬性傷害。",
+        "shortDesc": "對敵方單體造成少量火屬性傷害。"
+      },
+      "1": {
+        "name": "酒花奔湧",
+        "fullDesc": "對指定敵方單體造成等同於加拉赫<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的火屬性傷害。並使目標攻擊力降低<color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>，持續<unbreak>#3[i]</unbreak>回合。",
+        "shortDesc": "對敵方單體造成火屬性傷害，並降低其攻擊力。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "罐裝特調",
+        "fullDesc": "立即為指定我方單體回復<color=#f29e38ff><unbreak>#1[i]</unbreak></color>點生命值。",
+        "shortDesc": "立即為我方單體回復生命值。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "香檳儀禮",
+        "fullDesc": "使敵方全體陷入【酩酊】狀態，持續<unbreak>#2[i]</unbreak>回合，同時對敵方全體造成等同於加拉赫<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的火屬性傷害，並將下一次普通攻擊強化為【酒花奔湧】。",
+        "shortDesc": "使敵方全體<color=#f29e38ff>陷入【酩酊】狀態</color>，同時對敵方全體造成火屬性傷害。下一次普通攻擊強化為【酒花奔湧】。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "親啟佳釀",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後使敵方全體陷入【酩酊】狀態，持續<unbreak>#1[i]</unbreak>回合，並對敵方全體造成等同於加拉赫<unbreak>#2[i]%</unbreak>攻擊力的火屬性傷害。",
+        "shortDesc": "攻擊敵人，進入戰鬥後使敵方全體<color=#f29e38ff>陷入【酩酊】狀態</color>，並對敵方全體造成少量火屬性傷害。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

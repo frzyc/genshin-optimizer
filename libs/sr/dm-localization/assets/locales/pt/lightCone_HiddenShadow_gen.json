@@ -1,0 +1,7 @@
+{
+  "name": "Sombra Oculta",
+  "passive": {
+    "name": "Mecanismo",
+    "description": "Após usar a Perícia, o próximo ATQ Básico do usuário causa <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ como Dano Adicional ao inimigo-alvo."
+  }
+}

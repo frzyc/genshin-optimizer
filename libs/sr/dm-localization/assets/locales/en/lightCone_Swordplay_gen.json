@@ -1,0 +1,7 @@
+{
+  "name": "Swordplay",
+  "passive": {
+    "name": "Answers of Their Own",
+    "description": "For each time the wearer hits the same target, DMG dealt increases by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, stacking up to <unbreak>#2[i]</unbreak> time(s). This effect will be dispelled when the wearer changes targets."
+  }
+}

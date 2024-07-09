@@ -1,0 +1,7 @@
+{
+  "name": "Carve the Moon, Weave the Clouds",
+  "passive": {
+    "name": "Secret",
+    "description": "At the start of the battle and whenever the wearer's turn begins, one of the following effects is applied randomly: All allies' ATK increases by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, all allies' CRIT DMG increases by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, or all allies' Energy Regeneration Rate increases by <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>. The applied effect cannot be identical to the last effect applied, and will replace the previous effect. The applied effect will be removed when the wearer has been knocked down. Effects of the similar type cannot be stacked."
+  }
+}

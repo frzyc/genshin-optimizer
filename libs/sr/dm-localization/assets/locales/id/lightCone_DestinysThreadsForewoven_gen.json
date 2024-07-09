@@ -1,0 +1,7 @@
+{
+  "name": "Destiny's Threads Forewoven",
+  "passive": {
+    "name": "Insight",
+    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Effect RES pengguna. Untuk setiap <unbreak>#2[i]</unbreak> DEF yang dimiliki pengguna, DMG yang diakibatkan pengguna akan meningkat <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>, maksimal meningkat hingga <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>."
+  }
+}

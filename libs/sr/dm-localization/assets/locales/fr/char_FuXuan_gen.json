@@ -1,0 +1,39 @@
+{
+  "name": "Fu Xuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Frappe stellaire",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des PV max de Fu Xuan à un ennemi unique.",
+        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Merveille des étoiles",
+        "fullDesc": "Active Matrice de prémonition, ce qui permet aux autres membres de l'équipe de Fu Xuan de lui <u>transférer</u> <unbreak>#1[i]%</unbreak> des DGT qu'ils subissent (avant que ces DGT ne soient atténués par d'éventuels boucliers) pendant <unbreak>#3[i]</unbreak> tours.\\nLorsqu'ils sont affectés par Matrice de prémonition, tous les membres de l'équipe bénéficient de l'effet Connaissance, qui augmente leurs PV max respectifs à hauteur de <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> des PV max de Fu Xuan, et leurs chances de coup critique de <color=#f29e38ff><unbreak>#5[f1]%</unbreak></color>.\\nMatrice de prémonition se dissipe lorsque Fu Xuan est <u>à terre</u>.",
+        "shortDesc": "Active Matrice de prémonition. <color=#f29e38ff>Les DGT subis par les alliés de Fu Xuan lui sont <u>transférés</u></color>. D'autre part, <color=#f29e38ff>augmente les chances de coup critique</color> et les PV max de tous les alliés."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Évolution ultime",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des PV max de Fu Xuan à tous les ennemis et obtient 1 déclenchement pour l'effet de restauration de PV accordé par le talent de Fu Xuan.",
+        "shortDesc": "Inflige des DGT quantiques à tous les ennemis et augmente le nombre de fois où le talent de Fu Xuan se déclenche."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "De la chance au destin",
+        "fullDesc": "Après utilisation de la technique, tous les membres de l'équipe bénéficient d'une barrière qui dure <unbreak>#1[i]</unbreak> secondes. Cette barrière bloque toutes les attaques ennemies, et empêche l'équipe d'entrer en combat lorsqu'elle est attaquée. Lorsque vous engagez le combat avec la barrière active, Fu Xuan active automatiquement Matrice de prémonition en début de combat pour <unbreak>#2[i]</unbreak> tours.",
+        "shortDesc": "Active une barrière. Les alliés n'entrent pas en combat lorsqu'ils sont attaqués par des ennemis. Matrice de prémonition s'active automatiquement lorsque vous engagez le combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

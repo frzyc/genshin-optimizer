@@ -1,0 +1,39 @@
+{
+  "name": "白露",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "望 、闻、问…蹴！",
+        "fullDesc": "对指定敌方单体造成等同于白露<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的雷属性伤害。",
+        "shortDesc": "对敌方单体造成少量雷属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "云吟乍涌坠珠露",
+        "fullDesc": "立即为指定我方单体回复等同于白露<color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>生命上限+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>的生命值，然后白露随机为我方单体进行<unbreak>#4[i]</unbreak>次治疗，每提供1次治疗，下一次治疗回复的生命值会降低<unbreak>#3[i]%</unbreak>。",
+        "shortDesc": "为我方单体回复生命值，然后随机治疗我方单体。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "匏蛟跃渊先雷音",
+        "fullDesc": "立即为我方全体回复等同于白露<color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>生命上限+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>的生命值。\\n对于没有【生息】的我方目标，白露使其附上【生息】，对于已拥有【生息】的我方目标，白露使其已有的【生息】持续时间延长1回合。\\n【生息】可持续<unbreak>#3[i]</unbreak>回合，该效果不可叠加。",
+        "shortDesc": "为我方全体回复生命值，并附上【生息】，或延长【生息】持续时间。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "徜徉灵泽病恙短",
+        "fullDesc": "使用秘技后，下一次战斗开始时为我方全体附上【生息】，持续<unbreak>#1[i]</unbreak>回合。",
+        "shortDesc": "使用秘技，下一次战斗开始时为我方全体附上【生息】。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

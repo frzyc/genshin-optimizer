@@ -1,0 +1,39 @@
+{
+  "name": "Sampo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Schwirrende Klingen",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Sampos ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Zurückprallende Liebe",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> von Sampos ANG zu und verursacht zusätzlich <unbreak>#1[i]</unbreak>-mal SCH. Jeder Treffer fügt einem zufälligen Gegner Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> von Sampos ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu und führt gesamt 5 Abpralle aus."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Überraschungsgeschenk",
+        "fullDesc": "Fügt allen Gegnern Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Sampos ANG zu und hat eine <u>Grundchance</u> von <unbreak>#4[i]%</unbreak>, den erlittenen DoT des Ziels für <unbreak>#3[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> zu erhöhen.",
+        "shortDesc": "Fügt allen Gegnern Wind-SCH zu. Hat eine hohe Chance, <color=#f29e38ff>den erlittenen DoT zu erhöhen</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Helles Leuchten",
+        "fullDesc": "Nach dem Einsatz der Technik werden Gegner in einem bestimmten Bereich <unbreak>#1[i]</unbreak> s lang geblendet. Die Verbündeten sind für geblendete Gegner unsichtbar.\\nGreift man einen geblendeten Gegner aktiv an, besteht eine <u>Grundchance</u> von <unbreak>#2[i]%</unbreak>, die Aktionen aller Gegner um <unbreak>#3[i]%</unbreak> zu verzögern.",
+        "shortDesc": "Gegner in einem bestimmten Gebiet werden geblendet. Beim Kämpfen gegen einen geblendeten Gegner besteht eine hohe Chance, nach Kampfeintritt die Aktionen aller Gegner zu <u>verzögern</u>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

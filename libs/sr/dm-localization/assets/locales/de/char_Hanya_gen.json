@@ -1,0 +1,39 @@
+{
+  "name": "Hanya",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Schrift des Orakels",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Hanyas ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Die Fesseln des Samsara",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Hanyas ANG zu und belegt ihn mit „Aufbürden“.\\nJedes Mal, wenn Verbündete 2 Standardangriffe, Fertigkeiten oder Ultimates gegen einen mit Aufbürden belegten Gegner einsetzen, erhält das Team 1 Fertigkeitspunkt zurück. Aufbürden wirkt sich nur auf den letzten Gegner aus, der damit belegt wurde, und wird automatisch entfernt, sobald die Fertigkeitspunkte <unbreak>#2[i]</unbreak>-mal wiederhergestellt wurden.",
+        "shortDesc": "Fügt einem Gegner physischen SCH zu und belegt ihn mit „Aufbürden“. Jedes Mal, wenn Verbündete 2 Standardangriffe, Fertigkeiten oder Ultimates gegen einen mit Aufbürden belegten Gegner einsetzen, erhält das Team <color=#f29e38ff>1 Fertigkeitspunkt zurück</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Bedingungsloser Gehorsam",
+        "fullDesc": "Erhöht die GES eines anvisierten Verbündeten um <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> von Hanyas GES und erhöht den ANG des Verbündeten für <unbreak>#2[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>.",
+        "shortDesc": "<color=#f29e38ff>Erhöht den ANG und die GES</color> eines Verbündeten."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Urteil der Unterwelt",
+        "fullDesc": "Greift den Gegner unmittelbar an. Belegt nach Kampfeintritt einen zufälligen Gegner entsprechend der Fertigkeit mit Aufbürden.",
+        "shortDesc": "Greift den Gegner an. Belegt nach Kampfeintritt einen zufälligen Gegner entsprechend der Fertigkeit mit „Aufbürden“."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

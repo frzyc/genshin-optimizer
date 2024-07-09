@@ -1,0 +1,7 @@
+{
+  "setName": "Tù Nhân Ngục Tối",
+  "setEffects": {
+    "2": "Tấn Công tăng <unbreak>#1[i]%</unbreak>.",
+    "4": "Mỗi khi kẻ địch nhận phải 1 hiệu ứng Sát Thương Duy Trì, thì sát thương người trang bị gây ra cho kẻ đó sẽ bỏ qua <unbreak>#1[i]%</unbreak> Phòng Thủ của kẻ đó. Hiệu ứng này có hiệu lực với tối đa <unbreak>#2[i]</unbreak> hiệu ứng Sát Thương Duy Trì."
+  }
+}

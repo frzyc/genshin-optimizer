@@ -1,0 +1,39 @@
+{
+  "name": "Yanqing",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Frost Thorn",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Yanqing pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Darting Ironthorn",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Yanqing pada 1 target musuh dan mengaktifkan \"Soulsteel Sync\" Yanqing selama 1 giliran.",
+        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh dan mengaktifkan \"Soulsteel Sync\" pada diri sendiri."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Amidst the Raining Bliss",
+        "fullDesc": "Meningkatkan <unbreak>#1[i]%</unbreak> CRIT Rate Yanqing. Efek \"Soulsteel Sync\" Yanqing yang aktif akan meningkatkan <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> CRIT DMG tambahan. Efek <u>buff</u> berlangsung selama 1 giliran. Setelah itu Yanqing akan mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> ATK Yanqing pada 1 target musuh.",
+        "shortDesc": "Meningkatkan CRIT Rate dan memperkuat \"Soulsteel Sync\" Yanqing, mengakibatkan Ice DMG dalam jumlah besar pada 1 musuh."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "The One True Sword",
+        "fullDesc": "Setelah menggunakan Technique, saat pertempuran berikutnya dimulai, akan meningkatkan <unbreak>#2[i]%</unbreak> DMG Yanqing terhadap target musuh yang persentase HP-nya lebih dari atau sama dengan <unbreak>#1[i]%</unbreak> selama <unbreak>#3[i]</unbreak> giliran.",
+        "shortDesc": "Setelah menggunakan Technique, meningkatkan DMG yang diakibatkan oleh dirinya pada target musuh dengan persentase HP lebih dari atau sama dengan <unbreak>50%</unbreak> saat pertempuran berikutnya dimulai."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+      }
+    }
+  }
+}

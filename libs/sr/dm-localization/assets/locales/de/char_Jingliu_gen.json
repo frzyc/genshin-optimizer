@@ -1,0 +1,44 @@
+{
+  "name": "Jingliu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Strahlendes Mondleuchten",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Jinglius ANG zu.",
+        "shortDesc": "Fügt einem anvisierten Gegner geringen Eis-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Transzendenter Blitz",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Jinglius ANG zu und erhält <unbreak>#2[i]</unbreak> Stapelung „Lunation“.",
+        "shortDesc": "Fügt einem anvisierten Gegner Eis-SCH zu und erhält <color=#f29e38ff>1 Stapelung „Lunation“</color>."
+      },
+      "1": {
+        "name": "Gletscherfluss im Mondenschein",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Jinglius ANG und angrenzenden Einheiten Eis-SCH in Höhe von <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> von Jinglius ANG zu. Verbraucht <unbreak>#2[i]</unbreak> Stapelung „Lunation“. Der Einsatz dieser Fähigkeit verbraucht keine Fertigkeitspunkte.",
+        "shortDesc": "Fügt einem anvisierten Gegner und angrenzenden Einheiten Eis-SCH zu. Verbraucht 1 Stapelung „Lunation“."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Traum der vergänglichen Blüten",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Jinglius ANG und angrenzenden Einheiten Eis-SCH in Höhe von <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> von Jinglius ANG zu. Nach dem Angriff erhält sie <unbreak>#2[i]</unbreak> Stapelung „Lunation“.",
+        "shortDesc": "Fügt einem anvisierten Gegner massiven Eis-SCH und angrenzenden Einheiten Eis-SCH zu. Erhält <color=#f29e38ff>1 Stapelung „Lunation“</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Glanz des Inneren",
+        "fullDesc": "Nach dem Einsatz der Technik wird eine spezielle Dimension für <unbreak>#3[i]</unbreak> Sek. um Jingliu herum erzeugt. Alle Gegner innerhalb dieser Dimension werden eingefroren. Nach Kampfeintritt mit Gegnern in dieser Dimension werden <unbreak>#6[i]</unbreak> Pkt. Energie sofort wiederhergestellt. Gleichzeitig erhält Jingliu <unbreak>#1[i]</unbreak> Stapelung „Lunation“ und hat eine <u>Grundchance</u> von <unbreak>#2[i]%</unbreak>, Gegner für <unbreak>#4[i]</unbreak> Rd. einzufrieren. Gefrorene Gegner können keine Aktionen ausführen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <unbreak>#5[i]%</unbreak> von Jinglius ANG. Es kann nur 1 von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
+        "shortDesc": "Erzeugt eine spezielle Dimension um Jingliu herum. Gegner innerhalb dieser Dimension werden <color=#f29e38ff>eingefroren</color>. Nach Kampfeintritt mit Gegnern in dieser Dimension erhält Jingliu Energie, 1 Stapelung Lunation und hat eine hohe Chance, Gegner <color=#f29e38ff>einzufrieren</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

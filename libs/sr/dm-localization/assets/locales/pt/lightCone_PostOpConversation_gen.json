@@ -1,0 +1,7 @@
+{
+  "name": "Conversa Pós-Operatória",
+  "passive": {
+    "name": "Cura Mútua",
+    "description": "Aumenta em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> a Taxa de Regeneração de Energia do usuário e em <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> a Cura Realizada ao usar a Perícia Suprema."
+  }
+}

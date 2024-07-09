@@ -1,0 +1,39 @@
+{
+  "name": "Pela",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Tiro Gélido",
+        "fullDesc": "Causa Dano de Gelo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Pela a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Geladura",
+        "fullDesc": "Remove <unbreak>#2[i]</unbreak> <u>melhoria(s)</u> e causa Dano de Gelo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Pela a um único inimigo-alvo.",
+        "shortDesc": "<color=#f29e38ff>Remove</color> 1 <color=#f29e38ff><u>melhoria</u></color> de um único inimigo-alvo e causa Dano de Gelo ao inimigo-alvo."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Supressão de Zona",
+        "fullDesc": "Causa Dano de Gelo igual a <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> do ATQ de Pela a todos os inimigos, com uma <u>chance-base</u> de <unbreak>#1[i]%</unbreak> de infligir a condição Exposto em todos os inimigos.\\nInimigos Expostos têm a DEF reduzida em <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> por <unbreak>#3[i]</unbreak> rodada(s).",
+        "shortDesc": "Tem altas chances de <color=#f29e38ff>reduzir a DEF dos inimigos</color>, além de causar Dano de Gelo leve a todos os inimigos."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ataque Premeditado",
+        "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, Pela causa Dano de Gelo igual a <unbreak>#4[i]%</unbreak> do seu ATQ a um inimigo aleatório, com <unbreak>#1[i]%</unbreak> de <u>chance-base</u> de reduzir a DEF de todos os inimigos em <unbreak>#2[i]%</unbreak> por <unbreak>#3[i]</unbreak> rodada(s).",
+        "shortDesc": "Ataca o inimigo. Após entrar na batalha, causa uma pequena quantidade de Dano a um inimigo aleatório, com alta chance de diminuir a DEF de todos os inimigos-alvo."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+      }
+    }
+  }
+}

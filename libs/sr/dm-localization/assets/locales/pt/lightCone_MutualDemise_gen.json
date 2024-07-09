@@ -1,0 +1,7 @@
+{
+  "name": "Morte Mútua",
+  "passive": {
+    "name": "Legião",
+    "description": "Se o PV atual do usuário for inferior a <unbreak>#1[i]%</unbreak>, Chance de CRIT aumenta em <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "세상을 진정시키지 마",
+  "passive": {
+    "name": "소리의 힘",
+    "description": "장착한 캐릭터가 전투 진입 시 에너지가 즉시 <color=#f29e38ff><unbreak>#2[i]</unbreak></color>pt 회복하고, 대상의 필살기가 가하는 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다"
+  }
+}

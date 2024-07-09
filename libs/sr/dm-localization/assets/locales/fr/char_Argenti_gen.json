@@ -1,0 +1,44 @@
+{
+  "name": "Argenti",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Fragrance fugace",
+        "fullDesc": "Inflige des DGT physiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ d'Argenti à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Épines de la justice",
+        "fullDesc": "Inflige des DGT physiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ d'Argenti à tous les ennemis.",
+        "shortDesc": "Inflige des DGT physiques mineurs à tous les ennemis."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Beauté infinie du jardin des roses",
+        "fullDesc": "Consomme <color=#f29e38ff><unbreak>#2[i]</unbreak></color> points d'énergie et inflige des DGT physiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ d'Argenti à tous les ennemis.",
+        "shortDesc": "Consomme <color=#f29e38ff><unbreak>#2[i]</unbreak></color> points d'énergie et inflige des DGT physiques à tous les ennemis."
+      },
+      "1": {
+        "name": "En mon propre jardin",
+        "fullDesc": "Consomme <unbreak>#4[i]</unbreak> points d'énergie, inflige des DGT physiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ d'Argenti à tous les ennemis et inflige des DGT <unbreak>#2[i]</unbreak> fois supplémentaires à un ennemi aléatoire, infligeant à chaque fois des DGT physiques équivalents à <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> de l'ATQ d'Argenti.",
+        "shortDesc": "Consomme <color=#f29e38ff><unbreak>#4[i]</unbreak></color> points d'énergie et inflige des DGT physiques à tous les ennemis, ainsi que des DGT physiques mineurs à une cible aléatoire, pour un total de 6 rebonds."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Manifeste de la vertu",
+        "fullDesc": "Après utilisation de la technique, les ennemis situés dans une zone définie subissent Hébété pendant <unbreak>#1[i]</unbreak> secondes. Les ennemis hébétés ne peuvent pas attaquer activement votre équipe.\\nEngager le combat en attaquant un ennemi hébété inflige des DGT équivalents à <unbreak>#2[i]%</unbreak> de l'ATQ d'Argenti à tous les ennemis et régénère son énergie de <unbreak>#3[i]</unbreak> points.",
+        "shortDesc": "Inflige Hébété à tous les ennemis dans une zone définie. Lorsque vous engagez le combat contre des ennemis hébétés, vous leur infligez des DGT physiques mineurs et régénérez l'énergie d'Argenti."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

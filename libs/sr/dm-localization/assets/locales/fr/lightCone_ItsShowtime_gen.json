@@ -1,0 +1,7 @@
+{
+  "name": "Que le spectacle commence",
+  "passive": {
+    "name": "Divertissement",
+    "description": "Le porteur gagne un cumul de Mascarade lorsqu'il inflige un malus à un ennemi. Chaque cumul de Mascarade augmente de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> les DGT infligés par le porteur pour un maximum de <unbreak>#2[i]</unbreak> cumuls. Cet effet dure <unbreak>#3[i]</unbreak> tour. Augmente de <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> l'ATQ du porteur lorsque ses chances d'appliquer des effets sont supérieures ou égales à <unbreak>#4[i]%</unbreak>."
+  }
+}

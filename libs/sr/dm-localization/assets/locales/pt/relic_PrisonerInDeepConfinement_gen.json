@@ -1,0 +1,7 @@
+{
+  "setName": "Prisioneiro em Confinamento Profundo",
+  "setEffects": {
+    "2": "Aumenta em <unbreak>#1[i]%</unbreak> o ATQ.",
+    "4": "Para cada Dano Contínuo aplicado ao inimigo-alvo, o usuário ignorará <unbreak>#1[i]%</unbreak> de sua DEF ao causar Dano. Este efeito é válido por um máximo de <unbreak>#2[i]</unbreak> Danos Contínuos."
+  }
+}

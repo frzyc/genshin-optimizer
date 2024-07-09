@@ -1,0 +1,7 @@
+{
+  "name": "Unerreichbares Jenseits",
+  "passive": {
+    "name": "Unerfüllte Sehnsucht",
+    "description": "Erhöht die KRIT-Rate des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> und seine max. LP um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Wenn der Träger angegriffen wird oder die eigenen LP verbraucht, wird der verursachte SCH um <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> erhöht. Dieser Effekt wird entfernt, nachdem der Träger einen Angriff ausgeführt hat."
+  }
+}

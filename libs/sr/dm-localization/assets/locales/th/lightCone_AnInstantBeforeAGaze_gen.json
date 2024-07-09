@@ -1,0 +1,7 @@
+{
+  "name": "An Instant Before A Gaze",
+  "passive": {
+    "name": "A Knight's Pilgrimage",
+    "description": "ทำให้ DMG คริติคอลของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> เมื่อผู้สวมใส่ปล่อยท่าไม้ตาย จะทำให้ผู้สวมใส่สร้าง DMG จากท่าไม้ตายเพิ่มขึ้น ตามพลังงานสูงสุดของผู้สวมใส่ พลังงานแต่ละหน่วยจะเพิ่มขึ้น <color=#f29e38ff><unbreak>#2[f2]%</unbreak></color> สูงสุดที่ <unbreak>#3[i]</unbreak> หน่วย"
+  }
+}

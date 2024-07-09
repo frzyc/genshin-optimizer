@@ -1,0 +1,39 @@
+{
+  "name": "Huohuo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Banner: Stormcaller",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Max HP Huohuo pada 1 musuh yang ditarget.",
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Talisman: Protection",
+        "fullDesc": "Menghapus <unbreak>#5[i]</unbreak> <u>Debuff</u> milik 1 rekan tim yang ditargetkan dan segera memulihkan HP sebesar <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> Max HP Huohuo + <color=#f29e38ff><unbreak>#2[i]</unbreak></color> pada rekan tersebut. Di saat yang bersamaan, memulihkan HP sebesar <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> Max HP Huohuo + <color=#f29e38ff><unbreak>#4[i]</unbreak></color> pada target di sekitarnya.",
+        "shortDesc": "Menghapus 1 <u>Debuff</u> milik 1 rekan tim dan <color=#f29e38ff>memulihkan HP</color> rekan tersebut dan target di sekitarnya."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Tail: Spiritual Domination",
+        "fullDesc": "Memulihkan Energy rekan tim selain diri sendiri sebesar <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> Max Energy mereka masing-masing. Di saat yang bersamaan, meningkatkan ATK mereka sebesar <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> selama <unbreak>#3[i]</unbreak> giliran.",
+        "shortDesc": "<color=#f29e38ff>Memulihkan Energy</color> untuk rekan tim selain diri sendiri, serta <color=#f29e38ff>meningkatkan ATK</color> mereka."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Fiend: Impeachment of Evil",
+        "fullDesc": "Huohuo meneror musuh di sekitarnya, membuat musuh memasuki Status \"Horror-Struck\". Musuh yang berstatus \"Horror-Struck\" akan lari menjauhi Huohuo selama <unbreak>#4[i]</unbreak> detik. Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", memiliki <unbreak>#1[i]%</unbreak> <u>peluang dasar</u> untuk mengurangi <unbreak>#2[i]%</unbreak> ATK setiap target selama <unbreak>#3[i]</unbreak> giliran.",
+        "shortDesc": "Membuat musuh di sekitarnya memasuki Status \"Horror-Struck\". Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", berpeluang besar <color=#f29e38ff>mengurangi ATK</color> target musuh."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+      }
+    }
+  }
+}

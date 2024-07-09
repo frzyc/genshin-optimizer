@@ -1,0 +1,7 @@
+{
+  "name": "Baptism of Pure Thought",
+  "passive": {
+    "name": "Mental Training",
+    "description": "ทำให้ DMG คริติคอลของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> แต่ละครั้งที่ศัตรูเป้าหมายได้รับเอฟเฟกต์ Debuff 1 เอฟเฟกต์ ผู้สวมใส่จะสร้าง DMG คริติคอลแก่เป้าหมายดังกล่าวเพิ่มขึ้น <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ซ้อนทับได้มากสุด <unbreak>#3[i]</unbreak> ชั้น เมื่อใช้ท่าไม้ตายโจมตีศัตรูเป้าหมาย ผู้สวมใส่จะได้รับเอฟเฟกต์ \"พิพาท\" ซึ่งจะทำให้สร้าง DMG เพิ่มขึ้น <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> และการโจมตีต่อเนื่องจะเพิกเฉยต่อ DEF <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> ของเป้าหมาย โดยเอฟเฟกต์นี้จะคงอยู่ <unbreak>#6[i]</unbreak> เทิร์น"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Jingliu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ánh Trăng Soi Bóng",
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Băng bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> tấn công của Jingliu.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch chỉ định."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Vô Hạ Phi Quang",
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Băng bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> tấn công của Jingliu, và nhận <unbreak>#2[i]</unbreak> tầng \"Sóc Vọng\".",
+        "shortDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định, đồng thời nhận <color=#f29e38ff>1 tầng Sóc Vọng</color>."
+      },
+      "1": {
+        "name": "Ánh Trăng Sông Băng",
+        "fullDesc": "Gây Sát Thương Băng lên 1 kẻ địch chỉ định bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Jingliu, đồng thời gây Sát Thương Băng cho mục tiêu ở gần bằng <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> Tấn Công của Jingliu. Tiêu hao <unbreak>#2[i]</unbreak> tầng Sóc Vọng. Thi triển kỹ năng này không tiêu hao Điểm Chiến Kỹ.",
+        "shortDesc": "Gây Sát Thương Băng lên 1 kẻ địch chỉ định, gây Sát Thương Băng lên mục tiêu ở gần, đồng thời tiêu hao 1 tầng Sóc Vọng."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Đàm Hoa Sinh Diệt, Thiên Hà Dệt Mộng",
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Băng bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> tấn công của Jingliu, đồng thời gây cho các mục tiêu gần đó Sát Thương Băng bằng <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> tấn công của Jingliu. Sau khi tấn công kết thúc sẽ nhận <unbreak>#2[i]</unbreak> tầng Sóc Vọng.",
+        "shortDesc": "Gây lượng lớn Sát Thương Băng cho 1 kẻ địch chỉ định, gây Sát Thương Băng cho mục tiêu ở gần, đồng thời <color=#f29e38ff>nhận 1 tầng Sóc Vọng</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Thần Chiếu Cổ Kính",
+        "fullDesc": "Sau khi dùng Bí Kỹ, sẽ tạo một vùng đặc biệt xung quanh bản thân, duy trì trong <unbreak>#3[i]</unbreak>s, kẻ địch trong vùng đặc biệt này sẽ rơi vào trạng thái Đóng Băng. Sau khi vào chiến đấu với kẻ địch trong vùng đặc biệt, sẽ hồi ngay <unbreak>#6[i]</unbreak> năng lượng cho bản thân và nhận <unbreak>#1[i]</unbreak> tầng Sóc Vọng, đồng thời có <unbreak>#2[i]%</unbreak> <u>xác suất cơ bản</u> khiến kẻ địch bị Đóng Băng, duy trì <unbreak>#4[i]</unbreak> hiệp. Ở trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời khi bắt đầu mỗi hiệp sẽ chịu <u>Sát Thương Băng kèm theo</u> bằng <unbreak>#5[i]%</unbreak> tấn công của Jingliu. Tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
+        "shortDesc": "Tạo một vùng đặc biệt xung quanh bản thân. Kẻ địch trong vùng này sẽ rơi vào <color=#f29e38ff>trạng thái Đóng Băng</color>. Sau khi vào chiến đấu với kẻ địch trong vùng này, sẽ hồi năng lượng, và nhận 1 tầng Sóc Vọng đồng thời có xác suất lớn khiến kẻ địch rơi vào <color=#f29e38ff>trạng thái Đóng Băng</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+      }
+    }
+  }
+}

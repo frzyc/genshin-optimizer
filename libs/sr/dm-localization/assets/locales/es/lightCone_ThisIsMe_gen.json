@@ -1,0 +1,7 @@
+{
+  "name": "¡Así soy yo!",
+  "passive": {
+    "name": "Nuevo capítulo",
+    "description": "La DEF del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Cuando el portador usa la habilidad definitiva, el daño que inflige aumenta en una cantidad equivalente al <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de su DEF. Este efecto solo se activa una vez con cada enemigo por cada vez que se utilice la habilidad definitiva."
+  }
+}

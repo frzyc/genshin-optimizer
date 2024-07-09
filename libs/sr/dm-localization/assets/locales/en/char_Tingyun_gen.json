@@ -1,0 +1,39 @@
+{
+  "name": "Tingyun",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Dislodged",
+        "fullDesc": "Tingyun deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of her ATK to a single enemy.",
+        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Soothing Melody",
+        "fullDesc": "Grants a single ally with Benediction to increase their ATK by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, up to <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> of Tingyun's current ATK.\\nWhen the ally with Benediction attacks, they will deal <u>Additional</u> Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of that ally's ATK for 1 time.\\nBenediction lasts for <unbreak>#3[i]</unbreak> turn(s) and is only effective on the most recent receiver of Tingyun's Skill.",
+        "shortDesc": "<color=#f29e38ff>Increases the ATK</color> of a single ally and grants them Benediction. Ally with Benediction additionally deals minor <color=#f29e38ff>Lightning <u>Additional DMG</u></color> when attacking."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Amidst the Rejoicing Clouds",
+        "fullDesc": "Regenerates <unbreak>#1[i]</unbreak> Energy for a single ally and increases the target's DMG by <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> for <unbreak>#2[i]</unbreak> turn(s).",
+        "shortDesc": "Regenerates a target ally's <color=#f29e38ff>Energy</color> and <color=#f29e38ff>increases their DMG dealt</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Gentle Breeze",
+        "fullDesc": "Tingyun immediately regenerates <unbreak>#1[i]</unbreak> Energy upon using her Technique.",
+        "shortDesc": "After using this Technique, this character immediately regenerates Energy for themselves."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+      }
+    }
+  }
+}

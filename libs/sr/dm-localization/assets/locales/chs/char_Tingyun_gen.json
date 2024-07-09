@@ -1,0 +1,39 @@
+{
+  "name": "停云",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "逐客令",
+        "fullDesc": "对指定敌方单体造成等同于停云<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的雷属性伤害。",
+        "shortDesc": "对敌方单体造成少量雷属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "祥音和韵",
+        "fullDesc": "为指定我方单体提供【赐福】，使其攻击力提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，最高不超过停云当前攻击力的<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>。\\n获得【赐福】的目标施放攻击后，会额外造成1次等同于其自身<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的雷属性<u>附加伤害</u>。\\n【赐福】持续<unbreak>#3[i]</unbreak>回合且仅对停云战技最新的施放目标生效。",
+        "shortDesc": "使我方单体<color=#f29e38ff>攻击力提高</color>，并获得【赐福】。【赐福】状态下攻击时额外造成少量<color=#f29e38ff>雷属性<u>附加伤害</u></color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "庆云光覆仪祷",
+        "fullDesc": "为指定我方单体恢复<unbreak>#1[i]</unbreak>点能量，同时使目标造成的伤害提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>，持续<unbreak>#2[i]</unbreak>回合。",
+        "shortDesc": "为我方单体<color=#f29e38ff>恢复能量</color>，并使其<color=#f29e38ff>造成的伤害提高</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "惠风和畅",
+        "fullDesc": "使用秘技后立即为自身恢复<unbreak>#1[i]</unbreak>点能量。",
+        "shortDesc": "使用秘技后立即为自身恢复能量。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

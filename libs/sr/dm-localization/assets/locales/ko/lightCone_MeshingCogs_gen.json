@@ -1,0 +1,7 @@
+{
+  "name": "맞물린 톱니",
+  "passive": {
+    "name": "속결",
+    "description": "장착한 캐릭터가 공격 발동 혹은 피격 후 추가로 에너지를 <color=#f29e38ff><unbreak>#1[i]</unbreak></color>pt 회복한다. 해당 효과는 단일 턴 내 중복 발동되지 않는다"
+  }
+}

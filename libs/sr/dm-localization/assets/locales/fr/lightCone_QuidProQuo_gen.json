@@ -1,0 +1,7 @@
+{
+  "name": "Échange de bons procédés",
+  "passive": {
+    "name": "Profiter copieusement",
+    "description": "Au début du tour du porteur, régénère <color=#f29e38ff><unbreak>#2[i]</unbreak></color> points d'énergie à un de ses alliés aléatoires dont l'énergie est inférieure à <unbreak>#1[i]%</unbreak>."
+  }
+}

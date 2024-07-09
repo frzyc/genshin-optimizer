@@ -1,0 +1,7 @@
+{
+  "name": "Ao Longo da Margem Transitória",
+  "passive": {
+    "name": "Navegante",
+    "description": "Aumenta o Dano CRIT do usuário em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Quando o usuário atinge um inimigo-alvo, inflige Miragem Fracassada ao inimigo, durando por 1 rodada. Cada vez que o usuário ataca, este efeito pode ser acionado 1 vez contra cada alvo. O usuário causa <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> a mais de Dano aos alvos afligidos por Miragem Fracassada, e o Dano da Perícia Suprema do usuário é aumentado adicionalmente em <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+  }
+}

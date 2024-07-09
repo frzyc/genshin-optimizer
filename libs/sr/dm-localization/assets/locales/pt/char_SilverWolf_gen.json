@@ -1,0 +1,39 @@
+{
+  "name": "Loba Prateada",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Aviso do Sistema",
+        "fullDesc": "Causa Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ da Loba Prateada a um único inimigo.",
+        "shortDesc": "Causa Dano Quântico leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Permitir Mudanças?",
+        "fullDesc": "Tem <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de <u>chance-base</u> de adicionar 1 Fraqueza do Tipo de um personagem em campo ao inimigo-alvo. Isso também reduz a RES a Dano do inimigo a este Tipo de Fraqueza em <unbreak>#4[i]%</unbreak> por <unbreak>#3[i]</unbreak> rodada(s). Se o inimigo já possui Fraqueza a este Tipo, o efeito de redução da RES a Dano a este Tipo de Fraqueza não será ativado.\\nCada inimigo pode ter apenas 1 Fraqueza implantada pela Loba Prateada. Quando Loba Prateada implanta outra Fraqueza ao alvo, apenas a última Fraqueza implantada será mantida. Adicionalmente, existe <unbreak>#5[i]%</unbreak> de <u>chance-base</u> de reduzir mais ainda a RES a Todos os Tipos do inimigo em <color=#f29e38ff><unbreak>#6[f1]%</unbreak></color> por <unbreak>#7[i]</unbreak> rodada(s).\\nCausa Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ da Loba Prateada a um único inimigo-alvo.",
+        "shortDesc": "Existe uma chance alta de <color=#f29e38ff>aplicar Fraquezas de Tipo adicionais</color> a um único inimigo e causa Dano Quântico a este inimigo-alvo."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Usuário Banido",
+        "fullDesc": "Tem uma <u>chance-base</u> de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de diminuir a DEF do inimigo-alvo em <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> por <unbreak>#4[i]</unbreak> rodada(s). E, ao mesmo tempo, causa <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ da Loba Prateada como Dano Quântico ao inimigo-alvo.",
+        "shortDesc": "Tem uma chance alta de <color=#f29e38ff>diminuir a DEF de um único inimigo</color> e causa Dano Quântico massivo a este inimigo-alvo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Fechar o Programa",
+        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, causa Dano Quântico igual a <unbreak>#1[i]%</unbreak> do ATQ da Loba Prateada a todos os inimigos, ignora os Tipos de Fraqueza e reduz a Tenacidade de todos os inimigos. Inimigos com suas Fraquezas Quebradas desta forma ativarão o efeito de Quebra de Fraqueza contra Quântico.",
+        "shortDesc": "Ataca o inimigo. Após entrar na batalha, causa uma pequena quantidade de Dano a todos os inimigos e reduz a Tenacidade deles independentemente de seus Tipos de Fraquezas."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+      }
+    }
+  }
+}

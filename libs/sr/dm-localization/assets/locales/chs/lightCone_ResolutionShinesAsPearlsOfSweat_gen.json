@@ -1,0 +1,7 @@
+{
+  "name": "决心如汗珠般闪耀",
+  "passive": {
+    "name": "回眸",
+    "description": "当装备者击中敌方目标时，如果该目标不处于【攻陷】状态，则有<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>的基础概率使其陷入【攻陷】状态。【攻陷】状态下的敌方目标防御力降低<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，持续<unbreak>#3[i]</unbreak>回合。"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "開拓者 (物理 • {RUBY_B#かいめつ}壊滅{RUBY_E#})",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "サヨナラ{RUBY_B#あんだ}安打{RUBY_E#}",
+        "fullDesc": "指定した敵単体に開拓者の攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "敵単体に少量の物理ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#あんそく}安息{RUBY_E#}ホームラン",
+        "fullDesc": "指定した敵単体および隣接する敵に開拓者の攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "敵単体および隣接する敵に物理ダメージを与える。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "スターダストエース",
+        "fullDesc": "2つの攻撃モードの内の1つを選択し全力のバッティングをお見舞いする。\\n「全勝・サヨナラ安打」：指定した敵単体に開拓者の攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与える。\\n「全勝・安息ホームラン」：指定した敵単体に開拓者の攻撃力<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>分の物理ダメージを与え、隣接する敵に開拓者の攻撃力<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "単体攻撃または拡散攻撃を選択し、全力のバッティングを振り出す。"
+      },
+      "1": {
+        "name": "{RUBY_B#ぜんしょう}全勝{RUBY_E#}・サヨナラ{RUBY_B#あんだ}安打{RUBY_E#}",
+        "fullDesc": "指定した敵単体に開拓者の攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "敵単体に大量の物理ダメージを与える。"
+      },
+      "2": {
+        "name": "{RUBY_B#ぜんしょう}全勝{RUBY_E#}・{RUBY_B#あんそく}安息{RUBY_E#}ホームラン",
+        "fullDesc": "指定した敵単体に開拓者の攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与え、隣接する敵に開拓者の攻撃力<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "敵単体および隣接する敵に物理ダメージを与える。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#ふめつさんしん}不滅三振{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、味方全体のHPをそれぞれの最大HP<unbreak>#1[i]%</unbreak>分回復する。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+      }
+    }
+  }
+}

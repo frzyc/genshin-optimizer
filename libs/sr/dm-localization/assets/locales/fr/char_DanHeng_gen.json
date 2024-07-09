@@ -1,0 +1,39 @@
+{
+  "name": "Dan Heng",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lance perce-nuages : Vent du nord",
+        "fullDesc": "Inflige des DGT de vent équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Dan Heng à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lance perce-nuages : Torrent",
+        "fullDesc": "Inflige des DGT de vent équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Dan Heng à un ennemi unique.\\nEn cas de coup critique, il y a <unbreak>#4[i]%</unbreak> de <u>chances de base</u> de réduire la VIT de la cible de <unbreak>#2[i]%</unbreak> pendant <unbreak>#3[i]</unbreak> tours.",
+        "shortDesc": "Inflige des DGT de vent à un ennemi unique. En cas de coup critique, il y a de fortes chances de ralentir l'ennemi."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Rêve éthéré",
+        "fullDesc": "Inflige des DGT de vent équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Dan Heng à un ennemi unique. Si l'ennemi est ralenti, le multiplicateur de DGT de l'ultime augmente de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>.",
+        "shortDesc": "Inflige des DGT de vent massifs à un ennemi unique. Si l'ennemi est ralenti, le multiplicateur des dégâts infligés augmente."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Pointe affûtée",
+        "fullDesc": "Après utilisation de la technique de Dan Heng, son ATQ augmente de <unbreak>#1[i]%</unbreak> pendant <unbreak>#2[i]</unbreak> tours au début du combat suivant.",
+        "shortDesc": "Après utilisation de la technique, son ATQ augmente au début du combat suivant."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

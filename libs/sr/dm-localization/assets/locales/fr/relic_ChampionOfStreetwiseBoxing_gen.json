@@ -1,0 +1,7 @@
+{
+  "setName": "Championne de boxe de rue",
+  "setEffects": {
+    "2": "Augmente les DGT physiques de <unbreak>#1[i]%</unbreak>.",
+    "4": "Lorsque le porteur attaque ou est touché, son ATQ augmente de <unbreak>#1[i]%</unbreak> pour le reste du combat. Cet effet est cumulable <unbreak>#2[i]</unbreak> fois."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "spd": "VIT",
+  "hp": "PV",
+  "atk": "ATQ",
+  "def": "DÉF",
+  "crit_": "Chances de coup critique",
+  "crit_dmg_": "DGT CRIT",
+  "brEff_": "Effet de Rupture",
+  "eff_": "Effet de Rupture",
+  "eff_res_": "RÉS aux effets",
+  "enerRegen_": "Taux de régénération d'énergie",
+  "heal_": "Augm. des soins prodigués",
+  "physical_dmg_": "Augm. des DGT physiques",
+  "fire_dmg_": "Augm. des DGT de feu",
+  "ice_dmg_": "Augm. des DGT de glace",
+  "wind_dmg_": "Augm. des DGT de vent",
+  "lightning_dmg_": "Augm. des DGT de foudre",
+  "quantum_dmg_": "Augm. des DGT quantiques",
+  "imaginary_dmg_": "Augm. des DGT imaginaires"
+}

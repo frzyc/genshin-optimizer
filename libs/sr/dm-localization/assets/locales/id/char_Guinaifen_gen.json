@@ -1,0 +1,39 @@
+{
+  "name": "Guinaifen",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Standing Ovation",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Guinaifen pada 1 musuh yang ditarget.",
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Blazing Welcome",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Guinaifen pada 1 musuh yang ditarget, dan mengakibatkan Fire DMG sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ATK Guinaifen pada musuh di sekitar target, memiliki <unbreak>#3[i]%</unbreak> <u>peluang dasar</u> untuk membuat musuh dan target di sekitarnya memasuki status Burn. Target musuh dengan status Burn akan menerima Fire DoT sebesar <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> ATK Guinaifen setiap saat gilirannya dimulai selama <unbreak>#5[i]</unbreak> giliran.",
+        "shortDesc": "Mengakibatkan Fire DMG pada 1 musuh, dan mengakibatkan Fire DMG dalam jumlah kecil pada musuh di sekitar target. Berpeluang besar untuk menambahkan <color=#f29e38ff>status Burn</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Watch This Showstopper",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> ATK Guinaifen pada seluruh musuh. Jika target berstatus Burn, maka status Burn tersebut akan segera mengakibatkan DMG sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> DMG awal.",
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada seluruh musuh.\\nJika target musuh berstatus Burn, maka status Burn tersebut akan mengakibatkan 1 kali DMG tambahan."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Skill Showcase",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan <unbreak>#2[i]</unbreak> kali DMG yang masing-masing mengakibatkan Fire DMG sebesar <unbreak>#1[i]%</unbreak> ATK Guinaifen pada musuh secara acak, serta memiliki <unbreak>#3[i]%</unbreak> <u>Peluang Dasar</u> untuk membuat target memasuki status \"Firekiss\".",
+        "shortDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh, dan memberikan <color=#f29e38ff>status \"Firekiss\"</color>. Total Bounce 4 kali."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya."
+      }
+    }
+  }
+}

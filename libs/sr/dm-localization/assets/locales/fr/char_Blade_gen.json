@@ -1,0 +1,44 @@
+{
+  "name": "Blade",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lame d'éclat",
+        "fullDesc": "Inflige des DGT de vent équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Blade à une cible ennemie.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi."
+      },
+      "1": {
+        "name": "Forêt de lames",
+        "fullDesc": "Consomme <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des PV max de Blade pour infliger des DGT de vent équivalents à <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de son ATQ + <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> de ses PV max à une cible unique. Inflige également des DGT de vent équivalents à <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> de l'ATQ de Blade + <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> de ses PV max aux cibles adjacentes. Si les PV de Blade sont insuffisants, ils tombent à 1 après utilisation de Forêt de lames.\\nForêt de lames ne permet pas de régénérer de points de compétence.",
+        "shortDesc": "Consomme des PV et inflige des DGT de vent à un ennemi ainsi que des DGT de vent mineurs aux cibles adjacentes."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Vue de l'enfer",
+        "fullDesc": "Consomme <unbreak>#1[i]%</unbreak> des PV max de Blade pour entrer dans l'état Vue de l'enfer.\\nLorsque l'état Vue de l'enfer est actif, Blade ne peut plus utiliser sa compétence, mais les DGT qu'il inflige augmentent de <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>, et son ATQ normale Lame d'éclat se renforce en Forêt de lames pendant <unbreak>#2[i]</unbreak> tours.\\nSi les PV de Blade sont insuffisants pour utiliser la compétence, ils tombent à 1 après utilisation de la compétence.\\nCette compétence ne régénère pas l'énergie. Utiliser cette compétence ne met pas fin au tour.",
+        "shortDesc": "Consomme des PV pour <color=#f29e38ff>renforcer son ATQ normale</color> sans mettre fin au tour."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Condamnation à mort",
+        "fullDesc": "Les PV de Blade passent à <unbreak>50</unbreak> % de ses PV max, et il inflige des DGT de vent équivalents à la somme de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de son ATQ, <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de ses PV max, et <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> du total des PV qu'il a perdus au cours du combat à une cible unique, tout en infligeant des DGT de vent équivalents à la somme de <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> de son ATQ, <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> de ses PV max, et <color=#f29e38ff><unbreak>#6[i]%</unbreak></color> du total des PV qu'il a perdus au cours du combat aux cibles adjacentes.\\nLe total des PV qu'il a perdus au cours du combat est plafonné à <unbreak>#7[i]%</unbreak> de ses PV max. Ce montant est réinitialisé et recommence à s'accumuler après utilisation de l'ultime.",
+        "shortDesc": "Les PV du personnage passent à <unbreak>50</unbreak> % de ses PV max, et il inflige des DGT de vent massifs à une cible unique ainsi que des DGT de vent aux cibles adjacentes."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Vent de karma",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Consomme <unbreak>#2[i]%</unbreak> des PV max de Blade après être entré en combat pour infliger des DGT de vent équivalents à <unbreak>#1[i]%</unbreak> de ses PV max à tous les ennemis.\\nSi les PV de Blade sont insuffisants, ils tombent à 1 après utilisation de cette technique.",
+        "shortDesc": "Engage le combat contre les ennemis. Consomme ses propres PV après être entré en combat pour infliger des DGT de vent à tous les ennemis."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

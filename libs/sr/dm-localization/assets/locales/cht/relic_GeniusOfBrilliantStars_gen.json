@@ -1,0 +1,7 @@
+{
+  "setName": "繁星璀璨的天才",
+  "setEffects": {
+    "2": "量子屬性傷害提高<unbreak>#1[i]%</unbreak>。",
+    "4": "當裝備者對敵方目標造成傷害時，無視其<unbreak>#1[i]%</unbreak>的防禦力。若目標擁有量子屬性弱點，則額外無視其<unbreak>#2[i]%</unbreak>的防禦力。"
+  }
+}

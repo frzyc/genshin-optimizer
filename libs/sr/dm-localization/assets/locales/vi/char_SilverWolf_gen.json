@@ -1,0 +1,39 @@
+{
+  "name": "Sói Bạc",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Cảnh Báo Hệ Thống",
+        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Sói Bạc.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Cho Phép Thay Đổi?",
+        "fullDesc": "Có <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> <u>xác suất cơ bản</u> thêm cho 1 kẻ địch chỉ định 1 Điểm Yếu mang thuộc tính có từ đồng đội trong trận, và giảm <unbreak>#4[i]%</unbreak> kháng thuộc tính của Điểm Yếu đó trong <unbreak>#3[i]</unbreak> hiệp. Nếu kẻ địch đã có điểm yếu của thuộc tính này thì hiệu ứng giảm kháng thuộc tính tương ứng sẽ không được kích hoạt.\\nMỗi kẻ địch chỉ có thể bị Sói Bạc thêm 1 điểm yếu, khi Sói Bạc thêm điểm yếu lần nữa cho kẻ đó thì chỉ giữ lại điểm yếu được thêm vào sau cùng.\\nCó <unbreak>#5[i]%</unbreak> <u>xác suất cơ bản</u> giảm kháng toàn bộ thuộc tính của kẻ địch này đi <color=#f29e38ff><unbreak>#6[f1]%</unbreak></color> trong <unbreak>#7[i]</unbreak> hiệp.\\nGây cho kẻ địch này Sát Thương Lượng Tử bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Sói Bạc.",
+        "shortDesc": "Có xác suất lớn <color=#f29e38ff>thêm Điểm Yếu</color> cho 1 kẻ địch và gây Sát Thương Lượng Tử cho kẻ đó."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Tài Khoản Đã Bị Khóa",
+        "fullDesc": "Có <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> <u>xác suất cơ bản</u> khiến Phòng Thủ của 1 kẻ địch chỉ định giảm <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> trong <unbreak>#4[i]</unbreak> hiệp, đồng thời gây cho mục tiêu này Sát Thương Lượng Tử bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Sói Bạc.",
+        "shortDesc": "Xác suất lớn <color=#f29e38ff>giảm Phòng Thủ</color> của 1 kẻ địch và gây lượng lớn Sát Thương Lượng Tử cho kẻ đó."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Buộc Kết Thúc Tiến Trình",
+        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu sẽ gây Sát Thương Lượng Tử bằng <unbreak>#1[i]%</unbreak> Tấn Công của Sói Bạc cho toàn bộ địch, đồng thời bỏ qua các thuộc tính Điểm Yếu và làm giảm Sức Bền của toàn phe địch. Khi phá vỡ điểm yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu thuộc tính Lượng Tử.",
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây một lượng nhỏ sát thương cho toàn bộ địch, bỏ qua thuộc tính điểm yếu và làm giảm Sức Bền."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+      }
+    }
+  }
+}

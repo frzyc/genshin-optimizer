@@ -1,0 +1,39 @@
+{
+  "name": "布洛妮娅",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "驭风的子弹",
+        "fullDesc": "对指定敌方单体造成等同于布洛妮娅<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的风属性伤害。",
+        "shortDesc": "对敌方单体造成少量风属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "作战再部署",
+        "fullDesc": "解除指定我方单体的1个<u>负面效果</u>，并使该目标立即行动，造成的伤害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，持续<unbreak>#3[i]</unbreak>回合。\\n当对自身施放该技能时，无法触发立即行动效果。",
+        "shortDesc": "<color=#f29e38ff>解除</color>我方单体1个<color=#f29e38ff><u>负面效果</u></color>，使其<color=#f29e38ff>造成的伤害提高</color>，并<color=#f29e38ff>立刻行动</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "贝洛伯格进行曲",
+        "fullDesc": "使我方全体攻击力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，同时提高等同于布洛妮娅<color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>暴击伤害+<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>的暴击伤害，持续<unbreak>#4[i]</unbreak>回合。",
+        "shortDesc": "使我方全体<color=#f29e38ff>攻击力提高</color>，<color=#f29e38ff>暴击伤害提高</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "在旗帜下",
+        "fullDesc": "使用秘技后，下一次战斗开始时使我方全体攻击力提高<unbreak>#1[i]%</unbreak>，持续<unbreak>#2[i]</unbreak>回合。",
+        "shortDesc": "使用秘技，下一次战斗开始时我方全体攻击力提高。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

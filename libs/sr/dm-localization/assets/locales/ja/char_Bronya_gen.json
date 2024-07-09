@@ -1,0 +1,39 @@
+{
+  "name": "ブローニャ",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#しっぷう}疾風{RUBY_E#}の{RUBY_B#だんがん}弾丸{RUBY_E#}",
+        "fullDesc": "指定した敵単体にブローニャの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の風属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の風属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#さくせんさいてんかい}作戦再展開{RUBY_E#}",
+        "fullDesc": "指定した味方単体の<u>デバフ</u>を1つ解除し、その味方を即座に行動させ、与ダメージ+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>、<unbreak>#3[i]</unbreak>ターン継続。\\n自身に対してこのスキルを発動した時、即時行動の効果は発動しない。",
+        "shortDesc": "味方単体の<color=#f29e38ff><u>デバフ</u></color>を1つ<color=#f29e38ff>解除</color>し、<color=#f29e38ff>与ダメージをアップ</color>させ、<color=#f29e38ff>即座に行動させる</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "ベロブルグ{RUBY_B#こうしんきょく}行進曲{RUBY_E#}",
+        "fullDesc": "味方全体の攻撃力+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>、会心ダメージがブローニャの会心ダメージの<color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>アップする、<unbreak>#4[i]</unbreak>ターン継続。",
+        "shortDesc": "味方全体の<color=#f29e38ff>攻撃力</color>と<color=#f29e38ff>会心ダメージをアップ</color>する。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#はた}旗{RUBY_E#}の{RUBY_B#した}下{RUBY_E#}で",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時、味方全体の攻撃力+<unbreak>#1[i]%</unbreak>、<unbreak>#2[i]</unbreak>ターン継続。",
+        "shortDesc": "秘技を使用、次の戦闘開始時、味方全体の攻撃力をアップする。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+      }
+    }
+  }
+}

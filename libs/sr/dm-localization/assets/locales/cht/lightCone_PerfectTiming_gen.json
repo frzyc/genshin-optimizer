@@ -1,0 +1,7 @@
+{
+  "name": "此時恰好",
+  "passive": {
+    "name": "折射的視線",
+    "description": "使裝備者的效果抗性提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，並使裝備者的治療量提高，提高數值等同於效果抗性的<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，最多使治療量提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>。"
+  }
+}

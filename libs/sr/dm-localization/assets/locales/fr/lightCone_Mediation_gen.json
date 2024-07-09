@@ -1,0 +1,7 @@
+{
+  "name": "Harmonisation",
+  "passive": {
+    "name": "Famille",
+    "description": "Augmente la VIT de tous les alliés de <color=#f29e38ff><unbreak>#1[i]</unbreak></color> points pendant <unbreak>#2[i]</unbreak> tour en entrant en combat."
+  }
+}

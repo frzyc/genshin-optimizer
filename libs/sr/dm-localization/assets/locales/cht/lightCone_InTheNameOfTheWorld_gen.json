@@ -1,0 +1,7 @@
+{
+  "name": "以世界之名",
+  "passive": {
+    "name": "傳承者",
+    "description": "使裝備者對陷入負面效果的敵方目標造成的傷害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。當裝備者施放戰技時，裝備者此次攻擊的效果命中提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，攻擊力提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>。"
+  }
+}

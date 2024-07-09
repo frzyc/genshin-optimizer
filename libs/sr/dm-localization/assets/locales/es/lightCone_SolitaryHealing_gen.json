@@ -1,0 +1,7 @@
+{
+  "name": "Sanación solitaria",
+  "passive": {
+    "name": "Elixir del caos",
+    "description": "El efecto de Ruptura del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Cuando el portador usa la habilidad definitiva, el Daño con el tiempo que inflige aumenta en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> durante <unbreak>#3[i]</unbreak> turnos. Cuando se elimina a un enemigo afectado por el Daño con el tiempo del portador, el portador recupera <color=#f29e38ff><unbreak>#4[f1]</unbreak></color> pts. de energía."
+  }
+}

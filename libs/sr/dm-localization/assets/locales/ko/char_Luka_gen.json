@@ -1,0 +1,44 @@
+{
+  "name": "루카",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "돌격 펀치",
+        "fullDesc": "지정된 단일 적에게 루카 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 물리 속성 피해를 가한다",
+        "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다"
+      },
+      "1": {
+        "name": "돌격 어퍼컷",
+        "fullDesc": "[투지] 2스택을 소모하여 먼저 [돌격 펀치]를 사용해 3단 공격을 발동한다. 공격 단수마다 지정된 단일 적에게 루카 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 물리 속성 피해를 가한다.\\n그리고 [어퍼컷]을 사용하여 1단 공격을 발동하고, 지정된 단일 적에게 루카 공격력 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>만큼의 물리 속성 피해를 가한다",
+        "shortDesc": "[투지]를 2스택 소모하고, 단일 적에게 물리 속성 피해를 가한다"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "열상 펀치",
+        "fullDesc": "지정된 단일 적에게 루카 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 물리 속성 피해를 가하고, <unbreak>#2[i]%</unbreak>의 <u>기본 확률</u>로 목표를 열상 상태에 빠트린다. 지속 시간: <unbreak>#5[i]</unbreak>턴\\n열상 상태인 적은 턴이 시작될 때마다 자신의 HP 최대치 <unbreak>#3[f1]%</unbreak>만큼의 물리 속성 지속 피해를 받으며, 최대 루카 공격력의 <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>를 초과하지 않는다",
+        "shortDesc": "단일 적에게 물리 속성 피해를 가하고, 높은 확률로 목표에게 <color=#f29e38ff>열상 상태를 부여</color>한다"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "승리의 일격",
+        "fullDesc": "[투지]를 <unbreak>#5[i]</unbreak>스택 획득하고 <unbreak>#2[i]%</unbreak>의 <u>기본 확률</u>로 지정된 단일 적이 받는 피해가 <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> 증가한다. 지속 시간: <unbreak>#4[i]</unbreak>턴. 그 후 해당 목표에게 루카 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 물리 속성 피해를 가한다",
+        "shortDesc": "[투지]를 <color=#f29e38ff><unbreak>#5[i]</unbreak></color>스택 획득한다. 높은 확률로 단일 적이 받는 피해가 증가하고 적에게 대량의 물리 속성 피해를 가한다"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "앞서는 자",
+        "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 루카 공격력 <unbreak>#1[i]%</unbreak>만큼의 물리 속성 피해를 가하고, <unbreak>#2[i]%</unbreak>의 <u>기본 확률</u>로 목표를 전투 스킬과 동일한 열상 상태에 빠트린다. 그 후 루카는 [투지]를 1스택 추가로 획득한다",
+        "shortDesc": "적을 공격하며, 전투 진입 후 임의의 단일 적에게 소량의 물리 속성 피해를 가하고, 높은 확률로 목표를 <color=#f29e38ff>열상 상태에 빠트린다</color>. 그 후 [투지]를 1스택 추가로 획득한다"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "공격",
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+      }
+    }
+  }
+}

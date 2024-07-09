@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#うんめい}運命{RUBY_E#}を{RUBY_B#つむ}紡{RUBY_E#}ぐ{RUBY_B#いと}糸{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#どうさつ}洞察{RUBY_E#}",
+    "description": "装備キャラの効果抵抗+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。装備キャラの防御力<unbreak>#2[i]</unbreak>につき、与ダメージ+<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>、最大で与ダメージ+<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>。"
+  }
+}

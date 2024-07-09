@@ -1,0 +1,7 @@
+{
+  "setName": "寶命長存的蒔者",
+  "setEffects": {
+    "2": "生命上限提高<unbreak>#1[i]%</unbreak>。",
+    "4": "當裝備者受到攻擊或被我方目標消耗生命值後，暴擊率提高<unbreak>#1[i]%</unbreak>，持續<unbreak>#2[i]</unbreak>回合，該效果最多疊加<unbreak>#3[i]</unbreak>層。"
+  }
+}

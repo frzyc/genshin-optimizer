@@ -1,0 +1,7 @@
+{
+  "name": "Concierto para dos",
+  "passive": {
+    "name": "Motivación",
+    "description": "La DEF del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Por cada personaje con escudo que haya en el campo de batalla, el daño que inflige el portador aumenta en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+  }
+}

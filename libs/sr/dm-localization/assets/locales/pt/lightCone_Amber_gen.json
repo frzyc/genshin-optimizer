@@ -1,0 +1,7 @@
+{
+  "name": "Âmbar",
+  "passive": {
+    "name": "Estase",
+    "description": "Aumenta a DEF do usuário em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Se o PV atual do usuário for inferior a <unbreak>#2[i]%</unbreak>, aumenta sua DEF em mais <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+  }
+}

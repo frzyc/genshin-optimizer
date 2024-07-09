@@ -1,0 +1,39 @@
+{
+  "name": "Sparkle",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Monodrama",
+        "fullDesc": "Causa Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Sparkle a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano Quântico leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Mergulhadora de Sonhos",
+        "fullDesc": "Aumenta o Dano CRIT de um único aliado-alvo em <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> do Dano CRIT de Sparkle + <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>, durando por <unbreak>#3[i]</unbreak> rodada(s). E ao mesmo tempo, Avança Adiante a ação deste aliado em <unbreak>#4[i]%</unbreak>.\\nQuando Sparkle usa essa habilidade em si, sua ação não será Avançada Adiante.",
+        "shortDesc": "Aumenta o <color=#f29e38ff>Dano CRIT</color> de um aliado e sua ação é Avançada Adiante."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "A Heroína de Mil Faces",
+        "fullDesc": "Recupera <unbreak>#2[i]</unbreak> Pontos de Perícia para a equipe e concede Criptografia a todos os aliados. Para aliados com Criptografia, cada acúmulo do efeito de Bônus de Dano concedido pelo Talento de Sparkle aumenta adicionalmente em <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>, durando por <unbreak>#4[i]</unbreak> rodada(s).",
+        "shortDesc": "Recupera <color=#f29e38ff>Pontos de Perícia</color> para a equipe e habilita que o Bônus de Dano provido pelo Talento de Sparkle seja adicionalmente aprimorado."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Narradora Nada Confiável",
+        "fullDesc": "Usar a Técnica oferece a todos os aliados Desorientação por <unbreak>#2[i]</unbreak> segundos. Personagens em Desorientação não serão detectados por inimigos, e entrar em batalha enquanto estão no estado de Desorientação recupera <unbreak>#1[i]</unbreak> Ponto(s) de Perícia para a equipe.",
+        "shortDesc": "Usar a Técnica oferece a todos os aliados Desorientação. Personagens com Desorientação não serão detectados pelos inimigos, e entrar em batalha enquanto em Desorientação recupera <color=#f29e38ff>Pontos de Perícia</color> para os aliados."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+      }
+    }
+  }
+}

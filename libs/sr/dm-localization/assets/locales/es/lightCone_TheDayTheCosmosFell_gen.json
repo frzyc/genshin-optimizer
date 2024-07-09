@@ -1,0 +1,7 @@
+{
+  "name": "Día del colapso cósmico",
+  "passive": {
+    "name": "Estratagema",
+    "description": "El ATQ del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Cuando el portador lanza un ataque y golpea como mínimo a 2 enemigos que tengan su tipo de Debilidad, el Daño CRIT del portador aumenta en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> durante <unbreak>#3[i]</unbreak> turnos."
+  }
+}

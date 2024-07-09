@@ -1,0 +1,6 @@
+{
+  "setName": "生命のウェンワーク",
+  "setEffects": {
+    "2": "装備キャラのEP回復効率+<unbreak>#1[i]%</unbreak>。装備キャラの速度が<unbreak>#2[i]</unbreak>以上の場合、戦闘に入る時、行動順が<unbreak>#3[i]%</unbreak>早まる。"
+  }
+}

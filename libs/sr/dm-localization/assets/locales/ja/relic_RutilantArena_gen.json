@@ -1,0 +1,6 @@
+{
+  "setName": "星々の競技場",
+  "setEffects": {
+    "2": "装備キャラの会心率+<unbreak>#1[i]%</unbreak>。装備キャラの会心率が<unbreak>#2[i]%</unbreak>以上の時、通常攻撃と戦闘スキルの与ダメージ+<unbreak>#3[i]%</unbreak>。"
+  }
+}

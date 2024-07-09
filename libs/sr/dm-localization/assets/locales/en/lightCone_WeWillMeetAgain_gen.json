@@ -1,0 +1,7 @@
+{
+  "name": "We Will Meet Again",
+  "passive": {
+    "name": "A Discourse in Arms",
+    "description": "After the wearer uses Basic ATK or Skill, deals Additional DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of the wearer's ATK to a random enemy that has been attacked."
+  }
+}

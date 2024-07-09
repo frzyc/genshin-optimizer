@@ -1,0 +1,7 @@
+{
+  "name": "またお{RUBY_B#あ}会{RUBY_E#}いしましょう",
+  "passive": {
+    "name": "{RUBY_B#か}交{RUBY_E#}わす{RUBY_B#こぶし}拳{RUBY_E#}、{RUBY_B#ことば}言葉{RUBY_E#}の{RUBY_B#ごと}如{RUBY_E#}く",
+    "description": "装備キャラが通常攻撃または戦闘スキルを発動した後、攻撃を受けた敵からランダムに1体選択し、装備キャラの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の付加ダメージを与える。"
+  }
+}

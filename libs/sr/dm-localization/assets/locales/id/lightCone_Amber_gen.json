@@ -1,0 +1,7 @@
+{
+  "name": "Amber",
+  "passive": {
+    "name": "Stasis",
+    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> DEF pengguna. Saat HP pengguna saat ini kurang dari <unbreak>#2[i]%</unbreak>, DEF pengguna akan mendapat <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> peningkatan tambahan."
+  }
+}

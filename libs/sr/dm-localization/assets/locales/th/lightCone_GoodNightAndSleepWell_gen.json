@@ -1,0 +1,7 @@
+{
+  "name": "Good Night and Sleep Well",
+  "passive": {
+    "name": "Toiler",
+    "description": "แต่ละครั้งที่ศัตรูเป้าหมายได้รับเอฟเฟกต์ Debuff 1 เอฟเฟกต์ ผู้สวมใส่จะสร้าง DMG แก่เป้าหมายดังกล่าวเพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> สามารถซ้อนทับได้มากสุด <unbreak>#2[i]</unbreak> ชั้น และเอฟเฟกต์นี้ยังมีผลกับ DMG ต่อเนื่องอีกด้วย"
+  }
+}

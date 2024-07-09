@@ -1,0 +1,7 @@
+{
+  "name": "El pasado y el futuro",
+  "passive": {
+    "name": "Cometas antiguas",
+    "description": "Cuando el portador utiliza su habilidad básica, el daño que inflige el siguiente aliado que actúe (que no sea el portador) aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> durante <unbreak>#2[i]</unbreak> turno."
+  }
+}

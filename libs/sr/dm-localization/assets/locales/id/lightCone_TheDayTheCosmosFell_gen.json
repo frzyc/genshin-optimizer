@@ -1,0 +1,7 @@
+{
+  "name": "The Day The Cosmos Fell",
+  "passive": {
+    "name": "Stratagem",
+    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK pengguna. Setelah pengguna melancarkan serangan, jika jumlah target musuh yang terkena serangan (yang memiliki Tipe Weakness yang sama dengan Tipe Serangan pengguna) tidak kurang dari 2 musuh, maka CRIT DMG pengguna meningkat <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> selama <unbreak>#3[i]</unbreak> giliran."
+  }
+}

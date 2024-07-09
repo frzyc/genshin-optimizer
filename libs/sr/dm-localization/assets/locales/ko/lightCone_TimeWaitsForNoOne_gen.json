@@ -1,0 +1,7 @@
+{
+  "name": "세월은 흐를 뿐",
+  "passive": {
+    "name": "아침, 점심, 저녁, 그리고 밤",
+    "description": "장착한 캐릭터의 HP 최대치가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가하고, 치유량이 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다. 장착한 캐릭터가 아군에게 치유 제공 시 치유량을 기록한다. 임의의 아군은 공격 발동 후 기록한 치유량의 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>에 따라 임의의 피격된 적 1기에게 장착한 캐릭터 속성의 추가 피해를 준다. 해당 피해는 보너스의 영향을 받지 않고 턴마다 최대 1회 결산한다."
+  }
+}

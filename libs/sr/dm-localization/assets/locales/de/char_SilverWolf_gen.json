@@ -1,0 +1,39 @@
+{
+  "name": "Silberwolf",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Systemwarnung",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Silberwolfs ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Änderungen zulassen?",
+        "fullDesc": "Es besteht eine <u>Grundchance</u> von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, einem anvisierten Gegner 1 Schwäche des Typs eines Verbündeten hinzuzufügen. Damit wird auch der SCH-WDS des Gegners gegenüber diesem Schwächetyp für <unbreak>#3[i]</unbreak> Rd. um <unbreak>#4[i]%</unbreak> reduziert. Wenn der Gegner bereits eine Schwäche dieses Typs hat, wird der Effekt der SCH-WDS-Reduzierung für diesen Schwächetyp nicht ausgelöst.\\nJedem Gegner kann nur 1 Schwäche von Silberwolf hinzugefügt werden. Wenn Silberwolf dem Ziel eine weitere Schwäche hinzufügt, wird nur die letzte Schwäche beibehalten.\\nAußerdem gibt es eine <u>Grundchance</u> von <unbreak>#5[i]%</unbreak>, den WDS aller Typen des Ziels zusätzlich um <color=#f29e38ff><unbreak>#6[f1]%</unbreak></color> für <unbreak>#7[i]</unbreak> Rd. zu reduzieren.\\nFügt diesem Gegner Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Silberwolfs ANG zu.",
+        "shortDesc": "Es besteht eine hohe Chance, einem Gegner <color=#f29e38ff>zusätzliche Schwächen</color> und Quanten-SCH zuzufügen."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Benutzer gebannt",
+        "fullDesc": "Es besteht eine <u>Grundchance</u> von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, die VTD eines anvisierten Gegners für <unbreak>#4[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> zu reduzieren und dem Ziel Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Silberwolfs ANG zuzufügen.",
+        "shortDesc": "Hat eine hohe Chance, die <color=#f29e38ff>VTD</color> eines Gegners zu <color=#f29e38ff>reduzieren</color> und ihm massiven Quanten-SCH zuzufügen."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Programmschließung erzwingen",
+        "fullDesc": "Greift Gegner unmittelbar an. Nach Kampfeintritt wird allen Gegnern Quanten-SCH in Höhe von <unbreak>#1[i]%</unbreak> von Silberwolfs ANG zugefügt und ungeachtet des Schwächetyps wird WDS aller Gegner reduziert. Bei Gegnern, deren Schwäche auf diese Weise gebrochen wird, wird der Effekt von Quanten-Schwächebruch ausgelöst.",
+        "shortDesc": "Greift Gegner an. Nach Kampfeintritt wird allen Gegner geringer SCH zugefügt und ungeachtet des Schwächetyps Widerstand reduziert."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

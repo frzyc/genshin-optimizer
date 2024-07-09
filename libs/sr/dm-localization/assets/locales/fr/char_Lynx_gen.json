@@ -1,0 +1,39 @@
+{
+  "name": "Lynx",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Attaque au pic à glace",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des PV max de Lynx à un ennemi unique.",
+        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Sardines en conserve",
+        "fullDesc": "Applique Instinct de survie à une cible alliée unique et augmente ses PV max d'un montant équivalent à <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> des PV max de Lynx + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>. Si la cible est un personnage de la Voie de la Destruction ou de la Préservation, elle voit ses chances d'être attaquée par les ennemis considérablement augmenter. Instinct de survie dure <unbreak>#3[i]</unbreak> tours.\\nRestaure les PV de la cible à hauteur de <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> des PV max de Lynx + <color=#f29e38ff><unbreak>#5[i]</unbreak></color>.",
+        "shortDesc": "Applique Instinct de survie à un allié unique, <color=#f29e38ff>augmente ses PV max</color>, et lui restaure des PV."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Plan de secours des Plaines des neiges",
+        "fullDesc": "Dissipe <unbreak>#1[i]</unbreak> <u>malus</u> à tous les alliés et leur redonne immédiatement un montant de PV équivalent à <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> des PV max de Lynx + <color=#f29e38ff><unbreak>#3[i]</unbreak></color>.",
+        "shortDesc": "Dissipe <color=#f29e38ff>1 <u>malus</u> à tous les alliés</color> et leur redonne des PV."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Barre énergétique chocolatée",
+        "fullDesc": "Lorsque Lynx utilise sa technique, tous les alliés bénéficient de l'effet de soins continus de son talent pendant <unbreak>#1[i]</unbreak> tours au début du combat suivant.",
+        "shortDesc": "Après utilisation de la technique, tous les alliés bénéficient d'un effet de soins continus au début du combat suivant."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

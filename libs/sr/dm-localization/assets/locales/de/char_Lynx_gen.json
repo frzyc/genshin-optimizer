@@ -1,0 +1,39 @@
+{
+  "name": "Lynx",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Steigeisentechnik",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> der max. LP von Lynx zu.",
+        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Gesalzenes Dosenfutter",
+        "fullDesc": "Wendet „Überlebensreaktion“ auf einen anvisierten Verbündeten an und erhöht dessen max. LP um <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> der max. LP von Lynx plus <color=#f29e38ff><unbreak>#2[i]</unbreak></color>. Wenn dieser Verbündete dem Pfad der Zerstörung oder der Bewahrung angehört, wird die Chance stark erhöht, dass er von Gegnern angegriffen wird. Die „Überlebensreaktion“ hält für <unbreak>#3[i]</unbreak> Rd. an.\\nStellt beim Ziel LP in Höhe von <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> der max. LP von Lynx plus <color=#f29e38ff><unbreak>#5[i]</unbreak></color> wieder her.",
+        "shortDesc": "Wendet „Überlebensreaktion“ auf einen Verbündeten an, <color=#f29e38ff>erhöht seine max. LP</color> und stellt seine LP wieder her."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ersthilfeplan in der Schneewüste",
+        "fullDesc": "Entfernt <unbreak>#1[i]</unbreak> <u>Debuff</u> von allen Verbündeten und stellt bei ihnen sofort LP in Höhe von <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> der max. LP von Lynx plus <color=#f29e38ff><unbreak>#3[i]</unbreak></color> wieder her.",
+        "shortDesc": "Entfernt <color=#f29e38ff>1 <u>Debuff</u> von allen Verbündeten</color> und stellt ihre LP wieder her."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Schoko-Energieriegel",
+        "fullDesc": "Nachdem Lynx ihre Technik eingesetzt hat, erhalten alle Verbündeten zu Beginn des nächsten Kampfes für <unbreak>#1[i]</unbreak> Rd. kontinuierliche Heilung von ihrem Talent.",
+        "shortDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten zu Beginn des nächsten Kampfes kontinuierliche Heilung."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und reduziert nach Kampfeintritt den Widerstand des gegnerischen Ziels des entsprechenden Typs."
+      }
+    }
+  }
+}

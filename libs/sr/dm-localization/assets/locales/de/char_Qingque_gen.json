@@ -1,0 +1,44 @@
+{
+  "name": "Qingque",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Selbstgezogener Sieg",
+        "fullDesc": "Wirft 1 Jadestein der Farbe mit der geringsten Anzahl von Steinen in Qingques aktueller Hand und fügt einem anvisierten Gegner Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Qingques ANG zu.",
+        "shortDesc": "Wirft 1 Stein und fügt einem anvisierten Gegner geringen Quanten-SCH zu."
+      },
+      "1": {
+        "name": "Sieg mit dem Kong!",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Qingques ANG zu und fügt angrenzenden Zielen Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> von Qingques ANG zu.\\n„Sieg mit dem Kong!“ kann keine Fertigkeitspunkte wiederherstellen.",
+        "shortDesc": "Fügt einem Gegner Quanten-SCH zu und fügt angrenzenden Zielen geringen Quanten-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Letzten Stein eingeholt",
+        "fullDesc": "Zieht sofort <unbreak>#1[i]</unbreak> Jadesteine. Erhöht den SCH von Qingques Angriff um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> bis zum Ende dieser Runde. Dieser Effekt ist bis zu <unbreak>#3[i]</unbreak>-fach stapelbar. Diese Fertigkeit beendet die Runde nicht.",
+        "shortDesc": "<color=#f29e38ff>Zieht einen Stein</color> und erhöht den zugefügten SCH. <color=#f29e38ff>Die Runde wird nicht beendet</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Vier verborgene Fische? Gewonnen!",
+        "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Qingques ANG zu und zieht 4 Jadesteine derselben Farbe.",
+        "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und zieht dann 4 Jadesteine derselben Farbe."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Mich selbst herausfordern",
+        "fullDesc": "Qingque zieht nach dem Einsatz der Technik beim Kampfeintritt <unbreak>#1[i]</unbreak> Jadesteine.",
+        "shortDesc": "Nach dem Einsatz der Technik wird zu Beginn des nächsten Kampfs ein Stein gezogen."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

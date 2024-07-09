@@ -1,0 +1,7 @@
+{
+  "name": "Determinación reluciente",
+  "passive": {
+    "name": "Retrospectiva",
+    "description": "Cuando el portador golpea a un objetivo, si este no está afectado por Cepo, hay un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de probabilidad base de afectarlo con Cepo. En este estado, la DEF del objetivo se reduce en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> durante <unbreak>#3[i]</unbreak> turno."
+  }
+}

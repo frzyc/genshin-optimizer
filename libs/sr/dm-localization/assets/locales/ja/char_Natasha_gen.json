@@ -1,0 +1,39 @@
+{
+  "name": "ナターシャ",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#じしん}慈心{RUBY_E#}の{RUBY_B#うらがわ}裏側{RUBY_E#}",
+        "fullDesc": "指定した敵単体にナターシャの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の物理ダメージを与える。",
+        "shortDesc": "敵単体に少量の物理ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#あい}愛{RUBY_E#}、{RUBY_B#きゅうさい}救済{RUBY_E#}と{RUBY_B#せんたく}選択{RUBY_E#}",
+        "fullDesc": "指定した味方単体のHPをナターシャの最大HP<color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#4[i]</unbreak></color>回復し、その味方のターンが回ってくるたびに、ナターシャの最大HP<color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#5[i]</unbreak></color>のHPを回復させる、<unbreak>#3[i]</unbreak>ターン継続。",
+        "shortDesc": "味方単体の<color=#f29e38ff>HPを回復</color>し、その味方に<color=#f29e38ff>HP継続回復</color>効果を付与する。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#しんせい}新生{RUBY_E#}の{RUBY_B#れい}礼{RUBY_E#}",
+        "fullDesc": "味方全体のHPをナターシャの最大HP<color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>回復する。",
+        "shortDesc": "味方全体の<color=#f29e38ff>HPを回復</color>する。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#さいみんけんきゅう}催眠研究{RUBY_E#}",
+        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にナターシャの攻撃力<unbreak>#4[i]%</unbreak>分の物理ダメージを与え、<unbreak>#1[i]%</unbreak>の<u>基礎確率</u>で敵単体それぞれを虚弱状態にする。\\n虚弱状態の敵の、味方への与ダメージ-<unbreak>#2[i]%</unbreak>、<unbreak>#3[i]</unbreak>ターン継続。",
+        "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に少量の物理ダメージを与え、高確率で敵それぞれを虚弱状態にする。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+      }
+    }
+  }
+}

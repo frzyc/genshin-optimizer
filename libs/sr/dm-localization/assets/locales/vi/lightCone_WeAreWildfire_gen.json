@@ -1,0 +1,7 @@
+{
+  "name": "Chúng Ta Là Lửa Ngầm",
+  "passive": {
+    "name": "Kẻ Rơi Lệ",
+    "description": "Khi bắt đầu chiến đấu sẽ khiến sát thương toàn phe ta phải chịu giảm <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, duy trì <unbreak>#3[i]</unbreak> hiệp. Đồng thời hồi HP cho toàn phe ta tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> HP đã mất của mỗi người."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Warmth Shortens Cold Nights",
+  "passive": {
+    "name": "Tiny Light",
+    "description": "Increases the wearer's Max HP by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. When using Basic ATK or Skill, restores all allies' HP by an amount equal to <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> of their respective Max HP."
+  }
+}

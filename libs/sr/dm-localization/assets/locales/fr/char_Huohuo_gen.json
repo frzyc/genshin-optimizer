@@ -1,0 +1,39 @@
+{
+  "name": "Huohuo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Bannière de tempête",
+        "fullDesc": "Inflige des DGT de vent équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des PV max de Huohuo à une cible ennemie.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Talisman de protection",
+        "fullDesc": "Dissipe <unbreak>#5[i]</unbreak> <u>malus</u> d'une cible alliée unique et lui rend immédiatement un montant de PV équivalent à <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> des PV max de Huohuo + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>. Restaure également aux alliés adjacents à la cible un montant de PV équivalent à <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> des PV max de Huohuo + <color=#f29e38ff><unbreak>#4[i]</unbreak></color>.",
+        "shortDesc": "Dissipe 1 <u>malus</u> d'un allié et <color=#f29e38ff>restaure des PV</color> à cet allié et aux alliés adjacents."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Domination spirituelle de Plumeau",
+        "fullDesc": "Régénère des points d'énergie pour tous les alliés, hormis Huohuo, à hauteur de <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> de leur énergie max respective. Augmente aussi leur ATQ de <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> pendant <unbreak>#3[i]</unbreak> tours.",
+        "shortDesc": "<color=#f29e38ff>Régénère des points d'énergie</color> pour tous les alliés, hormis Huohuo, et <color=#f29e38ff>augmente leur ATQ</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Répression du mal",
+        "fullDesc": "Huohuo terrorise les ennemis à proximité et leur inflige l'état Frappé par l'horreur. Les ennemis frappés par l'horreur fuient Huohuo pendant <unbreak>#4[i]</unbreak> secondes. Il y a <unbreak>#1[i]%</unbreak> de <u>chances de base</u> de réduire l'ATQ de chacun d'entre eux de <unbreak>#2[i]%</unbreak> pendant <unbreak>#3[i]</unbreak> tours après être entré en combat avec des ennemis frappés par l'horreur.",
+        "shortDesc": "Plonge les ennemis à proximité dans l'état Frappé par l'horreur. Il y a de fortes chances d'appliquer une <color=#f29e38ff>réduction d'ATQ</color> aux cibles ennemies après être entré en combat avec des ennemis frappés par l'horreur."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

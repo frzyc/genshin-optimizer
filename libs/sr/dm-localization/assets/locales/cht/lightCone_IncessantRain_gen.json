@@ -1,0 +1,7 @@
+{
+  "name": "雨一直下",
+  "passive": {
+    "name": "幻影現實",
+    "description": "使裝備者的效果命中提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。當裝備者對同時處於大於等於<unbreak>#4[i]</unbreak>個負面效果的敵方目標造成傷害時，暴擊率提高<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>。裝備者發動普通攻擊，或施放戰技、終結技後，有<unbreak>#2[i]%</unbreak>的基礎機率對隨機1個未持有【乙太編碼】的受擊目標施加【乙太編碼】。持有【乙太編碼】的目標受到的傷害提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>，持續1回合。"
+  }
+}

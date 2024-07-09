@@ -1,0 +1,44 @@
+{
+  "name": "Jingliu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Brilho da Lua Luzente",
+        "fullDesc": "Causa <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Jingliu como Dano de Gelo a um único inimigo.",
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo-alvo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Clarão Transcendente",
+        "fullDesc": "Causa <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Jingliu como Dano de Gelo a um único inimigo e obtém <unbreak>#2[i]</unbreak> acúmulo(s) de Sizígia.",
+        "shortDesc": "Causa Dano de Gelo a um inimigo-alvo e obtém <color=#f29e38ff>1 acúmulo de Sizígia</color>."
+      },
+      "1": {
+        "name": "Lua sobre o Rio Glacial",
+        "fullDesc": "Causa <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Jingliu como Dano de Gelo a um único inimigo e <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> do ATQ de Jingliu como Dano de Gelo a inimigos adjacentes. Consome <unbreak>#2[i]</unbreak> acúmulo(s) de Sizígia. Usar esta habilidade não consome Pontos de Perícia.",
+        "shortDesc": "Causa Dano de Gelo a um único inimigo-alvo e Dano de Gelo a alvos adjacentes. Consome 1 acúmulo de Sizígia."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Fluxonírico Florefêmero",
+        "fullDesc": "Causa <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Jingliu como Dano de Gelo a um único inimigo e <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> do ATQ de Jingliu como Dano de Gelo a inimigos adjacentes. Ganha <unbreak>#2[i]</unbreak> acúmulo(s) de Sizígia depois que o ataque acaba.",
+        "shortDesc": "Causa Dano de Gelo massivo a um inimigo-alvo e causa Dano de Gelo aos alvos adjacentes. Obtém <color=#f29e38ff>1 acúmulo de Sizígia</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Brilho da Verdade",
+        "fullDesc": "Após usar esta Técnica, cria uma dimensão ao redor de Jingliu que dura por <unbreak>#3[i]</unbreak> segundos, e todos os inimigos nesta dimensão sofrerão Congelamento. Após entrar em combate com os inimigos na dimensão, Jingliu recupera imediatamente <unbreak>#6[i]</unbreak> de Energia e obtém <unbreak>#1[i]</unbreak> acúmulo(s) de Sizígia, com uma <u>chance-base</u> de <unbreak>#2[i]%</unbreak> de causar Congelamento nos inimigos-alvo por <unbreak>#4[i]</unbreak> rodada(s). Enquanto estiverem com Congelamento, inimigos-alvo não podem agir, e recebem <u>Dano de Gelo Adicional</u> igual a <unbreak>#5[i]%</unbreak> do ATQ de Jingliu no início de cada rodada. Somente 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão em volta do personagem. Inimigos dentro desta dimensão sofrerão <color=#f29e38ff>Congelamento</color>. Após entrar em combate com inimigos nesta dimensão, este personagem recupera Energia e obtém 1 acúmulo de Sizígia com altas chances de aplicar <color=#f29e38ff>Congelamento</color> nos inimigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+      }
+    }
+  }
+}

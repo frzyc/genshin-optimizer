@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#しんてんち}新天地{RUBY_E#}",
+  "passive": {
+    "name": "カンパニー",
+    "description": "装備キャラが敵を弱点撃破した時、HPを最大HP<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分回復する。"
+  }
+}

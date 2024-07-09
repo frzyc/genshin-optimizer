@@ -1,0 +1,44 @@
+{
+  "name": "Qingque",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Colher Flores",
+        "fullDesc": "Lança 1 peça de jade do naipe com o menor número de peças nas mãos para causar Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Qingque a um único inimigo.",
+        "shortDesc": "Lança uma peça que causa Dano Quântico leve a um único inimigo."
+      },
+      "1": {
+        "name": "Cereja do Bolo!",
+        "fullDesc": "Causa Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Qingque a um único inimigo e Dano Quântico igual a <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do ATQ de Qingque aos inimigos adjacentes a ele.\\n\"Cereja do Bolo!\" não pode recuperar Pontos de Perícia.",
+        "shortDesc": "Causa Dano Quântico a um único inimigo e Dano Quântico leve a inimigos adjacentes a ele."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Uma Colherada da Lua",
+        "fullDesc": "Pega <unbreak>#1[i]</unbreak> peça(s) de jade imediatamente e aumenta o Dano em <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> até o fim da rodada atual. Esse efeito pode acumular até <unbreak>#3[i]</unbreak> vez(es). A rodada não acaba após a utilização dessa Perícia.",
+        "shortDesc": "<color=#f29e38ff>Pega peças</color> e aumenta o Dano causado. <color=#f29e38ff>Esta rodada não termina</color> após esta ação."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Um Quarteto? Uhul!",
+        "fullDesc": "Causa Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Qingque a todos os inimigos e obtém 4 peças de jade do mesmo naipe.",
+        "shortDesc": "Causa Dano Quântico a todos os inimigos, depois obtêm 4 peças do mesmo naipe."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Jogo de Paciência",
+        "fullDesc": "Após usar sua Técnica, Qingque pega <unbreak>#1[i]</unbreak> peça(s) de jade quando a batalha começa.",
+        "shortDesc": "Após usar sua Técnica, pega peça(s) no início da próxima batalha."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+      }
+    }
+  }
+}

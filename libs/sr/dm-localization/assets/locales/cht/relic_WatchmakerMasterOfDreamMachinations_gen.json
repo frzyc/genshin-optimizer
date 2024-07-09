@@ -1,0 +1,7 @@
+{
+  "setName": "機心戲夢的鐘錶匠",
+  "setEffects": {
+    "2": "擊破特攻提高<unbreak>#1[i]%</unbreak>。",
+    "4": "當裝備者對我方目標施放終結技時，我方全體擊破特攻提高<unbreak>#1[i]%</unbreak>，持續<unbreak>#2[i]</unbreak>回合，該效果無法疊加。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "장수를 원하는 제자",
+  "setEffects": {
+    "2": "HP 최대치 <unbreak>#1[i]%</unbreak> 증가",
+    "4": "장착한 캐릭터가 피격되거나 아군에 의해 HP가 소모되면 치명타 확률이 <unbreak>#1[i]%</unbreak> 증가한다. 지속 시간: <unbreak>#2[i]</unbreak>턴. 해당 효과 최대 중첩수: <unbreak>#3[i]</unbreak>스택"
+  }
+}

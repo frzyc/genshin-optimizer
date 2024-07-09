@@ -1,0 +1,39 @@
+{
+  "name": "Black Swan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Percipience, Silent Dawn",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Black Swan pada 1 musuh yang ditarget, memiliki <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> <u>Peluang Dasar</u> untuk membuat target memasuki 1 lapis \"<u>Arcana</u>\". Jika target yang diserang berstatus Wind Shear/Bleed/Burn/Shock, maka masing-masing dari status prasyarat tersebut yang ada pada target memiliki <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> <u>Peluang Dasar</u> untuk menambahkan ekstra 1 lapis \"<u>Arcana</u>\" pada target.",
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh dan berpeluang untuk menambahkan \"<u>Arcana</u>\" pada target. Jika menyerang target yang <color=#f29e38ff>berstatus Wind Shear/Bleed/Burn/Shock</color>, maka masing-masing berpeluang untuk <color=#f29e38ff>menambahkan ekstra \"<u>Arcana</u>\"</color>."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Decadence, False Twilight",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Black Swan pada 1 musuh yang ditargetkan dan target di sekitarnya. Di saat yang bersamaan, memiliki <unbreak>#2[i]%</unbreak> <u>Peluang Dasar</u> untuk membuat target dan musuh di sekitarnya memasuki 1 lapis \"<u>Arcana</u>\", serta memiliki <unbreak>#3[i]%</unbreak> <u>Peluang Dasar</u> untuk mengurangi <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> DEF target dan musuh di sekitarnya selama <unbreak>#5[i]</unbreak> giliran.",
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh dan target di sekitarnya, berpeluang besar untuk <color=#f29e38ff>menambahkan \"<u>Arcana</u>\"</color> pada target, dan berpeluang besar untuk mengurangi DEF target."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Bliss of Otherworld's Embrace",
+        "fullDesc": "Menambahkan status \"Epiphany\" pada seluruh musuh selama <unbreak>#2[i]</unbreak> giliran.\\nSaat berstatus \"Epiphany\", DMG yang diterima target musuh saat selama gilirannya berlangsung akan meningkat <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>, dan juga membuat target musuh yang berstatus \"<u>Arcana</u>\" dianggap sama dengan memasuki status Wind Shear, Bleed, Burn, Shock secara bersamaan. Selain itu, setelah \"<u>Arcana</u>\" mengakibatkan DMG saat setiap giliran dimulai, jumlah lapisannya tidak akan di-reset. Efek mencegah reset lapisan \"<u>Arcana</u>\" ini maksimal terpicu <unbreak>#4[i]</unbreak> kali selama durasi \"Epiphany\" berlangsung. Saat target memasuki ulang status \"Epiphany\", jumlah batas terpicu akan di-refresh.\\nMengakibatkan Wind DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Black Swan pada seluruh musuh.",
+        "shortDesc": "Menambahkan status \"Epiphany\" pada seluruh musuh, yang akan meningkatkan DMG yang diterima target saat giliran target berlangsung, serta <color=#f29e38ff>membuat efek \"<u>Arcana</u>\" dianggap sama dengan status Wind Shear, Bleed, Burn, Shock</color>. Selain itu, setelah \"<u>Arcana</u>\" mengakibatkan DMG saat giliran yang berikutnya dimulai, jumlah lapisannya tidak akan di-reset. Mengakibatkan Wind DMG pada seluruh musuh."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "From Façade to Vérité",
+        "fullDesc": "Setelah menggunakan Technique, saat pertempuran berikutnya dimulai, ada <unbreak>#1[i]%</unbreak> <u>Peluang Dasar</u> untuk membuat setiap target musuh memasuki 1 lapis \"<u>Arcana</u>\". Setiap kali target berhasil memasuki status \"<u>Arcana</u>\", maka target tersebut akan memasuki lagi 1 lapis \"<u>Arcana</u>\". Efek ini akan terus terjadi berulang sampai target yang terkait gagal memasuki status \"<u>Arcana</u>\". Setiap kali target terkait berhasil memasuki status \"<u>Arcana</u>\", maka <u>Peluang Dasar</u> berikutnya untuk memasuki status \"<u>Arcana</u>\" pada target tersebut adalah <unbreak>#2[i]%</unbreak> dari <u>Peluang Dasar</u> sebelumnya.",
+        "shortDesc": "Setelah menggunakan Technique, saat pertempuran berikutnya dimulai, berpeluang besar untuk <color=#f29e38ff>menambahkan \"<u>Arcana</u>\" secara berulang terus-menerus sampai gagal</color> pada setiap target musuh."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya."
+      }
+    }
+  }
+}

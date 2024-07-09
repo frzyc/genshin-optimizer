@@ -1,0 +1,7 @@
+{
+  "name": "Baptême de pure réflexion",
+  "passive": {
+    "name": "Entraînement mental",
+    "description": "Augmente de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> les DGT critiques du porteur. Pour chaque malus subi par une cible ennemie, les DGT critiques du porteur augmentent de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> supplémentaires sur cette cible, jusqu'à un maximum de <unbreak>#3[i]</unbreak> cumuls. Lorsque le porteur attaque une cible avec son ultime, il bénéficie de l'effet Débat, ce qui augmente de <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> les DGT qu'il inflige et permet à ses attaques de suivi d'ignorer <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> de la DÉF de la cible. Cet effet dure <unbreak>#6[i]</unbreak> tours."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "setName": "Pan-Cosmic Commercial Enterprise",
+  "setEffects": {
+    "2": "Meningkatkan <unbreak>#1[i]%</unbreak> Effect Hit Rate pengguna. Pada saat yang sama, ATK pengguna meningkat sebesar <unbreak>#2[i]%</unbreak> Effect Hit Rate saat ini, maks. hingga <unbreak>#3[i]%</unbreak>."
+  }
+}

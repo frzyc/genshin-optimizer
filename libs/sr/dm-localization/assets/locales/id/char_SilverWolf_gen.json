@@ -1,0 +1,39 @@
+{
+  "name": "Silver Wolf",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "System Warning",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Silver Wolf pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Allow Changes?",
+        "fullDesc": "Memiliki <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> <u>peluang dasar</u> untuk memberikan 1 Weakness tambahan dengan Tipe yang sama dengan salah satu rekan tim secara acak pada 1 target musuh dan mengurangi <unbreak>#4[i]%</unbreak> DMG RES target musuh terhadap Tipe serangan tersebut selama <unbreak>#3[i]</unbreak> giliran. Jika Weakness yang ditambahkan adalah Weakness yang sudah dimiliki oleh target musuh, maka tidak akan memicu pengurangan DMG RES terhadap Tipe serangan tersebut.\\nSatu target musuh hanya dapat menerima 1 Weakness dari Silver Wolf. Saat Silver Wolf menambah Weakness lagi pada target musuh yang sama, maka hanya Weakness terbaru yang akan dipertahankan.\\nMemiliki <unbreak>#5[i]%</unbreak> <u>peluang dasar</u> untuk memberi tambahan pengurangan DMG RES seluruh tipe pada target sebesar <color=#f29e38ff><unbreak>#6[f1]%</unbreak></color> selama <unbreak>#7[i]</unbreak> giliran.\\nMengakibatkan Quantum DMG pada target tersebut sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Silver Wolf.",
+        "shortDesc": "Berpeluang besar untuk <color=#f29e38ff>memberikan Weakness tambahan</color> pada 1 musuh dan mengakibatkan Quantum DMG pada musuh tersebut."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "User Banned",
+        "fullDesc": "Memiliki <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> <u>peluang dasar</u> untuk mengurangi <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> DEF target musuh selama <unbreak>#4[i]</unbreak> giliran. Di saat yang bersamaan, mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Silver Wolf pada target tersebut.",
+        "shortDesc": "Berpeluang besar untuk <color=#f29e38ff>mengurangi DEF</color> dan mengakibatkan Quantum DMG dalam jumlah besar pada 1 musuh."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Force Quit Program",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Quantum DMG sebesar <unbreak>#1[i]%</unbreak> ATK Silver Wolf pada seluruh musuh, serta mengabaikan Tipe Weakness dan mengurangi Toughness seluruh musuh. Jika mengakibatkan Weakness Break dengan cara ini, maka akan memicu Quantum Weakness Break.",
+        "shortDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengakibatkan DMG dalam jumlah kecil, mengabaikan Tipe Weakness dan mengurangi Toughness seluruh musuh."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+      }
+    }
+  }
+}

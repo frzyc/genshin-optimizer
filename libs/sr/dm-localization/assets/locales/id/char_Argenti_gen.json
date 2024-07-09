@@ -1,0 +1,44 @@
+{
+  "name": "Argenti",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Fleeting Fragrance",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Argenti pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Justice, Hereby Blooms",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Argenti pada seluruh musuh.",
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada seluruh musuh."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "For In This Garden, Supreme Beauty Bestows",
+        "fullDesc": "Mengonsumsi <unbreak>#2[i]</unbreak> Energy dan mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Argenti pada seluruh musuh.",
+        "shortDesc": "Mengonsumsi <color=#f29e38ff><unbreak>#2[i]</unbreak></color> Energy dan mengakibatkan Physical DMG pada seluruh musuh."
+      },
+      "1": {
+        "name": "Merit Bestowed in \"My\" Garden",
+        "fullDesc": "Mengonsumsi <unbreak>#4[i]</unbreak> Energy, dan mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Argenti pada seluruh musuh, serta mengakibatkan ekstra <unbreak>#2[i]</unbreak> kali DMG, yang setiap serangannya mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> ATK Argenti pada 1 musuh secara acak.",
+        "shortDesc": "Mengonsumsi <color=#f29e38ff><unbreak>#4[i]</unbreak></color> Energy dan mengakibatkan Physical DMG pada seluruh musuh, serta mengakibatkan ekstra Physical DMG dalam jumlah kecil pada 1 musuh secara acak, total 6 kali Bounce."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Manifesto of Purest Virtue",
+        "fullDesc": "Setelah menggunakan Technique, membuat musuh dalam area tertentu memasuki status Daze selama <unbreak>#1[i]</unbreak> detik. Musuh berstatus Daze tidak akan menyerang rekan tim secara aktif.\\nJika Argenti secara aktif menyerang musuh berstatus Daze, saat memasuki pertempuran, Argenti akan mengakibatkan Physical DMG sebesar <unbreak>#2[i]%</unbreak> ATK-nya pada seluruh musuh dan memulihkan <unbreak>#3[i]</unbreak> Energy-nya.",
+        "shortDesc": "Membuat musuh dalam area tertentu memasuki status Daze. Jika menyerang musuh berstatus Daze, setelah memasuki pertempuran, Argenti akan mengakibatkan Physical DMG dalam jumlah kecil pada seluruh musuh, dan memulihkan Energy-nya."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+      }
+    }
+  }
+}

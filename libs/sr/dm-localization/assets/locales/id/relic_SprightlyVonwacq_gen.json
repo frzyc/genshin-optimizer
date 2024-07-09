@@ -1,0 +1,6 @@
+{
+  "setName": "Sprightly Vonwacq",
+  "setEffects": {
+    "2": "Meningkatkan <unbreak>#1[i]%</unbreak> Energy Regeneration Rate pengguna. Ketika SPD pengguna lebih dari atau sama dengan <unbreak>#2[i]</unbreak>, segera mendahulukan <unbreak>#3[i]%</unbreak> aksi saat memasuki pertempuran."
+  }
+}

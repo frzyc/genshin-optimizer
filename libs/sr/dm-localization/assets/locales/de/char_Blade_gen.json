@@ -1,0 +1,44 @@
+{
+  "name": "Blade",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Scherbenschwert",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Blades ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
+      },
+      "1": {
+        "name": "Schwerterwald",
+        "fullDesc": "Verbraucht LP in Höhe von <unbreak>#1[i]%</unbreak> von Blades max. LP und fügt einem anvisierten Gegner Wind-SCH zu. Dieser entspricht der Summe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> seines ANG und <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> seiner max. LP. Fügt zusätzlich angrenzenden Einheiten Wind-SCH zu. Dieser entspricht der Summe von <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> seines ANG und <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> seiner max. LP.\\nWenn Blades aktuelle LP nicht ausreichen, fallen seine aktuellen LP beim Einsatz von „Schwerterwald“ auf 1.\\n„Schwerterwald“ kann keine Fertigkeitspunkte wiederherstellen.",
+        "shortDesc": "Verbraucht LP und fügt einem Gegner Wind-SCH zu. Angrenzende Einheiten erleiden geringen Wind-SCH."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Höllenqual",
+        "fullDesc": "Verbraucht <unbreak>#1[i]%</unbreak> von Blades max. LP, um „Höllenqual“ zu aktivieren.\\nWenn „Höllenqual“ aktiv ist, kann seine Fertigkeit nicht eingesetzt werden. Erhöht Blades verursachten SCH um <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> und verstärkt seinen Standardangriff „Scherbenschwert“ für <unbreak>#2[i]</unbreak> Rd. zu „Schwerterwald“\\nWenn Blades aktuelle LP nicht ausreichen, fallen seine aktuellen LP bei Einsatz seiner Fertigkeit auf 1.\\nDiese Fertigkeit stellt keine Energie wieder her. Der Einsatz dieser Fertigkeit beendet nicht die aktuelle Runde.",
+        "shortDesc": "Verbraucht LP, um den <color=#f29e38ff>Standardangriff zu verstärken</color>. Nach dem Einsatz der Fertigkeit wird die aktuelle Runde nicht beendet."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Todesurteil",
+        "fullDesc": "Setzt Blades aktuelle LP auf <unbreak>50</unbreak> % seiner max. LP und verursacht Wind-SCH. Dieser entspricht der Summe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> seines ANG, <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> seiner max. LP und <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> der LP, die er im Laufe des aktuellen Kampfs insgesamt verloren hat. Fügt außerdem angrenzenden Einheiten Wind-SCH zu. Dieser entspricht der Summe von <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> seines ANG, <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> seiner max. LP und <color=#f29e38ff><unbreak>#6[i]%</unbreak></color> der LP, die er im Laufe des aktuellen Kampfs insgesamt verloren hat.\\nDie berechneten LP, die Blade im aktuellen Kampf insgesamt verloren hat, sind begrenzt auf <unbreak>#7[i]%</unbreak> seiner max. LP. Nachdem er seinen Ultimate eingesetzt hat, wird dieser Wert zurückgesetzt und neu berechnet.",
+        "shortDesc": "Setzt die aktuellen LP auf <unbreak>50</unbreak> % der max. LP. Fügt einem Gegner massiven Wind-SCH und angrenzenden Einheiten Wind-SCH zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Karmawind",
+        "fullDesc": "Greift den Gegner unmittelbar an. Verbraucht nach Kampfeintritt <unbreak>#2[i]%</unbreak> von Blades max. LP und fügt allen Gegnern Wind-SCH in Höhe von <unbreak>#1[i]%</unbreak> seiner max. LP zu.\\nWenn Blades aktuelle LP nicht ausreichen, fallen seine aktuellen LP beim Einsatz dieser Technik auf 1.",
+        "shortDesc": "Greift den Gegner an. Verbraucht nach Kampfeintritt eigene LP und fügt allen Gegnern Wind-SCH zu."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

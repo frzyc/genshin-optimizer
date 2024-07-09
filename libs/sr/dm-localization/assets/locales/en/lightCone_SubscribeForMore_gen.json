@@ -1,0 +1,7 @@
+{
+  "name": "Subscribe for More!",
+  "passive": {
+    "name": "Like Before You Leave!",
+    "description": "Increases the DMG of the wearer's Basic ATK and Skill by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. This effect increases by an extra <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> when the wearer's current Energy reaches its max level."
+  }
+}

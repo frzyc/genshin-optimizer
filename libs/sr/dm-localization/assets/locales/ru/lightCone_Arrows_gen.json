@@ -1,0 +1,7 @@
+{
+  "name": "Стрелы",
+  "passive": {
+    "name": "Бедствие",
+    "description": "В начале боя крит. шанс владельца повышается на <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> на <unbreak>#2[i]</unbreak> хода."
+  }
+}

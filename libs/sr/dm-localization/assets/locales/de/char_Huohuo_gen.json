@@ -1,0 +1,39 @@
+{
+  "name": "Huohuo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Banner: Durch Wind und Regen",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Huohuos max. LP zu.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Talisman: Schutz des Lebens",
+        "fullDesc": "Entfernt <unbreak>#5[i]</unbreak> <u>Debuff(s)</u> von einem Verbündeten und stellt unmittelbar dessen LP in Höhe von <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> von Huohuos max. LP plus <color=#f29e38ff><unbreak>#2[i]</unbreak></color> wieder her. Stellt gleichzeitig die LP der angrenzenden Verbündeten des anvisierten Verbündeten in Höhe von <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> von Huohuos max. LP plus <color=#f29e38ff><unbreak>#4[i]</unbreak></color> wieder her.",
+        "shortDesc": "Entfernt 1 <u>Debuff</u> von einem Verbündeten und <color=#f29e38ff>stellt die LP</color> dieses Verbündeten und angrenzender Verbündeter wieder her."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Schweif: Unterwerfung von Teufeln",
+        "fullDesc": "Stellt Energie für alle Verbündeten außer Huohuo in Höhe von <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> ihrer jeweiligen max. Energie wieder her. Erhöht gleichzeitig den ANG für <unbreak>#3[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>.",
+        "shortDesc": "<color=#f29e38ff>Energie-Wiederherstellung</color> für alle Verbündeten außer Huohuo und <color=#f29e38ff>ANG-Erhöhung</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Unhold: Unterdrückung von Dämonen",
+        "fullDesc": "Huohuo terrorisiert angrenzende Gegner und verursacht bei ihnen Verängstigung. Verängstigte Gegner fliehen vor Huohuo für <unbreak>#4[i]</unbreak> Sek. Falls ein Gegner bei Kampfbeginn verängstigt ist, besteht eine <u>Grundchance</u> von <unbreak>#1[i]%</unbreak>, dass der ANG jedes Gegners für <unbreak>#3[i]</unbreak> Rd. um <unbreak>#2[i]%</unbreak> gesenkt wird.",
+        "shortDesc": "Angrenzende Gegner werden von Verängstigung gepackt. Nach Kampfbeginn gegen verängstigte Gegner besteht eine hohe Chance, bei gegnerischen Zielen <color=#f29e38ff>ANG-Reduktion</color> zu verursachen."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

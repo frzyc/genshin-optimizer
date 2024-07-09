@@ -1,0 +1,7 @@
+{
+  "name": "The Day The Cosmos Fell",
+  "passive": {
+    "name": "Stratagem",
+    "description": "Increases the wearer's ATK by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. When the wearer uses an attack and at least 2 attacked enemies have the corresponding Weakness, the wearer's CRIT DMG increases by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, lasting for <unbreak>#3[i]</unbreak> turn(s)."
+  }
+}

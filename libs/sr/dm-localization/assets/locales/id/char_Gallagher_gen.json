@@ -1,0 +1,44 @@
+{
+  "name": "Gallagher",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Corkage Fee",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Gallagher pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh."
+      },
+      "1": {
+        "name": "Nectar Blitz",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Gallagher pada 1 musuh yang ditargetkan, dan mengurangi ATK target sebesar <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>, berlangsung selama <unbreak>#3[i]</unbreak> giliran.",
+        "shortDesc": "Mengakibatkan Fire DMG pada 1 musuh dan mengurangi ATK-nya."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Special Brew",
+        "fullDesc": "Segera memulihkan <color=#f29e38ff><unbreak>#1[i]</unbreak></color> HP 1 rekan tim yang ditargetkan.",
+        "shortDesc": "Segera memulihkan HP 1 rekan tim."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Champagne Etiquette",
+        "fullDesc": "Membuat seluruh musuh memasuki status \"Besotted\" selama <unbreak>#2[i]</unbreak> giliran, dan di saat bersamaan mengakibatkan Fire DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Gallagher pada seluruh musuh, dan Basic Attack berikutnya akan diperkuat menjadi \"Nectar Blitz\".",
+        "shortDesc": "Membuat seluruh musuh memasuki <color=#f29e38ff>status \"Besotted\"</color>, dan di saat yang bersamaan mengakibatkan Fire DMG pada seluruh musuh. Basic Attack berikutnya akan diperkuat menjadi \"Nectar Blitz\"."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Artisan Elixir",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, akan membuat seluruh musuh memasuki status \"Besotted\" selama <unbreak>#1[i]</unbreak> giliran, serta mengakibatkan Fire DMG sebesar <unbreak>#2[i]%</unbreak> ATK Gallagher pada seluruh musuh.",
+        "shortDesc": "Menyerang musuh. Setelah memasuki pertempuran, membuat seluruh musuh <color=#f29e38ff>memasuki status \"Besotted\"</color>, serta mengakibatkan Fire DMG dalam jumlah kecil pada seluruh musuh."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya."
+      }
+    }
+  }
+}

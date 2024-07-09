@@ -1,0 +1,7 @@
+{
+  "name": "그녀는 두 눈을 감았네",
+  "passive": {
+    "name": "펼쳐진 세계",
+    "description": "장착한 캐릭터의 HP 최대치가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가하고, 에너지 회복효율이 <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> 증가한다. 장착한 캐릭터의 HP가 감소하면, 모든 아군이 가하는 피해가 <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> 증가한다. 지속 시간: <unbreak>#5[i]</unbreak>턴.\\n웨이브가 시작될 때마다 모든 아군의 HP가 각자 손실한 HP의 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>만큼 회복한다"
+  }
+}

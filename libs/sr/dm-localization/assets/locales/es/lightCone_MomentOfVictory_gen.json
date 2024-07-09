@@ -1,0 +1,7 @@
+{
+  "name": "El momento de la victoria",
+  "passive": {
+    "name": "Veredicto",
+    "description": "La DEF del portador aumenta en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> y su acierto de efecto en un <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>. Incrementa la probabilidad de recibir ataques enemigos. Cuando el portador recibe un ataque, su DEF aumenta en un <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> adicional hasta el final de su turno."
+  }
+}

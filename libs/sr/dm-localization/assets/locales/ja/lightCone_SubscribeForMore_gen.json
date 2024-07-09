@@ -1,0 +1,7 @@
+{
+  "name": "フォローして！",
+  "passive": {
+    "name": "いいねしないと{RUBY_B#に}逃{RUBY_E#}がさない！",
+    "description": "装備キャラの通常攻撃と戦闘スキルの与ダメージ+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>、装備キャラのEPが満タンの場合、さらに通常攻撃と戦闘スキルの与ダメージ+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。"
+  }
+}

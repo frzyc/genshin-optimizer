@@ -1,0 +1,7 @@
+{
+  "name": "烦恼着，幸福着",
+  "passive": {
+    "name": "一个一个来",
+    "description": "使装备者暴击率提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，追加攻击造成的伤害提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。装备者施放追加攻击后，使目标陷入【温驯】状态，该效果最多叠加<unbreak>#4[i]</unbreak>层。我方目标击中【温驯】状态下的敌方目标时，每层【温驯】使造成的暴击伤害提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>。"
+  }
+}

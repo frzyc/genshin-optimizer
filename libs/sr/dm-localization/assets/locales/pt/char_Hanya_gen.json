@@ -1,0 +1,39 @@
+{
+  "name": "Hanya",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Pincel do Oráculo",
+        "fullDesc": "Causa Dano Físico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Hanya a um único inimigo.",
+        "shortDesc": "Causa Dano Físico leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Samsara, Bloqueada",
+        "fullDesc": "Causa Dano Físico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Hanya a um único inimigo-alvo, então aplica Fardo a ele.\\nA cada 2 ATQs Básicos, Perícias ou Perícias Supremas utilizados por aliados em um inimigo com Fardo, aliados recuperam imediatamente 1 Ponto de Perícia. Fardo só fica ativo no último alvo em que foi aplicado, e será removido automaticamente depois que o efeito de recuperação de Ponto de Perícia for ativado <unbreak>#2[i]</unbreak> vezes.",
+        "shortDesc": "Causa Dano Físico a um único inimigo e aplica Fardo a ele. Para cada 2 ATQs Básicos, Perícias ou Perícias Supremas que aliados utilizarem contra um inimigo com Fardo, os aliados <color=#f29e38ff>recuperarão 1 Ponto de Perícia</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Decreto dos Três Senhores, Todos Devem Obedecer",
+        "fullDesc": "Aumenta a VEL de um aliado-alvo em <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> da VEL de Hanya e aumenta o ATQ do mesmo aliado-alvo em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> por <unbreak>#2[i]</unbreak> rodada(s).",
+        "shortDesc": "Aumenta a <color=#f29e38ff>VEL e o ATQ</color> de um aliado."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Julgamento do Submundo",
+        "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, aplica Fardo equivalente ao aplicado pela Perícia a um inimigo aleatório.",
+        "shortDesc": "Ataca o inimigo. Ao entrar na batalha, aplica Fardo equivalente ao aplicado pela Perícia a um inimigo aleatório."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+      }
+    }
+  }
+}

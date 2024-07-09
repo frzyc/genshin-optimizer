@@ -1,0 +1,7 @@
+{
+  "name": "蕃息",
+  "passive": {
+    "name": "丰饶民",
+    "description": "当装备者施放普攻后，使下一次行动提前<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。"
+  }
+}

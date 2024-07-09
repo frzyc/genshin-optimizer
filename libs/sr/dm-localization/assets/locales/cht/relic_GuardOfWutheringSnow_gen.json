@@ -1,0 +1,7 @@
+{
+  "setName": "戍衛風雪的鐵衛",
+  "setEffects": {
+    "2": "受到傷害降低<unbreak>#1[i]%</unbreak>。",
+    "4": "回合開始時，如果裝備者目前生命值百分比小於等於<unbreak>#1[i]%</unbreak>，則回復等同於自身生命上限<unbreak>#2[i]%</unbreak>的生命值，並恢復<unbreak>#3[i]</unbreak>點能量。"
+  }
+}

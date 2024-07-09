@@ -1,0 +1,39 @@
+{
+  "name": "寒鴉",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "冥讖天筆",
+        "fullDesc": "對指定敵方單體造成等同於寒鴉<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害。",
+        "shortDesc": "對敵方單體造成少量物理屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "生滅繫縛",
+        "fullDesc": "對指定敵方單體造成等同於寒鴉<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害，並使其陷入【承負】狀態。\\n每當我方目標對【承負】狀態下的敵方目標發動2次普通攻擊、戰技、終結技後，立即為我方恢復1個戰技點。【承負】僅對最新被施加的目標生效，並會在觸發<unbreak>#2[i]</unbreak>次戰技點恢復效果後自動解除。",
+        "shortDesc": "對敵方單體造成物理屬性傷害，並使其陷入【承負】狀態。每當我方目標對【承負】狀態下的敵方目標發動2次普通攻擊、戰技、終結技後，<color=#f29e38ff>恢復1個戰技點</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "十王敕令，遍土遵行",
+        "fullDesc": "使指定我方單體速度提高，提高數值等同於寒鴉速度的<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>，並使該目標攻擊力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，持續<unbreak>#2[i]</unbreak>回合。",
+        "shortDesc": "使我方單體<color=#f29e38ff>速度提高、攻擊力提高</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "判冥",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方隨機單體附上等同於戰技效果的【承負】。",
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方隨機單體附上等同於戰技效果的【承負】。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

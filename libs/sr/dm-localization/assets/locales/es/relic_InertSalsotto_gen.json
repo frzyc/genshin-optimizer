@@ -1,0 +1,6 @@
+{
+  "setName": "Salsotto inerte",
+  "setEffects": {
+    "2": "La Prob. CRIT del portador aumenta en un <unbreak>#1[i]%</unbreak>. Cuando su Prob. CRIT es igual o superior al <unbreak>#2[i]%</unbreak>, el daño que infligen su habilidad definitiva y sus ataques adicionales aumenta en un <unbreak>#3[i]%</unbreak>."
+  }
+}

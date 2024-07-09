@@ -1,0 +1,39 @@
+{
+  "name": "Sushang",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Cloudfencer Art: Starshine",
+        "fullDesc": "สร้าง DMG กายภาพ <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "สร้าง DMG กายภาพเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Cloudfencer Art: Mountainfall",
+        "fullDesc": "สร้าง DMG กายภาพ <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว ขณะเดียวกัน หลังจากการโจมตีครั้งสุดท้าย จะมีโอกาส <unbreak>#3[i]%</unbreak> ที่จะปล่อย \"Sword Stance\" เพื่อสร้าง <u>DMG กายภาพเพิ่มเติม</u> <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ของ ATK ของ Sushang แก่เป้าหมาย\\nหากเป้าหมายนั้นติด<u>สถานะทำลายจุดอ่อน</u> \"Sword Stance\" จะถูกปล่อยอย่างแน่นอน",
+        "shortDesc": "สร้าง DMG กายภาพแก่ศัตรูหนึ่งตัว และ<color=#f29e38ff>มีโอกาสเล็กน้อยที่จะปล่อย \"Sword Stance\"</color> หากเป้าหมายติด <u>สถานะทำลายจุดอ่อน</u> <color=#f29e38ff>\"Sword Stance\" จะถูกปล่อยอย่างแน่นอน</color>"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Shape of Taixu: Dawn Herald",
+        "fullDesc": "สร้าง DMG กายภาพ <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว และทำให้ Sushang แอ็กชันทันที พร้อมทั้งทำให้ ATK เพิ่มขึ้น <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> และเมื่อใช้สกิลต่อสู้ จะเพิ่มโอกาสเกิด \"Sword Stance\" อีก 2 ครั้ง เป็นเวลา <unbreak>#2[i]</unbreak> เทิร์น\\n\"Sword Stance\" ที่เกิดจากโอกาสเพิ่มเติมนี้ จะสร้าง DMG <unbreak>#3[i]%</unbreak> ของค่า DMG เดิม",
+        "shortDesc": "สร้าง DMG กายภาพ อย่างรุนแรงแก่ฝ่ายศัตรูหนึ่งตัว พร้อมเสริมพลังเอฟเฟกต์ \"Sword Stance\" และ<color=#f29e38ff>ทำการแอ็กชันทันที</color>"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Cloudfencer Art: Warcry",
+        "fullDesc": "เมื่อโจมตีศัตรูทันทีและเข้าสู่การต่อสู้ จะสร้าง DMG กายภาพ <unbreak>#1[i]%</unbreak> ของ ATK ของ Sushang แก่ฝ่ายศัตรูทั้งหมด",
+        "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสร้าง DMG กายภาพเล็กน้อยแก่ฝ่ายศัตรูทั้งหมด"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย"
+      }
+    }
+  }
+}

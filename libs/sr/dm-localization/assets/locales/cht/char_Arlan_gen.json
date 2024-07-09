@@ -1,0 +1,39 @@
+{
+  "name": "阿蘭",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "如雷疾行",
+        "fullDesc": "對指定敵方單體造成等同於阿蘭<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的雷屬性傷害。",
+        "shortDesc": "對敵方單體造成少量雷屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "禁錮解除",
+        "fullDesc": "消耗等同於阿蘭生命上限<unbreak>#1[i]%</unbreak>的生命值對指定敵方單體造成等同於阿蘭<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻擊力的雷屬性傷害。若現有生命值不足，則施放戰技時阿蘭的現有生命值降至1點。",
+        "shortDesc": "消耗自身部分生命值，對敵方單體造成雷屬性傷害。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "狂者制裁",
+        "fullDesc": "對指定敵方單體造成等同於阿蘭<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的雷屬性傷害，同時對其相鄰目標造成等同於阿蘭<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻擊力的雷屬性傷害。",
+        "shortDesc": "對敵方單體造成大量雷屬性傷害，對相鄰目標造成雷屬性傷害。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "極速收割",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方全體造成等同於阿蘭<unbreak>#1[i]%</unbreak>攻擊力的雷屬性傷害。",
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方全體造成少量雷屬性傷害。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Xueyi",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Marabrecher-Ahle",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Xueyis ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Vernichtung des Frevels",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Xueyis ANG zu und fügt angrenzenden Zielen Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> von Xueyis ANG zu.",
+        "shortDesc": "Fügt einem Gegner Quanten-SCH zu und fügt angrenzenden Einheiten geringen Quanten-SCH zu."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Göttliche Geißelung",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Xueyis ANG zu. Dieser Angriff ignoriert die Schwächen des Gegners und reduziert den WDS des Ziels. Wenn die Schwäche eines Gegners gebrochen wird, wird der Effekt „Schwächebruch: Quanten“ ausgelöst.\\nJe mehr WDS reduziert wird, desto höher ist der Schaden, der mit diesem Angriff zugefügt wird, bis maximal <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>.",
+        "shortDesc": "Fügt einem Gegner massiven Quanten-SCH zu. Dieser Angriff verringert den WDS des Gegners <color=#f29e38ff>unabhängig vom Schwächetyp</color>. Je mehr WDS verringert wird, desto höher ist der zugefügte SCH."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Kurzschluss-Exekution",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Quanten-SCH in Höhe von <unbreak>#1[i]%</unbreak> von Xueyis ANG zu.",
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen Quanten-SCH zu."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

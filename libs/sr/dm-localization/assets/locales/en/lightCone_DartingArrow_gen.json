@@ -1,0 +1,7 @@
+{
+  "name": "Darting Arrow",
+  "passive": {
+    "name": "War Cry",
+    "description": "When the wearer defeats an enemy, increases ATK by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> for <unbreak>#2[i]</unbreak> turn(s)."
+  }
+}

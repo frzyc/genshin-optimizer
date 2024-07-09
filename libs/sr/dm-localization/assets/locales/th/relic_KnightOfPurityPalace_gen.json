@@ -1,0 +1,7 @@
+{
+  "setName": "Knight of Purity Palace",
+  "setEffects": {
+    "2": "DEF เพิ่มขึ้น <unbreak>#1[i]%</unbreak>",
+    "4": "ปริมาณโล่ที่ผู้สวมใส่มอบให้เพิ่มขึ้น <unbreak>#1[i]%</unbreak>"
+  }
+}

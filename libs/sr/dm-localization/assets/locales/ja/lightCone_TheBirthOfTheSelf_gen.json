@@ -1,0 +1,7 @@
+{
+  "name": "「{RUBY_B#わたし}私{RUBY_E#}」の{RUBY_B#たんじょう}誕生{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#がぞうしょうじょ}画像少女{RUBY_E#}",
+    "description": "装備キャラの追加攻撃の与ダメージ+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。敵の残りHPが<unbreak>#2[i]%</unbreak>以下の場合、さらに追加攻撃の与ダメージ+<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>。"
+  }
+}

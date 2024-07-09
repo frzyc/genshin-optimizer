@@ -1,0 +1,7 @@
+{
+  "name": "Bucle",
+  "passive": {
+    "name": "Persecución",
+    "description": "El daño que el portador inflige a los enemigos afectados por Ralentización aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+  }
+}

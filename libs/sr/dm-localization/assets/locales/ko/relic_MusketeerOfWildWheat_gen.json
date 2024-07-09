@@ -1,0 +1,7 @@
+{
+  "setName": "들이삭과 동행하는 거너",
+  "setEffects": {
+    "2": "공격력 <unbreak>#1[i]%</unbreak> 증가",
+    "4": "장착한 캐릭터의 속도가 <unbreak>#1[i]%</unbreak> 증가한다. 일반 공격이 가하는 피해가 <unbreak>#2[i]%</unbreak> 증가한다"
+  }
+}

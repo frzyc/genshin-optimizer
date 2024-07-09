@@ -1,0 +1,7 @@
+{
+  "name": "Passado e Futuro",
+  "passive": {
+    "name": "Pipas do Passado",
+    "description": "Quando o usuário usa a sua Perícia, o próximo aliado a agir (exceto o próprio usuário) causa <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> a mais de Dano por <unbreak>#2[i]</unbreak> rodada(s)."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#ひつぎ}棺{RUBY_E#}のこだま",
+  "passive": {
+    "name": "いばら",
+    "description": "装備キャラの攻撃力+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。装備キャラが攻撃を行った後、異なる敵に攻撃が命中するごとにEPを<color=#f29e38ff><unbreak>#3[f1]</unbreak></color>回復する。1回の攻撃で、この効果を通して最大で<unbreak>#4[i]</unbreak>回EPを回復できる。装備キャラが必殺技を発動した後、味方全体の速度+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>、1ターン継続。"
+  }
+}

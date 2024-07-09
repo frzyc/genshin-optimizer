@@ -1,0 +1,55 @@
+{
+  "name": "Acheron",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Cruce marchito trilateral",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Acheron como Daño de Rayo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Diluvio de cortes",
+        "fullDesc": "Obtiene <unbreak>#3[i]</unbreak> pt. de Sueños rotos. Aplica <unbreak>#3[i]</unbreak> acumulación de Rojo sacrificial a un enemigo, le inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Acheron como Daño de Rayo e inflige un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> del ATQ de Acheron como Daño de Rayo a los enemigos adyacentes.",
+        "shortDesc": "Obtiene <color=#f29e38ff><color=#f29e38ff><unbreak>#3[i]</unbreak></color> pt. de Sueños rotos</color>. Aplica <color=#f29e38ff><unbreak>#3[i]</unbreak></color> acumulación de Rojo sacrificial a un enemigo, le inflige Daño de Rayo e inflige una pequeña cantidad de Daño de Rayo a los enemigos adyacentes."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Sueño destrozado, lágrimas escarlata",
+        "fullDesc": "Lanza Pluviespada 3 veces y Resurgimiento estigio 1 vez e inflige hasta un <color=#f29e38ff><unbreak>#6[i]%</unbreak></color> del ATQ de Acheron como Daño de Rayo a un enemigo. También inflige hasta un <color=#f29e38ff><unbreak>#7[i]%</unbreak></color> del ATQ de Acheron como Daño de Rayo a los demás enemigos.\\nPluviespada: inflige un <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> del ATQ de Acheron como Daño de Rayo a un enemigo y elimina hasta 3 acumulaciones de Rojo sacrificial del objetivo. Cuando se elimina Rojo sacrificial, inflige a todos los enemigos un <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> del ATQ de Acheron como Daño de Rayo y, por cada acumulación de Rojo sacrificial eliminada, el multiplicador de daño de este ataque aumenta de forma adicional hasta un máximo del <color=#f29e38ff><unbreak>#5[f1]%</unbreak></color>.\\nResurgimiento estigio: inflige un <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> del ATQ de Acheron como Daño de Rayo a todos los enemigos y elimina todas las acumulaciones de Rojo sacrificial.\\nMientras se usa la habilidad definitiva, no se puede aplicar Rojo sacrificial a los enemigos.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo 3 veces a un enemigo. Si elimina Rojo sacrificial del objetivo, inflige una pequeña cantidad de Daño de Rayo a todos los enemigos. Después, inflige Daño de Rayo a todos los enemigos 1 vez y elimina todas las acumulaciones de Rojo sacrificial."
+      },
+      "1": {
+        "name": "Pluviespada",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo y elimina hasta 3 acumulaciones de Rojo sacrificial del objetivo. Cuando se elimina Rojo sacrificial, se inflige una pequeña cantidad de Daño de Rayo a todos los enemigos 1 vez, y por cada acumulación de Rojo sacrificial eliminada, el multiplicador de daño de este ataque aumenta."
+      },
+      "2": {
+        "name": "Pluviespada",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo y elimina hasta 3 acumulaciones de Rojo sacrificial del objetivo. Cuando se elimina Rojo sacrificial, se inflige una pequeña cantidad de Daño de Rayo a todos los enemigos 1 vez, y por cada acumulación de Rojo sacrificial eliminada, el multiplicador de daño de este ataque aumenta."
+      },
+      "3": {
+        "name": "Pluviespada",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo y elimina hasta 3 acumulaciones de Rojo sacrificial del objetivo. Cuando se elimina Rojo sacrificial, se inflige una pequeña cantidad de Daño de Rayo a todos los enemigos 1 vez, y por cada acumulación de Rojo sacrificial eliminada, el multiplicador de daño de este ataque aumenta."
+      },
+      "4": {
+        "name": "Resurgimiento estigio",
+        "shortDesc": "Inflige Daño de Rayo a todos los enemigos y elimina todas las acumulaciones de Rojo sacrificial."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Influjo tetravalente",
+        "fullDesc": "Ataca al enemigo inmediatamente. Al comienzo de cada oleada, obtiene Influjo tetravalente, inflige un <unbreak>#1[i]%</unbreak> del ATQ de Acheron como Daño de Rayo a todos los enemigos y reduce su Firmeza ignorando sus tipos de Debilidad. Al infligir Ruptura de Debilidad, activa el efecto de Ruptura de Rayo.\\nInflujo tetravalente: tras lanzar la habilidad definitiva, Acheron obtiene <unbreak>#2[i]</unbreak> pt. de Sueños rotos y aplica <unbreak>#2[i]</unbreak> acumulación de Rojo sacrificial a un enemigo al azar.\\nSi ataca a un enemigo normal, lo derrota directamente y no entra en combate. Si el ataque no acierta a un enemigo, no se consume el punto de técnica.",
+        "shortDesc": "Ataca al enemigo y obtiene Influjo tetravalente al principio de cada oleada. Inflige Daño de Rayo a todos los enemigos y reduce su Firmeza <color=#f29e38ff>ignorando el tipo de Debilidad</color>.\\nSi ataca a enemigos normales, <color=#f29e38ff>los derrota inmediatamente</color> sin entrar en combate. Si el ataque no acierta a un enemigo, no se consume el punto de técnica."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Calderón",
+  "passive": {
+    "name": "Silencio de redonda",
+    "description": "El efecto de Ruptura del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> y el daño que inflige a los enemigos afectados por Electrocución o Intemperie aumenta en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Este efecto también es válido para el Daño con el tiempo."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "この{RUBY_B#せかい}世界{RUBY_E#}に{RUBY_B#けんそう}喧噪{RUBY_E#}を",
+  "passive": {
+    "name": "{RUBY_B#こえ}声{RUBY_E#}の{RUBY_B#ちから}力{RUBY_E#}",
+    "description": "戦闘に入る時、装備キャラはEPを<color=#f29e38ff><unbreak>#2[i]</unbreak></color>回復する。装備キャラの必殺技の与ダメージ+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。"
+  }
+}

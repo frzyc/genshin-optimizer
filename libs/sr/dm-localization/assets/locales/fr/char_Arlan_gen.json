@@ -1,0 +1,39 @@
+{
+  "name": "Arlan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ruée éclair",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ d'Arlan à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Briseur de chaînes",
+        "fullDesc": "Consomme <unbreak>#1[i]%</unbreak> des PV max d'Arlan pour infliger des DGT de foudre équivalents à <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de son ATQ à un ennemi unique. Si les PV d'Arlan ne sont pas suffisants, ses PV sont réduits à 1 après utilisation de sa compétence.",
+        "shortDesc": "Consomme une partie de ses propres PV pour infliger des DGT de foudre à un ennemi unique."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Châtiment frénétique",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ d'Arlan à un ennemi unique et des DGT de foudre équivalents à <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de l'ATQ d'Arlan aux ennemis adjacents.",
+        "shortDesc": "Inflige des DGT de foudre massifs à un ennemi unique et des DGT de foudre aux ennemis adjacents."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Moisson rapide",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT de foudre équivalents à <unbreak>#1[i]%</unbreak> de l'ATQ d'Arlan à tous les ennemis après être entré en combat.",
+        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT de foudre mineurs à tous les ennemis après être entré en combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

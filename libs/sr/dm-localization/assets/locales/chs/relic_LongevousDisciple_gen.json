@@ -1,0 +1,7 @@
+{
+  "setName": "宝命长存的莳者",
+  "setEffects": {
+    "2": "生命上限提高<unbreak>#1[i]%</unbreak>。",
+    "4": "当装备者受到攻击或被我方目标消耗生命值后，暴击率提高<unbreak>#1[i]%</unbreak>，持续<unbreak>#2[i]</unbreak>回合，该效果最多叠加<unbreak>#3[i]</unbreak>层。"
+  }
+}

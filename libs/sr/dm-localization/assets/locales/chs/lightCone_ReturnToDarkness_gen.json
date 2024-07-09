@@ -1,0 +1,7 @@
+{
+  "name": "重返幽冥",
+  "passive": {
+    "name": "汹涌",
+    "description": "使装备者暴击率提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。暴击后有<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>的固定概率解除被攻击敌方目标所持有的1个增益效果，该效果每次攻击只可触发1次。"
+  }
+}

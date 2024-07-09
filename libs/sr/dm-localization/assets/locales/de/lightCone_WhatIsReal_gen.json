@@ -1,0 +1,7 @@
+{
+  "name": "Sache der Wahrheit",
+  "passive": {
+    "name": "Hypothese",
+    "description": "Erhöht den Brucheffekt des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Stellt nach dem Einsatz des Standardangriffs die LP des Trägers um <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> seiner max. LP plus <unbreak>#3[i]</unbreak> Pkt. wieder her."
+  }
+}

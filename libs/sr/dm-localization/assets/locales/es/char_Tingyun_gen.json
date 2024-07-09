@@ -1,0 +1,39 @@
+{
+  "name": "Tingyun",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Expulsión",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Tingyun como Daño de Rayo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Melodía tranquilizadora",
+        "fullDesc": "Otorga una Gracia a un aliado y aumenta el ATQ de ese aliado en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> (sin superar el <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> del ATQ actual de Tingyun).\\nCuando el aliado que ha recibido la Gracia lanza un ataque, inflige un Daño de Rayo <u>adicional</u> equivalente al <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de su ATQ.\\nLa Gracia dura <unbreak>#3[i]</unbreak> turnos y solo tiene efecto en el último aliado que haya sido objetivo de la habilidad básica de Tingyun.",
+        "shortDesc": "<color=#f29e38ff>Aumenta el ATQ</color> de un aliado y le otorga una Gracia. En este estado, el aliado inflige una pequeña cantidad de <color=#f29e38ff>Daño de Rayo <u>adicional</u></color> al lanzar un ataque."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ritual de la nube auspiciosa",
+        "fullDesc": "Hace que un aliado recupere <unbreak>#1[i]</unbreak> pts. de energía e inflija un <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> más de daño durante <unbreak>#2[i]</unbreak> turnos.",
+        "shortDesc": "Hace que un aliado <color=#f29e38ff>recupere energía</color> e <color=#f29e38ff>inflija más daño</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Brisa acariciadora",
+        "fullDesc": "Tras usar la técnica, Tingyun recupera <unbreak>#1[i]</unbreak> pts. de energía.",
+        "shortDesc": "Tras usar la técnica, recupera energía."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

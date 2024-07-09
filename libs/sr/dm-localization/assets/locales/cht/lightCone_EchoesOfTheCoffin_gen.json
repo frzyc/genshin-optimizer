@@ -1,0 +1,7 @@
+{
+  "name": "棺的迴響",
+  "passive": {
+    "name": "荊棘",
+    "description": "使裝備者的攻擊力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。當裝備者發動攻擊後，每命中1名不同的敵方目標，便恢復<color=#f29e38ff><unbreak>#3[f1]</unbreak></color>點能量，每次攻擊最多依此法恢復<unbreak>#4[i]</unbreak>次能量。當裝備者施放終結技後，使我方全體速度提高<color=#f29e38ff><unbreak>#2[i]</unbreak></color>點，持續1回合。"
+  }
+}

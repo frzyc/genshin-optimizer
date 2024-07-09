@@ -1,0 +1,39 @@
+{
+  "name": "Topaz & Compti",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Déficit",
+        "fullDesc": "Inflige des DGT de feu équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Topaz à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de feu mineurs à un ennemi."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Des difficultés de paiement ?",
+        "fullDesc": "Applique Reconnaissance de dette à une cible ennemie unique, ce qui augmente les DGT des <u>attaques de suivi</u> qu'elle subit de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Reconnaissance de dette ne s'applique qu'à sa dernière cible. Si aucun ennemi sur le champ de bataille n'est affecté par Reconnaissance de dette au début du tour ou pendant l'action d'un allié, Topaz applique Reconnaissance de dette à une cible ennemie aléatoire.\\nCompti inflige des DGT de feu équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Topaz à cette cible. Les DGT infligés par cette compétence sont considérés comme provenant d'une <u>attaque de suivi</u>.",
+        "shortDesc": "Applique Reconnaissance de dette à un ennemi unique, <color=#f29e38ff>ce qui augmente les DGT qu'il subit de la part des attaques de suivi</color>. Compti inflige des DGT de feu à la cible."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Pertes et profits",
+        "fullDesc": "Compti entre dans l'état Inflation exponentielle. Son multiplicateur de DGT augmente de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> et ses DGT critiques de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. D'autre part, lorsque des ennemis affectés par Reconnaissance de dette sont touchés par l'ATQ normale, la compétence ou l'ultime d'un allié, l'action de Compti est avancée de <unbreak>#3[i]%</unbreak>. Compti quitte l'état Inflation exponentielle après avoir utilisé <unbreak>#4[i]</unbreak> attaques.",
+        "shortDesc": "Compti entre dans l'état Inflation exponentielle et <color=#f29e38ff>son multiplicateur de DGT ainsi que ses DGT critiques augmentent</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Subvention explicite",
+        "fullDesc": "Topaz invoque Compti lorsqu'elle est en exploration. Compti cherche automatiquement les coffres de base et les Magorets dans un rayon défini.\\nLa technique de Topaz lui permet de régénérer <unbreak>#1[i]</unbreak> points d'énergie à la première attaque de Compti lors du prochain combat.\\nSi Topaz fait toujours partie de l'équipe quand les ennemis de la phase d'exploration sont vaincus, après avoir utilisé sa technique, un petit bonus de crédits est ajouté à ceux déjà gagnés. Vous pouvez recevoir un maximum de <unbreak>#2[i]</unbreak> crédits bonus par jour calendaire.\\nLors d'une victoire dans l'Univers simulé suivant l'utilisation de la technique de Topaz, vous obtenez une petite quantité de fragments cosmiques supplémentaires, et vous avez une faible chance d'obtenir 1 bizarrerie aléatoire.",
+        "shortDesc": "<color=#f29e38ff>Invoque Compti à vos côtés</color> lorsque vous êtes en exploration. Compti cherche automatiquement les <color=#f29e38ff>coffres de base et Magorets à proximité</color>. L'utilisation de la technique permet à Topaz de régénérer des points d'énergie lors de la première attaque de Compti au prochain combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Xueyi",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Azote de Mara",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Xueyi como Daño Cuántico a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Aniquilación del mal",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Xueyi como Daño Cuántico a un enemigo y un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> del ATQ de Xueyi como Daño Cuántico a los enemigos adyacentes.",
+        "shortDesc": "Inflige Daño Cuántico a un enemigo y una pequeña cantidad de Daño Cuántico a los enemigos adyacentes."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Castigo divino",
+        "fullDesc": "Inflige un Daño Cuántico equivalente al <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Xueyi a un enemigo. Este ataque ignora los tipos de Debilidad y consume la Firmeza del objetivo. Al romper la Debilidad, se activa el efecto de Ruptura Cuántica.\\nDurante este ataque, cuanta más Firmeza consuma, más daño inflige, hasta un aumento máximo de un <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>.",
+        "shortDesc": "Inflige una gran cantidad de Daño Cuántico a un enemigo. Este ataque <color=#f29e38ff>ignora los tipos de Debilidad</color> y reduce la Firmeza del enemigo. Además, causa más daño cuanta más Firmeza consuma."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ejecución sumaria",
+        "fullDesc": "Ataca inmediatamente a un enemigo y entra en combate. Inflige un <unbreak>#1[i]%</unbreak> del ATQ de Xueyi como Daño Cuántico a todos los enemigos.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Cuántico a todos los enemigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

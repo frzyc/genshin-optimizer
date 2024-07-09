@@ -1,0 +1,6 @@
+{
+  "setName": "自転が止まったサルソット",
+  "setEffects": {
+    "2": "装備キャラの会心率+<unbreak>#1[i]%</unbreak>。装備キャラの会心率が<unbreak>#2[i]%</unbreak>以上の場合、必殺技と追加攻撃の与ダメージ+<unbreak>#3[i]%</unbreak>。"
+  }
+}

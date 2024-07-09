@@ -1,0 +1,39 @@
+{
+  "name": "Bronya",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Windreiterkugel",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Bronyas ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Erneuter Kampfeinsatz",
+        "fullDesc": "Entfernt 1 <u>Debuff</u> von einem anvisierten Verbündeten, lässt ihn sofort eine Aktion ausführen und erhöht seinen zugefügten SCH für <unbreak>#3[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>.\\nWird diese Fertigkeit auf Bronya selbst angewendet, kann sie keine sofortige Aktion ausführen.",
+        "shortDesc": "<color=#f29e38ff>Entfernt</color> 1 <color=#f29e38ff><u>Debuff</u></color> von einem Verbündeten, erhöht dessen <color=#f29e38ff>SCH</color> und er <color=#f29e38ff>tritt sofort in Aktion</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Der Belobog-Marsch",
+        "fullDesc": "Erhöht den ANG aller Verbündeten um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> und ihren KRIT-SCH um <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> von Bronyas KRIT-SCH plus <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> für <unbreak>#4[i]</unbreak> Rd.",
+        "shortDesc": "Erhöht den <color=#f29e38ff>ANG</color> und <color=#f29e38ff>KRIT-SCH</color> aller Verbündeten."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Banner der Führung",
+        "fullDesc": "Erhöht nach dem Einsatz der Technik den ANG aller Verbündeten zu Beginn des nächsten Kampfs für <unbreak>#2[i]</unbreak> Rd. um <unbreak>#1[i]%</unbreak>.",
+        "shortDesc": "Nach dem Einsatz der Technik wird der ANG aller Verbündeten zu Beginn des nächsten Kampfes erhöht."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

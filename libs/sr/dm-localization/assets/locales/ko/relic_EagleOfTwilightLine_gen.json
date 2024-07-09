@@ -1,0 +1,7 @@
+{
+  "setName": "밤낮의 경계를 나는 매",
+  "setEffects": {
+    "2": "바람 속성 피해 <unbreak>#1[i]%</unbreak> 증가",
+    "4": "장착한 캐릭터는 필살기 발동 후 행동 게이지가 <unbreak>#1[i]%</unbreak> 증가한다"
+  }
+}

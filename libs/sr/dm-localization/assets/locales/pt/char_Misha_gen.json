@@ -1,0 +1,39 @@
+{
+  "name": "Misha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "C-Com Licença, Por Favor!",
+        "fullDesc": "Causa Dano de Gelo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Misha a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "S-Serviço de Quarto!",
+        "fullDesc": "Aumenta os Golpes por Ação da próxima Perícia Suprema de Misha em <unbreak>#3[i]</unbreak> golpe(s). Causa Dano de Gelo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Misha a um inimigo, e Dano de Gelo igual a <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do ATQ de Misha a inimigos adjacentes a ele.",
+        "shortDesc": "Causa Dano de Gelo a um inimigo e Dano de Gelo leve a inimigos adjacentes a ele. Além disso, aumenta os <color=#f29e38ff>Golpes por Ação da próxima Perícia Suprema</color> de Misha."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "V-Vou me Atrasar!",
+        "fullDesc": "Possui <unbreak>#1[i]</unbreak> Golpes por Ação por padrão. Primeiro, usa 1 golpe para causar Dano de Gelo igual a <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do ATQ de Misha a um único inimigo-alvo. Então, cada um dos golpes restantes causa Dano de Gelo igual a <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do ATQ de Misha a um único inimigo aleatório. Logo antes do acerto de cada golpe, existe uma <u>chance-base</u> de <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> de causar Congelamento ao alvo, durando por 1 rodada.\\nEnquanto no estado de Congelamento, inimigos-alvo não podem agir, e no início de suas rodadas, eles recebem <u>Dano de Gelo Adicional</u> igual a <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> do ATQ de Misha.\\nEssa Perícia Suprema pode possuir até <unbreak>#5[i]</unbreak> Golpes por Ação. Depois que a Perícia Suprema é utilizada, seus Golpes por Ação serão redefinidos ao nível padrão.",
+        "shortDesc": "Causa Dano de Gelo leve a inimigos únicos. O ataque ricocheteia <color=#f29e38ff><unbreak>#1[i]</unbreak></color> vezes por padrão, até um máximo de <color=#f29e38ff><unbreak>#5[i]</unbreak></color> vezes. Antes que cada golpe acerte, há uma pequena chance de infligir <color=#f29e38ff>Congelamento</color> no alvo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Espere, Você É Tão Linda!",
+        "fullDesc": "Usar a Técnica cria uma dimensão que dura por <unbreak>#1[i]</unbreak> segundos. Inimigos pegos na dimensão são afetados pela Prisão Onírica e todas as suas ações são interrompidas. Ao entrar em batalha contra inimigos afetados pela Prisão Onírica, a próxima Perícia Suprema de Misha causa <unbreak>#2[i]</unbreak> Golpe(s) por Ação a mais. Apenas uma dimensão criada por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão que para todos os inimigos que estiverem dentro dela. Ao entrar em batalha contra inimigos na dimensão, <color=#f29e38ff>a próxima Perícia Suprema de Misha causa mais Golpes por Ação</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+      }
+    }
+  }
+}

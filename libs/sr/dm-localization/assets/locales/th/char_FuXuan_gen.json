@@ -1,0 +1,39 @@
+{
+  "name": "Fu Xuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Novaburst",
+        "fullDesc": "สร้าง DMG ควอนตัม <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ HP สูงสุดของ Fu Xuan แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "สร้าง DMG ควอนตัมเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Known by Stars, Shown by Hearts",
+        "fullDesc": "เปิดใช้งาน \"Matrix of Prescience\" และ<u>แบ่ง</u> DMG ให้กับ Fu Xuan <unbreak>#1[i]%</unbreak> ของ DMG ทั้งหมดที่เพื่อนร่วมทีมของ Fu Xuan ได้รับ ก่อนที่จะถูกโล่ต้านทาน เป็นเวลา <unbreak>#3[i]</unbreak> เทิร์น\\nฝ่ายเราทั้งหมดที่อยู่ภายใต้ \"Matrix of Prescience\" จะได้รับสถานะ \"Knowledge\" ซึ่ง HP สูงสุดของเป้าหมายฝ่ายเราที่ติดสถานะ \"Knowledge\" จะเพิ่มขึ้น โดยค่าที่เพิ่มขึ้นจะเท่ากับ <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> ของ HP สูงสุดของ Fu Xuan และอัตราคริติคอลเพิ่มขึ้น <color=#f29e38ff><unbreak>#5[f1]%</unbreak></color>\\nเมื่อ Fu Xuan <u>หมดสติ</u> Matrix of Prescience ก็จะถูกลบไปด้วย",
+        "shortDesc": "เปิดใช้งาน \"Matrix of Prescience\" และ<color=#f29e38ff><u>แบ่ง</u> DMG ทั้งหมด</color>ที่เพื่อนร่วมทีมได้รับให้กับ Fu Xuan อีกทั้งทำให้ HP สูงสุด และ<color=#f29e38ff>อัตราคริติคอล</color> ของฝ่ายเราทั้งหมดเพิ่มขึ้น"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Woes of Many Morphed to One",
+        "fullDesc": "สร้าง DMG ควอนตัม <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ HP สูงสุดของ Fu Xuan แก่ฝ่ายศัตรูทั้งหมด และได้รับจำนวนการฟื้นฟู HP จากพรสวรรค์ของ Fu Xuan 1 ครั้ง",
+        "shortDesc": "สร้าง DMG ควอนตัมแก่ฝ่ายศัตรูทั้งหมด และเพิ่มจำนวนการใช้พรสวรรค์ของ Fu Xuan"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Of Fortune Comes Fate",
+        "fullDesc": "หลังจากใช้เทคนิค ฝ่ายเราทั้งหมดจะได้รับบาเรียเป็นเวลา <unbreak>#1[i]</unbreak> วินาที โดยบาเรียนี้ สามารถต้านทานการโจมตีทั้งหมดของศัตรู และจะไม่เข้าสู่การต่อสู้ แต่หากเข้าสู่การต่อสู้ ในช่วงเวลาที่มีบาเรียอยู่ Fu Xuan จะเปิดใช้งาน \"Matrix of Prescience\" โดยอัตโนมัติ เป็นเวลา <unbreak>#2[i]</unbreak> เทิร์น",
+        "shortDesc": "เปิดใช้งานบาเรีย โดยเมื่อถูกศัตรูโจมตีจะไม่เข้าสู่การต่อสู้ แต่หลังจากเข้าสู่การต่อสู้แล้ว จะเปิดใช้งาน \"Matrix of Prescience\" โดยอัตโนมัติ"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย"
+      }
+    }
+  }
+}

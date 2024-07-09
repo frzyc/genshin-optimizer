@@ -1,0 +1,7 @@
+{
+  "name": "훗날 기약",
+  "passive": {
+    "name": "교섭 같은 교전",
+    "description": "장착한 캐릭터가 일반 공격 혹은 전투 스킬 발동 후 임의의 피격된 적 1기에게 자신의 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 만큼의 추가 피해를 준다"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Night on the Milky Way",
+  "passive": {
+    "name": "Meteor Swarm",
+    "description": "Untuk setiap target musuh yang ada di medan pertempuran akan meningkatkan <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> ATK pengguna, efek ini dapat ditumpuk hingga 5 lapis. Jika ada target musuh yang terkena Weakness Break, DMG pengguna akan meningkat <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> selama 1 giliran."
+  }
+}

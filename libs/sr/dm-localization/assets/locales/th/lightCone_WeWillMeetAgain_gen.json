@@ -1,0 +1,7 @@
+{
+  "name": "We Will Meet Again",
+  "passive": {
+    "name": "A Discourse in Arms",
+    "description": "หลังจากผู้สวมใส่ใช้การโจมตีปกติหรือสกิลต่อสู้ จะสุ่มสร้าง DMG เพิ่มเติม <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของตัวเอง แก่ศัตรูเป้าหมาย 1 ตัวที่ถูกโจมตี"
+  }
+}

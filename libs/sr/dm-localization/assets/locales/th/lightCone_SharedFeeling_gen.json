@@ -1,0 +1,7 @@
+{
+  "name": "Shared Feeling",
+  "passive": {
+    "name": "Cure and Repair",
+    "description": "ทำให้ปริมาณการรักษาของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> และเมื่อปล่อยสกิลต่อสู้ จะฟื้นฟูพลังงานให้ฝ่ายตัวเองทั้งหมด <color=#f29e38ff><unbreak>#2[f1]</unbreak></color> หน่วย"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "spd": "GES",
+  "hp": "LP",
+  "atk": "ANG",
+  "def": "VTD",
+  "crit_": "KRIT-Rate",
+  "crit_dmg_": "KRIT-SCH",
+  "brEff_": "Brucheffekt",
+  "eff_": "Brucheffekt",
+  "eff_res_": "Effekt-WDS",
+  "enerRegen_": "Energie-Wiederherstellungsrate",
+  "heal_": "Bonus für bewirkte Heilung",
+  "physical_dmg_": "Erhöhung des physischen SCH",
+  "fire_dmg_": "Feuer-SCH-Erhöhung",
+  "ice_dmg_": "Eis-SCH-Erhöhung",
+  "wind_dmg_": "Wind-SCH-Erhöhung",
+  "lightning_dmg_": "Blitz-SCH-Erhöhung",
+  "quantum_dmg_": "Quanten-SCH-Erhöhung",
+  "imaginary_dmg_": "Erhöhung des imaginären SCH"
+}

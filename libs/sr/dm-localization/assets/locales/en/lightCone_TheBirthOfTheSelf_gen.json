@@ -1,0 +1,7 @@
+{
+  "name": "The Birth of the Self",
+  "passive": {
+    "name": "The Maiden in the Painting",
+    "description": "Increases DMG dealt by the wearer's follow-up attacks by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. If the current HP of the target enemy is below or equal to <unbreak>#2[i]%</unbreak>, increases DMG dealt by follow-up attacks by an extra <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+  }
+}

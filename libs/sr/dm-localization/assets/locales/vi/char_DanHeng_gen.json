@@ -1,0 +1,39 @@
+{
+  "name": "Dan Heng",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Thương Thuật Vân Kỵ - Gió Bắc",
+        "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Dan Heng.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Thương Thuật Vân Kỵ - Lũ Cuốn",
+        "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Dan Heng.\\nKhi Chiến Kỹ gây sát thương kích hoạt bạo kích, có <unbreak>#4[i]%</unbreak> <u>xác suất cơ bản</u> khiến mục tiêu phe địch bị tấn công giảm tốc <unbreak>#2[i]%</unbreak>, duy trì <unbreak>#3[i]</unbreak> hiệp.",
+        "shortDesc": "Gây Sát Thương Phong cho 1 kẻ địch, khi bạo kích có xác suất lớn thi triển trạng thái Giảm Tốc."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Giấc Mơ Bồng Lai",
+        "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Dan Heng. Khi mục tiêu bị tấn công đang trong trạng thái Giảm Tốc, Bội Số Sát Thương Tuyệt Kỹ gây ra tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>.",
+        "shortDesc": "Gây lượng lớn Sát Thương Phong cho 1 kẻ địch, tăng Bội Số Sát Thương của mục tiêu đang trong trạng thái Giảm Tốc."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Mũi Nhọn Tiên Phong",
+        "fullDesc": "Sau khi dùng Bí Kỹ, Tấn Công của Dan Heng khi bắt đầu lần chiến đấu tiếp theo tăng <unbreak>#1[i]%</unbreak>, duy trì <unbreak>#2[i]</unbreak> hiệp.",
+        "shortDesc": "Dùng Bí Kỹ, lần sau vào trận sẽ tăng tấn công."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+      }
+    }
+  }
+}

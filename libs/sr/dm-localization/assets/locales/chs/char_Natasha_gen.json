@@ -1,0 +1,39 @@
+{
+  "name": "娜塔莎",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "仁慈的背面",
+        "fullDesc": "对指定敌方单体造成等同于娜塔莎<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的物理属性伤害。",
+        "shortDesc": "对敌方单体造成少量物理属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "爱，救护与抉择",
+        "fullDesc": "立即为指定我方单体回复等同于娜塔莎<color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>生命上限+<color=#f29e38ff><unbreak>#4[i]</unbreak></color>的生命值，同时目标每回合开始时为其回复等同于娜塔莎<color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>生命上限+<color=#f29e38ff><unbreak>#5[i]</unbreak></color>的生命值，持续<unbreak>#3[i]</unbreak>回合。",
+        "shortDesc": "为我方单体<color=#f29e38ff>回复生命值</color>，并使目标<color=#f29e38ff>持续回复生命值</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "新生之礼",
+        "fullDesc": "立即为我方全体回复等同于娜塔莎<color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>生命上限+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>的生命值。",
+        "shortDesc": "为我方全体<color=#f29e38ff>回复生命值</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "催眠研习",
+        "fullDesc": "立即攻击敌人，进入战斗后对敌方随机单体造成等同于娜塔莎<unbreak>#4[i]%</unbreak>攻击力的物理属性伤害，并有<unbreak>#1[i]%</unbreak>的<u>基础概率</u>使敌方每个单体目标陷入虚弱状态。\\n虚弱状态下的敌方目标对我方造成的伤害降低<unbreak>#2[i]%</unbreak>，持续<unbreak>#3[i]</unbreak>回合。",
+        "shortDesc": "攻击敌人，进战后对敌方随机单体造成少量物理属性伤害，大概率使敌方每个单体目标陷入虚弱状态。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

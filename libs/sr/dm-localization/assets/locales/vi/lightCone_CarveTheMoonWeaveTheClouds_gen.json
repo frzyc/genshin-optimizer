@@ -1,0 +1,7 @@
+{
+  "name": "Khắc Lên Ánh Trăng",
+  "passive": {
+    "name": "Bí Mật",
+    "description": "Khi bắt đầu chiến đấu và khi người trang bị bắt đầu hiệp, sẽ có 1 hiệu ứng ngẫu nhiên phát huy hiệu lực. Hiệu ứng này khi phát huy hiệu lực, sẽ thay thế hiệu ứng của lần trước và không trùng với lần trước. Hiệu ứng bao gồm: Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của toàn phe ta; Tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Sát Thương Bạo Kích của toàn phe ta; Tăng <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> hiệu suất hồi Năng Lượng của toàn phe ta. Hiệu ứng cùng loại không thể cộng dồn, khi người trang bị rơi vào trạng thái không thể chiến đấu sẽ giải trừ."
+  }
+}

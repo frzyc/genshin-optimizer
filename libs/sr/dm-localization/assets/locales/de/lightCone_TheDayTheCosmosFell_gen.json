@@ -1,0 +1,7 @@
+{
+  "name": "Tag des kosmischen Kollapses",
+  "passive": {
+    "name": "Strategem",
+    "description": "Erhöht den ANG des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Nach einem Angriff auf nicht weniger als 2 Gegner mit der entsprechenden Schwäche wird der KRIT-SCH des Trägers für <unbreak>#3[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> erhöht."
+  }
+}

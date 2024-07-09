@@ -1,0 +1,39 @@
+{
+  "name": "傑帕德",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "一意之拳",
+        "fullDesc": "對指定敵方單體造成等同於傑帕德<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的冰屬性傷害。",
+        "shortDesc": "對敵方單體造成少量冰屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "震懾之擊",
+        "fullDesc": "對指定敵方單體造成等同於傑帕德<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的冰屬性傷害，同時有<unbreak>#2[i]%</unbreak>的<u>基礎機率</u>使受到攻擊的敵方目標陷入凍結狀態，持續<unbreak>#3[i]</unbreak>回合。\\n凍結狀態下，敵方目標不能行動同時每回合開始時受到等同於傑帕德<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>攻擊力的冰屬性<u>附加傷害</u>。",
+        "shortDesc": "對敵方單體造成冰屬性傷害，<color=#f29e38ff>有機率對目標施加凍結狀態</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "永屹之壁",
+        "fullDesc": "為我方全體提供強度等同於傑帕德<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>防禦力+<color=#f29e38ff><unbreak>#3[i]</unbreak></color>的護盾，持續<unbreak>#2[i]</unbreak>回合。",
+        "shortDesc": "為我方全體<color=#f29e38ff>提供護盾</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "有情之證",
+        "fullDesc": "使用秘技後，下一次戰鬥開始時為我方全體提供強度等同於傑帕德<unbreak>#1[i]%</unbreak>防禦力+<unbreak>#3[i]</unbreak>的護盾，持續<unbreak>#2[i]</unbreak>回合。",
+        "shortDesc": "使用秘技，下一次戰鬥開始時我方全體獲得護盾。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

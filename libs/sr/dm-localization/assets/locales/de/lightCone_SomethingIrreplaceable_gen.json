@@ -1,0 +1,7 @@
+{
+  "name": "Etwas Unersetzliches",
+  "passive": {
+    "name": "Teil der Familie",
+    "description": "Erhöht den ANG des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Besiegt der Träger einen Gegner oder wird angegriffen, werden sofort LP in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> seines ANG wiederhergestellt. Gleichzeitig wird sein verursachter SCH bis zum Ende seiner nächsten Runde um <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> erhöht. Dieser Effekt ist nicht stapelbar und kann nur 1-mal pro Runde ausgelöst werden."
+  }
+}

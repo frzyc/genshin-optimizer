@@ -1,0 +1,6 @@
+{
+  "setName": "Arena Rutilante",
+  "setEffects": {
+    "2": "Aumenta em <unbreak>#1[i]%</unbreak> a Chance de CRIT do usuário. Quando a Chance de CRIT chegar a <unbreak>#2[i]%</unbreak> ou mais, aumenta em <unbreak>#3[i]%</unbreak> o ATQ Básico e o Dano da Perícia do usuário."
+  }
+}

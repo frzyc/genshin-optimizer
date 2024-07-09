@@ -1,0 +1,7 @@
+{
+  "name": "镂月裁云之意",
+  "passive": {
+    "name": "秘密",
+    "description": "在战斗开始时以及当装备者回合开始时，随机生效1个效果。该效果生效时，替换上次的效果且本次不会与上次重复。效果包含：使我方全体攻击力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>；使我方全体暴击伤害提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>；使我方全体能量恢复效率提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>。同类效果无法叠加，在装备者陷入无法战斗状态时解除。"
+  }
+}

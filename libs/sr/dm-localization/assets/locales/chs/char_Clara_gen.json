@@ -1,0 +1,39 @@
+{
+  "name": "克拉拉",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "我也想帮上忙",
+        "fullDesc": "对指定敌方单体造成等同于克拉拉<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的物理属性伤害。",
+        "shortDesc": "对敌方单体造成少量物理属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "史瓦罗在看着你",
+        "fullDesc": "对敌方全体造成等同于克拉拉<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的物理属性伤害，并对所有被史瓦罗标上【反击标记】的敌方目标额外造成等同于克拉拉<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻击力物理属性伤害。\\n战技施放后所有【反击标记】失效。",
+        "shortDesc": "对敌方全体造成物理属性伤害，对持有【反击标记】的目标<color=#f29e38ff>额外造成物理伤害</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "是约定不是命令",
+        "fullDesc": "施放终结技后克拉拉受到的伤害额外降低<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>且被敌方目标攻击的概率大幅提高，持续<unbreak>#3[i]</unbreak>回合。\\n同时史瓦罗的<u>反击</u>得到强化，当任意我方目标受到攻击后史瓦罗立即施放<u>反击</u>，对敌方目标造成的伤害倍率提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，并对其相邻目标造成相当于主目标<unbreak>50%</unbreak>的伤害。强化效果可生效<unbreak>#5[i]</unbreak>次。",
+        "shortDesc": "自身<color=#f29e38ff>受到的伤害降低</color>，被攻击的概率提高，并强化<u>反击</u>的效果。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "胜利的小小代价",
+        "fullDesc": "立即攻击敌人，进入战斗后克拉拉受到敌方攻击的概率提高，持续<unbreak>#1[i]</unbreak>回合。",
+        "shortDesc": "攻击敌人，进战后受到敌人攻击的概率提高。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "강토 개척",
+  "passive": {
+    "name": "컴퍼니",
+    "description": "장착한 캐릭터는 적의 약점을 격파할 시 자신 HP 최대치 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 HP를 회복한다"
+  }
+}

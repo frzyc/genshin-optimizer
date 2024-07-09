@@ -1,0 +1,7 @@
+{
+  "name": "調和",
+  "passive": {
+    "name": "家族",
+    "description": "進入戰鬥時，我方全體速度提高<color=#f29e38ff><unbreak>#1[i]</unbreak></color>點，持續<unbreak>#2[i]</unbreak>回合。"
+  }
+}

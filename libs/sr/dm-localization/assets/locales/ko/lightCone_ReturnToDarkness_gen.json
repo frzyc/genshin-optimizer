@@ -1,0 +1,7 @@
+{
+  "name": "또다시 저승으로",
+  "passive": {
+    "name": "용솟음",
+    "description": "장착한 캐릭터의 치명타 확률이 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 치명타 발동 후 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>의 고정 확률로 피격된 적이 보유한 버프 효과를 1개 해제한다. 해당 효과는 턴마다 1회만 발동할 수 있다"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Jing Yuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Glistening Light",
+        "fullDesc": "Jing Yuan deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of his ATK to a single enemy.",
+        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Rifting Zenith",
+        "fullDesc": "Deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Jing Yuan's ATK to all enemies and increases Lightning-Lord's Hits Per Action by <unbreak>#2[i]</unbreak> for the next turn.",
+        "shortDesc": "Deals minor Lightning DMG to all enemies and <color=#f29e38ff>increases Lightning-Lord's Hits Per Action</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lightbringer",
+        "fullDesc": "Deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Jing Yuan's ATK to all enemies and increases Lightning-Lord's Hits Per Action by <unbreak>#2[i]</unbreak> for the next turn.",
+        "shortDesc": "Deals Lightning DMG to all enemies and <color=#f29e38ff>increases Lightning-Lord's Hits Per Action</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Spirit Invocation",
+        "fullDesc": "After the Technique is used, the Lightning-Lord's Hits Per Action in the first turn increases by <unbreak>#1[i]</unbreak> at the start of the next battle.",
+        "shortDesc": "After using Technique, for the next battle, <color=#f29e38ff>increases Lightning-Lord's Hits Per Action</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+      }
+    }
+  }
+}

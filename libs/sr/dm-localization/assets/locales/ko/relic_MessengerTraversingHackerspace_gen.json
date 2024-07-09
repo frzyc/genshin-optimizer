@@ -1,0 +1,7 @@
+{
+  "setName": "가상공간을 누비는 메신저",
+  "setEffects": {
+    "2": "속도 <unbreak>#1[i]%</unbreak> 증가",
+    "4": "장착한 캐릭터가 아군에게 필살기 발동 시 모든 아군의 속도가 <unbreak>#1[i]%</unbreak> 증가한다. 지속 시간: <unbreak>#2[i]</unbreak>턴. 해당 효과는 중첩되지 않는다"
+  }
+}

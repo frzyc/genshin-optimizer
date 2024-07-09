@@ -1,0 +1,6 @@
+{
+  "setName": "Sigonia, desolación sin dueño",
+  "setEffects": {
+    "2": "Aumenta la Prob. CRIT del portador en un <unbreak>#3[i]%</unbreak>. Al eliminar a un enemigo, el Daño CRIT del portador aumenta en un <unbreak>#1[i]%</unbreak>. Se puede acumular hasta <unbreak>#2[i]</unbreak> veces."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "激奏雷電的樂團",
+  "setEffects": {
+    "2": "雷屬性傷害提高<unbreak>#1[i]%</unbreak>。",
+    "4": "當裝備者施放戰技時，使裝備者的攻擊力提高<unbreak>#1[i]%</unbreak>，持續<unbreak>#2[i]</unbreak>回合。"
+  }
+}

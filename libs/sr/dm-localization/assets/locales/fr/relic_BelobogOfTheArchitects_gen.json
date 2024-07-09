@@ -1,0 +1,6 @@
+{
+  "setName": "Belobog des Architectes",
+  "setEffects": {
+    "2": "Augmente la DÉF du porteur de <unbreak>#1[i]%</unbreak>. Lorsque ses chances d'appliquer des effets sont d'au moins <unbreak>#2[i]%</unbreak>, il obtient <unbreak>#3[i]%</unbreak> de DÉF supplémentaire."
+  }
+}

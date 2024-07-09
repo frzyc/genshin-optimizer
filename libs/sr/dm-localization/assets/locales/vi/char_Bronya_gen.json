@@ -1,0 +1,39 @@
+{
+  "name": "Bronya",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Viên Đạn Cưỡi Gió",
+        "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Bronya.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Tác Chiến Và Tái Bố Trí",
+        "fullDesc": "Xóa 1 <u>Hiệu Ứng Xấu</u> cho 1 đồng đội, đồng thời khiến mục tiêu này hành động ngay, sát thương gây ra tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, duy trì <unbreak>#3[i]</unbreak> hiệp.\\nKhi thi triển kỹ năng này cho bản thân, sẽ không thể kích hoạt ngay hiệu quả hành động.",
+        "shortDesc": "<color=#f29e38ff>Giải trừ</color> 1 <color=#f29e38ff><u>Hiệu Ứng Xấu</u></color> cho 1 đồng đội, <color=#f29e38ff>tăng sát thương của đồng đội đó gây ra</color> và <color=#f29e38ff>hành động ngay</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Khúc Quân Hành Belobog",
+        "fullDesc": "Khiến toàn bộ phe ta tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> tấn công, đồng thời tăng sát thương bạo kích bằng <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> sát thương bạo kích của Bronya +<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>, duy trì <unbreak>#4[i]</unbreak> hiệp.",
+        "shortDesc": "Tăng <color=#f29e38ff>tấn công</color>, <color=#f29e38ff>tăng sát thương bạo kích</color> của toàn bộ phe ta."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Phía Dưới Ngọn Cờ",
+        "fullDesc": "Sau khi dùng Bí Kỹ, lần khai chiến tiếp theo, khiến toàn phe ta sẽ tăng <unbreak>#1[i]%</unbreak> Tấn Công, duy trì <unbreak>#2[i]</unbreak> hiệp.",
+        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo, sẽ tăng tấn công của toàn bộ phe ta."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Phiền Não, Hạnh Phúc",
+  "passive": {
+    "name": "Từng Người Một",
+    "description": "Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tỷ Lệ Bạo Kích của người trang bị, tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> sát thương do Đòn Đánh Theo Sau gây ra. Sau khi người trang bị thi triển Đòn Đánh Theo Sau, khiến mục tiêu rơi vào trạng thái Ôn Hòa, hiệu ứng này tối đa cộng dồn <unbreak>#4[i]</unbreak> tầng. Khi mục tiêu phe ta đánh trúng kẻ địch ở trạng thái Ôn Hòa, mỗi tầng Ôn Hòa sẽ tăng <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> Sát Thương Bạo Kích gây ra."
+  }
+}

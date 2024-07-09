@@ -1,0 +1,7 @@
+{
+  "name": "Flèches",
+  "passive": {
+    "name": "Crise",
+    "description": "Les chances de coup critique du porteur augmentent de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> pendant <unbreak>#2[i]</unbreak> tours en début de combat."
+  }
+}

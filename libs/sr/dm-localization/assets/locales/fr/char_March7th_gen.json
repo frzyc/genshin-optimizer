@@ -1,0 +1,39 @@
+{
+  "name": "March 7th",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Flèche du froid glacial",
+        "fullDesc": "Inflige des DGT de glace équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de March 7th à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Par le pouvoir de la mignonnerie",
+        "fullDesc": "Accorde un bouclier à un allié unique qui absorbe une quantité de DGT équivalente à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de la DÉF de March 7th + <color=#f29e38ff><unbreak>#4[i]</unbreak></color> pendant <unbreak>#2[i]</unbreak> tours.\\nSi le pourcentage de PV actuel de l'allié est supérieur ou égal à <unbreak>#3[i]%</unbreak>, les chances que les ennemis attaquent cet allié augmentent considérablement.",
+        "shortDesc": "<color=#f29e38ff>Accorde un bouclier</color> à un allié unique."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Cascade glaciale",
+        "fullDesc": "Inflige des DGT de glace équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de March 7th à tous les ennemis. Les ennemis touchés ont <unbreak>#2[i]%</unbreak> de <u>chances de base</u> d'être gelés pendant <unbreak>#3[i]</unbreak> tour.\\nLes ennemis gelés ne peuvent pas agir et subissent des DGT de glace <u>additionnels</u> équivalents à <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> de l'ATQ de March 7th au début de chaque tour.",
+        "shortDesc": "Inflige des DGT de glace à <color=#f29e38ff>tous les ennemis</color> avec <color=#f29e38ff>une chance d'appliquer l'effet Gelé</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Beauté glacée",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Il y a <unbreak>#1[i]%</unbreak> de <u>chances de base</u> de geler un ennemi aléatoire pendant <unbreak>#2[i]</unbreak> tour après être entré en combat.\\nUn ennemi gelé ne peut pas agir et subit des DGT de glace <u>additionnels</u> équivalents à <unbreak>#3[i]%</unbreak> de l'ATQ de March 7th au début de chaque tour.",
+        "shortDesc": "Engage le combat contre les ennemis avec de fortes chances d'infliger Gelé à un ennemi aléatoire en début de combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

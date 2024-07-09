@@ -1,0 +1,7 @@
+{
+  "name": "Before Dawn",
+  "passive": {
+    "name": "Long Night",
+    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> CRIT DMG pengguna. Meningkatkan <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Skill DMG dan Ultimate DMG pengguna. Setelah pengguna melancarkan Skill atau Ultimate, pengguna akan mendapatkan efek \"Somnus Corpus\". Saat memicu Serangan Lanjutan, \"Somnus Corpus\" akan dikonsumsi untuk meningkatkan <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> DMG Serangan Lanjutan."
+  }
+}

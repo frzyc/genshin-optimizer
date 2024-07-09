@@ -1,0 +1,7 @@
+{
+  "name": "Sagacidad",
+  "passive": {
+    "name": "Genio",
+    "description": "Cuando el portador usa su habilidad definitiva, su ATQ aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> durante <unbreak>#2[i]</unbreak> turnos."
+  }
+}

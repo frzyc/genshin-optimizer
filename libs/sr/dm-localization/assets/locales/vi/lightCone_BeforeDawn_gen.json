@@ -1,0 +1,7 @@
+{
+  "name": "Trước Buổi Bình Minh",
+  "passive": {
+    "name": "Đêm Dài",
+    "description": "Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Sát Thương Bạo Kích của người trang bị. Tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> sát thương do Chiến Kỹ và Tuyệt Kỹ của người trang bị gây ra. Sau khi người trang bị thi triển Chiến Kỹ hoặc Tuyệt Kỹ, sẽ nhận hiệu ứng \"Thân Mộng\". Khi thi triển Đòn Đánh Theo Sau, tiêu hao \"Thân Mộng\", tăng <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> sát thương do Đòn Đánh Theo Sau gây ra."
+  }
+}

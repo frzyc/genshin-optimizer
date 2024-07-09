@@ -1,0 +1,44 @@
+{
+  "name": "Luka",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Direct Punch",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Luka pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
+      },
+      "1": {
+        "name": "Sky-Shatter Fist",
+        "fullDesc": "Mengonsumsi 2 lapis \"Fighting Will\", menggunakan \"Direct Punch\" terlebih dulu untuk melancarkan 3 serangan yang setiap serangannya akan mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Luka pada musuh yang ditarget.\\nKemudian akan menggunakan \"Rising Uppercut\" untuk melancarkan 1 serangan yang akan mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ATK Luka pada 1 target.",
+        "shortDesc": "Mengonsumsi 2 lapis \"Fighting Will\" dan mengakibatkan Physical DMG pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lacerating Fist",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Luka pada 1 musuh yang ditarget, dan kemudian memiliki <unbreak>#2[i]%</unbreak> <u>peluang dasar</u> untuk membuat target memasuki status Bleed selama <unbreak>#5[i]</unbreak> giliran.\\nDalam status Bleed, setiap saat giliran target musuh dimulai, musuh akan menerima Physical DoT sebesar <unbreak>#3[f1]%</unbreak> Max HP dirinya. Maksimal tidak melebihi <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> ATK Luka.",
+        "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh, dan berpeluang besar untuk <color=#f29e38ff>memberikan status Bleed</color> pada target."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Coup de Grâce",
+        "fullDesc": "Memperoleh <unbreak>#5[i]</unbreak> lapis \"Fighting Will\", dan memiliki <unbreak>#2[i]%</unbreak> <u>peluang dasar</u> untuk meningkatkan <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> DMG yang diterima musuh yang ditarget selama <unbreak>#4[i]</unbreak> giliran. Lalu kemudian akan mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Luka pada target tersebut.",
+        "shortDesc": "Mendapatkan <color=#f29e38ff><unbreak>#5[i]</unbreak></color> lapis \"Fighting Will\". Berpeluang besar untuk meningkatkan DMG yang diterima oleh 1 musuh, serta mengakibatkan Physical DMG dalam jumlah besar."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Anticipator",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, akan mengakibatkan Physical DMG sebesar <unbreak>#1[i]%</unbreak> ATK Luka pada musuh secara acak, serta memiliki <unbreak>#2[i]%</unbreak> <u>peluang dasar</u> untuk membuat target memasuki status Bleed yang sama dengan Skill. Setelah itu Luka akan memperoleh tambahan 1 lapis \"Fighting Will\".",
+        "shortDesc": "Menyerang musuh, dan setelah memasuki pertempuran, mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh secara acak, kemudian berpeluang besar membuat target <color=#f29e38ff>memasuki status Bleed</color>. Setelah itu, akan memperoleh 1 lapis \"Fighting Will\" tambahan."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+      }
+    }
+  }
+}

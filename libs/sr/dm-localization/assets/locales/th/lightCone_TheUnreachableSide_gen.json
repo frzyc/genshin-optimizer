@@ -1,0 +1,7 @@
+{
+  "name": "The Unreachable Side",
+  "passive": {
+    "name": "Unfulfilled Yearning",
+    "description": "ทำให้อัตราคริติคอลของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> และ HP สูงสุดเพิ่มขึ้น <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> หลังจากผู้สวมใส่ถูกโจมตีหรือใช้ HP ของตัวเอง จะสร้าง DMG เพิ่มขึ้น <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> โดยเอฟเฟกต์นี้จะหายไปหลังจากผู้สวมใส่ทำการโจมตี"
+  }
+}

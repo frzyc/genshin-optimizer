@@ -1,0 +1,7 @@
+{
+  "name": "Hôm Nay Là Ngày Yên Lành",
+  "passive": {
+    "name": "Cơn Bão Sắp Đến",
+    "description": "Sau khi vào chiến đấu, dựa theo giới hạn Năng Lượng của người trang bị để tăng sát thương mà người trang bị gây ra: Mỗi điểm Năng Lượng tăng <color=#f29e38ff><unbreak>#1[f2]%</unbreak></color>, tối đa tính <unbreak>#2[i]</unbreak> điểm."
+  }
+}

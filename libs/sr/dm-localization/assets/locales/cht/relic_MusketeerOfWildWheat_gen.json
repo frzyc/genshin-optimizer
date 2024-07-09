@@ -1,0 +1,7 @@
+{
+  "setName": "野穗伴行的快槍手",
+  "setEffects": {
+    "2": "攻擊力提高<unbreak>#1[i]%</unbreak>。",
+    "4": "使裝備者的速度提高<unbreak>#1[i]%</unbreak>、普通攻擊傷害提高<unbreak>#2[i]%</unbreak>。"
+  }
+}

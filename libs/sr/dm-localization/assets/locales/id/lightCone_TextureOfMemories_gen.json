@@ -1,0 +1,7 @@
+{
+  "name": "Texture of Memories",
+  "passive": {
+    "name": "Treasure",
+    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Effect RES pengguna. Jika pengguna terkena serangan saat tidak memiliki Shield, maka pengguna akan mendapatkan 1 Shield sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Max HP-nya selama <unbreak>#3[i]</unbreak> giliran. Efek ini hanya dapat terpicu sekali setiap <unbreak>#4[i]</unbreak> giliran. Jika pengguna terkena serangan saat memiliki Shield, maka DMG yang diterima akan berkurang <color=#f29e38ff><unbreak>#5[i]%</unbreak></color>."
+  }
+}

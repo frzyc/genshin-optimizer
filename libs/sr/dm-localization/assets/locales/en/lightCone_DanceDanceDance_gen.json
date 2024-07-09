@@ -1,0 +1,7 @@
+{
+  "name": "Dance! Dance! Dance!",
+  "passive": {
+    "name": "Cannot Stop It!",
+    "description": "When the wearer uses their Ultimate, all allies' actions are Advanced Forward by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+  }
+}

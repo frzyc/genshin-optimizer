@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#せいかんいちば}星間市場{RUBY_E#}のトレンド",
+  "passive": {
+    "name": "また{RUBY_B#いちじゅん}一巡{RUBY_E#}の{RUBY_B#い}入{RUBY_E#}れ{RUBY_B#か}替{RUBY_E#}え",
+    "description": "装備キャラの防御力+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。装備キャラが攻撃を受けた後、<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>の基礎確率で攻撃した敵を燃焼状態にする。燃焼状態の敵はターンが回ってくるたびに、装備キャラの防御力<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>分の持続ダメージを受ける、<unbreak>#4[i]</unbreak>ターン継続。"
+  }
+}

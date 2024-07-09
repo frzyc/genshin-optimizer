@@ -1,0 +1,7 @@
+{
+  "name": "Void",
+  "passive": {
+    "name": "Fallen",
+    "description": "Saat pertempuran dimulai, meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Effect Hit Rate pengguna selama <unbreak>#2[i]</unbreak> giliran."
+  }
+}

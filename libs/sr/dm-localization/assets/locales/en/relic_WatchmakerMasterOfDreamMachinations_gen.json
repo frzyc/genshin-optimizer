@@ -1,0 +1,7 @@
+{
+  "setName": "Watchmaker, Master of Dream Machinations",
+  "setEffects": {
+    "2": "Increases Break Effect by <unbreak>#1[i]%</unbreak>.",
+    "4": "When the wearer uses their Ultimate on an ally, all allies' Break Effect increases by <unbreak>#1[i]%</unbreak> for <unbreak>#2[i]</unbreak> turn(s). This effect cannot be stacked."
+  }
+}

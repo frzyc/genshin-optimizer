@@ -1,0 +1,7 @@
+{
+  "name": "Мы - Дикий Огонь",
+  "passive": {
+    "name": "Слёзы на глазах",
+    "description": "В начале боя урон, получаемый всеми союзниками, понижается на <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> на <unbreak>#3[i]</unbreak> ходов. HP всех союзников восстанавливается на <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> от разницы между их макс. HP и текущим HP."
+  }
+}

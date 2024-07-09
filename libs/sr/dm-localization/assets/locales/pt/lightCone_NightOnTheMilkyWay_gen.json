@@ -1,0 +1,7 @@
+{
+  "name": "Noite na Via Láctea",
+  "passive": {
+    "name": "Enxame de Meteoros",
+    "description": "Para cada inimigo no campo, aumenta o ATQ do usuário em <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>, até 5 acúmulos. Quando um inimigo é infligido com Quebra de Fraqueza, o Dano causado pelo usuário aumenta em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> por 1 rodada."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "setName": "蒼穹戰線格拉默",
+  "setEffects": {
+    "2": "使裝備者的攻擊力提高<unbreak>#1[i]%</unbreak>。當裝備者的速度大於等於<unbreak>#2[i]</unbreak>/<unbreak>#3[i]</unbreak>時，使裝備者造成的傷害提高<unbreak>#4[i]%</unbreak>/<unbreak>#5[i]%</unbreak>。"
+  }
+}

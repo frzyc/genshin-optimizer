@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#ふたり}二人{RUBY_E#}だけのコンサート",
+  "passive": {
+    "name": "{RUBY_B#せいえん}声援{RUBY_E#}",
+    "description": "装備キャラの防御力+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。フィールド上にいるバリアを持つ味方1名につき、装備キャラの与ダメージ+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#ちょうしょく}朝食{RUBY_E#}の{RUBY_B#ぎしきかん}儀式感{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#も}持{RUBY_E#}ち{RUBY_B#ば}場{RUBY_E#}に{RUBY_B#つ}着{RUBY_E#}く",
+    "description": "装備キャラの与ダメージ+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。敵を1体倒すごとに、装備キャラの攻撃力+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>、この効果は最大で<unbreak>#3[i]</unbreak>層累積できる。"
+  }
+}

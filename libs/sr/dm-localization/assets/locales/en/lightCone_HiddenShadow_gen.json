@@ -1,0 +1,7 @@
+{
+  "name": "Hidden Shadow",
+  "passive": {
+    "name": "Mechanism",
+    "description": "After using Skill, the wearer's next Basic ATK deals Additional DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of ATK to the target enemy."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Quid Pro Quo",
+  "passive": {
+    "name": "Enjoy With Rapture",
+    "description": "At the start of the wearer's turn, regenerates <color=#f29e38ff><unbreak>#2[i]</unbreak></color> Energy for a randomly chosen ally (excluding the wearer) whose current Energy is lower than <unbreak>#1[i]%</unbreak>."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "開拓者 (物理 • 毀滅)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "再見安打",
+        "fullDesc": "對指定敵方單體造成等同於開拓者<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害。",
+        "shortDesc": "對敵方單體造成少量物理屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "安息全壘打",
+        "fullDesc": "對指定敵方單體及其相鄰目標造成等同於開拓者<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害。",
+        "shortDesc": "對敵方單體以及相鄰目標造成物理屬性傷害。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "星塵王牌",
+        "fullDesc": "在兩種攻擊模式中選擇其一揮出全力一擊。\\n【全勝•再見安打】：對指定敵方單體造成等同於開拓者<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害。\\n【全勝•安息全壘打】：對指定敵方單體造成等同於開拓者<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻擊力的物理屬性傷害，並對其相鄰目標造成等同於開拓者<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>攻擊力的物理屬性傷害。",
+        "shortDesc": "選擇單體或擴散的攻擊方式，揮出全力一擊。"
+      },
+      "1": {
+        "name": "全勝•再見安打",
+        "fullDesc": "對指定敵方單體造成等同於開拓者<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害。",
+        "shortDesc": "對敵方單體造成大量物理屬性傷害。"
+      },
+      "2": {
+        "name": "全勝•安息全壘打",
+        "fullDesc": "對指定敵方單體造成等同於開拓者<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害，同時對其相鄰目標造成等同於開拓者<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻擊力的物理屬性傷害。",
+        "shortDesc": "對敵方單體及其相鄰目標造成物理屬性傷害。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "不死三振",
+        "fullDesc": "使用秘技後立即為我方全體回復等同於各自生命上限<unbreak>#1[i]%</unbreak>的生命值。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+      }
+    }
+  }
+}

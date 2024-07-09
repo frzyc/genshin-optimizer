@@ -1,0 +1,6 @@
+{
+  "setName": "泛銀河商業公司",
+  "setEffects": {
+    "2": "使裝備者的效果命中提高<unbreak>#1[i]%</unbreak>。同時提高裝備者等同於現有效果命中<unbreak>#2[i]%</unbreak>的攻擊力，最多提高<unbreak>#3[i]%</unbreak>。"
+  }
+}

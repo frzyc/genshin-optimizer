@@ -1,0 +1,7 @@
+{
+  "name": "「我」的誕生",
+  "passive": {
+    "name": "畫像少女",
+    "description": "使裝備者追加攻擊造成的傷害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。若該敵方目標現有生命值百分比小於等於<unbreak>#2[i]%</unbreak>，則追加攻擊造成的傷害額外提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>。"
+  }
+}

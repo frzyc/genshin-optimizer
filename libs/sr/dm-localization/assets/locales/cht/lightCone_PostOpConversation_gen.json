@@ -1,0 +1,7 @@
+{
+  "name": "一場術後對話",
+  "passive": {
+    "name": "互相治癒",
+    "description": "使裝備者的能量恢復效率提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，並在施放終結技時治療量提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Lynx",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Técnica de crampón",
+        "fullDesc": "Inflige un Daño Cuántico equivalente al <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de sus PV máx. a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Latas de acampada",
+        "fullDesc": "Aplica Reacción de supervivencia a un aliado y aumenta sus PV máx. en una cantidad equivalente al <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> de los PV máx. de Lynx + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>. Si el aliado es de la Vía de la Destrucción o de la Conservación, aumenta en gran medida la probabilidad de que reciba un ataque enemigo. Reacción de supervivencia dura <unbreak>#3[i]</unbreak> turnos.\\nEl objetivo aliado regenera una cantidad de PV equivalente al <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> de los PV máx. de Lynx + <color=#f29e38ff><unbreak>#5[i]</unbreak></color>.",
+        "shortDesc": "Un aliado obtiene Reacción de supervivencia, lo que <color=#f29e38ff>aumenta sus PV máx.</color> Además, sus PV se regeneran."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Botiquín de las llanuras nevadas",
+        "fullDesc": "Elimina <unbreak>#1[i]</unbreak> <u>estado negativo</u> de todos los aliados y todos los aliados regeneran una cantidad de PV equivalente al <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> de los PV máx. de Lynx + <color=#f29e38ff><unbreak>#3[i]</unbreak></color>.",
+        "shortDesc": "Elimina <color=#f29e38ff>1 <u>estado negativo</u> de todos los aliados</color>. Todos los aliados regeneran PV."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Barrita energética de chocolate",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, se aplica el efecto de curación continua del talento de Lynx a todos los aliados durante <unbreak>#1[i]</unbreak> turnos.",
+        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, todos los aliados obtienen un efecto de curación continua."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

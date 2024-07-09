@@ -1,0 +1,7 @@
+{
+  "name": "알맞은 타이밍",
+  "passive": {
+    "name": "굴절된 시선",
+    "description": "장착한 캐릭터의 효과 저항이 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가하고, 장착한 캐릭터 치유량이 증가한다. 증가 수치는 효과 저항의 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>만큼이다. 치유량은 최대 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> 증가한다"
+  }
+}

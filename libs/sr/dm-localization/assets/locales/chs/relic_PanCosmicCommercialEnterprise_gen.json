@@ -1,0 +1,6 @@
+{
+  "setName": "泛银河商业公司",
+  "setEffects": {
+    "2": "使装备者的效果命中提高<unbreak>#1[i]%</unbreak>。同时提高装备者等同于当前效果命中<unbreak>#2[i]%</unbreak>的攻击力，最多提高<unbreak>#3[i]%</unbreak>。"
+  }
+}

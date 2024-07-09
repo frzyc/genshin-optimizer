@@ -1,0 +1,7 @@
+{
+  "name": "Die Rast der Genies",
+  "passive": {
+    "name": "Jeder muss jetzt eine Rolle spielen",
+    "description": "Erhöht den ANG des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Besiegt der Träger einen Gegner, wird sein KRIT-SCH für <unbreak>#3[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> erhöht."
+  }
+}

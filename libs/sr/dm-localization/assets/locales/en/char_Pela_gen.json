@@ -1,0 +1,39 @@
+{
+  "name": "Pela",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Frost Shot",
+        "fullDesc": "Deals Ice DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Pela's ATK to a single target enemy.",
+        "shortDesc": "Deals minor Ice DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Frostbite",
+        "fullDesc": "Removes <unbreak>#2[i]</unbreak> <u>buff(s)</u> and deals Ice DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Pela's ATK to a single target enemy.",
+        "shortDesc": "<color=#f29e38ff>Dispels</color> 1 <color=#f29e38ff><u>buff</u></color> from a single enemy target, and deals Ice DMG to the target enemy."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Zone Suppression",
+        "fullDesc": "Deals Ice DMG equal to <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> of Pela's ATK to all enemies, with a <unbreak>#1[i]%</unbreak> <u>base chance</u> to inflict Exposed on all enemies.\\nWhen Exposed, enemies' DEF is reduced by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> for <unbreak>#3[i]</unbreak> turn(s).",
+        "shortDesc": "Has a high chance of <color=#f29e38ff>lowering enemies' DEF</color> and deals minor Ice DMG to all enemies."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Preemptive Strike",
+        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Pela deals Ice DMG equal to <unbreak>#4[i]%</unbreak> of her ATK to a random enemy, with a <unbreak>#1[i]%</unbreak> <u>base chance</u> of lowering the DEF of all enemies by <unbreak>#2[i]%</unbreak> for <unbreak>#3[i]</unbreak> turn(s).",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor DMG to a random single enemy, with a high chance of lowering the DEF of all enemy targets."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+      }
+    }
+  }
+}

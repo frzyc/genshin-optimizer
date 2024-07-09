@@ -1,0 +1,7 @@
+{
+  "setName": "Genius of Brilliant Stars",
+  "setEffects": {
+    "2": "DMG ควอนตัมเพิ่มขึ้น <unbreak>#1[i]%</unbreak>",
+    "4": "เมื่อผู้สวมใส่สร้าง DMG แก่ศัตรูเป้าหมาย จะเพิกเฉยต่อ DEF <unbreak>#1[i]%</unbreak> ของศัตรู หากเป้าหมายมีจุดอ่อนควอนตัม ผู้สวมใส่จะเพิกเฉยต่อ DEF <unbreak>#2[i]%</unbreak> เพิ่มเติม"
+  }
+}

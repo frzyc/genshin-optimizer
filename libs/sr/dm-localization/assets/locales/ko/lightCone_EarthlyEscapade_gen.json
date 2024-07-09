@@ -1,0 +1,7 @@
+{
+  "name": "속세에서의 유희",
+  "passive": {
+    "name": "변덕",
+    "description": "장착한 캐릭터의 치명타 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 전투 시작 시 장착한 캐릭터가 [가면]을 획득한다, 지속 시간: <unbreak>#6[i]</unbreak>턴. 장착한 캐릭터가 [가면] 보유 시, 장착한 캐릭터 동료의 치명타 확률이 <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> 증가하고 치명타 피해가 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다. 장착한 캐릭터가 전투 스킬 포인트를 1pt 회복할 때마다 [무지개 화염]을 1스택 획득하고, 회복 시 초과한 전투 스킬 포인트도 계산에 포함된다. [무지개 화염]이 <unbreak>#4[i]</unbreak>스택에 도달하면 모든 [무지개 화염]을 해제하고 [가면]을 획득한다, 지속 시간: <unbreak>#3[i]</unbreak>턴"
+  }
+}

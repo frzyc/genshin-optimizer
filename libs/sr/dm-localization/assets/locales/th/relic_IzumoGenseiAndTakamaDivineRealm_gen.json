@@ -1,0 +1,6 @@
+{
+  "setName": "Izumo Gensei and Takama Divine Realm",
+  "setEffects": {
+    "2": "ทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <unbreak>#1[i]%</unbreak> เมื่อเข้าสู่การต่อสู้ หากมีเพื่อนร่วมทีมที่อยู่ Path เดียวกันกับผู้สวมใส่อย่างน้อย 1 คน อัตราคริติคอลของผู้สวมใส่จะเพิ่มขึ้น <unbreak>#2[i]%</unbreak>"
+  }
+}

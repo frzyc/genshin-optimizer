@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#きおく}記憶{RUBY_E#}の{RUBY_B#そざい}素材{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#ちんぞう}珍蔵{RUBY_E#}",
+    "description": "装備キャラの効果抵抗+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。装備キャラが攻撃を受けた後、バリアを持っていない場合、装備キャラの最大HP<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>分の耐久値を持つバリアを1つ獲得する、<unbreak>#3[i]</unbreak>ターン継続。この効果は<unbreak>#4[i]</unbreak>ターンごとに1回発動できる。装備キャラがバリアを持っている場合、自身の被ダメージ-<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>。"
+  }
+}

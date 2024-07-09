@@ -1,0 +1,6 @@
+{
+  "setName": "불로인의 선주",
+  "setEffects": {
+    "2": "장착한 캐릭터의 HP 최대치가 <unbreak>#1[i]%</unbreak> 증가한다. 장착한 캐릭터의 속도가 <unbreak>#2[i]</unbreak> 이상일 경우 모든 아군의 공격력이 <unbreak>#3[i]%</unbreak> 증가한다"
+  }
+}

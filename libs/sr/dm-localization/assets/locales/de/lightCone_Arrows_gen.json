@@ -1,0 +1,7 @@
+{
+  "name": "Pfeile",
+  "passive": {
+    "name": "Krise",
+    "description": "Erhöht zu Beginn des Kampfes die KRIT-Rate des Trägers für <unbreak>#2[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+  }
+}

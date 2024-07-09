@@ -1,0 +1,39 @@
+{
+  "name": "Luocha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Gai Vực Sâu",
+        "fullDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Luocha.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lời Cầu Nguyện Của Hoa Trắng",
+        "fullDesc": "Sau khi dùng Chiến Kỹ sẽ lập tức giúp mục tiêu chỉ định phe ta hồi HP bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Luocha + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>, đồng thời khiến Luocha nhận 1 tầng Khoảnh Khắc Hoa Trắng.\\nKhi Phần Trăm HP hiện tại của đồng đội bất kỳ thấp hơn hoặc bằng <unbreak>#3[i]%</unbreak>, Luocha sẽ kích hoạt ngay 1 lần hiệu ứng giống với Chiến Kỹ lên mục tiêu đó, không tiêu hao điểm Chiến Kỹ, hiệu ứng này có thể kích hoạt lần nữa sau <unbreak>#4[i]</unbreak> hiệp.",
+        "shortDesc": "Giúp 1 đồng đội <color=#f29e38ff>hồi</color> HP, nhận 1 tầng \"Khoảnh Khắc Hoa Trắng\"."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Di Nguyện Chôn Cất",
+        "fullDesc": "Xóa <unbreak>#2[i]</unbreak> <u>hiệu ứng buff</u> của toàn bộ phe địch, và gây cho chúng Sát Thương Số Ảo tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Luocha, đồng thời khiến Luocha nhận 1 tầng Khoảnh Khắc Hoa Trắng.",
+        "shortDesc": "<color=#f29e38ff>Giải trừ</color> 1 <color=#f29e38ff><u>hiệu ứng buff</u></color> của toàn bộ phe địch, và gây Sát Thương Số Ảo cho chúng, nhận 1 tầng Khoảnh Khắc Hoa Trắng."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Lòng Trắc Ẩn Của Kẻ Ngốc",
+        "fullDesc": "Sau khi dùng Bí Kỹ, sẽ kích hoạt ngay Thiên Phú khi bắt đầu lần chiến đấu tiếp theo.",
+        "shortDesc": "Dùng Bí Kỹ, lần sau vào trận sẽ kích hoạt ngay hiệu ứng Thiên Phú."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+      }
+    }
+  }
+}

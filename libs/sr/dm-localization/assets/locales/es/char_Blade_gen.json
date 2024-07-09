@@ -1,0 +1,44 @@
+{
+  "name": "Blade",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Espada fragmentada",
+        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Blade como Daño de Viento a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo."
+      },
+      "1": {
+        "name": "Bosque de espadas",
+        "fullDesc": "Consume el <unbreak>#1[i]%</unbreak> de los PV máx. de Blade e inflige un Daño de Viento equivalente al <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> del ATQ de Blade + <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> de sus PV máx. a un enemigo. También inflige un Daño de Viento equivalente al <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> del ATQ de Blade + <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> de sus PV máx. a los enemigos adyacentes.\\nSi Blade no tiene suficientes PV, tras usar Bosque de espadas sus PV se reducen a 1.\\nBosque de espadas no puede recuperar pts. de habilidad básica.",
+        "shortDesc": "Consume PV e inflige Daño de Viento a un enemigo y una pequeña cantidad de Daño de Viento a los enemigos adyacentes."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Panorama infernal",
+        "fullDesc": "Consume un <unbreak>#1[i]%</unbreak> de los PV máx. de Blade y entra en el estado Panorama infernal.\\nEn el estado Panorama infernal no se puede usar la habilidad básica y el daño que inflige Blade aumenta en un <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>. El ATQ básico Espada fragmentada se potencia y se transforma en Bosque de espadas durante <unbreak>#2[i]</unbreak> turnos.\\nSi Blade no tiene suficientes PV, al usar la habilidad básica sus PV se reducen a 1.\\nEsta habilidad básica no recupera energía. Tras usar esta habilidad básica, el turno no termina.",
+        "shortDesc": "Consume sus PV, <color=#f29e38ff>potencia su ATQ básico</color> y el turno no termina."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Sentencia de muerte",
+        "fullDesc": "Los PV actuales de Blade se establecen en el <unbreak>50%</unbreak> de sus PV máx. e inflige a un enemigo un Daño de Viento equivalente al <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Blade + <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de sus PV máx. + <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> del recuento de PV que ha perdido en esta batalla. También inflige a los enemigos adyacentes un Daño de Viento equivalente al <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> del ATQ de Blade + <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> de sus PV máx. + <color=#f29e38ff><unbreak>#6[i]%</unbreak></color> del recuento de PV que ha perdido en esta batalla.\\nEl recuento de PV perdidos en esta batalla no puede superar el <unbreak>#7[i]%</unbreak> de los PV máx. de Blade. Al usar su habilidad definitiva, este recuento se reinicia.",
+        "shortDesc": "Los PV actuales se establecen en el <unbreak>50%</unbreak> de sus PV máx., inflige una gran cantidad de Daño de Viento a un enemigo y Daño de Viento a los enemigos adyacentes."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Viento kármico",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Blade consume una cantidad de PV equivalente al <unbreak>#2[i]%</unbreak> de sus PV máx. e inflige un <unbreak>#1[i]%</unbreak> de sus PV máx. como Daño de Viento a todos los enemigos.\\nSi no tiene suficientes PV, al usar la técnica los PV de Blade se reducen a 1.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Consume sus PV e inflige Daño de Viento a todos los enemigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+      }
+    }
+  }
+}

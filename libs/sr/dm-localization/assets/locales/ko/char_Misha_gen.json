@@ -1,0 +1,39 @@
+{
+  "name": "미샤",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "지… 지나갈게요!",
+        "fullDesc": "지정된 단일 적에게 미샤 공격력의 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼 얼음 속성 피해를 가한다",
+        "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가한다"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "룸… 룸서비스입니다!",
+        "fullDesc": "미샤의 다음 필살기 공격 단수가 <unbreak>#3[i]</unbreak>단 증가한다. 지정된 단일 적에게 미샤 공격력의 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼 얼음 속성 피해를 가하고 인접한 목표에게 미샤 공격력의 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>만큼 얼음 속성 피해를 가한다",
+        "shortDesc": "단일 적에게 얼음 속성 피해를 가하고, 인접한 목표에게 소량의 얼음 속성 피해를 가한다. 미샤의 다음 <color=#f29e38ff>필살기 공격 단수</color>가 증가한다"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "지… 지각하겠어!",
+        "fullDesc": "기본 상태에서 공격 단수를 <unbreak>#1[i]</unbreak>단 보유한다. 우선 1단 공격을 발동하여 지정된 단일 적에게 미샤 공격력의 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>만큼 얼음 속성 피해를 가하고 나머지 단수별 공격은 랜덤 단일 적에게 미샤 공격력의 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>만큼 얼음 속성 피해를 가한다. 단수별 공격 전 <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>의 <u>기본 확률</u>로 목표를 빙결 상태에 빠뜨린다. 지속 시간: 1턴.\\n빙결 상태에서 적은 행동할 수 없으며, 턴이 시작될 때마다 미샤 공격력의 <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>만큼 얼음 속성 <u>추가 피해</u>를 받는다.\\n필살기 공격 단수는 최대 <unbreak>#5[i]</unbreak>단까지 누적되며, 필살기 발동 후 공격 단수는 기본 상태로 복구된다",
+        "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가하고 기본 상태에서 총 <color=#f29e38ff><unbreak>#1[i]</unbreak></color>회 바운스하며, 최대 총 <color=#f29e38ff><unbreak>#5[i]</unbreak></color>회 바운스한다. 단수별 공격 전 낮은 확률로 목표를 <color=#f29e38ff>빙결</color>시킨다"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "멈추어라, 너 정말 아름답구나!",
+        "fullDesc": "비술 사용 후 <unbreak>#1[i]</unbreak>초 동안 지속되는 특수 영역을 만든다. 특수 영역 내에 있는 적은 [꿈세계 감옥] 상태에 빠진다. [꿈세계 감옥] 상태에 빠진 적은 모든 행동을 중지한다. [꿈세계 감옥] 상태의 적과 전투 진입 후 미샤의 다음 필살기 공격 단수는 <unbreak>#2[i]</unbreak>단 증가한다. 아군이 만든 영역 효과는 최대 1개만 존재할 수 있다",
+        "shortDesc": "특수 영역을 만들어 영역 내 적의 행동을 중지한다. 영역 내 적과 전투에 진입하면 미샤의 다음 <color=#f29e38ff>필살기 공격 단수</color>가 증가한다"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "공격",
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+      }
+    }
+  }
+}

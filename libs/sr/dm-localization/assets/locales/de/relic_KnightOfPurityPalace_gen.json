@@ -1,0 +1,7 @@
+{
+  "setName": "Ritterin vom Palast der Reinheit",
+  "setEffects": {
+    "2": "Erhöht VTD um <unbreak>#1[i]%</unbreak>.",
+    "4": "Erhöht die vom Träger gewährte Schildmenge um <unbreak>#1[i]%</unbreak>."
+  }
+}

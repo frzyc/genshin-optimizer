@@ -1,0 +1,7 @@
+{
+  "name": "느낌 있는 아침 식사 루틴",
+  "passive": {
+    "name": "각자 위치로",
+    "description": "장착한 캐릭터가 가하는 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 적 1기를 처치할 때마다, 장착한 캐릭터의 공격력이 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다. 해당 효과 최대 중첩수: <unbreak>#3[i]</unbreak>스택"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Jing Yuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Gleißendes Licht",
+        "fullDesc": "Jing Yuan fügt einem anvisierten Gegner Blitz-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> seines ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Gespaltener Zenit",
+        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Jing Yuans ANG zu und erhöht die Trefferzahl des Blitz-Lords in der nächsten Runde um <unbreak>#2[i]</unbreak>.",
+        "shortDesc": "Fügt allen Gegnern geringen Blitz-SCH zu und <color=#f29e38ff>erhöht die Trefferzahl des Blitz-Lords</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lichtbringer",
+        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Jing Yuans ANG zu und erhöht die Trefferzahl des Blitz-Lords in der nächsten Runde um <unbreak>#2[i]</unbreak>.",
+        "shortDesc": "Fügt allen Gegnern Blitz-SCH zu und <color=#f29e38ff>erhöht die Trefferzahl des Blitz-Lords</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Geisterbeschwörung",
+        "fullDesc": "Erhöht nach dem Einsatz der Technik die Trefferzahl des Blitz-Lords in seiner ersten Runde zu Beginn des nächsten Kampfs um <unbreak>#1[i]</unbreak>.",
+        "shortDesc": "<color=#f29e38ff>Erhöht</color> nach dem Einsatz der Technik <color=#f29e38ff>die Trefferzahl des Blitz-Lords</color> zu Beginn des nächsten Kampfs."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt seinen Widerstand gegen den entsprechenden Typ."
+      }
+    }
+  }
+}

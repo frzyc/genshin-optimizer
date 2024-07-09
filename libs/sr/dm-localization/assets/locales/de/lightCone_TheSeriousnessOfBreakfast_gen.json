@@ -1,0 +1,7 @@
+{
+  "name": "Die Ernsthaftigkeit des Frühstücks",
+  "passive": {
+    "name": "Mach dich bereit",
+    "description": "Erhöht den SCH des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Für jeden besiegten Gegner wird der ANG des Trägers um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> erhöht. Dieser Effekt ist bis zu <unbreak>#3[i]</unbreak>-mal stapelbar."
+  }
+}

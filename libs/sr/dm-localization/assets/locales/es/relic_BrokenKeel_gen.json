@@ -1,0 +1,6 @@
+{
+  "setName": "Quilla rota",
+  "setEffects": {
+    "2": "La RES a efecto del portador aumenta en un <unbreak>#1[i]%</unbreak>. Cuando su RES a efecto es igual o superior al <unbreak>#2[i]%</unbreak>, el Daño CRIT de todos los aliados aumenta en un <unbreak>#3[i]%</unbreak>."
+  }
+}

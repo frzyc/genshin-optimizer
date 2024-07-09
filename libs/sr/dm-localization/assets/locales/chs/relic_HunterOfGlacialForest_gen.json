@@ -1,0 +1,7 @@
+{
+  "setName": "密林卧雪的猎人",
+  "setEffects": {
+    "2": "冰属性伤害提高<unbreak>#1[i]%</unbreak>。",
+    "4": "当装备者施放终结技时，暴击伤害提高<unbreak>#1[i]%</unbreak>，持续<unbreak>#2[i]</unbreak>回合。"
+  }
+}

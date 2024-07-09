@@ -1,0 +1,7 @@
+{
+  "name": "Chamas Distantes",
+  "passive": {
+    "name": "Deflagração",
+    "description": "Quando a perda cumulativa de PV do usuário durante um ataque ultrapassar <unbreak>#1[i]%</unbreak> de seus PV máximos, ou se a quantidade de PV consumido for maior do que <unbreak>#1[i]%</unbreak> de seus PV máximos, cura imediatamente o usuário em <unbreak>#3[i]%</unbreak> de seus PV máximos. Ao mesmo tempo, aumenta o Dano causado por ele em <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> por <unbreak>#4[i]</unbreak> rodada(s). Esse efeito só pode ser ativado uma vez a cada <unbreak>#5[i]</unbreak> rodada(s)."
+  }
+}

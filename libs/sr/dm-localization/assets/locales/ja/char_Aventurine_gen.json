@@ -1,0 +1,39 @@
+{
+  "name": "アベンチュリン",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "ストレートべット",
+        "fullDesc": "指定した敵単体にアベンチュリンの防御力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の虚数属性ダメージを与える。",
+        "shortDesc": "指定した敵単体に少量の虚数属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#はんえい}繁栄{RUBY_E#}の{RUBY_B#きせき}基石{RUBY_E#}",
+        "fullDesc": "味方全体にアベンチュリンの防御力<color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>の耐久値を持つ「堅固なチップ」バリアを付与する、<unbreak>#3[i]</unbreak>ターン継続。「堅固なチップ」を重複して獲得する時、バリア耐久値は累積される。「堅固なチップ」の耐久値は、戦闘スキルが付与できるバリア耐久値の<unbreak>#4[i]%</unbreak>を超えない。",
+        "shortDesc": "味方全体に<color=#f29e38ff>耐久値を累積できる</color>「堅固なチップ」バリアを付与する。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "ロード・オブ・ルーレット",
+        "fullDesc": "ランダムで「ブラインドベット」を1～<unbreak>#1[i]</unbreak>獲得し、指定した敵単体を「動揺」状態にする、<unbreak>#4[i]</unbreak>ターン継続。指定した敵単体にアベンチュリンの防御力<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>分の虚数属性ダメージを与える。味方の攻撃が「動揺」状態の敵に命中する時、与える会心ダメージ+<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>。",
+        "shortDesc": "ランダムで「ブラインドベット」を獲得し、敵単体を「動揺」状態にして、その敵に虚数属性ダメージを与える。味方が「動揺」状態の敵を攻撃した時、与える<color=#f29e38ff>会心ダメージがアップ</color>する。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#あか}赤{RUBY_E#}と{RUBY_B#くろ}黒{RUBY_E#}の{RUBY_B#はざま}狭間{RUBY_E#}で",
+        "fullDesc": "秘技を使用すると以下の効果の中からランダムで1つ獲得する：\\n確率で防御力+<unbreak>#1[i]%</unbreak>。\\n高確率で防御力+<unbreak>#2[i]%</unbreak>。\\n低確率で防御力+<unbreak>#3[i]%</unbreak>。\\n繰り返し使用した時、獲得した最高数値の効果のみ保留される。\\n次の戦闘開始時、味方全体の防御力を対応する数値分アップさせる、<unbreak>#4[i]</unbreak>ターン継続。",
+        "shortDesc": "秘技を使用すると、3種類の防御力アップ効果の中からランダムで1つ獲得する。次の戦闘開始時、味方全体の防御力を対応する数値分アップさせる。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Topaz & Numby",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Mức Thâm Hụt...",
+        "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Topaz.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Khó Thanh Toán?",
+        "fullDesc": "Khiến 1 kẻ địch chỉ định rơi vào trạng thái \"Bằng Chứng Nợ Nần\", tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> sát thương của <u>Đòn Đánh Theo Sau</u> mà mục tiêu này phải chịu. \"Bằng Chứng Nợ Nần\" chỉ hiệu lực với mục tiêu bị thi triển mới nhất, khi hiệp của phe ta bắt đầu hoặc khi phe ta hành động, nếu trong trận không có kẻ địch nào ở trạng thái \"Bằng Chứng Nợ Nần\", thì Topaz sẽ khiến kẻ địch ngẫu nhiên rơi vào trạng thái \"Bằng Chứng Nợ Nần\".\\nKhiến Numby gây ra Sát Thương Hỏa lên mục tiêu này bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> tấn công của Topaz. Khi thi triển Chiến Kỹ này gây sát thương, sẽ xem như phát động <u>Đòn Đánh Theo Sau</u>.",
+        "shortDesc": "Khiến 1 kẻ địch rơi vào trạng thái \"Bằng Chứng Nợ Nần\", <color=#f29e38ff>tăng Sát Thương của Đòn Đánh Theo Sau phải chịu</color>. Numby gây Sát Thương Hỏa lên mục tiêu."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Chuyển Lỗ Thành Lời!",
+        "fullDesc": "Khiến Numby vào trạng thái \"Chồng Chất\", Bội Số Sát Thương tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, Sát Thương Bạo Kích tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, đồng thời khi kẻ địch rơi vào trạng thái \"Bằng Chứng Nợ Nần\" bị đánh bởi Tấn Công Thường, Chiến Kỹ hoặc Tuyệt Kỹ của phe ta, Numby sẽ ưu tiên hành động <unbreak>#3[i]%</unbreak>. Sau khi Numby thi triển <unbreak>#4[i]</unbreak> lần tấn công sẽ thoát khỏi trạng thái \"Chồng Chất\".",
+        "shortDesc": "Khiến Numby rơi vào trạng thái \"Chồng Chất\", <color=#f29e38ff>tăng Bội Số Sát Thương và Sát Thương Bạo Kích</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Trợ Cấp",
+        "fullDesc": "Khi Topaz vào trận sẽ triệu hồi Numby, Numby sẽ tự động tìm kiếm Chiến Lợi Phẩm thường và Heo Đất trong phạm vi nhất định.\\nSau khi dùng Bí Kỹ khiến Numby tấn công lần đầu trong trận kế tiếp, Topaz sẽ hồi <unbreak>#1[i]</unbreak> điểm Năng Lượng.\\nSau khi dùng Bí Kỹ đánh thắng kẻ địch trong bản đồ lớn, nếu Topaz vẫn còn trong đội, khi nhận Điểm Tín Dụng sẽ được nhận thêm một lượng nhỏ Điểm Tín Dụng nữa. Mỗi ngày thời gian thực tối đa được nhận thêm <unbreak>#2[i]</unbreak> điểm.\\nSau khi dùng Bí Kỹ đánh thắng kẻ địch trong Vũ Trụ Mô Phỏng, sẽ được nhận thêm một lượng nhỏ Mảnh Vũ Trụ và có xác suất nhỏ nhận được 1 Vật Thể Lạ ngẫu nhiên.",
+        "shortDesc": "Trong mê cung <color=#f29e38ff>triệu hồi Numby đi theo</color>, Numby sẽ tự động <color=#f29e38ff>tìm kiếm Chiến Lợi Phẩm thường và Heo Đất ở gần</color>. Sau khi dùng Bí Kỹ khiến Numby tấn công lần đầu trong trận chiến kế tiếp, Topaz Năng Lượng."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+      }
+    }
+  }
+}

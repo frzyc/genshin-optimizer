@@ -1,0 +1,6 @@
+{
+  "setName": "Entidad comercial pangaláctica",
+  "setEffects": {
+    "2": "El acierto de efecto del portador aumenta en un <unbreak>#1[i]%</unbreak> y su ATQ aumenta en una cantidad equivalente al <unbreak>#2[i]%</unbreak> del acierto de efecto actual, hasta un máximo de un <unbreak>#3[i]%</unbreak>."
+  }
+}

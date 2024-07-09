@@ -1,0 +1,7 @@
+{
+  "name": "Le petit-déjeuner, c'est sacré",
+  "passive": {
+    "name": "On se prépare !",
+    "description": "Augmente les DGT du porteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. À chaque ennemi vaincu par le porteur, l'ATQ du porteur augmente de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Cumulable jusqu'à <unbreak>#3[i]</unbreak> fois."
+  }
+}

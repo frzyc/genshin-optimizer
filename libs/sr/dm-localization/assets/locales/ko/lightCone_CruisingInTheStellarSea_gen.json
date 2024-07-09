@@ -1,0 +1,7 @@
+{
+  "name": "별바다 순항",
+  "passive": {
+    "name": "사냥감 추적",
+    "description": "장착한 캐릭터의 치명타 확률이 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 장착한 캐릭터는 HP 백분율이 <unbreak>#2[i]%</unbreak> 이하인 적에게 가하는 치명타 확률이 추가로 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> 증가한다. 장착한 캐릭터는 적을 처치한 후 공격력이 <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> 증가한다. 지속 시간: <unbreak>#5[i]</unbreak>턴"
+  }
+}

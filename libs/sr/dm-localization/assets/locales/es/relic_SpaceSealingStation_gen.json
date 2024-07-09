@@ -1,0 +1,6 @@
+{
+  "setName": "Estación sellaespacios",
+  "setEffects": {
+    "2": "El ATQ del portador aumenta en un <unbreak>#1[i]%</unbreak>. Cuando su VEL es igual o superior a <unbreak>#2[i]</unbreak>, el ATQ aumenta en un <unbreak>#3[i]%</unbreak> adicional."
+  }
+}

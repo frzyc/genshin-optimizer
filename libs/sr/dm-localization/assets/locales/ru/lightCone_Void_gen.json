@@ -1,0 +1,7 @@
+{
+  "name": "Пустота",
+  "passive": {
+    "name": "Падший",
+    "description": "В начале боя шанс попадания эффектов владельца повышается на <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> на <unbreak>#2[i]</unbreak> хода."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Konzert für zwei",
+  "passive": {
+    "name": "Inspirieren",
+    "description": "Erhöht die VTD des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Für jede Figur auf dem Feld, die einen Schild trägt, wird der verursachte SCH des Trägers um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> erhöht."
+  }
+}

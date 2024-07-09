@@ -1,0 +1,7 @@
+{
+  "name": "Fermata",
+  "passive": {
+    "name": "Semibreve Rest",
+    "description": "ทำให้เอฟเฟกต์ทำลายล้างของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> และสร้าง DMG แก่ศัตรูเป้าหมายที่ติดสถานะช็อตไฟฟ้าหรือสถานะลมเฉือนเพิ่มขึ้น <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> โดยเอฟเฟกต์นี้จะยังมีผลกับ DMG ต่อเนื่องอีกด้วย"
+  }
+}

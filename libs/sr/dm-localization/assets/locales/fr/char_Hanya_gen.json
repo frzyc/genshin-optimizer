@@ -1,0 +1,39 @@
+{
+  "name": "Hanya",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Pinceau divin",
+        "fullDesc": "Inflige des DGT physiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Hanya à un ennemi unique.",
+        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Emprisonnement d'âme",
+        "fullDesc": "Inflige des DGT physiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Hanya à un ennemi unique et lui applique Fardeau.\\nLes alliés récupèrent 1 point de compétence chaque fois qu'ils utilisent deux ATQ normales, compétences ou ultimes sur un ennemi affecté par Fardeau. Fardeau n'est actif que sur la dernière cible et se dissipe dès que l'effet de récupération de point de compétence est déclenché <unbreak>#2[i]</unbreak> fois.",
+        "shortDesc": "Inflige des DGT physiques à un ennemi unique et lui applique Fardeau. Les alliés <color=#f29e38ff>récupèrent 1 point de compétence</color> chaque fois qu'ils utilisent deux ATQ normales, compétences ou ultimes sur un ennemi affecté par Fardeau."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Sentence universelle",
+        "fullDesc": "Augmente la VIT d'une cible alliée à hauteur de <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> de la VIT de Hanya et son ATQ de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, pour une durée de <unbreak>#2[i]</unbreak> tours.",
+        "shortDesc": "Augmente <color=#f29e38ff>la VIT et l'ATQ</color> d'un allié."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Jugement de l'au-delà",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Applique le même effet Fardeau que celui de la compétence à un ennemi aléatoire après être entré en combat.",
+        "shortDesc": "Engage le combat contre les ennemis. Applique le même effet Fardeau que celui de la compétence à un ennemi aléatoire après être entré en combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

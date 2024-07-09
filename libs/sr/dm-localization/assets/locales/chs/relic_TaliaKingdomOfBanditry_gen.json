@@ -1,0 +1,6 @@
+{
+  "setName": "盗贼公国塔利亚",
+  "setEffects": {
+    "2": "使装备者的击破特攻提高<unbreak>#1[i]%</unbreak>。当装备者的速度大于等于<unbreak>#2[i]</unbreak>时，击破特攻额外提高<unbreak>#3[i]%</unbreak>。"
+  }
+}

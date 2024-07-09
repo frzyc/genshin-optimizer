@@ -1,0 +1,7 @@
+{
+  "setName": "宝命長存の蒔者",
+  "setEffects": {
+    "2": "最大HP+<unbreak>#1[i]%</unbreak>。",
+    "4": "装備キャラが攻撃を受ける、または味方によってHPを消費させられた後、会心率+<unbreak>#1[i]%</unbreak>、<unbreak>#2[i]</unbreak>ターン継続。この効果は最大で<unbreak>#3[i]</unbreak>層累積できる。"
+  }
+}

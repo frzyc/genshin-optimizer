@@ -1,0 +1,6 @@
+{
+  "setName": "Penacony, Land of the Dreams",
+  "setEffects": {
+    "2": "Increases wearer's Energy Regeneration Rate by <unbreak>#1[i]%</unbreak>. Increases DMG by <unbreak>#2[i]%</unbreak> for all other allies that are of the same Type as the wearer."
+  }
+}

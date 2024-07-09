@@ -1,0 +1,35 @@
+{
+  "type": {
+    "Physical": "Vật Lý",
+    "Quantum": "Lượng Tử",
+    "Lightning": "Lôi",
+    "Ice": "Băng",
+    "Wind": "Phong",
+    "Fire": "Hỏa",
+    "Imaginary": "Số Ảo"
+  },
+  "path": {
+    "Erudition": "Tri Thức",
+    "Preservation": "Bảo Hộ",
+    "Abundance": "Trù Phú",
+    "Nihility": "Hư Vô",
+    "Destruction": "Hủy Diệt",
+    "Harmony": "Hòa Hợp",
+    "TheHunt": "Săn Bắn"
+  },
+  "ability": {
+    "basic": "Tấn Công Thường",
+    "skill": "Chiến Kỹ",
+    "ult": "Tuyệt Kỹ",
+    "talent": "Thiên Phú",
+    "technique": "Bí Kỹ"
+  },
+  "dmgType": {
+    "single": "Đánh Đơn",
+    "aoe": "Đánh Lan",
+    "bounce": "Nảy Bật",
+    "blast": "Khuếch Tán",
+    "support": "Hỗ Trợ",
+    "impair": "Quấy Nhiễu"
+  }
+}

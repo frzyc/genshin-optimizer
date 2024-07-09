@@ -1,0 +1,39 @@
+{
+  "name": "Bailu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Chute de Diagnóstico",
+        "fullDesc": "Causa Dano de Raio igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Bailu a um único inimigo.",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Cantoria Entre as Nuvens",
+        "fullDesc": "Cura um aliado em <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> dos PV máximos de Bailu + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>. Bailu então cura aliados aleatórios <unbreak>#4[i]</unbreak> vez(es). Após cada cura, os PV restaurados da próxima cura reduzem em <unbreak>#3[i]%</unbreak>.",
+        "shortDesc": "Restaura os PV de um único aliado, depois cura aleatoriamente outros aliados."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Trovão Oportuno",
+        "fullDesc": "Cura todos os aliados em <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> dos PV máximos de Bailu + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>.\\nBailu aplica Revigoramento nos aliados que ainda não tiverem Revigoramento. Para os que já possuírem Revigoramento, Bailu estende a sua duração em 1 rodada.\\nO efeito de Revigoramento pode durar por <unbreak>#3[i]</unbreak> rodada(s). Este efeito não pode acumular.",
+        "shortDesc": "Restaura os PV e concede Revigoramento ou prolonga a duração de Revigoramento de todos os aliados."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Passeio na Chuva",
+        "fullDesc": "Após usar sua Técnica, no início da próxima batalha, todos os aliados recebem Revigoramento por <unbreak>#1[i]</unbreak> rodada(s).",
+        "shortDesc": "Depois que esta personagem usa sua Técnica, no início da próxima batalha, todos os aliados recebem Revigoramento."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+      }
+    }
+  }
+}

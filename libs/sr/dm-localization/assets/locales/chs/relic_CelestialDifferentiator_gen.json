@@ -1,0 +1,6 @@
+{
+  "setName": "星体差分机",
+  "setEffects": {
+    "2": "使装备者的暴击伤害提高<unbreak>#1[i]%</unbreak>。当装备者的暴击伤害大于等于<unbreak>#2[i]%</unbreak>时，进入战斗后装备者的暴击率提高<unbreak>#3[i]%</unbreak>，持续到施放首次攻击后结束。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "Prisoner in Deep Confinement",
+  "setEffects": {
+    "2": "ATK increases by <unbreak>#1[i]%</unbreak>.",
+    "4": "For every DoT the target enemy is afflicted with, the wearer will ignore <unbreak>#1[i]%</unbreak> of its DEF when dealing DMG to it. This effect is valid for a max of <unbreak>#2[i]</unbreak> DoTs."
+  }
+}

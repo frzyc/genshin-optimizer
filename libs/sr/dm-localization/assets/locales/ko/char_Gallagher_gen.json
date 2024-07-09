@@ -1,0 +1,44 @@
+{
+  "name": "갤러거",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "콜키지",
+        "fullDesc": "지정된 단일 적에게 갤러거 공격력의 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼 화염 속성 피해를 가한다",
+        "shortDesc": "단일 적에게 소량의 화염 속성 피해를 가한다"
+      },
+      "1": {
+        "name": "솟구치는 거품",
+        "fullDesc": "지정된 단일 적에게 갤러거 공격력의 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼 화염 속성 피해를 가하고, 목표의 공격력을 <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> 감소시킨다. 지속 시간: <unbreak>#3[i]</unbreak>턴",
+        "shortDesc": "단일 적에게 화염 속성 피해를 가하고, 공격력을 감소시킨다"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "특제 캔 음료",
+        "fullDesc": "즉시 지정된 단일 아군의 HP를 <color=#f29e38ff><unbreak>#1[i]</unbreak></color>pt 회복한다",
+        "shortDesc": "즉시 단일 아군의 HP를 회복한다"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "샴페인 에티켓",
+        "fullDesc": "모든 적을 [만취] 상태에 빠트린다. 지속 시간: <unbreak>#2[i]</unbreak>턴. 동시에 모든 적에게 갤러거 공격력의 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼 화염 속성 피해를 가하고, 다음번 일반 공격을 [솟구치는 거품]으로 강화한다",
+        "shortDesc": "모든 적을 <color=#f29e38ff>[만취] 상태에 빠트리고</color>, 동시에 모든 적에게 화염 속성 피해를 가한다. 다음번 일반 공격을 [솟구치는 거품]으로 강화한다"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "빈티지 개봉",
+        "fullDesc": "적을 바로 공격하며, 전투 진입 후 모든 적을 [만취] 상태에 빠트린다. 지속 시간: <unbreak>#1[i]</unbreak>턴. 또한, 모든 적에게 갤러거 공격력의 <unbreak>#2[i]%</unbreak>만큼 화염 속성 피해를 가한다",
+        "shortDesc": "적을 공격하며, 전투 진입 후 모든 적을 <color=#f29e38ff>[만취] 상태에 빠트리고</color> 소량의 화염 속성 피해를 가한다"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "공격",
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+      }
+    }
+  }
+}

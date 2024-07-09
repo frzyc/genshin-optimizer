@@ -1,0 +1,7 @@
+{
+  "setName": "純庭教会の聖騎士",
+  "setEffects": {
+    "2": "防御力+<unbreak>#1[i]%</unbreak>。",
+    "4": "装備キャラが付与するバリアの耐久値+<unbreak>#1[i]%</unbreak>。"
+  }
+}

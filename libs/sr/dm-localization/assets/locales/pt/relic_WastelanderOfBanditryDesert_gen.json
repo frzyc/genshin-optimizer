@@ -1,0 +1,7 @@
+{
+  "setName": "Andarilho do Deserto da Bandidagem",
+  "setEffects": {
+    "2": "Aumenta o Dano Imaginário em <unbreak>#1[i]%</unbreak>.",
+    "4": "Ao atacar inimigos com penalidades, a Chance de CRIT do usuário aumenta em <unbreak>#1[i]%</unbreak>, e seu Dano CRIT aumenta em <unbreak>#2[i]%</unbreak> contra inimigos Aprisionados."
+  }
+}

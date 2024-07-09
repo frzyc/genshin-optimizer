@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#てんさい}天才{RUBY_E#}たちの{RUBY_B#きゅうそく}休息{RUBY_E#}",
+  "passive": {
+    "name": "それぞれの",
+    "description": "装備キャラの攻撃力+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。装備キャラが敵を倒した後、会心ダメージ+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>、<unbreak>#3[i]</unbreak>ターン継続。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "Der eingeäscherte Erzherzog",
+  "setEffects": {
+    "2": "Erhöht den SCH durch Folgeangriffe um <unbreak>#1[i]%</unbreak>.",
+    "4": "Wenn der Träger einen Folgeangriff einsetzt, wird sein ANG für jedes Mal, das der Folgeangriff SCH zufügt, um <unbreak>#1[i]%</unbreak> erhöht. Dieser Effekt ist bis zu <unbreak>#2[i]</unbreak>-mal stapelbar und hält <unbreak>#3[i]</unbreak> Rd. an. Das nächste Mal, dass der Träger einen Folgeangriff einsetzt, wird der Effekt entfernt."
+  }
+}

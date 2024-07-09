@@ -1,0 +1,7 @@
+{
+  "name": "Cruising in the Stellar Sea",
+  "passive": {
+    "name": "Chase",
+    "description": "ทำให้อัตราคริติคอลของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> และทำให้ผู้สวมใส่สร้างอัตราคริติคอล แก่ศัตรูเป้าหมายที่มีเปอร์เซ็นต์ HP น้อยกว่าหรือเท่ากับ <unbreak>#2[i]%</unbreak> เพิ่มขึ้นอีก <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> หลังจากผู้สวมใส่กำจัดศัตรูเป้าหมายแล้ว ATK จะเพิ่มขึ้น <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> เป็นเวลา <unbreak>#5[i]</unbreak> เทิร์น"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "拂曉之前",
+  "passive": {
+    "name": "長夜",
+    "description": "使裝備者暴擊傷害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。使裝備者戰技和終結技造成的傷害提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。裝備者施放戰技或終結技後，獲得【夢身】效果。觸發追加攻擊時，消耗【夢身】，使追加攻擊造成的傷害提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "Adler des Zwielichts",
+  "setEffects": {
+    "2": "Erhöht Wind-SCH um <unbreak>#1[i]%</unbreak>.",
+    "4": "Nach dem Einsatz des Ultimates wird die Aktion des Trägers um <unbreak>#1[i]%</unbreak> vorgezogen."
+  }
+}

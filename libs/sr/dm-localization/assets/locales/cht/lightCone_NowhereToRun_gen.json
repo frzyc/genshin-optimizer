@@ -1,0 +1,7 @@
+{
+  "name": "無處可逃",
+  "passive": {
+    "name": "絕境",
+    "description": "使裝備者的攻擊力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。當裝備者消滅敵方目標時，回復等同於自身<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻擊力的生命值。"
+  }
+}

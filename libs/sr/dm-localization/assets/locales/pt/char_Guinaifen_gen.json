@@ -1,0 +1,39 @@
+{
+  "name": "Guinaifen",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Chuva de Aplausos",
+        "fullDesc": "Causa Dano de Fogo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Guinaifen a um único inimigo.",
+        "shortDesc": "Causa Dano de Fogo leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Recepção Escaldante",
+        "fullDesc": "Causa <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Guinaifen como Dano de Fogo a um único inimigo, além de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do ATQ de Guinaifen como Dano de Fogo a inimigos adjacentes, com <unbreak>#3[i]%</unbreak> de <u>chance-base</u> de infligir Queimadura no alvo e alvos adjacentes. Enquanto estiverem afligidos com Queimadura, inimigos recebem <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> do ATQ de Guinaifen como um Dano de Fogo Contínuo no início de cada rodada, com duração de <unbreak>#5[i]</unbreak> rodada(s).",
+        "shortDesc": "Causa Dano de Fogo a um único inimigo e Dano de Fogo leve a inimigos adjacentes, com altas chances de causar <color=#f29e38ff>Queimadura</color> a eles."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Se Liga Nisso",
+        "fullDesc": "Causa <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> do ATQ de Guinaifen como Dano de Fogo a todos os inimigos. Se o inimigo-alvo já estiver com Queimadura no momento, o estado de Queimadura produz imediatamente <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do seu Dano original.",
+        "shortDesc": "Causa Dano de Fogo a todos os inimigos. Se os inimigos já estiverem com Queimadura, o estado de Queimadura causa Dano 1 vez extra."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Demonstração de Habilidades",
+        "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar na batalha, causa Dano <unbreak>#2[i]</unbreak> vez(es), causando <unbreak>#1[i]%</unbreak> do ATQ de Guinaifen como Dano de Fogo a um único inimigo-alvo aleatório a cada vez, com uma <u>chance-base</u> de <unbreak>#3[i]%</unbreak> de infligir Beijo de Fogo a ele.",
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano de Fogo leve a um único alvo e aplica <color=#f29e38ff>Beijo de Fogo</color>, rebatendo um total de 4 vezes."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Qingque",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Bonne pioche",
+        "fullDesc": "Lance une tuile de jade de la série dont Qingque a le moins de tuiles en main pour infliger des DGT quantiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Qingque à un ennemi unique.",
+        "shortDesc": "Lance une tuile pour infliger des DGT quantiques mineurs à un ennemi unique."
+      },
+      "1": {
+        "name": "C'est la tuile !",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Qingque à un ennemi unique et des DGT quantiques équivalents à <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de l'ATQ de Qingque aux ennemis adjacents.\\n« C'est la tuile ! » ne permet pas de récupérer de points de compétence.",
+        "shortDesc": "Inflige des DGT quantiques à un ennemi unique et des DGT quantiques mineurs aux ennemis adjacents."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Coup de pouce",
+        "fullDesc": "Pioche immédiatement <unbreak>#1[i]</unbreak> tuiles de jade et augmente les DGT de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> jusqu'à la fin du tour en cours. Cet effet peut être cumulé jusqu'à <unbreak>#3[i]</unbreak> fois. Le tour ne prend pas fin après l'utilisation de cette compétence.",
+        "shortDesc": "<color=#f29e38ff>Pioche des tuiles</color> et augmente les DGT infligés. <color=#f29e38ff>Ce tour ne se termine pas</color> après cette action."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Quatre pungs en main ? Tout va bien !",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Qingque à tous les ennemis et accorde 4 tuiles de jade de la même série.",
+        "shortDesc": "Inflige des DGT quantiques à tous les ennemis et accorde 4 tuiles de jade de la même série."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Accro aux jeux",
+        "fullDesc": "Après utilisation de la technique, Qingque pioche <unbreak>#1[i]</unbreak> tuiles de jade en début de combat.",
+        "shortDesc": "Après utilisation de la technique, pioche des tuiles au début du combat suivant."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+      }
+    }
+  }
+}

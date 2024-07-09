@@ -1,0 +1,7 @@
+{
+  "name": "수술 후의 대화",
+  "passive": {
+    "name": "상호 치유",
+    "description": "장착한 캐릭터의 에너지 회복효율이 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가하고, 필살기 발동 시 치유량이 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다"
+  }
+}

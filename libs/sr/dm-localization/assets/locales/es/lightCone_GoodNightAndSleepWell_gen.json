@@ -1,0 +1,7 @@
+{
+  "name": "Buenas noches, que duermas bien",
+  "passive": {
+    "name": "Infatigable",
+    "description": "Por cada estado negativo que tenga el enemigo, el daño infligido por el portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Se puede acumular hasta <unbreak>#2[i]</unbreak> veces. Este efecto también es válido para el Daño con el tiempo."
+  }
+}

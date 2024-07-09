@@ -1,0 +1,7 @@
+{
+  "name": "Endgültiger Sieger",
+  "passive": {
+    "name": "Die Wette gilt",
+    "description": "Erhöht den ANG des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Wenn der Träger einem Gegner einen kritischen Treffer zufügt, erhält er eine Stapelung „Viel Glück“ bis zu max. <unbreak>#3[i]</unbreak> Stapelungen. Jede Stapelung erhöht den KRIT-SCH des Trägers um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Viel Glück wird am Ende der Runde des Trägers entfernt."
+  }
+}

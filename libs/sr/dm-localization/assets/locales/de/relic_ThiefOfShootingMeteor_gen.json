@@ -1,0 +1,7 @@
+{
+  "setName": "Dieb des fallenden Meteors",
+  "setEffects": {
+    "2": "Erhöht Brucheffekt um <unbreak>#1[i]%</unbreak>.",
+    "4": "Erhöht den Brucheffekt des Trägers um <unbreak>#1[i]%</unbreak>. Wenn der Träger bei einem Gegner Schwächebruch verursacht, wird <unbreak>#2[i]</unbreak> Pkt. Energie wiederhergestellt."
+  }
+}
