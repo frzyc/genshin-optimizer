@@ -14,9 +14,9 @@ import {
 
 type CharData = {
   name: string
-  abilities: Partial<Record<AbilityKey, AbilityData[]>>
+  abilities: AbilitiesData
 }
-
+type AbilitiesData = Partial<Record<AbilityKey, AbilityData[]>>
 type AbilityData = {
   name: string
   fullDesc: string
@@ -33,8 +33,9 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
     : AvatarName.Hash.toString()
 
   // Skills
-  const abilities: Partial<Record<AbilityKey, AbilityData[]>> =
-    Object.fromEntries(allAbilityKeys.map((key) => [key, []]))
+  const abilities: AbilitiesData = Object.fromEntries(
+    allAbilityKeys.map((key) => [key, []])
+  )
   SkillList.forEach((skillId) => {
     const { SkillName, SkillDesc, SimpleSkillDesc, AttackType } =
       avatarSkillConfig[skillId][0]
