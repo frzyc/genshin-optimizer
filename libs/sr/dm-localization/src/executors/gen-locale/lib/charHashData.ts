@@ -1,6 +1,8 @@
+import { verifyObjKeys } from '@genshin-optimizer/common/util'
 import type { AbilityKey, CharacterDataKey } from '@genshin-optimizer/sr/consts'
 import {
   allAbilityKeys,
+  allCharacterDataKeys,
   allTrailblazerGenderedKeys,
 } from '@genshin-optimizer/sr/consts'
 import {
@@ -54,4 +56,6 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
   return tuple
 })
 
-export const charHashData = Object.fromEntries(charArray)
+const data = Object.fromEntries(charArray)
+verifyObjKeys(data, allCharacterDataKeys)
+export const charHashData = data
