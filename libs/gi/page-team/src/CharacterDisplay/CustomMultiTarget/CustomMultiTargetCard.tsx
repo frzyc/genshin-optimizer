@@ -56,10 +56,13 @@ export default function CustomMultiTargetCard({
     onHide()
   }
 
+  const [expression, setExpression] = useState(target.expression)
+  const [functions, setFunctions] = useState(target.functions)
+
   const onSave = useCallback(() => {
     onHide()
-    setTargetProp(target)
-  }, [onHide, setTargetProp, target])
+    setTargetProp({ ...target, expression, functions })
+  }, [expression, functions, onHide, setTargetProp, target])
 
   const copyToClipboard = () =>
     navigator.clipboard
@@ -201,8 +204,10 @@ export default function CustomMultiTargetCard({
           >
             {target.expression ? (
               <TargetExpressionEditor
-                customMultiTarget={target}
-                setCustomMultiTarget={setTarget}
+                expression={expression}
+                setExpression={setExpression}
+                functions={functions}
+                setFunctions={setFunctions}
               />
             ) : (
               <TargetListEditor

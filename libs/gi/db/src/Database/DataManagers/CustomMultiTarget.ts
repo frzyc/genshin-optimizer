@@ -268,10 +268,8 @@ function validateCustomFunction(
 
 function validateExpressionUnit(
   eu: unknown,
-  args: string[]
+  availableFuncNames: string[]
 ): ExpressionUnit | undefined {
-  // eu is the expression unit to validate
-  // args are the available arguments and function names
   if (typeof eu !== 'object') return undefined
   const unit = eu as ExpressionUnit
   const { type } = unit
@@ -298,7 +296,7 @@ function validateExpressionUnit(
   } else if (type === 'function') {
     const { name } = unit
     if (typeof name !== 'string') return undefined
-    if (!args.includes(name)) return undefined
+    if (!availableFuncNames.includes(name)) return undefined
     result = { type, name }
   } else if (type === 'enclosing') {
     const { part } = unit

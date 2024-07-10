@@ -3,7 +3,6 @@ import type {
   AddressItemTypesMap,
   CustomFunction,
   CustomFunctionArgument,
-  CustomMultiTarget,
   ExpressionUnit,
   ItemAddress,
 } from '@genshin-optimizer/gi/db'
@@ -40,27 +39,43 @@ function useSIA(address?: ItemAddress) {
 }
 
 export default function TargetExpressionEditor({
-  customMultiTarget: CMT,
-  setCustomMultiTarget,
+  expression: _expression,
+  setExpression: _setExpression,
+  functions: _functions,
+  setFunctions: _setFunctions,
 }: {
-  customMultiTarget: CustomMultiTarget
-  setCustomMultiTarget: Dispatch<SetStateAction<CustomMultiTarget>>
+  expression?: ExpressionUnit[]
+  setExpression: Dispatch<SetStateAction<typeof _expression>>
+  functions?: CustomFunction[]
+  setFunctions?: Dispatch<SetStateAction<typeof _functions>>
 }) {
-  const functions = useMemo(() => [...(CMT.functions ?? [])], [CMT])
-  const expression = useMemo(() => [...(CMT.expression ?? [])], [CMT])
+  const [expression, functions] = useMemo(() => {
+    return [_expression ?? [], _functions ?? []]
+  }, [_expression, _functions])
 
-  const setCMT = useCallback(
+  const setExpression = useCallback(
     (
       arg:
-        | Partial<CustomMultiTarget>
-        | ((CMT: CustomMultiTarget) => CustomMultiTarget)
+        | ExpressionUnit[]
+        | ((expression: ExpressionUnit[]) => ExpressionUnit[])
     ) => {
-      setCustomMultiTarget((prev) => {
-        if (arg instanceof Function) arg = arg(prev)
-        return { ...prev, ...arg }
-      })
+      if (arg instanceof Function) arg = arg(expression)
+      _setExpression([...arg])
     },
-    [setCustomMultiTarget]
+    [_setExpression, expression]
+  )
+
+  const setFunctions = useCallback(
+    (
+      arg:
+        | CustomFunction[]
+        | ((functions: CustomFunction[]) => CustomFunction[])
+    ) => {
+      if (!_setFunctions) return
+      if (arg instanceof Function) arg = arg(functions)
+      _setFunctions([...arg])
+    },
+    [_setFunctions, functions]
   )
 
   const [sia, setSIA] = useSIA()
@@ -82,16 +97,17 @@ export default function TargetExpressionEditor({
       layer: number,
       arg: Partial<CustomFunction> | ((func: CustomFunction) => CustomFunction)
     ) => {
-      setCMT((prev) => {
-        const funcs = prev.functions ?? []
+      if (!setFunctions) return
+      setFunctions((prev) => {
+        const funcs = prev ?? []
         const func = funcs[layer]
         if (!func) return prev
         if (arg instanceof Function) arg = arg(func)
         funcs.splice(layer, 1, { ...func, ...arg })
-        return prev
+        return funcs
       })
     },
-    [setCMT]
+    [setFunctions]
   )
 
   const setExpressionItem = useCallback(
@@ -119,13 +135,13 @@ export default function TargetExpressionEditor({
           })
         } else {
           expression.splice(address.index, 1, newItem as ExpressionUnit)
-          setCMT({ expression })
+          setExpression(expression)
         }
       } else {
         return assertNever(address)
       }
     },
-    [expression, functions, setCMT, setFunction]
+    [expression, functions, setExpression, setFunction]
   )
 
   const addExpressionItem = useCallback(
@@ -133,7 +149,7 @@ export default function TargetExpressionEditor({
       const layer = clamp(address.layer, 0, functions.length)
       if (address.type === 'function') {
         functions.splice(layer, 0, item as CustomFunction)
-        setCMT({ functions })
+        setFunctions(functions)
       } else if (address.type === 'argument') {
         setFunction(layer, (func) => {
           const index = clamp(address.index, 0, func.args.length)
@@ -150,13 +166,13 @@ export default function TargetExpressionEditor({
           })
         } else {
           expression.splice(index, 0, item as ExpressionUnit)
-          setCMT({ expression })
+          setExpression(expression)
         }
       } else {
         return assertNever(address)
       }
     },
-    [expression, functions, setCMT, setFunction]
+    [expression, functions, setExpression, setFunction, setFunctions]
   )
 
   const removeExpressionItem = useCallback(
@@ -164,7 +180,7 @@ export default function TargetExpressionEditor({
       if (!address) return
       if (address.type === 'function') {
         functions.splice(address.layer, 1)
-        setCMT({ functions })
+        setFunctions(functions)
       } else if (address.type === 'argument') {
         setFunction(address.layer, (func) => {
           func.args.splice(address.index, 1)
@@ -178,13 +194,13 @@ export default function TargetExpressionEditor({
           })
         } else {
           expression.splice(address.index, 1)
-          setCMT({ expression })
+          setExpression(expression)
         }
       } else {
         return assertNever(address)
       }
     },
-    [expression, functions, setCMT, setFunction]
+    [expression, functions, setExpression, setFunction, setFunctions]
   )
 
   // TODO: Drag and drop
@@ -269,6 +285,7 @@ export default function TargetExpressionEditor({
         sia={sia}
         setSIA={setSIA}
         addItem={addExpressionItem}
+        noFunctions={!_setFunctions}
       />
       <Box display="flex" flexDirection="column" gap={1} pb={'60vh'}>
         {expressionDisplays}

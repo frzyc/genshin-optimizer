@@ -1,12 +1,16 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import {
+  CardThemed,
   CustomNumberInput,
   CustomNumberInputButtonGroupWrapper,
   GeneralAutocomplete,
+  ModalWrapper,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allMainStatKeys, allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import type { ExpressionUnit } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { InputPremodKey } from '@genshin-optimizer/gi/wr'
@@ -15,14 +19,19 @@ import {
   Box,
   Button,
   ButtonGroup,
+  CardContent,
+  CardHeader,
+  IconButton,
   List,
   ListSubheader,
   Popper,
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { useCallback, useMemo } from 'react'
+import type { Dispatch, SetStateAction } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { CloseIcon } from '../consts'
 import { statPercent } from './util'
 
 export function StatEditorList({
@@ -92,7 +101,7 @@ export function StatEditorList({
   )
 
   const setFilter = useCallback(
-    (sKey, min) => {
+    (sKey: InputPremodKey, min: number) => {
       const statFilters_ = { ...statFilters }
       statFilters_[sKey] = min
       setStatFilters({ ...statFilters_ })
@@ -101,7 +110,7 @@ export function StatEditorList({
   )
 
   const delKey = useCallback(
-    (statKey) => {
+    (statKey: InputPremodKey) => {
       const statFilters_ = { ...statFilters }
       delete statFilters_[statKey]
       setStatFilters({ ...statFilters_ })
@@ -262,6 +271,322 @@ function StatFilterItem({
         </Button>
       )}
     </ButtonGroup>
+  )
+}
+
+export function FuncStatEditorList({
+  statKeys,
+  statFilters,
+  setStatFilters,
+  disabled = false,
+  wrapperFunc = (ele) => ele,
+  label,
+  TargetExpressionEditor,
+}: {
+  statKeys: InputPremodKey[]
+  statFilters: Partial<Record<InputPremodKey, ExpressionUnit[]>>
+  setStatFilters: (
+    statFilters: Partial<Record<InputPremodKey, ExpressionUnit[]>>
+  ) => void
+  disabled?: boolean
+  wrapperFunc?: (ele: JSX.Element, key?: string) => JSX.Element
+  label?: string
+  TargetExpressionEditor: React.ComponentType<{
+    expression?: ExpressionUnit[]
+    setExpression: Dispatch<SetStateAction<ExpressionUnit[] | undefined>>
+  }>
+}) {
+  const { t: tk } = useTranslation('statKey_gen')
+  const statOptions = useMemo(
+    () =>
+      statKeys
+        .map(
+          (statKey: InputPremodKey): StatOption => ({
+            key: statKey,
+            grouper: inputPremodKeyToGroupMap[statKey],
+            label: (
+              [...allMainStatKeys, ...allSubstatKeys] as string[]
+            ).includes(statKey)
+              ? `${tk(statKey as MainStatKey | SubstatKey)}${statPercent(
+                  statKey as MainStatKey | SubstatKey
+                )}`
+              : KeyMap.getStr(statKey) ?? 'ERROR',
+            color: KeyMap.getVariant(statKey),
+          })
+        )
+        .sort(
+          (a, b) =>
+            allGroupKeys.indexOf(a.grouper as GroupKey) -
+            allGroupKeys.indexOf(b.grouper as GroupKey)
+        ),
+    [tk, statKeys]
+  )
+
+  const getOptionDiabled = useCallback(
+    (option: StatOption) => Object.keys(statFilters).includes(option.key),
+    [statFilters]
+  )
+
+  const setKey = useCallback(
+    (newk: InputPremodKey, oldk: InputPremodKey | null) => {
+      if (oldk)
+        setStatFilters(
+          Object.fromEntries(
+            Object.entries(statFilters).map(([k, v]) => [
+              k === oldk ? newk : k,
+              v,
+            ])
+          )
+        )
+      else {
+        const statFilters_ = { ...statFilters }
+        statFilters_[newk] = []
+        setStatFilters({ ...statFilters_ })
+      }
+    },
+    [statFilters, setStatFilters]
+  )
+
+  const setFilter = useCallback(
+    (sKey: InputPremodKey, min: ExpressionUnit[]) => {
+      const statFilters_ = { ...statFilters }
+      statFilters_[sKey] = min
+      setStatFilters({ ...statFilters_ })
+    },
+    [statFilters, setStatFilters]
+  )
+
+  const delKey = useCallback(
+    (statKey: InputPremodKey) => {
+      const statFilters_ = { ...statFilters }
+      delete statFilters_[statKey]
+      setStatFilters({ ...statFilters_ })
+    },
+    [statFilters, setStatFilters]
+  )
+
+  return (
+    <>
+      {Object.entries(statFilters).map(([statKey, min]) =>
+        wrapperFunc(
+          <FuncStatFilterItem
+            key={statKey}
+            statKey={statKey}
+            statKeyOptions={statOptions}
+            disabled={disabled}
+            value={min}
+            setValue={setFilter}
+            setKey={setKey}
+            delKey={delKey}
+            getOptionDisabled={getOptionDiabled}
+            TargetExpressionEditor={TargetExpressionEditor}
+          />,
+          statKey
+        )
+      )}
+      {wrapperFunc(
+        <FuncStatFilterItem
+          key={Object.entries(statFilters).length}
+          statKey={null}
+          statKeyOptions={statOptions}
+          setValue={setFilter}
+          setKey={setKey}
+          delKey={delKey}
+          disabled={disabled}
+          getOptionDisabled={getOptionDiabled}
+          label={label}
+          TargetExpressionEditor={TargetExpressionEditor}
+        />
+      )}
+    </>
+  )
+}
+
+function FuncStatFilterItem({
+  statKey,
+  statKeyOptions = [],
+  value = [],
+  delKey,
+  setKey,
+  setValue,
+  disabled = false,
+  getOptionDisabled,
+  label,
+  TargetExpressionEditor,
+}: {
+  statKey: InputPremodKey | null
+  statKeyOptions: StatOption[]
+  value?: ExpressionUnit[]
+  delKey: (delKey: InputPremodKey) => void
+  setKey: (newKey: InputPremodKey, oldKey: InputPremodKey | null) => void
+  setValue: (statKey: InputPremodKey, value: ExpressionUnit[]) => void
+  disabled?: boolean
+  getOptionDisabled: (option: StatOption) => boolean
+  label?: string
+  TargetExpressionEditor: React.ComponentType<{
+    expression?: ExpressionUnit[]
+    setExpression: Dispatch<SetStateAction<ExpressionUnit[] | undefined>>
+  }>
+}) {
+  const theme = useTheme()
+  const { t } = useTranslation('ui')
+  const isThreeCol = useMediaQuery(theme.breakpoints.up('lg'))
+  const isOneCol = useMediaQuery(theme.breakpoints.down('md'))
+  const onValueChange = useCallback(
+    (value?: ExpressionUnit[]) => statKey && setValue(statKey, value ?? []),
+    [setValue, statKey]
+  )
+  const onKeyChange = useCallback(
+    (newKey: InputPremodKey | null) => {
+      if (newKey) {
+        setKey(newKey, statKey)
+      } else if (statKey) {
+        delKey(statKey)
+      }
+    },
+    [statKey, setKey, delKey]
+  )
+  const onDeleteKey = useCallback(
+    () => statKey && delKey(statKey),
+    [delKey, statKey]
+  )
+  const buttonStyle = { p: 1, flexBasis: 30, flexGrow: 0, flexShrink: 0 }
+  return (
+    <ButtonGroup sx={{ width: '100%' }}>
+      <GeneralAutocomplete
+        size="small"
+        options={statKeyOptions}
+        onChange={onKeyChange}
+        valueKey={statKey}
+        getOptionDisabled={getOptionDisabled}
+        groupBy={(option) => inputPremodKeyToGroupMap[option.key]}
+        renderGroup={(params) => (
+          <List
+            key={params.key}
+            component={Box}
+            sx={{ paddingTop: 0, marginTop: 0 }}
+          >
+            <ListSubheader key={`${params.group}Header`} sx={{ top: '-1em' }}>
+              <strong>{t(`statGroupKey.${params.group}`)}</strong>
+            </ListSubheader>
+            {params.children}
+          </List>
+        )}
+        toImg={(sKey: InputPremodKey) => (
+          <StatIcon
+            statKey={sKey}
+            iconProps={{ color: KeyMap.getVariant(sKey) }}
+          />
+        )}
+        ListboxProps={{
+          style: {
+            display: 'grid',
+            gridTemplateColumns: isOneCol
+              ? '100%'
+              : isThreeCol
+              ? '33% 33% 33%'
+              : '50% 50%',
+          },
+        }}
+        // This needs to be done with `style` prop, not `sx` prop, or it doesn't work
+        PopperComponent={(props) => (
+          <Popper {...props} style={{ width: '60%' }} />
+        )}
+        sx={{ flexGrow: 1, flexBasis: 150 }}
+        textFieldProps={{
+          sx: { '& .MuiInputBase-root': { borderRadius: '4px 0 0 4px' } },
+        }}
+        label={label}
+      />
+      <FuncStatConfigBtn
+        statKey={statKey}
+        value={value}
+        setValue={onValueChange}
+        disabled={disabled}
+        TargetExpressionEditor={TargetExpressionEditor}
+      />
+      {!!statKey && (
+        <Button
+          sx={buttonStyle}
+          color="error"
+          onClick={onDeleteKey}
+          disabled={disabled}
+        >
+          <DeleteForeverIcon fontSize="small" />
+        </Button>
+      )}
+    </ButtonGroup>
+  )
+}
+
+function FuncStatConfigBtn({
+  statKey,
+  value: _value,
+  setValue: _setValue,
+  disabled,
+  TargetExpressionEditor,
+}: {
+  statKey: InputPremodKey | null
+  value: ExpressionUnit[] | undefined
+  setValue: (value: typeof _value) => void
+  disabled: boolean
+  TargetExpressionEditor: React.ComponentType<{
+    expression?: ExpressionUnit[]
+    setExpression: Dispatch<SetStateAction<ExpressionUnit[] | undefined>>
+  }>
+}) {
+  const { t } = useTranslation('ui')
+  const { t: tk } = useTranslation('statKey_gen')
+  const [show, onShow, onHide] = useBoolState()
+  const [value, setValue] = useState(_value)
+
+  const onSave = useCallback(() => {
+    onHide()
+    _setValue(value)
+  }, [onHide, _setValue, value])
+
+  return (
+    <>
+      <Button onClick={onShow} disabled={!statKey || disabled}>
+        {t`config`}
+      </Button>
+      <ModalWrapper open={show} onClose={onSave}>
+        <CardThemed sx={{ overflow: 'visible' }}>
+          <CardHeader
+            title={
+              <>
+                <StatIcon
+                  statKey={statKey ?? 'error'}
+                  iconProps={{ color: KeyMap.getVariant(statKey ?? 'error') }}
+                />
+                <span>{'  '}</span>
+                <span>{tk(statKey ?? 'error')}</span>
+                <span>{'  '}</span>
+                <span>{t`config`}</span>
+              </>
+            }
+            action={
+              <IconButton onClick={onSave}>
+                <CloseIcon />
+              </IconButton>
+            }
+          />
+          <CardContent
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+              position: 'relative',
+            }}
+          >
+            <TargetExpressionEditor
+              expression={value}
+              setExpression={setValue}
+            />
+          </CardContent>
+        </CardThemed>
+      </ModalWrapper>
+    </>
   )
 }
 

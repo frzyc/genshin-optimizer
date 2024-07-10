@@ -68,6 +68,7 @@ export function inferInfoMut(data: Data, source?: Info['source']): Data {
 
   return data
 }
+
 export function dataObjForArtifact(
   art: ICachedArtifact,
   mainStatAssumptionLevel = 0
@@ -142,6 +143,7 @@ export interface CharInfo extends ICharacter {
   hitMode: TeamCharacter['hitMode']
   reaction: TeamCharacter['reaction']
 }
+
 /**
  * when sheetData is supplied, then it is assumed that the data is in "Custom Multi-target" mode
  */
@@ -217,9 +219,8 @@ export function dataObjForCharacterNew(
         if (expression) {
           const multiTargetNode = parseCustomExpression(
             expression,
-            (target, useWeight) =>
-              parseCustomTarget(target, sheetData, globalHitMode, useWeight),
-            functions ?? []
+            functions ?? [],
+            { sheetData, globalHitMode }
           )
           sheetData.display!['custom'][i] = infoMut(multiTargetNode, {
             name,
@@ -339,8 +340,11 @@ export function mergeData(data: Data[]): Data {
 
 function parseCustomExpression(
   e: ExpressionUnit[],
-  parseCustomTarget: (t: CustomTarget, useWeight: boolean) => NumNode,
   functions_: CustomFunction[],
+  context: {
+    sheetData: Data
+    globalHitMode: MultiOptHitModeKey
+  },
   args: Record<string, NumNode> = {}
 ): NumNode {
   // functions_ is a list of custom functions that can be used in the expression
@@ -444,19 +448,19 @@ function parseCustomExpression(
       if (!argExpression) throw new Error(`Missing argument ${arg.name}`)
       args_[arg.name] = parseCustomExpression(
         argExpression,
-        parseCustomTarget,
         functions_,
+        context,
         args
       )
     }
     return infoMut(
       parseCustomExpression(
         customFunction.expression,
-        parseCustomTarget,
         functions_.slice(
           0,
           functions_.map((f) => f.name).indexOf(customFunction.name)
         ),
+        context,
         args_
       ),
       {
@@ -472,18 +476,24 @@ function parseCustomExpression(
     if (!e.length) return constant(1)
     const operand = e[0]
     if (operand.type === 'constant') return constant(operand.value)
-    if (operand.type === 'target')
-      return parseCustomTarget(operand.target, false)
+    if (operand.type === 'target') {
+      return parseCustomTarget(
+        operand.target,
+        context.sheetData,
+        context.globalHitMode,
+        false
+      )
+    }
     if (operand.type === 'function') {
       let result: NumNode | undefined
       if (functions[operand.name]) {
         result = parseCustomExpression(
           functions[operand.name].expression,
-          parseCustomTarget,
           functions_.slice(
             0,
             functions_.map((f) => f.name).indexOf(operand.name)
-          )
+          ),
+          context
         )
         result = infoMut(result, {
           name: operand.name,
@@ -501,7 +511,7 @@ function parseCustomExpression(
   }
 
   const parsedParts = parts.map((part) =>
-    parseCustomExpression(part, parseCustomTarget, functions_, args)
+    parseCustomExpression(part, functions_, context, args)
   )
 
   if (currentOperation === 'addition') {

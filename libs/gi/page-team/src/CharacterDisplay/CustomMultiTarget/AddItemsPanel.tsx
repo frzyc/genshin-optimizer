@@ -44,11 +44,13 @@ export default function AddItemsPanel({
   sia,
   setSIA,
   functions,
+  noFunctions,
 }: {
   addItem: <T extends AddressItemTypesMap>(address: T[0], item: T[1]) => void
   sia: ItemAddress
   setSIA: Dispatch<SetStateAction<ItemAddress>>
   functions: CustomFunction[]
+  noFunctions?: boolean
 }) {
   const { t } = useTranslation('page_character')
   const [show, onShow, onClose] = useBoolState(false)
@@ -225,25 +227,31 @@ export default function AddItemsPanel({
       <Box display="flex" gap={1}>
         <Box sx={{ flexGrow: 1 }} display="flex" flexDirection="column" gap={1}>
           <Box display="flex" gap={1} flexWrap="wrap">
-            <Button
-              key={'addNewFunction'}
-              sx={{ flexGrow: 1 }}
-              onClick={() => addFunction({})}
-            >{t`multiTarget.addNewFunction`}</Button>
-            <Button
-              key={'addNewArgument'}
-              sx={{ flexGrow: 1 }}
-              onClick={() => addArgument({})}
-            >{t`multiTarget.addNewArgument`}</Button>
+            {noFunctions ? null : (
+              <>
+                <Button
+                  key={'addNewFunction'}
+                  sx={{ flexGrow: 1 }}
+                  onClick={() => addFunction({})}
+                >{t`multiTarget.addNewFunction`}</Button>
+                <Button
+                  key={'addNewArgument'}
+                  sx={{ flexGrow: 1 }}
+                  onClick={() => addArgument({})}
+                >{t`multiTarget.addNewArgument`}</Button>
+              </>
+            )}
             <Button
               key={'addNewTarget'}
               sx={{ flexGrow: 2 }}
               onClick={onShow}
             >{t`multiTarget.addNewTarget`}</Button>
             {addFunctionUnitButton}
-            {ImportCustomFunctionBtn({
-              addFunction: (func) => addFunction(func, true),
-            })}
+            {noFunctions ? null : (
+              <ImportCustomFunctionBtn
+                addFunction={(func) => addFunction(func, true)}
+              />
+            )}
             <ButtonGroup>
               <Button key={'addConstant'} onClick={addConstant}>
                 {t`multiTarget.add`}
