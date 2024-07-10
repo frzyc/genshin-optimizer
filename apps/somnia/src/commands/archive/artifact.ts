@@ -1,17 +1,14 @@
+import { AssetData } from '@genshin-optimizer/gi/assets-data'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import type { Interaction } from 'discord.js'
+import { getArtSetStat } from '@genshin-optimizer/gi/stats'
 import { EmbedBuilder } from 'discord.js'
-import { clean, colors } from '../archive'
+import { rarityColors } from '../../assets/assets'
+import { createAmbrUrl } from '../../lib/util'
+import { clean } from '../archive'
 
-export function artifactarchive(
-  interaction: Interaction,
-  id: ArtifactSetKey,
-  name: string,
-  data: any
-) {
+export function artifactArchive(id: ArtifactSetKey, name: string, data: any) {
   //artifact rarity color
-  const rarities = allStats.art.data[id].rarities
+  const rarities = getArtSetStat(id).rarities
   const rarity = rarities[rarities.length - 1]
   //set content
   let text = ''
@@ -21,12 +18,14 @@ export function artifactarchive(
     text += `${data.setEffects[e]}\n`
   }
   const embed = new EmbedBuilder()
-    .setTitle(data.setName)
-    .setColor(colors.rarity[rarity - 1])
+    .setTitle(name)
+    .setColor(rarityColors[rarity - 1])
     .setFooter({
       text: 'Artifact Archive',
     })
     .setDescription(clean(text))
+  const thumbnail = AssetData.artifacts[id].flower
+  if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail))
 
   return {
     content: '',

@@ -30,6 +30,10 @@ client.on(Events.ClientReady, (...args) => events.ready(...args))
 client.on(Events.InteractionCreate, (...args) =>
   events.interactionCreate(...args)
 )
+//reactions
+client.on(Events.MessageReactionAdd, (...args) =>
+  events.messageReactionAdd(...args)
+)
 
 //collect commands
 export const Commands: Collection<string, any> = new Collection()
