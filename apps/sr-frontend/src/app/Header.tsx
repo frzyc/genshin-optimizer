@@ -148,7 +148,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
   const isXL = useMediaQuery(theme.breakpoints.up('xl'))
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
-  const { t } = useTranslation('header')
+  const { t } = useTranslation('ui')
   const {
     params: { currentTab },
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
