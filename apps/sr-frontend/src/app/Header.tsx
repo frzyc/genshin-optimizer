@@ -148,7 +148,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
   const isXL = useMediaQuery(theme.breakpoints.up('xl'))
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
-  const { t } = useTranslation('ui')
+  const { t } = useTranslation(['ui', 'header'])
   const {
     params: { currentTab },
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
@@ -193,7 +193,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
           const tooltipIcon = isXL ? (
             icon
           ) : (
-            <Tooltip arrow title={t(i18Key)}>
+            <Tooltip arrow title={t(`header:${i18Key}`)}>
               {icon as JSX.Element}
             </Tooltip>
           )
@@ -208,7 +208,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
               label={
                 isXL || textSuffix ? (
                   <Box display="flex" gap={1} alignItems="center">
-                    {isXL && <span>{t(i18Key)}</span>}
+                    {isXL && <span>{t(`header:${i18Key}`)}</span>}
                     {textSuffix}
                   </Box>
                 ) : undefined
@@ -236,7 +236,7 @@ function MobileHeader({
     setMobileOpen(!mobileOpen)
   }
 
-  const { t } = useTranslation('header')
+  const { t } = useTranslation(['ui', 'header'])
   // Allow navigating back to the teams page when on a specific team.
   const inTeam = useMatch({ path: '/teams/:teamId/*' })
   return (
@@ -260,7 +260,7 @@ function MobileHeader({
               disabled={currentTab === ''}
               onClick={handleDrawerToggle}
             >
-              <ListItemText>Star Rail Optimizer</ListItemText>
+              <ListItemText>{t('pageTitle')}</ListItemText>
             </ListItemButton>
             {mobileContent.map(
               ({ i18Key, value, to, icon, textSuffix: extra }) => (
@@ -275,7 +275,7 @@ function MobileHeader({
                   <ListItemIcon>{icon}</ListItemIcon>
                   <ListItemText>
                     <Box display="flex" gap={1} alignItems="center">
-                      {t(i18Key)}
+                      {t(`header:${i18Key}`)}
                       {extra}
                     </Box>
                   </ListItemText>
@@ -292,7 +292,7 @@ function MobileHeader({
             to="/"
           >
             <Typography variant="h6" noWrap component="div">
-              Star Rail Optimizer
+              {t('pageTitle')}
             </Typography>
           </Button>
           <Box flexGrow={1} />
