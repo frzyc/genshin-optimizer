@@ -113,20 +113,22 @@ function burstEmbed(id: CharacterKey, name: string, data: any) {
   return embed
 }
 
+type Passives = 'passive1' | 'passive2' | 'passive3' | 'passive'
+function selectPassive(arg: string) : Passives[] {
+  if (arg.length > 1) {
+    if (arg[1] === '1') return ['passive1']
+    if (arg[1] === '4') return ['passive2']
+  }
+  return ['passive1', 'passive2', 'passive3', 'passive']
+}
+
 function passivesEmbed(id: CharacterKey, name: string, data: any, arg: string) {
   let text = ''
-  //list all passives
-  let showPassives = Object.keys(data).filter((e) =>
-    e.startsWith('passive')
-  ) as ('passive1' | 'passive2' | 'passive3' | 'passive')[]
-  //input to select a passive
-  if (arg.length > 1) {
-    if (arg[1] === '1') showPassives = ['passive1']
-    else if (arg[1] === '4') showPassives = ['passive2']
-    else showPassives = showPassives.slice(2)
-  }
+  //select passives
+  const showPassives = selectPassive(arg)
   //make embed
   for (const passiveId of showPassives) {
+    if (!(passiveId in data)) continue
     const passive = data[passiveId]
     //ascension 1
     if (passiveId === 'passive1') text += `**${passive.name}** (A1)\n`
@@ -134,6 +136,7 @@ function passivesEmbed(id: CharacterKey, name: string, data: any, arg: string) {
     else if (passiveId === 'passive2') text += `**${passive.name}** (A4)\n`
     //innate passives
     else text += `**${passive.name}** \n`
+    //passive text
     text += Object.values(passive.description).flat().join('\n') + '\n\n'
   }
   const embed = baseEmbed(id, name).setDescription(clean(text))
@@ -142,6 +145,8 @@ function passivesEmbed(id: CharacterKey, name: string, data: any, arg: string) {
   return embed
 }
 
+
+
 function constellationsEmbed(
   id: CharacterKey,
   name: string,
@@ -149,6 +154,7 @@ function constellationsEmbed(
   arg: string
 ) {
   let text = ''
+  //select constellations
   const allCons = ['1', '2', '3', '4', '5', '6'] as const
   const showCons =
     arg === 'c' ? allCons : allCons.filter((e) => e.includes(arg[1]))
