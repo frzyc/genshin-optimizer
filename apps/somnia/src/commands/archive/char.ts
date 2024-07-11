@@ -114,7 +114,7 @@ function burstEmbed(id: CharacterKey, name: string, data: any) {
 }
 
 type Passives = 'passive1' | 'passive2' | 'passive3' | 'passive'
-function selectPassive(arg: string) : Passives[] {
+function selectPassive(arg: string): Passives[] {
   if (arg.length > 1) {
     if (arg[1] === '1') return ['passive1']
     if (arg[1] === '4') return ['passive2']
@@ -144,8 +144,6 @@ function passivesEmbed(id: CharacterKey, name: string, data: any, arg: string) {
   if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail))
   return embed
 }
-
-
 
 function constellationsEmbed(
   id: CharacterKey,
