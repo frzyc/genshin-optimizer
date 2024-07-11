@@ -3,7 +3,7 @@
     "gen-locale": {
       "implementation": "./src/executors/gen-locale/executor",
       "schema": "./src/executors/gen-locale/schema.json",
-      "localeription": "gen-locale executor"
+      "description": "gen-locale executor"
     }
   }
 }
