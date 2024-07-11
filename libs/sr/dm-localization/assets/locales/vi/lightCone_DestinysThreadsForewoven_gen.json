@@ -1,0 +1,7 @@
+{
+  "name": "Dây Thêu Dệt Vận Mệnh",
+  "passive": {
+    "name": "Nhìn Thấu",
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Kháng Hiệu Ứng của người trang bị. Mỗi khi người trang bị có {{2}} điểm Phòng Thủ, thì sát thương gây ra tăng <orangeStrong>{{3}}%</orangeStrong>, tối đa tăng <orangeStrong>{{4}}%</orangeStrong> sát thương gây ra."
+  }
+}

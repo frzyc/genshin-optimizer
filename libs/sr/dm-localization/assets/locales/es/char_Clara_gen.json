@@ -1,0 +1,40 @@
+{
+  "name": "Clara",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Quiero ayudar",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Clara como Daño Físico a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Svarog te vigila",
+        "fullDesc": "Clara inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Físico a todos los enemigos, y además inflige un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño Físico extra a los objetivos que tengan la Marca de represalia de Svarog.\\nTras usar la habilidad básica, se eliminan todas las Marcas de represalia.",
+        "shortDesc": "Inflige Daño Físico a todos los enemigos y además <color=#f29e38ff>inflige Daño Físico extra</color> a los que tengan Marca de represalia."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Es una promesa, no una orden",
+        "fullDesc": "Tras usar su habilidad definitiva, el daño que recibe Clara se reduce en un <orangeStrong>{{4}}%</orangeStrong> adicional y la probabilidad de ser atacada aumenta enormemente durante {{3}} turnos.\\nAdemás, el efecto de <u>contraataque</u> de Svarog se potencia. Cuando un aliado recibe un ataque, Svarog lanza un <u>contraataque</u> inmediatamente, su multiplicador de daño aumenta en un <orangeStrong>{{2}}%</orangeStrong> e inflige un <unbreak>50%</unbreak> del daño que reciba el objetivo principal a los enemigos adyacentes. El efecto de potenciación se puede activar {{5}} veces.",
+        "shortDesc": "<color=#f29e38ff>Reduce el daño recibido</color>, aumenta la probabilidad ser atacada y potencia el efecto de <u>contraataque</u>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Un pequeño precio por la victoria",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. La probabilidad de que Clara reciba un ataque enemigo aumenta durante {{1}} turnos.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Aumenta la probabilidad de recibir ataques enemigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

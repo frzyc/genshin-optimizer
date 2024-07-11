@@ -1,0 +1,45 @@
+{
+  "name": "Qingque",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Combinación oculta",
+        "fullDesc": "Lanza 1 ficha de jade del palo que menos fichas tenga e inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Qingque como Daño Cuántico a un enemigo.",
+        "shortDesc": "Lanza 1 ficha e inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+      },
+      "1": {
+        "name": "¡Fuera la ficha del muro muerto!",
+        "fullDesc": "Qingque inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Cuántico a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño Cuántico a los enemigos adyacentes.\\n\"¡Fuera la ficha del muro muerto!\" no recupera pts. de habilidad básica.",
+        "shortDesc": "Inflige Daño Cuántico a un enemigo y una pequeña cantidad de Daño Cuántico a los enemigos adyacentes."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Última ficha posible",
+        "fullDesc": "Roba {{1}} fichas de jade e inflige un <orangeStrong>{{2}}%</orangeStrong> más de daño hasta que termine el turno. Este efecto se puede acumular hasta {{3}} veces. Tras usar esta habilidad básica, el turno no termina.",
+        "shortDesc": "<color=#f29e38ff>Roba</color>, aumenta el daño infligido y <color=#f29e38ff>el turno no termina</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "¿Cuatro peces ocultos? ¡Victoria!",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Qingque como Daño Cuántico a todos los enemigos y obtiene 4 fichas de jade del mismo palo.",
+        "shortDesc": "Inflige Daño Cuántico a todos los enemigos y obtiene 4 fichas del mismo palo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Desafío a mí misma",
+        "fullDesc": "Tras usar la técnica, al entrar en combate Qingque roba {{1}} fichas de jade.",
+        "shortDesc": "Tras usar la técnica, roba ficha en la siguiente batalla."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

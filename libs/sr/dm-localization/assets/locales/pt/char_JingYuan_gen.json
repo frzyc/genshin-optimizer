@@ -1,0 +1,40 @@
+{
+  "name": "Jing Yuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Fulgor Radiante",
+        "fullDesc": "Jing Yuan causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> de seu ATQ a um único inimigo.",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Zênite Rompido",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Jing Yuan a todos os inimigos e aumenta os Golpes por Ação do Senhor dos Raios em {{2}} na próxima rodada.",
+        "shortDesc": "Causa Dano de Raio leve a todos os inimigos e <color=#f29e38ff>aumenta os Golpes por Ação do Senhor dos Raios</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Portador da Luz",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Jing Yuan a todos os inimigos e aumenta os Golpes por Ação do Senhor dos Raios em {{2}} na próxima rodada.",
+        "shortDesc": "Causa Dano de Raio a todos os inimigos e <color=#f29e38ff>aumenta os Golpes por Ação do Senhor dos Raios</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Invocação de Espírito",
+        "fullDesc": "Depois da que a Técnica é utilizada, os Golpes por Ação do Senhor dos Raios na primeira rodada aumentam em {{1}} no início da próxima batalha.",
+        "shortDesc": "Após usar a Técnica, na próxima batalha, <color=#f29e38ff>aumenta os Golpes por Ação do Senhor dos Raios</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Tingyun",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ausquartierung",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Tingyuns ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Beruhigende Melodie",
+        "fullDesc": "Segnet einen anvisierten Verbündeten und verstärkt seinen ANG um <orangeStrong>{{2}}%</orangeStrong> bis zu einem Höchstwert von <orangeStrong>{{4}}%</orangeStrong> von Tingyuns aktuellem ANG.\\nDer gesegnete Verbündete verursacht <u>zusätzlichen</u> Blitz-SCH, der <orangeStrong>{{1}}%</orangeStrong> seines ANG entspricht.\\nDer „Segen“ hält für {{3}} Rd. an und ist nur beim letzten Empfänger von Tingyuns Fertigkeit wirksam.",
+        "shortDesc": "Segnet einen Verbündeten und <color=#f29e38ff>verstärkt seinen ANG</color>. Der gesegnete Verbündete verursacht geringen <color=#f29e38ff><u>zusätzlichen</u> Blitz-SCH</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ritual der Glückswolke",
+        "fullDesc": "Stellt für einen anvisierten Verbündeten {{1}} Pkt. Energie wieder her und erhöht seinen zugefügten SCH für {{2}} Rd. um <orangeStrong>{{3}}%</orangeStrong>.",
+        "shortDesc": "Stellt für einen Verbündeten <color=#f29e38ff>Energie wieder her</color> und <color=#f29e38ff>erhöht seinen zugefügten SCH</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Sanfte Brise",
+        "fullDesc": "Stellt nach dem Einsatz der Technik unmittelbar {{1}} Pkt. Energie wieder her.",
+        "shortDesc": "Nach der Anwendung der Technik stellt diese Figur sofort Energie für sich selbst wieder her."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

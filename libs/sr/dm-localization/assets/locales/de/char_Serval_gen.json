@@ -1,0 +1,40 @@
+{
+  "name": "Serval",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Grollender Donner",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Servals ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Heller Blitz",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Servals ANG zu und fügt angrenzenden Zielen Blitz-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Servals ANG zu. Verursacht außerdem bei den getroffenen Gegnern mit einer <u>Grundchance</u> von {{3}}% für {{4}} Rd. Schock.\\nGeschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von <orangeStrong>{{5}}%</orangeStrong> von Servals ANG.",
+        "shortDesc": "Fügt einem Gegner und angrenzenden Einheiten geringen Blitz-SCH zu und bewirkt bei den Gegnern mit hoher Chance <color=#f29e38ff>Schock</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Hier kommt das mechanische Fieber",
+        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Servals ANG zu. Verlängert die Dauer von Schock von Gegnern um {{2}} Rd.",
+        "shortDesc": "Fügt allen Gegnern Blitz-SCH zu und verlängert die Dauer von Schock."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Gute Nacht, Belobog",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt einem zufälligen Gegner Blitz-SCH in Höhe von {{4}}% von Servals ANG zu. Verursacht gleichzeitig bei allen Gegner mit einer <u>Grundchance</u> von {{1}}% für {{3}} Rd. Schock.\\nGeschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von {{2}}% von Servals ANG.",
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen Blitz-SCH zu und hat eine hohe Chance, jedem Gegner <color=#f29e38ff>Schock zuzufügen</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

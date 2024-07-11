@@ -1,0 +1,40 @@
+{
+  "name": "Seele",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Représailles",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Seele à un ennemi unique.",
+        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lame rengainée",
+        "fullDesc": "Augmente la VIT de Seele de {{2}}% pendant {{3}} tours et inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Seele à un ennemi unique.",
+        "shortDesc": "Inflige des DGT quantiques à un ennemi unique et augmente la VIT."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Volée de papillons",
+        "fullDesc": "Seele entre immédiatement dans l'état amélioré et inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de son ATQ à un ennemi unique.",
+        "shortDesc": "Entre dans l'<color=#f29e38ff>état amélioré</color> et inflige des DGT quantiques massifs à un ennemi unique."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Illusion fantôme",
+        "fullDesc": "Après utilisation de sa technique, Seele devient furtive pendant {{1}} secondes. Lorsque Furtivité est active, Seele ne peut pas être détectée par les ennemis. Si elle entre en combat en attaquant un ennemi, elle bénéficie immédiatement de l'état amélioré.",
+        "shortDesc": "Entre en mode <color=#f29e38ff>Furtivité</color>. Entre dans l'état <color=#f29e38ff>amélioré</color> après avoir attaqué un ennemi et engagé le combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

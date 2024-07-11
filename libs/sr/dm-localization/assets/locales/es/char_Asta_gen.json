@@ -1,0 +1,40 @@
+{
+  "name": "Asta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Haz espectral",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Asta como Daño de Fuego a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Tormenta de meteoritos",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Asta como Daño de Fuego a un enemigo y después inflige daño 4 veces más. Cada golpe inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Asta como Daño de Fuego a un enemigo al azar.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo. Se dispara 5 veces."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Bendición astral",
+        "fullDesc": "La VEL de todos los aliados aumenta en <orangeStrong>{{1}}</orangeStrong> pts. durante {{2}} turnos.",
+        "shortDesc": "<color=#f29e38ff>Aumenta la VEL</color> de todos los aliados."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Destello milagroso",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1}}% del ATQ de Asta como Daño de Fuego a todos los enemigos.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de daño a todos los enemigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

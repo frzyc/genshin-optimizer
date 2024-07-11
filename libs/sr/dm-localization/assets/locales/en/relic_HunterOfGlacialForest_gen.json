@@ -1,0 +1,7 @@
+{
+  "setName": "Hunter of Glacial Forest",
+  "setEffects": {
+    "2": "Increases Ice DMG by {{1}}%.",
+    "4": "After the wearer uses their Ultimate, their CRIT DMG increases by {{1}}% for {{2}} turn(s)."
+  }
+}

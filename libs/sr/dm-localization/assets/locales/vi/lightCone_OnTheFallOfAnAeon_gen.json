@@ -1,0 +1,7 @@
+{
+  "name": "Sự Sụp Đổ Của Aeon",
+  "passive": {
+    "name": "Dập Lửa",
+    "description": "Khi người trang bị tấn công, sẽ tăng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của người trang bị trong trận hiện tại, hiệu ứng này tối đa cộng dồn {{2}} tầng. Sau khi người trang bị phá vỡ điểm yếu của kẻ địch, sát thương gây ra tăng <orangeStrong>{{3}}%</orangeStrong>, duy trì {{4}} hiệp."
+  }
+}

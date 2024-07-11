@@ -1,0 +1,7 @@
+{
+  "name": "Texture of Memories",
+  "passive": {
+    "name": "Treasure",
+    "description": "Increases the wearer's Effect RES by <orangeStrong>{{1}}%</orangeStrong>. If the wearer is attacked and has no Shield, they gain a Shield equal to <orangeStrong>{{2}}%</orangeStrong> of their Max HP for {{3}} turn(s). This effect can only be triggered once every {{4}} turn(s). If the wearer has a Shield when attacked, the DMG they receive decreases by <orangeStrong>{{5}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "초보자 임무 시작 전",
+  "passive": {
+    "name": "빠른 눈썰미",
+    "description": "장착한 캐릭터의 효과 명중이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 방어력이 감소된 적을 공격하면 에너지를 <orangeStrong>{{2}}</orangeStrong>pt 회복한다"
+  }
+}

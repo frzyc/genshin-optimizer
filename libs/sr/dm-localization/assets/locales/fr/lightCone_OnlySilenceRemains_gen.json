@@ -1,0 +1,7 @@
+{
+  "name": "Seul le silence subsiste",
+  "passive": {
+    "name": "Archives",
+    "description": "Augmente l'ATQ du porteur de <orangeStrong>{{1}}%</orangeStrong>. Augmente les chances de coup critique de <orangeStrong>{{2}}%</orangeStrong> s'il y a 2 ennemis ou moins sur le champ de bataille."
+  }
+}

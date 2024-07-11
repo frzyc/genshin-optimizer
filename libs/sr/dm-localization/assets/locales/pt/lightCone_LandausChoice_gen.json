@@ -1,0 +1,7 @@
+{
+  "name": "A Escolha dos Landau",
+  "passive": {
+    "name": "O Tempo Voa",
+    "description": "O usuário tem mais chances de sofrer ataques e o Dano recebido é reduzido em <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Sushang",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Kiếm Thuật Vân Kỵ - Mây Thuần",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Sushang.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Kiếm Thuật Vân Kỵ - Núi Đổ",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Sushang. Đồng thời sau khi thi triển đòn cuối cùng sẽ có {{3}}% xác suất kích hoạt Kiếm Thế, gây <u>sát thương Vật Lý kèm theo</u> bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Sushang.\\nNếu mục tiêu này ở <u>trạng thái Phá Vỡ Điểm Yếu</u>, chắc chắn sẽ thi triển Kiếm Thế.",
+        "shortDesc": "Gây sát thương Vật Lý cho 1 kẻ địch, có <color=#f29e38ff>xác suất nhỏ kích hoạt Kiếm Thế</color>. Nếu mục tiêu ở <u>trạng thái Phá Vỡ Điểm Yếu</u>, <color=#f29e38ff>chắc chắn sẽ kích hoạt Kiếm Thế</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Vũ Trụ Tiềm Ẩn - Nến Đêm",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Sushang, và khiến Sushang hành động ngay. Đồng thời tăng <orangeStrong>{{4}}%</orangeStrong> Tấn Công của Sushang, và khi thi triển Chiến Kỹ sẽ tăng thêm 2 lần thi triển Kiếm Thế, duy trì {{2}} hiệp.\\nSát thương của Kiếm Thế được kích hoạt thêm sẽ bằng {{3}}% sát thương ban đầu.",
+        "shortDesc": "Gây lượng lớn Sát Thương Vật Lý cho 1 kẻ địch, cường hóa hiệu ứng Kiếm Thế và <color=#f29e38ff>hành động ngay</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Kiếm Thuật Vân Kỵ - Chấn Động",
+        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, sẽ gây Sát Thương Vật Lý cho toàn bộ kẻ địch tương đương {{1}}% Tấn Công của Sushang.",
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận, gây lượng nhỏ Sát Thương Vật Lý cho toàn bộ kẻ địch."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

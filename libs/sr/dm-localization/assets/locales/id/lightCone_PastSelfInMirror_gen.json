@@ -1,0 +1,7 @@
+{
+  "name": "Past Self in Mirror",
+  "passive": {
+    "name": "The Plum Fragrance In My Bones",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Break Effect pengguna. Setelah pengguna melancarkan Ultimate, akan meningkatkan <orangeStrong>{{2}}%</orangeStrong> DMG yang diakibatkan seluruh rekan tim selama {{3}} giliran, jika Break Effect pengguna lebih dari atau sama dengan {{4}}%, maka akan memulihkan 1 Poin Skill.\\nSaat setiap gelombang pertempuran dimulai, seluruh rekan tim akan segera memulihkan <orangeStrong>{{5}}</orangeStrong> Energy, efek dari kemampuan yang sama tidak dapat ditumpuk."
+  }
+}

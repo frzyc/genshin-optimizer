@@ -1,0 +1,45 @@
+{
+  "name": "Jingliu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lueur sélénite",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Jingliu à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de glace mineurs à une cible ennemie unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Éclair transcendant",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Jingliu à un ennemi unique et obtient {{2}} cumul de Syzygie.",
+        "shortDesc": "Inflige des DGT de glace à une cible ennemie et obtient <color=#f29e38ff>1 cumul de Syzygie</color>."
+      },
+      "1": {
+        "name": "Reflet de lune sur rivière glacée",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Jingliu à un ennemi unique et des DGT de glace équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ de Jingliu aux ennemis adjacents. Consomme {{2}} cumul de Syzygie. L'utilisation de cette capacité ne consomme pas de point de compétence.",
+        "shortDesc": "Inflige des DGT de glace à une cible ennemie unique et des DGT de glace aux cibles adjacentes. Consomme 1 cumul de Syzygie."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Rêves floréphémères",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Jingliu à un ennemi unique et des DGT de glace équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ de Jingliu aux ennemis adjacents. Obtient {{2}} cumul de Syzygie à la fin de l'attaque.",
+        "shortDesc": "Inflige des DGT de glace massifs à une cible ennemie et inflige des DGT de glace aux cibles adjacentes. Obtient <color=#f29e38ff>1 cumul de Syzygie</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Éclat de la vérité",
+        "fullDesc": "Crée une dimension autour de Jingliu qui dure {{3}} secondes. Tous les ennemis dans cette dimension sont gelés. Jingliu génère immédiatement {{6}} points d'énergie et obtient {{1}} cumul de Syzygie, avec {{2}}% de <u>chances de base</u> de geler les cibles ennemies pendant {{4}} tours lorsque le combat est engagé avec des ennemis de la dimension. Les cibles ennemies gelées ne peuvent pas agir et subissent des <u>DGT de glace additionnels</u> équivalents à {{5}}% de l'ATQ de Jingliu au début de chaque tour. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "shortDesc": "Crée une dimension autour du personnage. Les ennemis qui s'y trouvent sont <color=#f29e38ff>gelés</color>. Le personnage génère de l'énergie et obtient 1 cumul de Syzygie avec de fortes chances d'appliquer <color=#f29e38ff>Gelé</color> aux ennemis lorsque le combat est engagé avec des ennemis de la dimension."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

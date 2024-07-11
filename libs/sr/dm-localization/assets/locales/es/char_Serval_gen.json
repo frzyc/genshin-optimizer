@@ -1,0 +1,40 @@
+{
+  "name": "Serval",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Trueno ensordecedor",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Serval como Daño de Rayo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Relámpago deslumbrante",
+        "fullDesc": "Serval inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño de Rayo a los enemigos adyacentes. Además, tiene una <u>probabilidad base</u> del {{3}}% de afectar con Electrocución a los enemigos atacados durante {{4}} turnos.\\nLos enemigos electrocutados reciben un Daño de Rayo con el tiempo equivalente al <orangeStrong>{{5}}%</orangeStrong> del ATQ de Serval al comienzo de cada turno.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un objetivo y a los enemigos adyacentes. Gran probabilidad de <color=#f29e38ff>afectar con Electrocución</color> a los enemigos golpeados."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "¡Fiebre Mecánica está aquí!",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Serval como Daño de Rayo a todos los enemigos y alarga en {{2}} turnos la duración de Electrocución en los enemigos afectados por este estado.",
+        "shortDesc": "Inflige Daño de Rayo a todos los enemigos y alarga la duración de Electrocución."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Buenas noches, Belobog",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{4}}% del ATQ de Serval como Daño de Rayo a un enemigo al azar. Además, cada enemigo tiene una <u>probabilidad base</u> del {{1}}% de ser afectado por Electrocución durante {{3}} turnos.\\nLos enemigos electrocutados reciben un Daño de Rayo con el tiempo equivalente al {{2}}% del ATQ de Serval al comienzo de cada turno.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño de Rayo a un enemigo al azar. Además, cada enemigo tiene una gran probabilidad de ser afectado por <color=#f29e38ff>Electrocución</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

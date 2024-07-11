@@ -1,0 +1,7 @@
+{
+  "name": "相抗",
+  "passive": {
+    "name": "联盟",
+    "description": "使装备者在消灭敌方目标后，速度提高<orangeStrong>{{1}}%</orangeStrong>，持续{{2}}回合。"
+  }
+}

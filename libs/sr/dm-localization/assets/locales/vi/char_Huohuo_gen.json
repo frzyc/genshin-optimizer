@@ -1,0 +1,40 @@
+{
+  "name": "Huohuo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Cờ Lệnh - Hô Mưa Gọi Gió",
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Phong bằng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của Huohuo.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Linh Phù - Hộ Thân",
+        "fullDesc": "Giải trừ {{5}} <u>Hiệu Ứng Xấu</u> cho 1 đồng đội chỉ định, lập tức hồi phục cho 1 đồng đội chỉ định một lượng HP bằng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của Huohuo +<orangeStrong>{{2}}</orangeStrong>, đồng thời hồi phục cho mục tiêu ở gần một lượng HP bằng <orangeStrong>{{3}}%</orangeStrong> Giới Hạn HP của Huohuo +<orangeStrong>{{4}}</orangeStrong>.",
+        "shortDesc": "Giải trừ 1 <u>Hiệu Ứng Xấu</u> cho 1 đồng đội, đồng thời <color=#f29e38ff>hồi phục HP</color> cho 1 đồng đội và mục tiêu ở gần."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lão Đuôi - Chế Ngự Tâm Linh",
+        "fullDesc": "Hồi phục Năng Lượng cho đồng đội ngoài bản thân bằng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn Năng Lượng của mỗi người, đồng thời tăng <orangeStrong>{{2}}%</orangeStrong> Tấn Công cho người này, duy trì {{3}} hiệp.",
+        "shortDesc": "<color=#f29e38ff>Hồi phục Năng Lượng</color> cho đồng đội ngoài bản thân, đồng thời <color=#f29e38ff>tăng Tấn Công</color> cho người này."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Hung Sát - Trấn Áp Yêu Tà",
+        "fullDesc": "Huohuo hù dọa kẻ địch xung quanh, khiến kẻ địch rơi vào trạng thái \"Phách Tán\". Kẻ địch ở trạng thái \"Phách Tán\" sẽ trốn chạy thật xa khỏi Huohuo, duy trì {{4}} giây. Sau khi vào chiến đấu với kẻ địch ở trạng thái \"Phách Tán\", có {{1}}% <u>xác suất cơ bản</u> giảm {{2}}% Tấn Công của mỗi một kẻ địch, duy trì {{3}} hiệp.",
+        "shortDesc": "Khiến kẻ địch xung quanh rơi vào trạng thái \"Phách Tán\". Sau khi vào chiến đấu với kẻ địch ở trạng thái \"Phách Tán\", có xác suất lớn <color=#f29e38ff>giảm Tấn Công</color> của kẻ địch."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm sức bền thuộc tính tương ứng của kẻ địch.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

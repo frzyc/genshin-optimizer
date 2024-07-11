@@ -1,0 +1,7 @@
+{
+  "name": "In the Night",
+  "passive": {
+    "name": "Flowers and Butterflies",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT Rate pengguna. Saat SPD pengguna berada di atas <unbreak>100</unbreak> selama pertempuran, setiap {{2}} poin SPD yang berlebih akan meningkatkan <orangeStrong>{{3}}%</orangeStrong> Basic Attack DMG dan Skill DMG pengguna, serta meningkatkan <orangeStrong>{{4}}%</orangeStrong> CRIT DMG Ultimate. Efek ini dapat ditumpuk hingga {{5}} lapis."
+  }
+}

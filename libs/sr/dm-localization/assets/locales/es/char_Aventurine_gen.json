@@ -1,0 +1,40 @@
+{
+  "name": "Aventurino",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Apuesta directa",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> de la DEF de Aventurino como Daño Imaginario a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Piedra angular de la prosperidad",
+        "fullDesc": "Otorga a todos los aliados un escudo Apuesta reforzada que absorbe un daño equivalente al <orangeStrong>{{1}}%</orangeStrong> de la DEF de Aventurino + <orangeStrong>{{2}}</orangeStrong> durante {{3}} turnos. Al obtener Apuesta reforzada varias veces, el efecto de escudo se puede acumular hasta un máximo del {{4}}% del efecto de escudo que proporciona la habilidad básica actual.",
+        "shortDesc": "Otorga a todos los aliados un escudo Apuesta reforzada con <color=#f29e38ff>efecto de escudo acumulable</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Prodigio de la ruleta",
+        "fullDesc": "Obtiene de 1 a {{1}} pts. de Apuesta ciega al azar y después aplica Sobresalto a un enemigo durante {{4}} turnos. Además, inflige al enemigo un <orangeStrong>{{2}}%</orangeStrong> de la DEF de Aventurino como Daño Imaginario. Cuando un objetivo aliado golpea a un enemigo con Sobresalto, el Daño CRIT infligido aumenta en un <orangeStrong>{{3}}%</orangeStrong>.",
+        "shortDesc": "Obtiene Apuesta ciega al azar y afecta con Sobresalto a un enemigo. Además, inflige Daño Imaginario al objetivo. Cuando un aliado ataca a un enemigo con Sobresalto, el <color=#f29e38ff>Daño CRIT que inflige aumenta</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Rojo o negro",
+        "fullDesc": "Tras usar la técnica, se obtiene 1 de los siguientes efectos:\\nProbabilidad de aumentar la DEF en un {{1}}%.\\nGran probabilidad de aumentar la DEF en un {{2}}%.\\nPequeña probabilidad de aumentar la DEF en un {{3}}%.\\nSi se usa repetidas veces, solo se conserva el efecto con el valor más alto.\\nCuando comienza la siguiente batalla, la DEF de todos los aliados aumenta en la cantidad correspondiente durante {{4}} turnos.",
+        "shortDesc": "Al usar la técnica se obtiene 1 de 3 posibles efectos de aumento de DEF al azar. Al entrar en el siguiente combate, la DEF de todos los aliados aumenta en la cantidad correspondiente."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

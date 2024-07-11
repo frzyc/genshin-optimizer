@@ -1,0 +1,50 @@
+{
+  "name": "Desbrava{M#dor}{F#dora} (Físico • A Destruição)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Golpe de Despedida",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo.",
+        "shortDesc": "Causa Dano Físico leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Home Run Fatal",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e inimigos adjacentes.",
+        "shortDesc": "Causa Dano Físico a um único inimigo e aos inimigos adjacentes a ele."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ás de Poeira Estelar",
+        "fullDesc": "Escolha entre dois modos de ataque para desferir um golpe completo.\\nRuptura: Golpe de Despedida causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} a um único inimigo.\\nRuptura: Home Run Fatal causa Dano Físico igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} a um único inimigo, e Dano Físico igual a <orangeStrong>{{3}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} aos inimigos adjacentes a ele",
+        "shortDesc": "Usa ATQ de alvo único ou uma Explosão para realizar um golpe com força máxima."
+      },
+      "1": {
+        "name": "Ruptura: Golpe de Despedida",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo.",
+        "shortDesc": "Causa Dano Físico massivo a um único inimigo."
+      },
+      "2": {
+        "name": "Ruptura: Home Run Fatal",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e Dano Físico igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a quaisquer inimigos adjacentes a ele.",
+        "shortDesc": "Causa Dano Físico a um único inimigo e aos inimigos adjacentes a ele."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Terceiro Golpe Imortal",
+        "fullDesc": "Imediatamente cura todos os aliados em {{1}}% de seus PV máximos depois de usar esta Técnica.",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "setName": "Frota dos Eternos",
+  "setEffects": {
+    "2": "Aumenta em {{1}}% os PV máximos do usuário. Quando a VEL do usuário chegar a {{2}} ou mais, aumenta em {{3}}% o ATQ de todos os aliados."
+  }
+}

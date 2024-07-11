@@ -7,17 +7,17 @@ import type { HashId, Value } from '../common'
 
 export type AvatarSkillConfig = {
   SkillID: number
-  SkillName: HashId
-  SkillTag: HashId
-  SkillTypeDesc: HashId
+  SkillName: HashId // Frigid Cold Arrow
+  SkillTag: HashId // Single Target
+  SkillTypeDesc: HashId // Basic ATK
   Level: number
   MaxLevel: number
   SkillTriggerKey: SkillTriggerKey
   SkillIcon: string
   UltraSkillIcon: UltraSkillIcon
   LevelUpCostList: any[]
-  SkillDesc: HashId
-  SimpleSkillDesc: HashId
+  SkillDesc: HashId // Deals Ice DMG equal to 100% of March 7th's ATK to a single enemy.
+  SimpleSkillDesc: HashId // Deals minor Ice DMG to a single enemy.
   RatedSkillTreeID: number[]
   RatedRankID: number[]
   ExtraEffectIDList: number[]

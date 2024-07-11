@@ -1,0 +1,7 @@
+{
+  "setName": "Gran duque incinerador",
+  "setEffects": {
+    "2": "Daño de los ataques adicionales +{{1}}%.",
+    "4": "Cuando el portador lanza un ataque adicional, el ATQ del portador aumenta en un {{1}}% por cada vez que haya infligido daño con el ataque adicional. Se puede acumular hasta {{2}} veces y dura {{3}} turnos. Este efecto se disipa la siguiente vez que el portador lance un ataque adicional."
+  }
+}

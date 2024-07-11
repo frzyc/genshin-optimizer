@@ -1,0 +1,40 @@
+{
+  "name": "藿藿",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "令旗•征風召雨",
+        "fullDesc": "對指定敵方單體造成等同於藿藿<orangeStrong>{{1}}%</orangeStrong>生命上限的風屬性傷害。",
+        "shortDesc": "對敵方單體造成少量風屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "靈符•保命護身",
+        "fullDesc": "解除指定我方單體的{{5}}個<u>負面效果</u>，立即為指定我方單體回復等同於藿藿<orangeStrong>{{1}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值，同時為其相鄰目標回復等同於藿藿<orangeStrong>{{3}}%</orangeStrong>生命上限+<orangeStrong>{{4}}</orangeStrong>的生命值。",
+        "shortDesc": "解除我方單體1個<u>負面效果</u>，並為我方單體及其相鄰目標<color=#f29e38ff>回復生命值</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "尾巴•遣神役鬼",
+        "fullDesc": "為除自身以外的隊友恢復等同於各自<orangeStrong>{{1}}%</orangeStrong>能量上限的能量，同時使其攻擊力提高<orangeStrong>{{2}}%</orangeStrong>，持續{{3}}回合。",
+        "shortDesc": "為除自身以外的隊友<color=#f29e38ff>恢復能量</color>，並使其<color=#f29e38ff>攻擊力提高</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "凶煞•劾壓鬼物",
+        "fullDesc": "藿藿恐嚇周圍的敵人，使其陷入【魄散】狀態。【魄散】狀態下的敵人會向遠離藿藿的方向逃跑，持續{{4}}秒。與陷入【魄散】狀態的敵人進入戰鬥後，有{{1}}%的<u>基礎機率</u>使敵方每個單體目標攻擊力降低{{2}}%，持續{{3}}回合。",
+        "shortDesc": "使周圍的敵人陷入【魄散】狀態。與陷入【魄散】狀態的敵人進入戰鬥後，有高機率使敵方目標<color=#f29e38ff>攻擊力降低</color>。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

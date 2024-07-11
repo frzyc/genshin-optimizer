@@ -1,0 +1,7 @@
+{
+  "name": "Wir sind Wildfeuer",
+  "passive": {
+    "name": "Mit tränenden Augen",
+    "description": "Verringert zu Beginn des Kampfes erlittenen SCH aller Verbündeten für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong>. Stellt unmittelbar LP für alle Verbündeten in Höhe von <orangeStrong>{{1}}%</orangeStrong> des jeweiligen LP-Verlusts wieder her."
+  }
+}

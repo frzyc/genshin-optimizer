@@ -1,0 +1,45 @@
+{
+  "name": "Luka",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Punho Certeiro",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Luka a um único inimigo.",
+        "shortDesc": "Causa Dano Físico leve a um único inimigo."
+      },
+      "1": {
+        "name": "Punho Demolidor de Céus",
+        "fullDesc": "Consome 2 acúmulos de Desejo de Lutar. Primeiramente, usa o Punho Certeiro para dar 3 golpes, com cada golpe causando Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Luka a um único inimigo-alvo.\\nEntão, usa o Gancho Ascendente para dar 1 golpe, causando Dano Físico igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Luka a um único inimigo-alvo.",
+        "shortDesc": "Consome 2 acúmulos de Desejo de Lutar para causar Dano Físico a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Punho Lacerante",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Luka a um único inimigo-alvo. Além disso, há uma <u>chance-base</u> de {{2}}% de infligir Sangramento a ele, durando {{5}} rodada(s).\\nEnquanto estiver com Sangramento, o inimigo recebe {{3}}% de seus PV máximos como Dano Físico Contínuo ao início de cada rodada. Este Dano não pode exceder <orangeStrong>{{4}}%</orangeStrong> do ATQ de Luka.",
+        "shortDesc": "Causa Dano Físico a um único inimigo, com uma alta chance de causar <color=#f29e38ff>Sangramento</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Golpe de Misericórdia",
+        "fullDesc": "Recebe {{5}} acúmulo(s) de Desejo de Lutar, com uma <u>chance-base</u> de {{2}}% de aumentar o Dano recebido de um único inimigo-alvo em <orangeStrong>{{3}}%</orangeStrong> por {{4}} rodada(s). Então, causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Luka ao alvo.",
+        "shortDesc": "Recebe <orangeStrong>{{5}}</orangeStrong> acúmulo(s) de Desejo de Lutar, com uma alta chance de aumentar o Dano recebido pelo alvo, e causa Dano Físico massivo ao alvo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Antecipador",
+        "fullDesc": "Ataca imediatamente o inimigo. Ao entrar em batalha, Luka causa Dano Físico igual a {{1}}% de seu ATQ a um único inimigo aleatório, com {{2}}% de <u>chance-base</u> de infligir o efeito de Sangramento da sua Perícia no alvo. Depois, Luka ganha 1 acúmulo adicional de Desejo de Lutar.",
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Físico leve a um único inimigo aleatório, com uma alta chance de infligir <color=#f29e38ff>Sangramento</color> ao alvo. Depois, ganha 1 acúmulo de Desejo de Lutar."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Tingyun",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Dislodged",
+        "fullDesc": "Tingyun deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of her ATK to a single enemy.",
+        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Soothing Melody",
+        "fullDesc": "Grants a single ally with Benediction to increase their ATK by <orangeStrong>{{2}}%</orangeStrong>, up to <orangeStrong>{{4}}%</orangeStrong> of Tingyun's current ATK.\\nWhen the ally with Benediction attacks, they will deal <u>Additional</u> Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of that ally's ATK for 1 time.\\nBenediction lasts for {{3}} turn(s) and is only effective on the most recent receiver of Tingyun's Skill.",
+        "shortDesc": "<color=#f29e38ff>Increases the ATK</color> of a single ally and grants them Benediction. Ally with Benediction additionally deals minor <color=#f29e38ff>Lightning <u>Additional DMG</u></color> when attacking."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Amidst the Rejoicing Clouds",
+        "fullDesc": "Regenerates {{1}} Energy for a single ally and increases the target's DMG by <orangeStrong>{{3}}%</orangeStrong> for {{2}} turn(s).",
+        "shortDesc": "Regenerates a target ally's <color=#f29e38ff>Energy</color> and <color=#f29e38ff>increases their DMG dealt</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Gentle Breeze",
+        "fullDesc": "Tingyun immediately regenerates {{1}} Energy upon using her Technique.",
+        "shortDesc": "After using this Technique, this character immediately regenerates Energy for themselves."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

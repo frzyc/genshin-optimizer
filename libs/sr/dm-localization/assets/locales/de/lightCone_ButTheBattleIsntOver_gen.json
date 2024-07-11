@@ -1,0 +1,7 @@
+{
+  "name": "Der Kampf ist nicht vorbei",
+  "passive": {
+    "name": "Erbin",
+    "description": "Erhöht die Energie-Wiederherstellungsrate des Trägers um <orangeStrong>{{1}}%</orangeStrong> und stellt beim Einsatz des Ultimates auf Verbündete 1 Fertigkeitspunkt wieder her. Dieser Effekt kann nach jeweils 2 Einsätzen des Ultimates ausgelöst werden. Nach dem Einsatz der Fertigkeit wird der verursachte SCH des Verbündeten, der als nächstes eine Aktion ausführt (außer dem Träger), für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong> erhöht."
+  }
+}

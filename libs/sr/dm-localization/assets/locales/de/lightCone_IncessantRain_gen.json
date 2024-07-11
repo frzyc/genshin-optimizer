@@ -1,0 +1,7 @@
+{
+  "name": "Unaufhörlicher Regen",
+  "passive": {
+    "name": "Trugbild der Realität",
+    "description": "Erhöht die Effekt-Trefferrate des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Wenn der Träger einem Gegner mit {{4}} oder mehr Debuffs SCH zufügt, wird die KRIT-Rate des Trägers um <orangeStrong>{{5}}%</orangeStrong> erhöht. Nachdem der Träger seinen Standardangriff, seine Fertigkeit oder seinen Ultimate eingesetzt hat, besteht eine Grundchance von {{2}}%, einem zufälligen Gegner „Äther-Code“ zuzufügen, der keinen „Äther-Code“ besitzt. Gegner mit „Äther-Code“ erleiden für 1 Rd. <orangeStrong>{{3}}%</orangeStrong> mehr SCH."
+  }
+}

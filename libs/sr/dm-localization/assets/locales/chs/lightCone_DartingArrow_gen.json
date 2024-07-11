@@ -1,0 +1,7 @@
+{
+  "name": "离弦",
+  "passive": {
+    "name": "鸣角",
+    "description": "使装备者消灭敌方目标后，攻击力提高<orangeStrong>{{1}}%</orangeStrong>，持续{{2}}回合。"
+  }
+}

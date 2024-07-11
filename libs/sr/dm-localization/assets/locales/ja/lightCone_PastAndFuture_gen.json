@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#かこ}過去{RUBY_E#}と{RUBY_B#みらい}未来{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#せきじつ}昔日{RUBY_E#}の{RUBY_B#たこ}紙鳶{RUBY_E#}",
+    "description": "装備キャラが戦闘スキルを発動した後、次に行動する他の味方の与ダメージ+<orangeStrong>{{1}}%</orangeStrong>、{{2}}ターン継続。"
+  }
+}

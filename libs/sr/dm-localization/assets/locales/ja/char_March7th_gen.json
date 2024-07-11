@@ -1,0 +1,40 @@
+{
+  "name": "{RUBY_B#みつき}三月{RUBY_E#}なのか",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#ごっかん}極寒{RUBY_E#}の{RUBY_B#ゆみや}弓矢{RUBY_E#}",
+        "fullDesc": "指定した敵単体に三月なのかの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#かわい}可愛{RUBY_E#}いは{RUBY_B#せいぎ}正義{RUBY_E#}",
+        "fullDesc": "指定した味方単体に三月なのかの防御力<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>の耐久値を持つバリアを与える、{{2}}ターン継続。\\nその味方の残りHPが{{3}}%以上の場合、敵に攻撃される確率が大幅にアップする。",
+        "shortDesc": "味方単体に<color=#f29e38ff>バリアを付与</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#ひょうこく}氷刻{RUBY_E#}{RUBY_B#やう}矢雨{RUBY_E#}の{RUBY_B#とき}時{RUBY_E#}",
+        "fullDesc": "敵全体に三月なのかの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。攻撃を受けた敵は{{2}}%の<u>基礎確率</u>で凍結状態になる、{{3}}ターン継続。\\n凍結状態の敵は行動できなくなり、ターンが回ってくるたびに三月なのかの攻撃力<orangeStrong>{{4}}%</orangeStrong>分の氷属性<u>付加ダメージ</u>を受ける。",
+        "shortDesc": "敵<color=#f29e38ff>全体</color>に氷属性ダメージを与え、<color=#f29e38ff>確率で凍結状態にする</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#こお}凍{RUBY_E#}る{RUBY_B#しゅんかん}瞬間{RUBY_E#}",
+        "fullDesc": "敵を攻撃。戦闘に入った後、{{1}}%の<u>基礎確率</u>でランダムな敵単体を凍結状態にする、{{2}}ターン継続。\\n凍結状態の敵は行動できなくなり、ターンが回ってくるたびに三月なのかの攻撃力{{3}}%分の氷属性<u>付加ダメージ</u>を受ける。",
+        "shortDesc": "敵を攻撃。戦闘に入った後、高確率でランダムな敵単体を凍結状態にする。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Bernstein",
+  "passive": {
+    "name": "Stillstand",
+    "description": "Erhöht die VTD des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Liegt der LP-Prozentsatz des Trägers niedriger als {{2}}%, wird die VTD zusätzlich um <orangeStrong>{{3}}%</orangeStrong> erhöht."
+  }
+}

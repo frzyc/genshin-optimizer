@@ -1,0 +1,45 @@
+{
+  "name": "Trazacaminos (Fuego • Conservación)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Luz rompehielos",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño de Fuego a un enemigo y obtiene una acumulación de Voluntad magmática.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo y obtiene Voluntad magmática."
+      },
+      "1": {
+        "name": "Luz rompehielos",
+        "fullDesc": "Consume 4 acumulaciones de Voluntad magmática, potencia su ATQ básico e inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño de Fuego a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño de Fuego a los enemigos adyacentes.",
+        "shortDesc": "Consume Voluntad magmática e inflige Daño de Fuego a un enemigo y una pequeña cantidad de Daño de Fuego a los enemigos adyacentes."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Ámbar inextinguible",
+        "fullDesc": "Tras usar la habilidad básica, el daño que recibe {F#la}{M#el} Trazacaminos se reduce en un <orangeStrong>{{1}}%</orangeStrong> y obtiene una acumulación de Voluntad magmática. Además, tiene un {{2}}% de <u>probabilidad base</u> de afectar a todos los enemigos con Provocación durante {{3}} turno.",
+        "shortDesc": "Reduce el daño recibido y obtiene Voluntad magmática. Gran probabilidad de afectar con Provocación a todos los enemigos."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lanza llameante tras las líneas enemigas",
+        "fullDesc": "Inflige a todos los enemigos un Daño de Fuego equivalente al <orangeStrong>{{1}}%</orangeStrong> del ATQ + <orangeStrong>{{2}}%</orangeStrong> de la DEF {F#de la}{M#del} Trazacaminos. La siguiente vez que se use el ATQ básico, gana automáticamente una potenciación sin consumir Voluntad magmática.",
+        "shortDesc": "Inflige Daño de Fuego a todos los enemigos y potencia su siguiente ATQ básico."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Llamada del guardián",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla obtiene un escudo que absorbe un daño equivalente al {{1}}% de la DEF {F#de la}{M#del} Trazacaminos + {{2}} durante {{3}} turno.",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "Tín Sứ Du Ngoạn Không Gian Hacker",
+  "setEffects": {
+    "2": "Tăng Tốc Độ {{1}}%.",
+    "4": "Khi người trang bị thi triển Tuyệt Kỹ lên mục tiêu phe ta, tốc độ toàn phe ta tăng {{1}}%, duy trì {{2}} hiệp, hiệu ứng này không thể cộng dồn."
+  }
+}

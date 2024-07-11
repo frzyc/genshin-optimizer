@@ -1,0 +1,7 @@
+{
+  "name": "银河沦陷日",
+  "passive": {
+    "name": "攻略",
+    "description": "使装备者的攻击力提高<orangeStrong>{{1}}%</orangeStrong>。装备者施放攻击后，若有不少于2个被攻击的敌方目标具有对应属性弱点，装备者的暴击伤害提高<orangeStrong>{{2}}%</orangeStrong>，持续{{3}}回合。"
+  }
+}

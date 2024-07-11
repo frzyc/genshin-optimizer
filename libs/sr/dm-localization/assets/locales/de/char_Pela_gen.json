@@ -1,0 +1,40 @@
+{
+  "name": "Pela",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Frostschuss",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Pelas ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Frostbeule",
+        "fullDesc": "Entfernt {{2}} <u>Buff</u> des anvisierten Gegners und fügt dem Ziel Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Pelas ANG zu.",
+        "shortDesc": "<color=#f29e38ff>Entfernt</color> 1 <color=#f29e38ff><u>Buff</u></color> eines Gegners und fügt einem Gegner Eis-SCH zu."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Zonenunterdrückung",
+        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Pelas ANG zu und hat eine <u>Grundchance</u> von {{1}}%, bei jedem Gegner „Universelle Beherrschung“ zu verursachen.\\nDie VTD der Gegner im Status „Universelle Beherrschung“ wird für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong> reduziert.",
+        "shortDesc": "Hat eine hohe Chance, die <color=#f29e38ff>VTD</color> aller Gegner zu <color=#f29e38ff>reduzieren</color> und fügt allen Gegnern geringen Eis-SCH zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Präventivschlag",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt einem zufälligen Gegner Eis-SCH in Höhe von {{4}}% von Pelas ANG zu und hat eine <u>Grundchance</u> von {{1}}%, die VTD aller Gegner für {{3}} Rd. um {{2}}% zu reduzieren.",
+        "shortDesc": "Greift Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen Eis-SCH zu und hat eine hohe Chance, die VTD aller Gegner zu reduzieren."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

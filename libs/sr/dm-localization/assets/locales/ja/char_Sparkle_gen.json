@@ -1,0 +1,40 @@
+{
+  "name": "{RUBY_B#はなび}花火{RUBY_E#}",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#ひと}独{RUBY_E#}り{RUBY_B#しばい}芝居{RUBY_E#}",
+        "fullDesc": "指定した敵単体に花火の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の量子属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#ゆめ}夢{RUBY_E#}を{RUBY_B#およ}泳{RUBY_E#}ぐ{RUBY_B#さかな}魚{RUBY_E#}",
+        "fullDesc": "指定した味方単体の会心ダメージを、花火の会心ダメージ<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}%</orangeStrong>分アップする、{{3}}ターン継続。その味方の行動順を{{4}}%早める。\\n自身に対してこのスキルを発動した時、行動順を早める効果は発動しない。",
+        "shortDesc": "味方単体の<color=#f29e38ff>会心ダメージ</color>をアップし、その味方の行動順を早める。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#ひとりせんやく}一人千役{RUBY_E#}",
+        "fullDesc": "SPを{{2}}回復し、味方全体に「奇怪な謎」を付与する。「奇怪な謎」が付与されている味方は、花火の天賦の与ダメージアップ効果がさらに各層<orangeStrong>{{3}}%</orangeStrong>アップする、{{4}}ターン継続。",
+        "shortDesc": "<color=#f29e38ff>SP</color>を回復し、花火の天賦による与ダメージアップ効果を強化する。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#しんよう}信用{RUBY_E#}できない{RUBY_B#かた}語{RUBY_E#}り{RUBY_B#て}手{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、味方全体は{{2}}秒の「ミスリード」状態になる。「ミスリード」状態になると敵に発見されなくなり、敵を先制攻撃して戦闘に入る時、SPを{{1}}回復する。",
+        "shortDesc": "秘技を使用した後、味方全体は「ミスリード」状態になる。「ミスリード」状態になると敵に発見されなくなり、敵を先制攻撃して戦闘に入る時、<color=#f29e38ff>SP</color>を回復する。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

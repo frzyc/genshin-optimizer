@@ -1,0 +1,45 @@
+{
+  "name": "加拉赫",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "开瓶费",
+        "fullDesc": "对指定敌方单体造成等同于加拉赫<orangeStrong>{{1}}%</orangeStrong>攻击力的火属性伤害。",
+        "shortDesc": "对敌方单体造成少量火属性伤害。"
+      },
+      "1": {
+        "name": "酒花奔涌",
+        "fullDesc": "对指定敌方单体造成等同于加拉赫<orangeStrong>{{1}}%</orangeStrong>攻击力的火属性伤害。并使目标攻击力降低<orangeStrong>{{2}}%</orangeStrong>，持续{{3}}回合。",
+        "shortDesc": "对敌方单体造成火属性伤害，并降低其攻击力。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "罐装特调",
+        "fullDesc": "立即为指定我方单体回复<orangeStrong>{{1}}</orangeStrong>点生命值。",
+        "shortDesc": "立即为我方单体回复生命值。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "香槟仪礼",
+        "fullDesc": "使敌方全体陷入【酩酊】状态，持续{{2}}回合，同时对敌方全体造成等同于加拉赫<orangeStrong>{{1}}%</orangeStrong>攻击力的火属性伤害，并将下一次普攻强化为【酒花奔涌】。",
+        "shortDesc": "使敌方全体<color=#f29e38ff>陷入【酩酊】状态</color>，同时对敌方全体造成火属性伤害。下一次普攻强化为【酒花奔涌】。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "亲启佳酿",
+        "fullDesc": "立即攻击敌人，进入战斗后使敌方全体陷入【酩酊】状态，持续{{1}}回合，并对敌方全体造成等同于加拉赫{{2}}%攻击力的火属性伤害。",
+        "shortDesc": "攻击敌人，进战后使敌方全体<color=#f29e38ff>陷入【酩酊】状态</color>，并对敌方全体造成少量火属性伤害。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

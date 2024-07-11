@@ -1,0 +1,7 @@
+{
+  "name": "Điểm Hẹn Hành Tinh",
+  "passive": {
+    "name": "Khởi Hành",
+    "description": "Sau khi vào chiến đấu, khi mục tiêu phe ta gây sát thương cùng thuộc tính với người trang bị, sẽ khiến sát thương gây ra tăng <orangeStrong>{{1}}%</orangeStrong>."
+  }
+}

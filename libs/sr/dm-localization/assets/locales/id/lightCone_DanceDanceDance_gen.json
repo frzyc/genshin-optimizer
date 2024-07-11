@@ -1,0 +1,7 @@
+{
+  "name": "Dance! Dance! Dance!",
+  "passive": {
+    "name": "Cannot Stop It!",
+    "description": "Setelah pengguna melancarkan Ultimate, mendahulukan <orangeStrong>{{1}}%</orangeStrong> aksi seluruh rekan tim."
+  }
+}

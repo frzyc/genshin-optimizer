@@ -1,0 +1,7 @@
+{
+  "name": "Die Maulwürfe heißen dich willkommen",
+  "passive": {
+    "name": "Fantastisches Abenteuer",
+    "description": "Nach dem Einsatz des Standardangriffs, der Fertigkeit oder des Ultimates erhält der Träger jeweils 1 Stapelung Schelmisch. Für jede Stapelung wird ANG des Trägers um <orangeStrong>{{1}}%</orangeStrong> erhöht."
+  }
+}

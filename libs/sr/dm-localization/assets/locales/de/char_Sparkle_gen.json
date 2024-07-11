@@ -1,0 +1,40 @@
+{
+  "name": "Sparkle",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Monodrama",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Sparkles ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Schlafschwimmer",
+        "fullDesc": "Erhöht für {{3}} Rd. den KRIT-SCH eines anvisierten Verbündeten um <orangeStrong>{{1}}%</orangeStrong> von Sparkles KRIT-SCH plus <orangeStrong>{{2}}%</orangeStrong>. Zieht außerdem die Aktion des Ziels um {{4}}% vor.\\nWenn Sparkle diese Fähigkeit an sich selbst einsetzt, wird der Aktionsvorzug nicht ausgelöst.",
+        "shortDesc": "Erhöht den <color=#f29e38ff>KRIT-SCH</color> eines Verbündeten und zieht seine Aktion vor."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ein Leben in tausend Rollen",
+        "fullDesc": "Stellt für alle Verbündeten {{2}} Fertigkeitspunkte wieder her und verleiht ihnen „Rätselhaft“. Für Verbündete mit Rätselhaft erhöht jede Stapelung der SCH-Erhöhung durch Sparkles Talent für {{4}} Rd. zusätzlich um <orangeStrong>{{3}}%</orangeStrong>.",
+        "shortDesc": "Stellt <color=#f29e38ff>Fertigkeitspunkte</color> wieder her und erhöht zusätzlich die SCH-Erhöhung von Sparkles Talent."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Unzuverlässiger Erzähler",
+        "fullDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten für {{2}} Sek. den Status „Irreführung“, der sie für Gegner unsichtbar macht. Stellt beim Kampfeintritt mit Irreführung {{1}} Fertigkeitspunkte wieder her.",
+        "shortDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten den Status „Irreführung“, der sie für Gegner unsichtbar macht. Stellt beim Kampfeintritt mit Irreführung <color=#f29e38ff>Fertigkeitspunkte</color> wieder her."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

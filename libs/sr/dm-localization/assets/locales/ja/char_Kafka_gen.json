@@ -1,0 +1,40 @@
+{
+  "name": "カフカ",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#や}止{RUBY_E#}まない{RUBY_B#よる}夜{RUBY_E#}の{RUBY_B#けんそう}喧騒{RUBY_E#}",
+        "fullDesc": "指定した敵単体にカフカの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の雷属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#つき}月{RUBY_E#}{RUBY_B#あ}明{RUBY_E#}かりが{RUBY_B#な}撫{RUBY_E#}でる{RUBY_B#れんめん}連綿{RUBY_E#}",
+        "fullDesc": "指定した敵単体にカフカの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性ダメージを与え、隣接する敵にカフカの攻撃力<orangeStrong>{{3}}%</orangeStrong>分の雷属性ダメージを与える。\\n指定した敵が持続ダメージ系デバフである場合、付与された全持続ダメージ系デバフが、本来のダメージ<orangeStrong>{{2}}%</orangeStrong>分のダメージを発生する。",
+        "shortDesc": "敵単体に雷属性ダメージを与え、隣接する敵に少量の雷属性ダメージを与える。\\nメインターゲットに持続ダメージ系デバフがある場合、持続ダメージ系デバフが<color=#f29e38ff>さらにダメージを1回発生</color>する。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#ひげき}悲劇{RUBY_E#}{RUBY_B#さいは}最果{RUBY_E#}ての{RUBY_B#せんおん}顫音{RUBY_E#}",
+        "fullDesc": "敵全体にカフカの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性ダメージを与え、{{2}}%の<u>基礎確率</u>で攻撃を受けた敵を感電状態にし、付与された感電状態が本来のダメージ<orangeStrong>{{5}}%</orangeStrong>分のダメージを発生する。感電状態は{{3}}ターン継続。\\n感電状態の敵はターンが回ってくるたびに、カフカの攻撃力<orangeStrong>{{4}}%</orangeStrong>分の雷属性持続ダメージを受ける。",
+        "shortDesc": "敵全体に少量の雷属性ダメージを与え、高確率で<color=#f29e38ff>感電状態を付与</color>する。\\n敵が感電状態の場合、感電状態が<color=#f29e38ff>さらにダメージを1回発生</color>する。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#ゆる}許{RUBY_E#}しは{RUBY_B#じひ}慈悲{RUBY_E#}に{RUBY_B#あら}非{RUBY_E#}ず",
+        "fullDesc": "一定範囲内のすべての敵を攻撃。戦闘に入った後、敵全体にカフカの攻撃力{{3}}%分の雷属性ダメージを与え、{{1}}%の<u>基礎確率</u>で敵単体それぞれを、必殺技が与えるものと同じ感電状態にする、{{2}}ターン継続。",
+        "shortDesc": "範囲内のすべての敵を攻撃。戦闘に入った後、敵全体に少量の雷属性ダメージを与え、高確率で<color=#f29e38ff>感電状態を付与</color>する。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

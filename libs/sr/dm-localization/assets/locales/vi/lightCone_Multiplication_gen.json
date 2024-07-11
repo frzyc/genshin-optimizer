@@ -1,0 +1,7 @@
+{
+  "name": "Sinh Sôi",
+  "passive": {
+    "name": "Dân Trù Phú",
+    "description": "Sau khi người trang bị thi triển tấn công thường sẽ Ưu Tiên Hành Động <orangeStrong>{{1}}%</orangeStrong> cho lần tiếp theo."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "깊게 든 단잠",
+  "passive": {
+    "name": "좋은 꿈",
+    "description": "장착한 캐릭터의 치명타 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터의 일반 공격 혹은 전투 스킬 피해가 치명타를 발동하지 않으면 자신의 치명타 확률이 <orangeStrong>{{2}}%</orangeStrong> 증가한다. 지속 시간: {{3}}턴. 해당 효과는 {{4}}턴마다 1회만 발동할 수 있다"
+  }
+}

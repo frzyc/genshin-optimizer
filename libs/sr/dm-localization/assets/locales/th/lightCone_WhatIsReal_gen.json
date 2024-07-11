@@ -1,0 +1,7 @@
+{
+  "name": "What Is Real?",
+  "passive": {
+    "name": "Hypothesis",
+    "description": "เอฟเฟกต์ทำลายล้างของผู้สวมใส่จะเพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> หลังจากปล่อยการโจมตีปกติ ผู้สวมใส่จะฟื้นฟู HP <orangeStrong>{{2}}%</orangeStrong> ของ HP สูงสุด +{{3}} หน่วย"
+  }
+}

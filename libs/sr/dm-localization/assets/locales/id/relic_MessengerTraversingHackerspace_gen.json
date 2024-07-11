@@ -1,0 +1,7 @@
+{
+  "setName": "Messenger Traversing Hackerspace",
+  "setEffects": {
+    "2": "SPD +{{1}}%.",
+    "4": "Saat pengguna melancarkan Ultimate pada rekan tim (termasuk pengguna sendiri), SPD seluruh rekan tim meningkat {{1}}% selama {{2}} giliran. Efek ini tidak dapat ditumpuk."
+  }
+}

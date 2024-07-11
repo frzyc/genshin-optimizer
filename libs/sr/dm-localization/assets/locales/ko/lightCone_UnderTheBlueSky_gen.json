@@ -1,0 +1,7 @@
+{
+  "name": "푸른 하늘 아래",
+  "passive": {
+    "name": "파도치는 따스한 이삭",
+    "description": "장착한 캐릭터의 공격력이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터는 적을 처치한 후 치명타 확률이 <orangeStrong>{{2}}%</orangeStrong> 증가한다. 지속 시간: {{3}}턴"
+  }
+}

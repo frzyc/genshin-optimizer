@@ -1,0 +1,7 @@
+{
+  "name": "Cruising in the Stellar Sea",
+  "passive": {
+    "name": "Chase",
+    "description": "Increases the wearer's CRIT rate by <orangeStrong>{{1}}%</orangeStrong>, and increases their CRIT rate against enemies with HP less than or equal to {{2}}% by an extra <orangeStrong>{{3}}%</orangeStrong>. When the wearer defeats an enemy, their ATK is increased by <orangeStrong>{{4}}%</orangeStrong> for {{5}} turn(s)."
+  }
+}

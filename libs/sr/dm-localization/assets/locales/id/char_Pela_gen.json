@@ -1,0 +1,40 @@
+{
+  "name": "Pela",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Frost Shot",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Pela pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Frostbite",
+        "fullDesc": "Menghilangkan {{2}} <u>Buff</u> dan mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Pela pada 1 target musuh.",
+        "shortDesc": "<color=#f29e38ff>Menghapus</color> 1 efek <color=#f29e38ff><u>Buff</u></color> dari 1 musuh, dan mengakibatkan Ice DMG pada target tersebut."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Zone Suppression",
+        "fullDesc": "Memiliki {{1}}% <u>peluang dasar</u> membuat setiap target musuh memasuki status \"Exposed\", di saat yang bersamaan juga mengakibatkan Ice DMG sebesar <orangeStrong>{{4}}%</orangeStrong> ATK Pela pada seluruh musuh.\\nTarget musuh yang berstatus \"Exposed\" akan mengalami <orangeStrong>{{2}}%</orangeStrong> pengurangan DEF selama {{3}} giliran.",
+        "shortDesc": "Berpeluang besar untuk <color=#f29e38ff>mengurangi DEF</color> target musuh, serta mengakibatkan Ice DMG dalam jumlah kecil pada seluruh musuh."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Preemptive Strike",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Ice DMG sebesar {{4}}% ATK Pela pada musuh secara acak, dan di saat bersamaan seluruh target musuh memiliki {{1}}% <u>peluang dasar</u> untuk mengalami {{2}}% penurunan DEF selama {{3}} giliran.",
+        "shortDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengakibatkan DMG dalam jumlah kecil pada musuh secara acak dan berpeluang besar mengurangi DEF setiap target musuh."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

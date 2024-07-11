@@ -1,0 +1,7 @@
+{
+  "name": "Percorrendo o Mar Estelar",
+  "passive": {
+    "name": "Perseguição",
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> a Chance de CRIT do usuário e aumenta a Chance de CRIT contra inimigos com PV iguais ou inferiores a {{2}}% em <orangeStrong>{{3}}%</orangeStrong> extra. Quando o usuário derrota um inimigo, o seu ATQ é aumentado em <orangeStrong>{{4}}%</orangeStrong> por {{5}} rodada(s)."
+  }
+}

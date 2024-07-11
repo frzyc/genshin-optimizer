@@ -1,0 +1,6 @@
+{
+  "setName": "Penacony, Vùng Đất Của Những Giấc Mơ",
+  "setEffects": {
+    "2": "Tăng {{1}}% hiệu suất hồi Năng Lượng của người trang bị. Khiến nhân vật khác trong đội của phe ta có cùng thuộc tính với người trang bị tăng {{2}}% sát thương gây ra."
+  }
+}

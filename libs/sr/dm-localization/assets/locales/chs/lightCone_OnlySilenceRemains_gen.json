@@ -1,0 +1,7 @@
+{
+  "name": "唯有沉默",
+  "passive": {
+    "name": "记录",
+    "description": "使装备者的攻击力提高<orangeStrong>{{1}}%</orangeStrong>。当场上的敌方目标数量小于等于2时，装备者的暴击率提高<orangeStrong>{{2}}%</orangeStrong>。"
+  }
+}

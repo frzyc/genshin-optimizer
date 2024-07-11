@@ -1,0 +1,7 @@
+{
+  "name": "延長記號",
+  "passive": {
+    "name": "休止符",
+    "description": "使裝備者的擊破特攻提高<orangeStrong>{{1}}%</orangeStrong>，對處於觸電或風化狀態的敵方目標造成的傷害提高<orangeStrong>{{2}}%</orangeStrong>。該效果對持續傷害也會生效。"
+  }
+}

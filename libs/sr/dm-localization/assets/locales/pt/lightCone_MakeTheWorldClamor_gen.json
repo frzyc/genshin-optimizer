@@ -1,0 +1,7 @@
+{
+  "name": "Faça o Mundo Clamar",
+  "passive": {
+    "name": "O Poder do Som",
+    "description": "O usuário regenera <orangeStrong>{{2}}</orangeStrong> de Energia imediatamente ao entrar em combate. Também aumenta em <orangeStrong>{{1}}%</orangeStrong> o Dano da Perícia Suprema."
+  }
+}

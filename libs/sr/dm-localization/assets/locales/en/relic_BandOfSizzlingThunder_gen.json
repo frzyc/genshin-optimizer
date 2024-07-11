@@ -1,0 +1,7 @@
+{
+  "setName": "Band of Sizzling Thunder",
+  "setEffects": {
+    "2": "Increases Lightning DMG by {{1}}%.",
+    "4": "When the wearer uses their Skill, increases the wearer's ATK by {{1}}% for {{2}} turn(s)."
+  }
+}

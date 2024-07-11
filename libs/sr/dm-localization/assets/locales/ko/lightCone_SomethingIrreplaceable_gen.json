@@ -1,0 +1,7 @@
+{
+  "name": "대체할 수 없는 것",
+  "passive": {
+    "name": "가족",
+    "description": "장착한 캐릭터의 공격력이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터는 적을 처치하거나 피격된 후 즉시 공격력 <orangeStrong>{{2}}%</orangeStrong>만큼의 HP를 회복하고, 가하는 피해가 <orangeStrong>{{3}}%</orangeStrong> 증가하며, 자신의 다음 턴이 끝날 때까지 지속된다. 해당 효과는 중첩될 수 없으며 턴마다 1회만 발동할 수 있다"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Jingliu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Brillo resplandeciente",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Destello trascendental",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo y obtiene {{2}} acumulación de Sizigia.",
+        "shortDesc": "Inflige Daño de Hielo a un enemigo y obtiene <color=#f29e38ff>1 acumulación de Sizigia</color>."
+      },
+      "1": {
+        "name": "Reflejo helado de la luna",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo y un <orangeStrong>{{3}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a los enemigos adyacentes. Consume {{2}} acumulación de Sizigia. Esta habilidad no consume pts. de habilidad básica.",
+        "shortDesc": "Inflige Daño de Hielo a un enemigo y a los enemigos adyacentes. Consume 1 acumulación de Sizigia."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Sueño de flores efímeras",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo y un <orangeStrong>{{3}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a los enemigos adyacentes. Cuando termina el ataque, obtiene {{2}} acumulación de Sizigia.",
+        "shortDesc": "Inflige una gran cantidad de Daño de Hielo a un enemigo y Daño de Hielo a los enemigos adyacentes. Además, obtiene <color=#f29e38ff>1 acumulación de Sizigia</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Resplandor de la verdad",
+        "fullDesc": "Tras usar la técnica, crea una zona especial a su alrededor que dura {{3}} segundos. Los enemigos que estén en la zona especial son afectados con Congelación. Al entrar en combate con los enemigos dentro de la zona, recupera {{6}} pts. de energía, obtiene {{1}} acumulación de Sizigia y tiene una <u>probabilidad base</u> del {{2}}% de congelar a los enemigos durante {{4}} turno. Los enemigos congelados no se pueden mover y al principio de cada turno reciben un Daño de Hielo <u>adicional</u> equivalente al {{5}}% del ATQ de Jingliu. Solo puede haber una zona especial creada por los aliados a la vez.",
+        "shortDesc": "Crea una zona especial a su alrededor. Los enemigos que estén en la zona <color=#f29e38ff>se congelan</color>. Al entrar en combate con los enemigos dentro de la zona, recupera energía, obtiene 1 acumulación de Sizigia y tiene una gran probabilidad de <color=#f29e38ff>congelar</color> a los enemigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

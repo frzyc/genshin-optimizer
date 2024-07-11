@@ -1,0 +1,7 @@
+{
+  "name": "Destin injuste",
+  "passive": {
+    "name": "Le tout pour le tout",
+    "description": "Augmente de <orangeStrong>{{1}}%</orangeStrong> la DÉF du porteur. Les DGT critiques du porteur augmentent de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tours à chaque fois qu'il accorde un bouclier à un allié. Lorsque le porteur utilise une attaque de suivi pour attaquer un ennemi, il y a <orangeStrong>{{4}}%</orangeStrong> de chances de base d'augmenter les DGT subis par l'ennemi attaqué de <orangeStrong>{{5}}%</orangeStrong> pendant {{6}} tours."
+  }
+}

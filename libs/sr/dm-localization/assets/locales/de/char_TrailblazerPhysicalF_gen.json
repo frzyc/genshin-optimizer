@@ -1,0 +1,50 @@
+{
+  "name": "Trailblazer (Physisch • Die Zerstörung)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Abschiedstreffer",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
+        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Todes-Homerun",
+        "fullDesc": "Fügt einem anvisierten Gegner sowie angrenzenden Zielen physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
+        "shortDesc": "Fügt einem Gegner und angrenzenden Zielen physischen SCH zu."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Sternenstaub-Ass",
+        "fullDesc": "Für einen vollen Schlag stehen zwei Angriffsmodi zur Auswahl.\\n„Blowout: Abschiedstreffer“ fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.\\n„Blowout: Todes-Homerun“ fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu und fügt angrenzenden Zielen physischen SCH in Höhe von <orangeStrong>{{3}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
+        "shortDesc": "Verwendet Einzelangriff oder Ausdehnung, um einen vollen Schlag auszuführen."
+      },
+      "1": {
+        "name": "Blowout: Abschiedstreffer",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
+        "shortDesc": "Fügt einem Gegner massiven physischen SCH zu."
+      },
+      "2": {
+        "name": "Blowout: Todes-Homerun",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu und fügt angrenzenden Zielen physischen SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
+        "shortDesc": "Fügt einem Gegner und angrenzenden Zielen physischen SCH zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Unsterblicher dritter Schlag",
+        "fullDesc": "Stellt unmittelbar nach dem Einsatz der Technik allen Verbündeten {{1}}% ihrer max. LP wieder her.",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Defense",
+  "passive": {
+    "name": "Revitalization",
+    "description": "Memulihkan HP sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP pengguna saat melancarkan Ultimate."
+  }
+}

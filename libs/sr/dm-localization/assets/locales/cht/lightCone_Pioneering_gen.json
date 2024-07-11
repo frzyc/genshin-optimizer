@@ -1,0 +1,7 @@
+{
+  "name": "開疆",
+  "passive": {
+    "name": "公司",
+    "description": "當裝備者擊破敵方目標的弱點時，回復等同於自身生命上限<orangeStrong>{{1}}%</orangeStrong>的生命值。"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Yukong",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Arrowslinger",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Yukong pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Emboldening Salvo",
+        "fullDesc": "Mendapatkan {{1}} lapis \"Roaring Bowstrings\", maksimal 2 lapis. Saat Yukong memiliki \"Roaring Bowstrings\", ATK dari seluruh rekan tim akan meningkat <orangeStrong>{{2}}%</orangeStrong>. Yukong akan kehilangan 1 lapis \"Roaring Bowstrings\" setiap kali giliran dari rekan tim berakhir.\\nYukong tidak akan kehilangan \"Roaring Bowstrings\" pada giliran dirinya mendapatkan \"Roaring Bowstrings\" dengan cara melancarkan Skill.",
+        "shortDesc": "Memperoleh 2 lapis \"Roaring Bowstrings\". <color=#f29e38ff>Meningkatkan ATK</color> seluruh rekan tim saat memiliki \"Roaring Bowstrings\"."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Diving Kestrel",
+        "fullDesc": "Saat melancarkan Ultimate, jika Yukong memiliki \"Roaring Bowstrings\", seluruh rekan tim akan mendapatkan tambahan <orangeStrong>{{2}}%</orangeStrong> CRIT Rate, dan CRIT DMG meningkat <orangeStrong>{{3}}%</orangeStrong>. Di saat yang bersamaan, mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Yukong pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Saat Yukong memiliki \"Roaring Bowstrings\", <color=#f29e38ff>meningkatkan CRIT Rate dan CRIT DMG</color> seluruh rekan tim, serta mengakibatkan Imaginary DMG dalam jumlah besar pada 1 musuh."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Chasing the Wind",
+        "fullDesc": "Setelah menggunakan Technique, Yukong akan memasuki status Sprint selama {{1}} detik. Saat berstatus Sprint, Movement SPD Yukong akan meningkat {{2}}%. Yukong juga akan mendapatkan {{3}} lapis \"Roaring Bowstrings\" saat memasuki pertempuran dengan cara menyerang musuh.",
+        "shortDesc": "<color=#f29e38ff>Meningkatkan Movement SPD</color> diri sendiri. Setelah menyerang musuh dan memasuki pertempuran, akan memperoleh 2 lapis \"Roaring Bowstrings\"."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

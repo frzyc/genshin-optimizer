@@ -1,0 +1,7 @@
+{
+  "name": "Memories of the Past",
+  "passive": {
+    "name": "Old Photo",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Break Effect pengguna. Setelah pengguna melancarkan serangan, memulihkan <orangeStrong>{{2}}</orangeStrong> Energy tambahan. Efek ini hanya dapat terpicu sekali setiap giliran."
+  }
+}

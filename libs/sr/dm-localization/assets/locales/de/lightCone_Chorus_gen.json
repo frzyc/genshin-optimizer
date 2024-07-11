@@ -1,0 +1,7 @@
+{
+  "name": "Chor",
+  "passive": {
+    "name": "Vereint",
+    "description": "Erhöht nach Kampfeintritt den ANG aller Verbündeten um <orangeStrong>{{1}}%</orangeStrong>. Effekte desselben Typs sind nicht stapelbar."
+  }
+}

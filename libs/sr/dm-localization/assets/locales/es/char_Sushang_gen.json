@@ -1,0 +1,40 @@
+{
+  "name": "Sushang",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Técnica de espada de la Nimbocaballera: Halo estelar",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Sushang como Daño Físico a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Técnica de espada de la Nimbocaballera: Caída",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Sushang como Daño Físico a un enemigo. Además, hay una probabilidad del {{3}}% de activar Postura espadachina tras el último golpe e infligir al objetivo un Daño Físico <u>adicional</u> equivalente al <orangeStrong>{{2}}%</orangeStrong> del ATQ de Sushang.\\nSi el objetivo está afectado por <u>Ruptura de Debilidad</u>, la activación de Postura espadachina estará garantizada.",
+        "shortDesc": "Inflige Daño Físico a un enemigo y tiene una <color=#f29e38ff>pequeña probabilidad de activar Postura espadachina</color>. Si el objetivo está afectado por <u>Ruptura de Debilidad</u>, <color=#f29e38ff>la activación de Postura espadachina estará garantizada</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Forma de Taixu: Heraldo del alba",
+        "fullDesc": "Sushang inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y vuelve a actuar inmediatamente. Además, su ATQ aumenta en un <orangeStrong>{{4}}%</orangeStrong> y al usar la habilidad básica tiene 2 oportunidades extra de activar Postura espadachina durante {{2}} turnos.\\nSi Postura espadachina se activa con las oportunidades extra, el daño que inflige es un {{3}}% del daño original.",
+        "shortDesc": "Inflige una gran cantidad de Daño Físico a un enemigo, potencia el efecto de Postura espadachina y <color=#f29e38ff>realiza otra acción inmediatamente</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Técnica de espada de la Nimbocaballera: Premura",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1}}% del ATQ de Sushang como Daño Físico a todos los enemigos.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Físico a todos los enemigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

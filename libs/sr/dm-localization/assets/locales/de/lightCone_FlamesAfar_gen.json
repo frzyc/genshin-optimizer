@@ -1,0 +1,7 @@
+{
+  "name": "Feuer in der Ferne",
+  "passive": {
+    "name": "Deflagration",
+    "description": "Wenn die LP, die der Träger bei einem einzelnen Angriff verliert oder auf einmal verbraucht, {{1}}% seiner max. LP überschreiten, werden sofort {{3}}% seiner max. LP wiederhergestellt und gleichzeitig für {{4}} Rd. der verursachte SCH um <orangeStrong>{{2}}%</orangeStrong> erhöht. Dieser Effekt kann nur 1-mal alle {{5}} Rd. ausgelöst werden."
+  }
+}

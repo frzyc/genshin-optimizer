@@ -1,0 +1,40 @@
+{
+  "name": "Sampo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lâminas Ofuscantes",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sampo a um único inimigo.",
+        "shortDesc": "Causa Dano de Vento leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Amor Ricochete",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Sampo a um único inimigo, e causa Dano mais {{1}} vez(es) extra(s), com cada vez causando Dano de Vento igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Sampo a um inimigo aleatório.",
+        "shortDesc": "Causa Dano de Vento leve a inimigos-alvo únicos e é Rebatido 5 vezes."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Presente Surpresa",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sampo a todos os inimigos, com {{4}}% de <u>chance-base</u> de aumentar o Dano Contínuo recebido pelo alvo em <orangeStrong>{{2}}%</orangeStrong> por {{3}} rodada(s).",
+        "shortDesc": "Causa Dano de Vento a todos os inimigos, com altas chances de causar <color=#f29e38ff>Dano Contínuo aumentado</color> a eles."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Brilho Ofuscante",
+        "fullDesc": "Após usar a Técnica de Sampo, inflige Cegueira em inimigos em uma área definida por {{1}} segundos. Inimigos com Cegueira não conseguem detectar sua equipe.\\nAo iniciar o combate contra um inimigo com Cegueira, há {{2}}% de <u>chance fixa</u> de atrasar as ações de todos os inimigos em {{3}}%.",
+        "shortDesc": "Inimigos em uma determinada área recebem Cegueira. Ao iniciar uma batalha contra um inimigo com Cegueira, existe uma alta chance de <u>atrasar</u> todas as ações inimigas."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

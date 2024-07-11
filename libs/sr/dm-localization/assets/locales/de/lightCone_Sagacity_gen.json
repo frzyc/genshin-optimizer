@@ -1,0 +1,7 @@
+{
+  "name": "Weisheit",
+  "passive": {
+    "name": "Genie",
+    "description": "Erhöht beim Einsatz des Ultimates den ANG des Trägers für {{2}} Rd. um <orangeStrong>{{1}}%</orangeStrong>."
+  }
+}

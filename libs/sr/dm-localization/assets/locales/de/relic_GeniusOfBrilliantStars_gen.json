@@ -1,0 +1,7 @@
+{
+  "setName": "Genie der strahlenden Sterne",
+  "setEffects": {
+    "2": "Erhöht Quanten-SCH um {{1}}%.",
+    "4": "Wenn der Träger einem Gegner SCH zufügt, ignoriert er {{1}}% der VTD des Gegners. Wenn das Ziel Quanten-Schwäche hat, ignoriert der Träger zusätzlich {{2}}% der VTD des Gegners."
+  }
+}

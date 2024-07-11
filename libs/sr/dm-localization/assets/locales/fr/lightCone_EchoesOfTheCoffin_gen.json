@@ -1,0 +1,7 @@
+{
+  "name": "Échos du cercueil",
+  "passive": {
+    "name": "Épines",
+    "description": "Augmente l'ATQ du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur utilise une attaque, régénère <orangeStrong>{{3}}</orangeStrong> points d'énergie pour chaque cible touchée. Chaque attaque peut régénérer de l'énergie jusqu'à <orangeStrong>{{4}}</orangeStrong> fois de cette façon. Lorsque le porteur utilise son ultime, la VIT de tous les alliés augmente de <orangeStrong>{{2}}</orangeStrong> pendant 1 tour."
+  }
+}

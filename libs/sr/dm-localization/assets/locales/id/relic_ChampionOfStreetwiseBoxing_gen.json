@@ -1,0 +1,7 @@
+{
+  "setName": "Champion of Streetwise Boxing",
+  "setEffects": {
+    "2": "Physical DMG +{{1}}%.",
+    "4": "Setelah pengguna melancarkan atau menerima serangan, ATK pengguna meningkat {{1}}% selama pertempuran, dapat ditumpuk hingga {{2}} lapis."
+  }
+}

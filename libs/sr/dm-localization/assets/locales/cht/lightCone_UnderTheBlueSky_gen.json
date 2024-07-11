@@ -1,0 +1,7 @@
+{
+  "name": "在藍天下",
+  "passive": {
+    "name": "暖陽麥浪",
+    "description": "使裝備者攻擊力提高<orangeStrong>{{1}}%</orangeStrong>。裝備者消滅敵方目標後，暴擊率提高<orangeStrong>{{2}}%</orangeStrong>，持續{{3}}回合。"
+  }
+}

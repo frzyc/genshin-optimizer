@@ -1,0 +1,7 @@
+{
+  "name": "Sự Nghỉ Ngơi Của Thiên Tài",
+  "passive": {
+    "name": "Bố Trí Thỏa Đáng",
+    "description": "Khiến Tấn Công của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>, sau khi người trang bị tiêu diệt kẻ địch, Sát Thương Bạo Kích tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "{RUBY_B#ゲンキョウ}彦卿{RUBY_E#}",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#かんこう}寒光{RUBY_E#}{RUBY_B#さ}刺{RUBY_E#}す{RUBY_B#そうほう}霜鋒{RUBY_E#}",
+        "fullDesc": "指定した敵単体に彦卿の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#さんじゃくしゅうすい}三尺秋水{RUBY_E#}",
+        "fullDesc": "指定した敵単体に彦卿の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与え、彦卿に「智剣連心」を付与する、1ターン継続。",
+        "shortDesc": "敵単体に氷属性ダメージを与え、自身に「智剣連心」を付与。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#かいう}快雨{RUBY_E#}に{RUBY_B#たわむ}戯{RUBY_E#}れる{RUBY_B#つばめ}燕{RUBY_E#}",
+        "fullDesc": "自身の会心率+{{1}}%、彦卿に「智剣連心」がある場合、さらに会心ダメージ+<orangeStrong>{{2}}%</orangeStrong>、<u>バフ</u>は1ターン継続。その後、指定した敵単体に彦卿の攻撃力<orangeStrong>{{3}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": "自身の会心率アップ、「智剣連心」を強化、敵単体に大量の氷属性ダメージを与える。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#ぎょけんしんけつ}御剣真訣{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時、残りHPが{{1}}%以上の敵に対して、彦卿の与ダメージ+{{2}}%、{{3}}ターン継続。",
+        "shortDesc": "秘技を使用、次の戦闘開始時、残りHPが<unbreak>50%</unbreak>以上の敵に対して、自身の与ダメージがアップする。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

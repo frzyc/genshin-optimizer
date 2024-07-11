@@ -1,0 +1,7 @@
+{
+  "name": "Heute ist wieder ein friedlicher Tag",
+  "passive": {
+    "name": "Ein Sturm zieht auf",
+    "description": "Erhöht den verursachten SCH des Trägers nach Kampfeintritt basierend auf seiner max. Energie. Sein SCH wird für jede Energie um <orangeStrong>{{1}}%</orangeStrong> erhöht. Dabei zählen bis zu {{2}} Pkt. Energie."
+  }
+}

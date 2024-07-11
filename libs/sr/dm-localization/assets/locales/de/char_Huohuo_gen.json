@@ -1,0 +1,40 @@
+{
+  "name": "Huohuo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Banner: Durch Wind und Regen",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Huohuos max. LP zu.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Talisman: Schutz des Lebens",
+        "fullDesc": "Entfernt {{5}} <u>Debuff(s)</u> von einem Verbündeten und stellt unmittelbar dessen LP in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Huohuos max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her. Stellt gleichzeitig die LP der angrenzenden Verbündeten des anvisierten Verbündeten in Höhe von <orangeStrong>{{3}}%</orangeStrong> von Huohuos max. LP plus <orangeStrong>{{4}}</orangeStrong> wieder her.",
+        "shortDesc": "Entfernt 1 <u>Debuff</u> von einem Verbündeten und <color=#f29e38ff>stellt die LP</color> dieses Verbündeten und angrenzender Verbündeter wieder her."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Schweif: Unterwerfung von Teufeln",
+        "fullDesc": "Stellt Energie für alle Verbündeten außer Huohuo in Höhe von <orangeStrong>{{1}}%</orangeStrong> ihrer jeweiligen max. Energie wieder her. Erhöht gleichzeitig den ANG für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong>.",
+        "shortDesc": "<color=#f29e38ff>Energie-Wiederherstellung</color> für alle Verbündeten außer Huohuo und <color=#f29e38ff>ANG-Erhöhung</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Unhold: Unterdrückung von Dämonen",
+        "fullDesc": "Huohuo terrorisiert angrenzende Gegner und verursacht bei ihnen Verängstigung. Verängstigte Gegner fliehen vor Huohuo für {{4}} Sek. Falls ein Gegner bei Kampfbeginn verängstigt ist, besteht eine <u>Grundchance</u> von {{1}}%, dass der ANG jedes Gegners für {{3}} Rd. um {{2}}% gesenkt wird.",
+        "shortDesc": "Angrenzende Gegner werden von Verängstigung gepackt. Nach Kampfbeginn gegen verängstigte Gegner besteht eine hohe Chance, bei gegnerischen Zielen <color=#f29e38ff>ANG-Reduktion</color> zu verursachen."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

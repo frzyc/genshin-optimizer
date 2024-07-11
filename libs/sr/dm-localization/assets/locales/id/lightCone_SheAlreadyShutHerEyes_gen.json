@@ -1,0 +1,7 @@
+{
+  "name": "She Already Shut Her Eyes",
+  "passive": {
+    "name": "Visioscape",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Max HP pengguna, serta meningkatkan <orangeStrong>{{4}}%</orangeStrong> Energy Regeneration Rate pengguna. Saat HP pengguna berkurang, DMG yang diakibatkan seluruh rekan tim akan meningkat <orangeStrong>{{2}}%</orangeStrong> selama {{5}} giliran.\\nSaat setiap gelombang pertempuran dimulai, memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{3}}%</orangeStrong> dari masing-masing HP mereka yang sudah berkurang."
+  }
+}

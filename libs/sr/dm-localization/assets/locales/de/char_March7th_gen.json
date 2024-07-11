@@ -1,0 +1,40 @@
+{
+  "name": "7. März",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Bitterkalter Pfeil",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von 7. März’ ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Die Macht der Niedlichkeit",
+        "fullDesc": "Gewährt einem anvisierten Verbündeten einen Schild, der {{2}} Rd. hält und SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von 7. März’ VTD plus <orangeStrong>{{4}}</orangeStrong> absorbieren kann.\\nWenn der Verbündete aktuell min. {{3}}% seiner LP hat, wird die Chance, vom Gegner angegriffen zu werden, stark erhöht.",
+        "shortDesc": "Gewährt einem Verbündeten einen <color=#f29e38ff>Schild</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Gletscherkaskade",
+        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von 7. März’ ANG zu und friert die getroffenen Gegner mit einer <u>Grundchance</u> von {{2}}% für {{3}} Rd. ein.\\nEingefrorene Gegner können keine Aktionen ausführen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4}}%</orangeStrong> von 7. März’ ANG.",
+        "shortDesc": "Fügt <color=#f29e38ff>allen Gegnern</color> Eis-SCH zu und <color=#f29e38ff>hat eine Chance, sie einzufrieren</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Eiskalte Schönheit",
+        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt besteht eine <u>Grundchance</u> von {{1}}%, einen zufällig ausgewählten Gegner für {{2}} Rd. einzufrieren.\\nEingefrorene Gegner können sich nicht bewegen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von {{3}}% von 7. März’ ANG.",
+        "shortDesc": "Greift den Gegner an. Hat eine hohe Chance, einen zufälligen Gegner nach Kampfeintritt einzufrieren."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

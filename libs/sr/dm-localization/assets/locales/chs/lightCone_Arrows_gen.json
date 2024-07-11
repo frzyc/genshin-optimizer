@@ -1,0 +1,7 @@
+{
+  "name": "锋镝",
+  "passive": {
+    "name": "危机",
+    "description": "战斗开始时，使装备者的暴击率提高<orangeStrong>{{1}}%</orangeStrong>，持续{{2}}回合。"
+  }
+}

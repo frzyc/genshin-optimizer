@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#はんしょく}蕃殖{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#ほうじょう}豊穣{RUBY_E#}の{RUBY_B#たみ}民{RUBY_E#}",
+    "description": "装備キャラが通常攻撃を行った後、次の行動順が<orangeStrong>{{1}}%</orangeStrong>早まる。"
+  }
+}

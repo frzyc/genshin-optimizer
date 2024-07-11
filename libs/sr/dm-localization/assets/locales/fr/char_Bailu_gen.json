@@ -1,0 +1,40 @@
+{
+  "name": "Bailu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Diagnostic musclé",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Bailu à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Chanter parmi les nuages",
+        "fullDesc": "Soigne immédiatement un allié unique à hauteur de <orangeStrong>{{1}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>. Bailu soigne ensuite les alliés de manière aléatoire {{4}} fois. Après chaque soin, les PV restaurés par le soin suivant diminuent de {{3}}%.",
+        "shortDesc": "Restaure les PV d'un allié unique, puis soigne des alliés de manière aléatoire."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Foudroyés par la félicité",
+        "fullDesc": "Soigne immédiatement tous les alliés à hauteur de <orangeStrong>{{1}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>.\\nBailu accorde Revigoration aux alliés qui ne bénéficient pas encore de cet effet et prolonge l'effet d'1 tour pour ceux qui en bénéficient déjà.\\nL'effet de Revigoration peut durer jusqu'à {{3}} tours. Cet effet n'est pas cumulable.",
+        "shortDesc": "Restaure des PV à tous les alliés et leur accorde Revigoration ou prolonge sa durée."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Flânerie sous la pluie",
+        "fullDesc": "Après utilisation de la technique, tous les alliés sont revigorés pendant {{1}} tours au début du combat suivant.",
+        "shortDesc": "Après utilisation de la technique, octroie Revigoration à tous les alliés au début du combat suivant."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

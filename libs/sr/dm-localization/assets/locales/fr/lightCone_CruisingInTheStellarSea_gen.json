@@ -1,0 +1,7 @@
+{
+  "name": "Exploration de la mer stellaire",
+  "passive": {
+    "name": "Pourchasser",
+    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1}}%</orangeStrong>, et de <orangeStrong>{{3}}%</orangeStrong> supplémentaires contre les ennemis dont les PV sont inférieurs ou égaux à {{2}}%. Lorsque le porteur élimine un ennemi, son ATQ augmente de <orangeStrong>{{4}}%</orangeStrong> pendant {{5}} tours."
+  }
+}

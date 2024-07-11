@@ -1,0 +1,7 @@
+{
+  "name": "Earthly Escapade",
+  "passive": {
+    "name": "Capriciousness",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT DMG pengguna. Saat pertempuran dimulai, pengguna akan memperoleh \"Mask\" selama {{6}} giliran. Saat pengguna memiliki \"Mask\", akan meningkatkan <orangeStrong>{{5}}%</orangeStrong> CRIT Rate dan <orangeStrong>{{2}}%</orangeStrong> CRIT DMG rekan tim pengguna. Untuk setiap 1 Poin Skill yang dipulihkan pengguna, akan memperoleh 1 lapis \"Radiant Flame\" (Poin Skill yang melebihi batas juga akan masuk dalam penghitungan). Setelah jumlah \"Radiant Flame\" mencapai {{4}} lapis, semua \"Radiant Flame\" akan dihapus dan pengguna akan memperoleh \"Mask\" selama {{3}} giliran."
+  }
+}

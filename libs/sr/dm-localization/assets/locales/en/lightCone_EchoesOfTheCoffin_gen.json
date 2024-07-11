@@ -1,0 +1,7 @@
+{
+  "name": "Echoes of the Coffin",
+  "passive": {
+    "name": "Thorns",
+    "description": "Increases the wearer's ATK by <orangeStrong>{{1}}%</orangeStrong>. After the wearer uses an attack, for each different enemy target the wearer hits, regenerates <orangeStrong>{{3}}</orangeStrong> Energy. Each attack can regenerate Energy up to {{4}} time(s) this way. After the wearer uses their Ultimate, all allies gain <orangeStrong>{{2}}</orangeStrong> SPD for 1 turn."
+  }
+}

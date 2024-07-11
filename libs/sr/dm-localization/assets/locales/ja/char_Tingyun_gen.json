@@ -1,0 +1,40 @@
+{
+  "name": "{RUBY_B#テイウン}停雲{RUBY_E#}",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#ちくきゃくれい}逐客令{RUBY_E#}",
+        "fullDesc": "指定した敵単体に停雲の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の雷属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#しょうおんわいん}祥音和韻{RUBY_E#}",
+        "fullDesc": "指定した味方単体に「賜福」を付与し、その味方の攻撃力+<orangeStrong>{{2}}%</orangeStrong>、攻撃力アップ量は停雲の現在の攻撃力の<orangeStrong>{{4}}%</orangeStrong>を超えない。\\n「賜福」を付与された味方が攻撃を行った後、敵にその味方の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性<u>付加ダメージ</u>を1回与える。\\n「賜福」は{{3}}ターン継続し、停雲の戦闘スキルの最後のターゲットにのみ効果を発揮する。",
+        "shortDesc": "味方単体の<color=#f29e38ff>攻撃力をアップ</color>させ、「賜福」を与える。「賜福」がある味方は攻撃を行った時に少量の<color=#f29e38ff>雷属性<u>付加ダメージ</u></color>を与える。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#けいうんこうふうぎとう}慶雲光覆儀祷{RUBY_E#}",
+        "fullDesc": "指定した味方単体のEPを{{1}}回復し、その味方の与ダメージ+<orangeStrong>{{3}}%</orangeStrong>、{{2}}ターン継続。",
+        "shortDesc": "味方単体の<color=#f29e38ff>EPを回復</color>し、その味方の<color=#f29e38ff>与ダメージをアップ</color>する。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#けいふうわちょう}恵風和暢{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、自身のEPを{{1}}回復する。",
+        "shortDesc": "秘技を使用した後、自身のEPを回復する。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "The Moles Welcome You",
+  "passive": {
+    "name": "Fantastic Adventure",
+    "description": "Melancarkan Basic Attack, Skill, atau Ultimate pada target musuh masing-masing akan memberikan maksimal 1 lapis \"Mischievous\" pada pengguna. Setiap lapis akan meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK pengguna."
+  }
+}

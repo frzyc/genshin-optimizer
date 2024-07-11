@@ -1,0 +1,40 @@
+{
+  "name": "Sushang",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ritter-Schwertkunst: Stellarer Halo",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Sushangs ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Ritter-Schwertkunst: Bergfall",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Sushangs ANG zu. Es besteht eine Chance von {{3}}%, nach dem letzten Treffer die „Schwerthaltung“ auszulösen, die dem Ziel <u>zusätzlichen</u> physischen SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Sushangs ANG zufügt.\\nBefindet das Ziel sich im Zustand <u>Schwächebruch</u>, wird die „Schwerthaltung“ garantiert ausgelöst.",
+        "shortDesc": "Fügt einem Gegner physischen SCH zu und <color=#f29e38ff>besteht eine geringe Chance, „Schwerthaltung“ auszulösen</color>. Bei Gegner mit <u>Schwächebruch</u> wird die <color=#f29e38ff>„Schwerthaltung“ garantiert ausgelöst</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Die Gestalt von Taixu: Herold der Morgenröte",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Sushangs ANG zu und sie tritt sofort in Aktion. Erhöht außerdem ihren ANG um <orangeStrong>{{4}}%</orangeStrong> und beim Einsatz der Fertigkeit 2 zusätzliche Chancen für {{2}} Rd., „Schwerthaltung“ auszulösen.\\nWird die „Schwerthaltung“ durch eine zusätzliche Chance ausgelöst, wird {{3}}% des ursprünglichen SCH verursacht.",
+        "shortDesc": "Fügt einem Gegner massiven physischen SCH zu, verstärkt den Effekt der „Schwerthaltung“ und gewährt Sushang <color=#f29e38ff>eine sofortige Aktion</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ritter-Schwertkunst: Ansturm",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern physischen SCH in Höhe von {{1}}% von Sushangs ANG zu.",
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen physischen SCH zu."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

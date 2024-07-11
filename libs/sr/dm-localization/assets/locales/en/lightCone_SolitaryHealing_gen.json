@@ -1,0 +1,7 @@
+{
+  "name": "Solitary Healing",
+  "passive": {
+    "name": "Chaos Elixir",
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1}}%</orangeStrong>. When the wearer uses their Ultimate, increases DoT dealt by the wearer by <orangeStrong>{{2}}%</orangeStrong>, lasting for {{3}} turn(s). When a target enemy suffering from DoT imposed by the wearer is defeated, regenerates <orangeStrong>{{4}}</orangeStrong> Energy for the wearer."
+  }
+}

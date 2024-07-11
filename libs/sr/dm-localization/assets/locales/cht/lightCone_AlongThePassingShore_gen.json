@@ -1,0 +1,7 @@
+{
+  "name": "行於流逝的岸",
+  "passive": {
+    "name": "司渡",
+    "description": "使裝備者的暴擊傷害提高<orangeStrong>{{1}}%</orangeStrong>。當裝備者命中敵方目標時，使敵方陷入【泡影】狀態，持續1回合。裝備者每次攻擊時，對每個目標只可觸發1次。裝備者對陷入【泡影】狀態的目標造成的傷害提高<orangeStrong>{{2}}%</orangeStrong>，終結技造成的傷害額外提高<orangeStrong>{{3}}%</orangeStrong>。"
+  }
+}

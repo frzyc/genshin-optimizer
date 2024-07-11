@@ -1,0 +1,7 @@
+{
+  "name": "Trời Sập",
+  "passive": {
+    "name": "Sụp Đổ",
+    "description": "Khiến sát thương do Tấn Công Thường và Chiến Kỹ gây ra của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Natasha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Behind the Kindness",
+        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Natasha แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "สร้าง DMG กายภาพเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Love, Heal, and Choose",
+        "fullDesc": "ฟื้นฟู HP แก่ฝ่ายตัวเองที่กำหนดหนึ่งตัว <orangeStrong>{{1}}%</orangeStrong> ของ HP สูงสุดของ Natasha +<orangeStrong>{{4}}</orangeStrong> ทันที พร้อมทั้งฟื้นฟู HP <orangeStrong>{{2}}%</orangeStrong> ของ HP สูงสุดของ Natasha +<orangeStrong>{{5}}</orangeStrong> เมื่อเป้าหมายเริ่มต้นในแต่ละเทิร์น เป็นเวลา {{3}} เทิร์น",
+        "shortDesc": "<color=#f29e38ff>ฟื้นฟู HP</color> ให้กับฝ่ายเราหนึ่งตัว และทำให้เป้าหมาย<color=#f29e38ff>ฟื้นฟู HP อย่างต่อเนื่อง</color>"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Gift of Rebirth",
+        "fullDesc": "ฟื้นฟู HP ให้กับฝ่ายตัวเองทั้งหมด <orangeStrong>{{1}}%</orangeStrong> ของ HP สูงสุดของ Natasha +<orangeStrong>{{2}}</orangeStrong>",
+        "shortDesc": "<color=#f29e38ff>ฟื้นฟู HP</color> ให้กับฝ่ายตัวเองทั้งหมด"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Hypnosis Research",
+        "fullDesc": "เมื่อโจมตีศัตรูทันทีและเข้าสู่การต่อสู้ จะสุ่มสร้าง DMG กายภาพ {{4}}% ของ ATK ของ Natasha แก่ศัตรูหนึ่งตัว และจะมี<u>โอกาสพื้นฐาน</u> {{1}}% ที่จะทำให้ศัตรูแต่ละตัวติดสถานะอ่อนแอ\\nศัตรูเป้าหมายที่ติดสถานะอ่อนแอจะสร้าง DMG ต่อฝ่ายเราลดลง {{2}}% เป็นเวลา {{3}} เทิร์น",
+        "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสุ่มสร้าง DMG กายภาพเล็กน้อยแก่ศัตรูหนึ่งตัว และมีโอกาสอย่างมากที่จะทำให้ ศัตรูเป้าหมายแต่ละตัวติดสถานะอ่อนแอ"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
+        "shortDesc": ""
+      }
+    }
+  }
+}

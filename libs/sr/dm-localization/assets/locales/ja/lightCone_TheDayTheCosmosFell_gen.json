@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#ぎんが}銀河{RUBY_E#}が{RUBY_B#かんらく}陥落{RUBY_E#}した{RUBY_B#ひ}日{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#せいふく}征服{RUBY_E#}",
+    "description": "装備キャラの攻撃力+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが攻撃を行った後、攻撃を受けた敵のうち、装備キャラの属性に対応する弱点属性を持つ敵が2体以上の場合、装備キャラの会心ダメージ+<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。"
+  }
+}

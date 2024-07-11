@@ -1,0 +1,45 @@
+{
+  "name": "Luka",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Nắm Đấm Trực Diện",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Luka.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
+      },
+      "1": {
+        "name": "Nắm Đấm Phá Trời Trực Diện",
+        "fullDesc": "Tiêu hao 2 tầng Ý Chí Chiến Đấu, dùng Nắm Đấm Trực Diện trước thi triển 3 đòn tấn công, mỗi đòn gây cho 1 kẻ địch chỉ định lượng Sát Thương Vật Lý bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Luka.\\nDùng tiếp Nắm Đấm Phá Trời thi triển 1 đòn tấn công, gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Luka.",
+        "shortDesc": "Tiêu hao 2 tầng Ý Chí Chiến Đấu và gây Sát Thương Vật Lý cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Nắm Đấm Vỡ Nát",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Luka, sau đó có {{2}}% <u>xác suất cơ bản</u> khiến mục tiêu rơi vào trạng thái Chảy Máu, duy trì {{5}} hiệp.\\nTrong trạng thái Chảy Máu, khi bắt đầu mỗi hiệp, kẻ địch sẽ chịu Sát Thương Vật Lý Duy Trì bằng {{3}}% Giới Hạn HP của bản thân, tối đa không quá <orangeStrong>{{4}}%</orangeStrong> Tấn Công của Luka.",
+        "shortDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch, có xác suất lớn khiến mục tiêu <color=#f29e38ff>Chảy Máu</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Đòn Chiến Thắng",
+        "fullDesc": "Nhận {{5}} tầng Ý Chí Chiến Đấu và có {{2}}% <u>xác suất cơ bản</u> khiến 1 kẻ địch chỉ định tăng <orangeStrong>{{3}}%</orangeStrong> sát thương phải chịu, duy trì {{4}} hiệp, sau đó gây Sát Thương Vật Lý cho mục tiêu này bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Luka.",
+        "shortDesc": "Nhận <orangeStrong>{{5}}</orangeStrong> tầng Ý Chí Chiến Đấu, xác suất lớn tăng sát thương của 1 kẻ địch phải chịu, đồng thời gây lượng lớn Sát Thương Vật Lý cho kẻ địch này."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Người Tiên Phong",
+        "fullDesc": "Tấn công kẻ địch ngay, sau khi vào chiến đấu sẽ gây Sát Thương Vật Lý bằng {{1}}% Tấn Công của Luka cho 1 kẻ địch ngẫu nhiên, đồng thời có {{2}}% <u>xác suất cơ bản</u> khiến kẻ này rơi vào trạng thái Chảy Máu giống với Chiến Kỹ. Sau đó Luka sẽ nhận thêm 1 tầng Ý Chí Chiến Đấu.",
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch ngẫu nhiên, đồng thời có xác suất lớn khiến mục tiêu <color=#f29e38ff>Chảy Máu</color>, sau đó nhận thêm 1 tầng Ý Chí Chiến Đấu."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

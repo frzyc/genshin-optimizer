@@ -1,0 +1,6 @@
+{
+  "setName": "La Belobog de los Arquitectos",
+  "setEffects": {
+    "2": "La DEF del portador aumenta en un {{1}}%. Cuando su acierto de efecto es igual o superior al {{2}}%, la DEF aumenta en un {{3}}% adicional."
+  }
+}

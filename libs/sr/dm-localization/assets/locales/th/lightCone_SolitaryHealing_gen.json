@@ -1,0 +1,7 @@
+{
+  "name": "Solitary Healing",
+  "passive": {
+    "name": "Chaos Elixir",
+    "description": "ทำให้เอฟเฟกต์ทำลายล้างของผู้สวมใส่ เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เมื่อผู้สวมใส่ปล่อยท่าไม้ตาย จะทำให้ผู้สวมใส่สร้าง DMG ต่อเนื่องเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น เมื่อศัตรูเป้าหมายที่ติดเอฟเฟกต์ DMG ต่อเนื่องจากผู้สวมใส่ถูกกำจัด ผู้สวมใส่จะฟื้นฟูพลังงาน <orangeStrong>{{4}}</orangeStrong> หน่วย"
+  }
+}

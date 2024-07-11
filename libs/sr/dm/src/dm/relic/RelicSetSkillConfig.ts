@@ -1,5 +1,6 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { objFilterKeys, objMap } from '@genshin-optimizer/common/util'
+import type { RelicSetCountKey } from '@genshin-optimizer/sr/consts'
 import { PROJROOT_PATH } from '../../consts'
 import type { StatDMKey } from '../../mapping'
 import type { RelicSetId } from '../../mapping/relic'
@@ -23,12 +24,12 @@ type Property = {
 
 const relicSetSkillConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/RelicSetSkillConfig.json')
-) as Record<string, Record<string, RelicSetSkillConfig>>
+) as Record<string, Record<RelicSetCountKey, RelicSetSkillConfig>>
 
 export const relicSetSkillConfig = objFilterKeys(
   relicSetSkillConfigSrc,
   Object.keys(relicSetIdMap) as RelicSetId[]
-) as Record<RelicSetId, Record<string, RelicSetSkillConfig>>
+) as Record<RelicSetId, Record<RelicSetCountKey, RelicSetSkillConfig>>
 
 const prePath = `${PROJROOT_PATH}/src/dm/relic/RelicSetSkillConfig`
 

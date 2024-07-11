@@ -1,0 +1,7 @@
+{
+  "name": "Khoảnh Khắc Nơi Đáy Mắt",
+  "passive": {
+    "name": "Kỵ Sĩ Hành Hương",
+    "description": "Khiến sát thương bạo kích của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Khi người trang bị thi triển Tuyệt Kỹ, sẽ tăng sát thương Tuyệt Kỹ mà người trang bị gây ra theo giới hạn năng lượng của người trang bị: mỗi điểm năng lượng tăng <orangeStrong>{{2}}%</orangeStrong>, tối đa {{3}} điểm năng lượng."
+  }
+}

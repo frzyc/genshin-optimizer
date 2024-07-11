@@ -1,0 +1,7 @@
+{
+  "name": "같은 심정",
+  "passive": {
+    "name": "치료와 수리",
+    "description": "장착한 캐릭터의 치유량이 <orangeStrong>{{1}}%</orangeStrong> 증가하고, 전투 스킬 발동 시 모든 아군의 에너지가 <orangeStrong>{{2}}</orangeStrong>pt 회복된다"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Gallagher",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Taxa de Rolha",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Gallagher a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano de Fogo leve a um único inimigo."
+      },
+      "1": {
+        "name": "Blitz de Néctar",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Gallagher a um único inimigo-alvo e reduz o ATQ do alvo em <orangeStrong>{{2}}%</orangeStrong>, durando por {{3}} rodada(s).",
+        "shortDesc": "Causa Dano de Fogo a um único inimigo e reduz o ATQ."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Bebida Especial",
+        "fullDesc": "Cura imediatamente <orangeStrong>{{1}}</orangeStrong> de PV de um aliado-alvo.",
+        "shortDesc": "Imediatamente recupera os PV de um aliado."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Etiqueta de Champanhe",
+        "fullDesc": "Inflige Inebriação a todos os inimigos, durando por {{2}} rodada(s). Ao mesmo tempo, causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Gallagher a todos os inimigos e aprimora o próximo ATQ Básico desta unidade para Blitz de Néctar.",
+        "shortDesc": "<color=#f29e38ff>Inflige Inebriação</color> a todos os inimigos e causa Dano de Fogo a eles ao mesmo tempo. Aprimora o próximo ATQ Básico desta unidade para Blitz de Néctar."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Artesão de Elixires",
+        "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, inflige Inebriação a todos os inimigos, durando por {{1}} rodada(s). Causa Dano de Fogo igual a {{2}}% do ATQ de Gallagher a todos os inimigos.",
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, <color=#f29e38ff>inflige Inebriação</color> a todos os inimigos e causa Dano de Fogo leve a todos os inimigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

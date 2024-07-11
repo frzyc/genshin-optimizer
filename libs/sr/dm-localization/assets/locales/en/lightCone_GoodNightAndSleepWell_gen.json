@@ -1,0 +1,7 @@
+{
+  "name": "Good Night and Sleep Well",
+  "passive": {
+    "name": "Toiler",
+    "description": "For every debuff the target enemy has, the DMG dealt by the wearer increases by <orangeStrong>{{1}}%</orangeStrong>, stacking up to {{2}} time(s). This effect also applies to DoT."
+  }
+}

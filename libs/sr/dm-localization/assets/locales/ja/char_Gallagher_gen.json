@@ -1,0 +1,45 @@
+{
+  "name": "ギャラガー",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#も}持{RUBY_E#}ち{RUBY_B#こ}込{RUBY_E#}み{RUBY_B#りょう}料{RUBY_E#}",
+        "fullDesc": "指定した敵単体にギャラガーの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の炎属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の炎属性ダメージを与える。"
+      },
+      "1": {
+        "name": "{RUBY_B#ごくじょう}極上{RUBY_E#}の{RUBY_B#あわだ}泡立{RUBY_E#}ち",
+        "fullDesc": "指定した敵単体にギャラガーの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の炎属性ダメージを与える。その敵の攻撃力-<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。",
+        "shortDesc": "敵単体に炎属性ダメージを与え、攻撃力をダウンさせる。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#とくせい}特製{RUBY_E#}ドリンク",
+        "fullDesc": "指定した味方単体のHPを<orangeStrong>{{1}}</orangeStrong>回復する。",
+        "shortDesc": "味方単体のHPを回復する。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "シャンパン・マナー",
+        "fullDesc": "敵全体を「酩酊」状態にする、{{2}}ターン継続。敵全体にギャラガーの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の炎属性ダメージを与え、次の通常攻撃を「極上の泡立ち」に強化する。",
+        "shortDesc": "敵全体を<color=#f29e38ff>「酩酊」状態</color>にし、敵全体に炎属性ダメージを与える。次の通常攻撃を「極上の泡立ち」に強化する。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "ヴィンテージ{RUBY_B#かいふう}開封{RUBY_E#}",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵全体を「酩酊」状態にする、{{1}}ターン継続。敵全体にギャラガーの攻撃力{{2}}%分の炎属性ダメージを与える。",
+        "shortDesc": "敵を攻撃。戦闘に入った後、敵全体を<color=#f29e38ff>「酩酊」状態</color>にし、敵全体に少量の炎属性ダメージを与える。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Multiplicação",
+  "passive": {
+    "name": "Cidadãos da Abundância",
+    "description": "Após o usuário usar seu ATQ Básico, sua próxima ação será Avançada Adiante em <orangeStrong>{{1}}%</orangeStrong>."
+  }
+}

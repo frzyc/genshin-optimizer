@@ -1,0 +1,7 @@
+{
+  "name": "Hey, Over Here",
+  "passive": {
+    "name": "I'm Not Afraid!",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Max HP pengguna. Saat pengguna melancarkan Skill, Outgoing Healing meningkat <orangeStrong>{{2}}%</orangeStrong> selama {{3}} giliran."
+  }
+}

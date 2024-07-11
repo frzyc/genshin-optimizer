@@ -1,0 +1,7 @@
+{
+  "name": "Generalschlüssel",
+  "passive": {
+    "name": "Erleuchtung",
+    "description": "Stellt nach dem Einsatz der Fertigkeit zusätzlich <orangeStrong>{{1}}</orangeStrong> Pkt. Energie wieder her. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden."
+  }
+}

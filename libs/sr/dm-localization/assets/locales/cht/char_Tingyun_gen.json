@@ -1,0 +1,40 @@
+{
+  "name": "停雲",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "逐客令",
+        "fullDesc": "對指定敵方單體造成等同於停雲<orangeStrong>{{1}}%</orangeStrong>攻擊力的雷屬性傷害。",
+        "shortDesc": "對敵方單體造成少量雷屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "祥音和韻",
+        "fullDesc": "為指定我方單體提供【賜福】，使其攻擊力提高<orangeStrong>{{2}}%</orangeStrong>，最高不超過停雲當下攻擊力的<orangeStrong>{{4}}%</orangeStrong>。\\n獲得【賜福】的目標發動攻擊後，會額外造成1次等同於其自身<orangeStrong>{{1}}%</orangeStrong>攻擊力的雷屬性<u>附加傷害</u>。\\n【賜福】持續{{3}}回合且僅對停雲戰技最新的施放目標生效。",
+        "shortDesc": "使我方單體<color=#f29e38ff>攻擊力提高</color>，並獲得【賜福】。【賜福】狀態下攻擊時額外造成少量<color=#f29e38ff>雷屬性<u>附加傷害</u></color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "慶雲光覆儀禱",
+        "fullDesc": "為指定我方單體恢復{{1}}點能量，同時使目標造成的傷害提高<orangeStrong>{{3}}%</orangeStrong>，持續{{2}}回合。",
+        "shortDesc": "為我方單體<color=#f29e38ff>恢復能量</color>，並使其<color=#f29e38ff>造成的傷害提高</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "惠風和暢",
+        "fullDesc": "使用秘技後立即為自身恢復{{1}}點能量。",
+        "shortDesc": "使用秘技後立即為自身恢復能量。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

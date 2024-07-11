@@ -1,0 +1,40 @@
+{
+  "name": "Aventurin",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Intuitiver Einsatz",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Aventurins VTD zu.",
+        "shortDesc": "Fügt einem anvisierten Gegner geringen imaginären SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Eckpfeiler des Wohlstands",
+        "fullDesc": "Gewährt allen Verbündeten für {{3}} Rd. den Schild „Verstärkter Einsatz“, der in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Aventurins VTD plus <orangeStrong>{{2}}</orangeStrong> absorbiert. Wenn Verstärkter Einsatz wiederholt erhalten wird, wird der Schild bis zu {{4}}% der durch die aktuelle Fertigkeit gewährten Schildmenge gestapelt.",
+        "shortDesc": "Gewährt allen Verbündeten den <color=#f29e38ff>stapelbaren Schild</color> „Verstärkter Einsatz“."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lord Roulette",
+        "fullDesc": "Erhält zufällig 1 bis {{1}} Pkt. „Blinde Wette“ und verursacht dann bei einem anvisierten Gegner für {{4}} Rd. „Panik“. Außerdem wird dem anvisierten Gegner imaginärer SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Aventurins VTD zugefügt. Wenn Verbündete panische Gegner angreifen, wird der verursachte KRIT-SCH um <orangeStrong>{{3}}%</orangeStrong> erhöht.",
+        "shortDesc": "Erhält zufällig „Blinde Wette“. Dadurch tritt ein Gegner in den Status „Panik“ ein und ihm wird imaginärer SCH zugefügt. Wenn ein Verbündeter einen Gegner im Status Panik angreift, wird der verursachte <color=#f29e38ff>KRIT-SCH</color> erhöht."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Zwischen Rot und Schwarz",
+        "fullDesc": "Nach dem Einsatz der Technik wird 1 der folgenden Effekte gewährt:\\nEs besteht eine bestimmte Chance, dass die VTD um {{1}}% erhöht wird.\\nEs besteht eine hohe Chance, dass die VTD um {{2}}% erhöht wird.\\nEs besteht eine geringe Chance, dass die VTD um {{3}}% erhöht wird.\\nBei erneutem Einsatz wird der Effekt mit dem höchsten Verstärkungswert beibehalten.\\nZu Beginn des nächsten Kampfes wird die VTD aller Verbündeten für {{4}} Rd. entsprechend erhöht.",
+        "shortDesc": "Der Einsatz der Technik gewährt zufällig 1 von 3 Arten von Effekten zur VTD-Erhöhung. Nach dem nächsten Kampfeintritt wird die VTD aller Verbündeten entsprechend erhöht."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

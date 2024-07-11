@@ -1,0 +1,7 @@
+{
+  "name": "俱殁",
+  "passive": {
+    "name": "军团",
+    "description": "装备者当前生命值百分比小于{{1}}%时，暴击率提高<orangeStrong>{{2}}%</orangeStrong>。"
+  }
+}

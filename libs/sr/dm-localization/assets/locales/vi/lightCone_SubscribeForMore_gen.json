@@ -1,0 +1,7 @@
+{
+  "name": "Hãy Theo Dõi Nào!",
+  "passive": {
+    "name": "Không Like Không Được Đi!",
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> sát thương tấn công thường và Chiến Kỹ của người trang bị, khi Năng Lượng hiện tại của người trang bị bằng giới hạn Năng Lượng, thì hiệu quả này sẽ tăng thêm <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "등가교환",
+  "passive": {
+    "name": "편안함",
+    "description": "장착한 캐릭터의 턴 시작 시 랜덤으로 현재 에너지 백분율이 {{1}}% 미만인 다른 아군의 에너지를 <orangeStrong>{{2}}</orangeStrong>pt 회복한다"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "spd": "속도",
+  "hp": "HP",
+  "atk": "공격력",
+  "def": "방어력",
+  "crit_": "치명타 확률",
+  "crit_dmg_": "치명타 피해",
+  "brEff_": "격파 특수효과",
+  "eff_": "효과 명중",
+  "eff_res_": "효과 저항",
+  "enerRegen_": "에너지 회복효율",
+  "heal_": "치유량 보너스",
+  "physical_dmg_": "물리 속성 피해 증가",
+  "fire_dmg_": "화염 속성 피해 증가",
+  "ice_dmg_": "얼음 속성 피해 증가",
+  "wind_dmg_": "바람 속성 피해 증가",
+  "lightning_dmg_": "번개 속성 피해 증가",
+  "quantum_dmg_": "양자 속성 피해 증가",
+  "imaginary_dmg_": "허수 속성 피해 증가"
+}

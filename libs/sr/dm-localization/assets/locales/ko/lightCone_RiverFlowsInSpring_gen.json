@@ -1,0 +1,7 @@
+{
+  "name": "움트는 봄물",
+  "passive": {
+    "name": "남은 추위 몰아내기",
+    "description": "전투 진입 후 장착한 캐릭터의 속도가 <orangeStrong>{{1}}%</orangeStrong> 증가하고, 가하는 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가한다. 장착한 캐릭터가 피해를 받은 후 해당 효과는 사라지며 다음 턴이 종료되면 해당 효과는 회복된다"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Em Nome do Mundo",
+  "passive": {
+    "name": "Herança",
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> o Dano contra inimigos penalizados. Quando o usuário utiliza sua Perícia, a Taxa de Acerto de Efeito desse ataque aumenta em <orangeStrong>{{2}}%</orangeStrong> e seu ATQ aumenta em <orangeStrong>{{3}}%</orangeStrong>."
+  }
+}

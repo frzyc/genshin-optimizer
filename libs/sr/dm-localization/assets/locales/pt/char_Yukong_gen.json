@@ -1,0 +1,40 @@
+{
+  "name": "Yukong",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Atiradora de Flechas",
+        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Yukong como Dano Imaginário a um inimigo-alvo.",
+        "shortDesc": "Causa Dano Imaginário leve a um inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Saudação Encorajadora",
+        "fullDesc": "Obtém {{1}} acúmulo(s) de \"Arco Estrondoso\" (até um máximo de 2 acúmulos). Quando \"Arco Estrondoso\" está ativo, o ATQ de todos os aliados aumenta em <orangeStrong>{{2}}%</orangeStrong>, e sempre que a rodada de um aliado (incluindo a de Yukong) acaba, Yukong perde 1 acúmulo de \"Arco Estrondoso\".\\nNa rodada na qual Yukong ganha \"Arco Estrondoso\" usando a Perícia, \"Arco Estrondoso\" não será removido.",
+        "shortDesc": "Obtêm 2 acúmulos de Arco Estrondoso. <color=#f29e38ff>Aumenta o ATQ</color> de todos os aliados quando Arco Estrondoso está ativo nesta personagem."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Mergulho do Falcão",
+        "fullDesc": "Se o \"Arco Estrondoso\" estiver ativo em Yukong quando a sua Perícia Suprema for utilizada, a Chance de CRIT de todos os aliados aumenta adicionalmente em <orangeStrong>{{2}}%</orangeStrong> e o Dano CRIT aumenta em <orangeStrong>{{3}}%</orangeStrong>. Ao mesmo tempo, causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Yukong a um único inimigo.",
+        "shortDesc": "Quando Arco Estrondoso estiver ativo nesta personagem, <color=#f29e38ff>aumenta a Chance de CRIT e o Dano CRIT</color> de todos os aliados e causa Dano Imaginário massivo a um único inimigo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Seguindo o Vento",
+        "fullDesc": "Após usar sua Técnica, Yukong entra no modo Corrida por {{1}} segundos. Enquanto estiver no modo Corrida, a VEL de Movimento aumenta em {{2}}%, e Yukong recebe {{3}} acúmulo(s) do \"Arco Estrondoso\" ao entrar em batalha atacando inimigos.",
+        "shortDesc": "<color=#f29e38ff>Aumenta a VEL de Movimento</color>. Após atacar um inimigo e entrar na batalha, recebe 2 acúmulos de \"Arco Estrondoso\"."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

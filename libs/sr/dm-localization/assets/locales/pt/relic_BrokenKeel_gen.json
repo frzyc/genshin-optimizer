@@ -1,0 +1,6 @@
+{
+  "setName": "Quilha Quebrada",
+  "setEffects": {
+    "2": "Aumenta em {{1}}% a RES a Efeito do usuário. Quando a RES a Efeito do usuário chegar em {{2}}% ou mais, aumenta em {{3}}% o Dano CRIT de todos os aliados."
+  }
+}

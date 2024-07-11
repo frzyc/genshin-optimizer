@@ -1,0 +1,40 @@
+{
+  "name": "Herta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Qu'est-ce que tu regardes ?",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Herta à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Une offre à ne pas manquer",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Herta à tous les ennemis. Lorsque le pourcentage de PV d'un ennemi est supérieur ou égal à {{2}}%, les DGT qui lui sont infligés augmentent de {{3}}%.",
+        "shortDesc": "Inflige des DGT de glace mineurs à tous les ennemis. Les cibles qui ont le plus de PV subissent des DGT plus importants."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "La magie, c'est exquis",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Herta à tous les ennemis.",
+        "shortDesc": "Inflige des DGT de glace à tous les ennemis."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Il y a de la marge de progression",
+        "fullDesc": "Après utilisation de sa technique, l'ATQ de Herta augmente de {{1}}% pendant {{2}} tours au début du combat suivant.",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Herta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Was schaust du so?",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hertas ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Einmaliges Angebot",
+        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hertas ANG zu. Ziele mit LP-Prozentsatz von {{2}}% oder höher erleiden {{3}}% mehr SCH.",
+        "shortDesc": "Fügt allen Gegnern geringen Eis-SCH zu. Ziele mit höheren LP erleiden mehr SCH."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ich arbeite mit Magie",
+        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hertas ANG zu.",
+        "shortDesc": "Fügt allen Gegnern Eis-SCH zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Das kann noch optimiert werden",
+        "fullDesc": "Erhöht nach dem Einsatz der Technik Hertas ANG zu Beginn des nächstes Kampfes für {{2}} Rd. um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Lynx",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Kỹ Thuật Trèo Băng",
+        "fullDesc": "Gây cho 1 kẻ địch Sát Thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của bản thân.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Đồ Hộp Cắm Trại Ủ Muối",
+        "fullDesc": "Cộng thêm \"Phản Ứng Sinh Tồn\" cho 1 đồng đội chỉ định, tăng Giới Hạn HP bằng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{2}}</orangeStrong>, nếu mục tiêu này thuộc vận mệnh Hủy Diệt hoặc Bảo Hộ, sẽ tăng cao xác suất bị phe địch tấn công, \"Phản Ứng Sinh Tồn\" duy trì {{3}} hiệp.\\nKhiến mục tiêu này hồi HP bằng <orangeStrong>{{4}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{5}}</orangeStrong>.",
+        "shortDesc": "Khiến 1 đồng đội nhận \"Phản Ứng Sinh Tồn\", <color=#f29e38ff>tăng Giới Hạn HP</color> và hồi HP cho đồng đội đó."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Sơ Cứu Vùng Tuyết",
+        "fullDesc": "Giải trừ {{1}} <u>Hiệu Ứng Xấu</u> của toàn bộ phe ta, hồi ngay cho toàn phe ta một lượng HP bằng <orangeStrong>{{2}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{3}}</orangeStrong>.",
+        "shortDesc": "Giải trừ <color=#f29e38ff>1 <u>Hiệu Ứng Xấu</u> cho toàn bộ phe ta</color>, hồi HP cho toàn bộ phe ta."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Thanh Năng Lượng Socola",
+        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu trận tiếp theo sẽ kèm thêm hiệu ứng trị liệu liên tục từ Thiên Phú của Lynx cho toàn bộ phe ta, duy trì {{1}} hiệp.",
+        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu trận tiếp theo sẽ kèm thêm hiệu ứng trị liệu liên tục cho toàn bộ phe ta."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

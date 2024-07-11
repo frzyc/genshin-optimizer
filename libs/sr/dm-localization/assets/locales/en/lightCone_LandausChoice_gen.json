@@ -1,0 +1,7 @@
+{
+  "name": "Landau's Choice",
+  "passive": {
+    "name": "Time Fleets Away",
+    "description": "The wearer is more likely to be attacked, and DMG taken is reduced by <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

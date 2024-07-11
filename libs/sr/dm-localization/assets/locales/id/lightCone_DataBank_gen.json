@@ -1,0 +1,7 @@
+{
+  "name": "Data Bank",
+  "passive": {
+    "name": "Learned",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Ultimate DMG pengguna."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "{M#Pionnier}{F#Pionnière} (Physique • La Destruction)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Coup d'adieu",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique.",
+        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Home run final",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique et aux ennemis adjacents.",
+        "shortDesc": "Inflige des DGT physiques à un ennemi unique et aux ennemis adjacents."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{M#Lançeur}{F#Lançeuse} de poussière d'étoile",
+        "fullDesc": "Vous choisissez entre deux modes d'attaque pour infliger un coup dévastateur.\\nFrappe écrasante : Coup d'adieu inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique.\\nFrappe écrasante : Home run final inflige des DGT physiques équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique, ainsi que des DGT physiques équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} aux ennemis adjacents.",
+        "shortDesc": "Utilise une ATQ sur cible unique ou par propagation pour infliger un coup dévastateur."
+      },
+      "1": {
+        "name": "Frappe écrasante : Coup d'adieu",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique.",
+        "shortDesc": "Inflige des DGT physiques massifs à un ennemi unique."
+      },
+      "2": {
+        "name": "Frappe écrasante : Home run final",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique et des DGT physiques équivalents à <orangeStrong>{{2}}%</orangeStrong> de son ATQ aux ennemis adjacents.",
+        "shortDesc": "Inflige des DGT physiques à un ennemi unique et aux ennemis adjacents."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Troisième prise immortelle",
+        "fullDesc": "Soigne immédiatement tous les alliés à hauteur de {{1}}% de leurs PV max respectifs après utilisation de cette technique.",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

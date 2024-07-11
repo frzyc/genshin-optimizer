@@ -1,0 +1,7 @@
+{
+  "name": "煩惱著，幸福著",
+  "passive": {
+    "name": "一個一個來",
+    "description": "使裝備者暴擊率提高<orangeStrong>{{1}}%</orangeStrong>，追加攻擊造成的傷害提高<orangeStrong>{{2}}%</orangeStrong>。裝備者發動追加攻擊後，使目標陷入【溫馴】狀態，該效果最多疊加{{4}}層。我方目標命中【溫馴】狀態下的敵方目標時，每層【溫馴】使造成的暴擊傷害提高<orangeStrong>{{3}}%</orangeStrong>。"
+  }
+}

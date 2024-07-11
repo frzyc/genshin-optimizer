@@ -1,0 +1,7 @@
+{
+  "name": "아카이브",
+  "passive": {
+    "name": "박식",
+    "description": "장착한 캐릭터가 필살기로 가하는 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다"
+  }
+}

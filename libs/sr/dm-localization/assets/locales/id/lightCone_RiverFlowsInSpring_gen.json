@@ -1,0 +1,7 @@
+{
+  "name": "River Flows in Spring",
+  "passive": {
+    "name": "Stave Off the Lingering Cold",
+    "description": "Setelah memasuki pertempuran, meningkatkan <orangeStrong>{{1}}%</orangeStrong> SPD pengguna dan <orangeStrong>{{2}}%</orangeStrong> DMG yang diakibatkannya. Setelah pengguna terkena serangan, efek akan menghilang. Efek ini akan pulih kembali saat giliran berikutnya berakhir."
+  }
+}

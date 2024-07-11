@@ -1,0 +1,7 @@
+{
+  "name": "Đối Kháng",
+  "passive": {
+    "name": "Liên Minh",
+    "description": "Sau khi người trang bị tiêu diệt kẻ địch, Tốc Độ sẽ tăng <orangeStrong>{{1}}%</orangeStrong>, duy trì {{2}} hiệp."
+  }
+}

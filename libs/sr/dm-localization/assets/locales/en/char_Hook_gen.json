@@ -1,0 +1,45 @@
+{
+  "name": "Hook",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Hehe! Don't Get Burned!",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hook's ATK to a single enemy.",
+        "shortDesc": "Deals minor Fire DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Hey! Remember Hook?",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hook's ATK to a single enemy. In addition, there is a {{2}}% <u>base chance</u> to inflict Burn for {{3}} turn(s).\\nWhen afflicted with Burn, enemies will take Fire DoT equal to <orangeStrong>{{4}}%</orangeStrong> of Hook's ATK at the beginning of each turn.",
+        "shortDesc": "Deals Fire DMG to a single enemy, with a high chance to inflict Burn on the enemy."
+      },
+      "1": {
+        "name": "Hey! Remember Hook?",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hook's ATK to a single enemy, with a {{2}}% <u>base chance</u> to Burn them for {{3}} turn(s). Additionally, deals Fire DMG equal to <orangeStrong>{{5}}%</orangeStrong> of Hook's ATK to enemies adjacent to it.\\nWhen afflicted with Burn, enemies will take Fire DoT equal to <orangeStrong>{{4}}%</orangeStrong> of Hook's ATK at the beginning of each turn.",
+        "shortDesc": "Deals Fire DMG to a single enemy with a high chance of inflicting Burn, also deals minor Fire DMG to enemies adjacent to it."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Boom! Here Comes the Fire!",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hook's ATK to a single enemy.\\nAfter using Ultimate, the next Skill to be used is Enhanced, which deals DMG to a single enemy and enemies adjacent to it.",
+        "shortDesc": "Deals massive Fire DMG to a single enemy and <color=#f29e38ff>Enhances this unit's next Skill</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ack! Look at This Mess!",
+        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Hook deals Fire DMG equal to {{4}}% of her ATK to a random enemy. In addition, there is a {{1}}% <u>base chance</u> to inflict Burn on every enemy for {{3}} turn(s).\\nWhen afflicted with Burn, enemies will take Fire DoT equal to {{2}}% of Hook's ATK at the beginning of each turn.",
+        "shortDesc": "Attacks the enemy. After entering battle, deals Fire DMG to a random single enemy, with a high chance to inflict Burn on all enemy targets."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

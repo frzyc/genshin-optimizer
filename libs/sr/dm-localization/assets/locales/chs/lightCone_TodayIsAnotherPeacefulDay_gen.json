@@ -1,0 +1,7 @@
+{
+  "name": "今日亦是和平的一日",
+  "passive": {
+    "name": "风雨将至",
+    "description": "进入战斗后，根据装备者的能量上限，提高装备者造成的伤害：每点能量提高<orangeStrong>{{1}}%</orangeStrong>，最多计入{{2}}点。"
+  }
+}

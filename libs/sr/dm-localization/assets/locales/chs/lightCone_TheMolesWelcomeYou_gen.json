@@ -1,0 +1,7 @@
+{
+  "name": "鼹鼠党欢迎你",
+  "passive": {
+    "name": "奇妙冒险",
+    "description": "装备者施放普攻、战技或终结技攻击敌方目标后，分别获取一层【淘气值】。每层使装备者的攻击力提高<orangeStrong>{{1}}%</orangeStrong>。"
+  }
+}

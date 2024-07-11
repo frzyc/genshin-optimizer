@@ -1,0 +1,7 @@
+{
+  "name": "Multiplicación",
+  "passive": {
+    "name": "Moradores de la Abundancia",
+    "description": "Tras usar el ATQ básico, la siguiente acción del portador se adelanta un <orangeStrong>{{1}}%</orangeStrong>."
+  }
+}

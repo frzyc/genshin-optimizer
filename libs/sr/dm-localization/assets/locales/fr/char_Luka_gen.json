@@ -1,0 +1,45 @@
+{
+  "name": "Luka",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Direct du droit",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Luka à un ennemi unique.",
+        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
+      },
+      "1": {
+        "name": "Poing destructeur d'étoiles",
+        "fullDesc": "Consomme 2 cumuls de Soif de combat. Utilise d'abord Direct du droit pour lancer 3 coups, chacun infligeant des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Luka à la cible ennemie.\\nPuis, utilise Uppercut du droit pour lancer 1 coup, infligeant des DGT physiques équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Luka à la cible ennemie.",
+        "shortDesc": "Consomme 2 cumuls de Soif de combat pour infliger des DGT physiques à une cible unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Poing lacérateur",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Luka à une cible ennemie unique, avec {{2}}% de <u>chances de base</u> de lui infliger Saignement pendant {{5}} tours.\\nQuand un ennemi souffre de Saignement, il subit des dégâts sur la durée physiques équivalents à {{3}}% de ses PV max au début de chaque tour. Ces DGT ne peuvent pas excéder <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Luka.",
+        "shortDesc": "Inflige des DGT physiques à un ennemi unique, avec de fortes chances de provoquer <color=#f29e38ff>Saignement</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Coup de grâce",
+        "fullDesc": "Accorde {{5}} cumuls de Soif de combat, avec {{2}}% de <u>chances de base</u> d'augmenter les DGT subis par une cible ennemie unique de <orangeStrong>{{3}}%</orangeStrong> pendant {{4}} tours. Puis inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Luka à la cible.",
+        "shortDesc": "Accorde <orangeStrong>{{5}}</orangeStrong> cumuls de Soif de combat, avec de fortes chances d'augmenter les DGT subis par la cible ennemie et lui inflige des DGT physiques massifs."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Anticipation",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Luka inflige des DGT physiques équivalents à {{1}}% de son ATQ à un ennemi aléatoire en entrant en combat, avec {{2}}% de <u>chances de base</u> de lui infliger l'effet Saignement de sa compétence, à la suite de quoi Luka obtient un cumul supplémentaire de Soif de combat.",
+        "shortDesc": "Attaque les ennemis. Inflige des DGT physiques mineurs à un ennemi unique aléatoire après être entré en combat, avec de fortes chances d'infliger <color=#f29e38ff>Saignement</color> à la cible. Puis gagne 1 cumul de Soif de combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Coro",
+  "passive": {
+    "name": "Sinergia",
+    "description": "Tras entrar en combate, el ATQ de todos los aliados aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Los efectos del mismo tipo no se pueden activar varias veces."
+  }
+}

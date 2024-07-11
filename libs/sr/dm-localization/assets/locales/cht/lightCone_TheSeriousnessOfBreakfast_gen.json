@@ -1,0 +1,7 @@
+{
+  "name": "早餐的儀式感",
+  "passive": {
+    "name": "各就各位",
+    "description": "使裝備者造成傷害提高<orangeStrong>{{1}}%</orangeStrong>。每消滅1個敵方目標，裝備者的攻擊力便提高<orangeStrong>{{2}}%</orangeStrong>，該效果最多疊加{{3}}層。"
+  }
+}

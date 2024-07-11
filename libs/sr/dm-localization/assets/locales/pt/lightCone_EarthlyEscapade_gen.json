@@ -1,0 +1,7 @@
+{
+  "name": "Fuga Terrena",
+  "passive": {
+    "name": "Caprichosidade",
+    "description": "Aumenta o Dano CRIT do usuário em <orangeStrong>{{1}}%</orangeStrong>. No início da batalha, o usuário ganha Máscara, durando por {{6}} rodada(s). Enquanto o usuário possuir Máscara, aumenta a Chance de CRIT dos aliados do usuário em <orangeStrong>{{5}}%</orangeStrong> e o Dano CRIT em <orangeStrong>{{2}}%</orangeStrong>. Para 1 Ponto de Perícia recuperado pelo usuário (incluindo Pontos de Perícia que excedam o limite), ele ganha 1 acúmulo de Chama Radiante. Quando o usuário possuir {{4}} acúmulos de Chama Radiante, todos os acúmulos são removidos e ele ganha Máscara, durando por {{3}} rodada(s)."
+  }
+}

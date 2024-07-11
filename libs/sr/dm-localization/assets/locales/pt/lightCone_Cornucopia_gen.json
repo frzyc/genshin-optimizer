@@ -1,0 +1,7 @@
+{
+  "name": "Cornucópia",
+  "passive": {
+    "name": "Prosperidade",
+    "description": "Quando o usuário usa sua Perícia ou Perícia Suprema, aumenta em <orangeStrong>{{1}}%</orangeStrong> a Cura Realizada."
+  }
+}

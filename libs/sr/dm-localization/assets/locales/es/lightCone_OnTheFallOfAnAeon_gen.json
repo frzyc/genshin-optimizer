@@ -1,0 +1,7 @@
+{
+  "name": "Sobre la caída de un Eón",
+  "passive": {
+    "name": "Polilla a la luz",
+    "description": "Cuando el portador lanza un ataque, su ATQ aumenta en un <orangeStrong>{{1}}%</orangeStrong> durante esa batalla. Este efecto se puede acumular hasta {{2}} veces. Cuando el portador rompe la Debilidad del enemigo, el daño que inflige aumenta en un <orangeStrong>{{3}}%</orangeStrong> durante {{4}} turnos."
+  }
+}

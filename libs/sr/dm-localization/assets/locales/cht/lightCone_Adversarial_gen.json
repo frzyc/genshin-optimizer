@@ -1,0 +1,7 @@
+{
+  "name": "相抗",
+  "passive": {
+    "name": "聯盟",
+    "description": "使裝備者在消滅敵方目標後，速度提高<orangeStrong>{{1}}%</orangeStrong>，持續{{2}}回合。"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "setName": "Talia – Königreich der Banditen",
+  "setEffects": {
+    "2": "Erhöht den Brucheffekt des Trägers um {{1}}%. Wenn die GES des Trägers {{2}} oder höher erreicht, wird der Brucheffekt des Trägers zusätzlich um {{3}}% erhöht."
+  }
+}

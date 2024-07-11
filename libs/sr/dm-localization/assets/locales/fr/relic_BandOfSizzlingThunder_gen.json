@@ -1,0 +1,7 @@
+{
+  "setName": "Tonnerre grésillant",
+  "setEffects": {
+    "2": "Augmente les DGT de foudre de {{1}}%.",
+    "4": "Lorsque le porteur utilise sa compétence, son ATQ augmente de {{1}}% pendant {{2}} tour."
+  }
+}

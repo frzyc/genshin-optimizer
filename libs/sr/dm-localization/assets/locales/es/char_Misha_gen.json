@@ -1,0 +1,40 @@
+{
+  "name": "Misha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "¡Disculpe, por favor!",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Misha como Daño de Hielo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "¡Servicio de habitaciones!",
+        "fullDesc": "Aumenta en {{3}} los golpes por acción de la habilidad definitiva de Misha la siguiente vez que la utilice. Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Misha como Daño de Hielo a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Misha como Daño de Hielo a los enemigos adyacentes.",
+        "shortDesc": "Inflige Daño de Hielo a un enemigo y una pequeña cantidad de Daño de Hielo a los enemigos adyacentes. Aumenta los <color=#f29e38ff>golpes por acción de la habilidad definitiva</color> de Misha la siguiente vez que la utilice."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "¡Voy a llegar tarde!",
+        "fullDesc": "Tiene {{1}} golpes por acción por defecto. Primero, Misha golpea a un enemigo con 1 golpe que inflige un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Misha como Daño de Hielo. El resto de golpes alcanzan a enemigos al azar e infligen un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Misha como Daño de Hielo. Antes de que cada golpe alcance a su objetivo, hay un <orangeStrong>{{3}}%</orangeStrong> de <u>probabilidad base</u> de afectar con Congelación al objetivo durante 1 turno.\\nLos enemigos congelados no pueden actuar, y al principio de cada turno reciben un <orangeStrong>{{4}}%</orangeStrong> del ATQ de Misha como Daño de Hielo <u>adicional</u>.\\nLa habilidad definitiva puede acumular {{5}} golpes por acción como máximo. Tras usar la habilidad definitiva, los golpes por acción se restablecen a su cantidad inicial.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo. Por defecto, rebota <orangeStrong>{{1}}</orangeStrong> veces entre los enemigos y puede llegar hasta un máximo de <orangeStrong>{{5}}</orangeStrong> rebotes. Antes de que cada golpe alcance al objetivo, tiene una pequeña probabilidad de <color=#f29e38ff>congelarlo</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Detente, instante, eres tan hermoso",
+        "fullDesc": "Tras usar la técnica, crea 1 zona especial durante {{1}} s. Los enemigos dentro de la zona especial entran en el estado de Prisión onírica. Las acciones de los enemigos bajo el efecto de Prisión onírica se detienen. Tras entrar en combate con los enemigos afectados por Prisión onírica, los golpes por acción de la habilidad definitiva de Misha aumentan en {{2}} la siguiente vez que la use. Solo puede haber una zona especial creada por los aliados a la vez.",
+        "shortDesc": "Crea una zona especial. Los enemigos dentro de la zona especial detienen sus acciones. Cuando entra en combate con un enemigo dentro de la zona especial, aumentan los <color=#f29e38ff>golpes por acción de la habilidad definitiva</color> de Misha la siguiente vez que la use."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Flèche plongeante",
+  "passive": {
+    "name": "Cri de guerre",
+    "description": "L'ATQ du porteur augmente de <orangeStrong>{{1}}%</orangeStrong> pendant {{2}} tours lorsqu'il élimine un ennemi."
+  }
+}

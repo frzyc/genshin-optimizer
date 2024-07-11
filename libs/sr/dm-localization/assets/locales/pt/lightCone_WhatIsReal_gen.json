@@ -1,0 +1,7 @@
+{
+  "name": "O Que É Real?",
+  "passive": {
+    "name": "Hipótese",
+    "description": "Aumenta o Efeito de Quebra do usuário em <orangeStrong>{{1}}%</orangeStrong>. Após usar ATQ Básico, restaura os PV do usuário em uma quantidade igual a <orangeStrong>{{2}}%</orangeStrong> dos PV máximos mais {{3}}."
+  }
+}

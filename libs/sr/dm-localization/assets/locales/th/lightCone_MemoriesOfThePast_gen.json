@@ -1,0 +1,7 @@
+{
+  "name": "Memories of the Past",
+  "passive": {
+    "name": "Old Photo",
+    "description": "เอฟเฟกต์ทำลายล้างของผู้สวมใส่จะเพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> หลังจากผู้สวมใส่ทำการโจมตี จะฟื้นฟูพลังงานเพิ่มอีก <orangeStrong>{{2}}</orangeStrong> หน่วย โดยเอฟเฟกต์นี้จะไม่สามารถปล่อยซ้ำได้ภายในเทิร์นเดียวกัน"
+  }
+}

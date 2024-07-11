@@ -1,0 +1,7 @@
+{
+  "name": "重塑時光之憶",
+  "passive": {
+    "name": "結晶",
+    "description": "使裝備者的效果命中提高<orangeStrong>{{1}}%</orangeStrong>。裝備者對陷入風化、灼燒、觸電、裂傷狀態的敵方目標造成傷害時，分別獲得1層【先知】，最多疊加{{4}}層。單場戰鬥中，每種持續傷害狀態類型僅可疊加1次【先知】效果。每層【先知】使裝備者的攻擊力提高<orangeStrong>{{2}}%</orangeStrong>，造成的持續傷害無視目標<orangeStrong>{{3}}%</orangeStrong>的防禦力。"
+  }
+}

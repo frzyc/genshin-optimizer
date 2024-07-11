@@ -1,0 +1,40 @@
+{
+  "name": "Fu Xuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Sternschlag",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> der max. LP von Fu Xuan zu.",
+        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Astronomisches Wunder",
+        "fullDesc": "Aktiviert die „Matrix der Voraussicht“. Für {{3}} Rd. wird {{1}}% des SCH, den Fu Xuans Verbündete erleiden (und bevor dieser Schaden durch eventuell vorhandene Schilde absorbiert wird), mit Fu Xuan <u>geteilt</u>.\\nAlle Verbündeten, die von der „Matrix der Voraussicht“ betroffen sind, erhalten den Status „Wissen“, der ihre max. LP um <orangeStrong>{{4}}%</orangeStrong> der max. LP von Fu Xuan und ihre KRIT-Rate um <orangeStrong>{{5}}%</orangeStrong> erhöht.\\nWenn Fu Xuan <u>handlungsunfähig</u> wird, verschwindet die „Matrix der Voraussicht“.",
+        "shortDesc": "Aktiviert die „Matrix der Voraussicht“, wodurch <color=#f29e38ff>der erlittene SCH</color> von Verbündeten mit Fu Xuan <u>geteilt</u> wird. <color=#f29e38ff>Erhöht die KRIT-Rate</color> und die max. LP aller Verbündeten."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ultimative Evolution",
+        "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> der max. LP von Fu Xuan zu und verleiht 1 Auslösepunkt für die LP-Wiederherstellung von Fu Xuans Talent.",
+        "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und erhöht die Auslösungsanzahl von Fu Xuans Talent."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Die Gunst des Schicksals",
+        "fullDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten für {{1}} Sek. eine Barriere. Diese Barriere blockt alle gegnerischen Angriffe ab und die Verbündeten treten nicht in den Kampf ein. Beim Kampfeintritt während der Wirkungszeit der Barriere wird Fu Xuans „Matrix der Voraussicht“ automatisch für {{2}} Rd. aktiviert.",
+        "shortDesc": "Aktiviert eine Barriere. Verbündete treten nicht in den Kampf ein, wenn sie von Gegnern angegriffen werden. Beim Kampfeintritt wird die „Matrix der Voraussicht“ automatisch aktiviert."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und reduziert nach Kampfeintritt den Widerstand des gegnerischen Ziels des entsprechenden Typs.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

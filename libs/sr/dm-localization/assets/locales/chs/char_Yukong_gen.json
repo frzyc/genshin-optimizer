@@ -1,0 +1,40 @@
+{
+  "name": "驭空",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "流镝",
+        "fullDesc": "对指定敌方单体造成等同于驭空<orangeStrong>{{1}}%</orangeStrong>攻击力的虚数属性伤害。",
+        "shortDesc": "对敌方单体造成少量虚数属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "天阙鸣弦",
+        "fullDesc": "获得{{1}}层【鸣弦号令】，最多持有不超过2层。当驭空持有【鸣弦号令】时，我方全体攻击力提高<orangeStrong>{{2}}%</orangeStrong>，且每次我方目标回合结束时，移除驭空1层【鸣弦号令】。\\n驭空施放战技获得【鸣弦号令】的回合，不会移除【鸣弦号令】。",
+        "shortDesc": "获得2层【鸣弦号令】，自身持有【鸣弦号令】时我方全体<color=#f29e38ff>攻击力提高</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "贯云饮羽",
+        "fullDesc": "施放终结技时，若驭空持有【鸣弦号令】，则额外使我方全体暴击率提高<orangeStrong>{{2}}%</orangeStrong>，暴击伤害提高<orangeStrong>{{3}}%</orangeStrong>。同时对指定敌方单体造成等同于驭空<orangeStrong>{{1}}%</orangeStrong>攻击力的虚数属性伤害。",
+        "shortDesc": "自身持有【鸣弦号令】时我方全体<color=#f29e38ff>暴击率和暴击伤害提高</color>，并对敌方单体造成大量虚数属性伤害。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "云鸢逐风",
+        "fullDesc": "使用秘技后进入持续{{1}}秒的冲刺状态。冲刺状态下自身移动速度提高{{2}}%，且主动攻击敌人进入战斗时，驭空获得{{3}}层【鸣弦号令】。",
+        "shortDesc": "使自身<color=#f29e38ff>移动速度提高</color>。攻击敌人进战后获得2层【鸣弦号令】。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

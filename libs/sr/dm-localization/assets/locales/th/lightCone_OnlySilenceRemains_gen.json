@@ -1,0 +1,7 @@
+{
+  "name": "Only Silence Remains",
+  "passive": {
+    "name": "Record",
+    "description": "ทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เมื่อจำนวนศัตรูเป้าหมายในการต่อสู้มีเท่ากับหรือน้อยกว่า 2 ตัว อัตราคริติคอลของผู้สวมใส่จะเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong>"
+  }
+}

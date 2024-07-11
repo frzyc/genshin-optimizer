@@ -1,0 +1,7 @@
+{
+  "name": "Ya ha cerrado los ojos",
+  "passive": {
+    "name": "Horizonte cosmológico",
+    "description": "Los PV máx. del portador aumentan en un <orangeStrong>{{1}}%</orangeStrong> y la recuperación de energía en un <orangeStrong>{{4}}%</orangeStrong>. Cuando se reducen los PV del portador, el daño que infligen todos los aliados aumenta en un <orangeStrong>{{2}}%</orangeStrong> durante {{5}} turnos.\\nAl comienzo de cada oleada, todos los aliados regeneran un <orangeStrong>{{3}}%</orangeStrong> de los PV que les falten en ese momento."
+  }
+}

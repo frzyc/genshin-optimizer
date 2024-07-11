@@ -1,0 +1,7 @@
+{
+  "name": "Más brillante que el sol",
+  "passive": {
+    "name": "Desafiante hasta la muerte",
+    "description": "La Prob. CRIT del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando el portador usa el ATQ básico, obtiene 1 acumulación de Canto del dragón durante {{2}} turnos. Cada acumulación de Canto del dragón aumenta el ATQ del portador en un <orangeStrong>{{4}}%</orangeStrong> y la recuperación de energía en un <orangeStrong>{{5}}%</orangeStrong>. Canto del dragón se puede acumular hasta {{3}} veces."
+  }
+}

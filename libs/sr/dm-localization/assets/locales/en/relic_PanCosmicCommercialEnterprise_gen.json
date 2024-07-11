@@ -1,0 +1,6 @@
+{
+  "setName": "Pan-Cosmic Commercial Enterprise",
+  "setEffects": {
+    "2": "Increases the wearer's Effect Hit Rate by {{1}}%. Meanwhile, the wearer's ATK increases by an amount that is equal to {{2}}% of the current Effect Hit Rate, up to a maximum of {{3}}%."
+  }
+}

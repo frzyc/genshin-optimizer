@@ -1,0 +1,7 @@
+{
+  "name": "Ei, Estou Aqui!",
+  "passive": {
+    "name": "Não Tenho Medo!",
+    "description": "Aumenta os PV máximos do usuário em <orangeStrong>{{1}}%</orangeStrong>. Quando o usuário usa sua Perícia, aumenta a Cura Realizada em <orangeStrong>{{2}}%</orangeStrong>, durando por {{3}} rodada(s)."
+  }
+}

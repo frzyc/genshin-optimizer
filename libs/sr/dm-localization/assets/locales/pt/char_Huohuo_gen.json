@@ -1,0 +1,40 @@
+{
+  "name": "Huohuo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Estandarte: Invoca-Tempestades",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Huohuo a um inimigo-alvo.",
+        "shortDesc": "Causa Dano de Vento leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Talismã: Proteção",
+        "fullDesc": "Remove {{5}} <u>penalidade(s)</u> de um único aliado-alvo e restaura imediatamente PV deste aliado em uma quantidade igual a <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{2}}</orangeStrong>. Ao mesmo tempo, restaura PV dos aliados adjacentes a este aliado-alvo em uma quantidade igual a <orangeStrong>{{3}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
+        "shortDesc": "Remove 1 <u>penalidade</u> de um aliado e <color=#f29e38ff>restaura PV</color> daquele aliado e dos aliados adjacentes a ele."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Rabin: Dominação Espiritual",
+        "fullDesc": "Regenera Energia de todos os aliados (excluindo este personagem) em uma quantidade igual a <orangeStrong>{{1}}%</orangeStrong> de suas respectivas Energias máximas. Ao mesmo tempo, aumenta o ATQ deles em <orangeStrong>{{2}}%</orangeStrong> por {{3}} rodada(s).",
+        "shortDesc": "<color=#f29e38ff>Regenera a Energia</color> de todos os aliados (excluindo este personagem) e <color=#f29e38ff>aumenta o ATQ</color> deles."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Demônio: Destituição do Mal",
+        "fullDesc": "Huohuo aterroriza inimigos próximos, deixando-os Horrorizados. Inimigos Horrorizados fogem de Huohuo por {{4}} segundos. Ao entrar numa batalha com inimigos Horrorizados, há {{1}}% de <u>chance-base</u> de reduzir o ATQ de todos os inimigos em {{2}}% por {{3}} rodada(s).",
+        "shortDesc": "Deixa inimigos próximos Horrorizados. Ao entrar numa luta com inimigos Horrorizados, há altas chances de aplicar <color=#f29e38ff>redução de ATQ</color> nos inimigos-alvos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

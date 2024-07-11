@@ -1,0 +1,40 @@
+{
+  "name": "Dan Heng",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Cloudlancer Art: North Wind",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Cloudlancer Art: Torrent",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng pada 1 target musuh.\\nSaat DMG yang diakibatkan memicu CRIT Hit, ada {{4}}% <u>peluang dasar</u> untuk mengurangi {{2}}% SPD target musuh selama {{3}} giliran.",
+        "shortDesc": "Mengakibatkan Wind DMG pada 1 musuh. Berpeluang memberikan status Slow jika memicu CRIT Hit."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ethereal Dream",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng pada 1 target musuh. Jika musuh tersebut sedang berstatus Slow, maka DMG Multiplier Ultimate milik Dan Heng akan meningkat <orangeStrong>{{2}}%</orangeStrong>.",
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah besar pada 1 musuh, meningkatkan DMG Multiplier jika musuh berstatus Slow."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Splitting Spearhead",
+        "fullDesc": "Setelah menggunakan Technique, meningkatkan {{1}}% ATK Dan Heng selama {{2}} giliran pada saat pertempuran selanjutnya dimulai.",
+        "shortDesc": "Saat menggunakan Technique, ATK akan meningkat setelah memasuki pertempuran berikutnya."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Clara",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Eu Quero Ajudar",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Clara a um único inimigo.",
+        "shortDesc": "Causa Dano Físico leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Svarog Cuida de Você",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Clara a todos os inimigos e adicionalmente causa Dano Físico igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Clara a inimigos marcados por Svarog com uma Marca do Contra-Ataque.\\nApós o uso desta Perícia, todas as Marcas do Contra-Ataque serão removidas.",
+        "shortDesc": "Causa Dano Físico a todos os inimigos. <color=#f29e38ff>Adicionalmente, causa Dano Físico</color> a alvos com Marcas do Contra-Ataque."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "É Uma Promessa, Não Uma Ordem",
+        "fullDesc": "Após Clara usar sua Perícia Suprema, o Dano causado a ela é reduzido em <orangeStrong>{{4}}%</orangeStrong> extra, e ela terá muito mais chances de ser atacada por inimigos por {{3}} rodada(s).\\nAlém disso, o <u>Contra-Ataque</u> de Svarog é aprimorado. Quando um aliado é atacado, Svarog usa um <u>Contra-Ataque</u> imediatamente, e seu multiplicador de Dano contra o inimigo aumenta em <orangeStrong>{{2}}%</orangeStrong>. Inimigos adjacentes a ele sofrem <unbreak>50%</unbreak> do Dano causado ao inimigo-alvo. <u>Contra-Ataque(s)</u> aprimorado(s) podem entrar em vigor {{5}} vez(es).",
+        "shortDesc": "<color=#f29e38ff>Reduz o Dano recebido</color>, aumenta as chances de receber ataques de inimigos, e aprimora <u>Contra-Ataques</u>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Um Preço Baixo pela Vitória",
+        "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, a chance de Clara ser atacada por inimigos aumenta por {{1}} rodada(s).",
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, a chance desta personagem ser atacada por inimigos aumenta."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

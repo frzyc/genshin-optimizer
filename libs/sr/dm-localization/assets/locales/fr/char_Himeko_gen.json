@@ -1,0 +1,40 @@
+{
+  "name": "Himeko",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Accordage de la lame de scie",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Himeko à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de feu mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Détonation en fusion",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Himeko à un ennemi unique et des DGT de feu équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Himeko aux ennemis adjacents.",
+        "shortDesc": "Inflige des DGT de feu à un ennemi unique et des DGT de feu mineurs aux ennemis adjacents."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Éclat céleste",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Himeko à tous les ennemis. Himeko régénère {{2}} points d'énergie supplémentaires pour chaque ennemi vaincu.",
+        "shortDesc": "Inflige des DGT de feu à tous les ennemis et régénère des points d'énergie si des ennemis sont vaincus."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Combustion incomplète",
+        "fullDesc": "Crée une dimension qui dure {{4}} secondes. Il y a {{1}}% de <u>chances de base</u> d'augmenter les DGT de feu subis par les ennemis de {{2}}% pendant {{3}} tours après être entré en combat avec des ennemis dans la dimension. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "shortDesc": "Crée une dimension. Il y a de fortes chances d'<color=#f29e38ff>augmenter les DGT de feu subis par les ennemis</color> en engageant le combat avec des ennemis à l'intérieur de la dimension."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

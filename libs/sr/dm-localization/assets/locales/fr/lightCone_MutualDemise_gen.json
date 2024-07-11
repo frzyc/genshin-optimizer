@@ -1,0 +1,7 @@
+{
+  "name": "Destruction mutuelle",
+  "passive": {
+    "name": "Légion",
+    "description": "Les chances de coup critique du porteur augmentent de <orangeStrong>{{2}}%</orangeStrong> lorsque ses PV sont inférieurs à {{1}}%."
+  }
+}

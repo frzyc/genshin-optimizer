@@ -1,0 +1,6 @@
+{
+  "setName": "Celestial Differentiator",
+  "setEffects": {
+    "2": "Increases the wearer's CRIT DMG by {{1}}%. When the wearer's current CRIT DMG reaches {{2}}% or higher, after entering battle, the wearer's CRIT Rate increases by {{3}}% until the end of their first attack."
+  }
+}

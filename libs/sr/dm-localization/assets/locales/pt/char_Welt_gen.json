@@ -1,0 +1,40 @@
+{
+  "name": "Welt",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Supressão Gravitacional",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Welt a um único inimigo.",
+        "shortDesc": "Causa Dano Imaginário leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Borda do Vazio",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Welt a um único inimigo e causa Dano mais 2 vezes, causando Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Welt por acerto a um inimigo aleatório. Ao acertar, há uma <u>chance-base</u> de <orangeStrong>{{2}}%</orangeStrong> de reduzir em {{3}}% a VEL do inimigo por {{4}} rodada(s).",
+        "shortDesc": "Causa Dano Imaginário leve a um único inimigo. Este ataque pode ser Rebatido 3 vezes, com chance de causar <color=#f29e38ff>Lentidão</color> aos inimigos atingidos."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Buraco Negro Sintético",
+        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Welt como Dano Imaginário a todos os inimigos, com {{3}}% de <u>chance-base</u> de que inimigos atingidos por esta habilidade sejam afetados por Aprisionamento por 1 rodada.\\nInimigos aprisionados têm <u>ações atrasadas</u> em <orangeStrong>{{2}}%</orangeStrong> e VEL reduzida em {{4}}%.",
+        "shortDesc": "Causa Dano Imaginário a todos os inimigos, com <color=#f29e38ff>altas chances de também causar Aprisionamento</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Aprisionamento Gravitacional",
+        "fullDesc": "Após Welt usar sua Técnica, cria uma dimensão que dura {{4}}s. Inimigos nessa dimensão têm a VEL de Movimento reduzida em {{5}}%. Depois de entrar em batalha com inimigos na dimensão, há {{1}}% de <u>chance-base</u> de Aprisionar os inimigos por 1 rodada.\\nInimigos aprisionados têm <u>ações atrasadas</u> em {{2}}% e a VEL reduzida em {{3}}%. Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão. Inimigos nessa dimensão têm sua VEL de Movimento reduzida. Depois de entrar em combate com inimigos na dimensão, existe uma <color=#f29e38ff>alta chance dos inimigos sofrerem de Aprisionamento.</color>"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

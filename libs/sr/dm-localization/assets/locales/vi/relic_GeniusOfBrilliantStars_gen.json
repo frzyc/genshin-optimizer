@@ -1,0 +1,7 @@
+{
+  "setName": "Thiên Tài Xuất Chúng",
+  "setEffects": {
+    "2": "Tăng Sát Thương Lượng Tử {{1}}%.",
+    "4": "Khi người trang bị gây sát thương lên mục tiêu địch, sẽ bỏ qua {{1}}% Phòng Thủ của địch. Nếu mục tiêu có Điểm Yếu Lượng Tử, sẽ bỏ qua thêm {{2}}% Phòng Thủ của địch."
+  }
+}

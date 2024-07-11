@@ -1,0 +1,40 @@
+{
+  "name": "Bronya",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Tir du mistral",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Bronya à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Redéploiement de combat",
+        "fullDesc": "Dissipe un <u>malus</u> d'un allié, lui permet d'agir immédiatement et augmente ses DGT de <orangeStrong>{{1}}%</orangeStrong> pendant {{3}} tour.\\nLorsque cette compétence est utilisée sur Bronya, elle ne peut pas agir immédiatement à nouveau.",
+        "shortDesc": "<color=#f29e38ff>Dissipe</color> 1 <color=#f29e38ff><u>malus</u></color> subi par un allié unique, <color=#f29e38ff>augmente les DGT qu'il inflige</color>, et lui permet d'<color=#f29e38ff>agir immédiatement</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "La marche de Belobog",
+        "fullDesc": "Augmente l'ATQ de tous les alliés de <orangeStrong>{{1}}%</orangeStrong> et augmente leurs DGT critiques d'un montant équivalent à <orangeStrong>{{2}}%</orangeStrong> des DGT critiques de Bronya + <orangeStrong>{{3}}%</orangeStrong> pendant {{4}} tours.",
+        "shortDesc": "Augmente l'<color=#f29e38ff>ATQ</color> et les <color=#f29e38ff>DGT critiques</color> de tous les alliés."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Bannière de commandement",
+        "fullDesc": "Après utilisation de la technique de Bronya, l'ATQ de tous les alliés augmente de {{1}}% pendant {{2}} tours au début du combat suivant.",
+        "shortDesc": "Après utilisation de la technique, l'ATQ de tous les alliés augmente au début du combat suivant."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

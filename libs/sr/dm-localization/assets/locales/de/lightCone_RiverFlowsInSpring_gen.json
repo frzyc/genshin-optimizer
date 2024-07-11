@@ -1,0 +1,7 @@
+{
+  "name": "Flüsse plätschern im Frühling",
+  "passive": {
+    "name": "Die nachklingende Kälte abwehren",
+    "description": "Erhöht nach Kampfeintritt die GES des Trägers um <orangeStrong>{{1}}%</orangeStrong> und verursachten SCH um <orangeStrong>{{2}}%</orangeStrong>. Wenn der Träger SCH erleidet, wird dieser Effekt aufgehoben und nach dem Ende der nächsten Runde wieder aktiviert."
+  }
+}

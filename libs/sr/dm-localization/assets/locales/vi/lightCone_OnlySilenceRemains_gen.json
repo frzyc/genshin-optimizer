@@ -1,0 +1,7 @@
+{
+  "name": "Sự Trầm Mặc Duy Nhất",
+  "passive": {
+    "name": "Kỷ Lục",
+    "description": "Tấn công của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Khi trong trận có 2 kẻ địch trở xuống, Tỷ Lệ Bạo Kích của người trang bị tăng <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

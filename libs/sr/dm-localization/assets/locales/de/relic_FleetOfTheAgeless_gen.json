@@ -1,0 +1,6 @@
+{
+  "setName": "Flotte der Alterslosen",
+  "setEffects": {
+    "2": "Erhöht die max. LP des Trägers um {{1}}%. Wenn die GES des Trägers {{2}} oder höher erreicht, wird der ANG aller Verbündeten zusätzlich um {{3}}% erhöht."
+  }
+}

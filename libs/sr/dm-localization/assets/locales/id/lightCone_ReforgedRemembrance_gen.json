@@ -1,0 +1,7 @@
+{
+  "name": "Reforged Remembrance",
+  "passive": {
+    "name": "Crystallize",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Effect Hit Rate pengguna. Saat pengguna mengakibatkan DMG pada target musuh yang berstatus Wind Shear/Burn/Shock/Bleed, pengguna akan memperoleh masing-masing 1 lapis \"Prophet\" dari setiap jenis status prasyarat tersebut yang ada pada target, dapat ditumpuk hingga {{4}} lapis. Dalam 1 pertempuran, setiap jenis status DoT hanya dapat menciptakan 1 lapis efek \"Prophet\". Setiap lapisan \"Prophet\" akan meningkatkan <orangeStrong>{{2}}%</orangeStrong> ATK pengguna, dan DoT yang diakibatkan pengguna akan mengabaikan <orangeStrong>{{3}}%</orangeStrong> DEF target."
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "Dan Heng · Imbibitor Lunae",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Beneficent Lotus",
+        "fullDesc": "Melancarkan 2 Hit serangan untuk mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng · Imbibitor Lunae pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh."
+      },
+      "1": {
+        "name": "Transcendence",
+        "fullDesc": "Melancarkan 3 Hit serangan untuk mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng · Imbibitor Lunae pada 1 target musuh.",
+        "shortDesc": "Melancarkan <color=#f29e38ff>3 Hit</color> serangan yang mengakibatkan Imaginary DMG pada 1 musuh."
+      },
+      "2": {
+        "name": "Divine Spear",
+        "fullDesc": "Melancarkan 5 Hit serangan untuk mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng · Imbibitor Lunae pada 1 target musuh. Mulai dari Hit ke-4, akan mengakibatkan Imaginary DMG pada musuh di sekitar target sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Dan Heng · Imbibitor Lunae.",
+        "shortDesc": "Melancarkan <color=#f29e38ff>5 Hit</color> serangan untuk mengakibatkan Imaginary DMG dalam jumlah besar pada 1 musuh dan mengakibatkan Imaginary DMG dalam jumlah kecil pada musuh di sekitar target. Mendapatkan masing-masing 1 lapis \"Outroar\" sebelum pelancaran 2 Hit terakhir (Hit ke-4 dan 5). \"Outroar\" meningkatkan CRIT DMG."
+      },
+      "3": {
+        "name": "Fulgurant Leap",
+        "fullDesc": "Melancarkan 7 Hit serangan untuk mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng · Imbibitor Lunae pada 1 target musuh. Mulai dari Hit ke-4, akan mengakibatkan Imaginary DMG pada musuh di sekitar target sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Dan Heng · Imbibitor Lunae.",
+        "shortDesc": "Melancarkan <color=#f29e38ff>7 Hit</color> serangan untuk mengakibatkan Imaginary DMG dalam jumlah besar pada 1 musuh dan mengakibatkan Imaginary DMG pada musuh di sekitar target. Mendapatkan masing-masing 1 lapis \"Outroar\" sebelum pelancaran 4 Hit terakhir (Hit ke-4, 5, 6, 7). \"Outroar\" meningkatkan CRIT DMG."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Dracore Libre",
+        "fullDesc": "Memperkuat Basic ATK. Penguatan dapat dilakukan maksimal 3 kali berturut-turut. Melancarkan kemampuan ini tidak mengonsumsi Poin Skill dan tidak dianggap sebagai pelancaran Skill.\\nPerkuat sebanyak 1 kali untuk mengubah Basic ATK \"Beneficent Lotus\" menjadi \"Transcendence\".\\nPerkuat sebanyak 2 kali untuk mengubah Basic ATK \"Beneficent Lotus\" menjadi \"Divine Spear\".\\nPerkuat sebanyak 3 kali untuk mengubah Basic ATK \"Beneficent Lotus\" menjadi \"Fulgurant Leap\".\\nSaat melancarkan \"Divine Spear\" atau \"Fulgurant Leap\", akan memperoleh 1 lapis \"Outroar\" sebelum pelancaran setiap Hit serangan (dimulai dari Hit ke-4). Setiap lapis \"Outroar\" meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT DMG Dan Heng · Imbibitor Lunae. Efek ini dapat ditumpuk hingga {{2}} lapis, dan berlangsung hingga giliran dirinya berakhir.",
+        "shortDesc": "Memperkuat Basic Attack \"Beneficent Lotus\" menjadi <color=#f29e38ff>\"Transcendence\"</color>, <color=#f29e38ff>\"Divine Spear\" atau \"Fulgurant Leap\"</color>."
+      },
+      "1": {
+        "name": "Batal",
+        "fullDesc": "Batalkan Penguatan",
+        "shortDesc": ""
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Azure's Aqua Ablutes All",
+        "fullDesc": "Melancarkan 3 Hit serangan untuk mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng · Imbibitor Lunae pada 1 target musuh, serta mengakibatkan Imaginary DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Dan Heng · Imbibitor Lunae pada musuh di sekitar target. Selain itu, dirinya akan memperoleh {{3}} \"Squama Sacrosancta\".\\nMaksimal jumlah \"Squama Sacrosancta\" yang dapat dimiliki adalah {{4}}. Dan Heng · Imbibitor Lunae dapat mengonsumsi \"Squama Sacrosancta\" untuk menggantikan konsumsi Poin Skill. Mengonsumsi \"Squama Sacrosancta\" akan dianggap sama dengan mengonsumsi Poin Skill.",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah besar pada 1 musuh dan mengakibatkan Imaginary DMG pada musuh di sekitar target. Mendapatkan 2 \"Squama Sacrosancta\": Dapat digunakan untuk <color=#f29e38ff>Mengurangi</color> konsumsi Poin Skill dari Dan Heng · Imbibitor Lunae. Mengonsumsi \"Squama Sacrosancta\" dianggap sama dengan <color=#f29e38ff>mengonsumsi Poin Skill</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Heaven-Quelling Prismadrakon",
+        "fullDesc": "Setelah menggunakan Technique, Dan Heng · Imbibitor Lunae akan memasuki status \"Leaping Dragon\" selama {{2}} detik. Melancarkan serangan saat dalam status \"Leaping Dragon\" akan membuat dirinya meluncur maju dengan cepat dan menyerang musuh yang tersentuh olehnya. Saat sedang meluncur dengan cepat, dirinya akan menahan semua serangan musuh. Setelah memasuki pertempuran dengan cara menyerang musuh saat dalam status \"Leaping Dragon\", akan mengakibatkan Imaginary DMG pada seluruh musuh sebesar {{3}}% ATK Dan Heng · Imbibitor Lunae, serta memperoleh {{1}} \"Squama Sacrosancta\".",
+        "shortDesc": "Memasuki status \"Leaping Dragon\". Melancarkan serangan dapat bergerak maju dengan cepat dan serangan akan langsung mengenai musuh. Setelah memasuki pertempuran dengan menyerang musuh, akan mengakibatkan Imaginary DMG pada seluruh musuh, dan mendapatkan 1 \"Squama Sacrosancta\"."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

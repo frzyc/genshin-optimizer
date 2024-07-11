@@ -1,0 +1,6 @@
+{
+  "setName": "Belobog of the Architects",
+  "setEffects": {
+    "2": "Increases the wearer's DEF by {{1}}%. When the wearer's Effect Hit Rate is {{2}}% or higher, the wearer gains an extra {{3}}% DEF."
+  }
+}

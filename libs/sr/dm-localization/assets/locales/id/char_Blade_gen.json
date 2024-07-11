@@ -1,0 +1,45 @@
+{
+  "name": "Blade",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Shard Sword",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Blade pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
+      },
+      "1": {
+        "name": "Forest of Swords",
+        "fullDesc": "Mengonsumsi HP sebesar {{1}}% Max HP Blade dan mengakibatkan Wind DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Blade + <orangeStrong>{{4}}%</orangeStrong> Max HP Blade pada 1 musuh yang ditargetkan. Di saat bersamaan juga mengakibatkan Wind DMG sebesar <orangeStrong>{{3}}%</orangeStrong> ATK Blade + <orangeStrong>{{5}}%</orangeStrong> Max HP Blade pada musuh di sekitar target.\\nJika HP saat ini tidak cukup, HP Blade saat ini akan langsung berkurang hingga 1 saat melancarkan \"Forest of Swords\".\\n\"Forest of Swords\" tidak dapat memulihkan Poin Skill.",
+        "shortDesc": "Mengonsumsi HP diri sendiri, mengakibatkan Wind DMG pada 1 musuh, dan di saat bersamaan juga mengakibatkan Wind DMG dalam jumlah kecil pada musuh di sekitar target."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Hellscape",
+        "fullDesc": "Mengonsumsi HP sebesar {{1}}% Max HP Blade dan memasuki status \"Hellscape\".\\nSaat berstatus \"Hellscape\", Blade tidak dapat melancarkan Skill dan DMG yang diakibatkannya akan meningkat <orangeStrong>{{4}}%</orangeStrong>. Basic Attack \"Shard Sword\" akan meningkat menjadi \"Forest of Swords\" selama {{2}} giliran.\\nJika HP-nya tidak mencukupi, saat melancarkan Skill, HP Blade akan berkurang hingga 1.\\nSkill ini tidak dapat memulihkan Energy. Setelah melancarkan Skill ini, giliran saat ini tidak akan berakhir.",
+        "shortDesc": "Mengonsumsi HP diri, <color=#f29e38ff>memperoleh penguatan Basic Attack</color>, dan giliran kali ini tidak akan berakhir."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Death Sentence",
+        "fullDesc": "Mengubah HP Blade saat ini menjadi <unbreak>50%</unbreak> dari Max HP-nya, serta mengakibatkan Wind DMG pada 1 musuh sebesar <orangeStrong>{{1}}%</orangeStrong> ATK + <orangeStrong>{{2}}%</orangeStrong> Max HP + <orangeStrong>{{5}}%</orangeStrong> perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini. Di saat yang bersamaan juga akan mengakibatkan Wind DMG pada target di sekitarnya sebesar <orangeStrong>{{3}}%</orangeStrong> ATK + <orangeStrong>{{4}}%</orangeStrong> Max HP + <orangeStrong>{{6}}%</orangeStrong> perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini.\\nPerhitungan jumlah akumulasi HP Blade yang berkurang di pertempuran saat ini maksimal tidak dapat melebihi {{7}}% Max HP Blade. Setelah melancarkan Ultimate, perhitungan jumlah akumulasi akan direset ulang dan diakumulasi kembali.",
+        "shortDesc": "Mengonversi HP saat ini menjadi <unbreak>50%</unbreak> Max HP, dan mengakibatkan Wind DMG dalam jumlah besar pada 1 musuh, serta Wind DMG pada target di sekitarnya."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Karma Wind",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengonsumsi HP sebesar {{2}}% Max HP Blade dan di saat bersamaan, mengakibatkan Wind DMG sebesar {{1}}% Max HP Blade pada seluruh musuh.\\nJika HP saat ini tidak cukup, saat melancarkan Technique, HP Blade saat ini akan berkurang hingga 1.",
+        "shortDesc": "Menyerang musuh. Setelah memasuki pertempuran, mengonsumsi HP diri sendiri dan mengakibatkan Wind DMG pada seluruh musuh."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

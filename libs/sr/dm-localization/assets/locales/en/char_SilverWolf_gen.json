@@ -1,0 +1,40 @@
+{
+  "name": "Silver Wolf",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "System Warning",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Silver Wolf's ATK to a single enemy.",
+        "shortDesc": "Deals minor Quantum DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Allow Changes?",
+        "fullDesc": "There is a <orangeStrong>{{2}}%</orangeStrong> <u>base chance</u> to add 1 Weakness of an on-field character's Type to the target enemy. This also reduces the enemy's DMG RES to that Weakness Type by {{4}}% for {{3}} turn(s). If the enemy already has that Type Weakness, the effect of DMG RES reduction to that Weakness Type will not be triggered.\\nEach enemy can only have 1 Weakness implanted by Silver Wolf. When Silver Wolf implants another Weakness to the target, only the most recent implanted Weakness will be kept.\\nIn addition, there is a {{5}}% <u>base chance</u> to further reduce the All-Type RES of the enemy by <orangeStrong>{{6}}%</orangeStrong> for {{7}} turn(s).\\nDeals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Silver Wolf's ATK to this enemy.",
+        "shortDesc": "There is a high chance to <color=#f29e38ff>apply additional Type Weaknesses</color> to a single enemy and deals Quantum DMG to this target enemy."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "User Banned",
+        "fullDesc": "There's a <orangeStrong>{{2}}%</orangeStrong> <u>base chance</u> to decrease the target enemy's DEF by <orangeStrong>{{3}}%</orangeStrong> for {{4}} turn(s). And at the same time, deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Silver Wolf's ATK to the target enemy.",
+        "shortDesc": "There is a high chance of <color=#f29e38ff>lowering a single enemy's DEF</color> and deals massive Quantum DMG to this target enemy."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Force Quit Program",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Quantum DMG equal to {{1}}% of Silver Wolf's ATK to all enemies, and ignores Weakness Types and reduces Toughness from all enemies. Enemies with their Weakness Broken in this way will trigger the Quantum Weakness Break effect.",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor DMG to all enemies and reduces Toughness of all enemies irrespective of Weakness Types."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  }
+}
