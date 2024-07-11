@@ -2,6 +2,6 @@
   "name": "{RUBY_B#けつい}決意{RUBY_E#}は{RUBY_B#あせ}汗{RUBY_E#}のように{RUBY_B#かがや}輝{RUBY_E#}く",
   "passive": {
     "name": "{RUBY_B#ふ}振{RUBY_E#}り{RUBY_B#かえ}返{RUBY_E#}って",
-    "description": "装備キャラの攻撃が敵に命中した時、その敵が「陥落」状態でない場合、<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>の基礎確率で敵を「陥落」状態にする。「陥落」状態の敵は防御力-<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>、<unbreak>#3[i]</unbreak>ターン継続。"
+    "description": "装備キャラの攻撃が敵に命中した時、その敵が「陥落」状態でない場合、<orangeStrong>{{1}}%</orangeStrong>の基礎確率で敵を「陥落」状態にする。「陥落」状態の敵は防御力-<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。"
   }
 }

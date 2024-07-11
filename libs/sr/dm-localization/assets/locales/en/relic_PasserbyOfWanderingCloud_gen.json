@@ -1,7 +1,7 @@
 {
   "setName": "Passerby of Wandering Cloud",
   "setEffects": {
-    "2": "Increases Outgoing Healing by <unbreak>#1[i]%</unbreak>.",
+    "2": "Increases Outgoing Healing by {{1}}%.",
     "4": "At the start of the battle, immediately regenerates 1 Skill Point."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Llave maestra",
   "passive": {
     "name": "Epifanía",
-    "description": "Tras usar la habilidad básica, el portador recupera <color=#f29e38ff><unbreak>#1[i]</unbreak></color> pts. de energía adicionales. Este efecto solo se puede activar una vez por turno."
+    "description": "Tras usar la habilidad básica, el portador recupera <orangeStrong>{{1}}</orangeStrong> pts. de energía adicionales. Este efecto solo se puede activar una vez por turno."
   }
 }

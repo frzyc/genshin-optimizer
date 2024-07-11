@@ -2,6 +2,6 @@
   "name": "Incessant Rain",
   "passive": {
     "name": "Mirage of Reality",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Effect Hit Rate pengguna. Saat pengguna mengakibatkan DMG pada target yang memiliki lebih dari atau sama dengan <unbreak>#4[i]</unbreak> Debuff, CRIT Rate pengguna akan meningkat <color=#f29e38ff><unbreak>#5[i]%</unbreak></color>. Setelah pengguna melancarkan Basic Attack, Skill, atau Ultimate, pengguna memiliki <unbreak>#2[i]%</unbreak> peluang dasar untuk secara acak menambahkan status \"Aether Code\" pada 1 target yang terkena serangannya dan belum memiliki \"Aether Code\". DMG yang diterima target berstatus \"Aether Code\" akan meningkat <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> selama 1 giliran."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Effect Hit Rate pengguna. Saat pengguna mengakibatkan DMG pada target yang memiliki lebih dari atau sama dengan {{4}} Debuff, CRIT Rate pengguna akan meningkat <orangeStrong>{{5}}%</orangeStrong>. Setelah pengguna melancarkan Basic Attack, Skill, atau Ultimate, pengguna memiliki {{2}}% peluang dasar untuk secara acak menambahkan status \"Aether Code\" pada 1 target yang terkena serangannya dan belum memiliki \"Aether Code\". DMG yang diterima target berstatus \"Aether Code\" akan meningkat <orangeStrong>{{3}}%</orangeStrong> selama 1 giliran."
   }
 }

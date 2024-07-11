@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "极寒的弓矢",
-        "fullDesc": "对指定敌方单体造成等同于三月七<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的冰属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于三月七<orangeStrong>{{1}}%</orangeStrong>攻击力的冰属性伤害。",
         "shortDesc": "对敌方单体造成少量冰属性伤害。"
       }
     },
     "skill": {
       "0": {
         "name": "可爱即是正义",
-        "fullDesc": "为指定我方单体提供能够抵消等同于三月七<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>防御力+<color=#f29e38ff><unbreak>#4[i]</unbreak></color>伤害的护盾，持续<unbreak>#2[i]</unbreak>回合。\\n若该目标当前生命值百分比大于等于<unbreak>#3[i]%</unbreak>，被敌方攻击的概率大幅提高。",
+        "fullDesc": "为指定我方单体提供能够抵消等同于三月七<orangeStrong>{{1}}%</orangeStrong>防御力+<orangeStrong>{{4}}</orangeStrong>伤害的护盾，持续{{2}}回合。\\n若该目标当前生命值百分比大于等于{{3}}%，被敌方攻击的概率大幅提高。",
         "shortDesc": "对我方单体<color=#f29e38ff>施加护盾</color>。"
       }
     },
     "ult": {
       "0": {
         "name": "冰刻箭雨之时",
-        "fullDesc": "对敌方全体造成等同于三月七<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的冰属性伤害。受到攻击的敌方目标有<unbreak>#2[i]%</unbreak><u>基础概率</u>陷入冻结状态，持续<unbreak>#3[i]</unbreak>回合。\\n冻结状态下，敌方目标不能行动同时每回合开始时受到等同于三月七<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>攻击力的冰属性<u>附加伤害</u>。",
+        "fullDesc": "对敌方全体造成等同于三月七<orangeStrong>{{1}}%</orangeStrong>攻击力的冰属性伤害。受到攻击的敌方目标有{{2}}%<u>基础概率</u>陷入冻结状态，持续{{3}}回合。\\n冻结状态下，敌方目标不能行动同时每回合开始时受到等同于三月七<orangeStrong>{{4}}%</orangeStrong>攻击力的冰属性<u>附加伤害</u>。",
         "shortDesc": "对敌方<color=#f29e38ff>全体</color>造成冰属性伤害，有<color=#f29e38ff>概率施加冻结状态</color>。"
       }
     },
     "technique": {
       "0": {
         "name": "冻人的瞬间",
-        "fullDesc": "立即攻击敌人，进入战斗后有<unbreak>#1[i]%</unbreak>的<u>基础概率</u>使随机敌方单体陷入冻结状态，持续<unbreak>#2[i]</unbreak>回合。\\n冻结状态下，敌方目标不能行动同时每回合开始时受到等同于三月七<unbreak>#3[i]%</unbreak>攻击力的冰属性<u>附加伤害</u>。",
+        "fullDesc": "立即攻击敌人，进入战斗后有{{1}}%的<u>基础概率</u>使随机敌方单体陷入冻结状态，持续{{2}}回合。\\n冻结状态下，敌方目标不能行动同时每回合开始时受到等同于三月七{{3}}%攻击力的冰属性<u>附加伤害</u>。",
         "shortDesc": "攻击敌人，进战后大概率使敌方随机单体陷入冻结状态。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
-        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "shortDesc": ""
       }
     }
   }

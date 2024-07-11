@@ -2,6 +2,6 @@
   "name": "¡A bailar!",
   "passive": {
     "name": "¡No puedo detenerme!",
-    "description": "Cuando el portador usa la habilidad definitiva, la acción de todos los aliados se adelanta un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+    "description": "Cuando el portador usa la habilidad definitiva, la acción de todos los aliados se adelanta un <orangeStrong>{{1}}%</orangeStrong>."
   }
 }

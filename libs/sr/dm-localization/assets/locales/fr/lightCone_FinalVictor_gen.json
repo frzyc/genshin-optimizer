@@ -2,6 +2,6 @@
   "name": "Pari gagnant",
   "passive": {
     "name": "Tapis",
-    "description": "Augmente l'ATQ du porteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Lorsque le porteur inflige un coup critique à un ennemi, il gagne 1 cumul de Bonne fortune. Cet effet est cumulable jusqu'à <unbreak>#3[i]</unbreak> fois. Les DGT critiques du porteur augmentent de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> pour chaque cumul de Bonne fortune. L'effet Bonne fortune est supprimé à la fin du tour."
+    "description": "Augmente l'ATQ du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur inflige un coup critique à un ennemi, il gagne 1 cumul de Bonne fortune. Cet effet est cumulable jusqu'à {{3}} fois. Les DGT critiques du porteur augmentent de <orangeStrong>{{2}}%</orangeStrong> pour chaque cumul de Bonne fortune. L'effet Bonne fortune est supprimé à la fin du tour."
   }
 }

@@ -2,6 +2,6 @@
   "name": "幽邃",
   "passive": {
     "name": "沉沦",
-    "description": "战斗开始时，使装备者的效果命中提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，持续<unbreak>#2[i]</unbreak>回合。"
+    "description": "战斗开始时，使装备者的效果命中提高<orangeStrong>{{1}}%</orangeStrong>，持续{{2}}回合。"
   }
 }

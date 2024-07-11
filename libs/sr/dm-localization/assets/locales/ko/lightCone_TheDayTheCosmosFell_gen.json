@@ -2,6 +2,6 @@
   "name": "은하 함락의 날",
   "passive": {
     "name": "공략",
-    "description": "장착한 캐릭터의 공격력이 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 장착한 캐릭터가 공격 발동 후 피격된 적 2기 이상이 대응하는 약점 속성을 보유하고 있으면 장착한 캐릭터의 치명타 피해가 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다, 지속 시간: <unbreak>#3[i]</unbreak>턴"
+    "description": "장착한 캐릭터의 공격력이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 공격 발동 후 피격된 적 2기 이상이 대응하는 약점 속성을 보유하고 있으면 장착한 캐릭터의 치명타 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가한다, 지속 시간: {{3}}턴"
   }
 }

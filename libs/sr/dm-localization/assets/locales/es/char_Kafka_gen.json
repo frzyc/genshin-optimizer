@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Tumulto a medianoche",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Kafka como Daño de Rayo a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Kafka como Daño de Rayo a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Luna acariciadora",
-        "fullDesc": "Kafka inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de su ATQ como Daño de Rayo a un enemigo y un <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> de su ATQ como Daño de Rayo a los enemigos adyacentes.\\nSi el objetivo principal está afectado por estados de Daño con el tiempo, todos los efectos de Daño con el tiempo que tenga producen inmediatamente un daño equivalente al <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de su daño original.",
+        "fullDesc": "Kafka inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo y un <orangeStrong>{{3}}%</orangeStrong> de su ATQ como Daño de Rayo a los enemigos adyacentes.\\nSi el objetivo principal está afectado por estados de Daño con el tiempo, todos los efectos de Daño con el tiempo que tenga producen inmediatamente un daño equivalente al <orangeStrong>{{2}}%</orangeStrong> de su daño original.",
         "shortDesc": "Inflige Daño de Rayo a un enemigo y una pequeña cantidad de Daño de Rayo a los enemigos adyacentes.\\nSi el objetivo principal está afectado por estados negativos de Daño con el tiempo, estos <color=#f29e38ff>infligen daño 1 vez adicional</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Gorjeo del ocaso",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Kafka como Daño de Rayo a todos los enemigos y tiene una <u>probabilidad base</u> del <unbreak>#2[i]%</unbreak> de afectar con Electrocución a los enemigos atacados durante <unbreak>#3[i]</unbreak> turnos y hacer que reciban inmediatamente un <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> del daño original de Electrocución recibido.\\nLos enemigos electrocutados reciben un Daño de Rayo con el tiempo equivalente al <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> del ATQ de Kafka al comienzo de cada turno.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Kafka como Daño de Rayo a todos los enemigos y tiene una <u>probabilidad base</u> del {{2}}% de afectar con Electrocución a los enemigos atacados durante {{3}} turnos y hacer que reciban inmediatamente un <orangeStrong>{{5}}%</orangeStrong> del daño original de Electrocución recibido.\\nLos enemigos electrocutados reciben un Daño de Rayo con el tiempo equivalente al <orangeStrong>{{4}}%</orangeStrong> del ATQ de Kafka al comienzo de cada turno.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a todos los enemigos y tiene una gran probabilidad de <color=#f29e38ff>afectarlos con Electrocución</color>.\\nSi los objetivos están ya electrocutados, este estado <color=#f29e38ff>inflige daño 1 vez adicional</color>."
       }
     },
     "technique": {
       "0": {
         "name": "La clemencia no es perdón",
-        "fullDesc": "Ataca inmediatamente a todos los enemigos de un área determinada y entra en combate. Inflige un <unbreak>#3[i]%</unbreak> del ATQ de Kafka como Daño de Rayo a todos los enemigos. Además, cada enemigo tiene una <u>probabilidad base</u> del <unbreak>#1[i]%</unbreak> de ser afectado por una Electrocución equivalente a la de la habilidad definitiva durante <unbreak>#2[i]</unbreak> turnos.",
+        "fullDesc": "Ataca inmediatamente a todos los enemigos de un área determinada y entra en combate. Inflige un {{3}}% del ATQ de Kafka como Daño de Rayo a todos los enemigos. Además, cada enemigo tiene una <u>probabilidad base</u> del {{1}}% de ser afectado por una Electrocución equivalente a la de la habilidad definitiva durante {{2}} turnos.",
         "shortDesc": "Ataca a todos los enemigos de un área determinada e inflige una pequeña cantidad de Daño de Rayo a todos ellos tras entrar en combate. Gran probabilidad de <color=#f29e38ff>afectarlos con Electrocución</color>."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
       }
     }
   }

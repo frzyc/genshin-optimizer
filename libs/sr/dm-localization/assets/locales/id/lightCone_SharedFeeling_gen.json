@@ -2,6 +2,6 @@
   "name": "Shared Feeling",
   "passive": {
     "name": "Cure and Repair",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Outgoing Healing pengguna. Saat melancarkan Skill akan memulihkan <color=#f29e38ff><unbreak>#2[f1]</unbreak></color> Energy seluruh rekan tim."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Outgoing Healing pengguna. Saat melancarkan Skill akan memulihkan <orangeStrong>{{2}}</orangeStrong> Energy seluruh rekan tim."
   }
 }

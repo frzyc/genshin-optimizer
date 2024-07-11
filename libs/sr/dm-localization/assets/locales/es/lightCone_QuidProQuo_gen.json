@@ -2,6 +2,6 @@
   "name": "Intercambio equivalente",
   "passive": {
     "name": "Alegría apropiada",
-    "description": "Al comienzo del turno del portador, recupera <color=#f29e38ff><unbreak>#2[i]</unbreak></color> pts. de energía para otro aliado al azar cuyo porcentaje de energía sea inferior al <unbreak>#1[i]%</unbreak>."
+    "description": "Al comienzo del turno del portador, recupera <orangeStrong>{{2}}</orangeStrong> pts. de energía para otro aliado al azar cuyo porcentaje de energía sea inferior al {{1}}%."
   }
 }

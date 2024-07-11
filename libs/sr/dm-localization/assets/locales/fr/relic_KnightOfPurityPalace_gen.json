@@ -1,7 +1,7 @@
 {
   "setName": "Chevalier du palais de la pureté",
   "setEffects": {
-    "2": "Augmente de <unbreak>#1[i]%</unbreak> la DÉF.",
-    "4": "Augmente de <unbreak>#1[i]%</unbreak> les DGT max absorbés par le bouclier créé par le porteur."
+    "2": "Augmente de {{1}}% la DÉF.",
+    "4": "Augmente de {{1}}% les DGT max absorbés par le bouclier créé par le porteur."
   }
 }

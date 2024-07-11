@@ -1,6 +1,6 @@
 {
   "setName": "Sigonia, the Unclaimed Desolation",
   "setEffects": {
-    "2": "Increases the wearer's CRIT Rate by <unbreak>#3[i]%</unbreak>. When an enemy target gets defeated, the wearer's CRIT DMG increases by <unbreak>#1[i]%</unbreak>, stacking up to <unbreak>#2[i]</unbreak> time(s)."
+    "2": "Increases the wearer's CRIT Rate by {{3}}%. When an enemy target gets defeated, the wearer's CRIT DMG increases by {{1}}%, stacking up to {{2}} time(s)."
   }
 }

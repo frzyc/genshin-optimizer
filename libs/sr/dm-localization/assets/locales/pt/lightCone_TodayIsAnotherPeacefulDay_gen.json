@@ -2,6 +2,6 @@
   "name": "Hoje é Mais um Dia de Paz",
   "passive": {
     "name": "Uma Tempestade se Aproxima",
-    "description": "Ao entrar na batalha, aumenta o Dano do usuário com base em sua Energia Máxima. Aumenta em <color=#f29e38ff><unbreak>#1[f2]%</unbreak></color> o Dano por ponto de Energia, até <unbreak>#2[i]</unbreak> de Energia."
+    "description": "Ao entrar na batalha, aumenta o Dano do usuário com base em sua Energia Máxima. Aumenta em <orangeStrong>{{1}}%</orangeStrong> o Dano por ponto de Energia, até {{2}} de Energia."
   }
 }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Luz fría, filo helado",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Arista apedreadracos",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Yanqing como Daño de Hielo a un enemigo y activa Estocada empática durante 1 turno.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo y activa Estocada empática durante 1 turno.",
         "shortDesc": "Inflige Daño de Hielo a un enemigo y activa Estocada empática."
       }
     },
     "ult": {
       "0": {
         "name": "Persecución pluvial de la golondrina",
-        "fullDesc": "Aumenta su Prob. CRIT en un <unbreak>#1[i]%</unbreak>. Cuando Estocada empática está activa, su Daño CRIT aumenta en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> adicional. Estos <u>efectos positivos</u> duran 1 turno. A continuación, inflige un <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
+        "fullDesc": "Aumenta su Prob. CRIT en un {{1}}%. Cuando Estocada empática está activa, su Daño CRIT aumenta en un <orangeStrong>{{2}}%</orangeStrong> adicional. Estos <u>efectos positivos</u> duran 1 turno. A continuación, inflige un <orangeStrong>{{3}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
         "shortDesc": "Aumenta su Prob. CRIT y potencia Estocada empática. Inflige una gran cantidad de Daño de Hielo a un enemigo."
       }
     },
     "technique": {
       "0": {
         "name": "Maestría de espada",
-        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, Yanqing inflige un <unbreak>#2[i]%</unbreak> más de daño durante <unbreak>#3[i]</unbreak> turnos a los enemigos que tengan un porcentaje de PV igual o superior al <unbreak>#1[i]%</unbreak>.",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, Yanqing inflige un {{2}}% más de daño durante {{3}} turnos a los enemigos que tengan un porcentaje de PV igual o superior al {{1}}%.",
         "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, aumenta el daño que inflige a los enemigos que tengan un porcentaje de PV igual o superior al <unbreak>50%</unbreak>."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
       }
     }
   }

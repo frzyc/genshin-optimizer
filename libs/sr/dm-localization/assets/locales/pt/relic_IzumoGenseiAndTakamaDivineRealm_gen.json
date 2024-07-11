@@ -1,6 +1,6 @@
 {
   "setName": "Izumo Gensei e Reino Divino de Takama",
   "setEffects": {
-    "2": "Aumenta o ATQ do usuário em <unbreak>#1[i]%</unbreak>. Ao entrar em batalha, se ao menos um outro aliado seguir o mesmo Caminho que o usuário, a Chance de CRIT do usuário aumenta em <unbreak>#2[i]%</unbreak>."
+    "2": "Aumenta o ATQ do usuário em {{1}}%. Ao entrar em batalha, se ao menos um outro aliado seguir o mesmo Caminho que o usuário, a Chance de CRIT do usuário aumenta em {{2}}%."
   }
 }

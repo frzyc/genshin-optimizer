@@ -2,6 +2,6 @@
   "name": "La naissance du moi",
   "passive": {
     "name": "La fille dans le tableau",
-    "description": "Les DGT des attaques de suivi lancées par le porteur augmentent de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Si les PV de la cible ennemie sont inférieurs ou égaux à <unbreak>#2[i]%</unbreak>, les DGT des attaques de suivi augmentent de <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> supplémentaires."
+    "description": "Les DGT des attaques de suivi lancées par le porteur augmentent de <orangeStrong>{{1}}%</orangeStrong>. Si les PV de la cible ennemie sont inférieurs ou égaux à {{2}}%, les DGT des attaques de suivi augmentent de <orangeStrong>{{3}}%</orangeStrong> supplémentaires."
   }
 }

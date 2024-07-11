@@ -2,6 +2,6 @@
   "name": "Fruit délicat",
   "passive": {
     "name": "Saveur",
-    "description": "Tous les alliés régénèrent immédiatement <color=#f29e38ff><unbreak>#1[i]</unbreak></color> points d'énergie en début de combat."
+    "description": "Tous les alliés régénèrent immédiatement <orangeStrong>{{1}}</orangeStrong> points d'énergie en début de combat."
   }
 }

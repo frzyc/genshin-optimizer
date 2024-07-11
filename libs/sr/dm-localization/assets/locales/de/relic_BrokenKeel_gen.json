@@ -1,6 +1,6 @@
 {
   "setName": "Gebrochener Kiel",
   "setEffects": {
-    "2": "Der Effekt-WDS des Trägers wird um <unbreak>#1[i]%</unbreak> erhöht. Wenn der Effekt-WDS des Trägers <unbreak>#2[i]%</unbreak> oder mehr beträgt, wird der KRIT-SCH aller Verbündeten um <unbreak>#3[i]%</unbreak> erhöht."
+    "2": "Der Effekt-WDS des Trägers wird um {{1}}% erhöht. Wenn der Effekt-WDS des Trägers {{2}}% oder mehr beträgt, wird der KRIT-SCH aller Verbündeten um {{3}}% erhöht."
   }
 }

@@ -1,6 +1,6 @@
 {
   "setName": "Estação de Vedação Espacial",
   "setEffects": {
-    "2": "Aumenta em <unbreak>#1[i]%</unbreak> o ATQ do usuário. Quando a VEL do usuário chegar a <unbreak>#2[i]</unbreak> ou mais, aumenta em um extra de <unbreak>#3[i]%</unbreak> o ATQ do usuário."
+    "2": "Aumenta em {{1}}% o ATQ do usuário. Quando a VEL do usuário chegar a {{2}} ou mais, aumenta em um extra de {{3}}% o ATQ do usuário."
   }
 }

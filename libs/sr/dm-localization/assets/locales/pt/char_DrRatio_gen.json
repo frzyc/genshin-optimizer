@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "A Mente É Poderosa",
-        "fullDesc": "Causa Dano Imaginário igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ do Dr. Ratio a um único inimigo-alvo.",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ do Dr. Ratio a um único inimigo-alvo.",
         "shortDesc": "Causa Dano Imaginário leve a um único inimigo-alvo."
       }
     },
     "skill": {
       "0": {
         "name": "Obstetrícia Intelectual",
-        "fullDesc": "Causa Dano Imaginário igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ do Dr. Ratio a um único inimigo.",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ do Dr. Ratio a um único inimigo.",
         "shortDesc": "Causa Dano Imaginário a um único inimigo."
       }
     },
     "ult": {
       "0": {
         "name": "Paradoxo Silogístico",
-        "fullDesc": "Causa Dano Imaginário igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ do Dr. Ratio a um único inimigo-alvo e aplica a Tolice do Sábio. Quando os aliados do Dr. Ratio atacam um alvo afligido com Tolice do Sábio, o Dr. Ratio realiza o <u>Ataque Extra</u> do seu Talento 1 vez contra o alvo.\\nA Tolice do Sábio pode ser ativada até <unbreak>#2[i]</unbreak> vezes e só afeta o alvo mais recente da Perícia Suprema do Dr. Ratio. Essa contagem de ativação reinicia depois que a Perícia Suprema do Dr. Ratio é utilizada.",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ do Dr. Ratio a um único inimigo-alvo e aplica a Tolice do Sábio. Quando os aliados do Dr. Ratio atacam um alvo afligido com Tolice do Sábio, o Dr. Ratio realiza o <u>Ataque Extra</u> do seu Talento 1 vez contra o alvo.\\nA Tolice do Sábio pode ser ativada até {{2}} vezes e só afeta o alvo mais recente da Perícia Suprema do Dr. Ratio. Essa contagem de ativação reinicia depois que a Perícia Suprema do Dr. Ratio é utilizada.",
         "shortDesc": "Causa Dano Imaginário a um único inimigo-alvo e aplica Tolice do Sábio. Quando os aliados do Dr. Ratio atacam um alvo afligido com Tolice do Sábio, o Dr. Ratio realiza 1 <color=#f29e38ff><u>Ataque Extra</u></color> contra este alvo."
       }
     },
     "technique": {
       "0": {
         "name": "Molde da Idolatria",
-        "fullDesc": "Após usar a Técnica, cria uma dimensão que causa Provocação nos inimigos próximos, durando por <unbreak>#1[i]</unbreak> segundo(s). Após entrar em combate com inimigos nesta dimensão, há uma <u>chance-base</u> de <unbreak>#2[i]%</unbreak> de reduzir a VEL de cada inimigo-alvo em <unbreak>#3[i]%</unbreak> por <unbreak>#4[i]</unbreak> rodada(s). Apenas 1 dimensão criada pelos aliados pode existir ao mesmo tempo.",
+        "fullDesc": "Após usar a Técnica, cria uma dimensão que causa Provocação nos inimigos próximos, durando por {{1}} segundo(s). Após entrar em combate com inimigos nesta dimensão, há uma <u>chance-base</u> de {{2}}% de reduzir a VEL de cada inimigo-alvo em {{3}}% por {{4}} rodada(s). Apenas 1 dimensão criada pelos aliados pode existir ao mesmo tempo.",
         "shortDesc": "Cria uma dimensão. Inimigos dentro dessa dimensão sofrem Provocação. Após entrar em combate com inimigos nesta dimensão, há uma alta chance de reduzir a <color=#f29e38ff>VEL</color> dos inimigos-alvo."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

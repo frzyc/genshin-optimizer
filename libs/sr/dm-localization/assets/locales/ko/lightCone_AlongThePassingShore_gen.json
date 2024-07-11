@@ -2,6 +2,6 @@
   "name": "흘러가는 강가를 따라",
   "passive": {
     "name": "뱃사공",
-    "description": "장착한 캐릭터의 치명타 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 장착한 캐릭터가 적 명중 시 적을 [포영] 상태에 빠트린다. 지속 시간: 1턴. 장착한 캐릭터가 공격할 때마다 적 1기당 1회만 발동한다. 장착한 캐릭터가 [포영] 상태에 빠진 적에게 가하는 피해가 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가하고, 필살기로 가하는 피해가 추가로 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> 증가한다"
+    "description": "장착한 캐릭터의 치명타 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 적 명중 시 적을 [포영] 상태에 빠트린다. 지속 시간: 1턴. 장착한 캐릭터가 공격할 때마다 적 1기당 1회만 발동한다. 장착한 캐릭터가 [포영] 상태에 빠진 적에게 가하는 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가하고, 필살기로 가하는 피해가 추가로 <orangeStrong>{{3}}%</orangeStrong> 증가한다"
   }
 }

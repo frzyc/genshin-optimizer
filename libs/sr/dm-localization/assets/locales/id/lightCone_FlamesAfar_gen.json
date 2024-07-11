@@ -2,6 +2,6 @@
   "name": "Flames Afar",
   "passive": {
     "name": "Deflagration",
-    "description": "Saat pengguna kehilangan HP sebesar total lebih dari <unbreak>#1[i]%</unbreak> Max HP dirinya dalam 1 serangan yang diterimanya, atau ketika mengonsumsi HP diri lebih dari <unbreak>#1[i]%</unbreak> Max HP dirinya (dalam 1 kali konsumsi), maka akan segera memulihkan HP dirinya sebesar <unbreak>#3[i]%</unbreak> Max HP pengguna serta meningkatkan <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> DMG yang diakibatkan pengguna selama <unbreak>#4[i]</unbreak> giliran. Efek ini hanya dapat terpicu 1 kali setiap <unbreak>#5[i]</unbreak> giliran."
+    "description": "Saat pengguna kehilangan HP sebesar total lebih dari {{1}}% Max HP dirinya dalam 1 serangan yang diterimanya, atau ketika mengonsumsi HP diri lebih dari {{1}}% Max HP dirinya (dalam 1 kali konsumsi), maka akan segera memulihkan HP dirinya sebesar {{3}}% Max HP pengguna serta meningkatkan <orangeStrong>{{2}}%</orangeStrong> DMG yang diakibatkan pengguna selama {{4}} giliran. Efek ini hanya dapat terpicu 1 kali setiap {{5}} giliran."
   }
 }

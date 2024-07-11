@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Agressão",
-        "fullDesc": "Causa Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Seele a um único inimigo.",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Seele a um único inimigo.",
         "shortDesc": "Causa Dano Quântico leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Lâmina Embainhada",
-        "fullDesc": "Aumenta a VEL de Seele em <unbreak>#2[i]%</unbreak> por <unbreak>#3[i]</unbreak> rodada(s) e causa Dano Quântico equivalente a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Seele a um inimigo.",
+        "fullDesc": "Aumenta a VEL de Seele em {{2}}% por {{3}} rodada(s) e causa Dano Quântico equivalente a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Seele a um inimigo.",
         "shortDesc": "Causa Dano Quântico a um único inimigo e aumenta a VEL."
       }
     },
     "ult": {
       "0": {
         "name": "Enxurrada de Borboletas",
-        "fullDesc": "Seele entra no modo melhorado e causa Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ dela a um único inimigo.",
+        "fullDesc": "Seele entra no modo melhorado e causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ dela a um único inimigo.",
         "shortDesc": "Entra no <color=#f29e38ff>modo melhorado</color> e causa Dano Quântico massivo a um único inimigo."
       }
     },
     "technique": {
       "0": {
         "name": "Ilusão Factícia",
-        "fullDesc": "Após usar a sua Técnica, Seele ganha Furtividade por <unbreak>#1[i]</unbreak>s. Enquanto o efeito de Furtividade estiver ativo, Seele não pode ser detectada por inimigos. Ao entrar em uma batalha atacando inimigos, Seele entrará no modo melhorado imediatamente.",
+        "fullDesc": "Após usar a sua Técnica, Seele ganha Furtividade por {{1}}s. Enquanto o efeito de Furtividade estiver ativo, Seele não pode ser detectada por inimigos. Ao entrar em uma batalha atacando inimigos, Seele entrará no modo melhorado imediatamente.",
         "shortDesc": "Entra no modo de <color=#f29e38ff>Furtividade</color>. Após atacar um inimigo e entrar em batalha, entra no <color=#f29e38ff>modo melhorado</color>."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

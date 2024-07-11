@@ -2,6 +2,6 @@
   "name": "Nhân Danh Thế Giới",
   "passive": {
     "name": "Người Kế Thừa",
-    "description": "Khiến sát thương mà người trang bị gây cho kẻ địch đang trong Hiệu Ứng Xấu tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Khi người trang bị thi triển Chiến Kỹ, Chính Xác Hiệu Ứng của lần tấn công này của người trang bị sẽ tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, Tấn Công tăng <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+    "description": "Khiến sát thương mà người trang bị gây cho kẻ địch đang trong Hiệu Ứng Xấu tăng <orangeStrong>{{1}}%</orangeStrong>. Khi người trang bị thi triển Chiến Kỹ, Chính Xác Hiệu Ứng của lần tấn công này của người trang bị sẽ tăng <orangeStrong>{{2}}%</orangeStrong>, Tấn Công tăng <orangeStrong>{{3}}%</orangeStrong>."
   }
 }

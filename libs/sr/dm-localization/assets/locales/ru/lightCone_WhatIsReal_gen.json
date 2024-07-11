@@ -2,6 +2,6 @@
   "name": "Что есть реальность?",
   "passive": {
     "name": "Предположение",
-    "description": "Эффект пробития владельца повышается на <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Базовые атаки владельца восстанавливают <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> его НР плюс <unbreak>#3[i]</unbreak> ед."
+    "description": "Эффект пробития владельца повышается на <orangeStrong>{{1}}%</orangeStrong>. Базовые атаки владельца восстанавливают <orangeStrong>{{2}}%</orangeStrong> его НР плюс {{3}} ед."
   }
 }

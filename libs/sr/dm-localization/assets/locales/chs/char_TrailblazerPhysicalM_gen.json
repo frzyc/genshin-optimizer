@@ -4,44 +4,46 @@
     "basic": {
       "0": {
         "name": "再见安打",
-        "fullDesc": "对指定敌方单体造成等同于开拓者<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的物理属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "对敌方单体造成少量物理属性伤害。"
       }
     },
     "skill": {
       "0": {
         "name": "安息全垒打",
-        "fullDesc": "对指定敌方单体及其相邻目标造成等同于开拓者<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的物理属性伤害。",
+        "fullDesc": "对指定敌方单体及其相邻目标造成等同于开拓者<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "对敌方单体以及相邻目标造成物理属性伤害。"
       }
     },
     "ult": {
       "0": {
         "name": "星尘王牌",
-        "fullDesc": "在两种攻击模式中选择其一挥出全力一击。\\n【全胜•再见安打】：对指定敌方单体造成等同于开拓者<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的物理属性伤害。\\n【全胜•安息全垒打】：对指定敌方单体造成等同于开拓者<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻击力的物理属性伤害，并对其相邻目标造成等同于开拓者<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>攻击力的物理属性伤害。",
+        "fullDesc": "在两种攻击模式中选择其一挥出全力一击。\\n【全胜•再见安打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害。\\n【全胜•安息全垒打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{2}}%</orangeStrong>攻击力的物理属性伤害，并对其相邻目标造成等同于开拓者<orangeStrong>{{3}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "选择单攻或扩散的攻击方式，挥出全力一击。"
       },
       "1": {
         "name": "全胜•再见安打",
-        "fullDesc": "对指定敌方单体造成等同于开拓者<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的物理属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "对敌方单体造成大量物理属性伤害。"
       },
       "2": {
         "name": "全胜•安息全垒打",
-        "fullDesc": "对指定敌方单体造成等同于开拓者<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的物理属性伤害，同时对其相邻目标造成等同于开拓者<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻击力的物理属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害，同时对其相邻目标造成等同于开拓者<orangeStrong>{{2}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "对敌方单体及其相邻目标造成物理属性伤害。"
       }
     },
     "technique": {
       "0": {
         "name": "不灭三振",
-        "fullDesc": "使用秘技后立即为我方全体回复等同于各自生命上限<unbreak>#1[i]%</unbreak>的生命值。"
+        "fullDesc": "使用秘技后立即为我方全体回复等同于各自生命上限{{1}}%的生命值。",
+        "shortDesc": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
-        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "shortDesc": ""
       }
     }
   }

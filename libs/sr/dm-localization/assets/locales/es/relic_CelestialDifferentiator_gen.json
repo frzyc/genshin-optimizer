@@ -1,6 +1,6 @@
 {
   "setName": "Diferenciador celestial",
   "setEffects": {
-    "2": "El Daño CRIT del portador aumenta en un <unbreak>#1[i]%</unbreak>. Cuando su Daño CRIT es igual o superior al <unbreak>#2[i]%</unbreak>, tras entrar en combate su Prob. CRIT aumenta en un <unbreak>#3[i]%</unbreak> hasta que termine su primer ataque."
+    "2": "El Daño CRIT del portador aumenta en un {{1}}%. Cuando su Daño CRIT es igual o superior al {{2}}%, tras entrar en combate su Prob. CRIT aumenta en un {{3}}% hasta que termine su primer ataque."
   }
 }

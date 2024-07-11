@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Suppression de la gravité",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Welt à un ennemi unique.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Welt à un ennemi unique.",
         "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Frontière du vide",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Welt à un ennemi unique et inflige des DGT 2 fois supplémentaires, infligeant à chaque fois des DGT imaginaires équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Welt à un ennemi aléatoire. Les attaques qui touchent un ennemi ont <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de <u>chances de base</u> de réduire sa VIT de <unbreak>#3[i]%</unbreak> pendant <unbreak>#4[i]</unbreak> tours.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Welt à un ennemi unique et inflige des DGT 2 fois supplémentaires, infligeant à chaque fois des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Welt à un ennemi aléatoire. Les attaques qui touchent un ennemi ont <orangeStrong>{{2}}%</orangeStrong> de <u>chances de base</u> de réduire sa VIT de {{3}}% pendant {{4}} tours.",
         "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi. Cette attaque peut rebondir 3 fois et a une chance de <color=#f29e38ff>ralentir</color> les ennemis touchés."
       }
     },
     "ult": {
       "0": {
         "name": "Trou noir synthétique",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Welt à tous les ennemis, avec <unbreak>#3[i]%</unbreak> de <u>chances de base</u> d'emprisonner les ennemis touchés pendant 1 tour.\\nLes ennemis emprisonnés voient leurs <u>actions retardées</u> de <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> et leur VIT réduite de <unbreak>#4[i]%</unbreak>.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Welt à tous les ennemis, avec {{3}}% de <u>chances de base</u> d'emprisonner les ennemis touchés pendant 1 tour.\\nLes ennemis emprisonnés voient leurs <u>actions retardées</u> de <orangeStrong>{{2}}%</orangeStrong> et leur VIT réduite de {{4}}%.",
         "shortDesc": "Inflige des DGT imaginaires à tous les ennemis, avec <color=#f29e38ff>de fortes chances de les emprisonner</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Emprisonnement gravitationnel",
-        "fullDesc": "Crée une dimension qui dure <unbreak>#4[i]</unbreak> secondes. Les ennemis dans cette dimension voient leur vitesse de déplacement réduite de <unbreak>#5[i]%</unbreak>. Il y a <unbreak>#1[i]%</unbreak> de <u>chances de base</u> d'emprisonner les ennemis pour 1 tour après être entré en combat avec des ennemis dans la dimension.\\nLes ennemis emprisonnés voient leur <u>action retardée</u> de <unbreak>#2[i]%</unbreak> et leur VIT réduite de <unbreak>#3[i]%</unbreak>. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "fullDesc": "Crée une dimension qui dure {{4}} secondes. Les ennemis dans cette dimension voient leur vitesse de déplacement réduite de {{5}}%. Il y a {{1}}% de <u>chances de base</u> d'emprisonner les ennemis pour 1 tour après être entré en combat avec des ennemis dans la dimension.\\nLes ennemis emprisonnés voient leur <u>action retardée</u> de {{2}}% et leur VIT réduite de {{3}}%. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
         "shortDesc": "Crée une dimension. La vitesse de déplacement des ennemis à l'intérieur de la dimension est réduite. Il y a de <color=#f29e38ff>fortes chances d'infliger Emprisonné aux ennemis</color> en engageant le combat avec des ennemis à l'intérieur de la dimension."
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
-        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
       }
     }
   }

@@ -2,6 +2,6 @@
   "name": "Une rivière au printemps",
   "passive": {
     "name": "Repousser le froid",
-    "description": "Augmente la VIT du porteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> et ses DGT de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> après être entré en combat. Cet effet disparaît lorsque le porteur subit des DGT. Il est rétabli à la fin du prochain tour du porteur."
+    "description": "Augmente la VIT du porteur de <orangeStrong>{{1}}%</orangeStrong> et ses DGT de <orangeStrong>{{2}}%</orangeStrong> après être entré en combat. Cet effet disparaît lorsque le porteur subit des DGT. Il est rétabli à la fin du prochain tour du porteur."
   }
 }

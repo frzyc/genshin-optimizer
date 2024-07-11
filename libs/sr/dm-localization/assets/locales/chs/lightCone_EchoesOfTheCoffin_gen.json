@@ -2,6 +2,6 @@
   "name": "棺的回响",
   "passive": {
     "name": "荆棘",
-    "description": "使装备者的攻击力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。当装备者施放攻击后，每击中1名不同的敌方目标，恢复<color=#f29e38ff><unbreak>#3[f1]</unbreak></color>点能量，每次攻击最多通过该方式恢复<unbreak>#4[i]</unbreak>次能量。当装备者施放终结技后，使我方全体速度提高<color=#f29e38ff><unbreak>#2[i]</unbreak></color>点，持续1回合。"
+    "description": "使装备者的攻击力提高<orangeStrong>{{1}}%</orangeStrong>。当装备者施放攻击后，每击中1名不同的敌方目标，恢复<orangeStrong>{{3}}</orangeStrong>点能量，每次攻击最多通过该方式恢复{{4}}次能量。当装备者施放终结技后，使我方全体速度提高<orangeStrong>{{2}}</orangeStrong>点，持续1回合。"
   }
 }

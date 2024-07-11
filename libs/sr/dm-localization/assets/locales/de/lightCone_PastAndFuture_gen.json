@@ -2,6 +2,6 @@
   "name": "Vergangenheit und Zukunft",
   "passive": {
     "name": "Drachen aus der Vergangenheit",
-    "description": "Erhöht den verursachten SCH des nächsten aktiven Verbündeten (außer dem Träger) für <unbreak>#2[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, nachdem der Träger seine Fertigkeit eingesetzt hat."
+    "description": "Erhöht den verursachten SCH des nächsten aktiven Verbündeten (außer dem Träger) für {{2}} Rd. um <orangeStrong>{{1}}%</orangeStrong>, nachdem der Träger seine Fertigkeit eingesetzt hat."
   }
 }

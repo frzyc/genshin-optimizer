@@ -2,6 +2,6 @@
   "name": "齐颂",
   "passive": {
     "name": "协力",
-    "description": "进入战斗后，使我方全体的攻击力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。同类技能无法重复生效。"
+    "description": "进入战斗后，使我方全体的攻击力提高<orangeStrong>{{1}}%</orangeStrong>。同类技能无法重复生效。"
   }
 }

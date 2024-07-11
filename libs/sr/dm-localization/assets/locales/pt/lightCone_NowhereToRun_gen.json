@@ -2,6 +2,6 @@
   "name": "Sem Escapatória",
   "passive": {
     "name": "Tempos Desesperados",
-    "description": "Aumenta em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> o ATQ do usuário. Quando o usuário derrota um inimigo, restaura PV equivalentes a <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do seu ATQ."
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> o ATQ do usuário. Quando o usuário derrota um inimigo, restaura PV equivalentes a <orangeStrong>{{2}}%</orangeStrong> do seu ATQ."
   }
 }

@@ -4,39 +4,41 @@
     "basic": {
       "0": {
         "name": "Eisbrechendes Licht",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu und erhält 1-fach „Magma-Wille“.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu und erhält 1-fach „Magma-Wille“.",
         "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu und erhält „Magma-Wille“."
       },
       "1": {
         "name": "Eisbrechendes Licht",
-        "fullDesc": "Verbraucht 4 Stapelungen „Magma-Wille“, um Standardangriff zu verstärken, der einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des ANG {M#des Trailblazers}{F#der Trailblazerin} und angrenzenden Zielen Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> des ANG {M#des Trailblazers}{F#der Trailblazerin} zufügt.",
+        "fullDesc": "Verbraucht 4 Stapelungen „Magma-Wille“, um Standardangriff zu verstärken, der einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} und angrenzenden Zielen Feuer-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zufügt.",
         "shortDesc": "Verbraucht „Magma-Willen“, um einem Gegner Feuer-SCH zuzufügen. Angrenzende Ziel erleiden geringen Feuer-SCH."
       }
     },
     "skill": {
       "0": {
         "name": "Ewig brennender Bernstein",
-        "fullDesc": "Nach dem Einsatz der Fertigkeit erleidet {M#der Trailblazer}{F#die Trailblazerin} <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> weniger SCH und erhält 1-fach „Magma-Wille“. Außerdem besteht eine <u>Grundchance</u> von <unbreak>#2[i]%</unbreak>, bei allen Gegnern für <unbreak>#3[i]</unbreak> Rd. Verspotten zu verursachen.",
+        "fullDesc": "Nach dem Einsatz der Fertigkeit erleidet {M#der Trailblazer}{F#die Trailblazerin} <orangeStrong>{{1}}%</orangeStrong> weniger SCH und erhält 1-fach „Magma-Wille“. Außerdem besteht eine <u>Grundchance</u> von {{2}}%, bei allen Gegnern für {{3}} Rd. Verspotten zu verursachen.",
         "shortDesc": "Verringert den erlittenen SCH und erhält „Magma-Wille“. Hat eine hohe Chance, bei allen Gegner Verspotten zu verursachen."
       }
     },
     "ult": {
       "0": {
         "name": "Flammenlanze hinter den gegnerischen Linien",
-        "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des ANG {M#des Trailblazers}{F#der Trailblazerin} plus <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> {M#seiner}{F#ihrer} VTD zu. Der nächste Standardangriff wird automatisch verstärkt und kostet keinen „Magma-Willen“.",
+        "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} plus <orangeStrong>{{2}}%</orangeStrong> {M#seiner}{F#ihrer} VTD zu. Der nächste Standardangriff wird automatisch verstärkt und kostet keinen „Magma-Willen“.",
         "shortDesc": "Fügt allen Gegnern Feuer-SCH zu und verstärkt den nächsten Standardangriff."
       }
     },
     "technique": {
       "0": {
         "name": "Ruf des Wächters",
-        "fullDesc": "Erhält nach dem Einsatz der Technik und zu Beginn des nächsten Kampfes einen Schild, der SCH in Höhe von <unbreak>#1[i]%</unbreak> von der VTD {M#des Trailblazers}{F#der Trailblazerin} plus <unbreak>#2[i]</unbreak> für <unbreak>#3[i]</unbreak> Rd. blockieren kann."
+        "fullDesc": "Erhält nach dem Einsatz der Technik und zu Beginn des nächsten Kampfes einen Schild, der SCH in Höhe von {{1}}% von der VTD {M#des Trailblazers}{F#der Trailblazerin} plus {{2}} für {{3}} Rd. blockieren kann.",
+        "shortDesc": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
-        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
       }
     }
   }

@@ -2,6 +2,6 @@
   "name": "Promessa Indelével",
   "passive": {
     "name": "Herança",
-    "description": "Aumenta o Efeito de Quebra do usuário em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Quando o usuário usa sua Perícia Suprema, aumenta a Chance de CRIT em <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, durando por <unbreak>#3[i]</unbreak> rodada(s)."
+    "description": "Aumenta o Efeito de Quebra do usuário em <orangeStrong>{{1}}%</orangeStrong>. Quando o usuário usa sua Perícia Suprema, aumenta a Chance de CRIT em <orangeStrong>{{2}}%</orangeStrong>, durando por {{3}} rodada(s)."
   }
 }

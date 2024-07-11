@@ -1,6 +1,6 @@
 {
   "setName": "Izumo Gensei and Takama Divine Realm",
   "setEffects": {
-    "2": "Meningkatkan <unbreak>#1[i]%</unbreak> ATK pengguna. Saat memasuki pertempuran, jika setidaknya ada 1 rekan tim pengguna dengan Path yang sama dengan pengguna, maka CRIT Rate pengguna akan meningkat <unbreak>#2[i]%</unbreak>."
+    "2": "Meningkatkan {{1}}% ATK pengguna. Saat memasuki pertempuran, jika setidaknya ada 1 rekan tim pengguna dengan Path yang sama dengan pengguna, maka CRIT Rate pengguna akan meningkat {{2}}%."
   }
 }

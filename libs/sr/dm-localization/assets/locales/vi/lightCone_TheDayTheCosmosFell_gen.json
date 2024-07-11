@@ -2,6 +2,6 @@
   "name": "Ngày Ngân Hà Sụp Đổ",
   "passive": {
     "name": "Chiến Lược",
-    "description": "Khiến Tấn Công của người trang bị tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Sau khi người trang bị tấn công, nếu có từ 2 kẻ địch bị tấn công trở lên mang Điểm Yếu thuộc tính tương ứng, thì Sát Thương Bạo Kích của người trang bị tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, duy trì <unbreak>#3[i]</unbreak> hiệp."
+    "description": "Khiến Tấn Công của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Sau khi người trang bị tấn công, nếu có từ 2 kẻ địch bị tấn công trở lên mang Điểm Yếu thuộc tính tương ứng, thì Sát Thương Bạo Kích của người trang bị tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp."
   }
 }

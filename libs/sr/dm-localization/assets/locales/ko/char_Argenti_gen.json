@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "덧없는 향기",
-        "fullDesc": "지정된 단일 적에게 아젠티 공격력의 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼 물리 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 아젠티 공격력의 <orangeStrong>{{1}}%</orangeStrong>만큼 물리 속성 피해를 준다",
         "shortDesc": "단일 적에게 소량의 물리 속성 피해를 준다"
       }
     },
     "skill": {
       "0": {
         "name": "공정, 이곳에 피어나다",
-        "fullDesc": "모든 적에게 아젠티 공격력의 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼 물리 속성 피해를 준다",
+        "fullDesc": "모든 적에게 아젠티 공격력의 <orangeStrong>{{1}}%</orangeStrong>만큼 물리 속성 피해를 준다",
         "shortDesc": "모든 적에게 소량의 물리 속성 피해를 준다"
       }
     },
     "ult": {
       "0": {
         "name": "정원에서 선사하는 극한의 미",
-        "fullDesc": "에너지를 <unbreak>#2[i]</unbreak>pt 소모하고, 모든 적에게 아젠티 공격력의 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼 물리 속성 피해를 준다",
-        "shortDesc": "에너지를 <color=#f29e38ff><unbreak>#2[i]</unbreak></color>pt 소모하고, 모든 적에게 물리 속성 피해를 준다"
+        "fullDesc": "에너지를 {{2}}pt 소모하고, 모든 적에게 아젠티 공격력의 <orangeStrong>{{1}}%</orangeStrong>만큼 물리 속성 피해를 준다",
+        "shortDesc": "에너지를 <orangeStrong>{{2}}</orangeStrong>pt 소모하고, 모든 적에게 물리 속성 피해를 준다"
       },
       "1": {
         "name": "정원에서 <unbreak>「내」가 수여한 공훈</unbreak>",
-        "fullDesc": "에너지를 <unbreak>#4[i]</unbreak>pt 소모하고 모든 적에게 아젠티 공격력의 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼 물리 속성 피해를 준다. 추가로 피해를 <unbreak>#2[i]</unbreak>회 주며, 피해를 가할 때마다 랜덤 단일 적에게 아젠티 공격력의 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>만큼 물리 속성 피해를 준다",
-        "shortDesc": "에너지를 <color=#f29e38ff><unbreak>#4[i]</unbreak></color>pt 소모하고, 모든 적에게 물리 속성 피해를 준다. 또한 추가로 랜덤 단일 적에게 소량의 물리 속성 피해를 주고, 총 6회 바운스한다"
+        "fullDesc": "에너지를 {{4}}pt 소모하고 모든 적에게 아젠티 공격력의 <orangeStrong>{{1}}%</orangeStrong>만큼 물리 속성 피해를 준다. 추가로 피해를 {{2}}회 주며, 피해를 가할 때마다 랜덤 단일 적에게 아젠티 공격력의 <orangeStrong>{{3}}%</orangeStrong>만큼 물리 속성 피해를 준다",
+        "shortDesc": "에너지를 <orangeStrong>{{4}}</orangeStrong>pt 소모하고, 모든 적에게 물리 속성 피해를 준다. 또한 추가로 랜덤 단일 적에게 소량의 물리 속성 피해를 주고, 총 6회 바운스한다"
       }
     },
     "technique": {
       "0": {
         "name": "순수하고 고결한 선언",
-        "fullDesc": "비술 사용 후 일정 구역 내의 적을 <unbreak>#1[i]</unbreak>초 동안 현기증 상태에 빠트린다. 현기증 상태인 적은 아군을 선공할 수 없다.\\n현기증 상태에 빠진 적을 선공해 전투 진입 시, 모든 적에게 아젠티 공격력의 <unbreak>#2[i]%</unbreak>만큼 물리 속성 피해를 가하고, 아젠티의 에너지가 <unbreak>#3[i]</unbreak>pt 회복된다",
+        "fullDesc": "비술 사용 후 일정 구역 내의 적을 {{1}}초 동안 현기증 상태에 빠트린다. 현기증 상태인 적은 아군을 선공할 수 없다.\\n현기증 상태에 빠진 적을 선공해 전투 진입 시, 모든 적에게 아젠티 공격력의 {{2}}%만큼 물리 속성 피해를 가하고, 아젠티의 에너지가 {{3}}pt 회복된다",
         "shortDesc": "일정 구역 내의 적을 현기증 상태에 빠트린다. 현기증 상태인 적을 공격하면 전투 진입 시 모든 적에게 소량의 물리 속성 피해를 주고, 아젠티의 에너지가 회복된다"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "shortDesc": ""
       }
     }
   }

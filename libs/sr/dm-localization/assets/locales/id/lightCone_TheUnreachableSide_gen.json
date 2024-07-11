@@ -2,6 +2,6 @@
   "name": "The Unreachable Side",
   "passive": {
     "name": "Unfulfilled Yearning",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> CRIT Rate dan <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Max HP pengguna. Setelah pengguna terkena serangan atau mengonsumsi HP-nya sendiri, DMG yang diakibatkan akan meningkat <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>, efek ini akan dihapus setelah pengguna melancarkan serangan."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT Rate dan <orangeStrong>{{2}}%</orangeStrong> Max HP pengguna. Setelah pengguna terkena serangan atau mengonsumsi HP-nya sendiri, DMG yang diakibatkan akan meningkat <orangeStrong>{{3}}%</orangeStrong>, efek ini akan dihapus setelah pengguna melancarkan serangan."
   }
 }

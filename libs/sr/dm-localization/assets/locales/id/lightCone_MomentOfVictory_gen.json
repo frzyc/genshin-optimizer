@@ -2,6 +2,6 @@
   "name": "Moment of Victory",
   "passive": {
     "name": "Verdict",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> DEF dan <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> Effect Hit Rate pengguna. Di saat bersamaan juga meningkatkan peluang pengguna terkena serangan. Setelah pengguna terkena serangan, meningkatkan <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> DEF tambahan hingga giliran pengguna berakhir."
+    "description": "Meningkatkan <orangeStrong>{{2}}%</orangeStrong> DEF dan <orangeStrong>{{4}}%</orangeStrong> Effect Hit Rate pengguna. Di saat bersamaan juga meningkatkan peluang pengguna terkena serangan. Setelah pengguna terkena serangan, meningkatkan <orangeStrong>{{3}}%</orangeStrong> DEF tambahan hingga giliran pengguna berakhir."
   }
 }

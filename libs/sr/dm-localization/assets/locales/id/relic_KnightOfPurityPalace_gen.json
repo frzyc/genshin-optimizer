@@ -1,7 +1,7 @@
 {
   "setName": "Knight of Purity Palace",
   "setEffects": {
-    "2": "DEF +<unbreak>#1[i]%</unbreak>.",
-    "4": "Meningkatkan <unbreak>#1[i]%</unbreak> kekuatan Shield yang dibuat oleh pengguna."
+    "2": "DEF +{{1}}%.",
+    "4": "Meningkatkan {{1}}% kekuatan Shield yang dibuat oleh pengguna."
   }
 }

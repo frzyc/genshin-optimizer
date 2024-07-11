@@ -1,6 +1,6 @@
 {
   "setName": "Talia - Vương Quốc Trộm Cướp",
   "setEffects": {
-    "2": "Tăng <unbreak>#1[i]%</unbreak> Tấn Công Kích Phá của người trang bị. Khi tốc độ của người trang bị từ <unbreak>#2[i]</unbreak> trở lên, Tấn Công Kích Phá tăng thêm <unbreak>#3[i]%</unbreak>."
+    "2": "Tăng {{1}}% Tấn Công Kích Phá của người trang bị. Khi tốc độ của người trang bị từ {{2}} trở lên, Tấn Công Kích Phá tăng thêm {{3}}%."
   }
 }

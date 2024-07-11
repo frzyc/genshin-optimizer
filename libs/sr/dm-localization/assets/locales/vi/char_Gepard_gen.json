@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Nắm Đấm Phán Quyết",
-        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Gepard.",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Gepard.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Xung Kích Kinh Hoàng",
-        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Gepard, đồng thời có <unbreak>#2[i]%</unbreak> <u>xác suất cơ bản</u> khiến mục tiêu đó bị Đóng Băng, duy trì <unbreak>#3[i]</unbreak> hiệp.\\nTrong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời mỗi hiệp đấu bắt đầu sẽ chịu lượng <u>sát thương kèm theo</u> thuộc tính Băng bằng <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> Tấn Công của Gepard.",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Gepard, đồng thời có {{2}}% <u>xác suất cơ bản</u> khiến mục tiêu đó bị Đóng Băng, duy trì {{3}} hiệp.\\nTrong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời mỗi hiệp đấu bắt đầu sẽ chịu lượng <u>sát thương kèm theo</u> thuộc tính Băng bằng <orangeStrong>{{4}}%</orangeStrong> Tấn Công của Gepard.",
         "shortDesc": "Gây Sát Thương Băng cho 1 kẻ địch, <color=#f29e38ff>có xác suất kèm trạng thái Đóng Băng cho mục tiêu</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Bức Tường Sừng Sững",
-        "fullDesc": "Tạo Khiên triệt tiêu sát thương tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Phòng Thủ của Gepard +<color=#f29e38ff><unbreak>#3[i]</unbreak></color> cho toàn phe ta, duy trì <unbreak>#2[i]</unbreak> hiệp.",
+        "fullDesc": "Tạo Khiên triệt tiêu sát thương tương đương <orangeStrong>{{1}}%</orangeStrong> Phòng Thủ của Gepard +<orangeStrong>{{3}}</orangeStrong> cho toàn phe ta, duy trì {{2}} hiệp.",
         "shortDesc": "<color=#f29e38ff>Cung cấp Khiên</color> cho toàn bộ phe ta."
       }
     },
     "technique": {
       "0": {
         "name": "Chứng Nhận Hữu Tình",
-        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo sẽ tạo Khiên cho toàn phe ta giúp triệt tiêu sát thương tương đương <unbreak>#1[i]%</unbreak> Phòng Thủ của Gepard +<unbreak>#3[i]</unbreak>, duy trì <unbreak>#2[i]</unbreak> hiệp.",
+        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo sẽ tạo Khiên cho toàn phe ta giúp triệt tiêu sát thương tương đương {{1}}% Phòng Thủ của Gepard +{{3}}, duy trì {{2}} hiệp.",
         "shortDesc": "Dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo, toàn bộ phe ta sẽ nhận được khiên."
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
-        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
       }
     }
   }

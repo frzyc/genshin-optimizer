@@ -2,6 +2,6 @@
   "name": "Fine Fruit",
   "passive": {
     "name": "Savor",
-    "description": "At the start of the battle, immediately regenerates <color=#f29e38ff><unbreak>#1[i]</unbreak></color> Energy for all allies."
+    "description": "At the start of the battle, immediately regenerates <orangeStrong>{{1}}</orangeStrong> Energy for all allies."
   }
 }

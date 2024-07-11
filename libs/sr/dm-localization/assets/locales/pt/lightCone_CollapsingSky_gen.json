@@ -2,6 +2,6 @@
   "name": "Céu Colapsado",
   "passive": {
     "name": "Devastação",
-    "description": "Aumenta o ATQ Básico e Dano de Perícia do usuário em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+    "description": "Aumenta o ATQ Básico e Dano de Perícia do usuário em <orangeStrong>{{1}}%</orangeStrong>."
   }
 }

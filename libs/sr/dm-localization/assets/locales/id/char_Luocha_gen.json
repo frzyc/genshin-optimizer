@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Thorns of the Abyss",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Luocha pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Luocha pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Prayer of Abyss Flower",
-        "fullDesc": "Setelah melancarkan Skill, segera memulihkan HP 1 rekan yang ditarget sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Luocha + <color=#f29e38ff><unbreak>#2[i]</unbreak></color> dan membuat Luocha memperoleh 1 lapis \"Abyss Flower\".\\nSaat Persentase HP salah satu rekan tim saat ini kurang dari atau sama dengan <unbreak>#3[i]%</unbreak>, Luocha akan segera memicu sebuah efek yang sama dengan Skill ini pada rekan tersebut sebanyak 1 kali tanpa perlu mengonsumsi Poin Skill. Efek ini dapat dipicu lagi setelah <unbreak>#4[i]</unbreak> giliran.",
+        "fullDesc": "Setelah melancarkan Skill, segera memulihkan HP 1 rekan yang ditarget sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Luocha + <orangeStrong>{{2}}</orangeStrong> dan membuat Luocha memperoleh 1 lapis \"Abyss Flower\".\\nSaat Persentase HP salah satu rekan tim saat ini kurang dari atau sama dengan {{3}}%, Luocha akan segera memicu sebuah efek yang sama dengan Skill ini pada rekan tersebut sebanyak 1 kali tanpa perlu mengonsumsi Poin Skill. Efek ini dapat dipicu lagi setelah {{4}} giliran.",
         "shortDesc": "<color=#f29e38ff>Memulihkan</color> HP 1 rekan tim dan memperoleh 1 lapis \"Abyss Flower\"."
       }
     },
     "ult": {
       "0": {
         "name": "Death Wish",
-        "fullDesc": "Menghapus masing-masing <unbreak>#2[i]</unbreak> <u>Buff</u> dari seluruh target musuh dan mengakibatkan Imaginary DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Luocha ke seluruh musuh, serta memberikan Luocha 1 lapis \"Abyss Flower\".",
+        "fullDesc": "Menghapus masing-masing {{2}} <u>Buff</u> dari seluruh target musuh dan mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Luocha ke seluruh musuh, serta memberikan Luocha 1 lapis \"Abyss Flower\".",
         "shortDesc": "<color=#f29e38ff>Menghapus</color> masing-masing 1 <color=#f29e38ff><u>efek Buff</u></color> dari seluruh musuh dan mengakibatkan Imaginary DMG pada seluruh musuh, serta memperoleh 1 lapis \"Abyss Flower\"."
       }
     },
@@ -32,7 +32,8 @@
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
       }
     }
   }

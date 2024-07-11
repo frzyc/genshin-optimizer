@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Aposta Direta",
-        "fullDesc": "Causa Dano Imaginário igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> da DEF de Aventurine a um único inimigo-alvo.",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> da DEF de Aventurine a um único inimigo-alvo.",
         "shortDesc": "Causa Dano Imaginário leve a um único inimigo-alvo."
       }
     },
     "skill": {
       "0": {
         "name": "Alicerce de Luxo",
-        "fullDesc": "Fornece um Escudo de Aposta Fortificada que pode bloquear Dano igual a <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> da DEF de Aventurine + <color=#f29e38ff><unbreak>#2[i]</unbreak></color> para todos os aliados por <unbreak>#3[i]</unbreak> rodada(s). Ao ganhar Aposta Fortificada repetidamente, o efeito de Escudo pode acumular até <unbreak>#4[i]%</unbreak> do Escudo fornecido pela Perícia atual.",
+        "fullDesc": "Fornece um Escudo de Aposta Fortificada que pode bloquear Dano igual a <orangeStrong>{{1}}%</orangeStrong> da DEF de Aventurine + <orangeStrong>{{2}}</orangeStrong> para todos os aliados por {{3}} rodada(s). Ao ganhar Aposta Fortificada repetidamente, o efeito de Escudo pode acumular até {{4}}% do Escudo fornecido pela Perícia atual.",
         "shortDesc": "Fornece um escudo de Aposta Fortificada para todos os aliados, <color=#f29e38ff>cujo efeito de Escudo é acumulável</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Lorde da Roleta",
-        "fullDesc": "Recebe aleatoriamente de 1 a <unbreak>#1[i]</unbreak> pontos de Aposta Cega e inflige Perturbação a um único inimigo, durando por <unbreak>#4[i]</unbreak> rodada(s). Causa Dano Imaginário igual a <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> da DEF de Aventurine a um único inimigo-alvo. Quando um aliado atinge um inimigo-alvo com Perturbação, o Dano CRIT causado aumenta em <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>.",
+        "fullDesc": "Recebe aleatoriamente de 1 a {{1}} pontos de Aposta Cega e inflige Perturbação a um único inimigo, durando por {{4}} rodada(s). Causa Dano Imaginário igual a <orangeStrong>{{2}}%</orangeStrong> da DEF de Aventurine a um único inimigo-alvo. Quando um aliado atinge um inimigo-alvo com Perturbação, o Dano CRIT causado aumenta em <orangeStrong>{{3}}%</orangeStrong>.",
         "shortDesc": "Ganha um número aleatório de pontos na Aposta Cega e inflige Perturbação em um único inimigo, causando Dano Imaginário. Quando um aliado golpeia um inimigo com Perturbação, aumenta o <color=#f29e38ff>Dano CRIT causado</color>."
       }
     },
     "technique": {
       "0": {
         "name": "O Vermelho ou o Preto",
-        "fullDesc": "Depois de usar a Técnica, 1 dos seguintes efeitos será concedido:\\nExiste uma chance de aumentar a DEF em <unbreak>#1[i]%</unbreak>.\\nExiste uma chance alta de aumentar a DEF em <unbreak>#2[i]%</unbreak>.\\nExiste uma chance pequena de aumentar a DEF em <unbreak>#3[i]%</unbreak>.\\n\\nQuando essa Técnica for usada várias vezes, só o último efeito adquirido com o maior valor de melhoria será mantido.\\nQuando a próxima batalha começar, aumenta a DEF de todos os aliados pelo valor correspondente, durando por <unbreak>#4[i]</unbreak> rodada(s).",
+        "fullDesc": "Depois de usar a Técnica, 1 dos seguintes efeitos será concedido:\\nExiste uma chance de aumentar a DEF em {{1}}%.\\nExiste uma chance alta de aumentar a DEF em {{2}}%.\\nExiste uma chance pequena de aumentar a DEF em {{3}}%.\\n\\nQuando essa Técnica for usada várias vezes, só o último efeito adquirido com o maior valor de melhoria será mantido.\\nQuando a próxima batalha começar, aumenta a DEF de todos os aliados pelo valor correspondente, durando por {{4}} rodada(s).",
         "shortDesc": "Usar a Técnica concederá 1 de 3 tipos de efeitos de Bônus de DEF de diferentes valores de melhoria aleatoriamente. Depois de entrar na próxima batalha, a DEF de todos os aliados aumenta pelo valor correspondente."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

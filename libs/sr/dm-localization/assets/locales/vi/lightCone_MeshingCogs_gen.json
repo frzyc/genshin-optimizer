@@ -2,6 +2,6 @@
   "name": "Luân Hồi",
   "passive": {
     "name": "Tốc Quyết",
-    "description": "Sau khi người trang bị tấn công hoặc bị tấn công sẽ hồi thêm <color=#f29e38ff><unbreak>#1[i]</unbreak></color> điểm Năng Lượng, hiệu ứng này không thể kích hoạt trùng lặp trong 1 hiệp."
+    "description": "Sau khi người trang bị tấn công hoặc bị tấn công sẽ hồi thêm <orangeStrong>{{1}}</orangeStrong> điểm Năng Lượng, hiệu ứng này không thể kích hoạt trùng lặp trong 1 hiệp."
   }
 }

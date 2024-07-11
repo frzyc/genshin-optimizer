@@ -2,6 +2,6 @@
   "name": "鏤月裁雲之意",
   "passive": {
     "name": "秘密",
-    "description": "在戰鬥開始時以及當裝備者回合開始時，隨機啟動下列效果之一。每回合啟動的效果會取代上回合的效果，且不會與上回合效果重複。效果包含：使我方全體攻擊力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>；使我方全體暴擊傷害提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>；使我方全體能量恢復效率提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>。同類效果無法疊加，在裝備者陷入無法戰鬥狀態時解除。"
+    "description": "在戰鬥開始時以及當裝備者回合開始時，隨機啟動下列效果之一。每回合啟動的效果會取代上回合的效果，且不會與上回合效果重複。效果包含：使我方全體攻擊力提高<orangeStrong>{{1}}%</orangeStrong>；使我方全體暴擊傷害提高<orangeStrong>{{2}}%</orangeStrong>；使我方全體能量恢復效率提高<orangeStrong>{{3}}%</orangeStrong>。同類效果無法疊加，在裝備者陷入無法戰鬥狀態時解除。"
   }
 }

@@ -2,6 +2,6 @@
   "name": "Adversarial",
   "passive": {
     "name": "Alliance",
-    "description": "หลังจากผู้สวมใส่กำจัดศัตรูเป้าหมาย ความเร็วจะเพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> เป็นเวลา <unbreak>#2[i]</unbreak> เทิร์น"
+    "description": "หลังจากผู้สวมใส่กำจัดศัตรูเป้าหมาย ความเร็วจะเพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เป็นเวลา {{2}} เทิร์น"
   }
 }

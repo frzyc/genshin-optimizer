@@ -2,6 +2,6 @@
   "name": "Perfect Timing",
   "passive": {
     "name": "Refraction of Sightline",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Effect RES pengguna dan meningkatkan Outgoing Healing sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Effect RES. Outgoing Healing maks. dapat ditingkatkan hingga <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Effect RES pengguna dan meningkatkan Outgoing Healing sebesar <orangeStrong>{{2}}%</orangeStrong> Effect RES. Outgoing Healing maks. dapat ditingkatkan hingga <orangeStrong>{{3}}%</orangeStrong>."
   }
 }

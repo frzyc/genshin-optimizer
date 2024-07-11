@@ -2,6 +2,6 @@
   "name": "La elección de Landau",
   "passive": {
     "name": "El tiempo vuela",
-    "description": "Aumenta la probabilidad de que el portador reciba un ataque, pero su daño recibido se reduce en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+    "description": "Aumenta la probabilidad de que el portador reciba un ataque, pero su daño recibido se reduce en un <orangeStrong>{{2}}%</orangeStrong>."
   }
 }

@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#しりけん}支離剣{RUBY_E#}",
-        "fullDesc": "指定した敵単体に刃の攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の風属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に刃の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。",
         "shortDesc": "敵単体に少量の風属性ダメージを与える。"
       },
       "1": {
         "name": "{RUBY_B#むげんけんじゅ}無間剣樹{RUBY_E#}",
-        "fullDesc": "刃のHPを最大HP<unbreak>#1[i]%</unbreak>分消費し、指定した敵単体に刃の攻撃力<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>+最大HP<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>分の風属性ダメージを与え、隣接する敵に刃の攻撃力<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>+最大HP<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>分の風属性ダメージを与える。\\n残りHPが足りない場合、「無間剣樹」を発動した時、刃の残りHPが1になる。\\n「無間剣樹」はSPを回復できない。",
+        "fullDesc": "刃のHPを最大HP{{1}}%分消費し、指定した敵単体に刃の攻撃力<orangeStrong>{{2}}%</orangeStrong>+最大HP<orangeStrong>{{4}}%</orangeStrong>分の風属性ダメージを与え、隣接する敵に刃の攻撃力<orangeStrong>{{3}}%</orangeStrong>+最大HP<orangeStrong>{{5}}%</orangeStrong>分の風属性ダメージを与える。\\n残りHPが足りない場合、「無間剣樹」を発動した時、刃の残りHPが1になる。\\n「無間剣樹」はSPを回復できない。",
         "shortDesc": "自身のHPを消費し、敵単体に風属性ダメージを与え、隣接する敵に少量の風属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#じごくへん}地獄変{RUBY_E#}",
-        "fullDesc": "刃のHPを最大HP<unbreak>#1[i]%</unbreak>分消費して「地獄変」状態に入る。\\n「地獄変」状態では戦闘スキルを発動できず、自身の与ダメージ+<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>、通常攻撃「支離剣」が「無間剣樹」に強化される、<unbreak>#2[i]</unbreak>ターン継続。\\n残りHPが足りない場合、戦闘スキルを発動した時、刃の残りHPが1になる。\\nこの戦闘スキルはEPを回復できない。この戦闘スキルを発動した後、ターンは終了しない。",
+        "fullDesc": "刃のHPを最大HP{{1}}%分消費して「地獄変」状態に入る。\\n「地獄変」状態では戦闘スキルを発動できず、自身の与ダメージ+<orangeStrong>{{4}}%</orangeStrong>、通常攻撃「支離剣」が「無間剣樹」に強化される、{{2}}ターン継続。\\n残りHPが足りない場合、戦闘スキルを発動した時、刃の残りHPが1になる。\\nこの戦闘スキルはEPを回復できない。この戦闘スキルを発動した後、ターンは終了しない。",
         "shortDesc": "自身のHPを消費し、<color=#f29e38ff>通常攻撃を強化</color>する。ターンは終了しない。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#たいへきばんし}大辟万死{RUBY_E#}",
-        "fullDesc": "刃の残りHPを最大HPの<unbreak>50%</unbreak>にし、敵単体に刃の攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>+最大HP<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>+戦闘中失ったHPの累計<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>分の風属性ダメージを与え、隣接する敵に刃の攻撃力<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>+最大HP<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>+戦闘中失ったHPの累計<color=#f29e38ff><unbreak>#6[i]%</unbreak></color>分の風属性ダメージを与える。\\n戦闘中失ったHPの累計のカウントは、刃の最大HPの<color=#f29e38ff><unbreak>#7[i]%</unbreak></color>を超えず、必殺技を発動した後にリセットされる。",
+        "fullDesc": "刃の残りHPを最大HPの<unbreak>50%</unbreak>にし、敵単体に刃の攻撃力<orangeStrong>{{1}}%</orangeStrong>+最大HP<orangeStrong>{{2}}%</orangeStrong>+戦闘中失ったHPの累計<orangeStrong>{{5}}%</orangeStrong>分の風属性ダメージを与え、隣接する敵に刃の攻撃力<orangeStrong>{{3}}%</orangeStrong>+最大HP<orangeStrong>{{4}}%</orangeStrong>+戦闘中失ったHPの累計<orangeStrong>{{6}}%</orangeStrong>分の風属性ダメージを与える。\\n戦闘中失ったHPの累計のカウントは、刃の最大HPの<orangeStrong>{{7}}%</orangeStrong>を超えず、必殺技を発動した後にリセットされる。",
         "shortDesc": "残りHPを最大HPの<unbreak>50%</unbreak>にし、敵単体に大量の風属性ダメージを与え、隣接する敵に風属性ダメージを与える。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#ごうとふう}業途風{RUBY_E#}",
-        "fullDesc": "敵を攻撃。戦闘に入った後、刃の最大HP<unbreak>#2[i]%</unbreak>分のHPを消費し、敵全体に刃の最大HP<unbreak>#1[i]%</unbreak>分の風属性ダメージを与える。\\n残りHPが足りない場合、秘技を発動した時、刃の残りHPが1になる。",
+        "fullDesc": "敵を攻撃。戦闘に入った後、刃の最大HP{{2}}%分のHPを消費し、敵全体に刃の最大HP{{1}}%分の風属性ダメージを与える。\\n残りHPが足りない場合、秘技を発動した時、刃の残りHPが1になる。",
         "shortDesc": "敵を攻撃。戦闘に入った後、自身のHPを消費し、敵全体に風属性ダメージを与える。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
-        "fullDesc": "敵を攻撃、戦闘突入後、敵の対応する属性の靭性を削る。"
+        "fullDesc": "敵を攻撃、戦闘突入後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
       }
     }
   }

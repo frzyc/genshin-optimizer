@@ -2,6 +2,6 @@
   "name": "天倾",
   "passive": {
     "name": "破灭",
-    "description": "使装备者普攻和战技造成的伤害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。"
+    "description": "使装备者普攻和战技造成的伤害提高<orangeStrong>{{1}}%</orangeStrong>。"
   }
 }

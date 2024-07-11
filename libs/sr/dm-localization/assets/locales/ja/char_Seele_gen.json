@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#きょうしゅう}強襲{RUBY_E#}",
-        "fullDesc": "指定した敵単体にゼーレの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の量子属性ダメージを与える。",
+        "fullDesc": "指定した敵単体にゼーレの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与える。",
         "shortDesc": "敵単体に少量の量子属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#かんじん}還刃{RUBY_E#}",
-        "fullDesc": "ゼーレの速度+<unbreak>#2[i]%</unbreak>、<unbreak>#3[i]</unbreak>ターン継続。指定した敵単体にゼーレの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の量子属性ダメージを与える。",
+        "fullDesc": "ゼーレの速度+{{2}}%、{{3}}ターン継続。指定した敵単体にゼーレの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与える。",
         "shortDesc": "敵単体に量子属性のダメージを与え、自身の速度アップ。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#みだ}乱{RUBY_E#}れ{RUBY_B#ちょう}蝶{RUBY_E#}",
-        "fullDesc": "増幅状態に入り、指定した敵単体にゼーレの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の量子属性ダメージを与える。",
+        "fullDesc": "増幅状態に入り、指定した敵単体にゼーレの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与える。",
         "shortDesc": "<color=#f29e38ff>増幅状態</color>になり、敵単体に大量の量子属性ダメージを与える。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#げんしん}幻身{RUBY_E#}",
-        "fullDesc": "秘技を使用した後、<unbreak>#1[i]</unbreak>秒のステルス状態になる。ステルス状態になると敵に発見されず、敵を先制攻撃して戦闘に入る時、ゼーレが増幅状態になる。",
+        "fullDesc": "秘技を使用した後、{{1}}秒のステルス状態になる。ステルス状態になると敵に発見されず、敵を先制攻撃して戦闘に入る時、ゼーレが増幅状態になる。",
         "shortDesc": "<color=#f29e38ff>ステルス</color>状態になる。敵を攻撃し戦闘に入ると、即座に<color=#f29e38ff>増幅状態</color>になる。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
-        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
       }
     }
   }

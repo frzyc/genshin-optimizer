@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Lightning Rush",
-        "fullDesc": "Mengakibatkan Lightning DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Arlan pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Arlan pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Shackle Breaker",
-        "fullDesc": "Mengonsumsi HP sebesar <unbreak>#1[i]%</unbreak> Max HP Arlan dan mengakibatkan Lightning DMG sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ATK Arlan pada 1 target musuh. Jika HP saat ini tidak cukup, HP Arlan saat ini akan berkurang hingga 1 saat melancarkan skill.",
+        "fullDesc": "Mengonsumsi HP sebesar {{1}}% Max HP Arlan dan mengakibatkan Lightning DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Arlan pada 1 target musuh. Jika HP saat ini tidak cukup, HP Arlan saat ini akan berkurang hingga 1 saat melancarkan skill.",
         "shortDesc": "Mengonsumsi sebagian HP diri sendiri dan mengakibatkan Lightning DMG pada 1 musuh."
       }
     },
     "ult": {
       "0": {
         "name": "Frenzied Punishment",
-        "fullDesc": "Mengakibatkan Lightning DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Arlan pada 1 target musuh, dan di saat bersamaan mengakibatkan Lightning DMG sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ATK Arlan pada musuh di sekitar target.",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Arlan pada 1 target musuh, dan di saat bersamaan mengakibatkan Lightning DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Arlan pada musuh di sekitar target.",
         "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah besar pada 1 musuh, dan mengakibatkan Lightning DMG pada musuh di sekitar target."
       }
     },
     "technique": {
       "0": {
         "name": "Swift Harvest",
-        "fullDesc": "Segera menyerang musuh dan setelah memasuki pertempuran, mengakibatkan Lightning DMG sebesar <unbreak>#1[i]%</unbreak> ATK Arlan pada seluruh musuh.",
+        "fullDesc": "Segera menyerang musuh dan setelah memasuki pertempuran, mengakibatkan Lightning DMG sebesar {{1}}% ATK Arlan pada seluruh musuh.",
         "shortDesc": "Menyerang musuh dan mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh setelah memasuki pertempuran."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
       }
     }
   }

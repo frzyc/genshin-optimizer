@@ -2,6 +2,6 @@
   "name": "Под голубым небом",
   "passive": {
     "name": "Рожь под солнцем",
-    "description": "Сила атаки владельца повышается на <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Когда владелец побеждает противника, его крит. шанс повышается на <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> на <unbreak>#3[i]</unbreak> хода."
+    "description": "Сила атаки владельца повышается на <orangeStrong>{{1}}%</orangeStrong>. Когда владелец побеждает противника, его крит. шанс повышается на <orangeStrong>{{2}}%</orangeStrong> на {{3}} хода."
   }
 }

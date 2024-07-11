@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "강습",
-        "fullDesc": "지정된 단일 적에게 제레 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 양자 속성 피해를 가한다",
+        "fullDesc": "지정된 단일 적에게 제레 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 양자 속성 피해를 가한다",
         "shortDesc": "단일 적에게 소량의 양자 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "귀인(歸刃)",
-        "fullDesc": "제레의 속도가 <unbreak>#2[i]%</unbreak> 증가하고, 지정된 단일 적에게 제레 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 양자 속성 피해를 준다. 속도 증가 효과 지속 시간: <unbreak>#3[i]</unbreak>턴",
+        "fullDesc": "제레의 속도가 {{2}}% 증가하고, 지정된 단일 적에게 제레 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 양자 속성 피해를 준다. 속도 증가 효과 지속 시간: {{3}}턴",
         "shortDesc": "단일 적에게 양자 속성 피해를 주고, 자신의 속도가 증가한다"
       }
     },
     "ult": {
       "0": {
         "name": "혼란의 나비",
-        "fullDesc": "즉시 증폭 상태에 진입하여 지정된 단일 적에게 제레 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 양자 속성 피해를 가한다",
+        "fullDesc": "즉시 증폭 상태에 진입하여 지정된 단일 적에게 제레 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 양자 속성 피해를 가한다",
         "shortDesc": "<color=#f29e38ff>증폭 상태</color>에 진입하고, 단일 적에게 대량의 양자 속성 피해를 가한다"
       }
     },
     "technique": {
       "0": {
         "name": "환신(幻身)",
-        "fullDesc": "비술 사용 후 <unbreak>#1[i]</unbreak>초 동안 은신 상태에 진입한다. 은신 상태에선 적에게 들키지 않으며, 선공을 가해 적과의 전투 진입 시 제레는 즉시 증폭 상태에 진입한다",
+        "fullDesc": "비술 사용 후 {{1}}초 동안 은신 상태에 진입한다. 은신 상태에선 적에게 들키지 않으며, 선공을 가해 적과의 전투 진입 시 제레는 즉시 증폭 상태에 진입한다",
         "shortDesc": "<color=#f29e38ff>은신</color> 상태에 진입한다. 적을 공격해 전투에 진입하면 즉시 <color=#f29e38ff>증폭 상태</color>에 진입한다"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "shortDesc": ""
       }
     }
   }

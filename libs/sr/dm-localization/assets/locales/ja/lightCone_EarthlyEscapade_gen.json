@@ -2,6 +2,6 @@
   "name": "{RUBY_B#じんせい}人生{RUBY_E#}は{RUBY_B#あそ}遊{RUBY_E#}び",
   "passive": {
     "name": "{RUBY_B#き}気{RUBY_E#}まぐれ",
-    "description": "装備キャラの会心ダメージ+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。戦闘開始時、装備キャラは「仮面」を獲得する、<unbreak>#6[i]</unbreak>ターン継続。装備キャラに「仮面」がある時、装備キャラ以外の味方の会心率+<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>、会心ダメージ+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。装備キャラがSPを1回復するたびに、「虹色の炎」を1層獲得する（SPを回復する際、上限を超えた分もカウントされる）。「虹色の炎」が<unbreak>#4[i]</unbreak>層に達した後、すべての「虹色の炎」を解除し、「仮面」を獲得する、<unbreak>#3[i]</unbreak>ターン継続。"
+    "description": "装備キャラの会心ダメージ+<orangeStrong>{{1}}%</orangeStrong>。戦闘開始時、装備キャラは「仮面」を獲得する、{{6}}ターン継続。装備キャラに「仮面」がある時、装備キャラ以外の味方の会心率+<orangeStrong>{{5}}%</orangeStrong>、会心ダメージ+<orangeStrong>{{2}}%</orangeStrong>。装備キャラがSPを1回復するたびに、「虹色の炎」を1層獲得する（SPを回復する際、上限を超えた分もカウントされる）。「虹色の炎」が{{4}}層に達した後、すべての「虹色の炎」を解除し、「仮面」を獲得する、{{3}}ターン継続。"
   }
 }

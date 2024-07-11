@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Spectrum Beam",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Asta pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Asta pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Meteor Storm",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Asta pada 1 musuh yang ditarget dan mengakibatkan 4 serangan tambahan yang masing-masing mengakibatkan Fire DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Asta pada musuh secara acak.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Asta pada 1 musuh yang ditarget dan mengakibatkan 4 serangan tambahan yang masing-masing mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Asta pada musuh secara acak.",
         "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh, total Bounce 5 kali."
       }
     },
     "ult": {
       "0": {
         "name": "Astral Blessing",
-        "fullDesc": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]</unbreak></color> SPD seluruh rekan tim selama <unbreak>#2[i]</unbreak> giliran.",
+        "fullDesc": "Meningkatkan <orangeStrong>{{1}}</orangeStrong> SPD seluruh rekan tim selama {{2}} giliran.",
         "shortDesc": "Meningkatkan <color=#f29e38ff>SPD</color> seluruh rekan tim."
       }
     },
     "technique": {
       "0": {
         "name": "Miracle Flash",
-        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Fire DMG sebesar <unbreak>#1[i]%</unbreak> ATK Asta pada seluruh target musuh.",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Fire DMG sebesar {{1}}% ATK Asta pada seluruh target musuh.",
         "shortDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengakibatkan DMG dalam jumlah kecil pada seluruh musuh."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
       }
     }
   }

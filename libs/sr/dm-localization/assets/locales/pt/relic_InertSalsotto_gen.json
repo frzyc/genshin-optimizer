@@ -1,6 +1,6 @@
 {
   "setName": "Salsotto Inerte",
   "setEffects": {
-    "2": "Aumenta em <unbreak>#1[i]%</unbreak> a Chance de CRIT do usuário. Quando a Chance de CRIT atual chegar a <unbreak>#2[i]%</unbreak> ou mais, aumenta em <unbreak>#3[i]%</unbreak> o Dano de Ataque Extra e da Perícia Suprema do usuário."
+    "2": "Aumenta em {{1}}% a Chance de CRIT do usuário. Quando a Chance de CRIT atual chegar a {{2}}% ou mais, aumenta em {{3}}% o Dano de Ataque Extra e da Perícia Suprema do usuário."
   }
 }

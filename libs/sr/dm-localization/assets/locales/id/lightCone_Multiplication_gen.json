@@ -2,6 +2,6 @@
   "name": "Multiplication",
   "passive": {
     "name": "Denizens of Abundance",
-    "description": "Setelah pengguna melancarkan Basic Attack, mendahulukan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> aksi yang selanjutnya."
+    "description": "Setelah pengguna melancarkan Basic Attack, mendahulukan <orangeStrong>{{1}}%</orangeStrong> aksi yang selanjutnya."
   }
 }

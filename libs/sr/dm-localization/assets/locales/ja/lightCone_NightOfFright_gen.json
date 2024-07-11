@@ -2,6 +2,6 @@
   "name": "{RUBY_B#きょうこん}驚魂{RUBY_E#}の{RUBY_B#よる}夜{RUBY_E#}",
   "passive": {
     "name": "{RUBY_B#ぜんりょくしんこきゅう}全力深呼吸{RUBY_E#}",
-    "description": "装備キャラのEP回復効率+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。味方が必殺技を発動した時、装備キャラは残りHP割合が最も低い味方のHPを、その味方の最大HP<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>分回復する。装備キャラが味方に治癒を行った時、その味方の攻撃力+<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>、この効果は最大で<unbreak>#4[i]</unbreak>層累積できる、<unbreak>#5[i]</unbreak>ターン継続。"
+    "description": "装備キャラのEP回復効率+<orangeStrong>{{1}}%</orangeStrong>。味方が必殺技を発動した時、装備キャラは残りHP割合が最も低い味方のHPを、その味方の最大HP<orangeStrong>{{2}}%</orangeStrong>分回復する。装備キャラが味方に治癒を行った時、その味方の攻撃力+<orangeStrong>{{3}}%</orangeStrong>、この効果は最大で{{4}}層累積できる、{{5}}ターン継続。"
   }
 }

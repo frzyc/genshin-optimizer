@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "스펙트럼 빔",
-        "fullDesc": "지정된 단일 적에게 아스타 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 화염 속성 피해를 가한다",
+        "fullDesc": "지정된 단일 적에게 아스타 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 화염 속성 피해를 가한다",
         "shortDesc": "단일 적에게 소량의 화염 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "메테오 스톰",
-        "fullDesc": "지정된 단일 적에게 아스타 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 화염 속성 피해를 주며, 추가로 피해를 4회 가한다. 피해를 가할 때마다 임의의 단일 적에게 아스타 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 화염 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 아스타 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 화염 속성 피해를 주며, 추가로 피해를 4회 가한다. 피해를 가할 때마다 임의의 단일 적에게 아스타 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 화염 속성 피해를 준다",
         "shortDesc": "단일 적에게 소량의 화염 속성 피해를 주고, 총 5회 바운스한다"
       }
     },
     "ult": {
       "0": {
         "name": "별하늘의 축언",
-        "fullDesc": "모든 아군의 속도가 <color=#f29e38ff><unbreak>#1[i]</unbreak></color>pt 증가한다. 지속 시간: <unbreak>#2[i]</unbreak>턴",
+        "fullDesc": "모든 아군의 속도가 <orangeStrong>{{1}}</orangeStrong>pt 증가한다. 지속 시간: {{2}}턴",
         "shortDesc": "모든 아군의 <color=#f29e38ff>속도가 증가</color>한다"
       }
     },
     "technique": {
       "0": {
         "name": "미라클 플래쉬",
-        "fullDesc": "적을 바로 공격하며, 전투 진입 후 모든 적에게 아스타 공격력 <unbreak>#1[i]%</unbreak>만큼의 화염 속성 피해를 가한다",
+        "fullDesc": "적을 바로 공격하며, 전투 진입 후 모든 적에게 아스타 공격력 {{1}}%만큼의 화염 속성 피해를 가한다",
         "shortDesc": "적을 공격하며, 전투 진입 후 모든 적에게 소량의 피해를 가한다"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "shortDesc": ""
       }
     }
   }

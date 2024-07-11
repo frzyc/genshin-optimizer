@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "운기검경 • 소예",
-        "fullDesc": "지정된 단일 적에게 소상 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 물리 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 소상 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
         "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "운기검경 • 산경",
-        "fullDesc": "지정된 단일 적에게 소상 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 물리 속성 피해를 준다. 동시에 마지막 일격 후 <unbreak>#3[i]%</unbreak> 확률로 [검세]를 발동해 적에게 소상 공격력 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>만큼의 물리 속성 <u>추가 피해</u>를 준다.\\n해당 목표가 <u>약점 격파 상태</u>일 경우 [검세]는 반드시 발동한다",
+        "fullDesc": "지정된 단일 적에게 소상 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 물리 속성 피해를 준다. 동시에 마지막 일격 후 {{3}}% 확률로 [검세]를 발동해 적에게 소상 공격력 <orangeStrong>{{2}}%</orangeStrong>만큼의 물리 속성 <u>추가 피해</u>를 준다.\\n해당 목표가 <u>약점 격파 상태</u>일 경우 [검세]는 반드시 발동한다",
         "shortDesc": "단일 적에게 물리 속성 피해를 주고, <color=#f29e38ff>낮은 확률로 [검세]를 발동</color>한다. 적이 <u>약점 격파 상태</u>일 경우 <color=#f29e38ff>[검세]를 반드시 발동</color>한다"
       }
     },
     "ult": {
       "0": {
         "name": "태허형온 • 촉야",
-        "fullDesc": "지정된 단일 적에게 소상 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 물리 속성 피해를 주고 소상은 즉시 행동한다. 동시에 소상의 공격력이 <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> 증가하고 전투 스킬 발동 시 [검세]의 발동 판정이 추가로 2회 증가한다. 지속 시간: <unbreak>#2[i]</unbreak>턴.\\n추가 판정으로 발동된 [검세]의 피해는 기존 피해의 <unbreak>#3[i]%</unbreak>이다",
+        "fullDesc": "지정된 단일 적에게 소상 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 물리 속성 피해를 주고 소상은 즉시 행동한다. 동시에 소상의 공격력이 <orangeStrong>{{4}}%</orangeStrong> 증가하고 전투 스킬 발동 시 [검세]의 발동 판정이 추가로 2회 증가한다. 지속 시간: {{2}}턴.\\n추가 판정으로 발동된 [검세]의 피해는 기존 피해의 {{3}}%이다",
         "shortDesc": "단일 적에게 대량의 물리 속성 피해를 가하고, [검세] 효과를 강화하며 <color=#f29e38ff>즉시 행동</color>한다"
       }
     },
     "technique": {
       "0": {
         "name": "운기검경 • 함성",
-        "fullDesc": "적을 바로 공격하며, 전투 진입 후 모든 적에게 소상 공격력 <unbreak>#1[i]%</unbreak>만큼의 물리 속성 피해를 준다",
+        "fullDesc": "적을 바로 공격하며, 전투 진입 후 모든 적에게 소상 공격력 {{1}}%만큼의 물리 속성 피해를 준다",
         "shortDesc": "적을 공격하며, 전투 진입 후 모든 적에게 소량의 물리 속성 피해를 가한다"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "shortDesc": ""
       }
     }
   }

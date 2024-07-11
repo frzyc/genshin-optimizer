@@ -2,6 +2,6 @@
   "name": "{RUBY_B#どうちょう}同調{RUBY_E#}",
   "passive": {
     "name": "ファミリー",
-    "description": "戦闘に入る時、味方全体の速度+<color=#f29e38ff><unbreak>#1[i]</unbreak></color>、<unbreak>#2[i]</unbreak>ターン継続。"
+    "description": "戦闘に入る時、味方全体の速度+<orangeStrong>{{1}}</orangeStrong>、{{2}}ターン継続。"
   }
 }

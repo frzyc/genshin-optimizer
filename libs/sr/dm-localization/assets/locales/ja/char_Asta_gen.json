@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "スペクトル{RUBY_B#こうせん}光線{RUBY_E#}",
-        "fullDesc": "指定した敵単体にアスターの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の炎属性ダメージを与える。",
+        "fullDesc": "指定した敵単体にアスターの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の炎属性ダメージを与える。",
         "shortDesc": "敵単体に少量の炎属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "スターフォール",
-        "fullDesc": "指定した敵単体にアスターの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の炎属性ダメージを与え、さらに4ヒットする。1ヒットごとに、ランダムな敵単体にアスターの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の炎属性ダメージを与える。",
+        "fullDesc": "指定した敵単体にアスターの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の炎属性ダメージを与え、さらに4ヒットする。1ヒットごとに、ランダムな敵単体にアスターの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の炎属性ダメージを与える。",
         "shortDesc": "敵単体に少量の炎属性ダメージを与える、5回バウンドする。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#ほしぞらしゅうげん}星空祝言{RUBY_E#}",
-        "fullDesc": "味方全体の速度+<color=#f29e38ff><unbreak>#1[i]</unbreak></color>、<unbreak>#2[i]</unbreak>ターン継続。",
+        "fullDesc": "味方全体の速度+<orangeStrong>{{1}}</orangeStrong>、{{2}}ターン継続。",
         "shortDesc": "味方全体の<color=#f29e38ff>速度アップさせる</color>。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#ちゃくそう}着想{RUBY_E#}の{RUBY_B#いっせん}一閃{RUBY_E#}",
-        "fullDesc": "敵を攻撃。戦闘に入った後、敵全体にアスターの攻撃力<unbreak>#1[i]%</unbreak>分の炎属性ダメージを与える。",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵全体にアスターの攻撃力{{1}}%分の炎属性ダメージを与える。",
         "shortDesc": "敵を攻撃。戦闘に入った後、敵全体に少量のダメージを与える。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
-        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
       }
     }
   }

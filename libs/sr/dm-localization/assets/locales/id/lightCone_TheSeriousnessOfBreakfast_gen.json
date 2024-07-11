@@ -2,6 +2,6 @@
   "name": "The Seriousness of Breakfast",
   "passive": {
     "name": "Get Ready",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> DMG yang diakibatkan pengguna. Setiap pengguna mengalahkan 1 musuh, ATK pengguna akan meningkat <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Efek ini dapat ditumpuk hingga <unbreak>#3[i]</unbreak> lapis."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG yang diakibatkan pengguna. Setiap pengguna mengalahkan 1 musuh, ATK pengguna akan meningkat <orangeStrong>{{2}}%</orangeStrong>. Efek ini dapat ditumpuk hingga {{3}} lapis."
   }
 }

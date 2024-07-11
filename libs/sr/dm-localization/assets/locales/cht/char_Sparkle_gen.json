@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "獨角戲",
-        "fullDesc": "對指定敵方單體造成等同於花火<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的量子屬性傷害。",
+        "fullDesc": "對指定敵方單體造成等同於花火<orangeStrong>{{1}}%</orangeStrong>攻擊力的量子屬性傷害。",
         "shortDesc": "對敵方單體造成少量量子屬性傷害。"
       }
     },
     "skill": {
       "0": {
         "name": "夢遊魚",
-        "fullDesc": "使指定我方單體的暴擊傷害提高，提高數值等同於花火<color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>暴擊傷害+<color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>，持續<unbreak>#3[i]</unbreak>回合，並使該目標行動提前<unbreak>#4[i]%</unbreak>。\\n當花火對自身施放該技能時，無法觸發行動提前效果。",
+        "fullDesc": "使指定我方單體的暴擊傷害提高，提高數值等同於花火<orangeStrong>{{1}}%</orangeStrong>暴擊傷害+<orangeStrong>{{2}}%</orangeStrong>，持續{{3}}回合，並使該目標行動提前{{4}}%。\\n當花火對自身施放該技能時，無法觸發行動提前效果。",
         "shortDesc": "使我方單體<color=#f29e38ff>暴擊傷害</color>提高，並使該目標行動提前。"
       }
     },
     "ult": {
       "0": {
         "name": "一人千役",
-        "fullDesc": "為我方恢復<unbreak>#2[i]</unbreak>個戰技點，並使我方全體獲得【謎詭】。持有【謎詭】的我方目標觸發花火天賦造成的傷害提高效果每層額外提高<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>，持續<unbreak>#4[i]</unbreak>回合。",
+        "fullDesc": "為我方恢復{{2}}個戰技點，並使我方全體獲得【謎詭】。持有【謎詭】的我方目標觸發花火天賦造成的傷害提高效果每層額外提高<orangeStrong>{{3}}%</orangeStrong>，持續{{4}}回合。",
         "shortDesc": "為我方恢復<color=#f29e38ff>戰技點</color>，使觸發花火天賦的傷害提高效果額外提高。"
       }
     },
     "technique": {
       "0": {
         "name": "不可靠敘事者",
-        "fullDesc": "使用秘技後，我方全體進入持續<unbreak>#2[i]</unbreak>秒的【迷誤】狀態。在【迷誤】狀態下不會被敵人發現。【迷誤】狀態期間進入戰鬥時為我方恢復<unbreak>#1[i]</unbreak>個戰技點。",
+        "fullDesc": "使用秘技後，我方全體進入持續{{2}}秒的【迷誤】狀態。在【迷誤】狀態下不會被敵人發現。【迷誤】狀態期間進入戰鬥時為我方恢復{{1}}個戰技點。",
         "shortDesc": "使用秘技後，我方全體進入【迷誤】狀態。在【迷誤】狀態下不會被敵人發現。【迷誤】狀態期間進入戰鬥時為我方恢復<color=#f29e38ff>戰技點</color>。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
-        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
+        "shortDesc": ""
       }
     }
   }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "我也想幫上忙",
-        "fullDesc": "對指定敵方單體造成等同於克拉拉<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害。",
+        "fullDesc": "對指定敵方單體造成等同於克拉拉<orangeStrong>{{1}}%</orangeStrong>攻擊力的物理屬性傷害。",
         "shortDesc": "對敵方單體造成少量物理屬性傷害。"
       }
     },
     "skill": {
       "0": {
         "name": "史瓦羅在看著你",
-        "fullDesc": "對敵方全體造成等同於克拉拉<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的物理屬性傷害，並對所有被史瓦羅標上【反擊標記】的敵方目標額外造成等同於克拉拉<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻擊力的物理屬性傷害。\\n戰技施放後所有【反擊標記】失效。",
+        "fullDesc": "對敵方全體造成等同於克拉拉<orangeStrong>{{1}}%</orangeStrong>攻擊力的物理屬性傷害，並對所有被史瓦羅標上【反擊標記】的敵方目標額外造成等同於克拉拉<orangeStrong>{{2}}%</orangeStrong>攻擊力的物理屬性傷害。\\n戰技施放後所有【反擊標記】失效。",
         "shortDesc": "對敵方全體造成物理屬性傷害，對持有【反擊標記】的目標<color=#f29e38ff>額外造成物理傷害</color>。"
       }
     },
     "ult": {
       "0": {
         "name": "是約定不是命令",
-        "fullDesc": "施放終結技後克拉拉受到的傷害額外降低<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>且被敵方攻擊的機率大幅提高，持續<unbreak>#3[i]</unbreak>回合。\\n同時史瓦羅的<u>反擊</u>得到強化，當任意我方目標受到攻擊後，史瓦羅會立即發動<u>反擊</u>，對敵方目標造成的傷害倍率提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，並對其相鄰目標造成相當於主目標<unbreak>50%</unbreak>的傷害。強化效果可生效<unbreak>#5[i]</unbreak>次。",
+        "fullDesc": "施放終結技後克拉拉受到的傷害額外降低<orangeStrong>{{4}}%</orangeStrong>且被敵方攻擊的機率大幅提高，持續{{3}}回合。\\n同時史瓦羅的<u>反擊</u>得到強化，當任意我方目標受到攻擊後，史瓦羅會立即發動<u>反擊</u>，對敵方目標造成的傷害倍率提高<orangeStrong>{{2}}%</orangeStrong>，並對其相鄰目標造成相當於主目標<unbreak>50%</unbreak>的傷害。強化效果可生效{{5}}次。",
         "shortDesc": "自身<color=#f29e38ff>受到的傷害降低</color>、被攻擊的機率提高，並強化<u>反擊</u>的效果。"
       }
     },
     "technique": {
       "0": {
         "name": "勝利的小小代價",
-        "fullDesc": "立即攻擊敵人，進入戰鬥後克拉拉受到敵方攻擊的機率提高，持續<unbreak>#1[i]</unbreak>回合。",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後克拉拉受到敵方攻擊的機率提高，持續{{1}}回合。",
         "shortDesc": "攻擊敵人，進入戰鬥後受到敵人攻擊的機率提高。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
-        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
+        "shortDesc": ""
       }
     }
   }

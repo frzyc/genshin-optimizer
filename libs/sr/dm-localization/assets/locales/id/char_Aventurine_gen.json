@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Straight Bet",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> DEF Aventurine pada 1 musuh yang ditargetkan.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> DEF Aventurine pada 1 musuh yang ditargetkan.",
         "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh yang ditargetkan."
       }
     },
     "skill": {
       "0": {
         "name": "Cornerstone Deluxe",
-        "fullDesc": "Memberikan Shield \"Fortified Wager\" pada seluruh rekan tim yang dapat menahan DMG sebesar <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> DEF Aventurine + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>, berlangsung selama <unbreak>#3[i]</unbreak> giliran. Saat memperoleh ulang \"Fortified Wager\", kekuatan Shield dapat ditumpuk, maksimal tidak melebihi <unbreak>#4[i]%</unbreak> kekuatan Shield yang diberikan Skill saat ini.",
+        "fullDesc": "Memberikan Shield \"Fortified Wager\" pada seluruh rekan tim yang dapat menahan DMG sebesar <orangeStrong>{{1}}%</orangeStrong> DEF Aventurine + <orangeStrong>{{2}}</orangeStrong>, berlangsung selama {{3}} giliran. Saat memperoleh ulang \"Fortified Wager\", kekuatan Shield dapat ditumpuk, maksimal tidak melebihi {{4}}% kekuatan Shield yang diberikan Skill saat ini.",
         "shortDesc": "Memberikan Shield \"Fortified Wager\" yang <color=#f29e38ff>kekuatan Shield-nya dapat ditumpuk</color> pada seluruh rekan tim."
       }
     },
     "ult": {
       "0": {
         "name": "Roulette Shark",
-        "fullDesc": "Memperoleh \"Blind Bet\" sebesar 1 hingga <unbreak>#1[i]</unbreak> poin secara acak. Kemudian, membuat 1 musuh yang ditargetkan memasuki status \"Unnerved\" selama <unbreak>#4[i]</unbreak> giliran, serta mengakibatkan Imaginary DMG sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> DEF Aventurine pada 1 musuh yang ditargetkan tersebut. Saat rekan tim menyerang target musuh berstatus \"Unnerved\", CRIT DMG yang diakibatkan meningkat <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>.",
+        "fullDesc": "Memperoleh \"Blind Bet\" sebesar 1 hingga {{1}} poin secara acak. Kemudian, membuat 1 musuh yang ditargetkan memasuki status \"Unnerved\" selama {{4}} giliran, serta mengakibatkan Imaginary DMG sebesar <orangeStrong>{{2}}%</orangeStrong> DEF Aventurine pada 1 musuh yang ditargetkan tersebut. Saat rekan tim menyerang target musuh berstatus \"Unnerved\", CRIT DMG yang diakibatkan meningkat <orangeStrong>{{3}}%</orangeStrong>.",
         "shortDesc": "Memperoleh poin \"Blind Bet\" secara acak dan membuat 1 musuh memasuki status \"Unnerved\", serta mengakibatkan Imaginary DMG pada musuh tersebut. Saat rekan tim menyerang target musuh berstatus \"Unnerved\", <color=#f29e38ff>CRIT DMG yang diakibatkan akan meningkat</color>."
       }
     },
     "technique": {
       "0": {
         "name": "The Red or the Black",
-        "fullDesc": "Setelah menggunakan Technique, akan memperoleh 1 dari beberapa efek berikut:\\nMemiliki peluang tertentu untuk memperoleh peningkatan <unbreak>#1[i]%</unbreak> DEF;\\nBerpeluang besar memperoleh peningkatan <unbreak>#2[i]%</unbreak> DEF;\\nBerpeluang kecil memperoleh peningkatan <unbreak>#3[i]%</unbreak> DEF.\\nKetika digunakan berulang, hanya efek dengan nilai tertinggi yang akan tersimpan.\\nSaat pertempuran berikutnya dimulai, DEF seluruh rekan tim akan meningkat sesuai dengan nilai DEF yang terkait, berlangsung selama <unbreak>#4[i]</unbreak> giliran.",
+        "fullDesc": "Setelah menggunakan Technique, akan memperoleh 1 dari beberapa efek berikut:\\nMemiliki peluang tertentu untuk memperoleh peningkatan {{1}}% DEF;\\nBerpeluang besar memperoleh peningkatan {{2}}% DEF;\\nBerpeluang kecil memperoleh peningkatan {{3}}% DEF.\\nKetika digunakan berulang, hanya efek dengan nilai tertinggi yang akan tersimpan.\\nSaat pertempuran berikutnya dimulai, DEF seluruh rekan tim akan meningkat sesuai dengan nilai DEF yang terkait, berlangsung selama {{4}} giliran.",
         "shortDesc": "Setelah menggunakan Technique, akan memperoleh 1 dari 3 jenis efek peningkatan DEF secara acak. Saat pertempuran berikutnya dimulai, DEF seluruh rekan tim akan meningkat sesuai dengan nilai DEF yang terkait."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya."
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "shortDesc": ""
       }
     }
   }

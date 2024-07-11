@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Cloudfencer Art: Starshine",
-        "fullDesc": "Deals Physical DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Sushang's ATK to a single enemy.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sushang's ATK to a single enemy.",
         "shortDesc": "Deals minor Physical DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Cloudfencer Art: Mountainfall",
-        "fullDesc": "Deals Physical DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Sushang's ATK to a single enemy. In addition, there is a <unbreak>#3[i]%</unbreak> chance to trigger Sword Stance on the final hit, dealing <u>Additional</u> Physical DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of Sushang's ATK to the enemy.\\nIf the enemy is inflicted with <u>Weakness Break</u>, Sword Stance is guaranteed to trigger.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sushang's ATK to a single enemy. In addition, there is a {{3}}% chance to trigger Sword Stance on the final hit, dealing <u>Additional</u> Physical DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Sushang's ATK to the enemy.\\nIf the enemy is inflicted with <u>Weakness Break</u>, Sword Stance is guaranteed to trigger.",
         "shortDesc": "Deals Physical DMG to a single enemy with <color=#f29e38ff>a small chance of triggering Sword Stance</color>. If the enemy has <u>Weakness Break</u>, <color=#f29e38ff>Sword Stance is guaranteed to trigger</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Shape of Taixu: Dawn Herald",
-        "fullDesc": "Deals Physical DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Sushang's ATK to a single enemy target, and she immediately takes action again. In addition, Sushang's ATK increases by <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> and using her Skill has 2 extra chances to trigger Sword Stance for <unbreak>#2[i]</unbreak> turn(s).\\nSword Stance triggered from the extra chances deals <unbreak>#3[i]%</unbreak> of the original DMG.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sushang's ATK to a single enemy target, and she immediately takes action again. In addition, Sushang's ATK increases by <orangeStrong>{{4}}%</orangeStrong> and using her Skill has 2 extra chances to trigger Sword Stance for {{2}} turn(s).\\nSword Stance triggered from the extra chances deals {{3}}% of the original DMG.",
         "shortDesc": "Deals massive Physical DMG to a single enemy, enhances Sword Stance's effect, and <color=#f29e38ff>takes action immediately</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Cloudfencer Art: Warcry",
-        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Sushang deals Physical DMG equal to <unbreak>#1[i]%</unbreak> of her ATK to all enemies.",
+        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Sushang deals Physical DMG equal to {{1}}% of her ATK to all enemies.",
         "shortDesc": "Attacks the enemy. After entering battle, deals minor Physical DMG to all enemies."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

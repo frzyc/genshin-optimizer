@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Spectrum Beam",
-        "fullDesc": "สร้าง DMG ไฟ <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Asta แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "fullDesc": "สร้าง DMG ไฟ <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Asta แก่ศัตรูที่กำหนดหนึ่งตัว",
         "shortDesc": "สร้าง DMG ไฟเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
       }
     },
     "skill": {
       "0": {
         "name": "Meteor Storm",
-        "fullDesc": "สร้าง DMG ไฟ <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Asta แก่ศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG เพิ่มเติม 4 ครั้ง โดยแต่ละครั้งจะสุ่มสร้าง DMG ไฟ <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Asta แก่ศัตรูหนึ่งตัว",
+        "fullDesc": "สร้าง DMG ไฟ <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Asta แก่ศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG เพิ่มเติม 4 ครั้ง โดยแต่ละครั้งจะสุ่มสร้าง DMG ไฟ <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Asta แก่ศัตรูหนึ่งตัว",
         "shortDesc": "สร้าง DMG ไฟเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว และจะยิงทั้งหมด 5 ครั้ง"
       }
     },
     "ult": {
       "0": {
         "name": "Astral Blessing",
-        "fullDesc": "เพิ่มความเร็วของฝ่ายตัวเองทั้งหมด <color=#f29e38ff><unbreak>#1[i]</unbreak></color> หน่วย เป็นเวลา <unbreak>#2[i]</unbreak> เทิร์น",
+        "fullDesc": "เพิ่มความเร็วของฝ่ายตัวเองทั้งหมด <orangeStrong>{{1}}</orangeStrong> หน่วย เป็นเวลา {{2}} เทิร์น",
         "shortDesc": "<color=#f29e38ff>เพิ่มความเร็ว</color>ของฝ่ายเราทั้งหมด"
       }
     },
     "technique": {
       "0": {
         "name": "Miracle Flash",
-        "fullDesc": "เมื่อโจมตีศัตรูทันทีและเข้าสู่การต่อสู้ จะสร้าง DMG ไฟ <unbreak>#1[i]%</unbreak> ของ ATK ของ Asta แก่ฝ่ายศัตรูทั้งหมด",
+        "fullDesc": "เมื่อโจมตีศัตรูทันทีและเข้าสู่การต่อสู้ จะสร้าง DMG ไฟ {{1}}% ของ ATK ของ Asta แก่ฝ่ายศัตรูทั้งหมด",
         "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสร้าง DMG เล็กน้อยแก่ฝ่ายศัตรูทั้งหมด"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย"
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
+        "shortDesc": ""
       }
     }
   }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Arrowslinger",
-        "fullDesc": "Deals <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Yukong's ATK as Imaginary DMG to a target enemy.",
+        "fullDesc": "Deals <orangeStrong>{{1}}%</orangeStrong> of Yukong's ATK as Imaginary DMG to a target enemy.",
         "shortDesc": "Deals minor Imaginary DMG to an enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Emboldening Salvo",
-        "fullDesc": "Obtains <unbreak>#1[i]</unbreak> stack(s) of \"Roaring Bowstrings\" (to a maximum of 2 stacks). When \"Roaring Bowstrings\" is active, the ATK of all allies increases by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, and every time an ally's turn (including Yukong's) ends, Yukong loses 1 stack of \"Roaring Bowstrings.\"\\nWhen it's the turn where Yukong gains \"Roaring Bowstrings\" by using Skill, \"Roaring Bowstrings\" will not be removed.",
+        "fullDesc": "Obtains {{1}} stack(s) of \"Roaring Bowstrings\" (to a maximum of 2 stacks). When \"Roaring Bowstrings\" is active, the ATK of all allies increases by <orangeStrong>{{2}}%</orangeStrong>, and every time an ally's turn (including Yukong's) ends, Yukong loses 1 stack of \"Roaring Bowstrings.\"\\nWhen it's the turn where Yukong gains \"Roaring Bowstrings\" by using Skill, \"Roaring Bowstrings\" will not be removed.",
         "shortDesc": "Obtains 2 stacks of Roaring Bowstrings. All allies' <color=#f29e38ff>ATK increases</color> when Roaring Bowstrings is active on this character."
       }
     },
     "ult": {
       "0": {
         "name": "Diving Kestrel",
-        "fullDesc": "If \"Roaring Bowstrings\" is active on Yukong when her Ultimate is used, additionally increases all allies' CRIT Rate by <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> and CRIT DMG by <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>. At the same time, deals Imaginary DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Yukong's ATK to a single enemy.",
+        "fullDesc": "If \"Roaring Bowstrings\" is active on Yukong when her Ultimate is used, additionally increases all allies' CRIT Rate by <orangeStrong>{{2}}%</orangeStrong> and CRIT DMG by <orangeStrong>{{3}}%</orangeStrong>. At the same time, deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Yukong's ATK to a single enemy.",
         "shortDesc": "When Roaring Bowstrings is active on this character, <color=#f29e38ff>increases the CRIT Rate and CRIT DMG</color> of all allies and deals massive Imaginary DMG to a single enemy."
       }
     },
     "technique": {
       "0": {
         "name": "Chasing the Wind",
-        "fullDesc": "After using her Technique, Yukong enters Sprint mode for <unbreak>#1[i]</unbreak> seconds. In Sprint mode, her Movement SPD increases by <unbreak>#2[i]%</unbreak>, and Yukong gains <unbreak>#3[i]</unbreak> stack(s) of \"Roaring Bowstrings\" when she enters battle by attacking enemies.",
+        "fullDesc": "After using her Technique, Yukong enters Sprint mode for {{1}} seconds. In Sprint mode, her Movement SPD increases by {{2}}%, and Yukong gains {{3}} stack(s) of \"Roaring Bowstrings\" when she enters battle by attacking enemies.",
         "shortDesc": "<color=#f29e38ff>Increases Movement Speed</color>. After attacking an enemy and entering battle, receive 2 stacks of Roaring Bowstrings."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

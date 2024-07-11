@@ -2,6 +2,6 @@
   "name": "Dance! Dance! Dance!",
   "passive": {
     "name": "Impossível Parar!",
-    "description": "Quando o usuário utiliza a Perícia Suprema, as ações de todos os aliados são Avançadas Adiante em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+    "description": "Quando o usuário utiliza a Perícia Suprema, as ações de todos os aliados são Avançadas Adiante em <orangeStrong>{{1}}%</orangeStrong>."
   }
 }

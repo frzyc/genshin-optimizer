@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Velocidad del rayo",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Arlan como Daño de Rayo a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Arlan como Daño de Rayo a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Rompeataduras",
-        "fullDesc": "Arlan consume una cantidad de PV equivalente al <unbreak>#1[i]%</unbreak> de sus PV máx. e inflige un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de su ATQ como Daño de Rayo a un enemigo. Si no hay suficientes PV, al usar la habilidad básica los PV actuales de Arlan se reducen a 1.",
+        "fullDesc": "Arlan consume una cantidad de PV equivalente al {{1}}% de sus PV máx. e inflige un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo. Si no hay suficientes PV, al usar la habilidad básica los PV actuales de Arlan se reducen a 1.",
         "shortDesc": "Consume una parte de sus PV para infligir Daño de Rayo a un enemigo."
       }
     },
     "ult": {
       "0": {
         "name": "Castigo furibundo",
-        "fullDesc": "Arlan inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de su ATQ como Daño de Rayo a un enemigo y un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de su ATQ como Daño de Rayo a los enemigos adyacentes.",
+        "fullDesc": "Arlan inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño de Rayo a los enemigos adyacentes.",
         "shortDesc": "Inflige una gran cantidad de Daño de Rayo a un enemigo y Daño de Rayo a los enemigos adyacentes."
       }
     },
     "technique": {
       "0": {
         "name": "Cosecha rápida",
-        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un <unbreak>#1[i]%</unbreak> del ATQ de Arlan como Daño de Rayo a todos los enemigos.",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1}}% del ATQ de Arlan como Daño de Rayo a todos los enemigos.",
         "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño de Rayo a todos los enemigos."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
       }
     }
   }

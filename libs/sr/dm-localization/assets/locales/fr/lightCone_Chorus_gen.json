@@ -2,6 +2,6 @@
   "name": "Chœur",
   "passive": {
     "name": "De concert",
-    "description": "Augmente l'ATQ de tous les alliés de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> après être entré en combat. Les effets du même type ne peuvent pas être cumulés."
+    "description": "Augmente l'ATQ de tous les alliés de <orangeStrong>{{1}}%</orangeStrong> après être entré en combat. Les effets du même type ne peuvent pas être cumulés."
   }
 }

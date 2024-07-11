@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "夜间喧嚣不止",
-        "fullDesc": "对指定敌方单体造成等同于卡芙卡<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的雷属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于卡芙卡<orangeStrong>{{1}}%</orangeStrong>攻击力的雷属性伤害。",
         "shortDesc": "对敌方单体造成少量雷属性伤害。"
       }
     },
     "skill": {
       "0": {
         "name": "月光摩挲连绵",
-        "fullDesc": "对指定敌方单体造成等同于卡芙卡<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的雷属性伤害，同时对其相邻目标造成等同于卡芙卡<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>攻击力的雷属性伤害。\\n若指定敌方单体处于持续伤害状态，其当前承受的所有持续伤害立即产生相当于原伤害<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>的伤害。",
+        "fullDesc": "对指定敌方单体造成等同于卡芙卡<orangeStrong>{{1}}%</orangeStrong>攻击力的雷属性伤害，同时对其相邻目标造成等同于卡芙卡<orangeStrong>{{3}}%</orangeStrong>攻击力的雷属性伤害。\\n若指定敌方单体处于持续伤害状态，其当前承受的所有持续伤害立即产生相当于原伤害<orangeStrong>{{2}}%</orangeStrong>的伤害。",
         "shortDesc": "对敌方单体造成雷属性伤害，对相邻目标造成少量雷属性伤害。\\n若主目标处于持续伤害类负面状态，则使持续伤害类负面状态<color=#f29e38ff>额外产生1次伤害</color>。"
       }
     },
     "ult": {
       "0": {
         "name": "悲剧尽头的颤音",
-        "fullDesc": "对敌方全体造成等同于卡芙卡<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的雷属性伤害，有<unbreak>#2[i]%</unbreak>的<u>基础概率</u>使受到攻击的敌方目标陷入触电状态，并使其当前承受的触电状态立即产生相当于原伤害<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>的伤害。触电状态持续<unbreak>#3[i]</unbreak>回合。\\n触电状态下，敌方目标每回合开始时受到等同于卡芙卡<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>攻击力的雷属性持续伤害。",
+        "fullDesc": "对敌方全体造成等同于卡芙卡<orangeStrong>{{1}}%</orangeStrong>攻击力的雷属性伤害，有{{2}}%的<u>基础概率</u>使受到攻击的敌方目标陷入触电状态，并使其当前承受的触电状态立即产生相当于原伤害<orangeStrong>{{5}}%</orangeStrong>的伤害。触电状态持续{{3}}回合。\\n触电状态下，敌方目标每回合开始时受到等同于卡芙卡<orangeStrong>{{4}}%</orangeStrong>攻击力的雷属性持续伤害。",
         "shortDesc": "对敌方全体造成少量雷属性伤害，大概率<color=#f29e38ff>施加触电状态</color>。\\n若敌方目标处于触电状态，则使触电状态<color=#f29e38ff>额外产生1次伤害</color>。"
       }
     },
     "technique": {
       "0": {
         "name": "宽恕无关慈悲",
-        "fullDesc": "立即攻击一定范围内的所有敌人，进入战斗后对敌方全体造成等同于卡芙卡<unbreak>#3[i]%</unbreak>攻击力的雷属性伤害，同时有<unbreak>#1[i]%</unbreak>的<u>基础概率</u>使敌方每个单体目标陷入与终结技相同的触电状态，持续<unbreak>#2[i]</unbreak>回合。",
+        "fullDesc": "立即攻击一定范围内的所有敌人，进入战斗后对敌方全体造成等同于卡芙卡{{3}}%攻击力的雷属性伤害，同时有{{1}}%的<u>基础概率</u>使敌方每个单体目标陷入与终结技相同的触电状态，持续{{2}}回合。",
         "shortDesc": "攻击范围内的所有敌人，进入战斗后对敌方全体造成少量雷属性伤害，大概率<color=#f29e38ff>施加触电状态</color>。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
-        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "shortDesc": ""
       }
     }
   }

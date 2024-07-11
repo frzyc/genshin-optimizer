@@ -2,6 +2,6 @@
   "name": "Gâu! Thời Gian Tản Bộ",
   "passive": {
     "name": "Chạy!",
-    "description": "Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của người trang bị, sát thương gây ra cho kẻ địch ở trạng thái Thiêu Đốt hoặc Chảy Máu tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Hiệu ứng này cũng có hiệu lực với sát thương duy trì."
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của người trang bị, sát thương gây ra cho kẻ địch ở trạng thái Thiêu Đốt hoặc Chảy Máu tăng <orangeStrong>{{2}}%</orangeStrong>. Hiệu ứng này cũng có hiệu lực với sát thương duy trì."
   }
 }

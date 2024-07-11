@@ -2,6 +2,6 @@
   "name": "Tĩnh Mịch",
   "passive": {
     "name": "Trầm Luân",
-    "description": "Khi bắt đầu chiến đấu sẽ khiến Chính Xác Hiệu Ứng của người trang bị tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, duy trì <unbreak>#2[i]</unbreak> hiệp."
+    "description": "Khi bắt đầu chiến đấu sẽ khiến Chính Xác Hiệu Ứng của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>, duy trì {{2}} hiệp."
   }
 }

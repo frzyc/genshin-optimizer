@@ -2,6 +2,6 @@
   "name": "Past and Future",
   "passive": {
     "name": "Kites From the Past",
-    "description": "Setelah pengguna melancarkan Skill, meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> DMG rekan selanjutnya yang beraksi selama <unbreak>#2[i]</unbreak> giliran."
+    "description": "Setelah pengguna melancarkan Skill, meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG rekan selanjutnya yang beraksi selama {{2}} giliran."
   }
 }

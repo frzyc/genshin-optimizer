@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "云骑枪术•朔风",
-        "fullDesc": "对指定敌方单体造成等同于丹恒<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的风属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于丹恒<orangeStrong>{{1}}%</orangeStrong>攻击力的风属性伤害。",
         "shortDesc": "对敌方单体造成少量风属性伤害。"
       }
     },
     "skill": {
       "0": {
         "name": "云骑枪术•疾雨",
-        "fullDesc": "对指定敌方单体造成等同于丹恒<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的风属性伤害。\\n战技造成的伤害触发暴击时，有<unbreak>#4[i]%</unbreak>的<u>基础概率</u>使受到攻击的敌方目标速度降低<unbreak>#2[i]%</unbreak>，持续<unbreak>#3[i]</unbreak>回合。",
+        "fullDesc": "对指定敌方单体造成等同于丹恒<orangeStrong>{{1}}%</orangeStrong>攻击力的风属性伤害。\\n战技造成的伤害触发暴击时，有{{4}}%的<u>基础概率</u>使受到攻击的敌方目标速度降低{{2}}%，持续{{3}}回合。",
         "shortDesc": "对敌方单体造成风属性伤害，暴击时大概率施加减速状态。"
       }
     },
     "ult": {
       "0": {
         "name": "洞天幻化，长梦一觉",
-        "fullDesc": "对指定敌方单体造成等同于丹恒<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的风属性伤害。当受到攻击的敌方目标处于减速状态时，终结技造成的伤害倍率提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。",
+        "fullDesc": "对指定敌方单体造成等同于丹恒<orangeStrong>{{1}}%</orangeStrong>攻击力的风属性伤害。当受到攻击的敌方目标处于减速状态时，终结技造成的伤害倍率提高<orangeStrong>{{2}}%</orangeStrong>。",
         "shortDesc": "对敌方单体造成大量风属性伤害，对减速状态的目标伤害倍率提高。"
       }
     },
     "technique": {
       "0": {
         "name": "破敌锋芒",
-        "fullDesc": "使用秘技后，下一次战斗开始时丹恒攻击力提高<unbreak>#1[i]%</unbreak>，持续<unbreak>#2[i]</unbreak>回合。",
+        "fullDesc": "使用秘技后，下一次战斗开始时丹恒攻击力提高{{1}}%，持续{{2}}回合。",
         "shortDesc": "使用秘技，下一次进战后攻击力提高。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
-        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "shortDesc": ""
       }
     }
   }

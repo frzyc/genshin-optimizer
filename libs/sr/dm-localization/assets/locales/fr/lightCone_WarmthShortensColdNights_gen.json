@@ -2,6 +2,6 @@
   "name": "Chaleur au cœur de la nuit froide",
   "passive": {
     "name": "Petite lumière",
-    "description": "Augmente les PV max du porteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Lorsque le porteur utilise l'ATQ normale ou sa compétence, restaure des PV pour tous les alliés à hauteur de <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> de leurs PV max respectifs."
+    "description": "Augmente les PV max du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur utilise l'ATQ normale ou sa compétence, restaure des PV pour tous les alliés à hauteur de <orangeStrong>{{2}}%</orangeStrong> de leurs PV max respectifs."
   }
 }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Thwack",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Seele pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Seele pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Sheathed Blade",
-        "fullDesc": "Meningkatkan <unbreak>#2[i]%</unbreak> SPD Seele, serta mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Seele pada 1 target musuh. Efek peningkatan SPD berlangsung selama <unbreak>#3[i]</unbreak> giliran.",
+        "fullDesc": "Meningkatkan {{2}}% SPD Seele, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Seele pada 1 target musuh. Efek peningkatan SPD berlangsung selama {{3}} giliran.",
         "shortDesc": "Mengakibatkan Quantum DMG pada 1 musuh dan meningkatkan SPD diri sendiri."
       }
     },
     "ult": {
       "0": {
         "name": "Butterfly Flurry",
-        "fullDesc": "Langsung memasuki status Buff dan mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Seele pada 1 target musuh.",
+        "fullDesc": "Langsung memasuki status Buff dan mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Seele pada 1 target musuh.",
         "shortDesc": "Memasuki <color=#f29e38ff>status Buff</color> dan mengakibatkan Quantum DMG dalam jumlah besar pada 1 musuh."
       }
     },
     "technique": {
       "0": {
         "name": "Phantom Illusion",
-        "fullDesc": "Setelah menggunakan Technique, Seele akan memasuki status Stealth selama <unbreak>#1[i]</unbreak> detik. Selama berada dalam status Stealth, Seele tidak akan terdeteksi musuh. Jika memulai pertempuran dengan cara menyerang musuh, Seele akan segera memasuki status Buff.",
+        "fullDesc": "Setelah menggunakan Technique, Seele akan memasuki status Stealth selama {{1}} detik. Selama berada dalam status Stealth, Seele tidak akan terdeteksi musuh. Jika memulai pertempuran dengan cara menyerang musuh, Seele akan segera memasuki status Buff.",
         "shortDesc": "Memasuki status <color=#f29e38ff>Stealth</color>. Setelah menyerang musuh dan memasuki pertempuran, akan langsung memasuki <color=#f29e38ff>status Buff</color>."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
       }
     }
   }

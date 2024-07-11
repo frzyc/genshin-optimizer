@@ -2,6 +2,6 @@
   "name": "We Are Wildfire",
   "passive": {
     "name": "Teary-Eyed",
-    "description": "At the start of the battle, the DMG dealt to all allies decreases by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> for <unbreak>#3[i]</unbreak> turn(s). At the same time, immediately restores HP to all allies equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of the respective HP difference between the characters' Max HP and current HP."
+    "description": "At the start of the battle, the DMG dealt to all allies decreases by <orangeStrong>{{2}}%</orangeStrong> for {{3}} turn(s). At the same time, immediately restores HP to all allies equal to <orangeStrong>{{1}}%</orangeStrong> of the respective HP difference between the characters' Max HP and current HP."
   }
 }

@@ -2,6 +2,6 @@
   "name": "{RUBY_B#なや}悩{RUBY_E#}んで{RUBY_B#わら}笑{RUBY_E#}って",
   "passive": {
     "name": "{RUBY_B#じゅんばん}順番{RUBY_E#}にね！",
-    "description": "装備キャラの会心率+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>、追加攻撃の与ダメージ+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。装備キャラが追加攻撃を行った後、敵を「従順」状態にする。この効果は最大で<unbreak>#4[i]</unbreak>層累積できる。味方の攻撃が「従順」状態の敵に命中した時、「従順」1層につき与える会心ダメージ+<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>。"
+    "description": "装備キャラの会心率+<orangeStrong>{{1}}%</orangeStrong>、追加攻撃の与ダメージ+<orangeStrong>{{2}}%</orangeStrong>。装備キャラが追加攻撃を行った後、敵を「従順」状態にする。この効果は最大で{{4}}層累積できる。味方の攻撃が「従順」状態の敵に命中した時、「従順」1層につき与える会心ダメージ+<orangeStrong>{{3}}%</orangeStrong>。"
   }
 }

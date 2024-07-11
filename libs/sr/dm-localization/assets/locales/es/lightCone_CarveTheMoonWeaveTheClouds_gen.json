@@ -2,6 +2,6 @@
   "name": "Esculpir la luna y tejer las nubes",
   "passive": {
     "name": "Secreto",
-    "description": "Cuando comienza la batalla y al empezar cada turno del portador, se activa uno de los siguientes efectos al azar (el nuevo efecto será distinto del anterior y lo sustituirá): el ATQ de todos los aliados aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>; el Daño CRIT de todos los aliados aumenta en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>; la recuperación de energía de todos los aliados aumenta en un <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>. Estos efectos no se pueden acumular con otros del mismo tipo y se disipan cuando el portador es derrotado."
+    "description": "Cuando comienza la batalla y al empezar cada turno del portador, se activa uno de los siguientes efectos al azar (el nuevo efecto será distinto del anterior y lo sustituirá): el ATQ de todos los aliados aumenta en un <orangeStrong>{{1}}%</orangeStrong>; el Daño CRIT de todos los aliados aumenta en un <orangeStrong>{{2}}%</orangeStrong>; la recuperación de energía de todos los aliados aumenta en un <orangeStrong>{{3}}%</orangeStrong>. Estos efectos no se pueden acumular con otros del mismo tipo y se disipan cuando el portador es derrotado."
   }
 }

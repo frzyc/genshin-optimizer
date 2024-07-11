@@ -1,7 +1,7 @@
 {
   "setName": "Habitante del yermo de los bandidos",
   "setEffects": {
-    "2": "Daño Imaginario +<unbreak>#1[i]%</unbreak>.",
-    "4": "Al infligir daño a enemigos afectados por estados negativos, la Prob. CRIT del portador aumenta en un <unbreak>#1[i]%</unbreak>. Si el objetivo está afectado por Prisión, el Daño CRIT aumenta en un <unbreak>#2[i]%</unbreak>."
+    "2": "Daño Imaginario +{{1}}%.",
+    "4": "Al infligir daño a enemigos afectados por estados negativos, la Prob. CRIT del portador aumenta en un {{1}}%. Si el objetivo está afectado por Prisión, el Daño CRIT aumenta en un {{2}}%."
   }
 }

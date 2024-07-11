@@ -4,51 +4,56 @@
     "basic": {
       "0": {
         "name": "Ba Đường Thăng Trầm",
-        "fullDesc": "Gây Sát Thương Lôi bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Acheron cho 1 kẻ địch chỉ định.",
+        "fullDesc": "Gây Sát Thương Lôi bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Acheron cho 1 kẻ địch chỉ định.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Bát Lôi Phi Độ",
-        "fullDesc": "Nhận <unbreak>#3[i]</unbreak> điểm Mộng Tàn. Gắn <unbreak>#3[i]</unbreak> tầng Nút Thắt Đỏ lên 1 kẻ địch chỉ định, gây Sát Thương Lôi lên kẻ này bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Acheron, đồng thời gây Sát Thương Lôi cho mục tiêu lân cận kẻ đó bằng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Tấn Công của Acheron.",
-        "shortDesc": "Nhận <color=#f29e38ff><color=#f29e38ff><unbreak>#3[i]</unbreak></color> điểm Mộng Tàn</color>. Gắn <color=#f29e38ff><unbreak>#3[i]</unbreak></color> tầng Nút Thắt Đỏ cho 1 kẻ địch, gây Sát Thương Lôi lên kẻ này, và lượng nhỏ Sát Thương Lôi lên mục tiêu ở gần."
+        "fullDesc": "Nhận {{3}} điểm Mộng Tàn. Gắn {{3}} tầng Nút Thắt Đỏ lên 1 kẻ địch chỉ định, gây Sát Thương Lôi lên kẻ này bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Acheron, đồng thời gây Sát Thương Lôi cho mục tiêu lân cận kẻ đó bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Acheron.",
+        "shortDesc": "Nhận <color=#f29e38ff><orangeStrong>{{3}}</orangeStrong> điểm Mộng Tàn</color>. Gắn <orangeStrong>{{3}}</orangeStrong> tầng Nút Thắt Đỏ cho 1 kẻ địch, gây Sát Thương Lôi lên kẻ này, và lượng nhỏ Sát Thương Lôi lên mục tiêu ở gần."
       }
     },
     "ult": {
       "0": {
         "name": "Giấc Mộng Tàn Khuyết, Một Chém Đoạn Tuyệt",
-        "fullDesc": "Lần lượt phát động 3 lần Lưỡi Chém Mưa và 1 lần Hoàng Tuyền Vượt Kiếp, tối đa gây cho 1 kẻ địch chỉ định Sát Thương Lôi bằng <color=#f29e38ff><unbreak>#6[i]%</unbreak></color> Tấn Công của Acheron, tối đa gây cho các mục tiêu khác Sát Thương Lôi bằng <color=#f29e38ff><unbreak>#7[i]%</unbreak></color> Tấn Công của Acheron.\\nLưỡi Chém Mưa: Gây cho 1 kẻ địch chỉ định Sát Thương Lôi bằng <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> Tấn Công của Acheron đồng thời xóa tối đa 3 tầng Nút Thắt Đỏ của mục tiêu. Khi xóa Nút Thắt Đỏ sẽ lập tức gây cho toàn bộ phe địch Sát Thương Lôi bằng <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> Tấn Công của Acheron, mỗi 1 tầng Nút Thắt Đỏ bị xóa sẽ tăng thêm Bội Số Sát Thương lần này, tối đa tăng đến <color=#f29e38ff><unbreak>#5[f1]%</unbreak></color>.\\nHoàng Tuyền Vượt Kiếp: Gây cho toàn bộ phe địch Sát Thương Lôi bằng <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> Tấn Công của Acheron và xóa tất cả Nút Thắt Đỏ.\\nTrong thời gian Tuyệt Kỹ không thể gắn thêm Nút Thắt Đỏ cho kẻ địch.",
+        "fullDesc": "Lần lượt phát động 3 lần Lưỡi Chém Mưa và 1 lần Hoàng Tuyền Vượt Kiếp, tối đa gây cho 1 kẻ địch chỉ định Sát Thương Lôi bằng <orangeStrong>{{6}}%</orangeStrong> Tấn Công của Acheron, tối đa gây cho các mục tiêu khác Sát Thương Lôi bằng <orangeStrong>{{7}}%</orangeStrong> Tấn Công của Acheron.\\nLưỡi Chém Mưa: Gây cho 1 kẻ địch chỉ định Sát Thương Lôi bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Acheron đồng thời xóa tối đa 3 tầng Nút Thắt Đỏ của mục tiêu. Khi xóa Nút Thắt Đỏ sẽ lập tức gây cho toàn bộ phe địch Sát Thương Lôi bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Acheron, mỗi 1 tầng Nút Thắt Đỏ bị xóa sẽ tăng thêm Bội Số Sát Thương lần này, tối đa tăng đến <orangeStrong>{{5}}%</orangeStrong>.\\nHoàng Tuyền Vượt Kiếp: Gây cho toàn bộ phe địch Sát Thương Lôi bằng <orangeStrong>{{3}}%</orangeStrong> Tấn Công của Acheron và xóa tất cả Nút Thắt Đỏ.\\nTrong thời gian Tuyệt Kỹ không thể gắn thêm Nút Thắt Đỏ cho kẻ địch.",
         "shortDesc": "Gây cho 1 kẻ địch 3 đòn Sát Thương Lôi với lượng nhỏ, nếu Nút Thắt Đỏ bị loại bỏ khỏi mục tiêu, sẽ gây lượng nhỏ Sát Thương Lôi cho toàn bộ phe địch. Cuối cùng gây 1 đòn Sát Thương Lôi cho toàn bộ phe địch và xóa tất cả Nút Thắt Đỏ."
       },
       "1": {
         "name": "Lưỡi Chém Mưa",
+        "fullDesc": "",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch, đồng thời xóa tối đa 3 tầng Nút Thắt Đỏ của mục tiêu. Khi xóa Nút Thắt Đỏ, sẽ gây lượng nhỏ Sát Thương Lôi cho toàn bộ kẻ địch 1 lần, mỗi khi xóa 1 tầng Nút Thắt Đỏ, sẽ tăng Bội Số Sát Thương lần này."
       },
       "2": {
         "name": "Lưỡi Chém Mưa",
+        "fullDesc": "",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch, đồng thời xóa tối đa 3 tầng Nút Thắt Đỏ của mục tiêu. Khi xóa Nút Thắt Đỏ, sẽ gây lượng nhỏ Sát Thương Lôi cho toàn bộ kẻ địch 1 lần, mỗi khi xóa 1 tầng Nút Thắt Đỏ, sẽ tăng Bội Số Sát Thương lần này."
       },
       "3": {
         "name": "Lưỡi Chém Mưa",
+        "fullDesc": "",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch, đồng thời xóa tối đa 3 tầng Nút Thắt Đỏ của mục tiêu. Khi xóa Nút Thắt Đỏ, sẽ gây lượng nhỏ Sát Thương Lôi cho toàn bộ kẻ địch 1 lần, mỗi khi xóa 1 tầng Nút Thắt Đỏ, sẽ tăng Bội Số Sát Thương lần này."
       },
       "4": {
         "name": "Hoàng Tuyền Vượt Kiếp",
+        "fullDesc": "",
         "shortDesc": "Gây Sát Thương Lôi lên toàn bộ phe địch và xóa tất cả \"Nút Thắt Đỏ\"."
       }
     },
     "technique": {
       "0": {
         "name": "Tứ Tướng Đoạn Ngã",
-        "fullDesc": "Lập tức tấn công kẻ địch, khi bắt đầu mỗi đợt sẽ nhận Tứ Tướng Đoạn Ngã, gây Sát Thương Lôi cho tất cả kẻ địch bằng <unbreak>#1[i]%</unbreak> Tấn Công của Acheron, đồng thời bỏ qua thuộc tính Điểm Yếu và làm giảm Sức Bền của toàn phe địch, khi phá vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Lôi.\\nTứ Tướng Đoạn Ngã: Sau khi thi triển Tuyệt Kỹ, Acheron nhận <unbreak>#2[i]</unbreak> điểm Mộng Tàn đồng thời gắn <unbreak>#2[i]</unbreak> tầng Nút Thắt Đỏ lên 1 kẻ địch ngẫu nhiên.\\nNếu tấn công kẻ địch bình thường sẽ lập tức tiêu diệt kẻ đó, không vào chiến đấu. Khi chưa đánh trúng địch sẽ không tiêu hao Điểm Bí Kỹ.",
+        "fullDesc": "Lập tức tấn công kẻ địch, khi bắt đầu mỗi đợt sẽ nhận Tứ Tướng Đoạn Ngã, gây Sát Thương Lôi cho tất cả kẻ địch bằng {{1}}% Tấn Công của Acheron, đồng thời bỏ qua thuộc tính Điểm Yếu và làm giảm Sức Bền của toàn phe địch, khi phá vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Lôi.\\nTứ Tướng Đoạn Ngã: Sau khi thi triển Tuyệt Kỹ, Acheron nhận {{2}} điểm Mộng Tàn đồng thời gắn {{2}} tầng Nút Thắt Đỏ lên 1 kẻ địch ngẫu nhiên.\\nNếu tấn công kẻ địch bình thường sẽ lập tức tiêu diệt kẻ đó, không vào chiến đấu. Khi chưa đánh trúng địch sẽ không tiêu hao Điểm Bí Kỹ.",
         "shortDesc": "Tấn công kẻ địch, khi bắt đầu mỗi đợt sẽ nhận Tứ Tướng Đoạn Ngã, gây Sát Thương Lôi cho tất cả kẻ địch, đồng thời <color=#f29e38ff>bỏ qua thuộc tính Điểm Yếu</color> và làm giảm Sức Bền.\\nNếu tấn công kẻ địch bình thường sẽ <color=#f29e38ff>lập tức tiêu diệt kẻ đó</color>, không vào chiến đấu. Khi chưa đánh trúng địch sẽ không tiêu hao Điểm Bí Kỹ."
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
-        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch."
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch.",
+        "shortDesc": ""
       }
     }
   }

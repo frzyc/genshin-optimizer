@@ -2,6 +2,6 @@
   "name": "The Moles Welcome You",
   "passive": {
     "name": "Fantastic Adventure",
-    "description": "When the wearer uses Basic ATK, Skill, or Ultimate to attack enemies, the wearer gains one stack of Mischievous. Each stack increases the wearer's ATK by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+    "description": "When the wearer uses Basic ATK, Skill, or Ultimate to attack enemies, the wearer gains one stack of Mischievous. Each stack increases the wearer's ATK by <orangeStrong>{{1}}%</orangeStrong>."
   }
 }

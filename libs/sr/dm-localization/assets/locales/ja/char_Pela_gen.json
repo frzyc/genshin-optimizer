@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#ひょうてんそげき}氷点狙撃{RUBY_E#}",
-        "fullDesc": "指定した敵単体にペラの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の氷属性ダメージを与える。",
+        "fullDesc": "指定した敵単体にペラの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
         "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#ていおんぼうがい}低温妨害{RUBY_E#}",
-        "fullDesc": "指定した敵単体の<u>バフ</u>を<unbreak>#2[i]</unbreak>つ解除し、ペラの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の氷属性ダメージを与える。",
+        "fullDesc": "指定した敵単体の<u>バフ</u>を{{2}}つ解除し、ペラの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
         "shortDesc": "敵単体の<color=#f29e38ff><u>バフ</u></color>を1つ<color=#f29e38ff>解除</color>し、敵単体に氷属性ダメージを与える。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#りょういきせいあつ}領域制圧{RUBY_E#}",
-        "fullDesc": "<unbreak>#1[i]%</unbreak>の<u>基礎確率</u>で敵単体それぞれを「一般解」状態にし、敵全体にペラの攻撃力<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>分の氷属性ダメージを与える。\\n「一般解」状態の敵の防御力-<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>、<unbreak>#3[i]</unbreak>ターン継続。",
+        "fullDesc": "{{1}}%の<u>基礎確率</u>で敵単体それぞれを「一般解」状態にし、敵全体にペラの攻撃力<orangeStrong>{{4}}%</orangeStrong>分の氷属性ダメージを与える。\\n「一般解」状態の敵の防御力-<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。",
         "shortDesc": "高確率で敵の<color=#f29e38ff>防御力をダウン</color>し、敵全体に少量の氷属性ダメージを与える。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#せんてひっしょう}先手必勝{RUBY_E#}",
-        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にペラの攻撃力<unbreak>#4[i]%</unbreak>分の氷属性ダメージを与え、<unbreak>#1[i]%</unbreak>の<u>基礎確率</u>で敵単体それぞれの防御力-<unbreak>#2[i]%</unbreak>、<unbreak>#3[i]</unbreak>ターン継続。",
+        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にペラの攻撃力{{4}}%分の氷属性ダメージを与え、{{1}}%の<u>基礎確率</u>で敵単体それぞれの防御力-{{2}}%、{{3}}ターン継続。",
         "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に少量のダメージを与え、高確率で敵それぞれの防御力ダウン。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
-        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
       }
     }
   }

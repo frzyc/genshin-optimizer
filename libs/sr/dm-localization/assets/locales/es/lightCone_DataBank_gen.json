@@ -2,6 +2,6 @@
   "name": "Archivos",
   "passive": {
     "name": "Conocimiento",
-    "description": "El daño que inflige la habilidad definitiva del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+    "description": "El daño que inflige la habilidad definitiva del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>."
   }
 }

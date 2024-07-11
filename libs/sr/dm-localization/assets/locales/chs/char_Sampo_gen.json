@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "酷炫的刀花",
-        "fullDesc": "对指定敌方单体造成等同于桑博<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的风属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于桑博<orangeStrong>{{1}}%</orangeStrong>攻击力的风属性伤害。",
         "shortDesc": "对敌方单体造成少量风属性伤害。"
       }
     },
     "skill": {
       "0": {
         "name": "反复横跳的爱",
-        "fullDesc": "对指定敌方单体造成等同于桑博<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻击力的风属性伤害，并额外造成<unbreak>#1[i]</unbreak>次伤害，每次伤害对敌方随机单体造成等同于桑博<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>攻击力的风属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于桑博<orangeStrong>{{2}}%</orangeStrong>攻击力的风属性伤害，并额外造成{{1}}次伤害，每次伤害对敌方随机单体造成等同于桑博<orangeStrong>{{2}}%</orangeStrong>攻击力的风属性伤害。",
         "shortDesc": "对敌方单体造成少量风属性伤害，共弹射5次。"
       }
     },
     "ult": {
       "0": {
         "name": "惊喜礼盒",
-        "fullDesc": "对敌方全体造成等同于桑博<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的风属性伤害，同时有<unbreak>#4[i]%</unbreak>的<u>基础概率</u>使被攻击的敌方目标受到的持续伤害提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，持续<unbreak>#3[i]</unbreak>回合。",
+        "fullDesc": "对敌方全体造成等同于桑博<orangeStrong>{{1}}%</orangeStrong>攻击力的风属性伤害，同时有{{4}}%的<u>基础概率</u>使被攻击的敌方目标受到的持续伤害提高<orangeStrong>{{2}}%</orangeStrong>，持续{{3}}回合。",
         "shortDesc": "对敌方全体造成风属性伤害，大概率使其<color=#f29e38ff>受到的持续伤害提高</color>。"
       }
     },
     "technique": {
       "0": {
         "name": "你最闪亮",
-        "fullDesc": "使用秘技后使一定区域内的敌人陷入<unbreak>#1[i]</unbreak>秒的目盲状态，目盲状态下的敌人无法发现我方目标。\\n若主动攻击陷入目盲状态的敌人，进入战斗时有<unbreak>#2[i]%</unbreak><u>固定概率</u>使敌方每个单体目标行动延后<unbreak>#3[i]%</unbreak>。",
+        "fullDesc": "使用秘技后使一定区域内的敌人陷入{{1}}秒的目盲状态，目盲状态下的敌人无法发现我方目标。\\n若主动攻击陷入目盲状态的敌人，进入战斗时有{{2}}%<u>固定概率</u>使敌方每个单体目标行动延后{{3}}%。",
         "shortDesc": "使一定区域内敌人陷入目盲状态。攻击陷入目盲状态敌人，进战后大概率使敌方每个单体目标<u>行动延后</u>。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
-        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "shortDesc": ""
       }
     }
   }

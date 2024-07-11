@@ -2,6 +2,6 @@
   "name": "Оборона",
   "passive": {
     "name": "Оживление",
-    "description": "Когда владелец использует сверхспособность, он восстанавливает <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> HP."
+    "description": "Когда владелец использует сверхспособность, он восстанавливает <orangeStrong>{{1}}%</orangeStrong> HP."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Quelque chose d'irremplaçable",
   "passive": {
     "name": "Liens familiaux",
-    "description": "Augmente l'ATQ du porteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Lorsque le porteur élimine un ennemi ou est touché par une attaque, il restaure immédiatement des PV équivalents à <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de son ATQ. D'autre part, ses DGT augmentent de <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> jusqu'à la fin de son prochain tour. Cet effet n'est pas cumulable et ne peut se déclencher qu'1 fois par tour."
+    "description": "Augmente l'ATQ du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur élimine un ennemi ou est touché par une attaque, il restaure immédiatement des PV équivalents à <orangeStrong>{{2}}%</orangeStrong> de son ATQ. D'autre part, ses DGT augmentent de <orangeStrong>{{3}}%</orangeStrong> jusqu'à la fin de son prochain tour. Cet effet n'est pas cumulable et ne peut se déclencher qu'1 fois par tour."
   }
 }

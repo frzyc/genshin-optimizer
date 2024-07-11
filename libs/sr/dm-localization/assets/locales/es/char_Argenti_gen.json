@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "Fragancia fugaz",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Argenti como Daño Físico a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Argenti como Daño Físico a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Florecimiento de la justicia",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Argenti como Daño Físico a todos los enemigos.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Argenti como Daño Físico a todos los enemigos.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Físico a todos los enemigos."
       }
     },
     "ult": {
       "0": {
         "name": "Este jardín otorga la belleza suprema",
-        "fullDesc": "Consume <unbreak>#2[i]</unbreak> pts. de energía e inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Argenti como Daño Físico a todos los enemigos.",
-        "shortDesc": "Consume <color=#f29e38ff><unbreak>#2[i]</unbreak></color> pts. de energía e inflige Daño Físico a todos los enemigos."
+        "fullDesc": "Consume {{2}} pts. de energía e inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Argenti como Daño Físico a todos los enemigos.",
+        "shortDesc": "Consume <orangeStrong>{{2}}</orangeStrong> pts. de energía e inflige Daño Físico a todos los enemigos."
       },
       "1": {
         "name": "Mérito otorgado en \"mi\" jardín",
-        "fullDesc": "Consume <unbreak>#4[i]</unbreak> pts. de energía e inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Argenti como Daño Físico a todos los enemigos. Además, inflige daño <unbreak>#2[i]</unbreak> veces más, y cada vez inflige un Daño Físico equivalente al <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> del ATQ de Argenti a un enemigo al azar.",
-        "shortDesc": "Consume <color=#f29e38ff><unbreak>#4[i]</unbreak></color> pts. de energía e inflige Daño Físico a todos los enemigos. Además, inflige una pequeña cantidad de Daño Físico a enemigos al azar. Rebota 6 veces."
+        "fullDesc": "Consume {{4}} pts. de energía e inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Argenti como Daño Físico a todos los enemigos. Además, inflige daño {{2}} veces más, y cada vez inflige un Daño Físico equivalente al <orangeStrong>{{3}}%</orangeStrong> del ATQ de Argenti a un enemigo al azar.",
+        "shortDesc": "Consume <orangeStrong>{{4}}</orangeStrong> pts. de energía e inflige Daño Físico a todos los enemigos. Además, inflige una pequeña cantidad de Daño Físico a enemigos al azar. Rebota 6 veces."
       }
     },
     "technique": {
       "0": {
         "name": "Manifiesto de la virtud pura",
-        "fullDesc": "Tras usar la técnica, los enemigos de una zona determinada quedan afectados por Mareo durante <unbreak>#1[i]</unbreak> s, lo que les impide atacar activamente a los aliados.\\nAl entrar en combate tras atacar a un enemigo mareado, inflige a todos los enemigos un Daño Físico equivalente al <unbreak>#2[i]%</unbreak> del ATQ de Argenti y recupera <unbreak>#3[i]</unbreak> pts. de energía.",
+        "fullDesc": "Tras usar la técnica, los enemigos de una zona determinada quedan afectados por Mareo durante {{1}} s, lo que les impide atacar activamente a los aliados.\\nAl entrar en combate tras atacar a un enemigo mareado, inflige a todos los enemigos un Daño Físico equivalente al {{2}}% del ATQ de Argenti y recupera {{3}} pts. de energía.",
         "shortDesc": "Afecta con Mareo a los enemigos de una zona. Al atacar a un enemigo mareado y entrar en combate, inflige una pequeña cantidad de Daño Físico a todos los enemigos y Argenti recupera energía."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
       }
     }
   }

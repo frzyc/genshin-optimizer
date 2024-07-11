@@ -2,6 +2,6 @@
   "name": "Along the Passing Shore",
   "passive": {
     "name": "Steerer",
-    "description": "Increases the wearer's CRIT DMG by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. When the wearer hits an enemy target, inflicts Mirage Fizzle on the enemy, lasting for 1 turn. Each time the wearer attacks, this effect can only trigger 1 time on each target. The wearer deals <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> increased DMG to targets afflicted with Mirage Fizzle, and the DMG dealt by the wearer's Ultimate additionally increases by <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+    "description": "Increases the wearer's CRIT DMG by <orangeStrong>{{1}}%</orangeStrong>. When the wearer hits an enemy target, inflicts Mirage Fizzle on the enemy, lasting for 1 turn. Each time the wearer attacks, this effect can only trigger 1 time on each target. The wearer deals <orangeStrong>{{2}}%</orangeStrong> increased DMG to targets afflicted with Mirage Fizzle, and the DMG dealt by the wearer's Ultimate additionally increases by <orangeStrong>{{3}}%</orangeStrong>."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Aventure à Rêvopolis",
   "passive": {
     "name": "Solidarité",
-    "description": "Après que le porteur a utilisé son ATQ normale, sa compétence ou son ultime, tous les alliés gagnent Enfantillages, ce qui augmente de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> les DGT infligés par le même type de capacité. Enfantillages n'a d'effet que sur la capacité la plus récente utilisée par le porteur et n'est pas cumulable."
+    "description": "Après que le porteur a utilisé son ATQ normale, sa compétence ou son ultime, tous les alliés gagnent Enfantillages, ce qui augmente de <orangeStrong>{{1}}%</orangeStrong> les DGT infligés par le même type de capacité. Enfantillages n'a d'effet que sur la capacité la plus récente utilisée par le porteur et n'est pas cumulable."
   }
 }

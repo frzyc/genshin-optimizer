@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "極寒的弓矢",
-        "fullDesc": "對指定敵方單體造成等同於三月七<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的冰屬性傷害。",
+        "fullDesc": "對指定敵方單體造成等同於三月七<orangeStrong>{{1}}%</orangeStrong>攻擊力的冰屬性傷害。",
         "shortDesc": "對敵方單體造成少量冰屬性傷害。"
       }
     },
     "skill": {
       "0": {
         "name": "可愛即是正義",
-        "fullDesc": "為指定我方單體提供能夠抵消等同於三月七<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>防禦力+<color=#f29e38ff><unbreak>#4[i]</unbreak></color>傷害的護盾，持續<unbreak>#2[i]</unbreak>回合。\\n若該目標現有生命值百分比大於等於<unbreak>#3[i]%</unbreak>，則遭到敵方攻擊的機率大幅提高。",
+        "fullDesc": "為指定我方單體提供能夠抵消等同於三月七<orangeStrong>{{1}}%</orangeStrong>防禦力+<orangeStrong>{{4}}</orangeStrong>傷害的護盾，持續{{2}}回合。\\n若該目標現有生命值百分比大於等於{{3}}%，則遭到敵方攻擊的機率大幅提高。",
         "shortDesc": "為我方單體<color=#f29e38ff>施加護盾</color>。"
       }
     },
     "ult": {
       "0": {
         "name": "冰刻箭雨之時",
-        "fullDesc": "對敵方全體造成等同於三月七<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的冰屬性傷害。受到攻擊的敵方目標有<unbreak>#2[i]%</unbreak><u>基礎機率</u>陷入凍結狀態，持續<unbreak>#3[i]</unbreak>回合。\\n凍結狀態下，敵方目標不能行動同時每回合開始時受到等同於三月七<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>攻擊力的冰屬性<u>附加傷害</u>。",
+        "fullDesc": "對敵方全體造成等同於三月七<orangeStrong>{{1}}%</orangeStrong>攻擊力的冰屬性傷害。受到攻擊的敵方目標有{{2}}%<u>基礎機率</u>陷入凍結狀態，持續{{3}}回合。\\n凍結狀態下，敵方目標不能行動同時每回合開始時受到等同於三月七<orangeStrong>{{4}}%</orangeStrong>攻擊力的冰屬性<u>附加傷害</u>。",
         "shortDesc": "對敵方<color=#f29e38ff>全體</color>造成冰屬性傷害，<color=#f29e38ff>有機率施加凍結狀態</color>。"
       }
     },
     "technique": {
       "0": {
         "name": "凍人的瞬間",
-        "fullDesc": "立即攻擊敵人，進入戰鬥後有<unbreak>#1[i]%</unbreak>的<u>基礎機率</u>使隨機敵方單體陷入凍結狀態，持續<unbreak>#2[i]</unbreak>回合。\\n凍結狀態下，敵方目標不能行動，同時每回合開始時受到等同於三月七<unbreak>#3[i]%</unbreak>攻擊力的冰屬性<u>附加傷害</u>。",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後有{{1}}%的<u>基礎機率</u>使隨機敵方單體陷入凍結狀態，持續{{2}}回合。\\n凍結狀態下，敵方目標不能行動，同時每回合開始時受到等同於三月七{{3}}%攻擊力的冰屬性<u>附加傷害</u>。",
         "shortDesc": "攻擊敵人，進入戰鬥後有高機率使敵方隨機單體陷入凍結狀態。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
-        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
+        "shortDesc": ""
       }
     }
   }

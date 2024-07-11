@@ -2,6 +2,6 @@
   "name": "汪！散步時間！",
   "passive": {
     "name": "快溜",
-    "description": "使裝備者的攻擊力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，對處於灼燒或裂傷狀態的敵方目標造成的傷害提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。該效果對持續傷害也會生效。"
+    "description": "使裝備者的攻擊力提高<orangeStrong>{{1}}%</orangeStrong>，對處於灼燒或裂傷狀態的敵方目標造成的傷害提高<orangeStrong>{{2}}%</orangeStrong>。該效果對持續傷害也會生效。"
   }
 }

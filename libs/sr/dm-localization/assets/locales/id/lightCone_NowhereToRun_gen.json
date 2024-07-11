@@ -2,6 +2,6 @@
   "name": "Nowhere to Run",
   "passive": {
     "name": "Desperate Times",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK pengguna. Saat pengguna mengalahkan musuh, akan memulihkan HP pengguna sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ATK-nya."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK pengguna. Saat pengguna mengalahkan musuh, akan memulihkan HP pengguna sebesar <orangeStrong>{{2}}%</orangeStrong> ATK-nya."
   }
 }

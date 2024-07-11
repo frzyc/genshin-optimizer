@@ -2,6 +2,6 @@
   "name": "In the Name of the World",
   "passive": {
     "name": "Inheritor",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> DMG pengguna terhadap target musuh dengan efek debuff. Saat pengguna melancarkan Skill, Effect Hit Rate pengguna pada serangan kali ini meningkat <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> dan ATK meningkat <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG pengguna terhadap target musuh dengan efek debuff. Saat pengguna melancarkan Skill, Effect Hit Rate pengguna pada serangan kali ini meningkat <orangeStrong>{{2}}%</orangeStrong> dan ATK meningkat <orangeStrong>{{3}}%</orangeStrong>."
   }
 }

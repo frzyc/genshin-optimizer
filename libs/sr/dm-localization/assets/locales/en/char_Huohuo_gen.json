@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Banner: Stormcaller",
-        "fullDesc": "Deals Wind DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Huohuo's Max HP to a target enemy.",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Huohuo's Max HP to a target enemy.",
         "shortDesc": "Deals minor Wind DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Talisman: Protection",
-        "fullDesc": "Dispels <unbreak>#5[i]</unbreak> <u>debuff(s)</u> from a single target ally and immediately restores this ally's HP by an amount equal to <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> of Huohuo's Max HP plus <color=#f29e38ff><unbreak>#2[i]</unbreak></color>. At the same time, restores HP for allies that are adjacent to this target ally by an amount equal to <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> of Huohuo's Max HP plus <color=#f29e38ff><unbreak>#4[i]</unbreak></color>.",
+        "fullDesc": "Dispels {{5}} <u>debuff(s)</u> from a single target ally and immediately restores this ally's HP by an amount equal to <orangeStrong>{{1}}%</orangeStrong> of Huohuo's Max HP plus <orangeStrong>{{2}}</orangeStrong>. At the same time, restores HP for allies that are adjacent to this target ally by an amount equal to <orangeStrong>{{3}}%</orangeStrong> of Huohuo's Max HP plus <orangeStrong>{{4}}</orangeStrong>.",
         "shortDesc": "Dispels 1 <u>debuff</u> from an ally and <color=#f29e38ff>restore HP</color> to that ally and their adjacent allies."
       }
     },
     "ult": {
       "0": {
         "name": "Tail: Spiritual Domination",
-        "fullDesc": "Regenerates Energy for all allies (excluding this character) by an amount equal to <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> of their respective Max Energy. At the same time, increases their ATK by <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> for <unbreak>#3[i]</unbreak> turn(s).",
+        "fullDesc": "Regenerates Energy for all allies (excluding this character) by an amount equal to <orangeStrong>{{1}}%</orangeStrong> of their respective Max Energy. At the same time, increases their ATK by <orangeStrong>{{2}}%</orangeStrong> for {{3}} turn(s).",
         "shortDesc": "<color=#f29e38ff>Regenerates Energy</color> for all allies (excluding this character) and <color=#f29e38ff>increases their ATK</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Fiend: Impeachment of Evil",
-        "fullDesc": "Huohuo terrorizes surrounding enemies, afflicting Horror-Struck on them. Enemies in Horror-Struck will flee away from Huohuo for <unbreak>#4[i]</unbreak> second(s). When entering battle with enemies in Horror-Struck, there is a <unbreak>#1[i]%</unbreak> <u>base chance</u> of reducing every single enemy's ATK by <unbreak>#2[i]%</unbreak> for <unbreak>#3[i]</unbreak> turn(s).",
+        "fullDesc": "Huohuo terrorizes surrounding enemies, afflicting Horror-Struck on them. Enemies in Horror-Struck will flee away from Huohuo for {{4}} second(s). When entering battle with enemies in Horror-Struck, there is a {{1}}% <u>base chance</u> of reducing every single enemy's ATK by {{2}}% for {{3}} turn(s).",
         "shortDesc": "Causes surrounding enemies to become Horror-Struck. After entering battle with enemies afflicted with Horror-Struck, there is a high chance applying <color=#f29e38ff>ATK reduction</color> on the enemy targets."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

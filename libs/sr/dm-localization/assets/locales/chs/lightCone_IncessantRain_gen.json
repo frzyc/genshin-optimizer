@@ -2,6 +2,6 @@
   "name": "雨一直下",
   "passive": {
     "name": "幻影现实",
-    "description": "使装备者的效果命中提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。当装备者对同时处于大于等于<unbreak>#4[i]</unbreak>个负面效果的敌方目标造成伤害时，暴击率提高<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>。装备者施放普攻、战技、终结技后，有<unbreak>#2[i]%</unbreak>的基础概率对随机1个未持有【以太编码】的受击目标施加【以太编码】。持有【以太编码】的目标受到的伤害提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>，持续1回合。"
+    "description": "使装备者的效果命中提高<orangeStrong>{{1}}%</orangeStrong>。当装备者对同时处于大于等于{{4}}个负面效果的敌方目标造成伤害时，暴击率提高<orangeStrong>{{5}}%</orangeStrong>。装备者施放普攻、战技、终结技后，有{{2}}%的基础概率对随机1个未持有【以太编码】的受击目标施加【以太编码】。持有【以太编码】的目标受到的伤害提高<orangeStrong>{{3}}%</orangeStrong>，持续1回合。"
   }
 }

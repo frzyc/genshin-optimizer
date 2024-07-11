@@ -4,44 +4,46 @@
     "basic": {
       "0": {
         "name": "Farewell Hit",
-        "fullDesc": "Deals Physical DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of the Trailblazer's ATK to a single enemy.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.",
         "shortDesc": "Deals minor Physical DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "RIP Home Run",
-        "fullDesc": "Deals Physical DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of the Trailblazer's ATK to a single enemy and enemies adjacent to it.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a single enemy and enemies adjacent to it.",
         "shortDesc": "Deals Physical DMG to a single enemy and enemies adjacent to it."
       }
     },
     "ult": {
       "0": {
         "name": "Stardust Ace",
-        "fullDesc": "Choose between two attack modes to deliver a full strike.\\nBlowout: Farewell Hit deals Physical DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of the Trailblazer's ATK to a single enemy.\\nBlowout: RIP Home Run deals Physical DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of the Trailblazer's ATK to a single enemy, and Physical DMG equal to <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> of the Trailblazer's ATK to enemies adjacent to it.",
+        "fullDesc": "Choose between two attack modes to deliver a full strike.\\nBlowout: Farewell Hit deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.\\nBlowout: RIP Home Run deals Physical DMG equal to <orangeStrong>{{2}}%</orangeStrong> of the Trailblazer's ATK to a single enemy, and Physical DMG equal to <orangeStrong>{{3}}%</orangeStrong> of the Trailblazer's ATK to enemies adjacent to it.",
         "shortDesc": "Uses Single Target ATK or Blast to strike with full force."
       },
       "1": {
         "name": "Blowout: Farewell Hit",
-        "fullDesc": "Deals Physical DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of the Trailblazer's ATK to a single enemy.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.",
         "shortDesc": "Deals massive Physical DMG to a single enemy."
       },
       "2": {
         "name": "Blowout: RIP Home Run",
-        "fullDesc": "Deals Physical DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Trailblazer's ATK to a single enemy and Physical DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of Trailblazer's ATK to enemies adjacent to it.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Trailblazer's ATK to a single enemy and Physical DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Trailblazer's ATK to enemies adjacent to it.",
         "shortDesc": "Deals Physical DMG to a single enemy and enemies adjacent to it."
       }
     },
     "technique": {
       "0": {
         "name": "Immortal Third Strike",
-        "fullDesc": "Immediately heals all allies for <unbreak>#1[i]%</unbreak> of their respective Max HP after using this Technique."
+        "fullDesc": "Immediately heals all allies for {{1}}% of their respective Max HP after using this Technique.",
+        "shortDesc": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

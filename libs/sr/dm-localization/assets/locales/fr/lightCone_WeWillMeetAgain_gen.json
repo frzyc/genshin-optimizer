@@ -2,6 +2,6 @@
   "name": "Ce n'est que partie remise",
   "passive": {
     "name": "Passe d'armes",
-    "description": "Après utilisation de son ATQ normale ou de sa compétence, le porteur inflige des DGT additionnels équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de son ATQ à un ennemi aléatoire qui a été attaqué."
+    "description": "Après utilisation de son ATQ normale ou de sa compétence, le porteur inflige des DGT additionnels équivalents à <orangeStrong>{{1}}%</orangeStrong> de son ATQ à un ennemi aléatoire qui a été attaqué."
   }
 }

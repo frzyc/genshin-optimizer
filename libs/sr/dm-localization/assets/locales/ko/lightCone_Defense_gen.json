@@ -2,6 +2,6 @@
   "name": "수비",
   "passive": {
     "name": "부흥",
-    "description": "장착한 캐릭터가 필살기 발동 시 HP 최대치 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 HP를 회복한다"
+    "description": "장착한 캐릭터가 필살기 발동 시 HP 최대치 <orangeStrong>{{1}}%</orangeStrong>만큼의 HP를 회복한다"
   }
 }

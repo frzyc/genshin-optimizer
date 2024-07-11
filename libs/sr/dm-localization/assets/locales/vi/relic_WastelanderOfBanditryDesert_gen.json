@@ -1,7 +1,7 @@
 {
   "setName": "Kẻ Hoang Dã Sa Mạc",
   "setEffects": {
-    "2": "Tăng Sát Thương Số Ảo <unbreak>#1[i]%</unbreak>.",
-    "4": "Khi người trang bị gây sát thương lên mục tiêu địch rơi vào Hiệu Ứng Xấu, Tỷ Lệ Bạo Kích tăng <unbreak>#1[i]%</unbreak>, khi gây sát thương lên mục tiêu địch rơi vào trạng thái Giam Cầm, Sát Thương Bạo Kích tăng <unbreak>#2[i]%</unbreak>."
+    "2": "Tăng Sát Thương Số Ảo {{1}}%.",
+    "4": "Khi người trang bị gây sát thương lên mục tiêu địch rơi vào Hiệu Ứng Xấu, Tỷ Lệ Bạo Kích tăng {{1}}%, khi gây sát thương lên mục tiêu địch rơi vào trạng thái Giam Cầm, Sát Thương Bạo Kích tăng {{2}}%."
   }
 }

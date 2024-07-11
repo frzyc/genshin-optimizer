@@ -1,6 +1,6 @@
 {
   "setName": "Salsotto Dừng Xoay",
   "setEffects": {
-    "2": "Tăng <unbreak>#1[i]%</unbreak> Tỷ Lệ Bạo Kích của người trang bị. Khi Tỷ Lệ Bạo Kích của người đó từ <unbreak>#2[i]%</unbreak> trở lên, sẽ tăng <unbreak>#3[i]%</unbreak> sát thương của Tuyệt Kỹ và Đòn Đánh Theo Sau."
+    "2": "Tăng {{1}}% Tỷ Lệ Bạo Kích của người trang bị. Khi Tỷ Lệ Bạo Kích của người đó từ {{2}}% trở lên, sẽ tăng {{3}}% sát thương của Tuyệt Kỹ và Đòn Đánh Theo Sau."
   }
 }

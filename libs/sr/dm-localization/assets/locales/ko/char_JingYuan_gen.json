@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "전광석화",
-        "fullDesc": "지정된 단일 적에게 경원 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 번개 속성 피해를 가한다",
+        "fullDesc": "지정된 단일 적에게 경원 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 번개 속성 피해를 가한다",
         "shortDesc": "단일 적에게 소량의 번개 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "고공을 가르는 뇌전",
-        "fullDesc": "모든 적에게 경원 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 번개 속성 피해를 가하고, 다음 턴 [신군]의 공격 단수가 <unbreak>#2[i]</unbreak>단 증가한다",
+        "fullDesc": "모든 적에게 경원 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 번개 속성 피해를 가하고, 다음 턴 [신군]의 공격 단수가 {{2}}단 증가한다",
         "shortDesc": "모든 적에게 소량의 번개 속성 피해를 가하고 <color=#f29e38ff>[신군]의 공격 단수가 증가한다</color>"
       }
     },
     "ult": {
       "0": {
         "name": "내가 곧 빛이니",
-        "fullDesc": "모든 적에게 경원 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 번개 속성 피해를 가하고, 다음 턴 [신군]의 공격 단수가 <unbreak>#2[i]</unbreak>단 증가한다",
+        "fullDesc": "모든 적에게 경원 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 번개 속성 피해를 가하고, 다음 턴 [신군]의 공격 단수가 {{2}}단 증가한다",
         "shortDesc": "모든 적에게 번개 속성 피해를 가하고 <color=#f29e38ff>[신군]의 공격 단수가 증가한다</color>"
       }
     },
     "technique": {
       "0": {
         "name": "위령 소환",
-        "fullDesc": "비술을 발동하면 다음 전투 시작 시 [신군]의 첫 번째 턴 공격 단수가 <unbreak>#1[i]</unbreak>단 증가한다",
+        "fullDesc": "비술을 발동하면 다음 전투 시작 시 [신군]의 첫 번째 턴 공격 단수가 {{1}}단 증가한다",
         "shortDesc": "비술을 발동하면 다음 전투 진입 시 <color=#f29e38ff>[신군]의 공격 단수가 증가한다</color>"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "shortDesc": ""
       }
     }
   }

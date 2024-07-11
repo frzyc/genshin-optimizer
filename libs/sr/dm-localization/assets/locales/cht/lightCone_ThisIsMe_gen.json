@@ -2,6 +2,6 @@
   "name": "這就是我啦！",
   "passive": {
     "name": "新篇章",
-    "description": "使裝備者防禦力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。使裝備者施放終結技時造成的傷害值提高，提高數值等同於裝備者防禦力的<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，該效果每次施放終結技時對每個敵方目標僅生效1次。"
+    "description": "使裝備者防禦力提高<orangeStrong>{{1}}%</orangeStrong>。使裝備者施放終結技時造成的傷害值提高，提高數值等同於裝備者防禦力的<orangeStrong>{{2}}%</orangeStrong>，該效果每次施放終結技時對每個敵方目標僅生效1次。"
   }
 }

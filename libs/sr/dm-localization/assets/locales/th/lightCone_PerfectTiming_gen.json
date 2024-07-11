@@ -2,6 +2,6 @@
   "name": "Perfect Timing",
   "passive": {
     "name": "Refraction of Sightline",
-    "description": "ทำให้การต้านทานสถานะของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> และทำให้การรักษาของผู้สวมใส่เพิ่มขึ้น โดยจะเพิ่มขึ้นเท่ากับ <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ของการต้านทานสถานะ โดยการรักษาสามารถเพิ่มขึ้นได้สูงสุดถึง <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>"
+    "description": "ทำให้การต้านทานสถานะของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> และทำให้การรักษาของผู้สวมใส่เพิ่มขึ้น โดยจะเพิ่มขึ้นเท่ากับ <orangeStrong>{{2}}%</orangeStrong> ของการต้านทานสถานะ โดยการรักษาสามารถเพิ่มขึ้นได้สูงสุดถึง <orangeStrong>{{3}}%</orangeStrong>"
   }
 }

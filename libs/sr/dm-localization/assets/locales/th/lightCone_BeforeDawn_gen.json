@@ -2,6 +2,6 @@
   "name": "Before Dawn",
   "passive": {
     "name": "Long Night",
-    "description": "ทำให้ DMG คริติคอลของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> และทำให้ DMG ของสกิลต่อสู้และท่าไม้ตายของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> หลังจากที่ผู้สวมใส่ใช้สกิลต่อสู้หรือท่าไม้ตาย จะได้รับเอฟเฟกต์ \"Somnus Corpus\" และจะใช้ \"Somnus Corpus\" เมื่อปล่อยการโจมตีต่อเนื่อง ซึ่งจะทำให้ DMG ของการโจมตีต่อเนื่องเพิ่มขึ้น <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>"
+    "description": "ทำให้ DMG คริติคอลของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> และทำให้ DMG ของสกิลต่อสู้และท่าไม้ตายของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> หลังจากที่ผู้สวมใส่ใช้สกิลต่อสู้หรือท่าไม้ตาย จะได้รับเอฟเฟกต์ \"Somnus Corpus\" และจะใช้ \"Somnus Corpus\" เมื่อปล่อยการโจมตีต่อเนื่อง ซึ่งจะทำให้ DMG ของการโจมตีต่อเนื่องเพิ่มขึ้น <orangeStrong>{{3}}%</orangeStrong>"
   }
 }

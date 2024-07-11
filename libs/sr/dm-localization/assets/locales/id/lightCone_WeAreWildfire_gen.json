@@ -2,6 +2,6 @@
   "name": "We Are Wildfire",
   "passive": {
     "name": "Teary-Eyed",
-    "description": "Saat pertempuran dimulai, DMG yang diterima seluruh rekan tim berkurang <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> selama <unbreak>#3[i]</unbreak> giliran. Di saat bersamaan, segera memulihkan HP seluruh rekan tim sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> dari HP mereka masing-masing yang hilang."
+    "description": "Saat pertempuran dimulai, DMG yang diterima seluruh rekan tim berkurang <orangeStrong>{{2}}%</orangeStrong> selama {{3}} giliran. Di saat bersamaan, segera memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{1}}%</orangeStrong> dari HP mereka masing-masing yang hilang."
   }
 }

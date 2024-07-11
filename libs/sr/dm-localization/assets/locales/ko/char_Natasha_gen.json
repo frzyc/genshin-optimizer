@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "인자함의 이면",
-        "fullDesc": "지정된 단일 적에게 나타샤 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 물리 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 나타샤 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
         "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "사랑, 구조와 선택",
-        "fullDesc": "지정된 단일 아군의 HP를 즉시 나타샤 HP 최대치의 <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#4[i]</unbreak></color>만큼 회복하고, 턴이 시작될 때마다 대상의 HP를 나타샤 HP 최대치의 <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#5[i]</unbreak></color>만큼 회복한다. 지속 시간: <unbreak>#3[i]</unbreak>턴",
+        "fullDesc": "지정된 단일 아군의 HP를 즉시 나타샤 HP 최대치의 <orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>만큼 회복하고, 턴이 시작될 때마다 대상의 HP를 나타샤 HP 최대치의 <orangeStrong>{{2}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>만큼 회복한다. 지속 시간: {{3}}턴",
         "shortDesc": "단일 아군의 <color=#f29e38ff>HP를 회복하고</color> 목표가 <color=#f29e38ff>지속적으로 HP를 회복</color>하게 한다"
       }
     },
     "ult": {
       "0": {
         "name": "신생의 의례",
-        "fullDesc": "모든 아군이 즉시 나타샤 HP 최대치 <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>만큼의 HP를 회복한다",
+        "fullDesc": "모든 아군이 즉시 나타샤 HP 최대치 <orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼의 HP를 회복한다",
         "shortDesc": "모든 아군의 <color=#f29e38ff>HP를 회복</color>한다"
       }
     },
     "technique": {
       "0": {
         "name": "최면 연구",
-        "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 나타샤 공격력 <unbreak>#4[i]%</unbreak>만큼의 물리 속성 피해를 준다. 동시에 <unbreak>#1[i]%</unbreak>의 <u>기본 확률</u>로 각 단일 적을 허약 상태에 빠트린다.\\n허약 상태의 적은 아군에게 가하는 피해가 <unbreak>#2[i]%</unbreak> 감소한다. 지속 시간: <unbreak>#3[i]</unbreak>턴",
+        "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 나타샤 공격력 {{4}}%만큼의 물리 속성 피해를 준다. 동시에 {{1}}%의 <u>기본 확률</u>로 각 단일 적을 허약 상태에 빠트린다.\\n허약 상태의 적은 아군에게 가하는 피해가 {{2}}% 감소한다. 지속 시간: {{3}}턴",
         "shortDesc": "적을 공격하며, 전투 진입 후 임의의 단일 적에게 소량의 물리 속성 피해를 가하고, 높은 확률로 각 단일 적을 허약 상태에 빠트린다"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "shortDesc": ""
       }
     }
   }

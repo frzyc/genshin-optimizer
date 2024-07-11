@@ -2,6 +2,6 @@
   "name": "This Is Me!",
   "passive": {
     "name": "New Chapter",
-    "description": "Increases the wearer's DEF by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Increases the DMG of the wearer when they use their Ultimate by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of the wearer's DEF. This effect only applies 1 time per enemy target during each use of the wearer's Ultimate."
+    "description": "Increases the wearer's DEF by <orangeStrong>{{1}}%</orangeStrong>. Increases the DMG of the wearer when they use their Ultimate by <orangeStrong>{{2}}%</orangeStrong> of the wearer's DEF. This effect only applies 1 time per enemy target during each use of the wearer's Ultimate."
   }
 }

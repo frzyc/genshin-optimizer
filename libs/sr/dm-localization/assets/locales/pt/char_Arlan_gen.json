@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Descarga de Raio",
-        "fullDesc": "Causa Dano de Raio igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Arlan a um único inimigo.",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Arlan a um único inimigo.",
         "shortDesc": "Causa Dano de Raio leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Quebra-Grilhões",
-        "fullDesc": "Consome os PV de Arlan, com valor equivalente a <unbreak>#1[i]%</unbreak> de seus PV máximos, para causar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do ATQ de Arlan como Dano de Raio a um único inimigo. Se os PV de Arlan forem insuficientes, os seus PV serão reduzidos a 1 depois de usar a Perícia.",
+        "fullDesc": "Consome os PV de Arlan, com valor equivalente a {{1}}% de seus PV máximos, para causar <orangeStrong>{{2}}%</orangeStrong> do ATQ de Arlan como Dano de Raio a um único inimigo. Se os PV de Arlan forem insuficientes, os seus PV serão reduzidos a 1 depois de usar a Perícia.",
         "shortDesc": "Consome uma porção dos PV para causar Dano de Raio a um único inimigo."
       }
     },
     "ult": {
       "0": {
         "name": "Punição Frenética",
-        "fullDesc": "Causa Dano de Raio igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Arlan a um único inimigo e <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do ATQ de Arlan como Dano de Raio aos inimigos adjacentes a ele.",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Arlan a um único inimigo e <orangeStrong>{{2}}%</orangeStrong> do ATQ de Arlan como Dano de Raio aos inimigos adjacentes a ele.",
         "shortDesc": "Causa Dano de Raio massivo a um único inimigo e Dano de Raio pequeno a inimigos adjacentes a ele."
       }
     },
     "technique": {
       "0": {
         "name": "Colheita Rápida",
-        "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar na batalha, causa <unbreak>#1[i]%</unbreak> do ATQ de Arlan como Dano de Raio a todos os inimigos.",
+        "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar na batalha, causa {{1}}% do ATQ de Arlan como Dano de Raio a todos os inimigos.",
         "shortDesc": "Ataca o inimigo. Após entrar na batalha, causa Dano de Raio leve a todos os inimigos."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

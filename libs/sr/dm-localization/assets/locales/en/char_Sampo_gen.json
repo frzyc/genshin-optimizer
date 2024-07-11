@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Dazzling Blades",
-        "fullDesc": "Deals Wind DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Sampo's ATK to a single enemy.",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sampo's ATK to a single enemy.",
         "shortDesc": "Deals minor Wind DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Ricochet Love",
-        "fullDesc": "Deals Wind DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of Sampo's ATK to a single enemy, and further deals DMG for <unbreak>#1[i]</unbreak> extra time(s), with each time dealing Wind DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of Sampo's ATK to a random enemy.",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Sampo's ATK to a single enemy, and further deals DMG for {{1}} extra time(s), with each time dealing Wind DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Sampo's ATK to a random enemy.",
         "shortDesc": "Deals minor Wind DMG to single enemy targets with 5 Bounces in total."
       }
     },
     "ult": {
       "0": {
         "name": "Surprise Present",
-        "fullDesc": "Deals Wind DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Sampo's ATK to all enemies, with a <unbreak>#4[i]%</unbreak> <u>base chance</u> to increase the targets' DoT taken by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> for <unbreak>#3[i]</unbreak> turn(s).",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sampo's ATK to all enemies, with a {{4}}% <u>base chance</u> to increase the targets' DoT taken by <orangeStrong>{{2}}%</orangeStrong> for {{3}} turn(s).",
         "shortDesc": "Deals Wind DMG to all enemies, with a high chance to cause <color=#f29e38ff>increased DoT taken</color> to them."
       }
     },
     "technique": {
       "0": {
         "name": "Shining Bright",
-        "fullDesc": "After Sampo uses his Technique, enemies in a set area are inflicted with Blind for <unbreak>#1[i]</unbreak> second(s). Blinded enemies cannot detect your team.\\nWhen initiating combat against a Blinded enemy, there is a <unbreak>#2[i]%</unbreak> <u>fixed chance</u> to delay all enemies' action by <unbreak>#3[i]%</unbreak>.",
+        "fullDesc": "After Sampo uses his Technique, enemies in a set area are inflicted with Blind for {{1}} second(s). Blinded enemies cannot detect your team.\\nWhen initiating combat against a Blinded enemy, there is a {{2}}% <u>fixed chance</u> to delay all enemies' action by {{3}}%.",
         "shortDesc": "Enemies in a set area are Blinded. When initiating battle against a Blinded enemy, there is a high chance to <u>delay</u> all enemies' actions."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

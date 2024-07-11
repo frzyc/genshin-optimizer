@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "지리검(支離劍)",
-        "fullDesc": "지정된 단일 적에게 블레이드 공격력의<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼 바람 속성 피해를 가한다",
+        "fullDesc": "지정된 단일 적에게 블레이드 공격력의<orangeStrong>{{1}}%</orangeStrong>만큼 바람 속성 피해를 가한다",
         "shortDesc": "단일 적에게 소량의 바람 속성 피해를 가한다"
       },
       "1": {
         "name": "무간검수(無間劍樹)",
-        "fullDesc": "블레이드 HP 최대치의 <unbreak>#1[i]%</unbreak>만큼 HP를 소모해 지정된 단일 적에게 블레이드 공격력의 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>+HP 최대치의 <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>만큼 바람 속성 피해를 가한다. 동시에 인접한 목표에 블레이드 공격력의 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>+HP 최대치의 <color=#f29e38ff><unbreak>#5[i]%</unbreak></color>만큼 바람 속성 피해를 가한다.\\n현재 HP가 부족할 때 [무간검수(無間劍樹)]를 발동하면 블레이드의 현재 HP가 1pt까지 감소한다.\\n[무간검수]로 전투 스킬 포인트를 회복할 수 없다",
+        "fullDesc": "블레이드 HP 최대치의 {{1}}%만큼 HP를 소모해 지정된 단일 적에게 블레이드 공격력의 <orangeStrong>{{2}}%</orangeStrong>+HP 최대치의 <orangeStrong>{{4}}%</orangeStrong>만큼 바람 속성 피해를 가한다. 동시에 인접한 목표에 블레이드 공격력의 <orangeStrong>{{3}}%</orangeStrong>+HP 최대치의 <orangeStrong>{{5}}%</orangeStrong>만큼 바람 속성 피해를 가한다.\\n현재 HP가 부족할 때 [무간검수(無間劍樹)]를 발동하면 블레이드의 현재 HP가 1pt까지 감소한다.\\n[무간검수]로 전투 스킬 포인트를 회복할 수 없다",
         "shortDesc": "자신의 HP를 소모해 단일 적에게 바람 속성 피해를 가하고, 인접한 적에게 소량의 바람 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "지옥변",
-        "fullDesc": "블레이드가 HP를 자신 HP 최대치의 <unbreak>#1[i]%</unbreak>만큼 소모해 [지옥변(地獄變)] 상태에 진입한다.\\n[지옥변] 상태에서는 전투 스킬을 발동할 수 없으며, 자신이 가하는 피해가 <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> 증가하고, 일반 공격 [지리검(支離劍)]이 강화되어 [무간검수(無間劍樹)]로 바뀐다. 지속 시간: <unbreak>#2[i]</unbreak>턴\\n블레이드의 현재 HP가 부족할 때 전투 스킬을 발동하면 HP가 1pt까지 감소한다.\\n해당 전투 스킬로 에너지를 회복할 수 없고, 발동 후 그 턴은 종료되지 않는다",
+        "fullDesc": "블레이드가 HP를 자신 HP 최대치의 {{1}}%만큼 소모해 [지옥변(地獄變)] 상태에 진입한다.\\n[지옥변] 상태에서는 전투 스킬을 발동할 수 없으며, 자신이 가하는 피해가 <orangeStrong>{{4}}%</orangeStrong> 증가하고, 일반 공격 [지리검(支離劍)]이 강화되어 [무간검수(無間劍樹)]로 바뀐다. 지속 시간: {{2}}턴\\n블레이드의 현재 HP가 부족할 때 전투 스킬을 발동하면 HP가 1pt까지 감소한다.\\n해당 전투 스킬로 에너지를 회복할 수 없고, 발동 후 그 턴은 종료되지 않는다",
         "shortDesc": "자신의 HP를 소모하여 <color=#f29e38ff>일반 공격을 강화</color>하고, 이번 턴이 종료되지 않는다"
       }
     },
     "ult": {
       "0": {
         "name": "사형선고",
-        "fullDesc": "블레이드의 현재 HP가 최대치의 <unbreak>50%</unbreak>로 전환되고 단일 적에게 블레이드 공격력의 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>+HP 최대치의 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>+이번 전투에서 누적 손실한 HP의 <color=#f29e38ff><unbreak>#5[i]%</unbreak></color>만큼 바람 속성 피해를 가한다. 또한 인접한 목표에 블레이드 공격력의 <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>+HP 최대치의 <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>+이번 전투에서 누적 손실한 HP의 <color=#f29e38ff><unbreak>#6[i]%</unbreak></color>만큼 바람 속성 피해를 가한다.\\n이번 전투에서 누적 손실한 HP는 블레이드 HP 최대치의 <unbreak>#7[i]%</unbreak>를 넘을 수 없다. 필살기 발동 후 리셋하고 다시 누적된다",
+        "fullDesc": "블레이드의 현재 HP가 최대치의 <unbreak>50%</unbreak>로 전환되고 단일 적에게 블레이드 공격력의 <orangeStrong>{{1}}%</orangeStrong>+HP 최대치의 <orangeStrong>{{2}}%</orangeStrong>+이번 전투에서 누적 손실한 HP의 <orangeStrong>{{5}}%</orangeStrong>만큼 바람 속성 피해를 가한다. 또한 인접한 목표에 블레이드 공격력의 <orangeStrong>{{3}}%</orangeStrong>+HP 최대치의 <orangeStrong>{{4}}%</orangeStrong>+이번 전투에서 누적 손실한 HP의 <orangeStrong>{{6}}%</orangeStrong>만큼 바람 속성 피해를 가한다.\\n이번 전투에서 누적 손실한 HP는 블레이드 HP 최대치의 {{7}}%를 넘을 수 없다. 필살기 발동 후 리셋하고 다시 누적된다",
         "shortDesc": "현재 HP가 HP 최대치의 <unbreak>50%</unbreak>로 전환되고, 단일 적에게 대량의 바람 속성 피해를 가하며, 인접한 목표에게 바람 속성 피해를 가한다"
       }
     },
     "technique": {
       "0": {
         "name": "업도(業道)의 바람",
-        "fullDesc": "적을 바로 공격하며, 전투 진입 후 블레이드 HP 최대치의 <unbreak>#2[i]%</unbreak>만큼 HP를 소모하고, 모든 적에게 블레이드 HP 최대치의 <unbreak>#1[i]%</unbreak>만큼 바람 속성 피해를 가한다.\\n현재 HP가 부족할 때 비술을 발동하면 블레이드의 현재 HP가 1pt까지 감소한다",
+        "fullDesc": "적을 바로 공격하며, 전투 진입 후 블레이드 HP 최대치의 {{2}}%만큼 HP를 소모하고, 모든 적에게 블레이드 HP 최대치의 {{1}}%만큼 바람 속성 피해를 가한다.\\n현재 HP가 부족할 때 비술을 발동하면 블레이드의 현재 HP가 1pt까지 감소한다",
         "shortDesc": "적을 공격하며, 전투 진입 후 자신의 HP를 소모하고 모든 적에게 바람 속성 피해를 가한다"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "shortDesc": ""
       }
     }
   }

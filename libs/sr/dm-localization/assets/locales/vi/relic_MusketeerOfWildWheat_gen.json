@@ -1,7 +1,7 @@
 {
   "setName": "Thiện Xạ Bông Lúa",
   "setEffects": {
-    "2": "Tăng Tấn Công <unbreak>#1[i]%</unbreak>.",
-    "4": "Tăng <unbreak>#1[i]%</unbreak> tốc độ của người trang bị, sát thương Tấn Công Thường tăng <unbreak>#2[i]%</unbreak>."
+    "2": "Tăng Tấn Công {{1}}%.",
+    "4": "Tăng {{1}}% tốc độ của người trang bị, sát thương Tấn Công Thường tăng {{2}}%."
   }
 }

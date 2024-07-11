@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Mind is Might",
-        "fullDesc": "Deals Imaginary DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Dr. Ratio's ATK to a single target enemy.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dr. Ratio's ATK to a single target enemy.",
         "shortDesc": "Deals minor Imaginary DMG to a single target enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Intellectual Midwifery",
-        "fullDesc": "Deals Imaginary DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Dr. Ratio's ATK to a single target enemy.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dr. Ratio's ATK to a single target enemy.",
         "shortDesc": "Deals Imaginary DMG to a single enemy."
       }
     },
     "ult": {
       "0": {
         "name": "Syllogistic Paradox",
-        "fullDesc": "Deals Imaginary DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Dr. Ratio's ATK to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's allies attack a target afflicted with Wiseman's Folly, Dr. Ratio launches his Talent's <u>follow-up attack</u> for 1 time against this target.\\nWiseman's Folly can be triggered for up to <unbreak>#2[i]</unbreak> times and only affects the most recent target of Dr. Ratio's Ultimate. This trigger count resets after Dr. Ratio's Ultimate is used.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dr. Ratio's ATK to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's allies attack a target afflicted with Wiseman's Folly, Dr. Ratio launches his Talent's <u>follow-up attack</u> for 1 time against this target.\\nWiseman's Folly can be triggered for up to {{2}} times and only affects the most recent target of Dr. Ratio's Ultimate. This trigger count resets after Dr. Ratio's Ultimate is used.",
         "shortDesc": "Deals Imaginary DMG to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's allies attack a target afflicted with Wiseman's Folly, Dr. Ratio launches 1 <color=#f29e38ff><u>follow-up attack</u></color> on this target."
       }
     },
     "technique": {
       "0": {
         "name": "Mold of Idolatry",
-        "fullDesc": "After using Technique, creates a dimension that Taunts nearby enemies, lasting for <unbreak>#1[i]</unbreak> second(s). After entering battle with enemies in this dimension, there is a <unbreak>#2[i]%</unbreak> <u>base chance</u> to reduce each single enemy target's SPD by <unbreak>#3[i]%</unbreak> for <unbreak>#4[i]</unbreak> turn(s). Only 1 dimension created by allies can exist at the same time.",
+        "fullDesc": "After using Technique, creates a dimension that Taunts nearby enemies, lasting for {{1}} second(s). After entering battle with enemies in this dimension, there is a {{2}}% <u>base chance</u> to reduce each single enemy target's SPD by {{3}}% for {{4}} turn(s). Only 1 dimension created by allies can exist at the same time.",
         "shortDesc": "Creates a dimension. Enemies within the dimension are Taunted. After entering battle with enemies in this dimension, there is a high chance to <color=#f29e38ff>reduce SPD</color> of enemy targets."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

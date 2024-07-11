@@ -2,6 +2,6 @@
   "name": "Wir werden uns wiedersehen",
   "passive": {
     "name": "Ein Diskurs in Waffen",
-    "description": "Nach dem Einsatz des Standardangriffs oder der Fertigkeit fügt der Träger einem zufälligen angegriffen Gegner zusätzlichen SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> seines ANG zu."
+    "description": "Nach dem Einsatz des Standardangriffs oder der Fertigkeit fügt der Träger einem zufälligen angegriffen Gegner zusätzlichen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> seines ANG zu."
   }
 }

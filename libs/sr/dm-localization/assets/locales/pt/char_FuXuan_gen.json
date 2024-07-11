@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Explosão Supernova",
-        "fullDesc": "Causa Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> dos PV máximos de Fu Xuan a um único inimigo.",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Fu Xuan a um único inimigo.",
         "shortDesc": "Causa Dano Quântico leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Conhecida pelas Estrelas, Exibida pelos Corações",
-        "fullDesc": "Ativa a Matriz de Presciência através da qual outros membros da equipe vão <u>Distribuir</u> <unbreak>#1[i]%</unbreak> do Dano que eles receberem (antes deste Dano ser mitigado por quaisquer Escudos) com Fu Xuan por <unbreak>#3[i]</unbreak> rodada(s).\\nEnquanto afetados pela Matriz de Presciência, todos os membros da equipe ganham o efeito de Conhecimento, que aumenta seus respectivos PV máximos em <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> dos PV máximos de Fu Xuan, e aumenta a Chance de CRIT em <color=#f29e38ff><unbreak>#5[f1]%</unbreak></color>.\\nQuando Fu Xuan é <u>derrubada</u>, a Matriz de Presciência é desfeita.",
+        "fullDesc": "Ativa a Matriz de Presciência através da qual outros membros da equipe vão <u>Distribuir</u> {{1}}% do Dano que eles receberem (antes deste Dano ser mitigado por quaisquer Escudos) com Fu Xuan por {{3}} rodada(s).\\nEnquanto afetados pela Matriz de Presciência, todos os membros da equipe ganham o efeito de Conhecimento, que aumenta seus respectivos PV máximos em <orangeStrong>{{4}}%</orangeStrong> dos PV máximos de Fu Xuan, e aumenta a Chance de CRIT em <orangeStrong>{{5}}%</orangeStrong>.\\nQuando Fu Xuan é <u>derrubada</u>, a Matriz de Presciência é desfeita.",
         "shortDesc": "Ativa a Matriz de Presciência. <color=#f29e38ff>O Dano recebido pelos aliados de Fu Xuan é <u>Distribuído</u></color> com ela. Além disso, <color=#f29e38ff>aumenta a Chance de CRIT</color> e os PV máximos de todos os aliados."
       }
     },
     "ult": {
       "0": {
         "name": "Os Lamentos de Muitos Transformaram-se em Um",
-        "fullDesc": "Causa Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> dos PV máximos de Fu Xuan a todos os inimigos e obtém 1 contagem de ativação para o efeito de Restauração de PV concedido pelo Talento de Fu Xuan.",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Fu Xuan a todos os inimigos e obtém 1 contagem de ativação para o efeito de Restauração de PV concedido pelo Talento de Fu Xuan.",
         "shortDesc": "Causa Dano Quântico a todos os inimigos e aumenta a contagem de ativação do Talento de Fu Xuan."
       }
     },
     "technique": {
       "0": {
         "name": "Da Sorte Vem o Destino",
-        "fullDesc": "Depois que a Técnica é utilizada, todos os membros da equipe recebem uma Barreira que dura <unbreak>#1[i]</unbreak> segundos. Esta Barreira pode bloquear todos os ataques inimigos e a equipe não entrará em batalha quando atacada. Entrar em batalha enquanto a Barreira estiver ativa fará com que Fu Xuan ative a Matriz de Presciência automaticamente no início da batalha por <unbreak>#2[i]</unbreak> rodada(s).",
+        "fullDesc": "Depois que a Técnica é utilizada, todos os membros da equipe recebem uma Barreira que dura {{1}} segundos. Esta Barreira pode bloquear todos os ataques inimigos e a equipe não entrará em batalha quando atacada. Entrar em batalha enquanto a Barreira estiver ativa fará com que Fu Xuan ative a Matriz de Presciência automaticamente no início da batalha por {{2}} rodada(s).",
         "shortDesc": "Ativa uma Barreira. Aliados não entrarão em batalha quando forem atacados por inimigos. Entrar em batalha ativará a Matriz de Presciência automaticamente."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

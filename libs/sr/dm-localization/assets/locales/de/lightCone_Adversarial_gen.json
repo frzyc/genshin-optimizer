@@ -2,6 +2,6 @@
   "name": "Gegensätzliches",
   "passive": {
     "name": "Allianz",
-    "description": "Erhöht die GES des Trägers für <unbreak>#2[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, nachdem er einen Gegner besiegt hat."
+    "description": "Erhöht die GES des Trägers für {{2}} Rd. um <orangeStrong>{{1}}%</orangeStrong>, nachdem er einen Gegner besiegt hat."
   }
 }

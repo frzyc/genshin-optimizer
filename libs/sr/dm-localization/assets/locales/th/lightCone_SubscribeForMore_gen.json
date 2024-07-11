@@ -2,6 +2,6 @@
   "name": "Subscribe for More!",
   "passive": {
     "name": "Like Before You Leave!",
-    "description": "ทำให้ DMG จากการโจมตีปกติ และสกิลต่อสู้ของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> เมื่อค่าพลังงานในปัจจุบันของผู้สวมใส่เท่ากับพลังงานสูงสุด เอฟเฟกต์นี้จะเพิ่มขึ้นอีก <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>"
+    "description": "ทำให้ DMG จากการโจมตีปกติ และสกิลต่อสู้ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เมื่อค่าพลังงานในปัจจุบันของผู้สวมใส่เท่ากับพลังงานสูงสุด เอฟเฟกต์นี้จะเพิ่มขึ้นอีก <orangeStrong>{{2}}%</orangeStrong>"
   }
 }

@@ -2,6 +2,6 @@
   "name": "余生的第一天",
   "passive": {
     "name": "此刻定格",
-    "description": "使装备者的防御力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。进入战斗后，使我方全体的全属性抗性提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。同类技能无法重复生效。"
+    "description": "使装备者的防御力提高<orangeStrong>{{1}}%</orangeStrong>。进入战斗后，使我方全体的全属性抗性提高<orangeStrong>{{2}}%</orangeStrong>。同类技能无法重复生效。"
   }
 }

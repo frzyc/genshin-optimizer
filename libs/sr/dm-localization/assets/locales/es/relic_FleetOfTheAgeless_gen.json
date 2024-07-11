@@ -1,6 +1,6 @@
 {
   "setName": "Flota de los eternos",
   "setEffects": {
-    "2": "Los PV máx. del portador aumentan en un <unbreak>#1[i]%</unbreak>. Cuando su VEL es igual o superior a <unbreak>#2[i]</unbreak>, el ATQ de todos los aliados aumenta en un <unbreak>#3[i]%</unbreak>."
+    "2": "Los PV máx. del portador aumentan en un {{1}}%. Cuando su VEL es igual o superior a {{2}}, el ATQ de todos los aliados aumenta en un {{3}}%."
   }
 }

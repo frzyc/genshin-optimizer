@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Spektralstrahl",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Astas ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Astas ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Meteoritensturm",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Astas ANG zu. Löst zusätzlich 4 Angriffe gegen zufällige Gegner aus, die jeweils Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Astas ANG verursachen.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Astas ANG zu. Löst zusätzlich 4 Angriffe gegen zufällige Gegner aus, die jeweils Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Astas ANG verursachen.",
         "shortDesc": "Fügt einem Gegner mit insgesamt 5-mal Abprall geringen Feuer-SCH zu."
       }
     },
     "ult": {
       "0": {
         "name": "Astraler Segen",
-        "fullDesc": "Erhöht die GES aller Verbündeten für <unbreak>#2[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#1[i]</unbreak></color>.",
+        "fullDesc": "Erhöht die GES aller Verbündeten für {{2}} Rd. um <orangeStrong>{{1}}</orangeStrong>.",
         "shortDesc": "<color=#f29e38ff>Erhöht die GES</color> aller Verbündeten."
       }
     },
     "technique": {
       "0": {
         "name": "Wunderblitz",
-        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Feuer-SCH in Höhe von <unbreak>#1[i]%</unbreak> von Astas ANG zu.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Feuer-SCH in Höhe von {{1}}% von Astas ANG zu.",
         "shortDesc": "Greift Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen SCH zu."
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
-        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
       }
     }
   }

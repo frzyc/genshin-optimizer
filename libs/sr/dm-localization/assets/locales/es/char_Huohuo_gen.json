@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Estandarte: Llamatormentas",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de los PV máx. de Huohuo como Daño de Viento a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> de los PV máx. de Huohuo como Daño de Viento a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Talismán: Protección",
-        "fullDesc": "Elimina <unbreak>#5[i]</unbreak> <u>estado negativo</u> de un aliado y regenera inmediatamente una cantidad de PV equivalente al <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> de los PV máx. de Huohuo + <color=#f29e38ff><unbreak>#2[i]</unbreak></color> para ese aliado. Al mismo tiempo, regenera a los aliados adyacentes una cantidad de PV equivalente al <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> de los PV máx. de Huohuo + <color=#f29e38ff><unbreak>#4[i]</unbreak></color>.",
+        "fullDesc": "Elimina {{5}} <u>estado negativo</u> de un aliado y regenera inmediatamente una cantidad de PV equivalente al <orangeStrong>{{1}}%</orangeStrong> de los PV máx. de Huohuo + <orangeStrong>{{2}}</orangeStrong> para ese aliado. Al mismo tiempo, regenera a los aliados adyacentes una cantidad de PV equivalente al <orangeStrong>{{3}}%</orangeStrong> de los PV máx. de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
         "shortDesc": "Elimina 1 <u>estado negativo</u> de un aliado y <color=#f29e38ff>regenera los PV</color> de un aliado y los aliados adyacentes."
       }
     },
     "ult": {
       "0": {
         "name": "Cola: Dominación espiritual",
-        "fullDesc": "Recupera para todos los demás aliados (excepto Huohuo) una cantidad de energía equivalente al <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> de su respectiva energía máx. y aumenta su ATQ en un <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> durante <unbreak>#3[i]</unbreak> turnos.",
+        "fullDesc": "Recupera para todos los demás aliados (excepto Huohuo) una cantidad de energía equivalente al <orangeStrong>{{1}}%</orangeStrong> de su respectiva energía máx. y aumenta su ATQ en un <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turnos.",
         "shortDesc": "<color=#f29e38ff>Recupera energía</color> para todos los demás aliados y <color=#f29e38ff>aumenta su ATQ</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Demonio: Destitución del mal",
-        "fullDesc": "Huohuo asusta a los enemigos cercanos y los afecta con Terror. Los enemigos aterrorizados huirán de Huohuo durante <unbreak>#4[i]</unbreak> s. Al entrar en combate con enemigos afectados por Terror, hay un <unbreak>#1[i]%</unbreak> de <u>probabilidad base</u> de reducir el ATQ de cada enemigo en un <unbreak>#2[i]%</unbreak> durante <unbreak>#3[i]</unbreak> turnos.",
+        "fullDesc": "Huohuo asusta a los enemigos cercanos y los afecta con Terror. Los enemigos aterrorizados huirán de Huohuo durante {{4}} s. Al entrar en combate con enemigos afectados por Terror, hay un {{1}}% de <u>probabilidad base</u> de reducir el ATQ de cada enemigo en un {{2}}% durante {{3}} turnos.",
         "shortDesc": "Afecta a los enemigos cercanos con Terror. Al entrar en combate con enemigos afectados por Terror, hay una gran probabilidad de aplicar una <color=#f29e38ff>reducción de ATQ</color> a los objetivos."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
       }
     }
   }

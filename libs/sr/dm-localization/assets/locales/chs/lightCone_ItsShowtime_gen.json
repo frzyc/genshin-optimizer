@@ -2,6 +2,6 @@
   "name": "好戏开演",
   "passive": {
     "name": "自娱自乐",
-    "description": "装备者对敌方目标施加负面状态后，获得一层【戏法】，每层【戏法】使装备者造成的伤害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，最多叠加<unbreak>#2[i]</unbreak>层，持续<unbreak>#3[i]</unbreak>回合。当装备者的效果命中大于等于<unbreak>#4[i]%</unbreak>时，攻击力提高<color=#f29e38ff><unbreak>#5[i]%</unbreak></color>。"
+    "description": "装备者对敌方目标施加负面状态后，获得一层【戏法】，每层【戏法】使装备者造成的伤害提高<orangeStrong>{{1}}%</orangeStrong>，最多叠加{{2}}层，持续{{3}}回合。当装备者的效果命中大于等于{{4}}%时，攻击力提高<orangeStrong>{{5}}%</orangeStrong>。"
   }
 }

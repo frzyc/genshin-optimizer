@@ -1,6 +1,6 @@
 {
   "setName": "Pangalaktische Handelsgesellschaft",
   "setEffects": {
-    "2": "Erhöht die Effekt-Trefferrate des Trägers um <unbreak>#1[i]%</unbreak>. Erhöht gleichzeitig den ANG des Trägers in Höhe von <unbreak>#2[i]%</unbreak> der Effekt-Trefferrate, bis zu einem Höchstwert von <unbreak>#3[i]%</unbreak>."
+    "2": "Erhöht die Effekt-Trefferrate des Trägers um {{1}}%. Erhöht gleichzeitig den ANG des Trägers in Höhe von {{2}}% der Effekt-Trefferrate, bis zu einem Höchstwert von {{3}}%."
   }
 }

@@ -2,6 +2,6 @@
   "name": "制勝的瞬間",
   "passive": {
     "name": "決斷",
-    "description": "使裝備者的防禦力提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，效果命中提高<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>，同時使自身受到攻擊的機率提高。當裝備者受到攻擊後，防禦力額外提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>，持續到自身回合結束。"
+    "description": "使裝備者的防禦力提高<orangeStrong>{{2}}%</orangeStrong>，效果命中提高<orangeStrong>{{4}}%</orangeStrong>，同時使自身受到攻擊的機率提高。當裝備者受到攻擊後，防禦力額外提高<orangeStrong>{{3}}%</orangeStrong>，持續到自身回合結束。"
   }
 }

@@ -2,6 +2,6 @@
   "name": "Ihre Augen sind bereits geschlossen",
   "passive": {
     "name": "Sicht",
-    "description": "Erhöht die max. LP des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> und Energie-Wiederherstellungsrate um <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>. Wenn die LP des Trägers reduziert werden, wird der von allen Verbündeten verursachte SCH für <unbreak>#5[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> erhöht.\\nZu Beginn jeder Kampfwelle werden bei allen Verbündeten LP in Höhe von <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> der jeweiligen verlorenen LP wiederhergestellt."
+    "description": "Erhöht die max. LP des Trägers um <orangeStrong>{{1}}%</orangeStrong> und Energie-Wiederherstellungsrate um <orangeStrong>{{4}}%</orangeStrong>. Wenn die LP des Trägers reduziert werden, wird der von allen Verbündeten verursachte SCH für {{5}} Rd. um <orangeStrong>{{2}}%</orangeStrong> erhöht.\\nZu Beginn jeder Kampfwelle werden bei allen Verbündeten LP in Höhe von <orangeStrong>{{3}}%</orangeStrong> der jeweiligen verlorenen LP wiederhergestellt."
   }
 }

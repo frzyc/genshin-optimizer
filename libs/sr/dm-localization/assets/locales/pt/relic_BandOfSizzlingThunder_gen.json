@@ -1,7 +1,7 @@
 {
   "setName": "Banda Trovão Crepitante",
   "setEffects": {
-    "2": "Aumenta o Dano de Raio em <unbreak>#1[i]%</unbreak>.",
-    "4": "Quando o usuário usa a Perícia, aumenta o ATQ em <unbreak>#1[i]%</unbreak> por <unbreak>#2[i]</unbreak> rodada(s)."
+    "2": "Aumenta o Dano de Raio em {{1}}%.",
+    "4": "Quando o usuário usa a Perícia, aumenta o ATQ em {{1}}% por {{2}} rodada(s)."
   }
 }

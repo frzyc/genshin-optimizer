@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Náo Động Giữa Đêm",
-        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Kafka.",
+        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Kafka.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Ánh Trăng Ve Vuốt",
-        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Kafka, đồng thời gây cho mục tiêu lân cận của kẻ đó Sát Thương Lôi tương đương <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> Tấn Công của Kafka.\\nNếu kẻ địch chỉ định đang ở trạng thái Sát Thương Duy Trì, thì tất cả Sát Thương Duy Trì mà kẻ đó đang chịu sẽ lập tức sinh ra sát thương tương đương <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> sát thương ban đầu.",
+        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Kafka, đồng thời gây cho mục tiêu lân cận của kẻ đó Sát Thương Lôi tương đương <orangeStrong>{{3}}%</orangeStrong> Tấn Công của Kafka.\\nNếu kẻ địch chỉ định đang ở trạng thái Sát Thương Duy Trì, thì tất cả Sát Thương Duy Trì mà kẻ đó đang chịu sẽ lập tức sinh ra sát thương tương đương <orangeStrong>{{2}}%</orangeStrong> sát thương ban đầu.",
         "shortDesc": "Gây Sát Thương Lôi cho một kẻ địch và lượng nhỏ Sát Thương Lôi cho mục tiêu lân cận.\\nNếu mục tiêu chính đang trong Hiệu Ứng Xấu loại Sát Thương Duy Trì, sẽ khiến Hiệu Ứng Xấu loại Sát Thương Duy Trì này <color=#f29e38ff>gây thêm 1 lần sát thương</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Âm Vọng Bi Kịch",
-        "fullDesc": "Gây Sát Thương Lôi cho toàn bộ kẻ địch tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Kafka, có <unbreak>#2[i]%</unbreak> <u>xác suất cơ bản</u> khiến kẻ địch bị tấn công rơi vào trạng thái Sốc Điện và khiến trạng thái Sốc Điện phải chịu hiện tại sinh ra sát thương tương đương <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> sát thương ban đầu. Trạng thái Sốc Điện duy trì <unbreak>#3[i]</unbreak> hiệp.\\nTrong trạng thái này, kẻ địch mỗi khi bắt đầu hiệp sẽ chịu Sát Thương Lôi duy trì tương đương <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> Tấn Công của Kafka.",
+        "fullDesc": "Gây Sát Thương Lôi cho toàn bộ kẻ địch tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Kafka, có {{2}}% <u>xác suất cơ bản</u> khiến kẻ địch bị tấn công rơi vào trạng thái Sốc Điện và khiến trạng thái Sốc Điện phải chịu hiện tại sinh ra sát thương tương đương <orangeStrong>{{5}}%</orangeStrong> sát thương ban đầu. Trạng thái Sốc Điện duy trì {{3}} hiệp.\\nTrong trạng thái này, kẻ địch mỗi khi bắt đầu hiệp sẽ chịu Sát Thương Lôi duy trì tương đương <orangeStrong>{{4}}%</orangeStrong> Tấn Công của Kafka.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho toàn bộ kẻ địch, có xác suất lớn <color=#f29e38ff>thi triển trạng thái Sốc Điện</color>.\\nNếu kẻ địch ở trạng thái Sốc Điện, sẽ khiến trạng thái Sốc Điện <color=#f29e38ff>gây thêm 1 lần sát thương</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Tha Thứ Không Có Nghĩa là Nhân Từ",
-        "fullDesc": "Tấn công ngay tất cả kẻ địch trong phạm vi nhất định, sau khi vào chiến đấu sẽ gây Sát Thương Lôi cho toàn bộ địch bằng <unbreak>#3[i]%</unbreak> Tấn Công của Kafka, đồng thời có <unbreak>#1[i]%</unbreak> <u>xác suất cơ bản</u> khiến mỗi 1 kẻ địch rơi vào trạng thái Sốc Điện giống với Tuyệt Kỹ, duy trì <unbreak>#2[i]</unbreak> hiệp.",
+        "fullDesc": "Tấn công ngay tất cả kẻ địch trong phạm vi nhất định, sau khi vào chiến đấu sẽ gây Sát Thương Lôi cho toàn bộ địch bằng {{3}}% Tấn Công của Kafka, đồng thời có {{1}}% <u>xác suất cơ bản</u> khiến mỗi 1 kẻ địch rơi vào trạng thái Sốc Điện giống với Tuyệt Kỹ, duy trì {{2}} hiệp.",
         "shortDesc": "Tấn công tất cả kẻ địch trong phạm vi, sau khi vào chiến đấu, sẽ gây lượng nhỏ Sát Thương Lôi cho toàn bộ địch, xác suất lớn <color=#f29e38ff>thi triển trạng thái Sốc Điện</color>."
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
-        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
       }
     }
   }

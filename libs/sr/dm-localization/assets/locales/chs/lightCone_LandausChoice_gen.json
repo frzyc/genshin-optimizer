@@ -2,6 +2,6 @@
   "name": "朗道的选择",
   "passive": {
     "name": "时光如梭",
-    "description": "使装备者受到攻击的概率提高，同时受到的伤害降低<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。"
+    "description": "使装备者受到攻击的概率提高，同时受到的伤害降低<orangeStrong>{{2}}%</orangeStrong>。"
   }
 }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Nhìn Thấu, Bình Minh Tĩnh Lặng",
-        "fullDesc": "Gây Sát Thương Phong lên 1 kẻ địch chỉ định bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Black Swan, có <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> <u>xác suất cơ bản</u> khiến mục tiêu rơi vào 1 tầng <u>Dấu Tích Bí Ẩn</u>, đồng thời sau khi tấn công mục tiêu ở trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện, sẽ lần lượt có <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> <u>xác suất cơ bản</u> khiến mục tiêu rơi thêm vào 1 tầng <u>Dấu Tích Bí Ẩn</u>.",
+        "fullDesc": "Gây Sát Thương Phong lên 1 kẻ địch chỉ định bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Black Swan, có <orangeStrong>{{2}}%</orangeStrong> <u>xác suất cơ bản</u> khiến mục tiêu rơi vào 1 tầng <u>Dấu Tích Bí Ẩn</u>, đồng thời sau khi tấn công mục tiêu ở trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện, sẽ lần lượt có <orangeStrong>{{3}}%</orangeStrong> <u>xác suất cơ bản</u> khiến mục tiêu rơi thêm vào 1 tầng <u>Dấu Tích Bí Ẩn</u>.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Phong lên 1 kẻ địch, có xác suất thi triển <u>Dấu Tích Bí Ẩn</u> lên mục tiêu. Sau khi tấn công mục tiêu ở trạng thái <color=#f29e38ff>Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện</color>, sẽ lần lượt có xác suất <color=#f29e38ff>thi triển thêm <u></u>Dấu Tích Bí Ẩn</color>."
       }
     },
     "skill": {
       "0": {
         "name": "Sụp Đổ, Hoàng Hôn Giả Dối",
-        "fullDesc": "Gây Sát Thương Phong lên 1 kẻ địch chỉ định và mục tiêu bên cạnh bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Black Swan, đồng thời có <unbreak>#2[i]%</unbreak> <u>xác suất cơ bản</u> khiến mục tiêu và mục tiêu bên cạnh rơi vào 1 tầng <u>Dấu Tích Bí Ẩn</u>, ngoài ra có <unbreak>#3[i]%</unbreak> <u>xác suất cơ bản</u> giảm <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> Phòng Thủ của mục tiêu và mục tiêu bên cạnh, duy trì <unbreak>#5[i]</unbreak> hiệp.",
+        "fullDesc": "Gây Sát Thương Phong lên 1 kẻ địch chỉ định và mục tiêu bên cạnh bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Black Swan, đồng thời có {{2}}% <u>xác suất cơ bản</u> khiến mục tiêu và mục tiêu bên cạnh rơi vào 1 tầng <u>Dấu Tích Bí Ẩn</u>, ngoài ra có {{3}}% <u>xác suất cơ bản</u> giảm <orangeStrong>{{4}}%</orangeStrong> Phòng Thủ của mục tiêu và mục tiêu bên cạnh, duy trì {{5}} hiệp.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Phong lên 1 kẻ địch và mục tiêu lân cận kẻ đó, có xác suất lớn thi triển <color=#f29e38ff><u>Dấu Tích Bí Ẩn</u></color> lên mục tiêu, và có xác suất lớn giảm Phòng Thủ của mục tiêu."
       }
     },
     "ult": {
       "0": {
         "name": "Trầm Luân Trong Vòng Tay",
-        "fullDesc": "Khiến toàn bộ kẻ địch rơi vào trạng thái Vạch Trần, duy trì <unbreak>#2[i]</unbreak> hiệp.\\nỞ trạng thái Vạch Trần, sát thương phải chịu trong hiệp của chính kẻ địch tăng <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>, đồng thời khi kẻ địch ở trạng thái <u>Dấu Tích Bí Ẩn</u>, sẽ xem như cùng lúc rơi vào trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện, sau khi <u>Dấu Tích Bí Ẩn</u> gây sát thương khi bắt đầu mỗi hiệp sẽ không làm mới số tầng. Hiệu ứng không làm mới số tầng của <u>Dấu Tích Bí Ẩn</u> tối đa kích hoạt <unbreak>#4[i]</unbreak> lần trong thời gian duy trì trạng thái Vạch Trần, rơi vào trạng thái Vạch Trần một lần nữa sẽ làm mới số lần kích hoạt.\\nGây cho toàn bộ kẻ địch Sát Thương Phong bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Black Swan.",
+        "fullDesc": "Khiến toàn bộ kẻ địch rơi vào trạng thái Vạch Trần, duy trì {{2}} hiệp.\\nỞ trạng thái Vạch Trần, sát thương phải chịu trong hiệp của chính kẻ địch tăng <orangeStrong>{{3}}%</orangeStrong>, đồng thời khi kẻ địch ở trạng thái <u>Dấu Tích Bí Ẩn</u>, sẽ xem như cùng lúc rơi vào trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện, sau khi <u>Dấu Tích Bí Ẩn</u> gây sát thương khi bắt đầu mỗi hiệp sẽ không làm mới số tầng. Hiệu ứng không làm mới số tầng của <u>Dấu Tích Bí Ẩn</u> tối đa kích hoạt {{4}} lần trong thời gian duy trì trạng thái Vạch Trần, rơi vào trạng thái Vạch Trần một lần nữa sẽ làm mới số lần kích hoạt.\\nGây cho toàn bộ kẻ địch Sát Thương Phong bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Black Swan.",
         "shortDesc": "Thi triển trạng thái Vạch Trần lên toàn bộ phe địch, tăng sát thương mà mục tiêu phải chịu trong hiệp, đồng thời <color=#f29e38ff>xem <u>Dấu Tích Bí Ẩn</u> như là trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện</color>. Ngoài ra, sau khi <u>Dấu Tích Bí Ẩn</u> gây sát thương lúc bắt đầu hiệp kế tiếp sẽ không làm mới số tầng. Gây Sát Thương Phong lên toàn phe địch."
       }
     },
     "technique": {
       "0": {
         "name": "Chân Tướng Ẩn Sau Vỏ Bọc",
-        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu kế tiếp, có <unbreak>#1[i]%</unbreak> <u>xác suất cơ bản</u> khiến từng mục tiêu địch rơi vào 1 tầng <u>Dấu Tích Bí Ẩn</u>. Khiến mỗi mục tiêu thành công rơi vào <u>Dấu Tích Bí Ẩn</u> rơi vào thêm 1 tầng <u>Dấu Tích Bí Ẩn</u> nữa, lặp lại hiệu ứng này cho đến khi không thể khiến mục tiêu này rơi vào <u>Dấu Tích Bí Ẩn</u> nữa. <u>Xác suất cơ bản</u> trong mỗi lần khiến mục tiêu rơi vào <u>Dấu Tích Bí Ẩn</u> bằng <unbreak>#2[i]%</unbreak> <u>xác suất cơ bản</u> khi khiến mục tiêu này rơi vào <u>Dấu Tích Bí Ẩn</u> thành công của lần trước đó.",
+        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu kế tiếp, có {{1}}% <u>xác suất cơ bản</u> khiến từng mục tiêu địch rơi vào 1 tầng <u>Dấu Tích Bí Ẩn</u>. Khiến mỗi mục tiêu thành công rơi vào <u>Dấu Tích Bí Ẩn</u> rơi vào thêm 1 tầng <u>Dấu Tích Bí Ẩn</u> nữa, lặp lại hiệu ứng này cho đến khi không thể khiến mục tiêu này rơi vào <u>Dấu Tích Bí Ẩn</u> nữa. <u>Xác suất cơ bản</u> trong mỗi lần khiến mục tiêu rơi vào <u>Dấu Tích Bí Ẩn</u> bằng {{2}}% <u>xác suất cơ bản</u> khi khiến mục tiêu này rơi vào <u>Dấu Tích Bí Ẩn</u> thành công của lần trước đó.",
         "shortDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu kế tiếp, có xác suất lớn <color=#f29e38ff>thi triển <u>Dấu Tích Bí Ẩn</u> lên từng mục tiêu địch, lặp lại nhiều lần cho đến khi thi triển thất bại</color>."
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
-        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch."
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
+        "shortDesc": ""
       }
     }
   }

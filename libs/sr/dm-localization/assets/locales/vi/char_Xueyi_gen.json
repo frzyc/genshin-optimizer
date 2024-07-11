@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Dùi Phá Ma",
-        "fullDesc": "Gây cho 1 kẻ địch chỉ định sát thương Lượng Tử bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Xueyi.",
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định sát thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Xueyi.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Xóa Sổ Ác Nghiệp",
-        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Xueyi, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Lượng Tử tương đương <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Tấn Công của Xueyi.",
+        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Xueyi, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Lượng Tử tương đương <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Xueyi.",
         "shortDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch, đồng thời gây lượng nhỏ Sát Thương Lượng Tử cho mục tiêu lân cận."
       }
     },
     "ult": {
       "0": {
         "name": "Thiên Phạt Quán Thân",
-        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Lượng Tử bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Xueyi, lần tấn công này bỏ qua các thuộc tính Điểm Yếu và làm giảm Sức Bền của 1 kẻ địch. Khi phá vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu thuộc tính Lượng Tử.\\nTrong lần tấn công này, Sức Bền giảm càng nhiều, Sát Thương gây ra càng cao, tối đa tăng <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>.",
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Xueyi, lần tấn công này bỏ qua các thuộc tính Điểm Yếu và làm giảm Sức Bền của 1 kẻ địch. Khi phá vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu thuộc tính Lượng Tử.\\nTrong lần tấn công này, Sức Bền giảm càng nhiều, Sát Thương gây ra càng cao, tối đa tăng <orangeStrong>{{3}}%</orangeStrong>.",
         "shortDesc": "Gây lượng lớn Sát Thương Lượng Tử cho 1 kẻ địch, lần tấn công này <color=#f29e38ff>bỏ qua các thuộc tính Điểm Yếu</color> và làm giảm Sức Bền của 1 kẻ địch, Sức Bền giảm càng nhiều, sát thương gây ra càng cao."
       }
     },
     "technique": {
       "0": {
         "name": "Hành Quyết",
-        "fullDesc": "Lập tức tấn công kẻ địch, sau khi vào chiến đấu sẽ gây cho toàn phe địch sát thương Lượng Tử bằng <unbreak>#1[i]%</unbreak> Tấn Công của Xueyi.",
+        "fullDesc": "Lập tức tấn công kẻ địch, sau khi vào chiến đấu sẽ gây cho toàn phe địch sát thương Lượng Tử bằng {{1}}% Tấn Công của Xueyi.",
         "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây một lượng nhỏ Sát Thương Lượng Tử cho toàn bộ kẻ địch."
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
-        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch."
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
+        "shortDesc": ""
       }
     }
   }

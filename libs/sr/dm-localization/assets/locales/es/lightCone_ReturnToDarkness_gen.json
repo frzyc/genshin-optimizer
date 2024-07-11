@@ -2,6 +2,6 @@
   "name": "Regreso a la oscuridad",
   "passive": {
     "name": "Olas turbulentas",
-    "description": "La Prob. CRIT del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Tras infligir un Golpe CRIT, hay una probabilidad fija del <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de eliminar un efecto positivo al azar del enemigo golpeado. Este efecto solo se puede activar una vez por ataque."
+    "description": "La Prob. CRIT del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Tras infligir un Golpe CRIT, hay una probabilidad fija del <orangeStrong>{{2}}%</orangeStrong> de eliminar un efecto positivo al azar del enemigo golpeado. Este efecto solo se puede activar una vez por ataque."
   }
 }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Ajuste de Lâmina de Serra",
-        "fullDesc": "Causa Dano de Fogo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Himeko a um único inimigo.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Himeko a um único inimigo.",
         "shortDesc": "Causa Dano de Fogo leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Detonação por Fusão",
-        "fullDesc": "Causa Dano de Fogo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Himeko a um único inimigo e <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do ATQ de Himeko como Dano de Fogo aos inimigos adjacentes a ele.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Himeko a um único inimigo e <orangeStrong>{{2}}%</orangeStrong> do ATQ de Himeko como Dano de Fogo aos inimigos adjacentes a ele.",
         "shortDesc": "Causa Dano de Fogo a um único inimigo e Dano de Fogo leve a inimigos adjacentes a ele."
       }
     },
     "ult": {
       "0": {
         "name": "Chama Celestial",
-        "fullDesc": "Causa Dano de Fogo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Himeko a todos os inimigos. Além disso, Himeko regenera <unbreak>#2[i]</unbreak> de Energia extra para cada inimigo derrotado.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Himeko a todos os inimigos. Além disso, Himeko regenera {{2}} de Energia extra para cada inimigo derrotado.",
         "shortDesc": "Causa Dano de Fogo a todos os inimigos. Se inimigos forem derrotados, regenera Energia."
       }
     },
     "technique": {
       "0": {
         "name": "Combustão Incompleta",
-        "fullDesc": "Após usar a Técnica, cria uma dimensão que dura <unbreak>#4[i]</unbreak>s. Depois de entrar em batalha com inimigos na dimensão, há <unbreak>#1[i]%</unbreak> de <u>chance-base</u> de aumentar o Dano de Fogo que os inimigos recebem em <unbreak>#2[i]%</unbreak> por <unbreak>#3[i]</unbreak> rodada(s). Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "fullDesc": "Após usar a Técnica, cria uma dimensão que dura {{4}}s. Depois de entrar em batalha com inimigos na dimensão, há {{1}}% de <u>chance-base</u> de aumentar o Dano de Fogo que os inimigos recebem em {{2}}% por {{3}} rodada(s). Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
         "shortDesc": "Cria uma dimensão. Depois de entrar em combate com inimigos na dimensão, existe uma alta chance de <color=#f29e38ff>aumentar o Dano de Fogo recebido pelos inimigos</color>."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

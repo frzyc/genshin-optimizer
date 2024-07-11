@@ -2,6 +2,6 @@
   "name": "O Lado Inacessível",
   "passive": {
     "name": "Desejo Não Realizado",
-    "description": "Aumenta em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> a Chance de CRIT e em <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> os PV máximos do usuário. Quando o usuário é atacado ou consome seus próprios PV, o Dano dele aumenta em <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>. Esse efeito é removido depois que o usuário usar um ataque."
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> a Chance de CRIT e em <orangeStrong>{{2}}%</orangeStrong> os PV máximos do usuário. Quando o usuário é atacado ou consome seus próprios PV, o Dano dele aumenta em <orangeStrong>{{3}}%</orangeStrong>. Esse efeito é removido depois que o usuário usar um ataque."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Làn Nước Xuân Xuất Hiện",
   "passive": {
     "name": "Xua Tan Giá Rét",
-    "description": "Sau khi vào chiến đấu, tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> tốc độ của người trang bị, sát thương gây ra tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Sau khi người trang bị chịu sát thương, hiệu ứng này sẽ mất hiệu lực, kết thúc hiệp kế tiếp sẽ hồi phục lại hiệu ứng này."
+    "description": "Sau khi vào chiến đấu, tăng <orangeStrong>{{1}}%</orangeStrong> tốc độ của người trang bị, sát thương gây ra tăng <orangeStrong>{{2}}%</orangeStrong>. Sau khi người trang bị chịu sát thương, hiệu ứng này sẽ mất hiệu lực, kết thúc hiệp kế tiếp sẽ hồi phục lại hiệu ứng này."
   }
 }

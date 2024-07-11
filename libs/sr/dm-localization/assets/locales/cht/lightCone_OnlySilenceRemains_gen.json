@@ -2,6 +2,6 @@
   "name": "唯有沉默",
   "passive": {
     "name": "記錄",
-    "description": "使裝備者的攻擊力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。當場上的敵方目標數量小於等於2時，裝備者的暴擊率提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。"
+    "description": "使裝備者的攻擊力提高<orangeStrong>{{1}}%</orangeStrong>。當場上的敵方目標數量小於等於2時，裝備者的暴擊率提高<orangeStrong>{{2}}%</orangeStrong>。"
   }
 }

@@ -4,44 +4,46 @@
     "basic": {
       "0": {
         "name": "Farewell Hit",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Trailblazer pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Trailblazer pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "RIP Home Run",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Trailblazer pada satu target dan musuh di dekatnya.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Trailblazer pada satu target dan musuh di dekatnya.",
         "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh dan target di sekitarnya."
       }
     },
     "ult": {
       "0": {
         "name": "Stardust Ace",
-        "fullDesc": "Pilih satu dari antara dua mode serangan untuk melancarkan satu serangan penuh.\\n\"Blowout: Farewell Hit\" mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Trailblazer pada 1 target musuh.\\n\"Blowout: RIP Home Run\" mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ATK Trailblazer pada 1 target musuh, serta mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> ATK Trailblazer pada musuh di sekitar target.",
+        "fullDesc": "Pilih satu dari antara dua mode serangan untuk melancarkan satu serangan penuh.\\n\"Blowout: Farewell Hit\" mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Trailblazer pada 1 target musuh.\\n\"Blowout: RIP Home Run\" mengakibatkan Physical DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Trailblazer pada 1 target musuh, serta mengakibatkan Physical DMG sebesar <orangeStrong>{{3}}%</orangeStrong> ATK Trailblazer pada musuh di sekitar target.",
         "shortDesc": "Pilih serangan Single Target atau Blast untuk melancarkan satu serangan penuh."
       },
       "1": {
         "name": "Blowout: Farewell Hit",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Trailblazer pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Trailblazer pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Physical DMG dalam jumlah besar pada 1 musuh."
       },
       "2": {
         "name": "Blowout: RIP Home Run",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Trailblazer pada 1 target musuh, dan di saat bersamaan mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ATK Trailblazer pada musuh di sekitar target.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Trailblazer pada 1 target musuh, dan di saat bersamaan mengakibatkan Physical DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Trailblazer pada musuh di sekitar target.",
         "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh dan target di sekitarnya."
       }
     },
     "technique": {
       "0": {
         "name": "Immortal Third Strike",
-        "fullDesc": "Setelah menggunakan Technique, memulihkan HP seluruh anggota tim sebesar <unbreak>#1[i]%</unbreak> Max HP masing-masing."
+        "fullDesc": "Setelah menggunakan Technique, memulihkan HP seluruh anggota tim sebesar {{1}}% Max HP masing-masing.",
+        "shortDesc": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
       }
     }
   }

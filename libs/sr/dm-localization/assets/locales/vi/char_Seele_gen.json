@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Tập Kích Mạnh Mẽ",
-        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Seele.",
+        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Seele.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Lưỡi Kiếm Trở Về",
-        "fullDesc": "Khiến tốc độ của Seele tăng <unbreak>#2[i]%</unbreak>, đồng thời gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Seele, hiệu ứng tăng tốc duy trì <unbreak>#3[i]</unbreak> hiệp.",
+        "fullDesc": "Khiến tốc độ của Seele tăng {{2}}%, đồng thời gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Seele, hiệu ứng tăng tốc duy trì {{3}} hiệp.",
         "shortDesc": "Gây sát thương Lượng Tử cho 1 kẻ địch, và giúp bản thân tăng tốc độ."
       }
     },
     "ult": {
       "0": {
         "name": "Loạn Điệp",
-        "fullDesc": "Bước vào trạng thái buff ngay, đồng thời gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Seele.",
+        "fullDesc": "Bước vào trạng thái buff ngay, đồng thời gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Seele.",
         "shortDesc": "Vào <color=#f29e38ff>trạng thái Buff</color>, gây lượng lớn Sát Thương Lượng Tử cho 1 kẻ địch."
       }
     },
     "technique": {
       "0": {
         "name": "Bóng Hình Ảo Ảnh",
-        "fullDesc": "Sau khi dùng Bí Kỹ sẽ vào trạng thái Tàng Hình trong <unbreak>#1[i]</unbreak> giây. Ở trạng thái Ẩn Thân sẽ không bị kẻ địch phát hiện, và khi chủ động tấn công kẻ địch vào chiến đấu, Seele sẽ lập tức vào trạng thái Buff.",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ vào trạng thái Tàng Hình trong {{1}} giây. Ở trạng thái Ẩn Thân sẽ không bị kẻ địch phát hiện, và khi chủ động tấn công kẻ địch vào chiến đấu, Seele sẽ lập tức vào trạng thái Buff.",
         "shortDesc": "Vào trạng thái <color=#f29e38ff>Tàng Hình</color>. Sau khi tấn công kẻ địch và vào chiến đấu, sẽ nhận <color=#f29e38ff>Buff</color> ngay."
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
-        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
       }
     }
   }

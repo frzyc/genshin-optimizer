@@ -2,6 +2,6 @@
   "name": "An Instant Before A Gaze",
   "passive": {
     "name": "A Knight's Pilgrimage",
-    "description": "Increases the wearer's CRIT DMG by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. When the wearer uses Ultimate, increases the wearer's Ultimate DMG based on their Max Energy. Each point of Energy increases the Ultimate DMG by <color=#f29e38ff><unbreak>#2[f2]%</unbreak></color>, up to <unbreak>#3[i]</unbreak> points of Energy."
+    "description": "Increases the wearer's CRIT DMG by <orangeStrong>{{1}}%</orangeStrong>. When the wearer uses Ultimate, increases the wearer's Ultimate DMG based on their Max Energy. Each point of Energy increases the Ultimate DMG by <orangeStrong>{{2}}%</orangeStrong>, up to {{3}} points of Energy."
   }
 }

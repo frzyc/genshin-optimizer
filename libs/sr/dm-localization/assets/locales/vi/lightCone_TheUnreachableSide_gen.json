@@ -2,6 +2,6 @@
   "name": "Bến Bờ Xa Diệu Vợi",
   "passive": {
     "name": "Không Thể Được",
-    "description": "Khiến Tỷ Lệ Bạo Kích của người trang bị tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, Giới Hạn HP tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Sau khi người trang bị chịu tấn công hoặc tiêu hao HP của bản thân, sát thương gây ra sẽ tăng <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>, hiệu ứng này sẽ giải trừ sau khi người trang bị thực hiện tấn công."
+    "description": "Khiến Tỷ Lệ Bạo Kích của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>, Giới Hạn HP tăng <orangeStrong>{{2}}%</orangeStrong>. Sau khi người trang bị chịu tấn công hoặc tiêu hao HP của bản thân, sát thương gây ra sẽ tăng <orangeStrong>{{3}}%</orangeStrong>, hiệu ứng này sẽ giải trừ sau khi người trang bị thực hiện tấn công."
   }
 }

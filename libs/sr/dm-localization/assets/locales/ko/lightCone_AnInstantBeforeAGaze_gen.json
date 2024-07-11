@@ -2,6 +2,6 @@
   "name": "눈에 담긴 순간",
   "passive": {
     "name": "기사의 순례",
-    "description": "장착한 캐릭터의 치명타 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 장착한 캐릭터가 필살기 발동 시 자신의 에너지 최대치에 따라 자신이 필살기로 가하는 피해가 증가한다. (에너지 1pt당 <color=#f29e38ff><unbreak>#2[f2]%</unbreak></color> 증가, 최대 <unbreak>#3[i]</unbreak>pt까지 계산)"
+    "description": "장착한 캐릭터의 치명타 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 필살기 발동 시 자신의 에너지 최대치에 따라 자신이 필살기로 가하는 피해가 증가한다. (에너지 1pt당 <orangeStrong>{{2}}%</orangeStrong> 증가, 최대 {{3}}pt까지 계산)"
   }
 }

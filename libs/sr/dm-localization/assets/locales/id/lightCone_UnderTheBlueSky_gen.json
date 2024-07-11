@@ -2,6 +2,6 @@
   "name": "Under the Blue Sky",
   "passive": {
     "name": "Rye Under the Sun",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK pengguna. Setelah pengguna mengalahkan target musuh, meningkatkan <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> CRIT Rate selama <unbreak>#3[i]</unbreak> giliran."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK pengguna. Setelah pengguna mengalahkan target musuh, meningkatkan <orangeStrong>{{2}}%</orangeStrong> CRIT Rate selama {{3}} giliran."
   }
 }

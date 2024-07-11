@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Behind the Kindness",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Natasha pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Natasha pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Love, Heal, and Choose",
-        "fullDesc": "Segera memulihkan HP sebesar <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> Max HP Natasha +<color=#f29e38ff><unbreak>#4[i]</unbreak></color> pada 1 rekan tim yang ditargetkan, dan di saat bersamaan memulihkan HP sebesar <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> Max HP Natasha +<color=#f29e38ff><unbreak>#5[i]</unbreak></color> pada target setiap gilirannya dimulai, berlangsung selama <unbreak>#3[i]</unbreak> giliran.",
+        "fullDesc": "Segera memulihkan HP sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Natasha +<orangeStrong>{{4}}</orangeStrong> pada 1 rekan tim yang ditargetkan, dan di saat bersamaan memulihkan HP sebesar <orangeStrong>{{2}}%</orangeStrong> Max HP Natasha +<orangeStrong>{{5}}</orangeStrong> pada target setiap gilirannya dimulai, berlangsung selama {{3}} giliran.",
         "shortDesc": "<color=#f29e38ff>Memulihkan HP</color> 1 rekan tim, dan memberikan target <color=#f29e38ff>Pemulihan Berkelanjutan</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Gift of Rebirth",
-        "fullDesc": "Segera memulihkan HP sebesar <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> Max HP Natasha +<color=#f29e38ff><unbreak>#2[i]</unbreak></color> pada seluruh rekan tim.",
+        "fullDesc": "Segera memulihkan HP sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Natasha +<orangeStrong>{{2}}</orangeStrong> pada seluruh rekan tim.",
         "shortDesc": "<color=#f29e38ff>Memulihkan HP</color> seluruh rekan tim."
       }
     },
     "technique": {
       "0": {
         "name": "Hypnosis Research",
-        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Physical DMG sebesar <unbreak>#4[i]%</unbreak> ATK Natasha pada musuh secara acak dan setiap target memiliki <unbreak>#1[i]%</unbreak> <u>peluang dasar</u> untuk memasuki status Weaken.\\nUntuk target musuh berstatus Weaken, DMG yang diakibatkannya pada rekan tim akan berkurang <unbreak>#2[i]%</unbreak> selama <unbreak>#3[i]</unbreak> giliran.",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Physical DMG sebesar {{4}}% ATK Natasha pada musuh secara acak dan setiap target memiliki {{1}}% <u>peluang dasar</u> untuk memasuki status Weaken.\\nUntuk target musuh berstatus Weaken, DMG yang diakibatkannya pada rekan tim akan berkurang {{2}}% selama {{3}} giliran.",
         "shortDesc": "Menyerang musuh dan mengakibatkan Physical DMG dalam jumlah kecil pada musuh secara acak. Berpeluang besar untuk membuat setiap target memasuki status Weaken."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
       }
     }
   }

@@ -2,6 +2,6 @@
   "name": "Feines Obst",
   "passive": {
     "name": "Geschmack",
-    "description": "Stellt zu Beginn des Kampfes sofort <color=#f29e38ff><unbreak>#1[i]</unbreak></color> Pkt. Energie für alle Verbündeten wieder her."
+    "description": "Stellt zu Beginn des Kampfes sofort <orangeStrong>{{1}}</orangeStrong> Pkt. Energie für alle Verbündeten wieder her."
   }
 }

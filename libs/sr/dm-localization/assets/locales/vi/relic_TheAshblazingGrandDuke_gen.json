@@ -1,7 +1,7 @@
 {
   "setName": "Đại Công Tước Tro Tàn",
   "setEffects": {
-    "2": "Sát thương Đòn Đánh Theo Sau gây ra tăng <unbreak>#1[i]%</unbreak>.",
-    "4": "Khi người trang bị thi triển Đòn Đánh Theo Sau, mỗi lần gây sát thương sẽ tăng <unbreak>#1[i]%</unbreak> tấn công của người trang bị dựa theo số lần Đòn Đánh Theo Sau gây sát thương, tối đa cộng dồn <unbreak>#2[i]</unbreak> lần, duy trì <unbreak>#3[i]</unbreak> hiệp. Hiệu ứng này sẽ bị xóa khi người trang bị thi triển Đòn Đánh Theo Sau tiếp theo."
+    "2": "Sát thương Đòn Đánh Theo Sau gây ra tăng {{1}}%.",
+    "4": "Khi người trang bị thi triển Đòn Đánh Theo Sau, mỗi lần gây sát thương sẽ tăng {{1}}% tấn công của người trang bị dựa theo số lần Đòn Đánh Theo Sau gây sát thương, tối đa cộng dồn {{2}} lần, duy trì {{3}} hiệp. Hiệu ứng này sẽ bị xóa khi người trang bị thi triển Đòn Đánh Theo Sau tiếp theo."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Aventura de Sonhópolis",
   "passive": {
     "name": "Solidariedade",
-    "description": "Depois que um usuário usa um certo tipo de habilidade, como ATQ Básico, Perícia, ou Perícia Suprema, todos os aliados ganham Infantilidade, que aumenta o Dano do tipo de habilidade usada pelo usuário em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Infantilidade só tem efeito com o tipo de habilidade mais recente usada pelo usuário e não pode ser acumulada."
+    "description": "Depois que um usuário usa um certo tipo de habilidade, como ATQ Básico, Perícia, ou Perícia Suprema, todos os aliados ganham Infantilidade, que aumenta o Dano do tipo de habilidade usada pelo usuário em <orangeStrong>{{1}}%</orangeStrong>. Infantilidade só tem efeito com o tipo de habilidade mais recente usada pelo usuário e não pode ser acumulada."
   }
 }

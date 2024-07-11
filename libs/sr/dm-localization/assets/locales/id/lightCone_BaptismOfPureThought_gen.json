@@ -2,6 +2,6 @@
   "name": "Baptism of Pure Thought",
   "passive": {
     "name": "Mental Training",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> CRIT DMG pengguna. Untuk setiap 1 efek Debuff yang dimiliki target musuh, CRIT DMG yang diakibatkan pengguna pada target tersebut akan meningkat ekstra <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, maksimal ditumpuk hingga <unbreak>#3[i]</unbreak> lapis. Saat melancarkan Ultimate untuk menyerang target musuh, pengguna akan memperoleh efek \"Disputation\", yang meningkatkan <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> DMG yang diakibatkan, dan Serangan Lanjutan pengguna akan mengabaikan <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> DEF target musuh. Efek ini berlangsung selama <unbreak>#6[i]</unbreak> giliran."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT DMG pengguna. Untuk setiap 1 efek Debuff yang dimiliki target musuh, CRIT DMG yang diakibatkan pengguna pada target tersebut akan meningkat ekstra <orangeStrong>{{2}}%</orangeStrong>, maksimal ditumpuk hingga {{3}} lapis. Saat melancarkan Ultimate untuk menyerang target musuh, pengguna akan memperoleh efek \"Disputation\", yang meningkatkan <orangeStrong>{{4}}%</orangeStrong> DMG yang diakibatkan, dan Serangan Lanjutan pengguna akan mengabaikan <orangeStrong>{{5}}%</orangeStrong> DEF target musuh. Efek ini berlangsung selama {{6}} giliran."
   }
 }

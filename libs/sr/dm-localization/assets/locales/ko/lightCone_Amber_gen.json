@@ -2,6 +2,6 @@
   "name": "앰버",
   "passive": {
     "name": "정체",
-    "description": "장착한 캐릭터의 방어력이 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 장착한 캐릭터의 현재 HP 백분율이 <unbreak>#2[i]%</unbreak> 미만일 경우 방어력이 추가로 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> 증가한다"
+    "description": "장착한 캐릭터의 방어력이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터의 현재 HP 백분율이 {{2}}% 미만일 경우 방어력이 추가로 <orangeStrong>{{3}}%</orangeStrong> 증가한다"
   }
 }

@@ -1,6 +1,6 @@
 {
   "setName": "Entreprise commerciale intersidérale",
   "setEffects": {
-    "2": "Augmente les chances d'appliquer des effets du porteur de <unbreak>#1[i]%</unbreak>. D'autre part, son ATQ augmente d'un montant équivalent à <unbreak>#2[i]%</unbreak> de ses chances d'appliquer des effets actuelles, jusqu'à un maximum de <unbreak>#3[i]%</unbreak>."
+    "2": "Augmente les chances d'appliquer des effets du porteur de {{1}}%. D'autre part, son ATQ augmente d'un montant équivalent à {{2}}% de ses chances d'appliquer des effets actuelles, jusqu'à un maximum de {{3}}%."
   }
 }

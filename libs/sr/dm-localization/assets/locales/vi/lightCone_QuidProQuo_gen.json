@@ -2,6 +2,6 @@
   "name": "Đổi Ngang Giá",
   "passive": {
     "name": "Thích Thú Dễ Chịu",
-    "description": "Khi bắt đầu hiệp của người trang bị, sẽ hồi <color=#f29e38ff><unbreak>#2[i]</unbreak></color> Năng Lượng cho 1 mục tiêu khác ngẫu nhiên của phe ta có Năng Lượng hiện tại dưới <unbreak>#1[i]%</unbreak>."
+    "description": "Khi bắt đầu hiệp của người trang bị, sẽ hồi <orangeStrong>{{2}}</orangeStrong> Năng Lượng cho 1 mục tiêu khác ngẫu nhiên của phe ta có Năng Lượng hiện tại dưới {{1}}%."
   }
 }

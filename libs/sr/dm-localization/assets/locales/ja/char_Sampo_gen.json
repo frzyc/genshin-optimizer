@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#まばゆ}眩{RUBY_E#}い{RUBY_B#はもん}刃紋{RUBY_E#}",
-        "fullDesc": "指定した敵単体にサンポの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の風属性ダメージを与える。",
+        "fullDesc": "指定した敵単体にサンポの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。",
         "shortDesc": "敵単体に少量の風属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#はんぷくよこと}反復横跳{RUBY_E#}びの{RUBY_B#あい}愛{RUBY_E#}",
-        "fullDesc": "指定した敵単体にサンポの攻撃力<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>分の風属性ダメージを与え、さらに<unbreak>#1[i]</unbreak>ヒットする。1ヒットごとにランダムな敵単体にサンポの攻撃力<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>分の風属性ダメージを与える。",
+        "fullDesc": "指定した敵単体にサンポの攻撃力<orangeStrong>{{2}}%</orangeStrong>分の風属性ダメージを与え、さらに{{1}}ヒットする。1ヒットごとにランダムな敵単体にサンポの攻撃力<orangeStrong>{{2}}%</orangeStrong>分の風属性ダメージを与える。",
         "shortDesc": "敵単体に少量の風属性ダメージを与える、5回バウンドする。"
       }
     },
     "ult": {
       "0": {
         "name": "サプライズボックス",
-        "fullDesc": "敵全体にサンポの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の風属性ダメージを与え、<unbreak>#4[i]%</unbreak>の<u>基礎確率</u>で攻撃を受けた敵の持続被ダメージ+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>、<unbreak>#3[i]</unbreak>ターン継続。",
+        "fullDesc": "敵全体にサンポの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与え、{{4}}%の<u>基礎確率</u>で攻撃を受けた敵の持続被ダメージ+<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。",
         "shortDesc": "敵全体に風属性ダメージを与え、高確率で敵の<color=#f29e38ff>持続被ダメージをアップ</color>する。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#いちばん}一番{RUBY_E#}の{RUBY_B#かがや}輝{RUBY_E#}きをあなたへ",
-        "fullDesc": "秘技を使用した後、一定区域内の敵を<unbreak>#1[i]</unbreak>秒間のブラインド状態にする。ブラインド状態の敵は味方を発見できない。\\nブラインド状態の敵を先制攻撃して戦闘に入った時、<unbreak>#2[i]%</unbreak>の<u>固定確率</u>で、敵単体それぞれの行動順を<unbreak>#3[i]%</unbreak>遅延させる。",
+        "fullDesc": "秘技を使用した後、一定区域内の敵を{{1}}秒間のブラインド状態にする。ブラインド状態の敵は味方を発見できない。\\nブラインド状態の敵を先制攻撃して戦闘に入った時、{{2}}%の<u>固定確率</u>で、敵単体それぞれの行動順を{{3}}%遅延させる。",
         "shortDesc": "一定範囲内の敵をブラインド状態にする。ブラインド状態の敵を攻撃して戦闘に入った後、高確率で敵それぞれの<u>行動順を遅らせる</u>。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
-        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
       }
     }
   }

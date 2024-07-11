@@ -1,7 +1,7 @@
 {
   "setName": "Cavaleira do Palácio da Pureza",
   "setEffects": {
-    "2": "Aumenta a DEF em <unbreak>#1[i]%</unbreak>.",
-    "4": "Aumenta em <unbreak>#1[i]%</unbreak> o Dano máximo que pode ser absorvido pelo Escudo criado pelo usuário."
+    "2": "Aumenta a DEF em {{1}}%.",
+    "4": "Aumenta em {{1}}% o Dano máximo que pode ser absorvido pelo Escudo criado pelo usuário."
   }
 }

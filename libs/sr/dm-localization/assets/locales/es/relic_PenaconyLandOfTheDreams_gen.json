@@ -1,6 +1,6 @@
 {
   "setName": "Colonipenal, la tierra de los sueños",
   "setEffects": {
-    "2": "La recuperación de energía del portador aumenta en un <unbreak>#1[i]%</unbreak>. Aumenta en un <unbreak>#2[i]%</unbreak> el daño que infligen los demás aliados que sean del mismo tipo que el portador."
+    "2": "La recuperación de energía del portador aumenta en un {{1}}%. Aumenta en un {{2}}% el daño que infligen los demás aliados que sean del mismo tipo que el portador."
   }
 }

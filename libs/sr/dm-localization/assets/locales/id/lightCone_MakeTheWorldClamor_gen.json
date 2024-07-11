@@ -2,6 +2,6 @@
   "name": "Make the World Clamor",
   "passive": {
     "name": "The Power of Sound",
-    "description": "Segera memulihkan <color=#f29e38ff><unbreak>#2[i]</unbreak></color> Energy pengguna saat memasuki pertempuran, dan di saat bersamaan meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Ultimate DMG pengguna."
+    "description": "Segera memulihkan <orangeStrong>{{2}}</orangeStrong> Energy pengguna saat memasuki pertempuran, dan di saat bersamaan meningkatkan <orangeStrong>{{1}}%</orangeStrong> Ultimate DMG pengguna."
   }
 }

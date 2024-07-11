@@ -2,6 +2,6 @@
   "name": "세계의 이름으로",
   "passive": {
     "name": "전승자",
-    "description": "장착한 캐릭터가 디버프 효과에 빠진 적에게 가하는 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 장착한 캐릭터가 전투 스킬 발동 시 장착한 캐릭터의 이번 공격은 효과 명중이 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가하고, 공격력이 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> 증가한다"
+    "description": "장착한 캐릭터가 디버프 효과에 빠진 적에게 가하는 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 전투 스킬 발동 시 장착한 캐릭터의 이번 공격은 효과 명중이 <orangeStrong>{{2}}%</orangeStrong> 증가하고, 공격력이 <orangeStrong>{{3}}%</orangeStrong> 증가한다"
   }
 }

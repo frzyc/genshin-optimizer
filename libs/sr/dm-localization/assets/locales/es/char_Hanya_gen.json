@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Pincel del oráculo",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Hanya como Daño Físico a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Hanya como Daño Físico a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Samsara, bloqueado",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Hanya como Daño Físico a un enemigo y lo afecta con Lastre.\\nCada vez que un aliado ataca 2 veces con un ATQ básico, una habilidad básica o una habilidad definitiva a un enemigo con Lastre, el equipo recupera 1 pt. de habilidad básica. Lastre solo tiene efecto en el último enemigo al que se le haya aplicado y se disipa automáticamente una vez que se haya activado <unbreak>#2[i]</unbreak> veces el efecto de recuperación de pts. de habilidad básica.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Hanya como Daño Físico a un enemigo y lo afecta con Lastre.\\nCada vez que un aliado ataca 2 veces con un ATQ básico, una habilidad básica o una habilidad definitiva a un enemigo con Lastre, el equipo recupera 1 pt. de habilidad básica. Lastre solo tiene efecto en el último enemigo al que se le haya aplicado y se disipa automáticamente una vez que se haya activado {{2}} veces el efecto de recuperación de pts. de habilidad básica.",
         "shortDesc": "Inflige Daño Físico a un enemigo y lo afecta con Lastre. Cuando un aliado ataque 2 veces con un ATQ básico, una habilidad básica o una habilidad definitiva a un objetivo afectado por Lastre, <color=#f29e38ff>se recupera 1 pt. de habilidad básica</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Decreto de los Diez Líderes, todos obedecerán",
-        "fullDesc": "Aumenta la VEL de un aliado en un <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> de la VEL de Hanya, y el ATQ de ese aliado en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> durante <unbreak>#2[i]</unbreak> turnos.",
+        "fullDesc": "Aumenta la VEL de un aliado en un <orangeStrong>{{3}}%</orangeStrong> de la VEL de Hanya, y el ATQ de ese aliado en un <orangeStrong>{{1}}%</orangeStrong> durante {{2}} turnos.",
         "shortDesc": "<color=#f29e38ff>Aumenta la VEL y el ATQ</color> de un aliado."
       }
     },
@@ -32,7 +32,8 @@
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
       }
     }
   }

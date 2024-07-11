@@ -2,6 +2,6 @@
   "name": "Tầm Mắt Của Con Mồi",
   "passive": {
     "name": "Tự Tin",
-    "description": "Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Chính Xác Hiệu Ứng cho người trang bị, đồng thời sát thương duy trì gây ra sẽ tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Chính Xác Hiệu Ứng cho người trang bị, đồng thời sát thương duy trì gây ra sẽ tăng <orangeStrong>{{2}}%</orangeStrong>."
   }
 }

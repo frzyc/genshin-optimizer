@@ -2,6 +2,6 @@
   "name": "Corne d'abondance",
   "passive": {
     "name": "Prospérité",
-    "description": "Les soins prodigués par le porteur augmentent de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> lorsqu'il utilise sa compétence ou son ultime."
+    "description": "Les soins prodigués par le porteur augmentent de <orangeStrong>{{1}}%</orangeStrong> lorsqu'il utilise sa compétence ou son ultime."
   }
 }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "冰點射擊",
-        "fullDesc": "對指定敵方單體造成等同於佩拉<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的冰屬性傷害。",
+        "fullDesc": "對指定敵方單體造成等同於佩拉<orangeStrong>{{1}}%</orangeStrong>攻擊力的冰屬性傷害。",
         "shortDesc": "對敵方單體造成少量冰屬性傷害。"
       }
     },
     "skill": {
       "0": {
         "name": "低溫妨害",
-        "fullDesc": "解除指定敵方單體的<unbreak>#2[i]</unbreak>個<u>增益效果</u>，同時造成等同於佩拉<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的冰屬性傷害。",
+        "fullDesc": "解除指定敵方單體的{{2}}個<u>增益效果</u>，同時造成等同於佩拉<orangeStrong>{{1}}%</orangeStrong>攻擊力的冰屬性傷害。",
         "shortDesc": "<color=#f29e38ff>解除</color>敵方單體1個<color=#f29e38ff><u>增益效果</u></color>，對敵方單體造成冰屬性傷害。"
       }
     },
     "ult": {
       "0": {
         "name": "領域壓制",
-        "fullDesc": "有<unbreak>#1[i]%</unbreak>的<u>基礎機率</u>使敵方每個單體目標陷入【通解】狀態，同時對敵方全體造成等同於佩拉<color=#f29e38ff><unbreak>#4[i]%</unbreak></color>攻擊力的冰屬性傷害。\\n【通解】狀態下，敵方目標防禦力降低<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，持續<unbreak>#3[i]</unbreak>回合。",
+        "fullDesc": "有{{1}}%的<u>基礎機率</u>使敵方每個單體目標陷入【通解】狀態，同時對敵方全體造成等同於佩拉<orangeStrong>{{4}}%</orangeStrong>攻擊力的冰屬性傷害。\\n【通解】狀態下，敵方目標防禦力降低<orangeStrong>{{2}}%</orangeStrong>，持續{{3}}回合。",
         "shortDesc": "高機率使敵方目標<color=#f29e38ff>防禦力降低</color>，並對敵方全體造成少量冰屬性傷害。"
       }
     },
     "technique": {
       "0": {
         "name": "先發制人",
-        "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方隨機單體造成等同於佩拉<unbreak>#4[i]%</unbreak>攻擊力的冰屬性傷害，同時有<unbreak>#1[i]%</unbreak>的<u>基礎機率</u>使敵方每個單體目標防禦力降低<unbreak>#2[i]%</unbreak>，持續<unbreak>#3[i]</unbreak>回合。",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方隨機單體造成等同於佩拉{{4}}%攻擊力的冰屬性傷害，同時有{{1}}%的<u>基礎機率</u>使敵方每個單體目標防禦力降低{{2}}%，持續{{3}}回合。",
         "shortDesc": "攻擊敵人，進入戰鬥後對敵方隨機單體造成少量傷害，並有高機率使敵方每個單體目標防禦力降低。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
-        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
+        "shortDesc": ""
       }
     }
   }

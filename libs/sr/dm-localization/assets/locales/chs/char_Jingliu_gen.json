@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "流影方晖",
-        "fullDesc": "对指定敌方单体造成等同于镜流<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的冰属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于镜流<orangeStrong>{{1}}%</orangeStrong>攻击力的冰属性伤害。",
         "shortDesc": "对指定敌方单体造成少量冰属性伤害。"
       }
     },
     "skill": {
       "0": {
         "name": "无罅飞光",
-        "fullDesc": "对指定敌方单体造成等同于镜流<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的冰属性伤害，并获得<unbreak>#2[i]</unbreak>层【朔望】。",
+        "fullDesc": "对指定敌方单体造成等同于镜流<orangeStrong>{{1}}%</orangeStrong>攻击力的冰属性伤害，并获得{{2}}层【朔望】。",
         "shortDesc": "对指定敌方单体造成冰属性伤害，并获得<color=#f29e38ff>1层【朔望】</color>。"
       },
       "1": {
         "name": "寒川映月",
-        "fullDesc": "对指定敌方单体造成等同于镜流<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的冰属性伤害，并对其相邻目标造成等同于镜流<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>攻击力的冰属性伤害。消耗<unbreak>#2[i]</unbreak>层【朔望】。施放本技能不消耗战技点。",
+        "fullDesc": "对指定敌方单体造成等同于镜流<orangeStrong>{{1}}%</orangeStrong>攻击力的冰属性伤害，并对其相邻目标造成等同于镜流<orangeStrong>{{3}}%</orangeStrong>攻击力的冰属性伤害。消耗{{2}}层【朔望】。施放本技能不消耗战技点。",
         "shortDesc": "对指定敌方单体造成冰属性伤害，对相邻目标造成冰属性伤害，并消耗1层【朔望】。"
       }
     },
     "ult": {
       "0": {
         "name": "昙华生灭，天河泻梦",
-        "fullDesc": "对指定敌方单体造成等同于镜流<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻击力的冰属性伤害，并对其相邻目标造成等同于镜流<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>攻击力的冰属性伤害。攻击结束后获得<unbreak>#2[i]</unbreak>层【朔望】。",
+        "fullDesc": "对指定敌方单体造成等同于镜流<orangeStrong>{{1}}%</orangeStrong>攻击力的冰属性伤害，并对其相邻目标造成等同于镜流<orangeStrong>{{3}}%</orangeStrong>攻击力的冰属性伤害。攻击结束后获得{{2}}层【朔望】。",
         "shortDesc": "对指定敌方单体造成大量冰属性伤害，对相邻目标造成冰属性伤害，并<color=#f29e38ff>获得1层【朔望】</color>。"
       }
     },
     "technique": {
       "0": {
         "name": "古镜照神",
-        "fullDesc": "使用秘技后，在自身周围制造1片持续<unbreak>#3[i]</unbreak>秒的特殊领域，处于特殊领域内的敌人陷入冻结状态。与处于特殊领域内的敌人进入战斗后，立即为自身恢复<unbreak>#6[i]</unbreak>点能量、获得<unbreak>#1[i]</unbreak>层【朔望】并有<unbreak>#2[i]%</unbreak>的<u>基础概率</u>使敌方目标陷入冻结状态，持续<unbreak>#4[i]</unbreak>回合。冻结状态下，敌方目标无法行动，且每回合开始时受到等同于镜流<unbreak>#5[i]%</unbreak>攻击力的冰属性<u>附加伤害</u>。我方制造的领域效果最多存在1个。",
+        "fullDesc": "使用秘技后，在自身周围制造1片持续{{3}}秒的特殊领域，处于特殊领域内的敌人陷入冻结状态。与处于特殊领域内的敌人进入战斗后，立即为自身恢复{{6}}点能量、获得{{1}}层【朔望】并有{{2}}%的<u>基础概率</u>使敌方目标陷入冻结状态，持续{{4}}回合。冻结状态下，敌方目标无法行动，且每回合开始时受到等同于镜流{{5}}%攻击力的冰属性<u>附加伤害</u>。我方制造的领域效果最多存在1个。",
         "shortDesc": "在自身周围制造特殊领域。领域内敌人陷入<color=#f29e38ff>冻结状态</color>。与领域内敌人进入战斗后，恢复能量、获得1层朔望并大概率使敌方目标陷入<color=#f29e38ff>冻结状态</color>。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
-        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。"
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "shortDesc": ""
       }
     }
   }

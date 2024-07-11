@@ -2,6 +2,6 @@
   "name": "Textura de Memórias",
   "passive": {
     "name": "Tesouro",
-    "description": "Aumenta em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> a RES a Efeito do usuário. Se o usuário for atacado sem Escudo, ganha um Escudo com <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> dos seus PV máximos por <unbreak>#3[i]</unbreak> rodada(s). Este efeito só pode ser ativado uma vez a cada <unbreak>#4[i]</unbreak> rodada(s). Se o usuário já estiver com um Escudo ao ser atacado, diminui em <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> o Dano recebido."
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> a RES a Efeito do usuário. Se o usuário for atacado sem Escudo, ganha um Escudo com <orangeStrong>{{2}}%</orangeStrong> dos seus PV máximos por {{3}} rodada(s). Este efeito só pode ser ativado uma vez a cada {{4}} rodada(s). Se o usuário já estiver com um Escudo ao ser atacado, diminui em <orangeStrong>{{5}}%</orangeStrong> o Dano recebido."
   }
 }

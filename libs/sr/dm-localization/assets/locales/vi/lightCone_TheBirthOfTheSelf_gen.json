@@ -2,6 +2,6 @@
   "name": "Sự Ra Đời Của \"Tôi\"",
   "passive": {
     "name": "Thiếu Nữ Trong Tranh",
-    "description": "Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> sát thương gây ra bởi Đòn Đánh Theo Sau của người trang bị. Nếu Phần Trăm HP hiện tại của kẻ địch này nhỏ hơn hoặc bằng <unbreak>#2[i]%</unbreak>, thì sát thương của Đòn Đánh Theo Sau tăng thêm <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> sát thương gây ra bởi Đòn Đánh Theo Sau của người trang bị. Nếu Phần Trăm HP hiện tại của kẻ địch này nhỏ hơn hoặc bằng {{2}}%, thì sát thương của Đòn Đánh Theo Sau tăng thêm <orangeStrong>{{3}}%</orangeStrong>."
   }
 }

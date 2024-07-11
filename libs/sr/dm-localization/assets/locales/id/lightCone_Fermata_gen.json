@@ -2,6 +2,6 @@
   "name": "Fermata",
   "passive": {
     "name": "Semibreve Rest",
-    "description": "Meningkatkan Break Effect pengguna sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Meningkatkan <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> DMG yang diakibatkan pada target musuh berstatus Shock atau Wind Shear, efek ini juga berlaku untuk DoT."
+    "description": "Meningkatkan Break Effect pengguna sebesar <orangeStrong>{{1}}%</orangeStrong>. Meningkatkan <orangeStrong>{{2}}%</orangeStrong> DMG yang diakibatkan pada target musuh berstatus Shock atau Wind Shear, efek ini juga berlaku untuk DoT."
   }
 }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Mũi Tên Giá Lạnh",
-        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của March 7th.",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của March 7th.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Dễ Thương Là Chính Nghĩa",
-        "fullDesc": "Cung cấp cho 1 đồng đội tấm khiên có thể triệt tiêu lượng sát thương bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Phòng Thủ của March 7th +<color=#f29e38ff><unbreak>#4[i]</unbreak></color>, duy trì <unbreak>#2[i]</unbreak> hiệp.\\nNếu phần trăm HP hiện tại của mục tiêu này lớn hơn hoặc bằng <unbreak>#3[i]%</unbreak>, thì xác suất bị kẻ địch tấn công sẽ tăng cao.",
+        "fullDesc": "Cung cấp cho 1 đồng đội tấm khiên có thể triệt tiêu lượng sát thương bằng <orangeStrong>{{1}}%</orangeStrong> Phòng Thủ của March 7th +<orangeStrong>{{4}}</orangeStrong>, duy trì {{2}} hiệp.\\nNếu phần trăm HP hiện tại của mục tiêu này lớn hơn hoặc bằng {{3}}%, thì xác suất bị kẻ địch tấn công sẽ tăng cao.",
         "shortDesc": "<color=#f29e38ff>Thi triển Khiên</color> cho 1 đồng đội."
       }
     },
     "ult": {
       "0": {
         "name": "Mưa Tên Băng Giá",
-        "fullDesc": "Gây Sát Thương Băng cho toàn bộ kẻ địch tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của March 7th. Kẻ địch bị tấn công có <unbreak>#2[i]%</unbreak> <u>xác suất cơ bản</u> bị Đóng Băng, duy trì <unbreak>#3[i]</unbreak> hiệp.\\nTrong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời mỗi hiệp đấu bắt đầu sẽ chịu lượng <u>sát thương kèm theo</u> thuộc tính Băng bằng <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> Tấn Công của March 7th.",
+        "fullDesc": "Gây Sát Thương Băng cho toàn bộ kẻ địch tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của March 7th. Kẻ địch bị tấn công có {{2}}% <u>xác suất cơ bản</u> bị Đóng Băng, duy trì {{3}} hiệp.\\nTrong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời mỗi hiệp đấu bắt đầu sẽ chịu lượng <u>sát thương kèm theo</u> thuộc tính Băng bằng <orangeStrong>{{4}}%</orangeStrong> Tấn Công của March 7th.",
         "shortDesc": "Gây Sát Thương Băng cho <color=#f29e38ff>toàn bộ</color> kẻ địch, có <color=#f29e38ff>xác suất thi triển Đóng Băng</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Khoảnh Khắc Đóng Băng",
-        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu có <unbreak>#1[i]%</unbreak> <u>xác suất cơ bản</u> khiến 1 kẻ địch ngẫu nhiên bị Đóng Băng, duy trì <unbreak>#2[i]</unbreak> hiệp.\\nTrong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời mỗi hiệp đấu bắt đầu sẽ chịu lượng <u>Sát Thương Băng kèm theo</u> bằng <unbreak>#3[i]%</unbreak> Tấn Công của March 7th.",
+        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu có {{1}}% <u>xác suất cơ bản</u> khiến 1 kẻ địch ngẫu nhiên bị Đóng Băng, duy trì {{2}} hiệp.\\nTrong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời mỗi hiệp đấu bắt đầu sẽ chịu lượng <u>Sát Thương Băng kèm theo</u> bằng {{3}}% Tấn Công của March 7th.",
         "shortDesc": "Tấn công kẻ địch, sau khi vào trận có xác suất lớn khiến 1 kẻ địch ngẫu nhiên rơi vào trạng thái Đóng Băng."
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
-        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
       }
     }
   }

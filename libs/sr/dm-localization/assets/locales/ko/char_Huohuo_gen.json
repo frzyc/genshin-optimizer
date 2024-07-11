@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "깃발•풍우 소환",
-        "fullDesc": "지정된 단일 적에게 곽향 HP 최대치의 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼 바람 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 곽향 HP 최대치의 <orangeStrong>{{1}}%</orangeStrong>만큼 바람 속성 피해를 준다",
         "shortDesc": "단일 적에게 소량의 바람 속성 피해를 준다"
       }
     },
     "skill": {
       "0": {
         "name": "부적•보명호신",
-        "fullDesc": "지정된 단일 아군의 <u>디버프 효과</u>를 <unbreak>#5[i]</unbreak>개 해제하고, 지정된 단일 아군의 HP를 즉시 곽향 HP 최대치의 <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>만큼 회복시킨다. 동시에 인접한 목표의 HP를 곽향 HP 최대치의 <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>+<color=#f29e38ff><unbreak>#4[i]</unbreak></color>만큼 회복시킨다",
+        "fullDesc": "지정된 단일 아군의 <u>디버프 효과</u>를 {{5}}개 해제하고, 지정된 단일 아군의 HP를 즉시 곽향 HP 최대치의 <orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼 회복시킨다. 동시에 인접한 목표의 HP를 곽향 HP 최대치의 <orangeStrong>{{3}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>만큼 회복시킨다",
         "shortDesc": "단일 아군의 <u>디버프 효과</u>를 1개 해제하고, 단일 아군 및 인접한 목표의 <color=#f29e38ff>HP를 회복</color>시킨다"
       }
     },
     "ult": {
       "0": {
         "name": "꼬리•신귀 사역",
-        "fullDesc": "자신 이외의 동료에게 각자 에너지 최대치의 <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>만큼 에너지를 회복시키고, 동시에 공격력을 <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> 증가시킨다. 지속 시간: <unbreak>#3[i]</unbreak>턴",
+        "fullDesc": "자신 이외의 동료에게 각자 에너지 최대치의 <orangeStrong>{{1}}%</orangeStrong>만큼 에너지를 회복시키고, 동시에 공격력을 <orangeStrong>{{2}}%</orangeStrong> 증가시킨다. 지속 시간: {{3}}턴",
         "shortDesc": "자신 이외의 동료의 <color=#f29e38ff>에너지를 회복</color>시키고, <color=#f29e38ff>공격력을 증가</color>시킨다"
       }
     },
     "technique": {
       "0": {
         "name": "악귀•귀물 제압",
-        "fullDesc": "곽향이 주위의 적을 위협하여 [백산(魄散)] 상태에 빠트린다. [백산] 상태의 적은 곽향에게서 도망친다. 지속 시간: <unbreak>#4[i]</unbreak>초. [백산] 상태의 적과 전투에 진입하면 <unbreak>#1[i]%</unbreak>의 <u>기본 확률</u>로 각 단일 적의 공격력을 <unbreak>#2[i]%</unbreak> 감소시킨다. 지속 시간: <unbreak>#3[i]</unbreak>턴",
+        "fullDesc": "곽향이 주위의 적을 위협하여 [백산(魄散)] 상태에 빠트린다. [백산] 상태의 적은 곽향에게서 도망친다. 지속 시간: {{4}}초. [백산] 상태의 적과 전투에 진입하면 {{1}}%의 <u>기본 확률</u>로 각 단일 적의 공격력을 {{2}}% 감소시킨다. 지속 시간: {{3}}턴",
         "shortDesc": "주위의 적을 [백산(魄散)] 상태에 빠트린다. [백산] 상태의 적과 전투에 진입하면 높은 확률로 적의 <color=#f29e38ff>공격력을 감소</color>시킨다"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "shortDesc": ""
       }
     }
   }

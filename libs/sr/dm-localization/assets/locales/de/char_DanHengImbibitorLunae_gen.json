@@ -4,54 +4,56 @@
     "basic": {
       "0": {
         "name": "Segensreicher Lotus",
-        "fullDesc": "Führt einen Angriff mit 2 Treffern aus und fügt einem anvisierten Gegner imaginären SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des ANG von Dan Heng – Imbibitor Lunae zu.",
+        "fullDesc": "Führt einen Angriff mit 2 Treffern aus und fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG von Dan Heng – Imbibitor Lunae zu.",
         "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu."
       },
       "1": {
         "name": "Transzendenz",
-        "fullDesc": "Führt einen Angriff mit 3 Treffern aus und fügt einem anvisierten Gegner imaginären SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des ANG von Dan Heng – Imbibitor Lunae zu.",
+        "fullDesc": "Führt einen Angriff mit 3 Treffern aus und fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG von Dan Heng – Imbibitor Lunae zu.",
         "shortDesc": "Führt einen Angriff mit <color=#f29e38ff>3 Treffern</color> aus und fügt einem Gegner imaginären SCH zu."
       },
       "2": {
         "name": "Himmlischer Speer",
-        "fullDesc": "Führt einen Angriff mit 5 Treffern aus und fügt einem anvisierten Gegner imaginären SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Dan Heng – Imbibitor Lunaes ANG zu. Fügt ab dem vierten Treffer den angrenzenden Einheiten imaginären SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> von Dan Heng – Imbibitor Lunaes ANG zu.",
+        "fullDesc": "Führt einen Angriff mit 5 Treffern aus und fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dan Heng – Imbibitor Lunaes ANG zu. Fügt ab dem vierten Treffer den angrenzenden Einheiten imaginären SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Dan Heng – Imbibitor Lunaes ANG zu.",
         "shortDesc": "Führt einen Angriff mit <color=#f29e38ff>5 Treffern</color> aus und fügt einem Gegner massiven imaginären SCH und angrenzenden Einheiten geringen imaginären SCH zu. Die letzten 2 Treffer erhalten jeweils 1 Stapelung „Beherrschendes Gebrüll“, bevor sie ausgeführt werden, was den KRIT-SCH erhöht."
       },
       "3": {
         "name": "Blitzartiger Sprung",
-        "fullDesc": "Führt einen Angriff mit 7 Treffern aus und fügt einem anvisierten Gegner imaginären SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Dan Heng – Imbibitor Lunaes ANG zu. Fügt ab dem vierten Treffer den angrenzenden Einheiten imaginären SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> von Dan Heng – Imbibitor Lunaes ANG zu.",
+        "fullDesc": "Führt einen Angriff mit 7 Treffern aus und fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dan Heng – Imbibitor Lunaes ANG zu. Fügt ab dem vierten Treffer den angrenzenden Einheiten imaginären SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Dan Heng – Imbibitor Lunaes ANG zu.",
         "shortDesc": "Führt einen Angriff mit <color=#f29e38ff>7 Treffern</color> aus und fügt einem Gegner massiven imaginären SCH und angrenzenden Einheiten geringen imaginären SCH zu. Die letzten 4 Treffer erhalten jeweils 1 Stapelung „Beherrschendes Gebrüll“, bevor sie ausgeführt werden, was den KRIT-SCH erhöht."
       }
     },
     "skill": {
       "0": {
         "name": "Zügellos",
-        "fullDesc": "Verstärkt den Standardangriff bis zu 3-mal hintereinander. Der Einsatz dieser Fähigkeit verbraucht keinen Fertigkeitspunkt und gilt nicht als Einsatz einer Fertigkeit.\\nDurch einmalige Verstärkung des Standardangriffs verwandelt sich „Segensreicher Lotus“ in „Transzendenz“, durch zweimalige Verstärkung in „Himmlischer Speer“ und durch dreimalige Verstärkung in „Blitzartiger Sprung“.\\nBeim Einsatz von „Himmlischer Speer“ oder „Blitzartiger Sprung“ erhält Dan Heng – Imbibitor Lunae ab dem vierten Treffer dieses Angriffs vor jedem Treffer jeweils 1 Stapelung „Beherrschendes Gebrüll“. Jede Stapelung von „Beherrschendes Gebrüll“ erhöht den KRIT-SCH von Dan Heng – Imbibitor Lunae um <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color>. Dieser Effekt ist bis zu <unbreak>#2[i]</unbreak>-fach stapelbar und hält bis zum Ende seiner Runde an.",
+        "fullDesc": "Verstärkt den Standardangriff bis zu 3-mal hintereinander. Der Einsatz dieser Fähigkeit verbraucht keinen Fertigkeitspunkt und gilt nicht als Einsatz einer Fertigkeit.\\nDurch einmalige Verstärkung des Standardangriffs verwandelt sich „Segensreicher Lotus“ in „Transzendenz“, durch zweimalige Verstärkung in „Himmlischer Speer“ und durch dreimalige Verstärkung in „Blitzartiger Sprung“.\\nBeim Einsatz von „Himmlischer Speer“ oder „Blitzartiger Sprung“ erhält Dan Heng – Imbibitor Lunae ab dem vierten Treffer dieses Angriffs vor jedem Treffer jeweils 1 Stapelung „Beherrschendes Gebrüll“. Jede Stapelung von „Beherrschendes Gebrüll“ erhöht den KRIT-SCH von Dan Heng – Imbibitor Lunae um <orangeStrong>{{1}}%</orangeStrong>. Dieser Effekt ist bis zu {{2}}-fach stapelbar und hält bis zum Ende seiner Runde an.",
         "shortDesc": "Verstärkt den Standardangriff Segensreicher Lotus zu <color=#f29e38ff>Transzendenz</color>, <color=#f29e38ff>Himmlischer Speer</color> oder <color=#f29e38ff>Blitzartiger Sprung</color>."
       },
       "1": {
         "name": "Abbrechen",
-        "fullDesc": "Verstärkung abbrechen"
+        "fullDesc": "Verstärkung abbrechen",
+        "shortDesc": ""
       }
     },
     "ult": {
       "0": {
         "name": "Säuberung der Welt",
-        "fullDesc": "Führt einen Angriff mit 3 Treffern aus und fügt einem anvisierten Gegner imaginären SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> des ANG von Dan Heng – Imbibitor Lunae zu. Fügt gleichzeitig angrenzenden Einheiten imaginären SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> des ANG von Dan Heng – Imbibitor Lunae zu. Erhält <unbreak>#3[i]</unbreak> „Unantastbare Schuppen“.\\n„Unantastbare Schuppe“ kann bis zu <color=#f29e38ff><unbreak>#4[i]</unbreak></color>-mal erhalten werden. Dan Heng – Imbibitor Lunae kann eine entsprechende Anzahl von „Unantastbaren Schuppen“ anstelle von Fertigkeitspunkten verbrauchen. Das Verbrauchen von „Unantastbaren Schuppen“ wird dem Verbrauchen von Fertigkeitspunkten gleichgesetzt.",
+        "fullDesc": "Führt einen Angriff mit 3 Treffern aus und fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG von Dan Heng – Imbibitor Lunae zu. Fügt gleichzeitig angrenzenden Einheiten imaginären SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> des ANG von Dan Heng – Imbibitor Lunae zu. Erhält {{3}} „Unantastbare Schuppen“.\\n„Unantastbare Schuppe“ kann bis zu <orangeStrong>{{4}}</orangeStrong>-mal erhalten werden. Dan Heng – Imbibitor Lunae kann eine entsprechende Anzahl von „Unantastbaren Schuppen“ anstelle von Fertigkeitspunkten verbrauchen. Das Verbrauchen von „Unantastbaren Schuppen“ wird dem Verbrauchen von Fertigkeitspunkten gleichgesetzt.",
         "shortDesc": "Fügt einem Gegner massiven imaginären SCH zu, fügt angrenzenden Einheiten imaginären SCH zu und verleiht Dan Heng – Imbibitor Lunae 2 „Unantastbare Schuppen“. Dan Heng – Imbibitor Lunae kann <color=#f29e38ff>anstelle von Fertigkeitspunkten</color> die gleiche Anzahl von Unantastbaren Schuppen verbrauchen. Der Verbrauch von „Unantastbaren Schuppen“ wird mit dem <color=#f29e38ff>Verbrauch von Fertigkeitspunkten</color> gleichgesetzt."
       }
     },
     "technique": {
       "0": {
         "name": "Blitz des Regenbogens",
-        "fullDesc": "Nach der Anwendung seiner Technik geht Dan Heng – Imbibitor Lunae für <unbreak>#2[i]</unbreak> Sek. in den Status „Springender Drache“ über. Im Status Springender Drache bewegt sich Dan Heng – Imbibitor Lunae beim Einsatz seines Angriffs eine bestimmte Strecke schnell vorwärts, greift alle Gegner an, die er berührt und blockt alle eingehenden Angriffe. Wenn Dan Heng – Imbibitor Lunae im Status „Springender Drache“ durch Angriff auf den Gegner in einen Kampf eintritt, fügt er allen Gegnern imaginären SCH in Höhe von <unbreak>#3[i]%</unbreak> seines ANG zu und erhält <unbreak>#1[i]</unbreak> „Unantastbare Schuppe“.",
+        "fullDesc": "Nach der Anwendung seiner Technik geht Dan Heng – Imbibitor Lunae für {{2}} Sek. in den Status „Springender Drache“ über. Im Status Springender Drache bewegt sich Dan Heng – Imbibitor Lunae beim Einsatz seines Angriffs eine bestimmte Strecke schnell vorwärts, greift alle Gegner an, die er berührt und blockt alle eingehenden Angriffe. Wenn Dan Heng – Imbibitor Lunae im Status „Springender Drache“ durch Angriff auf den Gegner in einen Kampf eintritt, fügt er allen Gegnern imaginären SCH in Höhe von {{3}}% seines ANG zu und erhält {{1}} „Unantastbare Schuppe“.",
         "shortDesc": "Geht in den Status „Springender Drache“ über. Beim Einsatz des Angriffs bewegt sich Dan Heng – Imbibitor Lunae beim Einsatz seines Angriffs eine bestimmte Strecke schnell vorwärts und greift Gegner an, die er berührt. Wenn er durch Angriff auf den Gegner einen Kampf einleitet, fügt er allen Gegnern imaginären SCH zu und erhält 1 „Unantastbare Schuppe“."
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
-        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
       }
     }
   }

@@ -2,6 +2,6 @@
   "name": "Point d'orgue",
   "passive": {
     "name": "Une mesure de pause",
-    "description": "Augmente l'effet de Rupture du porteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, et augmente les DGT qu'il inflige aux ennemis affectés par Stupéfaction ou Faille du vent de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Cet effet s'applique également aux dégâts sur la durée."
+    "description": "Augmente l'effet de Rupture du porteur de <orangeStrong>{{1}}%</orangeStrong>, et augmente les DGT qu'il inflige aux ennemis affectés par Stupéfaction ou Faille du vent de <orangeStrong>{{2}}%</orangeStrong>. Cet effet s'applique également aux dégâts sur la durée."
   }
 }

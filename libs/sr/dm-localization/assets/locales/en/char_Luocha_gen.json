@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Thorns of the Abyss",
-        "fullDesc": "Deals Imaginary DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Luocha's ATK to a single enemy.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Luocha's ATK to a single enemy.",
         "shortDesc": "Deals minor Imaginary DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Prayer of Abyss Flower",
-        "fullDesc": "After using his Skill, Luocha immediately restores the target ally's HP equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Luocha's ATK plus <color=#f29e38ff><unbreak>#2[i]</unbreak></color>. Meanwhile, Luocha gains 1 stack of Abyss Flower.\\nWhen any ally's HP percentage drops to <unbreak>#3[i]%</unbreak> or lower, an effect equivalent to Luocha's Skill will immediately be triggered and applied to this ally for one time (without consuming Skill Points). This effect can be triggered again after <unbreak>#4[i]</unbreak> turn(s).",
+        "fullDesc": "After using his Skill, Luocha immediately restores the target ally's HP equal to <orangeStrong>{{1}}%</orangeStrong> of Luocha's ATK plus <orangeStrong>{{2}}</orangeStrong>. Meanwhile, Luocha gains 1 stack of Abyss Flower.\\nWhen any ally's HP percentage drops to {{3}}% or lower, an effect equivalent to Luocha's Skill will immediately be triggered and applied to this ally for one time (without consuming Skill Points). This effect can be triggered again after {{4}} turn(s).",
         "shortDesc": "<color=#f29e38ff>Restores</color> a single ally's HP and gains 1 stack of Abyss Flower."
       }
     },
     "ult": {
       "0": {
         "name": "Death Wish",
-        "fullDesc": "Removes <unbreak>#2[i]</unbreak> <u>buff(s)</u> from all enemies and deals all enemies Imaginary DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Luocha's ATK. At the same time, Luocha gains 1 stack of Abyss Flower.",
+        "fullDesc": "Removes {{2}} <u>buff(s)</u> from all enemies and deals all enemies Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Luocha's ATK. At the same time, Luocha gains 1 stack of Abyss Flower.",
         "shortDesc": "<color=#f29e38ff>Removes</color> 1 <color=#f29e38ff><u>buff</u></color> from all enemies, deals Imaginary DMG to all enemies, and gains 1 stack of Abyss Flower."
       }
     },
@@ -32,7 +32,8 @@
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

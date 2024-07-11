@@ -2,6 +2,6 @@
   "name": "{RUBY_B#こどく}孤独{RUBY_E#}の{RUBY_B#いや}癒{RUBY_E#}やし",
   "passive": {
     "name": "{RUBY_B#こんとん}混沌{RUBY_E#}の{RUBY_B#れいやく}霊薬{RUBY_E#}",
-    "description": "装備キャラの撃破特効+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。装備キャラが必殺技を発動した時、装備キャラの持続与ダメージ+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>、<unbreak>#3[i]</unbreak>ターン継続。装備キャラに持続ダメージ系デバフを付与された敵が倒された時、装備キャラのEPを<color=#f29e38ff><unbreak>#4[f1]</unbreak></color>回復する。"
+    "description": "装備キャラの撃破特効+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが必殺技を発動した時、装備キャラの持続与ダメージ+<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。装備キャラに持続ダメージ系デバフを付与された敵が倒された時、装備キャラのEPを<orangeStrong>{{4}}</orangeStrong>回復する。"
   }
 }

@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "Direct Punch",
-        "fullDesc": "Deals Physical DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Luka's ATK to a single enemy.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Luka's ATK to a single enemy.",
         "shortDesc": "Deals minor Physical DMG to a single enemy."
       },
       "1": {
         "name": "Sky-Shatter Fist",
-        "fullDesc": "Consumes 2 stacks of Fighting Will. First, uses Direct Punch to deal 3 hits, with each hit dealing Physical DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Luka's ATK to a single enemy target.\\nThen, uses Rising Uppercut to deal 1 hit, dealing Physical DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of Luka's ATK to the single enemy target.",
+        "fullDesc": "Consumes 2 stacks of Fighting Will. First, uses Direct Punch to deal 3 hits, with each hit dealing Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Luka's ATK to a single enemy target.\\nThen, uses Rising Uppercut to deal 1 hit, dealing Physical DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Luka's ATK to the single enemy target.",
         "shortDesc": "Consumes 2 stacks of Fighting Will to deal Physical DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Lacerating Fist",
-        "fullDesc": "Deals Physical DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Luka's ATK to a single enemy target. In addition, there is a <unbreak>#2[i]%</unbreak> <u>base chance</u> to inflict Bleed on them, lasting for <unbreak>#5[i]</unbreak> turn(s).\\nWhile Bleeding, the enemy will take <unbreak>#3[f1]%</unbreak> of their Max HP as Physical DoT at the start of each turn. This DMG will not exceed more than <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> of Luka's ATK.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Luka's ATK to a single enemy target. In addition, there is a {{2}}% <u>base chance</u> to inflict Bleed on them, lasting for {{5}} turn(s).\\nWhile Bleeding, the enemy will take {{3}}% of their Max HP as Physical DoT at the start of each turn. This DMG will not exceed more than <orangeStrong>{{4}}%</orangeStrong> of Luka's ATK.",
         "shortDesc": "Deals Physical DMG to a single enemy, with a high chance of causing <color=#f29e38ff>Bleed</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Coup de Grâce",
-        "fullDesc": "Receives <unbreak>#5[i]</unbreak> stack(s) of Fighting Will, with a <unbreak>#2[i]%</unbreak> <u>base chance</u> to increase a single enemy target's DMG received by <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> for <unbreak>#4[i]</unbreak> turn(s). Then, deals Physical DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Luka's ATK to the target.",
-        "shortDesc": "Receives <color=#f29e38ff><unbreak>#5[i]</unbreak></color> stack(s) of Fighting Will, with a high chance of increasing the target's DMG received, and deals massive Physical DMG to the target."
+        "fullDesc": "Receives {{5}} stack(s) of Fighting Will, with a {{2}}% <u>base chance</u> to increase a single enemy target's DMG received by <orangeStrong>{{3}}%</orangeStrong> for {{4}} turn(s). Then, deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Luka's ATK to the target.",
+        "shortDesc": "Receives <orangeStrong>{{5}}</orangeStrong> stack(s) of Fighting Will, with a high chance of increasing the target's DMG received, and deals massive Physical DMG to the target."
       }
     },
     "technique": {
       "0": {
         "name": "Anticipator",
-        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Luka deals Physical DMG equal to <unbreak>#1[i]%</unbreak> of his ATK to a random single enemy with a <unbreak>#2[i]%</unbreak> <u>base chance</u> to inflict his Skill's Bleed effect on the target. Then, Luka gains 1 additional stack of Fighting Will.",
+        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Luka deals Physical DMG equal to {{1}}% of his ATK to a random single enemy with a {{2}}% <u>base chance</u> to inflict his Skill's Bleed effect on the target. Then, Luka gains 1 additional stack of Fighting Will.",
         "shortDesc": "Attacks the enemy. After entering battle, deals minor Physical DMG to a random single enemy, with a high chance to inflict <color=#f29e38ff>Bleed</color> to the target. Then, gains 1 stack of Fighting Will."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

@@ -2,6 +2,6 @@
   "name": "Le choix de Landau",
   "passive": {
     "name": "Comme le temps passe",
-    "description": "Le porteur a plus de chances d'être attaqué, mais les DGT qu'il subit sont réduits de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+    "description": "Le porteur a plus de chances d'être attaqué, mais les DGT qu'il subit sont réduits de <orangeStrong>{{2}}%</orangeStrong>."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Hài Hòa",
   "passive": {
     "name": "Gia Tộc",
-    "description": "Khi vào chiến đấu, Tốc Độ của toàn bộ phe ta tăng <color=#f29e38ff><unbreak>#1[i]</unbreak></color> điểm, duy trì <unbreak>#2[i]</unbreak> hiệp."
+    "description": "Khi vào chiến đấu, Tốc Độ của toàn bộ phe ta tăng <orangeStrong>{{1}}</orangeStrong> điểm, duy trì {{2}} hiệp."
   }
 }

@@ -1,6 +1,6 @@
 {
   "setName": "Linha de Frente: Firmamento de Glamoth",
   "setEffects": {
-    "2": "Aumenta o ATQ do usuário em <unbreak>#1[i]%</unbreak>. Quando a VEL é igual ou maior a <unbreak>#2[i]</unbreak>/<unbreak>#3[i]</unbreak>, o usuário causa <unbreak>#4[i]%</unbreak>/<unbreak>#5[i]%</unbreak> a mais de Dano."
+    "2": "Aumenta o ATQ do usuário em {{1}}%. Quando a VEL é igual ou maior a {{2}}/{{3}}, o usuário causa {{4}}%/{{5}}% a mais de Dano."
   }
 }

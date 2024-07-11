@@ -2,6 +2,6 @@
   "name": "别让世界静下来",
   "passive": {
     "name": "声音的力量",
-    "description": "使装备者进入战斗时立即恢复<color=#f29e38ff><unbreak>#2[i]</unbreak></color>点能量，同时使其终结技造成的伤害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。"
+    "description": "使装备者进入战斗时立即恢复<orangeStrong>{{2}}</orangeStrong>点能量，同时使其终结技造成的伤害提高<orangeStrong>{{1}}%</orangeStrong>。"
   }
 }

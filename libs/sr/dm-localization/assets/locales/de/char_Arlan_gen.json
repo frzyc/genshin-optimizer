@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Blitzrausch",
-        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Arlans ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Arlans ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Kettensprenger",
-        "fullDesc": "Verbraucht <unbreak>#1[i]%</unbreak> von Arlans max. LP, um einem anvisierten Gegner Blitz-SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> von Arlans ANG zuzufügen. Hat Arlan nicht genügend LP, werden seine LP beim Einsatz der Fertigkeit auf 1 reduziert.",
+        "fullDesc": "Verbraucht {{1}}% von Arlans max. LP, um einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Arlans ANG zuzufügen. Hat Arlan nicht genügend LP, werden seine LP beim Einsatz der Fertigkeit auf 1 reduziert.",
         "shortDesc": "Verbraucht einen Teil von Arlans LP, um einem Gegner Blitz-SCH zuzufügen."
       }
     },
     "ult": {
       "0": {
         "name": "Rasende Strafe",
-        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Arlans ANG zu und fügt angrenzenden Zielen Blitz-SCH in Höhe von <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> von Arlans ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Arlans ANG zu und fügt angrenzenden Zielen Blitz-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Arlans ANG zu.",
         "shortDesc": "Fügt einem Gegner massiven Blitz-SCH und angrenzenden Zielen Blitz-SCH zu."
       }
     },
     "technique": {
       "0": {
         "name": "Rasche Ernte",
-        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Blitz-SCH in Höhe von <unbreak>#1[i]%</unbreak> von Arlans ANG zu.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Blitz-SCH in Höhe von {{1}}% von Arlans ANG zu.",
         "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen Blitz-SCH zu."
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
-        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
       }
     }
   }

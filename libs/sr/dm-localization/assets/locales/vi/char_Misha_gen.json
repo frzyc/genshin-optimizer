@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Xin Nhường Bước, Làm Ơn!",
-        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Misha.",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Misha.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Phục... Phục Vụ Phòng!",
-        "fullDesc": "Tăng <unbreak>#3[i]</unbreak> đòn đánh trong một lượt của Tuyệt Kỹ lần sau của Misha. Gây Sát Thương Băng lên 1 kẻ địch chỉ định bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Misha, đồng thời gây Sát Thương Băng lên mục tiêu lân cận kẻ đó bằng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Tấn Công của Misha.",
+        "fullDesc": "Tăng {{3}} đòn đánh trong một lượt của Tuyệt Kỹ lần sau của Misha. Gây Sát Thương Băng lên 1 kẻ địch chỉ định bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Misha, đồng thời gây Sát Thương Băng lên mục tiêu lân cận kẻ đó bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Misha.",
         "shortDesc": "Gây Sát Thương Băng cho 1 kẻ địch và lượng nhỏ Sát Thương Băng cho mục tiêu lân cận, tăng <color=#f29e38ff>số đòn đánh trong một lượt của Tuyệt Kỹ</color> lần sau của Misha."
       }
     },
     "ult": {
       "0": {
         "name": "Sắp... Sắp Trễ Rồi!",
-        "fullDesc": "Ban đầu mặc định có <unbreak>#1[i]</unbreak> đòn đánh trong một lượt. Đầu tiên thi triển 1 đòn đánh gây Sát Thương Băng lên 1 kẻ địch chỉ định bằng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Tấn Công của Misha, mỗi đòn đánh còn lại gây Sát Thương Băng lên 1 kẻ địch ngẫu nhiên bằng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Tấn Công của Misha. Trước mỗi đòn đánh có <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> <u>xác suất cơ bản</u> khiến mục tiêu rơi vào trạng thái Đóng Băng, duy trì 1 hiệp.\\nỞ trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời khi bắt đầu mỗi hiệp sẽ chịu <u>Sát Thương Băng kèm theo</u> bằng <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> Tấn Công của Misha.\\nTuyệt Kỹ tối đa tích lũy <unbreak>#5[i]</unbreak> đòn đánh trong một lượt, sau khi thi triển Tuyệt Kỹ, số đòn đánh trong một lượt sẽ hồi phục về trạng thái ban đầu.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Băng lên 1 kẻ địch, ban đầu tổng cộng Nảy Bật <color=#f29e38ff><unbreak>#1[i]</unbreak></color> lần, tối đa Nảy Bật <color=#f29e38ff><unbreak>#5[i]</unbreak></color> lần. Trước mỗi đòn tấn công có xác suất nhỏ khiến mục tiêu <color=#f29e38ff>Đóng Băng</color>."
+        "fullDesc": "Ban đầu mặc định có {{1}} đòn đánh trong một lượt. Đầu tiên thi triển 1 đòn đánh gây Sát Thương Băng lên 1 kẻ địch chỉ định bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Misha, mỗi đòn đánh còn lại gây Sát Thương Băng lên 1 kẻ địch ngẫu nhiên bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Misha. Trước mỗi đòn đánh có <orangeStrong>{{3}}%</orangeStrong> <u>xác suất cơ bản</u> khiến mục tiêu rơi vào trạng thái Đóng Băng, duy trì 1 hiệp.\\nỞ trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời khi bắt đầu mỗi hiệp sẽ chịu <u>Sát Thương Băng kèm theo</u> bằng <orangeStrong>{{4}}%</orangeStrong> Tấn Công của Misha.\\nTuyệt Kỹ tối đa tích lũy {{5}} đòn đánh trong một lượt, sau khi thi triển Tuyệt Kỹ, số đòn đánh trong một lượt sẽ hồi phục về trạng thái ban đầu.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Băng lên 1 kẻ địch, ban đầu tổng cộng Nảy Bật <orangeStrong>{{1}}</orangeStrong> lần, tối đa Nảy Bật <orangeStrong>{{5}}</orangeStrong> lần. Trước mỗi đòn tấn công có xác suất nhỏ khiến mục tiêu <color=#f29e38ff>Đóng Băng</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Chờ Đã, Bạn Đẹp Quá!",
-        "fullDesc": "Sau khi dùng Bí Kỹ, tạo 1 vùng đặc biệt duy trì <unbreak>#1[i]</unbreak> giây. Kẻ địch trong vùng đặc biệt rơi vào trạng thái Nhà Giam Cõi Mộng. Kẻ địch ở trạng thái Nhà Giam Cõi Mộng sẽ dừng tất cả hành động. Sau khi vào chiến đấu với kẻ địch ở trạng thái Nhà Giam Cõi Mộng, sẽ tăng <unbreak>#2[i]</unbreak> đòn đánh trong một lượt của Tuyệt Kỹ lần sau của Misha. Tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
+        "fullDesc": "Sau khi dùng Bí Kỹ, tạo 1 vùng đặc biệt duy trì {{1}} giây. Kẻ địch trong vùng đặc biệt rơi vào trạng thái Nhà Giam Cõi Mộng. Kẻ địch ở trạng thái Nhà Giam Cõi Mộng sẽ dừng tất cả hành động. Sau khi vào chiến đấu với kẻ địch ở trạng thái Nhà Giam Cõi Mộng, sẽ tăng {{2}} đòn đánh trong một lượt của Tuyệt Kỹ lần sau của Misha. Tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
         "shortDesc": "Tạo một vùng đặc biệt. Kẻ địch trong vùng bị dừng hành động. Sau khi vào chiến đấu với kẻ địch trong vùng, sẽ tăng <color=#f29e38ff>số đòn đánh trong một lượt của Tuyệt Kỹ</color> lần sau của Misha."
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
-        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch."
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
+        "shortDesc": ""
       }
     }
   }

@@ -1,7 +1,7 @@
 {
   "setName": "Wanderer der vorbeiziehenden Wolke",
   "setEffects": {
-    "2": "Erhöht bewirkte Heilung um <unbreak>#1[i]%</unbreak>.",
+    "2": "Erhöht bewirkte Heilung um {{1}}%.",
     "4": "Stellt zu Kampfbeginn sofort 1 Fertigkeitspunkt wieder her."
   }
 }

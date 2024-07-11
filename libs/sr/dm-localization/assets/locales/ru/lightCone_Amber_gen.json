@@ -2,6 +2,6 @@
   "name": "Янтарь",
   "passive": {
     "name": "Стазис",
-    "description": "Защита владельца повышается на <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Если текущее HP владельца ниже <unbreak>#2[i]%</unbreak>, то его защита повышается на доп. <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+    "description": "Защита владельца повышается на <orangeStrong>{{1}}%</orangeStrong>. Если текущее HP владельца ниже {{2}}%, то его защита повышается на доп. <orangeStrong>{{3}}%</orangeStrong>."
   }
 }

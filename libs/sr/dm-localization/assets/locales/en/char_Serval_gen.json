@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Roaring Thunderclap",
-        "fullDesc": "Deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Serval's ATK to a single enemy.",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Serval's ATK to a single enemy.",
         "shortDesc": "Deals minor Lightning DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Lightning Flash",
-        "fullDesc": "Deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Serval's ATK to a single enemy and Lightning DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of Serval's ATK to enemies adjacent to it, with a <unbreak>#3[i]%</unbreak> <u>base chance</u> for enemies hit to become Shocked for <unbreak>#4[i]</unbreak> turn(s).\\nWhile Shocked, enemies take Lightning DoT equal to <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> of Serval's ATK at the beginning of each turn.",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Serval's ATK to a single enemy and Lightning DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Serval's ATK to enemies adjacent to it, with a {{3}}% <u>base chance</u> for enemies hit to become Shocked for {{4}} turn(s).\\nWhile Shocked, enemies take Lightning DoT equal to <orangeStrong>{{5}}%</orangeStrong> of Serval's ATK at the beginning of each turn.",
         "shortDesc": "Deals minor Lightning DMG to a single enemy and any adjacent targets, with a high chance of causing <color=#f29e38ff>Shock</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Here Comes the Mechanical Fever",
-        "fullDesc": "Deals Lightning DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Serval's ATK to all enemies. Enemies already Shocked will extend the duration of their Shock state by <unbreak>#2[i]</unbreak> turn(s).",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Serval's ATK to all enemies. Enemies already Shocked will extend the duration of their Shock state by {{2}} turn(s).",
         "shortDesc": "Deals Lightning DMG to all enemies and increases the duration of Shock."
       }
     },
     "technique": {
       "0": {
         "name": "Good Night, Belobog",
-        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Lightning DMG equal to <unbreak>#4[i]%</unbreak> of Serval's ATK to a random enemy, with a <unbreak>#1[i]%</unbreak> <u>base chance</u> for all enemies to become Shocked for <unbreak>#3[i]</unbreak> turn(s).\\nWhile Shocked, enemies will take Lightning DoT equal to <unbreak>#2[i]%</unbreak> of Serval's ATK at the beginning of each turn.",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Lightning DMG equal to {{4}}% of Serval's ATK to a random enemy, with a {{1}}% <u>base chance</u> for all enemies to become Shocked for {{3}} turn(s).\\nWhile Shocked, enemies will take Lightning DoT equal to {{2}}% of Serval's ATK at the beginning of each turn.",
         "shortDesc": "Attacks the enemy. After entering battle, deals minor Lightning DMG to a random single enemy, with a high chance to <color=#f29e38ff>Shock</color> all enemy targets."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

@@ -1,7 +1,7 @@
 {
   "setName": "Pioneer Diver of Dead Waters",
   "setEffects": {
-    "2": "Meningkatkan <unbreak>#1[i]%</unbreak> DMG yang diakibatkan pada musuh yang terkena pengaruh status Debuff.",
-    "4": "Meningkatkan <unbreak>#1[i]%</unbreak> CRIT Rate. Meningkatkan <unbreak>#2[i]%</unbreak>/<unbreak>#3[i]%</unbreak> CRIT DMG pengguna pada target musuh yang memiliki setidaknya <unbreak>#4[i]</unbreak>/<unbreak>#5[i]</unbreak> efek Debuff. Setelah pengguna menambahkan efek debuff pada target musuh, efek peningkatan di atas meningkat <unbreak>100%</unbreak> selama <unbreak>#6[i]</unbreak> giliran."
+    "2": "Meningkatkan {{1}}% DMG yang diakibatkan pada musuh yang terkena pengaruh status Debuff.",
+    "4": "Meningkatkan {{1}}% CRIT Rate. Meningkatkan {{2}}%/{{3}}% CRIT DMG pengguna pada target musuh yang memiliki setidaknya {{4}}/{{5}} efek Debuff. Setelah pengguna menambahkan efek debuff pada target musuh, efek peningkatan di atas meningkat <unbreak>100%</unbreak> selama {{6}} giliran."
   }
 }

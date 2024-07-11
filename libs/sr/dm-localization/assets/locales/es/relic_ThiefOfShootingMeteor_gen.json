@@ -1,7 +1,7 @@
 {
   "setName": "Ladrón del rastro meteórico",
   "setEffects": {
-    "2": "Efecto de Ruptura +<unbreak>#1[i]%</unbreak>.",
-    "4": "El efecto de Ruptura del portador aumenta en un <unbreak>#1[i]%</unbreak>. Cuando rompe la Debilidad del enemigo, recupera <unbreak>#2[i]</unbreak> pts. de energía."
+    "2": "Efecto de Ruptura +{{1}}%.",
+    "4": "El efecto de Ruptura del portador aumenta en un {{1}}%. Cuando rompe la Debilidad del enemigo, recupera {{2}} pts. de energía."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Bóng Ẩn",
   "passive": {
     "name": "Cơ Quan",
-    "description": "Sau khi thi triển Chiến Kỹ, sẽ khiến đòn tấn công thường tiếp theo của người trang bị gây cho kẻ địch một lượng sát thương kèm theo bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của bản thân."
+    "description": "Sau khi thi triển Chiến Kỹ, sẽ khiến đòn tấn công thường tiếp theo của người trang bị gây cho kẻ địch một lượng sát thương kèm theo bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của bản thân."
   }
 }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "축객령",
-        "fullDesc": "지정된 단일 적에게 정운 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>의 번개 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 정운 공격력 <orangeStrong>{{1}}%</orangeStrong>의 번개 속성 피해를 준다",
         "shortDesc": "단일 적에게 소량의 번개 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "정다운 화음",
-        "fullDesc": "지정된 단일 아군에게 [축복]을 제공한다. 대상의 공격력을 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가시키며 현재 정운 공격력의 <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>을 넘지 않는다.\\n[축복]을 획득한 대상은 공격 발동 후 추가로 자신의 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 번개 속성 <u>추가 피해</u>를 1회 가한다.\\n[축복] 지속 시간: <unbreak>#3[i]</unbreak>턴. 최근 정운의 전투 스킬 대상이 된 아군에게만 적용된다",
+        "fullDesc": "지정된 단일 아군에게 [축복]을 제공한다. 대상의 공격력을 <orangeStrong>{{2}}%</orangeStrong> 증가시키며 현재 정운 공격력의 <orangeStrong>{{4}}%</orangeStrong>을 넘지 않는다.\\n[축복]을 획득한 대상은 공격 발동 후 추가로 자신의 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 번개 속성 <u>추가 피해</u>를 1회 가한다.\\n[축복] 지속 시간: {{3}}턴. 최근 정운의 전투 스킬 대상이 된 아군에게만 적용된다",
         "shortDesc": "단일 아군의 <color=#f29e38ff>공격력이 증가</color>하고 [축복]을 획득한다. [축복] 상태에서 공격 시 소량의 <color=#f29e38ff>번개 속성 <u>추가 피해</u></color>를 추가로 가한다"
       }
     },
     "ult": {
       "0": {
         "name": "상서로운 구름의 기원",
-        "fullDesc": "지정된 단일 아군의 에너지를 <unbreak>#1[i]</unbreak>pt 회복하고, 목표가 가하는 피해가 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> 증가한다. 지속 시간: <unbreak>#2[i]</unbreak>턴",
+        "fullDesc": "지정된 단일 아군의 에너지를 {{1}}pt 회복하고, 목표가 가하는 피해가 <orangeStrong>{{3}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴",
         "shortDesc": "단일 아군이 <color=#f29e38ff>에너지를 회복</color>하고, <color=#f29e38ff>가하는 피해가 증가</color>한다"
       }
     },
     "technique": {
       "0": {
         "name": "산들바람",
-        "fullDesc": "비술을 발동하는 즉시 자신의 에너지를 <unbreak>#1[i]</unbreak>pt 회복한다",
+        "fullDesc": "비술을 발동하는 즉시 자신의 에너지를 {{1}}pt 회복한다",
         "shortDesc": "비술 사용 후 즉시 자신의 에너지를 회복한다"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "shortDesc": ""
       }
     }
   }

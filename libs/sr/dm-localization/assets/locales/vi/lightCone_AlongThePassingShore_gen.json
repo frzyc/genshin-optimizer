@@ -2,6 +2,6 @@
   "name": "Bước Theo Bến Bờ Thời Gian",
   "passive": {
     "name": "Người Điều Khiển",
-    "description": "Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Sát Thương Bạo Kích của người trang bị. Khi người trang bị đánh trúng kẻ địch, sẽ khiến kẻ địch rơi vào trạng thái Bóng Hư Ảo, duy trì 1 hiệp. Mỗi lần người trang bị tấn công, đối với mỗi mục tiêu chỉ có thể được kích hoạt 1 lần. Sát Thương mà người trang bị gây ra cho mục tiêu đang ở trạng thái Bóng Hư Ảo tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, sát thương do Tuyệt Kỹ gây ra tăng thêm <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Sát Thương Bạo Kích của người trang bị. Khi người trang bị đánh trúng kẻ địch, sẽ khiến kẻ địch rơi vào trạng thái Bóng Hư Ảo, duy trì 1 hiệp. Mỗi lần người trang bị tấn công, đối với mỗi mục tiêu chỉ có thể được kích hoạt 1 lần. Sát Thương mà người trang bị gây ra cho mục tiêu đang ở trạng thái Bóng Hư Ảo tăng <orangeStrong>{{2}}%</orangeStrong>, sát thương do Tuyệt Kỹ gây ra tăng thêm <orangeStrong>{{3}}%</orangeStrong>."
   }
 }

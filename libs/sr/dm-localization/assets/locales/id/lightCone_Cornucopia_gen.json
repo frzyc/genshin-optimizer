@@ -2,6 +2,6 @@
   "name": "Cornucopia",
   "passive": {
     "name": "Prosperity",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Outgoing Healing saat pengguna melancarkan Skill atau Ultimate."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Outgoing Healing saat pengguna melancarkan Skill atau Ultimate."
   }
 }

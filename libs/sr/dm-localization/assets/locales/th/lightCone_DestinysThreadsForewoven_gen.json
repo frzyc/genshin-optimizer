@@ -2,6 +2,6 @@
   "name": "Destiny's Threads Forewoven",
   "passive": {
     "name": "Insight",
-    "description": "ทำให้การต้านทานสถานะของผู้สวมใส่ เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> โดย DEF ทุกๆ <unbreak>#2[i]</unbreak> หน่วยที่ผู้สวมใส่มี จะทำให้ผู้สวมใส่สร้าง DMG เพิ่มขึ้น <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> โดยสามารถสร้าง DMG เพิ่มขึ้นได้มากสุด <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>"
+    "description": "ทำให้การต้านทานสถานะของผู้สวมใส่ เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> โดย DEF ทุกๆ {{2}} หน่วยที่ผู้สวมใส่มี จะทำให้ผู้สวมใส่สร้าง DMG เพิ่มขึ้น <orangeStrong>{{3}}%</orangeStrong> โดยสามารถสร้าง DMG เพิ่มขึ้นได้มากสุด <orangeStrong>{{4}}%</orangeStrong>"
   }
 }

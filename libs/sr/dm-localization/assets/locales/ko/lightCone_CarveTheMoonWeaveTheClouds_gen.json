@@ -2,6 +2,6 @@
   "name": "누월재운의 뜻",
   "passive": {
     "name": "비밀",
-    "description": "전투 시작 시 및 장착한 캐릭터 턴 시작 시 랜덤으로 1개의 효과가 적용된다. 해당 효과 적용 시 이전 효과를 대체하며 이전과 중복되지 않는다. 효과 종류: 모든 아군의 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가/모든 아군의 치명타 피해 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가/모든 아군의 에너지 회복효율 <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> 증가. 같은 유형의 효과는 중첩되지 않으며 장착한 캐릭터가 전투 불능 상태에 빠지면 해제된다"
+    "description": "전투 시작 시 및 장착한 캐릭터 턴 시작 시 랜덤으로 1개의 효과가 적용된다. 해당 효과 적용 시 이전 효과를 대체하며 이전과 중복되지 않는다. 효과 종류: 모든 아군의 공격력 <orangeStrong>{{1}}%</orangeStrong> 증가/모든 아군의 치명타 피해 <orangeStrong>{{2}}%</orangeStrong> 증가/모든 아군의 에너지 회복효율 <orangeStrong>{{3}}%</orangeStrong> 증가. 같은 유형의 효과는 중첩되지 않으며 장착한 캐릭터가 전투 불능 상태에 빠지면 해제된다"
   }
 }

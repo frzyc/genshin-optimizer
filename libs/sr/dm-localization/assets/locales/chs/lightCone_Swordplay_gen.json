@@ -2,6 +2,6 @@
   "name": "论剑",
   "passive": {
     "name": "各自的答案",
-    "description": "当装备者多次击中同一敌方目标时，每次造成的伤害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，该效果最多叠加<unbreak>#2[i]</unbreak>层。若攻击目标发生变化，立即解除当前的增益效果。"
+    "description": "当装备者多次击中同一敌方目标时，每次造成的伤害提高<orangeStrong>{{1}}%</orangeStrong>，该效果最多叠加{{2}}层。若攻击目标发生变化，立即解除当前的增益效果。"
   }
 }

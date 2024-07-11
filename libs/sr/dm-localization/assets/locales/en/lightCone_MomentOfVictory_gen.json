@@ -2,6 +2,6 @@
   "name": "Moment of Victory",
   "passive": {
     "name": "Verdict",
-    "description": "Increases the wearer's DEF by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> and Effect Hit Rate by <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>. Increases the chance for the wearer to be attacked by enemies. When the wearer is attacked, increase their DEF by an extra <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> until the end of the wearer's turn."
+    "description": "Increases the wearer's DEF by <orangeStrong>{{2}}%</orangeStrong> and Effect Hit Rate by <orangeStrong>{{4}}%</orangeStrong>. Increases the chance for the wearer to be attacked by enemies. When the wearer is attacked, increase their DEF by an extra <orangeStrong>{{3}}%</orangeStrong> until the end of the wearer's turn."
   }
 }

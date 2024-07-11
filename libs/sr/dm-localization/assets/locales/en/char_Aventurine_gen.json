@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Straight Bet",
-        "fullDesc": "Deals Imaginary DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Aventurine's DEF to a single target enemy.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Aventurine's DEF to a single target enemy.",
         "shortDesc": "Deals minor Imaginary DMG to a single target enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Cornerstone Deluxe",
-        "fullDesc": "Provides all allies with a Fortified Wager shield that can block DMG equal to <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> of Aventurine's DEF plus <color=#f29e38ff><unbreak>#2[i]</unbreak></color>, lasting for <unbreak>#3[i]</unbreak> turn(s). When repeatedly gaining Fortified Wager, the Shield effect can stack, up to <unbreak>#4[i]%</unbreak> of the Shield provided by the current Skill.",
+        "fullDesc": "Provides all allies with a Fortified Wager shield that can block DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Aventurine's DEF plus <orangeStrong>{{2}}</orangeStrong>, lasting for {{3}} turn(s). When repeatedly gaining Fortified Wager, the Shield effect can stack, up to {{4}}% of the Shield provided by the current Skill.",
         "shortDesc": "Provides all allies with a Fortified Wager shield, <color=#f29e38ff>whose Shield effect is stackable</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Roulette Shark",
-        "fullDesc": "Randomly gains 1 to <unbreak>#1[i]</unbreak> points of Blind Bet. Then inflicts Unnerved on a single target enemy, lasting for <unbreak>#4[i]</unbreak> turn(s). And deals Imaginary DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of Aventurine's DEF to the single target enemy. When an ally hits an Unnerved enemy target, the CRIT DMG dealt increases by <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>.",
+        "fullDesc": "Randomly gains 1 to {{1}} points of Blind Bet. Then inflicts Unnerved on a single target enemy, lasting for {{4}} turn(s). And deals Imaginary DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Aventurine's DEF to the single target enemy. When an ally hits an Unnerved enemy target, the CRIT DMG dealt increases by <orangeStrong>{{3}}%</orangeStrong>.",
         "shortDesc": "Gains a random amount of Blind Bet points and inflicts Unnerved on a single enemy, dealing Imaginary DMG. When an ally hits an Unnerved enemy, <color=#f29e38ff>the CRIT DMG dealt increases</color>."
       }
     },
     "technique": {
       "0": {
         "name": "The Red or the Black",
-        "fullDesc": "After using the Technique, 1 of the following effects will be granted:\\nThere is a chance for DEF to increase by <unbreak>#1[i]%</unbreak>.\\nThere is a high chance for DEF to increase by <unbreak>#2[i]%</unbreak>.\\nThere is a small chance for DEF to increase by <unbreak>#3[i]%</unbreak>.\\n\\nWhen this Technique is used repeatedly, the acquired effect with the highest buff value is retained.\\nWhen the next battle starts, increases all allies' DEF by the corresponding value, lasting for <unbreak>#4[i]</unbreak> turn(s).",
+        "fullDesc": "After using the Technique, 1 of the following effects will be granted:\\nThere is a chance for DEF to increase by {{1}}%.\\nThere is a high chance for DEF to increase by {{2}}%.\\nThere is a small chance for DEF to increase by {{3}}%.\\n\\nWhen this Technique is used repeatedly, the acquired effect with the highest buff value is retained.\\nWhen the next battle starts, increases all allies' DEF by the corresponding value, lasting for {{4}} turn(s).",
         "shortDesc": "Using the Technique randomly grants one out of the three DEF Boost effects with different buff values. After entering the next battle, increases all allies' DEF by the corresponding value."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

@@ -2,6 +2,6 @@
   "name": "Colapso celeste",
   "passive": {
     "name": "Hecatombe",
-    "description": "Aumenta el daño del ATQ básico y el daño de la habilidad básica del portador en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+    "description": "Aumenta el daño del ATQ básico y el daño de la habilidad básica del portador en un <orangeStrong>{{1}}%</orangeStrong>."
   }
 }

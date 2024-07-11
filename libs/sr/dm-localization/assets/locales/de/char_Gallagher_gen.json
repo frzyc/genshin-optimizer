@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "Entkorkungsgebühr",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Gallaghers ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gallaghers ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
       },
       "1": {
         "name": "Hopfenschwall",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Gallaghers ANG zu. Reduziert den ANG des Ziels für <unbreak>#3[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gallaghers ANG zu. Reduziert den ANG des Ziels für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong>.",
         "shortDesc": "Fügt einem Gegner Feuer-SCH zu und reduziert seinen ANG."
       }
     },
     "skill": {
       "0": {
         "name": "Spezialmischung in der Dose",
-        "fullDesc": "Stellt sofort <color=#f29e38ff><unbreak>#1[i]</unbreak></color> Pkt. LP eines Verbündeten wieder her.",
+        "fullDesc": "Stellt sofort <orangeStrong>{{1}}</orangeStrong> Pkt. LP eines Verbündeten wieder her.",
         "shortDesc": "Stellt sofort die LP eines Verbündeten wieder her."
       }
     },
     "ult": {
       "0": {
         "name": "Champagner-Zeremonie",
-        "fullDesc": "Belegt alle Gegner für <unbreak>#2[i]</unbreak> Rd. mit „Berauschung“ und fügt ihnen gleichzeitig Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Gallaghers ANG zu. Verstärkt den nächsten Standardangriff zu „Hopfenschwall“.",
+        "fullDesc": "Belegt alle Gegner für {{2}} Rd. mit „Berauschung“ und fügt ihnen gleichzeitig Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gallaghers ANG zu. Verstärkt den nächsten Standardangriff zu „Hopfenschwall“.",
         "shortDesc": "Belegt alle Gegner mit <color=#f29e38ff>Berauschung</color> und fügt ihnen Feuer-SCH zu. Verstärkt den nächsten Standardangriff zu „Hopfenschwall“."
       }
     },
     "technique": {
       "0": {
         "name": "Edler Tropfen",
-        "fullDesc": "Greift sofort den Gegner an. Belegt nach Kampfeintritt alle Gegner für <unbreak>#1[i]</unbreak> Rd. mit „Berauschung“ und fügt ihnen Feuer-SCH in Höhe von <unbreak>#2[i]%</unbreak> von Gallaghers ANG zu.",
+        "fullDesc": "Greift sofort den Gegner an. Belegt nach Kampfeintritt alle Gegner für {{1}} Rd. mit „Berauschung“ und fügt ihnen Feuer-SCH in Höhe von {{2}}% von Gallaghers ANG zu.",
         "shortDesc": "Greift den Gegner an. Belegt nach Kampfeintritt alle Gegner mit <color=#f29e38ff>Berauschung</color> und fügt ihnen geringen Feuer-SCH zu."
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
-        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ."
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
       }
     }
   }

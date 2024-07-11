@@ -2,6 +2,6 @@
   "name": "Sagacity",
   "passive": {
     "name": "Genius",
-    "description": "When the wearer uses their Ultimate, increases ATK by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> for <unbreak>#2[i]</unbreak> turn(s)."
+    "description": "When the wearer uses their Ultimate, increases ATK by <orangeStrong>{{1}}%</orangeStrong> for {{2}} turn(s)."
   }
 }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Gravity Suppression",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Welt pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Welt pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Edge of the Void",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Welt pada 1 musuh yang ditarget, serta mengakibatkan 2 serangan tambahan yang masing-masing mengakibatkan Imaginary DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Welt pada musuh secara acak. Saat serangan mengenai musuh, ada <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> <u>peluang dasar</u> untuk mengurangi <unbreak>#3[i]%</unbreak> SPD musuh tersebut selama <unbreak>#4[i]</unbreak> giliran.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Welt pada 1 musuh yang ditarget, serta mengakibatkan 2 serangan tambahan yang masing-masing mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Welt pada musuh secara acak. Saat serangan mengenai musuh, ada <orangeStrong>{{2}}%</orangeStrong> <u>peluang dasar</u> untuk mengurangi {{3}}% SPD musuh tersebut selama {{4}} giliran.",
         "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh, total Bounce 3 kali dan berpeluang untuk <color=#f29e38ff>memberikan status Slow</color> pada target."
       }
     },
     "ult": {
       "0": {
         "name": "Synthetic Black Hole",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Welt pada seluruh musuh. Target musuh yang terkena serangan memiliki <unbreak>#3[i]%</unbreak> <u>peluang dasar</u> untuk memasuki status Imprisonment selama 1 giliran.\\nSelama dalam status Imprisonment, target musuh mengalami <u>penundaan aksi</u> sebesar <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> dan SPD berkurang <unbreak>#4[i]%</unbreak>.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Welt pada seluruh musuh. Target musuh yang terkena serangan memiliki {{3}}% <u>peluang dasar</u> untuk memasuki status Imprisonment selama 1 giliran.\\nSelama dalam status Imprisonment, target musuh mengalami <u>penundaan aksi</u> sebesar <orangeStrong>{{2}}%</orangeStrong> dan SPD berkurang {{4}}%.",
         "shortDesc": "Mengakibatkan Imaginary DMG pada seluruh musuh dan <color=#f29e38ff>berpeluang besar memberikan status Imprisonment pada musuh</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Gravitational Imprisonment",
-        "fullDesc": "Setelah menggunakan Technique, Welt akan menciptakan sebuah Dimension khusus selama <unbreak>#4[i]</unbreak> detik. Movement SPD musuh yang berada di dalam Dimension akan berkurang <unbreak>#5[i]%</unbreak>. Setelah memasuki pertempuran dengan musuh dalam Dimension, ada <unbreak>#1[i]%</unbreak> <u>peluang dasar</u> untuk membuat target musuh memasuki status Imprisonment selama 1 giliran.\\nSelama dalam status Imprisonment, target musuh akan mengalami <unbreak>#2[i]%</unbreak> <u>penundaan aksi</u> dan SPD berkurang <unbreak>#3[i]%</unbreak>. Hanya boleh ada 1 efek Dimension ciptaan rekan tim dalam satu waktu.",
+        "fullDesc": "Setelah menggunakan Technique, Welt akan menciptakan sebuah Dimension khusus selama {{4}} detik. Movement SPD musuh yang berada di dalam Dimension akan berkurang {{5}}%. Setelah memasuki pertempuran dengan musuh dalam Dimension, ada {{1}}% <u>peluang dasar</u> untuk membuat target musuh memasuki status Imprisonment selama 1 giliran.\\nSelama dalam status Imprisonment, target musuh akan mengalami {{2}}% <u>penundaan aksi</u> dan SPD berkurang {{3}}%. Hanya boleh ada 1 efek Dimension ciptaan rekan tim dalam satu waktu.",
         "shortDesc": "Menciptakan Dimension khusus. Movement SPD musuh dalam Dimension akan berkurang. Setelah memasuki pertempuran dengan musuh dalam Dimension, <color=#f29e38ff>berpeluang besar untuk membuat target musuh memasuki status Imprisonment</color>."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
       }
     }
   }

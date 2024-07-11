@@ -2,6 +2,6 @@
   "name": "{RUBY_B#らくかい}楽壊{RUBY_E#}",
   "passive": {
     "name": "{RUBY_B#ちゅうとう}誅討{RUBY_E#}",
-    "description": "残りHPが<unbreak>#1[i]%</unbreak>を超える敵に対する、装備キャラの与ダメージ+<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。"
+    "description": "残りHPが{{1}}%を超える敵に対する、装備キャラの与ダメージ+<orangeStrong>{{2}}%</orangeStrong>。"
   }
 }

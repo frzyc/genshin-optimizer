@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Puissance de l'esprit",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Dr Ratio à une cible unique.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible unique.",
         "shortDesc": "Inflige des DGT imaginaires mineurs à une cible unique."
       }
     },
     "skill": {
       "0": {
         "name": "Déclic intellectuel",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Dr Ratio à une cible unique.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible unique.",
         "shortDesc": "Inflige des DGT imaginaires à un ennemi unique."
       }
     },
     "ult": {
       "0": {
         "name": "Paradoxe du syllogisme",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Dr Ratio à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige l'<u>attaque de suivi</u> de son talent une fois.\\nFolie du sage peut être déclenchée jusqu'à <unbreak>#2[i]</unbreak> fois et n'affecte que la cible la plus récente de l'ultime de Dr Ratio. Le nombre de déclenchements est réinitialisé après que Dr Ratio utilise son ultime.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige l'<u>attaque de suivi</u> de son talent une fois.\\nFolie du sage peut être déclenchée jusqu'à {{2}} fois et n'affecte que la cible la plus récente de l'ultime de Dr Ratio. Le nombre de déclenchements est réinitialisé après que Dr Ratio utilise son ultime.",
         "shortDesc": "Inflige des DGT imaginaires à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige 1 <color=#f29e38ff><u>attaque de suivi</u></color>."
       }
     },
     "technique": {
       "0": {
         "name": "Fascination façonnée",
-        "fullDesc": "Crée une dimension qui provoque les ennemis à proximité pendant <unbreak>#1[i]</unbreak> secondes après avoir utilisé la technique. Il y a <unbreak>#2[i]%</unbreak> de <u>chances de base</u> de réduire de <unbreak>#3[i]%</unbreak> la VIT de chaque cible ennemie pendant <unbreak>#4[i]</unbreak> tours en engageant le combat avec des ennemis dans la dimension. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "fullDesc": "Crée une dimension qui provoque les ennemis à proximité pendant {{1}} secondes après avoir utilisé la technique. Il y a {{2}}% de <u>chances de base</u> de réduire de {{3}}% la VIT de chaque cible ennemie pendant {{4}} tours en engageant le combat avec des ennemis dans la dimension. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
         "shortDesc": "Crée une dimension. Les ennemis à l'intérieur de la dimension subissent l'effet Provocation. Il y a de fortes chances de <color=#f29e38ff>réduire la VIT</color> des cibles ennemies après être entré en combat avec des ennemis dans cette dimension."
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
-        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
       }
     }
   }

@@ -2,6 +2,6 @@
   "name": "Sous le ciel bleu",
   "passive": {
     "name": "Seigle au soleil",
-    "description": "Augmente l'ATQ du porteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Lorsqu'il élimine un ennemi, les chances de coup critique du porteur augmentent de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> pendant <unbreak>#3[i]</unbreak> tours."
+    "description": "Augmente l'ATQ du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsqu'il élimine un ennemi, les chances de coup critique du porteur augmentent de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tours."
   }
 }

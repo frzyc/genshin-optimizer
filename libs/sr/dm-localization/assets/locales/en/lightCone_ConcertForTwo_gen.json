@@ -2,6 +2,6 @@
   "name": "Concert for Two",
   "passive": {
     "name": "Inspire",
-    "description": "Increases the wearer's DEF by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. For every on-field character that has a Shield, the DMG dealt by the wearer increases by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+    "description": "Increases the wearer's DEF by <orangeStrong>{{1}}%</orangeStrong>. For every on-field character that has a Shield, the DMG dealt by the wearer increases by <orangeStrong>{{2}}%</orangeStrong>."
   }
 }

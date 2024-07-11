@@ -2,6 +2,6 @@
   "name": "嘉果",
   "passive": {
     "name": "甘美",
-    "description": "戰鬥開始時，立即為我方全體恢復<color=#f29e38ff><unbreak>#1[i]</unbreak></color>點能量。"
+    "description": "戰鬥開始時，立即為我方全體恢復<orangeStrong>{{1}}</orangeStrong>點能量。"
   }
 }

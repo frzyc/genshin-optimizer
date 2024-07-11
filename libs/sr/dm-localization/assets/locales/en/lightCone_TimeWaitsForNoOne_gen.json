@@ -2,6 +2,6 @@
   "name": "Time Waits for No One",
   "passive": {
     "name": "Morn, Noon, Dusk, and Night",
-    "description": "Increases the wearer's Max HP by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> and Outgoing Healing by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. When the wearer heals allies, record the amount of Outgoing Healing. When any ally launches an attack, a random attacked enemy takes Additional DMG equal to <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> of the recorded Outgoing Healing value. The type of this Additional DMG is of the same Type as the wearer's. This Additional DMG is not affected by other buffs, and can only occur 1 time per turn."
+    "description": "Increases the wearer's Max HP by <orangeStrong>{{1}}%</orangeStrong> and Outgoing Healing by <orangeStrong>{{2}}%</orangeStrong>. When the wearer heals allies, record the amount of Outgoing Healing. When any ally launches an attack, a random attacked enemy takes Additional DMG equal to <orangeStrong>{{3}}%</orangeStrong> of the recorded Outgoing Healing value. The type of this Additional DMG is of the same Type as the wearer's. This Additional DMG is not affected by other buffs, and can only occur 1 time per turn."
   }
 }

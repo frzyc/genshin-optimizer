@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "빙점 사격",
-        "fullDesc": "지정된 단일 적에게 페라 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 얼음 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 페라 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 얼음 속성 피해를 준다",
         "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "저온 방해",
-        "fullDesc": "지정된 단일 적의 <u>버프 효과</u> <unbreak>#2[i]</unbreak>개를 해제하고, 페라 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 얼음 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적의 <u>버프 효과</u> {{2}}개를 해제하고, 페라 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 얼음 속성 피해를 준다",
         "shortDesc": "단일 적의 <color=#f29e38ff>버프 효과</color>를 1개 <color=#f29e38ff>해제</color>하고, 단일 적에게 얼음 속성 피해를 가한다"
       }
     },
     "ult": {
       "0": {
         "name": "영역 제압",
-        "fullDesc": "<unbreak>#1[i]%</unbreak>의 <u>기본 확률</u>로 각 단일 적을 [분석] 상태에 빠트리는 동시에 모든 적에게 페라 공격력 <color=#f29e38ff><unbreak>#4[i]%</unbreak></color>만큼의 얼음 속성 피해를 가한다.\\n[분석] 상태의 적은 방어력이 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 감소한다. 지속 시간: <unbreak>#3[i]</unbreak>턴",
+        "fullDesc": "{{1}}%의 <u>기본 확률</u>로 각 단일 적을 [분석] 상태에 빠트리는 동시에 모든 적에게 페라 공격력 <orangeStrong>{{4}}%</orangeStrong>만큼의 얼음 속성 피해를 가한다.\\n[분석] 상태의 적은 방어력이 <orangeStrong>{{2}}%</orangeStrong> 감소한다. 지속 시간: {{3}}턴",
         "shortDesc": "높은 확률로 적의 <color=#f29e38ff>방어력을 감소</color>시키고 모든 적에게 소량의 얼음 속성 피해를 가한다"
       }
     },
     "technique": {
       "0": {
         "name": "기선 제압",
-        "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 페라 공격력 <unbreak>#4[i]%</unbreak>만큼의 얼음 속성 피해를 준다. 동시에 <unbreak>#1[i]%</unbreak>의 <u>기본 확률</u>로 각 단일 적의 방어력이 <unbreak>#2[i]%</unbreak> 감소한다. 지속 시간: <unbreak>#3[i]</unbreak>턴",
+        "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 페라 공격력 {{4}}%만큼의 얼음 속성 피해를 준다. 동시에 {{1}}%의 <u>기본 확률</u>로 각 단일 적의 방어력이 {{2}}% 감소한다. 지속 시간: {{3}}턴",
         "shortDesc": "적을 공격하며, 전투 진입 후 임의의 단일 적에게 소량의 피해를 가하고, 높은 확률로 각 단일 적의 방어력이 감소한다"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "shortDesc": ""
       }
     }
   }

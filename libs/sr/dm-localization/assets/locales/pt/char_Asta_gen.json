@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Raio Espectral",
-        "fullDesc": "Causa Dano de Fogo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Asta a um único inimigo.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Asta a um único inimigo.",
         "shortDesc": "Causa Dano de Fogo leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Tempestade de Meteoros",
-        "fullDesc": "Causa Dano de Fogo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Asta a um único inimigo e causa Dano mais 4 vezes, com cada acerto causando Dano de Fogo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Asta a um inimigo aleatório.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Asta a um único inimigo e causa Dano mais 4 vezes, com cada acerto causando Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Asta a um inimigo aleatório.",
         "shortDesc": "Causa Dano de Fogo leve a alvos únicos inimigos e é rebatido 5 vezes."
       }
     },
     "ult": {
       "0": {
         "name": "Bênção Astral",
-        "fullDesc": "Aumenta a VEL de todos os aliados em <color=#f29e38ff><unbreak>#1[i]</unbreak></color> por <unbreak>#2[i]</unbreak> rodada(s).",
+        "fullDesc": "Aumenta a VEL de todos os aliados em <orangeStrong>{{1}}</orangeStrong> por {{2}} rodada(s).",
         "shortDesc": "<color=#f29e38ff>Aumenta a VEL</color> de todos os aliados."
       }
     },
     "technique": {
       "0": {
         "name": "Lampejo Milagroso",
-        "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar na batalha, causa <unbreak>#1[i]%</unbreak> do ATQ de Asta como Dano de Fogo a todos os inimigos.",
+        "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar na batalha, causa {{1}}% do ATQ de Asta como Dano de Fogo a todos os inimigos.",
         "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano leve a todos os inimigos."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

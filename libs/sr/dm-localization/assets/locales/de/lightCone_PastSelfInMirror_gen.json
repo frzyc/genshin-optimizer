@@ -2,6 +2,6 @@
   "name": "Das Ich im Spiegel",
   "passive": {
     "name": "Pflaumenduft",
-    "description": "Erhöht den Brucheffekt des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Wenn der Träger seinen Ultimate einsetzt, wird der verursachte SCH aller Verbündeten für <unbreak>#3[i]</unbreak> Rd. um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> erhöht. Wenn der Brucheffekt des Trägers <unbreak>#4[i]%</unbreak> oder mehr beträgt, wird 1 Fertigkeitspunkt wiederhergestellt.\\nZu Beginn jeder Kampfwelle werden bei allen Verbündeten <color=#f29e38ff><unbreak>#5[f1]</unbreak></color> Pkt. Energie wiederhergestellt. Effekte desselben Typs sind nicht stapelbar."
+    "description": "Erhöht den Brucheffekt des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Wenn der Träger seinen Ultimate einsetzt, wird der verursachte SCH aller Verbündeten für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong> erhöht. Wenn der Brucheffekt des Trägers {{4}}% oder mehr beträgt, wird 1 Fertigkeitspunkt wiederhergestellt.\\nZu Beginn jeder Kampfwelle werden bei allen Verbündeten <orangeStrong>{{5}}</orangeStrong> Pkt. Energie wiederhergestellt. Effekte desselben Typs sind nicht stapelbar."
   }
 }

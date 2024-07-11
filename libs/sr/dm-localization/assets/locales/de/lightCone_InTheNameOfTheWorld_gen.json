@@ -2,6 +2,6 @@
   "name": "Im Namen der Welt",
   "passive": {
     "name": "Nachkomme",
-    "description": "Erhöht den verursachten SCH des Trägers gegen Gegner mit Debuff um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Erhöht beim Einsatz der Fertigkeit seine Effekt-Trefferrate um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> und seinen ANG um <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+    "description": "Erhöht den verursachten SCH des Trägers gegen Gegner mit Debuff um <orangeStrong>{{1}}%</orangeStrong>. Erhöht beim Einsatz der Fertigkeit seine Effekt-Trefferrate um <orangeStrong>{{2}}%</orangeStrong> und seinen ANG um <orangeStrong>{{3}}%</orangeStrong>."
   }
 }

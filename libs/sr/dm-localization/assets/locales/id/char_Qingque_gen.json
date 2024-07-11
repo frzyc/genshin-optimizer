@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "Flower Pick",
-        "fullDesc": "Melemparkan 1 Jade Tile yang jumlah polanya paling sedikit dan mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Qingque pada 1 target musuh.",
+        "fullDesc": "Melemparkan 1 Jade Tile yang jumlah polanya paling sedikit dan mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Qingque pada 1 target musuh.",
         "shortDesc": "Melemparkan 1 lembar Jade Tile dan mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
       },
       "1": {
         "name": "Cherry on Top!",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Qingque pada 1 target musuh, serta mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> ATK Qingque pada musuh di sekitar target.\\n\"Cherry on Top!\" tidak dapat memulihkan Poin Skill.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Qingque pada 1 target musuh, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Qingque pada musuh di sekitar target.\\n\"Cherry on Top!\" tidak dapat memulihkan Poin Skill.",
         "shortDesc": "Mengakibatkan Quantum DMG pada 1 musuh, dan Quantum DMG dalam jumlah kecil pada target di sekitarnya."
       }
     },
     "skill": {
       "0": {
         "name": "A Scoop of Moon",
-        "fullDesc": "Segera mengambil <unbreak>#1[i]</unbreak> lembar Jade Tile dan meningkatkan <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> DMG Qingque hingga gilirannya berakhir, efek ini dapat ditumpuk hingga <unbreak>#3[i]</unbreak> lapis. Giliran saat ini tidak akan berakhir setelah melancarkan Skill ini.",
+        "fullDesc": "Segera mengambil {{1}} lembar Jade Tile dan meningkatkan <orangeStrong>{{2}}%</orangeStrong> DMG Qingque hingga gilirannya berakhir, efek ini dapat ditumpuk hingga {{3}} lapis. Giliran saat ini tidak akan berakhir setelah melancarkan Skill ini.",
         "shortDesc": "<color=#f29e38ff>Menarik Jade Tile</color>, meningkatkan DMG yang diakibatkan dirinya, dan <color=#f29e38ff>giliran kali ini tidak akan berakhir</color>."
       }
     },
     "ult": {
       "0": {
         "name": "A Quartet? Woo-hoo!",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Qingque pada seluruh musuh, serta mendapatkan 4 Jade Tile dengan pola yang sama.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Qingque pada seluruh musuh, serta mendapatkan 4 Jade Tile dengan pola yang sama.",
         "shortDesc": "Mengakibatkan Quantum DMG pada seluruh musuh, serta mendapatkan 4 lembar Jade Tile dengan pola yang sama."
       }
     },
     "technique": {
       "0": {
         "name": "Game Solitaire",
-        "fullDesc": "Setelah menggunakan Technique, Qingque akan mengambil <unbreak>#1[i]</unbreak> lembar Jade Tile saat memasuki pertempuran.",
+        "fullDesc": "Setelah menggunakan Technique, Qingque akan mengambil {{1}} lembar Jade Tile saat memasuki pertempuran.",
         "shortDesc": "Setelah menggunakan Technique, akan mengambil kartu saat memasuki pertempuran berikutnya."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
       }
     }
   }

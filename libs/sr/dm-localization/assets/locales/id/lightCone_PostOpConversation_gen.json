@@ -2,6 +2,6 @@
   "name": "Post-Op Conversation",
   "passive": {
     "name": "Mutual Healing",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Energy Regeneration Rate pengguna dan meningkatkan <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Outgoing Healing saat pengguna melancarkan Ultimate."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Energy Regeneration Rate pengguna dan meningkatkan <orangeStrong>{{2}}%</orangeStrong> Outgoing Healing saat pengguna melancarkan Ultimate."
   }
 }

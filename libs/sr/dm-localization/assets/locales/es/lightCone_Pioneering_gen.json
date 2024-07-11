@@ -2,6 +2,6 @@
   "name": "Colonización",
   "passive": {
     "name": "Corporación",
-    "description": "Cuando el portador rompe la Debilidad del objetivo enemigo, regenera una cantidad de PV equivalente al <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de sus PV máx."
+    "description": "Cuando el portador rompe la Debilidad del objetivo enemigo, regenera una cantidad de PV equivalente al <orangeStrong>{{1}}%</orangeStrong> de sus PV máx."
   }
 }

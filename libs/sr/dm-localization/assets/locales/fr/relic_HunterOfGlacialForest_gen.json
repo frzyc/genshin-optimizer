@@ -1,7 +1,7 @@
 {
   "setName": "Chasseur de la forêt glaciaire",
   "setEffects": {
-    "2": "Augmente les DGT de glace de <unbreak>#1[i]%</unbreak>.",
-    "4": "Après que le porteur utilise son ultime, ses DGT critiques augmentent de <unbreak>#1[i]%</unbreak> pendant <unbreak>#2[i]</unbreak> tours."
+    "2": "Augmente les DGT de glace de {{1}}%.",
+    "4": "Après que le porteur utilise son ultime, ses DGT critiques augmentent de {{1}}% pendant {{2}} tours."
   }
 }

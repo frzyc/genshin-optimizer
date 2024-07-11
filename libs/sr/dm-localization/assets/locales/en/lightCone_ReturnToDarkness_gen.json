@@ -2,6 +2,6 @@
   "name": "Return to Darkness",
   "passive": {
     "name": "Raging Waves",
-    "description": "Increases the wearer's CRIT Rate by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. After a CRIT Hit, there is a <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> fixed chance to dispel 1 buff on the target enemy. This effect can only trigger 1 time per attack."
+    "description": "Increases the wearer's CRIT Rate by <orangeStrong>{{1}}%</orangeStrong>. After a CRIT Hit, there is a <orangeStrong>{{2}}%</orangeStrong> fixed chance to dispel 1 buff on the target enemy. This effect can only trigger 1 time per attack."
   }
 }

@@ -4,34 +4,36 @@
     "basic": {
       "0": {
         "name": "What Are You Looking At?",
-        "fullDesc": "Deals Ice DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Herta's ATK to a single enemy.",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Herta's ATK to a single enemy.",
         "shortDesc": "Deals minor Ice DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "One-Time Offer",
-        "fullDesc": "Deals Ice DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Herta's ATK to all enemies. If the enemy's HP percentage is <unbreak>#2[i]%</unbreak> or higher, DMG dealt to this target increases by <unbreak>#3[i]%</unbreak>.",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Herta's ATK to all enemies. If the enemy's HP percentage is {{2}}% or higher, DMG dealt to this target increases by {{3}}%.",
         "shortDesc": "Deals minor Ice DMG to all enemies. Targets with higher HP will receive increased DMG."
       }
     },
     "ult": {
       "0": {
         "name": "It's Magic, I Added Some Magic",
-        "fullDesc": "Deals Ice DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Herta's ATK to all enemies.",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Herta's ATK to all enemies.",
         "shortDesc": "Deals Ice DMG to all enemies."
       }
     },
     "technique": {
       "0": {
         "name": "It Can Still Be Optimized",
-        "fullDesc": "After using her Technique, Herta's ATK increases by <unbreak>#1[i]%</unbreak> for <unbreak>#2[i]</unbreak> turn(s) at the beginning of the next battle."
+        "fullDesc": "After using her Technique, Herta's ATK increases by {{1}}% for {{2}} turn(s) at the beginning of the next battle.",
+        "shortDesc": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

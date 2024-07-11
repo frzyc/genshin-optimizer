@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Cloudlancer Art: North Wind",
-        "fullDesc": "Deals Wind DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Dan Heng's ATK to a single enemy.",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dan Heng's ATK to a single enemy.",
         "shortDesc": "Deals minor Wind DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Cloudlancer Art: Torrent",
-        "fullDesc": "Deals Wind DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Dan Heng's ATK to a single enemy.\\nOn a CRIT Hit, there is a <unbreak>#4[i]%</unbreak> <u>base chance</u> to reduce the target's SPD by <unbreak>#2[i]%</unbreak> for <unbreak>#3[i]</unbreak> turn(s).",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dan Heng's ATK to a single enemy.\\nOn a CRIT Hit, there is a {{4}}% <u>base chance</u> to reduce the target's SPD by {{2}}% for {{3}} turn(s).",
         "shortDesc": "Deals Wind DMG to a single enemy. Upon a CRIT Hit, there is a high chance of Slowing the enemy."
       }
     },
     "ult": {
       "0": {
         "name": "Ethereal Dream",
-        "fullDesc": "Deals Wind DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Dan Heng's ATK to a single enemy. If the enemy is Slowed, the Ultimate's DMG multiplier increases by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>.",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dan Heng's ATK to a single enemy. If the enemy is Slowed, the Ultimate's DMG multiplier increases by <orangeStrong>{{2}}%</orangeStrong>.",
         "shortDesc": "Deals massive Wind DMG to a single enemy. If the enemy is Slowed, DMG multiplier dealt will be increased."
       }
     },
     "technique": {
       "0": {
         "name": "Splitting Spearhead",
-        "fullDesc": "After Dan Heng uses his Technique, his ATK increases by <unbreak>#1[i]%</unbreak> at the start of the next battle for <unbreak>#2[i]</unbreak> turn(s).",
+        "fullDesc": "After Dan Heng uses his Technique, his ATK increases by {{1}}% at the start of the next battle for {{2}} turn(s).",
         "shortDesc": "After they use their Technique, their ATK is increased at the start of the next battle."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

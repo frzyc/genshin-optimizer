@@ -2,6 +2,6 @@
   "name": "Đêm Ấm Sẽ Chóng Qua",
   "passive": {
     "name": "Ngọn Đèn Le Lói",
-    "description": "Khiến Giới Hạn HP của người trang bị tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Sau khi thi triển Tấn Công Thường hoặc Chiến Kỹ, sẽ hồi cho toàn phe ta một lượng HP bằng <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> Giới Hạn HP của mỗi người."
+    "description": "Khiến Giới Hạn HP của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Sau khi thi triển Tấn Công Thường hoặc Chiến Kỹ, sẽ hồi cho toàn phe ta một lượng HP bằng <orangeStrong>{{2}}%</orangeStrong> Giới Hạn HP của mỗi người."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Conversación en el postoperatorio",
   "passive": {
     "name": "Curación mutua",
-    "description": "Aumenta la recuperación de energía del portador en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Al usar la habilidad definitiva, aumenta la curación realizada en un <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+    "description": "Aumenta la recuperación de energía del portador en un <orangeStrong>{{1}}%</orangeStrong>. Al usar la habilidad definitiva, aumenta la curación realizada en un <orangeStrong>{{2}}%</orangeStrong>."
   }
 }

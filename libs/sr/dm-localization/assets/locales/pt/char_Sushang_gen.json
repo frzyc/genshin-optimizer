@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Arte do Espadachim das Nuvens: Brilho Estelar",
-        "fullDesc": "Causa Dano Físico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Sushang a um único inimigo.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sushang a um único inimigo.",
         "shortDesc": "Causa Dano Físico leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Arte do Espadachim das Nuvens: Queda Montanhosa",
-        "fullDesc": "Causa Dano Físico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Sushang a um inimigo. Além disso, há <unbreak>#3[i]%</unbreak> de chance de ativar a Postura da Espada no último golpe, causando Dano Físico <u>Adicional</u> igual a <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do ATQ de Sushang ao inimigo.\\nSe o inimigo estiver infligido com <u>Quebra de Fraqueza</u>, a ativação da Postura da Espada é garantida.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sushang a um inimigo. Além disso, há {{3}}% de chance de ativar a Postura da Espada no último golpe, causando Dano Físico <u>Adicional</u> igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Sushang ao inimigo.\\nSe o inimigo estiver infligido com <u>Quebra de Fraqueza</u>, a ativação da Postura da Espada é garantida.",
         "shortDesc": "Causa Dano Físico a um inimigo, com<color=#f29e38ff> poucas chances de ativar Postura da Espada</color>. Se o inimigo tiver <u>Quebra de Fraqueza</u>, <color=#f29e38ff>a ativação da Postura da Espada é garantida</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Forma de Taixu: Anúncio do Amanhecer",
-        "fullDesc": "Causa Dano Físico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Sushang a um único inimigo-alvo e ela age de novo imediatamente. Além disso, o ATQ de Sushang aumenta em <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> e usar sua Perícia concede 2 chances extras de ativar a Postura da Espada por <unbreak>#2[i]</unbreak> rodada(s).\\nQuando ativada graças às chances extras, a Postura da Espada causa <unbreak>#3[i]%</unbreak> do Dano original.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sushang a um único inimigo-alvo e ela age de novo imediatamente. Além disso, o ATQ de Sushang aumenta em <orangeStrong>{{4}}%</orangeStrong> e usar sua Perícia concede 2 chances extras de ativar a Postura da Espada por {{2}} rodada(s).\\nQuando ativada graças às chances extras, a Postura da Espada causa {{3}}% do Dano original.",
         "shortDesc": "Causa Dano Físico massivo a um único inimigo, aprimora o efeito da Postura da Espada e <color=#f29e38ff>realiza uma ação imediatamente</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Arte do Espadachim das Nuvens: Grito de Guerra",
-        "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, Sushang causa Dano Físico igual a <unbreak>#1[i]%</unbreak> do ATQ dela a todos os inimigos.",
+        "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, Sushang causa Dano Físico igual a {{1}}% do ATQ dela a todos os inimigos.",
         "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Físico leve a todos os inimigos."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

@@ -2,6 +2,6 @@
   "name": "Созвучие",
   "passive": {
     "name": "Семья",
-    "description": "В начале боя скорость всех союзников повышается на <color=#f29e38ff><unbreak>#1[i]</unbreak></color> ед. на <unbreak>#2[i]</unbreak> ход."
+    "description": "В начале боя скорость всех союзников повышается на <orangeStrong>{{1}}</orangeStrong> ед. на {{2}} ход."
   }
 }

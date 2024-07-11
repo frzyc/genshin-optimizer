@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Espectáculo en solitario",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Sparkle como Daño Cuántico a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Sparkle como Daño Cuántico a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Pez de los sueños",
-        "fullDesc": "Aumenta el Daño CRIT de un aliado en un valor equivalente al <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> del Daño CRIT de Sparkle + <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> durante <unbreak>#3[i]</unbreak> turno y adelanta la acción de ese aliado en un <unbreak>#4[i]%</unbreak>.\\nSi Sparkle usa esta habilidad consigo misma, no adelanta su acción.",
+        "fullDesc": "Aumenta el Daño CRIT de un aliado en un valor equivalente al <orangeStrong>{{1}}%</orangeStrong> del Daño CRIT de Sparkle + <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turno y adelanta la acción de ese aliado en un {{4}}%.\\nSi Sparkle usa esta habilidad consigo misma, no adelanta su acción.",
         "shortDesc": "Aumenta el <color=#f29e38ff>Daño CRIT</color> de un aliado y adelanta su acción."
       }
     },
     "ult": {
       "0": {
         "name": "Heroína de mil caras",
-        "fullDesc": "Recupera <unbreak>#2[i]</unbreak> pts. de habilidad básica para el equipo y otorga Adivinanza a todos los aliados. Para los aliados con Adivinanza, el efecto de aumento de daño que proporciona el talento de Sparkle se incrementa de forma adicional en un <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> por cada acumulación durante <unbreak>#4[i]</unbreak> turnos.",
+        "fullDesc": "Recupera {{2}} pts. de habilidad básica para el equipo y otorga Adivinanza a todos los aliados. Para los aliados con Adivinanza, el efecto de aumento de daño que proporciona el talento de Sparkle se incrementa de forma adicional en un <orangeStrong>{{3}}%</orangeStrong> por cada acumulación durante {{4}} turnos.",
         "shortDesc": "Recupera <color=#f29e38ff>pts. de habilidad básica</color> para el equipo e incrementa de forma adicional el aumento de daño que proporciona el talento de Sparkle."
       }
     },
     "technique": {
       "0": {
         "name": "Narradora poco fiable",
-        "fullDesc": "Tras usar la técnica, todos los aliados obtienen Despiste durante <unbreak>#2[i]</unbreak> s. Los aliados con Despiste no pueden ser detectados por los enemigos. Al entrar en combate mientras dura Despiste, el equipo recupera <unbreak>#1[i]</unbreak> pts. de habilidad básica.",
+        "fullDesc": "Tras usar la técnica, todos los aliados obtienen Despiste durante {{2}} s. Los aliados con Despiste no pueden ser detectados por los enemigos. Al entrar en combate mientras dura Despiste, el equipo recupera {{1}} pts. de habilidad básica.",
         "shortDesc": "Tras usar la técnica, todos los aliados obtienen Despiste. Los aliados con Despiste no pueden ser detectados por los enemigos. Al entrar en combate mientras dura Despiste, el equipo recupera <color=#f29e38ff>pts. de habilidad básica</color>."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
       }
     }
   }

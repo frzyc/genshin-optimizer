@@ -1,7 +1,7 @@
 {
   "setName": "Messenger Traversing Hackerspace",
   "setEffects": {
-    "2": "Increases SPD by <unbreak>#1[i]%</unbreak>.",
-    "4": "When the wearer uses their Ultimate on an ally, SPD for all allies increases by <unbreak>#1[i]%</unbreak> for <unbreak>#2[i]</unbreak> turn(s). This effect cannot be stacked."
+    "2": "Increases SPD by {{1}}%.",
+    "4": "When the wearer uses their Ultimate on an ally, SPD for all allies increases by {{1}}% for {{2}} turn(s). This effect cannot be stacked."
   }
 }

@@ -2,6 +2,6 @@
   "name": "何物为真",
   "passive": {
     "name": "假设",
-    "description": "使装备者的击破特攻提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。施放普攻后，装备者回复等同于<color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>生命上限+<unbreak>#3[i]</unbreak>点的生命值。"
+    "description": "使装备者的击破特攻提高<orangeStrong>{{1}}%</orangeStrong>。施放普攻后，装备者回复等同于<orangeStrong>{{2}}%</orangeStrong>生命上限+{{3}}点的生命值。"
   }
 }

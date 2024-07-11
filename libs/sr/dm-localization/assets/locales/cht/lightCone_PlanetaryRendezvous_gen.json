@@ -2,6 +2,6 @@
   "name": "與行星相會",
   "passive": {
     "name": "啟程",
-    "description": "進入戰鬥後，當我方目標造成與裝備者相同屬性的傷害時，造成的傷害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。"
+    "description": "進入戰鬥後，當我方目標造成與裝備者相同屬性的傷害時，造成的傷害提高<orangeStrong>{{1}}%</orangeStrong>。"
   }
 }

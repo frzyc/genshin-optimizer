@@ -2,6 +2,6 @@
   "name": "Recordação Reforjada",
   "passive": {
     "name": "Cristalização",
-    "description": "Aumenta a Taxa de Acerto de Efeito do usuário em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Quando o usuário causa Dano a um inimigo afligido com Cisalhamento de Vento, Queimadura, Choque ou Sangramento, cada um concede respectivamente 1 acúmulo de Profeta, podendo acumular até <unbreak>#4[i]</unbreak> vezes. Em uma única batalha, apenas 1 acúmulo de Profeta pode ser concedido para cada tipo de Dano Contínuo. Cada acúmulo de Profeta aumenta o ATQ do usuário em <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> e o Dano Contínuo causado ignorará <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> da DEF do alvo."
+    "description": "Aumenta a Taxa de Acerto de Efeito do usuário em <orangeStrong>{{1}}%</orangeStrong>. Quando o usuário causa Dano a um inimigo afligido com Cisalhamento de Vento, Queimadura, Choque ou Sangramento, cada um concede respectivamente 1 acúmulo de Profeta, podendo acumular até {{4}} vezes. Em uma única batalha, apenas 1 acúmulo de Profeta pode ser concedido para cada tipo de Dano Contínuo. Cada acúmulo de Profeta aumenta o ATQ do usuário em <orangeStrong>{{2}}%</orangeStrong> e o Dano Contínuo causado ignorará <orangeStrong>{{3}}%</orangeStrong> da DEF do alvo."
   }
 }

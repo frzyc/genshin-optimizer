@@ -1,7 +1,7 @@
 {
   "setName": "Ladrão da Chuva de Meteoros",
   "setEffects": {
-    "2": "Aumenta o Efeito de Quebra em <unbreak>#1[i]%</unbreak>.",
-    "4": "Aumenta em <unbreak>#1[i]%</unbreak> o Efeito de Quebra do usuário. Depois que o usuário inflige Quebra de Fraqueza em um inimigo, regenera <unbreak>#2[i]</unbreak> de Energia."
+    "2": "Aumenta o Efeito de Quebra em {{1}}%.",
+    "4": "Aumenta em {{1}}% o Efeito de Quebra do usuário. Depois que o usuário inflige Quebra de Fraqueza em um inimigo, regenera {{2}} de Energia."
   }
 }

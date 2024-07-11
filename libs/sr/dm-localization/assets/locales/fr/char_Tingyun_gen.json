@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Expulsion",
-        "fullDesc": "Tingyun inflige des DGT de foudre équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de son ATQ à un ennemi unique.",
+        "fullDesc": "Tingyun inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de son ATQ à un ennemi unique.",
         "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Mélodie apaisante",
-        "fullDesc": "Accorde une bénédiction à un allié unique qui augmente son ATQ de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, dans la limite de <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> de l'ATQ actuelle de Tingyun.\\nLorsque l'allié béni attaque, il inflige des DGT de foudre <u>additionnels</u> équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de sa propre ATQ 1 fois.\\nLa bénédiction dure <unbreak>#3[i]</unbreak> tours et n'est effective que sur le dernier personnage à bénéficier de la compétence de Tingyun.",
+        "fullDesc": "Accorde une bénédiction à un allié unique qui augmente son ATQ de <orangeStrong>{{2}}%</orangeStrong>, dans la limite de <orangeStrong>{{4}}%</orangeStrong> de l'ATQ actuelle de Tingyun.\\nLorsque l'allié béni attaque, il inflige des DGT de foudre <u>additionnels</u> équivalents à <orangeStrong>{{1}}%</orangeStrong> de sa propre ATQ 1 fois.\\nLa bénédiction dure {{3}} tours et n'est effective que sur le dernier personnage à bénéficier de la compétence de Tingyun.",
         "shortDesc": "<color=#f29e38ff>Augmente l'ATQ</color> d'un allié et lui accorde une bénédiction. L'allié avec la bénédiction inflige également des <color=#f29e38ff>DGT de foudre <u>additionnels</u> mineurs</color> lorsqu'elle attaque."
       }
     },
     "ult": {
       "0": {
         "name": "Bienveillance des nuages",
-        "fullDesc": "Régénère <unbreak>#1[i]</unbreak> points d'énergie à un allié unique et augmente les DGT qu'il inflige de <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> pendant <unbreak>#2[i]</unbreak> tours.",
+        "fullDesc": "Régénère {{1}} points d'énergie à un allié unique et augmente les DGT qu'il inflige de <orangeStrong>{{3}}%</orangeStrong> pendant {{2}} tours.",
         "shortDesc": "Régénère de l'<color=#f29e38ff>énergie</color> pour une cible alliée et <color=#f29e38ff>augmente les DGT qu'elle inflige</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Douce brise",
-        "fullDesc": "Tingyun régénère immédiatement <unbreak>#1[i]</unbreak> points d'énergie lorsqu'elle utilise sa technique.",
+        "fullDesc": "Tingyun régénère immédiatement {{1}} points d'énergie lorsqu'elle utilise sa technique.",
         "shortDesc": "Le personnage régénère immédiatement son énergie après avoir utilisé cette technique."
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
-        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
       }
     }
   }

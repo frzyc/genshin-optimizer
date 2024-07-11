@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Windrider Bullet",
-        "fullDesc": "สร้าง DMG ลม <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Bronya แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "fullDesc": "สร้าง DMG ลม <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Bronya แก่ศัตรูที่กำหนดหนึ่งตัว",
         "shortDesc": "สร้าง DMG ลมเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
       }
     },
     "skill": {
       "0": {
         "name": "Combat Redeployment",
-        "fullDesc": "ลบ<u>เอฟเฟกต์ Debuff</u> 1 เอฟเฟกต์ของฝ่ายตัวเองที่กำหนดหนึ่งตัว และทำให้เป้าหมายดังกล่าวแอ็กชันทันที อีกทั้งสร้าง DMG เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> เป็นเวลา <unbreak>#3[i]</unbreak> เทิร์น\\nเมื่อใช้สกิลนี้กับตัวเอง เอฟเฟกต์แอ็กชันนี้จะไม่สามารถเกิดขึ้นได้โดยทันที",
+        "fullDesc": "ลบ<u>เอฟเฟกต์ Debuff</u> 1 เอฟเฟกต์ของฝ่ายตัวเองที่กำหนดหนึ่งตัว และทำให้เป้าหมายดังกล่าวแอ็กชันทันที อีกทั้งสร้าง DMG เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น\\nเมื่อใช้สกิลนี้กับตัวเอง เอฟเฟกต์แอ็กชันนี้จะไม่สามารถเกิดขึ้นได้โดยทันที",
         "shortDesc": "<color=#f29e38ff>ลบล้าง</color><color=#f29e38ff> <u>เอฟเฟกต์ Debuff</u> </color> 1 เอฟเฟกต์ ของฝ่ายตัวเองหนึ่งตัว และทำให้เป้าหมายดังกล่าว<color=#f29e38ff>สร้าง DMG เพิ่มขึ้น</color> อีกทั้งจะ<color=#f29e38ff>แอ็กชันทันที</color>"
       }
     },
     "ult": {
       "0": {
         "name": "The Belobog March",
-        "fullDesc": "ทำให้ ATK ของฝ่ายตัวเองทั้งหมดเพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> พร้อมทั้งเพิ่ม DMG คริติคอล <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> ของ DMG คริติคอลของ Bronya +<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> เป็นเวลา <unbreak>#4[i]</unbreak> เทิร์น",
+        "fullDesc": "ทำให้ ATK ของฝ่ายตัวเองทั้งหมดเพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> พร้อมทั้งเพิ่ม DMG คริติคอล <orangeStrong>{{2}}%</orangeStrong> ของ DMG คริติคอลของ Bronya +<orangeStrong>{{3}}%</orangeStrong> เป็นเวลา {{4}} เทิร์น",
         "shortDesc": "<color=#f29e38ff>เพิ่ม ATK</color> และ<color=#f29e38ff>เพิ่ม DMG คริติคอล</color> ของฝ่ายเราทั้งหมด"
       }
     },
     "technique": {
       "0": {
         "name": "Banner of Command",
-        "fullDesc": "หลังจากใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป จะทำให้ ATK ของฝ่ายตัวเองทั้งหมดเพิ่มขึ้น <unbreak>#1[i]%</unbreak> เป็นเวลา <unbreak>#2[i]</unbreak> เทิร์น",
+        "fullDesc": "หลังจากใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป จะทำให้ ATK ของฝ่ายตัวเองทั้งหมดเพิ่มขึ้น {{1}}% เป็นเวลา {{2}} เทิร์น",
         "shortDesc": "ใช้เทคนิคและเมื่อเริ่มการต่อสู้ครั้งต่อไป ATK ของฝ่ายตัวเองทั้งหมดจะเพิ่มขึ้น"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย"
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
+        "shortDesc": ""
       }
     }
   }

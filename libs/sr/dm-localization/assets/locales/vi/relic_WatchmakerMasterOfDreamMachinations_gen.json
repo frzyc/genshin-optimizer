@@ -1,7 +1,7 @@
 {
   "setName": "Thợ Đồng Hồ, Bậc Thầy Máy Móc",
   "setEffects": {
-    "2": "Tấn Công Kích Phá tăng <unbreak>#1[i]%</unbreak>.",
-    "4": "Khi người trang bị thi triển Tuyệt Kỹ lên mục tiêu phe ta, Tấn Công Kích Phá toàn phe ta tăng <unbreak>#1[i]%</unbreak>, duy trì <unbreak>#2[i]</unbreak> hiệp, hiệu ứng này không thể cộng dồn."
+    "2": "Tấn Công Kích Phá tăng {{1}}%.",
+    "4": "Khi người trang bị thi triển Tuyệt Kỹ lên mục tiêu phe ta, Tấn Công Kích Phá toàn phe ta tăng {{1}}%, duy trì {{2}} hiệp, hiệu ứng này không thể cộng dồn."
   }
 }

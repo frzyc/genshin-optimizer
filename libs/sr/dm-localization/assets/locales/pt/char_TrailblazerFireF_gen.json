@@ -4,39 +4,41 @@
     "basic": {
       "0": {
         "name": "Luz Quebra-Gelo",
-        "fullDesc": "Causa Dano de Fogo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e ganha 1 acúmulo de Vontade de Magma.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e ganha 1 acúmulo de Vontade de Magma.",
         "shortDesc": "Causa Dano de Fogo leve a um único inimigo e ganha Vontade de Magma."
       },
       "1": {
         "name": "Luz Quebra-Gelo",
-        "fullDesc": "Consome 4 acúmulos de Vontade de Magma para aprimorar o ATQ Básico, causando Dano de Fogo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e Dano de Fogo igual a <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do ATQ {F#da Desbravadora}{M#do Desbravador} aos inimigos adjacentes a ele.",
+        "fullDesc": "Consome 4 acúmulos de Vontade de Magma para aprimorar o ATQ Básico, causando Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e Dano de Fogo igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} aos inimigos adjacentes a ele.",
         "shortDesc": "Consome Vontade de Magma, e então causa Dano de Fogo a um único inimigo e Dano de Fogo leve aos inimigos adjacentes a ele."
       }
     },
     "skill": {
       "0": {
         "name": "Âmbar Ardente",
-        "fullDesc": "Aumenta a Redução de Dano {F#da Desbravadora}{M#do Desbravador} em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> e ganha 1 acúmulo da Vontade de Magma, com <unbreak>#2[i]%</unbreak> de <u>chance-base</u> de Provocar todos os inimigos por <unbreak>#3[i]</unbreak> rodada(s).",
+        "fullDesc": "Aumenta a Redução de Dano {F#da Desbravadora}{M#do Desbravador} em <orangeStrong>{{1}}%</orangeStrong> e ganha 1 acúmulo da Vontade de Magma, com {{2}}% de <u>chance-base</u> de Provocar todos os inimigos por {{3}} rodada(s).",
         "shortDesc": "Reduz o Dano recebido e recebe Vontade de Magma, com uma alta chance de Provocar todos os inimigos."
       }
     },
     "ult": {
       "0": {
         "name": "Lança das Chamas da Guerra",
-        "fullDesc": "Causa Dano de Fogo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ {F#da Desbravadora}{M#do Desbravador} mais <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> da DEF {F#da Desbravadora}{M#do Desbravador} a todos os inimigos. O próximo ATQ Básico será automaticamente aprimorado e não custará Vontade de Magma.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} mais <orangeStrong>{{2}}%</orangeStrong> da DEF {F#da Desbravadora}{M#do Desbravador} a todos os inimigos. O próximo ATQ Básico será automaticamente aprimorado e não custará Vontade de Magma.",
         "shortDesc": "Causa Dano de Fogo a todos os inimigos e aprimora o próximo ATQ Básico."
       }
     },
     "technique": {
       "0": {
         "name": "Chamado do Guardião",
-        "fullDesc": "Após usar Técnica, no início da próxima batalha, ganha um Escudo que absorve Dano igual a <unbreak>#1[i]%</unbreak> da DEF {F#da Desbravadora}{M#do Desbravador} mais <unbreak>#2[i]</unbreak> por <unbreak>#3[i]</unbreak> rodada(s)."
+        "fullDesc": "Após usar Técnica, no início da próxima batalha, ganha um Escudo que absorve Dano igual a {{1}}% da DEF {F#da Desbravadora}{M#do Desbravador} mais {{2}} por {{3}} rodada(s).",
+        "shortDesc": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Standing Ovation",
-        "fullDesc": "Deals Fire DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Guinaifen's ATK to a single enemy.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Guinaifen's ATK to a single enemy.",
         "shortDesc": "Deals minor Fire DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Blazing Welcome",
-        "fullDesc": "Deals Fire DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Guinaifen's ATK to a single enemy and Fire DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of Guinaifen's ATK to any adjacent enemies, with a <unbreak>#3[i]%</unbreak> <u>base chance</u> to Burn the target and adjacent targets. When Burned, enemies will take a Fire DoT equal to <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> of Guinaifen's ATK at the beginning of each turn, lasting for <unbreak>#5[i]</unbreak> turn(s).",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Guinaifen's ATK to a single enemy and Fire DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Guinaifen's ATK to any adjacent enemies, with a {{3}}% <u>base chance</u> to Burn the target and adjacent targets. When Burned, enemies will take a Fire DoT equal to <orangeStrong>{{4}}%</orangeStrong> of Guinaifen's ATK at the beginning of each turn, lasting for {{5}} turn(s).",
         "shortDesc": "Deals Fire DMG to a single enemy and minor Fire DMG to adjacent enemies, with a high chance of <color=#f29e38ff>Burning</color> them."
       }
     },
     "ult": {
       "0": {
         "name": "Watch This Showstopper",
-        "fullDesc": "Deals Fire DMG equal to <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> of Guinaifen's ATK to all enemies. If the target enemy is currently inflicted with Burn, then their Burn status immediately produces DMG equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of their original DMG.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Guinaifen's ATK to all enemies. If the target enemy is currently inflicted with Burn, then their Burn status immediately produces DMG equal to <orangeStrong>{{2}}%</orangeStrong> of their original DMG.",
         "shortDesc": "Deals Fire DMG to all enemies. If the enemies are inflicted with Burn, the Burn status deals DMG 1 extra time."
       }
     },
     "technique": {
       "0": {
         "name": "Skill Showcase",
-        "fullDesc": "Immediately attacks the enemy. After entering battle, deals DMG for <unbreak>#2[i]</unbreak> time(s), dealing Fire DMG equal to <unbreak>#1[i]%</unbreak> of Guinaifen's ATK to a random single enemy target each time, with a <unbreak>#3[i]%</unbreak> <u>base chance</u> of inflicting Firekiss on them.",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals DMG for {{2}} time(s), dealing Fire DMG equal to {{1}}% of Guinaifen's ATK to a random single enemy target each time, with a {{3}}% <u>base chance</u> of inflicting Firekiss on them.",
         "shortDesc": "Attacks the enemy. After entering battle, deals minor Fire DMG to a single target while applying <color=#f29e38ff>Firekiss</color>, with a total of 4 Bounces."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

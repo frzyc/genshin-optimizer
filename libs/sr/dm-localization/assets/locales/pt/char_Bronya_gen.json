@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Munição de Ventos Fortes",
-        "fullDesc": "Causa Dano de Vento igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Bronya a um único inimigo.",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Bronya a um único inimigo.",
         "shortDesc": "Causa Dano de Vento leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Redistribuição de Combate",
-        "fullDesc": "Dissipa uma <u>penalidade</u> de um único aliado, permite que ele aja imediatamente, e aumenta seu Dano em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> por <unbreak>#3[i]</unbreak> rodada(s).\\nQuando esta Perícia é usada na própria Bronya, ela não pode agir imediatamente novamente.",
+        "fullDesc": "Dissipa uma <u>penalidade</u> de um único aliado, permite que ele aja imediatamente, e aumenta seu Dano em <orangeStrong>{{1}}%</orangeStrong> por {{3}} rodada(s).\\nQuando esta Perícia é usada na própria Bronya, ela não pode agir imediatamente novamente.",
         "shortDesc": "<color=#f29e38ff>Remove</color> 1 <color=#f29e38ff><u>penalidade</u></color> de um único aliado, <color=#f29e38ff>aumenta o dano que ele causa</color> e permite que ele <color=#f29e38ff>aja imediatamente</color>."
       }
     },
     "ult": {
       "0": {
         "name": "A Marcha de Belobog",
-        "fullDesc": "Aumenta o ATQ de todos os aliados em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> e aumenta o Dano CRIT em <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> do Dano CRIT de Bronya mais <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> por <unbreak>#4[i]</unbreak> rodada(s).",
+        "fullDesc": "Aumenta o ATQ de todos os aliados em <orangeStrong>{{1}}%</orangeStrong> e aumenta o Dano CRIT em <orangeStrong>{{2}}%</orangeStrong> do Dano CRIT de Bronya mais <orangeStrong>{{3}}%</orangeStrong> por {{4}} rodada(s).",
         "shortDesc": "Aumenta o <color=#f29e38ff>ATQ</color> e o <color=#f29e38ff>Dano CRIT</color> de todos os aliados"
       }
     },
     "technique": {
       "0": {
         "name": "Bandeira de Comando",
-        "fullDesc": "Após Bronya usar sua Técnica, no início da próxima batalha, o ATQ de todos os aliados aumenta em <unbreak>#1[i]%</unbreak> por <unbreak>#2[i]</unbreak> rodada(s).",
+        "fullDesc": "Após Bronya usar sua Técnica, no início da próxima batalha, o ATQ de todos os aliados aumenta em {{1}}% por {{2}} rodada(s).",
         "shortDesc": "Depois que esta personagem usa a Técnica, aumenta o ATQ de todos os aliados no início da próxima batalha."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

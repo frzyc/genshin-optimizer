@@ -2,6 +2,6 @@
   "name": "Make the World Clamor",
   "passive": {
     "name": "The Power of Sound",
-    "description": "The wearer regenerates <color=#f29e38ff><unbreak>#2[i]</unbreak></color> Energy immediately upon entering battle, and increases Ultimate DMG by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+    "description": "The wearer regenerates <orangeStrong>{{2}}</orangeStrong> Energy immediately upon entering battle, and increases Ultimate DMG by <orangeStrong>{{1}}%</orangeStrong>."
   }
 }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Além da Bondade",
-        "fullDesc": "Causa Dano Físico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Natasha a um único inimigo.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Natasha a um único inimigo.",
         "shortDesc": "Causa Dano Físico leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Amor, Cura e Escolha",
-        "fullDesc": "Cura um único alvo em <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> dos PV máximos de Natasha + <color=#f29e38ff><unbreak>#4[i]</unbreak></color>. Cura o aliado em mais <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> dos PV máximos de Natasha mais <color=#f29e38ff><unbreak>#5[i]</unbreak></color> no início de cada rodada por <unbreak>#3[i]</unbreak> rodada(s).",
+        "fullDesc": "Cura um único alvo em <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Natasha + <orangeStrong>{{4}}</orangeStrong>. Cura o aliado em mais <orangeStrong>{{2}}%</orangeStrong> dos PV máximos de Natasha mais <orangeStrong>{{5}}</orangeStrong> no início de cada rodada por {{3}} rodada(s).",
         "shortDesc": "<color=#f29e38ff>Restaura PV </color>de um único aliado e concede a <color=#f29e38ff>Cura Periódica</color> a ele."
       }
     },
     "ult": {
       "0": {
         "name": "Presente do Renascimento",
-        "fullDesc": "Cura todos os aliados em <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> dos PV máximos de Natasha + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>.",
+        "fullDesc": "Cura todos os aliados em <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Natasha + <orangeStrong>{{2}}</orangeStrong>.",
         "shortDesc": "<color=#f29e38ff>Restaura PV</color> de todos os aliados."
       }
     },
     "technique": {
       "0": {
         "name": "Pesquisa Hipnótica",
-        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, causa Dano Físico igual a <unbreak>#4[i]%</unbreak> do ATQ de Natasha a um inimigo aleatório, com <unbreak>#1[i]%</unbreak> de <u>chance-base</u> de causar Enfraquecimento a todos os inimigos.\\nQuando enfraquecidos, inimigos causam <unbreak>#2[i]%</unbreak> a menos de Dano a aliados por <unbreak>#3[i]</unbreak> rodada(s).",
+        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, causa Dano Físico igual a {{4}}% do ATQ de Natasha a um inimigo aleatório, com {{1}}% de <u>chance-base</u> de causar Enfraquecimento a todos os inimigos.\\nQuando enfraquecidos, inimigos causam {{2}}% a menos de Dano a aliados por {{3}} rodada(s).",
         "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Físico leve a um único inimigo aleatório, com uma alta chance de infligir Fraqueza a todos os inimigos-alvo."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

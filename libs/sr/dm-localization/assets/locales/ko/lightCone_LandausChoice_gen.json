@@ -2,6 +2,6 @@
   "name": "랜도의 선택",
   "passive": {
     "name": "빠른 세월",
-    "description": "장착한 캐릭터가 피격될 확률이 증가하고 받는 피해가 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 감소한다"
+    "description": "장착한 캐릭터가 피격될 확률이 증가하고 받는 피해가 <orangeStrong>{{2}}%</orangeStrong> 감소한다"
   }
 }

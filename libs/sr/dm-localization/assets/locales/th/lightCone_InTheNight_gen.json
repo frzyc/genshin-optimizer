@@ -2,6 +2,6 @@
   "name": "In the Night",
   "passive": {
     "name": "Flowers and Butterflies",
-    "description": "ทำให้อัตราคริติคอลของผู้สวมใส่เพิ่มขึ้น <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ขณะที่ต่อสู้ หากความเร็วของผู้สวมใส่สูงกว่า <unbreak>100</unbreak> ในทุกๆ <unbreak>#2[i]</unbreak> หน่วยที่เกินมา การโจมตีปกติและสกิลต่อสู้ของผู้สวมใส่จะสร้าง DMG เพิ่มขึ้น <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> พร้อมทั้งทำให้ DMG คริติคอลของท่าไม้ตายเพิ่มขึ้น <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> โดยเอฟเฟกต์นี้สามารถซ้อนทับได้ <unbreak>#5[i]</unbreak> ชั้น"
+    "description": "ทำให้อัตราคริติคอลของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> ขณะที่ต่อสู้ หากความเร็วของผู้สวมใส่สูงกว่า <unbreak>100</unbreak> ในทุกๆ {{2}} หน่วยที่เกินมา การโจมตีปกติและสกิลต่อสู้ของผู้สวมใส่จะสร้าง DMG เพิ่มขึ้น <orangeStrong>{{3}}%</orangeStrong> พร้อมทั้งทำให้ DMG คริติคอลของท่าไม้ตายเพิ่มขึ้น <orangeStrong>{{4}}%</orangeStrong> โดยเอฟเฟกต์นี้สามารถซ้อนทับได้ {{5}} ชั้น"
   }
 }

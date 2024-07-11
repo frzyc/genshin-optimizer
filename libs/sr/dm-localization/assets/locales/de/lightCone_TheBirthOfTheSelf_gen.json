@@ -2,6 +2,6 @@
   "name": "Die Geburt des Selbst",
   "passive": {
     "name": "Die Jungfrau im Gemälde",
-    "description": "Erhöht den verursachten SCH durch Folgeangriff des Trägers um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Liegt der LP-Prozentsatz des Ziels aktuell bei <unbreak>#2[i]%</unbreak> oder niedriger, wird der SCH durch Folgeangriff zusätzlich um <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> erhöht."
+    "description": "Erhöht den verursachten SCH durch Folgeangriff des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Liegt der LP-Prozentsatz des Ziels aktuell bei {{2}}% oder niedriger, wird der SCH durch Folgeangriff zusätzlich um <orangeStrong>{{3}}%</orangeStrong> erhöht."
   }
 }

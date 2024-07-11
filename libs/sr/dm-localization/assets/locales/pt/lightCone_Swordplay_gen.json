@@ -2,6 +2,6 @@
   "name": "Jogo de Espadas",
   "passive": {
     "name": "Suas Próprias Respostas",
-    "description": "A cada vez que acertar o mesmo alvo, o Dano causado aumentará em <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, podendo acumular até <unbreak>#2[i]</unbreak> vez(es). Esse efeito será removido quando o usuário mudar de alvo."
+    "description": "A cada vez que acertar o mesmo alvo, o Dano causado aumentará em <orangeStrong>{{1}}%</orangeStrong>, podendo acumular até {{2}} vez(es). Esse efeito será removido quando o usuário mudar de alvo."
   }
 }

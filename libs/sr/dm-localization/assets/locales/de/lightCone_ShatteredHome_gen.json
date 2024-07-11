@@ -2,6 +2,6 @@
   "name": "Zerstörtes Zuhause",
   "passive": {
     "name": "Ausrottung",
-    "description": "Verursacht <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> zusätzlichen SCH an allen Gegnern, deren LP-Prozentsatz über <unbreak>#1[i]%</unbreak> liegt."
+    "description": "Verursacht <orangeStrong>{{2}}%</orangeStrong> zusätzlichen SCH an allen Gegnern, deren LP-Prozentsatz über {{1}}% liegt."
   }
 }

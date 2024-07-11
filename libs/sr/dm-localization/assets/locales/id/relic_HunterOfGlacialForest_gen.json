@@ -1,7 +1,7 @@
 {
   "setName": "Hunter of Glacial Forest",
   "setEffects": {
-    "2": "Ice DMG +<unbreak>#1[i]%</unbreak>.",
-    "4": "Saat melancarkan Ultimate, CRIT DMG meningkat <unbreak>#1[i]%</unbreak> selama <unbreak>#2[i]</unbreak> giliran."
+    "2": "Ice DMG +{{1}}%.",
+    "4": "Saat melancarkan Ultimate, CRIT DMG meningkat {{1}}% selama {{2}} giliran."
   }
 }

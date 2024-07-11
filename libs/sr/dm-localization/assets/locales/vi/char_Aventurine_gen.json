@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Cược Trực Tiếp",
-        "fullDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Phòng Thủ của Aventurine.",
+        "fullDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Phòng Thủ của Aventurine.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch chỉ định."
       }
     },
     "skill": {
       "0": {
         "name": "Đá Tảng Phồn Thịnh",
-        "fullDesc": "Cung cấp cho toàn bộ phe ta Khiên \"Xu Cược Kiên Cố\" có thể triệt tiêu sát thương bằng <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> Phòng Thủ của Aventurine +<color=#f29e38ff><unbreak>#2[i]</unbreak></color>, duy trì <unbreak>#3[i]</unbreak> hiệp. Khi nhận trùng \"Xu Cược Kiên Cố\", lượng Khiên có thể cộng dồn, tối đa không vượt quá <unbreak>#4[i]%</unbreak> lượng Khiên mà Chiến Kỹ hiện tại cung cấp.",
+        "fullDesc": "Cung cấp cho toàn bộ phe ta Khiên \"Xu Cược Kiên Cố\" có thể triệt tiêu sát thương bằng <orangeStrong>{{1}}%</orangeStrong> Phòng Thủ của Aventurine +<orangeStrong>{{2}}</orangeStrong>, duy trì {{3}} hiệp. Khi nhận trùng \"Xu Cược Kiên Cố\", lượng Khiên có thể cộng dồn, tối đa không vượt quá {{4}}% lượng Khiên mà Chiến Kỹ hiện tại cung cấp.",
         "shortDesc": "Cung cấp Khiên \"Xu Cược Kiên Cố\" <color=#f29e38ff>có thể cộng dồn lượng Khiên</color> cho toàn bộ phe ta."
       }
     },
     "ult": {
       "0": {
         "name": "Chúa Tể Vòng Quay",
-        "fullDesc": "Ngẫu nhiên nhận được 1 đến <unbreak>#1[i]</unbreak> điểm \"Cược Mù\", sau đó khiến 1 kẻ địch chỉ định rơi vào trạng thái \"Hoảng Hốt\", duy trì <unbreak>#4[i]</unbreak> hiệp, và gây cho 1 kẻ địch chỉ định Sát Thương Số Ảo bằng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Phòng Thủ của Aventurine. Khi mục tiêu phe ta đánh trúng mục tiêu phe địch đang trong trạng thái \"Hoảng Hốt\", Sát Thương Bạo Kích gây ra tăng <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>.",
+        "fullDesc": "Ngẫu nhiên nhận được 1 đến {{1}} điểm \"Cược Mù\", sau đó khiến 1 kẻ địch chỉ định rơi vào trạng thái \"Hoảng Hốt\", duy trì {{4}} hiệp, và gây cho 1 kẻ địch chỉ định Sát Thương Số Ảo bằng <orangeStrong>{{2}}%</orangeStrong> Phòng Thủ của Aventurine. Khi mục tiêu phe ta đánh trúng mục tiêu phe địch đang trong trạng thái \"Hoảng Hốt\", Sát Thương Bạo Kích gây ra tăng <orangeStrong>{{3}}%</orangeStrong>.",
         "shortDesc": "Ngẫu nhiên nhận Cược Mù khiến 1 kẻ địch rơi vào trạng thái Hoảng Hốt, đồng thời gây Sát Thương Số Ảo cho mục tiêu, khi mục tiêu phe ta đánh trúng kẻ địch trong trạng thái Hoảng Hốt, sẽ <color=#f29e38ff>tăng Sát Thương Bạo Kích</color> gây ra."
       }
     },
     "technique": {
       "0": {
         "name": "Đỏ Hay Là Đen",
-        "fullDesc": "Sau khi dùng Bí Kỹ sẽ nhận 1 loại trong số các hiệu ứng sau:\\nCó xác suất nhất định tăng <unbreak>#1[i]%</unbreak> Phòng Thủ;\\nCó xác suất lớn tăng <unbreak>#2[i]%</unbreak> Phòng Thủ;\\nCó xác suất nhỏ tăng <unbreak>#3[i]%</unbreak> Phòng Thủ.\\nKhi sử dụng trùng sẽ giữ lại hiệu ứng có giá trị cao nhất.\\nKhi bắt đầu trận đấu tiếp theo, toàn bộ phe ta tăng Phòng Thủ với giá trị tương ứng, duy trì <unbreak>#4[i]</unbreak> hiệp.",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ nhận 1 loại trong số các hiệu ứng sau:\\nCó xác suất nhất định tăng {{1}}% Phòng Thủ;\\nCó xác suất lớn tăng {{2}}% Phòng Thủ;\\nCó xác suất nhỏ tăng {{3}}% Phòng Thủ.\\nKhi sử dụng trùng sẽ giữ lại hiệu ứng có giá trị cao nhất.\\nKhi bắt đầu trận đấu tiếp theo, toàn bộ phe ta tăng Phòng Thủ với giá trị tương ứng, duy trì {{4}} hiệp.",
         "shortDesc": "Dùng Bí Kỹ, ngẫu nhiên nhận 1 trong 3 loại hiệu ứng tăng Phòng Thủ, sau khi vào trận đấu tiếp theo sẽ tăng Phòng Thủ của toàn bộ phe ta với giá trị tương ứng."
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
-        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch."
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
+        "shortDesc": ""
       }
     }
   }

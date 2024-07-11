@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Pari direct",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de la DÉF d'Aventurine à une cible ennemie unique.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de la DÉF d'Aventurine à une cible ennemie unique.",
         "shortDesc": "Inflige des DGT imaginaires mineurs à une cible ennemie unique."
       }
     },
     "skill": {
       "0": {
         "name": "Pierre angulaire de la prospérité",
-        "fullDesc": "Accorde à tous les alliés un bouclier de Mise renforcée qui peut bloquer des DGT équivalents à <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> de la DÉF d'Aventurine + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>pendant <unbreak>#3[i]</unbreak> tours. Lorsque l'effet Mise renforcée est obtenu à plusieurs reprises, la valeur de bouclier peut se cumuler jusqu'à <unbreak>#4[i]%</unbreak> du bouclier fourni par la compétence actuelle.",
+        "fullDesc": "Accorde à tous les alliés un bouclier de Mise renforcée qui peut bloquer des DGT équivalents à <orangeStrong>{{1}}%</orangeStrong> de la DÉF d'Aventurine + <orangeStrong>{{2}}</orangeStrong>pendant {{3}} tours. Lorsque l'effet Mise renforcée est obtenu à plusieurs reprises, la valeur de bouclier peut se cumuler jusqu'à {{4}}% du bouclier fourni par la compétence actuelle.",
         "shortDesc": "Accorde à tous les alliés un bouclier de Mise renforcée <color=#f29e38ff>dont la valeur de bouclier est cumulable</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Roi de la roulette",
-        "fullDesc": "Récupère entre 1 et <unbreak>#1[i]</unbreak> Paris aveugles de manière aléatoire et applique Sur les nerfs à une cible ennemie unique. Dure <unbreak>#4[i]</unbreak> tours. Inflige des DGT imaginaires équivalents à <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de la DÉF d'Aventurine à la cible ennemie. Lorsqu'un allié touche une cible ennemie qui subit Sur les nerfs, les DGT critiques qu'il inflige augmentent de <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>.",
+        "fullDesc": "Récupère entre 1 et {{1}} Paris aveugles de manière aléatoire et applique Sur les nerfs à une cible ennemie unique. Dure {{4}} tours. Inflige des DGT imaginaires équivalents à <orangeStrong>{{2}}%</orangeStrong> de la DÉF d'Aventurine à la cible ennemie. Lorsqu'un allié touche une cible ennemie qui subit Sur les nerfs, les DGT critiques qu'il inflige augmentent de <orangeStrong>{{3}}%</orangeStrong>.",
         "shortDesc": "Récupère un nombre aléatoire de Paris aveugles et applique Sur les nerfs à un ennemi unique, tout en infligeant des DGT imaginaires. Lorsqu'un allié touche un ennemi qui subit Sur les nerfs, les <color=#f29e38ff>DGT critiques qu'il inflige augmentent</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Rouge ou noir",
-        "fullDesc": "L'utilisation de la technique accorde 1 des effets suivants :\\nIl y a une chance que la DÉF augmente de <unbreak>#1[i]%</unbreak>.\\nIl y a de fortes chances que la DÉF augmente de <unbreak>#2[i]%</unbreak>.\\nIl y a une faible chance que la DÉF augmente de <unbreak>#3[i]%</unbreak>.\\n\\nEn cas d'utilisation répétée de la technique, c'est l'effet obtenu avec la valeur la plus élevée qui est conservé.\\nLa DÉF de tous les alliés augmente de la valeur correspondante pendant <unbreak>#4[i]</unbreak> tours lors du prochain combat.",
+        "fullDesc": "L'utilisation de la technique accorde 1 des effets suivants :\\nIl y a une chance que la DÉF augmente de {{1}}%.\\nIl y a de fortes chances que la DÉF augmente de {{2}}%.\\nIl y a une faible chance que la DÉF augmente de {{3}}%.\\n\\nEn cas d'utilisation répétée de la technique, c'est l'effet obtenu avec la valeur la plus élevée qui est conservé.\\nLa DÉF de tous les alliés augmente de la valeur correspondante pendant {{4}} tours lors du prochain combat.",
         "shortDesc": "L'utilisation de la technique accorde de manière aléatoire un des trois effets d'augmentation de DÉF avec différentes valeurs. La DÉF de tous les alliés augmente de la valeur correspondante après être entré en combat."
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
-        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
       }
     }
   }

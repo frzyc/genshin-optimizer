@@ -2,6 +2,6 @@
   "name": "Пусть мир не стихает",
   "passive": {
     "name": "Сила звука",
-    "description": "В начале боя восстанавливает владельцу <color=#f29e38ff><unbreak>#2[i]</unbreak></color> ед. энергии. Наносимый сверхспособностью владельца урон повышается на <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+    "description": "В начале боя восстанавливает владельцу <orangeStrong>{{2}}</orangeStrong> ед. энергии. Наносимый сверхспособностью владельца урон повышается на <orangeStrong>{{1}}%</orangeStrong>."
   }
 }

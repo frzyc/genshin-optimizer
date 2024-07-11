@@ -2,6 +2,6 @@
   "name": "おやすみなさいと{RUBY_B#ねがお}寝顔{RUBY_E#}",
   "passive": {
     "name": "{RUBY_B#ほんそうしゃ}奔走者{RUBY_E#}",
-    "description": "敵に付与されたデバフが1つにつき、その敵に対する装備キャラの与ダメージ+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>、最大で<unbreak>#2[i]</unbreak>層累積できる。この効果は持続ダメージにも有効。"
+    "description": "敵に付与されたデバフが1つにつき、その敵に対する装備キャラの与ダメージ+<orangeStrong>{{1}}%</orangeStrong>、最大で{{2}}層累積できる。この効果は持続ダメージにも有効。"
   }
 }

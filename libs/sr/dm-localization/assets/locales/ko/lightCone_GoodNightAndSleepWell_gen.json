@@ -2,6 +2,6 @@
   "name": "밤 인사와 잠든 얼굴",
   "passive": {
     "name": "고된 자",
-    "description": "적이 디버프 효과 1개를 보유할 때마다 장착한 캐릭터가 대상에게 가하는 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 최대 중첩수: <unbreak>#2[i]</unbreak>스택. 해당 효과는 지속 피해에도 적용된다"
+    "description": "적이 디버프 효과 1개를 보유할 때마다 장착한 캐릭터가 대상에게 가하는 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 최대 중첩수: {{2}}스택. 해당 효과는 지속 피해에도 적용된다"
   }
 }

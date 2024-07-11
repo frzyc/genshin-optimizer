@@ -2,6 +2,6 @@
   "name": "Vận Mệnh Chưa Từng Công Bằng",
   "passive": {
     "name": "Cược Hết Tất Cả",
-    "description": "Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Phòng Thủ của người trang bị, khi người trang bị cung cấp khiên cho phe ta, Sát Thương Bạo Kích của người trang bị sẽ tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, duy trì <unbreak>#3[i]</unbreak> hiệp. Khi người trang bị phát động Đòn Đánh Theo Sau tấn công kẻ địch, có <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> xác suất cơ bản khiến sát thương phải chịu của kẻ địch bị tấn công tăng <color=#f29e38ff><unbreak>#5[f1]%</unbreak></color>, duy trì <unbreak>#6[i]</unbreak> hiệp."
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Phòng Thủ của người trang bị, khi người trang bị cung cấp khiên cho phe ta, Sát Thương Bạo Kích của người trang bị sẽ tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp. Khi người trang bị phát động Đòn Đánh Theo Sau tấn công kẻ địch, có <orangeStrong>{{4}}%</orangeStrong> xác suất cơ bản khiến sát thương phải chịu của kẻ địch bị tấn công tăng <orangeStrong>{{5}}%</orangeStrong>, duy trì {{6}} hiệp."
   }
 }

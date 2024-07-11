@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Ice Crampon Technique",
-        "fullDesc": "สร้าง DMG ควอนตัม <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ HP สูงสุดของตัวเอง แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "fullDesc": "สร้าง DMG ควอนตัม <orangeStrong>{{1}}%</orangeStrong> ของ HP สูงสุดของตัวเอง แก่ศัตรูที่กำหนดหนึ่งตัว",
         "shortDesc": "สร้าง DMG ควอนตัมเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว"
       }
     },
     "skill": {
       "0": {
         "name": "Salted Camping Cans",
-        "fullDesc": "มอบ \"Survival Response\" และเพิ่ม HP สูงสุด <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> ของ HP สูงสุดของ Lynx +<color=#f29e38ff><unbreak>#2[i]</unbreak></color> แก่ฝ่ายเราที่กำหนดหนึ่งตัว หากเป้าหมายเป็นตัวละครใน Path \"ทำลายล้าง\" หรือ \"อนุรักษ์\" โอกาสที่จะถูกศัตรูโจมตีจะเพิ่มขึ้นอย่างมาก โดย \"Survival Response\" จะคงอยู่เป็นเวลา <unbreak>#3[i]</unbreak> เทิร์น\\nและฟื้นฟู HP ของเป้าหมายเท่ากับ <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> ของ HP สูงสุดของ Lynx +<color=#f29e38ff><unbreak>#5[i]</unbreak></color>",
+        "fullDesc": "มอบ \"Survival Response\" และเพิ่ม HP สูงสุด <orangeStrong>{{1}}%</orangeStrong> ของ HP สูงสุดของ Lynx +<orangeStrong>{{2}}</orangeStrong> แก่ฝ่ายเราที่กำหนดหนึ่งตัว หากเป้าหมายเป็นตัวละครใน Path \"ทำลายล้าง\" หรือ \"อนุรักษ์\" โอกาสที่จะถูกศัตรูโจมตีจะเพิ่มขึ้นอย่างมาก โดย \"Survival Response\" จะคงอยู่เป็นเวลา {{3}} เทิร์น\\nและฟื้นฟู HP ของเป้าหมายเท่ากับ <orangeStrong>{{4}}%</orangeStrong> ของ HP สูงสุดของ Lynx +<orangeStrong>{{5}}</orangeStrong>",
         "shortDesc": "ทำให้ฝ่ายเราหนึ่งตัวได้รับ \"Survival Response\" และ<color=#f29e38ff>เพิ่ม HP สูงสุด</color>ของเป้าหมายดังกล่าว พร้อมกับฟื้นฟู HP ให้กับเป้าหมายด้วย"
       }
     },
     "ult": {
       "0": {
         "name": "Snowfield First Aid",
-        "fullDesc": "ขจัด<u>เอฟเฟกต์ Debuff</u> <unbreak>#1[i]</unbreak> เอฟเฟกต์ของฝ่ายเราทั้งหมด และฟื้นฟู HP เท่ากับ <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> ของ HP สูงสุดของ Lynx +<color=#f29e38ff><unbreak>#3[i]</unbreak></color> ให้กับฝ่ายเราทั้งหมดทันที",
+        "fullDesc": "ขจัด<u>เอฟเฟกต์ Debuff</u> {{1}} เอฟเฟกต์ของฝ่ายเราทั้งหมด และฟื้นฟู HP เท่ากับ <orangeStrong>{{2}}%</orangeStrong> ของ HP สูงสุดของ Lynx +<orangeStrong>{{3}}</orangeStrong> ให้กับฝ่ายเราทั้งหมดทันที",
         "shortDesc": "ขจัด<color=#f29e38ff><u>เอฟเฟกต์ Debuff</u> ของฝ่ายเราทั้งหมดหนึ่งเอฟเฟกต์</color> และฟื้นฟู HP แก่ฝ่ายเราทุกตัว"
       }
     },
     "technique": {
       "0": {
         "name": "Chocolate Energy Bar",
-        "fullDesc": "หลังจากใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป จะมอบเอฟเฟกต์การรักษาต่อเนื่อง จากพรสวรรค์ของ Lynx แก่ฝ่ายเราทั้งหมด เป็นเวลา <unbreak>#1[i]</unbreak> เทิร์น",
+        "fullDesc": "หลังจากใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป จะมอบเอฟเฟกต์การรักษาต่อเนื่อง จากพรสวรรค์ของ Lynx แก่ฝ่ายเราทั้งหมด เป็นเวลา {{1}} เทิร์น",
         "shortDesc": "เมื่อใช้เทคนิค จะมอบเอฟเฟกต์การรักษาต่อเนื่อง ให้กับฝ่ายเราทั้งหมด เมื่อเข้าสู่การต่อสู้ครั้งถัดไป"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย"
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
+        "shortDesc": ""
       }
     }
   }

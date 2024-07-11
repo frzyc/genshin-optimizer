@@ -2,6 +2,6 @@
   "name": "Más brillante que el sol",
   "passive": {
     "name": "Desafiante hasta la muerte",
-    "description": "La Prob. CRIT del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Cuando el portador usa el ATQ básico, obtiene 1 acumulación de Canto del dragón durante <unbreak>#2[i]</unbreak> turnos. Cada acumulación de Canto del dragón aumenta el ATQ del portador en un <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> y la recuperación de energía en un <color=#f29e38ff><unbreak>#5[f1]%</unbreak></color>. Canto del dragón se puede acumular hasta <unbreak>#3[i]</unbreak> veces."
+    "description": "La Prob. CRIT del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando el portador usa el ATQ básico, obtiene 1 acumulación de Canto del dragón durante {{2}} turnos. Cada acumulación de Canto del dragón aumenta el ATQ del portador en un <orangeStrong>{{4}}%</orangeStrong> y la recuperación de energía en un <orangeStrong>{{5}}%</orangeStrong>. Canto del dragón se puede acumular hasta {{3}} veces."
   }
 }

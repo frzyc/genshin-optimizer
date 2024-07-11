@@ -2,6 +2,6 @@
   "name": "Fruto excelente",
   "passive": {
     "name": "Degustación",
-    "description": "Al comenzar la batalla, todos los aliados recuperan inmediatamente <color=#f29e38ff><unbreak>#1[i]</unbreak></color> pts. de energía."
+    "description": "Al comenzar la batalla, todos los aliados recuperan inmediatamente <orangeStrong>{{1}}</orangeStrong> pts. de energía."
   }
 }

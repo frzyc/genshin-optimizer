@@ -2,6 +2,6 @@
   "name": "灵钥",
   "passive": {
     "name": "顿悟",
-    "description": "使装备者施放战技后额外恢复<color=#f29e38ff><unbreak>#1[i]</unbreak></color>点能量，该效果单个回合内不可重复触发。"
+    "description": "使装备者施放战技后额外恢复<orangeStrong>{{1}}</orangeStrong>点能量，该效果单个回合内不可重复触发。"
   }
 }

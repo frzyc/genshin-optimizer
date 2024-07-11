@@ -2,6 +2,6 @@
   "name": "点个关注吧！",
   "passive": {
     "name": "不赞不许走！",
-    "description": "使装备者普攻和战技造成的伤害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，当装备者的当前能量值等于其能量上限时，该效果额外提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>。"
+    "description": "使装备者普攻和战技造成的伤害提高<orangeStrong>{{1}}%</orangeStrong>，当装备者的当前能量值等于其能量上限时，该效果额外提高<orangeStrong>{{2}}%</orangeStrong>。"
   }
 }

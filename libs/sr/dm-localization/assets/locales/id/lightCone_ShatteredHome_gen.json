@@ -2,6 +2,6 @@
   "name": "Shattered Home",
   "passive": {
     "name": "Eradication",
-    "description": "Meningkatkan <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> DMG pengguna pada target musuh dengan HP lebih dari <unbreak>#1[i]%</unbreak>."
+    "description": "Meningkatkan <orangeStrong>{{2}}%</orangeStrong> DMG pengguna pada target musuh dengan HP lebih dari {{1}}%."
   }
 }

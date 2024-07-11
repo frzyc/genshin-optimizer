@@ -1,7 +1,7 @@
 {
   "setName": "Lãng Khách Âm Thầm",
   "setEffects": {
-    "2": "Tăng Lượng Trị Liệu <unbreak>#1[i]%</unbreak>.",
+    "2": "Tăng Lượng Trị Liệu {{1}}%.",
     "4": "Khi bắt đầu chiến đấu sẽ hồi ngay cho phe ta 1 điểm Chiến Kỹ."
   }
 }

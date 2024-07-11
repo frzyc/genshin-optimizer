@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Je veux aider",
-        "fullDesc": "Inflige des DGT physiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Clara à un ennemi unique.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Clara à un ennemi unique.",
         "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Svarog veille sur toi",
-        "fullDesc": "Inflige des DGT physiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Clara à tous les ennemis et des DGT physiques supplémentaires équivalents à <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de l'ATQ de Clara aux ennemis marqués par Svarog d'une Marque de contre.\\nToutes les Marques de contre sont supprimées après utilisation de cette compétence.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Clara à tous les ennemis et des DGT physiques supplémentaires équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Clara aux ennemis marqués par Svarog d'une Marque de contre.\\nToutes les Marques de contre sont supprimées après utilisation de cette compétence.",
         "shortDesc": "Inflige des DGT physiques à tous les ennemis et des <color=#f29e38ff>DGT physiques supplémentaires</color> aux cibles qui portent une Marque de contre."
       }
     },
     "ult": {
       "0": {
         "name": "C'est une promesse, pas un ordre",
-        "fullDesc": "Après utilisation de l'ultime de Clara, les DGT qu'elle subit sont réduits de <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> supplémentaires et ses chances d'être attaquée par les ennemis sont considérablement augmentées pendant <unbreak>#3[i]</unbreak> tours.\\nD'autre part, le <u>contre</u> de Svarog est renforcé. Lorsqu'un allié est attaqué, Svarog lance immédiatement un <u>contre</u> et son multiplicateur de DGT contre l'ennemi augmente de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Les ennemis adjacents subissent <unbreak>50</unbreak> % des DGT infligés à la cible ennemie. Le <u>contre</u> renforcé peut prendre effet <unbreak>#5[i]</unbreak> fois.",
+        "fullDesc": "Après utilisation de l'ultime de Clara, les DGT qu'elle subit sont réduits de <orangeStrong>{{4}}%</orangeStrong> supplémentaires et ses chances d'être attaquée par les ennemis sont considérablement augmentées pendant {{3}} tours.\\nD'autre part, le <u>contre</u> de Svarog est renforcé. Lorsqu'un allié est attaqué, Svarog lance immédiatement un <u>contre</u> et son multiplicateur de DGT contre l'ennemi augmente de <orangeStrong>{{2}}%</orangeStrong>. Les ennemis adjacents subissent <unbreak>50</unbreak> % des DGT infligés à la cible ennemie. Le <u>contre</u> renforcé peut prendre effet {{5}} fois.",
         "shortDesc": "<color=#f29e38ff>Réduit les DGT subis</color>, augmente les chances d'être attaqué par les ennemis et renforce les <u>contres</u>."
       }
     },
     "technique": {
       "0": {
         "name": "Le prix de la victoire",
-        "fullDesc": "Engage immédiatement le combat contre les ennemis. Les chances de Clara de se faire attaquer par des ennemis augmentent pendant <unbreak>#1[i]</unbreak> tours en entrant en combat.",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Les chances de Clara de se faire attaquer par des ennemis augmentent pendant {{1}} tours en entrant en combat.",
         "shortDesc": "Engage le combat contre les ennemis. Les chances de ce personnage d'être attaqué par les ennemis augmentent après être entré en combat."
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
-        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
       }
     }
   }

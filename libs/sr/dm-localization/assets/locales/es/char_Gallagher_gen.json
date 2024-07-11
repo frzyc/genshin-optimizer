@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "Tarifa de descorche",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Gallagher como Daño de Fuego a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
       },
       "1": {
         "name": "Espuma desbordante",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Gallagher como Daño de Fuego a un enemigo y reduce su ATQ en un <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> durante <unbreak>#3[i]</unbreak> turnos.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a un enemigo y reduce su ATQ en un <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turnos.",
         "shortDesc": "Inflige Daño de Fuego a un enemigo y reduce su ATQ."
       }
     },
     "skill": {
       "0": {
         "name": "Mezcla especial",
-        "fullDesc": "Regenera inmediatamente un <color=#f29e38ff><unbreak>#1[i]</unbreak></color> de los PV de un aliado.",
+        "fullDesc": "Regenera inmediatamente un <orangeStrong>{{1}}</orangeStrong> de los PV de un aliado.",
         "shortDesc": "Regenera inmediatamente los PV de un aliado."
       }
     },
     "ult": {
       "0": {
         "name": "Hora del champán",
-        "fullDesc": "Afecta con Melopea a todos los enemigos durante <unbreak>#2[i]</unbreak> turnos. Al mismo tiempo, inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Gallagher como Daño de Fuego a todos los enemigos, y su siguiente ATQ básico se potencia y se convierte en Espuma desbordante.",
+        "fullDesc": "Afecta con Melopea a todos los enemigos durante {{2}} turnos. Al mismo tiempo, inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a todos los enemigos, y su siguiente ATQ básico se potencia y se convierte en Espuma desbordante.",
         "shortDesc": "<color=#f29e38ff>Afecta con Melopea</color> a todos los enemigos y al mismo tiempo les inflige Daño de Fuego. El siguiente ATQ básico se potencia y se convierte en Espuma desbordante."
       }
     },
     "technique": {
       "0": {
         "name": "Cosecha propia",
-        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Afecta con Melopea a todos los enemigos durante <unbreak>#1[i]</unbreak> turnos y les inflige un <unbreak>#2[i]%</unbreak> del ATQ de Gallagher como Daño de Fuego.",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Afecta con Melopea a todos los enemigos durante {{1}} turnos y les inflige un {{2}}% del ATQ de Gallagher como Daño de Fuego.",
         "shortDesc": "Ataca al enemigo y entra en combate. <color=#f29e38ff>Afecta con Melopea</color> a todos los enemigos y les inflige una pequeña cantidad de Daño de Fuego."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
       }
     }
   }

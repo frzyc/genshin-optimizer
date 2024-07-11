@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Flecha Glacial",
-        "fullDesc": "Causa Dano de Gelo equivalente a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de 7 de Março a um único inimigo.",
+        "fullDesc": "Causa Dano de Gelo equivalente a <orangeStrong>{{1}}%</orangeStrong> do ATQ de 7 de Março a um único inimigo.",
         "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "O Poder da Fofura",
-        "fullDesc": "Concede a um único aliado um Escudo que pode absorver Dano igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> da DEF de 7 de Março + <color=#f29e38ff><unbreak>#4[i]</unbreak></color> por <unbreak>#2[i]</unbreak> rodada(s).\\nSe esse aliado tiver <unbreak>#3[i]%</unbreak> ou mais de PV, aumenta significativamente a chance de inimigos atacarem esse aliado.",
+        "fullDesc": "Concede a um único aliado um Escudo que pode absorver Dano igual a <orangeStrong>{{1}}%</orangeStrong> da DEF de 7 de Março + <orangeStrong>{{4}}</orangeStrong> por {{2}} rodada(s).\\nSe esse aliado tiver {{3}}% ou mais de PV, aumenta significativamente a chance de inimigos atacarem esse aliado.",
         "shortDesc": "<color=#f29e38ff>Aplica um Escudo</color> em um único aliado."
       }
     },
     "ult": {
       "0": {
         "name": "Cascata Glacial",
-        "fullDesc": "Causa Dano de Gelo igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de 7 de Março a todos os inimigos. Ao serem atingidos, os inimigos têm <unbreak>#2[i]%</unbreak> de <u>chance-base</u> de sofrer Congelamento por <unbreak>#3[i]</unbreak> rodada(s).\\nDurante o Congelamento, os inimigos não podem agir e recebem <u>Dano de Gelo Adicional</u> igual a <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> do ATQ de 7 de Março no início de cada rodada.",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de 7 de Março a todos os inimigos. Ao serem atingidos, os inimigos têm {{2}}% de <u>chance-base</u> de sofrer Congelamento por {{3}} rodada(s).\\nDurante o Congelamento, os inimigos não podem agir e recebem <u>Dano de Gelo Adicional</u> igual a <orangeStrong>{{4}}%</orangeStrong> do ATQ de 7 de Março no início de cada rodada.",
         "shortDesc": "Causa Dano de Gelo a <color=#f29e38ff>todos os inimigos</color>, com <color=#f29e38ff>uma chance de aplicar o efeito de Congelamento</color>"
       }
     },
     "technique": {
       "0": {
         "name": "Beleza Glacial",
-        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, tem <unbreak>#1[i]%</unbreak> de <u>chance-base</u> de causar Congelamento a um inimigo aleatório por <unbreak>#2[i]</unbreak> rodada(s).\\nDurante o Congelamento, o inimigo não pode agir e recebe <unbreak>#3[i]%</unbreak> do ATQ de 7 de Março como Dano de Gelo <u>Adicional</u> no início de cada rodada.",
+        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, tem {{1}}% de <u>chance-base</u> de causar Congelamento a um inimigo aleatório por {{2}} rodada(s).\\nDurante o Congelamento, o inimigo não pode agir e recebe {{3}}% do ATQ de 7 de Março como Dano de Gelo <u>Adicional</u> no início de cada rodada.",
         "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, existe uma alta chance de infligir Congelamento em um inimigo aleatório."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

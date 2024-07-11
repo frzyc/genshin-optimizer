@@ -2,6 +2,6 @@
   "name": "고독의 치유",
   "passive": {
     "name": "혼돈 영약",
-    "description": "장착한 캐릭터의 격파 특수효과가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 장착한 캐릭터가 필살기 발동 시 장착한 캐릭터가 가하는 지속 피해가 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다. 지속 시간: <unbreak>#3[i]</unbreak>턴. 장착한 캐릭터가 부여한 지속 피해 효과에 빠진 적이 처치되면 장착한 캐릭터는 에너지를 <color=#f29e38ff><unbreak>#4[f1]</unbreak></color>pt 회복한다"
+    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 필살기 발동 시 장착한 캐릭터가 가하는 지속 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가한다. 지속 시간: {{3}}턴. 장착한 캐릭터가 부여한 지속 피해 효과에 빠진 적이 처치되면 장착한 캐릭터는 에너지를 <orangeStrong>{{4}}</orangeStrong>pt 회복한다"
   }
 }

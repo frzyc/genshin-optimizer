@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Thwack",
-        "fullDesc": "Deals Quantum DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Seele's ATK to a single enemy.",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Seele's ATK to a single enemy.",
         "shortDesc": "Deals minor Quantum DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Sheathed Blade",
-        "fullDesc": "Increases Seele's SPD by <unbreak>#2[i]%</unbreak> for <unbreak>#3[i]</unbreak> turn(s) and deals Quantum DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of Seele's ATK to a single enemy.",
+        "fullDesc": "Increases Seele's SPD by {{2}}% for {{3}} turn(s) and deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Seele's ATK to a single enemy.",
         "shortDesc": "Deals Quantum DMG to a single enemy and increases SPD."
       }
     },
     "ult": {
       "0": {
         "name": "Butterfly Flurry",
-        "fullDesc": "Seele enters the buffed state and deals Quantum DMG equal to <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> of her ATK to a single enemy.",
+        "fullDesc": "Seele enters the buffed state and deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of her ATK to a single enemy.",
         "shortDesc": "Enters the <color=#f29e38ff>buffed state</color> and deals massive Quantum DMG to a single enemy."
       }
     },
     "technique": {
       "0": {
         "name": "Phantom Illusion",
-        "fullDesc": "After using her Technique, Seele gains Stealth for <unbreak>#1[i]</unbreak> second(s). While Stealth is active, Seele cannot be detected by enemies. And when entering battle by attacking enemies, Seele will immediately enter the buffed state.",
+        "fullDesc": "After using her Technique, Seele gains Stealth for {{1}} second(s). While Stealth is active, Seele cannot be detected by enemies. And when entering battle by attacking enemies, Seele will immediately enter the buffed state.",
         "shortDesc": "Enter <color=#f29e38ff>Stealth</color> mode. After attacking an enemy and entering battle, enter the <color=#f29e38ff>buffed state</color>."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type."
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
       }
     }
   }

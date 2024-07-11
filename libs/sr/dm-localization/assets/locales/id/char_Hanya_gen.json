@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Oracle Brush",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Hanya pada 1 musuh yang ditarget.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Hanya pada 1 musuh yang ditarget.",
         "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Samsara, Locked",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Hanya pada 1 musuh yang ditarget, serta membuat target tersebut memasuki status \"Burden\".\\nSaat setelah rekan tim melancarkan 2 kali serangan (Basic ATK, Skill, atau Ultimate) pada target musuh yang berstatus \"Burden\", akan segera memulihkan 1 Poin Skill untuk rekan tim. \"Burden\" cuma akan efektif pada target terbaru yang memperolehnya, serta akan dihapus secara otomatis setelah memicu <unbreak>#2[i]</unbreak> kali efek pemulihan Poin Skill.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Hanya pada 1 musuh yang ditarget, serta membuat target tersebut memasuki status \"Burden\".\\nSaat setelah rekan tim melancarkan 2 kali serangan (Basic ATK, Skill, atau Ultimate) pada target musuh yang berstatus \"Burden\", akan segera memulihkan 1 Poin Skill untuk rekan tim. \"Burden\" cuma akan efektif pada target terbaru yang memperolehnya, serta akan dihapus secara otomatis setelah memicu {{2}} kali efek pemulihan Poin Skill.",
         "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh, serta membuat target tersebut memasuki status \"Burden\". Saat setelah rekan tim melancarkan 2 kali serangan (Basic ATK, Skill, atau Ultimate) pada target musuh yang berstatus \"Burden\", akan segera memulihkan <color=#f29e38ff>1 Poin Skill</color> untuk rekan tim."
       }
     },
     "ult": {
       "0": {
         "name": "Ten-Lords' Decree, All Shall Obey",
-        "fullDesc": "Meningkatkan SPD 1 rekan tim yang ditarget sebesar <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> SPD Hanya dan meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK target selama <unbreak>#2[i]</unbreak> giliran.",
+        "fullDesc": "Meningkatkan SPD 1 rekan tim yang ditarget sebesar <orangeStrong>{{3}}%</orangeStrong> SPD Hanya dan meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK target selama {{2}} giliran.",
         "shortDesc": "<color=#f29e38ff>Meningkatkan SPD dan ATK</color> 1 rekan tim."
       }
     },
@@ -32,7 +32,8 @@
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
       }
     }
   }

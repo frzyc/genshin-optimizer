@@ -1,6 +1,6 @@
 {
   "setName": "Izumo-Gensei und Takama-Himmelreich",
   "setEffects": {
-    "2": "Erhöht den ANG des Trägers um <unbreak>#1[i]%</unbreak>. Wenn beim Kampfeintritt mindestens ein Verbündeter dem gleichen Pfad wie der Träger folgt, wird die KRIT-Rate des Trägers um <unbreak>#2[i]%</unbreak> erhöht."
+    "2": "Erhöht den ANG des Trägers um {{1}}%. Wenn beim Kampfeintritt mindestens ein Verbündeter dem gleichen Pfad wie der Träger folgt, wird die KRIT-Rate des Trägers um {{2}}% erhöht."
   }
 }

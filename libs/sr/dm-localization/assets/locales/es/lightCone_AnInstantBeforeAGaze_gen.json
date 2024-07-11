@@ -2,6 +2,6 @@
   "name": "Instante grabado a fuego",
   "passive": {
     "name": "Peregrinación del caballero",
-    "description": "El Daño CRIT del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Cuando el portador usa la habilidad definitiva, el daño que inflige su habilidad definitiva aumenta según su energía máxima: por cada punto de energía, el daño aumenta en un <color=#f29e38ff><unbreak>#2[f2]%</unbreak></color>. Se cuentan un máximo de <unbreak>#3[i]</unbreak> pts. de energía."
+    "description": "El Daño CRIT del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando el portador usa la habilidad definitiva, el daño que inflige su habilidad definitiva aumenta según su energía máxima: por cada punto de energía, el daño aumenta en un <orangeStrong>{{2}}%</orangeStrong>. Se cuentan un máximo de {{3}} pts. de energía."
   }
 }

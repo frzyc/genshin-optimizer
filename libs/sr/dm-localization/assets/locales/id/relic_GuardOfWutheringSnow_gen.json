@@ -1,7 +1,7 @@
 {
   "setName": "Guard of Wuthering Snow",
   "setEffects": {
-    "2": "DMG yang diterima -<unbreak>#1[i]%</unbreak>",
-    "4": "Saat giliran dimulai, jika HP pengguna saat ini kurang dari atau sama dengan <unbreak>#1[i]%</unbreak>, maka HP pengguna akan dipulihkan sebesar <unbreak>#2[i]%</unbreak> Max HP-nya dan memulihkan <unbreak>#3[i]</unbreak> Energy."
+    "2": "DMG yang diterima -{{1}}%",
+    "4": "Saat giliran dimulai, jika HP pengguna saat ini kurang dari atau sama dengan {{1}}%, maka HP pengguna akan dipulihkan sebesar {{2}}% Max HP-nya dan memulihkan {{3}} Energy."
   }
 }

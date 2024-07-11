@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Pinceau divin",
-        "fullDesc": "Inflige des DGT physiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Hanya à un ennemi unique.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Hanya à un ennemi unique.",
         "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Emprisonnement d'âme",
-        "fullDesc": "Inflige des DGT physiques équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Hanya à un ennemi unique et lui applique Fardeau.\\nLes alliés récupèrent 1 point de compétence chaque fois qu'ils utilisent deux ATQ normales, compétences ou ultimes sur un ennemi affecté par Fardeau. Fardeau n'est actif que sur la dernière cible et se dissipe dès que l'effet de récupération de point de compétence est déclenché <unbreak>#2[i]</unbreak> fois.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Hanya à un ennemi unique et lui applique Fardeau.\\nLes alliés récupèrent 1 point de compétence chaque fois qu'ils utilisent deux ATQ normales, compétences ou ultimes sur un ennemi affecté par Fardeau. Fardeau n'est actif que sur la dernière cible et se dissipe dès que l'effet de récupération de point de compétence est déclenché {{2}} fois.",
         "shortDesc": "Inflige des DGT physiques à un ennemi unique et lui applique Fardeau. Les alliés <color=#f29e38ff>récupèrent 1 point de compétence</color> chaque fois qu'ils utilisent deux ATQ normales, compétences ou ultimes sur un ennemi affecté par Fardeau."
       }
     },
     "ult": {
       "0": {
         "name": "Sentence universelle",
-        "fullDesc": "Augmente la VIT d'une cible alliée à hauteur de <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> de la VIT de Hanya et son ATQ de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, pour une durée de <unbreak>#2[i]</unbreak> tours.",
+        "fullDesc": "Augmente la VIT d'une cible alliée à hauteur de <orangeStrong>{{3}}%</orangeStrong> de la VIT de Hanya et son ATQ de <orangeStrong>{{1}}%</orangeStrong>, pour une durée de {{2}} tours.",
         "shortDesc": "Augmente <color=#f29e38ff>la VIT et l'ATQ</color> d'un allié."
       }
     },
@@ -32,7 +32,8 @@
     "overworld": {
       "0": {
         "name": "Attaque",
-        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
       }
     }
   }

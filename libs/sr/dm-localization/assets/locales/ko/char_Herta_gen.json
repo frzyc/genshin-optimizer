@@ -4,34 +4,36 @@
     "basic": {
       "0": {
         "name": "보긴 뭘 봐",
-        "fullDesc": "지정된 단일 적에게 헤르타 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 얼음 속성 피해를 가한다",
+        "fullDesc": "지정된 단일 적에게 헤르타 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 얼음 속성 피해를 가한다",
         "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "일회성 거래",
-        "fullDesc": "모든 적에게 헤르타 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 얼음 속성 피해를 준다. 해당 적의 현재 HP 백분율이 <unbreak>#2[i]%</unbreak> 이상이면 해당 적에게 가하는 피해가 <unbreak>#3[i]%</unbreak> 증가한다",
+        "fullDesc": "모든 적에게 헤르타 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 얼음 속성 피해를 준다. 해당 적의 현재 HP 백분율이 {{2}}% 이상이면 해당 적에게 가하는 피해가 {{3}}% 증가한다",
         "shortDesc": "모든 적에게 소량의 얼음 속성 피해를 가하고, HP가 비교적 높은 적에게 가하는 피해가 증가한다"
       }
     },
     "ult": {
       "0": {
         "name": "마법이야, <unbreak>내가 마법을 추가했어</unbreak>",
-        "fullDesc": "모든 적에게 헤르타 공격력 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>만큼의 얼음 속성 피해를 가한다",
+        "fullDesc": "모든 적에게 헤르타 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 얼음 속성 피해를 가한다",
         "shortDesc": "모든 적에게 얼음 속성 피해를 가한다"
       }
     },
     "technique": {
       "0": {
         "name": "최적화가 필요해",
-        "fullDesc": "비술 발동 후 다음 전투 시작 시 헤르타의 공격력이 <unbreak>#1[i]%</unbreak> 증가한다. 지속 시간: <unbreak>#2[i]</unbreak>턴"
+        "fullDesc": "비술 발동 후 다음 전투 시작 시 헤르타의 공격력이 {{1}}% 증가한다. 지속 시간: {{2}}턴",
+        "shortDesc": ""
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다"
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "shortDesc": ""
       }
     }
   }

@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Ritter-Speertechnik: Nordwind",
-        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Dan Hengs ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dan Hengs ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Ritter-Speertechnik: Sturzflut",
-        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Dan Hengs ANG zu.\\nVerringert die GES des Ziels mit einer <u>Grundchance</u> von <unbreak>#4[i]%</unbreak> für <unbreak>#3[i]</unbreak> Rd. um <unbreak>#2[i]%</unbreak>, wenn ein kritischer Treffer ausgelöst wird.",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dan Hengs ANG zu.\\nVerringert die GES des Ziels mit einer <u>Grundchance</u> von {{4}}% für {{3}} Rd. um {{2}}%, wenn ein kritischer Treffer ausgelöst wird.",
         "shortDesc": "Fügt einem Gegner Wind-SCH zu. Nach einem KRIT wird das Ziel mit hoher Wahrscheinlichkeit verlangsamt."
       }
     },
     "ult": {
       "0": {
         "name": "Ätherischer Traum",
-        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Dan Hengs ANG zu. Erhöht den durch Ultimate verursachten SCH-Multiplikator um <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, wenn der Gegner verlangsamt ist.",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dan Hengs ANG zu. Erhöht den durch Ultimate verursachten SCH-Multiplikator um <orangeStrong>{{2}}%</orangeStrong>, wenn der Gegner verlangsamt ist.",
         "shortDesc": "Fügt einem Gegner massiven Wind-SCH zu. Wenn der Gegner verlangsamt wird, steigt der verursachte SCH."
       }
     },
     "technique": {
       "0": {
         "name": "Spaltende Speerspitze",
-        "fullDesc": "Erhöht nach dem Einsatz der Technik Dan Hengs ANG im nächsten Kampf um <unbreak>#1[i]%</unbreak> für <unbreak>#2[i]</unbreak> Rd.",
+        "fullDesc": "Erhöht nach dem Einsatz der Technik Dan Hengs ANG im nächsten Kampf um {{1}}% für {{2}} Rd.",
         "shortDesc": "Nach dem Einsatz der Technik wird der ANG zu Beginn des nächsten Kampfs erhöht."
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
-        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
       }
     }
   }

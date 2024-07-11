@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Tras la amabilidad",
-        "fullDesc": "Inflige un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> del ATQ de Natasha como Daño Físico a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Natasha como Daño Físico a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Amor, curación y decisiones",
-        "fullDesc": "Cura inmediatamente a un aliado con una cantidad de PV equivalente al <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> de los PV máx. de Natasha + <color=#f29e38ff><unbreak>#4[i]</unbreak></color>. Al comienzo de los siguientes <unbreak>#3[i]</unbreak> turnos, ese mismo aliado regenera una cantidad de PV equivalente al <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> de los PV máx. de Natasha + <color=#f29e38ff><unbreak>#5[i]</unbreak></color>.",
+        "fullDesc": "Cura inmediatamente a un aliado con una cantidad de PV equivalente al <orangeStrong>{{1}}%</orangeStrong> de los PV máx. de Natasha + <orangeStrong>{{4}}</orangeStrong>. Al comienzo de los siguientes {{3}} turnos, ese mismo aliado regenera una cantidad de PV equivalente al <orangeStrong>{{2}}%</orangeStrong> de los PV máx. de Natasha + <orangeStrong>{{5}}</orangeStrong>.",
         "shortDesc": "<color=#f29e38ff>Regenera PV</color> a un aliado y lo <color=#f29e38ff>sana continuamente</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Don del renacimiento",
-        "fullDesc": "Cura inmediatamente a todos los aliados con una cantidad de PV equivalente al <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> de los PV máx. de Natasha + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>.",
+        "fullDesc": "Cura inmediatamente a todos los aliados con una cantidad de PV equivalente al <orangeStrong>{{1}}%</orangeStrong> de los PV máx. de Natasha + <orangeStrong>{{2}}</orangeStrong>.",
         "shortDesc": "<color=#f29e38ff>Regenera los PV</color> de todos los aliados."
       }
     },
     "technique": {
       "0": {
         "name": "Investigación sobre hipnosis",
-        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un <unbreak>#4[i]%</unbreak> del ATQ de Natasha como Daño Físico a un enemigo al azar. Además, cada enemigo tiene una <u>probabilidad base</u> del <unbreak>#1[i]%</unbreak> de ser afectado por Debilitación.\\nEl daño que infligen los enemigos debilitados se reduce en un <unbreak>#2[i]%</unbreak> durante <unbreak>#3[i]</unbreak> turno.",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{4}}% del ATQ de Natasha como Daño Físico a un enemigo al azar. Además, cada enemigo tiene una <u>probabilidad base</u> del {{1}}% de ser afectado por Debilitación.\\nEl daño que infligen los enemigos debilitados se reduce en un {{2}}% durante {{3}} turno.",
         "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Físico a un enemigo al azar. Además, cada enemigo tiene una gran probabilidad de ser afectado por Debilitación."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo."
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
       }
     }
   }

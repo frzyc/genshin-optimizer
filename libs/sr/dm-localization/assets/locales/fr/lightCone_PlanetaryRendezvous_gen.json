@@ -2,6 +2,6 @@
   "name": "Rendez-vous avec les planètes",
   "passive": {
     "name": "Grand départ",
-    "description": "Si un allié inflige le même type de DGT que le porteur lorsqu'il entre en combat, les DGT infligés augmentent de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+    "description": "Si un allié inflige le même type de DGT que le porteur lorsqu'il entre en combat, les DGT infligés augmentent de <orangeStrong>{{1}}%</orangeStrong>."
   }
 }

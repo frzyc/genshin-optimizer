@@ -2,6 +2,6 @@
   "name": "Flechas",
   "passive": {
     "name": "Crisis",
-    "description": "Al comenzar la batalla, la Prob. CRIT del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> durante <unbreak>#2[i]</unbreak> turnos."
+    "description": "Al comenzar la batalla, la Prob. CRIT del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong> durante {{2}} turnos."
   }
 }

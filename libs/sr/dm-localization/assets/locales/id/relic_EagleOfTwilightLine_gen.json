@@ -1,7 +1,7 @@
 {
   "setName": "Eagle of Twilight Line",
   "setEffects": {
-    "2": "Wind DMG +<unbreak>#1[i]%</unbreak>.",
-    "4": "Setelah pengguna melancarkan Ultimate, aksinya akan didahulukan <unbreak>#1[i]%</unbreak>."
+    "2": "Wind DMG +{{1}}%.",
+    "4": "Setelah pengguna melancarkan Ultimate, aksinya akan didahulukan {{1}}%."
   }
 }

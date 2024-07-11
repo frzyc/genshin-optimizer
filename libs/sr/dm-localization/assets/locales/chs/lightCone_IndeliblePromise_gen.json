@@ -2,6 +2,6 @@
   "name": "铭记于心的约定",
   "passive": {
     "name": "传承",
-    "description": "使装备者的击破特攻提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。当装备者释放终结技时，暴击率提高<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>，持续<unbreak>#3[i]</unbreak>回合。"
+    "description": "使装备者的击破特攻提高<orangeStrong>{{1}}%</orangeStrong>。当装备者释放终结技时，暴击率提高<orangeStrong>{{2}}%</orangeStrong>，持续{{3}}回合。"
   }
 }

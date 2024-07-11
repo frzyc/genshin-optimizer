@@ -2,6 +2,6 @@
   "name": "Réalité et faux-semblants",
   "passive": {
     "name": "Hypothèse",
-    "description": "Augmente de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> l'effet de Rupture du porteur. Les ATQ normales du porteur lui rendent un montant de PV équivalent à <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> de ses PV max + <unbreak>#3[i]</unbreak>."
+    "description": "Augmente de <orangeStrong>{{1}}%</orangeStrong> l'effet de Rupture du porteur. Les ATQ normales du porteur lui rendent un montant de PV équivalent à <orangeStrong>{{2}}%</orangeStrong> de ses PV max + {{3}}."
   }
 }

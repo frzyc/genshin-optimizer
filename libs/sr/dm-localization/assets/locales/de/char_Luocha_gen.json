@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Dornen des Abgrunds",
-        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Luochas ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Luochas ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Gebet der Abgrundblume",
-        "fullDesc": "Nach dem Einsatz der Fertigkeit stellt er sofort die LP eines anvisierten Verbündeten um <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Luochas ANG plus <color=#f29e38ff><unbreak>#2[i]</unbreak></color> wieder her. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.\\nWenn der LP-Prozentsatz eines beliebigen Verbündeten bei <unbreak>#3[i]%</unbreak> oder niedriger liegt, wird ein Effekt, der Luochas Fertigkeit entspricht, sofort ausgelöst (ohne dabei Fertigkeitspunkte zu verbrauchen). Dieser Effekt kann nach <unbreak>#4[i]</unbreak> Rd. erneut ausgelöst werden.",
+        "fullDesc": "Nach dem Einsatz der Fertigkeit stellt er sofort die LP eines anvisierten Verbündeten um <orangeStrong>{{1}}%</orangeStrong> von Luochas ANG plus <orangeStrong>{{2}}</orangeStrong> wieder her. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.\\nWenn der LP-Prozentsatz eines beliebigen Verbündeten bei {{3}}% oder niedriger liegt, wird ein Effekt, der Luochas Fertigkeit entspricht, sofort ausgelöst (ohne dabei Fertigkeitspunkte zu verbrauchen). Dieser Effekt kann nach {{4}} Rd. erneut ausgelöst werden.",
         "shortDesc": "<color=#f29e38ff>Stellt</color> LP eines Verbündeten <color=#f29e38ff>wieder her</color> und erhält 1-fach „Abgrundblume“."
       }
     },
     "ult": {
       "0": {
         "name": "Todestrieb",
-        "fullDesc": "Entfernt <unbreak>#2[i]</unbreak> <u>Buff</u> von allen Gegnern und fügt ihnen imaginären SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Luochas ANG zu. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.",
+        "fullDesc": "Entfernt {{2}} <u>Buff</u> von allen Gegnern und fügt ihnen imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Luochas ANG zu. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.",
         "shortDesc": "<color=#f29e38ff>Entfernt</color> 1 <color=#f29e38ff><u>Buff</u></color> von allen Gegnern, fügt ihnen imaginären SCH zu und erhält 1 Stapelung „Abgrundblume“."
       }
     },
@@ -32,7 +32,8 @@
     "overworld": {
       "0": {
         "name": "Angriff",
-        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
       }
     }
   }

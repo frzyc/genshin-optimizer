@@ -1,6 +1,6 @@
 {
   "setName": "Glamoth, frente del firmamento",
   "setEffects": {
-    "2": "El ATQ del portador aumenta en un <unbreak>#1[i]%</unbreak>. Cuando su VEL es igual o superior a <unbreak>#2[i]</unbreak>/<unbreak>#3[i]</unbreak>, el daño que inflige aumenta en un <unbreak>#4[i]%</unbreak>/<unbreak>#5[i]%</unbreak>."
+    "2": "El ATQ del portador aumenta en un {{1}}%. Cuando su VEL es igual o superior a {{2}}/{{3}}, el daño que inflige aumenta en un {{4}}%/{{5}}%."
   }
 }

@@ -1,6 +1,6 @@
 {
   "setName": "Firmament Frontline: Glamoth",
   "setEffects": {
-    "2": "Meningkatkan <unbreak>#1[i]%</unbreak> ATK pengguna. Saat SPD pengguna lebih dari atau sama dengan <unbreak>#2[i]</unbreak>/<unbreak>#3[i]</unbreak>, DMG yang diakibatkan pengguna meningkat <unbreak>#4[i]%</unbreak>/<unbreak>#5[i]%</unbreak>."
+    "2": "Meningkatkan {{1}}% ATK pengguna. Saat SPD pengguna lebih dari atau sama dengan {{2}}/{{3}}, DMG yang diakibatkan pengguna meningkat {{4}}%/{{5}}%."
   }
 }

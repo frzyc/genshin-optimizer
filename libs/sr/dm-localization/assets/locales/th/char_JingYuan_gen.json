@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Glistening Light",
-        "fullDesc": "สร้าง DMG สายฟ้า <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Jing Yuan แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูที่กำหนดหนึ่งตัว",
         "shortDesc": "สร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
       }
     },
     "skill": {
       "0": {
         "name": "Rifting Zenith",
-        "fullDesc": "สร้าง DMG สายฟ้า <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Jing Yuan แก่ศัตรูทั้งหมด พร้อมทั้งเพิ่มจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" <unbreak>#2[i]</unbreak> ครั้ง",
+        "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูทั้งหมด พร้อมทั้งเพิ่มจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" {{2}} ครั้ง",
         "shortDesc": "สร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูทั้งหมด และ<color=#f29e38ff>เพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</color>"
       }
     },
     "ult": {
       "0": {
         "name": "Lightbringer",
-        "fullDesc": "สร้าง DMG สายฟ้า <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ของ ATK ของ Jing Yuan แก่ศัตรูทั้งหมด พร้อมทั้งเพิ่มจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" <unbreak>#2[i]</unbreak> ครั้ง",
+        "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูทั้งหมด พร้อมทั้งเพิ่มจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" {{2}} ครั้ง",
         "shortDesc": "สร้าง DMG สายฟ้าแก่ฝ่ายศัตรูทั้งหมด และ<color=#f29e38ff>เพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</color>"
       }
     },
     "technique": {
       "0": {
         "name": "Spirit Invocation",
-        "fullDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป จำนวนการโจมตีของ \"Lightning-Lord\" ในเทิร์นที่ 1 จะเพิ่มขึ้น <unbreak>#1[i]</unbreak> ครั้ง",
+        "fullDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป จำนวนการโจมตีของ \"Lightning-Lord\" ในเทิร์นที่ 1 จะเพิ่มขึ้น {{1}} ครั้ง",
         "shortDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเข้าสู่การต่อสู้ครั้งถัดไป <color=#f29e38ff>จะเพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</color>"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย"
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
+        "shortDesc": ""
       }
     }
   }

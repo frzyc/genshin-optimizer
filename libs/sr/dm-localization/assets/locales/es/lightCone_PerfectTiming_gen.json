@@ -2,6 +2,6 @@
   "name": "El momento oportuno",
   "passive": {
     "name": "Vista refractada",
-    "description": "La RES a efecto del portador aumenta en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Su curación realizada también aumenta en una cantidad equivalente al <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de la RES a efecto, hasta un máximo del <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> de curación realizada."
+    "description": "La RES a efecto del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Su curación realizada también aumenta en una cantidad equivalente al <orangeStrong>{{2}}%</orangeStrong> de la RES a efecto, hasta un máximo del <orangeStrong>{{3}}%</orangeStrong> de curación realizada."
   }
 }

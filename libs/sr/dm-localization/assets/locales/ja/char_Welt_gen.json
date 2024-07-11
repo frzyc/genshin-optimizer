@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#じゅうりょくせいあつ}重力制圧{RUBY_E#}",
-        "fullDesc": "指定した敵単体にヴェルトの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の虚数属性ダメージを与える。",
+        "fullDesc": "指定した敵単体にヴェルトの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の虚数属性ダメージを与える。",
         "shortDesc": "敵単体に少量の虚数属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#こくうだんかい}虚空断界{RUBY_E#}",
-        "fullDesc": "指定した敵単体にヴェルトの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の虚数属性ダメージを与え、さらに2ヒットする。1ヒットごとに、ランダムな敵単体にヴェルトの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の虚数属性ダメージを与える。攻撃が命中すると、<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>の<u>基礎確率</u>で攻撃を受けた敵の速度-<unbreak>#3[i]%</unbreak>、<unbreak>#4[i]</unbreak>ターン継続。",
+        "fullDesc": "指定した敵単体にヴェルトの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の虚数属性ダメージを与え、さらに2ヒットする。1ヒットごとに、ランダムな敵単体にヴェルトの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の虚数属性ダメージを与える。攻撃が命中すると、<orangeStrong>{{2}}%</orangeStrong>の<u>基礎確率</u>で攻撃を受けた敵の速度-{{3}}%、{{4}}ターン継続。",
         "shortDesc": "敵単体に少量の虚数属性ダメージを与える、3回バウンドし、確率で敵に<color=#f29e38ff>減速状態を付与する</color>。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#ぎじ}疑似{RUBY_E#}ブラックホール",
-        "fullDesc": "敵全体にヴェルトの攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の虚数属性ダメージを与え、<unbreak>#3[i]%</unbreak>の<u>基礎確率</u>で攻撃を受けた敵を禁錮状態にする、1ターン継続。\\n禁錮状態の敵の<u>行動順</u>は<color=#f29e38ff><unbreak>#2[f1]%</unbreak></color><u>遅延され</u>、速度-<unbreak>#4[i]%</unbreak>。",
+        "fullDesc": "敵全体にヴェルトの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の虚数属性ダメージを与え、{{3}}%の<u>基礎確率</u>で攻撃を受けた敵を禁錮状態にする、1ターン継続。\\n禁錮状態の敵の<u>行動順</u>は<orangeStrong>{{2}}%</orangeStrong><u>遅延され</u>、速度-{{4}}%。",
         "shortDesc": "敵全体に虚数属性ダメージを与え、<color=#f29e38ff>高確率で禁錮状態にする</color>。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#がちいろう}画地為牢{RUBY_E#}",
-        "fullDesc": "秘技を使用した後、<unbreak>#4[i]</unbreak>秒間継続する特殊領域を作り出す、特殊領域内にいる敵の移動速度-<unbreak>#5[i]%</unbreak>。特殊領域内にいる敵と戦闘に入った後、<unbreak>#1[i]%</unbreak>の<u>基礎確率</u>で敵を禁錮状態にする、1ターン継続。\\n禁錮状態の敵は<u>行動順</u>が<unbreak>#2[i]%</unbreak><u>遅延され</u>、速度-<unbreak>#3[i]%</unbreak>。味方が作り出した領域は1つまで存在できる。",
+        "fullDesc": "秘技を使用した後、{{4}}秒間継続する特殊領域を作り出す、特殊領域内にいる敵の移動速度-{{5}}%。特殊領域内にいる敵と戦闘に入った後、{{1}}%の<u>基礎確率</u>で敵を禁錮状態にする、1ターン継続。\\n禁錮状態の敵は<u>行動順</u>が{{2}}%<u>遅延され</u>、速度-{{3}}%。味方が作り出した領域は1つまで存在できる。",
         "shortDesc": "特殊領域を作り出す。領域内の移動速度をダウンする。領域内の敵と戦闘に入った後、<color=#f29e38ff>高確率で敵を禁錮状態にする</color>。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
-        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
       }
     }
   }

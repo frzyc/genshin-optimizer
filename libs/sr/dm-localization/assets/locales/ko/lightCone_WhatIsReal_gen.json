@@ -2,6 +2,6 @@
   "name": "무엇이 진실인가",
   "passive": {
     "name": "가설",
-    "description": "장착한 캐릭터의 격파 특수효과가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 일반 공격 발동 후, 장착한 캐릭터는 HP 최대치의 <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>+<unbreak>#3[i]</unbreak>pt만큼 HP를 회복한다"
+    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 일반 공격 발동 후, 장착한 캐릭터는 HP 최대치의 <orangeStrong>{{2}}%</orangeStrong>+{{3}}pt만큼 HP를 회복한다"
   }
 }

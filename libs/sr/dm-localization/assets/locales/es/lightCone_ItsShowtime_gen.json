@@ -2,6 +2,6 @@
   "name": "Arriba el telón",
   "passive": {
     "name": "Entretenimiento personal",
-    "description": "Cuando el portador inflige un estado negativo a un enemigo, obtiene una acumulación de Truco de magia. Cada acumulación de Truco de magia aumenta el daño que inflige el portador en un <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Se puede acumular hasta <unbreak>#2[i]</unbreak> veces y dura <unbreak>#3[i]</unbreak> turno. Cuando el acierto de efecto del portador es igual o superior al <unbreak>#4[i]%</unbreak>, el ATQ aumenta en un <color=#f29e38ff><unbreak>#5[i]%</unbreak></color>."
+    "description": "Cuando el portador inflige un estado negativo a un enemigo, obtiene una acumulación de Truco de magia. Cada acumulación de Truco de magia aumenta el daño que inflige el portador en un <orangeStrong>{{1}}%</orangeStrong>. Se puede acumular hasta {{2}} veces y dura {{3}} turno. Cuando el acierto de efecto del portador es igual o superior al {{4}}%, el ATQ aumenta en un <orangeStrong>{{5}}%</orangeStrong>."
   }
 }

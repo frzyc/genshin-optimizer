@@ -2,6 +2,6 @@
   "name": "Boucle",
   "passive": {
     "name": "Poursuite",
-    "description": "Augmente les DGT infligés par le porteur aux ennemis ralentis de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>."
+    "description": "Augmente les DGT infligés par le porteur aux ennemis ralentis de <orangeStrong>{{1}}%</orangeStrong>."
   }
 }

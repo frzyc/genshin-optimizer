@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "Hey! Verbrenn dich nicht!",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Hooks ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Hey! Erinnerst du dich an Hook?",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Hooks ANG zu und verursacht bei dem Ziel mit einer <u>Grundchance</u> von <unbreak>#2[i]%</unbreak> für <unbreak>#3[i]</unbreak> Rd. Brennen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> von Hooks ANG.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu und verursacht bei dem Ziel mit einer <u>Grundchance</u> von {{2}}% für {{3}} Rd. Brennen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Hooks ANG.",
         "shortDesc": "Fügt einem Gegner Feuer-SCH zu und verursacht dem Ziel mit hoher Chance Brennen."
       },
       "1": {
         "name": "Hey! Erinnerst du dich an Hook?",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Hooks ANG zu und verursacht beim Ziel mit einer <u>Grundchance</u> von <unbreak>#2[i]%</unbreak> für <unbreak>#3[i]</unbreak> Rd. Brennen. Fügt außerdem angrenzenden Zielen Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> von Hooks ANG zu.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> von Hooks ANG.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu und verursacht beim Ziel mit einer <u>Grundchance</u> von {{2}}% für {{3}} Rd. Brennen. Fügt außerdem angrenzenden Zielen Feuer-SCH in Höhe von <orangeStrong>{{5}}%</orangeStrong> von Hooks ANG zu.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Hooks ANG.",
         "shortDesc": "Fügt einem Gegner Feuer-SCH zu und verursacht beim Ziel mit hoher Chance Brennen. Angrenzende Ziele erleiden geringen Feuer-SCH."
       }
     },
     "ult": {
       "0": {
         "name": "Bumm! Hier kommt das Feuer!",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> von Hooks ANG zu.\\nVerstärkt nach dem Einsatz des Ultimates die nächste Fertigkeit, die dem anvisierten Gegner sowie angrenzenden Zielen SCH zufügt.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu.\\nVerstärkt nach dem Einsatz des Ultimates die nächste Fertigkeit, die dem anvisierten Gegner sowie angrenzenden Zielen SCH zufügt.",
         "shortDesc": "Fügt einem Gegner massiven Feuer-SCH zu und <color=#f29e38ff>verstärkt Hooks nächste Fertigkeit</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Puh! Sieh sich einer das Chaos an!",
-        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt fügt Hook einem zufälligen Gegner Feuer-SCH in Höhe von <unbreak>#4[i]%</unbreak> ihres ANG zu und hat eine <u>Grundchance</u> von <unbreak>#1[i]%</unbreak>, bei allen Gegnern für <unbreak>#3[i]</unbreak> Rd. Brennen zu verursachen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <unbreak>#2[i]%</unbreak> von Hooks ANG.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt fügt Hook einem zufälligen Gegner Feuer-SCH in Höhe von {{4}}% ihres ANG zu und hat eine <u>Grundchance</u> von {{1}}%, bei allen Gegnern für {{3}} Rd. Brennen zu verursachen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{2}}% von Hooks ANG.",
         "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner Feuer-SCH zu, mit einer hohen Chance, allen Gegnern Brennen zuzufügen."
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
-        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ."
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
       }
     }
   }

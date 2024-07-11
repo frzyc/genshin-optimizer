@@ -2,6 +2,6 @@
   "name": "Chuyến Tàu Đêm Trên Dải Ngân Hà",
   "passive": {
     "name": "Chòm Sao Băng",
-    "description": "Mỗi một kẻ địch trong trận, sẽ khiến Tấn Công của người trang bị tăng <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>, hiệu ứng này tối đa cộng dồn 5 tầng. Khi có kẻ địch bị phá vỡ Điểm Yếu, sát thương mà người trang bị gây ra sẽ tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>, duy trì 1 hiệp."
+    "description": "Mỗi một kẻ địch trong trận, sẽ khiến Tấn Công của người trang bị tăng <orangeStrong>{{2}}%</orangeStrong>, hiệu ứng này tối đa cộng dồn 5 tầng. Khi có kẻ địch bị phá vỡ Điểm Yếu, sát thương mà người trang bị gây ra sẽ tăng <orangeStrong>{{1}}%</orangeStrong>, duy trì 1 hiệp."
   }
 }

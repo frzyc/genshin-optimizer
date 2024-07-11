@@ -2,6 +2,6 @@
   "name": "두 사람의 콘서트",
   "passive": {
     "name": "격려",
-    "description": "장착한 캐릭터의 방어력이 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 필드 위에 실드를 보유한 캐릭터가 1명 있을 때마다 장착한 캐릭터가 가하는 피해가 <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> 증가한다"
+    "description": "장착한 캐릭터의 방어력이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 필드 위에 실드를 보유한 캐릭터가 1명 있을 때마다 장착한 캐릭터가 가하는 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가한다"
   }
 }

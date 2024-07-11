@@ -2,6 +2,6 @@
   "name": "Sombra oculta",
   "passive": {
     "name": "Mecanismo",
-    "description": "Tras usar la habilidad básica, el siguiente ATQ básico del portador inflige al objetivo un daño adicional equivalente al <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de su ATQ."
+    "description": "Tras usar la habilidad básica, el siguiente ATQ básico del portador inflige al objetivo un daño adicional equivalente al <orangeStrong>{{1}}%</orangeStrong> de su ATQ."
   }
 }

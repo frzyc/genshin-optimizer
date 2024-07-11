@@ -2,6 +2,6 @@
   "name": "Buổi Hòa Nhạc Hai Người",
   "passive": {
     "name": "Cổ Vũ",
-    "description": "Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Phòng Thủ của người trang bị. Mỗi khi trên trận có 1 nhân vật sở hữu Khiên, sát thương do người trang bị gây ra tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>."
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Phòng Thủ của người trang bị. Mỗi khi trên trận có 1 nhân vật sở hữu Khiên, sát thương do người trang bị gây ra tăng <orangeStrong>{{2}}%</orangeStrong>."
   }
 }

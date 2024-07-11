@@ -2,6 +2,6 @@
   "name": "無可取代的東西",
   "passive": {
     "name": "家人",
-    "description": "使裝備者的攻擊力提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。當裝備者消滅敵方目標或受到攻擊後，立即回復等同於裝備者攻擊力<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>的生命值，同時造成的傷害提高<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>，持續到自身下個回合結束。該效果不可疊加，每回合只可觸發1次。"
+    "description": "使裝備者的攻擊力提高<orangeStrong>{{1}}%</orangeStrong>。當裝備者消滅敵方目標或受到攻擊後，立即回復等同於裝備者攻擊力<orangeStrong>{{2}}%</orangeStrong>的生命值，同時造成的傷害提高<orangeStrong>{{3}}%</orangeStrong>，持續到自身下個回合結束。該效果不可疊加，每回合只可觸發1次。"
   }
 }

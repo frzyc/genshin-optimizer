@@ -2,6 +2,6 @@
   "name": "银河铁道之夜",
   "passive": {
     "name": "流星群",
-    "description": "场上每有1个敌方目标，使装备者的攻击力提高<color=#f29e38ff><unbreak>#2[f1]%</unbreak></color>，该效果最多叠加5层。当有敌方目标的弱点被击破时，装备者造成的伤害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>，持续1回合。"
+    "description": "场上每有1个敌方目标，使装备者的攻击力提高<orangeStrong>{{2}}%</orangeStrong>，该效果最多叠加5层。当有敌方目标的弱点被击破时，装备者造成的伤害提高<orangeStrong>{{1}}%</orangeStrong>，持续1回合。"
   }
 }

@@ -2,6 +2,6 @@
   "name": "Холодные ночи короче, когда ты рядом",
   "passive": {
     "name": "Слабый свет",
-    "description": "Макс. HP владельца повышается на <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Использование базовой атаки или навыка восстанавливает всем союзникам HP, равное <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> от их макс. HP."
+    "description": "Макс. HP владельца повышается на <orangeStrong>{{1}}%</orangeStrong>. Использование базовой атаки или навыка восстанавливает всем союзникам HP, равное <orangeStrong>{{2}}%</orangeStrong> от их макс. HP."
   }
 }

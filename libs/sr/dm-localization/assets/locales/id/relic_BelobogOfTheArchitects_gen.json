@@ -1,6 +1,6 @@
 {
   "setName": "Belobog of the Architects",
   "setEffects": {
-    "2": "Meningkatkan <unbreak>#1[i]%</unbreak> DEF pengguna. Meningkatkan <unbreak>#3[i]%</unbreak> DEF tambahan ketika Effect Hit Rate pengguna lebih dari atau sama dengan <unbreak>#2[i]%</unbreak>."
+    "2": "Meningkatkan {{1}}% DEF pengguna. Meningkatkan {{3}}% DEF tambahan ketika Effect Hit Rate pengguna lebih dari atau sama dengan {{2}}%."
   }
 }

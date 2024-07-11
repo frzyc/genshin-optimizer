@@ -2,6 +2,6 @@
   "name": "片刻，留在眼底",
   "passive": {
     "name": "騎士巡禮",
-    "description": "使裝備者的暴擊傷害提高<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。當裝備者施放終結技時，根據裝備者的能量上限，提高裝備者終結技造成的傷害：每點能量提高<color=#f29e38ff><unbreak>#2[f2]%</unbreak></color>，最多計入<unbreak>#3[i]</unbreak>點。"
+    "description": "使裝備者的暴擊傷害提高<orangeStrong>{{1}}%</orangeStrong>。當裝備者施放終結技時，根據裝備者的能量上限，提高裝備者終結技造成的傷害：每點能量提高<orangeStrong>{{2}}%</orangeStrong>，最多計入{{3}}點。"
   }
 }

@@ -1,6 +1,6 @@
 {
   "setName": "Diferenciador Celestial",
   "setEffects": {
-    "2": "Aumenta o Dano CRIT do usuário em <unbreak>#1[i]%</unbreak>. Quando o Dano CRIT atual do usuário atingir <unbreak>#2[i]%</unbreak> ou mais, após entrar na batalha, a Chance de CRIT do usuário aumenta em <unbreak>#3[i]%</unbreak> até o fim de seu primeiro ataque."
+    "2": "Aumenta o Dano CRIT do usuário em {{1}}%. Quando o Dano CRIT atual do usuário atingir {{2}}% ou mais, após entrar na batalha, a Chance de CRIT do usuário aumenta em {{3}}% até o fim de seu primeiro ataque."
   }
 }

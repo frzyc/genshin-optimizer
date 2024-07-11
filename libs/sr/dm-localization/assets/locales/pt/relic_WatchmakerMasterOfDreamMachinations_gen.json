@@ -1,7 +1,7 @@
 {
   "setName": "Relojoeiro, Mestre de Maquinações de Sonhos",
   "setEffects": {
-    "2": "Aumenta o Efeito de Quebra em <unbreak>#1[i]%</unbreak>.",
-    "4": "Quando o usuário usa sua Perícia Suprema em um aliado, o Efeito de Quebra de todos os aliados aumenta em <unbreak>#1[i]%</unbreak> por <unbreak>#2[i]</unbreak> rodada(s). Esse efeito não pode ser acumulado."
+    "2": "Aumenta o Efeito de Quebra em {{1}}%.",
+    "4": "Quando o usuário usa sua Perícia Suprema em um aliado, o Efeito de Quebra de todos os aliados aumenta em {{1}}% por {{2}} rodada(s). Esse efeito não pode ser acumulado."
   }
 }

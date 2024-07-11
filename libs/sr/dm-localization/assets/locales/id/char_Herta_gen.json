@@ -4,34 +4,36 @@
     "basic": {
       "0": {
         "name": "What Are You Looking At?",
-        "fullDesc": "Mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Herta pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Herta pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "One-Time Offer",
-        "fullDesc": "Mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Herta pada seluruh musuh. Jika persentase HP target musuh saat ini lebih dari atau sama dengan <unbreak>#2[i]%</unbreak>, maka DMG yang diakibatkan pada target akan meningkat <unbreak>#3[i]%</unbreak>.",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Herta pada seluruh musuh. Jika persentase HP target musuh saat ini lebih dari atau sama dengan {{2}}%, maka DMG yang diakibatkan pada target akan meningkat {{3}}%.",
         "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada seluruh musuh, DMG yang diakibatkan akan lebih tinggi pada target yang persentase HP-nya tinggi."
       }
     },
     "ult": {
       "0": {
         "name": "It's Magic, I Added Some Magic",
-        "fullDesc": "Mengakibatkan Ice DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Herta pada seluruh musuh.",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Herta pada seluruh musuh.",
         "shortDesc": "Mengakibatkan Ice DMG pada seluruh musuh."
       }
     },
     "technique": {
       "0": {
         "name": "It Can Still Be Optimized",
-        "fullDesc": "Setelah menggunakan Technique, meningkatkan <unbreak>#1[i]%</unbreak> ATK Herta selama <unbreak>#2[i]</unbreak> giliran pada saat pertempuran selanjutnya dimulai."
+        "fullDesc": "Setelah menggunakan Technique, meningkatkan {{1}}% ATK Herta selama {{2}} giliran pada saat pertempuran selanjutnya dimulai.",
+        "shortDesc": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya."
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
       }
     }
   }

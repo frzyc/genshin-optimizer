@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "|システム{RUBY_B#けいこく}警告{RUBY_E#}|",
-        "fullDesc": "指定した敵単体に銀狼の攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の量子属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に銀狼の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与える。",
         "shortDesc": "敵単体に少量の量子属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#へんこう}変更{RUBY_E#}を{RUBY_B#きょか}許可{RUBY_E#}しますか？",
-        "fullDesc": "<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>の<u>基礎確率</u>で指定した敵単体に、フィールド上の味方が有する属性の内1つを弱点として埋め込む、さらにその弱点属性の属性耐性-<unbreak>#4[i]%</unbreak>、<unbreak>#3[i]</unbreak>ターン継続。元からあった弱点を埋め込んだ場合、対応属性の属性耐性がダウンする効果は発動されない。\\n1体の敵に対し、銀狼が埋め込める弱点は1つまで。銀狼が同じ敵に対して再度弱点を埋め込む時、最後に埋め込んだ弱点のみが残される。\\n<unbreak>#5[i]%</unbreak>の<u>基礎確率</u>でさらにその敵の全耐性-<color=#f29e38ff><unbreak>#6[f1]%</unbreak></color>、<unbreak>#7[i]</unbreak>ターン継続。\\nその敵に銀狼の攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の量子属性ダメージを与える。",
+        "fullDesc": "<orangeStrong>{{2}}%</orangeStrong>の<u>基礎確率</u>で指定した敵単体に、フィールド上の味方が有する属性の内1つを弱点として埋め込む、さらにその弱点属性の属性耐性-{{4}}%、{{3}}ターン継続。元からあった弱点を埋め込んだ場合、対応属性の属性耐性がダウンする効果は発動されない。\\n1体の敵に対し、銀狼が埋め込める弱点は1つまで。銀狼が同じ敵に対して再度弱点を埋め込む時、最後に埋め込んだ弱点のみが残される。\\n{{5}}%の<u>基礎確率</u>でさらにその敵の全耐性-<orangeStrong>{{6}}%</orangeStrong>、{{7}}ターン継続。\\nその敵に銀狼の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与える。",
         "shortDesc": "高確率で敵単体に<color=#f29e38ff>追加の弱点を付与</color>し、量子属性ダメージを与える。"
       }
     },
     "ult": {
       "0": {
         "name": "|アカウントがBANされた|",
-        "fullDesc": "<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>の<u>基礎確率</u>で指定した敵単体の防御力-<color=#f29e38ff><unbreak>#3[f1]%</unbreak></color>、<unbreak>#4[i]</unbreak>ターン継続。その敵に銀狼の攻撃力<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>分の量子属性ダメージを与える。",
+        "fullDesc": "<orangeStrong>{{2}}%</orangeStrong>の<u>基礎確率</u>で指定した敵単体の防御力-<orangeStrong>{{3}}%</orangeStrong>、{{4}}ターン継続。その敵に銀狼の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与える。",
         "shortDesc": "高確率で敵単体の<color=#f29e38ff>防御力をダウン</color>させ、大量の量子属性ダメージを与える。"
       }
     },
     "technique": {
       "0": {
         "name": "|プロセス{RUBY_B#きょうせいしゅうりょう}強制終了{RUBY_E#}|",
-        "fullDesc": "敵を攻撃。戦闘に入った後、敵全体に銀狼の攻撃力<unbreak>#1[i]%</unbreak>分の量子属性ダメージを与え、弱点属性を無視して敵全体の靭性を削る。この秘技で敵を弱点撃破した時、量子属性の弱点撃破効果を発動する。",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵全体に銀狼の攻撃力{{1}}%分の量子属性ダメージを与え、弱点属性を無視して敵全体の靭性を削る。この秘技で敵を弱点撃破した時、量子属性の弱点撃破効果を発動する。",
         "shortDesc": "敵を攻撃。戦闘に入った後、敵全体に少量のダメージを与え、弱点属性を無視して靭性を削る。"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
-        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。"
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
       }
     }
   }

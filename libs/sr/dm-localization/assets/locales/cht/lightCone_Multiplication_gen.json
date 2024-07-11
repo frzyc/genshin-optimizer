@@ -2,6 +2,6 @@
   "name": "蕃息",
   "passive": {
     "name": "豐饒民",
-    "description": "當裝備者發動普通攻擊後，下一次行動提前<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。"
+    "description": "當裝備者發動普通攻擊後，下一次行動提前<orangeStrong>{{1}}%</orangeStrong>。"
   }
 }

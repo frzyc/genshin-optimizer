@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "黑淵的棘刺",
-        "fullDesc": "對指定敵方單體造成等同於羅剎<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的虛數屬性傷害。",
+        "fullDesc": "對指定敵方單體造成等同於羅剎<orangeStrong>{{1}}%</orangeStrong>攻擊力的虛數屬性傷害。",
         "shortDesc": "對敵方單體造成少量虛數屬性傷害。"
       }
     },
     "skill": {
       "0": {
         "name": "白花的祈望",
-        "fullDesc": "施放戰技後立即為指定我方單體回復等同於羅剎<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力+<color=#f29e38ff><unbreak>#2[i]</unbreak></color>的生命值，並使羅剎獲得1層【白花之刻】。\\n當我方任意單體現有生命值百分比小於等於<unbreak>#3[i]%</unbreak>時，羅剎會立即對其觸發1次等同於戰技的效果，此次觸發不消耗戰技點。該效果在<unbreak>#4[i]</unbreak>回合後可再次觸發。",
+        "fullDesc": "施放戰技後立即為指定我方單體回復等同於羅剎<orangeStrong>{{1}}%</orangeStrong>攻擊力+<orangeStrong>{{2}}</orangeStrong>的生命值，並使羅剎獲得1層【白花之刻】。\\n當我方任意單體現有生命值百分比小於等於{{3}}%時，羅剎會立即對其觸發1次等同於戰技的效果，此次觸發不消耗戰技點。該效果在{{4}}回合後可再次觸發。",
         "shortDesc": "為我方單體<color=#f29e38ff>回復</color>生命值，獲得1層【白花之刻】。"
       }
     },
     "ult": {
       "0": {
         "name": "歸葬的遂願",
-        "fullDesc": "解除敵方全體<unbreak>#2[i]</unbreak>個<u>增益效果</u>，並對敵方全體造成等同於羅剎<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>攻擊力的虛數屬性傷害，同時使羅剎獲得1層【白花之刻】。",
+        "fullDesc": "解除敵方全體{{2}}個<u>增益效果</u>，並對敵方全體造成等同於羅剎<orangeStrong>{{1}}%</orangeStrong>攻擊力的虛數屬性傷害，同時使羅剎獲得1層【白花之刻】。",
         "shortDesc": "<color=#f29e38ff>解除</color>敵方全體1個<color=#f29e38ff><u>增益效果</u></color>，並對敵方全體造成虛數屬性傷害，獲得1層【白花之刻】。"
       }
     },
@@ -32,7 +32,8 @@
     "overworld": {
       "0": {
         "name": "攻擊",
-        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。"
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
+        "shortDesc": ""
       }
     }
   }

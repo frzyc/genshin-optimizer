@@ -2,6 +2,6 @@
   "name": "かけがえのないもの",
   "passive": {
     "name": "{RUBY_B#かぞく}家族{RUBY_E#}",
-    "description": "装備キャラの攻撃力+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。装備キャラが敵を倒す、または攻撃を受けた後、装備キャラの攻撃力<color=#f29e38ff><unbreak>#2[i]%</unbreak></color>分のHPを回復し、与ダメージ+<color=#f29e38ff><unbreak>#3[i]%</unbreak></color>、効果は自身の次のターンが終了するまで継続。この効果は累積できず、ターンが回ってくるたびに1回まで発動できる。"
+    "description": "装備キャラの攻撃力+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが敵を倒す、または攻撃を受けた後、装備キャラの攻撃力<orangeStrong>{{2}}%</orangeStrong>分のHPを回復し、与ダメージ+<orangeStrong>{{3}}%</orangeStrong>、効果は自身の次のターンが終了するまで継続。この効果は累積できず、ターンが回ってくるたびに1回まで発動できる。"
   }
 }

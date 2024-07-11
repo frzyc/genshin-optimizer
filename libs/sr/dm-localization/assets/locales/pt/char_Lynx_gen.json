@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Técnica de Grampos de Neve",
-        "fullDesc": "Causa Dano Quântico igual a <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> dos PV máximos deste personagem a um único inimigo.",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> dos PV máximos deste personagem a um único inimigo.",
         "shortDesc": "Causa Dano Quântico leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Latas de Acampamento Salgadas",
-        "fullDesc": "Aplica \"Resposta de Sobrevivência\" em um único aliado-alvo e aumenta seus PV máximos em <color=#f29e38ff><unbreak>#1[f1]%</unbreak></color> dos PV máximos de Lynx + <color=#f29e38ff><unbreak>#2[i]</unbreak></color>. Se o alvo for um personagem do Caminho da Destruição ou da Preservação, a chance de que ele seja atacado pelos inimigos aumentará drasticamente. A \"Resposta de Sobrevivência\" dura por <unbreak>#3[i]</unbreak> rodada(s).\\nRestaura os PV do alvo em <color=#f29e38ff><unbreak>#4[f1]%</unbreak></color> dos PV máximos de Lynx + <color=#f29e38ff><unbreak>#5[i]</unbreak></color>.",
+        "fullDesc": "Aplica \"Resposta de Sobrevivência\" em um único aliado-alvo e aumenta seus PV máximos em <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Lynx + <orangeStrong>{{2}}</orangeStrong>. Se o alvo for um personagem do Caminho da Destruição ou da Preservação, a chance de que ele seja atacado pelos inimigos aumentará drasticamente. A \"Resposta de Sobrevivência\" dura por {{3}} rodada(s).\\nRestaura os PV do alvo em <orangeStrong>{{4}}%</orangeStrong> dos PV máximos de Lynx + <orangeStrong>{{5}}</orangeStrong>.",
         "shortDesc": "Aplica \"Resposta de Sobrevivência\" a um único aliado, <color=#f29e38ff>aumentando os PV máximos</color>, e restaurando os PV dele."
       }
     },
     "ult": {
       "0": {
         "name": "Primeiros Socorros do Campo de Neve",
-        "fullDesc": "Remove <unbreak>#1[i]</unbreak> <u>penalidade(s)</u> de todos os aliados e imediatamente restaura seus respectivos PV em uma quantidade igual a <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> dos PV máximos de Lynx + <color=#f29e38ff><unbreak>#3[i]</unbreak></color>.",
+        "fullDesc": "Remove {{1}} <u>penalidade(s)</u> de todos os aliados e imediatamente restaura seus respectivos PV em uma quantidade igual a <orangeStrong>{{2}}%</orangeStrong> dos PV máximos de Lynx + <orangeStrong>{{3}}</orangeStrong>.",
         "shortDesc": "Remove <color=#f29e38ff>1 <u>penalidade</u> de todos os aliados</color> e restaura seus PV."
       }
     },
     "technique": {
       "0": {
         "name": "Barra de Chocolate Energética",
-        "fullDesc": "Depois que Lynx usa sua Técnica, no início da próxima batalha, todos os aliados recebem o efeito de cura contínua do Talento dela, durando por <unbreak>#1[i]</unbreak> rodada(s).",
+        "fullDesc": "Depois que Lynx usa sua Técnica, no início da próxima batalha, todos os aliados recebem o efeito de cura contínua do Talento dela, durando por {{1}} rodada(s).",
         "shortDesc": "Depois que esta personagem usa sua Técnica, no início da próxima batalha, todos os aliados recebem um efeito de cura contínua."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }

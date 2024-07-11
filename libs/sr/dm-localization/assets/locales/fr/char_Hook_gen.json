@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "Héhé ! Attention, ça brûle !",
-        "fullDesc": "Inflige des DGT de feu équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Hook à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Hook à un ennemi unique.",
         "shortDesc": "Inflige des DGT de feu mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Hé ! Tu te souviens de moi ?",
-        "fullDesc": "Inflige des DGT de feu équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Hook à un ennemi unique, avec <unbreak>#2[i]%</unbreak> de <u>chances de base</u> de lui infliger Brûlure pendant <unbreak>#3[i]</unbreak> tours.\\nLes ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> de l'ATQ de Hook au début de chaque tour.",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Hook à un ennemi unique, avec {{2}}% de <u>chances de base</u> de lui infliger Brûlure pendant {{3}} tours.\\nLes ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Hook au début de chaque tour.",
         "shortDesc": "Inflige des DGT de feu à un ennemi unique, avec de fortes chances de lui infliger Brûlure."
       },
       "1": {
         "name": "Hé ! Tu te souviens de moi ?",
-        "fullDesc": "Inflige des DGT de feu équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Hook à un ennemi unique, avec <unbreak>#2[i]%</unbreak> de <u>chances de base</u> de lui infliger Brûlure pendant <unbreak>#3[i]</unbreak> tours. Inflige également des DGT de feu équivalents à <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> de l'ATQ de Hook aux ennemis adjacents.\\nLes ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> de l'ATQ de Hook au début de chaque tour.",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Hook à un ennemi unique, avec {{2}}% de <u>chances de base</u> de lui infliger Brûlure pendant {{3}} tours. Inflige également des DGT de feu équivalents à <orangeStrong>{{5}}%</orangeStrong> de l'ATQ de Hook aux ennemis adjacents.\\nLes ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Hook au début de chaque tour.",
         "shortDesc": "Inflige des DGT de feu à un ennemi unique, avec de fortes chances de lui infliger Brûlure, et inflige des DGT de feu mineurs aux ennemis adjacents."
       }
     },
     "ult": {
       "0": {
         "name": "Boom ! Ça prend feu !",
-        "fullDesc": "Inflige des DGT de feu équivalents à <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de l'ATQ de Hook à un ennemi unique.\\nAprès utilisation de l'ultime, la prochaine compétence utilisée est renforcée, infligeant des DGT à la cible ennemie et aux ennemis adjacents.",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Hook à un ennemi unique.\\nAprès utilisation de l'ultime, la prochaine compétence utilisée est renforcée, infligeant des DGT à la cible ennemie et aux ennemis adjacents.",
         "shortDesc": "Inflige des DGT de feu massifs à un ennemi unique et <color=#f29e38ff>renforce la compétence lors de sa prochaine utilisation</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Aïe ! Regarde-moi ce bazar !",
-        "fullDesc": "Engage immédiatement le combat contre les ennemis. Hook inflige des DGT de feu équivalents à <unbreak>#4[i]%</unbreak> de son ATQ à un ennemi aléatoire en entrant en combat. D'autre part, il y a <unbreak>#1[i]%</unbreak> de <u>chances de base</u> d'infliger Brûlure à tous les ennemis pendant <unbreak>#3[i]</unbreak> tours.\\nLes ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à <unbreak>#2[i]%</unbreak> de l'ATQ de Hook au début de chaque tour.",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Hook inflige des DGT de feu équivalents à {{4}}% de son ATQ à un ennemi aléatoire en entrant en combat. D'autre part, il y a {{1}}% de <u>chances de base</u> d'infliger Brûlure à tous les ennemis pendant {{3}} tours.\\nLes ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à {{2}}% de l'ATQ de Hook au début de chaque tour.",
         "shortDesc": "Attaque l'ennemi. Inflige des DGT de feu à un ennemi unique aléatoire, avec de fortes chances d'appliquer Brûlure à toutes les cibles ennemies après être entré en combat."
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
-        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat."
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
       }
     }
   }

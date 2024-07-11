@@ -2,6 +2,6 @@
   "name": "Amber",
   "passive": {
     "name": "Stasis",
-    "description": "Increases the wearer's DEF by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. If the wearer's current HP is lower than <unbreak>#2[i]%</unbreak>, increases their DEF by a further <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+    "description": "Increases the wearer's DEF by <orangeStrong>{{1}}%</orangeStrong>. If the wearer's current HP is lower than {{2}}%, increases their DEF by a further <orangeStrong>{{3}}%</orangeStrong>."
   }
 }

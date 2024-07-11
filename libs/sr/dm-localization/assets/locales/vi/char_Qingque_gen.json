@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "Tự Ù",
-        "fullDesc": "Dùng 1 Quân Bài Quỳnh Ngọc hoa văn ít nhất hiện tại, gây cho 1 kẻ địch chỉ định Sát Thương Lượng Tử tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Qingque.",
+        "fullDesc": "Dùng 1 Quân Bài Quỳnh Ngọc hoa văn ít nhất hiện tại, gây cho 1 kẻ địch chỉ định Sát Thương Lượng Tử tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Qingque.",
         "shortDesc": "Dùng 1 quân bài, gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
       },
       "1": {
         "name": "Bộ Tứ Thêm Hoa!",
-        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Qingque, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Lượng Tử tương đương <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Tấn Công của Qingque.\\n\"Bộ Tứ Thêm Hoa!\" không thể hồi điểm Chiến Kỹ.",
+        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Qingque, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Lượng Tử tương đương <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Qingque.\\n\"Bộ Tứ Thêm Hoa!\" không thể hồi điểm Chiến Kỹ.",
         "shortDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch, đồng thời gây lượng nhỏ Sát Thương Lượng Tử cho mục tiêu lân cận."
       }
     },
     "skill": {
       "0": {
         "name": "Quân Bài Cuối Cùng",
-        "fullDesc": "Bốc ngay <unbreak>#1[i]</unbreak> Quân Bài Quỳnh Ngọc, khiến sát thương do bản thân gây ra tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, duy trì đến khi kết thúc hiệp này. Hiệu ứng này có thể cộng dồn <unbreak>#3[i]</unbreak> tầng. Sau khi thi triển Chiến Kỹ này, hiệp này sẽ không kết thúc.",
+        "fullDesc": "Bốc ngay {{1}} Quân Bài Quỳnh Ngọc, khiến sát thương do bản thân gây ra tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì đến khi kết thúc hiệp này. Hiệu ứng này có thể cộng dồn {{3}} tầng. Sau khi thi triển Chiến Kỹ này, hiệp này sẽ không kết thúc.",
         "shortDesc": "<color=#f29e38ff>Rút bài</color>, tăng sát thương bản thân gây ra và <color=#f29e38ff>hiệp này sẽ không kết thúc</color>."
       }
     },
     "ult": {
       "0": {
         "name": "Bộ Tứ? Ngon Lành!",
-        "fullDesc": "Gây cho toàn bộ phe địch sát thương Lượng Tử bằng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của Qingque, và nhận 4 Quân Bài Quỳnh Ngọc cùng hoa văn.",
+        "fullDesc": "Gây cho toàn bộ phe địch sát thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Qingque, và nhận 4 Quân Bài Quỳnh Ngọc cùng hoa văn.",
         "shortDesc": "Gây Sát Thương Lượng Tử cho toàn phe địch, nhận 4 quân bài hoa văn giống nhau."
       }
     },
     "technique": {
       "0": {
         "name": "Niềm Vui Xếp Bài",
-        "fullDesc": "Sau khi dùng Bí Kỹ, vào trạng thái chiến đấu, Qingque sẽ bốc <unbreak>#1[i]</unbreak> Quân Bài Quỳnh Ngọc.",
+        "fullDesc": "Sau khi dùng Bí Kỹ, vào trạng thái chiến đấu, Qingque sẽ bốc {{1}} Quân Bài Quỳnh Ngọc.",
         "shortDesc": "Dùng Bí Kỹ, lần sau vào trận sẽ rút bài."
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
-        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch."
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
       }
     }
   }

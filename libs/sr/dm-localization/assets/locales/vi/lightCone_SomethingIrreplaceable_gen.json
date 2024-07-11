@@ -2,6 +2,6 @@
   "name": "Vật Không Thể Thay Thế",
   "passive": {
     "name": "Người Nhà",
-    "description": "Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Tấn Công của người trang bị. Sau khi người trang bị tiêu diệt kẻ địch hoặc bị tấn công sẽ hồi ngay HP bằng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> Tấn Công của người trang bị, đồng thời sát thương gây ra tăng <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>, duy trì đến hết hiệp sau của bản thân. Hiệu ứng này không thể cộng dồn, mỗi hiệp chỉ kích hoạt 1 lần."
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của người trang bị. Sau khi người trang bị tiêu diệt kẻ địch hoặc bị tấn công sẽ hồi ngay HP bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của người trang bị, đồng thời sát thương gây ra tăng <orangeStrong>{{3}}%</orangeStrong>, duy trì đến hết hiệp sau của bản thân. Hiệu ứng này không thể cộng dồn, mỗi hiệp chỉ kích hoạt 1 lần."
   }
 }

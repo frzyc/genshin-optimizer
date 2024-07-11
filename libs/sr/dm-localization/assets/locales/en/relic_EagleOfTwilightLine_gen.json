@@ -1,7 +1,7 @@
 {
   "setName": "Eagle of Twilight Line",
   "setEffects": {
-    "2": "Increases Wind DMG by <unbreak>#1[i]%</unbreak>.",
-    "4": "After the wearer uses their Ultimate, their action is Advanced Forward by <unbreak>#1[i]%</unbreak>."
+    "2": "Increases Wind DMG by {{1}}%.",
+    "4": "After the wearer uses their Ultimate, their action is Advanced Forward by {{1}}%."
   }
 }

@@ -2,6 +2,6 @@
   "name": "C'est moi !",
   "passive": {
     "name": "Nouveau chapitre",
-    "description": "Augmente la DÉF du porteur de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. Augmente les DGT du porteur à hauteur de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de sa DÉF lorsqu'il utilise son ultime. Cet effet ne peut s'appliquer qu'1 fois par cible ennemie pour chaque utilisation de l'ultime du porteur."
+    "description": "Augmente la DÉF du porteur de <orangeStrong>{{1}}%</orangeStrong>. Augmente les DGT du porteur à hauteur de <orangeStrong>{{2}}%</orangeStrong> de sa DÉF lorsqu'il utilise son ultime. Cet effet ne peut s'appliquer qu'1 fois par cible ennemie pour chaque utilisation de l'ultime du porteur."
   }
 }

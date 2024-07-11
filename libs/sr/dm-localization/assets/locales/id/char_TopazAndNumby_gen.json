@@ -4,35 +4,36 @@
     "basic": {
       "0": {
         "name": "Deficit...",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Topaz pada 1 musuh yang ditargetkan.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Topaz pada 1 musuh yang ditargetkan.",
         "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Difficulty Paying?",
-        "fullDesc": "Mengakibatkan 1 musuh yang ditarget memasuki status \"Proof of Debt\" dan mengakibatkan DMG <u>Serangan Lanjutan</u> yang diterima target meningkat <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. \"Proof of Debt\" hanya akan efektif pada target terbaru yang menerima efeknya. Saat giliran rekan tim dimulai atau saat rekan tim beraksi, jika tidak ada target musuh berstatus \"Proof of Debt\" di medan pertempuran, Topaz akan mengakibatkan 1 target musuh secara acak untuk memasuki status \"Proof of Debt\".\\nNumby akan mengakibatkan Fire DMG sebesar <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> ATK Topaz pada target tersebut. Saat melancarkan Skill ini untuk mengakibatkan DMG, akan dianggap sama dengan memicu <u>Serangan Lanjutan</u>.",
+        "fullDesc": "Mengakibatkan 1 musuh yang ditarget memasuki status \"Proof of Debt\" dan mengakibatkan DMG <u>Serangan Lanjutan</u> yang diterima target meningkat <orangeStrong>{{2}}%</orangeStrong>. \"Proof of Debt\" hanya akan efektif pada target terbaru yang menerima efeknya. Saat giliran rekan tim dimulai atau saat rekan tim beraksi, jika tidak ada target musuh berstatus \"Proof of Debt\" di medan pertempuran, Topaz akan mengakibatkan 1 target musuh secara acak untuk memasuki status \"Proof of Debt\".\\nNumby akan mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Topaz pada target tersebut. Saat melancarkan Skill ini untuk mengakibatkan DMG, akan dianggap sama dengan memicu <u>Serangan Lanjutan</u>.",
         "shortDesc": "Mengakibatkan 1 musuh memasuki status \"Proof of Debt\", dan <color=#f29e38ff>DMG Serangan Lanjutan yang diterimanya akan meningkat</color>. Numby mengakibatkan Fire DMG pada target."
       }
     },
     "ult": {
       "0": {
         "name": "Turn a Profit!",
-        "fullDesc": "Membuat Numby memasuki status \"Windfall Bonanza!\", meningkatkan <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> DMG Multiplier dan <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> CRIT DMG. Saat target musuh berstatus \"Proof of Debt\" menerima serangan dari Basic Attack, Skill, atau Ultimate dari rekan tim, aksi Numby akan didahulukan sebesar <unbreak>#3[i]%</unbreak>. Setelah Numby melancarkan <unbreak>#4[i]</unbreak> kali serangan, Numby akan keluar dari status \"Windfall Bonanza!\".",
+        "fullDesc": "Membuat Numby memasuki status \"Windfall Bonanza!\", meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG Multiplier dan <orangeStrong>{{2}}%</orangeStrong> CRIT DMG. Saat target musuh berstatus \"Proof of Debt\" menerima serangan dari Basic Attack, Skill, atau Ultimate dari rekan tim, aksi Numby akan didahulukan sebesar {{3}}%. Setelah Numby melancarkan {{4}} kali serangan, Numby akan keluar dari status \"Windfall Bonanza!\".",
         "shortDesc": "Membuat Numby memasuki status \"Windfall Bonanza!\" dan <color=#f29e38ff>mendapatkan peningkatan DMG Multiplier dan CRIT DMG</color>."
       }
     },
     "technique": {
       "0": {
         "name": "Explicit Subsidy",
-        "fullDesc": "Saat Topaz adalah karakter yang digunakan di latar tempat, akan memanggil Numby. Numby akan secara otomatis mencari Peti Harta biasa dan Trotter dalam jangkauan tertentu.\\nMelancarkan Technique akan membuat Topaz memulihkan <unbreak>#1[i]</unbreak> Energy setelah Numby melancarkan serangan pertamanya pada pertempuran berikutnya.\\nSetelah melancarkan Technique ini, jika Topaz masih berada dalam tim setelah memenangkan pertempuran dengan musuh di latar tempat, kamu akan memperoleh Credit tambahan dalam jumlah kecil saat menerima Credit. Setiap hari dalam kalender bumi, kamu hanya dapat menerima maksimal <unbreak>#2[i]</unbreak> Credit tambahan.\\nSetelah melancarkan Technique ini dan mengalahkan musuh di Simulated Universe, kamu akan memperoleh Cosmic Fragment tambahan dalam jumlah kecil, serta memiliki peluang kecil untuk memperoleh 1 Benda Langka secara acak.",
+        "fullDesc": "Saat Topaz adalah karakter yang digunakan di latar tempat, akan memanggil Numby. Numby akan secara otomatis mencari Peti Harta biasa dan Trotter dalam jangkauan tertentu.\\nMelancarkan Technique akan membuat Topaz memulihkan {{1}} Energy setelah Numby melancarkan serangan pertamanya pada pertempuran berikutnya.\\nSetelah melancarkan Technique ini, jika Topaz masih berada dalam tim setelah memenangkan pertempuran dengan musuh di latar tempat, kamu akan memperoleh Credit tambahan dalam jumlah kecil saat menerima Credit. Setiap hari dalam kalender bumi, kamu hanya dapat menerima maksimal {{2}} Credit tambahan.\\nSetelah melancarkan Technique ini dan mengalahkan musuh di Simulated Universe, kamu akan memperoleh Cosmic Fragment tambahan dalam jumlah kecil, serta memiliki peluang kecil untuk memperoleh 1 Benda Langka secara acak.",
         "shortDesc": "<color=#f29e38ff>Memanggil Numby untuk mengikuti pergerakanmu</color> di dalam latar tempat. Numby akan <color=#f29e38ff>mencari Peti Harta biasa dan Trotter di sekitar</color> secara otomatis. Melancarkan Technique akan membuat Topaz memulihkan Energy setelah Numby melancarkan serangan pertamanya pada pertempuran berikutnya."
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
-        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya."
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "shortDesc": ""
       }
     }
   }

@@ -2,6 +2,6 @@
   "name": "영험한 열쇠",
   "passive": {
     "name": "깨달음",
-    "description": "장착한 캐릭터가 전투 스킬 발동 후 추가로 에너지를 <color=#f29e38ff><unbreak>#1[i]</unbreak></color>pt 회복한다. 해당 효과는 단일 턴 내 중복 발동되지 않는다"
+    "description": "장착한 캐릭터가 전투 스킬 발동 후 추가로 에너지를 <orangeStrong>{{1}}</orangeStrong>pt 회복한다. 해당 효과는 단일 턴 내 중복 발동되지 않는다"
   }
 }

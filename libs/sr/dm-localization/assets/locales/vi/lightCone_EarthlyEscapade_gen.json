@@ -2,6 +2,6 @@
   "name": "Trò Đùa Trần Thế",
   "passive": {
     "name": "Thiện Biến",
-    "description": "Tăng <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> Sát Thương Bạo Kích của người trang bị. Khi bắt đầu chiến đấu, sẽ khiến người trang bị nhận Mặt Nạ, duy trì <unbreak>#6[i]</unbreak> hiệp. Khi người trang bị đang có Mặt Nạ, Tỷ Lệ Bạo Kích của đồng đội tăng <color=#f29e38ff><unbreak>#5[i]%</unbreak></color>, Sát Thương Bạo Kích tăng <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>. Người trang bị mỗi khi hồi phục 1 Điểm Chiến Kỹ sẽ nhận được 1 tầng Ngọn Lửa Sắc Màu, Điểm Chiến Kỹ dư ra khi hồi phục cũng được tính vào. Sau khi Ngọn Lửa Sắc Màu đạt <unbreak>#4[i]</unbreak> tầng, sẽ xóa tất cả Ngọn Lửa Sắc Màu và nhận Mặt Nạ, duy trì <unbreak>#3[i]</unbreak> hiệp."
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Sát Thương Bạo Kích của người trang bị. Khi bắt đầu chiến đấu, sẽ khiến người trang bị nhận Mặt Nạ, duy trì {{6}} hiệp. Khi người trang bị đang có Mặt Nạ, Tỷ Lệ Bạo Kích của đồng đội tăng <orangeStrong>{{5}}%</orangeStrong>, Sát Thương Bạo Kích tăng <orangeStrong>{{2}}%</orangeStrong>. Người trang bị mỗi khi hồi phục 1 Điểm Chiến Kỹ sẽ nhận được 1 tầng Ngọn Lửa Sắc Màu, Điểm Chiến Kỹ dư ra khi hồi phục cũng được tính vào. Sau khi Ngọn Lửa Sắc Màu đạt {{4}} tầng, sẽ xóa tất cả Ngọn Lửa Sắc Màu và nhận Mặt Nạ, duy trì {{3}} hiệp."
   }
 }

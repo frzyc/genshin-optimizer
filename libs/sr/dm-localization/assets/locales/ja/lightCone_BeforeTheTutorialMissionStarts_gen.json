@@ -2,6 +2,6 @@
   "name": "{RUBY_B#はじ}初{RUBY_E#}めてのクエストの{RUBY_B#まえ}前{RUBY_E#}に",
   "passive": {
     "name": "ナイスキャッチ",
-    "description": "装備キャラの効果命中+<color=#f29e38ff><unbreak>#1[i]%</unbreak></color>。装備キャラが、防御力がダウンされた敵に攻撃を行った後、EPを<color=#f29e38ff><unbreak>#2[i]</unbreak></color>回復する。"
+    "description": "装備キャラの効果命中+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが、防御力がダウンされた敵に攻撃を行った後、EPを<orangeStrong>{{2}}</orangeStrong>回復する。"
   }
 }

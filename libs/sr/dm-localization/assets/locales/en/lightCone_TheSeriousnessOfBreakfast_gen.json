@@ -2,6 +2,6 @@
   "name": "The Seriousness of Breakfast",
   "passive": {
     "name": "Get Ready",
-    "description": "Increases the wearer's DMG by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>. For every enemy defeated by the wearer, the wearer's ATK increases by <color=#f29e38ff><unbreak>#2[i]%</unbreak></color>, stacking up to <unbreak>#3[i]</unbreak> time(s)."
+    "description": "Increases the wearer's DMG by <orangeStrong>{{1}}%</orangeStrong>. For every enemy defeated by the wearer, the wearer's ATK increases by <orangeStrong>{{2}}%</orangeStrong>, stacking up to {{3}} time(s)."
   }
 }

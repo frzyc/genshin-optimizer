@@ -2,6 +2,6 @@
   "name": "Perfect Timing",
   "passive": {
     "name": "Refraction of Sightline",
-    "description": "Increases the wearer's Effect RES by <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> and increases Outgoing Healing by an amount that is equal to <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> of Effect RES. Outgoing Healing can be increased this way by up to <color=#f29e38ff><unbreak>#3[i]%</unbreak></color>."
+    "description": "Increases the wearer's Effect RES by <orangeStrong>{{1}}%</orangeStrong> and increases Outgoing Healing by an amount that is equal to <orangeStrong>{{2}}%</orangeStrong> of Effect RES. Outgoing Healing can be increased this way by up to <orangeStrong>{{3}}%</orangeStrong>."
   }
 }

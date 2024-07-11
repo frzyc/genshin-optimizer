@@ -2,6 +2,6 @@
   "name": "은하철도의 밤",
   "passive": {
     "name": "유성군",
-    "description": "필드에 적이 1기 있을 때마다 장착한 캐릭터의 공격력이 <color=#f29e38ff><unbreak>#2[f1]%</unbreak></color> 증가한다. 해당 효과 최대 중첩수: 5스택. 적의 약점이 격파될 시 장착한 캐릭터가 가하는 피해가 <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> 증가한다. 지속 시간: 1턴"
+    "description": "필드에 적이 1기 있을 때마다 장착한 캐릭터의 공격력이 <orangeStrong>{{2}}%</orangeStrong> 증가한다. 해당 효과 최대 중첩수: 5스택. 적의 약점이 격파될 시 장착한 캐릭터가 가하는 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 지속 시간: 1턴"
   }
 }

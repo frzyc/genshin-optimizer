@@ -1,7 +1,7 @@
 {
   "setName": "Mergulhadora Pioneira de Águas Mortas",
   "setEffects": {
-    "2": "Aumenta em <unbreak>#1[i]%</unbreak> o Dano causado a inimigos com penalidades.",
-    "4": "Aumenta a Chance de CRIT em <unbreak>#1[i]%</unbreak>. O usuário causa <unbreak>#2[i]%</unbreak>/<unbreak>#3[i]%</unbreak> de Dano CRIT aumentado em inimigos com pelo menos <unbreak>#4[i]</unbreak>/<unbreak>#5[i]</unbreak> penalidades. Após o usuário infligir uma penalidade nos inimigos-alvo, os efeitos mencionados anteriormente aumentam em <unbreak>100%</unbreak>, durando por <unbreak>#6[i]</unbreak> rodada(s)."
+    "2": "Aumenta em {{1}}% o Dano causado a inimigos com penalidades.",
+    "4": "Aumenta a Chance de CRIT em {{1}}%. O usuário causa {{2}}%/{{3}}% de Dano CRIT aumentado em inimigos com pelo menos {{4}}/{{5}} penalidades. Após o usuário infligir uma penalidade nos inimigos-alvo, os efeitos mencionados anteriormente aumentam em <unbreak>100%</unbreak>, durando por {{6}} rodada(s)."
   }
 }

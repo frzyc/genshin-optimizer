@@ -4,40 +4,41 @@
     "basic": {
       "0": {
         "name": "Espada Fragmentada",
-        "fullDesc": "Causa <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> do ATQ de Blade como Dano de Vento a um inimigo-alvo.",
+        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Blade como Dano de Vento a um inimigo-alvo.",
         "shortDesc": "Causa Dano de Vento leve a um inimigo."
       },
       "1": {
         "name": "Floresta de Espadas",
-        "fullDesc": "Consome PV igual a <unbreak>#1[i]%</unbreak> dos PV máximos de Blade e causa Dano de Vento igual a soma de <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> do seu ATQ + <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> dos seus PV máximos a um único inimigo. Além disso, causa Dano de Vento igual a soma de <color=#f29e38ff><unbreak>#3[i]%</unbreak></color> do ATQ de Blade + <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> dos seus PV máximos a alvos adjacentes.\\nSe os PV atuais de Blade forem insuficientes, seus PV serão reduzidos a 1 ao usar Floresta de Espadas.\\nFloresta de Espadas não pode regenerar Pontos de Perícia.",
+        "fullDesc": "Consome PV igual a {{1}}% dos PV máximos de Blade e causa Dano de Vento igual a soma de <orangeStrong>{{2}}%</orangeStrong> do seu ATQ + <orangeStrong>{{4}}%</orangeStrong> dos seus PV máximos a um único inimigo. Além disso, causa Dano de Vento igual a soma de <orangeStrong>{{3}}%</orangeStrong> do ATQ de Blade + <orangeStrong>{{5}}%</orangeStrong> dos seus PV máximos a alvos adjacentes.\\nSe os PV atuais de Blade forem insuficientes, seus PV serão reduzidos a 1 ao usar Floresta de Espadas.\\nFloresta de Espadas não pode regenerar Pontos de Perícia.",
         "shortDesc": "Consome PV, causa Dano de Vento a um inimigo e Dano de Vento leve a alvos adjacentes."
       }
     },
     "skill": {
       "0": {
         "name": "Paisagem Infernal",
-        "fullDesc": "Consome PV igual a <unbreak>#1[i]%</unbreak> dos PV máximos de Blade para entrar no estado de Paisagem Infernal.\\nEnquanto a Paisagem Infernal estiver ativa, a Perícia dele não pode ser usada, seu Dano causado aumenta em <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> e aprimora o seu ATQ Básico Espada Fragmentada para Floresta de Espadas por <unbreak>#2[i]</unbreak> rodada(s).\\nSe os PV atuais de Blade não forem suficientes, seus PV serão reduzidos para 1 quando usar esta Perícia.\\nEsta Perícia não regenera Energia. Usar esta Perícia não encerra a rodada atual.",
+        "fullDesc": "Consome PV igual a {{1}}% dos PV máximos de Blade para entrar no estado de Paisagem Infernal.\\nEnquanto a Paisagem Infernal estiver ativa, a Perícia dele não pode ser usada, seu Dano causado aumenta em <orangeStrong>{{4}}%</orangeStrong> e aprimora o seu ATQ Básico Espada Fragmentada para Floresta de Espadas por {{2}} rodada(s).\\nSe os PV atuais de Blade não forem suficientes, seus PV serão reduzidos para 1 quando usar esta Perícia.\\nEsta Perícia não regenera Energia. Usar esta Perícia não encerra a rodada atual.",
         "shortDesc": "Consome PV para <color=#f29e38ff>aprimorar o ATQ Básico</color>, e a rodada atual não termina ao usar essa Perícia."
       }
     },
     "ult": {
       "0": {
         "name": "Sentença de Morte",
-        "fullDesc": "Define os PV atuais de Blade em <unbreak>50%</unbreak> de seus PV máximos e causa Dano de Vento a um único inimigo igual à somatória de <color=#f29e38ff><unbreak>#1[i]%</unbreak></color> de seu ATQ, <color=#f29e38ff><unbreak>#2[i]%</unbreak></color> de seus PV máximos, e <color=#f29e38ff><unbreak>#5[i]%</unbreak></color> do total de PV que ele perdeu na batalha atual. Ao mesmo tempo, causa Dano de Vento aos alvos adjacentes igual à somatória de <color=#f29e38ff><unbreak>#3[f1]%</unbreak></color> de seu ATQ, <color=#f29e38ff><unbreak>#4[i]%</unbreak></color> de seus PV máximos, e <color=#f29e38ff><unbreak>#6[i]%</unbreak></color> do total de PV que ele perdeu na batalha atual.\\nO total de PV que Blade perdeu na batalha atual tem um limite de <unbreak>#7[i]%</unbreak> de seus PV máximos. Este valor será redefinido e reacumulado após usar sua Perícia Suprema.",
+        "fullDesc": "Define os PV atuais de Blade em <unbreak>50%</unbreak> de seus PV máximos e causa Dano de Vento a um único inimigo igual à somatória de <orangeStrong>{{1}}%</orangeStrong> de seu ATQ, <orangeStrong>{{2}}%</orangeStrong> de seus PV máximos, e <orangeStrong>{{5}}%</orangeStrong> do total de PV que ele perdeu na batalha atual. Ao mesmo tempo, causa Dano de Vento aos alvos adjacentes igual à somatória de <orangeStrong>{{3}}%</orangeStrong> de seu ATQ, <orangeStrong>{{4}}%</orangeStrong> de seus PV máximos, e <orangeStrong>{{6}}%</orangeStrong> do total de PV que ele perdeu na batalha atual.\\nO total de PV que Blade perdeu na batalha atual tem um limite de {{7}}% de seus PV máximos. Este valor será redefinido e reacumulado após usar sua Perícia Suprema.",
         "shortDesc": "Faz com que os PV atuais fiquem em <unbreak>50%</unbreak> dos PV máximos, causa Dano de Vento massivo a um único inimigo e Dano de Vento aos alvos adjacentes."
       }
     },
     "technique": {
       "0": {
         "name": "Vento do Carma",
-        "fullDesc": "Imediatamente ataca o inimigo. Após entrar em combate, consome <unbreak>#2[i]%</unbreak> dos PV máximos de Blade enquanto causa Dano de Vento igual a <unbreak>#1[i]%</unbreak> dos seus PV máximos a todos os inimigos.\\nSe os PV atuais de Blade forem insuficientes, seus PV serão reduzidos a 1 quando a Técnica é usada.",
+        "fullDesc": "Imediatamente ataca o inimigo. Após entrar em combate, consome {{2}}% dos PV máximos de Blade enquanto causa Dano de Vento igual a {{1}}% dos seus PV máximos a todos os inimigos.\\nSe os PV atuais de Blade forem insuficientes, seus PV serão reduzidos a 1 quando a Técnica é usada.",
         "shortDesc": "Ataca o inimigo. Após entrar em combate, consome seus próprios PV para causar Dano de Vento a todos os inimigos."
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
-        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente."
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
       }
     }
   }
