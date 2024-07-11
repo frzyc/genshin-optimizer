@@ -13,6 +13,11 @@ import type { LanguageKey } from '@genshin-optimizer/sr/dm'
 import { allLanguageKeys, languageMap } from '@genshin-optimizer/sr/dm'
 import { HashData, type LanguageData } from './hashData'
 
+export const interpolationTags = {
+  orangeStrong: 'orangeStrong',
+}
+export type InterpolationTag = keyof typeof interpolationTags
+
 // Process tags in string to template for i18n
 function processString(str: string | undefined) {
   if (str === undefined) str = ''
@@ -28,7 +33,7 @@ function processString(str: string | undefined) {
     (match, colorHex, index, suffix) => {
       // Bold + orange
       if (colorHex === 'f29e38ff')
-        return `<orangeStrong>{{${index}}}${suffix}</orangeStrong>`
+        return `<${interpolationTags.orangeStrong}>{{${index}}}${suffix}</${interpolationTags.orangeStrong}>`
       else if (colorHex)
         throw new Error(
           `Unhandled colorHex ${colorHex} in string ${str} on match ${match}`
