@@ -1,0 +1,40 @@
+{
+  "name": "March 7th",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Frigid Cold Arrow",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK March 7th pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "The Power of Cuteness",
+        "fullDesc": "Memberikan Shield yang dapat menahan DMG sebesar <orangeStrong>{{1}}%</orangeStrong> DEF March 7th + <orangeStrong>{{4}}</orangeStrong> pada 1 rekan tim selama {{2}} giliran.\\nJika persentase HP rekan tersebut lebih dari atau sama dengan {{3}}%, maka peluangnya diserang musuh akan meningkat pesat.",
+        "shortDesc": "<color=#f29e38ff>Memberikan Shield</color> pada 1 rekan tim."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Glacial Cascade",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK March 7th kepada seluruh musuh. Target musuh yang terkena serangan memiliki {{2}}% <u>peluang dasar</u> untuk memasuki status Frozen selama {{3}} giliran.\\nSaat dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice <u>DMG tambahan</u> sebesar <orangeStrong>{{4}}%</orangeStrong> ATK March 7th setiap kali gilirannya dimulai.",
+        "shortDesc": "Mengakibatkan Ice DMG pada <color=#f29e38ff>seluruh</color> musuh, dan <color=#f29e38ff>berpeluang untuk mengakibatkan status Frozen</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Freezing Beauty",
+        "fullDesc": "Segera menyerang musuh dan setelah memasuki pertempuran, memiliki {{1}}% <u>peluang dasar</u> untuk mengakibatkan 1 musuh memasuki status Frozen secara acak selama {{2}} giliran.\\nSaat dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice <u>DMG tambahan</u> sebesar {{3}}% ATK March 7th setiap kali gilirannya dimulai.",
+        "shortDesc": "Menyerang musuh dan berpeluang besar untuk membuat 1 musuh secara acak memasuki status Frozen setelah memasuki pertempuran."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

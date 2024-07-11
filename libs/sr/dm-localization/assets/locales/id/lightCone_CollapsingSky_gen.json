@@ -1,0 +1,7 @@
+{
+  "name": "Collapsing Sky",
+  "passive": {
+    "name": "Havoc",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Basic Attack DMG dan Skill DMG pengguna."
+  }
+}

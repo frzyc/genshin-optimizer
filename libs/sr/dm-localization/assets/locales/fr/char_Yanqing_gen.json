@@ -1,0 +1,40 @@
+{
+  "name": "Yanqing",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Épine de givre",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yanqing à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Salve d'aiguillons",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yanqing à un ennemi unique et active Osmose avec l'acier pendant 1 tour.",
+        "shortDesc": "Inflige des DGT de glace à un ennemi unique et active Osmose avec l'acier."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Béatitude au milieu de l'averse",
+        "fullDesc": "Augmente les chances de coup critique de Yanqing de {{1}}%. Si Osmose avec l'acier est active, augmente les DGT critiques de Yanqing de <orangeStrong>{{2}}%</orangeStrong> supplémentaires. Ce <u>bonus</u> dure 1 tour avant d'infliger des DGT de glace équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ de Yanqing à un ennemi unique.",
+        "shortDesc": "Augmente les chances de coup critique de Yanqing. Renforce Osmose avec l'acier et inflige des DGT de glace massifs à un ennemi unique."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "La seule et unique lame",
+        "fullDesc": "Après utilisation de sa technique, les DGT de Yanqing augmentent de {{2}}% pendant {{3}} tours contre les ennemis dont les PV sont supérieurs ou égaux à {{1}}% au début du combat suivant.",
+        "shortDesc": "Après utilisation de la technique, les DGT infligés aux ennemis dont les PV sont supérieurs ou égaux à <unbreak>50</unbreak> % augmentent au début du combat suivant."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

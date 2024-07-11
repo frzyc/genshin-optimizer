@@ -1,0 +1,7 @@
+{
+  "name": "Primeiro Dia da Minha Vida Nova",
+  "passive": {
+    "name": "Neste Exato Momento",
+    "description": "Aumenta a DEF do usuário em <orangeStrong>{{1}}%</orangeStrong>. Após entrar na batalha, aumenta a RES a todos os Tipos de todos os aliados em <orangeStrong>{{2}}%</orangeStrong>. Efeitos do mesmo tipo não se acumulam."
+  }
+}

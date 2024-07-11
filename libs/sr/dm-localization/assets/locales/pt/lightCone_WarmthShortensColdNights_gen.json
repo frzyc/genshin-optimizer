@@ -1,0 +1,7 @@
+{
+  "name": "O Calor Encurta as Noites Geladas",
+  "passive": {
+    "name": "Luz Minúscula",
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> os PV máximos do usuário. Ao usar um ATQ Básico ou Perícia, restaura os PV de todos os aliados em valor igual a <orangeStrong>{{2}}%</orangeStrong> de seus respectivos PV máximos."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "黑塔",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "看什么看",
+        "fullDesc": "对指定敌方单体造成等同于黑塔<orangeStrong>{{1}}%</orangeStrong>攻击力的冰属性伤害。",
+        "shortDesc": "对敌方单体造成少量冰属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "一锤子买卖",
+        "fullDesc": "对敌方全体造成等同于黑塔<orangeStrong>{{1}}%</orangeStrong>攻击力的冰属性伤害。若敌方目标当前生命值百分比大于等于{{2}}%，则对该目标造成的伤害提高{{3}}%。",
+        "shortDesc": "对敌方全体造成少量冰属性伤害，对生命值较高的目标造成的伤害提高。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "是魔法，我加了魔法",
+        "fullDesc": "对敌方全体造成等同于黑塔<orangeStrong>{{1}}%</orangeStrong>攻击力的冰属性伤害。",
+        "shortDesc": "对敌方全体造成冰属性伤害。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "可以优化一下",
+        "fullDesc": "使用秘技后，下一次战斗开始时黑塔攻击力提高{{1}}%，持续{{2}}回合。",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

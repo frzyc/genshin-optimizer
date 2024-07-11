@@ -1,0 +1,40 @@
+{
+  "name": "希兒",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "強襲",
+        "fullDesc": "對指定敵方單體造成等同於希兒<orangeStrong>{{1}}%</orangeStrong>攻擊力的量子屬性傷害。",
+        "shortDesc": "對敵方單體造成少量量子屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "歸刃",
+        "fullDesc": "使希兒的速度提高{{2}}%，並對指定敵方單體造成等同於希兒<orangeStrong>{{1}}%</orangeStrong>攻擊力的量子屬性傷害，速度提高效果持續{{3}}回合。",
+        "shortDesc": "對敵方單體造成量子屬性傷害，並使自身速度提高。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "亂蝶",
+        "fullDesc": "立即進入增幅狀態，並對指定敵方單體造成等同於希兒<orangeStrong>{{1}}%</orangeStrong>攻擊力的量子屬性傷害。",
+        "shortDesc": "進入<color=#f29e38ff>增幅狀態</color>，對敵方單體造成大量量子屬性傷害。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "幻身",
+        "fullDesc": "使用秘技後進入持續{{1}}秒的隱身狀態。隱身狀態下不會被敵人發現，且主動攻擊敵人進入戰鬥時，希兒立即進入增幅狀態。",
+        "shortDesc": "進入<color=#f29e38ff>隱身</color>狀態。攻擊敵人進入戰鬥後立即進入<color=#f29e38ff>增幅狀態</color>。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

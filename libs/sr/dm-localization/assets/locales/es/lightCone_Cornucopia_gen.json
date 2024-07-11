@@ -1,0 +1,7 @@
+{
+  "name": "Cornucopia",
+  "passive": {
+    "name": "Prosperidad",
+    "description": "Cuando el portador usa la habilidad básica o la habilidad definitiva, su curación realizada aumenta en un <orangeStrong>{{1}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "黑塔",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "看什麼看",
+        "fullDesc": "對指定敵方單體造成等同於黑塔<orangeStrong>{{1}}%</orangeStrong>攻擊力的冰屬性傷害。",
+        "shortDesc": "對敵方單體造成少量冰屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "一錘子買賣",
+        "fullDesc": "對敵方全體造成等同於黑塔<orangeStrong>{{1}}%</orangeStrong>攻擊力的冰屬性傷害。若敵方目標現有生命值百分比大於等於{{2}}%，則對該目標造成的傷害提高{{3}}%。",
+        "shortDesc": "對敵方全體造成少量冰屬性傷害，對生命值較高的目標造成的傷害提高。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "是魔法，我加了魔法",
+        "fullDesc": "對敵方全體造成等同於黑塔<orangeStrong>{{1}}%</orangeStrong>攻擊力的冰屬性傷害。",
+        "shortDesc": "對敵方全體造成冰屬性傷害。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "可以改良一下",
+        "fullDesc": "使用秘技後，下一次戰鬥開始時黑塔攻擊力提高{{1}}%，持續{{2}}回合。",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

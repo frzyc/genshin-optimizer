@@ -1,0 +1,40 @@
+{
+  "name": "Tingyun",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Dislodged",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Tingyun pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Soothing Melody",
+        "fullDesc": "Memberikan \"Benediction\" pada 1 rekan tim dan meningkatkan <orangeStrong>{{2}}%</orangeStrong> ATK-nya. Nilai peningkatan ATK tidak dapat melebihi <orangeStrong>{{4}}%</orangeStrong> ATK Tingyun saat ini.\\nSetelah rekan yang mendapatkan \"Benediction\" melancarkan serangan, rekan tersebut akan mengakibatkan 1 kali Lightning <u>DMG tambahan</u> sebesar <orangeStrong>{{1}}%</orangeStrong> ATK-nya.\\n\"Benediction\" berlangsung selama {{3}} giliran dan hanya efektif pada target skill terbaru Tingyun.",
+        "shortDesc": "<color=#f29e38ff>Meningkatkan ATK</color> 1 rekan tim dan memberinya \"Benediction\". Saat rekan berstatus \"Benediction\" melancarkan serangan, akan mengakibatkan <color=#f29e38ff>Lightning <u>DMG tambahan</u></color> dalam jumlah kecil."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Amidst the Rejoicing Clouds",
+        "fullDesc": "Memulihkan {{1}} Energy 1 rekan tim yang ditargetkan dan di saat bersamaan meningkatkan <orangeStrong>{{3}}%</orangeStrong> DMG rekan tersebut selama {{2}} giliran.",
+        "shortDesc": "<color=#f29e38ff>Memulihkan Energy</color> 1 rekan tim dan <color=#f29e38ff>meningkatkan DMG yang diakibatkan</color> rekan tersebut."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Gentle Breeze",
+        "fullDesc": "Setelah menggunakan Technique, Tingyun akan segera memulihkan {{1}} Energy.",
+        "shortDesc": "Akan segera memulihkan Energy dirinya setelah menggunakan Technique."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

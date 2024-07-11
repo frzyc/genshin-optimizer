@@ -1,0 +1,7 @@
+{
+  "name": "Resolution Shines As Pearls of Sweat",
+  "passive": {
+    "name": "Glance Back",
+    "description": "Saat pengguna menyerang target musuh, jika target tidak dalam status \"Ensnarement\", maka pengguna memiliki <orangeStrong>{{1}}%</orangeStrong> peluang dasar membuat target memasuki status \"Ensnarement\". DEF target musuh dengan status \"Ensnarement\" akan berkurang <orangeStrong>{{2}}%</orangeStrong> selama {{3}} giliran."
+  }
+}

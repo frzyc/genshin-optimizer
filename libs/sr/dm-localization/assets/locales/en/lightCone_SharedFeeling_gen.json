@@ -1,0 +1,7 @@
+{
+  "name": "Shared Feeling",
+  "passive": {
+    "name": "Cure and Repair",
+    "description": "Increases the wearer's Outgoing Healing by <orangeStrong>{{1}}%</orangeStrong>. When using Skill, regenerates <orangeStrong>{{2}}</orangeStrong> Energy for all allies."
+  }
+}

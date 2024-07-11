@@ -1,0 +1,40 @@
+{
+  "name": "Kafka",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Tumulte de minuit",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Kafka à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Caresse du clair de lune",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Kafka à une cible ennemie et des DGT de foudre équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ de Kafka aux ennemis adjacents.\\nSi la cible ennemie est soumise à des dégâts sur la durée, tous les dégâts sur la durée qu'elle subit actuellement produisent immédiatement des DGT équivalents à <orangeStrong>{{2}}%</orangeStrong> des DGT initiaux.",
+        "shortDesc": "Inflige des DGT de foudre à un ennemi unique et des DGT de foudre mineurs aux cibles adjacentes.\\nSi la cible principale est actuellement affectée par un effet de dégâts sur la durée, les dégâts sur la durée <color=#f29e38ff>infligent des DGT 1 fois supplémentaire</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Trille crépusculaire",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Kafka à tous les ennemis. Les ennemis touchés ont {{2}}% de <u>chances de base</u> d'être stupéfiés et de subir immédiatement des dégâts équivalents à <orangeStrong>{{5}}%</orangeStrong> des DGT initiaux de l'effet Stupéfaction. Stupéfaction dure {{3}} tours.\\nLes ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Kafka au début de chaque tour.",
+        "shortDesc": "Inflige des DGT de foudre mineurs à tous les ennemis, avec de fortes chances de les <color=#f29e38ff>stupéfier</color>.\\nSi les ennemis sont déjà stupéfiés, l'état Stupéfaction <color=#f29e38ff>inflige des DGT 1 fois supplémentaire</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "La pitié n'est pas un pardon",
+        "fullDesc": "Attaque immédiatement tous les ennemis dans un rayon déterminé. Inflige des DGT de foudre équivalents à {{3}}% de l'ATQ de Kafka à tous les ennemis après être entrée en combat, avec {{1}}% de <u>chances de base</u> d'infliger l'effet Stupéfaction de l'ultime à chaque ennemi pendant {{2}} tours.",
+        "shortDesc": "Attaque tous les ennemis à portée. Après être entré en combat, inflige des DGT de foudre mineurs à tous les ennemis, avec une forte probabilité de leur infliger <color=#f29e38ff>Stupéfaction</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

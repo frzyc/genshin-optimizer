@@ -1,0 +1,7 @@
+{
+  "name": "Day One of My New Life",
+  "passive": {
+    "name": "At This Very Moment",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DEF pengguna. Setelah memasuki pertempuran, meningkatkan <orangeStrong>{{2}}%</orangeStrong> RES seluruh tipe seluruh rekan tim. Kemampuan yang serupa efeknya tidak dapat ditumpuk."
+  }
+}

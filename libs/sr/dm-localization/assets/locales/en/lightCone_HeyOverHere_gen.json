@@ -1,0 +1,7 @@
+{
+  "name": "Hey, Over Here",
+  "passive": {
+    "name": "I'm Not Afraid!",
+    "description": "Increases the wearer's Max HP by <orangeStrong>{{1}}%</orangeStrong>. When the wearer uses their Skill, increases Outgoing Healing by <orangeStrong>{{2}}%</orangeStrong>, lasting for {{3}} turn(s)."
+  }
+}

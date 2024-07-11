@@ -1,0 +1,40 @@
+{
+  "name": "Misha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "E—Excuse Me, Please!",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Misha pada satu musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "R—Room Service!",
+        "fullDesc": "Menambah {{3}} Hit untuk Hits Per Action Ultimate Misha yang berikutnya. Mengakibatkan Ice DMG pada 1 musuh yang ditargetkan sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Misha, dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Misha pada target di sekitarnya.",
+        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh dan mengakibatkan Ice DMG dalam jumlah kecil pada target di sekitarnya, serta menambah <color=#f29e38ff>jumlah Hits Per Action untuk Ultimate</color> Misha yang berikutnya."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "G—Gonna Be Late!",
+        "fullDesc": "Memiliki {{1}} Hits Per Action secara default. Pertama-tama, akan melancarkan 1 Hit serangan pada 1 musuh yang ditargetkan dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Misha. Kemudian, sisa Hit-nya akan mengakibatkan Ice DMG pada musuh secara acak sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Misha. Sebelum setiap Hit-nya mengenai target, memiliki <orangeStrong>{{3}}%</orangeStrong> <u>Peluang Dasar</u> untuk membuat target memasuki status Frozen selama 1 giliran.\\nTarget musuh tidak dapat beraksi saat berada dalam status Frozen, di saat bersamaan setiap saat gilirannya dimulai, target juga akan menerima Ice <u>DMG tambahan</u> sebesar <orangeStrong>{{4}}%</orangeStrong> ATK Misha.\\nUltimate ini maksimal dapat memiliki {{5}} Hits Per Action. Setelah melancarkan Ultimate, jumlah Hits Per Action di-reset kembali ke jumlah default.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh. Total dapat Bounce <orangeStrong>{{1}}</orangeStrong> kali secara default, maksimal dapat Bounce <orangeStrong>{{5}}</orangeStrong> kali. Sebelum setiap Hit-nya mengenai target, berpeluang kecil untuk <color=#f29e38ff>membuat target memasuki status Frozen</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Wait, You Are So Beautiful!",
+        "fullDesc": "Setelah menggunakan Technique, Misha akan menciptakan sebuah Dimension selama {{1}} detik. Musuh dalam Dimension akan memasuki status \"Dream Prison\", dan aksinya akan terhenti. Setelah memasuki pertempuran melawan musuh berstatus \"Dream Prison\", jumlah Hits Per Action untuk Ultimate Misha yang berikutnya akan bertambah {{2}} Hit. Hanya boleh ada 1 efek Dimension ciptaan rekan tim dalam satu waktu.",
+        "shortDesc": "Menciptakan sebuah Dimension. Aksi musuh dalam Dimension akan terhenti. Setelah memasuki pertempuran melawan musuh dalam Dimension, akan menambah <color=#f29e38ff>jumlah Hits Per Action untuk Ultimate</color> Misha yang berikutnya."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

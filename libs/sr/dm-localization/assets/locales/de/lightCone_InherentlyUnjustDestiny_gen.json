@@ -1,0 +1,7 @@
+{
+  "name": "Ungerechtes Schicksal",
+  "passive": {
+    "name": "Alles auf den Tisch",
+    "description": "Erhöht die VTD des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Wenn der Träger Verbündeten einen Schild erzeugt, wird der KRIT-SCH des Trägers für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong> erhöht. Wenn der Träger mit Folgeangriffe einen Gegner trifft, besteht eine Grundchance von <orangeStrong>{{4}}%</orangeStrong>, dass der vom angegriffenen Gegner erlittene SCH für {{6}} Rd. um <orangeStrong>{{5}}%</orangeStrong> erhöht wird."
+  }
+}

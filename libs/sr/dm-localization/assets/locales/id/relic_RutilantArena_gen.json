@@ -1,0 +1,6 @@
+{
+  "setName": "Rutilant Arena",
+  "setEffects": {
+    "2": "Meningkatkan {{1}}% CRIT Rate pengguna. Meningkatkan {{3}}% DMG Basic Attack dan Skill ketika CRIT Rate pengguna saat ini lebih dari atau sama dengan {{2}}%."
+  }
+}

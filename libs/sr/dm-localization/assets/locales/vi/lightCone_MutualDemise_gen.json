@@ -1,0 +1,7 @@
+{
+  "name": "Hủy Diệt Tất Cả",
+  "passive": {
+    "name": "Quân Đoàn",
+    "description": "Khi Phần Trăm HP hiện tại của người trang bị nhỏ hơn {{1}}%, Tỷ Lệ Bạo Kích sẽ tăng <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "Voleur de météorite filante",
+  "setEffects": {
+    "2": "Augmente l'effet de Rupture de {{1}}%.",
+    "4": "Augmente de {{1}}% l'effet de Rupture du porteur. Ce dernier régénère {{2}} points d'énergie lorsqu'il inflige une Rupture de faiblesse à un ennemi."
+  }
+}

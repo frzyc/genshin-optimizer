@@ -1,0 +1,45 @@
+{
+  "name": "刃",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "支离剑",
+        "fullDesc": "对指定敌方单体造成等同于刃<orangeStrong>{{1}}%</orangeStrong>攻击力的风属性伤害。",
+        "shortDesc": "对敌方单体造成少量风属性伤害。"
+      },
+      "1": {
+        "name": "无间剑树",
+        "fullDesc": "消耗等同于刃生命上限{{1}}%的生命值，对指定敌方单体造成等同于刃<orangeStrong>{{2}}%</orangeStrong>攻击力+<orangeStrong>{{4}}%</orangeStrong>生命上限的风属性伤害，同时对其相邻目标造成等同于刃<orangeStrong>{{3}}%</orangeStrong>攻击力+<orangeStrong>{{5}}%</orangeStrong>生命上限的风属性伤害。\\n若当前生命值不足，施放【无间剑树】时刃的当前生命值降低至1点。\\n【无间剑树】无法恢复战技点。",
+        "shortDesc": "消耗自身生命值，对敌方单体造成风属性伤害的同时对相邻目标造成少量风属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "地狱变",
+        "fullDesc": "消耗等同于刃生命上限{{1}}%的生命值，进入【地狱变】状态。\\n处于【地狱变】状态时无法施放战技，同时使自身造成的伤害提高<orangeStrong>{{4}}%</orangeStrong>，普攻【支离剑】强化为【无间剑树】，持续{{2}}回合。\\n若当前生命值不足，施放战技时刃的当前生命值降低至1点。\\n该战技无法恢复能量。施放该战技后，本回合不会结束。",
+        "shortDesc": "消耗自身生命值，<color=#f29e38ff>获得强化普攻</color>，且本回合不会结束。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "大辟万死",
+        "fullDesc": "将刃的当前生命值转化为生命上限的<unbreak>50%</unbreak>，并对敌方单体造成等同于刃<orangeStrong>{{1}}%</orangeStrong>攻击力+<orangeStrong>{{2}}%</orangeStrong>生命上限+<orangeStrong>{{5}}%</orangeStrong>本场战斗中累计已损失生命值的风属性伤害，同时对其相邻目标造成等同于刃<orangeStrong>{{3}}%</orangeStrong>攻击力+<orangeStrong>{{4}}%</orangeStrong>生命上限+<orangeStrong>{{6}}%</orangeStrong>本场战斗中累计已损失生命值的风属性伤害。\\n本场战斗中累计已损失生命值最高不超过刃生命上限的{{7}}%，施放终结技后会清空并进行重新累计。",
+        "shortDesc": "将当前生命值转化为生命上限的<unbreak>50%</unbreak>，并对敌方单体造成大量风属性伤害，对相邻目标造成风属性伤害。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "业途风",
+        "fullDesc": "立即攻击敌人，进入战斗后消耗等同于刃生命上限{{2}}%的生命值，同时对敌方全体造成等同于刃生命上限{{1}}%的风属性伤害。\\n若当前生命值不足，施放秘技时刃的当前生命值降低至1点。",
+        "shortDesc": "攻击敌人，进战后消耗自身生命值，并对敌方全体造成风属性伤害。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

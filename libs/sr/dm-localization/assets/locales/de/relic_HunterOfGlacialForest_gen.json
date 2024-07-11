@@ -1,0 +1,7 @@
+{
+  "setName": "Jäger aus dem Gletscherwald",
+  "setEffects": {
+    "2": "Erhöht Eis-SCH um {{1}}%.",
+    "4": "Erhöht beim Einsatz des Ultimates den KRIT-SCH des Trägers für {{2}} Rd. um {{1}}%."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "setName": "Trạm Phong Ấn Không Gian",
+  "setEffects": {
+    "2": "Tăng {{1}}% Tấn Công của người trang bị. Khi tốc độ của người trang bị từ {{2}} trở lên, Tấn Công tăng thêm {{3}}%."
+  }
+}

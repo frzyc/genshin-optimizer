@@ -1,0 +1,7 @@
+{
+  "name": "Mediation",
+  "passive": {
+    "name": "Family",
+    "description": "Upon entering battle, increases SPD of all allies by <orangeStrong>{{1}}</orangeStrong> points for {{2}} turn(s)."
+  }
+}

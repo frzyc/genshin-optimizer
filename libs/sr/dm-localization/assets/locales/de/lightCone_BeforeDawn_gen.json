@@ -1,0 +1,7 @@
+{
+  "name": "Vor der Dämmerung",
+  "passive": {
+    "name": "Lange Nacht",
+    "description": "Erhöht den KRIT-SCH des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Erhöht den durch Fertigkeit und Ultimate verursachten SCH um <orangeStrong>{{2}}%</orangeStrong>. Nach dem Einsatz der Fertigkeit oder des Ultimates erhält der Träger Somnus Corpus. Beim Auslösen eines Folgeangriffs wird Somnus Corpus verbraucht und der vom Folgeangriff verursachte SCH wird um <orangeStrong>{{3}}%</orangeStrong> erhöht."
+  }
+}

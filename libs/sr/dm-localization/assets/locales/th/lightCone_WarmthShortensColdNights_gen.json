@@ -1,0 +1,7 @@
+{
+  "name": "Warmth Shortens Cold Nights",
+  "passive": {
+    "name": "Tiny Light",
+    "description": "ทำให้ HP สูงสุดของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> และหลังจากใช้การโจมตีปกติหรือสกิลต่อสู้ จะฟื้นฟู HP ของฝ่ายตัวเองทั้งหมด <orangeStrong>{{2}}%</orangeStrong> ของ HP สูงสุดของแต่ละตัว"
+  }
+}

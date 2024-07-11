@@ -1,0 +1,40 @@
+{
+  "name": "Gepard",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Faust der Überzeugung",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gepards ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Einschüchternder Schlag",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gepards ANG zu und verursacht beim Ziel mit einer <u>Grundchance</u> von {{2}}% für {{3}} Rd. Gefroren.\\nEin gefrorener Gegner kann keine Aktionen ausführen und erleidet zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Gepards ANG.",
+        "shortDesc": "Fügt einem Gegner Eis-SCH zu und <color=#f29e38ff>verursacht beim Ziel mit einer Chance Gefroren</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Emporragendes Bollwerk",
+        "fullDesc": "Gewährt allen Verbündeten für {{2}} Rd. einen Schild, der SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gepards VTD plus <orangeStrong>{{3}}</orangeStrong> absorbiert.",
+        "shortDesc": "Gewährt allen Verbündeten einen <color=#f29e38ff>Schild</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Kameradschaft",
+        "fullDesc": "Die Technik gewährt allen Verbündeten zu Beginn des nächsten Kampfs einen Schild, der SCH in Höhe von {{1}}% von Gepards VTD plus {{3}} für {{2}} Rd. absorbiert.",
+        "shortDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten zu Beginn des nächsten Kampfes einen Schild."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

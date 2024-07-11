@@ -1,0 +1,7 @@
+{
+  "name": "Quid Pro Quo",
+  "passive": {
+    "name": "Desfrute com Euforia",
+    "description": "No início da rodada, o usuário regenera <orangeStrong>{{2}}</orangeStrong> de Energia de um aliado aleatório (exceto o próprio usuário) que estiver com Energia inferior a {{1}}%."
+  }
+}

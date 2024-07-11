@@ -1,0 +1,7 @@
+{
+  "name": "Chúc Ngủ Ngon",
+  "passive": {
+    "name": "Kẻ Gian Khổ",
+    "description": "Mỗi khi kẻ địch nhận phải 1 Hiệu Ứng Xấu, thì sát thương người trang bị gây ra cho kẻ đó sẽ tăng <orangeStrong>{{1}}%</orangeStrong>, tối đa cộng dồn {{2}} tầng. Hiệu ứng này cũng có hiệu lực với sát thương duy trì."
+  }
+}

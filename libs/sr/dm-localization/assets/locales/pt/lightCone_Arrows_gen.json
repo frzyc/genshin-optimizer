@@ -1,0 +1,7 @@
+{
+  "name": "Flechas",
+  "passive": {
+    "name": "Crise",
+    "description": "No início da batalha, aumenta em <orangeStrong>{{1}}%</orangeStrong> a Chance de CRIT do usuário por {{2}} rodada(s)."
+  }
+}

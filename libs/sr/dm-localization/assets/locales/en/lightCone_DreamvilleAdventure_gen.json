@@ -1,0 +1,7 @@
+{
+  "name": "Dreamville Adventure",
+  "passive": {
+    "name": "Solidarity",
+    "description": "After the wearer uses a certain type of ability such as Basic ATK, Skill, or Ultimate, all allies gain Childishness, which increases allies' DMG for the same type of ability as used by the wearer by <orangeStrong>{{1}}%</orangeStrong>. Childishness only takes effect for the most recent type of ability the wearer used and cannot be stacked."
+  }
+}

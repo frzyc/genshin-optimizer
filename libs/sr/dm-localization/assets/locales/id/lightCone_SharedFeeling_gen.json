@@ -1,0 +1,7 @@
+{
+  "name": "Shared Feeling",
+  "passive": {
+    "name": "Cure and Repair",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Outgoing Healing pengguna. Saat melancarkan Skill akan memulihkan <orangeStrong>{{2}}</orangeStrong> Energy seluruh rekan tim."
+  }
+}

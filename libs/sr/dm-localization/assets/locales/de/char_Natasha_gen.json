@@ -1,0 +1,40 @@
+{
+  "name": "Natasha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Freundliche Fassade",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Natashas ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lieben, heilen und wählen",
+        "fullDesc": "Stellt LP eines anvisierten Verbündeten sofort um <orangeStrong>{{1}}%</orangeStrong> von Natashas max. LP plus <orangeStrong>{{4}}</orangeStrong> wieder her. Stellt außerdem LP des Verbündeten zu Beginn jeder Runde um <orangeStrong>{{2}}%</orangeStrong> von Natashas max. LP plus <orangeStrong>{{5}}</orangeStrong> für {{3}} Rd. wieder her.",
+        "shortDesc": "Stellt LP <color=#f29e38ff>eines einzelnen Verbündeten</color> wieder her und <color=#f29e38ff>heilt ihn kontinuierlich</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Geschenk der Wiedergeburt",
+        "fullDesc": "Stellt LP aller Verbündeten sofort um <orangeStrong>{{1}}%</orangeStrong> von Natashas max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her.",
+        "shortDesc": "<color=#f29e38ff>Stellt die LP aller Verbündeten wieder her</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Hypnoseforschung",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt einem zufälligen Gegner physischen SCH in Höhe von {{4}}% von Natashas ANG zu und verursacht bei allen Gegnern mit einer <u>Grundchance</u> von {{1}}% Schwächung.\\nGeschwächte Gegner fügen Verbündeten für {{3}} Rd. {{2}}% weniger SCH zu.",
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen physischen SCH zu, mit einer hohen Chance, allen gegnerischen Zielen Schwächung zuzufügen."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

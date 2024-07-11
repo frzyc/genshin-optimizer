@@ -1,0 +1,7 @@
+{
+  "name": "Hổ Phách",
+  "passive": {
+    "name": "Ngưng Trệ",
+    "description": "Khiến Phòng Thủ của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Khi Phần Trăm HP hiện tại của người trang bị nhỏ hơn {{2}}%, Phòng Thủ của người đó sẽ tăng thêm <orangeStrong>{{3}}%</orangeStrong>."
+  }
+}

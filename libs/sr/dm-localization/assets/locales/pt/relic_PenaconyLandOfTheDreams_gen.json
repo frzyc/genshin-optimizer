@@ -1,0 +1,6 @@
+{
+  "setName": "Penacony, Terra dos Sonhos",
+  "setEffects": {
+    "2": "Aumenta a Taxa de Regeneração de Energia do usuário em {{1}}%. Aumenta em {{2}}% o Dano para todos os outros aliados com o mesmo Tipo de Dano que o usuário."
+  }
+}

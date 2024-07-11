@@ -1,0 +1,7 @@
+{
+  "name": "Vai Diễn Bắt Đầu",
+  "passive": {
+    "name": "Niềm Vui Tự Tại",
+    "description": "Sau khi người trang bị thi triển Hiệu Ứng Xấu lên kẻ địch, sẽ nhận 1 tầng Vai Diễn, mỗi tầng Vai Diễn tăng <orangeStrong>{{1}}%</orangeStrong> sát thương do người trang bị gây ra, tối đa cộng dồn {{2}} tầng, duy trì {{3}} hiệp. Khi Chính Xác Hiệu Ứng của người trang bị lớn hơn hoặc bằng {{4}}%, Tấn Công sẽ tăng <orangeStrong>{{5}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "풍작",
+  "passive": {
+    "name": "번성",
+    "description": "장착한 캐릭터가 전투 스킬과 필살기 발동 시 치유량이 <orangeStrong>{{1}}%</orangeStrong> 증가한다"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Fu Xuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Thủy Kích Tuế Tinh",
+        "fullDesc": "Gây cho 1 kẻ địch Sát Thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của Fu Xuan.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Linh Đài Thị Ảnh",
+        "fullDesc": "Mở Ma Trận Tiên Tri, khiến đồng đội của Fu Xuan <u>chia sẻ</u> {{1}}% sát thương phải chịu (trước khi sát thương này được đỡ bởi Khiên) cho Fu Xuan trong {{3}} hiệp.\\nTất cả thành viên phe ta đang trong trạng thái Ma Trận Tiên Tri sẽ nhận Giám Tri, và tăng Giới Hạn HP bằng <orangeStrong>{{4}}%</orangeStrong> Giới Hạn HP của Fu Xuan, Tỷ Lệ Bạo Kích tăng <orangeStrong>{{5}}%</orangeStrong>.\\nKhi Fu Xuan vào <u>trạng thái không thể chiến đấu</u>, Ma Trận Tiên Tri cũng sẽ bị giải trừ.",
+        "shortDesc": "Mở \"Ma Trận Tiên Tri\", <u>chia sẻ</u> cho Fu Xuan <color=#f29e38ff>sát thương mà đồng đội phải chịu</color>. Đồng thời khiến toàn phe ta tăng Giới Hạn HP, <color=#f29e38ff>tăng Tỷ Lệ Bạo Kích</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lịch Kiếp Quy Nhất",
+        "fullDesc": "Gây cho toàn bộ kẻ địch Sát Thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của Fu Xuan, đồng thời nhận 1 lần kích hoạt hồi phục HP từ Thiên Phú của Fu Xuan.",
+        "shortDesc": "Gây sát thương Lượng Tử cho toàn phe địch, tăng số lần kích hoạt Thiên Phú của Fu Xuan."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Lá Chắn Ma Trận",
+        "fullDesc": "Sau khi dùng Bí Kỹ, toàn bộ phe ta nhận Lá Chắn duy trì {{1}} giây. Lá Chắn này có thể đỡ tất cả tấn công của kẻ địch khiến toàn phe ta sẽ không vào chiến đấu. Khi chủ động vào chiến đấu trong thời gian duy trì Lá Chắn, Fu Xuan sẽ tự động kích hoạt Ma Trận Tiên Tri, duy trì {{2}} hiệp.",
+        "shortDesc": "Kích hoạt Lá Chắn, khi chịu tấn công từ kẻ địch sẽ không vào chiến đấu. Sau khi vào chiến đấu sẽ tự động mở Ma Trận Tiên Tri."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

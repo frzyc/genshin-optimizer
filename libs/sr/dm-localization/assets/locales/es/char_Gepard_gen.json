@@ -1,0 +1,40 @@
+{
+  "name": "Gepard",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Puño de la convicción",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Gepard como Daño de Hielo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Golpe sobrecogedor",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Gepard como Daño de Hielo a un enemigo. Tiene un {{2}}% de <u>probabilidad base</u> de afectar con Congelación al enemigo atacado durante {{3}} turno.\\nEl enemigo congelado no puede actuar, y al comienzo de cada turno recibe un <orangeStrong>{{4}}%</orangeStrong> del ATQ de Gepard como Daño de Hielo <u>adicional</u>.",
+        "shortDesc": "Inflige Daño de Hielo a un enemigo y <color=#f29e38ff>tiene una probabilidad de causarle Congelación</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Bastión duradero",
+        "fullDesc": "Otorga a todos los aliados un escudo que absorbe un daño equivalente al <orangeStrong>{{1}}%</orangeStrong> de la DEF de Gepard + <orangeStrong>{{3}}</orangeStrong> durante {{2}} turnos.",
+        "shortDesc": "<color=#f29e38ff>Otorga escudos</color> a todos los aliados."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Camaradería",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla otorga un escudo a todos los aliados que absorbe un daño equivalente al {{1}}% de la DEF de Gepard + {{3}} durante {{2}} turnos.",
+        "shortDesc": "Tras usar la técnica, todos los aliados obtienen un escudo al comenzar la siguiente batalla."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

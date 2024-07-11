@@ -1,0 +1,7 @@
+{
+  "name": "Before the Tutorial Mission Starts",
+  "passive": {
+    "name": "Quick on the Draw",
+    "description": "Increases the wearer's Effect Hit Rate by <orangeStrong>{{1}}%</orangeStrong>. When the wearer attacks DEF-reduced enemies, regenerates <orangeStrong>{{2}}</orangeStrong> Energy."
+  }
+}

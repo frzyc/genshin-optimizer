@@ -1,0 +1,6 @@
+{
+  "setName": "Sigonia, a Desolação Abandonada",
+  "setEffects": {
+    "2": "Aumenta a Chance de CRIT do usuário em {{3}}%. Quando um inimigo-alvo é derrotado, o Dano CRIT do usuário aumenta em {{1}}%, acumulando até {{2}} vez(es)."
+  }
+}

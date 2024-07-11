@@ -1,0 +1,40 @@
+{
+  "name": "布洛妮婭",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "馭風的子彈",
+        "fullDesc": "對指定敵方單體造成等同於布洛妮婭<orangeStrong>{{1}}%</orangeStrong>攻擊力的風屬性傷害。",
+        "shortDesc": "對敵方單體造成少量風屬性傷害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "作戰再部署",
+        "fullDesc": "解除指定我方單體的1個<u>負面效果</u>，並使該目標立即行動，且造成的傷害提高<orangeStrong>{{1}}%</orangeStrong>，持續{{3}}回合。\\n當對自身施放該技能時，無法觸發立即行動效果。",
+        "shortDesc": "<color=#f29e38ff>解除</color>我方單體1個<color=#f29e38ff><u>負面效果</u></color>，同時使其<color=#f29e38ff>造成的傷害提高</color>，並<color=#f29e38ff>立刻行動</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "貝洛伯格進行曲",
+        "fullDesc": "使我方全體攻擊力提高<orangeStrong>{{1}}%</orangeStrong>，同時提高等同於布洛妮婭<orangeStrong>{{2}}%</orangeStrong>暴擊傷害+<orangeStrong>{{3}}%</orangeStrong>的暴擊傷害，持續{{4}}回合。",
+        "shortDesc": "使我方全體<color=#f29e38ff>攻擊力提高</color>，<color=#f29e38ff>暴擊傷害提高</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "在旗幟下",
+        "fullDesc": "使用秘技後，下一次戰鬥開始時使我方全體攻擊力提高{{1}}%，持續{{2}}回合。",
+        "shortDesc": "使用秘技，下一次戰鬥開始時我方全體攻擊力提高。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻擊",
+        "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

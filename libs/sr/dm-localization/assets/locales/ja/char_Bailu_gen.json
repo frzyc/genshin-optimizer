@@ -1,0 +1,40 @@
+{
+  "name": "{RUBY_B#ビャクロ}白露{RUBY_E#}",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#ぼう}望{RUBY_E#}・{RUBY_B#ぶん}聞{RUBY_E#}・{RUBY_B#もん}問{RUBY_E#}…{RUBY_B#けり}蹴{RUBY_E#}！",
+        "fullDesc": "指定した敵単体に白露の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の雷属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#うんぎんさぜん}雲吟乍然{RUBY_E#}、{RUBY_B#こぼ}零{RUBY_E#}れる{RUBY_B#しゅろ}珠露{RUBY_E#}",
+        "fullDesc": "指定した味方単体のHPを白露の最大HP<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>回復し、さらに{{4}}回、ランダムに味方単体を治癒する。治癒するたびに、次の治癒で回復するHP-{{3}}%。",
+        "shortDesc": "味方単体のHPを回復し、さらにランダムに味方単体を治癒。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#らいめい}雷鳴{RUBY_E#}{RUBY_B#ひき}率{RUBY_E#}いる{RUBY_B#やくえん}躍渊{RUBY_E#}の{RUBY_B#こうりゅう}蛟龍{RUBY_E#}",
+        "fullDesc": "味方全体のHPを白露の最大HP<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>回復する。\\n「生生」が付与されていない味方に「生生」を付与する。「生生」が付与されている味方の「生生」の継続時間+1ターン。\\n「生生」は{{3}}ターン継続でき、効果は累積できない。",
+        "shortDesc": "味方全体を回復し、「生生」を付与、または「生生」の効果ターンを延長。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#ようびょう}恙病{RUBY_E#}を{RUBY_B#ふっしょく}払拭{RUBY_E#}せし、{RUBY_B#しょうよう}徜徉{RUBY_E#}する{RUBY_B#れいたく}霊澤{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時、味方全体に「生生」を付与、{{1}}ターン継続。",
+        "shortDesc": "秘技を使用、次の戦闘開始時、味方全体に「生生」を付与する。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

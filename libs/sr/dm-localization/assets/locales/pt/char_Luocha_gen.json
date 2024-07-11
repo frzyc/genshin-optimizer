@@ -1,0 +1,40 @@
+{
+  "name": "Luocha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Espinhos do Abismo",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Luocha a um único inimigo.",
+        "shortDesc": "Causa Dano Imaginário leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Prece da Flor do Abismo",
+        "fullDesc": "Após usar a sua Perícia, Luocha restaura os PV do aliado-alvo imediatamente em <orangeStrong>{{1}}%</orangeStrong> do ATQ de Luocha + <orangeStrong>{{2}}</orangeStrong>. Enquanto isso, Luocha ganha 1 acúmulo de Flor do Abismo.\\nQuando a porcentagem dos PV de qualquer aliado chega a {{3}}% ou menos, um efeito equivalente à Perícia de Luocha será imediatamente ativado e aplicado a este aliado uma vez (sem consumir Pontos de Perícia). Este efeito pode ser ativado novamente após {{4}} rodada(s).",
+        "shortDesc": "<color=#f29e38ff>Restaura</color> PV de um único aliado e ganha 1 acúmulo de Flor do Abismo."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Desejo de Morte",
+        "fullDesc": "Remove {{2}} <u>melhoria(s)</u> de todos os inimigos e causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Luocha como Dano Imaginário a todos os inimigos. Ao mesmo tempo, Luocha ganha 1 acúmulo de Flor do Abismo.",
+        "shortDesc": "<color=#f29e38ff>Remove </color>1<color=#f29e38ff> <u>melhoria</u> </color>de todos os inimigos, causa Dano Imaginário a todos os inimigos, e ganha 1 acúmulo de Flor do Abismo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Misericórdia dos Tolos",
+        "fullDesc": "Após a Técnica ser utilizada, o Talento será acionado imediatamente no início da próxima batalha.",
+        "shortDesc": "Após a Técnica ser utilizada, ativa imediatamente o efeito do Talento no início da próxima batalha."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

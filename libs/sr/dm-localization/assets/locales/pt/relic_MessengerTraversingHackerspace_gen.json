@@ -1,0 +1,7 @@
+{
+  "setName": "Mensageira Atravessando o Hackerspace",
+  "setEffects": {
+    "2": "Aumenta a VEL em {{1}}%.",
+    "4": "Quando o usuário usa a sua Perícia Suprema em um aliado, a VEL de todos os aliados aumenta em {{1}}% por {{2}} rodada(s). Este efeito não pode acumular."
+  }
+}

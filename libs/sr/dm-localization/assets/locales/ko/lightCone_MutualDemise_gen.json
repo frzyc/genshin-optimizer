@@ -1,0 +1,7 @@
+{
+  "name": "전멸",
+  "passive": {
+    "name": "군단",
+    "description": "장착한 캐릭터의 현재 HP 백분율이 {{1}}% 미만일 경우 캐릭터의 치명타 확률이 <orangeStrong>{{2}}%</orangeStrong> 증가한다"
+  }
+}

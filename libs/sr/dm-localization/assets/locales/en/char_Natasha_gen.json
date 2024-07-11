@@ -1,0 +1,40 @@
+{
+  "name": "Natasha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Behind the Kindness",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Natasha's ATK to a single enemy.",
+        "shortDesc": "Deals minor Physical DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Love, Heal, and Choose",
+        "fullDesc": "Restores a single ally for <orangeStrong>{{1}}%</orangeStrong> of Natasha's Max HP plus <orangeStrong>{{4}}</orangeStrong>. Restores the ally for another <orangeStrong>{{2}}%</orangeStrong> of Natasha's Max HP plus <orangeStrong>{{5}}</orangeStrong> at the beginning of each turn for {{3}} turn(s).",
+        "shortDesc": "<color=#f29e38ff>Restores HP</color> for a single ally and provides <color=#f29e38ff>Healing Over Time</color> to them."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Gift of Rebirth",
+        "fullDesc": "Heals all allies for <orangeStrong>{{1}}%</orangeStrong> of Natasha's Max HP plus <orangeStrong>{{2}}</orangeStrong>.",
+        "shortDesc": "<color=#f29e38ff>Restores HP</color> for all allies."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Hypnosis Research",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Physical DMG equal to {{4}}% of Natasha's ATK to a random enemy, with a {{1}}% <u>base chance</u> to Weaken all enemies.\\nWhile Weakened, enemies deal {{2}}% less DMG to allies for {{3}} turn(s).",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor Physical DMG to a random single enemy, with a high chance to inflict Weaken to all enemy targets."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

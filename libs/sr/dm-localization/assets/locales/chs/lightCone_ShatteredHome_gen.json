@@ -1,0 +1,7 @@
+{
+  "name": "乐圮",
+  "passive": {
+    "name": "诛讨",
+    "description": "使装备者对当前生命值百分比大于{{1}}%的敌方目标造成的伤害提高<orangeStrong>{{2}}%</orangeStrong>。"
+  }
+}

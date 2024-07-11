@@ -1,0 +1,7 @@
+{
+  "name": "Mediación",
+  "passive": {
+    "name": "La Familia",
+    "description": "Tras entrar en combate, la VEL de todos los aliados aumenta en <orangeStrong>{{1}}</orangeStrong> pts. durante {{2}} turno."
+  }
+}

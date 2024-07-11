@@ -1,0 +1,40 @@
+{
+  "name": "Lynx",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ice Crampon Technique",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP diri sendiri pada 1 musuh yang ditarget.",
+        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Salted Camping Cans",
+        "fullDesc": "Memberikan \"Survival Response\" pada 1 rekan tim yang ditargetkan dan meningkatkan Max HP-nya sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{2}}</orangeStrong>. Jika rekan tersebut adalah karakter dengan Path \"Destruction\" atau \"Preservation\", maka peluang rekan tersebut untuk diserang musuh akan meningkat pesat. \"Survival Response\" berlangsung selama {{3}} giliran.\\nMemulihkan HP rekan tersebut sebesar <orangeStrong>{{4}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{5}}</orangeStrong>.",
+        "shortDesc": "Memberikan \"Survival Response\" pada 1 rekan tim, <color=#f29e38ff>meningkatkan Max HP-nya</color>, dan di saat yang bersamaan juga memulihkan HP-nya."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Snowfield First Aid",
+        "fullDesc": "Menghapus masing-masing {{1}} efek <u>Debuff</u> dari seluruh rekan tim, serta segera memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{2}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{3}}</orangeStrong>.",
+        "shortDesc": "Menghapus masing-masing <color=#f29e38ff>1 efek <u>Debuff</u> dari seluruh rekan tim</color>, serta memulihkan HP seluruh rekan tim."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Chocolate Energy Bar",
+        "fullDesc": "Setelah menggunakan Technique, seluruh rekan tim akan mendapatkan efek pemulihan berkelanjutan dari Talent Lynx saat pertempuran berikutnya dimulai, berlangsung selama {{1}} giliran.",
+        "shortDesc": "Setelah menggunakan Technique, seluruh rekan tim akan mendapatkan efek pemulihan berkelanjutan saat pertempuran berikutnya dimulai."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

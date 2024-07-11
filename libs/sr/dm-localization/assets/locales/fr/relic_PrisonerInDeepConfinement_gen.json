@@ -1,0 +1,7 @@
+{
+  "setName": "Prisonnier enchaîné",
+  "setEffects": {
+    "2": "Augmente l'ATQ de {{1}}%.",
+    "4": "Lorsque le porteur inflige des DGT à une cible ennemie, il ignore {{1}}% de sa DÉF pour chaque dégât sur la durée dont elle souffre. Cet effet s'applique avec un maximum de {{2}} dégâts sur la durée."
+  }
+}

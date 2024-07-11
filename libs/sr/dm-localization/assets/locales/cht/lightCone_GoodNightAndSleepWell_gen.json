@@ -1,0 +1,7 @@
+{
+  "name": "晚安與睡顏",
+  "passive": {
+    "name": "勞碌者",
+    "description": "敵方目標每承受1個負面效果，裝備者對其造成的傷害便提高<orangeStrong>{{1}}%</orangeStrong>，最多疊加{{2}}層。該效果對持續傷害也會生效。"
+  }
+}

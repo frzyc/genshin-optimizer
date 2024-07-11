@@ -1,0 +1,7 @@
+{
+  "name": "Antes de que comience la misión del tutorial",
+  "passive": {
+    "name": "Mano rápida",
+    "description": "El acierto de efecto del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando el portador ataca a un enemigo con reducción de DEF, recupera <orangeStrong>{{2}}</orangeStrong> pts. de energía."
+  }
+}

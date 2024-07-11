@@ -1,0 +1,40 @@
+{
+  "name": "Pela",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Tir givré",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Pela à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Morsure du givre",
+        "fullDesc": "Supprime {{2}} <u>bonus</u> et inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Pela à une cible ennemie unique.",
+        "shortDesc": "<color=#f29e38ff>Dissipe</color> 1 <color=#f29e38ff><u>bonus</u></color> d'une cible ennemie unique, et inflige des DGT de glace à la cible ennemie."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Suppression de zone",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Pela à tous les ennemis, avec {{1}}% de <u>chances de base</u> d'infliger Exposé à tous les ennemis.\\nLorsqu'ils sont exposés, les ennemis voient leur DÉF réduite de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tours.",
+        "shortDesc": "A de fortes chances de <color=#f29e38ff>diminuer la DÉF des ennemis</color> et inflige des DGT de glace mineurs à tous les ennemis."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Frappe préventive",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Pela inflige des DGT de glace équivalents à {{4}}% de son ATQ à un ennemi aléatoire en entrant en combat, avec {{1}}% de <u>chances de base</u> de diminuer la DÉF de tous les ennemis de {{2}}% pendant {{3}} tours.",
+        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT mineurs à un ennemi unique aléatoire après être entré en combat, avec de fortes chances de réduire la DÉF de toutes les cibles ennemies."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

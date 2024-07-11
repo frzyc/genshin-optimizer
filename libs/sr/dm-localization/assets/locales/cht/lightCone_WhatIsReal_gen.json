@@ -1,0 +1,7 @@
+{
+  "name": "何物為真",
+  "passive": {
+    "name": "假設",
+    "description": "使裝備者的擊破特攻提高<orangeStrong>{{1}}%</orangeStrong>。發動普通攻擊後，裝備者回復等同於<orangeStrong>{{2}}%</orangeStrong>生命上限+{{3}}點的生命值。"
+  }
+}

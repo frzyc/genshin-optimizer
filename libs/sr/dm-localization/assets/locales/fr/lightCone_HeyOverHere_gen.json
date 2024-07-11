@@ -1,0 +1,7 @@
+{
+  "name": "Hé, par ici !",
+  "passive": {
+    "name": "Je n'ai pas peur !",
+    "description": "Augmente les PV max du porteur de <orangeStrong>{{1}}%</orangeStrong>. Augmente les soins prodigués de <orangeStrong>{{2}}%</orangeStrong> quand le porteur utilise sa compétence, et ce pendant {{3}} tours."
+  }
+}

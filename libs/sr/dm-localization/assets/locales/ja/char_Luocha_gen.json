@@ -1,0 +1,40 @@
+{
+  "name": "{RUBY_B#ラセツ}羅刹{RUBY_E#}",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#こくえん}黒淵{RUBY_E#}の{RUBY_B#とげ}棘{RUBY_E#}",
+        "fullDesc": "指定した敵単体に羅刹の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の虚数属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の虚数属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#びゃっか}白花{RUBY_E#}の{RUBY_B#きぼう}祈望{RUBY_E#}",
+        "fullDesc": "戦闘スキルを発動した後、指定した味方単体のHPを、羅刹の攻撃力<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>回復し、羅刹は「白花の刻」を1層獲得する。\\n任意の味方単体の残りHPが{{3}}%以下の時、その味方をターゲットとして、羅刹の戦闘スキルと同等の効果が1回発動される、この行動はSPを消費しない。この効果は{{4}}ターン後に再度発動できる。",
+        "shortDesc": "味方単体のHPを<color=#f29e38ff>回復</color>し、「白花の刻」を1層獲得。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#きそう}帰葬{RUBY_E#}の{RUBY_B#じょうじゅ}成就{RUBY_E#}",
+        "fullDesc": "敵全体の<u>バフ</u>を{{2}}つ解除し、敵全体に羅刹の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の虚数属性ダメージを与える。羅刹は「白花の刻」を1層獲得する。",
+        "shortDesc": "敵全体の<color=#f29e38ff><u>バフ</u></color>を1つ<color=#f29e38ff>解除</color>し、敵全体に虚数属性ダメージを与え、「白花の刻」を1層獲得する。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#ぐしゃ}愚者{RUBY_E#}の{RUBY_B#ひあい}悲哀{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時、天賦を発動する。",
+        "shortDesc": "秘技を使用、次の戦闘に入った時、即座に天賦の効果を発動。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

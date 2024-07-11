@@ -1,0 +1,45 @@
+{
+  "name": "Luka",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Puño certero",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Luka como Daño Físico a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
+      },
+      "1": {
+        "name": "Puño rompecielos certero",
+        "fullDesc": "Consume 2 acumulaciones de Voluntad luchadora y usa primero Puño certero para lanzar un ataque de 3 golpes. Cada golpe inflige a un enemigo un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Luka como Daño Físico.\\nDespués, usa Puño rompecielos para golpear 1 vez más e inflige a un enemigo un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Luka como Daño Físico.",
+        "shortDesc": "Consume 2 acumulaciones de Voluntad luchadora e inflige Daño Físico a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "¡Puño, fuera!",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Luka como Daño Físico a un enemigo y después tiene un {{2}}% de <u>probabilidad base</u> de afectar con Sangrado al objetivo durante {{5}} turnos.\\nEl enemigo afectado por Sangrado recibe un Daño Físico con el tiempo equivalente al {{3}}% de sus PV máx. al comienzo de cada turno, hasta un máximo del <orangeStrong>{{4}}%</orangeStrong> del ATQ de Luka.",
+        "shortDesc": "Inflige Daño Físico a un enemigo y tiene una gran probabilidad de <color=#f29e38ff>aplicarle Sangrado</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Golpe de gracia",
+        "fullDesc": "Obtiene {{5}} acumulaciones de Voluntad luchadora y tiene una <u>probabilidad base</u> del {{2}}% de aumentar en un <orangeStrong>{{3}}%</orangeStrong> el daño que recibe un enemigo durante {{4}} turnos. Después inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Luka como Daño Físico a ese objetivo.",
+        "shortDesc": "Obtiene <orangeStrong>{{5}}</orangeStrong> acumulaciones de Voluntad luchadora, tiene una gran probabilidad de aumentar el daño que recibe el enemigo y le inflige una gran cantidad de Daño Físico."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Anticipación",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1}}% del ATQ de Luka como Daño Físico a un enemigo al azar y tiene un {{2}}% de <u>probabilidad base</u> de afectarlo con un estado de Sangrado equivalente al de la habilidad básica. Después, Luka obtiene 1 acumulación adicional de Voluntad luchadora.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Físico a un enemigo al azar y tiene una gran probabilidad de <color=#f29e38ff>afectarlo con Sangrado</color>. Después obtiene 1 acumulación adicional de Voluntad luchadora."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

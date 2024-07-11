@@ -1,0 +1,40 @@
+{
+  "name": "Dan Heng",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Arte de Lanceiro das Nuvens: Ventos do Norte",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng a um único inimigo.",
+        "shortDesc": "Causa Dano de Vento leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Arte de Lanceiro das Nuvens: Enxurrada",
+        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng como Dano de Vento a um único inimigo.\\nAo realizar um Acerto CRIT, há {{4}}% de <u>chance-base</u> de reduzir a VEL do alvo em {{2}}% por {{3}} rodada(s).",
+        "shortDesc": "Causa Dano de Vento a um único inimigo. Ao realizar um Acerto CRIT, há altas chances de causar Lentidão no inimigo."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Sonho Etéreo",
+        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng como Dano de Vento a um único inimigo. Se o inimigo estiver sofrendo de Lentidão, o multiplicador de Dano da Perícia Suprema aumenta em <orangeStrong>{{2}}%</orangeStrong>.",
+        "shortDesc": "Causa Dano de Vento massivo a um inimigo. Se o inimigo estiver sofrendo de Lentidão, o multiplicador de Dano causado será maior."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ponta de Lança Divisora",
+        "fullDesc": "Após Dan Heng usar a sua Técnica, seu ATQ aumenta em {{1}}% no início da próxima batalha por {{2}} rodada(s).",
+        "shortDesc": "Após usar a sua Técnica, seu ATQ é aumentado no início da próxima batalha."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

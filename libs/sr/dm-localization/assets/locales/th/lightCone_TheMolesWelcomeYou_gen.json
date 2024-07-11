@@ -1,0 +1,7 @@
+{
+  "name": "The Moles Welcome You",
+  "passive": {
+    "name": "Fantastic Adventure",
+    "description": "หลังจากผู้สวมใส่ทำการโจมตีปกติ, ปล่อยสกิลต่อสู้ หรือท่าไม้ตายโจมตีศัตรูเป้าหมายแล้ว ผู้สวมใส่จะได้รับ \"Mischievous\" 1 ชั้น ซึ่งแต่ละชั้นจะทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong>"
+  }
+}

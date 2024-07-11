@@ -1,0 +1,40 @@
+{
+  "name": "게파드",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "의지의 주먹",
+        "fullDesc": "지정된 단일 적에게 게파드 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 얼음 속성 피해를 가한다",
+        "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가한다"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "위협의 일격",
+        "fullDesc": "지정된 단일 적에게 게파드 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 얼음 속성 피해를 주며 피격된 적은 {{2}}%의 <u>기본 확률</u>로 빙결 상태에 빠진다. 지속 시간: {{3}}턴.\\n빙결 상태의 적은 행동할 수 없으며 턴이 시작될 때마다 게파드 공격력 <orangeStrong>{{4}}%</orangeStrong>만큼의 얼음 속성 <u>추가 피해</u>를 받는다",
+        "shortDesc": "단일 적에게 얼음 속성 피해를 가하고 <color=#f29e38ff>일정 확률로 해당 적에게 빙결 상태를 부여</color>한다"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "영원의 벽",
+        "fullDesc": "모든 아군에게 게파드 방어력 <orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>만큼의 피해를 상쇄할 수 있는 실드를 제공한다. 지속 시간: {{2}}턴",
+        "shortDesc": "모든 아군에게 <color=#f29e38ff>실드를 제공</color>한다"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "감정의 증표",
+        "fullDesc": "비술 사용 후 다음 전투 시작 시 모든 아군에게 게파드 방어력 {{1}}%+{{3}}만큼의 피해를 상쇄할 수 있는 실드를 제공한다. 지속 시간: {{2}}턴",
+        "shortDesc": "비술을 발동하고 다음 전투 시작 시 모든 아군이 실드를 획득한다"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "공격",
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "shortDesc": ""
+      }
+    }
+  }
+}

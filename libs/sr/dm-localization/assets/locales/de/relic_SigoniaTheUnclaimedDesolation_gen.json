@@ -1,0 +1,6 @@
+{
+  "setName": "Verlassenes Sigonien",
+  "setEffects": {
+    "2": "Erhöht die KRIT-Rate des Trägers um {{3}}%. Wenn Gegner besiegt werden, wird der KRIT-SCH des Trägers bis zu {{2}}-mal um {{1}}% erhöht."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Ouaf ! C'est l'heure de la promenade !",
+  "passive": {
+    "name": "Cours !",
+    "description": "Augmente l'ATQ du porteur de <orangeStrong>{{1}}%</orangeStrong>, ainsi que les DGT qu'il inflige aux ennemis affectés par Brûlure ou Saignement de <orangeStrong>{{2}}%</orangeStrong>. Cet effet s'applique également aux dégâts sur la durée."
+  }
+}

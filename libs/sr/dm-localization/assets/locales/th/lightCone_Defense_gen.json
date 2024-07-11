@@ -1,0 +1,7 @@
+{
+  "name": "Defense",
+  "passive": {
+    "name": "Revitalization",
+    "description": "เมื่อผู้สวมใส่ปล่อยท่าไม้ตาย จะฟื้นฟู HP <orangeStrong>{{1}}%</orangeStrong> ของ HP สูงสุดของตัวเอง"
+  }
+}

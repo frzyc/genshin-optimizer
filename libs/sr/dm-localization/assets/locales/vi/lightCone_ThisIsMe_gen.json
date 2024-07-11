@@ -1,0 +1,7 @@
+{
+  "name": "Đó Chính Là Tôi!",
+  "passive": {
+    "name": "Chương Mới",
+    "description": "Khiến Phòng Thủ của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Tăng sát thương gây ra khi người trang bị thi triển Tuyệt Kỹ, mức tăng tương đương <orangeStrong>{{2}}%</orangeStrong> Phòng Thủ của người trang bị. Mỗi lần dùng Tuyệt Kỹ, hiệu ứng này chỉ có hiệu lực 1 lần cho mỗi kẻ địch."
+  }
+}

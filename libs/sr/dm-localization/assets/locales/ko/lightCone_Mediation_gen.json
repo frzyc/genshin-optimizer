@@ -1,0 +1,7 @@
+{
+  "name": "어울림",
+  "passive": {
+    "name": "가족",
+    "description": "전투 진입 시, 모든 아군의 속도가 <orangeStrong>{{1}}</orangeStrong>pt 증가한다. 지속 시간: {{2}}턴"
+  }
+}

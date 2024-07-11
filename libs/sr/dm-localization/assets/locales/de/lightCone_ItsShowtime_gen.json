@@ -1,0 +1,7 @@
+{
+  "name": "Vorhang auf",
+  "passive": {
+    "name": "Selbstbelustigung",
+    "description": "Wenn der Träger einem Gegner einen Debuff zufügt, erhält er eine Stapelung „Trick“. Jede Stapelung erhöht den verursachten SCH des Trägers für {{3}} Rd. um <orangeStrong>{{1}}%</orangeStrong> bis max. {{2}} Stapelungen. Wenn die Effekt-Trefferrate des Trägers {{4}}% oder höher ist, wird der ANG um <orangeStrong>{{5}}%</orangeStrong> erhöht."
+  }
+}

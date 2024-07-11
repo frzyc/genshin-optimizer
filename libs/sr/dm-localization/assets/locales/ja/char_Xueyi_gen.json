@@ -1,0 +1,40 @@
+{
+  "name": "{RUBY_B#セツイ}雪衣{RUBY_E#}",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#はますい}破魔錐{RUBY_E#}",
+        "fullDesc": "指定した敵単体に雪衣の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の量子属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#しょあくしょうふく}諸悪摂伏{RUBY_E#}",
+        "fullDesc": "指定した敵単体に雪衣の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与え、隣接する敵に雪衣の攻撃力<orangeStrong>{{2}}%</orangeStrong>分の量子属性ダメージを与える。",
+        "shortDesc": "敵単体に量子属性ダメージを与え、隣接する敵に少量の量子属性ダメージを与える。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#み}身{RUBY_E#}を{RUBY_B#つらぬ}貫{RUBY_E#}く{RUBY_B#てんばつ}天罰{RUBY_E#}",
+        "fullDesc": "指定した敵単体に雪衣の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与え、弱点属性を無視して敵の靭性を削る。敵を弱点撃破した時、量子属性の弱点撃破効果を触発する。\\n削った靭性が多いほど、その回の攻撃の与ダメージがアップする、最大で与ダメージ+<orangeStrong>{{3}}%</orangeStrong>。",
+        "shortDesc": "敵単体に大量の量子属性ダメージを与える。その回の攻撃は<color=#f29e38ff>弱点属性を無視</color>して敵単体の靭性を削る。削った靭性が多いほど、与ダメージがアップする。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#ざん}斬{RUBY_E#}、{RUBY_B#そっけつ}即決{RUBY_E#}",
+        "fullDesc": "敵を攻撃。戦闘開始後、敵全体に雪衣の攻撃力{{1}}%分の量子属性ダメージを与える。",
+        "shortDesc": "敵を攻撃。戦闘に入った後、敵全体に少量の量子属性ダメージを与える。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

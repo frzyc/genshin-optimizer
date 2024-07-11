@@ -1,0 +1,35 @@
+{
+  "type": {
+    "Physical": "กายภาพ",
+    "Quantum": "ควอนตัม",
+    "Lightning": "สายฟ้า",
+    "Ice": "น้ำแข็ง",
+    "Wind": "ลม",
+    "Fire": "ไฟ",
+    "Imaginary": "จินตภาพ"
+  },
+  "path": {
+    "Erudition": "ปัญญา",
+    "Preservation": "อนุรักษ์",
+    "Abundance": "เฟื่องฟู",
+    "Nihility": "ลบล้าง",
+    "Destruction": "ทำลายล้าง",
+    "Harmony": "ประสาน",
+    "TheHunt": "ล่าสังหาร"
+  },
+  "ability": {
+    "basic": "โจมตีปกติ",
+    "skill": "สกิลต่อสู้",
+    "ult": "ท่าไม้ตาย",
+    "talent": "พรสวรรค์",
+    "technique": "เทคนิค"
+  },
+  "dmgType": {
+    "single": "โจมตีเดี่ยว",
+    "aoe": "โจมตีหมู่",
+    "bounce": "จู่โจม",
+    "blast": "กระจาย",
+    "support": "สนับสนุน",
+    "impair": "สกัดกั้น"
+  }
+}

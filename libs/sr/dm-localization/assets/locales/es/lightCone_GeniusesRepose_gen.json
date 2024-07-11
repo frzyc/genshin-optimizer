@@ -1,0 +1,7 @@
+{
+  "name": "El reposo de los genios",
+  "passive": {
+    "name": "Cada uno tiene su papel",
+    "description": "El ATQ del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando el portador derrota a un enemigo, su Daño CRIT aumenta en un <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turnos."
+  }
+}

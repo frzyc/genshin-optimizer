@@ -1,0 +1,7 @@
+{
+  "name": "Ela Já Fechou Seus Olhos",
+  "passive": {
+    "name": "Visioscape",
+    "description": "Aumenta os PV máximos do usuário em <orangeStrong>{{1}}%</orangeStrong> e a Taxa de Regeneração de Energia em <orangeStrong>{{4}}%</orangeStrong>. Quando os PV do usuário são reduzidos, o Dano causado por todos os aliados aumenta em <orangeStrong>{{2}}%</orangeStrong>, durando por {{5}} rodada(s).\\nNo início de cada onda, recupera PV de todos os aliados em uma quantidade igual a <orangeStrong>{{3}}%</orangeStrong> de seus respectivos PV perdidos."
+  }
+}

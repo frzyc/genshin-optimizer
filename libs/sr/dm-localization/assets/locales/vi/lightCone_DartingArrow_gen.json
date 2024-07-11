@@ -1,0 +1,7 @@
+{
+  "name": "Tên Bắn",
+  "passive": {
+    "name": "Tiếng Hống",
+    "description": "Sau khi người trang bị tiêu diệt kẻ địch, Tấn Công sẽ tăng <orangeStrong>{{1}}%</orangeStrong>, duy trì {{2}} hiệp."
+  }
+}

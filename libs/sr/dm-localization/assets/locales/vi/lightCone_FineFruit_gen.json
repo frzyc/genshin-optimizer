@@ -1,0 +1,7 @@
+{
+  "name": "Trái Ngọt",
+  "passive": {
+    "name": "Hương Thơm",
+    "description": "Khi bắt đầu chiến đấu sẽ hồi ngay cho toàn phe ta <orangeStrong>{{1}}</orangeStrong> điểm Năng Lượng."
+  }
+}

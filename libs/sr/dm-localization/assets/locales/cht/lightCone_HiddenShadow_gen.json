@@ -1,0 +1,7 @@
+{
+  "name": "匿影",
+  "passive": {
+    "name": "機關",
+    "description": "施放戰技後，使裝備者的下一次普通攻擊對敵方目標造成等同於自身<orangeStrong>{{1}}%</orangeStrong>攻擊力的附加傷害。"
+  }
+}

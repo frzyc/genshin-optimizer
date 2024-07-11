@@ -1,0 +1,7 @@
+{
+  "name": "I Shall Be My Own Sword",
+  "passive": {
+    "name": "With This Evening Jade",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT DMG pengguna. Saat rekan tim (selain pengguna) terkena serangan atau kehilangan HP, pengguna akan memperoleh 1 lapis \"Eclipse\", dapat ditumpuk hingga {{2}} lapis. Setiap lapis \"Eclipse\" akan meningkatkan <orangeStrong>{{3}}%</orangeStrong> DMG yang diakibatkan dari serangan pengguna yang berikutnya. Saat mencapai {{2}} lapis, akan mengakibatkan serangan kali ini untuk mengabaikan <orangeStrong>{{4}}%</orangeStrong> DEF target. Efek ini akan dihapus setelah pengguna melancarkan serangan."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "D'un sommeil de mort",
+  "passive": {
+    "name": "Beaux rêves",
+    "description": "Augmente les DGT critiques du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque son ATQ normale ou sa compétence ne résulte pas en un coup critique, ses chances de coup critique augmentent de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tour. Cet effet ne peut se déclencher qu'une fois tous les {{4}} tours."
+  }
+}

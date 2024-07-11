@@ -1,0 +1,45 @@
+{
+  "name": "Nhà Khai Phá (Hỏa • Bảo Hộ)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Tia Sáng Xuyên Băng",
+        "fullDesc": "Gây Sát Thương Hỏa tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Nhà Khai Phá cho 1 kẻ địch chỉ định đồng thời cộng thêm 1 tầng \"Ý Chí Sục Sôi\".",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch, nhận \"Ý Chí Sục Sôi\"."
+      },
+      "1": {
+        "name": "Tia Sáng Xuyên Băng",
+        "fullDesc": "Tiêu hao 4 tầng \"Ý Chí Sục Sôi\" để cường hóa Tấn Công Thường. Gây cho 1 kẻ địch chỉ định Sát Thương Hỏa bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Nhà Khai Phá, đồng thời gây cho mục tiêu lân cận của kẻ đó Sát Thương Hỏa tương đương <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
+        "shortDesc": "Tiêu hao \"Ý Chí Sục Sôi\" gây Sát Thương Hỏa cho 1 kẻ địch, gây lượng nhỏ Sát Thương Hỏa cho mục tiêu lân cận."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Hổ Phách Lửa Bất Diệt",
+        "fullDesc": "Sau khi thi triển Chiến Kỹ sẽ giảm <orangeStrong>{{1}}%</orangeStrong> sát thương mà Nhà Khai Phá phải chịu và cộng thêm 1 tầng \"Ý Chí Sục Sôi\", ngoài ra có {{2}}% <u>xác suất cơ bản</u> khiến toàn phe địch rơi vào trạng thái Khiêu Khích, duy trì {{3}} hiệp.",
+        "shortDesc": "Giảm sát thương mà bản thân phải chịu và nhận \"Ý Chí Sục Sôi\", có xác suất lớn khiến toàn phe địch rơi vào trạng thái Khiêu Khích."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Súng Lửa Xung Trận",
+        "fullDesc": "Gây Sát Thương Hỏa cho toàn phe địch tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công +<orangeStrong>{{2}}%</orangeStrong> Phòng Thủ của Nhà Khai Phá. Khi thi triển Tấn Công Thường ở lần sau, sẽ tự động được cường hóa mà không tiêu hao \"Ý Chí Sục Sôi\".",
+        "shortDesc": "Gây Sát Thương Hỏa cho toàn phe địch, cường hóa lần Tấn Công Thường tiếp theo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Hiệu Lệnh Của Đấng Bảo Vệ",
+        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo sẽ tạo Khiên cho bản thân giúp triệt tiêu sát thương tương đương {{1}}% Phòng Thủ của Nhà Khai Phá +{{2}}, duy trì {{3}} hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

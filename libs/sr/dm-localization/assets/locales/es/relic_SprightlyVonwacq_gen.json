@@ -1,0 +1,6 @@
+{
+  "setName": "Vonwacq el vivaz",
+  "setEffects": {
+    "2": "La recuperación de energía del portador aumenta en un {{1}}%. Cuando su VEL es igual o superior a {{2}}, su acción se adelanta un {{3}}% al entrar en combate."
+  }
+}

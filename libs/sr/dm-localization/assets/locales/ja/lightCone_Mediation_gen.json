@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#どうちょう}同調{RUBY_E#}",
+  "passive": {
+    "name": "ファミリー",
+    "description": "戦闘に入る時、味方全体の速度+<orangeStrong>{{1}}</orangeStrong>、{{2}}ターン継続。"
+  }
+}

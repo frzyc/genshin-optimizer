@@ -1,0 +1,7 @@
+{
+  "name": "Under the Blue Sky",
+  "passive": {
+    "name": "Rye Under the Sun",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK pengguna. Setelah pengguna mengalahkan target musuh, meningkatkan <orangeStrong>{{2}}%</orangeStrong> CRIT Rate selama {{3}} giliran."
+  }
+}

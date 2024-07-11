@@ -1,0 +1,40 @@
+{
+  "name": "Huohuo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Banner: Stormcaller",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Huohuo pada 1 musuh yang ditarget.",
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Talisman: Protection",
+        "fullDesc": "Menghapus {{5}} <u>Debuff</u> milik 1 rekan tim yang ditargetkan dan segera memulihkan HP sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Huohuo + <orangeStrong>{{2}}</orangeStrong> pada rekan tersebut. Di saat yang bersamaan, memulihkan HP sebesar <orangeStrong>{{3}}%</orangeStrong> Max HP Huohuo + <orangeStrong>{{4}}</orangeStrong> pada target di sekitarnya.",
+        "shortDesc": "Menghapus 1 <u>Debuff</u> milik 1 rekan tim dan <color=#f29e38ff>memulihkan HP</color> rekan tersebut dan target di sekitarnya."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Tail: Spiritual Domination",
+        "fullDesc": "Memulihkan Energy rekan tim selain diri sendiri sebesar <orangeStrong>{{1}}%</orangeStrong> Max Energy mereka masing-masing. Di saat yang bersamaan, meningkatkan ATK mereka sebesar <orangeStrong>{{2}}%</orangeStrong> selama {{3}} giliran.",
+        "shortDesc": "<color=#f29e38ff>Memulihkan Energy</color> untuk rekan tim selain diri sendiri, serta <color=#f29e38ff>meningkatkan ATK</color> mereka."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Fiend: Impeachment of Evil",
+        "fullDesc": "Huohuo meneror musuh di sekitarnya, membuat musuh memasuki Status \"Horror-Struck\". Musuh yang berstatus \"Horror-Struck\" akan lari menjauhi Huohuo selama {{4}} detik. Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", memiliki {{1}}% <u>peluang dasar</u> untuk mengurangi {{2}}% ATK setiap target selama {{3}} giliran.",
+        "shortDesc": "Membuat musuh di sekitarnya memasuki Status \"Horror-Struck\". Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", berpeluang besar <color=#f29e38ff>mengurangi ATK</color> target musuh."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

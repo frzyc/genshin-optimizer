@@ -1,0 +1,7 @@
+{
+  "name": "Pionierarbeit",
+  "passive": {
+    "name": "IFK",
+    "description": "Stellt <orangeStrong>{{1}}%</orangeStrong> der max. LP des Trägers wieder her, wenn er Schwächebruch an einem Gegner verursacht."
+  }
+}

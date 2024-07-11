@@ -1,0 +1,60 @@
+{
+  "name": "Dan Heng • Imbibitor Lunae",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lotus bénéfique",
+        "fullDesc": "Utilise une attaque qui frappe 2 fois et inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng • Imbibitor Lunae à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi unique."
+      },
+      "1": {
+        "name": "Transcendance",
+        "fullDesc": "Utilise une attaque qui frappe 3 fois et inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng • Imbibitor Lunae à une cible ennemie unique.",
+        "shortDesc": "Déclenche <color=#f29e38ff>3 frappes</color> lors de cette attaque pour infliger des DGT imaginaires à un ennemi unique."
+      },
+      "2": {
+        "name": "Lance divine",
+        "fullDesc": "Utilise une attaque qui frappe 5 fois et inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng • Imbibitor Lunae à une cible ennemie unique. À partir de la quatrième frappe, inflige simultanément des DGT imaginaires équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Dan Heng • Imbibitor Lunae aux cibles adjacentes.",
+        "shortDesc": "Déclenche <color=#f29e38ff>5 frappes</color> lors de cette attaque pour infliger des DGT imaginaires massifs à un ennemi unique et des DGT imaginaires mineurs aux cibles adjacentes. Vous gagnez 1 cumul de Rugissement dominateur avant chacune des deux dernières frappes de cette attaque. Rugissement dominateur augmente les DGT critiques."
+      },
+      "3": {
+        "name": "Bond fulgurant",
+        "fullDesc": "Utilise une attaque qui frappe 7 fois et inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng • Imbibitor Lunae à une cible ennemie unique. À partir de la quatrième frappe, inflige simultanément des DGT imaginaires équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Dan Heng • Imbibitor Lunae aux cibles adjacentes.",
+        "shortDesc": "Déclenche <color=#f29e38ff>7 frappes</color> lors de cette attaque pour infliger des DGT imaginaires massifs à un ennemi unique et des DGT imaginaires mineurs aux cibles adjacentes. Vous gagnez 1 cumul de Rugissement dominateur avant chacune des quatre dernières frappes de cette attaque. Rugissement dominateur augmente les DGT critiques."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Déchaînement du dragon",
+        "fullDesc": "Renforce l'ATQ normale. Le renforcement peut s'appliquer jusqu'à 3 fois consécutivement. L'utilisation de cette capacité ne consomme pas de point de compétence et n'est pas considérée comme une utilisation de compétence.\\nRenforcé une fois, Lotus bénéfique devient Transcendance.\\nRenforcé 2 fois, Lotus bénéfique devient Lance divine.\\nRenforcé 3 fois, Lotus bénéfique devient Bond fulgurant.\\nLorsque vous utilisez Lance divine ou Bond fulgurant, vous gagnez 1 cumul de Rugissement dominateur avant chaque frappe (à partir de la quatrième). Chaque cumul de Rugissement dominateur augmente les DGT critiques de Dan Heng • Imbibitor Lunae de <orangeStrong>{{1}}%</orangeStrong>, pour un maximum de {{2}} cumuls. Ces cumuls durent jusqu'à la fin de son tour.",
+        "shortDesc": "Renforce l'ATQ normale Lotus bénéfique en <color=#f29e38ff>Transcendance</color>, <color=#f29e38ff>Lance divine</color> ou <color=#f29e38ff>Bond fulgurant</color>."
+      },
+      "1": {
+        "name": "Annulation",
+        "fullDesc": "Annule le renforcement",
+        "shortDesc": ""
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Absolution des eaux azur",
+        "fullDesc": "Utilise une attaque qui frappe 3 fois et inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng • Imbibitor Lunae à une cible ennemie unique. D'autre part, inflige des DGT imaginaires équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Dan Heng • Imbibitor Lunae aux cibles adjacentes. Puis, obtient {{3}} Écailles sacrées.\\nDan Heng • Imbibitor Lunae peut posséder jusqu'à {{4}} Écailles sacrées à la fois. Les Écailles sacrées remplacent les points de compétence. L'utilisation d'Écailles sacrées est considérée comme équivalente à la consommation de points de compétence.",
+        "shortDesc": "Inflige des DGT imaginaires massifs à un ennemi unique, des DGT imaginaires aux cibles adjacentes, et obtient 2 Écailles sacrées qui <color=#f29e38ff>remplacent</color> les <color=#f29e38ff>points de compétence</color>. L'utilisation d'Écailles sacrées est considérée comme équivalente à la consommation de points de compétence."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Prismadragon de fulguration",
+        "fullDesc": "Après utilisation de sa technique, Dan Heng • Imbibitor Lunae entre dans l'état Dragon bondissant pendant {{2}} secondes. Lorsqu'il est dans cet état, il fonce en avant sur une courte distance lorsqu'il utilise son attaque, attaquant tous les ennemis sur sa route et bloquant toutes les attaques qui le touchent. S'il entre en combat en ayant attaqué des ennemis dans l'état Dragon bondissant, Dan Heng • Imbibitor Lunae inflige des DGT imaginaires équivalents à {{3}}% de son ATQ à tous les ennemis et obtient {{1}} Écaille sacrée.",
+        "shortDesc": "Entre dans l'état Dragon bondissant. Dans cet état, lorsque le personnage utilise son attaque, il fonce en avant sur une courte distance et attaque tous les ennemis sur sa route. S'il entre en combat en ayant attaqué un ennemi, il inflige des DGT imaginaires à tous les ennemis et obtient 1 Écaille sacrée."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Gefühl der Gemeinsamkeit",
+  "passive": {
+    "name": "Heilung und Reparatur",
+    "description": "Erhöht die bewirkte Heilung des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Stellt beim Einsatz der Fertigkeit für alle Verbündeten <orangeStrong>{{2}}</orangeStrong> Pkt. Energie wieder her."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "setName": "Penacony, terre des rêves",
+  "setEffects": {
+    "2": "Augmente le taux de régénération d'énergie du porteur de {{1}}%. Augmente les DGT des alliés du même type que le porteur de {{2}}%."
+  }
+}

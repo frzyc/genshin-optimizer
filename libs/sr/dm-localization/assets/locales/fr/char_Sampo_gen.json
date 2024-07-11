@@ -1,0 +1,40 @@
+{
+  "name": "Sampo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lames éblouissantes",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Sampo à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Amour rebondissant",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Sampo à un ennemi unique et inflige des DGT {{1}} fois supplémentaires, infligeant à chaque fois des DGT de vent équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Sampo à un ennemi aléatoire.",
+        "shortDesc": "Inflige des DGT de vent mineurs à des cibles ennemies uniques pour un total de 5 rebonds."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Cadeau surprise",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Sampo à tous les ennemis, avec {{4}}% de <u>chances de base</u> d'augmenter les dégâts sur la durée subis par les cibles de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tours.",
+        "shortDesc": "Inflige des DGT de vent à tous les ennemis, avec de fortes chances de leur infliger des <color=#f29e38ff>dégâts sur la durée accrus</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Éblouissement",
+        "fullDesc": "Après utilisation de la technique de Sampo, les ennemis situés dans une zone définie subissent Aveuglement pendant {{1}} secondes. Les ennemis aveuglés ne peuvent pas détecter votre équipe.\\nLorsqu'un combat est lancé contre un ennemi aveuglé, il y a {{2}}% de <u>chances fixes</u> de retarder l'action de tous les ennemis de {{3}}%.",
+        "shortDesc": "Les ennemis dans une zone définie sont Aveuglés. En engageant le combat contre des ennemis Aveuglés, il y a de fortes chances de <u>retarder</u> leurs actions."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

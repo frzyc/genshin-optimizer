@@ -1,0 +1,7 @@
+{
+  "name": "Bonne nuit et dors bien",
+  "passive": {
+    "name": "Bête de somme",
+    "description": "Les DGT infligés par le porteur augmentent de <orangeStrong>{{1}}%</orangeStrong> pour chaque malus subi par la cible ennemie. Cumulable jusqu'à {{2}} fois. Cet effet s'applique aussi aux dégâts sur la durée."
+  }
+}

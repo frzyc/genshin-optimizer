@@ -1,0 +1,7 @@
+{
+  "name": "春水初生",
+  "passive": {
+    "name": "驅散餘寒",
+    "description": "進入戰鬥後，使裝備者速度提高<orangeStrong>{{1}}%</orangeStrong>，造成的傷害提高<orangeStrong>{{2}}%</orangeStrong>。裝備者受到傷害後該效果便失效，下個回合結束時該效果恢復。"
+  }
+}

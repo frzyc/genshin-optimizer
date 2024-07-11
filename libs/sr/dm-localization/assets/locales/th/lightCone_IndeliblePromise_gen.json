@@ -1,0 +1,7 @@
+{
+  "name": "Indelible Promise",
+  "passive": {
+    "name": "Inheritance",
+    "description": "ทำให้เอฟเฟกต์ทำลายล้างของผู้สวมใส่ เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> และเมื่อผู้สวมใส่ปล่อยท่าไม้ตาย อัตราคริติคอลจะเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น"
+  }
+}

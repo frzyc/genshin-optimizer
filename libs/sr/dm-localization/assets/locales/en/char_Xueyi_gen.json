@@ -1,0 +1,40 @@
+{
+  "name": "Xueyi",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Mara-Sunder Awl",
+        "fullDesc": "Deals <orangeStrong>{{1}}%</orangeStrong> of Xueyi's ATK as Quantum DMG to a single target enemy.",
+        "shortDesc": "Deals minor Quantum DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Iniquity Obliteration",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Xueyi's ATK to a single enemy, and Quantum DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Xueyi's ATK to any adjacent enemies.",
+        "shortDesc": "Deals Quantum DMG to a single enemy and minor Quantum DMG to enemies adjacent to it."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Divine Castigation",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Xueyi's ATK to a single target enemy. This attack ignores Weakness Types and reduces the enemy's Toughness. When the enemy's Weakness is Broken, the Quantum Weakness Break effect is triggered.\\nIn this attack, the more Toughness is reduced, the higher the DMG will be dealt, up to a max of <orangeStrong>{{3}}%</orangeStrong> increase.",
+        "shortDesc": "Deals massive Quantum DMG to a single enemy. This attack <color=#f29e38ff>ignores Weakness Types</color> and reduces the target's Toughness. The more Toughness is reduced, the higher the DMG will be dealt."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Summary Execution",
+        "fullDesc": "Immediately attacks the enemy. After entering combat, deals {{1}}% of Xueyi's ATK as Quantum DMG to all enemies.",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor Quantum DMG to all enemies."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Hanya",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Oracle Brush",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hanya's ATK to a single enemy.",
+        "shortDesc": "Deals minor Physical DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Samsara, Locked",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hanya's ATK to a single target enemy, then applies Burden to them.\\nFor every 2 Basic ATKs, Skills, or Ultimates allies use on an enemy with Burden, allies will immediately recover 1 Skill Point. Burden is only active on the latest target it is applied to, and will be dispelled automatically after the Skill Point recovery effect has been triggered {{2}} times.",
+        "shortDesc": "Deals Physical DMG to a single enemy and applies Burden to them. For every 2 Basic ATKs, Skills, or Ultimates allies use on an enemy with Burden, allies <color=#f29e38ff>recover 1 Skill Point</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ten-Lords' Decree, All Shall Obey",
+        "fullDesc": "Increases the SPD of a target ally by <orangeStrong>{{3}}%</orangeStrong> of Hanya's SPD and increases the same target ally's ATK by <orangeStrong>{{1}}%</orangeStrong>, lasting for {{2}} turn(s).",
+        "shortDesc": "Increases an ally's <color=#f29e38ff>SPD and ATK</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Netherworld Judgment",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, applies Burden equivalent to that applied by the Skill to a random enemy.",
+        "shortDesc": "Attacks the enemy. After entering battle, applies Burden equivalent to that applied by the Skill to a random enemy."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

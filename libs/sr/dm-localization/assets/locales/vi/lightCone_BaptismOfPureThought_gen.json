@@ -1,0 +1,7 @@
+{
+  "name": "Lễ Rửa Tội Thuần Khiết",
+  "passive": {
+    "name": "Huấn Luyện Tư Tưởng",
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Sát Thương Bạo Kích của người trang bị. Mỗi khi kẻ địch phải chịu 1 Hiệu Ứng Xấu, sẽ tăng thêm <orangeStrong>{{2}}%</orangeStrong> Sát Thương Bạo Kích mà người trang bị gây lên kẻ này, tối đa cộng dồn {{3}} tầng. Khi thi triển Tuyệt Kỹ tấn công kẻ địch, khiến người trang bị nhận hiệu ứng Biện Luận, tăng <orangeStrong>{{4}}%</orangeStrong> sát thương gây ra, Đòn Đánh Theo Sau bỏ qua <orangeStrong>{{5}}%</orangeStrong> phòng thủ của mục tiêu, hiệu ứng này duy trì {{6}} hiệp."
+  }
+}

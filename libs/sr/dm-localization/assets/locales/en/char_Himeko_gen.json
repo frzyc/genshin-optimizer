@@ -1,0 +1,40 @@
+{
+  "name": "Himeko",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Sawblade Tuning",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Himeko's ATK to a single enemy.",
+        "shortDesc": "Deals minor Fire DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Molten Detonation",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Himeko's ATK to a single enemy and Fire DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Himeko's ATK to enemies adjacent to it.",
+        "shortDesc": "Deals Fire DMG to a single enemy and minor Fire DMG to enemies adjacent to it."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Heavenly Flare",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Himeko's ATK to all enemies. Himeko regenerates {{2}} extra Energy for each enemy defeated.",
+        "shortDesc": "Deals Fire DMG to all enemies and regenerates Energy if enemies are defeated."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Incomplete Combustion",
+        "fullDesc": "After using Technique, creates a dimension that lasts for {{4}} second(s). After entering battle with enemies in the dimension, there is a {{1}}% <u>base chance</u> to increase Fire DMG taken by enemies by {{2}}% for {{3}} turn(s). Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a dimension. After entering combat with enemies in the dimension, there is a high chance to <color=#f29e38ff>increase Fire DMG taken by enemies</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

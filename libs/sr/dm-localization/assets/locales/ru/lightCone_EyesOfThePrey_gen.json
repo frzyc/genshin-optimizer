@@ -1,0 +1,7 @@
+{
+  "name": "Взгляд жертвы",
+  "passive": {
+    "name": "Уверенность в себе",
+    "description": "Шанс попадания эффектов владельца повышается на <orangeStrong>{{1}}%</orangeStrong>, и его периодический урон - на <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

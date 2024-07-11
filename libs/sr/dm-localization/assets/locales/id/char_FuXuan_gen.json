@@ -1,0 +1,40 @@
+{
+  "name": "Fu Xuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Novaburst",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Fu Xuan pada 1 musuh yang ditarget.",
+        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Known by Stars, Shown by Hearts",
+        "fullDesc": "Mengaktifkan \"Matrix of Prescience\". Seluruh rekan tim Fu Xuan akan <u>membagikan</u> {{1}}% dari semua DMG yang diterima mereka pada Fu Xuan (sebelum DMG ini ditahan oleh efek Shield apa pun) selama {{3}} giliran.\\nRekan tim yang terkena pengaruh \"Matrix of Prescience\" akan memperoleh status \"Knowledge\". Rekan tim berstatus \"Knowledge\" akan mendapat peningkatan Max HP sebesar <orangeStrong>{{4}}%</orangeStrong> Max HP Fu Xuan, dan peningkatan CRIT Rate sebesar <orangeStrong>{{5}}%</orangeStrong>.\\nSaat Fu Xuan <u>gugur</u>, \"Matrix of Prescience\" juga akan dihapus.",
+        "shortDesc": "Mengaktifkan \"Matrix of Prescience\", <color=#f29e38ff><u>membagi</u> sebagian DMG yang diterima</color> seluruh rekan tim Fu Xuan kepada Fu Xuan. Selain itu juga akan meningkatkan Max HP dan <color=#f29e38ff>CRIT Rate</color> seluruh rekan tim."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Woes of Many Morphed to One",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Fu Xuan pada seluruh musuh, serta memperoleh 1 kali jumlah kesempatan terpicunya pemulihan HP dari Talent Fu Xuan.",
+        "shortDesc": "Mengakibatkan Quantum DMG pada seluruh musuh dan menambah jumlah kesempatan terpicunya Talent Fu Xuan."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Of Fortune Comes Fate",
+        "fullDesc": "Setelah menggunakan Technique, seluruh rekan tim akan memperoleh Barrier selama {{1}} detik. Barrier dapat menahan semua serangan musuh dan mencegah rekan tim memasuki pertempuran. Jika memasuki pertempuran saat Barrier aktif, akan mengakibatkan Fu Xuan langsung mengaktifkan \"Matrix of Prescience\" setelah memasuki pertempuran, berlangsung selama {{2}} giliran.",
+        "shortDesc": "Mengaktifkan Barrier yang akan mencegahmu memasuki pertempuran saat diserang musuh. Memasuki pertempuran akan otomatis mengaktifkan \"Matrix of Prescience\"."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

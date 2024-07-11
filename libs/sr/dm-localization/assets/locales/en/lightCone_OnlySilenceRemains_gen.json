@@ -1,0 +1,7 @@
+{
+  "name": "Only Silence Remains",
+  "passive": {
+    "name": "Record",
+    "description": "Increases the wearer's ATK by <orangeStrong>{{1}}%</orangeStrong>. If there are 2 or fewer enemies on the field, increases wearer's CRIT Rate by <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

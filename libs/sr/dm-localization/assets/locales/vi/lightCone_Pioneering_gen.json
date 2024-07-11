@@ -1,0 +1,7 @@
+{
+  "name": "Mở Rộng",
+  "passive": {
+    "name": "Công Ty",
+    "description": "Khi người trang bị phá vỡ điểm yếu của địch, sẽ hồi HP tương đương <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của bản thân."
+  }
+}

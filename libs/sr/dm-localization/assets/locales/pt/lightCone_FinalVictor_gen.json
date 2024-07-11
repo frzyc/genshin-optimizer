@@ -1,0 +1,7 @@
+{
+  "name": "O Último Vencedor",
+  "passive": {
+    "name": "Apostar",
+    "description": "Aumenta o ATQ do usuário em <orangeStrong>{{1}}%</orangeStrong>. Quando o usuário causa um acerto CRIT em inimigos, ganha 1 acúmulo de Boa Sorte. Este efeito pode ser acumulado até {{3}} vezes. Cada acúmulo de Boa Sorte aumenta o Dano CRIT do usuário em <orangeStrong>{{2}}%</orangeStrong>. Boa Sorte será removida no final da rodada do usuário."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Fruta Delicada",
+  "passive": {
+    "name": "Saborear",
+    "description": "No início da batalha, regenera imediatamente <orangeStrong>{{1}}</orangeStrong> de Energia de todos os aliados."
+  }
+}

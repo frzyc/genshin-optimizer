@@ -1,0 +1,40 @@
+{
+  "name": "Asta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Tia Quang Phổ",
+        "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Asta.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Bão Sao Băng",
+        "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Asta, đồng thời gây thêm 4 lần sát thương. Mỗi lần sát thương gây Sát Thương Hỏa cho kẻ địch ngẫu nhiên tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Asta.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch, tổng cộng Nảy Bật 5 lần."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lời Cầu Chúc Astral",
+        "fullDesc": "Khiến Tốc Độ của toàn phe ta tăng <orangeStrong>{{1}}</orangeStrong> điểm, duy trì {{2}} hiệp.",
+        "shortDesc": "<color=#f29e38ff>Tăng tốc</color> cho toàn bộ phe ta."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ánh Chớp Diệu Kỳ",
+        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, gây Sát Thương Hỏa cho toàn bộ kẻ địch tương đương {{1}}% Tấn Công của Asta.",
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ sát thương cho toàn bộ địch."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

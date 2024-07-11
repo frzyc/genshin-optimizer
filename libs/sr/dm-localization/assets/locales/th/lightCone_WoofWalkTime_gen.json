@@ -1,0 +1,7 @@
+{
+  "name": "Woof! Walk Time!",
+  "passive": {
+    "name": "Run!",
+    "description": "ทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> และสร้าง DMG แก่ศัตรูเป้าหมายที่ติดสถานะเผาไหม้หรือสถานะเสียเลือดเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> โดยเอฟเฟกต์นี้จะยังมีผลกับ DMG ต่อเนื่องอีกด้วย"
+  }
+}

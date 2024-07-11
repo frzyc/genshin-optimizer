@@ -1,0 +1,7 @@
+{
+  "name": "Moment de grâce",
+  "passive": {
+    "name": "Un chevalier en pèlerinage",
+    "description": "Augmente les DGT critiques du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur lance son ultime, augmente les DGT de l'ultime du porteur en fonction de son énergie max. Chaque point d'énergie augmente les DGT de l'ultime de <orangeStrong>{{2}}%</orangeStrong>, jusqu'à un maximum de {{3}} points d'énergie."
+  }
+}

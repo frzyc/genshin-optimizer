@@ -1,0 +1,7 @@
+{
+  "setName": "Mosqueteira do Trigo Selvagem",
+  "setEffects": {
+    "2": "Aumenta em {{1}}% o ATQ.",
+    "4": "Aumenta em {{1}}% a VEL e em {{2}}% o Dano do ATQ Básico do usuário."
+  }
+}

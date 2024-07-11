@@ -1,0 +1,45 @@
+{
+  "name": "{M#Pionnier}{F#Pionnière} (Feu • La Préservation)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Feu fendeur de glace",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique et gagne 1 cumul de Volonté du magma.",
+        "shortDesc": "Inflige des DGT de feu mineurs à un ennemi unique et gagne Volonté du magma."
+      },
+      "1": {
+        "name": "Feu fendeur de glace",
+        "fullDesc": "Consomme 4 cumuls de Volonté du magma pour renforcer l'ATQ normale, et inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique et des DGT de feu équivalents à <orangeStrong>{{2}}%</orangeStrong> de son ATQ aux ennemis adjacents.",
+        "shortDesc": "Consomme de la Volonté du magma, et inflige des DGT de feu à un ennemi unique et des DGT de feu mineurs aux ennemis adjacents."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Ambre incandescent",
+        "fullDesc": "Augmente la réduction de DGT {M#du pionnier}{F#de la pionnière} de <orangeStrong>{{1}}%</orangeStrong> et lui accorde 1 cumul de Volonté du magma, avec {{2}}% de <u>chances de base</u> de provoquer tous les ennemis pendant {{3}} tour.",
+        "shortDesc": "Réduit les DGT subis et gagne Volonté du magma, avec de fortes chances de provoquer tous les ennemis."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lance de guerre enflammée",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} + <orangeStrong>{{2}}%</orangeStrong> de sa DÉF à tous les ennemis. La prochaine ATQ normale est automatiquement renforcée et ne coûte pas de Volonté du magma.",
+        "shortDesc": "Inflige des DGT de feu à tous les ennemis et renforce la prochaine ATQ normale."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Appel de la Gardienne",
+        "fullDesc": "Après utilisation de la technique, gagne un bouclier qui absorbe des DGT équivalents à {{1}}% de la DÉF {M#du pionnier}{F#de la pionnière} + {{2}} pendant {{3}} tour au début du combat suivant.",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Woof! Walk Time!",
+  "passive": {
+    "name": "Run!",
+    "description": "Meningkatkan ATK pengguna sebesar <orangeStrong>{{1}}%</orangeStrong>. Meningkatkan <orangeStrong>{{2}}%</orangeStrong> DMG yang diakibatkan pada target musuh berstatus Burn atau Bleed, efek ini juga berlaku untuk DoT."
+  }
+}

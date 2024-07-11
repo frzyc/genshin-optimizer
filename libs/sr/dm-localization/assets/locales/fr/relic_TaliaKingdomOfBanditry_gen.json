@@ -1,0 +1,6 @@
+{
+  "setName": "Talia, royaume du banditisme",
+  "setEffects": {
+    "2": "Augmente l'effet de Rupture du porteur de {{1}}%. Lorsque sa VIT est supérieure ou égale à {{2}}, son effet de Rupture augmente de {{3}}% supplémentaires."
+  }
+}

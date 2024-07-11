@@ -1,0 +1,7 @@
+{
+  "name": "Hi, Tôi Ở Đây",
+  "passive": {
+    "name": "Không Sợ Đâu!",
+    "description": "Khiến Giới Hạn HP của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Khi người trang bị thi triển Chiến Kỹ, lượng trị liệu tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp."
+  }
+}

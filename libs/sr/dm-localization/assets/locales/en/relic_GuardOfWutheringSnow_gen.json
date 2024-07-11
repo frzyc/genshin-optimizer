@@ -1,0 +1,7 @@
+{
+  "setName": "Guard of Wuthering Snow",
+  "setEffects": {
+    "2": "Reduces DMG taken by {{1}}%.",
+    "4": "At the beginning of the turn, if the wearer's HP is equal to or less than {{1}}%, restores HP equal to {{2}}% of their Max HP and regenerates {{3}} Energy."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Eyes of the Prey",
+  "passive": {
+    "name": "Self-Confidence",
+    "description": "Increases the wearer's Effect Hit Rate by <orangeStrong>{{1}}%</orangeStrong> and increases DoT by <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

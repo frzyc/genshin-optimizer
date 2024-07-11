@@ -1,0 +1,7 @@
+{
+  "name": "But the Battle Isn't Over",
+  "passive": {
+    "name": "Heir",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Energy Regeneration Rate pengguna dan memulihkan 1 Poin Skill saat pengguna melancarkan Ultimate pada rekan tim. Efek ini hanya dapat terpicu sekali setiap pengguna melancarkan Ultimate 2 kali. Setelah pengguna melancarkan Skill, DMG rekan tim yang beraksi berikutnya akan meningkat <orangeStrong>{{2}}%</orangeStrong> selama {{3}} giliran."
+  }
+}

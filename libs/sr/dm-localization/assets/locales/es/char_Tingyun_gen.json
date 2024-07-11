@@ -1,0 +1,40 @@
+{
+  "name": "Tingyun",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Expulsión",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Tingyun como Daño de Rayo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Melodía tranquilizadora",
+        "fullDesc": "Otorga una Gracia a un aliado y aumenta el ATQ de ese aliado en un <orangeStrong>{{2}}%</orangeStrong> (sin superar el <orangeStrong>{{4}}%</orangeStrong> del ATQ actual de Tingyun).\\nCuando el aliado que ha recibido la Gracia lanza un ataque, inflige un Daño de Rayo <u>adicional</u> equivalente al <orangeStrong>{{1}}%</orangeStrong> de su ATQ.\\nLa Gracia dura {{3}} turnos y solo tiene efecto en el último aliado que haya sido objetivo de la habilidad básica de Tingyun.",
+        "shortDesc": "<color=#f29e38ff>Aumenta el ATQ</color> de un aliado y le otorga una Gracia. En este estado, el aliado inflige una pequeña cantidad de <color=#f29e38ff>Daño de Rayo <u>adicional</u></color> al lanzar un ataque."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ritual de la nube auspiciosa",
+        "fullDesc": "Hace que un aliado recupere {{1}} pts. de energía e inflija un <orangeStrong>{{3}}%</orangeStrong> más de daño durante {{2}} turnos.",
+        "shortDesc": "Hace que un aliado <color=#f29e38ff>recupere energía</color> e <color=#f29e38ff>inflija más daño</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Brisa acariciadora",
+        "fullDesc": "Tras usar la técnica, Tingyun recupera {{1}} pts. de energía.",
+        "shortDesc": "Tras usar la técnica, recupera energía."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Shattered Home",
+  "passive": {
+    "name": "Eradication",
+    "description": "Meningkatkan <orangeStrong>{{2}}%</orangeStrong> DMG pengguna pada target musuh dengan HP lebih dari {{1}}%."
+  }
+}

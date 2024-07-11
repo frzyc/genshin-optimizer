@@ -1,0 +1,40 @@
+{
+  "name": "Kafka",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Mitternächtlicher Tumult",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Kafkas ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Streichelndes Mondlicht",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Kafkas ANG zu und fügt angrenzenden Einheiten Blitz-SCH in Höhe von <orangeStrong>{{3}}%</orangeStrong> von Kafkas ANG zu.\\nBefindet der anvisierte Gegner sich momentan unter Einfluss von DoT, so erleidet er sofort zusätzlich SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> des aktuell insgesamt erlittenen DoT.",
+        "shortDesc": "Verursacht Blitz-SCH bei einem Gegner und geringen Blitz-SCH bei angrenzenden Einheiten.\\nBefindet das Hauptziel sich momentan unter Einfluss von DoT, so erleidet es sofort <color=#f29e38ff>1-mal zusätzlichen SCH</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Dämmerungstriller",
+        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Kafkas ANG zu und hat eine <u>Grundchance</u> von {{2}}%, bei betroffenen Gegnern Schock zu verursachen und ihnen unmittelbar SCH in Höhe von <orangeStrong>{{5}}%</orangeStrong> des ursprünglichen SCH durch den Status Schock zuzufügen. Der Schock hält {{3}} Rd. an.\\nGeschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Kafkas ANG.",
+        "shortDesc": "Fügt allen Gegnern <color=#f29e38ff>geringen Blitz-SCH</color> zu mit einer hohen Chance, bei ihnen Schock zu verursachen.\\nWenn die Gegner gerade geschockt sind, fügt der Schock <color=#f29e38ff>1-mal zusätzlichen SCH</color> zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Gnade ist nicht Vergebung",
+        "fullDesc": "Greift alle Gegner innerhalb einer gewissen Reichweite unmittelbar an und fügt nach Kampfeintritt allen Gegnern Blitz-SCH in Höhe von {{3}}% von Kafkas ANG zu. Es besteht eine <u>Grundchance</u> von {{1}}%, jedem einzelnen Gegner für {{2}} Rd. den Status Schock zuzufügen, der dem Status Schock des Ultimates entspricht.",
+        "shortDesc": "Greift alle Gegner in Reichweite an. Fügt nach Kampfeintritt allen Gegnern geringen Blitz-SCH zu und hat eine hohe Chance, ihnen <color=#f29e38ff>Schock zuzufügen</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

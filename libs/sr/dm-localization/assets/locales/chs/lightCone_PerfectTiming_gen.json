@@ -1,0 +1,7 @@
+{
+  "name": "此时恰好",
+  "passive": {
+    "name": "折射的视线",
+    "description": "使装备者的效果抵抗提高<orangeStrong>{{1}}%</orangeStrong>，并使装备者的治疗量提高，提高数值等同于效果抵抗的<orangeStrong>{{2}}%</orangeStrong>，最多使治疗量提高<orangeStrong>{{3}}%</orangeStrong>。"
+  }
+}

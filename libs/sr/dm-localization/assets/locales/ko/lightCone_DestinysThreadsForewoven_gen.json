@@ -1,0 +1,7 @@
+{
+  "name": "운명의 실을 엮다",
+  "passive": {
+    "name": "간파",
+    "description": "장착한 캐릭터의 효과 저항이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 방어력을 {{2}}pt 보유할 때마다 가하는 피해가 <orangeStrong>{{3}}%</orangeStrong> 증가하며, 해당 효과는 최대 <orangeStrong>{{4}}%</orangeStrong>까지 증가한다"
+  }
+}

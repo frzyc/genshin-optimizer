@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#じせつ}時節{RUBY_E#}は{RUBY_B#お}居{RUBY_E#}らず",
+  "passive": {
+    "name": "{RUBY_B#いちにち}一日{RUBY_E#}は{RUBY_B#しじ}四時{RUBY_E#}あり",
+    "description": "装備キャラの最大HP+<orangeStrong>{{1}}%</orangeStrong>、治癒量+<orangeStrong>{{2}}%</orangeStrong>。装備キャラが味方に治癒を行った時、治癒量が記録される。任意の味方が攻撃を行った後、攻撃を受けたランダムな敵1体に対して、装備キャラの属性と同じ属性で、記録された治癒量<orangeStrong>{{3}}%</orangeStrong>分の付加ダメージを与える。このダメージはバフの影響を受けず、ターンが回ってくるたびに1回まで発生する。"
+  }
+}

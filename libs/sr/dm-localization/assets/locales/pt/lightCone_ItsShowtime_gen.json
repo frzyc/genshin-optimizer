@@ -1,0 +1,7 @@
+{
+  "name": "É Hora do Show",
+  "passive": {
+    "name": "Auto-entretenimento",
+    "description": "Quando o usuário inflige uma penalidade em um inimigo, ganha um acúmulo de Truque. Cada acúmulo de Truque aumenta o Dano causado pelo usuário em <orangeStrong>{{1}}%</orangeStrong> por um máximo de {{2}} acúmulo(s). Esse efeito dura por {{3}} rodada(s). Quando a Taxa de Acerto de Efeito do usuário é maior ou igual a {{4}}%, aumenta o ATQ em <orangeStrong>{{5}}%</orangeStrong>."
+  }
+}

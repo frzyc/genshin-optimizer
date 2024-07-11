@@ -1,0 +1,7 @@
+{
+  "name": "Planetary Rendezvous",
+  "passive": {
+    "name": "Departure",
+    "description": "หลังจากเข้าสู่การต่อสู้ เมื่อเป้าหมายฝ่ายตัวเองสร้าง DMG ประเภทเดียวกันกับผู้สวมใส่ จะสร้าง DMG เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong>"
+  }
+}

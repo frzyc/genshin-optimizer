@@ -1,0 +1,7 @@
+{
+  "name": "Eyes of the Prey",
+  "passive": {
+    "name": "Self-Confidence",
+    "description": "ทำให้อัตราสร้างสถานะของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> พร้อมทั้งสร้าง DMG ต่อเนื่องเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong>"
+  }
+}

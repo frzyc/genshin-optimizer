@@ -1,0 +1,7 @@
+{
+  "name": "Xoáy Ốc",
+  "passive": {
+    "name": "Truy Đuổi",
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> sát thương mà người trang bị gây ra cho kẻ địch trong trạng thái Giảm Tốc."
+  }
+}

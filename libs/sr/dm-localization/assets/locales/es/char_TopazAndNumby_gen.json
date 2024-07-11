@@ -1,0 +1,40 @@
+{
+  "name": "Topaz y Conti",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Déficit",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Topaz como Daño de Fuego a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "¿Problemas con el pago?",
+        "fullDesc": "Hace que un enemigo entre en el estado Certificado de deuda y aumenta el daño que recibe de los <u>ataques adicionales</u> en un <orangeStrong>{{2}}%</orangeStrong>. Certificado de deuda solo tiene efecto en el último objetivo al que se le haya aplicado. Al inicio del turno de un aliado o durante la acción de los aliados, si en el campo de batalla no hay ningún enemigo con Certificado de deuda, Topaz se lo aplica a un enemigo al azar.\\nConti inflige a ese objetivo un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Topaz como Daño de Fuego. Lanzar esta habilidad básica e infligir daño se considera como lanzar un <u>ataque adicional</u>.",
+        "shortDesc": "Hace que un enemigo entre en el estado Certificado de deuda y <color=#f29e38ff>reciba más daño de los ataques adicionales</color>. Conti inflige Daño de Fuego al objetivo."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "De pérdida a ganancia",
+        "fullDesc": "Conti entra en el estado Subida increíble. Su multiplicador de daño aumenta en un <orangeStrong>{{1}}%</orangeStrong> y su Daño CRIT en un <orangeStrong>{{2}}%</orangeStrong>. Además, cuando un enemigo afectado por Certificado de deuda recibe el ataque de un ATQ básico, habilidad básica o habilidad definitiva de un aliado, la acción de Conti se adelanta un {{3}}%. Conti sale del estado Subida increíble después de lanzar {{4}} ataques.",
+        "shortDesc": "Conti entra en el estado Subida increíble y <color=#f29e38ff>aumenta su multiplicador de daño y su Daño CRIT</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Subsidio explícito",
+        "fullDesc": "Topaz invoca a Conti al entrar en el mapa. Conti busca automáticamente los tesoros normales y Chanchitos que haya en un área determinada.\\nUsar la técnica de forma proactiva hace que, después de que Conti lance su primer ataque en la siguiente batalla, Topaz recupere {{1}} pts. de energía.\\nTras usar la técnica de forma proactiva y ganar una batalla contra los monstruos del mapa, si Topaz sigue en el equipo, se obtiene una pequeña cantidad adicional de créditos al conseguir créditos. Solo se pueden obtener {{2}} créditos adicionales cada día natural.\\nTras usar la técnica de forma proactiva y ganar una batalla contra los enemigos en el Universo Simulado, se obtiene una pequeña cantidad de fragmentos cósmicos y hay una pequeña probabilidad de obtener 1 objeto raro al azar.",
+        "shortDesc": "<color=#f29e38ff>Invoca a Conti</color> en el mapa para que la siga. Conti <color=#f29e38ff>busca automáticamente los tesoros normales y Chanchitos</color> de los alrededores. Al usar la técnica, Topaz recupera energía después del primer ataque de Conti en la siguiente batalla."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

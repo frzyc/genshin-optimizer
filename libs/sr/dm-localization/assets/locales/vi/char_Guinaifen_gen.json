@@ -1,0 +1,40 @@
+{
+  "name": "Guinaifen",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Bổ Đầu Hò Reo",
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Hỏa bằng <orangeStrong>{{1}}%</orangeStrong> tấn công của Guinaifen.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Màn Mở Đầu Hoành Tráng",
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Hỏa bằng <orangeStrong>{{1}}%</orangeStrong> tấn công của Guinaifen, đồng thời gây cho mục tiêu gần đó Sát Thương Hỏa bằng <orangeStrong>{{2}}%</orangeStrong> tấn công của Guinaifen, và có {{3}}% <u>xác suất cơ bản</u> khiến mục tiêu và các mục tiêu gần đó rơi vào trạng thái Thiêu Đốt. Trong trạng thái Thiêu Đốt, khi kẻ địch bắt đầu mỗi hiệp, sẽ chịu Sát Thương Hỏa Duy Trì bằng <orangeStrong>{{4}}%</orangeStrong> tấn công của Guinaifen, duy trì {{5}} hiệp.",
+        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, gây lượng nhỏ Sát Thương Hỏa cho mục tiêu lân cận, có xác suất lớn thi triển <color=#f29e38ff>Thiêu Đốt</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Một Tràng Pháo Tay",
+        "fullDesc": "Gây cho toàn phe địch Sát Thương Hỏa bằng <orangeStrong>{{1}}%</orangeStrong> tấn công của Guinaifen, nếu mục tiêu đang ở trạng thái Thiêu Đốt, sẽ khiến trạng thái Thiêu Đốt mà mục tiêu đang chịu lập tức gây sát thương bằng <orangeStrong>{{2}}%</orangeStrong> sát thương ban đầu.",
+        "shortDesc": "Gây sát thương Hỏa cho toàn phe địch, nếu kẻ địch đang ở trạng thái Thiêu Đốt, sẽ khiến trạng thái Thiêu Đốt này gây thêm 1 lần sát thương."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Kỹ Nghệ Xiếc Đỉnh Cao",
+        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào trận sẽ gây {{2}} lần sát thương, mỗi lần sát thương sẽ gây cho 1 kẻ địch ngẫu nhiên Sát Thương Hỏa bằng {{1}}% tấn công của Guinaifen và có {{3}}% <u>xác suất cơ bản</u> khiến mục tiêu rơi vào trạng thái Nuốt Lửa.",
+        "shortDesc": "Tấn công kẻ địch. Sau khi vào chiến đấu, gây một lượng nhỏ Sát Thương Hỏa lên 1 kẻ địch đồng thời thi triển <color=#f29e38ff>trạng thái \"Nuốt Lửa\"</color>, tổng cộng Nảy Bật 4 lần."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

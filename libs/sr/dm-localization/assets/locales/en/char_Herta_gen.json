@@ -1,0 +1,40 @@
+{
+  "name": "Herta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "What Are You Looking At?",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Herta's ATK to a single enemy.",
+        "shortDesc": "Deals minor Ice DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "One-Time Offer",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Herta's ATK to all enemies. If the enemy's HP percentage is {{2}}% or higher, DMG dealt to this target increases by {{3}}%.",
+        "shortDesc": "Deals minor Ice DMG to all enemies. Targets with higher HP will receive increased DMG."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "It's Magic, I Added Some Magic",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Herta's ATK to all enemies.",
+        "shortDesc": "Deals Ice DMG to all enemies."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "It Can Still Be Optimized",
+        "fullDesc": "After using her Technique, Herta's ATK increases by {{1}}% for {{2}} turn(s) at the beginning of the next battle.",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

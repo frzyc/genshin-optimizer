@@ -1,0 +1,40 @@
+{
+  "name": "{RUBY_B#ギョクウ}御空{RUBY_E#}",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#りゅうてき}流鏑{RUBY_E#}",
+        "fullDesc": "指定した敵単体に御空の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の虚数属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の虚数属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#てんきゅう}天宮{RUBY_E#}に{RUBY_B#な}鳴{RUBY_E#}り{RUBY_B#とよ}響{RUBY_E#}む{RUBY_B#つる}弦{RUBY_E#}",
+        "fullDesc": "「鳴弦号令」を{{1}}層獲得する。「鳴弦号令」は最大で2層累積できる。御空に「鳴弦号令」がある時、味方全体の攻撃力+<orangeStrong>{{2}}%</orangeStrong>。味方のターンが終了するたびに、御空の「鳴弦号令」が1層減る。\\n御空が戦闘スキルで「鳴弦号令」を獲得したターン、「鳴弦号令」は減らない。",
+        "shortDesc": "「鳴弦号令」を2層獲得、自身に「鳴弦号令」がある場合、味方全体の<color=#f29e38ff>攻撃力アップ</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#かんうんせん}貫雲箭{RUBY_E#}",
+        "fullDesc": "必殺技を発動した時、御空に「鳴弦号令」がある場合、さらに味方全体の会心率+<orangeStrong>{{2}}%</orangeStrong>、会心ダメージ+<orangeStrong>{{3}}%</orangeStrong>。指定した敵単体に御空の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の虚数属性ダメージを与える。",
+        "shortDesc": "自身に「鳴弦号令」がある時、味方全体の<color=#f29e38ff>会心率と会心ダメージアップ</color>。敵単体に大量の虚数属性ダメージを与える。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#かぜ}風{RUBY_E#}{RUBY_B#お}追{RUBY_E#}う{RUBY_B#うんえん}雲鳶{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、{{1}}秒の疾走状態に入る。疾走状態では、自身の移動速度+{{2}}%、敵を先制攻撃して戦闘に入る時、御空は「鳴弦号令」を{{3}}層獲得する。",
+        "shortDesc": "自身の<color=#f29e38ff>移動速度アップ</color>。敵を先制攻撃して戦闘に入った後、「鳴弦号令」を2層獲得。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

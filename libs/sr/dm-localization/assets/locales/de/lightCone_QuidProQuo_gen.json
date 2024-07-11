@@ -1,0 +1,7 @@
+{
+  "name": "Quid pro quo",
+  "passive": {
+    "name": "Im Rausch genießen",
+    "description": "Stellt zu Beginn der Runde des Trägers für einen zufälligen Verbündeten <orangeStrong>{{2}}</orangeStrong> Pkt. Energie wieder her, dessen aktuelle Energie unter {{1}}% liegt."
+  }
+}

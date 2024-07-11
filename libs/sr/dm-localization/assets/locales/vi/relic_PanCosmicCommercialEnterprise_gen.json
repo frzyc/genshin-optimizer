@@ -1,0 +1,6 @@
+{
+  "setName": "Công Ty Kinh Doanh Liên Ngân Hà",
+  "setEffects": {
+    "2": "Tăng {{1}}% Chính Xác Hiệu Ứng của người trang bị. Đồng thời tăng Tấn Công bằng {{2}}% Chính Xác Hiệu Ứng hiện tại của người trang bị, tối đa tăng {{3}}%."
+  }
+}

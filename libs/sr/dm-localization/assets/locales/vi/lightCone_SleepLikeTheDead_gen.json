@@ -1,0 +1,7 @@
+{
+  "name": "Giấc Ngủ Say Mềm",
+  "passive": {
+    "name": "Mộng Đẹp",
+    "description": "Khiến người trang bị tăng Sát Thương Bạo Kích <orangeStrong>{{1}}%</orangeStrong>. Khi sát thương Tấn Công Thường hoặc Chiến Kỹ của người trang bị chưa tạo thành Bạo Kích, sẽ khiến Tỷ Lệ Bạo Kích của bản thân tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp. Hiệu ứng này mỗi {{4}} hiệp có thể kích hoạt 1 lần."
+  }
+}

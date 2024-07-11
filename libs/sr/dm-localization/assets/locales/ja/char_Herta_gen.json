@@ -1,0 +1,40 @@
+{
+  "name": "ヘルタ",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#なに}何{RUBY_E#}{RUBY_B#み}見{RUBY_E#}てるの？",
+        "fullDesc": "指定した敵単体にヘルタの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#いちど}一度{RUBY_E#}{RUBY_B#かぎ}限{RUBY_E#}りの{RUBY_B#とりひき}取引{RUBY_E#}",
+        "fullDesc": "敵全体にヘルタの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。敵の残りHPが{{2}}%以上の場合、その敵に対して与ダメージ+{{3}}%。",
+        "shortDesc": "敵全体に少量の氷属性ダメージを与える、残りHP割合が高い敵に対してダメージアップ。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#わたし}私{RUBY_E#}がかけた{RUBY_B#まほう}魔法{RUBY_E#}だよ",
+        "fullDesc": "敵全体にヘルタの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": "敵全体に氷属性ダメージを与える。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#かいぜん}改善{RUBY_E#}すべきだよ",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時、ヘルタの攻撃力+{{1}}%、{{2}}ターン継続。",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

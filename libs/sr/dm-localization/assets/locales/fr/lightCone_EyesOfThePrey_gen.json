@@ -1,0 +1,7 @@
+{
+  "name": "Les yeux de la proie",
+  "passive": {
+    "name": "Confiance en soi",
+    "description": "Augmente les chances d'appliquer des effets du porteur de <orangeStrong>{{1}}%</orangeStrong> et les dégâts sur la durée de <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

@@ -1,5 +1,6 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { objFilterKeys, objMap } from '@genshin-optimizer/common/util'
+import type { SuperimposeKey } from '@genshin-optimizer/sr/consts'
 import { PROJROOT_PATH } from '../../consts'
 import type { StatDMKey } from '../../mapping'
 import type { LightConeId } from '../../mapping/lightCone'
@@ -11,7 +12,7 @@ export type EquipmentSkillConfig = {
   SkillID: number
   SkillName: HashId
   SkillDesc: HashId
-  Level: number
+  Level: SuperimposeKey
   AbilityName: string
   ParamList: Value[]
   AbilityProperty: AbilityProperty[]
@@ -25,7 +26,7 @@ type EquipmentSkillConfig_bySuperimpose = {
   SkillID: number[]
   SkillName: HashId[]
   SkillDesc: HashId[]
-  Level: number[]
+  Level: SuperimposeKey[]
   AbilityName: string[]
   ParamList: Value[][]
   AbilityProperty: AbilityProperty[][]

@@ -1,0 +1,7 @@
+{
+  "name": "Loop",
+  "passive": {
+    "name": "Busca",
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> o Dano causado pelo usuário a inimigos com Lentidão."
+  }
+}

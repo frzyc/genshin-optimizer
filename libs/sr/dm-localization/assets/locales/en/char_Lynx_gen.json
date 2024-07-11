@@ -1,0 +1,40 @@
+{
+  "name": "Lynx",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ice Crampon Technique",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of this character's Max HP to a single enemy.",
+        "shortDesc": "Deals minor Quantum DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Salted Camping Cans",
+        "fullDesc": "Applies \"Survival Response\" to a single target ally and increases their Max HP by <orangeStrong>{{1}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{2}}</orangeStrong>. If the target ally is a character on the Path of Destruction or Preservation, the chance of them being attacked by enemies will greatly increase. \"Survival Response\" lasts for {{3}} turn(s).\\nRestores the target's HP by <orangeStrong>{{4}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{5}}</orangeStrong>.",
+        "shortDesc": "Applies \"Survival Response\" to a single ally, <color=#f29e38ff>increases their Max HP</color>, and restores their HP."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Snowfield First Aid",
+        "fullDesc": "Dispels {{1}} <u>debuff(s)</u> from all allies and immediately restores their respective HP by an amount equal to <orangeStrong>{{2}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{3}}</orangeStrong>.",
+        "shortDesc": "Dispels <color=#f29e38ff>1 <u>debuff</u> from all allies</color> and restores their HP."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Chocolate Energy Bar",
+        "fullDesc": "After Lynx uses her Technique, at the start of the next battle, all allies are granted her Talent's continuous healing effect, lasting for {{1}} turn(s).",
+        "shortDesc": "After this character uses her Technique, at the start of the next battle, all allies are granted a continuous healing effect."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Clé du savoir",
+  "passive": {
+    "name": "Épiphanie",
+    "description": "Régénère <orangeStrong>{{1}}</orangeStrong> points d'énergie supplémentaires lorsque le porteur utilise sa compétence. Cet effet ne peut pas être déclenché plus d'une fois par tour."
+  }
+}

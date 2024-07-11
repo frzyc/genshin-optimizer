@@ -1,0 +1,40 @@
+{
+  "name": "Bailu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Diagnosetritt",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Bailus ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Unter den Wolken singen",
+        "fullDesc": "Stellt LP eines anvisierten Verbündeten sofort um <orangeStrong>{{1}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her. Anschließend heilt Bailu {{4}}-mal zufällige Verbündete. Nach jeder Heilung werden die wiederhergestellten LP beim nächsten Mal um {{3}}% reduziert.",
+        "shortDesc": "Stellt LP für einen Verbündeten wieder her und heilt dann einen weiteren zufälligen Verbündeten."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Sprung des Sumpfdrachen",
+        "fullDesc": "Stellt LP aller Verbündeten sofort um <orangeStrong>{{1}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her.\\nVerbündete, die noch nicht belebt sind, werden von Bailu belebt. Bei Verbündeten mit Belebung hält die Belebungsdauer 1 weitere Runde lang an.\\nDie „Belebung“ hält bis zu {{3}} Rd. lang an. Dieser Effekt ist nicht stapelbar.",
+        "shortDesc": "Stellt LP für alle Verbündeten wieder her. Belebt die Verbündeten oder verlängert die Dauer der „Belebung“."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Im Regen spazieren",
+        "fullDesc": "Gewährt nach dem Einsatz der Technik allen Verbündeten zu Beginn des nächsten Kampfes für {{1}} Rd. „Belebung“.",
+        "shortDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten zu Beginn des nächsten Kampfes „Belebung“."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

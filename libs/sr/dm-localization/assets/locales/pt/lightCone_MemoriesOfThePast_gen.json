@@ -1,0 +1,7 @@
+{
+  "name": "Memórias do Passado",
+  "passive": {
+    "name": "Foto Antiga",
+    "description": "Aumenta o Efeito de Quebra do usuário em <orangeStrong>{{1}}%</orangeStrong>. Quando o usuário ataca, regenera mais <orangeStrong>{{2}}</orangeStrong> de Energia adicional. Este efeito não pode ser ativado repetidamente em uma única rodada."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "setName": "Empresa Mercantil Pan-Cósmica",
+  "setEffects": {
+    "2": "Aumenta em {{1}}% a Taxa de Acerto de Efeito do usuário. Além disso, aumenta o ATQ do usuário em {{2}}% da Taxa de Acerto de Efeito atual, até um máximo de {{3}}%."
+  }
+}

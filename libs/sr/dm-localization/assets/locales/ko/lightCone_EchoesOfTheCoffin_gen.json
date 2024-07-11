@@ -1,0 +1,7 @@
+{
+  "name": "관의 울림",
+  "passive": {
+    "name": "가시",
+    "description": "장착한 캐릭터의 공격력이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 공격을 발동하면 다른 적 1기를 명중할 때마다 에너지를 <orangeStrong>{{3}}</orangeStrong>pt 회복한다. 공격할 때마다 해당 방식으로 에너지를 최대 {{4}}회 회복한다. 장착한 캐릭터가 필살기를 발동하면 모든 아군의 속도가 <orangeStrong>{{2}}</orangeStrong>pt 증가한다. 지속 시간: 1턴"
+  }
+}

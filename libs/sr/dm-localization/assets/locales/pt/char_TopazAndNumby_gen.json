@@ -1,0 +1,40 @@
+{
+  "name": "Topaz e Dinheirinho",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Déficit...",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Topaz a um único inimigo.",
+        "shortDesc": "Causa Dano de Fogo leve a um inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Dificuldade para Pagar?",
+        "fullDesc": "Inflige o status de Prova de Débito a um único inimigo-alvo, aumentando o Dano de <u>Ataques Extras</u> recebido pelo inimigo-alvo em <orangeStrong>{{2}}%</orangeStrong>. Prova de Débito só entra em efeito no alvo mais recente em que foi aplicado. Caso não existam inimigos afetados com Prova de Débito no campo quando a rodada de um aliado começar, ou quando um aliado agir, Topaz infligirá Prova de Débito a um inimigo aleatório.\\nDinheirinho causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Topaz a este alvo. Usar esta Perícia para causar Dano é considerado realizar um <u>Ataque Extra</u>.",
+        "shortDesc": "Inflige o estado de Prova de Débito a um único inimigo e faz com que ele <color=#f29e38ff>receba mais Dano de Ataques Extras</color>. Dinheirinho causa Dano de Fogo a este alvo."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lucrar!",
+        "fullDesc": "Dinheirinho entra no estado de \"Bonança Inesperada!\", seu multiplicador de Dano aumenta em <orangeStrong>{{1}}%</orangeStrong> e o Dano CRIT aumenta em <orangeStrong>{{2}}%</orangeStrong>. Além disso, quando inimigos com Prova de Débito são atingidos por um ATQ Básico, uma Perícia ou uma Perícia Suprema de um aliado, a ação de Dinheirinho é Avançada Adiante em {{3}}%. Dinheirinho sai do estado de \"Bonança Inesperada!\" depois de usar {{4}} ataques.",
+        "shortDesc": "Dinheirinho entra no estado de \"Bonança Inesperada!\" e <color=#f29e38ff>aumenta seu multiplicador de Dano e seu Dano CRIT</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Subsídio Explícito",
+        "fullDesc": "Invoca Dinheirinho quando Topaz entra no mapa. Dinheirinho buscará automaticamente por Tesouros Básicos e Cofrinhos dentro de um certo alcance.\\nUsar sua Técnica regenera {{1}} de Energia para Topaz após o primeiro ataque de Dinheirinho na próxima batalha.\\nSe Topaz ainda estiver no time quando os inimigos do mapa forem derrotados, uma pequena quantidade de créditos adicionais será adicionada aos créditos obtidos. Um máximo de {{2}} de créditos adicionais podem ser recebidos a cada dia do calendário.\\nApós usar sua Técnica e derrotar inimigos no Universo Simulado, recebe adicionalmente uma pequena quantidade de Fragmentos Cósmicos com uma pequena chance de obter 1 Curio aleatória.",
+        "shortDesc": "<color=#f29e38ff>Invoca Dinheirinho para acompanhar</color> em um Labirinto. Dinheirinho <color=#f29e38ff>procurará automaticamente por Tesouros Básicos e Cofrinhos por perto</color>. Usar a Técnica regenerará a Energia de Topaz após o primeiro ataque de Dinheirinho na próxima batalha."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

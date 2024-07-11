@@ -1,0 +1,35 @@
+{
+  "type": {
+    "Physical": "Physical",
+    "Quantum": "Quantum",
+    "Lightning": "Lightning",
+    "Ice": "Ice",
+    "Wind": "Wind",
+    "Fire": "Fire",
+    "Imaginary": "Imaginary"
+  },
+  "path": {
+    "Erudition": "Erudition",
+    "Preservation": "Preservation",
+    "Abundance": "Abundance",
+    "Nihility": "Nihility",
+    "Destruction": "Destruction",
+    "Harmony": "Harmony",
+    "TheHunt": "The Hunt"
+  },
+  "ability": {
+    "basic": "Basic ATK",
+    "skill": "Skill",
+    "ult": "Ultimate",
+    "talent": "Talent",
+    "technique": "Technique"
+  },
+  "dmgType": {
+    "single": "Single Target",
+    "aoe": "AoE",
+    "bounce": "Bounce",
+    "blast": "Blast",
+    "support": "Support",
+    "impair": "Impair"
+  }
+}

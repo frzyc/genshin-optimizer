@@ -1,0 +1,40 @@
+{
+  "name": "Gepard",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Fist of Conviction",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Gepard's ATK to a single enemy.",
+        "shortDesc": "Deals minor Ice DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Daunting Smite",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Gepard's ATK to a single enemy, with a {{2}}% <u>base chance</u> to Freeze the enemy for {{3}} turn(s).\\nWhile Frozen, the enemy cannot take action and will take <u>Additional</u> Ice DMG equal to <orangeStrong>{{4}}%</orangeStrong> of Gepard's ATK at the beginning of each turn.",
+        "shortDesc": "Deals Ice DMG to a single enemy, <color=#f29e38ff>with a chance of Freezing them</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Enduring Bulwark",
+        "fullDesc": "Applies a Shield to all allies, absorbing DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Gepard's DEF plus <orangeStrong>{{3}}</orangeStrong> for {{2}} turn(s).",
+        "shortDesc": "<color=#f29e38ff>Provides a Shield</color> to all allies."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Comradery",
+        "fullDesc": "After Gepard uses his Technique, when the next battle begins, a Shield will be applied to all allies, absorbing DMG equal to {{1}}% of Gepard's DEF plus {{3}} for {{2}} turn(s).",
+        "shortDesc": "After this character uses Technique, all allies gain a Shield at the start of the next battle."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  }
+}

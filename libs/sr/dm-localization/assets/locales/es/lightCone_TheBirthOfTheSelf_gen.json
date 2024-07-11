@@ -1,0 +1,7 @@
+{
+  "name": "El nacimiento del yo",
+  "passive": {
+    "name": "La joven del cuadro",
+    "description": "El daño de los ataques adicionales del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Si el objetivo enemigo tiene un porcentaje de PV igual o inferior al {{2}}%, el daño de los ataques adicionales aumenta en un <orangeStrong>{{3}}%</orangeStrong> más."
+  }
+}

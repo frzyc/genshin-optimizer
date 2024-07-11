@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#なが}流{RUBY_E#}れ{RUBY_B#ゆ}逝{RUBY_E#}く{RUBY_B#きし}岸{RUBY_E#}を{RUBY_B#ある}歩{RUBY_E#}いて",
+  "passive": {
+    "name": "{RUBY_B#わた}渡{RUBY_E#}し{RUBY_B#もり}守{RUBY_E#}",
+    "description": "装備キャラの会心ダメージ+<orangeStrong>{{1}}%</orangeStrong>。装備キャラの攻撃が敵に命中した後、敵を「泡影」状態にする、1ターン継続。この効果は装備キャラが攻撃を行うたびに、敵それぞれに1回まで発動できる。「泡影」状態の敵に対する装備キャラの与ダメージ+<orangeStrong>{{2}}%</orangeStrong>、さらに必殺技の与ダメージ+<orangeStrong>{{3}}%</orangeStrong>。"
+  }
+}

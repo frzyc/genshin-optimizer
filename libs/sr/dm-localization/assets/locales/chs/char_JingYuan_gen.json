@@ -1,0 +1,40 @@
+{
+  "name": "景元",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "石火流光",
+        "fullDesc": "对指定敌方单体造成等同于景元<orangeStrong>{{1}}%</orangeStrong>攻击力的雷属性伤害。",
+        "shortDesc": "对敌方单体造成少量雷属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "紫霄震曜",
+        "fullDesc": "对敌方全体造成等同于景元<orangeStrong>{{1}}%</orangeStrong>攻击力的雷属性伤害，同时增加{{2}}段【神君】下回合的攻击段数。",
+        "shortDesc": "对敌方全体造成少量雷属性伤害，<color=#f29e38ff>增加【神君】的攻击段数</color>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "吾身光明",
+        "fullDesc": "对敌方全体造成等同于景元<orangeStrong>{{1}}%</orangeStrong>攻击力的雷属性伤害。同时增加{{2}}段【神君】下回合的攻击段数。",
+        "shortDesc": "对敌方全体造成雷属性伤害，<color=#f29e38ff>增加【神君】的攻击段数</color>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "摄召威灵",
+        "fullDesc": "使用秘技后，下一次战斗开始时【神君】第1回合的攻击段数增加{{1}}段。",
+        "shortDesc": "使用秘技，下一次进战时<color=#f29e38ff>增加【神君】的攻击段数</color>。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "shortDesc": ""
+      }
+    }
+  }
+}

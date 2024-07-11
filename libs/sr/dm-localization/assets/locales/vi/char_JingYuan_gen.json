@@ -1,0 +1,40 @@
+{
+  "name": "Jing Yuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Khoảnh Khắc Ngắn Ngủi",
+        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Jing Yuan.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Mây Tím Chiếu Rọi",
+        "fullDesc": "Gây cho toàn bộ địch một lượng Sát Thương Lôi bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Jing Yuan, đồng thời tăng {{2}} đòn đánh trong một lượt của Thần Quân ở hiệp sau.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho toàn bộ địch, <color=#f29e38ff>tăng số đòn đánh trong một lượt của Thần Quân</color>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Thân Ta Tỏa Sáng",
+        "fullDesc": "Gây cho toàn bộ địch một lượng Sát Thương Lôi bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Jing Yuan, đồng thời tăng {{2}} đòn đánh trong một lượt của Thần Quân ở hiệp sau.",
+        "shortDesc": "Gây Sát Thương Lôi cho toàn bộ địch, <color=#f29e38ff>tăng số đòn đánh trong một lượt của Thần Quân</color>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Triệu Hồi Uy Linh",
+        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo, số đòn đánh trong một lượt của Thần Quân tăng {{1}} ở hiệp 1.",
+        "shortDesc": "Sử dụng Bí Kỹ, khi vào chiến đấu lần kế tiếp <color=#f29e38ff>sẽ tăng số đòn đánh trong một lượt của Thần Quân</color>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  }
+}
