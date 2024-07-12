@@ -53,7 +53,7 @@ export async function messageReactionAdd(
       reaction = await reaction.fetch()
     } catch (error) {
       console.error(error)
-      return;
+      return
     }
   }
   //ignore other bot reactions
@@ -62,9 +62,9 @@ export async function messageReactionAdd(
   //only act on messages from self
   if (!perms.self(message)) return
 
-  const arg = message.interaction?.commandName.split(' ');
+  const arg = message.interaction?.commandName.split(' ')
   if (arg) {
     const command = Commands.get(arg[0])
-    if ('reaction' in command) command.reaction(reaction, arg);
+    if ('reaction' in command) command.reaction(reaction, arg)
   }
 }
