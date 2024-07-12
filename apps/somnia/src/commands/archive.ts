@@ -2,9 +2,10 @@ import type {
   ApplicationCommandOptionChoiceData,
   AutocompleteInteraction,
   ChatInputCommandInteraction,
+  MessageReaction,
   StringSelectMenuInteraction,
 } from 'discord.js'
-import { SlashCommandBuilder } from 'discord.js'
+import { EmbedBuilder, SlashCommandBuilder } from 'discord.js'
 import * as fs from 'fs'
 import * as path from 'path'
 
@@ -219,4 +220,44 @@ export async function selectmenu(
   } catch (e) {
     error(interaction, e)
   }
+}
+
+export async function reaction(reaction: MessageReaction, arg: string[]) {
+  if (arg[1] != 'char') return
+  let message = reaction.message
+  if (message.partial) message = await message.fetch()
+  const embed = message.embeds[0].toJSON()
+  if (!embed) return
+
+  const emoji = reaction.emoji.name;
+
+  //reactions to change traveler gender
+  if (embed.author?.name.includes('Traveler') && embed.author.icon_url && embed.thumbnail) {
+    let gender = '';
+    //determine gender
+    if (emoji === '🏳️‍⚧️') gender = (
+      embed.author.icon_url?.includes('Girl') ||
+      embed.thumbnail?.url.includes('Girl')
+    )? 'M' : 'F'
+    else if (emoji === '♀️') gender = 'F'
+    else if (emoji === '♂️') gender = 'M'
+    //replace gender
+    if (gender === 'F') {
+      embed.author.icon_url = embed.author.icon_url.replace('Boy', 'Girl')
+      embed.thumbnail.url = embed.thumbnail.url.replace('Boy', 'Girl')
+    }
+    else if (gender === 'M') {
+      embed.author.icon_url = embed.author.icon_url.replace('Girl', 'Boy')
+      embed.thumbnail.url = embed.thumbnail.url.replace('Girl', 'Boy')
+    }
+  }
+
+  //edit message
+  try {
+    await message.edit({embeds: [embed]})
+  }
+  catch (e) {
+    console.log(e)
+  }
+  return
 }
