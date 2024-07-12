@@ -5,7 +5,7 @@ import type {
   MessageReaction,
   StringSelectMenuInteraction,
 } from 'discord.js'
-import { EmbedBuilder, SlashCommandBuilder } from 'discord.js'
+import { SlashCommandBuilder } from 'discord.js'
 import * as fs from 'fs'
 import * as path from 'path'
 
@@ -229,24 +229,29 @@ export async function reaction(reaction: MessageReaction, arg: string[]) {
   const embed = message.embeds[0].toJSON()
   if (!embed) return
 
-  const emoji = reaction.emoji.name;
+  const emoji = reaction.emoji.name
 
   //reactions to change traveler gender
-  if (embed.author?.name.includes('Traveler') && embed.author.icon_url && embed.thumbnail) {
-    let gender = '';
+  if (
+    embed.author?.name.includes('Traveler') &&
+    embed.author.icon_url &&
+    embed.thumbnail
+  ) {
+    let gender = ''
     //determine gender
-    if (emoji === '🏳️‍⚧️') gender = (
-      embed.author.icon_url?.includes('Girl') ||
-      embed.thumbnail?.url.includes('Girl')
-    )? 'M' : 'F'
+    if (emoji === '🏳️‍⚧️')
+      gender =
+        embed.author.icon_url?.includes('Girl') ||
+        embed.thumbnail?.url.includes('Girl')
+          ? 'M'
+          : 'F'
     else if (emoji === '♀️') gender = 'F'
     else if (emoji === '♂️') gender = 'M'
     //replace gender
     if (gender === 'F') {
       embed.author.icon_url = embed.author.icon_url.replace('Boy', 'Girl')
       embed.thumbnail.url = embed.thumbnail.url.replace('Boy', 'Girl')
-    }
-    else if (gender === 'M') {
+    } else if (gender === 'M') {
       embed.author.icon_url = embed.author.icon_url.replace('Girl', 'Boy')
       embed.thumbnail.url = embed.thumbnail.url.replace('Girl', 'Boy')
     }
@@ -254,9 +259,8 @@ export async function reaction(reaction: MessageReaction, arg: string[]) {
 
   //edit message
   try {
-    await message.edit({embeds: [embed]})
-  }
-  catch (e) {
+    await message.edit({ embeds: [embed] })
+  } catch (e) {
     console.log(e)
   }
   return

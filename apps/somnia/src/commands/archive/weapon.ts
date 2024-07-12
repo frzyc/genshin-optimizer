@@ -57,8 +57,7 @@ export function weaponArchive(
     //r5 for 3/4 star weapons
     if (rarity < 5) refine = '4'
     //user input override
-    if (args in refinedisplay) refine = args
-    else throw 'invalid refine'
+    if (args) refine = args
     //name and passive
     name += ` (R${refinedisplay[refine]})`
     text +=
