@@ -48,9 +48,23 @@ export async function messageReactionAdd(
   reaction: MessageReaction | PartialMessageReaction,
   user: User | PartialUser
 ) {
+  if (reaction.partial) {
+    try {
+      reaction = await reaction.fetch()
+    } catch (error) {
+      console.error(error)
+      return
+    }
+  }
   //ignore other bot reactions
   if (perms.bot(user)) return
   const message = reaction.message
   //only act on messages from self
   if (!perms.self(message)) return
+
+  const arg = message.interaction?.commandName.split(' ')
+  if (arg) {
+    const command = Commands.get(arg[0])
+    if ('reaction' in command) command.reaction(reaction, arg)
+  }
 }
