@@ -46,5 +46,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Estrellas dispersas",
+      "desc": "Cuando su habilidad definitiva elimina a un enemigo, {F#la}{M#el} Trazacaminos recupera {{1}} pts. de energía adicionales. Este efecto solo se puede activar 1 vez en cada ataque."
+    },
+    "2": {
+      "name": "{F#Anfitriona perfecta}{M#Anfitrión perfecto}",
+      "desc": "Al golpear a un enemigo con Debilidad Física, {F#la}{M#el} Trazacaminos regenera una cantidad de PV equivalente al {{1}}% de su ATQ."
+    },
+    "3": {
+      "name": "El espíritu que guía",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Contemplación del instante de destrucción",
+      "desc": "Al golpear a un enemigo con Ruptura de Debilidad, la Prob. CRIT aumenta en un {{1}}%."
+    },
+    "5": {
+      "name": "Esperanza de supervivencia",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Voluntad de exploración",
+      "desc": "El talento {F#de la}{M#del} Trazacaminos también se activa cuando elimina a un enemigo."
+    }
   }
 }

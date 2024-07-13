@@ -46,5 +46,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Verstreute Sterne",
+      "desc": "Wird ein Gegner durch das Ultimate besiegt, stellt {M#der Trailblazer}{F#die Trailblazerin} zusätzlich {{1}} Pkt. Energie wieder her. Dieser Effekt kann nur einmal pro Angriff ausgelöst werden."
+    },
+    "2": {
+      "name": "Ein perfekter Gastgeber",
+      "desc": "Ein Angriff auf Gegner mit physischer Schwäche stellt LP in Höhe von {{1}}% des ANG {M#des Trailblazers}{F#der Trailblazerin} wieder her."
+    },
+    "3": {
+      "name": "Der Geist, der den Weg führt",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Dem Moment der Zerstörung ins Auge sehen",
+      "desc": "Erhöht beim Angriff auf Gegner mit Schwächebruch die KRIT-Rate um {{1}}%."
+    },
+    "5": {
+      "name": "Die Hoffnung auf Überleben",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Trailblaze-Wille",
+      "desc": "Das Talent wird auch ausgelöst, wenn {M#der Trailblazer}{F#die Trailblazerin} einen Gegner besiegt."
+    }
   }
 }

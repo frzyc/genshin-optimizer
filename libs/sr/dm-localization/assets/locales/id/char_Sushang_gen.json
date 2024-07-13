@@ -12,14 +12,14 @@
       "0": {
         "name": "Cloudfencer Art: Mountainfall",
         "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Sushang pada 1 target musuh. Setelah serangan terakhir, memiliki {{3}}% peluang untuk melancarkan \"Sword Stance\", mengakibatkan Physical <u>DMG tambahan</u> sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Sushang pada target.\\nJika target tersebut dalam <u>status Weakness Break</u>, maka dijamin akan melancarkan \"Sword Stance\".",
-        "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh dan memiliki <color=#f29e38ff>peluang kecil untuk melancarkan \"Sword Stance\"</color>. Jika target dalam <u>status Weakness Break</u>, maka <color=#f29e38ff>dijamin akan melancarkan \"Sword Stance\"</color>."
+        "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh dan memiliki <orangeStrong>peluang kecil untuk melancarkan \"Sword Stance\"</orangeStrong>. Jika target dalam <u>status Weakness Break</u>, maka <orangeStrong>dijamin akan melancarkan \"Sword Stance\"</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Shape of Taixu: Dawn Herald",
         "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Sushang pada 1 target musuh dan membuat Sushang segera beraksi lagi. Selain itu, ATK Sushang meningkat <orangeStrong>{{4}}%</orangeStrong>. Saat melancarkan Skill, akan ada 2 kesempatan tambahan untuk memicu \"Sword Stance\", berlangsung selama {{2}} giliran.\\n\"Sword Stance\" yang dilancarkan dari kesempatan tambahan akan mengakibatkan DMG sebesar {{3}}% dari DMG awal.",
-        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah besar pada 1 musuh, meningkatkan efek \"Sword Stance\", dan <color=#f29e38ff>segera beraksi</color>."
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah besar pada 1 musuh, meningkatkan efek \"Sword Stance\", dan <orangeStrong>segera beraksi</orangeStrong>."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Cut With Ease",
+      "desc": "Memulihkan 1 Poin Skill setelah melancarkan Skill pada musuh dengan status Weakness Break."
+    },
+    "2": {
+      "name": "Refine in Toil",
+      "desc": "Setelah memicu \"Sword Stance\", DMG yang diterima Sushang berkurang {{1}}% selama 1 giliran."
+    },
+    "3": {
+      "name": "Rise From Fame",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Cleave With Heart",
+      "desc": "Meningkatkan {{1}}% Break Effect milik Sushang."
+    },
+    "5": {
+      "name": "Prevail via Taixu",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Dwell Like Water",
+      "desc": "Efek peningkatan SPD dari Talent dapat ditumpuk hingga 2 lapis. Selain itu, Sushang akan segera mendapatkan 1 lapis efek peningkatan SPD dari Talent saat memasuki pertempuran."
     }
   }
 }

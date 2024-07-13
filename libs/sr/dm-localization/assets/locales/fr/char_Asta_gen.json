@@ -19,7 +19,7 @@
       "0": {
         "name": "Bénédiction astrale",
         "fullDesc": "Augmente la VIT de tous les alliés de <orangeStrong>{{1}}</orangeStrong> pendant {{2}} tours.",
-        "shortDesc": "<color=#f29e38ff>Augmente la VIT</color> de tous les alliés."
+        "shortDesc": "<orangeStrong>Augmente la VIT</orangeStrong> de tous les alliés."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Chanson d'une étoile sans parole",
+      "desc": "Lors de l'utilisation de la compétence, inflige des DGT 1 fois supplémentaire à un ennemi aléatoire."
+    },
+    "2": {
+      "name": "Aléas des cycles de la lune",
+      "desc": "Après utilisation de l'ultime d'Asta, ses cumuls de Chargement ne diminuent pas au tour suivant."
+    },
+    "3": {
+      "name": "Pluie de météores à volonté",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Manifestation de l'aurore",
+      "desc": "Le taux de régénération d'énergie d'Asta augmente de {{2}}% lorsqu'elle dispose de {{1}} cumuls de Chargement ou plus."
+    },
+    "5": {
+      "name": "Nébuleuse de runes et de mystères",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Repos de la voie lactée",
+      "desc": "Les cumuls de Chargement perdus à chaque tour diminuent de {{1}}."
     }
   }
 }

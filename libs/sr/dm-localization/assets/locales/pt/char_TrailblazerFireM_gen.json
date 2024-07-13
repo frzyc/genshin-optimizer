@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ressonância Sísmica",
+      "desc": "Quando {F#a Desbravadora}{M#o Desbravador} usa seu ATQ Básico, adicionalmente causa Dano de Fogo igual a {{1}}% da DEF {F#da Desbravadora}{M#do Desbravador}. Ao usar seu ATQ Básico Aprimorado, {F#a Desbravadora}{M#o Desbravador} adicionalmente causa Dano de Fogo igual a {{2}}% de sua DEF."
+    },
+    "2": {
+      "name": "Tenacidade que Desafia o Tempo",
+      "desc": "O Escudo aplicado a todos os aliados pelo Talento {F#da Desbravadora}{M#do Desbravador} bloqueará Dano extra igual a {{1}}% da DEF {F#da Desbravadora}{M#do Desbravador} + {{2}}."
+    },
+    "3": {
+      "name": "Projeto de Desbravamento",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Juramento Fundador de Nações",
+      "desc": "No início da batalha, ganha {{1}} acúmulo(s) de Vontade de Magma imediatamente."
+    },
+    "5": {
+      "name": "Chama Aquece-Espírito",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Bastião Forja-Cidades",
+      "desc": "Após {M#o Desbravador}{F#a Desbravadora} usar um ATQ Básico aprimorado ou a Perícia Suprema aprimorada, a DEF {M#dele}{F#dela} aumenta em {{1}}%. Acumula até {{2}} vez(es)."
+    }
   }
 }

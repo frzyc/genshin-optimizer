@@ -12,14 +12,14 @@
       "0": {
         "name": "Combat Redeployment",
         "fullDesc": "Menghapus 1 <u>Debuff</u> milik 1 rekan tim, membuat target tersebut segera beraksi dan meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG-nya selama {{3}} giliran.\\nSaat skill digunakan pada diri sendiri, efek pendahuluan aksi tidak akan terpicu.",
-        "shortDesc": "<color=#f29e38ff>Menghapus</color> 1 <color=#f29e38ff><u>efek Debuff</u></color> dari 1 rekan tim, dan <color=#f29e38ff>meningkatkan DMG yang diakibatkan</color> rekan tersebut, serta membuatnya <color=#f29e38ff>segera beraksi</color>."
+        "shortDesc": "<orangeStrong>Menghapus</orangeStrong> 1 <orangeStrong><u>efek Debuff</u></orangeStrong> dari 1 rekan tim, dan <orangeStrong>meningkatkan DMG yang diakibatkan</orangeStrong> rekan tersebut, serta membuatnya <orangeStrong>segera beraksi</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "The Belobog March",
         "fullDesc": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK seluruh rekan tim serta meningkatkan CRIT DMG seluruh rekan tim sebesar <orangeStrong>{{2}}%</orangeStrong> CRIT DMG Bronya +<orangeStrong>{{3}}%</orangeStrong> selama {{4}} giliran.",
-        "shortDesc": "Meningkatkan <color=#f29e38ff>ATK</color> dan <color=#f29e38ff>CRIT DMG</color> seluruh rekan tim"
+        "shortDesc": "Meningkatkan <orangeStrong>ATK</orangeStrong> dan <orangeStrong>CRIT DMG</orangeStrong> seluruh rekan tim"
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Hone Your Strength",
+      "desc": "Saat melancarkan Skill, terdapat {{1}}% peluang tetap untuk memulihkan 1 Poin Skill. Efek ini memiliki durasi CD selama 1 giliran."
+    },
+    "2": {
+      "name": "Quick March",
+      "desc": "Saat melancarkan Skill, SPD rekan yang dijadikan target akan meningkat {{1}}% setelah beraksi, berlangsung selama 1 giliran."
+    },
+    "3": {
+      "name": "Bombardment",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Take by Surprise",
+      "desc": "Setelah karakter lain melancarkan Basic Attack pada target musuh dengan Wind Weakness, Bronya akan segera melancarkan 1 Serangan Lanjutan yang mengakibatkan Wind DMG sebesar {{1}}% DMG Basic Attack Bronya pada target tersebut. Efek ini dapat dipicu sekali setiap giliran."
+    },
+    "5": {
+      "name": "Unstoppable",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Piercing Rainbow",
+      "desc": "Durasi efek peningkatan DMG yang diberikan Skill Bronya pada rekan tim akan bertambah {{1}} giliran."
     }
   }
 }

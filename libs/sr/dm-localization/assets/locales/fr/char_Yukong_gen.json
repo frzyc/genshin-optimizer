@@ -12,21 +12,21 @@
       "0": {
         "name": "Salve de courage",
         "fullDesc": "Obtient {{1}} cumuls de « Rugissement des cordes » (maximum de 2 cumuls). Lorsque « Rugissement des cordes » est actif, l'ATQ de tous les alliés augmente de <orangeStrong>{{2}}%</orangeStrong>, et Yukong perd 1 cumul de « Rugissement des cordes » à la fin de chaque tour allié (y compris celui de Yukong).\\nAu cours du tour où Yukong obtient « Rugissement des cordes » en utilisant sa compétence, elle ne perd pas de cumul de « Rugissement des cordes ».",
-        "shortDesc": "Gagne 2 cumuls de Rugissement des cordes. L'<color=#f29e38ff>ATQ de tous les alliés augmente</color> lorsque Rugissement des cordes est actif sur ce personnage."
+        "shortDesc": "Gagne 2 cumuls de Rugissement des cordes. L'<orangeStrong>ATQ de tous les alliés augmente</orangeStrong> lorsque Rugissement des cordes est actif sur ce personnage."
       }
     },
     "ult": {
       "0": {
         "name": "Crécerelle en piqué",
         "fullDesc": "Si Yukong bénéficie de « Rugissement des cordes » lorsqu'elle utilise son ultime, les chances de coup critique de tous les alliés augmentent de <orangeStrong>{{2}}%</orangeStrong> et leurs DGT critiques de <orangeStrong>{{3}}%</orangeStrong>. D'autre part, inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yukong à un ennemi unique.",
-        "shortDesc": "<color=#f29e38ff>Augmente les chances de coup critique et les DGT critiques</color> de tous les alliés quand Rugissement des cordes est actif sur ce personnage et inflige des DGT imaginaires massifs à un ennemi unique."
+        "shortDesc": "<orangeStrong>Augmente les chances de coup critique et les DGT critiques</orangeStrong> de tous les alliés quand Rugissement des cordes est actif sur ce personnage et inflige des DGT imaginaires massifs à un ennemi unique."
       }
     },
     "technique": {
       "0": {
         "name": "À la poursuite du vent",
         "fullDesc": "Après utilisation de la technique, Yukong entre en mode Sprint pendant {{1}} secondes. En mode Sprint, la vitesse de déplacement augmente de {{2}}% et Yukong obtient {{3}} cumuls de « Rugissement des cordes » lorsqu'elle entre en combat en attaquant des ennemis.",
-        "shortDesc": "Augmente la <color=#f29e38ff>vitesse de déplacement</color>. Reçoit 2 cumuls de Rugissement des cordes après être entré en combat en attaquant un ennemi."
+        "shortDesc": "Augmente la <orangeStrong>vitesse de déplacement</orangeStrong>. Reçoit 2 cumuls de Rugissement des cordes après être entré en combat en attaquant un ennemi."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Maréchale des airs",
+      "desc": "Augmente la VIT de tous les alliés de {{1}}% pendant {{2}} tours en début de combat."
+    },
+    "2": {
+      "name": "Commandement céleste",
+      "desc": "Quand l'énergie actuelle d'un allié atteint sa limite, Yukong régénère {{1}} points d'énergie supplémentaires. Cet effet ne peut être déclenché qu'une fois pour chaque allié. Ce décompte est réinitialisé à chaque utilisation de l'ultime de Yukong."
+    },
+    "3": {
+      "name": "Pluie de flèches",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Échos du zéphyr",
+      "desc": "Lorsque « Rugissement des cordes » est actif, Yukong inflige {{1}}% de DGT supplémentaires aux ennemis."
+    },
+    "5": {
+      "name": "Tir mortel majestueux",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Claquement des cordes du tonnerre",
+      "desc": "Lorsque Yukong utilise son ultime, elle obtient immédiatement {{1}} cumul de « Rugissement des cordes »."
     }
   }
 }

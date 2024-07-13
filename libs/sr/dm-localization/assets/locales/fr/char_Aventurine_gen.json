@@ -12,14 +12,14 @@
       "0": {
         "name": "Pierre angulaire de la prospérité",
         "fullDesc": "Accorde à tous les alliés un bouclier de Mise renforcée qui peut bloquer des DGT équivalents à <orangeStrong>{{1}}%</orangeStrong> de la DÉF d'Aventurine + <orangeStrong>{{2}}</orangeStrong>pendant {{3}} tours. Lorsque l'effet Mise renforcée est obtenu à plusieurs reprises, la valeur de bouclier peut se cumuler jusqu'à {{4}}% du bouclier fourni par la compétence actuelle.",
-        "shortDesc": "Accorde à tous les alliés un bouclier de Mise renforcée <color=#f29e38ff>dont la valeur de bouclier est cumulable</color>."
+        "shortDesc": "Accorde à tous les alliés un bouclier de Mise renforcée <orangeStrong>dont la valeur de bouclier est cumulable</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Roi de la roulette",
         "fullDesc": "Récupère entre 1 et {{1}} Paris aveugles de manière aléatoire et applique Sur les nerfs à une cible ennemie unique. Dure {{4}} tours. Inflige des DGT imaginaires équivalents à <orangeStrong>{{2}}%</orangeStrong> de la DÉF d'Aventurine à la cible ennemie. Lorsqu'un allié touche une cible ennemie qui subit Sur les nerfs, les DGT critiques qu'il inflige augmentent de <orangeStrong>{{3}}%</orangeStrong>.",
-        "shortDesc": "Récupère un nombre aléatoire de Paris aveugles et applique Sur les nerfs à un ennemi unique, tout en infligeant des DGT imaginaires. Lorsqu'un allié touche un ennemi qui subit Sur les nerfs, les <color=#f29e38ff>DGT critiques qu'il inflige augmentent</color>."
+        "shortDesc": "Récupère un nombre aléatoire de Paris aveugles et applique Sur les nerfs à un ennemi unique, tout en infligeant des DGT imaginaires. Lorsqu'un allié touche un ennemi qui subit Sur les nerfs, les <orangeStrong>DGT critiques qu'il inflige augmentent</orangeStrong>."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Dilemme du prisonnier",
+      "desc": "Augmente de {{1}}% les DGT critiques des alliés qui bénéficient de Mise renforcée. Après avoir utilisé l'ultime, accorde à tous les alliés un bouclier de Mise renforcée dont la valeur de bouclier est équivalente à {{2}}% de celle accordée par la compétence. Dure {{3}} tours."
+    },
+    "2": {
+      "name": "Rationalité limitée",
+      "desc": "Réduit de {{2}}% toutes les RÉS de type de la cible pendant {{3}} tours lors de l'utilisation de l'ATQ normale."
+    },
+    "3": {
+      "name": "Rendement maximal",
+      "desc": "Niv. de l'ultime +2, jusqu'au niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au niv. 10 maximum."
+    },
+    "4": {
+      "name": "Paradoxe inattendu",
+      "desc": "Lors du déclenchement de l'attaque de suivi de son talent, la DÉF d'Aventurine augmente de {{1}}% pendant {{2}} tours et le nombre de frappes par action de l'attaque de suivi déclenchée par son talent augmente de {{3}}."
+    },
+    "5": {
+      "name": "Aversion à l'incertitude",
+      "desc": "Niv. de la compétence +2, jusqu'au niv. 15 maximum.\\nNiv. du talent +2, jusqu'au niv. 15 maximum."
+    },
+    "6": {
+      "name": "Jeu de chasse",
+      "desc": "Les DGT infligés par Aventurine augmentent de {{1}}% pour chaque allié qui bénéficie d'un bouclier, jusqu'à une augmentation maximale de {{2}}%."
     }
   }
 }

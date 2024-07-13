@@ -12,14 +12,14 @@
       "0": {
         "name": "Prière de la Fleur de l'abîme",
         "fullDesc": "Après utilisation de la compétence, restaure immédiatement des PV à une cible alliée à hauteur de <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Luocha + <orangeStrong>{{2}}</orangeStrong>. D'autre part, Luocha obtient 1 cumul de Fleur de l'abîme.\\nLorsque le pourcentage de PV d'un allié devient inférieur ou égal à {{3}}%, un effet équivalent à celui de la compétence est immédiatement déclenché et appliqué une fois à cet allié (sans consommer de points de compétence). Cet effet peut se déclencher à nouveau après {{4}} tours.",
-        "shortDesc": "<color=#f29e38ff>Restaure</color> les PV d'un allié unique et gagne 1 cumul de Fleur de l'abîme."
+        "shortDesc": "<orangeStrong>Restaure</orangeStrong> les PV d'un allié unique et gagne 1 cumul de Fleur de l'abîme."
       }
     },
     "ult": {
       "0": {
         "name": "Pulsion de mort",
         "fullDesc": "Supprime {{2}} <u>bonus</u> chez tous les ennemis et inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Luocha à tous les ennemis. Luocha gagne 1 cumul de Fleur de l'abîme.",
-        "shortDesc": "<color=#f29e38ff>Supprime</color> 1 <color=#f29e38ff><u>bonus</u></color> chez tous les ennemis, inflige des DGT imaginaires à tous les ennemis, et accorde 1 cumul de Fleur de l'abîme."
+        "shortDesc": "<orangeStrong>Supprime</orangeStrong> 1 <orangeStrong><u>bonus</u></orangeStrong> chez tous les ennemis, inflige des DGT imaginaires à tous les ennemis, et accorde 1 cumul de Fleur de l'abîme."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ablution de rapidité",
+      "desc": "Tant que le Champ est actif, l'ATQ de tous les alliés augmente de {{1}}%."
+    },
+    "2": {
+      "name": "Cadeau de pureté",
+      "desc": "Les soins prodigués par Luocha augmentent de {{1}}% lorsque sa compétence se déclenche sur une cible alliée qui a moins de 50 % de ses PV. Si les PV de la cible alliée sont supérieurs ou égaux à 50 %, elle reçoit un bouclier capable d'absorber des DGT équivalents à {{2}}% de l'ATQ de Luocha + {{3}} qui dure {{4}} tours."
+    },
+    "3": {
+      "name": "Épreuve du fou",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Lourde est la couronne",
+      "desc": "Lorsque le Champ de Luocha est actif, les ennemis sont affaiblis et les DGT qu'ils infligent diminuent de {{1}}%."
+    },
+    "5": {
+      "name": "Stigmates du tourment",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Retour à la poussière",
+      "desc": "Il y a {{1}}% de chances fixes de réduire toutes les RÉS de type de tous les ennemis de {{2}}% pendant {{3}} tours lors de l'utilisation de l'ultime."
     }
   }
 }

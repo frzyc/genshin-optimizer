@@ -12,7 +12,7 @@
       "0": {
         "name": "Accueil enflammé",
         "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Guinaifen à un ennemi unique et des DGT de feu équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Guinaifen aux enemis adjacents, avec {{3}}% de <u>chances de base</u> d'infliger Brûlure à la cible et aux cibles adjacentes. Les ennemis brûlés subissent des dégâts de feu sur la durée équivalents à <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Guinaifen au début de chaque tour pendant {{5}} tours.",
-        "shortDesc": "Inflige des DGT de feu à un ennemi unique et des DGT de feu mineurs aux ennemis adjacents, avec de fortes chances de les <color=#f29e38ff>brûler</color>."
+        "shortDesc": "Inflige des DGT de feu à un ennemi unique et des DGT de feu mineurs aux ennemis adjacents, avec de fortes chances de les <orangeStrong>brûler</orangeStrong>."
       }
     },
     "ult": {
@@ -26,7 +26,7 @@
       "0": {
         "name": "Démonstration de talent",
         "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige {{2}} fois des DGT de feu équivalents à {{1}}% de l'ATQ de Guinaifen à une cible ennemie aléatoire à chaque fois, avec {{3}}% de <u>chances de base</u> d'infliger Baiser enflammé.",
-        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT de feu mineurs à une cible à la fois tout en appliquant <color=#f29e38ff>Baiser enflammé</color> pour un total de 4 rebonds après être entré en combat."
+        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT de feu mineurs à une cible à la fois tout en appliquant <orangeStrong>Baiser enflammé</orangeStrong> pour un total de 4 rebonds après être entré en combat."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Manger des nouilles en équilibre",
+      "desc": "Il y a {{1}}% de chances de base de réduire la RÉS aux effets de la cible attaquée de {{2}}% pendant {{3}} tours lors de l'utilisation de la compétence."
+    },
+    "2": {
+      "name": "Se brosser les dents en sifflant",
+      "desc": "L'ATQ normale et la compétence de Guinaifen peuvent augmenter le multiplicateur de DGT de leur effet de Brûlure de {{1}}% sur les cibles brûlées."
+    },
+    "3": {
+      "name": "Casser des briques sur son torse",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Bloquer des projectiles avec la tête",
+      "desc": "Guinaifen régénère {{1}} points d'énergie à chaque fois que ses effets de Brûlure infligent des DGT aux ennemis."
+    },
+    "5": {
+      "name": "Avaler une épée jusqu'à la garde",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Attraper des balles à mains nues",
+      "desc": "Augmente le nombre de cumuls maximum de Baiser enflammé de {{1}}."
     }
   }
 }

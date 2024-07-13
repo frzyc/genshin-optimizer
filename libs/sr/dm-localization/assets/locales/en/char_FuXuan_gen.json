@@ -12,7 +12,7 @@
       "0": {
         "name": "Known by Stars, Shown by Hearts",
         "fullDesc": "Activates Matrix of Prescience, via which other team members will <u>Distribute</u> {{1}}% of the DMG they receive (before this DMG is mitigated by any Shields) to Fu Xuan for {{3}} turn(s).\\nWhile affected by Matrix of Prescience, all team members gain the Knowledge effect, which increases their respective Max HP by <orangeStrong>{{4}}%</orangeStrong> of Fu Xuan's Max HP, and increases CRIT Rate by <orangeStrong>{{5}}%</orangeStrong>.\\nWhen Fu Xuan is <u>knocked down</u>, the Matrix of Prescience will be dispelled.",
-        "shortDesc": "Activates Matrix of Prescience. <color=#f29e38ff>DMG received by Fu Xuan's allies are <u>Distributed</u></color> to her. Also <color=#f29e38ff>increases CRIT Rate</color> and Max HP of all allies."
+        "shortDesc": "Activates Matrix of Prescience. <orangeStrong>DMG received by Fu Xuan's allies are <u>Distributed</u></orangeStrong> to her. Also <orangeStrong>increases CRIT Rate</orangeStrong> and Max HP of all allies."
       }
     },
     "ult": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Dominus Pacis",
+      "desc": "The Knowledge effect increases CRIT DMG by {{1}}%."
+    },
+    "2": {
+      "name": "Optimus Felix",
+      "desc": "If any team member is struck by a killing blow while Matrix of Prescience is active, then all allies who were struck by a killing blow during this action will not be knocked down, and {{1}}% of their Max HP is immediately restored. This effect can trigger 1 time per battle."
+    },
+    "3": {
+      "name": "Apex Nexus",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Fortuna Stellaris",
+      "desc": "When other allies under Matrix of Prescience are attacked, Fu Xuan regenerates {{1}} Energy."
+    },
+    "5": {
+      "name": "Arbiter Primus",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "Omnia Vita",
+      "desc": "Once Matrix of Prescience is activated, it will keep a tally of the total HP lost by all team members in the current battle. Fu Xuan's Ultimate DMG will increase by {{1}}% of this tally of HP loss.\\nThis tally is also capped at {{2}}% of Fu Xuan's Max HP and the tally value will reset and re-accumulate after Fu Xuan's Ultimate is used."
     }
   }
 }

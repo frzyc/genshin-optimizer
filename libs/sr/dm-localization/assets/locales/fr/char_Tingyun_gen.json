@@ -12,14 +12,14 @@
       "0": {
         "name": "Mélodie apaisante",
         "fullDesc": "Accorde une bénédiction à un allié unique qui augmente son ATQ de <orangeStrong>{{2}}%</orangeStrong>, dans la limite de <orangeStrong>{{4}}%</orangeStrong> de l'ATQ actuelle de Tingyun.\\nLorsque l'allié béni attaque, il inflige des DGT de foudre <u>additionnels</u> équivalents à <orangeStrong>{{1}}%</orangeStrong> de sa propre ATQ 1 fois.\\nLa bénédiction dure {{3}} tours et n'est effective que sur le dernier personnage à bénéficier de la compétence de Tingyun.",
-        "shortDesc": "<color=#f29e38ff>Augmente l'ATQ</color> d'un allié et lui accorde une bénédiction. L'allié avec la bénédiction inflige également des <color=#f29e38ff>DGT de foudre <u>additionnels</u> mineurs</color> lorsqu'elle attaque."
+        "shortDesc": "<orangeStrong>Augmente l'ATQ</orangeStrong> d'un allié et lui accorde une bénédiction. L'allié avec la bénédiction inflige également des <orangeStrong>DGT de foudre <u>additionnels</u> mineurs</orangeStrong> lorsqu'elle attaque."
       }
     },
     "ult": {
       "0": {
         "name": "Bienveillance des nuages",
         "fullDesc": "Régénère {{1}} points d'énergie à un allié unique et augmente les DGT qu'il inflige de <orangeStrong>{{3}}%</orangeStrong> pendant {{2}} tours.",
-        "shortDesc": "Régénère de l'<color=#f29e38ff>énergie</color> pour une cible alliée et <color=#f29e38ff>augmente les DGT qu'elle inflige</color>."
+        "shortDesc": "Régénère de l'<orangeStrong>énergie</orangeStrong> pour une cible alliée et <orangeStrong>augmente les DGT qu'elle inflige</orangeStrong>."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Bénédiction de vivacité",
+      "desc": "La VIT de l'allié béni augmente de {{1}}% pendant 1 tour après utilisation de son ultime."
+    },
+    "2": {
+      "name": "Généreuse donatrice",
+      "desc": "L'allié béni régénère {{1}} points d'énergie après avoir éliminé un ennemi. Cet effet ne peut être déclenché qu'1 fois par tour."
+    },
+    "3": {
+      "name": "Héritage des jours bénis",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Versatilité joviale",
+      "desc": "Le multiplicateur de DGT de la bénédiction augmente de {{1}}%."
+    },
+    "5": {
+      "name": "Passante coquette",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Paix et richesse pour tous",
+      "desc": "L'ultime régénère {{1}} points d'énergie supplémentaires à la cible alliée."
     }
   }
 }

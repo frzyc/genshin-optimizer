@@ -17,14 +17,14 @@
       "0": {
         "name": "Địa Ngục Biến",
         "fullDesc": "Tiêu hao HP bằng {{1}}% Giới Hạn HP của Blade, vào trạng thái Địa Ngục Biến.\\nKhi ở trạng thái Địa Ngục Biến không thể thi triển Chiến Kỹ, đồng thời khiến sát thương do bản thân gây ra tăng <orangeStrong>{{4}}%</orangeStrong>, Tấn Công Thường \"Kiếm Vỡ Nát\" cường hóa thành \"Rừng Kiếm\", duy trì {{2}} hiệp.\\nNếu HP hiện tại không đủ, khi thi triển Chiến Kỹ, HP hiện tại của Blade sẽ giảm còn 1 điểm.\\nChiến Kỹ này không thể hồi năng lượng. Sau khi thi triển Chiến Kỹ này, hiệp này sẽ không kết thúc.",
-        "shortDesc": "Tiêu hao HP của bản thân để <color=#f29e38ff>cường hóa Tấn Công Thường</color>, và hiệp này sẽ không kết thúc."
+        "shortDesc": "Tiêu hao HP của bản thân để <orangeStrong>cường hóa Tấn Công Thường</orangeStrong>, và hiệp này sẽ không kết thúc."
       }
     },
     "ult": {
       "0": {
         "name": "Đáng Chết Vạn Lần",
-        "fullDesc": "Chuyển hóa HP hiện tại của Blade thành <unbreak>50%</unbreak> Giới Hạn HP, đồng thời gây cho 1 kẻ địch Sát Thương Phong bằng tổng của <orangeStrong>{{1}}%</orangeStrong> Tấn Công +<orangeStrong>{{2}}%</orangeStrong> Giới Hạn HP +<orangeStrong>{{5}}%</orangeStrong> HP đã mất tích lũy trong trận này của Blade, đồng thời gây cho mục tiêu lân cận Sát Thương Phong bằng tổng của <orangeStrong>{{3}}%</orangeStrong> Tấn Công +<orangeStrong>{{4}}%</orangeStrong> Giới Hạn HP +<orangeStrong>{{6}}%</orangeStrong> HP đã mất tích lũy trong trận này của Blade.\\nHP đã mất tích lũy trong trận này tối đa không vượt quá {{7}}% Giới Hạn HP của Blade, sau khi thi triển Tuyệt Kỹ sẽ xóa và tích lũy lại.",
-        "shortDesc": "Chuyển hóa HP hiện tại thành <unbreak>50%</unbreak> Giới Hạn HP đồng thời gây lượng lớn Sát Thương Phong cho 1 kẻ địch, gây Sát Thương Phong cho mục tiêu lân cận."
+        "fullDesc": "Chuyển hóa HP hiện tại của Blade thành 50% Giới Hạn HP, đồng thời gây cho 1 kẻ địch Sát Thương Phong bằng tổng của <orangeStrong>{{1}}%</orangeStrong> Tấn Công +<orangeStrong>{{2}}%</orangeStrong> Giới Hạn HP +<orangeStrong>{{5}}%</orangeStrong> HP đã mất tích lũy trong trận này của Blade, đồng thời gây cho mục tiêu lân cận Sát Thương Phong bằng tổng của <orangeStrong>{{3}}%</orangeStrong> Tấn Công +<orangeStrong>{{4}}%</orangeStrong> Giới Hạn HP +<orangeStrong>{{6}}%</orangeStrong> HP đã mất tích lũy trong trận này của Blade.\\nHP đã mất tích lũy trong trận này tối đa không vượt quá {{7}}% Giới Hạn HP của Blade, sau khi thi triển Tuyệt Kỹ sẽ xóa và tích lũy lại.",
+        "shortDesc": "Chuyển hóa HP hiện tại thành 50% Giới Hạn HP đồng thời gây lượng lớn Sát Thương Phong cho 1 kẻ địch, gây Sát Thương Phong cho mục tiêu lân cận."
       }
     },
     "technique": {
@@ -40,6 +40,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Lưỡi Kiếm Tối Thượng, Địa Ngục Biến Tướng",
+      "desc": "Tăng thêm sát thương Tuyệt Kỹ gây ra cho 1 kẻ địch chỉ định, mức tăng bằng {{1}}% HP đã mất của Blade tích lũy trong trận này.\\nHP mất đi trong trận này tối đa không vượt quá {{2}}% Giới Hạn HP của Blade, sau khi thi triển Tuyệt Kỹ sẽ xóa và tích lũy lại từ đầu."
+    },
+    "2": {
+      "name": "Mộng Xưa Vỡ Nát, Ân Hận Khôn Cùng",
+      "desc": "Khi Blade ở trạng thái Địa Ngục Biến, Tỷ Lệ Bạo Kích tăng {{1}}%."
+    },
+    "3": {
+      "name": "Luyện Thép Đen, Tôi Quang Hàn",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Hoàng Tuyền Rẽ Lối, Hài Cốt Hồi Sinh",
+      "desc": "Khi phần trăm HP hiện tại từ lớn hơn 50% giảm còn nhỏ hơn hoặc bằng 50%, thì Giới Hạn HP tăng {{1}}%, hiệu ứng này tối đa cộng dồn {{2}} tầng."
+    },
+    "5": {
+      "name": "Thập Vương Xử Tử, Soi Chiếu Nghiệp Chướng",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Mạng Còn Hồn Tan, Tái Sinh Xác Rỗng",
+      "desc": "Giới hạn số tầng nạp năng lượng giảm còn 4 tầng. Tăng thêm sát thương gây ra bởi Đòn Đánh Theo Sau được Thiên Phú kích hoạt, mức tăng tương đương {{1}}% Giới Hạn HP của Blade."
     }
   }
 }

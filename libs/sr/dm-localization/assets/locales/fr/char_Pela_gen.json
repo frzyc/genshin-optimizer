@@ -12,14 +12,14 @@
       "0": {
         "name": "Morsure du givre",
         "fullDesc": "Supprime {{2}} <u>bonus</u> et inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Pela à une cible ennemie unique.",
-        "shortDesc": "<color=#f29e38ff>Dissipe</color> 1 <color=#f29e38ff><u>bonus</u></color> d'une cible ennemie unique, et inflige des DGT de glace à la cible ennemie."
+        "shortDesc": "<orangeStrong>Dissipe</orangeStrong> 1 <orangeStrong><u>bonus</u></orangeStrong> d'une cible ennemie unique, et inflige des DGT de glace à la cible ennemie."
       }
     },
     "ult": {
       "0": {
         "name": "Suppression de zone",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Pela à tous les ennemis, avec {{1}}% de <u>chances de base</u> d'infliger Exposé à tous les ennemis.\\nLorsqu'ils sont exposés, les ennemis voient leur DÉF réduite de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tours.",
-        "shortDesc": "A de fortes chances de <color=#f29e38ff>diminuer la DÉF des ennemis</color> et inflige des DGT de glace mineurs à tous les ennemis."
+        "shortDesc": "A de fortes chances de <orangeStrong>diminuer la DÉF des ennemis</orangeStrong> et inflige des DGT de glace mineurs à tous les ennemis."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Rapport de victoire",
+      "desc": "Lorsqu'un ennemi est vaincu, Pela régénère {{1}} points d'énergie."
+    },
+    "2": {
+      "name": "Charge inflexible",
+      "desc": "Utiliser la compétence pour supprimer un bonus ennemi augmente la VIT de {{1}}% pendant {{2}} tours."
+    },
+    "3": {
+      "name": "Force de répression",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Analyse complète",
+      "desc": "Lors de l'utilisation de la compétence, il y a {{1}}% de chances de base de réduire la RÉS à la glace de la cible ennemie de {{2}}% pendant {{3}} tours."
+    },
+    "5": {
+      "name": "Péril absolu",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Poursuite acharnée",
+      "desc": "Lorsque Pela attaque un ennemi qui subit un malus, elle lui inflige des DGT de glace additionnels équivalents à {{1}}% de sa propre ATQ."
     }
   }
 }

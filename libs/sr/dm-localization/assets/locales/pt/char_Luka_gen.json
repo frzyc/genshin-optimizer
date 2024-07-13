@@ -17,7 +17,7 @@
       "0": {
         "name": "Punho Lacerante",
         "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Luka a um único inimigo-alvo. Além disso, há uma <u>chance-base</u> de {{2}}% de infligir Sangramento a ele, durando {{5}} rodada(s).\\nEnquanto estiver com Sangramento, o inimigo recebe {{3}}% de seus PV máximos como Dano Físico Contínuo ao início de cada rodada. Este Dano não pode exceder <orangeStrong>{{4}}%</orangeStrong> do ATQ de Luka.",
-        "shortDesc": "Causa Dano Físico a um único inimigo, com uma alta chance de causar <color=#f29e38ff>Sangramento</color>."
+        "shortDesc": "Causa Dano Físico a um único inimigo, com uma alta chance de causar <orangeStrong>Sangramento</orangeStrong>."
       }
     },
     "ult": {
@@ -31,7 +31,7 @@
       "0": {
         "name": "Antecipador",
         "fullDesc": "Ataca imediatamente o inimigo. Ao entrar em batalha, Luka causa Dano Físico igual a {{1}}% de seu ATQ a um único inimigo aleatório, com {{2}}% de <u>chance-base</u> de infligir o efeito de Sangramento da sua Perícia no alvo. Depois, Luka ganha 1 acúmulo adicional de Desejo de Lutar.",
-        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Físico leve a um único inimigo aleatório, com uma alta chance de infligir <color=#f29e38ff>Sangramento</color> ao alvo. Depois, ganha 1 acúmulo de Desejo de Lutar."
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Físico leve a um único inimigo aleatório, com uma alta chance de infligir <orangeStrong>Sangramento</orangeStrong> ao alvo. Depois, ganha 1 acúmulo de Desejo de Lutar."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Lutando Infinitamente",
+      "desc": "Quando Luka age, se o inimigo-alvo estiver com Sangramento, aumenta o Dano causado por Luka em {{1}}% por {{2}} rodada(s)."
+    },
+    "2": {
+      "name": "O Inimigo é Fraco, Eu Sou Forte",
+      "desc": "Se a Perícia atingir um inimigo-alvo com Fraqueza contra Físico, ganha {{1}} acúmulo(s) de Desejo de Lutar."
+    },
+    "3": {
+      "name": "Nascido Para o Ringue",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Nunca Recuar",
+      "desc": "Para cada acúmulo de Desejo de Lutar obtido, aumenta o ATQ em {{1}}%, acumulando até {{2}} vez(es)."
+    },
+    "5": {
+      "name": "O Espírito da Fogo Vivo",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Aplausos de um Campeão",
+      "desc": "Depois que o \"Gancho Ascendente\" do ATQ Básico Aprimorado atinge um inimigo-alvo com Sangramento, o status de Sangramento imediatamente causará Dano 1 vez. O Dano causado é igual a {{1}}% do Dano original para cada golpe de Punho Certeiro já usado pelo ATQ Básico Aprimorado atual."
     }
   }
 }

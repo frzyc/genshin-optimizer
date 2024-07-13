@@ -17,7 +17,7 @@
       "0": {
         "name": "Letzten Stein eingeholt",
         "fullDesc": "Zieht sofort {{1}} Jadesteine. Erhöht den SCH von Qingques Angriff um <orangeStrong>{{2}}%</orangeStrong> bis zum Ende dieser Runde. Dieser Effekt ist bis zu {{3}}-fach stapelbar. Diese Fertigkeit beendet die Runde nicht.",
-        "shortDesc": "<color=#f29e38ff>Zieht einen Stein</color> und erhöht den zugefügten SCH. <color=#f29e38ff>Die Runde wird nicht beendet</color>."
+        "shortDesc": "<orangeStrong>Zieht einen Stein</orangeStrong> und erhöht den zugefügten SCH. <orangeStrong>Die Runde wird nicht beendet</orangeStrong>."
       }
     },
     "ult": {
@@ -40,6 +40,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Bauer umgewandelt, Preis erhalten",
+      "desc": "Der Ultimate fügt {{1}}% mehr SCH zu."
+    },
+    "2": {
+      "name": "Zeit für ein Nickerchen, direkt auf dem Schachbrett",
+      "desc": "Jedes Mal, wenn Qingque einen Stein zieht, erhält sie sofort {{1}} Pkt. Energie zurück."
+    },
+    "3": {
+      "name": "Auf die Spielsteine konzentrieren, auf das Ziehen verlassen",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Glückliche Kombination, der letzte Stein wartet",
+      "desc": "Nach dem Einsatz der Fertigkeit besteht eine Grundchance von {{1}}%, in „Autarkie“ einzutreten. Dieser Status hält bis zum Ende dieser Runde.\\nIn „Autarkie“ führt Qingque nach dem Einsatz des Standardangriffs oder verstärkten Standardangriffs sofort einen Folgeangriff aus und fügt dem Ziel Quanten-SCH in Höhe von 100 % des Standardangriffs oder verstärkten Standardangriffs zu."
+    },
+    "5": {
+      "name": "Selbst gezogene Steine, das Glück verschmäht",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Ruhig und gefasst, bereit für den Sieg",
+      "desc": "Stellt beim Einsatz des verstärkten Standardangriffs 1 Fertigkeitspunkt wieder her."
     }
   }
 }

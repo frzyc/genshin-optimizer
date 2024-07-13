@@ -17,7 +17,7 @@
       "0": {
         "name": "A Scoop of Moon",
         "fullDesc": "Segera mengambil {{1}} lembar Jade Tile dan meningkatkan <orangeStrong>{{2}}%</orangeStrong> DMG Qingque hingga gilirannya berakhir, efek ini dapat ditumpuk hingga {{3}} lapis. Giliran saat ini tidak akan berakhir setelah melancarkan Skill ini.",
-        "shortDesc": "<color=#f29e38ff>Menarik Jade Tile</color>, meningkatkan DMG yang diakibatkan dirinya, dan <color=#f29e38ff>giliran kali ini tidak akan berakhir</color>."
+        "shortDesc": "<orangeStrong>Menarik Jade Tile</orangeStrong>, meningkatkan DMG yang diakibatkan dirinya, dan <orangeStrong>giliran kali ini tidak akan berakhir</orangeStrong>."
       }
     },
     "ult": {
@@ -40,6 +40,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Rise Through the Tiles",
+      "desc": "Meningkatkan {{1}}% DMG yang diakibatkan Ultimate."
+    },
+    "2": {
+      "name": "Sleep on the Tiles",
+      "desc": "Segera memulihkan {{1}} Energy Qingque setiap Qingque memicu pengambilan kartu."
+    },
+    "3": {
+      "name": "Read Between the Tiles",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Right on the Tiles",
+      "desc": "Setelah melancarkan Skill, memiliki {{1}}% peluang tetap untuk memperoleh status \"Autarky\" hingga akhir giliran saat ini.\\nSetelah melancarkan Basic Attack atau Enhanced Basic Attack dalam status \"Autarky\", Qingque akan langsung melancarkan 1 Serangan Lanjutan yang mengakibatkan Quantum DMG pada target sebesar 100% dari Basic Attack DMG atau Enhanced Basic Attack DMG."
+    },
+    "5": {
+      "name": "Gambit for the Tiles",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Prevail Beyond the Tiles",
+      "desc": "Memulihkan 1 Poin Skill setelah melancarkan Enhanced Basic Attack."
     }
   }
 }

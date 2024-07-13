@@ -12,14 +12,14 @@
       "0": {
         "name": "Erneuter Kampfeinsatz",
         "fullDesc": "Entfernt 1 <u>Debuff</u> von einem anvisierten Verbündeten, lässt ihn sofort eine Aktion ausführen und erhöht seinen zugefügten SCH für {{3}} Rd. um <orangeStrong>{{1}}%</orangeStrong>.\\nWird diese Fertigkeit auf Bronya selbst angewendet, kann sie keine sofortige Aktion ausführen.",
-        "shortDesc": "<color=#f29e38ff>Entfernt</color> 1 <color=#f29e38ff><u>Debuff</u></color> von einem Verbündeten, erhöht dessen <color=#f29e38ff>SCH</color> und er <color=#f29e38ff>tritt sofort in Aktion</color>."
+        "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong><u>Debuff</u></orangeStrong> von einem Verbündeten, erhöht dessen <orangeStrong>SCH</orangeStrong> und er <orangeStrong>tritt sofort in Aktion</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Der Belobog-Marsch",
         "fullDesc": "Erhöht den ANG aller Verbündeten um <orangeStrong>{{1}}%</orangeStrong> und ihren KRIT-SCH um <orangeStrong>{{2}}%</orangeStrong> von Bronyas KRIT-SCH plus <orangeStrong>{{3}}%</orangeStrong> für {{4}} Rd.",
-        "shortDesc": "Erhöht den <color=#f29e38ff>ANG</color> und <color=#f29e38ff>KRIT-SCH</color> aller Verbündeten."
+        "shortDesc": "Erhöht den <orangeStrong>ANG</orangeStrong> und <orangeStrong>KRIT-SCH</orangeStrong> aller Verbündeten."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Stärke erhöhen",
+      "desc": "Beim Einsatz der Fertigkeit besteht eine feste Chance von {{1}}%, 1 Fertigkeitspunkt wiederherzustellen. Dieser Effekt hat eine Abklingzeit von 1 Rd."
+    },
+    "2": {
+      "name": "Eilmarsch",
+      "desc": "Erhöht beim Einsatz der Fertigkeit die GES eines anvisierten Verbündeten für 1 Rd. um {{1}}%, wenn er eine Aktion ausführt."
+    },
+    "3": {
+      "name": "Bombardement",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Überraschungsangriff",
+      "desc": "Nach einem Standardangriff eines Verbündeten auf einen Gegner mit Wind-Schwäche startet Bronya unmittelbar einen Folgeangriff und fügt dem Ziel Wind-SCH in Höhe von {{1}}% des Standardangriff-SCH zu. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden."
+    },
+    "5": {
+      "name": "Unaufhaltsam",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Durchdringender Regenbogen",
+      "desc": "Verlängert die Dauer des erhöhten SCH durch Fertigkeit auf dem anvisierten Verbündeten um {{1}} Rd."
     }
   }
 }

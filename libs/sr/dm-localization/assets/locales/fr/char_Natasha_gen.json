@@ -12,14 +12,14 @@
       "0": {
         "name": "Aimer, guérir et choisir",
         "fullDesc": "Soigne un allié unique à hauteur de <orangeStrong>{{1}}%</orangeStrong> des PV max de Natasha + <orangeStrong>{{4}}</orangeStrong>. Soigne encore l'allié à hauteur de <orangeStrong>{{2}}%</orangeStrong> des PV max de Natasha + <orangeStrong>{{5}}</orangeStrong> au début de chaque tour pendant {{3}} tours.",
-        "shortDesc": "<color=#f29e38ff>Restaure des PV</color> à un allié unique et lui prodigue des <color=#f29e38ff>soins continus</color>."
+        "shortDesc": "<orangeStrong>Restaure des PV</orangeStrong> à un allié unique et lui prodigue des <orangeStrong>soins continus</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Cadeau de la renaissance",
         "fullDesc": "Soigne tous les alliés à hauteur de <orangeStrong>{{1}}%</orangeStrong> des PV max de Natasha + <orangeStrong>{{2}}</orangeStrong>.",
-        "shortDesc": "<color=#f29e38ff>Restaure des PV</color> à tous les alliés."
+        "shortDesc": "<orangeStrong>Restaure des PV</orangeStrong> à tous les alliés."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Expertise en pharmacologie",
+      "desc": "Après avoir subi une attaque, si le pourcentage de PV actuel du personnage est inférieur ou égal à {{1}}%, il se soigne 1 fois pour restaurer un montant de PV équivalent à {{2}}% de ses PV max + {{3}}. Cet effet ne peut être déclenché qu'1 fois par combat."
+    },
+    "2": {
+      "name": "Recherche clinique",
+      "desc": "Lorsque Natasha utilise son ultime, accorde des soins continus aux alliés dont le pourcentage de PV est inférieur ou égal à {{1}}% pendant {{2}} tour. Au début de leur tour, ils récupèrent un montant de PV équivalent à {{3}}% des PV max de Natasha + {{4}}."
+    },
+    "3": {
+      "name": "Le bon remède",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Remède miracle",
+      "desc": "Régénère {{1}} points d'énergie supplémentaires après avoir été attaqué."
+    },
+    "5": {
+      "name": "Traitement préventif",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Grâce du docteur",
+      "desc": "L'ATQ normale de Natasha inflige des DGT physiques supplémentaires équivalents à {{1}}% de ses PV max."
     }
   }
 }

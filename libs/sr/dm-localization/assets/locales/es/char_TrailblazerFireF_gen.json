@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Resonancia con el núcleo terrestre",
+      "desc": "Cuando {F#la}{M#el} Trazacaminos usa su ATQ básico, inflige un Daño de Fuego extra equivalente al {{1}}% de su DEF. Cuando usa su ATQ básico potenciado, inflige un Daño de Fuego extra equivalente al {{2}}% de su DEF."
+    },
+    "2": {
+      "name": "Perseverancia del hierro cósmico",
+      "desc": "Cuando se activa el talento, el escudo que reciben todos los aliados puede absorber un daño extra equivalente al {{1}}% de la DEF {F#de la}{M#del} Trazacaminos + {{2}}."
+    },
+    "3": {
+      "name": "Planos para el futuro",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Juramento de la civilización superviviente",
+      "desc": "Al comenzar la batalla, {F#la}{M#el} Trazacaminos obtiene inmediatamente {{1}} acumulaciones de Voluntad magmática."
+    },
+    "5": {
+      "name": "Coraje para prender la llama",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Baluarte de la Ciudad Eterna",
+      "desc": "Tras usar su ATQ básico potenciado o su habilidad definitiva, la DEF {F#de la}{M#del} Trazacaminos aumenta en un {{1}}%. Se acumula hasta {{2}} veces."
+    }
   }
 }

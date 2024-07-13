@@ -12,7 +12,7 @@
       "0": {
         "name": "Merveille des étoiles",
         "fullDesc": "Active Matrice de prémonition, ce qui permet aux autres membres de l'équipe de Fu Xuan de lui <u>transférer</u> {{1}}% des DGT qu'ils subissent (avant que ces DGT ne soient atténués par d'éventuels boucliers) pendant {{3}} tours.\\nLorsqu'ils sont affectés par Matrice de prémonition, tous les membres de l'équipe bénéficient de l'effet Connaissance, qui augmente leurs PV max respectifs à hauteur de <orangeStrong>{{4}}%</orangeStrong> des PV max de Fu Xuan, et leurs chances de coup critique de <orangeStrong>{{5}}%</orangeStrong>.\\nMatrice de prémonition se dissipe lorsque Fu Xuan est <u>à terre</u>.",
-        "shortDesc": "Active Matrice de prémonition. <color=#f29e38ff>Les DGT subis par les alliés de Fu Xuan lui sont <u>transférés</u></color>. D'autre part, <color=#f29e38ff>augmente les chances de coup critique</color> et les PV max de tous les alliés."
+        "shortDesc": "Active Matrice de prémonition. <orangeStrong>Les DGT subis par les alliés de Fu Xuan lui sont <u>transférés</u></orangeStrong>. D'autre part, <orangeStrong>augmente les chances de coup critique</orangeStrong> et les PV max de tous les alliés."
       }
     },
     "ult": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Dominus Pacis",
+      "desc": "Connaissance augmente les DGT critiques de {{1}}%."
+    },
+    "2": {
+      "name": "Optimus Felix",
+      "desc": "Si un membre de l'équipe est frappé par un coup fatal alors que Matrice de prémonition est active, tous les alliés qui ont été frappés par un coup fatal pendant cette action ne tombent pas à terre et récupèrent {{1}}% de leurs PV max immédiatement. Cet effet peut se déclencher 1 fois par combat."
+    },
+    "3": {
+      "name": "Apex Nexus",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Fortuna Stellaris",
+      "desc": "Lorsque d'autres alliés sous l'effet de Matrice de prémonition sont attaqués, Fu Xuan régénère {{1}} points d'énergie."
+    },
+    "5": {
+      "name": "Arbiter Primus",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Omnia Vita",
+      "desc": "Lorsque Matrice de prémonition est activée, le total des PV perdus par tous les membres de l'équipe est enregistré au cours du combat. Les DGT de l'ultime de Fu Xuan augmentent d'un montant équivalent à {{1}}% de ce total.\\nCe total est plafonné à {{2}}% des PV max de Fu Xuan et sa valeur est réinitialisée et recommence à s'accumuler après utilisation de l'ultime de Fu Xuan."
     }
   }
 }

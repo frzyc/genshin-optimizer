@@ -17,7 +17,7 @@
       "0": {
         "name": "A Scoop of Moon",
         "fullDesc": "Immediately draws {{1}} jade tile(s) and increases DMG by <orangeStrong>{{2}}%</orangeStrong> until the end of the current turn. This effect can stack up to {{3}} time(s). The turn will not end after this Skill is used.",
-        "shortDesc": "<color=#f29e38ff>Draws tiles</color> and increases DMG dealt. <color=#f29e38ff>This turn does not end</color> after this action."
+        "shortDesc": "<orangeStrong>Draws tiles</orangeStrong> and increases DMG dealt. <orangeStrong>This turn does not end</orangeStrong> after this action."
       }
     },
     "ult": {
@@ -40,6 +40,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Rise Through the Tiles",
+      "desc": "Ultimate deals {{1}}% more DMG."
+    },
+    "2": {
+      "name": "Sleep on the Tiles",
+      "desc": "Every time Draw Tile is triggered, Qingque immediately regenerates {{1}} Energy."
+    },
+    "3": {
+      "name": "Read Between the Tiles",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Right on the Tiles",
+      "desc": "After this character's Skill is used, there is a {{1}}% fixed chance to gain Autarky, which lasts until the end of the current turn. \\nWith Autarky, using Basic ATK or Enhanced Basic ATK immediately launches 1 follow-up attack on the same target, dealing Quantum DMG equal to 100% of the previous Basic ATK (or Enhanced Basic ATK)'s DMG."
+    },
+    "5": {
+      "name": "Gambit for the Tiles",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "Prevail Beyond the Tiles",
+      "desc": "Recovers 1 Skill Point after using Enhanced Basic ATK."
     }
   }
 }

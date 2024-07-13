@@ -19,7 +19,7 @@
       "0": {
         "name": "Bendición astral",
         "fullDesc": "La VEL de todos los aliados aumenta en <orangeStrong>{{1}}</orangeStrong> pts. durante {{2}} turnos.",
-        "shortDesc": "<color=#f29e38ff>Aumenta la VEL</color> de todos los aliados."
+        "shortDesc": "<orangeStrong>Aumenta la VEL</orangeStrong> de todos los aliados."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Canción estelar sin letra",
+      "desc": "Al usar la habilidad básica, inflige daño a un enemigo al azar una vez más."
+    },
+    "2": {
+      "name": "La luna entiende sus ciclos",
+      "desc": "Al usar su habilidad definitiva, Asta no consumirá ninguna acumulación de Recarga en el siguiente turno."
+    },
+    "3": {
+      "name": "Cambio en el meteorito eclíptico",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Manifestación de la aurora",
+      "desc": "Cuando hay {{1}} o más acumulaciones de Recarga del talento, la recuperación de energía de Asta aumenta en un {{2}}%."
+    },
+    "5": {
+      "name": "Misterio de los objetos del espacio profundo",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Sueño bajo la Vía Láctea",
+      "desc": "Asta pierde {{1}} acumulación de Recarga menos en cada turno."
     }
   }
 }

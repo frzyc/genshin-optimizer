@@ -12,14 +12,14 @@
       "0": {
         "name": "¿Permitir los cambios?",
         "fullDesc": "Tiene una <u>probabilidad base</u> del <orangeStrong>{{2}}%</orangeStrong> de aplicar a un enemigo 1 Debilidad del mismo tipo que el de algún aliado en el campo de batalla y reducir su RES al tipo de esa Debilidad en un {{4}}% durante {{3}} turnos. Si el objetivo enemigo ya tenía ese tipo de Debilidad, entonces no se activará la reducción de RES al tipo correspondiente a esa Debilidad.\\nSilver Wolf solo puede aplicar 1 Debilidad a un mismo objetivo. Si vuelve a aplicarle una Debilidad, el objetivo solo conservará la más reciente. \\nAdemás, tiene una <u>probabilidad base</u> del {{5}}% de reducir la RES a todos los tipos de ese mismo objetivo en un <orangeStrong>{{6}}%</orangeStrong> durante {{7}} turnos.\\nInflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Silver Wolf como Daño Cuántico a ese objetivo.",
-        "shortDesc": "Gran probabilidad de <color=#f29e38ff>aplicar una Debilidad adicional</color> a un enemigo. Además, le inflige Daño Cuántico."
+        "shortDesc": "Gran probabilidad de <orangeStrong>aplicar una Debilidad adicional</orangeStrong> a un enemigo. Además, le inflige Daño Cuántico."
       }
     },
     "ult": {
       "0": {
         "name": "Cuenta baneada",
         "fullDesc": "Tiene una <u>probabilidad base</u> del <orangeStrong>{{2}}%</orangeStrong> de reducir la DEF de un enemigo en un <orangeStrong>{{3}}%</orangeStrong> durante {{4}} turnos. Además, inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Silver Wolf como Daño Cuántico a ese objetivo.",
-        "shortDesc": "Gran probabilidad de <color=#f29e38ff>reducir la DEF</color> de un enemigo. Además, le inflige una gran cantidad de Daño Cuántico."
+        "shortDesc": "Gran probabilidad de <orangeStrong>reducir la DEF</orangeStrong> de un enemigo. Además, le inflige una gran cantidad de Daño Cuántico."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ingeniería social",
+      "desc": "Tras usar su habilidad definitiva para atacar a un enemigo, Silver Wolf recupera {{1}} pts. de energía por cada estado negativo que tenga el objetivo. Este efecto se puede activar un máximo de {{2}} veces cada vez que ataque con su habilidad definitiva."
+    },
+    "2": {
+      "name": "Red zombi",
+      "desc": "Cuando el objetivo enemigo entra en combate, su RES a efecto se reduce en un {{1}}%."
+    },
+    "3": {
+      "name": "Carga útil",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Ataque de rebote",
+      "desc": "Tras usar su habilidad definitiva para atacar a un enemigo, Silver Wolf inflige un {{1}}% de su ATQ como Daño Cuántico adicional por cada estado negativo que tenga el objetivo. Este efecto se puede activar un máximo de {{2}} veces cada vez que ataque con su habilidad definitiva."
+    },
+    "5": {
+      "name": "Fuerza bruta",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Red superpuesta",
+      "desc": "Por cada estado negativo que tenga el objetivo enemigo, el daño que inflige Silver Wolf aumenta en un {{1}}%, hasta un máximo del {{2}}%."
     }
   }
 }

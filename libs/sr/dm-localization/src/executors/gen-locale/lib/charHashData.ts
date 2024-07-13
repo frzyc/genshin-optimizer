@@ -5,22 +5,31 @@ import {
   allCharacterDataKeys,
   allTrailblazerGenderedKeys,
 } from '@genshin-optimizer/sr/consts'
+import type { Rank } from '@genshin-optimizer/sr/dm'
 import {
   DmAttackTypeMap,
   avatarConfig,
+  avatarRankConfig,
   avatarSkillConfig,
   characterIdMap,
 } from '@genshin-optimizer/sr/dm'
+import { convertToHash } from './util'
 
 type CharData = {
   name: string
   abilities: AbilitiesData
+  ranks: Ranks
 }
 type AbilitiesData = Partial<Record<AbilityKey, AbilityData[]>>
 type AbilityData = {
   name: string
   fullDesc: string
   shortDesc: string
+}
+type Ranks = Record<Rank, RankData>
+type RankData = {
+  name: string
+  desc: string
 }
 
 const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
@@ -47,11 +56,29 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
     })
   })
 
+  // Eidolons
+  const rankArray = Object.values(avatarRankConfig[charId]).map(
+    (rankConfig) => {
+      const { Rank, Name, Desc } = rankConfig
+      const tuple: [Rank, RankData] = [
+        Rank,
+        {
+          name: convertToHash(Name).toString(),
+          desc: convertToHash(Desc).toString(),
+        },
+      ]
+      return tuple
+    }
+  )
+  const ranks = Object.fromEntries(rankArray)
+  verifyObjKeys(ranks, ['1', '2', '3', '4', '5', '6'] as const)
+
   const tuple: [CharacterDataKey, CharData] = [
     charKey,
     {
       name,
       abilities,
+      ranks,
     },
   ]
   return tuple

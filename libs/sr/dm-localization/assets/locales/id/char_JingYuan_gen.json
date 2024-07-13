@@ -12,21 +12,21 @@
       "0": {
         "name": "Rifting Zenith",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Jing Yuan pada seluruh musuh dan meningkatkan Hits Per Action milik Lightning-Lord sebanyak {{2}} kali pada giliran berikutnya.",
-        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh dan <color=#f29e38ff>menambah Hits Per Action milik Lightning-Lord</color>."
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh dan <orangeStrong>menambah Hits Per Action milik Lightning-Lord</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Lightbringer",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Jing Yuan pada seluruh musuh dan meningkatkan Hits Per Action milik Lightning-Lord sebanyak {{2}} kali pada giliran berikutnya.",
-        "shortDesc": "Mengakibatkan Lightning DMG pada seluruh musuh dan <color=#f29e38ff>menambah Hits Per Action milik Lightning-Lord</color>."
+        "shortDesc": "Mengakibatkan Lightning DMG pada seluruh musuh dan <orangeStrong>menambah Hits Per Action milik Lightning-Lord</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Spirit Invocation",
         "fullDesc": "Setelah menggunakan Technique, menambah Hits Per Action di giliran pertama Lightning-Lord sebanyak {{1}} saat pertempuran selanjutnya dimulai.",
-        "shortDesc": "Setelah menggunakan Technique, akan menambah <color=#f29e38ff>Hits Per Action dari Lightning-Lord</color> saat memasuki pertempuran berikutnya."
+        "shortDesc": "Setelah menggunakan Technique, akan menambah <orangeStrong>Hits Per Action dari Lightning-Lord</orangeStrong> saat memasuki pertempuran berikutnya."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Slash, Seas Split",
+      "desc": "Saat \"Lightning-Lord\" melancarkan serangan, DMG Multiplier pada musuh di sekitar target utama akan meningkat sebesar {{1}}% DMG Multiplier pada target utama."
+    },
+    "2": {
+      "name": "Swing, Skies Squashed",
+      "desc": "Setelah \"Lightning-Lord\" beraksi, meningkatkan {{1}}% DMG yang diakibatkan Basic Attack, Skill, dan Ultimate Jing Yuan selama {{2}} giliran."
+    },
+    "3": {
+      "name": "Strike, Suns Subdued",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Spin, Stars Sieged",
+      "desc": "Setiap Hit yang dilancarkan Lightning-Lord akan memulihkan {{1}} Energy Jing Yuan."
+    },
+    "5": {
+      "name": "Stride, Spoils Seized",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Sweep, Souls Slain",
+      "desc": "Setiap Hit yang dilancarkan Lightning-Lord akan mengakibatkan target musuh terkena status Vulnerability.\\nSaat terkena status Vulnerability, target musuh akan menerima {{1}}% DMG lebih banyak hingga akhir giliran Lightning-Lord saat ini, efek ini dapat ditumpuk hingga {{2}} lapis."
     }
   }
 }

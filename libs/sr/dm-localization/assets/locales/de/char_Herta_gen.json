@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tritt dich, wenn du am Boden liegst",
+      "desc": "Liegt der LP-Prozentsatz des anvisierten Gegners bei {{1}}% oder weniger, verursacht Hertas Standardangriff zusätzlichen Eis-SCH in Höhe von {{2}}% von Hertas ANG."
+    },
+    "2": {
+      "name": "Triumph und Verfolgung",
+      "desc": "Erhöht für jede Auslösung des Talents die KRIT-Rate von Herta um {{1}}%. Dieser Effekt ist bis zu {{2}}-mal stapelbar."
+    },
+    "3": {
+      "name": "So bin ich nun mal",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Hinlangen, wo es weh tut",
+      "desc": "Verursacht bei der Auslösung des Talents {{1}}% mehr SCH."
+    },
+    "5": {
+      "name": "Fluch ordentlich oder lass es bleiben",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Keiner kann mich betrügen",
+      "desc": "Erhöht ANG nach dem Einsatz des Ultimates für {{2}} Rd. um {{1}}%."
+    }
   }
 }

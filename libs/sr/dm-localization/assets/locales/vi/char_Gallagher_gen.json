@@ -24,14 +24,14 @@
       "0": {
         "name": "Nghi Lễ Champagne",
         "fullDesc": "Khiến toàn bộ phe địch rơi vào trạng thái \"Say Mèm\", duy trì {{2}} hiệp, đồng thời gây Sát Thương Hỏa cho toàn bộ phe địch bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Gallagher, và cường hóa Tấn Công Thường lần sau thành \"Hoa Rượu Tuôn Trào\".",
-        "shortDesc": "Khiến toàn bộ kẻ địch <color=#f29e38ff>rơi vào trạng thái \"Say Mèm\"</color>, đồng thời gây Sát Thương Hỏa cho toàn bộ kẻ địch. Tấn Công Thường lần sau cường hóa thành \"Hoa Rượu Tuôn Trào\"."
+        "shortDesc": "Khiến toàn bộ kẻ địch <orangeStrong>rơi vào trạng thái \"Say Mèm\"</orangeStrong>, đồng thời gây Sát Thương Hỏa cho toàn bộ kẻ địch. Tấn Công Thường lần sau cường hóa thành \"Hoa Rượu Tuôn Trào\"."
       }
     },
     "technique": {
       "0": {
         "name": "Rượu Ngọt Thủ Công",
         "fullDesc": "Lập tức tấn công kẻ địch, sau khi vào chiến đấu khiến toàn thể phe địch rơi vào trạng thái Say Mèm, duy trì {{1}} hiệp, đồng thời gây Sát Thương Hỏa lên toàn bộ phe địch bằng {{2}}% Tấn Công của Gallagher.",
-        "shortDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ khiến toàn bộ phe địch <color=#f29e38ff>rơi vào trạng thái \"Say Mèm\"</color>, và gây lượng nhỏ Sát Thương Hỏa lên toàn bộ phe địch."
+        "shortDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ khiến toàn bộ phe địch <orangeStrong>rơi vào trạng thái \"Say Mèm\"</orangeStrong>, và gây lượng nhỏ Sát Thương Hỏa lên toàn bộ phe địch."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Salty Dog",
+      "desc": "Sau khi Gallagher vào chiến đấu sẽ hồi {{1}} Năng Lượng, Kháng Hiệu Ứng tăng {{2}}%."
+    },
+    "2": {
+      "name": "Lion's Tail",
+      "desc": "Khi thi triển Chiến Kỹ, giải trừ {{1}} Hiệu Ứng Xấu của 1 đồng đội chỉ định, đồng thời khiến Kháng Hiệu Ứng của đồng đội đó tăng {{2}}%, duy trì {{3}} hiệp."
+    },
+    "3": {
+      "name": "Corpse Reviver",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15, Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Last Word",
+      "desc": "Thời gian duy trì trạng thái \"Say Mèm\" do Tuyệt Kỹ của Gallagher gây ra kéo dài {{1}} hiệp."
+    },
+    "5": {
+      "name": "Death In The Afternoon",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15, Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Blood And Sand",
+      "desc": "Tấn Công Kích Phá của Gallagher tăng {{1}}%, hiệu suất Phá Vỡ Điểm Yếu tăng {{2}}%."
     }
   }
 }

@@ -19,7 +19,7 @@
       "0": {
         "name": "Castigo divino",
         "fullDesc": "Inflige un Daño Cuántico equivalente al <orangeStrong>{{1}}%</orangeStrong> del ATQ de Xueyi a un enemigo. Este ataque ignora los tipos de Debilidad y consume la Firmeza del objetivo. Al romper la Debilidad, se activa el efecto de Ruptura Cuántica.\\nDurante este ataque, cuanta más Firmeza consuma, más daño inflige, hasta un aumento máximo de un <orangeStrong>{{3}}%</orangeStrong>.",
-        "shortDesc": "Inflige una gran cantidad de Daño Cuántico a un enemigo. Este ataque <color=#f29e38ff>ignora los tipos de Debilidad</color> y reduce la Firmeza del enemigo. Además, causa más daño cuanta más Firmeza consuma."
+        "shortDesc": "Inflige una gran cantidad de Daño Cuántico a un enemigo. Este ataque <orangeStrong>ignora los tipos de Debilidad</orangeStrong> y reduce la Firmeza del enemigo. Además, causa más daño cuanta más Firmeza consuma."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Inhibición del dvesha",
+      "desc": "El daño del ataque adicional del talento aumenta en un {{1}}%."
+    },
+    "2": {
+      "name": "Fisura del klesha",
+      "desc": "El ataque adicional del talento ignora los tipos de Debilidad y reduce la Firmeza del enemigo. A su vez, Xueyi regenera una cantidad de PV equivalente al {{1}}% de sus PV máx. Al romper la Debilidad de un enemigo, activa el efecto de Ruptura Cuántica."
+    },
+    "3": {
+      "name": "Cese del dukkha",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Ruptura del karma",
+      "desc": "Al usar la habilidad definitiva, su efecto de Ruptura aumenta en un {{1}}% durante {{2}} turnos."
+    },
+    "5": {
+      "name": "Fascinación del deva",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Dominio del samsara",
+      "desc": "Las acumulaciones máximas de Karma disminuyen a {{1}}."
     }
   }
 }

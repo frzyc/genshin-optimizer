@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "A Lacuna in Kingdom of Aesthetics",
+      "desc": "Each stack of Apotheosis additionally increases CRIT DMG by {{1}}%."
+    },
+    "2": {
+      "name": "Agate's Humility",
+      "desc": "If the number of enemies on the field equals to {{1}} or more when the Ultimate is used, ATK increases by {{2}}% for {{3}} turn(s)."
+    },
+    "3": {
+      "name": "Thorny Road's Glory",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Trumpet's Dedication",
+      "desc": "At the start of battle, gains {{1}} stack(s) of Apotheosis and increases the maximum stack limit of the Talent's effect by {{2}}."
+    },
+    "5": {
+      "name": "Snow, From Somewhere in Cosmos",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "\"Your\" Resplendence",
+      "desc": "When using Ultimate, ignores {{1}}% of enemy targets' DEF."
+    }
   }
 }

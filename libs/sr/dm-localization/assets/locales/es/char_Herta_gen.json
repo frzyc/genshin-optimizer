@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Me regodeo en tu miseria",
+      "desc": "Al usar el ATQ básico, si el objetivo tiene un porcentaje de PV igual o inferior al {{1}}%, Herta inflige un Daño de Hielo adicional equivalente al {{2}}% de su ATQ."
+    },
+    "2": {
+      "name": "Que no pare la fiesta",
+      "desc": "Cada vez que se activa el talento, su Prob. CRIT aumenta en un {{1}}%. Este efecto se puede acumular hasta {{2}} veces."
+    },
+    "3": {
+      "name": "Soy de ese tipo de chicas",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Donde más duele",
+      "desc": "Cuando el talento se activa, el daño que inflige Herta aumenta en un {{1}}%."
+    },
+    "5": {
+      "name": "Insulta a lo grande o no lo hagas",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Nadie me puede traicionar",
+      "desc": "Tras usar la habilidad definitiva, su ATQ aumenta en un {{1}}% durante {{2}} turno."
+    }
   }
 }

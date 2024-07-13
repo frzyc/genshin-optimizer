@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "To the Bitter End",
+      "desc": "Saat persentase HP saat ini kurang dari atau sama dengan 50%, Skill DMG meningkat {{1}}%."
+    },
+    "2": {
+      "name": "Breaking Free",
+      "desc": "Saat melancarkan Skill dan Ultimate, menghapus 1 status Debuff dirinya."
+    },
+    "3": {
+      "name": "Power Through",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Turn the Tables",
+      "desc": "Setelah memasuki pertempuran, jika Arlan menerima serangan mematikan, Arlan tidak gugur dan akan segera memulihkan HP sebesar {{1}}% Max HP dirinya. Efek ini akan terhapus otomatis setelah dipicu sekali atau setelah {{2}} giliran berlalu."
+    },
+    "5": {
+      "name": "Hammer and Tongs",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Self-Sacrifice",
+      "desc": "Saat persentase HP saat ini kurang dari atau sama dengan 50%, meningkatkan {{1}}% Ultimate DMG dan DMG Multiplier pada musuh sekitar target akan meningkat hingga sebesar DMG Multiplier pada target."
+    }
   }
 }

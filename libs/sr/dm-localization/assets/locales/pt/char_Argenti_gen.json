@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Uma Lacuna no Reino da Estética",
+      "desc": "Cada acúmulo de Apoteose aumenta o Dano CRIT adicionalmente em {{1}}%."
+    },
+    "2": {
+      "name": "Humildade de Ágata",
+      "desc": "Se o número de inimigos no campo é igual a {{1}} ou mais quando utilizar a Perícia Suprema, o ATQ aumenta em {{2}}% por {{3}} rodada(s)."
+    },
+    "3": {
+      "name": "Glória do Caminho de Espinhos",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Devoção do Clarim",
+      "desc": "No início da batalha, ganha {{1}} acúmulo(s) de Apoteose e aumenta o limite máximo de acúmulos do efeito do Talento em {{2}}."
+    },
+    "5": {
+      "name": "Neve, de Algum Lugar no Cosmos",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "\"Vossa\" Resplandecência",
+      "desc": "Ao usar a Perícia Suprema, ignora {{1}}% da DEF do inimigo-alvo."
+    }
   }
 }

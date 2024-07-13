@@ -12,21 +12,21 @@
       "0": {
         "name": "Dreamdiver",
         "fullDesc": "Meningkatkan CRIT DMG 1 rekan tim yang ditargetkan, peningkatannya sebesar <orangeStrong>{{1}}%</orangeStrong> CRIT DMG Sparkle + <orangeStrong>{{2}}%</orangeStrong>, berlangsung selama {{3}} giliran, dan mendahulukan aksi rekan tersebut sebesar {{4}}%.\\nSaat Sparkle melancarkan Kemampuan ini pada dirinya sendiri, efek pendahuluan aksi tidak akan terpicu.",
-        "shortDesc": "Meningkatkan <color=#f29e38ff>CRIT DMG</color> 1 rekan tim dan mendahulukan aksi rekan tersebut."
+        "shortDesc": "Meningkatkan <orangeStrong>CRIT DMG</orangeStrong> 1 rekan tim dan mendahulukan aksi rekan tersebut."
       }
     },
     "ult": {
       "0": {
         "name": "The Hero with a Thousand Faces",
         "fullDesc": "Memulihkan {{2}} Poin Skill untuk rekan tim dan memberikan efek \"Cipher\" pada seluruh rekan tim. Untuk rekan tim yang memiliki \"Cipher\", setiap lapis efek peningkatan DMG dari Talent Sparkle akan meningkat ekstra <orangeStrong>{{3}}%</orangeStrong>, berlangsung selama {{4}} giliran.",
-        "shortDesc": "Memulihkan <color=#f29e38ff>Poin Skill</color> rekan tim dan membuat efek peningkatan DMG dari terpicunya Talent Sparkle meningkat ekstra."
+        "shortDesc": "Memulihkan <orangeStrong>Poin Skill</orangeStrong> rekan tim dan membuat efek peningkatan DMG dari terpicunya Talent Sparkle meningkat ekstra."
       }
     },
     "technique": {
       "0": {
         "name": "Unreliable Narrator",
         "fullDesc": "Setelah menggunakan Technique, seluruh rekan tim akan memasuki status \"Misdirect\" yang berlangsung selama {{2}} detik. Rekan tim dalam status \"Misdirect\" tidak akan terdeteksi musuh. Saat memasuki pertempuran selama durasi status \"Misdirect\", akan memulihkan {{1}} Poin Skill untuk tim.",
-        "shortDesc": "Setelah menggunakan Technique, seluruh rekan tim akan memasuki status \"Misdirect\". Rekan tim dalam status \"Misdirect\" tidak akan terdeteksi musuh. Saat memasuki pertempuran selama durasi status \"Misdirect\", akan memulihkan <color=#f29e38ff>Poin Skill</color> untuk tim."
+        "shortDesc": "Setelah menggunakan Technique, seluruh rekan tim akan memasuki status \"Misdirect\". Rekan tim dalam status \"Misdirect\" tidak akan terdeteksi musuh. Saat memasuki pertempuran selama durasi status \"Misdirect\", akan memulihkan <orangeStrong>Poin Skill</orangeStrong> untuk tim."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Suspension of Disbelief",
+      "desc": "Durasi \"Cipher\" yang diberikan oleh Ultimate bertambah ekstra 1 giliran. Rekan tim yang memiliki \"Cipher\" akan mengalami peningkatan {{1}}% ATK."
+    },
+    "2": {
+      "name": "Purely Fictitious",
+      "desc": "Setiap lapis efek Talent akan membuat rekan tim mengabaikan {{1}}% DEF target saat mengakibatkan DMG pada musuh."
+    },
+    "3": {
+      "name": "Pipedream",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Life Is a Gamble",
+      "desc": "Ultimate dapat memulihkan ekstra 1 Poin Skill. Efek peningkatan batas maksimum Poin Skill dari Talent bertambah 1."
+    },
+    "5": {
+      "name": "Parallax Truth",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Narrative Polysemy",
+      "desc": "Efek peningkatan CRIT DMG dari Skill Sparkle meningkat ekstra, peningkatannya sebesar {{1}}% CRIT DMG Sparkle, dan saat Sparkle melancarkan Skill-nya, efek peningkatan CRIT DMG akan efektif untuk seluruh rekan (selain Sparkle) yang memiliki efek \"Cipher\". Saat Sparkle melancarkan Ultimate, jika terdapat rekan tim yang memiliki efek peningkatan CRIT DMG dari Skill Sparkle, maka efek tersebut akan menyebar ke seluruh rekan (selain Sparkle) yang memiliki efek \"Cipher\"."
     }
   }
 }

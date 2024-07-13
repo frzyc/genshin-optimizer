@@ -1,5 +1,6 @@
 // Convert un-hashed string in datamine to a textmap hash
-// RelicDesc_1012 -> 769181229 -> (TextMapEN.json) -> "Increases Outgoing Healing by <unbreak>#1[i]%</unbreak>."
+// RelicDesc_1012 -> 769181229
+// This can later be used as 769181229 -> (TextMapEN.json) -> "Increases Outgoing Healing by <unbreak>#1[i]%</unbreak>."
 export function convertToHash(str: string) {
   let hash1 = 5381 | 0
   let hash2 = hash1 | 0

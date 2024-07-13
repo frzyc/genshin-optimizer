@@ -12,21 +12,21 @@
       "0": {
         "name": "Edge of the Void",
         "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Welt pada 1 musuh yang ditarget, serta mengakibatkan 2 serangan tambahan yang masing-masing mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Welt pada musuh secara acak. Saat serangan mengenai musuh, ada <orangeStrong>{{2}}%</orangeStrong> <u>peluang dasar</u> untuk mengurangi {{3}}% SPD musuh tersebut selama {{4}} giliran.",
-        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh, total Bounce 3 kali dan berpeluang untuk <color=#f29e38ff>memberikan status Slow</color> pada target."
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh, total Bounce 3 kali dan berpeluang untuk <orangeStrong>memberikan status Slow</orangeStrong> pada target."
       }
     },
     "ult": {
       "0": {
         "name": "Synthetic Black Hole",
         "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Welt pada seluruh musuh. Target musuh yang terkena serangan memiliki {{3}}% <u>peluang dasar</u> untuk memasuki status Imprisonment selama 1 giliran.\\nSelama dalam status Imprisonment, target musuh mengalami <u>penundaan aksi</u> sebesar <orangeStrong>{{2}}%</orangeStrong> dan SPD berkurang {{4}}%.",
-        "shortDesc": "Mengakibatkan Imaginary DMG pada seluruh musuh dan <color=#f29e38ff>berpeluang besar memberikan status Imprisonment pada musuh</color>."
+        "shortDesc": "Mengakibatkan Imaginary DMG pada seluruh musuh dan <orangeStrong>berpeluang besar memberikan status Imprisonment pada musuh</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Gravitational Imprisonment",
         "fullDesc": "Setelah menggunakan Technique, Welt akan menciptakan sebuah Dimension khusus selama {{4}} detik. Movement SPD musuh yang berada di dalam Dimension akan berkurang {{5}}%. Setelah memasuki pertempuran dengan musuh dalam Dimension, ada {{1}}% <u>peluang dasar</u> untuk membuat target musuh memasuki status Imprisonment selama 1 giliran.\\nSelama dalam status Imprisonment, target musuh akan mengalami {{2}}% <u>penundaan aksi</u> dan SPD berkurang {{3}}%. Hanya boleh ada 1 efek Dimension ciptaan rekan tim dalam satu waktu.",
-        "shortDesc": "Menciptakan Dimension khusus. Movement SPD musuh dalam Dimension akan berkurang. Setelah memasuki pertempuran dengan musuh dalam Dimension, <color=#f29e38ff>berpeluang besar untuk membuat target musuh memasuki status Imprisonment</color>."
+        "shortDesc": "Menciptakan Dimension khusus. Movement SPD musuh dalam Dimension akan berkurang. Setelah memasuki pertempuran dengan musuh dalam Dimension, <orangeStrong>berpeluang besar untuk membuat target musuh memasuki status Imprisonment</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Legacy of Honor",
+      "desc": "Setelah melancarkan Ultimate, Welt akan mendapat peningkatan kekuatan. {{3}} Basic Attack atau Skill setelahnya akan mengakibatkan 1 kali DMG tambahan pada target musuh. DMG Multiplier dari DMG tambahan yang disebabkan Basic Attack adalah {{1}}% dari Basic ATK Welt, sedangkan DMG Multiplier dari DMG tambahan yang disebabkan Skill adalah {{2}}% dari Skill Welt."
+    },
+    "2": {
+      "name": "Conflux of Stars",
+      "desc": "Memulihkan {{1}} Energy Welt saat Talent terpicu."
+    },
+    "3": {
+      "name": "Prayer of Peace",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Appellation of Justice",
+      "desc": "Saat melancarkan Skill, meningkatkan {{1}}% peluang dasar untuk mengurangi SPD target musuh yang terkena serangan."
+    },
+    "5": {
+      "name": "Power of Kindness",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Prospect of Glory",
+      "desc": "Saat melancarkan Skill, mengakibatkan 1 kali DMG tambahan pada musuh secara acak."
     }
   }
 }

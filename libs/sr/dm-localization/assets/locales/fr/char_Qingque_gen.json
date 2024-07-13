@@ -17,7 +17,7 @@
       "0": {
         "name": "Coup de pouce",
         "fullDesc": "Pioche immédiatement {{1}} tuiles de jade et augmente les DGT de <orangeStrong>{{2}}%</orangeStrong> jusqu'à la fin du tour en cours. Cet effet peut être cumulé jusqu'à {{3}} fois. Le tour ne prend pas fin après l'utilisation de cette compétence.",
-        "shortDesc": "<color=#f29e38ff>Pioche des tuiles</color> et augmente les DGT infligés. <color=#f29e38ff>Ce tour ne se termine pas</color> après cette action."
+        "shortDesc": "<orangeStrong>Pioche des tuiles</orangeStrong> et augmente les DGT infligés. <orangeStrong>Ce tour ne se termine pas</orangeStrong> après cette action."
       }
     },
     "ult": {
@@ -40,6 +40,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Avènement des tuiles",
+      "desc": "Les DGT de l'ultime augmentent de {{1}}%."
+    },
+    "2": {
+      "name": "Repos sur l'échiquier",
+      "desc": "Chaque fois que Qingque pioche une tuile, elle régénère immédiatement {{1}} point d'énergie."
+    },
+    "3": {
+      "name": "Lire entre les tuiles",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Mets de la tuile",
+      "desc": "Après avoir utilisé la compétence, il y a {{1}}% de chances fixes d'obtenir Autonome, qui dure jusqu'à la fin du tour en cours.\\nLorsque l'état Autonome est actif, utiliser l'ATQ normale ou l'ATQ normale renforcée lance immédiatement 1 attaque de suivi sur le ou les mêmes cibles, infligeant des DGT quantiques équivalents à 100 % des DGT de l'ATQ normale (ou ATQ normale renforcée) précédente."
+    },
+    "5": {
+      "name": "Tuiles piochées, la chance a tourné",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Prête à gagner, dans le calme et la sérénité",
+      "desc": "Récupère 1 point de compétence après utilisation de l'ATQ normale renforcée."
     }
   }
 }

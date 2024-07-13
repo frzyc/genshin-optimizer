@@ -12,21 +12,21 @@
       "0": {
         "name": "Dreamdiver",
         "fullDesc": "Increases the CRIT DMG of a single target ally by <orangeStrong>{{1}}%</orangeStrong> of Sparkle's CRIT DMG plus <orangeStrong>{{2}}%</orangeStrong>, lasting for {{3}} turn(s). And at the same time, Advances Forward this ally's action by {{4}}%.\\nWhen Sparkle uses this ability on herself, the Action Advance effect will not trigger.",
-        "shortDesc": "Increases an ally's <color=#f29e38ff>CRIT DMG</color> and Advances Forward their action."
+        "shortDesc": "Increases an ally's <orangeStrong>CRIT DMG</orangeStrong> and Advances Forward their action."
       }
     },
     "ult": {
       "0": {
         "name": "The Hero with a Thousand Faces",
         "fullDesc": "Recovers {{2}} Skill Points for the team and grants all allies Cipher. For allies with Cipher, each stack of the DMG Boost effect provided by Sparkle's Talent additionally increases by <orangeStrong>{{3}}%</orangeStrong>, lasting for {{4}} turns.",
-        "shortDesc": "Recovers <color=#f29e38ff>Skill Points</color> for the team, and enables the DMG Boost provided by Sparkle's Talent to be additionally enhanced."
+        "shortDesc": "Recovers <orangeStrong>Skill Points</orangeStrong> for the team, and enables the DMG Boost provided by Sparkle's Talent to be additionally enhanced."
       }
     },
     "technique": {
       "0": {
         "name": "Unreliable Narrator",
         "fullDesc": "Using the Technique grants all allies Misdirect for {{2}} seconds. Characters with Misdirect will not be detected by enemies, and entering battle in the Misdirect state recovers {{1}} Skill Point(s) for the team.",
-        "shortDesc": "Using the Technique grants all allies Misdirect. Characters with Misdirect will not be detected by enemies, and entering battle while in Misdirect recovers <color=#f29e38ff>Skill Points</color> for allies."
+        "shortDesc": "Using the Technique grants all allies Misdirect. Characters with Misdirect will not be detected by enemies, and entering battle while in Misdirect recovers <orangeStrong>Skill Points</orangeStrong> for allies."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Suspension of Disbelief",
+      "desc": "The Cipher effect granted by the Ultimate lasts for 1 extra turn. All allies with Cipher have their ATK increased by {{1}}%."
+    },
+    "2": {
+      "name": "Purely Fictitious",
+      "desc": "Every stack of the Talent's effect allows allies to additionally ignore {{1}}% of the target's DEF when dealing DMG."
+    },
+    "3": {
+      "name": "Pipedream",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Life Is a Gamble",
+      "desc": "The Ultimate recovers 1 more Skill Point. The Talent additionally increases the Max Skill Points by 1."
+    },
+    "5": {
+      "name": "Parallax Truth",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Narrative Polysemy",
+      "desc": "The CRIT DMG Boost effect provided by the Skill additionally increases by an amount equal to {{1}}% of Sparkle's CRIT DMG. When Sparkle uses Skill, her Skill's CRIT DMG Boost effect will apply to all allies with Cipher. When Sparkle uses her Ultimate, any single ally who benefits from her Skill's CRIT DMG Boost will spread that effect to allies with Cipher."
     }
   }
 }

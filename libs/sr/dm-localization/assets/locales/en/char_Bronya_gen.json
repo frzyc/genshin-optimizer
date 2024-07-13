@@ -12,14 +12,14 @@
       "0": {
         "name": "Combat Redeployment",
         "fullDesc": "Dispels a <u>debuff</u> from a single ally, allows them to immediately take action, and increases their DMG by <orangeStrong>{{1}}%</orangeStrong> for {{3}} turn(s).\\nWhen this Skill is used on Bronya herself, she cannot immediately take action again.",
-        "shortDesc": "<color=#f29e38ff>Dispels</color> 1 <color=#f29e38ff><u>debuff</u></color> from a single ally, <color=#f29e38ff>increases the damage they deal</color>, and allows them to <color=#f29e38ff>immediately take action</color>."
+        "shortDesc": "<orangeStrong>Dispels</orangeStrong> 1 <orangeStrong><u>debuff</u></orangeStrong> from a single ally, <orangeStrong>increases the damage they deal</orangeStrong>, and allows them to <orangeStrong>immediately take action</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "The Belobog March",
         "fullDesc": "Increases the ATK of all allies by <orangeStrong>{{1}}%</orangeStrong>, and increases their CRIT DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Bronya's CRIT DMG plus <orangeStrong>{{3}}%</orangeStrong> for {{4}} turn(s).",
-        "shortDesc": "Increases <color=#f29e38ff>ATK</color> and <color=#f29e38ff>CRIT DMG</color> of all allies"
+        "shortDesc": "Increases <orangeStrong>ATK</orangeStrong> and <orangeStrong>CRIT DMG</orangeStrong> of all allies"
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Hone Your Strength",
+      "desc": "When using Skill, there is a {{1}}% fixed chance of recovering 1 Skill Point. This effect has a 1-turn cooldown."
+    },
+    "2": {
+      "name": "Quick March",
+      "desc": "When using Skill, the target ally's SPD increases by {{1}}% after taking action, lasting for 1 turn."
+    },
+    "3": {
+      "name": "Bombardment",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Take by Surprise",
+      "desc": "After an ally other than Bronya uses Basic ATK on an enemy with Wind Weakness, Bronya immediately launches a follow-up attack on the target, dealing Wind DMG equal to {{1}}% of Bronya's Basic ATK DMG. This effect can only be triggered 1 time per turn."
+    },
+    "5": {
+      "name": "Unstoppable",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "Piercing Rainbow",
+      "desc": "The duration of the DMG Boost effect placed by the Skill on the target ally increases by {{1}} turn(s)."
     }
   }
 }

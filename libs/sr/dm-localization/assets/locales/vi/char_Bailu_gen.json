@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Xung Mạch Thánh Thần",
+      "desc": "Khi \"Sinh Mệnh\" kết thúc, nếu HP hiện tại của mục tiêu phe ta bằng với Giới Hạn HP của chính mục tiêu đó, sẽ hồi thêm {{1}} Năng Lượng cho mục tiêu."
+    },
+    "2": {
+      "name": "Rồng Say Ngủ Động Tiên",
+      "desc": "Sau khi thi triển Tuyệt Kỹ, lượng Trị Liệu của Bailu tăng {{1}}%, duy trì {{2}} hiệp."
+    },
+    "3": {
+      "name": "Nắm Giữ Càn Khôn, Thấu Hiểu Đạo Lý",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Loại Trừ Khẩn Cấp",
+      "desc": "Mỗi 1 lần trị liệu mà Chiến Kỹ mang lại sẽ khiến sát thương gây ra bởi người được trị liệu tăng thêm {{1}}%, tối đa cộng dồn {{2}} tầng, duy trì {{3}} hiệp."
+    },
+    "5": {
+      "name": "Gột Rửa Bụi Trần",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Nước Bọt Của Rồng Thần",
+      "desc": "Số lần kích hoạt trị liệu của Bailu lên đồng đội bị tấn công chí tử tăng {{1}} lần."
+    }
   }
 }

@@ -24,7 +24,7 @@
       "0": {
         "name": "Bum! Lá Vem Fogo!",
         "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Hook como Dano de Fogo a um inimigo-alvo.\\nApós usar a Perícia Suprema, a próxima Perícia usada é Aprimorada, causando Dano a um único inimigo e aos inimigos adjacentes a ele.",
-        "shortDesc": "Causa Dano de Fogo massivo a um único inimigo e <color=#f29e38ff>Aprimora a próxima Perícia dessa unidade</color>."
+        "shortDesc": "Causa Dano de Fogo massivo a um único inimigo e <orangeStrong>Aprimora a próxima Perícia dessa unidade</orangeStrong>."
       }
     },
     "technique": {
@@ -40,6 +40,32 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Deus Ajuda Quem Cedo Madruga",
+      "desc": "A Perícia Aprimorada causa {{1}}% a mais de Dano."
+    },
+    "2": {
+      "name": "Barriga Sã, Corpo São",
+      "desc": "Estende a duração de Queimadura causada pela Perícia em {{1}} rodada(s)."
+    },
+    "3": {
+      "name": "Não Seja Implicante, Nada É Deselegante",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Tudo Bem Não Saber",
+      "desc": "Quando o Talento é ativado, há uma chance-base de {{1}}% de infligir Queimadura equivalente à da Perícia aos inimigos adjacentes ao inimigo-alvo."
+    },
+    "5": {
+      "name": "Conheçam os Feitos das Toupeiras",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Sempre a Postos Para Atacar",
+      "desc": "Hook causa {{1}}% a mais de Dano a inimigos atingidos por Queimadura."
     }
   }
 }

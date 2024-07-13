@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Infusión de meridianos: Gotas de ambrosía",
+      "desc": "Cuando termina el efecto de Vigor, si el aliado objetivo tiene todos sus PV, recupera {{1}} pts. de energía adicionales."
+    },
+    "2": {
+      "name": "Tetera del dragón durmiente",
+      "desc": "Tras usar la habilidad definitiva, la curación realizada por Bailu aumenta en un {{1}}% durante {{2}} turnos."
+    },
+    "3": {
+      "name": "Portento enigmático",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Amenaza exorcizada",
+      "desc": "Cada curación proporcionada por la habilidad básica de Bailu aumenta el daño que inflige el receptor de la curación en un {{1}}%. Se puede acumular hasta {{2}} veces y dura {{3}} turnos."
+    },
+    "5": {
+      "name": "Eliminación de preocupaciones terrenales",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Gota de divinidad dracónica",
+      "desc": "La cantidad de veces que Bailu puede curar durante una batalla a aliados que hayan recibido un golpe letal aumenta en {{1}}."
+    }
   }
 }

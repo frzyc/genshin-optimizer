@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Resonanz mit dem Erdkern",
+      "desc": "Der Standardangriff verursacht zusätzlich Feuer-SCH in Höhe von {{1}}% von der VTD {M#des Trailblazers}{F#der Trailblazerin}. Der verstärkte Standardangriff verursacht zusätzlich Feuer-SCH in Höhe von {{2}}% von der VTD {M#des Trailblazers}{F#der Trailblazerin}."
+    },
+    "2": {
+      "name": "Beharrlichkeit des alten kalten Eisens",
+      "desc": "Der Schild, den alle Verbündeten erhalten, wenn das Talent ausgelöst wird, kann zusätzlich SCH in Höhe von {{1}}% von der VTD {M#des Trailblazers}{F#der Trailblazerin} plus {{2}} blockieren."
+    },
+    "3": {
+      "name": "Entwürfe für die Zukunft",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Schwur der verweilenden Zivilisation",
+      "desc": "Erhält beim Kampfeintritt unmittelbar {{1}}-fach „Magma-Wille“."
+    },
+    "5": {
+      "name": "Mut, die Flamme zu entzünden",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Wallanlagen der Emporragenden Zitadelle",
+      "desc": "Erhöht nach dem Einsatz des verstärkten Standardangriffs oder Ultimates die VTD {M#des Trailblazers}{F#der Trailblazerin} um {{1}}%. Dieser Effekt ist bis zu {{2}}-fach stapelbar."
+    }
   }
 }

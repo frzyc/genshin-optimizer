@@ -17,14 +17,14 @@
       "0": {
         "name": "Hellscape",
         "fullDesc": "Mengonsumsi HP sebesar {{1}}% Max HP Blade dan memasuki status \"Hellscape\".\\nSaat berstatus \"Hellscape\", Blade tidak dapat melancarkan Skill dan DMG yang diakibatkannya akan meningkat <orangeStrong>{{4}}%</orangeStrong>. Basic Attack \"Shard Sword\" akan meningkat menjadi \"Forest of Swords\" selama {{2}} giliran.\\nJika HP-nya tidak mencukupi, saat melancarkan Skill, HP Blade akan berkurang hingga 1.\\nSkill ini tidak dapat memulihkan Energy. Setelah melancarkan Skill ini, giliran saat ini tidak akan berakhir.",
-        "shortDesc": "Mengonsumsi HP diri, <color=#f29e38ff>memperoleh penguatan Basic Attack</color>, dan giliran kali ini tidak akan berakhir."
+        "shortDesc": "Mengonsumsi HP diri, <orangeStrong>memperoleh penguatan Basic Attack</orangeStrong>, dan giliran kali ini tidak akan berakhir."
       }
     },
     "ult": {
       "0": {
         "name": "Death Sentence",
-        "fullDesc": "Mengubah HP Blade saat ini menjadi <unbreak>50%</unbreak> dari Max HP-nya, serta mengakibatkan Wind DMG pada 1 musuh sebesar <orangeStrong>{{1}}%</orangeStrong> ATK + <orangeStrong>{{2}}%</orangeStrong> Max HP + <orangeStrong>{{5}}%</orangeStrong> perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini. Di saat yang bersamaan juga akan mengakibatkan Wind DMG pada target di sekitarnya sebesar <orangeStrong>{{3}}%</orangeStrong> ATK + <orangeStrong>{{4}}%</orangeStrong> Max HP + <orangeStrong>{{6}}%</orangeStrong> perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini.\\nPerhitungan jumlah akumulasi HP Blade yang berkurang di pertempuran saat ini maksimal tidak dapat melebihi {{7}}% Max HP Blade. Setelah melancarkan Ultimate, perhitungan jumlah akumulasi akan direset ulang dan diakumulasi kembali.",
-        "shortDesc": "Mengonversi HP saat ini menjadi <unbreak>50%</unbreak> Max HP, dan mengakibatkan Wind DMG dalam jumlah besar pada 1 musuh, serta Wind DMG pada target di sekitarnya."
+        "fullDesc": "Mengubah HP Blade saat ini menjadi 50% dari Max HP-nya, serta mengakibatkan Wind DMG pada 1 musuh sebesar <orangeStrong>{{1}}%</orangeStrong> ATK + <orangeStrong>{{2}}%</orangeStrong> Max HP + <orangeStrong>{{5}}%</orangeStrong> perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini. Di saat yang bersamaan juga akan mengakibatkan Wind DMG pada target di sekitarnya sebesar <orangeStrong>{{3}}%</orangeStrong> ATK + <orangeStrong>{{4}}%</orangeStrong> Max HP + <orangeStrong>{{6}}%</orangeStrong> perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini.\\nPerhitungan jumlah akumulasi HP Blade yang berkurang di pertempuran saat ini maksimal tidak dapat melebihi {{7}}% Max HP Blade. Setelah melancarkan Ultimate, perhitungan jumlah akumulasi akan direset ulang dan diakumulasi kembali.",
+        "shortDesc": "Mengonversi HP saat ini menjadi 50% Max HP, dan mengakibatkan Wind DMG dalam jumlah besar pada 1 musuh, serta Wind DMG pada target di sekitarnya."
       }
     },
     "technique": {
@@ -40,6 +40,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Blade Cuts the Deepest in Hell",
+      "desc": "Ultimate DMG yang diakibatkan pada musuh yang ditarget akan meningkat lagi sebanyak {{1}}% perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini.\\nPerhitungan jumlah akumulasi HP Blade yang berkurang di pertempuran saat ini maksimal tidak dapat melebihi {{2}}% Max HP Blade. Setelah melancarkan Ultimate, perhitungan jumlah akumulasi akan direset ulang dan diakumulasi kembali."
+    },
+    "2": {
+      "name": "Ten Thousand Sorrows From One Broken Dream",
+      "desc": "Saat Blade memasuki status \"Hellscape\", CRIT Rate dia meningkat {{1}}%."
+    },
+    "3": {
+      "name": "Hardened Blade Bleeds Coldest Shade",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Rejected by Death, Infected With Life",
+      "desc": "Saat persentase HP Blade saat ini turun dari 50% ke atas menjadi kurang dari atau sama dengan 50% Max HP dirinya, Max HP Blade akan meningkat {{1}}%. Efek ini dapat ditumpuk hingga {{2}} lapis."
+    },
+    "5": {
+      "name": "Death By Ten Lords' Gaze",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Reborn Into an Empty Husk",
+      "desc": "Jumlah maksimum lapisan Charge berkurang menjadi 4 lapis. DMG dari Serangan Lanjutan yang dipicu Talent meningkat sebesar {{1}}% Max HP Blade."
     }
   }
 }

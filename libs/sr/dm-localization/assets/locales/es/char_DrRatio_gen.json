@@ -19,14 +19,14 @@
       "0": {
         "name": "Paradoja silogística",
         "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ del Dr. Ratio como Daño Imaginario a un enemigo y le aplica Locura de los sabios. Cuando un aliado del Dr. Ratio ataca a un objetivo afectado por Locura de los sabios, el Dr. Ratio lanza el <u>ataque adicional</u> del talento contra dicho objetivo.\\nLocura de los sabios se puede activar hasta {{2}} veces y solo afecta al último objetivo afectado por la habilidad definitiva del Dr. Ratio. Tras usar la habilidad definitiva, se reinicia el contador de activaciones.",
-        "shortDesc": "Inflige Daño Imaginario a un enemigo y le aplica Locura de los sabios. Cuando un aliado del Dr. Ratio ataca a un objetivo afectado por Locura de los sabios, el Dr. Ratio lanza un <color=#f29e38ff><u>ataque adicional</u></color> contra dicho objetivo."
+        "shortDesc": "Inflige Daño Imaginario a un enemigo y le aplica Locura de los sabios. Cuando un aliado del Dr. Ratio ataca a un objetivo afectado por Locura de los sabios, el Dr. Ratio lanza un <orangeStrong><u>ataque adicional</u></orangeStrong> contra dicho objetivo."
       }
     },
     "technique": {
       "0": {
         "name": "Molde de la idolatría",
         "fullDesc": "Tras usar la técnica, crea una zona especial que afecta con Provocación a los enemigos cercanos durante {{1}} s. Al entrar en combate con los enemigos dentro de la zona especial, hay una <u>probabilidad base</u> del {{2}}% de que la VEL de cada enemigo se reduzca en un {{3}}% durante {{4}} turnos. Solo puedes tener una zona especial creada por los aliados a la vez.",
-        "shortDesc": "Crea una zona especial. Los enemigos que se encuentren dentro de la zona son afectados por Provocación. Al entrar en combate con los enemigos de la zona, hay una gran probabilidad de que <color=#f29e38ff>la velocidad del objetivo enemigo se reduzca</color>."
+        "shortDesc": "Crea una zona especial. Los enemigos que se encuentren dentro de la zona son afectados por Provocación. Al entrar en combate con los enemigos de la zona, hay una gran probabilidad de que <orangeStrong>la velocidad del objetivo enemigo se reduzca</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "La calamidad de la arrogancia",
+      "desc": "El límite de acumulaciones del Rastro Inducción aumenta en {{1}}. Al comenzar el combate, obtienes de inmediato {{2}} acumulaciones de Inducción. Es necesario haber desbloqueado antes el Rastro Inducción."
+    },
+    "2": {
+      "name": "En los detalles está lo divino",
+      "desc": "Cuando el ataque adicional de su talento golpea a un enemigo, el Dr. Ratio inflige un {{1}}% de su ATQ como Daño Imaginario adicional por cada estado negativo que tenga el objetivo. Este efecto se puede activar un máximo de {{2}} veces cada vez que use su ataque adicional."
+    },
+    "3": {
+      "name": "Conócete a ti mismo",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "La ignorancia es atrevida",
+      "desc": "Cuando se activa su talento, el Dr. Ratio recupera {{1}} pts. de energía adicionales."
+    },
+    "5": {
+      "name": "A la deriva en la inmensidad",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "La verdad eterna",
+      "desc": "Locura de los sabios se puede activar {{1}} vez más. El daño que inflige el ataque adicional del talento aumenta en un {{2}}%."
     }
   }
 }

@@ -24,7 +24,7 @@
       "0": {
         "name": "Boom ! Ça prend feu !",
         "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Hook à un ennemi unique.\\nAprès utilisation de l'ultime, la prochaine compétence utilisée est renforcée, infligeant des DGT à la cible ennemie et aux ennemis adjacents.",
-        "shortDesc": "Inflige des DGT de feu massifs à un ennemi unique et <color=#f29e38ff>renforce la compétence lors de sa prochaine utilisation</color>."
+        "shortDesc": "Inflige des DGT de feu massifs à un ennemi unique et <orangeStrong>renforce la compétence lors de sa prochaine utilisation</orangeStrong>."
       }
     },
     "technique": {
@@ -40,6 +40,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Couche-tôt, lève-tôt",
+      "desc": "Les DGT de la compétence renforcée augmentent de {{1}}%."
+    },
+    "2": {
+      "name": "Quand l'appétit va, tout va",
+      "desc": "Prolonge la durée de l'effet Brûlure infligé par la compétence d'{{1}} tour."
+    },
+    "3": {
+      "name": "Pas la peine de faire la fine bouche",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "C'est normal de ne pas savoir",
+      "desc": "Lorsque le talent se déclenche, il y a {{1}}% de chances de base d'infliger une Brûlure équivalente à celle de la compétence aux ennemis adjacents à la cible."
+    },
+    "5": {
+      "name": "Gloire aux Taupes",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Toujours prête à en découdre",
+      "desc": "Les DGT de Hook augmentent de {{1}}% sur les ennemis affectés par l'état Brûlure."
     }
   }
 }

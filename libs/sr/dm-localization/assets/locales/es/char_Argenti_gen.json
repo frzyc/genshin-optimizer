@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "La falla del reino de la estética",
+      "desc": "Cada acumulación de Elevación aumenta el Daño CRIT en un {{1}}% de forma adicional."
+    },
+    "2": {
+      "name": "Humildad del ágata",
+      "desc": "Al usar la habilidad definitiva, si el número de enemigos es igual o superior a {{1}}, el ATQ aumenta en un {{2}}% durante {{3}} turno."
+    },
+    "3": {
+      "name": "Gloria del camino de espinas",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15).\\nNiv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Consagración de la corneta",
+      "desc": "Argenti obtiene {{1}} acumulaciones de Elevación al comienzo de la batalla y el límite de acumulaciones del efecto de su talento aumenta en {{2}}."
+    },
+    "5": {
+      "name": "Nieve en algún lugar del universo",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15).\\nNiv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "\"Tu\" resplandor",
+      "desc": "Al usar la habilidad definitiva, se ignora un {{1}}% de la DEF del objetivo."
+    }
   }
 }

@@ -12,14 +12,14 @@
       "0": {
         "name": "{RUBY_B#しおづ}塩漬{RUBY_E#}け{RUBY_B#やえいかんづめ}野営缶詰{RUBY_E#}",
         "fullDesc": "指定した味方単体に「サバイバル反応」を付与し、最大HPをリンクスの最大HP<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>分アップさせる。その味方が「壊滅」または「存護」の運命にある場合、敵に攻撃される確率が大幅アップ。「サバイバル反応」は{{3}}ターン継続。\\n「サバイバル反応」を付与された味方は、HPをリンクスの最大HP<orangeStrong>{{4}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>回復する。",
-        "shortDesc": "味方単体に「サバイバル反応」を与え、<color=#f29e38ff>最大HPをアップ</color>し、HPを回復する。"
+        "shortDesc": "味方単体に「サバイバル反応」を与え、<orangeStrong>最大HPをアップ</orangeStrong>し、HPを回復する。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#せつげんきゅうきゅうしょち}雪原救急処置{RUBY_E#}",
         "fullDesc": "味方全体の<u>デバフ</u>を{{1}}つ解除し、味方全体のHPをリンクスの最大HP<orangeStrong>{{2}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>回復する。",
-        "shortDesc": "<color=#f29e38ff>味方全体の<u>デバフ</u>を1つ解除し</color>、味方全体のHPを回復する。"
+        "shortDesc": "<orangeStrong>味方全体の<u>デバフ</u>を1つ解除し</orangeStrong>、味方全体のHPを回復する。"
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#つえ}杖{RUBY_E#}を{RUBY_B#て}手{RUBY_E#}に{RUBY_B#ゆきみち}雪道{RUBY_E#}を{RUBY_B#い}行{RUBY_E#}く{RUBY_B#そうちょう}早朝{RUBY_E#}",
+      "desc": "残りHPが{{1}}%以下の味方に治癒を行う時、リンクスの治癒量+{{2}}%。この効果は持続治癒効果にも有効。"
+    },
+    "2": {
+      "name": "ストーブの{RUBY_B#そば}傍{RUBY_E#}で{RUBY_B#す}過{RUBY_E#}ごす{RUBY_B#しょうご}正午{RUBY_E#}",
+      "desc": "「サバイバル反応」を持つターゲットはデバフを付与された時、それを{{1}}回抵抗できる。"
+    },
+    "3": {
+      "name": "{RUBY_B#なだれ}雪崩{RUBY_E#}ビーコンの{RUBY_B#な}鳴{RUBY_E#}る{RUBY_B#ごご}午後{RUBY_E#}",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
+    },
+    "4": {
+      "name": "{RUBY_B#やがい}野外{RUBY_E#}で{RUBY_B#かがりび}篝火{RUBY_E#}を{RUBY_B#た}焚{RUBY_E#}く{RUBY_B#ゆうぐ}夕暮{RUBY_E#}れ",
+      "desc": "「サバイバル反応」を獲得した時、ターゲットの攻撃力がリンクスの最大HPの{{1}}%分アップする。{{2}}ターン継続。"
+    },
+    "5": {
+      "name": "{RUBY_B#こうちゃ}紅茶{RUBY_E#}とオーロラを{RUBY_B#たの}楽{RUBY_E#}しむ{RUBY_B#よる}夜{RUBY_E#}",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#せいずちゅう}製図中{RUBY_E#}に{RUBY_B#むか}迎{RUBY_E#}える{RUBY_B#よあ}夜明{RUBY_E#}け",
+      "desc": "「サバイバル反応」の最大HPアップ効果が、さらにリンクスの最大HPの{{1}}%分アップする。「サバイバル反応」を持つ味方の効果抵抗+{{2}}%。"
     }
   }
 }

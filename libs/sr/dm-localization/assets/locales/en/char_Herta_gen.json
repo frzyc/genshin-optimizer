@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Kick You When You're Down",
+      "desc": "If the enemy's HP percentage is at {{1}}% or less, Herta's Basic ATK deals Additional Ice DMG equal to {{2}}% of Herta's ATK."
+    },
+    "2": {
+      "name": "Keep the Ball Rolling",
+      "desc": "Every time Talent is triggered, this character's CRIT Rate increases by {{1}}%. This effect can stack up to {{2}} time(s)."
+    },
+    "3": {
+      "name": "That's the Kind of Girl I Am",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Hit Where It Hurts",
+      "desc": "When Talent is triggered, DMG increases by {{1}}%."
+    },
+    "5": {
+      "name": "Cuss Big or Cuss Nothing",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "No One Can Betray Me",
+      "desc": "After using Ultimate, this character's ATK increases by {{1}}% for {{2}} turn(s)."
+    }
   }
 }

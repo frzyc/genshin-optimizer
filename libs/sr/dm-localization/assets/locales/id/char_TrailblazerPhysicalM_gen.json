@@ -46,5 +46,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "A Falling Star",
+      "desc": "Memulihkan {{1}} Energy tambahan pada Trailblazer saat mengalahkan musuh dengan cara melancarkan Ultimate. Efek ini hanya dapat terpicu 1 kali dalam setiap serangan."
+    },
+    "2": {
+      "name": "An Unwilling Host",
+      "desc": "Menyerang musuh dengan Physical Weakness akan memulihkan HP Trailblazer sebesar {{1}}% ATK Trailblazer."
+    },
+    "3": {
+      "name": "A Leading Whisper",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "A Destructing Glance",
+      "desc": "Meningkatkan {{1}}% CRIT Rate saat menyerang Weakness musuh dengan status Weakness Break."
+    },
+    "5": {
+      "name": "A Surviving Hope",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "A Trailblazing Will",
+      "desc": "Talent juga akan terpicu saat Trailblazer mengalahkan target musuh."
+    }
   }
 }

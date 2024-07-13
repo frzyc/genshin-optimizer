@@ -17,7 +17,7 @@
       "0": {
         "name": "Última ficha posible",
         "fullDesc": "Roba {{1}} fichas de jade e inflige un <orangeStrong>{{2}}%</orangeStrong> más de daño hasta que termine el turno. Este efecto se puede acumular hasta {{3}} veces. Tras usar esta habilidad básica, el turno no termina.",
-        "shortDesc": "<color=#f29e38ff>Roba</color>, aumenta el daño infligido y <color=#f29e38ff>el turno no termina</color>."
+        "shortDesc": "<orangeStrong>Roba</orangeStrong>, aumenta el daño infligido y <orangeStrong>el turno no termina</orangeStrong>."
       }
     },
     "ult": {
@@ -40,6 +40,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Peón coronado, premio obtenido",
+      "desc": "El daño que inflige la habilidad definitiva de Qingque aumenta en un {{1}}%."
+    },
+    "2": {
+      "name": "Hora de la siesta en las fichas",
+      "desc": "Cada vez que Qingque roba fichas, recupera inmediatamente {{1}} pt. de energía."
+    },
+    "3": {
+      "name": "Confiar en la suerte",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Combo oportuno, la última ficha espera",
+      "desc": "Tras usar su habilidad básica, Qingque tiene un {{1}}% de probabilidad fija de obtener Autosuficiencia hasta que termine el turno.\\nEn el estado de Autosuficiencia, al usar el ATQ básico o el ATQ básico potenciado, se lanza inmediatamente un ataque adicional que inflige al mismo objetivo u objetivos un Daño Cuántico equivalente al 100% del daño del ATQ básico o del ATQ básico potenciado."
+    },
+    "5": {
+      "name": "Fichas sacadas, suerte acabada",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Calma y serena, lista para ganar",
+      "desc": "Tras utilizar el ATQ básico potenciado, recupera 1 pt. de habilidad básica."
     }
   }
 }

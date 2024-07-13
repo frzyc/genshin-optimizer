@@ -46,7 +46,7 @@
       "0": {
         "name": "Chemin de la réalisation",
         "fullDesc": "Engage immédiatement le combat contre les ennemis et gagne Chemin de la réalisation au début de chaque vague. Inflige des DGT de foudre équivalents à {{1}}% de l'ATQ d'Achéron à tous les ennemis, et réduit leur robustesse quels que soient leurs types de faiblesse. En cas de Rupture de faiblesse, déclenche l'effet de Rupture de faiblesse de foudre.\\n\\nChemin de la réalisation : après avoir utilisé son ultime, Achéron gagne {{2}} point de Rêve flétri et applique {{2}} cumul d'Étreinte écarlate à un ennemi unique aléatoire.\\nEn cas d'attaque sur un ennemi normal, il est immédiatement éliminé sans entrer en combat. Le point de technique n'est pas dépensé si aucun ennemi n'est touché.",
-        "shortDesc": "Engage le combat contre les ennemis et gagne Chemin de la réalisation au début de chaque vague. Inflige des DGT de foudre à tous les ennemis et réduit leur robustesse <color=#f29e38ff>quels que soient leurs types de faiblesse</color>.\\nEn cas d'attaque sur un ennemi normal, <color=#f29e38ff>il est immédiatement éliminé</color> sans entrer en combat. Le point de technique n'est pas dépensé si aucun ennemi n'est touché."
+        "shortDesc": "Engage le combat contre les ennemis et gagne Chemin de la réalisation au début de chaque vague. Inflige des DGT de foudre à tous les ennemis et réduit leur robustesse <orangeStrong>quels que soient leurs types de faiblesse</orangeStrong>.\\nEn cas d'attaque sur un ennemi normal, <orangeStrong>il est immédiatement éliminé</orangeStrong> sans entrer en combat. Le point de technique n'est pas dépensé si aucun ennemi n'est touché."
       }
     },
     "overworld": {
@@ -55,6 +55,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Révélation des sommets silencieux",
+      "desc": "Augmente de {{1}}% les chances de coup critique lorsque le personnage inflige des DGT aux ennemis qui subissent des malus. Lorsque Rêve flétri atteint la limite, chaque point de Rêve flétri au-dessus de la limite accorde un cumul de Chemin de la réalisation, cumulable jusqu'à {{2}} fois."
+    },
+    "2": {
+      "name": "Calme après la tempête",
+      "desc": "Réduit de 1 le nombre de personnages devant suivre la Voie de la Nihilité pour obtenir la valeur la plus élévée de la Trace Abîme. Achéron gagne 1 point de Rêve flétri au début de son tour et applique 1 cumul d'Étreinte écarlate à l'ennemi qui a le plus de cumuls d'Étreinte écarlate."
+    },
+    "3": {
+      "name": "Morsure du froid éternel",
+      "desc": "Niv. de l'ultime +2, jusqu'au niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au niv. 10 maximum."
+    },
+    "4": {
+      "name": "Feu sacré de l'âme reflétée",
+      "desc": "Lorsque des cibles ennemies entrent en combat, leur applique une vulnérabilité aux DGT d'ultime, ce qui augmente de {{1}}% le montant des DGT d'ultime subis."
+    },
+    "5": {
+      "name": "Âmes dispersées sur des terres effacées",
+      "desc": "Niv. de la compétence +2, jusqu'au niv. 15 maximum.\\nNiv. du talent +2, jusqu'au niv. 15 maximum."
+    },
+    "6": {
+      "name": "Catalysatrice de l'apocalypse",
+      "desc": "Augmente de {{1}}% la PÉN de RÉS à tous les types des DGT d'ultime infligés par Achéron. Les DGT infligés par l'ATQ normale et la compétence sont également considérés comme des DGT d'ultime et peuvent réduire la robustesse de l'ennemi, quels que soient ses types de faiblesse. En cas de Rupture de faiblesse, c'est l'effet de Rupture de faiblesse de foudre qui est déclenché."
     }
   }
 }

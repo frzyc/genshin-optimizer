@@ -12,14 +12,14 @@
       "0": {
         "name": "Salted Camping Cans",
         "fullDesc": "Memberikan \"Survival Response\" pada 1 rekan tim yang ditargetkan dan meningkatkan Max HP-nya sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{2}}</orangeStrong>. Jika rekan tersebut adalah karakter dengan Path \"Destruction\" atau \"Preservation\", maka peluang rekan tersebut untuk diserang musuh akan meningkat pesat. \"Survival Response\" berlangsung selama {{3}} giliran.\\nMemulihkan HP rekan tersebut sebesar <orangeStrong>{{4}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{5}}</orangeStrong>.",
-        "shortDesc": "Memberikan \"Survival Response\" pada 1 rekan tim, <color=#f29e38ff>meningkatkan Max HP-nya</color>, dan di saat yang bersamaan juga memulihkan HP-nya."
+        "shortDesc": "Memberikan \"Survival Response\" pada 1 rekan tim, <orangeStrong>meningkatkan Max HP-nya</orangeStrong>, dan di saat yang bersamaan juga memulihkan HP-nya."
       }
     },
     "ult": {
       "0": {
         "name": "Snowfield First Aid",
         "fullDesc": "Menghapus masing-masing {{1}} efek <u>Debuff</u> dari seluruh rekan tim, serta segera memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{2}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{3}}</orangeStrong>.",
-        "shortDesc": "Menghapus masing-masing <color=#f29e38ff>1 efek <u>Debuff</u> dari seluruh rekan tim</color>, serta memulihkan HP seluruh rekan tim."
+        "shortDesc": "Menghapus masing-masing <orangeStrong>1 efek <u>Debuff</u> dari seluruh rekan tim</orangeStrong>, serta memulihkan HP seluruh rekan tim."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Morning of Snow Hike",
+      "desc": "Saat memberi pemulihan pada rekan tim dengan persentase HP kurang dari atau sama dengan {{1}}%, Outgoing Healing Lynx akan meningkat {{2}}%. Efek ini juga berlaku untuk pemulihan berkelanjutan."
+    },
+    "2": {
+      "name": "Noon of Portable Furnace",
+      "desc": "Target yang memiliki \"Survival Response\" dapat menahan {{1}} kali efek Debuff yang dilancarkan padanya."
+    },
+    "3": {
+      "name": "Afternoon of Avalanche Beacon",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Dusk of Warm Campfire",
+      "desc": "Saat target mendapatkan \"Survival Response\", ATK target tersebut akan meningkat sebesar {{1}}% Max HP Lynx selama {{2}} giliran."
+    },
+    "5": {
+      "name": "Night of Aurora Tea",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Dawn of Explorers' Chart",
+      "desc": "Peningkatan Max HP dari \"Survival Response\" akan meningkat lagi sebesar {{1}}% Max HP Lynx, serta meningkatkan Effect RES sebesar {{2}}%."
     }
   }
 }

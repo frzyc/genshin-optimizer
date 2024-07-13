@@ -12,21 +12,21 @@
       "0": {
         "name": "Zénith tonitruant",
         "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Jing Yuan à tous les ennemis et augmente le nombre de frappes par action du Seigneur de la foudre de {{2}} pour le tour suivant.",
-        "shortDesc": "Inflige des DGT de foudre mineurs à tous les ennemis et <color=#f29e38ff>augmente le nombre de frappes par action du Seigneur de la foudre</color>."
+        "shortDesc": "Inflige des DGT de foudre mineurs à tous les ennemis et <orangeStrong>augmente le nombre de frappes par action du Seigneur de la foudre</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Porteur de lumière",
         "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Jing Yuan à tous les ennemis et augmente le nombre de frappes par action du Seigneur de la foudre de {{2}} pour le tour suivant.",
-        "shortDesc": "Inflige des DGT de foudre à tous les ennemis et <color=#f29e38ff>augmente le nombre de frappes par action du Seigneur de la foudre</color>."
+        "shortDesc": "Inflige des DGT de foudre à tous les ennemis et <orangeStrong>augmente le nombre de frappes par action du Seigneur de la foudre</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Invocation d'esprit",
         "fullDesc": "Le nombre de frappes par action du Seigneur de la foudre augmente de {{1}} au début du combat suivant après utilisation de la technique.",
-        "shortDesc": "<color=#f29e38ff>Augmente le nombre de frappes par action du Seigneur de la foudre</color> lors du combat suivant après avoir utilisé la technique."
+        "shortDesc": "<orangeStrong>Augmente le nombre de frappes par action du Seigneur de la foudre</orangeStrong> lors du combat suivant après avoir utilisé la technique."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Entaille clivante",
+      "desc": "Lorsque le Seigneur de la foudre attaque, le multiplicateur de DGT sur les ennemis adjacents à la cible ennemie augmente d'un montant supplémentaire équivalent à {{1}}% du multiplicateur de DGT de la cible principale."
+    },
+    "2": {
+      "name": "Écrasement céleste",
+      "desc": "Après que le Seigneur de la foudre a agi, les DGT infligés par l'ATQ normale, la compétence et l'ultime de Jing Yuan augmentent de {{1}}% pendant {{2}} tours."
+    },
+    "3": {
+      "name": "Soumission solaire",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Siège des étoiles",
+      "desc": "Pour chaque frappe du Seigneur de la foudre lorsqu'il agit, Jing Yuan régénère {{1}} points d'énergie."
+    },
+    "5": {
+      "name": "Trésors de guerre",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Moisson des âmes perdues",
+      "desc": "Chaque frappe du Seigneur de la foudre lors de son action rend la cible ennemie vulnérable.\\nLes ennemis vulnérables subissent {{1}}% de DGT supplémentaires jusqu'à la fin du tour actuel du Seigneur de la foudre. Cumulable jusqu'à {{2}} fois."
     }
   }
 }

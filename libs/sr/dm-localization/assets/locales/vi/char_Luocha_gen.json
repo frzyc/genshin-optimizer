@@ -12,14 +12,14 @@
       "0": {
         "name": "Lời Cầu Nguyện Của Hoa Trắng",
         "fullDesc": "Sau khi dùng Chiến Kỹ sẽ lập tức giúp mục tiêu chỉ định phe ta hồi HP bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Luocha + <orangeStrong>{{2}}</orangeStrong>, đồng thời khiến Luocha nhận 1 tầng Khoảnh Khắc Hoa Trắng.\\nKhi Phần Trăm HP hiện tại của đồng đội bất kỳ thấp hơn hoặc bằng {{3}}%, Luocha sẽ kích hoạt ngay 1 lần hiệu ứng giống với Chiến Kỹ lên mục tiêu đó, không tiêu hao điểm Chiến Kỹ, hiệu ứng này có thể kích hoạt lần nữa sau {{4}} hiệp.",
-        "shortDesc": "Giúp 1 đồng đội <color=#f29e38ff>hồi</color> HP, nhận 1 tầng \"Khoảnh Khắc Hoa Trắng\"."
+        "shortDesc": "Giúp 1 đồng đội <orangeStrong>hồi</orangeStrong> HP, nhận 1 tầng \"Khoảnh Khắc Hoa Trắng\"."
       }
     },
     "ult": {
       "0": {
         "name": "Di Nguyện Chôn Cất",
         "fullDesc": "Xóa {{2}} <u>hiệu ứng buff</u> của toàn bộ phe địch, và gây cho chúng Sát Thương Số Ảo tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Luocha, đồng thời khiến Luocha nhận 1 tầng Khoảnh Khắc Hoa Trắng.",
-        "shortDesc": "<color=#f29e38ff>Giải trừ</color> 1 <color=#f29e38ff><u>hiệu ứng buff</u></color> của toàn bộ phe địch, và gây Sát Thương Số Ảo cho chúng, nhận 1 tầng Khoảnh Khắc Hoa Trắng."
+        "shortDesc": "<orangeStrong>Giải trừ</orangeStrong> 1 <orangeStrong><u>hiệu ứng buff</u></orangeStrong> của toàn bộ phe địch, và gây Sát Thương Số Ảo cho chúng, nhận 1 tầng Khoảnh Khắc Hoa Trắng."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Người Sống Rửa Tội",
+      "desc": "Khi kết giới có hiệu lực, tấn công của toàn bộ phe ta tăng {{1}}%."
+    },
+    "2": {
+      "name": "Tịnh Đình Tặng Lễ",
+      "desc": "Khi kích hoạt hiệu ứng Chiến Kỹ, nếu phần trăm HP hiện tại của mục tiêu chỉ định của phe ta dưới 50%, thì lượng trị liệu mà Luocha cung cấp sẽ tăng {{1}}%; nếu phần trăm HP hiện tại của mục tiêu chỉ định của phe ta từ 50% trở lên, sẽ cung cấp cho mục tiêu đó một tấm Khiên có thể triệt tiêu sát thương bằng {{2}}% Tấn Công của Luocha +{{3}}, duy trì {{4}} hiệp."
+    },
+    "3": {
+      "name": "Kẻ Ngốc Dò Thám",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Mũ Gai Xét Xử",
+      "desc": "Khi Kết Giới có hiệu lực sẽ khiến kẻ địch rơi vào trạng thái Suy Yếu, sát thương gây ra giảm {{1}}%."
+    },
+    "5": {
+      "name": "Dấu Vết Gặp Nạn",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Trở Về Cát Bụi",
+      "desc": "Khi thi triển Tuyệt Kỹ, có {{1}}% xác suất cố định khiến Kháng Toàn Thuộc Tính của toàn bộ địch giảm {{2}}%, duy trì {{3}} hiệp."
     }
   }
 }

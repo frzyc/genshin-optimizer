@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Eau d'ambroisie",
+      "desc": "Si les PV de la cible alliée sont au maximum lorsque Revigoration prend fin, elle régénère en plus {{1}} points d'énergie."
+    },
+    "2": {
+      "name": "Repos sylphique",
+      "desc": "Après utilisation de son ultime, les soins prodigués par Bailu augmentent de {{1}}% supplémentaires pendant {{2}} tours."
+    },
+    "3": {
+      "name": "Opulence omnisciente",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Suppression du mal",
+      "desc": "Les soins prodigués par la compétence augmentent les DGT infligés par le bénéficiaire de {{1}}% pendant {{3}} tours. Cet effet peut être cumulé jusqu'à {{2}} fois."
+    },
+    "5": {
+      "name": "Inquiétudes oubliées",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Mucus de divinité draconique",
+      "desc": "Bailu peut soigner des alliés ayant reçu un coup fatal {{1}} fois de plus par combat."
+    }
   }
 }

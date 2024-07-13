@@ -12,21 +12,21 @@
       "0": {
         "name": "Caressing Moonlight",
         "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Kafka's ATK to a target enemy and Lightning DMG equal to <orangeStrong>{{3}}%</orangeStrong> of Kafka's ATK to enemies adjacent to it.\\nIf the target enemy is currently receiving DoT, all DoTs currently placed on that enemy immediately produce DMG equal to <orangeStrong>{{2}}%</orangeStrong> of their original DMG.",
-        "shortDesc": "Deals Lightning DMG to a single enemy and minor Lightning DMG to adjacent targets.\\nIf the main target is currently afflicted with a DoT effect, the DoT <color=#f29e38ff>deals DMG 1 extra time</color>."
+        "shortDesc": "Deals Lightning DMG to a single enemy and minor Lightning DMG to adjacent targets.\\nIf the main target is currently afflicted with a DoT effect, the DoT <orangeStrong>deals DMG 1 extra time</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Twilight Trill",
         "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Kafka's ATK to all enemies, with a {{2}}% <u>base chance</u> for enemies hit to become Shocked and immediately take DMG from their current Shock state, equal to <orangeStrong>{{5}}%</orangeStrong> of its original DMG. Shock lasts for {{3}} turn(s).\\nWhile Shocked, enemies receive Lightning DoT equal to <orangeStrong>{{4}}%</orangeStrong> of Kafka's ATK at the beginning of each turn.",
-        "shortDesc": "Deals minor Lightning DMG to all enemies, with a high chance of <color=#f29e38ff>Shocking them</color>.\\nIf the enemies are currently Shocked, the Shock status <color=#f29e38ff>deals DMG 1 extra time</color>."
+        "shortDesc": "Deals minor Lightning DMG to all enemies, with a high chance of <orangeStrong>Shocking them</orangeStrong>.\\nIf the enemies are currently Shocked, the Shock status <orangeStrong>deals DMG 1 extra time</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Mercy Is Not Forgiveness",
         "fullDesc": "Immediately attacks all enemies within a set range. After entering battle, deals Lightning DMG equal to {{3}}% of Kafka's ATK to all enemies, with a {{1}}% <u>base chance</u> to inflict Shock equivalent to that applied by her Ultimate on every enemy target for {{2}} turn(s).",
-        "shortDesc": "Attacks all enemies within range. After entering battle, deals minor Lightning DMG to all enemies, with a high chance to <color=#f29e38ff>Shock</color> them."
+        "shortDesc": "Attacks all enemies within range. After entering battle, deals minor Lightning DMG to all enemies, with a high chance to <orangeStrong>Shock</orangeStrong> them."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Da Capo",
+      "desc": "When the Talent triggers a follow-up attack, there is a {{1}}% base chance to increase the DoT received by the target by {{2}}% for {{3}} turn(s)."
+    },
+    "2": {
+      "name": "Fortississimo",
+      "desc": "While Kafka is on the field, DoT dealt by all allies increases by {{1}}%."
+    },
+    "3": {
+      "name": "Capriccio",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Recitativo",
+      "desc": "When an enemy target takes DMG from the Shock status inflicted by Kafka, Kafka additionally regenerates {{1}} Energy."
+    },
+    "5": {
+      "name": "Doloroso",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Leggiero",
+      "desc": "The Shock inflicted on the enemy target by the Ultimate, the Technique, or the Talent-triggered follow-up attack has a DMG multiplier increase of {{1}}% and lasts {{2}} turn(s) longer."
     }
   }
 }

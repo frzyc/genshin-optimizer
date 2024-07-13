@@ -12,21 +12,21 @@
       "0": {
         "name": "Filo del vacío",
         "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo e inflige daño 2 veces más. Cada golpe inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo al azar. Al acertar a un enemigo, hay una <u>probabilidad base</u> del <orangeStrong>{{2}}%</orangeStrong> de reducir la VEL del objetivo atacado en un {{3}}% durante {{4}} turnos.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo. Se dispara 3 veces y tiene una probabilidad de <color=#f29e38ff>causar Ralentización</color> al objetivo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo. Se dispara 3 veces y tiene una probabilidad de <orangeStrong>causar Ralentización</orangeStrong> al objetivo."
       }
     },
     "ult": {
       "0": {
         "name": "Agujero negro artificial",
         "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a todos los enemigos y tiene una <u>probabilidad base</u> del {{3}}% de afectar con Prisión a los enemigos atacados durante 1 turno.\\nLas acciones de los enemigos aprisionados se <u>retrasan</u> un <orangeStrong>{{2}}%</orangeStrong> y su VEL se reduce en un {{4}}%.",
-        "shortDesc": "Inflige Daño Imaginario a todos los enemigos y tiene una <color=#f29e38ff>gran probabilidad de aprisionarlos</color>."
+        "shortDesc": "Inflige Daño Imaginario a todos los enemigos y tiene una <orangeStrong>gran probabilidad de aprisionarlos</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Prisión gravitacional",
         "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. La VEL de movimiento de los enemigos que estén en la zona especial se reduce en un {{5}}%. Tras entrar en combate con enemigos en la zona especial, tiene una <u>probabilidad base</u> del {{1}}% de afectarlos con Prisión durante 1 turno.\\nLas acciones de los enemigos aprisionados se <u>retrasan</u> un {{2}}% y su VEL se reduce en un {{3}}%. Solo puede haber 1 zona especial creada por los aliados a la vez.",
-        "shortDesc": "Crea una zona especial. La VEL de movimiento de los enemigos que estén en la zona se reduce. Al entrar en combate contra los enemigos en la zona, tiene una <color=#f29e38ff>gran probabilidad de afectarlos con Prisión</color>."
+        "shortDesc": "Crea una zona especial. La VEL de movimiento de los enemigos que estén en la zona se reduce. Al entrar en combate contra los enemigos en la zona, tiene una <orangeStrong>gran probabilidad de afectarlos con Prisión</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Legado de honor",
+      "desc": "Tras usar su habilidad definitiva, Welt obtiene una potenciación: las {{3}} siguientes veces que ataque usando el ATQ básico o la habilidad básica, inflige daño adicional a los objetivos 1 vez. El daño adicional del ATQ básico es un {{1}}% del multiplicador de daño de su ATQ básico, y el daño adicional de la habilidad básica es un {{2}}% del multiplicador de daño de su habilidad básica."
+    },
+    "2": {
+      "name": "Fusión de estrellas",
+      "desc": "Cuando su talento se activa, Welt recupera {{1}} pts. de energía."
+    },
+    "3": {
+      "name": "Oración por la paz",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Apelación por la justicia",
+      "desc": "Al usar la habilidad básica, la probabilidad base de reducir la VEL del objetivo aumenta en un {{1}}%."
+    },
+    "5": {
+      "name": "El poder de la bondad",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Perspectivas luminosas",
+      "desc": "Al usar la habilidad básica, inflige daño a un enemigo al azar una vez más."
     }
   }
 }

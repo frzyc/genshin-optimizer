@@ -12,7 +12,7 @@
       "0": {
         "name": "Bát Lôi Phi Độ",
         "fullDesc": "Nhận {{3}} điểm Mộng Tàn. Gắn {{3}} tầng Nút Thắt Đỏ lên 1 kẻ địch chỉ định, gây Sát Thương Lôi lên kẻ này bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Acheron, đồng thời gây Sát Thương Lôi cho mục tiêu lân cận kẻ đó bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Acheron.",
-        "shortDesc": "Nhận <color=#f29e38ff><orangeStrong>{{3}}</orangeStrong> điểm Mộng Tàn</color>. Gắn <orangeStrong>{{3}}</orangeStrong> tầng Nút Thắt Đỏ cho 1 kẻ địch, gây Sát Thương Lôi lên kẻ này, và lượng nhỏ Sát Thương Lôi lên mục tiêu ở gần."
+        "shortDesc": "Nhận <orangeStrong><color=#f29e38ff>#3[i]</orangeStrong> điểm Mộng Tàn</color>. Gắn <orangeStrong>{{3}}</orangeStrong> tầng Nút Thắt Đỏ cho 1 kẻ địch, gây Sát Thương Lôi lên kẻ này, và lượng nhỏ Sát Thương Lôi lên mục tiêu ở gần."
       }
     },
     "ult": {
@@ -46,7 +46,7 @@
       "0": {
         "name": "Tứ Tướng Đoạn Ngã",
         "fullDesc": "Lập tức tấn công kẻ địch, khi bắt đầu mỗi đợt sẽ nhận Tứ Tướng Đoạn Ngã, gây Sát Thương Lôi cho tất cả kẻ địch bằng {{1}}% Tấn Công của Acheron, đồng thời bỏ qua thuộc tính Điểm Yếu và làm giảm Sức Bền của toàn phe địch, khi phá vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Lôi.\\nTứ Tướng Đoạn Ngã: Sau khi thi triển Tuyệt Kỹ, Acheron nhận {{2}} điểm Mộng Tàn đồng thời gắn {{2}} tầng Nút Thắt Đỏ lên 1 kẻ địch ngẫu nhiên.\\nNếu tấn công kẻ địch bình thường sẽ lập tức tiêu diệt kẻ đó, không vào chiến đấu. Khi chưa đánh trúng địch sẽ không tiêu hao Điểm Bí Kỹ.",
-        "shortDesc": "Tấn công kẻ địch, khi bắt đầu mỗi đợt sẽ nhận Tứ Tướng Đoạn Ngã, gây Sát Thương Lôi cho tất cả kẻ địch, đồng thời <color=#f29e38ff>bỏ qua thuộc tính Điểm Yếu</color> và làm giảm Sức Bền.\\nNếu tấn công kẻ địch bình thường sẽ <color=#f29e38ff>lập tức tiêu diệt kẻ đó</color>, không vào chiến đấu. Khi chưa đánh trúng địch sẽ không tiêu hao Điểm Bí Kỹ."
+        "shortDesc": "Tấn công kẻ địch, khi bắt đầu mỗi đợt sẽ nhận Tứ Tướng Đoạn Ngã, gây Sát Thương Lôi cho tất cả kẻ địch, đồng thời <orangeStrong>bỏ qua thuộc tính Điểm Yếu</orangeStrong> và làm giảm Sức Bền.\\nNếu tấn công kẻ địch bình thường sẽ <orangeStrong>lập tức tiêu diệt kẻ đó</orangeStrong>, không vào chiến đấu. Khi chưa đánh trúng địch sẽ không tiêu hao Điểm Bí Kỹ."
       }
     },
     "overworld": {
@@ -55,6 +55,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Khởi Đầu Chân Ngôn Cõi Trời Thưa Thớt",
+      "desc": "Khi gây sát thương cho kẻ địch có Hiệu Ứng Xấu, Tỷ Lệ Bạo Kích tăng {{1}}%."
+    },
+    "2": {
+      "name": "Sấm Thinh Lặng, Giông Tố Dừng",
+      "desc": "Giảm 1 nhân vật Vận Mệnh \"Hư Vô\" cần thiết để Vết Tích \"Vực sâu\" đạt được hiệu quả cao nhất. Khi hiệp của bản thân bắt đầu sẽ nhận 1 điểm Mộng Tàn, đồng thời kèm theo 1 tầng \"Nút Thắt Đỏ\" cho kẻ địch có nhiều \"Nút Thắt Đỏ\" nhất."
+    },
+    "3": {
+      "name": "Lạnh Giá Vĩnh Hằng",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15, cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Hồn Gương Rực Lửa",
+      "desc": "Khi kẻ địch vào chiến đấu, sẽ khiến kẻ đó rơi vào trạng thái Trọng Thương Tuyệt Kỹ, sát thương Tuyệt Kỹ phải chịu tăng {{1}}%."
+    },
+    "5": {
+      "name": "Núi Đá Phân Ly, Thiên Hồn Tiêu Tán",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Ngày Tận Thế, Người Giải Phóng",
+      "desc": "Tăng {{1}}% Xuyên Kháng Toàn Thuộc Tính mà sát thương Tuyệt Kỹ của Acheron gây ra, sát thương của tấn công thường và Chiến Kỹ gây ra cũng được xem là sát thương Tuyệt Kỹ, đồng thời bỏ qua thuộc tính Điểm Yếu và làm giảm Sức Bền của địch. Khi phá vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Lôi."
     }
   }
 }

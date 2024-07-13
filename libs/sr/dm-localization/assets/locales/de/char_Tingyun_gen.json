@@ -12,14 +12,14 @@
       "0": {
         "name": "Beruhigende Melodie",
         "fullDesc": "Segnet einen anvisierten Verbündeten und verstärkt seinen ANG um <orangeStrong>{{2}}%</orangeStrong> bis zu einem Höchstwert von <orangeStrong>{{4}}%</orangeStrong> von Tingyuns aktuellem ANG.\\nDer gesegnete Verbündete verursacht <u>zusätzlichen</u> Blitz-SCH, der <orangeStrong>{{1}}%</orangeStrong> seines ANG entspricht.\\nDer „Segen“ hält für {{3}} Rd. an und ist nur beim letzten Empfänger von Tingyuns Fertigkeit wirksam.",
-        "shortDesc": "Segnet einen Verbündeten und <color=#f29e38ff>verstärkt seinen ANG</color>. Der gesegnete Verbündete verursacht geringen <color=#f29e38ff><u>zusätzlichen</u> Blitz-SCH</color>."
+        "shortDesc": "Segnet einen Verbündeten und <orangeStrong>verstärkt seinen ANG</orangeStrong>. Der gesegnete Verbündete verursacht geringen <orangeStrong><u>zusätzlichen</u> Blitz-SCH</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Ritual der Glückswolke",
         "fullDesc": "Stellt für einen anvisierten Verbündeten {{1}} Pkt. Energie wieder her und erhöht seinen zugefügten SCH für {{2}} Rd. um <orangeStrong>{{3}}%</orangeStrong>.",
-        "shortDesc": "Stellt für einen Verbündeten <color=#f29e38ff>Energie wieder her</color> und <color=#f29e38ff>erhöht seinen zugefügten SCH</color>."
+        "shortDesc": "Stellt für einen Verbündeten <orangeStrong>Energie wieder her</orangeStrong> und <orangeStrong>erhöht seinen zugefügten SCH</orangeStrong>."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Glücksfall von Frühlingswind",
+      "desc": "Nachdem ein gesegneter Verbündeter sein Ultimate eingesetzt hat, wird seine GES für 1 Rd. um {{1}}% erhöht."
+    },
+    "2": {
+      "name": "Ein dankbarer Nutznießer",
+      "desc": "Besiegt ein gesegneter Verbündeter einen Gegner, erhält er {{1}} Pkt. Energie zurück. Dieser Effekt kann nur einmal pro Runde ausgelöst werden."
+    },
+    "3": {
+      "name": "Geschenk des alten grünen Zuhauses",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Joviale Vielseitigkeit",
+      "desc": "Erhöht SCH-Multiplikator des „Segens“ um {{1}}%."
+    },
+    "5": {
+      "name": "Flanierende Kokotte",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Frieden bringt Wohlstand für alle",
+      "desc": "Erhöht die durch Ultimate wiederhergestellte Energie für einen Verbündeten um {{1}}."
     }
   }
 }

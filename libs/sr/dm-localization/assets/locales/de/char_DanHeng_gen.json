@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Wer hoch steigt, fällt tief",
+      "desc": "Wenn der anvisierte Gegner aktuell min. {{1}}% seiner LP hat, steigt Dan Hengs KRIT-Rate um {{2}}%."
+    },
+    "2": {
+      "name": "Bosheit kontrollieren, Flamme löschen",
+      "desc": "Verringert die Abklingzeit des Talents um 1 Rd."
+    },
+    "3": {
+      "name": "Sichtbar und unsichtbar",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Gleichgewicht wie die Sonne am Himmel",
+      "desc": "Nachdem Dan Heng einen Gegner mit seinem Ultimate besiegt hat, wird er sofort wieder in Aktion treten."
+    },
+    "5": {
+      "name": "Ein Regentropfen speist einen Sturzbach",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Die geplagte Seele liegt auf der Lauer",
+      "desc": "Die durch die Fertigkeit ausgelöste Verlangsamung reduziert die GES des Gegners zusätzlich um {{1}}%."
+    }
   }
 }

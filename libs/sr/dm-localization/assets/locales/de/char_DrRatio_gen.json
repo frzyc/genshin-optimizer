@@ -19,14 +19,14 @@
       "0": {
         "name": "Dreiteiliges Paradoxon",
         "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dr. Wahrheits ANG zu und verursacht „Torheit der Weisen“. Wenn Dr. Wahrheits Verbündete mit Torheit der Weisen belegte Gegner angreifen, wird 1-mal ein <u>Folgeangriff</u> von Dr. Wahrheits Talent auf sie ausgelöst.\\nTorheit der Weisen kann max. {{2}}-mal ausgelöst werden und wirkt nur auf das letzte Ziel von Dr. Wahrheits Ultimate. Nach Einsatz von Dr. Wahrheits Ultimate wird die Auslösungsanzahl zurückgesetzt.",
-        "shortDesc": "Fügt einem anvisierten Gegner imaginären SCH zu und verursacht „Torheit der Weisen“. Wenn Dr. Wahrheits Verbündete mit Torheit der Weisen belegte Gegner angreifen, wird 1-mal ein <color=#f29e38ff><u>Folgeangriff</u></color> auf sie ausgelöst."
+        "shortDesc": "Fügt einem anvisierten Gegner imaginären SCH zu und verursacht „Torheit der Weisen“. Wenn Dr. Wahrheits Verbündete mit Torheit der Weisen belegte Gegner angreifen, wird 1-mal ein <orangeStrong><u>Folgeangriff</u></orangeStrong> auf sie ausgelöst."
       }
     },
     "technique": {
       "0": {
         "name": "Muster eines Idols",
         "fullDesc": "Nach dem Einsatz der Technik wird für {{1}} Sek. eine spezielle Dimension erzeugt, die Gegner in der Nähe verspottet. Nach Kampfeintritt mit Gegnern in der Dimension besteht eine <u>Grundchance</u> von {{2}}%, dass jedem Gegner für {{4}} Rd. eine GES-Reduktion von {{3}}% zugefügt wird. Es kann nur 1 von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
-        "shortDesc": "Erschafft eine Dimension. Gegner in dieser Dimension werden mit Verspotten belegt. Nach Kampfeintritt mit Gegnern in der Dimension besteht eine hohe Chance, dass den Gegnern <color=#f29e38ff>GES-Reduktion</color> zugefügt wird."
+        "shortDesc": "Erschafft eine Dimension. Gegner in dieser Dimension werden mit Verspotten belegt. Nach Kampfeintritt mit Gegnern in der Dimension besteht eine hohe Chance, dass den Gegnern <orangeStrong>GES-Reduktion</orangeStrong> zugefügt wird."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Fluch des Hochmuts",
+      "desc": "Das Stapelungslimit für die Spur „Induktion“ wird um {{1}} erhöht. Gewährt zu Beginn des Kampfes sofort {{2}} Stapelung(en) Induktion. Induktion muss zuerst freigeschaltet sein."
+    },
+    "2": {
+      "name": "Mikroskopisch doch tiefgründig",
+      "desc": "Wenn Dr. Wahrheit mit einem Folgeangriff seines Talents einen Gegner angreift, fügt er für jeden Debuff des Ziels zusätzlichen imaginären SCH in Höhe von {{1}}% von Dr. Wahrheits ANG zu. Dieser Effekt kann bei jedem Einsatz eines Folgeangriffs seines Talents bis zu {{2}}-mal ausgelöst werden."
+    },
+    "3": {
+      "name": "Kenne dich selbst",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Unwissen zeugt Dummheit",
+      "desc": "Wenn Dr. Wahrheits Talent ausgelöst wird, stellt er zusätzlich {{1}} Pkt. Energie wieder her."
+    },
+    "5": {
+      "name": "Ruderlos auf dem Ozean",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Ewige Wahrheit",
+      "desc": "Erhöht die Auslösungsanzahl für „Torheit der Weisen“ um {{1}}. Der SCH durch den Folgeangriff des Talents wird um {{2}}% erhöht."
     }
   }
 }
