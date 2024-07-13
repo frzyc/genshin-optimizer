@@ -9,6 +9,8 @@ import type {
 } from '@genshin-optimizer/sr/consts'
 import {
   avatarConfig,
+  avatarRankConfig,
+  avatarSkillTreeConfig,
   characterIdMap,
   equipmentConfig,
   lightConeIdMap,
@@ -20,6 +22,20 @@ import { workspaceRoot } from '@nx/devkit'
 
 type CharacterIcon = {
   icon: string
+  basic: string
+  skill: string
+  ult: string
+  talent: string
+  technique: string
+  bonusAbility1: string
+  bonusAbility2: string
+  bonusAbility3: string
+  eidolon1: string
+  eidolon2: string
+  eidolon3: string
+  eidolon4: string
+  eidolon5: string
+  eidolon6: string
 }
 
 type LightConeIcon = {
@@ -58,21 +74,50 @@ AssetData.relic = Object.fromEntries(
 ) as RelicIcons
 
 // parse baseStat/ascension/basic data for characters.
-Object.entries(avatarConfig).forEach(([charid, charData]) => {
+Object.entries(avatarConfig).forEach(([avatarId, charData]) => {
   const { DefaultAvatarHeadIconPath } = charData
+  const [
+    basic,
+    skill,
+    ult,
+    talent,
+    technique,
+    bonusAbility1,
+    bonusAbility2,
+    bonusAbility3,
+  ] = Object.values(avatarSkillTreeConfig[avatarId]).map(
+    // Grab the first level; we just need the image names
+    (skillTree) => skillTree[0]
+  )
+
+  const [e1, e2, e3, e4, e5, e6] = Object.values(avatarRankConfig[avatarId])
 
   const assets: CharacterIcon = {
-    icon: DefaultAvatarHeadIconPath.toLocaleLowerCase(),
+    icon: DefaultAvatarHeadIconPath,
+    basic: basic.IconPath,
+    skill: skill.IconPath,
+    ult: ult.IconPath, // TODO: Maybe switch tot
+    talent: talent.IconPath,
+    technique: technique.IconPath,
+    bonusAbility1: bonusAbility1.IconPath,
+    bonusAbility2: bonusAbility2.IconPath,
+    bonusAbility3: bonusAbility3.IconPath,
+    eidolon1: e1.IconPath,
+    eidolon2: e2.IconPath,
+    eidolon3: e3.IconPath,
+    eidolon4: e4.IconPath,
+    eidolon5: e5.IconPath,
+    eidolon6: e6.IconPath,
   }
-  AssetData.chars[characterIdMap[charid]] = assets
+  AssetData.chars[characterIdMap[avatarId]] = assets
 })
 
 Object.entries(equipmentConfig).forEach(([id, data]) => {
   const { ThumbnailPath, ImagePath } = data
 
   const assets: LightConeIcon = {
-    icon: ThumbnailPath.toLocaleLowerCase(),
-    cover: ImagePath.toLocaleLowerCase(),
+    icon: ThumbnailPath,
+    cover: ImagePath,
   }
   AssetData.lightCones[lightConeIdMap[id]] = assets
 })

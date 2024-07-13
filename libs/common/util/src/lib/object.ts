@@ -1,11 +1,11 @@
 // crawl an object, calling a callback on every object that passes a validation function
-export function crawlObject<T, O>(
+export async function crawlObject<T, O>(
   obj: Record<string, T> | T,
   keys: string[] = [],
   validate: (o: unknown, keys: string[]) => boolean,
   cb: (o: O, keys: string[]) => void
 ) {
-  if (validate(obj as T, keys)) cb(obj as O, keys)
+  if (validate(obj as T, keys)) await cb(obj as O, keys) // In case of async cb
   else
     obj &&
       typeof obj === 'object' &&
