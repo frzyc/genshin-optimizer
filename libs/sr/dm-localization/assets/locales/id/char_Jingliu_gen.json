@@ -12,7 +12,7 @@
       "0": {
         "name": "Transcendent Flash",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Jingliu pada 1 musuh yang ditarget dan memperoleh {{2}} lapis \"Syzygy\".",
-        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh yang ditarget dan memperoleh <color=#f29e38ff>1 lapis \"Syzygy\"</color>."
+        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh yang ditarget dan memperoleh <orangeStrong>1 lapis \"Syzygy\"</orangeStrong>."
       },
       "1": {
         "name": "Moon On Glacial River",
@@ -24,14 +24,14 @@
       "0": {
         "name": "Florephemeral Dreamflux",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Jingliu pada 1 musuh yang ditarget, serta mengakibatkan Ice DMG sebesar <orangeStrong>{{3}}%</orangeStrong> ATK Jingliu pada musuh di sekitar target. Setelah serangan berakhir, akan memperoleh {{2}} lapis \"Syzygy\".",
-        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah besar pada 1 musuh yang ditarget dan mengakibatkan Ice DMG pada musuh di sekitar target, serta <color=#f29e38ff>memperoleh 1 lapis \"Syzygy\"</color>."
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah besar pada 1 musuh yang ditarget dan mengakibatkan Ice DMG pada musuh di sekitar target, serta <orangeStrong>memperoleh 1 lapis \"Syzygy\"</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Shine of Truth",
         "fullDesc": "Setelah menggunakan Technique, karakter akan menciptakan Dimension di sekelilingnya selama {{3}} detik, dan musuh yang berada dalam Dimension akan memasuki status Frozen. Setelah memasuki pertempuran dengan musuh dalam Dimension, akan segera memulihkan {{6}} Energy diri sendiri, memperoleh {{1}} lapis \"Syzygy\", dan memiliki {{2}}% <u>peluang dasar</u> untuk membuat target musuh memasuki status Frozen yang berlangsung selama {{4}} giliran. Selama dalam status Frozen, target musuh tidak dapat beraksi, dan akan menerima Ice <u>DMG tambahan</u> sebesar {{5}}% ATK Jingliu setiap saat gilirannya dimulai. Hanya boleh ada 1 efek Dimension ciptaan rekan tim dalam satu waktu.",
-        "shortDesc": "Menciptakan Dimension di sekelilingnya. Musuh yang berada dalam Dimension akan memasuki <color=#f29e38ff>status Frozen</color>. Setelah memasuki pertempuran dengan musuh dalam Dimension, akan memulihkan Energy diri sendiri, memperoleh 1 lapis Syzygy, dan berpeluang besar membuat target musuh memasuki <color=#f29e38ff>status Frozen</color>."
+        "shortDesc": "Menciptakan Dimension di sekelilingnya. Musuh yang berada dalam Dimension akan memasuki <orangeStrong>status Frozen</orangeStrong>. Setelah memasuki pertempuran dengan musuh dalam Dimension, akan memulihkan Energy diri sendiri, memperoleh 1 lapis Syzygy, dan berpeluang besar membuat target musuh memasuki <orangeStrong>status Frozen</orangeStrong>."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Moon Crashes Tianguan Gate",
+      "desc": "Saat melancarkan Ultimate atau Enhanced Skill, CRIT DMG Jingliu meningkat {{1}}%, berlangsung selama {{3}} giliran. Jika hanya menyerang 1 target musuh, akan mengakibatkan 1 kali Ice DMG tambahan sebesar {{2}}% ATK Jingliu."
+    },
+    "2": {
+      "name": "Crescent Shadows Qixing Dipper",
+      "desc": "Setelah melancarkan Ultimate, DMG dari Enhanced Skill yang dilancarkan berikutnya meningkat {{1}}%."
+    },
+    "3": {
+      "name": "Halfmoon Gapes Mercurial Haze",
+      "desc": "Level Ultimate +2, maksimum Lv. 15. Level Talent +2, maksimum Lv. 15."
+    },
+    "4": {
+      "name": "Lunarlance Shines Skyward Dome",
+      "desc": "Saat berstatus \"Spectral Transmigration\", ATK yang diperoleh dari mengonsumsi HP rekan tim akan meningkat lagi. Peningkatannya sebesar {{1}}% total jumlah HP yang dikonsumsi dari seluruh rekan tim, dan batas maksimal peningkatan ATK yang diperoleh meningkat {{2}}%."
+    },
+    "5": {
+      "name": "Night Shades Astral Radiance",
+      "desc": "Level Skill +2, maksimum Lv. 15. Level Basic Attack +1, maksimum Lv. 10."
+    },
+    "6": {
+      "name": "Eclipse Hollows Corporeal Husk",
+      "desc": "Saat Jingliu memasuki status \"Spectral Transmigration\", batas maksimal lapisan \"Syzygy\" meningkat 1 lapis, serta memperoleh {{1}} lapis \"Syzygy\" tambahan. Saat berstatus \"Spectral Transmigration\", CRIT DMG meningkat {{2}}%."
     }
   }
 }

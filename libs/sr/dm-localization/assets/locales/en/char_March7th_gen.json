@@ -12,14 +12,14 @@
       "0": {
         "name": "The Power of Cuteness",
         "fullDesc": "Provides a single ally with a Shield that can absorb DMG equal to <orangeStrong>{{1}}%</orangeStrong> of March 7th's DEF plus <orangeStrong>{{4}}</orangeStrong> for {{2}} turn(s).\\nIf the ally's current HP percentage is {{3}}% or higher, greatly increases the chance of enemies attacking that ally.",
-        "shortDesc": "<color=#f29e38ff>Applies a Shield</color> on a single ally."
+        "shortDesc": "<orangeStrong>Applies a Shield</orangeStrong> on a single ally."
       }
     },
     "ult": {
       "0": {
         "name": "Glacial Cascade",
         "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of March 7th's ATK to all enemies. Hit enemies have a {{2}}% <u>base chance</u> to be Frozen for {{3}} turn(s).\\nWhile Frozen, enemies cannot take action and will receive <u>Additional</u> Ice DMG equal to <orangeStrong>{{4}}%</orangeStrong> of March 7th's ATK at the beginning of each turn.",
-        "shortDesc": "Deals Ice DMG to <color=#f29e38ff>all enemies</color>, with <color=#f29e38ff>a chance to apply the Freeze effect</color>"
+        "shortDesc": "Deals Ice DMG to <orangeStrong>all enemies</orangeStrong>, with <orangeStrong>a chance to apply the Freeze effect</orangeStrong>"
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Memory of You",
+      "desc": "Every time March 7th's Ultimate Freezes a target, she regenerates {{1}} Energy."
+    },
+    "2": {
+      "name": "Memory of It",
+      "desc": "Upon entering battle, grants a Shield equal to {{1}}% of March 7th's DEF plus {{3}} to the ally with the lowest HP percentage, lasting for {{2}} turn(s)."
+    },
+    "3": {
+      "name": "Memory of Everything",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Never Forfeit Again",
+      "desc": "The Talent's Counter effect can be triggered 1 more time in each turn. The DMG dealt by Counter increases by an amount that is equal to {{1}}% of March 7th's DEF."
+    },
+    "5": {
+      "name": "Never Forget Again",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Just Like This, Always...",
+      "desc": "Allies under the protection of the Shield granted by the Skill restore HP equal to {{1}}% of their Max HP plus {{2}} at the beginning of each turn."
     }
   }
 }

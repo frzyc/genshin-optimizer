@@ -12,7 +12,7 @@
       "0": {
         "name": "Conhecida pelas Estrelas, Exibida pelos Corações",
         "fullDesc": "Ativa a Matriz de Presciência através da qual outros membros da equipe vão <u>Distribuir</u> {{1}}% do Dano que eles receberem (antes deste Dano ser mitigado por quaisquer Escudos) com Fu Xuan por {{3}} rodada(s).\\nEnquanto afetados pela Matriz de Presciência, todos os membros da equipe ganham o efeito de Conhecimento, que aumenta seus respectivos PV máximos em <orangeStrong>{{4}}%</orangeStrong> dos PV máximos de Fu Xuan, e aumenta a Chance de CRIT em <orangeStrong>{{5}}%</orangeStrong>.\\nQuando Fu Xuan é <u>derrubada</u>, a Matriz de Presciência é desfeita.",
-        "shortDesc": "Ativa a Matriz de Presciência. <color=#f29e38ff>O Dano recebido pelos aliados de Fu Xuan é <u>Distribuído</u></color> com ela. Além disso, <color=#f29e38ff>aumenta a Chance de CRIT</color> e os PV máximos de todos os aliados."
+        "shortDesc": "Ativa a Matriz de Presciência. <orangeStrong>O Dano recebido pelos aliados de Fu Xuan é <u>Distribuído</u></orangeStrong> com ela. Além disso, <orangeStrong>aumenta a Chance de CRIT</orangeStrong> e os PV máximos de todos os aliados."
       }
     },
     "ult": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Dominus Pacis",
+      "desc": "O efeito de Conhecimento aumenta o Dano CRIT em {{1}}%."
+    },
+    "2": {
+      "name": "Optimus Felix",
+      "desc": "Se qualquer membro da equipe for atingido por um golpe fatal enquanto a Matriz de Presciência estiver ativa, todos os aliados que forem atingidos por um golpe fatal durante esta ação não serão derrubados e {{1}}% de seus PV máximos serão restaurados imediatamente. Este efeito pode ser acionado 1 vez por batalha."
+    },
+    "3": {
+      "name": "Ápice da Ligação",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Fortuna Stellaris",
+      "desc": "Quando outros aliados sob a Matriz de Presciência são atacados, Fu Xuan regenera {{1}} de Energia."
+    },
+    "5": {
+      "name": "Árbitra Primordial",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Omnia Vita",
+      "desc": "Assim que a Matriz de Presciência é ativada, ela manterá um registro com o valor total de PV perdidos por todos os membros da equipe na batalha atual. O Dano da Perícia Suprema de Fu Xuan aumentará em {{1}}% desse valor de PV perdidos.\\nEsse valor também é limitado a {{2}}% dos PV máximos de Fu Xuan e o valor registrado será reiniciado e reacumulado após a Perícia Suprema de Fu Xuan ser utilizada."
     }
   }
 }

@@ -12,14 +12,14 @@
       "0": {
         "name": "Tác Chiến Và Tái Bố Trí",
         "fullDesc": "Xóa 1 <u>Hiệu Ứng Xấu</u> cho 1 đồng đội, đồng thời khiến mục tiêu này hành động ngay, sát thương gây ra tăng <orangeStrong>{{1}}%</orangeStrong>, duy trì {{3}} hiệp.\\nKhi thi triển kỹ năng này cho bản thân, sẽ không thể kích hoạt ngay hiệu quả hành động.",
-        "shortDesc": "<color=#f29e38ff>Giải trừ</color> 1 <color=#f29e38ff><u>Hiệu Ứng Xấu</u></color> cho 1 đồng đội, <color=#f29e38ff>tăng sát thương của đồng đội đó gây ra</color> và <color=#f29e38ff>hành động ngay</color>."
+        "shortDesc": "<orangeStrong>Giải trừ</orangeStrong> 1 <orangeStrong><u>Hiệu Ứng Xấu</u></orangeStrong> cho 1 đồng đội, <orangeStrong>tăng sát thương của đồng đội đó gây ra</orangeStrong> và <orangeStrong>hành động ngay</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Khúc Quân Hành Belobog",
         "fullDesc": "Khiến toàn bộ phe ta tăng <orangeStrong>{{1}}%</orangeStrong> tấn công, đồng thời tăng sát thương bạo kích bằng <orangeStrong>{{2}}%</orangeStrong> sát thương bạo kích của Bronya +<orangeStrong>{{3}}%</orangeStrong>, duy trì {{4}} hiệp.",
-        "shortDesc": "Tăng <color=#f29e38ff>tấn công</color>, <color=#f29e38ff>tăng sát thương bạo kích</color> của toàn bộ phe ta."
+        "shortDesc": "Tăng <orangeStrong>tấn công</orangeStrong>, <orangeStrong>tăng sát thương bạo kích</orangeStrong> của toàn bộ phe ta."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Gom Góp Sức Mạnh",
+      "desc": "Khi thi triển Chiến Kỹ, có {{1}}% xác suất cố định hồi 1 điểm Chiến Kỹ, hiệu ứng này có thời gian chờ kích hoạt là 1 hiệp."
+    },
+    "2": {
+      "name": "Hành Quân Thần Tốc",
+      "desc": "Khi thi triển Chiến Kỹ, mục tiêu được chỉ định của phe ta sẽ tăng {{1}}% tốc độ sau khi hành động, duy trì 1 hiệp."
+    },
+    "3": {
+      "name": "Trống Rền Pháo Nổ",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Tấn Công Bất Ngờ",
+      "desc": "Sau khi nhân vật khác trong phe ta tấn công thường vào kẻ địch có Điểm Yếu Phong, Bronya sẽ thực hiện ngay 1 lần Đòn Đánh Theo Sau, gây cho mục tiêu này Sát Thương Phong bằng {{1}}% sát thương Tấn Công Thường. Hiệu ứng này mỗi hiệp chỉ kích hoạt 1 lần."
+    },
+    "5": {
+      "name": "Đánh Đâu Thắng Đó",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Khí Thế Hùng Mạnh",
+      "desc": "Thời gian duy trì hiệu ứng Tăng Sát Thương mà Chiến Kỹ gây cho mục tiêu chỉ định của phe ta tăng {{1}} hiệp."
     }
   }
 }

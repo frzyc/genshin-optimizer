@@ -12,14 +12,14 @@
       "0": {
         "name": "Sinh Diệt Trói Buộc",
         "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Vật Lý tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Hanya, và khiến kẻ này rơi vào trạng thái \"Sức Nặng\".\\nSau mỗi 2 lần mục tiêu phe ta thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ lên kẻ địch ở trạng thái \"Sức Nặng\", sẽ lập tức hồi phục cho phe ta 1 Điểm Chiến Kỹ. \"Sức Nặng\" chỉ hiệu lực với mục tiêu bị thi triển mới nhất, đồng thời sẽ tự động giải trừ sau khi kích hoạt {{2}} lần hiệu ứng hồi phục Điểm Chiến Kỹ.",
-        "shortDesc": "Gây Sát Thương Vật Lý lên 1 kẻ địch, và khiến kẻ này rơi vào trạng thái \"Sức Nặng\". Sau mỗi 2 lần mục tiêu phe ta thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ lên kẻ địch ở trạng thái \"Sức Nặng\", sẽ <color=#f29e38ff>hồi 1 Điểm Chiến Kỹ</color>."
+        "shortDesc": "Gây Sát Thương Vật Lý lên 1 kẻ địch, và khiến kẻ này rơi vào trạng thái \"Sức Nặng\". Sau mỗi 2 lần mục tiêu phe ta thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ lên kẻ địch ở trạng thái \"Sức Nặng\", sẽ <orangeStrong>hồi 1 Điểm Chiến Kỹ</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Sắc Lệnh Thập Vương, Đồng Loạt Thi Hành",
         "fullDesc": "Tăng tốc độ cho 1 đồng đội chỉ định bằng <orangeStrong>{{3}}%</orangeStrong> tốc độ của Hanya, đồng thời khiến mục tiêu này tăng <orangeStrong>{{1}}%</orangeStrong> Tấn Công, duy trì {{2}} hiệp.",
-        "shortDesc": "<color=#f29e38ff>Tăng Tốc Độ, tăng Tấn Công</color> cho 1 đồng đội."
+        "shortDesc": "<orangeStrong>Tăng Tốc Độ, tăng Tấn Công</orangeStrong> cho 1 đồng đội."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm sức bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Nhất Tâm",
+      "desc": "Khi đồng đội đang có hiệu ứng Tuyệt Kỹ tiêu diệt kẻ địch, Hanya sẽ Ưu Tiên Hành Động {{1}}%, hiệu ứng này mỗi hiệp chỉ có thể kích hoạt {{2}} lần."
+    },
+    "2": {
+      "name": "Nhị Quan",
+      "desc": "Sau khi thi triển Chiến Kỹ, Tốc Độ tăng {{1}}%, duy trì {{2}} hiệp."
+    },
+    "3": {
+      "name": "Tam Trần",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Tứ Đế",
+      "desc": "Thời gian duy trì của Tuyệt Kỹ tăng thêm {{1}} hiệp."
+    },
+    "5": {
+      "name": "Ngũ Âm",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Lục Chính",
+      "desc": "Hiệu ứng tăng sát thương của Thiên Phú tăng thêm {{1}}%."
     }
   }
 }

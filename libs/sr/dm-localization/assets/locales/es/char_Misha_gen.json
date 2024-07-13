@@ -12,21 +12,21 @@
       "0": {
         "name": "¡Servicio de habitaciones!",
         "fullDesc": "Aumenta en {{3}} los golpes por acción de la habilidad definitiva de Misha la siguiente vez que la utilice. Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Misha como Daño de Hielo a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Misha como Daño de Hielo a los enemigos adyacentes.",
-        "shortDesc": "Inflige Daño de Hielo a un enemigo y una pequeña cantidad de Daño de Hielo a los enemigos adyacentes. Aumenta los <color=#f29e38ff>golpes por acción de la habilidad definitiva</color> de Misha la siguiente vez que la utilice."
+        "shortDesc": "Inflige Daño de Hielo a un enemigo y una pequeña cantidad de Daño de Hielo a los enemigos adyacentes. Aumenta los <orangeStrong>golpes por acción de la habilidad definitiva</orangeStrong> de Misha la siguiente vez que la utilice."
       }
     },
     "ult": {
       "0": {
         "name": "¡Voy a llegar tarde!",
         "fullDesc": "Tiene {{1}} golpes por acción por defecto. Primero, Misha golpea a un enemigo con 1 golpe que inflige un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Misha como Daño de Hielo. El resto de golpes alcanzan a enemigos al azar e infligen un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Misha como Daño de Hielo. Antes de que cada golpe alcance a su objetivo, hay un <orangeStrong>{{3}}%</orangeStrong> de <u>probabilidad base</u> de afectar con Congelación al objetivo durante 1 turno.\\nLos enemigos congelados no pueden actuar, y al principio de cada turno reciben un <orangeStrong>{{4}}%</orangeStrong> del ATQ de Misha como Daño de Hielo <u>adicional</u>.\\nLa habilidad definitiva puede acumular {{5}} golpes por acción como máximo. Tras usar la habilidad definitiva, los golpes por acción se restablecen a su cantidad inicial.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo. Por defecto, rebota <orangeStrong>{{1}}</orangeStrong> veces entre los enemigos y puede llegar hasta un máximo de <orangeStrong>{{5}}</orangeStrong> rebotes. Antes de que cada golpe alcance al objetivo, tiene una pequeña probabilidad de <color=#f29e38ff>congelarlo</color>."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo. Por defecto, rebota <orangeStrong>{{1}}</orangeStrong> veces entre los enemigos y puede llegar hasta un máximo de <orangeStrong>{{5}}</orangeStrong> rebotes. Antes de que cada golpe alcance al objetivo, tiene una pequeña probabilidad de <orangeStrong>congelarlo</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Detente, instante, eres tan hermoso",
         "fullDesc": "Tras usar la técnica, crea 1 zona especial durante {{1}} s. Los enemigos dentro de la zona especial entran en el estado de Prisión onírica. Las acciones de los enemigos bajo el efecto de Prisión onírica se detienen. Tras entrar en combate con los enemigos afectados por Prisión onírica, los golpes por acción de la habilidad definitiva de Misha aumentan en {{2}} la siguiente vez que la use. Solo puede haber una zona especial creada por los aliados a la vez.",
-        "shortDesc": "Crea una zona especial. Los enemigos dentro de la zona especial detienen sus acciones. Cuando entra en combate con un enemigo dentro de la zona especial, aumentan los <color=#f29e38ff>golpes por acción de la habilidad definitiva</color> de Misha la siguiente vez que la use."
+        "shortDesc": "Crea una zona especial. Los enemigos dentro de la zona especial detienen sus acciones. Cuando entra en combate con un enemigo dentro de la zona especial, aumentan los <orangeStrong>golpes por acción de la habilidad definitiva</orangeStrong> de Misha la siguiente vez que la use."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ilusión caprichosa",
+      "desc": "Al usar la habilidad definitiva, el número de golpes por acción aumenta en {{1}} por cada enemigo que haya en el campo de batalla, hasta un máximo de {{2}} golpes más."
+    },
+    "2": {
+      "name": "Anhelo de juventud",
+      "desc": "Antes de que cada golpe de la habilidad definitiva alcance a su objetivo, hay un {{3}}% de probabilidad base de reducir su DEF en un {{1}}% durante {{2}} turnos."
+    },
+    "3": {
+      "name": "Vestigios de felicidad",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Apariencia familiar",
+      "desc": "Aumenta el multiplicador de daño de cada golpe de la habilidad definitiva en un {{1}}%."
+    },
+    "5": {
+      "name": "Génesis del amor y la amistad",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Deseo del pasado",
+      "desc": "Al usar la habilidad definitiva, inflige un {{2}}% más de daño hasta que termine su turno. Además, la siguiente vez que use la habilidad básica, los aliados recuperan {{1}} pt. de habilidad básica."
     }
   }
 }

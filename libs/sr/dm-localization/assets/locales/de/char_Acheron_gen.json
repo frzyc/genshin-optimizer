@@ -12,7 +12,7 @@
       "0": {
         "name": "Oktett des Donners",
         "fullDesc": "Erhält {{3}} Pkt. „Zerbrochener Traum“. Belegt einen anvisierten Gegner mit {{3}} Stapelung „Karminroter Knoten“ und fügt ihm Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Acherons ANG sowie angrenzenden Einheiten Blitz-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Acherons ANG zu.",
-        "shortDesc": "Erhält <color=#f29e38ff><orangeStrong>{{3}}</orangeStrong> Pkt. „Zerbrochener Traum“</color>. Belegt einen Gegner mit <orangeStrong>{{3}}</orangeStrong> Stapelung „Karminroter Knoten“ und fügt ihm Blitz-SCH sowie angrenzenden Einheiten geringen Blitz-SCH zu."
+        "shortDesc": "Erhält <orangeStrong><color=#f29e38ff>#3[i]</orangeStrong> Pkt. „Zerbrochener Traum“</color>. Belegt einen Gegner mit <orangeStrong>{{3}}</orangeStrong> Stapelung „Karminroter Knoten“ und fügt ihm Blitz-SCH sowie angrenzenden Einheiten geringen Blitz-SCH zu."
       }
     },
     "ult": {
@@ -46,7 +46,7 @@
       "0": {
         "name": "Vier Phasen des Ich",
         "fullDesc": "Greift den Gegner an. Erhält zu Beginn jeder Kampfwelle „Vier Phasen des Ich“, fügt allen Gegnern Blitz-SCH in Höhe von {{1}}% von Acherons ANG zu und reduziert ihr Widerstand ungeachtet des Schwächetyps. Beim Schwächebruch wird der Effekt „Schwächebruch: Blitz“ ausgelöst.\\nVier Phasen des Ich: Acheron erhält nach dem Einsatz des Ultimates {{2}} Pkt. „Zerbrochener Traum“ und belegt einen zufälligen Gegner mit {{2}} Stapelungen „Karminroter Knoten“.\\nWenn gewöhnliche Gegner angegriffen werden, werden sie sofort besiegt, ohne den Kampf zu betreten. Der Technikpunkt wird nicht verbraucht, wenn der Angriff keinen Gegner trifft.",
-        "shortDesc": "Greift den Gegner an. Erhält zu Beginn jeder Kampfwelle „Vier Phasen des Ich“ und fügt allen Gegnern Blitz-SCH zu, der <color=#f29e38ff>Schwächetypen ignoriert</color> und Widerstand reduziert.\\nWenn gewöhnliche Gegner angegriffen werden, werden sie <color=#f29e38ff>sofort besiegt</color>, ohne den Kampf zu betreten. Der Technikpunkt wird nicht verbraucht, wenn der Angriff keinen Gegner trifft."
+        "shortDesc": "Greift den Gegner an. Erhält zu Beginn jeder Kampfwelle „Vier Phasen des Ich“ und fügt allen Gegnern Blitz-SCH zu, der <orangeStrong>Schwächetypen ignoriert</orangeStrong> und Widerstand reduziert.\\nWenn gewöhnliche Gegner angegriffen werden, werden sie <orangeStrong>sofort besiegt</orangeStrong>, ohne den Kampf zu betreten. Der Technikpunkt wird nicht verbraucht, wenn der Angriff keinen Gegner trifft."
       }
     },
     "overworld": {
@@ -55,6 +55,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Wahre Worte aus dem Himmel",
+      "desc": "Erhöht die KRIT-Rate bei Angriffen auf Gegner mit Debuff um {{1}}%."
+    },
+    "2": {
+      "name": "Donner schweigt, Winde ruhen",
+      "desc": "Reduziert die Anzahl der Figuren auf dem Pfad der Nichtigkeit um 1, die für den max. Wert der Spur „Unterwelt“ benötigt wird. Erhält zu Beginn der eigenen Runde 1 Pkt. „Zerbrochener Traum“ und gleichzeitig wird der Gegner mit den meisten Stapelungen „Karminroter Knoten“ mit 1 weiterer Stapelung Karminroter Knoten belegt."
+    },
+    "3": {
+      "name": "Ewiger Winterschlaf in bitterer Kälte",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Flammen erleuchten den Menschen im Spiegel",
+      "desc": "Wenn Gegner in den Kampf eintreten, wird ihnen Ultimate-SCH-Anfälligkeit zugefügt. Ihr erlittener Ultimate-SCH wird um {{1}}% erhöht."
+    },
+    "5": {
+      "name": "Klippen bröckeln, Seelen schweifen",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Gespaltene Fesseln des Verhängnisses",
+      "desc": "Erhöht den WDS aller Typen für den von Acheron verursachten Ultimate-SCH um {{1}}%. Der durch Standardangriff und Fertigkeit verursachte SCH wird ebenfalls als Ultimate-SCH betrachtet und kann den WDS des Gegners unabhängig vom Schwächetyp reduzieren. Beim Schwächebruch wird der Effekt „Schwächebruch: Blitz“ ausgelöst."
     }
   }
 }

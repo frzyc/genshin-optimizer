@@ -12,21 +12,21 @@
       "0": {
         "name": "Luna acariciadora",
         "fullDesc": "Kafka inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo y un <orangeStrong>{{3}}%</orangeStrong> de su ATQ como Daño de Rayo a los enemigos adyacentes.\\nSi el objetivo principal está afectado por estados de Daño con el tiempo, todos los efectos de Daño con el tiempo que tenga producen inmediatamente un daño equivalente al <orangeStrong>{{2}}%</orangeStrong> de su daño original.",
-        "shortDesc": "Inflige Daño de Rayo a un enemigo y una pequeña cantidad de Daño de Rayo a los enemigos adyacentes.\\nSi el objetivo principal está afectado por estados negativos de Daño con el tiempo, estos <color=#f29e38ff>infligen daño 1 vez adicional</color>."
+        "shortDesc": "Inflige Daño de Rayo a un enemigo y una pequeña cantidad de Daño de Rayo a los enemigos adyacentes.\\nSi el objetivo principal está afectado por estados negativos de Daño con el tiempo, estos <orangeStrong>infligen daño 1 vez adicional</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Gorjeo del ocaso",
         "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Kafka como Daño de Rayo a todos los enemigos y tiene una <u>probabilidad base</u> del {{2}}% de afectar con Electrocución a los enemigos atacados durante {{3}} turnos y hacer que reciban inmediatamente un <orangeStrong>{{5}}%</orangeStrong> del daño original de Electrocución recibido.\\nLos enemigos electrocutados reciben un Daño de Rayo con el tiempo equivalente al <orangeStrong>{{4}}%</orangeStrong> del ATQ de Kafka al comienzo de cada turno.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a todos los enemigos y tiene una gran probabilidad de <color=#f29e38ff>afectarlos con Electrocución</color>.\\nSi los objetivos están ya electrocutados, este estado <color=#f29e38ff>inflige daño 1 vez adicional</color>."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a todos los enemigos y tiene una gran probabilidad de <orangeStrong>afectarlos con Electrocución</orangeStrong>.\\nSi los objetivos están ya electrocutados, este estado <orangeStrong>inflige daño 1 vez adicional</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "La clemencia no es perdón",
         "fullDesc": "Ataca inmediatamente a todos los enemigos de un área determinada y entra en combate. Inflige un {{3}}% del ATQ de Kafka como Daño de Rayo a todos los enemigos. Además, cada enemigo tiene una <u>probabilidad base</u> del {{1}}% de ser afectado por una Electrocución equivalente a la de la habilidad definitiva durante {{2}} turnos.",
-        "shortDesc": "Ataca a todos los enemigos de un área determinada e inflige una pequeña cantidad de Daño de Rayo a todos ellos tras entrar en combate. Gran probabilidad de <color=#f29e38ff>afectarlos con Electrocución</color>."
+        "shortDesc": "Ataca a todos los enemigos de un área determinada e inflige una pequeña cantidad de Daño de Rayo a todos ellos tras entrar en combate. Gran probabilidad de <orangeStrong>afectarlos con Electrocución</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Da capo",
+      "desc": "Cuando el talento activa un ataque adicional, hay un {{1}}% de probabilidad base de que el Daño con el tiempo que recibe el objetivo aumente en un {{2}}% durante {{3}} turnos."
+    },
+    "2": {
+      "name": "Fortississimo",
+      "desc": "Cuando Kafka está en la batalla, el Daño con el tiempo que infligen todos los aliados aumenta en un {{1}}%."
+    },
+    "3": {
+      "name": "Capriccio",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Recitativo",
+      "desc": "Cuando el objetivo recibe daño del estado de Electrocución provocado por Kafka, Kafka recupera {{1}} pts. de energía adicionales."
+    },
+    "5": {
+      "name": "Doloroso",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Leggiero",
+      "desc": "El multiplicador de daño de la Electrocución que inflige la habilidad definitiva, la técnica o el ataque adicional del talento aumenta en un {{1}}% y la duración de Electrocución se alarga en {{2}} turno."
     }
   }
 }

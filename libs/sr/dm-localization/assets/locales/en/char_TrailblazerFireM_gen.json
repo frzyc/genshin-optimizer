@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Earth-Shaking Resonance",
+      "desc": "When the Trailblazer uses their Basic ATK, additionally deals Fire DMG equal to {{1}}% of the Trailblazer's DEF. When the Trailblazer uses their enhanced Basic ATK, additionally deals Fire DMG equal to {{2}}% of the Trailblazer's DEF."
+    },
+    "2": {
+      "name": "Time-Defying Tenacity",
+      "desc": "The Shield applied to all allies from the Trailblazer's Talent will block extra DMG equal to {{1}}% of the Trailblazer's DEF plus {{2}}."
+    },
+    "3": {
+      "name": "Trail-Blazing Blueprint",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Nation-Building Oath",
+      "desc": "At the start of the battle, immediately gains {{1}} stack(s) of Magma Will."
+    },
+    "5": {
+      "name": "Spirit-Warming Flame",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "City-Forging Bulwarks",
+      "desc": "After the Trailblazer uses enhanced Basic ATK or Ultimate, their DEF increases by {{1}}%. Stacks up to {{2}} time(s)."
+    }
   }
 }

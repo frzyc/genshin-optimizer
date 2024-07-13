@@ -12,7 +12,7 @@
       "0": {
         "name": "Transcendent Flash",
         "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Jingliu's ATK to a single enemy and obtains {{2}} stack(s) of Syzygy.",
-        "shortDesc": "Deals Ice DMG to a target enemy and obtains <color=#f29e38ff>1 stack of Syzygy</color>."
+        "shortDesc": "Deals Ice DMG to a target enemy and obtains <orangeStrong>1 stack of Syzygy</orangeStrong>."
       },
       "1": {
         "name": "Moon On Glacial River",
@@ -24,14 +24,14 @@
       "0": {
         "name": "Florephemeral Dreamflux",
         "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Jingliu's ATK to a single enemy, and deals Ice DMG equal to <orangeStrong>{{3}}%</orangeStrong> of Jingliu's ATK to any adjacent enemies. Gains {{2}} stack(s) of Syzygy after attack ends.",
-        "shortDesc": "Deals massive Ice DMG to a target enemy and deals Ice DMG to adjacent targets. Obtains <color=#f29e38ff>1 stack of Syzygy</color>."
+        "shortDesc": "Deals massive Ice DMG to a target enemy and deals Ice DMG to adjacent targets. Obtains <orangeStrong>1 stack of Syzygy</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Shine of Truth",
         "fullDesc": "After using this Technique, creates a dimension around Jingliu that lasts for {{3}} seconds, and all enemies in this dimension will become Frozen. After entering combat with enemies in the dimension, Jingliu immediately regenerates {{6}} Energy and obtains {{1}} stack(s) of Syzygy, with a {{2}}% <u>base chance</u> of Freezing enemy targets for {{4}} turn(s). While Frozen, enemy targets cannot take action, and receive Ice <u>Additional DMG</u> equal to {{5}}% of Jingliu's ATK at the start of every turn. Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a dimension around the character. Enemies within this dimension will become <color=#f29e38ff>Frozen</color>. After entering combat with enemies in the dimension, this character regenerates Energy and obtains 1 stack of Syzygy with a high chance to <color=#f29e38ff>Freeze</color> enemies."
+        "shortDesc": "Creates a dimension around the character. Enemies within this dimension will become <orangeStrong>Frozen</orangeStrong>. After entering combat with enemies in the dimension, this character regenerates Energy and obtains 1 stack of Syzygy with a high chance to <orangeStrong>Freeze</orangeStrong> enemies."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Moon Crashes Tianguan Gate",
+      "desc": "When using her Ultimate or Enhanced Skill, Jingliu's CRIT DMG increases by {{1}}% for {{3}} turn(s). If only one enemy target is attacked, the target will additionally be dealt Ice DMG equal to {{2}}% of Jingliu's ATK."
+    },
+    "2": {
+      "name": "Crescent Shadows Qixing Dipper",
+      "desc": "After using Ultimate, increases the DMG of the next Enhanced Skill by {{1}}%."
+    },
+    "3": {
+      "name": "Halfmoon Gapes Mercurial Haze",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Lunarlance Shines Skyward Dome",
+      "desc": "During the Spectral Transmigration state, the ATK gained from consuming allies' HP is additionally increased by {{1}}% of the total HP consumed from the entire team. The cap for ATK gained this way also increases by {{2}}%."
+    },
+    "5": {
+      "name": "Night Shades Astral Radiance",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "Eclipse Hollows Corporeal Husk",
+      "desc": "When Jingliu enters the Spectral Transmigration state, the Syzygy stack limit increases by 1, and Jingliu obtains {{1}} stack(s) of Syzygy. While she is in the Spectral Transmigration state, her CRIT DMG increases by {{2}}%."
     }
   }
 }

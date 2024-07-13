@@ -12,7 +12,7 @@
       "0": {
         "name": "Maravilla astronómica",
         "fullDesc": "Activa Matriz del Presagio y todos los aliados de Fu Xuan <u>traspasan</u> un {{1}}% del daño que reciben (antes de que un escudo mitigue el daño) a Fu Xuan durante {{3}} turnos.\\nMientras están afectados por Matriz del Presagio, todos los aliados obtienen Conocimiento. En este estado, los PV máx. de los aliados aumentan en una cantidad equivalente al <orangeStrong>{{4}}%</orangeStrong> de los PV máx. de Fu Xuan y su Prob. CRIT aumenta en un <orangeStrong>{{5}}%</orangeStrong>.\\nCuando Fu Xuan es <u>derrotada</u>, Matriz del Presagio se disipa.",
-        "shortDesc": "Activa Matriz del Presagio y los aliados <u>traspasan</u> a Fu Xuan <color=#f29e38ff>parte del daño que reciben</color>. Además, aumentan los PV máx. y la <color=#f29e38ff>Prob. CRIT</color> de todos los aliados."
+        "shortDesc": "Activa Matriz del Presagio y los aliados <u>traspasan</u> a Fu Xuan <orangeStrong>parte del daño que reciben</orangeStrong>. Además, aumentan los PV máx. y la <orangeStrong>Prob. CRIT</orangeStrong> de todos los aliados."
       }
     },
     "ult": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ciclo de vida y muerte",
+      "desc": "Conocimiento aumenta el Daño CRIT en un {{1}}%."
+    },
+    "2": {
+      "name": "Presagio siniestro",
+      "desc": "Cuando Matriz del Presagio está activa, si un aliado recibe daño letal, todo el daño letal que reciban los aliados durante esa acción no provocará que sean derrotados y regenerarán inmediatamente una cantidad de PV equivalente al {{1}}% de sus PV máx. Este efecto solo se puede activar una vez en cada batalla."
+    },
+    "3": {
+      "name": "Talismán vertical",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Estrella favorable",
+      "desc": "Cuando otros aliados afectados por Matriz del Presagio reciben un ataque, Fu Xuan recupera {{1}} pts. de energía."
+    },
+    "5": {
+      "name": "Adivinación veraz",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Salvación",
+      "desc": "Cuando se activa Matriz del Presagio, se hace un recuento de los PV perdidos por todos los aliados en esta batalla. El daño infligido por la habilidad definitiva de Fu Xuan aumenta en un {{1}}% de este recuento de PV perdidos.\\nEl recuento de PV perdidos en esta batalla no puede superar el {{2}}% de los PV máx. de Fu Xuan. Al usar su habilidad definitiva, este recuento se reinicia."
     }
   }
 }

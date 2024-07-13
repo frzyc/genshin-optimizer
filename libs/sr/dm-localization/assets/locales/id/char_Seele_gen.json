@@ -19,14 +19,14 @@
       "0": {
         "name": "Butterfly Flurry",
         "fullDesc": "Langsung memasuki status Buff dan mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Seele pada 1 target musuh.",
-        "shortDesc": "Memasuki <color=#f29e38ff>status Buff</color> dan mengakibatkan Quantum DMG dalam jumlah besar pada 1 musuh."
+        "shortDesc": "Memasuki <orangeStrong>status Buff</orangeStrong> dan mengakibatkan Quantum DMG dalam jumlah besar pada 1 musuh."
       }
     },
     "technique": {
       "0": {
         "name": "Phantom Illusion",
         "fullDesc": "Setelah menggunakan Technique, Seele akan memasuki status Stealth selama {{1}} detik. Selama berada dalam status Stealth, Seele tidak akan terdeteksi musuh. Jika memulai pertempuran dengan cara menyerang musuh, Seele akan segera memasuki status Buff.",
-        "shortDesc": "Memasuki status <color=#f29e38ff>Stealth</color>. Setelah menyerang musuh dan memasuki pertempuran, akan langsung memasuki <color=#f29e38ff>status Buff</color>."
+        "shortDesc": "Memasuki status <orangeStrong>Stealth</orangeStrong>. Setelah menyerang musuh dan memasuki pertempuran, akan langsung memasuki <orangeStrong>status Buff</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Extirpating Slash",
+      "desc": "Saat mengakibatkan DMG pada target musuh dengan persentase HP saat ini kurang dari atau sama dengan {{1}}%, CRIT Rate meningkat {{2}}%."
+    },
+    "2": {
+      "name": "Dancing Butterfly",
+      "desc": "Efek peningkatan SPD pada Skill dapat ditumpuk hingga {{1}} lapis."
+    },
+    "3": {
+      "name": "Dazzling Tumult",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Flitting Phantasm",
+      "desc": "Saat Seele mengalahkan target musuh, dia akan memulihkan {{1}} Energy."
+    },
+    "5": {
+      "name": "Piercing Shards",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Shattering Shambles",
+      "desc": "Setelah melancarkan Ultimate, musuh yang diserang akan memasuki status \"Butterfly Flurry\" selama {{2}} giliran. Target musuh yang berada dalam status \"Butterfly Flurry\" akan menerima Quantum DMG tambahan sebesar {{1}}% DMG Ultimate Seele setiap kali terkena serangan. Jika target musuh gugur akibat DMG \"Butterfly Flurry\" yang dipicu oleh rekan lain, maka Talent Seele tidak akan terpicu.\\nJika Seele gugur, maka status \"Butterfly Flurry\" yang ada pada musuh akan dihapus."
     }
   }
 }

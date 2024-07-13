@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Quanto Mais Alto Você Voa, De Mais Alto Você Cai",
+      "desc": "Quando o inimigo-alvo atacado tem {{1}}% ou mais de PV, a Chance de CRIT aumenta em {{2}}%."
+    },
+    "2": {
+      "name": "Amainar o Octeto Venenoso, Saciar o Vício das Chamas",
+      "desc": "Reduz a recarga do Talento em 1 rodada."
+    },
+    "3": {
+      "name": "Visível e Despercebido",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Dragão Rugindo e Sol Crescente",
+      "desc": "Quando Dan Heng usa sua Perícia Suprema para derrotar um inimigo, ele agirá novamente imediatamente."
+    },
+    "5": {
+      "name": "Uma Gota de Chuva Alimenta Uma Torrente",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "A Alma Inquieta Aguarda",
+      "desc": "O estado de Lentidão ativado pela Perícia reduz a VEL do inimigo em mais {{1}}%."
+    }
   }
 }

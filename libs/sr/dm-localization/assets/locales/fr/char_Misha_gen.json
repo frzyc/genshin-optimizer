@@ -12,21 +12,21 @@
       "0": {
         "name": "À votre service !",
         "fullDesc": "Augmente de {{3}} le nombre de frappes par action du prochain ultime de Micha. Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Micha à une cible ennemie unique, et des DGT de glace équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Micha aux cibles adjacentes.",
-        "shortDesc": "Inflige des DGT de glace à un ennemi et des DGT de glace mineurs aux ennemis adjacents. D'autre part, augmente le nombre de <color=#f29e38ff>frappes par action du prochain ultime de Micha</color>."
+        "shortDesc": "Inflige des DGT de glace à un ennemi et des DGT de glace mineurs aux ennemis adjacents. D'autre part, augmente le nombre de <orangeStrong>frappes par action du prochain ultime de Micha</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "J—Je vais être en retard !",
         "fullDesc": "L'ultime de Micha inflige {{1}} frappes par action par défaut. La première frappe inflige des DGT de glace équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Micha à une cible ennemie unique. Puis, le reste des frappes inflige chacune des DGT de glace équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Micha à un ennemi unique aléatoire. Il y a <orangeStrong>{{3}}%</orangeStrong> de <u>chances de base</u> de geler la cible pendant 1 tour avant chaque frappe.\\nLes cibles ennemies gelées ne peuvent pas agir et subissent des <u>DGT de glace additionnels</u> équivalents à <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Micha au début de leur tour.\\nL'ultime de Micha peut infliger jusqu'à {{5}} frappes par action. Le nombre de frappes par action retourne à sa valeur par défaut après utilisation de l'ultime.",
-        "shortDesc": "Inflige des DGT de glace mineurs à des ennemis uniques. L'attaque rebondit <orangeStrong>{{1}}</orangeStrong> fois par défaut jusqu'à un maximum de <orangeStrong>{{5}}</orangeStrong> fois. Il y a une faible chance de <color=#f29e38ff>geler</color> la cible avant chaque frappe."
+        "shortDesc": "Inflige des DGT de glace mineurs à des ennemis uniques. L'attaque rebondit <orangeStrong>{{1}}</orangeStrong> fois par défaut jusqu'à un maximum de <orangeStrong>{{5}}</orangeStrong> fois. Il y a une faible chance de <orangeStrong>geler</orangeStrong> la cible avant chaque frappe."
       }
     },
     "technique": {
       "0": {
         "name": "Pas si vite !",
         "fullDesc": "Crée une dimension qui dure {{1}} secondes après avoir utilisé la technique. Les ennemis pris dans la dimension sont affectés par Prison onirique et arrêtent toutes leurs actions. Le nombre de frappes par action du prochain ultime de Micha augmente de {{2}} lorsqu'il entre en combat contre des ennemis affectés par Prison onirique. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
-        "shortDesc": "Crée une dimension qui arrête tous les ennemis qui s'y trouvent. Le <color=#f29e38ff>prochain ultime de Micha inflige plus de frappes par action</color> après être entré en combat contre des ennemis à l'intérieur de la dimension."
+        "shortDesc": "Crée une dimension qui arrête tous les ennemis qui s'y trouvent. Le <orangeStrong>prochain ultime de Micha inflige plus de frappes par action</orangeStrong> après être entré en combat contre des ennemis à l'intérieur de la dimension."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Rêverie insaisissable",
+      "desc": "Lors de l'utilisation de l'ultime, augmente le nombre de frappes par action de l'ultime en cours de {{1}} pour chaque ennemi sur le champ de bataille, jusqu'à une augmentation maximale de {{2}} frappes."
+    },
+    "2": {
+      "name": "Mélancolie de la jeunesse",
+      "desc": "Avant chaque frappe de l'ultime, il y a {{3}}% de chances de base de réduire la DÉF de la cible de {{1}}% pendant {{2}} tours."
+    },
+    "3": {
+      "name": "Vestiges du bonheur",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Présence bienveillante",
+      "desc": "Augmente de {{1}}% le multiplicateur de DGT de chaque frappe de l'ultime."
+    },
+    "5": {
+      "name": "Genèse du premier amour",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Distanciation du rêve",
+      "desc": "Augmente de {{2}}% les DGT du personnage jusqu'à la fin du tour lorsqu'il utilise son ultime. D'autre part, régénère {{1}} point de compétence pour l'équipe lors de la prochaine utilisation de la compétence."
     }
   }
 }

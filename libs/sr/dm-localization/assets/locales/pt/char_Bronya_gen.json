@@ -12,14 +12,14 @@
       "0": {
         "name": "Redistribuição de Combate",
         "fullDesc": "Dissipa uma <u>penalidade</u> de um único aliado, permite que ele aja imediatamente, e aumenta seu Dano em <orangeStrong>{{1}}%</orangeStrong> por {{3}} rodada(s).\\nQuando esta Perícia é usada na própria Bronya, ela não pode agir imediatamente novamente.",
-        "shortDesc": "<color=#f29e38ff>Remove</color> 1 <color=#f29e38ff><u>penalidade</u></color> de um único aliado, <color=#f29e38ff>aumenta o dano que ele causa</color> e permite que ele <color=#f29e38ff>aja imediatamente</color>."
+        "shortDesc": "<orangeStrong>Remove</orangeStrong> 1 <orangeStrong><u>penalidade</u></orangeStrong> de um único aliado, <orangeStrong>aumenta o dano que ele causa</orangeStrong> e permite que ele <orangeStrong>aja imediatamente</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "A Marcha de Belobog",
         "fullDesc": "Aumenta o ATQ de todos os aliados em <orangeStrong>{{1}}%</orangeStrong> e aumenta o Dano CRIT em <orangeStrong>{{2}}%</orangeStrong> do Dano CRIT de Bronya mais <orangeStrong>{{3}}%</orangeStrong> por {{4}} rodada(s).",
-        "shortDesc": "Aumenta o <color=#f29e38ff>ATQ</color> e o <color=#f29e38ff>Dano CRIT</color> de todos os aliados"
+        "shortDesc": "Aumenta o <orangeStrong>ATQ</orangeStrong> e o <orangeStrong>Dano CRIT</orangeStrong> de todos os aliados"
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Aprimore Sua Força",
+      "desc": "Ao usar a Perícia, há {{1}}% de chance fixa de recuperar 1 Ponto de Perícia. Este efeito tem recarga de 1 rodada."
+    },
+    "2": {
+      "name": "Marcha Rápida",
+      "desc": "Ao usar a Perícia, a VEL do aliado-alvo aumenta em {{1}}% depois de realizar a ação, e dura 1 rodada."
+    },
+    "3": {
+      "name": "Bombardeio",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Pegue de Surpresa",
+      "desc": "Após um aliado que não seja Bronya usar um ATQ Básico em um inimigo com Fraqueza de Vento, Bronya realiza um Ataque Extra no alvo imediatamente, causando Dano de Vento equivalente a {{1}}% do ATQ Básico de Bronya. Este efeito só pode ser ativado 1 vez por rodada."
+    },
+    "5": {
+      "name": "Incontrolável",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Arco-íris Perfurante",
+      "desc": "A duração do efeito de Bônus de Dano da Perícia no aliado-alvo aumenta em {{1}} rodada(s)."
     }
   }
 }

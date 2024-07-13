@@ -17,7 +17,7 @@
       "0": {
         "name": "Quân Bài Cuối Cùng",
         "fullDesc": "Bốc ngay {{1}} Quân Bài Quỳnh Ngọc, khiến sát thương do bản thân gây ra tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì đến khi kết thúc hiệp này. Hiệu ứng này có thể cộng dồn {{3}} tầng. Sau khi thi triển Chiến Kỹ này, hiệp này sẽ không kết thúc.",
-        "shortDesc": "<color=#f29e38ff>Rút bài</color>, tăng sát thương bản thân gây ra và <color=#f29e38ff>hiệp này sẽ không kết thúc</color>."
+        "shortDesc": "<orangeStrong>Rút bài</orangeStrong>, tăng sát thương bản thân gây ra và <orangeStrong>hiệp này sẽ không kết thúc</orangeStrong>."
       }
     },
     "ult": {
@@ -40,6 +40,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Thế Bài Xung Phong Dũng Mãnh",
+      "desc": "Sát thương Tuyệt Kỹ tăng {{1}}%."
+    },
+    "2": {
+      "name": "Thế Bài Như Gối Ngủ Êm",
+      "desc": "Mỗi lần Qingque bốc bài, lập tức hồi phục {{1}} điểm Năng Lượng."
+    },
+    "3": {
+      "name": "Thế Bài Thuận Thế Tự Ù",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Thế Bài Thắng Trong Tầm Tay",
+      "desc": "Sau khi thi triển Chiến Kỹ, có {{1}}% xác suất cố định nhận trạng thái Bất Cầu Nhân, duy trì đến khi hiệp này kết thúc.\\nTrong trạng thái Bất Cầu Nhân, sau khi thi triển Tấn Công Thường hoặc Tấn Công Thường Cường Hóa, sẽ lập tức tiến hành 1 Đòn Đánh Theo Sau, gây cho mục tiêu này một lượng Sát Thương Lượng Tử bằng 100% Sát Thương Tấn Công Thường hoặc Tấn Công Thường Cường Hóa."
+    },
+    "5": {
+      "name": "Thế Bài Đánh Cược Vận Mệnh",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Thế Bài Chiếm Trọn Ưu Thế",
+      "desc": "Sau khi thi triển Tấn Công Cơ Bản Cường Hóa, sẽ hồi 1 điểm Chiến Kỹ."
     }
   }
 }

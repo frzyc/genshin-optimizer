@@ -12,14 +12,14 @@
       "0": {
         "name": "{RUBY_B#さくせんさいてんかい}作戦再展開{RUBY_E#}",
         "fullDesc": "指定した味方単体の<u>デバフ</u>を1つ解除し、その味方を即座に行動させ、与ダメージ+<orangeStrong>{{1}}%</orangeStrong>、{{3}}ターン継続。\\n自身に対してこのスキルを発動した時、即時行動の効果は発動しない。",
-        "shortDesc": "味方単体の<color=#f29e38ff><u>デバフ</u></color>を1つ<color=#f29e38ff>解除</color>し、<color=#f29e38ff>与ダメージをアップ</color>させ、<color=#f29e38ff>即座に行動させる</color>。"
+        "shortDesc": "味方単体の<orangeStrong><u>デバフ</u></orangeStrong>を1つ<orangeStrong>解除</orangeStrong>し、<orangeStrong>与ダメージをアップ</orangeStrong>させ、<orangeStrong>即座に行動させる</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "ベロブルグ{RUBY_B#こうしんきょく}行進曲{RUBY_E#}",
         "fullDesc": "味方全体の攻撃力+<orangeStrong>{{1}}%</orangeStrong>、会心ダメージがブローニャの会心ダメージの<orangeStrong>{{2}}%</orangeStrong>+<orangeStrong>{{3}}%</orangeStrong>アップする、{{4}}ターン継続。",
-        "shortDesc": "味方全体の<color=#f29e38ff>攻撃力</color>と<color=#f29e38ff>会心ダメージをアップ</color>する。"
+        "shortDesc": "味方全体の<orangeStrong>攻撃力</orangeStrong>と<orangeStrong>会心ダメージをアップ</orangeStrong>する。"
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#えいき}英気{RUBY_E#}を{RUBY_B#やしな}養{RUBY_E#}う",
+      "desc": "戦闘スキルを発動した時、{{1}}%の固定確率でSPを1回復する、クールタイムは1ターン。"
+    },
+    "2": {
+      "name": "{RUBY_B#きゅうこうぐん}急行軍{RUBY_E#}",
+      "desc": "戦闘スキルを発動した時、指定された味方は行動した後に速度+{{1}}%、1ターン継続。"
+    },
+    "3": {
+      "name": "{RUBY_B#いっせいしゃげき}一斉射撃{RUBY_E#}",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
+    },
+    "4": {
+      "name": "{RUBY_B#ふい}不意{RUBY_E#}{RUBY_B#う}打{RUBY_E#}ち",
+      "desc": "他の味方が、弱点が風属性の敵に通常攻撃を行った後、ブローニャは追加攻撃を行い、その敵に通常攻撃のダメージ{{1}}%分の風属性ダメージを与える、この効果はターンが回ってくるたびに1回発動できる。"
+    },
+    "5": {
+      "name": "{RUBY_B#む}向{RUBY_E#}かう{RUBY_B#ところてき}所敵{RUBY_E#}なし",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#きせいかんてん}気勢貫天{RUBY_E#}",
+      "desc": "戦闘スキルが付与する、指定した味方の与ダメージアップ効果の継続時間+{{1}}ターン。"
     }
   }
 }

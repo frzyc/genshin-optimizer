@@ -12,21 +12,21 @@
       "0": {
         "name": "Zi... Zimmerservice!",
         "fullDesc": "Erhöht die Trefferzahl von Mishas nächstem Ultimate um {{3}}. Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Mishas ANG zu und fügt angrenzenden Zielen Eis-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Mishas ANG zu.",
-        "shortDesc": "Fügt einem Gegner Eis-SCH zu und angrenzenden Einheiten geringen Eis-SCH zu. Erhöht die <color=#f29e38ff>Trefferzahl von Mishas nächstem Ultimate</color>."
+        "shortDesc": "Fügt einem Gegner Eis-SCH zu und angrenzenden Einheiten geringen Eis-SCH zu. Erhöht die <orangeStrong>Trefferzahl von Mishas nächstem Ultimate</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Ich bin spät dran!",
         "fullDesc": "Mishas Ultimate hat zunächst eine Trefferzahl von {{1}}. Anfangs verursacht er einen Treffer und fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> seines ANG zu. Mit seinen weiteren Treffern fügt er jeweils einem zufälligen Gegner Eis-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> seines ANG zu. Vor jedem Treffer besteht eine <u>Grundchance</u> von <orangeStrong>{{3}}%</orangeStrong>, das Ziel für 1 Rd. einzufrieren.\\nEin gefrorener Gegner kann keine Aktionen ausführen und erleidet zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Mishas ANG.\\nMishas Ultimate kann eine Trefferzahl von bis zu {{5}} haben. Nach dem Einsatz seines Ultimates wird die Trefferzahl auf die ursprüngliche Anzahl zurückgesetzt.",
-        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu. Der Angriff prallt zunächst <orangeStrong>{{1}}</orangeStrong>-mal und max. <orangeStrong>{{5}}</orangeStrong>-mal ab. Vor jedem Treffer besteht eine geringe Chance, das Ziel <color=#f29e38ff>einzufrieren</color>."
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu. Der Angriff prallt zunächst <orangeStrong>{{1}}</orangeStrong>-mal und max. <orangeStrong>{{5}}</orangeStrong>-mal ab. Vor jedem Treffer besteht eine geringe Chance, das Ziel <orangeStrong>einzufrieren</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Verweile doch, du bist so schön!",
         "fullDesc": "Erzeugt nach dem Einsatz der Technik für {{1}} Sek. eine spezielle Dimension. Gegner in der Dimension werden mit „Traumgefängnis“ belegt und ihre Aktionen angehalten. Nach Kampfeintritt mit Gegnern, die mit Traumgefängnis belegt sind, wird die Trefferzahl von Mishas nächstem Ultimate um {{2}} erhöht. Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
-        "shortDesc": "Erschafft eine spezielle Dimension, die alle Gegner in ihr anhält. Nach Kampfeintritt mit Gegnern in der Dimension wird die <color=#f29e38ff>Trefferzahl von Mishas nächstem Ultimate</color> erhöht."
+        "shortDesc": "Erschafft eine spezielle Dimension, die alle Gegner in ihr anhält. Nach Kampfeintritt mit Gegnern in der Dimension wird die <orangeStrong>Trefferzahl von Mishas nächstem Ultimate</orangeStrong> erhöht."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Flatterhaftes Trugbild",
+      "desc": "Beim Einsatz des Ultimates wird seine Trefferzahl für jeden Gegner im Kampf zusätzlich um {{1}} erhöht, bis zu max. {{2}} Treffer."
+    },
+    "2": {
+      "name": "Jugendliche Sehnsucht",
+      "desc": "Der Ultimate hat vor jedem Treffer eine Grundchance von {{3}}%, die VTD des Ziels für {{2}} Rd. um {{1}}% zu reduzieren."
+    },
+    "3": {
+      "name": "Schatten glücklicher Jahre",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Vertraute Erscheinung",
+      "desc": "Erhöht den SCH-Multiplikator von jedem Treffer des Ultimates um {{1}}%."
+    },
+    "5": {
+      "name": "Erste Liebe und Freundschaft",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Verblasste Sehnsucht",
+      "desc": "Nach dem Einsatz des Ultimates wird sein verursachter SCH um {{2}}% bis zum Ende der eigenen Runde erhöht. Stellt nach dem nächsten Einsatz der Fertigkeit {{1}} Fertigkeitspunkt für das Team wieder her."
     }
   }
 }

@@ -12,7 +12,7 @@
       "0": {
         "name": "Màn Mở Đầu Hoành Tráng",
         "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Hỏa bằng <orangeStrong>{{1}}%</orangeStrong> tấn công của Guinaifen, đồng thời gây cho mục tiêu gần đó Sát Thương Hỏa bằng <orangeStrong>{{2}}%</orangeStrong> tấn công của Guinaifen, và có {{3}}% <u>xác suất cơ bản</u> khiến mục tiêu và các mục tiêu gần đó rơi vào trạng thái Thiêu Đốt. Trong trạng thái Thiêu Đốt, khi kẻ địch bắt đầu mỗi hiệp, sẽ chịu Sát Thương Hỏa Duy Trì bằng <orangeStrong>{{4}}%</orangeStrong> tấn công của Guinaifen, duy trì {{5}} hiệp.",
-        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, gây lượng nhỏ Sát Thương Hỏa cho mục tiêu lân cận, có xác suất lớn thi triển <color=#f29e38ff>Thiêu Đốt</color>."
+        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, gây lượng nhỏ Sát Thương Hỏa cho mục tiêu lân cận, có xác suất lớn thi triển <orangeStrong>Thiêu Đốt</orangeStrong>."
       }
     },
     "ult": {
@@ -26,7 +26,7 @@
       "0": {
         "name": "Kỹ Nghệ Xiếc Đỉnh Cao",
         "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào trận sẽ gây {{2}} lần sát thương, mỗi lần sát thương sẽ gây cho 1 kẻ địch ngẫu nhiên Sát Thương Hỏa bằng {{1}}% tấn công của Guinaifen và có {{3}}% <u>xác suất cơ bản</u> khiến mục tiêu rơi vào trạng thái Nuốt Lửa.",
-        "shortDesc": "Tấn công kẻ địch. Sau khi vào chiến đấu, gây một lượng nhỏ Sát Thương Hỏa lên 1 kẻ địch đồng thời thi triển <color=#f29e38ff>trạng thái \"Nuốt Lửa\"</color>, tổng cộng Nảy Bật 4 lần."
+        "shortDesc": "Tấn công kẻ địch. Sau khi vào chiến đấu, gây một lượng nhỏ Sát Thương Hỏa lên 1 kẻ địch đồng thời thi triển <orangeStrong>trạng thái \"Nuốt Lửa\"</orangeStrong>, tổng cộng Nảy Bật 4 lần."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Trồng Cây Chuối Ăn Mì",
+      "desc": "Khi thi triển Chiến Kỹ, có {{1}}% xác suất cơ bản khiến kháng hiệu ứng của kẻ địch bị tấn công giảm {{2}}%, duy trì {{3}} hiệp."
+    },
+    "2": {
+      "name": "Vừa Đánh Răng Vừa Huýt Sáo",
+      "desc": "Khi kẻ địch đang ở trạng thái Thiêu Đốt, tấn công thường và Chiến Kỹ của Guinaifen sẽ tăng {{1}}% Bội Số Sát Thương Thiêu Đốt gây ra cho kẻ địch đó."
+    },
+    "3": {
+      "name": "Đập Đá Trên Ngực",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15, Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Yết Hầu Chặn Giáo",
+      "desc": "Mỗi khi trạng thái Thiêu Đốt do Guinaifen thi triển gây sát thương, Guinaifen sẽ hồi {{1}} năng lượng."
+    },
+    "5": {
+      "name": "Nuốt Chửng Trường Kiếm",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15, Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Tay Không Bắt Đạn",
+      "desc": "Giúp số tầng cộng dồn của \"Nuốt Lửa\" tăng {{1}} tầng."
     }
   }
 }

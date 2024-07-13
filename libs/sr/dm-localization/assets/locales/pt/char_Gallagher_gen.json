@@ -24,14 +24,14 @@
       "0": {
         "name": "Etiqueta de Champanhe",
         "fullDesc": "Inflige Inebriação a todos os inimigos, durando por {{2}} rodada(s). Ao mesmo tempo, causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Gallagher a todos os inimigos e aprimora o próximo ATQ Básico desta unidade para Blitz de Néctar.",
-        "shortDesc": "<color=#f29e38ff>Inflige Inebriação</color> a todos os inimigos e causa Dano de Fogo a eles ao mesmo tempo. Aprimora o próximo ATQ Básico desta unidade para Blitz de Néctar."
+        "shortDesc": "<orangeStrong>Inflige Inebriação</orangeStrong> a todos os inimigos e causa Dano de Fogo a eles ao mesmo tempo. Aprimora o próximo ATQ Básico desta unidade para Blitz de Néctar."
       }
     },
     "technique": {
       "0": {
         "name": "Artesão de Elixires",
         "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, inflige Inebriação a todos os inimigos, durando por {{1}} rodada(s). Causa Dano de Fogo igual a {{2}}% do ATQ de Gallagher a todos os inimigos.",
-        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, <color=#f29e38ff>inflige Inebriação</color> a todos os inimigos e causa Dano de Fogo leve a todos os inimigos."
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, <orangeStrong>inflige Inebriação</orangeStrong> a todos os inimigos e causa Dano de Fogo leve a todos os inimigos."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Cão Salgado",
+      "desc": "Regenera {{1}} de Energia quando Gallagher entra em batalha e aumenta a RES a Efeito dele em {{2}}%."
+    },
+    "2": {
+      "name": "Cauda de Leão",
+      "desc": "Ao usar a Perícia, remove {{1}} Penalidade(s) de um aliado-alvo. Ao mesmo tempo, aumenta a sua RES a Efeito em {{2}}%, durando por {{3}} rodada(s)."
+    },
+    "3": {
+      "name": "Reanimador de Cadáveres",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Última Palavra",
+      "desc": "Estende em {{1}} rodada(s) a duração do estado de Inebriação infligido pela Perícia Suprema de Gallagher."
+    },
+    "5": {
+      "name": "Morte ao Meio-Dia",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Sangue e Areia",
+      "desc": "Aumenta o Efeito de Quebra de Gallagher em {{1}}% e a Eficiência de Quebra de Fraqueza em {{2}}%."
     }
   }
 }

@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Vết Khuyết Của Vương Quốc Cái Đẹp",
+      "desc": "Mỗi tầng \"Nâng Cấp\" sẽ tăng thêm {{1}}% Sát Thương Bạo Kích."
+    },
+    "2": {
+      "name": "Sự Khiêm Nhường Của Đá Mã Não",
+      "desc": "Khi thi triển Tuyệt Kỹ, nếu số lượng kẻ địch từ {{1}} trở lên, Tấn Công tăng {{2}}%, duy trì {{3}} hiệp."
+    },
+    "3": {
+      "name": "Vinh Quang Con Đường Gai",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Hiến Dâng Kèn Lệnh",
+      "desc": "Khi bắt đầu chiến đấu, nhận {{1}} tầng \"Nâng Cấp\", đồng thời khiến giới hạn cộng dồn hiệu ứng của Thiên Phú tăng {{2}} tầng."
+    },
+    "5": {
+      "name": "Tuyết, Nơi Nào Đó Trên Vũ Trụ",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Ánh Hào Quang Của \"Bạn\"",
+      "desc": "Khi thi triển Tuyệt Kỹ, bỏ qua {{1}}% Phòng Thủ của kẻ địch."
+    }
   }
 }

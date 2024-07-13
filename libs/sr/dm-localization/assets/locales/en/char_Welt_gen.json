@@ -12,21 +12,21 @@
       "0": {
         "name": "Edge of the Void",
         "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Welt's ATK to a single enemy and further deals DMG 2 extra times, with each time dealing Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Welt's ATK to a random enemy. On hit, there is a <orangeStrong>{{2}}%</orangeStrong> <u>base chance</u> to reduce the enemy's SPD by {{3}}% for {{4}} turn(s).",
-        "shortDesc": "Deals minor Imaginary DMG to a single enemy. This attack can Bounce 3 times, with a chance of <color=#f29e38ff>Slowing</color> the hit enemies."
+        "shortDesc": "Deals minor Imaginary DMG to a single enemy. This attack can Bounce 3 times, with a chance of <orangeStrong>Slowing</orangeStrong> the hit enemies."
       }
     },
     "ult": {
       "0": {
         "name": "Synthetic Black Hole",
         "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Welt's ATK to all enemies, with a {{3}}% <u>base chance</u> for enemies hit by this ability to be Imprisoned for 1 turn.\\nImprisoned enemies have their <u>actions delayed</u> by <orangeStrong>{{2}}%</orangeStrong> and SPD reduced by {{4}}%.",
-        "shortDesc": "Deals Imaginary DMG to all enemies, with <color=#f29e38ff>a high chance of Imprisoning them</color>."
+        "shortDesc": "Deals Imaginary DMG to all enemies, with <orangeStrong>a high chance of Imprisoning them</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Gravitational Imprisonment",
         "fullDesc": "After using Welt's Technique, create a dimension that lasts for {{4}} second(s). Enemies in this dimension have their Movement SPD reduced by {{5}}%. After entering battle with enemies in the dimension, there is a {{1}}% <u>base chance</u> to Imprison the enemies for 1 turn.\\nImprisoned enemies have their <u>actions delayed</u> by {{2}}% and SPD reduced by {{3}}%. Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a dimension. Enemies in this dimension have their Movement SPD reduced. After entering combat with enemies in the dimension, there is a <color=#f29e38ff>high chance for the enemies to become Imprisoned</color>."
+        "shortDesc": "Creates a dimension. Enemies in this dimension have their Movement SPD reduced. After entering combat with enemies in the dimension, there is a <orangeStrong>high chance for the enemies to become Imprisoned</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Legacy of Honor",
+      "desc": "After Welt uses his Ultimate, his abilities are enhanced. The next {{3}} time(s) he uses his Basic ATK or Skill, deals Additional DMG to the target equal to {{1}}% of his Basic ATK's DMG multiplier or {{2}}% of his Skill's DMG multiplier respectively."
+    },
+    "2": {
+      "name": "Conflux of Stars",
+      "desc": "When his Talent is triggered, Welt regenerates {{1}} Energy."
+    },
+    "3": {
+      "name": "Prayer of Peace",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Appellation of Justice",
+      "desc": "Base chance for Skill to inflict SPD Reduction increases by {{1}}%."
+    },
+    "5": {
+      "name": "Power of Kindness",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Prospect of Glory",
+      "desc": "When using Skill, deals DMG for 1 extra time to a random enemy."
     }
   }
 }

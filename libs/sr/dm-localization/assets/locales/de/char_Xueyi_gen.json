@@ -19,7 +19,7 @@
       "0": {
         "name": "Göttliche Geißelung",
         "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Xueyis ANG zu. Dieser Angriff ignoriert die Schwächen des Gegners und reduziert den WDS des Ziels. Wenn die Schwäche eines Gegners gebrochen wird, wird der Effekt „Schwächebruch: Quanten“ ausgelöst.\\nJe mehr WDS reduziert wird, desto höher ist der Schaden, der mit diesem Angriff zugefügt wird, bis maximal <orangeStrong>{{3}}%</orangeStrong>.",
-        "shortDesc": "Fügt einem Gegner massiven Quanten-SCH zu. Dieser Angriff verringert den WDS des Gegners <color=#f29e38ff>unabhängig vom Schwächetyp</color>. Je mehr WDS verringert wird, desto höher ist der zugefügte SCH."
+        "shortDesc": "Fügt einem Gegner massiven Quanten-SCH zu. Dieser Angriff verringert den WDS des Gegners <orangeStrong>unabhängig vom Schwächetyp</orangeStrong>. Je mehr WDS verringert wird, desto höher ist der zugefügte SCH."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Dvesha, gefesselt",
+      "desc": "Erhöht den SCH durch Folgeangriffe des Talents um {{1}}%."
+    },
+    "2": {
+      "name": "Klesha, durchbrochen",
+      "desc": "Der Folgeangriff des Talents verringert den WDS unabhängig vom Schwächetyp und stellt gleichzeitig Xueyis LP in Höhe von {{1}}% ihrer max. LP wieder her. Wenn die Schwäche gebrochen wird, wird der Effekt „Schwächebruch: Quanten“ ausgelöst."
+    },
+    "3": {
+      "name": "Duhkha, ruhend",
+      "desc": "Fertigkeitsstufe +2 bis zu max. St. 15. Standardangriff-Stufe. +1 bis zu max. St. 10."
+    },
+    "4": {
+      "name": "Karma, durchtrennt",
+      "desc": "Erhöht den Brucheffekt beim Einsatz des Ultimates für {{2}} Rd. um {{1}}%."
+    },
+    "5": {
+      "name": "Deva, beschwingt",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Samsara, gemeistert",
+      "desc": "Verringert die maximale Stapelung von „Karma“ auf {{1}}."
     }
   }
 }

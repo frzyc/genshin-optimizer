@@ -19,7 +19,7 @@
       "0": {
         "name": "Castigo Divino",
         "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Xueyi a um único inimigo-alvo. Este ataque ignora os Tipos de Fraqueza e reduz a Tenacidade do inimigo. Quando o inimigo sofrer a Quebra de Fraqueza, o efeito Quebra de Fraqueza contra Quântico é ativado.\\nNeste ataque, quanto mais Tenacidade for reduzida, maior será o Dano causado, até um máximo de <orangeStrong>{{3}}%</orangeStrong> de aumento.",
-        "shortDesc": "Causa Dano Quântico massivo a um único inimigo. Este ataque <color=#f29e38ff>ignora Tipos de Fraqueza</color> e reduz a Tenacidade do alvo. Quanto mais Tenacidade é reduzida, mais alto é o Dano causado."
+        "shortDesc": "Causa Dano Quântico massivo a um único inimigo. Este ataque <orangeStrong>ignora Tipos de Fraqueza</orangeStrong> e reduz a Tenacidade do alvo. Quanto mais Tenacidade é reduzida, mais alto é o Dano causado."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Dvesha, Inibida",
+      "desc": "Aumenta em {{1}}% o Dano causado pelo Ataque Extra de Talento."
+    },
+    "2": {
+      "name": "Klesha, Rompida",
+      "desc": "O Ataque Extra do Talento reduz a Tenacidade inimiga independente dos Tipos de Fraqueza. Ao mesmo tempo, recupera os PV de Xueyi em uma quantidade igual a {{1}}% dos PV máximos dela. Ao aplicar Quebra de Fraqueza, ativa o Efeito de Quebra Quântico."
+    },
+    "3": {
+      "name": "Duhkha, Cessada",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Carma, Partido",
+      "desc": "Ao usar a Perícia Suprema, o Efeito de Quebra aumenta em {{1}}% por {{2}} rodada(s)."
+    },
+    "5": {
+      "name": "Deva, Encantada",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Samsara, Dominada",
+      "desc": "O limite de acúmulo máximo para Carma reduzido para {{1}}."
     }
   }
 }

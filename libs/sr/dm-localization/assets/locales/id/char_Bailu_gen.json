@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ambrosial Aqua",
+      "desc": "Saat efek \"Invigoration\" berakhir, jika HP rekan saat ini sudah pulih sepenuhnya, maka akan memulihkan {{1}} Energy tambahan untuknya."
+    },
+    "2": {
+      "name": "Sylphic Slumber",
+      "desc": "Setelah melancarkan Ultimate, meningkatkan {{1}}% Outgoing Healing selama {{2}} giliran."
+    },
+    "3": {
+      "name": "Omniscient Opulence",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Evil Excision",
+      "desc": "Setiap pemulihan dari Skill akan meningkatkan {{1}}% DMG penerima pemulihan. Dapat ditumpuk {{2}} lapis selama {{3}} giliran."
+    },
+    "5": {
+      "name": "Waning Worries",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Drooling Drop of Draconic Divinity",
+      "desc": "Dalam satu pertempuran, jumlah pemulihan Bailu terhadap rekan tim yang terkena serangan mematikan bertambah {{1}} kali."
+    }
   }
 }

@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Cuanto más subes, más dura es la caída",
+      "desc": "Cuando el porcentaje de PV del objetivo golpeado es igual o superior al {{1}}%, la Prob. CRIT aumenta en un {{2}}%."
+    },
+    "2": {
+      "name": "Controlar el mal y extinguir la llama",
+      "desc": "El TdE del talento se reduce en 1 turno."
+    },
+    "3": {
+      "name": "Visto y no visto",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Dragón rugiente y sol sofocante",
+      "desc": "Cuando su habilidad definitiva elimina al objetivo, Dan Heng vuelve a actuar inmediatamente."
+    },
+    "5": {
+      "name": "Una gota de lluvia alimenta el torrente",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Alma atormentada en espera",
+      "desc": "La Ralentización causada por la habilidad básica reduce la VEL del objetivo en un {{1}}% adicional."
+    }
   }
 }

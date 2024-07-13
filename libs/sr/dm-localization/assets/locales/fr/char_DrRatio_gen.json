@@ -19,14 +19,14 @@
       "0": {
         "name": "Paradoxe du syllogisme",
         "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige l'<u>attaque de suivi</u> de son talent une fois.\\nFolie du sage peut être déclenchée jusqu'à {{2}} fois et n'affecte que la cible la plus récente de l'ultime de Dr Ratio. Le nombre de déclenchements est réinitialisé après que Dr Ratio utilise son ultime.",
-        "shortDesc": "Inflige des DGT imaginaires à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige 1 <color=#f29e38ff><u>attaque de suivi</u></color>."
+        "shortDesc": "Inflige des DGT imaginaires à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige 1 <orangeStrong><u>attaque de suivi</u></orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Fascination façonnée",
         "fullDesc": "Crée une dimension qui provoque les ennemis à proximité pendant {{1}} secondes après avoir utilisé la technique. Il y a {{2}}% de <u>chances de base</u> de réduire de {{3}}% la VIT de chaque cible ennemie pendant {{4}} tours en engageant le combat avec des ennemis dans la dimension. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
-        "shortDesc": "Crée une dimension. Les ennemis à l'intérieur de la dimension subissent l'effet Provocation. Il y a de fortes chances de <color=#f29e38ff>réduire la VIT</color> des cibles ennemies après être entré en combat avec des ennemis dans cette dimension."
+        "shortDesc": "Crée une dimension. Les ennemis à l'intérieur de la dimension subissent l'effet Provocation. Il y a de fortes chances de <orangeStrong>réduire la VIT</orangeStrong> des cibles ennemies après être entré en combat avec des ennemis dans cette dimension."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "L'arrogance engendre le malheur",
+      "desc": "Le nombre maximum de cumuls pour le bonus de Trace « Synthèse » augmente de {{1}}. Vous gagnez immédiatement {{2}} cumuls de Synthèse en début de combat. Nécessite le déblocage de Synthèse."
+    },
+    "2": {
+      "name": "Le diable est dans les détails",
+      "desc": "Lorsque l'attaque de suivi de son talent touche une cible, cette dernière subit des DGT imaginaires supplémentaires équivalents à {{1}}% de l'ATQ de Dr Ratio pour chaque malus qui lui est appliqué. Cet effet peut être déclenché un maximum de {{2}} fois durant chaque attaque de suivi."
+    },
+    "3": {
+      "name": "Connais-toi toi-même",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "L'ignorance est aveugle",
+      "desc": "Régénère {{1}} points d'énergie supplémentaires pour Dr Ratio lorsque son talent se déclenche."
+    },
+    "5": {
+      "name": "Sic Itur Ad Astra",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Vincit Omnia Veritas",
+      "desc": "Augmente de {{1}} le nombre possible de déclenchements de Folie du sage. Les DGT infligés par l'attaque de suivi du talent augmentent de {{2}}%."
     }
   }
 }

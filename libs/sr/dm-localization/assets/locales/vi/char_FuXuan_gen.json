@@ -12,7 +12,7 @@
       "0": {
         "name": "Linh Đài Thị Ảnh",
         "fullDesc": "Mở Ma Trận Tiên Tri, khiến đồng đội của Fu Xuan <u>chia sẻ</u> {{1}}% sát thương phải chịu (trước khi sát thương này được đỡ bởi Khiên) cho Fu Xuan trong {{3}} hiệp.\\nTất cả thành viên phe ta đang trong trạng thái Ma Trận Tiên Tri sẽ nhận Giám Tri, và tăng Giới Hạn HP bằng <orangeStrong>{{4}}%</orangeStrong> Giới Hạn HP của Fu Xuan, Tỷ Lệ Bạo Kích tăng <orangeStrong>{{5}}%</orangeStrong>.\\nKhi Fu Xuan vào <u>trạng thái không thể chiến đấu</u>, Ma Trận Tiên Tri cũng sẽ bị giải trừ.",
-        "shortDesc": "Mở \"Ma Trận Tiên Tri\", <u>chia sẻ</u> cho Fu Xuan <color=#f29e38ff>sát thương mà đồng đội phải chịu</color>. Đồng thời khiến toàn phe ta tăng Giới Hạn HP, <color=#f29e38ff>tăng Tỷ Lệ Bạo Kích</color>."
+        "shortDesc": "Mở \"Ma Trận Tiên Tri\", <u>chia sẻ</u> cho Fu Xuan <orangeStrong>sát thương mà đồng đội phải chịu</orangeStrong>. Đồng thời khiến toàn phe ta tăng Giới Hạn HP, <orangeStrong>tăng Tỷ Lệ Bạo Kích</orangeStrong>."
       }
     },
     "ult": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tư Nguy",
+      "desc": "Tất cả đơn vị trong \"Giám Tri\" sẽ tăng Sát Thương Bạo Kích {{1}}%."
+    },
+    "2": {
+      "name": "Nhu Triệu",
+      "desc": "Nếu bất kỳ mục tiêu phe ta chịu sát thương chí tử trong khi Ma Trận Tiên Tri đang kích hoạt, thì tất cả mục tiêu phe ta chịu sát thương chí tử trong lần hành động này sẽ không rơi vào trạng thái không thể chiến đấu, đồng thời hồi ngay HP bằng {{1}}% Giới Hạn HP của bản thân nhân vật đó. Hiệu ứng này có thể kích hoạt 1 lần trong 1 trận đấu."
+    },
+    "3": {
+      "name": "Trực Phù",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Cách Trạch",
+      "desc": "Sau khi mục tiêu khác của phe ta ở trạng thái \"Ma Trận Tiên Tri\" chịu tấn công, Fu Xuan hồi phục {{1}} điểm Năng Lượng."
+    },
+    "5": {
+      "name": "Kế Thần",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Chủng Lăng",
+      "desc": "Một khi kích hoạt \"Ma Trận Tiên Tri\", sẽ tích lũy HP đã tổn thất của toàn thể phe ta trong trận này. Tăng sát thương Tuyệt Kỹ của Fu Xuan bằng {{1}}% HP đã tổn thất tích lũy trong trận này.\\nHP đã tổn thất tích lũy trong trận này tối đa không quá {{2}}% Giới Hạn HP của Fu Xuan, sau khi thi triển Tuyệt Kỹ sẽ xóa và tích lũy lại từ đầu."
     }
   }
 }

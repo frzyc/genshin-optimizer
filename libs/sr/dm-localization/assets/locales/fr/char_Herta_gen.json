@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tu en veux encore ?",
+      "desc": "Si le pourcentage des PV de l'ennemi est inférieur ou égal à {{1}}%, l'ATQ normale de Herta inflige des DGT de glace additionnels équivalents à {{2}}% de l'ATQ de Herta."
+    },
+    "2": {
+      "name": "On ne s'arrête pas",
+      "desc": "Chaque fois que le talent est déclenché, les chances de coup critique du personnage augmentent de {{1}}%. Cet effet est cumulable {{2}} fois."
+    },
+    "3": {
+      "name": "Je suis comme ça",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "On frappe là où ça fait mal",
+      "desc": "Les DGT augmentent de {{1}}% lorsque le talent est déclenché."
+    },
+    "5": {
+      "name": "C'est tout ou rien",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "On ne me trahit pas",
+      "desc": "L'ATQ du personnage augmente de {{1}}% pendant {{2}} tour après utilisation de l'ultime."
+    }
   }
 }

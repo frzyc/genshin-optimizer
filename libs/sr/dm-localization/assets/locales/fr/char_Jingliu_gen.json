@@ -12,7 +12,7 @@
       "0": {
         "name": "Éclair transcendant",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Jingliu à un ennemi unique et obtient {{2}} cumul de Syzygie.",
-        "shortDesc": "Inflige des DGT de glace à une cible ennemie et obtient <color=#f29e38ff>1 cumul de Syzygie</color>."
+        "shortDesc": "Inflige des DGT de glace à une cible ennemie et obtient <orangeStrong>1 cumul de Syzygie</orangeStrong>."
       },
       "1": {
         "name": "Reflet de lune sur rivière glacée",
@@ -24,14 +24,14 @@
       "0": {
         "name": "Rêves floréphémères",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Jingliu à un ennemi unique et des DGT de glace équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ de Jingliu aux ennemis adjacents. Obtient {{2}} cumul de Syzygie à la fin de l'attaque.",
-        "shortDesc": "Inflige des DGT de glace massifs à une cible ennemie et inflige des DGT de glace aux cibles adjacentes. Obtient <color=#f29e38ff>1 cumul de Syzygie</color>."
+        "shortDesc": "Inflige des DGT de glace massifs à une cible ennemie et inflige des DGT de glace aux cibles adjacentes. Obtient <orangeStrong>1 cumul de Syzygie</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Éclat de la vérité",
         "fullDesc": "Crée une dimension autour de Jingliu qui dure {{3}} secondes. Tous les ennemis dans cette dimension sont gelés. Jingliu génère immédiatement {{6}} points d'énergie et obtient {{1}} cumul de Syzygie, avec {{2}}% de <u>chances de base</u> de geler les cibles ennemies pendant {{4}} tours lorsque le combat est engagé avec des ennemis de la dimension. Les cibles ennemies gelées ne peuvent pas agir et subissent des <u>DGT de glace additionnels</u> équivalents à {{5}}% de l'ATQ de Jingliu au début de chaque tour. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
-        "shortDesc": "Crée une dimension autour du personnage. Les ennemis qui s'y trouvent sont <color=#f29e38ff>gelés</color>. Le personnage génère de l'énergie et obtient 1 cumul de Syzygie avec de fortes chances d'appliquer <color=#f29e38ff>Gelé</color> aux ennemis lorsque le combat est engagé avec des ennemis de la dimension."
+        "shortDesc": "Crée une dimension autour du personnage. Les ennemis qui s'y trouvent sont <orangeStrong>gelés</orangeStrong>. Le personnage génère de l'énergie et obtient 1 cumul de Syzygie avec de fortes chances d'appliquer <orangeStrong>Gelé</orangeStrong> aux ennemis lorsque le combat est engagé avec des ennemis de la dimension."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Assaut des portes stellaires",
+      "desc": "Les DGT critiques de Jingliu augmentent de {{1}}% pendant {{3}} tour lorsqu'elle utilise son ultime ou sa compétence renforcée. Si elle n'attaque qu'une seule cible ennemie, la cible subit des DGT de glace supplémentaires équivalents à {{2}}% de l'ATQ de Jingliu."
+    },
+    "2": {
+      "name": "Ombre du croissant",
+      "desc": "Augmente les DGT de la prochaine compétence renforcée de {{1}}% après avoir utilisé l'ultime."
+    },
+    "3": {
+      "name": "Demi-lune dans la brume",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Lueur de la lance lunaire",
+      "desc": "Lorsque Jingliu est dans l'état Migration spectrale, l'augmentation d'ATQ obtenue en consommant les PV des alliés est majorée de {{1}}% du total de PV consommés par l'ensemble de l'équipe. La limite d'augmentation de l'ATQ augmente également de {{2}}%."
+    },
+    "5": {
+      "name": "Éclat nocturne des astres",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Vide de l'éclipse",
+      "desc": "Jingliu obtient {{1}} cumul de Syzygie et la limite de cumuls de Syzygie augmente de 1 lorsqu'elle entre dans l'état Migration spectrale. Ses DGT critiques augmentent de {{2}}% lorsqu'elle est dans l'état Migration spectrale."
     }
   }
 }

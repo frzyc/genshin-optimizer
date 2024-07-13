@@ -19,7 +19,7 @@
       "0": {
         "name": "Astral Blessing",
         "fullDesc": "Meningkatkan <orangeStrong>{{1}}</orangeStrong> SPD seluruh rekan tim selama {{2}} giliran.",
-        "shortDesc": "Meningkatkan <color=#f29e38ff>SPD</color> seluruh rekan tim."
+        "shortDesc": "Meningkatkan <orangeStrong>SPD</orangeStrong> seluruh rekan tim."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Star Sings Sans Verses or Vocals",
+      "desc": "Saat melancarkan Skill, mengakibatkan 1 kali DMG tambahan pada satu musuh secara acak."
+    },
+    "2": {
+      "name": "Moon Speaks in Wax and Wane",
+      "desc": "Saat melancarkan Ultimate, Asta tidak akan mengurangi lapisan Charge-nya pada giliran berikutnya."
+    },
+    "3": {
+      "name": "Meteor Showers for Wish and Want",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Aurora Basks in Beauty and Bliss",
+      "desc": "Saat lapisan Charge Talent Asta lebih dari atau sama dengan {{1}}, meningkatkan {{2}}% Energy Regeneration Rate Asta."
+    },
+    "5": {
+      "name": "Nebula Secludes in Runes and Riddles",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Galaxy Dreams in Calm and Comfort",
+      "desc": "Lapisan Charge Talent yang berkurang di setiap giliran akan dikurangi {{1}}."
     }
   }
 }

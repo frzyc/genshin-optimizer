@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tiếng Kêu Từ Cốt Tuỷ Thế Giới",
+      "desc": "Khi Tấn Công Thường, gây thêm Sát Thương Hỏa bằng {{1}}% Phòng Thủ của Nhà Khai Phá; Khi thi triển cường hoá Tấn Công Thường, gây thêm Sát Thương Hỏa bằng {{2}}% Phòng Thủ của Nhà Khai Phá."
+    },
+    "2": {
+      "name": "Vững Vàng Như Sắt",
+      "desc": "Khi kích hoạt Thiên Phú sẽ cung cấp Khiên cho toàn phe ta, giúp triệt tiêu thêm một lượng sát thương bằng {{1}}% Phòng Thủ của Nhà Khai Phá +{{2}}."
+    },
+    "3": {
+      "name": "Kiến Tạo Bản Vẽ Tương Lai",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Lưu Lại Lời Thề Văn Minh",
+      "desc": "Khi bắt đầu chiến đấu sẽ nhận ngay {{1}} tầng \"Ý Chí Sục Sôi\"."
+    },
+    "5": {
+      "name": "Dũng Khí Tựa Hào Quang",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Thành Luỹ Trường Tồn",
+      "desc": "Sau khi thi triển cường hóa Tấn Công Thường hoặc Tuyệt Kỹ, Phòng Thủ của Nhà Khai Phá tăng {{1}}%, tối đa cộng dồn {{2}} tầng."
+    }
   }
 }

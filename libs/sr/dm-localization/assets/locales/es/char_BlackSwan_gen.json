@@ -5,28 +5,28 @@
       "0": {
         "name": "Discernimiento, alba silenciosa",
         "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Cisne Negro como Daño de Viento a un enemigo y tiene una <u>probabilidad base</u> del <orangeStrong>{{2}}%</orangeStrong> de aplicar 1 acumulación de <u>Arcano</u> al objetivo golpeado. Tras golpear a un objetivo afectado por Intemperie, Sangrado, Quemadura o Electrocución, cada uno de estos estados tiene una <u>probabilidad base</u> del <orangeStrong>{{3}}%</orangeStrong> de aplicar 1 acumulación adicional de <u>Arcano</u> al objetivo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo y tiene una probabilidad de aplicarle <u>Arcano</u>. Tras atacar a objetivos afectados por <color=#f29e38ff>Intemperie, Sangrado, Quemadura o Electrocución</color>, cada estado tiene una probabilidad de <color=#f29e38ff>infligir <u>Arcano</u> de forma adicional</color>."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo y tiene una probabilidad de aplicarle <u>Arcano</u>. Tras atacar a objetivos afectados por <orangeStrong>Intemperie, Sangrado, Quemadura o Electrocución</orangeStrong>, cada estado tiene una probabilidad de <orangeStrong>infligir <u>Arcano</u> de forma adicional</orangeStrong>."
       }
     },
     "skill": {
       "0": {
         "name": "Decadencia, falso crepúsculo",
         "fullDesc": "Inflige un Daño de Viento equivalente al <orangeStrong>{{1}}%</orangeStrong> del ATQ de Cisne Negro a un enemigo y a los enemigos adyacentes. Tiene una <u>probabilidad base</u> del {{2}}% de aplicar 1 acumulación de <u>Arcano</u> al objetivo y a los objetivos adyacentes y una <u>probabilidad base</u> del {{3}}% de reducir la DEF del objetivo y los objetivos adyacentes en un <orangeStrong>{{4}}%</orangeStrong> durante {{5}} turnos.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo y a los enemigos adyacentes. Tiene una gran probabilidad de <color=#f29e38ff>aplicar <u>Arcano</u></color> y reducir la DEF de los objetivos."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo y a los enemigos adyacentes. Tiene una gran probabilidad de <orangeStrong>aplicar <u>Arcano</u></orangeStrong> y reducir la DEF de los objetivos."
       }
     },
     "ult": {
       "0": {
         "name": "Regocijo en el abrazo de otro mundo",
         "fullDesc": "Afecta con Desvelación a todos los enemigos durante {{2}} turnos.\\nEn el estado de Desvelación, el daño que reciben los objetivos durante su propio turno aumenta en un <orangeStrong>{{3}}%</orangeStrong>, y mientras el objetivo está afectado por <u>Arcano</u>, se considera que también está afectado por Intemperie, Sangrado, Quemadura y Electrocución. Además, después de que <u>Arcano</u> inflija daño al principio de cada turno, no se restablecen las acumulaciones. Mientras dure Desvelación, este efecto para no restablecer las acumulaciones de <u>Arcano</u> se puede activar {{4}} vez como máximo. El contador de activaciones se actualiza cuando se vuelve a aplicar Desvelación.\\nInflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Cisne Negro como Daño de Viento a todos los enemigos.",
-        "shortDesc": "Aplica Desvelación a todos los enemigos, que hace que aumente el daño que recibe el objetivo durante su turno, <color=#f29e38ff>y <u>Arcano</u> se considera equivalente a Intemperie, Sangrado, Quemadura y Electrocución</color>. Además, después de que <u>Arcano</u> inflija daño al principio del siguiente turno, no se restablecen las acumulaciones. Inflige Daño de Viento a todos los enemigos."
+        "shortDesc": "Aplica Desvelación a todos los enemigos, que hace que aumente el daño que recibe el objetivo durante su turno, <orangeStrong>y <u>Arcano</u> se considera equivalente a Intemperie, Sangrado, Quemadura y Electrocución</orangeStrong>. Además, después de que <u>Arcano</u> inflija daño al principio del siguiente turno, no se restablecen las acumulaciones. Inflige Daño de Viento a todos los enemigos."
       }
     },
     "technique": {
       "0": {
         "name": "De la apariencia a la verdad",
         "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, hay una <u>probabilidad base</u> del {{1}}% de aplicar 1 acumulación de <u>Arcano</u> a cada enemigo. Por cada aplicación de <u>Arcano</u> a un objetivo, aplica otra acumulación de <u>Arcano</u> al mismo objetivo. Este efecto se repite hasta que no se logre aplicar <u>Arcano</u> a ese objetivo. Cada vez, la <u>probabilidad base</u> de aplicar <u>Arcano</u> a ese objetivo es equivalente al {{2}}% de la <u>probabilidad base</u> de la aplicación anterior de <u>Arcano</u> a ese objetivo.",
-        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, hay una gran probabilidad de <color=#f29e38ff>aplicar <u>Arcano</u> a cada objetivo repetidamente hasta que no se pueda aplicar</color>."
+        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, hay una gran probabilidad de <orangeStrong>aplicar <u>Arcano</u> a cada objetivo repetidamente hasta que no se pueda aplicar</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Siete pilares de sabiduría",
+      "desc": "Cuando Cisne Negro está activa en la batalla, la RES a Viento, Físico, Fuego o Rayo de los enemigos afectados por Intemperie, Sangrado, Quemadura o Electrocución, respectivamente, se reduce en un {{1}}%."
+    },
+    "2": {
+      "name": "No llores por mí, cordero",
+      "desc": "Cuando se elimina a un enemigo afectado por Arcano, hay una probabilidad base del {{1}}% de aplicar {{2}} acumulaciones de Arcano a los enemigos adyacentes."
+    },
+    "3": {
+      "name": "Como arriba, así es abajo",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Regalo de lágrimas",
+      "desc": "En el estado de Desvelación, la RES a efecto de los objetivos enemigos se reduce en un {{1}}% y Cisne Negro recupera {{2}} pts. de energía al comienzo de cada turno de los enemigos afectados por Desvelación o cuando un enemigo afectado es eliminado. El efecto de recuperación de energía solo se puede activar 1 vez mientras dure Desvelación. El contador de activaciones se actualiza cuando se vuelve a aplicar Desvelación."
+    },
+    "5": {
+      "name": "Estrellas migratorias",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Dioses buenos, plebe desgraciada",
+      "desc": "Cuando los aliados de Cisne Negro atacan a un enemigo, Cisne Negro tiene una probabilidad base del {{2}}% de aplicar 1 acumulación de Arcano a ese objetivo.\\nCada vez que Cisne Negro aplica Arcano a un objetivo, hay una probabilidad fija del {{1}}% de que la cantidad de acumulaciones de Arcano aplicadas esta vez aumente en {{3}}."
     }
   }
 }

@@ -12,21 +12,21 @@
       "0": {
         "name": "Cung Tơ Trên Phím Nhạc",
         "fullDesc": "Sau khi thi triển Chiến Kỹ, Ruan Mei nhận được Bồi Âm, duy trì {{3}} hiệp, mỗi khi bắt đầu hiệp của Ruan Mei, số hiệp duy trì sẽ giảm 1. Khi Ruan Mei có Bồi Âm, toàn thể phe ta tăng <orangeStrong>{{1}}%</orangeStrong> sát thương, tăng {{2}}% Hiệu Suất Phá Vỡ Điểm Yếu.",
-        "shortDesc": "Sau khi thi triển Chiến Kỹ, Ruan Mei nhận được Bồi Âm. Khi Ruan Mei có Bồi Âm, sẽ tăng <color=#f29e38ff>sát thương</color> và <color=#f29e38ff>Hiệu Suất Phá Vỡ Điểm Yếu</color> của toàn phe ta."
+        "shortDesc": "Sau khi thi triển Chiến Kỹ, Ruan Mei nhận được Bồi Âm. Khi Ruan Mei có Bồi Âm, sẽ tăng <orangeStrong>sát thương</orangeStrong> và <orangeStrong>Hiệu Suất Phá Vỡ Điểm Yếu</orangeStrong> của toàn phe ta."
       }
     },
     "ult": {
       "0": {
         "name": "Hoa Rơi Chạm Nước Vương Vạt Áo",
         "fullDesc": "Ruan Mei triển khai kết giới, duy trì {{2}} hiệp, khi mỗi hiệp của bản thân bắt đầu, số hiệp duy trì kết giới sẽ giảm 1.\\nKhi ở trong kết giới, toàn thể phe ta tăng <orangeStrong>{{1}}%</orangeStrong> Xuyên Kháng Toàn Thuộc Tính, đồng thời sau khi tấn công sẽ thi triển Mai Nở Phai Tàn lên kẻ địch.\\nMai Nở Phai Tàn sẽ kích hoạt khi kẻ địch cố gắng hồi phục từ trạng thái Phá Vỡ Điểm Yếu, kéo dài trạng thái Phá Vỡ Điểm Yếu của mục tiêu đồng thời khiến mục tiêu Trì Hoãn Hành Động bằng {{3}}% Tấn Công Kích Phá của Ruan Mei +{{4}}%, và gây cho kẻ đó Sát Thương Phá Vỡ tương đương <orangeStrong>{{5}}%</orangeStrong> Sát Thương Phá Vỡ thuộc tính Băng của Ruan Mei.\\nTrước khi kẻ địch hồi phục khỏi trạng thái Phá Vỡ Điểm Yếu sẽ không thể bị đính kèm Mai Nở Phai Tàn nữa.",
-        "shortDesc": "Tăng <color=#f29e38ff>Xuyên Kháng Toàn Thuộc Tính</color> cho toàn bộ phe ta, đồng thời sau khi tấn công sẽ thi triển Mai Nở Phai Tàn lên kẻ địch."
+        "shortDesc": "Tăng <orangeStrong>Xuyên Kháng Toàn Thuộc Tính</orangeStrong> cho toàn bộ phe ta, đồng thời sau khi tấn công sẽ thi triển Mai Nở Phai Tàn lên kẻ địch."
       }
     },
     "technique": {
       "0": {
         "name": "Dạ Khúc Lụa Là",
         "fullDesc": "Sau khi dùng Bí Kỹ, nhận được Dạ Khúc Lụa Là, khi bắt đầu trận đấu tiếp theo sẽ tự động kích hoạt {{1}} lần Chiến Kỹ, lần kích hoạt này không tiêu hao Điểm Chiến Kỹ.\\nTrong Vũ Trụ Mô Phỏng, khi Ruan Mei có Dạ Khúc Lụa Là và phe ta chủ động tấn công kẻ địch sẽ xem như tấn công Điểm Yếu của địch để vào chiến đấu, đồng thời lần tấn công này có thể bỏ qua Thuộc Tính Điểm Yếu và làm giảm Sức Bền của toàn thể địch. Khi Phá Vỡ Điểm Yếu, sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu tương ứng thuộc tính của người tấn công. Cứ mỗi Chúc Phúc sở hữu, sẽ tăng thêm {{2}}% Sát Thương Giảm Sức Bền do lần tấn công này gây ra, đồng thời sau khi Phá Vỡ Điểm Yếu của địch, sẽ gây thêm cho kẻ đó Sát Thương Phá Vỡ bằng {{3}}% Sát Thương Phá Vỡ thuộc tính Băng của Ruan Mei, tối đa tính vào cho {{4}} Chúc Phúc.",
-        "shortDesc": "Sau khi vào trận lần kế tiếp sẽ tự động kích hoạt <orangeStrong>{{1}}</orangeStrong> lần Chiến Kỹ. Sau khi dùng Bí Kỹ, phe ta tấn công kẻ địch trong Vũ Trụ Mô Phỏng luôn được xem là tấn công Điểm Yếu để vào trận, đồng thời <color=#f29e38ff>bỏ qua Thuộc Tính Điểm Yếu</color> và làm giảm Sức Bền. Mỗi khi sở hữu 1 Chúc Phúc, sẽ tăng Sát Thương Giảm Sức Bền, hơn nữa khi phá vỡ điểm yếu sẽ gây thêm Sát Thương Phá Vỡ."
+        "shortDesc": "Sau khi vào trận lần kế tiếp sẽ tự động kích hoạt <orangeStrong>{{1}}</orangeStrong> lần Chiến Kỹ. Sau khi dùng Bí Kỹ, phe ta tấn công kẻ địch trong Vũ Trụ Mô Phỏng luôn được xem là tấn công Điểm Yếu để vào trận, đồng thời <orangeStrong>bỏ qua Thuộc Tính Điểm Yếu</orangeStrong> và làm giảm Sức Bền. Mỗi khi sở hữu 1 Chúc Phúc, sẽ tăng Sát Thương Giảm Sức Bền, hơn nữa khi phá vỡ điểm yếu sẽ gây thêm Sát Thương Phá Vỡ."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Hình Thêu Mô Phỏng Thần Kinh",
+      "desc": "Trong thời gian Tuyệt Kỹ mở kết giới, khi toàn bộ phe ta gây sát thương sẽ bỏ qua {{1}}% phòng thủ của mục tiêu."
+    },
+    "2": {
+      "name": "Dạo Bước Rừng Lau",
+      "desc": "Khi Ruan Mei trong trận, và toàn bộ phe ta gây sát thương lên kẻ địch ở trạng thái Phá Vỡ Điểm Yếu, Tấn Công sẽ tăng {{1}}%."
+    },
+    "3": {
+      "name": "Bóng Nàng Áo Lụa Xanh Màu Khói",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Trước Gương Đồng Tìm Thần",
+      "desc": "Khi Điểm Yếu của kẻ địch bị phá vỡ, Tấn Công Kích Phá của Ruan Mei tăng {{1}}%, duy trì {{2}} hiệp."
+    },
+    "5": {
+      "name": "Trâm Cài Buông Lơi",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Buông Khăn Phẩy Quạt",
+      "desc": "Thời gian duy trì kết giới triển khai bởi Tuyệt Kỹ kéo dài {{1}} hiệp. Bội Số Sát Thương Phá Vỡ của Thiên Phú tăng thêm {{2}}%."
     }
   }
 }

@@ -24,14 +24,14 @@
       "0": {
         "name": "Hora del champán",
         "fullDesc": "Afecta con Melopea a todos los enemigos durante {{2}} turnos. Al mismo tiempo, inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a todos los enemigos, y su siguiente ATQ básico se potencia y se convierte en Espuma desbordante.",
-        "shortDesc": "<color=#f29e38ff>Afecta con Melopea</color> a todos los enemigos y al mismo tiempo les inflige Daño de Fuego. El siguiente ATQ básico se potencia y se convierte en Espuma desbordante."
+        "shortDesc": "<orangeStrong>Afecta con Melopea</orangeStrong> a todos los enemigos y al mismo tiempo les inflige Daño de Fuego. El siguiente ATQ básico se potencia y se convierte en Espuma desbordante."
       }
     },
     "technique": {
       "0": {
         "name": "Cosecha propia",
         "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Afecta con Melopea a todos los enemigos durante {{1}} turnos y les inflige un {{2}}% del ATQ de Gallagher como Daño de Fuego.",
-        "shortDesc": "Ataca al enemigo y entra en combate. <color=#f29e38ff>Afecta con Melopea</color> a todos los enemigos y les inflige una pequeña cantidad de Daño de Fuego."
+        "shortDesc": "Ataca al enemigo y entra en combate. <orangeStrong>Afecta con Melopea</orangeStrong> a todos los enemigos y les inflige una pequeña cantidad de Daño de Fuego."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Perro salado",
+      "desc": "Cuando Gallagher entra en combate, recupera {{1}} pts. de energía y su RES a efecto aumenta en un {{2}}%."
+    },
+    "2": {
+      "name": "Cola de león",
+      "desc": "Al usar la habilidad básica, se elimina {{1}} estado negativo del objetivo aliado y aumenta su RES a efecto en un {{2}}% durante {{3}} turnos."
+    },
+    "3": {
+      "name": "Resucitador",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Última palabra",
+      "desc": "La duración del estado de Melopea aplicado por la habilidad definitiva de Gallagher aumenta en {{1}} turno."
+    },
+    "5": {
+      "name": "Muerte en la tarde",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Sangre y arena",
+      "desc": "El efecto de Ruptura de Gallagher aumenta en un {{1}}% y su eficiencia de la Ruptura de Debilidad aumenta en un {{2}}%."
     }
   }
 }

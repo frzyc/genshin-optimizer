@@ -12,14 +12,14 @@
       "0": {
         "name": "Allow Changes?",
         "fullDesc": "Memiliki <orangeStrong>{{2}}%</orangeStrong> <u>peluang dasar</u> untuk memberikan 1 Weakness tambahan dengan Tipe yang sama dengan salah satu rekan tim secara acak pada 1 target musuh dan mengurangi {{4}}% DMG RES target musuh terhadap Tipe serangan tersebut selama {{3}} giliran. Jika Weakness yang ditambahkan adalah Weakness yang sudah dimiliki oleh target musuh, maka tidak akan memicu pengurangan DMG RES terhadap Tipe serangan tersebut.\\nSatu target musuh hanya dapat menerima 1 Weakness dari Silver Wolf. Saat Silver Wolf menambah Weakness lagi pada target musuh yang sama, maka hanya Weakness terbaru yang akan dipertahankan.\\nMemiliki {{5}}% <u>peluang dasar</u> untuk memberi tambahan pengurangan DMG RES seluruh tipe pada target sebesar <orangeStrong>{{6}}%</orangeStrong> selama {{7}} giliran.\\nMengakibatkan Quantum DMG pada target tersebut sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Silver Wolf.",
-        "shortDesc": "Berpeluang besar untuk <color=#f29e38ff>memberikan Weakness tambahan</color> pada 1 musuh dan mengakibatkan Quantum DMG pada musuh tersebut."
+        "shortDesc": "Berpeluang besar untuk <orangeStrong>memberikan Weakness tambahan</orangeStrong> pada 1 musuh dan mengakibatkan Quantum DMG pada musuh tersebut."
       }
     },
     "ult": {
       "0": {
         "name": "User Banned",
         "fullDesc": "Memiliki <orangeStrong>{{2}}%</orangeStrong> <u>peluang dasar</u> untuk mengurangi <orangeStrong>{{3}}%</orangeStrong> DEF target musuh selama {{4}} giliran. Di saat yang bersamaan, mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Silver Wolf pada target tersebut.",
-        "shortDesc": "Berpeluang besar untuk <color=#f29e38ff>mengurangi DEF</color> dan mengakibatkan Quantum DMG dalam jumlah besar pada 1 musuh."
+        "shortDesc": "Berpeluang besar untuk <orangeStrong>mengurangi DEF</orangeStrong> dan mengakibatkan Quantum DMG dalam jumlah besar pada 1 musuh."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Social Engineering",
+      "desc": "Setelah Silver Wolf melancarkan Ultimate untuk menyerang target musuh, setiap 1 efek Debuff yang dimiliki target musuh akan memulihkan {{1}} Energy Silver Wolf. Efek ini dapat dipicu maksimal {{2}} kali setiap kali melancarkan Ultimate."
+    },
+    "2": {
+      "name": "Zombie Network",
+      "desc": "Saat target musuh memasuki pertempuran, Effect RES target berkurang {{1}}%."
+    },
+    "3": {
+      "name": "Payload",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Bounce Attack",
+      "desc": "Setelah Silver Wolf melancarkan Ultimate untuk menyerang target musuh, setiap 1 efek Debuff yang dimiliki target musuh akan mengakibatkan Quantum DMG tambahan sebesar {{1}}% ATK Silver Wolf. Efek ini dapat dipicu maksimal {{2}} kali setiap kali melancarkan Ultimate."
+    },
+    "5": {
+      "name": "Brute Force Attack",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Overlay Network",
+      "desc": "Setiap 1 status Debuff target musuh akan meningkatkan {{1}}% DMG Silver Wolf pada target tersebut, maksimal hingga {{2}}%."
     }
   }
 }

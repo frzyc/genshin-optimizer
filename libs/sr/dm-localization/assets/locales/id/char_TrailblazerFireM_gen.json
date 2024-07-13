@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Earth-Shaking Resonance",
+      "desc": "Melancarkan Basic Attack/Enhanced Basic Attack akan mengakibatkan Fire DMG tambahan sebesar {{1}}%/{{2}}% DEF Trailblazer."
+    },
+    "2": {
+      "name": "Time-Defying Tenacity",
+      "desc": "Ketika Talent terpicu, kekuatan Shield yang diperoleh untuk seluruh rekan tim akan meningkat sebesar {{1}}% DEF Trailblazer + {{2}}."
+    },
+    "3": {
+      "name": "Trail-Blazing Blueprint",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Nation-Building Oath",
+      "desc": "Segera memperoleh {{1}} lapis \"Magma Will\" saat pertempuran dimulai."
+    },
+    "5": {
+      "name": "Spirit-Warming Flame",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "City-Forging Bulwarks",
+      "desc": "Meningkatkan {{1}}% DEF Trailblazer setelah melancarkan Enhanced Basic Attack atau Ultimate, dapat ditumpuk hingga {{2}} lapis."
+    }
   }
 }

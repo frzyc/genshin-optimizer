@@ -12,14 +12,14 @@
       "0": {
         "name": "Đồ Hộp Cắm Trại Ủ Muối",
         "fullDesc": "Cộng thêm \"Phản Ứng Sinh Tồn\" cho 1 đồng đội chỉ định, tăng Giới Hạn HP bằng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{2}}</orangeStrong>, nếu mục tiêu này thuộc vận mệnh Hủy Diệt hoặc Bảo Hộ, sẽ tăng cao xác suất bị phe địch tấn công, \"Phản Ứng Sinh Tồn\" duy trì {{3}} hiệp.\\nKhiến mục tiêu này hồi HP bằng <orangeStrong>{{4}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{5}}</orangeStrong>.",
-        "shortDesc": "Khiến 1 đồng đội nhận \"Phản Ứng Sinh Tồn\", <color=#f29e38ff>tăng Giới Hạn HP</color> và hồi HP cho đồng đội đó."
+        "shortDesc": "Khiến 1 đồng đội nhận \"Phản Ứng Sinh Tồn\", <orangeStrong>tăng Giới Hạn HP</orangeStrong> và hồi HP cho đồng đội đó."
       }
     },
     "ult": {
       "0": {
         "name": "Sơ Cứu Vùng Tuyết",
         "fullDesc": "Giải trừ {{1}} <u>Hiệu Ứng Xấu</u> của toàn bộ phe ta, hồi ngay cho toàn phe ta một lượng HP bằng <orangeStrong>{{2}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{3}}</orangeStrong>.",
-        "shortDesc": "Giải trừ <color=#f29e38ff>1 <u>Hiệu Ứng Xấu</u> cho toàn bộ phe ta</color>, hồi HP cho toàn bộ phe ta."
+        "shortDesc": "Giải trừ <orangeStrong>1 <u>Hiệu Ứng Xấu</u> cho toàn bộ phe ta</orangeStrong>, hồi HP cho toàn bộ phe ta."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tinh Mơ Lang Thang Trên Tuyết",
+      "desc": "Khi trị liệu cho mục tiêu phe ta có Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1}}%, lượng trị liệu của Lynx tăng {{2}}%, hiệu ứng này cũng có hiệu lực với hiệu ứng trị liệu liên tục."
+    },
+    "2": {
+      "name": "Buổi Trưa Lò Sưởi Di Động",
+      "desc": "Khi mục tiêu có \"Phản Ứng Sinh Tồn\" bị thi triển Hiệu Ứng Xấu, có thể kháng {{1}} lần Hiệu Ứng Xấu."
+    },
+    "3": {
+      "name": "Buổi Chiều Tín Hiệu Tuyết Lở",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Hoàng Hôn Lửa Trại Ấm Áp",
+      "desc": "Khi nhận \"Phản Ứng Sinh Tồn\", sẽ tăng tấn công của mục tiêu này, mức tăng bằng {{1}}% Giới Hạn HP của Lynx, duy trì {{2}} hiệp."
+    },
+    "5": {
+      "name": "Buổi Đêm Hồng Trà Cực Quang",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá 15 cấp; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Bình Minh Của Bản Khảo Sát",
+      "desc": "Hiệu ứng tăng Giới Hạn HP của Phản Ứng Sinh Tồn sẽ tăng thêm, mức tăng bằng {{1}}% Giới Hạn HP của Lynx và tăng Kháng Hiệu Ứng {{2}}%."
     }
   }
 }

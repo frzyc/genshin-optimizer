@@ -46,5 +46,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ánh Sao Soi Chiếu Vạn Giới",
+      "desc": "Khi thi triển Tuyệt Kỹ để tiêu diệt mục tiêu phe địch, Nhà Khai Phá hồi thêm {{1}} điểm Năng Lượng, hiệu ứng này mỗi lần tấn công chỉ có thể kích hoạt 1 lần."
+    },
+    "2": {
+      "name": "Nhân Duyên Hợp Tan",
+      "desc": "Sau khi tấn công, nếu kẻ địch bị đánh trúng có Điểm Yếu là thuộc tính vật lý, sẽ hồi HP bằng {{1}}% Tấn Công của Nhà Khai Phá."
+    },
+    "3": {
+      "name": "Lời Thì Thầm Dẫn Dắt",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Khoảnh Khắc Chứng Kiến Huỷ Diệt",
+      "desc": "Khi đánh trúng kẻ địch trong trạng thái Phá Vỡ Điểm Yếu, Tỷ Lệ Bạo Kích tăng {{1}}%."
+    },
+    "5": {
+      "name": "Hy Vọng Tái Sinh",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Ý Chí Khai Phá Vũ Trụ",
+      "desc": "Khi Nhà Khai Phá tiêu diệt mục tiêu phe địch cũng sẽ kích hoạt Thiên Phú."
+    }
   }
 }

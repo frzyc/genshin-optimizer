@@ -26,7 +26,7 @@
       "0": {
         "name": "Incomplete Combustion",
         "fullDesc": "Setelah menggunakan Technique, Himeko akan menciptakan sebuah Dimension khusus selama {{4}} detik. Setelah memasuki pertempuran bersama musuh dalam Dimension, ada {{1}}% <u>peluang dasar</u> untuk meningkatkan {{2}}% Fire DMG yang diterima target musuh selama {{3}} giliran. Hanya boleh ada 1 efek Dimension ciptaan rekan tim dalam satu waktu.",
-        "shortDesc": "Menciptakan Dimension khusus. Setelah memasuki pertempuran dengan musuh dalam Dimension, berpeluang besar untuk <color=#f29e38ff>meningkatkan Fire DMG yang diterima</color> oleh target musuh."
+        "shortDesc": "Menciptakan Dimension khusus. Setelah memasuki pertempuran dengan musuh dalam Dimension, berpeluang besar untuk <orangeStrong>meningkatkan Fire DMG yang diterima</orangeStrong> oleh target musuh."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Childhood",
+      "desc": "Setelah \"Victory Rush\" terpicu, meningkatkan {{1}}% SPD Himeko selama {{2}} giliran."
+    },
+    "2": {
+      "name": "Convergence",
+      "desc": "Meningkatkan {{2}}% DMG pada target musuh yang persentase HP-nya kurang dari atau sama dengan {{1}}%."
+    },
+    "3": {
+      "name": "Poised",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Dedication",
+      "desc": "Saat Skill mengakibatkan Weakness Break pada target musuh, Himeko akan memperoleh {{1}} Charge tambahan."
+    },
+    "5": {
+      "name": "Aspiration",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Trailblaze!",
+      "desc": "Ultimate mengakibatkan 2 kali DMG tambahan pada musuh secara acak, masing-masing mengakibatkan Fire DMG sebesar {{1}}% dari DMG awal."
     }
   }
 }

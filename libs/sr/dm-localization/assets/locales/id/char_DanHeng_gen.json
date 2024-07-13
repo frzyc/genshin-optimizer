@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "The Higher You Fly, the Harder You Fall",
+      "desc": "Saat persentase HP target musuh yang diserang lebih dari atau sama dengan {{1}}%, CRIT Rate meningkat {{2}}%."
+    },
+    "2": {
+      "name": "Quell the Venom Octet, Quench the Vice O'Flame",
+      "desc": "Durasi CD Talent berkurang 1 giliran."
+    },
+    "3": {
+      "name": "Seen and Unseen",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Roaring Dragon and Soaring Sun",
+      "desc": "Saat Dan Heng melancarkan Ultimate untuk mengalahkan target musuh, Dan Heng akan segera beraksi kembali."
+    },
+    "5": {
+      "name": "A Drop of Rain Feeds a Torrent",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "The Troubled Soul Lies in Wait",
+      "desc": "Status Slow yang dipicu Skill mengurangi {{1}}% SPD tambahan pada musuh."
+    }
   }
 }

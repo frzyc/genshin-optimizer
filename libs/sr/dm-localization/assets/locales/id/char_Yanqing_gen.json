@@ -26,7 +26,7 @@
       "0": {
         "name": "The One True Sword",
         "fullDesc": "Setelah menggunakan Technique, saat pertempuran berikutnya dimulai, akan meningkatkan {{2}}% DMG Yanqing terhadap target musuh yang persentase HP-nya lebih dari atau sama dengan {{1}}% selama {{3}} giliran.",
-        "shortDesc": "Setelah menggunakan Technique, meningkatkan DMG yang diakibatkan oleh dirinya pada target musuh dengan persentase HP lebih dari atau sama dengan <unbreak>50%</unbreak> saat pertempuran berikutnya dimulai."
+        "shortDesc": "Setelah menggunakan Technique, meningkatkan DMG yang diakibatkan oleh dirinya pada target musuh dengan persentase HP lebih dari atau sama dengan 50% saat pertempuran berikutnya dimulai."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Svelte Saber",
+      "desc": "Saat Yanqing menyerang target musuh, jika target berstatus Frozen, Yanqing akan segera mengakibatkan Ice DMG tambahan sebesar {{1}}% ATK-nya."
+    },
+    "2": {
+      "name": "Supine Serenade",
+      "desc": "Saat \"Soulsteel Sync\" aktif, meningkatkan {{1}}% Energy Regeneration Rate tambahan."
+    },
+    "3": {
+      "name": "Sword Savant",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Searing Sting",
+      "desc": "Saat persentase HP saat ini lebih dari atau sama dengan {{1}}%, Ice RES PEN dirinya meningkat {{2}}%."
+    },
+    "5": {
+      "name": "Surging Strife",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Swift Swoop",
+      "desc": "Jika efek \"Soulsteel Sync\" atau efek Buff Ultimate sedang aktif saat mengalahkan target musuh, maka durasi seluruh efek Buff tersebut akan diperpanjang selama 1 giliran."
     }
   }
 }

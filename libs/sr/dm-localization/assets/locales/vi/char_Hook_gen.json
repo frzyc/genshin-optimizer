@@ -24,7 +24,7 @@
       "0": {
         "name": "Pùm! Pháo Hoa Tới Đây!",
         "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Hook.\\nSau khi thi triển Tuyệt Kỹ, Chiến Kỹ thi triển lần sau sẽ được cường hóa. Chiến Kỹ sau khi cường hóa sẽ gây sát thương cho kẻ địch chỉ định và cả mục tiêu lân cận kẻ đó.",
-        "shortDesc": "Gây lượng lớn Sát Thương Hỏa cho 1 kẻ địch, và <color=#f29e38ff>cường hóa Chiến Kỹ của bản thân ở lần sau</color>."
+        "shortDesc": "Gây lượng lớn Sát Thương Hỏa cho 1 kẻ địch, và <orangeStrong>cường hóa Chiến Kỹ của bản thân ở lần sau</orangeStrong>."
       }
     },
     "technique": {
@@ -40,6 +40,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ngủ Sớm Dậy Sớm Rất Lành Mạnh",
+      "desc": "Sau khi cường hóa Chiến Kỹ, sát thương gây ra tăng {{1}}%."
+    },
+    "2": {
+      "name": "Hay Ăn Chóng Lớn",
+      "desc": "Chiến Kỹ khiến thời gian duy trì trạng thái Thiêu Đốt của mục tiêu địch tăng {{1}} hiệp."
+    },
+    "3": {
+      "name": "Không Cần Chọn, Đều Lấy Hết",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Bối Rối Do Dự Chẳng Hề Chi",
+      "desc": "Khi kích hoạt Thiên Phú sẽ có {{1}}% xác suất cơ bản khiến mục tiêu lân cận với kẻ địch chỉ định cũng rơi vào trạng thái Thiêu Đốt giống với Chiến Kỹ."
+    },
+    "5": {
+      "name": "Việc Tốt Lưu Danh",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Sẵn Sàng Đánh Kẻ Xấu",
+      "desc": "Sát thương Hook gây cho mục tiêu địch ở trạng thái Thiêu Đốt tăng {{1}}%."
     }
   }
 }

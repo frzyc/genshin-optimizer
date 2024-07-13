@@ -19,14 +19,14 @@
       "0": {
         "name": "Tam Đoạn Phản Luận",
         "fullDesc": "Gây Sát Thương Số Ảo lên 1 kẻ địch chỉ định bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Dr. Ratio, đồng thời kèm theo Sự Mù Quáng Của Trí Giả. Khi đồng đội của Dr. Ratio tấn công mục tiêu đang có Sự Mù Quáng Của Trí Giả, Dr. Ratio sẽ phát động 1 lần <u>Đòn Đánh Theo Sau</u> của Thiên Phú lên mục tiêu này.\\nHiệu ứng Sự Mù Quáng Của Trí Giả tối đa kích hoạt {{2}} lần, hơn nữa chỉ có hiệu lực với mục tiêu mà Dr. Ratio thi triển Tuyệt Kỹ mới nhất lên đó. Sau khi thi triển Tuyệt Kỹ sẽ làm mới số lần kích hoạt hiệu ứng này.",
-        "shortDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định, kèm theo Sự Mù Quáng Của Trí Giả lên kẻ này, khi đồng đội của Dr. Ratio tấn công mục tiêu đang có Sự Mù Quáng Của Trí Giả, Dr. Ratio sẽ phát động 1 lần <color=#f29e38ff><u>Đòn Đánh Theo Sau</u></color> lên mục tiêu này."
+        "shortDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định, kèm theo Sự Mù Quáng Của Trí Giả lên kẻ này, khi đồng đội của Dr. Ratio tấn công mục tiêu đang có Sự Mù Quáng Của Trí Giả, Dr. Ratio sẽ phát động 1 lần <orangeStrong><u>Đòn Đánh Theo Sau</u></orangeStrong> lên mục tiêu này."
       }
     },
     "technique": {
       "0": {
         "name": "Hun Đúc Thần Tượng",
         "fullDesc": "Sau khi dùng Bí Kỹ, sẽ tạo ra 1 vùng đặc biệt khiêu khích kẻ địch ở gần, duy trì {{1}} giây. Sau khi vào chiến đấu với kẻ địch trong vùng đặc biệt, có {{2}}% <u>xác suất cơ bản</u> khiến Tốc Độ của mỗi kẻ địch giảm {{3}}%, duy trì {{4}} hiệp. Tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
-        "shortDesc": "Tạo một vùng đặc biệt. Kẻ địch trong vùng sẽ bị khiêu khích. Sau khi vào chiến đấu với kẻ địch trong vùng, sẽ có xác suất lớn <color=#f29e38ff>giảm Tốc Độ</color> của kẻ địch."
+        "shortDesc": "Tạo một vùng đặc biệt. Kẻ địch trong vùng sẽ bị khiêu khích. Sau khi vào chiến đấu với kẻ địch trong vùng, sẽ có xác suất lớn <orangeStrong>giảm Tốc Độ</orangeStrong> của kẻ địch."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ngạo Mạn Gây Tai Họa",
+      "desc": "Tăng {{1}} tầng giới hạn cộng dồn số tầng của Vết Tích Quy Nạp. Khi bắt đầu chiến đấu, sẽ nhận ngay {{2}} tầng Quy Nạp. Cần mở khóa Quy Nạp trước."
+    },
+    "2": {
+      "name": "Chân Lý Vùi Trong Chi Tiết",
+      "desc": "Khi Đòn Đánh Theo Sau của Thiên Phú đánh trúng mục tiêu, mỗi lần mục tiêu có 1 Hiệu Ứng Xấu, sẽ gây thêm Sát Thương Số Ảo kèm theo bằng {{1}}% Tấn Công của Dr. Ratio. Hiệu ứng này trong mỗi Đòn Đánh Theo Sau tối đa kích hoạt {{2}} lần."
+    },
+    "3": {
+      "name": "Tự Nhận Thức Bản Thân",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Mù Quáng Cũng Là Ngu Dốt",
+      "desc": "Khi kích hoạt Thiên Phú, Dr. Ratio sẽ hồi thêm {{1}} Năng Lượng."
+    },
+    "5": {
+      "name": "Biển Rộng Không Bóng Thuyền",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Sự Thật Là Vĩnh Cửu",
+      "desc": "Hiệu ứng kích hoạt Sự Mù Quáng Của Trí Giả tăng thêm {{1}} lần, tăng {{2}}% sát thương gây ra bởi Đòn Đánh Theo Sau của Thiên Phú."
     }
   }
 }

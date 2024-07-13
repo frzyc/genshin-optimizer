@@ -2,6 +2,6 @@
   "setName": "Exploratrice des abîmes",
   "setEffects": {
     "2": "Augmente de {{1}}% les DGT infligés aux ennemis qui subissent des malus.",
-    "4": "Augmente les chances de coup critique de {{1}}%. Les DGT critiques infligés par le porteur aux ennemis affectés par au moins {{4}}/{{5}} malus augmentent de {{2}}%/{{3}}%. Lorsque le porteur inflige un malus aux cibles ennemies, augmente les effets susnommés de <unbreak>100</unbreak> %. Dure {{6}} tour."
+    "4": "Augmente les chances de coup critique de {{1}}%. Les DGT critiques infligés par le porteur aux ennemis affectés par au moins {{4}}/{{5}} malus augmentent de {{2}}%/{{3}}%. Lorsque le porteur inflige un malus aux cibles ennemies, augmente les effets susnommés de 100 %. Dure {{6}} tour."
   }
 }

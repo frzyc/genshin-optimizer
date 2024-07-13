@@ -19,14 +19,14 @@
       "0": {
         "name": "Enxurrada de Borboletas",
         "fullDesc": "Seele entra no modo melhorado e causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ dela a um único inimigo.",
-        "shortDesc": "Entra no <color=#f29e38ff>modo melhorado</color> e causa Dano Quântico massivo a um único inimigo."
+        "shortDesc": "Entra no <orangeStrong>modo melhorado</orangeStrong> e causa Dano Quântico massivo a um único inimigo."
       }
     },
     "technique": {
       "0": {
         "name": "Ilusão Factícia",
         "fullDesc": "Após usar a sua Técnica, Seele ganha Furtividade por {{1}}s. Enquanto o efeito de Furtividade estiver ativo, Seele não pode ser detectada por inimigos. Ao entrar em uma batalha atacando inimigos, Seele entrará no modo melhorado imediatamente.",
-        "shortDesc": "Entra no modo de <color=#f29e38ff>Furtividade</color>. Após atacar um inimigo e entrar em batalha, entra no <color=#f29e38ff>modo melhorado</color>."
+        "shortDesc": "Entra no modo de <orangeStrong>Furtividade</orangeStrong>. Após atacar um inimigo e entrar em batalha, entra no <orangeStrong>modo melhorado</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Golpe Extirpador",
+      "desc": "Ao causar Dano a um inimigo com {{1}}% ou menos de PV, a Chance de CRIT aumenta em {{2}}%."
+    },
+    "2": {
+      "name": "Borboleta Dançarina",
+      "desc": "O Bônus de VEL da Perícia de Seele pode acumular até {{1}} vez(es)."
+    },
+    "3": {
+      "name": "Tumulto Deslumbrante",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Fantasma Esvoaçante",
+      "desc": "Seele regenera {{1}} de Energia quando derrota um inimigo."
+    },
+    "5": {
+      "name": "Estilhaços Perfurantes",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Confusão Devastadora",
+      "desc": "Após Seele usar sua Perícia Suprema, inflige Enxurrada de Borboletas ao inimigo-alvo por {{2}} rodada(s). Inimigos afetados recebem Dano Adicional igual a {{1}}% do Dano da Perícia Suprema de Seele como Dano Quântico cada vez que for atacado. Se o inimigo-alvo for derrotado pelo Dano de Enxurrada de Borboletas ativado pelo ataque de outros aliados, o Talento de Seele não poderá ser ativado.\\nQuando Seele é derrubada, a Enxurrada de Borboletas infligida aos inimigos será removida."
     }
   }
 }

@@ -2,6 +2,6 @@
   "name": "{RUBY_B#ま}待{RUBY_E#}つのみ",
   "passive": {
     "name": "{RUBY_B#くも}蜘蛛{RUBY_E#}の{RUBY_B#す}巣{RUBY_E#}",
-    "description": "装備キャラの与ダメージ+<orangeStrong>{{2}}%</orangeStrong>。装備キャラが攻撃を行った後、速度+<orangeStrong>{{3}}%</orangeStrong>、最大で{{4}}層累積できる。\\n装備キャラの攻撃が敵に命中した時、その敵が「遊糸」状態でない場合、<unbreak>100%</unbreak>の基礎確率で敵を「遊糸」状態にする。敵が「遊糸」状態の時、感電状態と見なされる。「遊糸」状態の敵はターンが回ってくるたびに、装備キャラの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性持続ダメージを受ける、{{5}}ターン継続。"
+    "description": "装備キャラの与ダメージ+<orangeStrong>{{2}}%</orangeStrong>。装備キャラが攻撃を行った後、速度+<orangeStrong>{{3}}%</orangeStrong>、最大で{{4}}層累積できる。\\n装備キャラの攻撃が敵に命中した時、その敵が「遊糸」状態でない場合、100%の基礎確率で敵を「遊糸」状態にする。敵が「遊糸」状態の時、感電状態と見なされる。「遊糸」状態の敵はターンが回ってくるたびに、装備キャラの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性持続ダメージを受ける、{{5}}ターン継続。"
   }
 }

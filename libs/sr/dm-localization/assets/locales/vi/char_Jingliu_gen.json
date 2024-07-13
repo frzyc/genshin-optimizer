@@ -12,7 +12,7 @@
       "0": {
         "name": "Vô Hạ Phi Quang",
         "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Băng bằng <orangeStrong>{{1}}%</orangeStrong> tấn công của Jingliu, và nhận {{2}} tầng \"Sóc Vọng\".",
-        "shortDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định, đồng thời nhận <color=#f29e38ff>1 tầng Sóc Vọng</color>."
+        "shortDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định, đồng thời nhận <orangeStrong>1 tầng Sóc Vọng</orangeStrong>."
       },
       "1": {
         "name": "Ánh Trăng Sông Băng",
@@ -24,14 +24,14 @@
       "0": {
         "name": "Đàm Hoa Sinh Diệt, Thiên Hà Dệt Mộng",
         "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Băng bằng <orangeStrong>{{1}}%</orangeStrong> tấn công của Jingliu, đồng thời gây cho các mục tiêu gần đó Sát Thương Băng bằng <orangeStrong>{{3}}%</orangeStrong> tấn công của Jingliu. Sau khi tấn công kết thúc sẽ nhận {{2}} tầng Sóc Vọng.",
-        "shortDesc": "Gây lượng lớn Sát Thương Băng cho 1 kẻ địch chỉ định, gây Sát Thương Băng cho mục tiêu ở gần, đồng thời <color=#f29e38ff>nhận 1 tầng Sóc Vọng</color>."
+        "shortDesc": "Gây lượng lớn Sát Thương Băng cho 1 kẻ địch chỉ định, gây Sát Thương Băng cho mục tiêu ở gần, đồng thời <orangeStrong>nhận 1 tầng Sóc Vọng</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Thần Chiếu Cổ Kính",
         "fullDesc": "Sau khi dùng Bí Kỹ, sẽ tạo một vùng đặc biệt xung quanh bản thân, duy trì trong {{3}}s, kẻ địch trong vùng đặc biệt này sẽ rơi vào trạng thái Đóng Băng. Sau khi vào chiến đấu với kẻ địch trong vùng đặc biệt, sẽ hồi ngay {{6}} năng lượng cho bản thân và nhận {{1}} tầng Sóc Vọng, đồng thời có {{2}}% <u>xác suất cơ bản</u> khiến kẻ địch bị Đóng Băng, duy trì {{4}} hiệp. Ở trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời khi bắt đầu mỗi hiệp sẽ chịu <u>Sát Thương Băng kèm theo</u> bằng {{5}}% tấn công của Jingliu. Tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
-        "shortDesc": "Tạo một vùng đặc biệt xung quanh bản thân. Kẻ địch trong vùng này sẽ rơi vào <color=#f29e38ff>trạng thái Đóng Băng</color>. Sau khi vào chiến đấu với kẻ địch trong vùng này, sẽ hồi năng lượng, và nhận 1 tầng Sóc Vọng đồng thời có xác suất lớn khiến kẻ địch rơi vào <color=#f29e38ff>trạng thái Đóng Băng</color>."
+        "shortDesc": "Tạo một vùng đặc biệt xung quanh bản thân. Kẻ địch trong vùng này sẽ rơi vào <orangeStrong>trạng thái Đóng Băng</orangeStrong>. Sau khi vào chiến đấu với kẻ địch trong vùng này, sẽ hồi năng lượng, và nhận 1 tầng Sóc Vọng đồng thời có xác suất lớn khiến kẻ địch rơi vào <orangeStrong>trạng thái Đóng Băng</orangeStrong>."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Trăng Phạm Ngục Trời",
+      "desc": "Khi thi triển Tuyệt Kỹ hoặc cường hóa Chiến Kỹ, Sát Thương Bạo Kích của Jingliu tăng {{1}}%, duy trì {{3}} hiệp. Nếu chỉ tấn công 1 kẻ địch sẽ gây thêm cho mục tiêu này 1 lần Sát Thương Băng tương đương {{2}}% tấn công của Jingliu."
+    },
+    "2": {
+      "name": "Trăng Non Quyện Thất Tinh",
+      "desc": "Sau khi thi triển Tuyệt Kỹ, tăng {{1}}% sát thương của Chiến Kỹ được cường hóa lần sau."
+    },
+    "3": {
+      "name": "Bán Bích Vọng",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Nguyệt Quang Thiên Chiếu",
+      "desc": "Ở trạng thái Chuyển Hồn, tăng tấn công dựa theo HP bị tiêu hao của đồng đội, trị số tăng bằng {{1}}% tổng lượng tiêu hao của toàn bộ phe ta, giới hạn tấn công nhận được tăng thêm {{2}}%."
+    },
+    "5": {
+      "name": "U Ám Phủ Tam Đài",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Nhật Thực Yếu Ớt",
+      "desc": "Khi Jingliu vào trạng thái Chuyển Hồn, số tầng giới hạn của Sóc Vọng tăng 1 tầng và nhận thêm {{1}} tầng Sóc Vọng. Ở trạng thái Chuyển Hồn, Sát Thương Bạo Kích tăng {{2}}%."
     }
   }
 }

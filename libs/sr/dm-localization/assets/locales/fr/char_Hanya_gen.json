@@ -12,14 +12,14 @@
       "0": {
         "name": "Emprisonnement d'âme",
         "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Hanya à un ennemi unique et lui applique Fardeau.\\nLes alliés récupèrent 1 point de compétence chaque fois qu'ils utilisent deux ATQ normales, compétences ou ultimes sur un ennemi affecté par Fardeau. Fardeau n'est actif que sur la dernière cible et se dissipe dès que l'effet de récupération de point de compétence est déclenché {{2}} fois.",
-        "shortDesc": "Inflige des DGT physiques à un ennemi unique et lui applique Fardeau. Les alliés <color=#f29e38ff>récupèrent 1 point de compétence</color> chaque fois qu'ils utilisent deux ATQ normales, compétences ou ultimes sur un ennemi affecté par Fardeau."
+        "shortDesc": "Inflige des DGT physiques à un ennemi unique et lui applique Fardeau. Les alliés <orangeStrong>récupèrent 1 point de compétence</orangeStrong> chaque fois qu'ils utilisent deux ATQ normales, compétences ou ultimes sur un ennemi affecté par Fardeau."
       }
     },
     "ult": {
       "0": {
         "name": "Sentence universelle",
         "fullDesc": "Augmente la VIT d'une cible alliée à hauteur de <orangeStrong>{{3}}%</orangeStrong> de la VIT de Hanya et son ATQ de <orangeStrong>{{1}}%</orangeStrong>, pour une durée de {{2}} tours.",
-        "shortDesc": "Augmente <color=#f29e38ff>la VIT et l'ATQ</color> d'un allié."
+        "shortDesc": "Augmente <orangeStrong>la VIT et l'ATQ</orangeStrong> d'un allié."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Une seule pensée",
+      "desc": "Lorsqu'un allié qui bénéficie de l'effet de l'ultime de Hanya élimine un ennemi, l'action de Hanya est avancée de {{1}}%. Cet effet ne peut être déclenché que {{2}} fois par tour."
+    },
+    "2": {
+      "name": "Deux vérités",
+      "desc": "La VIT du personnage augmente de {{1}}% pendant {{2}} tour après avoir utilisé sa compétence."
+    },
+    "3": {
+      "name": "Trois poussières",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Quatre vérités",
+      "desc": "L'ultime dure {{1}} tour supplémentaire."
+    },
+    "5": {
+      "name": "Cinq skandhas",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Six destinées",
+      "desc": "Améliore l'effet d'augmentation de DGT du talent de {{1}}% supplémentaires."
     }
   }
 }

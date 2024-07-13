@@ -12,14 +12,14 @@
       "0": {
         "name": "Tình Yêu, Chữa Lành Và Sự Chọn Lựa",
         "fullDesc": "Lập tức hồi phục cho 1 đồng đội chỉ định một lượng HP bằng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của Natasha +<orangeStrong>{{4}}</orangeStrong>, đồng thời khi mục tiêu bắt đầu mỗi hiệp, sẽ hồi cho đơn vị đó lượng HP bằng <orangeStrong>{{2}}%</orangeStrong> Giới Hạn HP của Natasha +<orangeStrong>{{5}}</orangeStrong>, duy trì {{3}} hiệp.",
-        "shortDesc": "<color=#f29e38ff>Hồi HP</color> cho 1 đồng đội, đồng thời khiến mục tiêu <color=#f29e38ff>duy trì hồi HP</color>."
+        "shortDesc": "<orangeStrong>Hồi HP</orangeStrong> cho 1 đồng đội, đồng thời khiến mục tiêu <orangeStrong>duy trì hồi HP</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Món Quà Tái Sinh",
         "fullDesc": "Lập tức hồi cho toàn phe ta lượng HP bằng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của Natasha +<orangeStrong>{{2}}</orangeStrong>.",
-        "shortDesc": "<color=#f29e38ff>Hồi HP</color> cho toàn bộ phe ta."
+        "shortDesc": "<orangeStrong>Hồi HP</orangeStrong> cho toàn bộ phe ta."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Kiến Thức Dược Lý",
+      "desc": "Sau khi bị tấn công, nếu phần trăm HP hiện tại nhỏ hơn hoặc bằng {{1}}%, sẽ thi triển 1 lần trị liệu cho bản thân, hồi phục lượng HP bằng {{2}}% Giới Hạn HP của bản thân +{{3}}, hiệu ứng này chỉ có thể kích hoạt 1 lần trong 1 trận."
+    },
+    "2": {
+      "name": "Nghiên Cứu Lâm Sàng",
+      "desc": "Khi thi triển Tuyệt Kỹ sẽ đính kèm hiệu ứng trị liệu liên tục trong {{2}} hiệp cho mục tiêu phe ta có phần trăm HP hiện tại nhỏ hơn hoặc bằng {{1}}%, khi bắt đầu lượt của mục tiêu sẽ hồi HP bằng {{3}}% Giới Hạn HP +{{4}} của Natasha cho mục tiêu đó."
+    },
+    "3": {
+      "name": "Kê Đơn Đúng Bệnh",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Phép Màu Trị Liệu",
+      "desc": "Sau khi bị tấn công sẽ hồi thêm {{1}} điểm Năng Lượng."
+    },
+    "5": {
+      "name": "Phòng Bệnh Hơn Chữa Bệnh",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Y Đức Thầy Thuốc",
+      "desc": "Khi thi triển tấn công thường sẽ gây thêm Sát Thương Vật Lý bằng {{1}}% Giới Hạn HP của Natasha."
     }
   }
 }

@@ -12,14 +12,14 @@
       "0": {
         "name": "Änderungen zulassen?",
         "fullDesc": "Es besteht eine <u>Grundchance</u> von <orangeStrong>{{2}}%</orangeStrong>, einem anvisierten Gegner 1 Schwäche des Typs eines Verbündeten hinzuzufügen. Damit wird auch der SCH-WDS des Gegners gegenüber diesem Schwächetyp für {{3}} Rd. um {{4}}% reduziert. Wenn der Gegner bereits eine Schwäche dieses Typs hat, wird der Effekt der SCH-WDS-Reduzierung für diesen Schwächetyp nicht ausgelöst.\\nJedem Gegner kann nur 1 Schwäche von Silberwolf hinzugefügt werden. Wenn Silberwolf dem Ziel eine weitere Schwäche hinzufügt, wird nur die letzte Schwäche beibehalten.\\nAußerdem gibt es eine <u>Grundchance</u> von {{5}}%, den WDS aller Typen des Ziels zusätzlich um <orangeStrong>{{6}}%</orangeStrong> für {{7}} Rd. zu reduzieren.\\nFügt diesem Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Silberwolfs ANG zu.",
-        "shortDesc": "Es besteht eine hohe Chance, einem Gegner <color=#f29e38ff>zusätzliche Schwächen</color> und Quanten-SCH zuzufügen."
+        "shortDesc": "Es besteht eine hohe Chance, einem Gegner <orangeStrong>zusätzliche Schwächen</orangeStrong> und Quanten-SCH zuzufügen."
       }
     },
     "ult": {
       "0": {
         "name": "Benutzer gebannt",
         "fullDesc": "Es besteht eine <u>Grundchance</u> von <orangeStrong>{{2}}%</orangeStrong>, die VTD eines anvisierten Gegners für {{4}} Rd. um <orangeStrong>{{3}}%</orangeStrong> zu reduzieren und dem Ziel Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Silberwolfs ANG zuzufügen.",
-        "shortDesc": "Hat eine hohe Chance, die <color=#f29e38ff>VTD</color> eines Gegners zu <color=#f29e38ff>reduzieren</color> und ihm massiven Quanten-SCH zuzufügen."
+        "shortDesc": "Hat eine hohe Chance, die <orangeStrong>VTD</orangeStrong> eines Gegners zu <orangeStrong>reduzieren</orangeStrong> und ihm massiven Quanten-SCH zuzufügen."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Social Engineering",
+      "desc": "Nachdem Silberwolf mit ihrem Ultimate einen Gegner angegriffen hat, stellt sie für jeden Debuff des Ziels {{1}} Pkt. Energie wieder her. Dieser Effekt kann bei jedem Einsatz ihres Ultimates bis zu {{2}}-mal ausgelöst werden."
+    },
+    "2": {
+      "name": "Zombienetzwerk",
+      "desc": "Tritt ein Gegner in den Kampf ein, wird sein Effekt-WDS um {{1}}% reduziert."
+    },
+    "3": {
+      "name": "Sprengladung",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Bounce-Angriff",
+      "desc": "Nachdem Silberwolf mit ihrem Ultimate einen Gegner angegriffen hat, fügt sie für jeden Debuff des Ziels zusätzlichen Quanten-SCH in Höhe von {{1}}% von Silberwolfs ANG zu. Dieser Effekt kann bei jedem Einsatz ihres Ultimates bis zu {{2}}-mal ausgelöst werden."
+    },
+    "5": {
+      "name": "Brute-Force-Angriff",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Overlay-Netzwerk",
+      "desc": "Erhöht den von Silberwolf verursachten SCH für jeden Debuff des Gegners um {{1}}% bis zu max. {{2}}%."
     }
   }
 }

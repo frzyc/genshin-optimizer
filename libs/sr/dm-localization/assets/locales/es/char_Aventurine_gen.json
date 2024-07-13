@@ -12,14 +12,14 @@
       "0": {
         "name": "Piedra angular de la prosperidad",
         "fullDesc": "Otorga a todos los aliados un escudo Apuesta reforzada que absorbe un daño equivalente al <orangeStrong>{{1}}%</orangeStrong> de la DEF de Aventurino + <orangeStrong>{{2}}</orangeStrong> durante {{3}} turnos. Al obtener Apuesta reforzada varias veces, el efecto de escudo se puede acumular hasta un máximo del {{4}}% del efecto de escudo que proporciona la habilidad básica actual.",
-        "shortDesc": "Otorga a todos los aliados un escudo Apuesta reforzada con <color=#f29e38ff>efecto de escudo acumulable</color>."
+        "shortDesc": "Otorga a todos los aliados un escudo Apuesta reforzada con <orangeStrong>efecto de escudo acumulable</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Prodigio de la ruleta",
         "fullDesc": "Obtiene de 1 a {{1}} pts. de Apuesta ciega al azar y después aplica Sobresalto a un enemigo durante {{4}} turnos. Además, inflige al enemigo un <orangeStrong>{{2}}%</orangeStrong> de la DEF de Aventurino como Daño Imaginario. Cuando un objetivo aliado golpea a un enemigo con Sobresalto, el Daño CRIT infligido aumenta en un <orangeStrong>{{3}}%</orangeStrong>.",
-        "shortDesc": "Obtiene Apuesta ciega al azar y afecta con Sobresalto a un enemigo. Además, inflige Daño Imaginario al objetivo. Cuando un aliado ataca a un enemigo con Sobresalto, el <color=#f29e38ff>Daño CRIT que inflige aumenta</color>."
+        "shortDesc": "Obtiene Apuesta ciega al azar y afecta con Sobresalto a un enemigo. Además, inflige Daño Imaginario al objetivo. Cuando un aliado ataca a un enemigo con Sobresalto, el <orangeStrong>Daño CRIT que inflige aumenta</orangeStrong>."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Dilema del prisionero",
+      "desc": "El Daño CRIT de los aliados con Apuesta reforzada aumenta en un {{1}}%. Tras usar la habilidad definitiva, proporciona un escudo Apuesta reforzada a todos los aliados. El efecto de escudo es equivalente al {{2}}% del que proporciona la habilidad básica y dura {{3}} turnos."
+    },
+    "2": {
+      "name": "Racionalidad limitada",
+      "desc": "Al usar el ATQ básico, reduce la RES a todos los tipos del objetivo en un {{2}}% durante {{3}} turnos."
+    },
+    "3": {
+      "name": "Multiplicador máximo",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Paradoja del examen sorpresa",
+      "desc": "Al activar el ataque adicional del talento, la DEF de Aventurino aumenta primero en un {{1}}% durante {{2}} turnos. Además, los golpes por acción del ataque adicional de su talento aumentan en {{3}}."
+    },
+    "5": {
+      "name": "Aversión a la ambigüedad",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Caza del ciervo",
+      "desc": "Por cada aliado que tenga un escudo, el daño que inflige Aventurino aumenta en un {{1}}%, hasta un aumento máximo del {{2}}%."
     }
   }
 }

@@ -12,14 +12,14 @@
       "0": {
         "name": "Reorganización del combate",
         "fullDesc": "Elimina un <u>estado negativo</u> de un aliado, hace que realice una acción inmediatamente y aumenta el daño que inflige en un <orangeStrong>{{1}}%</orangeStrong> durante {{3}} turno.\\nSi utiliza esta habilidad consigo misma, no se activará la acción inmediata.",
-        "shortDesc": "<color=#f29e38ff>Elimina</color> 1 <color=#f29e38ff><u>estado negativo</u></color> de un aliado, <color=#f29e38ff>aumenta el daño que inflige</color> y <color=#f29e38ff>hace que realice una acción inmediatamente</color>."
+        "shortDesc": "<orangeStrong>Elimina</orangeStrong> 1 <orangeStrong><u>estado negativo</u></orangeStrong> de un aliado, <orangeStrong>aumenta el daño que inflige</orangeStrong> y <orangeStrong>hace que realice una acción inmediatamente</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Marcha de Belobog",
         "fullDesc": "El ATQ de todos los aliados aumenta en un <orangeStrong>{{1}}%</orangeStrong> y el Daño CRIT se incrementa en un <orangeStrong>{{2}}%</orangeStrong> del Daño CRIT de Bronya + <orangeStrong>{{3}}%</orangeStrong> durante {{4}} turnos.",
-        "shortDesc": "Aumenta el <color=#f29e38ff>ATQ</color> y el <color=#f29e38ff>Daño CRIT</color> de todos los aliados."
+        "shortDesc": "Aumenta el <orangeStrong>ATQ</orangeStrong> y el <orangeStrong>Daño CRIT</orangeStrong> de todos los aliados."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Mejora de fortaleza",
+      "desc": "Al usar la habilidad básica, hay una probabilidad fija del {{1}}% de recuperar 1 pt. de habilidad básica. Este efecto tiene un TdE de 1 turno."
+    },
+    "2": {
+      "name": "Marcha rápida",
+      "desc": "Al usar la habilidad básica, cuando el aliado objetivo realiza una acción, su VEL aumenta en un {{1}}% durante 1 turno."
+    },
+    "3": {
+      "name": "Bombardeo",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Por sorpresa",
+      "desc": "Cuando un aliado de Bronya usa su ATQ básico contra un enemigo que tiene Debilidad de Viento, Bronya lanza un ataque adicional que inflige un Daño de Viento equivalente al {{1}}% del daño de su ATQ básico. Este efecto solo se puede activar una vez por turno."
+    },
+    "5": {
+      "name": "Imparable",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Arcoíris perforante",
+      "desc": "El incremento de daño que la habilidad básica de Bronya otorga a un aliado dura {{1}} turno adicional."
     }
   }
 }

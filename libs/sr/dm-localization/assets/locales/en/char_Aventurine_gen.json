@@ -12,14 +12,14 @@
       "0": {
         "name": "Cornerstone Deluxe",
         "fullDesc": "Provides all allies with a Fortified Wager shield that can block DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Aventurine's DEF plus <orangeStrong>{{2}}</orangeStrong>, lasting for {{3}} turn(s). When repeatedly gaining Fortified Wager, the Shield effect can stack, up to {{4}}% of the Shield provided by the current Skill.",
-        "shortDesc": "Provides all allies with a Fortified Wager shield, <color=#f29e38ff>whose Shield effect is stackable</color>."
+        "shortDesc": "Provides all allies with a Fortified Wager shield, <orangeStrong>whose Shield effect is stackable</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Roulette Shark",
         "fullDesc": "Randomly gains 1 to {{1}} points of Blind Bet. Then inflicts Unnerved on a single target enemy, lasting for {{4}} turn(s). And deals Imaginary DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Aventurine's DEF to the single target enemy. When an ally hits an Unnerved enemy target, the CRIT DMG dealt increases by <orangeStrong>{{3}}%</orangeStrong>.",
-        "shortDesc": "Gains a random amount of Blind Bet points and inflicts Unnerved on a single enemy, dealing Imaginary DMG. When an ally hits an Unnerved enemy, <color=#f29e38ff>the CRIT DMG dealt increases</color>."
+        "shortDesc": "Gains a random amount of Blind Bet points and inflicts Unnerved on a single enemy, dealing Imaginary DMG. When an ally hits an Unnerved enemy, <orangeStrong>the CRIT DMG dealt increases</orangeStrong>."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Prisoner's Dilemma",
+      "desc": "Increases CRIT DMG by {{1}}% for allies with Fortified Wager. After using the Ultimate, provides all allies with a Fortified Wager shield, whose Shield effect is equal to {{2}}% of the one provided by the Skill, lasting for {{3}} turn(s)."
+    },
+    "2": {
+      "name": "Bounded Rationality",
+      "desc": "When using Basic ATK, reduces the target's All-Type RES by {{2}}% for {{3}} turn(s)."
+    },
+    "3": {
+      "name": "Droprate Maxing",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Unexpected Hanging Paradox",
+      "desc": "When triggering his Talent's follow-up attack, first increases Aventurine's DEF by {{1}}% for {{2}} turn(s), and additionally increases the Hits Per Action for his talent's follow-up attack by {{3}}."
+    },
+    "5": {
+      "name": "Ambiguity Aversion",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Stag Hunt Game",
+      "desc": "For every ally with a Shield, the DMG dealt by Aventurine increases by {{1}}%, up to a maximum of {{2}}%."
     }
   }
 }

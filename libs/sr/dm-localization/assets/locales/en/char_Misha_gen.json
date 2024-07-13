@@ -12,21 +12,21 @@
       "0": {
         "name": "R—Room Service!",
         "fullDesc": "Increases the Hits Per Action for Misha's next Ultimate by {{3}} hit(s). Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Misha's ATK to a single target enemy, and Ice DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Misha's ATK to adjacent targets.",
-        "shortDesc": "Deals Ice DMG to an enemy and minor Ice DMG to enemies adjacent to them. In addition, increases Misha's next <color=#f29e38ff>Ultimate's Hit Per Action</color>."
+        "shortDesc": "Deals Ice DMG to an enemy and minor Ice DMG to enemies adjacent to them. In addition, increases Misha's next <orangeStrong>Ultimate's Hit Per Action</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "G—Gonna Be Late!",
         "fullDesc": "Has {{1}} Hits Per Action by default. First, uses 1 hit to deal Ice DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Misha's ATK to a single target enemy. Then, the rest of the hits each deals Ice DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Misha's ATK to a single random enemy. Just before each hit lands, there is a <orangeStrong>{{3}}%</orangeStrong> <u>base chance</u> to Freeze the target, lasting for 1 turn.\\nWhile Frozen, enemy targets cannot take any actions, and at the start of their turn, they receive <u>Additional Ice DMG</u> equal to <orangeStrong>{{4}}%</orangeStrong> of Misha's ATK.\\nThis Ultimate can possess up to {{5}} Hits Per Action. After the Ultimate is used, its Hits Per Action will be reset to the default level.",
-        "shortDesc": "Deals minor Ice DMG to single enemies. The attack bounces <orangeStrong>{{1}}</orangeStrong> times by default and up to a maximum of <orangeStrong>{{5}}</orangeStrong> times. Before each hits land, there is a minor chance to <color=#f29e38ff>Freeze</color> the target."
+        "shortDesc": "Deals minor Ice DMG to single enemies. The attack bounces <orangeStrong>{{1}}</orangeStrong> times by default and up to a maximum of <orangeStrong>{{5}}</orangeStrong> times. Before each hits land, there is a minor chance to <orangeStrong>Freeze</orangeStrong> the target."
       }
     },
     "technique": {
       "0": {
         "name": "Wait, You Are So Beautiful!",
         "fullDesc": "After using the Technique, creates a dimension that lasts for {{1}} seconds. Enemies caught in the dimension are inflicted with Dream Prison and stop all their actions. Upon entering battle against enemies afflicted with Dream Prison, increases the Hits Per Action for Misha's next Ultimate by {{2}} hit(s). Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a dimension that stops all enemies within. Upon entering battle against enemies within the dimension, Misha's <color=#f29e38ff>next Ultimate deals more Hits Per Action</color>."
+        "shortDesc": "Creates a dimension that stops all enemies within. Upon entering battle against enemies within the dimension, Misha's <orangeStrong>next Ultimate deals more Hits Per Action</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Whimsicality of Fancy",
+      "desc": "When using the Ultimate, for every enemy on the field, additionally increases the Hits Per Action for the current Ultimate by {{1}} hit(s), up to a maximum increase of {{2}} hit(s)."
+    },
+    "2": {
+      "name": "Yearning of Youth",
+      "desc": "Before each hit of the Ultimate lands, there is a {{3}}% base chance of reducing the target's DEF by {{1}}% for {{2}} turn(s)."
+    },
+    "3": {
+      "name": "Vestige of Happiness",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Visage of Kinship",
+      "desc": "Increases the DMG multiplier for each hit of the Ultimate by {{1}}%."
+    },
+    "5": {
+      "name": "Genesis of First Love",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Estrangement of Dream",
+      "desc": "When using the Ultimate, increases own DMG by {{2}}%, lasting until the end of the turn. In addition, the next time the Skill is used, recovers {{1}} Skill Point(s) for the team."
     }
   }
 }

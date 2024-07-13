@@ -19,14 +19,14 @@
       "0": {
         "name": "Volée de papillons",
         "fullDesc": "Seele entre immédiatement dans l'état amélioré et inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de son ATQ à un ennemi unique.",
-        "shortDesc": "Entre dans l'<color=#f29e38ff>état amélioré</color> et inflige des DGT quantiques massifs à un ennemi unique."
+        "shortDesc": "Entre dans l'<orangeStrong>état amélioré</orangeStrong> et inflige des DGT quantiques massifs à un ennemi unique."
       }
     },
     "technique": {
       "0": {
         "name": "Illusion fantôme",
         "fullDesc": "Après utilisation de sa technique, Seele devient furtive pendant {{1}} secondes. Lorsque Furtivité est active, Seele ne peut pas être détectée par les ennemis. Si elle entre en combat en attaquant un ennemi, elle bénéficie immédiatement de l'état amélioré.",
-        "shortDesc": "Entre en mode <color=#f29e38ff>Furtivité</color>. Entre dans l'état <color=#f29e38ff>amélioré</color> après avoir attaqué un ennemi et engagé le combat."
+        "shortDesc": "Entre en mode <orangeStrong>Furtivité</orangeStrong>. Entre dans l'état <orangeStrong>amélioré</orangeStrong> après avoir attaqué un ennemi et engagé le combat."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Coup tranchant",
+      "desc": "Lorsque le personnage inflige des DGT à un ennemi dont le pourcentage de PV est inférieur ou égal à {{1}}%, les chances de coup critique augmentent de {{2}}%."
+    },
+    "2": {
+      "name": "Papillon dansant",
+      "desc": "L'augmentation de VIT conférée par la compétence de Seele peut être cumulée jusqu'à {{1}} fois."
+    },
+    "3": {
+      "name": "Tumulte éblouissant",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Phantasme d'un instant",
+      "desc": "Seele régénère {{1}} points d'énergie lorsqu'elle élimine un ennemi."
+    },
+    "5": {
+      "name": "Éclats perçants",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Ébranlements éclatants",
+      "desc": "Après utilisation de l'ultime de Seele, inflige l'effet Volée de papillons à la cible ennemie pendant {{2}} tour. Les ennemis affectés par Volée de papillons subissent des DGT quantiques additionnels équivalents à {{1}}% des DGT de l'ultime de Seele chaque fois qu'ils sont attaqués. Si la cible ennemie est vaincue par les DGT de Volée de papillons provoqués par les attaques d'autres alliés, le talent de Seele ne se déclenche pas.\\nLorsque Seele est à terre, l'effet Volée de papillons infligé aux ennemis est supprimé."
     }
   }
 }

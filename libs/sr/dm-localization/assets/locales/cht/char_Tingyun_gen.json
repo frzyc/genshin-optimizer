@@ -12,14 +12,14 @@
       "0": {
         "name": "祥音和韻",
         "fullDesc": "為指定我方單體提供【賜福】，使其攻擊力提高<orangeStrong>{{2}}%</orangeStrong>，最高不超過停雲當下攻擊力的<orangeStrong>{{4}}%</orangeStrong>。\\n獲得【賜福】的目標發動攻擊後，會額外造成1次等同於其自身<orangeStrong>{{1}}%</orangeStrong>攻擊力的雷屬性<u>附加傷害</u>。\\n【賜福】持續{{3}}回合且僅對停雲戰技最新的施放目標生效。",
-        "shortDesc": "使我方單體<color=#f29e38ff>攻擊力提高</color>，並獲得【賜福】。【賜福】狀態下攻擊時額外造成少量<color=#f29e38ff>雷屬性<u>附加傷害</u></color>。"
+        "shortDesc": "使我方單體<orangeStrong>攻擊力提高</orangeStrong>，並獲得【賜福】。【賜福】狀態下攻擊時額外造成少量<orangeStrong>雷屬性<u>附加傷害</u></orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "慶雲光覆儀禱",
         "fullDesc": "為指定我方單體恢復{{1}}點能量，同時使目標造成的傷害提高<orangeStrong>{{3}}%</orangeStrong>，持續{{2}}回合。",
-        "shortDesc": "為我方單體<color=#f29e38ff>恢復能量</color>，並使其<color=#f29e38ff>造成的傷害提高</color>。"
+        "shortDesc": "為我方單體<orangeStrong>恢復能量</orangeStrong>，並使其<orangeStrong>造成的傷害提高</orangeStrong>。"
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "春風得意，時運馳騁",
+      "desc": "得到【賜福】的我方單體施放終結技後速度提高{{1}}%，持續1回合。"
+    },
+    "2": {
+      "name": "君子惠渥，晏笑承之",
+      "desc": "得到【賜福】的我方單體在消滅敵方目標時恢復{{1}}點能量，該效果每回合只能觸發1次。"
+    },
+    "3": {
+      "name": "青丘遺澤",
+      "desc": "終結技等級+2，最多不超過15級；普通攻擊等級+1，最多不超過10級。"
+    },
+    "4": {
+      "name": "鳴火機變，度時察勢",
+      "desc": "【賜福】附加的傷害倍率提高{{1}}%。"
+    },
+    "5": {
+      "name": "綏綏狐魅",
+      "desc": "戰技等級+2，最多不超過15級；天賦等級+2，最多不超過15級。"
+    },
+    "6": {
+      "name": "和氣生財，澤盈四方",
+      "desc": "終結技為我方目標恢復的能量提高{{1}}點。"
     }
   }
 }

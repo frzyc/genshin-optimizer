@@ -12,14 +12,14 @@
       "0": {
         "name": "Svarog veille sur toi",
         "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Clara à tous les ennemis et des DGT physiques supplémentaires équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Clara aux ennemis marqués par Svarog d'une Marque de contre.\\nToutes les Marques de contre sont supprimées après utilisation de cette compétence.",
-        "shortDesc": "Inflige des DGT physiques à tous les ennemis et des <color=#f29e38ff>DGT physiques supplémentaires</color> aux cibles qui portent une Marque de contre."
+        "shortDesc": "Inflige des DGT physiques à tous les ennemis et des <orangeStrong>DGT physiques supplémentaires</orangeStrong> aux cibles qui portent une Marque de contre."
       }
     },
     "ult": {
       "0": {
         "name": "C'est une promesse, pas un ordre",
-        "fullDesc": "Après utilisation de l'ultime de Clara, les DGT qu'elle subit sont réduits de <orangeStrong>{{4}}%</orangeStrong> supplémentaires et ses chances d'être attaquée par les ennemis sont considérablement augmentées pendant {{3}} tours.\\nD'autre part, le <u>contre</u> de Svarog est renforcé. Lorsqu'un allié est attaqué, Svarog lance immédiatement un <u>contre</u> et son multiplicateur de DGT contre l'ennemi augmente de <orangeStrong>{{2}}%</orangeStrong>. Les ennemis adjacents subissent <unbreak>50</unbreak> % des DGT infligés à la cible ennemie. Le <u>contre</u> renforcé peut prendre effet {{5}} fois.",
-        "shortDesc": "<color=#f29e38ff>Réduit les DGT subis</color>, augmente les chances d'être attaqué par les ennemis et renforce les <u>contres</u>."
+        "fullDesc": "Après utilisation de l'ultime de Clara, les DGT qu'elle subit sont réduits de <orangeStrong>{{4}}%</orangeStrong> supplémentaires et ses chances d'être attaquée par les ennemis sont considérablement augmentées pendant {{3}} tours.\\nD'autre part, le <u>contre</u> de Svarog est renforcé. Lorsqu'un allié est attaqué, Svarog lance immédiatement un <u>contre</u> et son multiplicateur de DGT contre l'ennemi augmente de <orangeStrong>{{2}}%</orangeStrong>. Les ennemis adjacents subissent 50 % des DGT infligés à la cible ennemie. Le <u>contre</u> renforcé peut prendre effet {{5}} fois.",
+        "shortDesc": "<orangeStrong>Réduit les DGT subis</orangeStrong>, augmente les chances d'être attaqué par les ennemis et renforce les <u>contres</u>."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Une silhouette imposante",
+      "desc": "Utiliser la compétence ne fait plus disparaître les Marques de contre des ennemis."
+    },
+    "2": {
+      "name": "Une étreinte intense",
+      "desc": "L'ATQ augmente de {{1}}% pendant {{2}} tours après utilisation de l'ultime."
+    },
+    "3": {
+      "name": "Armure d'acier froid",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Chaleur familiale",
+      "desc": "Lorsque Clara est touchée, les DGT qu'elle subit sont réduits de {{1}}%. Cet effet dure jusqu'au début de son prochain tour."
+    },
+    "5": {
+      "name": "Une petite promesse",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Compagnons de longue date",
+      "desc": "Lorsque d'autres alliés sont touchés, Svarog a également {{1}}% de chances fixes de déclencher un contre envers l'assaillant et de le marquer avec une Marque de contre. Le nombre de contres renforcés accordés par l'ultime augmente de {{2}}."
     }
   }
 }

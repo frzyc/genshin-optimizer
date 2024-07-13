@@ -26,7 +26,7 @@
       "0": {
         "name": "Ngự Kiếm Chân Quyết",
         "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu trận tiếp theo, sát thương Yanqing gây cho kẻ địch có Phần Trăm HP hiện tại lớn hơn hoặc bằng {{1}}% sẽ tăng {{2}}%, duy trì {{3}} hiệp.",
-        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu trận kế tiếp, sẽ tăng sát thương mà bản thân gây ra cho kẻ địch có Phần Trăm HP từ <unbreak>50%</unbreak> trở lên."
+        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu trận kế tiếp, sẽ tăng sát thương mà bản thân gây ra cho kẻ địch có Phần Trăm HP từ 50% trở lên."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Lưỡi Kiếm Đơn Thuần",
+      "desc": "Khi Yanqing tấn công mục tiêu địch, nếu mục tiêu đang ở trạng thái Đóng Băng, sẽ lập tức gây cho mục tiêu Sát Thương Băng kèm theo bằng {{1}}% Tấn Công của Yanqing."
+    },
+    "2": {
+      "name": "Ánh Sáng Không Trung",
+      "desc": "Khi ở hiệu ứng Kiếm Khôn Hiểu Lòng Người, tăng thêm {{1}}% hiệu suất hồi năng lượng."
+    },
+    "3": {
+      "name": "Phôi Kiếm",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Sương Lệ",
+      "desc": "Khi Phần Trăm HP hiện tại lớn hơn hoặc bằng {{1}}%, sẽ tăng cho bản thân {{2}}% Xuyên Kháng Băng."
+    },
+    "5": {
+      "name": "Thiên Chất",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Tự Tại",
+      "desc": "Khi tiêu diệt kẻ địch, nếu đang có hiệu ứng Buff của Tuyệt Kỹ hoặc \"Kiếm Khôn Hiểu Lòng Người\", thì thời gian duy trì của những hiệu ứng Buff này đều kéo dài thêm 1 hiệp."
     }
   }
 }

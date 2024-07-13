@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Déflagration du cœur en fusion",
+      "desc": "Lorsque {M#le pionnier}{F#la pionnière} utilise son ATQ normale, {M#il}{F#elle} inflige des DGT de feu supplémentaires équivalents à {{1}}% de sa DÉF. Lorsqu'{M#il}{F#elle} utilise son ATQ normale renforcée, {M#il}{F#elle} inflige des DGT de feu supplémentaires équivalents à {{2}}% de sa DÉF."
+    },
+    "2": {
+      "name": "Ténacité sans faille",
+      "desc": "Le bouclier appliqué à tous les alliés grâce au talent {M#du pionnier}{F#de la pionnière} absorbe des DGT supplémentaires équivalents à {{1}}% de la DÉF {M#du pionnier}{F#de la pionnière} + {{2}}."
+    },
+    "3": {
+      "name": "Tout feu, tout flamme",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Serment de survie de la civilisation",
+      "desc": "Gagne immédiatement {{1}} cumuls de Volonté du magma en début de combat."
+    },
+    "5": {
+      "name": "Flamme d'inspiration",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Remparts de la cité éblouissante",
+      "desc": "Après utilisation de l'ATQ normale renforcée ou de l'ultime {M#du pionnier}{F#de la pionnière}, sa DÉF augmente de {{1}}%. Cumulable jusqu'à {{2}} fois."
+    }
   }
 }

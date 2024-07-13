@@ -19,7 +19,7 @@
       "0": {
         "name": "Châtiment divin",
         "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Xueyi à un ennemi unique. Cette attaque ignore les types de faiblesse et réduit la robustesse de la cible. L'effet de la Rupture de faiblesse quantique se déclenche en cas de Rupture de faiblesse.\\nPlus la robustesse est faible, plus les DGT infligés par cette attaque sont élevés, jusqu'à un maximum de <orangeStrong>{{3}}%</orangeStrong>.",
-        "shortDesc": "Inflige des DGT quantiques massifs à un ennemi. Cette attaque <color=#f29e38ff>ignore les types de faiblesse</color> et réduit la robustesse de la cible. Plus la robustesse de l'ennemi est réduite, plus les DGT sont élevés."
+        "shortDesc": "Inflige des DGT quantiques massifs à un ennemi. Cette attaque <orangeStrong>ignore les types de faiblesse</orangeStrong> et réduit la robustesse de la cible. Plus la robustesse de l'ennemi est réduite, plus les DGT sont élevés."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Refoulement psychologique",
+      "desc": "Augmente les DGT infligés par l'attaque de suivi du talent de {{1}}%."
+    },
+    "2": {
+      "name": "Perturbation mentale",
+      "desc": "L'attaque de suivi du talent réduit la robustesse de l'ennemi quel que soit son type de faiblesse et Xueyi régénère des PV à hauteur de {{1}}% de ses PV max. Un effet de Rupture quantique se déclenche lorsqu'elle inflige une Rupture de faiblesse."
+    },
+    "3": {
+      "name": "Cessation de la souffrance",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Rupture de karma",
+      "desc": "Augmente l'effet de Rupture de {{1}}% pendant {{2}} tours lors de l'utilisation de l'ultime."
+    },
+    "5": {
+      "name": "Esprit envoûté",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Équilibre de la vie et de la mort",
+      "desc": "La limite max de Karma est réduite à {{1}}."
     }
   }
 }

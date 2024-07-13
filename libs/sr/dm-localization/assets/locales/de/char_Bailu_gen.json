@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Meridian-Aufguss: Ambrosia-Aqua",
+      "desc": "Wenn die „Belebung“ endet und die LP des Verbündeten vollständig sind, wird für ihn zusätzlich {{1}} Pkt. Energie wiederhergestellt."
+    },
+    "2": {
+      "name": "Topf des schlummernden Drachen",
+      "desc": "Erhöht nach dem Einsatz des Ultimates die bewirkte Heilung von Bailu für {{2}} Rd. um {{1}}%."
+    },
+    "3": {
+      "name": "Rätselhaftes Wunder",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Bedrohung ausgetrieben",
+      "desc": "Jede Heilung durch die Fertigkeit erhöht den vom Empfänger verursachten SCH für {{3}} Rd. um {{1}}%. Dieser Effekt ist bis zu {{2}}-mal stapelbar."
+    },
+    "5": {
+      "name": "Beseitigung irdischer Probleme",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Triefender Tropfen drakonischer Göttlichkeit",
+      "desc": "Erhöht die Anzahl der Verbündeten, die durch Bailu in einem einzigen Kampf nach Todesstößen geheilt werden können, um {{1}}."
+    }
   }
 }

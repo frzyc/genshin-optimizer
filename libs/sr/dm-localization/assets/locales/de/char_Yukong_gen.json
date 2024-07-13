@@ -12,21 +12,21 @@
       "0": {
         "name": "Ermutigende Salve",
         "fullDesc": "Erhält {{1}}-fach „Surrende Bogensehnen“, bis zu 2-fach stapelbar. Wenn „Surrende Bogensehnen“ aktiv ist, wird der ANG aller Verbündeten um <orangeStrong>{{2}}%</orangeStrong> erhöht. Jedes Mal, wenn die Runde eines Verbündeten endet, wird 1-fach „Surrende Bogensehnen“ von Yukong entfernt.\\nWenn Yukong in ihrer Runde „Surrende Bogensehnen“ durch den Einsatz der Fertigkeit erhält, wird „Surrende Bogensehnen“ nicht entfernt.",
-        "shortDesc": "Erhält 2-fach „Surrende Bogensehnen“. Wenn „Surrende Bogensehnen“ aktiv ist, wird der <color=#f29e38ff>ANG</color> aller Verbündeten erhöht."
+        "shortDesc": "Erhält 2-fach „Surrende Bogensehnen“. Wenn „Surrende Bogensehnen“ aktiv ist, wird der <orangeStrong>ANG</orangeStrong> aller Verbündeten erhöht."
       }
     },
     "ult": {
       "0": {
         "name": "Turmfalke im Sturzflug",
         "fullDesc": "Wenn Yukong ihren Ultimate einsetzt und „Surrende Bogensehnen“ aktiv ist, werden die KRIT-Rate aller Verbündeten zusätzlich um <orangeStrong>{{2}}%</orangeStrong> und der KRIT-SCH aller Verbündeten um <orangeStrong>{{3}}%</orangeStrong> erhöht. Fügt gleichzeitig einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Yukongs ANG zu.",
-        "shortDesc": "Wenn „Surrende Bogensehnen“ aktiv ist, werden die <color=#f29e38ff>KRIT-Rate und der KRIT-SCH</color> aller Verbündeten erhöht. Fügt gleichzeitig einem Gegner massiven imaginären SCH zu."
+        "shortDesc": "Wenn „Surrende Bogensehnen“ aktiv ist, werden die <orangeStrong>KRIT-Rate und der KRIT-SCH</orangeStrong> aller Verbündeten erhöht. Fügt gleichzeitig einem Gegner massiven imaginären SCH zu."
       }
     },
     "technique": {
       "0": {
         "name": "Jagd nach dem Wind",
         "fullDesc": "Aktiviert nach dem Einsatz der Technik für {{1}} Sek. Sprintmodus. Der Sprintmodus erhöht die Bewegungs-GES um {{2}}% und gewährt Yukong {{3}}-fach „Surrende Bogensehnen“, wenn sie durch Angriff auf den Gegner einen Kampf einleitet.",
-        "shortDesc": "Erhöht ihre <color=#f29e38ff>Bewegungs-GES</color>. Gewährt 2-fach „Surrende Bogensehnen“, wenn sie durch Angriff auf den Gegner einen Kampf einleitet."
+        "shortDesc": "Erhöht ihre <orangeStrong>Bewegungs-GES</orangeStrong>. Gewährt 2-fach „Surrende Bogensehnen“, wenn sie durch Angriff auf den Gegner einen Kampf einleitet."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Geflügelte Kundschafterin",
+      "desc": "Erhöht beim Kampfeintritt die GES aller Verbündeten für {{2}} Rd. um {{1}}%."
+    },
+    "2": {
+      "name": "Streitwagen des Firmaments",
+      "desc": "Wenn die aktuelle Energie eines Verbündeten seinem Energielimit entspricht, stellt Yukong zusätzlich {{1}} Pkt. Energie wieder her. Dieser Effekt kann für jeden Verbündeten nur 1-mal ausgelöst werden. Die Auslösungsanzahl wird zurückgesetzt, nachdem Yukong ihren Ultimate eingesetzt hat."
+    },
+    "3": {
+      "name": "Stürzender Pfeilregen",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Echo des Westwinds",
+      "desc": "Wenn „Surrende Bogensehnen“ aktiv ist, fügt Yukong Gegnern {{1}}% mehr SCH zu."
+    },
+    "5": {
+      "name": "Schnell und präzise",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Blitzschlag der Bogensehne",
+      "desc": "Beim Einsatz des Ultimates erhält Yukong sofort {{1}}-fach „Surrende Bogensehnen“."
     }
   }
 }
