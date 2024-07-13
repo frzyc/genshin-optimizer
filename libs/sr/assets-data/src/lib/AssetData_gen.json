@@ -1,0 +1,706 @@
+{
+  "lightCones": {
+    "Arrows": {
+      "icon": "spriteoutput/lightconemediumicon/20000.png",
+      "cover": "spriteoutput/lightconemaxfigures/20000.png"
+    },
+    "Cornucopia": {
+      "icon": "spriteoutput/lightconemediumicon/20001.png",
+      "cover": "spriteoutput/lightconemaxfigures/20001.png"
+    },
+    "CollapsingSky": {
+      "icon": "spriteoutput/lightconemediumicon/20002.png",
+      "cover": "spriteoutput/lightconemaxfigures/20002.png"
+    },
+    "Amber": {
+      "icon": "spriteoutput/lightconemediumicon/20003.png",
+      "cover": "spriteoutput/lightconemaxfigures/20003.png"
+    },
+    "Void": {
+      "icon": "spriteoutput/lightconemediumicon/20004.png",
+      "cover": "spriteoutput/lightconemaxfigures/20004.png"
+    },
+    "Chorus": {
+      "icon": "spriteoutput/lightconemediumicon/20005.png",
+      "cover": "spriteoutput/lightconemaxfigures/20005.png"
+    },
+    "DataBank": {
+      "icon": "spriteoutput/lightconemediumicon/20006.png",
+      "cover": "spriteoutput/lightconemaxfigures/20006.png"
+    },
+    "DartingArrow": {
+      "icon": "spriteoutput/lightconemediumicon/20007.png",
+      "cover": "spriteoutput/lightconemaxfigures/20007.png"
+    },
+    "FineFruit": {
+      "icon": "spriteoutput/lightconemediumicon/20008.png",
+      "cover": "spriteoutput/lightconemaxfigures/20008.png"
+    },
+    "ShatteredHome": {
+      "icon": "spriteoutput/lightconemediumicon/20009.png",
+      "cover": "spriteoutput/lightconemaxfigures/20009.png"
+    },
+    "Defense": {
+      "icon": "spriteoutput/lightconemediumicon/20010.png",
+      "cover": "spriteoutput/lightconemaxfigures/20010.png"
+    },
+    "Loop": {
+      "icon": "spriteoutput/lightconemediumicon/20011.png",
+      "cover": "spriteoutput/lightconemaxfigures/20011.png"
+    },
+    "MeshingCogs": {
+      "icon": "spriteoutput/lightconemediumicon/20012.png",
+      "cover": "spriteoutput/lightconemaxfigures/20012.png"
+    },
+    "Passkey": {
+      "icon": "spriteoutput/lightconemediumicon/20013.png",
+      "cover": "spriteoutput/lightconemaxfigures/20013.png"
+    },
+    "Adversarial": {
+      "icon": "spriteoutput/lightconemediumicon/20014.png",
+      "cover": "spriteoutput/lightconemaxfigures/20014.png"
+    },
+    "Multiplication": {
+      "icon": "spriteoutput/lightconemediumicon/20015.png",
+      "cover": "spriteoutput/lightconemaxfigures/20015.png"
+    },
+    "MutualDemise": {
+      "icon": "spriteoutput/lightconemediumicon/20016.png",
+      "cover": "spriteoutput/lightconemaxfigures/20016.png"
+    },
+    "Pioneering": {
+      "icon": "spriteoutput/lightconemediumicon/20017.png",
+      "cover": "spriteoutput/lightconemaxfigures/20017.png"
+    },
+    "HiddenShadow": {
+      "icon": "spriteoutput/lightconemediumicon/20018.png",
+      "cover": "spriteoutput/lightconemaxfigures/20018.png"
+    },
+    "Mediation": {
+      "icon": "spriteoutput/lightconemediumicon/20019.png",
+      "cover": "spriteoutput/lightconemaxfigures/20019.png"
+    },
+    "Sagacity": {
+      "icon": "spriteoutput/lightconemediumicon/20020.png",
+      "cover": "spriteoutput/lightconemaxfigures/20020.png"
+    },
+    "PostOpConversation": {
+      "icon": "spriteoutput/lightconemediumicon/21000.png",
+      "cover": "spriteoutput/lightconemaxfigures/21000.png"
+    },
+    "GoodNightAndSleepWell": {
+      "icon": "spriteoutput/lightconemediumicon/21001.png",
+      "cover": "spriteoutput/lightconemaxfigures/21001.png"
+    },
+    "DayOneOfMyNewLife": {
+      "icon": "spriteoutput/lightconemediumicon/21002.png",
+      "cover": "spriteoutput/lightconemaxfigures/21002.png"
+    },
+    "OnlySilenceRemains": {
+      "icon": "spriteoutput/lightconemediumicon/21003.png",
+      "cover": "spriteoutput/lightconemaxfigures/21003.png"
+    },
+    "MemoriesOfThePast": {
+      "icon": "spriteoutput/lightconemediumicon/21004.png",
+      "cover": "spriteoutput/lightconemaxfigures/21004.png"
+    },
+    "TheMolesWelcomeYou": {
+      "icon": "spriteoutput/lightconemediumicon/21005.png",
+      "cover": "spriteoutput/lightconemaxfigures/21005.png"
+    },
+    "TheBirthOfTheSelf": {
+      "icon": "spriteoutput/lightconemediumicon/21006.png",
+      "cover": "spriteoutput/lightconemaxfigures/21006.png"
+    },
+    "SharedFeeling": {
+      "icon": "spriteoutput/lightconemediumicon/21007.png",
+      "cover": "spriteoutput/lightconemaxfigures/21007.png"
+    },
+    "EyesOfThePrey": {
+      "icon": "spriteoutput/lightconemediumicon/21008.png",
+      "cover": "spriteoutput/lightconemaxfigures/21008.png"
+    },
+    "LandausChoice": {
+      "icon": "spriteoutput/lightconemediumicon/21009.png",
+      "cover": "spriteoutput/lightconemaxfigures/21009.png"
+    },
+    "Swordplay": {
+      "icon": "spriteoutput/lightconemediumicon/21010.png",
+      "cover": "spriteoutput/lightconemaxfigures/21010.png"
+    },
+    "PlanetaryRendezvous": {
+      "icon": "spriteoutput/lightconemediumicon/21011.png",
+      "cover": "spriteoutput/lightconemaxfigures/21011.png"
+    },
+    "ASecretVow": {
+      "icon": "spriteoutput/lightconemediumicon/21012.png",
+      "cover": "spriteoutput/lightconemaxfigures/21012.png"
+    },
+    "MakeTheWorldClamor": {
+      "icon": "spriteoutput/lightconemediumicon/21013.png",
+      "cover": "spriteoutput/lightconemaxfigures/21013.png"
+    },
+    "PerfectTiming": {
+      "icon": "spriteoutput/lightconemediumicon/21014.png",
+      "cover": "spriteoutput/lightconemaxfigures/21014.png"
+    },
+    "ResolutionShinesAsPearlsOfSweat": {
+      "icon": "spriteoutput/lightconemediumicon/21015.png",
+      "cover": "spriteoutput/lightconemaxfigures/21015.png"
+    },
+    "TrendOfTheUniversalMarket": {
+      "icon": "spriteoutput/lightconemediumicon/21016.png",
+      "cover": "spriteoutput/lightconemaxfigures/21016.png"
+    },
+    "SubscribeForMore": {
+      "icon": "spriteoutput/lightconemediumicon/21017.png",
+      "cover": "spriteoutput/lightconemaxfigures/21017.png"
+    },
+    "DanceDanceDance": {
+      "icon": "spriteoutput/lightconemediumicon/21018.png",
+      "cover": "spriteoutput/lightconemaxfigures/21018.png"
+    },
+    "UnderTheBlueSky": {
+      "icon": "spriteoutput/lightconemediumicon/21019.png",
+      "cover": "spriteoutput/lightconemaxfigures/21019.png"
+    },
+    "GeniusesRepose": {
+      "icon": "spriteoutput/lightconemediumicon/21020.png",
+      "cover": "spriteoutput/lightconemaxfigures/21020.png"
+    },
+    "QuidProQuo": {
+      "icon": "spriteoutput/lightconemediumicon/21021.png",
+      "cover": "spriteoutput/lightconemaxfigures/21021.png"
+    },
+    "Fermata": {
+      "icon": "spriteoutput/lightconemediumicon/21022.png",
+      "cover": "spriteoutput/lightconemaxfigures/21022.png"
+    },
+    "WeAreWildfire": {
+      "icon": "spriteoutput/lightconemediumicon/21023.png",
+      "cover": "spriteoutput/lightconemaxfigures/21023.png"
+    },
+    "RiverFlowsInSpring": {
+      "icon": "spriteoutput/lightconemediumicon/21024.png",
+      "cover": "spriteoutput/lightconemaxfigures/21024.png"
+    },
+    "PastAndFuture": {
+      "icon": "spriteoutput/lightconemediumicon/21025.png",
+      "cover": "spriteoutput/lightconemaxfigures/21025.png"
+    },
+    "WoofWalkTime": {
+      "icon": "spriteoutput/lightconemediumicon/21026.png",
+      "cover": "spriteoutput/lightconemaxfigures/21026.png"
+    },
+    "TheSeriousnessOfBreakfast": {
+      "icon": "spriteoutput/lightconemediumicon/21027.png",
+      "cover": "spriteoutput/lightconemaxfigures/21027.png"
+    },
+    "WarmthShortensColdNights": {
+      "icon": "spriteoutput/lightconemediumicon/21028.png",
+      "cover": "spriteoutput/lightconemaxfigures/21028.png"
+    },
+    "WeWillMeetAgain": {
+      "icon": "spriteoutput/lightconemediumicon/21029.png",
+      "cover": "spriteoutput/lightconemaxfigures/21029.png"
+    },
+    "ThisIsMe": {
+      "icon": "spriteoutput/lightconemediumicon/21030.png",
+      "cover": "spriteoutput/lightconemaxfigures/21030.png"
+    },
+    "ReturnToDarkness": {
+      "icon": "spriteoutput/lightconemediumicon/21031.png",
+      "cover": "spriteoutput/lightconemaxfigures/21031.png"
+    },
+    "CarveTheMoonWeaveTheClouds": {
+      "icon": "spriteoutput/lightconemediumicon/21032.png",
+      "cover": "spriteoutput/lightconemaxfigures/21032.png"
+    },
+    "NowhereToRun": {
+      "icon": "spriteoutput/lightconemediumicon/21033.png",
+      "cover": "spriteoutput/lightconemaxfigures/21033.png"
+    },
+    "TodayIsAnotherPeacefulDay": {
+      "icon": "spriteoutput/lightconemediumicon/21034.png",
+      "cover": "spriteoutput/lightconemaxfigures/21034.png"
+    },
+    "WhatIsReal": {
+      "icon": "spriteoutput/lightconemediumicon/21035.png",
+      "cover": "spriteoutput/lightconemaxfigures/21035.png"
+    },
+    "DreamvilleAdventure": {
+      "icon": "spriteoutput/lightconemediumicon/21036.png",
+      "cover": "spriteoutput/lightconemaxfigures/21036.png"
+    },
+    "FinalVictor": {
+      "icon": "spriteoutput/lightconemediumicon/21037.png",
+      "cover": "spriteoutput/lightconemaxfigures/21037.png"
+    },
+    "FlamesAfar": {
+      "icon": "spriteoutput/lightconemediumicon/21038.png",
+      "cover": "spriteoutput/lightconemaxfigures/21038.png"
+    },
+    "DestinysThreadsForewoven": {
+      "icon": "spriteoutput/lightconemediumicon/21039.png",
+      "cover": "spriteoutput/lightconemaxfigures/21039.png"
+    },
+    "TheDayTheCosmosFell": {
+      "icon": "spriteoutput/lightconemediumicon/21040.png",
+      "cover": "spriteoutput/lightconemaxfigures/21040.png"
+    },
+    "ItsShowtime": {
+      "icon": "spriteoutput/lightconemediumicon/21041.png",
+      "cover": "spriteoutput/lightconemaxfigures/21041.png"
+    },
+    "IndeliblePromise": {
+      "icon": "spriteoutput/lightconemediumicon/21042.png",
+      "cover": "spriteoutput/lightconemaxfigures/21042.png"
+    },
+    "ConcertForTwo": {
+      "icon": "spriteoutput/lightconemediumicon/21043.png",
+      "cover": "spriteoutput/lightconemaxfigures/21043.png"
+    },
+    "BeforeTheTutorialMissionStarts": {
+      "icon": "spriteoutput/lightconemediumicon/22000.png",
+      "cover": "spriteoutput/lightconemaxfigures/22000.png"
+    },
+    "HeyOverHere": {
+      "icon": "spriteoutput/lightconemediumicon/22001.png",
+      "cover": "spriteoutput/lightconemaxfigures/22001.png"
+    },
+    "NightOnTheMilkyWay": {
+      "icon": "spriteoutput/lightconemediumicon/23000.png",
+      "cover": "spriteoutput/lightconemaxfigures/23000.png"
+    },
+    "InTheNight": {
+      "icon": "spriteoutput/lightconemediumicon/23001.png",
+      "cover": "spriteoutput/lightconemaxfigures/23001.png"
+    },
+    "SomethingIrreplaceable": {
+      "icon": "spriteoutput/lightconemediumicon/23002.png",
+      "cover": "spriteoutput/lightconemaxfigures/23002.png"
+    },
+    "ButTheBattleIsntOver": {
+      "icon": "spriteoutput/lightconemediumicon/23003.png",
+      "cover": "spriteoutput/lightconemaxfigures/23003.png"
+    },
+    "InTheNameOfTheWorld": {
+      "icon": "spriteoutput/lightconemediumicon/23004.png",
+      "cover": "spriteoutput/lightconemaxfigures/23004.png"
+    },
+    "MomentOfVictory": {
+      "icon": "spriteoutput/lightconemediumicon/23005.png",
+      "cover": "spriteoutput/lightconemaxfigures/23005.png"
+    },
+    "PatienceIsAllYouNeed": {
+      "icon": "spriteoutput/lightconemediumicon/23006.png",
+      "cover": "spriteoutput/lightconemaxfigures/23006.png"
+    },
+    "IncessantRain": {
+      "icon": "spriteoutput/lightconemediumicon/23007.png",
+      "cover": "spriteoutput/lightconemaxfigures/23007.png"
+    },
+    "EchoesOfTheCoffin": {
+      "icon": "spriteoutput/lightconemediumicon/23008.png",
+      "cover": "spriteoutput/lightconemaxfigures/23008.png"
+    },
+    "TheUnreachableSide": {
+      "icon": "spriteoutput/lightconemediumicon/23009.png",
+      "cover": "spriteoutput/lightconemaxfigures/23009.png"
+    },
+    "BeforeDawn": {
+      "icon": "spriteoutput/lightconemediumicon/23010.png",
+      "cover": "spriteoutput/lightconemaxfigures/23010.png"
+    },
+    "SheAlreadyShutHerEyes": {
+      "icon": "spriteoutput/lightconemediumicon/23011.png",
+      "cover": "spriteoutput/lightconemaxfigures/23011.png"
+    },
+    "SleepLikeTheDead": {
+      "icon": "spriteoutput/lightconemediumicon/23012.png",
+      "cover": "spriteoutput/lightconemaxfigures/23012.png"
+    },
+    "TimeWaitsForNoOne": {
+      "icon": "spriteoutput/lightconemediumicon/23013.png",
+      "cover": "spriteoutput/lightconemaxfigures/23013.png"
+    },
+    "IShallBeMyOwnSword": {
+      "icon": "spriteoutput/lightconemediumicon/23014.png",
+      "cover": "spriteoutput/lightconemaxfigures/23014.png"
+    },
+    "BrighterThanTheSun": {
+      "icon": "spriteoutput/lightconemediumicon/23015.png",
+      "cover": "spriteoutput/lightconemaxfigures/23015.png"
+    },
+    "WorrisomeBlissful": {
+      "icon": "spriteoutput/lightconemediumicon/23016.png",
+      "cover": "spriteoutput/lightconemaxfigures/23016.png"
+    },
+    "NightOfFright": {
+      "icon": "spriteoutput/lightconemediumicon/23017.png",
+      "cover": "spriteoutput/lightconemaxfigures/23017.png"
+    },
+    "AnInstantBeforeAGaze": {
+      "icon": "spriteoutput/lightconemediumicon/23018.png",
+      "cover": "spriteoutput/lightconemaxfigures/23018.png"
+    },
+    "PastSelfInMirror": {
+      "icon": "spriteoutput/lightconemediumicon/23019.png",
+      "cover": "spriteoutput/lightconemaxfigures/23019.png"
+    },
+    "BaptismOfPureThought": {
+      "icon": "spriteoutput/lightconemediumicon/23020.png",
+      "cover": "spriteoutput/lightconemaxfigures/23020.png"
+    },
+    "EarthlyEscapade": {
+      "icon": "spriteoutput/lightconemediumicon/23021.png",
+      "cover": "spriteoutput/lightconemaxfigures/23021.png"
+    },
+    "ReforgedRemembrance": {
+      "icon": "spriteoutput/lightconemediumicon/23022.png",
+      "cover": "spriteoutput/lightconemaxfigures/23022.png"
+    },
+    "InherentlyUnjustDestiny": {
+      "icon": "spriteoutput/lightconemediumicon/23023.png",
+      "cover": "spriteoutput/lightconemaxfigures/23023.png"
+    },
+    "AlongThePassingShore": {
+      "icon": "spriteoutput/lightconemediumicon/23024.png",
+      "cover": "spriteoutput/lightconemaxfigures/23024.png"
+    },
+    "OnTheFallOfAnAeon": {
+      "icon": "spriteoutput/lightconemediumicon/24000.png",
+      "cover": "spriteoutput/lightconemaxfigures/24000.png"
+    },
+    "CruisingInTheStellarSea": {
+      "icon": "spriteoutput/lightconemediumicon/24001.png",
+      "cover": "spriteoutput/lightconemaxfigures/24001.png"
+    },
+    "TextureOfMemories": {
+      "icon": "spriteoutput/lightconemediumicon/24002.png",
+      "cover": "spriteoutput/lightconemaxfigures/24002.png"
+    },
+    "SolitaryHealing": {
+      "icon": "spriteoutput/lightconemediumicon/24003.png",
+      "cover": "spriteoutput/lightconemaxfigures/24003.png"
+    }
+  },
+  "chars": {
+    "March7th": {
+      "icon": "spriteoutput/avataricon/1001.png"
+    },
+    "DanHeng": {
+      "icon": "spriteoutput/avataricon/1002.png"
+    },
+    "Himeko": {
+      "icon": "spriteoutput/avataricon/1003.png"
+    },
+    "Welt": {
+      "icon": "spriteoutput/avataricon/1004.png"
+    },
+    "Kafka": {
+      "icon": "spriteoutput/avataricon/1005.png"
+    },
+    "SilverWolf": {
+      "icon": "spriteoutput/avataricon/1006.png"
+    },
+    "Arlan": {
+      "icon": "spriteoutput/avataricon/1008.png"
+    },
+    "Asta": {
+      "icon": "spriteoutput/avataricon/1009.png"
+    },
+    "Herta": {
+      "icon": "spriteoutput/avataricon/1013.png"
+    },
+    "Bronya": {
+      "icon": "spriteoutput/avataricon/1101.png"
+    },
+    "Seele": {
+      "icon": "spriteoutput/avataricon/1102.png"
+    },
+    "Serval": {
+      "icon": "spriteoutput/avataricon/1103.png"
+    },
+    "Gepard": {
+      "icon": "spriteoutput/avataricon/1104.png"
+    },
+    "Natasha": {
+      "icon": "spriteoutput/avataricon/1105.png"
+    },
+    "Pela": {
+      "icon": "spriteoutput/avataricon/1106.png"
+    },
+    "Clara": {
+      "icon": "spriteoutput/avataricon/1107.png"
+    },
+    "Sampo": {
+      "icon": "spriteoutput/avataricon/1108.png"
+    },
+    "Hook": {
+      "icon": "spriteoutput/avataricon/1109.png"
+    },
+    "Lynx": {
+      "icon": "spriteoutput/avataricon/1110.png"
+    },
+    "Luka": {
+      "icon": "spriteoutput/avataricon/1111.png"
+    },
+    "TopazAndNumby": {
+      "icon": "spriteoutput/avataricon/1112.png"
+    },
+    "Qingque": {
+      "icon": "spriteoutput/avataricon/1201.png"
+    },
+    "Tingyun": {
+      "icon": "spriteoutput/avataricon/1202.png"
+    },
+    "Luocha": {
+      "icon": "spriteoutput/avataricon/1203.png"
+    },
+    "JingYuan": {
+      "icon": "spriteoutput/avataricon/1204.png"
+    },
+    "Blade": {
+      "icon": "spriteoutput/avataricon/1205.png"
+    },
+    "Sushang": {
+      "icon": "spriteoutput/avataricon/1206.png"
+    },
+    "Yukong": {
+      "icon": "spriteoutput/avataricon/1207.png"
+    },
+    "FuXuan": {
+      "icon": "spriteoutput/avataricon/1208.png"
+    },
+    "Yanqing": {
+      "icon": "spriteoutput/avataricon/1209.png"
+    },
+    "Guinaifen": {
+      "icon": "spriteoutput/avataricon/1210.png"
+    },
+    "Bailu": {
+      "icon": "spriteoutput/avataricon/1211.png"
+    },
+    "Jingliu": {
+      "icon": "spriteoutput/avataricon/1212.png"
+    },
+    "DanHengImbibitorLunae": {
+      "icon": "spriteoutput/avataricon/1213.png"
+    },
+    "Xueyi": {
+      "icon": "spriteoutput/avataricon/1214.png"
+    },
+    "Hanya": {
+      "icon": "spriteoutput/avataricon/1215.png"
+    },
+    "Huohuo": {
+      "icon": "spriteoutput/avataricon/1217.png"
+    },
+    "Gallagher": {
+      "icon": "spriteoutput/avataricon/1301.png"
+    },
+    "Argenti": {
+      "icon": "spriteoutput/avataricon/1302.png"
+    },
+    "RuanMei": {
+      "icon": "spriteoutput/avataricon/1303.png"
+    },
+    "Aventurine": {
+      "icon": "spriteoutput/avataricon/1304.png"
+    },
+    "DrRatio": {
+      "icon": "spriteoutput/avataricon/1305.png"
+    },
+    "Sparkle": {
+      "icon": "spriteoutput/avataricon/1306.png"
+    },
+    "BlackSwan": {
+      "icon": "spriteoutput/avataricon/1307.png"
+    },
+    "Acheron": {
+      "icon": "spriteoutput/avataricon/1308.png"
+    },
+    "Misha": {
+      "icon": "spriteoutput/avataricon/1312.png"
+    },
+    "TrailblazerPhysicalM": {
+      "icon": "spriteoutput/avataricon/8001.png"
+    },
+    "TrailblazerPhysicalF": {
+      "icon": "spriteoutput/avataricon/8002.png"
+    },
+    "TrailblazerFireM": {
+      "icon": "spriteoutput/avataricon/8003.png"
+    },
+    "TrailblazerFireF": {
+      "icon": "spriteoutput/avataricon/8004.png"
+    }
+  },
+  "relic": {
+    "PasserbyOfWanderingCloud": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_101_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_101_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_101_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_101_4.png"
+    },
+    "MusketeerOfWildWheat": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_102_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_102_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_102_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_102_4.png"
+    },
+    "KnightOfPurityPalace": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_103_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_103_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_103_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_103_4.png"
+    },
+    "HunterOfGlacialForest": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_104_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_104_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_104_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_104_4.png"
+    },
+    "ChampionOfStreetwiseBoxing": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_105_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_105_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_105_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_105_4.png"
+    },
+    "GuardOfWutheringSnow": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_106_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_106_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_106_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_106_4.png"
+    },
+    "FiresmithOfLavaForging": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_107_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_107_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_107_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_107_4.png"
+    },
+    "GeniusOfBrilliantStars": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_108_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_108_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_108_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_108_4.png"
+    },
+    "BandOfSizzlingThunder": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_109_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_109_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_109_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_109_4.png"
+    },
+    "EagleOfTwilightLine": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_110_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_110_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_110_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_110_4.png"
+    },
+    "ThiefOfShootingMeteor": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_111_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_111_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_111_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_111_4.png"
+    },
+    "WastelanderOfBanditryDesert": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_112_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_112_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_112_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_112_4.png"
+    },
+    "LongevousDisciple": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_113_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_113_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_113_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_113_4.png"
+    },
+    "MessengerTraversingHackerspace": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_114_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_114_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_114_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_114_4.png"
+    },
+    "TheAshblazingGrandDuke": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_115_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_115_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_115_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_115_4.png"
+    },
+    "PrisonerInDeepConfinement": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_116_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_116_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_116_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_116_4.png"
+    },
+    "PioneerDiverOfDeadWaters": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_117_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_117_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_117_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_117_4.png"
+    },
+    "WatchmakerMasterOfDreamMachinations": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_118_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_118_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_118_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_118_4.png"
+    },
+    "SpaceSealingStation": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_301_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_301_6.png"
+    },
+    "FleetOfTheAgeless": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_302_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_302_6.png"
+    },
+    "PanCosmicCommercialEnterprise": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_303_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_303_6.png"
+    },
+    "BelobogOfTheArchitects": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_304_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_304_6.png"
+    },
+    "CelestialDifferentiator": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_305_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_305_6.png"
+    },
+    "InertSalsotto": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_306_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_306_6.png"
+    },
+    "TaliaKingdomOfBanditry": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_307_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_307_6.png"
+    },
+    "SprightlyVonwacq": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_308_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_308_6.png"
+    },
+    "RutilantArena": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_309_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_309_6.png"
+    },
+    "BrokenKeel": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_310_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_310_6.png"
+    },
+    "FirmamentFrontlineGlamoth": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_311_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_311_6.png"
+    },
+    "PenaconyLandOfTheDreams": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_312_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_312_6.png"
+    },
+    "SigoniaTheUnclaimedDesolation": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_313_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_313_6.png"
+    },
+    "IzumoGenseiAndTakamaDivineRealm": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_314_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_314_6.png"
+    }
+  }
+}
