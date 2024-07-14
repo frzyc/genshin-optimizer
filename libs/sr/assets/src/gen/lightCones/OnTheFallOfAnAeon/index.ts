@@ -1,6 +1,6 @@
 // This is a generated index file.
-import cover from './spriteoutput/lightConemaxfigures/24000.png.png'
-import icon from './spriteoutput/lightConemediumicon/24000.png.png'
+import cover from './cover.png'
+import icon from './icon.png'
 
 const data = {
   cover,

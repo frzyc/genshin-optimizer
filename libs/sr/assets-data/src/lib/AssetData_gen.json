@@ -1,0 +1,1406 @@
+{
+  "lightCones": {
+    "Arrows": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20000.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20000.png"
+    },
+    "Cornucopia": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20001.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20001.png"
+    },
+    "CollapsingSky": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20002.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20002.png"
+    },
+    "Amber": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20003.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20003.png"
+    },
+    "Void": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20004.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20004.png"
+    },
+    "Chorus": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20005.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20005.png"
+    },
+    "DataBank": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20006.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20006.png"
+    },
+    "DartingArrow": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20007.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20007.png"
+    },
+    "FineFruit": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20008.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20008.png"
+    },
+    "ShatteredHome": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20009.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20009.png"
+    },
+    "Defense": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20010.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20010.png"
+    },
+    "Loop": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20011.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20011.png"
+    },
+    "MeshingCogs": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20012.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20012.png"
+    },
+    "Passkey": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20013.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20013.png"
+    },
+    "Adversarial": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20014.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20014.png"
+    },
+    "Multiplication": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20015.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20015.png"
+    },
+    "MutualDemise": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20016.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20016.png"
+    },
+    "Pioneering": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20017.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20017.png"
+    },
+    "HiddenShadow": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20018.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20018.png"
+    },
+    "Mediation": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20019.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20019.png"
+    },
+    "Sagacity": {
+      "icon": "SpriteOutput/LightConeMediumIcon/20020.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/20020.png"
+    },
+    "PostOpConversation": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21000.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21000.png"
+    },
+    "GoodNightAndSleepWell": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21001.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21001.png"
+    },
+    "DayOneOfMyNewLife": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21002.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21002.png"
+    },
+    "OnlySilenceRemains": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21003.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21003.png"
+    },
+    "MemoriesOfThePast": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21004.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21004.png"
+    },
+    "TheMolesWelcomeYou": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21005.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21005.png"
+    },
+    "TheBirthOfTheSelf": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21006.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21006.png"
+    },
+    "SharedFeeling": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21007.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21007.png"
+    },
+    "EyesOfThePrey": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21008.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21008.png"
+    },
+    "LandausChoice": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21009.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21009.png"
+    },
+    "Swordplay": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21010.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21010.png"
+    },
+    "PlanetaryRendezvous": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21011.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21011.png"
+    },
+    "ASecretVow": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21012.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21012.png"
+    },
+    "MakeTheWorldClamor": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21013.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21013.png"
+    },
+    "PerfectTiming": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21014.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21014.png"
+    },
+    "ResolutionShinesAsPearlsOfSweat": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21015.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21015.png"
+    },
+    "TrendOfTheUniversalMarket": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21016.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21016.png"
+    },
+    "SubscribeForMore": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21017.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21017.png"
+    },
+    "DanceDanceDance": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21018.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21018.png"
+    },
+    "UnderTheBlueSky": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21019.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21019.png"
+    },
+    "GeniusesRepose": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21020.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21020.png"
+    },
+    "QuidProQuo": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21021.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21021.png"
+    },
+    "Fermata": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21022.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21022.png"
+    },
+    "WeAreWildfire": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21023.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21023.png"
+    },
+    "RiverFlowsInSpring": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21024.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21024.png"
+    },
+    "PastAndFuture": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21025.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21025.png"
+    },
+    "WoofWalkTime": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21026.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21026.png"
+    },
+    "TheSeriousnessOfBreakfast": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21027.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21027.png"
+    },
+    "WarmthShortensColdNights": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21028.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21028.png"
+    },
+    "WeWillMeetAgain": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21029.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21029.png"
+    },
+    "ThisIsMe": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21030.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21030.png"
+    },
+    "ReturnToDarkness": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21031.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21031.png"
+    },
+    "CarveTheMoonWeaveTheClouds": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21032.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21032.png"
+    },
+    "NowhereToRun": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21033.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21033.png"
+    },
+    "TodayIsAnotherPeacefulDay": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21034.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21034.png"
+    },
+    "WhatIsReal": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21035.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21035.png"
+    },
+    "DreamvilleAdventure": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21036.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21036.png"
+    },
+    "FinalVictor": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21037.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21037.png"
+    },
+    "FlamesAfar": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21038.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21038.png"
+    },
+    "DestinysThreadsForewoven": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21039.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21039.png"
+    },
+    "TheDayTheCosmosFell": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21040.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21040.png"
+    },
+    "ItsShowtime": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21041.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21041.png"
+    },
+    "IndeliblePromise": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21042.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21042.png"
+    },
+    "ConcertForTwo": {
+      "icon": "SpriteOutput/LightConeMediumIcon/21043.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/21043.png"
+    },
+    "BeforeTheTutorialMissionStarts": {
+      "icon": "SpriteOutput/LightConeMediumIcon/22000.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/22000.png"
+    },
+    "HeyOverHere": {
+      "icon": "SpriteOutput/LightConeMediumIcon/22001.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/22001.png"
+    },
+    "NightOnTheMilkyWay": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23000.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23000.png"
+    },
+    "InTheNight": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23001.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23001.png"
+    },
+    "SomethingIrreplaceable": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23002.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23002.png"
+    },
+    "ButTheBattleIsntOver": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23003.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23003.png"
+    },
+    "InTheNameOfTheWorld": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23004.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23004.png"
+    },
+    "MomentOfVictory": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23005.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23005.png"
+    },
+    "PatienceIsAllYouNeed": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23006.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23006.png"
+    },
+    "IncessantRain": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23007.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23007.png"
+    },
+    "EchoesOfTheCoffin": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23008.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23008.png"
+    },
+    "TheUnreachableSide": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23009.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23009.png"
+    },
+    "BeforeDawn": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23010.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23010.png"
+    },
+    "SheAlreadyShutHerEyes": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23011.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23011.png"
+    },
+    "SleepLikeTheDead": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23012.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23012.png"
+    },
+    "TimeWaitsForNoOne": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23013.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23013.png"
+    },
+    "IShallBeMyOwnSword": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23014.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23014.png"
+    },
+    "BrighterThanTheSun": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23015.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23015.png"
+    },
+    "WorrisomeBlissful": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23016.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23016.png"
+    },
+    "NightOfFright": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23017.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23017.png"
+    },
+    "AnInstantBeforeAGaze": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23018.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23018.png"
+    },
+    "PastSelfInMirror": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23019.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23019.png"
+    },
+    "BaptismOfPureThought": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23020.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23020.png"
+    },
+    "EarthlyEscapade": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23021.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23021.png"
+    },
+    "ReforgedRemembrance": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23022.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23022.png"
+    },
+    "InherentlyUnjustDestiny": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23023.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23023.png"
+    },
+    "AlongThePassingShore": {
+      "icon": "SpriteOutput/LightConeMediumIcon/23024.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/23024.png"
+    },
+    "OnTheFallOfAnAeon": {
+      "icon": "SpriteOutput/LightConeMediumIcon/24000.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/24000.png"
+    },
+    "CruisingInTheStellarSea": {
+      "icon": "SpriteOutput/LightConeMediumIcon/24001.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/24001.png"
+    },
+    "TextureOfMemories": {
+      "icon": "SpriteOutput/LightConeMediumIcon/24002.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/24002.png"
+    },
+    "SolitaryHealing": {
+      "icon": "SpriteOutput/LightConeMediumIcon/24003.png",
+      "cover": "SpriteOutput/LightConeMaxFigures/24003.png"
+    }
+  },
+  "chars": {
+    "March7th": {
+      "icon": "SpriteOutput/AvatarIcon/1001.png",
+      "basic": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Rank6.png"
+    },
+    "DanHeng": {
+      "icon": "SpriteOutput/AvatarIcon/1002.png",
+      "basic": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Rank6.png"
+    },
+    "Himeko": {
+      "icon": "SpriteOutput/AvatarIcon/1003.png",
+      "basic": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Rank6.png"
+    },
+    "Welt": {
+      "icon": "SpriteOutput/AvatarIcon/1004.png",
+      "basic": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Rank6.png"
+    },
+    "Kafka": {
+      "icon": "SpriteOutput/AvatarIcon/1005.png",
+      "basic": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Rank6.png"
+    },
+    "SilverWolf": {
+      "icon": "SpriteOutput/AvatarIcon/1006.png",
+      "basic": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Rank6.png"
+    },
+    "Arlan": {
+      "icon": "SpriteOutput/AvatarIcon/1008.png",
+      "basic": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Rank6.png"
+    },
+    "Asta": {
+      "icon": "SpriteOutput/AvatarIcon/1009.png",
+      "basic": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Rank6.png"
+    },
+    "Herta": {
+      "icon": "SpriteOutput/AvatarIcon/1013.png",
+      "basic": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Rank6.png"
+    },
+    "Bronya": {
+      "icon": "SpriteOutput/AvatarIcon/1101.png",
+      "basic": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Rank6.png"
+    },
+    "Seele": {
+      "icon": "SpriteOutput/AvatarIcon/1102.png",
+      "basic": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Rank6.png"
+    },
+    "Serval": {
+      "icon": "SpriteOutput/AvatarIcon/1103.png",
+      "basic": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Rank6.png"
+    },
+    "Gepard": {
+      "icon": "SpriteOutput/AvatarIcon/1104.png",
+      "basic": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Rank6.png"
+    },
+    "Natasha": {
+      "icon": "SpriteOutput/AvatarIcon/1105.png",
+      "basic": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Rank6.png"
+    },
+    "Pela": {
+      "icon": "SpriteOutput/AvatarIcon/1106.png",
+      "basic": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Rank6.png"
+    },
+    "Clara": {
+      "icon": "SpriteOutput/AvatarIcon/1107.png",
+      "basic": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Rank6.png"
+    },
+    "Sampo": {
+      "icon": "SpriteOutput/AvatarIcon/1108.png",
+      "basic": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Rank6.png"
+    },
+    "Hook": {
+      "icon": "SpriteOutput/AvatarIcon/1109.png",
+      "basic": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Rank6.png"
+    },
+    "Lynx": {
+      "icon": "SpriteOutput/AvatarIcon/1110.png",
+      "basic": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Rank6.png"
+    },
+    "Luka": {
+      "icon": "SpriteOutput/AvatarIcon/1111.png",
+      "basic": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Rank6.png"
+    },
+    "TopazAndNumby": {
+      "icon": "SpriteOutput/AvatarIcon/1112.png",
+      "basic": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Rank6.png"
+    },
+    "Qingque": {
+      "icon": "SpriteOutput/AvatarIcon/1201.png",
+      "basic": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Rank6.png"
+    },
+    "Tingyun": {
+      "icon": "SpriteOutput/AvatarIcon/1202.png",
+      "basic": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Rank6.png"
+    },
+    "Luocha": {
+      "icon": "SpriteOutput/AvatarIcon/1203.png",
+      "basic": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Rank6.png"
+    },
+    "JingYuan": {
+      "icon": "SpriteOutput/AvatarIcon/1204.png",
+      "basic": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Rank6.png"
+    },
+    "Blade": {
+      "icon": "SpriteOutput/AvatarIcon/1205.png",
+      "basic": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Rank6.png"
+    },
+    "Sushang": {
+      "icon": "SpriteOutput/AvatarIcon/1206.png",
+      "basic": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Rank6.png"
+    },
+    "Yukong": {
+      "icon": "SpriteOutput/AvatarIcon/1207.png",
+      "basic": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Rank6.png"
+    },
+    "FuXuan": {
+      "icon": "SpriteOutput/AvatarIcon/1208.png",
+      "basic": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Rank6.png"
+    },
+    "Yanqing": {
+      "icon": "SpriteOutput/AvatarIcon/1209.png",
+      "basic": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Rank6.png"
+    },
+    "Guinaifen": {
+      "icon": "SpriteOutput/AvatarIcon/1210.png",
+      "basic": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Rank6.png"
+    },
+    "Bailu": {
+      "icon": "SpriteOutput/AvatarIcon/1211.png",
+      "basic": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Rank6.png"
+    },
+    "Jingliu": {
+      "icon": "SpriteOutput/AvatarIcon/1212.png",
+      "basic": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Rank6.png"
+    },
+    "DanHengImbibitorLunae": {
+      "icon": "SpriteOutput/AvatarIcon/1213.png",
+      "basic": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Rank6.png"
+    },
+    "Xueyi": {
+      "icon": "SpriteOutput/AvatarIcon/1214.png",
+      "basic": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Rank6.png"
+    },
+    "Hanya": {
+      "icon": "SpriteOutput/AvatarIcon/1215.png",
+      "basic": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Rank6.png"
+    },
+    "Huohuo": {
+      "icon": "SpriteOutput/AvatarIcon/1217.png",
+      "basic": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Rank6.png"
+    },
+    "Gallagher": {
+      "icon": "SpriteOutput/AvatarIcon/1301.png",
+      "basic": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Rank6.png"
+    },
+    "Argenti": {
+      "icon": "SpriteOutput/AvatarIcon/1302.png",
+      "basic": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Rank6.png"
+    },
+    "RuanMei": {
+      "icon": "SpriteOutput/AvatarIcon/1303.png",
+      "basic": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Rank6.png"
+    },
+    "Aventurine": {
+      "icon": "SpriteOutput/AvatarIcon/1304.png",
+      "basic": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Rank6.png"
+    },
+    "DrRatio": {
+      "icon": "SpriteOutput/AvatarIcon/1305.png",
+      "basic": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Rank6.png"
+    },
+    "Sparkle": {
+      "icon": "SpriteOutput/AvatarIcon/1306.png",
+      "basic": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Rank6.png"
+    },
+    "BlackSwan": {
+      "icon": "SpriteOutput/AvatarIcon/1307.png",
+      "basic": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Rank6.png"
+    },
+    "Acheron": {
+      "icon": "SpriteOutput/AvatarIcon/1308.png",
+      "basic": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Rank6.png"
+    },
+    "Misha": {
+      "icon": "SpriteOutput/AvatarIcon/1312.png",
+      "basic": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_BP.png",
+      "ult": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Ultra.png",
+      "eidolon4": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_BP.png",
+      "eidolon6": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Rank6.png"
+    },
+    "TrailblazerPhysicalM": {
+      "icon": "SpriteOutput/AvatarIcon/8001.png",
+      "basic": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_BP.png",
+      "ult": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank6.png"
+    },
+    "TrailblazerPhysicalF": {
+      "icon": "SpriteOutput/AvatarIcon/8002.png",
+      "basic": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_BP.png",
+      "ult": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank6.png"
+    },
+    "TrailblazerFireM": {
+      "icon": "SpriteOutput/AvatarIcon/8003.png",
+      "basic": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_BP.png",
+      "ult": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank6.png"
+    },
+    "TrailblazerFireF": {
+      "icon": "SpriteOutput/AvatarIcon/8004.png",
+      "basic": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Normal.png",
+      "skill": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_BP.png",
+      "ult": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Ultra.png",
+      "talent": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Passive.png",
+      "technique": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Maze.png",
+      "bonusAbility1": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_SkillTree3.png",
+      "eidolon1": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank1.png",
+      "eidolon2": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank2.png",
+      "eidolon3": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_BP.png",
+      "eidolon4": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank4.png",
+      "eidolon5": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Ultra.png",
+      "eidolon6": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank6.png"
+    }
+  },
+  "relic": {
+    "PasserbyOfWanderingCloud": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_101_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_101_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_101_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_101_4.png"
+    },
+    "MusketeerOfWildWheat": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_102_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_102_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_102_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_102_4.png"
+    },
+    "KnightOfPurityPalace": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_103_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_103_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_103_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_103_4.png"
+    },
+    "HunterOfGlacialForest": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_104_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_104_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_104_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_104_4.png"
+    },
+    "ChampionOfStreetwiseBoxing": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_105_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_105_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_105_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_105_4.png"
+    },
+    "GuardOfWutheringSnow": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_106_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_106_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_106_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_106_4.png"
+    },
+    "FiresmithOfLavaForging": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_107_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_107_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_107_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_107_4.png"
+    },
+    "GeniusOfBrilliantStars": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_108_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_108_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_108_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_108_4.png"
+    },
+    "BandOfSizzlingThunder": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_109_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_109_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_109_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_109_4.png"
+    },
+    "EagleOfTwilightLine": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_110_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_110_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_110_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_110_4.png"
+    },
+    "ThiefOfShootingMeteor": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_111_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_111_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_111_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_111_4.png"
+    },
+    "WastelanderOfBanditryDesert": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_112_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_112_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_112_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_112_4.png"
+    },
+    "LongevousDisciple": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_113_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_113_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_113_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_113_4.png"
+    },
+    "MessengerTraversingHackerspace": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_114_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_114_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_114_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_114_4.png"
+    },
+    "TheAshblazingGrandDuke": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_115_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_115_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_115_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_115_4.png"
+    },
+    "PrisonerInDeepConfinement": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_116_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_116_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_116_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_116_4.png"
+    },
+    "PioneerDiverOfDeadWaters": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_117_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_117_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_117_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_117_4.png"
+    },
+    "WatchmakerMasterOfDreamMachinations": {
+      "head": "SpriteOutput/RelicFigures/IconRelic_118_1.png",
+      "hand": "SpriteOutput/RelicFigures/IconRelic_118_2.png",
+      "body": "SpriteOutput/RelicFigures/IconRelic_118_3.png",
+      "feet": "SpriteOutput/RelicFigures/IconRelic_118_4.png"
+    },
+    "SpaceSealingStation": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_301_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_301_6.png"
+    },
+    "FleetOfTheAgeless": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_302_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_302_6.png"
+    },
+    "PanCosmicCommercialEnterprise": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_303_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_303_6.png"
+    },
+    "BelobogOfTheArchitects": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_304_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_304_6.png"
+    },
+    "CelestialDifferentiator": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_305_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_305_6.png"
+    },
+    "InertSalsotto": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_306_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_306_6.png"
+    },
+    "TaliaKingdomOfBanditry": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_307_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_307_6.png"
+    },
+    "SprightlyVonwacq": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_308_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_308_6.png"
+    },
+    "RutilantArena": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_309_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_309_6.png"
+    },
+    "BrokenKeel": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_310_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_310_6.png"
+    },
+    "FirmamentFrontlineGlamoth": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_311_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_311_6.png"
+    },
+    "PenaconyLandOfTheDreams": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_312_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_312_6.png"
+    },
+    "SigoniaTheUnclaimedDesolation": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_313_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_313_6.png"
+    },
+    "IzumoGenseiAndTakamaDivineRealm": {
+      "rope": "SpriteOutput/RelicFigures/IconRelic_314_5.png",
+      "sphere": "SpriteOutput/RelicFigures/IconRelic_314_6.png"
+    }
+  }
+}

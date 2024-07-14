@@ -8,6 +8,9 @@
   "targets": {
     "gen-file": {
       "executor": "@genshin-optimizer/sr/assets:gen-assets",
+      "options": {
+        "fetchAssets": "none"
+      },
       "outputs": ["{workspaceRoot}/${projectRoot}/src/gen/**/*"]
     }
   }
