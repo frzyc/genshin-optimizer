@@ -74,14 +74,18 @@ function Page({ teamId }: { teamId: string }) {
   const { t } = useTranslation(['charNames_gen', 'page_character'])
 
   useTitle(
-    useMemo(
-      () =>
-        // TODO: replace Character with CharKeyToName function once it's ported
-        `${team.name} - ${t('charNames_gen:Character')} - ${t(
-          `page_character:tabs.${tab}`
-        )}`,
-      [t, team.name, tab]
-    )
+    useMemo(() => {
+      const charName = characterKey
+        ? // TODO: replace Character with CharKeyToName function once it's ported
+          t('charNames_gen:Character')
+        : t('Team Settings')
+      const tabName = tab
+        ? t(`page_character:tabs.${tab}`)
+        : characterKey
+        ? t('Loadout/Build')
+        : tab
+      return `${team.name} - ${charName}${tabName ? ` - ${tabName}` : ''}`
+    }, [characterKey, t, tab, team.name])
   )
 
   return (
