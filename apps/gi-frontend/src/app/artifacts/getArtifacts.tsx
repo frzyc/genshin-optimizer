@@ -1,4 +1,5 @@
 'use server'
+import type { UnArray, Unpromise } from '@genshin-optimizer/common/util'
 import type { Database } from '@genshin-optimizer/gi/supabase'
 import type { SupabaseClient } from '@supabase/supabase-js'
 export default async function getArtifacts(
@@ -16,3 +17,8 @@ export default async function getArtifacts(
   if (error) console.error(error)
   return data
 }
+export type Artifacts = Exclude<
+  Unpromise<ReturnType<typeof getArtifacts>>,
+  null
+>
+export type Artifact = UnArray<Artifacts>

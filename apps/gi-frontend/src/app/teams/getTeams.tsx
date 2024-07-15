@@ -1,4 +1,5 @@
 'use server'
+import type { UnArray, Unpromise } from '@genshin-optimizer/common/util'
 import type { Database } from '@genshin-optimizer/gi/supabase'
 import type { SupabaseClient } from '@supabase/supabase-js'
 export default async function getTeams(
@@ -30,3 +31,6 @@ export default async function getTeams(
   if (error) console.error(error)
   return data
 }
+
+export type Teams = Exclude<Unpromise<ReturnType<typeof getTeams>>, null>
+export type Team = UnArray<Teams>

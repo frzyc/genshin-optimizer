@@ -1,7 +1,7 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import type { Tables } from '@genshin-optimizer/gi/supabase'
 import { CardContent, Typography } from '@mui/material'
-export function TeamCard({ team }: { team: Tables<'teams'> }) {
+import type { Team } from './getTeams'
+export function TeamCard({ team }: { team: Team }) {
   return (
     <CardThemed>
       <CardContent>

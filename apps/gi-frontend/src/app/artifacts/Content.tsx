@@ -1,11 +1,11 @@
 'use client'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import type { Tables } from '@genshin-optimizer/gi/supabase'
 import { ArtifactCardObj } from '@genshin-optimizer/gi/ui'
 import { randomizeArtifact } from '@genshin-optimizer/gi/util'
 import { Button, Container, Grid, Skeleton, Typography } from '@mui/material'
 import { Suspense, useEffect, useState } from 'react'
 import { useSupabase } from '../../utils/supabase/client'
+import type { Artifacts } from './getArtifacts'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 // const numToShowMap = { xs: 5, sm: 6, md: 12, lg: 12, xl: 12 }
@@ -14,7 +14,7 @@ export default function Content({
   artifacts: serverArtifacts,
   accountId,
 }: {
-  artifacts: Array<Tables<'artifacts'>>
+  artifacts: Artifacts
   accountId: string
 }) {
   const supabase = useSupabase()
@@ -41,7 +41,7 @@ export default function Content({
           ...substat,
           index,
           artifact_id: art.id,
-        })
+        } as any)
         if (error) return console.error(error)
       })
     } catch (error) {
@@ -68,14 +68,12 @@ export default function Content({
               .select(
                 'id, created_at, setKey, slotKey, level, rarity, substats(key, value), lock, mainStatKey'
               )
-              .eq('id', payload.new.id)
+              .eq('id', (payload.new as any).id)
               .eq('account_id', accountId)
             if (error) return console.error(error)
             const artifact = data[0]
             if (!artifact) return
-            setArtifacts(
-              (arts) => [...arts, artifact] as Array<Tables<'artifacts'>>
-            )
+            setArtifacts((arts) => [...arts, artifact] as Artifacts)
           }
         }
       )
