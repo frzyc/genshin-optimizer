@@ -1,0 +1,6 @@
+{
+  "setName": "Flotte de l'éternel",
+  "setEffects": {
+    "2": "Augmente les PV max du porteur de {{1}}%. Lorsque sa VIT est supérieure ou égale à {{2}}, l'ATQ de tous les alliés augmente de {{3}}%."
+  }
+}

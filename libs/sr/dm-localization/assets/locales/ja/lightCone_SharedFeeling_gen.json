@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#おな}同{RUBY_E#}じ{RUBY_B#きも}気持{RUBY_E#}ち",
+  "passive": {
+    "name": "ケアとメンテ",
+    "description": "装備キャラの治癒量+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが戦闘スキルを発動した時、味方全体のEPを<orangeStrong>{{2}}</orangeStrong>回復する。"
+  }
+}

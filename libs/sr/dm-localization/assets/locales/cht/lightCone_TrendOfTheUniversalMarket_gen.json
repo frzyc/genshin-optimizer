@@ -1,0 +1,7 @@
+{
+  "name": "宇宙市場趨勢",
+  "passive": {
+    "name": "新一輪洗牌",
+    "description": "使裝備者的防禦力提高<orangeStrong>{{1}}%</orangeStrong>。當裝備者受到攻擊後，有<orangeStrong>{{2}}%</orangeStrong>的基礎機率使敵方目標陷入灼燒狀態，每回合造成等同於裝備者<orangeStrong>{{3}}%</orangeStrong>防禦力的持續傷害，持續{{4}}回合。"
+  }
+}

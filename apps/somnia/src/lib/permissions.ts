@@ -1,9 +1,12 @@
 import type {
   ChatInputCommandInteraction,
   Message,
+  PartialMessage,
+  PartialUser,
   PermissionsBitField,
+  User,
 } from 'discord.js'
-import { ownerid } from '../config.json'
+import { clientid, ownerid } from '../config.json'
 
 export default {
   //true if interaction author has permissions
@@ -27,8 +30,17 @@ export default {
     return false
   },
 
-  //true if message author is bot
-  bot(message: Message) {
-    return message.author?.bot
+  //true if user or message author is self
+  self(x: Message | PartialMessage | User | PartialUser) {
+    if ('author' in x) return x.author?.id === clientid
+    if ('id' in x) return x.id === clientid
+    return false
+  },
+
+  //true if user or message author is bot
+  bot(x: Message | PartialMessage | User | PartialUser) {
+    if ('bot' in x) return x.bot
+    if ('author' in x) return x.author?.bot
+    return false
   },
 }

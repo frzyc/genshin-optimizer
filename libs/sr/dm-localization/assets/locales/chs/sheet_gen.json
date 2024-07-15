@@ -1,0 +1,35 @@
+{
+  "type": {
+    "Physical": "物理",
+    "Quantum": "量子",
+    "Lightning": "雷",
+    "Ice": "冰",
+    "Wind": "风",
+    "Fire": "火",
+    "Imaginary": "虚数"
+  },
+  "path": {
+    "Erudition": "智识",
+    "Preservation": "存护",
+    "Abundance": "丰饶",
+    "Nihility": "虚无",
+    "Destruction": "毁灭",
+    "Harmony": "同谐",
+    "TheHunt": "巡猎"
+  },
+  "ability": {
+    "basic": "普攻",
+    "skill": "战技",
+    "ult": "终结技",
+    "talent": "天赋",
+    "technique": "秘技"
+  },
+  "dmgType": {
+    "single": "单攻",
+    "aoe": "群攻",
+    "bounce": "弹射",
+    "blast": "扩散",
+    "support": "辅助",
+    "impair": "妨害"
+  }
+}

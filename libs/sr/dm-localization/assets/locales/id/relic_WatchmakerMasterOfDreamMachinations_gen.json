@@ -1,0 +1,7 @@
+{
+  "setName": "Watchmaker, Master of Dream Machinations",
+  "setEffects": {
+    "2": "Break Effect +{{1}}%.",
+    "4": "Saat pengguna melancarkan Ultimate pada rekan tim (termasuk pengguna sendiri), Break Effect seluruh rekan tim akan meningkat {{1}}% selama {{2}} giliran. Efek ini tidak dapat ditumpuk."
+  }
+}

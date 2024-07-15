@@ -1,0 +1,7 @@
+{
+  "name": "It's Showtime",
+  "passive": {
+    "name": "Self-Amusement",
+    "description": "Setelah pengguna menambahkan status Debuff pada target musuh, pengguna akan memperoleh 1 lapis \"Trick\". Setiap lapis \"Trick\" meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG yang diakibatkan pengguna, maksimal {{2}} lapis, dan berlangsung selama {{3}} giliran. Saat Effect Hit Rate pengguna lebih dari atau sama dengan {{4}}%, ATK akan meningkat <orangeStrong>{{5}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "フォフォ",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#れいき}令旗{RUBY_E#}・{RUBY_B#ふううしょうらい}風雨招来{RUBY_E#}",
+        "fullDesc": "指定した敵単体にフォフォの最大HP<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の風属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#れいふ}霊符{RUBY_E#}・{RUBY_B#ごしん}護身{RUBY_E#}",
+        "fullDesc": "指定した味方単体の<u>デバフ</u>を{{5}}つ解除し、フォフォの最大HP<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>のHPを回復する。同時にターゲットに隣接する味方のHPをフォフォの最大HP<orangeStrong>{{3}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>回復する。",
+        "shortDesc": "味方単体の<u>デバフ</u>を1つ解除し、その味方および隣接する味方の<orangeStrong>HPを回復</orangeStrong>する。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "シッポ・{RUBY_B#しんきしえき}神鬼使役{RUBY_E#}",
+        "fullDesc": "自身以外の味方のEPをそれぞれの最大EP<orangeStrong>{{1}}%</orangeStrong>分回復し、それら味方の攻撃力+<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。",
+        "shortDesc": "自身以外の味方の<orangeStrong>EPを回復</orangeStrong>し、それら味方の<orangeStrong>攻撃力をアップ</orangeStrong>する。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#きょうそう}凶相{RUBY_E#}・{RUBY_B#きぶつあっぷく}鬼物圧伏{RUBY_E#}",
+        "fullDesc": "フォフォが周囲の敵を威嚇し、敵を「魂魄飛散」状態にする。「魂魄飛散」状態の敵はフォフォの反対方向に向けて逃げる、{{4}}秒継続。「魂魄飛散」状態の敵と戦闘に入った後、{{1}}%の<u>基礎確率</u>で敵それぞれの攻撃力-{{2}}%、{{3}}ターン継続。",
+        "shortDesc": "周囲の敵を「魂魄飛散」状態にする。「魂魄飛散」状態の敵と戦闘に入った後、高確率で敵の<orangeStrong>攻撃力をダウン</orangeStrong>する。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#さいよう}歳陽{RUBY_E#}の{RUBY_B#よ}拠{RUBY_E#}り{RUBY_B#どころ}所{RUBY_E#}",
+      "desc": "天賦による「厄払い」の継続時間+{{2}}ターン。フォフォに「厄払い」がある時、味方全体の速度+{{1}}%。"
+    },
+    "2": {
+      "name": "{RUBY_B#じゃれい}邪霊{RUBY_E#}を{RUBY_B#やど}宿{RUBY_E#}した{RUBY_B#しっぽ}尻尾{RUBY_E#}",
+      "desc": "フォフォに「厄払い」がある時、味方はHPが0になるダメージを受けても戦闘不能状態にならず、自身の最大HP{{1}}%分のHPを回復する。この効果を発動した後、「厄払い」の継続時間-1ターン。この効果は一度の戦闘で{{2}}回まで発動できる。"
+    },
+    "3": {
+      "name": "{RUBY_B#ていきょう}貞凶{RUBY_E#}の{RUBY_B#しょっか}燭火{RUBY_E#}",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
+    },
+    "4": {
+      "name": "{RUBY_B#はな}離{RUBY_E#}れぬ{RUBY_B#あっき}悪鬼{RUBY_E#}\\n{RUBY_B#た}絶{RUBY_E#}えぬ{RUBY_B#も}揉{RUBY_E#}め{RUBY_B#ごと}事{RUBY_E#}",
+      "desc": "戦闘スキルまたは天賦を発動し、味方に治癒を行った時、その味方の残りHPが少ないほど治癒量がアップする、最大でフォフォの治癒量+{{1}}%。"
+    },
+    "5": {
+      "name": "{RUBY_B#ちょくれい}勅令{RUBY_E#}のままに{RUBY_B#ようまたいじ}妖魔退治{RUBY_E#}",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#くらく}苦楽{RUBY_E#}を{RUBY_B#とも}共{RUBY_E#}にする{RUBY_B#なかま}仲間{RUBY_E#}",
+      "desc": "味方に治癒を行った時、その味方の与ダメージ+{{1}}%、{{2}}ターン継続。"
+    }
+  }
+}

@@ -131,6 +131,7 @@ import SeasonedHuntersBow from './SeasonedHuntersBow'
 import SerpentSpine from './SerpentSpine'
 import SharpshootersOath from './SharpshootersOath'
 import SilverSword from './SilverSword'
+import SilvershowerHeartstrings from './SilvershowerHeartstrings'
 import SkyriderGreatsword from './SkyriderGreatsword'
 import SkyriderSword from './SkyriderSword'
 import SkywardAtlas from './SkywardAtlas'
@@ -318,6 +319,7 @@ const data = {
   SerpentSpine,
   SharpshootersOath,
   SilverSword,
+  SilvershowerHeartstrings,
   SkyriderGreatsword,
   SkyriderSword,
   SkywardAtlas,

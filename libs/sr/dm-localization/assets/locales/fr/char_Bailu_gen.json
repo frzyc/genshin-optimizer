@@ -1,0 +1,66 @@
+{
+  "name": "Bailu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Diagnostic musclé",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Bailu à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Chanter parmi les nuages",
+        "fullDesc": "Soigne immédiatement un allié unique à hauteur de <orangeStrong>{{1}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>. Bailu soigne ensuite les alliés de manière aléatoire {{4}} fois. Après chaque soin, les PV restaurés par le soin suivant diminuent de {{3}}%.",
+        "shortDesc": "Restaure les PV d'un allié unique, puis soigne des alliés de manière aléatoire."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Foudroyés par la félicité",
+        "fullDesc": "Soigne immédiatement tous les alliés à hauteur de <orangeStrong>{{1}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>.\\nBailu accorde Revigoration aux alliés qui ne bénéficient pas encore de cet effet et prolonge l'effet d'1 tour pour ceux qui en bénéficient déjà.\\nL'effet de Revigoration peut durer jusqu'à {{3}} tours. Cet effet n'est pas cumulable.",
+        "shortDesc": "Restaure des PV à tous les alliés et leur accorde Revigoration ou prolonge sa durée."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Flânerie sous la pluie",
+        "fullDesc": "Après utilisation de la technique, tous les alliés sont revigorés pendant {{1}} tours au début du combat suivant.",
+        "shortDesc": "Après utilisation de la technique, octroie Revigoration à tous les alliés au début du combat suivant."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Eau d'ambroisie",
+      "desc": "Si les PV de la cible alliée sont au maximum lorsque Revigoration prend fin, elle régénère en plus {{1}} points d'énergie."
+    },
+    "2": {
+      "name": "Repos sylphique",
+      "desc": "Après utilisation de son ultime, les soins prodigués par Bailu augmentent de {{1}}% supplémentaires pendant {{2}} tours."
+    },
+    "3": {
+      "name": "Opulence omnisciente",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Suppression du mal",
+      "desc": "Les soins prodigués par la compétence augmentent les DGT infligés par le bénéficiaire de {{1}}% pendant {{3}} tours. Cet effet peut être cumulé jusqu'à {{2}} fois."
+    },
+    "5": {
+      "name": "Inquiétudes oubliées",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Mucus de divinité draconique",
+      "desc": "Bailu peut soigner des alliés ayant reçu un coup fatal {{1}} fois de plus par combat."
+    }
+  }
+}

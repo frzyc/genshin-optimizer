@@ -1,0 +1,66 @@
+{
+  "name": "Clara",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "I Want to Help",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Clara pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Svarog Watches Over You",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Clara pada seluruh musuh, dan mengakibatkan Physical DMG tambahan sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Clara pada target musuh yang ditandai \"Mark of Counter\" oleh Svarog.\\nSemua \"Mark of Counter\" akan dihapus setelah Skill ini dilancarkan.",
+        "shortDesc": "Mengakibatkan Physical DMG pada seluruh musuh dan <orangeStrong>mengakibatkan Physical DMG tambahan</orangeStrong> pada target dengan \"Mark of Counter\"."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Promise, Not Command",
+        "fullDesc": "Setelah melancarkan Ultimate, DMG yang diterima Clara mengalami <orangeStrong>{{4}}%</orangeStrong> pengurangan DMG tambahan, dan peluang Clara terkena serangan musuh meningkat pesat selama {{3}} giliran.\\nSelain itu, <u>Serangan Balasan</u> Svarog akan diperkuat. Saat rekan tim terkena serangan, Svarog akan segera melancarkan <u>Serangan Balasan</u> pada penyerang, dan DMG Multiplier pada penyerang meningkat <orangeStrong>{{2}}%</orangeStrong>. Target di sekitar penyerang juga akan terkena 50% DMG yang diterima penyerang. Efek <u>Serangan Balasan</u> yang diperkuat berlaku {{5}} kali.",
+        "shortDesc": "<orangeStrong>Mengurangi DMG yang diterima</orangeStrong> diri sendiri, meningkatkan peluang terkena serangan, dan meningkatkan efek <u>Serangan Balasan</u>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "A Small Price for Victory",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, meningkatkan peluang Clara untuk diserang musuh selama {{1}} giliran.",
+        "shortDesc": "Menyerang musuh dan meningkatkan peluang untuk diserang oleh musuh setelah memasuki pertempuran."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "A Tall Figure",
+      "desc": "Setelah melancarkan Skill, \"Mark of Counter\" yang ada pada target musuh tidak akan dihapus."
+    },
+    "2": {
+      "name": "A Tight Embrace",
+      "desc": "Setelah melancarkan Ultimate, meningkatkan {{1}}% ATK selama {{2}} giliran."
+    },
+    "3": {
+      "name": "Cold Steel Armor",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Family's Warmth",
+      "desc": "Setelah terkena serangan, mengurangi {{1}}% DMG yang diterima Clara. Efek ini berlanjut sampai giliran Clara yang berikutnya dimulai."
+    },
+    "5": {
+      "name": "A Small Promise",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Long Company",
+      "desc": "Setelah rekan tim yang lain terkena serangan, Svarog juga memiliki {{1}}% peluang tetap untuk memicu serangan balasan dan menambahkan \"Mark of Counter\" pada penyerang. Saat melancarkan Ultimate, jumlah serangan balasan yang diperkuat akan bertambah {{2}}."
+    }
+  }
+}

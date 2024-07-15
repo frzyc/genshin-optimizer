@@ -1,0 +1,66 @@
+{
+  "name": "{RUBY_B#ビャクロ}白露{RUBY_E#}",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#ぼう}望{RUBY_E#}・{RUBY_B#ぶん}聞{RUBY_E#}・{RUBY_B#もん}問{RUBY_E#}…{RUBY_B#けり}蹴{RUBY_E#}！",
+        "fullDesc": "指定した敵単体に白露の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の雷属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#うんぎんさぜん}雲吟乍然{RUBY_E#}、{RUBY_B#こぼ}零{RUBY_E#}れる{RUBY_B#しゅろ}珠露{RUBY_E#}",
+        "fullDesc": "指定した味方単体のHPを白露の最大HP<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>回復し、さらに{{4}}回、ランダムに味方単体を治癒する。治癒するたびに、次の治癒で回復するHP-{{3}}%。",
+        "shortDesc": "味方単体のHPを回復し、さらにランダムに味方単体を治癒。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#らいめい}雷鳴{RUBY_E#}{RUBY_B#ひき}率{RUBY_E#}いる{RUBY_B#やくえん}躍渊{RUBY_E#}の{RUBY_B#こうりゅう}蛟龍{RUBY_E#}",
+        "fullDesc": "味方全体のHPを白露の最大HP<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>回復する。\\n「生生」が付与されていない味方に「生生」を付与する。「生生」が付与されている味方の「生生」の継続時間+1ターン。\\n「生生」は{{3}}ターン継続でき、効果は累積できない。",
+        "shortDesc": "味方全体を回復し、「生生」を付与、または「生生」の効果ターンを延長。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#ようびょう}恙病{RUBY_E#}を{RUBY_B#ふっしょく}払拭{RUBY_E#}せし、{RUBY_B#しょうよう}徜徉{RUBY_E#}する{RUBY_B#れいたく}霊澤{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時、味方全体に「生生」を付与、{{1}}ターン継続。",
+        "shortDesc": "秘技を使用、次の戦闘開始時、味方全体に「生生」を付与する。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#ひゃくみゃくしず}百脈静{RUBY_E#}める{RUBY_B#かんろ}甘露{RUBY_E#}",
+      "desc": "「生生」効果が終了する時、味方のHPが満タンの場合、さらにEPを{{1}}回復させる。"
+    },
+    "2": {
+      "name": "{RUBY_B#こちゅう}壺中{RUBY_E#}の{RUBY_B#てん}天{RUBY_E#}には{RUBY_B#うんりゅうねむ}雲龍眠{RUBY_E#}る",
+      "desc": "必殺技を発動した後、白露の治癒量+{{1}}%、{{2}}ターン継続。"
+    },
+    "3": {
+      "name": "{RUBY_B#ここちやす}心地安{RUBY_E#}らぐ{RUBY_B#かいしゅん}回春{RUBY_E#}の{RUBY_B#みょうしゅ}妙手{RUBY_E#}",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
+    },
+    "4": {
+      "name": "{RUBY_B#がいしょういや}外傷癒{RUBY_E#}す{RUBY_B#ちゅうご}肘後{RUBY_E#}の{RUBY_B#びきゅう}備急{RUBY_E#}",
+      "desc": "戦闘スキルによる治癒を受けるたび、その味方の与ダメージ+{{1}}%、最大で{{2}}層累積できる、{{3}}ターン継続。"
+    },
+    "5": {
+      "name": "{RUBY_B#ぞくじんすす}俗塵濯{RUBY_E#}ぐ{RUBY_B#じう}慈雨{RUBY_E#}",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#りゅうぜんせんやく}龍涎仙薬{RUBY_E#}、{RUBY_B#きんたん}金丹{RUBY_E#}に{RUBY_B#まさ}勝{RUBY_E#}る",
+      "desc": "一度の戦闘で、白露がHPが0になる攻撃を受けた味方を治癒する効果の発動可能回数+{{1}}。"
+    }
+  }
+}

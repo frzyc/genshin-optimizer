@@ -4,6 +4,7 @@ import TravelerM from './splash_aether.png'
 import Albedo from './splash_albedo.png'
 import Alhaitham from './splash_alhaitham.png'
 import Amber from './splash_amber.png'
+import Arlecchino from './splash_arlecchino.png'
 import KamisatoAyaka from './splash_ayaka.png'
 import KamisatoAyato from './splash_ayato.png'
 import Baizhu from './splash_baizhu.png'
@@ -86,6 +87,7 @@ const charCards = {
   Alhaitham,
   Amber,
   AratakiItto,
+  Arlecchino,
   Baizhu,
   Barbara,
   Beidou,

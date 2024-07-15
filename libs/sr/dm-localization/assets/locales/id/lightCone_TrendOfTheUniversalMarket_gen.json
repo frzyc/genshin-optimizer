@@ -1,0 +1,7 @@
+{
+  "name": "Trend of the Universal Market",
+  "passive": {
+    "name": "A New Round of Shuffling",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DEF pengguna. Setelah pengguna terkena serangan, ada <orangeStrong>{{2}}%</orangeStrong> peluang dasar untuk membuat penyerang memasuki status Burn. Target musuh yang terkena Burn akan menerima DoT sebesar <orangeStrong>{{3}}%</orangeStrong> DEF pengguna setiap gilirannya dimulai, berlangsung selama {{4}} giliran."
+  }
+}

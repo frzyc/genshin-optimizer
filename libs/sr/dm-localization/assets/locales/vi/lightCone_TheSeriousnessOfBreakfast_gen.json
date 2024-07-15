@@ -1,0 +1,7 @@
+{
+  "name": "Bữa Sáng Đúng Điệu",
+  "passive": {
+    "name": "Sẵn Sàng",
+    "description": "Khiến sát thương gây ra bởi người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Mỗi khi tiêu diệt 1 kẻ địch, Tấn Công của người trang bị tăng <orangeStrong>{{2}}%</orangeStrong>, hiệu ứng này tối đa cộng dồn {{3}} tầng."
+  }
+}

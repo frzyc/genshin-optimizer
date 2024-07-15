@@ -1,0 +1,7 @@
+{
+  "name": "El destino nunca es justo",
+  "passive": {
+    "name": "Con todo",
+    "description": "La DEF del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando el portador proporciona un escudo a un aliado, el Daño CRIT del portador aumenta en un <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turnos. Cuando el portador golpea al enemigo con sus ataques adicionales, hay un <orangeStrong>{{4}}%</orangeStrong> de probabilidad base de que el daño que recibe el enemigo atacado aumente en un <orangeStrong>{{5}}%</orangeStrong> durante {{6}} turnos."
+  }
+}

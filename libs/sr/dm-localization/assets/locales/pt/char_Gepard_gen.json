@@ -1,0 +1,66 @@
+{
+  "name": "Gepard",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Punho da Condenação",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Gepard a um único inimigo.",
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Golpe Intimidador",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Gepard a um único inimigo, com {{2}}% de <u>chance-base</u> de o inimigo sofrer Congelamento por {{3}} rodada(s).\\nDurante o Congelamento, o inimigo não pode agir e sofre Dano <u>Adicional</u> de Gelo igual a <orangeStrong>{{4}}%</orangeStrong> do ATQ de Gepard no início de cada rodada.",
+        "shortDesc": "Causa Dano de Gelo a um único inimigo, <orangeStrong>com uma chance de causar Congelamento</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Muralha Resistente",
+        "fullDesc": "Aplica um Escudo a todos os aliados, absorvendo Dano igual a <orangeStrong><unbreak>#1[i]%</orangeStrong> </color>da DEF de Gepard + <orangeStrong><unbreak>#3[i]</orangeStrong> </color>por {{2}} rodada(s).",
+        "shortDesc": "<orangeStrong>Fornece um Escudo</orangeStrong> para todos os aliados."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Camaradagem",
+        "fullDesc": "Após Gepard usar sua Técnica, quando a próxima batalha começar, um Escudo será aplicado a todos os aliados, absorvendo Dano igual a {{1}}% da DEF de Gepard + {{3}} por {{2}} rodada(s).",
+        "shortDesc": "Depois que este personagem usa a Técnica, todos os aliados ganham um Escudo no início da próxima batalha."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Esforço Necessário",
+      "desc": "Ao usar a Perícia, aumenta a chance-base de causar Congelamento no inimigo-alvo em {{1}}%."
+    },
+    "2": {
+      "name": "Frio Perdurante",
+      "desc": "Depois que um inimigo Congelado pela Perícia descongela, a VEL dele é reduzida em {{1}}% por {{2}} rodada(s)."
+    },
+    "3": {
+      "name": "Nunca Se Renda",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "A Fé Move Montanhas",
+      "desc": "Quando Gepard estiver em batalha, a RES a Efeito de todos os aliados aumenta em {{1}}%."
+    },
+    "5": {
+      "name": "Punho de Ferro Gélido",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Determinação Inabalável",
+      "desc": "Quando seu Talento for ativado, Gepard age de novo imediatamente e restaura {{1}}% de seus PV máximos como PV extras."
+    }
+  }
+}

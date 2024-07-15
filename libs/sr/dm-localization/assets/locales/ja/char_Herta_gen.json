@@ -1,0 +1,66 @@
+{
+  "name": "ヘルタ",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#なに}何{RUBY_E#}{RUBY_B#み}見{RUBY_E#}てるの？",
+        "fullDesc": "指定した敵単体にヘルタの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#いちど}一度{RUBY_E#}{RUBY_B#かぎ}限{RUBY_E#}りの{RUBY_B#とりひき}取引{RUBY_E#}",
+        "fullDesc": "敵全体にヘルタの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。敵の残りHPが{{2}}%以上の場合、その敵に対して与ダメージ+{{3}}%。",
+        "shortDesc": "敵全体に少量の氷属性ダメージを与える、残りHP割合が高い敵に対してダメージアップ。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#わたし}私{RUBY_E#}がかけた{RUBY_B#まほう}魔法{RUBY_E#}だよ",
+        "fullDesc": "敵全体にヘルタの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": "敵全体に氷属性ダメージを与える。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#かいぜん}改善{RUBY_E#}すべきだよ",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時、ヘルタの攻撃力+{{1}}%、{{2}}ターン継続。",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#よわ}弱{RUBY_E#}みは{RUBY_B#つ}付{RUBY_E#}け{RUBY_B#こ}込{RUBY_E#}み",
+      "desc": "通常攻撃を行った時、指定した敵単体の残りHPが{{1}}%以下の場合、さらにヘルタの攻撃力{{2}}%分の氷属性付加ダメージを与える。"
+    },
+    "2": {
+      "name": "{RUBY_B#か}勝{RUBY_E#}てば{RUBY_B#お}追{RUBY_E#}い{RUBY_B#う}打{RUBY_E#}ち",
+      "desc": "天賦が1回発動するごとに、自身の会心率+{{1}}%、この効果は最大で{{2}}回累積できる。"
+    },
+    "3": {
+      "name": "{RUBY_B#わたし}私{RUBY_E#}はこういう{RUBY_B#おんな}女{RUBY_E#}なの",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
+    },
+    "4": {
+      "name": "{RUBY_B#めんつ}面子{RUBY_E#}は{RUBY_B#てっていてき}徹底的{RUBY_E#}に{RUBY_B#つぶ}潰{RUBY_E#}す",
+      "desc": "天賦発動時の与ダメージ+{{1}}%。"
+    },
+    "5": {
+      "name": "{RUBY_B#けってん}欠点{RUBY_E#}{RUBY_B#つか}掴{RUBY_E#}んで{RUBY_B#ののし}罵{RUBY_E#}り{RUBY_B#たお}倒{RUBY_E#}す",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#だれ}誰{RUBY_E#}も{RUBY_B#わたし}私{RUBY_E#}を{RUBY_B#うらぎ}裏切{RUBY_E#}れない",
+      "desc": "必殺技を発動した後、攻撃力+{{1}}%、{{2}}ターン継続。"
+    }
+  }
+}

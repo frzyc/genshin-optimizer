@@ -1,0 +1,7 @@
+{
+  "name": "Shattered Home",
+  "passive": {
+    "name": "Eradication",
+    "description": "The wearer deals <orangeStrong>{{2}}%</orangeStrong> more DMG to enemy targets whose HP percentage is greater than {{1}}%."
+  }
+}

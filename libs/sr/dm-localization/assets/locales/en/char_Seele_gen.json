@@ -1,0 +1,66 @@
+{
+  "name": "Seele",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Thwack",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Seele's ATK to a single enemy.",
+        "shortDesc": "Deals minor Quantum DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Sheathed Blade",
+        "fullDesc": "Increases Seele's SPD by {{2}}% for {{3}} turn(s) and deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Seele's ATK to a single enemy.",
+        "shortDesc": "Deals Quantum DMG to a single enemy and increases SPD."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Butterfly Flurry",
+        "fullDesc": "Seele enters the buffed state and deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of her ATK to a single enemy.",
+        "shortDesc": "Enters the <orangeStrong>buffed state</orangeStrong> and deals massive Quantum DMG to a single enemy."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Phantom Illusion",
+        "fullDesc": "After using her Technique, Seele gains Stealth for {{1}} second(s). While Stealth is active, Seele cannot be detected by enemies. And when entering battle by attacking enemies, Seele will immediately enter the buffed state.",
+        "shortDesc": "Enter <orangeStrong>Stealth</orangeStrong> mode. After attacking an enemy and entering battle, enter the <orangeStrong>buffed state</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Extirpating Slash",
+      "desc": "When dealing DMG to an enemy whose HP percentage is {{1}}% or lower, CRIT Rate increases by {{2}}%."
+    },
+    "2": {
+      "name": "Dancing Butterfly",
+      "desc": "The SPD Boost effect of Seele's Skill can stack up to {{1}} time(s)."
+    },
+    "3": {
+      "name": "Dazzling Tumult",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Flitting Phantasm",
+      "desc": "Seele regenerates {{1}} Energy when she defeats an enemy."
+    },
+    "5": {
+      "name": "Piercing Shards",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "Shattering Shambles",
+      "desc": "After Seele uses her Ultimate, inflict the target enemy with Butterfly Flurry for {{2}} turn(s). Enemies suffering from Butterfly Flurry will take Additional Quantum DMG equal to {{1}}% of Seele's Ultimate DMG every time they are attacked. If the target enemy is defeated by the Butterfly Flurry DMG triggered by other allies' attacks, Seele's Talent will not be triggered.\\nWhen Seele is knocked down, the Butterfly Flurry inflicted on the enemies will be removed."
+    }
+  }
+}

@@ -26,7 +26,7 @@ const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 export type CalcResult<V, M> = {
   val: V
   meta: M
-  entryTag?: (Tag | undefined)[]
+  rereadSeq?: Tag[]
 }
 export class Calculator<M = any> {
   keys: TagMapKeys
@@ -78,9 +78,9 @@ export class Calculator<M = any> {
             ? this._preread(cache.with(n.tag)).pre.map((x) =>
                 // Must be a new object in case `reread` entry is shared with a regular `read`.
                 // They would have the same `val` and `meta` but different `debugTag`.
-                ({ ...x, entryTag: [tags[i]!, n.tag, ...(x.entryTag ?? [])] })
+                ({ ...x, rereadSeq: [tags[i], n.tag, ...(x.rereadSeq ?? [])] })
               )
-            : [{ ...this._compute(n, cache), entryTag: [tags[i]] }]
+            : [{ ...this._compute(n, cache), rereadSeq: [tags[i]] }]
         ),
         computed: {},
       })
@@ -168,7 +168,7 @@ export class Calculator<M = any> {
                     errorMsg +
                       ': ' +
                       pre
-                        .map((pre) => JSON.stringify(pre.entryTag![0]))
+                        .map((pre) => JSON.stringify(pre.rereadSeq![0]))
                         .join(', ')
                   )
                 } else console.error(errorMsg)
@@ -193,7 +193,7 @@ export class Calculator<M = any> {
     }
   }
 
-  computeCustom(_: any[], op: string): any {
+  computeCustom(_: (number | string)[], op: string): any {
     throw new Error(`Unsupported custom node ${op} in Calculator`)
   }
   computeMeta(

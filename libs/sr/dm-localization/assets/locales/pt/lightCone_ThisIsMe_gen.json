@@ -1,0 +1,7 @@
+{
+  "name": "Essa Sou Eu!",
+  "passive": {
+    "name": "Capítulo Novo",
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> a DEF do usuário. Aumenta o Dano causado pelo usuário ao desferir a sua Perícia Suprema em <orangeStrong>{{2}}%</orangeStrong> da DEF do usuário. Este efeito se aplica apenas 1 vez por inimigo-alvo a cada uso da Perícia Suprema do usuário."
+  }
+}

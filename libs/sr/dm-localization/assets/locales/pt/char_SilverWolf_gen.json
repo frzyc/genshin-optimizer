@@ -1,0 +1,66 @@
+{
+  "name": "Loba Prateada",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Aviso do Sistema",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ da Loba Prateada a um único inimigo.",
+        "shortDesc": "Causa Dano Quântico leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Permitir Mudanças?",
+        "fullDesc": "Tem <orangeStrong>{{2}}%</orangeStrong> de <u>chance-base</u> de adicionar 1 Fraqueza do Tipo de um personagem em campo ao inimigo-alvo. Isso também reduz a RES a Dano do inimigo a este Tipo de Fraqueza em {{4}}% por {{3}} rodada(s). Se o inimigo já possui Fraqueza a este Tipo, o efeito de redução da RES a Dano a este Tipo de Fraqueza não será ativado.\\nCada inimigo pode ter apenas 1 Fraqueza implantada pela Loba Prateada. Quando Loba Prateada implanta outra Fraqueza ao alvo, apenas a última Fraqueza implantada será mantida. Adicionalmente, existe {{5}}% de <u>chance-base</u> de reduzir mais ainda a RES a Todos os Tipos do inimigo em <orangeStrong>{{6}}%</orangeStrong> por {{7}} rodada(s).\\nCausa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ da Loba Prateada a um único inimigo-alvo.",
+        "shortDesc": "Existe uma chance alta de <orangeStrong>aplicar Fraquezas de Tipo adicionais</orangeStrong> a um único inimigo e causa Dano Quântico a este inimigo-alvo."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Usuário Banido",
+        "fullDesc": "Tem uma <u>chance-base</u> de <orangeStrong>{{2}}%</orangeStrong> de diminuir a DEF do inimigo-alvo em <orangeStrong>{{3}}%</orangeStrong> por {{4}} rodada(s). E, ao mesmo tempo, causa <orangeStrong>{{1}}%</orangeStrong> do ATQ da Loba Prateada como Dano Quântico ao inimigo-alvo.",
+        "shortDesc": "Tem uma chance alta de <orangeStrong>diminuir a DEF de um único inimigo</orangeStrong> e causa Dano Quântico massivo a este inimigo-alvo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Fechar o Programa",
+        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, causa Dano Quântico igual a {{1}}% do ATQ da Loba Prateada a todos os inimigos, ignora os Tipos de Fraqueza e reduz a Tenacidade de todos os inimigos. Inimigos com suas Fraquezas Quebradas desta forma ativarão o efeito de Quebra de Fraqueza contra Quântico.",
+        "shortDesc": "Ataca o inimigo. Após entrar na batalha, causa uma pequena quantidade de Dano a todos os inimigos e reduz a Tenacidade deles independentemente de seus Tipos de Fraquezas."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Engenharia Social",
+      "desc": "Após usar sua Perícia Suprema para atacar inimigos, Loba Prateada regenera {{1}} de Energia para cada penalidade que o inimigo-alvo possui no momento. Este efeito pode ser ativado até {{2}} vez(es) cada vez que a Perícia Suprema da Loba Prateada for utilizada."
+    },
+    "2": {
+      "name": "Rede de Zumbis",
+      "desc": "Quando um inimigo entra na batalha, reduz a RES a Efeito dele em {{1}}%."
+    },
+    "3": {
+      "name": "Carga Explosiva",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Ataque Rebote",
+      "desc": "Após usar sua Perícia Suprema para atacar inimigos, causa Dano Quântico Adicional igual a {{1}}% do ATQ da Loba Prateada para cada penalidade que o inimigo-alvo possui no momento. Este efeito pode ser ativado até {{2}} vez(es) cada vez que a Perícia Suprema dela for utilizada."
+    },
+    "5": {
+      "name": "Ataque de Força Bruta",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Rede Sobreposta",
+      "desc": "Para cada penalidade do inimigo-alvo, o Dano causado pela Loba Prateada aumenta em {{1}}%, até um limite de {{2}}%."
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dan Heng",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lanza del Nimbocaballero: Viento del norte",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lanza del Nimbocaballero: Torrente",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo.\\nCuando el daño infligido por la habilidad básica causa un golpe CRIT, hay una <u>probabilidad base</u> del {{4}}% de reducir la VEL del objetivo en un {{2}}% durante {{3}} turnos.",
+        "shortDesc": "Inflige Daño de Viento a un enemigo. Cuando asesta un golpe CRIT, tiene una gran probabilidad de causar Ralentización."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Sueño etéreo",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo. Cuando el objetivo está afectado por Ralentización, el multiplicador de daño de la habilidad definitiva de Dan Heng aumenta en un <orangeStrong>{{2}}%</orangeStrong>.",
+        "shortDesc": "Inflige una gran cantidad de Daño de Viento a un enemigo. Aumenta el multiplicador de daño contra los objetivos afectados por Ralentización."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Lanza perforadora",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el ATQ de Dan Heng aumenta en un {{1}}% durante {{2}} turnos.",
+        "shortDesc": "Tras usar la técnica, el ATQ aumenta en la siguiente batalla."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Cuanto más subes, más dura es la caída",
+      "desc": "Cuando el porcentaje de PV del objetivo golpeado es igual o superior al {{1}}%, la Prob. CRIT aumenta en un {{2}}%."
+    },
+    "2": {
+      "name": "Controlar el mal y extinguir la llama",
+      "desc": "El TdE del talento se reduce en 1 turno."
+    },
+    "3": {
+      "name": "Visto y no visto",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Dragón rugiente y sol sofocante",
+      "desc": "Cuando su habilidad definitiva elimina al objetivo, Dan Heng vuelve a actuar inmediatamente."
+    },
+    "5": {
+      "name": "Una gota de lluvia alimenta el torrente",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Alma atormentada en espera",
+      "desc": "La Ralentización causada por la habilidad básica reduce la VEL del objetivo en un {{1}}% adicional."
+    }
+  }
+}

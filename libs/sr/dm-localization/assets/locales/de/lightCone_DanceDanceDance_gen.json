@@ -1,0 +1,7 @@
+{
+  "name": "Tanz! Tanz! Tanz!",
+  "passive": {
+    "name": "Unaufhaltsam!",
+    "description": "Nach dem Einsatz des Ultimates des Trägers werden die Aktionen aller Verbündeten um <orangeStrong>{{1}}%</orangeStrong> vorgezogen."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Bailu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Diagnostic Kick",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Bailu pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Singing Among Clouds",
+        "fullDesc": "Segera memulihkan HP 1 rekan sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Bailu + <orangeStrong>{{2}}</orangeStrong>. Lalu, Bailu akan memberikan {{4}} kali pemulihan pada rekan tim secara acak. Jumlah HP yang dipulihkan akan berkurang {{3}}% dari setiap pemulihan ke pemulihan berikutnya.",
+        "shortDesc": "Memulihkan HP 1 rekan tim, lalu memulihkan rekan yang lain secara acak."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Felicitous Thunderleap",
+        "fullDesc": "Segera memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Bailu +<orangeStrong>{{2}}</orangeStrong>.\\nBailu akan memberikan efek \"Invigoration\" pada rekan tim yang belum memiliki \"Invigoration\". Bailu akan menambah durasi \"Invigoration\" selama 1 giliran untuk rekan tim yang sudah memiliki \"Invigoration\".\\n\"Invigoration\" dapat berlangsung selama {{3}} giliran dan tidak dapat ditumpuk.",
+        "shortDesc": "Memulihkan HP seluruh rekan tim, memberikan \"Invigoration\" atau menambah durasi \"Invigoration\"."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Saunter in the Rain",
+        "fullDesc": "Setelah menggunakan Technique, memberikan \"Invigoration\" pada seluruh rekan tim saat pertempuran berikutnya dimulai. Efek berlangsung selama {{1}} giliran.",
+        "shortDesc": "Setelah menggunakan Technique, seluruh rekan tim akan mendapatkan \"Invigoration\" saat pertempuran berikutnya dimulai."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ambrosial Aqua",
+      "desc": "Saat efek \"Invigoration\" berakhir, jika HP rekan saat ini sudah pulih sepenuhnya, maka akan memulihkan {{1}} Energy tambahan untuknya."
+    },
+    "2": {
+      "name": "Sylphic Slumber",
+      "desc": "Setelah melancarkan Ultimate, meningkatkan {{1}}% Outgoing Healing selama {{2}} giliran."
+    },
+    "3": {
+      "name": "Omniscient Opulence",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Evil Excision",
+      "desc": "Setiap pemulihan dari Skill akan meningkatkan {{1}}% DMG penerima pemulihan. Dapat ditumpuk {{2}} lapis selama {{3}} giliran."
+    },
+    "5": {
+      "name": "Waning Worries",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Drooling Drop of Draconic Divinity",
+      "desc": "Dalam satu pertempuran, jumlah pemulihan Bailu terhadap rekan tim yang terkena serangan mematikan bertambah {{1}} kali."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Encore une belle journée qui s'annonce",
+  "passive": {
+    "name": "Tempête à l'horizon",
+    "description": "Les DGT du porteur augmentent en fonction de son énergie max après être entré en combat. Les DGT augmentent de <orangeStrong>{{1}}%</orangeStrong> par point d'énergie jusqu'à un maximum de {{2}} points d'énergie."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Tĩnh Mịch",
+  "passive": {
+    "name": "Trầm Luân",
+    "description": "Khi bắt đầu chiến đấu sẽ khiến Chính Xác Hiệu Ứng của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>, duy trì {{2}} hiệp."
+  }
+}

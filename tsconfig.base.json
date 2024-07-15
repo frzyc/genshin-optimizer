@@ -53,6 +53,7 @@
       "@genshin-optimizer/common/util": ["libs/common/util/src/index.ts"],
       "@genshin-optimizer/gi/art-scanner": ["libs/gi/art-scanner/src/index.ts"],
       "@genshin-optimizer/gi/assets": ["libs/gi/assets/src/index.ts"],
+      "@genshin-optimizer/gi/assets-data": ["libs/gi/assets-data/src/index.ts"],
       "@genshin-optimizer/gi/char-cards": ["libs/gi/char-cards/src/index.ts"],
       "@genshin-optimizer/gi/consts": ["libs/gi/consts/src/index.ts"],
       "@genshin-optimizer/gi/db": ["libs/gi/db/src/index.ts"],
@@ -119,9 +120,13 @@
       "@genshin-optimizer/gi/wr": ["libs/gi/wr/src/index.ts"],
       "@genshin-optimizer/pando/engine": ["libs/pando/engine/src/index.ts"],
       "@genshin-optimizer/sr/assets": ["libs/sr/assets/src/index.ts"],
+      "@genshin-optimizer/sr/assets-data": ["libs/sr/assets-data/src/index.ts"],
       "@genshin-optimizer/sr/consts": ["libs/sr/consts/src/index.ts"],
       "@genshin-optimizer/sr/db": ["libs/sr/db/src/index.ts"],
       "@genshin-optimizer/sr/dm": ["libs/sr/dm/src/index.ts"],
+      "@genshin-optimizer/sr/dm-localization": [
+        "libs/sr/dm-localization/src/index.ts"
+      ],
       "@genshin-optimizer/sr/formula": ["libs/sr/formula/src/index.ts"],
       "@genshin-optimizer/sr/i18n": ["libs/sr/i18n/src/index.ts"],
       "@genshin-optimizer/sr/page-characters": [

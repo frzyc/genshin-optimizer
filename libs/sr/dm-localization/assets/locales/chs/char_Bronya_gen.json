@@ -1,0 +1,66 @@
+{
+  "name": "布洛妮娅",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "驭风的子弹",
+        "fullDesc": "对指定敌方单体造成等同于布洛妮娅<orangeStrong>{{1}}%</orangeStrong>攻击力的风属性伤害。",
+        "shortDesc": "对敌方单体造成少量风属性伤害。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "作战再部署",
+        "fullDesc": "解除指定我方单体的1个<u>负面效果</u>，并使该目标立即行动，造成的伤害提高<orangeStrong>{{1}}%</orangeStrong>，持续{{3}}回合。\\n当对自身施放该技能时，无法触发立即行动效果。",
+        "shortDesc": "<orangeStrong>解除</orangeStrong>我方单体1个<orangeStrong><u>负面效果</u></orangeStrong>，使其<orangeStrong>造成的伤害提高</orangeStrong>，并<orangeStrong>立刻行动</orangeStrong>。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "贝洛伯格进行曲",
+        "fullDesc": "使我方全体攻击力提高<orangeStrong>{{1}}%</orangeStrong>，同时提高等同于布洛妮娅<orangeStrong>{{2}}%</orangeStrong>暴击伤害+<orangeStrong>{{3}}%</orangeStrong>的暴击伤害，持续{{4}}回合。",
+        "shortDesc": "使我方全体<orangeStrong>攻击力提高</orangeStrong>，<orangeStrong>暴击伤害提高</orangeStrong>。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "在旗帜下",
+        "fullDesc": "使用秘技后，下一次战斗开始时使我方全体攻击力提高{{1}}%，持续{{2}}回合。",
+        "shortDesc": "使用秘技，下一次战斗开始时我方全体攻击力提高。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "养精蓄锐",
+      "desc": "施放战技时，有{{1}}%固定概率恢复1个战技点，该效果有1回合的触发冷却。"
+    },
+    "2": {
+      "name": "快速行军",
+      "desc": "施放战技时，被指定的我方目标在行动后速度提高{{1}}%，持续1回合。"
+    },
+    "3": {
+      "name": "鼓炮齐鸣",
+      "desc": "终结技等级+2，最多不超过15级；天赋等级+2，最多不超过15级。"
+    },
+    "4": {
+      "name": "攻其不备",
+      "desc": "我方其他角色对弱点为风属性的敌方目标施放普攻后，布洛妮娅立即进行1次追加攻击，对该目标造成等同于普攻伤害{{1}}%的风属性伤害，该效果每回合可触发1次。"
+    },
+    "5": {
+      "name": "所向克捷",
+      "desc": "战技等级+2，最多不超过15级；普攻等级+1，最多不超过10级。"
+    },
+    "6": {
+      "name": "气贯长虹",
+      "desc": "战技对指定我方目标造成的伤害提高效果的持续时间增加{{1}}回合。"
+    }
+  }
+}

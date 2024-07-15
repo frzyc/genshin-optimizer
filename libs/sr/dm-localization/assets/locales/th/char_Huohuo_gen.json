@@ -1,0 +1,66 @@
+{
+  "name": "Huohuo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Banner: Stormcaller",
+        "fullDesc": "สร้าง DMG ลม <orangeStrong>{{1}}%</orangeStrong> ของ HP สูงสุดของ Huohuo แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "สร้าง DMG ลมเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Talisman: Protection",
+        "fullDesc": "ลบล้าง<u>เอฟเฟกต์ Debuff</u> {{5}} เอฟเฟกต์ของฝ่ายเราที่กำหนดหนึ่งตัว และฟื้นฟู HP <orangeStrong>{{1}}%</orangeStrong> ของ HP สูงสุดของ Huohuo +<orangeStrong>{{2}}</orangeStrong> แก่ฝ่ายเราที่กำหนดหนึ่งตัวทันที พร้อมทั้งฟื้นฟู HP <orangeStrong>{{3}}%</orangeStrong> ของ HP สูงสุดของ Huohuo +<orangeStrong>{{4}}</orangeStrong> แก่ตัวที่อยู่ใกล้เคียงกับเป้าหมายด้วย",
+        "shortDesc": "ลบล้าง<u>เอฟเฟกต์ Debuff</u> 1 เอฟเฟกต์ของฝ่ายเราหนึ่งตัว และ<orangeStrong>ฟื้นฟู HP</orangeStrong> ให้แก่ฝ่ายเราหนึ่งตัว รวมถึงตัวที่อยู่ใกล้เคียงด้วย"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Tail: Spiritual Domination",
+        "fullDesc": "ฟื้นฟูพลังงานให้กับเพื่อนในทีม ที่นอกเหนือจากตัวเอง <orangeStrong>{{1}}%</orangeStrong> ของพลังงานสูงสุดของแต่ละตัว พร้อมทั้งทำให้ ATK ของเป้าหมายดังกล่าว เพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น",
+        "shortDesc": "<orangeStrong>ฟื้นฟูพลังงาน</orangeStrong>ให้กับเพื่อนในทีม ที่นอกเหนือไปจากตัวเอง และทำให้ <orangeStrong>ATK</orangeStrong> ของเป้าหมายดังกล่าวเพิ่มขึ้น"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Fiend: Impeachment of Evil",
+        "fullDesc": "Huohuo ข่มขู่ศัตรูรอบตัว และทำให้ศัตรูติดสถานะ \"Horror-Struck\" ซึ่งศัตรูที่ติดสถานะ \"Horror-Struck\" จะหลบหนีไปยังทิศทางที่อยู่ห่างจาก Huohuo เป็นเวลา {{4}} วินาที เมื่อเข้าสู่การต่อสู้ พร้อมกับศัตรูที่ติดสถานะ \"Horror-Struck\" จะมี <u>โอกาสพื้นฐาน</u> {{1}}% ที่จะทำให้ ATK ของศัตรูเป้าหมายแต่ละตัวลดลง {{2}}% เป็นเวลา {{3}} เทิร์น",
+        "shortDesc": "ทำให้ศัตรูรอบๆ ติดสถานะ \"Horror-Struck\" เมื่อเข้าสู่การต่อสู้ พร้อมศัตรูที่ติดสถานะ \"Horror-Struck\" จะมีโอกาสอย่างมาก ที่จะทำให้ <orangeStrong>ATK ของศัตรูเป้าหมายลดลง</orangeStrong>"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภท ที่สอดคล้องกับศัตรูเป้าหมาย",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Anchored to Vessel, Specters Nestled",
+      "desc": "ขยายระยะเวลาของ \"Divine Provision\" ที่เกิดจากพรสวรรค์ {{2}} เทิร์น และเมื่อ Huohuo มี \"Divine Provision\" ความเร็วของฝ่ายเราทั้งหมดจะเพิ่มขึ้น {{1}}%"
+    },
+    "2": {
+      "name": "Sealed in Tail, Wraith Subdued",
+      "desc": "เมื่อ Huohuo มี \"Divine Provision\" หากเป้าหมายฝ่ายเราถูกโจมตีจนถึงตาย จะไม่หมดสติ และจะฟื้นฟู HP {{1}}% ของ HP สูงสุดของตัวดังกล่าวทันที อีกทั้งทำให้ระยะเวลาของ \"Divine Provision\" ลดลง 1 เทิร์น โดยเอฟเฟกต์นี้สามารถเกิดได้ {{2}} ครั้งต่อหนึ่งการต่อสู้"
+    },
+    "3": {
+      "name": "Cursed by Fate, Moths to Flame",
+      "desc": "เลเวลท่าไม้ตาย +2 สูงสุดไม่เกิน Lv.15 และเลเวลพรสวรรค์ +2 สูงสุดไม่เกิน\\nLv.15"
+    },
+    "4": {
+      "name": "Tied in Life, Bound to Strife",
+      "desc": "เมื่อใช้สกิลต่อสู้หรือพรสวรรค์ เพื่อรักษาเป้าหมายฝ่ายเรา ยิ่งค่า HP ปัจจุบันของเป้าหมายต่ำเท่าไหร่ ปริมาณการรักษาก็จะสูงขึ้นเท่านั้น ซึ่ง Huohuo สามารถมอบปริมาณการรักษา เพิ่มขึ้นสูงสุดที่ {{1}}%"
+    },
+    "5": {
+      "name": "Mandated by Edict, Evils Evicted",
+      "desc": "เลเวลสกิลต่อสู้ +2 สูงสุดไม่เกิน Lv.15 และเลเวลการโจมตีปกติ +1 สูงสุดไม่เกิน Lv.10"
+    },
+    "6": {
+      "name": "Woven Together, Cohere Forever",
+      "desc": "เมื่อทำการรักษาเป้าหมายฝ่ายเรา จะทำให้เป้าหมายสร้าง DMG เพิ่มขึ้น {{1}}% เป็นเวลา {{2}} เทิร์น"
+    }
+  }
+}

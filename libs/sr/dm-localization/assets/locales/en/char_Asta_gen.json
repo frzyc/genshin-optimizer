@@ -1,0 +1,66 @@
+{
+  "name": "Asta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Spectrum Beam",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Asta's ATK to a single enemy.",
+        "shortDesc": "Deals minor Fire DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Meteor Storm",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Asta's ATK to a single enemy and further deals DMG for 4 extra times, with each time dealing Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Asta's ATK to a random enemy.",
+        "shortDesc": "Deals minor Fire DMG to single enemy targets with 5 Bounces in total."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Astral Blessing",
+        "fullDesc": "Increases SPD of all allies by <orangeStrong>{{1}}</orangeStrong> for {{2}} turn(s).",
+        "shortDesc": "<orangeStrong>Increases SPD</orangeStrong> for all allies."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Miracle Flash",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Fire DMG equal to {{1}}% of Asta's ATK to all enemies.",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor DMG to all enemies."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Star Sings Sans Verses or Vocals",
+      "desc": "When using Skill, deals DMG for 1 extra time to a random enemy."
+    },
+    "2": {
+      "name": "Moon Speaks in Wax and Wane",
+      "desc": "After using her Ultimate, Asta's Charging stacks will not be reduced in the next turn."
+    },
+    "3": {
+      "name": "Meteor Showers for Wish and Want",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Aurora Basks in Beauty and Bliss",
+      "desc": "Asta's Energy Regeneration Rate increases by {{2}}% when she has {{1}} or more Charging stacks."
+    },
+    "5": {
+      "name": "Nebula Secludes in Runes and Riddles",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "Cosmos Dreams in Calm and Comfort",
+      "desc": "Charging stack(s) lost in each turn is reduced by {{1}}."
+    }
+  }
+}

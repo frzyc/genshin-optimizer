@@ -1,0 +1,7 @@
+{
+  "setName": "Thợ Rèn Lửa Dung Nham",
+  "setEffects": {
+    "2": "Tăng Sát Thương Hỏa {{1}}%.",
+    "4": "Khiến sát thương Chiến Kỹ của người trang bị tăng {{1}}%, đồng thời tăng {{2}}% Sát Thương Hỏa của lần tấn công kế tiếp sau khi thi triển Tuyệt Kỹ."
+  }
+}

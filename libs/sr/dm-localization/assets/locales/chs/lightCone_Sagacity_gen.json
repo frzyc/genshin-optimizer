@@ -1,0 +1,7 @@
+{
+  "name": "睿见",
+  "passive": {
+    "name": "天才",
+    "description": "当装备者施放终结技时，攻击力提高<orangeStrong>{{1}}%</orangeStrong>，持续{{2}}回合。"
+  }
+}

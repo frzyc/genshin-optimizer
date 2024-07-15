@@ -1,0 +1,24 @@
+{
+  "name": "Cordas da Chuva Branca",
+  "description": {
+    "0": "Um arco espiritual lendário. Não importa se nos palcos ou nas batalhas, ele pode tocar facilmente o coração de todos os seus ouvintes."
+  },
+  "passiveName": "Melodia de Dryas",
+  "passiveDescription": {
+    "0": {
+      "0": "O personagem equipado pode obter o efeito \"Remédio\". Quando eles possuem 1/2/3 acúmulos de \"Remédio\", sua Vida Máxima aumentará em <cryo>12%/24%/40%</cryo>. Eles podem obter 1 acúmulo nas seguintes situações: 1 ao usar uma Habilidade Elemental por 25s; 1 ao aumentar o valor do Contrato de Vida por 25s; 1 ao iniciar Cura por 20s. Isso ainda pode ser ativado quando o personagem equipado não está em campo. A duração de cada acúmulo é contada independentemente. Além disso, quando você tem 3 acúmulos, a Taxa CRIT do Supremo será aumentada em <cryo>28%</cryo>. Este efeito será cancelado 4s após você ficar com menos de 3 acúmulos."
+    },
+    "1": {
+      "0": "O personagem equipado pode obter o efeito \"Remédio\". Quando eles possuem 1/2/3 acúmulos de \"Remédio\", sua Vida Máxima aumentará em <cryo>15%/30%/50%</cryo>. Eles podem obter 1 acúmulo nas seguintes situações: 1 ao usar uma Habilidade Elemental por 25s; 1 ao aumentar o valor do Contrato de Vida por 25s; 1 ao iniciar Cura por 20s. Isso ainda pode ser ativado quando o personagem equipado não está em campo. A duração de cada acúmulo é contada independentemente. Além disso, quando você tem 3 acúmulos, a Taxa CRIT do Supremo será aumentada em <cryo>35%</cryo>. Este efeito será cancelado 4s após você ficar com menos de 3 acúmulos."
+    },
+    "2": {
+      "0": "O personagem equipado pode obter o efeito \"Remédio\". Quando eles possuem 1/2/3 acúmulos de \"Remédio\", sua Vida Máxima aumentará em <cryo>18%/36%/60%</cryo>. Eles podem obter 1 acúmulo nas seguintes situações: 1 ao usar uma Habilidade Elemental por 25s; 1 ao aumentar o valor do Contrato de Vida por 25s; 1 ao iniciar Cura por 20s. Isso ainda pode ser ativado quando o personagem equipado não está em campo. A duração de cada acúmulo é contada independentemente. Além disso, quando você tem 3 acúmulos, a Taxa CRIT do Supremo será aumentada em <cryo>42%</cryo>. Este efeito será cancelado 4s após você ficar com menos de 3 acúmulos."
+    },
+    "3": {
+      "0": "O personagem equipado pode obter o efeito \"Remédio\". Quando eles possuem 1/2/3 acúmulos de \"Remédio\", sua Vida Máxima aumentará em <cryo>21%/42%/70%</cryo>. Eles podem obter 1 acúmulo nas seguintes situações: 1 ao usar uma Habilidade Elemental por 25s; 1 ao aumentar o valor do Contrato de Vida por 25s; 1 ao iniciar Cura por 20s. Isso ainda pode ser ativado quando o personagem equipado não está em campo. A duração de cada acúmulo é contada independentemente. Além disso, quando você tem 3 acúmulos, a Taxa CRIT do Supremo será aumentada em <cryo>49%</cryo>. Este efeito será cancelado 4s após você ficar com menos de 3 acúmulos."
+    },
+    "4": {
+      "0": "O personagem equipado pode obter o efeito \"Remédio\". Quando eles possuem 1/2/3 acúmulos de \"Remédio\", sua Vida Máxima aumentará em <cryo>24%/48%/80%</cryo>. Eles podem obter 1 acúmulo nas seguintes situações: 1 ao usar uma Habilidade Elemental por 25s; 1 ao aumentar o valor do Contrato de Vida por 25s; 1 ao iniciar Cura por 20s. Isso ainda pode ser ativado quando o personagem equipado não está em campo. A duração de cada acúmulo é contada independentemente. Além disso, quando você tem 3 acúmulos, a Taxa CRIT do Supremo será aumentada em <cryo>56%</cryo>. Este efeito será cancelado 4s após você ficar com menos de 3 acúmulos."
+    }
+  }
+}

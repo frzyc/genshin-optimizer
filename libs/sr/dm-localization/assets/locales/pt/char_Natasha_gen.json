@@ -1,0 +1,66 @@
+{
+  "name": "Natasha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Além da Bondade",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Natasha a um único inimigo.",
+        "shortDesc": "Causa Dano Físico leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Amor, Cura e Escolha",
+        "fullDesc": "Cura um único alvo em <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Natasha + <orangeStrong>{{4}}</orangeStrong>. Cura o aliado em mais <orangeStrong>{{2}}%</orangeStrong> dos PV máximos de Natasha mais <orangeStrong>{{5}}</orangeStrong> no início de cada rodada por {{3}} rodada(s).",
+        "shortDesc": "<orangeStrong>Restaura PV </orangeStrong>de um único aliado e concede a <orangeStrong>Cura Periódica</orangeStrong> a ele."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Presente do Renascimento",
+        "fullDesc": "Cura todos os aliados em <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Natasha + <orangeStrong>{{2}}</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Restaura PV</orangeStrong> de todos os aliados."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Pesquisa Hipnótica",
+        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, causa Dano Físico igual a {{4}}% do ATQ de Natasha a um inimigo aleatório, com {{1}}% de <u>chance-base</u> de causar Enfraquecimento a todos os inimigos.\\nQuando enfraquecidos, inimigos causam {{2}}% a menos de Dano a aliados por {{3}} rodada(s).",
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Físico leve a um único inimigo aleatório, com uma alta chance de infligir Fraqueza a todos os inimigos-alvo."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Especialista em Farmacologia",
+      "desc": "Após sofrer um ataque, se os PV atuais estiverem em {{1}}% ou menos, cura a si mesma 1 vez para restaurar {{2}}% de seus PV máximos + {{3}}. Este efeito só pode ser ativado uma vez por batalha."
+    },
+    "2": {
+      "name": "Pesquisa Clínica",
+      "desc": "Usar a sua Perícia Suprema concede cura contínua por {{2}} rodada(s) aos aliados com {{1}}% de PV ou menos. No início das suas rodadas, os PV dos aliados são restaurados em {{3}}% dos PV máximos de Natasha + {{4}}."
+    },
+    "3": {
+      "name": "A Cura Correta",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Cura Milagrosa",
+      "desc": "Após sofrer um ataque, {{1}} de Energia extra."
+    },
+    "5": {
+      "name": "Tratamento Preventivo",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Graça da Médica",
+      "desc": "O ATQ Básico de Natasha adicionalmente causa Dano Físico igual a {{1}}% dos PV máximos dela."
+    }
+  }
+}

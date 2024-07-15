@@ -1,0 +1,7 @@
+{
+  "name": "Past and Future",
+  "passive": {
+    "name": "Kites From the Past",
+    "description": "Setelah pengguna melancarkan Skill, meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG rekan selanjutnya yang beraksi selama {{2}} giliran."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "Gefangene in tiefem Gewahrsam",
+  "setEffects": {
+    "2": "Erhöht den ANG um {{1}}%.",
+    "4": "Für jeden DoT-Effekt, den der Gegner erleidet, ignoriert der Träger {{1}}% der VTD dieses Gegners, wenn er diesem SCH zufügt. Bis zu {{2}} DoT-Effekte werden gezählt."
+  }
+}

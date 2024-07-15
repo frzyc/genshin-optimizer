@@ -1,0 +1,7 @@
+{
+  "name": "Hài Hòa",
+  "passive": {
+    "name": "Gia Tộc",
+    "description": "Khi vào chiến đấu, Tốc Độ của toàn bộ phe ta tăng <orangeStrong>{{1}}</orangeStrong> điểm, duy trì {{2}} hiệp."
+  }
+}

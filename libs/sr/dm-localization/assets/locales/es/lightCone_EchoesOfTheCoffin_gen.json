@@ -1,0 +1,7 @@
+{
+  "name": "Ecos del ataúd",
+  "passive": {
+    "name": "Espinas",
+    "description": "El ATQ del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Después de que el portador lance un ataque, por cada enemigo distinto golpeado, recupera <orangeStrong>{{3}}</orangeStrong> pts. de energía. Cada ataque puede recuperar energía de esta manera hasta {{4}} veces. Después de que el portador use la habilidad definitiva, la VEL de todos los aliados aumenta en <orangeStrong>{{2}}</orangeStrong> pts. durante 1 turno."
+  }
+}

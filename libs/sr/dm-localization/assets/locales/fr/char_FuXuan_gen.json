@@ -1,0 +1,66 @@
+{
+  "name": "Fu Xuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Frappe stellaire",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> des PV max de Fu Xuan à un ennemi unique.",
+        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Merveille des étoiles",
+        "fullDesc": "Active Matrice de prémonition, ce qui permet aux autres membres de l'équipe de Fu Xuan de lui <u>transférer</u> {{1}}% des DGT qu'ils subissent (avant que ces DGT ne soient atténués par d'éventuels boucliers) pendant {{3}} tours.\\nLorsqu'ils sont affectés par Matrice de prémonition, tous les membres de l'équipe bénéficient de l'effet Connaissance, qui augmente leurs PV max respectifs à hauteur de <orangeStrong>{{4}}%</orangeStrong> des PV max de Fu Xuan, et leurs chances de coup critique de <orangeStrong>{{5}}%</orangeStrong>.\\nMatrice de prémonition se dissipe lorsque Fu Xuan est <u>à terre</u>.",
+        "shortDesc": "Active Matrice de prémonition. <orangeStrong>Les DGT subis par les alliés de Fu Xuan lui sont <u>transférés</u></orangeStrong>. D'autre part, <orangeStrong>augmente les chances de coup critique</orangeStrong> et les PV max de tous les alliés."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Évolution ultime",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> des PV max de Fu Xuan à tous les ennemis et obtient 1 déclenchement pour l'effet de restauration de PV accordé par le talent de Fu Xuan.",
+        "shortDesc": "Inflige des DGT quantiques à tous les ennemis et augmente le nombre de fois où le talent de Fu Xuan se déclenche."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "De la chance au destin",
+        "fullDesc": "Après utilisation de la technique, tous les membres de l'équipe bénéficient d'une barrière qui dure {{1}} secondes. Cette barrière bloque toutes les attaques ennemies, et empêche l'équipe d'entrer en combat lorsqu'elle est attaquée. Lorsque vous engagez le combat avec la barrière active, Fu Xuan active automatiquement Matrice de prémonition en début de combat pour {{2}} tours.",
+        "shortDesc": "Active une barrière. Les alliés n'entrent pas en combat lorsqu'ils sont attaqués par des ennemis. Matrice de prémonition s'active automatiquement lorsque vous engagez le combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Dominus Pacis",
+      "desc": "Connaissance augmente les DGT critiques de {{1}}%."
+    },
+    "2": {
+      "name": "Optimus Felix",
+      "desc": "Si un membre de l'équipe est frappé par un coup fatal alors que Matrice de prémonition est active, tous les alliés qui ont été frappés par un coup fatal pendant cette action ne tombent pas à terre et récupèrent {{1}}% de leurs PV max immédiatement. Cet effet peut se déclencher 1 fois par combat."
+    },
+    "3": {
+      "name": "Apex Nexus",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Fortuna Stellaris",
+      "desc": "Lorsque d'autres alliés sous l'effet de Matrice de prémonition sont attaqués, Fu Xuan régénère {{1}} points d'énergie."
+    },
+    "5": {
+      "name": "Arbiter Primus",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Omnia Vita",
+      "desc": "Lorsque Matrice de prémonition est activée, le total des PV perdus par tous les membres de l'équipe est enregistré au cours du combat. Les DGT de l'ultime de Fu Xuan augmentent d'un montant équivalent à {{1}}% de ce total.\\nCe total est plafonné à {{2}}% des PV max de Fu Xuan et sa valeur est réinitialisée et recommence à s'accumuler après utilisation de l'ultime de Fu Xuan."
+    }
+  }
+}

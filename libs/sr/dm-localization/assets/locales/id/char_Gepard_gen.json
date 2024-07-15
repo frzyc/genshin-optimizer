@@ -1,0 +1,66 @@
+{
+  "name": "Gepard",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Fist of Conviction",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Gepard pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Daunting Smite",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Gepard pada 1 target musuh. Di saat bersamaan, target musuh yang terkena serangan memiliki {{2}}% <u>peluang dasar</u> untuk memasuki status Frozen selama {{3}} giliran.\\nSelama dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima <u>Ice DMG tambahan</u> sebesar <orangeStrong>{{4}}%</orangeStrong> ATK Gepard setiap gilirannya dimulai.",
+        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh dan <orangeStrong>berpeluang untuk memberikan status Frozen pada target</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Enduring Bulwark",
+        "fullDesc": "Memberikan Shield yang dapat menahan DMG sebesar <orangeStrong>{{1}}%</orangeStrong> DEF Gepard +<orangeStrong>{{3}}</orangeStrong> pada seluruh rekan tim selama {{2}} giliran.",
+        "shortDesc": "<orangeStrong>Memberikan Shield</orangeStrong> pada seluruh rekan tim."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Comradery",
+        "fullDesc": "Setelah menggunakan Technique, saat pertempuran selanjutnya dimulai, akan memberikan Shield yang dapat menahan DMG sebesar {{1}}% DEF Gepard + {{3}} kepada seluruh rekan selama {{2}} giliran.",
+        "shortDesc": "Setelah menggunakan Technique, seluruh rekan tim memperoleh Shield saat pertempuran selanjutnya dimulai."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Due Diligence",
+      "desc": "Saat melancarkan skill, meningkatkan {{1}}% peluang dasar untuk membuat target musuh memasuki status Frozen."
+    },
+    "2": {
+      "name": "Lingering Cold",
+      "desc": "Setelah status Frozen yang disebabkan oleh Skill Gepard pada target musuh terhapus, SPD target akan berkurang {{1}}% selama {{2}} giliran."
+    },
+    "3": {
+      "name": "Never Surrender",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Faith Moves Mountains",
+      "desc": "Saat Gepard berada di medan pertempuran, Effect RES seluruh rekan tim meningkat {{1}}%."
+    },
+    "5": {
+      "name": "Cold Iron Fist",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Unyielding Resolve",
+      "desc": "Saat Talent Gepard terpicu, Gepard akan segera beraksi lagi dan memberikan pemulihan HP tambahan sebesar {{1}}% Max HP-nya."
+    }
+  }
+}

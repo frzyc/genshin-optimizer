@@ -1,0 +1,7 @@
+{
+  "name": "暖夜不會漫長",
+  "passive": {
+    "name": "小小燈火",
+    "description": "使裝備者的生命上限提高<orangeStrong>{{1}}%</orangeStrong>。發動普通攻擊或施放戰技後，為我方全體回復等同於各自生命上限<orangeStrong>{{2}}%</orangeStrong>的生命值。"
+  }
+}

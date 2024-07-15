@@ -1,0 +1,7 @@
+{
+  "setName": "Ferrailleur du désert des bandits",
+  "setEffects": {
+    "2": "Augmente les DGT imaginaires de {{1}}%.",
+    "4": "Les chances de coup critique du porteur augmentent de {{1}}% contre les ennemis subissant des malus, et ses DGT critiques augmentent de {{2}}% contre les ennemis emprisonnés."
+  }
+}

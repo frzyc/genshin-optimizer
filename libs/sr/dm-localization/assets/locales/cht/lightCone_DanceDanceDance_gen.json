@@ -1,0 +1,7 @@
+{
+  "name": "舞！舞！舞！",
+  "passive": {
+    "name": "停不下來啦！",
+    "description": "當裝備者施放終結技後，我方全體行動提前<orangeStrong>{{1}}%</orangeStrong>。"
+  }
+}

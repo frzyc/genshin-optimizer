@@ -1,0 +1,7 @@
+{
+  "name": "A Determinação Brilha Como Gotas de Suor",
+  "passive": {
+    "name": "Olhe Para Trás",
+    "description": "Quando o usuário atacar um inimigo, se o inimigo atingido ainda não estiver com Enredamento, há <orangeStrong>{{1}}%</orangeStrong> de chance-base de afligir Enredamento ao inimigo atingido. A DEF dos inimigos com Enredamento diminui em <orangeStrong>{{2}}%</orangeStrong> por {{3}} rodada(s)."
+  }
+}

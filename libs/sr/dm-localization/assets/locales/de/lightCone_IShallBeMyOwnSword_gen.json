@@ -1,0 +1,7 @@
+{
+  "name": "Eins mit dem Schwert",
+  "passive": {
+    "name": "Mit dieser Abendjade",
+    "description": "Erhöht den KRIT-SCH des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Wenn Verbündete angegriffen werden oder ihre eigenen LP verbrauchen, erhält der Träger 1 Stapelung „Mondfinsternis“, bis zu {{2}}-fach stapelbar. Jede Stapelung von „Mondfinsternis“ erhöht den verursachten SCH des nächsten Angriffs vom Träger um <orangeStrong>{{3}}%</orangeStrong>. Wenn {{2}} Stapelungen erreicht sind, ignoriert dieser Angriff <orangeStrong>{{4}}%</orangeStrong> der VTD des Ziels. Dieser Effekt wird entfernt, nachdem der Träger einen Angriff ausgeführt hat."
+  }
+}

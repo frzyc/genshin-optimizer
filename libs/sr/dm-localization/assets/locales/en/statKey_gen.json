@@ -1,0 +1,20 @@
+{
+  "spd": "SPD",
+  "hp": "HP",
+  "atk": "ATK",
+  "def": "DEF",
+  "crit_": "CRIT Rate",
+  "crit_dmg_": "CRIT DMG",
+  "brEff_": "Break Effect",
+  "eff_": "Effect Hit Rate",
+  "eff_res_": "Effect RES",
+  "enerRegen_": "Energy Regeneration Rate",
+  "heal_": "Outgoing Healing Boost",
+  "physical_dmg_": "Physical DMG Boost",
+  "fire_dmg_": "Fire DMG Boost",
+  "ice_dmg_": "Ice DMG Boost",
+  "wind_dmg_": "Wind DMG Boost",
+  "lightning_dmg_": "Lightning DMG Boost",
+  "quantum_dmg_": "Quantum DMG Boost",
+  "imaginary_dmg_": "Imaginary DMG Boost"
+}

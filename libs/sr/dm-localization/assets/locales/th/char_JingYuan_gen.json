@@ -1,0 +1,66 @@
+{
+  "name": "Jing Yuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Glistening Light",
+        "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "สร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Rifting Zenith",
+        "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูทั้งหมด พร้อมทั้งเพิ่มจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" {{2}} ครั้ง",
+        "shortDesc": "สร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูทั้งหมด และ<orangeStrong>เพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</orangeStrong>"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lightbringer",
+        "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูทั้งหมด พร้อมทั้งเพิ่มจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" {{2}} ครั้ง",
+        "shortDesc": "สร้าง DMG สายฟ้าแก่ฝ่ายศัตรูทั้งหมด และ<orangeStrong>เพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</orangeStrong>"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Spirit Invocation",
+        "fullDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป จำนวนการโจมตีของ \"Lightning-Lord\" ในเทิร์นที่ 1 จะเพิ่มขึ้น {{1}} ครั้ง",
+        "shortDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเข้าสู่การต่อสู้ครั้งถัดไป <orangeStrong>จะเพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</orangeStrong>"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Slash, Seas Split",
+      "desc": "เมื่อ \"Lightning-Lord\" ทำการโจมตี ตัวคูณ DMG ของเป้าหมาย ที่อยู่ใกล้เคียงกับศัตรูที่กำหนด จะเพิ่มขึ้นอีก {{1}}% ของตัวคูณ DMG ของศัตรูเป้าหมายหลัก"
+    },
+    "2": {
+      "name": "Swing, Skies Squashed",
+      "desc": "หลังจาก \"Lightning-Lord\" แอ็กชัน การโจมตีปกติ, สกิลต่อสู้, และท่าไม้ตายของ Jing Yuan จะสร้าง DMG เพิ่มขึ้น {{1}}% เป็นเวลา {{2}} เทิร์น"
+    },
+    "3": {
+      "name": "Strike, Suns Subdued",
+      "desc": "เลเวลท่าไม้ตาย +2 สูงสุดไม่เกิน Lv.15 และเลเวลการโจมตีปกติ +1 สูงสุดไม่เกิน Lv.10"
+    },
+    "4": {
+      "name": "Spin, Stars Sieged",
+      "desc": "ทุกครั้งที่ \"Lightning-Lord\" ทำการโจมตี Jing Yuan จะฟื้นฟูพลังงาน {{1}} หน่วย"
+    },
+    "5": {
+      "name": "Stride, Spoils Seized",
+      "desc": "เลเวลสกิลต่อสู้ +2 สูงสุดไม่เกิน Lv.15 และเลเวลพรสวรรค์ +2 สูงสุดไม่เกิน Lv.15"
+    },
+    "6": {
+      "name": "Sweep, Souls Slain",
+      "desc": "หลังจากการโจมตีแต่ละครั้งของ \"Lightning-Lord\" จะทำให้ศัตรูเป้าหมายที่กำหนด ติดสถานะเปราะบางเพิ่มเติม\\nศัตรูเป้าหมายที่ติดสถานะเปราะบาง จะได้รับ DMG เพิ่มขึ้น {{1}}% จนกว่าจะสิ้นสุดเทิร์นปัจจุบันของ \"Lightning-Lord\" โดยสามารถซ้อนทับได้สูงสุด {{2}} ชั้น"
+    }
+  }
+}

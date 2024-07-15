@@ -1,0 +1,66 @@
+{
+  "name": "Kafka",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Náo Động Giữa Đêm",
+        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Kafka.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Ánh Trăng Ve Vuốt",
+        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Kafka, đồng thời gây cho mục tiêu lân cận của kẻ đó Sát Thương Lôi tương đương <orangeStrong>{{3}}%</orangeStrong> Tấn Công của Kafka.\\nNếu kẻ địch chỉ định đang ở trạng thái Sát Thương Duy Trì, thì tất cả Sát Thương Duy Trì mà kẻ đó đang chịu sẽ lập tức sinh ra sát thương tương đương <orangeStrong>{{2}}%</orangeStrong> sát thương ban đầu.",
+        "shortDesc": "Gây Sát Thương Lôi cho một kẻ địch và lượng nhỏ Sát Thương Lôi cho mục tiêu lân cận.\\nNếu mục tiêu chính đang trong Hiệu Ứng Xấu loại Sát Thương Duy Trì, sẽ khiến Hiệu Ứng Xấu loại Sát Thương Duy Trì này <orangeStrong>gây thêm 1 lần sát thương</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Âm Vọng Bi Kịch",
+        "fullDesc": "Gây Sát Thương Lôi cho toàn bộ kẻ địch tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Kafka, có {{2}}% <u>xác suất cơ bản</u> khiến kẻ địch bị tấn công rơi vào trạng thái Sốc Điện và khiến trạng thái Sốc Điện phải chịu hiện tại sinh ra sát thương tương đương <orangeStrong>{{5}}%</orangeStrong> sát thương ban đầu. Trạng thái Sốc Điện duy trì {{3}} hiệp.\\nTrong trạng thái này, kẻ địch mỗi khi bắt đầu hiệp sẽ chịu Sát Thương Lôi duy trì tương đương <orangeStrong>{{4}}%</orangeStrong> Tấn Công của Kafka.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho toàn bộ kẻ địch, có xác suất lớn <orangeStrong>thi triển trạng thái Sốc Điện</orangeStrong>.\\nNếu kẻ địch ở trạng thái Sốc Điện, sẽ khiến trạng thái Sốc Điện <orangeStrong>gây thêm 1 lần sát thương</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Tha Thứ Không Có Nghĩa là Nhân Từ",
+        "fullDesc": "Tấn công ngay tất cả kẻ địch trong phạm vi nhất định, sau khi vào chiến đấu sẽ gây Sát Thương Lôi cho toàn bộ địch bằng {{3}}% Tấn Công của Kafka, đồng thời có {{1}}% <u>xác suất cơ bản</u> khiến mỗi 1 kẻ địch rơi vào trạng thái Sốc Điện giống với Tuyệt Kỹ, duy trì {{2}} hiệp.",
+        "shortDesc": "Tấn công tất cả kẻ địch trong phạm vi, sau khi vào chiến đấu, sẽ gây lượng nhỏ Sát Thương Lôi cho toàn bộ địch, xác suất lớn <orangeStrong>thi triển trạng thái Sốc Điện</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Vô Cùng Vô Tận!",
+      "desc": "Khi thiên phú kích hoạt Đòn Đánh Theo Sau sẽ có {{1}}% xác suất cơ bản khiến Sát Thương Duy Trì mà mục tiêu phải chịu tăng {{2}}%, duy trì {{3}} hiệp."
+    },
+    "2": {
+      "name": "Kẻ Mơ Tưởng, Thổn Thức",
+      "desc": "Khi Kafka trong trận, Sát Thương Duy Trì toàn phe ta gây ra tăng {{1}}%."
+    },
+    "3": {
+      "name": "Tôi Khen Ngợi, Cao Hứng",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Xướng Ca Dâng Tặng",
+      "desc": "Khi kẻ địch chịu sát thương Sốc Điện do Kafka gây ra, sẽ hồi thêm cho Kafka {{1}} Năng Lượng."
+    },
+    "5": {
+      "name": "Chỉ Cất Giọng Đêm Nay",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Uyển Chuyển Nhẹ Nhàng",
+      "desc": "Bội Số Sát Thương của trạng thái Sốc Điện được gây ra bởi Tuyệt Kỹ, Bí Kỹ và Đòn Đánh Theo Sau được kích hoạt từ Thiên Phú tăng {{1}}%, và thời gian duy trì của Sốc Điện tăng {{2}} hiệp."
+    }
+  }
+}

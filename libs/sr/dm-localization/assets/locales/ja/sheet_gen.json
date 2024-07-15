@@ -1,0 +1,35 @@
+{
+  "type": {
+    "Physical": "物理",
+    "Quantum": "量子",
+    "Lightning": "雷",
+    "Ice": "氷",
+    "Wind": "風",
+    "Fire": "炎",
+    "Imaginary": "虚数"
+  },
+  "path": {
+    "Erudition": "{RUBY_B#ちえ}知恵{RUBY_E#}",
+    "Preservation": "{RUBY_B#そんご}存護{RUBY_E#}",
+    "Abundance": "{RUBY_B#ほうじょう}豊穣{RUBY_E#}",
+    "Nihility": "{RUBY_B#きょむ}虚無{RUBY_E#}",
+    "Destruction": "{RUBY_B#かいめつ}壊滅{RUBY_E#}",
+    "Harmony": "{RUBY_B#ちょうわ}調和{RUBY_E#}",
+    "TheHunt": "{RUBY_B#じゅんしゅ}巡狩{RUBY_E#}"
+  },
+  "ability": {
+    "basic": "通常攻撃",
+    "skill": "戦闘スキル",
+    "ult": "必殺技",
+    "talent": "天賦",
+    "technique": "秘技"
+  },
+  "dmgType": {
+    "single": "単体攻撃",
+    "aoe": "全体攻撃",
+    "bounce": "バウンド",
+    "blast": "拡散攻撃",
+    "support": "サポート",
+    "impair": "妨害"
+  }
+}

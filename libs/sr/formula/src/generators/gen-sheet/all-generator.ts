@@ -8,14 +8,14 @@ import genIndex from './genIndex'
 import genSheet from './genSheet'
 export default async function genSheetGenerator(tree: Tree) {
   // TODO: Add Trailblazer support
-  for (const src of allCharacterKeys.filter(
+  for (const sheet of allCharacterKeys.filter(
     (key) => !key.includes('Trailblazer')
   ))
-    await genSheet(tree, { sheet_type: 'char', src })
-  for (const src of allRelicSetKeys)
-    await genSheet(tree, { sheet_type: 'relic', src })
-  for (const src of allLightConeKeys)
-    await genSheet(tree, { sheet_type: 'lightCone', src })
+    await genSheet(tree, { sheet_type: 'char', sheet })
+  for (const sheet of allRelicSetKeys)
+    await genSheet(tree, { sheet_type: 'relic', sheet })
+  for (const sheet of allLightConeKeys)
+    await genSheet(tree, { sheet_type: 'lightCone', sheet })
   await genIndex(tree, 'char')
   await genIndex(tree, 'relic')
   await genIndex(tree, 'lightCone')

@@ -1,0 +1,7 @@
+{
+  "name": "Resolution Shines As Pearls of Sweat",
+  "passive": {
+    "name": "Glance Back",
+    "description": "เมื่อผู้สวมใส่โจมตีโดนศัตรูเป้าหมาย หากเป้าหมายดังกล่าวไม่ได้ติดสถานะ \"แตกพ่าย\" จะมีโอกาสพื้นฐาน <orangeStrong>{{1}}%</orangeStrong> ที่จะติดสถานะ \"แตกพ่าย\" โดย DEF ของศัตรูเป้าหมายที่ติดสถานะ \"แตกพ่าย\" จะลดลง <orangeStrong>{{2}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น"
+  }
+}

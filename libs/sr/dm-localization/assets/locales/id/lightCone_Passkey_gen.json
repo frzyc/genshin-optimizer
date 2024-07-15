@@ -1,0 +1,7 @@
+{
+  "name": "Passkey",
+  "passive": {
+    "name": "Epiphany",
+    "description": "Memulihkan <orangeStrong>{{1}}</orangeStrong> Energy tambahan setelah pengguna melancarkan Skill. Efek ini hanya dapat terpicu sekali setiap giliran."
+  }
+}

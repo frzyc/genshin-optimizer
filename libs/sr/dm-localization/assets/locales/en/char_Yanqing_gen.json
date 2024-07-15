@@ -1,0 +1,66 @@
+{
+  "name": "Yanqing",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Frost Thorn",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Yanqing's ATK to a single enemy.",
+        "shortDesc": "Deals minor Ice DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Darting Ironthorn",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Yanqing's ATK to a single enemy and activates Soulsteel Sync for 1 turn.",
+        "shortDesc": "Deals Ice DMG to a single enemy and activates the Soulsteel Sync."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Amidst the Raining Bliss",
+        "fullDesc": "Increases Yanqing's CRIT Rate by {{1}}%. When Soulsteel Sync is active, increases Yanqing's CRIT DMG by an extra <orangeStrong>{{2}}%</orangeStrong>. This <u>buff</u> lasts for one turn. Afterwards, deals Ice DMG equal to <orangeStrong>{{3}}%</orangeStrong> of Yanqing's ATK to a single enemy.",
+        "shortDesc": "Increases Yanqing's CRIT Rate. Enhances \"Soulsteel Sync\" and deals massive Ice DMG to a single enemy."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "The One True Sword",
+        "fullDesc": "After using his Technique, at the start of the next battle, Yanqing deals {{2}}% more DMG for {{3}} turn(s) to enemies whose current HP is {{1}}% or higher.",
+        "shortDesc": "After this character uses Technique, at the start of the next battle, increases the DMG dealt by this character to enemy targets whose HP is 50% or higher."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Svelte Saber",
+      "desc": "When Yanqing attacks a Frozen enemy, he deals Additional Ice DMG equal to {{1}}% of his ATK."
+    },
+    "2": {
+      "name": "Supine Serenade",
+      "desc": "When Soulsteel Sync is active, Energy Regeneration Rate increases by an extra {{1}}%."
+    },
+    "3": {
+      "name": "Sword Savant",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Searing Sting",
+      "desc": "When the current HP percentage is {{1}}% or higher, Ice RES PEN increases by {{2}}%."
+    },
+    "5": {
+      "name": "Surging Strife",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Swift Swoop",
+      "desc": "If the buffs from Soulsteel Sync or the Ultimate are in effect when an enemy is defeated, the duration of these buffs is extended by 1 turn."
+    }
+  }
+}

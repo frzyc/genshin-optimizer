@@ -1,0 +1,7 @@
+{
+  "name": "Avant que le tutoriel ne commence",
+  "passive": {
+    "name": "Pioche éclair",
+    "description": "Augmente les chances d'appliquer des effets du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur attaque des ennemis dont la DÉF est réduite, il régénère <orangeStrong>{{2}}</orangeStrong> points d'énergie."
+  }
+}

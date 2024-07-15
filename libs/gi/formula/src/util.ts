@@ -1,20 +1,14 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
-import { cmpEq, cmpGE } from '@genshin-optimizer/pando/engine'
+import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
 import type {
   Member,
   Preset,
-  Source,
+  Sheet,
   Stat,
   TagMapNodeEntries,
 } from './data/util'
-import {
-  conditionalEntries,
-  convert,
-  reader,
-  selfBuff,
-  selfTag,
-} from './data/util'
+import { conditionalEntries, convert, reader, self, selfTag } from './data/util'
 
 export function withPreset(
   preset: Preset,
@@ -23,18 +17,18 @@ export function withPreset(
   return data.map(({ tag, value }) => ({ tag: { ...tag, preset }, value }))
 }
 export function withMember(
-  member: Member,
+  src: Member,
   ...data: TagMapNodeEntries
 ): TagMapNodeEntries {
-  return data.map(({ tag, value }) => ({ tag: { ...tag, member }, value }))
+  return data.map(({ tag, value }) => ({ tag: { ...tag, src }, value }))
 }
 
 export function charData(data: ICharacter): TagMapNodeEntries {
-  const { lvl, auto, skill, burst, ascension, constellation } = selfBuff.char
+  const { lvl, auto, skill, burst, ascension, constellation } = self.char
 
   return [
-    reader.src('agg').reread(reader.src(data.key)),
-    reader.withTag({ src: 'iso', et: 'self' }).reread(reader.src(data.key)),
+    reader.sheet('agg').reread(reader.sheet(data.key)),
+    reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet(data.key)),
 
     lvl.add(data.level),
     auto.add(data.talent.auto),
@@ -44,16 +38,16 @@ export function charData(data: ICharacter): TagMapNodeEntries {
     constellation.add(data.constellation),
 
     // Default char
-    selfBuff.premod.critRate_.add(0.05),
-    selfBuff.premod.critDMG_.add(0.5),
+    self.premod.critRate_.add(0.05),
+    self.premod.critDMG_.add(0.5),
   ]
 }
 
 export function weaponData(data: IWeapon): TagMapNodeEntries {
-  const { lvl, ascension, refinement } = selfBuff.weapon
+  const { lvl, ascension, refinement } = self.weapon
 
   return [
-    reader.src('agg').reread(reader.src(data.key)),
+    reader.sheet('agg').reread(reader.sheet(data.key)),
 
     lvl.add(data.level),
     ascension.add(data.ascension),
@@ -70,7 +64,7 @@ export function artifactsData(
   const {
     common: { count },
     premod,
-  } = convert(selfTag, { src: 'art', et: 'self' })
+  } = convert(selfTag, { sheet: 'art', et: 'self' })
   const sets: Partial<Record<ArtifactSetKey, number>> = {},
     stats: Partial<Record<Stat, number>> = {}
   for (const { set: setKey, stats: stat } of data) {
@@ -85,61 +79,75 @@ export function artifactsData(
   }
   return [
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
-    reader.src('agg').reread(reader.src('art')),
+    reader.sheet('agg').reread(reader.sheet('art')),
 
-    // Add `src:dyn` between the stat and the buff so that we can `detach` them easily
-    reader.withTag({ src: 'art', qt: 'premod' }).reread(reader.src('dyn')),
+    // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
+    reader.withTag({ sheet: 'art', qt: 'premod' }).reread(reader.sheet('dyn')),
     ...Object.entries(stats).map(([k, v]) =>
-      premod[k as Stat].src('dyn').add(v)
+      premod[k as Stat].sheet('dyn').add(v)
     ),
 
     ...Object.entries(sets).map(([k, v]) =>
-      count.src(k as ArtifactSetKey).add(v)
+      count.sheet(k as ArtifactSetKey).add(v)
     ),
   ]
 }
 
 export function conditionalData(
-  data: Partial<Record<Source, Record<string, string | number>>>
+  dst: Member,
+  data: Partial<
+    Record<Member, Partial<Record<Sheet, Record<string, string | number>>>>
+  >
 ) {
-  return Object.entries(data).flatMap(([key, entries]) => {
-    const conds = conditionalEntries(key as Source)
-    return Object.entries(entries).map(([k, v]) => conds(k, v))
-  })
+  return Object.entries(data).flatMap(([src, entries]) =>
+    Object.entries(entries).flatMap(([key, entries]) => {
+      const conds = conditionalEntries(key as Sheet, src as Member, dst)
+      return Object.entries(entries).map(([k, v]) => conds(k, v))
+    })
+  )
 }
 
-export function teamData(
-  activeMembers: readonly Member[],
-  members: readonly Member[]
-): TagMapNodeEntries {
+export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { active, self, teamBuff } = reader.src('agg').withAll('et', [])
-  const { stackIn, stackInt, stackOut } = reader.withAll('qt', [])
+  const { self, teamBuff, notSelfBuff } = reader.sheet('agg').withAll('et', [])
   return [
-    // Active Member Buff
-    activeMembers.flatMap((dst) => {
-      const entry = self.with('member', dst)
-      return members.map((src) =>
-        entry.reread(active.withTag({ dst, member: src }))
-      )
-    }),
-    activeMembers.map((member) =>
-      selfBuff.common.isActive.withTag({ member }).add(1)
+    // Target Entries
+    members.map((dst) =>
+      reader
+        .withTag({ et: 'target', dst })
+        .reread(reader.withTag({ et: 'self', dst: null, src: dst }))
+    ),
+    // Self Buff
+    members.flatMap((src) =>
+      self.with('src', src).reread(reader.withTag({ et: 'selfBuff', dst: src }))
     ),
     // Team Buff
     members.flatMap((dst) => {
-      const entry = self.with('member', dst)
-      return members.map((src) =>
-        entry.reread(teamBuff.withTag({ dst, member: src }))
-      )
+      const entry = self.with('src', dst)
+      return members.map((src) => entry.reread(teamBuff.withTag({ dst, src })))
     }),
-    // Stacking
-    members.map((member, i) =>
-      stackInt.add(cmpGE(stackIn.withTag({ member }).max, 1, i + 1))
-    ),
-    members.map((member, i) =>
-      stackOut.withTag({ member }).add(cmpEq(stackInt.max, i + 1, 1))
-    ),
+    // Not Self Buff
+    members.flatMap((dst) => {
+      const entry = self.with('src', dst)
+      return members
+        .map((src) => entry.reread(notSelfBuff.withTag({ dst, src })))
+        .filter(({ value }) => value.tag!['dst'] != value.tag!['src'])
+    }),
+    // Non-stacking
+    members.slice(0, 4).flatMap((_, i) => {
+      const { stackIn, stackTmp } = reader.withAll('qt', [])
+      const src = `${i}` as '0' | '1' | '2' | '3'
+      // Make sure not to use `sheet:agg` here to match `stackOut` on the `reader.addOnce` side
+      const self = reader.withTag({ src, et: 'self' })
+      // Use `i + 1` for priority so that `0` means no buff
+      return [
+        self.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
+        self
+          .with('qt', 'stackOut')
+          .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
+      ]
+    }),
+
     // Total Team Stat
     //
     // CAUTION:
@@ -149,8 +157,8 @@ export function teamData(
     // use different accumulators from the inner query. Such is the case for maximum team
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
-    members.map((member) =>
-      teamEntry.add(reader.withTag({ member, et: 'self' }).sum)
+    members.map((src) =>
+      teamEntry.add(reader.withTag({ src, et: 'self' }).sum)
     ),
   ].flat()
 }

@@ -1,0 +1,7 @@
+{
+  "name": "Flames Afar",
+  "passive": {
+    "name": "Deflagration",
+    "description": "When the wearer's cumulative HP loss during one attack exceeds {{1}}% of their Max HP, or if the amount of their own HP consumed at one time is greater than {{1}}% of their Max HP, immediately heals the wearer for {{3}}% of their Max HP, and at the same time, increases the DMG they deal by <orangeStrong>{{2}}%</orangeStrong> for {{4}} turn(s). This effect can only be triggered once every {{5}} turn(s)."
+  }
+}

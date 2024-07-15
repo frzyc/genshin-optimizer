@@ -1,0 +1,66 @@
+{
+  "name": "Asta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Spectrum Beam",
+        "fullDesc": "สร้าง DMG ไฟ <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Asta แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "สร้าง DMG ไฟเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Meteor Storm",
+        "fullDesc": "สร้าง DMG ไฟ <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Asta แก่ศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG เพิ่มเติม 4 ครั้ง โดยแต่ละครั้งจะสุ่มสร้าง DMG ไฟ <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Asta แก่ศัตรูหนึ่งตัว",
+        "shortDesc": "สร้าง DMG ไฟเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว และจะยิงทั้งหมด 5 ครั้ง"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Astral Blessing",
+        "fullDesc": "เพิ่มความเร็วของฝ่ายตัวเองทั้งหมด <orangeStrong>{{1}}</orangeStrong> หน่วย เป็นเวลา {{2}} เทิร์น",
+        "shortDesc": "<orangeStrong>เพิ่มความเร็ว</orangeStrong>ของฝ่ายเราทั้งหมด"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Miracle Flash",
+        "fullDesc": "เมื่อโจมตีศัตรูทันทีและเข้าสู่การต่อสู้ จะสร้าง DMG ไฟ {{1}}% ของ ATK ของ Asta แก่ฝ่ายศัตรูทั้งหมด",
+        "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสร้าง DMG เล็กน้อยแก่ฝ่ายศัตรูทั้งหมด"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Star Sings Sans Verses or Vocals",
+      "desc": "เมื่อใช้สกิลต่อสู้ จะสุ่มสร้าง DMG เพิ่มเติม 1 ครั้งแก่ฝ่ายศัตรูหนึ่งตัว"
+    },
+    "2": {
+      "name": "Moon Speaks in Wax and Wane",
+      "desc": "เมื่อปล่อยท่าไม้ตาย ในเทิร์นต่อไป Asta จะไม่ลดจำนวนชั้นของการชาร์จ"
+    },
+    "3": {
+      "name": "Meteor Showers for Wish and Want",
+      "desc": "เลเวลสกิลต่อสู้ +2 สูงสุดไม่เกิน Lv.15 และเลเวลพรสวรรค์ +2 สูงสุดไม่เกิน Lv.15"
+    },
+    "4": {
+      "name": "Aurora Basks in Beauty and Bliss",
+      "desc": "เมื่อจำนวนชั้นการชาร์จของพรสวรรค์มากกว่าหรือเท่ากับ {{1}} ชั้น อัตราการฟื้นฟูพลังงานของ Asta จะเพิ่มขึ้น {{2}}%"
+    },
+    "5": {
+      "name": "Nebula Secludes in Runes and Riddles",
+      "desc": "เลเวลท่าไม้ตาย +2 สูงสุดไม่เกิน Lv.15 และเลเวลการโจมตีปกติ +1 สูงสุดไม่เกิน Lv.10"
+    },
+    "6": {
+      "name": "Galaxy Dreams in Calm and Comfort",
+      "desc": "ลดจำนวนชั้นการชาร์จของพรสวรรค์ ในแต่ละเทิร์นลง {{1}} ชั้น"
+    }
+  }
+}

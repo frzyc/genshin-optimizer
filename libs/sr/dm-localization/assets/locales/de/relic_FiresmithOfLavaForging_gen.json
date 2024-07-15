@@ -1,0 +1,7 @@
+{
+  "setName": "Feuerschmied der Lavaglut",
+  "setEffects": {
+    "2": "Erhöht Feuer-SCH um {{1}}%.",
+    "4": "Erhöht den verursachten SCH des Trägers durch Fertigkeit um {{1}}%. Erhöht nach dem Einsatz des Ultimates den verursachten Feuer-SCH des Trägers durch den nächsten Angriff um {{2}}%."
+  }
+}

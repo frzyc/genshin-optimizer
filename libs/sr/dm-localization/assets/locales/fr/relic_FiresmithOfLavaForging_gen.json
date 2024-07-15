@@ -1,0 +1,7 @@
+{
+  "setName": "Lave de Forgefeu",
+  "setEffects": {
+    "2": "Augmente les DGT de feu de {{1}}%.",
+    "4": "Augmente les DGT de la compétence du porteur de {{1}}%. D'autre part, augmente les DGT de feu du porteur de {{2}}% lors de l'attaque qui suit le lancement de l'ultime."
+  }
+}

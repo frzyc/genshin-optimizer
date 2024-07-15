@@ -1,6 +1,6 @@
 // This is a generated index file.
-import rope from './SpriteOutput/RelicFigures/IconRelic_307_5.png.png'
-import sphere from './SpriteOutput/RelicFigures/IconRelic_307_6.png.png'
+import rope from './rope.png'
+import sphere from './sphere.png'
 
 const data = {
   rope,

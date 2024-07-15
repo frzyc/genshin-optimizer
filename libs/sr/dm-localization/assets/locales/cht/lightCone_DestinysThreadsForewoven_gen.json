@@ -1,0 +1,7 @@
+{
+  "name": "織造命運之線",
+  "passive": {
+    "name": "洞見",
+    "description": "使裝備者的效果抗性提高<orangeStrong>{{1}}%</orangeStrong>。裝備者每有{{2}}點防禦力，便使裝備者造成的傷害提高<orangeStrong>{{3}}%</orangeStrong>，最多使造成的傷害提高<orangeStrong>{{4}}%</orangeStrong>。"
+  }
+}

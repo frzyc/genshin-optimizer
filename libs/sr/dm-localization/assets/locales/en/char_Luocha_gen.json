@@ -1,0 +1,66 @@
+{
+  "name": "Luocha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Thorns of the Abyss",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Luocha's ATK to a single enemy.",
+        "shortDesc": "Deals minor Imaginary DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Prayer of Abyss Flower",
+        "fullDesc": "After using his Skill, Luocha immediately restores the target ally's HP equal to <orangeStrong>{{1}}%</orangeStrong> of Luocha's ATK plus <orangeStrong>{{2}}</orangeStrong>. Meanwhile, Luocha gains 1 stack of Abyss Flower.\\nWhen any ally's HP percentage drops to {{3}}% or lower, an effect equivalent to Luocha's Skill will immediately be triggered and applied to this ally for one time (without consuming Skill Points). This effect can be triggered again after {{4}} turn(s).",
+        "shortDesc": "<orangeStrong>Restores</orangeStrong> a single ally's HP and gains 1 stack of Abyss Flower."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Death Wish",
+        "fullDesc": "Removes {{2}} <u>buff(s)</u> from all enemies and deals all enemies Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Luocha's ATK. At the same time, Luocha gains 1 stack of Abyss Flower.",
+        "shortDesc": "<orangeStrong>Removes</orangeStrong> 1 <orangeStrong><u>buff</u></orangeStrong> from all enemies, deals Imaginary DMG to all enemies, and gains 1 stack of Abyss Flower."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Mercy of a Fool",
+        "fullDesc": "After the Technique is used, the Talent will be immediately triggered at the start of the next battle.",
+        "shortDesc": "After the Technique is used, immediately trigger the effect of the Talent at the start of the next battle."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ablution of the Quick",
+      "desc": "While the Field is active, ATK of all allies increases by {{1}}%."
+    },
+    "2": {
+      "name": "Bestowal From the Pure",
+      "desc": "When his Skill is triggered, if the target ally's HP is lower than 50%, Luocha's Outgoing Healing increases by {{1}}%. If the target ally's HP is at 50% or higher, the ally receives a Shield that can absorb DMG equal to {{2}}% of Luocha's ATK plus {{3}}, lasting for {{4}} turns."
+    },
+    "3": {
+      "name": "Surveyal by the Fool",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Heavy Lies the Crown",
+      "desc": "When Luocha's Field is active, enemies become Weakened and deal {{1}}% less DMG."
+    },
+    "5": {
+      "name": "Cicatrix 'Neath the Pain",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Reunion With the Dust",
+      "desc": "When Ultimate is used, there is a {{1}}% fixed chance to reduce all enemies' All-Type RES by {{2}}% for {{3}} turn(s)."
+    }
+  }
+}

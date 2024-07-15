@@ -5,6 +5,7 @@ import Albedo from './portrait_albedo.png'
 import Alhaitham from './portrait_alhaitham.png'
 import Aloy from './portrait_aloy.png'
 import Amber from './portrait_amber.png'
+import Arlecchino from './portrait_arlecchino.png'
 import KamisatoAyaka from './portrait_ayaka.png'
 import KamisatoAyato from './portrait_ayato.png'
 import Baizhu from './portrait_baizhu.png'
@@ -86,6 +87,7 @@ const data = {
   Alhaitham,
   Aloy,
   Amber,
+  Arlecchino,
   AratakiItto,
   Baizhu,
   Barbara,

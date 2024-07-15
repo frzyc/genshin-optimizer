@@ -1,16 +1,16 @@
 import { prod, sum } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { enemy, percent, self, selfBuff } from '../util'
+import { enemy, percent, self } from '../util'
 
 const data: TagMapNodeEntries = [
   // Formula calculations
-  selfBuff.formula.dmg.add(
+  self.formula.dmg.add(
     prod(self.dmg.out, self.dmg.critMulti, enemy.common.inDmg)
   ),
-  selfBuff.formula.shield.add(
+  self.formula.shield.add(
     prod(self.formula.base, sum(percent(1), self.premod.shield_))
   ),
-  selfBuff.formula.heal.add(
+  self.formula.heal.add(
     prod(self.formula.base, sum(percent(1), self.premod.heal_))
   ),
 ]

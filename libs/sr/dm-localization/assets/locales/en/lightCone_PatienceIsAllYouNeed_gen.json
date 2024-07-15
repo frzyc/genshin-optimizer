@@ -1,0 +1,7 @@
+{
+  "name": "Patience Is All You Need",
+  "passive": {
+    "name": "Spider Web",
+    "description": "Increases DMG dealt by the wearer by <orangeStrong>{{2}}%</orangeStrong>. After every attack launched by wearer, their SPD increases by <orangeStrong>{{3}}%</orangeStrong>, stacking up to {{4}} times.\\nIf the wearer hits an enemy target that is not afflicted by Erode, there is a 100% base chance to inflict Erode to the target. Enemies afflicted with Erode are also considered to be Shocked and will receive Lightning DoT at the start of each turn equal to <orangeStrong>{{1}}%</orangeStrong> of the wearer's ATK, lasting for {{5}} turn(s)."
+  }
+}

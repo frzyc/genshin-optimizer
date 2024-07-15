@@ -17,7 +17,9 @@ const client = new Client({
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMembers,
     GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildMessageReactions,
     GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.DirectMessageReactions,
     GatewayIntentBits.MessageContent,
   ],
   partials: [Partials.Message, Partials.Channel, Partials.Reaction],
@@ -29,6 +31,10 @@ client.on(Events.ClientReady, (...args) => events.ready(...args))
 //interactions
 client.on(Events.InteractionCreate, (...args) =>
   events.interactionCreate(...args)
+)
+//reactions
+client.on(Events.MessageReactionAdd, (...args) =>
+  events.messageReactionAdd(...args)
 )
 
 //collect commands

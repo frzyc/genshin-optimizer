@@ -1,0 +1,66 @@
+{
+  "name": "Sampo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lâminas Ofuscantes",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sampo a um único inimigo.",
+        "shortDesc": "Causa Dano de Vento leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Amor Ricochete",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Sampo a um único inimigo, e causa Dano mais {{1}} vez(es) extra(s), com cada vez causando Dano de Vento igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Sampo a um inimigo aleatório.",
+        "shortDesc": "Causa Dano de Vento leve a inimigos-alvo únicos e é Rebatido 5 vezes."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Presente Surpresa",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sampo a todos os inimigos, com {{4}}% de <u>chance-base</u> de aumentar o Dano Contínuo recebido pelo alvo em <orangeStrong>{{2}}%</orangeStrong> por {{3}} rodada(s).",
+        "shortDesc": "Causa Dano de Vento a todos os inimigos, com altas chances de causar <orangeStrong>Dano Contínuo aumentado</orangeStrong> a eles."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Brilho Ofuscante",
+        "fullDesc": "Após usar a Técnica de Sampo, inflige Cegueira em inimigos em uma área definida por {{1}} segundos. Inimigos com Cegueira não conseguem detectar sua equipe.\\nAo iniciar o combate contra um inimigo com Cegueira, há {{2}}% de <u>chance fixa</u> de atrasar as ações de todos os inimigos em {{3}}%.",
+        "shortDesc": "Inimigos em uma determinada área recebem Cegueira. Ao iniciar uma batalha contra um inimigo com Cegueira, existe uma alta chance de <u>atrasar</u> todas as ações inimigas."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Amor Crescente",
+      "desc": "Ao usar a Perícia, causa Dano {{1}} vez(es) a mais a um inimigo aleatório."
+    },
+    "2": {
+      "name": "Entusiasmo Infeccioso",
+      "desc": "Derrotar um inimigo com Cisalhamento de Vento concede {{1}}% de chance-base de infligir {{2}} acúmulo(s) de Cisalhamento de Vento a todos os inimigos, equivalente ao Cisalhamento de Vento do Talento."
+    },
+    "3": {
+      "name": "Riquinho!",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Quanto Maior o Amor, Maior o Ódio",
+      "desc": "Quando a Perícia atinge um inimigo com {{1}} ou mais acúmulo(s) de Cisalhamento de Vento, o inimigo imediatamente sofre {{2}}% do Dano atual do Cisalhamento de Vento."
+    },
+    "5": {
+      "name": "Cheeeeio de Grana!",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Aumento de Gasto",
+      "desc": "O multiplicador de Dano do Talento para Cisalhamento de Vento aumenta em {{1}}%."
+    }
+  }
+}

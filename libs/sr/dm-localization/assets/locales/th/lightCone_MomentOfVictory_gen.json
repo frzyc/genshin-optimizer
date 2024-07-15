@@ -1,0 +1,7 @@
+{
+  "name": "Moment of Victory",
+  "passive": {
+    "name": "Verdict",
+    "description": "ทำให้ DEF ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> และอัตราสร้างสถานะเพิ่มขึ้น <orangeStrong>{{4}}%</orangeStrong> พร้อมทั้งเพิ่มโอกาสที่ตัวเองจะถูกโจมตี หลังจากที่ผู้สวมใส่ถูกโจมตีแล้ว DEF จะเพิ่มขึ้นอีก <orangeStrong>{{3}}%</orangeStrong> จนกว่าเทิร์นของตัวเองจะสิ้นสุดลง"
+  }
+}

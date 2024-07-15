@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#くぼつ}倶歿{RUBY_E#}",
+  "passive": {
+    "name": "レギオン",
+    "description": "装備キャラの残りHPが{{1}}%未満の場合、会心率+<orangeStrong>{{2}}%</orangeStrong>。"
+  }
+}

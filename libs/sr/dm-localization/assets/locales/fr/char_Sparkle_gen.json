@@ -1,0 +1,66 @@
+{
+  "name": "Sparkle",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Mélodrame",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Sparkle à une cible unique.",
+        "shortDesc": "Inflige des DGT quantiques mineurs à une cible unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Anguille sous roche",
+        "fullDesc": "Augmente les DGT critiques d'une cible alliée unique à hauteur de <orangeStrong>{{1}}%</orangeStrong> des DGT critiques de Sparkle + <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tour et avance de {{4}}% l'action de cet allié.\\nLorsque Sparkle utilise cette capacité sur elle-même, son action n'est pas avancée.",
+        "shortDesc": "Augmente les <orangeStrong>DGT critiques</orangeStrong> d'un allié et avance son action."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Personnage aux mille visages",
+        "fullDesc": "Régénère {{2}} points de compétence pour l'équipe et accorde Énigme à tous les alliés. Chaque cumul de l'effet d'augmentation de DGT accordé par le talent de Sparkle augmente de <orangeStrong>{{3}}%</orangeStrong> supplémentaires pour les alliés qui bénéficient d'Énigme. Dure {{4}} tours.",
+        "shortDesc": "Régénère des <orangeStrong>points de compétence</orangeStrong> pour l'équipe et permet d'accroître l'augmentation de DGT accordée par son talent."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Histoire bancale",
+        "fullDesc": "L'utilisation de cette technique accorde Tromperie à tous les alliés pendant {{2}} secondes. Les personnages qui bénéficient de l'effet Tromperie ne sont pas détectés par les ennemis, et le fait d'engager le combat dans cet état permet de récupérer {{1}} points de compétence pour l'équipe.",
+        "shortDesc": "L'utilisation de cette technique accorde Tromperie à tous les alliés. Les personnages qui bénéficient de l'effet Tromperie ne sont pas détectés par les ennemis, et le fait d'engager le combat dans cet état permet de récupérer des <orangeStrong>points de compétence</orangeStrong> pour les alliés."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Suspens suspicieux",
+      "desc": "L'effet Énigme accordé par l'ultime dure 1 tour supplémentaire. Tous les alliés qui bénéficient de cet effet voient leur ATQ augmenter de {{1}}%."
+    },
+    "2": {
+      "name": "Fiction sans fondement",
+      "desc": "Chaque cumul de l'effet du talent permet aux alliés d'ignorer {{1}}% de la DÉF de la cible lorsqu'ils infligent des DGT."
+    },
+    "3": {
+      "name": "Rêve irréalisable",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "La vie est un jeu",
+      "desc": "L'ultime régénère 1 point de compétence supplémentaire. Le talent augmente encore de 1 le nombre de points de compétence max."
+    },
+    "5": {
+      "name": "Vérité aux deux visages",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Choix multiples",
+      "desc": "L'effet d'augmentation des DGT critiques accordé par la compétence de Sparkle augmente d'un montant équivalent à {{1}}% des DGT critiques de Sparkle. Lorsque Sparkle utilise sa compétence, l'effet d'augmentation des DGT critiques de sa compétence s'applique à tous les alliés qui bénéficient de l'effet Énigme. Lorsque Sparkle utilise son ultime, tout allié qui bénéficie de l'effet d'augmentation de DGT de sa compétence propage cet effet aux alliés avec Énigme."
+    }
+  }
+}

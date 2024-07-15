@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#ろんけん}論剣{RUBY_E#}",
+  "passive": {
+    "name": "それぞれの{RUBY_B#こた}答{RUBY_E#}え",
+    "description": "装備キャラの攻撃が連続で同じ敵に命中するたびに、与ダメージ+<orangeStrong>{{1}}%</orangeStrong>、この効果は最大で{{2}}層累積できる。ターゲットが変わると、バフはリセットされる。"
+  }
+}

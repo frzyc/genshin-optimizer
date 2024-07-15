@@ -1,0 +1,7 @@
+{
+  "name": "记一位星神的陨落",
+  "passive": {
+    "name": "扑火",
+    "description": "当装备者施放攻击时，使装备者本场战斗中的攻击力提高<orangeStrong>{{1}}%</orangeStrong>，该效果最多叠加{{2}}层。当装备者击破敌方目标弱点后，造成的伤害提高<orangeStrong>{{3}}%</orangeStrong>，持续{{4}}回合。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Remède à la solitude",
+  "passive": {
+    "name": "Élixir de chaos",
+    "description": "Augmente l'effet de Rupture du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur utilise son ultime, il inflige <orangeStrong>{{2}}%</orangeStrong> de dégâts sur la durée supplémentaires pendant {{3}} tours. Lorsqu'une cible ennemie victime des dégâts sur la durée infligés par le porteur est vaincue, ce dernier récupère <orangeStrong>{{4}}</orangeStrong> points d'énergie."
+  }
+}

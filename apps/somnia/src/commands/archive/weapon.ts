@@ -1,14 +1,16 @@
 import { range } from '@genshin-optimizer/common/util'
+import { AssetData } from '@genshin-optimizer/gi/assets-data'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import type { Interaction, MessageActionRowComponentBuilder } from 'discord.js'
+import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
   ActionRowBuilder,
   EmbedBuilder,
   StringSelectMenuBuilder,
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
-import { clean, colors } from '../archive'
+import { rarityColors } from '../../assets/assets'
+import { createAmbrUrl } from '../../lib/util'
+import { clean } from '../archive'
 
 const refinedisplay: Record<string, string> = {
   0: '1',
@@ -34,22 +36,20 @@ function getDropdown(id: string, refine: string) {
         .setCustomId(`archive weapon ${id} ${refine}`)
         .setPlaceholder(`Refinement ${refine}`)
         .addOptions(options)
-    ) as ActionRowBuilder<MessageActionRowComponentBuilder>,
+    ),
   ]
 }
 
-export function weaponarchive(
-  interaction: Interaction,
+export function weaponArchive(
   id: WeaponKey,
   name: string,
   data: any,
   args: string
 ) {
   const msg: any = {}
-  name = data.name
   let text = Object.values(data.description).join('\n')
   //weapon rarity color
-  const rarity = allStats.weapon.data[id].rarity
+  const rarity = getWeaponStat(id).rarity
   //default r1 5stars
   let refine = '0'
   //no refinements or dropdown for 1/2 star weapons
@@ -57,8 +57,7 @@ export function weaponarchive(
     //r5 for 3/4 star weapons
     if (rarity < 5) refine = '4'
     //user input override
-    if (args in refinedisplay) refine = args
-    else throw 'invalid refine'
+    if (args) refine = args
     //name and passive
     name += ` (R${refinedisplay[refine]})`
     text +=
@@ -71,11 +70,12 @@ export function weaponarchive(
   msg['embeds'] = [
     new EmbedBuilder()
       .setTitle(name)
-      .setColor(colors.rarity[rarity - 1])
+      .setColor(rarityColors[rarity - 1])
       .setFooter({
         text: 'Weapon Archive',
       })
-      .setDescription(clean(text)),
+      .setDescription(clean(text))
+      .setThumbnail(createAmbrUrl(AssetData.weapons[id].icon)),
   ]
   return msg
 }

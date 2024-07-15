@@ -1,1 +1,3 @@
-export interface GenAssetsExecutorSchema {} // eslint-disable-line
+export interface GenAssetsExecutorSchema {
+  fetchAssets: 'none' | 'local' | 'yatta'
+} // eslint-disable-line

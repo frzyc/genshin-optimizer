@@ -1,0 +1,7 @@
+{
+  "name": "Fine Fruit",
+  "passive": {
+    "name": "Savor",
+    "description": "At the start of the battle, immediately regenerates <orangeStrong>{{1}}</orangeStrong> Energy for all allies."
+  }
+}

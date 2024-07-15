@@ -1,0 +1,66 @@
+{
+  "name": "Clara",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Quiero ayudar",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Clara como Daño Físico a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Svarog te vigila",
+        "fullDesc": "Clara inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Físico a todos los enemigos, y además inflige un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño Físico extra a los objetivos que tengan la Marca de represalia de Svarog.\\nTras usar la habilidad básica, se eliminan todas las Marcas de represalia.",
+        "shortDesc": "Inflige Daño Físico a todos los enemigos y además <orangeStrong>inflige Daño Físico extra</orangeStrong> a los que tengan Marca de represalia."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Es una promesa, no una orden",
+        "fullDesc": "Tras usar su habilidad definitiva, el daño que recibe Clara se reduce en un <orangeStrong>{{4}}%</orangeStrong> adicional y la probabilidad de ser atacada aumenta enormemente durante {{3}} turnos.\\nAdemás, el efecto de <u>contraataque</u> de Svarog se potencia. Cuando un aliado recibe un ataque, Svarog lanza un <u>contraataque</u> inmediatamente, su multiplicador de daño aumenta en un <orangeStrong>{{2}}%</orangeStrong> e inflige un 50% del daño que reciba el objetivo principal a los enemigos adyacentes. El efecto de potenciación se puede activar {{5}} veces.",
+        "shortDesc": "<orangeStrong>Reduce el daño recibido</orangeStrong>, aumenta la probabilidad ser atacada y potencia el efecto de <u>contraataque</u>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Un pequeño precio por la victoria",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. La probabilidad de que Clara reciba un ataque enemigo aumenta durante {{1}} turnos.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Aumenta la probabilidad de recibir ataques enemigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Alta figura",
+      "desc": "Al usar la habilidad básica, las Marcas de represalia de los enemigos no se eliminarán."
+    },
+    "2": {
+      "name": "Abrazo de oso",
+      "desc": "Tras usar su habilidad definitiva, su ATQ aumenta en un {{1}}% durante {{2}} turnos."
+    },
+    "3": {
+      "name": "Armadura de frío acero",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Calidez familiar",
+      "desc": "Tras ser atacada, Clara recibe un {{1}}% menos de daño. Este efecto dura hasta que comience su siguiente turno."
+    },
+    "5": {
+      "name": "Una pequeña promesa",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Compañía duradera",
+      "desc": "Cuando otro aliado recibe un ataque, Svarog tiene una probabilidad fija del {{1}}% de activar un contraataque contra el atacante y marcarlo con Marca de represalia. Al usar la habilidad definitiva, la cantidad de contraataques potenciados aumenta en {{2}}."
+    }
+  }
+}

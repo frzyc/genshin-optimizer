@@ -1,0 +1,7 @@
+{
+  "name": "Hidden Shadow",
+  "passive": {
+    "name": "Mechanism",
+    "description": "Setelah melancarkan Skill, Basic Attack berikutnya akan mengakibatkan DMG tambahan sebesar <orangeStrong>{{1}}%</orangeStrong> ATK pengguna pada target musuh."
+  }
+}

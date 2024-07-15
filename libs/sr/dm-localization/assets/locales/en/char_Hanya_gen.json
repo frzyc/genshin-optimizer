@@ -1,0 +1,66 @@
+{
+  "name": "Hanya",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Oracle Brush",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hanya's ATK to a single enemy.",
+        "shortDesc": "Deals minor Physical DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Samsara, Locked",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hanya's ATK to a single target enemy, then applies Burden to them.\\nFor every 2 Basic ATKs, Skills, or Ultimates allies use on an enemy with Burden, allies will immediately recover 1 Skill Point. Burden is only active on the latest target it is applied to, and will be dispelled automatically after the Skill Point recovery effect has been triggered {{2}} times.",
+        "shortDesc": "Deals Physical DMG to a single enemy and applies Burden to them. For every 2 Basic ATKs, Skills, or Ultimates allies use on an enemy with Burden, allies <orangeStrong>recover 1 Skill Point</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ten-Lords' Decree, All Shall Obey",
+        "fullDesc": "Increases the SPD of a target ally by <orangeStrong>{{3}}%</orangeStrong> of Hanya's SPD and increases the same target ally's ATK by <orangeStrong>{{1}}%</orangeStrong>, lasting for {{2}} turn(s).",
+        "shortDesc": "Increases an ally's <orangeStrong>SPD and ATK</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Netherworld Judgment",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, applies Burden equivalent to that applied by the Skill to a random enemy.",
+        "shortDesc": "Attacks the enemy. After entering battle, applies Burden equivalent to that applied by the Skill to a random enemy."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "One Heart",
+      "desc": "When an ally with Hanya's Ultimate's effect defeats an enemy, Hanya's action is Advanced Forward by {{1}}%. This effect can only be triggered {{2}} time(s) per turn."
+    },
+    "2": {
+      "name": "Two Views",
+      "desc": "After using the Skill, this character's SPD increases by {{1}}% for {{2}} turn(s)."
+    },
+    "3": {
+      "name": "Three Temptations",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Four Truths",
+      "desc": "The Ultimate's duration is additionally extended for {{1}} turn(s)."
+    },
+    "5": {
+      "name": "Five Skandhas",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Six Reverences",
+      "desc": "Increase the DMG Boost effect of the Talent by an additional {{1}}%."
+    }
+  }
+}

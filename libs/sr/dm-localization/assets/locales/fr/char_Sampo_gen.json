@@ -1,0 +1,66 @@
+{
+  "name": "Sampo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lames éblouissantes",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Sampo à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Amour rebondissant",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Sampo à un ennemi unique et inflige des DGT {{1}} fois supplémentaires, infligeant à chaque fois des DGT de vent équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Sampo à un ennemi aléatoire.",
+        "shortDesc": "Inflige des DGT de vent mineurs à des cibles ennemies uniques pour un total de 5 rebonds."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Cadeau surprise",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Sampo à tous les ennemis, avec {{4}}% de <u>chances de base</u> d'augmenter les dégâts sur la durée subis par les cibles de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tours.",
+        "shortDesc": "Inflige des DGT de vent à tous les ennemis, avec de fortes chances de leur infliger des <orangeStrong>dégâts sur la durée accrus</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Éblouissement",
+        "fullDesc": "Après utilisation de la technique de Sampo, les ennemis situés dans une zone définie subissent Aveuglement pendant {{1}} secondes. Les ennemis aveuglés ne peuvent pas détecter votre équipe.\\nLorsqu'un combat est lancé contre un ennemi aveuglé, il y a {{2}}% de <u>chances fixes</u> de retarder l'action de tous les ennemis de {{3}}%.",
+        "shortDesc": "Les ennemis dans une zone définie sont Aveuglés. En engageant le combat contre des ennemis Aveuglés, il y a de fortes chances de <u>retarder</u> leurs actions."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Amour grandissant",
+      "desc": "Lors de l'utilisation de la compétence, inflige des DGT {{1}} fois supplémentaire à un ennemi aléatoire."
+    },
+    "2": {
+      "name": "Enthousiasme contagieux",
+      "desc": "Vaincre un ennemi affecté par Faille du vent a {{1}}% de chances de base d'infliger à tous les ennemis {{2}} cumul du même effet Faille du vent que celui provoqué par le talent."
+    },
+    "3": {
+      "name": "Joli cachet !",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Amour, gloire et... haine",
+      "desc": "Lorsque la compétence touche un ennemi qui a au moins {{1}} cumuls de Faille du vent, l'ennemi subit immédiatement {{2}}% des DGT de la Faille du vent actuelle."
+    },
+    "5": {
+      "name": "TRÈS gros cachet !",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Envol des dépenses",
+      "desc": "Le multiplicateur des DGT infligés par l'effet Faille du vent du talent augmente de {{1}}%."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Ça n'arrête pas de danser !",
+  "passive": {
+    "name": "Ça ne s'arrête jamais !",
+    "description": "L'action de tous les alliés est avancée de <orangeStrong>{{1}}%</orangeStrong> lorsque le porteur utilise son ultime."
+  }
+}

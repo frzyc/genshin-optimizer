@@ -1,0 +1,66 @@
+{
+  "name": "Himeko",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Sägeblatt-Justierung",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Himekos ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Geschmolzene Explosion",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Himekos ANG zu und fügt den angrenzenden Zielen Feuer-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Himekos ANG zu.",
+        "shortDesc": "Fügt einem Gegner Feuer-SCH zu und fügt den angrenzenden Zielen geringen Feuer-SCH zu."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Himmlisches Leuchtsignal",
+        "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Himekos ANG zu. Für jeden besiegten Gegner erhält Himeko zusätzlich {{2}} Pkt. Energie zurück.",
+        "shortDesc": "Fügt allen Gegnern Feuer-SCH zu und stellt Energie beim Besiegen des Gegners wieder her."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Unvollständige Verbrennung",
+        "fullDesc": "Erzeugt nach dem Einsatz der Technik für {{4}} s eine spezielle Dimension. Nach Kampfeintritt mit Gegnern in dieser Dimension besteht eine <u>Grundchance</u> von {{1}}%, den von den Gegnern erlittenen Feuer-SCH für {{3}} Rd. um {{2}}% zu erhöhen. Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
+        "shortDesc": "Erschafft eine Dimension. Wenn du mit Gegnern in der Dimension kämpfst, besteht eine hohe Chance, dass <orangeStrong>der ihnen zugefügte Feuer-SCH erhöht wird</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Kindheit",
+      "desc": "Erhöht Himekos GES nach Auslösung von „Siegesrausch“ für {{2}} Rd. um {{1}}%."
+    },
+    "2": {
+      "name": "Konvergenz",
+      "desc": "Verursacht {{2}}% mehr SCH bei Gegnern mit LP-Prozentzahl von {{1}}% oder weniger."
+    },
+    "3": {
+      "name": "Selbstsicherheit",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Hingabe",
+      "desc": "Verursacht die Fertigkeit bei Gegnern Schwächebruch, erhält Himeko zusätzlich {{1}} Pkt. Aufladung."
+    },
+    "5": {
+      "name": "Bestrebung",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Trailblaze!",
+      "desc": "Der Ultimate verursacht zweimal zusätzlichen SCH und fügt zufälligen Gegnern jedes Mal Feuer-SCH in Höhe von {{1}}% des ursprünglichen SCH zu."
+    }
+  }
+}

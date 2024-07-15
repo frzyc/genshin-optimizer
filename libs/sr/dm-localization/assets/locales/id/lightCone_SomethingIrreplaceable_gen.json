@@ -1,0 +1,7 @@
+{
+  "name": "Something Irreplaceable",
+  "passive": {
+    "name": "Kinship",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK pengguna. Saat pengguna mengalahkan target musuh atau terkena serangan, HP pengguna akan segera pulih sebesar <orangeStrong>{{2}}%</orangeStrong> ATK-nya. Pada saat yang bersamaan, DMG pengguna akan meningkat <orangeStrong>{{3}}%</orangeStrong> hingga giliran berikutnya berakhir. Efek ini tidak dapat ditumpuk dan hanya bisa dipicu sekali setiap giliran."
+  }
+}

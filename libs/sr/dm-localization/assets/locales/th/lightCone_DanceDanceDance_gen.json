@@ -1,0 +1,7 @@
+{
+  "name": "Dance! Dance! Dance!",
+  "passive": {
+    "name": "Cannot Stop It!",
+    "description": "หลังจากผู้สวมใส่ใช้ท่าไม้ตาย จะเร่งแอ็กชันของฝ่ายตัวเองทั้งหมด <orangeStrong>{{1}}%</orangeStrong>"
+  }
+}

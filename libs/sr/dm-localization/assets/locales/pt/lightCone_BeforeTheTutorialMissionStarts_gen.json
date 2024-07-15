@@ -1,0 +1,7 @@
+{
+  "name": "Antes do Início da Missão do Tutorial",
+  "passive": {
+    "name": "Rápido no Gatilho",
+    "description": "Aumenta a Taxa de Acerto de Efeito do usuário em <orangeStrong>{{1}}%</orangeStrong>. Quando o usuário ataca inimigos com DEF reduzida, regenera <orangeStrong>{{2}}</orangeStrong> de Energia."
+  }
+}

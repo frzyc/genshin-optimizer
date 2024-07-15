@@ -1,0 +1,7 @@
+{
+  "name": "Concert pour deux",
+  "passive": {
+    "name": "Inspiration",
+    "description": "Augmente de <orangeStrong>{{1}}%</orangeStrong> la DÉF du porteur. Les DGT infligés par le porteur augmentent de <orangeStrong>{{2}}%</orangeStrong> pour chaque personnage qui bénéficie d'un bouclier sur le champ de bataille."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Tingyun",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Dislodged",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Tingyun pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Soothing Melody",
+        "fullDesc": "Memberikan \"Benediction\" pada 1 rekan tim dan meningkatkan <orangeStrong>{{2}}%</orangeStrong> ATK-nya. Nilai peningkatan ATK tidak dapat melebihi <orangeStrong>{{4}}%</orangeStrong> ATK Tingyun saat ini.\\nSetelah rekan yang mendapatkan \"Benediction\" melancarkan serangan, rekan tersebut akan mengakibatkan 1 kali Lightning <u>DMG tambahan</u> sebesar <orangeStrong>{{1}}%</orangeStrong> ATK-nya.\\n\"Benediction\" berlangsung selama {{3}} giliran dan hanya efektif pada target skill terbaru Tingyun.",
+        "shortDesc": "<orangeStrong>Meningkatkan ATK</orangeStrong> 1 rekan tim dan memberinya \"Benediction\". Saat rekan berstatus \"Benediction\" melancarkan serangan, akan mengakibatkan <orangeStrong>Lightning <u>DMG tambahan</u></orangeStrong> dalam jumlah kecil."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Amidst the Rejoicing Clouds",
+        "fullDesc": "Memulihkan {{1}} Energy 1 rekan tim yang ditargetkan dan di saat bersamaan meningkatkan <orangeStrong>{{3}}%</orangeStrong> DMG rekan tersebut selama {{2}} giliran.",
+        "shortDesc": "<orangeStrong>Memulihkan Energy</orangeStrong> 1 rekan tim dan <orangeStrong>meningkatkan DMG yang diakibatkan</orangeStrong> rekan tersebut."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Gentle Breeze",
+        "fullDesc": "Setelah menggunakan Technique, Tingyun akan segera memulihkan {{1}} Energy.",
+        "shortDesc": "Akan segera memulihkan Energy dirinya setelah menggunakan Technique."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Windfall of Lucky Springs",
+      "desc": "Setelah rekan yang mendapatkan \"Benediction\" melancarkan Ultimate, SPD rekan tersebut akan meningkat {{1}}% selama 1 giliran."
+    },
+    "2": {
+      "name": "Gainfully Gives, Givingly Gains",
+      "desc": "Memulihkan {{1}} Energy rekan tim yang mendapatkan \"Benediction\" setelah rekan tersebut mengalahkan target musuh. Efek ini hanya dapat dipicu sekali setiap giliran."
+    },
+    "3": {
+      "name": "Halcyon Bequest",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Jovial Versatility",
+      "desc": "Meningkatkan {{1}}% DMG Multiplier dari \"Benediction\"."
+    },
+    "5": {
+      "name": "Sauntering Coquette",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Peace Brings Wealth to All",
+      "desc": "Jumlah Energy yang dipulihkan Ultimate Tingyun pada rekan tim meningkat sebanyak {{1}}."
+    }
+  }
+}

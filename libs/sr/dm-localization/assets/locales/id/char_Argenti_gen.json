@@ -1,0 +1,71 @@
+{
+  "name": "Argenti",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Fleeting Fragrance",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Argenti pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Justice, Hereby Blooms",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Argenti pada seluruh musuh.",
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada seluruh musuh."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "For In This Garden, Supreme Beauty Bestows",
+        "fullDesc": "Mengonsumsi {{2}} Energy dan mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Argenti pada seluruh musuh.",
+        "shortDesc": "Mengonsumsi <orangeStrong>{{2}}</orangeStrong> Energy dan mengakibatkan Physical DMG pada seluruh musuh."
+      },
+      "1": {
+        "name": "Merit Bestowed in \"My\" Garden",
+        "fullDesc": "Mengonsumsi {{4}} Energy, dan mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Argenti pada seluruh musuh, serta mengakibatkan ekstra {{2}} kali DMG, yang setiap serangannya mengakibatkan Physical DMG sebesar <orangeStrong>{{3}}%</orangeStrong> ATK Argenti pada 1 musuh secara acak.",
+        "shortDesc": "Mengonsumsi <orangeStrong>{{4}}</orangeStrong> Energy dan mengakibatkan Physical DMG pada seluruh musuh, serta mengakibatkan ekstra Physical DMG dalam jumlah kecil pada 1 musuh secara acak, total 6 kali Bounce."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Manifesto of Purest Virtue",
+        "fullDesc": "Setelah menggunakan Technique, membuat musuh dalam area tertentu memasuki status Daze selama {{1}} detik. Musuh berstatus Daze tidak akan menyerang rekan tim secara aktif.\\nJika Argenti secara aktif menyerang musuh berstatus Daze, saat memasuki pertempuran, Argenti akan mengakibatkan Physical DMG sebesar {{2}}% ATK-nya pada seluruh musuh dan memulihkan {{3}} Energy-nya.",
+        "shortDesc": "Membuat musuh dalam area tertentu memasuki status Daze. Jika menyerang musuh berstatus Daze, setelah memasuki pertempuran, Argenti akan mengakibatkan Physical DMG dalam jumlah kecil pada seluruh musuh, dan memulihkan Energy-nya."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "A Lacuna in Kingdom of Aesthetics",
+      "desc": "Setiap lapis \"Apotheosis\" akan meningkatkan {{1}}% CRIT DMG."
+    },
+    "2": {
+      "name": "Agate's Humility",
+      "desc": "Saat melancarkan Ultimate, jika jumlah target musuh lebih dari atau sama dengan {{1}}, ATK akan meningkat {{2}}% selama {{3}} giliran."
+    },
+    "3": {
+      "name": "Thorny Road's Glory",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Trumpet's Dedication",
+      "desc": "Saat pertempuran dimulai, memperoleh {{1}} lapis \"Apotheosis\" dan meningkatkan batas tumpukan efek Talent sebanyak {{2}} lapis."
+    },
+    "5": {
+      "name": "Snow, From Somewhere in Cosmos",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "\"Your\" Resplendence",
+      "desc": "Saat melancarkan Ultimate, mengabaikan {{1}}% DEF target musuh."
+    }
+  }
+}

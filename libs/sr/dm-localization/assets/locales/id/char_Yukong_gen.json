@@ -1,0 +1,66 @@
+{
+  "name": "Yukong",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Arrowslinger",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Yukong pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Emboldening Salvo",
+        "fullDesc": "Mendapatkan {{1}} lapis \"Roaring Bowstrings\", maksimal 2 lapis. Saat Yukong memiliki \"Roaring Bowstrings\", ATK dari seluruh rekan tim akan meningkat <orangeStrong>{{2}}%</orangeStrong>. Yukong akan kehilangan 1 lapis \"Roaring Bowstrings\" setiap kali giliran dari rekan tim berakhir.\\nYukong tidak akan kehilangan \"Roaring Bowstrings\" pada giliran dirinya mendapatkan \"Roaring Bowstrings\" dengan cara melancarkan Skill.",
+        "shortDesc": "Memperoleh 2 lapis \"Roaring Bowstrings\". <orangeStrong>Meningkatkan ATK</orangeStrong> seluruh rekan tim saat memiliki \"Roaring Bowstrings\"."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Diving Kestrel",
+        "fullDesc": "Saat melancarkan Ultimate, jika Yukong memiliki \"Roaring Bowstrings\", seluruh rekan tim akan mendapatkan tambahan <orangeStrong>{{2}}%</orangeStrong> CRIT Rate, dan CRIT DMG meningkat <orangeStrong>{{3}}%</orangeStrong>. Di saat yang bersamaan, mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Yukong pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Saat Yukong memiliki \"Roaring Bowstrings\", <orangeStrong>meningkatkan CRIT Rate dan CRIT DMG</orangeStrong> seluruh rekan tim, serta mengakibatkan Imaginary DMG dalam jumlah besar pada 1 musuh."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Chasing the Wind",
+        "fullDesc": "Setelah menggunakan Technique, Yukong akan memasuki status Sprint selama {{1}} detik. Saat berstatus Sprint, Movement SPD Yukong akan meningkat {{2}}%. Yukong juga akan mendapatkan {{3}} lapis \"Roaring Bowstrings\" saat memasuki pertempuran dengan cara menyerang musuh.",
+        "shortDesc": "<orangeStrong>Meningkatkan Movement SPD</orangeStrong> diri sendiri. Setelah menyerang musuh dan memasuki pertempuran, akan memperoleh 2 lapis \"Roaring Bowstrings\"."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Aerial Marshal",
+      "desc": "Saat memasuki pertempuran, meningkatkan {{1}}% SPD seluruh rekan tim selama {{2}} giliran."
+    },
+    "2": {
+      "name": "Skyward Command",
+      "desc": "Saat Energy dari salah satu rekan tim terisi penuh, Yukong akan memulihkan {{1}} Energy tambahan. Efek ini hanya dapat terpicu 1 kali untuk setiap rekan tim. Setelah Yukong melancarkan Ultimate, jumlah perhitungan efek yang terpicu akan di-reset."
+    },
+    "3": {
+      "name": "Torrential Fusillade",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic ATK +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Zephyrean Echoes",
+      "desc": "Saat memiliki \"Roaring Bowstrings\", DMG yang diakibatkan Yukong meningkat {{1}}%."
+    },
+    "5": {
+      "name": "August Deadshot",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Bowstring Thunderclap",
+      "desc": "Saat Yukong melancarkan Ultimate, dia akan langsung mendapatkan {{1}} lapis \"Roaring Bowstrings\" sebelum memulai serangannya."
+    }
+  }
+}

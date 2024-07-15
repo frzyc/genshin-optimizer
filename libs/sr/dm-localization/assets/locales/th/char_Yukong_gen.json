@@ -1,0 +1,66 @@
+{
+  "name": "Yukong",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Arrowslinger",
+        "fullDesc": "สร้าง DMG จินตภาพ <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Yukong แก่ศัตรูเป้าหมายที่กำหนดหนึ่งตัว",
+        "shortDesc": "สร้าง DMG จินตภาพเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Emboldening Salvo",
+        "fullDesc": "ได้รับ \"Roaring Bowstrings\" {{1}} ชั้น โดยสูงสุดไม่เกิน 2 ชั้น เมื่อ Yukong มี \"Roaring Bowstrings\" แล้ว ATK ของฝ่ายเราทั้งหมดจะเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> ทุกครั้งที่เทิร์นของเป้าหมายฝ่ายเราสิ้นสุดลง จะลบ \"Roaring Bowstrings\" ของ Yukong ออก 1 ชั้น\\nโดยในเทิร์นที่ Yukong ใช้สกิลต่อสู้และได้รับ \"Roaring Bowstrings\" จะไม่มีการลบ \"Roaring Bowstrings\" ออก",
+        "shortDesc": "ได้รับ \"Roaring Bowstrings\" 2 ชั้น เมื่อตัวเองมี \"Roaring Bowstrings\" แล้ว <orangeStrong>ATK</orangeStrong> ของฝ่ายเราทั้งหมดจะเพิ่มขึ้น"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Diving Kestrel",
+        "fullDesc": "เมื่อใช้ท่าไม้ตาย หาก Yukong มี \"Roaring Bowstrings\" จะทำให้อัตราคริติคอลของฝ่ายตัวเองทั้งหมด เพิ่มขึ้นอีก <orangeStrong>{{2}}%</orangeStrong> และ DMG คริติคอลเพิ่มขึ้น <orangeStrong>{{3}}%</orangeStrong> พร้อมทั้งสร้าง DMG จินตภาพ <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Yukong แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "เมื่อตัวเองได้รับ \"Roaring Bowstrings\" <orangeStrong>อัตราคริติคอลและ DMG คริติคอล</orangeStrong> ของฝ่ายตัวเองทั้งหมดจะเพิ่มขึ้น และสร้าง DMG จินตภาพอย่างรุนแรงแก่ศัตรูหนึ่งตัว"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Chasing the Wind",
+        "fullDesc": "หลังจากใช้เทคนิคแล้ว จะติดสถานะพุ่งถลาเป็นเวลา {{1}} วินาที ขณะที่ติดสถานะพุ่งถลา ความเร็วในการเคลื่อนที่ของตัวเอง จะเพิ่มขึ้น {{2}}% และเมื่อเข้าสู่การต่อสู้ โดยเป็นฝ่ายโจมตีศัตรูก่อน Yukong จะได้รับ \"Roaring Bowstrings\" {{3}} ชั้น",
+        "shortDesc": "ทำให้<orangeStrong>ความเร็วในการเคลื่อนที่ของตัวเองเพิ่มขึ้น</orangeStrong> หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะได้รับ \"Roaring Bowstrings\" 2 ชั้น"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Aerial Marshal",
+      "desc": "เมื่อเข้าสู่การต่อสู้ ความเร็วของฝ่ายเราทั้งหมดจะเพิ่มขึ้น {{1}}% เป็นเวลา {{2}} เทิร์น"
+    },
+    "2": {
+      "name": "Skyward Command",
+      "desc": "เมื่อค่าพลังงานในปัจจุบัน ของเป้าหมายตัวใดตัวหนึ่งในฝ่ายเรา เท่ากับพลังงานสูงสุดของตัวเอง Yukong จะฟื้นฟูพลังงานเพิ่มเติม {{1}} หน่วย โดยเอฟเฟกต์นี้จะปล่อยได้แค่ 1 ครั้งต่อเป้าหมายแต่ละตัวในฝ่ายเรา และเมื่อ Yukong ใช้ท่าไม้ตายแล้ว จำนวนการปล่อยเอฟเฟกต์ดังกล่าว จะถูกรีเซ็ต"
+    },
+    "3": {
+      "name": "Torrential Fusillade",
+      "desc": "เลเวลสกิลต่อสู้ +2 สูงสุดไม่เกิน Lv.15 และเลเวลการโจมตีปกติ +1 สูงสุดไม่เกิน Lv.10"
+    },
+    "4": {
+      "name": "Zephyrean Echoes",
+      "desc": "เมื่อมี \"Roaring Bowstrings\" อยู่ Yukong จะสร้าง DMG เพิ่มขึ้น {{1}}%"
+    },
+    "5": {
+      "name": "August Deadshot",
+      "desc": "เลเวลท่าไม้ตาย +2 สูงสุดไม่เกิน Lv.15 และเลเวลพรสวรรค์ +2 สูงสุดไม่เกิน Lv.15"
+    },
+    "6": {
+      "name": "Bowstring Thunderclap",
+      "desc": "เมื่อ Yukong ปล่อยท่าไม้ตาย จะได้รับ \"Roaring Bowstrings\" {{1}} ชั้นก่อนทันที"
+    }
+  }
+}

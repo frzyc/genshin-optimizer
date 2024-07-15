@@ -1,0 +1,7 @@
+{
+  "name": "Night of Fright",
+  "passive": {
+    "name": "Deep, Deep Breaths",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Energy Regeneration Rate pengguna. Saat rekan tim melancarkan Ultimate, pengguna akan memulihkan HP rekan tim yang persentase HP-nya saat ini paling rendah sebesar <orangeStrong>{{2}}%</orangeStrong> Max HP rekan tersebut. Saat pengguna memberikan pemulihan untuk rekan tim, ATK dari rekan tim yang dipulihkan akan meningkat <orangeStrong>{{3}}%</orangeStrong>, efek ini dapat ditumpuk hingga {{4}} lapis dan berlangsung selama {{5}} giliran."
+  }
+}

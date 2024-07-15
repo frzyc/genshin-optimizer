@@ -1,0 +1,7 @@
+{
+  "name": "야경 속에서",
+  "passive": {
+    "name": "꽃과 나비",
+    "description": "장착한 캐릭터의 치명타 확률이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터의 전투 중 속도가 100보다 높을 경우, {{2}}pt 초과할 때마다 일반 공격 및 전투 스킬이 가하는 피해가 <orangeStrong>{{3}}%</orangeStrong> 증가하고, 필살기의 치명타 피해가 <orangeStrong>{{4}}%</orangeStrong> 증가한다. 최대 중첩수: {{5}}스택"
+  }
+}

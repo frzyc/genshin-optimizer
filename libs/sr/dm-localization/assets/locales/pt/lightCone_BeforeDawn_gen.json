@@ -1,0 +1,7 @@
+{
+  "name": "Antes do Amanhecer",
+  "passive": {
+    "name": "Longa Noite",
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> o Dano CRIT do usuário. Aumenta em <orangeStrong>{{2}}%</orangeStrong> o Dano da Perícia e da Perícia Suprema do usuário. Após o usuário usar sua Perícia ou Perícia Suprema, ele ganha Somnus Corpus. Ao ativar um Ataque Extra, Somnus Corpus é consumido, e o Dano causado pelo Ataque Extra aumenta em <orangeStrong>{{3}}%</orangeStrong>."
+  }
+}

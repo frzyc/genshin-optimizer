@@ -1,0 +1,7 @@
+{
+  "name": "Roues d'engrenage",
+  "passive": {
+    "name": "Triomphe de la fluidité",
+    "description": "Régénère <orangeStrong>{{1}}</orangeStrong> points d'énergie supplémentaires lorsque le porteur attaque ou qu'il est touché. Cet effet ne peut pas être déclenché plus d'une fois par tour."
+  }
+}

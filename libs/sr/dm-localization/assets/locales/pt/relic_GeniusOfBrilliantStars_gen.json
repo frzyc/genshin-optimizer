@@ -1,0 +1,7 @@
+{
+  "setName": "Gênio das Estrelas Brilhantes",
+  "setEffects": {
+    "2": "Aumenta o Dano Quântico em {{1}}%.",
+    "4": "Quando o usuário causa Dano ao inimigo-alvo, ignora {{1}}% de DEF. Se o inimigo-alvo tiver Fraqueza contra Quântico, o usuário ignora adicionalmente {{2}}% de DEF."
+  }
+}

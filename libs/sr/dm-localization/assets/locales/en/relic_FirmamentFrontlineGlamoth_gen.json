@@ -1,0 +1,6 @@
+{
+  "setName": "Firmament Frontline: Glamoth",
+  "setEffects": {
+    "2": "Increases the wearer's ATK by {{1}}%. When the wearer's SPD is equal to or higher than {{2}}/{{3}}, the wearer deals {{4}}%/{{5}}% more DMG."
+  }
+}

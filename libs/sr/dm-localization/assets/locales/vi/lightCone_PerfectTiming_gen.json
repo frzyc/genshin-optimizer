@@ -1,0 +1,7 @@
+{
+  "name": "Vừa Đúng Lúc",
+  "passive": {
+    "name": "Tầm Nhìn Khúc Xạ",
+    "description": "Kháng Hiệu Ứng của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>, đồng thời tăng lượng trị liệu của người trang bị, trị số tăng tương đương <orangeStrong>{{2}}%</orangeStrong> Kháng Hiệu Ứng, tối đa tăng trị liệu <orangeStrong>{{3}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Concert for Two",
+  "passive": {
+    "name": "Inspire",
+    "description": "ทำให้ DEF ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> ตัวละครทุกๆ หนึ่งตัวที่มีโล่ในการต่อสู้ จะทำให้ผู้สวมใส่สร้าง DMG เพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong>"
+  }
+}

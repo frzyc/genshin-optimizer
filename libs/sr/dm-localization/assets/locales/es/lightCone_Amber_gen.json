@@ -1,0 +1,7 @@
+{
+  "name": "Ámbar",
+  "passive": {
+    "name": "Inmovilidad",
+    "description": "La DEF del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Si su porcentaje de PV es inferior al {{2}}%, su DEF aumenta en un <orangeStrong>{{3}}%</orangeStrong> adicional."
+  }
+}

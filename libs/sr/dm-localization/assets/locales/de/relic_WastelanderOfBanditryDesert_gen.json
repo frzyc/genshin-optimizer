@@ -1,0 +1,7 @@
+{
+  "setName": "Ödländer aus der Räuberwüste",
+  "setEffects": {
+    "2": "Erhöht imaginären SCH um {{1}}%.",
+    "4": "Wenn der Träger Gegnern mit Debuff SCH zufügt, wird KRIT-Rate um {{1}}% erhöht. Wenn der Träger Gegnern im Status Gefangenschaft SCH zufügt, wird KRIT-SCH um {{2}}% erhöht."
+  }
+}

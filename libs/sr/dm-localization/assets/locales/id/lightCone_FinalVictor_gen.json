@@ -1,0 +1,7 @@
+{
+  "name": "Final Victor",
+  "passive": {
+    "name": "Wager",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK pengguna. Saat setelah pengguna mengakibatkan CRIT HIT pada target musuh, akan memperoleh 1 lapis \"Good Fortune\", maksimal dapat ditumpuk hingga {{3}} lapis. Setiap lapis \"Good Fortune\" akan meningkatkan <orangeStrong>{{2}}%</orangeStrong> CRIT DMG pengguna. \"Good Fortune\" akan dihapus saat giliran pengguna berakhir."
+  }
+}

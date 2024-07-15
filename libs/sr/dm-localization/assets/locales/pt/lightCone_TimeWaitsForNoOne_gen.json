@@ -1,0 +1,7 @@
+{
+  "name": "O Tempo Não Espera por Ninguém",
+  "passive": {
+    "name": "Manhã, Tarde, Crepúsculo e Noite",
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> os PV máximos e em <orangeStrong>{{2}}%</orangeStrong> a Cura Realizada do usuário. Quando o usuário cura seus aliados, ele registra a quantidade de Cura Realizada. Quando qualquer aliado atacar, um inimigo aleatório atacado recebe Dano Adicional equivalente a <orangeStrong>{{3}}%</orangeStrong> da Cura Realizada registrada. O tipo deste Dano Adicional é do mesmo Tipo que o do usuário. Este Dano Adicional não é afetado por outras melhorias e pode acontecer apenas 1 vez por rodada."
+  }
+}

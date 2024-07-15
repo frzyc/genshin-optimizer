@@ -1,0 +1,7 @@
+{
+  "name": "Pluie incessante",
+  "passive": {
+    "name": "Mirage de la réalité",
+    "description": "Augmente les chances d'appliquer des effets du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur inflige des DGT à un ennemi qui a {{4}} malus ou plus, les chances de coup critique du porteur augmentent de <orangeStrong>{{5}}%</orangeStrong>. Lorsque le porteur utilise son ATQ normale, sa compétence ou son ultime, il a {{2}}% de chances de base d'implanter Code éthéré à une cible aléatoire touchée par la capacité qui ne subit pas déjà cet effet. Les cibles sous l'effet de Code éthéré subissent <orangeStrong>{{3}}%</orangeStrong> de DGT supplémentaires pendant 1 tour."
+  }
+}

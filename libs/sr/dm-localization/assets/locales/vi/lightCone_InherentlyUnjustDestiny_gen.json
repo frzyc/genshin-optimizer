@@ -1,0 +1,7 @@
+{
+  "name": "Vận Mệnh Chưa Từng Công Bằng",
+  "passive": {
+    "name": "Cược Hết Tất Cả",
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Phòng Thủ của người trang bị, khi người trang bị cung cấp khiên cho phe ta, Sát Thương Bạo Kích của người trang bị sẽ tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp. Khi người trang bị phát động Đòn Đánh Theo Sau tấn công kẻ địch, có <orangeStrong>{{4}}%</orangeStrong> xác suất cơ bản khiến sát thương phải chịu của kẻ địch bị tấn công tăng <orangeStrong>{{5}}%</orangeStrong>, duy trì {{6}} hiệp."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Huohuo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Bannière de tempête",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> des PV max de Huohuo à une cible ennemie.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Talisman de protection",
+        "fullDesc": "Dissipe {{5}} <u>malus</u> d'une cible alliée unique et lui rend immédiatement un montant de PV équivalent à <orangeStrong>{{1}}%</orangeStrong> des PV max de Huohuo + <orangeStrong>{{2}}</orangeStrong>. Restaure également aux alliés adjacents à la cible un montant de PV équivalent à <orangeStrong>{{3}}%</orangeStrong> des PV max de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
+        "shortDesc": "Dissipe 1 <u>malus</u> d'un allié et <orangeStrong>restaure des PV</orangeStrong> à cet allié et aux alliés adjacents."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Domination spirituelle de Plumeau",
+        "fullDesc": "Régénère des points d'énergie pour tous les alliés, hormis Huohuo, à hauteur de <orangeStrong>{{1}}%</orangeStrong> de leur énergie max respective. Augmente aussi leur ATQ de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tours.",
+        "shortDesc": "<orangeStrong>Régénère des points d'énergie</orangeStrong> pour tous les alliés, hormis Huohuo, et <orangeStrong>augmente leur ATQ</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Répression du mal",
+        "fullDesc": "Huohuo terrorise les ennemis à proximité et leur inflige l'état Frappé par l'horreur. Les ennemis frappés par l'horreur fuient Huohuo pendant {{4}} secondes. Il y a {{1}}% de <u>chances de base</u> de réduire l'ATQ de chacun d'entre eux de {{2}}% pendant {{3}} tours après être entré en combat avec des ennemis frappés par l'horreur.",
+        "shortDesc": "Plonge les ennemis à proximité dans l'état Frappé par l'horreur. Il y a de fortes chances d'appliquer une <orangeStrong>réduction d'ATQ</orangeStrong> aux cibles ennemies après être entré en combat avec des ennemis frappés par l'horreur."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Abri maudit possédé",
+      "desc": "Augmente de {{2}} tour la durée de l'effet Intervention divine du talent. Lorsque Huohuo bénéficie d'Intervention divine, la VIT de tous les alliés augmente de {{1}}%."
+    },
+    "2": {
+      "name": "Queue de l'esprit scellée",
+      "desc": "Si Huohuo bénéficie d'Intervention divine alors qu'un allié subit un coup fatal, l'allié ne tombe pas à terre, et restaure immédiatement des PV à hauteur de {{1}}% de ses PV max, ce qui réduit la durée d'Intervention divine de 1 tour. Cet effet ne peut être déclenché que {{2}} fois par combat."
+    },
+    "3": {
+      "name": "Malédiction à laquelle les papillons ont cédé",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Cœurs qui s'emballent mais pourtant liés",
+      "desc": "Les soins prodigués à une cible alliée par la compétence ou le talent de Huohuo gagnent en efficacité plus les PV de la cible sont bas. L'augmentation maximale de l'efficacité des soins prodigués par Huohuo est de {{1}}%."
+    },
+    "5": {
+      "name": "Mandatée par décret, maux évincés",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Destins en osmose à jamais",
+      "desc": "Lorsque Huohuo soigne une cible alliée, les DGT de la cible alliée augmentent de {{1}}% pendant {{2}} tours."
+    }
+  }
+}

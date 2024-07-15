@@ -6,34 +6,34 @@ import {
   sum,
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { enemy, percent, self, selfBuff, tagVal } from '../util'
+import { enemy, percent, self, tagVal } from '../util'
 
 const { ele, amp, cata } = self.prep
 
 const data: TagMapNodeEntries = [
   // Formulas
   // If any `prep` nodes are available, put them in `dynTag` or note them here
-  selfBuff.formula.dmg.add(
+  self.formula.dmg.add(
     dynTag(prod(self.dmg.out, self.dmg.critMulti, enemy.common.inDmg), {
       ele,
       amp,
       cata /* `move` is fixed */,
     })
   ),
-  selfBuff.formula.shield.add(
+  self.formula.shield.add(
     prod(self.formula.base, sum(percent(1), self.premod.shield_))
   ),
-  selfBuff.formula.heal.add(
+  self.formula.heal.add(
     prod(self.formula.base, sum(percent(1), self.premod.heal_))
   ),
 
   // Transformative reactions
   // `prep.trans` and `prep.ele` are fixed on `trans`, `transCrit`, and `swirl`
-  selfBuff.formula.trans.add(prod(self.trans.multi, self.reaction.transBase)),
-  selfBuff.formula.transCrit.add(
+  self.formula.trans.add(prod(self.trans.multi, self.reaction.transBase)),
+  self.formula.transCrit.add(
     prod(self.trans.multi, self.reaction.transBase, self.trans.critMulti)
   ),
-  selfBuff.formula.swirl.add(
+  self.formula.swirl.add(
     dynTag(
       prod(
         sum(
@@ -56,16 +56,16 @@ const data: TagMapNodeEntries = [
    * restriction nonetheless applies.
    */
 
-  selfBuff.prep.move.add(tagVal('move')),
-  selfBuff.prep.trans.add(tagVal('trans')),
-  selfBuff.prep.amp.add(
+  self.prep.move.add(tagVal('move')),
+  self.prep.trans.add(tagVal('trans')),
+  self.prep.amp.add(
     lookup(
       self.prep.ele,
       {
-        cryo: cmpEq(enemy.cond.amp, 'melt', 'melt', ''),
-        hydro: cmpEq(enemy.cond.amp, 'vaporize', 'vaporize', ''),
+        cryo: cmpEq(enemy.reaction.amp, 'melt', 'melt', ''),
+        hydro: cmpEq(enemy.reaction.amp, 'vaporize', 'vaporize', ''),
         pyro: lookup(
-          enemy.cond.amp,
+          enemy.reaction.amp,
           { melt: 'melt', vaporize: 'vaporize' },
           ''
         ),
@@ -73,12 +73,12 @@ const data: TagMapNodeEntries = [
       ''
     )
   ),
-  selfBuff.prep.cata.add(
+  self.prep.cata.add(
     lookup(
       self.prep.ele,
       {
-        dendro: cmpEq(enemy.cond.cata, 'spread', 'spread', ''),
-        electro: cmpEq(enemy.cond.cata, 'aggravate', 'aggravate', ''),
+        dendro: cmpEq(enemy.reaction.cata, 'spread', 'spread', ''),
+        electro: cmpEq(enemy.reaction.cata, 'aggravate', 'aggravate', ''),
       },
       ''
     )

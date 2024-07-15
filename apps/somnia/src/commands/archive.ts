@@ -2,7 +2,7 @@ import type {
   ApplicationCommandOptionChoiceData,
   AutocompleteInteraction,
   ChatInputCommandInteraction,
-  Interaction,
+  MessageReaction,
   StringSelectMenuInteraction,
 } from 'discord.js'
 import { SlashCommandBuilder } from 'discord.js'
@@ -17,9 +17,9 @@ import type {
   CharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
-import { artifactarchive } from './archive/artifact'
-import { chararchive } from './archive/char'
-import { weaponarchive } from './archive/weapon'
+import { artifactArchive } from './archive/artifact'
+import { charArchive } from './archive/char'
+import { weaponArchive } from './archive/weapon'
 
 export const slashcommand = new SlashCommandBuilder()
   .setName('archive')
@@ -111,45 +111,6 @@ for (const category in archive['key']) {
   }
 }
 export { archive }
-
-//TODO: replace with lib constants
-export const colors = {
-  rarity: [0x818486, 0x5a977a, 0x5987ad, 0x9470bb, 0xc87c24],
-  element: {
-    none: {
-      img: 'https://api.ambr.top/assets/UI/UI_Icon_Item_Temp.png',
-      color: 0xaaaaaa,
-    },
-    anemo: {
-      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Wind.png',
-      color: 0x61dbbb,
-    },
-    geo: {
-      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Rock.png',
-      color: 0xf8ba4e,
-    },
-    electro: {
-      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Electric.png',
-      color: 0xb25dcd,
-    },
-    hydro: {
-      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Water.png',
-      color: 0x5680ff,
-    },
-    pyro: {
-      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Fire.png',
-      color: 0xff3c32,
-    },
-    cryo: {
-      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Ice.png',
-      color: 0x77a2e6,
-    },
-    dendro: {
-      img: 'https://api.ambr.top/assets/UI/UI_Buff_Element_Grass.png',
-      color: 0xa5c83b,
-    },
-  },
-}
 export const talentlist = {
   p: { name: 'Character Profile', value: 'p' },
   n: { name: 'Normal/Charged/Plunging Attack', value: 'n' },
@@ -209,12 +170,7 @@ export async function autocomplete(interaction: AutocompleteInteraction) {
   interaction.respond(reply)
 }
 
-export function archivemsg(
-  interaction: Interaction,
-  subcommand: string,
-  id: string,
-  arg: string
-) {
+export function archiveMessage(subcommand: string, id: string, arg: string) {
   const name = archive['key'][subcommand][id]
   const data = archive[subcommand][id]
 
@@ -222,15 +178,15 @@ export function archivemsg(
   if (!(id in archive[subcommand])) throw `Invalid ${subcommand} name.`
   //character archive
   if (subcommand === 'char') {
-    return chararchive(interaction, id as CharacterKey, name, data, arg)
+    return charArchive(id as CharacterKey, name, data, arg)
   }
   //weapons archive
   else if (subcommand === 'weapon') {
-    return weaponarchive(interaction, id as WeaponKey, name, data, arg)
+    return weaponArchive(id as WeaponKey, name, data, arg)
   }
   //artifacts archive
   else if (subcommand === 'artifact') {
-    return artifactarchive(interaction, id as ArtifactSetKey, name, data)
+    return artifactArchive(id as ArtifactSetKey, name, data)
   } else throw 'Invalid selection'
 }
 
@@ -245,7 +201,7 @@ export async function run(interaction: ChatInputCommandInteraction) {
     arg = interaction.options.getString('refine', false) ?? ''
 
   try {
-    interaction.reply(archivemsg(interaction, subcommand, id, arg))
+    interaction.reply(archiveMessage(subcommand, id, arg))
   } catch (e) {
     error(interaction, e)
   }
@@ -260,8 +216,52 @@ export async function selectmenu(
   const arg = interaction.values[0]
 
   try {
-    interaction.update(archivemsg(interaction, subcommand, id, arg))
+    interaction.update(archiveMessage(subcommand, id, arg))
   } catch (e) {
     error(interaction, e)
   }
+}
+
+export async function reaction(reaction: MessageReaction, arg: string[]) {
+  if (arg[1] != 'char') return
+  let message = reaction.message
+  if (message.partial) message = await message.fetch()
+  const embed = message.embeds[0].toJSON()
+  if (!embed) return
+
+  const emoji = reaction.emoji.name
+
+  //reactions to change traveler gender
+  if (
+    embed.author?.name.includes('Traveler') &&
+    embed.author.icon_url &&
+    embed.thumbnail
+  ) {
+    let gender = ''
+    //determine gender
+    if (emoji === '🏳️‍⚧️')
+      gender =
+        embed.author.icon_url?.includes('Girl') ||
+        embed.thumbnail?.url.includes('Girl')
+          ? 'M'
+          : 'F'
+    else if (emoji === '♀️') gender = 'F'
+    else if (emoji === '♂️') gender = 'M'
+    //replace gender
+    if (gender === 'F') {
+      embed.author.icon_url = embed.author.icon_url.replace('Boy', 'Girl')
+      embed.thumbnail.url = embed.thumbnail.url.replace('Boy', 'Girl')
+    } else if (gender === 'M') {
+      embed.author.icon_url = embed.author.icon_url.replace('Girl', 'Boy')
+      embed.thumbnail.url = embed.thumbnail.url.replace('Girl', 'Boy')
+    }
+  }
+
+  //edit message
+  try {
+    await message.edit({ embeds: [embed] })
+  } catch (e) {
+    console.log(e)
+  }
+  return
 }

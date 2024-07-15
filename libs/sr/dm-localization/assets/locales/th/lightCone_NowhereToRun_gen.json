@@ -1,0 +1,7 @@
+{
+  "name": "Nowhere to Run",
+  "passive": {
+    "name": "Desperate Times",
+    "description": "ทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เมื่อผู้สวมใส่กำจัดศัตรูเป้าหมายได้ จะฟื้นฟู HP <orangeStrong>{{2}}%</orangeStrong> ของ ATK ของตัวเอง"
+  }
+}

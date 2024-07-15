@@ -4,7 +4,7 @@ This library was generated with [Nx](https://nx.dev).
 
 ## Building
 
-Run `nx build gi-silly-wisher-names` to build the library.
+Run `nx gen-file gi-silly-wisher-names` to build the library.
 
 ## Updating the translation file
 

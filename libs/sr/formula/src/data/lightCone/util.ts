@@ -1,7 +1,7 @@
 import { cmpEq, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import type { LightConeDatum } from '@genshin-optimizer/sr/stats'
 import type { TagMapNodeEntries } from '../util'
-import { getStatFromStatKey, self, selfBuff } from '../util'
+import { getStatFromStatKey, self } from '../util'
 
 export function entriesForLightCone(
   dataGen: LightConeDatum
@@ -14,7 +14,7 @@ export function entriesForLightCone(
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
       const basePerAsc = dataGen.ascension.map((p) => p[sk].base)
       const addPerAsc = dataGen.ascension.map((p) => p[sk].add)
-      return selfBuff.base[sk].add(
+      return self.base[sk].add(
         sum(
           subscript(ascension, basePerAsc),
           prod(lvl1, subscript(ascension, addPerAsc))
@@ -24,7 +24,7 @@ export function entriesForLightCone(
     // Passive stats
     ...Object.entries(dataGen.superimpose.passiveStats).map(
       ([statKey, values]) =>
-        getStatFromStatKey(selfBuff.premod, statKey).add(
+        getStatFromStatKey(self.premod, statKey).add(
           cmpEq(dataGen.path, self.char.path, subscript(superimpose, values))
         )
     ),

@@ -1,0 +1,66 @@
+{
+  "name": "Xueyi",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Dùi Phá Ma",
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định sát thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Xueyi.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Xóa Sổ Ác Nghiệp",
+        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Xueyi, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Lượng Tử tương đương <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Xueyi.",
+        "shortDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch, đồng thời gây lượng nhỏ Sát Thương Lượng Tử cho mục tiêu lân cận."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Thiên Phạt Quán Thân",
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Xueyi, lần tấn công này bỏ qua các thuộc tính Điểm Yếu và làm giảm Sức Bền của 1 kẻ địch. Khi phá vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu thuộc tính Lượng Tử.\\nTrong lần tấn công này, Sức Bền giảm càng nhiều, Sát Thương gây ra càng cao, tối đa tăng <orangeStrong>{{3}}%</orangeStrong>.",
+        "shortDesc": "Gây lượng lớn Sát Thương Lượng Tử cho 1 kẻ địch, lần tấn công này <orangeStrong>bỏ qua các thuộc tính Điểm Yếu</orangeStrong> và làm giảm Sức Bền của 1 kẻ địch, Sức Bền giảm càng nhiều, sát thương gây ra càng cao."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Hành Quyết",
+        "fullDesc": "Lập tức tấn công kẻ địch, sau khi vào chiến đấu sẽ gây cho toàn phe địch sát thương Lượng Tử bằng {{1}}% Tấn Công của Xueyi.",
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây một lượng nhỏ Sát Thương Lượng Tử cho toàn bộ kẻ địch."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tâm Ma, Trói Buộc",
+      "desc": "Tăng {{1}}% sát thương gây ra bởi Đòn Đánh Theo Sau của Thiên Phú."
+    },
+    "2": {
+      "name": "Ngũ Trần, Phá Giải",
+      "desc": "Đòn Đánh Theo Sau của Thiên Phú sẽ bỏ qua các thuộc tính Điểm Yếu và làm giảm Sức Bền của phe địch, đồng thời hồi HP cho bản thân bằng {{1}}% Giới Hạn HP của Xueyi. Khi phá vỡ điểm yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu thuộc tính Lượng Tử."
+    },
+    "3": {
+      "name": "Bể Khổ, Chấm Dứt",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Nghiệp Chướng, Cắt Đứt",
+      "desc": "Khi thi triển Tuyệt Kỹ, Tấn Công Kích Phá tăng {{1}}%, duy trì {{2}} hiệp."
+    },
+    "5": {
+      "name": "Thần Thánh, Gọi Hồn",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Sinh Tử, Cai Quản",
+      "desc": "Giới hạn số tầng Ác Báo cộng dồn giảm còn {{1}} tầng."
+    }
+  }
+}

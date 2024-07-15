@@ -1,0 +1,66 @@
+{
+  "name": "Cygne noir",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Perspicacité de l'aube silencieuse",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Cygne noir à une cible ennemie unique, avec <orangeStrong>{{2}}%</orangeStrong> de <u>chances de base</u> d'appliquer 1 cumul d'<u>Arcanes</u>. D'autre part, en cas d'attaque sur une cible affectée par Faille du vent, Saignement, Brûlure ou Stupéfaction, chaque effet a respectivement <orangeStrong>{{3}}%</orangeStrong> de <u>chances de base</u> d'appliquer 1 cumul d'<u>Arcanes</u> supplémentaire à la cible.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique et a une chance d'appliquer <u>Arcanes</u> à la cible. En cas d'attaque sur une cible <orangeStrong>affectée par Faille du vent, Saignement, Brûlure ou Stupéfaction</orangeStrong>, chaque effet a respectivement une chance de <orangeStrong>lui appliquer un cumul supplémentaire d'<u>Arcanes</u></orangeStrong>."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Décadence du faux crépuscule",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Cygne noir à une cible ennemie unique et aux cibles adjacentes. D'autre part, il y a {{2}}% de <u>chances de base</u> d'appliquer 1 cumul d'<u>Arcanes</u> à la cible ennemie et aux cibles adjacentes et {{3}}% de <u>chances de base</u> de réduire de <orangeStrong>{{4}}%</orangeStrong> la DÉF de la cible ennemie et des cibles adjacentes pour une durée de {{5}} tours.",
+        "shortDesc": "Inflige des DGT de vent mineurs à une cible ennemie unique et aux cibles adjacentes, avec de fortes chances d'<orangeStrong>appliquer <u>Arcanes</u></orangeStrong> aux cibles et de réduire leur DÉF."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Bénédiction de l'étreinte de l'au-delà",
+        "fullDesc": "Inflige Épiphanie à tous les ennemis pendant {{2}} tours.\\nLes ennemis affectés par Épiphanie subissent <orangeStrong>{{3}}%</orangeStrong> de DGT supplémentaires pendant leur tour. D'autre part, lorsque des ennemis sont affectés par <u>Arcanes</u>, ils sont également considérés comme affectés par Faille du vent, Saignement, Brûlure et Stupéfaction. Lorsque l'effet <u>Arcanes</u> inflige des DGT au début de chaque tour, ses cumuls ne sont pas réinitialisés. Cet effet de non-réinitialisation des cumuls d'<u>Arcanes</u> peut être déclenché jusqu'à {{4}} fois pendant la durée d'Épiphanie, et son nombre de déclenchements est réinitialisé lorsque l'effet Épiphanie est appliqué à nouveau.\\nInflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Cygne noir à tous les ennemis.",
+        "shortDesc": "Inflige Épiphanie à tous les ennemis, ce qui augmente les DGT subis par les cibles durant leur tour. D'autre part, <orangeStrong>avoir l'effet <u>Arcanes</u> est considéré comme avoir les effets Faille du vent, Saignement, Brûlure et Stupéfaction</orangeStrong>. De plus, les cumuls d'<u>Arcanes</u> ne sont pas réinitialisés après avoir infligé leurs DGT au début du prochain tour. Inflige des DGT de vent à tous les ennemis."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Du mythe à la réalité",
+        "fullDesc": "Il y a {{1}}% de <u>chances de base</u> pour chaque ennemi de se voir infligé 1 cumul d'<u>Arcanes</u> au début du prochain combat après avoir utilisé cette technique. Pour chaque application réussie d'<u>Arcanes</u> sur une cible, vous infligez un nouveau cumul d'<u>Arcanes</u> à la même cible. Ce processus se répète jusqu'à ce que l'application d'<u>Arcanes</u> sur cette cible échoue. Pour chaque application successive d'<u>Arcanes</u> sur une cible, ses <u>chances de base</u> de réussite sont équivalentes à {{2}}% des <u>chances de base</u> de la précédente application réussie d'<u>Arcanes</u> sur cette cible.",
+        "shortDesc": "Il y a de fortes chances que chaque ennemi soit <orangeStrong>affecté par Arcanes à plusieurs reprises jusqu'à ce que l'application d'<u>Arcanes</u> échoue</orangeStrong> au début du prochain combat après avoir utilisé cette technique."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Les sept piliers de la sagesse",
+      "desc": "Tant que Cygne noir est en état de combattre, la RÉS au vent, physique, au feu ou à la foudre des ennemis affectés respectivement par Faille du vent, Saignement, Brûlure ou Stupéfaction est réduite de {{1}}%."
+    },
+    "2": {
+      "name": "Ne pleurez pas pour moi",
+      "desc": "Lorsqu'une cible ennemie affectée par Arcanes est vaincue, elle a {{1}}% de chances de base d'appliquer {{2}} cumuls d'Arcanes aux cibles adjacentes."
+    },
+    "3": {
+      "name": "Sur la terre comme au ciel",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Cadeau des pleurs",
+      "desc": "La RÉS aux effets des cibles ennemies affectées par Épiphanie est réduite de {{1}}%, et Cygne noir récupère {{2}} points d'énergie au début de leur tour et lorsqu'elles sont éliminées. L'effet de régénération d'énergie ne peut se déclencher qu'une seule fois sur la durée d'Épiphanie et le nombre de déclenchements est réinitialisé lorsque l'effet Épiphanie est appliqué à nouveau."
+    },
+    "5": {
+      "name": "Migration des oiseaux",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Panthéon miséricordieux des masses pitoyables",
+      "desc": "Lorsqu'une cible ennemie est attaquée par des alliés de Cygne noir, Cygne noir a {{2}}% de chances de base d'appliquer 1 cumul d'Arcanes à la cible.\\nChaque fois que Cygne noir applique Arcanes à une cible ennemie, il y a {{1}}% de chances fixes d'augmenter de {{3}} le nombre de cumuls d'Arcanes pour cette fois."
+    }
+  }
+}

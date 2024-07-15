@@ -1,0 +1,66 @@
+{
+  "name": "Misha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "C-Com Licença, Por Favor!",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Misha a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "S-Serviço de Quarto!",
+        "fullDesc": "Aumenta os Golpes por Ação da próxima Perícia Suprema de Misha em {{3}} golpe(s). Causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Misha a um inimigo, e Dano de Gelo igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Misha a inimigos adjacentes a ele.",
+        "shortDesc": "Causa Dano de Gelo a um inimigo e Dano de Gelo leve a inimigos adjacentes a ele. Além disso, aumenta os <orangeStrong>Golpes por Ação da próxima Perícia Suprema</orangeStrong> de Misha."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "V-Vou me Atrasar!",
+        "fullDesc": "Possui {{1}} Golpes por Ação por padrão. Primeiro, usa 1 golpe para causar Dano de Gelo igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Misha a um único inimigo-alvo. Então, cada um dos golpes restantes causa Dano de Gelo igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Misha a um único inimigo aleatório. Logo antes do acerto de cada golpe, existe uma <u>chance-base</u> de <orangeStrong>{{3}}%</orangeStrong> de causar Congelamento ao alvo, durando por 1 rodada.\\nEnquanto no estado de Congelamento, inimigos-alvo não podem agir, e no início de suas rodadas, eles recebem <u>Dano de Gelo Adicional</u> igual a <orangeStrong>{{4}}%</orangeStrong> do ATQ de Misha.\\nEssa Perícia Suprema pode possuir até {{5}} Golpes por Ação. Depois que a Perícia Suprema é utilizada, seus Golpes por Ação serão redefinidos ao nível padrão.",
+        "shortDesc": "Causa Dano de Gelo leve a inimigos únicos. O ataque ricocheteia <orangeStrong>{{1}}</orangeStrong> vezes por padrão, até um máximo de <orangeStrong>{{5}}</orangeStrong> vezes. Antes que cada golpe acerte, há uma pequena chance de infligir <orangeStrong>Congelamento</orangeStrong> no alvo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Espere, Você É Tão Linda!",
+        "fullDesc": "Usar a Técnica cria uma dimensão que dura por {{1}} segundos. Inimigos pegos na dimensão são afetados pela Prisão Onírica e todas as suas ações são interrompidas. Ao entrar em batalha contra inimigos afetados pela Prisão Onírica, a próxima Perícia Suprema de Misha causa {{2}} Golpe(s) por Ação a mais. Apenas uma dimensão criada por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão que para todos os inimigos que estiverem dentro dela. Ao entrar em batalha contra inimigos na dimensão, <orangeStrong>a próxima Perícia Suprema de Misha causa mais Golpes por Ação</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Capricho Extravagante",
+      "desc": "Ao usar a Perícia Suprema, para cada inimigo no campo, aumenta adicionalmente os Golpes por Ação da Perícia Suprema atual em {{1}} golpe(s), até um aumento máximo de {{2}} golpe(s)."
+    },
+    "2": {
+      "name": "Anseio da Juventude",
+      "desc": "Antes do acerto de cada golpe da Perícia Suprema, existe uma chance-base de {{3}}% de reduzir a DEF do alvo em {{1}}% por {{2}} rodada(s)."
+    },
+    "3": {
+      "name": "Vestígio de Felicidade",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Visão de Afinidade",
+      "desc": "Aumenta o Multiplicador de Dano de cada golpe da Perícia Suprema em {{1}}%."
+    },
+    "5": {
+      "name": "Gênesis do Primeiro Amor",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Alienação do Sonho",
+      "desc": "Ao usar a Perícia Suprema, aumenta o próprio Dano em {{2}}%, durando até o final da rodada. Além disso, da próxima vez que a Perícia for utilizada, recupera {{1}} Ponto(s) de Perícia para a equipe."
+    }
+  }
+}

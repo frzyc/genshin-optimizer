@@ -1,0 +1,7 @@
+{
+  "name": "Fermata",
+  "passive": {
+    "name": "Descanso Semibreve",
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> o Efeito de Quebra do usuário e aumenta o Dano que ele causa a inimigos sob o status de Choque ou Cisalhamento de Vento em <orangeStrong>{{2}}%</orangeStrong>. Também se aplica a Dano Contínuo."
+  }
+}

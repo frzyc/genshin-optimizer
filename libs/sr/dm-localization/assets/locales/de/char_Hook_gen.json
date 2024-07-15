@@ -1,0 +1,71 @@
+{
+  "name": "Hook",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Hey! Verbrenn dich nicht!",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Hey! Erinnerst du dich an Hook?",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu und verursacht bei dem Ziel mit einer <u>Grundchance</u> von {{2}}% für {{3}} Rd. Brennen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Hooks ANG.",
+        "shortDesc": "Fügt einem Gegner Feuer-SCH zu und verursacht dem Ziel mit hoher Chance Brennen."
+      },
+      "1": {
+        "name": "Hey! Erinnerst du dich an Hook?",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu und verursacht beim Ziel mit einer <u>Grundchance</u> von {{2}}% für {{3}} Rd. Brennen. Fügt außerdem angrenzenden Zielen Feuer-SCH in Höhe von <orangeStrong>{{5}}%</orangeStrong> von Hooks ANG zu.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Hooks ANG.",
+        "shortDesc": "Fügt einem Gegner Feuer-SCH zu und verursacht beim Ziel mit hoher Chance Brennen. Angrenzende Ziele erleiden geringen Feuer-SCH."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Bumm! Hier kommt das Feuer!",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu.\\nVerstärkt nach dem Einsatz des Ultimates die nächste Fertigkeit, die dem anvisierten Gegner sowie angrenzenden Zielen SCH zufügt.",
+        "shortDesc": "Fügt einem Gegner massiven Feuer-SCH zu und <orangeStrong>verstärkt Hooks nächste Fertigkeit</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Puh! Sieh sich einer das Chaos an!",
+        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt fügt Hook einem zufälligen Gegner Feuer-SCH in Höhe von {{4}}% ihres ANG zu und hat eine <u>Grundchance</u> von {{1}}%, bei allen Gegnern für {{3}} Rd. Brennen zu verursachen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{2}}% von Hooks ANG.",
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner Feuer-SCH zu, mit einer hohen Chance, allen Gegnern Brennen zuzufügen."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Früh zu Bett, früh aus den Federn",
+      "desc": "Die verstärkte Fertigkeit verursacht {{1}}% mehr SCH."
+    },
+    "2": {
+      "name": "Glücklicher Bauch, glücklicher Körper",
+      "desc": "Verlängert die Dauer des durch Fertigkeit verursachten Brennens um {{1}} Rd."
+    },
+    "3": {
+      "name": "Nicht wählerisch sein, schmeckt alles fein",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Nichts wissen macht auch nichts",
+      "desc": "Bei Auslösung des Talents besteht eine Grundchance von {{1}}%, dass angrenzende Ziele des anvisierten Gegners von Brennen betroffen werden, das durch Fertigkeit verursacht wird."
+    },
+    "5": {
+      "name": "Für den Ruhm der Maulwürfe",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Immer bereit zum Schlagen und Treten",
+      "desc": "Hook fügt brennenden Gegnern {{1}}% mehr SCH zu."
+    }
+  }
+}

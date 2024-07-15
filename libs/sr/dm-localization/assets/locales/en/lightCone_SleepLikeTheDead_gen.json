@@ -1,0 +1,7 @@
+{
+  "name": "Sleep Like the Dead",
+  "passive": {
+    "name": "Sweet Dreams",
+    "description": "Increases the wearer's CRIT DMG by <orangeStrong>{{1}}%</orangeStrong>. When the wearer's Basic ATK or Skill does not result in a CRIT Hit, increases their CRIT Rate by <orangeStrong>{{2}}%</orangeStrong> for {{3}} turn(s). This effect can only trigger once every {{4}} turn(s)."
+  }
+}

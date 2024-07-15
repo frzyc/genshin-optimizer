@@ -1,0 +1,20 @@
+{
+  "spd": "VEL",
+  "hp": "PV",
+  "atk": "ATQ",
+  "def": "DEF",
+  "crit_": "Prob. CRIT",
+  "crit_dmg_": "Daño CRIT",
+  "brEff_": "Efecto de Ruptura",
+  "eff_": "Acierto de efecto",
+  "eff_res_": "RES a efecto",
+  "enerRegen_": "Recuperación de energía",
+  "heal_": "Bonif. curación realizada",
+  "physical_dmg_": "Aumento de Daño Físico",
+  "fire_dmg_": "Aumento de Daño de Fuego",
+  "ice_dmg_": "Aumento de Daño de Hielo",
+  "wind_dmg_": "Aumento de Daño de Viento",
+  "lightning_dmg_": "Aumento de Daño de Rayo",
+  "quantum_dmg_": "Aumento de Daño Cuántico",
+  "imaginary_dmg_": "Aumento de Daño Imaginario"
+}

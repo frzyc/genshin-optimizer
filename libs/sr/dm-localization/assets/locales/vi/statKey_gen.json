@@ -1,0 +1,20 @@
+{
+  "spd": "Tốc Độ",
+  "hp": "HP",
+  "atk": "Tấn Công",
+  "def": "Phòng Thủ",
+  "crit_": "Tỷ Lệ Bạo Kích",
+  "crit_dmg_": "Sát Thương Bạo Kích",
+  "brEff_": "Tấn Công Kích Phá",
+  "eff_": "Chính Xác Hiệu Ứng",
+  "eff_res_": "Kháng Hiệu Ứng",
+  "enerRegen_": "Hiệu Suất Hồi Năng Lượng",
+  "heal_": "Tăng Lượng Trị Liệu",
+  "physical_dmg_": "Tăng Sát Thương Vật Lý",
+  "fire_dmg_": "Tăng Sát Thương Hỏa",
+  "ice_dmg_": "Tăng Sát Thương Băng",
+  "wind_dmg_": "Tăng Sát Thương Phong",
+  "lightning_dmg_": "Tăng Sát Thương Lôi",
+  "quantum_dmg_": "Tăng Sát Thương Lượng Tử",
+  "imaginary_dmg_": "Tăng Sát Thương Số Ảo"
+}

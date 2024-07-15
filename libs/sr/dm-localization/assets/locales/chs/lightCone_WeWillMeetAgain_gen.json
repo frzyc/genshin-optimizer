@@ -1,0 +1,7 @@
+{
+  "name": "后会有期",
+  "passive": {
+    "name": "交手如交谈",
+    "description": "装备者施放普攻或战技后，对随机1个受到攻击的敌方目标造成等同于自身<orangeStrong>{{1}}%</orangeStrong>攻击力的附加伤害。"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Arlan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lightning Rush",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Arlan pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Shackle Breaker",
+        "fullDesc": "Mengonsumsi HP sebesar {{1}}% Max HP Arlan dan mengakibatkan Lightning DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Arlan pada 1 target musuh. Jika HP saat ini tidak cukup, HP Arlan saat ini akan berkurang hingga 1 saat melancarkan skill.",
+        "shortDesc": "Mengonsumsi sebagian HP diri sendiri dan mengakibatkan Lightning DMG pada 1 musuh."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Frenzied Punishment",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Arlan pada 1 target musuh, dan di saat bersamaan mengakibatkan Lightning DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Arlan pada musuh di sekitar target.",
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah besar pada 1 musuh, dan mengakibatkan Lightning DMG pada musuh di sekitar target."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Swift Harvest",
+        "fullDesc": "Segera menyerang musuh dan setelah memasuki pertempuran, mengakibatkan Lightning DMG sebesar {{1}}% ATK Arlan pada seluruh musuh.",
+        "shortDesc": "Menyerang musuh dan mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh setelah memasuki pertempuran."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "To the Bitter End",
+      "desc": "Saat persentase HP saat ini kurang dari atau sama dengan 50%, Skill DMG meningkat {{1}}%."
+    },
+    "2": {
+      "name": "Breaking Free",
+      "desc": "Saat melancarkan Skill dan Ultimate, menghapus 1 status Debuff dirinya."
+    },
+    "3": {
+      "name": "Power Through",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Turn the Tables",
+      "desc": "Setelah memasuki pertempuran, jika Arlan menerima serangan mematikan, Arlan tidak gugur dan akan segera memulihkan HP sebesar {{1}}% Max HP dirinya. Efek ini akan terhapus otomatis setelah dipicu sekali atau setelah {{2}} giliran berlalu."
+    },
+    "5": {
+      "name": "Hammer and Tongs",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Self-Sacrifice",
+      "desc": "Saat persentase HP saat ini kurang dari atau sama dengan 50%, meningkatkan {{1}}% Ultimate DMG dan DMG Multiplier pada musuh sekitar target akan meningkat hingga sebesar DMG Multiplier pada target."
+    }
+  }
+}

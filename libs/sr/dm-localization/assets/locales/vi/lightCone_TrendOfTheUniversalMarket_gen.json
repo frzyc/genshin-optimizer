@@ -1,0 +1,7 @@
+{
+  "name": "Xu Hướng Thị Trường Vũ Trụ",
+  "passive": {
+    "name": "Xáo Bài Ván Mới",
+    "description": "Khiến Phòng Thủ của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Sau khi người trang bị chịu tấn công sẽ có <orangeStrong>{{2}}%</orangeStrong> xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt, mỗi hiệp gây sát thương liên tục bằng <orangeStrong>{{3}}%</orangeStrong> Phòng Thủ của người trang bị, duy trì {{4}} hiệp."
+  }
+}

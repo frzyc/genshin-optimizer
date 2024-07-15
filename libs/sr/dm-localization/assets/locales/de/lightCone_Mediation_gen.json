@@ -1,0 +1,7 @@
+{
+  "name": "Vermittlung",
+  "passive": {
+    "name": "Familie",
+    "description": "Erhöht beim Kampfeintritt die GES aller Verbündeten für {{2}} Rd. um <orangeStrong>{{1}}</orangeStrong> Pkt."
+  }
+}

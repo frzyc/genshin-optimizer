@@ -1,0 +1,7 @@
+{
+  "name": "Sentimento Compartilhado",
+  "passive": {
+    "name": "Cura e Reparação",
+    "description": "Aumenta a Cura Realizada do usuário em <orangeStrong>{{1}}%</orangeStrong>. Ao usar uma Perícia, regenera <orangeStrong>{{2}}</orangeStrong> de Energia para todos os aliados."
+  }
+}

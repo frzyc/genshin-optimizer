@@ -1,0 +1,7 @@
+{
+  "name": "Você Só Precisa de Paciência",
+  "passive": {
+    "name": "Teia de Aranha",
+    "description": "Aumenta o Dano causado pelo usuário em <orangeStrong>{{2}}%</orangeStrong>. Após cada ataque desferido pelo usuário, sua VEL aumenta em <orangeStrong>{{3}}%</orangeStrong>, acumulando até {{4}} vezes.\\nSe o usuário atingir um inimigo-alvo que não esteja afetado por Erosão, há uma chance-base de 100% de infligir Erosão ao alvo. Inimigos afetados por Erosão também são considerados como se estivessem em estado de Choque e receberão Dano de Raio Contínuo no início de cada rodada igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ do usuário, durando por {{5}} rodada(s)."
+  }
+}

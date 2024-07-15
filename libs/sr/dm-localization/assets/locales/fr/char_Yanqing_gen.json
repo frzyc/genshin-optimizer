@@ -1,0 +1,66 @@
+{
+  "name": "Yanqing",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Épine de givre",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yanqing à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Salve d'aiguillons",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yanqing à un ennemi unique et active Osmose avec l'acier pendant 1 tour.",
+        "shortDesc": "Inflige des DGT de glace à un ennemi unique et active Osmose avec l'acier."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Béatitude au milieu de l'averse",
+        "fullDesc": "Augmente les chances de coup critique de Yanqing de {{1}}%. Si Osmose avec l'acier est active, augmente les DGT critiques de Yanqing de <orangeStrong>{{2}}%</orangeStrong> supplémentaires. Ce <u>bonus</u> dure 1 tour avant d'infliger des DGT de glace équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ de Yanqing à un ennemi unique.",
+        "shortDesc": "Augmente les chances de coup critique de Yanqing. Renforce Osmose avec l'acier et inflige des DGT de glace massifs à un ennemi unique."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "La seule et unique lame",
+        "fullDesc": "Après utilisation de sa technique, les DGT de Yanqing augmentent de {{2}}% pendant {{3}} tours contre les ennemis dont les PV sont supérieurs ou égaux à {{1}}% au début du combat suivant.",
+        "shortDesc": "Après utilisation de la technique, les DGT infligés aux ennemis dont les PV sont supérieurs ou égaux à 50 % augmentent au début du combat suivant."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Coupe franche",
+      "desc": "Lorsque Yanqing attaque un ennemi gelé, il inflige des DGT de glace additionnels équivalents à {{1}}% de son ATQ."
+    },
+    "2": {
+      "name": "Transe du guerrier",
+      "desc": "Lorsque Osmose avec l'acier est active, le taux de régénération d'énergie augmente de {{1}}% supplémentaires."
+    },
+    "3": {
+      "name": "Épéiste de génie",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Froid pénétrant",
+      "desc": "Lorsque les PV actuels du personnage sont supérieurs ou égaux à {{1}}%, sa PÉN de RÉS à la glace augmente de {{2}}%."
+    },
+    "5": {
+      "name": "Lutte sans répit",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Combattant habile",
+      "desc": "Si les bonus accordés par Osmose avec l'acier ou l'ultime sont actifs au moment où un ennemi est vaincu, la durée de ces bonus est prolongée d'1 tour."
+    }
+  }
+}

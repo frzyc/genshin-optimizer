@@ -1,0 +1,7 @@
+{
+  "name": "El tiempo no espera",
+  "passive": {
+    "name": "Mañana, tarde y noche",
+    "description": "Los PV máx. del portador aumentan en un <orangeStrong>{{1}}%</orangeStrong> y su curación realizada en un <orangeStrong>{{2}}%</orangeStrong>. Cuando el portador cura a los aliados, se registra la curación realizada. Cuando un aliado lanza un ataque, un enemigo al azar de los atacados recibe una cantidad de daño adicional equivalente al <orangeStrong>{{3}}%</orangeStrong> de la curación realizada que se registró para ese aliado. Este daño adicional es del mismo tipo que el del portador, no se ve afectado por otras bonificaciones y ocurre como máximo 1 vez por turno."
+  }
+}

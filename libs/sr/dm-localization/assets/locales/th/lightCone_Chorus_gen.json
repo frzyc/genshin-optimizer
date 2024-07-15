@@ -1,0 +1,7 @@
+{
+  "name": "Chorus",
+  "passive": {
+    "name": "Concerted",
+    "description": "หลังจากเข้าสู่การต่อสู้ จะทำให้ ATK ของฝ่ายตัวเองทั้งหมดเพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> โดยสกิลชนิดเดียวกันจะไม่สามารถซ้อนทับได้"
+  }
+}

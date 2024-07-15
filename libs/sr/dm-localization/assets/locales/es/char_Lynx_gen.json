@@ -1,0 +1,66 @@
+{
+  "name": "Lynx",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Técnica de crampón",
+        "fullDesc": "Inflige un Daño Cuántico equivalente al <orangeStrong>{{1}}%</orangeStrong> de sus PV máx. a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Latas de acampada",
+        "fullDesc": "Aplica Reacción de supervivencia a un aliado y aumenta sus PV máx. en una cantidad equivalente al <orangeStrong>{{1}}%</orangeStrong> de los PV máx. de Lynx + <orangeStrong>{{2}}</orangeStrong>. Si el aliado es de la Vía de la Destrucción o de la Conservación, aumenta en gran medida la probabilidad de que reciba un ataque enemigo. Reacción de supervivencia dura {{3}} turnos.\\nEl objetivo aliado regenera una cantidad de PV equivalente al <orangeStrong>{{4}}%</orangeStrong> de los PV máx. de Lynx + <orangeStrong>{{5}}</orangeStrong>.",
+        "shortDesc": "Un aliado obtiene Reacción de supervivencia, lo que <orangeStrong>aumenta sus PV máx.</orangeStrong> Además, sus PV se regeneran."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Botiquín de las llanuras nevadas",
+        "fullDesc": "Elimina {{1}} <u>estado negativo</u> de todos los aliados y todos los aliados regeneran una cantidad de PV equivalente al <orangeStrong>{{2}}%</orangeStrong> de los PV máx. de Lynx + <orangeStrong>{{3}}</orangeStrong>.",
+        "shortDesc": "Elimina <orangeStrong>1 <u>estado negativo</u> de todos los aliados</orangeStrong>. Todos los aliados regeneran PV."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Barrita energética de chocolate",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, se aplica el efecto de curación continua del talento de Lynx a todos los aliados durante {{1}} turnos.",
+        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, todos los aliados obtienen un efecto de curación continua."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Mañana de paseo por la nieve",
+      "desc": "La curación realizada por Lynx aumenta en un {{2}}% para los objetivos aliados que tengan un porcentaje de PV igual o inferior al {{1}}%. También aplica a la curación continua."
+    },
+    "2": {
+      "name": "Mediodía de hornillo portátil",
+      "desc": "Los objetivos con Reacción de supervivencia pueden resistir la aplicación de estados negativos {{1}} vez."
+    },
+    "3": {
+      "name": "Tarde de baliza de avalanchas",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Atardecer de fuego de campamento",
+      "desc": "Al obtener Reacción de supervivencia, el ATQ del objetivo aumenta en una cantidad equivalente al {{1}}% de los PV máx. de Lynx durante {{2}} turno."
+    },
+    "5": {
+      "name": "Noche de té de la aurora",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Alba del mapa de exploración",
+      "desc": "El efecto de aumento de los PV máx. de Reacción de supervivencia se incrementa de forma adicional en una cantidad equivalente al {{1}}% de los PV máx. de Lynx. Además, la RES a efecto aumenta en un {{2}}%."
+    }
+  }
+}

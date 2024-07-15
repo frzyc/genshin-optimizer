@@ -1,0 +1,7 @@
+{
+  "name": "Landau's Choice",
+  "passive": {
+    "name": "Time Fleets Away",
+    "description": "Meningkatkan peluang pengguna untuk terkena serangan, dan di saat bersamaan mengurangi <orangeStrong>{{2}}%</orangeStrong> DMG yang diterima pengguna."
+  }
+}

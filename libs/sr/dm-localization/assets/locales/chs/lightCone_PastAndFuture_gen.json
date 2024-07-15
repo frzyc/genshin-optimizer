@@ -1,0 +1,7 @@
+{
+  "name": "过往未来",
+  "passive": {
+    "name": "旧日纸鸢",
+    "description": "当装备者施放战技后，使下一个行动的我方其他目标造成的伤害提高<orangeStrong>{{1}}%</orangeStrong>，持续{{2}}回合。"
+  }
+}

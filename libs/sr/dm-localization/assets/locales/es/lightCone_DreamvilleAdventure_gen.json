@@ -1,0 +1,7 @@
+{
+  "name": "Aventuras en Villa Ensueño",
+  "passive": {
+    "name": "Cohesión",
+    "description": "Cuando el portador usa un ATQ básico, una habilidad básica o una habilidad definitiva, todos los aliados obtienen Inocencia infantil, que aumenta el daño que inflige el ATQ básico, la habilidad básica o la habilidad definitiva (según lo que haya usado el portador) en un <orangeStrong>{{1}}%</orangeStrong>. Inocencia infantil solo tiene efecto con el último tipo de habilidad que haya usado el portador y no se puede acumular."
+  }
+}

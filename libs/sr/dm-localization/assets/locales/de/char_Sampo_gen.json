@@ -1,0 +1,66 @@
+{
+  "name": "Sampo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Schwirrende Klingen",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Sampos ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Zurückprallende Liebe",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Sampos ANG zu und verursacht zusätzlich {{1}}-mal SCH. Jeder Treffer fügt einem zufälligen Gegner Wind-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Sampos ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu und führt gesamt 5 Abpralle aus."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Überraschungsgeschenk",
+        "fullDesc": "Fügt allen Gegnern Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Sampos ANG zu und hat eine <u>Grundchance</u> von {{4}}%, den erlittenen DoT des Ziels für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong> zu erhöhen.",
+        "shortDesc": "Fügt allen Gegnern Wind-SCH zu. Hat eine hohe Chance, <orangeStrong>den erlittenen DoT zu erhöhen</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Helles Leuchten",
+        "fullDesc": "Nach dem Einsatz der Technik werden Gegner in einem bestimmten Bereich {{1}} s lang geblendet. Die Verbündeten sind für geblendete Gegner unsichtbar.\\nGreift man einen geblendeten Gegner aktiv an, besteht eine <u>Grundchance</u> von {{2}}%, die Aktionen aller Gegner um {{3}}% zu verzögern.",
+        "shortDesc": "Gegner in einem bestimmten Gebiet werden geblendet. Beim Kämpfen gegen einen geblendeten Gegner besteht eine hohe Chance, nach Kampfeintritt die Aktionen aller Gegner zu <u>verzögern</u>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Aufsteigende Liebe",
+      "desc": "Die Fertigkeit fügt einem zufälligen Gegner zusätzlich {{1}}-mal SCH zu."
+    },
+    "2": {
+      "name": "Ansteckender Enthusiasmus",
+      "desc": "Wird ein von Windscherung betroffener Gegner besiegt, besteht eine Grundchance von {{1}}%, bei allen Gegnern {{2}}-mal Windscherung gleich Sampos Talent zu verursachen."
+    },
+    "3": {
+      "name": "Große Summe!",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Je inniger die Liebe, desto stärker der Hass",
+      "desc": "Trifft die Fertigkeit einen Gegner mit min. {{1}} Stapelungen Windscherung, verursacht die aktuelle Windscherung sofort {{2}}% des ursprünglichen SCH."
+    },
+    "5": {
+      "name": "Riesensumme!",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Erhöhte Ausgaben",
+      "desc": "Erhöht den SCH-Multiplikator der Windscherung durch das Talent um {{1}}%."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "O Batismo de Pensamento Puro",
+  "passive": {
+    "name": "Treinamento Mental",
+    "description": "Aumenta o Dano CRIT do usuário em <orangeStrong>{{1}}%</orangeStrong>. Para cada penalidade no inimigo-alvo, o Dano CRIT causado pelo usuário ao alvo aumenta adicionalmente em <orangeStrong>{{2}}%</orangeStrong>, acumulando até um máximo de {{3}} vezes. Quando o usuário ataca o inimigo-alvo com sua Perícia Suprema, ele recebe o efeito Disputa, que aumenta o Dano causado em <orangeStrong>{{4}}%</orangeStrong> e permite que seus Ataques Extras ignorem <orangeStrong>{{5}}%</orangeStrong> da DEF do alvo. Este efeito dura {{6}} rodadas."
+  }
+}

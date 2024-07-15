@@ -1,0 +1,6 @@
+{
+  "setName": "Broken Keel",
+  "setEffects": {
+    "2": "Meningkatkan {{1}}% Effect RES pengguna. Saat Effect RES pengguna lebih dari atau sama dengan {{2}}%, CRIT DMG seluruh rekan tim meningkat {{3}}%."
+  }
+}

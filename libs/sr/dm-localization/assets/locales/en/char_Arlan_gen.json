@@ -1,0 +1,66 @@
+{
+  "name": "Arlan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lightning Rush",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Arlan's ATK to a single enemy.",
+        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Shackle Breaker",
+        "fullDesc": "Consumes Arlan's HP equal to {{1}}% of his Max HP to deal Lightning DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Arlan's ATK to a single enemy. If Arlan does not have sufficient HP, his HP will be reduced to 1 after using his Skill.",
+        "shortDesc": "Consumes a portion of HP to deal Lightning DMG to a single enemy."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Frenzied Punishment",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Arlan's ATK to a single enemy and Lightning DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Arlan's ATK to enemies adjacent to it.",
+        "shortDesc": "Deals massive Lightning DMG to a single enemy and Lightning DMG to enemies adjacent to it."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Swift Harvest",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Lightning DMG equal to {{1}}% of Arlan's ATK to all enemies.",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor Lightning DMG to all enemies."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "To the Bitter End",
+      "desc": "When HP is lower than or equal to 50% of Max HP, increases Skill's DMG by {{1}}%."
+    },
+    "2": {
+      "name": "Breaking Free",
+      "desc": "Using Skill or Ultimate removes 1 debuff from oneself."
+    },
+    "3": {
+      "name": "Power Through",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Turn the Tables",
+      "desc": "When struck by a killing blow after entering battle, instead of becoming knocked down, Arlan immediately restores his HP to {{1}}% of his Max HP. This effect is automatically removed after it is triggered once or after {{2}} turn(s) have elapsed."
+    },
+    "5": {
+      "name": "Hammer and Tongs",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Self-Sacrifice",
+      "desc": "When HP drops to 50% or below, Ultimate deals {{1}}% more DMG. The DMG multiplier of DMG taken by the target enemy now applies to adjacent enemies as well."
+    }
+  }
+}

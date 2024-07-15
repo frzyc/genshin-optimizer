@@ -1,0 +1,71 @@
+{
+  "name": "Argenti",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Fragrance fugace",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Argenti à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Épines de la justice",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Argenti à tous les ennemis.",
+        "shortDesc": "Inflige des DGT physiques mineurs à tous les ennemis."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Beauté infinie du jardin des roses",
+        "fullDesc": "Consomme <orangeStrong>{{2}}</orangeStrong> points d'énergie et inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Argenti à tous les ennemis.",
+        "shortDesc": "Consomme <orangeStrong>{{2}}</orangeStrong> points d'énergie et inflige des DGT physiques à tous les ennemis."
+      },
+      "1": {
+        "name": "En mon propre jardin",
+        "fullDesc": "Consomme {{4}} points d'énergie, inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Argenti à tous les ennemis et inflige des DGT {{2}} fois supplémentaires à un ennemi aléatoire, infligeant à chaque fois des DGT physiques équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ d'Argenti.",
+        "shortDesc": "Consomme <orangeStrong>{{4}}</orangeStrong> points d'énergie et inflige des DGT physiques à tous les ennemis, ainsi que des DGT physiques mineurs à une cible aléatoire, pour un total de 6 rebonds."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Manifeste de la vertu",
+        "fullDesc": "Après utilisation de la technique, les ennemis situés dans une zone définie subissent Hébété pendant {{1}} secondes. Les ennemis hébétés ne peuvent pas attaquer activement votre équipe.\\nEngager le combat en attaquant un ennemi hébété inflige des DGT équivalents à {{2}}% de l'ATQ d'Argenti à tous les ennemis et régénère son énergie de {{3}} points.",
+        "shortDesc": "Inflige Hébété à tous les ennemis dans une zone définie. Lorsque vous engagez le combat contre des ennemis hébétés, vous leur infligez des DGT physiques mineurs et régénérez l'énergie d'Argenti."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Imperfection au royaume de l'esthétisme",
+      "desc": "Chaque cumul d'Ascension augmente les DGT critiques de {{1}}%."
+    },
+    "2": {
+      "name": "Humilité de l'agate",
+      "desc": "L'ATQ du personnage augmente de {{2}}% pendant {{3}} tour lorsque vous utilisez l'ultime avec {{1}} ennemis ou plus sur le champ de bataille."
+    },
+    "3": {
+      "name": "Gloire du chemin d'épines",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Dévotion des trompettes de la guerre",
+      "desc": "Le personnage gagne {{1}} cumuls d'Ascension en début de combat, et le nombre de cumuls maximum de l'effet de son talent augmente de {{2}}."
+    },
+    "5": {
+      "name": "Merveille de l'univers",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Resplendissance",
+      "desc": "L'ultime ignore {{1}}% de la DÉF des cibles ennemies."
+    }
+  }
+}

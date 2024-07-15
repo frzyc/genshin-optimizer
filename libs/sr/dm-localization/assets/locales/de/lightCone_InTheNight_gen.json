@@ -1,0 +1,7 @@
+{
+  "name": "In der Nacht",
+  "passive": {
+    "name": "Blumen und Schmetterlinge",
+    "description": "Erhöht die KRIT-Rate des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Liegt die GES des Trägers im Kampf über 100, wird für jede weitere {{2}} Pkt. GES der verursachte SCH des Standardangriffs und der Fertigkeit um <orangeStrong>{{3}}%</orangeStrong> erhöht. Außerdem wird der KRIT-SCH des Ultimates um <orangeStrong>{{4}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{5}}-mal stapelbar."
+  }
+}

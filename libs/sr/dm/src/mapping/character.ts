@@ -1,17 +1,13 @@
 import type {
+  CharacterDataKey,
   ElementalTypeKey,
-  NonTrailblazerCharacterKey,
   PathKey,
   RarityKey,
-  TrailblazerGenderedKey,
 } from '@genshin-optimizer/sr/consts'
 import type { AvatarRarity } from '../dm'
 import type { AvatarDamageType } from '../dm/character/AvatarConfig'
 
-export const characterIdMap: Record<
-  string,
-  NonTrailblazerCharacterKey | TrailblazerGenderedKey
-> = {
+export const characterIdMap: Record<string, CharacterDataKey> = {
   1001: 'March7th',
   1002: 'DanHeng',
   1003: 'Himeko',

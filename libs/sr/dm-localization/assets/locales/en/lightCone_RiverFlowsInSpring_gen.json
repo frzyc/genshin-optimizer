@@ -1,0 +1,7 @@
+{
+  "name": "River Flows in Spring",
+  "passive": {
+    "name": "Stave Off the Lingering Cold",
+    "description": "After entering battle, increases the wearer's SPD by <orangeStrong>{{1}}%</orangeStrong> and DMG by <orangeStrong>{{2}}%</orangeStrong>. When the wearer takes DMG, this effect will disappear. This effect will resume after the end of the wearer's next turn."
+  }
+}

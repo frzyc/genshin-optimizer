@@ -1,0 +1,7 @@
+{
+  "name": "Den Mond schnitzen, die Wolken weben",
+  "passive": {
+    "name": "Geheimnis",
+    "description": "Zu Beginn des Kampfes und zu Beginn der Runde des Trägers wird zufällig einer der folgenden Effekte ausgelöst: Erhöht den ANG aller Verbündeten um <orangeStrong>{{1}}%</orangeStrong>; Erhöht den KRIT-SCH aller Verbündeten um <orangeStrong>{{2}}%</orangeStrong>; Erhöht die Energie-Regenerationsrate aller Verbündeten um <orangeStrong>{{3}}%</orangeStrong>. Der ausgelöste Effekt kann nicht mit dem zuletzt ausgelösten Effekt identisch sein und ersetzt den vorherigen Effekt. Effekte der gleichen Art sind nicht stapelbar. Der Effekt wird entfernt, wenn der Träger handlungsunfähig ist."
+  }
+}

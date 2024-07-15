@@ -1,0 +1,7 @@
+{
+  "name": "ワン！{RUBY_B#さんぽ}散歩{RUBY_E#}の{RUBY_B#じかん}時間{RUBY_E#}！",
+  "passive": {
+    "name": "さっさと{RUBY_B#に}逃{RUBY_E#}げる",
+    "description": "装備キャラの攻撃力+<orangeStrong>{{1}}%</orangeStrong>、燃焼状態または裂創状態の敵に対する与ダメージ+<orangeStrong>{{2}}%</orangeStrong>、この効果は持続ダメージにも有効。"
+  }
+}

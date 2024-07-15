@@ -1,0 +1,7 @@
+{
+  "name": "Lejos del fuego",
+  "passive": {
+    "name": "Deflagración",
+    "description": "Cuando los PV que pierde el portador durante un único ataque superan el {{1}}% de sus PV máx., o si los PV que consume de una sola vez superan el {{1}}% de sus PV máx., el portador regenera inmediatamente un {{3}}% de sus PV máx. y el daño que inflige aumenta en un <orangeStrong>{{2}}%</orangeStrong> durante {{4}} turnos. Este efecto solo se puede activar una vez cada {{5}} turnos."
+  }
+}

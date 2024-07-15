@@ -1,0 +1,7 @@
+{
+  "name": "Final mutuo",
+  "passive": {
+    "name": "Legión",
+    "description": "Si el portador tiene un porcentaje de PV inferior al {{1}}%, su Prob. CRIT aumenta en un <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

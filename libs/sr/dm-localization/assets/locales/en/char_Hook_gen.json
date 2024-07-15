@@ -1,0 +1,71 @@
+{
+  "name": "Hook",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Hehe! Don't Get Burned!",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hook's ATK to a single enemy.",
+        "shortDesc": "Deals minor Fire DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Hey! Remember Hook?",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hook's ATK to a single enemy. In addition, there is a {{2}}% <u>base chance</u> to inflict Burn for {{3}} turn(s).\\nWhen afflicted with Burn, enemies will take Fire DoT equal to <orangeStrong>{{4}}%</orangeStrong> of Hook's ATK at the beginning of each turn.",
+        "shortDesc": "Deals Fire DMG to a single enemy, with a high chance to inflict Burn on the enemy."
+      },
+      "1": {
+        "name": "Hey! Remember Hook?",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hook's ATK to a single enemy, with a {{2}}% <u>base chance</u> to Burn them for {{3}} turn(s). Additionally, deals Fire DMG equal to <orangeStrong>{{5}}%</orangeStrong> of Hook's ATK to enemies adjacent to it.\\nWhen afflicted with Burn, enemies will take Fire DoT equal to <orangeStrong>{{4}}%</orangeStrong> of Hook's ATK at the beginning of each turn.",
+        "shortDesc": "Deals Fire DMG to a single enemy with a high chance of inflicting Burn, also deals minor Fire DMG to enemies adjacent to it."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Boom! Here Comes the Fire!",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hook's ATK to a single enemy.\\nAfter using Ultimate, the next Skill to be used is Enhanced, which deals DMG to a single enemy and enemies adjacent to it.",
+        "shortDesc": "Deals massive Fire DMG to a single enemy and <orangeStrong>Enhances this unit's next Skill</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ack! Look at This Mess!",
+        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Hook deals Fire DMG equal to {{4}}% of her ATK to a random enemy. In addition, there is a {{1}}% <u>base chance</u> to inflict Burn on every enemy for {{3}} turn(s).\\nWhen afflicted with Burn, enemies will take Fire DoT equal to {{2}}% of Hook's ATK at the beginning of each turn.",
+        "shortDesc": "Attacks the enemy. After entering battle, deals Fire DMG to a random single enemy, with a high chance to inflict Burn on all enemy targets."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Early to Bed, Early to Rise",
+      "desc": "Enhanced Skill deals {{1}}% increased DMG."
+    },
+    "2": {
+      "name": "Happy Tummy, Happy Body",
+      "desc": "Extends the duration of Burn caused by Skill by {{1}} turn(s)."
+    },
+    "3": {
+      "name": "Don't Be Picky, Nothing's Icky",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "It's Okay to Not Know",
+      "desc": "When Talent is triggered, there is a {{1}}% base chance to Burn enemies adjacent to the target enemy, equivalent to that of Skill."
+    },
+    "5": {
+      "name": "Let the Moles' Deeds Be Known",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Always Ready to Punch and Kick",
+      "desc": "Hook deals {{1}}% more DMG to enemies afflicted with Burn."
+    }
+  }
+}

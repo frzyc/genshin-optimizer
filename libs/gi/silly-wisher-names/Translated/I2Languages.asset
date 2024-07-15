@@ -37,7 +37,23 @@ MonoBehaviour:
       - Đã kích hoạt
       - Zaaktywowane
       - Aktif
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Amount
       TermType: 0
@@ -59,7 +75,23 @@ MonoBehaviour:
       - Số lượng
       - Ilość
       - Miktar
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Banner_PooDisclaimer
       TermType: 0
@@ -81,7 +113,23 @@ MonoBehaviour:
       - Bạn sẽ có nhiều rác nhưng ít nhất một 4 sao hoặc đỡ hơn trong 10 lượt quay.
       - Otrzymasz dużo kup, ale także conajmniej jedną 4-Gwiazdkową postać co 10 losów
       - Bayağı boktan şeyler gelecek ama her 10 dilekte 4 yıldız ve ya daha iyisinin gelmesi garanti.
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: BannerDesc_Character
       TermType: 0
@@ -103,7 +151,23 @@ MonoBehaviour:
       - Những con 5 sao chỉ giới hạn trong banner này abcxyz
       - Ograniczone 5-gwiazdkowe postacie dostępne tylko tutaj!
       - 5 yıldızlı özel karakterler sadece belirtilen sürede buradadır falan filan.
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: BannerDesc_Standard
       TermType: 0
@@ -125,7 +189,23 @@ MonoBehaviour:
       - Banner thường, lúc nào cũng có.
       - To baner standardowy, zawsze dostępny.
       - Standart dilek işte, her zaman burada.
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: BannerType_Character
       TermType: 0
@@ -147,7 +227,23 @@ MonoBehaviour:
       - Cầu nguyện nhân vật
       - Baner eventowy - postaci
       - Karakter Etkinliği Dileği
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: BannerType_Standard
       TermType: 0
@@ -169,7 +265,23 @@ MonoBehaviour:
       - Cầu nguyện thường
       - Baner standardowy
       - 'Standart Dilek   '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: BlueBalls
       TermType: 0
@@ -191,7 +303,23 @@ MonoBehaviour:
       - Bóng xanh
       - Niebieskie kulki
       - Mavi bilyeler
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Boy
       TermType: 0
@@ -213,7 +341,23 @@ MonoBehaviour:
       - Trai
       - Chłopak
       - Erkek
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: boyorgirl
       TermType: 0
@@ -235,7 +379,23 @@ MonoBehaviour:
       - TRAI hay GÁI
       - CHŁOPAK CZY DZIEWCZYNA
       - ERKEK Mİ KIZ MI?
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Cancel
       TermType: 0
@@ -257,7 +417,23 @@ MonoBehaviour:
       - Hủy
       - Anuluj
       - İptal
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CanChangeLater
       TermType: 0
@@ -279,7 +455,23 @@ MonoBehaviour:
       - (Bạn có thể chỉnh lại sau)
       - (Możesz to zmienić później)
       - (Sonradan değiştirebilirsiniz)
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharacterArchive
       TermType: 0
@@ -301,7 +493,23 @@ MonoBehaviour:
       - Thư viện nhân vật
       - Archiwum postaci
       - Karakter Arşivi
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Characters
       TermType: 0
@@ -323,7 +531,23 @@ MonoBehaviour:
       - Nhân vật
       - Postacie
       - Karakterler
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CoffeeShop
       TermType: 0
@@ -345,7 +569,23 @@ MonoBehaviour:
       - Trà đá lề đường
       - Kawiarnia
       - Kahve Dükkanı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ComingSoon
       TermType: 0
@@ -367,7 +607,23 @@ MonoBehaviour:
       - Sắp ra mắt
       - Niedługo
       - Yakında Gelecek
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ComingSoon_Desc
       TermType: 0
@@ -389,7 +645,23 @@ MonoBehaviour:
       - "- Thêm art & gen\n- Thêm banner nhân vật mới\n- Banner vũ khí?\n- Trang bị/tinh luyện vũ khí (có thể)\n\nHỗ trợ app bằng cách đánh giá, và gửi tôi các ý tưởng từ các bạn!"
       - "- Brakujące rysunki i geny\n- Nowe banery postaci\n- Baner broni?\n- System ulepszania wyposażenia/broni (być może)\n\nWesprzyj tę aplikację, oceniając ją i pisząc swoje pomysły i sugestie!"
       - "-Olmayan resimler & genler\n-Yeni karakter etkinliği dilekleri\n-Silah etkinliği dileği?\n-Silah değiştirme ve saflaştırma sistemi (belki)\n\nBu uygulamayı desteklemek için puanlayabilir ve bana düşüncelerinizi iletebilirsiniz!\n"
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ComingSoon_FurryWisher
       TermType: 0
@@ -411,7 +683,23 @@ MonoBehaviour:
       - Xin hãy đợi game tiếp theo của tôi <color=#4CCAFF>Furry Wisher</color>!
       - Proszę, wyczekujcie mojej następnej gry <color=#4CCAFF>Furry Wisher</color>!
       - Sonraki oyunum <color=#4CCAFF>Furry Wisher</color> için lütfen bekleyin!
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con1
       TermType: 0
@@ -433,7 +721,23 @@ MonoBehaviour:
       - Cày chay
       - Free-to-play
       - Para vermeden oyna
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con2
       TermType: 0
@@ -455,7 +759,23 @@ MonoBehaviour:
       - Cá chép
       - Płotka
       - Küçük balık
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con2_Desc
       TermType: 0
@@ -477,7 +797,23 @@ MonoBehaviour:
       - '<color=#FDD840>Bỏ qua quảng cáo khi bạn reset</color> lúc nào cũng được, và luôn làm lại cuộc đời bằng 14400 {0}, 90 {1}, and 90 {2}.'
       - '<color=#FDD840>Pomiń reklamy przy resetowaniu</color> na zawsze, zawsze zaczynając od soczystych 14400 {0}, 90 {1} i 90 {2}.'
       - '<color=#FDD840>Sıfırla</color> ‘ya basıp reklamları hep atlayın ve oyuna mis gibi 14400 {0}, 90 {1}, ve 90 {2} ile başlayın.'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con3
       TermType: 0
@@ -499,7 +835,23 @@ MonoBehaviour:
       - Cá heo
       - Delfin
       - Yunus Balığı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con3_Desc
       TermType: 0
@@ -521,7 +873,23 @@ MonoBehaviour:
       - Bây giờ bạn có <color=#FDD840>40 chỗ</color> cho các nhân vật bạn kết hợp lại.
       - Będziesz mieć teraz <color=#FDD840>40 miejsc</color> na wygenerowane postacie.
       - Artık tipsiz karakterlerinizi kaydetmek için <color=#FDD840>40 tane</color yeriniz var.
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con4
       TermType: 0
@@ -543,7 +911,23 @@ MonoBehaviour:
       - Cá heo nạp vip
       - Gruby Delfin
       - Şişko Yunus Balığı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con4_Desc
       TermType: 0
@@ -565,7 +949,23 @@ MonoBehaviour:
       - '<color=#FDD840>Reset có nhiều đồ gacha hơn, </color> tăng đến 28800 {0}, 180 {1}, and 180 {2}. bây giờ bạn có <color=#FDD840>80 chỗ</color> cho các nhân vật bạn tạo ra.'
       - '<color=#FDD840>Podstawowa premia za reset została zwiększona</color> do 28800 {0}, 180 {1} i 180 {2}. Możesz teraz mieć <color=#FDD840>80 miejsc</color>, aby zachować swoje przeklęte postacie.'
       - "<color=#FDD840>Sıfırlamanın taban primi </color> 28800 {0}, 180 {1} ve 180 {2} oldu. Artık tipsiz karakterleriniz için  <color=#FDD840>80 tane</color> yeriniz var.\r\n"
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con4_Title
       TermType: 0
@@ -587,7 +987,23 @@ MonoBehaviour:
       - Cá heo nạp vip
       - Gruby Delfin
       - Şişko Yunus Balığı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con5
       TermType: 0
@@ -609,7 +1025,23 @@ MonoBehaviour:
       - Whale lỏ
       - Wieloryb
       - Balina
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con5_Desc
       TermType: 0
@@ -631,7 +1063,23 @@ MonoBehaviour:
       - '<color=#FDD840>Tất cả quảng cáo bây giờ không còn</color>. Gần như là gacha liên tục.'
       - '<color=#FDD840>Wszystkie reklamy są pomijane</color>. Prawie niekończące się kulki.'
       - '<color=#FDD840>Tüm reklamlar atlandı.</color>.Sonsuz sayıda bilye geldi yani.'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con6
       TermType: 0
@@ -653,7 +1101,23 @@ MonoBehaviour:
       - Whale vip15
       - Mega Wieloryb
       - Şişko Balina
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con6_Desc
       TermType: 0
@@ -675,7 +1139,23 @@ MonoBehaviour:
       - Bây giờ bạn có thể <color=#FDD840>dổi tên tất cả nhân vật</color>. Bonus thêm bạn được công nhận là một whale chúa nạp vip 15.
       - Con6_Desc
       - Artık <color=#FDD840>istediğin tüm karakterlere isim verebilirsin</color>. Bayağı balina oldun, para bol herhalde.
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Con6_Title
       TermType: 0
@@ -697,7 +1177,23 @@ MonoBehaviour:
       - Vina 400 củ
       - Con6_Title
       - Yuh ebesinin...Daha da Şişko Balina
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ConF2p_Desc
       TermType: 0
@@ -719,7 +1215,23 @@ MonoBehaviour:
       - Vâng, bạn rất thích xem <color=#FDD840>quảng cáo</color>! Quá tuyệt zời.
       - ConF2p_Desc
       - 'Sen <color=#FDD840>reklam izlemeyi</color> bayağı seviyorsun ha. Süper. '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ConF2p_Title
       TermType: 0
@@ -741,7 +1253,23 @@ MonoBehaviour:
       - F2P
       - Free-to-play
       - Para vermeden oyna
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ConF2pNot_Desc
       TermType: 0
@@ -763,7 +1291,23 @@ MonoBehaviour:
       - Cảm ơn <color=#FDD840>bạn đã ủng hộ</color>, rất ngầu phải không?
       - ConF2pNot_Desc
       - Desteğin için teşekkürler seni <color=#FDD840>harika</color> insan seni.
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ConF2pNot_Title
       TermType: 0
@@ -785,7 +1329,23 @@ MonoBehaviour:
       - Cày chay (tin chưa chuẩn đâu)
       - ConF2pNot_Title
       - Para vermeden oyna (Yersen)
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Confirm
       TermType: 0
@@ -807,7 +1367,23 @@ MonoBehaviour:
       - Xác nhận
       - Potwierdź
       - Onayla
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ConShop_ShortDesc
       TermType: 0
@@ -829,7 +1405,23 @@ MonoBehaviour:
       - Sức mạnh đồng tiền
       - ConShop_ShortDesc
       - Cüzdanın Gücü Adına
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ConShop_Title
       TermType: 0
@@ -851,7 +1443,23 @@ MonoBehaviour:
       - Cửa hàng cung mệnh
       - ConShop_Title
       - Oyuncu Takımyıldızı Dükkanı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ConstellationLv
       TermType: 0
@@ -873,7 +1481,23 @@ MonoBehaviour:
       - Cung mệnh Lv. <color=#7EFFF1>{0}</color>
       - Poz. konstelacji <color=#7EFFF1>{0}</color>
       - "Takımyıldızı Seviyesi <color=#7EFFF1>{0}</color>\r\n"
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Convert
       TermType: 0
@@ -895,7 +1519,23 @@ MonoBehaviour:
       - Chuyển đổi
       - Zmień
       - Takas Et
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ConvertBalls_Desc
       TermType: 0
@@ -917,7 +1557,23 @@ MonoBehaviour:
       - Cần <color=#EF9900>{0}</color> {1}. Đổi <color=#EF9900>{2}</color> {3}?
       - ConvertBalls_Desc
       - "<color=#EF9900>{0}</color> {1} lazım. Takas et <color=#EF9900>{2}</color> {3}?\n"
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ConvertBalls_Title
       TermType: 0
@@ -939,7 +1595,23 @@ MonoBehaviour:
       - Đổi bóng
       - ConvertBalls_Title
       - Bilyeleri Takas Et
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: DisclaimerNotGenshin
       TermType: 0
@@ -961,7 +1633,23 @@ MonoBehaviour:
       - KHÔNG LIÊN QUAN HAY TRỰC THUỘC GENSHIN
       - DisclaimerNotGenshin
       - GENSHIN İLE BAĞLANTILI DEĞİLDİR
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: DiscordDesc
       TermType: 0
@@ -983,7 +1671,23 @@ MonoBehaviour:
       - Thích thì vào đây cho cả thiên hạ xem cái thứ như từ địa ngục lên do bạn tạo ra
       - DiscordDesc
       - Gel tipsiz karakterini paylaş da biz de görelim.
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Enka_Desc
       TermType: 0
@@ -1005,7 +1709,23 @@ MonoBehaviour:
       - Làm những thẻ showcase char nhìn như vua mặc long bào từ UID công khai. Hoạt động dựa trên Enka.Network.
       - Enka_Desc
       - UID'ye göre halka açık bir profil edinin ve saçma sapan karakter kartları oluşturun! Enka.Network üzerindendir.
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Enka_ShortDesc
       TermType: 0
@@ -1027,7 +1747,23 @@ MonoBehaviour:
       - Làm thẻ nhân vật
       - Enka_ShortDesc
       - Saçma Sapan Gösteriş Kartları Yapın
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: EnkaInvalidId
       TermType: 0
@@ -1049,7 +1785,23 @@ MonoBehaviour:
       - ID không hợp lệ
       - Nieważne UID
       - Geçersiz UID
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: EnkaPrivate
       TermType: 0
@@ -1071,7 +1823,23 @@ MonoBehaviour:
       - Không tìm thấy nhân vật
       - EnkaPrivate
       - Karakter Bulunamadı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: EnkaUnavailable
       TermType: 0
@@ -1093,7 +1861,23 @@ MonoBehaviour:
       - Server đang không hoạt động, vui lòng thử lại sau
       - EnkaUnavailable
       - Hizmet kullanılamıyor, lütfen daha sonra tekrar deneyin.
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Event
       TermType: 0
@@ -1115,7 +1899,23 @@ MonoBehaviour:
       - Sự kiện
       - Event
       - Etkinlik
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: FatefulDesc
       TermType: 0
@@ -1137,7 +1937,23 @@ MonoBehaviour:
       - Mối duyên gì gì đấy abcxyz vân vân
       - FatefulDesc
       - Buluşma kader falan filan işte
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: FW_ReleaseInfo
       TermType: 0
@@ -1159,7 +1975,23 @@ MonoBehaviour:
       - "Thời gian mở <color=#3A88E9>ngày 7 tháng 3</color>\n<color=#C37000>( {0} ngày nữa )</color>"
       - 
       - "Yayınlanma tarihi <color=#3A88E9>7 Mart</color>\r\n"
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: GeneSplicer_Desc
       TermType: 0
@@ -1181,7 +2013,23 @@ MonoBehaviour:
       - "Kết hợp 2 tới 4 nhân vật để tạo ra nhân vật hoàn. toàn. mới.\n\n(Không phải ai cũng có gen cả - hiện tại thôi! Nhìn biểu tượng <color=#FFDF47>gen</color> trong mục Nhân vật để biết ai có hay không)"
       - GeneSplicer_Desc
       - "2-4 Karakteri birleştirip tipsiz birşey oluştur! \r\n\r\n(Bazı karakterlerin genleri yok-şimdilik! Karakter ekranındaki <color=#FFDF47>gen simgesine</color> bak anlarsın.)"
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: GeneSplicer_ShortDesc
       TermType: 0
@@ -1203,7 +2051,23 @@ MonoBehaviour:
       - Tạo nhân vật theo lựa chọn của bạn
       - GeneSplicer_ShortDesc
       - Tipsiz Karakter Yapıcı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: GeneSplicer_Title
       TermType: 0
@@ -1225,7 +2089,23 @@ MonoBehaviour:
       - Tạo nhân vật
       - GeneSplicer_Title
       - Gen Birleştirici
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Girl
       TermType: 0
@@ -1247,7 +2127,23 @@ MonoBehaviour:
       - Gái
       - Dziweczyna
       - Kız
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: History
       TermType: 0
@@ -1269,7 +2165,23 @@ MonoBehaviour:
       - Lịch sử
       - Historia
       - Geçmiş
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: HolidayCard_Desc
       TermType: 0
@@ -1291,7 +2203,23 @@ MonoBehaviour:
       - Gửi thẻ nhân vật đến bạn bè~
       - HolidayCard_Desc
       - Kankilerine kart gönder~
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: HolidayCard_Title
       TermType: 0
@@ -1313,7 +2241,23 @@ MonoBehaviour:
       - Tạo thẻ sự kiện
       - HolidayCard_Title
       - Tatil Kartı Yapıcı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: HolidayDesc
       TermType: 0
@@ -1335,7 +2279,23 @@ MonoBehaviour:
       - '{0} hi vọng bạn sinh nhật vui vẻ, và sẽ luôn luôn thắng 50/50 trong những năm tới!'
       - HolidayDesc
       - "Gel {0} sana yeni yıllar dilesin, belki sonraki yıl tüm 50/50’ leri kazanırsın!\n"
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: HolidayDescCNY
       TermType: 0
@@ -1357,7 +2317,23 @@ MonoBehaviour:
       - '{0} chúc mừng năm Âm lịch mới! Hi vọng bạn sẽ may như rùa vậy!'
       - HolidayDescCNY
       - "Gel {0} sana mutlu Ay yılları dilesin! Tavşan yılı sana şans getirsin!\r\n"
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: HolidayTo
       TermType: 0
@@ -1379,7 +2355,23 @@ MonoBehaviour:
       - Thưa {0}
       - ' {0}'
       - Sevgili {0},
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: JoinParty
       TermType: 0
@@ -1401,7 +2393,23 @@ MonoBehaviour:
       - '{0} đã vào đội'
       - JoinParty
       - '{0} gruba katıldı!'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: LangOpt
       TermType: 0
@@ -1423,7 +2431,23 @@ MonoBehaviour:
       - Lựa chọn ngôn ngữ
       - Język
       - Dil Seçeneği
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: LIMITED
       TermType: 0
@@ -1445,7 +2469,23 @@ MonoBehaviour:
       - GIỚI HẠN
       - LIMITOWANE
       - SINIRLI
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: LuckRaterNoData
       TermType: 0
@@ -1467,7 +2507,23 @@ MonoBehaviour:
       - 'Vận may: cần thêm thông tin'
       - LuckRaterNoData
       - 'Şans Değerlendirmesi: Daha fazla veriye ihtiyaç var'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: LuckRaterTemplate
       TermType: 0
@@ -1489,7 +2545,23 @@ MonoBehaviour:
       - 'Thắng 50/50: <color=#F1EDD7>{0}/{1}</color> Trung bình pity 5 sao: <color=#F1EDD7>{2}</color> Số roll tổng: <color=#F1EDD7>{3}</color> Vận may của bạn: <color=#F1EDD7>{4}</color>'
       - LuckRaterTemplate
       - 'Kazanılan 50/50’ler: <color=#F1EDD7>{0}/{1}</color> 5 Yıldızlı Karakterin Gelme Sıklığı: <color=#F1EDD7>{2}</color> Tüm Dilek Sayısı: <color=#F1EDD7>{3}</color> Şans Değerlendirmesi: <color=#F1EDD7>{4}</color>'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: NeedCon
       TermType: 0
@@ -1511,7 +2583,23 @@ MonoBehaviour:
       - Phải kích hoạt {0} trước
       - NeedCon
       - Önce {0} yeteneğini aç
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: NeedData
       TermType: 0
@@ -1533,7 +2621,23 @@ MonoBehaviour:
       - Cần thêm thông tin
       - NeedData
       - Daha çok veri gerekiyor
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: NEW
       TermType: 0
@@ -1555,7 +2659,23 @@ MonoBehaviour:
       - MỚI
       - NOWOŚĆ
       - YENİ
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: NothingYet
       TermType: 0
@@ -1577,7 +2697,23 @@ MonoBehaviour:
       - Chưa có gì cả
       - Jak narazie nic
       - Şimdilik birşey yok
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: NotoSansThai
       TermType: 1
@@ -1599,7 +2735,23 @@ MonoBehaviour:
       - ARIAL
       - ARIAL
       - ARIAL
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ObtainPrimos
       TermType: 0
@@ -1621,7 +2773,23 @@ MonoBehaviour:
       - Nhận {0}
       - Dostań
       - '{0} edin'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ObtainPrimos_Desc
       TermType: 0
@@ -1643,7 +2811,23 @@ MonoBehaviour:
       - Nhận {0} {1} <color=#2B9AEA>({2})</color> qua việc xem một video ngắn!
       - ObtainPrimos_Desc
       - Kısa bir video karşılığında {0} {1} <color=#2B9AEA>({2})</color>  elde et!
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ObtainPrimos_DescWhale
       TermType: 0
@@ -1665,7 +2849,23 @@ MonoBehaviour:
       - Nhận {0} {1} <color=#2B9AEA>({2})</color> chỉ với một nhấp!
       - ObtainPrimos_DescWhale
       - Butona basıp {0} {1} <color=#2B9AEA>({2})</color> elde et!
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: PatchNum
       TermType: 0
@@ -1687,7 +2887,23 @@ MonoBehaviour:
       - Phiên bản {0}
       - Wersja {0}
       - Sürüm {0}
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: PinkBalls
       TermType: 0
@@ -1709,7 +2925,23 @@ MonoBehaviour:
       - Bóng tím và xanh
       - Różowo-niebieskie kulki
       - Pembeli mavili bilye
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: PityCount
       TermType: 0
@@ -1731,7 +2963,23 @@ MonoBehaviour:
       - '{0} Đếm pity: {1}'
       - PityCount
       - '{0} Yıldız Geleli Dilek Sayısı: {1}'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: PLAY
       TermType: 0
@@ -1753,7 +3001,23 @@ MonoBehaviour:
       - CHƠI
       - GRAJ
       - OYNA
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Primos
       TermType: 0
@@ -1775,7 +3039,23 @@ MonoBehaviour:
       - Nguyên thạch
       - Primogemy
       - Bedavagems
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Purchase
       TermType: 0
@@ -1797,7 +3077,23 @@ MonoBehaviour:
       - Mua
       - Kup
       - Satın Al
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: PurchaseBallsTitle
       TermType: 0
@@ -1819,7 +3115,23 @@ MonoBehaviour:
       - Mua bóng
       - Kup kulki
       - Bilye Satın Al
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: RateApp
       TermType: 0
@@ -1841,7 +3153,23 @@ MonoBehaviour:
       - Đánh giá app
       - RateApp
       - Uygulamayı Puanla
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: RESET
       TermType: 0
@@ -1863,7 +3191,23 @@ MonoBehaviour:
       - RÌ SẸT
       - RESET
       - Sıfırla
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ResetDesc
       TermType: 0
@@ -1885,7 +3229,23 @@ MonoBehaviour:
       - '<color=#E54444>Reset mọi thứ</color> trừ các banner đã mở và nhân vật đã tạo, với mức roll như sau'
       - ResetDesc
       - 'Açılan Karakter Etkinlik Dilekleri ve Tipsiz Karakterler hariç <color=#E54444> herşeyi sıfırla</color> ve yukarıda verilenler ile yeniden başla. '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ResetTitle
       TermType: 0
@@ -1907,7 +3267,23 @@ MonoBehaviour:
       - Reset dữ liệu
       - Zacznij na nowo
       - Verileri Sıfırla
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: RestorePurchases
       TermType: 0
@@ -1929,7 +3305,23 @@ MonoBehaviour:
       - Khôi phục thanh toán
       - Przywróć zakupy
       - Satın Alınanları Geri Yükle
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Save
       TermType: 0
@@ -1951,7 +3343,23 @@ MonoBehaviour:
       - Lưu
       - Zachowaj
       - 'Kaydet '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: SELECTED
       TermType: 0
@@ -1973,7 +3381,23 @@ MonoBehaviour:
       - ĐÃ CHỌN
       - WYBRANE
       - SEÇİLDİ
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Share
       TermType: 0
@@ -1995,7 +3419,23 @@ MonoBehaviour:
       - Chia sẻ
       - Udostępnij
       - Paylaş
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Skip
       TermType: 0
@@ -2017,7 +3457,23 @@ MonoBehaviour:
       - Bỏ qua
       - Dalej >
       - Atla
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: SlimeValley_Desc
       TermType: 0
@@ -2039,7 +3495,23 @@ MonoBehaviour:
       - Vô vàn slime để đập cho sướng. Nhận nguyên thạch và tăng cấp cho nhân vật của bạn!
       - Nie kończąca się ilość slimeów do zabicia. Otrzymaj Freemosy i awansuj swoje postacie!
       - Döv döv bitmeyen bodurlop seçenekleri. Bedavagem kazanın ve karakterlerinizin seviyelerini yükseltin!
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: SlimeValley_ShortDesc
       TermType: 0
@@ -2061,7 +3533,23 @@ MonoBehaviour:
       - Đập slime như đập đá
       - Nadużyj Slime'y
       - Zavallı Bodurlopları Bi Güzel Döv
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: SlimeValley_Title
       TermType: 0
@@ -2083,7 +3571,23 @@ MonoBehaviour:
       - Thung Lũng Slime
       - Dolina Slime'ów
       - Bodurlop Vadisi
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Start
       TermType: 0
@@ -2105,7 +3609,23 @@ MonoBehaviour:
       - Bắt đầu
       - Start
       - Başla
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: support_coffee
       TermType: 0
@@ -2127,7 +3647,23 @@ MonoBehaviour:
       - Mua tôi cốc cà phê
       - Kup mi Kawę
       - Bana bir Kahve ısmarla
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: support_coffeelarge
       TermType: 0
@@ -2149,7 +3685,23 @@ MonoBehaviour:
       - Mua tôi cốc cà phê cỡ XL
       - Kup mi wielką Kawę
       - Bana büyük boy bir Kahve ısmarla
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: support_desc
       TermType: 0
@@ -2171,7 +3723,23 @@ MonoBehaviour:
       - "Nếu bạn thích game hiện tại bạn đang chơi và bạn muốn ủng hộ, thì bạn có thể xem quảng cáo hoặc là mua cho tôi cốc cà phê.\n\nBạn sẽ chả được cái mống gì cả, ngoại trừ lời cảm ơn chân thành từ tôi!"
       - "If you like my work and want to support my creations, you can watch a short ad or buy me a coffee.\n\nYou will receive absolutely nothing in return, except my gratitude!"
       - "Çalışmalarımı beğeniyor ve yaptıklarımı desteklemek istiyorsanız kısa bir reklam izleyebilir veya bana bir kahve ısmarlayabilirsiniz.\r\n\r\nKahvenin karşılığında bir şey almıyorsunuz tabii, ama çok makbule geçer söyleyeyim!"
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: support_lunch
       TermType: 0
@@ -2193,7 +3761,23 @@ MonoBehaviour:
       - Mua tôi bữa cơm trưa
       - Kup mi Lunch
       - Bana Öğle Yemeği ısmarla
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: SupportDev
       TermType: 0
@@ -2215,7 +3799,23 @@ MonoBehaviour:
       - Ủng hộ nhà phát triển
       - Wspieraj dewelopera
       - Yapımcıyı Destekle
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: SW_Title
       TermType: 0
@@ -2237,7 +3837,23 @@ MonoBehaviour:
       - Silly Wisher (KHÔNG PHẢI Genshin)
       - Silly Wisher (NIE Genshin)
       - Silly Wisher (Genshin DEĞİDİR)
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: ThankYou
       TermType: 0
@@ -2259,7 +3875,23 @@ MonoBehaviour:
       - Cảm ơn bạn rất nhiều!
       - Dziękujemy!
       - Teşekkürler!
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: TimeTravel_Warn1
       TermType: 0
@@ -2281,7 +3913,23 @@ MonoBehaviour:
       - Này Nhà lữ hành! Dừng ngay việc điều khiển thời gian đi, không thì kết quả là mô hình không-thời gian sẽ bị bóp méo, hay là mọi thứ sẽ reset đấy!
       - Hej, Podróżniku! Proszę przestań podróżować w czasie, ponieważ może to zniszczyć czasoprzestrzeń, co zresetuje wszystko!
       - Ey Gezgin! Lütfen zaman yolculuğu yapmayı bırak, yoksa uzay-zaman sürekliliğini bozabilirsin! Öyle olursa her şey sıfırlanır ona göre, benden söylemesi.
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: TimeTravel_Warn2
       TermType: 0
@@ -2303,7 +3951,23 @@ MonoBehaviour:
       - Mô hình không-thời gian đã hỏng do Nhà lữ hành gian lận. Đã reset xong.
       - Space-time continuum broken due to Traveller cheating. Reset complete.
       - Gezgin hile yaptığı için uzay-zaman sürekliliği bozuldu. Sıfırlama tamamlandı.
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: TotalSupportDesc
       TermType: 0
@@ -2325,7 +3989,23 @@ MonoBehaviour:
       - 'Bạn đã ủng hộ: '
       - 'Twoja pomoc:'
       - 'Desteğin: '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: transDesc
       TermType: 0
@@ -2347,7 +4027,23 @@ MonoBehaviour:
       - "Bạn đang dùng bản dịch tiếng Việt, được dịch từ trái tim :)\n\n- hmmthisisepic"
       - "Obecnie korzystasz z wersji polskiej!\n\n- Mana i Inspire"
       - "Şu anda Türkçe versiyonun tadını çıkarıyorsunuz!\n\n- Cen"
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Unlock
       TermType: 0
@@ -2369,7 +4065,23 @@ MonoBehaviour:
       - Mở khoá
       - Odblokuj
       - 'Aç '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: UnlockBanner
       TermType: 0
@@ -2391,7 +4103,23 @@ MonoBehaviour:
       - Mở khoá banner
       - Odblokuj Baner {0}
       - '{0} Karakter Etkinlik Dileğini Aç'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: UnlockBannerDesc
       TermType: 0
@@ -2413,7 +4141,23 @@ MonoBehaviour:
       - Mở banner này +20 {0}! Sẽ giữ lại kể cả khi bạn reset <color=#E03B3B>(trừ việc bạn xoá đi tải lại game)</color>
       - Odbokuj ten baner +20 {0}! Zostanie nawet jesli wcisniesz Reset <color=#E03B3B>(unless you delete app)</color>
       - Bu Karakter Etkinlik Dileğini aç ve +20 {0} kazan! Sıfırlansa bile gitmez<color=#E03B3B> (uygulamayı silmediğin sürece)</color>
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: View
       TermType: 0
@@ -2435,7 +4179,23 @@ MonoBehaviour:
       - Xem
       - Zobacz
       - İncele
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WatchAd
       TermType: 0
@@ -2457,7 +4217,23 @@ MonoBehaviour:
       - Xem quảng cáo
       - Obejrzyj reklamę
       - Reklam İzle
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WishHistory
       TermType: 0
@@ -2479,7 +4255,23 @@ MonoBehaviour:
       - Lịch sử
       - Historia losów
       - Dilek Geçmişi
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WishTimes
       TermType: 0
@@ -2501,7 +4293,23 @@ MonoBehaviour:
       - Cầu nguyện x{0}
       - Los x{0}
       - Dilek x{0}
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WishType
       TermType: 0
@@ -2523,7 +4331,23 @@ MonoBehaviour:
       - Loại cầu nguyện
       - Rodzaj losa
       - Dilek Tipi
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: xStar
       TermType: 0
@@ -2545,7 +4369,23 @@ MonoBehaviour:
       - '{0} sao'
       - '{0}-Gwiazdy'
       - '{0}- Yıldız'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: xWishes
       TermType: 0
@@ -2567,7 +4407,23 @@ MonoBehaviour:
       - '{0} cầu nguyện'
       - '{0} losów'
       - '{0} Dilek'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: BannerType_Weapon
       TermType: 0
@@ -2589,7 +4445,23 @@ MonoBehaviour:
       - Cầu nguyện vũ khí
       - Życzenie broni
       - Silah Dileği
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: Weapon
       TermType: 0
@@ -2611,7 +4483,23 @@ MonoBehaviour:
       - Vũ khí
       - Broń
       - Silah
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WeaponDesc
       TermType: 0
@@ -2633,7 +4521,23 @@ MonoBehaviour:
       - Mấy đồ đập đau hơn
       - Bolesne rzeczy
       - Zararlı Şeyler
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/aether
       TermType: 0
@@ -2655,7 +4559,23 @@ MonoBehaviour:
       - Trùm Harem
       - Ather
       - Atar
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/albedo
       TermType: 0
@@ -2677,7 +4597,23 @@ MonoBehaviour:
       - Súbedo
       - Susbedo
       - Kimyabedo
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/alhaitham
       TermType: 0
@@ -2699,7 +4635,23 @@ MonoBehaviour:
       - Mọt sách
       - Muscle Nerd
       - Kaslı Kâtip
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/aloy
       TermType: 0
@@ -2721,7 +4673,23 @@ MonoBehaviour:
       - Zelda
       - Ejloj
       - Halay
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/amber
       TermType: 0
@@ -2743,7 +4711,23 @@ MonoBehaviour:
       - Ambủh
       - Ambrr
       - Tuborg Amber
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/ayaka
       TermType: 0
@@ -2765,7 +4749,23 @@ MonoBehaviour:
       - Ayaya
       - Ayaya
       - Ayak
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/ayato
       TermType: 0
@@ -2787,7 +4787,23 @@ MonoBehaviour:
       - Trà sữa man
       - Bobbaman
       - Bayato
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/baizhu
       TermType: 0
@@ -2800,7 +4816,7 @@ MonoBehaviour:
       - Langue de Serpent
       - Dottor Serpente
       - Doktor Schlange
-      - doctora serpiente
+      - Dr.Simi
       - 플블 판탈로네
       - หมองู
       - Bakrie Tongpang
@@ -2809,7 +4825,23 @@ MonoBehaviour:
       - Dr. Bất tử
       - Dr House
       - Doktor Tıss
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/barbara
       TermType: 0
@@ -2831,7 +4863,23 @@ MonoBehaviour:
       - Idol tóp tóp
       - Babs
       - Berber
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/beidou
       TermType: 0
@@ -2853,7 +4901,23 @@ MonoBehaviour:
       - Người lái đò
       - Baedou
       - Korsan Abla
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/bennett
       TermType: 0
@@ -2875,7 +4939,23 @@ MonoBehaviour:
       - Đá thủ
       - Benedict
       - Bahtsız Bedevi
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/candace
       TermType: 0
@@ -2897,7 +4977,23 @@ MonoBehaviour:
       - Candêz
       - Candeez
       - Van Kedisi
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/chongyun
       TermType: 0
@@ -2919,7 +5015,23 @@ MonoBehaviour:
       - Bing chilling
       - Brainfreeze
       - Çongus
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/collei
       TermType: 0
@@ -2941,7 +5053,23 @@ MonoBehaviour:
       - Cô Lây
       - Colliflowa
       - Colledelen
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/cyno
       TermType: 0
@@ -2963,7 +5091,23 @@ MonoBehaviour:
       - Yugino
       - Yugino
       - Karabaş
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/dehya
       TermType: 0
@@ -2976,7 +5120,7 @@ MonoBehaviour:
       - Felinferna
       - gatto forte
       - Starke katze
-      - gato fuerte
+      - Furra de closet
       - 제2의 감동
       - แมวกล้าม
       - Gudang Garam
@@ -2985,7 +5129,23 @@ MonoBehaviour:
       - Mèo Lửa
       - Sześciopak
       - Deh
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/diluc
       TermType: 0
@@ -3007,7 +5167,23 @@ MonoBehaviour:
       - Bát Man
       - Batman
       - Batman
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/diona
       TermType: 0
@@ -3029,7 +5205,23 @@ MonoBehaviour:
       - Diana
       - Dio An
       - Pss pss pss
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/dori
       TermType: 0
@@ -3051,7 +5243,23 @@ MonoBehaviour:
       - Scammer
       - Door
       - Doyumsuz
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/eula
       TermType: 0
@@ -3073,7 +5281,23 @@ MonoBehaviour:
       - Skadi
       - Vengeance
       - Ulan
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/faruzan
       TermType: 0
@@ -3095,7 +5319,23 @@ MonoBehaviour:
       - Miku shopee
       - Miku
       - Faruk
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/fischl
       TermType: 0
@@ -3117,7 +5357,23 @@ MonoBehaviour:
       - Chim lỏ
       - Purple Chicken
       - Kuş Beyin
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/ganyu
       TermType: 0
@@ -3139,7 +5395,23 @@ MonoBehaviour:
       - Dê
       - Goat
       - 'Keçi '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/gorou
       TermType: 0
@@ -3161,7 +5433,23 @@ MonoBehaviour:
       - Gâu gâu
       - Grr
       - Hav Hav
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/heizou
       TermType: 0
@@ -3183,7 +5471,23 @@ MonoBehaviour:
       - Conan
       - One Punch
       - Çıkışa Gel
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/hutao
       TermType: 0
@@ -3205,7 +5509,23 @@ MonoBehaviour:
       - Hu?
       - Who?
       - Ha?
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/itto
       TermType: 0
@@ -3227,7 +5547,23 @@ MonoBehaviour:
       - Cắm sừng
       - Bullchucker
       - İt oğlu it
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/jean
       TermType: 0
@@ -3249,7 +5585,23 @@ MonoBehaviour:
       - Quần bò
       - Dżin
       - Sarı hindiba
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/kaeya
       TermType: 0
@@ -3271,7 +5623,23 @@ MonoBehaviour:
       - Cầu băng
       - Kajak
       - Kayak
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/kazuha
       TermType: 0
@@ -3293,7 +5661,23 @@ MonoBehaviour:
       - Kakaka
       - Kazoo
       - Kaz
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/keqing
       TermType: 0
@@ -3315,7 +5699,23 @@ MonoBehaviour:
       - '"Mèo"'
       - Kequeen
       - Kek
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/klee
       TermType: 0
@@ -3337,7 +5737,23 @@ MonoBehaviour:
       - Loli khủng bố
       - Terror Tot
       - Sarışın Bomba
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/kokomi
       TermType: 0
@@ -3359,7 +5775,23 @@ MonoBehaviour:
       - Mì tôm kokomi
       - Kokofish
       - Gulu gulu
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/kuki
       TermType: 0
@@ -3381,7 +5813,23 @@ MonoBehaviour:
       - Gánh team
       - Cookie
       - Kovid
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/layla
       TermType: 0
@@ -3403,7 +5851,23 @@ MonoBehaviour:
       - Ngái ngủ
       - Lala
       - Lay Lay Lom
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/lisa
       TermType: 0
@@ -3425,7 +5889,23 @@ MonoBehaviour:
       - Thủ thư lôi
       - Bibliotekarka
       - Lise
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/lumine
       TermType: 0
@@ -3447,7 +5927,23 @@ MonoBehaviour:
       - Lúa mì
       - Loom
       - Lamel
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/mika
       TermType: 0
@@ -3460,7 +5956,7 @@ MonoBehaviour:
       - Mikado
       - Birdboy
       - Vogeljunge
-      - Birdboy
+      - Mikausa
       - 고산자 김정호
       - เบ๊เจ้แน่น
       - Parkit
@@ -3469,7 +5965,23 @@ MonoBehaviour:
       - Bé chim
       - Len
       - Civciv
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/mona
       TermType: 0
@@ -3491,7 +6003,23 @@ MonoBehaviour:
       - Nghèo kiết xác
       - Kałuża
       - Falcı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/nahida
       TermType: 0
@@ -3513,7 +6041,23 @@ MonoBehaviour:
       - Buẻ
       - Nihido
       - Nah
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/niceweapon
       TermType: 0
@@ -3535,7 +6079,23 @@ MonoBehaviour:
       - Kiếm ngon
       - Nice Weapon
       - Güzel Silah
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/nilou
       TermType: 0
@@ -3557,7 +6117,23 @@ MonoBehaviour:
       - Milô
       - Niloo
       - Nilülü
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/ningguang
       TermType: 0
@@ -3579,7 +6155,23 @@ MonoBehaviour:
       - Người giàu
       - Richlady
       - Ningguang Ilıcalı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/noelle
       TermType: 0
@@ -3601,7 +6193,23 @@ MonoBehaviour:
       - Trực thăng
       - Battle Maid
       - Mutlu Noeller
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/okweapon
       TermType: 0
@@ -3623,7 +6231,23 @@ MonoBehaviour:
       - Kiếm tàm tạm
       - OK Weapon
       - İyi Silah
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/poop
       TermType: 0
@@ -3645,7 +6269,23 @@ MonoBehaviour:
       - Rác
       - Poop
       - Bok
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/qiqi
       TermType: 0
@@ -3667,7 +6307,23 @@ MonoBehaviour:
       - Đã tạch
       - Niszczyciel Pity
       - Zombi
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/raiden
       TermType: 0
@@ -3689,7 +6345,23 @@ MonoBehaviour:
       - Ei?
       - Shogun
       - Radyan
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/razor
       TermType: 0
@@ -3711,7 +6383,23 @@ MonoBehaviour:
       - Dao cạo
       - Wolfboy
       - 'Bozkurt '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/rosaria
       TermType: 0
@@ -3733,7 +6421,23 @@ MonoBehaviour:
       - Nữ tu (?)
       - Weird Nun
       - Rahibırr
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/sara
       TermType: 0
@@ -3755,7 +6459,23 @@ MonoBehaviour:
       - Simp lỏ
       - Simp
       - Karga
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/sayu
       TermType: 0
@@ -3777,7 +6497,23 @@ MonoBehaviour:
       - Lăn
       - Sayunara
       - Ninja Velet
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/shenhe
       TermType: 0
@@ -3799,7 +6535,23 @@ MonoBehaviour:
       - Tâm hồn
       - Cool Auntie
       - Teyzenhe
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/sucrose
       TermType: 0
@@ -3821,7 +6573,23 @@ MonoBehaviour:
       - Đường
       - Sacharoza
       - Şeker
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/tartaglia
       TermType: 0
@@ -3843,7 +6611,23 @@ MonoBehaviour:
       - Chill dẻ
       - Tortilla
       - Terminatörlia
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/thoma
       TermType: 0
@@ -3865,7 +6649,23 @@ MonoBehaviour:
       - Hầu trai
       - Tomasz
       - 'İç Güveysi '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/tighnari
       TermType: 0
@@ -3887,7 +6687,23 @@ MonoBehaviour:
       - Tai to
       - Big Ears
       - 'Torbacı '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/venti
       TermType: 0
@@ -3909,7 +6725,23 @@ MonoBehaviour:
       - Barbatos?
       - Barsibato
       - Berbatos
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/wanderer
       TermType: 0
@@ -3931,7 +6763,23 @@ MonoBehaviour:
       - Môi chề
       - Scaramusz
       - Kuklamouche
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/xiangling
       TermType: 0
@@ -3953,7 +6801,23 @@ MonoBehaviour:
       - Siêu đầu bếp
       - Cooking Girl
       - Masterşef
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/xiao
       TermType: 0
@@ -3975,7 +6839,23 @@ MonoBehaviour:
       - Lùn
       - Pogoman
       - Zıp zıp
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/xingqiu
       TermType: 0
@@ -3997,7 +6877,23 @@ MonoBehaviour:
       - Thiếu gia
       - Waterboy
       - Fışkiye
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/xinyan
       TermType: 0
@@ -4019,7 +6915,23 @@ MonoBehaviour:
       - Cháy đàn
       - Rocker Chick
       - Rakçı Serpil
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/yae
       TermType: 0
@@ -4041,7 +6953,23 @@ MonoBehaviour:
       - Yay
       - Yay
       - 'Yey '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/yanfei
       TermType: 0
@@ -4063,7 +6991,23 @@ MonoBehaviour:
       - Sáu người tốt
       - Lawyer
       - Yasa
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/yaoyao
       TermType: 0
@@ -4085,7 +7029,23 @@ MonoBehaviour:
       - Người Thỏ
       - Bell Head
       - Pancar Kafa
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/yelan
       TermType: 0
@@ -4107,7 +7067,23 @@ MonoBehaviour:
       - Dì Lan
       - Lady Sonic
       - Ye, lan!
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/yoimiya
       TermType: 0
@@ -4129,7 +7105,23 @@ MonoBehaviour:
       - Yoi
       - Pewpew
       - Taramalı Tüfek
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/yunjin
       TermType: 0
@@ -4151,7 +7143,23 @@ MonoBehaviour:
       - Opera
       - Opera
       - Opera
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/zhongli
       TermType: 0
@@ -4173,7 +7181,23 @@ MonoBehaviour:
       - John Lê
       - Żonkil
       - Züğürt
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/kirara
       TermType: 0
@@ -4186,7 +7210,7 @@ MonoBehaviour:
       - Le chat de Schrödinger
       - Il gatto di Schrödinger
       - Box-Katze
-      - El gato de Schrödinger
+      - Kirappi
       - 슈뢰딩거의 고양이
       - กล่องใส่แมว
       - Koceng kerdus
@@ -4195,7 +7219,23 @@ MonoBehaviour:
       - Mều
       - Box Cat
       - Box Cat
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/kaveh
       TermType: 0
@@ -4217,7 +7257,23 @@ MonoBehaviour:
       - Ca ve
       - Kawa
       - Kevin
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/lyney
       TermType: 0
@@ -4230,7 +7286,7 @@ MonoBehaviour:
       - Fille magique
       - Ragazza magica
       - Magisches Mädchen
-      - Chica mágica
+      - Truquitos
       - 마법소녀
       - สาวน้อยเวทมนตร์
       - Tarno Junior
@@ -4239,7 +7295,23 @@ MonoBehaviour:
       - Mồn Lèo anh
       - Magical Grrl
       - Magical Grrl
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/lynette
       TermType: 0
@@ -4252,7 +7324,7 @@ MonoBehaviour:
       - Catgirl impassible
       - Catgirl impassibile
       - Deadpan Catgirl
-      - Gatita inexpresiva
+      - Truquitos en señas
       - 퍼리넷
       - เดดแพน แคทเกิร์ล
       - Tarni Asisten
@@ -4261,7 +7333,23 @@ MonoBehaviour:
       - Mồn Lèo em
       - Deadpan Catgirl
       - Deadpan Catgirl
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/freminet
       TermType: 0
@@ -4274,7 +7362,7 @@ MonoBehaviour:
       - Scaphandre autonome
       - Immersione
       - Tauchen
-      - Escafandra autónoma
+      - Salganse del chat
       - 해녀
       - สกูบา
       - Firman
@@ -4283,7 +7371,23 @@ MonoBehaviour:
       - Hướng Nội
       - Scuba
       - Scuba
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/neuvillette
       TermType: 0
@@ -4296,7 +7400,7 @@ MonoBehaviour:
       - Juge Hydropump
       - Giudice Idropompa
       - Richter Hydropump
-      - Juez Hydropump
+      - Onda vital
       - 느비요뜨
       - ผู้พิพากษาไฮโดรปั๊ม
       - Nopal
@@ -4305,7 +7409,23 @@ MonoBehaviour:
       - Anh Thủy Long
       - Judge Hydropump
       - Judge Hydropump
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/wriothesley
       TermType: 0
@@ -4318,7 +7438,7 @@ MonoBehaviour:
       - Punch Glacé
       - Incisivo Sul Ghiaccio
       - Eisig
-      - Hielo con garra
+      - Cielos que macizo
       - 냥냥펀치
       - หมัดน้ำแข็ง
       - Roesli
@@ -4327,7 +7447,23 @@ MonoBehaviour:
       - Anh Xây Cầu
       - Ice Punchy Wolfman
       - Ice Punchy Wolfman
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/furina
       TermType: 0
@@ -4340,7 +7476,7 @@ MonoBehaviour:
       - Morveuse
       - Mocciosa
       - Gör
-      - Niña Sucia
+      - Tuve mi evento canon
       - 배관공
       - เด็กเลวทราม
       - Kobokan Air
@@ -4349,7 +7485,23 @@ MonoBehaviour:
       - Thần đằng
       - Brat
       - Brat
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/charlotte
       TermType: 0
@@ -4362,7 +7514,7 @@ MonoBehaviour:
       - Clone d'Avocat
       - Clone dell'avvocato
       - Anwaltsklon
-      - Clon de Abogado
+      - Sabe demasiado...
       - 기레기
       - ทนายโคลน
       - Saya viralin nih
@@ -4371,7 +7523,23 @@ MonoBehaviour:
       - Chị Ngok
       - Lawyer Clone
       - Lawyer Clone
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/navia
       TermType: 0
@@ -4384,7 +7552,7 @@ MonoBehaviour:
       - Pleurnichard
       - Piagnucolona
       - Heulsuse
-      - Llorona
+      - Taylor Swift
       - 나비야
       - ร้องไห้ออกมาเถอะที่รัก
       - Nabila Sewift
@@ -4393,20 +7561,36 @@ MonoBehaviour:
       - Thúy Loan
       - Beksa
       - Ağla Bebek
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/clorinde
       TermType: 0
       Description:
       Languages:
-      - Strongest Button
+      - Chlorine
       - 最强的纽扣
       - 最强的纽扣
       - 最強のボタン
       - Bouton le Plus Fort
       - Pulsante più Potente
       - Stärkster Knopf
-      - Botón más Fuerte
+      - Soy el botón que bendición
       - 클래시로얄
       - ปุ่มที่แข็งแกร่งที่สุด
       - Cl
@@ -4415,7 +7599,23 @@ MonoBehaviour:
       - Nút mạnh nhất
       - Najsilniejszy Przycisk
       - En Güçlü Düğme
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/chevreuse
       TermType: 0
@@ -4428,7 +7628,7 @@ MonoBehaviour:
       - Mousquetaire
       - Moschettiere
       - Musketier
-      - Mosquetero
+      - Ya te la sabes
       - 슈베르트
       - ทหารเสือ
       - Ciprut
@@ -4437,7 +7637,23 @@ MonoBehaviour:
       - lính ngự lâm
       - Muszkieter
       - Silahşör
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/skirk
       TermType: 0
@@ -4450,7 +7666,7 @@ MonoBehaviour:
       - Lanceur de baleine
       - Lanciatore di balene
       - Walwerfer
-      - Lanzador de ballenas
+      - Yo los desarrollo pibes
       - 스컹크
       - ปลาวาฬทอสเซอร์
       - Banting Tatang
@@ -4459,7 +7675,23 @@ MonoBehaviour:
       - Người ném cá voi
       - Wielorybnik
       - Balina Atıcı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/xianyun
       TermType: 0
@@ -4481,7 +7713,23 @@ MonoBehaviour:
       - Chim mẹ
       - Mamo Ptak
       - Anne Kuş
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/gaming
       TermType: 0
@@ -4503,7 +7751,23 @@ MonoBehaviour:
       - Gamer
       - Gamer
       - Gamer
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemNames/chiori
       TermType: 0
@@ -4525,7 +7789,175 @@ MonoBehaviour:
       - Chidori
       - Chidori
       - Chidori
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: CharMemNames/arlecchino
+      TermType: 0
+      Description:
+      Languages:
+      - Daddy
+      - 老豆
+      - 老豆
+      - お父ちゃん
+      - Papa
+      - Papà
+      - Vati
+      - Papá
+      - 아빠
+      - พ่อ
+      - Ayah
+      - Papai
+      - Папочка
+      - Bố
+      - Tatuś
+      - Babacığım
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: CharMemNames/sigewinne
+      TermType: 0
+      Description:
+      Languages:
+      - Bubble Bunny
+      - 泡泡兔
+      - 泡泡兔
+      - バブルバニー
+      - Lapin Bulle
+      - Coniglietto di bolle
+      - Seifenblasen-Häschen
+      - Conejito Burbuja
+      - 버블 버니
+      - บับเบิ้ลบันนี่
+      - Kelinci Gelembung
+      - Coelhinho Bolha
+      - Пузырьковый кролик
+      - Thỏ bong bóng
+      - Króliczek Bąbelkowy
+      - Kabarcık Tavşanı
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: CharMemNames/sethos
+      TermType: 0
+      Description:
+      Languages:
+      - Setho Kaiba
+      - 海馬賴戶
+      - 海马赖户
+      - Setho Kaiba
+      - Setho Kaiba
+      - Setho Kaiba
+      - Setho Kaiba
+      - Setho Kaiba
+      - Setho Kaiba
+      - Setho Kaiba
+      - Setho Kaiba
+      - Setho Kaiba
+      - Setho Kaiba
+      - Setho Kaiba
+      - Setho Kaiba
+      - Setho Kaiba
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: CharMemNames/emilie
+      TermType: 0
+      Description:
+      Languages:
+      - Short Lisa
+      - 愛美麗
+      - 爱美丽
+      - Short Lisa
+      - Short Lisa
+      - Short Lisa
+      - Short Lisa
+      - Short Lisa
+      - Short Lisa
+      - Short Lisa
+      - Short Lisa
+      - Short Lisa
+      - Short Lisa
+      - Short Lisa
+      - Short Lisa
+      - Short Lisa
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/albedo
       TermType: 0
@@ -4547,7 +7979,23 @@ MonoBehaviour:
       - Cũng ăn nhện
       - Pająki też je
       - Örümcek yediği olur
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/alhaitham
       TermType: 0
@@ -4569,7 +8017,23 @@ MonoBehaviour:
       - Nâng sách thay tạ
       - Feeble Scholar
       - Kitap Kurdu
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/ayaka
       TermType: 0
@@ -4591,7 +8055,23 @@ MonoBehaviour:
       - Tất ướt
       - Mokre Skarpety
       - Islak Çorap
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/ayato
       TermType: 0
@@ -4613,7 +8093,23 @@ MonoBehaviour:
       - Schwing schwing schwing
       - Shingshing
       - Su Gibi Herif
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/cyno
       TermType: 0
@@ -4635,7 +8131,23 @@ MonoBehaviour:
       - Dốc không hài
       - Rad Dad Jokes
       - Komedyendir Kendisi
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/dehya
       TermType: 0
@@ -4657,7 +8169,23 @@ MonoBehaviour:
       - Mèo lửa
       - 
       - Pisi pisi
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/eula
       TermType: 0
@@ -4679,7 +8207,23 @@ MonoBehaviour:
       - Onee-chan
       - Smack things hard
       - Eli Ağırdır
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/ganyu
       TermType: 0
@@ -4701,7 +8245,23 @@ MonoBehaviour:
       - Lao động quá sức
       - Overworked Waifu
       - Ok-yay burcu
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/hutao
       TermType: 0
@@ -4723,7 +8283,23 @@ MonoBehaviour:
       - Tao, ừ
       - Tao, yeah
       - Tao, aynen ya
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/itto
       TermType: 0
@@ -4745,7 +8321,23 @@ MonoBehaviour:
       - Chỉ một Oni
       - Jeden jedynoni
       - Biricik Oni
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/kazuha
       TermType: 0
@@ -4767,7 +8359,23 @@ MonoBehaviour:
       - Main nhưng Canada
       - Canadian Ather
       - Kafası Güzel Biraz
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/keqing
       TermType: 0
@@ -4789,7 +8397,23 @@ MonoBehaviour:
       - Tai mèo 100% riu
       - Zippity zip
       - Kedi-ng
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/klee
       TermType: 0
@@ -4811,7 +8435,23 @@ MonoBehaviour:
       - Bom Bom Bakudan!
       - Bom Bom Bakudan
       - Bacaksız Bela
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/kokomi
       TermType: 0
@@ -4833,7 +8473,23 @@ MonoBehaviour:
       - Cá là bạn :D
       - Ryby są super
       - Balık Ekmek
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/nahida
       TermType: 0
@@ -4855,7 +8511,23 @@ MonoBehaviour:
       - Đây là Thảo thần?
       - Lil Cabbage
       - Lahana Kafa
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/nilou
       TermType: 0
@@ -4877,7 +8549,23 @@ MonoBehaviour:
       - Múa cũng không yên
       - Zjadaczka Ciast
       - Baklava Sever
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/qiqi
       TermType: 0
@@ -4899,7 +8587,23 @@ MonoBehaviour:
       - Còn sống
       - Jednak Żyje
       - Ölü Ama Değil
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/raiden
       TermType: 0
@@ -4921,7 +8625,23 @@ MonoBehaviour:
       - Siu hướng nội
       - Miecz z klaty
       - Meme Kılıç
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/shenhe
       TermType: 0
@@ -4943,7 +8663,23 @@ MonoBehaviour:
       - Thanh tâm là thức ăn
       - Actually Psycho
       - Katıksız Manyak
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/tartaglia
       TermType: 0
@@ -4965,7 +8701,23 @@ MonoBehaviour:
       - Túi tiền di động
       - Pan Geograf
       - 'Evliya Çelebi '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/tighnari
       TermType: 0
@@ -4987,7 +8739,23 @@ MonoBehaviour:
       - Nghe tất tần tật
       - Słyszy Wszystko
       - Her Şeyi Duyuyor
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/venti
       TermType: 0
@@ -5009,7 +8777,23 @@ MonoBehaviour:
       - Thần nghiện rượu
       - Tone Deaf Bard
       - Ayyaş Herif
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/wanderer
       TermType: 0
@@ -5031,7 +8815,23 @@ MonoBehaviour:
       - Emo boi thiếu tình mẹ
       - Tryb Samolotowy
       - Uçak Modu
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/xiao
       TermType: 0
@@ -5053,7 +8853,23 @@ MonoBehaviour:
       - Lùn?
       - Czas na terapię
       - Bi Deli Doktoruna Görün
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/yae
       TermType: 0
@@ -5075,7 +8891,23 @@ MonoBehaviour:
       - Chuyên gia dốc
       - Expert Troll
       - Uzman Troll
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/yelan
       TermType: 0
@@ -5097,7 +8929,23 @@ MonoBehaviour:
       - Muốn bị trói không?
       - Szybko biega
       - Zar Var Tavla Oynayalım
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/yoimiya
       TermType: 0
@@ -5119,7 +8967,23 @@ MonoBehaviour:
       - Bà chúa vuốt tâm
       - Fajerwerk
       - Biri İtfaiye Çağırsın
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/zhongli
       TermType: 0
@@ -5141,7 +9005,23 @@ MonoBehaviour:
       - Luôn luôn thiếu Mora
       - Tendou bonk sho
       - Bozmayın dedim bak
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/baizhu
       TermType: 0
@@ -5163,7 +9043,23 @@ MonoBehaviour:
       - Bác sĩ het cuu
       - Paper Jacket
       - Paper Jacket
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/lyney
       TermType: 0
@@ -5185,7 +9081,23 @@ MonoBehaviour:
       - Ảo thật đấy
       - It's Showtime
       - It's Showtime
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/neuvillette
       TermType: 0
@@ -5207,7 +9119,23 @@ MonoBehaviour:
       - Người Phán Xử
       - Sit Down & Shut Up
       - Sit Down & Shut Up
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/wriothesley
       TermType: 0
@@ -5229,7 +9157,23 @@ MonoBehaviour:
       - Chó săn 3 đầu
       - Shoryuken
       - Shoryuken
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/furina
       TermType: 0
@@ -5251,7 +9195,23 @@ MonoBehaviour:
       - Thần chế hùa
       - Nie rań mnie
       - Beni incitme
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/navia
       TermType: 0
@@ -5273,7 +9233,23 @@ MonoBehaviour:
       - Chảy nước mắt
       - Wodniste oczy
       - Sulu gözler
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/xianyun
       TermType: 0
@@ -5295,7 +9271,23 @@ MonoBehaviour:
       - Kính gợi cảm
       - Seksowne okulary
       - Seksi Gözlük
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescShort/chiori
       TermType: 0
@@ -5317,7 +9309,175 @@ MonoBehaviour:
       - High Fashion
       - High Fashion
       - High Fashion
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: CharMemDescShort/arlecchino
+      TermType: 0
+      Description:
+      Languages:
+      - Wears the Pants
+      - 穿褲子
+      - 穿裤子
+      - パンツを履く
+      - Porte le pantalon
+      - Indossa i pantaloni
+      - Trägt die Hose
+      - usa los pantalones
+      - 바지를 입는다
+      - สวมกางเกง
+      - Memakai Celana
+      - Usa as calças
+      - Носит брюки
+      - Mặc quần
+      - Nosi spodnie
+      - Pantolonu Giyer
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: CharMemDescShort/clorinde
+      TermType: 0
+      Description:
+      Languages:
+      - Strongest Button
+      - 最强的纽扣
+      - 最强的纽扣
+      - 最強のボタン
+      - Bouton le Plus Fort
+      - Pulsante più Potente
+      - Stärkster Knopf
+      - Soy el botón que bendición
+      - 클래시로얄
+      - ปุ่มที่แข็งแกร่งที่สุด
+      - Tombol Terkuat
+      - Botão mais Forte
+      - Самая сильная кнопка
+      - Nút mạnh nhất
+      - Najsilniejszy Przycisk
+      - En Güçlü Düğme
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: CharMemDescShort/sigewinne
+      TermType: 0
+      Description:
+      Languages:
+      - A Touch Psychotic
+      - 有點瘋狂
+      - 有点疯狂
+      - ちょっと狂ってる
+      - Un peu fou
+      - Un po' folle
+      - Ein bisschen verrückt
+      - Un poco loca
+      - 좀 미쳤어
+      - บ้าไปหน่อย
+      - Agak gila
+      - Um pouco louco
+      - Немного безумный
+      - Một chút điên rồ
+      - Trochę szalone
+      - Biraz çılgın
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: CharMemDescShort/emilie
+      TermType: 0
+      Description:
+      Languages:
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      - Burn Baby Burn
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/albedo
       TermType: 0
@@ -5339,7 +9499,23 @@ MonoBehaviour:
       - Sú [Ăn phấn]
       - Zjadacz [Kredy]
       - '[Tebeşir] Yiyen'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/alhaitham
       TermType: 0
@@ -5361,7 +9537,23 @@ MonoBehaviour:
       - Ừ bố mày [Cân sách ở thư viện]
       - I weightlift books [at the Library]
       - '[Kütüphanede] Vücut Çalışıyorum'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/ayaka
       TermType: 0
@@ -5383,7 +9575,23 @@ MonoBehaviour:
       - Bà hoàng [Nấm chân]
       - Prawdziwa Archonka [Inazumy]
       - Götür Beni [Aya Aya]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/ayato
       TermType: 0
@@ -5405,7 +9613,23 @@ MonoBehaviour:
       - Lùi về sau để [Chuẩn bị tạch]
       - Pace before [Erase]
       - Bize İki [Boba Tea]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/cyno
       TermType: 0
@@ -5427,7 +9651,23 @@ MonoBehaviour:
       - Đã đến giờ [Q-Q-Q-Q-QUYẾT ĐẤU]
       - Czas na [P-P-P-P-POJEDYNEK]
       - '[Mizah] Yoksunu'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/dehya
       TermType: 0
@@ -5449,7 +9689,23 @@ MonoBehaviour:
       - Vẫn không thể tin nổi [Đó không phải là mèo]
       - Wciąż nie wierzę, że [to nie Kocie Uszy]
       - Kendisi [Aslan, Kulakları] İnsan
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/eula
       TermType: 0
@@ -5471,7 +9727,23 @@ MonoBehaviour:
       - Đùi to [5 củ]
       - Thicc Thighs [Save Lives]
       - 'Bu Karıdaki [Bacaklar] Bende Olaydı '
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/ganyu
       TermType: 0
@@ -5493,7 +9765,23 @@ MonoBehaviour:
       - Chuyên gia farm [Thịt bồ câu]
       - Zabójca [Ptaków Timmiego]
       - İnadım [İnat...]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/hutao
       TermType: 0
@@ -5515,7 +9803,23 @@ MonoBehaviour:
       - Bà mày không [Cần hồi máu]
       - Nie Chcę [Twojego Leczenia]
       - '[İyileştiren] Çıkışa Gelsin'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/itto
       TermType: 0
@@ -5537,7 +9841,23 @@ MonoBehaviour:
       - Thằng nào thích [Đấu bọ]
       - Czas na [Walki Robaków]
       - Gel [Böcük Dövüştürek]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/kazuha
       TermType: 0
@@ -5559,7 +9879,23 @@ MonoBehaviour:
       - Gió [Biết anh ta]
       - Wiatr Inazumy [Go Zna]
       - '[Bonzai] Adamı Bozai'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/keqing
       TermType: 0
@@ -5581,7 +9917,23 @@ MonoBehaviour:
       - Đó không phải [Tai mèo à?]
       - Nie Wierzę, Że To [nie Kocie Uszy!]
       - Kulaklar [Fake Attı]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/klee
       TermType: 0
@@ -5603,7 +9955,23 @@ MonoBehaviour:
       - Vài người chỉ muốn [Xem mọi thứ nổ]
       - Niektórzy Po Prostu Chcą [Patrzeć Na Płonący Świat]
       - Felaket [Tellalı]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/kokomi
       TermType: 0
@@ -5625,7 +9993,23 @@ MonoBehaviour:
       - Cứ theo cái [Kế hoạch] mà làm
       - Wszystko zgodnie z [Planem]
       - Takıl Kancama [Hayatı Yaşa]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/nahida
       TermType: 0
@@ -5647,7 +10031,23 @@ MonoBehaviour:
       - Bị nhốt trong [Chính phòng của mị]
       - The [Dookdook] Enlightenment
       - Akıl [Yaşta Değil] Baştadır
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/nilou
       TermType: 0
@@ -5669,7 +10069,23 @@ MonoBehaviour:
       - Cái gì? [Cứ nhảy đi]
       - Head Empty [Just Dance]
       - Asena [İyi Kıvırdı]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/qiqi
       TermType: 0
@@ -5691,7 +10107,23 @@ MonoBehaviour:
       - Đi dạo [Loanh quanh]
       - Wandering [Around]
       - '[Standartlarını] Düşür'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/raiden
       TermType: 0
@@ -5713,7 +10145,23 @@ MonoBehaviour:
       - Typical gu [Waifu] của anh em
       - Timey Wimey [Waifu]
       - '[Para Vermeye] Mahkum Ol!'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/shenhe
       TermType: 0
@@ -5735,7 +10183,23 @@ MonoBehaviour:
       - Ai cũng làm [DPS Băng được]
       - Każdy Może [Być Cryo DPS]
       - '[Bağlanmaya] Karşıyım'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/tartaglia
       TermType: 0
@@ -5757,7 +10221,23 @@ MonoBehaviour:
       - Cơ hội này rất [Hiếm gặp]
       - This Opportunity is [Hard to come by]
       - '[Yiyorsa] Gel!'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/tighnari
       TermType: 0
@@ -5779,7 +10259,23 @@ MonoBehaviour:
       - Bọn họ sẽ làm gì? [Bắt tôi à?]
       - Co oni mi zrobią? [Zamkną mnie gdzieś??]
       - Silivri Soğuk [Alın Bunu İçeri]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/venti
       TermType: 0
@@ -5801,7 +10297,23 @@ MonoBehaviour:
       - Vừa bay [Vừa say]
       - Ehe Te [Nandayo?!]
       - Bize Bi [Türkü Okusana]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/wanderer
       TermType: 0
@@ -5823,7 +10335,23 @@ MonoBehaviour:
       - Liệu anh ta sẽ nhảy [Fandango] không
       - Will he do the [Fandango]
       - '[İstenmeyen] Evlat'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/xiao
       TermType: 0
@@ -5845,7 +10373,23 @@ MonoBehaviour:
       - Nhảy [Rất cao]
       - Tiny [Edgelord]
       - Ergen [Bücür]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/yae
       TermType: 0
@@ -5867,7 +10411,23 @@ MonoBehaviour:
       - Ngay [Bây giờ]
       - Right Here [Right Now]
       - Kümeslerden [Uzak Tutun]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/yelan
       TermType: 0
@@ -5889,16 +10449,32 @@ MonoBehaviour:
       - Tôi [Tự cắt tóc]
       - Obcięłam [Sobie Włosy]
       - '[Kahküllerimi] Kendim Keserim'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/yoimiya
       TermType: 0
       Description:
       Languages:
       - Pew pew [pew pew]
-      - Pew pew [pew pew]
-      - Pew pew [pew pew]
-      - Pew pew [pew pew]
+      - 砰砰[砰]！
+      - 砰砰[砰]！
+      - 砰砰[砰]！
       - Piou ! Piou ! [Piou ! Piou !]
       - Pew pew [pew pew]
       - Piu piu [piu piu]
@@ -5911,7 +10487,23 @@ MonoBehaviour:
       - Trung bình người chơi [Phi phai]
       - Pew pew [pew pew]
       - Çıkarırım [Emaneti]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/zhongli
       TermType: 0
@@ -5933,7 +10525,23 @@ MonoBehaviour:
       - Không né vì [Khiên rồi ai né]
       - Czym Jest Unik [Użyj Tarczy]
       - Bozmayın [Düzeni]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/baizhu
       TermType: 0
@@ -5955,7 +10563,23 @@ MonoBehaviour:
       - Bác sĩ [Đóng ngoặc]
       - Nigdy Cię [Nie Zawiodę]
       - Never gonna [Give You Up]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/lyney
       TermType: 0
@@ -5977,7 +10601,23 @@ MonoBehaviour:
       - Trong mũ có [Bồ câu của Timmie]
       - Be careful when [playing cards] with him
       - Be careful when [playing cards] with him
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/neuvillette
       TermType: 0
@@ -5999,7 +10639,23 @@ MonoBehaviour:
       - Anh Thủy Long [là Thủy Thần riêu?]
       - I have [Big Words] and I'm not afraid to use them
       - I have [Big Words] and I'm not afraid to use them
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/wriothesley
       TermType: 0
@@ -6021,7 +10677,23 @@ MonoBehaviour:
       - Wrio... [Hay Rizzley?]
       - Looks Hard, is [Soft]
       - Looks Hard, is [Soft]
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/furina
       TermType: 0
@@ -6043,7 +10715,23 @@ MonoBehaviour:
       - Cũng là một vị [Thủy thần] nào đó
       - Jak ci się podoba to [tort]?
       - Bu [pastayı] nasıl buldun?
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/navia
       TermType: 0
@@ -6065,7 +10753,23 @@ MonoBehaviour:
       - Luôn sẵn sàng cho [Tiệc trà]
       - Zawsze gotowy na [Czas na herbatę]
       - '[Çay vakti] için her zaman hazır'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/xianyun
       TermType: 0
@@ -6087,7 +10791,23 @@ MonoBehaviour:
       - Để tôi kể cho bạn nghe một [Câu chuyện đáng xấu hổ] khác...
       - Pozwól, że opowiem ci inną [żenującą historię]...
       - Size başka bir [Utanç verici Hikaye] anlatayım...
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: CharMemDescLong/chiori
       TermType: 0
@@ -6109,7 +10829,175 @@ MonoBehaviour:
       - '[Đùi đẹp] Thợ may'
       - '[Piękne uda] Krawcowa'
       - '[Güzel Kalçalar] Terzi'
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: CharMemDescLong/arlecchino
+      TermType: 0
+      Description:
+      Languages:
+      - Will adopt you and give you [Daddy Issues]
+      - 將收養你並給你[爸爸問題]
+      - 将收养你并给你[爸爸问题]
+      - あなたを養子にして[パパの問題]を与えます
+      - Je t'adopterai et te donnerai [Daddy Issues]
+      - Will adopt you and give you [Daddy Issues]
+      - Will adopt you and give you [Daddy Issues]
+      - Will adopt you and give you [Daddy Issues]
+      - Will adopt you and give you [Daddy Issues]
+      - Will adopt you and give you [Daddy Issues]
+      - Will adopt you and give you [Daddy Issues]
+      - Will adopt you and give you [Daddy Issues]
+      - Will adopt you and give you [Daddy Issues]
+      - Will adopt you and give you [Daddy Issues]
+      - Will adopt you and give you [Daddy Issues]
+      - Will adopt you and give you [Daddy Issues]
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: CharMemDescLong/clorinde
+      TermType: 0
+      Description:
+      Languages:
+      - Strongest Button
+      - 最强的纽扣
+      - 最强的纽扣
+      - 最強のボタン
+      - Bouton le Plus Fort
+      - Pulsante più Potente
+      - Stärkster Knopf
+      - Soy el botón que bendición
+      - 클래시로얄
+      - ปุ่มที่แข็งแกร่งที่สุด
+      - Cl
+      - Botão mais Forte
+      - Самая сильная кнопка
+      - Nút mạnh nhất
+      - Najsilniejszy Przycisk
+      - En Güçlü Düğme
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: CharMemDescLong/sigewinne
+      TermType: 0
+      Description:
+      Languages:
+      - Healing with [Violence]
+      - 用[暴力]治愈
+      - 用[暴力]治愈
+      - 砰砰[砰]！
+      - Guérir avec [violence]
+      - Guarire con [violenza]
+      - Heilung mit [Gewalt]
+      - Curando con [violencia]
+      - '[폭력]으로 치유하다'
+      - รักษาด้วย [ความรุนแรง]
+      - Sembuhkan dengan [kekerasan]
+      - Curando com [violência]
+      - Исцеление с помощью [насилия]
+      - Healing with [violence]
+      - Uzdrowienie za pomocą [przemocy]
+      - Healing with [violence]
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: CharMemDescLong/emilie
+      TermType: 0
+      Description:
+      Languages:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/rust
       TermType: 0
@@ -6122,7 +11010,7 @@ MonoBehaviour:
       - Rusty
       - Rusty
       - Rusty
-      - Rusty
+      - Polvorón
       - Fe3O4
       - Rusty
       - Karatan
@@ -6131,7 +11019,23 @@ MonoBehaviour:
       - Oxi hoá
       - Rusty
       - Rusty
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/thestringless
       TermType: 0
@@ -6144,7 +11048,7 @@ MonoBehaviour:
       - une ligne
       - una linea
       - eine Linie
-      - una linea
+      - Trompeton de Agua
       - 절현의 기치
       - เส้น
       - Bukan G-string
@@ -6153,7 +11057,23 @@ MonoBehaviour:
       - Không có dây
       - One String
       - One String
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/thewidsith
       TermType: 0
@@ -6166,7 +11086,7 @@ MonoBehaviour:
       - Big PP Numbers
       - Big PP Numbers
       - Big PP Numbers
-      - Big PP Numbers
+      - Lore Musical
       - 벤티못쓰는 벤티전무
       - Big PP Numbers
       - Widsithaharidamdam
@@ -6175,7 +11095,23 @@ MonoBehaviour:
       - Spam số
       - Big PP Numbers
       - Big PP Numbers
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/eyeofperception
       TermType: 0
@@ -6188,7 +11124,7 @@ MonoBehaviour:
       - Eye of Uselessness
       - Eye of Uselessness
       - Eye of Uselessness
-      - Eye of Uselessness
+      - Ojo Purificador
       - INFP
       - Eye of Uselessness
       - Donat blueberi
@@ -6197,7 +11133,23 @@ MonoBehaviour:
       - Chậm Tiêu
       - Eye of Uselessness
       - Eye of Uselessness
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/rainslasher
       TermType: 0
@@ -6210,7 +11162,7 @@ MonoBehaviour:
       - Painslasher
       - Painslasher
       - Painslasher
-      - Painslasher
+      - Cortaaguas
       - 콧물베기
       - Painslasher
       - Rinai hujan basahi aku
@@ -6219,7 +11171,23 @@ MonoBehaviour:
       - '*chém nước*'
       - Painslasher
       - Painslasher
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/thebell
       TermType: 0
@@ -6232,7 +11200,7 @@ MonoBehaviour:
       - Dumb Bell
       - Dumb Bell
       - Dumb Bell
-      - Dumb Bell
+      - Tiktok
       - 빅벤
       - Dumb Bell
       - Dingdong!
@@ -6241,7 +11209,23 @@ MonoBehaviour:
       - Đánh chuông
       - Dumb Bell
       - Dumb Bell
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/lionsroar
       TermType: 0
@@ -6254,7 +11238,7 @@ MonoBehaviour:
       - Lion's Rawr
       - Lion's Rawr
       - Lion's Rawr
-      - Lion's Rawr
+      - Cortavientos
       - 크아앙
       - Lion's Rawr
       - Raungan Macan
@@ -6263,7 +11247,23 @@ MonoBehaviour:
       - Hổ gáy
       - Lion's Rawr
       - Lion's Rawr
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/theflute
       TermType: 0
@@ -6276,7 +11276,7 @@ MonoBehaviour:
       - Flûte
       - Flauto
       - Flöte
-      - Flauta
+      - El fiu fiu
       - 플루트
       - ขลุ่ย
       - Suling Sakti
@@ -6285,7 +11285,23 @@ MonoBehaviour:
       - Sáo
       - Flute
       - Flute
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/dragonsbane
       TermType: 0
@@ -6298,7 +11314,7 @@ MonoBehaviour:
       - Dragon's Pointy Stick
       - Dragon's Pointy Stick
       - Dragon's Pointy Stick
-      - Dragon's Pointy Stick
+      - Ajusticiadragones
       - 용뚜까창
       - Dragon's Pointy Stick
       - Stik Naga
@@ -6307,7 +11323,23 @@ MonoBehaviour:
       - Thảm hoạ cày chay
       - Dragon's Pointy Stick
       - Dragon's Pointy Stick
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/favoniuslance
       TermType: 0
@@ -6320,7 +11352,7 @@ MonoBehaviour:
       - Fav Lance
       - Fav Lance
       - Fav Lance
-      - Fav Lance
+      - Lanza Voladora
       - 패버리게쓰 창
       - Fav Lance
       - Favo Lance
@@ -6329,7 +11361,23 @@ MonoBehaviour:
       - Thương Gió Tây
       - Fav Lance
       - Fav Lance
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/favoniussword
       TermType: 0
@@ -6342,7 +11390,7 @@ MonoBehaviour:
       - Fav Sword
       - Fav Sword
       - Fav Sword
-      - Fav Sword
+      - Espada Voladora
       - 패버리게쓰 검
       - Fav Sword
       - Favo Sword
@@ -6351,7 +11399,23 @@ MonoBehaviour:
       - Đao Gió Tây
       - Fav Sword
       - Fav Sword
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/favoniusgreatsword
       TermType: 0
@@ -6364,7 +11428,7 @@ MonoBehaviour:
       - Crappy Fav
       - Crappy Fav
       - Crappy Fav
-      - Crappy Fav
+      - Mandoble (no vuela)
       - 패버리게쓰 대검
       - Crappy Fav
       - Favo Ga Seberapa
@@ -6373,7 +11437,23 @@ MonoBehaviour:
       - Gió Tây bự chả
       - Fav FatSword
       - Fav FatSword
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/favoniuscodex
       TermType: 0
@@ -6386,7 +11466,7 @@ MonoBehaviour:
       - Unused Fav
       - Unused Fav
       - Unused Fav
-      - Unused Fav
+      - Lore Elemental
       - 패버리게쓰 비전
       - Unused Fav
       - Favo Ga kepake
@@ -6395,7 +11475,23 @@ MonoBehaviour:
       - Sách phép
       - Fav Book
       - Fav Book
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/favoniuswarbow
       TermType: 0
@@ -6408,7 +11504,7 @@ MonoBehaviour:
       - Fav Bow
       - Fav Bow
       - Fav Bow
-      - Fav Bow
+      - 'Piu Piu de Levitación '
       - 패버리게쓰 활
       - Fav Bow
       - Favo Bow
@@ -6417,7 +11513,23 @@ MonoBehaviour:
       - Cung Gió Tây
       - Fav Bow
       - Fav Bow
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/sacrificialbow
       TermType: 0
@@ -6430,7 +11542,7 @@ MonoBehaviour:
       - Sac Bow
       - Sac Bow
       - Sac Bow
-      - Sac Bow
+      - Arco de Vientos
       - 재활용 활
       - Sac Bow
       - Bow Tumbal
@@ -6439,7 +11551,23 @@ MonoBehaviour:
       - Cung sạc
       - Double Atk Bow
       - Double Atk Bow
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/sacrificialsword
       TermType: 0
@@ -6452,7 +11580,7 @@ MonoBehaviour:
       - Waterboy's Sword
       - Waterboy's Sword
       - Waterboy's Sword
-      - Waterboy's Sword
+      - Espada Vendaval
       - 재활용 검
       - Waterboy's Sword
       - Pedangnya Paha Indah
@@ -6461,7 +11589,23 @@ MonoBehaviour:
       - Kiếm cúng
       - Waterboy's Sword
       - Waterboy's Sword
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/sacrificialgreatsword
       TermType: 0
@@ -6474,7 +11618,7 @@ MonoBehaviour:
       - Popsicle's Greatsword
       - Popsicle's Greatsword
       - Popsicle's Greatsword
-      - Popsicle's Greatsword
+      - Mandoble anti-aereo
       - 재활용 대검
       - Popsicle's Greatsword
       - Pedangnya Ucok
@@ -6483,7 +11627,23 @@ MonoBehaviour:
       - KIếm cúng to
       - Popsicle's Greatsword
       - Popsicle's Greatsword
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/sacrificialfragments
       TermType: 0
@@ -6496,7 +11656,7 @@ MonoBehaviour:
       - Sac Frag
       - Sac Frag
       - Sac Frag
-      - Sac Frag
+      - 'Receta Médica '
       - 재활용 악장
       - Sac Frag
       - Tumbal Fragmen
@@ -6505,7 +11665,23 @@ MonoBehaviour:
       - Sách cúng
       - Double Atk Book
       - Double Atk Book
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/skywardharp
       TermType: 0
@@ -6518,7 +11694,7 @@ MonoBehaviour:
       - Sky Bow
       - Sky Bow
       - Sky Bow
-      - Sky Bow
+      - Arco del Duvalin
       - 천공의 하프
       - Sky Bow
       - Panah Lagit
@@ -6527,7 +11703,23 @@ MonoBehaviour:
       - Cung Trời
       - Sky Bow
       - Sky Bow
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/skywardatlas
       TermType: 0
@@ -6540,7 +11732,7 @@ MonoBehaviour:
       - Sky Book
       - Sky Book
       - Sky Book
-      - Sky Book
+      - Lore del Duvalin
       - 두루마리 휴지
       - Sky Book
       - Buku Langit
@@ -6549,7 +11741,23 @@ MonoBehaviour:
       - Sách Trời
       - Sky Book
       - Sky Book
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/skywardpride
       TermType: 0
@@ -6562,7 +11770,7 @@ MonoBehaviour:
       - Sky Thicc Sword
       - Sky Thicc Sword
       - Sky Thicc Sword
-      - Sky Thicc Sword
+      - Mandoble del Duvalin
       - 긍지따위개나줘버린
       - Sky Thicc Sword
       - Stabilo
@@ -6571,7 +11779,23 @@ MonoBehaviour:
       - Trời Xàm bông
       - Sky Thicc Sword
       - Sky Thicc Sword
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/skywardblade
       TermType: 0
@@ -6584,7 +11808,7 @@ MonoBehaviour:
       - Sky Sword
       - Sky Sword
       - Sky Sword
-      - Sky Sword
+      - Espada del Duvalin
       - 천리의 껌
       - Sky Sword
       - Pedang Langit
@@ -6593,7 +11817,23 @@ MonoBehaviour:
       - Kiếm Trời
       - Sky Sword
       - Sky Sword
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/skywardspine
       TermType: 0
@@ -6606,7 +11846,7 @@ MonoBehaviour:
       - Sky Stick
       - Sky Stick
       - Sky Stick
-      - Sky Stick
+      - Lanza del Duvalin
       - 호두마루
       - Sky Stick
       - Pedang Panjang
@@ -6615,7 +11855,23 @@ MonoBehaviour:
       - Gậy Trời
       - Sky Stick
       - Sky Stick
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/primordialjadewingedspear
       TermType: 0
@@ -6628,16 +11884,32 @@ MonoBehaviour:
       - bâton vert
       - bastone verde
       - grüner Stock
-      - palo verde
+      - Cortacesped
       - 호박엿
       - แท่งเขียว
-      - Gulali Rasa Melon
+      - PJWS
       - bastão verde
       - PJW
       - HPD
       - Green Stick
       - Green Stick
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/wolfsgravestone
       TermType: 0
@@ -6650,7 +11922,7 @@ MonoBehaviour:
       - Batman's Big Stick
       - Batman's Big Stick
       - Batman's Big Stick
-      - Batman's Big Stick
+      - Mandoble P2W
       - 늑대가말대꾸?
       - Batman's Big Stick
       - Punya Fajar Betmen
@@ -6659,7 +11931,23 @@ MonoBehaviour:
       - Mộ của chó
       - Batman's Big Stick
       - Batman's Big Stick
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/amosbow
       TermType: 0
@@ -6672,7 +11960,7 @@ MonoBehaviour:
       - Unicorn Bow
       - Unicorn Bow
       - Unicorn Bow
-      - Unicorn Bow
+      - Arco Cuernitos
       - 아모스클레이
       - Unicorn Bow
       - Amogusbow
@@ -6681,7 +11969,23 @@ MonoBehaviour:
       - Cung Amos
       - Unicorn Bow
       - Unicorn Bow
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/lostprayertothesacredwinds
       TermType: 0
@@ -6694,7 +11998,7 @@ MonoBehaviour:
       - No Prayers
       - No Prayers
       - No Prayers
-      - No Prayers
+      - Durmieron al Dueño
       - 수시원서
       - No Prayers
       - Mau ngarep apa?
@@ -6703,7 +12007,23 @@ MonoBehaviour:
       - Chuyện cũ phương Tây
       - No Prayers
       - No Prayers
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/aquilafavonia
       TermType: 0
@@ -6716,7 +12036,7 @@ MonoBehaviour:
       - Atk Stat Stick
       - Atk Stat Stick
       - Atk Stat Stick
-      - Atk Stat Stick
+      - Alma del Viento
       - 매추리알
       - Atk Stat Stick
       - Nambah Atk doang
@@ -6725,7 +12045,23 @@ MonoBehaviour:
       - Kiếm sơn skin
       - Atk Stat Stick
       - Atk Stat Stick
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/xiphosmoonlight
       TermType: 0
@@ -6738,7 +12074,7 @@ MonoBehaviour:
       - Canadian Aether BIS
       - Canadian Aether BIS
       - Canadian Aether BIS
-      - Canadian Aether BIS
+      - 'Para ver el Eclipse '
       - 스시포크의 연어빛
       - Canadian Aether BIS
       - Punya Ilham
@@ -6747,7 +12083,23 @@ MonoBehaviour:
       - Ánh trăng xi phốt
       - Canadian Aether BIS
       - Canadian Aether BIS
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/thealleyflash
       TermType: 0
@@ -6760,7 +12112,7 @@ MonoBehaviour:
       - Alley Poke
       - Alley Poke
       - Alley Poke
-      - Alley Poke
+      - Espada Nocturna
       - 섬광탄
       - Alley Poke
       - Ale ale ale
@@ -6769,7 +12121,23 @@ MonoBehaviour:
       - Tia sáng nơi hẻm
       - Alley Poke
       - Alley Poke
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/thefirstgreatmagic
       TermType: 0
@@ -6782,7 +12150,7 @@ MonoBehaviour:
       - First Magic
       - First Magic
       - First Magic
-      - First Magic
+      - Arco Truquitos
       - 최고의 대마초
       - First Magic
       - Sulap Selip!
@@ -6791,7 +12159,23 @@ MonoBehaviour:
       - Ảo thuật đầu tiên
       - First Magic
       - First Magic
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/aquasimulacra
       TermType: 0
@@ -6804,7 +12188,7 @@ MonoBehaviour:
       - Watersimulator
       - Watersimulator
       - Watersimulator
-      - Watersimulator
+      - Aguacero
       - 약수터
       - Watersimulator
       - PDAM
@@ -6813,7 +12197,23 @@ MonoBehaviour:
       - Như Nước
       - Watersimulator
       - Watersimulator
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/vortexvanquisher
       TermType: 0
@@ -6826,7 +12226,7 @@ MonoBehaviour:
       - bâton d'attaque de roche
       - bastone da attacco alla roccia
       - Felsangriffsstock
-      - palo de ataque de roca
+      - Tumbarocas
       - 바위 공격 스틱
       - ไม้โจมตีหิน
       - permen milikita rasa coklat
@@ -6835,7 +12235,23 @@ MonoBehaviour:
       - Que nịnh chúa
       - Geo Atk Stick
       - Geo Atk Stick
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/polarstar
       TermType: 0
@@ -6848,7 +12264,7 @@ MonoBehaviour:
       - Ours polaire
       - Orso polare
       - Eisbär
-      - Oso polar
+      - Friazo
       - 북극곰
       - หมีขั้วโลก
       - yang ada beruangnya!
@@ -6857,7 +12273,23 @@ MonoBehaviour:
       - Ngôi sao phương đông
       - Polar Bear
       - Polar Bear
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/tomeoftheeternalflow
       TermType: 0
@@ -6870,7 +12302,7 @@ MonoBehaviour:
       - Livre Très Mouillé
       - Libro Molto Bagnato
       - Sehr Nasses Buch
-      - Libro Muy Mojado
+      - No lo lee nadie
       - 매우 젖은 책
       - หนังสือเปียกมาก
       - Buku Pengantar Ilmu Hukum
@@ -6879,7 +12311,23 @@ MonoBehaviour:
       - Sách miền trung mùa lũ
       - Dripping Wet Book
       - Dripping Wet Book
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/cashflowsupervision
       TermType: 0
@@ -6892,7 +12340,7 @@ MonoBehaviour:
       - Copain robot
       - Amico robot
       - Roboterkumpel
-      - amigo robot
+      - Compi Robot
       - 작은 로봇 동반자
       - หุ่นยนต์บัดดี้
       - Ninu ninu
@@ -6901,7 +12349,23 @@ MonoBehaviour:
       - Bảo vệ dát vàng
       - Robot Buddy
       - Robot Buddy
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/staffofhoma
       TermType: 0
@@ -6914,7 +12378,7 @@ MonoBehaviour:
       - Bâton rouge frais
       - Cool Red Stick
       - Cool Red Stick
-      - Cool Red Stick
+      - Lanza Fueguitos
       - Cool Red Stick
       - Cool Red Stick
       - Garpu Kue
@@ -6923,7 +12387,23 @@ MonoBehaviour:
       - Que hạ mô
       - Cool Red Stick
       - Cool Red Stick
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/mitternachtswaltz
       TermType: 0
@@ -6936,7 +12416,7 @@ MonoBehaviour:
       - Purple Prinzessin Bow
       - Purple Prinzessin Bow
       - Purple Prinzessin Bow
-      - Purple Prinzessin Bow
+      - Arco Esquizo
       - Purple Prinzessin Bow
       - Purple Prinzessin Bow
       - Punyanya Faisal
@@ -6945,7 +12425,23 @@ MonoBehaviour:
       - Cung sơn tím
       - Purple Prinzessin Bow
       - Purple Prinzessin Bow
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/thedockhandsassistant
       TermType: 0
@@ -6958,7 +12454,7 @@ MonoBehaviour:
       - Attack Titan Killer
       - Attack Titan Killer
       - Attack Titan Killer
-      - Attack Titan Killer
+      - Espada Reutilizable
       - Attack Titan Killer
       - Attack Titan Killer
       - SASAGEYOH
@@ -6967,7 +12463,23 @@ MonoBehaviour:
       - Kiếm anh Lệ
       - Titan Attacker
       - Titan Attacker
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/portablepowersaw
       TermType: 0
@@ -6989,7 +12501,23 @@ MonoBehaviour:
       - Máy cưa
       - Chainsaw
       - Chainsaw
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/elegyfortheend
       TermType: 0
@@ -7002,7 +12530,7 @@ MonoBehaviour:
       - 5* ER Bow
       - 5* ER Bow
       - 5* ER Bow
-      - 5* ER Bow
+      - 14 de Febrero
       - 5성 충전식 활
       - 5* ER Bow
       - Busur Senin Legi
@@ -7011,7 +12539,23 @@ MonoBehaviour:
       - Hít sâu thở đều
       - 5* ER Bow
       - 5* ER Bow
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/prospectorsdrill
       TermType: 0
@@ -7024,7 +12568,7 @@ MonoBehaviour:
       - Drilly Stick
       - Drilly Stick
       - Drilly Stick
-      - Drilly Stick
+      - Minando ando
       - 회전봉
       - ดริลลี่ สติ๊ก
       - GIGA DRILL BREAAK
@@ -7033,7 +12577,23 @@ MonoBehaviour:
       - Gậy rung
       - Wiertniczy kij
       - Delici Çubuk
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/rangegauge
       TermType: 0
@@ -7046,7 +12606,7 @@ MonoBehaviour:
       - Arc de Boussole
       - Arco della Bussola
       - Kompassbogen
-      - Arco de la Brújula
+      - Arco Cardinal
       - 나침반 활
       - คันธนูเข็มทิศ
       - Gimana makenya?
@@ -7055,7 +12615,23 @@ MonoBehaviour:
       - Cung la Bàn
       - łuk kompasu
       - pusula yayı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/jadefallssplendor
       TermType: 0
@@ -7068,7 +12644,7 @@ MonoBehaviour:
       - Orbe Vert
       - Sfera Verde
       - Grüne Kugel
-      - Orbe verde
+      - Cura (a veces)
       - 그린 오브
       - ลูกกลมสีเขียว
       - Gundu Seratusan
@@ -7077,7 +12653,23 @@ MonoBehaviour:
       - Quả cầu xanh
       - Zielona Kula
       - Yeşil Küre
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/splendoroftranquilwaters
       TermType: 0
@@ -7090,7 +12682,7 @@ MonoBehaviour:
       - Bâton Bleu
       - Bacchetta Blu
       - Blauer Stab
-      - Bastón Azul
+      - '*le echa agua"'
       - 파란색 배턴
       - กระบองสีน้ำเงิน
       - Katenbat
@@ -7099,7 +12691,23 @@ MonoBehaviour:
       - Dùi cui xanh
       - Niebieska Pałka
       - Mavi Cop
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/harangepakufutsu
       TermType: 0
@@ -7112,7 +12720,7 @@ MonoBehaviour:
       - Water Drip Sword
       - Water Drip Sword
       - Water Drip Sword
-      - Water Drip Sword
+      - Tsunami... Oh no
       - Water Drip Sword
       - Water Drip Sword
       - Heran deh gini pedang biasa?
@@ -7121,7 +12729,23 @@ MonoBehaviour:
       - Màu nước quý tộc
       - Water Drip Sword
       - Water Drip Sword
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/staffofthescarletsands
       TermType: 0
@@ -7134,7 +12758,7 @@ MonoBehaviour:
       - Paddle
       - Paddle
       - Paddle
-      - Paddle
+      - Ojo de Obsidiana
       - Paddle
       - Paddle
       - Adukan dodolnya Selly
@@ -7143,7 +12767,23 @@ MonoBehaviour:
       - Mái chèo
       - Paddle
       - Paddle
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/mistsplitterreforged
       TermType: 0
@@ -7156,7 +12796,7 @@ MonoBehaviour:
       - L'épée de Kequeen
       - La Spada di Kequeen
       - Kequeens Schwert
-      - La Espada de Kechingona
+      - 'Espada Eléctrica '
       - 연보라 죽순의 검
       - หน่อแมวดาบ
       - PLTU
@@ -7165,7 +12805,23 @@ MonoBehaviour:
       - Thanh kiếm của "Mèo"
       - Miecz Kequeen
       - Kek'in Kılıcı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/verdict
       TermType: 0
@@ -7178,7 +12834,7 @@ MonoBehaviour:
       - Hache Fantaisie
       - Ascia Fantasia
       - Ausgefallene Axt
-      - Hacha de lujo
+      - Hacha Diva
       - 팬시 액스
       - ขวานแฟนซี
       - Minyak Angin
@@ -7187,7 +12843,23 @@ MonoBehaviour:
       - Rìu lạ mắt
       - Fantazyjny topór
       - Fantezi Balta
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/engulfinglightning
       TermType: 0
@@ -7200,7 +12872,7 @@ MonoBehaviour:
       - Long bâton Violet
       - Bastone lungo Viola
       - Langer lila Stock
-      - Palo largo Morado
+      - Lanza Eterna
       - 긴 보라색 스틱
       - แท่งยาวสีม่วง
       - PLTN
@@ -7209,7 +12881,23 @@ MonoBehaviour:
       - Thanh dài màu tím
       - Długi fioletowy kij
       - Uzun Mor Çubuk
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/thunderingpulse
       TermType: 0
@@ -7222,7 +12910,7 @@ MonoBehaviour:
       - Arc de foudre violet
       - Arco Fulmine Viola
       - Lila Blitzbogen
-      - Arco de relámpago morado
+      - 'Piu Piu Eléctrico '
       - 보라색 번개 활
       - ธนูสายฟ้าสีม่วง
       - PLTA
@@ -7231,7 +12919,23 @@ MonoBehaviour:
       - Cung sét màu tím
       - Fioletowy łuk błyskawicy
       - Mor Şimşek Yayı
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/akuoumaru
       TermType: 0
@@ -7253,7 +12957,23 @@ MonoBehaviour:
       - Awuawu
       - Awuawu
       - Awuawu
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/mouunsmoon
       TermType: 0
@@ -7275,7 +12995,23 @@ MonoBehaviour:
       - Moon Moon
       - Moon Moon
       - Moon Moon
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/wavebreaker
       TermType: 0
@@ -7297,7 +13033,23 @@ MonoBehaviour:
       - Wavestick
       - Wavestick
       - Wavestick
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/lithicspear
       TermType: 0
@@ -7319,7 +13071,23 @@ MonoBehaviour:
       - Asian Powerup Stick
       - Asian Powerup Stick
       - Asian Powerup Stick
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/athousandfloatingdreams
       TermType: 0
@@ -7341,7 +13109,23 @@ MonoBehaviour:
       - Fancy Leaf Lamp
       - Fancy Leaf Lamp
       - Fancy Leaf Lamp
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/cranesechoingcall
       TermType: 0
@@ -7363,7 +13147,23 @@ MonoBehaviour:
       - Fancy Birb Fan
       - Fancy Birb Fan
       - Fancy Birb Fan
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/kagurasverity
       TermType: 0
@@ -7379,13 +13179,29 @@ MonoBehaviour:
       - Cupcake Stand
       - Cupcake Stand
       - Cupcake Stand
+      - Pengocok Telur
       - Cupcake Stand
       - Cupcake Stand
       - Cupcake Stand
       - Cupcake Stand
       - Cupcake Stand
-      - Cupcake Stand
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/lithicblade
       TermType: 0
@@ -7401,13 +13217,29 @@ MonoBehaviour:
       - Asian Powerup Paddle
       - Asian Powerup Paddle
       - Asian Powerup Paddle
+      - Triplek kualitas Liyue
       - Asian Powerup Paddle
       - Asian Powerup Paddle
       - Asian Powerup Paddle
       - Asian Powerup Paddle
       - Asian Powerup Paddle
-      - Asian Powerup Paddle
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/alleyhunter
       TermType: 0
@@ -7429,7 +13261,23 @@ MonoBehaviour:
       - Alley Bow
       - Alley Bow
       - Alley Bow
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/redhornstonethresher
       TermType: 0
@@ -7451,7 +13299,23 @@ MonoBehaviour:
       - Oni's Big Stick
       - Oni's Big Stick
       - Oni's Big Stick
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     - Term: WepNames/urakumisugiri
       TermType: 0
@@ -7473,7 +13337,289 @@ MonoBehaviour:
       - Flowery Geo Sword
       - Flowery Geo Sword
       - Flowery Geo Sword
-      Flags: 00000000000000000000000000000000
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: WepNames/freedomsworn
+      TermType: 0
+      Description:
+      Languages:
+      - Freeeedomm
+      - 自由劍
+      - 自由剑
+      - Freeeedomm
+      - Freeeedomm
+      - Freeeedomm
+      - Freeeedomm
+      - Freeeedomm
+      - Freeeedomm
+      - Freeeedomm
+      - Freeeedomm
+      - Freeeedomm
+      - Freeeedomm
+      - Freeeedomm
+      - Freeeedomm
+      - Freeeedomm
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: WepNames/wineandsong
+      TermType: 0
+      Description:
+      Languages:
+      - Drunk Book
+      - 喝酒書
+      - 喝酒书
+      - 飲酒本
+      - livre à boire
+      - libro sul bere
+      - Trinkbuch
+      - libro para beber
+      - Drunk Book
+      - Drunk Book
+      - Drunk Book
+      - Drunk Book
+      - Drunk Book
+      - Drunk Book
+      - Drunk Book
+      - Drunk Book
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: WepNames/crimsonmoonssemblance
+      TermType: 0
+      Description:
+      Languages:
+      - Red Scythe
+      - 紅色鐮刀
+      - 红色镰刀
+      - レッドサイス
+      - Faux rouge
+      - Falce Rossa
+      - Rote Sense
+      - Guadaña roja
+      - 붉은 낫
+      - เคียวแดง
+      - Sabit Merah
+      - Foice Vermelha
+      - Красная Коса
+      - Lưỡi hái đỏ
+      - Czerwona Kosa
+      - Kırmızı Tırpan
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: WepNames/tulaytullahsrememberance
+      TermType: 0
+      Description:
+      Languages:
+      - Cute Bell
+      - 可愛小鈴鐺
+      - 可爱小铃铛
+      - かわいいベル
+      - Cloche mignonne
+      - Campana carina
+      - Süße Glocke
+      - linda campana
+      - 귀여운 작은 종
+      - เบลล์น่ารัก
+      - Lonceng lucu
+      - Sino fofo
+      - Милый колокольчик
+      - Chuông dễ thương
+      - Ładny dzwonek
+      - Sevimli Çan
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: WepNames/lightoffoliarincision
+      TermType: 0
+      Description:
+      Languages:
+      - Muscle Nerd's Stick
+      - 肌肉書呆子的劍
+      - 肌肉书呆子的剑
+      - Muscle Nerd's Stick
+      - Muscle Nerd's Stick
+      - Muscle Nerd's Stick
+      - Muscle Nerd's Stick
+      - Muscle Nerd's Stick
+      - Muscle Nerd's Stick
+      - Muscle Nerd's Stick
+      - Muscle Nerd's Stick
+      - Muscle Nerd's Stick
+      - Muscle Nerd's Stick
+      - Muscle Nerd's Stick
+      - Muscle Nerd's Stick
+      - Muscle Nerd's Stick
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: WepNames/absolution
+      TermType: 0
+      Description:
+      Languages:
+      - Chlorine's Needle
+      - 纽扣的劍
+      - 纽扣的剑
+      - Chlorine's Needle
+      - Chlorine's Needle
+      - Chlorine's Needle
+      - Chlorine's Needle
+      - Chlorine's Needle
+      - Chlorine's Needle
+      - Chlorine's Needle
+      - Chlorine's Needle
+      - Chlorine's Needle
+      - Chlorine's Needle
+      - Chlorine's Needle
+      - Chlorine's Needle
+      - Chlorine's Needle
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      Languages_Touch: []
+    - Term: WepNames/silvershowerheartstrings
+      TermType: 0
+      Description:
+      Languages:
+      - Heartstrings
+      - 心弦弓
+      - 心弦弓
+      - ハートの弦の弓
+      - Heartstrings
+      - Heartstrings
+      - Heartstrings
+      - Heartstrings
+      - Heartstrings
+      - Heartstrings
+      - Busur tali hati
+      - Heartstrings
+      - Heartstrings
+      - Heartstrings
+      - Heartstrings
+      - Heartstrings
+      Flags:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
       Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
@@ -7532,9 +13678,9 @@ MonoBehaviour:
     Google_WebServiceURL: https://script.google.com/macros/s/AKfycbxu8CXfmubud0lH_ChGOEujDtNdDO6WQ4qtgBUvc3Btn63kZdUdUR3BPVWg3jY53dV4/exec
     Google_SpreadsheetKey: 1oivW_K32Yfaa17IKypH6-q6HTheORm8qqQDc83cyCxo
     Google_SpreadsheetName: I2Loc Silly Wisher Localization
-    Google_LastUpdatedVersion: 1710143934825
+    Google_LastUpdatedVersion: 1719046673461
     GoogleUpdateFrequency: 1
     GoogleInEditorCheckFrequency: 2
     GoogleUpdateDelay: 5
     Assets:
-    - {fileID: 12800000, guid: b7755754df4943a40a6d75dfbfae2715, type: 3}
+    - {fileID: 12800000, guid: 59a8f60d57f4cd048943629d3be81e90, type: 3}

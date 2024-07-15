@@ -1,0 +1,66 @@
+{
+  "name": "Bronya",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Windrider Bullet",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Bronya pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Combat Redeployment",
+        "fullDesc": "Menghapus 1 <u>Debuff</u> milik 1 rekan tim, membuat target tersebut segera beraksi dan meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG-nya selama {{3}} giliran.\\nSaat skill digunakan pada diri sendiri, efek pendahuluan aksi tidak akan terpicu.",
+        "shortDesc": "<orangeStrong>Menghapus</orangeStrong> 1 <orangeStrong><u>efek Debuff</u></orangeStrong> dari 1 rekan tim, dan <orangeStrong>meningkatkan DMG yang diakibatkan</orangeStrong> rekan tersebut, serta membuatnya <orangeStrong>segera beraksi</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "The Belobog March",
+        "fullDesc": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK seluruh rekan tim serta meningkatkan CRIT DMG seluruh rekan tim sebesar <orangeStrong>{{2}}%</orangeStrong> CRIT DMG Bronya +<orangeStrong>{{3}}%</orangeStrong> selama {{4}} giliran.",
+        "shortDesc": "Meningkatkan <orangeStrong>ATK</orangeStrong> dan <orangeStrong>CRIT DMG</orangeStrong> seluruh rekan tim"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Banner of Command",
+        "fullDesc": "Setelah menggunakan Technique, meningkatkan {{1}}% ATK seluruh rekan tim selama {{2}} giliran pada saat pertempuran selanjutnya dimulai.",
+        "shortDesc": "Setelah menggunakan Technique, meningkatkan ATK seluruh rekan tim saat pertempuran selanjutnya dimulai."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Hone Your Strength",
+      "desc": "Saat melancarkan Skill, terdapat {{1}}% peluang tetap untuk memulihkan 1 Poin Skill. Efek ini memiliki durasi CD selama 1 giliran."
+    },
+    "2": {
+      "name": "Quick March",
+      "desc": "Saat melancarkan Skill, SPD rekan yang dijadikan target akan meningkat {{1}}% setelah beraksi, berlangsung selama 1 giliran."
+    },
+    "3": {
+      "name": "Bombardment",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Take by Surprise",
+      "desc": "Setelah karakter lain melancarkan Basic Attack pada target musuh dengan Wind Weakness, Bronya akan segera melancarkan 1 Serangan Lanjutan yang mengakibatkan Wind DMG sebesar {{1}}% DMG Basic Attack Bronya pada target tersebut. Efek ini dapat dipicu sekali setiap giliran."
+    },
+    "5": {
+      "name": "Unstoppable",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Piercing Rainbow",
+      "desc": "Durasi efek peningkatan DMG yang diberikan Skill Bronya pada rekan tim akan bertambah {{1}} giliran."
+    }
+  }
+}

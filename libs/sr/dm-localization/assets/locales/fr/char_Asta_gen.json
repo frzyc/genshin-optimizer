@@ -1,0 +1,66 @@
+{
+  "name": "Asta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Rayon spectral",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Asta à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de feu mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Tempête de météores",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Asta à un ennemi unique et inflige des DGT 4 fois supplémentaires, infligeant à chaque fois des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Asta à un ennemi aléatoire.",
+        "shortDesc": "Inflige des DGT de feu mineurs à des cibles ennemies uniques pour un total de 5 rebonds."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Bénédiction astrale",
+        "fullDesc": "Augmente la VIT de tous les alliés de <orangeStrong>{{1}}</orangeStrong> pendant {{2}} tours.",
+        "shortDesc": "<orangeStrong>Augmente la VIT</orangeStrong> de tous les alliés."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Coup de génie",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT de feu équivalents à {{1}}% de l'ATQ d'Asta à tous les ennemis après être entré en combat.",
+        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT mineurs à tous les ennemis après être entré en combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Chanson d'une étoile sans parole",
+      "desc": "Lors de l'utilisation de la compétence, inflige des DGT 1 fois supplémentaire à un ennemi aléatoire."
+    },
+    "2": {
+      "name": "Aléas des cycles de la lune",
+      "desc": "Après utilisation de l'ultime d'Asta, ses cumuls de Chargement ne diminuent pas au tour suivant."
+    },
+    "3": {
+      "name": "Pluie de météores à volonté",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Manifestation de l'aurore",
+      "desc": "Le taux de régénération d'énergie d'Asta augmente de {{2}}% lorsqu'elle dispose de {{1}} cumuls de Chargement ou plus."
+    },
+    "5": {
+      "name": "Nébuleuse de runes et de mystères",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Repos de la voie lactée",
+      "desc": "Les cumuls de Chargement perdus à chaque tour diminuent de {{1}}."
+    }
+  }
+}

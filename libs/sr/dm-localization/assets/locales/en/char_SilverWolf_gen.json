@@ -1,0 +1,66 @@
+{
+  "name": "Silver Wolf",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "System Warning",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Silver Wolf's ATK to a single enemy.",
+        "shortDesc": "Deals minor Quantum DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Allow Changes?",
+        "fullDesc": "There is a <orangeStrong>{{2}}%</orangeStrong> <u>base chance</u> to add 1 Weakness of an on-field character's Type to the target enemy. This also reduces the enemy's DMG RES to that Weakness Type by {{4}}% for {{3}} turn(s). If the enemy already has that Type Weakness, the effect of DMG RES reduction to that Weakness Type will not be triggered.\\nEach enemy can only have 1 Weakness implanted by Silver Wolf. When Silver Wolf implants another Weakness to the target, only the most recent implanted Weakness will be kept.\\nIn addition, there is a {{5}}% <u>base chance</u> to further reduce the All-Type RES of the enemy by <orangeStrong>{{6}}%</orangeStrong> for {{7}} turn(s).\\nDeals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Silver Wolf's ATK to this enemy.",
+        "shortDesc": "There is a high chance to <orangeStrong>apply additional Type Weaknesses</orangeStrong> to a single enemy and deals Quantum DMG to this target enemy."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "User Banned",
+        "fullDesc": "There's a <orangeStrong>{{2}}%</orangeStrong> <u>base chance</u> to decrease the target enemy's DEF by <orangeStrong>{{3}}%</orangeStrong> for {{4}} turn(s). And at the same time, deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Silver Wolf's ATK to the target enemy.",
+        "shortDesc": "There is a high chance of <orangeStrong>lowering a single enemy's DEF</orangeStrong> and deals massive Quantum DMG to this target enemy."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Force Quit Program",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Quantum DMG equal to {{1}}% of Silver Wolf's ATK to all enemies, and ignores Weakness Types and reduces Toughness from all enemies. Enemies with their Weakness Broken in this way will trigger the Quantum Weakness Break effect.",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor DMG to all enemies and reduces Toughness of all enemies irrespective of Weakness Types."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Social Engineering",
+      "desc": "After using her Ultimate to attack enemies, Silver Wolf regenerates {{1}} Energy for every debuff that the target enemy currently has. This effect can be triggered up to {{2}} time(s) in each use of her Ultimate."
+    },
+    "2": {
+      "name": "Zombie Network",
+      "desc": "When an enemy enters battle, reduces their Effect RES by {{1}}%."
+    },
+    "3": {
+      "name": "Payload",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Bounce Attack",
+      "desc": "After using her Ultimate to attack enemies, deals Additional Quantum DMG equal to {{1}}% of Silver Wolf's ATK for every debuff currently on the enemy target. This effect can be triggered for a maximum of {{2}} time(s) during each use of her Ultimate."
+    },
+    "5": {
+      "name": "Brute Force Attack",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "Overlay Network",
+      "desc": "For every debuff the target enemy has, the DMG dealt by Silver Wolf increases by {{1}}%, up to a limit of {{2}}%."
+    }
+  }
+}

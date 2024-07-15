@@ -1,0 +1,7 @@
+{
+  "name": "Planetarisches Rendezvous",
+  "passive": {
+    "name": "Abreise",
+    "description": "Wenn ein Verbündeter nach Kampfeintritt denselben SCH-Typ wie der Träger verursacht, wird der zugefügte SCH um <orangeStrong>{{1}}%</orangeStrong> erhöht."
+  }
+}

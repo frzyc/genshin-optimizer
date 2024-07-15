@@ -1,0 +1,66 @@
+{
+  "name": "{RUBY_B#タンコウ}丹恒{RUBY_E#}",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#うんきそうじゅつ}雲騎槍術{RUBY_E#}・{RUBY_B#さくふう}朔風{RUBY_E#}",
+        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の風属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#うんきそうじゅつ}雲騎槍術{RUBY_E#}・{RUBY_B#しつう}疾雨{RUBY_E#}",
+        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。\\n戦闘スキルで会心が発生した時、{{4}}%の<u>基礎確率</u>で攻撃を受けた敵の速度-{{2}}%、{{3}}ターン継続。",
+        "shortDesc": "敵単体に風属性ダメージを与え、会心時に高確率で減速状態を付与。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#どうてん}洞天{RUBY_E#}{RUBY_B#げんげ}幻化{RUBY_E#}、{RUBY_B#ちょうむ}長夢{RUBY_E#}{RUBY_B#いっかく}一覚{RUBY_E#}",
+        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。攻撃を受けた敵が減速状態の場合、必殺技のダメージ倍率+<orangeStrong>{{2}}%</orangeStrong>。",
+        "shortDesc": "敵単体に大量の風属性ダメージを与える、減速状態の敵に対してダメージ倍率アップ。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#はてき}破敵{RUBY_E#}の{RUBY_B#ほこさき}矛先{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時、丹恒の攻撃力+{{1}}%、{{2}}ターン継続。",
+        "shortDesc": "秘技を使用、次の戦闘に入った後に攻撃力アップ。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#きょくてんきゅうじん}極天窮尽{RUBY_E#}するも\\n{RUBY_B#たかぶ}昂{RUBY_E#}り{RUBY_B#たも}保{RUBY_E#}てず",
+      "desc": "攻撃が命中した敵の残りHPが{{1}}%以上の場合、会心率+{{2}}%。"
+    },
+    "2": {
+      "name": "{RUBY_B#はちどくあっとう}八毒圧倒{RUBY_E#}\\n{RUBY_B#えんえんめっきゃく}炎煙滅却{RUBY_E#}",
+      "desc": "天賦のクールタイム-1ターン。"
+    },
+    "3": {
+      "name": "{RUBY_B#ゆうめい}幽明{RUBY_E#}の{RUBY_B#へんげ}変化{RUBY_E#}\\n{RUBY_B#ゆうりゅう}遊龍{RUBY_E#}の{RUBY_B#ごと}如{RUBY_E#}く{RUBY_B#じざい}自在{RUBY_E#}にあり",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
+    },
+    "4": {
+      "name": "{RUBY_B#ふんじんざんまい}奮迅三昧{RUBY_E#}\\n{RUBY_B#にちりん}日輪{RUBY_E#}が{RUBY_B#ごと}如{RUBY_E#}く",
+      "desc": "必殺技で敵を倒した時、丹恒が即座に行動する。"
+    },
+    "5": {
+      "name": "{RUBY_B#てんすい}天水{RUBY_E#}{RUBY_B#わ}分{RUBY_E#}かつ{RUBY_B#いっそう}一槍{RUBY_E#}\\n{RUBY_B#ろっきょ}六虚{RUBY_E#}の{RUBY_B#こうりゅうふ}洪流{RUBY_E#}振り{RUBY_B#お}起{RUBY_E#}こす",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#こんじょうじょうばく}今生縄縛{RUBY_E#}\\n{RUBY_B#と}解{RUBY_E#}く{RUBY_B#とき}時{RUBY_E#}{RUBY_B#せ}急{RUBY_E#}く{RUBY_B#なか}勿{RUBY_E#}れ",
+      "desc": "戦闘スキルによって減速状態を付与された敵は、さらに速度-{{1}}%。"
+    }
+  }
+}
