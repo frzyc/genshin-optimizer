@@ -68,7 +68,7 @@ export default function OptimizationTargetEditorList({
       const statFilters_ = { ...statFilters }
       const pathStr = JSON.stringify(path)
       const filterArr = [...statFilters[pathStr]!]
-      filterArr[index] = {...filterArr[index], minValue } as StatFilterSetting
+      filterArr[index] = { ...filterArr[index], minValue } as StatFilterSetting
       statFilters_[pathStr] = filterArr
       setStatFilters({ ...statFilters_ })
     },
@@ -80,7 +80,7 @@ export default function OptimizationTargetEditorList({
       const statFilters_ = { ...statFilters }
       const pathStr = JSON.stringify(path)
       const filterArr = [...statFilters[pathStr]!]
-      filterArr[index] = {...filterArr[index], maxValue } as StatFilterSetting
+      filterArr[index] = { ...filterArr[index], maxValue } as StatFilterSetting
       statFilters_[pathStr] = filterArr
       setStatFilters({ ...statFilters_ })
     },

@@ -5,11 +5,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import OptimizationTargetEditorList from './OptimizationTargetEditorList'
 
-export function StatFilterCard({
-  disabled = false,
-}: {
-  disabled?: boolean
-}) {
+export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
   const { t } = useTranslation('page_character_optimize')
   const [statFilters, setStatFilters] = useState<StatFilters>({})
   return (
