@@ -27,7 +27,6 @@ export default function Content({
         .from('artifacts')
         .insert({
           ...rest,
-          location: location || null,
           account_id: accountId,
         } as any)
         .select()
