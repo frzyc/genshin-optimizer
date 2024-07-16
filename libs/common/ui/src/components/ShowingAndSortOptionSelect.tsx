@@ -37,7 +37,7 @@ export function ShowingAndSortOptionSelect({
         <SortByButton
           sortKeys={sortByButtonProps.sortKeys}
           value={sortByButtonProps.value}
-          onChange={(value) => sortByButtonProps.onChange(value)}
+          onChange={(value) => sortByButtonProps.onChange(value as string)}
           ascending={sortByButtonProps.ascending}
           onChangeAsc={sortByButtonProps.onChangeAsc}
         />

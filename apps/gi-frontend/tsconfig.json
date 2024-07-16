@@ -11,12 +11,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "exactOptionalPropertyTypes": false,
+    "noImplicitAny": false,
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "types": ["jest", "node"]
+    "types": ["jest", "node", "object-overrides"]
   },
   "include": [
     "**/*.ts",

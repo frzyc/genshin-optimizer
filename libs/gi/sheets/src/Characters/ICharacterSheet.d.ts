@@ -1,8 +1,8 @@
+import type { StaticImageData } from 'next/image'
 import type { DocumentSection } from '../sheet'
-
 export interface TalentSheetElement {
   name: ReactNode //talentName
-  img: string
+  img: string | StaticImageData
   sections: DocumentSection[]
 }
 export type TalentSheetElementKey =

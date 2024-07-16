@@ -7628,13 +7628,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.3.1":
-  version: 18.3.1
-  resolution: "@types/react@npm:18.3.1"
+"@types/react@npm:18.2.68":
+  version: 18.2.68
+  resolution: "@types/react@npm:18.2.68"
   dependencies:
     "@types/prop-types": "*"
+    "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 9224ef319a0c2b7f66e7e7f06012aa5eb638a6c76c9742843eab1a5d243f2bed5ff829ddbb41efd60d33a266420528adfcb84cb93f238b00e905f98c3a355768
+  checksum: 76786df04f4c45ee8812f86d44f09e0d8adc122ab9468ec3577fdef924ad7ab948a4eeb32c5281656b4bf17a9017be7e9c79b98da3f8d01b22dbfdf507a7510b
   languageName: node
   linkType: hard
 
@@ -13664,7 +13665,7 @@ __metadata:
     "@types/jsonwebtoken": ^9.0.3
     "@types/node": ^18.16.9
     "@types/passport-jwt": ^3.0.10
-    "@types/react": 18.3.1
+    "@types/react": 18.2.68
     "@types/react-dom": 18.3.0
     "@typescript-eslint/eslint-plugin": 7.3.0
     "@typescript-eslint/parser": 7.3.0
