@@ -18,7 +18,7 @@ export default function Content({
 }) {
   const supabase = useSupabase()
   const [characters, setCharacters] = useState(serverCharacters)
-  const addWeapon = async () => {
+  const addChar = async () => {
     try {
       const ranChar: any = randomizeCharacter()
       if (characters.find((c) => c.key === ranChar.key))
@@ -65,7 +65,7 @@ export default function Content({
   })
   return (
     <Container>
-      <Button onClick={addWeapon}> Add Character</Button>
+      <Button onClick={addChar}> Add Character</Button>
       <Typography>Characters</Typography>
 
       <Suspense

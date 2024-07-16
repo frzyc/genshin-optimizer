@@ -22,9 +22,9 @@ export default function Content({
   const addWeapon = async () => {
     try {
       const randWeapon = randomizeWeapon()
-      if (!randWeapon.location) (randWeapon as any).location = null
+      const { location, ...restWeapon } = randWeapon
       const { error } = await supabase.from('weapons').insert({
-        ...randWeapon,
+        ...restWeapon,
         account_id: accountId,
       } as any)
       if (error) console.error(error)
