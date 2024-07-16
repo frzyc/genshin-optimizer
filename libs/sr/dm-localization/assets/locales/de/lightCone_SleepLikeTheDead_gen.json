@@ -1,0 +1,7 @@
+{
+  "name": "Schlafen wie die Toten",
+  "passive": {
+    "name": "Süßer Traum",
+    "description": "Erhöht den KRIT-SCH des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Erzielt Standardangriff oder Fertigkeit des Trägers keinen kritischen Treffer, wird die KRIT-Rate für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong> erhöht. Dieser Effekt kann nur 1-mal alle {{4}} Rd. ausgelöst werden."
+  }
+}

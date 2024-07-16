@@ -1,0 +1,7 @@
+{
+  "name": "Verteidigung",
+  "passive": {
+    "name": "Wiederbelebung",
+    "description": "Stellt beim Einsatz des Ultimates <orangeStrong>{{1}}%</orangeStrong> der max. LP des Trägers wieder her."
+  }
+}

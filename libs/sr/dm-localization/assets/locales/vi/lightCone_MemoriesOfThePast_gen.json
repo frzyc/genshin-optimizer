@@ -1,0 +1,7 @@
+{
+  "name": "Dáng Hình Trong Ký Ức",
+  "passive": {
+    "name": "Bức Hình Cũ",
+    "description": "Khiến Tấn Công Kích Phá của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Sau khi người trang bị tấn công sẽ hồi thêm <orangeStrong>{{2}}</orangeStrong> điểm Năng Lượng, hiệu ứng này không thể kích hoạt trùng lặp trong 1 hiệp."
+  }
+}

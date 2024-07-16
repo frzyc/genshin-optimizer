@@ -1,0 +1,66 @@
+{
+  "name": "Fu Xuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Thủy Kích Tuế Tinh",
+        "fullDesc": "Gây cho 1 kẻ địch Sát Thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của Fu Xuan.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Linh Đài Thị Ảnh",
+        "fullDesc": "Mở Ma Trận Tiên Tri, khiến đồng đội của Fu Xuan <u>chia sẻ</u> {{1}}% sát thương phải chịu (trước khi sát thương này được đỡ bởi Khiên) cho Fu Xuan trong {{3}} hiệp.\\nTất cả thành viên phe ta đang trong trạng thái Ma Trận Tiên Tri sẽ nhận Giám Tri, và tăng Giới Hạn HP bằng <orangeStrong>{{4}}%</orangeStrong> Giới Hạn HP của Fu Xuan, Tỷ Lệ Bạo Kích tăng <orangeStrong>{{5}}%</orangeStrong>.\\nKhi Fu Xuan vào <u>trạng thái không thể chiến đấu</u>, Ma Trận Tiên Tri cũng sẽ bị giải trừ.",
+        "shortDesc": "Mở \"Ma Trận Tiên Tri\", <u>chia sẻ</u> cho Fu Xuan <orangeStrong>sát thương mà đồng đội phải chịu</orangeStrong>. Đồng thời khiến toàn phe ta tăng Giới Hạn HP, <orangeStrong>tăng Tỷ Lệ Bạo Kích</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lịch Kiếp Quy Nhất",
+        "fullDesc": "Gây cho toàn bộ kẻ địch Sát Thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của Fu Xuan, đồng thời nhận 1 lần kích hoạt hồi phục HP từ Thiên Phú của Fu Xuan.",
+        "shortDesc": "Gây sát thương Lượng Tử cho toàn phe địch, tăng số lần kích hoạt Thiên Phú của Fu Xuan."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Lá Chắn Ma Trận",
+        "fullDesc": "Sau khi dùng Bí Kỹ, toàn bộ phe ta nhận Lá Chắn duy trì {{1}} giây. Lá Chắn này có thể đỡ tất cả tấn công của kẻ địch khiến toàn phe ta sẽ không vào chiến đấu. Khi chủ động vào chiến đấu trong thời gian duy trì Lá Chắn, Fu Xuan sẽ tự động kích hoạt Ma Trận Tiên Tri, duy trì {{2}} hiệp.",
+        "shortDesc": "Kích hoạt Lá Chắn, khi chịu tấn công từ kẻ địch sẽ không vào chiến đấu. Sau khi vào chiến đấu sẽ tự động mở Ma Trận Tiên Tri."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tư Nguy",
+      "desc": "Tất cả đơn vị trong \"Giám Tri\" sẽ tăng Sát Thương Bạo Kích {{1}}%."
+    },
+    "2": {
+      "name": "Nhu Triệu",
+      "desc": "Nếu bất kỳ mục tiêu phe ta chịu sát thương chí tử trong khi Ma Trận Tiên Tri đang kích hoạt, thì tất cả mục tiêu phe ta chịu sát thương chí tử trong lần hành động này sẽ không rơi vào trạng thái không thể chiến đấu, đồng thời hồi ngay HP bằng {{1}}% Giới Hạn HP của bản thân nhân vật đó. Hiệu ứng này có thể kích hoạt 1 lần trong 1 trận đấu."
+    },
+    "3": {
+      "name": "Trực Phù",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Cách Trạch",
+      "desc": "Sau khi mục tiêu khác của phe ta ở trạng thái \"Ma Trận Tiên Tri\" chịu tấn công, Fu Xuan hồi phục {{1}} điểm Năng Lượng."
+    },
+    "5": {
+      "name": "Kế Thần",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Chủng Lăng",
+      "desc": "Một khi kích hoạt \"Ma Trận Tiên Tri\", sẽ tích lũy HP đã tổn thất của toàn thể phe ta trong trận này. Tăng sát thương Tuyệt Kỹ của Fu Xuan bằng {{1}}% HP đã tổn thất tích lũy trong trận này.\\nHP đã tổn thất tích lũy trong trận này tối đa không quá {{2}}% Giới Hạn HP của Fu Xuan, sau khi thi triển Tuyệt Kỹ sẽ xóa và tích lũy lại từ đầu."
+    }
+  }
+}

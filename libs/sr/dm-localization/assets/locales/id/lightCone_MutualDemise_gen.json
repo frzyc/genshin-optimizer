@@ -1,0 +1,7 @@
+{
+  "name": "Mutual Demise",
+  "passive": {
+    "name": "Legion",
+    "description": "Saat HP pengguna saat ini kurang dari {{1}}%, CRIT Rate meningkat <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

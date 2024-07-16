@@ -1,0 +1,7 @@
+{
+  "name": "Ambre",
+  "passive": {
+    "name": "Stase",
+    "description": "Augmente la DÉF du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque ses PV sont inférieurs à <orangeStrong>{{2}}%</orangeStrong>, sa DÉF augmente de <orangeStrong>{{3}}%</orangeStrong> supplémentaires."
+  }
+}

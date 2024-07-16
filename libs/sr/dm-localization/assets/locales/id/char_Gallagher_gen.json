@@ -1,0 +1,71 @@
+{
+  "name": "Gallagher",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Corkage Fee",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Gallagher pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh."
+      },
+      "1": {
+        "name": "Nectar Blitz",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Gallagher pada 1 musuh yang ditargetkan, dan mengurangi ATK target sebesar <orangeStrong>{{2}}%</orangeStrong>, berlangsung selama {{3}} giliran.",
+        "shortDesc": "Mengakibatkan Fire DMG pada 1 musuh dan mengurangi ATK-nya."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Special Brew",
+        "fullDesc": "Segera memulihkan <orangeStrong>{{1}}</orangeStrong> HP 1 rekan tim yang ditargetkan.",
+        "shortDesc": "Segera memulihkan HP 1 rekan tim."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Champagne Etiquette",
+        "fullDesc": "Membuat seluruh musuh memasuki status \"Besotted\" selama {{2}} giliran, dan di saat bersamaan mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Gallagher pada seluruh musuh, dan Basic Attack berikutnya akan diperkuat menjadi \"Nectar Blitz\".",
+        "shortDesc": "Membuat seluruh musuh memasuki <orangeStrong>status \"Besotted\"</orangeStrong>, dan di saat yang bersamaan mengakibatkan Fire DMG pada seluruh musuh. Basic Attack berikutnya akan diperkuat menjadi \"Nectar Blitz\"."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Artisan Elixir",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, akan membuat seluruh musuh memasuki status \"Besotted\" selama {{1}} giliran, serta mengakibatkan Fire DMG sebesar {{2}}% ATK Gallagher pada seluruh musuh.",
+        "shortDesc": "Menyerang musuh. Setelah memasuki pertempuran, membuat seluruh musuh <orangeStrong>memasuki status \"Besotted\"</orangeStrong>, serta mengakibatkan Fire DMG dalam jumlah kecil pada seluruh musuh."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Salty Dog",
+      "desc": "Gallagher akan memulihkan {{1}} Energy setelah memasuki pertempuran, dan meningkatkan {{2}}% Effect RES dirinya."
+    },
+    "2": {
+      "name": "Lion's Tail",
+      "desc": "Saat melancarkan Skill, akan menghilangkan {{1}} Debuff dari 1 rekan tim yang ditargetkan. Di saat bersamaan, akan meningkatkan {{2}}% Effect RES rekan tersebut, berlangsung selama {{3}} giliran."
+    },
+    "3": {
+      "name": "Corpse Reviver",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Last Word",
+      "desc": "Meningkatkan durasi status \"Besotted\" yang diakibatkan Ultimate Gallagher sebanyak {{1}} giliran."
+    },
+    "5": {
+      "name": "Death in the Afternoon",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Blood and Sand",
+      "desc": "Meningkatkan {{1}}% Break Effect dan {{2}}% Weakness Break Efficiency Gallagher."
+    }
+  }
+}

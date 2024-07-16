@@ -16,7 +16,24 @@ export const TextMapTH = JSON.parse(readDMJSON('TextMap/TextMapTH.json'))
 // export const TextMapTR = JSON.parse(readDMJSON('TextMap/TextMapTR.json'))
 export const TextMapVI = JSON.parse(readDMJSON('TextMap/TextMapVI.json'))
 
-export const languageMap = {
+export const allLanguageKeys = [
+  'chs',
+  'cht',
+  'de',
+  'en',
+  'es',
+  'fr',
+  'id',
+  'ja',
+  'ko',
+  'pt',
+  'ru',
+  'th',
+  'vi',
+] as const
+export type LanguageKey = (typeof allLanguageKeys)[number]
+
+export const languageMap: Record<LanguageKey, Record<string, string>> = {
   chs: TextMapCHS,
   cht: TextMapCHT,
   de: TextMapDE,

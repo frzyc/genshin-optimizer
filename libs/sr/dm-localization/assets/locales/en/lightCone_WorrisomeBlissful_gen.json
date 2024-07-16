@@ -1,0 +1,7 @@
+{
+  "name": "Worrisome, Blissful",
+  "passive": {
+    "name": "One At A Time",
+    "description": "Increase the wearer's CRIT Rate by <orangeStrong>{{1}}%</orangeStrong> and their follow-up attacks' DMG by <orangeStrong>{{2}}%</orangeStrong>. After the wearer uses a follow-up attack, apply the Tame state to the target, stacking up to {{4}} stacks. When allies hit enemy targets under the Tame state, every Tame stack increases the CRIT DMG dealt by <orangeStrong>{{3}}%</orangeStrong>."
+  }
+}

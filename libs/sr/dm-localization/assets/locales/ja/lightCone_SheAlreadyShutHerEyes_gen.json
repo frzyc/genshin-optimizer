@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#と}閉{RUBY_E#}ざした{RUBY_B#ひとみ}瞳{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#しかい}視界{RUBY_E#}",
+    "description": "装備キャラの最大HP+<orangeStrong>{{1}}%</orangeStrong>、EP回復効率+<orangeStrong>{{4}}%</orangeStrong>。装備キャラのHPが減った時、味方全体の与ダメージ+<orangeStrong>{{2}}%</orangeStrong>、{{5}}ターン継続。\\n各ウェーブ開始時、味方全体のHPをそれぞれ失ったHPの<orangeStrong>{{3}}%</orangeStrong>分回復する。"
+  }
+}

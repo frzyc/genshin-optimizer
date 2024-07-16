@@ -1,0 +1,7 @@
+{
+  "name": "Đổ Nát",
+  "passive": {
+    "name": "Thanh Trừng",
+    "description": "Khiến sát thương mà người trang bị gây ra cho kẻ địch có Phần Trăm HP lớn hơn {{1}}% tăng <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

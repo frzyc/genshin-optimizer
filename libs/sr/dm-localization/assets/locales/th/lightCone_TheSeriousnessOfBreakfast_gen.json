@@ -1,0 +1,7 @@
+{
+  "name": "The Seriousness of Breakfast",
+  "passive": {
+    "name": "Get Ready",
+    "description": "ทำให้ DMG ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> และทุกครั้งที่กำจัดศัตรูเป้าหมายได้ 1 ตัว ATK ของผู้สวมใส่จะเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> โดยเอฟเฟกต์นี้สามารถซ้อนทับได้สูงสุด {{3}} ชั้น"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Carve the Moon, Weave the Clouds",
+  "passive": {
+    "name": "Secret",
+    "description": "Saat pertempuran dimulai dan saat setiap giliran pengguna dimulai, 1 efek akan aktif secara acak. Efek yang diaktifkan akan menggantikan efek sebelumnya, dan efek tersebut tidak akan sama dengan yang sebelumnya. Efek termasuk: ATK seluruh rekan tim +<orangeStrong>{{1}}%</orangeStrong>; CRIT DMG seluruh rekan tim +<orangeStrong>{{2}}%</orangeStrong>; Energy Regeneration Rate seluruh rekan tim +<orangeStrong>{{3}}%</orangeStrong>. Efek yang sama tidak dapat ditumpuk dan akan terhapus saat pengguna gugur."
+  }
+}

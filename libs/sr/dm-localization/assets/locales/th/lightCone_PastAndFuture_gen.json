@@ -1,0 +1,7 @@
+{
+  "name": "Past and Future",
+  "passive": {
+    "name": "Kites From the Past",
+    "description": "หลังจากผู้สวมใส่ใช้สกิลต่อสู้ จะทำให้ DMG ในแอ็กชันถัดไปของเป้าหมายตัวอื่นในฝ่ายตัวเองเพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เป็นเวลา {{2}} เทิร์น"
+  }
+}

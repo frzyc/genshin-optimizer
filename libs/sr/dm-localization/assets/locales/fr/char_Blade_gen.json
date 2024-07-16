@@ -1,0 +1,71 @@
+{
+  "name": "Blade",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lame d'éclat",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Blade à une cible ennemie.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi."
+      },
+      "1": {
+        "name": "Forêt de lames",
+        "fullDesc": "Consomme <orangeStrong>{{1}}%</orangeStrong> des PV max de Blade pour infliger des DGT de vent équivalents à <orangeStrong>{{2}}%</orangeStrong> de son ATQ + <orangeStrong>{{4}}%</orangeStrong> de ses PV max à une cible unique. Inflige également des DGT de vent équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ de Blade + <orangeStrong>{{5}}%</orangeStrong> de ses PV max aux cibles adjacentes. Si les PV de Blade sont insuffisants, ils tombent à 1 après utilisation de Forêt de lames.\\nForêt de lames ne permet pas de régénérer de points de compétence.",
+        "shortDesc": "Consomme des PV et inflige des DGT de vent à un ennemi ainsi que des DGT de vent mineurs aux cibles adjacentes."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Vue de l'enfer",
+        "fullDesc": "Consomme {{1}}% des PV max de Blade pour entrer dans l'état Vue de l'enfer.\\nLorsque l'état Vue de l'enfer est actif, Blade ne peut plus utiliser sa compétence, mais les DGT qu'il inflige augmentent de <orangeStrong>{{4}}%</orangeStrong>, et son ATQ normale Lame d'éclat se renforce en Forêt de lames pendant {{2}} tours.\\nSi les PV de Blade sont insuffisants pour utiliser la compétence, ils tombent à 1 après utilisation de la compétence.\\nCette compétence ne régénère pas l'énergie. Utiliser cette compétence ne met pas fin au tour.",
+        "shortDesc": "Consomme des PV pour <orangeStrong>renforcer son ATQ normale</orangeStrong> sans mettre fin au tour."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Condamnation à mort",
+        "fullDesc": "Les PV de Blade passent à 50 % de ses PV max, et il inflige des DGT de vent équivalents à la somme de <orangeStrong>{{1}}%</orangeStrong> de son ATQ, <orangeStrong>{{2}}%</orangeStrong> de ses PV max, et <orangeStrong>{{5}}%</orangeStrong> du total des PV qu'il a perdus au cours du combat à une cible unique, tout en infligeant des DGT de vent équivalents à la somme de <orangeStrong>{{3}}%</orangeStrong> de son ATQ, <orangeStrong>{{4}}%</orangeStrong> de ses PV max, et <orangeStrong>{{6}}%</orangeStrong> du total des PV qu'il a perdus au cours du combat aux cibles adjacentes.\\nLe total des PV qu'il a perdus au cours du combat est plafonné à {{7}}% de ses PV max. Ce montant est réinitialisé et recommence à s'accumuler après utilisation de l'ultime.",
+        "shortDesc": "Les PV du personnage passent à 50 % de ses PV max, et il inflige des DGT de vent massifs à une cible unique ainsi que des DGT de vent aux cibles adjacentes."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Vent de karma",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Consomme {{2}}% des PV max de Blade après être entré en combat pour infliger des DGT de vent équivalents à {{1}}% de ses PV max à tous les ennemis.\\nSi les PV de Blade sont insuffisants, ils tombent à 1 après utilisation de cette technique.",
+        "shortDesc": "Engage le combat contre les ennemis. Consomme ses propres PV après être entré en combat pour infliger des DGT de vent à tous les ennemis."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Les lames s'affûtent en enfer",
+      "desc": "L'ultime de Blade inflige des DGT augmentés à une cible ennemie unique. L'augmentation de DGT est équivalente à {{1}}% du total des PV que Blade a perdus au cours du combat.\\nLe total des PV perdus est plafonné à {{2}}% des PV max de Blade. Ce montant est réinitialisé et recommence à s'accumuler après utilisation de l'ultime."
+    },
+    "2": {
+      "name": "Dix mille souffrances pour un rêve brisé",
+      "desc": "Les chances de coup critique de Blade augmentent de {{1}}% lorsqu'il est dans l'état Vue de l'enfer."
+    },
+    "3": {
+      "name": "Le sang est froid sur les lames endurcies",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Rejeté par la mort, infecté par la vie",
+      "desc": "Lorsque les PV de Blade sont inférieurs ou égaux à 50 %, ses PV max augmentent de {{1}}%. Cumulable jusqu'à {{2}} fois."
+    },
+    "5": {
+      "name": "Regard mortel des Dix seigneurs",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Revenu dans une coquille vide",
+      "desc": "Le nombre de cumuls maximum de Charge est réduit à 4. Les DGT de l'attaque de suivi déclenchée par le talent de Blade augmentent d'un montant équivalent à {{1}}% de ses PV max."
+    }
+  }
+}

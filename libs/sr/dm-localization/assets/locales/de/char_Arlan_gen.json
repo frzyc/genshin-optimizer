@@ -1,0 +1,66 @@
+{
+  "name": "Arlan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Blitzrausch",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Arlans ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Kettensprenger",
+        "fullDesc": "Verbraucht {{1}}% von Arlans max. LP, um einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Arlans ANG zuzufügen. Hat Arlan nicht genügend LP, werden seine LP beim Einsatz der Fertigkeit auf 1 reduziert.",
+        "shortDesc": "Verbraucht einen Teil von Arlans LP, um einem Gegner Blitz-SCH zuzufügen."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Rasende Strafe",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Arlans ANG zu und fügt angrenzenden Zielen Blitz-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Arlans ANG zu.",
+        "shortDesc": "Fügt einem Gegner massiven Blitz-SCH und angrenzenden Zielen Blitz-SCH zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Rasche Ernte",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Blitz-SCH in Höhe von {{1}}% von Arlans ANG zu.",
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen Blitz-SCH zu."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Bis zum bitteren Ende",
+      "desc": "Liegt Arlans LP-Prozentsatz bei 50 % oder weniger, wird der durch die Fertigkeit verursachte SCH um {{1}}% erhöht."
+    },
+    "2": {
+      "name": "Befreiung",
+      "desc": "Entfernt beim Einsatz der Fertigkeit oder des Ultimates 1 Debuff von Arlan."
+    },
+    "3": {
+      "name": "Gewaltsamer Durchbruch",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Rollentausch",
+      "desc": "Erleidet Arlan nach Kampfeintritt einen Todesstoß, stellt er seine LP sofort auf {{1}}% seiner max. LP wieder her, anstatt handlungsunfähig zu werden. Dieser Effekt wird automatisch nach 1-mal Auslösung oder nach {{2}} Rd. entfernt."
+    },
+    "5": {
+      "name": "Die Fetzen fliegen",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Selbstaufopferung",
+      "desc": "Liegt Arlans LP-Prozentsatz bei 50 % oder weniger, verursacht der Ultimate {{1}}% mehr SCH und angrenzende Ziele erhalten denselben SCH-Multiplikator wie der anvisierte Gegner."
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "sr-dm-localization",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr/dm-localization/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "gen-file": {
+      "executor": "@genshin-optimizer/sr/dm-localization:gen-locale",
+      "outputs": ["{projectRoot}/assets/locales"]
+    }
+  }
+}

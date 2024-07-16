@@ -1,0 +1,7 @@
+{
+  "name": "決心如汗珠般閃耀",
+  "passive": {
+    "name": "回眸",
+    "description": "當裝備者擊中敵方目標時，如果該目標未處於【攻陷】狀態，則有<orangeStrong>{{1}}%</orangeStrong>的基礎機率使其陷入【攻陷】狀態。【攻陷】狀態下的敵方目標防禦力降低<orangeStrong>{{2}}%</orangeStrong>，持續{{3}}回合。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Mediation",
+  "passive": {
+    "name": "Family",
+    "description": "เมื่อเข้าสู่การต่อสู้ ความเร็วของฝ่ายตัวเองทั้งหมดจะเพิ่มขึ้น <orangeStrong>{{1}}</orangeStrong> หน่วย เป็นเวลา {{2}} เทิร์น"
+  }
+}

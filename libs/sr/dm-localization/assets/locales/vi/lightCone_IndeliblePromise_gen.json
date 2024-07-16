@@ -1,0 +1,7 @@
+{
+  "name": "Ước Hẹn Khắc Ghi",
+  "passive": {
+    "name": "Kế Thừa",
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Tấn Công Kích Phá của người trang bị. Khi người trang bị thi triển Tuyệt Kỹ, Tỷ Lệ Bạo Kích tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp."
+  }
+}

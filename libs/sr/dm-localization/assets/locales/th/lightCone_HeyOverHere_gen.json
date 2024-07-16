@@ -1,0 +1,7 @@
+{
+  "name": "Hey, Over Here",
+  "passive": {
+    "name": "I'm Not Afraid!",
+    "description": "ทำให้ HP สูงสุดของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> และเมื่อผู้สวมใส่ปล่อยสกิลต่อสู้ ปริมาณการรักษาจะเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น"
+  }
+}

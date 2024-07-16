@@ -1,0 +1,7 @@
+{
+  "name": "Quá Khứ Tương Lai",
+  "passive": {
+    "name": "Diều Giấy Ngày Cũ",
+    "description": "Sau khi người trang bị thi triển Chiến Kỹ, sẽ khiến sát thương gây ra bởi mục tiêu khác của phe ta trong hành động tiếp theo tăng <orangeStrong>{{1}}%</orangeStrong>, duy trì {{2}} hiệp."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "Disciple longévive",
+  "setEffects": {
+    "2": "Augmente de {{1}}% les PV max.",
+    "4": "Lorsque le porteur est touché ou que ses PV sont consommés par un allié ou par lui-même, ses chances de coup critique augmentent de {{1}}% pendant {{2}} tours, avec un maximum de {{3}} cumuls."
+  }
+}

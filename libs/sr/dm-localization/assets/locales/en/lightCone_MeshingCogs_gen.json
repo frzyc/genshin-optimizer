@@ -1,0 +1,7 @@
+{
+  "name": "Meshing Cogs",
+  "passive": {
+    "name": "Fleet Triumph",
+    "description": "After the wearer uses attacks or gets hit, additionally regenerates <orangeStrong>{{1}}</orangeStrong> Energy. This effect cannot be repeatedly triggered in a single turn."
+  }
+}

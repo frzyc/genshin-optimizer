@@ -1,0 +1,7 @@
+{
+  "name": "Sagacity",
+  "passive": {
+    "name": "Genius",
+    "description": "Saat pengguna melancarkan Ultimate, meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK selama {{2}} giliran."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "setName": "Águila del crepúsculo",
+  "setEffects": {
+    "2": "Daño de Viento +{{1}}%.",
+    "4": "Cuando el portador utiliza la habilidad definitiva, su acción se adelanta un {{1}}%."
+  }
+}

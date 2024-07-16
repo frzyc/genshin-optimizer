@@ -1,0 +1,7 @@
+{
+  "name": "幽邃",
+  "passive": {
+    "name": "沉淪",
+    "description": "戰鬥開始時，使裝備者的效果命中提高<orangeStrong>{{1}}%</orangeStrong>，持續{{2}}回合。"
+  }
+}

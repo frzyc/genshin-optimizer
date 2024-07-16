@@ -1,0 +1,66 @@
+{
+  "name": "March 7th",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Mũi Tên Giá Lạnh",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của March 7th.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Dễ Thương Là Chính Nghĩa",
+        "fullDesc": "Cung cấp cho 1 đồng đội tấm khiên có thể triệt tiêu lượng sát thương bằng <orangeStrong>{{1}}%</orangeStrong> Phòng Thủ của March 7th +<orangeStrong>{{4}}</orangeStrong>, duy trì {{2}} hiệp.\\nNếu phần trăm HP hiện tại của mục tiêu này lớn hơn hoặc bằng {{3}}%, thì xác suất bị kẻ địch tấn công sẽ tăng cao.",
+        "shortDesc": "<orangeStrong>Thi triển Khiên</orangeStrong> cho 1 đồng đội."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Mưa Tên Băng Giá",
+        "fullDesc": "Gây Sát Thương Băng cho toàn bộ kẻ địch tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của March 7th. Kẻ địch bị tấn công có {{2}}% <u>xác suất cơ bản</u> bị Đóng Băng, duy trì {{3}} hiệp.\\nTrong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời mỗi hiệp đấu bắt đầu sẽ chịu lượng <u>sát thương kèm theo</u> thuộc tính Băng bằng <orangeStrong>{{4}}%</orangeStrong> Tấn Công của March 7th.",
+        "shortDesc": "Gây Sát Thương Băng cho <orangeStrong>toàn bộ</orangeStrong> kẻ địch, có <orangeStrong>xác suất thi triển Đóng Băng</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Khoảnh Khắc Đóng Băng",
+        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu có {{1}}% <u>xác suất cơ bản</u> khiến 1 kẻ địch ngẫu nhiên bị Đóng Băng, duy trì {{2}} hiệp.\\nTrong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời mỗi hiệp đấu bắt đầu sẽ chịu lượng <u>Sát Thương Băng kèm theo</u> bằng {{3}}% Tấn Công của March 7th.",
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận có xác suất lớn khiến 1 kẻ địch ngẫu nhiên rơi vào trạng thái Đóng Băng."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Bạn Trong Ký Ức",
+      "desc": "Mỗi khi Tuyệt Kỹ đóng băng 1 mục tiêu sẽ hồi {{1}} điểm Năng Lượng cho March 7th."
+    },
+    "2": {
+      "name": "Nó Trong Ký Ức",
+      "desc": "Khi vào chiến đấu, tạo Khiên bằng {{1}}% Phòng Thủ của March 7th +{{3}} cho mục tiêu có phần trăm HP hiện tại thấp nhất của phe ta, duy trì {{2}} hiệp."
+    },
+    "3": {
+      "name": "Tất Cả Trong Ký Ức",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Không Muốn Mất Lần Nữa",
+      "desc": "Số lần hiệu ứng Phản Kích của Thiên Phú có thể kích hoạt ở mỗi hiệp tăng 1 lần. Giúp tăng sát thương Phản Kích tạo thành, mức tăng bằng {{1}}% Phòng Thủ của March 7th."
+    },
+    "5": {
+      "name": "Không Muốn Lại Quên Lãng",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Cứ Như Vậy, Mãi Mãi...",
+      "desc": "Mục tiêu phe ta được bảo vệ bởi Khiên của Chiến Kỹ, khi bắt đầu mỗi hiệp sẽ hồi HP bằng {{1}}% Giới Hạn HP của mỗi mục tiêu +{{2}}."
+    }
+  }
+}

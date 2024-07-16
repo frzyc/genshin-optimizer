@@ -1,0 +1,7 @@
+{
+  "name": "Recuerdos reconstruidos",
+  "passive": {
+    "name": "Cristalización",
+    "description": "El acierto de efecto del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando el portador inflige daño a un enemigo afectado por Intemperie, Quemadura, Electrocución o Sangrado, obtiene 1 acumulación de Profeta, hasta un máximo de {{4}} acumulaciones. En una sola batalla, cada tipo de estado de Daño con el tiempo solo puede acumular Profeta 1 vez. Cada acumulación de Profeta aumenta el ATQ del portador en un <orangeStrong>{{2}}%</orangeStrong>. Además, el Daño con el tiempo infligido ignora un <orangeStrong>{{3}}%</orangeStrong> de la DEF del objetivo."
+  }
+}

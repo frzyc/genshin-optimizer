@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Ratio",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "A Mente É Poderosa",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ do Dr. Ratio a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano Imaginário leve a um único inimigo-alvo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Obstetrícia Intelectual",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ do Dr. Ratio a um único inimigo.",
+        "shortDesc": "Causa Dano Imaginário a um único inimigo."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Paradoxo Silogístico",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ do Dr. Ratio a um único inimigo-alvo e aplica a Tolice do Sábio. Quando os aliados do Dr. Ratio atacam um alvo afligido com Tolice do Sábio, o Dr. Ratio realiza o <u>Ataque Extra</u> do seu Talento 1 vez contra o alvo.\\nA Tolice do Sábio pode ser ativada até {{2}} vezes e só afeta o alvo mais recente da Perícia Suprema do Dr. Ratio. Essa contagem de ativação reinicia depois que a Perícia Suprema do Dr. Ratio é utilizada.",
+        "shortDesc": "Causa Dano Imaginário a um único inimigo-alvo e aplica Tolice do Sábio. Quando os aliados do Dr. Ratio atacam um alvo afligido com Tolice do Sábio, o Dr. Ratio realiza 1 <orangeStrong><u>Ataque Extra</u></orangeStrong> contra este alvo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Molde da Idolatria",
+        "fullDesc": "Após usar a Técnica, cria uma dimensão que causa Provocação nos inimigos próximos, durando por {{1}} segundo(s). Após entrar em combate com inimigos nesta dimensão, há uma <u>chance-base</u> de {{2}}% de reduzir a VEL de cada inimigo-alvo em {{3}}% por {{4}} rodada(s). Apenas 1 dimensão criada pelos aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão. Inimigos dentro dessa dimensão sofrem Provocação. Após entrar em combate com inimigos nesta dimensão, há uma alta chance de reduzir a <orangeStrong>VEL</orangeStrong> dos inimigos-alvo."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Quanto Maior a Subida, Maior a Queda",
+      "desc": "A contagem máxima de acúmulos para o Rastro \"Soma\" aumenta em {{1}}. Quando uma batalha começa, obtém imediatamente {{2}} acúmulos de Soma. É necessário desbloquear Soma antes."
+    },
+    "2": {
+      "name": "O Divino Está nos Detalhes",
+      "desc": "Quando o Ataque Extra do seu Talento atinge um alvo, para cada penalidade no alvo, causa Dano Imaginário Adicional igual a {{1}}% do ATQ do Dr. Ratio. Este efeito pode ser acionado até um máximo de {{2}} vez(es) durante cada Ataque Extra."
+    },
+    "3": {
+      "name": "Conhece-te a Ti Mesmo",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Ignorância É Uma Bênção",
+      "desc": "Ao ativar o Talento, adicionalmente regenera {{1}} de Energia do Dr. Ratio."
+    },
+    "5": {
+      "name": "Sic Itur Ad Astra",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Vincit Omnia Veritas",
+      "desc": "Aumenta adicionalmente a contagem ativável para Tolice do Sábio em {{1}}. O Dano causado pelo Ataque Extra do Talento aumenta em {{2}}%."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#よる}夜{RUBY_E#}の{RUBY_B#とばり}帳{RUBY_E#}の{RUBY_B#なか}中{RUBY_E#}で",
+  "passive": {
+    "name": "{RUBY_B#はな}花{RUBY_E#}と{RUBY_B#ちょう}蝶{RUBY_E#}",
+    "description": "装備キャラの会心率+<orangeStrong>{{1}}%</orangeStrong>。戦闘中に装備キャラの速度が100を超えた時、{{2}}超過するにつき、通常攻撃と戦闘スキルの与ダメージ+<orangeStrong>{{3}}%</orangeStrong>、必殺技の会心ダメージ+<orangeStrong>{{4}}%</orangeStrong>、最大で{{5}}層累積できる。"
+  }
+}

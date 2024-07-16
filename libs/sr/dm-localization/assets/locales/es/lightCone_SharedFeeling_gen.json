@@ -1,0 +1,7 @@
+{
+  "name": "Sentimiento compartido",
+  "passive": {
+    "name": "Curación y arreglo",
+    "description": "La curación realizada por el portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Al usar la habilidad básica, todos los aliados recuperan <orangeStrong>{{2}}</orangeStrong> pts. de energía."
+  }
+}

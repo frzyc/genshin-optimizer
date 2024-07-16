@@ -1,0 +1,66 @@
+{
+  "name": "Xueyi",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Mara-Sunder Awl",
+        "fullDesc": "Deals <orangeStrong>{{1}}%</orangeStrong> of Xueyi's ATK as Quantum DMG to a single target enemy.",
+        "shortDesc": "Deals minor Quantum DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Iniquity Obliteration",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Xueyi's ATK to a single enemy, and Quantum DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Xueyi's ATK to any adjacent enemies.",
+        "shortDesc": "Deals Quantum DMG to a single enemy and minor Quantum DMG to enemies adjacent to it."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Divine Castigation",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Xueyi's ATK to a single target enemy. This attack ignores Weakness Types and reduces the enemy's Toughness. When the enemy's Weakness is Broken, the Quantum Weakness Break effect is triggered.\\nIn this attack, the more Toughness is reduced, the higher the DMG will be dealt, up to a max of <orangeStrong>{{3}}%</orangeStrong> increase.",
+        "shortDesc": "Deals massive Quantum DMG to a single enemy. This attack <orangeStrong>ignores Weakness Types</orangeStrong> and reduces the target's Toughness. The more Toughness is reduced, the higher the DMG will be dealt."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Summary Execution",
+        "fullDesc": "Immediately attacks the enemy. After entering combat, deals {{1}}% of Xueyi's ATK as Quantum DMG to all enemies.",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor Quantum DMG to all enemies."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Dvesha, Inhibited",
+      "desc": "Increases the DMG dealt by the Talent's follow-up attack by {{1}}%."
+    },
+    "2": {
+      "name": "Klesha, Breached",
+      "desc": "Talent's follow-up attack reduces enemy Toughness regardless of Weakness types. At the same time, restores Xueyi's HP by an amount equal to {{1}}% of her Max HP. When breaking Weakness, triggers the Quantum Break Effect."
+    },
+    "3": {
+      "name": "Duḥkha, Ceased",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Karma, Severed",
+      "desc": "When using Ultimate, increases Break Effect by {{1}}% for {{2}} turn(s)."
+    },
+    "5": {
+      "name": "Deva, Enthralled",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Saṃsāra, Mastered",
+      "desc": "The max stack limit for Karma decreases to {{1}}."
+    }
+  }
+}

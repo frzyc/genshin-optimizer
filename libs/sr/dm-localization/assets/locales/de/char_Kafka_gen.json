@@ -1,0 +1,66 @@
+{
+  "name": "Kafka",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Mitternächtlicher Tumult",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Kafkas ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Streichelndes Mondlicht",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Kafkas ANG zu und fügt angrenzenden Einheiten Blitz-SCH in Höhe von <orangeStrong>{{3}}%</orangeStrong> von Kafkas ANG zu.\\nBefindet der anvisierte Gegner sich momentan unter Einfluss von DoT, so erleidet er sofort zusätzlich SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> des aktuell insgesamt erlittenen DoT.",
+        "shortDesc": "Verursacht Blitz-SCH bei einem Gegner und geringen Blitz-SCH bei angrenzenden Einheiten.\\nBefindet das Hauptziel sich momentan unter Einfluss von DoT, so erleidet es sofort <orangeStrong>1-mal zusätzlichen SCH</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Dämmerungstriller",
+        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Kafkas ANG zu und hat eine <u>Grundchance</u> von {{2}}%, bei betroffenen Gegnern Schock zu verursachen und ihnen unmittelbar SCH in Höhe von <orangeStrong>{{5}}%</orangeStrong> des ursprünglichen SCH durch den Status Schock zuzufügen. Der Schock hält {{3}} Rd. an.\\nGeschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Kafkas ANG.",
+        "shortDesc": "Fügt allen Gegnern <orangeStrong>geringen Blitz-SCH</orangeStrong> zu mit einer hohen Chance, bei ihnen Schock zu verursachen.\\nWenn die Gegner gerade geschockt sind, fügt der Schock <orangeStrong>1-mal zusätzlichen SCH</orangeStrong> zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Gnade ist nicht Vergebung",
+        "fullDesc": "Greift alle Gegner innerhalb einer gewissen Reichweite unmittelbar an und fügt nach Kampfeintritt allen Gegnern Blitz-SCH in Höhe von {{3}}% von Kafkas ANG zu. Es besteht eine <u>Grundchance</u> von {{1}}%, jedem einzelnen Gegner für {{2}} Rd. den Status Schock zuzufügen, der dem Status Schock des Ultimates entspricht.",
+        "shortDesc": "Greift alle Gegner in Reichweite an. Fügt nach Kampfeintritt allen Gegnern geringen Blitz-SCH zu und hat eine hohe Chance, ihnen <orangeStrong>Schock zuzufügen</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Da capo",
+      "desc": "Bei Auslösung eines Folgeangriffs durch das Talent besteht eine Grundchance von {{1}}%, den erlittenen DoT des Ziels für {{3}} Rd. um {{2}}% zu erhöhen."
+    },
+    "2": {
+      "name": "Fortississimo",
+      "desc": "Erhöht den von allen Verbündeten verursachten DoT um {{1}}%, wenn Kafka mitkämpft."
+    },
+    "3": {
+      "name": "Capriccio",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Rezitativ",
+      "desc": "Wenn ein Gegner SCH durch den von Kafka verursachten Schock-Status erleidet, wird die Energie von Kafka zusätzlich um {{1}} Pkt. wiederhergestellt."
+    },
+    "5": {
+      "name": "Doloroso",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Leggiero",
+      "desc": "Erhöht den SCH-Multiplikator des Status Schock durch Ultimate, Technik und Folgeangriffe des Talents um {{1}}% und verlängert den Status Schock um {{2}} Rd."
+    }
+  }
+}

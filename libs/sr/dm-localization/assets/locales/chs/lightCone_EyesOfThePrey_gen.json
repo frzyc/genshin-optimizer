@@ -1,0 +1,7 @@
+{
+  "name": "猎物的视线",
+  "passive": {
+    "name": "自信",
+    "description": "使装备者的效果命中提高<orangeStrong>{{1}}%</orangeStrong>，同时造成的持续伤害提高<orangeStrong>{{2}}%</orangeStrong>。"
+  }
+}

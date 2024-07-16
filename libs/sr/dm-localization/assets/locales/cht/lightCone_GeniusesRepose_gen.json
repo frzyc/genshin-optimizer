@@ -1,0 +1,7 @@
+{
+  "name": "天才們的休憩",
+  "passive": {
+    "name": "各得其所",
+    "description": "使裝備者攻擊力提高<orangeStrong>{{1}}%</orangeStrong>。裝備者消滅敵方目標後，暴擊傷害提高<orangeStrong>{{2}}%</orangeStrong>，持續{{3}}回合。"
+  }
+}

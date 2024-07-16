@@ -1,0 +1,7 @@
+{
+  "setName": "Champion des Straßenboxens",
+  "setEffects": {
+    "2": "Erhöht physischen SCH um {{1}}%.",
+    "4": "Wenn der Träger einen Angriff ausführt oder getroffen wird, wird sein ANG im aktuellen Kampf um {{1}}% erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar."
+  }
+}

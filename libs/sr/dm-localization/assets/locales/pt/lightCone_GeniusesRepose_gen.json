@@ -1,0 +1,7 @@
+{
+  "name": "Repouso dos Gênios",
+  "passive": {
+    "name": "Cada Um Tem Um Papel a Ser Feito",
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> o ATQ do usuário. Quando o usuário derrota um inimigo, aumenta em <orangeStrong>{{2}}%</orangeStrong> o Dano CRIT do usuário por {{3}} rodada(s)."
+  }
+}

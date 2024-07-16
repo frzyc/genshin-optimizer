@@ -1,0 +1,7 @@
+{
+  "name": "Mediação",
+  "passive": {
+    "name": "Família",
+    "description": "Ao entrar em combate, aumenta a VEL de todos aliados em <orangeStrong>{{1}}</orangeStrong> pontos por {{2}} rodada(s)."
+  }
+}

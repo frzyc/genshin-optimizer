@@ -37,7 +37,7 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
 }
 export type RelicSetId = keyof typeof relicSetIdMap
 
-export const relicSlotMap: Record<string, RelicSlotKey> = {
+export const relicSlotMap: Record<RelicSlotDMKey, RelicSlotKey> = {
   HEAD: 'head',
   HAND: 'hand',
   BODY: 'body',

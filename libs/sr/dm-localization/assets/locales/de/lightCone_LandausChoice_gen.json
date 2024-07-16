@@ -1,0 +1,7 @@
+{
+  "name": "Landaus Wahl",
+  "passive": {
+    "name": "Die Zeit fliegt davon",
+    "description": "Erhöht die Chance, dass der Träger angegriffen wird. Verringert gleichzeitig den erlittenen SCH um <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

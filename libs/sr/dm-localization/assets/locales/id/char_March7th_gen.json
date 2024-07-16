@@ -1,0 +1,66 @@
+{
+  "name": "March 7th",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Frigid Cold Arrow",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK March 7th pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "The Power of Cuteness",
+        "fullDesc": "Memberikan Shield yang dapat menahan DMG sebesar <orangeStrong>{{1}}%</orangeStrong> DEF March 7th + <orangeStrong>{{4}}</orangeStrong> pada 1 rekan tim selama {{2}} giliran.\\nJika persentase HP rekan tersebut lebih dari atau sama dengan {{3}}%, maka peluangnya diserang musuh akan meningkat pesat.",
+        "shortDesc": "<orangeStrong>Memberikan Shield</orangeStrong> pada 1 rekan tim."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Glacial Cascade",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK March 7th kepada seluruh musuh. Target musuh yang terkena serangan memiliki {{2}}% <u>peluang dasar</u> untuk memasuki status Frozen selama {{3}} giliran.\\nSaat dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice <u>DMG tambahan</u> sebesar <orangeStrong>{{4}}%</orangeStrong> ATK March 7th setiap kali gilirannya dimulai.",
+        "shortDesc": "Mengakibatkan Ice DMG pada <orangeStrong>seluruh</orangeStrong> musuh, dan <orangeStrong>berpeluang untuk mengakibatkan status Frozen</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Freezing Beauty",
+        "fullDesc": "Segera menyerang musuh dan setelah memasuki pertempuran, memiliki {{1}}% <u>peluang dasar</u> untuk mengakibatkan 1 musuh memasuki status Frozen secara acak selama {{2}} giliran.\\nSaat dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice <u>DMG tambahan</u> sebesar {{3}}% ATK March 7th setiap kali gilirannya dimulai.",
+        "shortDesc": "Menyerang musuh dan berpeluang besar untuk membuat 1 musuh secara acak memasuki status Frozen setelah memasuki pertempuran."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Memory of You",
+      "desc": "Memulihkan {{1}} Energy March 7th setiap kali Ultimate membekukan 1 target."
+    },
+    "2": {
+      "name": "Memory of It",
+      "desc": "Saat memasuki pertempuran, memberikan Shield sebesar {{1}}% DEF March 7th +{{3}} pada rekan tim dengan persentase HP terendah selama {{2}} giliran."
+    },
+    "3": {
+      "name": "Memory of Everything",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Never Forfeit Again",
+      "desc": "Jumlah efek Serangan Balasan dari Talent yang dapat dipicu setiap giliran bertambah 1 kali. Meningkatkan DMG dari Serangan Balasan sebesar {{1}}% DEF March 7th."
+    },
+    "5": {
+      "name": "Never Forget Again",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Just Like This, Always ...",
+      "desc": "Rekan tim yang dilindungi Shield dari Skill ini akan memulihkan HP sebesar {{1}}% Max HP masing-masing +{{2}} setiap saat gilirannya dimulai."
+    }
+  }
+}

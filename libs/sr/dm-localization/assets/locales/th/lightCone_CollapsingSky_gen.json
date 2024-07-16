@@ -1,0 +1,7 @@
+{
+  "name": "Collapsing Sky",
+  "passive": {
+    "name": "Havoc",
+    "description": "ทำให้การโจมตีปกติและสกิลต่อสู้ของผู้สวมใส่ สร้าง DMG เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong>"
+  }
+}

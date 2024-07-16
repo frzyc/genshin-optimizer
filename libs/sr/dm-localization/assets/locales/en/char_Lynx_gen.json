@@ -1,0 +1,66 @@
+{
+  "name": "Lynx",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ice Crampon Technique",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of this character's Max HP to a single enemy.",
+        "shortDesc": "Deals minor Quantum DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Salted Camping Cans",
+        "fullDesc": "Applies \"Survival Response\" to a single target ally and increases their Max HP by <orangeStrong>{{1}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{2}}</orangeStrong>. If the target ally is a character on the Path of Destruction or Preservation, the chance of them being attacked by enemies will greatly increase. \"Survival Response\" lasts for {{3}} turn(s).\\nRestores the target's HP by <orangeStrong>{{4}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{5}}</orangeStrong>.",
+        "shortDesc": "Applies \"Survival Response\" to a single ally, <orangeStrong>increases their Max HP</orangeStrong>, and restores their HP."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Snowfield First Aid",
+        "fullDesc": "Dispels {{1}} <u>debuff(s)</u> from all allies and immediately restores their respective HP by an amount equal to <orangeStrong>{{2}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{3}}</orangeStrong>.",
+        "shortDesc": "Dispels <orangeStrong>1 <u>debuff</u> from all allies</orangeStrong> and restores their HP."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Chocolate Energy Bar",
+        "fullDesc": "After Lynx uses her Technique, at the start of the next battle, all allies are granted her Talent's continuous healing effect, lasting for {{1}} turn(s).",
+        "shortDesc": "After this character uses her Technique, at the start of the next battle, all allies are granted a continuous healing effect."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Morning of Snow Hike",
+      "desc": "When healing allies with HP equal to or lower than {{1}}%, Lynx's Outgoing Healing increases by {{2}}%. This effect also works on continuous healing."
+    },
+    "2": {
+      "name": "Noon of Portable Furnace",
+      "desc": "A target with \"Survival Response\" can resist debuff application for {{1}} time(s)."
+    },
+    "3": {
+      "name": "Afternoon of Avalanche Beacon",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Dusk of Warm Campfire",
+      "desc": "When \"Survival Response\" is gained, increases the target's ATK by an amount equal to {{1}}% of Lynx's Max HP for {{2}} turn(s)."
+    },
+    "5": {
+      "name": "Night of Aurora Tea",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Dawn of Explorers' Chart",
+      "desc": "Additionally boosts the Max HP increasing effect of \"Survival Response\" by an amount equal to {{1}}% of Lynx's Max HP and increases Effect RES by {{2}}%."
+    }
+  }
+}

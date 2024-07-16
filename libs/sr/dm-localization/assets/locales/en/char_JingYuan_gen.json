@@ -1,0 +1,66 @@
+{
+  "name": "Jing Yuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Glistening Light",
+        "fullDesc": "Jing Yuan deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of his ATK to a single enemy.",
+        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Rifting Zenith",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Jing Yuan's ATK to all enemies and increases Lightning-Lord's Hits Per Action by {{2}} for the next turn.",
+        "shortDesc": "Deals minor Lightning DMG to all enemies and <orangeStrong>increases Lightning-Lord's Hits Per Action</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lightbringer",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Jing Yuan's ATK to all enemies and increases Lightning-Lord's Hits Per Action by {{2}} for the next turn.",
+        "shortDesc": "Deals Lightning DMG to all enemies and <orangeStrong>increases Lightning-Lord's Hits Per Action</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Spirit Invocation",
+        "fullDesc": "After the Technique is used, the Lightning-Lord's Hits Per Action in the first turn increases by {{1}} at the start of the next battle.",
+        "shortDesc": "After using Technique, for the next battle, <orangeStrong>increases Lightning-Lord's Hits Per Action</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Slash, Seas Split",
+      "desc": "When Lightning-Lord attacks, the DMG multiplier on enemies adjacent to the target enemy increases by an extra amount equal to {{1}}% of the DMG multiplier against the target enemy."
+    },
+    "2": {
+      "name": "Swing, Skies Squashed",
+      "desc": "After Lightning-Lord takes action, DMG caused by Jing Yuan's Basic ATK, Skill, and Ultimate increases by {{1}}% for {{2}} turn(s)."
+    },
+    "3": {
+      "name": "Strike, Suns Subdued",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Spin, Stars Sieged",
+      "desc": "For each hit performed by the Lightning-Lord when it takes action, Jing Yuan regenerates {{1}} Energy."
+    },
+    "5": {
+      "name": "Stride, Spoils Seized",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Sweep, Souls Slain",
+      "desc": "Each hit performed by the Lightning-Lord when it takes action will make the target enemy Vulnerable.\\nWhile Vulnerable, enemies receive {{1}}% more DMG until the end of the Lightning-Lord's current turn, stacking up to {{2}} time(s)."
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Bailu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Chute de Diagnóstico",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Bailu a um único inimigo.",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Cantoria Entre as Nuvens",
+        "fullDesc": "Cura um aliado em <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Bailu + <orangeStrong>{{2}}</orangeStrong>. Bailu então cura aliados aleatórios {{4}} vez(es). Após cada cura, os PV restaurados da próxima cura reduzem em {{3}}%.",
+        "shortDesc": "Restaura os PV de um único aliado, depois cura aleatoriamente outros aliados."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Trovão Oportuno",
+        "fullDesc": "Cura todos os aliados em <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Bailu + <orangeStrong>{{2}}</orangeStrong>.\\nBailu aplica Revigoramento nos aliados que ainda não tiverem Revigoramento. Para os que já possuírem Revigoramento, Bailu estende a sua duração em 1 rodada.\\nO efeito de Revigoramento pode durar por {{3}} rodada(s). Este efeito não pode acumular.",
+        "shortDesc": "Restaura os PV e concede Revigoramento ou prolonga a duração de Revigoramento de todos os aliados."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Passeio na Chuva",
+        "fullDesc": "Após usar sua Técnica, no início da próxima batalha, todos os aliados recebem Revigoramento por {{1}} rodada(s).",
+        "shortDesc": "Depois que esta personagem usa sua Técnica, no início da próxima batalha, todos os aliados recebem Revigoramento."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Aqua Ambrosiana",
+      "desc": "Se os PV atuais do aliado-alvo forem igual aos PV máximos dele quando o Revigoramento acabar, regenera {{1}} de Energia extra para esse alvo."
+    },
+    "2": {
+      "name": "Sono Sílfico",
+      "desc": "Após usar sua Perícia Suprema, aumenta em mais {{1}}% a Cura Realizada de Bailu por {{2}} rodada(s)."
+    },
+    "3": {
+      "name": "Opulência Onisciente",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Extração Maléfica",
+      "desc": "Toda a cura fornecida pela Perícia faz com que o recipiente cause {{1}}% a mais de Dano por {{3}} rodada(s). Este efeito pode se acumular até {{2}} vez(es)."
+    },
+    "5": {
+      "name": "Preocupações Minguantes",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Gota de Divindade Dracônica",
+      "desc": "Bailu pode curar aliados que recebem um golpe fatal mais {{1}} vez(es) em uma única batalha."
+    }
+  }
+}

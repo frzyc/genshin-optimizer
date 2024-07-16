@@ -1,0 +1,66 @@
+{
+  "name": "Guinaifen",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Gran ovación",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Guinaifen como Daño de Fuego a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Calurosa bienvenida",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Guinaifen como Daño de Fuego a un enemigo e inflige un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Guinaifen como Daño de Fuego a los enemigos adyacentes. Tiene una <u>probabilidad base</u> del {{3}}% de afectar con Quemadura al objetivo y a los enemigos adyacentes. Los enemigos afectados por Quemadura reciben al principio de cada turno un <orangeStrong>{{4}}%</orangeStrong> del ATQ de Guinaifen como Daño de Fuego con el tiempo durante {{5}} turnos.",
+        "shortDesc": "Inflige Daño de Fuego a un enemigo y una pequeña cantidad de Daño de Fuego a los enemigos adyacentes. Gran probabilidad de causar <orangeStrong>Quemadura</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Espectáculo de primera",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Guinaifen como Daño de Fuego a todos los enemigos. Si los objetivos están afectados por Quemadura, el estado actual de Quemadura inflige inmediatamente un daño equivalente al <orangeStrong>{{2}}%</orangeStrong> de su daño original.",
+        "shortDesc": "Inflige Daño de Fuego a todos los enemigos. Si los objetivos están afectados por Quemadura, este estado inflige daño 1 vez adicional."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Demostración de habilidades",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige daño {{2}} veces y cada vez inflige un {{1}}% del ATQ de Guinaifen como Daño de Fuego a un enemigo al azar. Además, tiene una <u>probabilidad base</u> del {{3}}% de afectar con Beso ardiente al objetivo.",
+        "shortDesc": "Tras atacar a un enemigo y entrar en combate, inflige una pequeña cantidad de Daño de Fuego a un enemigo y le aplica <orangeStrong>Beso ardiente</orangeStrong>. Rebota 4 veces en total."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Comer fideos cabeza abajo",
+      "desc": "Al usar la habilidad básica, hay una probabilidad base del {{1}}% de reducir la RES a efecto del enemigo que recibe el ataque en un {{2}}% durante {{3}} turnos."
+    },
+    "2": {
+      "name": "Silbar y cepillarse los dientes a la vez",
+      "desc": "Cuando el objetivo está afectado por Quemadura, el ATQ básico y la habilidad básica de Guinaifen aumentan el multiplicador de daño de su efecto de Quemadura en un {{1}}%."
+    },
+    "3": {
+      "name": "Romper una piedra sobre el pecho",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Parar una lanza con el cuello",
+      "desc": "Cada vez que la Quemadura infligida por Guinaifen causa daño, Guinaifen recupera {{1}} pts. de energía."
+    },
+    "5": {
+      "name": "Tragar sables hasta la empuñadura",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Atrapar balas con las manos",
+      "desc": "Aumenta las acumulaciones posibles de Beso ardiente en {{1}}."
+    }
+  }
+}

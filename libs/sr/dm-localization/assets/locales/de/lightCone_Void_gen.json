@@ -1,0 +1,7 @@
+{
+  "name": "Leere",
+  "passive": {
+    "name": "Niedergang",
+    "description": "Erhöht zu Beginn des Kampfes die Effekt-Trefferrate des Trägers für {{2}} Rd. um <orangeStrong>{{1}}%</orangeStrong>."
+  }
+}

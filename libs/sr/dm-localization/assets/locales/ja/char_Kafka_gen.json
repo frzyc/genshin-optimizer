@@ -1,0 +1,66 @@
+{
+  "name": "カフカ",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#や}止{RUBY_E#}まない{RUBY_B#よる}夜{RUBY_E#}の{RUBY_B#けんそう}喧騒{RUBY_E#}",
+        "fullDesc": "指定した敵単体にカフカの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の雷属性ダメージを与える。"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#つき}月{RUBY_E#}{RUBY_B#あ}明{RUBY_E#}かりが{RUBY_B#な}撫{RUBY_E#}でる{RUBY_B#れんめん}連綿{RUBY_E#}",
+        "fullDesc": "指定した敵単体にカフカの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性ダメージを与え、隣接する敵にカフカの攻撃力<orangeStrong>{{3}}%</orangeStrong>分の雷属性ダメージを与える。\\n指定した敵が持続ダメージ系デバフである場合、付与された全持続ダメージ系デバフが、本来のダメージ<orangeStrong>{{2}}%</orangeStrong>分のダメージを発生する。",
+        "shortDesc": "敵単体に雷属性ダメージを与え、隣接する敵に少量の雷属性ダメージを与える。\\nメインターゲットに持続ダメージ系デバフがある場合、持続ダメージ系デバフが<orangeStrong>さらにダメージを1回発生</orangeStrong>する。"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#ひげき}悲劇{RUBY_E#}{RUBY_B#さいは}最果{RUBY_E#}ての{RUBY_B#せんおん}顫音{RUBY_E#}",
+        "fullDesc": "敵全体にカフカの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性ダメージを与え、{{2}}%の<u>基礎確率</u>で攻撃を受けた敵を感電状態にし、付与された感電状態が本来のダメージ<orangeStrong>{{5}}%</orangeStrong>分のダメージを発生する。感電状態は{{3}}ターン継続。\\n感電状態の敵はターンが回ってくるたびに、カフカの攻撃力<orangeStrong>{{4}}%</orangeStrong>分の雷属性持続ダメージを受ける。",
+        "shortDesc": "敵全体に少量の雷属性ダメージを与え、高確率で<orangeStrong>感電状態を付与</orangeStrong>する。\\n敵が感電状態の場合、感電状態が<orangeStrong>さらにダメージを1回発生</orangeStrong>する。"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#ゆる}許{RUBY_E#}しは{RUBY_B#じひ}慈悲{RUBY_E#}に{RUBY_B#あら}非{RUBY_E#}ず",
+        "fullDesc": "一定範囲内のすべての敵を攻撃。戦闘に入った後、敵全体にカフカの攻撃力{{3}}%分の雷属性ダメージを与え、{{1}}%の<u>基礎確率</u>で敵単体それぞれを、必殺技が与えるものと同じ感電状態にする、{{2}}ターン継続。",
+        "shortDesc": "範囲内のすべての敵を攻撃。戦闘に入った後、敵全体に少量の雷属性ダメージを与え、高確率で<orangeStrong>感電状態を付与</orangeStrong>する。"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#むきゅう}無窮{RUBY_E#}に{RUBY_B#うご}動{RUBY_E#}く！{RUBY_B#むきゅう}無窮{RUBY_E#}に",
+      "desc": "天賦効果により追加攻撃を行った時、{{1}}%の基礎確率でターゲットの持続被ダメージ+{{2}}%、{{3}}ターン継続。"
+    },
+    "2": {
+      "name": "{RUBY_B#きょうそうしゃ}狂想者{RUBY_E#}の{RUBY_B#おえつ}嗚咽{RUBY_E#}",
+      "desc": "カフカがフィールド上にいる時、味方全体の持続与ダメージ+{{1}}%。"
+    },
+    "3": {
+      "name": "{RUBY_B#そっきょう}即興{RUBY_E#}の{RUBY_B#さんび}賛美{RUBY_E#}",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
+    },
+    "4": {
+      "name": "この{RUBY_B#じょしょう}叙唱{RUBY_E#}を",
+      "desc": "カフカが敵に付与した感電状態がダメージを発生する時、カフカのEPをさらに{{1}}回復する。"
+    },
+    "5": {
+      "name": "{RUBY_B#こんばん}今晩{RUBY_E#}だけの{RUBY_B#そうめい}奏鳴{RUBY_E#}",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#まわ}回{RUBY_E#}る、{RUBY_B#しず}静{RUBY_E#}かに",
+      "desc": "必殺技、秘技、天賦による追加攻撃が敵に付与する感電状態のダメージ倍率+{{1}}%、感電状態の継続時間+{{2}}ターン。"
+    }
+  }
+}

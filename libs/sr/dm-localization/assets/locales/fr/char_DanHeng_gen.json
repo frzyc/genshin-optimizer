@@ -1,0 +1,66 @@
+{
+  "name": "Dan Heng",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lance perce-nuages : Vent du nord",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lance perce-nuages : Torrent",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique.\\nEn cas de coup critique, il y a {{4}}% de <u>chances de base</u> de réduire la VIT de la cible de {{2}}% pendant {{3}} tours.",
+        "shortDesc": "Inflige des DGT de vent à un ennemi unique. En cas de coup critique, il y a de fortes chances de ralentir l'ennemi."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Rêve éthéré",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique. Si l'ennemi est ralenti, le multiplicateur de DGT de l'ultime augmente de <orangeStrong>{{2}}%</orangeStrong>.",
+        "shortDesc": "Inflige des DGT de vent massifs à un ennemi unique. Si l'ennemi est ralenti, le multiplicateur des dégâts infligés augmente."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Pointe affûtée",
+        "fullDesc": "Après utilisation de la technique de Dan Heng, son ATQ augmente de {{1}}% pendant {{2}} tours au début du combat suivant.",
+        "shortDesc": "Après utilisation de la technique, son ATQ augmente au début du combat suivant."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Plus dure sera la chute",
+      "desc": "Lorsque le pourcentage de PV actuel de la cible ennemie est supérieur ou égal à {{1}}%, les chances de coup critique augmentent de {{2}}%."
+    },
+    "2": {
+      "name": "Faire taire le poison et étouffer les flammes",
+      "desc": "Réduit le temps de recharge du talent d'1 tour."
+    },
+    "3": {
+      "name": "Visible et invisible",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Dragon rugissant et soleil fulgurant",
+      "desc": "Lorsque Dan Heng élimine un ennemi à l'aide de son ultime, il agit immédiatement à nouveau."
+    },
+    "5": {
+      "name": "Une goutte de pluie nourrit un torrent",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "L'âme troublée attend",
+      "desc": "L'état Ralenti provoqué par la compétence de Dan Heng réduit la VIT de l'ennemi de {{1}}% supplémentaires."
+    }
+  }
+}

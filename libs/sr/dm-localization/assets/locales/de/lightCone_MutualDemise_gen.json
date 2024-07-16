@@ -1,0 +1,7 @@
+{
+  "name": "Gemeinsamer Untergang",
+  "passive": {
+    "name": "Legion",
+    "description": "Liegt der LP-Prozentsatz des Trägers niedriger als {{1}}%, wird seine KRIT-Rate um <orangeStrong>{{2}}%</orangeStrong> erhöht."
+  }
+}

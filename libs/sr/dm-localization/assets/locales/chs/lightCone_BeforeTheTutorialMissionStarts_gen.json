@@ -1,0 +1,7 @@
+{
+  "name": "新手任务开始前",
+  "passive": {
+    "name": "眼疾手快",
+    "description": "使装备者的效果命中提高<orangeStrong>{{1}}%</orangeStrong>。当装备者攻击防御力被降低的敌方目标后，恢复<orangeStrong>{{2}}</orangeStrong>点能量。"
+  }
+}

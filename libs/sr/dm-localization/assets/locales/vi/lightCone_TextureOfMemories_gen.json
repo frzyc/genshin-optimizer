@@ -1,0 +1,7 @@
+{
+  "name": "Chất Liệu Ký Ức",
+  "passive": {
+    "name": "Tích Trữ",
+    "description": "Khiến Kháng Hiệu Ứng của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>, sau khi người trang bị bị tấn công, nếu bản thân chưa có khiên, sẽ nhận 1 khiên bằng <orangeStrong>{{2}}%</orangeStrong> Giới Hạn HP của người trang bị, duy trì {{3}} hiệp. Hiệu ứng này mỗi {{4}} hiệp chỉ có thể kích hoạt 1 lần. Nếu người trang bị đã có khiên, sẽ khiến sát thương phải chịu của bản thân giảm <orangeStrong>{{5}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Chorus",
+  "passive": {
+    "name": "Concerted",
+    "description": "Setelah memasuki pertempuran, meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK seluruh rekan tim. Efek dari jenis Kemampuan yang sama tidak dapat ditumpuk."
+  }
+}

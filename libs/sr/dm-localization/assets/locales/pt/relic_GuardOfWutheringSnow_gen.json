@@ -1,0 +1,7 @@
+{
+  "setName": "Guarda da Neve Uivante",
+  "setEffects": {
+    "2": "Reduz o Dano recebido em {{1}}%.",
+    "4": "No início da rodada, se os PV do usuário forem iguais ou inferiores a {{1}}%, restaura PV igual a {{2}}% de seus PV máximos e regenera {{3}} de Energia."
+  }
+}

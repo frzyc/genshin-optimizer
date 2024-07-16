@@ -1,0 +1,7 @@
+{
+  "name": "Fils du destin",
+  "passive": {
+    "name": "Prescience",
+    "description": "Augmente de <orangeStrong>{{1}}%</orangeStrong> la RÉS aux effets du porteur. Augmente de <orangeStrong>{{3}}%</orangeStrong> les DGT infligés par le porteur pour chaque tranche de {{2}} points de DÉF jusqu'à une augmentation maximale de DGT de <orangeStrong>{{4}}%</orangeStrong>."
+  }
+}

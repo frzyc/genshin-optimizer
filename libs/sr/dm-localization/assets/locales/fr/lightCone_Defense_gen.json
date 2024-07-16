@@ -1,0 +1,7 @@
+{
+  "name": "Défense",
+  "passive": {
+    "name": "Revitalisation",
+    "description": "Restaure <orangeStrong>{{1}}%</orangeStrong> des PV max du porteur quand il lance son ultime."
+  }
+}

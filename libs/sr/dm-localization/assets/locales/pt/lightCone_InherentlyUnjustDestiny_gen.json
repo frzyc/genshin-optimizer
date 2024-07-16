@@ -1,0 +1,7 @@
+{
+  "name": "Destino Inerentemente Injusto",
+  "passive": {
+    "name": "Vale Tudo",
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> a DEF do usuário. Quando o usuário fornece um Escudo para um aliado, aumenta em <orangeStrong>{{2}}%</orangeStrong> o Dano CRIT do usuário por {{3}} rodada(s). Quando os Ataques Extras do usuário atingem um inimigo-alvo, há uma chance-base de <orangeStrong>{{4}}%</orangeStrong> de aumentar o Dano recebido pelo inimigo-alvo atacado em <orangeStrong>{{5}}%</orangeStrong>, durando por {{6}} rodada(s)."
+  }
+}

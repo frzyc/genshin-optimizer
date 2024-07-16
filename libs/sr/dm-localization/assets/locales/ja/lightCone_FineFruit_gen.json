@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#かか}嘉果{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#かんび}甘美{RUBY_E#}",
+    "description": "戦闘開始時、味方全体のEPを<orangeStrong>{{1}}</orangeStrong>回復する。"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Argenti",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Flüchtiger Duft",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Argentis ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Gerechtigkeit erblüht hier",
+        "fullDesc": "Fügt allen Gegnern physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Argentis ANG zu.",
+        "shortDesc": "Fügt allen Gegnern geringen physischen SCH zu."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Denn dieser Garten schenkt höchste Schönheit",
+        "fullDesc": "Verbraucht {{2}} Pkt. Energie und fügt allen Gegnern physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Argentis ANG zu.",
+        "shortDesc": "Verbraucht <orangeStrong>{{2}}</orangeStrong> Pkt. Energie und fügt allen Gegnern physischen SCH zu."
+      },
+      "1": {
+        "name": "Der Wert meines holden Gartens",
+        "fullDesc": "Verbraucht {{4}} Pkt. Energie und fügt allen Gegnern physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Argentis ANG zu. Verursacht außerdem zusätzlich {{2}}-mal SCH. Jeder Treffer fügt einem zufälligen Gegner physischen SCH in Höhe von <orangeStrong>{{3}}%</orangeStrong> von Argentis ANG zu.",
+        "shortDesc": "Verbraucht <orangeStrong>{{4}}</orangeStrong> Pkt. Energie und fügt allen Gegnern physischen SCH zu. Verursacht darüber hinaus bei einem zufälligen Gegner geringen physischen SCH mit insgesamt 6 Abprallungen."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Manifest der reinen Tugend",
+        "fullDesc": "Nach dem Einsatz der Technik werden Gegner in einem bestimmten Bereich {{1}} s lang von Schwindel betroffen und können nicht angreifen.\\nGreift man aktiv einen von Schwindel betroffenen Gegner an, verursacht Argenti nach Kampfeintritt bei allen Gegnern physischen SCH in Höhe von {{2}}% seines ANG und stellt {{3}} Pkt. Energie wieder her.",
+        "shortDesc": "Verursacht bei Gegnern in einem bestimmten Bereich Schwindel. Beim Angriff eines von Schwindel betroffenen Gegners verursacht Argenti nach Kampfeintritt bei allen Gegnern geringen physischen SCH und stellt Energie wieder her."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ein Makel im Reich der Ästhetik",
+      "desc": "Jede Stapelung „Apotheose“ erhöht den KRIT-SCH zusätzlich um {{1}}%."
+    },
+    "2": {
+      "name": "Achats Bescheidenheit",
+      "desc": "Beim Einsatz des Ultimates wird, wenn die Anzahl der Gegner {{1}} oder mehr beträgt, für {{3}} Rd. der ANG um {{2}}% erhöht."
+    },
+    "3": {
+      "name": "Ruhm des Dornenwegs",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Fanfare der Widmung",
+      "desc": "Erhält zu Beginn des Kampfes {{1}} Stapelung(en) „Apotheose“ und erhöht die max. Stapelung für das Talent um {{2}}."
+    },
+    "5": {
+      "name": "Schnee von irgendwo im Universum",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Deine strahlende Pracht",
+      "desc": "Nach dem Einsatz des Ultimates wird {{1}}% der VTD des Zieles ignoriert."
+    }
+  }
+}

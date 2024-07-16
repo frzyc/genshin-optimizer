@@ -1,0 +1,66 @@
+{
+  "name": "Asta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Tia Quang Phổ",
+        "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Asta.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Bão Sao Băng",
+        "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Asta, đồng thời gây thêm 4 lần sát thương. Mỗi lần sát thương gây Sát Thương Hỏa cho kẻ địch ngẫu nhiên tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Asta.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch, tổng cộng Nảy Bật 5 lần."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lời Cầu Chúc Astral",
+        "fullDesc": "Khiến Tốc Độ của toàn phe ta tăng <orangeStrong>{{1}}</orangeStrong> điểm, duy trì {{2}} hiệp.",
+        "shortDesc": "<orangeStrong>Tăng tốc</orangeStrong> cho toàn bộ phe ta."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ánh Chớp Diệu Kỳ",
+        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, gây Sát Thương Hỏa cho toàn bộ kẻ địch tương đương {{1}}% Tấn Công của Asta.",
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ sát thương cho toàn bộ địch."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Bài Ca Không Lời",
+      "desc": "Khi thi triển Chiến Kỹ sẽ gây thêm 1 lần sát thương cho 1 kẻ địch ngẫu nhiên."
+    },
+    "2": {
+      "name": "Vầng Trăng Khi Tròn Khi Khuyết",
+      "desc": "Khi thi triển Tuyệt Kỹ, Asta sẽ không giảm số tầng Tụ Năng vào hiệp sau."
+    },
+    "3": {
+      "name": "Thiên Thạch Biến Hoá",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Cực Quang Hiển Hiện",
+      "desc": "Khi số tầng Tụ Năng của Thiên Phú từ {{1}} trở lên, hiệu suất hồi Năng Lượng của Asta tăng {{2}}%."
+    },
+    "5": {
+      "name": "Bí Ẩn Thiên Không",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Ngủ Say Dưới Ngân Hà",
+      "desc": "Số tầng Tụ Năng mất đi trong mỗi hiệp giảm {{1}}."
+    }
+  }
+}

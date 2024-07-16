@@ -1,0 +1,7 @@
+{
+  "name": "この{RUBY_B#み}身{RUBY_E#}は{RUBY_B#けん}剣{RUBY_E#}なり",
+  "passive": {
+    "name": "この{RUBY_B#しょうぎょく}宵玉{RUBY_E#}を{RUBY_B#と}執{RUBY_E#}り",
+    "description": "装備キャラの会心ダメージ+<orangeStrong>{{1}}%</orangeStrong>。自身以外の味方が攻撃を受ける、またはHPを消費した後、装備キャラは「月蝕」を1層獲得する。この効果は最大で{{2}}層累積できる。「月蝕」1層につき、装備キャラの次の攻撃の与ダメージ+<orangeStrong>{{3}}%</orangeStrong>。「月蝕」が上限の{{2}}層に累積した時、その回の攻撃は敵の防御力を<orangeStrong>{{4}}%</orangeStrong>無視する。この効果は装備キャラが攻撃を行った後に解除される。"
+  }
+}

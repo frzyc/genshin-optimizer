@@ -1,0 +1,7 @@
+{
+  "name": "Boucle",
+  "passive": {
+    "name": "Poursuite",
+    "description": "Augmente les DGT infligés par le porteur aux ennemis ralentis de <orangeStrong>{{1}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Einzelne Heilung",
+  "passive": {
+    "name": "Chaoselixier",
+    "description": "Erhöht den Brucheffekt des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Wenn der Träger seinen Ultimate einsetzt, wird sein verursachter DoT für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong> erhöht. Wird ein vom DoT durch den Träger betroffener Gegner besiegt, wird die Energie des Trägers um <orangeStrong>{{4}}</orangeStrong> Pkt. wiederhergestellt."
+  }
+}

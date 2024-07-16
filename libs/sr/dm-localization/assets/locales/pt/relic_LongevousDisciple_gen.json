@@ -1,0 +1,7 @@
+{
+  "setName": "Discípula Longeva",
+  "setEffects": {
+    "2": "Aumenta os PV máximos em {{1}}%.",
+    "4": "Quando o usuário recebe um golpe ou tem seus PV consumidos por um aliado ou por si próprio, a Chance de CRIT dele aumenta em {{1}}% por {{2}} rodada(s) e até {{3}} acúmulos."
+  }
+}

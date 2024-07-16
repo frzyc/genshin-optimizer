@@ -1,0 +1,7 @@
+{
+  "name": "Hoy es otro día tranquilo",
+  "passive": {
+    "name": "Se avecina tormenta",
+    "description": "Tras entrar en combate, el daño que inflige el portador aumenta según su energía máx. Por cada punto de energía, el daño aumenta en un <orangeStrong>{{1}}%</orangeStrong>, hasta un máximo de {{2}} pts."
+  }
+}

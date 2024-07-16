@@ -1,0 +1,7 @@
+{
+  "name": "The Birth of the Self",
+  "passive": {
+    "name": "The Maiden in the Painting",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG Serangan Lanjutan dari pengguna. Bila persentase HP target musuh kurang dari atau sama dengan {{2}}%, maka DMG yang diakibatkan oleh Serangan Lanjutan pengguna pada target akan meningkat lagi sebesar <orangeStrong>{{3}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Serval",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Trovoada Estrondosa",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Serval a um único inimigo.",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Clarão de Raio",
+        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Serval como Dano de Raio a um único inimigo e <orangeStrong>{{2}}%</orangeStrong> do ATQ de Serval como Dano de Raio aos inimigos adjacentes a ele, com {{3}}% de <u>chance-base</u> de os inimigos atingidos receberem Choque por {{4}} rodada(s).\\nQuando em Choque, inimigos recebem Dano de Raio Contínuo igual a <orangeStrong>{{5}}%</orangeStrong> do ATQ de Serval no início de cada rodada.",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo e quaisquer alvos adjacentes, com uma alta chance de causar <orangeStrong>Choque</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "A Febre Mecânica Ataca",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Serval a todos os inimigos. Inimigos com Choque terão esse estado prolongado por {{2}} rodada(s).",
+        "shortDesc": "Causa Dano de Raio a todos os inimigos e aumenta a duração de Choque."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Boa Noite, Belobog",
+        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, causa {{4}}% do ATQ de Serval como Dano de Raio a um inimigo aleatório, com {{1}}% de <u>chance-base</u> de todos os inimigos receberem Choque por {{3}} rodada(s).\\nQuando em Choque, inimigos recebem {{2}}% do ATQ de Serval como Dano de Raio Contínuo no início de cada rodada.",
+        "shortDesc": "Ataca o inimigo. Após entrar na batalha, causa Dano de Raio leve a um inimigo aleatório, com altas chances de infligir <orangeStrong>Choque</orangeStrong> a todos os inimigos-alvo."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Câmara do Eco",
+      "desc": "O ATQ Básico causa {{1}}% de seu Dano de ATQ Básico como Dano de Raio a um inimigo aleatório adjacente ao alvo."
+    },
+    "2": {
+      "name": "Bis!",
+      "desc": "Sempre que o Talento de Serval ativar Dano Adicional, ela regenera {{1}} de Energia."
+    },
+    "3": {
+      "name": "Ouça o Batimento das Engrenagens",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Faça Barulho!",
+      "desc": "A Perícia Suprema tem uma chance-base de {{1}}% de causar Choque em inimigos que ainda não tiverem esse estado. Esse estado de Choque tem os mesmos efeitos daquele causado pela Perícia."
+    },
+    "5": {
+      "name": "O Rugido Mais Alto de Belobog!",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Essa Música Abala os Céus!",
+      "desc": "Serval causa {{1}}% a mais de Dano a inimigos afligidos com Choque."
+    }
+  }
+}

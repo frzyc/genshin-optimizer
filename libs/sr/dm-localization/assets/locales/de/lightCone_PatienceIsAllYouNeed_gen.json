@@ -1,0 +1,7 @@
+{
+  "name": "Nur Geduld",
+  "passive": {
+    "name": "Spinnennetz",
+    "description": "Erhöht den vom Träger verursachten SCH um <orangeStrong>{{2}}%</orangeStrong>. Nach jedem vom Träger eingesetzten Angriff wird seine GES um <orangeStrong>{{3}}%</orangeStrong> erhöht, bis zu {{4}}-fach stapelbar.\\nWenn der Träger einen Gegner trifft, der nicht von „Sommerfäden“ betroffen ist, besteht eine Grundchance von 100 %, dem Ziel „Sommerfäden“ zuzufügen. Gegner, die bereits von „Sommerfäden“ betroffen sind, gelten ebenfalls als geschockt. Gegner im Status „Sommerfäden“ erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG vom Träger für {{5}} Rd."
+  }
+}

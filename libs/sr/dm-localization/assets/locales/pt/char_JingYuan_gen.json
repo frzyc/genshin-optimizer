@@ -1,0 +1,66 @@
+{
+  "name": "Jing Yuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Fulgor Radiante",
+        "fullDesc": "Jing Yuan causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> de seu ATQ a um único inimigo.",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Zênite Rompido",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Jing Yuan a todos os inimigos e aumenta os Golpes por Ação do Senhor dos Raios em {{2}} na próxima rodada.",
+        "shortDesc": "Causa Dano de Raio leve a todos os inimigos e <orangeStrong>aumenta os Golpes por Ação do Senhor dos Raios</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Portador da Luz",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Jing Yuan a todos os inimigos e aumenta os Golpes por Ação do Senhor dos Raios em {{2}} na próxima rodada.",
+        "shortDesc": "Causa Dano de Raio a todos os inimigos e <orangeStrong>aumenta os Golpes por Ação do Senhor dos Raios</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Invocação de Espírito",
+        "fullDesc": "Depois da que a Técnica é utilizada, os Golpes por Ação do Senhor dos Raios na primeira rodada aumentam em {{1}} no início da próxima batalha.",
+        "shortDesc": "Após usar a Técnica, na próxima batalha, <orangeStrong>aumenta os Golpes por Ação do Senhor dos Raios</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Corte, Mares Partidos",
+      "desc": "Quando o Senhor dos Raios ataca, o multiplicador de Dano nos inimigos adjacentes ao inimigo-alvo aumenta em uma quantidade extra igual a {{1}}% do multiplicador de Dano contra o inimigo-alvo."
+    },
+    "2": {
+      "name": "Golpe, Céus Esmagados",
+      "desc": "Depois que o Senhor dos Raios age, o Dano causado pelo ATQ Básico, a Perícia e a Perícia Suprema de Jing Yuan aumentam em {{1}}% por {{2}} rodada(s)."
+    },
+    "3": {
+      "name": "Ataque, Sóis Subjulgados",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Giro, Estrelas Cercadas",
+      "desc": "A cada golpe do Senhor dos Raios quando ele age, Jing Yuan regenera {{1}} de Energia."
+    },
+    "5": {
+      "name": "Marcha, Bens Saqueados",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Varrer, Almas Ceifadas",
+      "desc": "Cada golpe lançado pelo Senhor dos Raios ao agir tornará o inimigo-alvo Vulnerável.\\nQuando Vulneráveis, inimigos recebem {{1}}% a mais de Dano até o final da rodada atual do Senhor dos Raios, acumulando em até {{2}} vez(es)."
+    }
+  }
+}

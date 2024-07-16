@@ -1,0 +1,66 @@
+{
+  "name": "Schwarzer Schwan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Einblick, stilles Morgengrauen",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG von Schwarzer Schwan zu und hat eine <u>Grundchance</u> von <orangeStrong>{{2}}%</orangeStrong>, das Ziel mit 1 Stapelung <u>Arkana</u> zu belegen. Sollte das angegriffene Ziel sich im Status Windscherung, Bluten, Brennen oder Schock befinden, besteht jeweils eine <u>Grundchance</u> von <orangeStrong>{{3}}%</orangeStrong>, es zusätzlich mit 1 Stapelung <u>Arkana</u> zu belegen.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu und hat die Chance, das Ziel mit <u>Arkana</u> zu belegen. Nachdem das Ziel in den Status <orangeStrong>Windscherung, Bluten, Brennen oder Schock</orangeStrong> eingetreten ist, besteht jeweils die Chance, es <orangeStrong>zusätzlich mit <u>Arkana</u> zu belegen</orangeStrong>."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Verlust, falsche Abenddämmerung",
+        "fullDesc": "Fügt einem anvisierten Gegner und angrenzenden Einheiten Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG von Schwarzer Schwan zu und hat eine <u>Grundchance</u> von {{2}}%, die Ziele mit 1 Stapelung <u>Arkana</u> zu belegen. Hat außerdem eine <u>Grundchance</u> von {{3}}%, die VTD der Ziele für {{5}} Rd. um <orangeStrong>{{4}}%</orangeStrong> zu reduzieren.",
+        "shortDesc": "Fügt einem Gegner und angrenzenden Einheiten geringen Wind-SCH zu. Es besteht eine hohe Chance, dass die Ziele <orangeStrong>mit <u>Arkana</u> belegt werden</orangeStrong> und ihre VTD reduziert wird."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Schwelgend in den Armen der Anderwelt",
+        "fullDesc": "Belegt alle Gegner für {{2}} Rd. mit „Enthüllung“.\\nDer von Gegnern mit dem Status Enthüllung erlittene SCH wird während ihrer Runde um <orangeStrong>{{3}}%</orangeStrong> erhöht. Zudem werden Gegner, die sich im Status <u>Arkana</u> befinden, als gleichzeitig im Status Windscherung, Bluten, Brennen und Schock betrachtet. Wenn <u>Arkana</u> zu Beginn jeder Runde SCH verursacht, wird außerdem die Stapelzahl nicht zurückgesetzt. Dieser Effekt des Bewahrens von Stapelungen von <u>Arkana</u> kann während der Dauer von Enthüllung nur bis zu {{4}}-mal ausgelöst werden. Die Auslösungsanzahl wird aktualisiert, wenn der Gegner erneut mit Enthüllung belegt wird.\\nFügt allen Gegnern Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG von Schwarzer Schwan zu.",
+        "shortDesc": "Belegt alle Gegner mit dem Status „Enthüllung“, wodurch der erlittene SCH während ihrer Runde erhöht wird. Zudem <orangeStrong>wird <u>Arkana</u> als gleichwertig mit den Status Windscherung, Bluten, Brennen und Schock betrachtet</orangeStrong>. Wenn <u>Arkana</u> zu Beginn der nächsten Runde SCH verursacht, wird außerdem die Stapelzahl nicht zurückgesetzt. Fügt allen Gegnern Wind-SCH zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Her mit Wahrheit, weg mit Fassade",
+        "fullDesc": "Nach dem Einsatz der Technik besteht zu Beginn des nächsten Kampfes eine <u>Grundchance</u> von {{1}}%, jeden Gegner mit 1 Stapelung <u>Arkana</u> zu belegen. Für jedes erfolgreiche Verursachen von <u>Arkana</u> wird das Ziel mit 1 zusätzlicher Stapelung belegt; dies wird wiederholt, bis die Anwendung von <u>Arkana</u> fehlschlägt. Die <u>Grundchance</u> für jedes aufeinanderfolgende Verursachen von <u>Arkana</u> entspricht {{2}}% der <u>Grundchance</u> des vorherigen erfolgreichen Verursachens von <u>Arkana</u> an diesem Ziel.",
+        "shortDesc": "Nach dem Einsatz der Technik besteht zu Beginn des nächsten Kampfes eine hohe Chance, jeden Gegner <orangeStrong>mit <u>Arkana</u> zu belegen und dies zu wiederholen, bis die Anwendung fehlschlägt</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Drei Steine, sieben Säulen",
+      "desc": "Wenn Schwarzer Schwan kampffähig ist, wird jeweils der WDS des Typs Wind, Physisch, Feuer und Blitz von Gegnern mit Windscherung, Bluten, Brennen und Schock um {{1}}% reduziert."
+    },
+    "2": {
+      "name": "Lämmchen, weine nicht um mich",
+      "desc": "Wird ein von „Arkana“ betroffener Gegner besiegt, besteht eine Grundchance von {{1}}%, angrenzende Einheiten mit {{2}} Stapelungen Arkana zu belegen."
+    },
+    "3": {
+      "name": "Wie im Himmel, so auf Erden",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Tränen, ein Geschenk",
+      "desc": "Der Effekt-WDS von Gegnern mit dem Status Enthüllung wird um {{1}}% reduziert. Schwarzer Schwan stellt zu Beginn jeder Runde des betroffenen Ziels oder wenn es besiegt wird {{2}} Pkt. Energie wieder her. Dieser Effekt der Energiewiederherstellung kann während der Dauer von Enthüllung nur 1-mal ausgelöst werden. Die Auslösungsanzahl wird aktualisiert, wenn der Gegner erneut mit Enthüllung belegt wird."
+    },
+    "5": {
+      "name": "Weg des Zugvogels",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Gnädiges Pantheon, unbekannte Diener",
+      "desc": "Wenn Verbündete von Schwarzer Schwan Gegner angreifen, hat Schwarzer Schwan eine Grundchance von {{2}}%, das Ziel mit 1 Stapelung „Arkana“ zu belegen.\\nJedes Mal, wenn Schwarzer Schwan einen Gegner mit Arkana belegt, besteht eine feste Chance von {{1}}%, die bei diesem Mal zugefügte Stapelung von Arkana zusätzlich um {{3}} zu erhöhen."
+    }
+  }
+}

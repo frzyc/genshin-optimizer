@@ -1,0 +1,71 @@
+{
+  "name": "Luka",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Gerader Haken",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Lukas ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
+      },
+      "1": {
+        "name": "Himmelsbrecher-Faust",
+        "fullDesc": "Verbraucht 2 Stapelungen „Kampfeswille“. Attackiert erst einen anvisierten Gegner mit einem 3-fachen „Geraden Haken“, der pro Treffer physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Lukas ANG verursacht.\\nAttackiert dann den anvisierten Gegner mit 1-facher „Himmelsbrecher-Faust“, die physischen SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Lukas ANG verursacht.",
+        "shortDesc": "Verbraucht 2 Stapelungen „Kampfeswille“ und fügt einem Gegner physischen SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Schredderfaust",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Lukas ANG zu. Es besteht eine <u>Grundchance</u> von {{2}}%, bei diesem Gegner für {{5}} Rd. Bluten zu verursachen.\\nDer blutende Gegner erleidet zu Beginn jeder Runde physischen DoT in Höhe von {{3}}% seiner max. LP. Dieser SCH kann <orangeStrong>{{4}}%</orangeStrong> von Lukas ANG nicht übersteigen.",
+        "shortDesc": "Fügt einem Gegner physischen SCH zu und bewirkt bei ihm mit hoher Chance <orangeStrong>Bluten</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Gnadenstoß",
+        "fullDesc": "Luka erhält {{5}} Stapelungen „Kampfeswille“. Es besteht eine <u>Grundchance</u> von {{2}}%, den erlittenen SCH eines anvisierten Gegners für {{4}} Rd. um <orangeStrong>{{3}}%</orangeStrong> zu erhöhen. Fügt dem Ziel danach physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Lukas ANG zu.",
+        "shortDesc": "Luka erhält <orangeStrong>{{5}}</orangeStrong> Stapelungen „Kampfeswille“ mit einer hohen Chance, den vom Gegner erlittenen SCH zu erhöhen, und fügt dem Ziel massiven physischen SCH zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Vorausdenker",
+        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt fügt Luka einem zufälligen Gegner physischen SCH in Höhe von {{1}}% seines ANG zu und hat eine <u>Grundchance</u> von {{2}}%, dem Ziel den Status Bluten seiner Fertigkeit zuzufügen. Danach erhält Luka zusätzlich 1 Stapelung „Kampfeswille“.",
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen physischen SCH zu und hat eine hohe Chance, dem Ziel <orangeStrong>Bluten zuzufügen</orangeStrong>. Luka erhält dann zusätzlich 1 Stapelung „Kampfeswille“."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Endloser Kampf",
+      "desc": "Wenn Luka eine Aktion ausführt und der anvisierte Gegner von Bluten betroffen ist, wird der von Luka verursachte SCH für {{2}} Rd. um {{1}}% erhöht."
+    },
+    "2": {
+      "name": "Der Feind ist schwach, ich bin stark",
+      "desc": "Wenn die Fertigkeit einen Gegner mit physischer Schwäche trifft, erhält Luka {{1}} Stapelung „Kampfeswille“."
+    },
+    "3": {
+      "name": "Geboren für den Ring",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Keine Umkehr",
+      "desc": "Erhöht ANG für jede Stapelung „Kampfeswille“ um {{1}}%. Dieser Effekt ist bis zu {{2}}-fach stapelbar."
+    },
+    "5": {
+      "name": "Der Geist von Wildfeuer",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Applaus für den Champion",
+      "desc": "Nachdem der verstärkte Standardangriff „Himmelsbrecher-Faust“ einen blutenden Gegner getroffen hat, verursacht das Bluten sofort 1-mal SCH in Höhe von {{1}}% des ursprünglichen SCH für jeden Treffer von „Gerader Haken“, der in diesem verstärkten Standardangriff verwendet wird."
+    }
+  }
+}

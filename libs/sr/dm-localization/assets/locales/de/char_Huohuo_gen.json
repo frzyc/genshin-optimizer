@@ -1,0 +1,66 @@
+{
+  "name": "Huohuo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Banner: Durch Wind und Regen",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Huohuos max. LP zu.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Talisman: Schutz des Lebens",
+        "fullDesc": "Entfernt {{5}} <u>Debuff(s)</u> von einem Verbündeten und stellt unmittelbar dessen LP in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Huohuos max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her. Stellt gleichzeitig die LP der angrenzenden Verbündeten des anvisierten Verbündeten in Höhe von <orangeStrong>{{3}}%</orangeStrong> von Huohuos max. LP plus <orangeStrong>{{4}}</orangeStrong> wieder her.",
+        "shortDesc": "Entfernt 1 <u>Debuff</u> von einem Verbündeten und <orangeStrong>stellt die LP</orangeStrong> dieses Verbündeten und angrenzender Verbündeter wieder her."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Schweif: Unterwerfung von Teufeln",
+        "fullDesc": "Stellt Energie für alle Verbündeten außer Huohuo in Höhe von <orangeStrong>{{1}}%</orangeStrong> ihrer jeweiligen max. Energie wieder her. Erhöht gleichzeitig den ANG für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Energie-Wiederherstellung</orangeStrong> für alle Verbündeten außer Huohuo und <orangeStrong>ANG-Erhöhung</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Unhold: Unterdrückung von Dämonen",
+        "fullDesc": "Huohuo terrorisiert angrenzende Gegner und verursacht bei ihnen Verängstigung. Verängstigte Gegner fliehen vor Huohuo für {{4}} Sek. Falls ein Gegner bei Kampfbeginn verängstigt ist, besteht eine <u>Grundchance</u> von {{1}}%, dass der ANG jedes Gegners für {{3}} Rd. um {{2}}% gesenkt wird.",
+        "shortDesc": "Angrenzende Gegner werden von Verängstigung gepackt. Nach Kampfbeginn gegen verängstigte Gegner besteht eine hohe Chance, bei gegnerischen Zielen <orangeStrong>ANG-Reduktion</orangeStrong> zu verursachen."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Von Heliobi besessen, vom Bösen ergriffen",
+      "desc": "Die Dauer von „Gesegnete Heilung“, das vom Talent bewirkt wird, wird um {{2}} Runden verlängert. Wenn Huohuo Gesegnete Heilung besitzt, wird die GES aller Verbündeten um {{1}}% erhöht."
+    },
+    "2": {
+      "name": "Im Schweif versiegelt, Geister besiegt",
+      "desc": "Wenn Huohuo „Gesegnete Heilung“ besitzt und ein Verbündeter von einem Todesstoß getroffen wird, wird der Verbündete nicht handlungsunfähig, sondern werden seine LP sofort in Höhe von {{1}}% seiner max. LP wiederhergestellt. Dies reduziert die Dauer von Gesegnete Heilung um 1 Rd. Dieser Effekt kann {{2}}-mal pro Kampf ausgelöst werden."
+    },
+    "3": {
+      "name": "Verfluchtes Schicksal, wie Motten im Licht",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Gefesselt im Leben, gebunden im Streit",
+      "desc": "Wenn sie einen Verbündeten mit ihrer Fertigkeit heilt oder der Effekt ihres Talents ausgelöst wird, erhöht sich Huohuos bewirkte Heilung abhängig davon, wie niedrig die LP des Verbündeten sind, jedoch bis zu {{1}}%."
+    },
+    "5": {
+      "name": "Vertreibung des Bösen, im Namen der Zehn Fürsten",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Einmal verwoben, auf ewig vereint",
+      "desc": "Erhöht den zugefügten SCH eines Verbündeten für {{2}} Rd. um {{1}}%, wenn dieser geheilt wird."
+    }
+  }
+}

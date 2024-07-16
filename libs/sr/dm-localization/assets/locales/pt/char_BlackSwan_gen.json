@@ -1,0 +1,66 @@
+{
+  "name": "Cisne Negro",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Percepção, Amanhecer Silencioso",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Cisne Negro a um único inimigo-alvo, com uma <u>chance-base</u> de <orangeStrong>{{2}}%</orangeStrong> de infligir 1 acúmulo de <u>Arcana</u> ao alvo. Adicionalmente, ao atacar um alvo afligido com Cisalhamento de Vento, Sangramento, Queimadura ou Choque, existe respectivamente uma <u>chance-base</u> de <orangeStrong>{{3}}%</orangeStrong> de aplicar 1 acúmulo extra de <u>Arcana</u> no inimigo.",
+        "shortDesc": "Causa Dano de Vento leve a um único inimigo e tem uma chance de aplicar <u>Arcana</u> ao alvo. Depois de atacar um alvo afligido com <orangeStrong>Cisalhamento de Vento, Sangramento, Queimadura ou Choque</orangeStrong>, existe uma chance respectiva de <orangeStrong>aplicar <u>Arcana</u> adicionalmente</orangeStrong>."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Decadência, Falso Crepúsculo",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Cisne Negro a um único inimigo-alvo e a quaisquer alvos adjacentes. Ao mesmo tempo, há uma <u>chance-base</u> de {{2}}% de infligir 1 acúmulo de <u>Arcana</u> no inimigo-alvo e nos alvos adjacentes. Adicionalmente, ainda há uma <u>chance-base</u> de {{3}}% de reduzir a DEF do inimigo-alvo e alvos adjacentes em <orangeStrong>{{4}}%</orangeStrong>, durando por {{5}} rodada(s).",
+        "shortDesc": "Causa Dano de Vento leve a um único inimigo-alvo e a quaisquer alvos adjacentes, com uma alta chance de <orangeStrong>infligir <u>Arcana</u> nos alvos</orangeStrong> e reduzir a DEF deles."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Bênção do Abraço de Outro Mundo",
+        "fullDesc": "Inflige Epifania em todos os inimigos por {{2}} rodada(s).\\nEnquanto estiverem afligidos com Epifania, inimigos recebem <orangeStrong>{{3}}%</orangeStrong> de Dano aumentado em suas rodadas. Adicionalmente, se os inimigos também estiverem afligidos com <u>Arcana</u>, simultaneamente, considera-se que eles estão afligidos com Cisalhamento de Vento, Sangramento, Queimadura e Choque. Depois que <u>Arcana</u> causa Dano no início de cada rodada, seus acúmulos não são redefinidos. Este efeito de não redefinição dos acúmulos de <u>Arcana</u> é ativado até {{4}} vez(es) pela duração de Epifania. E a contagem de ativação é redefinida quando Epifania é aplicada novamente.\\nCausa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Cisne Negro a todos os inimigos.",
+        "shortDesc": "Inflige Epifania em todos os inimigos, aumentando o Dano que os alvos recebem em suas rodadas. Adicionalmente, <orangeStrong>possuir <u>Arcana</u> é considerado como possuir Cisalhamento de Vento, Sangramento, Queimadura ou Choque</orangeStrong>. Além disso, os acúmulos de <u>Arcana</u> não serão redefinidos depois de causar Dano no início da próxima rodada. Causa Dano de Vento a todos os inimigos."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "De Farsa à Verdade",
+        "fullDesc": "Depois que esta Técnica é utilizada, existe uma <u>chance-base</u> de {{1}}% de infligir 1 acúmulo de <u>Arcana</u> em cada inimigo no início da próxima batalha. Para cada aplicação bem-sucedida de <u>Arcana</u> em um alvo, inflige outro acúmulo de <u>Arcana</u> no mesmo alvo. Esse processo se repete até que a aplicação de <u>Arcana</u> falhe neste alvo. Para cada aplicação sucessiva de <u>Arcana</u> em um alvo, sua <u>chance-base</u> de sucesso é igual a {{2}}% da <u>chance-base</u> da aplicação bem-sucedida anterior de <u>Arcana</u> nesse alvo.",
+        "shortDesc": "Depois que essa Técnica é utilizada, no início da próxima batalha há uma chance alta de cada inimigo ser <orangeStrong>afligido com Arcana até que a aplicação de <u>Arcana</u> falhe</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Sete Pilares da Sabedoria",
+      "desc": "Enquanto Cisne Negro estiver ativa em batalha, inimigos com o estado de Cisalhamento de Vento, Sangramento, Queimadura ou Choque têm, respectivamente, sua RES a Vento, Físico, Fogo ou Raio reduzida em {{1}}%."
+    },
+    "2": {
+      "name": "Não Chore por Mim, Cordeirinho",
+      "desc": "Quando um inimigo-alvo afligido por Arcana for derrotado, há uma chance-base de {{1}}% de infligir {{2}} acúmulo(s) de Arcana a alvos adjacentes."
+    },
+    "3": {
+      "name": "Assim na Terra como no Céu",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Em Lágrimas, Nós Presenteamos",
+      "desc": "Enquanto estiverem no estado de Epifania, a RES a Efeito dos inimigos-alvo é reduzida em {{1}}% e Cisne Negro regenera {{2}} de Energia no início da rodada desses alvos ou quando eles são derrotados. Essa Regeneração de Energia só pode ativar 1 vez enquanto Epifania durar. A contagem de ativação é redefinida quando Epifania é aplicada novamente."
+    },
+    "5": {
+      "name": "Voo Migratório",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Panteão Misericordioso, Massas Lamentáveis",
+      "desc": "Quando um inimigo-alvo é atacado pelos aliados da Cisne Negro, Cisne Negro tem uma chance-base de {{2}}% de infligir 1 acúmulo de Arcana no alvo.\\nSempre que Cisne Negro infligir Arcana em um inimigo-alvo, há uma chance fixa de {{1}}% de aumentar adicionalmente o número de Arcana acumulados desta vez em {{3}}."
+    }
+  }
+}

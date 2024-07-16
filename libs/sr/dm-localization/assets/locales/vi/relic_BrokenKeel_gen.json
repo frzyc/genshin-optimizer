@@ -1,0 +1,6 @@
+{
+  "setName": "Bộ Khung Bị Gãy",
+  "setEffects": {
+    "2": "Tăng {{1}}% Kháng Hiệu Ứng của người trang bị. Khi Kháng Hiệu Ứng của người trang bị từ {{2}}% trở lên, Sát Thương Bạo Kích của toàn bộ phe ta tăng {{3}}%."
+  }
+}

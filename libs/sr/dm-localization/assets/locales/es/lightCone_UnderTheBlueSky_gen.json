@@ -1,0 +1,7 @@
+{
+  "name": "Bajo el cielo azul",
+  "passive": {
+    "name": "Olas de trigo al sol",
+    "description": "El ATQ del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando el portador derrota a un enemigo, su Prob. CRIT aumenta en un <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turnos."
+  }
+}

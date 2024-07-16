@@ -1,0 +1,7 @@
+{
+  "name": "Cùng Một Tâm Trạng",
+  "passive": {
+    "name": "Cứu Chữa Và Tu Sửa",
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> lượng trị liệu của người trang bị, đồng thời khi thi triển Chiến Kỹ, toàn bộ phe ta sẽ hồi <orangeStrong>{{2}}</orangeStrong> điểm Năng Lượng."
+  }
+}

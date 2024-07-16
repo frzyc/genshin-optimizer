@@ -1,0 +1,7 @@
+{
+  "name": "等价交换",
+  "passive": {
+    "name": "酣适",
+    "description": "当装备者的回合开始时，随机为1个当前能量百分比小于{{1}}%的我方其他目标恢复<orangeStrong>{{2}}</orangeStrong>点能量。"
+  }
+}

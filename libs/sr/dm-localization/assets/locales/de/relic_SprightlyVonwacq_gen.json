@@ -1,0 +1,6 @@
+{
+  "setName": "Lebhaftes Vonwacq",
+  "setEffects": {
+    "2": "Erhöht die Energie-Wiederherstellungsrate des Trägers um {{1}}%. Wenn die GES des Trägers {{2}} oder höher erreicht, wird seine Aktion beim Kampfeintritt um {{3}}% vorgezogen."
+  }
+}

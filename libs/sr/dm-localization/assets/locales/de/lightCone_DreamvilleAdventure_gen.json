@@ -1,0 +1,7 @@
+{
+  "name": "Abenteuer in Traumstadt",
+  "passive": {
+    "name": "Solidarität",
+    "description": "Nach dem Einsatz des Standardangriffs, der Fertigkeit oder des Ultimates des Trägers erhalten alle Verbündeten „Kindliches Gemüt“, wodurch der SCH der jeweiligen verwendeten Fähigkeit um <orangeStrong>{{1}}%</orangeStrong> erhöht wird. Kindliches Gemüt wirkt nur auf die letzte vom Träger eingesetzte Fähigkeit und ist nicht stapelbar."
+  }
+}

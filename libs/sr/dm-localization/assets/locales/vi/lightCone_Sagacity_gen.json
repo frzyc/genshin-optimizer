@@ -1,0 +1,7 @@
+{
+  "name": "Thông Tuệ",
+  "passive": {
+    "name": "Thiên Tài",
+    "description": "Khi người trang bị thi triển Tuyệt Kỹ, Tấn Công sẽ tăng <orangeStrong>{{1}}%</orangeStrong>, duy trì {{2}} hiệp."
+  }
+}

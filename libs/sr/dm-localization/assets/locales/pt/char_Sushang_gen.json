@@ -1,0 +1,66 @@
+{
+  "name": "Sushang",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Arte do Espadachim das Nuvens: Brilho Estelar",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sushang a um único inimigo.",
+        "shortDesc": "Causa Dano Físico leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Arte do Espadachim das Nuvens: Queda Montanhosa",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sushang a um inimigo. Além disso, há {{3}}% de chance de ativar a Postura da Espada no último golpe, causando Dano Físico <u>Adicional</u> igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Sushang ao inimigo.\\nSe o inimigo estiver infligido com <u>Quebra de Fraqueza</u>, a ativação da Postura da Espada é garantida.",
+        "shortDesc": "Causa Dano Físico a um inimigo, com<orangeStrong> poucas chances de ativar Postura da Espada</orangeStrong>. Se o inimigo tiver <u>Quebra de Fraqueza</u>, <orangeStrong>a ativação da Postura da Espada é garantida</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Forma de Taixu: Anúncio do Amanhecer",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sushang a um único inimigo-alvo e ela age de novo imediatamente. Além disso, o ATQ de Sushang aumenta em <orangeStrong>{{4}}%</orangeStrong> e usar sua Perícia concede 2 chances extras de ativar a Postura da Espada por {{2}} rodada(s).\\nQuando ativada graças às chances extras, a Postura da Espada causa {{3}}% do Dano original.",
+        "shortDesc": "Causa Dano Físico massivo a um único inimigo, aprimora o efeito da Postura da Espada e <orangeStrong>realiza uma ação imediatamente</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Arte do Espadachim das Nuvens: Grito de Guerra",
+        "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, Sushang causa Dano Físico igual a {{1}}% do ATQ dela a todos os inimigos.",
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Físico leve a todos os inimigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Cortar Facilmente",
+      "desc": "Após usar a Perícia contra um inimigo com a Fraqueza quebrada, regenera 1 Ponto de Perícia."
+    },
+    "2": {
+      "name": "Refino pela Labuta",
+      "desc": "Depois que a Postura da Espada é ativada, o Dano recebido por Sushang é reduzido em {{1}}% por 1 rodada."
+    },
+    "3": {
+      "name": "Surgir da Fama",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Golpeie com o Coração",
+      "desc": "Aumenta em {{1}}% o Efeito de Quebra de Sushang."
+    },
+    "5": {
+      "name": "Prevalecer por Taixu",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Permanecer Como Água",
+      "desc": "O Bônus de VEL do Talento é acumulável e pode acumular até 2 vezes. Adicionalmente, após entrar em batalha, Sushang imediatamente ganha 1 acúmulo do Bônus de VEL do seu Talento."
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Gallagher",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Entkorkungsgebühr",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gallaghers ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
+      },
+      "1": {
+        "name": "Hopfenschwall",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gallaghers ANG zu. Reduziert den ANG des Ziels für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong>.",
+        "shortDesc": "Fügt einem Gegner Feuer-SCH zu und reduziert seinen ANG."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Spezialmischung in der Dose",
+        "fullDesc": "Stellt sofort <orangeStrong>{{1}}</orangeStrong> Pkt. LP eines Verbündeten wieder her.",
+        "shortDesc": "Stellt sofort die LP eines Verbündeten wieder her."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Champagner-Zeremonie",
+        "fullDesc": "Belegt alle Gegner für {{2}} Rd. mit „Berauschung“ und fügt ihnen gleichzeitig Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gallaghers ANG zu. Verstärkt den nächsten Standardangriff zu „Hopfenschwall“.",
+        "shortDesc": "Belegt alle Gegner mit <orangeStrong>Berauschung</orangeStrong> und fügt ihnen Feuer-SCH zu. Verstärkt den nächsten Standardangriff zu „Hopfenschwall“."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Edler Tropfen",
+        "fullDesc": "Greift sofort den Gegner an. Belegt nach Kampfeintritt alle Gegner für {{1}} Rd. mit „Berauschung“ und fügt ihnen Feuer-SCH in Höhe von {{2}}% von Gallaghers ANG zu.",
+        "shortDesc": "Greift den Gegner an. Belegt nach Kampfeintritt alle Gegner mit <orangeStrong>Berauschung</orangeStrong> und fügt ihnen geringen Feuer-SCH zu."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Salty Dog",
+      "desc": "Stellt {{1}} Pkt. Energie wieder her, nachdem Gallagher in den Kampf eintritt, und erhöht seinen Effekt-WDS um {{2}}%."
+    },
+    "2": {
+      "name": "Löwenschwanz",
+      "desc": "Entfernt beim Einsatz der Fertigkeit {{1}} Debuff von einem anvisierten Verbündeten. Erhöht gleichzeitig seinen Effekt-WDS für {{3}} Rd. um {{2}}%."
+    },
+    "3": {
+      "name": "Wiederbelebung der Toten",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Letzte Worte",
+      "desc": "Verlängert die Dauer des durch Gallaghers Ultimate verursachten Status „Berauschung“ um {{1}} Rd."
+    },
+    "5": {
+      "name": "Tod nach Mittag",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Blut und Sand",
+      "desc": "Erhöht Gallaghers Brucheffekt um {{1}}% und die Schwächebruch-Effizienz um {{2}}%."
+    }
+  }
+}

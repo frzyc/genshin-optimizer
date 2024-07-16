@@ -1,0 +1,66 @@
+{
+  "name": "7. März",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Bitterkalter Pfeil",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von 7. März’ ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Die Macht der Niedlichkeit",
+        "fullDesc": "Gewährt einem anvisierten Verbündeten einen Schild, der {{2}} Rd. hält und SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von 7. März’ VTD plus <orangeStrong>{{4}}</orangeStrong> absorbieren kann.\\nWenn der Verbündete aktuell min. {{3}}% seiner LP hat, wird die Chance, vom Gegner angegriffen zu werden, stark erhöht.",
+        "shortDesc": "Gewährt einem Verbündeten einen <orangeStrong>Schild</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Gletscherkaskade",
+        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von 7. März’ ANG zu und friert die getroffenen Gegner mit einer <u>Grundchance</u> von {{2}}% für {{3}} Rd. ein.\\nEingefrorene Gegner können keine Aktionen ausführen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4}}%</orangeStrong> von 7. März’ ANG.",
+        "shortDesc": "Fügt <orangeStrong>allen Gegnern</orangeStrong> Eis-SCH zu und <orangeStrong>hat eine Chance, sie einzufrieren</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Eiskalte Schönheit",
+        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt besteht eine <u>Grundchance</u> von {{1}}%, einen zufällig ausgewählten Gegner für {{2}} Rd. einzufrieren.\\nEingefrorene Gegner können sich nicht bewegen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von {{3}}% von 7. März’ ANG.",
+        "shortDesc": "Greift den Gegner an. Hat eine hohe Chance, einen zufälligen Gegner nach Kampfeintritt einzufrieren."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Erinnerung an dich",
+      "desc": "Für jedes Ziel, das 7. März mit ihrem Ultimate einfriert, wird ihre Energie um {{1}} Pkt. wiederhergestellt."
+    },
+    "2": {
+      "name": "Erinnerung an es",
+      "desc": "Gewährt beim Kampfeintritt dem Verbündeten mit den wenigsten LP einen Schild in Höhe von {{1}}% von 7. März’ VTD plus {{3}} für {{2}} Rd."
+    },
+    "3": {
+      "name": "Erinnerung an alles",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Ich will nicht verlieren",
+      "desc": "Erhöht die Auslösungsanzahl des Konters durch Talent pro Runde um 1. Erhöht den durch Konter verursachten SCH um {{1}}% von 7. März’ VTD."
+    },
+    "5": {
+      "name": "Ich will nicht vergessen",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Immer so weiter ...",
+      "desc": "Verbündete, die durch den Schild der Fertigkeit geschützt sind, werden zu Beginn jeder Runde LP in Höhe von {{1}}% ihrer max. LP plus {{2}} wiederhergestellt."
+    }
+  }
+}

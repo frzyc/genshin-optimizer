@@ -1,0 +1,7 @@
+{
+  "setName": "Prisionero aislado",
+  "setEffects": {
+    "2": "ATQ +{{1}}%.",
+    "4": "Por cada estado de Daño con el tiempo que tenga el objetivo, el portador ignora un {{1}}% de su DEF cuando le inflige daño, hasta un máximo de {{2}} estados de Daño con el tiempo."
+  }
+}

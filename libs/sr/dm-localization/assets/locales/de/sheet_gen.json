@@ -1,0 +1,35 @@
+{
+  "type": {
+    "Physical": "Physisch",
+    "Quantum": "Quanten",
+    "Lightning": "Blitz",
+    "Ice": "Eis",
+    "Wind": "Wind",
+    "Fire": "Feuer",
+    "Imaginary": "Imaginär"
+  },
+  "path": {
+    "Erudition": "Die Gelehrsamkeit",
+    "Preservation": "Die Bewahrung",
+    "Abundance": "Der Überfluss",
+    "Nihility": "Die Nichtigkeit",
+    "Destruction": "Die Zerstörung",
+    "Harmony": "Die Harmonie",
+    "TheHunt": "Die Jagd"
+  },
+  "ability": {
+    "basic": "Standardangriff",
+    "skill": "Fertigkeit",
+    "ult": "Ultimate",
+    "talent": "Talent",
+    "technique": "Technik"
+  },
+  "dmgType": {
+    "single": "Einzelangriff",
+    "aoe": "Flächenangriff",
+    "bounce": "Abprallung",
+    "blast": "Ausdehnung",
+    "support": "Unterstützung",
+    "impair": "Beeinträchtigung"
+  }
+}

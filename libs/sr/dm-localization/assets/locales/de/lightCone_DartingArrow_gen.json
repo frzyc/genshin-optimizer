@@ -1,0 +1,7 @@
+{
+  "name": "Wurfpfeil",
+  "passive": {
+    "name": "Kriegsschrei",
+    "description": "Erhöht den ANG des Trägers für {{2}} Rd. um <orangeStrong>{{1}}%</orangeStrong>, nachdem er einen Gegner besiegt hat."
+  }
+}

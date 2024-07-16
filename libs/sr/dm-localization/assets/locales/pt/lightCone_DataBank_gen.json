@@ -1,0 +1,7 @@
+{
+  "name": "Banco de Dados",
+  "passive": {
+    "name": "Aprendizado",
+    "description": "Aumenta Dano de Perícia Suprema do usuário em <orangeStrong>{{1}}%</orangeStrong>."
+  }
+}

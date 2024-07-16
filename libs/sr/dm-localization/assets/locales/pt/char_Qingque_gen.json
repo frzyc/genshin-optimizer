@@ -1,0 +1,71 @@
+{
+  "name": "Qingque",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Colher Flores",
+        "fullDesc": "Lança 1 peça de jade do naipe com o menor número de peças nas mãos para causar Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Qingque a um único inimigo.",
+        "shortDesc": "Lança uma peça que causa Dano Quântico leve a um único inimigo."
+      },
+      "1": {
+        "name": "Cereja do Bolo!",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Qingque a um único inimigo e Dano Quântico igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Qingque aos inimigos adjacentes a ele.\\n\"Cereja do Bolo!\" não pode recuperar Pontos de Perícia.",
+        "shortDesc": "Causa Dano Quântico a um único inimigo e Dano Quântico leve a inimigos adjacentes a ele."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Uma Colherada da Lua",
+        "fullDesc": "Pega {{1}} peça(s) de jade imediatamente e aumenta o Dano em <orangeStrong>{{2}}%</orangeStrong> até o fim da rodada atual. Esse efeito pode acumular até {{3}} vez(es). A rodada não acaba após a utilização dessa Perícia.",
+        "shortDesc": "<orangeStrong>Pega peças</orangeStrong> e aumenta o Dano causado. <orangeStrong>Esta rodada não termina</orangeStrong> após esta ação."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Um Quarteto? Uhul!",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Qingque a todos os inimigos e obtém 4 peças de jade do mesmo naipe.",
+        "shortDesc": "Causa Dano Quântico a todos os inimigos, depois obtêm 4 peças do mesmo naipe."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Jogo de Paciência",
+        "fullDesc": "Após usar sua Técnica, Qingque pega {{1}} peça(s) de jade quando a batalha começa.",
+        "shortDesc": "Após usar sua Técnica, pega peça(s) no início da próxima batalha."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Surgir Pelas Peças",
+      "desc": "A Perícia Suprema causa {{1}}% a mais de Dano."
+    },
+    "2": {
+      "name": "Dormir nas Peças",
+      "desc": "Sempre que Pegar Peça é ativado, Qingque imediatamente regenera {{1}} de Energia."
+    },
+    "3": {
+      "name": "Ler Entre as Peças",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Bem nas Peças",
+      "desc": "Depois que a Perícia deste personagem é usada, tem {{1}}% de chance fixa de ganhar Autarquia, que dura até o fim da rodada.\\nCom Autarquia, usar o ATQ Básico ou o ATQ Básico Aprimorado ativa imediatamente um Ataque Extra no mesmo alvo, causando Dano Quântico igual a 100% do Dano do ATQ Básico anterior (ou ATQ Básico Aprimorado)."
+    },
+    "5": {
+      "name": "Estratégia para as Peças",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Prevalecer Além das Peças",
+      "desc": "Recupera 1 Ponto de Perícia após usar um ATQ Básico Aprimorado."
+    }
+  }
+}

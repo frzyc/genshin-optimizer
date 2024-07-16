@@ -1,0 +1,7 @@
+{
+  "name": "Brighter Than the Sun",
+  "passive": {
+    "name": "Defiant Till Death",
+    "description": "Increases the wearer's CRIT Rate by <orangeStrong>{{1}}%</orangeStrong>. When the wearer uses their Basic ATK, they will gain 1 stack of Dragon's Call, lasting for {{2}} turns. Each stack of Dragon's Call increases the wearer's ATK by <orangeStrong>{{4}}%</orangeStrong> and Energy Regeneration Rate by <orangeStrong>{{5}}%</orangeStrong>. Dragon's Call can be stacked up to {{3}} times."
+  }
+}

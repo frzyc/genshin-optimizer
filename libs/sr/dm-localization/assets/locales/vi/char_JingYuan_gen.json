@@ -1,0 +1,66 @@
+{
+  "name": "Jing Yuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Khoảnh Khắc Ngắn Ngủi",
+        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Jing Yuan.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Mây Tím Chiếu Rọi",
+        "fullDesc": "Gây cho toàn bộ địch một lượng Sát Thương Lôi bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Jing Yuan, đồng thời tăng {{2}} đòn đánh trong một lượt của Thần Quân ở hiệp sau.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho toàn bộ địch, <orangeStrong>tăng số đòn đánh trong một lượt của Thần Quân</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Thân Ta Tỏa Sáng",
+        "fullDesc": "Gây cho toàn bộ địch một lượng Sát Thương Lôi bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Jing Yuan, đồng thời tăng {{2}} đòn đánh trong một lượt của Thần Quân ở hiệp sau.",
+        "shortDesc": "Gây Sát Thương Lôi cho toàn bộ địch, <orangeStrong>tăng số đòn đánh trong một lượt của Thần Quân</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Triệu Hồi Uy Linh",
+        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo, số đòn đánh trong một lượt của Thần Quân tăng {{1}} ở hiệp 1.",
+        "shortDesc": "Sử dụng Bí Kỹ, khi vào chiến đấu lần kế tiếp <orangeStrong>sẽ tăng số đòn đánh trong một lượt của Thần Quân</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Lôi Kích Phá Núi",
+      "desc": "Khi Thần Quân thi triển tấn công, tăng Bội Số Sát Thương gây cho mục tiêu lân cận của kẻ địch chỉ định, mức tăng bằng {{1}}% Bội Số Sát Thương của mục tiêu chính."
+    },
+    "2": {
+      "name": "Mở Thiên Trận",
+      "desc": "Sau khi Thần Quân hành động, sát thương do tấn công thường, Chiến Kỹ, Tuyệt Kỹ của Jing Yuan gây ra tăng {{1}}%, duy trì {{2}} hiệp."
+    },
+    "3": {
+      "name": "Di Phong Kinh Điện",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Vân Lạc Ngọc Sa",
+      "desc": "Sau mỗi đòn đánh của Thần Quân, Jing Yuan sẽ hồi {{1}} Năng Lượng."
+    },
+    "5": {
+      "name": "Xem Nhẹ Sinh Tử",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Uy Linh Phá Địch Thù",
+      "desc": "Thần Quân sau mỗi đòn đánh sẽ khiến mục tiêu địch chỉ định rơi vào trạng thái Trọng Thương.\\nMục tiêu địch ở trạng thái Trọng Thương sẽ tăng {{1}}% sát thương phải chịu, duy trì đến khi Thần Quân kết thúc lần tấn công này, hiệu ứng này tối đa cộng dồn {{2}} tầng."
+    }
+  }
+}

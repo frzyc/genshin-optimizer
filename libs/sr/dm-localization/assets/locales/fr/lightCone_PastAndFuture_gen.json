@@ -1,0 +1,7 @@
+{
+  "name": "Passé et futur",
+  "passive": {
+    "name": "Cerfs-volants du passé",
+    "description": "Lorsque le porteur utilise sa compétence, les DGT infligés par le prochain allié à agir (à l'exception du porteur) augmentent de <orangeStrong>{{1}}%</orangeStrong> pendant {{2}} tour."
+  }
+}

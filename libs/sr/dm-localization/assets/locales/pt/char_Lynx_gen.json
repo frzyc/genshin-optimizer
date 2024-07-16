@@ -1,0 +1,66 @@
+{
+  "name": "Lynx",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Técnica de Grampos de Neve",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> dos PV máximos deste personagem a um único inimigo.",
+        "shortDesc": "Causa Dano Quântico leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Latas de Acampamento Salgadas",
+        "fullDesc": "Aplica \"Resposta de Sobrevivência\" em um único aliado-alvo e aumenta seus PV máximos em <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Lynx + <orangeStrong>{{2}}</orangeStrong>. Se o alvo for um personagem do Caminho da Destruição ou da Preservação, a chance de que ele seja atacado pelos inimigos aumentará drasticamente. A \"Resposta de Sobrevivência\" dura por {{3}} rodada(s).\\nRestaura os PV do alvo em <orangeStrong>{{4}}%</orangeStrong> dos PV máximos de Lynx + <orangeStrong>{{5}}</orangeStrong>.",
+        "shortDesc": "Aplica \"Resposta de Sobrevivência\" a um único aliado, <orangeStrong>aumentando os PV máximos</orangeStrong>, e restaurando os PV dele."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Primeiros Socorros do Campo de Neve",
+        "fullDesc": "Remove {{1}} <u>penalidade(s)</u> de todos os aliados e imediatamente restaura seus respectivos PV em uma quantidade igual a <orangeStrong>{{2}}%</orangeStrong> dos PV máximos de Lynx + <orangeStrong>{{3}}</orangeStrong>.",
+        "shortDesc": "Remove <orangeStrong>1 <u>penalidade</u> de todos os aliados</orangeStrong> e restaura seus PV."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Barra de Chocolate Energética",
+        "fullDesc": "Depois que Lynx usa sua Técnica, no início da próxima batalha, todos os aliados recebem o efeito de cura contínua do Talento dela, durando por {{1}} rodada(s).",
+        "shortDesc": "Depois que esta personagem usa sua Técnica, no início da próxima batalha, todos os aliados recebem um efeito de cura contínua."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Madrugada da Caminhada na Neve",
+      "desc": "Ao curar aliados com PV iguais ou menores que {{1}}%, a Cura Realizada de Lynx aumenta em {{2}}%. Este efeito também funciona em curas contínuas."
+    },
+    "2": {
+      "name": "Manhã da Fornalha Portátil",
+      "desc": "Um alvo com \"Resposta de Sobrevivência\" pode resistir a aplicação de penalidade por {{1}} vez(es)."
+    },
+    "3": {
+      "name": "Tarde do Sinalizador de Avalanche",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Crepúsculo da Fogueira Acolhedora",
+      "desc": "Quando a \"Resposta de Sobrevivência\" é recebida, aumenta o ATQ do alvo em uma quantidade igual a {{1}}% dos PV máximos de Lynx por {{2}} rodada(s)."
+    },
+    "5": {
+      "name": "Noite do Chá de Aurora",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Amanhecer do Mapa dos Exploradores",
+      "desc": "Melhora adicionalmente o efeito de aumento de PV máximos da \"Resposta de Sobrevivência\" em uma quantidade igual a {{1}}% dos PV máximos de Lynx e aumenta a RES a Efeito em {{2}}%."
+    }
+  }
+}

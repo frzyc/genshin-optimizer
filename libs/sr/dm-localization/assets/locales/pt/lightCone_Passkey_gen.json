@@ -1,0 +1,7 @@
+{
+  "name": "Chave Mestra",
+  "passive": {
+    "name": "Epifania",
+    "description": "Após o usuário usar sua Perícia, regenera mais <orangeStrong>{{1}}</orangeStrong> de Energia adicional. Este efeito não pode ser ativado repetidamente em uma única rodada."
+  }
+}

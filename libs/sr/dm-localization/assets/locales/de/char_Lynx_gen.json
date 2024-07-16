@@ -1,0 +1,66 @@
+{
+  "name": "Lynx",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Steigeisentechnik",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> der max. LP von Lynx zu.",
+        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Gesalzenes Dosenfutter",
+        "fullDesc": "Wendet „Überlebensreaktion“ auf einen anvisierten Verbündeten an und erhöht dessen max. LP um <orangeStrong>{{1}}%</orangeStrong> der max. LP von Lynx plus <orangeStrong>{{2}}</orangeStrong>. Wenn dieser Verbündete dem Pfad der Zerstörung oder der Bewahrung angehört, wird die Chance stark erhöht, dass er von Gegnern angegriffen wird. Die „Überlebensreaktion“ hält für {{3}} Rd. an.\\nStellt beim Ziel LP in Höhe von <orangeStrong>{{4}}%</orangeStrong> der max. LP von Lynx plus <orangeStrong>{{5}}</orangeStrong> wieder her.",
+        "shortDesc": "Wendet „Überlebensreaktion“ auf einen Verbündeten an, <orangeStrong>erhöht seine max. LP</orangeStrong> und stellt seine LP wieder her."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ersthilfeplan in der Schneewüste",
+        "fullDesc": "Entfernt {{1}} <u>Debuff</u> von allen Verbündeten und stellt bei ihnen sofort LP in Höhe von <orangeStrong>{{2}}%</orangeStrong> der max. LP von Lynx plus <orangeStrong>{{3}}</orangeStrong> wieder her.",
+        "shortDesc": "Entfernt <orangeStrong>1 <u>Debuff</u> von allen Verbündeten</orangeStrong> und stellt ihre LP wieder her."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Schoko-Energieriegel",
+        "fullDesc": "Nachdem Lynx ihre Technik eingesetzt hat, erhalten alle Verbündeten zu Beginn des nächsten Kampfes für {{1}} Rd. kontinuierliche Heilung von ihrem Talent.",
+        "shortDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten zu Beginn des nächsten Kampfes kontinuierliche Heilung."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und reduziert nach Kampfeintritt den Widerstand des gegnerischen Ziels des entsprechenden Typs.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ein Morgen mit frischem Schnee",
+      "desc": "Heilt Lynx Verbündete mit LP in Höhe von {{1}}% oder niedriger, wird die bewirkte Heilung um {{2}}% erhöht. Dieser Effekt wirkt auch bei der kontinuierlichen Heilung."
+    },
+    "2": {
+      "name": "Ein Mittag am tragbaren Herd",
+      "desc": "Ein Verbündeter mit „Überlebensreaktion“ kann {{1}}-mal der Wirkung eines Debuffs widerstehen."
+    },
+    "3": {
+      "name": "Ein Nachmittag mit Lawinenleuchtfeuer",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Ein Sonnenuntergang am Lagerfeuer",
+      "desc": "Wenn „Überlebensreaktion“ erlangt wird, erhöht sich der ANG des Ziels für {{2}} Rd. um {{1}}% der max. LP von Lynx."
+    },
+    "5": {
+      "name": "Eine Nacht mit Tee und Polarlicht",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Ein Sonnenaufgang mit Kartografiepapier",
+      "desc": "Die Erhöhung der max. LP durch „Überlebensreaktion“ wird zusätzlich um {{1}}% der max. LP von Lynx weiter erhöht. Erhöht auch den Effekt-WDS um {{2}}%."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "記憶的質料",
+  "passive": {
+    "name": "珍存",
+    "description": "使裝備者的效果抗性提高<orangeStrong>{{1}}%</orangeStrong>。當裝備者受到攻擊後，如果自身未持有護盾，則獲得1個等同於裝備者<orangeStrong>{{2}}%</orangeStrong>生命上限的護盾，持續{{3}}回合。該效果每{{4}}回合只能觸發1次。如果裝備者持有護盾，則使自身受到的傷害降低<orangeStrong>{{5}}%</orangeStrong>。"
+  }
+}

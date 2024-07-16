@@ -1,0 +1,7 @@
+{
+  "name": "Mais Claro do que o Sol",
+  "passive": {
+    "name": "Petulante Até a Morte",
+    "description": "Aumenta a Chance de CRIT do usuário em <orangeStrong>{{1}}%</orangeStrong>. Quando o usuário utiliza seu ATQ Básico, ele ganha 1 acúmulo de Chamado do Dragão que dura por {{2}} rodadas. Cada acúmulo do Chamado do Dragão aumenta o ATQ do usuário em <orangeStrong>{{4}}%</orangeStrong> e a Taxa de Regeneração de Energia em <orangeStrong>{{5}}%</orangeStrong>. O Chamado do Dragão pode ser acumulado até {{3}} vezes."
+  }
+}

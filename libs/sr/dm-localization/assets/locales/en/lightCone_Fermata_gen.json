@@ -1,0 +1,7 @@
+{
+  "name": "Fermata",
+  "passive": {
+    "name": "Semibreve Rest",
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1}}%</orangeStrong>, and increases their DMG to enemies afflicted with Shock or Wind Shear by <orangeStrong>{{2}}%</orangeStrong>. This also applies to DoT."
+  }
+}

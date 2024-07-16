@@ -1,0 +1,7 @@
+{
+  "name": "Under the Blue Sky",
+  "passive": {
+    "name": "Rye Under the Sun",
+    "description": "Increases the wearer's ATK by <orangeStrong>{{1}}%</orangeStrong>. When the wearer defeats an enemy, the wearer's CRIT Rate increases by <orangeStrong>{{2}}%</orangeStrong> for {{3}} turn(s)."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Arlan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Descarga de Raio",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Arlan a um único inimigo.",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Quebra-Grilhões",
+        "fullDesc": "Consome os PV de Arlan, com valor equivalente a {{1}}% de seus PV máximos, para causar <orangeStrong>{{2}}%</orangeStrong> do ATQ de Arlan como Dano de Raio a um único inimigo. Se os PV de Arlan forem insuficientes, os seus PV serão reduzidos a 1 depois de usar a Perícia.",
+        "shortDesc": "Consome uma porção dos PV para causar Dano de Raio a um único inimigo."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Punição Frenética",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Arlan a um único inimigo e <orangeStrong>{{2}}%</orangeStrong> do ATQ de Arlan como Dano de Raio aos inimigos adjacentes a ele.",
+        "shortDesc": "Causa Dano de Raio massivo a um único inimigo e Dano de Raio pequeno a inimigos adjacentes a ele."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Colheita Rápida",
+        "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar na batalha, causa {{1}}% do ATQ de Arlan como Dano de Raio a todos os inimigos.",
+        "shortDesc": "Ataca o inimigo. Após entrar na batalha, causa Dano de Raio leve a todos os inimigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Até o Amargo Fim",
+      "desc": "Quando os PV estiverem abaixo ou iguais a 50% dos PV máximos, o Dano da Perícia aumenta em {{1}}%."
+    },
+    "2": {
+      "name": "Libertação",
+      "desc": "Usar a Perícia ou a Perícia Suprema remove 1 penalidade de si mesmo."
+    },
+    "3": {
+      "name": "Superação",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Virando o Jogo",
+      "desc": "Ao ser atingido por um golpe fatal depois de entrar em batalha, Arlan restaura seus PV igual a {{1}}% de seus PV máximos ao invés de ser derrubado. Esse efeito é removido automaticamente após ser ativado uma vez ou depois que {{2}} rodada(s) tiverem passado."
+    },
+    "5": {
+      "name": "Fogo da Forja",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Autossacrifício",
+      "desc": "Quando os PV caem para 50% ou menos, a Perícia Suprema causa {{1}}% a mais de Dano. O multiplicador de Dano do Dano recebido pelo inimigo-alvo agora também é aplicado aos inimigos adjacentes."
+    }
+  }
+}

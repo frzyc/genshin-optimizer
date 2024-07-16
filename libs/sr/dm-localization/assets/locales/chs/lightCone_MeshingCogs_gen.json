@@ -1,0 +1,7 @@
+{
+  "name": "轮契",
+  "passive": {
+    "name": "速决",
+    "description": "使装备者施放攻击或受到攻击后，额外恢复<orangeStrong>{{1}}</orangeStrong>点能量，该效果单个回合内不可重复触发。"
+  }
+}

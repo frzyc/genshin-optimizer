@@ -1,0 +1,6 @@
+{
+  "setName": "Sprightly Vonwacq",
+  "setEffects": {
+    "2": "Increases the wearer's Energy Regeneration Rate by {{1}}%. When the wearer's SPD reaches {{2}} or higher, the wearer's action is Advanced Forward by {{3}}% immediately upon entering battle."
+  }
+}

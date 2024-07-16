@@ -1,0 +1,66 @@
+{
+  "name": "Serval",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Roaring Thunderclap",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Serval's ATK to a single enemy.",
+        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lightning Flash",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Serval's ATK to a single enemy and Lightning DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Serval's ATK to enemies adjacent to it, with a {{3}}% <u>base chance</u> for enemies hit to become Shocked for {{4}} turn(s).\\nWhile Shocked, enemies take Lightning DoT equal to <orangeStrong>{{5}}%</orangeStrong> of Serval's ATK at the beginning of each turn.",
+        "shortDesc": "Deals minor Lightning DMG to a single enemy and any adjacent targets, with a high chance of causing <orangeStrong>Shock</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Here Comes the Mechanical Fever",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Serval's ATK to all enemies. Enemies already Shocked will extend the duration of their Shock state by {{2}} turn(s).",
+        "shortDesc": "Deals Lightning DMG to all enemies and increases the duration of Shock."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Good Night, Belobog",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Lightning DMG equal to {{4}}% of Serval's ATK to a random enemy, with a {{1}}% <u>base chance</u> for all enemies to become Shocked for {{3}} turn(s).\\nWhile Shocked, enemies will take Lightning DoT equal to {{2}}% of Serval's ATK at the beginning of each turn.",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor Lightning DMG to a random single enemy, with a high chance to <orangeStrong>Shock</orangeStrong> all enemy targets."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Echo Chamber",
+      "desc": "Basic ATK deals Lightning DMG equal to {{1}}% of the Basic ATK's DMG to a random enemy adjacent to the target of the Basic ATK."
+    },
+    "2": {
+      "name": "Encore!",
+      "desc": "Every time Serval's Talent is triggered to deal Additional DMG, she regenerates {{1}} Energy."
+    },
+    "3": {
+      "name": "Listen, the Heartbeat of the Gears",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Make Some Noise!",
+      "desc": "Ultimate has a {{1}}% base chance to apply Shock to any enemies not currently Shocked. This Shock has the same effects as the one applied by Skill."
+    },
+    "5": {
+      "name": "Belobog's Loudest Roar!",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "This Song Rocks to Heaven!",
+      "desc": "Serval deals {{1}}% more DMG to Shocked enemies."
+    }
+  }
+}

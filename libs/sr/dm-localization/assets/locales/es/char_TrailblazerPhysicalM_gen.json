@@ -1,0 +1,76 @@
+{
+  "name": "Trazacaminos (Físico • Destrucción)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Golpe de despedida",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Carrera final",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a un objetivo y a los enemigos adyacentes.",
+        "shortDesc": "Inflige Daño Físico a un objetivo y a los enemigos adyacentes."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "As estelar",
+        "fullDesc": "Elige entre dos formas de dar un fuerte golpe.\\nVictoria total: Golpe de despedida inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a un enemigo.\\nVictoria total: Carrera final inflige un <orangeStrong>{{2}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a un objetivo y un <orangeStrong>{{3}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a los enemigos adyacentes.",
+        "shortDesc": "Elige entre ATQ individual o Ráfaga para dar un fuerte golpe."
+      },
+      "1": {
+        "name": "Victoria total: Golpe de despedida",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a un enemigo.",
+        "shortDesc": "Inflige una gran cantidad de Daño Físico a un enemigo."
+      },
+      "2": {
+        "name": "Victoria total: Carrera final",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a un objetivo y un <orangeStrong>{{2}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a los enemigos adyacentes.",
+        "shortDesc": "Inflige Daño Físico a un objetivo y a los enemigos adyacentes."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Tercer golpe inmortal",
+        "fullDesc": "Tras usar la técnica, todos los aliados regeneran un {{1}}% de sus respectivos PV máx.",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Estrellas dispersas",
+      "desc": "Cuando su habilidad definitiva elimina a un enemigo, {F#la}{M#el} Trazacaminos recupera {{1}} pts. de energía adicionales. Este efecto solo se puede activar 1 vez en cada ataque."
+    },
+    "2": {
+      "name": "{F#Anfitriona perfecta}{M#Anfitrión perfecto}",
+      "desc": "Al golpear a un enemigo con Debilidad Física, {F#la}{M#el} Trazacaminos regenera una cantidad de PV equivalente al {{1}}% de su ATQ."
+    },
+    "3": {
+      "name": "El espíritu que guía",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Contemplación del instante de destrucción",
+      "desc": "Al golpear a un enemigo con Ruptura de Debilidad, la Prob. CRIT aumenta en un {{1}}%."
+    },
+    "5": {
+      "name": "Esperanza de supervivencia",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Voluntad de exploración",
+      "desc": "El talento {F#de la}{M#del} Trazacaminos también se activa cuando elimina a un enemigo."
+    }
+  }
+}

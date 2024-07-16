@@ -1,0 +1,6 @@
+{
+  "setName": "Belobog der Architekten",
+  "setEffects": {
+    "2": "Erhöht die VTD des Trägers um {{1}}%. Wenn die Effekt-Trefferrate des Trägers {{2}}% oder höher erreicht, wird seine VTD zusätzlich um {{3}}% erhöht."
+  }
+}

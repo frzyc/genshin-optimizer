@@ -1,0 +1,7 @@
+{
+  "name": "Worrisome, Blissful",
+  "passive": {
+    "name": "One At A Time",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT Rate dan <orangeStrong>{{2}}%</orangeStrong> DMG Serangan Lanjutan pengguna. Setelah pengguna melancarkan Serangan Lanjutan, target musuh akan memasuki status \"Tame\", efek ini dapat ditumpuk hingga {{4}} lapis. Saat rekan tim menyerang target musuh berstatus \"Tame\", setiap lapis \"Tame\" akan meningkatkan <orangeStrong>{{3}}%</orangeStrong> CRIT DMG yang diakibatkan."
+  }
+}

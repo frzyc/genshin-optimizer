@@ -1,0 +1,7 @@
+{
+  "name": "Momento de Vitória",
+  "passive": {
+    "name": "Veredito",
+    "description": "Aumenta em <orangeStrong>{{2}}%</orangeStrong> a DEF e em <orangeStrong>{{4}}%</orangeStrong> a Taxa de Acerto de Efeito do usuário. Também aumenta a chance de o usuário sofrer ataques inimigos. Quando o usuário é atacado, aumenta sua DEF em <orangeStrong>{{3}}%</orangeStrong> extra até o fim da rodada do usuário."
+  }
+}

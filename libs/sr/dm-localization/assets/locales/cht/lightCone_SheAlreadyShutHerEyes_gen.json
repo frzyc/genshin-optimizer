@@ -1,0 +1,7 @@
+{
+  "name": "她已閉上雙眼",
+  "passive": {
+    "name": "視界",
+    "description": "使裝備者的生命上限提高<orangeStrong>{{1}}%</orangeStrong>，能量恢復效率提高<orangeStrong>{{4}}%</orangeStrong>。當裝備者的生命值降低時，使我方全體造成的傷害提高<orangeStrong>{{2}}%</orangeStrong>，持續{{5}}回合。\\n每一波次開始時，為我方全體回復等同於各自已損失生命值<orangeStrong>{{3}}%</orangeStrong>的生命值。"
+  }
+}

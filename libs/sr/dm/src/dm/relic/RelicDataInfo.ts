@@ -1,14 +1,7 @@
 import type { RelicSetId, RelicSlotDMKey } from '../../mapping/relic'
 import { readDMJSON } from '../../util'
 
-export type RelicDataInfoSrc = {
-  HEAD?: RelicDataInfo
-  HAND?: RelicDataInfo
-  BODY?: RelicDataInfo
-  FOOT?: RelicDataInfo
-  NECK?: RelicDataInfo
-  OBJECT?: RelicDataInfo
-}
+export type RelicDataInfoSrc = Partial<Record<RelicSlotDMKey, RelicDataInfo>>
 
 export type RelicDataInfo = {
   SetID: number

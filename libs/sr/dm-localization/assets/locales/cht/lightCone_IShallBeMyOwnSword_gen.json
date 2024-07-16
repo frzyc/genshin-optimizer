@@ -1,0 +1,7 @@
+{
+  "name": "此身為劍",
+  "passive": {
+    "name": "執此宵玉",
+    "description": "使裝備者的暴擊傷害提高<orangeStrong>{{1}}%</orangeStrong>。當隊友受到攻擊或消耗生命值後，裝備者獲得1層【月蝕】，最多疊加{{2}}層。每層【月蝕】使裝備者下一次攻擊造成的傷害提高<orangeStrong>{{3}}%</orangeStrong>。疊滿{{2}}層時，額外使該次攻擊無視目標<orangeStrong>{{4}}%</orangeStrong>的防禦力。該效果在裝備者發動攻擊後解除。"
+  }
+}

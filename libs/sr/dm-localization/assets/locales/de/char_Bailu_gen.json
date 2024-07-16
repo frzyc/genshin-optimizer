@@ -1,0 +1,66 @@
+{
+  "name": "Bailu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Diagnosetritt",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Bailus ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Unter den Wolken singen",
+        "fullDesc": "Stellt LP eines anvisierten Verbündeten sofort um <orangeStrong>{{1}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her. Anschließend heilt Bailu {{4}}-mal zufällige Verbündete. Nach jeder Heilung werden die wiederhergestellten LP beim nächsten Mal um {{3}}% reduziert.",
+        "shortDesc": "Stellt LP für einen Verbündeten wieder her und heilt dann einen weiteren zufälligen Verbündeten."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Sprung des Sumpfdrachen",
+        "fullDesc": "Stellt LP aller Verbündeten sofort um <orangeStrong>{{1}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her.\\nVerbündete, die noch nicht belebt sind, werden von Bailu belebt. Bei Verbündeten mit Belebung hält die Belebungsdauer 1 weitere Runde lang an.\\nDie „Belebung“ hält bis zu {{3}} Rd. lang an. Dieser Effekt ist nicht stapelbar.",
+        "shortDesc": "Stellt LP für alle Verbündeten wieder her. Belebt die Verbündeten oder verlängert die Dauer der „Belebung“."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Im Regen spazieren",
+        "fullDesc": "Gewährt nach dem Einsatz der Technik allen Verbündeten zu Beginn des nächsten Kampfes für {{1}} Rd. „Belebung“.",
+        "shortDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten zu Beginn des nächsten Kampfes „Belebung“."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Meridian-Aufguss: Ambrosia-Aqua",
+      "desc": "Wenn die „Belebung“ endet und die LP des Verbündeten vollständig sind, wird für ihn zusätzlich {{1}} Pkt. Energie wiederhergestellt."
+    },
+    "2": {
+      "name": "Topf des schlummernden Drachen",
+      "desc": "Erhöht nach dem Einsatz des Ultimates die bewirkte Heilung von Bailu für {{2}} Rd. um {{1}}%."
+    },
+    "3": {
+      "name": "Rätselhaftes Wunder",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Bedrohung ausgetrieben",
+      "desc": "Jede Heilung durch die Fertigkeit erhöht den vom Empfänger verursachten SCH für {{3}} Rd. um {{1}}%. Dieser Effekt ist bis zu {{2}}-mal stapelbar."
+    },
+    "5": {
+      "name": "Beseitigung irdischer Probleme",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Triefender Tropfen drakonischer Göttlichkeit",
+      "desc": "Erhöht die Anzahl der Verbündeten, die durch Bailu in einem einzigen Kampf nach Todesstößen geheilt werden können, um {{1}}."
+    }
+  }
+}

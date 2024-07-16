@@ -1,0 +1,66 @@
+{
+  "name": "Himeko",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Afinación de sierra",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Himeko como Daño de Fuego a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Detonación fundida",
+        "fullDesc": "Himeko inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño de Fuego a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño de Fuego a los enemigos adyacentes.",
+        "shortDesc": "Inflige Daño de Fuego a un enemigo y una pequeña cantidad de Daño de Fuego a los enemigos adyacentes."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Llamas celestiales",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Himeko como Daño de Fuego a todos los enemigos. Por cada enemigo eliminado, Himeko recupera {{2}} pts. de energía adicionales.",
+        "shortDesc": "Inflige Daño de Fuego a todos los enemigos y recupera energía si elimina a alguno."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Combustión incompleta",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. Al entrar en combate con enemigos dentro de la zona especial, tiene una <u>probabilidad base</u> del {{1}}% de que los objetivos enemigos reciban un {{2}}% más de Daño de Fuego durante {{3}} turnos. Solo puede haber 1 zona especial creada por los aliados a la vez.",
+        "shortDesc": "Crea una zona especial. Al entrar en combate con enemigos en la zona especial, hay una gran probabilidad de que <orangeStrong>el Daño de Fuego que reciben los enemigos aumente</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Infancia",
+      "desc": "Cuando se activa Carrera de la victoria, la VEL de Himeko aumenta en un {{1}}% durante {{2}} turnos."
+    },
+    "2": {
+      "name": "Convergencia",
+      "desc": "Cuando el objetivo tiene un porcentaje de PV igual o inferior al {{1}}%, recibe un {{2}}% más de daño."
+    },
+    "3": {
+      "name": "Aplomo",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Dedicación",
+      "desc": "Cuando Himeko lanza su habilidad básica y rompe la Debilidad de un enemigo, consigue {{1}} carga adicional."
+    },
+    "5": {
+      "name": "Aspiraciones",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Trazando caminos",
+      "desc": "La habilidad definitiva inflige daño 2 veces adicionales. Cada vez, inflige a un enemigo al azar un Daño de Fuego equivalente al {{1}}% del daño original recibido."
+    }
+  }
+}

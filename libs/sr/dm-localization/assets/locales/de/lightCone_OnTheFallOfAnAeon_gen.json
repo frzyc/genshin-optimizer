@@ -1,0 +1,7 @@
+{
+  "name": "Der Niedergang eines Äons",
+  "passive": {
+    "name": "Wie Motten ins Licht",
+    "description": "Wenn der Träger angreift, wird sein ANG im Kampf um <orangeStrong>{{1}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{2}}-mal stapelbar. Verursacht der Träger Schwächebruch an einem Gegner, wird sein verursachter SCH für {{4}} Rd. um <orangeStrong>{{3}}%</orangeStrong> erhöht."
+  }
+}

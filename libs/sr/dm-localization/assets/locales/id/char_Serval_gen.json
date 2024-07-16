@@ -1,0 +1,66 @@
+{
+  "name": "Serval",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Roaring Thunderclap",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Serval pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lightning Flash",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Serval pada 1 target musuh, dan di saat bersamaan mengakibatkan Lightning DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Serval pada musuh di sekitar target. Selain itu, target musuh yang terkena serangan memiliki {{3}}% <u>peluang dasar</u> untuk memasuki status Shock selama {{4}} giliran.\\nSelama dalam status Shock, target musuh akan menerima Lightning DoT sebesar <orangeStrong>{{5}}%</orangeStrong> ATK Serval setiap gilirannya dimulai.",
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil terhadap 1 musuh dan target di sekitarnya, dan berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong> pada target."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Here Comes the Mechanical Fever",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Serval pada seluruh musuh, dan menambah durasi status Shock musuh selama {{2}} giliran.",
+        "shortDesc": "Mengakibatkan Lightning DMG pada seluruh musuh dan memperpanjang durasi status Shock musuh."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Good Night, Belobog",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Lightning DMG sebesar {{4}}% ATK Serval pada musuh secara acak, dan di saat bersamaan memiliki {{1}}% <u>peluang dasar</u> untuk membuat setiap target musuh memasuki status Shock selama {{3}} giliran.\\nDalam status Shock, target musuh akan menerima Lightning DoT sebesar {{2}}% ATK Serval setiap gilirannya dimulai.",
+        "shortDesc": "Menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Lightning DMG dalam jumlah kecil pada musuh secara acak, dan berpeluang besar membuat setiap target musuh <orangeStrong>memasuki status Shock</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Echo Chamber",
+      "desc": "Basic Attack mengakibatkan Lightning DMG sebesar {{1}}% DMG Basic ATK pada 1 musuh di sekitar target secara acak."
+    },
+    "2": {
+      "name": "Encore!",
+      "desc": "Setiap kali DMG tambahan dari Talent Serval terpicu, akan memulihkan {{1}} Energy Serval."
+    },
+    "3": {
+      "name": "Listen, the Heartbeat of the Gears",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Make Some Noise!",
+      "desc": "Saat melancarkan Ultimate, ada {{1}}% peluang dasar untuk membuat target musuh yang tidak berstatus Shock memasuki status Shock yang serupa dengan Skill."
+    },
+    "5": {
+      "name": "Belobog's Loudest Roar!",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "This Song Rocks to Heaven!",
+      "desc": "Meningkatkan {{1}}% DMG yang diakibatkan Serval pada target musuh yang berstatus Shock."
+    }
+  }
+}

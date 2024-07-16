@@ -1,0 +1,7 @@
+{
+  "setName": "Ban Nhạc Sizzling Thunder",
+  "setEffects": {
+    "2": "Tăng Sát Thương Lôi {{1}}%.",
+    "4": "Khi người trang bị thi triển Chiến Kỹ, tấn công của người đó tăng {{1}}%, duy trì {{2}} hiệp."
+  }
+}

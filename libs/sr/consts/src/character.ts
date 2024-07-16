@@ -1,3 +1,5 @@
+import type { PathKey } from './common'
+
 export const allGenderKeys = ['F', 'M'] as const
 export type GenderKey = (typeof allGenderKeys)[number]
 
@@ -63,17 +65,6 @@ export const allElementalTypeKeys = [
 ] as const
 export type ElementalTypeKey = (typeof allElementalTypeKeys)[number]
 
-export const allPathKeys = [
-  'Erudition',
-  'Preservation',
-  'Abundance',
-  'Nihility',
-  'Destruction',
-  'Harmony',
-  'TheHunt',
-] as const
-export type PathKey = (typeof allPathKeys)[number]
-
 export const allTrailblazerGenderedKeys = [
   'TrailblazerPhysicalM',
   'TrailblazerPhysicalF',
@@ -87,6 +78,10 @@ export const allTrailblazerKeys = [
   'TrailblazerFire',
 ] as const
 export type TrailblazerKey = (typeof allTrailblazerKeys)[number]
+export const TrailblazerPathMap: Record<TrailblazerKey, PathKey> = {
+  TrailblazerPhysical: 'Destruction',
+  TrailblazerFire: 'Preservation',
+}
 
 export const allCharacterKeys = [
   ...nonTrailblazerCharacterKeys,

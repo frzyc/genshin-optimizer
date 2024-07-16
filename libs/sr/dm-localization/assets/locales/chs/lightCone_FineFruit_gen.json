@@ -1,0 +1,7 @@
+{
+  "name": "嘉果",
+  "passive": {
+    "name": "甘美",
+    "description": "战斗开始时，立即为我方全体恢复<orangeStrong>{{1}}</orangeStrong>点能量。"
+  }
+}

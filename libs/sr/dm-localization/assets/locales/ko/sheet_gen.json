@@ -1,0 +1,35 @@
+{
+  "type": {
+    "Physical": "물리",
+    "Quantum": "양자",
+    "Lightning": "번개",
+    "Ice": "얼음",
+    "Wind": "바람",
+    "Fire": "화염",
+    "Imaginary": "허수"
+  },
+  "path": {
+    "Erudition": "지식",
+    "Preservation": "보존",
+    "Abundance": "풍요",
+    "Nihility": "공허",
+    "Destruction": "파멸",
+    "Harmony": "화합",
+    "TheHunt": "수렵"
+  },
+  "ability": {
+    "basic": "일반 공격",
+    "skill": "전투 스킬",
+    "ult": "필살기",
+    "talent": "특성",
+    "technique": "비술"
+  },
+  "dmgType": {
+    "single": "단일 공격",
+    "aoe": "범위 공격",
+    "bounce": "바운스",
+    "blast": "확산",
+    "support": "서포트",
+    "impair": "방해"
+  }
+}

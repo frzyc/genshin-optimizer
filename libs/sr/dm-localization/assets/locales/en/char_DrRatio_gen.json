@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Ratio",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Mind is Might",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dr. Ratio's ATK to a single target enemy.",
+        "shortDesc": "Deals minor Imaginary DMG to a single target enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Intellectual Midwifery",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dr. Ratio's ATK to a single target enemy.",
+        "shortDesc": "Deals Imaginary DMG to a single enemy."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Syllogistic Paradox",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dr. Ratio's ATK to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's allies attack a target afflicted with Wiseman's Folly, Dr. Ratio launches his Talent's <u>follow-up attack</u> for 1 time against this target.\\nWiseman's Folly can be triggered for up to {{2}} times and only affects the most recent target of Dr. Ratio's Ultimate. This trigger count resets after Dr. Ratio's Ultimate is used.",
+        "shortDesc": "Deals Imaginary DMG to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's allies attack a target afflicted with Wiseman's Folly, Dr. Ratio launches 1 <orangeStrong><u>follow-up attack</u></orangeStrong> on this target."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Mold of Idolatry",
+        "fullDesc": "After using Technique, creates a dimension that Taunts nearby enemies, lasting for {{1}} second(s). After entering battle with enemies in this dimension, there is a {{2}}% <u>base chance</u> to reduce each single enemy target's SPD by {{3}}% for {{4}} turn(s). Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a dimension. Enemies within the dimension are Taunted. After entering battle with enemies in this dimension, there is a high chance to <orangeStrong>reduce SPD</orangeStrong> of enemy targets."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Pride Comes Before a Fall",
+      "desc": "The maximum stackable count for the Trace \"Summation\" increases by {{1}}. When a battle begins, immediately obtains {{2}} stacks of Summation. Needs to unlock Summation first."
+    },
+    "2": {
+      "name": "The Divine Is in the Details",
+      "desc": "When his Talent's follow-up attack hits a target, for every debuff the target has, deals Imaginary Additional DMG equal to {{1}}% of Dr. Ratio's ATK. This effect can be triggered for a maximum of {{2}} time(s) during each follow-up attack."
+    },
+    "3": {
+      "name": "Know Thyself",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Ignorance Is Blight",
+      "desc": "When triggering the Talent, additionally regenerates {{1}} Energy for Dr. Ratio."
+    },
+    "5": {
+      "name": "Sic Itur Ad Astra",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Vincit Omnia Veritas",
+      "desc": "Additionally increases the triggerable count for Wiseman's Folly by {{1}}. The DMG dealt by the Talent's follow-up attack increases by {{2}}%."
+    }
+  }
+}

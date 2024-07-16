@@ -1,0 +1,7 @@
+{
+  "name": "Au nom du monde",
+  "passive": {
+    "name": "Successeur",
+    "description": "Les DGT du porteur sur les ennemis souffrant de malus augmentent de <orangeStrong>{{1}}%</orangeStrong>. Lorsqu'il utilise sa compétence, les chances d'appliquer des effets du porteur pour cette attaque augmentent de <orangeStrong>{{2}}%</orangeStrong>, et son ATQ de <orangeStrong>{{3}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "우리는 와일드 파이어",
+  "passive": {
+    "name": "눈물을 글썽이는 사람",
+    "description": "전투 시작 시 모든 아군이 받는 피해가 <orangeStrong>{{2}}%</orangeStrong> 감소한다. 지속 시간: {{3}}턴. 동시에 즉시 모든 아군이 각자 손실한 HP <orangeStrong>{{1}}%</orangeStrong>만큼의 HP를 회복한다"
+  }
+}

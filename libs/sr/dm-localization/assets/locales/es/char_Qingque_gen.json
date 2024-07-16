@@ -1,0 +1,71 @@
+{
+  "name": "Qingque",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Combinación oculta",
+        "fullDesc": "Lanza 1 ficha de jade del palo que menos fichas tenga e inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Qingque como Daño Cuántico a un enemigo.",
+        "shortDesc": "Lanza 1 ficha e inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+      },
+      "1": {
+        "name": "¡Fuera la ficha del muro muerto!",
+        "fullDesc": "Qingque inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Cuántico a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño Cuántico a los enemigos adyacentes.\\n\"¡Fuera la ficha del muro muerto!\" no recupera pts. de habilidad básica.",
+        "shortDesc": "Inflige Daño Cuántico a un enemigo y una pequeña cantidad de Daño Cuántico a los enemigos adyacentes."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Última ficha posible",
+        "fullDesc": "Roba {{1}} fichas de jade e inflige un <orangeStrong>{{2}}%</orangeStrong> más de daño hasta que termine el turno. Este efecto se puede acumular hasta {{3}} veces. Tras usar esta habilidad básica, el turno no termina.",
+        "shortDesc": "<orangeStrong>Roba</orangeStrong>, aumenta el daño infligido y <orangeStrong>el turno no termina</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "¿Cuatro peces ocultos? ¡Victoria!",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Qingque como Daño Cuántico a todos los enemigos y obtiene 4 fichas de jade del mismo palo.",
+        "shortDesc": "Inflige Daño Cuántico a todos los enemigos y obtiene 4 fichas del mismo palo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Desafío a mí misma",
+        "fullDesc": "Tras usar la técnica, al entrar en combate Qingque roba {{1}} fichas de jade.",
+        "shortDesc": "Tras usar la técnica, roba ficha en la siguiente batalla."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Peón coronado, premio obtenido",
+      "desc": "El daño que inflige la habilidad definitiva de Qingque aumenta en un {{1}}%."
+    },
+    "2": {
+      "name": "Hora de la siesta en las fichas",
+      "desc": "Cada vez que Qingque roba fichas, recupera inmediatamente {{1}} pt. de energía."
+    },
+    "3": {
+      "name": "Confiar en la suerte",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Combo oportuno, la última ficha espera",
+      "desc": "Tras usar su habilidad básica, Qingque tiene un {{1}}% de probabilidad fija de obtener Autosuficiencia hasta que termine el turno.\\nEn el estado de Autosuficiencia, al usar el ATQ básico o el ATQ básico potenciado, se lanza inmediatamente un ataque adicional que inflige al mismo objetivo u objetivos un Daño Cuántico equivalente al 100% del daño del ATQ básico o del ATQ básico potenciado."
+    },
+    "5": {
+      "name": "Fichas sacadas, suerte acabada",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Calma y serena, lista para ganar",
+      "desc": "Tras utilizar el ATQ básico potenciado, recupera 1 pt. de habilidad básica."
+    }
+  }
+}

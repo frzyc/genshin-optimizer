@@ -1,0 +1,66 @@
+{
+  "name": "Seele",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Prügel",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Seeles ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Ungezückte Klinge",
+        "fullDesc": "Erhöht Seeles GES für {{3}} Rd. um {{2}}% und fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> ihres ANG zu.",
+        "shortDesc": "Fügt einem Gegner Quanten-SCH zu und erhöht die GES."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Schmetterlingssturm",
+        "fullDesc": "Tritt in den verstärkten Zustand ein und fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Seeles ANG zu.",
+        "shortDesc": "Tritt in den <orangeStrong>verstärkten Zustand</orangeStrong> ein und fügt einem Gegner massiven Quanten-SCH zu."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Phantomillusion",
+        "fullDesc": "Nach dem Einsatz der Technik erhält Seele für {{1}} s Tarnung. Während Tarnung aktiv ist, ist Seele für Gegner unsichtbar und tritt zu Beginn des Kampfs sofort in den verstärkten Zustand ein, wenn sie einen Gegner aktiv angreift.",
+        "shortDesc": "Tritt in den Zustand <orangeStrong>Tarnung</orangeStrong> ein. Seele tritt zu Beginn des Kampfs sofort in den <orangeStrong>verstärkten Zustand</orangeStrong> ein, wenn sie einen Gegner aktiv angreift."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Abgeschnitten",
+      "desc": "Wenn Seele einem Gegner mit LP-Prozentsatz {{1}}% oder niedriger SCH zufügt, steigt ihre KRIT-Rate um {{2}}%."
+    },
+    "2": {
+      "name": "Schmetterlingstanz",
+      "desc": "Der Effekt der GES-Erhöhung von der Fertigkeit ist bis zu {{1}}-mal stapelbar."
+    },
+    "3": {
+      "name": "Geblendet",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Ein kurzer Blick",
+      "desc": "Besiegt Seele einen Gegner, erhält sie {{1}} Pkt. Energie zurück."
+    },
+    "5": {
+      "name": "Scharfe Sinne, scharfer Geist",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Trennung",
+      "desc": "Der Ultimate verursacht beim getroffenen Gegner für {{2}} Rd. den Status „Schmetterlingssturm“. Gegner im Schmetterlingssturm erleiden bei Treffern 1-mal zusätzlich Quanten-SCH in Höhe von {{1}}% von Seeles Ultimate-SCH. Wenn ein anderer Verbündeter das Ziel durch den zusätzlichen SCH von „Schmetterlingssturm“ besiegt, wird Seeles Talent nicht ausgelöst.\\nIst Seele handlungsunfähig, wird der Status „Schmetterlingssturm“ vom Gegner entfernt."
+    }
+  }
+}

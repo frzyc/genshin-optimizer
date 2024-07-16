@@ -1,0 +1,7 @@
+{
+  "name": "Amber",
+  "passive": {
+    "name": "Stasis",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DEF pengguna. Saat HP pengguna saat ini kurang dari {{2}}%, DEF pengguna akan mendapat <orangeStrong>{{3}}%</orangeStrong> peningkatan tambahan."
+  }
+}

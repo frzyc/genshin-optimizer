@@ -1,0 +1,7 @@
+{
+  "name": "於夜色中",
+  "passive": {
+    "name": "花與蝶",
+    "description": "使裝備者的暴擊率提高<orangeStrong>{{1}}%</orangeStrong>。當裝備者在戰鬥中速度高於100時，每超過{{2}}點，普通攻擊和戰技造成的傷害便提高<orangeStrong>{{3}}%</orangeStrong>、終結技暴擊傷害亦提高<orangeStrong>{{4}}%</orangeStrong>，該效果可疊加{{5}}層。"
+  }
+}

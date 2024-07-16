@@ -1,0 +1,7 @@
+{
+  "name": "Na Noite",
+  "passive": {
+    "name": "Flores e Borboletas",
+    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> a Chance de CRIT do usuário. Enquanto o usuário estiver em batalha, para cada {{2}} de VEL acima de 100, aumenta em <orangeStrong>{{3}}%</orangeStrong> o Dano do ATQ Básico e da Perícia do usuário, e o Dano CRIT da sua Perícia Suprema aumenta em <orangeStrong>{{4}}%</orangeStrong>. Este efeito acumula até {{5}} vez(es)."
+  }
+}

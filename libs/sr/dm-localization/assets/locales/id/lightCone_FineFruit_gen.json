@@ -1,0 +1,7 @@
+{
+  "name": "Fine Fruit",
+  "passive": {
+    "name": "Savor",
+    "description": "Saat pertempuran dimulai, segera memulihkan <orangeStrong>{{1}}</orangeStrong> Energy seluruh rekan tim."
+  }
+}

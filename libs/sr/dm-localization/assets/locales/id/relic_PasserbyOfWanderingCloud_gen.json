@@ -1,0 +1,7 @@
+{
+  "setName": "Passerby of Wandering Cloud",
+  "setEffects": {
+    "2": "Outgoing Healing +{{1}}%",
+    "4": "Segera memulihkan 1 Poin Skill saat pertempuran dimulai."
+  }
+}

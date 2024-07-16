@@ -1,0 +1,7 @@
+{
+  "name": "고민, 그리고 행복",
+  "passive": {
+    "name": "한 번에 하나씩",
+    "description": "장착한 캐릭터의 치명타 확률이 <orangeStrong>{{1}}%</orangeStrong> 증가하고, 추가 공격으로 가하는 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가한다. 장착한 캐릭터가 추가 공격을 발동하면 목표가 [온순] 상태에 빠진다. 해당 효과 최대 중첩수: {{4}}스택. 아군이 [온순] 상태의 적을 명중하면 [온순] 스택마다 가하는 치명타 피해가 <orangeStrong>{{3}}%</orangeStrong> 증가한다"
+  }
+}

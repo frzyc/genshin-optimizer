@@ -1,0 +1,66 @@
+{
+  "name": "Serval",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Coup de tonnerre rugissant",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Serval à un ennemi unique.",
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Éclair rapide",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Serval à un ennemi unique et des DGT de foudre équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Serval aux ennemis adjacents, avec {{3}}% de <u>chances de base</u> de stupéfier les ennemis touchés pendant {{4}} tours.\\nLes ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à <orangeStrong>{{5}}%</orangeStrong> de l'ATQ de Serval au début de chaque tour.",
+        "shortDesc": "Inflige des DGT de foudre à un ennemi et aux cibles adjacentes, avec de fortes chances de provoquer <orangeStrong>Stupéfaction</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Fièvre mécanique",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Serval à tous les ennemis. Augmente la durée de l'effet Stupéfaction de {{2}} tours pour les ennemis souffrant déjà de cet effet.",
+        "shortDesc": "Inflige des DGT de foudre à tous les ennemis et augmente la durée de Stupéfaction."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Bonsoir Belobog",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT de foudre équivalents à {{4}}% de l'ATQ de Serval à un ennemi aléatoire après être entré en combat, avec {{1}}% de <u>chances de base</u> que tous les ennemis soient stupéfiés pendant {{3}} tours.\\nLes ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à {{2}}% de l'ATQ de Serval au début de chaque tour.",
+        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT mineurs de foudre à un ennemi unique aléatoire, avec de fortes chances d'appliquer <orangeStrong>Stupéfaction</orangeStrong> à toutes les cibles ennemies après être entré en combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Écho",
+      "desc": "L'ATQ normale inflige des DGT de foudre équivalents à {{1}}% des DGT de l'ATQ normale à un ennemi aléatoire adjacent à la cible."
+    },
+    "2": {
+      "name": "Encore !",
+      "desc": "Chaque fois que le talent de Serval se déclenche pour infliger des DGT additionnels, elle régénère {{1}} points d'énergie."
+    },
+    "3": {
+      "name": "Battements mécaniques",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Faites du bruit !",
+      "desc": "L'ultime a {{1}}% de chances de base d'appliquer l'effet Stupéfaction à un ennemi qui n'est pas déjà stupéfié. L'effet est le même que celui infligé par la compétence."
+    },
+    "5": {
+      "name": "Le plus gros son de Belobog !",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Une chanson qui envoie du lourd !",
+      "desc": "Les DGT de Serval augmentent de {{1}}% sur les ennemis stupéfiés."
+    }
+  }
+}

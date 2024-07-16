@@ -1,0 +1,7 @@
+{
+  "name": "Darting Arrow",
+  "passive": {
+    "name": "War Cry",
+    "description": "หลังจากที่ผู้สวมใส่กำจัดศัตรูเป้าหมายได้ จะทำให้ ATK เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เป็นเวลา {{2}} เทิร์น"
+  }
+}

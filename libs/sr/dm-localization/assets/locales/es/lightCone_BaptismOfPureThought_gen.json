@@ -1,0 +1,7 @@
+{
+  "name": "El bautismo del pensamiento puro",
+  "passive": {
+    "name": "Entrenamiento mental",
+    "description": "El Daño CRIT del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Por cada estado negativo que tenga el objetivo, el Daño CRIT que le inflige el portador aumenta en un <orangeStrong>{{2}}%</orangeStrong>. Se puede acumular hasta {{3}} veces. Al atacar a un objetivo con la habilidad definitiva, el portador obtiene el efecto Disputa, el daño que inflige aumenta en un <orangeStrong>{{4}}%</orangeStrong> y sus ataques adicionales ignoran un <orangeStrong>{{5}}%</orangeStrong> de la DEF del objetivo. Este efecto dura {{6}} turnos."
+  }
+}

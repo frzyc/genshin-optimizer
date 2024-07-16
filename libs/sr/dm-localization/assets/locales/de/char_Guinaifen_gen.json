@@ -1,0 +1,66 @@
+{
+  "name": "Guinaifen",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Stehende Ovation",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Guinaifens ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Herzliche Begrüßung",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> und angrenzenden Einheiten Feuer-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Guinaifens ANG zu. Verursacht beim Ziel und angrenzenden Einheiten mit einer <u>Grundchance</u> von {{3}}% Brennen. Brennende Gegner erleiden für {{5}} Rd. zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Guinaifens ANG.",
+        "shortDesc": "Fügt einem Gegner Feuer-SCH und angrenzenden Einheiten geringen Feuer-SCH zu. Verursacht mit hoher Chance <orangeStrong>Brennen</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Erstklassige Show",
+        "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Guinaifens ANG zu. Wenn Ziele von Brennen betroffen sind, verursacht das Brennen sofort SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> des ursprünglichen SCH.",
+        "shortDesc": "Fügt allen Gegnern Feuer-SCH zu. Gegner mit dem Status Brennen erleiden zusätzlich 1-mal SCH durch Brennen."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Demonstration der Fähigkeiten",
+        "fullDesc": "Greift den Gegner unmittelbar an. Verursacht nach Kampfeintritt {{2}}-mal SCH, wobei jedes Mal einem zufälligen Gegner Feuer-SCH in Höhe von {{1}}% von Guinaifens ANG zugefügt wird und eine <u>Grundchance</u> von {{3}}% besteht, „Feuer spucken“ bei ihm zu verursachen.",
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem Gegner geringen Feuer-SCH zu und verursacht <orangeStrong>„Feuer spucken“</orangeStrong>. Dieser Angriff prallt 4-mal ab."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Nudeln kopfüber essen",
+      "desc": "Beim Einsatz der Fertigkeit besteht eine Grundchance von {{1}}%, den Effekt-WDS des angegriffenen Gegners für {{3}} Rd. um {{2}}% zu reduzieren."
+    },
+    "2": {
+      "name": "Zähne putzen und dabei pfeifen",
+      "desc": "Wenn der Gegner von Brennen betroffen ist, erhöhen Guinaifens Standardangriff und Fertigkeit den SCH-Multiplikator seines Status Brennen um {{1}}%."
+    },
+    "3": {
+      "name": "Felsbrocken auf der Brust zerschmettern",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Speer balancieren",
+      "desc": "Jedes Mal, wenn ein Gegner SCH durch von Guinaifen verursachtes Brennen erleidet, wird Energie für Guinaifen um {{1}} Pkt. wiederhergestellt."
+    },
+    "5": {
+      "name": "Schwert schlucken",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Kugeln mit den Händen fangen",
+      "desc": "Erhöht die Anzahl der möglichen Stapelungen von „Feuer spucken“ um {{1}}."
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Pela",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Frost Shot",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Pela's ATK to a single target enemy.",
+        "shortDesc": "Deals minor Ice DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Frostbite",
+        "fullDesc": "Removes {{2}} <u>buff(s)</u> and deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Pela's ATK to a single target enemy.",
+        "shortDesc": "<orangeStrong>Dispels</orangeStrong> 1 <orangeStrong><u>buff</u></orangeStrong> from a single enemy target, and deals Ice DMG to the target enemy."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Zone Suppression",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{4}}%</orangeStrong> of Pela's ATK to all enemies, with a {{1}}% <u>base chance</u> to inflict Exposed on all enemies.\\nWhen Exposed, enemies' DEF is reduced by <orangeStrong>{{2}}%</orangeStrong> for {{3}} turn(s).",
+        "shortDesc": "Has a high chance of <orangeStrong>lowering enemies' DEF</orangeStrong> and deals minor Ice DMG to all enemies."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Preemptive Strike",
+        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Pela deals Ice DMG equal to {{4}}% of her ATK to a random enemy, with a {{1}}% <u>base chance</u> of lowering the DEF of all enemies by {{2}}% for {{3}} turn(s).",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor DMG to a random single enemy, with a high chance of lowering the DEF of all enemy targets."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Victory Report",
+      "desc": "When an enemy is defeated, Pela regenerates {{1}} Energy."
+    },
+    "2": {
+      "name": "Adamant Charge",
+      "desc": "Using Skill to remove buff(s) increases SPD by {{1}}% for {{2}} turn(s)."
+    },
+    "3": {
+      "name": "Suppressive Force",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Full Analysis",
+      "desc": "When Skill is used, there is a {{1}}% base chance to reduce the target enemy's Ice RES by {{2}}% for {{3}} turn(s)."
+    },
+    "5": {
+      "name": "Absolute Jeopardy",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Feeble Pursuit",
+      "desc": "When Pela attacks a debuffed enemy, she deals Additional Ice DMG equal to {{1}}% of Pela's ATK to the enemy."
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Himeko",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Sawblade Tuning",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Himeko's ATK to a single enemy.",
+        "shortDesc": "Deals minor Fire DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Molten Detonation",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Himeko's ATK to a single enemy and Fire DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Himeko's ATK to enemies adjacent to it.",
+        "shortDesc": "Deals Fire DMG to a single enemy and minor Fire DMG to enemies adjacent to it."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Heavenly Flare",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Himeko's ATK to all enemies. Himeko regenerates {{2}} extra Energy for each enemy defeated.",
+        "shortDesc": "Deals Fire DMG to all enemies and regenerates Energy if enemies are defeated."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Incomplete Combustion",
+        "fullDesc": "After using Technique, creates a dimension that lasts for {{4}} second(s). After entering battle with enemies in the dimension, there is a {{1}}% <u>base chance</u> to increase Fire DMG taken by enemies by {{2}}% for {{3}} turn(s). Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a dimension. After entering combat with enemies in the dimension, there is a high chance to <orangeStrong>increase Fire DMG taken by enemies</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Childhood",
+      "desc": "After \"Victory Rush\" is triggered, Himeko's SPD increases by {{1}}% for {{2}} turn(s)."
+    },
+    "2": {
+      "name": "Convergence",
+      "desc": "Deals {{2}}% more DMG to enemies whose HP percentage is {{1}}% or less."
+    },
+    "3": {
+      "name": "Poised",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Dedication",
+      "desc": "When Himeko's Skill inflicts Weakness Break on an enemy, she gains {{1}} extra point(s) of Charge."
+    },
+    "5": {
+      "name": "Aspiration",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Trailblaze!",
+      "desc": "Ultimate deals DMG 2 extra times, each of which deals Fire DMG equal to {{1}}% of the original DMG to a random enemy."
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Yanqing",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Espinho Congelado",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Yanqing a um único inimigo.",
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Espinho de Ferro Veloz",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Yanqing a um único inimigo e ativa a Sincronia d'Alma de Ferro por 1 rodada.",
+        "shortDesc": "Causa Dano de Gelo a um único inimigo e ativa a Sincronia d'Alma de Ferro."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Em Meio à Chuva de Bênçãos",
+        "fullDesc": "Aumenta a Chance de CRIT de Yanqing em {{1}}%. Quando a Sincronia d'Alma de Ferro está ativa, aumenta o Dano CRIT de Yanqing em mais <orangeStrong>{{2}}%</orangeStrong>. Essa <u>melhoria</u> dura por uma rodada. Depois, causa Dano de Gelo igual a <orangeStrong>{{3}}%</orangeStrong> do ATQ de Yanqing a um único inimigo.",
+        "shortDesc": "Aumenta a Chance de CRIT de Yanqing. Aprimora a Sincronia d'Alma de Ferro e causa Dano de Gelo massivo a um único inimigo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "A Verdadeira Espada",
+        "fullDesc": "Após usar sua Técnica, no início da próxima batalha, Yanqing causa {{2}}% a mais de Dano por {{3}} rodada(s) a inimigos que, no momento, têm PV igual ou superior a {{1}}%.",
+        "shortDesc": "Depois que este personagem usa sua Técnica, no início da próxima batalha, aumenta o Dano causado por este personagem a inimigos-alvo com PV em 50% ou mais."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Sabre Esbelto",
+      "desc": "Quando Yanqing ataca um inimigo com Congelamento, ele causa {{1}}% de seu ATQ como Dano de Gelo Adicional."
+    },
+    "2": {
+      "name": "Serenata do Supino",
+      "desc": "Quando a Sincronia d'Alma de Ferro estiver ativa, a Taxa de Regeneração de Energia aumenta em {{1}}% extra."
+    },
+    "3": {
+      "name": "Espada Erudita",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Perfuração Flamejante",
+      "desc": "Quando os PV atuais estiverem em {{1}}% ou mais, a PEN de RES a Gelo aumenta em {{2}}%."
+    },
+    "5": {
+      "name": "Conflito Crescente",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Ataque Rápido",
+      "desc": "Se as melhorias de Sincronia d'Alma de Ferro ou da Perícia Suprema estiverem em efeito quando o inimigo for derrotado, a duração desses bônus é estendida em 1 rodada."
+    }
+  }
+}

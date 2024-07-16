@@ -1,0 +1,66 @@
+{
+  "name": "Sushang",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Técnica de espada de la Nimbocaballera: Halo estelar",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Sushang como Daño Físico a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Técnica de espada de la Nimbocaballera: Caída",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Sushang como Daño Físico a un enemigo. Además, hay una probabilidad del {{3}}% de activar Postura espadachina tras el último golpe e infligir al objetivo un Daño Físico <u>adicional</u> equivalente al <orangeStrong>{{2}}%</orangeStrong> del ATQ de Sushang.\\nSi el objetivo está afectado por <u>Ruptura de Debilidad</u>, la activación de Postura espadachina estará garantizada.",
+        "shortDesc": "Inflige Daño Físico a un enemigo y tiene una <orangeStrong>pequeña probabilidad de activar Postura espadachina</orangeStrong>. Si el objetivo está afectado por <u>Ruptura de Debilidad</u>, <orangeStrong>la activación de Postura espadachina estará garantizada</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Forma de Taixu: Heraldo del alba",
+        "fullDesc": "Sushang inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y vuelve a actuar inmediatamente. Además, su ATQ aumenta en un <orangeStrong>{{4}}%</orangeStrong> y al usar la habilidad básica tiene 2 oportunidades extra de activar Postura espadachina durante {{2}} turnos.\\nSi Postura espadachina se activa con las oportunidades extra, el daño que inflige es un {{3}}% del daño original.",
+        "shortDesc": "Inflige una gran cantidad de Daño Físico a un enemigo, potencia el efecto de Postura espadachina y <orangeStrong>realiza otra acción inmediatamente</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Técnica de espada de la Nimbocaballera: Premura",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1}}% del ATQ de Sushang como Daño Físico a todos los enemigos.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Físico a todos los enemigos."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Corte fácil",
+      "desc": "Recupera 1 pt. de habilidad básica tras usar la habilidad básica contra un objetivo afectado por Ruptura de Debilidad."
+    },
+    "2": {
+      "name": "Cuerpo entrenado",
+      "desc": "Tras activar Postura espadachina, el daño que recibe Sushang se reduce en un {{1}}% durante 1 turno."
+    },
+    "3": {
+      "name": "Antiguo estilo de espada",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Mente aguda",
+      "desc": "El efecto de Ruptura de Sushang aumenta en un {{1}}%."
+    },
+    "5": {
+      "name": "Voluntad de Taixu",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Como el agua",
+      "desc": "El efecto de aumento de VEL del talento se puede acumular hasta 2 veces. Además, tras entrar en combate, Sushang obtiene inmediatamente una acumulación del efecto de aumento de VEL del talento."
+    }
+  }
+}

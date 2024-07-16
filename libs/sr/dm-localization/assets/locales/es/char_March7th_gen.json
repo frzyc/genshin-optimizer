@@ -1,0 +1,66 @@
+{
+  "name": "Siete de Marzo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Flecha helada",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Siete de Marzo como Daño de Hielo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "El poder de la belleza",
+        "fullDesc": "Otorga a un aliado un escudo que absorbe un daño equivalente al <orangeStrong>{{1}}%</orangeStrong> de la DEF de Siete de Marzo + <orangeStrong>{{4}}</orangeStrong> durante {{2}} turnos.\\nSi el porcentaje de PV de ese aliado es igual o superior al {{3}}%, la probabilidad de que reciba un ataque enemigo será mucho mayor.",
+        "shortDesc": "Otorga un <orangeStrong>escudo</orangeStrong> a un aliado."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lluvia glacial",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Siete de Marzo como Daño de Hielo a todos los enemigos. Cada enemigo atacado tiene un {{2}}% de <u>probabilidad base</u> de ser afectado por Congelación durante {{3}} turno.\\nLos enemigos congelados no pueden actuar, y al principio de cada turno reciben un <orangeStrong>{{4}}%</orangeStrong> del ATQ de Siete de Marzo como Daño de Hielo <u>adicional</u>.",
+        "shortDesc": "Inflige Daño de Hielo a <orangeStrong>todos los enemigos</orangeStrong> y hay una <orangeStrong>probabilidad de congelarlos</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Belleza heladora",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Tiene un {{1}}% de <u>probabilidad base</u> de afectar con Congelación a un enemigo al azar durante {{2}} turno.\\nLos enemigos congelados no pueden actuar, y al principio de cada turno reciben un {{3}}% del ATQ de Siete de Marzo como Daño de Hielo <u>adicional</u>.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Gran probabilidad de afectar con Congelación a un enemigo al azar."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tu imagen en el recuerdo",
+      "desc": "Cada vez que la habilidad definitiva congela a un objetivo, Siete de Marzo recupera {{1}} pts. de energía."
+    },
+    "2": {
+      "name": "Su imagen en el recuerdo",
+      "desc": "Al entrar en combate, el aliado con menor porcentaje de PV obtiene un escudo equivalente al {{1}}% de la DEF de Siete de Marzo + {{3}} durante {{2}} turnos."
+    },
+    "3": {
+      "name": "Todo en el recuerdo",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "No quiero perder",
+      "desc": "El efecto de contraataque del talento puede activarse una vez más en cada turno. Además, la cantidad de daño que inflige el contraataque aumenta en el equivalente al {{1}}% de la DEF de Siete de Marzo."
+    },
+    "5": {
+      "name": "No quiero olvidar",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Así, siempre...",
+      "desc": "Los aliados protegidos por el escudo de la habilidad básica regeneran un {{1}}% de sus PV máx. + {{2}} PV al principio de cada turno."
+    }
+  }
+}

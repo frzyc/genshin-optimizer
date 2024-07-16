@@ -1,0 +1,6 @@
+{
+  "setName": "Belobog Của Đấng Kiến Tạo",
+  "setEffects": {
+    "2": "Tăng {{1}}% Phòng Thủ của người trang bị. Khi Chính Xác Hiệu Ứng của người trang bị từ {{2}}% trở lên, Phòng Thủ tăng thêm {{3}}%."
+  }
+}

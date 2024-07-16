@@ -1,0 +1,7 @@
+{
+  "name": "Ở Nơi Xa Ngọn Lửa",
+  "passive": {
+    "name": "Bùng Nổ",
+    "description": "Khi người trang bị trong 1 lần bị tấn công tích lũy lượng HP tổn thất vượt quá {{1}}% Giới Hạn HP, hoặc tiêu hao HP bản thân trong 1 lần vượt quá {{1}}% Giới Hạn HP, sẽ hồi ngay HP bằng {{3}}% Giới Hạn HP của người trang bị, đồng thời tăng <orangeStrong>{{2}}%</orangeStrong> Sát Thương do người trang bị gây ra, duy trì {{4}} hiệp. Hiệu ứng này mỗi {{5}} hiệp chỉ có thể kích hoạt 1 lần."
+  }
+}

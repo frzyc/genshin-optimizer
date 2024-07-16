@@ -1,0 +1,66 @@
+{
+  "name": "Asta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Spektralstrahl",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Astas ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Meteoritensturm",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Astas ANG zu. Löst zusätzlich 4 Angriffe gegen zufällige Gegner aus, die jeweils Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Astas ANG verursachen.",
+        "shortDesc": "Fügt einem Gegner mit insgesamt 5-mal Abprall geringen Feuer-SCH zu."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Astraler Segen",
+        "fullDesc": "Erhöht die GES aller Verbündeten für {{2}} Rd. um <orangeStrong>{{1}}</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Erhöht die GES</orangeStrong> aller Verbündeten."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Wunderblitz",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Feuer-SCH in Höhe von {{1}}% von Astas ANG zu.",
+        "shortDesc": "Greift Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen SCH zu."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Das wortlose Lied eines Sterns",
+      "desc": "Fügt beim Einsatz der Fertigkeit einem zufälligen Gegner 1-mal zusätzlichen SCH zu."
+    },
+    "2": {
+      "name": "Der Mond versteht seinen Zyklus",
+      "desc": "Beim Einsatz des Ultimates werden Astas Aufladestapelungen für die nächste Runde nicht verringert."
+    },
+    "3": {
+      "name": "Der Wandel des ekliptischen Meteoriten",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Wenn die Morgenröte sich manifestiert",
+      "desc": "Erhöht Astas Energie- Wiederherstellungsrate um {{2}}%, wenn sie {{1}} oder mehr Aufladestapelungen hat."
+    },
+    "5": {
+      "name": "Geheimnis ferner Objekte im All",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Schlafen unter der Milchstraße",
+      "desc": "Die Aufladestapelungen des Talents werden pro Runde um {{1}} weniger verringert."
+    }
+  }
+}

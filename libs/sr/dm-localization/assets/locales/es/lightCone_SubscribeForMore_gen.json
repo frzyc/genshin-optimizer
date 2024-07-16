@@ -1,0 +1,7 @@
+{
+  "name": "¡Suscríbanse a mi canal!",
+  "passive": {
+    "name": "¡No se vayan sin darme un like!",
+    "description": "El daño que infligen el ATQ básico y la habilidad básica del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando la energía del portador está al máximo, el efecto aumenta en un <orangeStrong>{{2}}%</orangeStrong> adicional."
+  }
+}

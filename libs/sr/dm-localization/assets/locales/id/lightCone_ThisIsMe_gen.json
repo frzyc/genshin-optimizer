@@ -1,0 +1,7 @@
+{
+  "name": "This Is Me!",
+  "passive": {
+    "name": "New Chapter",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DEF pengguna. Meningkatkan Ultimate DMG pengguna sebesar <orangeStrong>{{2}}%</orangeStrong> DEF pengguna. Efek ini hanya berlaku 1 kali per target musuh saat setiap melancarkan Ultimate."
+  }
+}

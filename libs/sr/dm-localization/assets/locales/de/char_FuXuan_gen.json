@@ -1,0 +1,66 @@
+{
+  "name": "Fu Xuan",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Sternschlag",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> der max. LP von Fu Xuan zu.",
+        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Astronomisches Wunder",
+        "fullDesc": "Aktiviert die „Matrix der Voraussicht“. Für {{3}} Rd. wird {{1}}% des SCH, den Fu Xuans Verbündete erleiden (und bevor dieser Schaden durch eventuell vorhandene Schilde absorbiert wird), mit Fu Xuan <u>geteilt</u>.\\nAlle Verbündeten, die von der „Matrix der Voraussicht“ betroffen sind, erhalten den Status „Wissen“, der ihre max. LP um <orangeStrong>{{4}}%</orangeStrong> der max. LP von Fu Xuan und ihre KRIT-Rate um <orangeStrong>{{5}}%</orangeStrong> erhöht.\\nWenn Fu Xuan <u>handlungsunfähig</u> wird, verschwindet die „Matrix der Voraussicht“.",
+        "shortDesc": "Aktiviert die „Matrix der Voraussicht“, wodurch <orangeStrong>der erlittene SCH</orangeStrong> von Verbündeten mit Fu Xuan <u>geteilt</u> wird. <orangeStrong>Erhöht die KRIT-Rate</orangeStrong> und die max. LP aller Verbündeten."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ultimative Evolution",
+        "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> der max. LP von Fu Xuan zu und verleiht 1 Auslösepunkt für die LP-Wiederherstellung von Fu Xuans Talent.",
+        "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und erhöht die Auslösungsanzahl von Fu Xuans Talent."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Die Gunst des Schicksals",
+        "fullDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten für {{1}} Sek. eine Barriere. Diese Barriere blockt alle gegnerischen Angriffe ab und die Verbündeten treten nicht in den Kampf ein. Beim Kampfeintritt während der Wirkungszeit der Barriere wird Fu Xuans „Matrix der Voraussicht“ automatisch für {{2}} Rd. aktiviert.",
+        "shortDesc": "Aktiviert eine Barriere. Verbündete treten nicht in den Kampf ein, wenn sie von Gegnern angegriffen werden. Beim Kampfeintritt wird die „Matrix der Voraussicht“ automatisch aktiviert."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und reduziert nach Kampfeintritt den Widerstand des gegnerischen Ziels des entsprechenden Typs.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Zyklus von Leben und Tod",
+      "desc": "„Wissen“ erhöht KRIT-SCH um {{1}}%."
+    },
+    "2": {
+      "name": "Verheißungsvolles Omen",
+      "desc": "Wenn ein Verbündeter von einem Todesstoß getroffen wird, während die Matrix der Voraussicht aktiv ist, bleiben alle Verbündeten, die während dieser Aktion von einem Todesstoß getroffen wurden, davon nicht handlungsunfähig und {{1}}% ihrer max. LP werden sofort wiederhergestellt. Dieser Effekt kann 1-mal pro Kampf ausgelöst werden."
+    },
+    "3": {
+      "name": "Gottheit der Pflicht",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Gunstvoller Stern",
+      "desc": "Wenn andere Verbündete unter „Matrix der Vorraussicht“ angegriffen werden, stellt Fu Xuan {{1}} Pkt. Energie wieder her."
+    },
+    "5": {
+      "name": "Wahre Wahrsagerin",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Wiederaufleben",
+      "desc": "Sobald die „Matrix der Voraussicht“ aktiviert ist, werden die gesamten LP, die alle Verbündeten im aktuellen Kampf verloren haben, addiert. Der Ultimate-SCH von Fu Xuan erhöht sich um {{1}}% der gesamten LP, die alle Verbündeten im aktuellen Kampf verloren haben.\\nDie von allen Verbündeten im aktuellen Kampf verlorenen LP sind auf {{2}}% der max. LP von Fu Xuan begrenzt. Dieser Wert wird zurückgesetzt und neu angesammelt, nachdem Fu Xuans Ultimate eingesetzt wurde."
+    }
+  }
+}

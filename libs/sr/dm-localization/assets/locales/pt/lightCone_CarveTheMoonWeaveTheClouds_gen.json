@@ -1,0 +1,7 @@
+{
+  "name": "Esculpindo a Lua, Tecendo as Nuvens",
+  "passive": {
+    "name": "Segredo",
+    "description": "No início da batalha, sempre que a rodada do usuário se inicia, um dos seguintes efeitos é aplicado aleatoriamente: aumenta o ATQ de todos os aliados em <orangeStrong>{{1}}%</orangeStrong>, aumenta o Dano CRIT de todos os aliados em <orangeStrong>{{2}}%</orangeStrong> ou aumenta a Taxa de Regeneração de Energia de todos os aliados em <orangeStrong>{{3}}%</orangeStrong>. O efeito aplicado não pode ser idêntico ao último efeito aplicado e substituirá o efeito anterior. O efeito aplicado será removido quando o usuário for derrotado. Efeitos de tipos similares não podem ser acumulados."
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "name": "Nhà Khai Phá (Vật Lý • Hủy Diệt)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Trận Đánh Chia Tay",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Trận Chiến Cuối Cùng",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định và mục tiêu lân cận kẻ đó tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
+        "shortDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch và mục tiêu lân cận."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Át Chủ Bài Ma Thuật",
+        "fullDesc": "Chọn 1 trong 2 chế độ tấn công để ra đòn toàn lực.\\nToàn Thắng - Trận Đánh Chia Tay: Gây cho 1 kẻ địch chỉ định Sát Thương Vật Lý tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Nhà Khai Phá.\\nToàn Thắng - Trận Chiến Cuối Cùng: Gây cho 1 kẻ địch chỉ định Sát Thương Vật Lý tương đương <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Nhà Khai Phá, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Vật Lý tương đương <orangeStrong>{{3}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
+        "shortDesc": "Chọn cách tấn công đơn lẻ hoặc đánh lan để ra đòn toàn lực."
+      },
+      "1": {
+        "name": "Toàn Thắng - Trận Đánh Chia Tay",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
+        "shortDesc": "Gây lượng lớn Sát Thương Vật Lý cho 1 kẻ địch."
+      },
+      "2": {
+        "name": "Toàn Thắng - Trận Chiến Cuối Cùng",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Nhà Khai Phá, đồng thời gây Sát Thương Vật Lý cho mục tiêu lân cận kẻ đó bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
+        "shortDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch và mục tiêu lân cận kẻ đó."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Đòn Đánh Bất Diệt",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ hồi ngay HP cho toàn thể phe ta tương đương {{1}}% Giới Hạn HP của mỗi người.",
+        "shortDesc": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ánh Sao Soi Chiếu Vạn Giới",
+      "desc": "Khi thi triển Tuyệt Kỹ để tiêu diệt mục tiêu phe địch, Nhà Khai Phá hồi thêm {{1}} điểm Năng Lượng, hiệu ứng này mỗi lần tấn công chỉ có thể kích hoạt 1 lần."
+    },
+    "2": {
+      "name": "Nhân Duyên Hợp Tan",
+      "desc": "Sau khi tấn công, nếu kẻ địch bị đánh trúng có Điểm Yếu là thuộc tính vật lý, sẽ hồi HP bằng {{1}}% Tấn Công của Nhà Khai Phá."
+    },
+    "3": {
+      "name": "Lời Thì Thầm Dẫn Dắt",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Khoảnh Khắc Chứng Kiến Huỷ Diệt",
+      "desc": "Khi đánh trúng kẻ địch trong trạng thái Phá Vỡ Điểm Yếu, Tỷ Lệ Bạo Kích tăng {{1}}%."
+    },
+    "5": {
+      "name": "Hy Vọng Tái Sinh",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Ý Chí Khai Phá Vũ Trụ",
+      "desc": "Khi Nhà Khai Phá tiêu diệt mục tiêu phe địch cũng sẽ kích hoạt Thiên Phú."
+    }
+  }
+}

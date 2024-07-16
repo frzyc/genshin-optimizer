@@ -1,0 +1,66 @@
+{
+  "name": "Pela",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Disparo helado",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Pela como Daño de Hielo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Escarcha",
+        "fullDesc": "Elimina {{2}} <u>efecto positivo</u> de un enemigo y le inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Pela como Daño de Hielo.",
+        "shortDesc": "<orangeStrong>Elimina</orangeStrong> 1 <orangeStrong><u>efecto positivo</u></orangeStrong> de un enemigo y le inflige Daño de Hielo."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Supresión de área",
+        "fullDesc": "Cada enemigo tiene una <u>probabilidad base</u> del {{1}}% de ser afectado por Desprotección. Además, inflige un <orangeStrong>{{4}}%</orangeStrong> del ATQ de Pela como Daño de Hielo a todos los enemigos.\\nLa DEF de los enemigos afectados por Desprotección se reduce en un <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turnos.",
+        "shortDesc": "Gran probabilidad de <orangeStrong>reducir la DEF</orangeStrong> del enemigo. Inflige una pequeña cantidad de Daño de Hielo a todos los enemigos."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Iniciadora",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{4}}% del ATQ de Pela como Daño de Hielo a un enemigo al azar. Además, cada enemigo tiene una <u>probabilidad base</u> del {{1}}% de ver reducida su DEF en un {{2}}% durante {{3}} turnos.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de daño a un enemigo al azar. Además, cada enemigo tiene una gran probabilidad de ver reducida su DEF."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Informe de victoria",
+      "desc": "Cuando se elimina a un enemigo, Pela recupera {{1}} pts. de energía."
+    },
+    "2": {
+      "name": "Avance rápido",
+      "desc": "Cuando la habilidad básica elimina un efecto positivo de un enemigo, la VEL aumenta en un {{1}}% durante {{2}} turnos."
+    },
+    "3": {
+      "name": "Fuerza supresora",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Análisis completo",
+      "desc": "Al usar la habilidad básica, hay una probabilidad base del {{1}}% de reducir la RES a Hielo del enemigo en un {{2}}% durante {{3}} turnos."
+    },
+    "5": {
+      "name": "Riesgo absoluto",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Persecución débil",
+      "desc": "Al lanzar un ataque, si el objetivo tiene algún estado negativo, Pela le inflige un {{1}}% de su ATQ como Daño de Hielo adicional."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "齊頌",
+  "passive": {
+    "name": "協力",
+    "description": "進入戰鬥後，使我方全體的攻擊力提高<orangeStrong>{{1}}%</orangeStrong>。同類技能無法重複生效。"
+  }
+}

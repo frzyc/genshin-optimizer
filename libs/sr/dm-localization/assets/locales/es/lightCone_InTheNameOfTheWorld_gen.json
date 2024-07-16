@@ -1,0 +1,7 @@
+{
+  "name": "En nombre del mundo",
+  "passive": {
+    "name": "Herencia",
+    "description": "El portador inflige un <orangeStrong>{{1}}%</orangeStrong> más de daño a los enemigos afectados por estados negativos. Cuando el portador usa su habilidad básica, su acierto de efecto en ese ataque aumenta en un <orangeStrong>{{2}}%</orangeStrong> y su ATQ en un <orangeStrong>{{3}}%</orangeStrong>."
+  }
+}

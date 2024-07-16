@@ -1,0 +1,35 @@
+{
+  "type": {
+    "Physical": "Físico",
+    "Quantum": "Quântico",
+    "Lightning": "Raio",
+    "Ice": "Gelo",
+    "Wind": "Vento",
+    "Fire": "Fogo",
+    "Imaginary": "Imaginário"
+  },
+  "path": {
+    "Erudition": "A Erudição",
+    "Preservation": "A Preservação",
+    "Abundance": "A Abundância",
+    "Nihility": "A Inexistência",
+    "Destruction": "A Destruição",
+    "Harmony": "A Harmonia",
+    "TheHunt": "A Caça"
+  },
+  "ability": {
+    "basic": "ATQ Básico",
+    "skill": "Perícia",
+    "ult": "Perícia Suprema",
+    "talent": "Talento",
+    "technique": "Técnica"
+  },
+  "dmgType": {
+    "single": "Alvo Único",
+    "aoe": "Área",
+    "bounce": "Rebote",
+    "blast": "Explosão",
+    "support": "Suporte",
+    "impair": "Incapacitação"
+  }
+}

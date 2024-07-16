@@ -1,0 +1,66 @@
+{
+  "name": "Misha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "E—Excuse Me, Please!",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Misha pada satu musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "R—Room Service!",
+        "fullDesc": "Menambah {{3}} Hit untuk Hits Per Action Ultimate Misha yang berikutnya. Mengakibatkan Ice DMG pada 1 musuh yang ditargetkan sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Misha, dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Misha pada target di sekitarnya.",
+        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh dan mengakibatkan Ice DMG dalam jumlah kecil pada target di sekitarnya, serta menambah <orangeStrong>jumlah Hits Per Action untuk Ultimate</orangeStrong> Misha yang berikutnya."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "G—Gonna Be Late!",
+        "fullDesc": "Memiliki {{1}} Hits Per Action secara default. Pertama-tama, akan melancarkan 1 Hit serangan pada 1 musuh yang ditargetkan dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Misha. Kemudian, sisa Hit-nya akan mengakibatkan Ice DMG pada musuh secara acak sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Misha. Sebelum setiap Hit-nya mengenai target, memiliki <orangeStrong>{{3}}%</orangeStrong> <u>Peluang Dasar</u> untuk membuat target memasuki status Frozen selama 1 giliran.\\nTarget musuh tidak dapat beraksi saat berada dalam status Frozen, di saat bersamaan setiap saat gilirannya dimulai, target juga akan menerima Ice <u>DMG tambahan</u> sebesar <orangeStrong>{{4}}%</orangeStrong> ATK Misha.\\nUltimate ini maksimal dapat memiliki {{5}} Hits Per Action. Setelah melancarkan Ultimate, jumlah Hits Per Action di-reset kembali ke jumlah default.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh. Total dapat Bounce <orangeStrong>{{1}}</orangeStrong> kali secara default, maksimal dapat Bounce <orangeStrong>{{5}}</orangeStrong> kali. Sebelum setiap Hit-nya mengenai target, berpeluang kecil untuk <orangeStrong>membuat target memasuki status Frozen</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Wait, You Are So Beautiful!",
+        "fullDesc": "Setelah menggunakan Technique, Misha akan menciptakan sebuah Dimension selama {{1}} detik. Musuh dalam Dimension akan memasuki status \"Dream Prison\", dan aksinya akan terhenti. Setelah memasuki pertempuran melawan musuh berstatus \"Dream Prison\", jumlah Hits Per Action untuk Ultimate Misha yang berikutnya akan bertambah {{2}} Hit. Hanya boleh ada 1 efek Dimension ciptaan rekan tim dalam satu waktu.",
+        "shortDesc": "Menciptakan sebuah Dimension. Aksi musuh dalam Dimension akan terhenti. Setelah memasuki pertempuran melawan musuh dalam Dimension, akan menambah <orangeStrong>jumlah Hits Per Action untuk Ultimate</orangeStrong> Misha yang berikutnya."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Whimsicality of Fancy",
+      "desc": "Saat melancarkan Ultimate, untuk setiap 1 target musuh yang ada di medan pertempuran, akan menambah ekstra {{1}} Hit untuk Hits Per Action dari Ultimate kali ini, maksimal hingga ekstra {{2}} Hit."
+    },
+    "2": {
+      "name": "Yearning of Youth",
+      "desc": "Sebelum setiap Hit dari Ultimate mengenai target, memiliki {{3}}% Peluang Dasar untuk mengurangi {{1}}% DEF target selama {{2}} giliran."
+    },
+    "3": {
+      "name": "Vestige of Happiness",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Visage of Kinship",
+      "desc": "Meningkatkan {{1}}% DMG Multiplier dari setiap Hit Ultimate."
+    },
+    "5": {
+      "name": "Genesis of First Love",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Estrangement of Dream",
+      "desc": "Saat melancarkan Ultimate, meningkatkan {{2}}% DMG yang diakibatkan diri sendiri hingga giliran berakhir. Dan pada pelancaran Skill Misha yang berikutnya, akan memulihkan {{1}} Poin Skill untuk rekan tim."
+    }
+  }
+}

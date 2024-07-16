@@ -1,0 +1,6 @@
+{
+  "setName": "Máy Sai Lệch Hành Tinh",
+  "setEffects": {
+    "2": "Khiến sát thương Bạo Kích của người trang bị tăng {{1}}%. Khi sát thương Bạo Kích của người trang bị từ {{2}}% trở lên, sau khi vào chiến đấu, Tỷ Lệ Bạo Kích của người trang bị tăng {{3}}%, duy trì đến khi kết thúc thi triển lần đầu tấn công."
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "name": "Dan Heng - Imbibitor Lunae",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Loto benéfico",
+        "fullDesc": "Lanza un ataque de 2 golpes e inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Dan Heng - Imbibitor Lunae como Daño Imaginario a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
+      },
+      "1": {
+        "name": "Trascendencia",
+        "fullDesc": "Lanza un ataque de 3 golpes e inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Dan Heng - Imbibitor Lunae como Daño Imaginario a un enemigo.",
+        "shortDesc": "Lanza un ataque de <orangeStrong>3 golpes</orangeStrong> e inflige Daño Imaginario a un enemigo."
+      },
+      "2": {
+        "name": "Lanza divina",
+        "fullDesc": "Dan Heng - Imbibitor Lunae lanza un ataque de 5 golpes que inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Imaginario a un enemigo. A partir del 4.º golpe también inflige un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño Imaginario a los enemigos adyacentes.",
+        "shortDesc": "Lanza un ataque de <orangeStrong>5 golpes</orangeStrong> e inflige una gran cantidad de Daño Imaginario a un enemigo y una pequeña cantidad de Daño Imaginario a los enemigos adyacentes. Los 2 últimos golpes obtienen 1 acumulación de Rugido dominante cada uno antes de lanzarse, lo que aumenta su Daño CRIT."
+      },
+      "3": {
+        "name": "Salto fulgurante",
+        "fullDesc": "Dan Heng - Imbibitor Lunae lanza un ataque de 7 golpes que inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Imaginario a un enemigo. A partir del 4.º golpe también inflige un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño Imaginario a los enemigos adyacentes.",
+        "shortDesc": "Lanza un ataque de <orangeStrong>7 golpes</orangeStrong> e inflige una gran cantidad de Daño Imaginario a un enemigo y Daño Imaginario a los enemigos adyacentes. Los 4 últimos golpes obtienen 1 acumulación de Rugido dominante cada uno antes de lanzarse, lo que aumenta su Daño CRIT."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Libre de ataduras",
+        "fullDesc": "Potencia el ATQ básico un máximo de 3 veces consecutivas. Esta habilidad no consume pts. de habilidad básica y no se considera como un uso de la habilidad básica.\\nAl potenciarse 1 vez, Loto benéfico se transforma en Trascendencia.\\nAl potenciarse 2 veces, Loto benéfico se transforma en Lanza divina.\\nAl potenciarse 3 veces, Loto benéfico se transforma en Salto fulgurante.\\nAl lanzar Lanza divina o Salto fulgurante, a partir del 4.º golpe obtiene 1 acumulación de Rugido dominante antes de cada golpe. Rugido dominante hace que el Daño CRIT de Dan Heng - Imbibitor Lunae aumente en un <orangeStrong>{{1}}%</orangeStrong>. Este efecto se puede acumular un máximo de {{2}} veces y dura hasta el final de su turno.",
+        "shortDesc": "El ATQ básico Loto benéfico <orangeStrong>se potencia y se transforma en Trascendencia</orangeStrong>, <orangeStrong>Lanza divina o Salto fulgurante</orangeStrong>."
+      },
+      "1": {
+        "name": "Cancelar",
+        "fullDesc": "Cancela la potenciación.",
+        "shortDesc": ""
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Purificación del mundo",
+        "fullDesc": "Realiza un ataque de 3 golpes e inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Dan Heng - Imbibitor Lunae como Daño Imaginario a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño Imaginario a los enemigos adyacentes. Además, obtiene {{3}} acumulaciones de Escama sacrosanta.\\nPuede tener hasta {{4}} acumulaciones de Escama sacrosanta como máximo y se pueden utilizar para compensar el consumo de pts. de habilidad básica de Dan Heng - Imbibitor Lunae. Consumir Escama sacrosanta se considera equivalente a consumir pts. de habilidad básica.",
+        "shortDesc": "Inflige una gran cantidad de Daño Imaginario a un enemigo y Daño Imaginario a los enemigos adyacentes. Obtiene 2 acumulaciones de Escama sacrosanta. Dan Heng - Imbibitor Lunae puede <orangeStrong>consumir</orangeStrong> Escamas sacrosantas en lugar de <orangeStrong>pts. de habilidad básica</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Prismadragón atraviesacielos",
+        "fullDesc": "Tras usar la técnica, Dan Heng - Imbibitor Lunae entra en el estado de Salto en espiral durante {{2}} segundos. En este estado, al lanzar un ataque, avanza rápidamente una cierta distancia, ataca a todos los enemigos con los que entra en contacto y bloquea sus ataques. Al entrar en combate tras atacar a un enemigo en el estado Salto en espiral, inflige un Daño Imaginario equivalente al {{3}}% de su ATQ a todos los enemigos y obtiene {{1}} acumulación de Escama sacrosanta.",
+        "shortDesc": "Entra en el estado Salto en espiral. Al lanzar un ataque, avanza rápidamente una cierta distancia y ataca a los enemigos con los que entra en contacto. Tras atacar al enemigo y entrar en combate, inflige Daño Imaginario a todos los enemigos y obtiene 1 acumulación de Escama sacrosanta."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Amarrado al cielo",
+      "desc": "Aumenta las acumulaciones posibles de Corazón justo en {{1}}. Además, cada golpe durante un ataque obtiene una acumulación adicional de Corazón justo."
+    },
+    "2": {
+      "name": "Estandartes de dominación",
+      "desc": "Tras usar su habilidad definitiva, la acción de Dan Heng - Imbibitor Lunae se adelanta un 100% y consigue 1 Escama sacrosanta adicional."
+    },
+    "3": {
+      "name": "Enseña de cúmulos",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Regocijo del céfiro",
+      "desc": "El efecto positivo de Rugido dominante dura hasta el final de su siguiente turno."
+    },
+    "5": {
+      "name": "Fin del infortunio",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Retorno del reino",
+      "desc": "Cuando otro aliado usa su habilidad definitiva, la PEN de la RES a Imaginario del siguiente Salto fulgurante de Dan Heng - Imbibitor Lunae aumenta en un {{1}}%. Este efecto se puede acumular hasta {{2}} veces."
+    }
+  }
+}

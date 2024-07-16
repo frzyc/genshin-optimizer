@@ -1,0 +1,7 @@
+{
+  "name": "Điệp Khúc",
+  "passive": {
+    "name": "Hiệp Lực",
+    "description": "Sau khi vào chiến đấu, khiến Tấn Công của toàn thể phe ta tăng <orangeStrong>{{1}}%</orangeStrong>. Kỹ năng cùng loại sẽ không có hiệu lực trùng lặp."
+  }
+}

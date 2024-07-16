@@ -1,0 +1,7 @@
+{
+  "name": "与行星相会",
+  "passive": {
+    "name": "启程",
+    "description": "进入战斗后，当我方目标造成与装备者相同属性的伤害时，造成的伤害提高<orangeStrong>{{1}}%</orangeStrong>。"
+  }
+}
