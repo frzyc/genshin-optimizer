@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "A Lacuna in Kingdom of Aesthetics",
+      "desc": "Setiap lapis \"Apotheosis\" akan meningkatkan {{1}}% CRIT DMG."
+    },
+    "2": {
+      "name": "Agate's Humility",
+      "desc": "Saat melancarkan Ultimate, jika jumlah target musuh lebih dari atau sama dengan {{1}}, ATK akan meningkat {{2}}% selama {{3}} giliran."
+    },
+    "3": {
+      "name": "Thorny Road's Glory",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Trumpet's Dedication",
+      "desc": "Saat pertempuran dimulai, memperoleh {{1}} lapis \"Apotheosis\" dan meningkatkan batas tumpukan efek Talent sebanyak {{2}} lapis."
+    },
+    "5": {
+      "name": "Snow, From Somewhere in Cosmos",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "\"Your\" Resplendence",
+      "desc": "Saat melancarkan Ultimate, mengabaikan {{1}}% DEF target musuh."
+    }
   }
 }

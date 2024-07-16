@@ -41,5 +41,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ein Makel im Reich der Ästhetik",
+      "desc": "Jede Stapelung „Apotheose“ erhöht den KRIT-SCH zusätzlich um {{1}}%."
+    },
+    "2": {
+      "name": "Achats Bescheidenheit",
+      "desc": "Beim Einsatz des Ultimates wird, wenn die Anzahl der Gegner {{1}} oder mehr beträgt, für {{3}} Rd. der ANG um {{2}}% erhöht."
+    },
+    "3": {
+      "name": "Ruhm des Dornenwegs",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Fanfare der Widmung",
+      "desc": "Erhält zu Beginn des Kampfes {{1}} Stapelung(en) „Apotheose“ und erhöht die max. Stapelung für das Talent um {{2}}."
+    },
+    "5": {
+      "name": "Schnee von irgendwo im Universum",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Deine strahlende Pracht",
+      "desc": "Nach dem Einsatz des Ultimates wird {{1}}% der VTD des Zieles ignoriert."
+    }
   }
 }

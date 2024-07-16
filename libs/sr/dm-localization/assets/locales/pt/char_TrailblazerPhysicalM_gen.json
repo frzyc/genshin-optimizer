@@ -46,5 +46,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Uma Estrela Cadente",
+      "desc": "Quando inimigos são derrotados pela Perícia Suprema d{M#o}{F#a} Desbrava{M#dor}{F#dora}, {M#o}{F#a} Desbrava{M#dor}{F#dora} regenera {{1}} de Energia extra. Esse efeito só pode ser ativado uma vez por ataque."
+    },
+    "2": {
+      "name": "Um Anfitrião Indisposto",
+      "desc": "Atacar inimigos com Fraqueza contra Físico restaura uma quantidade de PV igual a {{1}}% do ATQ {F#da Desbravadora}{M#do Desbravador}."
+    },
+    "3": {
+      "name": "Um Sussurro Condutor",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Um Olhar Destruidor",
+      "desc": "Ao atacar um inimigo com Quebra de Fraqueza, a Chance de CRIT aumenta em {{1}}%."
+    },
+    "5": {
+      "name": "Uma Esperança Sobrevivente",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Um Desejo de Exploração",
+      "desc": "O Talento {F#da Desbravadora}{M#do Desbravador} também é ativado quando {M#ele}{F#ela} derrota um inimigo."
+    }
   }
 }

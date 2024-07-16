@@ -12,14 +12,14 @@
       "0": {
         "name": "Kiếm Thuật Vân Kỵ - Núi Đổ",
         "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Sushang. Đồng thời sau khi thi triển đòn cuối cùng sẽ có {{3}}% xác suất kích hoạt Kiếm Thế, gây <u>sát thương Vật Lý kèm theo</u> bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Sushang.\\nNếu mục tiêu này ở <u>trạng thái Phá Vỡ Điểm Yếu</u>, chắc chắn sẽ thi triển Kiếm Thế.",
-        "shortDesc": "Gây sát thương Vật Lý cho 1 kẻ địch, có <color=#f29e38ff>xác suất nhỏ kích hoạt Kiếm Thế</color>. Nếu mục tiêu ở <u>trạng thái Phá Vỡ Điểm Yếu</u>, <color=#f29e38ff>chắc chắn sẽ kích hoạt Kiếm Thế</color>."
+        "shortDesc": "Gây sát thương Vật Lý cho 1 kẻ địch, có <orangeStrong>xác suất nhỏ kích hoạt Kiếm Thế</orangeStrong>. Nếu mục tiêu ở <u>trạng thái Phá Vỡ Điểm Yếu</u>, <orangeStrong>chắc chắn sẽ kích hoạt Kiếm Thế</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Vũ Trụ Tiềm Ẩn - Nến Đêm",
         "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Sushang, và khiến Sushang hành động ngay. Đồng thời tăng <orangeStrong>{{4}}%</orangeStrong> Tấn Công của Sushang, và khi thi triển Chiến Kỹ sẽ tăng thêm 2 lần thi triển Kiếm Thế, duy trì {{2}} hiệp.\\nSát thương của Kiếm Thế được kích hoạt thêm sẽ bằng {{3}}% sát thương ban đầu.",
-        "shortDesc": "Gây lượng lớn Sát Thương Vật Lý cho 1 kẻ địch, cường hóa hiệu ứng Kiếm Thế và <color=#f29e38ff>hành động ngay</color>."
+        "shortDesc": "Gây lượng lớn Sát Thương Vật Lý cho 1 kẻ địch, cường hóa hiệu ứng Kiếm Thế và <orangeStrong>hành động ngay</orangeStrong>."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tay Nghề Thành Thạo",
+      "desc": "Sau khi thi triển Chiến Kỹ lên mục tiêu địch đang rơi vào trạng thái Phá Vỡ Điểm Yếu, sẽ hồi 1 Điểm Chiến Kỹ."
+    },
+    "2": {
+      "name": "Thân Thể Tôi Luyện",
+      "desc": "Sau khi kích hoạt Kiếm Thế, sát thương mà Sushang phải chịu sẽ giảm {{1}}%, kéo dài 1 hiệp."
+    },
+    "3": {
+      "name": "Kiếm Thuật Cổ Truyền",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Tâm Tịnh Thông Suốt",
+      "desc": "Tấn Công Kích Phá của Sushang tăng {{1}}%."
+    },
+    "5": {
+      "name": "Thần Ý Vũ Trụ",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Thích Ứng Như Nước",
+      "desc": "Hiệu ứng tăng tốc của Thiên Phú có thể cộng dồn, tối đa cộng dồn 2 tầng, hơn nữa sau khi vào chiến đấu, Sushang sẽ nhận ngay 1 tầng hiệu ứng Tăng Tốc của Thiên Phú."
     }
   }
 }

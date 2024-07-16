@@ -12,14 +12,14 @@
       "0": {
         "name": "O Poder da Fofura",
         "fullDesc": "Concede a um único aliado um Escudo que pode absorver Dano igual a <orangeStrong>{{1}}%</orangeStrong> da DEF de 7 de Março + <orangeStrong>{{4}}</orangeStrong> por {{2}} rodada(s).\\nSe esse aliado tiver {{3}}% ou mais de PV, aumenta significativamente a chance de inimigos atacarem esse aliado.",
-        "shortDesc": "<color=#f29e38ff>Aplica um Escudo</color> em um único aliado."
+        "shortDesc": "<orangeStrong>Aplica um Escudo</orangeStrong> em um único aliado."
       }
     },
     "ult": {
       "0": {
         "name": "Cascata Glacial",
         "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de 7 de Março a todos os inimigos. Ao serem atingidos, os inimigos têm {{2}}% de <u>chance-base</u> de sofrer Congelamento por {{3}} rodada(s).\\nDurante o Congelamento, os inimigos não podem agir e recebem <u>Dano de Gelo Adicional</u> igual a <orangeStrong>{{4}}%</orangeStrong> do ATQ de 7 de Março no início de cada rodada.",
-        "shortDesc": "Causa Dano de Gelo a <color=#f29e38ff>todos os inimigos</color>, com <color=#f29e38ff>uma chance de aplicar o efeito de Congelamento</color>"
+        "shortDesc": "Causa Dano de Gelo a <orangeStrong>todos os inimigos</orangeStrong>, com <orangeStrong>uma chance de aplicar o efeito de Congelamento</orangeStrong>"
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Memória de Você",
+      "desc": "Sempre que a Perícia Suprema de 7 de Março Congelar um alvo, ela regenera {{1}} de Energia."
+    },
+    "2": {
+      "name": "Memória de Ser",
+      "desc": "Ao entrar na batalha, concede um Escudo igual a {{1}}% da DEF de 7 de Março + {{3}} ao aliado com a menor porcentagem de PV, durando por {{2}} rodada(s)."
+    },
+    "3": {
+      "name": "Memória de Tudo",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Nunca se Renda de Novo",
+      "desc": "O efeito Contra-Ataque do Talento pode ser ativado 1 vez mais em cada rodada. O Dano causado por Contra-Ataques aumenta em {{1}}% da DEF de 7 de Março."
+    },
+    "5": {
+      "name": "Nunca se Esqueça de Novo",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "É Sempre Assim...",
+      "desc": "Aliados sob a proteção do Escudo concedido pela Perícia restauram PV equivalentes a {{1}}% de seus PV máximos + {{2}} no início de cada rodada."
     }
   }
 }

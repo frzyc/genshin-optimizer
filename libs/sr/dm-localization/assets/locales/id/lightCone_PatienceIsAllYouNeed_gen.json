@@ -2,6 +2,6 @@
   "name": "Patience Is All You Need",
   "passive": {
     "name": "Spider Web",
-    "description": "Meningkatkan <orangeStrong>{{2}}%</orangeStrong> DMG yang diakibatkan pengguna. Setiap kali setelah pengguna melancarkan serangan, SPD meningkat <orangeStrong>{{3}}%</orangeStrong>, maksimal hingga {{4}} lapis.\\nSaat pengguna menyerang target musuh, jika target tidak dalam status \"Erode\", maka pengguna memiliki <unbreak>100%</unbreak> peluang dasar untuk membuat target memasuki status \"Erode\". Saat target musuh memasuki status \"Erode\", target juga akan dianggap memasuki status Shock. Saat berstatus \"Erode\", setiap saat giliran dimulai, target musuh akan menerima Lightning DoT sebesar <orangeStrong>{{1}}%</orangeStrong> ATK pengguna selama {{5}} giliran."
+    "description": "Meningkatkan <orangeStrong>{{2}}%</orangeStrong> DMG yang diakibatkan pengguna. Setiap kali setelah pengguna melancarkan serangan, SPD meningkat <orangeStrong>{{3}}%</orangeStrong>, maksimal hingga {{4}} lapis.\\nSaat pengguna menyerang target musuh, jika target tidak dalam status \"Erode\", maka pengguna memiliki 100% peluang dasar untuk membuat target memasuki status \"Erode\". Saat target musuh memasuki status \"Erode\", target juga akan dianggap memasuki status Shock. Saat berstatus \"Erode\", setiap saat giliran dimulai, target musuh akan menerima Lightning DoT sebesar <orangeStrong>{{1}}%</orangeStrong> ATK pengguna selama {{5}} giliran."
   }
 }

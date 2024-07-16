@@ -1,0 +1,9 @@
+{
+  "name": "sr-assets-data",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr/assets-data/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project sr-assets-data --web",
+  "targets": {}
+}

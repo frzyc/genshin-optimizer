@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Thiên Thạch Rơi Xuống Giếng",
+      "desc": "Khi thi triển tấn công thường, nếu Phần Trăm HP của 1 kẻ địch chỉ định nhỏ hơn hoặc bằng {{1}}%, sẽ gây thêm Sát Thương Băng kèm theo bằng {{2}}% Tấn Công của Herta."
+    },
+    "2": {
+      "name": "Chiến Thắng Và Truy Kích",
+      "desc": "Mỗi khi kích hoạt Thiên Phú 1 lần, Tỷ Lệ Bạo Kích của bản thân tăng {{1}}%, hiệu ứng này tối đa cộng dồn {{2}} tầng."
+    },
+    "3": {
+      "name": "Tôi Chính Là Cô Gái Như Vậy",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Đánh Người Phải Lựa Chỗ Đau",
+      "desc": "Sát thương gây ra khi kích hoạt Thiên Phú tăng {{1}}%."
+    },
+    "5": {
+      "name": "Mắng Người Không Kiêng Nể",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Không Ai Được Phản Bội Tôi",
+      "desc": "Sau khi thi triển Tuyệt Kỹ, Tấn Công tăng {{1}}%, duy trì {{2}} hiệp."
+    }
   }
 }

@@ -12,21 +12,21 @@
       "0": {
         "name": "Caressing Moonlight",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Kafka pada 1 target musuh, serta mengakibatkan Lightning DMG sebesar <orangeStrong>{{3}}%</orangeStrong> ATK Kafka pada musuh di sekitar target.\\nJika target musuh sedang terkena DoT, seluruh DoT yang diterimanya akan segera mengakibatkan DMG sebesar <orangeStrong>{{2}}%</orangeStrong> DMG awal DoT Debuff-nya.",
-        "shortDesc": "Mengakibatkan Lightning DMG pada 1 musuh dan mengakibatkan Lightning DMG dalam jumlah kecil pada target di sekitarnya.\\nJika target utama berada dalam status DoT Debuff, maka DoT Debuff yang dimilikinya akan <color=#f29e38ff>mengakibatkan 1 kali DMG tambahan</color>."
+        "shortDesc": "Mengakibatkan Lightning DMG pada 1 musuh dan mengakibatkan Lightning DMG dalam jumlah kecil pada target di sekitarnya.\\nJika target utama berada dalam status DoT Debuff, maka DoT Debuff yang dimilikinya akan <orangeStrong>mengakibatkan 1 kali DMG tambahan</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Twilight Trill",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Kafka pada seluruh musuh. Musuh yang terkena serangan memiliki {{2}}% <u>peluang dasar</u> untuk memasuki status Shock, dan membuat semua status Shock yang saat ini dimiliki oleh target segera mengakibatkan DMG sebesar <orangeStrong>{{5}}%</orangeStrong> DMG awal DoT-nya.\\nSaat dalam status Shock, target musuh akan menerima Lightning DoT sebesar <orangeStrong>{{4}}%</orangeStrong> ATK Kafka saat setiap gilirannya dimulai.",
-        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh, berpeluang besar <color=#f29e38ff>menambahkan status Shock</color> pada musuh.\\nJika target musuh berstatus Shock, maka status Shock tersebut akan <color=#f29e38ff>mengakibatkan 1 kali DMG tambahan</color>."
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh, berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong> pada musuh.\\nJika target musuh berstatus Shock, maka status Shock tersebut akan <orangeStrong>mengakibatkan 1 kali DMG tambahan</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Mercy Is Not Forgiveness",
         "fullDesc": "Segera menyerang musuh dalam cakupan area tertentu. Setelah memasuki pertempuran, mengakibatkan Lightning DMG sebesar {{3}}% ATK Kafka pada seluruh musuh, dan di saat bersamaan memiliki {{1}}% <u>peluang dasar</u> untuk membuat setiap target musuh memasuki status Shock yang sama dengan status Shock dari Ultimate Kafka selama {{2}} giliran.",
-        "shortDesc": "Menyerang seluruh musuh dalam cakupan area, setelah memasuki pertempuran, mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh, serta berpeluang besar <color=#f29e38ff>menambahkan status Shock</color>."
+        "shortDesc": "Menyerang seluruh musuh dalam cakupan area, setelah memasuki pertempuran, mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh, serta berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Da Capo",
+      "desc": "Saat Serangan Lanjutan dari Talent terpicu, ada {{1}}% peluang dasar untuk meningkatkan DoT yang diterima target sebesar {{2}}% selama {{3}} giliran."
+    },
+    "2": {
+      "name": "Fortississimo",
+      "desc": "Saat Kafka berada di medan pertempuran, DoT yang diakibatkan seluruh rekan tim meningkat {{1}}%."
+    },
+    "3": {
+      "name": "Capriccio",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Recitativo",
+      "desc": "Saat status Shock yang diakibatkan Kafka pada target musuh mengakibatkan DMG, Kafka akan memulihkan {{1}} Energy tambahan."
+    },
+    "5": {
+      "name": "Doloroso",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Leggiero",
+      "desc": "Meningkatkan {{1}}% DMG Multiplier dari status Shock yang diakibatkan Ultimate, Technique, dan Serangan Lanjutan yang dipicu Talent, serta memperpanjang durasi status Shock sebanyak {{2}} giliran."
     }
   }
 }

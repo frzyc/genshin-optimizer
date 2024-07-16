@@ -12,21 +12,21 @@
       "0": {
         "name": "Cénit agrietador",
         "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jing Yuan como Daño de Rayo a todos los enemigos e incrementa en {{2}} los golpes por acción del caballero divino en su siguiente turno.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a todos los enemigos e <color=#f29e38ff>incrementa los golpes por acción del caballero divino</color>."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a todos los enemigos e <orangeStrong>incrementa los golpes por acción del caballero divino</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Alumbrador",
         "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jing Yuan como Daño de Rayo a todos los enemigos e incrementa en {{2}} los golpes por acción del caballero divino en su siguiente turno.",
-        "shortDesc": "Inflige Daño de Rayo a todos los enemigos e <color=#f29e38ff>incrementa los golpes por acción del caballero divino</color>."
+        "shortDesc": "Inflige Daño de Rayo a todos los enemigos e <orangeStrong>incrementa los golpes por acción del caballero divino</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Invocación del espíritu",
         "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, los golpes por acción del caballero divino en su primer turno se incrementan en {{1}}.",
-        "shortDesc": "Tras usar la técnica, en la siguiente batalla <color=#f29e38ff>se incrementan los golpes por acción del caballero divino</color>."
+        "shortDesc": "Tras usar la técnica, en la siguiente batalla <orangeStrong>se incrementan los golpes por acción del caballero divino</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Corte, acantilados cercenados",
+      "desc": "Cuando el caballero divino lanza un ataque, el multiplicador de daño que inflige a los enemigos adyacentes al objetivo aumenta adicionalmente en una cantidad equivalente al {{1}}% del multiplicador de daño del objetivo principal."
+    },
+    "2": {
+      "name": "Falange, soles bloqueados",
+      "desc": "Tras la acción del caballero divino, el ATQ básico, la habilidad básica y la habilidad definitiva de Jing Yuan infligen un {{1}}% más de daño durante {{2}} turnos."
+    },
+    "3": {
+      "name": "Golpe, luz destrozada",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Espada, estrellas derribadas",
+      "desc": "Por cada golpe que inflige el caballero divino, Jing Yuan recupera {{1}} pts. de energía."
+    },
+    "5": {
+      "name": "Veteranía, muerte conquistada",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Conjuro, enemigos derrotados",
+      "desc": "Cada golpe que inflige el caballero divino hace que el objetivo enemigo entre en un estado de Vulnerabilidad.\\nLos enemigos vulnerables reciben un {{1}}% más de daño hasta que termine el ataque actual del caballero divino. Este efecto se puede acumular hasta {{2}} veces."
     }
   }
 }

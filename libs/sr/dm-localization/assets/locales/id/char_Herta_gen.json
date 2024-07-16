@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Kick You When You're Down",
+      "desc": "Saat melancarkan Basic Attack, jika persentase HP musuh yang ditarget kurang dari atau sama dengan {{1}}%, maka akan mengakibatkan Ice DMG tambahan sebesar {{2}}% ATK Herta."
+    },
+    "2": {
+      "name": "Keep the Ball Rolling",
+      "desc": "Setiap kali Talent terpicu, CRIT Rate Herta akan meningkat {{1}}%, efek ini dapat ditumpuk hingga {{2}} lapis."
+    },
+    "3": {
+      "name": "That's the Kind of Girl I Am",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Hit Where It Hurts",
+      "desc": "Meningkatkan {{1}}% DMG yang diakibatkan saat Talent terpicu."
+    },
+    "5": {
+      "name": "Cuss Big or Cuss Nothing",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "No One Can Betray Me",
+      "desc": "Setelah melancarkan Ultimate, meningkatkan {{1}}% ATK selama {{2}} giliran."
+    }
   }
 }

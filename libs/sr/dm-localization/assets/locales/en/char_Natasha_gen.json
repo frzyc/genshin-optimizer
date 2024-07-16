@@ -12,14 +12,14 @@
       "0": {
         "name": "Love, Heal, and Choose",
         "fullDesc": "Restores a single ally for <orangeStrong>{{1}}%</orangeStrong> of Natasha's Max HP plus <orangeStrong>{{4}}</orangeStrong>. Restores the ally for another <orangeStrong>{{2}}%</orangeStrong> of Natasha's Max HP plus <orangeStrong>{{5}}</orangeStrong> at the beginning of each turn for {{3}} turn(s).",
-        "shortDesc": "<color=#f29e38ff>Restores HP</color> for a single ally and provides <color=#f29e38ff>Healing Over Time</color> to them."
+        "shortDesc": "<orangeStrong>Restores HP</orangeStrong> for a single ally and provides <orangeStrong>Healing Over Time</orangeStrong> to them."
       }
     },
     "ult": {
       "0": {
         "name": "Gift of Rebirth",
         "fullDesc": "Heals all allies for <orangeStrong>{{1}}%</orangeStrong> of Natasha's Max HP plus <orangeStrong>{{2}}</orangeStrong>.",
-        "shortDesc": "<color=#f29e38ff>Restores HP</color> for all allies."
+        "shortDesc": "<orangeStrong>Restores HP</orangeStrong> for all allies."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Pharmacology Expertise",
+      "desc": "After being attacked, if the current HP percentage is {{1}}% or lower, heals self for 1 time to restore HP by an amount equal to {{2}}% of Max HP plus {{3}}. This effect can only be triggered 1 time per battle."
+    },
+    "2": {
+      "name": "Clinical Research",
+      "desc": "When Natasha uses her Ultimate, grant continuous healing for {{2}} turn(s) to allies whose HP is at {{1}}% or lower. And at the beginning of their turn, their HP is restored by an amount equal to {{3}}% of Natasha's Max HP plus {{4}}."
+    },
+    "3": {
+      "name": "The Right Cure",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Miracle Cure",
+      "desc": "After being attacked, regenerates {{1}} extra Energy."
+    },
+    "5": {
+      "name": "Preventive Treatment",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Doctor's Grace",
+      "desc": "Natasha's Basic ATK additionally deals Physical DMG equal to {{1}}% of her Max HP."
     }
   }
 }

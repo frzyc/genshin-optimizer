@@ -24,14 +24,14 @@
       "0": {
         "name": "Champagne Etiquette",
         "fullDesc": "Inflicts Besotted on all enemies, lasting for {{2}} turn(s). At the same time, deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Gallagher's ATK to all enemies, and enhances this unit's next Basic ATK to Nectar Blitz.",
-        "shortDesc": "<color=#f29e38ff>Inflicts Besotted</color> on all enemies and deals Fire DMG to them at the same time. Enhances this unit's next Basic ATK to Nectar Blitz."
+        "shortDesc": "<orangeStrong>Inflicts Besotted</orangeStrong> on all enemies and deals Fire DMG to them at the same time. Enhances this unit's next Basic ATK to Nectar Blitz."
       }
     },
     "technique": {
       "0": {
         "name": "Artisan Elixir",
         "fullDesc": "Immediately attacks the enemy. Upon entering battle, inflicts Besotted on all enemies, lasting for {{1}} turn(s). And deals Fire DMG equal to {{2}}% of Gallagher's ATK to all enemies.",
-        "shortDesc": "Attacks the enemy. After entering battle, <color=#f29e38ff>inflicts Besotted</color> to all enemies and deals minor Fire DMG to all enemies."
+        "shortDesc": "Attacks the enemy. After entering battle, <orangeStrong>inflicts Besotted</orangeStrong> to all enemies and deals minor Fire DMG to all enemies."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Salty Dog",
+      "desc": "When Gallagher enters the battle, regenerates {{1}} Energy and increases Effect RES by {{2}}%."
+    },
+    "2": {
+      "name": "Lion's Tail",
+      "desc": "When using the Skill, removes {{1}} debuff(s) from a target ally. At the same time, increases their Effect RES by {{2}}%, lasting for {{3}} turn(s)."
+    },
+    "3": {
+      "name": "Corpse Reviver",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Last Word",
+      "desc": "Extends the duration of the Besotted state inflicted by Gallagher's Ultimate by {{1}} turn(s)."
+    },
+    "5": {
+      "name": "Death in the Afternoon",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Blood and Sand",
+      "desc": "Increases Gallagher's Break Effect by {{1}}% and Weakness Break Efficiency by {{2}}%."
     }
   }
 }

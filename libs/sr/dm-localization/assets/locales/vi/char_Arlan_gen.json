@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Dù Chết Không Từ",
+      "desc": "Khi Phần Trăm HP hiện tại nhỏ hơn hoặc bằng 50% thì sát thương mà Chiến Kỹ gây ra tăng {{1}}%."
+    },
+    "2": {
+      "name": "Giải Thoát Trói Buộc",
+      "desc": "Khi thi triển Chiến Kỹ và Tuyệt Kỹ, sẽ giải trừ 1 Hiệu Ứng Xấu của bản thân."
+    },
+    "3": {
+      "name": "Trọng Kiếm Cường Công",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Phản Kích Tuyệt Diệu",
+      "desc": "Khi vào chiến đấu, nếu chịu tấn công chí tử, Arlan sẽ không rơi vào trạng thái không thể chiến đấu, đồng thời hồi ngay đến {{1}}% Giới Hạn HP của bản thân. Hiệu ứng này sẽ tự động giải trừ sau khi kích hoạt 1 lần hoặc sau khi duy trì {{2}} hiệp."
+    },
+    "5": {
+      "name": "Trút Xuống Toàn Lực",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Lấy Mình Làm Gương",
+      "desc": "Khi phần trăm HP hiện tại nhỏ hơn hoặc bằng 50% thì sát thương mà Tuyệt Kỹ gây ra tăng {{1}}%, và Bội Số Sát Thương cho mục tiêu gần kề tăng đến Bội Số Sát Thương bằng với mục tiêu chính."
+    }
   }
 }

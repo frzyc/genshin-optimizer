@@ -12,14 +12,14 @@
       "0": {
         "name": "Cloudfencer Art: Mountainfall",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sushang's ATK to a single enemy. In addition, there is a {{3}}% chance to trigger Sword Stance on the final hit, dealing <u>Additional</u> Physical DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Sushang's ATK to the enemy.\\nIf the enemy is inflicted with <u>Weakness Break</u>, Sword Stance is guaranteed to trigger.",
-        "shortDesc": "Deals Physical DMG to a single enemy with <color=#f29e38ff>a small chance of triggering Sword Stance</color>. If the enemy has <u>Weakness Break</u>, <color=#f29e38ff>Sword Stance is guaranteed to trigger</color>."
+        "shortDesc": "Deals Physical DMG to a single enemy with <orangeStrong>a small chance of triggering Sword Stance</orangeStrong>. If the enemy has <u>Weakness Break</u>, <orangeStrong>Sword Stance is guaranteed to trigger</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Shape of Taixu: Dawn Herald",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sushang's ATK to a single enemy target, and she immediately takes action again. In addition, Sushang's ATK increases by <orangeStrong>{{4}}%</orangeStrong> and using her Skill has 2 extra chances to trigger Sword Stance for {{2}} turn(s).\\nSword Stance triggered from the extra chances deals {{3}}% of the original DMG.",
-        "shortDesc": "Deals massive Physical DMG to a single enemy, enhances Sword Stance's effect, and <color=#f29e38ff>takes action immediately</color>."
+        "shortDesc": "Deals massive Physical DMG to a single enemy, enhances Sword Stance's effect, and <orangeStrong>takes action immediately</orangeStrong>."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Cut With Ease",
+      "desc": "After using Skill against a Weakness Broken enemy, regenerates 1 Skill Point."
+    },
+    "2": {
+      "name": "Refine in Toil",
+      "desc": "After Sword Stance is triggered, the DMG taken by Sushang is reduced by {{1}}% for 1 turn."
+    },
+    "3": {
+      "name": "Rise From Fame",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Cleave With Heart",
+      "desc": "Sushang's Break Effect increases by {{1}}%."
+    },
+    "5": {
+      "name": "Prevail via Taixu",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "Dwell Like Water",
+      "desc": "Talent's SPD Boost is stackable and can stack up to 2 times. Additionally, after entering battle, Sushang immediately gains 1 stack of her Talent's SPD Boost."
     }
   }
 }

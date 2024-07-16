@@ -24,7 +24,7 @@
       "0": {
         "name": "¡Bum! ¡Aquí viene el fuego!",
         "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Hook como Daño de Fuego a un enemigo.\\nTras usar la habilidad definitiva, potencia la habilidad básica la siguiente vez que se use. La habilidad básica potenciada inflige daño a un enemigo y a los enemigos adyacentes.",
-        "shortDesc": "Inflige una gran cantidad de Daño de Fuego a un enemigo y <color=#f29e38ff>potencia el siguiente uso de la habilidad básica</color>."
+        "shortDesc": "Inflige una gran cantidad de Daño de Fuego a un enemigo y <orangeStrong>potencia el siguiente uso de la habilidad básica</orangeStrong>."
       }
     },
     "technique": {
@@ -40,6 +40,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "A la cama temprano",
+      "desc": "La habilidad básica potenciada inflige un {{1}}% más de daño."
+    },
+    "2": {
+      "name": "Tripita feliz, persona feliz",
+      "desc": "La duración del estado de Quemadura causado por la habilidad básica de Hook se alarga en {{1}} turno."
+    },
+    "3": {
+      "name": "Nada de elegir",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "No pasa nada si no lo sabes",
+      "desc": "Al activar el talento, tiene una probabilidad base del {{1}}% de afectar a los enemigos adyacentes al objetivo con una Quemadura equivalente a la de la habilidad básica."
+    },
+    "5": {
+      "name": "Que todos sepan de las hazañas de Los Topos",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Siempre lista para patear traseros",
+      "desc": "Hook inflige un {{1}}% más de daño a los enemigos afectados por Quemadura."
     }
   }
 }

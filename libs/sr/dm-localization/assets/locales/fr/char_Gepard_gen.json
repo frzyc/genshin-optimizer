@@ -12,14 +12,14 @@
       "0": {
         "name": "Frappe intimidante",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Gepard à un ennemi unique avec {{2}}% de <u>chances de base</u> de geler l'ennemi pendant {{3}} tour.\\nUn ennemi gelé ne peut pas agir et subit des DGT de glace <u>additionnels</u> équivalents à <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Gepard au début de chaque tour.",
-        "shortDesc": "Inflige des DGT de glace à un ennemi unique, avec une <color=#f29e38ff>chance de le geler</color>."
+        "shortDesc": "Inflige des DGT de glace à un ennemi unique, avec une <orangeStrong>chance de le geler</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Rempart d'endurance",
         "fullDesc": "Accorde à tous les alliés un bouclier qui absorbe une quantité de DGT équivalente à <orangeStrong>{{1}}%</orangeStrong> de la DÉF de Gepard + <orangeStrong>{{3}}</orangeStrong> pendant {{2}} tours.",
-        "shortDesc": "<color=#f29e38ff>Accorde un bouclier</color> à tous les alliés."
+        "shortDesc": "<orangeStrong>Accorde un bouclier</orangeStrong> à tous les alliés."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Devoir de diligence",
+      "desc": "Augmente les chances de base que la cible ennemie soit gelée lors de l'utilisation de la compétence de {{1}}%."
+    },
+    "2": {
+      "name": "Froid persistant",
+      "desc": "Quand un ennemi gelé par la compétence est dégelé, sa VIT diminue de {{1}}% pendant {{2}} tour."
+    },
+    "3": {
+      "name": "Sans reddition",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "La foi déplace les montagnes",
+      "desc": "Lorsque Gepard participe au combat, la RÉS aux effets de tous les alliés augmente de {{1}}%."
+    },
+    "5": {
+      "name": "Poing de fer froid",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Détermination sans faille",
+      "desc": "Lorsque son talent se déclenche, Gepard agit immédiatement et restaure des PV supplémentaires équivalents à {{1}}% de ses PV max."
     }
   }
 }

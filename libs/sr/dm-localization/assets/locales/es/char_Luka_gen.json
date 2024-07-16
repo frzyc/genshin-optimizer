@@ -17,7 +17,7 @@
       "0": {
         "name": "¡Puño, fuera!",
         "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Luka como Daño Físico a un enemigo y después tiene un {{2}}% de <u>probabilidad base</u> de afectar con Sangrado al objetivo durante {{5}} turnos.\\nEl enemigo afectado por Sangrado recibe un Daño Físico con el tiempo equivalente al {{3}}% de sus PV máx. al comienzo de cada turno, hasta un máximo del <orangeStrong>{{4}}%</orangeStrong> del ATQ de Luka.",
-        "shortDesc": "Inflige Daño Físico a un enemigo y tiene una gran probabilidad de <color=#f29e38ff>aplicarle Sangrado</color>."
+        "shortDesc": "Inflige Daño Físico a un enemigo y tiene una gran probabilidad de <orangeStrong>aplicarle Sangrado</orangeStrong>."
       }
     },
     "ult": {
@@ -31,7 +31,7 @@
       "0": {
         "name": "Anticipación",
         "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1}}% del ATQ de Luka como Daño Físico a un enemigo al azar y tiene un {{2}}% de <u>probabilidad base</u> de afectarlo con un estado de Sangrado equivalente al de la habilidad básica. Después, Luka obtiene 1 acumulación adicional de Voluntad luchadora.",
-        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Físico a un enemigo al azar y tiene una gran probabilidad de <color=#f29e38ff>afectarlo con Sangrado</color>. Después obtiene 1 acumulación adicional de Voluntad luchadora."
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Físico a un enemigo al azar y tiene una gran probabilidad de <orangeStrong>afectarlo con Sangrado</orangeStrong>. Después obtiene 1 acumulación adicional de Voluntad luchadora."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Lucha interminable",
+      "desc": "Cuando Luka realiza una acción, si el objetivo está afectado por Sangrado, el daño que inflige Luka aumenta en un {{1}}% durante {{2}} turnos."
+    },
+    "2": {
+      "name": "El enemigo es débil, yo soy fuerte",
+      "desc": "Cuando la habilidad básica golpea a un enemigo con Debilidad Física, Luka obtiene {{1}} acumulación de Voluntad luchadora."
+    },
+    "3": {
+      "name": "Nacido para el ring",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Persistencia implacable",
+      "desc": "Por cada acumulación de Voluntad luchadora, el ATQ aumenta en un {{1}}%. Este efecto se puede acumular hasta {{2}} veces."
+    },
+    "5": {
+      "name": "El espíritu de Llamarada",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "El aplauso del campeón",
+      "desc": "Tras golpear con el Puño rompecielos de su ATQ básico potenciado a un enemigo afectado por Sangrado, el estado de Sangrado inflige al instante 1 vez adicional un daño equivalente al {{1}}% del daño de Sangrado original por cada golpe de Puño certero de ese ATQ básico potenciado."
     }
   }
 }

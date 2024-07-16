@@ -26,7 +26,7 @@
       "0": {
         "name": "Maestría de espada",
         "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, Yanqing inflige un {{2}}% más de daño durante {{3}} turnos a los enemigos que tengan un porcentaje de PV igual o superior al {{1}}%.",
-        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, aumenta el daño que inflige a los enemigos que tengan un porcentaje de PV igual o superior al <unbreak>50%</unbreak>."
+        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, aumenta el daño que inflige a los enemigos que tengan un porcentaje de PV igual o superior al 50%."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Hoja pulcra",
+      "desc": "Si el enemigo al que ataca Yanqing está afectado por Congelación, le inflige inmediatamente un {{1}}% del ATQ de Yanqing como Daño de Hielo adicional."
+    },
+    "2": {
+      "name": "Mente despejada",
+      "desc": "Cuando Estocada empática está activa, la recuperación de energía aumenta en un {{1}}% adicional."
+    },
+    "3": {
+      "name": "Espadachín nato",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Relente perforante",
+      "desc": "Cuando el porcentaje de PV es igual o superior al {{1}}%, su PEN de la RES a Hielo aumenta en un {{2}}%."
+    },
+    "5": {
+      "name": "Nacido para luchar",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Juego de pies",
+      "desc": "Si tiene efectos positivos de Estocada empática o la habilidad definitiva al eliminar a un enemigo, la duración de dichos efectos se alarga en 1 turno."
     }
   }
 }

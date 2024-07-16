@@ -19,7 +19,7 @@
       "0": {
         "name": "{RUBY_B#ほしぞらしゅうげん}星空祝言{RUBY_E#}",
         "fullDesc": "味方全体の速度+<orangeStrong>{{1}}</orangeStrong>、{{2}}ターン継続。",
-        "shortDesc": "味方全体の<color=#f29e38ff>速度アップさせる</color>。"
+        "shortDesc": "味方全体の<orangeStrong>速度アップさせる</orangeStrong>。"
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#ほし}星{RUBY_E#}に{RUBY_B#むごん}無言{RUBY_E#}の{RUBY_B#うた}歌{RUBY_E#}あり",
+      "desc": "戦闘スキルを発動した時、さらにランダムな敵単体にダメージを1回与える。"
+    },
+    "2": {
+      "name": "{RUBY_B#つき}月{RUBY_E#}は{RUBY_B#えいきょ}盈虚{RUBY_E#}の{RUBY_B#い}意{RUBY_E#}を{RUBY_B#あらわ}現{RUBY_E#}す",
+      "desc": "必殺技を発動した時、アスターの次のターンの蓄エネ層数が減少しなくなる。"
+    },
+    "3": {
+      "name": "{RUBY_B#こうどういんせき}黄道隕石{RUBY_E#}の{RUBY_B#へん}変{RUBY_E#}",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
+    },
+    "4": {
+      "name": "{RUBY_B#きょっこう}極光{RUBY_E#}が{RUBY_B#けんげん}顕現{RUBY_E#}する{RUBY_B#とき}時{RUBY_E#}",
+      "desc": "天賦の蓄エネが{{1}}層以上の時、アスターのEP回復効率+{{2}}%。"
+    },
+    "5": {
+      "name": "{RUBY_B#しんくう}深空{RUBY_E#}{RUBY_B#ざ}座{RUBY_E#}す{RUBY_B#てんたい}天体{RUBY_E#}の{RUBY_B#なぞ}謎{RUBY_E#}",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#ぎんが}銀河{RUBY_E#}の{RUBY_B#もと}下{RUBY_E#}に{RUBY_B#ねむ}眠{RUBY_E#}る",
+      "desc": "ターンが回ってくるたびに天賦の蓄エネ層数減少値-{{1}}。"
     }
   }
 }

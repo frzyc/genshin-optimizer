@@ -1,8 +1,8 @@
 // This is a generated index file.
-import head from './SpriteOutput/RelicFigures/IconRelic_101_1.png.png'
-import hand from './SpriteOutput/RelicFigures/IconRelic_101_2.png.png'
-import body from './SpriteOutput/RelicFigures/IconRelic_101_3.png.png'
-import feet from './SpriteOutput/RelicFigures/IconRelic_101_4.png.png'
+import body from './body.png'
+import feet from './feet.png'
+import hand from './hand.png'
+import head from './head.png'
 
 const data = {
   body,

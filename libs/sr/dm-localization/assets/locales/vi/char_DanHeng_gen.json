@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tận Cùng Trời Cao, Khó Vững Bền Lâu",
+      "desc": "Khi đánh trúng kẻ địch có phần trăm HP hiện tại lớn hơn hoặc bằng {{1}}%, Tỷ Lệ Bạo Kích sẽ tăng {{2}}%."
+    },
+    "2": {
+      "name": "Áp Chế Chất Độc, Dập Tắt Ngọn Lửa",
+      "desc": "Thời gian chờ của Thiên Phú rút ngắn 1 hiệp."
+    },
+    "3": {
+      "name": "Âm Dương Biến Hoá, Tự Do Tự Tại",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Tâm Tịnh Như Hư Không",
+      "desc": "Khi thi triển Tuyệt Kỹ để tiêu diệt kẻ địch, Dan Heng sẽ hành động ngay."
+    },
+    "5": {
+      "name": "Thác Nước Thiên Không, Cuồn Cuộn Bốn Bề",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Buộc Chặt Trước Khi Lao",
+      "desc": "Trạng thái Giảm Tốc được kích hoạt bởi Chiến Kỹ khiến Tốc Độ của mục tiêu giảm thêm {{1}}%."
+    }
   }
 }

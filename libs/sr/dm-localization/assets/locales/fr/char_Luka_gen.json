@@ -17,7 +17,7 @@
       "0": {
         "name": "Poing lacérateur",
         "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Luka à une cible ennemie unique, avec {{2}}% de <u>chances de base</u> de lui infliger Saignement pendant {{5}} tours.\\nQuand un ennemi souffre de Saignement, il subit des dégâts sur la durée physiques équivalents à {{3}}% de ses PV max au début de chaque tour. Ces DGT ne peuvent pas excéder <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Luka.",
-        "shortDesc": "Inflige des DGT physiques à un ennemi unique, avec de fortes chances de provoquer <color=#f29e38ff>Saignement</color>."
+        "shortDesc": "Inflige des DGT physiques à un ennemi unique, avec de fortes chances de provoquer <orangeStrong>Saignement</orangeStrong>."
       }
     },
     "ult": {
@@ -31,7 +31,7 @@
       "0": {
         "name": "Anticipation",
         "fullDesc": "Engage immédiatement le combat contre les ennemis. Luka inflige des DGT physiques équivalents à {{1}}% de son ATQ à un ennemi aléatoire en entrant en combat, avec {{2}}% de <u>chances de base</u> de lui infliger l'effet Saignement de sa compétence, à la suite de quoi Luka obtient un cumul supplémentaire de Soif de combat.",
-        "shortDesc": "Attaque les ennemis. Inflige des DGT physiques mineurs à un ennemi unique aléatoire après être entré en combat, avec de fortes chances d'infliger <color=#f29e38ff>Saignement</color> à la cible. Puis gagne 1 cumul de Soif de combat."
+        "shortDesc": "Attaque les ennemis. Inflige des DGT physiques mineurs à un ennemi unique aléatoire après être entré en combat, avec de fortes chances d'infliger <orangeStrong>Saignement</orangeStrong> à la cible. Puis gagne 1 cumul de Soif de combat."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Lutte sans fin",
+      "desc": "Lorsque Luka entre en action, si la cible ennemie souffre de Saignement, les DGT infligés par Luka augmentent de {{1}}% pendant {{2}} tours."
+    },
+    "2": {
+      "name": "L'ennemi est faible, je suis fort",
+      "desc": "Gagne {{1}} cumul de Soif de combat lorsque la compétence touche un ennemi qui possède une Faiblesse physique."
+    },
+    "3": {
+      "name": "Né pour l'arène",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Sans jamais se retourner",
+      "desc": "Augmente l'ATQ de {{1}}% pour chaque cumul de Soif de combat, cumulable jusqu'à {{2}} fois."
+    },
+    "5": {
+      "name": "L'esprit des Feux sauvages",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Un champion acclamé",
+      "desc": "Lorsque l'Uppercut du droit de l'ATQ normale renforcée touche une cible ennemie victime de Saignement, cette dernière subit immédiatement 1 fois des DGT équivalents à {{1}}% des DGT de Saignement initiaux pour chaque Direct du droit déclenché lors de cette ATQ normale renforcée."
     }
   }
 }

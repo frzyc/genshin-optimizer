@@ -12,21 +12,21 @@
       "0": {
         "name": "Talisman: Protection",
         "fullDesc": "Dispels {{5}} <u>debuff(s)</u> from a single target ally and immediately restores this ally's HP by an amount equal to <orangeStrong>{{1}}%</orangeStrong> of Huohuo's Max HP plus <orangeStrong>{{2}}</orangeStrong>. At the same time, restores HP for allies that are adjacent to this target ally by an amount equal to <orangeStrong>{{3}}%</orangeStrong> of Huohuo's Max HP plus <orangeStrong>{{4}}</orangeStrong>.",
-        "shortDesc": "Dispels 1 <u>debuff</u> from an ally and <color=#f29e38ff>restore HP</color> to that ally and their adjacent allies."
+        "shortDesc": "Dispels 1 <u>debuff</u> from an ally and <orangeStrong>restore HP</orangeStrong> to that ally and their adjacent allies."
       }
     },
     "ult": {
       "0": {
         "name": "Tail: Spiritual Domination",
         "fullDesc": "Regenerates Energy for all allies (excluding this character) by an amount equal to <orangeStrong>{{1}}%</orangeStrong> of their respective Max Energy. At the same time, increases their ATK by <orangeStrong>{{2}}%</orangeStrong> for {{3}} turn(s).",
-        "shortDesc": "<color=#f29e38ff>Regenerates Energy</color> for all allies (excluding this character) and <color=#f29e38ff>increases their ATK</color>."
+        "shortDesc": "<orangeStrong>Regenerates Energy</orangeStrong> for all allies (excluding this character) and <orangeStrong>increases their ATK</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Fiend: Impeachment of Evil",
         "fullDesc": "Huohuo terrorizes surrounding enemies, afflicting Horror-Struck on them. Enemies in Horror-Struck will flee away from Huohuo for {{4}} second(s). When entering battle with enemies in Horror-Struck, there is a {{1}}% <u>base chance</u> of reducing every single enemy's ATK by {{2}}% for {{3}} turn(s).",
-        "shortDesc": "Causes surrounding enemies to become Horror-Struck. After entering battle with enemies afflicted with Horror-Struck, there is a high chance applying <color=#f29e38ff>ATK reduction</color> on the enemy targets."
+        "shortDesc": "Causes surrounding enemies to become Horror-Struck. After entering battle with enemies afflicted with Horror-Struck, there is a high chance applying <orangeStrong>ATK reduction</orangeStrong> on the enemy targets."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Anchored to Vessel, Specters Nestled",
+      "desc": "The duration of Divine Provision produced by the Talent is extended by {{2}} turn(s). When Huohuo possesses Divine Provision, all allies' SPD increases by {{1}}%."
+    },
+    "2": {
+      "name": "Sealed in Tail, Wraith Subdued",
+      "desc": "If Huohuo possesses Divine Provision when an ally is struck by a killing blow, the ally will not be knocked down, and their HP will immediately be restored by an amount equal to {{1}}% of their Max HP. This reduces the duration of Divine Provision by 1 turn. This effect can only be triggered {{2}} time(s) per battle."
+    },
+    "3": {
+      "name": "Cursed by Fate, Moths to Flame",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Tied in Life, Bound to Strife",
+      "desc": "When healing a target ally via Skill or Talent, the less HP the target ally currently has, the higher the amount of healing they will receive. The maximum increase in healing provided by Huohuo is {{1}}%."
+    },
+    "5": {
+      "name": "Mandated by Edict, Evils Evicted",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "Woven Together, Cohere Forever",
+      "desc": "When healing a target ally, increases the target ally's DMG dealt by {{1}}% for {{2}} turn(s)."
     }
   }
 }

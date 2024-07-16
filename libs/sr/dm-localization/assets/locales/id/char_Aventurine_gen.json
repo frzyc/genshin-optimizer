@@ -12,14 +12,14 @@
       "0": {
         "name": "Cornerstone Deluxe",
         "fullDesc": "Memberikan Shield \"Fortified Wager\" pada seluruh rekan tim yang dapat menahan DMG sebesar <orangeStrong>{{1}}%</orangeStrong> DEF Aventurine + <orangeStrong>{{2}}</orangeStrong>, berlangsung selama {{3}} giliran. Saat memperoleh ulang \"Fortified Wager\", kekuatan Shield dapat ditumpuk, maksimal tidak melebihi {{4}}% kekuatan Shield yang diberikan Skill saat ini.",
-        "shortDesc": "Memberikan Shield \"Fortified Wager\" yang <color=#f29e38ff>kekuatan Shield-nya dapat ditumpuk</color> pada seluruh rekan tim."
+        "shortDesc": "Memberikan Shield \"Fortified Wager\" yang <orangeStrong>kekuatan Shield-nya dapat ditumpuk</orangeStrong> pada seluruh rekan tim."
       }
     },
     "ult": {
       "0": {
         "name": "Roulette Shark",
         "fullDesc": "Memperoleh \"Blind Bet\" sebesar 1 hingga {{1}} poin secara acak. Kemudian, membuat 1 musuh yang ditargetkan memasuki status \"Unnerved\" selama {{4}} giliran, serta mengakibatkan Imaginary DMG sebesar <orangeStrong>{{2}}%</orangeStrong> DEF Aventurine pada 1 musuh yang ditargetkan tersebut. Saat rekan tim menyerang target musuh berstatus \"Unnerved\", CRIT DMG yang diakibatkan meningkat <orangeStrong>{{3}}%</orangeStrong>.",
-        "shortDesc": "Memperoleh poin \"Blind Bet\" secara acak dan membuat 1 musuh memasuki status \"Unnerved\", serta mengakibatkan Imaginary DMG pada musuh tersebut. Saat rekan tim menyerang target musuh berstatus \"Unnerved\", <color=#f29e38ff>CRIT DMG yang diakibatkan akan meningkat</color>."
+        "shortDesc": "Memperoleh poin \"Blind Bet\" secara acak dan membuat 1 musuh memasuki status \"Unnerved\", serta mengakibatkan Imaginary DMG pada musuh tersebut. Saat rekan tim menyerang target musuh berstatus \"Unnerved\", <orangeStrong>CRIT DMG yang diakibatkan akan meningkat</orangeStrong>."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Prisoner's Dilemma",
+      "desc": "CRIT DMG dari rekan tim yang memiliki \"Fortified Wager\" meningkat {{1}}%. Setelah melancarkan Ultimate, akan memberikan Shield \"Fortified Wager\" pada seluruh rekan tim. Kekuatan Shield tersebut sebesar {{2}}% dari kekuatan Shield yang diberikan Skill Aventurine, berlangsung selama {{3}} giliran."
+    },
+    "2": {
+      "name": "Bounded Rationality",
+      "desc": "Saat melancarkan Basic Attack, RES Seluruh Tipe milik target musuh berkurang {{2}}% selama {{3}} giliran."
+    },
+    "3": {
+      "name": "Droprate Maxing",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Unexpected Hanging Paradox",
+      "desc": "Saat memicu Serangan Lanjutan dari Talent Aventurine, DEF Aventurine akan meningkat {{1}}% terlebih dahulu selama {{2}} giliran, serta menambah {{3}} Hits Per Action dari Serangan Lanjutan Talent-nya."
+    },
+    "5": {
+      "name": "Ambiguity Aversion",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Stag Hunt Game",
+      "desc": "Untuk setiap 1 rekan tim Aventurine yang memiliki Shield, DMG yang diakibatkan Aventurine akan meningkat {{1}}%, maksimal tidak melebihi {{2}}%."
     }
   }
 }

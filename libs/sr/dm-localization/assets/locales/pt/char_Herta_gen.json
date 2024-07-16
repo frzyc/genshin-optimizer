@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Vai Ficar Ainda Pior",
+      "desc": "Se o percentual de PV do inimigo for {{1}}% ou menos, o ATQ Básico de Herta causa Dano de Gelo Adicional igual a {{2}}% do ATQ dela."
+    },
+    "2": {
+      "name": "Dar o Pontapé Inicial",
+      "desc": "Sempre que o Talento for ativado, a chance de CRIT deste personagem aumenta em {{1}}%. Este efeito pode se acumular até {{2}} vez(es)."
+    },
+    "3": {
+      "name": "Eu Sou Este Tipo de Garota",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Dedo na Ferida",
+      "desc": "O Dano aumenta em {{1}}% quando o Talento for ativado."
+    },
+    "5": {
+      "name": "Se For Xingar, Xingue Direito",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Ninguém Pode Me Trair",
+      "desc": "Após usar a Perícia Suprema, o ATQ deste personagem aumenta em {{1}}% por {{2}} rodada(s)."
+    }
   }
 }

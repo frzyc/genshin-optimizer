@@ -19,14 +19,14 @@
       "0": {
         "name": "Syllogistic Paradox",
         "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dr. Ratio pada satu musuh yang ditarget, dan menambahkan \"Wiseman's Folly\". Saat rekan tim Dr. Ratio menyerang target yang memiliki \"Wiseman's Folly\", Dr. Ratio akan melancarkan 1 kali <u>Serangan Lanjutan</u> dari Talent kepada target tersebut.\\nEfek \"Wiseman's Folly\" dapat dipicu paling banyak {{2}} kali dan hanya berlaku pada target Ultimate Dr. Ratio yang terbaru. Setelah melancarkan Ultimate Dr. Ratio, jumlah pemicuan efek ini akan direset.",
-        "shortDesc": "Mengakibatkan Imaginary DMG pada satu musuh yang ditarget dan menambahkan status \"Wiseman's Folly\" pada target. Saat rekan tim Dr. Ratio menyerang target berstatus \"Wiseman's Folly\", Dr. Ratio akan memicu 1 kali <color=#f29e38ff><u>Serangan Lanjutan</u></color> pada target tersebut."
+        "shortDesc": "Mengakibatkan Imaginary DMG pada satu musuh yang ditarget dan menambahkan status \"Wiseman's Folly\" pada target. Saat rekan tim Dr. Ratio menyerang target berstatus \"Wiseman's Folly\", Dr. Ratio akan memicu 1 kali <orangeStrong><u>Serangan Lanjutan</u></orangeStrong> pada target tersebut."
       }
     },
     "technique": {
       "0": {
         "name": "Mold of Idolatry",
         "fullDesc": "Setelah menggunakan Technique, akan menciptakan sebuah Dimension yang akan memancing (Taunt) musuh di sekitar, berlangsung selama {{1}} detik. Setelah memasuki pertempuran dengan musuh di dalam Dimension, ada {{2}}% <u>peluang dasar</u> untuk membuat SPD setiap target musuh berkurang {{3}}%, berlangsung selama {{4}} giliran. Hanya boleh ada 1 efek Dimension ciptaan rekan tim dalam satu waktu.",
-        "shortDesc": "Menciptakan sebuah Dimension. Musuh di dalam Dimension akan terpancing (terkena Taunt). Setelah memasuki pertempuran dengan musuh di dalam Dimension, berpeluang besar untuk <color=#f29e38ff>mengurangi SPD</color> target musuh."
+        "shortDesc": "Menciptakan sebuah Dimension. Musuh di dalam Dimension akan terpancing (terkena Taunt). Setelah memasuki pertempuran dengan musuh di dalam Dimension, berpeluang besar untuk <orangeStrong>mengurangi SPD</orangeStrong> target musuh."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Pride Comes Before a Fall",
+      "desc": "Batas jumlah lapisan Trace \"Summation\" bertambah {{1}}. Saat pertempuran dimulai, akan segera memperoleh {{2}} lapis \"Summation\". Perlu mengaktifkan Trace \"Summation\" terlebih dahulu."
+    },
+    "2": {
+      "name": "The Divine Is in the Details",
+      "desc": "Saat Serangan Lanjutan dari Talent miliknya menyerang target, untuk setiap 1 efek Debuff yang dimiliki target, akan mengakibatkan Imaginary DMG Tambahan pada target sebesar {{1}}% ATK Dr. Ratio. Dalam setiap Serangan Lanjutan miliknya, efek ini maksimal terpicu {{2}} kali."
+    },
+    "3": {
+      "name": "Know Thyself",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Ignorance Is Blight",
+      "desc": "Saat memicu Talent, akan memulihkan ekstra {{1}} Energy untuk Dr. Ratio."
+    },
+    "5": {
+      "name": "Sic Itur Ad Astra",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Vincit Omnia Veritas",
+      "desc": "Efek terpicunya \"Wiseman's Folly\" bertambah ekstra {{1}} kali. DMG Serangan Lanjutan dari Talent meningkat {{2}}%."
     }
   }
 }

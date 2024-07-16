@@ -12,14 +12,14 @@
       "0": {
         "name": "Eckpfeiler des Wohlstands",
         "fullDesc": "Gewährt allen Verbündeten für {{3}} Rd. den Schild „Verstärkter Einsatz“, der in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Aventurins VTD plus <orangeStrong>{{2}}</orangeStrong> absorbiert. Wenn Verstärkter Einsatz wiederholt erhalten wird, wird der Schild bis zu {{4}}% der durch die aktuelle Fertigkeit gewährten Schildmenge gestapelt.",
-        "shortDesc": "Gewährt allen Verbündeten den <color=#f29e38ff>stapelbaren Schild</color> „Verstärkter Einsatz“."
+        "shortDesc": "Gewährt allen Verbündeten den <orangeStrong>stapelbaren Schild</orangeStrong> „Verstärkter Einsatz“."
       }
     },
     "ult": {
       "0": {
         "name": "Lord Roulette",
         "fullDesc": "Erhält zufällig 1 bis {{1}} Pkt. „Blinde Wette“ und verursacht dann bei einem anvisierten Gegner für {{4}} Rd. „Panik“. Außerdem wird dem anvisierten Gegner imaginärer SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Aventurins VTD zugefügt. Wenn Verbündete panische Gegner angreifen, wird der verursachte KRIT-SCH um <orangeStrong>{{3}}%</orangeStrong> erhöht.",
-        "shortDesc": "Erhält zufällig „Blinde Wette“. Dadurch tritt ein Gegner in den Status „Panik“ ein und ihm wird imaginärer SCH zugefügt. Wenn ein Verbündeter einen Gegner im Status Panik angreift, wird der verursachte <color=#f29e38ff>KRIT-SCH</color> erhöht."
+        "shortDesc": "Erhält zufällig „Blinde Wette“. Dadurch tritt ein Gegner in den Status „Panik“ ein und ihm wird imaginärer SCH zugefügt. Wenn ein Verbündeter einen Gegner im Status Panik angreift, wird der verursachte <orangeStrong>KRIT-SCH</orangeStrong> erhöht."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Spiel der Gefangenen",
+      "desc": "Erhöht den KRIT-SCH von Verbündeten mit „Verstärkter Einsatz“ um {{1}}%. Gewährt nach dem Einsatz des Ultimates für {{3}} Rd. den Schild Verstärkter Einsatz für alle Verbündeten. Die Schildmenge entspricht {{2}}% der durch die Fertigkeit gewährte Schildmenge."
+    },
+    "2": {
+      "name": "Begrenzte Rationalität",
+      "desc": "Beim Einsatz des Standardangriffs wird der WDS aller Typen des Ziels für {{3}} Rd. um {{2}}% reduziert."
+    },
+    "3": {
+      "name": "Höchster Multiplikator",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Unerwartete Hinrichtung",
+      "desc": "Wenn der Folgeangriff des Talents ausgelöst wird, wird Aventurins VTD zunächst für {{2}} Rd. um {{1}}% erhöht. Die Trefferzahl des durch das Talent ausgelösten Folgeangriffs wird zusätzlich um {{3}} erhöht."
+    },
+    "5": {
+      "name": "Vage Abneigung",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Hirschjagd",
+      "desc": "Erhöht Aventurins verursachten SCH um {{1}}% für jeden Verbündeten mit Schild, bis zu {{2}}%."
     }
   }
 }

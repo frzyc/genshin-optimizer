@@ -12,7 +12,7 @@
       "0": {
         "name": "Blazing Welcome",
         "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Guinaifen pada 1 musuh yang ditarget, dan mengakibatkan Fire DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Guinaifen pada musuh di sekitar target, memiliki {{3}}% <u>peluang dasar</u> untuk membuat musuh dan target di sekitarnya memasuki status Burn. Target musuh dengan status Burn akan menerima Fire DoT sebesar <orangeStrong>{{4}}%</orangeStrong> ATK Guinaifen setiap saat gilirannya dimulai selama {{5}} giliran.",
-        "shortDesc": "Mengakibatkan Fire DMG pada 1 musuh, dan mengakibatkan Fire DMG dalam jumlah kecil pada musuh di sekitar target. Berpeluang besar untuk menambahkan <color=#f29e38ff>status Burn</color>."
+        "shortDesc": "Mengakibatkan Fire DMG pada 1 musuh, dan mengakibatkan Fire DMG dalam jumlah kecil pada musuh di sekitar target. Berpeluang besar untuk menambahkan <orangeStrong>status Burn</orangeStrong>."
       }
     },
     "ult": {
@@ -26,7 +26,7 @@
       "0": {
         "name": "Skill Showcase",
         "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan {{2}} kali DMG yang masing-masing mengakibatkan Fire DMG sebesar {{1}}% ATK Guinaifen pada musuh secara acak, serta memiliki {{3}}% <u>Peluang Dasar</u> untuk membuat target memasuki status \"Firekiss\".",
-        "shortDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh, dan memberikan <color=#f29e38ff>status \"Firekiss\"</color>. Total Bounce 4 kali."
+        "shortDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh, dan memberikan <orangeStrong>status \"Firekiss\"</orangeStrong>. Total Bounce 4 kali."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Slurping Noodles During Handstand",
+      "desc": "Saat melancarkan Skill, memiliki {{1}}% peluang dasar untuk mengurangi {{2}}% Effect RES target musuh yang terkena serangan selama {{3}} giliran."
+    },
+    "2": {
+      "name": "Brushing Teeth While Whistling",
+      "desc": "Saat target musuh berstatus Burn, Basic Attack dan Skill Guinaifen akan mengakibatkan DMG Multiplier status Burn yang ditambahkan Guinaifen pada target musuh tersebut meningkat {{1}}%."
+    },
+    "3": {
+      "name": "Smashing Boulder on Chest",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Blocking Pike with Neck",
+      "desc": "Setiap kali status Burn yang diberikan Guinaifen memicu DMG, Guinaifen akan memulihkan {{1}} Energy."
+    },
+    "5": {
+      "name": "Swallowing Sword to Stomach",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Catching Bullet with Hands",
+      "desc": "Meningkatkan jumlah batas maksimal lapisan \"Firekiss\" sebanyak {{1}} lapis."
     }
   }
 }

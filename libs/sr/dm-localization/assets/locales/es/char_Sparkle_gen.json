@@ -12,21 +12,21 @@
       "0": {
         "name": "Pez de los sueños",
         "fullDesc": "Aumenta el Daño CRIT de un aliado en un valor equivalente al <orangeStrong>{{1}}%</orangeStrong> del Daño CRIT de Sparkle + <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turno y adelanta la acción de ese aliado en un {{4}}%.\\nSi Sparkle usa esta habilidad consigo misma, no adelanta su acción.",
-        "shortDesc": "Aumenta el <color=#f29e38ff>Daño CRIT</color> de un aliado y adelanta su acción."
+        "shortDesc": "Aumenta el <orangeStrong>Daño CRIT</orangeStrong> de un aliado y adelanta su acción."
       }
     },
     "ult": {
       "0": {
         "name": "Heroína de mil caras",
         "fullDesc": "Recupera {{2}} pts. de habilidad básica para el equipo y otorga Adivinanza a todos los aliados. Para los aliados con Adivinanza, el efecto de aumento de daño que proporciona el talento de Sparkle se incrementa de forma adicional en un <orangeStrong>{{3}}%</orangeStrong> por cada acumulación durante {{4}} turnos.",
-        "shortDesc": "Recupera <color=#f29e38ff>pts. de habilidad básica</color> para el equipo e incrementa de forma adicional el aumento de daño que proporciona el talento de Sparkle."
+        "shortDesc": "Recupera <orangeStrong>pts. de habilidad básica</orangeStrong> para el equipo e incrementa de forma adicional el aumento de daño que proporciona el talento de Sparkle."
       }
     },
     "technique": {
       "0": {
         "name": "Narradora poco fiable",
         "fullDesc": "Tras usar la técnica, todos los aliados obtienen Despiste durante {{2}} s. Los aliados con Despiste no pueden ser detectados por los enemigos. Al entrar en combate mientras dura Despiste, el equipo recupera {{1}} pts. de habilidad básica.",
-        "shortDesc": "Tras usar la técnica, todos los aliados obtienen Despiste. Los aliados con Despiste no pueden ser detectados por los enemigos. Al entrar en combate mientras dura Despiste, el equipo recupera <color=#f29e38ff>pts. de habilidad básica</color>."
+        "shortDesc": "Tras usar la técnica, todos los aliados obtienen Despiste. Los aliados con Despiste no pueden ser detectados por los enemigos. Al entrar en combate mientras dura Despiste, el equipo recupera <orangeStrong>pts. de habilidad básica</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Suspensión de la incredulidad",
+      "desc": "La duración de Adivinanza otorgada por la habilidad definitiva aumenta en 1 turno. El ATQ de los aliados con Adivinanza aumenta en un {{1}}%."
+    },
+    "2": {
+      "name": "Ficción sin fundamento",
+      "desc": "Por cada acumulación del efecto del talento, los aliados ignoran un {{1}}% de la DEF del objetivo cuando infligen daño."
+    },
+    "3": {
+      "name": "Sueño inalcanzable",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "La vida es un juego",
+      "desc": "La habilidad definitiva recupera 1 pt. de habilidad básica adicional. El incremento del límite de pts. de habilidad básica del talento aumenta en 1."
+    },
+    "5": {
+      "name": "Verdad de dos caras",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Polisemia narrativa",
+      "desc": "El efecto de aumento de Daño CRIT de la habilidad básica aumenta adicionalmente en una cantidad equivalente al {{1}}% del Daño CRIT de Sparkle. Cuando Sparkle usa su habilidad básica, el efecto de aumento de Daño CRIT de la habilidad básica se aplica a todos los aliados que tengan Adivinanza. Cuando Sparkle usa su habilidad definitiva, si un aliado tiene el efecto de aumento de Daño CRIT de la habilidad básica, este efecto se extiende a todos los aliados que tengan Adivinanza."
     }
   }
 }

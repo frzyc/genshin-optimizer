@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Plus dure sera la chute",
+      "desc": "Lorsque le pourcentage de PV actuel de la cible ennemie est supérieur ou égal à {{1}}%, les chances de coup critique augmentent de {{2}}%."
+    },
+    "2": {
+      "name": "Faire taire le poison et étouffer les flammes",
+      "desc": "Réduit le temps de recharge du talent d'1 tour."
+    },
+    "3": {
+      "name": "Visible et invisible",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Dragon rugissant et soleil fulgurant",
+      "desc": "Lorsque Dan Heng élimine un ennemi à l'aide de son ultime, il agit immédiatement à nouveau."
+    },
+    "5": {
+      "name": "Une goutte de pluie nourrit un torrent",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "L'âme troublée attend",
+      "desc": "L'état Ralenti provoqué par la compétence de Dan Heng réduit la VIT de l'ennemi de {{1}}% supplémentaires."
+    }
   }
 }

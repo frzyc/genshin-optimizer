@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Jusqu'au-boutiste",
+      "desc": "Lorsque les PV du personnage sont inférieurs ou égaux à 50 % de ses PV max, augmente les DGT de la compétence de {{1}}%."
+    },
+    "2": {
+      "name": "Libération",
+      "desc": "Utiliser la compétence ou l'ultime supprime 1 malus qui affecte le personnage."
+    },
+    "3": {
+      "name": "Dépassement de soi",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Retournement de situation",
+      "desc": "Lorsqu'il est frappé par un coup fatal après être entré en combat, au lieu de tomber à terre, Arlan restaure immédiatement {{1}}% de ses PV max. Cet effet disparaît automatiquement après avoir été déclenché une fois, ou après {{2}} tours."
+    },
+    "5": {
+      "name": "Corps et âme",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Abnégation",
+      "desc": "Lorsque les PV du personnage sont inférieurs ou égaux à 50 % de ses PV max, l'ultime inflige {{1}}% de DGT supplémentaires. Le multiplicateur de DGT de l'ennemi ciblé s'applique désormais également aux ennemis adjacents."
+    }
   }
 }

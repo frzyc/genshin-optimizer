@@ -2,6 +2,6 @@
   "setName": "Tiên Phong Trong Nước Chết",
   "setEffects": {
     "2": "Sát thương gây ra cho kẻ địch bị ảnh hưởng bởi Hiệu Ứng Xấu tăng {{1}}%.",
-    "4": "Tăng {{1}}% Tỷ Lệ Bạo Kích, tăng {{2}}%/{{3}}% Sát Thương Bạo Kích mà người trang bị gây cho kẻ địch rơi vào không dưới {{4}}/{{5}} Hiệu Ứng Xấu. Sau khi người trang bị thi triển Hiệu Ứng Xấu lên kẻ địch, hiệu ứng nói trên tăng <unbreak>100%</unbreak>, duy trì {{6}} hiệp."
+    "4": "Tăng {{1}}% Tỷ Lệ Bạo Kích, tăng {{2}}%/{{3}}% Sát Thương Bạo Kích mà người trang bị gây cho kẻ địch rơi vào không dưới {{4}}/{{5}} Hiệu Ứng Xấu. Sau khi người trang bị thi triển Hiệu Ứng Xấu lên kẻ địch, hiệu ứng nói trên tăng 100%, duy trì {{6}} hiệp."
   }
 }

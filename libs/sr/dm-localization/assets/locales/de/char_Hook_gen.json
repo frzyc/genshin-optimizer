@@ -24,7 +24,7 @@
       "0": {
         "name": "Bumm! Hier kommt das Feuer!",
         "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu.\\nVerstärkt nach dem Einsatz des Ultimates die nächste Fertigkeit, die dem anvisierten Gegner sowie angrenzenden Zielen SCH zufügt.",
-        "shortDesc": "Fügt einem Gegner massiven Feuer-SCH zu und <color=#f29e38ff>verstärkt Hooks nächste Fertigkeit</color>."
+        "shortDesc": "Fügt einem Gegner massiven Feuer-SCH zu und <orangeStrong>verstärkt Hooks nächste Fertigkeit</orangeStrong>."
       }
     },
     "technique": {
@@ -40,6 +40,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Früh zu Bett, früh aus den Federn",
+      "desc": "Die verstärkte Fertigkeit verursacht {{1}}% mehr SCH."
+    },
+    "2": {
+      "name": "Glücklicher Bauch, glücklicher Körper",
+      "desc": "Verlängert die Dauer des durch Fertigkeit verursachten Brennens um {{1}} Rd."
+    },
+    "3": {
+      "name": "Nicht wählerisch sein, schmeckt alles fein",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Nichts wissen macht auch nichts",
+      "desc": "Bei Auslösung des Talents besteht eine Grundchance von {{1}}%, dass angrenzende Ziele des anvisierten Gegners von Brennen betroffen werden, das durch Fertigkeit verursacht wird."
+    },
+    "5": {
+      "name": "Für den Ruhm der Maulwürfe",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Immer bereit zum Schlagen und Treten",
+      "desc": "Hook fügt brennenden Gegnern {{1}}% mehr SCH zu."
     }
   }
 }

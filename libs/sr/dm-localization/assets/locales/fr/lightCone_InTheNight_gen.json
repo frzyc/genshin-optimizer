@@ -2,6 +2,6 @@
   "name": "Dans la nuit",
   "passive": {
     "name": "Fleurs et papillons",
-    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1}}%</orangeStrong>. En combat, à chaque tranche de {{2}} points de VIT au-delà de <unbreak>100</unbreak>, les DGT de son ATQ normale et de sa compétence augmentent de <orangeStrong>{{3}}%</orangeStrong> et les DGT critiques de son ultime de <orangeStrong>{{4}}%</orangeStrong>. Cet effet est cumulable jusqu'à {{5}} fois."
+    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1}}%</orangeStrong>. En combat, à chaque tranche de {{2}} points de VIT au-delà de 100, les DGT de son ATQ normale et de sa compétence augmentent de <orangeStrong>{{3}}%</orangeStrong> et les DGT critiques de son ultime de <orangeStrong>{{4}}%</orangeStrong>. Cet effet est cumulable jusqu'à {{5}} fois."
   }
 }

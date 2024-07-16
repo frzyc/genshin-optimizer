@@ -17,14 +17,14 @@
       "0": {
         "name": "Paisagem Infernal",
         "fullDesc": "Consome PV igual a {{1}}% dos PV máximos de Blade para entrar no estado de Paisagem Infernal.\\nEnquanto a Paisagem Infernal estiver ativa, a Perícia dele não pode ser usada, seu Dano causado aumenta em <orangeStrong>{{4}}%</orangeStrong> e aprimora o seu ATQ Básico Espada Fragmentada para Floresta de Espadas por {{2}} rodada(s).\\nSe os PV atuais de Blade não forem suficientes, seus PV serão reduzidos para 1 quando usar esta Perícia.\\nEsta Perícia não regenera Energia. Usar esta Perícia não encerra a rodada atual.",
-        "shortDesc": "Consome PV para <color=#f29e38ff>aprimorar o ATQ Básico</color>, e a rodada atual não termina ao usar essa Perícia."
+        "shortDesc": "Consome PV para <orangeStrong>aprimorar o ATQ Básico</orangeStrong>, e a rodada atual não termina ao usar essa Perícia."
       }
     },
     "ult": {
       "0": {
         "name": "Sentença de Morte",
-        "fullDesc": "Define os PV atuais de Blade em <unbreak>50%</unbreak> de seus PV máximos e causa Dano de Vento a um único inimigo igual à somatória de <orangeStrong>{{1}}%</orangeStrong> de seu ATQ, <orangeStrong>{{2}}%</orangeStrong> de seus PV máximos, e <orangeStrong>{{5}}%</orangeStrong> do total de PV que ele perdeu na batalha atual. Ao mesmo tempo, causa Dano de Vento aos alvos adjacentes igual à somatória de <orangeStrong>{{3}}%</orangeStrong> de seu ATQ, <orangeStrong>{{4}}%</orangeStrong> de seus PV máximos, e <orangeStrong>{{6}}%</orangeStrong> do total de PV que ele perdeu na batalha atual.\\nO total de PV que Blade perdeu na batalha atual tem um limite de {{7}}% de seus PV máximos. Este valor será redefinido e reacumulado após usar sua Perícia Suprema.",
-        "shortDesc": "Faz com que os PV atuais fiquem em <unbreak>50%</unbreak> dos PV máximos, causa Dano de Vento massivo a um único inimigo e Dano de Vento aos alvos adjacentes."
+        "fullDesc": "Define os PV atuais de Blade em 50% de seus PV máximos e causa Dano de Vento a um único inimigo igual à somatória de <orangeStrong>{{1}}%</orangeStrong> de seu ATQ, <orangeStrong>{{2}}%</orangeStrong> de seus PV máximos, e <orangeStrong>{{5}}%</orangeStrong> do total de PV que ele perdeu na batalha atual. Ao mesmo tempo, causa Dano de Vento aos alvos adjacentes igual à somatória de <orangeStrong>{{3}}%</orangeStrong> de seu ATQ, <orangeStrong>{{4}}%</orangeStrong> de seus PV máximos, e <orangeStrong>{{6}}%</orangeStrong> do total de PV que ele perdeu na batalha atual.\\nO total de PV que Blade perdeu na batalha atual tem um limite de {{7}}% de seus PV máximos. Este valor será redefinido e reacumulado após usar sua Perícia Suprema.",
+        "shortDesc": "Faz com que os PV atuais fiquem em 50% dos PV máximos, causa Dano de Vento massivo a um único inimigo e Dano de Vento aos alvos adjacentes."
       }
     },
     "technique": {
@@ -40,6 +40,32 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "A Lâmina Corta Mais Fundo no Inferno",
+      "desc": "A Perícia Suprema de Blade causa Dano aumentado adicional a um único inimigo-alvo, com um aumento igual a {{1}}% do total de PV que Blade perdeu na batalha atual. O total de PV que Blade perdeu na batalha atual tem um limite de {{2}}% de seus PV máximos. Este valor será redefinido e reacumulado após usar sua Perícia Suprema."
+    },
+    "2": {
+      "name": "Dez Mil Mágoas de Um Sonho Destruído",
+      "desc": "Quando Blade está no estado de Paisagem Infernal, sua Chance de CRIT aumenta em {{1}}%."
+    },
+    "3": {
+      "name": "A Lâmina Temperada Sangra da Tonalidade Mais Gelada",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Rejeitado pela Morte, Infectado com Vida",
+      "desc": "Quando os PV atuais de Blade chegam a 50% ou menos de seus PV máximos, aumenta os PV máximos dele em {{1}}%. Acumula até {{2}} vez(es)."
+    },
+    "5": {
+      "name": "Morte Pelo Olhar dos Dez Senhores",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Renascido em uma Casca Vazia",
+      "desc": "O número máximo de acúmulos de Carga é reduzido para 4. O Dano de um Ataque Extra acionado pelo Talento de Blade é aumentado adicionalmente em {{1}}% de seus PV máximos."
     }
   }
 }

@@ -46,5 +46,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Étoile tombée du ciel",
+      "desc": "Lorsque des ennemis sont vaincus par l'ultime {M#du pionnier}{F#de la pionnière}, {M#ce dernier}{F#cette dernière} régénère {{1}} points d'énergie supplémentaires. Cet effet ne peut être déclenché qu'une fois par attaque."
+    },
+    "2": {
+      "name": "À son corps défendant",
+      "desc": "Attaquer des ennemis ayant une Faiblesse physique restaure une quantité de PV équivalente à {{1}}% de l'ATQ {M#du pionnier à ce dernier}{F#de la pionnière à cette dernière}."
+    },
+    "3": {
+      "name": "Un chuchotement pour seul guide",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Regard destructeur",
+      "desc": "Les chances de coup critique du personnage augmentent de {{1}}% contre les ennemis victimes d'une Rupture de faiblesse."
+    },
+    "5": {
+      "name": "Un espoir de survie",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Une volonté de pionnier",
+      "desc": "Le talent {M#du pionnier}{F#de la pionnière} se déclenche également lorsqu'{M#il}{F#elle} élimine un ennemi."
+    }
   }
 }

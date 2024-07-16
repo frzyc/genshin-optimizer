@@ -36,5 +36,31 @@
         "shortDesc": ""
       }
     }
+  },
+  "ranks": {
+    "1": {
+      "name": "Bis zum bitteren Ende",
+      "desc": "Liegt Arlans LP-Prozentsatz bei 50 % oder weniger, wird der durch die Fertigkeit verursachte SCH um {{1}}% erhöht."
+    },
+    "2": {
+      "name": "Befreiung",
+      "desc": "Entfernt beim Einsatz der Fertigkeit oder des Ultimates 1 Debuff von Arlan."
+    },
+    "3": {
+      "name": "Gewaltsamer Durchbruch",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Rollentausch",
+      "desc": "Erleidet Arlan nach Kampfeintritt einen Todesstoß, stellt er seine LP sofort auf {{1}}% seiner max. LP wieder her, anstatt handlungsunfähig zu werden. Dieser Effekt wird automatisch nach 1-mal Auslösung oder nach {{2}} Rd. entfernt."
+    },
+    "5": {
+      "name": "Die Fetzen fliegen",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Selbstaufopferung",
+      "desc": "Liegt Arlans LP-Prozentsatz bei 50 % oder weniger, verursacht der Ultimate {{1}}% mehr SCH und angrenzende Ziele erhalten denselben SCH-Multiplikator wie der anvisierte Gegner."
+    }
   }
 }

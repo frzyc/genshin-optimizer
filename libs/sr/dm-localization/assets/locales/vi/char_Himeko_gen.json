@@ -26,7 +26,7 @@
       "0": {
         "name": "Lửa Thiêu Âm Ỉ",
         "fullDesc": "Sau khi dùng Bí Kỹ sẽ tạo ra vùng đặc biệt trong {{4}} giây. Khi vào chiến đấu với kẻ địch trong vùng này có {{1}}% <u>xác suất cơ bản</u> khiến Sát Thương Hỏa mà kẻ địch phải chịu tăng {{2}}%, duy trì {{3}} hiệp. Cùng một lúc tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
-        "shortDesc": "Tạo một khu vực đặc biệt. Sau khi vào chiến đấu với kẻ địch trong khu vực, sẽ có xác suất lớn <color=#f29e38ff>tăng Sát Thương Hỏa mà kẻ địch phải chịu</color>."
+        "shortDesc": "Tạo một khu vực đặc biệt. Sau khi vào chiến đấu với kẻ địch trong khu vực, sẽ có xác suất lớn <orangeStrong>tăng Sát Thương Hỏa mà kẻ địch phải chịu</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tuổi Thơ",
+      "desc": "Sau khi kích hoạt Truy Kích Dồn Dập, Tốc Độ của Himeko tăng {{1}}%, duy trì {{2}} hiệp."
+    },
+    "2": {
+      "name": "Gặp Gỡ",
+      "desc": "Tăng {{2}}% sát thương gây ra cho kẻ địch có phần trăm HP hiện tại nhỏ hơn hoặc bằng {{1}}%."
+    },
+    "3": {
+      "name": "Chính Mình",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Tận Sức",
+      "desc": "Khi thi triển Chiến Kỹ Phá Vỡ Điểm Yếu của kẻ địch, Himeko sẽ nhận thêm {{1}} điểm Nạp Năng Lượng."
+    },
+    "5": {
+      "name": "Khát Vọng",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Khai Phá!",
+      "desc": "Tuyệt Kỹ gây thêm 2 lần sát thương, gây Sát Thương Hỏa cho mỗi kẻ địch ngẫu nhiên bằng {{1}}% sát thương ban đầu."
     }
   }
 }

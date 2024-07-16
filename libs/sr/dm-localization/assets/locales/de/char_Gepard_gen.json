@@ -12,14 +12,14 @@
       "0": {
         "name": "Einschüchternder Schlag",
         "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gepards ANG zu und verursacht beim Ziel mit einer <u>Grundchance</u> von {{2}}% für {{3}} Rd. Gefroren.\\nEin gefrorener Gegner kann keine Aktionen ausführen und erleidet zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Gepards ANG.",
-        "shortDesc": "Fügt einem Gegner Eis-SCH zu und <color=#f29e38ff>verursacht beim Ziel mit einer Chance Gefroren</color>."
+        "shortDesc": "Fügt einem Gegner Eis-SCH zu und <orangeStrong>verursacht beim Ziel mit einer Chance Gefroren</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Emporragendes Bollwerk",
         "fullDesc": "Gewährt allen Verbündeten für {{2}} Rd. einen Schild, der SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gepards VTD plus <orangeStrong>{{3}}</orangeStrong> absorbiert.",
-        "shortDesc": "Gewährt allen Verbündeten einen <color=#f29e38ff>Schild</color>."
+        "shortDesc": "Gewährt allen Verbündeten einen <orangeStrong>Schild</orangeStrong>."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Sorgfaltspflicht",
+      "desc": "Erhöht beim Einsatz der Fertigkeit die Grundchance, das Ziel einzufrieren, um {{1}}%."
+    },
+    "2": {
+      "name": "Hartnäckige Kälte",
+      "desc": "Wenn der durch die Fertigkeit eingefrorene Gegner sich von „Gefroren“ erholt, sinkt seine GES für {{2}} Rd. um {{1}}%."
+    },
+    "3": {
+      "name": "Niemals aufgeben",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Der Glaube versetzt Berge",
+      "desc": "Erhöht den Effekt-WDS aller Verbündeten um {{1}}%, wenn Gepard mitkämpft."
+    },
+    "5": {
+      "name": "Kalte Eisenfaust",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Unnachgiebige Entschlossenheit",
+      "desc": "Bei Auslösung des Talents wird Gepard sofort in Aktion treten und seine LP-Wiederherstellung wird zusätzlich um {{1}}% seiner max. LP erhöht."
     }
   }
 }

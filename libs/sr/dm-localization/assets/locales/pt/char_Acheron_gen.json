@@ -46,7 +46,7 @@
       "0": {
         "name": "Ascendência Quadrivalente",
         "fullDesc": "Imediatamente ataca o inimigo. No início de cada onda, ganha Ascendência Quadrivalente, causando Dano de Raio igual a {{1}}% do ATQ de Acheron a todos os inimigos e reduzindo a Tenacidade te todos os inimigos independentemente dos Tipos de Fraqueza. Ao infligir Quebra de Fraqueza, aciona o efeito de Quebra de Fraqueza de Raio.\\nAscendência Quadrivalente: depois de usar sua Perícia Suprema, Acheron ganha {{2}} ponto(s) de Sonho Retalhado e inflige {{2}} acúmulo(s) de Nó Rubro em um único inimigo aleatório.\\nSe o ataque for realizado contra um inimigo normal, ele é derrotado imediatamente sem entrar em combate. Nenhum Ponto de Técnica será consumido caso nenhum inimigo seja atingido.",
-        "shortDesc": "Ataca o inimigo. Recebe Ascendência Quadrivalente no início de cada onda, causando Dano de Raio a todos os inimigos e reduzindo sua Tenacidade <color=#f29e38ff>independentemente dos Tipos de Fraqueza</color>.\\nSe estiver atacando um inimigo comum, <color=#f29e38ff>imediatamente o derrota</color> sem entrar em combate. O Ponto de Técnica não é gasto se o ataque não atingir um inimigo."
+        "shortDesc": "Ataca o inimigo. Recebe Ascendência Quadrivalente no início de cada onda, causando Dano de Raio a todos os inimigos e reduzindo sua Tenacidade <orangeStrong>independentemente dos Tipos de Fraqueza</orangeStrong>.\\nSe estiver atacando um inimigo comum, <orangeStrong>imediatamente o derrota</orangeStrong> sem entrar em combate. O Ponto de Técnica não é gasto se o ataque não atingir um inimigo."
       }
     },
     "overworld": {
@@ -55,6 +55,32 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Verdadeiras Palavras do Céu",
+      "desc": "Aumenta a Chance de CRIT em {{1}}% ao causar Dano a inimigos penalizados."
+    },
+    "2": {
+      "name": "Trovões Mudos na Tempestade Amainada",
+      "desc": "O número de personagens no Caminho da Inexistência necessário para alcançar o maior efeito possível do Rastro \"O Abismo\" é reduzido por 1. No início da rodada desta unidade, ganha 1 ponto de Sonho Retalhado e inflige 1 acúmulo de Nó Rubro a um inimigo com mais acúmulos de Nó Rubro."
+    },
+    "3": {
+      "name": "Mordidas Gélidas na Morte",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Fogo Sagrado da Alma Refletida",
+      "desc": "Quando o inimigo-alvo entra em combate, inflige a ele o estado de Vulnerabilidade Vulnerável do Dano da Perícia Suprema, aumentando a quantidade de Dano da Perícia Suprema recebido em {{1}}%."
+    },
+    "5": {
+      "name": "Almas Espalhadas em Terras Apagadas",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Apocalipse, o Emancipador",
+      "desc": "Aumenta a PEN de RES a Todos os Tipos do Dano de Perícia Suprema causado por Acheron em {{1}}%. O Dano causado pelo ATQ Básico e a Perícia também será considerado Dano de Perícia Suprema e não pode reduzir a Tenacidade do inimigo independentemente dos Tipos de Fraqueza. Quando a Fraqueza é Quebrada, aciona o efeito de Quebra de Fraqueza de Raio."
     }
   }
 }

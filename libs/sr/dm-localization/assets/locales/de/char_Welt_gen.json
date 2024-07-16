@@ -12,21 +12,21 @@
       "0": {
         "name": "Rand der Leere",
         "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Welts ANG zu und verursacht 2-mal zusätzlichen SCH. Jeder zusätzlicher Treffer fügt zufälligen Gegnern imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Welts ANG zu. Jeder Treffer hat eine <u>Grundchance</u> von <orangeStrong>{{2}}%</orangeStrong>, die GES des Ziels für {{4}} Rd. um {{3}}% zu verringern.",
-        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu. Dieser Angriff kann 3-mal abprallen und hat eine Chance, betroffene Ziele zu <color=#f29e38ff>verlangsamen</color>."
+        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu. Dieser Angriff kann 3-mal abprallen und hat eine Chance, betroffene Ziele zu <orangeStrong>verlangsamen</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Synthetisches Schwarzes Loch",
         "fullDesc": "Fügt allen Gegnern imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Welts ANG zu und verursacht bei getroffenen Gegnern mit einer <u>Grundchance</u> von {{3}}% den Status Gefangenschaft, der für 1 Rd. hält.\\nDie Aktionen der gefangenen Gegner werden um <orangeStrong>{{2}}%</orangeStrong> <u>verzögert</u> und ihre GES sinkt um {{4}}%.",
-        "shortDesc": "Fügt allen Gegnern imaginären SCH zu und <color=#f29e38ff>verursacht mit hoher Chance Gefangenschaft</color>."
+        "shortDesc": "Fügt allen Gegnern imaginären SCH zu und <orangeStrong>verursacht mit hoher Chance Gefangenschaft</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Gravitationsgefängnis",
         "fullDesc": "Nach dem Einsatz von Welts Technik wird für {{4}} s eine spezielle Dimension erzeugt. Die Bewegungs-GES der Gegner in dieser Dimension wird um {{5}}% reduziert. Nach Kampfeintritt mit Gegnern in der Dimension besteht eine <u>Grundchance</u> von {{1}}%, bei Gegnern für 1 Rd. den Status Gefangenschaft zu verursachen.\\nDie Aktionen von gefangenen Gegnern werden um {{2}}% <u>verzögert</u> und ihre GES um {{3}}% verringert. Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
-        "shortDesc": "Erschafft eine Dimension. Gegner in dieser Dimension haben reduzierte Bewegungs-GES. Wenn du mit Gegnern in der Dimension kämpfst, <color=#f29e38ff>besteht eine hohe Chance, dass sie in Gefangenschaft geraten</color>."
+        "shortDesc": "Erschafft eine Dimension. Gegner in dieser Dimension haben reduzierte Bewegungs-GES. Wenn du mit Gegnern in der Dimension kämpfst, <orangeStrong>besteht eine hohe Chance, dass sie in Gefangenschaft geraten</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Nachlass der Ehre",
+      "desc": "Nach dem Einsatz des Ultimates werden Welts Fähigkeiten verstärkt. Die nächsten {{3}} Einsätze seines Standardangriffs oder seiner Fertigkeit fügen dem Ziel zusätzlichen SCH in Höhe von {{1}}% seines Standardangriff-Multiplikators bzw. {{2}}% des SCH-Multiplikators seiner Fertigkeit zu."
+    },
+    "2": {
+      "name": "Sternenzufluss",
+      "desc": "Bei Auslösung des Talents erhält Welt {{1}} Pkt. Energie zurück."
+    },
+    "3": {
+      "name": "Friedensgebet",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Anruf der Gerechtigkeit",
+      "desc": "Erhöht die Grundchance, einen angegriffenen Gegner beim Einsatz der Fertigkeit zu verlangsamen, um {{1}}%."
+    },
+    "5": {
+      "name": "Macht der Güte",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Glänzende Aussichten",
+      "desc": "Fügt einem zufälligen Gegner beim Einsatz der Fertigkeit 1-mal zusätzlichen SCH zu."
     }
   }
 }

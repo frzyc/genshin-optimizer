@@ -12,7 +12,7 @@
       "0": {
         "name": "Blazing Welcome",
         "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Guinaifen's ATK to a single enemy and Fire DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Guinaifen's ATK to any adjacent enemies, with a {{3}}% <u>base chance</u> to Burn the target and adjacent targets. When Burned, enemies will take a Fire DoT equal to <orangeStrong>{{4}}%</orangeStrong> of Guinaifen's ATK at the beginning of each turn, lasting for {{5}} turn(s).",
-        "shortDesc": "Deals Fire DMG to a single enemy and minor Fire DMG to adjacent enemies, with a high chance of <color=#f29e38ff>Burning</color> them."
+        "shortDesc": "Deals Fire DMG to a single enemy and minor Fire DMG to adjacent enemies, with a high chance of <orangeStrong>Burning</orangeStrong> them."
       }
     },
     "ult": {
@@ -26,7 +26,7 @@
       "0": {
         "name": "Skill Showcase",
         "fullDesc": "Immediately attacks the enemy. After entering battle, deals DMG for {{2}} time(s), dealing Fire DMG equal to {{1}}% of Guinaifen's ATK to a random single enemy target each time, with a {{3}}% <u>base chance</u> of inflicting Firekiss on them.",
-        "shortDesc": "Attacks the enemy. After entering battle, deals minor Fire DMG to a single target while applying <color=#f29e38ff>Firekiss</color>, with a total of 4 Bounces."
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor Fire DMG to a single target while applying <orangeStrong>Firekiss</orangeStrong>, with a total of 4 Bounces."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Slurping Noodles During Handstand",
+      "desc": "When Skill is used, there is a {{1}}% base chance to reduce the attacked target enemy's Effect RES by {{2}}% for {{3}} turn(s)."
+    },
+    "2": {
+      "name": "Brushing Teeth While Whistling",
+      "desc": "When an enemy target is being Burned, the DMG multiplier of the Burn status applied by her Basic ATK or Skill increases by {{1}}%."
+    },
+    "3": {
+      "name": "Smashing Boulder on Chest",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Blocking Pike with Neck",
+      "desc": "Every time the Burn status inflicted by Guinaifen causes DMG, Guinaifen regenerates {{1}} Energy."
+    },
+    "5": {
+      "name": "Swallowing Sword to Stomach",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Catching Bullet with Hands",
+      "desc": "Increases the stackable Firekiss count by {{1}}."
     }
   }
 }

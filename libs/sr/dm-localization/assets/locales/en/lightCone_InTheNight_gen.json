@@ -2,6 +2,6 @@
   "name": "In the Night",
   "passive": {
     "name": "Flowers and Butterflies",
-    "description": "Increases the wearer's CRIT Rate by <orangeStrong>{{1}}%</orangeStrong>. While the wearer is in battle, for every {{2}} SPD that exceeds <unbreak>100</unbreak>, the DMG of the wearer's Basic ATK and Skill is increased by <orangeStrong>{{3}}%</orangeStrong> and the CRIT DMG of their Ultimate is increased by <orangeStrong>{{4}}%</orangeStrong>. This effect can stack up to {{5}} time(s)."
+    "description": "Increases the wearer's CRIT Rate by <orangeStrong>{{1}}%</orangeStrong>. While the wearer is in battle, for every {{2}} SPD that exceeds 100, the DMG of the wearer's Basic ATK and Skill is increased by <orangeStrong>{{3}}%</orangeStrong> and the CRIT DMG of their Ultimate is increased by <orangeStrong>{{4}}%</orangeStrong>. This effect can stack up to {{5}} time(s)."
   }
 }

@@ -26,7 +26,7 @@
       "0": {
         "name": "Incomplete Combustion",
         "fullDesc": "After using Technique, creates a dimension that lasts for {{4}} second(s). After entering battle with enemies in the dimension, there is a {{1}}% <u>base chance</u> to increase Fire DMG taken by enemies by {{2}}% for {{3}} turn(s). Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a dimension. After entering combat with enemies in the dimension, there is a high chance to <color=#f29e38ff>increase Fire DMG taken by enemies</color>."
+        "shortDesc": "Creates a dimension. After entering combat with enemies in the dimension, there is a high chance to <orangeStrong>increase Fire DMG taken by enemies</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Childhood",
+      "desc": "After \"Victory Rush\" is triggered, Himeko's SPD increases by {{1}}% for {{2}} turn(s)."
+    },
+    "2": {
+      "name": "Convergence",
+      "desc": "Deals {{2}}% more DMG to enemies whose HP percentage is {{1}}% or less."
+    },
+    "3": {
+      "name": "Poised",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Dedication",
+      "desc": "When Himeko's Skill inflicts Weakness Break on an enemy, she gains {{1}} extra point(s) of Charge."
+    },
+    "5": {
+      "name": "Aspiration",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Trailblaze!",
+      "desc": "Ultimate deals DMG 2 extra times, each of which deals Fire DMG equal to {{1}}% of the original DMG to a random enemy."
     }
   }
 }

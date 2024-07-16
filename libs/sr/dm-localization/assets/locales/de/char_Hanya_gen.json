@@ -12,14 +12,14 @@
       "0": {
         "name": "Die Fesseln des Samsara",
         "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hanyas ANG zu und belegt ihn mit „Aufbürden“.\\nJedes Mal, wenn Verbündete 2 Standardangriffe, Fertigkeiten oder Ultimates gegen einen mit Aufbürden belegten Gegner einsetzen, erhält das Team 1 Fertigkeitspunkt zurück. Aufbürden wirkt sich nur auf den letzten Gegner aus, der damit belegt wurde, und wird automatisch entfernt, sobald die Fertigkeitspunkte {{2}}-mal wiederhergestellt wurden.",
-        "shortDesc": "Fügt einem Gegner physischen SCH zu und belegt ihn mit „Aufbürden“. Jedes Mal, wenn Verbündete 2 Standardangriffe, Fertigkeiten oder Ultimates gegen einen mit Aufbürden belegten Gegner einsetzen, erhält das Team <color=#f29e38ff>1 Fertigkeitspunkt zurück</color>."
+        "shortDesc": "Fügt einem Gegner physischen SCH zu und belegt ihn mit „Aufbürden“. Jedes Mal, wenn Verbündete 2 Standardangriffe, Fertigkeiten oder Ultimates gegen einen mit Aufbürden belegten Gegner einsetzen, erhält das Team <orangeStrong>1 Fertigkeitspunkt zurück</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Bedingungsloser Gehorsam",
         "fullDesc": "Erhöht die GES eines anvisierten Verbündeten um <orangeStrong>{{3}}%</orangeStrong> von Hanyas GES und erhöht den ANG des Verbündeten für {{2}} Rd. um <orangeStrong>{{1}}%</orangeStrong>.",
-        "shortDesc": "<color=#f29e38ff>Erhöht den ANG und die GES</color> eines Verbündeten."
+        "shortDesc": "<orangeStrong>Erhöht den ANG und die GES</orangeStrong> eines Verbündeten."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ein Herz",
+      "desc": "Besiegt ein Verbündeter einen Gegner mit Hanyas Ultimate, wird Hanyas Aktion um {{1}}% vorgezogen. Dieser Effekt kann nur {{2}}-mal pro Runde ausgelöst werden."
+    },
+    "2": {
+      "name": "Zwei Ansichten",
+      "desc": "Erhöht die GES nach dem Einsatz der Fertigkeit für {{2}} Rd. um {{1}}%."
+    },
+    "3": {
+      "name": "Drei Versuchungen",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Vier Wahrheiten",
+      "desc": "Verlängert die Dauer des Ultimates zusätzlich um {{1}} Rd."
+    },
+    "5": {
+      "name": "Fünf Skandhas",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Sechs Ehrerbietungen",
+      "desc": "Die SCH-Erhöhung des Talents wird zusätzlich um {{1}}% erhöht."
     }
   }
 }

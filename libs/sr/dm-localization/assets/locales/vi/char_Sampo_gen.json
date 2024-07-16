@@ -19,7 +19,7 @@
       "0": {
         "name": "Món Quà Bất Ngờ",
         "fullDesc": "Gây Sát Thương Phong tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Sampo lên toàn phe địch, đồng thời có {{4}}% <u>xác suất cơ bản</u> khiến sát thương duy trì mà kẻ địch bị tấn công phải chịu tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp.",
-        "shortDesc": "Gây Sát Thương Phong cho toàn bộ kẻ địch, có xác suất lớn khiến chúng <color=#f29e38ff>tăng Sát Thương Duy Trì phải chịu</color>."
+        "shortDesc": "Gây Sát Thương Phong cho toàn bộ kẻ địch, có xác suất lớn khiến chúng <orangeStrong>tăng Sát Thương Duy Trì phải chịu</orangeStrong>."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tình Yêu Trỗi Dậy",
+      "desc": "Khi thi triển Chiến Kỹ, sẽ gây thêm {{1}} lần sát thương cho kẻ địch ngẫu nhiên."
+    },
+    "2": {
+      "name": "Nhiệt Tình Lan Toả",
+      "desc": "Khi kẻ địch đang ở trạng thái Bào Mòn bị tiêu diệt, sẽ khiến toàn phe địch có {{1}}% xác suất cơ bản cộng dồn {{2}} tầng bằng với trạng thái Bào Mòn của Thiên Phú."
+    },
+    "3": {
+      "name": "Con Số Lớn!",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Yêu Càng Nhiều, Hận Càng Sâu",
+      "desc": "Khi Chiến Kỹ đánh trúng mục tiêu địch có trạng thái Bào Mòn từ {{1}} tầng trở lên, sẽ khiến trạng thái Bào Mòn mục tiêu đó đang chịu lập tức sinh ra sát thương bằng {{2}}% sát thương ban đầu."
+    },
+    "5": {
+      "name": "Con Số Cực Lớn!",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Tiêu Phí Tăng Cấp",
+      "desc": "Bội Số Sát Thương của trạng thái Bào Mòn do Thiên Phú gây ra tăng {{1}}%."
     }
   }
 }

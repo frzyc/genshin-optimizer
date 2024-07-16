@@ -12,7 +12,7 @@
       "0": {
         "name": "Clarão Transcendente",
         "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo e obtém {{2}} acúmulo(s) de Sizígia.",
-        "shortDesc": "Causa Dano de Gelo a um inimigo-alvo e obtém <color=#f29e38ff>1 acúmulo de Sizígia</color>."
+        "shortDesc": "Causa Dano de Gelo a um inimigo-alvo e obtém <orangeStrong>1 acúmulo de Sizígia</orangeStrong>."
       },
       "1": {
         "name": "Lua sobre o Rio Glacial",
@@ -24,14 +24,14 @@
       "0": {
         "name": "Fluxonírico Florefêmero",
         "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo e <orangeStrong>{{3}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a inimigos adjacentes. Ganha {{2}} acúmulo(s) de Sizígia depois que o ataque acaba.",
-        "shortDesc": "Causa Dano de Gelo massivo a um inimigo-alvo e causa Dano de Gelo aos alvos adjacentes. Obtém <color=#f29e38ff>1 acúmulo de Sizígia</color>."
+        "shortDesc": "Causa Dano de Gelo massivo a um inimigo-alvo e causa Dano de Gelo aos alvos adjacentes. Obtém <orangeStrong>1 acúmulo de Sizígia</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Brilho da Verdade",
         "fullDesc": "Após usar esta Técnica, cria uma dimensão ao redor de Jingliu que dura por {{3}} segundos, e todos os inimigos nesta dimensão sofrerão Congelamento. Após entrar em combate com os inimigos na dimensão, Jingliu recupera imediatamente {{6}} de Energia e obtém {{1}} acúmulo(s) de Sizígia, com uma <u>chance-base</u> de {{2}}% de causar Congelamento nos inimigos-alvo por {{4}} rodada(s). Enquanto estiverem com Congelamento, inimigos-alvo não podem agir, e recebem <u>Dano de Gelo Adicional</u> igual a {{5}}% do ATQ de Jingliu no início de cada rodada. Somente 1 dimensão criada por aliados pode existir ao mesmo tempo.",
-        "shortDesc": "Cria uma dimensão em volta do personagem. Inimigos dentro desta dimensão sofrerão <color=#f29e38ff>Congelamento</color>. Após entrar em combate com inimigos nesta dimensão, este personagem recupera Energia e obtém 1 acúmulo de Sizígia com altas chances de aplicar <color=#f29e38ff>Congelamento</color> nos inimigos."
+        "shortDesc": "Cria uma dimensão em volta do personagem. Inimigos dentro desta dimensão sofrerão <orangeStrong>Congelamento</orangeStrong>. Após entrar em combate com inimigos nesta dimensão, este personagem recupera Energia e obtém 1 acúmulo de Sizígia com altas chances de aplicar <orangeStrong>Congelamento</orangeStrong> nos inimigos."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Queda Lunar nos Portões de Tianguan",
+      "desc": "Aumenta o Dano CRIT de Jingliu em {{1}}% pela(s) próxima(s) {{3}} rodada(s) quando usa sua Perícia Aprimorada ou sua Perícia Suprema. Se apenas um alvo inimigo for atacado, o alvo receberá adicionalmente Dano de Gelo igual a {{2}}% do ATQ de Jingliu."
+    },
+    "2": {
+      "name": "Sombras Crescentes Sobre a Constelação de Qixing",
+      "desc": "Após usar a Perícia Suprema, aumenta o Dano da próxima Perícia Aprimorada em {{1}}%."
+    },
+    "3": {
+      "name": "Neblina Mercurial da Crescente",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Brilho da Lança Lunar",
+      "desc": "Durante o estado de Transmigração Espectral, o ATQ obtido por consumir os PV dos aliados é adicionalmente aumentado em {{1}}% do total de PV consumido por toda a equipe. O limite para o aumento de ATQ feito dessa forma também aumenta em {{2}}%."
+    },
+    "5": {
+      "name": "Brilho Noturno Estelar",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Esfera Esvaziada pelo Vazio",
+      "desc": "Quando Jingliu entra no estado de Transmigração Espectral, o limite de acúmulos de Sizígia aumenta em 1, e Jingliu obtém {{1}} acúmulo(s) de Sizígia. Enquanto estiver no estado de Transmigração Espectral, seu Dano CRIT aumenta em {{2}}%."
     }
   }
 }

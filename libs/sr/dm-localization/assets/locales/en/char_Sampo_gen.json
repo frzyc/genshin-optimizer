@@ -19,7 +19,7 @@
       "0": {
         "name": "Surprise Present",
         "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sampo's ATK to all enemies, with a {{4}}% <u>base chance</u> to increase the targets' DoT taken by <orangeStrong>{{2}}%</orangeStrong> for {{3}} turn(s).",
-        "shortDesc": "Deals Wind DMG to all enemies, with a high chance to cause <color=#f29e38ff>increased DoT taken</color> to them."
+        "shortDesc": "Deals Wind DMG to all enemies, with a high chance to cause <orangeStrong>increased DoT taken</orangeStrong> to them."
       }
     },
     "technique": {
@@ -35,6 +35,32 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Rising Love",
+      "desc": "When using Skill, deals DMG for {{1}} extra time(s) to a random enemy."
+    },
+    "2": {
+      "name": "Infectious Enthusiasm",
+      "desc": "Defeating an enemy with Wind Shear has a {{1}}% base chance to inflict all enemies with {{2}} stack(s) of Wind Shear, equivalent to the Talent's Wind Shear."
+    },
+    "3": {
+      "name": "Big Money!",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "The Deeper the Love, the Stronger the Hate",
+      "desc": "When Skill hits an enemy with {{1}} or more stack(s) of Wind Shear, the enemy immediately takes {{2}}% of current Wind Shear DMG."
+    },
+    "5": {
+      "name": "Huuuuge Money!",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Increased Spending",
+      "desc": "Talent's Wind Shear DMG multiplier increases by {{1}}%."
     }
   }
 }

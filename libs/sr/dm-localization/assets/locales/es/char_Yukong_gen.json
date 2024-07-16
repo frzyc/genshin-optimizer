@@ -12,21 +12,21 @@
       "0": {
         "name": "Salva alentadora",
         "fullDesc": "Obtiene {{1}} acumulaciones de Sonido de cuerda (se pueden tener 2 como máximo). Cuando Yukong tiene Sonido de cuerda, el ATQ de todos los aliados aumenta en un <orangeStrong>{{2}}%</orangeStrong>. Cada vez que un aliado termina su turno, Yukong pierde 1 acumulación de Sonido de cuerda.\\nDurante el turno en el que Yukong usa su habilidad básica y obtiene Sonido de cuerda, no pierde ninguna acumulación de Sonido de cuerda.",
-        "shortDesc": "Obtiene 2 acumulaciones de Sonido de cuerda. El <color=#f29e38ff>ATQ de todos los aliados aumenta</color> cuando Sonido de cuerda está activo."
+        "shortDesc": "Obtiene 2 acumulaciones de Sonido de cuerda. El <orangeStrong>ATQ de todos los aliados aumenta</orangeStrong> cuando Sonido de cuerda está activo."
       }
     },
     "ult": {
       "0": {
         "name": "Cernícalo en picado",
         "fullDesc": "Tras usar la habilidad definitiva, si Yukong tiene Sonido de cuerda, la Prob. CRIT de todos los aliados aumenta en un <orangeStrong>{{2}}%</orangeStrong> y el Daño CRIT en un <orangeStrong>{{3}}%</orangeStrong>. Además, inflige a un enemigo un Daño Imaginario equivalente al <orangeStrong>{{1}}%</orangeStrong> del ATQ de Yukong.",
-        "shortDesc": "Si tiene Sonido de cuerda, <color=#f29e38ff>aumenta la Prob. CRIT y el Daño CRIT</color> de todos los aliados. Inflige una gran cantidad de Daño Imaginario a un enemigo."
+        "shortDesc": "Si tiene Sonido de cuerda, <orangeStrong>aumenta la Prob. CRIT y el Daño CRIT</orangeStrong> de todos los aliados. Inflige una gran cantidad de Daño Imaginario a un enemigo."
       }
     },
     "technique": {
       "0": {
         "name": "Persiguiendo el viento",
         "fullDesc": "Tras usar la técnica, entra en modo de esprintar durante {{1}} s. En este estado, su VEL de movimiento aumenta en un {{2}}%. Además, al entrar en combate tras atacar a un enemigo, Yukong obtiene {{3}} acumulaciones de Sonido de cuerda.",
-        "shortDesc": "<color=#f29e38ff>Aumenta su VEL de movimiento</color>. Tras atacar al enemigo y entrar en combate, obtiene 2 acumulaciones de Sonido de Cuerda."
+        "shortDesc": "<orangeStrong>Aumenta su VEL de movimiento</orangeStrong>. Tras atacar al enemigo y entrar en combate, obtiene 2 acumulaciones de Sonido de Cuerda."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Exploradora alada",
+      "desc": "Al entrar en combate, la VEL de todos los aliados aumenta en un {{1}}% durante {{2}} turnos."
+    },
+    "2": {
+      "name": "Orden del firmamento",
+      "desc": "Cuando la energía de un aliado es igual a su límite de energía, Yukong recupera {{1}} pts. de energía adicionales. Este efecto solo se puede activar una vez por cada aliado. Cuando Yukong utiliza la habilidad definitiva, se reinicia el contador de activaciones."
+    },
+    "3": {
+      "name": "Descarga torrencial",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Ecos del céfiro",
+      "desc": "Cuando tiene Sonido de cuerda, el daño que inflige Yukong aumenta en un {{1}}%."
+    },
+    "5": {
+      "name": "Rápida y precisa",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Arco fuerte",
+      "desc": "Cuando Yukong usa su habilidad definitiva, obtiene {{1}} acumulación de Sonido de cuerda."
     }
   }
 }

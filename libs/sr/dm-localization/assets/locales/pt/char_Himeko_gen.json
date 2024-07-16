@@ -26,7 +26,7 @@
       "0": {
         "name": "Combustão Incompleta",
         "fullDesc": "Após usar a Técnica, cria uma dimensão que dura {{4}}s. Depois de entrar em batalha com inimigos na dimensão, há {{1}}% de <u>chance-base</u> de aumentar o Dano de Fogo que os inimigos recebem em {{2}}% por {{3}} rodada(s). Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
-        "shortDesc": "Cria uma dimensão. Depois de entrar em combate com inimigos na dimensão, existe uma alta chance de <color=#f29e38ff>aumentar o Dano de Fogo recebido pelos inimigos</color>."
+        "shortDesc": "Cria uma dimensão. Depois de entrar em combate com inimigos na dimensão, existe uma alta chance de <orangeStrong>aumentar o Dano de Fogo recebido pelos inimigos</orangeStrong>."
       }
     },
     "overworld": {
@@ -35,6 +35,32 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Infância",
+      "desc": "Após a \"Corrida da Vitória\" ser ativada, a VEL de Himeko tem um aumento de {{1}}% por {{2}} rodada(s)."
+    },
+    "2": {
+      "name": "Convergência",
+      "desc": "Causa {{2}}% de Dano extra a inimigos cuja porcentagem de PV for igual ou menor que {{1}}%."
+    },
+    "3": {
+      "name": "Equilíbrio",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Dedicação",
+      "desc": "Quando a Perícia de Himeko infligir Quebra de Fraqueza em um inimigo, ela ganha {{1}} ponto(s) extras de Carga."
+    },
+    "5": {
+      "name": "Aspiração",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Desbravamento!",
+      "desc": "A Perícia Suprema causa dano mais duas vezes, causando também Dano de Fogo igual a {{1}}% do Dano original a um inimigo aleatório."
     }
   }
 }

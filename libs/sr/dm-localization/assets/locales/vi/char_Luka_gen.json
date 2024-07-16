@@ -17,7 +17,7 @@
       "0": {
         "name": "Nắm Đấm Vỡ Nát",
         "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Luka, sau đó có {{2}}% <u>xác suất cơ bản</u> khiến mục tiêu rơi vào trạng thái Chảy Máu, duy trì {{5}} hiệp.\\nTrong trạng thái Chảy Máu, khi bắt đầu mỗi hiệp, kẻ địch sẽ chịu Sát Thương Vật Lý Duy Trì bằng {{3}}% Giới Hạn HP của bản thân, tối đa không quá <orangeStrong>{{4}}%</orangeStrong> Tấn Công của Luka.",
-        "shortDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch, có xác suất lớn khiến mục tiêu <color=#f29e38ff>Chảy Máu</color>."
+        "shortDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch, có xác suất lớn khiến mục tiêu <orangeStrong>Chảy Máu</orangeStrong>."
       }
     },
     "ult": {
@@ -31,7 +31,7 @@
       "0": {
         "name": "Người Tiên Phong",
         "fullDesc": "Tấn công kẻ địch ngay, sau khi vào chiến đấu sẽ gây Sát Thương Vật Lý bằng {{1}}% Tấn Công của Luka cho 1 kẻ địch ngẫu nhiên, đồng thời có {{2}}% <u>xác suất cơ bản</u> khiến kẻ này rơi vào trạng thái Chảy Máu giống với Chiến Kỹ. Sau đó Luka sẽ nhận thêm 1 tầng Ý Chí Chiến Đấu.",
-        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch ngẫu nhiên, đồng thời có xác suất lớn khiến mục tiêu <color=#f29e38ff>Chảy Máu</color>, sau đó nhận thêm 1 tầng Ý Chí Chiến Đấu."
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch ngẫu nhiên, đồng thời có xác suất lớn khiến mục tiêu <orangeStrong>Chảy Máu</orangeStrong>, sau đó nhận thêm 1 tầng Ý Chí Chiến Đấu."
       }
     },
     "overworld": {
@@ -40,6 +40,32 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Chiến Đấu Không Ngừng",
+      "desc": "Khi Luka hành động, nếu kẻ địch chỉ định ở trạng thái Chảy Máu, thì sát thương Luka gây ra sẽ tăng {{1}}%, duy trì {{2}} hiệp."
+    },
+    "2": {
+      "name": "Kẻ Địch Yếu, Ta Mạnh",
+      "desc": "Nếu kẻ địch bị Chiến Kỹ đánh trúng có điểm yếu thuộc tính Vật Lý, sẽ nhận {{1}} tầng Ý Chí Chiến Đấu."
+    },
+    "3": {
+      "name": "Sinh Ra Vì Võ Đài",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Kiên Định Không Lùi Bước",
+      "desc": "Mỗi khi nhận 1 tầng Ý Chí Chiến Đấu, sẽ tăng {{1}}% tấn công, hiệu ứng này tối đa cộng dồn {{2}} tầng."
+    },
+    "5": {
+      "name": "Linh Hồn Lửa Ngầm",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Tràng Vỗ Tay Cho Nhà Vô Địch",
+      "desc": "Sau khi thi triển tấn công thường cường hóa là Nắm Đấm Phá Trời trúng kẻ địch đang ở trạng thái Chảy Máu, sẽ khiến trạng thái Chảy Máu mà kẻ đó đang phải chịu lập tức sinh ra 1 lần sát thương tương đương {{1}}% sát thương ban đầu cho mỗi đòn tấn công của Nắm Đấm Trực Diện được dùng trong tấn công thường cường hóa lần này."
     }
   }
 }
