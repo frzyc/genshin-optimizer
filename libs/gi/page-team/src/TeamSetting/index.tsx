@@ -17,7 +17,6 @@ import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import type { ButtonProps } from '@mui/material'
 import { Alert, Box, Button, CardContent, Grid } from '@mui/material'
 import { Suspense, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -34,7 +33,6 @@ export default function TeamSetting({
 }: {
   teamId: string
   teamData?: TeamData
-  buttonProps?: ButtonProps
 }) {
   const navigate = useNavigate()
   const database = useDatabase()

@@ -16,8 +16,12 @@ import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
 
 export function StatDisplayComponent({
   columns = { xs: 1, sm: 2, md: 3, xl: 4 },
+  sections: onlySections,
+  hideHeaders,
 }: {
   columns?: MasonryProps['columns']
+  sections?: string[]
+  hideHeaders?: boolean
 }) {
   const { data, compareData } = useContext(DataContext)
   const dataDisplaySections = useMemo(() => getDisplaySections(data), [data])
@@ -28,10 +32,12 @@ export function StatDisplayComponent({
 
   const sections = useMemo(
     () =>
-      dataDisplaySections.filter(([, ns]) =>
-        Object.values(ns).some((n) => !n.isEmpty)
+      dataDisplaySections.filter(
+        ([k, ns]) =>
+          (!onlySections || onlySections.includes(k)) &&
+          Object.values(ns).some((n) => !n.isEmpty)
       ),
-    [dataDisplaySections]
+    [dataDisplaySections, onlySections]
   )
   const compareSections = useMemo(
     () =>
@@ -58,6 +64,7 @@ export function StatDisplayComponent({
             displayNs={sections.find(([k]) => k === key)?.[1]}
             compareDisplayNs={compareSections?.find(([k]) => k === key)?.[1]}
             sectionKey={key}
+            hideHeader={hideHeaders}
           />
         ))}
       </Masonry>
@@ -69,10 +76,12 @@ function Section({
   displayNs,
   compareDisplayNs,
   sectionKey,
+  hideHeader,
 }: {
   displayNs?: DisplaySub<CalcResult>
   compareDisplayNs?: DisplaySub<CalcResult>
   sectionKey: string
+  hideHeader?: boolean
 }) {
   const optimizationTarget = useContext(OptimizationTargetContext)
   const { data, compareData } = useContext(DataContext)
@@ -118,12 +127,16 @@ function Section({
   // if (fields.every((t) => t.type(t.props) === null)) return null
   return (
     <CardThemed>
-      <CardHeaderCustom
-        avatar={icon}
-        title={title}
-        action={action && <SqBadge>{action}</SqBadge>}
-      />
-      <Divider />
+      {hideHeader ? null : (
+        <>
+          <CardHeaderCustom
+            avatar={icon}
+            title={title}
+            action={action && <SqBadge>{action}</SqBadge>}
+          />
+          <Divider />
+        </>
+      )}
       <FieldDisplayList sx={{ m: 0 }}>{fields}</FieldDisplayList>
     </CardThemed>
   )

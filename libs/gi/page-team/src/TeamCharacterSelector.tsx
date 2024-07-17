@@ -9,6 +9,7 @@ import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import { CharIconSide, CharacterName, TeamIcon } from '@genshin-optimizer/gi/ui'
+import { TrendingUp } from '@mui/icons-material'
 import BorderColorIcon from '@mui/icons-material/BorderColor'
 import CloseIcon from '@mui/icons-material/Close'
 import GroupsIcon from '@mui/icons-material/Groups'
@@ -33,10 +34,12 @@ export default function TeamCharacterSelector({
   teamId,
   characterKey,
   tab = '',
+  characterTab = '',
 }: {
   teamId: string
   characterKey?: CharacterKey
   tab?: string
+  characterTab?: string
 }) {
   const { t } = useTranslation('page_team')
   const navigate = useNavigate()
@@ -82,6 +85,10 @@ export default function TeamCharacterSelector({
         const rgbas = [
           // color for team setting
           ...(isXs ? [backrgba, backrgba] : [backrgba]),
+          // color for team optimize
+          ...(process.env.NODE_ENV === 'development' ? (
+            isXs ? [backrgba, backrgba] : [backrgba]
+          ) : []),
           ...elementArray.map((ele, i) => {
             if (!ele) return `rgba(0,0,0,0)`
 
@@ -196,16 +203,25 @@ export default function TeamCharacterSelector({
       <Divider />
       <Tabs
         variant="fullWidth"
-        value={characterKey ?? 'team'}
+        value={characterKey ?? tab}
         orientation={isXs ? 'vertical' : 'horizontal'}
       >
         <Tab
           icon={<GroupsIcon />}
           iconPosition="start"
-          value={'team'}
+          value={''}
           label={'Team Settings'}
           onClick={() => navigate(`/teams/${teamId}/`)}
         />
+        {process.env.NODE_ENV === 'development' && (
+          <Tab
+          icon={<TrendingUp />}
+          iconPosition="start"
+          value={'optimize'}
+          label={'Team Optimization'}
+          onClick={() => navigate(`/teams/${teamId}/optimize`)}
+          />
+        )}
         {loadoutData.map((loadoutDatum, ind) => {
           const teamCharKey =
             loadoutDatum &&
@@ -233,7 +249,7 @@ export default function TeamCharacterSelector({
               onClick={() =>
                 // conserve the current tab when switching to another character
                 teamCharKey &&
-                navigate(`/teams/${teamId}/${teamCharKey}/${tab}`)
+                navigate(`/teams/${teamId}/${teamCharKey}/${characterTab}`)
               }
             />
           )
