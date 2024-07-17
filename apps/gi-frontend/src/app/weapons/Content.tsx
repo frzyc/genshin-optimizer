@@ -1,11 +1,11 @@
 'use client'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
-import type { Tables } from '@genshin-optimizer/gi/supabase'
 import { WeaponCardObj } from '@genshin-optimizer/gi/ui'
 import { randomizeWeapon } from '@genshin-optimizer/gi/util'
 import { Button, Container, Grid, Skeleton, Typography } from '@mui/material'
 import { Suspense, useEffect, useState } from 'react'
 import { useSupabase } from '../../utils/supabase/client'
+import type { Weapons } from './getWeapons'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 // const numToShowMap = { xs: 5, sm: 6, md: 12, lg: 12, xl: 12 }
@@ -14,7 +14,7 @@ export default function Content({
   weapons: serverWeapons,
   accountId,
 }: {
-  weapons: Array<Tables<'weapons'>>
+  weapons: Weapons
   accountId: string
 }) {
   const supabase = useSupabase()
@@ -22,10 +22,10 @@ export default function Content({
   const addWeapon = async () => {
     try {
       const randWeapon = randomizeWeapon()
-      if (!randWeapon.location) (randWeapon as any).location = null
+      const { location, ...restWeapon } = randWeapon
       const { error } = await supabase.from('weapons').insert({
-        ...randWeapon,
-        account: accountId,
+        ...restWeapon,
+        account_id: accountId,
       } as any)
       if (error) console.error(error)
     } catch (error) {
@@ -41,13 +41,11 @@ export default function Content({
           event: '*',
           schema: 'public',
           table: 'weapons',
-          filter: `account=eq.${accountId}`,
+          filter: `account_id=eq.${accountId}`,
         },
         (payload) => {
           if (payload.new)
-            setWeapons(
-              (weapons) => [...weapons, payload.new] as Array<Tables<'weapons'>>
-            )
+            setWeapons((weapons) => [...weapons, payload.new] as Weapons)
         }
       )
       .subscribe()
