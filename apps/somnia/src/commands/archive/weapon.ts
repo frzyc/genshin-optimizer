@@ -47,7 +47,7 @@ export function weaponArchive(
   args: string
 ) {
   const msg: any = {}
-  let text = Object.values(data.description).join('\n')
+  let text = ''
   //weapon rarity color
   const rarity = getWeaponStat(id).rarity
   //default r1 5stars
@@ -65,6 +65,8 @@ export function weaponArchive(
       Object.values(data.passiveDescription[refine]).join('\n')
     //create dropdown menu
     msg['components'] = getDropdown(id, refine)
+    //append lore text
+    text += '\n\n-# *' + Object.values(data.description).join('\n') + '*'
   }
   //set content
   msg['embeds'] = [
