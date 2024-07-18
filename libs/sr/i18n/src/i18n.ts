@@ -43,7 +43,7 @@ export function loadI18n(i18nType: I18nType) {
     .use(LanguageDetector)
     // Configure localization.
     .init({
-      debug: true,
+      // debug: true,
       // Use English strings by default, if the current language does not include
       // the specified string.
       fallbackLng: 'en',
