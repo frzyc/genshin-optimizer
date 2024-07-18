@@ -5,7 +5,6 @@ import type {
   TravelerKey,
 } from '@genshin-optimizer/gi/consts'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { i18n, loadI18n } from '@genshin-optimizer/sr/i18n' // import to load translations
 import {
   ActionRowBuilder,
   EmbedBuilder,
@@ -15,9 +14,6 @@ import {
 import { elementColors } from '../../assets/assets'
 import { createAmbrUrl } from '../../lib/util'
 import { clean, talentlist } from '../archive'
-
-loadI18n('node')
-i18n.loadNamespaces('charNames_gen')
 
 function getEmbed(id: CharacterKey, name: string, data: any, talent: string) {
   //character profile
@@ -51,7 +47,7 @@ function baseEmbed(id: CharacterKey, name: string) {
   if (!icon) icon = CommonAssetData.elemIcons[element]
   return new EmbedBuilder()
     .setFooter({
-      text: i18n.t('charNames_gen:FuXuan'),
+      text: 'Character Archive',
     })
     .setAuthor({
       name: name,
