@@ -5,6 +5,7 @@ import { EmbedBuilder } from 'discord.js'
 import { rarityColors } from '../../assets/assets'
 import { createAmbrUrl } from '../../lib/util'
 import { clean } from '../archive'
+import {i18nInstance} from '@genshin-optimizer/sr/i18n-node'
 
 export function artifactArchive(id: ArtifactSetKey, name: string, data: any) {
   //artifact rarity color
@@ -21,7 +22,7 @@ export function artifactArchive(id: ArtifactSetKey, name: string, data: any) {
     .setTitle(name)
     .setColor(rarityColors[rarity - 1])
     .setFooter({
-      text: 'Artifact Archive',
+      text: i18nInstance.t('charNames_gen:FuXuan'),
     })
     .setDescription(clean(text))
   const thumbnail = AssetData.artifacts[id].flower
