@@ -52,10 +52,12 @@ import {
   Typography,
 } from '@mui/material'
 import React, { Suspense, useContext, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import type { dataContextObj } from '../../context'
 import { DataContext, SillyContext } from '../../context'
 import { useCharData } from '../../hooks'
 import { getBuildTcArtifactData, iconAsset } from '../../util'
+import { ArtifactSlotName } from '../artifact'
 import { TeamDelModal } from './TeamDelModal'
 
 // TODO: Translation
@@ -145,11 +147,16 @@ export function TeamCard({
                         justifyContent: 'center',
                         // py: '12.5%',
                         height: 120,
+                        backgroundColor: 'neutral600.main',
                       }}
                     >
                       <Box
                         component="img"
-                        src={imgAssets.team[`team${i + 1}` as any]}
+                        src={
+                          imgAssets.team[
+                            `team${i + 1}` as keyof typeof imgAssets.team
+                          ]
+                        }
                         sx={{
                           width: 'auto',
                           my: '15px',
@@ -461,12 +468,11 @@ function WeaponCard({ weapon }: { weapon: ICachedWeapon }) {
 }
 
 function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
-  const { setNum = {}, mains } = artifactData
-
+  const { setNum = {}, mains = {} } = artifactData
+  const { t } = useTranslation('statKey_gen')
   const processedSetNum = Object.entries(setNum).filter(
     ([, num]) => num === 2 || num === 4
   )
-
   return (
     <CardThemed
       bgt="neutral600"
@@ -504,33 +510,37 @@ function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
           alignItems: 'center',
         }}
       >
-        {!!mains?.sands && (
-          <Typography sx={{ lineHeight: 0 }}>
-            <SandsIcon sx={{ fontSize: 'inherit' }} />
-            <StatIcon
-              statKey={mains?.sands}
-              iconProps={{ sx: { fontSize: 'inherit' } }}
-            />
-          </Typography>
-        )}
-        {!!mains?.goblet && (
-          <Typography sx={{ lineHeight: 0 }}>
-            <GobletIcon sx={{ fontSize: 'inherit' }} />
-            <StatIcon
-              statKey={mains?.goblet}
-              iconProps={{ sx: { fontSize: 'inherit' } }}
-            />
-          </Typography>
-        )}
-        {!!mains?.circlet && (
-          <Typography sx={{ lineHeight: 0 }}>
-            <CircletIcon sx={{ fontSize: 'inherit' }} />
-            <StatIcon
-              statKey={mains?.circlet}
-              iconProps={{ sx: { fontSize: 'inherit' } }}
-            />
-          </Typography>
-        )}
+        {Object.entries(mains)
+          .filter(([, statKey]) => statKey)
+          .map(([slotKey, statKey]) => (
+            <BootstrapTooltip
+              key={slotKey + statKey}
+              title={
+                <Box>
+                  <Typography>
+                    <ArtifactSlotName slotKey="sands" />
+                  </Typography>
+                  <Typography>{t(statKey)}</Typography>
+                </Box>
+              }
+            >
+              <Typography sx={{ lineHeight: 0 }}>
+                {slotKey === 'sands' && (
+                  <SandsIcon sx={{ fontSize: 'inherit' }} />
+                )}
+                {slotKey === 'goblet' && (
+                  <GobletIcon sx={{ fontSize: 'inherit' }} />
+                )}
+                {slotKey === 'circlet' && (
+                  <CircletIcon sx={{ fontSize: 'inherit' }} />
+                )}
+                <StatIcon
+                  statKey={statKey}
+                  iconProps={{ sx: { fontSize: 'inherit' } }}
+                />
+              </Typography>
+            </BootstrapTooltip>
+          ))}
       </Box>
     </CardThemed>
   )
