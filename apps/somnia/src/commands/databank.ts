@@ -113,7 +113,6 @@ for (const category in databank['key']) {
 }
 export { databank }
 export const skillsList = {
-  p: { name: 'Character Profile', value: 'p' },
   n: { name: 'Basic Attack', value: 'n' },
   e: { name: 'Skill', value: 'e' },
   u: { name: 'Ultimate', value: 'u' },
@@ -198,7 +197,7 @@ export async function run(interaction: ChatInputCommandInteraction) {
 
   let arg = ''
   if (subcommand === 'char')
-    arg = interaction.options.getString('skill', false) ?? 'p'
+    arg = interaction.options.getString('skill', false) ?? 'n'
   if (subcommand === 'lightcone')
     arg = interaction.options.getString('superimposition', false) ?? ''
 

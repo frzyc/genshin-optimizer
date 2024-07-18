@@ -27,6 +27,7 @@ type CharacterIcon = {
   ult: string
   talent: string
   technique: string
+  overworld: string
   bonusAbility1: string
   bonusAbility2: string
   bonusAbility3: string
@@ -82,6 +83,7 @@ Object.entries(avatarConfig).forEach(([avatarId, charData]) => {
     ult,
     talent,
     technique,
+    overworld,
     bonusAbility1,
     bonusAbility2,
     bonusAbility3,
@@ -99,6 +101,7 @@ Object.entries(avatarConfig).forEach(([avatarId, charData]) => {
     ult: ult.IconPath, // TODO: Maybe switch tot
     talent: talent.IconPath,
     technique: technique.IconPath,
+    overworld: overworld.IconPath,
     bonusAbility1: bonusAbility1.IconPath,
     bonusAbility2: bonusAbility2.IconPath,
     bonusAbility3: bonusAbility3.IconPath,

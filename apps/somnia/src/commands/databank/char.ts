@@ -1,5 +1,5 @@
 import { AssetData } from '@genshin-optimizer/sr/assets-data'
-import type { CharacterDataKey } from '@genshin-optimizer/sr/consts'
+import type { AbilityKey, CharacterDataKey } from '@genshin-optimizer/sr/consts'
 import {
   ActionRowBuilder,
   EmbedBuilder,
@@ -16,9 +16,9 @@ function getEmbed(
   talent: string
 ) {
   //character profile
-  if (talent === 'p') return profileEmbed(id, name, data)
+  //if (talent === 'p') return profileEmbed(id, name, data)
   //normal/charged/plunging attacks
-  else if (talent === 'n') return skillEmbed('basic', id, name, data)
+  if (talent === 'n') return skillEmbed('basic', id, name, data)
   //elemental skill
   else if (talent === 'e') return skillEmbed('skill', id, name, data)
   //elemental burst
@@ -40,49 +40,34 @@ function getAssets(id: CharacterDataKey) {
 function baseEmbed(id: CharacterDataKey, name: string) {
   // TODO: const icon = getAssets(id).icon
   // TODO: const element = allStats.char[id].damageType
+  const thumbnail = getAssets(id).icon
   return new EmbedBuilder()
     .setFooter({
-      text: 'Character Archive',
+      text: 'Character Databank',
     })
     .setAuthor({
       name: name,
-      iconURL: 'createAmbrUrl(icon)',
+      iconURL: createYattaUrl('avatar/medium', thumbnail),
     })
   //.setColor(elementColors[element])
 }
 
-function profileEmbed(id: CharacterDataKey, name: string, data: any) {
-  // TODO: const element = allStats.char[id].damageType
-  const text =
-    data.description ??
-    'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.'
-  const embed = baseEmbed(id, name)
-  if (data.title) embed.setTitle(data.title)
-  embed
-    .setAuthor({
-      name: name,
-      // TODO: iconURL: 'createAmbrUrl(CommonAssetData.elemIcons[element])',
-    })
-    .setDescription(clean(text))
-  const thumbnail = getAssets(id).icon
-  if (thumbnail) embed.setThumbnail(createYattaUrl('avatar/medium', thumbnail))
-  return embed
-}
-
 function skillEmbed(
-  ability: string,
+  ability: AbilityKey,
   id: CharacterDataKey,
   name: string,
   data: any
 ) {
   let text = ''
-  const skills = data.abilities[ability]
-  for (const skill of skills) {
+  // TODO: fix any typing
+  const skills = data.abilities[ability] as Record<string, any>
+  for (const skill of Object.values(skills)) {
     text += `**${skill.name}**\n`
-    text += skill.shortDesc + '\n\n'
+    skill.shortDesc ? (text += skill.shortDesc) : (text += skill.fullDesc)
+    text += '\n\n'
   }
   const embed = baseEmbed(id, name).setDescription(clean(text))
-  const thumbnail = getAssets(id).skill
+  const thumbnail = getAssets(id)[ability]
   if (thumbnail) embed.setThumbnail(createYattaUrl('skill', thumbnail))
   return embed
 }

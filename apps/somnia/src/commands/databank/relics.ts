@@ -1,8 +1,8 @@
 import { AssetData } from '@genshin-optimizer/sr/assets-data'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { EmbedBuilder } from 'discord.js'
-import { clean } from '../archive'
 import { createYattaUrl } from '../../lib/util'
+import { clean } from '../archive'
 
 export function relicBank(id: RelicSetKey, name: string, data: any) {
   //set content

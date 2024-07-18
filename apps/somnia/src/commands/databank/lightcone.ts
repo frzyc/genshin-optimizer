@@ -51,18 +51,15 @@ export function lightconeBank(
   const rarity = allStats['lightCone'][id].rarity
   //default r1 5stars
   let superimposition = '0'
-  //no refinements or dropdown for 1/2 star weapons
-  if (rarity > 2) {
-    //r5 for 3/4 star weapons
-    if (rarity < 5) superimposition = '4'
-    //user input override
-    if (args) superimposition = args
-  }
+  //r5 for 3/4 star
+  if (rarity < 5) superimposition = '4'
+  //user input override
+  if (args) superimposition = args
   //name and passive
   name += ` (S${superimpositions[superimposition]})`
-  const text =
-    `\n\n**${data.passive.name}:** ` +
-    data.passive.description
+  const text = `\n\n**${data.passive.name}:** ` + data.passive.description
+  //thumbnail
+  const thumbnail = AssetData.lightCones[id].icon
   //create dropdown menu
   msg['components'] = getDropdown(id, superimposition)
   //set content
@@ -74,7 +71,7 @@ export function lightconeBank(
         text: 'Light Cone Databank',
       })
       .setDescription(clean(text))
-      .setThumbnail(createYattaUrl('equipment/medium', AssetData.lightCones[id].icon)),
+      .setThumbnail(createYattaUrl('equipment/medium', thumbnail)),
   ]
   return msg
 }
