@@ -10,7 +10,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
-import '@genshin-optimizer/gi/i18n' // import to load translations
+import { loadI18n } from '@genshin-optimizer/gi/i18n' // import to load translations
 import { theme } from '@genshin-optimizer/gi/theme'
 import {
   AdWrapper,
@@ -35,6 +35,8 @@ import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'
 import Snow from './Snow'
+
+loadI18n('react')
 
 const AD_RAIL_MAXWIDTH = 300
 const AD_RAIL_HEIGHT = 600

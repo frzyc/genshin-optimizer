@@ -1,5 +1,5 @@
 import { ScrollTop } from '@genshin-optimizer/common/ui'
-import '@genshin-optimizer/sr/i18n' // import to load translations
+import { loadI18n } from '@genshin-optimizer/sr/i18n' // import to load translations
 import {
   CalcProvider,
   CharacterProvider,
@@ -18,6 +18,8 @@ import { HashRouter, Route, Routes } from 'react-router-dom'
 import Header from './Header'
 import PageHome from './PageHome'
 import { theme } from './Theme'
+
+loadI18n('react')
 
 const PageRelics = lazy(() => import('@genshin-optimizer/sr/page-relics'))
 const PageLightCones = lazy(
