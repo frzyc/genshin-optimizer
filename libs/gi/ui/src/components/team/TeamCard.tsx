@@ -4,9 +4,19 @@ import {
   CardThemed,
   ColorText,
 } from '@genshin-optimizer/common/ui'
-import { characterAsset, imgAssets } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
+import {
+  artifactAsset,
+  characterAsset,
+  imgAssets,
+  weaponAsset,
+} from '@genshin-optimizer/gi/assets'
+import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ArtifactData,
+  ICachedArtifact,
+  ICachedWeapon,
+} from '@genshin-optimizer/gi/db'
 import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
   CharacterContext,
@@ -16,8 +26,18 @@ import {
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
+import {
+  getCharEle,
+  getCharStat,
+  weaponHasRefinement,
+} from '@genshin-optimizer/gi/stats'
+import {
+  CircletIcon,
+  ElementIcon,
+  GobletIcon,
+  SandsIcon,
+  StatIcon,
+} from '@genshin-optimizer/gi/svgicons'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -36,10 +56,6 @@ import type { dataContextObj } from '../../context'
 import { DataContext, SillyContext } from '../../context'
 import { useCharData } from '../../hooks'
 import { getBuildTcArtifactData, iconAsset } from '../../util'
-import {
-  CharacterCardEquipmentRow,
-  CharacterCardEquipmentRowTC,
-} from '../character'
 import { TeamDelModal } from './TeamDelModal'
 
 // TODO: Translation
@@ -153,7 +169,21 @@ export function TeamCard({
     </CardThemed>
   )
 }
-
+/*
+ * This Element has very specific layering, from bottom to top:
+ * banner
+ * banner filter
+ * character icon
+ * dark gradient
+ * everything else
+ */
+const zVals = {
+  banner: 0,
+  bannerFilter: 1,
+  characterIcon: 2,
+  darkDRop: 3,
+  other: 4,
+}
 function CharacterArea({
   characterKey,
   teamId,
@@ -172,9 +202,10 @@ function CharacterArea({
   const { name } = useTeamChar(teamCharId)!
   const loadoutDatum = database.teams.getLoadoutDatum(teamId, teamCharId)!
   const buildname = database.teams.getActiveBuildName(loadoutDatum)
-  const weapon = (() => {
-    return database.teams.getLoadoutWeapon(loadoutDatum)
-  })()
+  const weapon = useMemo(
+    () => database.teams.getLoadoutWeapon(loadoutDatum),
+    [loadoutDatum, database]
+  )
   const arts = (() => {
     const { buildType, buildTcId } = loadoutDatum
     if (buildType === 'tc' && buildTcId)
@@ -183,6 +214,11 @@ function CharacterArea({
       database.teams.getLoadoutArtifacts(loadoutDatum)
     ).filter((a) => a) as ICachedArtifact[]
   })()
+
+  const artifactData = useMemo(
+    () => database.teams.getLoadoutArtifactData(loadoutDatum),
+    [database, loadoutDatum]
+  )
 
   const teamData = useCharData(characterKey, undefined, arts, weapon)
   const data = teamData?.[characterKey]?.target
@@ -214,13 +250,6 @@ function CharacterArea({
             <Skeleton variant="rectangular" width="100%" height={300} />
           }
         >
-          {/*
-           * This Element has very specific layering
-           * 0 banner
-           * 1 character icon
-           * 2 dark gradient
-           * 3 everything else
-           */}
           <Box
             className={!banner ? `grad-${charStat.rarity}star` : undefined}
             sx={{
@@ -237,38 +266,50 @@ function CharacterArea({
                 backgroundImage: `url(${banner})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
-                zIndex: 0,
+                zIndex: zVals.banner,
               },
             }}
           >
-            {/* Left */}
+            {/* Gradient + filter */}
             <Box
-              sx={{
+              sx={(theme) => ({
                 position: 'absolute',
                 width: '100%',
                 height: '100%',
-                zIndex: 2,
-                top: 0,
-                // dark gradient
-                background: `linear-gradient(to top, rgba(50,50,50,0.7), rgba(0,0,0,0) 25% )`,
-              }}
+                zIndex: zVals.bannerFilter,
+                backdropFilter: 'blur(3px)',
+                background: `linear-gradient(to right, ${colorToRgbaString(
+                  hexToColor(theme.palette.neutral600.main as string)!,
+                  0.8
+                )}, ${colorToRgbaString(
+                  hexToColor(theme.palette.neutral600.main as string)!,
+                  0.4
+                )} 100% )`,
+              })}
             />
+            {/* Bottom Gradient */}
+            <Box
+              sx={(theme) => ({
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                zIndex: zVals.darkDRop,
+                // dark gradient
+                background: `linear-gradient(to top, ${colorToRgbaString(
+                  hexToColor(theme.palette.neutral600.main as string)!,
+                  0.9
+                )}, rgba(0,0,0,0) 25% )`,
+              })}
+            />
+            {/* Left */}
             <Box
               sx={{
                 height: 120,
                 width: 120,
-                position: 'relative',
+                position: 'absolute',
+                zIndex: zVals.other,
               }}
             >
-              <Box
-                component="img"
-                src={iconAsset(characterKey, gender, silly)}
-                sx={{
-                  height: 120,
-                  width: 120,
-                  zIndex: 1,
-                }}
-              />
               {character && (
                 <Typography
                   sx={{
@@ -277,12 +318,9 @@ function CharacterArea({
                     bottom: 0,
                     p: 0.5,
                     textShadow: '0 0 5px black',
-                    zIndex: 3,
                   }}
                 >
-                  <strong>
-                    {getLevelString(character.level, character.ascension)}
-                  </strong>
+                  {getLevelString(character.level, character.ascension)}
                 </Typography>
               )}
               {character && (
@@ -294,10 +332,9 @@ function CharacterArea({
                     right: 0,
                     p: 0.5,
                     textShadow: '0 0 5px black',
-                    zIndex: 3,
                   }}
                 >
-                  <strong>C{character.constellation}</strong>
+                  C{character.constellation}
                 </Typography>
               )}
               {characterKey.startsWith('Traveler') && (
@@ -309,7 +346,6 @@ function CharacterArea({
                     left: 0,
                     p: 0.5,
                     textShadow: '0 0 5px black',
-                    zIndex: 3,
                   }}
                 >
                   <ColorText color={element}>
@@ -318,10 +354,21 @@ function CharacterArea({
                 </Typography>
               )}
             </Box>
+
+            <Box
+              component="img"
+              src={iconAsset(characterKey, gender, silly)}
+              sx={{
+                height: 120,
+                width: 120,
+                zIndex: zVals.characterIcon,
+              }}
+            />
             {/* Right */}
             <Box
               sx={{
                 pr: 0.5,
+                pl: 0.5,
                 py: 0.5,
                 display: 'flex',
                 flexDirection: 'column',
@@ -329,7 +376,7 @@ function CharacterArea({
                 width: '100%',
                 minWidth: 0,
                 justifyContent: 'space-between',
-                zIndex: 3,
+                zIndex: zVals.other,
               }}
             >
               <Typography
@@ -357,15 +404,233 @@ function CharacterArea({
                 <CheckroomIcon />
                 <span>{buildname}</span>
               </Typography>
-              {loadoutDatum?.buildType === 'tc' && loadoutDatum?.buildTcId ? (
+              <Box sx={{ display: 'flex', mb: 0.5, gap: 1 }}>
+                <WeaponCard weapon={weapon} />
+                <ArtifactCard artifactData={artifactData} />
+              </Box>
+              {/* {loadoutDatum?.buildType === 'tc' && loadoutDatum?.buildTcId ? (
                 <CharacterCardEquipmentRowTC weapon={weapon} />
               ) : (
                 <CharacterCardEquipmentRow />
-              )}
+              )} */}
             </Box>
           </Box>
         </Suspense>
       </DataContext.Provider>
     </CharacterContext.Provider>
+  )
+}
+function WeaponCard({ weapon }: { weapon: ICachedWeapon }) {
+  return (
+    <CardThemed
+      bgt="neutral600"
+      sx={{
+        height: '100%',
+        maxHeight: '50px',
+        display: 'flex',
+        flexDirection: 'horizontal',
+        boxShadow: `0 0 10px rgba(0,0,0,0.4)`,
+      }}
+    >
+      <Box
+        component="img"
+        src={weaponAsset(weapon.key, weapon.ascension >= 2)}
+        maxWidth="100%"
+        maxHeight="100%"
+        sx={{ mt: 'auto' }}
+      />
+      <Box
+        sx={{
+          pr: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-evenly',
+          color: 'neutral200.main',
+        }}
+      >
+        <Typography sx={{}}>
+          {getLevelString(weapon.level, weapon.ascension)}
+        </Typography>
+
+        {weaponHasRefinement(weapon.key) && (
+          <Typography>R{weapon.refinement}</Typography>
+        )}
+      </Box>
+    </CardThemed>
+  )
+}
+
+function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
+  const { setNum = {}, mains } = artifactData
+
+  const processedSetNum = Object.entries(setNum).filter(
+    ([, num]) => num === 2 || num === 4
+  )
+
+  return (
+    <CardThemed
+      bgt="neutral600"
+      sx={{
+        height: '100%',
+        maxHeight: '50px',
+        display: 'flex',
+        flexDirection: 'horizontal',
+        boxShadow: `0 0 10px rgba(0,0,0,0.4)`,
+        flexGrow: 1,
+      }}
+    >
+      <Box
+        sx={{
+          Width: '50px',
+          minWidth: '50px',
+          height: '50px',
+          position: 'relative',
+        }}
+      >
+        {processedSetNum.length === 2 ? (
+          <Set22 sets={processedSetNum.map(([set]) => set)} />
+        ) : processedSetNum.length === 1 ? (
+          <Set4 set={processedSetNum[0][0]} num={processedSetNum[0][1]} />
+        ) : (
+          false
+        )}
+      </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          flexGrow: 1,
+          position: 'relative',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+        }}
+      >
+        {!!mains?.sands && (
+          <Typography sx={{ lineHeight: 0 }}>
+            <SandsIcon sx={{ fontSize: 'inherit' }} />
+            <StatIcon
+              statKey={mains?.sands}
+              iconProps={{ sx: { fontSize: 'inherit' } }}
+            />
+          </Typography>
+        )}
+        {!!mains?.goblet && (
+          <Typography sx={{ lineHeight: 0 }}>
+            <GobletIcon sx={{ fontSize: 'inherit' }} />
+            <StatIcon
+              statKey={mains?.goblet}
+              iconProps={{ sx: { fontSize: 'inherit' } }}
+            />
+          </Typography>
+        )}
+        {!!mains?.circlet && (
+          <Typography sx={{ lineHeight: 0 }}>
+            <CircletIcon sx={{ fontSize: 'inherit' }} />
+            <StatIcon
+              statKey={mains?.circlet}
+              iconProps={{ sx: { fontSize: 'inherit' } }}
+            />
+          </Typography>
+        )}
+      </Box>
+    </CardThemed>
+  )
+}
+function Set22({ sets }: { sets: ArtifactSetKey[] }) {
+  const set1 = sets[0]
+  const set2 = sets[1]
+  return (
+    <>
+      {/* top left */}
+      <Box
+        component="img"
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          Width: '50px',
+          height: '50px',
+          clipPath: `polygon(0 0, 0 100%, 100% 0)`,
+        }}
+        src={artifactAsset(set1, 'flower')}
+      />
+      {/* bottom right */}
+      <Box
+        component="img"
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          Width: '50px',
+          height: '50px',
+          clipPath: `polygon(100% 100%, 0 100%, 100% 0)`,
+        }}
+        src={artifactAsset(set2, 'flower')}
+      />
+      {/* top left 2 */}
+      <Box
+        className="botright"
+        sx={(theme) => ({
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+          width: '1.4em',
+          padding: '0.2em',
+          textAlign: 'center',
+          backgroundColor: colorToRgbaString(
+            hexToColor(theme.palette.primary.main as string)!,
+            0.4
+          ),
+          borderRadius: '100%',
+        })}
+      >
+        2
+      </Box>
+      {/* bottom right 2 */}
+      <Box
+        sx={(theme) => ({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '1.4em',
+          padding: '0.2em',
+          textAlign: 'center',
+          backgroundColor: colorToRgbaString(
+            hexToColor(theme.palette.primary.main as string)!,
+            0.4
+          ),
+          borderRadius: '100%',
+        })}
+      >
+        2
+      </Box>
+    </>
+  )
+}
+function Set4({ set, num }: { set: ArtifactSetKey; num: number }) {
+  return (
+    <>
+      <Box
+        sx={(theme) => ({
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+          width: '1.4em',
+          padding: '0.2em',
+          textAlign: 'center',
+          backgroundColor: colorToRgbaString(
+            hexToColor(theme.palette.primary.main as string)!,
+            0.4
+          ),
+          borderRadius: '100%',
+        })}
+      >
+        {num}
+      </Box>
+      <Box
+        component="img"
+        src={artifactAsset(set, 'flower')}
+        sx={{ Width: '50px', height: '50px' }}
+      />
+    </>
   )
 }

@@ -1,9 +1,9 @@
 'use client'
-import type { CardProps } from '@mui/material'
+import type { CardProps, Palette, PaletteColor } from '@mui/material'
 import { Card, styled } from '@mui/material'
 export type CardBackgroundColor = 'light' | 'dark' | 'normal'
 interface StyledCardProps extends CardProps {
-  bgt?: CardBackgroundColor
+  bgt?: CardBackgroundColor | string
 }
 /**
  * A colored Card that is by default `contentNormal` colored.
@@ -18,5 +18,7 @@ export const CardThemed = styled(Card, {
       ? theme.palette.contentLight.main
       : bgt === 'dark'
       ? theme.palette.contentDark.main
-      : theme.palette.contentNormal.main,
+      : bgt === 'normal' || !bgt
+      ? theme.palette.contentNormal.main
+      : (theme.palette[bgt as keyof Palette] as PaletteColor)?.main,
 }))
