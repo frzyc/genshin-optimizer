@@ -14,7 +14,6 @@ import {
 import { elementColors } from '../../assets/assets'
 import { createAmbrUrl } from '../../lib/util'
 import { clean, talentlist } from '../archive'
-import {i18nInstance} from '@genshin-optimizer/gi/i18n-node'
 
 function getEmbed(id: CharacterKey, name: string, data: any, talent: string) {
   //character profile
@@ -48,7 +47,7 @@ function baseEmbed(id: CharacterKey, name: string) {
   if (!icon) icon = CommonAssetData.elemIcons[element]
   return new EmbedBuilder()
     .setFooter({
-      text: i18nInstance.t('charNames_gen:KamisatoAyaka')
+      text: 'Character Archive',
     })
     .setAuthor({
       name: name,
