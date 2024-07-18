@@ -65,9 +65,9 @@ export function weaponArchive(
       Object.values(data.passiveDescription[refine]).join('\n')
     //create dropdown menu
     msg['components'] = getDropdown(id, refine)
-    //append lore text
-    text += '\n\n-# *' + Object.values(data.description).join('\n') + '*'
   }
+  //append lore text
+  text += '\n\n-# *' + Object.values(data.description).join('\n') + '*'
   //set content
   msg['embeds'] = [
     new EmbedBuilder()
