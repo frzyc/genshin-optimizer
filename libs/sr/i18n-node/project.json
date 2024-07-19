@@ -1,0 +1,9 @@
+{
+  "name": "sr-i18n-node",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr/i18n-node/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project sr-i18n-node --web",
+  "targets": {}
+}
