@@ -82,27 +82,28 @@ export const slashcommand = new SlashCommandBuilder()
           )
       )
   )
-  .addSubcommand((s) =>
-    s
-      .setName('artifact')
-      .setDescription('Artifacts')
-      .addStringOption((o) =>
-        o
-          .setName('name')
-          .setDescription('Artifact set name')
-          .setAutocomplete(true)
-          .setRequired(true)
-      )
-      //.addStringOption((o) =>
-      //  o
-      //    .setName('lang')
-      //    .setDescription('Language')
-      //    .addChoices(
-      //      languageCodeList.map((e) => {
-      //        return { name: e, value: e }
-      //      })
-      //    )
-      //)
+  .addSubcommand(
+    (s) =>
+      s
+        .setName('artifact')
+        .setDescription('Artifacts')
+        .addStringOption((o) =>
+          o
+            .setName('name')
+            .setDescription('Artifact set name')
+            .setAutocomplete(true)
+            .setRequired(true)
+        )
+    //.addStringOption((o) =>
+    //  o
+    //    .setName('lang')
+    //    .setDescription('Language')
+    //    .addChoices(
+    //      languageCodeList.map((e) => {
+    //        return { name: e, value: e }
+    //      })
+    //    )
+    //)
   )
 
 type ArchiveSubcommand = 'char' | 'weapon' | 'artifact'

@@ -15,9 +15,13 @@ import {
 import { elementColors } from '../../assets/assets'
 import { createAmbrUrl } from '../../lib/util'
 import { clean, talentlist, translate } from '../archive'
-import { names } from '@nx/devkit'
 
-function getEmbed(id: CharacterKey, namespace: string, lang: string, arg: string) {
+function getEmbed(
+  id: CharacterKey,
+  namespace: string,
+  lang: string,
+  arg: string
+) {
   //character profile
   if (arg === 'p') return profileEmbed(id, namespace, lang)
   //normal/charged/plunging attacks
@@ -62,10 +66,13 @@ function baseEmbed(id: CharacterKey, lang: string) {
 
 function profileEmbed(id: CharacterKey, namespace: string, lang: string) {
   const element = getCharEle(id)
-  const text = i18nInstance.t([
-    `${namespace}:description`,
-    'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.'
-  ], {lng: lang})
+  const text = i18nInstance.t(
+    [
+      `${namespace}:description`,
+      'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.',
+    ],
+    { lng: lang }
+  )
   const embed = baseEmbed(id, lang)
   const title = translate(namespace, 'title', lang)
   if (title != 'title') embed.setTitle(title)
@@ -127,7 +134,12 @@ function selectPassive(arg: string): Passives[] {
   return ['passive1', 'passive2', 'passive3', 'passive']
 }
 
-function passivesEmbed(id: CharacterKey, namespace: string, lang: string, arg: string) {
+function passivesEmbed(
+  id: CharacterKey,
+  namespace: string,
+  lang: string,
+  arg: string
+) {
   let text = ''
   //select passives
   const showPassives = selectPassive(arg)
@@ -150,7 +162,12 @@ function passivesEmbed(id: CharacterKey, namespace: string, lang: string, arg: s
   return embed
 }
 
-function constellationsEmbed(id: CharacterKey, namespace: string, lang: string, arg: string) {
+function constellationsEmbed(
+  id: CharacterKey,
+  namespace: string,
+  lang: string,
+  arg: string
+) {
   let text = ''
   //select constellations
   const allCons = ['1', '2', '3', '4', '5', '6'] as const
@@ -178,10 +195,14 @@ function constellationsEmbed(id: CharacterKey, namespace: string, lang: string, 
   return embed
 }
 
-export async function charArchive(id: CharacterKey, lang: string, args: string) {
-  const namespace = id.includes('Traveler')?
-    `char_${id}M_gen`:
-    `char_${id}_gen`
+export async function charArchive(
+  id: CharacterKey,
+  lang: string,
+  args: string
+) {
+  const namespace = id.includes('Traveler')
+    ? `char_${id}M_gen`
+    : `char_${id}_gen`
   await i18nInstance.loadNamespaces(namespace)
   const embed = getEmbed(id, namespace, lang, args)
 
