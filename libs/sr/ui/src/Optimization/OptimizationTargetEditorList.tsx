@@ -159,7 +159,7 @@ function OptimizationTargetEditorItem({
 
   const onMaxValueChange = useCallback(
     (val: number | undefined) =>
-      path && index !== undefined && setMaxValue(path, index, val ?? 0),
+      path && index !== undefined && setMaxValue(path, index, val ?? Infinity),
     [setMaxValue, path, index]
   )
 
@@ -167,10 +167,6 @@ function OptimizationTargetEditorItem({
   const [optTarget, setOptTarget] = useState<Read | undefined>(undefined)
 
   const buttonStyle = { p: 1, flexBasis: 30, flexGrow: 0, flexShrink: 0 }
-  const inputStyle = {
-    '& + .MuiOutlinedInput-notchedOutline': { borderRadius: 0 },
-    textAlign: 'right',
-  }
 
   return (
     <ButtonGroup
@@ -186,10 +182,6 @@ function OptimizationTargetEditorItem({
           {setting.disabled ? <CheckBoxOutlineBlank /> : <CheckBox />}
         </Button>
       )}
-      <OptimizationTargetSelector
-        optTarget={optTarget}
-        setOptTarget={setOptTarget}
-      />
       <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 150, flexGrow: 1 }}>
         <CustomNumberInput
           float
@@ -198,10 +190,19 @@ function OptimizationTargetEditorItem({
           placeholder={t('buildConstraint.minStatValue')}
           onChange={onMinValueChange}
           sx={{ px: 1 }}
-          inputProps={{ sx: inputStyle }}
+          inputProps={{
+            sx: {
+              '& + .MuiOutlinedInput-notchedOutline': { borderRadius: 0 },
+              textAlign: 'right',
+            },
+          }}
           // endAdornment={isPercent ? '%' : undefined} TODO: depends on sheets/calcs being built
         />
       </CustomNumberInputButtonGroupWrapper>
+      <OptimizationTargetSelector
+        optTarget={optTarget}
+        setOptTarget={setOptTarget}
+      />
       <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 150, flexGrow: 1 }}>
         <CustomNumberInput
           float
@@ -210,7 +211,12 @@ function OptimizationTargetEditorItem({
           placeholder={t('buildConstraint.maxStatValue')}
           onChange={onMaxValueChange}
           sx={{ px: 1 }}
-          inputProps={{ sx: inputStyle }}
+          inputProps={{
+            sx: {
+              '& + .MuiOutlinedInput-notchedOutline': { borderRadius: 0 },
+              textAlign: 'left',
+            },
+          }}
           // endAdornment={isPercent ? '%' : undefined} TODO: depends on sheets/calcs being built
         />
       </CustomNumberInputButtonGroupWrapper>
