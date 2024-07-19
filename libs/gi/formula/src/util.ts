@@ -90,7 +90,7 @@ export function artifactsData(
     reader.withTag({ sheet: 'art', qt: 'premod' }).reread(reader.sheet('dyn')),
     ...Object.entries(stats).map(([k, v]) => {
       if (k.endsWith('_dmg_'))
-        return premod['dmg_'][k.slice(-5) as ElementWithPhyKey]
+        return premod['dmg_'][k.slice(0, -5) as ElementWithPhyKey]
           .sheet('dyn')
           .add(v)
       else return premod[k as Stat].sheet('dyn').add(v)
