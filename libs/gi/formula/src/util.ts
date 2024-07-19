@@ -1,4 +1,9 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ArtifactSetKey,
+  ElementKey,
+  MainStatKey,
+  SubstatKey,
+} from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
 import type {
@@ -58,7 +63,7 @@ export function weaponData(data: IWeapon): TagMapNodeEntries {
 export function artifactsData(
   data: {
     set: ArtifactSetKey
-    stats: readonly { key: Stat; value: number }[]
+    stats: readonly { key: MainStatKey | SubstatKey; value: number }[]
   }[]
 ): TagMapNodeEntries {
   const {
@@ -66,7 +71,7 @@ export function artifactsData(
     premod,
   } = convert(selfTag, { sheet: 'art', et: 'self' })
   const sets: Partial<Record<ArtifactSetKey, number>> = {},
-    stats: Partial<Record<Stat, number>> = {}
+    stats: Partial<Record<MainStatKey | SubstatKey, number>> = {}
   for (const { set: setKey, stats: stat } of data) {
     const set = sets[setKey]
     if (set === undefined) sets[setKey] = 1
@@ -83,9 +88,11 @@ export function artifactsData(
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
     reader.withTag({ sheet: 'art', qt: 'premod' }).reread(reader.sheet('dyn')),
-    ...Object.entries(stats).map(([k, v]) =>
-      premod[k as Stat].sheet('dyn').add(v)
-    ),
+    ...Object.entries(stats).map(([k, v]) => {
+      if (k.endsWith('_dmg_'))
+        return premod['dmg_'][k.slice(-5) as ElementKey].sheet('dyn').add(v)
+      else return premod[k as Stat].sheet('dyn').add(v)
+    }),
 
     ...Object.entries(sets).map(([k, v]) =>
       count.sheet(k as ArtifactSetKey).add(v)

@@ -1,9 +1,23 @@
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
   allCharacterKeys,
   allWeaponKeys,
 } from '@genshin-optimizer/gi/consts'
+
+const stats = [
+  'hp',
+  'hp_',
+  'atk',
+  'atk_',
+  'def',
+  'def_',
+  'eleMas',
+  'enerRech_',
+  'critRate_',
+  'critDMG_',
+  'dmg_',
+  'heal_',
+] as const
 
 export const presets = [
   'preset0',
@@ -40,7 +54,7 @@ export const sheets = [
 ] as const
 export const members = ['all', '0', '1', '2', '3'] as const
 
-export type Stat = SubstatKey | MainStatKey
+export type Stat = (typeof stats)[number]
 export type Preset = (typeof presets)[number]
 export type EntryType = (typeof entryTypes)[number]
 export type Sheet = (typeof sheets)[number]
