@@ -1,19 +1,19 @@
 import type {
   ArtifactSetKey,
-  ElementWithPhyKey,
   MainStatKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
-import type {
-  Member,
-  Preset,
-  Sheet,
-  Stat,
-  TagMapNodeEntries,
+import type { Member, Preset, Sheet, TagMapNodeEntries } from './data/util'
+import {
+  conditionalEntries,
+  convert,
+  readStat,
+  reader,
+  self,
+  selfTag,
 } from './data/util'
-import { conditionalEntries, convert, reader, self, selfTag } from './data/util'
 
 export function withPreset(
   preset: Preset,
@@ -88,13 +88,11 @@ export function artifactsData(
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
     reader.withTag({ sheet: 'art', qt: 'premod' }).reread(reader.sheet('dyn')),
-    ...Object.entries(stats).map(([k, v]) => {
-      if (k.endsWith('_dmg_'))
-        return premod['dmg_'][k.slice(0, -5) as ElementWithPhyKey]
-          .sheet('dyn')
-          .add(v)
-      else return premod[k as Stat].sheet('dyn').add(v)
-    }),
+    ...Object.entries(stats).map(([k, v]) =>
+      readStat(premod, k as MainStatKey | SubstatKey)
+        .sheet('dyn')
+        .add(v)
+    ),
 
     ...Object.entries(sets).map(([k, v]) =>
       count.sheet(k as ArtifactSetKey).add(v)
