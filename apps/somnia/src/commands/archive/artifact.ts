@@ -1,31 +1,35 @@
 import { AssetData } from '@genshin-optimizer/gi/assets-data'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import { getArtSetStat } from '@genshin-optimizer/gi/stats'
 import { EmbedBuilder } from 'discord.js'
 import { rarityColors } from '../../assets/assets'
 import { createAmbrUrl } from '../../lib/util'
-import { clean } from '../archive'
+import { clean, translate } from '../archive'
 
-export function artifactArchive(id: ArtifactSetKey, name: string, data: any) {
+export async function artifactArchive(id: ArtifactSetKey, lang: string) {
   //artifact rarity color
   const rarities = getArtSetStat(id).rarities
   const rarity = rarities[rarities.length - 1]
   //set content
+  const namespace = `artifact_${id}_gen`
+  await i18nInstance.loadNamespaces(namespace)
   let text = ''
-  for (const e in data.setEffects) {
+  const setEffects = translate(namespace, 'setEffects', lang, true)
+  for (const e in setEffects) {
     if (e === '1') text += '**1-Piece:** '
-    else text += `**${e}-Pieces** `
-    text += `${data.setEffects[e]}\n`
+    else text += `**${e}-Pieces:** `
+    text += `${setEffects[e]}\n`
   }
   const embed = new EmbedBuilder()
-    .setTitle(name)
+    .setTitle(translate(namespace, 'setName', lang))
     .setColor(rarityColors[rarity - 1])
     .setFooter({
       text: 'Artifact Archive',
     })
     .setDescription(clean(text))
   const thumbnail = AssetData.artifacts[id].flower
-  if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail))
+  if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail, 'reliquary'))
 
   return {
     content: '',

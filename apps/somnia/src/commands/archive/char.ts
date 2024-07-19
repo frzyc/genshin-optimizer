@@ -4,6 +4,7 @@ import type {
   LocationGenderedCharacterKey,
   TravelerKey,
 } from '@genshin-optimizer/gi/consts'
+import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   ActionRowBuilder,
@@ -13,35 +14,38 @@ import {
 } from 'discord.js'
 import { elementColors } from '../../assets/assets'
 import { createAmbrUrl } from '../../lib/util'
-import { clean, talentlist } from '../archive'
+import { clean, talentlist, translate } from '../archive'
+import { names } from '@nx/devkit'
 
-function getEmbed(id: CharacterKey, name: string, data: any, talent: string) {
+function getEmbed(id: CharacterKey, namespace: string, lang: string, arg: string) {
   //character profile
-  if (talent === 'p') return profileEmbed(id, name, data)
+  if (arg === 'p') return profileEmbed(id, namespace, lang)
   //normal/charged/plunging attacks
-  else if (talent === 'n') return normalsEmbed(id, name, data)
+  else if (arg === 'n') return normalsEmbed(id, namespace, lang)
   //elemental skill
-  else if (talent === 'e') return skillEmbed(id, name, data)
+  else if (arg === 'e') return skillEmbed(id, namespace, lang)
   //elemental burst
-  else if (talent === 'q') return burstEmbed(id, name, data)
+  else if (arg === 'q') return burstEmbed(id, namespace, lang)
   //passives
-  else if (talent.match(/a\d?/)) return passivesEmbed(id, name, data, talent)
+  else if (arg.match(/a\d?/)) return passivesEmbed(id, namespace, arg, lang)
   //constellations
-  else if (talent.match(/c[123456]?/))
-    return constellationsEmbed(id, name, data, talent)
+  else if (arg.match(/c[123456]?/))
+    return constellationsEmbed(id, namespace, arg, lang)
   else throw 'Invalid talent name.'
 }
 
 function getAssets(id: CharacterKey) {
   let genderedId: LocationGenderedCharacterKey | TravelerKey = id
-  if (id.includes('Traveler')) {
-    if (Math.random() < 0.5) genderedId = 'TravelerM'
-    else genderedId = 'TravelerF'
-  }
+  if (id.includes('Traveler')) genderedId = 'TravelerM'
   return AssetData.chars[genderedId]
 }
 
-function baseEmbed(id: CharacterKey, name: string) {
+function getName(id: CharacterKey, lang: string) {
+  if (id.includes('Traveler')) return id.replace('Traveler', 'Traveler (') + ')'
+  else return translate(`char_${id}_gen`, 'name', lang)
+}
+
+function baseEmbed(id: CharacterKey, lang: string) {
   const element = getCharEle(id)
   let icon = getAssets(id).icon
   if (!icon) icon = CommonAssetData.elemIcons[element]
@@ -50,22 +54,24 @@ function baseEmbed(id: CharacterKey, name: string) {
       text: 'Character Archive',
     })
     .setAuthor({
-      name: name,
+      name: getName(id, lang),
       iconURL: createAmbrUrl(icon),
     })
     .setColor(elementColors[element])
 }
 
-function profileEmbed(id: CharacterKey, name: string, data: any) {
+function profileEmbed(id: CharacterKey, namespace: string, lang: string) {
   const element = getCharEle(id)
-  const text =
-    data.description ??
+  const text = i18nInstance.t([
+    `${namespace}:description`,
     'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.'
-  const embed = baseEmbed(id, name)
-  if (data.title) embed.setTitle(data.title)
+  ], {lng: lang})
+  const embed = baseEmbed(id, lang)
+  const title = translate(namespace, 'title', lang)
+  if (title != 'title') embed.setTitle(title)
   embed
     .setAuthor({
-      name: name,
+      name: getName(id, lang),
       iconURL: createAmbrUrl(CommonAssetData.elemIcons[element]),
     })
     .setDescription(clean(text))
@@ -74,40 +80,39 @@ function profileEmbed(id: CharacterKey, name: string, data: any) {
   return embed
 }
 
-function normalsEmbed(id: CharacterKey, name: string, data: any) {
+function normalsEmbed(id: CharacterKey, namespace: string, lang: string) {
   const weapon = getCharStat(id).weaponType
-  return baseEmbed(id, name)
-    .setTitle(data.auto.name)
+  const auto = translate(namespace, 'auto', lang, true)
+  return baseEmbed(id, lang)
+    .setTitle(auto.name)
     .setDescription(
       clean(
-        Object.values(data.auto.fields.normal).join('\n') +
+        Object.values(auto.fields.normal).join('\n') +
           '\n\n' +
-          Object.values(data.auto.fields.charged).join('\n') +
+          Object.values(auto.fields.charged).join('\n') +
           '\n\n' +
-          Object.values(data.auto.fields.plunging).join('\n') +
+          Object.values(auto.fields.plunging).join('\n') +
           '\n\n'
       )
     )
     .setThumbnail(createAmbrUrl(CommonAssetData.normalIcons[weapon]))
 }
 
-function skillEmbed(id: CharacterKey, name: string, data: any) {
-  const embed = baseEmbed(id, name)
-    .setTitle(data.skill.name)
-    .setDescription(
-      clean(Object.values(data.skill.description).flat().join('\n'))
-    )
+function skillEmbed(id: CharacterKey, namespace: string, lang: string) {
+  const skill = translate(namespace, 'skill', lang, true)
+  const embed = baseEmbed(id, lang)
+    .setTitle(skill.name)
+    .setDescription(clean(Object.values(skill.description).flat().join('\n')))
   const thumbnail = getAssets(id).skill
   if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail))
   return embed
 }
 
-function burstEmbed(id: CharacterKey, name: string, data: any) {
-  const embed = baseEmbed(id, name)
-    .setTitle(data.burst.name)
-    .setDescription(
-      clean(Object.values(data.burst.description).flat().join('\n'))
-    )
+function burstEmbed(id: CharacterKey, namespace: string, lang: string) {
+  const burst = translate(namespace, 'burst', lang, true)
+  const embed = baseEmbed(id, lang)
+    .setTitle(burst.name)
+    .setDescription(clean(Object.values(burst.description).flat().join('\n')))
   const thumbnail = getAssets(id).burst
   if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail))
   return embed
@@ -122,14 +127,14 @@ function selectPassive(arg: string): Passives[] {
   return ['passive1', 'passive2', 'passive3', 'passive']
 }
 
-function passivesEmbed(id: CharacterKey, name: string, data: any, arg: string) {
+function passivesEmbed(id: CharacterKey, namespace: string, lang: string, arg: string) {
   let text = ''
   //select passives
   const showPassives = selectPassive(arg)
   //make embed
   for (const passiveId of showPassives) {
-    if (!(passiveId in data)) continue
-    const passive = data[passiveId]
+    const passive = translate(namespace, passiveId, lang, true)
+    if (passive == passiveId) continue
     //ascension 1
     if (passiveId === 'passive1') text += `**${passive.name}** (A1)\n`
     //ascension 4
@@ -139,45 +144,46 @@ function passivesEmbed(id: CharacterKey, name: string, data: any, arg: string) {
     //passive text
     text += Object.values(passive.description).flat().join('\n') + '\n\n'
   }
-  const embed = baseEmbed(id, name).setDescription(clean(text))
+  const embed = baseEmbed(id, lang).setDescription(clean(text))
   const thumbnail = getAssets(id)[showPassives[0]]
   if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail))
   return embed
 }
 
-function constellationsEmbed(
-  id: CharacterKey,
-  name: string,
-  data: any,
-  arg: string
-) {
+function constellationsEmbed(id: CharacterKey, namespace: string, lang: string, arg: string) {
   let text = ''
   //select constellations
   const allCons = ['1', '2', '3', '4', '5', '6'] as const
   const showCons =
     arg === 'c' ? allCons : allCons.filter((e) => e.includes(arg[1]))
   for (const constellationId of showCons) {
-    const constellation = data[`constellation${constellationId}`]
+    const constellation = translate(
+      namespace,
+      `constellation${constellationId}`,
+      lang,
+      true
+    )
     text +=
       `**${constellationId}. ${constellation.name}** ` +
       Object.values(constellation.description).flat().join('\n') +
       '\n\n'
   }
   //make embed
-  const embed = baseEmbed(id, name).setDescription(clean(text))
-  if (data.constellationName) embed.setTitle(data.constellationName)
+  const embed = baseEmbed(id, lang).setDescription(clean(text))
+  const constellationName = translate(namespace, 'constellationName', lang)
+  if (constellationName != 'constellationName')
+    embed.setTitle(constellationName)
   const thumbnail = getAssets(id)[`constellation${showCons[0]}`]
   if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail))
   return embed
 }
 
-export function charArchive(
-  id: CharacterKey,
-  name: string,
-  data: any,
-  args: string
-) {
-  const embed = getEmbed(id, name, data, args)
+export async function charArchive(id: CharacterKey, lang: string, args: string) {
+  const namespace = id.includes('Traveler')?
+    `char_${id}M_gen`:
+    `char_${id}_gen`
+  await i18nInstance.loadNamespaces(namespace)
+  const embed = getEmbed(id, namespace, lang, args)
 
   //create dropdown menu
   const options = []
@@ -190,7 +196,7 @@ export function charArchive(
   }
   const components = new ActionRowBuilder().addComponents(
     new StringSelectMenuBuilder()
-      .setCustomId(`archive char ${id} ${args}`)
+      .setCustomId(`archive char ${id} ${lang} ${args}`)
       .setPlaceholder(talentlist[args[0] as keyof typeof talentlist].name)
       .addOptions(options)
   )
