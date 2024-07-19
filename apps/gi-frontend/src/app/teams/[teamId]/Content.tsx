@@ -1,10 +1,11 @@
 'use client'
 import { Container, Skeleton } from '@mui/material'
 import { Suspense, useState } from 'react'
-import { useSupabase } from '../../../utils/supabase/client'
 import type { Characters } from '../../characters/getCharacters'
 import type { Loadouts } from '../getLoadouts'
+import { TeamCharacter } from './TeamCharacter'
 import { TeamContent } from './TeamContent'
+import { TeamContext } from './TeamContext'
 import type { Team } from './getTeam'
 
 export default function Content({
@@ -18,27 +19,30 @@ export default function Content({
   loadouts: Loadouts
   accountId: string
 }) {
-  const supabase = useSupabase()
-  const [team, setTeam] = useState(serverTeam)
-  const [loadouts, setLoadouts] = useState(serverLoadouts)
-  const [characters, setCharacters] = useState(serverCharacters)
+  const [team] = useState(serverTeam)
+  const [loadouts] = useState(serverLoadouts)
+  const [characters] = useState(serverCharacters)
+
   return (
     <Container>
-      <Suspense
-        fallback={
-          <Skeleton
-            variant="rectangular"
-            sx={{ width: '100%', height: '100%', minHeight: 5000 }}
+      <TeamContext.Provider value={team}>
+        <Suspense
+          fallback={
+            <Skeleton
+              variant="rectangular"
+              sx={{ width: '100%', height: '100%', minHeight: 5000 }}
+            />
+          }
+        >
+          <TeamContent
+            accountId={accountId}
+            team={team}
+            loadouts={loadouts}
+            characters={characters}
           />
-        }
-      >
-        <TeamContent
-          accountId={accountId}
-          team={team}
-          loadouts={loadouts}
-          characters={characters}
-        />
-      </Suspense>
+          <TeamCharacter />
+        </Suspense>
+      </TeamContext.Provider>
     </Container>
   )
 }

@@ -18,7 +18,21 @@ import { useEffect, useState } from 'react'
 import { useSupabase } from '../../../utils/supabase/client'
 import type { Characters } from '../../characters/getCharacters'
 import type { Loadouts } from '../getLoadouts'
-import type { Team, TeamLoadout } from './getTeam'
+import type { Team, TeamLoadout, TeamLoadoutCharacter } from './getTeam'
+
+// a format mostly for changing loadouts in a team.
+type TeamLoadoutData = {
+  loadout: {
+    id: string
+    character_id: string
+    character_key: TeamLoadoutCharacter['key']
+    name: Exclude<TeamLoadout['loadout'], null>['name']
+    description: Exclude<TeamLoadout['loadout'], null>['description']
+  }
+  index: number
+  build_type: TeamLoadout['build_type']
+}
+
 export function TeamContent({
   accountId,
   team,
@@ -32,9 +46,21 @@ export function TeamContent({
 }) {
   const supabase = useSupabase()
   const [teamLoadouts, setTeamLoadouts] = useState(() =>
-    range(0, 3).map(
-      (i) => team.team_loadouts.find(({ index }) => index === i) ?? null
-    )
+    range(0, 3)
+      .map((i) => team.team_loadouts.find(({ index }) => index === i) ?? null)
+      .map((team_loadout) => {
+        if (!team_loadout || !team_loadout.loadout) return null
+        const {
+          loadout: { id, character_id, character_key, name, description },
+          index,
+          build_type,
+        } = team_loadout
+        return {
+          loadout: { id, character_id, character_key, name, description },
+          index,
+          build_type,
+        } as TeamLoadoutData
+      })
   )
   const saveTeamLoadouts = async () => {
     const { error } = await supabase.from('team_loadouts').upsert(
@@ -59,7 +85,9 @@ export function TeamContent({
                 console.error(error)
                 return null
               }
-              teamLoadout.loadout = data
+              teamLoadout.loadout = {
+                ...data,
+              }
             }
 
             return {
@@ -124,8 +152,8 @@ function Teammate({
   index: number
   characters: Characters
   loadouts: Loadouts
-  teamLoadout: TeamLoadout | null
-  setTeamLoadouts: Dispatch<SetStateAction<Array<TeamLoadout | null>>>
+  teamLoadout: TeamLoadoutData | null
+  setTeamLoadouts: Dispatch<SetStateAction<Array<TeamLoadoutData | null>>>
 }) {
   const [selectedCharId, setSelectedCharId] = useState(
     teamLoadout?.loadout?.character_id ?? ''
@@ -150,7 +178,7 @@ function Teammate({
       ({
         index,
         build_type: 'equipped',
-      } as TeamLoadout)
+      } as TeamLoadoutData)
     if (selectedLoadoutId === 'new') {
       const selectedChar = characters.find(({ id }) => id === selectedCharId)
       if (!selectedChar) return

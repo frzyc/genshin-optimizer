@@ -19,6 +19,26 @@ export default async function getTeam(
       team_loadouts(
         loadout:loadouts(
           id,
+          character:characters(
+            id,
+            key,
+            level,
+            ascension,
+            talent_auto,
+            talent_skill,
+            talent_burst,
+            constellation,
+            artifacts:artifacts(
+              id,
+              level,
+              rarity,
+              setKey,
+              slotKey,
+              mainStatKey,
+              substats( key, value, index )
+            ),
+            weapon:weapons( id, key, level, ascension, refinement )
+          ),
           character_id,
           character_key,
           name,
@@ -38,3 +58,7 @@ export default async function getTeam(
 
 export type Team = Exclude<Unpromise<ReturnType<typeof getTeam>>, null>
 export type TeamLoadout = UnArray<Team['team_loadouts']>
+export type TeamLoadoutCharacter = Exclude<
+  Exclude<Team['team_loadouts']['0']['loadout'], null>['character'],
+  null
+>
