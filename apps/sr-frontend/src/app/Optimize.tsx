@@ -7,6 +7,7 @@ import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
 import {
   BuildDisplay,
   OptimizationTargetSelector,
+  StatFilterCard,
   WorkerSelector,
   useCalcContext,
   useDatabaseContext,
@@ -103,6 +104,7 @@ export default function Optimize() {
     <Container>
       <CardThemed bgt="dark">
         <CardContent>
+          <StatFilterCard />
           <Stack>
             <Typography variant="h5">{t('optimize')}</Typography>
             <Box>
