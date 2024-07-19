@@ -69,6 +69,7 @@
       ],
       "@genshin-optimizer/gi/good": ["libs/gi/good/src/index.ts"],
       "@genshin-optimizer/gi/i18n": ["libs/gi/i18n/src/index.ts"],
+      "@genshin-optimizer/gi/i18n-node": ["libs/gi/i18n-node/src/index.ts"],
       "@genshin-optimizer/gi/keymap": ["libs/gi/keymap/src/index.ts"],
       "@genshin-optimizer/gi/localization": [
         "libs/gi/localization/src/index.ts"
@@ -129,6 +130,7 @@
       ],
       "@genshin-optimizer/sr/formula": ["libs/sr/formula/src/index.ts"],
       "@genshin-optimizer/sr/i18n": ["libs/sr/i18n/src/index.ts"],
+      "@genshin-optimizer/sr/i18n-node": ["libs/sr/i18n-node/src/index.ts"],
       "@genshin-optimizer/sr/page-characters": [
         "libs/sr/page-characters/src/index.tsx"
       ],

@@ -4,7 +4,11 @@ import {
   objMap,
   range,
 } from '@genshin-optimizer/common/util'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ArtifactSetKey,
+  ArtifactSlotKey,
+  MainStatKey,
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
   allElementWithPhyKeys,
@@ -365,6 +369,34 @@ export class TeamDataManager extends DataManager<
     }
     return objKeyMap(allArtifactSlotKeys, () => undefined)
   }
+  getLoadoutArtifactData(loadoutDatum: LoadoutDatum): ArtifactData {
+    const { buildType, buildTcId } = loadoutDatum
+    if (buildType === 'tc') {
+      const buildTc = this.database.buildTcs.get(buildTcId)
+      if (!buildTc) return { setNum: {}, mains: {} }
+      return {
+        setNum: buildTc.artifact.sets,
+        mains: {
+          sands: buildTc.artifact.slots.sands.statKey,
+          goblet: buildTc.artifact.slots.goblet.statKey,
+          circlet: buildTc.artifact.slots.circlet.statKey,
+        },
+      }
+    }
+    const artifacts = this.getLoadoutArtifacts(loadoutDatum)
+    return {
+      setNum: Object.values(artifacts).reduce((acc, art) => {
+        if (!art) return acc
+        acc[art.setKey] = (acc[art.setKey] ?? 0) + 1
+        return acc
+      }, {} as Exclude<ArtifactData['setNum'], undefined>),
+      mains: {
+        sands: artifacts.sands?.mainStatKey,
+        goblet: artifacts.goblet?.mainStatKey,
+        circlet: artifacts.circlet?.mainStatKey,
+      },
+    }
+  }
 
   followLoadoutDatum(
     { buildType, buildId, buildTcId }: LoadoutDatum,
@@ -428,4 +460,8 @@ export class TeamDataManager extends DataManager<
         return this.database.buildTcs.get(buildTcId)?.name ?? ''
     }
   }
+}
+export type ArtifactData = {
+  setNum?: Partial<Record<ArtifactSetKey, number>>
+  mains?: { sands?: MainStatKey; goblet?: MainStatKey; circlet?: MainStatKey }
 }
