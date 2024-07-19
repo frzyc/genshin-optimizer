@@ -409,11 +409,6 @@ function CharacterArea({
                 <WeaponCard weapon={weapon} />
                 <ArtifactCard artifactData={artifactData} />
               </Box>
-              {/* {loadoutDatum?.buildType === 'tc' && loadoutDatum?.buildTcId ? (
-                <CharacterCardEquipmentRowTC weapon={weapon} />
-              ) : (
-                <CharacterCardEquipmentRow />
-              )} */}
             </Box>
           </Box>
         </Suspense>
@@ -534,7 +529,7 @@ function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
                         }}
                       >
                         {slotIcon}
-                        <ArtifactSlotName slotKey="sands" />
+                        <ArtifactSlotName slotKey={slotKey} />
                       </Typography>
                       <Typography
                         sx={{
