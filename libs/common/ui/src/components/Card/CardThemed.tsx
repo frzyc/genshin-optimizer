@@ -12,13 +12,22 @@ interface StyledCardProps extends CardProps {
  */
 export const CardThemed = styled(Card, {
   shouldForwardProp: (prop) => prop !== 'bgt',
-})<StyledCardProps>(({ theme, bgt }) => ({
-  backgroundColor:
-    bgt === 'light'
-      ? theme.palette.contentLight.main
-      : bgt === 'dark'
-      ? theme.palette.contentDark.main
-      : bgt === 'normal' || !bgt
-      ? theme.palette.contentNormal.main
-      : (theme.palette[bgt as keyof Palette] as PaletteColor)?.main,
-}))
+})<StyledCardProps>(({ theme, bgt }) => {
+  if (!bgt) bgt = 'normal'
+  switch (bgt) {
+    case 'light':
+      bgt = theme.palette.contentLight.main
+      break
+    case 'dark':
+      bgt = theme.palette.contentDark.main
+      break
+    case 'normal':
+      bgt = theme.palette.contentNormal.main
+      break
+    default:
+      bgt = (theme.palette[bgt as keyof Palette] as PaletteColor)?.main
+  }
+  return {
+    backgroundColor: bgt,
+  }
+})

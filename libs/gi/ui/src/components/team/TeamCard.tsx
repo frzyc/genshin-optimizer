@@ -31,13 +31,7 @@ import {
   getCharStat,
   weaponHasRefinement,
 } from '@genshin-optimizer/gi/stats'
-import {
-  CircletIcon,
-  ElementIcon,
-  GobletIcon,
-  SandsIcon,
-  StatIcon,
-} from '@genshin-optimizer/gi/svgicons'
+import { ElementIcon, SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { getLevelString } from '@genshin-optimizer/gi/util'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -512,35 +506,57 @@ function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
       >
         {Object.entries(mains)
           .filter(([, statKey]) => statKey)
-          .map(([slotKey, statKey]) => (
-            <BootstrapTooltip
-              key={slotKey + statKey}
-              title={
-                <Box>
-                  <Typography>
-                    <ArtifactSlotName slotKey="sands" />
-                  </Typography>
-                  <Typography>{t(statKey)}</Typography>
-                </Box>
-              }
-            >
-              <Typography sx={{ lineHeight: 0 }}>
-                {slotKey === 'sands' && (
-                  <SandsIcon sx={{ fontSize: 'inherit' }} />
-                )}
-                {slotKey === 'goblet' && (
-                  <GobletIcon sx={{ fontSize: 'inherit' }} />
-                )}
-                {slotKey === 'circlet' && (
-                  <CircletIcon sx={{ fontSize: 'inherit' }} />
-                )}
-                <StatIcon
-                  statKey={statKey}
-                  iconProps={{ sx: { fontSize: 'inherit' } }}
-                />
-              </Typography>
-            </BootstrapTooltip>
-          ))}
+          .map(([slotKey, statKey]) => {
+            const slotIcon = (
+              <SlotIcon
+                slotKey={slotKey}
+                iconProps={{ sx: { fontSize: 'inherit' } }}
+              />
+            )
+
+            const statIcon = (
+              <StatIcon
+                statKey={statKey}
+                iconProps={{ sx: { fontSize: 'inherit' } }}
+              />
+            )
+            return (
+              <BootstrapTooltip
+                key={slotKey + statKey}
+                title={
+                  <Box>
+                    <Suspense fallback={<Skeleton variant="text" />}>
+                      <Typography
+                        sx={{
+                          display: 'flex',
+                          gap: 1,
+                          alignItems: 'center',
+                        }}
+                      >
+                        {slotIcon}
+                        <ArtifactSlotName slotKey="sands" />
+                      </Typography>
+                      <Typography
+                        sx={{
+                          display: 'flex',
+                          gap: 1,
+                          alignItems: 'center',
+                        }}
+                      >
+                        {statIcon}
+                        {t(statKey)}
+                      </Typography>
+                    </Suspense>
+                  </Box>
+                }
+              >
+                <Typography sx={{ lineHeight: 0 }}>
+                  {slotIcon}
+                  {statIcon}
+                </Typography>
+              </BootstrapTooltip>
+            )
+          })}
       </Box>
     </CardThemed>
   )
