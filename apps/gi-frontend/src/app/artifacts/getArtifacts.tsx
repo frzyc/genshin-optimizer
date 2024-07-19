@@ -10,7 +10,7 @@ export default async function getArtifacts(
   const { data, error } = await supabase
     .from('artifacts')
     .select(
-      `id, created_at, setKey, slotKey, level, rarity, substats(key, value), lock, mainStatKey`
+      `id, created_at, setKey, slotKey, level, rarity, substats(key, value), lock, mainStatKey, character:characters(id, key)`
     )
     .eq('account_id', accountId)
 
