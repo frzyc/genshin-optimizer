@@ -86,9 +86,11 @@ export default function TeamCharacterSelector({
           // color for team setting
           ...(isXs ? [backrgba, backrgba] : [backrgba]),
           // color for team optimize
-          ...(process.env.NODE_ENV === 'development' ? (
-            isXs ? [backrgba, backrgba] : [backrgba]
-          ) : []),
+          ...(process.env['NODE_ENV'] === 'development'
+            ? isXs
+              ? [backrgba, backrgba]
+              : [backrgba]
+            : []),
           ...elementArray.map((ele, i) => {
             if (!ele) return `rgba(0,0,0,0)`
 
@@ -213,13 +215,13 @@ export default function TeamCharacterSelector({
           label={'Team Settings'}
           onClick={() => navigate(`/teams/${teamId}/`)}
         />
-        {process.env.NODE_ENV === 'development' && (
+        {process.env['NODE_ENV'] === 'development' && (
           <Tab
-          icon={<TrendingUp />}
-          iconPosition="start"
-          value={'optimize'}
-          label={'Team Optimization'}
-          onClick={() => navigate(`/teams/${teamId}/optimize`)}
+            icon={<TrendingUp />}
+            iconPosition="start"
+            value={'optimize'}
+            label={'Team Optimization'}
+            onClick={() => navigate(`/teams/${teamId}/optimize`)}
           />
         )}
         {loadoutData.map((loadoutDatum, ind) => {

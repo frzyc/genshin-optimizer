@@ -154,8 +154,7 @@ describe('A general optimizeTC usecase', () => {
       'F',
       HuTaoTeamCharId,
       0,
-      overrideArt,
-      overrideWeapon
+      { [HuTaoTeamCharId]: { art: overrideArt, weapon: overrideWeapon } }
     )!
 
     expect(teamData).toBeTruthy()
