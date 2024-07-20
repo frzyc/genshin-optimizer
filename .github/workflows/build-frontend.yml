@@ -48,19 +48,12 @@ jobs:
           printf '%s' "$ENVFILE" > apps/frontend/.env.local
         env:
           ENVFILE: ${{ vars.ENVFILE }}
-      - name: Build frontend
+      - name: Build genshin-optimizer
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
           NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
-      - name: Build gi-frontend
-        if: inputs.frontend_name == 'gi-frontend'
-        run: yarn nx run gi-frontend:next:build
-      - name: Build other frontend
-        if: inputs.frontend_name != 'gi-frontend'
-        run: yarn run nx run ${{inputs.frontend_name}}:build:production
-      - name: echos
-        run: |
+          yarn run nx run ${{inputs.frontend_name}}:build:production
           echo ${{inputs.frontend_name}} > frontend_name
           echo ${{inputs.deployment_name}} > deployment_name
           echo $(git rev-parse HEAD) > ref
