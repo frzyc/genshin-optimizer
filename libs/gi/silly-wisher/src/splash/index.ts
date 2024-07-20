@@ -166,10 +166,8 @@ const charCards = {
   Zhongli,
 } as const
 
-export function splash(charKey: CharacterKey, gender: GenderKey): string {
-  return (
-    charCards[
-      charKeyToLocGenderedCharKey(charKey, gender) as keyof typeof charCards
-    ] ?? ''
-  )
+export function splash(charKey: CharacterKey, gender: GenderKey) {
+  return charCards[
+    charKeyToLocGenderedCharKey(charKey, gender) as keyof typeof charCards
+  ]
 }

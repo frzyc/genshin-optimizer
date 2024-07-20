@@ -34,7 +34,8 @@ export type RelicSetExclusionKey = (typeof allRelicSetExclusionKeys)[number]
 export type RelicSetExclusion = Partial<Record<RelicSetExclusionKey, (2 | 4)[]>>
 
 export interface StatFilterSetting {
-  value: number
+  minValue: number
+  maxValue: number
   disabled: boolean
 }
 export type StatFilters = Record<string, StatFilterSetting[]>
