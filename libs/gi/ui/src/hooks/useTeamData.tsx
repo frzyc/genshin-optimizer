@@ -2,7 +2,7 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { notEmpty, objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
-import type { LoadoutDatum, Team } from '@genshin-optimizer/gi/db'
+import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
   type ArtCharDatabase,
   type ICachedArtifact,
@@ -139,7 +139,7 @@ export function getTeamDataCalc(
   mainStatAssumptionLevel = 0,
   override?: Partial<
     Record<
-      NonNullable<Team['loadoutData'][number]>['teamCharId'],
+    CharacterKey | LoadoutDatum['teamCharId'],
       {
         art?: ICachedArtifact[] | Data
         weapon?: ICachedWeapon
@@ -178,7 +178,7 @@ export function getTeamData(
   mainStatAssumptionLevel = 0,
   override?: Partial<
     Record<
-      NonNullable<Team['loadoutData'][number]>['teamCharId'],
+      CharacterKey | LoadoutDatum['teamCharId'],
       {
         art?: ICachedArtifact[] | Data
         weapon?: ICachedWeapon
@@ -212,7 +212,8 @@ export function getTeamData(
       const isActiveTeamChar = teamCharId === activeTeamCharId
 
       let char: Omit<ICharacter, 'key'> = dbChar
-      if (override?.[teamCharId]?.char) char = override[teamCharId]!.char!
+      if (override?.[characterKey]?.char) char = override[characterKey]!.char!
+      else if (override?.[teamCharId]?.char) char = override[teamCharId]!.char!
       // tcbuild override
       else if (buildType === 'tc' && buildTcId) {
         const tcchar = database.buildTcs.get(buildTcId)!.character
@@ -222,11 +223,13 @@ export function getTeamData(
       const { level, constellation, ascension, talent } = char
 
       const weapon = (() => {
-        if (override?.[teamCharId]?.weapon) return override[teamCharId]!.weapon!
+        if (override?.[characterKey]?.weapon) return override[characterKey]!.weapon!
+        else if (override?.[teamCharId]?.weapon) return override[teamCharId]!.weapon!
         return database.teams.getLoadoutWeapon(loadoutDatum)
       })()
       const arts = (() => {
-        if (override?.[teamCharId]?.art) return override[teamCharId]!.art!
+        if (override?.[characterKey]?.art) return override[characterKey]!.art!
+        else if (override?.[teamCharId]?.art) return override[teamCharId]!.art!
         if (buildType === 'tc' && buildTcId)
           return getBuildTcArtifactData(database.buildTcs.get(buildTcId)!)
         return Object.values(
