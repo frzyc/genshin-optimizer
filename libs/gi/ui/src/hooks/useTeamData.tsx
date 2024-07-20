@@ -2,7 +2,7 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { notEmpty, objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
-import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
+import type { LoadoutDatum, Team } from '@genshin-optimizer/gi/db'
 import {
   type ArtCharDatabase,
   type ICachedArtifact,
@@ -81,8 +81,7 @@ export function useTeamDataNoContext(
         gender,
         overrideTeamCharId,
         mainStatAssumptionLevel,
-        overrideArt,
-        overrideWeapon
+        { [overrideTeamCharId]: { art: overrideArt, weapon: overrideWeapon } }
       ),
     [
       dbDirtyDeferred,
@@ -138,9 +137,16 @@ export function getTeamDataCalc(
   gender: GenderKey,
   overrideTeamCharId: string,
   mainStatAssumptionLevel = 0,
-  overrideArt?: ICachedArtifact[] | Data,
-  overrideWeapon?: ICachedWeapon,
-  overrideChar?: Omit<ICharacter, 'key'>
+  override?: Partial<
+    Record<
+      NonNullable<Team['loadoutData'][number]>['teamCharId'],
+      {
+        art?: ICachedArtifact[] | Data
+        weapon?: ICachedWeapon
+        char?: Omit<ICharacter, 'key'>
+      }
+    >
+  >
 ): TeamData | undefined {
   if (!teamId) return undefined
   const activeChar = database.teams.getActiveTeamChar(teamId)
@@ -152,9 +158,7 @@ export function getTeamDataCalc(
       teamId,
       overrideTeamCharId,
       mainStatAssumptionLevel,
-      overrideArt,
-      overrideWeapon,
-      overrideChar
+      override
     ) ?? {}
   if (!teamData || !teamBundle) return undefined
 
@@ -172,10 +176,16 @@ export function getTeamData(
   teamId: string | '',
   activeTeamCharId: string,
   mainStatAssumptionLevel = 0,
-  // OverrideArt/overrideWeapon is only applied to the teamchar of activeTeamCharId
-  overrideArt?: ICachedArtifact[] | Data,
-  overrideWeapon?: ICachedWeapon,
-  overrideChar?: Omit<ICharacter, 'key'>
+  override?: Partial<
+    Record<
+      NonNullable<Team['loadoutData'][number]>['teamCharId'],
+      {
+        art?: ICachedArtifact[] | Data
+        weapon?: ICachedWeapon
+        char?: Omit<ICharacter, 'key'>
+      }
+    >
+  >
 ): TeamDataBundle | undefined {
   if (!teamId) return undefined
   const team = database.teams.get(teamId)
@@ -202,7 +212,7 @@ export function getTeamData(
       const isActiveTeamChar = teamCharId === activeTeamCharId
 
       let char: Omit<ICharacter, 'key'> = dbChar
-      if (overrideChar && isActiveTeamChar) char = overrideChar
+      if (override?.[teamCharId]?.char) char = override[teamCharId]!.char!
       // tcbuild override
       else if (buildType === 'tc' && buildTcId) {
         const tcchar = database.buildTcs.get(buildTcId)!.character
@@ -212,11 +222,11 @@ export function getTeamData(
       const { level, constellation, ascension, talent } = char
 
       const weapon = (() => {
-        if (overrideWeapon && isActiveTeamChar) return overrideWeapon
+        if (override?.[teamCharId]?.weapon) return override[teamCharId]!.weapon!
         return database.teams.getLoadoutWeapon(loadoutDatum)
       })()
       const arts = (() => {
-        if (overrideArt && isActiveTeamChar) return overrideArt
+        if (override?.[teamCharId]?.art) return override[teamCharId]!.art!
         if (buildType === 'tc' && buildTcId)
           return getBuildTcArtifactData(database.buildTcs.get(buildTcId)!)
         return Object.values(

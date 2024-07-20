@@ -21,6 +21,7 @@ export default function TeamOptimize({ teamId }: { teamId: string }) {
     () => getFullTeamData(database, gender, teamId),
     [database, gender, teamId]
   )
+  console.log('teamData', teamData)
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', p: 1 }}>
       <OptTeamCard teamId={teamId} teamData={teamData} />
