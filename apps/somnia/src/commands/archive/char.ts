@@ -31,10 +31,10 @@ function getEmbed(
   //elemental burst
   else if (arg === 'q') return burstEmbed(id, namespace, lang)
   //passives
-  else if (arg.match(/a\d?/)) return passivesEmbed(id, namespace, arg, lang)
+  else if (arg.match(/a\d?/)) return passivesEmbed(id, namespace, lang, arg)
   //constellations
   else if (arg.match(/c[123456]?/))
-    return constellationsEmbed(id, namespace, arg, lang)
+    return constellationsEmbed(id, namespace, lang, arg)
   else throw 'Invalid talent name.'
 }
 
@@ -172,7 +172,7 @@ function constellationsEmbed(
   //select constellations
   const allCons = ['1', '2', '3', '4', '5', '6'] as const
   const showCons =
-    arg === 'c' ? allCons : allCons.filter((e) => e.includes(arg[1]))
+    arg.length > 1 ? allCons.filter((e) => e.includes(arg[1])) : allCons
   for (const constellationId of showCons) {
     const constellation = translate(
       namespace,
