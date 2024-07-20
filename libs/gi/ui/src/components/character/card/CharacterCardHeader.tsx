@@ -1,5 +1,6 @@
 import {
   ConditionalWrapper,
+  NextImage,
   SqBadge,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
@@ -67,7 +68,7 @@ export function CharacterCardHeader({
       >
         <Box
           flexShrink={1}
-          component="img"
+          component={NextImage ? NextImage : 'img'}
           src={iconAsset(characterKey, gender, silly)}
           sx={{ maxWidth: '40%' }}
           alignSelf="flex-end"
