@@ -139,7 +139,7 @@ export function getTeamDataCalc(
   mainStatAssumptionLevel = 0,
   override?: Partial<
     Record<
-    CharacterKey | LoadoutDatum['teamCharId'],
+      CharacterKey | LoadoutDatum['teamCharId'],
       {
         art?: ICachedArtifact[] | Data
         weapon?: ICachedWeapon
@@ -223,8 +223,10 @@ export function getTeamData(
       const { level, constellation, ascension, talent } = char
 
       const weapon = (() => {
-        if (override?.[characterKey]?.weapon) return override[characterKey]!.weapon!
-        else if (override?.[teamCharId]?.weapon) return override[teamCharId]!.weapon!
+        if (override?.[characterKey]?.weapon)
+          return override[characterKey]!.weapon!
+        else if (override?.[teamCharId]?.weapon)
+          return override[teamCharId]!.weapon!
         return database.teams.getLoadoutWeapon(loadoutDatum)
       })()
       const arts = (() => {
