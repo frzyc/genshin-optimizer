@@ -30,11 +30,7 @@ import {
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-export const artifactsSlotsToSelectMainStats = [
-  'sands',
-  'goblet',
-  'circlet',
-] as const
+const artifactsSlotsToSelectMainStats = ['sands', 'goblet', 'circlet'] as const
 
 export default function MainStatSelectionCard({
   disabled = false,

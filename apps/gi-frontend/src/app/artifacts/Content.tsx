@@ -5,7 +5,7 @@ import { randomizeArtifact } from '@genshin-optimizer/gi/util'
 import { Button, Container, Grid, Skeleton, Typography } from '@mui/material'
 import { Suspense, useEffect, useState } from 'react'
 import { useSupabase } from '../../utils/supabase/client'
-import type { Artifacts } from './getArtifacts'
+import type { Artifact, Artifacts } from './getArtifacts'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 // const numToShowMap = { xs: 5, sm: 6, md: 12, lg: 12, xl: 12 }
@@ -62,15 +62,15 @@ export default function Content({
           // TODO: probably need to listen to other changes? the issue is that we are not listening to changes to substats
           if (payload.new) {
             // TODO: is there a better way to update this? doing an extra lookup seems kind of excessive, but the payload.new does not include substats.
-            const { error, data } = await supabase
+            const { error, data: artifact } = await supabase
               .from('artifacts')
               .select(
                 'id, created_at, setKey, slotKey, level, rarity, substats(key, value), lock, mainStatKey'
               )
-              .eq('id', (payload.new as any).id)
+              .eq('id', (payload.new as Artifact).id)
               .eq('account_id', accountId)
+              .maybeSingle()
             if (error) return console.error(error)
-            const artifact = data[0]
             if (!artifact) return
             setArtifacts((arts) => [...arts, artifact] as Artifacts)
           }

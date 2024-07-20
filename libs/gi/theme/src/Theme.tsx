@@ -9,6 +9,8 @@ declare module '@mui/material/styles' {
     neutral200: Palette['primary']
     neutral300: Palette['primary']
     neutral400: Palette['primary']
+    neutral500: Palette['primary']
+    neutral600: Palette['primary']
     neutral700: Palette['primary']
     neutral800: Palette['primary']
     neutral900: Palette['primary']
@@ -54,6 +56,8 @@ declare module '@mui/material/styles' {
     neutral200?: Palette['primary']
     neutral300?: Palette['primary']
     neutral400?: Palette['primary']
+    neutral500?: Palette['primary']
+    neutral600?: Palette['primary']
     neutral700?: Palette['primary']
     neutral800?: Palette['primary']
     neutral900?: Palette['primary']
@@ -243,6 +247,12 @@ export const theme = createTheme({
     }),
     neutral400: commonTheme.palette.augmentColor({
       color: { main: '#777B8E' },
+    }),
+    neutral500: commonTheme.palette.augmentColor({
+      color: { main: '#393C4F' },
+    }),
+    neutral600: commonTheme.palette.augmentColor({
+      color: { main: '#222533' },
     }),
     neutral700: commonTheme.palette.augmentColor({
       color: { main: '#191C2B' },

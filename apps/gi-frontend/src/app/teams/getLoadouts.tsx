@@ -2,15 +2,22 @@
 import type { UnArray, Unpromise } from '@genshin-optimizer/common/util'
 import type { Database } from '@genshin-optimizer/gi/supabase'
 import type { SupabaseClient } from '@supabase/supabase-js'
-export default async function getCharacters(
+export default async function getLoadouts(
   supabase: SupabaseClient<Database>,
   accountId: string | null
 ) {
   if (!accountId) return []
   const { data, error } = await supabase
-    .from('characters')
+    .from('loadouts')
     .select(
-      `id, created_at, key, level, ascension, talent_auto, talent_skill, talent_burst, constellation`
+      `
+      id,
+      created_at,
+      character_id,
+      character_key,
+      name,
+      description
+      `
     )
     .eq('account_id', accountId)
 
@@ -18,8 +25,5 @@ export default async function getCharacters(
   return data
 }
 
-export type Characters = Exclude<
-  Unpromise<ReturnType<typeof getCharacters>>,
-  null
->
-export type Character = UnArray<Characters>
+export type Loadouts = Exclude<Unpromise<ReturnType<typeof getLoadouts>>, null>
+export type Loadout = UnArray<Loadouts>
