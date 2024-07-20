@@ -5,6 +5,7 @@ import {
   DropdownButton,
   ImgIcon,
   ModalWrapper,
+  NextImage,
 } from '@genshin-optimizer/common/ui'
 import { clamp, deepClone } from '@genshin-optimizer/common/util'
 import type { Processed } from '@genshin-optimizer/gi/art-scanner'
@@ -639,7 +640,7 @@ export function ArtifactEditor({
                       {imageURL && (
                         <Box display="flex" justifyContent="center">
                           <Box
-                            component="img"
+                            component={NextImage ? NextImage : 'img'}
                             src={imageURL}
                             width="100%"
                             maxWidth={350}
@@ -876,7 +877,11 @@ function DebugModal({ imgs }: { imgs: Record<string, string> }) {
               {Object.entries(imgs).map(([key, url]) => (
                 <Box key={key}>
                   <Typography>{key}</Typography>
-                  <Box component="img" src={url} maxWidth="100%" />
+                  <Box
+                    component={NextImage ? NextImage : 'img'}
+                    src={url}
+                    maxWidth="100%"
+                  />
                 </Box>
               ))}
             </Stack>

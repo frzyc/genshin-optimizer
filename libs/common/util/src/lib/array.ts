@@ -58,7 +58,7 @@ export function linspace(
 }
 
 /** Intended to use with array.filter function to type check against Array<TValue|undefined> -> Array<TValue> */
-export function notEmpty<T>(value: T | null | undefined): value is T {
+export function notEmpty<T>(value: T | null | undefined | ''): value is T {
   return value !== null && value !== undefined
 }
 

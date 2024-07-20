@@ -9,6 +9,7 @@ import {
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { greaterEq, input } from '@genshin-optimizer/gi/wr'
+import type { StaticImageData } from 'next/image'
 import type { ReactNode } from 'react'
 import { st, trans } from '../SheetUtil'
 import type {
@@ -59,7 +60,7 @@ export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
   const characterKey = charSheetKeyToCharKey(cKey)
   const wKey = getCharStat(characterKey).weaponType
 
-  const img = (tk: TalentSheetElementKey): string => {
+  const img = (tk: TalentSheetElementKey) => {
     if (tk === 'auto') return imgAssets.weaponTypes[wKey]
     return characterAsset(characterKey, tk, 'F') // Should be all genderless assets
   }
@@ -89,7 +90,7 @@ export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
 const talentTemplate = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
-  img: string,
+  img: string | StaticImageData,
   docSections?: DocumentSection[]
 ): TalentSheetElement => ({
   name: tr(`${talentKey}.name`),
@@ -103,7 +104,7 @@ const talentTemplate = (
 const talentHeader = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
-  img: string
+  img: string | StaticImageData
 ): IDocumentHeader => {
   return {
     title: tr(`${talentKey}.name`),
@@ -125,7 +126,7 @@ function charSheetKeyToCharKey(csk: CharacterSheetKey): CharacterKey {
 const headerTemplate = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
-  img: string,
+  img: string | StaticImageData,
   partialSection: DocumentSection
 ): DocumentSection => ({
   ...partialSection,
@@ -145,7 +146,7 @@ const conditionalTemplate = (
   talentKey: TalentSheetElementKey,
   partialCond: DocumentConditionalBase,
   tr: (i18key: string) => ReactNode,
-  img: string
+  img: string | StaticImageData
 ): DocumentConditional => ({
   ...partialCond,
   header: { ...talentHeader(talentKey, tr, img), ...partialCond.header },

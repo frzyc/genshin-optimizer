@@ -175,15 +175,15 @@ const charCards = {
   Zhongli,
 } as const
 
-export function charCard(charKey: CharacterKey, gender: GenderKey): string {
+export function charCard(charKey: CharacterKey, gender: GenderKey) {
   switch (charKey) {
     case 'TravelerAnemo':
     case 'TravelerDendro':
     case 'TravelerElectro':
     case 'TravelerGeo':
     case 'TravelerHydro':
-      return charCards[`Traveler${gender}`] ?? ''
+      return charCards[`Traveler${gender}`]
     default:
-      return charCards[charKey] ?? ''
+      return charCards[charKey]
   }
 }

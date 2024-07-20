@@ -167,9 +167,6 @@ const data = {
   Zhongli,
 } as const
 
-export function portrait(charKey: CharacterKey, gender: GenderKey): string {
-  return (
-    data[charKeyToLocGenderedCharKey(charKey, gender) as keyof typeof data] ??
-    ''
-  )
+export function portrait(charKey: CharacterKey, gender: GenderKey) {
+  return data[charKeyToLocGenderedCharKey(charKey, gender) as keyof typeof data]
 }
