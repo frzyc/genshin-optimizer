@@ -106,7 +106,9 @@ export function detach(
       case 'lookup': {
         // We don't eagerly fold `x`. If all `br` can be folded,
         // we can short-circuit and fold only the chosen branch.
-        const br = n.br.map((br) => map(br, cache)) as Const<string>[]
+        const br = n.br.map((br) =>
+          map(br, cache)
+        ) as unknown as Const<string>[]
         if (br.every((n) => n.op === 'const')) {
           const branchID = branching[n.op](
             br.map((br) => br.ex),

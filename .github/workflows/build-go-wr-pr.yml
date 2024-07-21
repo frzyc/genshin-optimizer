@@ -7,6 +7,7 @@ permissions:
 on:
   pull_request:
     paths-ignore:
+      - 'apps/gi-frontend/**'
       - 'apps/gi-backend/**'
       - 'apps/gi-backend-e2e/**'
       - 'apps/gi-frontend-next-e2e/**'

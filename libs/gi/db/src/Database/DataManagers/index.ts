@@ -29,6 +29,7 @@ import {
 } from './OptConfigDataManager'
 import type { TeamCharacter } from './TeamCharacterDataManager'
 import type {
+  ArtifactData,
   LoadoutDataExportSetting,
   LoadoutDatum,
   LoadoutExportSetting,
@@ -69,6 +70,7 @@ export {
 export type {
   ArtSetExclusion,
   ArtSetExclusionKey,
+  ArtifactData,
   GeneratedBuild,
   LoadoutDataExportSetting,
   LoadoutDatum,

@@ -1,11 +1,11 @@
 'use client'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import type { Tables } from '@genshin-optimizer/gi/supabase'
 import { ArtifactCardObj } from '@genshin-optimizer/gi/ui'
 import { randomizeArtifact } from '@genshin-optimizer/gi/util'
 import { Button, Container, Grid, Skeleton, Typography } from '@mui/material'
 import { Suspense, useEffect, useState } from 'react'
 import { useSupabase } from '../../utils/supabase/client'
+import type { Artifact, Artifacts } from './getArtifacts'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 // const numToShowMap = { xs: 5, sm: 6, md: 12, lg: 12, xl: 12 }
@@ -14,18 +14,35 @@ export default function Content({
   artifacts: serverArtifacts,
   accountId,
 }: {
-  artifacts: Array<Tables<'artifacts'>>
+  artifacts: Artifacts
   accountId: string
 }) {
   const supabase = useSupabase()
   const [artifacts, setArtifacts] = useState(serverArtifacts)
   const addArtifact = async () => {
     try {
-      const { error } = await supabase.from('artifacts').insert({
-        ...randomizeArtifact(),
-        account: accountId,
-      } as any)
-      if (error) console.error(error)
+      const randArtifact = randomizeArtifact()
+      const { substats, location, ...rest } = randArtifact
+      const { error, data } = await supabase
+        .from('artifacts')
+        .insert({
+          ...rest,
+          account_id: accountId,
+        } as any)
+        .select()
+      if (error) return console.error(error)
+      const art = data[0]
+      if (!art.id) return
+      // TODO: is there a better way to add substats? this sends like 5 requests per artifact...
+      substats.map(async (substat, index) => {
+        if (!substat.key) return
+        const { error } = await supabase.from('substats').insert({
+          ...substat,
+          index,
+          artifact_id: art.id,
+        } as any)
+        if (error) return console.error(error)
+      })
     } catch (error) {
       console.error(error)
     }
@@ -39,13 +56,24 @@ export default function Content({
           event: '*',
           schema: 'public',
           table: 'artifacts',
-          filter: `account=eq.${accountId}`,
+          filter: `account_id=eq.${accountId}`,
         },
-        (payload) => {
-          if (payload.new)
-            setArtifacts(
-              (arts) => [...arts, payload.new] as Array<Tables<'artifacts'>>
-            )
+        async (payload) => {
+          // TODO: probably need to listen to other changes? the issue is that we are not listening to changes to substats
+          if (payload.new) {
+            // TODO: is there a better way to update this? doing an extra lookup seems kind of excessive, but the payload.new does not include substats.
+            const { error, data: artifact } = await supabase
+              .from('artifacts')
+              .select(
+                'id, created_at, setKey, slotKey, level, rarity, substats(key, value), lock, mainStatKey'
+              )
+              .eq('id', (payload.new as Artifact).id)
+              .eq('account_id', accountId)
+              .maybeSingle()
+            if (error) return console.error(error)
+            if (!artifact) return
+            setArtifacts((arts) => [...arts, artifact] as Artifacts)
+          }
         }
       )
       .subscribe()

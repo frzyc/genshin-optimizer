@@ -16,7 +16,7 @@ export function CharacterCard({
 }) {
   const calc = genshinCalculatorWithEntries(
     withMember(
-      'member0',
+      '0',
       ...charData({
         key: character.key,
         level: character.level,
@@ -30,7 +30,7 @@ export function CharacterCard({
       })
     )
   )
-  const member0 = convert(selfTag, { member: 'member0', et: 'self' })
+  const member0 = convert(selfTag, { src: '0', et: 'self' })
   return (
     <CardThemed>
       <CardContent>

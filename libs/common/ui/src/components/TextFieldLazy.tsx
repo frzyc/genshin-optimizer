@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 /**
  * A textfield that only triggers `onChange` when it is blurred (unfocused) or if not multi-line, the enter key.
  */
-export function TextFieldLazy<T extends string | undefined>({
+export function TextFieldLazy<T extends string | undefined | null>({
   value: valueProp,
   onChange,
   ...props
