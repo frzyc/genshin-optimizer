@@ -1,3 +1,5 @@
+'use client'
+// use client due to hydration difference between client rendering and server in translation
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
