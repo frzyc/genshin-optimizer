@@ -1,11 +1,14 @@
 'use client'
-import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import type { ArtifactRarity } from '@genshin-optimizer/gi/consts'
+import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
+import { cachedArtifact, type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { ArtifactCardObj } from '@genshin-optimizer/gi/ui'
 import { randomizeArtifact } from '@genshin-optimizer/gi/util'
 import { Button, Container, Grid, Skeleton, Typography } from '@mui/material'
 import { Suspense, useEffect, useState } from 'react'
 import { useSupabase } from '../../utils/supabase/client'
-import type { Artifact, Artifacts } from './getArtifacts'
+import { ARTIFACT_QUERY } from './artifactquery'
+import { type Artifact, type Artifacts } from './getArtifacts'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 // const numToShowMap = { xs: 5, sm: 6, md: 12, lg: 12, xl: 12 }
@@ -18,7 +21,9 @@ export default function Content({
   accountId: string
 }) {
   const supabase = useSupabase()
-  const [artifacts, setArtifacts] = useState(serverArtifacts)
+  const [artifacts, setArtifacts] = useState(() =>
+    serverArtifacts.map(artifactToCached)
+  )
   const addArtifact = async () => {
     try {
       const randArtifact = randomizeArtifact()
@@ -64,15 +69,13 @@ export default function Content({
             // TODO: is there a better way to update this? doing an extra lookup seems kind of excessive, but the payload.new does not include substats.
             const { error, data: artifact } = await supabase
               .from('artifacts')
-              .select(
-                'id, created_at, setKey, slotKey, level, rarity, substats(key, value), lock, mainStatKey'
-              )
+              .select(ARTIFACT_QUERY)
               .eq('id', (payload.new as Artifact).id)
               .eq('account_id', accountId)
               .maybeSingle()
             if (error) return console.error(error)
             if (!artifact) return
-            setArtifacts((arts) => [...arts, artifact] as Artifacts)
+            setArtifacts((arts) => [...arts, artifactToCached(artifact)])
           }
         }
       )
@@ -116,4 +119,30 @@ export default function Content({
       </Suspense>
     </Container>
   )
+}
+function artifactToCached(artifact: Artifact): ICachedArtifact {
+  const {
+    substats,
+    setKey,
+    level,
+    mainStatKey,
+    slotKey,
+    rarity,
+    lock,
+    character,
+  } = artifact
+  const { artifact: ret } = cachedArtifact(
+    {
+      setKey,
+      mainStatKey,
+      substats,
+      slotKey,
+      level,
+      rarity: rarity as ArtifactRarity,
+      lock,
+      location: character ? charKeyToLocCharKey(character.key) : '',
+    },
+    artifact.id
+  )
+  return ret
 }

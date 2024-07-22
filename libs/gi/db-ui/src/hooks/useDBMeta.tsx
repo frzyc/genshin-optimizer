@@ -3,5 +3,5 @@ import { useDatabase } from './useDatabase'
 
 export function useDBMeta() {
   const database = useDatabase()
-  return useDataEntryBase(database?.dbMeta)
+  return useDataEntryBase(database?.dbMeta) ?? { gender: 'F' }
 }
