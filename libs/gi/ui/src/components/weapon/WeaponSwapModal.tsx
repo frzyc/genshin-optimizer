@@ -55,7 +55,7 @@ import {
   weaponSortConfigs,
   weaponSortMap,
 } from '../../util'
-import { CompareBuildButton } from '../CompareBuildButton'
+import { CompareBuildWrapper } from '../build/CompareBuildWrapper'
 import { WeaponCard } from './WeaponCard'
 import { WeaponEditor } from './WeaponEditor'
 import { WeaponSelectionModal } from './WeaponSelectionModal'
@@ -81,13 +81,6 @@ export function WeaponSwapModal({
   ])
   const database = useDatabase()
   const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
-  const clickHandler = useCallback(
-    (id: string) => {
-      onChangeId(id)
-      onClose()
-    },
-    [onChangeId, onClose]
-  )
 
   const [editWeaponId, setEditWeaponId] = useState('')
   const newWeapon = useCallback(
@@ -150,7 +143,15 @@ export function WeaponSwapModal({
     t: t,
     namespace: 'page_weapon',
   }
-
+  const [swapWeaponId, setSwapWeaponId] = useState('')
+  const clickHandler = useCallback(() => {
+    if (!swapWeaponId) {
+      return
+    }
+    onChangeId(swapWeaponId)
+    setSwapWeaponId('')
+    onClose()
+  }, [onChangeId, onClose, swapWeaponId])
   return (
     <>
       <Suspense fallback={false}>
@@ -243,14 +244,15 @@ export function WeaponSwapModal({
             >
               {t('page_weapon:addWeapon')}
             </Button>
+            <CompareBuildWrapper
+              weaponId={swapWeaponId}
+              onHide={() => setSwapWeaponId('')}
+              onEquip={clickHandler}
+            />
             <Grid container spacing={1}>
               {weaponIdsToShow.map((weaponId) => (
                 <Grid item key={weaponId} xs={6} sm={6} md={4} lg={3}>
-                  <WeaponCard
-                    weaponId={weaponId}
-                    onClick={clickHandler}
-                    extraButtons={<CompareBuildButton weaponId={weaponId} />}
-                  />
+                  <WeaponCard weaponId={weaponId} onClick={clickHandler} />
                 </Grid>
               ))}
             </Grid>

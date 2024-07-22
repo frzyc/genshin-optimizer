@@ -31,9 +31,16 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import { Suspense, useCallback, useEffect, useMemo, useReducer } from 'react'
+import {
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useReducer,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
-import { CompareBuildButton } from '../CompareBuildButton'
+import { CompareBuildWrapper } from '../build/CompareBuildWrapper'
 import { ArtifactCard } from './ArtifactCard'
 import { ArtifactFilterDisplay } from './ArtifactFilterDisplay'
 import { ArtifactEditor } from './editor'
@@ -109,7 +116,15 @@ export function ArtifactSwapModal({
     t: t,
     namespace: 'artifact',
   }
-
+  const [swapArtId, setSwapArtId] = useState('')
+  const clickHandler = useCallback(() => {
+    if (!swapArtId) {
+      return
+    }
+    onChangeId(swapArtId)
+    setSwapArtId('')
+    onClose()
+  }, [onChangeId, onClose, swapArtId])
   return (
     <ModalWrapper
       open={show}
@@ -181,16 +196,17 @@ export function ArtifactSwapModal({
                 <Skeleton variant="rectangular" width="100%" height={300} />
               }
             >
+              <CompareBuildWrapper
+                artId={swapArtId}
+                onHide={() => setSwapArtId('')}
+                onEquip={clickHandler}
+              />
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
                 {artifactIdsToShow.map((id) => (
                   <Grid item key={id} xs={1}>
                     <ArtifactCard
                       artifactId={id}
-                      extraButtons={<CompareBuildButton artId={id} />}
-                      onClick={() => {
-                        onChangeId(id)
-                        onClose()
-                      }}
+                      onClick={() => setSwapArtId(id)}
                     />
                   </Grid>
                 ))}
