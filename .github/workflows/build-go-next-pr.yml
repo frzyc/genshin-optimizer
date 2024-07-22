@@ -7,15 +7,8 @@ permissions:
 on:
   pull_request:
     paths-ignore:
-      - 'apps/gi-backend/**'
-      - 'apps/gi-backend-e2e/**'
-      - 'apps/gi-frontend-next-e2e/**'
-      - 'apps/gi-frontend-next-e2e/**'
       - 'apps/sr-frontend/**'
       - 'apps/sr-frontend-e2e/**'
-      - 'libs/gi/frontend-gql/**'
-      - 'libs/gi/prisma-schema/**'
-      - 'libs/gi/ui-next/**'
       - 'libs/sr/**'
     types: [opened, reopened, synchronize, labeled]
 

@@ -64,9 +64,6 @@
       ],
       "@genshin-optimizer/gi/formula": ["libs/gi/formula/src/index.ts"],
       "@genshin-optimizer/gi/formula-ui": ["libs/gi/formula-ui/src/index.ts"],
-      "@genshin-optimizer/gi/frontend-gql": [
-        "libs/gi/frontend-gql/src/index.ts"
-      ],
       "@genshin-optimizer/gi/good": ["libs/gi/good/src/index.ts"],
       "@genshin-optimizer/gi/i18n": ["libs/gi/i18n/src/index.ts"],
       "@genshin-optimizer/gi/i18n-node": ["libs/gi/i18n-node/src/index.ts"],
@@ -114,8 +111,6 @@
       "@genshin-optimizer/gi/svgicons": ["libs/gi/svgicons/src/index.ts"],
       "@genshin-optimizer/gi/theme": ["libs/gi/theme/src/index.ts"],
       "@genshin-optimizer/gi/ui": ["libs/gi/ui/src/index.ts"],
-      "@genshin-optimizer/gi/ui-next": ["libs/gi/ui-next/src/index.ts"],
-      "@genshin-optimizer/gi/ui-next/server": ["libs/gi/ui-next/src/server.ts"],
       "@genshin-optimizer/gi/uidata": ["libs/gi/uidata/src/index.ts"],
       "@genshin-optimizer/gi/util": ["libs/gi/util/src/index.ts"],
       "@genshin-optimizer/gi/wr": ["libs/gi/wr/src/index.ts"],
