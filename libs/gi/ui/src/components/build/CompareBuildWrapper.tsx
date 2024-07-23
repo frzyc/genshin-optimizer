@@ -1,4 +1,5 @@
 import { objMap } from '@genshin-optimizer/common/util'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   TeamCharacterContext,
@@ -8,7 +9,7 @@ import { useContext } from 'react'
 import { EquipBuildModal } from '.'
 
 type WrapperProps = {
-  artId?: string
+  artId?: string | ArtifactSlotKey
   weaponId?: string
   onHide: () => void
   onEquip: () => void
@@ -28,8 +29,8 @@ function TeamWrapper({ artId, weaponId, onHide, onEquip }: WrapperProps) {
 
   const newArt = database.arts.get(artId ?? '')
   const currentArtifactIds = database.teams.getLoadoutArtifactIds(loadoutDatum)
-  const newArtifactIds = objMap(currentArtifactIds, (art, slot) =>
-    slot === newArt?.slotKey ? artId : art
+  const newArtifactIds = objMap(currentArtifactIds, (id, slot) =>
+    slot === artId ? undefined : newArt?.slotKey === slot ? artId : id
   )
   const currentWeaponId = database.teams.getLoadoutWeaponId(loadoutDatum)
   const newWeaponId = weaponId ?? currentWeaponId
