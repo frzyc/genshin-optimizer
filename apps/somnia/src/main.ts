@@ -36,8 +36,8 @@ client.on(Events.MessageReactionAdd, (...args) =>
 
 //collect commands
 import * as archive from './commands/archive'
-import * as databank from './commands/databank'
 import * as button from './commands/button'
+import * as databank from './commands/databank'
 export const Commands: Collection<string, any> = new Collection()
 Commands.set(archive.slashcommand.name, archive)
 Commands.set(databank.slashcommand.name, databank)

@@ -22,24 +22,6 @@ import { artifactArchive } from './archive/artifact'
 import { charArchive } from './archive/char'
 import { weaponArchive } from './archive/weapon'
 
-const languageCodeList = [
-  'chs',
-  'cht',
-  'de',
-  'en',
-  'es',
-  'fr',
-  'id',
-  'it',
-  'ja',
-  'ko',
-  'pt',
-  'ru',
-  'th',
-  'tr',
-  'vi',
-]
-
 export const slashcommand = new SlashCommandBuilder()
   .setName('archive')
   .setDescription('Genshin Archive')

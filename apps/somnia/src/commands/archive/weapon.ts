@@ -50,13 +50,18 @@ export async function weaponArchive(id: WeaponKey, lang: string, args: string) {
   const stat = getWeaponStat(id)
   //mainstat
   const ascension = stat.ascensionBonus[stat.mainStat.type] ?? [0]
-  const mainstat = Math.round(
-    stat.mainStat.base * allStats.weapon.expCurve[stat.mainStat.curve][90] + ascension[ascension.length - 1]
-  ).toFixed(0) + ' ' + i18nInstance.t(`statKey_gen:${stat.mainStat.type}`)
+  const mainstat =
+    Math.round(
+      stat.mainStat.base * allStats.weapon.expCurve[stat.mainStat.curve][90] +
+        ascension[ascension.length - 1]
+    ).toFixed(0) +
+    ' ' +
+    i18nInstance.t(`statKey_gen:${stat.mainStat.type}`)
   text += `## ${mainstat}`
   //substat
   if (stat.subStat) {
-    let sub = stat.subStat.base * allStats.weapon.expCurve[stat.subStat.curve][90]
+    let sub =
+      stat.subStat.base * allStats.weapon.expCurve[stat.subStat.curve][90]
     const percent = stat.subStat.type.endsWith('_')
     if (percent) sub *= 100
     let substat = (Math.round(sub * 10) / 10).toFixed(1)
