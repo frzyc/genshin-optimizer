@@ -279,44 +279,52 @@ export class TeamDataManager extends DataManager<
   /**
    *
    * @param teamCharId
-   * @returns a ICached weapon, because in WR a lack of a weapon can have strange effects
    */
-  getLoadoutWeapon({
+  getLoadoutWeaponId({
     buildType,
     buildId,
-    buildTcId,
     teamCharId,
-  }: LoadoutDatum): ICachedWeapon {
+  }: LoadoutDatum): string | undefined {
     const teamChar = this.database.teamChars.get(teamCharId)
-    if (!teamChar) return defaultInitialWeapon()
+    if (!teamChar) return undefined
     const { key: characterKey } = teamChar
     switch (buildType) {
       case 'equipped': {
         const char = this.database.chars.get(characterKey)
-        if (!char) return defaultInitialWeapon()
-        return (
-          this.database.weapons.get(char.equippedWeapon) ??
-          defaultInitialWeapon()
-        )
+        if (!char) return undefined
+        return char.equippedWeapon
       }
       case 'real': {
         const build = this.database.builds.get(buildId)
-        if (!build) return defaultInitialWeapon()
-        return (
-          this.database.weapons.get(build.weaponId) ?? defaultInitialWeapon()
-        )
-      }
-      case 'tc': {
-        const buildTc = this.database.buildTcs.get(buildTcId)
-        if (!buildTc) return defaultInitialWeapon()
-        return {
-          ...buildTc.weapon,
-          location: charKeyToLocCharKey(teamChar.key),
-          lock: false,
-          id: 'invalid',
-        }
+        if (!build) return undefined
+        return build.weaponId
       }
     }
+    return undefined
+  }
+  /**
+   *
+   * @param teamCharId
+   * @returns a ICached weapon, because in WR a lack of a weapon can have strange effects
+   */
+  getLoadoutWeapon(loadoutDatum: LoadoutDatum): ICachedWeapon {
+    const { buildType, buildTcId, teamCharId } = loadoutDatum
+    const teamChar = this.database.teamChars.get(teamCharId)
+    if (!teamChar) return defaultInitialWeapon()
+    if (buildType === 'tc') {
+      const buildTc = this.database.buildTcs.get(buildTcId)
+      if (!buildTc) return defaultInitialWeapon()
+      return {
+        ...buildTc.weapon,
+        location: charKeyToLocCharKey(teamChar.key),
+        lock: false,
+        id: 'invalid',
+      }
+    }
+    return (
+      this.database.weapons.get(this.getLoadoutWeaponId(loadoutDatum)) ??
+      defaultInitialWeapon()
+    )
   }
   getLoadoutDatum(teamId: string, teamCharId: string) {
     const team = this.get(teamId)
@@ -345,11 +353,11 @@ export class TeamDataManager extends DataManager<
   /**
    * Note: this doesnt return any artifacts(all undefined) when the current teamchar is using a TC Build.
    */
-  getLoadoutArtifacts({
+  getLoadoutArtifactIds({
     teamCharId,
     buildType,
     buildId,
-  }: LoadoutDatum): Record<ArtifactSlotKey, ICachedArtifact | undefined> {
+  }: LoadoutDatum): Record<ArtifactSlotKey, string | undefined> {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return objKeyMap(allArtifactSlotKeys, () => undefined)
     const { key: characterKey } = teamChar
@@ -357,17 +365,24 @@ export class TeamDataManager extends DataManager<
       case 'equipped': {
         const char = this.database.chars.get(characterKey)
         if (!char) return objKeyMap(allArtifactSlotKeys, () => undefined)
-        return objMap(char.equippedArtifacts, (id) =>
-          this.database.arts.get(id)
-        )
+        return char.equippedArtifacts
       }
       case 'real': {
         const build = this.database.builds.get(buildId)
         if (!build) return objKeyMap(allArtifactSlotKeys, () => undefined)
-        return objMap(build.artifactIds, (id) => this.database.arts.get(id))
+        return build.artifactIds
       }
     }
     return objKeyMap(allArtifactSlotKeys, () => undefined)
+  }
+  /**
+   * Note: this doesnt return any artifacts(all undefined) when the current teamchar is using a TC Build.
+   */
+  getLoadoutArtifacts(
+    loadouDatum: LoadoutDatum
+  ): Record<ArtifactSlotKey, ICachedArtifact | undefined> {
+    const artIds = this.getLoadoutArtifactIds(loadouDatum)
+    return objMap(artIds, (id) => this.database.arts.get(id))
   }
   getLoadoutArtifactData(loadoutDatum: LoadoutDatum): ArtifactData {
     const { buildType, buildTcId } = loadoutDatum

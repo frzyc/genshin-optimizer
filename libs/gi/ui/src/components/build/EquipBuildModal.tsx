@@ -1,15 +1,17 @@
 'use client'
-import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import { notEmpty } from '@genshin-optimizer/common/util'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   TeamCharacterContext,
   useDatabase,
+  useWeapon,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown'
 import {
   Box,
   Button,
@@ -23,223 +25,314 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import { useContext, useState } from 'react'
+import type { ReactNode } from 'react'
+import { useContext, useMemo, useState } from 'react'
+import type { dataContextObj } from '../../context'
+import { DataContext } from '../../context'
+import { useCharData, useTeamData } from '../../hooks'
+import type { TeamData } from '../../type'
 import { ArtifactCardNano } from '../artifact'
+import { StatDisplayComponent } from '../character'
 import { WeaponCardNano } from '../weapon'
-
-type EquipChangeProps = {
+type Props = {
   currentName: string
-  currentWeapon: string | undefined
-  currentArtifacts: Record<ArtifactSlotKey, string | undefined>
-  newWeapon: string | undefined
-  newArtifacts: Record<ArtifactSlotKey, string | undefined>
-}
-
-export function EquipBuildModal({
-  equipChangeProps,
-  showPrompt,
-  OnHidePrompt,
-  onEquip,
-}: {
-  equipChangeProps: EquipChangeProps
-  showPrompt: boolean
+  currentWeaponId: string | undefined
+  currentArtifactIds: Record<ArtifactSlotKey, string | undefined>
+  newWeaponId: string | undefined
+  newArtifactIds: Record<ArtifactSlotKey, string | undefined>
   onEquip: () => void
-  OnHidePrompt: () => void
-}) {
+  onHide: () => void
+}
+export function EquipBuildModal(props: Props & { show: boolean }) {
+  const { show, onHide } = props
+  /* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it https://github.com/frzyc/genshin-optimizer/issues/1498*/
+  return (
+    <ModalWrapper open={show} onClose={onHide}>
+      <Content {...props} />
+    </ModalWrapper>
+  )
+}
+/* TODO: Translation */
+function Content(props: Props) {
+  const {
+    currentName,
+    currentWeaponId,
+    currentArtifactIds,
+    newWeaponId,
+    newArtifactIds,
+    onHide,
+    onEquip,
+  } = props
   const [name, setName] = useState('')
   const [copyCurrent, setCopyCurrent] = useState(false)
-  // const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
 
   const database = useDatabase()
   const { teamCharId } = useContext(TeamCharacterContext)
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
+
   const weaponTypeKey = getCharStat(characterKey).weaponType
 
   const toEquip = () => {
     if (copyCurrent) {
       database.teamChars.newBuild(teamCharId, {
-        name:
-          name !== '' ? name : `Duplicate of ${equipChangeProps.currentName}`,
-        artifactIds: equipChangeProps.currentArtifacts,
-        weaponId: equipChangeProps.currentWeapon,
+        name: name !== '' ? name : `Duplicate of ${currentName}`,
+        artifactIds: currentArtifactIds,
+        weaponId: currentWeaponId,
       })
     }
 
     onEquip()
     setName('')
     setCopyCurrent(false)
-    OnHidePrompt()
+    onHide()
   }
-
-  /* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */
-  /* TODO: Translation */
   return (
-    <ModalWrapper open={showPrompt} onClose={OnHidePrompt}>
-      <CardThemed>
-        <CardHeader
-          title={
-            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-              <CheckroomIcon />
-              <span>
-                Confirm Equipment Changes for{' '}
-                <strong>{equipChangeProps.currentName}</strong>
-              </span>
-            </Box>
-          }
-          action={
-            <IconButton onClick={OnHidePrompt}>
-              <CloseIcon />
-            </IconButton>
-          }
-        />
-        <Divider />
-        <CardContent
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
-          <Box>
-            {/* Active Build */}
-            <CardThemed bgt="light">
-              <Box sx={{ pl: 2, pt: 2 }}>
-                <SqBadge color="success">Current Equipment</SqBadge>
-              </Box>
-              <CardContent
-                sx={{
-                  pt: 1,
-                  display: 'flex',
-                  flexDirection: 'row',
-                  gap: 1,
-                  alignItems: 'stretch',
-                }}
-              >
-                <Grid
-                  container
-                  spacing={1}
-                  columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
-                >
-                  <Grid item xs={1}>
-                    <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
-                      <WeaponCardNano
-                        weaponId={equipChangeProps.currentWeapon}
-                        weaponTypeKey={weaponTypeKey}
-                      />
-                    </CardThemed>
-                  </Grid>
-                  {Object.entries(equipChangeProps.currentArtifacts).map(
-                    ([slotKey, id]) => (
-                      <Grid item key={id || slotKey} xs={1}>
-                        <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
-                          <ArtifactCardNano artifactId={id} slotKey={slotKey} />
-                        </CardThemed>
-                      </Grid>
-                    )
-                  )}
-                </Grid>
-              </CardContent>
-            </CardThemed>
-            <Box
-              flexGrow={1}
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              padding={2}
-            >
-              <KeyboardArrowDownIcon sx={{ fontSize: 40 }} />
-            </Box>
-            {/* New Build */}
-            <CardThemed bgt="light">
-              <Box sx={{ pl: 2, pt: 2 }}>
-                <SqBadge color="success">New Equipment</SqBadge>
-              </Box>
-              <CardContent
-                sx={{
-                  pt: 1,
-                  display: 'flex',
-                  flexDirection: 'row',
-                  gap: 1,
-                  alignItems: 'stretch',
-                }}
-              >
-                <Grid
-                  container
-                  spacing={1}
-                  columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
-                >
-                  <Grid item xs={1}>
-                    <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
-                      <WeaponCardNano
-                        weaponId={equipChangeProps.newWeapon}
-                        weaponTypeKey={weaponTypeKey}
-                      />
-                    </CardThemed>
-                  </Grid>
-                  {Object.entries(equipChangeProps.newArtifacts).map(
-                    ([slotKey, id]) => (
-                      <Grid item key={id || slotKey} xs={1}>
-                        <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
-                          <ArtifactCardNano artifactId={id} slotKey={slotKey} />
-                        </CardThemed>
-                      </Grid>
-                    )
-                  )}
-                </Grid>
-              </CardContent>
-            </CardThemed>
+    <CardThemed>
+      <CardHeader
+        title={
+          <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            <CheckroomIcon />
+            <span>
+              Confirm Equipment Changes for <strong>{currentName}</strong>
+            </span>
           </Box>
-        </CardContent>
-        <CardContent sx={{ pt: '0', display: 'flex', flexDirection: 'column' }}>
-          <Typography sx={{ fontSize: 20 }}>
-            Do you want to make the changes shown above?
-          </Typography>
-          {teamCharId && (
-            <FormControlLabel
-              label={
-                <>
-                  Copy the current equipment in{' '}
-                  <strong>{equipChangeProps.currentName}</strong> to a new
-                  build. Otherwise, they will be overwritten.
-                </>
-              }
-              control={
-                <Checkbox
-                  checked={copyCurrent}
-                  onChange={(event) => setCopyCurrent(event.target.checked)}
-                  color={copyCurrent ? 'success' : 'secondary'}
-                />
-              }
-            />
-          )}
-          {copyCurrent && (
-            <TextField
-              label="Build Name"
-              placeholder={`Duplicate of ${equipChangeProps.currentName}`}
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              size="small"
-              sx={{ width: '75%', marginX: 4 }}
-            />
-          )}
-          <Box
+        }
+        action={
+          <IconButton onClick={onHide}>
+            <CloseIcon />
+          </IconButton>
+        }
+      />
+      <Divider />
+      <CardContent
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 1,
+        }}
+      >
+        {/* Active Build */}
+        <CardThemed bgt="light">
+          <CardContent
             sx={{
               display: 'flex',
-              justifyContent: 'flex-end',
+              flexDirection: 'row',
               gap: 1,
-              marginTop: 4,
+              alignItems: 'stretch',
             }}
           >
-            <Button color="error" onClick={OnHidePrompt}>
-              Cancel
-            </Button>
-            <Button color="success" onClick={toEquip}>
-              Equip
-            </Button>
-          </Box>
-        </CardContent>
-      </CardThemed>
-    </ModalWrapper>
+            <Grid
+              container
+              spacing={1}
+              columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
+            >
+              <Grid item xs={1}>
+                <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+                  <WeaponCardNano
+                    weaponId={currentWeaponId}
+                    weaponTypeKey={weaponTypeKey}
+                    showLocation
+                  />
+                </CardThemed>
+              </Grid>
+              {Object.entries(currentArtifactIds).map(([slotKey, id]) => (
+                <Grid item key={id || slotKey} xs={1}>
+                  <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+                    <ArtifactCardNano
+                      artifactId={id}
+                      slotKey={slotKey}
+                      showLocation
+                    />
+                  </CardThemed>
+                </Grid>
+              ))}
+            </Grid>
+          </CardContent>
+        </CardThemed>
+        <Box
+          flexGrow={1}
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          sx={{
+            height: 0,
+            my: -0.5,
+          }}
+        >
+          <KeyboardDoubleArrowDownIcon
+            sx={{ fontSize: `5em`, zIndex: 1, opacity: 0.85 }}
+          />
+        </Box>
+        {/* New Build */}
+        <CardThemed bgt="light">
+          <CardContent
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+              alignItems: 'stretch',
+            }}
+          >
+            <Grid
+              container
+              spacing={1}
+              columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
+            >
+              <Grid item xs={1}>
+                <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+                  <WeaponCardNano
+                    weaponId={newWeaponId}
+                    weaponTypeKey={weaponTypeKey}
+                    showLocation
+                  />
+                </CardThemed>
+              </Grid>
+              {Object.entries(newArtifactIds).map(([slotKey, id]) => (
+                <Grid item key={id || slotKey} xs={1}>
+                  <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+                    <ArtifactCardNano
+                      artifactId={id}
+                      slotKey={slotKey}
+                      showLocation
+                    />
+                  </CardThemed>
+                </Grid>
+              ))}
+            </Grid>
+            <DataWrapper {...props}>
+              <StatDisplayComponent columns={{ xs: 1, sm: 2, md: 3 }} />
+            </DataWrapper>
+          </CardContent>
+        </CardThemed>
+        <Typography sx={{ fontSize: 20 }}>
+          Do you want to make the changes shown above?
+        </Typography>
+        {teamCharId && (
+          <FormControlLabel
+            label={
+              <>
+                Copy the current equipment in <strong>{currentName}</strong> to
+                a new build. Otherwise, they will be overwritten.
+              </>
+            }
+            control={
+              <Checkbox
+                checked={copyCurrent}
+                onChange={(event) => setCopyCurrent(event.target.checked)}
+                color={copyCurrent ? 'success' : 'secondary'}
+              />
+            }
+          />
+        )}
+        {copyCurrent && (
+          <TextField
+            label="Build Name"
+            placeholder={`Duplicate of ${currentName}`}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            size="small"
+            sx={{ width: '75%', marginX: 4 }}
+          />
+        )}
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            gap: 1,
+            marginTop: 4,
+          }}
+        >
+          <Button color="error" onClick={onHide}>
+            Cancel
+          </Button>
+          <Button color="success" onClick={toEquip}>
+            Equip
+          </Button>
+        </Box>
+      </CardContent>
+    </CardThemed>
   )
+}
+function DataWrapper(props: Props & { children: ReactNode }) {
+  const { children, ...rest } = props
+  const { teamId } = useContext(TeamCharacterContext)
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
+  if (teamId) return <TeamDataWrapper {...props}>{children}</TeamDataWrapper>
+  if (characterKey)
+    return <CharacterDataWrapper {...rest}>{children}</CharacterDataWrapper>
+  return null
+}
+function useArtifacts(
+  artifacts: Record<ArtifactSlotKey, string | undefined> | undefined
+) {
+  const database = useDatabase()
+  return useMemo(
+    () =>
+      artifacts
+        ? Object.values(artifacts)
+            .filter(notEmpty)
+            .map((id) => database.arts.get(id))
+            .filter(notEmpty)
+        : undefined,
+    [database, artifacts]
+  )
+}
+function TeamDataWrapper(props: Props & { children: ReactNode }) {
+  const { children, ...rest } = props
+  const {
+    teamChar: { key: characterKey },
+  } = useContext(TeamCharacterContext)
+  const curArtifacts = useArtifacts(rest.currentArtifactIds)
+  const newArtifacts = useArtifacts(rest.newArtifactIds)
+  const curWeapon = useWeapon(rest.currentWeaponId)
+  const newWeapon = useWeapon(rest.newWeaponId)
+  const curData = useTeamData(0, curArtifacts, curWeapon)
+  const newData = useTeamData(0, newArtifacts, newWeapon)
+
+  const value = useMemo(() => {
+    const data = newData?.[characterKey]?.target
+    return (
+      data &&
+      ({
+        data: data,
+        compareData: curData?.[characterKey]?.target,
+        teamData: newData,
+      } as dataContextObj)
+    )
+  }, [newData, characterKey, curData])
+  if (!value) return
+  return <DataContext.Provider value={value}>{children}</DataContext.Provider>
+}
+
+function CharacterDataWrapper(
+  props: Props & { children: ReactNode; currentData?: TeamData }
+) {
+  const { children, ...rest } = props
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
+  const curArtifacts = useArtifacts(rest.currentArtifactIds)
+  const newArtifacts = useArtifacts(rest.newArtifactIds)
+  const curWeapon = useWeapon(rest.currentWeaponId)
+  const newWeapon = useWeapon(rest.newWeaponId)
+  const curData = useCharData(characterKey, 0, curArtifacts, curWeapon)
+  const newData = useCharData(characterKey, 0, newArtifacts, newWeapon)
+
+  const value = useMemo(() => {
+    const data = newData?.[characterKey]?.target
+    return (
+      data &&
+      ({
+        data: data,
+        compareData: curData?.[characterKey]?.target,
+        teamData: newData,
+      } as dataContextObj)
+    )
+  }, [newData, characterKey, curData])
+  if (!value) return
+  return <DataContext.Provider value={value}>{children}</DataContext.Provider>
 }

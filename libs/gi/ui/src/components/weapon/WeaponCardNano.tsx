@@ -145,7 +145,6 @@ export function WeaponCardNanoObj({
                       characterKey={database.chars.LocationToCharacterKey(
                         location
                       )}
-                      sideMargin
                     />
                   ) : (
                     <BusinessCenterIcon />

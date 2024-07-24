@@ -276,7 +276,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   // when comparing from the character editor.
   const compareFromCharEditor = buildType === undefined
 
-  const activeWeapon = useMemo(() => {
+  const currentWeaponId = useMemo(() => {
     if (compareFromCharEditor) return equippedWeapon
     if (dbDirty && buildType === 'real')
       return database.builds.get(buildId)!.weaponId
@@ -293,7 +293,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
     compareFromCharEditor,
   ])
 
-  const activeArtifacts = useMemo(() => {
+  const currentArtifactIds = useMemo(() => {
     if (compareFromCharEditor) return equippedArtifacts
     if (dbDirty && buildType === 'real')
       return database.builds.get(buildId)!.artifactIds
@@ -311,18 +311,6 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   ])
 
   const [showEquipChange, onShowEquipChange, onHideEquipChange] = useBoolState()
-
-  const equipChangeProps = {
-    currentName:
-      buildType === 'real' ? database.builds.get(buildId)!.name : 'Equipped',
-    currentWeapon: activeWeapon,
-    currentArtifacts: activeArtifacts,
-    newWeapon: data.get(input.weapon.id).value!,
-    newArtifacts: objKeyMap(
-      allArtifactSlotKeys,
-      (s) => data.get(input.art[s].id).value!
-    ),
-  }
 
   return (
     <CardThemed
@@ -407,10 +395,21 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
             />
             {extraButtonsLeft}
             <EquipBuildModal
-              equipChangeProps={equipChangeProps}
-              showPrompt={showEquipChange}
+              currentName={
+                buildType === 'real'
+                  ? database.builds.get(buildId)!.name
+                  : 'Equipped'
+              }
+              currentWeaponId={currentWeaponId}
+              currentArtifactIds={currentArtifactIds}
+              newWeaponId={data.get(input.weapon.id).value!}
+              newArtifactIds={objKeyMap(
+                allArtifactSlotKeys,
+                (s) => data.get(input.art[s].id).value!
+              )}
+              show={showEquipChange}
               onEquip={equipBuild}
-              OnHidePrompt={onHideEquipChange}
+              onHide={onHideEquipChange}
             />
             <Button
               size="small"
