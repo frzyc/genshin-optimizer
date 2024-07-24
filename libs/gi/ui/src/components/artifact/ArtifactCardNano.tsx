@@ -133,7 +133,6 @@ export function ArtifactCardNano({
                       characterKey={database.chars.LocationToCharacterKey(
                         location
                       )}
-                      sideMargin
                     />
                   ) : (
                     <BusinessCenterIcon />
