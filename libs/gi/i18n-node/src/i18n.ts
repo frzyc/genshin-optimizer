@@ -28,7 +28,7 @@ i18nInstance.init({
   // fallbackLng: 'dev', // Switch to this to force the fallback value on missing strings.
 
   // List all translation namespaces.
-  ns: ['charNames_gen', 'artifactNames_gen', 'weaponNames_gen'],
+  ns: ['charNames_gen', 'artifactNames_gen', 'weaponNames_gen', 'statKey_gen'],
   // Specify the default namespace.
   defaultNS: 'ui',
 

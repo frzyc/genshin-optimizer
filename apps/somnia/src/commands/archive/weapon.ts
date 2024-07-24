@@ -2,7 +2,7 @@ import { range } from '@genshin-optimizer/common/util'
 import { AssetData } from '@genshin-optimizer/gi/assets-data'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
-import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+import { allStats, getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
   ActionRowBuilder,
   EmbedBuilder,
@@ -45,11 +45,27 @@ export async function weaponArchive(id: WeaponKey, lang: string, args: string) {
   const namespace = `weapon_${id}_gen`
   await i18nInstance.loadNamespaces(namespace)
   const msg: any = {}
-  let name = translate(namespace, 'name', lang)
+  let name: string = translate(namespace, 'name', lang)
   let text = ''
-  //weapon rarity color
-  const rarity = getWeaponStat(id).rarity
+  const stat = getWeaponStat(id)
+  //mainstat
+  const ascension = stat.ascensionBonus[stat.mainStat.type] ?? [0]
+  const mainstat = Math.round(
+    stat.mainStat.base * allStats.weapon.expCurve[stat.mainStat.curve][90] + ascension[ascension.length - 1]
+  ).toFixed(0) + ' ' + i18nInstance.t(`statKey_gen:${stat.mainStat.type}`)
+  text += `## ${mainstat}`
+  //substat
+  if (stat.subStat) {
+    let sub = stat.subStat.base * allStats.weapon.expCurve[stat.subStat.curve][90]
+    const percent = stat.subStat.type.endsWith('_')
+    if (percent) sub *= 100
+    let substat = (Math.round(sub * 10) / 10).toFixed(1)
+    if (percent) substat += '%'
+    substat += ' ' + i18nInstance.t(`statKey_gen:${stat.subStat.type}`)
+    text += `\n**${substat}**`
+  }
   //default r1 5stars
+  const rarity = stat.rarity
   let refine = '0'
   //no refinements or dropdown for 1/2 star weapons
   if (rarity > 2) {
