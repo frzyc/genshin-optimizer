@@ -62,9 +62,7 @@ The dependencies to the apps are in [/libs](/libs/)
 
 [`sr-frontend`](/apps/sr-frontend/) - WIP Star Rail optimizer - static website built using React with MUI, using the Pando calculation engine.
 
-[`gi-frontend-next`](/apps/gi-frontend-next/) - WIP GO frontend - website built using NextJS, MUI, next-auth, using the Pando calculation engine.
-
-[`gi-backend`](/apps/gi-backend/) - WIP GO backend - supporting `gi-frontend-next`, using nestJS, prisma, GraphQL, and mongoDB.
+[`gi-frontend`](/apps/gi-frontend/) - WIP GO frontend - website built using NextJS, MUI, supabase, using the Pando calculation engine.
 
 `somnia-bot` - WIP discord bot - built using discord.js, using the Pando Calculation engine.
 

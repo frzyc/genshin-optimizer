@@ -1,4 +1,4 @@
-import type { LocationKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey, LocationKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { TypographyProps } from '@mui/material'
@@ -13,10 +13,12 @@ export function LocationName({
 }: { location: LocationKey } & TypographyProps) {
   const { t } = useTranslation('ui')
   const database = useDatabase()
-  const { gender } = useDBMeta() ?? { gender: 'F' }
+  const { gender } = useDBMeta()
 
   const characterKey =
-    location && database.chars.LocationToCharacterKey(location)
+    location &&
+    (database?.chars.LocationToCharacterKey(location) ??
+      (location as unknown as CharacterKey))
   return (
     <Typography component="span" {...props}>
       {characterKey ? (
