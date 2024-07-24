@@ -124,7 +124,8 @@ export const talentlist = {
 //discord has no colored text, so just bold everything instead
 export function clean(s: string) {
   //keep italic tags
-  s = s.replaceAll(/(<\/?i>)+/g, '*')
+  s = s.replaceAll(/(<i>)+/g, '-# *')
+  s = s.replaceAll(/(<\/i>)+/g, '*')
   //turn rest into bold
   s = s.replaceAll(/(<\/?\w+>)+/g, '**')
   //ignore <br/> tags
