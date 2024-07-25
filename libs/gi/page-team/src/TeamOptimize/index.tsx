@@ -258,7 +258,7 @@ function generateRandomTeamBuild(
   const usedArtifacts = new Set<string>()
   const build: TeamBuild = {}
   for (const char of characterKeys) {
-    const charArts = []
+    const charArts: ICachedArtifact[] = []
     for (const slot of allArtifactSlotKeys) {
       const artifact = getRandomArtifact(allArtifacts, usedArtifacts, slot)
       charArts.push(artifact)
