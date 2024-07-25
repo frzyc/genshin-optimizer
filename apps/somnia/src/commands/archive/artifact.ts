@@ -28,7 +28,8 @@ export async function artifactArchive(id: ArtifactSetKey, lang: string) {
       text: 'Artifact Archive',
     })
     .setDescription(clean(text))
-  const thumbnail = AssetData.artifacts[id].flower
+  const thumbnail =
+    AssetData.artifacts[id].flower ?? AssetData.artifacts[id].circlet
   if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail, 'reliquary'))
 
   return {

@@ -190,7 +190,7 @@ async function archiveMessage(
   else if (subcommand === 'artifact') {
     if (!archive[subcommand].includes(id as ArtifactSetKey))
       throw 'invalid artifact name'
-    return artifactArchive(id as ArtifactSetKey, lang)
+    return await artifactArchive(id as ArtifactSetKey, lang)
   } else throw 'Invalid selection'
 }
 
