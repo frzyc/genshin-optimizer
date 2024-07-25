@@ -31,9 +31,9 @@ function getEmbed(
   //elemental burst
   else if (arg === 'q') return burstEmbed(id, namespace, lang)
   //passives
-  else if (arg.match(/a\d?/)) return passivesEmbed(id, namespace, lang, arg)
+  else if (arg.match(/^a[14]?$/)) return passivesEmbed(id, namespace, lang, arg)
   //constellations
-  else if (arg.match(/c[123456]?/))
+  else if (arg.match(/^c[123456]?$/))
     return constellationsEmbed(id, namespace, lang, arg)
   else throw 'Invalid talent name.'
 }

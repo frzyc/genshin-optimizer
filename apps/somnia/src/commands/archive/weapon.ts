@@ -1,6 +1,10 @@
 import { range } from '@genshin-optimizer/common/util'
 import { AssetData } from '@genshin-optimizer/gi/assets-data'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import {
+  weaponMaxAscension,
+  weaponMaxLevel,
+  type WeaponKey,
+} from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import { allStats, getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
@@ -48,13 +52,15 @@ export async function weaponArchive(id: WeaponKey, lang: string, args: string) {
   let name: string = translate(namespace, 'name', lang)
   let text = ''
   const stat = getWeaponStat(id)
+  const rarity = stat.rarity
   //mainstat
   const ascension = stat.ascensionBonus[stat.mainStat.type] ?? [0]
   const mainstat =
     Math.round(
-      stat.mainStat.base * allStats.weapon.expCurve[stat.mainStat.curve][90] +
-        ascension[ascension.length - 1]
-    ).toFixed(0) +
+      stat.mainStat.base *
+        allStats.weapon.expCurve[stat.mainStat.curve][weaponMaxLevel[rarity]] +
+        ascension[weaponMaxAscension[rarity]]
+    ) +
     ' ' +
     i18nInstance.t(`statKey_gen:${stat.mainStat.type}`)
   text += `## ${mainstat}`
@@ -70,7 +76,6 @@ export async function weaponArchive(id: WeaponKey, lang: string, args: string) {
     text += `\n**${substat}**`
   }
   //default r1 5stars
-  const rarity = stat.rarity
   let refine = '0'
   //no refinements or dropdown for 1/2 star weapons
   if (rarity > 2) {
