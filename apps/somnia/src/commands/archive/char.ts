@@ -1,3 +1,4 @@
+import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
 import { AssetData, CommonAssetData } from '@genshin-optimizer/gi/assets-data'
 import type {
   CharacterKey,
@@ -15,6 +16,7 @@ import {
 import { elementColors } from '../../assets/assets'
 import { createAmbrUrl } from '../../lib/util'
 import { clean, talentlist, translate } from '../archive'
+import { baseStats, getFixed } from '../go/calculator'
 
 function getEmbed(
   id: CharacterKey,
@@ -66,13 +68,26 @@ function baseEmbed(id: CharacterKey, lang: string) {
 
 function profileEmbed(id: CharacterKey, namespace: string, lang: string) {
   const element = getCharEle(id)
-  const text = i18nInstance.t(
-    [
-      `${namespace}:description`,
-      'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.',
-    ],
-    { lng: lang }
-  )
+  let text = ''
+  //base stats
+  const stats = baseStats(id)
+  Object.entries(stats).forEach(([key, val]) => {
+    const name = i18nInstance.t(`statKey_gen:${key}`)
+    const value = valueString(val, getUnitStr(key), getFixed(key))
+    text += `**${name}:** ${value}\n`
+  })
+  //description
+  text +=
+    '\n-# *' +
+    i18nInstance.t(
+      [
+        `${namespace}:description`,
+        'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.',
+      ],
+      { lng: lang }
+    ) +
+    '*'
+  //make embed
   const embed = baseEmbed(id, lang)
   const title = translate(namespace, 'title', lang)
   if (title != 'title') embed.setTitle(title)

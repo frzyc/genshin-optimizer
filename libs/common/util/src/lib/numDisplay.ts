@@ -1,4 +1,4 @@
-export type Unit = '' | '%' | 's'
+export type Unit = '' | 'i' | '%' | 's'
 export function valueString(
   value: number,
   unit: Unit = '',
@@ -10,7 +10,7 @@ export function valueString(
     return 'NaN'
   }
   if (unit === '%') value *= 100
-  if (Number.isInteger(value)) fixed = 0
+  if (unit === 'i' || Number.isInteger(value)) fixed = 0
   else if (fixed === -1) {
     if (unit === '%') fixed = 1
     else

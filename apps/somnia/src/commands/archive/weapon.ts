@@ -1,4 +1,4 @@
-import { range } from '@genshin-optimizer/common/util'
+import { getUnitStr, range, valueString } from '@genshin-optimizer/common/util'
 import { AssetData } from '@genshin-optimizer/gi/assets-data'
 import {
   weaponMaxAscension,
@@ -16,6 +16,7 @@ import {
 import { rarityColors } from '../../assets/assets'
 import { createAmbrUrl } from '../../lib/util'
 import { clean, translate } from '../archive'
+import { getFixed } from '../go/calculator'
 
 const refinedisplay: Record<string, string> = {
   0: '1',
@@ -56,22 +57,25 @@ export async function weaponArchive(id: WeaponKey, lang: string, args: string) {
   //mainstat
   const ascension = stat.ascensionBonus[stat.mainStat.type] ?? [0]
   const mainstat =
-    Math.round(
+    valueString(
       stat.mainStat.base *
         allStats.weapon.expCurve[stat.mainStat.curve][weaponMaxLevel[rarity]] +
-        ascension[weaponMaxAscension[rarity]]
+        ascension[weaponMaxAscension[rarity]],
+      getUnitStr(stat.mainStat.type),
+      getFixed(stat.mainStat.type)
     ) +
     ' ' +
     i18nInstance.t(`statKey_gen:${stat.mainStat.type}`)
   text += `## ${mainstat}`
   //substat
   if (stat.subStat) {
-    let sub =
+    const sub =
       stat.subStat.base * allStats.weapon.expCurve[stat.subStat.curve][90]
-    const percent = stat.subStat.type.endsWith('_')
-    if (percent) sub *= 100
-    let substat = (Math.round(sub * 10) / 10).toFixed(1)
-    if (percent) substat += '%'
+    let substat = valueString(
+      sub,
+      getUnitStr(stat.subStat.type),
+      getFixed(stat.subStat.type)
+    )
     substat += ' ' + i18nInstance.t(`statKey_gen:${stat.subStat.type}`)
     text += `\n**${substat}**`
   }
