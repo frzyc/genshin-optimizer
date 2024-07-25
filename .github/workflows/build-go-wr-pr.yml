@@ -11,11 +11,14 @@ on:
       - 'apps/gi-backend-e2e/**'
       - 'apps/gi-frontend-next-e2e/**'
       - 'apps/gi-frontend-next-e2e/**'
+      - 'apps/somnia/**'
+      - 'apps/somnia-e2e/**'
       - 'apps/sr-frontend/**'
       - 'apps/sr-frontend-e2e/**'
       - 'libs/gi/formula/**'
       - 'libs/gi/formula-ui/**'
       - 'libs/gi/frontend-gql/**'
+      - 'libs/gi/i18n-node/**'
       - 'libs/gi/prisma-schema/**'
       - 'libs/gi/ui-next/**'
       - 'libs/pando/**'
@@ -28,4 +31,4 @@ jobs:
     with:
       frontend_name: 'frontend'
       deployment_name: ${{ github.event.number }}
-      show_dev_components: ${{ contains(github.event.pull_request.labels.*.name, 'showDevComponents') }}
+      show_dev_components: ${{ contains(github.event.pull_request.labels.*. name, 'showDevComponents') }}
