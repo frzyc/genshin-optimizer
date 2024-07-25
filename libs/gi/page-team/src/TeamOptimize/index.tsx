@@ -17,9 +17,6 @@ import { useCallback, useMemo, useState } from 'react'
 import { OptCharacterCard } from '../CharacterDisplay/Tabs/TabOptimize/Components/OptCharacterCard'
 
 export default function TeamOptimize({ teamId }: { teamId: string }) {
-  // First, neeed to display short info about the team
-  // Character icons, their weapons, artifacts, and several multi-targets
-  // Then, display the optimization options
   const database = useDatabase()
   const { gender } = useDBMeta()
 
@@ -28,31 +25,32 @@ export default function TeamOptimize({ teamId }: { teamId: string }) {
     [database, gender, teamId]
   )
 
-  const [teamBuilds, setTeamBuilds] = useState<TeamBuild[]>([])
+  const [teamBuilds, setTeamBuilds] = useState<{ build: TeamBuild, score?: number, hash: string, teamData?: TeamData }[]>([])
 
   const onOptimize = useCallback(() => {
     const optimizedBuilds = geneticOptimizeTeam(
       database,
       gender,
       teamId,
-      0.05,
-      20,
-      20
+      0.5,
+      10,
+      30,
+      teamData
     )
     optimizedBuilds.then((res) => {
-      setTeamBuilds(res.slice(0, 5).map((build) => build.individual))
+      setTeamBuilds(res.slice(0, 5))
     })
-  }, [database, gender, teamId])
+  }, [database, gender, teamData, teamId])
 
   const optBtn = <Button onClick={onOptimize}>Optimize</Button>
 
   const teamBuildsDisplay = useMemo(
     () =>
-      teamBuilds.map((build, ind) => (
-        <Box key={ind}>
+      teamBuilds.map((build) => (
+        <Box key={build.hash} sx={{ display: 'flex', flexDirection: 'column', p: 1 }}>
           <OptTeamCard
             teamId={teamId}
-            teamData={getFullTeamData(database, gender, teamId, build)}
+            teamData={build.teamData ?? getFullTeamData(database, gender, teamId, build.build)}
           />
         </Box>
       )),
@@ -154,65 +152,93 @@ function mutateTeamBuild(
   return mutated
 }
 
+function teamBuildHash(teamBuild: TeamBuild) {
+  return Object.values(teamBuild)
+    .map((char) => char.art?.map((art) => art.id).join(''))
+    .join('')
+}
+
 async function geneticOptimizeTeam(
   database: ReturnType<typeof useDatabase>,
   gender: ReturnType<typeof useDBMeta>['gender'],
   teamId: string,
   mutationRate: number,
   generations: number,
-  populationSize: number
+  populationSize: number,
+  teamData?: TeamData
 ) {
-  let population: TeamBuild[] = []
-  const teamData = getFullTeamData(database, gender, teamId)
+  let population: { build: TeamBuild; score?: number, hash: string, teamData?: TeamData }[] = []
+  if (!teamData) teamData = getFullTeamData(database, gender, teamId)
   for (let i = 0; i < populationSize; i++) {
-    population.push(generateRandomTeamBuild(database, Object.keys(teamData)))
+    const build = generateRandomTeamBuild(database, Object.keys(teamData))
+    const hash = teamBuildHash(build)
+    population.push({ build, hash })
   }
 
-  for (let gen = 0; gen < generations; gen++) {
-    const fitnessScores = population.map((individual) => ({
-      individual,
-      score: getTargetValue(
-        getFullTeamData(database, gender, teamId, individual)
-      ),
-    }))
+  let gen = 0
+  while (gen < generations) {
+    gen++
+    const fitnessScores = await Promise.all(population.map(async (individual) => {
+      const teamData = individual.teamData ?? getFullTeamData(
+        database,
+        gender,
+        teamId,
+        individual.build
+      )
+      return {
+        build: individual.build,
+        score: individual.score ?? getTargetValue(teamData),
+        hash: individual.hash,
+        teamData
+      }
+      }))
     fitnessScores.sort((a, b) => b.score - a.score)
+
+    if (gen > generations) {
+      return fitnessScores
+    }
+
     const bestIndividuals = fitnessScores.slice(
       0,
       Math.max(populationSize / 5, 10)
     )
 
-    population = []
+    population = bestIndividuals
     while (population.length < populationSize) {
       // Select two random parents
-      const parent1 = getRandomElementFromArray(bestIndividuals).individual
+      const parent1 = getRandomElementFromArray(bestIndividuals)
       const parent2 = getRandomElementFromArray(
-        bestIndividuals.filter((ind) => ind !== parent1)
-      ).individual
-      const child = crossoverTeamBuilds(parent1, parent2)
-      population.push(mutateTeamBuild(child, mutationRate, database))
+        bestIndividuals.filter((ind) => ind.hash !== parent1.hash)
+      )
+      const child = crossoverTeamBuilds(parent1.build, parent2.build)
+      population.push({ build: child, hash: teamBuildHash(child) })
 
       // Mutate random individual
-      const randomIndividual =
-        getRandomElementFromArray(bestIndividuals).individual
-      population.push(mutateTeamBuild(randomIndividual, mutationRate, database))
+      let randomBuild =
+        getRandomElementFromArray(bestIndividuals).build
+      randomBuild = mutateTeamBuild(randomBuild, mutationRate, database)
+      population.push({ build: randomBuild, hash: teamBuildHash(randomBuild) })
 
       // Mutate best individual
-      const bestIndividual = bestIndividuals[0].individual
-      population.push(mutateTeamBuild(bestIndividual, mutationRate, database))
+      const bestBuild = mutateTeamBuild(bestIndividuals[0].build, mutationRate, database)
+      population.push({ build: bestBuild, hash: teamBuildHash(bestBuild) })
 
       // Add random individual
-      population.push(generateRandomTeamBuild(database, Object.keys(teamData)))
+      const randomBuild2 = generateRandomTeamBuild(database, Object.keys(teamData))
+      population.push({ build: randomBuild2, hash: teamBuildHash(randomBuild2) })
+
+      population = population.filter((ind, indIndex, self) =>
+        indIndex === self.findIndex((t) => (
+          t.hash === ind.hash
+        ))
+      )
     }
 
     console.log(`Generation ${gen}: ${fitnessScores[0].score}`)
+
   }
 
-  return population.map((individual) => ({
-    individual,
-    score: getTargetValue(
-      getFullTeamData(database, gender, teamId, individual)
-    ),
-  }))
+  return population
 }
 
 function getTargetValue(teamData: TeamData): number {
