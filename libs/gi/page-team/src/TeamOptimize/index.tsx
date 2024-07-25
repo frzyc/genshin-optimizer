@@ -25,7 +25,9 @@ export default function TeamOptimize({ teamId }: { teamId: string }) {
     [database, gender, teamId]
   )
 
-  const [teamBuilds, setTeamBuilds] = useState<{ build: TeamBuild, score?: number, hash: string, teamData?: TeamData }[]>([])
+  const [teamBuilds, setTeamBuilds] = useState<
+    { build: TeamBuild; score?: number; hash: string; teamData?: TeamData }[]
+  >([])
 
   const onOptimize = useCallback(() => {
     const optimizedBuilds = geneticOptimizeTeam(
@@ -47,10 +49,16 @@ export default function TeamOptimize({ teamId }: { teamId: string }) {
   const teamBuildsDisplay = useMemo(
     () =>
       teamBuilds.map((build) => (
-        <Box key={build.hash} sx={{ display: 'flex', flexDirection: 'column', p: 1 }}>
+        <Box
+          key={build.hash}
+          sx={{ display: 'flex', flexDirection: 'column', p: 1 }}
+        >
           <OptTeamCard
             teamId={teamId}
-            teamData={build.teamData ?? getFullTeamData(database, gender, teamId, build.build)}
+            teamData={
+              build.teamData ??
+              getFullTeamData(database, gender, teamId, build.build)
+            }
           />
         </Box>
       )),
@@ -167,7 +175,12 @@ async function geneticOptimizeTeam(
   populationSize: number,
   teamData?: TeamData
 ) {
-  let population: { build: TeamBuild; score?: number, hash: string, teamData?: TeamData }[] = []
+  let population: {
+    build: TeamBuild
+    score?: number
+    hash: string
+    teamData?: TeamData
+  }[] = []
   if (!teamData) teamData = getFullTeamData(database, gender, teamId)
   for (let i = 0; i < populationSize; i++) {
     const build = generateRandomTeamBuild(database, Object.keys(teamData))
@@ -178,20 +191,19 @@ async function geneticOptimizeTeam(
   let gen = 0
   while (gen < generations) {
     gen++
-    const fitnessScores = await Promise.all(population.map(async (individual) => {
-      const teamData = individual.teamData ?? getFullTeamData(
-        database,
-        gender,
-        teamId,
-        individual.build
-      )
-      return {
-        build: individual.build,
-        score: individual.score ?? getTargetValue(teamData),
-        hash: individual.hash,
-        teamData
-      }
-      }))
+    const fitnessScores = await Promise.all(
+      population.map(async (individual) => {
+        const teamData =
+          individual.teamData ??
+          getFullTeamData(database, gender, teamId, individual.build)
+        return {
+          build: individual.build,
+          score: individual.score ?? getTargetValue(teamData),
+          hash: individual.hash,
+          teamData,
+        }
+      })
+    )
     fitnessScores.sort((a, b) => b.score - a.score)
 
     if (gen > generations) {
@@ -214,28 +226,35 @@ async function geneticOptimizeTeam(
       population.push({ build: child, hash: teamBuildHash(child) })
 
       // Mutate random individual
-      let randomBuild =
-        getRandomElementFromArray(bestIndividuals).build
+      let randomBuild = getRandomElementFromArray(bestIndividuals).build
       randomBuild = mutateTeamBuild(randomBuild, mutationRate, database)
       population.push({ build: randomBuild, hash: teamBuildHash(randomBuild) })
 
       // Mutate best individual
-      const bestBuild = mutateTeamBuild(bestIndividuals[0].build, mutationRate, database)
+      const bestBuild = mutateTeamBuild(
+        bestIndividuals[0].build,
+        mutationRate,
+        database
+      )
       population.push({ build: bestBuild, hash: teamBuildHash(bestBuild) })
 
       // Add random individual
-      const randomBuild2 = generateRandomTeamBuild(database, Object.keys(teamData))
-      population.push({ build: randomBuild2, hash: teamBuildHash(randomBuild2) })
+      const randomBuild2 = generateRandomTeamBuild(
+        database,
+        Object.keys(teamData)
+      )
+      population.push({
+        build: randomBuild2,
+        hash: teamBuildHash(randomBuild2),
+      })
 
-      population = population.filter((ind, indIndex, self) =>
-        indIndex === self.findIndex((t) => (
-          t.hash === ind.hash
-        ))
+      population = population.filter(
+        (ind, indIndex, self) =>
+          indIndex === self.findIndex((t) => t.hash === ind.hash)
       )
     }
 
     console.log(`Generation ${gen}: ${fitnessScores[0].score}`)
-
   }
 
   return population
