@@ -146,8 +146,6 @@ export default function TabTheorycraft() {
       gender,
       teamCharId,
       0,
-      // getBuildTcArtifactData(buildTc),
-      // getBuildTcWeaponData(buildTc)
       {
         [teamCharId]: {
           art: getBuildTcArtifactData(buildTc),

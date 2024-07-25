@@ -1,6 +1,7 @@
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
+  CharacterKey,
   InfusionAuraElementKey,
   MultiOptHitModeKey,
 } from '@genshin-optimizer/gi/consts'
@@ -138,9 +139,16 @@ export const isExpressionUnitType = (
   return ExpressionUnitTypes.includes(type as ExpressionUnitType)
 }
 
-export type ExpressionUnit =
+export interface TeamTarget {
+  char: CharacterKey
+  target: CustomMultiTarget
+}
+
+export type ExpressionUnit<
+  Target extends CustomTarget | TeamTarget = CustomTarget
+> =
   | ConstantUnit
-  | TargetUnit
+  | TargetUnit<Target>
   | OperationUnit
   | FunctionUnit
   | EnclosingUnit
@@ -156,9 +164,11 @@ export interface ConstantUnit extends BaseUnit {
   value: number
 }
 
-export interface TargetUnit extends BaseUnit {
+export interface TargetUnit<
+  Target extends CustomTarget | TeamTarget = CustomTarget
+> extends BaseUnit {
   type: 'target'
-  target: CustomTarget
+  target: Target
 }
 
 export interface OperationUnit extends BaseUnit {
@@ -198,7 +208,7 @@ export interface UnitAddress {
 export interface FunctionAddress {
   type: 'function'
   layer: number
-  index?: 0
+  index?: never
 }
 
 export interface ArgumentAddress {
