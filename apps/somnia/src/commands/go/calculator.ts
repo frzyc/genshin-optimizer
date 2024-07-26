@@ -16,7 +16,7 @@ export function getAscensionStat(id: CharacterKey) {
 }
 
 export function getFixed(key: StatKey) {
-  return key.endsWith('_')? 1 : 0
+  return key.endsWith('_') ? 1 : 0
 }
 
 export function baseStats(id: CharacterKey) {
