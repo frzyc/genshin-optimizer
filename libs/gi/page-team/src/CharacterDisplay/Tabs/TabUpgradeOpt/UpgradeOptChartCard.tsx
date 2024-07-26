@@ -101,19 +101,16 @@ function EquipButton({
   return (
     <>
       <EquipBuildModal
-        equipChangeProps={{
-          currentName:
-            buildType === 'real'
-              ? database.builds.get(buildId)!.name
-              : 'Equipped',
-          currentWeapon: weapon?.id,
-          currentArtifacts: artifactids,
-          newWeapon: weapon?.id,
-          newArtifacts: objMap(artifactids, (art, slotKey) =>
-            slotKey === newArt.slotKey ? newArtId : art
-          ),
-        }}
-        showPrompt={show}
+        currentName={
+          buildType === 'real' ? database.builds.get(buildId)!.name : 'Equipped'
+        }
+        currentWeaponId={weapon?.id}
+        currentArtifactIds={artifactids}
+        newWeaponId={weapon?.id}
+        newArtifactIds={objMap(artifactids, (art, slotKey) =>
+          slotKey === newArt.slotKey ? newArtId : art
+        )}
+        show={show}
         onEquip={() => {
           if (buildType === 'equipped')
             database.arts.set(newArtId, {
@@ -124,7 +121,7 @@ function EquipButton({
               build.artifactIds[newArt.slotKey] = newArtId
             })
         }}
-        OnHidePrompt={onHide}
+        onHide={onHide}
       />
       <Tooltip title={<Typography>Equip</Typography>} placement="top" arrow>
         <Box>

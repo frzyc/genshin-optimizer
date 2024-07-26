@@ -5,6 +5,27 @@
   "projectType": "application",
   "tags": [],
   "targets": {
+    "dev": {
+      "options": {
+        "assets": [
+          {
+            "input": "libs/gi/localization/assets",
+            "glob": "**/*",
+            "output": ""
+          },
+          {
+            "input": "libs/gi/dm-localization/assets",
+            "glob": "**/*",
+            "output": ""
+          },
+          {
+            "input": "libs/gi/silly-wisher-names/assets",
+            "glob": "**/*",
+            "output": ""
+          }
+        ]
+      }
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],

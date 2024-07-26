@@ -1,3 +1,4 @@
+import { NextImage } from '@genshin-optimizer/common/ui'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
 import { toMainSite } from '../util'
@@ -20,7 +21,7 @@ export function DrakeAd({ children }: { children: ReactNode }) {
     >
       {children}
       <Box
-        component="img"
+        component={NextImage ? NextImage : 'img'}
         src={drake}
         maxWidth="100%"
         maxHeight="100%"

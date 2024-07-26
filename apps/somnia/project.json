@@ -25,6 +25,26 @@
             "input": "./apps/somnia/src",
             "output": "apps/somnia/src",
             "glob": "config.json"
+          },
+          {
+            "input": "libs/sr/dm-localization/assets/locales",
+            "output": "assets/sr/locales",
+            "glob": "**"
+          },
+          {
+            "input": "libs/sr/localization/assets/locales",
+            "output": "assets/sr/locales",
+            "glob": "**"
+          },
+          {
+            "input": "libs/gi/dm-localization/assets/locales",
+            "output": "assets/gi/locales",
+            "glob": "**"
+          },
+          {
+            "input": "libs/gi/localization/assets/locales",
+            "output": "assets/gi/locales",
+            "glob": "**"
           }
         ],
         "generatePackageJson": true,

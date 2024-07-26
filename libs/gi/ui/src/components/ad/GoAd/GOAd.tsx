@@ -1,4 +1,4 @@
-import { useRefSize } from '@genshin-optimizer/common/ui'
+import { NextImage, useRefSize } from '@genshin-optimizer/common/ui'
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
@@ -27,7 +27,12 @@ export function GOAd({ children }: { children: ReactNode }) {
       onClick={toMainSite}
     >
       {children}
-      <Box component="img" src={go} height={100} maxHeight={'100%'} />
+      <Box
+        component={NextImage ? NextImage : 'img'}
+        src={go}
+        height={100}
+        maxHeight={'100%'}
+      />
       <Typography>
         The Ultimate Genshin Impact calculator, that allows you to min-max your
         characters according to how you play, using what you have.

@@ -1,3 +1,4 @@
+import { NextImage } from '@genshin-optimizer/common/ui'
 import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import Backend from 'i18next-http-backend'
@@ -57,7 +58,9 @@ i18n
 
     backend: {
       // Path to load localization data from.
-      loadPath: './assets/locales/{{lng}}/{{ns}}.json',
+      loadPath: NextImage
+        ? './locales/{{lng}}/{{ns}}.json'
+        : './assets/locales/{{lng}}/{{ns}}.json',
     },
     interpolation: {
       escapeValue: false, //react does interlopation already

@@ -11,10 +11,6 @@
 /libs/gi/stats/Data
 /libs/sr/stats/Data
 
-# generated from backend
-apps/gi-backend/src/app/graphql_gen.ts
-apps/gi-backend/src/app/schema_gen.graphql
-
 # nx
 /.nx/cache
 

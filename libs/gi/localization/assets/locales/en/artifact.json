@@ -62,6 +62,7 @@
     "currentlyEquipped": "Currently Equipped"
   },
   "button": {
+    "unequipArtifact": "Unequip Artifact",
     "unequipArtifacts": "Unequip Artifacts",
     "deleteArtifacts": "Delete Artifacts",
     "lockArtifacts": "Lock Artifacts",

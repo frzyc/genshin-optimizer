@@ -1,4 +1,9 @@
-import { ImgIcon, SqBadge, StarsDisplay } from '@genshin-optimizer/common/ui'
+import {
+  ImgIcon,
+  NextImage,
+  SqBadge,
+  StarsDisplay,
+} from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { charCard } from '@genshin-optimizer/gi/char-cards'
@@ -80,7 +85,7 @@ export function CharacterCompactTalent() {
                 }}
               >
                 <Box
-                  component="img"
+                  component={NextImage ? NextImage : 'img'}
                   src={characterSheet.getTalentOfKey(tKey)?.img}
                   width="100%"
                   height="auto"
@@ -120,7 +125,7 @@ export function CharacterCompactConstSelector({
             }}
           >
             <Box
-              component="img"
+              component={NextImage ? NextImage : 'img'}
               src={
                 characterSheet.getTalentOfKey(
                   `constellation${i}` as TalentSheetElementKey
@@ -164,7 +169,12 @@ function SillyCoverArea({ src, level, ascension }) {
 
   return (
     <Box sx={{ display: 'flex', position: 'relative' }}>
-      <Box src={src} component="img" width="100%" height="auto" />
+      <Box
+        src={src}
+        component={NextImage ? NextImage : 'img'}
+        width="100%"
+        height="auto"
+      />
       <Box sx={{ width: '100%', height: '100%' }}>
         <Box
           sx={{
@@ -234,7 +244,12 @@ function CoverArea({ src, level, ascension }) {
         <FavoriteButton />
         <LevelBadge level={level} ascension={ascension} />
       </Box>
-      <Box src={src} component="img" width="100%" height="auto"></Box>
+      <Box
+        src={src}
+        component={NextImage ? NextImage : 'img'}
+        width="100%"
+        height="auto"
+      ></Box>
     </Box>
   )
 }

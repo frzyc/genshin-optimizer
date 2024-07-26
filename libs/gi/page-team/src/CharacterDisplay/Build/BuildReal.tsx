@@ -105,25 +105,21 @@ export default function BuildReal({
     artifactIds
   )
 
-  const equipChangeProps = {
-    currentName: 'Equipped',
-    currentWeapon: equippedWeapon,
-    currentArtifacts: equippedArtifacts,
-    newWeapon: weaponId,
-    newArtifacts: artifactIds,
-  }
-
-  const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
+  const [show, onShow, onHide] = useBoolState()
   return (
     <>
       <ModalWrapper open={open} onClose={onClose}>
         <BuildEditor buildId={buildId} onClose={onClose} />
       </ModalWrapper>
       <EquipBuildModal
-        equipChangeProps={equipChangeProps}
-        showPrompt={showPrompt}
+        currentName="Equipped"
+        currentWeaponId={equippedWeapon}
+        currentArtifactIds={equippedArtifacts}
+        newWeaponId={weaponId}
+        newArtifactIds={artifactIds}
+        show={show}
         onEquip={onEquip}
-        OnHidePrompt={OnHidePrompt}
+        onHide={onHide}
       />
       <BuildCard
         name={name}
@@ -133,7 +129,7 @@ export default function BuildReal({
         onActive={onActive}
         onCopyToTc={copyToTc}
         onDupe={onDupe}
-        onEquip={weaponId ? onShowPrompt : undefined}
+        onEquip={weaponId ? onShow : undefined}
         onRemove={onRemove}
       >
         <Box

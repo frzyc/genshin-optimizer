@@ -13,7 +13,7 @@ export function hexToColor(hex: string) {
 
 export function colorToRgbaString(
   color: { r: number; g: number; b: number },
-  alpha: number
+  alpha = 1
 ) {
   if (!color) return
   return `rgba(${color.r},${color.g},${color.b},${alpha})`

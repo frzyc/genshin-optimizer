@@ -8,8 +8,6 @@ import {
   REST,
   Routes,
 } from 'discord.js'
-import * as archive from './commands/archive'
-import * as button from './commands/button'
 import { clientid, token } from './config.json'
 
 const client = new Client({
@@ -38,11 +36,16 @@ client.on(Events.MessageReactionAdd, (...args) =>
 )
 
 //collect commands
+import * as archive from './commands/archive'
+import * as button from './commands/button'
+import * as databank from './commands/databank'
 export const Commands: Collection<string, any> = new Collection()
 Commands.set(archive.slashcommand.name, archive)
+Commands.set(databank.slashcommand.name, databank)
 Commands.set(button.slashcommand.name, button)
 const setcommands = [
   archive.slashcommand.toJSON(),
+  databank.slashcommand.toJSON(),
   button.slashcommand.toJSON(),
 ]
 

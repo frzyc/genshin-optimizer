@@ -7,20 +7,13 @@ permissions:
 on:
   pull_request:
     paths-ignore:
-      - 'apps/gi-backend/**'
-      - 'apps/gi-backend-e2e/**'
-      - 'apps/gi-frontend-next-e2e/**'
-      - 'apps/gi-frontend-next-e2e/**'
       - 'apps/somnia/**'
       - 'apps/somnia-e2e/**'
       - 'apps/sr-frontend/**'
       - 'apps/sr-frontend-e2e/**'
       - 'libs/gi/formula/**'
       - 'libs/gi/formula-ui/**'
-      - 'libs/gi/frontend-gql/**'
       - 'libs/gi/i18n-node/**'
-      - 'libs/gi/prisma-schema/**'
-      - 'libs/gi/ui-next/**'
       - 'libs/pando/**'
       - 'libs/sr/**'
     types: [opened, reopened, synchronize, labeled]

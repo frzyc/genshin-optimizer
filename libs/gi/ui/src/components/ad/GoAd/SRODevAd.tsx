@@ -1,3 +1,4 @@
+import { NextImage } from '@genshin-optimizer/common/ui'
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
@@ -24,7 +25,7 @@ export function SRODevAd({ children }: { children: ReactNode }) {
       <Typography variant="h5" color="crimson">
         DO YOU WANT A STAR RAIL OPTIMIZER?
       </Typography>
-      <Box component="img" src={sro} maxWidth={100} />
+      <Box component={NextImage ? NextImage : 'img'} src={sro} maxWidth={100} />
 
       <Typography>
         Exciting News! We're currently developing the Star Rail Optimizer, and

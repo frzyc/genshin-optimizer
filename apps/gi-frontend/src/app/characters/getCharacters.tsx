@@ -1,4 +1,5 @@
 'use server'
+import type { UnArray, Unpromise } from '@genshin-optimizer/common/util'
 import type { Database } from '@genshin-optimizer/gi/supabase'
 import type { SupabaseClient } from '@supabase/supabase-js'
 export default async function getCharacters(
@@ -16,3 +17,9 @@ export default async function getCharacters(
   if (error) console.error(error)
   return data
 }
+
+export type Characters = Exclude<
+  Unpromise<ReturnType<typeof getCharacters>>,
+  null
+>
+export type Character = UnArray<Characters>
