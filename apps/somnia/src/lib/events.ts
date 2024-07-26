@@ -65,6 +65,6 @@ export async function messageReactionAdd(
   const arg = message.interaction?.commandName.split(' ')
   if (arg) {
     const command = Commands.get(arg[0])
-    if ('reaction' in command) command.reaction(reaction, arg)
+    if ('reaction' in command) command.reaction(reaction, user, arg)
   }
 }

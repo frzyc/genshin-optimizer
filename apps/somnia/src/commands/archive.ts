@@ -3,22 +3,26 @@ import type {
   AutocompleteInteraction,
   ChatInputCommandInteraction,
   MessageReaction,
+  PartialUser,
   StringSelectMenuInteraction,
+  User,
 } from 'discord.js'
 import { SlashCommandBuilder } from 'discord.js'
-import * as fs from 'fs'
-import * as path from 'path'
 
 import { error } from '../lib/message'
-import { cwd } from '../lib/util'
 
-import type {
-  ArtifactSetKey,
-  CharacterKey,
-  WeaponKey,
+import {
+  allArtifactSetKeys,
+  allCharacterKeys,
+  allWeaponKeys,
+  type ArtifactSetKey,
+  type CharacterKey,
+  type WeaponKey,
 } from '@genshin-optimizer/gi/consts'
+import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
+import permissions from '../lib/permissions'
 import { artifactArchive } from './archive/artifact'
-import { charArchive } from './archive/char'
+import { charArchive, charReaction } from './archive/char'
 import { weaponArchive } from './archive/weapon'
 
 export const slashcommand = new SlashCommandBuilder()
@@ -63,54 +67,49 @@ export const slashcommand = new SlashCommandBuilder()
           )
       )
   )
-  .addSubcommand((s) =>
-    s
-      .setName('artifact')
-      .setDescription('Artifacts')
-      .addStringOption((o) =>
-        o
-          .setName('name')
-          .setDescription('Artifact set name')
-          .setAutocomplete(true)
-          .setRequired(true)
-      )
+  .addSubcommand(
+    (s) =>
+      s
+        .setName('artifact')
+        .setDescription('Artifacts')
+        .addStringOption((o) =>
+          o
+            .setName('name')
+            .setDescription('Artifact set name')
+            .setAutocomplete(true)
+            .setRequired(true)
+        )
+    //.addStringOption((o) =>
+    //  o
+    //    .setName('lang')
+    //    .setDescription('Language')
+    //    .addChoices(
+    //      languageCodeList.map((e) => {
+    //        return { name: e, value: e }
+    //      })
+    //    )
+    //)
   )
 
-//requiring all the data because imports dont work
-//TODO: use generated imports instead of require
-const archivepath = path.join(cwd, '/libs/gi/dm-localization/assets/locales/en')
-//get keys
-//TODO: fix any typing
-const archive: Record<string, any> = {
-  key: {
-    char: require(path.join(archivepath, '/charNames_gen.json')),
-    weapon: require(path.join(archivepath, '/weaponNames_gen.json')),
-    artifact: require(path.join(archivepath, '/artifactNames_gen.json')),
-  },
-  char: {},
-  weapon: {},
-  artifact: {},
+type ArchiveSubcommand = 'char' | 'weapon' | 'artifact'
+const archive = {
+  char: allCharacterKeys,
+  weapon: allWeaponKeys,
+  artifact: allArtifactSetKeys,
 }
-//traveler data
-for (const name in archive['key']['char']) {
-  if (name.match(/Traveler/)) delete archive['key']['char'][name]
+function translate(
+  namespace: string,
+  key: string,
+  lang = 'en',
+  object = false
+): any {
+  return i18nInstance.t(`${namespace}:${key}`, {
+    returnObjects: object,
+    lng: lang,
+  })
 }
-archive['key']['char']['TravelerAnemo'] = 'Traveler (Anemo)'
-archive['key']['char']['TravelerGeo'] = 'Traveler (Geo)'
-archive['key']['char']['TravelerElectro'] = 'Traveler (Electro)'
-archive['key']['char']['TravelerDendro'] = 'Traveler (Dendro)'
-archive['key']['char']['TravelerHydro'] = 'Traveler (Hydro)'
-//get all the data from keys
-for (const category in archive['key']) {
-  for (const name in archive['key'][category]) {
-    let file = name
-    //why does traveler have to be gendered smh
-    if (category === 'char' && name.match(/Traveler/)) file += 'F'
-    const itempath = path.join(archivepath, `/${category}_${file}_gen.json`)
-    if (fs.existsSync(itempath)) archive[category][name] = require(itempath)
-  }
-}
-export { archive }
+export { translate }
+export type { ArchiveSubcommand }
 export const talentlist = {
   p: { name: 'Character Profile', value: 'p' },
   n: { name: 'Normal/Charged/Plunging Attack', value: 'n' },
@@ -135,19 +134,20 @@ export function clean(s: string) {
 }
 
 export async function autocomplete(interaction: AutocompleteInteraction) {
-  const subcommand = interaction.options.getSubcommand()
+  const subcommand = interaction.options.getSubcommand() as ArchiveSubcommand
   const focus = interaction.options.getFocused(true)
+  const lang = interaction.options.getString('lang') ?? 'en'
   let reply: ApplicationCommandOptionChoiceData[] = []
 
   //character/weapon/artifact name autocomplete
   //TODO: better search
   if (focus.name === 'name') {
     const text = focus.value.toLowerCase()
-    reply = Object.keys(archive['key'][subcommand])
+    reply = archive[subcommand]
       .filter((e) => e.toLocaleLowerCase().includes(text))
       .slice(0, 25)
       .map((e) => {
-        return { name: archive['key'][subcommand][e], value: e }
+        return { name: translate(`${subcommand}Names_gen`, e, lang), value: e }
       })
   }
 
@@ -171,29 +171,36 @@ export async function autocomplete(interaction: AutocompleteInteraction) {
   interaction.respond(reply)
 }
 
-export function archiveMessage(subcommand: string, id: string, arg: string) {
-  const name = archive['key'][subcommand][id]
-  const data = archive[subcommand][id]
-
-  //handle invalid names
-  if (!(id in archive[subcommand])) throw `Invalid ${subcommand} name.`
+async function archiveMessage(
+  subcommand: ArchiveSubcommand,
+  id: string,
+  lang: string,
+  arg: string
+) {
   //character archive
   if (subcommand === 'char') {
-    return charArchive(id as CharacterKey, name, data, arg)
+    if (!archive[subcommand].includes(id as CharacterKey))
+      throw 'invalid character name'
+    return await charArchive(id as CharacterKey, lang, arg)
   }
   //weapons archive
   else if (subcommand === 'weapon') {
-    return weaponArchive(id as WeaponKey, name, data, arg)
+    if (!archive[subcommand].includes(id as WeaponKey))
+      throw 'invalid weapon name'
+    return await weaponArchive(id as WeaponKey, lang, arg)
   }
   //artifacts archive
   else if (subcommand === 'artifact') {
-    return artifactArchive(id as ArtifactSetKey, name, data)
+    if (!archive[subcommand].includes(id as ArtifactSetKey))
+      throw 'invalid artifact name'
+    return await artifactArchive(id as ArtifactSetKey, lang)
   } else throw 'Invalid selection'
 }
 
 export async function run(interaction: ChatInputCommandInteraction) {
-  const subcommand = interaction.options.getSubcommand()
+  const subcommand = interaction.options.getSubcommand() as ArchiveSubcommand
   const id = interaction.options.getString('name', true)
+  const lang = interaction.options.getString('lang') ?? 'en'
 
   let arg = ''
   if (subcommand === 'char')
@@ -202,7 +209,7 @@ export async function run(interaction: ChatInputCommandInteraction) {
     arg = interaction.options.getString('refine', false) ?? ''
 
   try {
-    interaction.reply(archiveMessage(subcommand, id, arg))
+    interaction.reply(await archiveMessage(subcommand, id, lang, arg))
   } catch (e) {
     error(interaction, e)
   }
@@ -212,57 +219,28 @@ export async function selectmenu(
   interaction: StringSelectMenuInteraction,
   args: string[]
 ) {
-  const subcommand = args[1]
+  const subcommand = args[1] as ArchiveSubcommand
   const id = args[2]
+  const lang = args[3]
   const arg = interaction.values[0]
 
   try {
-    interaction.update(archiveMessage(subcommand, id, arg))
+    interaction.update(await archiveMessage(subcommand, id, lang, arg))
   } catch (e) {
     error(interaction, e)
   }
 }
 
-export async function reaction(reaction: MessageReaction, arg: string[]) {
-  if (arg[1] != 'char') return
-  let message = reaction.message
-  if (message.partial) message = await message.fetch()
-  const embed = message.embeds[0].toJSON()
-  if (!embed) return
-
-  const emoji = reaction.emoji.name
-
-  //reactions to change traveler gender
+export async function reaction(
+  reaction: MessageReaction,
+  user: User | PartialUser,
+  arg: string[]
+) {
   if (
-    embed.author?.name.includes('Traveler') &&
-    embed.author.icon_url &&
-    embed.thumbnail
-  ) {
-    let gender = ''
-    //determine gender
-    if (emoji === '🏳️‍⚧️')
-      gender =
-        embed.author.icon_url?.includes('Girl') ||
-        embed.thumbnail?.url.includes('Girl')
-          ? 'M'
-          : 'F'
-    else if (emoji === '♀️') gender = 'F'
-    else if (emoji === '♂️') gender = 'M'
-    //replace gender
-    if (gender === 'F') {
-      embed.author.icon_url = embed.author.icon_url.replace('Boy', 'Girl')
-      embed.thumbnail.url = embed.thumbnail.url.replace('Boy', 'Girl')
-    } else if (gender === 'M') {
-      embed.author.icon_url = embed.author.icon_url.replace('Girl', 'Boy')
-      embed.thumbnail.url = embed.thumbnail.url.replace('Girl', 'Boy')
-    }
-  }
+    reaction.emoji.name === '❌' &&
+    permissions.sender(user, reaction.message.interaction)
+  )
+    return reaction.message.delete()
 
-  //edit message
-  try {
-    await message.edit({ embeds: [embed] })
-  } catch (e) {
-    console.log(e)
-  }
-  return
+  if (arg[1] == 'char') return charReaction(reaction)
 }

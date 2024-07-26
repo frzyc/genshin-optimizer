@@ -1,7 +1,12 @@
-import { range } from '@genshin-optimizer/common/util'
+import { getUnitStr, range, valueString } from '@genshin-optimizer/common/util'
 import { AssetData } from '@genshin-optimizer/gi/assets-data'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+import {
+  weaponMaxAscension,
+  weaponMaxLevel,
+  type WeaponKey,
+} from '@genshin-optimizer/gi/consts'
+import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
+import { allStats, getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
   ActionRowBuilder,
   EmbedBuilder,
@@ -10,7 +15,8 @@ import {
 } from 'discord.js'
 import { rarityColors } from '../../assets/assets'
 import { createAmbrUrl } from '../../lib/util'
-import { clean } from '../archive'
+import { clean, translate } from '../archive'
+import { getFixed } from '../go/calculator'
 
 const refinedisplay: Record<string, string> = {
   0: '1',
@@ -20,7 +26,7 @@ const refinedisplay: Record<string, string> = {
   4: '5',
 }
 
-function getDropdown(id: string, refine: string) {
+function getDropdown(id: string, lang: string, refine: string) {
   const options: StringSelectMenuOptionBuilder[] = []
   range(1, 5).forEach((i) => {
     const r = String(i - 1)
@@ -33,23 +39,46 @@ function getDropdown(id: string, refine: string) {
   return [
     new ActionRowBuilder().addComponents(
       new StringSelectMenuBuilder()
-        .setCustomId(`archive weapon ${id} ${refine}`)
+        .setCustomId(`archive weapon ${id} ${lang} ${refine}`)
         .setPlaceholder(`Refinement ${refine}`)
         .addOptions(options)
     ),
   ]
 }
 
-export function weaponArchive(
-  id: WeaponKey,
-  name: string,
-  data: any,
-  args: string
-) {
+export async function weaponArchive(id: WeaponKey, lang: string, args: string) {
+  const namespace = `weapon_${id}_gen`
+  await i18nInstance.loadNamespaces(namespace)
   const msg: any = {}
+  let name: string = translate(namespace, 'name', lang)
   let text = ''
-  //weapon rarity color
-  const rarity = getWeaponStat(id).rarity
+  const stat = getWeaponStat(id)
+  const rarity = stat.rarity
+  //mainstat
+  const ascension = stat.ascensionBonus[stat.mainStat.type] ?? [0]
+  const mainstat =
+    valueString(
+      stat.mainStat.base *
+        allStats.weapon.expCurve[stat.mainStat.curve][weaponMaxLevel[rarity]] +
+        ascension[weaponMaxAscension[rarity]],
+      getUnitStr(stat.mainStat.type),
+      getFixed(stat.mainStat.type)
+    ) +
+    ' ' +
+    i18nInstance.t(`statKey_gen:${stat.mainStat.type}`)
+  text += `## ${mainstat}`
+  //substat
+  if (stat.subStat) {
+    const sub =
+      stat.subStat.base * allStats.weapon.expCurve[stat.subStat.curve][90]
+    let substat = valueString(
+      sub,
+      getUnitStr(stat.subStat.type),
+      getFixed(stat.subStat.type)
+    )
+    substat += ' ' + i18nInstance.t(`statKey_gen:${stat.subStat.type}`)
+    text += `\n**${substat}**`
+  }
   //default r1 5stars
   let refine = '0'
   //no refinements or dropdown for 1/2 star weapons
@@ -61,13 +90,20 @@ export function weaponArchive(
     //name and passive
     name += ` (R${refinedisplay[refine]})`
     text +=
-      `\n\n**${data.passiveName}:** ` +
-      Object.values(data.passiveDescription[refine]).join('\n')
+      '\n\n**' +
+      translate(namespace, 'passiveName') +
+      ':** ' +
+      Object.values(
+        translate(namespace, `passiveDescription.${refine}`, lang, true)
+      ).join('\n')
     //create dropdown menu
-    msg['components'] = getDropdown(id, refine)
+    msg['components'] = getDropdown(id, lang, refine)
   }
   //append lore text
-  text += '\n\n-# *' + Object.values(data.description).join('\n') + '*'
+  text +=
+    '\n\n-# *' +
+    Object.values(translate(namespace, 'description', lang, true)).join('\n') +
+    '*'
   //set content
   msg['embeds'] = [
     new EmbedBuilder()
