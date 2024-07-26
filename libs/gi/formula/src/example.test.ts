@@ -282,14 +282,14 @@ describe('weapon-only example', () => {
     const primary = calc.compute(self.weapon.primary)
     expect(primary.val).toBeCloseTo(337.96) // atk
     expect(primary.meta.tag?.['sheet']).toEqual('KeyOfKhajNisut')
-    expect(primary.meta.tag?.['qt']).toEqual('base')
-    expect(primary.meta.tag?.['q']).toEqual('atk')
+    expect(primary.meta.tag!['qt']).toEqual('base')
+    expect(primary.meta.tag!['q']).toEqual('atk')
 
     // If there are multiple, or none, use `calc.get` instead
     const secondary = calc.compute(self.weapon.secondary)
     expect(secondary.val).toBeCloseTo(0.458) // hp_
     expect(secondary.meta.tag?.['sheet']).toEqual('KeyOfKhajNisut')
-    expect(secondary.meta.tag?.['qt']).toEqual('premod')
-    expect(secondary.meta.tag?.['q']).toEqual('hp_')
+    expect(secondary.meta.tag!['qt']).toEqual('premod')
+    expect(secondary.meta.tag!['q']).toEqual('hp_')
   })
 })
