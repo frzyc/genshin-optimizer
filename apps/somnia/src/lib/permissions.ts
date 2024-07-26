@@ -1,6 +1,7 @@
 import type {
   ChatInputCommandInteraction,
   Message,
+  MessageInteraction,
   PartialMessage,
   PartialUser,
   PermissionsBitField,
@@ -17,6 +18,12 @@ export default {
       content: `You do not have permission to use this command.`,
       ephemeral: true,
     })
+    return false
+  },
+
+  //true if user triggered the original interaction
+  sender(user: User | PartialUser, interaction: MessageInteraction | null) {
+    if (interaction) return user.id === interaction.user.id
     return false
   },
 

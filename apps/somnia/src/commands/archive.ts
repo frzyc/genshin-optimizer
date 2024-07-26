@@ -3,7 +3,9 @@ import type {
   AutocompleteInteraction,
   ChatInputCommandInteraction,
   MessageReaction,
+  PartialUser,
   StringSelectMenuInteraction,
+  User,
 } from 'discord.js'
 import { SlashCommandBuilder } from 'discord.js'
 
@@ -18,8 +20,9 @@ import {
   type WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
+import permissions from '../lib/permissions'
 import { artifactArchive } from './archive/artifact'
-import { charArchive } from './archive/char'
+import { charArchive, charReaction } from './archive/char'
 import { weaponArchive } from './archive/weapon'
 
 export const slashcommand = new SlashCommandBuilder()
@@ -228,46 +231,16 @@ export async function selectmenu(
   }
 }
 
-export async function reaction(reaction: MessageReaction, arg: string[]) {
-  if (arg[1] != 'char') return
-  let message = reaction.message
-  if (message.partial) message = await message.fetch()
-  const embed = message.embeds[0].toJSON()
-  if (!embed) return
-
-  const emoji = reaction.emoji.name
-
-  //reactions to change traveler gender
+export async function reaction(
+  reaction: MessageReaction,
+  user: User | PartialUser,
+  arg: string[]
+) {
   if (
-    embed.author?.name.includes('Traveler') &&
-    embed.author.icon_url &&
-    embed.thumbnail
-  ) {
-    let gender = ''
-    //determine gender
-    if (emoji === '🏳️‍⚧️')
-      gender =
-        embed.author.icon_url?.includes('Girl') ||
-        embed.thumbnail?.url.includes('Girl')
-          ? 'M'
-          : 'F'
-    else if (emoji === '♀️') gender = 'F'
-    else if (emoji === '♂️') gender = 'M'
-    //replace gender
-    if (gender === 'F') {
-      embed.author.icon_url = embed.author.icon_url.replace('Boy', 'Girl')
-      embed.thumbnail.url = embed.thumbnail.url.replace('Boy', 'Girl')
-    } else if (gender === 'M') {
-      embed.author.icon_url = embed.author.icon_url.replace('Girl', 'Boy')
-      embed.thumbnail.url = embed.thumbnail.url.replace('Girl', 'Boy')
-    }
-  }
+    reaction.emoji.name === '❌' &&
+    permissions.sender(user, reaction.message.interaction)
+  )
+    return reaction.message.delete()
 
-  //edit message
-  try {
-    await message.edit({ embeds: [embed] })
-  } catch (e) {
-    console.log(e)
-  }
-  return
+  if (arg[1] == 'char') return charReaction(reaction)
 }
