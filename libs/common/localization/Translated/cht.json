@@ -211,8 +211,7 @@
             "rarity": "稀有度",
             "efficiency": "目前估值",
             "mefficiency": "最高估值",
-            "artsetkey": "聖遺物套裝",
-            "probability": "Roll Probability"
+            "artsetkey": "聖遺物套裝"
         },
         "link": {
             "download": "下載連結",
@@ -1033,7 +1032,6 @@
         "tabs": {
             "overview": "總覽",
             "talent": "天賦",
-            "teambuffs": "Team Buffs",
             "optimize": "Optimize",
             "theorycraft": "理論分析"
         },
@@ -1218,9 +1216,6 @@
             "addExc": "Add artifact to this character's exclusion list",
             "selExc": "Select artifact to add to this character's exclusion list",
             "deSelectExc": "Click on an artifact to remove it from the exclusion list",
-            "excludeArtifactTip": "Excluding an artifact will prevent the build generator from using it for this character.",
-            "excluded": "This artifact is excluded.",
-            "included": "This artifact is not excluded.",
             "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
             "button_txt": "Exclude Artifacts"
         },
