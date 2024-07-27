@@ -110,10 +110,7 @@
             "one": "{{count}} secundário",
             "other": "{{count}} secundários"
         },
-        "noArtifacts": "Parece que você ainda não adicionou artefatos. Se você quiser, há <1>scanners automáticos</1> para você importá-los mais rapidamente!",
-        "probabilityFilter": {
-            "label": "Probabilidade de Novo Secundário"
-        }
+        "noArtifacts": "Parece que você ainda não adicionou artefatos. Se você quiser, há <1>scanners automáticos</1> para você importá-los mais rapidamente!"
     },
     "languages": {
         "chs": "Chinês (Simplificado)",
@@ -232,8 +229,7 @@
             "rarity": "Raridade",
             "efficiency": "RV Atual",
             "mefficiency": "RV Máximo",
-            "artsetkey": "Conjunto de Artefatos",
-            "probability": "Probabilidade do Roll"
+            "artsetkey": "Conjunto de Artefatos"
         },
         "link": {
             "download": "Link para Download",
@@ -1111,7 +1107,6 @@
         "tabs": {
             "overview": "Visão Geral",
             "talent": "Talentos",
-            "teambuffs": "Bônus da Equipe",
             "optimize": "Otimizar",
             "theorycraft": "Theorycraft"
         },
@@ -1352,9 +1347,6 @@
             "addExc": "Adicionar artefato à lista de bloqueios deste personagem",
             "selExc": "Selecione o artefato para adicionar à lista de bloqueios",
             "deSelectExc": "Clique num artefato para tirá-lo da lista de bloqueios",
-            "excludeArtifactTip": "Bloquear um artefato impedirá o gerador de Builds de usá-lo para este personagem.",
-            "excluded": "Este artefato está bloqueado.",
-            "included": "Este artefato não está bloqueado.",
             "usingNum": "Usando <1>{{totalStr}}</1> artefato(s) bloqueado(s)",
             "button_txt": "Bloquear Artefatos",
             "excNum": {
@@ -1754,8 +1746,7 @@
         "seamlessDendro": "Absorção de Dano Dendro do Escudo Impenetrável",
         "a4Cond": "Sob o efeito de Era da Proteção Verdejante",
         "c2Dmg": "Dano do Espírito Sérico: Corte",
-        "c2Heal": "Cura do Espírito Sérico: Corte",
-        "c6DmgInc": "Aumento de Dano do Espiriveio"
+        "c2Heal": "Cura do Espírito Sérico: Corte"
     },
     "char_Kaveh": {
         "c6Dmg": "Dano da Luz Celestial"
