@@ -212,8 +212,7 @@
             "rarity": "희귀도",
             "efficiency": "현재 효율",
             "mefficiency": "최대 효율",
-            "artsetkey": "성유물 세트",
-            "probability": "강화 가능"
+            "artsetkey": "성유물 세트"
         },
         "link": {
             "download": "다운로드 링크",
@@ -1060,7 +1059,6 @@
         "tabs": {
             "overview": "기본정보",
             "talent": "특성 및 돌파",
-            "teambuffs": "파티 버프",
             "optimize": "최적화",
             "theorycraft": "이론 연구실"
         },
@@ -1289,9 +1287,6 @@
             "addExc": "이 캐릭터의 제외 리스트에 성유물 추가",
             "selExc": "이 캐릭터의 제외 리스트에 추가할 성유물 선택",
             "deSelectExc": "제외 리스트에서 제거하기 위해선 해당 성유물을 클릭하세요",
-            "excludeArtifactTip": "성유물을 제외시키면 이 캐릭터의 조합 생성에 포함되지 않습니다.",
-            "excluded": "이 성유물은 제외되었습니다.",
-            "included": "이 성유물은 제외되지 않았습니다.",
             "usingNum": "<1>{{totalStr}}</1>개의 제외된 성유물 사용중",
             "button_txt": "성유물 제외"
         },
@@ -1672,8 +1667,7 @@
         "seamlessDendro": "무간 보호막 풀원소 피해 흡수량",
         "a4Cond": "목운의 해 효과 발동시",
         "c2Dmg": "사역령·절 피해량",
-        "c2Heal": "사역령·절 회복량",
-        "c6DmgInc": "영맥 피해량 증가"
+        "c2Heal": "사역령·절 회복량"
     },
     "char_Kaveh": {
         "c6Dmg": "파이리데자의 빛 피해량"
