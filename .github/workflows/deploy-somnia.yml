@@ -23,8 +23,8 @@ jobs:
       - name: Set env
         id: set_env
         run: |
-          echo "::set-output name=env::$(cat somnia-build/environment)"
-          echo "::set-output name=shouldDeploy::$(cat somnia-build/shouldDeploy)"
+          echo "env=$(cat somnia-build/environment)" >> $GITHUB_OUTPUT
+          echo "shouldDeploy=$(cat somnia-build/shouldDeploy)" >> $GITHUB_OUTPUT
 
   deploy:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
       id-token: write # This is required for requesting the JWT
-    if: ${{ github.event.workflow_run.conclusion == 'success' && needs.set-env.outputs.shouldDeploy == 'true' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' && (needs.set-env.outputs.shouldDeploy == 'true' || needs.set-env.outputs.env == 'somnia-prod') }}
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4
