@@ -110,10 +110,7 @@
             "one": "{{count}} sub",
             "other": "{{count}} subs"
         },
-        "noArtifacts": "Il semblerait que vous n'ayez pas encore ajouté d'artéfacts. Des <1>scanners automatiques</1> sont à disposition pour accélérer le processus d'import!",
-        "probabilityFilter": {
-            "label": "Probabilité de Nouvelle Substats"
-        }
+        "noArtifacts": "Il semblerait que vous n'ayez pas encore ajouté d'artéfacts. Des <1>scanners automatiques</1> sont à disposition pour accélérer le processus d'import!"
     },
     "languages": {
         "chs": "Chinois (Simplifié)",
@@ -231,8 +228,7 @@
             "rarity": "Rareté",
             "efficiency": "Efficacité actuelle",
             "mefficiency": "Efficacité maximum",
-            "artsetkey": "Set d'artéfact",
-            "probability": "Roll Probability"
+            "artsetkey": "Set d'artéfact"
         },
         "link": {
             "download": "Lien de téléchargement",
@@ -1110,7 +1106,6 @@
         "tabs": {
             "overview": "Vue d'ensemble",
             "talent": "Talents",
-            "teambuffs": "L'équipe Buffs",
             "optimize": "Optimiser",
             "theorycraft": "La théorie de l'art"
         },
@@ -1334,9 +1329,6 @@
             "addExc": "Ajouter l'artefact à la liste d'exclusion de ce personnage",
             "selExc": "Sélectionner l'artefact à ajouter à la liste d'exclusion de ce personnage",
             "deSelectExc": "Cliquez sur un artefact pour le supprimer de la liste d'exclusion",
-            "excludeArtifactTip": "L'exclusion d'un artefact empêchera le générateur de construction de l'utiliser pour ce personnage.",
-            "excluded": "Cet artefact est exclu.",
-            "included": "Cet artefact n'est pas exclu.",
             "usingNum": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)",
             "button_txt": "Exclure les artefacts",
             "excNum": {
@@ -1736,8 +1728,7 @@
         "seamlessDendro": "Bouclier sans couture Dendro DMG Absorption",
         "a4Cond": "Sous l'effet de l'année de la faveur verdoyante",
         "c2Dmg": "Sprite de Gossamer : Splice DMG",
-        "c2Heal": "Gossamer Sprite : Guérison par épissage",
-        "c6DmgInc": "Augmentation du DMG de Spiritvein"
+        "c2Heal": "Gossamer Sprite : Guérison par épissage"
     },
     "char_Kaveh": {
         "c6Dmg": "DMG de la lumière de Pairidaeza"
