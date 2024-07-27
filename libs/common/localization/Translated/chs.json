@@ -211,8 +211,7 @@
             "rarity": "稀有度",
             "efficiency": "当前副词条评分",
             "mefficiency": "最高副词条评分",
-            "artsetkey": "圣遗物套装",
-            "probability": "词条升级概率"
+            "artsetkey": "圣遗物套装"
         },
         "link": {
             "download": "下载链接",
@@ -1025,7 +1024,6 @@
         "tabs": {
             "overview": "概览",
             "talent": "天赋",
-            "teambuffs": "队伍增益",
             "optimize": "优化",
             "theorycraft": "理论分析"
         },
@@ -1210,9 +1208,6 @@
             "addExc": "添加圣遗物到该角色的排除列表",
             "selExc": "选择圣遗物以添加到该角色的排除列表",
             "deSelectExc": "点击圣遗物以从该角色的排除列表中移除",
-            "excludeArtifactTip": "如果排除了某件圣遗物，则该角色生成配装时不会使用该圣遗物。",
-            "excluded": "这件圣遗物已排除。",
-            "included": "这件圣遗物未排除。",
             "usingNum": "使用<1>{{totalStr}}</1>件已排除的圣遗物"
         },
         "excludeChar": {
@@ -1434,7 +1429,6 @@
         "seamlessDendro": "无郤气护盾草元素伤害吸收量",
         "a4Cond": "处于「木运之岁」效果中",
         "c2Dmg": "游丝徵灵·切伤害",
-        "c2Heal": "游丝徵灵·切治疗量",
-        "c6DmgInc": "灵气脉伤害提高"
+        "c2Heal": "游丝徵灵·切治疗量"
     }
 }
