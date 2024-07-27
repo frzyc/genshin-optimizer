@@ -1,11 +1,5 @@
 {
-  "seals": [
-    "0 sellos",
-    "1 sello",
-    "2 sellos",
-    "3 sellos",
-    "4 sellos"
-  ],
+  "seals": ["0 sellos", "1 sello", "2 sellos", "3 sellos", "4 sellos"],
   "perSeal": "(por sello)",
   "maxSeals": "Número máximo de Sellos escarlatas",
   "charged": {

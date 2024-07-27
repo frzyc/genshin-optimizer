@@ -1,1869 +1,1863 @@
 {
-    "artifact": {
-        "editor": {
-            "title": "Éditeur d'artéfacts",
-            "substat": {
-                "substatFormat": "Substat {{value}}",
-                "noSubstat": "Pas de Substat",
-                "selectSub": "Sélectionner une Substat",
-                "error": {
-                    "noCalc": "Impossible de calculer les rolls de la stat.",
-                    "noOverRoll": "Une substat ne peut être roll plus de {{value}} fois."
-                },
-                "noRoll": "Aucun Roll",
-                "noStat": "Pas de valeur",
-                "eff": "Efficacité: <1></1>",
-                "nextRolls": "Prochaines augmentations :",
-                "RollCount": {
-                    "one": "{{count}} Rouleau",
-                    "other": "{{count}} Rolls"
-                }
-            },
-            "rarity": "Rareté",
-            "level": "Niveau",
-            "unknownPieceName": "Nom de Pièce Inconnu",
-            "curSubEff": "Efficacité Substat actuelle",
-            "curSubEffDesc": "Tous les 4 niveaux d'amélioration d'artéfact, vous obtenez une augmentation d'une substat. <strong>Efficacité de Substat</strong> calcule à quel point cette augmentation est élevée à l'aide d'un pourcentage.",
-            "maxSubEff": "Efficacité de rolls maximum",
-            "maxSubEffDesc": "L'<strong>Efficacité de Substat maximum</strong> d'un artéfact calcule l'efficacité si les améliorations restantes donnent des valeurs parfaites.",
-            "preview": "Prévisualisation d'artéfact",
-            "dupArt": "Doublon d'artéfact détecté.",
-            "upArt": "Artéfact amélioré détecté.",
-            "beforeEdit": "Avant modification",
-            "btnSave": "Enregistrer l'Artéfact",
-            "btnAdd": "Ajouter",
-            "btnClear": "Effacer",
-            "btnRandom": "Randomiser",
-            "btnUpdate": "Mettre à jour l'artéfact",
-            "clearPrompt": "Il y a un artéfact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?",
-            "unknownSetName": "Nom de l'ensemble inconnu"
+  "artifact": {
+    "editor": {
+      "title": "Éditeur d'artéfacts",
+      "substat": {
+        "substatFormat": "Substat {{value}}",
+        "noSubstat": "Pas de Substat",
+        "selectSub": "Sélectionner une Substat",
+        "error": {
+          "noCalc": "Impossible de calculer les rolls de la stat.",
+          "noOverRoll": "Une substat ne peut être roll plus de {{value}} fois."
         },
-        "artifactFilter": "Filtre d'artéfacts",
-        "filterLocation": {
-            "inventory": "Inventaire",
-            "currentlyEquipped": "Actuellement équipé",
-            "location": "Personnages"
-        },
-        "button": {
-            "unequipArtifacts": "Déséquiper les artéfacts",
-            "deleteArtifacts": "Supprimer les artéfacts",
-            "lockArtifacts": "Verrouiller les artéfacts",
-            "unlockrtifacts": "Déverrouiller les artéfacts"
-        },
-        "buttonHint": "Note: les boutons rouges ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
-        "tipsOfTheDay": [
-            "L'efficacité maximum d'un artéfact 4 étoiles est environ de 60%.",
-            "L'efficacité maximum d'un artéfact diminuera généralement au fur et à mesure de l'amélioration. C'est parfaitement normal !",
-            "Les substats avec des \"1\" sont les plus difficiles à analyser sur les captures d'écran.",
-            "Si tous vos rolls (6) sont allés dans une seule substat, elle sera violette !",
-            "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorez.",
-            "Vous pouvez maintenant upload plusieurs captures d'écran d'artéfacts à analyser !"
-        ],
-        "mainStat": "Main Stat",
-        "slot": "Emplacement",
-        "slotName": {
-            "flower": "Fleur de la Vie",
-            "plume": "Plume de la Mort",
-            "sands": "Sables du Temps",
-            "goblet": "Coupe d'Eonothem",
-            "circlet": "Diadème de Logos"
-        },
-        "info": {
-            "title": "Édition d'Artéfact / Guide de Gestion",
-            "section1": "<0>Rolls des substats</0><1>Le <1>nombre de rolls</1> qu'une substat a est affiché à gauche de la substat, indiqué par le nombre de barres. Au fur et à mesure que le nombre augmente, la substat devient plus brillante. En plus de ça, chaque barre devient plus colorée :<3></3>.</1><2>Efficacité des rolls</2><3>L'Efficacité des rolls (RV) est un pourcentage de la valeur actuelle par rapport au potentiel maximum de la valeur 5<1></1>. D'après l'image, la valeur maximale d'un roll PV est 5.8%. En RV : <3>5.3/5.8 = 90%.</3></3><4>Efficacité actuelle vs. Efficacité potentielle maximale</4><5>Quand un 5<1></1> a 9 (4+5) rolls au total, avec chacun des rolls ayant la valeur la plus élevée, c'est donc un artéfact efficace à 900%. Cependant, la plupart des artéfacts n'ont pas cette chance. La <3>RV actuelle</3> d'un artéfact est son pourcentage par rapport à ces 900%. La <5>RV maximale</5> est l'efficacité maximale possible qu'un artéfact peut atteindre, si les rolls d'artéfact restants ont les valeurs les plus élevées.</5>",
-            "section2": "<0>Éditeur d'Artéfact</0><1>Un éditeur d'artéfact complet, qui accepte tout Artéfact de 3<1></1> à 5<3></3> . Lorsqu'une substat est saisie, ça peut calculer la valeur exacte des rolls, et à partir de ça, son efficacité. L'éditeur s'assurera également que vous ayez le bon nombre de rolls dans l'artéfact en fonction du niveau, ainsi que d'autres métriques de validation.</1><2>Scan des captures d'écran</2><3>La saisie manuelle n'est pas votre tasse de thé ? Vous pouvez numériser vos artéfacts avec des captures d'écran ! Dans l'éditeur d'artéfact, cliquez sur le bouton <1>Montrez-moi Comment!</1> pour en savoir plus.</3><4>Scanner automatique d'artefacts</4><5>Si vous jouez à Genshin sur PC, vous pouvez télécharger un outil qui scanne automatiquement tous vos artefacts pour vous, et vous pouvez ensuite importer ces données dans <1></1> Paramètres. <3>Cliquez ici</3> pour obtenir une liste des scanners compatibles avec GO.</5><6>Détecteur d'artéfacts en double / améliorés</6><7>Saviez-vous que Genshin Optimizer peut détecter si vous ajoutez un artéfact <1>dupliqué</1> qui existe dans le système ? Il peut également détecter si l'artéfact actuel dans l'éditeur est une <3>amélioration</3> d'un artéfact existant. Une fois qu'un doublon / un amélioré est détecté, un aperçu vous permettra de comparer les deux artéfacts en question (Voir Image).</7>",
-            "section3": "<0>Inventaire d'Artéfacts</0><1>Tous les artefacts que vous avez ajoutés à Genshin Optimizer sont affichés ici. Les filtres ici vous permettent d'affiner davantage votre vision de vos artéfacts. </1><2>Exemple : Trouver des artéfacts à feed</2><3>En utilisant le filtre d'artéfact et les calculs d'efficacité des artéfacts, vous pouvez rapidement trouver des artéfacts à feed.</3><4>Dans cet exemple, les filtres sont définis ainsi : </4><5><0>Niveau limité à 0-8.</0><1>Artéfacts débloqués dans l'inventaire.</1><2>Suppression de la contribution des PV Flat, DEF Flat et Recharge d'Énergie aux calculs d'efficacité.</2><3>Trié par efficacité maximale croissante.</3></5><6>Cela filtrera l'inventaire d'artéfacts par efficacité d'artéfacts les plus bas, pour les substats souhaitées. </6>"
-        },
-        "sortMap": {
-            "level": "Niveau",
-            "efficiency": "Efficacité des rolls actuelle",
-            "mefficiency": "Efficacité des rolls maximum"
-        },
-        "efficiencyFilter": {
-            "title": "Substats à utiliser dans le calcul de l'efficacité"
-        },
-        "resetFilters": "Réinitialiser les filtres",
-        "setEffectNum": "Set {{setNum}}",
-        "edit": "Modifier l'artefact",
-        "autocompleteLabels": {
-            "sets": "Jeux d'artefacts",
-            "mainStats": "Main Stats",
-            "substats": "Sous-stats",
-            "set": "Ensemble d'artefacts"
-        },
-        "addNew": "Ajouter un nouvel artefact",
-        "cantDeleteLock": "Impossible de supprimer l'artefact car il est verrouillé",
-        "equippedArt": "Tous les artefacts équipés",
-        "artInInv": "Tous les artefacts non équipés",
-        "locationsTooltip": "Désactiver \"Tous les artefacts équipés\" pour filtrer par personnages spécifiques",
-        "showDup": "Afficher les doublons",
-        "noDupAlert": "Il n'y a pas d'artefacts en double dans votre inventaire.",
-        "showingNum": {
-            "one": "Afficher <1>{{count}}</1> sur {{value}} Artéfact",
-            "other": "Montre <1>{{count}}</1> / {{value}} Artéfacts"
-        },
-        "substat": {
-            "one": "{{count}} substat",
-            "other": "{{count}} substats"
-        },
-        "sub": {
-            "one": "{{count}} sub",
-            "other": "{{count}} subs"
-        },
-        "noArtifacts": "Il semblerait que vous n'ayez pas encore ajouté d'artéfacts. Des <1>scanners automatiques</1> sont à disposition pour accélérer le processus d'import!"
-    },
-    "languages": {
-        "chs": "Chinois (Simplifié)",
-        "cht": "Chinois (Traditionnel)",
-        "de": "Allemand",
-        "en": "Anglais",
-        "es": "Espagnol",
-        "fr": "Français",
-        "id": "Indonésien",
-        "ja": "Japonais",
-        "ko": "Coréen",
-        "pt": "Portugais",
-        "ru": "Russe",
-        "th": "Thaïlandais",
-        "vi": "Vietnamien",
-        "it": "Italien",
-        "tr": "Turc"
-    },
-    "settings": {
-        "title": "Paramètres",
-        "languageCard": {
-            "languageFormat": "Langue: {{language}}"
-        },
-        "uploadCard": {
-            "title": "Téléverser la base de données",
-            "replaceDatabase": "Remplacer la base de données",
-            "hint": "Téléverser votre fichier JSON ici...",
-            "hintPaste": "...ou coller vos données ci-dessous.",
-            "error": {
-                "jsonParse": "Impossible d'analyser le fichier JSON.",
-                "unknown": "Format de fichier inconnu.",
-                "monaInvalid": "Format Mona-Uranai non valide",
-                "goInvalid": "Format de fichier de sauvegarde GO non valide."
-            },
-            "dbSource": "Source des données :",
-            "goodUpload": {
-                "title": "Format <strong>Genshin Open Object Description</strong> (GOOD)"
-            },
-            "buttons": {
-                "open": "Ouvrir",
-                "detectDups": "Detect Updates/Dupes",
-                "delNotInImport": "Supprimer les éléments qui ne sont pas dans l'importation"
-            },
-            "tooltip": {
-                "detectdup": "Trouver les mises à niveau et les doublons dans l'inventaire de GO et fusionner l'importation dans GO.",
-                "ignoreDup": "Ne pas détecter les mises à jour/duplicatas. L'importation sera ajoutée à l'inventaire GO existant.",
-                "delNotInImport": "Supposez que l'importation correspond à votre inventaire complet. Les articles de l'inventaire GO qui n'existent pas dans l'importation seront supprimés.",
-                "keepNotInImport": "Supposons que l'importation soit un inventaire partiel. Rien ne sera supprimé."
-            }
-        },
-        "count": {
-            "chars": "Personnages :",
-            "arts": "Artéfacts :",
-            "weapons": "Armes :",
-            "total": "Total:",
-            "new": "Nouveau:",
-            "updated": "Mis-à-jour:",
-            "removed": "Supprimés:",
-            "unchanged": "Inchangés:",
-            "invalid": "Non valide:",
-            "upgraded": "Amélioré :",
-            "dbTotal": "Total fusionné :",
-            "notInImport": "Pas d'importation :"
-        },
-        "DatabaseCard": {
-            "title": "Base de données",
-            "button": {
-                "download": "Télécharger",
-                "copy": "Presse-papiers",
-                "delete": "Supprimer",
-                "upload": "Télécharger",
-                "swap": "Échange"
-            },
-            "currentDB": "Base de données actuelle"
-        },
-        "sillyCard": {
-            "desc": "Nous avons emprunté (avec permission) tous les personnages de <strong>Silly Wisher</strong> et les avons intégrés à Genshin Optimizer.",
-            "toggle": {
-                "enabled": "Silly Optimizer activé",
-                "disabled": "Silly Optimizer désactivé"
-            }
+        "noRoll": "Aucun Roll",
+        "noStat": "Pas de valeur",
+        "eff": "Efficacité: <1></1>",
+        "nextRolls": "Prochaines augmentations :",
+        "RollCount": {
+          "one": "{{count}} Rouleau",
+          "other": "{{count}} Rolls"
         }
+      },
+      "rarity": "Rareté",
+      "level": "Niveau",
+      "unknownPieceName": "Nom de Pièce Inconnu",
+      "curSubEff": "Efficacité Substat actuelle",
+      "curSubEffDesc": "Tous les 4 niveaux d'amélioration d'artéfact, vous obtenez une augmentation d'une substat. <strong>Efficacité de Substat</strong> calcule à quel point cette augmentation est élevée à l'aide d'un pourcentage.",
+      "maxSubEff": "Efficacité de rolls maximum",
+      "maxSubEffDesc": "L'<strong>Efficacité de Substat maximum</strong> d'un artéfact calcule l'efficacité si les améliorations restantes donnent des valeurs parfaites.",
+      "preview": "Prévisualisation d'artéfact",
+      "dupArt": "Doublon d'artéfact détecté.",
+      "upArt": "Artéfact amélioré détecté.",
+      "beforeEdit": "Avant modification",
+      "btnSave": "Enregistrer l'Artéfact",
+      "btnAdd": "Ajouter",
+      "btnClear": "Effacer",
+      "btnRandom": "Randomiser",
+      "btnUpdate": "Mettre à jour l'artéfact",
+      "clearPrompt": "Il y a un artéfact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?",
+      "unknownSetName": "Nom de l'ensemble inconnu"
     },
-    "ui": {
-        "pageTitle": "Genshin Optimizer",
-        "tabs": {
-            "artifacts": "Artéfacts",
-            "characters": "Personnages",
-            "tools": "Outils",
-            "weapons": "Armes",
-            "doc": "Docs",
-            "setting": "Paramètres",
-            "scanner": "Scanners"
-        },
-        "social": {
-            "paypal": "Paypal",
-            "patreon": "Patreon",
-            "discord": "Discord"
-        },
-        "unselect": "Désélectionner",
-        "ascending": "Croissant",
-        "descending": "Décroissant",
-        "loading": "Chargement...",
-        "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par HoYoverse",
-        "appVersion": "$t(pageTitle) Version: {{version}}",
-        "error": "Erreur",
-        "reset": "Réinitialisation",
-        "info": "Informations",
-        "inventory": "Inventaire",
-        "close": "Fermer",
-        "sortMap": {
-            "new": "Nouveau",
-            "name": "Nom",
-            "level": "Niveau",
-            "rarity": "Rareté",
-            "efficiency": "Efficacité actuelle",
-            "mefficiency": "Efficacité maximum",
-            "artsetkey": "Set d'artéfact"
-        },
-        "link": {
-            "download": "Lien de téléchargement",
-            "discord": "Lien d'invitation Discord"
-        },
-        "sortBy": "Trier par :",
+    "artifactFilter": "Filtre d'artéfacts",
+    "filterLocation": {
+      "inventory": "Inventaire",
+      "currentlyEquipped": "Actuellement équipé",
+      "location": "Personnages"
+    },
+    "button": {
+      "unequipArtifacts": "Déséquiper les artéfacts",
+      "deleteArtifacts": "Supprimer les artéfacts",
+      "lockArtifacts": "Verrouiller les artéfacts",
+      "unlockrtifacts": "Déverrouiller les artéfacts"
+    },
+    "buttonHint": "Note: les boutons rouges ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
+    "tipsOfTheDay": [
+      "L'efficacité maximum d'un artéfact 4 étoiles est environ de 60%.",
+      "L'efficacité maximum d'un artéfact diminuera généralement au fur et à mesure de l'amélioration. C'est parfaitement normal !",
+      "Les substats avec des \"1\" sont les plus difficiles à analyser sur les captures d'écran.",
+      "Si tous vos rolls (6) sont allés dans une seule substat, elle sera violette !",
+      "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorez.",
+      "Vous pouvez maintenant upload plusieurs captures d'écran d'artéfacts à analyser !"
+    ],
+    "mainStat": "Main Stat",
+    "slot": "Emplacement",
+    "slotName": {
+      "flower": "Fleur de la Vie",
+      "plume": "Plume de la Mort",
+      "sands": "Sables du Temps",
+      "goblet": "Coupe d'Eonothem",
+      "circlet": "Diadème de Logos"
+    },
+    "info": {
+      "title": "Édition d'Artéfact / Guide de Gestion",
+      "section1": "<0>Rolls des substats</0><1>Le <1>nombre de rolls</1> qu'une substat a est affiché à gauche de la substat, indiqué par le nombre de barres. Au fur et à mesure que le nombre augmente, la substat devient plus brillante. En plus de ça, chaque barre devient plus colorée :<3></3>.</1><2>Efficacité des rolls</2><3>L'Efficacité des rolls (RV) est un pourcentage de la valeur actuelle par rapport au potentiel maximum de la valeur 5<1></1>. D'après l'image, la valeur maximale d'un roll PV est 5.8%. En RV : <3>5.3/5.8 = 90%.</3></3><4>Efficacité actuelle vs. Efficacité potentielle maximale</4><5>Quand un 5<1></1> a 9 (4+5) rolls au total, avec chacun des rolls ayant la valeur la plus élevée, c'est donc un artéfact efficace à 900%. Cependant, la plupart des artéfacts n'ont pas cette chance. La <3>RV actuelle</3> d'un artéfact est son pourcentage par rapport à ces 900%. La <5>RV maximale</5> est l'efficacité maximale possible qu'un artéfact peut atteindre, si les rolls d'artéfact restants ont les valeurs les plus élevées.</5>",
+      "section2": "<0>Éditeur d'Artéfact</0><1>Un éditeur d'artéfact complet, qui accepte tout Artéfact de 3<1></1> à 5<3></3> . Lorsqu'une substat est saisie, ça peut calculer la valeur exacte des rolls, et à partir de ça, son efficacité. L'éditeur s'assurera également que vous ayez le bon nombre de rolls dans l'artéfact en fonction du niveau, ainsi que d'autres métriques de validation.</1><2>Scan des captures d'écran</2><3>La saisie manuelle n'est pas votre tasse de thé ? Vous pouvez numériser vos artéfacts avec des captures d'écran ! Dans l'éditeur d'artéfact, cliquez sur le bouton <1>Montrez-moi Comment!</1> pour en savoir plus.</3><4>Scanner automatique d'artefacts</4><5>Si vous jouez à Genshin sur PC, vous pouvez télécharger un outil qui scanne automatiquement tous vos artefacts pour vous, et vous pouvez ensuite importer ces données dans <1></1> Paramètres. <3>Cliquez ici</3> pour obtenir une liste des scanners compatibles avec GO.</5><6>Détecteur d'artéfacts en double / améliorés</6><7>Saviez-vous que Genshin Optimizer peut détecter si vous ajoutez un artéfact <1>dupliqué</1> qui existe dans le système ? Il peut également détecter si l'artéfact actuel dans l'éditeur est une <3>amélioration</3> d'un artéfact existant. Une fois qu'un doublon / un amélioré est détecté, un aperçu vous permettra de comparer les deux artéfacts en question (Voir Image).</7>",
+      "section3": "<0>Inventaire d'Artéfacts</0><1>Tous les artefacts que vous avez ajoutés à Genshin Optimizer sont affichés ici. Les filtres ici vous permettent d'affiner davantage votre vision de vos artéfacts. </1><2>Exemple : Trouver des artéfacts à feed</2><3>En utilisant le filtre d'artéfact et les calculs d'efficacité des artéfacts, vous pouvez rapidement trouver des artéfacts à feed.</3><4>Dans cet exemple, les filtres sont définis ainsi : </4><5><0>Niveau limité à 0-8.</0><1>Artéfacts débloqués dans l'inventaire.</1><2>Suppression de la contribution des PV Flat, DEF Flat et Recharge d'Énergie aux calculs d'efficacité.</2><3>Trié par efficacité maximale croissante.</3></5><6>Cela filtrera l'inventaire d'artéfacts par efficacité d'artéfacts les plus bas, pour les substats souhaitées. </6>"
+    },
+    "sortMap": {
+      "level": "Niveau",
+      "efficiency": "Efficacité des rolls actuelle",
+      "mefficiency": "Efficacité des rolls maximum"
+    },
+    "efficiencyFilter": {
+      "title": "Substats à utiliser dans le calcul de l'efficacité"
+    },
+    "resetFilters": "Réinitialiser les filtres",
+    "setEffectNum": "Set {{setNum}}",
+    "edit": "Modifier l'artefact",
+    "autocompleteLabels": {
+      "sets": "Jeux d'artefacts",
+      "mainStats": "Main Stats",
+      "substats": "Sous-stats",
+      "set": "Ensemble d'artefacts"
+    },
+    "addNew": "Ajouter un nouvel artefact",
+    "cantDeleteLock": "Impossible de supprimer l'artefact car il est verrouillé",
+    "equippedArt": "Tous les artefacts équipés",
+    "artInInv": "Tous les artefacts non équipés",
+    "locationsTooltip": "Désactiver \"Tous les artefacts équipés\" pour filtrer par personnages spécifiques",
+    "showDup": "Afficher les doublons",
+    "noDupAlert": "Il n'y a pas d'artefacts en double dans votre inventaire.",
+    "showingNum": {
+      "one": "Afficher <1>{{count}}</1> sur {{value}} Artéfact",
+      "other": "Montre <1>{{count}}</1> / {{value}} Artéfacts"
+    },
+    "substat": {
+      "one": "{{count}} substat",
+      "other": "{{count}} substats"
+    },
+    "sub": {
+      "one": "{{count}} sub",
+      "other": "{{count}} subs"
+    },
+    "noArtifacts": "Il semblerait que vous n'ayez pas encore ajouté d'artéfacts. Des <1>scanners automatiques</1> sont à disposition pour accélérer le processus d'import!"
+  },
+  "languages": {
+    "chs": "Chinois (Simplifié)",
+    "cht": "Chinois (Traditionnel)",
+    "de": "Allemand",
+    "en": "Anglais",
+    "es": "Espagnol",
+    "fr": "Français",
+    "id": "Indonésien",
+    "ja": "Japonais",
+    "ko": "Coréen",
+    "pt": "Portugais",
+    "ru": "Russe",
+    "th": "Thaïlandais",
+    "vi": "Vietnamien",
+    "it": "Italien",
+    "tr": "Turc"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "languageCard": {
+      "languageFormat": "Langue: {{language}}"
+    },
+    "uploadCard": {
+      "title": "Téléverser la base de données",
+      "replaceDatabase": "Remplacer la base de données",
+      "hint": "Téléverser votre fichier JSON ici...",
+      "hintPaste": "...ou coller vos données ci-dessous.",
+      "error": {
+        "jsonParse": "Impossible d'analyser le fichier JSON.",
+        "unknown": "Format de fichier inconnu.",
+        "monaInvalid": "Format Mona-Uranai non valide",
+        "goInvalid": "Format de fichier de sauvegarde GO non valide."
+      },
+      "dbSource": "Source des données :",
+      "goodUpload": {
+        "title": "Format <strong>Genshin Open Object Description</strong> (GOOD)"
+      },
+      "buttons": {
+        "open": "Ouvrir",
+        "detectDups": "Detect Updates/Dupes",
+        "delNotInImport": "Supprimer les éléments qui ne sont pas dans l'importation"
+      },
+      "tooltip": {
+        "detectdup": "Trouver les mises à niveau et les doublons dans l'inventaire de GO et fusionner l'importation dans GO.",
+        "ignoreDup": "Ne pas détecter les mises à jour/duplicatas. L'importation sera ajoutée à l'inventaire GO existant.",
+        "delNotInImport": "Supposez que l'importation correspond à votre inventaire complet. Les articles de l'inventaire GO qui n'existent pas dans l'importation seront supprimés.",
+        "keepNotInImport": "Supposons que l'importation soit un inventaire partiel. Rien ne sera supprimé."
+      }
+    },
+    "count": {
+      "chars": "Personnages :",
+      "arts": "Artéfacts :",
+      "weapons": "Armes :",
+      "total": "Total:",
+      "new": "Nouveau:",
+      "updated": "Mis-à-jour:",
+      "removed": "Supprimés:",
+      "unchanged": "Inchangés:",
+      "invalid": "Non valide:",
+      "upgraded": "Amélioré :",
+      "dbTotal": "Total fusionné :",
+      "notInImport": "Pas d'importation :"
+    },
+    "DatabaseCard": {
+      "title": "Base de données",
+      "button": {
+        "download": "Télécharger",
+        "copy": "Presse-papiers",
         "delete": "Supprimer",
-        "locked": "Verrouillé",
-        "unlocked": "Débloqué",
-        "refinement": "Raffinement {{value}}",
-        "selectlevel": "Sélectionner le niveau",
-        "gender": {
-            "F": "Femme",
-            "M": "Homme"
-        },
-        "statGroupKey": {
-            "basic_stats": "Statistiques de base",
-            "elem_dmg_bonus": "Bonus de DMG élémentaires",
-            "enemy_debuffs": "Atténuation de l'ennemi",
-            "self_res": "Résistances propres",
-            "reaction_dmg_bonus": "Bonus DMG de réaction",
-            "reaction_crit": "Bonus Reaction CRIT",
-            "elem_dmgInc": "Augmentation des dégâts élémentaires",
-            "talent_dmgInc": "Augmentation des dommages causés par les talents",
-            "elem_crit": "Bonus de CRIT élémentaire",
-            "talent_dmg_bonus": "Bonus de talent DMG",
-            "talent_crit": "Talent CRIT Bonuses",
-            "talent_level_boost": "Augmentation du niveau des talents",
-            "base_stat_mod": "Modifications des statuts de base",
-            "stamina_buffs": "Buffs d'endurance",
-            "misc": "Misc. Statistiques"
-        },
-        "sillyPageTitle": "Silly Optimizer"
-    },
-    "char_Eula": {
-        "burstC": {
-            "name": "Lame de fond",
-            "start5": "Commence à 5 stacks",
-            "addStacks": "50% de chance d'obtenir un stack supplémentaire",
-            "dmg": "DGT d'Explosion de Lame de fond",
-            "bonusScaling": "L'échelle des bonus de l'épée des chutes de lumière"
-        },
-        "c1C": {
-            "name": "Consomme les cumuls de <strong>Cœur de glace</strong>",
-            "durationStack": "6s + 6s par stack, jusqu'à 18s"
-        },
-        "passive1": "DGT épée de lumière",
-        "c4C": {
-            "dmgBonus": "Bonus DMG de l'Explosion de l'épée des chutes de lumière"
-        }
-    },
-    "char_Noelle": {
-        "p4cd": "24s, -1s Tous les 4 coups",
-        "c6duration": "15s, +1s par ennemi vaincu, jusqu'à 25s",
-        "c4dmg": "DGT lors de la destruction de l'armure",
-        "qlarger": "Attaque plus large AoE"
-    },
-    "char_Venti": {
-        "addAimed": "DGTs tir visé",
-        "addFullAimed": "DGTs tir visé (Pleine charge)",
-        "upcurrentDuration": "Durée",
-        "regenEner": "Régénère 15 Énergie à Venti lorsque l'effet prend fin",
-        "c6": "Cibles qui prennent les DGTs de <strong>Ode au Vent</strong>",
-        "q": "Régénère 15 d'énergie de l'élément absorbé à chaque personnage de l'équipe.",
-        "c2": {
-            "hit": "Ennemi touché",
-            "launched": "Ennemi projeté"
-        }
-    },
-    "sheet": {
-        "dmg": "DGT",
-        "lessPercentHP": "{{percent}}% PV",
-        "hitOp": {
-            "normal": "Attaque Normale touche des ennemis",
-            "charged": "Attaque Chargée touche des ennemis",
-            "plunging": "Attaque Plongeante touche des ennemis",
-            "skill": "Compétence Élémentaire touche des ennemis",
-            "burst": "Déchaînement Élémentaire touche des ennemis",
-            "geo": "Après avoir infligé <geo>DGT Geo</geo>",
-            "anemo": "Après avoir infligé <anemo>DGT Anemo</anemo>",
-            "hydro": "Après avoir infligé <hydro>DGT Hydro</hydro>",
-            "cryo": "Après avoir infligé des <cryo>DGT Cryo</cryo>",
-            "pyro": "Après avoir infligé des <pyro>DGT Pyro</pyro>",
-            "electro": "Après avoir infligé des <electro>DGT Electro</electro>",
-            "none": "Après avoir touché un adversaire",
-            "normalOrCharged": "Après avoir touché un adversaire avec une attaque normale/chargée",
-            "skillOrBurst": "Après avoir frappé un adversaire avec une compétence/éclatement élémentaire",
-            "crit": "Après avoir infligé un coup de CRIT",
-            "normalChargedOrPlunging": "Après avoir touché un adversaire avec une attaque normale, chargée ou plongeante",
-            "dendro": "Après avoir infligé <dendro>Dendro DMG</dendro>",
-            "normalEle": "Après avoir infligé des DMG élémentaires avec une attaque normale",
-            "ele": "Après avoir infligé des DMG élémentaires",
-            "weakSpot": "Après avoir touché un point faible ennemi avec un tir chargé",
-            "normalChargedSkillBurst": "Après avoir touché un adversaire avec une Att. normale/chargée ou une compétence Ele. Compétence/Burst",
-            "self": "Après avoir été frappé par un adversaire"
-        },
-        "eleAbsor": "Absorption Élémentaire",
-        "absorDot": "DoT d'absorption",
-        "afterUse": {
-            "skill": "Après avoir utilisé la Compétence élémentaire",
-            "burst": "Après avoir utilisé le Déchaînement élémentaire",
-            "skillOrBurst": "Après avoir utilisé Ele. Skill ou Ele. Burst",
-            "skillPress": "Après avoir utilisé Compétence élémentaire (Presse)",
-            "skillHold": "Après avoir utilisé la compétence élémentaire (Maintien)"
-        },
-        "lessEqPercentHP": "HP inférieur ou égal à {{percent}}%",
-        "greaterPercentHP": "HP supérieur à {{percent}}%",
-        "greaterEqPercentHP": "HP supérieur ou égal à {{percent}}%",
-        "lessPercentEnergy": "Énergie inférieure à {{percent}}%",
-        "enemyLessPercentHP": "HP ennemi inférieur à {{percent}}%",
-        "enemyLessEqPercentHP": "HP ennemi inférieur ou égal à {{pourcentage}}%",
-        "enemyGreaterPercentHP": "HP ennemi supérieur à {{percent}}%",
-        "enemyGreaterEqPercentHP": "HP ennemi supérieur ou égal à {{pourcent}}%",
-        "afterDefeatEnemy": "Après avoir vaincu un adversaire",
-        "afterSprint": "Après le sprint",
-        "skillCDRed": "Ele. Réduction du CD de la compétence",
-        "burstCDRed": "Ele. Burst CD Reduction",
-        "triggerCD": "CD déclencheur",
-        "incInterRes": "Résistance accrue à l'interruption",
-        "charges": "Charges",
-        "cooldown": "Refroidissement",
-        "addlCharges": "Frais de compétences supplémentaires",
-        "activeCharField": "Le personnage se trouve dans le champ de la capacité",
-        "opponentsField": "L'adversaire se trouve dans le champ de la capacité",
-        "takeDmg": "Après la prise de DMG",
-        "infusion": {
-            "pyro": "Pyro Infusion",
-            "cryo": "Cryo-perfusion",
-            "anemo": "Infusion d'anémone",
-            "hydro": "Infusion d'eau",
-            "electro": "Électro-perfusion",
-            "dendro": "Infusion de Dendro",
-            "geo": "Géo Infusion"
-        },
-        "effectDuration": {
-            "pyro": "Durée de l'effet Pyro",
-            "cryo": "Durée de l'effet cryogénique",
-            "anemo": "Durée de l'effet Anemo",
-            "hydro": "Durée de l'effet Hydro",
-            "electro": "Durée de l'effet électro",
-            "dendro": "Dendro Effect Duration",
-            "geo": "Durée de l'effet géo"
-        },
-        "durationInc": "Augmentation de la durée",
-        "base": "Base",
-        "stacks": "Piles",
-        "protectedByShield": "Protégé par un bouclier",
-        "protectedByShieldCrystal": "Protégé par un bouclier créé par Crystallize",
-        "staminaDec_": "Diminution de la consommation d'endurance",
-        "dmgAbsorption": {
-            "pyro": "Bouclier Pyro DMG Absorption",
-            "cryo": "Bouclier Cryo DMG Absorption",
-            "anemo": "Bouclier Anemo DMG Absorption",
-            "hydro": "Bouclier Hydro DMG Absorption",
-            "electro": "Bouclier Electro DMG Absorption",
-            "dendro": "Bouclier Dendro DMG Absorption",
-            "geo": "Bouclier Géo DMG Absorption",
-            "none": "Bouclier DMG Absorption",
-            "increase": "Augmentation de l'absorption du bouclier",
-            "max": {
-                "none": "Max Shield DMG Absorption",
-                "pyro": "Max Shield Pyro DMG Absorption",
-                "dendro": "Max Shield Dendro DMG Absorption"
-            }
-        },
-        "addlCharge": "Frais de compétences supplémentaires",
-        "conditional": "Conditionnel",
-        "maxStacks": "Nombre maximal de piles",
-        "1set": "1-Set",
-        "2set": "2-Set",
-        "4set": "4-Set",
-        "activationStam": "Activation Consommation d'endurance",
-        "stamDrain": "Drain d'endurance",
-        "talents": {
-            "auto": "Voiture",
-            "skill": "Compétence",
-            "burst": "Éclatement",
-            "passive": "Passif",
-            "passive1": "A1",
-            "passive2": "A4",
-            "passive3": "Passif",
-            "sprint": "Sprint",
-            "constellation1": "C1",
-            "constellation2": "C2",
-            "constellation3": "C3",
-            "constellation4": "C4",
-            "constellation5": "C5",
-            "constellation6": "C6"
-        },
-        "swirlReaction": {
-            "hydro": "Après avoir déclenché une réaction <hydro>Hydro</hydro> Swirl",
-            "pyro": "Après avoir déclenché une réaction <pyro>Pyro</pyro> Swirl",
-            "electro": "Après avoir déclenché une réaction <electro>Electro</electro> Swirl",
-            "cryo": "Après avoir déclenché une réaction <cryo>Cryo</cryo> Swirl"
-        },
-        "afterReaction": "Après avoir déclenché une réaction élémentaire",
-        "aoeInc": "Augmentation de l'AoE",
-        "elementalReaction": {
-            "hydro": "Après avoir déclenché une <hydro>réaction élémentaire liée à l'hydrogène</hydro>.",
-            "electro": "Après avoir déclenché une <electro>réaction élémentaire liée à l'électricité</electro>.",
-            "shatter": "Après avoir déclenché une réaction élémentaire <shattered>Shatter</shattered>.",
-            "cryo": "Après avoir déclenché une <cryo>réaction élémentaire liée au cryo</cryo>."
-        },
-        "bonusScaling": {
-            "skill_": "Ele. Échelonnement du bonus de compétence",
-            "atkInc": "ATK Inc. Échelonnement des primes",
-            "value": "{{value}}%"
-        },
-        "energy": "L'énergie",
-        "teamBuff": "Équipe Buff",
-        "dmgMult": {
-            "normal": "Att. normal DMG Mult.",
-            "charged": "Att. chargée DMG Mult.",
-            "skill": "Compétence DMG Mult."
-        },
-        "stamRestored": "Endurance retrouvée",
-        "triggerQuota": "Quota de déclenchement",
-        "enemyAffected": {
-            "burningOrPyro": "L'ennemi est affecté par <pyro>Burning</pyro> ou <pyro>Pyro</pyro>",
-            "frozenOrCryo": "L'ennemi est <cryo>Gelé</cryo> ou affecté par <cryo>Cryo</cryo>",
-            "pyroOrElectro": "L'ennemi est affecté par <pyro>Pyro</pyro> ou <electro>Electro</electro>.",
-            "hydroOrCryo": "L'ennemi est affecté par <hydro>Hydro</hydro> ou <cryo>Cryo</cryo>",
-            "hydroOrPyro": "L'ennemi est affecté par <hydro>Hydro</hydro> ou <pyro>Pyro</pyro>",
-            "hydroOrElectro": "L'ennemi est affecté par <hydro>Hydro</hydro> ou <electro>Electro</electro>",
-            "electro": "L'ennemi est affecté par <electro>Electro</electro>",
-            "cryo": "L'ennemi est affecté par <cryo>Cryo</cryo>",
-            "pyro": "L'ennemi est affecté par <pyro>Pyro</pyro>"
-        },
-        "getElementalOrbParticle": "Après avoir ramassé un orbe ou une particule élémentaire",
-        "notProtectedByShield": "S'il n'est pas protégé par un bouclier",
-        "percentCurrentHP": "% de PV actuel",
-        "enerRegenPerHit": "Régénération d'énergie par coup",
-        "interval": "Intervalle",
-        "immuneToElectroCharged": "Immunité aux <electrocharged>Electro-Charged</electrocharged>",
-        "charOffField": "Le caractère est en dehors du terrain",
-        "attackAoeInc": "Attaque plus importante AoE",
-        "charOnField": "Le caractère est sur le terrain",
-        "timeOnField": "Temps passé sur le terrain",
-        "hpChange": "Après les changements de HP",
-        "afterHeal": "Après avoir été guéri",
-        "hits": {
-            "one": "{{count}} Frapper",
-            "other": "{{count}} Coups"
-        },
-        "percentMaxHP": "% Max HP",
-        "stack": {
-            "one": "{{count}} Pile",
-            "other": "HP ennemis inférieurs ou égaux à {{percent}}%"
-        },
-        "seconds": {
-            "one": "{{count}} Deuxième",
-            "other": "HP ennemi supérieur à {{percent}}%"
-        },
-        "uses": {
-            "one": "{{count}} Utiliser",
-            "other": "HP ennemi supérieur ou égal à {{percent}}%"
-        },
-        "opponents": {
-            "one": "{{count}} Opposant",
-            "other": "Après avoir déclenché une </cryo>Relation Cryo{{value}} Réaction élémentaire"
-        },
-        "members": {
-            "one": "{{count}} Membre",
-            "other": "% de PV actuel"
-        },
-        "times": {
-            "one": "{{count}} Temps",
-            "other": "{{count}} fois"
-        },
-        "activeChar": "Caractère actif",
-        "otherHpChange": "Lorsque les PV d'un coéquipier changent",
-        "reactionOp": {
-            "overload": "Après avoir déclenché une réaction de <overloaded>Surcharge</overloaded>"
-        },
-        "afterOverflow": "Le soin a débordé"
-    },
-    "weapon_SongOfBrokenPines": {
-        "name": "Sous les effets de Concert du millénaire - Hymne du drapeau"
-    },
-    "char_KaedeharaKazuha": {
-        "c1": "Utiliser <strong>Coupure de mille feuilles</strong> réinitialise le TdR",
-        "c2": "Dans Vent d'automne",
-        "c6": {
-            "after": "Après avoir utilisé <strong>Véhémence divine</strong> ou <strong>Coupure de mille feuilles</strong>"
-        },
-        "skillPlunge": "Attaque plongeante : Contrôle du chaos"
-    },
-    "char_Rosaria": {
-        "a1": "Après avoir attaqué un ennemi dans le dos",
-        "a4": {
-            "name": "Après avoir utilisé <strong>Sacrement mortel</strong>"
-        }
-    },
-    "char_KamisatoAyaka": {
-        "afterSprintCryo": "Après avoir appliqué <cryo>Cryo</cryo> grâce au sprint",
-        "snowflakeDMG": "DGT Tourbillon givré",
-        "dmgBySnowflake": "L'ennemi a été touché par <strong>École Kamisato : Givre mortel</strong>",
-        "c6Active": "Gracieuseté gelée active"
-    },
-    "weapon_MistsplitterReforged": {
-        "emblem": "Sceau de tranche-brume"
-    },
-    "char_Yoimiya": {
-        "c1": "Après avoir vaincu un ennemi affecté par <strong>Saxifrage Ryuukin</strong>",
-        "c2": "Après avoir infligé <pyro>DGT Pyro CRIT</pyro>",
-        "normPyroInfus": "<pyro>Normal Att. Pyro Infusion</pyro>",
-        "c6Key_": "Flèche flamboyante Mult."
-    },
-    "char_RaidenShogun": {
-        "skill": {
-            "eye": "Œil de jugement orageux actif",
-            "partyCost": "Coût en énergie"
-        },
-        "burst": {
-            "resolves": "Cumuls de résolution",
-            "resolveInitial_": "<electro>Musou no Hitotachi DMG Bonus Scaling</electro",
-            "resolveInfused_": "<electro>Musou Isshin DMG Bonus Scaling</electro>",
-            "burstDmg": "Musou no Hitotachi DMG",
-            "active": "Dans l'état <strong>Musou Isshin</strong>."
-        },
-        "a4": {
-            "enerRest": "Restauration d'énergie bonus de l'<strong>Harmonie d'idéal</strong>",
-            "eleDMG": "Bonus de DGT Électro"
-        },
-        "c4": {
-            "expires": "After the <strong>Musou Isshin</strong> state expires"
-        }
-    },
-    "char_Aloy": {
-        "skill": {
-            "coil": "Bobine",
-            "rush": "Glace précipitée",
-            "rushState": "Temps passé en état de Glace précipitée"
-        },
-        "a1CondName": "Après avoir reçu l'effet d'une bobine",
-        "normCryoInfus": "<cryo>Normal Att. Infusion de cryogénie</cryo>"
-    },
-    "char_KujouSara": {
-        "skill": {
-            "ambush": "Sous l'effet de Tengu Juurai : Embuscade"
-        },
-        "c6": {
-            "electroCritDmg": "L'ATK du personnage a été augmentée par Tengu Juurai"
-        }
-    },
-    "char_SangonomiyaKokomi": {
-        "burst": "En revêtant le vêtement de cérémonie",
-        "c2": "Les personnages possèdent 50% ou moins de leurs PV",
-        "c6": "Après que les attaques normales ou chargées aient soigné un personnage qui a 80% de PV ou plus.",
-        "c2SkillHeal": "<strong>Serment de Kurage</strong> Bonus de guérison",
-        "c2BurstHeal": "<strong>Ascension de Nereid</strong> Bonus de guérison"
-    },
-    "page_home": {
-        "intro": "GO, le calculateur <strong>ultime</strong> pour <3><i>Genshin Impact</i></3>, gardera une trace de votre inventaire d'artefacts, d'armes et de personnages, et vous aidera à créer le meilleur build en fonction de votre façon de jouer et de ce que vous avez.",
-        "quickLinksCard": {
-            "title": "Liens rapides",
-            "buttons": {
-                "tyGuide": {
-                    "title": "Youtube Guide Playlist",
-                    "tooltip": "Apprendre à utiliser Genshin Optimizer"
-                },
-                "scanners": {
-                    "title": "Scanners automatiques",
-                    "tooltip": "Programmes tiers qui analysent automatiquement les artefacts du jeu"
-                },
-                "kqm": {
-                    "title": "Keqing Mains",
-                    "tooltip": "Communauté d'élaboration de théories et de guides"
-                },
-                "devDiscord": {
-                    "title": "Genshin Dev Discord",
-                    "tooltip": "Communauté de développeurs d'outils Genshin"
-                },
-                "good": {
-                    "title": "GOOD Documentation",
-                    "tooltip": "Documentation sur le descripteur d'objet ouvert Genshin"
-                },
-                "patchNotes": {
-                    "title": "Notes de mise à jour de Genshin Optimizer",
-                    "tooltip": "Toutes les notes de patch de GO"
-                }
-            }
-        },
-        "inventoryCard": {
-            "title": "Inventaire GO"
-        },
-        "vidGuideCard": {
-            "title": "Guides vidéo"
-        },
-        "teamCard": {
-            "title": "Rencontrer l'équipe",
-            "jobTitle": {
-                "leadDev": "Développeur principal",
-                "dev": "Développeur",
-                "mod": "Modérateur",
-                "admin": "Administrateur",
-                "translator": "Responsable des traductions",
-                "TC": "TC Correspondant"
-            }
-        }
-    },
-    "page_scanner": {
-        "intro": "<0>Scanners</0><1>Les scanners sont des outils pour Genshin qui peuvent automatiquement analyser les données du jeu à partir de captures d'écran ou directement dans le jeu.</1><2>Voici plusieurs scanners qui ont été testés avec GO.</2><3>Pour charger le fichier exporté, allez sur la page <1>Paramètres</1> et chargez votre fichier dans la section <strong>Chargement de la base de données</strong>.</3>",
-        "ik": {
-            "title": "Inventory Kamera",
-            "p1": "Cette application légère scannera tous les personnages, armes et artefacts de votre inventaire. Suivez les instructions de l'application pour la configurer."
-        },
-        "as": {
-            "title": "AdeptiScanner",
-            "p1": "Scanne tous les artefacts et armes de votre inventaire. Dispose d'un mode de balayage manuel et peut également importer des données depuis <1>Enka.Network</1>.",
-            "p2": "Ce scanner peut également être configuré pour les nouveaux artefacts dans les nouvelles versions du jeu sans nécessiter de mise à jour."
-        },
-        "goodeng": "This app only scans in English and exports to <1>GOOD</1> format.",
-        "tosWarn": "Comme tous les outils qui interagissent indirectement avec le jeu, bien que leur utilisation soit virtuellement indétectable, <1>il y a toujours un risque à les utiliser.</1> La discrétion de l'utilisateur est conseillée.",
-        "tags": {
-            "pc": "PC",
-            "mobile": "Mobile",
-            "ps": "PlayStation",
-            "gameMani": "Contrôle automatique",
-            "materials": "Matériaux",
-            "characters": "Personnages",
-            "weapons": "Armes",
-            "achievements": "Réalisations"
-        },
-        "nb": {
-            "title": "Artiscan",
-            "p1": "Ce scanner en ligne peut capturer la fenêtre de votre jeu, numériser à partir d'une capture d'écran ou numériser à partir d'une vidéo. La capture d'écran ou de vidéo peut être réalisée en plein écran et n'a pas besoin d'être recadrée.",
-            "p2": "Les téléphones portables et les consoles de jeux ne peuvent être scannés qu'à partir de captures d'écran ou de vidéos."
-        },
-        "ak": {
-            "title": "Scanner Akasha",
-            "p1": "Scanne automatiquement les artefacts ainsi que les personnages et les armes. Permet d'exporter les scansions antérieures en conservant un historique dans l'application. Scanne uniquement en anglais.",
-            "p2": "Cette application est également capable d'analyser les réalisations pour <1>Paimon.moe</1> et <1>Seelie.me</1>."
-        },
-        "seelieme": "Cette application peut également scanner des matériaux pour <1>Seelie.me</1>"
-    },
-    "weapon_Akuoumaru": {
-        "party": "Cumul d'énergie d'équipe"
-    },
-    "artifact_ArchaicPetra": {
-        "condName": "Après avoir obtenu un crystal d'une Cristallisation"
-    },
-    "artifact_ViridescentVenerer": {
-        "condName": "Élément Dispersé"
-    },
-    "weapon_CinnabarSpindle": {
-        "name": "L'effet est actif"
-    },
-    "weapon_ElegyForTheEnd": {
-        "condName": "Sous l'effet de Concert du millénaire: Chant d'adieu"
-    },
-    "weapon_MouunsMoon": {
-        "party": "Party energy capacity"
-    },
-    "weapon_ThrillingTalesOfDragonSlayers": {
-        "condName": "Après avoir changé de personnage"
-    },
-    "weapon_WavebreakersFin": {
-        "party": "Party energy capacity"
-    },
-    "artifact_BlizzardStrayer": {
-        "condName": "L'ennemi est",
-        "condCryo": "Affecté Par Cryo",
-        "condFrozen": "Gel"
-    },
-    "artifact_HuskOfOpulentDreams": {
-        "condName": "Curiosité"
-    },
-    "artifact_OceanHuedClam": {
-        "condName": "DGT Max Mousse Marine"
-    },
-    "artifact_ShimenawasReminiscence": {
-        "afterUseEnergy": "Après avoir consommé 15 points d'énergie"
-    },
-    "artifact_TinyMiracle": {
-        "condName": "Après avoir pris des dégats élémentaires"
-    },
-    "char_Albedo": {
-        "blossomCD": "CD des Germes fatals",
-        "blossomDmg_": "Bonus de DGT des Germes fatals",
-        "isotomaOnField": "Aura solaire sur le terrain",
-        "enerPerBlossom": "Energie regénérée par les  Germes fatals",
-        "c2Stacks": "Cumuls consommés de Jugement dernier"
-    },
-    "char_Amber": {
-        "secondArrow": "(seconde flèche)",
-        "critRateBonus": "Bonus de taux CRIT de <strong>Pluie de flèches</strong>",
-        "aoeRangeBonus": "Bonus de zone d'effet de <strong>Pluie de flèches</strong>",
-        "manualDetonationDmg": "DGT de détonation manuelle",
-        "c6CondName": "Après avoir utilisé <strong>Pluie de flèches</strong>"
-    },
-    "char_AratakiItto": {
-        "a1": {
-            "name": "Utilisations consécutives d'Arataki Kesagiri"
-        },
-        "a4": {
-            "dmgInc": "Augmentation des DGT d'Arataki Kesagiri"
-        },
-        "c1": {
-            "initialGain": "Cumuls de Mégaforce superlative gagnés",
-            "timedGain": "Après 1s, les cumuls de Mégaforce superlative sont gagnés toutes les 0,5s pendant 1,5s."
-        },
-        "c4": {
-            "name": "Après la fin de l'état Roi oni maléfique"
-        }
-    },
-    "char_Barbara": {
-        "passive1": {
-            "cond": "Dans la mélodie de <strong>C'est parti pour le show ♪</strong>"
-        },
-        "constellation2": {
-            "cond": "Pendant <strong>C'est parti pour le show ♪</strong>"
-        }
-    },
-    "char_Beidou": {
-        "skillOneHit": "DGT avec 1 coup",
-        "skillTwoHit": "DGT avec 2 coups",
-        "duringBurst": "Brisure d'orage est actif",
-        "tidecallerMaxDmg": "Après avoir déclenché Invocation des marées avec le bonus de DGT maximum",
-        "a4charge": "Réduction du délai avant le déclenchement des attaques chargées",
-        "c4dmg": "DGT Electro de Vengeance étonnante "
-    },
-    "char_Bennett": {
-        "skill": {
-            "lvl1CD": "TdR du niveau 1 de charge",
-            "lvl2CD": "TdR du niveau 2 de charge"
-        },
-        "c4DMG": "DGT d'Enthousiasme éternel",
-        "c6PyroInfusion": "<pyro>Infusion Pyro des Epées à une main, Épées à deux mains et Armes d'Hast</pyro>"
-    },
-    "char_Chongyun": {
-        "infusion": "Infusion cryo pour les épées à une main, les épées à deux mains et les armes d'Hast",
-        "passive2": "DGT de la lame invoquée",
-        "asc4Cond": "L'adversaire a été touché par Lame du chasseur de glace",
-        "constellation1": "Dégats de la lame de glace",
-        "constellation6": "L'ennemi a un pourcentage inférieur de ses PV maximum restants.",
-        "blades": "Lames spirituelles invoquées"
-    },
-    "char_Diluc": {
-        "skillB": {
-            "0": "DGT à 2 coups (renforcé)",
-            "1": "DGT à 3 coups (renforcé)"
-        }
-    },
-    "char_Diona": {
-        "skillDuration": "Durée par Griffe",
-        "holdShield": "Absorption de DGT du bouclier maintenu",
-        "a1shielded": "Le personnage est protégé par <strong>Griffes Cryo</strong>",
-        "holdCryoShield": "Maintien du bouclier Cryo DMG Absorption",
-        "pressShield": "Bouclier de presse Absorption DMG",
-        "pressCryoShield": "Bouclier de presse Cryo DMG Absorption"
-    },
-    "char_Fischl": {
-        "a1Name": "DGT de Foudre divine d'un tir chargé",
-        "a2Name": "DGT de Foudre divine",
-        "c1Name": "DGT d'attaque conjointe",
-        "c4AoeDmg": "Dégats de zone additionnels",
-        "c6OzDmg": "DGT d'attaque coordonnée"
-    },
-    "char_Ganyu": {
-        "a1": {
-            "condName": "Après avoir tiré une flèche de givre",
-            "critRateInc": "Augmentation du taux CRIT des zones de givre"
-        },
-        "c1": {
-            "condName": "L'adversaire a subi les DMG d'une Flèche de givre ou d'une Zone de givre"
-        },
-        "c4": {
-            "lingerDuration": "Durée supplémentaire de l'effet"
-        }
-    },
-    "char_HuTao": {
-        "paramita": {
-            "enter": "Dans l'état <strong>Paramita Papilio</strong>.",
-            "end": "Après la fin de l'état de <strong>Paramita Papilio</strong>."
-        },
-        "constellation2": {
-            "applyBloodBlossom": "Applique l'effet <strong>Bourgeon de prune</strong>"
-        },
-        "constellation4": {
-            "condName": "Après avoir vaincu un ennemi affecté par un <strong>Bourgeon de prune</strong>"
-        },
-        "constellation6": {
-            "condName": "Après que les PV soient tombés en dessous de 25% ou après avoir subi un coup mortel"
-        }
-    },
-    "char_Jean": {
-        "c1CondName": "Compétence élémentaire maintenue pendant plus d'1 seconde",
-        "c1PullSpeed": "Augmentation de la vitesse de traction"
-    },
-    "char_Kaeya": {
-        "c2burstDuration": "15s + 2.5s par adversaire vaincu, jusqu'à +15s"
-    },
-    "char_Keqing": {
-        "c1DMG": "DMG de Force foudroyante",
-        "recast": "Après avoir relancé <strong>Retour des étoiles</strong>"
-    },
-    "char_Klee": {
-        "a1CondName": "Porter une étincelle explosive",
-        "a1CondName2": "La prochaine attaque chargée ne coûte pas d'endurance.",
-        "c2CondName": "L'adversaire a été touché par les mines de <strong>Bombe rebondissante</strong>.",
-        "c6CondName": "Après avoir utilisé Fleur bombardier"
-    },
-    "char_Lisa": {
-        "a4C": "L'adversaire a été touché par <strong>Rose de foudre</strong>.",
-        "c2C": "Charger <strong>Arc fulminant</strong>"
-    },
-    "char_Mona": {
-        "omen": "L'adversaire est affecté par Omen",
-        "hitOp": {
-            "affectedByOmen": "Après avoir touché un adversaire affecté par Omen"
-        },
-        "frozenDuration": "Durée de <shattered>Gel</shattered>",
-        "uponSprint": "Après avoir utilisé Vicissitude"
-    },
-    "char_Ningguang": {
-        "aoeGems": "Les attaques normales infligent des DGT de zone",
-        "starJadeStaminaCost": "L'attaque chargée de Ningguang ne consomme pas d'endurance tant que celle-ci possède des Jades d'étoile",
-        "skillReset": "Le TdR est annulé lorsque ce dernier est brisé, une fois toutes les 6s",
-        "a4toggle": "Après avoir traversé le Paravent d'astrolabe",
-        "c4toggle": "Dans un rayon de 10 mètres du Paravent d'astrolabe",
-        "c6bonus": "Jades d'étoile gagnées"
-    },
-    "char_Qiqi": {
-        "a1C": "Après avoir déclenché une réaction élémentaire sous les effets de <strong>Arcane d'Adepte : Héraut de givre</strong>"
-    },
-    "char_Razor": {
-        "electroSigil": "Sceau électro",
-        "electroSigilAbsorbed": "Énergie régénérée si les sceau électro sont supprimés",
-        "opHitWithClawAndThunder": "L'adversaire a été touché par <strong>Griffe et tonnerre</strong> (Appui simple)",
-        "electroSigilPerProc": "Sceau électro par proc",
-        "soulCompanion": {
-            "1": "Compagnon de l'âme DMG à 1 coup",
-            "2": "Compagnon de l'âme 2-Hit DMG",
-            "3": "Compagnon de l'âme DMG à 3 coups",
-            "4": "Compagnon de l'âme 4 coups DMG"
-        }
-    },
-    "char_Sayu": {
-        "burstHits": "Nombre d'activations de Daruma Muji-Muji",
-        "p2Heal": "Guérison d'un personnage proche",
-        "c1Text": "Le Daruma Muji-Muji ignore les limites de HP et peut simultanément attaquer les adversaires proches et soigner les personnages.",
-        "c2KickPressDmg_": "DGT de Coup de pied Fuufuu après un appui simple",
-        "c2KickDmg_": "DGT de Coup de pied Fuufuu après un appui long",
-        "c2Cond": "Temps passé dans l'état de <strong>Fuufuu Windwheel</strong>.",
-        "c6DarumaDmgInc": "Muji-Muji Daruma DMG Inc.",
-        "c6DarumaHealInc": "Muji-Muji Daruma Heal Inc."
-    },
-    "char_Shenhe": {
-        "quill": "Icy Quill est actif",
-        "c4": "Mantra de givre consommé",
-        "pressQuota": "Quota de déclenchement",
-        "holdQuota": "Maintenir le quota de déclenchement",
-        "pressDuration": "Durée de la presse",
-        "holdDuration": "Durée de maintien"
-    },
-    "char_Thoma": {
-        "a2": "Effondrement foudroyant Augmentation du DMG",
-        "c2": "<strong>Crimson Ooyoroi</strong> Augmentation de la durée",
-        "refreshBarrier": "Après avoir obtenu ou rafraîchi une <strong>Barrière ardente</strong>"
-    },
-    "char_Xiangling": {
-        "afterChili": "Après avoir ramassé le piment de Guoba",
-        "explosionDMG": "DMG d'explosion",
-        "afterGuobaHit": "L'adversaire a été touché par les attaques de Guoba",
-        "duringPyronado": "Pyronado est actif",
-        "c6Exception": "Ceci ne peut pas affecter le DMG du Swing à 1 coup</pyro>, le DMG du Swing à 2 coups</pyro>, ou le DMG de l'Arnaque</pyro>."
-    },
-    "char_Xiao": {
-        "burst": {
-            "lifeDrain_": "Drain de vie",
-            "currentHPPerSec": "(HP/s actuels)",
-            "incJump": "Augmentation considérable de la hauteur de saut",
-            "inBurst": "Sous les effets de <strong>Bane of All Evil</strong>",
-            "stack": "Temps passé dans <strong>Bane of All Evil</strong>"
-        },
-        "skillStack": "Utilisations passées de <strong>Lemniscatic Wind Cycling</strong>."
-    },
-    "char_Xingqiu": {
-        "skillCond": "Protégé par les épées de pluie",
-        "burstCond": "Sous les effets du Rainbow Bladework",
-        "c2Cond": "L'adversaire a été touché par Sword Rain"
-    },
-    "char_Xinyan": {
-        "skill": {
-            "pyroShield": {
-                "1": "Bouclier niveau 1 Pyro DMG Absorption",
-                "2": "Bouclier niveau 2 Pyro DMG Absorption",
-                "3": "Bouclier Niveau 3 Pyro DMG Absorption"
-            }
-        },
-        "p1": {
-            "desc": "Diminue le quota de coups de <strong>Sweeping Fervor</strong> de 1"
-        },
-        "p2": {
-            "activeShield": "Le personnage est protégé par <strong>Sweeping Fervor</strong>."
-        },
-        "c2": {
-            "key_": "<strong>Riff Revolution</strong> Physique DMG CRIT Taux Bonus",
-            "shield": "Forme un bouclier de raves de niveau 3 lorsqu'il est lancé"
-        },
-        "c4": {
-            "swingHit": "L'adversaire a été touché par <pyro>Swing DMG</pyro>"
-        },
-        "c6": {
-            "duringCharge": "Lors de l'exécution d'une attaque chargée"
-        }
-    },
-    "char_YaeMiko": {
-        "c4": "L'adversaire a été touché par la foudre de <strong>Sesshou Sakura</strong>.",
-        "c6": "Sesshou Sakura Ennemi DEF Ignorer"
-    },
-    "char_Yanfei": {
-        "seals": [
-            "0 sceau",
-            "1 joint",
-            "2 joints",
-            "3 joints",
-            "4 joints"
-        ],
-        "perSeal": "(par scellé)",
-        "maxSeals": "Nombre maximal de phoques écarlates",
-        "charged": {
-            "0": "0-Seal DMG",
-            "1": "1-Seal DMG",
-            "2": "DMG à 2 scellés",
-            "3": "3 scellés DMG",
-            "4": "DMG à 4 scellés"
-        },
-        "burst": {
-            "grantMax": "Octroie le nombre maximum de sceaux écarlates"
-        },
-        "passive1": {
-            "sealsConsumed": "Sceaux consommés par l'utilisation d'une attaque chargée"
-        },
-        "passive2": {
-            "key": "Œil flamboyant DMG"
-        },
-        "c1": {
-            "sealChargedStam_": "Diminution de la consommation d'endurance de l'attaque chargée"
-        },
-        "c6": {
-            "maxSealInc": "Augmentation du nombre maximal de sceaux écarlates"
-        }
-    },
-    "char_YunJin": {
-        "burst": "Sous les effets de la formation de drapeaux à nuages volants",
-        "a4Inc_": "Augmentation due aux types d'éléments de la partie",
-        "c4": "Après avoir déclenché la réaction Crystallize"
-    },
-    "char_Zhongli": {
-        "skill": {
-            "stele": "Stèle en pierre DMG",
-            "resonance": "Résonance DMG",
-            "maxStele": "Nombre maximal de stèles",
-            "nearShield": "L'ennemi est près du <strong>Bouclier de Jade</strong>"
-        },
-        "p1cond": "Après que le <strong>Bouclier de Jade</strong> a pris des DMG",
-        "c6heal": "Régénération maximale de la santé"
-    },
-    "weapon_AlleyHunter": {
-        "condName": "Temps passé hors du terrain"
-    },
-    "weapon_AmosBow": {
-        "condName": "Durée du vol de la flèche"
-    },
-    "weapon_BlackTassel": {
-        "condName": "L'adversaire est un Slime"
-    },
-    "weapon_Deathmatch": {
-        "condName": "Opposants Près de"
-    },
-    "weapon_DragonspineSpear": {
-        "aoeDmg": "DMG de l'Icicle de givre",
-        "cryoAffectedDmg": "DMG sur les <cryo>Cryo</cryo> adversaires affectés"
-    },
-    "weapon_FerrousShadow": {
-        "condName": "HP atteint le seuil",
-        "resistance": "Augmentation de la résistance à l'interruption des attaques chargées"
-    },
-    "weapon_FreedomSworn": {
-        "sigilsConsumed": "Après avoir consommé Sigils of Rebellion"
-    },
-    "weapon_Frostbearer": {
-        "aoeDmg": "DMG de l'Icicle de givre",
-        "cryoAffectedDmg": "DMG sur les <cryo>Cryo</cryo> adversaires affectés"
-    },
-    "weapon_Hamayumi": {
-        "condName": "L'énergie est à 100%"
-    },
-    "weapon_MemoryOfDust": {
-        "atkEffInc": "Augmentation de l'effet ATK"
-    },
-    "weapon_PolarStar": {
-        "condName": "Ashen Nightstar"
-    },
-    "weapon_SerpentSpine": {
-        "takeMoreDmg": "Augmentation des DMG absorbés"
-    },
-    "weapon_Slingshot": {
-        "condName": "Attaque normale/chargée Touché",
-        "less": "Dans les 0,3 secondes suivant le tir",
-        "more": "Après 0,3 s de tir"
-    },
-    "weapon_SnowTombedStarsilver": {
-        "aoeDmg": "DMG de l'Icicle de givre",
-        "cryoAffectedDmg": "DMG sur les <cryo>Cryo</cryo> adversaires affectés"
-    },
-    "weapon_SummitShaper": {
-        "atkEffInc": "Augmentation de l'effet ATK"
-    },
-    "weapon_TheAlleyFlash": {
-        "condName": "Pas de DMG prise"
-    },
-    "weapon_TheUnforged": {
-        "atkEffInc": "Augmentation de l'effet ATK"
-    },
-    "weapon_TheWidsith": {
-        "aria": "Aria",
-        "interlude": "Interlude",
-        "recitative": "Récitatif"
-    },
-    "weapon_ThunderingPulse": {
-        "condName": "Emblème du Tonnerre"
-    },
-    "weapon_VortexVanquisher": {
-        "atkEffInc": "Augmentation de l'effet ATK"
-    },
-    "artifact_EchoesOfAnOffering": {
-        "mode": "Mode de déclenchement",
-        "avg": "Moyenne",
-        "always": "Toujours"
-    },
-    "char_KamisatoAyato": {
-        "skill": {
-            "unableToAuto": "Impossible d'utiliser les attaques chargées ou plongeantes",
-            "namisenStacks": "Namisen",
-            "shun_dmgInc": "<hydro>Augmentation de la DMG du Shunsuiken</hydro>"
-        },
-        "passive1": {
-            "afterUse": "Les piles de Namisen gagnées après l'utilisation de la compétence",
-            "afterExplode": "Les piles de Namisen gagnées après l'explosion de l'illusion d'eau"
-        },
-        "c1": {
-            "shun_dmg_": "<hydro>Shunsuiken DMG Bonus</hydro"
-        },
-        "c2": {
-            "addlStacks": "Max Namisen Stack Inc."
-        },
-        "c6": {
-            "dmg": "Origine illimitée DMG"
-        }
-    },
-    "char_KukiShinobu": {
-        "a4": {
-            "heal": "Augmentation du soin de compétence élémentaire"
-        },
-        "c4": {
-            "dmg": "DGT de Marque d'herbes tonitruantes"
-        }
-    },
-    "char_Yelan": {
-        "c2": {
-            "dmg": "DGT d'Offert par la maison"
-        },
-        "c4": {
-            "condName": "Nombre d'ennemis marqués par la ligne vitale"
-        },
-        "c6": {
-            "dmg": "DGT de flèches perçantes spéciales"
-        }
-    },
-    "page_character": {
-        "addNew": "Ajouter un personnage",
-        "tabs": {
-            "overview": "Vue d'ensemble",
-            "talent": "Talents",
-            "optimize": "Optimiser",
-            "theorycraft": "La théorie de l'art"
-        },
-        "formulas": "Formules",
-        "calculations": "Calculs",
-        "selectCharacter": "Sélectionner un personnage",
-        "removeCharacter": "Êtes-vous sûr de vouloir supprimer {{value}} ?",
-        "delete": "Supprimer un caractère",
-        "teammates": "Coéquipiers",
-        "hitmode": {
-            "hit": "Non-CRIT Hit DMG",
-            "avgHit": "Avg. DMG",
-            "critHit": "CRIT Hit DMG"
-        },
-        "tabEquip": {
-            "swapWeapon": "Échange d'armes",
-            "swapArt": "Échanger un artefact",
-            "compare": "Comparaison avec la construction actuelle",
-            "unequipArts": "Déséquiper tous les artefacts"
-        },
-        "characterName": "Nom du personnage",
-        "teammate": "Coéquipier {{count}}",
-        "noReaction": "Aucune réaction",
-        "multiTarget": {
-            "title": "Configuration de la cible d'optimisation multiple",
-            "addNewTarget": "Ajouter une cible",
-            "addNewMTarget": "Créer un Multi-Opt",
-            "info1": "Remarque : les cibles de multi-optimisation créées par la communauté peuvent être trouvées dans le <1>GO Discord</1> ou <3>KQM's Multi-Optimization Guide</3>, mais la validité de ces configurations ne peut pas être garantie.",
-            "info2": "Il est de la responsabilité de l'utilisateur de s'assurer que les configurations représentent bien son cas d'utilisation.",
-            "description": "Description",
-            "duplicate": "Duplicata",
-            "target": {
-                "one": "<0>{{count}}</0> Cible",
-                "other": "Ajouter une cible"
-            }
-        },
-        "addStats": {
-            "title": "Configuration de l'ennemi + statistiques bonus",
-            "info": "Vous pouvez utiliser ces champs pour ajouter des buffs/débuffs qui ne sont pas directement pris en charge dans GO, comme les buffs de nourriture, les cartes Abyss ou Superconduct. Veuillez vous référer au <1>Genshin Impact Wiki</1> pour les valeurs spécifiques.",
-            "label": "Nouvelle Stat Bonus"
-        },
-        "tabTheorycraft": {
-            "substatType": {
-                "min": "Utiliser un minimum de rouleaux de substitution",
-                "max": "Utiliser le maximum de rouleaux de sous-produits",
-                "mid": "Utiliser des rouleaux de sous-mat médians"
-            },
-            "maxTotalRolls": "Une construction \"valide\" ne peut avoir qu'un maximum de 45 rouleaux.",
-            "maxRolls": "Ce substat peut avoir un maximum de 30 rouleaux.",
-            "maxRollsMain": "Parce qu'au moins une stat principale a le même attribut, cette sous-stat peut avoir un maximum de {{valeur}} rouleaux.",
-            "distribute": "Distribuer",
-            "compareToggle": {
-                "equipped": "Comparé avec équipé"
-            },
-            "copyDialog": {
-                "title": "Copier les données des armes et artefacts équipés ?"
-            },
-            "kqmsDialog": {
-                "kqmsBtn": "Utiliser KQMS",
-                "title": "Utiliser KQMS?"
-            },
-            "gcsimDialog": {
-                "title": "Export gcsim",
-                "copied": "Copier la config gcsim dans le press-papier."
-            },
-            "substat": {
-                "max": "Max"
-            },
-            "optAlert": {
-                "feasibilty": "Il peut y avoir des substats supplémentaires qui devraient être distribuées aux statistiques sans scaling pour garantir que la solution est réalisable."
-            },
-            "constraint": {
-                "title": "Contrainte de Stat",
-                "add": "Ajouter une Contrainte de Stat"
-            }
-        },
-        "tabTeambuff": {
-            "team_reso": "Résonance de l'équipe",
-            "resonance_tip": "Le groupe doit être composé de 4 personnages pour que la résonance élémentaire prenne effet."
-        },
-        "showingNum": {
-            "one": "Afficher <1>{{count}}</1> sur {{value}} Caractère",
-            "other": "Formules"
-        }
-    },
-    "page_weapon": {
-        "edit": "Modifier l'arme",
-        "weaponName": "Nom de l'arme",
-        "removeWeapon": "Êtes-vous sûr de vouloir supprimer {{value}} ?",
-        "addWeapon": "Ajouter une nouvelle arme",
-        "showingNum": {
-            "one": "Afficher <1>{{count}}</1> sur {{value}} Arme",
-            "other": "Utiliser les rouleaux de sous-statut médians"
-        },
-        "cantDeleteLock": "Impossible de supprimer l'arme car elle est verrouillée"
-    },
-    "weapon_AquaSimulacra": {
-        "condName": "Opposants à proximité"
-    },
-    "weapon_FadingTwilight": {
-        "states": {
-            "evengleam": "Evengleam",
-            "afterglow": "Lueur d'espoir",
-            "dawnblaze": "L'aurore"
-        },
-        "condName": "État actuel"
-    },
-    "weapon_HaranGeppakuFutsu": {
-        "consumed": "Piles de Wavespike consommées"
-    },
-    "char_Collei": {
-        "sproutDmg": "DGT de Germe",
-        "miniAnbarDmg": "DGT de Cuilein-Anbar miniature"
-    },
-    "char_Dori": {
-        "c2MultiplierKey_": "Multiplicateur de Franchise spéciale",
-        "c2DmgKey": "DGT de Franchise spéciale",
-        "c4ConnectedBelowHp": "Personnage relié au djinn et sous 50% PV",
-        "c4ConnectedBelowEner": "Personnage relié au djinn et sous 50% d'énergie"
-    },
-    "char_ShikanoinHeizou": {
-        "takingField": "Après être arrivé sur le terrain"
-    },
-    "char_Tighnari": {
-        "p1Cond": "Après avoir tiré une <strong>Flèche florale</strong>",
-        "c4ReactCond": "Après que <strong>Tanglevine Shaft</strong> a déclenché une réaction",
-        "c6DmgKey": "DGT de flèche fleuronnée supplémentaire",
-        "c6WreathRed": "Diminution du temps de charge de <strong>Flèche florale</strong>"
-    },
-    "elementalResonance": {
-        "SprawlingGreenery": {
-            "cond2ele": "Après avoir déclenché <pyro>Burning</pyro>, <spread>Quicken</spread>, ou <bloom>Bloom</bloom>.",
-            "cond3ele": "Après avoir déclenché <aggravate>Aggravate</aggravate>, <spread>Spread</spread>, <hyperbloom>Hyperbloom</hyperbloom>, ou <burgeon>Burgeon</burgeon"
-        },
-        "EnduringRock": {
-            "hitCond": "Après avoir infligé des DMG aux ennemis tout en étant protégé par un bouclier"
-        }
-    },
-    "page_character_optimize": {
-        "mainStat": {
-            "levelAssTooltip": {
-                "title": "Hypothèse sur le niveau des statistiques principales",
-                "desc": "Fixe la valeur de la stat principale au moins à celle du niveau spécifié. Ne modifie pas les sous-statuts."
-            },
-            "assumptionLvl": {
-                "no": "No Main Stat Lv. Assumption",
-                "lvl": "Supposez que la Stat principale est au moins au niveau Lv. {{lvl}}"
-            },
-            "title": "Filtre Stat principal/Configuration"
-        },
-        "tcGraph": {
-            "vs": "Optimisation graphique Cible vs.",
-            "notSel": "Non sélectionné",
-            "downloadData": "Télécharger les données",
-            "desc": "En utilisant les données du constructeur, un graphique sera généré pour visualiser la cible d'optimisation par rapport à la cible graphique sélectionnée. Le graphique montrera la valeur maximale de la cible d'optimisation pour 0,01 de la cible graphique sélectionnée. L'activation de cette fonction est facultative et ralentira les temps de construction.",
-            "showStatThr": "Show Stat Threshold Line",
-            "generatedBuilds": "Constructions générées",
-            "statReqThr": "Ligne de seuil de l'exigence de statut",
-            "currentBuild": "Construction actuelle",
-            "highlightedBuilds": "Constructions mises en évidence",
-            "buildAlreadyInList": "La construction est déjà dans la liste"
-        },
-        "levelFilter": "Filtre de niveau d'artefact",
-        "allowPartial": "Autoriser les constructions partielles (<5 artefacts)",
-        "constraintFilter": {
-            "title": "Contraintes minimales de construction",
-            "tooltip": "Définir certaines exigences minimales auxquelles les constructions générées doivent se conformer ; par exemple, avoir au moins 140% de recharge en énergie."
-        },
-        "artSetConfig": {
-            "title": "Configuration de l'ensemble d'artefacts",
-            "setEffCond": "Conditionnels à effet de série",
-            "enabled": "Activé",
-            "allowed": "Autorisé",
-            "excluded": "Exclus",
-            "selected": "Sélectionné",
-            "2rainbow": "3-Arc-en-ciel",
-            "4rainbow": "5-Arc-en-ciel",
-            "allowAll2set": "Autoriser tous les 2 sets",
-            "excludeAll2set": "Exclure tous les ensembles de 2",
-            "allowAll4set": "Allow All 4-Set",
-            "excludeAll4set": "Exclut tous les ensembles de 4",
-            "alExRainbow": "<0>Autoriser <1></1></0> / <2>Exclure <1></1></2> Constructions arc-en-ciel",
-            "modal": {
-                "setCond": {
-                    "title": "Effets conditionnels de l'ensemble d'artefacts",
-                    "reset": "Remise à zéro des conditionnels",
-                    "text": "Certains effets d'artefact fournissent des statistiques conditionnelles. Cette fenêtre vous permet de sélectionner ces effets, afin qu'ils puissent contribuer aux statistiques lorsqu'une construction satisfaisant un effet défini est calculée lors de l'optimisation."
-                },
-                "ArtSetFilter": {
-                    "title": "Jeux d'artefacts <1>Autorisés<1></1></1> / <3>Exclus<1></1></3>",
-                    "intro": "Vous pouvez autoriser/exclure les ensembles que vous souhaitez que le constructeur prenne en compte. Dans les exemples suivants, <strong>A</strong> est on-set, et <strong>R</strong> est rainbow(off-set)",
-                    "2set": "<0><0>Exclure<1></1> 2-Set</0></0> exclurait les constructions en 2-Set : <2><0>AA</0>RRR</2> et <4><0>AAA</0>RR</4>.",
-                    "4set": "<0><0>Exclure<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> et <4><0>AAAAA</0></4>.",
-                    "2rain": "<0><0>Exclure<1></1> 3-Arcs-en-ciel</0></0> exclurait les constructions 2-Set + 3-Arcs-en-ciel : <2>AA<1>RRR</1></2> et <4>AAA<1>RR</1></4>.",
-                    "4rain": "<0><0>Exclure<1></1> 5-Arcs-en-ciel</0></0> exclurait les constructions complètes d'arcs-en-ciel : <2><0>RRRRR</0></2>."
-                }
-            }
-        },
-        "buildDropdownDesc": "Diminuer le nombre de builds générés permet de réduire le temps de calcul des builds pour un grand nombre de builds.",
-        "threadDropdownDesc": "L'augmentation du nombre de threads accélérera le temps de construction, mais consommera plus de puissance de l'unité centrale.",
-        "noArtis": "Oups ! Il semble que vous n'ayez pas encore ajouté d'artefacts à GO ! Vous devriez aller sur la page <1>Artéfacts</1> et en ajouter !",
-        "targetSelector": {
-            "selectOptTarget": "Sélectionner une cible d'optimisation",
-            "selectGraphTarget": "Sélectionner une cible graphique",
-            "invalidTarget": "TARGET INVALIDE",
-            "selectBuildTarget": "Sélectionner une cible de contrainte de construction"
-        },
-        "selectTargetFirst": "Sélectionnez d'abord une cible d'optimisation",
-        "generateButton": {
-            "cancel": "Annuler",
-            "generateBuilds": "Générer des Builds"
-        },
-        "removeBuildButton": "Supprimer Construire",
-        "theorycraftButton": "Théorie de l'art",
-        "currentlyEquippedBuild": "Actuellement équipé",
-        "addBuildToList": "Ajouter la construction à la liste",
-        "graphBuildLabel": "Graphique #<1>{{count}}</1>",
-        "excludeArt": {
-            "title_exclude": "Artéfacts exclus",
-            "title_tooltip": "Ajouter des artefacts à la liste d'exclusion de ce personnage. Les artefacts de la liste d'exclusion ne seront pas pris en compte lors de la génération des constructions.",
-            "addExc": "Ajouter l'artefact à la liste d'exclusion de ce personnage",
-            "selExc": "Sélectionner l'artefact à ajouter à la liste d'exclusion de ce personnage",
-            "deSelectExc": "Cliquez sur un artefact pour le supprimer de la liste d'exclusion",
-            "usingNum": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)",
-            "button_txt": "Exclure les artefacts",
-            "excNum": {
-                "one": "<0>{{count}}</0> l'artefact est exclu",
-                "other": "Théorie de la construction"
-            }
-        },
-        "excludeChar": {
-            "title": "Configuration de l'artefact équipé",
-            "modal": {
-                "allow_all": "Ajouter tous les caractères affichés à la liste d'autorisation",
-                "disallow_All": "Supprimer tous les caractères affichés de la liste d'autorisation"
-            },
-            "allowEquip": "Permettre l'utilisation d'objets provenant de",
-            "tooltip": "Ajouter des personnages à la liste d'autorisation de ce personnage. Les personnages de la liste d'autorisation seront pris en compte lors de la génération de la construction. Vous pouvez également basculer entre l'utilisation des artefacts non équipés, votre liste d'autorisation personnalisée et l'utilisation de tous les artefacts.",
-            "chars": "Personnages",
-            "artis": "Artéfacts",
-            "states": {
-                "unequippedOnly": "Sans équipement seulement",
-                "customList": "Liste personnalisée",
-                "all": "Tous les artefacts"
-            },
-            "usingState": "Utilisation",
-            "usingNumTot": {
-                "one": "Utilisation d'artefacts <1>{{arts}}</1> de <3>{{count}}</3> personnage",
-                "other": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)"
-            }
-        },
-        "buildCompleted": "Construction achevée",
-        "notifyTooltip": "Joue un son lorsque les constructions finissent d'être générées. Affiche également un message d'alarme lorsque l'on quitte l'écran.",
-        "bonusStats": {
-            "title": "Bonus Stats"
-        },
-        "build": {
-            "one": "<0>{{count}}</0> Construire",
-            "other": "<0><0>Excluding<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>."
-        },
-        "thread": {
-            "one": "<0>{{count}}</0> File d'attente",
-            "other": "<0><0>Excluding<1></1> 5-Arc-en-ciel</0></0>} exclurait les constructions complètes à 5 arcs-en-ciel : <2><0>RRRRR</0></2>."
-        }
-    },
-    "weapon_ForestRegalia": {
-        "condName": "Après avoir ramassé une feuille de conscience"
-    },
-    "weapon_FruitOfFulfillment": {
-        "stackName": "Effet de cire et de vague"
-    },
-    "weapon_Moonpiercer": {
-        "condName": "Après avoir ramassé une feuille de Revival"
-    },
-    "weapon_SapwoodBlade": {
-        "condName": "Après avoir ramassé une feuille de conscience"
-    },
-    "char_TravelerAnemo": {
-        "p1": "Lame de vent DMG",
-        "c6": "L'ennemi a été touché par <strong>Gust Surge</strong>.",
-        "c4": "Réduction de DMG lors de l'incantation",
-        "initialEleDmg": "Absorption initiale de la coupe DMG",
-        "maxEleDmg": "Absorption maximale de coupe DMG",
-        "stormEleDmg": "Absorption de la tempête initiale DMG",
-        "stormEleMaxDmg": "Max Storm Absorption DMG"
-    },
-    "char_TravelerElectro": {
-        "skill": {
-            "amuletGenAmt": "Nombre d'amulettes d'abondance générées",
-            "absorb": "Après avoir absorbé une amulette d'abondance",
-            "enerRest": {
-                "none": "Pluie d'énergie. par amulette",
-                "over35": "Régénération d'énergie par amulette (plus de 35 % d'énergie)",
-                "under35": "Régénération d'énergie par amulette (en dessous de 35 % d'énergie)"
-            }
-        },
-        "burst": {
-            "3rd": "3e DMG sur le tonnerre tombant",
-            "thunderCd": "CD Falling Thunder"
-        },
-        "passive2": {
-            "enerRech_": "Amulette d'abondance recharge énergétique supplémentaire"
-        },
-        "c2": {
-            "thunderHit": "L'adversaire a été touché par <strong>Tonnerre tombant</strong>"
-        }
-    },
-    "char_TravelerGeo": {
-        "passive2": {
-            "key": "Effondrement du DMG"
-        },
-        "c2": {
-            "key": "Rockcore Meltdown DMG"
-        }
-    },
-    "page_newTab": {
-        "title": "🛑 Nouvel onglet Optimizer détecté 🛑",
-        "p1": "Il semble que vous ayez ouvert Genshin Optimizer dans un autre onglet 💞. GO n'est pas conçu pour fonctionner sur plusieurs onglets 📵 ! Cela peut entraîner :",
-        "symptom": {
-            "1": "Désynchronisation des données entre les onglets 🙃",
-            "2": "Corruption de la base de données 💔",
-            "3": "Mauvais estomac 🤰 et frustration des développeurs de Genshin Optimizer 😡",
-            "4": "Dans de rares cas, la mort ☠️"
-        },
-        "p2": "Nous avons évité cela en vous montrant ce message 📝. Vous avez maintenant le choix entre :",
-        "choice": {
-            "1": "Fermer cet onglet 🔪, et utiliser le nouvel onglet 🆕",
-            "2": "Fermez le nouvel onglet ️, et une fois que vous êtes sûr que c'est le seul et unique onglet restant 🔂, vous pouvez rafraîchir cette page 🔄."
-        },
-        "refresh": "Actualiser la page"
-    },
-    "char_Candace": {
-        "hydroInfusion": "<hydro>Epée, Claymore et Arme à feu Hydro Infusion</hydro>"
-    },
-    "char_Cyno": {
-        "p1Dmg": "Duststalker Bolt DMG",
-        "judication": "Déclenchement de l'effet de jugement",
-        "burstNormalDmgInc": "Attaque normale de Pactworn Pathclearer DMG Inc.",
-        "boltDmgInc": "Duststalker Bolt DMG Inc.",
-        "duringBurst": "Dans l'état <strong>Pactworn Pathclearer</strong>.",
-        "afterBurstOrJudication": "Après avoir utilisé <strong>Rite sacré : Rapidité du loup</strong> ou en déclenchant l'effet Judication",
-        "a1soulfarer_dmg_": "Bonus de DMG du Chasmic Soulfarer"
-    },
-    "char_Nilou": {
-        "skill": {
-            "dance1": "Danse de l'épée 1-Hit DMG",
-            "dance2": "Danse de l'épée 2 coups DMG",
-            "whirl1": "Marches tourbillonnantes DMG à 1 coup",
-            "whirl2": "Marches tourbillonnantes DMG à 2 coups",
-            "wheel": "Roue d'eau DMG",
-            "illusion": "Illusion lumineuse DMG"
-        },
-        "passive1": {
-            "underChaliceEffect": "Sous la prime du Calice d'or",
-            "notDendroHydroTeam": "Conseil : mettez dans votre équipe uniquement des personnages Dendro et Hydro pour voir les conditionnels et les effets supplémentaires.",
-            "condName": "Après avoir pris <dendro>Dendro DMG</dendro> pendant qu'il était affecté par Golden Chalice's Bounty",
-            "bountifulCores": "La réaction de Bloom créera des Bountiful Cores"
-        },
-        "c4": {
-            "condName": "Après le troisième pas de danse de la Pirouette, les adversaires sont touchés."
-        },
-        "c1": {
-            "illusion_dmg_": "Illusion lumineuse Bonus DMG"
-        }
-    },
-    "char_Nahida": {
-        "karmaDmg_": "Purification tri-karma Bonus DMG",
-        "karmaCritRate_": "Tri-Karma Purification CRIT Rate Bonus",
-        "karmaIntervalDec": "Tri-Karma Purification Diminution de l'intervalle de déclenchement",
-        "noBurstEffect": "Indice : aucun effet d'éclatement n'est actif. Activez C1 et/ou ajoutez des coéquipiers <pyro>Pyro</pyro>, <electro>Electro</electro>, et/ou <hydro>Hydro</hydro>.",
-        "partyInBurst": "Fête sur le terrain",
-        "c1Key": "Membres supplémentaires <pyro>Pyro</pyro>, <electro>Electro</electro> et <hydro>Hydro</hydro> pour le bonus de <strong>Shrine of Maya</strong>.",
-        "c2": {
-            "bloomCondName": "L'adversaire est marqué par <strong>la graine de Skandha</strong>",
-            "qasCondName": "Après avoir déclenché <spread>Quicken</spread> <aggravate>Aggravate</aggravate>, ou <spread>Spread</spread> sur l'adversaire marqué par Seeds of Skandha"
-        },
-        "c4CondName": "Opposants affectés par <strong>Les graines de Skandha</strong>",
-        "c6KarmicDmg": "DMG de l'Oblivion karmique"
-    },
-    "artifact_FlowerOfParadiseLost": {
-        "condName": "Après avoir déclenché Bloom, Hyperbloom ou Burgeon"
-    },
-    "char_Faruzan": {
-        "giftCondName": "Affecté par le bénéfice de Prayerful Wind",
-        "a4CondName": "Sous l'effet du Hurricane Guard",
-        "c2DurationInc": "Dazzling Polyhedron Duration Inc.",
-        "c6Arrow": "Applique l'Effondrement sous pression en infligeant des DMG",
-        "baleCondName": "L'adversaire est affecté par le souffle de Vent perfide"
-    },
-    "char_Layla": {
-        "starDmgInc": "Étoile filante Augmentation du DMG",
-        "c1ShieldBonusKey_": "Bonus de la Forteresse de la Fantaisie",
-        "c4CondKey": "Sous l'effet de l'étoile de l'aube",
-        "starDmg_": "Étoile filante Bonus DMG",
-        "slugDmg_": "Bonus DMG de la limace de la lumière des étoiles",
-        "starInterval_": "Intervalle de création des étoiles de nuit"
-    },
-    "char_Wanderer": {
-        "windfavoredState": "Dans l'État <strong>Windfavored</strong> (favorisé par le vent)",
-        "p1": {
-            "pyroCondName": "<strong>Hanega : Song of the Wind</strong> est entré en contact avec <pyro>Pyro</pyro>",
-            "cryoCondName": "<strong>Hanega : Song of the Wind</strong> est entré en contact avec <cryo>Cryo</cryo>"
-        },
-        "p2Dmg": "Wind Arrow DMG",
-        "c1BonusKey": "Wind Arrow DMG Bonus Scaling",
-        "c2CondName": "Différence entre le nombre maximum et le nombre actuel de points Kuugoryoku",
-        "c6Key": "Shugen : The Curtains' Melancholic Sway Mult."
-    },
-    "weapon_ToukabouShigure": {
-        "condName": "L'adversaire est victime de Parasol maudit"
-    },
-    "char_Alhaitham": {
-        "withMirrors": "En possession de miroirs à lumière ciselée",
-        "debateStacks": "Après avoir généré des miroirs à lumière de ciseau",
-        "mirrorsConsumed": "Miroirs consommés après avoir déclenché <strong>Particular Field : Entraves des phénomènes</strong>",
-        "projectionAttack_dmg_": "Attaque par projection Bonus DMG",
-        "excessMirror": "Après avoir généré un Chisel-Light Mirror lorsque leur montant a atteint sa limite",
-        "projectionDmg": "Attaque par projection DMG"
-    },
-    "char_Yaoyao": {
-        "inExplosionAoE": "Après avoir été dans l'AoE d'une explosion de <strong>radis de jade blanc</strong>.",
-        "inLegacy": "Dans l'état Adeptal Legacy",
-        "megaDmg": "Méga Radis DMG",
-        "megaHeal": "Radis méga guérisseur"
-    },
-    "page_error": {
-        "title": "🛑 Une erreur inattendue s'est produite 🛑",
-        "p1.1": "GO a rencontré une erreur inattendue. C'est probablement notre faute, alors aidez-nous à vous aider !",
-        "p1.2": "Voici ce que vous pouvez faire pour résoudre le problème :",
-        "fixes": {
-            "1": "Actualiser la page",
-            "2": "Désactiver toutes les extensions du navigateur et actualiser à nouveau",
-            "3": "Téléchargez votre (vos) base(s) de données ci-dessous et conservez-la en lieu sûr. Cliquez sur le bouton 'Delete ALL GO Data' et téléchargez à nouveau votre (vos) base(s) de données."
-        },
-        "p2": "Si vous avez fait ce qui précède et que vous n'avez toujours pas réussi à revenir ici, veuillez soumettre un rapport sur notre page GitHub Issues, ou sur le canal Bug Reports de notre Discord.",
-        "report": {
-            "1": "Téléchargez votre (vos) DB(s) ci-dessous",
-            "2": "Copier le texte du rapport dans la case ci-dessous",
-            "3": "Cliquez <1>ici</1> pour faire un rapport sur GitHub. Collez le texte dans la description, remplissez les étapes de reproduction, et incluez vos fichiers JSON (vous devrez peut-être les renommer pour qu'ils se terminent par '.txt').",
-            "4": "Ou cliquez <1>ici</1> pour faire un rapport sur Discord. Ouvrez le canal #🐛bug-reports, créez un nouveau fil de discussion et collez le texte dans la boîte de message. Remplissez les étapes de reproduction et téléchargez vos fichiers JSON."
-        },
-        "refresh": "Actualiser la page",
-        "caption": "Images en direct de nos ingénieurs enquêtant sur le problème",
-        "confirmNuke": "Êtes-vous sûr de vouloir supprimer TOUTES les données de GO ? C'est irréversible !",
-        "finishNuke": "Effacement de toutes les données GO. Actualisation de la page.",
-        "nuke": "Supprimer toutes les données GO"
-    },
-    "char_Dehya": {
-        "inFieldAndTakeDmg": "Lorsqu'un personnage actif subit des dégâts dans le champ du Sanctuaire ardent",
-        "field_dmg_": "Bonus DMG du Sanctuaire ardent",
-        "initialHeal": "Guérison initiale",
-        "dotHeal": "Guérison supplémentaire",
-        "critHitDuringBurst": "Après que Poing de Mane enflammé a infligé un Hit CRIT"
-    },
-    "char_Mika": {
-        "inSoulwind": "Dans l'état de Soulwind",
-        "numDetectorStacks": "Détecteur",
-        "incDetectorStacks": "Max. Piles de détecteurs Inc."
-    },
-    "weapon_MailedFlower": {
-        "condName": "Après avoir touché un adversaire avec une compétence élémentaire ou déclenché une réaction élémentaire"
-    },
-    "artifact_NymphsDream": {
-        "condName": "Nymphe en miroir"
-    },
-    "char_Somnia": {
-        "name": "Somalie",
-        "title": "Création de la cognition simulée",
-        "description": "Une combinaison d'un ensemble de concepts. Elle existe dans une variété d'états et de phases. Est-elle vraiment réelle ?",
-        "constellationName": "Mathematica Felina",
-        "auto": {
-            "name": "Boulier astral",
-            "fields": {
-                "normal": {
-                    "0": "<strong><strong>Attaque normale</strong>",
-                    "1": "Effectue jusqu'à 4 attaques consécutives en lançant des perles qui infligent des <electro>DMG électro</electro> à partir de son abaque astral."
-                },
-                "charged": {
-                    "0": "<strong>Attaque chargée</strong>",
-                    "1": "Consomme une certaine quantité d'Endurance pour charger et libérer un flux continu de perles électriques, infligeant des <electro>DMG électriques</electro> à un maximum de 4 cibles toutes les 0,3s.",
-                    "2": "Somnia gagne une résistance à l'interruption et est libre de se déplacer lorsqu'elle utilise son attaque chargée."
-                },
-                "plunging": {
-                    "0": "<strong>Attaque plongeante</strong>",
-                    "1": "Tire des perles d'électricité sur le sol, infligeant des <electro>DMG électro AoE</electro> à l'impact."
-                }
-            },
-            "skillParams": {
-                "0": "1-Hit DMG",
-                "1": "2-Hit DMG",
-                "2": "3-Hit DMG",
-                "3": "4-Hit DMG",
-                "4": "Attaque chargée Flux DMG",
-                "5": "Coût de l'endurance de l'attaque chargée",
-                "6": "Plongeon DMG",
-                "7": "Low/High Plunge DMG (plongement bas/haut)"
-            }
-        },
-        "skill": {
-            "name": "Calculatrice cosmique",
-            "description": {
-                "0": "Somnia condense l'immense énergie de son abaque astral pour créer une explosion qui inflige des <electro>AoE Electro DMG</electro> et crée un sigil autonome au contenu indéfinissable au-dessus de sa tête.",
-                "1": "Le Sigil d'auto-contention lui confère l'effet de superposition de Schrödinger.",
-                "2": "<br/>",
-                "3": "<strong>Schrödinger Superposition</strong>",
-                "4": "Les DMG infligés par les attaques normales et chargées de Somnia sont augmentés en fonction de sa maîtrise des éléments.",
-                "5": "La Superposition de Schrödinger expire après la fin de la durée du Sigil autocontenant ou lorsque Somnia quitte le champ de bataille."
-            },
-            "skillParams": {
-                "0": "Compétence DMG",
-                "1": "Duration",
-                "2": "CD"
-            }
-        },
-        "burst": {
-            "name": "Pattes de Parallaxe",
-            "description": {
-                "0": "Somnia invoque un Cyclone céleste en forme d'étoile autour d'elle, libérant une rafale de <electro>DMG électro</electro> à mesure qu'il s'étend. Le champ s'attarde et inflige des <electro>AoE Electro DMG</electro> aux ennemis qui s'y trouvent toutes les 1s.",
-                "1": "Lorsque Cyclone céleste est actif, la maîtrise élémentaire de Somnia est augmentée de façon multiplicative.",
-                "2": "De plus, lorsque Cyclone céleste est actif, Somnia obtient des statistiques stellaires. Dans cet état, Somnia peut régler son boulier astral sur les modes Multiplication, Addition ou Soustraction, chacun conférant à ses attaques et à Cyclone céleste des améliorations différentes. Un seul mode d'abaque des Statistiques stellaires peut être actif simultanément.",
-                "3": "<br/>",
-                "4": "Modes d'Abacus",
-                "5": [
-                    "<strong>Multiplication</strong> : Dans le Cyclone céleste de Somnia, toutes les armes des personnages maniant une épée, une claymore ou une arme blanche sont infusées d'électricité. Les attaques normales ou chargées dans le champ déclenchent Star Sunder, une explosion électrique coordonnée qui inflige des <electro>DMG électriques AoE</electro> basés sur la maîtrise élémentaire de Somnia. Sunder stellaire peut être déclenché une fois toutes les 1,5s.",
-                    "<strong>Ajout</strong> : L'AoE et le DMG de Cyclone céleste sont augmentés. Lorsqu'elles touchent un ennemi, les attaques normales et chargées de Somnia déclenchent une Supernova qui inflige <electro>AoE Electro DMG</electro> en fonction de sa Maîtrise élémentaire. Cet effet peut être déclenché une fois toutes les 0,75s.",
-                    "<strong>Soustraction</strong> : Cyclone céleste voit son AoE et sa DMG réduites, mais applique l'effet \"Moins de trois\" aux ennemis qui s'y trouvent. L'effet \"Moins de trois\" réduit les RES élémentaires et physiques des ennemis en fonction de la maîtrise élémentaire de Somnia. De plus, les attaques normales et chargées de Somnia infligent des DMG accrus en fonction de sa maîtrise élémentaire."
-                ]
-            },
-            "skillParams": {
-                "0": "Compétence DMG",
-                "1": "Maîtrise des éléments",
-                "2": "DoT Cyclone céleste (Multiplication)",
-                "3": "Le DMG de Star Sunder",
-                "4": "Cyclone céleste DoT (ajout)",
-                "5": "Supernova DMG",
-                "6": "DoT de Cyclone céleste (soustraction)"
-            }
-        },
-        "passive1": {
-            "name": "Calcul rapide",
-            "description": {
-                "0": "Les attaques chargées de Somnia consomment 20% d'endurance en moins et se chargent 20% plus vite."
-            }
-        },
-        "passive2": {
-            "name": "Le génie des maths",
-            "description": {
-                "0": "Pendant la durée de Cyclone céleste, la maîtrise élémentaire de Somnia augmente de 5% pour chaque coup infligé par Cyclone céleste, Soleil des étoiles et Supernova, jusqu'à un maximum de 25%."
-            }
-        },
-        "passive3": {
-            "name": "Itération insomniaque",
-            "description": {
-                "0": "La nuit (18:00 - 6:00), accélère la vitesse de construction de Genshin Optimizer de 10%."
-            }
-        },
-        "constellation1": {
-            "name": "Point décimal",
-            "description": {
-                "0": "Les attaques normales et chargées de Somnia ont 25% de chances d'infliger le double de DMG."
-            }
-        },
-        "constellation2": {
-            "name": "Nombre premier",
-            "description": {
-                "0": "Lorsque Somnia est sous l'effet de la Superposition de Schrödinger, chaque attaque normale ou chargée qui la touche lui donne une pile de Nombre naturel. Lorsque le nombre de piles de nombres naturels est premier, la prochaine attaque normale ou chargée de Somnia reçoit le double de l'augmentation de DMG de la Superposition de Schrödinger."
-            }
-        },
-        "constellation3": {
-            "name": "Série infinie",
-            "description": {
-                "0": "Augmente le niveau de <strong>Pattes de paralaxe</strong> de 3.",
-                "1": "Le niveau maximum de mise à niveau est de 15."
-            }
-        },
-        "constellation4": {
-            "name": "Carré parfait",
-            "description": {
-                "0": "Lorsque Somnia déclenche une réaction électrique, 4 points d'énergie élémentaire lui sont rendus, ainsi qu'à tous les membres du groupe proches dont l'élément est impliqué dans la réaction.",
-                "1": "Cet effet peut se déclencher une fois toutes les 4 secondes."
-            }
-        },
-        "constellation5": {
-            "name": "Coefficient de l'herbe à chat",
-            "description": {
-                "0": "Augmente le niveau de <strong>Calculateur cosmique</strong> de 3.",
-                "1": "Le niveau maximum de mise à niveau est de 15."
-            }
-        },
-        "constellation6": {
-            "name": "Golden Ratio",
-            "description": {
-                "0": "Lorsque l'attaque chargée de Somnia inflige des dégâts, son taux de CRIT et son DMG de CRIT sont augmentés de 3% et 5%, respectivement. Cet effet peut être déclenché une fois toutes les 0.2s et s'empiler jusqu'à 8 fois. Toutes les piles de Ratio d'or sont éliminées 13s après l'obtention de la première pile."
-            }
-        },
-        "c1Key": "Att. normale et chargée DMG Mult.",
-        "superpositionCond": "Sous l'effet de la superposition de Schrödinger",
-        "cycloneActiveCond": "Cyclone céleste est actif",
-        "multCond": "En mode Multiplication",
-        "subCond": "En mode soustraction",
-        "lessThan3Cond": "L'ennemi est affecté par \"Moins de trois\".",
-        "c1Cond": "Point décimal Fréquence de déclenchement",
-        "average": "Moyenne",
-        "always": "Toujours",
-        "c2Cond": "Possède un nombre premier de piles de nombres naturels"
-    },
-    "weapon_QuantumCatalyst": {
-        "name": "Cat-alyseur quantique",
-        "description": "Cette arme de catalyse avancée est imprégnée du mystérieux pouvoir de la mécanique quantique et ressemble à un chat curieux, avec des yeux verts luisants, une queue qui scintille d'énergie électrique et une étincelle occasionnelle qui jaillit entre les oreilles.",
-        "passiveName": "Mewon Meowmentum",
-        "passiveDescription": {
-            "0": "Augmente la recharge d'énergie de <cryo>18%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>6%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>10</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment.",
-            "1": "Augmente la recharge d'énergie de <cryo>22.5%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>7,5%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>12</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment.",
-            "2": "Augmente la recharge d'énergie de <cryo>27%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>9%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>14</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment.",
-            "3": "Augmente la recharge d'énergie de <cryo>31.5%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>10,5%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>16</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment.",
-            "4": "Augmente la recharge d'énergie de <cryo>36%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>12%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>18</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment."
-        }
-    },
-    "char_Baizhu": {
-        "seamlessDendro": "Bouclier sans couture Dendro DMG Absorption",
-        "a4Cond": "Sous l'effet de l'année de la faveur verdoyante",
-        "c2Dmg": "Sprite de Gossamer : Splice DMG",
-        "c2Heal": "Gossamer Sprite : Guérison par épissage"
-    },
-    "char_Kaveh": {
-        "c6Dmg": "DMG de la lumière de Pairidaeza"
-    },
-    "char_Kirara": {
-        "extraCardamom": "Extra Cat Grass Cardamomes",
-        "c4Dmg": "Petite herbe à chat Cardamome DMG"
-    },
-    "weapon_CalamityQueller": {
-        "effectName": "La consommation",
-        "active": "Multiplicateur actif",
-        "inactive": "Multiplicateur hors champ"
-    },
-    "weapon_JadefallsSplendor": {
-        "condName": "Sous l'effet de la Primordial Jade Regalia"
-    },
-    "artifact_GildedDreams": {
-        "overrideSameCond": "Remplacer les coéquipiers du même élément",
-        "overrideOtherCond": "Remplacer les coéquipiers d'autres éléments"
-    },
-    "char_Lynette": {
-        "c6CondName": "Après avoir utilisé l'Enigma Thrust de <strong>Enigmatic Feint</strong>."
-    },
-    "char_Lyney": {
-        "propStacks": "Prop Surplus",
-        "propStacksUsed": "Excédent de prop consommé",
-        "hatDmgInc": "Augmentation du DMG de la frappe pyrotechnique",
-        "a1CondName": "<strong>Flèche de propulsion</strong> consommée HP",
-        "c6Dmg": "Frappe pyrotechnique : DMG répétée"
-    },
-    "char_TravelerHydro": {
-        "dewdropDmgInc": "Augmentation du DMG de la goutte de rosée",
-        "a4CondName": "Pourcentage des HP max consommés par la suffusion",
-        "surgeDmgInc": "Torrent Surge DMG Inc.",
-        "skillCondName": "Dans l'état de suffusion"
-    },
-    "weapon_FinaleOfTheDeep": {
-        "bondCondName": "Après avoir effacé le lien de vie"
-    },
-    "weapon_FlowingPurity": {
-        "bondCondName": "Après avoir effacé le lien de vie"
-    },
-    "weapon_SacrificialJade": {
-        "condOffField": "Le personnage est/avait été hors champ pendant plus de 5 secondes"
-    },
-    "weapon_ScionOfTheBlazingSun": {
-        "condName": "L'adversaire a été touché par une flèche Sunfire.",
-        "dmg": "Flèche de feu de soleil DMG"
-    },
-    "weapon_TalkingStick": {
-        "condName": {
-            "atk_": "Personnage affecté par <pyro>Pyro</pyro>",
-            "dmg_": "Personnage affecté par <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, ou <electro>Electro</electro>"
-        }
-    },
-    "artifact_SongOfDaysPast": {
-        "condName": "Montant de l'effet de nostalgie"
-    },
-    "char_Charlotte": {
-        "c2Cond": "Monsieur Verite a frappé des adversaires",
-        "c4Cond": "L'adversaire est marqué par la Silhouette agile ou l'Impression ciblée."
-    },
-    "char_Freminet": {
-        "frost_dmgMult_": "Multiplicateur DMG Frost",
-        "pressure_dmg_": "Bonus DMG de la Pression d'éclatement",
-        "pressure_critRate_": "Pression d'éclatement Taux Crit"
-    },
-    "char_Furina": {
-        "fanfarePoints": "Fanfare",
-        "memberMult_": "Membres du salon Mult.",
-        "numOffer": "Nombre de personnages ayant offert des HP",
-        "c1Inc": "Augmentation de la fanfare Max",
-        "c1Bonus": "Fanfare sur la distribution",
-        "a4MemberDmg": "Salon Member DMG Bonus",
-        "a4HealInterval": "Intervalle de guérison de la chanteuse aux multiples eaux",
-        "c2Points": "La fanfare au-delà des limites",
-        "c6Healing": "Ousia Guérison continue",
-        "c6Pneuma": "Dans l'alignement des pneumatiques"
-    },
-    "char_Navia": {
-        "skillTotalShardDmg": "Rosula Shardshot Total DMG",
-        "shot_dmg_": "Rosula Shardshot DMG Bonus",
-        "shot_mult_": "Rosula Shardshot Multiplier",
-        "shot_critRate_": "Rosula Shardshot Taux de CRIT",
-        "shot_critDMG_": "Rosula Shardshot CRIT DMG",
-        "chargesCond": "Charges de Crystal Shrapnel consommées",
-        "shotsFired": "Rosula Shardshots tirés",
-        "shotsHitCond": "Rosula Shardshots touché"
-    },
-    "char_Neuvillette": {
-        "a1Cond": "Les anciennes gloires draconiques",
-        "judgmentSpecialMult_": "Jugement équitable Mult.",
-        "judgment_critDMG_": "Jugement équitable CRIT DMG",
-        "currentDmg": "DMG actuel"
-    },
-    "char_Wriothesley": {
-        "rebukeDmg": "Rebuke : Poing de voûte DMG",
-        "a4Cond": "Édit de poursuite",
-        "icicleDmg": "Icicle DMG",
-        "rebuke_critRate_": "Taux de CRIT pour le poing de voltige",
-        "rebuke_critDMG_": "Poing de voûte CRIT DMG",
-        "rebuke_dmg_": "Bonus DMG du poing de voûte"
-    },
-    "weapon_PortablePowerSaw": {
-        "condName": "Symboles du stoïcien consommés"
-    },
-    "weapon_ProspectorsDrill": {
-        "condName": "Les symboles de l'unité consommés"
-    },
-    "weapon_RangeGauge": {
-        "condName": "Les symboles de l'unité consommés"
-    },
-    "weapon_TheDockhandsAssistant": {
-        "condName": "Symboles du stoïcien consommés"
-    },
-    "weapon_UltimateOverlordsMegaMagicSword": {
-        "condName": "Les mélusines ont aidé"
-    },
-    "weapon_Verdict": {
-        "condName": "Joints"
-    },
-    "char_Chevreuse": {
-        "notPyroElectroTeam": "Conseil : mettez dans votre équipe uniquement des personnages <pyro>Pyro</pyro> et <electro>Electro</electro> pour voir les conditionnels et effets",
-        "a4CondName": "Après avoir tiré une Cartouche Surchargée",
-        "c6CondName": "Après avoir été soigné par Tir de suppression rapide à courte portée"
-    },
-    "char_Gaming": {
-        "cloudstrider_critDMG_": "DGT CRIT attaque plongeante « Augure nébuleux »",
-        "cloudstrider_dmg_": "DGT BONUS attaque plongeante « Augure nébuleux »"
-    },
-    "char_Xianyun": {
-        "a4Cond": "Étoiles réunies au crépuscule possède de l'aide adeptale",
-        "c4Heal": "Délectation du millet soin",
-        "wave_critDMG_": "DGT CRIT vague de nuage flottant",
-        "a1Cond": "Penne de Tempête",
-        "c6Cond": "Utilisation de l'échelle céleste"
+        "upload": "Télécharger",
+        "swap": "Échange"
+      },
+      "currentDB": "Base de données actuelle"
+    },
+    "sillyCard": {
+      "desc": "Nous avons emprunté (avec permission) tous les personnages de <strong>Silly Wisher</strong> et les avons intégrés à Genshin Optimizer.",
+      "toggle": {
+        "enabled": "Silly Optimizer activé",
+        "disabled": "Silly Optimizer désactivé"
+      }
     }
+  },
+  "ui": {
+    "pageTitle": "Genshin Optimizer",
+    "tabs": {
+      "artifacts": "Artéfacts",
+      "characters": "Personnages",
+      "tools": "Outils",
+      "weapons": "Armes",
+      "doc": "Docs",
+      "setting": "Paramètres",
+      "scanner": "Scanners"
+    },
+    "social": {
+      "paypal": "Paypal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "unselect": "Désélectionner",
+    "ascending": "Croissant",
+    "descending": "Décroissant",
+    "loading": "Chargement...",
+    "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par HoYoverse",
+    "appVersion": "$t(pageTitle) Version: {{version}}",
+    "error": "Erreur",
+    "reset": "Réinitialisation",
+    "info": "Informations",
+    "inventory": "Inventaire",
+    "close": "Fermer",
+    "sortMap": {
+      "new": "Nouveau",
+      "name": "Nom",
+      "level": "Niveau",
+      "rarity": "Rareté",
+      "efficiency": "Efficacité actuelle",
+      "mefficiency": "Efficacité maximum",
+      "artsetkey": "Set d'artéfact"
+    },
+    "link": {
+      "download": "Lien de téléchargement",
+      "discord": "Lien d'invitation Discord"
+    },
+    "sortBy": "Trier par :",
+    "delete": "Supprimer",
+    "locked": "Verrouillé",
+    "unlocked": "Débloqué",
+    "refinement": "Raffinement {{value}}",
+    "selectlevel": "Sélectionner le niveau",
+    "gender": {
+      "F": "Femme",
+      "M": "Homme"
+    },
+    "statGroupKey": {
+      "basic_stats": "Statistiques de base",
+      "elem_dmg_bonus": "Bonus de DMG élémentaires",
+      "enemy_debuffs": "Atténuation de l'ennemi",
+      "self_res": "Résistances propres",
+      "reaction_dmg_bonus": "Bonus DMG de réaction",
+      "reaction_crit": "Bonus Reaction CRIT",
+      "elem_dmgInc": "Augmentation des dégâts élémentaires",
+      "talent_dmgInc": "Augmentation des dommages causés par les talents",
+      "elem_crit": "Bonus de CRIT élémentaire",
+      "talent_dmg_bonus": "Bonus de talent DMG",
+      "talent_crit": "Talent CRIT Bonuses",
+      "talent_level_boost": "Augmentation du niveau des talents",
+      "base_stat_mod": "Modifications des statuts de base",
+      "stamina_buffs": "Buffs d'endurance",
+      "misc": "Misc. Statistiques"
+    },
+    "sillyPageTitle": "Silly Optimizer"
+  },
+  "char_Eula": {
+    "burstC": {
+      "name": "Lame de fond",
+      "start5": "Commence à 5 stacks",
+      "addStacks": "50% de chance d'obtenir un stack supplémentaire",
+      "dmg": "DGT d'Explosion de Lame de fond",
+      "bonusScaling": "L'échelle des bonus de l'épée des chutes de lumière"
+    },
+    "c1C": {
+      "name": "Consomme les cumuls de <strong>Cœur de glace</strong>",
+      "durationStack": "6s + 6s par stack, jusqu'à 18s"
+    },
+    "passive1": "DGT épée de lumière",
+    "c4C": {
+      "dmgBonus": "Bonus DMG de l'Explosion de l'épée des chutes de lumière"
+    }
+  },
+  "char_Noelle": {
+    "p4cd": "24s, -1s Tous les 4 coups",
+    "c6duration": "15s, +1s par ennemi vaincu, jusqu'à 25s",
+    "c4dmg": "DGT lors de la destruction de l'armure",
+    "qlarger": "Attaque plus large AoE"
+  },
+  "char_Venti": {
+    "addAimed": "DGTs tir visé",
+    "addFullAimed": "DGTs tir visé (Pleine charge)",
+    "upcurrentDuration": "Durée",
+    "regenEner": "Régénère 15 Énergie à Venti lorsque l'effet prend fin",
+    "c6": "Cibles qui prennent les DGTs de <strong>Ode au Vent</strong>",
+    "q": "Régénère 15 d'énergie de l'élément absorbé à chaque personnage de l'équipe.",
+    "c2": {
+      "hit": "Ennemi touché",
+      "launched": "Ennemi projeté"
+    }
+  },
+  "sheet": {
+    "dmg": "DGT",
+    "lessPercentHP": "{{percent}}% PV",
+    "hitOp": {
+      "normal": "Attaque Normale touche des ennemis",
+      "charged": "Attaque Chargée touche des ennemis",
+      "plunging": "Attaque Plongeante touche des ennemis",
+      "skill": "Compétence Élémentaire touche des ennemis",
+      "burst": "Déchaînement Élémentaire touche des ennemis",
+      "geo": "Après avoir infligé <geo>DGT Geo</geo>",
+      "anemo": "Après avoir infligé <anemo>DGT Anemo</anemo>",
+      "hydro": "Après avoir infligé <hydro>DGT Hydro</hydro>",
+      "cryo": "Après avoir infligé des <cryo>DGT Cryo</cryo>",
+      "pyro": "Après avoir infligé des <pyro>DGT Pyro</pyro>",
+      "electro": "Après avoir infligé des <electro>DGT Electro</electro>",
+      "none": "Après avoir touché un adversaire",
+      "normalOrCharged": "Après avoir touché un adversaire avec une attaque normale/chargée",
+      "skillOrBurst": "Après avoir frappé un adversaire avec une compétence/éclatement élémentaire",
+      "crit": "Après avoir infligé un coup de CRIT",
+      "normalChargedOrPlunging": "Après avoir touché un adversaire avec une attaque normale, chargée ou plongeante",
+      "dendro": "Après avoir infligé <dendro>Dendro DMG</dendro>",
+      "normalEle": "Après avoir infligé des DMG élémentaires avec une attaque normale",
+      "ele": "Après avoir infligé des DMG élémentaires",
+      "weakSpot": "Après avoir touché un point faible ennemi avec un tir chargé",
+      "normalChargedSkillBurst": "Après avoir touché un adversaire avec une Att. normale/chargée ou une compétence Ele. Compétence/Burst",
+      "self": "Après avoir été frappé par un adversaire"
+    },
+    "eleAbsor": "Absorption Élémentaire",
+    "absorDot": "DoT d'absorption",
+    "afterUse": {
+      "skill": "Après avoir utilisé la Compétence élémentaire",
+      "burst": "Après avoir utilisé le Déchaînement élémentaire",
+      "skillOrBurst": "Après avoir utilisé Ele. Skill ou Ele. Burst",
+      "skillPress": "Après avoir utilisé Compétence élémentaire (Presse)",
+      "skillHold": "Après avoir utilisé la compétence élémentaire (Maintien)"
+    },
+    "lessEqPercentHP": "HP inférieur ou égal à {{percent}}%",
+    "greaterPercentHP": "HP supérieur à {{percent}}%",
+    "greaterEqPercentHP": "HP supérieur ou égal à {{percent}}%",
+    "lessPercentEnergy": "Énergie inférieure à {{percent}}%",
+    "enemyLessPercentHP": "HP ennemi inférieur à {{percent}}%",
+    "enemyLessEqPercentHP": "HP ennemi inférieur ou égal à {{pourcentage}}%",
+    "enemyGreaterPercentHP": "HP ennemi supérieur à {{percent}}%",
+    "enemyGreaterEqPercentHP": "HP ennemi supérieur ou égal à {{pourcent}}%",
+    "afterDefeatEnemy": "Après avoir vaincu un adversaire",
+    "afterSprint": "Après le sprint",
+    "skillCDRed": "Ele. Réduction du CD de la compétence",
+    "burstCDRed": "Ele. Burst CD Reduction",
+    "triggerCD": "CD déclencheur",
+    "incInterRes": "Résistance accrue à l'interruption",
+    "charges": "Charges",
+    "cooldown": "Refroidissement",
+    "addlCharges": "Frais de compétences supplémentaires",
+    "activeCharField": "Le personnage se trouve dans le champ de la capacité",
+    "opponentsField": "L'adversaire se trouve dans le champ de la capacité",
+    "takeDmg": "Après la prise de DMG",
+    "infusion": {
+      "pyro": "Pyro Infusion",
+      "cryo": "Cryo-perfusion",
+      "anemo": "Infusion d'anémone",
+      "hydro": "Infusion d'eau",
+      "electro": "Électro-perfusion",
+      "dendro": "Infusion de Dendro",
+      "geo": "Géo Infusion"
+    },
+    "effectDuration": {
+      "pyro": "Durée de l'effet Pyro",
+      "cryo": "Durée de l'effet cryogénique",
+      "anemo": "Durée de l'effet Anemo",
+      "hydro": "Durée de l'effet Hydro",
+      "electro": "Durée de l'effet électro",
+      "dendro": "Dendro Effect Duration",
+      "geo": "Durée de l'effet géo"
+    },
+    "durationInc": "Augmentation de la durée",
+    "base": "Base",
+    "stacks": "Piles",
+    "protectedByShield": "Protégé par un bouclier",
+    "protectedByShieldCrystal": "Protégé par un bouclier créé par Crystallize",
+    "staminaDec_": "Diminution de la consommation d'endurance",
+    "dmgAbsorption": {
+      "pyro": "Bouclier Pyro DMG Absorption",
+      "cryo": "Bouclier Cryo DMG Absorption",
+      "anemo": "Bouclier Anemo DMG Absorption",
+      "hydro": "Bouclier Hydro DMG Absorption",
+      "electro": "Bouclier Electro DMG Absorption",
+      "dendro": "Bouclier Dendro DMG Absorption",
+      "geo": "Bouclier Géo DMG Absorption",
+      "none": "Bouclier DMG Absorption",
+      "increase": "Augmentation de l'absorption du bouclier",
+      "max": {
+        "none": "Max Shield DMG Absorption",
+        "pyro": "Max Shield Pyro DMG Absorption",
+        "dendro": "Max Shield Dendro DMG Absorption"
+      }
+    },
+    "addlCharge": "Frais de compétences supplémentaires",
+    "conditional": "Conditionnel",
+    "maxStacks": "Nombre maximal de piles",
+    "1set": "1-Set",
+    "2set": "2-Set",
+    "4set": "4-Set",
+    "activationStam": "Activation Consommation d'endurance",
+    "stamDrain": "Drain d'endurance",
+    "talents": {
+      "auto": "Voiture",
+      "skill": "Compétence",
+      "burst": "Éclatement",
+      "passive": "Passif",
+      "passive1": "A1",
+      "passive2": "A4",
+      "passive3": "Passif",
+      "sprint": "Sprint",
+      "constellation1": "C1",
+      "constellation2": "C2",
+      "constellation3": "C3",
+      "constellation4": "C4",
+      "constellation5": "C5",
+      "constellation6": "C6"
+    },
+    "swirlReaction": {
+      "hydro": "Après avoir déclenché une réaction <hydro>Hydro</hydro> Swirl",
+      "pyro": "Après avoir déclenché une réaction <pyro>Pyro</pyro> Swirl",
+      "electro": "Après avoir déclenché une réaction <electro>Electro</electro> Swirl",
+      "cryo": "Après avoir déclenché une réaction <cryo>Cryo</cryo> Swirl"
+    },
+    "afterReaction": "Après avoir déclenché une réaction élémentaire",
+    "aoeInc": "Augmentation de l'AoE",
+    "elementalReaction": {
+      "hydro": "Après avoir déclenché une <hydro>réaction élémentaire liée à l'hydrogène</hydro>.",
+      "electro": "Après avoir déclenché une <electro>réaction élémentaire liée à l'électricité</electro>.",
+      "shatter": "Après avoir déclenché une réaction élémentaire <shattered>Shatter</shattered>.",
+      "cryo": "Après avoir déclenché une <cryo>réaction élémentaire liée au cryo</cryo>."
+    },
+    "bonusScaling": {
+      "skill_": "Ele. Échelonnement du bonus de compétence",
+      "atkInc": "ATK Inc. Échelonnement des primes",
+      "value": "{{value}}%"
+    },
+    "energy": "L'énergie",
+    "teamBuff": "Équipe Buff",
+    "dmgMult": {
+      "normal": "Att. normal DMG Mult.",
+      "charged": "Att. chargée DMG Mult.",
+      "skill": "Compétence DMG Mult."
+    },
+    "stamRestored": "Endurance retrouvée",
+    "triggerQuota": "Quota de déclenchement",
+    "enemyAffected": {
+      "burningOrPyro": "L'ennemi est affecté par <pyro>Burning</pyro> ou <pyro>Pyro</pyro>",
+      "frozenOrCryo": "L'ennemi est <cryo>Gelé</cryo> ou affecté par <cryo>Cryo</cryo>",
+      "pyroOrElectro": "L'ennemi est affecté par <pyro>Pyro</pyro> ou <electro>Electro</electro>.",
+      "hydroOrCryo": "L'ennemi est affecté par <hydro>Hydro</hydro> ou <cryo>Cryo</cryo>",
+      "hydroOrPyro": "L'ennemi est affecté par <hydro>Hydro</hydro> ou <pyro>Pyro</pyro>",
+      "hydroOrElectro": "L'ennemi est affecté par <hydro>Hydro</hydro> ou <electro>Electro</electro>",
+      "electro": "L'ennemi est affecté par <electro>Electro</electro>",
+      "cryo": "L'ennemi est affecté par <cryo>Cryo</cryo>",
+      "pyro": "L'ennemi est affecté par <pyro>Pyro</pyro>"
+    },
+    "getElementalOrbParticle": "Après avoir ramassé un orbe ou une particule élémentaire",
+    "notProtectedByShield": "S'il n'est pas protégé par un bouclier",
+    "percentCurrentHP": "% de PV actuel",
+    "enerRegenPerHit": "Régénération d'énergie par coup",
+    "interval": "Intervalle",
+    "immuneToElectroCharged": "Immunité aux <electrocharged>Electro-Charged</electrocharged>",
+    "charOffField": "Le caractère est en dehors du terrain",
+    "attackAoeInc": "Attaque plus importante AoE",
+    "charOnField": "Le caractère est sur le terrain",
+    "timeOnField": "Temps passé sur le terrain",
+    "hpChange": "Après les changements de HP",
+    "afterHeal": "Après avoir été guéri",
+    "hits": {
+      "one": "{{count}} Frapper",
+      "other": "{{count}} Coups"
+    },
+    "percentMaxHP": "% Max HP",
+    "stack": {
+      "one": "{{count}} Pile",
+      "other": "HP ennemis inférieurs ou égaux à {{percent}}%"
+    },
+    "seconds": {
+      "one": "{{count}} Deuxième",
+      "other": "HP ennemi supérieur à {{percent}}%"
+    },
+    "uses": {
+      "one": "{{count}} Utiliser",
+      "other": "HP ennemi supérieur ou égal à {{percent}}%"
+    },
+    "opponents": {
+      "one": "{{count}} Opposant",
+      "other": "Après avoir déclenché une </cryo>Relation Cryo{{value}} Réaction élémentaire"
+    },
+    "members": {
+      "one": "{{count}} Membre",
+      "other": "% de PV actuel"
+    },
+    "times": {
+      "one": "{{count}} Temps",
+      "other": "{{count}} fois"
+    },
+    "activeChar": "Caractère actif",
+    "otherHpChange": "Lorsque les PV d'un coéquipier changent",
+    "reactionOp": {
+      "overload": "Après avoir déclenché une réaction de <overloaded>Surcharge</overloaded>"
+    },
+    "afterOverflow": "Le soin a débordé"
+  },
+  "weapon_SongOfBrokenPines": {
+    "name": "Sous les effets de Concert du millénaire - Hymne du drapeau"
+  },
+  "char_KaedeharaKazuha": {
+    "c1": "Utiliser <strong>Coupure de mille feuilles</strong> réinitialise le TdR",
+    "c2": "Dans Vent d'automne",
+    "c6": {
+      "after": "Après avoir utilisé <strong>Véhémence divine</strong> ou <strong>Coupure de mille feuilles</strong>"
+    },
+    "skillPlunge": "Attaque plongeante : Contrôle du chaos"
+  },
+  "char_Rosaria": {
+    "a1": "Après avoir attaqué un ennemi dans le dos",
+    "a4": {
+      "name": "Après avoir utilisé <strong>Sacrement mortel</strong>"
+    }
+  },
+  "char_KamisatoAyaka": {
+    "afterSprintCryo": "Après avoir appliqué <cryo>Cryo</cryo> grâce au sprint",
+    "snowflakeDMG": "DGT Tourbillon givré",
+    "dmgBySnowflake": "L'ennemi a été touché par <strong>École Kamisato : Givre mortel</strong>",
+    "c6Active": "Gracieuseté gelée active"
+  },
+  "weapon_MistsplitterReforged": {
+    "emblem": "Sceau de tranche-brume"
+  },
+  "char_Yoimiya": {
+    "c1": "Après avoir vaincu un ennemi affecté par <strong>Saxifrage Ryuukin</strong>",
+    "c2": "Après avoir infligé <pyro>DGT Pyro CRIT</pyro>",
+    "normPyroInfus": "<pyro>Normal Att. Pyro Infusion</pyro>",
+    "c6Key_": "Flèche flamboyante Mult."
+  },
+  "char_RaidenShogun": {
+    "skill": {
+      "eye": "Œil de jugement orageux actif",
+      "partyCost": "Coût en énergie"
+    },
+    "burst": {
+      "resolves": "Cumuls de résolution",
+      "resolveInitial_": "<electro>Musou no Hitotachi DMG Bonus Scaling</electro",
+      "resolveInfused_": "<electro>Musou Isshin DMG Bonus Scaling</electro>",
+      "burstDmg": "Musou no Hitotachi DMG",
+      "active": "Dans l'état <strong>Musou Isshin</strong>."
+    },
+    "a4": {
+      "enerRest": "Restauration d'énergie bonus de l'<strong>Harmonie d'idéal</strong>",
+      "eleDMG": "Bonus de DGT Électro"
+    },
+    "c4": {
+      "expires": "After the <strong>Musou Isshin</strong> state expires"
+    }
+  },
+  "char_Aloy": {
+    "skill": {
+      "coil": "Bobine",
+      "rush": "Glace précipitée",
+      "rushState": "Temps passé en état de Glace précipitée"
+    },
+    "a1CondName": "Après avoir reçu l'effet d'une bobine",
+    "normCryoInfus": "<cryo>Normal Att. Infusion de cryogénie</cryo>"
+  },
+  "char_KujouSara": {
+    "skill": {
+      "ambush": "Sous l'effet de Tengu Juurai : Embuscade"
+    },
+    "c6": {
+      "electroCritDmg": "L'ATK du personnage a été augmentée par Tengu Juurai"
+    }
+  },
+  "char_SangonomiyaKokomi": {
+    "burst": "En revêtant le vêtement de cérémonie",
+    "c2": "Les personnages possèdent 50% ou moins de leurs PV",
+    "c6": "Après que les attaques normales ou chargées aient soigné un personnage qui a 80% de PV ou plus.",
+    "c2SkillHeal": "<strong>Serment de Kurage</strong> Bonus de guérison",
+    "c2BurstHeal": "<strong>Ascension de Nereid</strong> Bonus de guérison"
+  },
+  "page_home": {
+    "intro": "GO, le calculateur <strong>ultime</strong> pour <3><i>Genshin Impact</i></3>, gardera une trace de votre inventaire d'artefacts, d'armes et de personnages, et vous aidera à créer le meilleur build en fonction de votre façon de jouer et de ce que vous avez.",
+    "quickLinksCard": {
+      "title": "Liens rapides",
+      "buttons": {
+        "tyGuide": {
+          "title": "Youtube Guide Playlist",
+          "tooltip": "Apprendre à utiliser Genshin Optimizer"
+        },
+        "scanners": {
+          "title": "Scanners automatiques",
+          "tooltip": "Programmes tiers qui analysent automatiquement les artefacts du jeu"
+        },
+        "kqm": {
+          "title": "Keqing Mains",
+          "tooltip": "Communauté d'élaboration de théories et de guides"
+        },
+        "devDiscord": {
+          "title": "Genshin Dev Discord",
+          "tooltip": "Communauté de développeurs d'outils Genshin"
+        },
+        "good": {
+          "title": "GOOD Documentation",
+          "tooltip": "Documentation sur le descripteur d'objet ouvert Genshin"
+        },
+        "patchNotes": {
+          "title": "Notes de mise à jour de Genshin Optimizer",
+          "tooltip": "Toutes les notes de patch de GO"
+        }
+      }
+    },
+    "inventoryCard": {
+      "title": "Inventaire GO"
+    },
+    "vidGuideCard": {
+      "title": "Guides vidéo"
+    },
+    "teamCard": {
+      "title": "Rencontrer l'équipe",
+      "jobTitle": {
+        "leadDev": "Développeur principal",
+        "dev": "Développeur",
+        "mod": "Modérateur",
+        "admin": "Administrateur",
+        "translator": "Responsable des traductions",
+        "TC": "TC Correspondant"
+      }
+    }
+  },
+  "page_scanner": {
+    "intro": "<0>Scanners</0><1>Les scanners sont des outils pour Genshin qui peuvent automatiquement analyser les données du jeu à partir de captures d'écran ou directement dans le jeu.</1><2>Voici plusieurs scanners qui ont été testés avec GO.</2><3>Pour charger le fichier exporté, allez sur la page <1>Paramètres</1> et chargez votre fichier dans la section <strong>Chargement de la base de données</strong>.</3>",
+    "ik": {
+      "title": "Inventory Kamera",
+      "p1": "Cette application légère scannera tous les personnages, armes et artefacts de votre inventaire. Suivez les instructions de l'application pour la configurer."
+    },
+    "as": {
+      "title": "AdeptiScanner",
+      "p1": "Scanne tous les artefacts et armes de votre inventaire. Dispose d'un mode de balayage manuel et peut également importer des données depuis <1>Enka.Network</1>.",
+      "p2": "Ce scanner peut également être configuré pour les nouveaux artefacts dans les nouvelles versions du jeu sans nécessiter de mise à jour."
+    },
+    "goodeng": "This app only scans in English and exports to <1>GOOD</1> format.",
+    "tosWarn": "Comme tous les outils qui interagissent indirectement avec le jeu, bien que leur utilisation soit virtuellement indétectable, <1>il y a toujours un risque à les utiliser.</1> La discrétion de l'utilisateur est conseillée.",
+    "tags": {
+      "pc": "PC",
+      "mobile": "Mobile",
+      "ps": "PlayStation",
+      "gameMani": "Contrôle automatique",
+      "materials": "Matériaux",
+      "characters": "Personnages",
+      "weapons": "Armes",
+      "achievements": "Réalisations"
+    },
+    "nb": {
+      "title": "Artiscan",
+      "p1": "Ce scanner en ligne peut capturer la fenêtre de votre jeu, numériser à partir d'une capture d'écran ou numériser à partir d'une vidéo. La capture d'écran ou de vidéo peut être réalisée en plein écran et n'a pas besoin d'être recadrée.",
+      "p2": "Les téléphones portables et les consoles de jeux ne peuvent être scannés qu'à partir de captures d'écran ou de vidéos."
+    },
+    "ak": {
+      "title": "Scanner Akasha",
+      "p1": "Scanne automatiquement les artefacts ainsi que les personnages et les armes. Permet d'exporter les scansions antérieures en conservant un historique dans l'application. Scanne uniquement en anglais.",
+      "p2": "Cette application est également capable d'analyser les réalisations pour <1>Paimon.moe</1> et <1>Seelie.me</1>."
+    },
+    "seelieme": "Cette application peut également scanner des matériaux pour <1>Seelie.me</1>"
+  },
+  "weapon_Akuoumaru": {
+    "party": "Cumul d'énergie d'équipe"
+  },
+  "artifact_ArchaicPetra": {
+    "condName": "Après avoir obtenu un crystal d'une Cristallisation"
+  },
+  "artifact_ViridescentVenerer": {
+    "condName": "Élément Dispersé"
+  },
+  "weapon_CinnabarSpindle": {
+    "name": "L'effet est actif"
+  },
+  "weapon_ElegyForTheEnd": {
+    "condName": "Sous l'effet de Concert du millénaire: Chant d'adieu"
+  },
+  "weapon_MouunsMoon": {
+    "party": "Party energy capacity"
+  },
+  "weapon_ThrillingTalesOfDragonSlayers": {
+    "condName": "Après avoir changé de personnage"
+  },
+  "weapon_WavebreakersFin": {
+    "party": "Party energy capacity"
+  },
+  "artifact_BlizzardStrayer": {
+    "condName": "L'ennemi est",
+    "condCryo": "Affecté Par Cryo",
+    "condFrozen": "Gel"
+  },
+  "artifact_HuskOfOpulentDreams": {
+    "condName": "Curiosité"
+  },
+  "artifact_OceanHuedClam": {
+    "condName": "DGT Max Mousse Marine"
+  },
+  "artifact_ShimenawasReminiscence": {
+    "afterUseEnergy": "Après avoir consommé 15 points d'énergie"
+  },
+  "artifact_TinyMiracle": {
+    "condName": "Après avoir pris des dégats élémentaires"
+  },
+  "char_Albedo": {
+    "blossomCD": "CD des Germes fatals",
+    "blossomDmg_": "Bonus de DGT des Germes fatals",
+    "isotomaOnField": "Aura solaire sur le terrain",
+    "enerPerBlossom": "Energie regénérée par les  Germes fatals",
+    "c2Stacks": "Cumuls consommés de Jugement dernier"
+  },
+  "char_Amber": {
+    "secondArrow": "(seconde flèche)",
+    "critRateBonus": "Bonus de taux CRIT de <strong>Pluie de flèches</strong>",
+    "aoeRangeBonus": "Bonus de zone d'effet de <strong>Pluie de flèches</strong>",
+    "manualDetonationDmg": "DGT de détonation manuelle",
+    "c6CondName": "Après avoir utilisé <strong>Pluie de flèches</strong>"
+  },
+  "char_AratakiItto": {
+    "a1": {
+      "name": "Utilisations consécutives d'Arataki Kesagiri"
+    },
+    "a4": {
+      "dmgInc": "Augmentation des DGT d'Arataki Kesagiri"
+    },
+    "c1": {
+      "initialGain": "Cumuls de Mégaforce superlative gagnés",
+      "timedGain": "Après 1s, les cumuls de Mégaforce superlative sont gagnés toutes les 0,5s pendant 1,5s."
+    },
+    "c4": {
+      "name": "Après la fin de l'état Roi oni maléfique"
+    }
+  },
+  "char_Barbara": {
+    "passive1": {
+      "cond": "Dans la mélodie de <strong>C'est parti pour le show ♪</strong>"
+    },
+    "constellation2": {
+      "cond": "Pendant <strong>C'est parti pour le show ♪</strong>"
+    }
+  },
+  "char_Beidou": {
+    "skillOneHit": "DGT avec 1 coup",
+    "skillTwoHit": "DGT avec 2 coups",
+    "duringBurst": "Brisure d'orage est actif",
+    "tidecallerMaxDmg": "Après avoir déclenché Invocation des marées avec le bonus de DGT maximum",
+    "a4charge": "Réduction du délai avant le déclenchement des attaques chargées",
+    "c4dmg": "DGT Electro de Vengeance étonnante "
+  },
+  "char_Bennett": {
+    "skill": {
+      "lvl1CD": "TdR du niveau 1 de charge",
+      "lvl2CD": "TdR du niveau 2 de charge"
+    },
+    "c4DMG": "DGT d'Enthousiasme éternel",
+    "c6PyroInfusion": "<pyro>Infusion Pyro des Epées à une main, Épées à deux mains et Armes d'Hast</pyro>"
+  },
+  "char_Chongyun": {
+    "infusion": "Infusion cryo pour les épées à une main, les épées à deux mains et les armes d'Hast",
+    "passive2": "DGT de la lame invoquée",
+    "asc4Cond": "L'adversaire a été touché par Lame du chasseur de glace",
+    "constellation1": "Dégats de la lame de glace",
+    "constellation6": "L'ennemi a un pourcentage inférieur de ses PV maximum restants.",
+    "blades": "Lames spirituelles invoquées"
+  },
+  "char_Diluc": {
+    "skillB": {
+      "0": "DGT à 2 coups (renforcé)",
+      "1": "DGT à 3 coups (renforcé)"
+    }
+  },
+  "char_Diona": {
+    "skillDuration": "Durée par Griffe",
+    "holdShield": "Absorption de DGT du bouclier maintenu",
+    "a1shielded": "Le personnage est protégé par <strong>Griffes Cryo</strong>",
+    "holdCryoShield": "Maintien du bouclier Cryo DMG Absorption",
+    "pressShield": "Bouclier de presse Absorption DMG",
+    "pressCryoShield": "Bouclier de presse Cryo DMG Absorption"
+  },
+  "char_Fischl": {
+    "a1Name": "DGT de Foudre divine d'un tir chargé",
+    "a2Name": "DGT de Foudre divine",
+    "c1Name": "DGT d'attaque conjointe",
+    "c4AoeDmg": "Dégats de zone additionnels",
+    "c6OzDmg": "DGT d'attaque coordonnée"
+  },
+  "char_Ganyu": {
+    "a1": {
+      "condName": "Après avoir tiré une flèche de givre",
+      "critRateInc": "Augmentation du taux CRIT des zones de givre"
+    },
+    "c1": {
+      "condName": "L'adversaire a subi les DMG d'une Flèche de givre ou d'une Zone de givre"
+    },
+    "c4": {
+      "lingerDuration": "Durée supplémentaire de l'effet"
+    }
+  },
+  "char_HuTao": {
+    "paramita": {
+      "enter": "Dans l'état <strong>Paramita Papilio</strong>.",
+      "end": "Après la fin de l'état de <strong>Paramita Papilio</strong>."
+    },
+    "constellation2": {
+      "applyBloodBlossom": "Applique l'effet <strong>Bourgeon de prune</strong>"
+    },
+    "constellation4": {
+      "condName": "Après avoir vaincu un ennemi affecté par un <strong>Bourgeon de prune</strong>"
+    },
+    "constellation6": {
+      "condName": "Après que les PV soient tombés en dessous de 25% ou après avoir subi un coup mortel"
+    }
+  },
+  "char_Jean": {
+    "c1CondName": "Compétence élémentaire maintenue pendant plus d'1 seconde",
+    "c1PullSpeed": "Augmentation de la vitesse de traction"
+  },
+  "char_Kaeya": {
+    "c2burstDuration": "15s + 2.5s par adversaire vaincu, jusqu'à +15s"
+  },
+  "char_Keqing": {
+    "c1DMG": "DMG de Force foudroyante",
+    "recast": "Après avoir relancé <strong>Retour des étoiles</strong>"
+  },
+  "char_Klee": {
+    "a1CondName": "Porter une étincelle explosive",
+    "a1CondName2": "La prochaine attaque chargée ne coûte pas d'endurance.",
+    "c2CondName": "L'adversaire a été touché par les mines de <strong>Bombe rebondissante</strong>.",
+    "c6CondName": "Après avoir utilisé Fleur bombardier"
+  },
+  "char_Lisa": {
+    "a4C": "L'adversaire a été touché par <strong>Rose de foudre</strong>.",
+    "c2C": "Charger <strong>Arc fulminant</strong>"
+  },
+  "char_Mona": {
+    "omen": "L'adversaire est affecté par Omen",
+    "hitOp": {
+      "affectedByOmen": "Après avoir touché un adversaire affecté par Omen"
+    },
+    "frozenDuration": "Durée de <shattered>Gel</shattered>",
+    "uponSprint": "Après avoir utilisé Vicissitude"
+  },
+  "char_Ningguang": {
+    "aoeGems": "Les attaques normales infligent des DGT de zone",
+    "starJadeStaminaCost": "L'attaque chargée de Ningguang ne consomme pas d'endurance tant que celle-ci possède des Jades d'étoile",
+    "skillReset": "Le TdR est annulé lorsque ce dernier est brisé, une fois toutes les 6s",
+    "a4toggle": "Après avoir traversé le Paravent d'astrolabe",
+    "c4toggle": "Dans un rayon de 10 mètres du Paravent d'astrolabe",
+    "c6bonus": "Jades d'étoile gagnées"
+  },
+  "char_Qiqi": {
+    "a1C": "Après avoir déclenché une réaction élémentaire sous les effets de <strong>Arcane d'Adepte : Héraut de givre</strong>"
+  },
+  "char_Razor": {
+    "electroSigil": "Sceau électro",
+    "electroSigilAbsorbed": "Énergie régénérée si les sceau électro sont supprimés",
+    "opHitWithClawAndThunder": "L'adversaire a été touché par <strong>Griffe et tonnerre</strong> (Appui simple)",
+    "electroSigilPerProc": "Sceau électro par proc",
+    "soulCompanion": {
+      "1": "Compagnon de l'âme DMG à 1 coup",
+      "2": "Compagnon de l'âme 2-Hit DMG",
+      "3": "Compagnon de l'âme DMG à 3 coups",
+      "4": "Compagnon de l'âme 4 coups DMG"
+    }
+  },
+  "char_Sayu": {
+    "burstHits": "Nombre d'activations de Daruma Muji-Muji",
+    "p2Heal": "Guérison d'un personnage proche",
+    "c1Text": "Le Daruma Muji-Muji ignore les limites de HP et peut simultanément attaquer les adversaires proches et soigner les personnages.",
+    "c2KickPressDmg_": "DGT de Coup de pied Fuufuu après un appui simple",
+    "c2KickDmg_": "DGT de Coup de pied Fuufuu après un appui long",
+    "c2Cond": "Temps passé dans l'état de <strong>Fuufuu Windwheel</strong>.",
+    "c6DarumaDmgInc": "Muji-Muji Daruma DMG Inc.",
+    "c6DarumaHealInc": "Muji-Muji Daruma Heal Inc."
+  },
+  "char_Shenhe": {
+    "quill": "Icy Quill est actif",
+    "c4": "Mantra de givre consommé",
+    "pressQuota": "Quota de déclenchement",
+    "holdQuota": "Maintenir le quota de déclenchement",
+    "pressDuration": "Durée de la presse",
+    "holdDuration": "Durée de maintien"
+  },
+  "char_Thoma": {
+    "a2": "Effondrement foudroyant Augmentation du DMG",
+    "c2": "<strong>Crimson Ooyoroi</strong> Augmentation de la durée",
+    "refreshBarrier": "Après avoir obtenu ou rafraîchi une <strong>Barrière ardente</strong>"
+  },
+  "char_Xiangling": {
+    "afterChili": "Après avoir ramassé le piment de Guoba",
+    "explosionDMG": "DMG d'explosion",
+    "afterGuobaHit": "L'adversaire a été touché par les attaques de Guoba",
+    "duringPyronado": "Pyronado est actif",
+    "c6Exception": "Ceci ne peut pas affecter le DMG du Swing à 1 coup</pyro>, le DMG du Swing à 2 coups</pyro>, ou le DMG de l'Arnaque</pyro>."
+  },
+  "char_Xiao": {
+    "burst": {
+      "lifeDrain_": "Drain de vie",
+      "currentHPPerSec": "(HP/s actuels)",
+      "incJump": "Augmentation considérable de la hauteur de saut",
+      "inBurst": "Sous les effets de <strong>Bane of All Evil</strong>",
+      "stack": "Temps passé dans <strong>Bane of All Evil</strong>"
+    },
+    "skillStack": "Utilisations passées de <strong>Lemniscatic Wind Cycling</strong>."
+  },
+  "char_Xingqiu": {
+    "skillCond": "Protégé par les épées de pluie",
+    "burstCond": "Sous les effets du Rainbow Bladework",
+    "c2Cond": "L'adversaire a été touché par Sword Rain"
+  },
+  "char_Xinyan": {
+    "skill": {
+      "pyroShield": {
+        "1": "Bouclier niveau 1 Pyro DMG Absorption",
+        "2": "Bouclier niveau 2 Pyro DMG Absorption",
+        "3": "Bouclier Niveau 3 Pyro DMG Absorption"
+      }
+    },
+    "p1": {
+      "desc": "Diminue le quota de coups de <strong>Sweeping Fervor</strong> de 1"
+    },
+    "p2": {
+      "activeShield": "Le personnage est protégé par <strong>Sweeping Fervor</strong>."
+    },
+    "c2": {
+      "key_": "<strong>Riff Revolution</strong> Physique DMG CRIT Taux Bonus",
+      "shield": "Forme un bouclier de raves de niveau 3 lorsqu'il est lancé"
+    },
+    "c4": {
+      "swingHit": "L'adversaire a été touché par <pyro>Swing DMG</pyro>"
+    },
+    "c6": {
+      "duringCharge": "Lors de l'exécution d'une attaque chargée"
+    }
+  },
+  "char_YaeMiko": {
+    "c4": "L'adversaire a été touché par la foudre de <strong>Sesshou Sakura</strong>.",
+    "c6": "Sesshou Sakura Ennemi DEF Ignorer"
+  },
+  "char_Yanfei": {
+    "seals": ["0 sceau", "1 joint", "2 joints", "3 joints", "4 joints"],
+    "perSeal": "(par scellé)",
+    "maxSeals": "Nombre maximal de phoques écarlates",
+    "charged": {
+      "0": "0-Seal DMG",
+      "1": "1-Seal DMG",
+      "2": "DMG à 2 scellés",
+      "3": "3 scellés DMG",
+      "4": "DMG à 4 scellés"
+    },
+    "burst": {
+      "grantMax": "Octroie le nombre maximum de sceaux écarlates"
+    },
+    "passive1": {
+      "sealsConsumed": "Sceaux consommés par l'utilisation d'une attaque chargée"
+    },
+    "passive2": {
+      "key": "Œil flamboyant DMG"
+    },
+    "c1": {
+      "sealChargedStam_": "Diminution de la consommation d'endurance de l'attaque chargée"
+    },
+    "c6": {
+      "maxSealInc": "Augmentation du nombre maximal de sceaux écarlates"
+    }
+  },
+  "char_YunJin": {
+    "burst": "Sous les effets de la formation de drapeaux à nuages volants",
+    "a4Inc_": "Augmentation due aux types d'éléments de la partie",
+    "c4": "Après avoir déclenché la réaction Crystallize"
+  },
+  "char_Zhongli": {
+    "skill": {
+      "stele": "Stèle en pierre DMG",
+      "resonance": "Résonance DMG",
+      "maxStele": "Nombre maximal de stèles",
+      "nearShield": "L'ennemi est près du <strong>Bouclier de Jade</strong>"
+    },
+    "p1cond": "Après que le <strong>Bouclier de Jade</strong> a pris des DMG",
+    "c6heal": "Régénération maximale de la santé"
+  },
+  "weapon_AlleyHunter": {
+    "condName": "Temps passé hors du terrain"
+  },
+  "weapon_AmosBow": {
+    "condName": "Durée du vol de la flèche"
+  },
+  "weapon_BlackTassel": {
+    "condName": "L'adversaire est un Slime"
+  },
+  "weapon_Deathmatch": {
+    "condName": "Opposants Près de"
+  },
+  "weapon_DragonspineSpear": {
+    "aoeDmg": "DMG de l'Icicle de givre",
+    "cryoAffectedDmg": "DMG sur les <cryo>Cryo</cryo> adversaires affectés"
+  },
+  "weapon_FerrousShadow": {
+    "condName": "HP atteint le seuil",
+    "resistance": "Augmentation de la résistance à l'interruption des attaques chargées"
+  },
+  "weapon_FreedomSworn": {
+    "sigilsConsumed": "Après avoir consommé Sigils of Rebellion"
+  },
+  "weapon_Frostbearer": {
+    "aoeDmg": "DMG de l'Icicle de givre",
+    "cryoAffectedDmg": "DMG sur les <cryo>Cryo</cryo> adversaires affectés"
+  },
+  "weapon_Hamayumi": {
+    "condName": "L'énergie est à 100%"
+  },
+  "weapon_MemoryOfDust": {
+    "atkEffInc": "Augmentation de l'effet ATK"
+  },
+  "weapon_PolarStar": {
+    "condName": "Ashen Nightstar"
+  },
+  "weapon_SerpentSpine": {
+    "takeMoreDmg": "Augmentation des DMG absorbés"
+  },
+  "weapon_Slingshot": {
+    "condName": "Attaque normale/chargée Touché",
+    "less": "Dans les 0,3 secondes suivant le tir",
+    "more": "Après 0,3 s de tir"
+  },
+  "weapon_SnowTombedStarsilver": {
+    "aoeDmg": "DMG de l'Icicle de givre",
+    "cryoAffectedDmg": "DMG sur les <cryo>Cryo</cryo> adversaires affectés"
+  },
+  "weapon_SummitShaper": {
+    "atkEffInc": "Augmentation de l'effet ATK"
+  },
+  "weapon_TheAlleyFlash": {
+    "condName": "Pas de DMG prise"
+  },
+  "weapon_TheUnforged": {
+    "atkEffInc": "Augmentation de l'effet ATK"
+  },
+  "weapon_TheWidsith": {
+    "aria": "Aria",
+    "interlude": "Interlude",
+    "recitative": "Récitatif"
+  },
+  "weapon_ThunderingPulse": {
+    "condName": "Emblème du Tonnerre"
+  },
+  "weapon_VortexVanquisher": {
+    "atkEffInc": "Augmentation de l'effet ATK"
+  },
+  "artifact_EchoesOfAnOffering": {
+    "mode": "Mode de déclenchement",
+    "avg": "Moyenne",
+    "always": "Toujours"
+  },
+  "char_KamisatoAyato": {
+    "skill": {
+      "unableToAuto": "Impossible d'utiliser les attaques chargées ou plongeantes",
+      "namisenStacks": "Namisen",
+      "shun_dmgInc": "<hydro>Augmentation de la DMG du Shunsuiken</hydro>"
+    },
+    "passive1": {
+      "afterUse": "Les piles de Namisen gagnées après l'utilisation de la compétence",
+      "afterExplode": "Les piles de Namisen gagnées après l'explosion de l'illusion d'eau"
+    },
+    "c1": {
+      "shun_dmg_": "<hydro>Shunsuiken DMG Bonus</hydro"
+    },
+    "c2": {
+      "addlStacks": "Max Namisen Stack Inc."
+    },
+    "c6": {
+      "dmg": "Origine illimitée DMG"
+    }
+  },
+  "char_KukiShinobu": {
+    "a4": {
+      "heal": "Augmentation du soin de compétence élémentaire"
+    },
+    "c4": {
+      "dmg": "DGT de Marque d'herbes tonitruantes"
+    }
+  },
+  "char_Yelan": {
+    "c2": {
+      "dmg": "DGT d'Offert par la maison"
+    },
+    "c4": {
+      "condName": "Nombre d'ennemis marqués par la ligne vitale"
+    },
+    "c6": {
+      "dmg": "DGT de flèches perçantes spéciales"
+    }
+  },
+  "page_character": {
+    "addNew": "Ajouter un personnage",
+    "tabs": {
+      "overview": "Vue d'ensemble",
+      "talent": "Talents",
+      "optimize": "Optimiser",
+      "theorycraft": "La théorie de l'art"
+    },
+    "formulas": "Formules",
+    "calculations": "Calculs",
+    "selectCharacter": "Sélectionner un personnage",
+    "removeCharacter": "Êtes-vous sûr de vouloir supprimer {{value}} ?",
+    "delete": "Supprimer un caractère",
+    "teammates": "Coéquipiers",
+    "hitmode": {
+      "hit": "Non-CRIT Hit DMG",
+      "avgHit": "Avg. DMG",
+      "critHit": "CRIT Hit DMG"
+    },
+    "tabEquip": {
+      "swapWeapon": "Échange d'armes",
+      "swapArt": "Échanger un artefact",
+      "compare": "Comparaison avec la construction actuelle",
+      "unequipArts": "Déséquiper tous les artefacts"
+    },
+    "characterName": "Nom du personnage",
+    "teammate": "Coéquipier {{count}}",
+    "noReaction": "Aucune réaction",
+    "multiTarget": {
+      "title": "Configuration de la cible d'optimisation multiple",
+      "addNewTarget": "Ajouter une cible",
+      "addNewMTarget": "Créer un Multi-Opt",
+      "info1": "Remarque : les cibles de multi-optimisation créées par la communauté peuvent être trouvées dans le <1>GO Discord</1> ou <3>KQM's Multi-Optimization Guide</3>, mais la validité de ces configurations ne peut pas être garantie.",
+      "info2": "Il est de la responsabilité de l'utilisateur de s'assurer que les configurations représentent bien son cas d'utilisation.",
+      "description": "Description",
+      "duplicate": "Duplicata",
+      "target": {
+        "one": "<0>{{count}}</0> Cible",
+        "other": "Ajouter une cible"
+      }
+    },
+    "addStats": {
+      "title": "Configuration de l'ennemi + statistiques bonus",
+      "info": "Vous pouvez utiliser ces champs pour ajouter des buffs/débuffs qui ne sont pas directement pris en charge dans GO, comme les buffs de nourriture, les cartes Abyss ou Superconduct. Veuillez vous référer au <1>Genshin Impact Wiki</1> pour les valeurs spécifiques.",
+      "label": "Nouvelle Stat Bonus"
+    },
+    "tabTheorycraft": {
+      "substatType": {
+        "min": "Utiliser un minimum de rouleaux de substitution",
+        "max": "Utiliser le maximum de rouleaux de sous-produits",
+        "mid": "Utiliser des rouleaux de sous-mat médians"
+      },
+      "maxTotalRolls": "Une construction \"valide\" ne peut avoir qu'un maximum de 45 rouleaux.",
+      "maxRolls": "Ce substat peut avoir un maximum de 30 rouleaux.",
+      "maxRollsMain": "Parce qu'au moins une stat principale a le même attribut, cette sous-stat peut avoir un maximum de {{valeur}} rouleaux.",
+      "distribute": "Distribuer",
+      "compareToggle": {
+        "equipped": "Comparé avec équipé"
+      },
+      "copyDialog": {
+        "title": "Copier les données des armes et artefacts équipés ?"
+      },
+      "kqmsDialog": {
+        "kqmsBtn": "Utiliser KQMS",
+        "title": "Utiliser KQMS?"
+      },
+      "gcsimDialog": {
+        "title": "Export gcsim",
+        "copied": "Copier la config gcsim dans le press-papier."
+      },
+      "substat": {
+        "max": "Max"
+      },
+      "optAlert": {
+        "feasibilty": "Il peut y avoir des substats supplémentaires qui devraient être distribuées aux statistiques sans scaling pour garantir que la solution est réalisable."
+      },
+      "constraint": {
+        "title": "Contrainte de Stat",
+        "add": "Ajouter une Contrainte de Stat"
+      }
+    },
+    "tabTeambuff": {
+      "team_reso": "Résonance de l'équipe",
+      "resonance_tip": "Le groupe doit être composé de 4 personnages pour que la résonance élémentaire prenne effet."
+    },
+    "showingNum": {
+      "one": "Afficher <1>{{count}}</1> sur {{value}} Caractère",
+      "other": "Formules"
+    }
+  },
+  "page_weapon": {
+    "edit": "Modifier l'arme",
+    "weaponName": "Nom de l'arme",
+    "removeWeapon": "Êtes-vous sûr de vouloir supprimer {{value}} ?",
+    "addWeapon": "Ajouter une nouvelle arme",
+    "showingNum": {
+      "one": "Afficher <1>{{count}}</1> sur {{value}} Arme",
+      "other": "Utiliser les rouleaux de sous-statut médians"
+    },
+    "cantDeleteLock": "Impossible de supprimer l'arme car elle est verrouillée"
+  },
+  "weapon_AquaSimulacra": {
+    "condName": "Opposants à proximité"
+  },
+  "weapon_FadingTwilight": {
+    "states": {
+      "evengleam": "Evengleam",
+      "afterglow": "Lueur d'espoir",
+      "dawnblaze": "L'aurore"
+    },
+    "condName": "État actuel"
+  },
+  "weapon_HaranGeppakuFutsu": {
+    "consumed": "Piles de Wavespike consommées"
+  },
+  "char_Collei": {
+    "sproutDmg": "DGT de Germe",
+    "miniAnbarDmg": "DGT de Cuilein-Anbar miniature"
+  },
+  "char_Dori": {
+    "c2MultiplierKey_": "Multiplicateur de Franchise spéciale",
+    "c2DmgKey": "DGT de Franchise spéciale",
+    "c4ConnectedBelowHp": "Personnage relié au djinn et sous 50% PV",
+    "c4ConnectedBelowEner": "Personnage relié au djinn et sous 50% d'énergie"
+  },
+  "char_ShikanoinHeizou": {
+    "takingField": "Après être arrivé sur le terrain"
+  },
+  "char_Tighnari": {
+    "p1Cond": "Après avoir tiré une <strong>Flèche florale</strong>",
+    "c4ReactCond": "Après que <strong>Tanglevine Shaft</strong> a déclenché une réaction",
+    "c6DmgKey": "DGT de flèche fleuronnée supplémentaire",
+    "c6WreathRed": "Diminution du temps de charge de <strong>Flèche florale</strong>"
+  },
+  "elementalResonance": {
+    "SprawlingGreenery": {
+      "cond2ele": "Après avoir déclenché <pyro>Burning</pyro>, <spread>Quicken</spread>, ou <bloom>Bloom</bloom>.",
+      "cond3ele": "Après avoir déclenché <aggravate>Aggravate</aggravate>, <spread>Spread</spread>, <hyperbloom>Hyperbloom</hyperbloom>, ou <burgeon>Burgeon</burgeon"
+    },
+    "EnduringRock": {
+      "hitCond": "Après avoir infligé des DMG aux ennemis tout en étant protégé par un bouclier"
+    }
+  },
+  "page_character_optimize": {
+    "mainStat": {
+      "levelAssTooltip": {
+        "title": "Hypothèse sur le niveau des statistiques principales",
+        "desc": "Fixe la valeur de la stat principale au moins à celle du niveau spécifié. Ne modifie pas les sous-statuts."
+      },
+      "assumptionLvl": {
+        "no": "No Main Stat Lv. Assumption",
+        "lvl": "Supposez que la Stat principale est au moins au niveau Lv. {{lvl}}"
+      },
+      "title": "Filtre Stat principal/Configuration"
+    },
+    "tcGraph": {
+      "vs": "Optimisation graphique Cible vs.",
+      "notSel": "Non sélectionné",
+      "downloadData": "Télécharger les données",
+      "desc": "En utilisant les données du constructeur, un graphique sera généré pour visualiser la cible d'optimisation par rapport à la cible graphique sélectionnée. Le graphique montrera la valeur maximale de la cible d'optimisation pour 0,01 de la cible graphique sélectionnée. L'activation de cette fonction est facultative et ralentira les temps de construction.",
+      "showStatThr": "Show Stat Threshold Line",
+      "generatedBuilds": "Constructions générées",
+      "statReqThr": "Ligne de seuil de l'exigence de statut",
+      "currentBuild": "Construction actuelle",
+      "highlightedBuilds": "Constructions mises en évidence",
+      "buildAlreadyInList": "La construction est déjà dans la liste"
+    },
+    "levelFilter": "Filtre de niveau d'artefact",
+    "allowPartial": "Autoriser les constructions partielles (<5 artefacts)",
+    "constraintFilter": {
+      "title": "Contraintes minimales de construction",
+      "tooltip": "Définir certaines exigences minimales auxquelles les constructions générées doivent se conformer ; par exemple, avoir au moins 140% de recharge en énergie."
+    },
+    "artSetConfig": {
+      "title": "Configuration de l'ensemble d'artefacts",
+      "setEffCond": "Conditionnels à effet de série",
+      "enabled": "Activé",
+      "allowed": "Autorisé",
+      "excluded": "Exclus",
+      "selected": "Sélectionné",
+      "2rainbow": "3-Arc-en-ciel",
+      "4rainbow": "5-Arc-en-ciel",
+      "allowAll2set": "Autoriser tous les 2 sets",
+      "excludeAll2set": "Exclure tous les ensembles de 2",
+      "allowAll4set": "Allow All 4-Set",
+      "excludeAll4set": "Exclut tous les ensembles de 4",
+      "alExRainbow": "<0>Autoriser <1></1></0> / <2>Exclure <1></1></2> Constructions arc-en-ciel",
+      "modal": {
+        "setCond": {
+          "title": "Effets conditionnels de l'ensemble d'artefacts",
+          "reset": "Remise à zéro des conditionnels",
+          "text": "Certains effets d'artefact fournissent des statistiques conditionnelles. Cette fenêtre vous permet de sélectionner ces effets, afin qu'ils puissent contribuer aux statistiques lorsqu'une construction satisfaisant un effet défini est calculée lors de l'optimisation."
+        },
+        "ArtSetFilter": {
+          "title": "Jeux d'artefacts <1>Autorisés<1></1></1> / <3>Exclus<1></1></3>",
+          "intro": "Vous pouvez autoriser/exclure les ensembles que vous souhaitez que le constructeur prenne en compte. Dans les exemples suivants, <strong>A</strong> est on-set, et <strong>R</strong> est rainbow(off-set)",
+          "2set": "<0><0>Exclure<1></1> 2-Set</0></0> exclurait les constructions en 2-Set : <2><0>AA</0>RRR</2> et <4><0>AAA</0>RR</4>.",
+          "4set": "<0><0>Exclure<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> et <4><0>AAAAA</0></4>.",
+          "2rain": "<0><0>Exclure<1></1> 3-Arcs-en-ciel</0></0> exclurait les constructions 2-Set + 3-Arcs-en-ciel : <2>AA<1>RRR</1></2> et <4>AAA<1>RR</1></4>.",
+          "4rain": "<0><0>Exclure<1></1> 5-Arcs-en-ciel</0></0> exclurait les constructions complètes d'arcs-en-ciel : <2><0>RRRRR</0></2>."
+        }
+      }
+    },
+    "buildDropdownDesc": "Diminuer le nombre de builds générés permet de réduire le temps de calcul des builds pour un grand nombre de builds.",
+    "threadDropdownDesc": "L'augmentation du nombre de threads accélérera le temps de construction, mais consommera plus de puissance de l'unité centrale.",
+    "noArtis": "Oups ! Il semble que vous n'ayez pas encore ajouté d'artefacts à GO ! Vous devriez aller sur la page <1>Artéfacts</1> et en ajouter !",
+    "targetSelector": {
+      "selectOptTarget": "Sélectionner une cible d'optimisation",
+      "selectGraphTarget": "Sélectionner une cible graphique",
+      "invalidTarget": "TARGET INVALIDE",
+      "selectBuildTarget": "Sélectionner une cible de contrainte de construction"
+    },
+    "selectTargetFirst": "Sélectionnez d'abord une cible d'optimisation",
+    "generateButton": {
+      "cancel": "Annuler",
+      "generateBuilds": "Générer des Builds"
+    },
+    "removeBuildButton": "Supprimer Construire",
+    "theorycraftButton": "Théorie de l'art",
+    "currentlyEquippedBuild": "Actuellement équipé",
+    "addBuildToList": "Ajouter la construction à la liste",
+    "graphBuildLabel": "Graphique #<1>{{count}}</1>",
+    "excludeArt": {
+      "title_exclude": "Artéfacts exclus",
+      "title_tooltip": "Ajouter des artefacts à la liste d'exclusion de ce personnage. Les artefacts de la liste d'exclusion ne seront pas pris en compte lors de la génération des constructions.",
+      "addExc": "Ajouter l'artefact à la liste d'exclusion de ce personnage",
+      "selExc": "Sélectionner l'artefact à ajouter à la liste d'exclusion de ce personnage",
+      "deSelectExc": "Cliquez sur un artefact pour le supprimer de la liste d'exclusion",
+      "usingNum": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)",
+      "button_txt": "Exclure les artefacts",
+      "excNum": {
+        "one": "<0>{{count}}</0> l'artefact est exclu",
+        "other": "Théorie de la construction"
+      }
+    },
+    "excludeChar": {
+      "title": "Configuration de l'artefact équipé",
+      "modal": {
+        "allow_all": "Ajouter tous les caractères affichés à la liste d'autorisation",
+        "disallow_All": "Supprimer tous les caractères affichés de la liste d'autorisation"
+      },
+      "allowEquip": "Permettre l'utilisation d'objets provenant de",
+      "tooltip": "Ajouter des personnages à la liste d'autorisation de ce personnage. Les personnages de la liste d'autorisation seront pris en compte lors de la génération de la construction. Vous pouvez également basculer entre l'utilisation des artefacts non équipés, votre liste d'autorisation personnalisée et l'utilisation de tous les artefacts.",
+      "chars": "Personnages",
+      "artis": "Artéfacts",
+      "states": {
+        "unequippedOnly": "Sans équipement seulement",
+        "customList": "Liste personnalisée",
+        "all": "Tous les artefacts"
+      },
+      "usingState": "Utilisation",
+      "usingNumTot": {
+        "one": "Utilisation d'artefacts <1>{{arts}}</1> de <3>{{count}}</3> personnage",
+        "other": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)"
+      }
+    },
+    "buildCompleted": "Construction achevée",
+    "notifyTooltip": "Joue un son lorsque les constructions finissent d'être générées. Affiche également un message d'alarme lorsque l'on quitte l'écran.",
+    "bonusStats": {
+      "title": "Bonus Stats"
+    },
+    "build": {
+      "one": "<0>{{count}}</0> Construire",
+      "other": "<0><0>Excluding<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>."
+    },
+    "thread": {
+      "one": "<0>{{count}}</0> File d'attente",
+      "other": "<0><0>Excluding<1></1> 5-Arc-en-ciel</0></0>} exclurait les constructions complètes à 5 arcs-en-ciel : <2><0>RRRRR</0></2>."
+    }
+  },
+  "weapon_ForestRegalia": {
+    "condName": "Après avoir ramassé une feuille de conscience"
+  },
+  "weapon_FruitOfFulfillment": {
+    "stackName": "Effet de cire et de vague"
+  },
+  "weapon_Moonpiercer": {
+    "condName": "Après avoir ramassé une feuille de Revival"
+  },
+  "weapon_SapwoodBlade": {
+    "condName": "Après avoir ramassé une feuille de conscience"
+  },
+  "char_TravelerAnemo": {
+    "p1": "Lame de vent DMG",
+    "c6": "L'ennemi a été touché par <strong>Gust Surge</strong>.",
+    "c4": "Réduction de DMG lors de l'incantation",
+    "initialEleDmg": "Absorption initiale de la coupe DMG",
+    "maxEleDmg": "Absorption maximale de coupe DMG",
+    "stormEleDmg": "Absorption de la tempête initiale DMG",
+    "stormEleMaxDmg": "Max Storm Absorption DMG"
+  },
+  "char_TravelerElectro": {
+    "skill": {
+      "amuletGenAmt": "Nombre d'amulettes d'abondance générées",
+      "absorb": "Après avoir absorbé une amulette d'abondance",
+      "enerRest": {
+        "none": "Pluie d'énergie. par amulette",
+        "over35": "Régénération d'énergie par amulette (plus de 35 % d'énergie)",
+        "under35": "Régénération d'énergie par amulette (en dessous de 35 % d'énergie)"
+      }
+    },
+    "burst": {
+      "3rd": "3e DMG sur le tonnerre tombant",
+      "thunderCd": "CD Falling Thunder"
+    },
+    "passive2": {
+      "enerRech_": "Amulette d'abondance recharge énergétique supplémentaire"
+    },
+    "c2": {
+      "thunderHit": "L'adversaire a été touché par <strong>Tonnerre tombant</strong>"
+    }
+  },
+  "char_TravelerGeo": {
+    "passive2": {
+      "key": "Effondrement du DMG"
+    },
+    "c2": {
+      "key": "Rockcore Meltdown DMG"
+    }
+  },
+  "page_newTab": {
+    "title": "🛑 Nouvel onglet Optimizer détecté 🛑",
+    "p1": "Il semble que vous ayez ouvert Genshin Optimizer dans un autre onglet 💞. GO n'est pas conçu pour fonctionner sur plusieurs onglets 📵 ! Cela peut entraîner :",
+    "symptom": {
+      "1": "Désynchronisation des données entre les onglets 🙃",
+      "2": "Corruption de la base de données 💔",
+      "3": "Mauvais estomac 🤰 et frustration des développeurs de Genshin Optimizer 😡",
+      "4": "Dans de rares cas, la mort ☠️"
+    },
+    "p2": "Nous avons évité cela en vous montrant ce message 📝. Vous avez maintenant le choix entre :",
+    "choice": {
+      "1": "Fermer cet onglet 🔪, et utiliser le nouvel onglet 🆕",
+      "2": "Fermez le nouvel onglet ️, et une fois que vous êtes sûr que c'est le seul et unique onglet restant 🔂, vous pouvez rafraîchir cette page 🔄."
+    },
+    "refresh": "Actualiser la page"
+  },
+  "char_Candace": {
+    "hydroInfusion": "<hydro>Epée, Claymore et Arme à feu Hydro Infusion</hydro>"
+  },
+  "char_Cyno": {
+    "p1Dmg": "Duststalker Bolt DMG",
+    "judication": "Déclenchement de l'effet de jugement",
+    "burstNormalDmgInc": "Attaque normale de Pactworn Pathclearer DMG Inc.",
+    "boltDmgInc": "Duststalker Bolt DMG Inc.",
+    "duringBurst": "Dans l'état <strong>Pactworn Pathclearer</strong>.",
+    "afterBurstOrJudication": "Après avoir utilisé <strong>Rite sacré : Rapidité du loup</strong> ou en déclenchant l'effet Judication",
+    "a1soulfarer_dmg_": "Bonus de DMG du Chasmic Soulfarer"
+  },
+  "char_Nilou": {
+    "skill": {
+      "dance1": "Danse de l'épée 1-Hit DMG",
+      "dance2": "Danse de l'épée 2 coups DMG",
+      "whirl1": "Marches tourbillonnantes DMG à 1 coup",
+      "whirl2": "Marches tourbillonnantes DMG à 2 coups",
+      "wheel": "Roue d'eau DMG",
+      "illusion": "Illusion lumineuse DMG"
+    },
+    "passive1": {
+      "underChaliceEffect": "Sous la prime du Calice d'or",
+      "notDendroHydroTeam": "Conseil : mettez dans votre équipe uniquement des personnages Dendro et Hydro pour voir les conditionnels et les effets supplémentaires.",
+      "condName": "Après avoir pris <dendro>Dendro DMG</dendro> pendant qu'il était affecté par Golden Chalice's Bounty",
+      "bountifulCores": "La réaction de Bloom créera des Bountiful Cores"
+    },
+    "c4": {
+      "condName": "Après le troisième pas de danse de la Pirouette, les adversaires sont touchés."
+    },
+    "c1": {
+      "illusion_dmg_": "Illusion lumineuse Bonus DMG"
+    }
+  },
+  "char_Nahida": {
+    "karmaDmg_": "Purification tri-karma Bonus DMG",
+    "karmaCritRate_": "Tri-Karma Purification CRIT Rate Bonus",
+    "karmaIntervalDec": "Tri-Karma Purification Diminution de l'intervalle de déclenchement",
+    "noBurstEffect": "Indice : aucun effet d'éclatement n'est actif. Activez C1 et/ou ajoutez des coéquipiers <pyro>Pyro</pyro>, <electro>Electro</electro>, et/ou <hydro>Hydro</hydro>.",
+    "partyInBurst": "Fête sur le terrain",
+    "c1Key": "Membres supplémentaires <pyro>Pyro</pyro>, <electro>Electro</electro> et <hydro>Hydro</hydro> pour le bonus de <strong>Shrine of Maya</strong>.",
+    "c2": {
+      "bloomCondName": "L'adversaire est marqué par <strong>la graine de Skandha</strong>",
+      "qasCondName": "Après avoir déclenché <spread>Quicken</spread> <aggravate>Aggravate</aggravate>, ou <spread>Spread</spread> sur l'adversaire marqué par Seeds of Skandha"
+    },
+    "c4CondName": "Opposants affectés par <strong>Les graines de Skandha</strong>",
+    "c6KarmicDmg": "DMG de l'Oblivion karmique"
+  },
+  "artifact_FlowerOfParadiseLost": {
+    "condName": "Après avoir déclenché Bloom, Hyperbloom ou Burgeon"
+  },
+  "char_Faruzan": {
+    "giftCondName": "Affecté par le bénéfice de Prayerful Wind",
+    "a4CondName": "Sous l'effet du Hurricane Guard",
+    "c2DurationInc": "Dazzling Polyhedron Duration Inc.",
+    "c6Arrow": "Applique l'Effondrement sous pression en infligeant des DMG",
+    "baleCondName": "L'adversaire est affecté par le souffle de Vent perfide"
+  },
+  "char_Layla": {
+    "starDmgInc": "Étoile filante Augmentation du DMG",
+    "c1ShieldBonusKey_": "Bonus de la Forteresse de la Fantaisie",
+    "c4CondKey": "Sous l'effet de l'étoile de l'aube",
+    "starDmg_": "Étoile filante Bonus DMG",
+    "slugDmg_": "Bonus DMG de la limace de la lumière des étoiles",
+    "starInterval_": "Intervalle de création des étoiles de nuit"
+  },
+  "char_Wanderer": {
+    "windfavoredState": "Dans l'État <strong>Windfavored</strong> (favorisé par le vent)",
+    "p1": {
+      "pyroCondName": "<strong>Hanega : Song of the Wind</strong> est entré en contact avec <pyro>Pyro</pyro>",
+      "cryoCondName": "<strong>Hanega : Song of the Wind</strong> est entré en contact avec <cryo>Cryo</cryo>"
+    },
+    "p2Dmg": "Wind Arrow DMG",
+    "c1BonusKey": "Wind Arrow DMG Bonus Scaling",
+    "c2CondName": "Différence entre le nombre maximum et le nombre actuel de points Kuugoryoku",
+    "c6Key": "Shugen : The Curtains' Melancholic Sway Mult."
+  },
+  "weapon_ToukabouShigure": {
+    "condName": "L'adversaire est victime de Parasol maudit"
+  },
+  "char_Alhaitham": {
+    "withMirrors": "En possession de miroirs à lumière ciselée",
+    "debateStacks": "Après avoir généré des miroirs à lumière de ciseau",
+    "mirrorsConsumed": "Miroirs consommés après avoir déclenché <strong>Particular Field : Entraves des phénomènes</strong>",
+    "projectionAttack_dmg_": "Attaque par projection Bonus DMG",
+    "excessMirror": "Après avoir généré un Chisel-Light Mirror lorsque leur montant a atteint sa limite",
+    "projectionDmg": "Attaque par projection DMG"
+  },
+  "char_Yaoyao": {
+    "inExplosionAoE": "Après avoir été dans l'AoE d'une explosion de <strong>radis de jade blanc</strong>.",
+    "inLegacy": "Dans l'état Adeptal Legacy",
+    "megaDmg": "Méga Radis DMG",
+    "megaHeal": "Radis méga guérisseur"
+  },
+  "page_error": {
+    "title": "🛑 Une erreur inattendue s'est produite 🛑",
+    "p1.1": "GO a rencontré une erreur inattendue. C'est probablement notre faute, alors aidez-nous à vous aider !",
+    "p1.2": "Voici ce que vous pouvez faire pour résoudre le problème :",
+    "fixes": {
+      "1": "Actualiser la page",
+      "2": "Désactiver toutes les extensions du navigateur et actualiser à nouveau",
+      "3": "Téléchargez votre (vos) base(s) de données ci-dessous et conservez-la en lieu sûr. Cliquez sur le bouton 'Delete ALL GO Data' et téléchargez à nouveau votre (vos) base(s) de données."
+    },
+    "p2": "Si vous avez fait ce qui précède et que vous n'avez toujours pas réussi à revenir ici, veuillez soumettre un rapport sur notre page GitHub Issues, ou sur le canal Bug Reports de notre Discord.",
+    "report": {
+      "1": "Téléchargez votre (vos) DB(s) ci-dessous",
+      "2": "Copier le texte du rapport dans la case ci-dessous",
+      "3": "Cliquez <1>ici</1> pour faire un rapport sur GitHub. Collez le texte dans la description, remplissez les étapes de reproduction, et incluez vos fichiers JSON (vous devrez peut-être les renommer pour qu'ils se terminent par '.txt').",
+      "4": "Ou cliquez <1>ici</1> pour faire un rapport sur Discord. Ouvrez le canal #🐛bug-reports, créez un nouveau fil de discussion et collez le texte dans la boîte de message. Remplissez les étapes de reproduction et téléchargez vos fichiers JSON."
+    },
+    "refresh": "Actualiser la page",
+    "caption": "Images en direct de nos ingénieurs enquêtant sur le problème",
+    "confirmNuke": "Êtes-vous sûr de vouloir supprimer TOUTES les données de GO ? C'est irréversible !",
+    "finishNuke": "Effacement de toutes les données GO. Actualisation de la page.",
+    "nuke": "Supprimer toutes les données GO"
+  },
+  "char_Dehya": {
+    "inFieldAndTakeDmg": "Lorsqu'un personnage actif subit des dégâts dans le champ du Sanctuaire ardent",
+    "field_dmg_": "Bonus DMG du Sanctuaire ardent",
+    "initialHeal": "Guérison initiale",
+    "dotHeal": "Guérison supplémentaire",
+    "critHitDuringBurst": "Après que Poing de Mane enflammé a infligé un Hit CRIT"
+  },
+  "char_Mika": {
+    "inSoulwind": "Dans l'état de Soulwind",
+    "numDetectorStacks": "Détecteur",
+    "incDetectorStacks": "Max. Piles de détecteurs Inc."
+  },
+  "weapon_MailedFlower": {
+    "condName": "Après avoir touché un adversaire avec une compétence élémentaire ou déclenché une réaction élémentaire"
+  },
+  "artifact_NymphsDream": {
+    "condName": "Nymphe en miroir"
+  },
+  "char_Somnia": {
+    "name": "Somalie",
+    "title": "Création de la cognition simulée",
+    "description": "Une combinaison d'un ensemble de concepts. Elle existe dans une variété d'états et de phases. Est-elle vraiment réelle ?",
+    "constellationName": "Mathematica Felina",
+    "auto": {
+      "name": "Boulier astral",
+      "fields": {
+        "normal": {
+          "0": "<strong><strong>Attaque normale</strong>",
+          "1": "Effectue jusqu'à 4 attaques consécutives en lançant des perles qui infligent des <electro>DMG électro</electro> à partir de son abaque astral."
+        },
+        "charged": {
+          "0": "<strong>Attaque chargée</strong>",
+          "1": "Consomme une certaine quantité d'Endurance pour charger et libérer un flux continu de perles électriques, infligeant des <electro>DMG électriques</electro> à un maximum de 4 cibles toutes les 0,3s.",
+          "2": "Somnia gagne une résistance à l'interruption et est libre de se déplacer lorsqu'elle utilise son attaque chargée."
+        },
+        "plunging": {
+          "0": "<strong>Attaque plongeante</strong>",
+          "1": "Tire des perles d'électricité sur le sol, infligeant des <electro>DMG électro AoE</electro> à l'impact."
+        }
+      },
+      "skillParams": {
+        "0": "1-Hit DMG",
+        "1": "2-Hit DMG",
+        "2": "3-Hit DMG",
+        "3": "4-Hit DMG",
+        "4": "Attaque chargée Flux DMG",
+        "5": "Coût de l'endurance de l'attaque chargée",
+        "6": "Plongeon DMG",
+        "7": "Low/High Plunge DMG (plongement bas/haut)"
+      }
+    },
+    "skill": {
+      "name": "Calculatrice cosmique",
+      "description": {
+        "0": "Somnia condense l'immense énergie de son abaque astral pour créer une explosion qui inflige des <electro>AoE Electro DMG</electro> et crée un sigil autonome au contenu indéfinissable au-dessus de sa tête.",
+        "1": "Le Sigil d'auto-contention lui confère l'effet de superposition de Schrödinger.",
+        "2": "<br/>",
+        "3": "<strong>Schrödinger Superposition</strong>",
+        "4": "Les DMG infligés par les attaques normales et chargées de Somnia sont augmentés en fonction de sa maîtrise des éléments.",
+        "5": "La Superposition de Schrödinger expire après la fin de la durée du Sigil autocontenant ou lorsque Somnia quitte le champ de bataille."
+      },
+      "skillParams": {
+        "0": "Compétence DMG",
+        "1": "Duration",
+        "2": "CD"
+      }
+    },
+    "burst": {
+      "name": "Pattes de Parallaxe",
+      "description": {
+        "0": "Somnia invoque un Cyclone céleste en forme d'étoile autour d'elle, libérant une rafale de <electro>DMG électro</electro> à mesure qu'il s'étend. Le champ s'attarde et inflige des <electro>AoE Electro DMG</electro> aux ennemis qui s'y trouvent toutes les 1s.",
+        "1": "Lorsque Cyclone céleste est actif, la maîtrise élémentaire de Somnia est augmentée de façon multiplicative.",
+        "2": "De plus, lorsque Cyclone céleste est actif, Somnia obtient des statistiques stellaires. Dans cet état, Somnia peut régler son boulier astral sur les modes Multiplication, Addition ou Soustraction, chacun conférant à ses attaques et à Cyclone céleste des améliorations différentes. Un seul mode d'abaque des Statistiques stellaires peut être actif simultanément.",
+        "3": "<br/>",
+        "4": "Modes d'Abacus",
+        "5": [
+          "<strong>Multiplication</strong> : Dans le Cyclone céleste de Somnia, toutes les armes des personnages maniant une épée, une claymore ou une arme blanche sont infusées d'électricité. Les attaques normales ou chargées dans le champ déclenchent Star Sunder, une explosion électrique coordonnée qui inflige des <electro>DMG électriques AoE</electro> basés sur la maîtrise élémentaire de Somnia. Sunder stellaire peut être déclenché une fois toutes les 1,5s.",
+          "<strong>Ajout</strong> : L'AoE et le DMG de Cyclone céleste sont augmentés. Lorsqu'elles touchent un ennemi, les attaques normales et chargées de Somnia déclenchent une Supernova qui inflige <electro>AoE Electro DMG</electro> en fonction de sa Maîtrise élémentaire. Cet effet peut être déclenché une fois toutes les 0,75s.",
+          "<strong>Soustraction</strong> : Cyclone céleste voit son AoE et sa DMG réduites, mais applique l'effet \"Moins de trois\" aux ennemis qui s'y trouvent. L'effet \"Moins de trois\" réduit les RES élémentaires et physiques des ennemis en fonction de la maîtrise élémentaire de Somnia. De plus, les attaques normales et chargées de Somnia infligent des DMG accrus en fonction de sa maîtrise élémentaire."
+        ]
+      },
+      "skillParams": {
+        "0": "Compétence DMG",
+        "1": "Maîtrise des éléments",
+        "2": "DoT Cyclone céleste (Multiplication)",
+        "3": "Le DMG de Star Sunder",
+        "4": "Cyclone céleste DoT (ajout)",
+        "5": "Supernova DMG",
+        "6": "DoT de Cyclone céleste (soustraction)"
+      }
+    },
+    "passive1": {
+      "name": "Calcul rapide",
+      "description": {
+        "0": "Les attaques chargées de Somnia consomment 20% d'endurance en moins et se chargent 20% plus vite."
+      }
+    },
+    "passive2": {
+      "name": "Le génie des maths",
+      "description": {
+        "0": "Pendant la durée de Cyclone céleste, la maîtrise élémentaire de Somnia augmente de 5% pour chaque coup infligé par Cyclone céleste, Soleil des étoiles et Supernova, jusqu'à un maximum de 25%."
+      }
+    },
+    "passive3": {
+      "name": "Itération insomniaque",
+      "description": {
+        "0": "La nuit (18:00 - 6:00), accélère la vitesse de construction de Genshin Optimizer de 10%."
+      }
+    },
+    "constellation1": {
+      "name": "Point décimal",
+      "description": {
+        "0": "Les attaques normales et chargées de Somnia ont 25% de chances d'infliger le double de DMG."
+      }
+    },
+    "constellation2": {
+      "name": "Nombre premier",
+      "description": {
+        "0": "Lorsque Somnia est sous l'effet de la Superposition de Schrödinger, chaque attaque normale ou chargée qui la touche lui donne une pile de Nombre naturel. Lorsque le nombre de piles de nombres naturels est premier, la prochaine attaque normale ou chargée de Somnia reçoit le double de l'augmentation de DMG de la Superposition de Schrödinger."
+      }
+    },
+    "constellation3": {
+      "name": "Série infinie",
+      "description": {
+        "0": "Augmente le niveau de <strong>Pattes de paralaxe</strong> de 3.",
+        "1": "Le niveau maximum de mise à niveau est de 15."
+      }
+    },
+    "constellation4": {
+      "name": "Carré parfait",
+      "description": {
+        "0": "Lorsque Somnia déclenche une réaction électrique, 4 points d'énergie élémentaire lui sont rendus, ainsi qu'à tous les membres du groupe proches dont l'élément est impliqué dans la réaction.",
+        "1": "Cet effet peut se déclencher une fois toutes les 4 secondes."
+      }
+    },
+    "constellation5": {
+      "name": "Coefficient de l'herbe à chat",
+      "description": {
+        "0": "Augmente le niveau de <strong>Calculateur cosmique</strong> de 3.",
+        "1": "Le niveau maximum de mise à niveau est de 15."
+      }
+    },
+    "constellation6": {
+      "name": "Golden Ratio",
+      "description": {
+        "0": "Lorsque l'attaque chargée de Somnia inflige des dégâts, son taux de CRIT et son DMG de CRIT sont augmentés de 3% et 5%, respectivement. Cet effet peut être déclenché une fois toutes les 0.2s et s'empiler jusqu'à 8 fois. Toutes les piles de Ratio d'or sont éliminées 13s après l'obtention de la première pile."
+      }
+    },
+    "c1Key": "Att. normale et chargée DMG Mult.",
+    "superpositionCond": "Sous l'effet de la superposition de Schrödinger",
+    "cycloneActiveCond": "Cyclone céleste est actif",
+    "multCond": "En mode Multiplication",
+    "subCond": "En mode soustraction",
+    "lessThan3Cond": "L'ennemi est affecté par \"Moins de trois\".",
+    "c1Cond": "Point décimal Fréquence de déclenchement",
+    "average": "Moyenne",
+    "always": "Toujours",
+    "c2Cond": "Possède un nombre premier de piles de nombres naturels"
+  },
+  "weapon_QuantumCatalyst": {
+    "name": "Cat-alyseur quantique",
+    "description": "Cette arme de catalyse avancée est imprégnée du mystérieux pouvoir de la mécanique quantique et ressemble à un chat curieux, avec des yeux verts luisants, une queue qui scintille d'énergie électrique et une étincelle occasionnelle qui jaillit entre les oreilles.",
+    "passiveName": "Mewon Meowmentum",
+    "passiveDescription": {
+      "0": "Augmente la recharge d'énergie de <cryo>18%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>6%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>10</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment.",
+      "1": "Augmente la recharge d'énergie de <cryo>22.5%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>7,5%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>12</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment.",
+      "2": "Augmente la recharge d'énergie de <cryo>27%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>9%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>14</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment.",
+      "3": "Augmente la recharge d'énergie de <cryo>31.5%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>10,5%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>16</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment.",
+      "4": "Augmente la recharge d'énergie de <cryo>36%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>12%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>18</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment."
+    }
+  },
+  "char_Baizhu": {
+    "seamlessDendro": "Bouclier sans couture Dendro DMG Absorption",
+    "a4Cond": "Sous l'effet de l'année de la faveur verdoyante",
+    "c2Dmg": "Sprite de Gossamer : Splice DMG",
+    "c2Heal": "Gossamer Sprite : Guérison par épissage"
+  },
+  "char_Kaveh": {
+    "c6Dmg": "DMG de la lumière de Pairidaeza"
+  },
+  "char_Kirara": {
+    "extraCardamom": "Extra Cat Grass Cardamomes",
+    "c4Dmg": "Petite herbe à chat Cardamome DMG"
+  },
+  "weapon_CalamityQueller": {
+    "effectName": "La consommation",
+    "active": "Multiplicateur actif",
+    "inactive": "Multiplicateur hors champ"
+  },
+  "weapon_JadefallsSplendor": {
+    "condName": "Sous l'effet de la Primordial Jade Regalia"
+  },
+  "artifact_GildedDreams": {
+    "overrideSameCond": "Remplacer les coéquipiers du même élément",
+    "overrideOtherCond": "Remplacer les coéquipiers d'autres éléments"
+  },
+  "char_Lynette": {
+    "c6CondName": "Après avoir utilisé l'Enigma Thrust de <strong>Enigmatic Feint</strong>."
+  },
+  "char_Lyney": {
+    "propStacks": "Prop Surplus",
+    "propStacksUsed": "Excédent de prop consommé",
+    "hatDmgInc": "Augmentation du DMG de la frappe pyrotechnique",
+    "a1CondName": "<strong>Flèche de propulsion</strong> consommée HP",
+    "c6Dmg": "Frappe pyrotechnique : DMG répétée"
+  },
+  "char_TravelerHydro": {
+    "dewdropDmgInc": "Augmentation du DMG de la goutte de rosée",
+    "a4CondName": "Pourcentage des HP max consommés par la suffusion",
+    "surgeDmgInc": "Torrent Surge DMG Inc.",
+    "skillCondName": "Dans l'état de suffusion"
+  },
+  "weapon_FinaleOfTheDeep": {
+    "bondCondName": "Après avoir effacé le lien de vie"
+  },
+  "weapon_FlowingPurity": {
+    "bondCondName": "Après avoir effacé le lien de vie"
+  },
+  "weapon_SacrificialJade": {
+    "condOffField": "Le personnage est/avait été hors champ pendant plus de 5 secondes"
+  },
+  "weapon_ScionOfTheBlazingSun": {
+    "condName": "L'adversaire a été touché par une flèche Sunfire.",
+    "dmg": "Flèche de feu de soleil DMG"
+  },
+  "weapon_TalkingStick": {
+    "condName": {
+      "atk_": "Personnage affecté par <pyro>Pyro</pyro>",
+      "dmg_": "Personnage affecté par <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, ou <electro>Electro</electro>"
+    }
+  },
+  "artifact_SongOfDaysPast": {
+    "condName": "Montant de l'effet de nostalgie"
+  },
+  "char_Charlotte": {
+    "c2Cond": "Monsieur Verite a frappé des adversaires",
+    "c4Cond": "L'adversaire est marqué par la Silhouette agile ou l'Impression ciblée."
+  },
+  "char_Freminet": {
+    "frost_dmgMult_": "Multiplicateur DMG Frost",
+    "pressure_dmg_": "Bonus DMG de la Pression d'éclatement",
+    "pressure_critRate_": "Pression d'éclatement Taux Crit"
+  },
+  "char_Furina": {
+    "fanfarePoints": "Fanfare",
+    "memberMult_": "Membres du salon Mult.",
+    "numOffer": "Nombre de personnages ayant offert des HP",
+    "c1Inc": "Augmentation de la fanfare Max",
+    "c1Bonus": "Fanfare sur la distribution",
+    "a4MemberDmg": "Salon Member DMG Bonus",
+    "a4HealInterval": "Intervalle de guérison de la chanteuse aux multiples eaux",
+    "c2Points": "La fanfare au-delà des limites",
+    "c6Healing": "Ousia Guérison continue",
+    "c6Pneuma": "Dans l'alignement des pneumatiques"
+  },
+  "char_Navia": {
+    "skillTotalShardDmg": "Rosula Shardshot Total DMG",
+    "shot_dmg_": "Rosula Shardshot DMG Bonus",
+    "shot_mult_": "Rosula Shardshot Multiplier",
+    "shot_critRate_": "Rosula Shardshot Taux de CRIT",
+    "shot_critDMG_": "Rosula Shardshot CRIT DMG",
+    "chargesCond": "Charges de Crystal Shrapnel consommées",
+    "shotsFired": "Rosula Shardshots tirés",
+    "shotsHitCond": "Rosula Shardshots touché"
+  },
+  "char_Neuvillette": {
+    "a1Cond": "Les anciennes gloires draconiques",
+    "judgmentSpecialMult_": "Jugement équitable Mult.",
+    "judgment_critDMG_": "Jugement équitable CRIT DMG",
+    "currentDmg": "DMG actuel"
+  },
+  "char_Wriothesley": {
+    "rebukeDmg": "Rebuke : Poing de voûte DMG",
+    "a4Cond": "Édit de poursuite",
+    "icicleDmg": "Icicle DMG",
+    "rebuke_critRate_": "Taux de CRIT pour le poing de voltige",
+    "rebuke_critDMG_": "Poing de voûte CRIT DMG",
+    "rebuke_dmg_": "Bonus DMG du poing de voûte"
+  },
+  "weapon_PortablePowerSaw": {
+    "condName": "Symboles du stoïcien consommés"
+  },
+  "weapon_ProspectorsDrill": {
+    "condName": "Les symboles de l'unité consommés"
+  },
+  "weapon_RangeGauge": {
+    "condName": "Les symboles de l'unité consommés"
+  },
+  "weapon_TheDockhandsAssistant": {
+    "condName": "Symboles du stoïcien consommés"
+  },
+  "weapon_UltimateOverlordsMegaMagicSword": {
+    "condName": "Les mélusines ont aidé"
+  },
+  "weapon_Verdict": {
+    "condName": "Joints"
+  },
+  "char_Chevreuse": {
+    "notPyroElectroTeam": "Conseil : mettez dans votre équipe uniquement des personnages <pyro>Pyro</pyro> et <electro>Electro</electro> pour voir les conditionnels et effets",
+    "a4CondName": "Après avoir tiré une Cartouche Surchargée",
+    "c6CondName": "Après avoir été soigné par Tir de suppression rapide à courte portée"
+  },
+  "char_Gaming": {
+    "cloudstrider_critDMG_": "DGT CRIT attaque plongeante « Augure nébuleux »",
+    "cloudstrider_dmg_": "DGT BONUS attaque plongeante « Augure nébuleux »"
+  },
+  "char_Xianyun": {
+    "a4Cond": "Étoiles réunies au crépuscule possède de l'aide adeptale",
+    "c4Heal": "Délectation du millet soin",
+    "wave_critDMG_": "DGT CRIT vague de nuage flottant",
+    "a1Cond": "Penne de Tempête",
+    "c6Cond": "Utilisation de l'échelle céleste"
+  }
 }

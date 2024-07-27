@@ -1,11 +1,5 @@
 {
-  "seals": [
-    "0 Siegel",
-    "1 Siegel",
-    "2 Siegel",
-    "3 Siegel",
-    "4 Siegel"
-  ],
+  "seals": ["0 Siegel", "1 Siegel", "2 Siegel", "3 Siegel", "4 Siegel"],
   "perSeal": "(pro Siegel)",
   "maxSeals": "Höchstzahl an Flammensiegeln",
   "charged": {

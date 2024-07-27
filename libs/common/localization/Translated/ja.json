@@ -1,1870 +1,1864 @@
 {
-    "artifact": {
-        "editor": {
-            "title": "聖遺物エディター",
-            "substat": {
-                "substatFormat": "サブステータス {{value}}",
-                "noSubstat": "サブステータスなし",
-                "selectSub": "サブステータスを選択",
-                "error": {
-                    "noCalc": "サブステータス効果を計算できません。",
-                    "noOverRoll": "サブステータス効果は {{value}} 回以上強化できません。"
-                },
-                "noRoll": "強化なし",
-                "noStat": "スコアなし",
-                "eff": "サブ効果スコア（RV）： <1></1>",
-                "nextRolls": "可能な効果値：",
-                "RollCount": {
-                    "other": "{{count}} 強化回数"
-                }
-            },
-            "rarity": "レア度別",
-            "level": "レベル",
-            "unknownPieceName": "ピース名不明",
-            "curSubEff": "サブ効果スコア",
-            "curSubEffDesc": "4レベルごとに、ひとつのサブステータスが増加します。<strong>サブステータス効率</strong>はどれだけ高くなったかパーセンテージとして計算します。",
-            "maxSubEff": "最大サブ効果スコア",
-            "maxSubEffDesc": "聖遺物の<strong>最大サブ効果スコア</strong>は、残る強化が最大値で強化した場合のスコアを計算します。",
-            "preview": "聖遺物プレビュー",
-            "dupArt": "重複する聖遺物が検出されました。",
-            "upArt": "強化された聖遺物が検出されました",
-            "beforeEdit": "改造前",
-            "btnSave": "聖遺物を保存する",
-            "btnAdd": "聖遺物を追加",
-            "btnClear": "削除",
-            "btnRandom": "ランダム",
-            "btnUpdate": "聖遺物を変更する",
-            "clearPrompt": "改造中の聖遺物があります。エディターを解除されてもよろしいですか？",
-            "unknownSetName": "不明なセット名"
+  "artifact": {
+    "editor": {
+      "title": "聖遺物エディター",
+      "substat": {
+        "substatFormat": "サブステータス {{value}}",
+        "noSubstat": "サブステータスなし",
+        "selectSub": "サブステータスを選択",
+        "error": {
+          "noCalc": "サブステータス効果を計算できません。",
+          "noOverRoll": "サブステータス効果は {{value}} 回以上強化できません。"
         },
-        "artifactFilter": "聖遺物フィルター",
-        "filterLocation": {
-            "inventory": "インベントリー",
-            "currentlyEquipped": "装備中",
-            "location": "キャラクター"
-        },
-        "button": {
-            "unequipArtifacts": "聖遺物を外す",
-            "deleteArtifacts": "聖遺物削除",
-            "lockArtifacts": "聖遺物をロック",
-            "unlockrtifacts": "聖遺物をアンロック"
-        },
-        "buttonHint": "注：上の赤いボタンはフィルターされた聖遺物のみに適用されます",
-        "tipsOfTheDay": [
-            "4星聖遺物の最高サブ効果スコアは約540%です。",
-            "普通、サブ効果スコアは聖遺物が強化するにつれて減少されます。",
-            "「1」の数字を含むサブ効果は、スクリーンショットのスキャンで問題が発生する可能性があります。",
-            "全てのサブ効果 (6) が一つのステータスに強化された場合、その数字が紫色になります！",
-            "ゲーム内で聖遺物を強化する度スキャンされる際は「詳細」をクリックしてスキャンしてください。",
-            "複数の聖遺物のスクリーンショットをアップロードしてスキャンできるようになりました！"
-        ],
-        "mainStat": "メインステータス",
-        "slot": "スロット",
-        "slotName": {
-            "flower": "生の花",
-            "plume": "死の羽",
-            "sands": "時の砂",
-            "goblet": "空の杯",
-            "circlet": "理の冠"
-        },
-        "info": {
-            "title": "聖遺物改造・管理ガイド",
-            "section1": "<0>サブ効果強化</0><1>サブ効果<1>強化数</1>は、サブステータスの右側にバーの数で表示されます。 強化数が増える度サブステータスが明るくなります。また、強化値が増加するにつれて、個々のバーの色は濃くなります：<3></3>。</1><2>サブ効果スコア</2><3>サブ効果スコア（RV）は、潜在的な最大値に対する現在値の比率です。画像から、HP%の最大強化値は5.8%です。RV: <3>5.3/5.8 ~ 90%。</3></3><4>現サブ効果スコアと最大サブ効果スコア</4><5>5<1></1> の場合、合計9（基礎4+追加5）の各強化は最高値で、900% RV聖遺物として定義されます。ただし、このような結果になる可能性は非常に低いとご留意ください。聖遺物の <3>現RV</3> は、聖遺物の最大値に対する比率です。<5>最大RV</5> は、残りの可能な強化最大値が達成できる聖遺物の最大のRVです。</5>",
-            "section2": "<0>聖遺物エディター</0><1>聖遺物エディターは3<1></1> ～ 5<3></3> の聖遺物を付加えることができます。サブステータスを入力すると、正確な強化値が計算されます。また、他の指標を検証するとともに、レベルに応じて聖遺物の正しい強化数を確認します。</1><2>スクリーンショットをスキャン</2><3>スクリーンショットを使用して聖遺物を付加える事も可能です。聖遺物エディターで、[<1>方法を表示！</1>] ボタンをクリックして詳細を確認してください。</3><4>聖遺物自動スキャナー</4><5>PCでGenshinをプレイしている場合は、さらに次のことができます。すべての聖遺物を自動的にスキャンするツールをダウンロードすると、そのデータを<1></1>設定にインポートできます。Genshin Optimizerと互換性のあるスキャナーについては、<3>ここをクリック</3>してください。</5><6>重複・強化済み聖遺物の検出</6><7>Genshin Optimizerはシステム内に存在する聖遺物が<1>重複</1>、またはエディター内の現在の聖遺物が既存の聖遺物の<3>強化</3>であるかどうかも検出できます。 重複・強化済み聖遺物が検出されると、プレビューで問題の二つの聖遺物を比較できるようになります。（画像を参照）</7>",
-            "section3": "<0>聖遺物インベントリー</0><1>Genshin Optimizerに追加されたすべての聖遺物はこちらに表示されます。フィルターを使用すると、聖遺物の表示をさらに調整できます。</1><2>例：聖遺物強化用の飼料検索</2><3>聖遺物フィルターとサブ効果スコアを利用すると、餌として消費できる不要な聖遺物を検出することができます。</3><4>例えば、フィルターは次のように設定します：</4><5><0><0>レベルを0~8に制限し、</0><1>インベントリー内のロック解除された聖遺物のみを選択、</1><2>そして基礎HP・DEF及び元素チャージ効率をサブ効果スコアの計算から外します。</2><3>最大サブ効果スコア値を昇順で並べ替えられます。</3></0></5><6>これにより、聖遺物をスコア、又は必要なサブステータスでフィルタリングできます。</6>"
-        },
-        "sortMap": {
-            "level": "レベル",
-            "efficiency": "現サブ効果スコア",
-            "mefficiency": "最大サブ効果スコア"
-        },
-        "efficiencyFilter": {
-            "title": "サブ効果スコアの計算で使用するサブ統計"
-        },
-        "resetFilters": "フィルターをリセット",
-        "setEffectNum": "{{setNum}}-セット",
-        "edit": "聖遺物を改造",
-        "autocompleteLabels": {
-            "sets": "聖遺物セット",
-            "mainStats": "メイン効果",
-            "substats": "サブ効果",
-            "set": "聖遺物セット"
-        },
-        "addNew": "新規聖遺物追加",
-        "cantDeleteLock": "この聖遺物はロックされているため削除できません",
-        "equippedArt": "装備されている全ての聖遺物",
-        "artInInv": "装備されていない全ての聖遺物",
-        "locationsTooltip": "特定のキャラクターでフィルタリングするためには「装備されている全ての聖遺物」を無効にしてください",
-        "showDup": "重複聖遺物を表示",
-        "noDupAlert": "インベントリーに重複している聖遺物はありません。",
-        "showingNum": {
-            "other": "{{value}}個の聖遺物のうち<1>{{count}}</1>個を表示"
-        },
-        "substat": {
-            "other": "{{count}}サブ効果"
-        },
-        "sub": {
-            "other": "{{count}}サブステ"
-        },
-        "noArtifacts": "まだ聖遺物が追加されていないようです。よろしければ、使いやすい<1>自動スキャナー</1>をご利用ください！"
+        "noRoll": "強化なし",
+        "noStat": "スコアなし",
+        "eff": "サブ効果スコア（RV）： <1></1>",
+        "nextRolls": "可能な効果値：",
+        "RollCount": {
+          "other": "{{count}} 強化回数"
+        }
+      },
+      "rarity": "レア度別",
+      "level": "レベル",
+      "unknownPieceName": "ピース名不明",
+      "curSubEff": "サブ効果スコア",
+      "curSubEffDesc": "4レベルごとに、ひとつのサブステータスが増加します。<strong>サブステータス効率</strong>はどれだけ高くなったかパーセンテージとして計算します。",
+      "maxSubEff": "最大サブ効果スコア",
+      "maxSubEffDesc": "聖遺物の<strong>最大サブ効果スコア</strong>は、残る強化が最大値で強化した場合のスコアを計算します。",
+      "preview": "聖遺物プレビュー",
+      "dupArt": "重複する聖遺物が検出されました。",
+      "upArt": "強化された聖遺物が検出されました",
+      "beforeEdit": "改造前",
+      "btnSave": "聖遺物を保存する",
+      "btnAdd": "聖遺物を追加",
+      "btnClear": "削除",
+      "btnRandom": "ランダム",
+      "btnUpdate": "聖遺物を変更する",
+      "clearPrompt": "改造中の聖遺物があります。エディターを解除されてもよろしいですか？",
+      "unknownSetName": "不明なセット名"
     },
-    "languages": {
-        "chs": "中国語 (簡体字)",
-        "cht": "中国語 (繁体字)",
-        "de": "ドイツ語",
-        "en": "英語",
-        "es": "スペイン語",
-        "fr": "フランス語",
-        "id": "インドネシア語",
-        "ja": "日本語",
-        "ko": "韓国語",
-        "pt": "ポルトガル語",
-        "ru": "ロシア語",
-        "th": "タイ語",
-        "vi": "ベトナム語",
-        "it": "イタリア語",
-        "tr": "トルコ語"
+    "artifactFilter": "聖遺物フィルター",
+    "filterLocation": {
+      "inventory": "インベントリー",
+      "currentlyEquipped": "装備中",
+      "location": "キャラクター"
     },
-    "settings": {
-        "title": "設定",
-        "languageCard": {
-            "languageFormat": "言語: {{language}}"
-        },
-        "uploadCard": {
-            "title": "データベースをアップロード",
-            "replaceDatabase": "データベースを入れ替え",
-            "hint": "JSONファイルアップロードはこちら…",
-            "hintPaste": "…又はデータを下記にて貼付けください",
-            "error": {
-                "jsonParse": "JSON ファイルを解析できません。",
-                "unknown": "ファイルの形式が不明。",
-                "monaInvalid": "Mona-Uranaiファイル形式が無効です。",
-                "goInvalid": "Genshin Optimizerバックアップファイル形式が無効。"
-            },
-            "dbSource": "データソース：",
-            "goodUpload": {
-                "title": "<strong>Genshin Open Object Description</strong> (GOOD) 原神オープンオブジェクト詳細形式"
-            },
-            "buttons": {
-                "open": "オープン",
-                "detectDups": "改良中・重複を検出",
-                "delNotInImport": "インポートに含まれないものを削除"
-            },
-            "tooltip": {
-                "detectdup": "GOのインベントリーに改良中・重複するものを検出し、インポートをGOと統合します。",
-                "ignoreDup": "改良中・重複のものを検出せず、インポートをGOの既存のインベントリーに追加されます。",
-                "delNotInImport": "インポートが全てのアイテムであると考慮します。GOインベントリー内の、インポートにないものを削除します。",
-                "keepNotInImport": "インポートがアイテム全ての一部であると考慮します。なにも削除されません。"
-            }
-        },
-        "count": {
-            "chars": "キャラクター：",
-            "arts": "聖遺物：",
-            "weapons": "武器：",
-            "total": "合計：",
-            "new": "新規：",
-            "updated": "更新済：",
-            "removed": "削除：",
-            "unchanged": "未更新：",
-            "invalid": "無効：",
-            "upgraded": "強化済：",
-            "dbTotal": "統合合計：",
-            "notInImport": "インポートに含まれない"
-        },
-        "DatabaseCard": {
-            "title": "データベース",
-            "button": {
-                "download": "ダウンロード",
-                "copy": "クリップボード",
-                "delete": "削除",
-                "upload": "アップロード",
-                "swap": "変更"
-            },
-            "currentDB": "現データベース"
-        },
-        "sillyCard": {
-            "desc": "すべてのキャラクターアセットを<strong>Silly Wisher（やけくそ祈願）</strong>から（許可を得て）ぬす・・・<1>借用し</1>、それらをGenshin Optimizerに遺伝子スプライシングを成功しました。",
-            "toggle": {
-                "enabled": "やけくそオプティマイザー有効",
-                "disabled": "やけくそオプティマイザー無効"
-            }
-        },
-        "letsnow": "雪よ降れ"
+    "button": {
+      "unequipArtifacts": "聖遺物を外す",
+      "deleteArtifacts": "聖遺物削除",
+      "lockArtifacts": "聖遺物をロック",
+      "unlockrtifacts": "聖遺物をアンロック"
     },
-    "ui": {
-        "pageTitle": "Genshin Optimizer",
-        "tabs": {
-            "artifacts": "聖遺物",
-            "characters": "キャラクター",
-            "tools": "ツール",
-            "weapons": "武器",
-            "doc": "ドキュメント",
-            "setting": "設定",
-            "scanner": "スキャナー"
-        },
-        "social": {
-            "paypal": "PayPal",
-            "patreon": "Patreon",
-            "discord": "Discord"
-        },
-        "unselect": "選択削除",
-        "ascending": "昇順",
-        "descending": "降順",
-        "loading": "ロード中",
-        "rightsDisclaimer": "「Genshin Optimizer」は、MiHoYoと提携しておりません。または、当該企業から承認を受けておりません。",
-        "appVersion": "$t(pageTitle) バージョン: {{version}}",
-        "error": "エラー",
-        "reset": "リセット",
-        "info": "概要",
-        "inventory": "インベントリー",
-        "close": "閉じる",
-        "sortMap": {
-            "new": "新規",
-            "name": "キャラクター名",
-            "level": "レベル",
-            "rarity": "レアリティ",
-            "efficiency": "現スコア",
-            "mefficiency": "最大スコア",
-            "artsetkey": "聖遺物セット"
-        },
-        "link": {
-            "download": "ダウンロードリンク",
-            "discord": "Discord招待リンク"
-        },
-        "sortBy": "選別：␣",
+    "buttonHint": "注：上の赤いボタンはフィルターされた聖遺物のみに適用されます",
+    "tipsOfTheDay": [
+      "4星聖遺物の最高サブ効果スコアは約540%です。",
+      "普通、サブ効果スコアは聖遺物が強化するにつれて減少されます。",
+      "「1」の数字を含むサブ効果は、スクリーンショットのスキャンで問題が発生する可能性があります。",
+      "全てのサブ効果 (6) が一つのステータスに強化された場合、その数字が紫色になります！",
+      "ゲーム内で聖遺物を強化する度スキャンされる際は「詳細」をクリックしてスキャンしてください。",
+      "複数の聖遺物のスクリーンショットをアップロードしてスキャンできるようになりました！"
+    ],
+    "mainStat": "メインステータス",
+    "slot": "スロット",
+    "slotName": {
+      "flower": "生の花",
+      "plume": "死の羽",
+      "sands": "時の砂",
+      "goblet": "空の杯",
+      "circlet": "理の冠"
+    },
+    "info": {
+      "title": "聖遺物改造・管理ガイド",
+      "section1": "<0>サブ効果強化</0><1>サブ効果<1>強化数</1>は、サブステータスの右側にバーの数で表示されます。 強化数が増える度サブステータスが明るくなります。また、強化値が増加するにつれて、個々のバーの色は濃くなります：<3></3>。</1><2>サブ効果スコア</2><3>サブ効果スコア（RV）は、潜在的な最大値に対する現在値の比率です。画像から、HP%の最大強化値は5.8%です。RV: <3>5.3/5.8 ~ 90%。</3></3><4>現サブ効果スコアと最大サブ効果スコア</4><5>5<1></1> の場合、合計9（基礎4+追加5）の各強化は最高値で、900% RV聖遺物として定義されます。ただし、このような結果になる可能性は非常に低いとご留意ください。聖遺物の <3>現RV</3> は、聖遺物の最大値に対する比率です。<5>最大RV</5> は、残りの可能な強化最大値が達成できる聖遺物の最大のRVです。</5>",
+      "section2": "<0>聖遺物エディター</0><1>聖遺物エディターは3<1></1> ～ 5<3></3> の聖遺物を付加えることができます。サブステータスを入力すると、正確な強化値が計算されます。また、他の指標を検証するとともに、レベルに応じて聖遺物の正しい強化数を確認します。</1><2>スクリーンショットをスキャン</2><3>スクリーンショットを使用して聖遺物を付加える事も可能です。聖遺物エディターで、[<1>方法を表示！</1>] ボタンをクリックして詳細を確認してください。</3><4>聖遺物自動スキャナー</4><5>PCでGenshinをプレイしている場合は、さらに次のことができます。すべての聖遺物を自動的にスキャンするツールをダウンロードすると、そのデータを<1></1>設定にインポートできます。Genshin Optimizerと互換性のあるスキャナーについては、<3>ここをクリック</3>してください。</5><6>重複・強化済み聖遺物の検出</6><7>Genshin Optimizerはシステム内に存在する聖遺物が<1>重複</1>、またはエディター内の現在の聖遺物が既存の聖遺物の<3>強化</3>であるかどうかも検出できます。 重複・強化済み聖遺物が検出されると、プレビューで問題の二つの聖遺物を比較できるようになります。（画像を参照）</7>",
+      "section3": "<0>聖遺物インベントリー</0><1>Genshin Optimizerに追加されたすべての聖遺物はこちらに表示されます。フィルターを使用すると、聖遺物の表示をさらに調整できます。</1><2>例：聖遺物強化用の飼料検索</2><3>聖遺物フィルターとサブ効果スコアを利用すると、餌として消費できる不要な聖遺物を検出することができます。</3><4>例えば、フィルターは次のように設定します：</4><5><0><0>レベルを0~8に制限し、</0><1>インベントリー内のロック解除された聖遺物のみを選択、</1><2>そして基礎HP・DEF及び元素チャージ効率をサブ効果スコアの計算から外します。</2><3>最大サブ効果スコア値を昇順で並べ替えられます。</3></0></5><6>これにより、聖遺物をスコア、又は必要なサブステータスでフィルタリングできます。</6>"
+    },
+    "sortMap": {
+      "level": "レベル",
+      "efficiency": "現サブ効果スコア",
+      "mefficiency": "最大サブ効果スコア"
+    },
+    "efficiencyFilter": {
+      "title": "サブ効果スコアの計算で使用するサブ統計"
+    },
+    "resetFilters": "フィルターをリセット",
+    "setEffectNum": "{{setNum}}-セット",
+    "edit": "聖遺物を改造",
+    "autocompleteLabels": {
+      "sets": "聖遺物セット",
+      "mainStats": "メイン効果",
+      "substats": "サブ効果",
+      "set": "聖遺物セット"
+    },
+    "addNew": "新規聖遺物追加",
+    "cantDeleteLock": "この聖遺物はロックされているため削除できません",
+    "equippedArt": "装備されている全ての聖遺物",
+    "artInInv": "装備されていない全ての聖遺物",
+    "locationsTooltip": "特定のキャラクターでフィルタリングするためには「装備されている全ての聖遺物」を無効にしてください",
+    "showDup": "重複聖遺物を表示",
+    "noDupAlert": "インベントリーに重複している聖遺物はありません。",
+    "showingNum": {
+      "other": "{{value}}個の聖遺物のうち<1>{{count}}</1>個を表示"
+    },
+    "substat": {
+      "other": "{{count}}サブ効果"
+    },
+    "sub": {
+      "other": "{{count}}サブステ"
+    },
+    "noArtifacts": "まだ聖遺物が追加されていないようです。よろしければ、使いやすい<1>自動スキャナー</1>をご利用ください！"
+  },
+  "languages": {
+    "chs": "中国語 (簡体字)",
+    "cht": "中国語 (繁体字)",
+    "de": "ドイツ語",
+    "en": "英語",
+    "es": "スペイン語",
+    "fr": "フランス語",
+    "id": "インドネシア語",
+    "ja": "日本語",
+    "ko": "韓国語",
+    "pt": "ポルトガル語",
+    "ru": "ロシア語",
+    "th": "タイ語",
+    "vi": "ベトナム語",
+    "it": "イタリア語",
+    "tr": "トルコ語"
+  },
+  "settings": {
+    "title": "設定",
+    "languageCard": {
+      "languageFormat": "言語: {{language}}"
+    },
+    "uploadCard": {
+      "title": "データベースをアップロード",
+      "replaceDatabase": "データベースを入れ替え",
+      "hint": "JSONファイルアップロードはこちら…",
+      "hintPaste": "…又はデータを下記にて貼付けください",
+      "error": {
+        "jsonParse": "JSON ファイルを解析できません。",
+        "unknown": "ファイルの形式が不明。",
+        "monaInvalid": "Mona-Uranaiファイル形式が無効です。",
+        "goInvalid": "Genshin Optimizerバックアップファイル形式が無効。"
+      },
+      "dbSource": "データソース：",
+      "goodUpload": {
+        "title": "<strong>Genshin Open Object Description</strong> (GOOD) 原神オープンオブジェクト詳細形式"
+      },
+      "buttons": {
+        "open": "オープン",
+        "detectDups": "改良中・重複を検出",
+        "delNotInImport": "インポートに含まれないものを削除"
+      },
+      "tooltip": {
+        "detectdup": "GOのインベントリーに改良中・重複するものを検出し、インポートをGOと統合します。",
+        "ignoreDup": "改良中・重複のものを検出せず、インポートをGOの既存のインベントリーに追加されます。",
+        "delNotInImport": "インポートが全てのアイテムであると考慮します。GOインベントリー内の、インポートにないものを削除します。",
+        "keepNotInImport": "インポートがアイテム全ての一部であると考慮します。なにも削除されません。"
+      }
+    },
+    "count": {
+      "chars": "キャラクター：",
+      "arts": "聖遺物：",
+      "weapons": "武器：",
+      "total": "合計：",
+      "new": "新規：",
+      "updated": "更新済：",
+      "removed": "削除：",
+      "unchanged": "未更新：",
+      "invalid": "無効：",
+      "upgraded": "強化済：",
+      "dbTotal": "統合合計：",
+      "notInImport": "インポートに含まれない"
+    },
+    "DatabaseCard": {
+      "title": "データベース",
+      "button": {
+        "download": "ダウンロード",
+        "copy": "クリップボード",
         "delete": "削除",
-        "locked": "ロック",
-        "unlocked": "アンロック",
-        "refinement": "精錬{{value}}",
-        "selectlevel": "レベル選択",
-        "gender": {
-            "F": "女性",
-            "M": "男性"
-        },
-        "statGroupKey": {
-            "basic_stats": "基礎ステータス",
-            "elem_dmg_bonus": "元素ダメージボーナス",
-            "enemy_debuffs": "敵デバフ",
-            "self_res": "自己中断耐性",
-            "reaction_dmg_bonus": "元素反応ダメージボーナス",
-            "reaction_crit": "元素反応会心率ボーナス",
-            "elem_dmgInc": "元素ダメージアップ",
-            "talent_dmgInc": "天賦ダメージアップ",
-            "elem_crit": "元素会心率ボーナス",
-            "talent_dmg_bonus": "天賦ダメージボーナス",
-            "talent_crit": "天賦会心率ボーナス",
-            "talent_level_boost": "天賦レベルブースト",
-            "base_stat_mod": "基礎ステータス修正",
-            "stamina_buffs": "スタミナバフ",
-            "misc": "その他のステータス"
-        },
-        "sillyPageTitle": "やけくそオプティマイザー"
-    },
-    "char_Eula": {
-        "burstC": {
-            "name": "光臨の剣エネルギー",
-            "start5": "冷酷の心のエネルギーを直ちに5つ獲得する",
-            "addStacks": "通常攻撃、元素スキルまたは元素爆発によりエネルギーを獲得する際、50％の確率でさらに1つ獲得する",
-            "dmg": "光臨の剣爆発ダメージ",
-            "bonusScaling": "光臨の剣ボーナス倍率"
-        },
-        "c1C": {
-            "name": "<strong>冷酷な心</strong>を消費",
-            "durationStack": "一つごとに6秒+6秒、最大18秒まで"
-        },
-        "passive1": "光臨の剣爆発ダメージ",
-        "c4C": {
-            "dmgBonus": "光臨の剣爆発ダメージボーナス"
-        }
-    },
-    "char_Noelle": {
-        "p4cd": "24秒　4ヒットごとに-1秒",
-        "c6duration": "15秒　敵一体倒す度に+1秒（最大25秒）",
-        "c4dmg": "護心鎧破壊ダメージ",
-        "qlarger": "攻撃範囲がアップ"
-    },
-    "char_Venti": {
-        "addAimed": "照準時通常攻撃の追加ダメージ",
-        "addFullAimed": "重撃攻撃の追加ダメージ",
-        "upcurrentDuration": "上昇気流継続時間",
-        "regenEner": "効果終了後、ウェンティの元素エネルギーを15回復する",
-        "c6": "敵が<strong>風神の詩</strong>の影響を受けた\n",
-        "q": "元素変化の該当元素のチームメンバーの元素エネルギーを15回復する",
-        "c2": {
-            "hit": "敵にヒット",
-            "launched": "敵にノックバック"
-        }
-    },
-    "sheet": {
-        "dmg": "ダメージ",
-        "lessPercentHP": "HPが{{percent}}%未満",
-        "hitOp": {
-            "normal": "敵に通常攻撃をヒット",
-            "charged": "敵に重撃をヒット",
-            "plunging": "敵に落下攻撃をヒット",
-            "skill": "敵に元素スキルをヒット",
-            "burst": "敵に元素爆発をヒット",
-            "geo": "敵に<geo>岩元素ダメージ</geo>をヒット",
-            "anemo": "敵に<anemo>風元素ダメージ</anemo>をヒット",
-            "hydro": "敵に<hydro>水元素ダメージ</hydro>をヒット",
-            "cryo": "敵に <cryo>氷元素ダメージ</cryo>をヒット",
-            "pyro": "敵に<pyro>炎元素ダメージ</pyro>をヒット",
-            "electro": "敵に<electro>雷元素ダメージ</electro>をヒット",
-            "none": "敵にヒット後",
-            "normalOrCharged": "敵に通常攻撃・重撃でヒット",
-            "skillOrBurst": "敵に元素スキル・爆発でヒット",
-            "crit": "会心攻撃を命中後",
-            "normalChargedOrPlunging": "敵に通常攻撃・重撃・落下攻撃をヒット",
-            "dendro": "<dendro>草元素ダメージ</dendro>を与えた後",
-            "normalEle": "通常攻撃で元素ダメージを与えた後",
-            "ele": "元素ダメージを与えた後",
-            "weakSpot": "狙い撃ちで敵の弱点に命中した後",
-            "normalChargedSkillBurst": "敵に通常攻撃、重撃、または元素スキル・爆発をヒット後",
-            "self": "敵にヒットされた後"
-        },
-        "eleAbsor": "元素変化",
-        "absorDot": "拡散DoT",
-        "afterUse": {
-            "skill": "元素スキル起動中",
-            "burst": "元素爆発起動中",
-            "skillOrBurst": "元素スキルまたは元素爆発を発動後",
-            "skillPress": "元素スキル（単押し）使用後",
-            "skillHold": "元素スキル（長押し）使用後"
-        },
-        "lessEqPercentHP": "HPが{{percent}}%、またはその以下",
-        "greaterPercentHP": "HPが{{percent}}%以上",
-        "greaterEqPercentHP": "HPが{{percent}}%、またはその以上",
-        "lessPercentEnergy": "元素エネルギーが{{percent}}%以下",
-        "enemyLessPercentHP": "敵のHPが{{percent}}%以下",
-        "enemyLessEqPercentHP": "敵のHPが{{percent}}%、またはその以下",
-        "enemyGreaterPercentHP": "敵のHPが{{percent}}%以上",
-        "enemyGreaterEqPercentHP": "敵のHPが{{percent}}%、またはその以上",
-        "afterDefeatEnemy": "敵を倒した後",
-        "afterSprint": "ダッシュ後",
-        "skillCDRed": "元素スキルクールダウン減少",
-        "burstCDRed": "元素爆発クールダウン減少",
-        "triggerCD": "反応クールダウン",
-        "incInterRes": "中断耐性の増加",
-        "charges": "チャージ",
-        "cooldown": "クールダウン",
-        "addlCharges": "スキルチャージ追加",
-        "activeCharField": "キャラクターが能力のフィールド範囲以内",
-        "opponentsField": "敵が能力のフィールド範囲以内",
-        "takeDmg": "ダメージを受けた後",
-        "infusion": {
-            "pyro": "炎元素付与",
-            "cryo": "氷元素付与",
-            "anemo": "風元素付与",
-            "hydro": "水元素付与",
-            "electro": "雷元素付与",
-            "dendro": "草元素付与",
-            "geo": "岩元素付与"
-        },
-        "effectDuration": {
-            "pyro": "炎元素影響継続時間",
-            "cryo": "氷元素影響継続時間",
-            "anemo": "風元素影響継続時間",
-            "hydro": "水元素影響継続時間",
-            "electro": "雷元素影響継続時間",
-            "dendro": "草元素影響継続時間",
-            "geo": "岩元素影響継続時間"
-        },
-        "durationInc": "継続時間の増加",
-        "base": "基礎",
-        "stacks": "スタック",
-        "protectedByShield": "シールドに守られている",
-        "protectedByShieldCrystal": "結晶シールドに守られている",
-        "staminaDec_": "スタミナ消費減少",
-        "dmgAbsorption": {
-            "pyro": "シールドの炎元素ダメージ吸収量",
-            "cryo": "シールドの氷元素ダメージ吸収量",
-            "anemo": "シールドの風元素ダメージ吸収量",
-            "hydro": "シールドの水元素ダメージ吸収量",
-            "electro": "シールドの雷元素ダメージ吸収量",
-            "dendro": "シールドの草元素ダメージ吸収量",
-            "geo": "シールドの岩元素ダメージ吸収量",
-            "none": "シールドのダメージ吸収量",
-            "increase": "シールド吸収増加",
-            "max": {
-                "none": "シールドのダメージ最大吸収量",
-                "pyro": "シールドの炎元素ダメージ最大吸収量",
-                "dendro": "シールドの草元素ダメージ最大吸収量"
-            }
-        },
-        "addlCharge": "スキルチャージ追加",
-        "conditional": "条件",
-        "maxStacks": "最大スタック",
-        "1set": "1-セット",
-        "2set": "2-セット",
-        "4set": "4-セット",
-        "activationStam": "スタミナ消費発動",
-        "stamDrain": "スタミナ消耗",
-        "talents": {
-            "auto": "オート",
-            "skill": "元素スキル",
-            "burst": "元素爆発",
-            "passive": "固有天賦",
-            "passive1": "突破段階1固有天賦1",
-            "passive2": "突破段階4固有天賦2",
-            "passive3": "固有天賦3",
-            "sprint": "ダッシュ",
-            "constellation1": "1凸",
-            "constellation2": "2凸",
-            "constellation3": "3凸",
-            "constellation4": "4凸",
-            "constellation5": "5凸",
-            "constellation6": "6凸"
-        },
-        "swirlReaction": {
-            "hydro": "<hydro>水元素</hydro>拡散反応後",
-            "pyro": "<pyro>炎元素</pyro>拡散反応後",
-            "electro": "<electro>雷元素</electro>拡散反応後",
-            "cryo": "<cryo>氷元素</cryo>拡散反応後"
-        },
-        "afterReaction": "元素反応を発動後",
-        "aoeInc": "範囲増加",
-        "elementalReaction": {
-            "hydro": "<hydro>水元素に関連</hydro>する反応を起こした後",
-            "electro": "<electro>雷元素に関連</electro>する反応を起こした後",
-            "shatter": "<shattered>粉砕</shattered>反応を起こした後",
-            "cryo": "</cryo>氷元素関連</cryo>反応を起こした後"
-        },
-        "bonusScaling": {
-            "skill_": "元素スキルボーナス倍率",
-            "atkInc": "攻撃力増加ボーナス倍率",
-            "value": "{{value}}%"
-        },
-        "energy": "元素エネルギー",
-        "teamBuff": "チームバフ",
-        "dmgMult": {
-            "normal": "通常攻撃ダメージ倍率",
-            "charged": "重撃ダメージ倍率",
-            "skill": "元素スキルダメージ倍率"
-        },
-        "stamRestored": "スタミナ回復",
-        "triggerQuota": "ノルマ達成",
-        "enemyAffected": {
-            "burningOrPyro": "敵は<pyro>燃焼</pyro>、または<pyro>炎元素</pyro>の影響を受けている時",
-            "frozenOrCryo": "敵は<cryo>凍結</cryo>、または<cryo>氷元素</cryo>の影響を受けている時",
-            "pyroOrElectro": "敵が<pyro>炎元素</pyro>、または<electro>雷元素</electro>の影響を受けた時",
-            "hydroOrCryo": "敵が<hydro>水元素</hydro>、または<cryo>氷元素</cryo>の影響を受けた時",
-            "hydroOrPyro": "敵が<hydro>水元素</hydro>、または<pyro>炎元素</pyro>の影響を受けた時",
-            "hydroOrElectro": "敵が<hydro>水元素</hydro>、または<electro>雷元素</electro>の影響を受けた時",
-            "electro": "敵は<electro>雷元素</electro>の影響を受けた時",
-            "cryo": "敵が<cryo>氷元素</cryo>の影響を受けた時",
-            "pyro": "敵が<pyro>炎元素</pyro>の影響を受けている"
-        },
-        "getElementalOrbParticle": "元素粒子・オーブを拾った後",
-        "notProtectedByShield": "シールドに守られていない時",
-        "percentCurrentHP": "現HP%",
-        "enerRegenPerHit": "ヒットごとの元素チャージ",
-        "interval": "間隔",
-        "immuneToElectroCharged": "<electrocharged>感電</electrocharged>耐性",
-        "charOffField": "キャラクターは待機中",
-        "attackAoeInc": "攻撃範囲がアップ",
-        "charOnField": "キャラクターはフィールド上",
-        "timeOnField": "フィールド上での時間",
-        "hpChange": "HP増減後",
-        "afterHeal": "回復後",
-        "hits": {
-            "other": "{{count}}ヒット数"
-        },
-        "percentMaxHP": "最大HP%",
-        "stack": {
-            "other": "{{count}}層"
-        },
-        "seconds": {
-            "other": "{{count}}秒"
-        },
-        "uses": {
-            "other": "{{count}}回使用"
-        },
-        "opponents": {
-            "other": "{{count}}体の敵"
-        },
-        "members": {
-            "other": "{{count}}人のチームメンバー"
-        },
-        "times": {
-            "other": "{{count}}回"
-        },
-        "activeChar": "フィールド上のキャラクター",
-        "otherHpChange": "チームメンバーのHPが増減後",
-        "reactionOp": {
-            "overload": "<overloaded>過負荷反応</overloaded>を発動後"
-        },
-        "afterOverflow": "回復上限を超えた"
-    },
-    "weapon_SongOfBrokenPines": {
-        "name": "千年の大楽章：旗掲げの歌効果発動中"
-    },
-    "char_KaedeharaKazuha": {
-        "c1": "<strong>万葉の一刀</strong>を発動後、クールタイムがリセット",
-        "c2": "流風秋野発動中",
-        "c6": {
-            "after": "<strong>千早振る</strong>または<strong>万葉の一刀</strong>を発動後"
-        },
-        "skillPlunge": "乱れ嵐斬"
-    },
-    "char_Rosaria": {
-        "a1": "敵の背後から攻撃",
-        "a4": {
-            "name": "<strong>臨終の聖礼</strong>発動後"
-        }
-    },
-    "char_KamisatoAyaka": {
-        "afterSprintCryo": "霰歩終了後に発生する<cryo>氷</cryo>が敵に命中",
-        "snowflakeDMG": "霜見雪関扉ダメージ",
-        "dmgBySnowflake": "敵に<strong>霜見雪関扉</strong>をヒット",
-        "c6Active": "薄氷の舞状態獲得"
-    },
-    "weapon_MistsplitterReforged": {
-        "emblem": "霧切の巴紋"
-    },
-    "char_Yoimiya": {
-        "c1": "<strong>琉金の炎</strong>の影響を受けた敵を倒した後\n",
-        "c2": "<pyro>炎元素ダメージ</pyro>で会心が発生した後",
-        "normPyroInfus": "<pyro>通常攻撃炎元素付与</pyro>",
-        "c6Key_": "熾焔の矢の倍率"
-    },
-    "char_RaidenShogun": {
-        "skill": {
-            "eye": "雷罰悪曜の眼起動中",
-            "partyCost": "元素エネルギーコスト"
-        },
-        "burst": {
-            "resolves": "願力の層数",
-            "resolveInitial_": "夢想の一太刀ダメージボーナス倍率",
-            "resolveInfused_": "夢想の一心ダメージボーナス倍率",
-            "burstDmg": "夢想の一太刀ダメージ",
-            "active": "<strong>夢想の一心</strong>状態"
-        },
-        "a4": {
-            "enerRest": "<strong>夢想の一心</strong>からの元素エネルギー回復ボーナス",
-            "eleDMG": "雷元素ダメージボーナス"
-        },
-        "c4": {
-            "expires": "<strong>夢想の一心</strong>状態終了後"
-        }
-    },
-    "char_Aloy": {
-        "skill": {
-            "coil": "コイル",
-            "rush": "アイスラッシュ",
-            "rushState": "ライスラッシュ状態で費やした時間"
-        },
-        "a1CondName": "コイル効果を受けた後",
-        "normCryoInfus": "<cryo>通常攻撃氷元素付与</cryo>"
-    },
-    "char_KujouSara": {
-        "skill": {
-            "ambush": "天狗呪雷・伏状態"
-        },
-        "c6": {
-            "electroCritDmg": "キャラクターが天狗呪雷による攻撃力アップ状態"
-        }
-    },
-    "char_SangonomiyaKokomi": {
-        "burst": "儀来羽衣状態",
-        "c2": "キャラクターHP50%未満",
-        "c6": "通常攻撃または重撃でHP80%以上のキャラクターに治療",
-        "c2SkillHeal": "<strong>海月の誓い</strong>治療ボーナス",
-        "c2BurstHeal": "<strong>海人の羽衣</strong>治療ボーナス"
-    },
-    "page_home": {
-        "intro": "<strong>究極</strong>の<3><i>原神</i></3>ビルド改良ツール。Genshin Optimizer（GO）は聖遺物・武器・キャラクターのインベントリーを管理し、好みに基づいて最適なビルドを計算するのに役立ちます。",
-        "quickLinksCard": {
-            "title": "クイックリンク",
-            "buttons": {
-                "tyGuide": {
-                    "title": "YouTubeガイド再生リスト",
-                    "tooltip": "Genshin Optimizerの使用方法を学ぶ"
-                },
-                "scanners": {
-                    "title": "自動スキャナー",
-                    "tooltip": "ゲーム内から聖遺物を自動的にスキャンするサードパーティーソフト"
-                },
-                "kqm": {
-                    "title": "Keqing Mains（KQM刻晴メインズ）",
-                    "tooltip": "セオリークラフティング＆ガイドのコミュニティ"
-                },
-                "devDiscord": {
-                    "title": "開発者Discord",
-                    "tooltip": "原神ツール開発者コミュニティ"
-                },
-                "good": {
-                    "title": "GOODドキュメンテーション",
-                    "tooltip": "Genshin Open Object Descriptorドキュメンテーション"
-                },
-                "patchNotes": {
-                    "title": "原神オプティマイザーパッチノート",
-                    "tooltip": "GOパッチノート一覧"
-                }
-            }
-        },
-        "inventoryCard": {
-            "title": "GOインベントリー"
-        },
-        "vidGuideCard": {
-            "title": "ガイド動画"
-        },
-        "teamCard": {
-            "title": "チーム紹介",
-            "jobTitle": {
-                "leadDev": "リードデベロッパー",
-                "dev": "デベロッパー",
-                "mod": "モデレーター",
-                "admin": "アドミン",
-                "translator": "翻訳マネージャー",
-                "TC": "セオリークラフティング特派員"
-            }
-        }
-    },
-    "page_scanner": {
-        "intro": "<0>スキャナー</0><1>スキャナーは、スクリーンショット、またはゲームから直接データを自動的にスキャンできる原神ツールです。</1><2>こちらはGenshin Optimizerでテストされたいくつかのスキャナーです。</2 ><3>エクスポートしたファイルをアップロードするには、[<1>設定</1>] ページに移動し、[<strong>データベースアップロード</strong>]にてファイルをアップロードできます。</3>",
-        "ik": {
-            "title": "インベントリーカメラ",
-            "p1": "この軽量アプリは、インベントリー内のすべてのキャラクター、武器、聖遺物をスキャンします。アプリの手順を参照して設定してください。"
-        },
-        "as": {
-            "title": "AdeptiScanner",
-            "p1": "インベントリー内のすべての聖遺物と武器をスキャンします。手動スキャンモードがあり、<1>Enka.Network</1> からデータをインポートすることもできます。",
-            "p2": "このスキャナーは、更新を必要とせずに、新しいゲームバージョンの新聖遺物用に構成することもできます。"
-        },
-        "goodeng": "このアプリは英語でのみスキャンし、<1>GOOD</1> 形式でエクスポートします。",
-        "tosWarn": "ゲームと間接的に連携するどのツールと同様、その使用法は事実上検出できませんが、<1>使用にはリスクが存在する可能性があります。</1>ユーザーの使用判断が推奨されます。",
-        "tags": {
-            "pc": "PC",
-            "mobile": "モバイル",
-            "ps": "PlayStation",
-            "gameMani": "自動コントロール",
-            "materials": "素材",
-            "characters": "キャラクター",
-            "weapons": "武器",
-            "achievements": "アチーブメント"
-        },
-        "nb": {
-            "title": "Artiscan",
-            "p1": "このスキャナーはWebベースで使いやすく、ゲーム画面、スクリーンショットや動画からトリミングする必要なくスキャンできます。",
-            "p2": "モバイル・PlayStationでは、スクリーンショットまたは動画のみからスキャンできます。"
-        },
-        "ak": {
-            "title": "アーカーシャスキャナー",
-            "p1": "キャラクターや武器だけでなく、聖遺物も自動的にスキャンします。アプリ内に履歴が残るため、過去のスキャンをエクスポートできます。スキャンは英語のみで行われます。",
-            "p2": "このアプリは<1>Paimon.moe</1>と<1>Seelie.me</1>用のアチーブメントもスキャンできます"
-        },
-        "seelieme": "このアプリは<1>Seelie.me</1>用の素材もスキャンできます"
-    },
-    "weapon_Akuoumaru": {
-        "party": "パーティーの元素エネルギー容量"
-    },
-    "artifact_ArchaicPetra": {
-        "condName": "結晶の欠片を獲得"
-    },
-    "artifact_ViridescentVenerer": {
-        "condName": "拡散された元素"
-    },
-    "weapon_CinnabarSpindle": {
-        "name": "効果発動中"
-    },
-    "weapon_ElegyForTheEnd": {
-        "condName": "千年の大楽章：別れの歌状態"
-    },
-    "weapon_MouunsMoon": {
-        "party": "パーティーの元素エネルギー容量"
-    },
-    "weapon_ThrillingTalesOfDragonSlayers": {
-        "condName": "このキャラクターから乗換後"
-    },
-    "weapon_WavebreakersFin": {
-        "party": "パーティーの元素エネルギー容量"
-    },
-    "artifact_BlizzardStrayer": {
-        "condName": "敵は",
-        "condCryo": "氷元素の影響を受けている",
-        "condFrozen": "凍結されている"
-    },
-    "artifact_HuskOfOpulentDreams": {
-        "condName": "問答"
-    },
-    "artifact_OceanHuedClam": {
-        "condName": "海染の泡最大ダメージ"
-    },
-    "artifact_ShimenawasReminiscence": {
-        "afterUseEnergy": "元素エネルギーを15消費"
-    },
-    "artifact_TinyMiracle": {
-        "condName": "元素ダメージを受けた後"
-    },
-    "char_Albedo": {
-        "blossomCD": "刹那の花クールダウン",
-        "blossomDmg_": "刹那の花ダメージボーナス",
-        "isotomaOnField": "陽華がフィールドに展開",
-        "enerPerBlossom": "刹那の花ごとに再生された元素エネルギー",
-        "c2Stacks": "生滅カウントの消費数"
-    },
-    "char_Amber": {
-        "secondArrow": "（2本目の矢）",
-        "critRateBonus": "<strong>矢の雨</strong>会心率ボーナス",
-        "aoeRangeBonus": "<strong>矢の雨</strong>影響範囲ボーナス",
-        "manualDetonationDmg": "直接起爆ダメージ",
-        "c6CondName": "<strong>矢の雨</strong>発動後"
-    },
-    "char_AratakiItto": {
-        "a1": {
-            "name": "荒瀧逆袈裟斬撃繰り出し数"
-        },
-        "a4": {
-            "dmgInc": "荒瀧逆袈裟効果のダメージボーナス"
-        },
-        "c1": {
-            "initialGain": "乱神の怪力効果のカウント獲得数",
-            "timedGain": "1秒後、1.5秒の間、荒瀧一斗は0.5秒毎に乱心の怪力効果をさらに1層獲得"
-        },
-        "c4": {
-            "name": "憤怒の鬼王状態終了後"
-        }
-    },
-    "char_Barbara": {
-        "passive1": {
-            "cond": "<strong>公演、開始♪</strong>歌声の輪が継続中"
-        },
-        "constellation2": {
-            "cond": "<strong>公演、開始♪</strong>発動中"
-        }
-    },
-    "char_Beidou": {
-        "skillOneHit": "受けた攻撃1回場合のダメージ",
-        "skillTwoHit": "受けた攻撃2回場合のダメージ",
-        "duringBurst": "雷斫り発動中",
-        "tidecallerMaxDmg": "最大ダメージアップ効果の浪追い反撃",
-        "a4charge": "重撃攻撃を放つまでの遅延を短縮",
-        "c4dmg": "星に導かれた岸線の雷元素ダメージ"
-    },
-    "char_Bennett": {
-        "skill": {
-            "lvl1CD": "1段チャージクールダウン",
-            "lvl2CD": "2段チャージクールダウン"
-        },
-        "c4DMG": "消えない情熱ダメージ",
-        "c6PyroInfusion": "<pyro>片手剣、両手剣、長柄武器の炎元素付与</pyro>"
-    },
-    "char_Chongyun": {
-        "infusion": "片手剣、両手剣、長柄武器の氷元素付与",
-        "passive2": "霊刃ダメージ",
-        "asc4Cond": "敵に追氷剣訣をヒット",
-        "constellation1": "氷の刃ダメージ",
-        "constellation6": "敵のHPの割合が重雲より低い",
-        "blades": "召喚された霊刃の数"
-    },
-    "char_Diluc": {
-        "skillB": {
-            "0": "2段ダメージ（強化状態）",
-            "1": "3段ダメージ（強化状態）"
-        }
-    },
-    "char_Diona": {
-        "skillDuration": "キャッツクロー1つにつきの継続時間",
-        "holdShield": "長押しシールド吸収量",
-        "a1shielded": "<strong>フリーズキャッツクロー</strong>のシールド発動中",
-        "holdCryoShield": "長押しシールド氷元素ダメージ吸収",
-        "pressShield": "単押しシールドダメージ吸収量",
-        "pressCryoShield": "単押しシールド氷元素ダメージ吸収量"
-    },
-    "char_Fischl": {
-        "a1Name": "聖裁の雷重撃ダメージ",
-        "a2Name": "聖裁の雷ダメージ",
-        "c1Name": "共同攻撃ダメージ",
-        "c4AoeDmg": "追加の範囲ダメージ",
-        "c6OzDmg": "連携攻撃ダメージ"
-    },
-    "char_Ganyu": {
-        "a1": {
-            "condName": "霜華の矢を放った後",
-            "critRateInc": "霜華の会心率アップ"
-        },
-        "c1": {
-            "condName": "敵に霜華の矢か霜華満開でダメージを与える"
-        },
-        "c4": {
-            "lingerDuration": "効果持続時間"
-        }
-    },
-    "char_HuTao": {
-        "paramita": {
-            "enter": "<strong>冥蝶の舞</strong>状態",
-            "end": "<strong>冥蝶の舞</strong>状態終了後"
-        },
-        "constellation2": {
-            "applyBloodBlossom": "<strong>血梅香</strong>状態を与える"
-        },
-        "constellation4": {
-            "condName": "<strong>血梅香</strong>状態の敵を倒した後"
-        },
-        "constellation6": {
-            "condName": "HPが25%以下、または戦闘不能に至るダメージを受けた"
-        }
-    },
-    "char_Jean": {
-        "c1CondName": "風圧剣の長押しが1秒以上",
-        "c1PullSpeed": "吸い寄せる速度がアップ"
-    },
-    "char_Kaeya": {
-        "c2burstDuration": "15秒、倒す敵1体につき+2.5秒。最大15秒まで"
-    },
-    "char_Keqing": {
-        "c1DMG": "迅雷ダメージ",
-        "recast": "再び<strong>星辰帰位</strong>を発動"
-    },
-    "char_Klee": {
-        "a1CondName": "爆裂花火",
-        "a1CondName2": "次の重撃はスタミナ消費しません",
-        "c2CondName": "敵に <strong>ボンボン爆弾</strong>のブービートラップがヒット",
-        "c6CondName": "ドッカン花火状態"
-    },
-    "char_Lisa": {
-        "a4C": "敵に<strong>薔薇の雷光</strong>をヒット",
-        "c2C": "<strong>蒼雷</strong>長押し"
-    },
-    "char_Mona": {
-        "omen": "敵が星異状態",
-        "hitOp": {
-            "affectedByOmen": "星異状態の敵にヒット"
-        },
-        "frozenDuration": "<shattered>凍結</shattered>継続時間",
-        "uponSprint": "虚実流動発動後"
-    },
-    "char_Ningguang": {
-        "aoeGems": "通常攻撃が範囲ダメージを与える",
-        "starJadeStaminaCost": "星璇がついている間、凝光の重撃はスタミナを消費しない",
-        "skillReset": "粉砕時に、6秒ごとにクールダウンがリセットされます",
-        "a4toggle": "璇璣屏を突き抜けた後",
-        "c4toggle": "キャラクターが璇璣屏の10m以内",
-        "c6bonus": "星璇を獲得"
-    },
-    "char_Qiqi": {
-        "a1C": "<strong>仙法・寒病鬼差</strong>状態で元素反応を起こした後\n"
-    },
-    "char_Razor": {
-        "electroSigil": "雷の印",
-        "electroSigilAbsorbed": "消費された雷の印は元素エネルギーに変換される",
-        "opHitWithClawAndThunder": "敵に<strong>鋭い爪と蒼雷</strong> をヒット",
-        "electroSigilPerProc": "発動ごとの雷の印",
-        "soulCompanion": {
-            "1": "獣の魂ヒット1ダメージ",
-            "2": "獣の魂ヒット2ダメージ",
-            "3": "獣の魂ヒット3ダメージ",
-            "4": "獣の魂ヒット4ダメージ"
-        }
-    },
-    "char_Sayu": {
-        "burstHits": "むじむじだるま発動数",
-        "p2Heal": "周囲のキャラクターのHPが回復",
-        "c1Text": "むじむじだるまは、キャラクターのHP制限を無視し、周囲の敵への攻撃とキャラクターへのHP回復行動を同時に行う",
-        "c2KickPressDmg_": "単押しの風々輪・旋舞蹴のダメージボーナス",
-        "c2KickDmg_": "風々輪・旋舞蹴のダメージボーナス",
-        "c2Cond": "<strong>風々輪</strong>状態での時間",
-        "c6DarumaDmgInc": "むじむじだるまのダメージアップ",
-        "c6DarumaHealInc": "むじむじだるまの回復量アップ"
-    },
-    "char_Shenhe": {
-        "quill": "氷翎発動後",
-        "c4": "霜霄訣消費後",
-        "pressQuota": "単押し場合の発動回数",
-        "holdQuota": "長押し場合の発動数",
-        "pressDuration": "単押し場合の継続時間",
-        "holdDuration": "長押し場合の継続時間"
-    },
-    "char_Thoma": {
-        "a2": "熾炎崩滅ダメージアップ",
-        "c2": "<strong>真紅熾炎の大鎧</strong>継続時間アップ",
-        "refreshBarrier": "<strong>烈炎侍立シールド</strong>を獲得・重ね掛け"
-    },
-    "char_Xiangling": {
-        "afterChili": "グゥオパァーの唐辛子を拾った後",
-        "explosionDMG": "爆発ダメージ",
-        "afterGuobaHit": "敵にグゥオパァーの攻撃がヒット",
-        "duringPyronado": "旋火輪発動後",
-        "c6Exception": "この効果は<pyro>1ヒットダメージ</pyro>、<pyro>2ヒットダメージ</pyro>、また<pyro>旋火輪ダメージ</pyro>に影響されません"
-    },
-    "char_Xiao": {
-        "burst": {
-            "lifeDrain_": "HP減少",
-            "currentHPPerSec": "（1秒当たりの現HP）",
-            "incJump": "ジャンプ力が大幅にアップ",
-            "inBurst": "<strong>靖妖儺舞</strong>状態",
-            "stack": "<strong>靖妖儺舞</strong>状態での継続時間"
-        },
-        "skillStack": "<strong>風輪両立</strong>発動数"
-    },
-    "char_Xingqiu": {
-        "skillCond": "雨すだれの剣に守られている",
-        "burstCond": "虹剣勢状態発動中",
-        "c2Cond": "敵に剣雨をヒット"
-    },
-    "char_Xinyan": {
-        "skill": {
-            "pyroShield": {
-                "1": "レベル1シールド炎元素ダメージ吸収量",
-                "2": "レベル2シールド炎元素ダメージ吸収量",
-                "3": "レベル3シールド炎元素ダメージ吸収量"
-            }
-        },
-        "p1": {
-            "desc": "<strong>情熱の薙ぎ払い</strong>のヒットノルマを1減少"
-        },
-        "p2": {
-            "activeShield": "キャラクターが<strong>情熱の薙ぎ払い</strong>のシールドに守られている"
-        },
-        "c2": {
-            "key_": "<strong>反逆の弾き</strong>物理ダメージ会心率ボーナス",
-            "shield": "発動する時にLv.3シールド・舞のリズムを生成する"
-        },
-        "c4": {
-            "swingHit": "敵に<pyro>振り回しダメージ</pyro>をヒット"
-        },
-        "c6": {
-            "duringCharge": "重撃攻撃中"
-        }
-    },
-    "char_YaeMiko": {
-        "c4": "敵に<strong>殺生櫻</strong>の雷をヒット",
-        "c6": "殺生櫻、敵の防御力を無視"
-    },
-    "char_Yanfei": {
-        "seals": [
-            "印0つ",
-            "印1つ",
-            "印2つ",
-            "印3つ",
-            "印4つ"
-        ],
-        "perSeal": "（印1つごとに）",
-        "maxSeals": "丹火の印の最大数",
-        "charged": {
-            "0": "印0つダメージ",
-            "1": "印1つダメージ",
-            "2": "印2つダメージ",
-            "3": "印3つダメージ",
-            "4": "印4つダメージ"
-        },
-        "burst": {
-            "grantMax": "丹火の印最大数を獲得"
-        },
-        "passive1": {
-            "sealsConsumed": "重撃時に消費される印の数"
-        },
-        "passive2": {
-            "key": "法獣の灼眼ダメージ"
-        },
-        "c1": {
-            "sealChargedStam_": "重撃スタミナ消費減少"
-        },
-        "c6": {
-            "maxSealInc": "丹火の印の最大数を増加"
-        }
-    },
-    "char_YunJin": {
-        "burst": "飛雲旗陣状態",
-        "a4Inc_": "パーティーの元素タイプによる増加",
-        "c4": "結晶反応後"
-    },
-    "char_Zhongli": {
-        "skill": {
-            "stele": "岩柱ダメージ",
-            "resonance": "原岩共鳴ダメージ",
-            "maxStele": "岩柱の最大数",
-            "nearShield": "敵が<strong>玉璋シールド</strong>付近範囲内"
-        },
-        "p1cond": "<strong>玉璋シールド</strong>がダメージを受けた後",
-        "c6heal": "最大HP回復量"
-    },
-    "weapon_AlleyHunter": {
-        "condName": "待機継続時間"
-    },
-    "weapon_AmosBow": {
-        "condName": "矢の飛行時間"
-    },
-    "weapon_BlackTassel": {
-        "condName": "敵はスライム"
-    },
-    "weapon_Deathmatch": {
-        "condName": "敵が付近内"
-    },
-    "weapon_DragonspineSpear": {
-        "aoeDmg": "恒氷晶核ダメージ",
-        "cryoAffectedDmg": "<cryo>氷元素</cryo>に影響された敵にダメージ"
-    },
-    "weapon_FerrousShadow": {
-        "condName": "HPノルマ達成",
-        "resistance": "重撃の中断耐性アップ"
-    },
-    "weapon_FreedomSworn": {
-        "sigilsConsumed": "奮起の欠片消費後"
-    },
-    "weapon_Frostbearer": {
-        "aoeDmg": "恒氷晶核ダメージ",
-        "cryoAffectedDmg": "<cryo>氷元素</cryo>に影響された敵にダメージ"
-    },
-    "weapon_Hamayumi": {
-        "condName": "元素エネルギーが100%"
-    },
-    "weapon_MemoryOfDust": {
-        "atkEffInc": "攻撃効果アップ"
-    },
-    "weapon_PolarStar": {
-        "condName": "白夜極星"
-    },
-    "weapon_SerpentSpine": {
-        "takeMoreDmg": "受けたダメージごとに増加量"
-    },
-    "weapon_Slingshot": {
-        "condName": "通常攻撃・重撃攻撃がヒット",
-        "less": "矢が発射後0.3秒以内",
-        "more": "矢が発射後0.3秒以降"
-    },
-    "weapon_SnowTombedStarsilver": {
-        "aoeDmg": "恒氷晶核ダメージ",
-        "cryoAffectedDmg": "<cryo>氷元素</cryo>に影響された敵にダメージ"
-    },
-    "weapon_SummitShaper": {
-        "atkEffInc": "攻撃効果アップ"
-    },
-    "weapon_TheAlleyFlash": {
-        "condName": "ダメージを受けていない"
-    },
-    "weapon_TheUnforged": {
-        "atkEffInc": "攻撃効果アップ"
-    },
-    "weapon_TheWidsith": {
-        "aria": "詠唱",
-        "interlude": "間奏曲",
-        "recitative": "叙唱"
-    },
-    "weapon_ThunderingPulse": {
-        "condName": "飛雷の巴紋"
-    },
-    "weapon_VortexVanquisher": {
-        "atkEffInc": "攻撃効果アップ"
-    },
-    "artifact_EchoesOfAnOffering": {
-        "mode": "発動モード",
-        "avg": "平均",
-        "always": "常に"
-    },
-    "char_KamisatoAyato": {
-        "skill": {
-            "unableToAuto": "重撃や落下攻撃使用不可",
-            "namisenStacks": "浪閃",
-            "shun_dmgInc": "<hydro>瞬水剣ダメージアップ</hydro>"
-        },
-        "passive1": {
-            "afterUse": "スキル発動後獲得した浪閃層数",
-            "afterExplode": "水の幻影の破裂後獲得した浪閃層数"
-        },
-        "c1": {
-            "shun_dmg_": "<hydro>瞬水剣ダメージボーナス</hydro>"
-        },
-        "c2": {
-            "addlStacks": "浪閃の重ね掛け上限が増加"
-        },
-        "c6": {
-            "dmg": "濫觴無底ダメージ"
-        }
-    },
-    "char_KukiShinobu": {
-        "a4": {
-            "heal": "元素スキル治療量アップ"
-        },
-        "c4": {
-            "dmg": "雷草ダメージ"
-        }
-    },
-    "char_Yelan": {
-        "c2": {
-            "dmg": "罠に陥る者、多々益善ダメージ"
-        },
-        "c4": {
-            "condName": "敵が命の糸がマークされた"
-        },
-        "c6": {
-            "dmg": "権謀術数打破の矢ダメージ"
-        }
-    },
-    "page_character": {
-        "addNew": "キャラクター加入",
-        "tabs": {
-            "overview": "概要",
-            "talent": "天賦",
-            "optimize": "改良",
-            "theorycraft": "セオリークラフト"
-        },
-        "formulas": "式",
-        "calculations": "計算",
-        "selectCharacter": "キャラクター選択",
-        "removeCharacter": "{{value}}を削除してもよろしいですか?",
-        "delete": "キャラクター削除",
-        "teammates": "チーム",
-        "hitmode": {
-            "hit": "非会心攻撃ダメージ",
-            "avgHit": "平均ダメージ",
-            "critHit": "会心攻撃ダメージ",
-            "global": "グローバル標準"
-        },
-        "tabEquip": {
-            "swapWeapon": "武器変更",
-            "swapArt": "聖遺物変更",
-            "compare": "現ビルドと比較する",
-            "unequipArts": "全ての聖遺物を外す"
-        },
-        "characterName": "キャラクター名",
-        "teammate": "パーティーメンバー{{count}}",
-        "noReaction": "反応なし",
-        "multiTarget": {
-            "title": "複数改良ターゲット構成",
-            "addNewTarget": "ターゲットを追加",
-            "addNewMTarget": "複数の改良ターゲットを作成",
-            "info1": "注：コミュニティが作成した複数改良ターゲットは、<1>GO Discord</1>または、<3>KQM</3>の複数改良ガイド内にありますが、その有効性は保証できません。",
-            "info2": "構成が正確に設定されている事を確認ください。",
-            "description": "詳細",
-            "duplicate": "重複",
-            "target": {
-                "other": "<0>{{count}}</0>つのターゲット"
-            }
-        },
-        "addStats": {
-            "title": "敵・ボーナスステータスの構成",
-            "info": "こちらでは、GOでサポートされていない食べ物バフ、アビスカードや、超電導などのバフ・デバフを追加できます。具体的な値については、<1>原神Wiki</1>を参照してください。",
-            "label": "新規ボーナスステータス"
-        },
-        "tabTheorycraft": {
-            "substatType": {
-                "min": "最低サブ効果スコア",
-                "max": "最大サブ効果スコア",
-                "mid": "平均サブ効果スコア"
-            },
-            "maxTotalRolls": "現ビルドは最大<strong>{{value}}</strong>のスコアが可能です",
-            "maxRolls": "このサブステータスは最大30回のスコアが可能です。",
-            "maxRollsMain": "最低1つのメイン効果が同じステータスのため、このサブ効果は最大{{value}}回のスコアが可能です。",
-            "distribute": "分配",
-            "compareToggle": {
-                "equipped": "装備中の聖遺物と比較",
-                "tc": "セオリークラフトステータスを表示"
-            },
-            "resetDialog": {
-                "title": "セオリークラフトビルド設定をリセットしますか？",
-                "content": "今設定されているセオリークラフトビルドが削除されます。"
-            },
-            "copyDialog": {
-                "copyBtn": "装備中のをコピー",
-                "title": "データを装備中の聖遺物・武器からコピーしますか？",
-                "content": "今設定されているセオリークラフトビルドが装備中のビルドに換えます。"
-            },
-            "kqmsDialog": {
-                "kqmsBtn": "KQM（刻晴メインズ）を使用",
-                "title": "KQMを使用しますか？",
-                "content": "今設定されている<strong>サブステ</strong>を<4>KQM標準</4>に準拠したものに換えます。"
-            },
-            "gcsimDialog": {
-                "title": "gcsimエクスポート",
-                "content": "下記のコードからビルドをコピーし、<2>gcsim</2>にインポートできます",
-                "copied": "クリップボードにgcsim configをコピーしました。"
-            },
-            "all": {
-                "rolls": "全ての強化",
-                "max": "全てをマックス"
-            },
-            "substat": {
-                "max": "マックス"
-            },
-            "feasibilityAlert": "現サブ効果の分布には、少なくとも <strong>{{minSubLines}}</strong> 行のサブ効果が必要です。よって、<strong>{{minOtherRolls}}</strong> の強化を他のサブステータスに割り当てる必要があります。",
-            "optAlert": {
-                "scalesWith": "選択された改良ターゲットと制約が計算する倍率は、次のサブステです：",
-                "distribute": "ステータスをこれらのサブ効果にのみ分配します。",
-                "feasibilty": "非倍率のサブ効果に分散する必要がある可能性があります。"
-            },
-            "constraint": {
-                "title": "ステータス制約",
-                "add": "ステータス制約を追加"
-            }
-        },
-        "tabTeambuff": {
-            "team_reso": "元素共鳴",
-            "resonance_tip": "元素共鳴の効果を発揮するためには、パーティーが4人揃っている必要があります。"
-        },
-        "showingNum": {
-            "other": "{{value}}人のキャラクターの内、<1>{{count}}</1> 人を表示中"
-        }
-    },
-    "page_weapon": {
-        "edit": "武器改造",
-        "weaponName": "武器名",
-        "removeWeapon": "{{value}}を削除してよろしいですか？",
-        "addWeapon": "武器を追加",
-        "showingNum": {
-            "other": "武器{{value}}つの内、<1>{{count}}</1>つを表示中"
-        },
-        "cantDeleteLock": "武器がロックされているため解除できません"
-    },
-    "weapon_AquaSimulacra": {
-        "condName": "敵が付近内"
-    },
-    "weapon_FadingTwilight": {
-        "states": {
-            "evengleam": "夕暮",
-            "afterglow": "流霞",
-            "dawnblaze": "朝日"
-        },
-        "condName": "現状態"
-    },
-    "weapon_HaranGeppakuFutsu": {
-        "consumed": "消費された波穂の層数"
-    },
-    "char_Collei": {
-        "sproutDmg": "芽生えダメージ",
-        "miniAnbarDmg": "ミニコレアンバーダメージ"
-    },
-    "char_Dori": {
-        "c2MultiplierKey_": "ジンニー砲倍率",
-        "c2DmgKey": "ジンニー砲ダメージ",
-        "c4ConnectedBelowHp": "ランプの精とリンクしているキャラクターのHPは50%以下",
-        "c4ConnectedBelowEner": "ランプの精とリンクしているキャラクターの元素チャージは50%以下"
-    },
-    "char_ShikanoinHeizou": {
-        "takingField": "フィールド登場後"
-    },
-    "char_Tighnari": {
-        "p1Cond": "<strong>花筐の矢</strong>を放った後",
-        "c4ReactCond": "<strong>蔓纏いの矢</strong>が元素反応を起こした後",
-        "c6DmgKey": "蔵蘊の花矢の追加ダメージ",
-        "c6WreathRed": "<strong>花筐の矢</strong>のチャージ時間減少"
-    },
-    "elementalResonance": {
-        "SprawlingGreenery": {
-            "cond2ele": "<pyro>燃焼</pyro>、<spread>原激化</spread>、または<bloom>開花</bloom>反応を発動後",
-            "cond3ele": "<aggravate>超激化</aggravate>、<spread>草激化</spread>、<hyperbloom>超開花</hyperbloom>、または<burgeon>烈開花</burgeon>反応を発動後"
-        },
-        "EnduringRock": {
-            "hitCond": "キャラクターがシールドで守られている時、敵にダメージを与えた後"
-        }
-    },
-    "page_character_optimize": {
-        "mainStat": {
-            "levelAssTooltip": {
-                "title": "メイン効果レベル仮定",
-                "desc": "メイン効果値を指定レベル以上に設定します。サブ効果に変更はしません。"
-            },
-            "assumptionLvl": {
-                "no": "メイン効果レベル仮定なし",
-                "lvl": "メイン効果は最低{{lvl}}レベルと仮定"
-            },
-            "title": "メイン効果フィルター・構成"
-        },
-        "tcGraph": {
-            "vs": "対改良ターゲットを複合",
-            "notSel": "選択なし",
-            "downloadData": "データをダウンロード",
-            "desc": "オプティマイザーからのデータで改良ターゲットと選択したグラフターゲットを複合してグラフを表しされます。グラフには、選択したグラフターゲットの0.01ごとの最大改良ターゲット値が表示されます。これらを有効にするのはオプションであり、有効に場合計算時間が遅くなります。",
-            "showStatThr": "ステータスのしきい値を表示",
-            "generatedBuilds": "生成されたビルド",
-            "statReqThr": "ステータス要件のしきい値",
-            "currentBuild": "現ビルド",
-            "highlightedBuilds": "注目ビルド",
-            "buildAlreadyInList": "ビルドは既にリストにあります"
-        },
-        "levelFilter": "聖遺物レベルフィルター",
-        "allowPartial": "部分的なビルドを許可する（5聖遺物以下）",
-        "constraintFilter": {
-            "title": "最小ビルド制約",
-            "tooltip": "構成されたビルドが考慮する特定の最小要件を設定します。たとえば、最低140%の元素チャージをターゲットとします。"
-        },
-        "artSetConfig": {
-            "title": "聖遺物セットの設定",
-            "setEffCond": "効果条件の設定",
-            "enabled": "有効",
-            "allowed": "許可",
-            "excluded": "除外",
-            "selected": "選択済み",
-            "2rainbow": "2セット効果のみ",
-            "4rainbow": "セット効果なし",
-            "allowAll2set": "全ての2セットを許可",
-            "excludeAll2set": "全ての2セットを除外",
-            "allowAll4set": "全ての4セットを許可",
-            "excludeAll4set": "全ての4セットを除外",
-            "alExRainbow": "<0>許可<1></1></0> / <2>除外<1></1></2>レインボービルド",
-            "modal": {
-                "setCond": {
-                    "title": "聖遺物セットの効果条件",
-                    "reset": "条件をリセット",
-                    "text": "一部の聖遺物セットの中、条件を満たして発揮するバフするものがあります。こちらではこれらの効果を選択でき、目指している改良に必要な計算をより的確に設定できます。"
-                },
-                "ArtSetFilter": {
-                    "title": "聖遺物セット<1>許可<1></1></1> / <3>除外<1></1></3>",
-                    "intro": "ビルド改良計算に考慮させたいセットを許可・除外できます。次の例では、<strong>A</strong>はオンセット、<strong>R</strong>はレインボー（オフセット）です。",
-                    "2set": "<0><0>除外<1></1>2セット</0></0>は、2セットが含むビルドを除外します：<2><0>AA</0>RRR</2>と<4><0>AAA</0>RR</4>。",
-                    "4set": "<0><0>除外<1></1>4セット</0></0>は、4セットが含むビルドを除外します：<2><0>AAAA</0>R</2>と<4><0>AAAAA</0></4>。",
-                    "2rain": "<0><0>除外<1></1>3レインボー</0></0>は、2セット＋3レインボーが含むビルドを除外します：<2>AA<1>RRR</1></2>と<4>AAA<1>RR</1></4>。",
-                    "4rain": "<0><0>除外<1></1>5レインボー</0></0>は、バラバラの5レインボービルドを除外します: <2><0>RRRRR</0></2>。"
-                }
-            }
-        },
-        "buildDropdownDesc": "生成されるビルドの数を減らすと、多数のビルドの計算時間が短縮されます。",
-        "threadDropdownDesc": "スレッド数を増やすとビルド時間は短縮されますが、CPUの使用量も増加します。",
-        "noArtis": "注！まだGOに聖遺物を追加していないようです。<1>聖遺物</1>ページに移動して追加してください。",
-        "targetSelector": {
-            "selectOptTarget": "改良ターゲットを選択",
-            "selectGraphTarget": "グラフターゲットを選択",
-            "invalidTarget": "ターゲット無効",
-            "selectBuildTarget": "ビルド制約ターゲットを選択"
-        },
-        "selectTargetFirst": "先ずは改良ターゲットを選択ください",
-        "generateButton": {
-            "cancel": "キャンセル",
-            "generateBuilds": "ビルドを生成"
-        },
-        "removeBuildButton": "ビルドを削除",
-        "theorycraftButton": "セオリークラフト",
-        "currentlyEquippedBuild": "装備中",
-        "addBuildToList": "ビルドをリストに追加",
-        "graphBuildLabel": "グラフ＃<1>{{count}}</1>",
-        "excludeArt": {
-            "title_exclude": "除外された聖遺物",
-            "title_tooltip": "このキャラクターの除外リストに聖遺物を追加できます。除外リスト内の聖遺物は、ビルド生成の計算に対象されません。",
-            "addExc": "このキャラクターの除外リストに聖遺物を追加してください",
-            "selExc": "このキャラクターの除外リストに追加する聖遺物を選択してください",
-            "deSelectExc": "除外リストから外す聖遺物をクリックしてください",
-            "usingNum": "除外聖遺物<1>{{totalStr}}</1>個使用中",
-            "button_txt": "聖遺物を除外",
-            "excNum": {
-                "other": "<0>{{count}}</0>個の聖遺物を除外"
-            }
-        },
-        "excludeChar": {
-            "title": "装備中聖遺物構成",
-            "modal": {
-                "allow_all": "表示されている全てのキャラクターを許可リストに追加",
-                "disallow_All": "表示されている全てのキャラクターを許可リストから外す"
-            },
-            "allowEquip": "下記キャラクターからの聖遺物を使用の許可する",
-            "tooltip": "許可リストにキャラクターを追加できます。当リスト内のキャラクターはビルド生成の計算に対象されます。また、装備されていない聖遺物のみ使用、許可リスト内の聖遺物のみ使用、およびすべての聖遺物の使用要件を切替えることもできます。",
-            "chars": "キャラクター",
-            "artis": "聖遺物",
-            "states": {
-                "unequippedOnly": "装備されていないもののみ",
-                "customList": "カスタムリスト",
-                "all": "全聖遺物"
-            },
-            "usingState": "使用中",
-            "usingNumTot": {
-                "other": "<3>{{count}}</3>人のキャラクターからの<1>{{arts}}</1>個の聖遺物を使用中"
-            }
-        },
-        "buildCompleted": "ビルド生成完了",
-        "notifyTooltip": "ビルドの生成が完了したら通知音が鳴ります。タブアウト時にも通知が表示されます。",
-        "bonusStats": {
-            "title": "ボーナスステータス"
-        },
-        "build": {
-            "other": "<0>{{count}}</0>つのビルド"
-        },
-        "thread": {
-            "other": "<0>{{count}}</0>つのスレッド"
-        }
-    },
-    "weapon_ForestRegalia": {
-        "condName": "唯識の葉を拾った後"
-    },
-    "weapon_FruitOfFulfillment": {
-        "stackName": "盈虚効果"
-    },
-    "weapon_Moonpiercer": {
-        "condName": "蘇生の葉を拾った後"
-    },
-    "weapon_SapwoodBlade": {
-        "condName": "唯識の葉を拾った後"
-    },
-    "char_TravelerAnemo": {
-        "p1": "風の刃ダメージ",
-        "c6": "敵に<strong>激風の息</strong>をヒット",
-        "c4": "起動中のダメージ軽減",
-        "initialEleDmg": "旋風の剣長押し、元素変化追加ダメージ",
-        "maxEleDmg": "旋風の剣長押し、元素変化追加最大ダメージ",
-        "stormEleDmg": "真空の渦発動ダメージ",
-        "stormEleMaxDmg": "真空の渦最大ダメージ"
-    },
-    "char_TravelerElectro": {
-        "skill": {
-            "amuletGenAmt": "生成された豊穣の勾玉の数",
-            "absorb": "豊穣の勾玉を拾った後",
-            "enerRest": {
-                "none": "勾玉ごとの元素チャージ",
-                "over35": "勾玉ごとの元素チャージ（元素エネルギー35%以上）",
-                "under35": "勾玉ごとの元素チャージ（元素エネルギー35%以下）"
-            }
-        },
-        "burst": {
-            "3rd": "威光の落雷3階段ダメージ",
-            "thunderCd": "威光の落雷クールダウン"
-        },
-        "passive2": {
-            "enerRech_": "豊穣の勾玉の元素チャージボーナス"
-        },
-        "c2": {
-            "thunderHit": "敵に<strong>威光の落雷</strong>をヒット"
-        }
-    },
-    "char_TravelerGeo": {
-        "passive2": {
-            "key": "岩崩れダメージ"
-        },
-        "c2": {
-            "key": "不穏な溶岩ダメージ"
-        }
-    },
-    "page_newTab": {
-        "title": "🛑新しいオプティマイザータブが検出されました🛑",
-        "p1": "💞原神オプティマイザーを別のタブで開いたようです。📵GOは複数のタブで操作すると、様々なエラーが発生する可能性があります：",
-        "symptom": {
-            "1": "データの非同期🙃",
-            "2": "データベースの破損💔",
-            "3": "胃痛🤰と開発者の発狂😡",
-            "4": "まれに、デス☠️"
-        },
-        "p2": "よって、📝次のいずれかを選択ください：",
-        "choice": {
-            "1": "このタブを閉じて🔪、新しいタブ🆕を使用ください",
-            "2": "新しいタブを閉じ↩️、こちらが唯一残っているタブであることを確認し🔂、このページを更新します🔄"
-        },
-        "refresh": "ページ更新"
-    },
-    "char_Candace": {
-        "hydroInfusion": "<hydro>片手剣、両手剣、長柄武器に水元素付与状態</hydro>"
-    },
-    "char_Cyno": {
-        "p1Dmg": "渡荒の雷ダメージ",
-        "judication": "裁定効果発動",
-        "burstNormalDmgInc": "啓途誓使状態の通常攻撃ダメージアップ",
-        "boltDmgInc": "渡荒の雷ダメージアップ",
-        "duringBurst": "<strong>啓途誓使</strong>状態",
-        "afterBurstOrJudication": "<strong>聖儀・狼駆憑走</strong>発動後、または裁定効果を起こした時",
-        "a1soulfarer_dmg_": "律淵渡魂ダメージボーナス"
-    },
-    "char_Nilou": {
-        "skill": {
-            "dance1": "剣舞のステップ、ヒット1ダメージ",
-            "dance2": "剣舞のステップ、ヒット2ダメージ",
-            "whirl1": "旋舞のステップ、ヒット1ダメージ",
-            "whirl2": "旋舞のステップ、ヒット2ダメージ",
-            "wheel": "水輪ダメージ",
-            "illusion": "水月ダメージ"
-        },
-        "passive1": {
-            "underChaliceEffect": "金盃の豊穣状態",
-            "notDendroHydroTeam": "ヒント：チーム全員の元素タイプが草元素と水元素であり、かつ草元素と水元素のキャラクターが少なくとも一人ずつ編成すると追加の条件と効果が見れます",
-            "condName": "金盃の豊穣状態で<dendro>草元素ダメージ</dendro>を受けた後",
-            "bountifulCores": "開花反応は豊穣の核を生成"
-        },
-        "c4": {
-            "condName": "敵に3段目のステップ、ピルエットをヒット"
-        },
-        "c1": {
-            "illusion_dmg_": "水月ダメージボーナス"
-        }
-    },
-    "char_Nahida": {
-        "karmaDmg_": "滅浄三業のダメージボーナス",
-        "karmaCritRate_": "滅浄三業の会心率ボーナス",
-        "karmaIntervalDec": "滅浄三業の発動間隔減少",
-        "noBurstEffect": "ヒント：元素爆発効果がありません。凸1を有効、または<pyro>炎元素</pyro>、<electro>雷元素</electro>か<hydro>水元素</hydro>のチームメンバーを加入ください。",
-        "partyInBurst": "チームメンバーがフィールド範囲内",
-        "c1Key": "摩耶の宮殿の効果ボーナス発動のため、追加の<pyro>炎元素</pyro>、<electro>雷元素</electro>と<hydro>水元素</hydro>のチームメンバーを加入",
-        "c2": {
-            "bloomCondName": "敵に<strong>蘊種印</strong>を付与",
-            "qasCondName": "蘊種印状態にある敵が<spread>原激化</spread>、<aggravate>超激化</aggravate>、または<spread>草激化</spread>反応を受けた後"
-        },
-        "c4CondName": "<strong>蘊種印</strong>状態にある敵",
-        "c6KarmicDmg": "破業障ダメージ"
-    },
-    "artifact_FlowerOfParadiseLost": {
-        "condName": "開花、超開花、烈開花を起こした後"
-    },
-    "char_Faruzan": {
-        "giftCondName": "祈風の恵み状態",
-        "a4CondName": "烈風護持状態",
-        "c2DurationInc": "赫耀多面体の継続時間増加",
-        "c6Arrow": "敵にダメージを与え、風圧崩潰効果を付与",
-        "baleCondName": "敵に詭風の禍つ効果を付与"
-    },
-    "char_Layla": {
-        "starDmgInc": "飛星ダメージアップ",
-        "c1ShieldBonusKey_": "果てなき夢の領土ボーナス",
-        "c4CondKey": "啓明状態",
-        "starDmg_": "飛星ダメージボーナス",
-        "slugDmg_": "星光弾ダメージボーナス",
-        "starInterval_": "夜星生成間隔"
-    },
-    "char_Wanderer": {
-        "windfavoredState": "<strong>児姿優風</strong>状態",
-        "p1": {
-            "pyroCondName": "<strong>羽画・風姿華歌</strong>を発動時、<pyro>炎元素</pyro>に触れた後",
-            "cryoCondName": "<strong>羽画・風姿華歌</strong>を発動時、<cryo>氷元素</cryo>に触れた後"
-        },
-        "p2Dmg": "風の矢ダメージ",
-        "c1BonusKey": "風の矢ダメージボーナス倍率",
-        "c2CondName": "空居力の上限値と現在値の差",
-        "c6Key": "言祝・霞幕傾松風の倍率"
-    },
-    "weapon_ToukabouShigure": {
-        "condName": "敵に紙傘の邪気効果を付与"
-    },
-    "char_Alhaitham": {
-        "withMirrors": "琢光鏡を所持",
-        "debateStacks": "琢光鏡を凝集した後",
-        "mirrorsConsumed": "<strong>殊境・顕象結縛</strong>を発動し、琢光鏡を消費",
-        "projectionAttack_dmg_": "光幕攻撃ダメージボーナス",
-        "excessMirror": "限界に達し、琢光鏡を生成した後",
-        "projectionDmg": "光幕攻撃ダメージ"
-    },
-    "char_Yaoyao": {
-        "inExplosionAoE": "<strong>白玉大根</strong>の爆発範囲内",
-        "inLegacy": "桂子仙機状態",
-        "megaDmg": "超スゴイ! 大根ダメージ",
-        "megaHeal": "超スゴイ! 大根治療"
-    },
-    "page_error": {
-        "title": "🛑エラー発生🛑",
-        "p1.1": "エラーが発生しました。解決のため、しばらくのご協力をお願い致します。",
-        "p1.2": "次を参照してください：",
-        "fixes": {
-            "1": "ページを更新",
-            "2": "ブラウザ拡張機能をすべて無効にし、再度更新してください",
-            "3": "データベースをダウンロードし、保管してください。「すべてのGOデータを削除」をクリックし、データベースを再アップロードしてください"
-        },
-        "p2": "上記を行っても解決されていない場合は、「GitHub Issues」ページ、またはDiscordのバグレポートチャンネルにご連絡ください",
-        "report": {
-            "1": "下記のデータベースをダウンロード",
-            "2": "下記のレポートをコピーする",
-            "3": "GitHubと連絡するには、<1>ここ</1>をクリックしてください。内容にテキストを貼付け、再現手順を記入し、JSON ファイルを添付してください（ファイル名を「.txt」で終わるように変更する必要があります）",
-            "4": "または、<1>ここ</1>をクリックしてDiscordと連絡ください。「#🐛bug-reports」チャネルにて、新しいスレッドを作成し、メッセージ ボックスにテキストを貼付けください。再現手順を入力し、JSONファイルもアップロードしてください。"
-        },
-        "refresh": "ページ更新",
-        "caption": "エラーを調査している運営のライブ映像",
-        "confirmNuke": "すべてのGOデータを削除してよろしいですか？取り返しのつかない事です！",
-        "finishNuke": "全てのGOデータを削除。ページ更新中。",
-        "nuke": "すべてのGOデータを削除"
-    },
-    "char_Dehya": {
-        "inFieldAndTakeDmg": "浄焔剣獄領域内のフィールド上キャラクターがダメージを受けた後",
-        "field_dmg_": "浄焔剣獄ダメージボーナス",
-        "initialHeal": "治療発動回復量",
-        "dotHeal": "追加の回復",
-        "critHitDuringBurst": "熾鬣拳が会心ダメージを命中後"
-    },
-    "char_Mika": {
-        "inSoulwind": "霊風状態",
-        "numDetectorStacks": "偵察の層数",
-        "incDetectorStacks": "偵察の最大層数増加"
-    },
-    "weapon_MailedFlower": {
-        "condName": "敵に元素スキルをヒット、または元素反応を起こした後"
-    },
-    "artifact_NymphsDream": {
-        "condName": "鏡中の水仙"
-    },
-    "char_Somnia": {
-        "name": "ソムニァ",
-        "title": "模擬認知の創出",
-        "description": "彼女はさまざまなコンセプトの構成でありながら、あまたな状態・段階で存在します。・・・そもそも、彼女は本当に存在するのでしょうか？",
-        "constellationName": "数学猫原理（マテマティカ・フェリーナ）",
-        "auto": {
-            "name": "星幽算盤（アストラル・アバカス）",
-            "fields": {
-                "normal": {
-                    "0": "<strong>通常攻撃</strong>",
-                    "1": "星幽算盤（アストラル・アバカス）を具現化し、最大4段のビーズの連発攻撃を行い、<electro>雷元素ダメージ</electro>を与える。"
-                },
-                "charged": {
-                    "0": "<strong>重撃</strong>",
-                    "1": "一定のスタミナを消費し、ビーズで連続攻撃を行い、0.3秒ごとに最大4体の敵に<electro>雷元素ダメージ</electro>を与えます。",
-                    "2": "ソムニァは中断耐性を獲得し、重撃を行っている間は自由に移動できます。"
-                },
-                "plunging": {
-                    "0": "<strong>落下攻撃</strong>",
-                    "1": "ビーズを地面に発射し、衝撃時に<electro>雷元素範囲ダメージ</electro>を与えます。"
-                }
-            },
-            "skillParams": {
-                "0": "ヒット1ダメージ",
-                "1": "ヒット2ダメージ",
-                "2": "ヒット3ダメージ",
-                "3": "ヒット4ダメージ",
-                "4": "重撃連続攻撃ダメージ",
-                "5": "重撃スタミナコスト",
-                "6": "落下攻撃ダメージ",
-                "7": "低・高落下攻撃ダメージ"
-            }
-        },
-        "skill": {
-            "name": "宇宙電卓（コスミック・カルキュレータ）",
-            "description": {
-                "0": "星幽算盤から膨大なエネルギーを凝縮して爆発を引き起こし、頭上に定義不可能な旨趣を収める自己完結型の印章を作成し、敵に<electro>雷元素範囲ダメージ</electro>を与えます。",
-                "1": "自己完結型の印章状態の時、シュレーディンガーの重ね合わせ状態を獲得します。",
-                "2": "<br/>",
-                "3": "<strong>シュレーディンガーの重ね合わせ</strong>",
-                "4": "通常攻撃と重撃のダメージを元素熟知に基づいて増加します。",
-                "5": "シュレーディンガーの重ね合わせは自己完結型の印章の継続時間が終了された時、またはソムニァがフィールドを出た時に切れます。"
-            },
-            "skillParams": {
-                "0": "元素スキルダメージ",
-                "1": "継続時間",
-                "2": "クールダウン"
-            }
-        },
-        "burst": {
-            "name": "視差の肉球（パララックス・ポゥズ）",
-            "description": {
-                "0": "星型の天体台風を周囲に召喚し、拡大しながら<electro>雷元素ダメージ</electro>の爆発を放ちます。フィールド内は持続しつつ、1秒ごとに敵に継続的な<electro>雷元素範囲ダメージ</electro>を与えます。",
-                "1": "天体台風が発動中、ソムニァの元素熟知が増加されます。",
-                "2": "さらに、天体台風が発動中、星の統計を獲得します。この状態の間、星幽算盤（アストラル・アバカス）を乗算、加算、または減算モードに設定できます。星の統計モードは1つだけ同時に発動できます。",
-                "3": "<br/>",
-                "4": "星幽算盤モード",
-                "5": [
-                    "<strong>乗算</strong>：天体台風のフィールド内、片手剣・両手剣・長柄武器を装備するキャラクターの武器に<electro>雷元素</electro>が付与されます。フィールド内で通常攻撃または重撃がヒットすると星の分割を行い、ソムニァの元素熟知に基づいて<electro>雷元素範囲ダメージ</electro>を、1.5秒ごと1回に発動できます。",
-                    "<strong>加算</strong>：天体台風の範囲とダメージが増加します。敵に当たると、通常攻撃と重撃はソムニァの元素熟知に基づいて<electro>雷元素範囲ダメージ</electro>を与える超新星を実体化します。この効果は0.75秒ごとに1回発動できます。",
-                    "<strong>減算</strong>：天体台風の範囲とダメージを減少し、その範囲内の敵に「3未満」効果が適用されます。「3未満」は、ソムニァの元素熟知に基づいて敵の元素・物理耐性を減少させます。さらに、ソムニァの通常攻撃と重撃は、元素熟知に基づいて増加します。"
-                ]
-            },
-            "skillParams": {
-                "0": "元素スキルダメージ",
-                "1": "元素熟知",
-                "2": "天体台風持続的ダメージ（乗算）",
-                "3": "星の分割ダメージ",
-                "4": "天体台風持続的ダメージ（加算）",
-                "5": "超新星ダメージ",
-                "6": "天体台風持続的ダメージ（減算）"
-            }
-        },
-        "passive1": {
-            "name": "高速計算",
-            "description": {
-                "0": "重撃のチャージ速度+20%及びスタミナ消耗‐20%"
-            }
-        },
-        "passive2": {
-            "name": "数学の達人",
-            "description": {
-                "0": "天体台風の発動中、天体台風、星の分割と超新星の攻撃を敵にヒットするごとに、ソムニァの元素熟知が5%、最大25%まで増加されます。"
-            }
-        },
-        "passive3": {
-            "name": "不眠症反復",
-            "description": {
-                "0": "夜間（18時から6時まで）になると、原神オプティマイザーのビルド改良計算速度を+10%。"
-            }
-        },
-        "constellation1": {
-            "name": "小点数",
-            "description": {
-                "0": "ソムニァの通常攻撃と重撃ダメージを25%の確率で倍増"
-            }
-        },
-        "constellation2": {
-            "name": "素数",
-            "description": {
-                "0": "ソムニァがシュレーディンガーの重ね合わせ状態の間、通常攻撃・重撃がヒットするたびに自然数を1層を獲得します。自然数の層量が素数である場合、ソムニァの次の通常攻撃・重撃はシュレーディンガーの重ね合わせによるダメージ増加の2倍受けます。"
-            }
-        },
-        "constellation3": {
-            "name": "無限の一連",
-            "description": {
-                "0": "</strong>視差の肉球（パララックス・ポゥズ）</strong>のレベルを+3。",
-                "1": "最大レベルは15まで。"
-            }
-        },
-        "constellation4": {
-            "name": "ルジンの問題",
-            "description": {
-                "0": "ソムニァが雷元素に関連する反応を起こした時、彼女自身と反応に関与した元素のメンバー全員に元素エネルギーが4回復されます。",
-                "1": "この効果は4秒ごとに1回発動可能です。"
-            }
-        },
-        "constellation5": {
-            "name": "マタタビ係数",
-            "description": {
-                "0": "</strong>宇宙電卓（コスミック・カルキュレータ）</strong>のレベルを+3。",
-                "1": "最大レベルは15まで。"
-            }
-        },
-        "constellation6": {
-            "name": "黄金比",
-            "description": {
-                "0": "ソムニァの重撃がダメージを与える時、会心率と会心ダメージがそれぞれ3%・5%増加します。この効果は0.2秒ごとに発動され、最大8回まで重ねられます。最初のバフを獲得した時から13秒が経つと解除されます。"
-            }
-        },
-        "c1Key": "通常攻撃・重撃ダメージ倍率",
-        "superpositionCond": "シュレーディンガーの重ね合わせ状態",
-        "cycloneActiveCond": "天体台風発動中",
-        "multCond": "乗算モード",
-        "subCond": "減算モード",
-        "lessThan3Cond": "敵が「3未満」状態",
-        "c1Cond": "小数点発動頻度",
-        "average": "平均",
-        "always": "常に",
-        "c2Cond": "素数の自然数層数を獲得"
-    },
-    "weapon_QuantumCatalyst": {
-        "name": "クァンタム・キャットリスト",
-        "description": "この高度な法器には、量子力学の神秘的な力が付与されており、輝く緑色の目、雷でちらつく尻尾、そして耳の間で時折弧を描く火花をもつ、まるで好奇心旺盛な猫のような姿をしています。",
-        "passiveName": "ミュートンのニャン動量",
-        "passiveDescription": {
-            "0": "元素チャージが<cryo>18%</cryo>増加します。通常攻撃と重撃のダメージが元素熟知の<cryo>6%</cryo>増加します。<electro>雷元素関連の反応</electro>を起こすと、12秒間<cryo>10</cryo>の元素熟知を獲得します。この効果は最大5回まで重ねられ、その持続時間は個別にカウントされます。",
-            "1": "元素チャージが<cryo>22.5%</cryo>増加します。通常攻撃と重撃のダメージが元素熟知の<cryo>7.5%</cryo>増加します。<electro>雷元素関連の反応</electro>を起こすと、12秒間<cryo>12</cryo>の元素熟知を獲得します。この効果は最大5回まで重ねられ、その持続時間は個別にカウントされます。",
-            "2": "元素チャージが<cryo>27%</cryo>増加します。通常攻撃と重撃のダメージが元素熟知の<cryo>9%</cryo>増加します。<electro>雷元素関連の反応</electro>を起こすと、12秒間<cryo>14</cryo>の元素熟知を獲得します。この効果は最大5回まで重ねられ、その持続時間は個別にカウントされます。",
-            "3": "元素チャージが<cryo>31.5%</cryo>増加します。通常攻撃と重撃のダメージが元素熟知の<cryo>10.5%</cryo>増加します。<electro>雷元素関連の反応</electro>を起こすと、12秒間<cryo>16</cryo>の元素熟知を獲得します。この効果は最大5回まで重ねられ、その持続時間は個別にカウントされます。",
-            "4": "元素チャージが<cryo>36%</cryo>増加します。通常攻撃と重撃のダメージが元素熟知の<cryo>12%</cryo>増加します。<electro>雷元素関連の反応</electro>を起こすと、12秒間<cryo>18</cryo>の元素熟知を獲得します。この効果は最大5回まで重ねられ、その持続時間は個別にカウントされます。"
-        }
-    },
-    "char_Baizhu": {
-        "seamlessDendro": "無隙シールド草元素ダメージ吸収量",
-        "a4Cond": "木運の歳状態",
-        "c2Dmg": "遊糸徴霊・切ダメージ",
-        "c2Heal": "遊糸徴霊・切回復量"
-    },
-    "char_Kaveh": {
-        "c6Dmg": "パイリダエーザの光ダメージ"
-    },
-    "char_Kirara": {
-        "extraCardamom": "ニャルダモン追加",
-        "c4Dmg": "ニャルダモン・ミニのダメージ"
-    },
-    "weapon_CalamityQueller": {
-        "effectName": "円頓",
-        "active": "フィールド上の倍率",
-        "inactive": "待機中の倍率"
-    },
-    "weapon_JadefallsSplendor": {
-        "condName": "定土玉圭状態"
-    },
-    "artifact_GildedDreams": {
-        "overrideSameCond": "同じ元素タイプのチームメンバー数",
-        "overrideOtherCond": "異なる元素タイプのチームメンバー数"
-    },
-    "char_Lynette": {
-        "c6CondName": "<strong>エニグマティック・フェイント</strong>のエニグマ・スラストを発動後"
-    },
-    "char_Lyney": {
-        "propStacks": "プロップ残数",
-        "propStacksUsed": "消費されたプロップ残数",
-        "hatDmgInc": "クラッカーバレットのダメージアップ",
-        "a1CondName": "<strong>プロップアロー</strong>でHPが消費",
-        "c6Dmg": "クラッカーバレット・重奏のダメージ"
-    },
-    "char_TravelerHydro": {
-        "dewdropDmgInc": "露雫のダメージアップ",
-        "a4CondName": "充満で消費する最大HPの割合",
-        "surgeDmgInc": "飛散する激流のダメージアップ",
-        "skillCondName": "充満状態"
-    },
-    "weapon_FinaleOfTheDeep": {
-        "bondCondName": "命の契約クリア後"
-    },
-    "weapon_FlowingPurity": {
-        "bondCondName": "命の契約クリア後"
-    },
-    "weapon_SacrificialJade": {
-        "condOffField": "キャラクターが5秒以上待機"
-    },
-    "weapon_ScionOfTheBlazingSun": {
-        "condName": "敵に陽炎の矢をヒット後",
-        "dmg": "陽炎の矢ダメージ"
-    },
-    "weapon_TalkingStick": {
-        "condName": {
-            "atk_": "キャラクターが<pyro>炎元素</pyro>の影響を受けている",
-            "dmg_": "キャラクターが<hydro>水元素</hydro>、<cryo>氷元素</cryo>、または<electro>雷元素</electro>の影響を受けている"
-        }
-    },
-    "artifact_SongOfDaysPast": {
-        "condName": "渇望効果の記録された回復量"
-    },
-    "char_Charlotte": {
-        "c2Cond": "敵にヴェリテくんがヒット",
-        "c4Cond": "敵にスナップシルエット、またはフォーカスインプレッション効果を付与"
-    },
-    "char_Freminet": {
-        "frost_dmgMult_": "霜寒ダメージ倍率",
-        "pressure_dmg_": "高圧粉砕ダメージボーナス",
-        "pressure_critRate_": "高圧粉砕の会心率"
-    },
-    "char_Furina": {
-        "fanfarePoints": "テンション",
-        "memberMult_": "サロンメンバー倍率",
-        "numOffer": "HP消費されたキャラクター数",
-        "c1Inc": "テンション上限アップ",
-        "c1Bonus": "発動時でのテンション",
-        "a4MemberDmg": "サロンメンバーのダメージボーナス",
-        "a4HealInterval": "衆の水の歌い手の回復間隔",
-        "c2Points": "上限を超えたテンション",
-        "c6Healing": "ウーシア継続回復",
-        "c6Pneuma": "プネウマ状態"
-    },
-    "char_Navia": {
-        "skillTotalShardDmg": "ロースラ晶弾の合計ダメージ",
-        "shot_dmg_": "ロースラ晶弾のダメージボーナス",
-        "shot_mult_": "ロースラ晶弾の倍率",
-        "shot_critRate_": "ロースラ晶弾の会心率",
-        "shot_critDMG_": "ロースラ晶弾の会心ダメージ",
-        "chargesCond": "裂晶の欠片の消費数",
-        "shotsFired": "ロースラ晶弾を発砲",
-        "shotsHitCond": "ロースラ晶弾の命中数"
-    },
-    "char_Neuvillette": {
-        "a1Cond": "遺龍の栄光",
-        "judgmentSpecialMult_": "衡平な裁量の倍率",
-        "judgment_critDMG_": "衡平な裁量の会心ダメージ",
-        "currentDmg": "洪水ダメージ"
-    },
-    "char_Wriothesley": {
-        "rebukeDmg": "誅罰・ヴォールティングアッパーのダメージ",
-        "a4Cond": "抵罪の赦免",
-        "icicleDmg": "氷柱ダメージ",
-        "rebuke_critRate_": "ヴォールティングアッパーの会心率",
-        "rebuke_critDMG_": "ヴォールティングアッパーの会心ダメージ",
-        "rebuke_dmg_": "ヴォールティングアッパーのダメージボーナス"
-    },
-    "weapon_PortablePowerSaw": {
-        "condName": "強靭マークを消費"
-    },
-    "weapon_ProspectorsDrill": {
-        "condName": "団結マークを消費"
-    },
-    "weapon_RangeGauge": {
-        "condName": "団結マークを消費"
-    },
-    "weapon_TheDockhandsAssistant": {
-        "condName": "強靭マークを消費"
-    },
-    "weapon_UltimateOverlordsMegaMagicSword": {
-        "condName": "助けられたメリュジーヌの数"
-    },
-    "weapon_Verdict": {
-        "condName": "契印"
-    },
-    "char_Chevreuse": {
-        "notPyroElectroTeam": "ヒント：チーム編成を<pyro>炎元素</pyro>と<electro>雷元素</electro>のみのキャラクターで組み、その効果をご覧ください",
-        "a4CondName": "マグナムブレットを発砲後",
-        "c6CondName": "近迫阻止射撃・速で回復後"
-    },
-    "char_Gaming": {
-        "cloudstrider_critRate_": "落下攻撃・踏雲献瑞の会心率",
-        "cloudstrider_critDMG_": "落下攻撃・踏雲献瑞の会心ダメージ",
-        "cloudstrider_dmg_": "落下攻撃・踏雲献瑞のダメージボーナス"
-    },
-    "char_Xianyun": {
-        "a4Cond": "竹星に補助仙力あり",
-        "c4Heal": "黍珠割烹の妙の回復量",
-        "wave_critDMG_": "閑雲衝撃波の会心ダメージ",
-        "a1Cond": "風翎",
-        "c6Cond": "天梯昇り発動数"
+        "upload": "アップロード",
+        "swap": "変更"
+      },
+      "currentDB": "現データベース"
+    },
+    "sillyCard": {
+      "desc": "すべてのキャラクターアセットを<strong>Silly Wisher（やけくそ祈願）</strong>から（許可を得て）ぬす・・・<1>借用し</1>、それらをGenshin Optimizerに遺伝子スプライシングを成功しました。",
+      "toggle": {
+        "enabled": "やけくそオプティマイザー有効",
+        "disabled": "やけくそオプティマイザー無効"
+      }
+    },
+    "letsnow": "雪よ降れ"
+  },
+  "ui": {
+    "pageTitle": "Genshin Optimizer",
+    "tabs": {
+      "artifacts": "聖遺物",
+      "characters": "キャラクター",
+      "tools": "ツール",
+      "weapons": "武器",
+      "doc": "ドキュメント",
+      "setting": "設定",
+      "scanner": "スキャナー"
+    },
+    "social": {
+      "paypal": "PayPal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "unselect": "選択削除",
+    "ascending": "昇順",
+    "descending": "降順",
+    "loading": "ロード中",
+    "rightsDisclaimer": "「Genshin Optimizer」は、MiHoYoと提携しておりません。または、当該企業から承認を受けておりません。",
+    "appVersion": "$t(pageTitle) バージョン: {{version}}",
+    "error": "エラー",
+    "reset": "リセット",
+    "info": "概要",
+    "inventory": "インベントリー",
+    "close": "閉じる",
+    "sortMap": {
+      "new": "新規",
+      "name": "キャラクター名",
+      "level": "レベル",
+      "rarity": "レアリティ",
+      "efficiency": "現スコア",
+      "mefficiency": "最大スコア",
+      "artsetkey": "聖遺物セット"
+    },
+    "link": {
+      "download": "ダウンロードリンク",
+      "discord": "Discord招待リンク"
+    },
+    "sortBy": "選別：␣",
+    "delete": "削除",
+    "locked": "ロック",
+    "unlocked": "アンロック",
+    "refinement": "精錬{{value}}",
+    "selectlevel": "レベル選択",
+    "gender": {
+      "F": "女性",
+      "M": "男性"
+    },
+    "statGroupKey": {
+      "basic_stats": "基礎ステータス",
+      "elem_dmg_bonus": "元素ダメージボーナス",
+      "enemy_debuffs": "敵デバフ",
+      "self_res": "自己中断耐性",
+      "reaction_dmg_bonus": "元素反応ダメージボーナス",
+      "reaction_crit": "元素反応会心率ボーナス",
+      "elem_dmgInc": "元素ダメージアップ",
+      "talent_dmgInc": "天賦ダメージアップ",
+      "elem_crit": "元素会心率ボーナス",
+      "talent_dmg_bonus": "天賦ダメージボーナス",
+      "talent_crit": "天賦会心率ボーナス",
+      "talent_level_boost": "天賦レベルブースト",
+      "base_stat_mod": "基礎ステータス修正",
+      "stamina_buffs": "スタミナバフ",
+      "misc": "その他のステータス"
+    },
+    "sillyPageTitle": "やけくそオプティマイザー"
+  },
+  "char_Eula": {
+    "burstC": {
+      "name": "光臨の剣エネルギー",
+      "start5": "冷酷の心のエネルギーを直ちに5つ獲得する",
+      "addStacks": "通常攻撃、元素スキルまたは元素爆発によりエネルギーを獲得する際、50％の確率でさらに1つ獲得する",
+      "dmg": "光臨の剣爆発ダメージ",
+      "bonusScaling": "光臨の剣ボーナス倍率"
+    },
+    "c1C": {
+      "name": "<strong>冷酷な心</strong>を消費",
+      "durationStack": "一つごとに6秒+6秒、最大18秒まで"
+    },
+    "passive1": "光臨の剣爆発ダメージ",
+    "c4C": {
+      "dmgBonus": "光臨の剣爆発ダメージボーナス"
     }
+  },
+  "char_Noelle": {
+    "p4cd": "24秒　4ヒットごとに-1秒",
+    "c6duration": "15秒　敵一体倒す度に+1秒（最大25秒）",
+    "c4dmg": "護心鎧破壊ダメージ",
+    "qlarger": "攻撃範囲がアップ"
+  },
+  "char_Venti": {
+    "addAimed": "照準時通常攻撃の追加ダメージ",
+    "addFullAimed": "重撃攻撃の追加ダメージ",
+    "upcurrentDuration": "上昇気流継続時間",
+    "regenEner": "効果終了後、ウェンティの元素エネルギーを15回復する",
+    "c6": "敵が<strong>風神の詩</strong>の影響を受けた\n",
+    "q": "元素変化の該当元素のチームメンバーの元素エネルギーを15回復する",
+    "c2": {
+      "hit": "敵にヒット",
+      "launched": "敵にノックバック"
+    }
+  },
+  "sheet": {
+    "dmg": "ダメージ",
+    "lessPercentHP": "HPが{{percent}}%未満",
+    "hitOp": {
+      "normal": "敵に通常攻撃をヒット",
+      "charged": "敵に重撃をヒット",
+      "plunging": "敵に落下攻撃をヒット",
+      "skill": "敵に元素スキルをヒット",
+      "burst": "敵に元素爆発をヒット",
+      "geo": "敵に<geo>岩元素ダメージ</geo>をヒット",
+      "anemo": "敵に<anemo>風元素ダメージ</anemo>をヒット",
+      "hydro": "敵に<hydro>水元素ダメージ</hydro>をヒット",
+      "cryo": "敵に <cryo>氷元素ダメージ</cryo>をヒット",
+      "pyro": "敵に<pyro>炎元素ダメージ</pyro>をヒット",
+      "electro": "敵に<electro>雷元素ダメージ</electro>をヒット",
+      "none": "敵にヒット後",
+      "normalOrCharged": "敵に通常攻撃・重撃でヒット",
+      "skillOrBurst": "敵に元素スキル・爆発でヒット",
+      "crit": "会心攻撃を命中後",
+      "normalChargedOrPlunging": "敵に通常攻撃・重撃・落下攻撃をヒット",
+      "dendro": "<dendro>草元素ダメージ</dendro>を与えた後",
+      "normalEle": "通常攻撃で元素ダメージを与えた後",
+      "ele": "元素ダメージを与えた後",
+      "weakSpot": "狙い撃ちで敵の弱点に命中した後",
+      "normalChargedSkillBurst": "敵に通常攻撃、重撃、または元素スキル・爆発をヒット後",
+      "self": "敵にヒットされた後"
+    },
+    "eleAbsor": "元素変化",
+    "absorDot": "拡散DoT",
+    "afterUse": {
+      "skill": "元素スキル起動中",
+      "burst": "元素爆発起動中",
+      "skillOrBurst": "元素スキルまたは元素爆発を発動後",
+      "skillPress": "元素スキル（単押し）使用後",
+      "skillHold": "元素スキル（長押し）使用後"
+    },
+    "lessEqPercentHP": "HPが{{percent}}%、またはその以下",
+    "greaterPercentHP": "HPが{{percent}}%以上",
+    "greaterEqPercentHP": "HPが{{percent}}%、またはその以上",
+    "lessPercentEnergy": "元素エネルギーが{{percent}}%以下",
+    "enemyLessPercentHP": "敵のHPが{{percent}}%以下",
+    "enemyLessEqPercentHP": "敵のHPが{{percent}}%、またはその以下",
+    "enemyGreaterPercentHP": "敵のHPが{{percent}}%以上",
+    "enemyGreaterEqPercentHP": "敵のHPが{{percent}}%、またはその以上",
+    "afterDefeatEnemy": "敵を倒した後",
+    "afterSprint": "ダッシュ後",
+    "skillCDRed": "元素スキルクールダウン減少",
+    "burstCDRed": "元素爆発クールダウン減少",
+    "triggerCD": "反応クールダウン",
+    "incInterRes": "中断耐性の増加",
+    "charges": "チャージ",
+    "cooldown": "クールダウン",
+    "addlCharges": "スキルチャージ追加",
+    "activeCharField": "キャラクターが能力のフィールド範囲以内",
+    "opponentsField": "敵が能力のフィールド範囲以内",
+    "takeDmg": "ダメージを受けた後",
+    "infusion": {
+      "pyro": "炎元素付与",
+      "cryo": "氷元素付与",
+      "anemo": "風元素付与",
+      "hydro": "水元素付与",
+      "electro": "雷元素付与",
+      "dendro": "草元素付与",
+      "geo": "岩元素付与"
+    },
+    "effectDuration": {
+      "pyro": "炎元素影響継続時間",
+      "cryo": "氷元素影響継続時間",
+      "anemo": "風元素影響継続時間",
+      "hydro": "水元素影響継続時間",
+      "electro": "雷元素影響継続時間",
+      "dendro": "草元素影響継続時間",
+      "geo": "岩元素影響継続時間"
+    },
+    "durationInc": "継続時間の増加",
+    "base": "基礎",
+    "stacks": "スタック",
+    "protectedByShield": "シールドに守られている",
+    "protectedByShieldCrystal": "結晶シールドに守られている",
+    "staminaDec_": "スタミナ消費減少",
+    "dmgAbsorption": {
+      "pyro": "シールドの炎元素ダメージ吸収量",
+      "cryo": "シールドの氷元素ダメージ吸収量",
+      "anemo": "シールドの風元素ダメージ吸収量",
+      "hydro": "シールドの水元素ダメージ吸収量",
+      "electro": "シールドの雷元素ダメージ吸収量",
+      "dendro": "シールドの草元素ダメージ吸収量",
+      "geo": "シールドの岩元素ダメージ吸収量",
+      "none": "シールドのダメージ吸収量",
+      "increase": "シールド吸収増加",
+      "max": {
+        "none": "シールドのダメージ最大吸収量",
+        "pyro": "シールドの炎元素ダメージ最大吸収量",
+        "dendro": "シールドの草元素ダメージ最大吸収量"
+      }
+    },
+    "addlCharge": "スキルチャージ追加",
+    "conditional": "条件",
+    "maxStacks": "最大スタック",
+    "1set": "1-セット",
+    "2set": "2-セット",
+    "4set": "4-セット",
+    "activationStam": "スタミナ消費発動",
+    "stamDrain": "スタミナ消耗",
+    "talents": {
+      "auto": "オート",
+      "skill": "元素スキル",
+      "burst": "元素爆発",
+      "passive": "固有天賦",
+      "passive1": "突破段階1固有天賦1",
+      "passive2": "突破段階4固有天賦2",
+      "passive3": "固有天賦3",
+      "sprint": "ダッシュ",
+      "constellation1": "1凸",
+      "constellation2": "2凸",
+      "constellation3": "3凸",
+      "constellation4": "4凸",
+      "constellation5": "5凸",
+      "constellation6": "6凸"
+    },
+    "swirlReaction": {
+      "hydro": "<hydro>水元素</hydro>拡散反応後",
+      "pyro": "<pyro>炎元素</pyro>拡散反応後",
+      "electro": "<electro>雷元素</electro>拡散反応後",
+      "cryo": "<cryo>氷元素</cryo>拡散反応後"
+    },
+    "afterReaction": "元素反応を発動後",
+    "aoeInc": "範囲増加",
+    "elementalReaction": {
+      "hydro": "<hydro>水元素に関連</hydro>する反応を起こした後",
+      "electro": "<electro>雷元素に関連</electro>する反応を起こした後",
+      "shatter": "<shattered>粉砕</shattered>反応を起こした後",
+      "cryo": "</cryo>氷元素関連</cryo>反応を起こした後"
+    },
+    "bonusScaling": {
+      "skill_": "元素スキルボーナス倍率",
+      "atkInc": "攻撃力増加ボーナス倍率",
+      "value": "{{value}}%"
+    },
+    "energy": "元素エネルギー",
+    "teamBuff": "チームバフ",
+    "dmgMult": {
+      "normal": "通常攻撃ダメージ倍率",
+      "charged": "重撃ダメージ倍率",
+      "skill": "元素スキルダメージ倍率"
+    },
+    "stamRestored": "スタミナ回復",
+    "triggerQuota": "ノルマ達成",
+    "enemyAffected": {
+      "burningOrPyro": "敵は<pyro>燃焼</pyro>、または<pyro>炎元素</pyro>の影響を受けている時",
+      "frozenOrCryo": "敵は<cryo>凍結</cryo>、または<cryo>氷元素</cryo>の影響を受けている時",
+      "pyroOrElectro": "敵が<pyro>炎元素</pyro>、または<electro>雷元素</electro>の影響を受けた時",
+      "hydroOrCryo": "敵が<hydro>水元素</hydro>、または<cryo>氷元素</cryo>の影響を受けた時",
+      "hydroOrPyro": "敵が<hydro>水元素</hydro>、または<pyro>炎元素</pyro>の影響を受けた時",
+      "hydroOrElectro": "敵が<hydro>水元素</hydro>、または<electro>雷元素</electro>の影響を受けた時",
+      "electro": "敵は<electro>雷元素</electro>の影響を受けた時",
+      "cryo": "敵が<cryo>氷元素</cryo>の影響を受けた時",
+      "pyro": "敵が<pyro>炎元素</pyro>の影響を受けている"
+    },
+    "getElementalOrbParticle": "元素粒子・オーブを拾った後",
+    "notProtectedByShield": "シールドに守られていない時",
+    "percentCurrentHP": "現HP%",
+    "enerRegenPerHit": "ヒットごとの元素チャージ",
+    "interval": "間隔",
+    "immuneToElectroCharged": "<electrocharged>感電</electrocharged>耐性",
+    "charOffField": "キャラクターは待機中",
+    "attackAoeInc": "攻撃範囲がアップ",
+    "charOnField": "キャラクターはフィールド上",
+    "timeOnField": "フィールド上での時間",
+    "hpChange": "HP増減後",
+    "afterHeal": "回復後",
+    "hits": {
+      "other": "{{count}}ヒット数"
+    },
+    "percentMaxHP": "最大HP%",
+    "stack": {
+      "other": "{{count}}層"
+    },
+    "seconds": {
+      "other": "{{count}}秒"
+    },
+    "uses": {
+      "other": "{{count}}回使用"
+    },
+    "opponents": {
+      "other": "{{count}}体の敵"
+    },
+    "members": {
+      "other": "{{count}}人のチームメンバー"
+    },
+    "times": {
+      "other": "{{count}}回"
+    },
+    "activeChar": "フィールド上のキャラクター",
+    "otherHpChange": "チームメンバーのHPが増減後",
+    "reactionOp": {
+      "overload": "<overloaded>過負荷反応</overloaded>を発動後"
+    },
+    "afterOverflow": "回復上限を超えた"
+  },
+  "weapon_SongOfBrokenPines": {
+    "name": "千年の大楽章：旗掲げの歌効果発動中"
+  },
+  "char_KaedeharaKazuha": {
+    "c1": "<strong>万葉の一刀</strong>を発動後、クールタイムがリセット",
+    "c2": "流風秋野発動中",
+    "c6": {
+      "after": "<strong>千早振る</strong>または<strong>万葉の一刀</strong>を発動後"
+    },
+    "skillPlunge": "乱れ嵐斬"
+  },
+  "char_Rosaria": {
+    "a1": "敵の背後から攻撃",
+    "a4": {
+      "name": "<strong>臨終の聖礼</strong>発動後"
+    }
+  },
+  "char_KamisatoAyaka": {
+    "afterSprintCryo": "霰歩終了後に発生する<cryo>氷</cryo>が敵に命中",
+    "snowflakeDMG": "霜見雪関扉ダメージ",
+    "dmgBySnowflake": "敵に<strong>霜見雪関扉</strong>をヒット",
+    "c6Active": "薄氷の舞状態獲得"
+  },
+  "weapon_MistsplitterReforged": {
+    "emblem": "霧切の巴紋"
+  },
+  "char_Yoimiya": {
+    "c1": "<strong>琉金の炎</strong>の影響を受けた敵を倒した後\n",
+    "c2": "<pyro>炎元素ダメージ</pyro>で会心が発生した後",
+    "normPyroInfus": "<pyro>通常攻撃炎元素付与</pyro>",
+    "c6Key_": "熾焔の矢の倍率"
+  },
+  "char_RaidenShogun": {
+    "skill": {
+      "eye": "雷罰悪曜の眼起動中",
+      "partyCost": "元素エネルギーコスト"
+    },
+    "burst": {
+      "resolves": "願力の層数",
+      "resolveInitial_": "夢想の一太刀ダメージボーナス倍率",
+      "resolveInfused_": "夢想の一心ダメージボーナス倍率",
+      "burstDmg": "夢想の一太刀ダメージ",
+      "active": "<strong>夢想の一心</strong>状態"
+    },
+    "a4": {
+      "enerRest": "<strong>夢想の一心</strong>からの元素エネルギー回復ボーナス",
+      "eleDMG": "雷元素ダメージボーナス"
+    },
+    "c4": {
+      "expires": "<strong>夢想の一心</strong>状態終了後"
+    }
+  },
+  "char_Aloy": {
+    "skill": {
+      "coil": "コイル",
+      "rush": "アイスラッシュ",
+      "rushState": "ライスラッシュ状態で費やした時間"
+    },
+    "a1CondName": "コイル効果を受けた後",
+    "normCryoInfus": "<cryo>通常攻撃氷元素付与</cryo>"
+  },
+  "char_KujouSara": {
+    "skill": {
+      "ambush": "天狗呪雷・伏状態"
+    },
+    "c6": {
+      "electroCritDmg": "キャラクターが天狗呪雷による攻撃力アップ状態"
+    }
+  },
+  "char_SangonomiyaKokomi": {
+    "burst": "儀来羽衣状態",
+    "c2": "キャラクターHP50%未満",
+    "c6": "通常攻撃または重撃でHP80%以上のキャラクターに治療",
+    "c2SkillHeal": "<strong>海月の誓い</strong>治療ボーナス",
+    "c2BurstHeal": "<strong>海人の羽衣</strong>治療ボーナス"
+  },
+  "page_home": {
+    "intro": "<strong>究極</strong>の<3><i>原神</i></3>ビルド改良ツール。Genshin Optimizer（GO）は聖遺物・武器・キャラクターのインベントリーを管理し、好みに基づいて最適なビルドを計算するのに役立ちます。",
+    "quickLinksCard": {
+      "title": "クイックリンク",
+      "buttons": {
+        "tyGuide": {
+          "title": "YouTubeガイド再生リスト",
+          "tooltip": "Genshin Optimizerの使用方法を学ぶ"
+        },
+        "scanners": {
+          "title": "自動スキャナー",
+          "tooltip": "ゲーム内から聖遺物を自動的にスキャンするサードパーティーソフト"
+        },
+        "kqm": {
+          "title": "Keqing Mains（KQM刻晴メインズ）",
+          "tooltip": "セオリークラフティング＆ガイドのコミュニティ"
+        },
+        "devDiscord": {
+          "title": "開発者Discord",
+          "tooltip": "原神ツール開発者コミュニティ"
+        },
+        "good": {
+          "title": "GOODドキュメンテーション",
+          "tooltip": "Genshin Open Object Descriptorドキュメンテーション"
+        },
+        "patchNotes": {
+          "title": "原神オプティマイザーパッチノート",
+          "tooltip": "GOパッチノート一覧"
+        }
+      }
+    },
+    "inventoryCard": {
+      "title": "GOインベントリー"
+    },
+    "vidGuideCard": {
+      "title": "ガイド動画"
+    },
+    "teamCard": {
+      "title": "チーム紹介",
+      "jobTitle": {
+        "leadDev": "リードデベロッパー",
+        "dev": "デベロッパー",
+        "mod": "モデレーター",
+        "admin": "アドミン",
+        "translator": "翻訳マネージャー",
+        "TC": "セオリークラフティング特派員"
+      }
+    }
+  },
+  "page_scanner": {
+    "intro": "<0>スキャナー</0><1>スキャナーは、スクリーンショット、またはゲームから直接データを自動的にスキャンできる原神ツールです。</1><2>こちらはGenshin Optimizerでテストされたいくつかのスキャナーです。</2 ><3>エクスポートしたファイルをアップロードするには、[<1>設定</1>] ページに移動し、[<strong>データベースアップロード</strong>]にてファイルをアップロードできます。</3>",
+    "ik": {
+      "title": "インベントリーカメラ",
+      "p1": "この軽量アプリは、インベントリー内のすべてのキャラクター、武器、聖遺物をスキャンします。アプリの手順を参照して設定してください。"
+    },
+    "as": {
+      "title": "AdeptiScanner",
+      "p1": "インベントリー内のすべての聖遺物と武器をスキャンします。手動スキャンモードがあり、<1>Enka.Network</1> からデータをインポートすることもできます。",
+      "p2": "このスキャナーは、更新を必要とせずに、新しいゲームバージョンの新聖遺物用に構成することもできます。"
+    },
+    "goodeng": "このアプリは英語でのみスキャンし、<1>GOOD</1> 形式でエクスポートします。",
+    "tosWarn": "ゲームと間接的に連携するどのツールと同様、その使用法は事実上検出できませんが、<1>使用にはリスクが存在する可能性があります。</1>ユーザーの使用判断が推奨されます。",
+    "tags": {
+      "pc": "PC",
+      "mobile": "モバイル",
+      "ps": "PlayStation",
+      "gameMani": "自動コントロール",
+      "materials": "素材",
+      "characters": "キャラクター",
+      "weapons": "武器",
+      "achievements": "アチーブメント"
+    },
+    "nb": {
+      "title": "Artiscan",
+      "p1": "このスキャナーはWebベースで使いやすく、ゲーム画面、スクリーンショットや動画からトリミングする必要なくスキャンできます。",
+      "p2": "モバイル・PlayStationでは、スクリーンショットまたは動画のみからスキャンできます。"
+    },
+    "ak": {
+      "title": "アーカーシャスキャナー",
+      "p1": "キャラクターや武器だけでなく、聖遺物も自動的にスキャンします。アプリ内に履歴が残るため、過去のスキャンをエクスポートできます。スキャンは英語のみで行われます。",
+      "p2": "このアプリは<1>Paimon.moe</1>と<1>Seelie.me</1>用のアチーブメントもスキャンできます"
+    },
+    "seelieme": "このアプリは<1>Seelie.me</1>用の素材もスキャンできます"
+  },
+  "weapon_Akuoumaru": {
+    "party": "パーティーの元素エネルギー容量"
+  },
+  "artifact_ArchaicPetra": {
+    "condName": "結晶の欠片を獲得"
+  },
+  "artifact_ViridescentVenerer": {
+    "condName": "拡散された元素"
+  },
+  "weapon_CinnabarSpindle": {
+    "name": "効果発動中"
+  },
+  "weapon_ElegyForTheEnd": {
+    "condName": "千年の大楽章：別れの歌状態"
+  },
+  "weapon_MouunsMoon": {
+    "party": "パーティーの元素エネルギー容量"
+  },
+  "weapon_ThrillingTalesOfDragonSlayers": {
+    "condName": "このキャラクターから乗換後"
+  },
+  "weapon_WavebreakersFin": {
+    "party": "パーティーの元素エネルギー容量"
+  },
+  "artifact_BlizzardStrayer": {
+    "condName": "敵は",
+    "condCryo": "氷元素の影響を受けている",
+    "condFrozen": "凍結されている"
+  },
+  "artifact_HuskOfOpulentDreams": {
+    "condName": "問答"
+  },
+  "artifact_OceanHuedClam": {
+    "condName": "海染の泡最大ダメージ"
+  },
+  "artifact_ShimenawasReminiscence": {
+    "afterUseEnergy": "元素エネルギーを15消費"
+  },
+  "artifact_TinyMiracle": {
+    "condName": "元素ダメージを受けた後"
+  },
+  "char_Albedo": {
+    "blossomCD": "刹那の花クールダウン",
+    "blossomDmg_": "刹那の花ダメージボーナス",
+    "isotomaOnField": "陽華がフィールドに展開",
+    "enerPerBlossom": "刹那の花ごとに再生された元素エネルギー",
+    "c2Stacks": "生滅カウントの消費数"
+  },
+  "char_Amber": {
+    "secondArrow": "（2本目の矢）",
+    "critRateBonus": "<strong>矢の雨</strong>会心率ボーナス",
+    "aoeRangeBonus": "<strong>矢の雨</strong>影響範囲ボーナス",
+    "manualDetonationDmg": "直接起爆ダメージ",
+    "c6CondName": "<strong>矢の雨</strong>発動後"
+  },
+  "char_AratakiItto": {
+    "a1": {
+      "name": "荒瀧逆袈裟斬撃繰り出し数"
+    },
+    "a4": {
+      "dmgInc": "荒瀧逆袈裟効果のダメージボーナス"
+    },
+    "c1": {
+      "initialGain": "乱神の怪力効果のカウント獲得数",
+      "timedGain": "1秒後、1.5秒の間、荒瀧一斗は0.5秒毎に乱心の怪力効果をさらに1層獲得"
+    },
+    "c4": {
+      "name": "憤怒の鬼王状態終了後"
+    }
+  },
+  "char_Barbara": {
+    "passive1": {
+      "cond": "<strong>公演、開始♪</strong>歌声の輪が継続中"
+    },
+    "constellation2": {
+      "cond": "<strong>公演、開始♪</strong>発動中"
+    }
+  },
+  "char_Beidou": {
+    "skillOneHit": "受けた攻撃1回場合のダメージ",
+    "skillTwoHit": "受けた攻撃2回場合のダメージ",
+    "duringBurst": "雷斫り発動中",
+    "tidecallerMaxDmg": "最大ダメージアップ効果の浪追い反撃",
+    "a4charge": "重撃攻撃を放つまでの遅延を短縮",
+    "c4dmg": "星に導かれた岸線の雷元素ダメージ"
+  },
+  "char_Bennett": {
+    "skill": {
+      "lvl1CD": "1段チャージクールダウン",
+      "lvl2CD": "2段チャージクールダウン"
+    },
+    "c4DMG": "消えない情熱ダメージ",
+    "c6PyroInfusion": "<pyro>片手剣、両手剣、長柄武器の炎元素付与</pyro>"
+  },
+  "char_Chongyun": {
+    "infusion": "片手剣、両手剣、長柄武器の氷元素付与",
+    "passive2": "霊刃ダメージ",
+    "asc4Cond": "敵に追氷剣訣をヒット",
+    "constellation1": "氷の刃ダメージ",
+    "constellation6": "敵のHPの割合が重雲より低い",
+    "blades": "召喚された霊刃の数"
+  },
+  "char_Diluc": {
+    "skillB": {
+      "0": "2段ダメージ（強化状態）",
+      "1": "3段ダメージ（強化状態）"
+    }
+  },
+  "char_Diona": {
+    "skillDuration": "キャッツクロー1つにつきの継続時間",
+    "holdShield": "長押しシールド吸収量",
+    "a1shielded": "<strong>フリーズキャッツクロー</strong>のシールド発動中",
+    "holdCryoShield": "長押しシールド氷元素ダメージ吸収",
+    "pressShield": "単押しシールドダメージ吸収量",
+    "pressCryoShield": "単押しシールド氷元素ダメージ吸収量"
+  },
+  "char_Fischl": {
+    "a1Name": "聖裁の雷重撃ダメージ",
+    "a2Name": "聖裁の雷ダメージ",
+    "c1Name": "共同攻撃ダメージ",
+    "c4AoeDmg": "追加の範囲ダメージ",
+    "c6OzDmg": "連携攻撃ダメージ"
+  },
+  "char_Ganyu": {
+    "a1": {
+      "condName": "霜華の矢を放った後",
+      "critRateInc": "霜華の会心率アップ"
+    },
+    "c1": {
+      "condName": "敵に霜華の矢か霜華満開でダメージを与える"
+    },
+    "c4": {
+      "lingerDuration": "効果持続時間"
+    }
+  },
+  "char_HuTao": {
+    "paramita": {
+      "enter": "<strong>冥蝶の舞</strong>状態",
+      "end": "<strong>冥蝶の舞</strong>状態終了後"
+    },
+    "constellation2": {
+      "applyBloodBlossom": "<strong>血梅香</strong>状態を与える"
+    },
+    "constellation4": {
+      "condName": "<strong>血梅香</strong>状態の敵を倒した後"
+    },
+    "constellation6": {
+      "condName": "HPが25%以下、または戦闘不能に至るダメージを受けた"
+    }
+  },
+  "char_Jean": {
+    "c1CondName": "風圧剣の長押しが1秒以上",
+    "c1PullSpeed": "吸い寄せる速度がアップ"
+  },
+  "char_Kaeya": {
+    "c2burstDuration": "15秒、倒す敵1体につき+2.5秒。最大15秒まで"
+  },
+  "char_Keqing": {
+    "c1DMG": "迅雷ダメージ",
+    "recast": "再び<strong>星辰帰位</strong>を発動"
+  },
+  "char_Klee": {
+    "a1CondName": "爆裂花火",
+    "a1CondName2": "次の重撃はスタミナ消費しません",
+    "c2CondName": "敵に <strong>ボンボン爆弾</strong>のブービートラップがヒット",
+    "c6CondName": "ドッカン花火状態"
+  },
+  "char_Lisa": {
+    "a4C": "敵に<strong>薔薇の雷光</strong>をヒット",
+    "c2C": "<strong>蒼雷</strong>長押し"
+  },
+  "char_Mona": {
+    "omen": "敵が星異状態",
+    "hitOp": {
+      "affectedByOmen": "星異状態の敵にヒット"
+    },
+    "frozenDuration": "<shattered>凍結</shattered>継続時間",
+    "uponSprint": "虚実流動発動後"
+  },
+  "char_Ningguang": {
+    "aoeGems": "通常攻撃が範囲ダメージを与える",
+    "starJadeStaminaCost": "星璇がついている間、凝光の重撃はスタミナを消費しない",
+    "skillReset": "粉砕時に、6秒ごとにクールダウンがリセットされます",
+    "a4toggle": "璇璣屏を突き抜けた後",
+    "c4toggle": "キャラクターが璇璣屏の10m以内",
+    "c6bonus": "星璇を獲得"
+  },
+  "char_Qiqi": {
+    "a1C": "<strong>仙法・寒病鬼差</strong>状態で元素反応を起こした後\n"
+  },
+  "char_Razor": {
+    "electroSigil": "雷の印",
+    "electroSigilAbsorbed": "消費された雷の印は元素エネルギーに変換される",
+    "opHitWithClawAndThunder": "敵に<strong>鋭い爪と蒼雷</strong> をヒット",
+    "electroSigilPerProc": "発動ごとの雷の印",
+    "soulCompanion": {
+      "1": "獣の魂ヒット1ダメージ",
+      "2": "獣の魂ヒット2ダメージ",
+      "3": "獣の魂ヒット3ダメージ",
+      "4": "獣の魂ヒット4ダメージ"
+    }
+  },
+  "char_Sayu": {
+    "burstHits": "むじむじだるま発動数",
+    "p2Heal": "周囲のキャラクターのHPが回復",
+    "c1Text": "むじむじだるまは、キャラクターのHP制限を無視し、周囲の敵への攻撃とキャラクターへのHP回復行動を同時に行う",
+    "c2KickPressDmg_": "単押しの風々輪・旋舞蹴のダメージボーナス",
+    "c2KickDmg_": "風々輪・旋舞蹴のダメージボーナス",
+    "c2Cond": "<strong>風々輪</strong>状態での時間",
+    "c6DarumaDmgInc": "むじむじだるまのダメージアップ",
+    "c6DarumaHealInc": "むじむじだるまの回復量アップ"
+  },
+  "char_Shenhe": {
+    "quill": "氷翎発動後",
+    "c4": "霜霄訣消費後",
+    "pressQuota": "単押し場合の発動回数",
+    "holdQuota": "長押し場合の発動数",
+    "pressDuration": "単押し場合の継続時間",
+    "holdDuration": "長押し場合の継続時間"
+  },
+  "char_Thoma": {
+    "a2": "熾炎崩滅ダメージアップ",
+    "c2": "<strong>真紅熾炎の大鎧</strong>継続時間アップ",
+    "refreshBarrier": "<strong>烈炎侍立シールド</strong>を獲得・重ね掛け"
+  },
+  "char_Xiangling": {
+    "afterChili": "グゥオパァーの唐辛子を拾った後",
+    "explosionDMG": "爆発ダメージ",
+    "afterGuobaHit": "敵にグゥオパァーの攻撃がヒット",
+    "duringPyronado": "旋火輪発動後",
+    "c6Exception": "この効果は<pyro>1ヒットダメージ</pyro>、<pyro>2ヒットダメージ</pyro>、また<pyro>旋火輪ダメージ</pyro>に影響されません"
+  },
+  "char_Xiao": {
+    "burst": {
+      "lifeDrain_": "HP減少",
+      "currentHPPerSec": "（1秒当たりの現HP）",
+      "incJump": "ジャンプ力が大幅にアップ",
+      "inBurst": "<strong>靖妖儺舞</strong>状態",
+      "stack": "<strong>靖妖儺舞</strong>状態での継続時間"
+    },
+    "skillStack": "<strong>風輪両立</strong>発動数"
+  },
+  "char_Xingqiu": {
+    "skillCond": "雨すだれの剣に守られている",
+    "burstCond": "虹剣勢状態発動中",
+    "c2Cond": "敵に剣雨をヒット"
+  },
+  "char_Xinyan": {
+    "skill": {
+      "pyroShield": {
+        "1": "レベル1シールド炎元素ダメージ吸収量",
+        "2": "レベル2シールド炎元素ダメージ吸収量",
+        "3": "レベル3シールド炎元素ダメージ吸収量"
+      }
+    },
+    "p1": {
+      "desc": "<strong>情熱の薙ぎ払い</strong>のヒットノルマを1減少"
+    },
+    "p2": {
+      "activeShield": "キャラクターが<strong>情熱の薙ぎ払い</strong>のシールドに守られている"
+    },
+    "c2": {
+      "key_": "<strong>反逆の弾き</strong>物理ダメージ会心率ボーナス",
+      "shield": "発動する時にLv.3シールド・舞のリズムを生成する"
+    },
+    "c4": {
+      "swingHit": "敵に<pyro>振り回しダメージ</pyro>をヒット"
+    },
+    "c6": {
+      "duringCharge": "重撃攻撃中"
+    }
+  },
+  "char_YaeMiko": {
+    "c4": "敵に<strong>殺生櫻</strong>の雷をヒット",
+    "c6": "殺生櫻、敵の防御力を無視"
+  },
+  "char_Yanfei": {
+    "seals": ["印0つ", "印1つ", "印2つ", "印3つ", "印4つ"],
+    "perSeal": "（印1つごとに）",
+    "maxSeals": "丹火の印の最大数",
+    "charged": {
+      "0": "印0つダメージ",
+      "1": "印1つダメージ",
+      "2": "印2つダメージ",
+      "3": "印3つダメージ",
+      "4": "印4つダメージ"
+    },
+    "burst": {
+      "grantMax": "丹火の印最大数を獲得"
+    },
+    "passive1": {
+      "sealsConsumed": "重撃時に消費される印の数"
+    },
+    "passive2": {
+      "key": "法獣の灼眼ダメージ"
+    },
+    "c1": {
+      "sealChargedStam_": "重撃スタミナ消費減少"
+    },
+    "c6": {
+      "maxSealInc": "丹火の印の最大数を増加"
+    }
+  },
+  "char_YunJin": {
+    "burst": "飛雲旗陣状態",
+    "a4Inc_": "パーティーの元素タイプによる増加",
+    "c4": "結晶反応後"
+  },
+  "char_Zhongli": {
+    "skill": {
+      "stele": "岩柱ダメージ",
+      "resonance": "原岩共鳴ダメージ",
+      "maxStele": "岩柱の最大数",
+      "nearShield": "敵が<strong>玉璋シールド</strong>付近範囲内"
+    },
+    "p1cond": "<strong>玉璋シールド</strong>がダメージを受けた後",
+    "c6heal": "最大HP回復量"
+  },
+  "weapon_AlleyHunter": {
+    "condName": "待機継続時間"
+  },
+  "weapon_AmosBow": {
+    "condName": "矢の飛行時間"
+  },
+  "weapon_BlackTassel": {
+    "condName": "敵はスライム"
+  },
+  "weapon_Deathmatch": {
+    "condName": "敵が付近内"
+  },
+  "weapon_DragonspineSpear": {
+    "aoeDmg": "恒氷晶核ダメージ",
+    "cryoAffectedDmg": "<cryo>氷元素</cryo>に影響された敵にダメージ"
+  },
+  "weapon_FerrousShadow": {
+    "condName": "HPノルマ達成",
+    "resistance": "重撃の中断耐性アップ"
+  },
+  "weapon_FreedomSworn": {
+    "sigilsConsumed": "奮起の欠片消費後"
+  },
+  "weapon_Frostbearer": {
+    "aoeDmg": "恒氷晶核ダメージ",
+    "cryoAffectedDmg": "<cryo>氷元素</cryo>に影響された敵にダメージ"
+  },
+  "weapon_Hamayumi": {
+    "condName": "元素エネルギーが100%"
+  },
+  "weapon_MemoryOfDust": {
+    "atkEffInc": "攻撃効果アップ"
+  },
+  "weapon_PolarStar": {
+    "condName": "白夜極星"
+  },
+  "weapon_SerpentSpine": {
+    "takeMoreDmg": "受けたダメージごとに増加量"
+  },
+  "weapon_Slingshot": {
+    "condName": "通常攻撃・重撃攻撃がヒット",
+    "less": "矢が発射後0.3秒以内",
+    "more": "矢が発射後0.3秒以降"
+  },
+  "weapon_SnowTombedStarsilver": {
+    "aoeDmg": "恒氷晶核ダメージ",
+    "cryoAffectedDmg": "<cryo>氷元素</cryo>に影響された敵にダメージ"
+  },
+  "weapon_SummitShaper": {
+    "atkEffInc": "攻撃効果アップ"
+  },
+  "weapon_TheAlleyFlash": {
+    "condName": "ダメージを受けていない"
+  },
+  "weapon_TheUnforged": {
+    "atkEffInc": "攻撃効果アップ"
+  },
+  "weapon_TheWidsith": {
+    "aria": "詠唱",
+    "interlude": "間奏曲",
+    "recitative": "叙唱"
+  },
+  "weapon_ThunderingPulse": {
+    "condName": "飛雷の巴紋"
+  },
+  "weapon_VortexVanquisher": {
+    "atkEffInc": "攻撃効果アップ"
+  },
+  "artifact_EchoesOfAnOffering": {
+    "mode": "発動モード",
+    "avg": "平均",
+    "always": "常に"
+  },
+  "char_KamisatoAyato": {
+    "skill": {
+      "unableToAuto": "重撃や落下攻撃使用不可",
+      "namisenStacks": "浪閃",
+      "shun_dmgInc": "<hydro>瞬水剣ダメージアップ</hydro>"
+    },
+    "passive1": {
+      "afterUse": "スキル発動後獲得した浪閃層数",
+      "afterExplode": "水の幻影の破裂後獲得した浪閃層数"
+    },
+    "c1": {
+      "shun_dmg_": "<hydro>瞬水剣ダメージボーナス</hydro>"
+    },
+    "c2": {
+      "addlStacks": "浪閃の重ね掛け上限が増加"
+    },
+    "c6": {
+      "dmg": "濫觴無底ダメージ"
+    }
+  },
+  "char_KukiShinobu": {
+    "a4": {
+      "heal": "元素スキル治療量アップ"
+    },
+    "c4": {
+      "dmg": "雷草ダメージ"
+    }
+  },
+  "char_Yelan": {
+    "c2": {
+      "dmg": "罠に陥る者、多々益善ダメージ"
+    },
+    "c4": {
+      "condName": "敵が命の糸がマークされた"
+    },
+    "c6": {
+      "dmg": "権謀術数打破の矢ダメージ"
+    }
+  },
+  "page_character": {
+    "addNew": "キャラクター加入",
+    "tabs": {
+      "overview": "概要",
+      "talent": "天賦",
+      "optimize": "改良",
+      "theorycraft": "セオリークラフト"
+    },
+    "formulas": "式",
+    "calculations": "計算",
+    "selectCharacter": "キャラクター選択",
+    "removeCharacter": "{{value}}を削除してもよろしいですか?",
+    "delete": "キャラクター削除",
+    "teammates": "チーム",
+    "hitmode": {
+      "hit": "非会心攻撃ダメージ",
+      "avgHit": "平均ダメージ",
+      "critHit": "会心攻撃ダメージ",
+      "global": "グローバル標準"
+    },
+    "tabEquip": {
+      "swapWeapon": "武器変更",
+      "swapArt": "聖遺物変更",
+      "compare": "現ビルドと比較する",
+      "unequipArts": "全ての聖遺物を外す"
+    },
+    "characterName": "キャラクター名",
+    "teammate": "パーティーメンバー{{count}}",
+    "noReaction": "反応なし",
+    "multiTarget": {
+      "title": "複数改良ターゲット構成",
+      "addNewTarget": "ターゲットを追加",
+      "addNewMTarget": "複数の改良ターゲットを作成",
+      "info1": "注：コミュニティが作成した複数改良ターゲットは、<1>GO Discord</1>または、<3>KQM</3>の複数改良ガイド内にありますが、その有効性は保証できません。",
+      "info2": "構成が正確に設定されている事を確認ください。",
+      "description": "詳細",
+      "duplicate": "重複",
+      "target": {
+        "other": "<0>{{count}}</0>つのターゲット"
+      }
+    },
+    "addStats": {
+      "title": "敵・ボーナスステータスの構成",
+      "info": "こちらでは、GOでサポートされていない食べ物バフ、アビスカードや、超電導などのバフ・デバフを追加できます。具体的な値については、<1>原神Wiki</1>を参照してください。",
+      "label": "新規ボーナスステータス"
+    },
+    "tabTheorycraft": {
+      "substatType": {
+        "min": "最低サブ効果スコア",
+        "max": "最大サブ効果スコア",
+        "mid": "平均サブ効果スコア"
+      },
+      "maxTotalRolls": "現ビルドは最大<strong>{{value}}</strong>のスコアが可能です",
+      "maxRolls": "このサブステータスは最大30回のスコアが可能です。",
+      "maxRollsMain": "最低1つのメイン効果が同じステータスのため、このサブ効果は最大{{value}}回のスコアが可能です。",
+      "distribute": "分配",
+      "compareToggle": {
+        "equipped": "装備中の聖遺物と比較",
+        "tc": "セオリークラフトステータスを表示"
+      },
+      "resetDialog": {
+        "title": "セオリークラフトビルド設定をリセットしますか？",
+        "content": "今設定されているセオリークラフトビルドが削除されます。"
+      },
+      "copyDialog": {
+        "copyBtn": "装備中のをコピー",
+        "title": "データを装備中の聖遺物・武器からコピーしますか？",
+        "content": "今設定されているセオリークラフトビルドが装備中のビルドに換えます。"
+      },
+      "kqmsDialog": {
+        "kqmsBtn": "KQM（刻晴メインズ）を使用",
+        "title": "KQMを使用しますか？",
+        "content": "今設定されている<strong>サブステ</strong>を<4>KQM標準</4>に準拠したものに換えます。"
+      },
+      "gcsimDialog": {
+        "title": "gcsimエクスポート",
+        "content": "下記のコードからビルドをコピーし、<2>gcsim</2>にインポートできます",
+        "copied": "クリップボードにgcsim configをコピーしました。"
+      },
+      "all": {
+        "rolls": "全ての強化",
+        "max": "全てをマックス"
+      },
+      "substat": {
+        "max": "マックス"
+      },
+      "feasibilityAlert": "現サブ効果の分布には、少なくとも <strong>{{minSubLines}}</strong> 行のサブ効果が必要です。よって、<strong>{{minOtherRolls}}</strong> の強化を他のサブステータスに割り当てる必要があります。",
+      "optAlert": {
+        "scalesWith": "選択された改良ターゲットと制約が計算する倍率は、次のサブステです：",
+        "distribute": "ステータスをこれらのサブ効果にのみ分配します。",
+        "feasibilty": "非倍率のサブ効果に分散する必要がある可能性があります。"
+      },
+      "constraint": {
+        "title": "ステータス制約",
+        "add": "ステータス制約を追加"
+      }
+    },
+    "tabTeambuff": {
+      "team_reso": "元素共鳴",
+      "resonance_tip": "元素共鳴の効果を発揮するためには、パーティーが4人揃っている必要があります。"
+    },
+    "showingNum": {
+      "other": "{{value}}人のキャラクターの内、<1>{{count}}</1> 人を表示中"
+    }
+  },
+  "page_weapon": {
+    "edit": "武器改造",
+    "weaponName": "武器名",
+    "removeWeapon": "{{value}}を削除してよろしいですか？",
+    "addWeapon": "武器を追加",
+    "showingNum": {
+      "other": "武器{{value}}つの内、<1>{{count}}</1>つを表示中"
+    },
+    "cantDeleteLock": "武器がロックされているため解除できません"
+  },
+  "weapon_AquaSimulacra": {
+    "condName": "敵が付近内"
+  },
+  "weapon_FadingTwilight": {
+    "states": {
+      "evengleam": "夕暮",
+      "afterglow": "流霞",
+      "dawnblaze": "朝日"
+    },
+    "condName": "現状態"
+  },
+  "weapon_HaranGeppakuFutsu": {
+    "consumed": "消費された波穂の層数"
+  },
+  "char_Collei": {
+    "sproutDmg": "芽生えダメージ",
+    "miniAnbarDmg": "ミニコレアンバーダメージ"
+  },
+  "char_Dori": {
+    "c2MultiplierKey_": "ジンニー砲倍率",
+    "c2DmgKey": "ジンニー砲ダメージ",
+    "c4ConnectedBelowHp": "ランプの精とリンクしているキャラクターのHPは50%以下",
+    "c4ConnectedBelowEner": "ランプの精とリンクしているキャラクターの元素チャージは50%以下"
+  },
+  "char_ShikanoinHeizou": {
+    "takingField": "フィールド登場後"
+  },
+  "char_Tighnari": {
+    "p1Cond": "<strong>花筐の矢</strong>を放った後",
+    "c4ReactCond": "<strong>蔓纏いの矢</strong>が元素反応を起こした後",
+    "c6DmgKey": "蔵蘊の花矢の追加ダメージ",
+    "c6WreathRed": "<strong>花筐の矢</strong>のチャージ時間減少"
+  },
+  "elementalResonance": {
+    "SprawlingGreenery": {
+      "cond2ele": "<pyro>燃焼</pyro>、<spread>原激化</spread>、または<bloom>開花</bloom>反応を発動後",
+      "cond3ele": "<aggravate>超激化</aggravate>、<spread>草激化</spread>、<hyperbloom>超開花</hyperbloom>、または<burgeon>烈開花</burgeon>反応を発動後"
+    },
+    "EnduringRock": {
+      "hitCond": "キャラクターがシールドで守られている時、敵にダメージを与えた後"
+    }
+  },
+  "page_character_optimize": {
+    "mainStat": {
+      "levelAssTooltip": {
+        "title": "メイン効果レベル仮定",
+        "desc": "メイン効果値を指定レベル以上に設定します。サブ効果に変更はしません。"
+      },
+      "assumptionLvl": {
+        "no": "メイン効果レベル仮定なし",
+        "lvl": "メイン効果は最低{{lvl}}レベルと仮定"
+      },
+      "title": "メイン効果フィルター・構成"
+    },
+    "tcGraph": {
+      "vs": "対改良ターゲットを複合",
+      "notSel": "選択なし",
+      "downloadData": "データをダウンロード",
+      "desc": "オプティマイザーからのデータで改良ターゲットと選択したグラフターゲットを複合してグラフを表しされます。グラフには、選択したグラフターゲットの0.01ごとの最大改良ターゲット値が表示されます。これらを有効にするのはオプションであり、有効に場合計算時間が遅くなります。",
+      "showStatThr": "ステータスのしきい値を表示",
+      "generatedBuilds": "生成されたビルド",
+      "statReqThr": "ステータス要件のしきい値",
+      "currentBuild": "現ビルド",
+      "highlightedBuilds": "注目ビルド",
+      "buildAlreadyInList": "ビルドは既にリストにあります"
+    },
+    "levelFilter": "聖遺物レベルフィルター",
+    "allowPartial": "部分的なビルドを許可する（5聖遺物以下）",
+    "constraintFilter": {
+      "title": "最小ビルド制約",
+      "tooltip": "構成されたビルドが考慮する特定の最小要件を設定します。たとえば、最低140%の元素チャージをターゲットとします。"
+    },
+    "artSetConfig": {
+      "title": "聖遺物セットの設定",
+      "setEffCond": "効果条件の設定",
+      "enabled": "有効",
+      "allowed": "許可",
+      "excluded": "除外",
+      "selected": "選択済み",
+      "2rainbow": "2セット効果のみ",
+      "4rainbow": "セット効果なし",
+      "allowAll2set": "全ての2セットを許可",
+      "excludeAll2set": "全ての2セットを除外",
+      "allowAll4set": "全ての4セットを許可",
+      "excludeAll4set": "全ての4セットを除外",
+      "alExRainbow": "<0>許可<1></1></0> / <2>除外<1></1></2>レインボービルド",
+      "modal": {
+        "setCond": {
+          "title": "聖遺物セットの効果条件",
+          "reset": "条件をリセット",
+          "text": "一部の聖遺物セットの中、条件を満たして発揮するバフするものがあります。こちらではこれらの効果を選択でき、目指している改良に必要な計算をより的確に設定できます。"
+        },
+        "ArtSetFilter": {
+          "title": "聖遺物セット<1>許可<1></1></1> / <3>除外<1></1></3>",
+          "intro": "ビルド改良計算に考慮させたいセットを許可・除外できます。次の例では、<strong>A</strong>はオンセット、<strong>R</strong>はレインボー（オフセット）です。",
+          "2set": "<0><0>除外<1></1>2セット</0></0>は、2セットが含むビルドを除外します：<2><0>AA</0>RRR</2>と<4><0>AAA</0>RR</4>。",
+          "4set": "<0><0>除外<1></1>4セット</0></0>は、4セットが含むビルドを除外します：<2><0>AAAA</0>R</2>と<4><0>AAAAA</0></4>。",
+          "2rain": "<0><0>除外<1></1>3レインボー</0></0>は、2セット＋3レインボーが含むビルドを除外します：<2>AA<1>RRR</1></2>と<4>AAA<1>RR</1></4>。",
+          "4rain": "<0><0>除外<1></1>5レインボー</0></0>は、バラバラの5レインボービルドを除外します: <2><0>RRRRR</0></2>。"
+        }
+      }
+    },
+    "buildDropdownDesc": "生成されるビルドの数を減らすと、多数のビルドの計算時間が短縮されます。",
+    "threadDropdownDesc": "スレッド数を増やすとビルド時間は短縮されますが、CPUの使用量も増加します。",
+    "noArtis": "注！まだGOに聖遺物を追加していないようです。<1>聖遺物</1>ページに移動して追加してください。",
+    "targetSelector": {
+      "selectOptTarget": "改良ターゲットを選択",
+      "selectGraphTarget": "グラフターゲットを選択",
+      "invalidTarget": "ターゲット無効",
+      "selectBuildTarget": "ビルド制約ターゲットを選択"
+    },
+    "selectTargetFirst": "先ずは改良ターゲットを選択ください",
+    "generateButton": {
+      "cancel": "キャンセル",
+      "generateBuilds": "ビルドを生成"
+    },
+    "removeBuildButton": "ビルドを削除",
+    "theorycraftButton": "セオリークラフト",
+    "currentlyEquippedBuild": "装備中",
+    "addBuildToList": "ビルドをリストに追加",
+    "graphBuildLabel": "グラフ＃<1>{{count}}</1>",
+    "excludeArt": {
+      "title_exclude": "除外された聖遺物",
+      "title_tooltip": "このキャラクターの除外リストに聖遺物を追加できます。除外リスト内の聖遺物は、ビルド生成の計算に対象されません。",
+      "addExc": "このキャラクターの除外リストに聖遺物を追加してください",
+      "selExc": "このキャラクターの除外リストに追加する聖遺物を選択してください",
+      "deSelectExc": "除外リストから外す聖遺物をクリックしてください",
+      "usingNum": "除外聖遺物<1>{{totalStr}}</1>個使用中",
+      "button_txt": "聖遺物を除外",
+      "excNum": {
+        "other": "<0>{{count}}</0>個の聖遺物を除外"
+      }
+    },
+    "excludeChar": {
+      "title": "装備中聖遺物構成",
+      "modal": {
+        "allow_all": "表示されている全てのキャラクターを許可リストに追加",
+        "disallow_All": "表示されている全てのキャラクターを許可リストから外す"
+      },
+      "allowEquip": "下記キャラクターからの聖遺物を使用の許可する",
+      "tooltip": "許可リストにキャラクターを追加できます。当リスト内のキャラクターはビルド生成の計算に対象されます。また、装備されていない聖遺物のみ使用、許可リスト内の聖遺物のみ使用、およびすべての聖遺物の使用要件を切替えることもできます。",
+      "chars": "キャラクター",
+      "artis": "聖遺物",
+      "states": {
+        "unequippedOnly": "装備されていないもののみ",
+        "customList": "カスタムリスト",
+        "all": "全聖遺物"
+      },
+      "usingState": "使用中",
+      "usingNumTot": {
+        "other": "<3>{{count}}</3>人のキャラクターからの<1>{{arts}}</1>個の聖遺物を使用中"
+      }
+    },
+    "buildCompleted": "ビルド生成完了",
+    "notifyTooltip": "ビルドの生成が完了したら通知音が鳴ります。タブアウト時にも通知が表示されます。",
+    "bonusStats": {
+      "title": "ボーナスステータス"
+    },
+    "build": {
+      "other": "<0>{{count}}</0>つのビルド"
+    },
+    "thread": {
+      "other": "<0>{{count}}</0>つのスレッド"
+    }
+  },
+  "weapon_ForestRegalia": {
+    "condName": "唯識の葉を拾った後"
+  },
+  "weapon_FruitOfFulfillment": {
+    "stackName": "盈虚効果"
+  },
+  "weapon_Moonpiercer": {
+    "condName": "蘇生の葉を拾った後"
+  },
+  "weapon_SapwoodBlade": {
+    "condName": "唯識の葉を拾った後"
+  },
+  "char_TravelerAnemo": {
+    "p1": "風の刃ダメージ",
+    "c6": "敵に<strong>激風の息</strong>をヒット",
+    "c4": "起動中のダメージ軽減",
+    "initialEleDmg": "旋風の剣長押し、元素変化追加ダメージ",
+    "maxEleDmg": "旋風の剣長押し、元素変化追加最大ダメージ",
+    "stormEleDmg": "真空の渦発動ダメージ",
+    "stormEleMaxDmg": "真空の渦最大ダメージ"
+  },
+  "char_TravelerElectro": {
+    "skill": {
+      "amuletGenAmt": "生成された豊穣の勾玉の数",
+      "absorb": "豊穣の勾玉を拾った後",
+      "enerRest": {
+        "none": "勾玉ごとの元素チャージ",
+        "over35": "勾玉ごとの元素チャージ（元素エネルギー35%以上）",
+        "under35": "勾玉ごとの元素チャージ（元素エネルギー35%以下）"
+      }
+    },
+    "burst": {
+      "3rd": "威光の落雷3階段ダメージ",
+      "thunderCd": "威光の落雷クールダウン"
+    },
+    "passive2": {
+      "enerRech_": "豊穣の勾玉の元素チャージボーナス"
+    },
+    "c2": {
+      "thunderHit": "敵に<strong>威光の落雷</strong>をヒット"
+    }
+  },
+  "char_TravelerGeo": {
+    "passive2": {
+      "key": "岩崩れダメージ"
+    },
+    "c2": {
+      "key": "不穏な溶岩ダメージ"
+    }
+  },
+  "page_newTab": {
+    "title": "🛑新しいオプティマイザータブが検出されました🛑",
+    "p1": "💞原神オプティマイザーを別のタブで開いたようです。📵GOは複数のタブで操作すると、様々なエラーが発生する可能性があります：",
+    "symptom": {
+      "1": "データの非同期🙃",
+      "2": "データベースの破損💔",
+      "3": "胃痛🤰と開発者の発狂😡",
+      "4": "まれに、デス☠️"
+    },
+    "p2": "よって、📝次のいずれかを選択ください：",
+    "choice": {
+      "1": "このタブを閉じて🔪、新しいタブ🆕を使用ください",
+      "2": "新しいタブを閉じ↩️、こちらが唯一残っているタブであることを確認し🔂、このページを更新します🔄"
+    },
+    "refresh": "ページ更新"
+  },
+  "char_Candace": {
+    "hydroInfusion": "<hydro>片手剣、両手剣、長柄武器に水元素付与状態</hydro>"
+  },
+  "char_Cyno": {
+    "p1Dmg": "渡荒の雷ダメージ",
+    "judication": "裁定効果発動",
+    "burstNormalDmgInc": "啓途誓使状態の通常攻撃ダメージアップ",
+    "boltDmgInc": "渡荒の雷ダメージアップ",
+    "duringBurst": "<strong>啓途誓使</strong>状態",
+    "afterBurstOrJudication": "<strong>聖儀・狼駆憑走</strong>発動後、または裁定効果を起こした時",
+    "a1soulfarer_dmg_": "律淵渡魂ダメージボーナス"
+  },
+  "char_Nilou": {
+    "skill": {
+      "dance1": "剣舞のステップ、ヒット1ダメージ",
+      "dance2": "剣舞のステップ、ヒット2ダメージ",
+      "whirl1": "旋舞のステップ、ヒット1ダメージ",
+      "whirl2": "旋舞のステップ、ヒット2ダメージ",
+      "wheel": "水輪ダメージ",
+      "illusion": "水月ダメージ"
+    },
+    "passive1": {
+      "underChaliceEffect": "金盃の豊穣状態",
+      "notDendroHydroTeam": "ヒント：チーム全員の元素タイプが草元素と水元素であり、かつ草元素と水元素のキャラクターが少なくとも一人ずつ編成すると追加の条件と効果が見れます",
+      "condName": "金盃の豊穣状態で<dendro>草元素ダメージ</dendro>を受けた後",
+      "bountifulCores": "開花反応は豊穣の核を生成"
+    },
+    "c4": {
+      "condName": "敵に3段目のステップ、ピルエットをヒット"
+    },
+    "c1": {
+      "illusion_dmg_": "水月ダメージボーナス"
+    }
+  },
+  "char_Nahida": {
+    "karmaDmg_": "滅浄三業のダメージボーナス",
+    "karmaCritRate_": "滅浄三業の会心率ボーナス",
+    "karmaIntervalDec": "滅浄三業の発動間隔減少",
+    "noBurstEffect": "ヒント：元素爆発効果がありません。凸1を有効、または<pyro>炎元素</pyro>、<electro>雷元素</electro>か<hydro>水元素</hydro>のチームメンバーを加入ください。",
+    "partyInBurst": "チームメンバーがフィールド範囲内",
+    "c1Key": "摩耶の宮殿の効果ボーナス発動のため、追加の<pyro>炎元素</pyro>、<electro>雷元素</electro>と<hydro>水元素</hydro>のチームメンバーを加入",
+    "c2": {
+      "bloomCondName": "敵に<strong>蘊種印</strong>を付与",
+      "qasCondName": "蘊種印状態にある敵が<spread>原激化</spread>、<aggravate>超激化</aggravate>、または<spread>草激化</spread>反応を受けた後"
+    },
+    "c4CondName": "<strong>蘊種印</strong>状態にある敵",
+    "c6KarmicDmg": "破業障ダメージ"
+  },
+  "artifact_FlowerOfParadiseLost": {
+    "condName": "開花、超開花、烈開花を起こした後"
+  },
+  "char_Faruzan": {
+    "giftCondName": "祈風の恵み状態",
+    "a4CondName": "烈風護持状態",
+    "c2DurationInc": "赫耀多面体の継続時間増加",
+    "c6Arrow": "敵にダメージを与え、風圧崩潰効果を付与",
+    "baleCondName": "敵に詭風の禍つ効果を付与"
+  },
+  "char_Layla": {
+    "starDmgInc": "飛星ダメージアップ",
+    "c1ShieldBonusKey_": "果てなき夢の領土ボーナス",
+    "c4CondKey": "啓明状態",
+    "starDmg_": "飛星ダメージボーナス",
+    "slugDmg_": "星光弾ダメージボーナス",
+    "starInterval_": "夜星生成間隔"
+  },
+  "char_Wanderer": {
+    "windfavoredState": "<strong>児姿優風</strong>状態",
+    "p1": {
+      "pyroCondName": "<strong>羽画・風姿華歌</strong>を発動時、<pyro>炎元素</pyro>に触れた後",
+      "cryoCondName": "<strong>羽画・風姿華歌</strong>を発動時、<cryo>氷元素</cryo>に触れた後"
+    },
+    "p2Dmg": "風の矢ダメージ",
+    "c1BonusKey": "風の矢ダメージボーナス倍率",
+    "c2CondName": "空居力の上限値と現在値の差",
+    "c6Key": "言祝・霞幕傾松風の倍率"
+  },
+  "weapon_ToukabouShigure": {
+    "condName": "敵に紙傘の邪気効果を付与"
+  },
+  "char_Alhaitham": {
+    "withMirrors": "琢光鏡を所持",
+    "debateStacks": "琢光鏡を凝集した後",
+    "mirrorsConsumed": "<strong>殊境・顕象結縛</strong>を発動し、琢光鏡を消費",
+    "projectionAttack_dmg_": "光幕攻撃ダメージボーナス",
+    "excessMirror": "限界に達し、琢光鏡を生成した後",
+    "projectionDmg": "光幕攻撃ダメージ"
+  },
+  "char_Yaoyao": {
+    "inExplosionAoE": "<strong>白玉大根</strong>の爆発範囲内",
+    "inLegacy": "桂子仙機状態",
+    "megaDmg": "超スゴイ! 大根ダメージ",
+    "megaHeal": "超スゴイ! 大根治療"
+  },
+  "page_error": {
+    "title": "🛑エラー発生🛑",
+    "p1.1": "エラーが発生しました。解決のため、しばらくのご協力をお願い致します。",
+    "p1.2": "次を参照してください：",
+    "fixes": {
+      "1": "ページを更新",
+      "2": "ブラウザ拡張機能をすべて無効にし、再度更新してください",
+      "3": "データベースをダウンロードし、保管してください。「すべてのGOデータを削除」をクリックし、データベースを再アップロードしてください"
+    },
+    "p2": "上記を行っても解決されていない場合は、「GitHub Issues」ページ、またはDiscordのバグレポートチャンネルにご連絡ください",
+    "report": {
+      "1": "下記のデータベースをダウンロード",
+      "2": "下記のレポートをコピーする",
+      "3": "GitHubと連絡するには、<1>ここ</1>をクリックしてください。内容にテキストを貼付け、再現手順を記入し、JSON ファイルを添付してください（ファイル名を「.txt」で終わるように変更する必要があります）",
+      "4": "または、<1>ここ</1>をクリックしてDiscordと連絡ください。「#🐛bug-reports」チャネルにて、新しいスレッドを作成し、メッセージ ボックスにテキストを貼付けください。再現手順を入力し、JSONファイルもアップロードしてください。"
+    },
+    "refresh": "ページ更新",
+    "caption": "エラーを調査している運営のライブ映像",
+    "confirmNuke": "すべてのGOデータを削除してよろしいですか？取り返しのつかない事です！",
+    "finishNuke": "全てのGOデータを削除。ページ更新中。",
+    "nuke": "すべてのGOデータを削除"
+  },
+  "char_Dehya": {
+    "inFieldAndTakeDmg": "浄焔剣獄領域内のフィールド上キャラクターがダメージを受けた後",
+    "field_dmg_": "浄焔剣獄ダメージボーナス",
+    "initialHeal": "治療発動回復量",
+    "dotHeal": "追加の回復",
+    "critHitDuringBurst": "熾鬣拳が会心ダメージを命中後"
+  },
+  "char_Mika": {
+    "inSoulwind": "霊風状態",
+    "numDetectorStacks": "偵察の層数",
+    "incDetectorStacks": "偵察の最大層数増加"
+  },
+  "weapon_MailedFlower": {
+    "condName": "敵に元素スキルをヒット、または元素反応を起こした後"
+  },
+  "artifact_NymphsDream": {
+    "condName": "鏡中の水仙"
+  },
+  "char_Somnia": {
+    "name": "ソムニァ",
+    "title": "模擬認知の創出",
+    "description": "彼女はさまざまなコンセプトの構成でありながら、あまたな状態・段階で存在します。・・・そもそも、彼女は本当に存在するのでしょうか？",
+    "constellationName": "数学猫原理（マテマティカ・フェリーナ）",
+    "auto": {
+      "name": "星幽算盤（アストラル・アバカス）",
+      "fields": {
+        "normal": {
+          "0": "<strong>通常攻撃</strong>",
+          "1": "星幽算盤（アストラル・アバカス）を具現化し、最大4段のビーズの連発攻撃を行い、<electro>雷元素ダメージ</electro>を与える。"
+        },
+        "charged": {
+          "0": "<strong>重撃</strong>",
+          "1": "一定のスタミナを消費し、ビーズで連続攻撃を行い、0.3秒ごとに最大4体の敵に<electro>雷元素ダメージ</electro>を与えます。",
+          "2": "ソムニァは中断耐性を獲得し、重撃を行っている間は自由に移動できます。"
+        },
+        "plunging": {
+          "0": "<strong>落下攻撃</strong>",
+          "1": "ビーズを地面に発射し、衝撃時に<electro>雷元素範囲ダメージ</electro>を与えます。"
+        }
+      },
+      "skillParams": {
+        "0": "ヒット1ダメージ",
+        "1": "ヒット2ダメージ",
+        "2": "ヒット3ダメージ",
+        "3": "ヒット4ダメージ",
+        "4": "重撃連続攻撃ダメージ",
+        "5": "重撃スタミナコスト",
+        "6": "落下攻撃ダメージ",
+        "7": "低・高落下攻撃ダメージ"
+      }
+    },
+    "skill": {
+      "name": "宇宙電卓（コスミック・カルキュレータ）",
+      "description": {
+        "0": "星幽算盤から膨大なエネルギーを凝縮して爆発を引き起こし、頭上に定義不可能な旨趣を収める自己完結型の印章を作成し、敵に<electro>雷元素範囲ダメージ</electro>を与えます。",
+        "1": "自己完結型の印章状態の時、シュレーディンガーの重ね合わせ状態を獲得します。",
+        "2": "<br/>",
+        "3": "<strong>シュレーディンガーの重ね合わせ</strong>",
+        "4": "通常攻撃と重撃のダメージを元素熟知に基づいて増加します。",
+        "5": "シュレーディンガーの重ね合わせは自己完結型の印章の継続時間が終了された時、またはソムニァがフィールドを出た時に切れます。"
+      },
+      "skillParams": {
+        "0": "元素スキルダメージ",
+        "1": "継続時間",
+        "2": "クールダウン"
+      }
+    },
+    "burst": {
+      "name": "視差の肉球（パララックス・ポゥズ）",
+      "description": {
+        "0": "星型の天体台風を周囲に召喚し、拡大しながら<electro>雷元素ダメージ</electro>の爆発を放ちます。フィールド内は持続しつつ、1秒ごとに敵に継続的な<electro>雷元素範囲ダメージ</electro>を与えます。",
+        "1": "天体台風が発動中、ソムニァの元素熟知が増加されます。",
+        "2": "さらに、天体台風が発動中、星の統計を獲得します。この状態の間、星幽算盤（アストラル・アバカス）を乗算、加算、または減算モードに設定できます。星の統計モードは1つだけ同時に発動できます。",
+        "3": "<br/>",
+        "4": "星幽算盤モード",
+        "5": [
+          "<strong>乗算</strong>：天体台風のフィールド内、片手剣・両手剣・長柄武器を装備するキャラクターの武器に<electro>雷元素</electro>が付与されます。フィールド内で通常攻撃または重撃がヒットすると星の分割を行い、ソムニァの元素熟知に基づいて<electro>雷元素範囲ダメージ</electro>を、1.5秒ごと1回に発動できます。",
+          "<strong>加算</strong>：天体台風の範囲とダメージが増加します。敵に当たると、通常攻撃と重撃はソムニァの元素熟知に基づいて<electro>雷元素範囲ダメージ</electro>を与える超新星を実体化します。この効果は0.75秒ごとに1回発動できます。",
+          "<strong>減算</strong>：天体台風の範囲とダメージを減少し、その範囲内の敵に「3未満」効果が適用されます。「3未満」は、ソムニァの元素熟知に基づいて敵の元素・物理耐性を減少させます。さらに、ソムニァの通常攻撃と重撃は、元素熟知に基づいて増加します。"
+        ]
+      },
+      "skillParams": {
+        "0": "元素スキルダメージ",
+        "1": "元素熟知",
+        "2": "天体台風持続的ダメージ（乗算）",
+        "3": "星の分割ダメージ",
+        "4": "天体台風持続的ダメージ（加算）",
+        "5": "超新星ダメージ",
+        "6": "天体台風持続的ダメージ（減算）"
+      }
+    },
+    "passive1": {
+      "name": "高速計算",
+      "description": {
+        "0": "重撃のチャージ速度+20%及びスタミナ消耗‐20%"
+      }
+    },
+    "passive2": {
+      "name": "数学の達人",
+      "description": {
+        "0": "天体台風の発動中、天体台風、星の分割と超新星の攻撃を敵にヒットするごとに、ソムニァの元素熟知が5%、最大25%まで増加されます。"
+      }
+    },
+    "passive3": {
+      "name": "不眠症反復",
+      "description": {
+        "0": "夜間（18時から6時まで）になると、原神オプティマイザーのビルド改良計算速度を+10%。"
+      }
+    },
+    "constellation1": {
+      "name": "小点数",
+      "description": {
+        "0": "ソムニァの通常攻撃と重撃ダメージを25%の確率で倍増"
+      }
+    },
+    "constellation2": {
+      "name": "素数",
+      "description": {
+        "0": "ソムニァがシュレーディンガーの重ね合わせ状態の間、通常攻撃・重撃がヒットするたびに自然数を1層を獲得します。自然数の層量が素数である場合、ソムニァの次の通常攻撃・重撃はシュレーディンガーの重ね合わせによるダメージ増加の2倍受けます。"
+      }
+    },
+    "constellation3": {
+      "name": "無限の一連",
+      "description": {
+        "0": "</strong>視差の肉球（パララックス・ポゥズ）</strong>のレベルを+3。",
+        "1": "最大レベルは15まで。"
+      }
+    },
+    "constellation4": {
+      "name": "ルジンの問題",
+      "description": {
+        "0": "ソムニァが雷元素に関連する反応を起こした時、彼女自身と反応に関与した元素のメンバー全員に元素エネルギーが4回復されます。",
+        "1": "この効果は4秒ごとに1回発動可能です。"
+      }
+    },
+    "constellation5": {
+      "name": "マタタビ係数",
+      "description": {
+        "0": "</strong>宇宙電卓（コスミック・カルキュレータ）</strong>のレベルを+3。",
+        "1": "最大レベルは15まで。"
+      }
+    },
+    "constellation6": {
+      "name": "黄金比",
+      "description": {
+        "0": "ソムニァの重撃がダメージを与える時、会心率と会心ダメージがそれぞれ3%・5%増加します。この効果は0.2秒ごとに発動され、最大8回まで重ねられます。最初のバフを獲得した時から13秒が経つと解除されます。"
+      }
+    },
+    "c1Key": "通常攻撃・重撃ダメージ倍率",
+    "superpositionCond": "シュレーディンガーの重ね合わせ状態",
+    "cycloneActiveCond": "天体台風発動中",
+    "multCond": "乗算モード",
+    "subCond": "減算モード",
+    "lessThan3Cond": "敵が「3未満」状態",
+    "c1Cond": "小数点発動頻度",
+    "average": "平均",
+    "always": "常に",
+    "c2Cond": "素数の自然数層数を獲得"
+  },
+  "weapon_QuantumCatalyst": {
+    "name": "クァンタム・キャットリスト",
+    "description": "この高度な法器には、量子力学の神秘的な力が付与されており、輝く緑色の目、雷でちらつく尻尾、そして耳の間で時折弧を描く火花をもつ、まるで好奇心旺盛な猫のような姿をしています。",
+    "passiveName": "ミュートンのニャン動量",
+    "passiveDescription": {
+      "0": "元素チャージが<cryo>18%</cryo>増加します。通常攻撃と重撃のダメージが元素熟知の<cryo>6%</cryo>増加します。<electro>雷元素関連の反応</electro>を起こすと、12秒間<cryo>10</cryo>の元素熟知を獲得します。この効果は最大5回まで重ねられ、その持続時間は個別にカウントされます。",
+      "1": "元素チャージが<cryo>22.5%</cryo>増加します。通常攻撃と重撃のダメージが元素熟知の<cryo>7.5%</cryo>増加します。<electro>雷元素関連の反応</electro>を起こすと、12秒間<cryo>12</cryo>の元素熟知を獲得します。この効果は最大5回まで重ねられ、その持続時間は個別にカウントされます。",
+      "2": "元素チャージが<cryo>27%</cryo>増加します。通常攻撃と重撃のダメージが元素熟知の<cryo>9%</cryo>増加します。<electro>雷元素関連の反応</electro>を起こすと、12秒間<cryo>14</cryo>の元素熟知を獲得します。この効果は最大5回まで重ねられ、その持続時間は個別にカウントされます。",
+      "3": "元素チャージが<cryo>31.5%</cryo>増加します。通常攻撃と重撃のダメージが元素熟知の<cryo>10.5%</cryo>増加します。<electro>雷元素関連の反応</electro>を起こすと、12秒間<cryo>16</cryo>の元素熟知を獲得します。この効果は最大5回まで重ねられ、その持続時間は個別にカウントされます。",
+      "4": "元素チャージが<cryo>36%</cryo>増加します。通常攻撃と重撃のダメージが元素熟知の<cryo>12%</cryo>増加します。<electro>雷元素関連の反応</electro>を起こすと、12秒間<cryo>18</cryo>の元素熟知を獲得します。この効果は最大5回まで重ねられ、その持続時間は個別にカウントされます。"
+    }
+  },
+  "char_Baizhu": {
+    "seamlessDendro": "無隙シールド草元素ダメージ吸収量",
+    "a4Cond": "木運の歳状態",
+    "c2Dmg": "遊糸徴霊・切ダメージ",
+    "c2Heal": "遊糸徴霊・切回復量"
+  },
+  "char_Kaveh": {
+    "c6Dmg": "パイリダエーザの光ダメージ"
+  },
+  "char_Kirara": {
+    "extraCardamom": "ニャルダモン追加",
+    "c4Dmg": "ニャルダモン・ミニのダメージ"
+  },
+  "weapon_CalamityQueller": {
+    "effectName": "円頓",
+    "active": "フィールド上の倍率",
+    "inactive": "待機中の倍率"
+  },
+  "weapon_JadefallsSplendor": {
+    "condName": "定土玉圭状態"
+  },
+  "artifact_GildedDreams": {
+    "overrideSameCond": "同じ元素タイプのチームメンバー数",
+    "overrideOtherCond": "異なる元素タイプのチームメンバー数"
+  },
+  "char_Lynette": {
+    "c6CondName": "<strong>エニグマティック・フェイント</strong>のエニグマ・スラストを発動後"
+  },
+  "char_Lyney": {
+    "propStacks": "プロップ残数",
+    "propStacksUsed": "消費されたプロップ残数",
+    "hatDmgInc": "クラッカーバレットのダメージアップ",
+    "a1CondName": "<strong>プロップアロー</strong>でHPが消費",
+    "c6Dmg": "クラッカーバレット・重奏のダメージ"
+  },
+  "char_TravelerHydro": {
+    "dewdropDmgInc": "露雫のダメージアップ",
+    "a4CondName": "充満で消費する最大HPの割合",
+    "surgeDmgInc": "飛散する激流のダメージアップ",
+    "skillCondName": "充満状態"
+  },
+  "weapon_FinaleOfTheDeep": {
+    "bondCondName": "命の契約クリア後"
+  },
+  "weapon_FlowingPurity": {
+    "bondCondName": "命の契約クリア後"
+  },
+  "weapon_SacrificialJade": {
+    "condOffField": "キャラクターが5秒以上待機"
+  },
+  "weapon_ScionOfTheBlazingSun": {
+    "condName": "敵に陽炎の矢をヒット後",
+    "dmg": "陽炎の矢ダメージ"
+  },
+  "weapon_TalkingStick": {
+    "condName": {
+      "atk_": "キャラクターが<pyro>炎元素</pyro>の影響を受けている",
+      "dmg_": "キャラクターが<hydro>水元素</hydro>、<cryo>氷元素</cryo>、または<electro>雷元素</electro>の影響を受けている"
+    }
+  },
+  "artifact_SongOfDaysPast": {
+    "condName": "渇望効果の記録された回復量"
+  },
+  "char_Charlotte": {
+    "c2Cond": "敵にヴェリテくんがヒット",
+    "c4Cond": "敵にスナップシルエット、またはフォーカスインプレッション効果を付与"
+  },
+  "char_Freminet": {
+    "frost_dmgMult_": "霜寒ダメージ倍率",
+    "pressure_dmg_": "高圧粉砕ダメージボーナス",
+    "pressure_critRate_": "高圧粉砕の会心率"
+  },
+  "char_Furina": {
+    "fanfarePoints": "テンション",
+    "memberMult_": "サロンメンバー倍率",
+    "numOffer": "HP消費されたキャラクター数",
+    "c1Inc": "テンション上限アップ",
+    "c1Bonus": "発動時でのテンション",
+    "a4MemberDmg": "サロンメンバーのダメージボーナス",
+    "a4HealInterval": "衆の水の歌い手の回復間隔",
+    "c2Points": "上限を超えたテンション",
+    "c6Healing": "ウーシア継続回復",
+    "c6Pneuma": "プネウマ状態"
+  },
+  "char_Navia": {
+    "skillTotalShardDmg": "ロースラ晶弾の合計ダメージ",
+    "shot_dmg_": "ロースラ晶弾のダメージボーナス",
+    "shot_mult_": "ロースラ晶弾の倍率",
+    "shot_critRate_": "ロースラ晶弾の会心率",
+    "shot_critDMG_": "ロースラ晶弾の会心ダメージ",
+    "chargesCond": "裂晶の欠片の消費数",
+    "shotsFired": "ロースラ晶弾を発砲",
+    "shotsHitCond": "ロースラ晶弾の命中数"
+  },
+  "char_Neuvillette": {
+    "a1Cond": "遺龍の栄光",
+    "judgmentSpecialMult_": "衡平な裁量の倍率",
+    "judgment_critDMG_": "衡平な裁量の会心ダメージ",
+    "currentDmg": "洪水ダメージ"
+  },
+  "char_Wriothesley": {
+    "rebukeDmg": "誅罰・ヴォールティングアッパーのダメージ",
+    "a4Cond": "抵罪の赦免",
+    "icicleDmg": "氷柱ダメージ",
+    "rebuke_critRate_": "ヴォールティングアッパーの会心率",
+    "rebuke_critDMG_": "ヴォールティングアッパーの会心ダメージ",
+    "rebuke_dmg_": "ヴォールティングアッパーのダメージボーナス"
+  },
+  "weapon_PortablePowerSaw": {
+    "condName": "強靭マークを消費"
+  },
+  "weapon_ProspectorsDrill": {
+    "condName": "団結マークを消費"
+  },
+  "weapon_RangeGauge": {
+    "condName": "団結マークを消費"
+  },
+  "weapon_TheDockhandsAssistant": {
+    "condName": "強靭マークを消費"
+  },
+  "weapon_UltimateOverlordsMegaMagicSword": {
+    "condName": "助けられたメリュジーヌの数"
+  },
+  "weapon_Verdict": {
+    "condName": "契印"
+  },
+  "char_Chevreuse": {
+    "notPyroElectroTeam": "ヒント：チーム編成を<pyro>炎元素</pyro>と<electro>雷元素</electro>のみのキャラクターで組み、その効果をご覧ください",
+    "a4CondName": "マグナムブレットを発砲後",
+    "c6CondName": "近迫阻止射撃・速で回復後"
+  },
+  "char_Gaming": {
+    "cloudstrider_critRate_": "落下攻撃・踏雲献瑞の会心率",
+    "cloudstrider_critDMG_": "落下攻撃・踏雲献瑞の会心ダメージ",
+    "cloudstrider_dmg_": "落下攻撃・踏雲献瑞のダメージボーナス"
+  },
+  "char_Xianyun": {
+    "a4Cond": "竹星に補助仙力あり",
+    "c4Heal": "黍珠割烹の妙の回復量",
+    "wave_critDMG_": "閑雲衝撃波の会心ダメージ",
+    "a1Cond": "風翎",
+    "c6Cond": "天梯昇り発動数"
+  }
 }
