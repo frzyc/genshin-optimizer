@@ -3,9 +3,7 @@
     "eye": "Con mắt lôi phạt",
     "partyCost": "Năng lượng nguyên tố của kỹ năng nộ"
   },
-  "burst": {
-    "resolves": "Ý lực"
-  },
+  "burst": { "resolves": "Ý lực" },
   "a4": {
     "enerRest": "Năng lượng nguyên tố hồi phục bởi <strong>Mộng tưởng nhất tâm</strong>",
     "eleDMG": "Sát thương nguyên tố lôi tăng thêm"

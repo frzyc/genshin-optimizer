@@ -3,10 +3,6 @@
     "condName": "서리꽃 화살 발사 후",
     "critRateInc": "서리꽃 치명확률 증가"
   },
-  "c1": {
-    "condName": "적이 서리꽃 화살 혹은 피어난 서리꽃에 명중"
-  },
-  "c4": {
-    "lingerDuration": "영역 이탈 시 지속시간"
-  }
+  "c1": { "condName": "적이 서리꽃 화살 혹은 피어난 서리꽃에 명중" },
+  "c4": { "lingerDuration": "영역 이탈 시 지속시간" }
 }

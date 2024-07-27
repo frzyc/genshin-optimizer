@@ -1,8 +1,6 @@
 {
   "title": "Pengaturan",
-  "languageCard": {
-    "languageFormat": "Bahasa: {{language}}"
-  },
+  "languageCard": { "languageFormat": "Bahasa: {{language}}" },
   "uploadCard": {
     "title": "Unggah Database",
     "replaceDatabase": "Perbarui Database",

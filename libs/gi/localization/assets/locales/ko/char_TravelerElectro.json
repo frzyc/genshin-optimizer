@@ -12,10 +12,6 @@
     "3rd": "3번째 위광의 낙뢰 피해",
     "thunderCd": "위광의 낙뢰 재생성 시간"
   },
-  "passive2": {
-    "enerRech_": "풍요의 곡옥이 제공하는 원소 충전 효율 증가"
-  },
-  "c2": {
-    "thunderHit": "<strong>위광의 낙뢰</strong>가 적을 명중"
-  }
+  "passive2": { "enerRech_": "풍요의 곡옥이 제공하는 원소 충전 효율 증가" },
+  "c2": { "thunderHit": "<strong>위광의 낙뢰</strong>가 적을 명중" }
 }

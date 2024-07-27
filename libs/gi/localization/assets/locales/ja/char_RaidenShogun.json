@@ -1,8 +1,5 @@
 {
-  "skill": {
-    "eye": "雷罰悪曜の眼起動中",
-    "partyCost": "元素エネルギーコスト"
-  },
+  "skill": { "eye": "雷罰悪曜の眼起動中", "partyCost": "元素エネルギーコスト" },
   "burst": {
     "resolves": "願力の層数",
     "resolveInitial_": "夢想の一太刀ダメージボーナス倍率",
@@ -14,7 +11,5 @@
     "enerRest": "<strong>夢想の一心</strong>からの元素エネルギー回復ボーナス",
     "eleDMG": "雷元素ダメージボーナス"
   },
-  "c4": {
-    "expires": "<strong>夢想の一心</strong>状態終了後"
-  }
+  "c4": { "expires": "<strong>夢想の一心</strong>状態終了後" }
 }

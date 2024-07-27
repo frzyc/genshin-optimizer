@@ -1,8 +1,4 @@
 {
-  "passive1": {
-    "cond": "<strong>公演、開始♪</strong>歌声の輪が継続中"
-  },
-  "constellation2": {
-    "cond": "<strong>公演、開始♪</strong>発動中"
-  }
+  "passive1": { "cond": "<strong>公演、開始♪</strong>歌声の輪が継続中" },
+  "constellation2": { "cond": "<strong>公演、開始♪</strong>発動中" }
 }

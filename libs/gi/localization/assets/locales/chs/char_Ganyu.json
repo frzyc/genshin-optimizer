@@ -1,12 +1,5 @@
 {
-  "a1": {
-    "condName": "霜华矢发射后",
-    "critRateInc": "霜华矢暴击率提高"
-  },
-  "c1": {
-    "condName": "敌人被二段蓄力重击的霜华矢或霜华绽发命中"
-  },
-  "c4": {
-    "lingerDuration": "离开领域后效果持续时间"
-  }
+  "a1": { "condName": "霜华矢发射后", "critRateInc": "霜华矢暴击率提高" },
+  "c1": { "condName": "敌人被二段蓄力重击的霜华矢或霜华绽发命中" },
+  "c4": { "lingerDuration": "离开领域后效果持续时间" }
 }

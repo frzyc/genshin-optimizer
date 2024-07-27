@@ -1,8 +1,6 @@
 {
   "title": "設定",
-  "languageCard": {
-    "languageFormat": "語言：{{language}}"
-  },
+  "languageCard": { "languageFormat": "語言：{{language}}" },
   "uploadCard": {
     "title": "上傳資料檔",
     "replaceDatabase": "更新資料檔",
@@ -15,9 +13,7 @@
       "goInvalid": "無效的 GO 備份檔案格式。"
     },
     "dbSource": "資料來源：",
-    "goodUpload": {
-      "title": "<strong>原神開放物件描述</strong> (GOOD) 格式"
-    },
+    "goodUpload": { "title": "<strong>原神開放物件描述</strong> (GOOD) 格式" },
     "buttons": {
       "open": "開啟",
       "detectDups": "Detect Updates/Dupes",

@@ -10,7 +10,5 @@
   "passive2": {
     "enerRech_": "Peningkatan Efek Energy Recharge Abundance Amulet"
   },
-  "c2": {
-    "thunderHit": "Musuh terkena <strong>Falling Thunder</strong>"
-  }
+  "c2": { "thunderHit": "Musuh terkena <strong>Falling Thunder</strong>" }
 }

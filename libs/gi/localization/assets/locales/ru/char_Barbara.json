@@ -1,8 +1,4 @@
 {
-  "passive1": {
-    "cond": "Внутри песни <strong>Да начнется шоу♪</strong>"
-  },
-  "constellation2": {
-    "cond": "Во время <strong>Да начнется шоу♪</strong>"
-  }
+  "passive1": { "cond": "Внутри песни <strong>Да начнется шоу♪</strong>" },
+  "constellation2": { "cond": "Во время <strong>Да начнется шоу♪</strong>" }
 }

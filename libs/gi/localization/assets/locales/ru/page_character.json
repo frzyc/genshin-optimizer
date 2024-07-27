@@ -29,9 +29,7 @@
     "addNewTarget": "Добавить одну ",
     "addNewMTarget": "Доб. Новый Кастом Мультитаргет"
   },
-  "addStats": {
-    "title": "Параметры Врага + Бонусы"
-  },
+  "addStats": { "title": "Параметры Врага + Бонусы" },
   "tabTheorycraft": {
     "substatType": {
       "min": "Исп. минимум сабстат роллы",

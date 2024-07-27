@@ -169,8 +169,6 @@
   "afterHeal": "치유를 받은 후",
   "activeChar": "필드 위 캐릭터",
   "otherHpChange": "파티원의 HP가 변화한 후",
-  "reactionOp": {
-    "overload": "<overloaded>과부하</overloaded> 반응 발동 후"
-  },
+  "reactionOp": { "overload": "<overloaded>과부하</overloaded> 반응 발동 후" },
   "afterOverflow": "치유 회복량이 초과"
 }

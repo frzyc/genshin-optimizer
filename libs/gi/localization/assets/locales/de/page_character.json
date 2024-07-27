@@ -1,10 +1,6 @@
 {
-  "hitmode": {
-    "critHit": "KRIT Treffer-SCH"
-  },
-  "tabEquip": {
-    "compare": "Mit aktuellem Build vergleichen"
-  },
+  "hitmode": { "critHit": "KRIT Treffer-SCH" },
+  "tabEquip": { "compare": "Mit aktuellem Build vergleichen" },
   "tabTheorycraft": {
     "maxTotalRolls": "Ein \"zulässiger\" Build kann maximal 45 Rolls haben.",
     "kqmsDialog": {
@@ -13,7 +9,5 @@
       "content": "Dies wird deine aktuellen <strong>Bonusattribute</strong> mit den von den <4>KQM Standards</4> vorgesehenen ersetzen."
     }
   },
-  "addStats": {
-    "label": "Neues Zusatzattribut"
-  }
+  "addStats": { "label": "Neues Zusatzattribut" }
 }

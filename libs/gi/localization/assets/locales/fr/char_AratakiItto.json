@@ -1,15 +1,9 @@
 {
-  "a1": {
-    "name": "Utilisations consécutives d'Arataki Kesagiri"
-  },
-  "a4": {
-    "dmgInc": "Augmentation des DGT d'Arataki Kesagiri"
-  },
+  "a1": { "name": "Utilisations consécutives d'Arataki Kesagiri" },
+  "a4": { "dmgInc": "Augmentation des DGT d'Arataki Kesagiri" },
   "c1": {
     "initialGain": "Cumuls de Mégaforce superlative gagnés",
     "timedGain": "Après 1s, les cumuls de Mégaforce superlative sont gagnés toutes les 0,5s pendant 1,5s."
   },
-  "c4": {
-    "name": "Après la fin de l'état Roi oni maléfique"
-  }
+  "c4": { "name": "Après la fin de l'état Roi oni maléfique" }
 }

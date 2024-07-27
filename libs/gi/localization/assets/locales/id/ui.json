@@ -9,11 +9,7 @@
     "setting": "Pengaturan",
     "scanner": "Scanner"
   },
-  "social": {
-    "paypal": "Paypal",
-    "patreon": "Patreon",
-    "discord": "Discord"
-  },
+  "social": { "paypal": "Paypal", "patreon": "Patreon", "discord": "Discord" },
   "unselect": "Batal pilih",
   "ascending": "Urutkan Naik",
   "descending": "Urutkan Menurun",
@@ -34,20 +30,14 @@
     "mefficiency": "RV Maksimum",
     "artsetkey": "Set Artefak"
   },
-  "link": {
-    "download": "Link Download",
-    "discord": "Link Invite Discord"
-  },
+  "link": { "download": "Link Download", "discord": "Link Invite Discord" },
   "sortBy": "Urutkan Berdasarkan: ",
   "delete": "Hapus",
   "locked": "Terkunci",
   "unlocked": "Tidak terkunci",
   "refinement": "Refinement {{value}}",
   "selectlevel": "Pilih Level",
-  "gender": {
-    "F": "Perempuan",
-    "M": "Laki-laki"
-  },
+  "gender": { "F": "Perempuan", "M": "Laki-laki" },
   "statGroupKey": {
     "basic_stats": "Basic Stats",
     "elem_dmg_bonus": "Bonus DMG Elemental",

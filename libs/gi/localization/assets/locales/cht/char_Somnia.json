@@ -41,11 +41,7 @@
       "4": "DMG dealt by Somnia's Normal and Charged Attacks is increased based on her Elemental Mastery.",
       "5": "Schrödinger Superposition expires after Self-Containing Sigil's duration ends or when Somnia leaves the field."
     },
-    "skillParams": {
-      "0": "Skill DMG",
-      "1": "Duration",
-      "2": "CD"
-    }
+    "skillParams": { "0": "Skill DMG", "1": "Duration", "2": "CD" }
   },
   "burst": {
     "name": "Parallax Paws",

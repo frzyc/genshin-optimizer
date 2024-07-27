@@ -3,9 +3,7 @@
   "quickLinksCard": {
     "title": "Danh sách liên kết",
     "buttons": {
-      "tyGuide": {
-        "tooltip": "Cách dùng công cụ tối ưu hóa Genshin"
-      },
+      "tyGuide": { "tooltip": "Cách dùng công cụ tối ưu hóa Genshin" },
       "scanners": {
         "title": "Tự động nhập dữ liệu",
         "tooltip": "Phần mềm từ phía thứ 3 cho phép thực hiện lấy dữ liệu tdv tự động"
@@ -14,17 +12,11 @@
         "title": "Discord của nhà phát triển Genshin ",
         "tooltip": "Cộng đồng các nhà phát triển dành cho Genshin"
       },
-      "good": {
-        "title": "Tài liệu về \"GOOD\""
-      }
+      "good": { "title": "Tài liệu về \"GOOD\"" }
     }
   },
-  "inventoryCard": {
-    "title": "ĐI ĐẾN túi đồ"
-  },
-  "vidGuideCard": {
-    "title": "Video hướng dẫn"
-  },
+  "inventoryCard": { "title": "ĐI ĐẾN túi đồ" },
+  "vidGuideCard": { "title": "Video hướng dẫn" },
   "teamCard": {
     "title": "Gặp nhóm chúng tôi",
     "jobTitle": {

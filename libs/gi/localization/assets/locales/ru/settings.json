@@ -1,8 +1,6 @@
 {
   "title": "Настройки",
-  "languageCard": {
-    "languageFormat": "Язык: {{language}}"
-  },
+  "languageCard": { "languageFormat": "Язык: {{language}}" },
   "uploadCard": {
     "title": "Загрузить данные",
     "replaceDatabase": "Обновить данные",

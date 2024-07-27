@@ -11,7 +11,5 @@
     "durationStack": "6 dtk + 6 dtk/lapis, maks 18 dtk"
   },
   "passive1": "DMG Shattered Lightfall Sword",
-  "c4C": {
-    "dmgBonus": "Ledakan DMG Bonus Lightfall Sword"
-  }
+  "c4C": { "dmgBonus": "Ledakan DMG Bonus Lightfall Sword" }
 }

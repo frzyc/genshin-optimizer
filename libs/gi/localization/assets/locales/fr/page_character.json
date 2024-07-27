@@ -34,10 +34,7 @@
     "info2": "Il est de la responsabilité de l'utilisateur de s'assurer que les configurations représentent bien son cas d'utilisation.",
     "description": "Description",
     "duplicate": "Duplicata",
-    "target": {
-      "one": "<0>{{count}}</0> Cible",
-      "other": "Ajouter une cible"
-    }
+    "target": { "one": "<0>{{count}}</0> Cible", "other": "Ajouter une cible" }
   },
   "addStats": {
     "title": "Configuration de l'ennemi + statistiques bonus",
@@ -54,23 +51,16 @@
     "maxRolls": "Ce substat peut avoir un maximum de 30 rouleaux.",
     "maxRollsMain": "Parce qu'au moins une stat principale a le même attribut, cette sous-stat peut avoir un maximum de {{valeur}} rouleaux.",
     "distribute": "Distribuer",
-    "compareToggle": {
-      "equipped": "Comparé avec équipé"
-    },
+    "compareToggle": { "equipped": "Comparé avec équipé" },
     "copyDialog": {
       "title": "Copier les données des armes et artefacts équipés ?"
     },
-    "kqmsDialog": {
-      "kqmsBtn": "Utiliser KQMS",
-      "title": "Utiliser KQMS?"
-    },
+    "kqmsDialog": { "kqmsBtn": "Utiliser KQMS", "title": "Utiliser KQMS?" },
     "gcsimDialog": {
       "title": "Export gcsim",
       "copied": "Copier la config gcsim dans le press-papier."
     },
-    "substat": {
-      "max": "Max"
-    },
+    "substat": { "max": "Max" },
     "optAlert": {
       "feasibilty": "Il peut y avoir des substats supplémentaires qui devraient être distribuées aux statistiques sans scaling pour garantir que la solution est réalisable."
     },

@@ -12,7 +12,5 @@
     "condName": "After being hit by a <dendro>Dendro attack</dendro> while affected by Golden Chalice's Bounty",
     "bountifulCores": "Bloom reaction will create Bountiful Cores"
   },
-  "c4": {
-    "condName": "After the third dance step of Pirouette hits opponents"
-  }
+  "c4": { "condName": "After the third dance step of Pirouette hits opponents" }
 }

@@ -16,7 +16,5 @@
   "c4": {
     "condName": "Après le troisième pas de danse de la Pirouette, les adversaires sont touchés."
   },
-  "c1": {
-    "illusion_dmg_": "Illusion lumineuse Bonus DMG"
-  }
+  "c1": { "illusion_dmg_": "Illusion lumineuse Bonus DMG" }
 }

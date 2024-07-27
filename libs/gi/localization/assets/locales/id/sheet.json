@@ -124,9 +124,7 @@
     "hydro": "Setelah memicu Reaksi Elemen <hydro>Hydro-related</hydro>",
     "electro": "Setelah memicu Reaksi Elemen <electro>Electro-related</electro>"
   },
-  "bonusScaling": {
-    "skill_": "Bonus Scaling Ele. Skill"
-  },
+  "bonusScaling": { "skill_": "Bonus Scaling Ele. Skill" },
   "energy": "Energi",
   "teamBuff": "Buff Tim",
   "dmgMult": {

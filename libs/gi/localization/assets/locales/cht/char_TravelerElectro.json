@@ -7,9 +7,7 @@
     "3rd": "3rd Falling Thunder DMG",
     "thunderCd": "Falling Thunder CD"
   },
-  "passive2": {
-    "enerRech_": "Abundance Amulet Energy Recharge Effect Inc."
-  },
+  "passive2": { "enerRech_": "Abundance Amulet Energy Recharge Effect Inc." },
   "c2": {
     "thunderHit": "Opponent's been hit by <strong>Falling Thunder</strong>"
   }

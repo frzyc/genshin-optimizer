@@ -68,10 +68,7 @@
     "selectBuildTarget": "Select a Build Constraint Target"
   },
   "selectTargetFirst": "Select an Optimization Target first",
-  "generateButton": {
-    "cancel": "取消",
-    "generateBuilds": "Generate Builds"
-  },
+  "generateButton": { "cancel": "取消", "generateBuilds": "Generate Builds" },
   "removeBuildButton": "Remove Build",
   "theorycraftButton": "Theorycraft",
   "currentlyEquippedBuild": "Currently Equipped",
@@ -105,7 +102,5 @@
   },
   "buildCompleted": "Build Completed",
   "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out.",
-  "bonusStats": {
-    "title": "Bonus Stats"
-  }
+  "bonusStats": { "title": "Bonus Stats" }
 }

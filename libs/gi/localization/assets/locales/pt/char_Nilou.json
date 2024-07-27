@@ -16,7 +16,5 @@
   "c4": {
     "condName": "Após o terceiro passo de Pirueta da <strong>Dança dos Sete Reinos</strong> acertar o inimigo"
   },
-  "c1": {
-    "illusion_dmg_": "Bônus de Dano da Lua Aquática"
-  }
+  "c1": { "illusion_dmg_": "Bônus de Dano da Lua Aquática" }
 }

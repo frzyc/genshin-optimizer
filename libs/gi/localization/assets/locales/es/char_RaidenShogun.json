@@ -3,9 +3,7 @@
     "eye": "Ojo del Castigo Atronador",
     "partyCost": "Coste de Energía"
   },
-  "burst": {
-    "resolves": "Cargas de Ambición"
-  },
+  "burst": { "resolves": "Cargas de Ambición" },
   "a4": {
     "enerRest": "Regeneración de Energía otorgada por <strong>Mente Onírica</strong>",
     "eleDMG": "Bono de Daño Electro"

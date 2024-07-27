@@ -87,9 +87,7 @@
     "geo": "Geo DMG Absorption",
     "none": "DMG Absorption",
     "increase": "增加護盾量",
-    "max": {
-      "none": "最大護盾量"
-    }
+    "max": { "none": "最大護盾量" }
   },
   "addlCharge": "Additional charge",
   "conditional": "Conditional",
@@ -127,9 +125,7 @@
     "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction",
     "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction"
   },
-  "bonusScaling": {
-    "skill_": "Ele. Skill Bonus Scaling"
-  },
+  "bonusScaling": { "skill_": "Ele. Skill Bonus Scaling" },
   "energy": "Energy",
   "teamBuff": "Team Buff",
   "dmgMult": {

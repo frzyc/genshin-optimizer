@@ -11,14 +11,8 @@
         "title": "自动扫描器",
         "tooltip": "自动扫描游戏中圣遗物的第三方程序"
       },
-      "kqm": {
-        "title": "KeqingMains",
-        "tooltip": "理论分析与指导社区"
-      },
-      "devDiscord": {
-        "title": "原神开发Discord",
-        "tooltip": "原神开发者社区"
-      },
+      "kqm": { "title": "KeqingMains", "tooltip": "理论分析与指导社区" },
+      "devDiscord": { "title": "原神开发Discord", "tooltip": "原神开发者社区" },
       "good": {
         "title": "GOOD文档",
         "tooltip": "Genshin Open Object Descriptor文档"
@@ -29,12 +23,8 @@
       }
     }
   },
-  "inventoryCard": {
-    "title": "GO仓库"
-  },
-  "vidGuideCard": {
-    "title": "视频指南"
-  },
+  "inventoryCard": { "title": "GO仓库" },
+  "vidGuideCard": { "title": "视频指南" },
   "teamCard": {
     "title": "开发团队",
     "jobTitle": {

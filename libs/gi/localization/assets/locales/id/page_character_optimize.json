@@ -67,10 +67,7 @@
     "selectBuildTarget": "Pilih Target Build Constraint"
   },
   "selectTargetFirst": "Pilih Target Optimisasi terlebih dahulu",
-  "generateButton": {
-    "cancel": "Batal",
-    "generateBuilds": "Hasilkan Build"
-  },
+  "generateButton": { "cancel": "Batal", "generateBuilds": "Hasilkan Build" },
   "removeBuildButton": "Hapus Build",
   "theorycraftButton": "Theorycraft",
   "currentlyEquippedBuild": "Saat ini Digunakan",

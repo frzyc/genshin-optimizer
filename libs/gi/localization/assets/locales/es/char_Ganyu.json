@@ -6,7 +6,5 @@
   "c1": {
     "condName": "Enemigo recibe Daño por una Flecha helada de Carga 2 o una Explosión de escarcha"
   },
-  "c4": {
-    "lingerDuration": "Duración de efecto persistente"
-  }
+  "c4": { "lingerDuration": "Duración de efecto persistente" }
 }

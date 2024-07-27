@@ -9,11 +9,7 @@
     "setting": "設定",
     "scanner": "掃描器"
   },
-  "social": {
-    "paypal": "Paypal",
-    "patreon": "Patreon",
-    "discord": "Discord"
-  },
+  "social": { "paypal": "Paypal", "patreon": "Patreon", "discord": "Discord" },
   "unselect": "取消選取",
   "ascending": "升序",
   "descending": "降序",
@@ -34,20 +30,14 @@
     "mefficiency": "最高估值",
     "artsetkey": "聖遺物套裝"
   },
-  "link": {
-    "download": "下載連結",
-    "discord": "Discord 邀請連結"
-  },
+  "link": { "download": "下載連結", "discord": "Discord 邀請連結" },
   "sortBy": "排列方式: ",
   "delete": "刪除",
   "locked": "已上鎖",
   "unlocked": "未上鎖",
   "refinement": "精鍊 {{value}}",
   "selectlevel": "Select Level",
-  "gender": {
-    "F": "女",
-    "M": "男"
-  },
+  "gender": { "F": "女", "M": "男" },
   "statGroupKey": {
     "basic_stats": "Basic Stats",
     "elem_dmg_bonus": "Elemental DMG Bonuses",

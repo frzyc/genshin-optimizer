@@ -29,12 +29,8 @@
       }
     }
   },
-  "inventoryCard": {
-    "title": "GO inventori"
-  },
-  "vidGuideCard": {
-    "title": "Video Panduan"
-  },
+  "inventoryCard": { "title": "GO inventori" },
+  "vidGuideCard": { "title": "Video Panduan" },
   "teamCard": {
     "title": "Temu Tim",
     "jobTitle": {

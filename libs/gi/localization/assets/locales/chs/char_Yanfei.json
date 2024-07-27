@@ -9,19 +9,9 @@
     "3": "三枚丹火印伤害",
     "4": "四枚丹火印伤害"
   },
-  "burst": {
-    "grantMax": "赋予最大数量的丹火印"
-  },
-  "passive1": {
-    "sealsConsumed": "每枚被重击消耗的丹火印"
-  },
-  "passive2": {
-    "key": "法兽灼眼伤害"
-  },
-  "c1": {
-    "sealChargedStam_": "丹火印降低重击体力消耗"
-  },
-  "c6": {
-    "maxSealInc": "丹火印最大数量增加"
-  }
+  "burst": { "grantMax": "赋予最大数量的丹火印" },
+  "passive1": { "sealsConsumed": "每枚被重击消耗的丹火印" },
+  "passive2": { "key": "法兽灼眼伤害" },
+  "c1": { "sealChargedStam_": "丹火印降低重击体力消耗" },
+  "c6": { "maxSealInc": "丹火印最大数量增加" }
 }

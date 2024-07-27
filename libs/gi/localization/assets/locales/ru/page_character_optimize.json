@@ -18,9 +18,7 @@
   },
   "levelFilter": "Фильтровать Артефакты по Lvl.",
   "allowPartial": "Позволить частичные билды (<5 артефактов)",
-  "constraintFilter": {
-    "title": "Постоянное Значение"
-  },
+  "constraintFilter": { "title": "Постоянное Значение" },
   "artSetConfig": {
     "title": "Конфигурация сета артефактов",
     "enabled": "Включен",
@@ -58,10 +56,7 @@
   "addBuildToList": "Добавить билд в лист",
   "graphBuildLabel": "Графа #<1>{{count}}</1>",
   "excludeChar": {
-    "states": {
-      "customList": "Свой список",
-      "all": "Все Артефакты"
-    },
+    "states": { "customList": "Свой список", "all": "Все Артефакты" },
     "usingState": "Использовать"
   }
 }

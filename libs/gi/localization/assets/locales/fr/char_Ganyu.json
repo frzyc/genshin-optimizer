@@ -6,7 +6,5 @@
   "c1": {
     "condName": "L'adversaire a subi les DMG d'une Flèche de givre ou d'une Zone de givre"
   },
-  "c4": {
-    "lingerDuration": "Durée supplémentaire de l'effet"
-  }
+  "c4": { "lingerDuration": "Durée supplémentaire de l'effet" }
 }

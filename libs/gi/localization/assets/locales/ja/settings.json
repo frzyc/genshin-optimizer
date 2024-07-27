@@ -1,8 +1,6 @@
 {
   "title": "設定",
-  "languageCard": {
-    "languageFormat": "言語: {{language}}"
-  },
+  "languageCard": { "languageFormat": "言語: {{language}}" },
   "uploadCard": {
     "title": "データベースをアップロード",
     "replaceDatabase": "データベースを入れ替え",

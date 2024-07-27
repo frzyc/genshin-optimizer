@@ -29,12 +29,8 @@
       }
     }
   },
-  "inventoryCard": {
-    "title": "GO 보관함"
-  },
-  "vidGuideCard": {
-    "title": "가이드 동영상"
-  },
+  "inventoryCard": { "title": "GO 보관함" },
+  "vidGuideCard": { "title": "가이드 동영상" },
   "teamCard": {
     "title": "팀원 소개",
     "jobTitle": {

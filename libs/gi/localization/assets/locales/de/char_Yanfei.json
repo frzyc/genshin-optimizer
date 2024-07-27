@@ -9,19 +9,13 @@
     "3": "3-Siegel-SCH",
     "4": "4-Siegel-SCH"
   },
-  "burst": {
-    "grantMax": "Verleiht die Höchstzahl an Flammensiegeln"
-  },
+  "burst": { "grantMax": "Verleiht die Höchstzahl an Flammensiegeln" },
   "passive1": {
     "sealsConsumed": "Von heftigem Schlag verbrauchte Flammensiegel"
   },
-  "passive2": {
-    "key": "Wachsame Argusaugen-SCH"
-  },
+  "passive2": { "key": "Wachsame Argusaugen-SCH" },
   "c1": {
     "sealChargedStam_": "Verringerung des Ausdauerverbrauchs heftiger Schläge"
   },
-  "c6": {
-    "maxSealInc": "Erhöhung der Höchstzahl an Flammensiegeln"
-  }
+  "c6": { "maxSealInc": "Erhöhung der Höchstzahl an Flammensiegeln" }
 }

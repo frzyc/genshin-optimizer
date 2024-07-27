@@ -1,8 +1,6 @@
 {
   "title": "ตั้งค่า",
-  "languageCard": {
-    "languageFormat": "ภาษา: {{language}}"
-  },
+  "languageCard": { "languageFormat": "ภาษา: {{language}}" },
   "uploadCard": {
     "title": "อัปโหลดฐานข้อมูล",
     "replaceDatabase": "แทนที่ฐานข้อมูลเก่า",

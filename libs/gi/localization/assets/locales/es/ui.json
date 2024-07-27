@@ -8,11 +8,7 @@
     "doc": "Docs",
     "setting": "Ajustes"
   },
-  "social": {
-    "paypal": "PayPal",
-    "patreon": "Patreon",
-    "discord": "Discord"
-  },
+  "social": { "paypal": "PayPal", "patreon": "Patreon", "discord": "Discord" },
   "unselect": "No seleccionado",
   "ascending": "Ascendente",
   "descending": "Descendente",

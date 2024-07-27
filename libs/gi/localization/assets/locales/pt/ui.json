@@ -9,11 +9,7 @@
     "setting": "Ajustes",
     "scanner": "Scanners"
   },
-  "social": {
-    "paypal": "PayPal",
-    "patreon": "Patreon",
-    "discord": "Discord"
-  },
+  "social": { "paypal": "PayPal", "patreon": "Patreon", "discord": "Discord" },
   "unselect": "Desmarcar",
   "ascending": "Crescente",
   "descending": "Decrescente",
@@ -44,10 +40,7 @@
   "unlocked": "Destrancado",
   "refinement": "Refinamento {{value}}",
   "selectlevel": "Selecionar Nível",
-  "gender": {
-    "F": "Feminino",
-    "M": "Masculino"
-  },
+  "gender": { "F": "Feminino", "M": "Masculino" },
   "statGroupKey": {
     "basic_stats": "Atributos Básicos",
     "elem_dmg_bonus": "Bônus de Dano Elemental",

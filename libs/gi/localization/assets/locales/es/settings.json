@@ -1,8 +1,6 @@
 {
   "title": "Ajustes",
-  "languageCard": {
-    "languageFormat": "Idioma: {{language}}"
-  },
+  "languageCard": { "languageFormat": "Idioma: {{language}}" },
   "uploadCard": {
     "title": "Carga Base de Datos",
     "replaceDatabase": "Reemplazar Base de Datos",

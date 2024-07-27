@@ -11,7 +11,5 @@
     "durationStack": "6s + 6s per stack, up to 18s"
   },
   "passive1": "Shattered Lightfall Sword DMG",
-  "c4C": {
-    "dmgBonus": "Lightfall Sword Explosion DMG Bonus"
-  }
+  "c4C": { "dmgBonus": "Lightfall Sword Explosion DMG Bonus" }
 }

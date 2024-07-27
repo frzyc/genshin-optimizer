@@ -12,7 +12,5 @@
     "condName": "Setelah terkena <dendro>serangan Dendro</dendro> ketika terpengaruh oleh Bounty Golden Chalice",
     "bountifulCores": "Reaksi Bloom akan menciptakan Bountiful Cores"
   },
-  "c4": {
-    "condName": "Setelah langkah tarian ketiga Pirouette mengenai musuh"
-  }
+  "c4": { "condName": "Setelah langkah tarian ketiga Pirouette mengenai musuh" }
 }

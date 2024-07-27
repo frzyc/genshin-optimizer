@@ -8,13 +8,7 @@
     "afterUse": "Lapisan Namisen diperoleh setelah penggunaan skill",
     "afterExplode": "Lapisan Namisen diperoleh setelah ilusi air meledak"
   },
-  "c1": {
-    "shun_dmg_": "<hydro>Bonus DMG Shunsuiken</hydro"
-  },
-  "c2": {
-    "addlStacks": "Peningkatan Lapisan Namisen Maks"
-  },
-  "c6": {
-    "dmg": "DMG Boundless Origin"
-  }
+  "c1": { "shun_dmg_": "<hydro>Bonus DMG Shunsuiken</hydro" },
+  "c2": { "addlStacks": "Peningkatan Lapisan Namisen Maks" },
+  "c6": { "dmg": "DMG Boundless Origin" }
 }

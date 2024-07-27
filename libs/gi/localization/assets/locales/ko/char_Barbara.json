@@ -2,7 +2,5 @@
   "passive1": {
     "cond": "<strong>공련, 시작♪</strong>의 노래의 고리안에 있을시"
   },
-  "constellation2": {
-    "cond": "<strong>공련, 시작♪</strong> 지속중"
-  }
+  "constellation2": { "cond": "<strong>공련, 시작♪</strong> 지속중" }
 }

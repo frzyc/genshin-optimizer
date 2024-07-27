@@ -1,8 +1,6 @@
 {
   "omen": "Setelah memukul musuh yang terkena Omen",
-  "hitOp": {
-    "affectedByOmen": "Setelah hit musuh yang terkena Omen"
-  },
+  "hitOp": { "affectedByOmen": "Setelah hit musuh yang terkena Omen" },
   "frozenDuration": "Durasi <cryo>Frozen</cryo> diperpanjang oleh",
   "uponSprint": "Setelah menggunakan Illusory Torrent"
 }

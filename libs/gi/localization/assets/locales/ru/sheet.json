@@ -112,14 +112,10 @@
   },
   "afterReaction": "После воздействия с Элементальной Реакцией",
   "aoeInc": "Увеличивает АоЕ",
-  "bonusScaling": {
-    "skill_": "Увел. Бонуса Элем. Навыка"
-  },
+  "bonusScaling": { "skill_": "Увел. Бонуса Элем. Навыка" },
   "energy": "Энергия",
   "teamBuff": "Командный бафф",
-  "dmgMult": {
-    "skill": "Навык"
-  },
+  "dmgMult": { "skill": "Навык" },
   "stamRestored": "Смола Восстановилась",
   "getElementalOrbParticle": "После получения элементальной сферы/частицы",
   "percentCurrentHP": "% текущего HP"

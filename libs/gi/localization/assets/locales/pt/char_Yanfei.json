@@ -15,19 +15,11 @@
     "3": "Dano c/ 3 Insígnias",
     "4": "Dano c/ 4 Insígnias"
   },
-  "burst": {
-    "grantMax": "Obtém o número máximo de Insígnias de Chamas"
-  },
-  "passive1": {
-    "sealsConsumed": "Insígnias consumidas pelo Ataque Carregado"
-  },
-  "passive2": {
-    "key": "Dano do Olho de Xiezhi"
-  },
+  "burst": { "grantMax": "Obtém o número máximo de Insígnias de Chamas" },
+  "passive1": { "sealsConsumed": "Insígnias consumidas pelo Ataque Carregado" },
+  "passive2": { "key": "Dano do Olho de Xiezhi" },
   "c1": {
     "sealChargedStam_": "Redução do Consumo de Stamina pelo Ataque Carregado"
   },
-  "c6": {
-    "maxSealInc": "Aumento do número máximo de Insígnias de Chamas"
-  }
+  "c6": { "maxSealInc": "Aumento do número máximo de Insígnias de Chamas" }
 }

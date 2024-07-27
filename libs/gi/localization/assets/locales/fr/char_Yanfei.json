@@ -9,19 +9,13 @@
     "3": "3 scellés DMG",
     "4": "DMG à 4 scellés"
   },
-  "burst": {
-    "grantMax": "Octroie le nombre maximum de sceaux écarlates"
-  },
+  "burst": { "grantMax": "Octroie le nombre maximum de sceaux écarlates" },
   "passive1": {
     "sealsConsumed": "Sceaux consommés par l'utilisation d'une attaque chargée"
   },
-  "passive2": {
-    "key": "Œil flamboyant DMG"
-  },
+  "passive2": { "key": "Œil flamboyant DMG" },
   "c1": {
     "sealChargedStam_": "Diminution de la consommation d'endurance de l'attaque chargée"
   },
-  "c6": {
-    "maxSealInc": "Augmentation du nombre maximal de sceaux écarlates"
-  }
+  "c6": { "maxSealInc": "Augmentation du nombre maximal de sceaux écarlates" }
 }

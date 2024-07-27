@@ -9,11 +9,7 @@
     "setting": "设置",
     "scanner": "扫描器"
   },
-  "social": {
-    "paypal": "PayPal",
-    "patreon": "Patreon",
-    "discord": "Discord"
-  },
+  "social": { "paypal": "PayPal", "patreon": "Patreon", "discord": "Discord" },
   "unselect": "取消选择",
   "ascending": "升序",
   "descending": "降序",
@@ -34,20 +30,14 @@
     "mefficiency": "最高副词条评分",
     "artsetkey": "圣遗物套装"
   },
-  "link": {
-    "download": "下载链接",
-    "discord": "Discord邀请链接"
-  },
+  "link": { "download": "下载链接", "discord": "Discord邀请链接" },
   "sortBy": "排序：",
   "delete": "删除",
   "locked": "锁定的",
   "unlocked": "未锁定的",
   "refinement": "精炼{{value}}",
   "selectlevel": "选择等级",
-  "gender": {
-    "F": "女",
-    "M": "男"
-  },
+  "gender": { "F": "女", "M": "男" },
   "statGroupKey": {
     "basic_stats": "基本属性",
     "elem_dmg_bonus": "元素伤害加成",

@@ -16,10 +16,6 @@
     "key_": "<strong>Riff Revolution</strong> Physique DMG CRIT Taux Bonus",
     "shield": "Forme un bouclier de raves de niveau 3 lorsqu'il est lancé"
   },
-  "c4": {
-    "swingHit": "L'adversaire a été touché par <pyro>Swing DMG</pyro>"
-  },
-  "c6": {
-    "duringCharge": "Lors de l'exécution d'une attaque chargée"
-  }
+  "c4": { "swingHit": "L'adversaire a été touché par <pyro>Swing DMG</pyro>" },
+  "c6": { "duringCharge": "Lors de l'exécution d'une attaque chargée" }
 }

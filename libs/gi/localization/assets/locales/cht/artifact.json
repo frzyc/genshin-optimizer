@@ -74,9 +74,7 @@
     "efficiency": "目前估值",
     "mefficiency": "最高估值"
   },
-  "efficiencyFilter": {
-    "title": "用於估值計算的副詞條"
-  },
+  "efficiencyFilter": { "title": "用於估值計算的副詞條" },
   "resetFilters": "重設過濾器",
   "setEffectNum": "{{setNum}} 件套裝",
   "edit": "編輯聖遺物",

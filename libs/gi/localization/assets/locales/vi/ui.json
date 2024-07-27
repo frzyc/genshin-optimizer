@@ -8,11 +8,7 @@
     "doc": "Docs",
     "scanner": "Máy quét"
   },
-  "social": {
-    "paypal": "Paypal",
-    "patreon": "Patreon",
-    "discord": "Discord"
-  },
+  "social": { "paypal": "Paypal", "patreon": "Patreon", "discord": "Discord" },
   "unselect": "Bỏ chọn",
   "ascending": "Tăng dần",
   "descending": "Giảm dần",
@@ -33,10 +29,7 @@
     "mefficiency": "Hiệu suất chỉ số phụ tối đa",
     "artsetkey": "Bộ Thánh Di Vật"
   },
-  "link": {
-    "download": "Download Link",
-    "discord": "Discord Invite Link"
-  },
+  "link": { "download": "Download Link", "discord": "Discord Invite Link" },
   "sortBy": "Sắp xếp theo: ",
   "delete": "Xóa",
   "locked": "Đã khóa",

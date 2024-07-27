@@ -19,7 +19,5 @@
   "c4": {
     "swingHit": "<pyro>Daño de Golpe de espada</pyro> golpea a enemigos"
   },
-  "c6": {
-    "duringCharge": "Mientras se realiza un Ataque Cargado"
-  }
+  "c6": { "duringCharge": "Mientras se realiza un Ataque Cargado" }
 }

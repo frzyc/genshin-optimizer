@@ -9,11 +9,7 @@
     "setting": "設定",
     "scanner": "スキャナー"
   },
-  "social": {
-    "paypal": "PayPal",
-    "patreon": "Patreon",
-    "discord": "Discord"
-  },
+  "social": { "paypal": "PayPal", "patreon": "Patreon", "discord": "Discord" },
   "unselect": "選択削除",
   "ascending": "昇順",
   "descending": "降順",
@@ -34,20 +30,14 @@
     "mefficiency": "最大スコア",
     "artsetkey": "聖遺物セット"
   },
-  "link": {
-    "download": "ダウンロードリンク",
-    "discord": "Discord招待リンク"
-  },
+  "link": { "download": "ダウンロードリンク", "discord": "Discord招待リンク" },
   "sortBy": "選別：␣",
   "delete": "削除",
   "locked": "ロック",
   "unlocked": "アンロック",
   "refinement": "精錬{{value}}",
   "selectlevel": "レベル選択",
-  "gender": {
-    "F": "女性",
-    "M": "男性"
-  },
+  "gender": { "F": "女性", "M": "男性" },
   "statGroupKey": {
     "basic_stats": "基礎ステータス",
     "elem_dmg_bonus": "元素ダメージボーナス",

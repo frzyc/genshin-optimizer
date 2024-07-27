@@ -9,11 +9,7 @@
     "setting": "설정",
     "scanner": "스캐너"
   },
-  "social": {
-    "paypal": "페이팔",
-    "patreon": "Patreon",
-    "discord": "Discord"
-  },
+  "social": { "paypal": "페이팔", "patreon": "Patreon", "discord": "Discord" },
   "unselect": "선택해제",
   "ascending": "오름차순",
   "descending": "내림차순",
@@ -34,20 +30,14 @@
     "mefficiency": "최대 효율",
     "artsetkey": "성유물 세트"
   },
-  "link": {
-    "download": "다운로드 링크",
-    "discord": "디스코드 초대 링크"
-  },
+  "link": { "download": "다운로드 링크", "discord": "디스코드 초대 링크" },
   "sortBy": "다음으로 정렬: ",
   "delete": "삭제",
   "locked": "보호됨",
   "unlocked": "보호되지않음",
   "refinement": "{{value}}재련",
   "selectlevel": "레벨 선택",
-  "gender": {
-    "F": "여성",
-    "M": "남성"
-  },
+  "gender": { "F": "여성", "M": "남성" },
   "statGroupKey": {
     "basic_stats": "기초 속성",
     "elem_dmg_bonus": "원소 피해량 증가",

@@ -1,7 +1,5 @@
 {
-  "skill": {
-    "ambush": "Sob Tengu Juurai: Emboscada"
-  },
+  "skill": { "ambush": "Sob Tengu Juurai: Emboscada" },
   "c6": {
     "electroCritDmg": "Personagem teve seu ATQ aumentado pela Tempestade Tengu"
   }

@@ -6,7 +6,5 @@
   "c1": {
     "condName": "Musuh terkena DMG dari Frostflake Arrow atau Frostflake Arrow Bloom"
   },
-  "c4": {
-    "lingerDuration": "Durasi Efek Linger"
-  }
+  "c4": { "lingerDuration": "Durasi Efek Linger" }
 }

@@ -1,8 +1,6 @@
 {
   "title": "Einstellungen",
-  "languageCard": {
-    "languageFormat": "Sprache: {{language}}"
-  },
+  "languageCard": { "languageFormat": "Sprache: {{language}}" },
   "uploadCard": {
     "title": "Datenbank importieren",
     "replaceDatabase": "Datenbank ersetzen",

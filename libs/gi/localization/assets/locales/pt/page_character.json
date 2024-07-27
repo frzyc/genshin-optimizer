@@ -78,13 +78,8 @@
       "content": "Importe esta build no <2>gcsim</2> copiando o código abaixo.",
       "copied": "Configuração do gcsim foi copiada."
     },
-    "all": {
-      "rolls": "Todos os Secundários",
-      "max": "Todos os Máximos"
-    },
-    "substat": {
-      "max": "Máximos"
-    },
+    "all": { "rolls": "Todos os Secundários", "max": "Todos os Máximos" },
+    "substat": { "max": "Máximos" },
     "feasibilityAlert": "A atual distribuição de atributos secundários exige pelo menos <strong>{{minSubLines}}</strong> linhas de secundários. É necessário distribuir mais <strong>{{minOtherRolls}}</strong> secundários em outros atributos para tornar esta configuração possível.",
     "optAlert": {
       "scalesWith": "O Objetivo de Otimização atual aumenta com: ",

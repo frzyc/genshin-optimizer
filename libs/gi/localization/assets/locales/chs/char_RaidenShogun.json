@@ -1,8 +1,5 @@
 {
-  "skill": {
-    "eye": "雷罚恶曜之眼",
-    "partyCost": "能量消耗"
-  },
+  "skill": { "eye": "雷罚恶曜之眼", "partyCost": "能量消耗" },
   "burst": {
     "resolves": "积攒愿力层数",
     "resolveInitial_": "<electro>梦想一刀基础伤害加成</electro",

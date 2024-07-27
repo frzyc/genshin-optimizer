@@ -6,7 +6,5 @@
   "c1": {
     "condName": "Opponent's taken DMG from a Frostflake Arrow or Frostflake Arrow Bloom"
   },
-  "c4": {
-    "lingerDuration": "Effect Linger Duration"
-  }
+  "c4": { "lingerDuration": "Effect Linger Duration" }
 }

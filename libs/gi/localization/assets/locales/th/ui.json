@@ -7,11 +7,7 @@
     "weapons": "อาวุธ",
     "doc": "เอกสาร"
   },
-  "social": {
-    "paypal": "Paypal",
-    "patreon": "Patreon",
-    "discord": "Discord"
-  },
+  "social": { "paypal": "Paypal", "patreon": "Patreon", "discord": "Discord" },
   "unselect": "ยกเลิกการเลือก",
   "ascending": "จากน้อยไปมาก",
   "descending": "จากมากไปน้อย",

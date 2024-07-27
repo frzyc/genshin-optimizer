@@ -1,8 +1,6 @@
 {
   "title": "설정",
-  "languageCard": {
-    "languageFormat": "언어: {{language}}"
-  },
+  "languageCard": { "languageFormat": "언어: {{language}}" },
   "uploadCard": {
     "title": "데이터베이스 업로드",
     "replaceDatabase": "데이터베이스 덮어쓰기",

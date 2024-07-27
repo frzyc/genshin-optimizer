@@ -74,9 +74,7 @@
     "efficiency": "현재 부옵션 효율.",
     "mefficiency": "최대 부옵션 효율."
   },
-  "efficiencyFilter": {
-    "title": "효율 계산에 사용할 부옵션"
-  },
+  "efficiencyFilter": { "title": "효율 계산에 사용할 부옵션" },
   "resetFilters": "필터 초기화",
   "setEffectNum": "{{setNum}}-셋",
   "edit": "성유물 편집",

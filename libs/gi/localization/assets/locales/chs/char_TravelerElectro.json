@@ -1,16 +1,6 @@
 {
-  "skill": {
-    "amuletGenAmt": "丰穰勾玉产生数量",
-    "absorb": "角色吸收丰穰勾玉"
-  },
-  "burst": {
-    "3rd": "第三次威光落雷伤害",
-    "thunderCd": "威光落雷冷却时间"
-  },
-  "passive2": {
-    "enerRech_": "丰穰勾玉提供的元素充能效率提升"
-  },
-  "c2": {
-    "thunderHit": "<strong>威光落雷</strong>命中敌人"
-  }
+  "skill": { "amuletGenAmt": "丰穰勾玉产生数量", "absorb": "角色吸收丰穰勾玉" },
+  "burst": { "3rd": "第三次威光落雷伤害", "thunderCd": "威光落雷冷却时间" },
+  "passive2": { "enerRech_": "丰穰勾玉提供的元素充能效率提升" },
+  "c2": { "thunderHit": "<strong>威光落雷</strong>命中敌人" }
 }

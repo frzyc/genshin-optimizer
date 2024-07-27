@@ -13,10 +13,7 @@
       "noStat": "Sem Valor",
       "eff": "Eficiência: <1></1>",
       "nextRolls": "Próximos rolls:",
-      "RollCount": {
-        "one": "{{count}} Roll",
-        "other": "{{count}} Rolls"
-      }
+      "RollCount": { "one": "{{count}} Roll", "other": "{{count}} Rolls" }
     },
     "rarity": "Raridade",
     "level": "Nível",
@@ -105,9 +102,6 @@
     "one": "{{count}} secundário",
     "other": "{{count}} secundários"
   },
-  "sub": {
-    "one": "{{count}} secundário",
-    "other": "{{count}} secundários"
-  },
+  "sub": { "one": "{{count}} secundário", "other": "{{count}} secundários" },
   "noArtifacts": "Parece que você ainda não adicionou artefatos. Se você quiser, há <1>scanners automáticos</1> para você importá-los mais rapidamente!"
 }

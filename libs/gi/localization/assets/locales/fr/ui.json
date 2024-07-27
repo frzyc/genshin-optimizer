@@ -9,11 +9,7 @@
     "setting": "Paramètres",
     "scanner": "Scanners"
   },
-  "social": {
-    "paypal": "Paypal",
-    "patreon": "Patreon",
-    "discord": "Discord"
-  },
+  "social": { "paypal": "Paypal", "patreon": "Patreon", "discord": "Discord" },
   "unselect": "Désélectionner",
   "ascending": "Croissant",
   "descending": "Décroissant",
@@ -44,10 +40,7 @@
   "unlocked": "Débloqué",
   "refinement": "Raffinement {{value}}",
   "selectlevel": "Sélectionner le niveau",
-  "gender": {
-    "F": "Femme",
-    "M": "Homme"
-  },
+  "gender": { "F": "Femme", "M": "Homme" },
   "statGroupKey": {
     "basic_stats": "Statistiques de base",
     "elem_dmg_bonus": "Bonus de DMG élémentaires",

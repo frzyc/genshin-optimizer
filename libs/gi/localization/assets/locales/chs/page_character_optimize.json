@@ -4,10 +4,7 @@
       "title": "等级假设",
       "desc": "修改主词条数值至某等级之上，但不改变副词条。"
     },
-    "assumptionLvl": {
-      "no": "无等级假设",
-      "lvl": "假设等级为{{lvl}}级"
-    },
+    "assumptionLvl": { "no": "无等级假设", "lvl": "假设等级为{{lvl}}级" },
     "title": "主词条筛选/配置"
   },
   "tcGraph": {
@@ -68,10 +65,7 @@
     "selectBuildTarget": "选择一种配装限制条件"
   },
   "selectTargetFirst": "首先选择一个优化目标",
-  "generateButton": {
-    "cancel": "取消",
-    "generateBuilds": "生成配装"
-  },
+  "generateButton": { "cancel": "取消", "generateBuilds": "生成配装" },
   "removeBuildButton": "移除配装",
   "theorycraftButton": "理论分析",
   "currentlyEquippedBuild": "当前已装备的",
@@ -104,7 +98,5 @@
   },
   "buildCompleted": "配装完成",
   "notifyTooltip": "配装完成时发出声音，如果焦点不在本页面，还会显示提示。",
-  "bonusStats": {
-    "title": "增益状态"
-  }
+  "bonusStats": { "title": "增益状态" }
 }

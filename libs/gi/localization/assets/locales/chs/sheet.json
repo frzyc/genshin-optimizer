@@ -83,10 +83,7 @@
     "dendro": "草元素伤害吸收量",
     "geo": "岩元素伤害吸收量",
     "none": "伤害吸收",
-    "max": {
-      "none": "护盾吸收量上限",
-      "pyro": "护盾对火元素伤害的吸收量上限"
-    }
+    "max": { "none": "护盾吸收量上限", "pyro": "护盾对火元素伤害的吸收量上限" }
   },
   "addlCharge": "额外使用次数",
   "conditional": "有条件的",
@@ -124,9 +121,7 @@
     "hydro": "触发<hydro>水元素相关</hydro>反应后",
     "electro": "触发<electro>雷元素相关</electro>反应后"
   },
-  "bonusScaling": {
-    "skill_": "元素战技额外倍率"
-  },
+  "bonusScaling": { "skill_": "元素战技额外倍率" },
   "energy": "能量",
   "teamBuff": "队伍加成",
   "dmgMult": {

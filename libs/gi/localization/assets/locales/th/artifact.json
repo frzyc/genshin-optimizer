@@ -60,16 +60,12 @@
     "goblet": "Goblet of Eonothem",
     "circlet": "Circlet of Logos"
   },
-  "info": {
-    "title": "แก้ไขอาร์ติแฟกต์/คู่มือการจัดการ"
-  },
+  "info": { "title": "แก้ไขอาร์ติแฟกต์/คู่มือการจัดการ" },
   "sortMap": {
     "level": "Level",
     "efficiency": "Roll Value ปัจจุบัน",
     "mefficiency": "Roll Value สูงสุด"
   },
-  "efficiencyFilter": {
-    "title": "Substat ที่ใช้ในการคำนวณ Roll Value"
-  },
+  "efficiencyFilter": { "title": "Substat ที่ใช้ในการคำนวณ Roll Value" },
   "resetFilters": "รีเซ็๋ตตัวกรอง"
 }

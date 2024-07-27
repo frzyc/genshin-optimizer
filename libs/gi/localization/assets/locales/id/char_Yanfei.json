@@ -9,19 +9,11 @@
     "3": "DMG 3-Seal",
     "4": "DMG 4-Seal"
   },
-  "burst": {
-    "grantMax": "Memberikan jumlah maksimum Scarlet Seals"
-  },
+  "burst": { "grantMax": "Memberikan jumlah maksimum Scarlet Seals" },
   "passive1": {
     "sealsConsumed": "Seals dikonsumsi dengan menggunakan Charged Attack"
   },
-  "passive2": {
-    "key": "DMG Blazing Eye"
-  },
-  "c1": {
-    "sealChargedStam_": "Konsumsi Stamina Charged Attack Menurun"
-  },
-  "c6": {
-    "maxSealInc": "Peningkatan Jumlah maks Scarlet Seals"
-  }
+  "passive2": { "key": "DMG Blazing Eye" },
+  "c1": { "sealChargedStam_": "Konsumsi Stamina Charged Attack Menurun" },
+  "c6": { "maxSealInc": "Peningkatan Jumlah maks Scarlet Seals" }
 }

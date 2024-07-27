@@ -8,13 +8,7 @@
     "afterUse": "Les piles de Namisen gagnées après l'utilisation de la compétence",
     "afterExplode": "Les piles de Namisen gagnées après l'explosion de l'illusion d'eau"
   },
-  "c1": {
-    "shun_dmg_": "<hydro>Shunsuiken DMG Bonus</hydro"
-  },
-  "c2": {
-    "addlStacks": "Max Namisen Stack Inc."
-  },
-  "c6": {
-    "dmg": "Origine illimitée DMG"
-  }
+  "c1": { "shun_dmg_": "<hydro>Shunsuiken DMG Bonus</hydro" },
+  "c2": { "addlStacks": "Max Namisen Stack Inc." },
+  "c6": { "dmg": "Origine illimitée DMG" }
 }

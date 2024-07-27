@@ -41,11 +41,7 @@
       "4": "Les DMG infligés par les attaques normales et chargées de Somnia sont augmentés en fonction de sa maîtrise des éléments.",
       "5": "La Superposition de Schrödinger expire après la fin de la durée du Sigil autocontenant ou lorsque Somnia quitte le champ de bataille."
     },
-    "skillParams": {
-      "0": "Compétence DMG",
-      "1": "Duration",
-      "2": "CD"
-    }
+    "skillParams": { "0": "Compétence DMG", "1": "Duration", "2": "CD" }
   },
   "burst": {
     "name": "Pattes de Parallaxe",

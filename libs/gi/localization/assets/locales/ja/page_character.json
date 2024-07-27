@@ -35,9 +35,7 @@
     "info2": "構成が正確に設定されている事を確認ください。",
     "description": "詳細",
     "duplicate": "重複",
-    "target": {
-      "other": "<0>{{count}}</0>つのターゲット"
-    }
+    "target": { "other": "<0>{{count}}</0>つのターゲット" }
   },
   "addStats": {
     "title": "敵・ボーナスステータスの構成",
@@ -77,23 +75,15 @@
       "content": "下記のコードからビルドをコピーし、<2>gcsim</2>にインポートできます",
       "copied": "クリップボードにgcsim configをコピーしました。"
     },
-    "all": {
-      "rolls": "全ての強化",
-      "max": "全てをマックス"
-    },
-    "substat": {
-      "max": "マックス"
-    },
+    "all": { "rolls": "全ての強化", "max": "全てをマックス" },
+    "substat": { "max": "マックス" },
     "feasibilityAlert": "現サブ効果の分布には、少なくとも <strong>{{minSubLines}}</strong> 行のサブ効果が必要です。よって、<strong>{{minOtherRolls}}</strong> の強化を他のサブステータスに割り当てる必要があります。",
     "optAlert": {
       "scalesWith": "選択された改良ターゲットと制約が計算する倍率は、次のサブステです：",
       "distribute": "ステータスをこれらのサブ効果にのみ分配します。",
       "feasibilty": "非倍率のサブ効果に分散する必要がある可能性があります。"
     },
-    "constraint": {
-      "title": "ステータス制約",
-      "add": "ステータス制約を追加"
-    }
+    "constraint": { "title": "ステータス制約", "add": "ステータス制約を追加" }
   },
   "tabTeambuff": {
     "team_reso": "元素共鳴",

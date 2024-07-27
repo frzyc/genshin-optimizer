@@ -16,10 +16,6 @@
     "key_": "<strong>Riff Revolution</strong> Physical DMG CRIT Rate Bonus",
     "shield": "Form a Level 3: Rave Shield when cast"
   },
-  "c4": {
-    "swingHit": "Opponent's been hit with <pyro>Swing DMG</pyro>"
-  },
-  "c6": {
-    "duringCharge": "Performing a Charged Attack"
-  }
+  "c4": { "swingHit": "Opponent's been hit with <pyro>Swing DMG</pyro>" },
+  "c6": { "duringCharge": "Performing a Charged Attack" }
 }

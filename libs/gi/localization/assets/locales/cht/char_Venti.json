@@ -5,8 +5,5 @@
   "regenEner": "Regens 15 Energy to Venti after effect ends",
   "c6": "Enemy's been hit by <strong>Wind's Grand Ode</strong>",
   "q": "Regens 15 Energy to all characters of the absorbed element in the party.",
-  "c2": {
-    "hit": "Opponent hit",
-    "launched": "Opponent launched"
-  }
+  "c2": { "hit": "Opponent hit", "launched": "Opponent launched" }
 }

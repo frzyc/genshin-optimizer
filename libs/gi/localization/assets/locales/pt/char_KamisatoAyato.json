@@ -8,13 +8,7 @@
     "afterUse": "Acúmulos de Ondas Brilhantes obtidos após uso",
     "afterExplode": "Acúmulos de Ondas Brilhantes obtidos após a Ilusão de Água explodir"
   },
-  "c1": {
-    "shun_dmg_": "<hydro>Bônus de Dano da Espada Áquatica</hydro>"
-  },
-  "c2": {
-    "addlStacks": "Aum. do Máx. de Acúmulos de Ondas Brilhantes"
-  },
-  "c6": {
-    "dmg": "Dano da Origem Ilimitada"
-  }
+  "c1": { "shun_dmg_": "<hydro>Bônus de Dano da Espada Áquatica</hydro>" },
+  "c2": { "addlStacks": "Aum. do Máx. de Acúmulos de Ondas Brilhantes" },
+  "c6": { "dmg": "Dano da Origem Ilimitada" }
 }

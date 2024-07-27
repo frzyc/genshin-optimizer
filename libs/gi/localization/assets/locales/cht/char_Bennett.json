@@ -1,8 +1,5 @@
 {
-  "skill": {
-    "lvl1CD": "Lvl 1 CD",
-    "lvl2CD": "Lvl 2 CD"
-  },
+  "skill": { "lvl1CD": "Lvl 1 CD", "lvl2CD": "Lvl 2 CD" },
   "c4DMG": "Unexpected Odyssey DMG",
   "c6PyroInfusion": "<pyro>Sword, Claymore and Polearm Pyro Infusion"
 }

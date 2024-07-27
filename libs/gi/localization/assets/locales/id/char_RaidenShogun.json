@@ -13,7 +13,5 @@
     "enerRest": "Pemulihan energi dari <strong>Musou Isshin</strong>",
     "eleDMG": "Electro DMG Bonus"
   },
-  "c4": {
-    "expires": "Setelah status <strong>Musou Isshin</strong> berakhir"
-  }
+  "c4": { "expires": "Setelah status <strong>Musou Isshin</strong> berakhir" }
 }

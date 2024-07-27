@@ -13,9 +13,7 @@
       "noStat": "スコアなし",
       "eff": "サブ効果スコア（RV）： <1></1>",
       "nextRolls": "可能な効果値：",
-      "RollCount": {
-        "other": "{{count}} 強化回数"
-      }
+      "RollCount": { "other": "{{count}} 強化回数" }
     },
     "rarity": "レア度別",
     "level": "レベル",
@@ -77,9 +75,7 @@
     "efficiency": "現サブ効果スコア",
     "mefficiency": "最大サブ効果スコア"
   },
-  "efficiencyFilter": {
-    "title": "サブ効果スコアの計算で使用するサブ統計"
-  },
+  "efficiencyFilter": { "title": "サブ効果スコアの計算で使用するサブ統計" },
   "resetFilters": "フィルターをリセット",
   "setEffectNum": "{{setNum}}-セット",
   "edit": "聖遺物を改造",
@@ -99,11 +95,7 @@
   "showingNum": {
     "other": "{{value}}個の聖遺物のうち<1>{{count}}</1>個を表示"
   },
-  "substat": {
-    "other": "{{count}}サブ効果"
-  },
-  "sub": {
-    "other": "{{count}}サブステ"
-  },
+  "substat": { "other": "{{count}}サブ効果" },
+  "sub": { "other": "{{count}}サブステ" },
   "noArtifacts": "まだ聖遺物が追加されていないようです。よろしければ、使いやすい<1>自動スキャナー</1>をご利用ください！"
 }

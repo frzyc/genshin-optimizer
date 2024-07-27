@@ -169,10 +169,7 @@
   "timeOnField": "Temps passé sur le terrain",
   "hpChange": "Après les changements de HP",
   "afterHeal": "Après avoir été guéri",
-  "hits": {
-    "one": "{{count}} Frapper",
-    "other": "{{count}} Coups"
-  },
+  "hits": { "one": "{{count}} Frapper", "other": "{{count}} Coups" },
   "percentMaxHP": "% Max HP",
   "stack": {
     "one": "{{count}} Pile",
@@ -190,14 +187,8 @@
     "one": "{{count}} Opposant",
     "other": "Après avoir déclenché une </cryo>Relation Cryo{{value}} Réaction élémentaire"
   },
-  "members": {
-    "one": "{{count}} Membre",
-    "other": "% de PV actuel"
-  },
-  "times": {
-    "one": "{{count}} Temps",
-    "other": "{{count}} fois"
-  },
+  "members": { "one": "{{count}} Membre", "other": "% de PV actuel" },
+  "times": { "one": "{{count}} Temps", "other": "{{count}} fois" },
   "activeChar": "Caractère actif",
   "otherHpChange": "Lorsque les PV d'un coéquipier changent",
   "reactionOp": {

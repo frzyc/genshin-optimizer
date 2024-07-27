@@ -8,13 +8,7 @@
     "afterUse": "施放技能后获得的浪闪层数",
     "afterExplode": "水影破裂后获得的浪闪层数"
   },
-  "c1": {
-    "shun_dmg_": "<hydro>瞬水剑伤害提升</hydro"
-  },
-  "c2": {
-    "addlStacks": "浪闪叠加上限提升"
-  },
-  "c6": {
-    "dmg": "滥觞无底伤害"
-  }
+  "c1": { "shun_dmg_": "<hydro>瞬水剑伤害提升</hydro" },
+  "c2": { "addlStacks": "浪闪叠加上限提升" },
+  "c6": { "dmg": "滥觞无底伤害" }
 }

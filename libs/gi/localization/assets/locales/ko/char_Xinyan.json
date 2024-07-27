@@ -16,10 +16,6 @@
     "key_": "<strong>반항의 피치카토</strong>로 가하는 물리 피해 치명타 확률 보너스",
     "shield": "발동시 3급: 댄스리듬 생성"
   },
-  "c4": {
-    "swingHit": "<pyro>휘두르기 피해</pyro>가 대상에게 명중"
-  },
-  "c6": {
-    "duringCharge": "강공격시"
-  }
+  "c4": { "swingHit": "<pyro>휘두르기 피해</pyro>가 대상에게 명중" },
+  "c6": { "duringCharge": "강공격시" }
 }

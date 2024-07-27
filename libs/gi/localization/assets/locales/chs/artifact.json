@@ -74,9 +74,7 @@
     "efficiency": "当前副词条评分",
     "mefficiency": "最高副词条评分"
   },
-  "efficiencyFilter": {
-    "title": "选择用于计算评分的副词条"
-  },
+  "efficiencyFilter": { "title": "选择用于计算评分的副词条" },
   "resetFilters": "重置过滤条件",
   "setEffectNum": "{{setNum}}件套",
   "edit": "编辑圣遗物",

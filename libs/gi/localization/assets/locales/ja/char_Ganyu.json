@@ -3,10 +3,6 @@
     "condName": "霜華の矢を放った後",
     "critRateInc": "霜華の会心率アップ"
   },
-  "c1": {
-    "condName": "敵に霜華の矢か霜華満開でダメージを与える"
-  },
-  "c4": {
-    "lingerDuration": "効果持続時間"
-  }
+  "c1": { "condName": "敵に霜華の矢か霜華満開でダメージを与える" },
+  "c4": { "lingerDuration": "効果持続時間" }
 }

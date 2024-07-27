@@ -8,13 +8,7 @@
     "afterUse": "Namisen stacks gained after skill use",
     "afterExplode": "Namisen stacks gained after the water illusion explodes"
   },
-  "c1": {
-    "shun_dmg_": "<hydro>Shunsuiken DMG Bonus</hydro"
-  },
-  "c2": {
-    "addlStacks": "Max Namisen stack increase"
-  },
-  "c6": {
-    "dmg": "Boundless Origin DMG"
-  }
+  "c1": { "shun_dmg_": "<hydro>Shunsuiken DMG Bonus</hydro" },
+  "c2": { "addlStacks": "Max Namisen stack increase" },
+  "c6": { "dmg": "Boundless Origin DMG" }
 }

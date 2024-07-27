@@ -5,8 +5,5 @@
   "regenEner": "Régénère 15 Énergie à Venti lorsque l'effet prend fin",
   "c6": "Cibles qui prennent les DGTs de <strong>Ode au Vent</strong>",
   "q": "Régénère 15 d'énergie de l'élément absorbé à chaque personnage de l'équipe.",
-  "c2": {
-    "hit": "Ennemi touché",
-    "launched": "Ennemi projeté"
-  }
+  "c2": { "hit": "Ennemi touché", "launched": "Ennemi projeté" }
 }

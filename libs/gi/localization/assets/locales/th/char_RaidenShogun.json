@@ -1,11 +1,6 @@
 {
-  "skill": {
-    "eye": "Eye of Stormy Judgement",
-    "partyCost": "พลังงานที่ใช้"
-  },
-  "burst": {
-    "resolves": "Resolve Stacks"
-  },
+  "skill": { "eye": "Eye of Stormy Judgement", "partyCost": "พลังงานที่ใช้" },
+  "burst": { "resolves": "Resolve Stacks" },
   "a4": {
     "enerRest": "การฟื้นฟูพลังงานจาก <strong>Musou Isshin</strong>",
     "eleDMG": "โบนัสความเสียหายไฟฟ้า"

@@ -68,10 +68,7 @@
     "selectBuildTarget": "제한 조건 대상 선택"
   },
   "selectTargetFirst": "최적화 대상을 먼저 선택하세요",
-  "generateButton": {
-    "cancel": "취소",
-    "generateBuilds": "조합 생성"
-  },
+  "generateButton": { "cancel": "취소", "generateBuilds": "조합 생성" },
   "removeBuildButton": "조합 제거",
   "theorycraftButton": "이론 연구실",
   "currentlyEquippedBuild": "현재 사용중",

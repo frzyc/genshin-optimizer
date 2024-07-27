@@ -1,8 +1,6 @@
 {
   "title": "设置",
-  "languageCard": {
-    "languageFormat": "语言：{{language}}"
-  },
+  "languageCard": { "languageFormat": "语言：{{language}}" },
   "uploadCard": {
     "title": "上传数据库",
     "replaceDatabase": "替换数据库",

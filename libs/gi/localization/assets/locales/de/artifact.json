@@ -76,7 +76,5 @@
   },
   "resetFilters": "Filter zurücksetzen",
   "setEffectNum": "Set mit {{setNum}} Teilen",
-  "autocompleteLabels": {
-    "substats": "Bonusattribute"
-  }
+  "autocompleteLabels": { "substats": "Bonusattribute" }
 }

@@ -13,10 +13,7 @@
       "noStat": "Pas de valeur",
       "eff": "Efficacité: <1></1>",
       "nextRolls": "Prochaines augmentations :",
-      "RollCount": {
-        "one": "{{count}} Rouleau",
-        "other": "{{count}} Rolls"
-      }
+      "RollCount": { "one": "{{count}} Rouleau", "other": "{{count}} Rolls" }
     },
     "rarity": "Rareté",
     "level": "Niveau",
@@ -101,13 +98,7 @@
     "one": "Afficher <1>{{count}}</1> sur {{value}} Artéfact",
     "other": "Montre <1>{{count}}</1> / {{value}} Artéfacts"
   },
-  "substat": {
-    "one": "{{count}} substat",
-    "other": "{{count}} substats"
-  },
-  "sub": {
-    "one": "{{count}} sub",
-    "other": "{{count}} subs"
-  },
+  "substat": { "one": "{{count}} substat", "other": "{{count}} substats" },
+  "sub": { "one": "{{count}} sub", "other": "{{count}} subs" },
   "noArtifacts": "Il semblerait que vous n'ayez pas encore ajouté d'artéfacts. Des <1>scanners automatiques</1> sont à disposition pour accélérer le processus d'import!"
 }

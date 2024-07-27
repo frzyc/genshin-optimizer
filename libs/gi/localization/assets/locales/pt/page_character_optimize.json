@@ -68,10 +68,7 @@
     "selectBuildTarget": "Selecione um requisito para a Build"
   },
   "selectTargetFirst": "Selecione um Objetivo de Otimização antes",
-  "generateButton": {
-    "cancel": "Cancelar",
-    "generateBuilds": "Gerar Builds"
-  },
+  "generateButton": { "cancel": "Cancelar", "generateBuilds": "Gerar Builds" },
   "removeBuildButton": "Remover Build",
   "theorycraftButton": "Theorycraft",
   "currentlyEquippedBuild": "Atualmente Equipada",
@@ -113,9 +110,7 @@
   },
   "buildCompleted": "Build Concluída",
   "notifyTooltip": "Toca um som quando a geração de Build terminar. Também mostrará uma notificação caso esteja em outra aba.",
-  "bonusStats": {
-    "title": "Atributos Bônus"
-  },
+  "bonusStats": { "title": "Atributos Bônus" },
   "build": {
     "one": "<0>{{count}}</0> Build",
     "other": "<0>{{count}}</0> Builds"

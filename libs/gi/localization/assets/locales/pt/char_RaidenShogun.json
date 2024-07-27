@@ -14,7 +14,5 @@
     "enerRest": "Regeneração de Energia Adicional do <strong>Musou Isshin</strong>",
     "eleDMG": "Bônus de Dano Electro"
   },
-  "c4": {
-    "expires": "Após o estado <strong>Musou Isshin</strong> expirar"
-  }
+  "c4": { "expires": "Após o estado <strong>Musou Isshin</strong> expirar" }
 }

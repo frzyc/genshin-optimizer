@@ -169,32 +169,16 @@
   "timeOnField": "フィールド上での時間",
   "hpChange": "HP増減後",
   "afterHeal": "回復後",
-  "hits": {
-    "other": "{{count}}ヒット数"
-  },
+  "hits": { "other": "{{count}}ヒット数" },
   "percentMaxHP": "最大HP%",
-  "stack": {
-    "other": "{{count}}層"
-  },
-  "seconds": {
-    "other": "{{count}}秒"
-  },
-  "uses": {
-    "other": "{{count}}回使用"
-  },
-  "opponents": {
-    "other": "{{count}}体の敵"
-  },
-  "members": {
-    "other": "{{count}}人のチームメンバー"
-  },
-  "times": {
-    "other": "{{count}}回"
-  },
+  "stack": { "other": "{{count}}層" },
+  "seconds": { "other": "{{count}}秒" },
+  "uses": { "other": "{{count}}回使用" },
+  "opponents": { "other": "{{count}}体の敵" },
+  "members": { "other": "{{count}}人のチームメンバー" },
+  "times": { "other": "{{count}}回" },
   "activeChar": "フィールド上のキャラクター",
   "otherHpChange": "チームメンバーのHPが増減後",
-  "reactionOp": {
-    "overload": "<overloaded>過負荷反応</overloaded>を発動後"
-  },
+  "reactionOp": { "overload": "<overloaded>過負荷反応</overloaded>を発動後" },
   "afterOverflow": "回復上限を超えた"
 }

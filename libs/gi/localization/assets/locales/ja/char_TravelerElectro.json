@@ -12,10 +12,6 @@
     "3rd": "威光の落雷3階段ダメージ",
     "thunderCd": "威光の落雷クールダウン"
   },
-  "passive2": {
-    "enerRech_": "豊穣の勾玉の元素チャージボーナス"
-  },
-  "c2": {
-    "thunderHit": "敵に<strong>威光の落雷</strong>をヒット"
-  }
+  "passive2": { "enerRech_": "豊穣の勾玉の元素チャージボーナス" },
+  "c2": { "thunderHit": "敵に<strong>威光の落雷</strong>をヒット" }
 }
