@@ -23,8 +23,8 @@ jobs:
       - name: Set env
         id: set_env
         run: |
-          echo "env=$(cat somnia-build/environment)" >> $GITHUB_OUTPUT
-          echo "shouldDeploy=$(cat somnia-build/shouldDeploy)" >> $GITHUB_OUTPUT
+          echo "env=$(cat somnia_build/environment)" >> $GITHUB_OUTPUT
+          echo "shouldDeploy=$(cat somnia_build/shouldDeploy)" >> $GITHUB_OUTPUT
 
   deploy:
     runs-on: ubuntu-latest
