@@ -9,6 +9,7 @@ import { reader } from './data/util'
 import { DebugCalculator } from './debug'
 
 const { arithmetic } = calculation
+
 const emptyCond: CondInfo = {}
 
 type CondInfo = Partial<
