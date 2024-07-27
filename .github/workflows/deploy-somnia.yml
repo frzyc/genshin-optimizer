@@ -48,7 +48,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Setup config.json
         run: |
-          printf '%s' "$CONFIG" > dist/apps/somnia/apps/somnia/src/config.json
+          printf '%s' "$CONFIG" > somnia_build/dist/apps/somnia/apps/somnia/src/config.json
         env:
           CONFIG: ${{ secrets.SOMNIA_CREDENTIALS }}
       - name: 'Deploy to Azure Web App'
@@ -57,4 +57,4 @@ jobs:
         with:
           app-name: ${{ vars.ENV_NAME }}
           slot-name: 'Production'
-          package: somnia-build/dist/apps/somnia
+          package: somnia_build/dist/apps/somnia
