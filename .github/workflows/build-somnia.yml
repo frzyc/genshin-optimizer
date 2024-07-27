@@ -69,9 +69,10 @@ jobs:
       - name: Yarn install
         run: |
           yarn install --immutable --immutable-cache
-      - name: Build frontend
+      - name: Build Somnia
         run: |
           NX_DAEMON="false"
+          cp apps/somnia/src/config.empty.json apps/somnia/src/config.json
           yarn run nx run somnia:build:production
       - name: Archive build
         uses: actions/upload-artifact@v4
