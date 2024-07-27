@@ -55,6 +55,7 @@ jobs:
             echo "::set-output name=env::somnia-prod"
           else
             echo "::set-output name=env::somnia-test"
+          fi
 
   build:
     runs-on: ubuntu-latest
