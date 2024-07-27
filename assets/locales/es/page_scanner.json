@@ -1,0 +1,21 @@
+{
+  "intro": "<0>Escáneres Automáticos</0><1>Los Escáneres Automáticos son herramientas para Genshin que pueden escanear datos del juego automáticamente manipulando los movimientos del ratón, tomándo capturas de pantalla del juego, y escaneando información desde ésas capturas. Son herramientas de bajo riesgo que pueden ayudar a automatizar el proceso manual de escanear artefactos para GO. Como cualquier herramienta que indirectamente interactúa con el juego, aunque su uso es virtualmente indetectable, <1>hay todavía un riesgo a la hora de usarlas.</1> Se aconseja discreción por parte del usuario.</1><2>El aspecto más importante de usar éstos escáneres junto a GO es el formato de salida:</2><3><0><0>A partir de <1>v5.21.0</1>, GO puede importar datos de artefactos en el formato <3>mona-uranai</3>. </0><1>A partir de <1>v6.0.0</1>, GO puede importar datos en el formato <3>Genshin Open Object Description (GOOD)</3>.</1></0></3><4>Abajo hay varios escáneres que han sido probados con GO.</4><5>Para cargar el archivo exportado, ve a la página de <1>Base de datos</1>, y carga tu archivo en la sección <strong>Carga Base de Datos</strong>.</5>",
+  "ik": {
+    "title": "Inventory Kamera",
+    "p1": "Esta aplicación ligera escaneará todos tus personajes + armas + artefactos de tu inventario. Sigue las instrucciones de la aplicación para configurarla. Este escáner sólo escanea en inglés."
+  },
+  "as": {
+    "title": "AdeptiScanner",
+    "p1": "Escanea todos tus artefactos en el inventario. Tiene un modo de escaneo manual.",
+    "p2": "Este escáner también puede ser configurado para nuevos artefactos en versiones nuevas del juego sin necesidad de una actualización."
+  },
+  "goodeng": "Este escáner solamente escanea en inglés y exporta al formato GOOD.",
+  "tags": {
+    "pc": "PC",
+    "mobile": "Móvil",
+    "ps": "PlayStation",
+    "materials": "Materiales",
+    "characters": "Personajes"
+  },
+  "seelieme": "Este escáner también puede escanear materiales para <1>Seelie.me</1>."
+}

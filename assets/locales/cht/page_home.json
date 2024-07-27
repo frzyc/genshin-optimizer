@@ -1,0 +1,45 @@
+{
+  "intro": "The <strong>ultimate</strong> <3><i>Genshin Impact</i></3> calculator, GO will keep track of your artifact/weapon/character inventory, and help you create the best build based on how you play, with what you have.",
+  "quickLinksCard": {
+    "title": "快速連結",
+    "buttons": {
+      "tyGuide": {
+        "title": "Youtube Guide Playlist",
+        "tooltip": "了解如何使用原神最佳化工具"
+      },
+      "scanners": {
+        "title": "自動掃描器",
+        "tooltip": "自動掃描遊戲中聖遺物的第三方程式"
+      },
+      "kqm": {
+        "title": "KeqingMains",
+        "tooltip": "Theorycrafting & guides community"
+      },
+      "devDiscord": {
+        "title": "原神開發者 Discord",
+        "tooltip": "原神開發者社群"
+      },
+      "good": {
+        "title": "GOOD 文件",
+        "tooltip": "Genshin Open Object Descriptor Documentation"
+      },
+      "patchNotes": {
+        "title": "原神最佳化工具更新日誌",
+        "tooltip": "All patch notes for GO"
+      }
+    }
+  },
+  "inventoryCard": { "title": "GO 庫存" },
+  "vidGuideCard": { "title": "Video Guides" },
+  "teamCard": {
+    "title": "Meet the Team",
+    "jobTitle": {
+      "leadDev": "Lead Developer",
+      "dev": "Developer",
+      "mod": "Moderator",
+      "admin": "Admin",
+      "translator": "Translations Manager",
+      "TC": "TC Correspondant"
+    }
+  }
+}

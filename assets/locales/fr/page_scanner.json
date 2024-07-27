@@ -1,0 +1,35 @@
+{
+  "intro": "<0>Scanners</0><1>Les scanners sont des outils pour Genshin qui peuvent automatiquement analyser les données du jeu à partir de captures d'écran ou directement dans le jeu.</1><2>Voici plusieurs scanners qui ont été testés avec GO.</2><3>Pour charger le fichier exporté, allez sur la page <1>Paramètres</1> et chargez votre fichier dans la section <strong>Chargement de la base de données</strong>.</3>",
+  "ik": {
+    "title": "Inventory Kamera",
+    "p1": "Cette application légère scannera tous les personnages, armes et artefacts de votre inventaire. Suivez les instructions de l'application pour la configurer."
+  },
+  "as": {
+    "title": "AdeptiScanner",
+    "p1": "Scanne tous les artefacts et armes de votre inventaire. Dispose d'un mode de balayage manuel et peut également importer des données depuis <1>Enka.Network</1>.",
+    "p2": "Ce scanner peut également être configuré pour les nouveaux artefacts dans les nouvelles versions du jeu sans nécessiter de mise à jour."
+  },
+  "goodeng": "This app only scans in English and exports to <1>GOOD</1> format.",
+  "tosWarn": "Comme tous les outils qui interagissent indirectement avec le jeu, bien que leur utilisation soit virtuellement indétectable, <1>il y a toujours un risque à les utiliser.</1> La discrétion de l'utilisateur est conseillée.",
+  "tags": {
+    "pc": "PC",
+    "mobile": "Mobile",
+    "ps": "PlayStation",
+    "gameMani": "Contrôle automatique",
+    "materials": "Matériaux",
+    "characters": "Personnages",
+    "weapons": "Armes",
+    "achievements": "Réalisations"
+  },
+  "nb": {
+    "title": "Artiscan",
+    "p1": "Ce scanner en ligne peut capturer la fenêtre de votre jeu, numériser à partir d'une capture d'écran ou numériser à partir d'une vidéo. La capture d'écran ou de vidéo peut être réalisée en plein écran et n'a pas besoin d'être recadrée.",
+    "p2": "Les téléphones portables et les consoles de jeux ne peuvent être scannés qu'à partir de captures d'écran ou de vidéos."
+  },
+  "ak": {
+    "title": "Scanner Akasha",
+    "p1": "Scanne automatiquement les artefacts ainsi que les personnages et les armes. Permet d'exporter les scansions antérieures en conservant un historique dans l'application. Scanne uniquement en anglais.",
+    "p2": "Cette application est également capable d'analyser les réalisations pour <1>Paimon.moe</1> et <1>Seelie.me</1>."
+  },
+  "seelieme": "Cette application peut également scanner des matériaux pour <1>Seelie.me</1>"
+}

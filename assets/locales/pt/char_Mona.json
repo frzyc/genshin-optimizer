@@ -1,0 +1,8 @@
+{
+  "omen": "Inimigo está afetado pelo Presságio",
+  "hitOp": {
+    "affectedByOmen": "Após atingir um inimigo afetado pelo Presságio"
+  },
+  "frozenDuration": "Duração de <shattered>Congelamento</shattered>",
+  "uponSprint": "Após estar em Vicissitude"
+}

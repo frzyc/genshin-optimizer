@@ -1,0 +1,64 @@
+{
+  "title": "設定",
+  "languageCard": { "languageFormat": "言語: {{language}}" },
+  "uploadCard": {
+    "title": "データベースをアップロード",
+    "replaceDatabase": "データベースを入れ替え",
+    "hint": "JSONファイルアップロードはこちら…",
+    "hintPaste": "…又はデータを下記にて貼付けください",
+    "error": {
+      "jsonParse": "JSON ファイルを解析できません。",
+      "unknown": "ファイルの形式が不明。",
+      "monaInvalid": "Mona-Uranaiファイル形式が無効です。",
+      "goInvalid": "Genshin Optimizerバックアップファイル形式が無効。"
+    },
+    "dbSource": "データソース：",
+    "goodUpload": {
+      "title": "<strong>Genshin Open Object Description</strong> (GOOD) 原神オープンオブジェクト詳細形式"
+    },
+    "buttons": {
+      "open": "オープン",
+      "detectDups": "改良中・重複を検出",
+      "delNotInImport": "インポートに含まれないものを削除"
+    },
+    "tooltip": {
+      "detectdup": "GOのインベントリーに改良中・重複するものを検出し、インポートをGOと統合します。",
+      "ignoreDup": "改良中・重複のものを検出せず、インポートをGOの既存のインベントリーに追加されます。",
+      "delNotInImport": "インポートが全てのアイテムであると考慮します。GOインベントリー内の、インポートにないものを削除します。",
+      "keepNotInImport": "インポートがアイテム全ての一部であると考慮します。なにも削除されません。"
+    }
+  },
+  "count": {
+    "chars": "キャラクター：",
+    "arts": "聖遺物：",
+    "weapons": "武器：",
+    "total": "合計：",
+    "new": "新規：",
+    "updated": "更新済：",
+    "removed": "削除：",
+    "unchanged": "未更新：",
+    "invalid": "無効：",
+    "upgraded": "強化済：",
+    "dbTotal": "統合合計：",
+    "notInImport": "インポートに含まれない"
+  },
+  "DatabaseCard": {
+    "title": "データベース",
+    "button": {
+      "download": "ダウンロード",
+      "copy": "クリップボード",
+      "delete": "削除",
+      "upload": "アップロード",
+      "swap": "変更"
+    },
+    "currentDB": "現データベース"
+  },
+  "sillyCard": {
+    "desc": "すべてのキャラクターアセットを<strong>Silly Wisher（やけくそ祈願）</strong>から（許可を得て）ぬす・・・<1>借用し</1>、それらをGenshin Optimizerに遺伝子スプライシングを成功しました。",
+    "toggle": {
+      "enabled": "やけくそオプティマイザー有効",
+      "disabled": "やけくそオプティマイザー無効"
+    }
+  },
+  "letsnow": "雪よ降れ"
+}

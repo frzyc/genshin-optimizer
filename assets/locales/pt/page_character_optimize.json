@@ -1,0 +1,122 @@
+{
+  "mainStat": {
+    "levelAssTooltip": {
+      "title": "Assumir Nível do Artefato",
+      "desc": "Altera os valores do atributo principal para que sejam, no mínimo, de um nível específico. Não muda atributos secundários."
+    },
+    "assumptionLvl": {
+      "no": "Não Assumir Nível",
+      "lvl": "Assumir ao menos Nív. {{lvl}}"
+    },
+    "title": "Filtro/Configuração de Atributos Principais"
+  },
+  "tcGraph": {
+    "vs": "Gráfico do Objetivo Otimizado vs.",
+    "notSel": "Não Selecionado",
+    "downloadData": "Baixar Dados",
+    "desc": "Usando os dados do Builder, será gerado um gráfico visualizando o Objetivo de Otimização vs. o Objetivo do Gráfico selecionado. O gráfico mostrará a build com o valor máximo do Objetivo de Otimização a cada 0,01 do Objetivo do Gráfico selecionado. Habilitar isso é opcional e fazê-lo fará com que a Geração de Builds seja mais lenta.",
+    "showStatThr": "Mostrar Linha Máxima da Otimização",
+    "generatedBuilds": "Builds Geradas",
+    "statReqThr": "Linha Máxima da Otimização",
+    "currentBuild": "Build Atual",
+    "highlightedBuilds": "Builds em Destaque",
+    "buildAlreadyInList": "A Build já está listada"
+  },
+  "levelFilter": "Filtro de Nível dos Artefatos",
+  "allowPartial": "Permitir Builds Parciais (<5 artefatos)",
+  "constraintFilter": {
+    "title": "Restrições de Build",
+    "tooltip": "Cria certos requisitos que as Builds geradas devem cumprir. Exemplo: As Builds geradas devem ter no mínimo 140% de Recarga de Energia."
+  },
+  "artSetConfig": {
+    "title": "Configurações dos Conjuntos de Artefatos",
+    "setEffCond": "Condicionais dos Bônus de Conjunto",
+    "enabled": "Habilitados",
+    "allowed": "Permitidos",
+    "excluded": "Omitidos",
+    "selected": "Selecionados",
+    "2rainbow": "3 Peças s/ Conjunto",
+    "4rainbow": "5 Peças s/ Conjunto",
+    "allowAll2set": "Permitir todos de 2 peças",
+    "excludeAll2set": "Omitir Conjuntos de 2 pç.",
+    "allowAll4set": "Permitir todos de 4 peças",
+    "excludeAll4set": "Omitir Conjuntos de 4 pç.",
+    "alExRainbow": "<0>Permitir <1></1></0> / <2>Omitir<1</1></2> Builds sem Conjunto",
+    "modal": {
+      "setCond": {
+        "title": "Efeitos Condicionais dos Conjuntos de Artefato",
+        "reset": "Resetar Condicionais",
+        "text": "Alguns Conjuntos de Artefato possuem efeitos condicionais. Essa janela te permite selecionar esses efeitos, para que eles possam ser levados em conta  ao Otimizar uma build que satisfaz a condição."
+      },
+      "ArtSetFilter": {
+        "title": "Conjuntos de Artefato <1>Permitidos<1></1></1> / <3>Omitidos<1></1></3>",
+        "intro": "Você pode permitir ou impedir que o Gerador de Builds utilize certos tipos de Build. Nos exemplos a seguir, <strong>D</strong> é um artefato dentro de um conjunto e <strong>F</strong> é um artefato fora do conjunto",
+        "2set": "<0><0>Omitir<1></1> Conjuntos de 2 pç.</0></0> bloqueará Builds que possuem conjuntos de 2 peças: <2><0>DD</0>FFF</2> e <4><0>DDD</0>FF</4>.",
+        "4set": "<0><0>Bloquear<1></1> Conjuntos de 4 pç.</0></0> omitirá Builds que possuem conjuntos de 4 peças: <2><0>DD</0>FFF</2> e <4><0>DDD</0>FF</4>.",
+        "2rain": "<0><0>Omitir<1></1> Builds de 3 pç. s/ conjunto</0></0> bloqueará Builds que usam um conjunto de 2 Peças + 3 Peças fora de conjunto:  <2>DD<1>FFF</1></2> e <4>DDD<1>FF</1></4>.",
+        "4rain": "<0><0>Omitir<1></1> Builds de 5 pç. s/ conjunto</0></0> bloqueará Builds que possuem 5 peças que não formam um conjunto: <2><0>FFFFF</0></2>"
+      }
+    }
+  },
+  "buildDropdownDesc": "Diminuir o número de Builds geradas diminuirá o tempo de processamento quando há um grande número de Builds.",
+  "threadDropdownDesc": "Aumentar o número de threads usadas acelerará a Geração de Builds, mas usará mais processamento da CPU.",
+  "noArtis": "Opa! Parece que você ainda não adicionou nenhum artefato ao GO ainda. Você deveria ir à página <1>Artefatos</1> e adicionar alguns!",
+  "targetSelector": {
+    "selectOptTarget": "Selecione um Objetivo de Otimização",
+    "selectGraphTarget": "Selecione um Objetivo do Gráfico",
+    "invalidTarget": "OBJETIVO INVÁLIDO",
+    "selectBuildTarget": "Selecione um requisito para a Build"
+  },
+  "selectTargetFirst": "Selecione um Objetivo de Otimização antes",
+  "generateButton": { "cancel": "Cancelar", "generateBuilds": "Gerar Builds" },
+  "removeBuildButton": "Remover Build",
+  "theorycraftButton": "Theorycraft",
+  "currentlyEquippedBuild": "Atualmente Equipada",
+  "addBuildToList": "Adicionar Build à lista",
+  "graphBuildLabel": "N.º <1>{{count}}</1> do Gráfico",
+  "excludeArt": {
+    "title_exclude": "Bloquear Artefatos",
+    "title_tooltip": "Acrescente artefatos à lista de bloqueios deste personagem.  Artefatos na lista de bloqueios não serão considerados ao gerar Builds.",
+    "addExc": "Adicionar artefato à lista de bloqueios deste personagem",
+    "selExc": "Selecione o artefato para adicionar à lista de bloqueios",
+    "deSelectExc": "Clique num artefato para tirá-lo da lista de bloqueios",
+    "usingNum": "Usando <1>{{totalStr}}</1> artefato(s) bloqueado(s)",
+    "button_txt": "Bloquear Artefatos",
+    "excNum": {
+      "one": "<0>{{count}}</0> Artefato está bloqueado",
+      "other": "<0>{{count}}</0> Artefatos estão bloqueados"
+    }
+  },
+  "excludeChar": {
+    "title": "Configuração de Artefatos Equipados",
+    "modal": {
+      "allow_all": "Adicionar personagens visíveis à lista de permissão",
+      "disallow_All": "Tirar personagens visíveis da lista de permissão"
+    },
+    "allowEquip": "Permitir o uso de artefatos de",
+    "tooltip": "Adicione personagens à lista de permissão deste personagem. Personagens na lista de permissão terão seus artefatos considerados na geração de builds. Também é possível alterar entre usar apenas artefatos desequipados, usar os de sua lista personalizada ou usar todos os artefatos equipados e desequipados.",
+    "chars": "Personagens",
+    "artis": "Artefatos",
+    "states": {
+      "unequippedOnly": "Somente Não-Equipados",
+      "customList": "Lista Personalizada",
+      "all": "Todos os Artefatos"
+    },
+    "usingState": "Usando",
+    "usingNumTot": {
+      "one": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagem",
+      "other": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagens"
+    }
+  },
+  "buildCompleted": "Build Concluída",
+  "notifyTooltip": "Toca um som quando a geração de Build terminar. Também mostrará uma notificação caso esteja em outra aba.",
+  "bonusStats": { "title": "Atributos Bônus" },
+  "build": {
+    "one": "<0>{{count}}</0> Build",
+    "other": "<0>{{count}}</0> Builds"
+  },
+  "thread": {
+    "one": "<0>{{count}}</0> Thread",
+    "other": "<0>{{count}}</0> Threads"
+  }
+}

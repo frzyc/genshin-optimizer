@@ -1,0 +1,10 @@
+{
+  "skillTotalShardDmg": "장미탄 총 피해량",
+  "shot_dmg_": "장미탄 피해량 증가",
+  "shot_mult_": "장미탄 계수",
+  "shot_critRate_": "장미탄 치명타 확률",
+  "shot_critDMG_": "장미탄 치명타 피해",
+  "chargesCond": "소모한 결정 파편",
+  "shotsFired": "장미탄 발사",
+  "shotsHitCond": "장미탄 명중"
+}

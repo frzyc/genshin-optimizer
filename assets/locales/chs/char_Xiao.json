@@ -1,0 +1,10 @@
+{
+  "burst": {
+    "lifeDrain_": "生命流失",
+    "currentHPPerSec": "（当前生命值/秒）",
+    "incJump": "大幅提升跳跃能力",
+    "inBurst": "处于<strong>夜叉傩面</strong>状态下",
+    "stack": "<strong>夜叉傩面</strong>持续时间"
+  },
+  "skillStack": "<strong>风轮两立</strong>可使用次数"
+}

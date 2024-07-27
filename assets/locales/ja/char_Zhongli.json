@@ -1,0 +1,10 @@
+{
+  "skill": {
+    "stele": "岩柱ダメージ",
+    "resonance": "原岩共鳴ダメージ",
+    "maxStele": "岩柱の最大数",
+    "nearShield": "敵が<strong>玉璋シールド</strong>付近範囲内"
+  },
+  "p1cond": "<strong>玉璋シールド</strong>がダメージを受けた後",
+  "c6heal": "最大HP回復量"
+}

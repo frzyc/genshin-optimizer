@@ -1,0 +1,10 @@
+{
+  "a1": {
+    "condName": "Setelah menembakkan Frostflake Arrow",
+    "critRateInc": "Peningkatan CRIT Frostflake"
+  },
+  "c1": {
+    "condName": "Musuh terkena DMG dari Frostflake Arrow atau Frostflake Arrow Bloom"
+  },
+  "c4": { "lingerDuration": "Durasi Efek Linger" }
+}

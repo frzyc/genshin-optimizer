@@ -1,0 +1,15 @@
+{
+  "skill": { "eye": "뇌벌 악요의 눈", "partyCost": "원소 에너지" },
+  "burst": {
+    "resolves": "원력 스택",
+    "resolveInitial_": "<electro>백안지륜에 쌓은 원력 기반 피해 증가량</electro>",
+    "resolveInfused_": "<electro>몽상의 일심 피해 증가량</electro>",
+    "burstDmg": "몽상의 일태도 피해",
+    "active": "<strong>몽상의 일심</strong> 상태"
+  },
+  "a4": {
+    "enerRest": "<strong>몽상의 일심</strong> 상태에서 원소 에너지 회복",
+    "eleDMG": "번개 원소 피해량 증가"
+  },
+  "c4": { "expires": "<strong>몽상의 일심</strong>상태가 끝난 후" }
+}

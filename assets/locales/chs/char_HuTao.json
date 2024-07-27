@@ -1,0 +1,11 @@
+{
+  "paramita": {
+    "enter": "进入彼岸蝶舞状态",
+    "end": "蝶引来生施加的彼岸蝶舞状态结束后"
+  },
+  "constellation2": { "applyBloodBlossom": "施加二命血梅香效果" },
+  "constellation4": {
+    "condName": "处于胡桃自己施加的血梅香状态影响下的敌人被击败时"
+  },
+  "constellation6": { "condName": "生命值降至25%以下，或承受致命伤害时" }
+}

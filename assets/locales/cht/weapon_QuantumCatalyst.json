@@ -1,0 +1,12 @@
+{
+  "name": "Quantum Cat-alyst",
+  "description": "This advanced Catalyst weapon is infused with the mysterious power of Quantum Mechanics and bears the likeness of a curious cat, with glowing green eyes, a tail that flickers with Electro energy and the occasional spark arcing between the ears.",
+  "passiveName": "Mewon Meowmentum",
+  "passiveDescription": {
+    "0": "Increases Energy Recharge by <cryo>18%</cryo>. Increases Normal and Charged Attack DMG by <cryo>6%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>10</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+    "1": "Increases Energy Recharge by <cryo>22.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>7.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>12</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+    "2": "Increases Energy Recharge by <cryo>27%</cryo>. Increases Normal and Charged Attack DMG by <cryo>9%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>14</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+    "3": "Increases Energy Recharge by <cryo>31.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>10.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>16</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+    "4": "Increases Energy Recharge by <cryo>36%</cryo>. Increases Normal and Charged Attack DMG by <cryo>12%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>18</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently."
+  }
+}

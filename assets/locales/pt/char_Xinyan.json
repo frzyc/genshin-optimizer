@@ -1,0 +1,21 @@
+{
+  "skill": {
+    "pyroShield": {
+      "1": "Absorção de Dano Pyro do Escudo Nível 1",
+      "2": "Absorção de Dano Pyro do Escudo Nível 2",
+      "3": "Absorção de Dano Pyro do Escudo Nível 3"
+    }
+  },
+  "p1": {
+    "desc": "Reduz condição de inimigos atingidos pelo <strong>Fervor Arrebatador</strong> em 1"
+  },
+  "p2": {
+    "activeShield": "Protegido pelo <strong>Fervor Arrebatador</strong>"
+  },
+  "c2": {
+    "key_": "Bônus de Taxa Crítica ao Dano Físico da <strong>Melodia da Rebelião</strong>",
+    "shield": "Cria um Escudo Nível 3: Rave ao usar"
+  },
+  "c4": { "swingHit": "Inimig foi atingido pelo <pyro>Dano de Balanço</pyro>" },
+  "c6": { "duringCharge": "Enquanto usa um Ataque Carregado" }
+}

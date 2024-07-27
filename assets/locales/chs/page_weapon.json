@@ -1,0 +1,6 @@
+{
+  "edit": "编辑武器",
+  "weaponName": "武器名称",
+  "removeWeapon": "你确定要移除{{value}}吗？",
+  "addWeapon": "添加新武器"
+}

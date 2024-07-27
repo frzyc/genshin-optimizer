@@ -1,0 +1,18 @@
+{
+  "skill": {
+    "eye": "Carrying the Eye of Stormy Judgement",
+    "partyCost": "Energy Cost"
+  },
+  "burst": {
+    "resolves": "Resolve Stacks",
+    "resolveInitial_": "<electro>Musou no Hitotachi DMG Bonus Scaling</electro",
+    "resolveInfused_": "<electro>Musou Isshin DMG Bonus Scaling</electro>",
+    "burstDmg": "Musou no Hitotachi DMG",
+    "active": "處於 <strong>夢想一心</strong> 狀態時"
+  },
+  "a4": {
+    "enerRest": "Bonus energy restoration from <strong>Musou Isshin</strong>",
+    "eleDMG": "Electro DMG Bonus"
+  },
+  "c4": { "expires": "After the <strong>Musou Isshin</strong> state expires" }
+}

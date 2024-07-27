@@ -1,0 +1,8 @@
+{
+  "skill": {
+    "coil": "Coil",
+    "rush": "สถานะ Rushing Ice",
+    "rushState": "ระหว่างสถานะ Rushing Ice (1 สแต็คต่อวินาที)"
+  },
+  "a1CondName": "เมื่อ Aloy ได้รับสถานะ Coil จากสกิล <strong>Frozen Wilds</strong>"
+}

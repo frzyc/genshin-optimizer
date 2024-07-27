@@ -1,0 +1,39 @@
+{
+  "title": "Einstellungen",
+  "languageCard": { "languageFormat": "Sprache: {{language}}" },
+  "uploadCard": {
+    "title": "Datenbank importieren",
+    "replaceDatabase": "Datenbank ersetzen",
+    "hint": "Lade die JSON-Datei hier hoch...",
+    "hintPaste": "... oder kopiere den Text hierhin.",
+    "error": {
+      "jsonParse": "Kann JSON-File nicht parsen.",
+      "unknown": "Unbekanntes Dateiformat.",
+      "monaInvalid": "Ungültiges Mona-Uranai Dateiformat",
+      "goInvalid": "Ungültiges GO Backupdateiformat"
+    }
+  },
+  "count": {
+    "chars": "Charaktere:",
+    "arts": "Artefakte:",
+    "weapons": "Waffen:",
+    "total": "Insgesamt:",
+    "new": "Neu:",
+    "updated": "Aktualisiert:",
+    "removed": "Entfernt:",
+    "unchanged": "Unverändert:",
+    "invalid": "Ungültig:"
+  },
+  "DatabaseCard": {
+    "title": "Datenbank",
+    "button": {
+      "download": "Herunterladen",
+      "copy": "Zwischenablage",
+      "delete": "Löschen",
+      "upload": "Hochladen",
+      "swap": "Wechseln"
+    },
+    "currentDB": "Aktuelle Datenbank"
+  },
+  "letsnow": "Lass es schneien!"
+}

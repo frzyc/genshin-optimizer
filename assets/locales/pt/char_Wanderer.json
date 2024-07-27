@@ -1,0 +1,11 @@
+{
+  "windfavoredState": "Sob o estado <strong>Postura do Vento</strong>",
+  "p1": {
+    "pyroCondName": "<strong>Pluma Ilustrada: Canção Graciosa</strong> entrou em contato com <pyro>Pyro</pyro>",
+    "cryoCondName": "<strong>Pluma Ilustrada: Canção Graciosa</strong> entrou em contato com <cryo>Cryo</cryo>"
+  },
+  "p2Dmg": "Dano da Flecha de Vento",
+  "c1BonusKey": "Bônus do Multiplicador da Flecha de Vento",
+  "c2CondName": "Diferença entre a quantidade máxima e a quantidade atual de Poder Vazio",
+  "c6Key": "Multipl. de Agradecimentos: Ventos Neblinosos Entre os Pinheiros"
+}

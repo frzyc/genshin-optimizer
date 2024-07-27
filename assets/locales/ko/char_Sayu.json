@@ -1,0 +1,10 @@
+{
+  "burstHits": "너구리 오뚝이 활성 횟수",
+  "p2Heal": "주변의 캐릭터 회복량",
+  "c1Text": "너구리 오뚝이는 HP 제한을 받지 않고 주변의 적을 공격하면서 캐릭터의 HP를 회복한다",
+  "c2KickPressDmg_": "유후류·풍은 돌진 홀드 피해량 증가",
+  "c2KickDmg_": "유후류·풍은 돌진 피해량 증가",
+  "c2Cond": "<strong>유후류·풍은 돌진</strong> 상태 유지 시간",
+  "c6DarumaDmgInc": "너구리 오뚝이 피해량 증가",
+  "c6DarumaHealInc": "너구리 오뚝이 치유량 증가"
+}
