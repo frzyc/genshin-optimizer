@@ -112,6 +112,12 @@ describe('example', () => {
     )
     expect(calc.compute(member0.common.cappedCritRate_).val).toBe(0.05)
     expect(calc.compute(member0.common.cappedCritRate_.burgeon).val).toBe(0.25)
+    const specialized = calc.compute(member0.char.specialized)
+    expect(specialized.val).toBe(0)
+    // Specialized stat include the stat tag
+    expect(specialized.meta.tag?.['sheet']).toBe('Nahida')
+    expect(specialized.meta.tag!['qt']).toBe('premod')
+    expect(specialized.meta.tag!['q']).toBe('eleMas')
   })
   test('calculate team stats', () => {
     // Nahida's contribution to `common.count`
@@ -272,16 +278,18 @@ describe('weapon-only example', () => {
 
   const self = convert(selfTag, { et: 'self' })
 
-  test('retrieve formulas in a listing', () => {
-    const listing = calc.listFormulas(self.listing.specialized)
-    expect(listing.length).toEqual(3)
-  })
-  test('calculate formulas in a listing', () => {
-    // Some listings require character data (e.g., `formulas` listing) and will crash if used
-    const listing = calc.listFormulas(self.listing.specialized)
+  test('calculate specialized stats', () => {
+    const primary = calc.compute(self.weapon.primary)
+    expect(primary.val).toBeCloseTo(337.96) // atk
+    expect(primary.meta.tag?.['sheet']).toEqual('KeyOfKhajNisut')
+    expect(primary.meta.tag!['qt']).toEqual('base')
+    expect(primary.meta.tag!['q']).toEqual('atk')
 
-    expect(calc.compute(listing[0]).val).toBeCloseTo(337.96) // atk
-    expect(calc.compute(listing[1]).val).toBeCloseTo(0.458) // hp_
-    expect(calc.compute(listing[2]).val).toBeCloseTo(0.3) // refinement hp_
+    // If there are multiple, or none, use `calc.get` instead
+    const secondary = calc.compute(self.weapon.secondary)
+    expect(secondary.val).toBeCloseTo(0.458) // hp_
+    expect(secondary.meta.tag?.['sheet']).toEqual('KeyOfKhajNisut')
+    expect(secondary.meta.tag!['qt']).toEqual('premod')
+    expect(secondary.meta.tag!['q']).toEqual('hp_')
   })
 })

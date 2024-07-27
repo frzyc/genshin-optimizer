@@ -105,8 +105,15 @@ export const selfTag = {
     skill: agg,
     burst: agg,
     stamina: agg,
+    specialized: iso,
   },
-  weapon: { lvl: iso, refinement: iso, ascension: iso },
+  weapon: {
+    lvl: iso,
+    refinement: iso,
+    ascension: iso,
+    primary: agg,
+    secondary: agg,
+  },
   common: {
     weaponType: iso,
     critMode: fixed,
@@ -146,7 +153,6 @@ export const selfTag = {
   },
   listing: {
     formulas: aggStr,
-    specialized: aggStr,
   },
 } as const
 export const enemyTag = {

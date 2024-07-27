@@ -2,7 +2,7 @@ import { type WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { allStatics, listingItem, readStat, self } from '../util'
+import { allStatics, readStat, self } from '../util'
 
 export function entriesForWeapon(key: WeaponKey): TagMapNodeEntries {
   const gen = allStats.weapon.data[key]
@@ -33,25 +33,10 @@ export function entriesForWeapon(key: WeaponKey): TagMapNodeEntries {
       ).add(subscript(refinement, values))
     ),
 
-    // Listing (specialized)
-    // All items here are sheet-specific data (i.e., `sheet:<key>`)
-    self.listing.specialized.add(
-      listingItem(self.base[primaryStat].sheet(key))
-    ),
+    // Specialized stats, items here are sheet-specific data (i.e., `sheet:<key>`)
+    self.weapon.primary.add(self.base[primaryStat].sheet(key)),
     ...[...nonPrimaryStat].map((stat) =>
-      self.listing.specialized.add(
-        listingItem(readStat(self.premod, stat).sheet(key))
-      )
-    ),
-    ...[...Object.keys(gen.refinementBonus)].map((stat) =>
-      self.listing.specialized.add(
-        listingItem(
-          readStat(
-            self.weaponRefinement,
-            stat as keyof typeof gen.refinementBonus
-          ).sheet(key)
-        )
-      )
+      self.weapon.secondary.add(readStat(self.premod, stat).sheet(key))
     ),
   ]
 }
