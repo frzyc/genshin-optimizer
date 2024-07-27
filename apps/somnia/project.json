@@ -46,6 +46,11 @@
             "input": "libs/gi/localization/assets/locales",
             "output": "assets/gi/locales",
             "glob": "**"
+          },
+          {
+            "input": "./apps/somnia/",
+            "output": "",
+            "glob": ".yarnrc"
           }
         ],
         "generatePackageJson": true,
