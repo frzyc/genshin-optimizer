@@ -1,7 +1,7 @@
-import { ExecutorContext } from '@nx/devkit'
+import type { ExecutorContext } from '@nx/devkit'
 
 import executor from './executor'
-import { GenAssetsDataExecutorSchema } from './schema'
+import type { GenAssetsDataExecutorSchema } from './schema'
 
 const options: GenAssetsDataExecutorSchema = {}
 const context: ExecutorContext = {
