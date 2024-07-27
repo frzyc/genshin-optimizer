@@ -43,26 +43,9 @@ on:
     types: [opened, reopened, synchronize, labeled]
 
 jobs:
-  set-env:
-    runs-on: ubuntu-latest
-    outputs:
-      env: ${{ steps.set_env.outputs.env }}
-    steps:
-      - name: Set env
-        id: set_env
-        run: |
-          if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
-            echo "env=somnia-prod" >> $GITHUB_OUTPUT
-          else
-            echo "env=somnia-test" >> $GITHUB_OUTPUT
-          fi
-
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    needs: set-env
-    environment:
-      name: ${{ needs.set-env.outputs.env }}
     steps:
       - uses: actions/checkout@v4
       - name: Get Cache Key
@@ -93,7 +76,11 @@ jobs:
           yarn run nx run somnia:build:production
       - name: echos
         run: |
-          echo ${{ vars.ENV_NAME }} > environment
+          if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
+            echo "somnia-prod" > environment
+          else
+            echo "somnia-test" > environment
+          fi
           echo $(git rev-parse HEAD) > ref
           echo ${{ contains(github.event.pull_request.labels.*.name, 'deploySomnia') }} > shouldDeploy
       - name: Archive build
