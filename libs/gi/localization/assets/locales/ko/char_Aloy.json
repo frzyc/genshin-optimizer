@@ -1,0 +1,9 @@
+{
+  "skill": {
+    "coil": "코일",
+    "rush": "얼음 질주",
+    "rushState": "얼음 질주 상태인 기간(초당 1스택)"
+  },
+  "a1CondName": "에일오리가 <strong>빙결의 설야</strong>의 코일 효과 획득시",
+  "normCryoInfus": "<cryo>일반 공격이 얼음 원소 피해로 전환</cryo>"
+}

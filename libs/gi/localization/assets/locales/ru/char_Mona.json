@@ -1,0 +1,8 @@
+{
+  "omen": "Omen",
+  "hitOp": {
+    "affectedByOmen": "Любой участник команды ударил врага под Omen"
+  },
+  "frozenDuration": "Длительность <cryo>Заморозки</cryo> увеличена на",
+  "uponSprint": "При входе в Иллюзорный поток"
+}

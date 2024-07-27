@@ -1,0 +1,7 @@
+{
+  "inFieldAndTakeDmg": "浄焔剣獄領域内のフィールド上キャラクターがダメージを受けた後",
+  "field_dmg_": "浄焔剣獄ダメージボーナス",
+  "initialHeal": "治療発動回復量",
+  "dotHeal": "追加の回復",
+  "critHitDuringBurst": "熾鬣拳が会心ダメージを命中後"
+}

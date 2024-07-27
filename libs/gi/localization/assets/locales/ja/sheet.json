@@ -1,0 +1,200 @@
+{
+  "dmg": "ダメージ",
+  "lessPercentHP": "HPが{{percent}}%未満",
+  "hitOp": {
+    "normal": "敵に通常攻撃をヒット",
+    "charged": "敵に重撃をヒット",
+    "plunging": "敵に落下攻撃をヒット",
+    "skill": "敵に元素スキルをヒット",
+    "burst": "敵に元素爆発をヒット",
+    "geo": "敵に<geo>岩元素ダメージ</geo>をヒット",
+    "anemo": "敵に<anemo>風元素ダメージ</anemo>をヒット",
+    "hydro": "敵に<hydro>水元素ダメージ</hydro>をヒット",
+    "cryo": "敵に <cryo>氷元素ダメージ</cryo>をヒット",
+    "pyro": "敵に<pyro>炎元素ダメージ</pyro>をヒット",
+    "electro": "敵に<electro>雷元素ダメージ</electro>をヒット",
+    "none": "敵にヒット後",
+    "normalOrCharged": "敵に通常攻撃・重撃でヒット",
+    "skillOrBurst": "敵に元素スキル・爆発でヒット",
+    "crit": "会心攻撃を命中後",
+    "normalChargedOrPlunging": "敵に通常攻撃・重撃・落下攻撃をヒット",
+    "dendro": "<dendro>草元素ダメージ</dendro>を与えた後",
+    "normalEle": "通常攻撃で元素ダメージを与えた後",
+    "ele": "元素ダメージを与えた後",
+    "weakSpot": "狙い撃ちで敵の弱点に命中した後",
+    "normalChargedSkillBurst": "敵に通常攻撃、重撃、または元素スキル・爆発をヒット後",
+    "self": "敵にヒットされた後"
+  },
+  "eleAbsor": "元素変化",
+  "absorDot": "拡散DoT",
+  "afterUse": {
+    "skill": "元素スキル起動中",
+    "burst": "元素爆発起動中",
+    "skillOrBurst": "元素スキルまたは元素爆発を発動後",
+    "skillPress": "元素スキル（単押し）使用後",
+    "skillHold": "元素スキル（長押し）使用後"
+  },
+  "lessEqPercentHP": "HPが{{percent}}%、またはその以下",
+  "greaterPercentHP": "HPが{{percent}}%以上",
+  "greaterEqPercentHP": "HPが{{percent}}%、またはその以上",
+  "lessPercentEnergy": "元素エネルギーが{{percent}}%以下",
+  "enemyLessPercentHP": "敵のHPが{{percent}}%以下",
+  "enemyLessEqPercentHP": "敵のHPが{{percent}}%、またはその以下",
+  "enemyGreaterPercentHP": "敵のHPが{{percent}}%以上",
+  "enemyGreaterEqPercentHP": "敵のHPが{{percent}}%、またはその以上",
+  "afterDefeatEnemy": "敵を倒した後",
+  "afterSprint": "ダッシュ後",
+  "skillCDRed": "元素スキルクールダウン減少",
+  "burstCDRed": "元素爆発クールダウン減少",
+  "triggerCD": "反応クールダウン",
+  "incInterRes": "中断耐性の増加",
+  "charges": "チャージ",
+  "cooldown": "クールダウン",
+  "addlCharges": "スキルチャージ追加",
+  "activeCharField": "キャラクターが能力のフィールド範囲以内",
+  "opponentsField": "敵が能力のフィールド範囲以内",
+  "takeDmg": "ダメージを受けた後",
+  "infusion": {
+    "pyro": "炎元素付与",
+    "cryo": "氷元素付与",
+    "anemo": "風元素付与",
+    "hydro": "水元素付与",
+    "electro": "雷元素付与",
+    "dendro": "草元素付与",
+    "geo": "岩元素付与"
+  },
+  "effectDuration": {
+    "pyro": "炎元素影響継続時間",
+    "cryo": "氷元素影響継続時間",
+    "anemo": "風元素影響継続時間",
+    "hydro": "水元素影響継続時間",
+    "electro": "雷元素影響継続時間",
+    "dendro": "草元素影響継続時間",
+    "geo": "岩元素影響継続時間"
+  },
+  "durationInc": "継続時間の増加",
+  "base": "基礎",
+  "stacks": "スタック",
+  "protectedByShield": "シールドに守られている",
+  "protectedByShieldCrystal": "結晶シールドに守られている",
+  "staminaDec_": "スタミナ消費減少",
+  "dmgAbsorption": {
+    "pyro": "シールドの炎元素ダメージ吸収量",
+    "cryo": "シールドの氷元素ダメージ吸収量",
+    "anemo": "シールドの風元素ダメージ吸収量",
+    "hydro": "シールドの水元素ダメージ吸収量",
+    "electro": "シールドの雷元素ダメージ吸収量",
+    "dendro": "シールドの草元素ダメージ吸収量",
+    "geo": "シールドの岩元素ダメージ吸収量",
+    "none": "シールドのダメージ吸収量",
+    "increase": "シールド吸収増加",
+    "max": {
+      "none": "シールドのダメージ最大吸収量",
+      "pyro": "シールドの炎元素ダメージ最大吸収量",
+      "dendro": "シールドの草元素ダメージ最大吸収量"
+    }
+  },
+  "addlCharge": "スキルチャージ追加",
+  "conditional": "条件",
+  "maxStacks": "最大スタック",
+  "1set": "1-セット",
+  "2set": "2-セット",
+  "4set": "4-セット",
+  "activationStam": "スタミナ消費発動",
+  "stamDrain": "スタミナ消耗",
+  "talents": {
+    "auto": "オート",
+    "skill": "元素スキル",
+    "burst": "元素爆発",
+    "passive": "固有天賦",
+    "passive1": "突破段階1固有天賦1",
+    "passive2": "突破段階4固有天賦2",
+    "passive3": "固有天賦3",
+    "sprint": "ダッシュ",
+    "constellation1": "1凸",
+    "constellation2": "2凸",
+    "constellation3": "3凸",
+    "constellation4": "4凸",
+    "constellation5": "5凸",
+    "constellation6": "6凸"
+  },
+  "swirlReaction": {
+    "hydro": "<hydro>水元素</hydro>拡散反応後",
+    "pyro": "<pyro>炎元素</pyro>拡散反応後",
+    "electro": "<electro>雷元素</electro>拡散反応後",
+    "cryo": "<cryo>氷元素</cryo>拡散反応後"
+  },
+  "afterReaction": "元素反応を発動後",
+  "aoeInc": "範囲増加",
+  "elementalReaction": {
+    "hydro": "<hydro>水元素に関連</hydro>する反応を起こした後",
+    "electro": "<electro>雷元素に関連</electro>する反応を起こした後",
+    "shatter": "<shattered>粉砕</shattered>反応を起こした後",
+    "cryo": "</cryo>氷元素関連</cryo>反応を起こした後"
+  },
+  "bonusScaling": {
+    "skill_": "元素スキルボーナス倍率",
+    "atkInc": "攻撃力増加ボーナス倍率",
+    "value": "{{value}}%"
+  },
+  "energy": "元素エネルギー",
+  "teamBuff": "チームバフ",
+  "dmgMult": {
+    "normal": "通常攻撃ダメージ倍率",
+    "charged": "重撃ダメージ倍率",
+    "skill": "元素スキルダメージ倍率"
+  },
+  "stamRestored": "スタミナ回復",
+  "triggerQuota": "ノルマ達成",
+  "enemyAffected": {
+    "burningOrPyro": "敵は<pyro>燃焼</pyro>、または<pyro>炎元素</pyro>の影響を受けている時",
+    "frozenOrCryo": "敵は<cryo>凍結</cryo>、または<cryo>氷元素</cryo>の影響を受けている時",
+    "pyroOrElectro": "敵が<pyro>炎元素</pyro>、または<electro>雷元素</electro>の影響を受けた時",
+    "hydroOrCryo": "敵が<hydro>水元素</hydro>、または<cryo>氷元素</cryo>の影響を受けた時",
+    "hydroOrPyro": "敵が<hydro>水元素</hydro>、または<pyro>炎元素</pyro>の影響を受けた時",
+    "hydroOrElectro": "敵が<hydro>水元素</hydro>、または<electro>雷元素</electro>の影響を受けた時",
+    "electro": "敵は<electro>雷元素</electro>の影響を受けた時",
+    "cryo": "敵が<cryo>氷元素</cryo>の影響を受けた時",
+    "pyro": "敵が<pyro>炎元素</pyro>の影響を受けている"
+  },
+  "getElementalOrbParticle": "元素粒子・オーブを拾った後",
+  "notProtectedByShield": "シールドに守られていない時",
+  "percentCurrentHP": "現HP%",
+  "enerRegenPerHit": "ヒットごとの元素チャージ",
+  "interval": "間隔",
+  "immuneToElectroCharged": "<electrocharged>感電</electrocharged>耐性",
+  "charOffField": "キャラクターは待機中",
+  "attackAoeInc": "攻撃範囲がアップ",
+  "charOnField": "キャラクターはフィールド上",
+  "timeOnField": "フィールド上での時間",
+  "hpChange": "HP増減後",
+  "afterHeal": "回復後",
+  "hits": {
+    "other": "{{count}}ヒット数"
+  },
+  "percentMaxHP": "最大HP%",
+  "stack": {
+    "other": "{{count}}層"
+  },
+  "seconds": {
+    "other": "{{count}}秒"
+  },
+  "uses": {
+    "other": "{{count}}回使用"
+  },
+  "opponents": {
+    "other": "{{count}}体の敵"
+  },
+  "members": {
+    "other": "{{count}}人のチームメンバー"
+  },
+  "times": {
+    "other": "{{count}}回"
+  },
+  "activeChar": "フィールド上のキャラクター",
+  "otherHpChange": "チームメンバーのHPが増減後",
+  "reactionOp": {
+    "overload": "<overloaded>過負荷反応</overloaded>を発動後"
+  },
+  "afterOverflow": "回復上限を超えた"
+}

@@ -1,0 +1,16 @@
+{
+  "title": "🛑Detectada Nova Aba do Optimizer🛑",
+  "p1": "Parece que você abriu o Genshin Optimizer em outra aba 💞. O GO não é feito para operar em diversas abas simultaneamente 📵, fazer isso pode resultar em:",
+  "symptom": {
+    "1": "Dessincronização de dados entre abas 🙃",
+    "2": "Corrupção da Base de Dados 💔",
+    "3": "Dor de barriga 🤰 e Desenvolvedores do GO irritados 😡.",
+    "4": "Raramente, MORTE ☠️"
+  },
+  "p2": "Impedimos que isso acontecesse te mostrando esta mensagem 📝. Você pode agora:",
+  "choice": {
+    "1": "Fechar esta aba 🔪 e usar a aba nova 🆕",
+    "2": "Ou fechar a aba nova ↩️ e após ter certeza de que esta é a ÚNICA 🔂, recarregar esta página 🔄."
+  },
+  "refresh": "Recarregar Página"
+}

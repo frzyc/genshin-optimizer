@@ -1,0 +1,28 @@
+{
+  "addNew": "Añadir nuevo personaje",
+  "tabs": {
+    "overview": "General",
+    "talent": "Talentos",
+    "optimize": "Optimizar"
+  },
+  "formulas": "Fórmulas",
+  "calculations": "Cálculos",
+  "selectCharacter": "Elige un personaje",
+  "removeCharacter": "¿Estás seguro que quieres remover a {{value}}?",
+  "delete": "Borrar personaje",
+  "teammates": "Compañeros",
+  "hitmode": {
+    "hit": "Daño sin crítico",
+    "avgHit": "Daño promedio",
+    "critHit": "Golpe crítico"
+  },
+  "tabEquip": {
+    "swapWeapon": "Cambiar arma",
+    "swapArt": "Cambiar artefacto",
+    "compare": "Comparar con la build actual",
+    "unequipArts": "Desequipar todos los artefactos"
+  },
+  "characterName": "Nombre del personaje",
+  "teammate": "Compañero {{count}}",
+  "noReaction": "Sin reacciones"
+}

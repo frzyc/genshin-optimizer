@@ -1,0 +1,35 @@
+{
+  "intro": "<0>Scanners</0><1>Scanners são ferramentas para o Genshin que escaneiam automaticamente as informações do seu jogo a partir de capturas de tela ou lendo diretamente do jogo.</1><2>Abaixo estão diversos scanners que foram testados pelo GO.</2><3>Para fazer o upload do arquivo exportado, vá às <1>Configurações</1> e vá à seção de <strong>Upload de Base de Dados</strong>.</3>",
+  "ik": {
+    "title": "Inventory Kamera",
+    "p1": "Esse aplicativo leve escaneará todos os seus personagens, armas e artefatos e os adicionará aos seus artefatos. Siga as instruções no app para usá-lo."
+  },
+  "as": {
+    "title": "AdeptiScanner",
+    "p1": "Escaneia todos os artefatos no seu inventário. Possui um modo de leitura manual.",
+    "p2": "Esse scanner pode também ser configurado para artefatos em novas versões sem precisar ser atualizado."
+  },
+  "goodeng": "Esse scanner lê apenas o idioma inglês e exporta no formato <1>GOOD</1>.",
+  "tosWarn": "Assim como qualquer outra ferramenta que interage indiretamente com o jogo, apesar de seu uso ser praticamente indetectável, <1>seu uso pode acarretar algum risco.</1> Sua utilização fica a critério do usuário.",
+  "tags": {
+    "pc": "PC",
+    "mobile": "Mobile",
+    "ps": "PlayStation",
+    "gameMani": "Controle Automático",
+    "materials": "Materiais",
+    "characters": "Personagens",
+    "weapons": "Armas",
+    "achievements": "Conquistas"
+  },
+  "nb": {
+    "title": "Artiscan",
+    "p1": "Esse escaneador localizado no navegador pode obter dados a partir da janela do seu jogo, de uma captura de tela, ou escanear um vídeo.",
+    "p2": "A captura de tela ou vídeo pode ser em tela cheia e não precisa ser recortada."
+  },
+  "ak": {
+    "title": "Akasha Scanner",
+    "p1": "Automaticamente escaneia artefatos e também personagens e armas. Permite a exportação de escaneamentos passados através de um histórico no app. Escaneia apenas em Inglês.",
+    "p2": "Este aplicativo também pode escanear conquistas para o <Paimon.moe</1> e <1>Seelie.me</1>."
+  },
+  "seelieme": "O aplicativo também pode escanear materiais para o <1>Seelie.me</1>."
+}

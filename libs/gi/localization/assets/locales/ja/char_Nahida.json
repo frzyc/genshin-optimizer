@@ -1,0 +1,14 @@
+{
+  "karmaDmg_": "滅浄三業のダメージボーナス",
+  "karmaCritRate_": "滅浄三業の会心率ボーナス",
+  "karmaIntervalDec": "滅浄三業の発動間隔減少",
+  "noBurstEffect": "ヒント：元素爆発効果がありません。凸1を有効、または<pyro>炎元素</pyro>、<electro>雷元素</electro>か<hydro>水元素</hydro>のチームメンバーを加入ください。",
+  "partyInBurst": "チームメンバーがフィールド範囲内",
+  "c1Key": "摩耶の宮殿の効果ボーナス発動のため、追加の<pyro>炎元素</pyro>、<electro>雷元素</electro>と<hydro>水元素</hydro>のチームメンバーを加入",
+  "c2": {
+    "bloomCondName": "敵に<strong>蘊種印</strong>を付与",
+    "qasCondName": "蘊種印状態にある敵が<spread>原激化</spread>、<aggravate>超激化</aggravate>、または<spread>草激化</spread>反応を受けた後"
+  },
+  "c4CondName": "<strong>蘊種印</strong>状態にある敵",
+  "c6KarmicDmg": "破業障ダメージ"
+}

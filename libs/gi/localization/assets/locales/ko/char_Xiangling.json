@@ -1,0 +1,7 @@
+{
+  "afterChili": "고추를 주운 후",
+  "explosionDMG": "폭발 피해",
+  "afterGuobaHit": "누룽지의 공격에 피격된 적",
+  "duringPyronado": "화륜 지속 상태",
+  "c6Exception": "이것은 <pyro>1단 공격 피해</pyro>, <pyro>2단 공격 피해</pyro>, <pyro>화륜피해</pyro>에는 미적용"
+}

@@ -1,0 +1,69 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "성유물",
+    "characters": "캐릭터",
+    "tools": "기타 기능",
+    "weapons": "무기",
+    "doc": "문서",
+    "setting": "설정",
+    "scanner": "스캐너"
+  },
+  "social": {
+    "paypal": "페이팔",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "unselect": "선택해제",
+  "ascending": "오름차순",
+  "descending": "내림차순",
+  "loading": "불러오는중...",
+  "rightsDisclaimer": "Genshin Optimizer는 미호요와 관계가 없으며 승인되지 않았습니다.",
+  "appVersion": "$t(pageTitle) 버전: {{version}}",
+  "error": "오류",
+  "reset": "초기화",
+  "info": "정보",
+  "inventory": "보관함",
+  "close": "닫기",
+  "sortMap": {
+    "new": "신규",
+    "name": "이름",
+    "level": "레벨",
+    "rarity": "희귀도",
+    "efficiency": "현재 효율",
+    "mefficiency": "최대 효율",
+    "artsetkey": "성유물 세트"
+  },
+  "link": {
+    "download": "다운로드 링크",
+    "discord": "디스코드 초대 링크"
+  },
+  "sortBy": "다음으로 정렬: ",
+  "delete": "삭제",
+  "locked": "보호됨",
+  "unlocked": "보호되지않음",
+  "refinement": "{{value}}재련",
+  "selectlevel": "레벨 선택",
+  "gender": {
+    "F": "여성",
+    "M": "남성"
+  },
+  "statGroupKey": {
+    "basic_stats": "기초 속성",
+    "elem_dmg_bonus": "원소 피해량 증가",
+    "enemy_debuffs": "적 저항 감소",
+    "self_res": "저항 증가",
+    "reaction_dmg_bonus": "원소 반응 피해량 증가",
+    "reaction_crit": "원소 반응 치확 증가",
+    "elem_dmgInc": "원소 피해 증가",
+    "talent_dmgInc": "특성 피해 증가",
+    "elem_crit": "원소 치확 증가",
+    "talent_dmg_bonus": "특성 피해량 증가",
+    "talent_crit": "전투 특성 치확 증가",
+    "talent_level_boost": "특성 레벨 증가",
+    "base_stat_mod": "기초 속성 변화",
+    "stamina_buffs": "스태미나 효과",
+    "misc": "기타 속성"
+  },
+  "sillyPageTitle": "Silly Optimizer"
+}

@@ -1,0 +1,96 @@
+{
+  "mainStat": {
+    "levelAssTooltip": {
+      "title": "Asumsi Level Main Stat",
+      "desc": "Mengubah nilai mainstat menjadi setidaknya level tertentu.  Tidak mengubah substat."
+    },
+    "assumptionLvl": {
+      "no": "Asumsi Tidakada Lv. Main Stat",
+      "lvl": "Asumsikan Main Stat setidaknya Lv. {{lvl}}"
+    }
+  },
+  "tcGraph": {
+    "vs": "Target Optimisasi Grafik vs.",
+    "notSel": "Tidak Dipilih",
+    "downloadData": "Download Data",
+    "desc": "Dengan menggunakan data dari pembuat, ini akan menghasilkan grafik untuk memvisualisasikan Target Pengoptimalan vs. Target Grafik yang dipilih. Grafik akan menampilkan nilai Target Pengoptimalan maksimum per 0,01 dari Target Grafik yang dipilih. Mengaktifkannya adalah opsional, dan hal itu akan memperlambat waktu build",
+    "showStatThr": "Tampilkan Garis Batas Stat",
+    "generatedBuilds": "Build yang Dihasilkan",
+    "statReqThr": "Garis Batas Persyaratan Stat",
+    "currentBuild": "Build Saat ini",
+    "highlightedBuilds": "Build yang Disorot",
+    "buildAlreadyInList": "Build sudah ada dalam daftar"
+  },
+  "levelFilter": "Filter Level Artefak",
+  "allowPartial": "Izinkan Build Sebagian (<5 artefak)",
+  "constraintFilter": {
+    "title": "Batasan Build Minimum",
+    "tooltip": "Tetapkan persyaratan minimum tertentu yang harus dipenuhi oleh build yang dihasilkan. misalnya Build yang dihasilkan harus memiliki setidaknya 140% Energy Recharge."
+  },
+  "artSetConfig": {
+    "title": "Konfigurasi Set Artefak",
+    "setEffCond": "Tetapkan Kondisi Efek",
+    "enabled": "Diaktifkan",
+    "allowed": "Diizinkan",
+    "excluded": "Pengecualian",
+    "selected": "Terpilih",
+    "2rainbow": "3-Rainbow",
+    "4rainbow": "5-Rainbow",
+    "allowAll2set": "Izinkan Semua 2-Set",
+    "excludeAll2set": "Kecualikan Semua 2-Set",
+    "allowAll4set": "Izinkan Semua 4-Set",
+    "excludeAll4set": "Kecualikan Semua 4-Set",
+    "alExRainbow": "<0>Izinkan <1></1></0> / <2>Kecualikan <1></1></2> Rainbow Builds",
+    "modal": {
+      "setCond": {
+        "title": "Efek Kondisional Set Artefak",
+        "reset": "Reset Kondisional",
+        "text": "Beberapa efek artefak memberikan statistik kondisional. Jendela ini memungkinkanmu untuk memilih efek tersebut, sehingga dapat menyumbangkan statistik saat build yang memenuhi set efek dihitung selama pengoptimalan."
+      },
+      "ArtSetFilter": {
+        "title": "Set Artefak <1>Diizinkan<1></1></1> / <3>Dikecualikan<1></1></3>",
+        "intro": "Kamu dapat mengizinkan/mengecualikan set mana yang ingin dipertimbangkan oleh pembuat. Dalam contoh berikut, <strong>A</strong> sudah on-set, dan <strong>R</strong> adalah rainbow (off-set)",
+        "2set": "<0><0>Mengecualikan<1></1> 2-Set</0></0> akan mengecualikan build 2-Set: <2><0>AA</0>RRR</2> dan < 4><0>AAA</0>RR</4>.",
+        "4set": "<0><0>Mengecualikan<1></1> 4-Set</0></0> akan mengecualikan build 4-Set: <2><0>AAAA</0>R</2> dan < 4><0>AAAAA</0></4>.",
+        "2rain": "<0><0>Mengecualikan<1></1> 3-Rainbow</0></0> akan mengecualikan build 2-Set + 3-Rainbow: <2>AA<1>RRR</1></ 2> dan <4>AAA<1>RR</1></4>.",
+        "4rain": "<0><0>Mengecualikan<1></1> 5-Rainbow</0></0> akan mengecualikan build 5-Rainbow penuh: <2><0>RRRRR</0></2>."
+      }
+    }
+  },
+  "buildDropdownDesc": "Mengurangi jumlah build yang dihasilkan akan mengurangi waktu perhitungan build untuk build dalam jumlah besar.",
+  "threadDropdownDesc": "Meningkatkan jumlah thread akan mempercepat waktu build, tetapi akan menggunakan lebih banyak daya CPU.",
+  "noArtis": "Ups! Sepertinya kamu belum menambahkan artefak ke GO!  Kamu harus membuka halaman <1>Artifacts</1> dan menambahkan beberapa!",
+  "targetSelector": {
+    "selectOptTarget": "Pilih Target Optimisasi",
+    "selectGraphTarget": "Pilih Target Grafik",
+    "invalidTarget": "TARGET TIDAK VALID",
+    "selectBuildTarget": "Pilih Target Build Constraint"
+  },
+  "selectTargetFirst": "Pilih Target Optimisasi terlebih dahulu",
+  "generateButton": {
+    "cancel": "Batal",
+    "generateBuilds": "Hasilkan Build"
+  },
+  "removeBuildButton": "Hapus Build",
+  "theorycraftButton": "Theorycraft",
+  "currentlyEquippedBuild": "Saat ini Digunakan",
+  "addBuildToList": "Tambahkan build ke daftar",
+  "graphBuildLabel": "Grafik #<1>{{count}}</1>",
+  "excludeArt": {
+    "title_exclude": "Kecualikan Artefak",
+    "title_tooltip": "Tambahkan artefak ke daftar pengecualian karakter ini. Artefak dalam daftar pengecualian tidak akan dipertimbangkan untuk pembuatan build.",
+    "addExc": "Tambahkan artefak ke daftar pengecualian karakter ini",
+    "selExc": "Pilih artefak untuk ditambahkan ke daftar pengecualian karakter ini",
+    "deSelectExc": "Klik artefak untuk menghapusnya dari daftar pengecualian"
+  },
+  "excludeChar": {
+    "title": "Izinkan Artefak yang Dilengkapi",
+    "modal": {
+      "allow_all": "Tambahkan semua karakter ke daftar yang diizinkan",
+      "disallow_All": "Hapus semua karakter dari daftar yang diizinkan"
+    },
+    "allowEquip": "Izinkan menggunakan artefak dari"
+  },
+  "buildCompleted": "Build Selesai",
+  "notifyTooltip": "Mainkan suara saat build selesai dibuat. Juga akan menampilkan prompt alarm saat keluar tab."
+}

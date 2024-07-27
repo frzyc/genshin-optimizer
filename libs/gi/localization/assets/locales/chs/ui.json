@@ -1,0 +1,69 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "圣遗物",
+    "characters": "角色",
+    "tools": "工具",
+    "weapons": "武器",
+    "doc": "文档",
+    "setting": "设置",
+    "scanner": "扫描器"
+  },
+  "social": {
+    "paypal": "PayPal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "unselect": "取消选择",
+  "ascending": "升序",
+  "descending": "降序",
+  "loading": "加载中…",
+  "rightsDisclaimer": "Genshin Optimizer不隶属于米哈游或代表其官方意见。",
+  "appVersion": "$t(pageTitle) 版本: <1>{{version}}</1>",
+  "error": "错误",
+  "reset": "重置",
+  "info": "重要提示",
+  "inventory": "背包",
+  "close": "关闭",
+  "sortMap": {
+    "new": "新",
+    "name": "名称",
+    "level": "等级",
+    "rarity": "稀有度",
+    "efficiency": "当前副词条评分",
+    "mefficiency": "最高副词条评分",
+    "artsetkey": "圣遗物套装"
+  },
+  "link": {
+    "download": "下载链接",
+    "discord": "Discord邀请链接"
+  },
+  "sortBy": "排序：",
+  "delete": "删除",
+  "locked": "锁定的",
+  "unlocked": "未锁定的",
+  "refinement": "精炼{{value}}",
+  "selectlevel": "选择等级",
+  "gender": {
+    "F": "女",
+    "M": "男"
+  },
+  "statGroupKey": {
+    "basic_stats": "基本属性",
+    "elem_dmg_bonus": "元素伤害加成",
+    "enemy_debuffs": "敌人的debuff",
+    "self_res": "自身抗性",
+    "reaction_dmg_bonus": "反应伤害加成",
+    "reaction_crit": "反应暴击加成",
+    "elem_dmgInc": "元素伤害提升",
+    "talent_dmgInc": "天赋伤害提升",
+    "elem_crit": "元素暴击加成",
+    "talent_dmg_bonus": "天赋伤害加成",
+    "talent_crit": "天赋暴击加成",
+    "talent_level_boost": "天赋等级加成",
+    "base_stat_mod": "基本属性修正",
+    "stamina_buffs": "体力buff",
+    "misc": "杂项属性"
+  },
+  "sillyPageTitle": "Silly Optimizer"
+}

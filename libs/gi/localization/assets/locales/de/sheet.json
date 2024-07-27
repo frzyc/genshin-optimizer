@@ -1,0 +1,25 @@
+{
+  "dmg": "Schaden",
+  "lessPercentHP": "< {{percent}}% HP",
+  "hitOp": {
+    "normal": "Treffer gegen Gegner bei normalen Schlägen",
+    "charged": "Treffer gegen Gegner bei heftigen Schlägen",
+    "plunging": "Treffer gegen Gegnern aus dem Fall",
+    "skill": "Treffer gegen Gegner durch Elementarfähigkeit",
+    "burst": "Treffer gegen Gegner durch Elementarfähigkeit",
+    "geo": "Nach verursachen von <geo>Geo-SCH</geo>",
+    "anemo": "Nach verursachen von <anemo>Anemo-SCH</anemo>",
+    "hydro": "Nach verursachen von <hydro>Hydro-SCH</hydro>",
+    "cryo": "Nach verursachen von <cryo>Kryo-SCH</cryo>",
+    "pyro": "Nach verursachen von <pyro>Pyro-SCH</pyro>",
+    "electro": "Nach verursachen von <electro>Elektro-SCH</electro>"
+  },
+  "eleAbsor": "Elementarumwandlung",
+  "absorDot": "Fortlaufender Umwandlungs-Schaden",
+  "afterUse": {
+    "skill": "Nach Anwendung von Elementarfähigkeiten",
+    "burst": "Nach Anwendung von Spezialfähigkeiten"
+  },
+  "afterSprint": "Nach dem Sprinten",
+  "energy": "Energie"
+}

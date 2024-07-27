@@ -1,0 +1,15 @@
+{
+  "a1": {
+    "name": "Usos consecutivos de Arataki Kesagiri"
+  },
+  "a4": {
+    "dmgInc": "Aumento de Dano do Arataki Kesagiri"
+  },
+  "c1": {
+    "initialGain": "Cargas de Superforça Superlativa ganhas.",
+    "timedGain": "Após 1s, cargas de Superforça Superlativa ganhas a cada 0,5s por 1,5s"
+  },
+  "c4": {
+    "name": "Após o estado de Rei Oni Furioso terminar"
+  }
+}

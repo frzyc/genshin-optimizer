@@ -1,0 +1,11 @@
+{
+  "edit": "Editar Arma",
+  "weaponName": "Nome da Arma",
+  "removeWeapon": "Tem certeza de que quer excluir {{value}}?",
+  "addWeapon": "Adicionar Arma",
+  "showingNum": {
+    "one": "Mostrando <1>{{count}}</1> de {{value}} Arma",
+    "other": "Mostrando <1>{{count}}</1> de {{value}} Armas"
+  },
+  "cantDeleteLock": "Não é possível excluir a arma, pois ela está trancada"
+}

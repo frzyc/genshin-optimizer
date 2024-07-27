@@ -1,0 +1,46 @@
+{
+  "intro": "Kalkulator <strong>ultimate</strong> <3><i>Genshin Impact</i></3>, GO akan melacak inventaris artefak/senjata/karakter kamu, dan membantu kamu untuk membuat build terbaik berdasarkan cara kamu bermain, dengan apa yang kamu miliki.",
+  "quickLinksCard": {
+    "title": "Link Cepat",
+    "buttons": {
+      "tyGuide": {
+        "title": "Playlist Panduan Youtube",
+        "tooltip": "Pelajari cara menggunakan Genshin Optimizer"
+      },
+      "scanners": {
+        "title": "Scanner Otomatis",
+        "tooltip": "Program pihak ke-3 yang secara otomatis memindai artefak dari game"
+      },
+      "kqm": {
+        "title": "KeqingMains",
+        "tooltip": "Theorycrafting & panduan komunitas"
+      },
+      "devDiscord": {
+        "title": "Genshin Dev Discord",
+        "tooltip": "Komunitas developer untuk Genshin"
+      },
+      "good": {
+        "title": "GOPD documentation",
+        "tooltip": "Dokumentasi Deskriptor Objek Terbuka Genshin"
+      },
+      "patchNotes": {
+        "title": "Genshin Optimizer Patch Notes",
+        "tooltip": "Semua patch notes untuk GO"
+      }
+    }
+  },
+  "inventoryCard": {
+    "title": "GO inventori"
+  },
+  "vidGuideCard": {
+    "title": "Video Panduan"
+  },
+  "teamCard": {
+    "title": "Temu Tim",
+    "jobTitle": {
+      "leadDev": "Lead Developer",
+      "dev": "Developer",
+      "mod": "Moderator"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "SprawlingGreenery": {
+    "cond2ele": "<pyro>燃焼</pyro>、<spread>原激化</spread>、または<bloom>開花</bloom>反応を発動後",
+    "cond3ele": "<aggravate>超激化</aggravate>、<spread>草激化</spread>、<hyperbloom>超開花</hyperbloom>、または<burgeon>烈開花</burgeon>反応を発動後"
+  },
+  "EnduringRock": {
+    "hitCond": "キャラクターがシールドで守られている時、敵にダメージを与えた後"
+  }
+}

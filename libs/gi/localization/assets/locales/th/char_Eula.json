@@ -1,0 +1,13 @@
+{
+  "burstC": {
+    "name": "Lightfall Sword",
+    "start5": "เริ่มต้นที่ 5 stacks",
+    "addStacks": "โอกาส 50% ที่จะได้รับ stacks เพิ่มเติมจากสกิลธาตุ และท่าไม้ตาย",
+    "dmg": "ความเสียหายการระเบิดของ Lightfall Sword"
+  },
+  "c1C": {
+    "name": "Consume <strong>Grimheart</strong> stacks",
+    "durationStack": "6 วินาที + 6 วินาที ต่อ stack สูงสุด 18 วินาที"
+  },
+  "passive1": "Shattered Lightfall Sword DMG"
+}

@@ -1,0 +1,12 @@
+{
+  "burstC": {
+    "name": "Kiếm Ánh Sáng",
+    "start5": "Bắt đầu ở 5 tầng",
+    "addStacks": "50% cơ hội nhận thêm mỗi tầng"
+  },
+  "c1C": {
+    "name": "Sau khi hiệu quả <strong>Trái Tim Băng Giá</strong> bị tiêu hao",
+    "durationStack": "6s + 6s mỗi tầng, tối đa 18s"
+  },
+  "passive1": "Sát thương Kiếm Ánh Sáng"
+}

@@ -1,0 +1,90 @@
+{
+  "addNew": "Ajouter un personnage",
+  "tabs": {
+    "overview": "Vue d'ensemble",
+    "talent": "Talents",
+    "optimize": "Optimiser",
+    "theorycraft": "La théorie de l'art"
+  },
+  "formulas": "Formules",
+  "calculations": "Calculs",
+  "selectCharacter": "Sélectionner un personnage",
+  "removeCharacter": "Êtes-vous sûr de vouloir supprimer {{value}} ?",
+  "delete": "Supprimer un caractère",
+  "teammates": "Coéquipiers",
+  "hitmode": {
+    "hit": "Non-CRIT Hit DMG",
+    "avgHit": "Avg. DMG",
+    "critHit": "CRIT Hit DMG"
+  },
+  "tabEquip": {
+    "swapWeapon": "Échange d'armes",
+    "swapArt": "Échanger un artefact",
+    "compare": "Comparaison avec la construction actuelle",
+    "unequipArts": "Déséquiper tous les artefacts"
+  },
+  "characterName": "Nom du personnage",
+  "teammate": "Coéquipier {{count}}",
+  "noReaction": "Aucune réaction",
+  "multiTarget": {
+    "title": "Configuration de la cible d'optimisation multiple",
+    "addNewTarget": "Ajouter une cible",
+    "addNewMTarget": "Créer un Multi-Opt",
+    "info1": "Remarque : les cibles de multi-optimisation créées par la communauté peuvent être trouvées dans le <1>GO Discord</1> ou <3>KQM's Multi-Optimization Guide</3>, mais la validité de ces configurations ne peut pas être garantie.",
+    "info2": "Il est de la responsabilité de l'utilisateur de s'assurer que les configurations représentent bien son cas d'utilisation.",
+    "description": "Description",
+    "duplicate": "Duplicata",
+    "target": {
+      "one": "<0>{{count}}</0> Cible",
+      "other": "Ajouter une cible"
+    }
+  },
+  "addStats": {
+    "title": "Configuration de l'ennemi + statistiques bonus",
+    "info": "Vous pouvez utiliser ces champs pour ajouter des buffs/débuffs qui ne sont pas directement pris en charge dans GO, comme les buffs de nourriture, les cartes Abyss ou Superconduct. Veuillez vous référer au <1>Genshin Impact Wiki</1> pour les valeurs spécifiques.",
+    "label": "Nouvelle Stat Bonus"
+  },
+  "tabTheorycraft": {
+    "substatType": {
+      "min": "Utiliser un minimum de rouleaux de substitution",
+      "max": "Utiliser le maximum de rouleaux de sous-produits",
+      "mid": "Utiliser des rouleaux de sous-mat médians"
+    },
+    "maxTotalRolls": "Une construction \"valide\" ne peut avoir qu'un maximum de 45 rouleaux.",
+    "maxRolls": "Ce substat peut avoir un maximum de 30 rouleaux.",
+    "maxRollsMain": "Parce qu'au moins une stat principale a le même attribut, cette sous-stat peut avoir un maximum de {{valeur}} rouleaux.",
+    "distribute": "Distribuer",
+    "compareToggle": {
+      "equipped": "Comparé avec équipé"
+    },
+    "copyDialog": {
+      "title": "Copier les données des armes et artefacts équipés ?"
+    },
+    "kqmsDialog": {
+      "kqmsBtn": "Utiliser KQMS",
+      "title": "Utiliser KQMS?"
+    },
+    "gcsimDialog": {
+      "title": "Export gcsim",
+      "copied": "Copier la config gcsim dans le press-papier."
+    },
+    "substat": {
+      "max": "Max"
+    },
+    "optAlert": {
+      "feasibilty": "Il peut y avoir des substats supplémentaires qui devraient être distribuées aux statistiques sans scaling pour garantir que la solution est réalisable."
+    },
+    "constraint": {
+      "title": "Contrainte de Stat",
+      "add": "Ajouter une Contrainte de Stat"
+    }
+  },
+  "tabTeambuff": {
+    "team_reso": "Résonance de l'équipe",
+    "resonance_tip": "Le groupe doit être composé de 4 personnages pour que la résonance élémentaire prenne effet."
+  },
+  "showingNum": {
+    "one": "Afficher <1>{{count}}</1> sur {{value}} Caractère",
+    "other": "Formules"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "burst": {
+    "lifeDrain_": "Drain de vie",
+    "currentHPPerSec": "(HP/s actuels)",
+    "incJump": "Augmentation considérable de la hauteur de saut",
+    "inBurst": "Sous les effets de <strong>Bane of All Evil</strong>",
+    "stack": "Temps passé dans <strong>Bane of All Evil</strong>"
+  },
+  "skillStack": "Utilisations passées de <strong>Lemniscatic Wind Cycling</strong>."
+}

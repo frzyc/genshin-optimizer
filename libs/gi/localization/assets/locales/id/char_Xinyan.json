@@ -1,0 +1,25 @@
+{
+  "skill": {
+    "pyroShield": {
+      "1": "Absorpsi Shield Pyro DMG Level 1",
+      "2": "Absorpsi Shield Pyro DMG Level 2",
+      "3": "Absorpsi Shield Pyro DMG Level 3"
+    }
+  },
+  "p1": {
+    "desc": "Mengurangi kuota hit untuk <strong>Sweeping Fervor</strong> sebanyak 1"
+  },
+  "p2": {
+    "activeShield": "Karakter dilindungi oleh <strong>Sweeping Fervor</strong>"
+  },
+  "c2": {
+    "key_": "<strong>Riff Revolution</strong> Physical DMG CRIT Rate Bonus",
+    "shield": "Bentuk Level 3: Rave Shield saat dilemparkan"
+  },
+  "c4": {
+    "swingHit": "Musuh terkena <pyro>Swing DMG</pyro>"
+  },
+  "c6": {
+    "duringCharge": "Melakukan Charged Attack"
+  }
+}

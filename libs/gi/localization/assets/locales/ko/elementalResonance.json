@@ -1,0 +1,9 @@
+{
+  "SprawlingGreenery": {
+    "cond2ele": "연소, 활성, 개화 반응 발동",
+    "cond3ele": "촉진, 발산, 만개, 발화 반응 발동"
+  },
+  "EnduringRock": {
+    "hitCond": "보호막이 존재하는 동안 적에게 피해를 가함"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "electroSigil": "Selos Electro",
+  "electroSigilAbsorbed": "Energia regenerada ao converter os Selos Electro",
+  "opHitWithClawAndThunder": "Inimigo foi atingidos pela <strong>Garra e Trovão</strong> (Pressionada)",
+  "electroSigilPerProc": "Selos Electro por Ativação",
+  "soulCompanion": {
+    "1": "Dano do 1º Golpe do Espírito do Lobo",
+    "2": "Dano do 2º Golpe do Espírito do Lobo",
+    "3": "Dano do 3º Golpe do Espírito do Lobo",
+    "4": "Dano do 4º Golpe do Espírito do Lobo"
+  }
+}

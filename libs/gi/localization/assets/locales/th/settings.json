@@ -1,0 +1,27 @@
+{
+  "title": "ตั้งค่า",
+  "languageCard": {
+    "languageFormat": "ภาษา: {{language}}"
+  },
+  "uploadCard": {
+    "title": "อัปโหลดฐานข้อมูล",
+    "replaceDatabase": "แทนที่ฐานข้อมูลเก่า",
+    "hint": "อัปโหลดไฟล์ JSON ของคุณที่นี่...",
+    "hintPaste": "...หรือวางข้อมูลของคุณด้านล่าง",
+    "dbSource": "แหล่งข้อมูล:",
+    "goodUpload": {
+      "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
+    }
+  },
+  "count": {
+    "chars": "ตัวละคร:",
+    "arts": "อาร์ติแฟกต์:",
+    "weapons": "อาวุธ:",
+    "total": "ทั้งหมด:",
+    "new": "มาใหม่:",
+    "updated": "อัพเดต:",
+    "removed": "ลบออก:",
+    "unchanged": ":ไม่เปลี่ยนแปลง",
+    "invalid": ":ไม่ถูกต้อง"
+  }
+}

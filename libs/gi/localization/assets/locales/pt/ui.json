@@ -1,0 +1,69 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Artefatos",
+    "characters": "Personagens",
+    "tools": "Ferramentas",
+    "weapons": "Armas",
+    "doc": "Docs",
+    "setting": "Ajustes",
+    "scanner": "Scanners"
+  },
+  "social": {
+    "paypal": "PayPal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "unselect": "Desmarcar",
+  "ascending": "Crescente",
+  "descending": "Decrescente",
+  "loading": "Carregando...",
+  "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado da HoYoverse.",
+  "appVersion": "$t(pageTitle) Versão: <1>{{version}}</1>",
+  "error": "Erro",
+  "reset": "Redefinir",
+  "info": "Informações",
+  "inventory": "Inventário",
+  "close": "Fechar",
+  "sortMap": {
+    "new": "Novo",
+    "name": "Nome",
+    "level": "Nível",
+    "rarity": "Raridade",
+    "efficiency": "RV Atual",
+    "mefficiency": "RV Máximo",
+    "artsetkey": "Conjunto de Artefatos"
+  },
+  "link": {
+    "download": "Link para Download",
+    "discord": "Convite do Servidor Discord"
+  },
+  "sortBy": "Ordenar por: ",
+  "delete": "Excluir",
+  "locked": "Trancado",
+  "unlocked": "Destrancado",
+  "refinement": "Refinamento {{value}}",
+  "selectlevel": "Selecionar Nível",
+  "gender": {
+    "F": "Feminino",
+    "M": "Masculino"
+  },
+  "statGroupKey": {
+    "basic_stats": "Atributos Básicos",
+    "elem_dmg_bonus": "Bônus de Dano Elemental",
+    "enemy_debuffs": "Malefícios Inimigos",
+    "self_res": "Resistências Pessoais",
+    "reaction_dmg_bonus": "Bônus de Dano de Reação",
+    "reaction_crit": "Bônus do Crítico de Reações",
+    "elem_dmgInc": "Aumentos de Dano Elemental",
+    "talent_dmgInc": "Aumentos de Dano do Talento",
+    "elem_crit": "Bônus de Crítico Elemental",
+    "talent_dmg_bonus": "Bônus de Dano de Talento",
+    "talent_crit": "Bônus de Crítico de Talento",
+    "talent_level_boost": "Bônus do Nível de Talento",
+    "base_stat_mod": "Modificação dos Atributos Base",
+    "stamina_buffs": "Efeitos de Stamina",
+    "misc": "Outros Atributos"
+  },
+  "sillyPageTitle": "Silly Optimizer"
+}

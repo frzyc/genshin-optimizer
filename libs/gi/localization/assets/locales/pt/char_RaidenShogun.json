@@ -1,0 +1,20 @@
+{
+  "skill": {
+    "eye": "Carregando o Olho do Julgamento Tempestuoso",
+    "partyCost": "Custo de Energia"
+  },
+  "burst": {
+    "resolves": "Acúmulos de Determinação",
+    "resolveInitial_": "<electro>Bônus do Multiplicador do Musou no Hitotachi</electro>",
+    "resolveInfused_": "<electro>Bônus do Multiplicador do Musou Isshin</electro>",
+    "burstDmg": "Dano do Musou no Hitotachi",
+    "active": "No estado  de <strong>Musou Isshin</strong>"
+  },
+  "a4": {
+    "enerRest": "Regeneração de Energia Adicional do <strong>Musou Isshin</strong>",
+    "eleDMG": "Bônus de Dano Electro"
+  },
+  "c4": {
+    "expires": "Após o estado <strong>Musou Isshin</strong> expirar"
+  }
+}

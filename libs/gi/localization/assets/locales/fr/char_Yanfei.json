@@ -1,0 +1,33 @@
+{
+  "seals": [
+    "0 sceau",
+    "1 joint",
+    "2 joints",
+    "3 joints",
+    "4 joints"
+  ],
+  "perSeal": "(par scellé)",
+  "maxSeals": "Nombre maximal de phoques écarlates",
+  "charged": {
+    "0": "0-Seal DMG",
+    "1": "1-Seal DMG",
+    "2": "DMG à 2 scellés",
+    "3": "3 scellés DMG",
+    "4": "DMG à 4 scellés"
+  },
+  "burst": {
+    "grantMax": "Octroie le nombre maximum de sceaux écarlates"
+  },
+  "passive1": {
+    "sealsConsumed": "Sceaux consommés par l'utilisation d'une attaque chargée"
+  },
+  "passive2": {
+    "key": "Œil flamboyant DMG"
+  },
+  "c1": {
+    "sealChargedStam_": "Diminution de la consommation d'endurance de l'attaque chargée"
+  },
+  "c6": {
+    "maxSealInc": "Augmentation du nombre maximal de sceaux écarlates"
+  }
+}

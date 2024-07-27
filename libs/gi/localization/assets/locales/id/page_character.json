@@ -1,0 +1,56 @@
+{
+  "addNew": "Tambah Karakter Baru",
+  "tabs": {
+    "overview": "Overview",
+    "talent": "Talenta",
+    "optimize": "Optimize",
+    "theorycraft": "Theorycraft"
+  },
+  "formulas": "Formula",
+  "calculations": "Perhitungan",
+  "selectCharacter": "Pilih Karakter",
+  "removeCharacter": "Kamu yakin ingin menghapus {{value}}?",
+  "delete": "Hapus Karakter",
+  "teammates": "Teammates",
+  "hitmode": {
+    "hit": "Non Crit DMG",
+    "avgHit": "Avg. DMG",
+    "critHit": "Crit Hit DMG"
+  },
+  "tabEquip": {
+    "swapWeapon": "Ganti Senjata",
+    "swapArt": "Ganti Artefak",
+    "compare": "Bandingkan dengan Build saat ini",
+    "unequipArts": "Copot semua artefak"
+  },
+  "characterName": "Nama Karakter",
+  "teammate": "Teammate {{count}}",
+  "noReaction": "Tanpa Reaksi",
+  "multiTarget": {
+    "title": "Konfigurasi Target Multi-Optimasi",
+    "addNewTarget": "Tambah Kustom target Baru",
+    "addNewMTarget": "Tambah Kustom Multi-target Baru",
+    "info1": "Catatan: Multi-Optimization Targets kustom buatan komunitas dapat ditemukan dalam <1>GO Discord</1> atau <3>KQM Multi-Opt Guide</3>, namun validitas konfigurasi tersebut tidak dapat dijamin.",
+    "info2": "Pengguna bertanggung jawab untuk mengonfirmasi keakuratan untuk kasus penggunaan mereka sendiri.",
+    "description": "Deskripsi",
+    "duplicate": "Duplikat"
+  },
+  "addStats": {
+    "title": "Konfigurasi Musuh + Bonus Stats",
+    "info": "Kamu dapat menggunakan kolom ini untuk menambahkan buff/debuff yang tidak didukung secara langsung di GO, seperti buff makanan, kartu abyss, atau Superconduct. Lihat <1>Genshin Impact wiki</1> untuk mengetahui nilai spesifiknya."
+  },
+  "tabTheorycraft": {
+    "substatType": {
+      "min": "Gunakan roll substat minimum",
+      "max": "Gunakan roll substat maksimum",
+      "mid": "Gunakan roll substat median"
+    },
+    "maxTotalRolls": "Build \"valid\" hanya dapat memiliki maksimal 45 roll.",
+    "maxRolls": "Substat ini dapat memiliki maksimal 30 roll.",
+    "maxRollsMain": "Karena setidaknya satu mainstat memiliki stat yang sama, substat ini dapat memiliki maksimal {{value}} roll"
+  },
+  "tabTeambuff": {
+    "team_reso": "Team Resonance",
+    "resonance_tip": "Party harus penuh dengan 4 karakter agar resonansi elemen dapat diterapkan."
+  }
+}

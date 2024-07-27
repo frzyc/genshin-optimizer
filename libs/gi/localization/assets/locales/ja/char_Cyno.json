@@ -1,0 +1,9 @@
+{
+  "p1Dmg": "渡荒の雷ダメージ",
+  "judication": "裁定効果発動",
+  "burstNormalDmgInc": "啓途誓使状態の通常攻撃ダメージアップ",
+  "boltDmgInc": "渡荒の雷ダメージアップ",
+  "duringBurst": "<strong>啓途誓使</strong>状態",
+  "afterBurstOrJudication": "<strong>聖儀・狼駆憑走</strong>発動後、または裁定効果を起こした時",
+  "a1soulfarer_dmg_": "律淵渡魂ダメージボーナス"
+}

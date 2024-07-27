@@ -1,0 +1,12 @@
+{
+  "a1": {
+    "condName": "Après avoir tiré une flèche de givre",
+    "critRateInc": "Augmentation du taux CRIT des zones de givre"
+  },
+  "c1": {
+    "condName": "L'adversaire a subi les DMG d'une Flèche de givre ou d'une Zone de givre"
+  },
+  "c4": {
+    "lingerDuration": "Durée supplémentaire de l'effet"
+  }
+}

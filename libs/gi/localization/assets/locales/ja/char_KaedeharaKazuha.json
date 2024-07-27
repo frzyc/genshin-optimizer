@@ -1,0 +1,8 @@
+{
+  "c1": "<strong>万葉の一刀</strong>を発動後、クールタイムがリセット",
+  "c2": "流風秋野発動中",
+  "c6": {
+    "after": "<strong>千早振る</strong>または<strong>万葉の一刀</strong>を発動後"
+  },
+  "skillPlunge": "乱れ嵐斬"
+}

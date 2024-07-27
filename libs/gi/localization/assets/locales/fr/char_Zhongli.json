@@ -1,0 +1,10 @@
+{
+  "skill": {
+    "stele": "Stèle en pierre DMG",
+    "resonance": "Résonance DMG",
+    "maxStele": "Nombre maximal de stèles",
+    "nearShield": "L'ennemi est près du <strong>Bouclier de Jade</strong>"
+  },
+  "p1cond": "Après que le <strong>Bouclier de Jade</strong> a pris des DMG",
+  "c6heal": "Régénération maximale de la santé"
+}

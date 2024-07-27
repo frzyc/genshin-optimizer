@@ -1,0 +1,22 @@
+{
+  "skill": {
+    "dance1": "검의 춤 1단 피해",
+    "dance2": "검의 춤 2단 피해",
+    "whirl1": "선회의 춤 1단 피해",
+    "whirl2": "선회의 춤 2단 피해",
+    "wheel": "수륜 피해",
+    "illusion": "물의 달 피해"
+  },
+  "passive1": {
+    "underChaliceEffect": "황금잔의 선물 효과 부여",
+    "notDendroHydroTeam": "힌트: 부가적인 조건과 효과를 보려면 파티를 풀과 물 캐릭터로만 구성하세요",
+    "condName": "황금잔의 선물 효과를 부여받은 캐릭터가 <dendro>풀 원소 공격</dendro>을 받음",
+    "bountifulCores": "개화 반응 발동시 풍요의 핵 생성"
+  },
+  "c4": {
+    "condName": "사뿐한 회전 상태에서 세 번째 춤이 적을 명중"
+  },
+  "c1": {
+    "illusion_dmg_": "물의 달 피해량 증가"
+  }
+}

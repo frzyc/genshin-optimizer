@@ -1,0 +1,51 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Артефакты",
+    "characters": "Персонажи",
+    "tools": "Инструменты",
+    "weapons": "Оружия",
+    "doc": "Документация",
+    "setting": "Настройки",
+    "scanner": "Сканеры"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "unselect": "Отменить",
+  "ascending": "По возрастанию",
+  "descending": "По убыванию",
+  "loading": "Загрузка...",
+  "rightsDisclaimer": "Genshin Optimizer не сотрудничает и не поддерживается HoYoverse.",
+  "appVersion": "$t(pageTitle) Версия: {{version}}",
+  "error": "Ошибка",
+  "reset": "Сбросить",
+  "info": "Информация",
+  "inventory": "Инвентарь",
+  "close": "Закрыть",
+  "sortMap": {
+    "new": "Новое",
+    "name": "Имя",
+    "level": "Уровень",
+    "rarity": "Редкость",
+    "efficiency": "Текущая ЦР",
+    "mefficiency": "Максимальная ЦР",
+    "artsetkey": "Набор артефактов"
+  },
+  "link": {
+    "download": "Ссылка на скачивание",
+    "discord": "Приглашение в Discord"
+  },
+  "sortBy": "Сортировать по:",
+  "delete": "Удалить",
+  "locked": "Заблокировано",
+  "unlocked": "Разблокировано",
+  "refinement": "Ранг пробуждения {{value}}",
+  "selectlevel": "Выбрать Уровень",
+  "gender": {
+    "F": "Женский",
+    "M": "Мужской"
+  }
+}

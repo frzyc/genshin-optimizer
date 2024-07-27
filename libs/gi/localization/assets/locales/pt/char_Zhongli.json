@@ -1,0 +1,10 @@
+{
+  "skill": {
+    "stele": "Dano da Estala de Pedra",
+    "resonance": "Dano da Ressonância",
+    "maxStele": "Número máximo de Estelas",
+    "nearShield": "Inimigos estão perto do <strong>Escudo de Jade</strong>"
+  },
+  "p1cond": "O <strong>Escudo de Jade</strong> recebeu Dano",
+  "c6heal": "Regeneração Máxima de Vida"
+}

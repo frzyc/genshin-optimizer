@@ -1,0 +1,10 @@
+{
+  "burst": {
+    "lifeDrain_": "HP減少",
+    "currentHPPerSec": "（1秒当たりの現HP）",
+    "incJump": "ジャンプ力が大幅にアップ",
+    "inBurst": "<strong>靖妖儺舞</strong>状態",
+    "stack": "<strong>靖妖儺舞</strong>状態での継続時間"
+  },
+  "skillStack": "<strong>風輪両立</strong>発動数"
+}

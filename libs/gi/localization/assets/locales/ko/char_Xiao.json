@@ -1,0 +1,10 @@
+{
+  "burst": {
+    "lifeDrain_": "HP 유실",
+    "currentHPPerSec": "(초당 현재 HP 대비)",
+    "incJump": "점프력 대폭 상승",
+    "inBurst": "<strong>나자의 춤</strong> 상태인 동안",
+    "stack": "<strong>나자의 춤</strong> 상태인 시간"
+  },
+  "skillStack": "<strong>풍륜양립</strong> 사용 횟수"
+}

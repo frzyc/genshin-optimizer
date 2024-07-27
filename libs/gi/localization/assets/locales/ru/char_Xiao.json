@@ -1,0 +1,10 @@
+{
+  "burst": {
+    "lifeDrain_": "Потеря HP",
+    "currentHPPerSec": "(HP/сек)",
+    "incJump": "Значительно усиливает прыжки",
+    "inBurst": "Под воздействием <strong>Истребления всего зла</strong>",
+    "stack": "Времени проведено в <strong>Истреблении всего зла</strong>"
+  },
+  "skillStack": "Использований <strong>Лемниската ветра</strong>"
+}

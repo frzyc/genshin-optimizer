@@ -1,0 +1,20 @@
+{
+  "skill": {
+    "unableToAuto": "강공격 및 낙하공격 사용 불가",
+    "namisenStacks": "번쩍이는 파도 중첩",
+    "shun_dmgInc": "<hydro>순수검 피해량 증가</hydro>"
+  },
+  "passive1": {
+    "afterUse": "스킬 사용 후 획득하는 번쩍이는 파도 스택",
+    "afterExplode": "물의 잔영이 파괴된 후 획득하는 번쩍이는 파도 스택"
+  },
+  "c1": {
+    "shun_dmg_": "<hydro>순수검 피해량 증가</hydro>"
+  },
+  "c2": {
+    "addlStacks": "번쩍이는 파도의 최대 스택 증가"
+  },
+  "c6": {
+    "dmg": "끝없는 기원 피해"
+  }
+}

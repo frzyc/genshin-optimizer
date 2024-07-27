@@ -1,0 +1,10 @@
+{
+  "burstHits": "Número de activaciones de Tejón daruma",
+  "p2Heal": "Curación de personaje cercano",
+  "c1Text": "Tejón daruma ignorará el límite de Vida y atacará a los enemigos cercanos y curará personajes",
+  "c2KickPressDmg_": "Bono de Daño de Tornadopatada al pulsar una vez",
+  "c2KickDmg_": "Bono de Daño de Tornadopatada",
+  "c2Cond": "Tiempo usado en el estado <strong>Rueda de viento</strong>",
+  "c6DarumaDmgInc": "Aum. de Daño de Tejón daruma",
+  "c6DarumaHealInc": "Aum. de Curación de Tejón daruma"
+}

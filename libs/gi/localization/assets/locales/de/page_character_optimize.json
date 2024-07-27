@@ -1,0 +1,24 @@
+{
+  "allowPartial": "Erlaube Teil-Builds (<5 Artefakte)",
+  "constraintFilter": {
+    "title": "Build-Beschränkungen",
+    "tooltip": "Lege bestimmte Anforderungen fest, die generierte Builds erfüllen müssen. z.B. generierte Builds müssen mindestens 140% Aufladerate haben."
+  },
+  "artSetConfig": {
+    "2rainbow": "3-Regenbogen",
+    "4rainbow": "5-Regenbogen",
+    "alExRainbow": "<0>Erlaube <1></1></0> / <2>Sperre <1></1></2> Regenbogen-Builds",
+    "modal": {
+      "setCond": {
+        "text": "Einige Artefakt-Set-Effekte bieten bedingte Stats. In diesem Fenster kannst du diese Effekte auswählen, so dass sie bei der Berechnung eines Builds, der einen Set-Effekt erfüllt, während der Optimierung Werte beitragen können."
+      },
+      "ArtSetFilter": {
+        "intro": "Du kannst erlauben/sperren, welche Sets der Builder berücksichtigen soll. In den folgenden Beispielen ist <strong>A</strong> on-set und <strong>R</strong> Regenbogen(off-set)",
+        "2set": "<0><0>Sperre<1></1> 2-Set</0></0> würde 2-Set-Builds ausschließen: <2><0>AA</0>RRR</2> und <4><0>AAA</0>RR</4>.",
+        "4set": "<0><0>Sperre<1></1> 4-Set</0></0> würde 4-Set-Builds ausschließen: <2><0>AAAA</0>R</2> und <4><0>AAAAA</0></4>.",
+        "2rain": "<0><0>Sperre<1></1> 3-Regenbogen</0></0> würde 2-Set + 3-Regenbogen-Builds ausschließen: <2>AA<1>RRR</1></2> und <4>AAA<1>RR</1></4>.",
+        "4rain": "<0><0>Sperre<1></1> 5-Regenbogen</0></0> würde vollständige 5-Regenbogen-Builds ausschließen: <2><0>RRRRR</0></2>."
+      }
+    }
+  }
+}

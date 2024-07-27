@@ -1,0 +1,56 @@
+{
+  "addNew": "添加新角色",
+  "tabs": {
+    "overview": "概览",
+    "talent": "天赋",
+    "optimize": "优化",
+    "theorycraft": "理论分析"
+  },
+  "formulas": "公式",
+  "calculations": "计算",
+  "selectCharacter": "选择角色",
+  "removeCharacter": "你确定要移除{{value}}吗？",
+  "delete": "删除角色",
+  "teammates": "队友",
+  "hitmode": {
+    "hit": "非暴击伤害",
+    "avgHit": "平均伤害",
+    "critHit": "暴击伤害"
+  },
+  "tabEquip": {
+    "swapWeapon": "交换武器",
+    "swapArt": "交换圣遗物",
+    "compare": "与当前搭配对比",
+    "unequipArts": "卸下所有圣遗物"
+  },
+  "characterName": "角色名称",
+  "teammate": "队友 {{count}}",
+  "noReaction": "无反应",
+  "multiTarget": {
+    "title": "多重优化目标配置",
+    "addNewTarget": "添加新的自定义目标",
+    "addNewMTarget": "添加新的自定义多重目标",
+    "info1": "说明：社区创建的自定义多重优化目标可以在<1>GO Discord</1>或者<3>KQM多重优化指南</3>找到，不过我们不保证这些配置的有效性。",
+    "info2": "用户有责任自行判断其准确性。",
+    "description": "描述",
+    "duplicate": "复制"
+  },
+  "addStats": {
+    "title": "怪物配置与增益状态",
+    "info": "你可以使用这些选项来添加GO没有直接支持的buff/debuff，比如食物buff，深渊卡片，或者超导，具体数值请参考<1>原神wiki</1>。"
+  },
+  "tabTheorycraft": {
+    "substatType": {
+      "min": "使用最低副词条数值",
+      "max": "使用最高副词条数值",
+      "mid": "使用中等副词条数值"
+    },
+    "maxTotalRolls": "一套“有效”配置最多只能有45条副词条。",
+    "maxRolls": "这个副词条最多只能有30条。",
+    "maxRollsMain": "因为至少一项主词条具有相同属性，这项副词条最多只能有{{value}}条。"
+  },
+  "tabTeambuff": {
+    "team_reso": "队伍共鸣",
+    "resonance_tip": "为了使元素共鸣生效，队伍中必须有4名角色。"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "omen": "적이 포영 상태가 됨",
+  "hitOp": {
+    "affectedByOmen": "포영 상태의 적에게 피해를 줌"
+  },
+  "frozenDuration": "<cryo>빙결</cryo> 반응 지속 시간",
+  "uponSprint": "흐르는 허와 실 상태 진입후"
+}

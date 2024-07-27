@@ -1,0 +1,12 @@
+{
+  "addAimed": "Tambahan DMG Membidik",
+  "addFullAimed": "Tambahan DMG Membidik Penuh",
+  "upcurrentDuration": "Durasi Arus Angin",
+  "regenEner": "Memulihkan 15 Energy ke Venti setelah efek berakhir",
+  "c6": "Target yang menerima DMG dari <strong>Wind's Grand Ode</strong>",
+  "q": "Memulihkan 15 Energi ke anggota party yang memiliki elemen tersebut.",
+  "c2": {
+    "hit": "Musuh di-Hit",
+    "launched": "Musuh terhempas"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "p1": "DMG Wind Blade",
+  "c6": "Musuh terkena <strong>Gust Surge</strong>",
+  "c4": "Mengurangi DMG yang diambil ketika casting",
+  "initialEleDmg": "DMG Absorpsi Initial Cutting",
+  "maxEleDmg": "DMG Absorpsi Pemotongan Maks",
+  "stormEleDmg": "DMG Absorpsi Initial Storm",
+  "stormEleMaxDmg": "DMG Absorpsi Storm Maks"
+}

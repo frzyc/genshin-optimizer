@@ -1,0 +1,68 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Artefak",
+    "characters": "Karakter",
+    "tools": "Alat",
+    "weapons": "Senjata",
+    "doc": "Docs",
+    "setting": "Pengaturan",
+    "scanner": "Scanner"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "unselect": "Batal pilih",
+  "ascending": "Urutkan Naik",
+  "descending": "Urutkan Menurun",
+  "loading": "Memuat...",
+  "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan HoYoverse",
+  "appVersion": "$t(pageTitle) Versi: <1>{{version}}</1>",
+  "error": "Error",
+  "reset": "Reset",
+  "info": "INFO",
+  "inventory": "Tas",
+  "close": "Tutup",
+  "sortMap": {
+    "new": "Baru",
+    "name": "Nama",
+    "level": "Level",
+    "rarity": "Kualitas",
+    "efficiency": "RV Saat Ini",
+    "mefficiency": "RV Maksimum",
+    "artsetkey": "Set Artefak"
+  },
+  "link": {
+    "download": "Link Download",
+    "discord": "Link Invite Discord"
+  },
+  "sortBy": "Urutkan Berdasarkan: ",
+  "delete": "Hapus",
+  "locked": "Terkunci",
+  "unlocked": "Tidak terkunci",
+  "refinement": "Refinement {{value}}",
+  "selectlevel": "Pilih Level",
+  "gender": {
+    "F": "Perempuan",
+    "M": "Laki-laki"
+  },
+  "statGroupKey": {
+    "basic_stats": "Basic Stats",
+    "elem_dmg_bonus": "Bonus DMG Elemental",
+    "enemy_debuffs": "Debuff Musuh",
+    "self_res": "Self Resistensi",
+    "reaction_dmg_bonus": "Bonus DMG Reaksi",
+    "reaction_crit": "Bonus Reaksi CRIT",
+    "elem_dmgInc": "Damage Elemental Meningkat",
+    "talent_dmgInc": "Damage Talenta Meningkat",
+    "elem_crit": "Bonus CRIT Elemental",
+    "talent_dmg_bonus": "Bonus DMG Talenta",
+    "talent_crit": "Bonus CRIT Talenta",
+    "talent_level_boost": "Peningkatan Level Talenta",
+    "base_stat_mod": "Modifikasi Stat Dasar",
+    "stamina_buffs": "Buff Stamina",
+    "misc": "Stats Lainnya"
+  }
+}

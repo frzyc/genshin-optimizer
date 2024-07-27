@@ -1,0 +1,8 @@
+{
+  "aoeGems": "Les attaques normales infligent des DGT de zone",
+  "starJadeStaminaCost": "L'attaque chargée de Ningguang ne consomme pas d'endurance tant que celle-ci possède des Jades d'étoile",
+  "skillReset": "Le TdR est annulé lorsque ce dernier est brisé, une fois toutes les 6s",
+  "a4toggle": "Après avoir traversé le Paravent d'astrolabe",
+  "c4toggle": "Dans un rayon de 10 mètres du Paravent d'astrolabe",
+  "c6bonus": "Jades d'étoile gagnées"
+}

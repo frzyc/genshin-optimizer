@@ -1,0 +1,9 @@
+{
+  "skill": {
+    "coil": "Bobine",
+    "rush": "Glace précipitée",
+    "rushState": "Temps passé en état de Glace précipitée"
+  },
+  "a1CondName": "Après avoir reçu l'effet d'une bobine",
+  "normCryoInfus": "<cryo>Normal Att. Infusion de cryogénie</cryo>"
+}

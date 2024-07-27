@@ -1,0 +1,82 @@
+{
+  "editor": {
+    "title": "Artefakt Editor",
+    "substat": {
+      "substatFormat": "Bonusattribut {{value}}",
+      "noSubstat": "Kein Bonusattribut",
+      "selectSub": "Bonusattribut auswählen",
+      "error": {
+        "noCalc": "Zufällige Aufwertungen konnten nicht automatisch bestimmt werden.",
+        "noOverRoll": "Bonusattribute können nicht mehr als {{value}}-mal aufgewertet werden."
+      },
+      "noRoll": "Keine zufälligen Aufwertungen",
+      "noStat": "Kein Wert",
+      "eff": "Effizenz: <1></1>"
+    },
+    "rarity": "Qualität",
+    "level": "Level",
+    "unknownPieceName": "Name nicht bekannt",
+    "curSubEff": "Aktuelle Rollwertung",
+    "curSubEffDesc": "Alle 4 Artefakt-Stufen, wird 1 zufälliges Bonusattribut erhöht. <strong>Rollwertung</strong> zeigt, wie hoch die Bonusattributsaufwertung prozentual ausgefallen ist.",
+    "maxSubEff": "Max. Rollwertung",
+    "maxSubEffDesc": "Die <strong>Maximale Bonusattributseffizienz</strong> eines Artefakts berechnet die Effizienz unter der Annahme, dass alle verbleibenden zufälligen Aufwertungen maximal gut ausfallen.",
+    "preview": "Artefaktvorschau",
+    "dupArt": "Artefaktduplikate entdeckt.",
+    "upArt": "Verstärktes Artefakt entdeckt.",
+    "beforeEdit": "Vor dem Bearbeiten",
+    "btnSave": "Artefakt sichern",
+    "btnAdd": "Artefakt hinzufügen",
+    "btnClear": "Eingaben löschen",
+    "btnRandom": "Zufällig ausfüllen",
+    "btnUpdate": "Artefakt aktualisieren",
+    "clearPrompt": "Artefakt in Bearbeitung. Soll die Eingabe abgebrochen werden?"
+  },
+  "artifactFilter": "Artefakt Filter",
+  "filterLocation": {
+    "inventory": "Inventar",
+    "currentlyEquipped": "Aktuell ausgerüstet"
+  },
+  "button": {
+    "unequipArtifacts": "Artefakte ablegen",
+    "deleteArtifacts": "Artefakte löschen",
+    "lockArtifacts": "Artefakte Sperren",
+    "unlockrtifacts": "Artefakte Entsperren"
+  },
+  "buttonHint": "Hinweis: Die oberen roten Knöpfe gelten nur für <1>gefilterte Artefakte</1>",
+  "tipsOfTheDay": [
+    "Die maximale RV eines 4-Stern Artefakts liegt bei rund 540%.",
+    "Die maximale RV eines Artefakts sinkt meist durch das Verstärken. Dies ist absolut normal!",
+    "Bonusattribute mit 1-en sind für Scanner in Screenshots am schwersten zu erkennen.",
+    "Wenn alle Verstärkungen(6) das selbe Bonusattribut aufwerten, so wird dieses in Lila angezeigt.",
+    "Klicke beim Verstärken der Artefakte auf \"Details\", um diese währenddessen zu scannen.",
+    "Du kannst nun mehrere Artefakt-Screenshots zum scannen hochladen!"
+  ],
+  "mainStat": "Hauptattribut",
+  "slot": "Platz",
+  "slotName": {
+    "flower": "Blume des Lebens",
+    "plume": "Feder des Todes",
+    "sands": "Sand der Zeit",
+    "goblet": "Kelch der Leere",
+    "circlet": "Haarreif der Vernunft"
+  },
+  "info": {
+    "title": "Anleitung zum Bearbeiten/Verwalten von Artefakten",
+    "section1": "<0>Zufällige Bonusattribut-Aufwertungen</0><1>Die <1>Anzahl zufälliger Aufwertungen</1> eines Bonusattributs steht lings vom Bonusattribut. Je höher diese Zahl, desto farbiger wird das Bonusattribut dargestellt:<3></3>.</1><2>Bonusattributseffizienz</2><3>Die Effizienz eines Bonusattributs ist eine prozentuale Angabe des aktuellen Werts in Bezug auf den höchstmöglichen 5<1></1> Wert. Bezogen auf das Bild ist der maximale KSCH einer Aufwertung 7,8%. Daraus resultiert die Effizienz: <3>5,8/7,8 = 69,2%.</3></3><4>Aktuelle Effizienz vs. Maximales Potential des Effizienz</4><5>Ein 5<1></1> Artefakt mit 9(4+5) zufälligen Aufwertungen, bei dem jede Aufwertung den höchstmöglichen Wert erhalten hat, besitzt 100% Effizienz. Die meisten Artefakte werden diese Effizienz nicht erreichen. Die <3>Aktuelle Effizienz</3> gib dabei an, wie nahe das Artefakt aktuell an dieser 100% Effizienz liegt. Die <5>Mazimale Effizienz</5> gibt an, wie Effizient dieses Artefakt wäre, wenn alle verbleibenden Auffwertungen den höchstmöglichen Wert erhalten würden.</5><6>Artefakte sperren</6><7>Wenn ein Artefakt gesperrt ist <1></1>, so wird dieses vom Build-Generator nicht verwendet. Ein ausgerüstetes Artefakt ist automatisch auch gesperrt.</7>",
+    "section2": "<0>Artefakt Editor</0><1>Ein vollwertiger Artefakt-Editor für 3<1></1> bis 5<3></3> Artefakte. Wenn Bonusattribute eingetragen werden, werden die Werte jeder einzelnen Aufwertung und die Höhe der Aufwertung berechnet und angezeigt. Zusätzlich wird das überprüft ob das eingegebene Artefakt die korrekte Stufe hat und ob sonstige Eigenschaften stimmen.</1><2>Screenshot einscannen</2><3>Manuelle Eingabe liegt dir nicht? Artefakte können auf einem Bild automatisiert erkannt werden! Ein Klick auf <1>Zeig mir wie!</1> gibt eine Einführung.</3><4>Automatischer Artefaktscanner</4><5>Falls du Genshin auf dem PC spielst kannst du dir ein Programm herunterladen welches automatisch alle deine Artefakt für dich einscannt, importieren kannst du diese Daten dann in <1></1> Einstellungen. <3>Klicke hier</3> für eine Liste aller mit GO kompatiblen Scanner.</5><6>Erkennung von Duplikaten / Aufwertungen</6><7>Wusstest du das GO erkennen kann wenn du ein <1>Artefaktduplikat</1>, welches bereits in deiner Datenbank vorhanden ist, hinzufügst? Es kann auch erkennen ob das Artefakt im Editor die <3>aufgewertete Version</3> eines bereits vorhandenen Artefakts ist. Falls ein Duplikat oder eine Aufwertung erkannt wird, werden dir beide relevanten Artefakte in einer Vorschau angezeigt damit du diese vergleichen kannst(Siehe Bild).</7>",
+    "section3": "<0>Artefakt Inventar</0><p>Hier sind alle Artefakte zu sehen, die zum Genshin Optimizer hinzugefügt wurden. Mit den Filtern kannst du die Auswahl an angezeigten Artefakte weiter verfeinern.</p><2>Beispiel: Finding Fodder Artifacts</2><p>Durch die Verwendung von Filtern und Effizenz-Berechnungen können schnell Artefakte gefunden werden, die zur Aufwertung anderer Artefakte verwendet werden können.</p><4>In diesem Beispiel sind die Filter wie folgt gesetzt: </4><5><0>Level zwischen 0 und 8.</0><1>Nicht gesperrte im Inventar.</1><2>Ausschluss von LP, VTD und Aufladerate aus der Berechnung der Effizienz.</2><3>Aufsteigend sortiert nach maximaler Effizienz.</3></5><p>Dies sortiert die Artefakte nach geringster Effizienz für die gewählten Bonusattribute.</p>"
+  },
+  "sortMap": {
+    "level": "Level",
+    "efficiency": "Aktuelle Rollwertung",
+    "mefficiency": "Maximale Rollwertung"
+  },
+  "efficiencyFilter": {
+    "title": "In Berechnung der Rollwertung zu berücksichtigende Bonusattribute"
+  },
+  "resetFilters": "Filter zurücksetzen",
+  "setEffectNum": "Set mit {{setNum}} Teilen",
+  "autocompleteLabels": {
+    "substats": "Bonusattribute"
+  }
+}

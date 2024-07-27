@@ -1,0 +1,49 @@
+{
+  "intro": "A <strong>melhor</strong> calculadora para o <3><i>Genshin Impact</i></3>. O GO lembrará dos seus artefatos, armas e personagens e vai te ajudar a criar a melhor build, baseado no seu estilo de jogo e nos itens que você possui.",
+  "quickLinksCard": {
+    "title": "Links Rápidos",
+    "buttons": {
+      "tyGuide": {
+        "title": "Playlist de Tutoriais no Youtube",
+        "tooltip": "Aprenda a usar o Genshin Optimizer"
+      },
+      "scanners": {
+        "title": "Scanners Automáticos",
+        "tooltip": "Programas de terceiros que escaneiam automaticamente os artefatos no seu jogo"
+      },
+      "kqm": {
+        "title": "KQM",
+        "tooltip": "Comunidade de tutoriais e Theorycraft"
+      },
+      "devDiscord": {
+        "title": "Discord dos Devs Genshin",
+        "tooltip": "Comunidade de desenvolvedores de programas para o Genshin"
+      },
+      "good": {
+        "title": "Documentação do GOOD",
+        "tooltip": "Documentação do Genshin Open Object Descriptor"
+      },
+      "patchNotes": {
+        "title": "Histórico de Versões do Genshin Optimizer",
+        "tooltip": "Todas as Notas de Atualização do GO"
+      }
+    }
+  },
+  "inventoryCard": {
+    "title": "Inventário do GO"
+  },
+  "vidGuideCard": {
+    "title": "Tutoriais em Vídeo"
+  },
+  "teamCard": {
+    "title": "Conheça a Equipe",
+    "jobTitle": {
+      "leadDev": "Desenvolvedor Principal",
+      "dev": "Desenvolvedor",
+      "mod": "Moderador",
+      "admin": "Admin",
+      "translator": "Diretor de Tradução (ele, aqui!)",
+      "TC": "Correspondente de TC"
+    }
+  }
+}

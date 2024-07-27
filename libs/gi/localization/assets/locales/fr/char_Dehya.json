@@ -1,0 +1,7 @@
+{
+  "inFieldAndTakeDmg": "Lorsqu'un personnage actif subit des dégâts dans le champ du Sanctuaire ardent",
+  "field_dmg_": "Bonus DMG du Sanctuaire ardent",
+  "initialHeal": "Guérison initiale",
+  "dotHeal": "Guérison supplémentaire",
+  "critHitDuringBurst": "Après que Poing de Mane enflammé a infligé un Hit CRIT"
+}

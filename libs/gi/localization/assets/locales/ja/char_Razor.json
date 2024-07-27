@@ -1,0 +1,12 @@
+{
+  "electroSigil": "雷の印",
+  "electroSigilAbsorbed": "消費された雷の印は元素エネルギーに変換される",
+  "opHitWithClawAndThunder": "敵に<strong>鋭い爪と蒼雷</strong> をヒット",
+  "electroSigilPerProc": "発動ごとの雷の印",
+  "soulCompanion": {
+    "1": "獣の魂ヒット1ダメージ",
+    "2": "獣の魂ヒット2ダメージ",
+    "3": "獣の魂ヒット3ダメージ",
+    "4": "獣の魂ヒット4ダメージ"
+  }
+}

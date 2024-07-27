@@ -1,0 +1,141 @@
+{
+  "name": "Somalie",
+  "title": "Création de la cognition simulée",
+  "description": "Une combinaison d'un ensemble de concepts. Elle existe dans une variété d'états et de phases. Est-elle vraiment réelle ?",
+  "constellationName": "Mathematica Felina",
+  "auto": {
+    "name": "Boulier astral",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Effectue jusqu'à 4 attaques consécutives en lançant des perles qui infligent des <electro>DMG électro</electro> à partir de son abaque astral."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme une certaine quantité d'Endurance pour charger et libérer un flux continu de perles électriques, infligeant des <electro>DMG électriques</electro> à un maximum de 4 cibles toutes les 0,3s.",
+        "2": "Somnia gagne une résistance à l'interruption et est libre de se déplacer lorsqu'elle utilise son attaque chargée."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire des perles d'électricité sur le sol, infligeant des <electro>DMG électro AoE</electro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Attaque chargée Flux DMG",
+      "5": "Coût de l'endurance de l'attaque chargée",
+      "6": "Plongeon DMG",
+      "7": "Low/High Plunge DMG (plongement bas/haut)"
+    }
+  },
+  "skill": {
+    "name": "Calculatrice cosmique",
+    "description": {
+      "0": "Somnia condense l'immense énergie de son abaque astral pour créer une explosion qui inflige des <electro>AoE Electro DMG</electro> et crée un sigil autonome au contenu indéfinissable au-dessus de sa tête.",
+      "1": "Le Sigil d'auto-contention lui confère l'effet de superposition de Schrödinger.",
+      "2": "<br/>",
+      "3": "<strong>Schrödinger Superposition</strong>",
+      "4": "Les DMG infligés par les attaques normales et chargées de Somnia sont augmentés en fonction de sa maîtrise des éléments.",
+      "5": "La Superposition de Schrödinger expire après la fin de la durée du Sigil autocontenant ou lorsque Somnia quitte le champ de bataille."
+    },
+    "skillParams": {
+      "0": "Compétence DMG",
+      "1": "Duration",
+      "2": "CD"
+    }
+  },
+  "burst": {
+    "name": "Pattes de Parallaxe",
+    "description": {
+      "0": "Somnia invoque un Cyclone céleste en forme d'étoile autour d'elle, libérant une rafale de <electro>DMG électro</electro> à mesure qu'il s'étend. Le champ s'attarde et inflige des <electro>AoE Electro DMG</electro> aux ennemis qui s'y trouvent toutes les 1s.",
+      "1": "Lorsque Cyclone céleste est actif, la maîtrise élémentaire de Somnia est augmentée de façon multiplicative.",
+      "2": "De plus, lorsque Cyclone céleste est actif, Somnia obtient des statistiques stellaires. Dans cet état, Somnia peut régler son boulier astral sur les modes Multiplication, Addition ou Soustraction, chacun conférant à ses attaques et à Cyclone céleste des améliorations différentes. Un seul mode d'abaque des Statistiques stellaires peut être actif simultanément.",
+      "3": "<br/>",
+      "4": "Modes d'Abacus",
+      "5": [
+        "<strong>Multiplication</strong> : Dans le Cyclone céleste de Somnia, toutes les armes des personnages maniant une épée, une claymore ou une arme blanche sont infusées d'électricité. Les attaques normales ou chargées dans le champ déclenchent Star Sunder, une explosion électrique coordonnée qui inflige des <electro>DMG électriques AoE</electro> basés sur la maîtrise élémentaire de Somnia. Sunder stellaire peut être déclenché une fois toutes les 1,5s.",
+        "<strong>Ajout</strong> : L'AoE et le DMG de Cyclone céleste sont augmentés. Lorsqu'elles touchent un ennemi, les attaques normales et chargées de Somnia déclenchent une Supernova qui inflige <electro>AoE Electro DMG</electro> en fonction de sa Maîtrise élémentaire. Cet effet peut être déclenché une fois toutes les 0,75s.",
+        "<strong>Soustraction</strong> : Cyclone céleste voit son AoE et sa DMG réduites, mais applique l'effet \"Moins de trois\" aux ennemis qui s'y trouvent. L'effet \"Moins de trois\" réduit les RES élémentaires et physiques des ennemis en fonction de la maîtrise élémentaire de Somnia. De plus, les attaques normales et chargées de Somnia infligent des DMG accrus en fonction de sa maîtrise élémentaire."
+      ]
+    },
+    "skillParams": {
+      "0": "Compétence DMG",
+      "1": "Maîtrise des éléments",
+      "2": "DoT Cyclone céleste (Multiplication)",
+      "3": "Le DMG de Star Sunder",
+      "4": "Cyclone céleste DoT (ajout)",
+      "5": "Supernova DMG",
+      "6": "DoT de Cyclone céleste (soustraction)"
+    }
+  },
+  "passive1": {
+    "name": "Calcul rapide",
+    "description": {
+      "0": "Les attaques chargées de Somnia consomment 20% d'endurance en moins et se chargent 20% plus vite."
+    }
+  },
+  "passive2": {
+    "name": "Le génie des maths",
+    "description": {
+      "0": "Pendant la durée de Cyclone céleste, la maîtrise élémentaire de Somnia augmente de 5% pour chaque coup infligé par Cyclone céleste, Soleil des étoiles et Supernova, jusqu'à un maximum de 25%."
+    }
+  },
+  "passive3": {
+    "name": "Itération insomniaque",
+    "description": {
+      "0": "La nuit (18:00 - 6:00), accélère la vitesse de construction de Genshin Optimizer de 10%."
+    }
+  },
+  "constellation1": {
+    "name": "Point décimal",
+    "description": {
+      "0": "Les attaques normales et chargées de Somnia ont 25% de chances d'infliger le double de DMG."
+    }
+  },
+  "constellation2": {
+    "name": "Nombre premier",
+    "description": {
+      "0": "Lorsque Somnia est sous l'effet de la Superposition de Schrödinger, chaque attaque normale ou chargée qui la touche lui donne une pile de Nombre naturel. Lorsque le nombre de piles de nombres naturels est premier, la prochaine attaque normale ou chargée de Somnia reçoit le double de l'augmentation de DMG de la Superposition de Schrödinger."
+    }
+  },
+  "constellation3": {
+    "name": "Série infinie",
+    "description": {
+      "0": "Augmente le niveau de <strong>Pattes de paralaxe</strong> de 3.",
+      "1": "Le niveau maximum de mise à niveau est de 15."
+    }
+  },
+  "constellation4": {
+    "name": "Carré parfait",
+    "description": {
+      "0": "Lorsque Somnia déclenche une réaction électrique, 4 points d'énergie élémentaire lui sont rendus, ainsi qu'à tous les membres du groupe proches dont l'élément est impliqué dans la réaction.",
+      "1": "Cet effet peut se déclencher une fois toutes les 4 secondes."
+    }
+  },
+  "constellation5": {
+    "name": "Coefficient de l'herbe à chat",
+    "description": {
+      "0": "Augmente le niveau de <strong>Calculateur cosmique</strong> de 3.",
+      "1": "Le niveau maximum de mise à niveau est de 15."
+    }
+  },
+  "constellation6": {
+    "name": "Golden Ratio",
+    "description": {
+      "0": "Lorsque l'attaque chargée de Somnia inflige des dégâts, son taux de CRIT et son DMG de CRIT sont augmentés de 3% et 5%, respectivement. Cet effet peut être déclenché une fois toutes les 0.2s et s'empiler jusqu'à 8 fois. Toutes les piles de Ratio d'or sont éliminées 13s après l'obtention de la première pile."
+    }
+  },
+  "c1Key": "Att. normale et chargée DMG Mult.",
+  "superpositionCond": "Sous l'effet de la superposition de Schrödinger",
+  "cycloneActiveCond": "Cyclone céleste est actif",
+  "multCond": "En mode Multiplication",
+  "subCond": "En mode soustraction",
+  "lessThan3Cond": "L'ennemi est affecté par \"Moins de trois\".",
+  "c1Cond": "Point décimal Fréquence de déclenchement",
+  "average": "Moyenne",
+  "always": "Toujours",
+  "c2Cond": "Possède un nombre premier de piles de nombres naturels"
+}

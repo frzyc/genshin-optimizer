@@ -1,0 +1,49 @@
+{
+  "intro": "GO是<3><i>原神</i></3>的<strong>终极</strong>计算工具，它会记录你的圣遗物/武器/角色背包，并根据你指定的方式生成最佳装备搭配。",
+  "quickLinksCard": {
+    "title": "快速链接",
+    "buttons": {
+      "tyGuide": {
+        "title": "Youtube上的使用指南",
+        "tooltip": "了解如何使用Genshin Optimizer"
+      },
+      "scanners": {
+        "title": "自动扫描器",
+        "tooltip": "自动扫描游戏中圣遗物的第三方程序"
+      },
+      "kqm": {
+        "title": "KeqingMains",
+        "tooltip": "理论分析与指导社区"
+      },
+      "devDiscord": {
+        "title": "原神开发Discord",
+        "tooltip": "原神开发者社区"
+      },
+      "good": {
+        "title": "GOOD文档",
+        "tooltip": "Genshin Open Object Descriptor文档"
+      },
+      "patchNotes": {
+        "title": "Genshin Optimizer更新日志",
+        "tooltip": "所有更新日志"
+      }
+    }
+  },
+  "inventoryCard": {
+    "title": "GO仓库"
+  },
+  "vidGuideCard": {
+    "title": "视频指南"
+  },
+  "teamCard": {
+    "title": "开发团队",
+    "jobTitle": {
+      "leadDev": "开发负责人",
+      "dev": "开发者",
+      "mod": "管理员",
+      "admin": "管理员",
+      "translator": "翻译负责人",
+      "TC": "理论分析专员"
+    }
+  }
+}

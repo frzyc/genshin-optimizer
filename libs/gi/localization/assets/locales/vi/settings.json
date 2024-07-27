@@ -1,0 +1,44 @@
+{
+  "title": "Cài Đặt",
+  "languageCard": {
+    "languageFormat": "Ngôn ngữ: {{language}}"
+  },
+  "uploadCard": {
+    "title": "Tải lên CSDL",
+    "replaceDatabase": "Cập nhật CSDL",
+    "hint": "Tải tệp JSON của bạn tại đây...",
+    "hintPaste": "...hoặc dán dữ liệu của bạn xuống dưới.",
+    "error": {
+      "jsonParse": "Không thể phân tích tập tin JSON.",
+      "unknown": "Định dạng tập tin không xác định.",
+      "monaInvalid": "Định dạng file Mona-Uranai không hợp lệ",
+      "goInvalid": "Định dạng file backup GO không hợp lệ"
+    },
+    "dbSource": "Nguồn dữ liệu:",
+    "goodUpload": {
+      "title": "Định dạng <strong>Genshin Open Object Description</strong> (Tốt)"
+    }
+  },
+  "count": {
+    "chars": "Nhân vật:",
+    "arts": "Thánh di vật:",
+    "weapons": "Vũ khí:",
+    "total": "Tổng cộng:",
+    "new": "Mới:",
+    "updated": "Đã cập nhật:",
+    "removed": "Đã loại bỏ:",
+    "unchanged": "Không thay đổi:",
+    "invalid": "Không hợp lệ:"
+  },
+  "DatabaseCard": {
+    "title": "Cơ sở dữ liệu",
+    "button": {
+      "download": "Tải xuống",
+      "copy": "Lưu vào bộ nhớ tạm",
+      "delete": "Xóa",
+      "upload": "Tải lên",
+      "swap": "Đổi"
+    },
+    "currentDB": "Cơ sở dữ liệu đã chọn"
+  }
+}

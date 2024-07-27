@@ -1,0 +1,20 @@
+{
+  "skill": {
+    "unableToAuto": "重撃や落下攻撃使用不可",
+    "namisenStacks": "浪閃",
+    "shun_dmgInc": "<hydro>瞬水剣ダメージアップ</hydro>"
+  },
+  "passive1": {
+    "afterUse": "スキル発動後獲得した浪閃層数",
+    "afterExplode": "水の幻影の破裂後獲得した浪閃層数"
+  },
+  "c1": {
+    "shun_dmg_": "<hydro>瞬水剣ダメージボーナス</hydro>"
+  },
+  "c2": {
+    "addlStacks": "浪閃の重ね掛け上限が増加"
+  },
+  "c6": {
+    "dmg": "濫觴無底ダメージ"
+  }
+}

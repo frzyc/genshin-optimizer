@@ -1,0 +1,16 @@
+{
+  "title": "🛑 Nouvel onglet Optimizer détecté 🛑",
+  "p1": "Il semble que vous ayez ouvert Genshin Optimizer dans un autre onglet 💞. GO n'est pas conçu pour fonctionner sur plusieurs onglets 📵 ! Cela peut entraîner :",
+  "symptom": {
+    "1": "Désynchronisation des données entre les onglets 🙃",
+    "2": "Corruption de la base de données 💔",
+    "3": "Mauvais estomac 🤰 et frustration des développeurs de Genshin Optimizer 😡",
+    "4": "Dans de rares cas, la mort ☠️"
+  },
+  "p2": "Nous avons évité cela en vous montrant ce message 📝. Vous avez maintenant le choix entre :",
+  "choice": {
+    "1": "Fermer cet onglet 🔪, et utiliser le nouvel onglet 🆕",
+    "2": "Fermez le nouvel onglet ️, et une fois que vous êtes sûr que c'est le seul et unique onglet restant 🔂, vous pouvez rafraîchir cette page 🔄."
+  },
+  "refresh": "Actualiser la page"
+}

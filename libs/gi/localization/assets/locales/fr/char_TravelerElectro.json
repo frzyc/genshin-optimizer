@@ -1,0 +1,21 @@
+{
+  "skill": {
+    "amuletGenAmt": "Nombre d'amulettes d'abondance générées",
+    "absorb": "Après avoir absorbé une amulette d'abondance",
+    "enerRest": {
+      "none": "Pluie d'énergie. par amulette",
+      "over35": "Régénération d'énergie par amulette (plus de 35 % d'énergie)",
+      "under35": "Régénération d'énergie par amulette (en dessous de 35 % d'énergie)"
+    }
+  },
+  "burst": {
+    "3rd": "3e DMG sur le tonnerre tombant",
+    "thunderCd": "CD Falling Thunder"
+  },
+  "passive2": {
+    "enerRech_": "Amulette d'abondance recharge énergétique supplémentaire"
+  },
+  "c2": {
+    "thunderHit": "L'adversaire a été touché par <strong>Tonnerre tombant</strong>"
+  }
+}

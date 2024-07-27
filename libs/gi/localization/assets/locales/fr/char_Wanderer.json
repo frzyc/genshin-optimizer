@@ -1,0 +1,11 @@
+{
+  "windfavoredState": "Dans l'État <strong>Windfavored</strong> (favorisé par le vent)",
+  "p1": {
+    "pyroCondName": "<strong>Hanega : Song of the Wind</strong> est entré en contact avec <pyro>Pyro</pyro>",
+    "cryoCondName": "<strong>Hanega : Song of the Wind</strong> est entré en contact avec <cryo>Cryo</cryo>"
+  },
+  "p2Dmg": "Wind Arrow DMG",
+  "c1BonusKey": "Wind Arrow DMG Bonus Scaling",
+  "c2CondName": "Différence entre le nombre maximum et le nombre actuel de points Kuugoryoku",
+  "c6Key": "Shugen : The Curtains' Melancholic Sway Mult."
+}

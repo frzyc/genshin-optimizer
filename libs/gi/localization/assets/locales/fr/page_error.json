@@ -1,0 +1,22 @@
+{
+  "title": "🛑 Une erreur inattendue s'est produite 🛑",
+  "p1.1": "GO a rencontré une erreur inattendue. C'est probablement notre faute, alors aidez-nous à vous aider !",
+  "p1.2": "Voici ce que vous pouvez faire pour résoudre le problème :",
+  "fixes": {
+    "1": "Actualiser la page",
+    "2": "Désactiver toutes les extensions du navigateur et actualiser à nouveau",
+    "3": "Téléchargez votre (vos) base(s) de données ci-dessous et conservez-la en lieu sûr. Cliquez sur le bouton 'Delete ALL GO Data' et téléchargez à nouveau votre (vos) base(s) de données."
+  },
+  "p2": "Si vous avez fait ce qui précède et que vous n'avez toujours pas réussi à revenir ici, veuillez soumettre un rapport sur notre page GitHub Issues, ou sur le canal Bug Reports de notre Discord.",
+  "report": {
+    "1": "Téléchargez votre (vos) DB(s) ci-dessous",
+    "2": "Copier le texte du rapport dans la case ci-dessous",
+    "3": "Cliquez <1>ici</1> pour faire un rapport sur GitHub. Collez le texte dans la description, remplissez les étapes de reproduction, et incluez vos fichiers JSON (vous devrez peut-être les renommer pour qu'ils se terminent par '.txt').",
+    "4": "Ou cliquez <1>ici</1> pour faire un rapport sur Discord. Ouvrez le canal #🐛bug-reports, créez un nouveau fil de discussion et collez le texte dans la boîte de message. Remplissez les étapes de reproduction et téléchargez vos fichiers JSON."
+  },
+  "refresh": "Actualiser la page",
+  "caption": "Images en direct de nos ingénieurs enquêtant sur le problème",
+  "confirmNuke": "Êtes-vous sûr de vouloir supprimer TOUTES les données de GO ? C'est irréversible !",
+  "finishNuke": "Effacement de toutes les données GO. Actualisation de la page.",
+  "nuke": "Supprimer toutes les données GO"
+}

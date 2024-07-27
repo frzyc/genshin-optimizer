@@ -1,0 +1,9 @@
+{
+  "SprawlingGreenery": {
+    "cond2ele": "Après avoir déclenché <pyro>Burning</pyro>, <spread>Quicken</spread>, ou <bloom>Bloom</bloom>.",
+    "cond3ele": "Après avoir déclenché <aggravate>Aggravate</aggravate>, <spread>Spread</spread>, <hyperbloom>Hyperbloom</hyperbloom>, ou <burgeon>Burgeon</burgeon"
+  },
+  "EnduringRock": {
+    "hitCond": "Après avoir infligé des DMG aux ennemis tout en étant protégé par un bouclier"
+  }
+}

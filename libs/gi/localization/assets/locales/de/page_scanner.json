@@ -1,0 +1,16 @@
+{
+  "intro": "<0>Scanner</0><1>Scanner sind Tools welche spielbezogene Daten aus Screenshots oder direkt aus dem Spiel auslesen können.</1><2>Unten sind mehrere Scanner aufgelistet welche mit GO getestet wurden.</2><3>Um die exportierte Datei hochzuladen, gehe auf die Seite <1>Einstellungen</1> und lade dort deine Datei in der Sektion <strong>Datenbank Hochladen</strong> hoch.</3>",
+  "ik": {
+    "title": "Inventory Kamera"
+  },
+  "as": {
+    "title": "AdeptiScanner",
+    "p1": "Scannt alle Artefakte und Waffen in deinem Inventar. Hat einen manuellen Scanmodus und kann zudem Daten von <1>Enka.Network</1> importieren."
+  },
+  "tags": {
+    "pc": "PC",
+    "ps": "PlayStation",
+    "materials": "Materialien",
+    "characters": "Charaktere"
+  }
+}

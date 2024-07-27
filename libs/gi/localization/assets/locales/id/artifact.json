@@ -1,0 +1,94 @@
+{
+  "editor": {
+    "title": "Editor Artefak",
+    "substat": {
+      "substatFormat": "Substat {{value}}",
+      "noSubstat": "Kosong",
+      "selectSub": "Pilih Substat",
+      "error": {
+        "noCalc": "Tidak dapat menghitung roll stat.",
+        "noOverRoll": "Substat tidak dapat diroll lebih dari {{value}} kali."
+      },
+      "noRoll": "Tanpa Roll",
+      "noStat": "Tanpa Nilai",
+      "eff": "RV: <1></1>",
+      "nextRolls": "Roll berikutnya"
+    },
+    "rarity": "Kualitas",
+    "level": "Level",
+    "unknownPieceName": "Nama Bagian Artefak Tidak Diketahui",
+    "curSubEff": "RV Saat Ini",
+    "curSubEffDesc": "Setiap 4 kali upgrade artefak, kamu mendapatkan roll substat. <strong>Roll Value</strong> menghitung seberapa tinggi roll substat tersebut sebagai persentase.",
+    "maxSubEff": "RV Maks.",
+    "maxSubEffDesc": "<strong>Roll Value Substat Maksimum</strong> dari sebuah artefak menghitung efisiensinya jika upgrade yang tersisa mendapat nilai roll maksimum.",
+    "preview": "Pratinjau Artefak",
+    "dupArt": "Artefak duplikat terdeteksi.",
+    "upArt": "Artefak terupgrade terdeteksi.",
+    "beforeEdit": "Sebelum Edit",
+    "btnSave": "Simpan Artefak",
+    "btnAdd": "Tambah Artefak",
+    "btnClear": "Bersihkan",
+    "btnRandom": "Acak",
+    "btnUpdate": "Perbarui Artefak",
+    "clearPrompt": "Ada artefak di editor. Apa kamu yakin mau membersihkan editor?",
+    "unknownSetName": "Nama Set Tidak diketahui"
+  },
+  "artifactFilter": "Filter Artefak",
+  "filterLocation": {
+    "inventory": "Inventaris",
+    "currentlyEquipped": "Dikenakan",
+    "location": "Karakter"
+  },
+  "button": {
+    "unequipArtifacts": "Copot Artefak",
+    "deleteArtifacts": "Hapus Artefak",
+    "lockArtifacts": "Kunci Artefak",
+    "unlockrtifacts": "Buka Kunci Artefak"
+  },
+  "buttonHint": "Catatan: tombol merah di atas hanya berlaku untuk <1>artefak terfilter</1>",
+  "tipsOfTheDay": [
+    "Maksimum RV dari artefak bintang 4 adalah sekitar 540%.",
+    "Maksimum RV dari artefak biasanya akan berkurang setelah upgrade. Itu sangat normal!",
+    "Substat dengan angka \"1\" adalah yang tersulit untuk dipindai dalam screenshot.",
+    "Jika seluruh roll(6) masuk ke satu substat, warnanya akan menjadi ungu!",
+    "Klik di \"Rincian/Details\" ketika kamu mengupgrade artefak-mu di dalam game untuk discan sekaligus di-upgrade.",
+    "Kamu bisa upload banyak screenshot artefak untuk dipindai!"
+  ],
+  "mainStat": "Stat Utama",
+  "slot": "Slot",
+  "slotName": {
+    "flower": "Flower of Life",
+    "plume": "Plume of Death",
+    "sands": "Sands of Eon",
+    "goblet": "Goblet of Eonothem",
+    "circlet": "Circlet of Logos"
+  },
+  "info": {
+    "title": "Panduan Edit/Manajemen Artefak",
+    "section1": "<0>Roll substat</0><1> <1>Jumlah roll</1> yang dimiliki substat ditampilkan di sebelah kanan substat, ditunjukkan dengan jumlah bar. Selain itu, dengan bertambahnya jumlah roll, substat menjadi lebih terang. Selain itu, setiap bilah individu menjadi lebih berwarna saat roll value meningkat:<3></3>.</1><2>Roll Value Substat</2><3>Roll Value (RV) dari substat adalah persentase nilai saat ini di atas nilai 5<1></1> potensial tertinggi. Dari Gambar tersebut, roll value maksimum HP% adalah 5,8%. Di RV: <3>5,3/5,8 ~ 90%.</3></3><4>Roll Value Saat Ini vs. Roll Value Maksimum</4><5>Bila 5<1></1> memiliki 9 (4 base + 5 tambahan) total roll, dengan masing-masing roll memiliki value tertinggi, yang didefinisikan sebagai artefak RV 900%. Namun, sebagian besar artefak tidak seberuntung ini. <3>RV saat ini</3> dari sebuah artefak adalah persentase dari value maksimal artefak tersebut. <5>RV Maksimum</5> adalah kemungkinan RV maksimum yang dapat dicapai artefak, jika sisa artefak roll dari peningkatan adalah value setinggi mungkin.</5>",
+    "section2": "<0>Editor Artefak</0><1>Editor Artefak dengan fitur lengkap yang bisa menerima semua artefak 3<1></1> hingga 5<3></3>. Ketika substat diinput, editor ini bisa menghitung jumlah roll value yang sesuai. Editor ini juga bisa memastikan bahwa jumlah roll yang didapat artefak sesuai dengan levelnya bersama dengan metrik validasi lainnya.</1><2>Scan Screenshot</2><3>Tidak suka menginput secara manual? Kamu bisa memindai artefakmu dengan screenshot! Dalam Artefak Editor, klik tombol <1>Show Me How!</1> untuk mempelajarinya lebih lanjut.</3><4>Pemindai Artefak Otomatis</4><5>Kalau kamu memainkan Genshin di PC, kamu bisa mengunduh alat yang bisa memindai semua artefakmu secara otomatis, lalu kamu bisa mengimpor data tersebut ke dalam <1></1> Database. <3>Tekan di sini</3> untuk melihat daftar pemindai yang kompatibel dengan GO.</5><6>Deteksi Artefak Duplikat/Upgrade</6><7>Tahukah kamu kalau GO bisa mendeteksi jika kamu menambah artefak <1>duplikat</1> yang sudah ada dalam sistem? Editor ini juga bisa mendeteksi apakah artefak yang ditambahkan merupakan <3>upgrade</3> dari artefak yang sudah ada. Ketika duplikasi/upgrade terdeteksi, pratinjau akan muncul agar kamu bisa membandingkan dua artefak tersebut(Lihat Gambar).</7>",
+    "section3": "<0>Tas Artefak</0><1>Semua artefakmu yang telah kamu tambahkan ke GO ditampilkan di sini. Filter di sini memungkinkan kamu untuk lebih menyempurnakan tampilan artefakmu. </1><2>Contoh: Menentukan Artefak Tumbal</2><3>Dengan memanfaatkan filter artefak, dan perhitungan RV artefak, kamu dapat menentukan artefak untuk dijadikan tumbal dengan cepat.</3><4>Sebagai contoh, filter diatur sebagai berikut: </4><5><0><0>Batasi level hingga 0-8.</0><1>Pastikan artefak dalam tas tidak terkunci.</1><2>Hilangkan kontribusi flat HP, flat DEF, dan Energy Recharge untuk perhitungan RV.</2><3>Urutkan dengan menggunakan urutan meningkat untuk RV Substat Maksimum.</3></0></5><6>Ini akan memfilter Tas artefak dari artefak efisiensi terendah, untuk substat yang diinginkan.</6>"
+  },
+  "sortMap": {
+    "level": "Level",
+    "efficiency": "Roll Value Saat Ini",
+    "mefficiency": "Roll Value Maksimum"
+  },
+  "efficiencyFilter": {
+    "title": "Substat yang dipakai dalam perhitungan Roll Value"
+  },
+  "resetFilters": "Reset Filter",
+  "setEffectNum": "{{setNum}}-Set",
+  "edit": "Edit Karakter",
+  "autocompleteLabels": {
+    "sets": "Set Artefak",
+    "mainStats": "Main Stats",
+    "substats": "Sub-Stats",
+    "set": "Set Artefak"
+  },
+  "addNew": "Tambah Artefak Baru",
+  "cantDeleteLock": "Tidak dapat menghapus artefak karena dikunci",
+  "equippedArt": "Semua Artefak Dipakai",
+  "artInInv": "Semua Artefak yang Tidak Digunakan",
+  "locationsTooltip": "Nonaktifkan \"Semua Artefak yang Dilengkapi\" untuk memfilter menurut karakter tertentu"
+}

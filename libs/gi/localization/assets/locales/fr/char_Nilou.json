@@ -1,0 +1,22 @@
+{
+  "skill": {
+    "dance1": "Danse de l'épée 1-Hit DMG",
+    "dance2": "Danse de l'épée 2 coups DMG",
+    "whirl1": "Marches tourbillonnantes DMG à 1 coup",
+    "whirl2": "Marches tourbillonnantes DMG à 2 coups",
+    "wheel": "Roue d'eau DMG",
+    "illusion": "Illusion lumineuse DMG"
+  },
+  "passive1": {
+    "underChaliceEffect": "Sous la prime du Calice d'or",
+    "notDendroHydroTeam": "Conseil : mettez dans votre équipe uniquement des personnages Dendro et Hydro pour voir les conditionnels et les effets supplémentaires.",
+    "condName": "Après avoir pris <dendro>Dendro DMG</dendro> pendant qu'il était affecté par Golden Chalice's Bounty",
+    "bountifulCores": "La réaction de Bloom créera des Bountiful Cores"
+  },
+  "c4": {
+    "condName": "Après le troisième pas de danse de la Pirouette, les adversaires sont touchés."
+  },
+  "c1": {
+    "illusion_dmg_": "Illusion lumineuse Bonus DMG"
+  }
+}

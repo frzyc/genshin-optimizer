@@ -1,0 +1,17 @@
+{
+  "burstC": {
+    "name": "Lapisan Energi Lightfall Sword",
+    "start5": "Mulai dengan 5 Lapisan Energi Lightfall Sword",
+    "addStacks": "50% kemungkinan untuk mendapatkan lapisan energi tambahan dari Normal Atk, Ele. Skill, dan Ele. Burst",
+    "dmg": "DMG Ledakan Lightfall Sword",
+    "bonusScaling": "Bonus Scaling Lightfall Sword"
+  },
+  "c1C": {
+    "name": "Setelah mengkonsumsi lapisan <strong>Grimheart</strong>",
+    "durationStack": "6 dtk + 6 dtk/lapis, maks 18 dtk"
+  },
+  "passive1": "DMG Shattered Lightfall Sword",
+  "c4C": {
+    "dmgBonus": "Ledakan DMG Bonus Lightfall Sword"
+  }
+}

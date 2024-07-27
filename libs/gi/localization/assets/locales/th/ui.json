@@ -1,0 +1,32 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "อาร์ติแฟกต์",
+    "characters": "ตัวละคร",
+    "tools": "อุปกรณ์",
+    "weapons": "อาวุธ",
+    "doc": "เอกสาร"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "unselect": "ยกเลิกการเลือก",
+  "ascending": "จากน้อยไปมาก",
+  "descending": "จากมากไปน้อย",
+  "loading": "กำลังโหลด...",
+  "rightsDisclaimer": "Genshin Optimizer ไม่มีส่วนเกี่ยวข้องหรือรับรองโดย miHoYo",
+  "appVersion": "$t(pageTitle) เวอร์ชั่น: <1>{{version}}</1>",
+  "error": "ผิดพลาด",
+  "reset": "รีเซ็ต",
+  "inventory": "คลัง",
+  "close": "ปิด",
+  "sortMap": {
+    "new": "ใหม่",
+    "name": "ชื่อ",
+    "level": "เลเวล",
+    "rarity": "จำนวนดาว",
+    "artsetkey": "เซ็ตอาร์ติแฟกต์"
+  }
+}

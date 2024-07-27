@@ -1,0 +1,10 @@
+{
+  "burstHits": "Number of Muji-Muji Daruma Activations",
+  "p2Heal": "Nearby character healing",
+  "c1Text": "Muji-Muji Daruma will ignore HP limits and can simultaneously attack nearby opponents and heal characters",
+  "c2KickPressDmg_": "Fuufuu Whirlwind Kick Press DMG Bonus",
+  "c2KickDmg_": "Fuufuu Whirlwind Kick DMG Bonus",
+  "c2Cond": "Time spent in the <strong>Fuufuu Windwheel</strong> state",
+  "c6DarumaDmgInc": "Muji-Muji Daruma DMG Inc.",
+  "c6DarumaHealInc": "Muji-Muji Daruma Heal Inc."
+}

@@ -1,0 +1,8 @@
+{
+  "omen": "L'adversaire est affecté par Omen",
+  "hitOp": {
+    "affectedByOmen": "Après avoir touché un adversaire affecté par Omen"
+  },
+  "frozenDuration": "Durée de <shattered>Gel</shattered>",
+  "uponSprint": "Après avoir utilisé Vicissitude"
+}

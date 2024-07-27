@@ -1,0 +1,9 @@
+{
+  "p1": "Dano da Lâmina de Vento",
+  "c6": "Inimigo foi atingido pelas <strong>Ondas de Rajadas</strong>",
+  "c4": "Redução de Dano enquanto lança",
+  "initialEleDmg": "Dano de Corte Inicial",
+  "maxEleDmg": "Dano de Corte Máximo da Absorção",
+  "stormEleDmg": "Dano de Absorção da Explosão de Vento Inicial",
+  "stormEleMaxDmg": "Dano de Absorção da Explosão de Vento Máximo"
+}

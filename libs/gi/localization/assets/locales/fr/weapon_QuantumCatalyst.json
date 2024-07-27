@@ -1,0 +1,12 @@
+{
+  "name": "Cat-alyseur quantique",
+  "description": "Cette arme de catalyse avancée est imprégnée du mystérieux pouvoir de la mécanique quantique et ressemble à un chat curieux, avec des yeux verts luisants, une queue qui scintille d'énergie électrique et une étincelle occasionnelle qui jaillit entre les oreilles.",
+  "passiveName": "Mewon Meowmentum",
+  "passiveDescription": {
+    "0": "Augmente la recharge d'énergie de <cryo>18%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>6%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>10</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment.",
+    "1": "Augmente la recharge d'énergie de <cryo>22.5%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>7,5%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>12</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment.",
+    "2": "Augmente la recharge d'énergie de <cryo>27%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>9%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>14</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment.",
+    "3": "Augmente la recharge d'énergie de <cryo>31.5%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>10,5%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>16</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment.",
+    "4": "Augmente la recharge d'énergie de <cryo>36%</cryo>. Augmente le DMG des attaques normales et chargées de <cryo>12%</cryo> de Maîtrise élémentaire. En déclenchant une <electro>réaction élémentaire liée à l'électricité</electro>, gagnez <cryo>18</cryo> Maîtrise élémentaire pendant 12 secondes. Cet effet peut s'empiler jusqu'à 5 fois et la durée des piles est comptée indépendamment."
+  }
+}

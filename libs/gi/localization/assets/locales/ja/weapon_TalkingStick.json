@@ -1,0 +1,6 @@
+{
+  "condName": {
+    "atk_": "キャラクターが<pyro>炎元素</pyro>の影響を受けている",
+    "dmg_": "キャラクターが<hydro>水元素</hydro>、<cryo>氷元素</cryo>、または<electro>雷元素</electro>の影響を受けている"
+  }
+}

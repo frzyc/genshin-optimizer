@@ -1,0 +1,75 @@
+{
+  "editor": {
+    "title": "ตัวจัดการอาร์ติแฟกต์",
+    "substat": {
+      "substatFormat": "Substat {{value}}",
+      "noSubstat": "ไม่มี Substat",
+      "selectSub": "เลือก Substat",
+      "error": {
+        "noCalc": "ไม่สามารถคำนวณค่าของ Substat ได้",
+        "noOverRoll": "Substat ไม่สามารถสุ่มได้มากกว่า {{value}} ครั้ง"
+      },
+      "noRoll": "ไม่มีการสุ่ม",
+      "noStat": "ไม่มีมูลค่า",
+      "eff": "RV: <1></1>"
+    },
+    "rarity": "ความหายาก",
+    "level": "เลเวล",
+    "unknownPieceName": "ไม่ทราบชื่อ",
+    "curSubEff": "Roll Value ปัจจุบัน",
+    "curSubEffDesc": "ทุกๆครั้งที่ 4 ของการอัปเกรดอาร์ติแฟกต์ คุณจะได้รับ substat โดย <strong>Roll Value</strong> จะคำนวณว่า substat นั้นทบเป็นเปอร์เซ็นต์สูงเพียงใด",
+    "maxSubEff": "Roll Value สูงสุด",
+    "maxSubEffDesc": "ค่า <strong>Roll Value สูงสุดของ Substats</strong> ของอาร์ติแฟคต์จะคำนวณ RV หากการอัปเกรดที่เหลือสุ่มได้มูลค่าสูงสุดของพวกเขา",
+    "preview": "ดูตัวอย่างอาร์ติแฟกต์",
+    "dupArt": "ตรวจพบอาร์ติแฟกต์ที่ซ้ำกัน",
+    "upArt": "ตรวจพบอาร์ติแฟกต์ที่อัปเกรด",
+    "beforeEdit": "ก่อนการแก้ไข",
+    "btnSave": "บันทึกอาร์ติแฟกต์",
+    "btnAdd": "เพิ่มอาร์ติแฟกต์",
+    "btnClear": "ล้าง",
+    "btnRandom": "สุ่ม",
+    "btnUpdate": "อัปเดตอาร์ติแฟกต์",
+    "clearPrompt": "มีอาร์ติแฟกต์อยู่ในการแก้ไข แน่ใจไหมว่าต้องการล้างการแก้ไขนี้?"
+  },
+  "artifactFilter": "ตัวกรองอาร์ติแฟกต์",
+  "filterLocation": {
+    "inventory": "ช่องเก็บของ",
+    "currentlyEquipped": "กำลังสวมใส่"
+  },
+  "button": {
+    "unequipArtifacts": "ถอดอาร์ติแฟกต์",
+    "deleteArtifacts": "ลบอาร์ติแฟกต์",
+    "lockArtifacts": "ล็อคอาร์ติแฟกต์",
+    "unlockrtifacts": "ปลดล็อคอาร์ติแฟกต์"
+  },
+  "buttonHint": "หมายเหตุ: ปุ่มสีแดงด้านบนใช้กับ <1>อาร์ติแฟกต์ที่กรองแล้ว</1> เท่านั้น",
+  "tipsOfTheDay": [
+    "ค่า RV สูงสุดของอาร์ติแฟกต์ระดับ 4 ดาวอยู่ที่ประมาณ 540%",
+    "ค่า RV สูงสุดของอาร์ติแฟกต์จะลดลงเมื่อคุณอัปเกรดมันเสมอ ดังนั้นอย่าตกใจไป!",
+    "*ออฟรองที่มีเพียง\"หน่วยเดียว\"เป็นการสแกนที่ยากที่สุดจากภาพหน้าจอ",
+    "ถ้าออฟรองทั้งหมด(6)ของคุณเป็นหน่วยเดียว มันจะเป็นสีม่วง!*",
+    "คลิกที่ \"รายละเอียด\" เมื่อคุณอัปเกรดอาร์ติแฟกต์ในเกมเพื่ออัปเดตข้อมูล",
+    "ตอนนี้คุณสามารถอัปโหลดภาพหน้าจออาร์ติแฟกต์หลายรายการในการสแกนครั้งเดียวได้แล้ว!"
+  ],
+  "mainStat": "Main Stat",
+  "slot": "ช่อง",
+  "slotName": {
+    "flower": "Flower of Life",
+    "plume": "Plume of Death",
+    "sands": "Sands of Eon",
+    "goblet": "Goblet of Eonothem",
+    "circlet": "Circlet of Logos"
+  },
+  "info": {
+    "title": "แก้ไขอาร์ติแฟกต์/คู่มือการจัดการ"
+  },
+  "sortMap": {
+    "level": "Level",
+    "efficiency": "Roll Value ปัจจุบัน",
+    "mefficiency": "Roll Value สูงสุด"
+  },
+  "efficiencyFilter": {
+    "title": "Substat ที่ใช้ในการคำนวณ Roll Value"
+  },
+  "resetFilters": "รีเซ็๋ตตัวกรอง"
+}

@@ -1,0 +1,65 @@
+{
+  "title": "设置",
+  "languageCard": {
+    "languageFormat": "语言：{{language}}"
+  },
+  "uploadCard": {
+    "title": "上传数据库",
+    "replaceDatabase": "替换数据库",
+    "hint": "在此加载JSON文件…",
+    "hintPaste": "…或在此粘贴数据",
+    "error": {
+      "jsonParse": "JSON文件解析失败。",
+      "unknown": "未知的文件格式。",
+      "monaInvalid": "不正确的莫娜占卜铺文件格式。",
+      "goInvalid": "不正确的GO 备份文件格式。"
+    },
+    "dbSource": "数据来源：",
+    "goodUpload": {
+      "title": "<strong>Genshin Open Object Description</strong> (GOOD) 格式"
+    },
+    "buttons": {
+      "open": "打开",
+      "detectDups": "检测更新/重复",
+      "delNotInImport": "删除导入数据中不存在的条目"
+    },
+    "tooltip": {
+      "detectdup": "检测GO仓库中的更新及重复条目，并将导入数据合并入GO。",
+      "ignoreDup": "不要检测更新及重复条目，将导入数据直接添加进GO仓库。",
+      "delNotInImport": "导入的数据是整个仓库，当前仓库与导入数据中不同的部分会被删除。",
+      "keepNotInImport": "导入的数据是仓库的一部分，不删除任何数据。"
+    }
+  },
+  "count": {
+    "chars": "角色：",
+    "arts": "圣遗物：",
+    "weapons": "武器：",
+    "total": "总计：",
+    "new": "新的：",
+    "updated": "更新的：",
+    "removed": "移除的：",
+    "unchanged": "未改变的：",
+    "invalid": "无效的：",
+    "upgraded": "已升级",
+    "dbTotal": "合并后的总数：",
+    "notInImport": "不在导入文件中："
+  },
+  "DatabaseCard": {
+    "title": "数据库",
+    "button": {
+      "download": "下载",
+      "copy": "剪贴板",
+      "delete": "删除",
+      "upload": "上传",
+      "swap": "交换"
+    },
+    "currentDB": "当前数据库"
+  },
+  "sillyCard": {
+    "desc": "我们从<strong>Silly Wisher</strong><1>偷</1>借（经过允许）来了所有的角色信息并且把它们接入到GenshinOptimizer。",
+    "toggle": {
+      "enabled": "Silly Optimizer已启用",
+      "disabled": "Silly Optimizer已禁用"
+    }
+  }
+}

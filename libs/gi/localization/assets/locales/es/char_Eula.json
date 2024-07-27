@@ -1,0 +1,13 @@
+{
+  "burstC": {
+    "name": "Espada luminosa",
+    "start5": "Comienza con 5 cargas",
+    "addStacks": "Probabilidad del 50% de obtener cargas adicionales de Habilidades Elementales y Habilidades Definitivas",
+    "dmg": "Daño de explosión de Espada luminosa"
+  },
+  "c1C": {
+    "name": "Consume cargas de <strong>Corazón impasible</strong>",
+    "durationStack": "6s + 6s por carga, hasta un máximo de 18s"
+  },
+  "passive1": "Daño de fragmento de Espada luminosa"
+}

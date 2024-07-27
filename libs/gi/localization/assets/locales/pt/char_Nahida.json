@@ -1,0 +1,14 @@
+{
+  "karmaDmg_": "Bônus de Dano da Purificação Tricármica",
+  "karmaCritRate_": "Bônus de Taxa Crítica da Purificação Tricármica",
+  "karmaIntervalDec": "Redução do Intervalo de Ativação da Purificação Tricármica",
+  "noBurstEffect": "Dica: Nenhum efeito do Supremo está ativo. Habilite a C1 e/ou acrescente personagens <pyro>Pyro</pyro>, <electro>Electro</electro> e/ou <hydro>Hydro</hydro> à equipe.",
+  "partyInBurst": "Equipe na AdE",
+  "c1Key": "Personagens <pyro>Pyro</pyro>, <electro>Electro</electro> e <hydro>Hydro</hydro> adicionais para o bônus do <strong>Santuário de Maya</strong>",
+  "c2": {
+    "bloomCondName": "Inimigo marcado pela <strong>Semente Skandha</strong>",
+    "qasCondName": "Após desencadear <spread>Aceleração</spread>, <aggravate>Intensificação</aggravate> ou <spread>Propagação</spred> em inimigos marcados pela <strong>Semente Skandha</strong>"
+  },
+  "c4CondName": "Número de inimigos afetados por <strong>Sementes de Skandha</strong>",
+  "c6KarmicDmg": "Dano da Eliminação do Carma"
+}

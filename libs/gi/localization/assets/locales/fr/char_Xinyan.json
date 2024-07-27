@@ -1,0 +1,25 @@
+{
+  "skill": {
+    "pyroShield": {
+      "1": "Bouclier niveau 1 Pyro DMG Absorption",
+      "2": "Bouclier niveau 2 Pyro DMG Absorption",
+      "3": "Bouclier Niveau 3 Pyro DMG Absorption"
+    }
+  },
+  "p1": {
+    "desc": "Diminue le quota de coups de <strong>Sweeping Fervor</strong> de 1"
+  },
+  "p2": {
+    "activeShield": "Le personnage est protégé par <strong>Sweeping Fervor</strong>."
+  },
+  "c2": {
+    "key_": "<strong>Riff Revolution</strong> Physique DMG CRIT Taux Bonus",
+    "shield": "Forme un bouclier de raves de niveau 3 lorsqu'il est lancé"
+  },
+  "c4": {
+    "swingHit": "L'adversaire a été touché par <pyro>Swing DMG</pyro>"
+  },
+  "c6": {
+    "duringCharge": "Lors de l'exécution d'une attaque chargée"
+  }
+}

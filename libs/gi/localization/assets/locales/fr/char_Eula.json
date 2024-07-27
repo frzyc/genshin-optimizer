@@ -1,0 +1,17 @@
+{
+  "burstC": {
+    "name": "Lame de fond",
+    "start5": "Commence à 5 stacks",
+    "addStacks": "50% de chance d'obtenir un stack supplémentaire",
+    "dmg": "DGT d'Explosion de Lame de fond",
+    "bonusScaling": "L'échelle des bonus de l'épée des chutes de lumière"
+  },
+  "c1C": {
+    "name": "Consomme les cumuls de <strong>Cœur de glace</strong>",
+    "durationStack": "6s + 6s par stack, jusqu'à 18s"
+  },
+  "passive1": "DGT épée de lumière",
+  "c4C": {
+    "dmgBonus": "Bonus DMG de l'Explosion de l'épée des chutes de lumière"
+  }
+}

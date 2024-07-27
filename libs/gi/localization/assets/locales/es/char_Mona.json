@@ -1,0 +1,8 @@
+{
+  "omen": "Presagio",
+  "hitOp": {
+    "affectedByOmen": "Cualquier miembro del equipo golpea a un enemigo afectado por un Presagio"
+  },
+  "frozenDuration": "Aumenta la duración de <cryo>Congelado</cryo> en",
+  "uponSprint": "Al entrar en Torrente ilusorio"
+}

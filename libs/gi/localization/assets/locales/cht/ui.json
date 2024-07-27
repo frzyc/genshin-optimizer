@@ -1,0 +1,69 @@
+{
+  "pageTitle": "原神最佳化工具",
+  "tabs": {
+    "artifacts": "聖遺物",
+    "characters": "角色",
+    "tools": "工具",
+    "weapons": "武器",
+    "doc": "文件",
+    "setting": "設定",
+    "scanner": "掃描器"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "unselect": "取消選取",
+  "ascending": "升序",
+  "descending": "降序",
+  "loading": "載入中...",
+  "rightsDisclaimer": "原神最佳化工具不屬於 Hoyoverse，也未受該公司的認可。",
+  "appVersion": "$t(pageTitle) 版本：<1>{{version}}</1>",
+  "error": "錯誤",
+  "reset": "重設",
+  "info": "資訊",
+  "inventory": "庫存",
+  "close": "關閉",
+  "sortMap": {
+    "new": "New",
+    "name": "名稱",
+    "level": "等級",
+    "rarity": "稀有度",
+    "efficiency": "目前估值",
+    "mefficiency": "最高估值",
+    "artsetkey": "聖遺物套裝"
+  },
+  "link": {
+    "download": "下載連結",
+    "discord": "Discord 邀請連結"
+  },
+  "sortBy": "排列方式: ",
+  "delete": "刪除",
+  "locked": "已上鎖",
+  "unlocked": "未上鎖",
+  "refinement": "精鍊 {{value}}",
+  "selectlevel": "Select Level",
+  "gender": {
+    "F": "女",
+    "M": "男"
+  },
+  "statGroupKey": {
+    "basic_stats": "Basic Stats",
+    "elem_dmg_bonus": "Elemental DMG Bonuses",
+    "enemy_debuffs": "Enemy Debuffs",
+    "self_res": "Self Resistances",
+    "reaction_dmg_bonus": "Reaction DMG Bonuses",
+    "reaction_crit": "Reaction CRIT Bonuses",
+    "elem_dmgInc": "Elemental Damage Increases",
+    "talent_dmgInc": "Talent Damage Increases",
+    "elem_crit": "Elemental CRIT Bonuses",
+    "talent_dmg_bonus": "Talent DMG Bonuses",
+    "talent_crit": "Talent CRIT Bonuses",
+    "talent_level_boost": "Talent Level Boosts",
+    "base_stat_mod": "Base Stat Modifications",
+    "stamina_buffs": "Stamina Buffs",
+    "misc": "Misc. Stats"
+  },
+  "sillyPageTitle": "Silly Optimizer"
+}

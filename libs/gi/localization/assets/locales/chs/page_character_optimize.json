@@ -1,0 +1,110 @@
+{
+  "mainStat": {
+    "levelAssTooltip": {
+      "title": "等级假设",
+      "desc": "修改主词条数值至某等级之上，但不改变副词条。"
+    },
+    "assumptionLvl": {
+      "no": "无等级假设",
+      "lvl": "假设等级为{{lvl}}级"
+    },
+    "title": "主词条筛选/配置"
+  },
+  "tcGraph": {
+    "vs": "绘制与优化目标的关系图",
+    "notSel": "未选",
+    "downloadData": "下载数据",
+    "desc": "本功能会显示优化目标和选择的绘图目标之间的关系，即绘图目标每变动0.01时，优化目标的数值，本功能为可选功能，并且会拖慢生成配装的速度",
+    "showStatThr": "显示词条阈值线",
+    "generatedBuilds": "生成配装",
+    "statReqThr": "词条阈值线",
+    "currentBuild": "当前配装",
+    "highlightedBuilds": "高亮的配装",
+    "buildAlreadyInList": "配装已经在列表中"
+  },
+  "levelFilter": "圣遗物等级过滤器",
+  "allowPartial": "允许部分配装（少于5件圣遗物）",
+  "constraintFilter": {
+    "title": "配装限制条件",
+    "tooltip": "设置配装必须满足的条件，例如必须有至少140%的充能效率。"
+  },
+  "artSetConfig": {
+    "title": "圣遗物套装配置",
+    "setEffCond": "套装有条件被动效果",
+    "enabled": "已启用",
+    "allowed": "已允许",
+    "excluded": "已排除",
+    "selected": "已选",
+    "2rainbow": "3散件",
+    "4rainbow": "5散件",
+    "allowAll2set": "允许所有两件套",
+    "excludeAll2set": "排除所有两件套",
+    "allowAll4set": "允许所有四件套",
+    "excludeAll4set": "排除所有四件套",
+    "alExRainbow": "<0>包含<1></1></0> / <2>排除<1></1></2> 散件配装",
+    "modal": {
+      "setCond": {
+        "title": "默认圣遗物套装有条件被动效果",
+        "reset": "重置条件",
+        "text": "部分圣遗物套装效果提供有条件词条，在本窗口中可以选择这些效果，以便在计算配装时将这些符合条件的效果考虑在内。"
+      },
+      "ArtSetFilter": {
+        "title": "圣遗物套装 <1>已包含<1></1></1> / <3>已排除<1></1></3>",
+        "intro": "你可以指定配装中哪些套装应该被包含/排除。在下面例子中，<strong>A</strong>代表成套的部件，<strong>R</strong>代表散件",
+        "2set": "<0><0>排除<1></1>两件套</0></0>会排除两件套搭配：<2><0>AA</0>RRR</2>与<4><0>AAA</0>RR</4>。",
+        "4set": "<0><0>排除<1></1>四件套</0></0>会排除四件套搭配：<2><0>AAAA</0>R</2>与<4><0>AAAAA</0></4>。",
+        "2rain": "<0><0>排除<1></1>3散件</0></0>会排除两件套+3散件的搭配：<2>AA<1>RRR</1></2>与<4>AAA<1>RR</1></4>。",
+        "4rain": "<0><0>排除<1></1>5散件</0></0>会排除纯散件的搭配：<2><0>RRRRR</0></2>。\n"
+      }
+    }
+  },
+  "buildDropdownDesc": "减少生成的配装数量可以减少生成大量配装时的计算时间。",
+  "threadDropdownDesc": "增加线程数可以加快速度，但是也会耗费更多CPU算力。",
+  "noArtis": "哎呀！你似乎还没有在GO中添加圣遗物！你应该先在<1>圣遗物<1>页面中添加一些！",
+  "targetSelector": {
+    "selectOptTarget": "选择优化目标",
+    "selectGraphTarget": "选择绘图目标",
+    "invalidTarget": "目标无效",
+    "selectBuildTarget": "选择一种配装限制条件"
+  },
+  "selectTargetFirst": "首先选择一个优化目标",
+  "generateButton": {
+    "cancel": "取消",
+    "generateBuilds": "生成配装"
+  },
+  "removeBuildButton": "移除配装",
+  "theorycraftButton": "理论分析",
+  "currentlyEquippedBuild": "当前已装备的",
+  "addBuildToList": "将配装加入列表",
+  "graphBuildLabel": "图表 #<1>{{count}}</1>",
+  "excludeArt": {
+    "title_exclude": "排除的圣遗物",
+    "title_tooltip": "添加圣遗物到该角色的排除列表，排除列表里的圣遗物在配装时将不会考虑。",
+    "addExc": "添加圣遗物到该角色的排除列表",
+    "selExc": "选择圣遗物以添加到该角色的排除列表",
+    "deSelectExc": "点击圣遗物以从该角色的排除列表中移除",
+    "usingNum": "使用<1>{{totalStr}}</1>件已排除的圣遗物"
+  },
+  "excludeChar": {
+    "title": "可装备的圣遗物配置",
+    "modal": {
+      "allow_all": "添加以下所有角色到允许列表",
+      "disallow_All": "将以下所有角色从允许列表中移除"
+    },
+    "allowEquip": "允许使用来自这些的圣遗物",
+    "tooltip": "添加其他角色到该角色的允许列表，在生成配装时，会考虑这些角色已装备的圣遗物。你可以在仅使用未装备圣遗物、自定义列表和使用所有圣遗物之间切换。",
+    "chars": "角色",
+    "artis": "圣遗物",
+    "states": {
+      "unequippedOnly": "仅未装备",
+      "customList": "自定义列表",
+      "all": "所有圣遗物"
+    },
+    "usingState": "使用"
+  },
+  "buildCompleted": "配装完成",
+  "notifyTooltip": "配装完成时发出声音，如果焦点不在本页面，还会显示提示。",
+  "bonusStats": {
+    "title": "增益状态"
+  }
+}

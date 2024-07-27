@@ -1,0 +1,15 @@
+{
+  "paramita": {
+    "enter": "<strong>冥蝶の舞</strong>状態",
+    "end": "<strong>冥蝶の舞</strong>状態終了後"
+  },
+  "constellation2": {
+    "applyBloodBlossom": "<strong>血梅香</strong>状態を与える"
+  },
+  "constellation4": {
+    "condName": "<strong>血梅香</strong>状態の敵を倒した後"
+  },
+  "constellation6": {
+    "condName": "HPが25%以下、または戦闘不能に至るダメージを受けた"
+  }
+}

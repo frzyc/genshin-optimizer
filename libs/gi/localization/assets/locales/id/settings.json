@@ -1,0 +1,58 @@
+{
+  "title": "Pengaturan",
+  "languageCard": {
+    "languageFormat": "Bahasa: {{language}}"
+  },
+  "uploadCard": {
+    "title": "Unggah Database",
+    "replaceDatabase": "Perbarui Database",
+    "hint": "Unggah file JSON di sini...",
+    "hintPaste": "...atau tempel datamu di bawah.",
+    "error": {
+      "jsonParse": "Tidak dapat mengurai file JSON.",
+      "unknown": "Format file tidak dikenal.",
+      "monaInvalid": "Format file Mona-Uranai tidak valid",
+      "goInvalid": "Format file cadangan GO tidak valid."
+    },
+    "dbSource": "Sumber data:",
+    "goodUpload": {
+      "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
+    },
+    "buttons": {
+      "open": "Buka",
+      "detectDups": "Deteksi Update/Duplikat",
+      "delNotInImport": "Hapus item yang tidak di impor"
+    },
+    "tooltip": {
+      "detectdup": "Temukan upgrade/duplikat di inventaris GO dan gabungkan impor ke dalam GO.",
+      "ignoreDup": "Jangan deteksi Upgrade/duplikat, impor ditambahkan di atas inventaris GO yang ada.",
+      "delNotInImport": "Asumsikan impor menjadi inventaris penuh.  Item dalam Inventaris GO yang tidak ada dalam impor akan dihapus.",
+      "keepNotInImport": "Asumsikan impor adalah inventaris parsial.  Tidak ada yang akan dihapus."
+    }
+  },
+  "count": {
+    "chars": "Karakter:",
+    "arts": "Artefak:",
+    "weapons": "Senjata:",
+    "total": "Total:",
+    "new": "Baru:",
+    "updated": "Terupdate:",
+    "removed": "Dihilangkan:",
+    "unchanged": "Tidak berubah:",
+    "invalid": "Invalid:",
+    "upgraded": "Ditingkatkan:",
+    "dbTotal": "Jumlah Penggabungan:",
+    "notInImport": "Tidak di Impor:"
+  },
+  "DatabaseCard": {
+    "title": "Database",
+    "button": {
+      "download": "Download",
+      "copy": "Clipboard",
+      "delete": "Hapus",
+      "upload": "Unggah",
+      "swap": "Tukar"
+    },
+    "currentDB": "Database Saat ini"
+  }
+}
