@@ -1,0 +1,17 @@
+{
+  "skill": {
+    "eye": "Membawa Eye of Stormy Judgement",
+    "partyCost": "Konsumsi Energi (party)"
+  },
+  "burst": {
+    "resolves": "Lapisan Resolve",
+    "resolveInitial_": "<electro>Scaling DMG Bonus Musou no Hitotachi</electro>",
+    "resolveInfused_": "<electro>Scaling DMG Bonus Musou no Isshin</electro>",
+    "burstDmg": "DMG Musou no Hitotachi"
+  },
+  "a4": {
+    "enerRest": "Pemulihan energi dari <strong>Musou Isshin</strong>",
+    "eleDMG": "Electro DMG Bonus"
+  },
+  "c4": { "expires": "Setelah status <strong>Musou Isshin</strong> berakhir" }
+}

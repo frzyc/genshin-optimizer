@@ -1,0 +1,106 @@
+{
+  "mainStat": {
+    "levelAssTooltip": {
+      "title": "主詞條等級強化",
+      "desc": "改變主詞條等級到可提升副詞條的最低特定等級。不能改變副詞條。"
+    },
+    "assumptionLvl": {
+      "no": "假設主詞條不提升等級",
+      "lvl": "假設主詞條至少為 {{lvl}} 級"
+    },
+    "title": "Main Stat Filter/Configuration"
+  },
+  "tcGraph": {
+    "vs": "Graph Optimization Target vs.",
+    "notSel": "Not Selected",
+    "downloadData": "下載資料",
+    "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. the selected Graph Target. The graph will show the maximum Optimization Target value per 0.01 of the selected Graph Target. Enabling this is optional, and doing so will slow down build times",
+    "showStatThr": "Show Stat Threshold Line",
+    "generatedBuilds": "Generated Builds",
+    "statReqThr": "Stat Requirement Threshold Line",
+    "currentBuild": "Current Build",
+    "highlightedBuilds": "Highlighted Builds",
+    "buildAlreadyInList": "Build is already in the list"
+  },
+  "levelFilter": "聖遺物等級過濾器",
+  "allowPartial": "Allow Partial Builds (<5 artifacts)",
+  "constraintFilter": {
+    "title": "Minimum Build Constraints",
+    "tooltip": "Set certain minimum requirements that generated builds must conform to. e.g. Generated builds must have at least 140% Energy Recharge."
+  },
+  "artSetConfig": {
+    "title": "聖遺物套裝偏好設定",
+    "setEffCond": "Set Effect Conditionals",
+    "enabled": "Enabled",
+    "allowed": "Allowed",
+    "excluded": "已排除",
+    "selected": "已選擇",
+    "2rainbow": "3-Rainbow",
+    "4rainbow": "5-Rainbow",
+    "allowAll2set": "允許所有兩件套裝",
+    "excludeAll2set": "排除所有兩件套裝",
+    "allowAll4set": "允許所有四件套裝",
+    "excludeAll4set": "排除所有四件套裝",
+    "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow Builds",
+    "modal": {
+      "setCond": {
+        "title": "Artifact Set Conditional Effects",
+        "reset": "重設條件",
+        "text": "Some artifact set effects provide conditional stats. This window allows you to select those effects, so they can contribute stats when a build that satifies a set effect is calculated during optimization."
+      },
+      "ArtSetFilter": {
+        "title": "Artifact Sets <1>Allowed<1></1></1> / <3>Excluded<1></1></3>",
+        "intro": "You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(off-set)",
+        "2set": "<0><0>Excluding<1></1> 2-Set</0></0> would exclude 2-Set builds: <2><0>AA</0>RRR</2> and <4><0>AAA</0>RR</4>.",
+        "4set": "<0><0>Excluding<1></1> 4-Set</0></0> would exclude 4-Set builds: <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
+        "2rain": "<0><0>Excluding<1></1> 3-Rainbow</0></0> would exclude 2-Set + 3-Rainbow builds: <2>AA<1>RRR</1></2> and <4>AAA<1>RR</1></4>.",
+        "4rain": "<0><0>Excluding<1></1> 5-Rainbow</0></0> would exclude full 5-Rainbow builds: <2><0>RRRRR</0></2>."
+      }
+    }
+  },
+  "buildDropdownDesc": "Decreasing the number of generated build will decrease build calculation time for large number of builds.",
+  "threadDropdownDesc": "Increasing the number of threads will speed up build time, but will use more CPU power.",
+  "noArtis": "Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <1>Artifacts</1> page and add some!",
+  "targetSelector": {
+    "selectOptTarget": "Select an Optimization Target",
+    "selectGraphTarget": "Select a Graph Target",
+    "invalidTarget": "INVALID TARGET",
+    "selectBuildTarget": "Select a Build Constraint Target"
+  },
+  "selectTargetFirst": "Select an Optimization Target first",
+  "generateButton": { "cancel": "取消", "generateBuilds": "Generate Builds" },
+  "removeBuildButton": "Remove Build",
+  "theorycraftButton": "Theorycraft",
+  "currentlyEquippedBuild": "Currently Equipped",
+  "addBuildToList": "Add build to list",
+  "graphBuildLabel": "Graph #<1>{{count}}</1>",
+  "excludeArt": {
+    "title_exclude": "Excluded Artifacts",
+    "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
+    "addExc": "Add artifact to this character's exclusion list",
+    "selExc": "Select artifact to add to this character's exclusion list",
+    "deSelectExc": "Click on an artifact to remove it from the exclusion list",
+    "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
+    "button_txt": "Exclude Artifacts"
+  },
+  "excludeChar": {
+    "title": "Equipped Artifact Configuration",
+    "modal": {
+      "allow_all": "Add all shown characters to the allow list",
+      "disallow_All": "Remove all shown characters from the allow list"
+    },
+    "allowEquip": "Allow using artifacts from",
+    "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all equipped and unequipped artifacts.",
+    "chars": "Characters",
+    "artis": "Artifacts",
+    "states": {
+      "unequippedOnly": "Unequipped Only",
+      "customList": "Custom List",
+      "all": "All Artifacts"
+    },
+    "usingState": "Using"
+  },
+  "buildCompleted": "Build Completed",
+  "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out.",
+  "bonusStats": { "title": "Bonus Stats" }
+}

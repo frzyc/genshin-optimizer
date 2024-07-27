@@ -1,0 +1,87 @@
+{
+  "editor": {
+    "title": "Editor de Artefactos",
+    "substat": {
+      "substatFormat": "Substat {{value}}",
+      "noSubstat": "Sin Substat",
+      "selectSub": "Selecciona un Substat",
+      "error": {
+        "noCalc": "No se pueden calcular las tiradas de stat.",
+        "noOverRoll": "El substat no se puede tirar más de {{value}} veces."
+      },
+      "noRoll": "Sin Tiradas",
+      "noStat": "Sin Valor",
+      "eff": "VdT: <1></1>",
+      "nextRolls": "Siguientes tiradas:"
+    },
+    "rarity": "Rareza",
+    "level": "Nivel",
+    "unknownPieceName": "Nombre de Pieza Desconocido",
+    "curSubEff": "Valor de Tirada Actual",
+    "curSubEffDesc": "Cada 4 niveles de mejora de artefacto, se obtiene una tirada de substat. El <strong>Valor de Tirada</strong> calcula cómo de alta fué la tirada de substat como un porcentaje.",
+    "maxSubEff": "Valor de Tirada Máx.",
+    "maxSubEffDesc": "El <strong>Valor de Tirada de Substat Máximo</strong> de un artefacto calcula el VdT si las mejoras restantes obtuvieran sus valores máximos.",
+    "preview": "Vista Previa del Artefacto",
+    "dupArt": "Artefacto duplicado detectado.",
+    "upArt": "Artefacto mejorado detectado.",
+    "beforeEdit": "Anterior a la Edición",
+    "btnSave": "Guardar Artefacto",
+    "btnAdd": "Agregar Artefacto",
+    "btnClear": "Borrar",
+    "btnRandom": "Aleatorizar",
+    "btnUpdate": "Actualizar Artefacto",
+    "clearPrompt": "Hay un artefacto en el editor. ¿Estás seguro de que quieres borrar el editor?",
+    "unknownSetName": "Set de artefactos desconocido"
+  },
+  "artifactFilter": "Filtro de Artefactos",
+  "filterLocation": {
+    "inventory": "Inventario",
+    "currentlyEquipped": "Actualmente Equipados",
+    "location": "Ubicación"
+  },
+  "button": {
+    "unequipArtifacts": "Desequipar Artefactos",
+    "deleteArtifacts": "Eliminar Artefactos",
+    "lockArtifacts": "Bloquear Artefactos",
+    "unlockrtifacts": "Desbloquear Artefactos"
+  },
+  "buttonHint": "Nota: los botones anteriores sólo se aplican a los <1>artefactos filtrados</1>",
+  "tipsOfTheDay": [
+    "El VdT máximo de un artefacto de 4 estrellas es en torno al 540%.",
+    "El VdT máximo de un artefacto suele disminuir a medida que sube de nivel. ¡Es completamente normal!",
+    "Los substats con \"1\" son los más difíciles de escanear en las capturas de pantalla.",
+    "Si todas tus tiradas (6) fueron a un sólo substat, ¡será de color púrpura!",
+    "Haz clic en \"Detalles\" cuando estés mejorando tus artefactos en el juego para escanearlos mientras los mejoras.",
+    "¡Ahora puedes cargar múltiples capturas de pantalla de artefactos para escanearlos!"
+  ],
+  "mainStat": "Stat Principal",
+  "slot": "Ranura",
+  "slotName": {
+    "flower": "Flor de la Vida",
+    "plume": "Pluma de la Muerte",
+    "sands": "Arenas del Eón",
+    "goblet": "Cáliz de Eonothem",
+    "circlet": "Tiara de Logos"
+  },
+  "info": {
+    "title": "Guía de Edición/Gestión de Artefactos",
+    "section1": "<0>Tiradas de substat</0><1>El <1>número de tiradas</1> que posee un substat se muestra a la izquierda del mismo. A medida que el número crece, el substat se vuelve más colorido:<3></3>.</1><2>Valor de Tirada de Substat</2><3>El Valor de Tirada (VdT) de un substat es un porcentaje entre el valor actual sobre el valor potencial de 5<1></1> más alto. En la imagen, el valor máximo de la tirada de Daño CRIT es de 7,8%. En VdT: <3>5,8/7,8 = 69,2%.</3></3><4>Valor de Tirada Actual vs. Valor Máximo de Tirada</4><5>Cuando un 5<1></1> tiene 9(4+5) tiradas totales, cada una de las tiradas teniendo el valor más alto, eso es definido como un artefacto con VdT de 900%. Sin embargo, la mayoría de los artefactos no tienen esa suerte. El <3>VdT Actual</3> de un artefacto es un porcentaje sobre ese artefacto del 100%. El <5>VdT Máximo</5> es el VdT máximo posible que puede alcanzar un artefacto, si las tiradas restantes de mejora del artefacto obtuvieran el valor más alto posible.</5><6>Bloquear un artefacto</6><7>Al bloquear un artefacto <1></1>, Este artefacto no será usado por el generador de builds para su optimización. Un artefacto equipado será bloqueado por defecto.</7>",
+    "section2": "<0>Editor de Artefactos</0><1>Un editor de artefactos completo, que puede aceptar cualquier artefacto de 3<1></1> a 5<3></3>. Cuando se introduce un substat, puede calcular los valores exactos de sus tiradas. También se asegurará de que tienes el número correcto de tiradas en el artefacto según su nivel, junto con otras métricas de validación.</1><2>Escanear capturas de pantalla</2><3>¿La introducción de datos manual no es lo tuyo? ¡Puedes escanear tus artefactos con capturas de pantalla! En el editor de artefactos, haga clic en el botón <1>?</1> para aprender cómo.</3><4>Escáner Automático de Artefactos</4><5>Si juegas Genshin en PC, puedes descargar una herramienta que escanee automáticamente todos tus artefactos, para después importar esos datos en <1></1> Base de datos. <3>Haz click aquí</3> para ver una lista de escáneres compatibles con GO.</5><6>Detección de artefactos duplicados/mejorados</6><7>¿Sabías que GO puede detectar si estás añadiendo un artefacto <1>duplicado</1> ya existente en el sistema? También puede detectar si el artefacto actualmente en el editor es una <3>mejora</3> de un artefacto ya existente. Una vez detectado un duplicado/mejora, la vista previa le permitirá comparar los dos artefactos en cuestión (Ver Imagen).</7>",
+    "section3": "<0>Inventario de Artefactos</0><1>Aquí se muestran todos los artefactos que has añadido a GO. Los filtros aquí te permiten refinar aún más la vista de tus artefactos. </1><2>Ejemplo: Encontrar Artefactos de Relleno</2><3>Usando el filtro de artefactos y el VdT de los artefactos, puedes encontrar rápidamente artefactos para usar como experiencia.</3><4>En este ejemplo, los filtros se establecen así: </4><5><0><0>Nivel límite de 0-8.</0><1>Artefactos desbloqueados del Inventario.</1><2>Quitando la contribución de Vida plana, DEF plana y Recarga de Energía al cálculo de VdT.</2><3>Ordenado por Valor de Tirada Máximo Ascendente.</3></0></5><6>Así puedes filtar el inventario de artefactos para ver aquéllos artefactos con peor VdT, según substats.</6>"
+  },
+  "sortMap": {
+    "level": "Nivel",
+    "efficiency": "Valor de Tirada Actual",
+    "mefficiency": "Valor de Tirada Máximo"
+  },
+  "efficiencyFilter": {
+    "title": "Substats a usar en el cálculo del Valor de Tirada"
+  },
+  "resetFilters": "Restablecer Filtros",
+  "setEffectNum": "{{setNum}} Piezas",
+  "edit": "Editar artefacto",
+  "autocompleteLabels": {
+    "substats": "Sub-atributos",
+    "set": "Set de artefacto"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "paramita": {
+    "enter": "피안접무 상태 진입",
+    "end": "나비의 서가 부여하는 피안접무 상태 종료"
+  },
+  "constellation2": {
+    "applyBloodBlossom": "<strong>혈매향</strong> 효과 부여"
+  },
+  "constellation4": {
+    "condName": "<strong>혈매향</strong> 효과 상태의 적 처치 시"
+  },
+  "constellation6": {
+    "condName": "HP가 25% 이하로 떨어지거나 전투 불능이 될 정도의 피해를 입음"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Artefakte",
+    "characters": "Figuren",
+    "tools": "Extras",
+    "weapons": "Waffen",
+    "setting": "Einstellungen"
+  },
+  "social": { "paypal": "Paypal", "patreon": "Patreon", "discord": "Discord" },
+  "unselect": "Abwählen",
+  "ascending": "Aufsteigend",
+  "descending": "Absteigend",
+  "loading": "Laden...",
+  "rightsDisclaimer": "Genshin Optimizer ist kein Teil von miHoYo und wird nicht davon unterstützt.",
+  "appVersion": "$t(pageTitle) Version: {{version}}",
+  "error": "Fehler",
+  "reset": "Zurücksetzen",
+  "info": "Info",
+  "inventory": "Inventar",
+  "close": "Schließen",
+  "sortMap": {
+    "new": "Neu",
+    "name": "Name",
+    "level": "Stufe",
+    "efficiency": "Aktuelle RV",
+    "mefficiency": "Maximale RV",
+    "artsetkey": "Artefaktset"
+  },
+  "refinement": "Verfeinerung {{value}}"
+}

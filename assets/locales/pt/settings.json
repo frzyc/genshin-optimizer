@@ -1,0 +1,64 @@
+{
+  "title": "Configurações",
+  "languageCard": { "languageFormat": "Idioma: {{language}}" },
+  "uploadCard": {
+    "title": "Upload de Base de Dados",
+    "replaceDatabase": "Substituir Base de Dados",
+    "hint": "Carregue o arquivo JSON aqui...",
+    "hintPaste": "...ou cole os dados abaixo.",
+    "error": {
+      "jsonParse": "Não foi possível ler o arquivo JSON",
+      "unknown": "Formato de arquivo desconhecido.",
+      "monaInvalid": "O formato de arquivo Mona-Uranai é inválido",
+      "goInvalid": "O formato do arquivo backup GO é inválido."
+    },
+    "dbSource": "Origem dos dados:",
+    "goodUpload": {
+      "title": "Formato <strong>Genshin Open Object Description</strong> (GOOD)"
+    },
+    "buttons": {
+      "open": "Selecionar",
+      "detectDups": "Detectar itens atualizados/duplicados",
+      "delNotInImport": "Excluir itens fora da base de dados"
+    },
+    "tooltip": {
+      "detectdup": "Detectar itens duplicados ou aprimorados no seu inventário atual e juntar a base de dados importada ao GO.",
+      "ignoreDup": "Não detectar duplicados ou aprimorados, a base de dados é simplesmente adicionada ao inventário existente.",
+      "delNotInImport": "Entende que a base de dados importada se trata do inventário completo. Itens presentes no seu inventário atual do GO que não estão no inventário importado serão excluído.",
+      "keepNotInImport": "Entende que a base de dados importada é só parte do seu inventário. Nada será excluído."
+    }
+  },
+  "count": {
+    "chars": "Personagens:",
+    "arts": "Artefatos:",
+    "weapons": "Armas:",
+    "total": "Total:",
+    "new": "Novo:",
+    "updated": "Atualizado:",
+    "removed": "Removido:",
+    "unchanged": "Sem Modificações:",
+    "invalid": "Inválido:",
+    "upgraded": "Aprimorados:",
+    "dbTotal": "Total Combinado:",
+    "notInImport": "Fora da Base de Dados:"
+  },
+  "DatabaseCard": {
+    "title": "Base de Dados",
+    "button": {
+      "download": "Fazer Download",
+      "copy": "Copiar",
+      "delete": "Excluir",
+      "upload": "Fazer Upload",
+      "swap": "Mudar"
+    },
+    "currentDB": "Base de Dados Atual"
+  },
+  "sillyCard": {
+    "desc": "Nós <1>roubamos</1> pegamos (com permissão) as ilustrações de personagens do <strong>Silly Wisher</strong> emprestadas e as alteramos geneticamente no Genshin Optimizer.",
+    "toggle": {
+      "enabled": "Silly Optimizer Ativado",
+      "disabled": "Silly Optimizer Desativado"
+    }
+  },
+  "letsnow": "Deixe nevar"
+}

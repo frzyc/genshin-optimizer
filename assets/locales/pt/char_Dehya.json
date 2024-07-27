@@ -1,0 +1,7 @@
+{
+  "inFieldAndTakeDmg": "Após um personagem levar dano dentro do campo da Espada Incinerante",
+  "field_dmg_": "Bônus de Dano do campo",
+  "initialHeal": "Cura Inicial",
+  "dotHeal": "Cura Contínua",
+  "critHitDuringBurst": "Após um Golpe do Rugido infligir Dano Crítico"
+}

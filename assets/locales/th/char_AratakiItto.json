@@ -1,0 +1,11 @@
+{
+  "a1": { "name": "เมื่อ Arataki Itto ใช้ Arataki Kesagiri อย่างต่อเนื่อง" },
+  "a4": { "dmgInc": "ความเสียหาย Arataki Kesagiri เพิ่มขึ้น" },
+  "c1": {
+    "initialGain": "ได้รับสแต็ค Superlative Superstrength",
+    "timedGain": "หลังจาก 1 วินาทีผ่านไป, จะได้สแต็ค Superlative Superstrength อีกทุกๆ 0.5 วินาทีเป็นเวลา 1.5 วินาที"
+  },
+  "c4": {
+    "name": "หลังจากสถานะ Raging Oni King ที่เกิดจาก <strong>Royal Descent: Behold, Itto the Evil!</strong> สิ้นสุดลง"
+  }
+}

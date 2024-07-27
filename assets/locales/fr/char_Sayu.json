@@ -1,0 +1,10 @@
+{
+  "burstHits": "Nombre d'activations de Daruma Muji-Muji",
+  "p2Heal": "Guérison d'un personnage proche",
+  "c1Text": "Le Daruma Muji-Muji ignore les limites de HP et peut simultanément attaquer les adversaires proches et soigner les personnages.",
+  "c2KickPressDmg_": "DGT de Coup de pied Fuufuu après un appui simple",
+  "c2KickDmg_": "DGT de Coup de pied Fuufuu après un appui long",
+  "c2Cond": "Temps passé dans l'état de <strong>Fuufuu Windwheel</strong>.",
+  "c6DarumaDmgInc": "Muji-Muji Daruma DMG Inc.",
+  "c6DarumaHealInc": "Muji-Muji Daruma Heal Inc."
+}

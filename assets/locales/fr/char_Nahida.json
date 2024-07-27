@@ -1,0 +1,14 @@
+{
+  "karmaDmg_": "Purification tri-karma Bonus DMG",
+  "karmaCritRate_": "Tri-Karma Purification CRIT Rate Bonus",
+  "karmaIntervalDec": "Tri-Karma Purification Diminution de l'intervalle de déclenchement",
+  "noBurstEffect": "Indice : aucun effet d'éclatement n'est actif. Activez C1 et/ou ajoutez des coéquipiers <pyro>Pyro</pyro>, <electro>Electro</electro>, et/ou <hydro>Hydro</hydro>.",
+  "partyInBurst": "Fête sur le terrain",
+  "c1Key": "Membres supplémentaires <pyro>Pyro</pyro>, <electro>Electro</electro> et <hydro>Hydro</hydro> pour le bonus de <strong>Shrine of Maya</strong>.",
+  "c2": {
+    "bloomCondName": "L'adversaire est marqué par <strong>la graine de Skandha</strong>",
+    "qasCondName": "Après avoir déclenché <spread>Quicken</spread> <aggravate>Aggravate</aggravate>, ou <spread>Spread</spread> sur l'adversaire marqué par Seeds of Skandha"
+  },
+  "c4CondName": "Opposants affectés par <strong>Les graines de Skandha</strong>",
+  "c6KarmicDmg": "DMG de l'Oblivion karmique"
+}

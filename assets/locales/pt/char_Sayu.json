@@ -1,0 +1,10 @@
+{
+  "burstHits": "Número de Ativações do Daruma Muji-Muji",
+  "p2Heal": "Cura aos Personagens Próximos",
+  "c1Text": "O Daruma Muji-Muji ignorará limites de Vida e pode simultaneamente curar personagens e atacar os inimigos próximos",
+  "c2KickPressDmg_": "Bônus de Dano de Chute da Roda Fuufuu ao pressionar",
+  "c2KickDmg_": "Bônus de Dano de Chute da Roda Fuufuu",
+  "c2Cond": "Tempo no estado de <strong>Roda Fuufuu</strong>",
+  "c6DarumaDmgInc": "Aumento do Dano do Daruma Muji-Muji",
+  "c6DarumaHealInc": "Aumento da Cura do Daruma Muji-Muji"
+}

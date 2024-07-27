@@ -1,0 +1,22 @@
+{
+  "title": "🛑Um Erro Inesperado Ocorreu🛑",
+  "p1.1": "O GO acabou de experienciar um erro inesperado. Isso provavelmente é nossa culpa, então permita-nos ajudá-lo!",
+  "p1.2": "Aqui estão alguns passos que você pode tentar para resolver o problema:",
+  "fixes": {
+    "1": "Recarregue a página",
+    "2": "Desabilite extensões do seu navegador e recarregue a página",
+    "3": "Faça o download da(s) sua(s) Base(s) de Dados e guarde-as com segurança. Clique no botão 'Excluir TODOS os dados do GO' e em seguida faça o upload dela(s) novamente"
+  },
+  "p2": "Se você seguiu as instruções acima e ainda assim veio parar aqui, por favor reporte um bug na nossa página de Problemas no GitHub, ou no nosso canal de Bug Reports no Discord.",
+  "report": {
+    "1": "Faça o Download das suas Bases de Dados abaixo",
+    "2": "Copie o texto do bug da caixa abaixo",
+    "3": "Clique <1>aqui</1> para reportar o bug no GitHub. Cole o texto na descrição, descreva os passos para reprodução, e inclua os seus arquivos JSON (você pode ter que renomeá-los para que terminem com '.txt')",
+    "4": "Ou clique <1>aqui</1> para reportar no Discord. Abra o canal #🐛bug-reports, crie uma nova thread e cole o texto na caixa de mensagem. Insira os passos para reprodução e faça o upload de seus arquivos JSON."
+  },
+  "refresh": "Recarregar Página",
+  "caption": "Visualização ao vivo dos nossos desenvolvedores investigando o problema.",
+  "confirmNuke": "Tem certeza de que de deseja excluir TODOS os seus dados do GO? Não dá para voltar atrás!",
+  "finishNuke": "Os dados do GO foram excluídos. Recarregando a página",
+  "nuke": "Excluir TODOS os dados do GO"
+}

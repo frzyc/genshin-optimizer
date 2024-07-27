@@ -1,0 +1,12 @@
+{
+  "burstC": {
+    "name": "Schwert der Brandung",
+    "start5": "Beginnt bei 5 Stapelungen",
+    "addStacks": "50% Wahrscheinlichkeit auf neue Stapelung"
+  },
+  "c1C": {
+    "name": "Verbraucht Stapelungen von <strong>Kaltes Herz</strong>",
+    "durationStack": "6s + 6s pro Stapelung, bis zu 18s"
+  },
+  "passive1": "Schaden von fragmentarischem Schwert des Lichtfalls"
+}

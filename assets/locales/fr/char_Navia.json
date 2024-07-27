@@ -1,0 +1,10 @@
+{
+  "skillTotalShardDmg": "Rosula Shardshot Total DMG",
+  "shot_dmg_": "Rosula Shardshot DMG Bonus",
+  "shot_mult_": "Rosula Shardshot Multiplier",
+  "shot_critRate_": "Rosula Shardshot Taux de CRIT",
+  "shot_critDMG_": "Rosula Shardshot CRIT DMG",
+  "chargesCond": "Charges de Crystal Shrapnel consommées",
+  "shotsFired": "Rosula Shardshots tirés",
+  "shotsHitCond": "Rosula Shardshots touché"
+}

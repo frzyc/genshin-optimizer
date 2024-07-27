@@ -1,0 +1,9 @@
+{
+  "p1": "风刃伤害",
+  "c6": "受到<strong>风息激荡</strong>伤害的目标",
+  "c4": "风涡剑持续期间，受到的伤害降低",
+  "initialEleDmg": "初始切割伤害",
+  "maxEleDmg": "最大切割伤害",
+  "stormEleDmg": "初始爆风伤害",
+  "stormEleMaxDmg": "最大爆风伤害"
+}

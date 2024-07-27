@@ -1,0 +1,20 @@
+{
+  "skill": {
+    "dance1": "Dano do 1° Golpe da Dança de Espadas",
+    "dance2": "Dano do 2º Golpe da Dança de Espadas",
+    "whirl1": "Dano do 1° Golpe da Dança Rodopiante",
+    "whirl2": "Dano do 2° Golpe da Dança Rodopiante",
+    "wheel": "Dano de Roda d’Água",
+    "illusion": "Dano da Lua Aquática"
+  },
+  "passive1": {
+    "underChaliceEffect": "Sob a Recompensa do Cálice Dourado",
+    "notDendroHydroTeam": "Dica: Coloque apenas personagens Dendro e Hydro no seu time para ver mais efeitos e condicionais",
+    "condName": "Após ser atingido por um <dendro>ataque Dendro</dendro> sob o efeito do Corte das Pétalas Dançantes",
+    "bountifulCores": "A reação de Florescimento criará Núcleos da Riqueza"
+  },
+  "c4": {
+    "condName": "Após o terceiro passo de Pirueta da <strong>Dança dos Sete Reinos</strong> acertar o inimigo"
+  },
+  "c1": { "illusion_dmg_": "Bônus de Dano da Lua Aquática" }
+}
