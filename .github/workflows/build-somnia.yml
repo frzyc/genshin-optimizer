@@ -43,9 +43,27 @@ on:
     types: [opened, reopened, synchronize, labeled]
 
 jobs:
+  set-env:
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'deploySomnia')
+    outputs:
+      env: ${{ steps.set_env.outputs.env }}
+    steps:
+      - name: Set env
+        id: set_env
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
+            echo "::set-output name=env::somnia-prod"
+          else
+            echo "::set-output name=env::somnia-test"
+
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    needs: set-env
+    if: contains(github.event.pull_request.labels.*.name, 'deploySomnia')
+    environment:
+      name: ${{ needs.set-env.outputs.env }}
     steps:
       - uses: actions/checkout@v4
       - name: Get Cache Key
@@ -74,9 +92,15 @@ jobs:
           NX_DAEMON="false"
           cp apps/somnia/src/config.empty.json apps/somnia/src/config.json
           yarn run nx run somnia:build:production
+      - name: echos
+        run: |
+          echo ${{ vars.ENV_NAME }} > environment
+          echo $(git rev-parse HEAD) > ref
       - name: Archive build
         uses: actions/upload-artifact@v4
         with:
           name: somnia_build
           path: |
             dist/apps/somnia
+            environment
+            ref

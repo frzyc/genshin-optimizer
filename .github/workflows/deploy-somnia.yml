@@ -1,0 +1,54 @@
+name: Deploy Somnia from artifact
+run-name: Deploy Somnia from artifact created by "${{ github.event.workflow_run.display_title }}"
+
+on:
+  workflow_run:
+    workflows:
+      - Build Somnia
+    types:
+      - completed
+
+jobs:
+  set-env:
+    runs-on: ubuntu-latest
+    outputs:
+      env: ${{ steps.set_env.outputs.env }}
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set env
+        id: set_env
+        run: |
+          echo "::set-output name=env::$(cat somnia-build/environment)"
+
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: set-env
+    environment:
+      name: ${{ needs.set-env.outputs.env }}
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    permissions:
+      id-token: write # This is required for requesting the JWT
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: 'Deploy to Azure Web App'
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ vars.ENV_NAME }}
+          slot-name: 'Production'
+          package: somnia-build/dist/apps/somnia

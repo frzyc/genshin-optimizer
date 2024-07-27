@@ -7,7 +7,11 @@ import {
   REST,
   Routes,
 } from 'discord.js'
-import { clientid, token } from './config.json'
+import { readFileSync } from 'fs'
+// So we can modify config.json after building, thereby not exposing credentials in our build drop
+const { clientid, token } = JSON.parse(
+  readFileSync('./apps/somnia/src/config.json').toString()
+)
 
 const client = new Client({
   intents: [
