@@ -1,3 +1,4 @@
+import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
   cmpEq,
@@ -288,3 +289,7 @@ export const queryTypes = new Set([
 // Register `q:`
 for (const values of [...Object.values(selfTag), ...Object.values(enemyTag)])
   for (const q of Object.keys(values)) reader.with('q', q)
+
+export function tagToStat(tag: Tag): StatKey {
+  return (tag.q === 'dmg_' ? `${tag.ele}_${tag.q}` : tag.q) as StatKey
+}
