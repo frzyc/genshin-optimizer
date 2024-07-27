@@ -178,8 +178,7 @@
             "rarity": "Rareza",
             "efficiency": "VdT Actual",
             "mefficiency": "VdT Máximo",
-            "artsetkey": "Conjunto de Artefactos",
-            "probability": "Probabilidad de Tirada"
+            "artsetkey": "Conjunto de Artefactos"
         },
         "link": {
             "download": "Enlace de Descarga",
