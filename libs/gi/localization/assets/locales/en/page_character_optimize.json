@@ -43,7 +43,6 @@
   },
   "excludeChar": {
     "title": "Use Equipped Artifacts",
-    "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all artifacts.",
     "modal": {
       "allow_all": "Add all shown characters to the allow list",
       "disallow_All": "Remove all shown characters from the allow list"
