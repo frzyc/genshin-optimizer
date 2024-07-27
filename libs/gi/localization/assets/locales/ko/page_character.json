@@ -1,0 +1,88 @@
+{
+  "addNew": "새 캐릭터 추가",
+  "tabs": {
+    "overview": "기본정보",
+    "talent": "특성 및 돌파",
+    "optimize": "최적화",
+    "theorycraft": "이론 연구실"
+  },
+  "formulas": "식",
+  "calculations": "계산",
+  "selectCharacter": "캐릭터 선택",
+  "removeCharacter": "{{value}}을/를 정말 제거하시겠습니까?",
+  "delete": "캐릭터 삭제",
+  "teammates": "파티원",
+  "hitmode": {
+    "hit": "최소 피해(치명X)",
+    "avgHit": "평균 피해",
+    "critHit": "최대 피해(치명O)",
+    "global": "전역 설정에 따름"
+  },
+  "tabEquip": {
+    "swapWeapon": "무기 교환",
+    "swapArt": "성유물 교환",
+    "compare": "현재 조합과 비교",
+    "unequipArts": "성유물 모두 해제"
+  },
+  "characterName": "캐릭터 이름",
+  "teammate": "파티원 {{count}}",
+  "noReaction": "원소 반응 없음",
+  "multiTarget": {
+    "title": "다중 최적화 목표 설정",
+    "addNewTarget": "새로운 타겟 추가",
+    "addNewMTarget": "새로운 다중 최적화 목표 추가",
+    "info1": "참고: <1>GO 디스코드</1> 혹은 <3>KQM Multi-Opt Guide</3>에서 사용자들이 만든 다중 최적화 목표들을 찾을 수 있습니다. 다만 그 설정들이 올바른지는 보장하지 않습니다.",
+    "info2": "자신의 상황에 부합하는지 확인 하는 것은 사용자의 몫입니다.",
+    "description": "설명",
+    "duplicate": "복제"
+  },
+  "addStats": {
+    "title": "적 설정 및 스탯 조정",
+    "info": "음식, 나선 카드, 초전도 같은 GO에서 지원하지 않는 버프/디버프를 추가할 수 있습니다. 정확한 값은 <1>Genshin Impact wiki</1>를 참고하세요.",
+    "label": "새 보너스 스탯"
+  },
+  "tabTheorycraft": {
+    "substatType": {
+      "min": "부옵션 최소값 사용",
+      "max": "부옵션 최대값 사용",
+      "mid": "부옵션 중간값 사용"
+    },
+    "maxTotalRolls": "\"정상적인\" 조합은 최대 45회 강화만 가질 수 있습니다.",
+    "maxRolls": "부옵션은 최대 30회 붙을 수 있습니다.",
+    "maxRollsMain": "하나 이상의 주옵션이 같은 항목을 가지기 때문에, 이 부옵션은 최대 {{value}}회만 가능합니다.",
+    "distribute": "분배",
+    "compareToggle": { "equipped": "착용 상태와 비교", "tc": "절댓값 표시" },
+    "resetDialog": {
+      "title": "이론 연구실의 값을 초기화 하시겠습니까?",
+      "content": "현재 설정된 값을 모두 초기화 합니다."
+    },
+    "copyDialog": {
+      "copyBtn": "착용 상태 복사",
+      "title": "착용 중인 성유물과 무기를 복사해 오시겠습니까?",
+      "content": "현재 이론 연구실의 설정 값을 착용 중인 데이터로 변경합니다."
+    },
+    "kqmsDialog": {
+      "kqmsBtn": "KQMS 사용",
+      "title": "KQMS를 사용하시겠습니까?",
+      "content": "현재 <strong>부옵션 설정</strong>을 <4>KQM Standards</4>에 따르도록 변경합니다."
+    },
+    "gcsimDialog": {
+      "title": "gcsim으로 내보내기",
+      "content": "아래의 내용을 <2>gcsim</2>에 붙여넣기 하세요.",
+      "copied": "gcsim 설정이 클립보드에 복사되었습니다."
+    },
+    "all": { "rolls": "총 부옵", "max": "총 최대치" },
+    "substat": { "max": "최대" },
+    "feasibilityAlert": "최소 <strong>{{minSubLines}}</strong>줄의 부옵션이 추가되어야 합니다. 이를 위해선 다른 부옵션에 <strong>{{minOtherRolls}}</strong>회 강화가 추가되어야 합니다.",
+    "optAlert": {
+      "scalesWith": "선택된 최적화 대상과 제한 조건은 다음과 같습니다: ",
+      "distribute": ". 계산은 해당 부옵션에만 분배합니다.",
+      "feasibilty": "가능한 조합을 위해 퍼센트가 아닌 깡 옵션에 분배 될 수 있습니다."
+    },
+    "constraint": { "title": "부옵션 제한", "add": "부옴션 제한 추가" }
+  },
+  "tabTeambuff": {
+    "team_reso": "파티 원소 공명",
+    "resonance_tip": "원소 공명을 받기 위해선 파티가 4명으로 가득 차야 합니다."
+  }
+}

@@ -1,4 +1,4 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { dumpFile, dumpPrettyFile } from '@genshin-optimizer/common/pipeline'
 import { readFileSync, readdirSync } from 'fs'
 import type { GenLocaleExecutorSchema } from './schema'
 
@@ -16,25 +16,34 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
   // Load translation files from POEditor into the assets folder.
   const transDirPath = `${projRootPath('common')}Translated/`
   const localeDir = (cat: ProjNames) => `${projRootPath(cat)}assets/locales/`
-  {
-    const files = readdirSync(transDirPath).filter((fn) => fn.includes('.json'))
-    files.forEach((file) => {
+
+  const files = readdirSync(transDirPath).filter((fn) => fn.includes('.json'))
+  await Promise.all(
+    files.map(async (file) => {
       const lang = file.split('.json')[0]
       const raw = readFileSync(transDirPath + file).toString()
       const json = JSON.parse(raw)
-      Object.entries(json).forEach(([ns, entry]) => {
-        if (ns.startsWith('sr_')) {
-          dumpFile(`${localeDir('sr')}${lang}/${ns.slice(3)}.json`, entry)
-        } else if (ns.startsWith('common_')) {
-          dumpFile(`${localeDir('common')}${lang}/${ns.slice(7)}.json`, entry)
-        } else {
-          //dump to gi by default, due to legacy namespacing
-          if (ns.startsWith('gi_')) ns = ns.slice(3)
-          dumpFile(`${localeDir('gi')}${lang}/${ns}.json`, entry)
-        }
-      })
+      await Promise.all(
+        Object.entries(json).map(async ([ns, entry]) => {
+          if (ns.startsWith('sr_')) {
+            await dumpPrettyFile(
+              `${localeDir('sr')}${lang}/${ns.slice(3)}.json`,
+              entry
+            )
+          } else if (ns.startsWith('common_')) {
+            await dumpPrettyFile(
+              `${localeDir('common')}${lang}/${ns.slice(7)}.json`,
+              entry
+            )
+          } else {
+            //dump to gi by default, due to legacy namespacing
+            if (ns.startsWith('gi_')) ns = ns.slice(3)
+            await dumpPrettyFile(`${localeDir('gi')}${lang}/${ns}.json`, entry)
+          }
+        })
+      )
     })
-  }
+  )
 
   /**
    * put all manual(english) translation into one file, to upload to POEditor to update translations.

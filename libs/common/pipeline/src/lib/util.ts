@@ -8,6 +8,16 @@ export function dumpFile(filename: string, obj: unknown, print = false) {
   writeFileSync(filename, fileStr)
   if (print) console.log('Generated JSON at', filename)
 }
+export async function dumpPrettyFile(filename: string, obj: unknown) {
+  mkdirSync(dirname(filename), { recursive: true })
+  const prettierRc = await prettier.resolveConfig(filename)
+  const fileStr = prettier.format(JSON.stringify(obj), {
+    ...prettierRc,
+    parser: 'json',
+  })
+
+  writeFileSync(filename, fileStr)
+}
 
 export function nameToKey(name: string) {
   if (!name) name = ''

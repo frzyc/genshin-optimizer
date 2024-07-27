@@ -13,9 +13,7 @@
         "noRoll": "沒有詞條",
         "noStat": "沒有數值",
         "eff": "估值：<1></1>",
-        "nextRolls": "下次提升：",
-        "RollCount_one": "{{count}} Roll",
-        "RollCount_other": "提升 {{count}} 次"
+        "nextRolls": "下次提升："
       },
       "rarity": "稀有度",
       "level": "等級",
@@ -82,8 +80,6 @@
     },
     "resetFilters": "重設過濾器",
     "setEffectNum": "{{setNum}} 件套裝",
-    "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
-    "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
     "edit": "編輯聖遺物",
     "autocompleteLabels": {
       "sets": "聖遺物套裝",
@@ -91,15 +87,13 @@
       "substats": "副詞條",
       "set": "聖遺物套裝"
     },
-    "substat_one": "{{count}} 個副詞條",
-    "substat_other": "{{count}} 個副詞條",
     "addNew": "新增新的聖遺物",
-    "sub_one": "{{count}} 副詞條",
-    "sub_other": "{{count}} 副詞條",
     "cantDeleteLock": "Cannot delete artifact because it is locked",
     "equippedArt": "All Equipped Artifacts",
     "artInInv": "All Unequipped Artifacts",
-    "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters"
+    "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters",
+    "showDup": "顯示重複",
+    "noDupAlert": "在您的背包中沒有發現任何重複的聖遺物。"
   },
   "languages": {
     "chs": "簡體中文",
@@ -121,7 +115,6 @@
   "settings": {
     "title": "設定",
     "languageCard": {
-      "selectLanguage": "選擇語言",
       "languageFormat": "語言：{{language}}"
     },
     "uploadCard": {
@@ -206,7 +199,6 @@
     "loading": "載入中...",
     "rightsDisclaimer": "原神最佳化工具不屬於 Hoyoverse，也未受該公司的認可。",
     "appVersion": "$t(pageTitle) 版本：<1>{{version}}</1>",
-    "underConstruction": "建設中",
     "error": "錯誤",
     "reset": "重設",
     "info": "資訊",
@@ -219,8 +211,7 @@
       "rarity": "稀有度",
       "efficiency": "目前估值",
       "mefficiency": "最高估值",
-      "artsetkey": "聖遺物套裝",
-      "probability": "Roll Probability"
+      "artsetkey": "聖遺物套裝"
     },
     "link": {
       "download": "下載連結",
@@ -312,7 +303,8 @@
       "dendro": "After dealing <dendro>Dendro DMG</dendro>",
       "normalEle": "After dealing Elemental DMG through a Normal Attack",
       "ele": "After dealing Elemental DMG",
-      "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot"
+      "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot",
+      "self": "受到敵人攻擊之後"
     },
     "eleAbsor": "Elemental Absorption",
     "absorDot": "Absorption DoT",
@@ -323,8 +315,6 @@
       "skillPress": "$t(afterUse.skill) ($t(press))",
       "skillHold": "$t(afterUse.skill) ($t(hold))"
     },
-    "hits_one": "{{count}} Hit",
-    "hits_other": "{{count}} Hits",
     "lessEqPercentHP": "HP less than or equal to {{percent}}%",
     "greaterPercentHP": "HP greater than {{percent}}%",
     "greaterEqPercentHP": "HP greater than or equal to {{percent}}%",
@@ -333,12 +323,6 @@
     "enemyLessEqPercentHP": "Enemy HP less than or equal to {{percent}}%",
     "enemyGreaterPercentHP": "Enemy HP greater than {{percent}}%",
     "enemyGreaterEqPercentHP": "Enemy HP greater than or equal to {{percent}}%",
-    "stack_one": "{{count}} Stack",
-    "stack_other": "{{count}} Stacks",
-    "seconds_one": "{{count}} Second",
-    "seconds_other": "{{count}} Seconds",
-    "uses_one": "{{count}} Use",
-    "uses_other": "{{count}} Uses",
     "afterDefeatEnemy": "After defeating an opponent",
     "afterSprint": "After Sprint",
     "skillCDRed": "Ele. Skill CD Reduction",
@@ -383,7 +367,11 @@
       "electro": "Electro DMG Absorption",
       "dendro": "Dendro DMG Absorption",
       "geo": "Geo DMG Absorption",
-      "none": "DMG Absorption"
+      "none": "DMG Absorption",
+      "increase": "增加護盾量",
+      "max": {
+        "none": "最大護盾量"
+      }
     },
     "addlCharge": "Additional charge",
     "conditional": "Conditional",
@@ -426,8 +414,6 @@
     },
     "energy": "Energy",
     "teamBuff": "Team Buff",
-    "opponents_one": "{{count}} Opponent",
-    "opponents_other": "{{count}} Opponents",
     "dmgMult": {
       "normal": "Normal Att. DMG Mult.",
       "charged": "Charged Att. DMG Mult.",
@@ -446,7 +432,13 @@
       "cryo": "Enemy is affected by <cryo>Cryo</cryo>"
     },
     "getElementalOrbParticle": "After picking up an Elemental Orb or Particle",
-    "notProtectedByShield": "While not protected by a shield"
+    "notProtectedByShield": "While not protected by a shield",
+    "percentCurrentHP": "目前生命值百分比",
+    "enerRegenPerHit": "每次攻擊回復的能量",
+    "interval": "時間間隔",
+    "immuneToElectroCharged": "對 <electrocharged>感電</electrocharged> 免疫",
+    "charOffField": "角色不在場上",
+    "otherHpChange": "在隊友的生命值變動後"
   },
   "weapon_SongOfBrokenPines": {
     "name": "Under the effects of Millennial Movement: Banner-Hymn"
@@ -489,7 +481,8 @@
       "resolves": "Resolve Stacks",
       "resolveInitial_": "<electro>Musou no Hitotachi DMG Bonus Scaling</electro",
       "resolveInfused_": "<electro>Musou Isshin DMG Bonus Scaling</electro>",
-      "burstDmg": "Musou no Hitotachi DMG"
+      "burstDmg": "Musou no Hitotachi DMG",
+      "active": "處於 <strong>夢想一心</strong> 狀態時"
     },
     "a4": {
       "enerRest": "Bonus energy restoration from <strong>Musou Isshin</strong>",
@@ -568,7 +561,7 @@
         "mod": "Moderator",
         "admin": "Admin",
         "translator": "Translations Manager",
-        "TC": "TC Correspondent"
+        "TC": "TC Correspondant"
       }
     }
   },
@@ -577,10 +570,6 @@
     "ik": {
       "title": "Inventory Kamera",
       "p1": "This light-weight app will scan all the characters, weapons and artifacts in your inventory. Follow the instructions in the app to set it up."
-    },
-    "am": {
-      "title": "「天目」",
-      "p1": "Scans all you artifacts in your inventory. Follow the instructions to capture the window and scan. Has both Chinese and English versions (download the <1>_EN.exe</1> version to scan in English). GO only accepts the <1>GOOD</1> format."
     },
     "as": {
       "title": "AdeptiScanner",
@@ -1037,7 +1026,6 @@
     "tabs": {
       "overview": "總覽",
       "talent": "天賦",
-      "teambuffs": "Team Buffs",
       "optimize": "Optimize",
       "theorycraft": "理論分析"
     },
@@ -1047,8 +1035,6 @@
     "removeCharacter": "Are you sure you want to remove {{value}}?",
     "delete": "刪除角色",
     "teammates": "Teammates",
-    "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Character",
-    "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Characters",
     "hitmode": {
       "hit": "無暴擊傷害",
       "avgHit": "平均傷害",
@@ -1070,9 +1056,7 @@
       "info1": "Note: Community created custom Multi-Optimization Targets can be found within the <1>GO Discord</1> or <3>KQM Multi-Opt Guide</3>, however the validity of such configurations cannot be guaranteed.",
       "info2": "It is the responsibility of the user to confirm the accuracy for their own use case.",
       "description": "Description",
-      "duplicate": "Duplicate",
-      "target_one": "<0>{{count}}</0> Target",
-      "target_other": "<0>{{count}}</0> Targets"
+      "duplicate": "Duplicate"
     },
     "addStats": {
       "title": "Enemy Config + Bonus Stats",
@@ -1094,8 +1078,6 @@
     }
   },
   "page_weapon": {
-    "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Weapon",
-    "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Weapons",
     "edit": "編輯武器",
     "weaponName": "武器名稱",
     "removeWeapon": "您確定要移除 {{value}} 嗎？",
@@ -1206,10 +1188,6 @@
     "buildDropdownDesc": "Decreasing the number of generated build will decrease build calculation time for large number of builds.",
     "threadDropdownDesc": "Increasing the number of threads will speed up build time, but will use more CPU power.",
     "noArtis": "Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <1>Artifacts</1> page and add some!",
-    "build_one": "<0>{{count}}</0> Build",
-    "build_other": "<0>{{count}}</0> Builds",
-    "thread_one": "<0>{{count}}</0> Thread",
-    "thread_other": "<0>{{count}}</0> Threads",
     "targetSelector": {
       "selectOptTarget": "Select an Optimization Target",
       "selectGraphTarget": "Select a Graph Target",
@@ -1229,14 +1207,9 @@
     "excludeArt": {
       "title_exclude": "Excluded Artifacts",
       "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
-      "excNum_one": "<0>{{count}}</0> artifact is excluded",
-      "excNum_other": "<0>{{count}}</0> artifacts are excluded",
       "addExc": "Add artifact to this character's exclusion list",
       "selExc": "Select artifact to add to this character's exclusion list",
       "deSelectExc": "Click on an artifact to remove it from the exclusion list",
-      "excludeArtifactTip": "Excluding an artifact will prevent the build generator from using it for this character.",
-      "excluded": "This artifact is excluded.",
-      "included": "This artifact is not excluded.",
       "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
       "button_txt": "Exclude Artifacts"
     },
@@ -1247,8 +1220,6 @@
         "disallow_All": "Remove all shown characters from the allow list"
       },
       "allowEquip": "Allow using artifacts from",
-      "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
-      "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters",
       "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all equipped and unequipped artifacts.",
       "chars": "Characters",
       "artis": "Artifacts",
@@ -1605,5 +1576,9 @@
       "3": "Increases Energy Recharge by <cryo>31.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>10.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>16</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
       "4": "Increases Energy Recharge by <cryo>36%</cryo>. Increases Normal and Charged Attack DMG by <cryo>12%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>18</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently."
     }
+  },
+  "char_Kirara": {
+    "extraCardamom": "額外貓草荳蔻",
+    "c4Dmg": "貓草荳蔻傷害"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "a1": {
+    "condName": "หลังจากยิง Frostflake Arrow",
+    "critRateInc": "Frostflake Arrow และ Bloom มีอัตราคริเพิ่มขึ้น"
+  },
+  "c1": {
+    "condName": "ศัตรูได้รับความเสียหายจาก Frostflake Arrow หรือ Bloom จากการชาร์จระดับ 2"
+  },
+  "c4": { "lingerDuration": "ระยะเวลาเอฟเฟกต์คงอยู่ต่อไป" }
+}

@@ -1,0 +1,7 @@
+{
+  "afterChili": "グゥオパァーの唐辛子を拾った後",
+  "explosionDMG": "爆発ダメージ",
+  "afterGuobaHit": "敵にグゥオパァーの攻撃がヒット",
+  "duringPyronado": "旋火輪発動後",
+  "c6Exception": "この効果は<pyro>1ヒットダメージ</pyro>、<pyro>2ヒットダメージ</pyro>、また<pyro>旋火輪ダメージ</pyro>に影響されません"
+}

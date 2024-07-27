@@ -1,0 +1,80 @@
+{
+  "editor": {
+    "title": "Trình chỉnh sửa Thánh Di Vật",
+    "substat": {
+      "substatFormat": "Chỉ số phụ {{value}}",
+      "noSubstat": "Không có chỉ số phụ",
+      "selectSub": "Chọn chỉ số phụ",
+      "error": {
+        "noCalc": "Không thể tính được chỉ số roll.",
+        "noOverRoll": "Chỉ số phụ không thể roll nhiều hơn {{value}} lần"
+      },
+      "noRoll": "Không có roll",
+      "noStat": "Không có giá trị",
+      "eff": "Hiệu suất: <1></1>",
+      "nextRolls": "Rolls kế tiếp:"
+    },
+    "rarity": "Phẩm chất",
+    "level": "Cấp độ",
+    "unknownPieceName": "Tên món TDV không rõ",
+    "curSubEff": "RV hiện tại",
+    "curSubEffDesc": "Mỗi 4 cấp thánh di vật sẽ có thêm 1 chỉ số phụ. <strong>Hiệu suất chỉ số phụ</strong> thể hiện chỉ số phụ đã roll cao thấp bao nhiêu theo tỉ lệ phần trăm.",
+    "maxSubEff": "Hiệu suất chỉ số phụ tối đa",
+    "maxSubEffDesc": "<strong>Hiệu suất chỉ số phụ tối đa</strong> của một thánh di vật được tính theo giá trị tối đa của những lần nâng cấp còn lại.",
+    "preview": "Xem trước Thánh Di Vật",
+    "dupArt": "Thánh di vật trùng lặp",
+    "upArt": "Thánh di vật đã được nâng cấp",
+    "beforeEdit": "Trước khi sửa",
+    "btnSave": "Lưu Thánh Di Vật",
+    "btnAdd": "Thêm Thánh Di Vật",
+    "btnClear": "Xóa",
+    "btnRandom": "Ngẫu nhiên",
+    "btnUpdate": "Nâng cấp thánh di vật",
+    "clearPrompt": "Đang có thánh di vật trong trình chỉnh sửa. Bạn có chắc chắn muốn xóa không?"
+  },
+  "artifactFilter": "Bộ lọc Thánh Di Vật",
+  "filterLocation": {
+    "inventory": "Túi",
+    "currentlyEquipped": "Đang trang bị"
+  },
+  "button": {
+    "unequipArtifacts": "Gỡ Thánh Di Vật",
+    "deleteArtifacts": "Xóa Thánh Di Vật",
+    "lockArtifacts": "Khoá Thánh di vật",
+    "unlockrtifacts": "Mở khoá Thánh di vật"
+  },
+  "buttonHint": "Ghi chú: Các nút màu đỏ ở trên chỉ áp dụng cho <1>bộ lọc thánh di vật</1>",
+  "tipsOfTheDay": [
+    "RV tối đa của một Thánh Di Vật 4 sao rơi vào khoảng 540%.",
+    "RV tối đa của một Thánh Di Vật thường sẽ giảm đi khi bạn nâng nó lên: Đó là chuyện bình thường!",
+    "Các thuộc tính phụ có số \"1\" là những cái khó quét nhất trong ảnh chụp.",
+    "Nếu tất cả số lần nhảy chỉ số (6 lần) đều vào một dòng, nó sẽ có màu tím!",
+    "Nhấn vào \"Chi Tiết\" khi bạn đang nâng thánh di vật trong game để có thể đồng thời vừa nâng vừa quét.",
+    "Giờ bạn có thể tải lên nhiều ảnh chụp thánh di vật để quét!"
+  ],
+  "mainStat": "Chỉ số chính",
+  "slot": "Vị Trí",
+  "slotName": {
+    "flower": "Hoa Sự Sống",
+    "plume": "Lông vũ tử vong",
+    "sands": "Cát thời gian",
+    "goblet": "Ly không gian",
+    "circlet": "Nón lý trí"
+  },
+  "info": {
+    "title": "Hướng dẫn Chỉnh sửa/Quản lý Thánh Di Vật",
+    "section1": "<0>Rolls của chỉ số phụ</0><1><1>Số rolls</1> của chỉ số phụ được hiển thị phía bên trái của chỉ số phụ đó. Càng nhiều rolls thì càng màu mè:<3></3>.</1><2>Hiệu suất chỉ số phụ</2><3>Hiệu suất của một chỉ số phụ là tỉ lệ phần trăm của giá trị hiện tại với giá trị tiềm năng cao nhất của thánh di vật 5 <1></1>. Từ trong hình, giá trị roll cao nhất của Sát thương bạo kích là 7.8%. Hiệu suất: <3>5.8/7.8 = 69.2%.</3></3><4>Hiệu suất hiên tại đối với Hiệu suất tiềm năng cao nhất</4><5>Khi một thánh di vật 5<1></1> có tất cả 9(4+5) rolls, và tất cả các rolls đều có giá trị cao nhất, thì nó là thánh di vật có hiệu suất 100%. Tuy nhiên, đa số là chuyện đó khó mà xảy ra. <3>Hiệu suất hiện tại</3> của một thánh di vật là tỉ lệ phần trăm hiệu suất đối với thánh di vật có 100% hiệu suất. <5>Hiệu suất tối đa</5> là hiệu suất cao nhất mà thánh di vật có thể đạt được, nếu tất cả rolls còn lại đạt giá trị tối đa.</5><6>Khóa thánh di vật</6><7>Bằng việc khóa thánh di vật <1></1> sẽ làm cho thánh di vật đó không được chọn khi tạo build. Thánh di vật đã được trang bị sẽ mặc định bị khóa.</7>",
+    "section2": "<0>Trình chỉnh sửa thánh di vật</0><1>Trình chỉnh sửa có đầy đủ chức năng, có thể chấp nhận thánh di vật từ 3<1></1> tới 5<3></3>. Khi một chỉ số phụ được nhập, nó có thể tính toán chính xác giá trị của rolls và hiệu suất. Nó cũng có thể đưa ra con số chính xác về mỗi roll của thánh di vật đó, cùng với các số liệu xác thực khác.</1><2>Quét hình ảnh</2><3>Bạn lười phải nhập chỉ số bằng tay? Bạn có thể quét thánh di vật bằng hình ảnh! Ở trang Trình chỉnh sửa thánh di vật, bấm vào <1>Cách chụp hình chính xác!</1> để có thể biết thêm chi tiết.</3><4>Phát hiện thánh di vật bị trùng lặp/ đã được nâng cấp</4><5>Bạn có biết GO có thể phát hiện ra thánh di vật bị <1>trùng lặp</1> cái mà đã có trong hệ thống? Nó cũng có thể phát hiện nếu thánh di vật trong trình chỉnh sửa là phiên bản <3>nâng cấp</3> của thánh di vật có sẵn. Một khi phát hiện trùng lặp hoặc đã nâng cấp bạn có thể xem trước để so sánh hai thánh di vật này(Xem hình).</5>",
+    "section3": "<0>Túi thánh di vật</0><1>Tất cả những thánh di vật đã thêm vào của bạn được hiển thị ở đây. Bộ lọc ở đây cho phép bạn tìm kiếm thánh di vật dễ hơn. </1><2>Ví dụ: Tìm Thánh Di vật làm nguyên liệu cường hoá</2><3>Bằng bộ lọc bạn có thể tìm kiếm thánh di vật làm nguyên liệu cường hoá nhanh hơn.</3><4>Ở ví dụ này, bộ được thiết lập như này: </4><5><0>Thánh Di Vật không khóa trong túi.</0><1>Với chỉ số phụ: Tấn công và phòng ngự.</1><2>Xếp theo thứ tự hiệu suất tối đa tăng dần</2></5><6>Một khi thánh di vật đã được đem làm nguyên liệu cường hoá, bấm vào <1>Xóa thánh di vật</1> để xóa thánh di vật vừa được lọc.</6>"
+  },
+  "sortMap": {
+    "level": "Cấp",
+    "efficiency": "Hiệu suất hiện tại.",
+    "mefficiency": "Hiệu suất tối đa."
+  },
+  "efficiencyFilter": {
+    "title": "Chỉ số phụ để dùng ở công thức tính hiệu suất"
+  },
+  "resetFilters": "Cài lại bộ lọc",
+  "setEffectNum": "Bộ {{setNum}} món"
+}

@@ -175,10 +175,8 @@ export function entriesForChar(
 
     // Listing (specialized)
     ...[...specialized].map((stat) =>
-      self.listing.specialized.add(
-        // Sheet-specific data (i.e., `sheet:<key>`)
-        listingItem(readStat(self.premod, stat).sheet(key))
-      )
+      // Sheet-specific data (i.e., `sheet:<key>`)
+      self.char.specialized.add(readStat(self.premod, stat).sheet(key))
     ),
   ]
 }

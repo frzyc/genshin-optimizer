@@ -1,0 +1,14 @@
+{
+  "skill": {
+    "amuletGenAmt": "Jumlah Abundance Amulets yang dihasilkan",
+    "absorb": "Setelah menyerap Abundance Amulet"
+  },
+  "burst": {
+    "3rd": "Tahap 3 Falling Thunder DMG",
+    "thunderCd": "Falling Thunder CD"
+  },
+  "passive2": {
+    "enerRech_": "Peningkatan Efek Energy Recharge Abundance Amulet"
+  },
+  "c2": { "thunderHit": "Musuh terkena <strong>Falling Thunder</strong>" }
+}

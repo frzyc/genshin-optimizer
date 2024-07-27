@@ -1,0 +1,23 @@
+{
+  "skill": {
+    "pyroShield": {
+      "1": "Absorción de Daño Pyro por Escudo Nivel 1",
+      "2": "Absorción de Daño Pyro por Escudo Nivel 2",
+      "3": "Absorción de Daño Pyro por Escudo Nivel 3"
+    }
+  },
+  "p1": {
+    "desc": "Reduce la cantidad de enemigos a golpear con <strong>Desenfreno</strong> en 1"
+  },
+  "p2": {
+    "activeShield": "Personaje activo escudado por <strong>Desenfreno</strong>"
+  },
+  "c2": {
+    "key_": "Bono de la Prob. CRIT del Daño Físico de <strong>Melodía de la rebelión</strong>",
+    "shield": "Forma un Escudo Nivel 3: Fiesta al lanzar"
+  },
+  "c4": {
+    "swingHit": "<pyro>Daño de Golpe de espada</pyro> golpea a enemigos"
+  },
+  "c6": { "duringCharge": "Mientras se realiza un Ataque Cargado" }
+}

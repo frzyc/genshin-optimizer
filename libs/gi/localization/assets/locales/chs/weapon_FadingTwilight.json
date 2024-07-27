@@ -1,0 +1,4 @@
+{
+  "states": { "evengleam": "夕暮", "afterglow": "流霞", "dawnblaze": "朝晖" },
+  "condName": "当前状态"
+}

@@ -1,0 +1,10 @@
+{
+  "skillTotalShardDmg": "ロースラ晶弾の合計ダメージ",
+  "shot_dmg_": "ロースラ晶弾のダメージボーナス",
+  "shot_mult_": "ロースラ晶弾の倍率",
+  "shot_critRate_": "ロースラ晶弾の会心率",
+  "shot_critDMG_": "ロースラ晶弾の会心ダメージ",
+  "chargesCond": "裂晶の欠片の消費数",
+  "shotsFired": "ロースラ晶弾を発砲",
+  "shotsHitCond": "ロースラ晶弾の命中数"
+}

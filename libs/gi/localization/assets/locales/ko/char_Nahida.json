@@ -1,0 +1,14 @@
+{
+  "karmaDmg_": "삼업의 정화 피해량 증가",
+  "karmaCritRate_": "삼업의 정화 치명타 확률 증가",
+  "karmaIntervalDec": "삼업의 정화 발동 간격 감소",
+  "noBurstEffect": "힌트: 원소 폭발 효과가 전혀 적용되지 않고 있습니다. 1돌을 하거나 <pyro>불</pyro>, <electro>번개</electro>, 또는 <hydro>물</hydro> 원소 파티원을 추가하세요.",
+  "partyInBurst": "필드 내 파티",
+  "c1Key": "<strong>마야의 전당</strong> 효과 보너스에 적용되는 추가 <pyro>불</pyro>, <electro>번개</electro>, <hydro>물</hydro> 파티 캐릭터",
+  "c2": {
+    "bloomCondName": "대상에 <strong>스칸다 씨앗</strong>이 새겨짐",
+    "qasCondName": "<strong>스칸다 씨앗</strong> 상태의 적이 활성, 촉진, 발산 반응의 영향을 받음"
+  },
+  "c4CondName": "근처의 적에게 <strong>스칸다 씨앗</strong>이 새겨짐",
+  "c6KarmicDmg": "업의 사면 피해"
+}

@@ -1,0 +1,5 @@
+{
+  "frost_dmgMult_": "얼음 서리 피해량 계수",
+  "pressure_dmg_": "얼음 가압·고압 분쇄 피해량 증가",
+  "pressure_critRate_": "얼음 가압·고압 분쇄 치명타 확률"
+}

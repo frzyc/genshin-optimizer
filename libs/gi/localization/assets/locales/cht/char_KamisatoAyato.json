@@ -1,0 +1,14 @@
+{
+  "skill": {
+    "unableToAuto": "Unable to use Charged or Plunging attacks",
+    "namisenStacks": "Namisen stacks",
+    "shun_dmgInc": "<hydro>Shunsuiken DMG Increase</hydro>"
+  },
+  "passive1": {
+    "afterUse": "Namisen stacks gained after skill use",
+    "afterExplode": "Namisen stacks gained after the water illusion explodes"
+  },
+  "c1": { "shun_dmg_": "<hydro>Shunsuiken DMG Bonus</hydro" },
+  "c2": { "addlStacks": "Max Namisen stack increase" },
+  "c6": { "dmg": "Boundless Origin DMG" }
+}

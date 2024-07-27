@@ -1,0 +1,9 @@
+{
+  "skill": {
+    "stele": "Hügelkamm-SCH",
+    "resonance": "Resonanz-SCH",
+    "maxStele": "Höchstmenge an Hügelkämmen",
+    "nearShield": "Gegner in der Nähe von <strong>Jadeblock-Schild</strong>"
+  },
+  "p1cond": "Wenn der <strong>Jadeblock-Schild</strong> Schaden nimmt"
+}

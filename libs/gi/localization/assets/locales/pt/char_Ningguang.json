@@ -1,0 +1,8 @@
+{
+  "aoeGems": "Ataques Normais dão Dano em Área",
+  "starJadeStaminaCost": "Ataques Carregados não gastam Stamina se a Ningguang possui uma Jade Estelar",
+  "skillReset": "Tempo de Recarga é redefinido ao partir, a cada 6s",
+  "a4toggle": "Após atravessar a Tela de Jade",
+  "c4toggle": "Dentro de 10m da Tela de Jade",
+  "c6bonus": "Jades Estelares obtidas"
+}

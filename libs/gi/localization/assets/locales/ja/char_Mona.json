@@ -1,0 +1,6 @@
+{
+  "omen": "敵が星異状態",
+  "hitOp": { "affectedByOmen": "星異状態の敵にヒット" },
+  "frozenDuration": "<shattered>凍結</shattered>継続時間",
+  "uponSprint": "虚実流動発動後"
+}

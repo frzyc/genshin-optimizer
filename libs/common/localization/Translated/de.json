@@ -17,9 +17,9 @@
       "rarity": "Qualität",
       "level": "Level",
       "unknownPieceName": "Name nicht bekannt",
-      "curSubEff": "Aktuelle Bonusattributseffizienz",
-      "curSubEffDesc": "Alle 4 Artefakt-Stufen, wird 1 zufälliges Bonusattribut erhöht. <strong>Bonusattributseffizienz</strong> zeigt, wie hoch die Bonusattributsaufwertung prozentual ausgefallen ist.",
-      "maxSubEff": "Maximale Bonusattributseffizienz",
+      "curSubEff": "Aktuelle Rollwertung",
+      "curSubEffDesc": "Alle 4 Artefakt-Stufen, wird 1 zufälliges Bonusattribut erhöht. <strong>Rollwertung</strong> zeigt, wie hoch die Bonusattributsaufwertung prozentual ausgefallen ist.",
+      "maxSubEff": "Max. Rollwertung",
       "maxSubEffDesc": "Die <strong>Maximale Bonusattributseffizienz</strong> eines Artefakts berechnet die Effizienz unter der Annahme, dass alle verbleibenden zufälligen Aufwertungen maximal gut ausfallen.",
       "preview": "Artefaktvorschau",
       "dupArt": "Artefaktduplikate entdeckt.",
@@ -39,16 +39,18 @@
     },
     "button": {
       "unequipArtifacts": "Artefakte ablegen",
-      "deleteArtifacts": "Artefakte löschen"
+      "deleteArtifacts": "Artefakte löschen",
+      "lockArtifacts": "Artefakte Sperren",
+      "unlockrtifacts": "Artefakte Entsperren"
     },
-    "buttonHint": "Hinweis: Die oberen roten Buttons gelten nur für <1>gefilterte Artefakte</1>",
+    "buttonHint": "Hinweis: Die oberen roten Knöpfe gelten nur für <1>gefilterte Artefakte</1>",
     "tipsOfTheDay": [
-      "Die maximale Effizienz eines 4-Stern Artefakts liegt bei rund 60%.",
-      "Die maximale Effizienz eines Artefakts sinkt meist durch das Verstärken von diesem. Dies ist absolut normal.",
-      "Bonusattribute mit 1-en sind für den Scanner am schwersten zu erkennen.",
-      "Wird durch alle zufälligen Aufwertungen das selbe Bonusattribut aufgewertet, so wird dieses in Lila angezeigt.",
-      "Klicke beim Verstärken der Artefakte auf \"Details\", um diese während des Verstärkens zu scannen.",
-      "Das gleichzeitige Hochladen mehrerer Bilder wird untersützt."
+      "Die maximale RV eines 4-Stern Artefakts liegt bei rund 540%.",
+      "Die maximale RV eines Artefakts sinkt meist durch das Verstärken. Dies ist absolut normal!",
+      "Bonusattribute mit 1-en sind für Scanner in Screenshots am schwersten zu erkennen.",
+      "Wenn alle Verstärkungen(6) das selbe Bonusattribut aufwerten, so wird dieses in Lila angezeigt.",
+      "Klicke beim Verstärken der Artefakte auf \"Details\", um diese währenddessen zu scannen.",
+      "Du kannst nun mehrere Artefakt-Screenshots zum scannen hochladen!"
     ],
     "mainStat": "Hauptattribut",
     "slot": "Platz",
@@ -62,19 +64,22 @@
     "info": {
       "title": "Anleitung zum Bearbeiten/Verwalten von Artefakten",
       "section1": "<0>Zufällige Bonusattribut-Aufwertungen</0><1>Die <1>Anzahl zufälliger Aufwertungen</1> eines Bonusattributs steht lings vom Bonusattribut. Je höher diese Zahl, desto farbiger wird das Bonusattribut dargestellt:<3></3>.</1><2>Bonusattributseffizienz</2><3>Die Effizienz eines Bonusattributs ist eine prozentuale Angabe des aktuellen Werts in Bezug auf den höchstmöglichen 5<1></1> Wert. Bezogen auf das Bild ist der maximale KSCH einer Aufwertung 7,8%. Daraus resultiert die Effizienz: <3>5,8/7,8 = 69,2%.</3></3><4>Aktuelle Effizienz vs. Maximales Potential des Effizienz</4><5>Ein 5<1></1> Artefakt mit 9(4+5) zufälligen Aufwertungen, bei dem jede Aufwertung den höchstmöglichen Wert erhalten hat, besitzt 100% Effizienz. Die meisten Artefakte werden diese Effizienz nicht erreichen. Die <3>Aktuelle Effizienz</3> gib dabei an, wie nahe das Artefakt aktuell an dieser 100% Effizienz liegt. Die <5>Mazimale Effizienz</5> gibt an, wie Effizient dieses Artefakt wäre, wenn alle verbleibenden Auffwertungen den höchstmöglichen Wert erhalten würden.</5><6>Artefakte sperren</6><7>Wenn ein Artefakt gesperrt ist <1></1>, so wird dieses vom Build-Generator nicht verwendet. Ein ausgerüstetes Artefakt ist automatisch auch gesperrt.</7>",
-      "section2": "<0>Artefakt Editor</0><1>Ein vollwertiger Artefakt-Editor für 3<1></1> bis 5<3></3> Artefakte. Wenn Bonusattribute eingetragen werden, werden die Werte jeder einzelnen Aufwertung und die Effizienz berechnet und angezeigt. Zusätzlich wird das eingegebene Artefakt zahlreichen Prüfungen unterzogen, um Eingabefehler zu vermeiden.</1><2>Bildschirmfotos einscannen</2><3>Manuelle Eingabe liegt dir nicht? Artefakte können von einem Bild automatisiert erkannt werden! Ein Klick auf <1>Zeig mir wie!</1> gibt eine Einführung.</3><4>Erkennung von Duplikaten/Aufgewerteten Artefakten</4><5>Genshin Optimizer kann <1>Duplikate</1> unter den eingetragenen Artefakten zu erkennen. Außerdem wird erkannt, wenn das eingegebene Artefakt möglicherweise eine aufgewertete Variante eines bereits Vorhandenen ist. In einem solchen Fall zeigt eine Vorschau beide Artefakte zum Vergleich an (siehe Bild).</5>",
+      "section2": "<0>Artefakt Editor</0><1>Ein vollwertiger Artefakt-Editor für 3<1></1> bis 5<3></3> Artefakte. Wenn Bonusattribute eingetragen werden, werden die Werte jeder einzelnen Aufwertung und die Höhe der Aufwertung berechnet und angezeigt. Zusätzlich wird das überprüft ob das eingegebene Artefakt die korrekte Stufe hat und ob sonstige Eigenschaften stimmen.</1><2>Screenshot einscannen</2><3>Manuelle Eingabe liegt dir nicht? Artefakte können auf einem Bild automatisiert erkannt werden! Ein Klick auf <1>Zeig mir wie!</1> gibt eine Einführung.</3><4>Automatischer Artefaktscanner</4><5>Falls du Genshin auf dem PC spielst kannst du dir ein Programm herunterladen welches automatisch alle deine Artefakt für dich einscannt, importieren kannst du diese Daten dann in <1></1> Einstellungen. <3>Klicke hier</3> für eine Liste aller mit GO kompatiblen Scanner.</5><6>Erkennung von Duplikaten / Aufwertungen</6><7>Wusstest du das GO erkennen kann wenn du ein <1>Artefaktduplikat</1>, welches bereits in deiner Datenbank vorhanden ist, hinzufügst? Es kann auch erkennen ob das Artefakt im Editor die <3>aufgewertete Version</3> eines bereits vorhandenen Artefakts ist. Falls ein Duplikat oder eine Aufwertung erkannt wird, werden dir beide relevanten Artefakte in einer Vorschau angezeigt damit du diese vergleichen kannst(Siehe Bild).</7>",
       "section3": "<0>Artefakt Inventar</0><p>Hier sind alle Artefakte zu sehen, die zum Genshin Optimizer hinzugefügt wurden. Mit den Filtern kannst du die Auswahl an angezeigten Artefakte weiter verfeinern.</p><2>Beispiel: Finding Fodder Artifacts</2><p>Durch die Verwendung von Filtern und Effizenz-Berechnungen können schnell Artefakte gefunden werden, die zur Aufwertung anderer Artefakte verwendet werden können.</p><4>In diesem Beispiel sind die Filter wie folgt gesetzt: </4><5><0>Level zwischen 0 und 8.</0><1>Nicht gesperrte im Inventar.</1><2>Ausschluss von LP, VTD und Aufladerate aus der Berechnung der Effizienz.</2><3>Aufsteigend sortiert nach maximaler Effizienz.</3></5><p>Dies sortiert die Artefakte nach geringster Effizienz für die gewählten Bonusattribute.</p>"
     },
     "sortMap": {
       "level": "Level",
-      "efficiency": "Aktuelle Bonusattributseffizienz",
-      "mefficiency": "Maximale Bonusattributseffizienz"
+      "efficiency": "Aktuelle Rollwertung",
+      "mefficiency": "Maximale Rollwertung"
     },
     "efficiencyFilter": {
-      "title": "In Berechnung der Effizienz zu berücksichtigende Bonusattribute"
+      "title": "In Berechnung der Rollwertung zu berücksichtigende Bonusattribute"
     },
     "resetFilters": "Filter zurücksetzen",
-    "setEffectNum": "Set mit {{setNum}} Teilen"
+    "setEffectNum": "Set mit {{setNum}} Teilen",
+    "autocompleteLabels": {
+      "substats": "Bonusattribute"
+    }
   },
   "languages": {
     "chs": "Chinesisch (Vereinfacht)",
@@ -94,7 +99,6 @@
   "settings": {
     "title": "Einstellungen",
     "languageCard": {
-      "selectLanguage": "Sprache auswählen",
       "languageFormat": "Sprache: {{language}}"
     },
     "uploadCard": {
@@ -119,7 +123,19 @@
       "removed": "Entfernt:",
       "unchanged": "Unverändert:",
       "invalid": "Ungültig:"
-    }
+    },
+    "DatabaseCard": {
+      "title": "Datenbank",
+      "button": {
+        "download": "Herunterladen",
+        "copy": "Zwischenablage",
+        "delete": "Löschen",
+        "upload": "Hochladen",
+        "swap": "Wechseln"
+      },
+      "currentDB": "Aktuelle Datenbank"
+    },
+    "letsnow": "Lass es schneien!"
   },
   "ui": {
     "pageTitle": "Genshin Optimizer",
@@ -127,7 +143,8 @@
       "artifacts": "Artefakte",
       "characters": "Figuren",
       "tools": "Extras",
-      "weapons": "Waffen"
+      "weapons": "Waffen",
+      "setting": "Einstellungen"
     },
     "social": {
       "paypal": "Paypal",
@@ -140,12 +157,19 @@
     "loading": "Laden...",
     "rightsDisclaimer": "Genshin Optimizer ist kein Teil von miHoYo und wird nicht davon unterstützt.",
     "appVersion": "$t(pageTitle) Version: {{version}}",
-    "underConstruction": "In Arbeit",
     "error": "Fehler",
     "reset": "Zurücksetzen",
-    "info": "INFO",
+    "info": "Info",
     "inventory": "Inventar",
     "close": "Schließen",
+    "sortMap": {
+      "new": "Neu",
+      "name": "Name",
+      "level": "Stufe",
+      "efficiency": "Aktuelle RV",
+      "mefficiency": "Maximale RV",
+      "artsetkey": "Artefaktset"
+    },
     "refinement": "Verfeinerung {{value}}"
   },
   "char_Eula": {
@@ -184,7 +208,13 @@
       "charged": "Treffer gegen Gegner bei heftigen Schlägen",
       "plunging": "Treffer gegen Gegnern aus dem Fall",
       "skill": "Treffer gegen Gegner durch Elementarfähigkeit",
-      "burst": "Treffer gegen Gegner durch Elementarfähigkeit"
+      "burst": "Treffer gegen Gegner durch Elementarfähigkeit",
+      "geo": "Nach verursachen von <geo>Geo-SCH</geo>",
+      "anemo": "Nach verursachen von <anemo>Anemo-SCH</anemo>",
+      "hydro": "Nach verursachen von <hydro>Hydro-SCH</hydro>",
+      "cryo": "Nach verursachen von <cryo>Kryo-SCH</cryo>",
+      "pyro": "Nach verursachen von <pyro>Pyro-SCH</pyro>",
+      "electro": "Nach verursachen von <electro>Elektro-SCH</electro>"
     },
     "eleAbsor": "Elementarumwandlung",
     "absorDot": "Fortlaufender Umwandlungs-Schaden",
@@ -212,9 +242,12 @@
     }
   },
   "char_KamisatoAyaka": {
-    "afterSprintCryo": "Erhält <cryo>Cryo</cryo> nach dem Sprint",
-    "snowflakeDMG": "Eisblüte SCH",
-    "dmgBySnowflake": "Getroffene Gegner von <strong> Kamisato-Stil: Soumetsu</strong>'s Frostflocke Seki no To "
+    "afterSprintCryo": "Gegner mit <cryo>Kryo</cryo> vom Sprint getroffen",
+    "snowflakeDMG": "Eisblüte-SCH",
+    "dmgBySnowflake": "Gegner getroffen von <strong>Frostflocke Seki no To</strong>"
+  },
+  "weapon_MistsplitterReforged": {
+    "emblem": "Nebelspaltersiegel"
   },
   "char_Yoimiya": {
     "c1": "Von <strong>Ryuukin-Lohe</strong> betroffener Gegner besiegt",
@@ -224,7 +257,7 @@
   },
   "char_RaidenShogun": {
     "skill": {
-      "eye": "das unheilvolle Auge der Blitzstrafe"
+      "eye": "Unheilvolles Auge der Blitzstrafe aktiv"
     },
     "burst": {
       "resolves": "Stapelungen von Entschlusskraft"
@@ -233,8 +266,53 @@
       "eleDMG": "Elektro-SCH-Bonus"
     }
   },
+  "char_Aloy": {
+    "skill": {
+      "coil": "Spule"
+    }
+  },
+  "char_SangonomiyaKokomi": {
+    "burst": "Rituelles Federkleid angelegt",
+    "c2": "Charaktere haben 50% oder weniger LP"
+  },
   "page_home": {
     "intro": "Der <strong>ultimative</strong> <3><i>Genshin Impact</i></3>-Rechner, GO behält den Überblick über dein Artefakt-/Waffen-/Charakterinventar und hilft dir, mit was du hast den besten Build zu erstellen, basierend auf deiner Spielweise."
+  },
+  "page_scanner": {
+    "intro": "<0>Scanner</0><1>Scanner sind Tools welche spielbezogene Daten aus Screenshots oder direkt aus dem Spiel auslesen können.</1><2>Unten sind mehrere Scanner aufgelistet welche mit GO getestet wurden.</2><3>Um die exportierte Datei hochzuladen, gehe auf die Seite <1>Einstellungen</1> und lade dort deine Datei in der Sektion <strong>Datenbank Hochladen</strong> hoch.</3>",
+    "ik": {
+      "title": "Inventory Kamera"
+    },
+    "as": {
+      "title": "AdeptiScanner",
+      "p1": "Scannt alle Artefakte und Waffen in deinem Inventar. Hat einen manuellen Scanmodus und kann zudem Daten von <1>Enka.Network</1> importieren."
+    },
+    "tags": {
+      "pc": "PC",
+      "ps": "PlayStation",
+      "materials": "Materialien",
+      "characters": "Charaktere"
+    }
+  },
+  "weapon_CinnabarSpindle": {
+    "name": "Effekt ist aktiv"
+  },
+  "artifact_BlizzardStrayer": {
+    "condName": "Gegner ist",
+    "condCryo": "Von Kryo betroffen",
+    "condFrozen": "Gefroren"
+  },
+  "artifact_HuskOfOpulentDreams": {
+    "condName": "Neugier"
+  },
+  "char_Bennett": {
+    "c4DMG": "Fantastische Reise-SCH"
+  },
+  "char_Chongyun": {
+    "constellation1": "Eisklinge-SCH"
+  },
+  "char_Diona": {
+    "skillDuration": "Dauer pro Tatze"
   },
   "char_Ganyu": {
     "a1": {
@@ -248,8 +326,41 @@
       "lingerDuration": "Effekt-Anhaltedauer"
     }
   },
+  "char_Shenhe": {
+    "quill": "Eisfeder ist aktiv",
+    "c4": "Frosthimmelmantra ausgelöst",
+    "pressQuota": "Stapelungen bei Drücken",
+    "holdQuota": "Stapelungen bei Gedrückthalten"
+  },
   "char_Xingqiu": {
     "burstCond": "Regenbogentechnik"
+  },
+  "char_Yanfei": {
+    "seals": ["0 Siegel", "1 Siegel", "2 Siegel", "3 Siegel", "4 Siegel"],
+    "perSeal": "(pro Siegel)",
+    "maxSeals": "Höchstzahl an Flammensiegeln",
+    "charged": {
+      "0": "0-Siegel-SCH",
+      "1": "1-Siegel-SCH",
+      "2": "2-Siegel-SCH",
+      "3": "3-Siegel-SCH",
+      "4": "4-Siegel-SCH"
+    },
+    "burst": {
+      "grantMax": "Verleiht die Höchstzahl an Flammensiegeln"
+    },
+    "passive1": {
+      "sealsConsumed": "Von heftigem Schlag verbrauchte Flammensiegel"
+    },
+    "passive2": {
+      "key": "Wachsame Argusaugen-SCH"
+    },
+    "c1": {
+      "sealChargedStam_": "Verringerung des Ausdauerverbrauchs heftiger Schläge"
+    },
+    "c6": {
+      "maxSealInc": "Erhöhung der Höchstzahl an Flammensiegeln"
+    }
   },
   "char_Zhongli": {
     "skill": {
@@ -266,11 +377,22 @@
     "recitative": "Rezitativ"
   },
   "page_character": {
+    "hitmode": {
+      "critHit": "KRIT Treffer-SCH"
+    },
     "tabEquip": {
       "compare": "Mit aktuellem Build vergleichen"
     },
     "tabTheorycraft": {
-      "maxTotalRolls": "Ein \"zulässiger\" Build kann maximal 45 Rolls haben."
+      "maxTotalRolls": "Ein \"zulässiger\" Build kann maximal 45 Rolls haben.",
+      "kqmsDialog": {
+        "kqmsBtn": "KQMS verwenden",
+        "title": "KQMS verwenden?",
+        "content": "Dies wird deine aktuellen <strong>Bonusattribute</strong> mit den von den <4>KQM Standards</4> vorgesehenen ersetzen."
+      }
+    },
+    "addStats": {
+      "label": "Neues Zusatzattribut"
     }
   },
   "page_character_optimize": {
@@ -295,14 +417,6 @@
           "4rain": "<0><0>Sperre<1></1> 5-Regenbogen</0></0> würde vollständige 5-Regenbogen-Builds ausschließen: <2><0>RRRRR</0></2>."
         }
       }
-    }
-  },
-  "page_scanner": {
-    "tags": {
-      "pc": "PC",
-      "ps": "PlayStation",
-      "materials": "Materialien",
-      "characters": "Charaktere"
     }
   }
 }

@@ -1,0 +1,102 @@
+{
+  "addNew": "Adicionar Personagem",
+  "tabs": {
+    "overview": "Visão Geral",
+    "talent": "Talentos",
+    "optimize": "Otimizar",
+    "theorycraft": "Theorycraft"
+  },
+  "formulas": "Fórmulas",
+  "calculations": "Cálculos",
+  "selectCharacter": "Selecione um Personagem",
+  "removeCharacter": "Tem certeza de que quer excluir {{value}}?",
+  "delete": "Excluir o personagem",
+  "teammates": "Companheiros",
+  "hitmode": {
+    "hit": "Dano Não Crítico",
+    "avgHit": "Dano Médio",
+    "critHit": "Dano do Crítico",
+    "global": "Seguir Global"
+  },
+  "tabEquip": {
+    "swapWeapon": "Trocar Arma",
+    "swapArt": "Trocar Artefato",
+    "compare": "Comparar com Build atual",
+    "unequipArts": "Desequipar todos os artefatos"
+  },
+  "characterName": "Nome do Personagem",
+  "teammate": "Companheiro {{count}}",
+  "noReaction": "Sem Reações",
+  "multiTarget": {
+    "title": "Configurar Multi-Objetivo",
+    "addNewTarget": "Adicionar Objetivo",
+    "addNewMTarget": "Criar Multi-Objetivo",
+    "info1": "Nota: Multi-Objetivos de Otimização já prontos podem ser encontrados no <1>Discord do GO</1> ou no <3>Guia de Multi-Otimização da Keqing Mains</3>, porém não podemos garantir que tais configurações serão válidas.",
+    "info2": "É responsabilidade do usuário confirmar a precisão das configurações em relação ao seu próprio contexto de jogo.",
+    "description": "Descrição",
+    "duplicate": "Duplicar",
+    "target": {
+      "one": "<0>{{count}}</0> Objetivo",
+      "other": "<0>{{count}}</0> Objetivos"
+    }
+  },
+  "addStats": {
+    "title": "Ajustes do Inimigo + Atributos Bônus",
+    "info": "Você pode usar esses campos para adicionar buffs/debuffs que o GO não suporta diretamente, tais como efeitos de comida, cartas do Abismo ou Supercondutor. Veja a <1>Genshin Impact wiki</1> para encontrar valores exatos",
+    "label": "Novo Atributo Bônus"
+  },
+  "tabTheorycraft": {
+    "substatType": {
+      "min": "Usar rolls mínimos de atributos",
+      "max": "Usar rolls máximos de atributos",
+      "mid": "Usar rolls medianos de atributos"
+    },
+    "maxTotalRolls": "Uma build \"válida\" pode ter no máximo 45 rolls.",
+    "maxRolls": "Esse atributo pode ter no máximo 30 rolls.",
+    "maxRollsMain": "Já que este também é pelo menos um dos atributos principais, esse atributo pode ter no máximo {{value}} rolls.",
+    "distribute": "Distribuir",
+    "compareToggle": {
+      "equipped": "Comparar com o equipado",
+      "tc": "Mostrar atributos teóricos"
+    },
+    "resetDialog": {
+      "title": "Redefinir a configuração da build teórica?",
+      "content": "Isto limpará a sua simulação de build atual."
+    },
+    "copyDialog": {
+      "copyBtn": "Copiar do equipado",
+      "title": "Copiar informação dos artefatos e arma equipados?",
+      "content": "Isto substituirá a sua simulação atual com informação condizente com sua build equipada."
+    },
+    "kqmsDialog": {
+      "kqmsBtn": "Usar KQMS",
+      "title": "Usar KQMS?",
+      "content": "Isto trocará a sua <strong>configuração de atributos secundários</strong> atual por uma que siga os <4>Padrões da KQM</4>."
+    },
+    "gcsimDialog": {
+      "title": "Exportar p/ gcsim",
+      "content": "Importe esta build no <2>gcsim</2> copiando o código abaixo.",
+      "copied": "Configuração do gcsim foi copiada."
+    },
+    "all": { "rolls": "Todos os Secundários", "max": "Todos os Máximos" },
+    "substat": { "max": "Máximos" },
+    "feasibilityAlert": "A atual distribuição de atributos secundários exige pelo menos <strong>{{minSubLines}}</strong> linhas de secundários. É necessário distribuir mais <strong>{{minOtherRolls}}</strong> secundários em outros atributos para tornar esta configuração possível.",
+    "optAlert": {
+      "scalesWith": "O Objetivo de Otimização atual aumenta com: ",
+      "distribute": ". O programa distribuirá apenas entre esses atributos.",
+      "feasibilty": "Podem sobrar secundários que devem ser distribuídos manualmente em atributos irrelevantes para que a configuração seja possível."
+    },
+    "constraint": {
+      "title": "Restrições de Atributos",
+      "add": "Adicione um requisito de atributo"
+    }
+  },
+  "tabTeambuff": {
+    "team_reso": "Ressonância da Equipe",
+    "resonance_tip": "A equipe deve possuir 4 personagens para que a Ressonância Elemental tenha efeito."
+  },
+  "showingNum": {
+    "one": "Mostrando <1>{{count}}</1> de {{value}} Personagem",
+    "other": "Mostrando <1>{{count}}</1> de {{value}} Personagens"
+  }
+}

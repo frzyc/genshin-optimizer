@@ -1,0 +1,95 @@
+{
+  "addNew": "キャラクター加入",
+  "tabs": {
+    "overview": "概要",
+    "talent": "天賦",
+    "optimize": "改良",
+    "theorycraft": "セオリークラフト"
+  },
+  "formulas": "式",
+  "calculations": "計算",
+  "selectCharacter": "キャラクター選択",
+  "removeCharacter": "{{value}}を削除してもよろしいですか?",
+  "delete": "キャラクター削除",
+  "teammates": "チーム",
+  "hitmode": {
+    "hit": "非会心攻撃ダメージ",
+    "avgHit": "平均ダメージ",
+    "critHit": "会心攻撃ダメージ",
+    "global": "グローバル標準"
+  },
+  "tabEquip": {
+    "swapWeapon": "武器変更",
+    "swapArt": "聖遺物変更",
+    "compare": "現ビルドと比較する",
+    "unequipArts": "全ての聖遺物を外す"
+  },
+  "characterName": "キャラクター名",
+  "teammate": "パーティーメンバー{{count}}",
+  "noReaction": "反応なし",
+  "multiTarget": {
+    "title": "複数改良ターゲット構成",
+    "addNewTarget": "ターゲットを追加",
+    "addNewMTarget": "複数の改良ターゲットを作成",
+    "info1": "注：コミュニティが作成した複数改良ターゲットは、<1>GO Discord</1>または、<3>KQM</3>の複数改良ガイド内にありますが、その有効性は保証できません。",
+    "info2": "構成が正確に設定されている事を確認ください。",
+    "description": "詳細",
+    "duplicate": "重複",
+    "target": { "other": "<0>{{count}}</0>つのターゲット" }
+  },
+  "addStats": {
+    "title": "敵・ボーナスステータスの構成",
+    "info": "こちらでは、GOでサポートされていない食べ物バフ、アビスカードや、超電導などのバフ・デバフを追加できます。具体的な値については、<1>原神Wiki</1>を参照してください。",
+    "label": "新規ボーナスステータス"
+  },
+  "tabTheorycraft": {
+    "substatType": {
+      "min": "最低サブ効果スコア",
+      "max": "最大サブ効果スコア",
+      "mid": "平均サブ効果スコア"
+    },
+    "maxTotalRolls": "現ビルドは最大<strong>{{value}}</strong>のスコアが可能です",
+    "maxRolls": "このサブステータスは最大30回のスコアが可能です。",
+    "maxRollsMain": "最低1つのメイン効果が同じステータスのため、このサブ効果は最大{{value}}回のスコアが可能です。",
+    "distribute": "分配",
+    "compareToggle": {
+      "equipped": "装備中の聖遺物と比較",
+      "tc": "セオリークラフトステータスを表示"
+    },
+    "resetDialog": {
+      "title": "セオリークラフトビルド設定をリセットしますか？",
+      "content": "今設定されているセオリークラフトビルドが削除されます。"
+    },
+    "copyDialog": {
+      "copyBtn": "装備中のをコピー",
+      "title": "データを装備中の聖遺物・武器からコピーしますか？",
+      "content": "今設定されているセオリークラフトビルドが装備中のビルドに換えます。"
+    },
+    "kqmsDialog": {
+      "kqmsBtn": "KQM（刻晴メインズ）を使用",
+      "title": "KQMを使用しますか？",
+      "content": "今設定されている<strong>サブステ</strong>を<4>KQM標準</4>に準拠したものに換えます。"
+    },
+    "gcsimDialog": {
+      "title": "gcsimエクスポート",
+      "content": "下記のコードからビルドをコピーし、<2>gcsim</2>にインポートできます",
+      "copied": "クリップボードにgcsim configをコピーしました。"
+    },
+    "all": { "rolls": "全ての強化", "max": "全てをマックス" },
+    "substat": { "max": "マックス" },
+    "feasibilityAlert": "現サブ効果の分布には、少なくとも <strong>{{minSubLines}}</strong> 行のサブ効果が必要です。よって、<strong>{{minOtherRolls}}</strong> の強化を他のサブステータスに割り当てる必要があります。",
+    "optAlert": {
+      "scalesWith": "選択された改良ターゲットと制約が計算する倍率は、次のサブステです：",
+      "distribute": "ステータスをこれらのサブ効果にのみ分配します。",
+      "feasibilty": "非倍率のサブ効果に分散する必要がある可能性があります。"
+    },
+    "constraint": { "title": "ステータス制約", "add": "ステータス制約を追加" }
+  },
+  "tabTeambuff": {
+    "team_reso": "元素共鳴",
+    "resonance_tip": "元素共鳴の効果を発揮するためには、パーティーが4人揃っている必要があります。"
+  },
+  "showingNum": {
+    "other": "{{value}}人のキャラクターの内、<1>{{count}}</1> 人を表示中"
+  }
+}

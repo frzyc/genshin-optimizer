@@ -1,0 +1,16 @@
+{
+  "skill": {
+    "dance1": "Sword Dance 1-Hit DMG",
+    "dance2": "Sword Dance 2-Hit DMG",
+    "whirl1": "Whirling Steps 1-Hit DMG",
+    "whirl2": "Whirling Steps 2-Hit DMG",
+    "wheel": "Water Wheel DMG"
+  },
+  "passive1": {
+    "underChaliceEffect": "Under Golden Chalice's Bounty",
+    "notDendroHydroTeam": "Hint: Set your team with only Dendro and Hydro characters to see additional conditionals and effects",
+    "condName": "After being hit by a <dendro>Dendro attack</dendro> while affected by Golden Chalice's Bounty",
+    "bountifulCores": "Bloom reaction will create Bountiful Cores"
+  },
+  "c4": { "condName": "After the third dance step of Pirouette hits opponents" }
+}

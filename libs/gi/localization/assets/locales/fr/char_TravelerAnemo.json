@@ -1,0 +1,9 @@
+{
+  "p1": "Lame de vent DMG",
+  "c6": "L'ennemi a été touché par <strong>Gust Surge</strong>.",
+  "c4": "Réduction de DMG lors de l'incantation",
+  "initialEleDmg": "Absorption initiale de la coupe DMG",
+  "maxEleDmg": "Absorption maximale de coupe DMG",
+  "stormEleDmg": "Absorption de la tempête initiale DMG",
+  "stormEleMaxDmg": "Max Storm Absorption DMG"
+}

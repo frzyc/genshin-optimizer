@@ -1,0 +1,15 @@
+{
+  "paramita": {
+    "enter": "Dans l'état <strong>Paramita Papilio</strong>.",
+    "end": "Après la fin de l'état de <strong>Paramita Papilio</strong>."
+  },
+  "constellation2": {
+    "applyBloodBlossom": "Applique l'effet <strong>Bourgeon de prune</strong>"
+  },
+  "constellation4": {
+    "condName": "Après avoir vaincu un ennemi affecté par un <strong>Bourgeon de prune</strong>"
+  },
+  "constellation6": {
+    "condName": "Après que les PV soient tombés en dessous de 25% ou après avoir subi un coup mortel"
+  }
+}

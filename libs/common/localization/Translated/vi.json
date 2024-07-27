@@ -19,7 +19,7 @@
       "level": "Cấp độ",
       "unknownPieceName": "Tên món TDV không rõ",
       "curSubEff": "RV hiện tại",
-      "curSubEffDesc": "Mỗi 4 cấp thánh di vật sẽ có thêm 1 chỉ số phụ. <strong>Hiệu suất chỉ số phụ</strong> thể hiện chỉ số phụ đã rolls cao thấp bao nhiêu theo tỉ lệ phần trăm.",
+      "curSubEffDesc": "Mỗi 4 cấp thánh di vật sẽ có thêm 1 chỉ số phụ. <strong>Hiệu suất chỉ số phụ</strong> thể hiện chỉ số phụ đã roll cao thấp bao nhiêu theo tỉ lệ phần trăm.",
       "maxSubEff": "Hiệu suất chỉ số phụ tối đa",
       "maxSubEffDesc": "<strong>Hiệu suất chỉ số phụ tối đa</strong> của một thánh di vật được tính theo giá trị tối đa của những lần nâng cấp còn lại.",
       "preview": "Xem trước Thánh Di Vật",
@@ -97,7 +97,6 @@
   "settings": {
     "title": "Cài Đặt",
     "languageCard": {
-      "selectLanguage": "Lựa chọn ngôn ngữ",
       "languageFormat": "Ngôn ngữ: {{language}}"
     },
     "uploadCard": {
@@ -160,7 +159,6 @@
     "loading": "Đang tải...",
     "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc chứng thực bởi HoYoverse",
     "appVersion": "Phiên bản của $t(pageTitle): {{version}}",
-    "underConstruction": "Đang hoàn thiện",
     "error": "Lỗi",
     "reset": "Cài lại",
     "info": "Thông tin",
@@ -173,8 +171,7 @@
       "rarity": "Độ hiếm",
       "efficiency": "Hiệu suất chỉ số phụ hiện tại",
       "mefficiency": "Hiệu suất chỉ số phụ tối đa",
-      "artsetkey": "Bộ Thánh Di Vật",
-      "probability": "Xác xuất Roll"
+      "artsetkey": "Bộ Thánh Di Vật"
     },
     "link": {
       "download": "Download Link",
@@ -198,8 +195,8 @@
     "passive1": "Sát thương Kiếm Ánh Sáng"
   },
   "char_Noelle": {
-    "p4cd": "24s, -1s Cứ 4 lần đánh trúng",
-    "c6duration": "15s, +1s mỗi lần đánh bại kẻ địch, tối đa 10s"
+    "p4cd": "24s -1s mỗi 4 lần đánh trúng",
+    "c6duration": "15s +1s mỗi lần đánh bại kẻ địch (tối đa 25s)"
   },
   "char_Venti": {
     "addAimed": "Sát thương mũi tên tăng thêm",
@@ -383,10 +380,6 @@
       "title": "Inventory Kamera",
       "p1": "Ứng dụng này sẽ quét tất cả các nhân vật + vũ khí + thánh di vật trong túi của bạn. Làm theo hướng dẫn trong ứng dụng để thiết lập. Ứng dụng này chỉ quét bằng ngôn ngữ tiếng Anh."
     },
-    "am": {
-      "title": "「天目」-- Amenoma",
-      "p1": "Quét tất cả các thánh di vật của bạn trong túi của bạn. Làm theo hướng dẫn để chụp cửa sổ và quét. Có cả phiên bản tiếng Trung và tiếng Anh. (Tải xuống phiên bản <1>_EN.exe</1> để quét bằng tiếng Anh). Cả định dạng <3>mona-uranai</3> và <5>GOOD</5> đều được chấp nhận trong GO. Nên sử dụng định dạng <7>GOOD</7>."
-    },
     "as": {
       "title": "AdeptiScanner",
       "p1": "Quét tất cả thánh di vật của bạn trong túi. Có chế độ quét thủ công.",
@@ -394,6 +387,23 @@
     },
     "goodeng": "Ứng dụng này chỉ quét bằng tiếng Anh và xuất sang định dạng GOOD.",
     "seelieme": "Phần mềm này cũng có thể quét dữ liệu cho <1> Seelie.me </1>."
+  },
+  "artifact_BlizzardStrayer": {
+    "condName": "kẻ địch",
+    "condCryo": "đang bị Nguyên Tố Băng ảnh hưởng",
+    "condFrozen": "đóng băng"
+  },
+  "artifact_ShimenawasReminiscence": {
+    "afterUseEnergy": "Sau khi tiêu hao 15 năng lượng"
+  },
+  "char_AratakiItto": {
+    "a4": {
+      "dmgInc": "Tăng sát thương gây ra từ Arataki Kesagiri"
+    },
+    "c1": {
+      "initialGain": "nhận tầng hiệu ứng \"Quỷ Lực Vô Song\"",
+      "timedGain": "Sau 1s, Arataki Itto mỗi 0.5s sẽ nhận thêm 1 tầng \"Quỷ Lực Vô Song\", duy trì 1.5s"
+    }
   },
   "page_character": {
     "tabEquip": {
@@ -404,8 +414,6 @@
     "characterName": "Tên nhân vật"
   },
   "page_weapon": {
-    "showingNum_one": "Đang hiện <1>{{count}}</1> trên {{value}} Vũ khí",
-    "showingNum_other": "Đang hiện <1>{{count}}</1> trên tổng {{value}} Vũ khí",
     "edit": "Điều chỉnh Vũ khí",
     "weaponName": "Tên vũ khí",
     "removeWeapon": "Bạn có chắc bạn muốn xóa {{value}}?",

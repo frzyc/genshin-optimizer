@@ -1,0 +1,8 @@
+{
+  "skillDuration": "キャッツクロー1つにつきの継続時間",
+  "holdShield": "長押しシールド吸収量",
+  "a1shielded": "<strong>フリーズキャッツクロー</strong>のシールド発動中",
+  "holdCryoShield": "長押しシールド氷元素ダメージ吸収",
+  "pressShield": "単押しシールドダメージ吸収量",
+  "pressCryoShield": "単押しシールド氷元素ダメージ吸収量"
+}

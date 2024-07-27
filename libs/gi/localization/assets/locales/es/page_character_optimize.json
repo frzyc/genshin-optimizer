@@ -1,0 +1,11 @@
+{
+  "levelFilter": "Filtro de nivel de artefactos",
+  "artSetConfig": {
+    "title": "Ajustes de sets de artefactos",
+    "allowed": "Permitido(s)",
+    "excluded": "Excluido(s)",
+    "selected": "Seleccionado(s)",
+    "allowAll2set": "Permitir todos los 2-sets",
+    "excludeAll2set": "Excluir todos los 2-sets"
+  }
+}

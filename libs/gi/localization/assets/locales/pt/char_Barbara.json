@@ -1,0 +1,8 @@
+{
+  "passive1": {
+    "cond": "Dentro da melodia de <strong>Que Comece o Espetáculo♪</strong>"
+  },
+  "constellation2": {
+    "cond": "Durante <strong>Que Comece o Espetáculo♪</strong>"
+  }
+}

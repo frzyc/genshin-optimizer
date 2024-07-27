@@ -1,0 +1,9 @@
+{
+  "addAimed": "Zusätzlicher Schaden durch gezielte Schüsse",
+  "addFullAimed": "Zusätzlicher Schaden durch voll aufgeladene gezielte Schüsse",
+  "upcurrentDuration": "Dauer der Luftströmung",
+  "regenEner": "Stellt Venti nach Ende des Effekts 15 Elementarenergie wiederher.",
+  "c6": "Ziele, denen mit <strong>Ode vom Anemo-Archon</strong> Schaden zugefügt wird",
+  "q": "Stellt allen <1>{{elementKey}}</1> Figuren 15 Elementarenergie wieder her.",
+  "c2": { "hit": "getroffene Gegner", "launched": "weggeschleuderte Gegner" }
+}

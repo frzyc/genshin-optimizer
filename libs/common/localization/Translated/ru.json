@@ -13,9 +13,7 @@
         "noRoll": "Нет роллов",
         "noStat": "Не задано",
         "eff": "ЦР: <1></1>",
-        "nextRolls": "След. хар-ка:",
-        "RollCount_one": "{{count}} Ролл",
-        "RollCount_other": "{{count}} Роллов"
+        "nextRolls": "След. хар-ка:"
       },
       "rarity": "Редкость",
       "level": "Уровень",
@@ -82,8 +80,6 @@
     },
     "resetFilters": "Сбросить фильтры",
     "setEffectNum": "{{setNum}}-Выбор значения",
-    "showingNum_one": "Показан <1>{{count}}</1> из {{value}} артефактов",
-    "showingNum_other": "Показано <1>{{count}}</1> из {{value}} артефактов",
     "edit": "Редактировать артефакт",
     "autocompleteLabels": {
       "sets": "Наборы артефактов",
@@ -91,11 +87,7 @@
       "substats": "Дополнительные характеристики",
       "set": "Набор артефактов"
     },
-    "substat_one": "{{count}} доп. хар-ка",
-    "substat_other": "{{count}} доп. хар-ки",
     "addNew": "Добавить Новый Артефакт",
-    "sub_one": "{{count}} стат",
-    "sub_other": "{{count}} стат",
     "cantDeleteLock": "Чтобы удалить артефакт, разблокируйте его",
     "equippedArt": "Надетые артефакты",
     "artInInv": "Артефакты в инвентаре",
@@ -122,7 +114,6 @@
   "settings": {
     "title": "Настройки",
     "languageCard": {
-      "selectLanguage": "Выбрать Язык",
       "languageFormat": "Язык: {{language}}"
     },
     "uploadCard": {
@@ -198,7 +189,6 @@
     "loading": "Загрузка...",
     "rightsDisclaimer": "Genshin Optimizer не сотрудничает и не поддерживается HoYoverse.",
     "appVersion": "$t(pageTitle) Версия: {{version}}",
-    "underConstruction": "В разработке",
     "error": "Ошибка",
     "reset": "Сбросить",
     "info": "Информация",
@@ -211,8 +201,7 @@
       "rarity": "Редкость",
       "efficiency": "Текущая ЦР",
       "mefficiency": "Максимальная ЦР",
-      "artsetkey": "Набор артефактов",
-      "probability": "Вероятные хар-ки"
+      "artsetkey": "Набор артефактов"
     },
     "link": {
       "download": "Ссылка на скачивание",
@@ -290,8 +279,6 @@
       "skillPress": "После использования Элементального навыка(касание)",
       "skillHold": "После использования Элементального навыка(зажатие)"
     },
-    "hits_one": "{{count}} Удар",
-    "hits_other": "{{count}} Удары",
     "lessEqPercentHP": "HP меньше или равно {{percent}}%",
     "greaterPercentHP": "HP больше, чем {{percent}}%",
     "greaterEqPercentHP": "HP больше или равно {{percent}}%",
@@ -300,12 +287,6 @@
     "enemyLessEqPercentHP": "HP противника меньше или равно {{percent}}%",
     "enemyGreaterPercentHP": "HP противника больше {{percent}}% ",
     "enemyGreaterEqPercentHP": "HP противника больше или равно {{percent}}%",
-    "stack_one": "{{count}} Стак",
-    "stack_other": "{{count}} Стаки",
-    "seconds_one": "{{count}} Секунд",
-    "seconds_other": "{{count}} Секунды",
-    "uses_one": "{{count}} Использование",
-    "uses_other": "{{count}} Использования",
     "afterDefeatEnemy": "После победы над противником",
     "afterSprint": "После рывка",
     "skillCDRed": "Уменьшение времени отката Элe. Навыка",
@@ -386,8 +367,6 @@
     },
     "energy": "Энергия",
     "teamBuff": "Командный бафф",
-    "opponents_one": "{{count}} Оппонент",
-    "opponents_other": "{{count}} Оппоненты",
     "dmgMult": {
       "skill": "Навык"
     },
@@ -521,10 +500,6 @@
     "ik": {
       "title": "Inventory Kamera",
       "p1": "Это небольшое приложение может отсканировать персонажей, оружие и артефакты в вашем инвенторе. Прочитайте инструкцию, чтобы установить приложение. Сканирует только на английском."
-    },
-    "am": {
-      "title": "「天目」-- Amenoma",
-      "p1": "Сканирует артефакты в инвенторе. Ознакомьтесь с инструкцией, чтобы выполнить сканирование. Поддерживает китайский и английский язык. (Скачайте <1>_EN.exe</1> версию на английском). GO читает форматы <3>mona-uranai</3> и <5>GOOD</5>. Формат <7>GOOD</7> предпочтительней."
     },
     "as": {
       "title": "AdeptiScanner",
@@ -966,7 +941,6 @@
     "tabs": {
       "overview": "Обзор",
       "talent": "Таланты",
-      "teambuffs": "Бонусы команды",
       "optimize": "Оптимизировать",
       "theorycraft": "Теоретический урон"
     },
@@ -976,8 +950,6 @@
     "removeCharacter": "Вы уверены что хотите удалить {{value}}?",
     "delete": "Удалить персонажа",
     "teammates": "Команда",
-    "showingNum_one": "Показано <1>{{count}}</1> из {{value}} персонажа",
-    "showingNum_other": "Показано <1>{{count}}</1> из {{value}} персонажей",
     "hitmode": {
       "hit": "Не крит. урон",
       "avgHit": "Средний урон",
@@ -1012,8 +984,6 @@
     }
   },
   "page_weapon": {
-    "showingNum_one": "Показано <1>{{count}}</1> из {{value}} оружия",
-    "showingNum_other": "Показано <1>{{count}}</1> из {{value}} оружий",
     "edit": "Редактировать оружие",
     "weaponName": "Название оружия",
     "removeWeapon": "Вы уверены что хотите удалить {{value}}?",

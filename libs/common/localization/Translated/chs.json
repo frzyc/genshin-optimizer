@@ -13,9 +13,7 @@
         "noRoll": "未升级",
         "noStat": "无评分",
         "eff": "评分： <1></1>",
-        "nextRolls": "下次升级：",
-        "RollCount_one": "{{count}} 升级次数",
-        "RollCount_other": "{{count}} 升级次数"
+        "nextRolls": "下次升级："
       },
       "rarity": "稀有度",
       "level": "等级",
@@ -82,8 +80,6 @@
     },
     "resetFilters": "重置过滤条件",
     "setEffectNum": "{{setNum}}件套",
-    "showingNum_one": "显示 {{value}}个中<1>{{count}}</1>个圣遗物",
-    "showingNum_other": "显示 {{value}}个中<1>{{count}}</1>个圣遗物",
     "edit": "编辑圣遗物",
     "autocompleteLabels": {
       "sets": "圣遗物套装",
@@ -91,11 +87,7 @@
       "substats": "副词条",
       "set": "圣遗物套装"
     },
-    "substat_one": "{{count}}项副词条",
-    "substat_other": "{{count}}项副词条",
     "addNew": "添加新圣遗物",
-    "sub_one": "{{count}}个副词条",
-    "sub_other": "{{count}}个副词条",
     "cantDeleteLock": "无法删除，因为圣遗物已锁定",
     "equippedArt": "已装备的圣遗物",
     "artInInv": "背包中的圣遗物",
@@ -123,7 +115,6 @@
   "settings": {
     "title": "设置",
     "languageCard": {
-      "selectLanguage": "选择语言",
       "languageFormat": "语言：{{language}}"
     },
     "uploadCard": {
@@ -208,7 +199,6 @@
     "loading": "加载中…",
     "rightsDisclaimer": "Genshin Optimizer不隶属于米哈游或代表其官方意见。",
     "appVersion": "$t(pageTitle) 版本: <1>{{version}}</1>",
-    "underConstruction": "施工中",
     "error": "错误",
     "reset": "重置",
     "info": "重要提示",
@@ -221,8 +211,7 @@
       "rarity": "稀有度",
       "efficiency": "当前副词条评分",
       "mefficiency": "最高副词条评分",
-      "artsetkey": "圣遗物套装",
-      "probability": "词条升级概率"
+      "artsetkey": "圣遗物套装"
     },
     "link": {
       "download": "下载链接",
@@ -323,8 +312,6 @@
       "burst": "使用元素爆发后",
       "skillOrBurst": "释放元素战技或元素爆发后"
     },
-    "hits_one": "命中{{count}}次",
-    "hits_other": "命中{{count}}次",
     "lessEqPercentHP": "生命值低于或等于{{percent}}%",
     "greaterPercentHP": "生命值高于{{percent}}%",
     "greaterEqPercentHP": "生命值高于或等于{{percent}}%",
@@ -333,12 +320,6 @@
     "enemyLessEqPercentHP": "敌人生命值低于或等于{{percent}}%",
     "enemyGreaterPercentHP": "敌人生命值高于{{percent}}%",
     "enemyGreaterEqPercentHP": "敌人生命值高于或等于{{percent}}%",
-    "stack_one": "{{count}}层",
-    "stack_other": "{{count}}层",
-    "seconds_one": "{{count}} 秒",
-    "seconds_other": "{{count}} 秒",
-    "uses_one": "{{count}}使用次数",
-    "uses_other": "{{count}}使用次数",
     "afterDefeatEnemy": "击败敌人后",
     "afterSprint": "冲刺后",
     "skillCDRed": "元素战技冷却时间减少",
@@ -430,8 +411,6 @@
     },
     "energy": "能量",
     "teamBuff": "队伍加成",
-    "opponents_one": "{{count}} 个敌人",
-    "opponents_other": "{{count}} 个敌人",
     "dmgMult": {
       "normal": "普攻伤害倍率",
       "charged": "重击伤害倍率",
@@ -583,10 +562,6 @@
     "ik": {
       "title": "Inventory Kamera",
       "p1": "这个轻量app可以扫描你所有角色及其武器和你背包中的圣遗物。按照app中的指引进行扫描。但此app只能扫描英文游戏文本。"
-    },
-    "am": {
-      "title": "「天目」-- Amenoma",
-      "p1": "可以扫描你背包内的所有圣遗物。请参照指引捕获游戏窗口并扫描。此扫描仪有中文版和英文版。(下载 <1>_EN.exe</1> 版本来扫描英文文本游戏)。 <3>mona-uranai</3> 和<5>GOOD</5> 格式都被GO接受。 推荐使用<7>GOOD</7> 格式导出。"
     },
     "as": {
       "title": "AdeptiScanner",
@@ -1049,7 +1024,6 @@
     "tabs": {
       "overview": "概览",
       "talent": "天赋",
-      "teambuffs": "队伍增益",
       "optimize": "优化",
       "theorycraft": "理论分析"
     },
@@ -1059,8 +1033,6 @@
     "removeCharacter": "你确定要移除{{value}}吗？",
     "delete": "删除角色",
     "teammates": "队友",
-    "showingNum_one": "显示{{value}}名角色中的<1>{{count}}</1>名",
-    "showingNum_other": "显示{{value}}名角色中的<1>{{count}}</1>名",
     "hitmode": {
       "hit": "非暴击伤害",
       "avgHit": "平均伤害",
@@ -1082,9 +1054,7 @@
       "info1": "说明：社区创建的自定义多重优化目标可以在<1>GO Discord</1>或者<3>KQM多重优化指南</3>找到，不过我们不保证这些配置的有效性。",
       "info2": "用户有责任自行判断其准确性。",
       "description": "描述",
-      "duplicate": "复制",
-      "target_one": "<0>{{count}}</0>个目标",
-      "target_other": "<0>{{count}}</0>个目标"
+      "duplicate": "复制"
     },
     "addStats": {
       "title": "怪物配置与增益状态",
@@ -1106,8 +1076,6 @@
     }
   },
   "page_weapon": {
-    "showingNum_one": "显示{{value}}把武器中的<1>{{count}}</1>把",
-    "showingNum_other": "显示{{value}}把武器中的<1>{{count}}</1>把",
     "edit": "编辑武器",
     "weaponName": "武器名称",
     "removeWeapon": "你确定要移除{{value}}吗？",
@@ -1218,10 +1186,6 @@
     "buildDropdownDesc": "减少生成的配装数量可以减少生成大量配装时的计算时间。",
     "threadDropdownDesc": "增加线程数可以加快速度，但是也会耗费更多CPU算力。",
     "noArtis": "哎呀！你似乎还没有在GO中添加圣遗物！你应该先在<1>圣遗物<1>页面中添加一些！",
-    "build_one": "<0>{{count}}</0> 组配装",
-    "build_other": "<0>{{count}}</0> 组配装",
-    "thread_one": "<0>{{count}}</0> 线程",
-    "thread_other": "<0>{{count}}</0> 线程",
     "targetSelector": {
       "selectOptTarget": "选择优化目标",
       "selectGraphTarget": "选择绘图目标",
@@ -1241,14 +1205,9 @@
     "excludeArt": {
       "title_exclude": "排除的圣遗物",
       "title_tooltip": "添加圣遗物到该角色的排除列表，排除列表里的圣遗物在配装时将不会考虑。",
-      "excNum_one": "<0>{{count}}</0>件圣遗物已排除",
-      "excNum_other": "<0>{{count}}</0>件圣遗物已排除",
       "addExc": "添加圣遗物到该角色的排除列表",
       "selExc": "选择圣遗物以添加到该角色的排除列表",
       "deSelectExc": "点击圣遗物以从该角色的排除列表中移除",
-      "excludeArtifactTip": "如果排除了某件圣遗物，则该角色生成配装时不会使用该圣遗物。",
-      "excluded": "这件圣遗物已排除。",
-      "included": "这件圣遗物未排除。",
       "usingNum": "使用<1>{{totalStr}}</1>件已排除的圣遗物"
     },
     "excludeChar": {
@@ -1258,8 +1217,6 @@
         "disallow_All": "将以下所有角色从允许列表中移除"
       },
       "allowEquip": "允许使用来自这些的圣遗物",
-      "usingNumTot_one": "使用来自<3>{{count}}</3>位角色的<1>{{arts}}</1>件圣遗物",
-      "usingNumTot_other": "使用来自<3>{{count}}</3>位角色的<1>{{arts}}</1>件圣遗物",
       "tooltip": "添加其他角色到该角色的允许列表，在生成配装时，会考虑这些角色已装备的圣遗物。你可以在仅使用未装备圣遗物、自定义列表和使用所有圣遗物之间切换。",
       "chars": "角色",
       "artis": "圣遗物",
@@ -1472,7 +1429,6 @@
     "seamlessDendro": "无郤气护盾草元素伤害吸收量",
     "a4Cond": "处于「木运之岁」效果中",
     "c2Dmg": "游丝徵灵·切伤害",
-    "c2Heal": "游丝徵灵·切治疗量",
-    "c6DmgInc": "灵气脉伤害提高"
+    "c2Heal": "游丝徵灵·切治疗量"
   }
 }
