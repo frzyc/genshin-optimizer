@@ -202,8 +202,7 @@
             "rarity": "Kualitas",
             "efficiency": "RV Saat Ini",
             "mefficiency": "RV Maksimum",
-            "artsetkey": "Set Artefak",
-            "probability": "Probabilitas Roll"
+            "artsetkey": "Set Artefak"
         },
         "link": {
             "download": "Link Download",
@@ -1005,7 +1004,6 @@
         "tabs": {
             "overview": "Overview",
             "talent": "Talenta",
-            "teambuffs": "Buff Team",
             "optimize": "Optimize",
             "theorycraft": "Theorycraft"
         },
@@ -1188,10 +1186,7 @@
             "title_tooltip": "Tambahkan artefak ke daftar pengecualian karakter ini. Artefak dalam daftar pengecualian tidak akan dipertimbangkan untuk pembuatan build.",
             "addExc": "Tambahkan artefak ke daftar pengecualian karakter ini",
             "selExc": "Pilih artefak untuk ditambahkan ke daftar pengecualian karakter ini",
-            "deSelectExc": "Klik artefak untuk menghapusnya dari daftar pengecualian",
-            "excludeArtifactTip": "Mengecualikan artefak akan mencegah generator build menggunakannya untuk karakter ini.",
-            "excluded": "Artefak ini dikecualikan.",
-            "included": "Artefak ini tidak dikecualikan."
+            "deSelectExc": "Klik artefak untuk menghapusnya dari daftar pengecualian"
         },
         "excludeChar": {
             "title": "Izinkan Artefak yang Dilengkapi",
