@@ -1,0 +1,81 @@
+name: Build Somnia
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    paths-ignore:
+      - 'apps/frontend/**'
+      - 'apps/frontend-e2e/**'
+      - 'apps/gi-frontend/**'
+      - 'apps/gi-frontend-e2e/**'
+      - 'apps/sr-frontend/**'
+      - 'apps/sr-frontend-e2e/**'
+      - 'libs/common/database-ui/**'
+      - 'libs/common/img-util/**'
+      - 'libs/common/react-util/**'
+      - 'libs/common/svgicons/**'
+      - 'libs/common/ui/**'
+      - 'libs/gi/art-scanner/**'
+      - 'libs/gi/assets/**'
+      - 'libs/gi/char-cards/**'
+      - 'libs/gi/db-ui/**'
+      - 'libs/gi/formula-ui/**'
+      - 'libs/gi/frontend-gql/**'
+      - 'libs/gi/i18n/**'
+      - 'libs/gi/page-*/**'
+      - 'libs/gi/prisma-schema/**'
+      - 'libs/gi/silly-wisher/**'
+      - 'libs/gi/silly-wisher-names/**'
+      - 'libs/gi/solver/**'
+      - 'libs/gi/solver-tc/**'
+      - 'libs/gi/supabase/**'
+      - 'libs/gi/svgicons/**'
+      - 'libs/gi/ui/**'
+      - 'libs/gi/uidata/**'
+      - 'libs/gi/wr/**'
+      - 'libs/sr/assets/**'
+      - 'libs/sr/i18n/**'
+      - 'libs/sr/page-*/**'
+      - 'libs/sr/solver/**'
+      - 'libs/sr/ui/**'
+    types: [opened, reopened, synchronize, labeled]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get Cache Key
+        id: get-cache-key
+        run: |
+          echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
+      - uses: actions/cache/restore@v4
+        with:
+          path: .git/modules
+          key: submodule-${{ steps.get-cache-key.outputs.key }}
+          restore-keys: |
+            submodule-
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          submodules: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+      - name: Yarn install
+        run: |
+          yarn install --immutable --immutable-cache
+      - name: Build frontend
+        run: |
+          NX_DAEMON="false"
+          yarn run nx run somnia:build:production
+      - name: Archive build
+        uses: actions/upload-artifact@v4
+        with:
+          name: somnia_build
+          path: |
+            dist/apps/somnia
