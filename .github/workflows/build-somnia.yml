@@ -45,7 +45,6 @@ on:
 jobs:
   set-env:
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.labels.*.name, 'deploySomnia')
     outputs:
       env: ${{ steps.set_env.outputs.env }}
     steps:
@@ -61,7 +60,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     needs: set-env
-    if: contains(github.event.pull_request.labels.*.name, 'deploySomnia')
     environment:
       name: ${{ needs.set-env.outputs.env }}
     steps:
@@ -96,6 +94,7 @@ jobs:
         run: |
           echo ${{ vars.ENV_NAME }} > environment
           echo $(git rev-parse HEAD) > ref
+          echo ${{ contains(github.event.pull_request.labels.*.name, 'deploySomnia') }} > shouldDeploy
       - name: Archive build
         uses: actions/upload-artifact@v4
         with:
@@ -104,3 +103,4 @@ jobs:
             dist/apps/somnia
             environment
             ref
+            shouldDeploy
