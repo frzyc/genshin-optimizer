@@ -3,12 +3,7 @@ import {
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import {
-  CardThemed,
-  InfoTooltip,
-  ModalWrapper,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { bulkCatTotal, filterFunction } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
@@ -308,14 +303,8 @@ export default function UseEquipped({
         <CardThemed>
           {/* Header */}
           <CardHeader
-            title={
-              <Box display="flex" gap={1} alignItems="center">
-                <Typography variant="h6">{t`excludeChar.title`}</Typography>
-                <InfoTooltip
-                  title={<Typography>{t`excludeChar.tooltip`}</Typography>}
-                />
-              </Box>
-            }
+            title={t`excludeChar.title`}
+            titleTypographyProps={{ variant: 'h6' }}
             action={
               <IconButton onClick={onClose}>
                 <CloseIcon />
