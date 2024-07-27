@@ -52,9 +52,9 @@ jobs:
         id: set_env
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
-            echo "::set-output name=env::somnia-prod"
+            echo "env=somnia-prod" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=env::somnia-test"
+            echo "env=somnia-test" >> $GITHUB_OUTPUT
           fi
 
   build:
