@@ -5,5 +5,10 @@
   "projectType": "library",
   "tags": [],
   "// targets": "to see all targets run: nx show project sr-assets-data --web",
-  "targets": {}
+  "targets": {
+    "gen-file": {
+      "executor": "@genshin-optimizer/sr/assets-data:gen-assets-data",
+      "outputs": ["{projectRoot}/src/AssetsData_gen.json"]
+    }
+  }
 }

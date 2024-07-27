@@ -16,6 +16,7 @@
         "bundle": true,
         "main": "apps/somnia/src/main.ts",
         "tsConfig": "apps/somnia/tsconfig.app.json",
+        "minify": true,
         "assets": [
           "apps/somnia/src/assets",
           "apps/somnia/src/data",
