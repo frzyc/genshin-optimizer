@@ -1,0 +1,125 @@
+{
+  "mainStat": {
+    "levelAssTooltip": {
+      "title": "Hypothèse sur le niveau des statistiques principales",
+      "desc": "Fixe la valeur de la stat principale au moins à celle du niveau spécifié. Ne modifie pas les sous-statuts."
+    },
+    "assumptionLvl": {
+      "no": "No Main Stat Lv. Assumption",
+      "lvl": "Supposez que la Stat principale est au moins au niveau Lv. {{lvl}}"
+    },
+    "title": "Filtre Stat principal/Configuration"
+  },
+  "tcGraph": {
+    "vs": "Optimisation graphique Cible vs.",
+    "notSel": "Non sélectionné",
+    "downloadData": "Télécharger les données",
+    "desc": "En utilisant les données du constructeur, un graphique sera généré pour visualiser la cible d'optimisation par rapport à la cible graphique sélectionnée. Le graphique montrera la valeur maximale de la cible d'optimisation pour 0,01 de la cible graphique sélectionnée. L'activation de cette fonction est facultative et ralentira les temps de construction.",
+    "showStatThr": "Show Stat Threshold Line",
+    "generatedBuilds": "Constructions générées",
+    "statReqThr": "Ligne de seuil de l'exigence de statut",
+    "currentBuild": "Construction actuelle",
+    "highlightedBuilds": "Constructions mises en évidence",
+    "buildAlreadyInList": "La construction est déjà dans la liste"
+  },
+  "levelFilter": "Filtre de niveau d'artefact",
+  "allowPartial": "Autoriser les constructions partielles (<5 artefacts)",
+  "constraintFilter": {
+    "title": "Contraintes minimales de construction",
+    "tooltip": "Définir certaines exigences minimales auxquelles les constructions générées doivent se conformer ; par exemple, avoir au moins 140% de recharge en énergie."
+  },
+  "artSetConfig": {
+    "title": "Configuration de l'ensemble d'artefacts",
+    "setEffCond": "Conditionnels à effet de série",
+    "enabled": "Activé",
+    "allowed": "Autorisé",
+    "excluded": "Exclus",
+    "selected": "Sélectionné",
+    "2rainbow": "3-Arc-en-ciel",
+    "4rainbow": "5-Arc-en-ciel",
+    "allowAll2set": "Autoriser tous les 2 sets",
+    "excludeAll2set": "Exclure tous les ensembles de 2",
+    "allowAll4set": "Allow All 4-Set",
+    "excludeAll4set": "Exclut tous les ensembles de 4",
+    "alExRainbow": "<0>Autoriser <1></1></0> / <2>Exclure <1></1></2> Constructions arc-en-ciel",
+    "modal": {
+      "setCond": {
+        "title": "Effets conditionnels de l'ensemble d'artefacts",
+        "reset": "Remise à zéro des conditionnels",
+        "text": "Certains effets d'artefact fournissent des statistiques conditionnelles. Cette fenêtre vous permet de sélectionner ces effets, afin qu'ils puissent contribuer aux statistiques lorsqu'une construction satisfaisant un effet défini est calculée lors de l'optimisation."
+      },
+      "ArtSetFilter": {
+        "title": "Jeux d'artefacts <1>Autorisés<1></1></1> / <3>Exclus<1></1></3>",
+        "intro": "Vous pouvez autoriser/exclure les ensembles que vous souhaitez que le constructeur prenne en compte. Dans les exemples suivants, <strong>A</strong> est on-set, et <strong>R</strong> est rainbow(off-set)",
+        "2set": "<0><0>Exclure<1></1> 2-Set</0></0> exclurait les constructions en 2-Set : <2><0>AA</0>RRR</2> et <4><0>AAA</0>RR</4>.",
+        "4set": "<0><0>Exclure<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> et <4><0>AAAAA</0></4>.",
+        "2rain": "<0><0>Exclure<1></1> 3-Arcs-en-ciel</0></0> exclurait les constructions 2-Set + 3-Arcs-en-ciel : <2>AA<1>RRR</1></2> et <4>AAA<1>RR</1></4>.",
+        "4rain": "<0><0>Exclure<1></1> 5-Arcs-en-ciel</0></0> exclurait les constructions complètes d'arcs-en-ciel : <2><0>RRRRR</0></2>."
+      }
+    }
+  },
+  "buildDropdownDesc": "Diminuer le nombre de builds générés permet de réduire le temps de calcul des builds pour un grand nombre de builds.",
+  "threadDropdownDesc": "L'augmentation du nombre de threads accélérera le temps de construction, mais consommera plus de puissance de l'unité centrale.",
+  "noArtis": "Oups ! Il semble que vous n'ayez pas encore ajouté d'artefacts à GO ! Vous devriez aller sur la page <1>Artéfacts</1> et en ajouter !",
+  "targetSelector": {
+    "selectOptTarget": "Sélectionner une cible d'optimisation",
+    "selectGraphTarget": "Sélectionner une cible graphique",
+    "invalidTarget": "TARGET INVALIDE",
+    "selectBuildTarget": "Sélectionner une cible de contrainte de construction"
+  },
+  "selectTargetFirst": "Sélectionnez d'abord une cible d'optimisation",
+  "generateButton": {
+    "cancel": "Annuler",
+    "generateBuilds": "Générer des Builds"
+  },
+  "removeBuildButton": "Supprimer Construire",
+  "theorycraftButton": "Théorie de l'art",
+  "currentlyEquippedBuild": "Actuellement équipé",
+  "addBuildToList": "Ajouter la construction à la liste",
+  "graphBuildLabel": "Graphique #<1>{{count}}</1>",
+  "excludeArt": {
+    "title_exclude": "Artéfacts exclus",
+    "title_tooltip": "Ajouter des artefacts à la liste d'exclusion de ce personnage. Les artefacts de la liste d'exclusion ne seront pas pris en compte lors de la génération des constructions.",
+    "addExc": "Ajouter l'artefact à la liste d'exclusion de ce personnage",
+    "selExc": "Sélectionner l'artefact à ajouter à la liste d'exclusion de ce personnage",
+    "deSelectExc": "Cliquez sur un artefact pour le supprimer de la liste d'exclusion",
+    "usingNum": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)",
+    "button_txt": "Exclure les artefacts",
+    "excNum": {
+      "one": "<0>{{count}}</0> l'artefact est exclu",
+      "other": "Théorie de la construction"
+    }
+  },
+  "excludeChar": {
+    "title": "Configuration de l'artefact équipé",
+    "modal": {
+      "allow_all": "Ajouter tous les caractères affichés à la liste d'autorisation",
+      "disallow_All": "Supprimer tous les caractères affichés de la liste d'autorisation"
+    },
+    "allowEquip": "Permettre l'utilisation d'objets provenant de",
+    "tooltip": "Ajouter des personnages à la liste d'autorisation de ce personnage. Les personnages de la liste d'autorisation seront pris en compte lors de la génération de la construction. Vous pouvez également basculer entre l'utilisation des artefacts non équipés, votre liste d'autorisation personnalisée et l'utilisation de tous les artefacts.",
+    "chars": "Personnages",
+    "artis": "Artéfacts",
+    "states": {
+      "unequippedOnly": "Sans équipement seulement",
+      "customList": "Liste personnalisée",
+      "all": "Tous les artefacts"
+    },
+    "usingState": "Utilisation",
+    "usingNumTot": {
+      "one": "Utilisation d'artefacts <1>{{arts}}</1> de <3>{{count}}</3> personnage",
+      "other": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)"
+    }
+  },
+  "buildCompleted": "Construction achevée",
+  "notifyTooltip": "Joue un son lorsque les constructions finissent d'être générées. Affiche également un message d'alarme lorsque l'on quitte l'écran.",
+  "bonusStats": { "title": "Bonus Stats" },
+  "build": {
+    "one": "<0>{{count}}</0> Construire",
+    "other": "<0><0>Excluding<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>."
+  },
+  "thread": {
+    "one": "<0>{{count}}</0> File d'attente",
+    "other": "<0><0>Excluding<1></1> 5-Arc-en-ciel</0></0>} exclurait les constructions complètes à 5 arcs-en-ciel : <2><0>RRRRR</0></2>."
+  }
+}

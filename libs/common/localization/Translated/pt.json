@@ -14,8 +14,6 @@
         "noStat": "Sem Valor",
         "eff": "Eficiência: <1></1>",
         "nextRolls": "Próximos rolls:",
-        "RollCount_one": "{{count}} Roll",
-        "RollCount_other": "{{count}} Rolls",
         "RollCount": {
           "one": "{{count}} Roll",
           "other": "{{count}} Rolls"
@@ -86,8 +84,6 @@
     },
     "resetFilters": "Limpar Filtros",
     "setEffectNum": "Conjunto de {{setNum}} Pç.",
-    "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
-    "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefatos",
     "edit": "Editar Artefato",
     "autocompleteLabels": {
       "sets": "Conjuntos de Artefatos",
@@ -95,11 +91,7 @@
       "substats": "Atributos Secundários",
       "set": "Conjunto do Artefato"
     },
-    "substat_one": "{{count}} atributo secundário",
-    "substat_other": "{{count}} atributos secundários",
     "addNew": "Adicionar Artefato",
-    "sub_one": "{{count}} Atributo",
-    "sub_other": "{{count}} Atributos",
     "cantDeleteLock": "Não é possível excluir o artefato pois ele está Trancado",
     "equippedArt": "Artefatos Equipados",
     "artInInv": "Artefatos no Inventário",
@@ -117,7 +109,8 @@
     "sub": {
       "one": "{{count}} secundário",
       "other": "{{count}} secundários"
-    }
+    },
+    "noArtifacts": "Parece que você ainda não adicionou artefatos. Se você quiser, há <1>scanners automáticos</1> para você importá-los mais rapidamente!"
   },
   "languages": {
     "chs": "Chinês (Simplificado)",
@@ -139,7 +132,6 @@
   "settings": {
     "title": "Configurações",
     "languageCard": {
-      "selectLanguage": "Selecione um Idioma",
       "languageFormat": "Idioma: {{language}}"
     },
     "uploadCard": {
@@ -200,7 +192,8 @@
         "enabled": "Silly Optimizer Ativado",
         "disabled": "Silly Optimizer Desativado"
       }
-    }
+    },
+    "letsnow": "Deixe nevar"
   },
   "ui": {
     "pageTitle": "Genshin Optimizer",
@@ -224,7 +217,6 @@
     "loading": "Carregando...",
     "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado da HoYoverse.",
     "appVersion": "$t(pageTitle) Versão: <1>{{version}}</1>",
-    "underConstruction": "Em Construção",
     "error": "Erro",
     "reset": "Redefinir",
     "info": "Informações",
@@ -237,8 +229,7 @@
       "rarity": "Raridade",
       "efficiency": "RV Atual",
       "mefficiency": "RV Máximo",
-      "artsetkey": "Conjunto de Artefatos",
-      "probability": "Probabilidade do Roll"
+      "artsetkey": "Conjunto de Artefatos"
     },
     "link": {
       "download": "Link para Download",
@@ -344,8 +335,6 @@
       "skillPress": "Após usar Habilidade Elemental (Pressionar)",
       "skillHold": "Após usar Habillidade Elemental (Manter Pressionado)"
     },
-    "hits_one": "{{count}} Acerto",
-    "hits_other": "{count} Acertos",
     "lessEqPercentHP": "Vida inferior ou igual a {{percent}}%",
     "greaterPercentHP": "Vida superior a {{percent}}%",
     "greaterEqPercentHP": "Vida superior ou igual a {{percent}}%",
@@ -354,12 +343,6 @@
     "enemyLessEqPercentHP": "Inimigo com Vida igual ou inferior a {{percent}}%",
     "enemyGreaterPercentHP": "Inimigo com Vida superior a {{percent}}%",
     "enemyGreaterEqPercentHP": "Inimigo com Vida superior ou igual a {{percent}}%",
-    "stack_one": "{{count}} Acúmulo",
-    "stack_other": "{{count}} Acúmulos",
-    "seconds_one": "{{count}} Segundo",
-    "seconds_other": "{{count}} Segundos",
-    "uses_one": "{{count}} Uso",
-    "uses_other": "{{count}} Usos",
     "afterDefeatEnemy": "Após derrotar um inimigo",
     "afterSprint": "Após Correr",
     "skillCDRed": "Redução de Cooldown da Habilidade Elemental",
@@ -457,8 +440,6 @@
     },
     "energy": "Energia",
     "teamBuff": "Bônus à Equipe",
-    "opponents_one": "{{count}} Inimigo",
-    "opponents_other": "{{count}} Inimigos",
     "dmgMult": {
       "normal": "Multipl. de Dano do Atq. Normal",
       "charged": "Multipl. de Dano do Atq. Carregado",
@@ -485,8 +466,6 @@
     "immuneToElectroCharged": "Imunidade a <electrocharged>Eletricamente Carregado</electrocharged>",
     "charOffField": "O personagem está fora de campo",
     "attackAoeInc": "Maior área de ataque",
-    "members_one": "{{count}} Membro",
-    "members_other": "{{count}} Membros",
     "charOnField": "O personagem está em campo",
     "timeOnField": "Tempo passado em campo",
     "hpChange": "Após a Vida mudar",
@@ -521,7 +500,11 @@
       "other": "{{count}} Vezes"
     },
     "activeChar": "Personagem ativo",
-    "otherHpChange": "Após a Vida de um personagem mudar"
+    "otherHpChange": "Após a Vida de um personagem mudar",
+    "reactionOp": {
+      "overload": "Após desencadear uma reação de <overloaded>Sobrecarga</overloaded>"
+    },
+    "afterOverflow": "Recebeu cura em excesso"
   },
   "weapon_SongOfBrokenPines": {
     "name": "Sob o efeito de Concerto Milenar: Música do Levantar da Bandeira"
@@ -653,10 +636,6 @@
     "ik": {
       "title": "Inventory Kamera",
       "p1": "Esse aplicativo leve escaneará todos os seus personagens, armas e artefatos e os adicionará aos seus artefatos. Siga as instruções no app para usá-lo."
-    },
-    "am": {
-      "title": "「天目」-- Amenoma",
-      "p1": "Escaneia todos os artefatos no seu inventário. Siga as instruções para capturar a janela e escaneie. Possui versões em Chinês e em Inglês. (Realize o download da versão <1>_EN.exe</1> para escanear em Inglês). Somente o formato <1>GOOD</1> é aceito pelo GO."
     },
     "as": {
       "title": "AdeptiScanner",
@@ -1128,7 +1107,6 @@
     "tabs": {
       "overview": "Visão Geral",
       "talent": "Talentos",
-      "teambuffs": "Bônus da Equipe",
       "optimize": "Otimizar",
       "theorycraft": "Theorycraft"
     },
@@ -1138,12 +1116,11 @@
     "removeCharacter": "Tem certeza de que quer excluir {{value}}?",
     "delete": "Excluir o personagem",
     "teammates": "Companheiros",
-    "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} personagem",
-    "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} personagens",
     "hitmode": {
       "hit": "Dano Não Crítico",
       "avgHit": "Dano Médio",
-      "critHit": "Dano do Crítico"
+      "critHit": "Dano do Crítico",
+      "global": "Seguir Global"
     },
     "tabEquip": {
       "swapWeapon": "Trocar Arma",
@@ -1162,8 +1139,6 @@
       "info2": "É responsabilidade do usuário confirmar a precisão das configurações em relação ao seu próprio contexto de jogo.",
       "description": "Descrição",
       "duplicate": "Duplicar",
-      "target_one": "<0>{{count}}</0> Objetivo",
-      "target_other": "<0>{{count}}</0> Objetivos",
       "target": {
         "one": "<0>{{count}}</0> Objetivo",
         "other": "<0>{{count}}</0> Objetivos"
@@ -1171,7 +1146,8 @@
     },
     "addStats": {
       "title": "Ajustes do Inimigo + Atributos Bônus",
-      "info": "Você pode usar esses campos para adicionar buffs/debuffs que o GO não suporta diretamente, tais como efeitos de comida, cartas do Abismo ou Supercondutor. Veja a <1>Genshin Impact wiki</1> para encontrar valores exatos"
+      "info": "Você pode usar esses campos para adicionar buffs/debuffs que o GO não suporta diretamente, tais como efeitos de comida, cartas do Abismo ou Supercondutor. Veja a <1>Genshin Impact wiki</1> para encontrar valores exatos",
+      "label": "Novo Atributo Bônus"
     },
     "tabTheorycraft": {
       "substatType": {
@@ -1181,7 +1157,48 @@
       },
       "maxTotalRolls": "Uma build \"válida\" pode ter no máximo 45 rolls.",
       "maxRolls": "Esse atributo pode ter no máximo 30 rolls.",
-      "maxRollsMain": "Já que este também é pelo menos um dos atributos principais, esse atributo pode ter no máximo {{value}} rolls."
+      "maxRollsMain": "Já que este também é pelo menos um dos atributos principais, esse atributo pode ter no máximo {{value}} rolls.",
+      "distribute": "Distribuir",
+      "compareToggle": {
+        "equipped": "Comparar com o equipado",
+        "tc": "Mostrar atributos teóricos"
+      },
+      "resetDialog": {
+        "title": "Redefinir a configuração da build teórica?",
+        "content": "Isto limpará a sua simulação de build atual."
+      },
+      "copyDialog": {
+        "copyBtn": "Copiar do equipado",
+        "title": "Copiar informação dos artefatos e arma equipados?",
+        "content": "Isto substituirá a sua simulação atual com informação condizente com sua build equipada."
+      },
+      "kqmsDialog": {
+        "kqmsBtn": "Usar KQMS",
+        "title": "Usar KQMS?",
+        "content": "Isto trocará a sua <strong>configuração de atributos secundários</strong> atual por uma que siga os <4>Padrões da KQM</4>."
+      },
+      "gcsimDialog": {
+        "title": "Exportar p/ gcsim",
+        "content": "Importe esta build no <2>gcsim</2> copiando o código abaixo.",
+        "copied": "Configuração do gcsim foi copiada."
+      },
+      "all": {
+        "rolls": "Todos os Secundários",
+        "max": "Todos os Máximos"
+      },
+      "substat": {
+        "max": "Máximos"
+      },
+      "feasibilityAlert": "A atual distribuição de atributos secundários exige pelo menos <strong>{{minSubLines}}</strong> linhas de secundários. É necessário distribuir mais <strong>{{minOtherRolls}}</strong> secundários em outros atributos para tornar esta configuração possível.",
+      "optAlert": {
+        "scalesWith": "O Objetivo de Otimização atual aumenta com: ",
+        "distribute": ". O programa distribuirá apenas entre esses atributos.",
+        "feasibilty": "Podem sobrar secundários que devem ser distribuídos manualmente em atributos irrelevantes para que a configuração seja possível."
+      },
+      "constraint": {
+        "title": "Restrições de Atributos",
+        "add": "Adicione um requisito de atributo"
+      }
     },
     "tabTeambuff": {
       "team_reso": "Ressonância da Equipe",
@@ -1193,8 +1210,6 @@
     }
   },
   "page_weapon": {
-    "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} arma",
-    "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} armas",
     "edit": "Editar Arma",
     "weaponName": "Nome da Arma",
     "removeWeapon": "Tem certeza de que quer excluir {{value}}?",
@@ -1310,15 +1325,11 @@
     "buildDropdownDesc": "Diminuir o número de Builds geradas diminuirá o tempo de processamento quando há um grande número de Builds.",
     "threadDropdownDesc": "Aumentar o número de threads usadas acelerará a Geração de Builds, mas usará mais processamento da CPU.",
     "noArtis": "Opa! Parece que você ainda não adicionou nenhum artefato ao GO ainda. Você deveria ir à página <1>Artefatos</1> e adicionar alguns!",
-    "build_one": "<0>{{count}}</0> Build",
-    "build_other": "<0>{{count}}</0> Builds",
-    "thread_one": "<0>{{count}}</0> Thread",
-    "thread_other": "<0>{{count}}</0> Threads",
     "targetSelector": {
       "selectOptTarget": "Selecione um Objetivo de Otimização",
       "selectGraphTarget": "Selecione um Objetivo do Gráfico",
       "invalidTarget": "OBJETIVO INVÁLIDO",
-      "selectBuildTarget": "Selecione um Requisito para a Build"
+      "selectBuildTarget": "Selecione um requisito para a Build"
     },
     "selectTargetFirst": "Selecione um Objetivo de Otimização antes",
     "generateButton": {
@@ -1333,14 +1344,9 @@
     "excludeArt": {
       "title_exclude": "Bloquear Artefatos",
       "title_tooltip": "Acrescente artefatos à lista de bloqueios deste personagem.  Artefatos na lista de bloqueios não serão considerados ao gerar Builds.",
-      "excNum_one": "<1>{{count}}</1> artefato está bloqueado",
-      "excNum_other": "<1>{{count}}</1> artefatos estão bloqueados",
       "addExc": "Adicionar artefato à lista de bloqueios deste personagem",
       "selExc": "Selecione o artefato para adicionar à lista de bloqueios",
       "deSelectExc": "Clique num artefato para tirá-lo da lista de bloqueios",
-      "excludeArtifactTip": "Bloquear um artefato impedirá o gerador de Builds de usá-lo para este personagem.",
-      "excluded": "Este artefato está bloqueado.",
-      "included": "Este artefato não está bloqueado.",
       "usingNum": "Usando <1>{{totalStr}}</1> artefato(s) bloqueado(s)",
       "button_txt": "Bloquear Artefatos",
       "excNum": {
@@ -1355,8 +1361,6 @@
         "disallow_All": "Tirar personagens visíveis da lista de permissão"
       },
       "allowEquip": "Permitir o uso de artefatos de",
-      "usingNumTot_one": "Usando <1>{{arts}}</1> artefato de <3>{{count}}</3> personagem",
-      "usingNumTot_other": "Usando <1>{{arts}}</1> artefato de <3>{{count}}</3> personagens",
       "tooltip": "Adicione personagens à lista de permissão deste personagem. Personagens na lista de permissão terão seus artefatos considerados na geração de builds. Também é possível alterar entre usar apenas artefatos desequipados, usar os de sua lista personalizada ou usar todos os artefatos equipados e desequipados.",
       "chars": "Personagens",
       "artis": "Artefatos",
@@ -1742,8 +1746,7 @@
     "seamlessDendro": "Absorção de Dano Dendro do Escudo Impenetrável",
     "a4Cond": "Sob o efeito de Era da Proteção Verdejante",
     "c2Dmg": "Dano do Espírito Sérico: Corte",
-    "c2Heal": "Cura do Espírito Sérico: Corte",
-    "c6DmgInc": "Aumento de Dano do Espiriveio"
+    "c2Heal": "Cura do Espírito Sérico: Corte"
   },
   "char_Kaveh": {
     "c6Dmg": "Dano da Luz Celestial"
@@ -1864,5 +1867,22 @@
   },
   "weapon_Verdict": {
     "condName": "Selos do Juramento"
+  },
+  "char_Chevreuse": {
+    "notPyroElectroTeam": "Dica: Crie um time com apenas personagens <pyro>Pyro</pyro> e <electro>Electro</electro> para visualizar mais condições e efeitos",
+    "a4CondName": "Após disparar um Projétil Super Explosivo",
+    "c6CondName": "Após ser curado pelo Combate Próximo Rápido"
+  },
+  "char_Gaming": {
+    "cloudstrider_critRate_": "Taxa Crítica de Ataque Imersivo: Caminhador das Nuvens",
+    "cloudstrider_critDMG_": "Dano Crítico de Ataque Imersivo: Caminhador das Nuvens",
+    "cloudstrider_dmg_": "Bônus de Dano de Ataque Imersivo: Caminhador das Nuvens"
+  },
+  "char_Xianyun": {
+    "a4Cond": "O Bambu Estelar possui acúmulos de Ajuda Adepti",
+    "c4Heal": "Cura de Pérola Gourmet Misteriosa",
+    "wave_critDMG_": "Dano Crítico de Onda das Nuvens",
+    "a1Cond": "Pena Tempestuosa",
+    "c6Cond": "Usos da Escada Celestial"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "fanfarePoints": "무대 열기",
+  "memberMult_": "살롱 멤버 피해 계수",
+  "numOffer": "HP를 소모한 캐릭터 수",
+  "c1Inc": "무대 열기 보유 최대치 증가",
+  "c1Bonus": "발동 시 무대 열기",
+  "a4MemberDmg": "살롱 멤버 피해량 증가",
+  "a4HealInterval": "물들의 가수 회복 간격",
+  "c2Points": "최대치를 초과하는 무대 열기",
+  "c6Healing": "우시아 지속 회복량",
+  "c6Pneuma": "프뉴마 상태"
+}

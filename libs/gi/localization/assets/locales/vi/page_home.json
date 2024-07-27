@@ -1,0 +1,28 @@
+{
+  "intro": "<0>Giới thiệu về Genshin Optimizer</0><1>Genshin Optimizer (GO) là một trang web mã nguồn mở do người hâm mộ tạo ra cho trò chơi gacha hành động nhập vai <1><strong>Genshin Impact</strong></1>. Nó chủ yếu nhằm mục đích giúp đỡ người chơi về khía cạnh phức tạp của trò chơi: Tối ưu hoá Thánh Di Vật. Vì Thánh Di Vật là các yếu tố dựa trên RNG (Random Number Generator) góp phần trực tiếp vào mức độ hiệu quả của các nhân vật của bạn trong trò chơi, GO sẽ cố gắng tìm các Thánh Di Vật tốt nhất cho các nhân vật dựa trên Túi chứa Thánh Di Vật hiện tại của bạn.</1><2>GO có thể theo dõi các Thánh Di Vật và cho phép dễ dàng hơn trong việc lọc/so sánh các Thánh Di Vật, nó đóng vai trò như một công cụ giúp người dùng tìm Thánh Di Vật tốt trong túi để tăng cấp và Thánh Di Vật xấu để sử dụng làm nguyên liệu cường hoá.</2><3>Vì GO có thể sao chép các chỉ số chính xác của bất kỳ nhân vật nào, cùng với việc tính toán tất cả các con số sát thương với độ chính xác lên đến 1%, GO cũng có thể tính sát thương và là công cụ tính toán lý thuyết.</3>",
+  "quickLinksCard": {
+    "title": "Danh sách liên kết",
+    "buttons": {
+      "tyGuide": { "tooltip": "Cách dùng công cụ tối ưu hóa Genshin" },
+      "scanners": {
+        "title": "Tự động nhập dữ liệu",
+        "tooltip": "Phần mềm từ phía thứ 3 cho phép thực hiện lấy dữ liệu tdv tự động"
+      },
+      "devDiscord": {
+        "title": "Discord của nhà phát triển Genshin ",
+        "tooltip": "Cộng đồng các nhà phát triển dành cho Genshin"
+      },
+      "good": { "title": "Tài liệu về \"GOOD\"" }
+    }
+  },
+  "inventoryCard": { "title": "ĐI ĐẾN túi đồ" },
+  "vidGuideCard": { "title": "Video hướng dẫn" },
+  "teamCard": {
+    "title": "Gặp nhóm chúng tôi",
+    "jobTitle": {
+      "leadDev": "Trưởng nhóm phát triển",
+      "dev": "Nhà phát triển",
+      "mod": "Quản trị viên"
+    }
+  }
+}

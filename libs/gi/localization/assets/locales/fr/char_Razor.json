@@ -1,0 +1,12 @@
+{
+  "electroSigil": "Sceau électro",
+  "electroSigilAbsorbed": "Énergie régénérée si les sceau électro sont supprimés",
+  "opHitWithClawAndThunder": "L'adversaire a été touché par <strong>Griffe et tonnerre</strong> (Appui simple)",
+  "electroSigilPerProc": "Sceau électro par proc",
+  "soulCompanion": {
+    "1": "Compagnon de l'âme DMG à 1 coup",
+    "2": "Compagnon de l'âme 2-Hit DMG",
+    "3": "Compagnon de l'âme DMG à 3 coups",
+    "4": "Compagnon de l'âme 4 coups DMG"
+  }
+}

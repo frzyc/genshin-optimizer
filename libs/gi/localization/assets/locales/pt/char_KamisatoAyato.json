@@ -1,0 +1,14 @@
+{
+  "skill": {
+    "unableToAuto": "Incapaz de usar Ataques Carregados ou Imersivos",
+    "namisenStacks": "Ondas Brilhantes",
+    "shun_dmgInc": "<hydro>Aumento de Dano da Espada Aquática</hydro>"
+  },
+  "passive1": {
+    "afterUse": "Acúmulos de Ondas Brilhantes obtidos após uso",
+    "afterExplode": "Acúmulos de Ondas Brilhantes obtidos após a Ilusão de Água explodir"
+  },
+  "c1": { "shun_dmg_": "<hydro>Bônus de Dano da Espada Áquatica</hydro>" },
+  "c2": { "addlStacks": "Aum. do Máx. de Acúmulos de Ondas Brilhantes" },
+  "c6": { "dmg": "Dano da Origem Ilimitada" }
+}

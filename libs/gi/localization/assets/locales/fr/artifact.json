@@ -1,0 +1,104 @@
+{
+  "editor": {
+    "title": "Éditeur d'artéfacts",
+    "substat": {
+      "substatFormat": "Substat {{value}}",
+      "noSubstat": "Pas de Substat",
+      "selectSub": "Sélectionner une Substat",
+      "error": {
+        "noCalc": "Impossible de calculer les rolls de la stat.",
+        "noOverRoll": "Une substat ne peut être roll plus de {{value}} fois."
+      },
+      "noRoll": "Aucun Roll",
+      "noStat": "Pas de valeur",
+      "eff": "Efficacité: <1></1>",
+      "nextRolls": "Prochaines augmentations :",
+      "RollCount": { "one": "{{count}} Rouleau", "other": "{{count}} Rolls" }
+    },
+    "rarity": "Rareté",
+    "level": "Niveau",
+    "unknownPieceName": "Nom de Pièce Inconnu",
+    "curSubEff": "Efficacité Substat actuelle",
+    "curSubEffDesc": "Tous les 4 niveaux d'amélioration d'artéfact, vous obtenez une augmentation d'une substat. <strong>Efficacité de Substat</strong> calcule à quel point cette augmentation est élevée à l'aide d'un pourcentage.",
+    "maxSubEff": "Efficacité de rolls maximum",
+    "maxSubEffDesc": "L'<strong>Efficacité de Substat maximum</strong> d'un artéfact calcule l'efficacité si les améliorations restantes donnent des valeurs parfaites.",
+    "preview": "Prévisualisation d'artéfact",
+    "dupArt": "Doublon d'artéfact détecté.",
+    "upArt": "Artéfact amélioré détecté.",
+    "beforeEdit": "Avant modification",
+    "btnSave": "Enregistrer l'Artéfact",
+    "btnAdd": "Ajouter",
+    "btnClear": "Effacer",
+    "btnRandom": "Randomiser",
+    "btnUpdate": "Mettre à jour l'artéfact",
+    "clearPrompt": "Il y a un artéfact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?",
+    "unknownSetName": "Nom de l'ensemble inconnu"
+  },
+  "artifactFilter": "Filtre d'artéfacts",
+  "filterLocation": {
+    "inventory": "Inventaire",
+    "currentlyEquipped": "Actuellement équipé",
+    "location": "Personnages"
+  },
+  "button": {
+    "unequipArtifacts": "Déséquiper les artéfacts",
+    "deleteArtifacts": "Supprimer les artéfacts",
+    "lockArtifacts": "Verrouiller les artéfacts",
+    "unlockrtifacts": "Déverrouiller les artéfacts"
+  },
+  "buttonHint": "Note: les boutons rouges ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
+  "tipsOfTheDay": [
+    "L'efficacité maximum d'un artéfact 4 étoiles est environ de 60%.",
+    "L'efficacité maximum d'un artéfact diminuera généralement au fur et à mesure de l'amélioration. C'est parfaitement normal !",
+    "Les substats avec des \"1\" sont les plus difficiles à analyser sur les captures d'écran.",
+    "Si tous vos rolls (6) sont allés dans une seule substat, elle sera violette !",
+    "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorez.",
+    "Vous pouvez maintenant upload plusieurs captures d'écran d'artéfacts à analyser !"
+  ],
+  "mainStat": "Main Stat",
+  "slot": "Emplacement",
+  "slotName": {
+    "flower": "Fleur de la Vie",
+    "plume": "Plume de la Mort",
+    "sands": "Sables du Temps",
+    "goblet": "Coupe d'Eonothem",
+    "circlet": "Diadème de Logos"
+  },
+  "info": {
+    "title": "Édition d'Artéfact / Guide de Gestion",
+    "section1": "<0>Rolls des substats</0><1>Le <1>nombre de rolls</1> qu'une substat a est affiché à gauche de la substat, indiqué par le nombre de barres. Au fur et à mesure que le nombre augmente, la substat devient plus brillante. En plus de ça, chaque barre devient plus colorée :<3></3>.</1><2>Efficacité des rolls</2><3>L'Efficacité des rolls (RV) est un pourcentage de la valeur actuelle par rapport au potentiel maximum de la valeur 5<1></1>. D'après l'image, la valeur maximale d'un roll PV est 5.8%. En RV : <3>5.3/5.8 = 90%.</3></3><4>Efficacité actuelle vs. Efficacité potentielle maximale</4><5>Quand un 5<1></1> a 9 (4+5) rolls au total, avec chacun des rolls ayant la valeur la plus élevée, c'est donc un artéfact efficace à 900%. Cependant, la plupart des artéfacts n'ont pas cette chance. La <3>RV actuelle</3> d'un artéfact est son pourcentage par rapport à ces 900%. La <5>RV maximale</5> est l'efficacité maximale possible qu'un artéfact peut atteindre, si les rolls d'artéfact restants ont les valeurs les plus élevées.</5>",
+    "section2": "<0>Éditeur d'Artéfact</0><1>Un éditeur d'artéfact complet, qui accepte tout Artéfact de 3<1></1> à 5<3></3> . Lorsqu'une substat est saisie, ça peut calculer la valeur exacte des rolls, et à partir de ça, son efficacité. L'éditeur s'assurera également que vous ayez le bon nombre de rolls dans l'artéfact en fonction du niveau, ainsi que d'autres métriques de validation.</1><2>Scan des captures d'écran</2><3>La saisie manuelle n'est pas votre tasse de thé ? Vous pouvez numériser vos artéfacts avec des captures d'écran ! Dans l'éditeur d'artéfact, cliquez sur le bouton <1>Montrez-moi Comment!</1> pour en savoir plus.</3><4>Scanner automatique d'artefacts</4><5>Si vous jouez à Genshin sur PC, vous pouvez télécharger un outil qui scanne automatiquement tous vos artefacts pour vous, et vous pouvez ensuite importer ces données dans <1></1> Paramètres. <3>Cliquez ici</3> pour obtenir une liste des scanners compatibles avec GO.</5><6>Détecteur d'artéfacts en double / améliorés</6><7>Saviez-vous que Genshin Optimizer peut détecter si vous ajoutez un artéfact <1>dupliqué</1> qui existe dans le système ? Il peut également détecter si l'artéfact actuel dans l'éditeur est une <3>amélioration</3> d'un artéfact existant. Une fois qu'un doublon / un amélioré est détecté, un aperçu vous permettra de comparer les deux artéfacts en question (Voir Image).</7>",
+    "section3": "<0>Inventaire d'Artéfacts</0><1>Tous les artefacts que vous avez ajoutés à Genshin Optimizer sont affichés ici. Les filtres ici vous permettent d'affiner davantage votre vision de vos artéfacts. </1><2>Exemple : Trouver des artéfacts à feed</2><3>En utilisant le filtre d'artéfact et les calculs d'efficacité des artéfacts, vous pouvez rapidement trouver des artéfacts à feed.</3><4>Dans cet exemple, les filtres sont définis ainsi : </4><5><0>Niveau limité à 0-8.</0><1>Artéfacts débloqués dans l'inventaire.</1><2>Suppression de la contribution des PV Flat, DEF Flat et Recharge d'Énergie aux calculs d'efficacité.</2><3>Trié par efficacité maximale croissante.</3></5><6>Cela filtrera l'inventaire d'artéfacts par efficacité d'artéfacts les plus bas, pour les substats souhaitées. </6>"
+  },
+  "sortMap": {
+    "level": "Niveau",
+    "efficiency": "Efficacité des rolls actuelle",
+    "mefficiency": "Efficacité des rolls maximum"
+  },
+  "efficiencyFilter": {
+    "title": "Substats à utiliser dans le calcul de l'efficacité"
+  },
+  "resetFilters": "Réinitialiser les filtres",
+  "setEffectNum": "Set {{setNum}}",
+  "edit": "Modifier l'artefact",
+  "autocompleteLabels": {
+    "sets": "Jeux d'artefacts",
+    "mainStats": "Main Stats",
+    "substats": "Sous-stats",
+    "set": "Ensemble d'artefacts"
+  },
+  "addNew": "Ajouter un nouvel artefact",
+  "cantDeleteLock": "Impossible de supprimer l'artefact car il est verrouillé",
+  "equippedArt": "Tous les artefacts équipés",
+  "artInInv": "Tous les artefacts non équipés",
+  "locationsTooltip": "Désactiver \"Tous les artefacts équipés\" pour filtrer par personnages spécifiques",
+  "showDup": "Afficher les doublons",
+  "noDupAlert": "Il n'y a pas d'artefacts en double dans votre inventaire.",
+  "showingNum": {
+    "one": "Afficher <1>{{count}}</1> sur {{value}} Artéfact",
+    "other": "Montre <1>{{count}}</1> / {{value}} Artéfacts"
+  },
+  "substat": { "one": "{{count}} substat", "other": "{{count}} substats" },
+  "sub": { "one": "{{count}} sub", "other": "{{count}} subs" },
+  "noArtifacts": "Il semblerait que vous n'ayez pas encore ajouté d'artéfacts. Des <1>scanners automatiques</1> sont à disposition pour accélérer le processus d'import!"
+}

@@ -1,0 +1,15 @@
+{
+  "burstC": {
+    "name": "光降之劍",
+    "start5": "立即獲得 5 層能量",
+    "addStacks": "50% chance to get additional energy stacks from Normal Attacks, Elemental Skills and Elemental Bursts",
+    "dmg": "Lightfall Sword Explosion DMG",
+    "bonusScaling": "Lightfall Sword Bonus Scaling"
+  },
+  "c1C": {
+    "name": "After consuming <strong>Grimheart</strong> stacks",
+    "durationStack": "6s + 6s per stack, up to 18s"
+  },
+  "passive1": "Shattered Lightfall Sword DMG",
+  "c4C": { "dmgBonus": "Lightfall Sword Explosion DMG Bonus" }
+}

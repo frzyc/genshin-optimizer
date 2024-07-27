@@ -1,0 +1,9 @@
+{
+  "addAimed": "Sát thương mũi tên tăng thêm",
+  "addFullAimed": "Sát thương tụ lực của mũi tên tăng thêm",
+  "upcurrentDuration": "Thời gian luồng gió duy trì",
+  "regenEner": "Hồi phục 15 điểm Năng lượng nguyên tố cho Venti sau khi kết thúc hiệu ứng",
+  "c6": "Mục tiệu nhận sát thương từ <strong>Bài thơ thần gió</strong>",
+  "q": "Hồi phục 15 năng lượng nguyên tố cho tất cả nhân vật trong đội có nguyên tố tương ứng.",
+  "c2": { "hit": "Địch bị đánh trúng", "launched": "Địch bị đánh bay" }
+}

@@ -1,0 +1,16 @@
+{
+  "skill": {
+    "dance1": "DMG 1-Hit Sword Dance",
+    "dance2": "DMG 2-Hit Sword Dance",
+    "whirl1": "DMG 1-Hit Whirling Steps",
+    "whirl2": "DMG 2-Hit Whirling Steps",
+    "wheel": "DMG Water Wheel"
+  },
+  "passive1": {
+    "underChaliceEffect": "Di Bawah Pengaruh Golden Chalice's Bounty",
+    "notDendroHydroTeam": "Petunjuk: Tetapkan tim kamu hanya dengan karakter Dendro dan Hydro untuk melihat kondisi dan efek tambahan",
+    "condName": "Setelah terkena <dendro>serangan Dendro</dendro> ketika terpengaruh oleh Bounty Golden Chalice",
+    "bountifulCores": "Reaksi Bloom akan menciptakan Bountiful Cores"
+  },
+  "c4": { "condName": "Setelah langkah tarian ketiga Pirouette mengenai musuh" }
+}

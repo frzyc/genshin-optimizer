@@ -1,0 +1,56 @@
+{
+  "addNew": "新增角色",
+  "tabs": {
+    "overview": "總覽",
+    "talent": "天賦",
+    "optimize": "Optimize",
+    "theorycraft": "理論分析"
+  },
+  "formulas": "Formulas",
+  "calculations": "Calculations",
+  "selectCharacter": "選擇一個角色",
+  "removeCharacter": "Are you sure you want to remove {{value}}?",
+  "delete": "刪除角色",
+  "teammates": "Teammates",
+  "hitmode": {
+    "hit": "無暴擊傷害",
+    "avgHit": "平均傷害",
+    "critHit": "暴擊傷害"
+  },
+  "tabEquip": {
+    "swapWeapon": "替換武器",
+    "swapArt": "替換聖遺物",
+    "compare": "Compare with current Build",
+    "unequipArts": "卸下所有聖遺物"
+  },
+  "characterName": "角色名稱",
+  "teammate": "隊友 {{count}}",
+  "noReaction": "No Reactions",
+  "multiTarget": {
+    "title": "Multi-Optimization Target Config",
+    "addNewTarget": "Add New Custom target",
+    "addNewMTarget": "Add New Custom Multi-target",
+    "info1": "Note: Community created custom Multi-Optimization Targets can be found within the <1>GO Discord</1> or <3>KQM Multi-Opt Guide</3>, however the validity of such configurations cannot be guaranteed.",
+    "info2": "It is the responsibility of the user to confirm the accuracy for their own use case.",
+    "description": "Description",
+    "duplicate": "Duplicate"
+  },
+  "addStats": {
+    "title": "Enemy Config + Bonus Stats",
+    "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, abyss cards, or Superconduct. Please refer to the <1>Genshin Impact wiki</1> for specific values."
+  },
+  "tabTheorycraft": {
+    "substatType": {
+      "min": "Use minimum substat rolls",
+      "max": "Use maximum substat rolls",
+      "mid": "Use median substat rolls"
+    },
+    "maxTotalRolls": "A \"valid\" build can only have a maximum of 45 rolls.",
+    "maxRolls": "This substat can have a maximum of 30 rolls.",
+    "maxRollsMain": "Because at least one mainstat has the same stat, this substat can have a maximum of {{value}} rolls."
+  },
+  "tabTeambuff": {
+    "team_reso": "元素共鳴",
+    "resonance_tip": "隊伍中需要有 4 位角色才能觸發元素共鳴。"
+  }
+}

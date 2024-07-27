@@ -1,0 +1,10 @@
+{
+  "skill": {
+    "stele": "암주 피해",
+    "resonance": "공명 피해",
+    "maxStele": "최대 암주 개수",
+    "nearShield": "<strong>옥홀 방패</strong> 근처에 있는 적"
+  },
+  "p1cond": "<strong>옥홀 방패</strong>가 피해를 받은 후",
+  "c6heal": "최대 회복량"
+}

@@ -1,0 +1,6 @@
+{
+  "edit": "Editar arma",
+  "weaponName": "Nombre del arma",
+  "removeWeapon": "¿Estás seguro que quieres remover {{value}}?",
+  "addWeapon": "Añadir nueva arma"
+}

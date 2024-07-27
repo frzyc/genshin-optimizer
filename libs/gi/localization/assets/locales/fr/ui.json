@@ -1,0 +1,62 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Artéfacts",
+    "characters": "Personnages",
+    "tools": "Outils",
+    "weapons": "Armes",
+    "doc": "Docs",
+    "setting": "Paramètres",
+    "scanner": "Scanners"
+  },
+  "social": { "paypal": "Paypal", "patreon": "Patreon", "discord": "Discord" },
+  "unselect": "Désélectionner",
+  "ascending": "Croissant",
+  "descending": "Décroissant",
+  "loading": "Chargement...",
+  "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par HoYoverse",
+  "appVersion": "$t(pageTitle) Version: {{version}}",
+  "error": "Erreur",
+  "reset": "Réinitialisation",
+  "info": "Informations",
+  "inventory": "Inventaire",
+  "close": "Fermer",
+  "sortMap": {
+    "new": "Nouveau",
+    "name": "Nom",
+    "level": "Niveau",
+    "rarity": "Rareté",
+    "efficiency": "Efficacité actuelle",
+    "mefficiency": "Efficacité maximum",
+    "artsetkey": "Set d'artéfact"
+  },
+  "link": {
+    "download": "Lien de téléchargement",
+    "discord": "Lien d'invitation Discord"
+  },
+  "sortBy": "Trier par :",
+  "delete": "Supprimer",
+  "locked": "Verrouillé",
+  "unlocked": "Débloqué",
+  "refinement": "Raffinement {{value}}",
+  "selectlevel": "Sélectionner le niveau",
+  "gender": { "F": "Femme", "M": "Homme" },
+  "statGroupKey": {
+    "basic_stats": "Statistiques de base",
+    "elem_dmg_bonus": "Bonus de DMG élémentaires",
+    "enemy_debuffs": "Atténuation de l'ennemi",
+    "self_res": "Résistances propres",
+    "reaction_dmg_bonus": "Bonus DMG de réaction",
+    "reaction_crit": "Bonus Reaction CRIT",
+    "elem_dmgInc": "Augmentation des dégâts élémentaires",
+    "talent_dmgInc": "Augmentation des dommages causés par les talents",
+    "elem_crit": "Bonus de CRIT élémentaire",
+    "talent_dmg_bonus": "Bonus de talent DMG",
+    "talent_crit": "Talent CRIT Bonuses",
+    "talent_level_boost": "Augmentation du niveau des talents",
+    "base_stat_mod": "Modifications des statuts de base",
+    "stamina_buffs": "Buffs d'endurance",
+    "misc": "Misc. Statistiques"
+  },
+  "sillyPageTitle": "Silly Optimizer"
+}

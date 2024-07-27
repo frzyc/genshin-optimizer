@@ -1,0 +1,7 @@
+{
+  "edit": "무기 편집",
+  "weaponName": "무기 이름",
+  "removeWeapon": "{{value}}을/를 정말 제거하시겠습니까?",
+  "addWeapon": "새 무기 추가",
+  "cantDeleteLock": "잠금 설정된 무기는 삭제할 수 없습니다."
+}

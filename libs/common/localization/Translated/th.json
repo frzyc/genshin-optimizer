@@ -92,7 +92,6 @@
   "settings": {
     "title": "ตั้งค่า",
     "languageCard": {
-      "selectLanguage": "เลือกภาษา",
       "languageFormat": "ภาษา: {{language}}"
     },
     "uploadCard": {
@@ -137,7 +136,6 @@
     "loading": "กำลังโหลด...",
     "rightsDisclaimer": "Genshin Optimizer ไม่มีส่วนเกี่ยวข้องหรือรับรองโดย miHoYo",
     "appVersion": "$t(pageTitle) เวอร์ชั่น: <1>{{version}}</1>",
-    "underConstruction": "อยู่ระหว่างการปรับปรุง",
     "error": "ผิดพลาด",
     "reset": "รีเซ็ต",
     "inventory": "คลัง",
@@ -147,8 +145,7 @@
       "name": "ชื่อ",
       "level": "เลเวล",
       "rarity": "จำนวนดาว",
-      "artsetkey": "เซ็ตอาร์ติแฟกต์",
-      "probability": "ความน่าจะเป็นของโรล"
+      "artsetkey": "เซ็ตอาร์ติแฟกต์"
     }
   },
   "char_Eula": {

@@ -1,0 +1,18 @@
+{
+  "skill": {
+    "dance1": "剑舞步一段伤害",
+    "dance2": "剑舞步二段伤害",
+    "whirl1": "旋舞步一段伤害",
+    "whirl2": "旋舞步二段伤害",
+    "wheel": "水轮伤害"
+  },
+  "passive1": {
+    "underChaliceEffect": "金杯的丰馈状态下",
+    "notDendroHydroTeam": "提示：设置队伍中所有角色的元素类型均为草元素与水元素，可以启动额外的效果",
+    "condName": "处于金杯的丰馈状态下的角色受到<dendro>草元素攻击</dendro>后",
+    "bountifulCores": "绽放反应产生丰穰之核"
+  },
+  "c4": {
+    "condName": "<strong>七域舞步</strong>的翩转状态下的第三段舞步命中敌人后"
+  }
+}

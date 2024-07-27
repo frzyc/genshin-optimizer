@@ -1,0 +1,11 @@
+{
+  "edit": "Modifier l'arme",
+  "weaponName": "Nom de l'arme",
+  "removeWeapon": "Êtes-vous sûr de vouloir supprimer {{value}} ?",
+  "addWeapon": "Ajouter une nouvelle arme",
+  "showingNum": {
+    "one": "Afficher <1>{{count}}</1> sur {{value}} Arme",
+    "other": "Utiliser les rouleaux de sous-statut médians"
+  },
+  "cantDeleteLock": "Impossible de supprimer l'arme car elle est verrouillée"
+}

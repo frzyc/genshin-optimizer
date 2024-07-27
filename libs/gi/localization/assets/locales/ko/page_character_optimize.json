@@ -1,0 +1,105 @@
+{
+  "mainStat": {
+    "levelAssTooltip": {
+      "title": "주옵션 레벨 가정",
+      "desc": "주옵션 값을 지정된 레벨로 변경. 부옵션 값은 변하지 않습니다."
+    },
+    "assumptionLvl": {
+      "no": "주옵션 레벨 변화 없음",
+      "lvl": "주옵션을 최소 {{lvl}} 레벨로"
+    },
+    "title": "주옵션 필터/설정"
+  },
+  "tcGraph": {
+    "vs": "최적화 대상과 다음 값을 도식화 :",
+    "notSel": "선택되지 않음",
+    "downloadData": "데이터 다운로드",
+    "desc": "조합기의 데이터를 사용, 최적화 대상과 선택된 도식화 대상의 관계를 그래프로 표시해 줍니다. 그래프는 선택된 도식화 대상의 0.01 단위로 최적화 대상의 최대값을 보여줍니다. 이 옵션을 켜게 되면 조합 생성 시간이 늘어나게 될 것입니다",
+    "showStatThr": "옵션의 임계선 표시",
+    "generatedBuilds": "생성된 조합",
+    "statReqThr": "옵션의 임계선",
+    "currentBuild": "현재 조합",
+    "highlightedBuilds": "표시된 조합",
+    "buildAlreadyInList": "이 빌드는 이미 리스트에 존재"
+  },
+  "levelFilter": "성유물 레벨 필터",
+  "allowPartial": "성유물 일부 착용 허용(5개 미만)",
+  "constraintFilter": {
+    "title": "제한 조건",
+    "tooltip": "조합 생성시 만족해야 하는 조건을 지정할 수 있습니다. 예제: 원충 140% 이상"
+  },
+  "artSetConfig": {
+    "title": "성유물 세트 설정",
+    "setEffCond": "성유물 효과 적용 조건",
+    "enabled": "활성화",
+    "allowed": "허용",
+    "excluded": "제외됨",
+    "selected": "선택됨",
+    "2rainbow": "3-Rainbow",
+    "4rainbow": "5-Rainbow",
+    "allowAll2set": "모든 2셋 허용",
+    "excludeAll2set": "모든 2셋 제외",
+    "allowAll4set": "모든 4셋 허용",
+    "excludeAll4set": "모든 4셋 제외",
+    "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow 구성",
+    "modal": {
+      "setCond": {
+        "title": "조건부 성유물 세트 효과 적용",
+        "reset": "조건 초기화",
+        "text": "일부 성유물은 조건에 따라 효과가 적용됩니다. 이 창에서 조건들을 선택하게 되면 해당 효과는 최적화 과정중에 같이 계산됩니다."
+      },
+      "ArtSetFilter": {
+        "title": "성유물 세트 <1>포함됨<1></1></1> / <3>제외됨<1></1></3>",
+        "intro": "성유물 세트 조합을 허용하거나 제외시킬 수 있습니다. 다음 예제에서 A는 세트헤 해당하는 성유물이고 R은 해당되지 않는 성유물(rainbow)을 의미합니다.",
+        "2set": "<0><0>Excluding<1></1> 2-Set</0></0>은 2셋 구성을 제외합니다: <2><0>AA</0>RRR</2> 혹은 <4><0>AAA</0>RR</4>.",
+        "4set": "<0><0>Excluding<1></1> 4-Set</0></0>은 4셋 구성을 제외합니다.: <2><0>AAAA</0>R</2> 혹은 <4><0>AAAAA</0></4>.",
+        "2rain": "<0><0>Excluding<1></1> 3-Rainbow</0></0>은 2셋 + 3-Rainbow 구성을 제외합니다: <2>AA<1>RRR</1></2> 혹은 <4>AAA<1>RR</1></4>.",
+        "4rain": "<0><0>Excluding<1></1> 5-Rainbow</0></0>은 5-Rainbow 구성을 제외합니다: <2><0>RRRRR</0></2>."
+      }
+    }
+  },
+  "buildDropdownDesc": "최종 생성 조합 가짓수를 줄이면 조합 계산 시간을 줄일 수 있습니다.",
+  "threadDropdownDesc": "쓰레드 개수를 늘리면 조합 생성 시간은 줄어들지만 CPU 파워를 좀 더 사용할 것입니다.",
+  "noArtis": "웁스! GO에 성유물을 하나도 추가하지 않으셨습니다! <1>성유물</1> 페이지로 가셔서 성유물을 추가하셔야 합니다!",
+  "targetSelector": {
+    "selectOptTarget": "최적화 대상 선택",
+    "selectGraphTarget": "도식화 대상 선택",
+    "invalidTarget": "잘못된 대상",
+    "selectBuildTarget": "제한 조건 대상 선택"
+  },
+  "selectTargetFirst": "최적화 대상을 먼저 선택하세요",
+  "generateButton": { "cancel": "취소", "generateBuilds": "조합 생성" },
+  "removeBuildButton": "조합 제거",
+  "theorycraftButton": "이론 연구실",
+  "currentlyEquippedBuild": "현재 사용중",
+  "addBuildToList": "리스트에 빌드 추가",
+  "graphBuildLabel": "그래프 #<1>{{count}}</1>",
+  "excludeArt": {
+    "title_exclude": "재외된 성유물",
+    "title_tooltip": "이 캐릭터의 제외 리스트에 성유물을 추가합니다. 이 리스트 내의 성유물은 조합 생성 시 고려되지 않습니다.",
+    "addExc": "이 캐릭터의 제외 리스트에 성유물 추가",
+    "selExc": "이 캐릭터의 제외 리스트에 추가할 성유물 선택",
+    "deSelectExc": "제외 리스트에서 제거하기 위해선 해당 성유물을 클릭하세요",
+    "usingNum": "<1>{{totalStr}}</1>개의 제외된 성유물 사용중",
+    "button_txt": "성유물 제외"
+  },
+  "excludeChar": {
+    "title": "착용 중인 성유물 설정",
+    "modal": {
+      "allow_all": "모든 캐릭터를 허용 리스트에 추가",
+      "disallow_All": "모든 캐릭터를 허용 리스트에서 제거"
+    },
+    "allowEquip": "이 캐릭터의 성유물을 사용:",
+    "tooltip": "캐릭터들을 허용 리스트에 추가합니다. 이 허용 리스트의 캐릭터들은 조합 생성에 사용됩니다. 또한 미착용 성유물만 사용하거나 사용자 정의 리스트, 그리고 모든 착용 및 미착용 성유물을 사용하도록 선택할 수 있습니다.",
+    "chars": "캐릭터",
+    "artis": "성유물",
+    "states": {
+      "unequippedOnly": "미착용만 사용",
+      "customList": "사용자 정의 리스트",
+      "all": "모든 성유물"
+    },
+    "usingState": "선택된 방식"
+  },
+  "buildCompleted": "생성 완료",
+  "notifyTooltip": "생성이 완료되면 소리로 알려줍니다. 또한 탭을 전환한 경우 경고창도 표시합니다."
+}

@@ -13,9 +13,7 @@
         "noRoll": "Sin Tiradas",
         "noStat": "Sin Valor",
         "eff": "VdT: <1></1>",
-        "nextRolls": "Siguientes tiradas:",
-        "RollCount_one": "{{count}} Tirada",
-        "RollCount_other": "{{count}} Tiradas"
+        "nextRolls": "Siguientes tiradas:"
       },
       "rarity": "Rareza",
       "level": "Nivel",
@@ -82,8 +80,6 @@
     },
     "resetFilters": "Restablecer Filtros",
     "setEffectNum": "{{setNum}} Piezas",
-    "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Artefacto",
-    "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefactos",
     "edit": "Editar artefacto",
     "autocompleteLabels": {
       "substats": "Sub-atributos",
@@ -108,7 +104,6 @@
   "settings": {
     "title": "Ajustes",
     "languageCard": {
-      "selectLanguage": "Seleccionar Idioma",
       "languageFormat": "Idioma: {{language}}"
     },
     "uploadCard": {
@@ -171,7 +166,6 @@
     "loading": "Cargando...",
     "rightsDisclaimer": "Genshin Optimizer no está afiliado ni respaldado por HoYoverse.",
     "appVersion": "$t(pageTitle) Versión: {{version}}",
-    "underConstruction": "En construcción",
     "error": "Error",
     "reset": "Restablecer",
     "info": "INFO",
@@ -184,8 +178,7 @@
       "rarity": "Rareza",
       "efficiency": "VdT Actual",
       "mefficiency": "VdT Máximo",
-      "artsetkey": "Conjunto de Artefactos",
-      "probability": "Probabilidad de Tirada"
+      "artsetkey": "Conjunto de Artefactos"
     },
     "link": {
       "download": "Enlace de Descarga",
@@ -252,8 +245,6 @@
       "burst": "Tras usar Habilidad Definitiva",
       "skillOrBurst": "Tras usar Hab. Elemental o Hab. Definitiva"
     },
-    "hits_one": "{{count}} Golpe",
-    "hits_other": "{{count}} Golpes",
     "lessEqPercentHP": "Vida menor o igual al {{percent}}%",
     "greaterPercentHP": "Vida mayor del {{percent}}%",
     "greaterEqPercentHP": "Vida mayor o igual al {{percent}}%",
@@ -262,12 +253,6 @@
     "enemyLessEqPercentHP": "Enemigo con Vida menor o igual al {{percent}}%",
     "enemyGreaterPercentHP": "Enemigo con Vida mayor del {{percent}}%",
     "enemyGreaterEqPercentHP": "Enemigo con Vida mayor o igual al {{percent}}%",
-    "stack_one": "{{count}} Carga",
-    "stack_other": "{{count}} Cargas",
-    "seconds_one": "{{count}} Segundo",
-    "seconds_other": "{{count}} Segundos",
-    "uses_one": "{{count}} Uso",
-    "uses_other": "{{count}} Usos",
     "afterDefeatEnemy": "Tras derrotar a un enemigo",
     "afterSprint": "Tras Esprintar",
     "skillCDRed": "Reducción de TdE de Hab. Elemental",
@@ -422,10 +407,6 @@
     "ik": {
       "title": "Inventory Kamera",
       "p1": "Esta aplicación ligera escaneará todos tus personajes + armas + artefactos de tu inventario. Sigue las instrucciones de la aplicación para configurarla. Este escáner sólo escanea en inglés."
-    },
-    "am": {
-      "title": "「天目」-- Amenoma",
-      "p1": "Escanea todos los artefactos de tu inventario. Sigue las instrucciones para capturar la ventana y escanear. Tiene versiones en Chino e Inglés. (Descarga la version <1>_EN.exe</1> para escanear en inglés). Tanto el formato <3>mona-uranai</3> y <5>GOOD</5> son aceptados por GO, aunque el formato <7>GOOD</7> es el recomendado."
     },
     "as": {
       "title": "AdeptiScanner",
@@ -839,8 +820,6 @@
     "removeCharacter": "¿Estás seguro que quieres remover a {{value}}?",
     "delete": "Borrar personaje",
     "teammates": "Compañeros",
-    "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} personaje",
-    "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} personajes",
     "hitmode": {
       "hit": "Daño sin crítico",
       "avgHit": "Daño promedio",
@@ -857,8 +836,6 @@
     "noReaction": "Sin reacciones"
   },
   "page_weapon": {
-    "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} arma",
-    "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} armas",
     "edit": "Editar arma",
     "weaponName": "Nombre del arma",
     "removeWeapon": "¿Estás seguro que quieres remover {{value}}?",

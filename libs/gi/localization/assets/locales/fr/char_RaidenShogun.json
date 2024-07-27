@@ -1,0 +1,18 @@
+{
+  "skill": {
+    "eye": "Œil de jugement orageux actif",
+    "partyCost": "Coût en énergie"
+  },
+  "burst": {
+    "resolves": "Cumuls de résolution",
+    "resolveInitial_": "<electro>Musou no Hitotachi DMG Bonus Scaling</electro",
+    "resolveInfused_": "<electro>Musou Isshin DMG Bonus Scaling</electro>",
+    "burstDmg": "Musou no Hitotachi DMG",
+    "active": "Dans l'état <strong>Musou Isshin</strong>."
+  },
+  "a4": {
+    "enerRest": "Restauration d'énergie bonus de l'<strong>Harmonie d'idéal</strong>",
+    "eleDMG": "Bonus de DGT Électro"
+  },
+  "c4": { "expires": "After the <strong>Musou Isshin</strong> state expires" }
+}

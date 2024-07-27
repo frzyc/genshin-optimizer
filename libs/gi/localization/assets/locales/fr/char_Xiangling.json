@@ -1,0 +1,7 @@
+{
+  "afterChili": "Après avoir ramassé le piment de Guoba",
+  "explosionDMG": "DMG d'explosion",
+  "afterGuobaHit": "L'adversaire a été touché par les attaques de Guoba",
+  "duringPyronado": "Pyronado est actif",
+  "c6Exception": "Ceci ne peut pas affecter le DMG du Swing à 1 coup</pyro>, le DMG du Swing à 2 coups</pyro>, ou le DMG de l'Arnaque</pyro>."
+}

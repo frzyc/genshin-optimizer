@@ -1,0 +1,9 @@
+{
+  "skill": {
+    "coil": "コイル",
+    "rush": "アイスラッシュ",
+    "rushState": "ライスラッシュ状態で費やした時間"
+  },
+  "a1CondName": "コイル効果を受けた後",
+  "normCryoInfus": "<cryo>通常攻撃氷元素付与</cryo>"
+}

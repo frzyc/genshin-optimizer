@@ -1,0 +1,8 @@
+{
+  "states": {
+    "evengleam": "Entardecer",
+    "afterglow": "Amanhecer",
+    "dawnblaze": "Alvorada"
+  },
+  "condName": "Estado atual"
+}
