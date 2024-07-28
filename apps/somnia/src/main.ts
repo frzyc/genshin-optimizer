@@ -64,10 +64,11 @@ rest
 
 client.login(token)
 
+// Listen on port 8080 for Azure Web App alive check
 http
   .createServer(function (_req, res) {
     res.writeHead(200, { 'Content-Type': 'text/plain' })
-    res.write('Hello World!')
+    res.write('Alive')
     res.end()
   })
   .listen(8080)
