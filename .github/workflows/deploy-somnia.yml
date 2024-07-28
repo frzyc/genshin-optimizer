@@ -14,6 +14,8 @@ jobs:
     outputs:
       env: ${{ steps.set_env.outputs.env }}
       shouldDeploy: ${{ steps.set_env.outputs.shouldDeploy }}
+      prNumber: ${{ steps.set_env.outputs.prNumber }}
+      ref: ${{ steps.set_env.outputs.ref }}
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4
@@ -25,6 +27,8 @@ jobs:
         run: |
           echo "env=$(cat somnia_build/environment)" >> $GITHUB_OUTPUT
           echo "shouldDeploy=$(cat somnia_build/shouldDeploy)" >> $GITHUB_OUTPUT
+          echo "prNumber=$(cat somnia_build/prNumber)" >> $GITHUB_OUTPUT
+          echo "ref=$(cat somnia_build/ref)" >> $GITHUB_OUTPUT
 
   deploy:
     runs-on: ubuntu-latest
@@ -58,3 +62,16 @@ jobs:
           app-name: ${{ vars.ENV_NAME }}
           slot-name: 'Production'
           package: somnia_build/dist/apps/somnia
+      - name: Output date
+        id: output-date
+        run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
+      - name: Maintain comment
+        uses: actions-cool/maintain-one-comment@v3
+        if: ${{ needs.set-env.outputs.prNumber != '' }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ needs.set-env.outputs.prNumber }}
+          body: |
+            [${{ needs.set-env.outputs.env }}] [${{ steps.output-date.outputs.date }}] - Deployed ${{ needs.set-env.outputs.ref }} to ${{ needs.set-env.outputs.env }}" >> $GITHUB_OUTPUT
+          body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
+          update-mode: 'append'
