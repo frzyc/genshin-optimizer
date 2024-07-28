@@ -50,9 +50,11 @@ jobs:
         uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - name: Setup config.json
+      - name: Setup config.json and others
         run: |
           printf '%s' "$CONFIG" > somnia_build/dist/apps/somnia/apps/somnia/src/config.json
+          echo ${{ needs.set-env.outputs.ref }} > somnia_build/dist/apps/somnia/ref
+          echo ${{ needs.set-env.outputs.prNumber }} > somnia_build/dist/apps/somnia/prNumber
         env:
           CONFIG: ${{ secrets.SOMNIA_CREDENTIALS }}
       - name: 'Deploy to Azure Web App'
