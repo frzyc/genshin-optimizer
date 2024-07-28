@@ -8,6 +8,8 @@ import {
   Routes,
 } from 'discord.js'
 import { readFileSync } from 'fs'
+import * as http from 'http'
+
 // So we can modify config.json after building, thereby not exposing credentials in our build drop
 const { clientid, token } = JSON.parse(
   readFileSync('./apps/somnia/src/config.json').toString()
@@ -61,3 +63,11 @@ rest
   .catch((e: any) => console.log(e))
 
 client.login(token)
+
+http
+  .createServer(function (_req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/plain' })
+    res.write('Hello World!')
+    res.end()
+  })
+  .listen(8080)
