@@ -51,5 +51,8 @@ const data: TagMapNodeEntries = [
   self.common.eleCount.add(
     sum(...allElementKeys.map((ele) => team.common.count[ele].max))
   ),
+
+  // Default conditionals to 0
+  reader.with('qt', 'cond').add(0),
 ]
 export default data

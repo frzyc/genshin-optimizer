@@ -3,7 +3,9 @@ import type { TagMapNodeEntries } from '@genshin-optimizer/gi/formula'
 import {
   artifactsData,
   charData,
+  enemyDebuff,
   genshinCalculatorWithEntries,
+  self,
   teamData,
   weaponData,
   withMember,
@@ -66,6 +68,11 @@ export function CalcWrapper({ children }: { children: ReactNode }) {
         .filter(notEmpty),
       // TODO: conditonals
       // TODO: enemyDebuff
+      enemyDebuff.reaction.cata.add('spread'),
+      enemyDebuff.reaction.amp.add(''),
+      enemyDebuff.common.lvl.add(12),
+      enemyDebuff.common.preRes.add(0.1),
+      self.common.critMode.add('avg'),
     ]
     const calc = genshinCalculatorWithEntries(data)
     return calc

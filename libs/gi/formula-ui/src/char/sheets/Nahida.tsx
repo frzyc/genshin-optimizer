@@ -20,9 +20,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: tag,
         })),
     },
-    // {
-    //   text: ct.chg('auto.fields.charged'),
-    // },
+    {
+      type: 'text',
+      text: ct.chg('auto.fields.charged'),
+    },
     // {
     //   fields: [
     //     {
