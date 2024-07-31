@@ -7,7 +7,7 @@ import type {
   PermissionsBitField,
   User,
 } from 'discord.js'
-import { clientid, ownerid } from '../config.json'
+import { clientid } from '../config.json'
 
 export default {
   //true if interaction author has permissions
@@ -24,16 +24,6 @@ export default {
   //true if user triggered the original interaction
   sender(user: User | PartialUser, interaction: MessageInteraction | null) {
     if (interaction) return user.id === interaction.user.id
-    return false
-  },
-
-  //true if interaction author is owner
-  owner(interaction: ChatInputCommandInteraction) {
-    if (interaction.user?.id === ownerid) return true
-    interaction.reply({
-      content: `You do not have permission to use this command.`,
-      ephemeral: true,
-    })
     return false
   },
 
