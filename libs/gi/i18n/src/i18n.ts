@@ -59,12 +59,13 @@ i18n
     backend: {
       // Path to load localization data from.
       loadPath: NextImage
-        ? './locales/{{lng}}/{{ns}}.json'
+        ? '/locales/{{lng}}/{{ns}}.json'
         : './assets/locales/{{lng}}/{{ns}}.json',
     },
     interpolation: {
       escapeValue: false, //react does interlopation already
     },
   })
+console.log('i18n initialized')
 
 export { i18n }

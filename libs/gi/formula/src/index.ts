@@ -10,6 +10,7 @@ export { Calculator } from './calculator'
 export type { CalcMeta } from './calculator'
 export * from './data/util'
 export * from './formulaText'
+export * from './meta'
 export * from './util'
 
 export function genshinCalculatorWithValues(extras: TagMapEntries<number>) {
