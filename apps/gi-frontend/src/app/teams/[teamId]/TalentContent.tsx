@@ -231,7 +231,6 @@ type SkillDisplayCardProps = {
 }
 function SkillDisplayCard({
   sheetElement,
-  talentKey,
   subtitle,
   onClickTitle,
 }: SkillDisplayCardProps) {
