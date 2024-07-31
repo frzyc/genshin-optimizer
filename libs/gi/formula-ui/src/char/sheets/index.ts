@@ -1,4 +1,4 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
 import type { TalentSheetElementKey } from '../consts'
 import Nahida from './Nahida'
