@@ -10,7 +10,7 @@ Commands:
 
 # Running the bot
 
-Copy `src/config_empty.json` and fill out the contents:
+Copy `src/config.empty.json` to `src/config.json` and fill out the contents:
 
 ```
 {
