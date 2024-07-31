@@ -10,7 +10,7 @@ Commands:
 
 # Running the bot
 
-Create `src/config.json` in the following format:
+Copy `src/config_empty.json` and fill out the contents:
 
 ```
 {
@@ -18,6 +18,8 @@ Create `src/config.json` in the following format:
   "clientid": "<insert-bot-user-id>"
 }
 ```
+
+For more information, see https://discord.com/developers/docs/quick-start/getting-started#step-1-creating-an-app
 
 Then to start the bot run:
 
