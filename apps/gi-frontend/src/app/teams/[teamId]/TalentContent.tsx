@@ -12,10 +12,7 @@ import {
   type Calculator,
 } from '@genshin-optimizer/gi/formula'
 import { uiSheets } from '@genshin-optimizer/gi/formula-ui'
-import {
-  type DocumentSection,
-  type TalentSheetElementKey,
-} from '@genshin-optimizer/gi/sheets'
+import { type TalentSheetElementKey } from '@genshin-optimizer/gi/sheets'
 import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
 import {
   Box,
@@ -274,14 +271,14 @@ function SkillDisplayCard({
   // }
 
   // Hide header if the header matches the current talent
-  const hideHeader = (section: DocumentSection): boolean => {
-    const headerAction = section.header?.action
-    if (headerAction && typeof headerAction !== 'string') {
-      const key: string = headerAction.props.children.props.key18
-      return key.includes(talentKey)
-    }
-    return false
-  }
+  // const hideHeader = (section: DocumentSection): boolean => {
+  //   const headerAction = section.header?.action
+  //   if (headerAction && typeof headerAction !== 'string') {
+  //     const key: string = headerAction.props.children.props.key18
+  //     return key.includes(talentKey)
+  //   }
+  //   return false
+  // }
 
   return (
     <CardThemed bgt="light" sx={{ height: '100%' }}>
@@ -320,7 +317,6 @@ function SkillDisplayCard({
 }
 
 export function ConstellationDropdown({
-  character,
   calc,
 }: {
   character: TeamLoadoutCharacter
