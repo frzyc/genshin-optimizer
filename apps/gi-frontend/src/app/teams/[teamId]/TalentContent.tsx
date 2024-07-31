@@ -129,18 +129,19 @@ export default function CharacterTalentPane({
         )}
         <Grid item xs={12} md={12} lg={9} container spacing={1}>
           {/* auto, skill, burst */}
-          {skillBurstList.map(
-            ([tKey, tText]) =>
-              !!characterSheet[tKey] && (
-                <Grid item key={tKey} {...talentSpacing}>
-                  <SkillDisplayCard
-                    talentKey={tKey}
-                    subtitle={tText}
-                    sheetElement={characterSheet[tKey]}
-                  />
-                </Grid>
-              )
-          )}
+          {skillBurstList.map(([tKey, tText]) => {
+            const sheetElement = characterSheet[tKey]
+            if (!sheetElement) return null
+            return (
+              <Grid item key={tKey} {...talentSpacing}>
+                <SkillDisplayCard
+                  talentKey={tKey}
+                  subtitle={tText}
+                  sheetElement={sheetElement}
+                />
+              </Grid>
+            )
+          })}
           {!!characterSheet['sprint'] && (
             <Grid item {...talentSpacing}>
               <SkillDisplayCard
