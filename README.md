@@ -64,7 +64,7 @@ The dependencies to the apps are in [/libs](/libs/)
 
 [`gi-frontend`](/apps/gi-frontend/) - WIP GO frontend - website built using NextJS, MUI, supabase, using the Pando calculation engine.
 
-`somnia-bot` - WIP discord bot - built using discord.js, using the Pando Calculation engine.
+[`somnia-bot`](/apps/somnia/) - WIP discord bot - built using discord.js, using the Pando Calculation engine.
 
 ### Notable Libs
 
