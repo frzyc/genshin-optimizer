@@ -2,7 +2,7 @@
   "extends": ["../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "parserOptions": {
-    "project": "apps/somnia-e2e/tsconfig.eslint.json"
+    "project": "tsconfig.eslint.json"
   },
   "overrides": [
     {

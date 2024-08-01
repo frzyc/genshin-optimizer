@@ -2,7 +2,7 @@
   "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "parserOptions": {
-    "project": "apps/frontend/tsconfig.eslint.json"
+    "project": "tsconfig.eslint.json"
   },
   "overrides": [
     {

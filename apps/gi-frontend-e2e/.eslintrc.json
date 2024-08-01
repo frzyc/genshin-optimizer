@@ -2,7 +2,7 @@
   "extends": ["plugin:cypress/recommended", "../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "parserOptions": {
-    "project": "apps/gi-frontend-e2e/tsconfig.eslint.json"
+    "project": "tsconfig.eslint.json"
   },
   "overrides": [
     {

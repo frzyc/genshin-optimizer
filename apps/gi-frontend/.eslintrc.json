@@ -7,7 +7,7 @@
   ],
   "ignorePatterns": ["!**/*", ".next/**/*"],
   "parserOptions": {
-    "project": "apps/gi-frontend/tsconfig.eslint.json"
+    "project": "tsconfig.eslint.json"
   },
   "overrides": [
     {
