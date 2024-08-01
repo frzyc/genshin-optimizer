@@ -26,7 +26,7 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Run lint
         run: |
-          yarn run nx run-many --target=eslint:lint --fix=false --max-warnings=0
+          yarn run nx run-many --target=eslint:lint --fix=false --max-warnings=0 --parallel=4
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -54,7 +54,7 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Run Tests
         run: |
-          yarn run nx run-many --target=test
+          yarn run nx run-many --target=test --parallel=4
   format:
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -90,7 +90,7 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Check types
         run: |
-          yarn run nx run-many --target=typecheck
+          yarn run nx run-many --target=typecheck --parallel=4
   gen-file:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -122,5 +122,5 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Check Gen File
         run: |
-          yarn run nx run-many -t gen-file
+          yarn run nx run-many -t gen-file --parallel=4
           test -z "$(git status --porcelain | tee /dev/stderr)"
