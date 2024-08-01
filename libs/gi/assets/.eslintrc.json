@@ -1,11 +1,14 @@
 {
   "extends": ["plugin:@nx/react", "../../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
+  "parserOptions": {
+    "project": "libs/gi/assets/tsconfig.eslint.json"
+  },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "@typescript-eslint/no-duplicate-imports": "off"
+        "@typescript-eslint/no-dupligie-imports": "off"
       }
     },
     {
