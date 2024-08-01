@@ -4,18 +4,13 @@ import {
   type CardBackgroundColor,
 } from '@genshin-optimizer/common/ui'
 import { valueString } from '@genshin-optimizer/common/util'
-import type {
-  Field,
-  TagField,
-  TextField,
-} from '@genshin-optimizer/pando/ui-sheet'
 import GroupsIcon from '@mui/icons-material/Groups'
 import type { ListProps, Palette, PaletteColor } from '@mui/material'
 import { Box, List, ListItem, Typography, styled } from '@mui/material'
 import type { ReactNode } from 'react'
 import React, { useContext } from 'react'
-import { CalcContext } from './CalcContext'
-import { MemberContext } from './MemberContext'
+import { CalcContext, MemberContext } from '../context'
+import type { Field, TagField, TextField } from '../types'
 
 export function FieldsDisplay({
   fields,

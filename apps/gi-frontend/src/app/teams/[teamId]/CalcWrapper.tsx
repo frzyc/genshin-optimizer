@@ -12,9 +12,9 @@ import {
 } from '@genshin-optimizer/gi/formula'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
+import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type { ReactNode } from 'react'
 import { useContext, useMemo } from 'react'
-import { CalcContext } from './CalcContext'
 import { TeamContext } from './TeamContext'
 import { TeamLoadoutCharacterToICharacter } from './teamUtil'
 

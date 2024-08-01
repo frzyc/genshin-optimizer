@@ -1,15 +1,10 @@
 'use client'
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { CardHeaderCustom, CardThemed } from '@genshin-optimizer/common/ui'
-import type {
-  Document,
-  FieldsDocument,
-  Header,
-  TextDocument,
-} from '@genshin-optimizer/pando/ui-sheet'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Box, Collapse, Divider } from '@mui/material'
 import { useState } from 'react'
+import type { Document, FieldsDocument, Header, TextDocument } from '../types'
 import { FieldsDisplay } from './FieldDisplay'
 
 export function DocumentDisplay({

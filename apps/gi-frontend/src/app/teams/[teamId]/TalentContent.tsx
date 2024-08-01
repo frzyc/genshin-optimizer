@@ -14,6 +14,7 @@ import {
 import { uiSheets } from '@genshin-optimizer/gi/formula-ui'
 import { type TalentSheetElementKey } from '@genshin-optimizer/gi/sheets'
 import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
+import { DocumentDisplay } from '@genshin-optimizer/pando/ui-sheet'
 import {
   Box,
   CardActionArea,
@@ -27,7 +28,6 @@ import {
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DocumentDisplay } from './DocumentDisplay'
 import type { TeamLoadoutCharacter } from './getTeam'
 
 const talentSpacing = {

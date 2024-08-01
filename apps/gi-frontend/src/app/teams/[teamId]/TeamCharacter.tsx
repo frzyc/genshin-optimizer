@@ -2,11 +2,10 @@
 
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { convert, selfTag } from '@genshin-optimizer/gi/formula'
+import { CalcContext, MemberContext } from '@genshin-optimizer/pando/ui-sheet'
 import { CardContent, CardHeader, Stack, Typography } from '@mui/material'
 import { useContext, useMemo, useState } from 'react'
-import { CalcContext } from './CalcContext'
 import { CalcWrapper } from './CalcWrapper'
-import { MemberContext } from './MemberContext'
 import CharacterTalentPane from './TalentContent'
 import { TeamContext } from './TeamContext'
 import type { TeamLoadoutCharacter } from './getTeam'
