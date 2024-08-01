@@ -8,7 +8,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "@typescript-eslint/no-duplisre-imports": "off"
+        "@typescript-eslint/no-duplicate-imports": "off"
       }
     },
     {
