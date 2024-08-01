@@ -1,0 +1,13 @@
+{
+  "name": "gi-mats",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi/mats/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "gen-file": {
+      "executor": "@genshin-optimizer/gi/mats:gen-mats",
+      "outputs": ["{projectRoot}/src/allCharacterMats_gen.json"]
+    }
+  }
+}

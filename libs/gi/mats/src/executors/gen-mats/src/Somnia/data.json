@@ -1,0 +1,37 @@
+{
+  "ascension": {
+    "0": {
+      "cost": 0,
+      "items": []
+    },
+    "1": {
+      "cost": 0,
+      "items": []
+    },
+    "2": {
+      "cost": 0,
+      "items": []
+    },
+    "3": {
+      "cost": 0,
+      "items": []
+    },
+    "4": {
+      "cost": 0,
+      "items": []
+    },
+    "5": {
+      "cost": 0,
+      "items": []
+    },
+    "6": {
+      "cost": 0,
+      "items": []
+    }
+  },
+  "talents": {
+    "normal": {},
+    "skill": {},
+    "burst": {}
+  }
+}
