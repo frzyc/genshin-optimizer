@@ -3,16 +3,18 @@ import type { TagMapNodeEntries } from '@genshin-optimizer/gi/formula'
 import {
   artifactsData,
   charData,
+  enemyDebuff,
   genshinCalculatorWithEntries,
+  self,
   teamData,
   weaponData,
   withMember,
 } from '@genshin-optimizer/gi/formula'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
+import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type { ReactNode } from 'react'
 import { useContext, useMemo } from 'react'
-import { CalcContext } from './CalcContext'
 import { TeamContext } from './TeamContext'
 import { TeamLoadoutCharacterToICharacter } from './teamUtil'
 
@@ -66,6 +68,11 @@ export function CalcWrapper({ children }: { children: ReactNode }) {
         .filter(notEmpty),
       // TODO: conditonals
       // TODO: enemyDebuff
+      enemyDebuff.reaction.cata.add('spread'),
+      enemyDebuff.reaction.amp.add(''),
+      enemyDebuff.common.lvl.add(12),
+      enemyDebuff.common.preRes.add(0.1),
+      self.common.critMode.add('avg'),
     ]
     const calc = genshinCalculatorWithEntries(data)
     return calc

@@ -29,7 +29,11 @@
     "../../apps/gi-frontend/.next/types/**/*.ts",
     "../../dist/apps/gi-frontend/.next/types/**/*.ts",
     "next-env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "../../libs/pando/ui-sheet/src/components/DocumentDisplay.tsx",
+    "../../libs/pando/ui-sheet/src/components/FieldDisplay.tsx",
+    "../../libs/pando/ui-sheet/src/context/CalcContext.ts",
+    "../../libs/pando/ui-sheet/src/MemberContext.ts"
   ],
   "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }

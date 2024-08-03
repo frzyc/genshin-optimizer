@@ -9,6 +9,8 @@ on:
     paths-ignore:
       - 'apps/frontend/**'
       - 'apps/frontend-e2e/**'
+      - 'apps/somnia/**'
+      - 'apps/somnia-e2e/**'
       - 'libs/gi/**'
     types: [opened, reopened, synchronize, labeled]
 

@@ -220,12 +220,8 @@ export const allListConditionals = <T extends string>(
   shared?: boolean
 ) =>
   allConditionals(sheet, shared, { type: 'list', list }, (r) => ({
-    map: (table: Record<T, number>, def = 0) => {
-      subscript(
-        r,
-        list.map((v) => table[v] ?? def)
-      )
-    },
+    map: (table: Record<T, number>, def = 0) =>
+      subscript(r, [def, ...list.map((v) => table[v] ?? def)]),
     value: r,
   }))
 export const allNumConditionals = (

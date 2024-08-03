@@ -9,7 +9,7 @@ import type {
 } from 'discord.js'
 import { readFileSync } from 'fs'
 // So we can modify config.json after building, thereby not exposing credentials in our build drop
-const { clientid, ownerid } = JSON.parse(
+const { clientid } = JSON.parse(
   readFileSync('./apps/somnia/src/config.json').toString()
 )
 
@@ -28,16 +28,6 @@ export default {
   //true if user triggered the original interaction
   sender(user: User | PartialUser, interaction: MessageInteraction | null) {
     if (interaction) return user.id === interaction.user.id
-    return false
-  },
-
-  //true if interaction author is owner
-  owner(interaction: ChatInputCommandInteraction) {
-    if (interaction.user?.id === ownerid) return true
-    interaction.reply({
-      content: `You do not have permission to use this command.`,
-      ephemeral: true,
-    })
     return false
   },
 

@@ -252,7 +252,10 @@ export function WeaponSwapModal({
             <Grid container spacing={1}>
               {weaponIdsToShow.map((weaponId) => (
                 <Grid item key={weaponId} xs={6} sm={6} md={4} lg={3}>
-                  <WeaponCard weaponId={weaponId} onClick={clickHandler} />
+                  <WeaponCard
+                    weaponId={weaponId}
+                    onClick={() => setSwapWeaponId(weaponId)}
+                  />
                 </Grid>
               ))}
             </Grid>

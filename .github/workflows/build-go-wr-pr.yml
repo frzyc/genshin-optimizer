@@ -7,10 +7,13 @@ permissions:
 on:
   pull_request:
     paths-ignore:
+      - 'apps/somnia/**'
+      - 'apps/somnia-e2e/**'
       - 'apps/sr-frontend/**'
       - 'apps/sr-frontend-e2e/**'
       - 'libs/gi/formula/**'
       - 'libs/gi/formula-ui/**'
+      - 'libs/gi/i18n-node/**'
       - 'libs/pando/**'
       - 'libs/sr/**'
     types: [opened, reopened, synchronize, labeled]

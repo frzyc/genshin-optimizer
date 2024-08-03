@@ -198,7 +198,7 @@ const t = register(
     cmpGE(
       constellation,
       4,
-      subscript(c4Count, [NaN, ...dm.constellation4.eleMas])
+      subscript(c4Count, [0, ...dm.constellation4.eleMas])
     )
   ),
 
