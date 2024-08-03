@@ -7,7 +7,11 @@ import type {
   PermissionsBitField,
   User,
 } from 'discord.js'
-import { clientid, ownerid } from '../config.json'
+import { readFileSync } from 'fs'
+// So we can modify config.json after building, thereby not exposing credentials in our build drop
+const { clientid, ownerid } = JSON.parse(
+  readFileSync('./apps/somnia/src/config.json').toString()
+)
 
 export default {
   //true if interaction author has permissions
