@@ -1,5 +1,5 @@
 import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
-import { objFilterKeys } from '@genshin-optimizer/common/util'
+import { objFilterKeys, objKeyValMap } from '@genshin-optimizer/common/util'
 import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { AvatarBaseTypeKey, AvatarId } from '../../mapping'
@@ -70,7 +70,7 @@ export type AvatarDamageType =
 
 const avatarConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/AvatarConfig.json')
-) as Record<string, AvatarConfig>
+) as AvatarConfig[]
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarConfig_idmap_gen.json`,
@@ -85,8 +85,8 @@ dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarConfig_CharacterKey_gen.json`,
   [
     ...new Set(
-      Object.entries(avatarConfigSrc).map(([, data]) =>
-        nameToKey(TextMapEN[data.AvatarName.Hash])
+      avatarConfigSrc.map((config) =>
+        nameToKey(TextMapEN[config.AvatarName.Hash])
       )
     ),
   ]
@@ -95,7 +95,7 @@ dumpFile(
 )
 
 const avatarConfig = objFilterKeys(
-  avatarConfigSrc,
+  objKeyValMap(avatarConfigSrc, (config) => [config.AvatarID, config]),
   Object.keys(characterIdMap) as AvatarId[]
 ) as Record<AvatarId, AvatarConfig>
 export { avatarConfig }

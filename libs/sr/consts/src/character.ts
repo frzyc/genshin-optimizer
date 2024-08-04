@@ -12,11 +12,13 @@ export const nonTrailblazerCharacterKeys = [
   'Bailu',
   'BlackSwan',
   'Blade',
+  'Boothill',
   'Bronya',
   'Clara',
   'DanHeng',
   'DanHengImbibitorLunae',
   'DrRatio',
+  'Firefly',
   'FuXuan',
   'Gallagher',
   'Gepard',
@@ -26,6 +28,7 @@ export const nonTrailblazerCharacterKeys = [
   'Himeko',
   'Hook',
   'Huohuo',
+  'Jade',
   'JingYuan',
   'Jingliu',
   'Kafka',
@@ -33,10 +36,12 @@ export const nonTrailblazerCharacterKeys = [
   'Luocha',
   'Lynx',
   'March7th',
+  'March7thTheHunt',
   'Misha',
   'Natasha',
   'Pela',
   'Qingque',
+  'Robin',
   'RuanMei',
   'Sampo',
   'Seele',
@@ -50,6 +55,7 @@ export const nonTrailblazerCharacterKeys = [
   'Xueyi',
   'Yanqing',
   'Yukong',
+  'Yunli',
 ] as const
 export type NonTrailblazerCharacterKey =
   (typeof nonTrailblazerCharacterKeys)[number]
@@ -70,17 +76,21 @@ export const allTrailblazerGenderedKeys = [
   'TrailblazerPhysicalF',
   'TrailblazerFireM',
   'TrailblazerFireF',
+  'TrailblazerImaginaryM',
+  'TrailblazerImaginaryF',
 ] as const
 export type TrailblazerGenderedKey = (typeof allTrailblazerGenderedKeys)[number]
 
 export const allTrailblazerKeys = [
   'TrailblazerPhysical',
   'TrailblazerFire',
+  'TrailblazerImaginary',
 ] as const
 export type TrailblazerKey = (typeof allTrailblazerKeys)[number]
 export const TrailblazerPathMap: Record<TrailblazerKey, PathKey> = {
   TrailblazerPhysical: 'Destruction',
   TrailblazerFire: 'Preservation',
+  TrailblazerImaginary: 'Harmony',
 }
 
 export const allCharacterKeys = [

@@ -1,6 +1,7 @@
 export const allLightConeKeys = [
   'ASecretVow',
   'Adversarial',
+  'AfterTheCharmonyFall',
   'AlongThePassingShore',
   'Amber',
   'AnInstantBeforeAGaze',
@@ -8,6 +9,7 @@ export const allLightConeKeys = [
   'BaptismOfPureThought',
   'BeforeDawn',
   'BeforeTheTutorialMissionStarts',
+  'BoundlessChoreo',
   'BrighterThanTheSun',
   'ButTheBattleIsntOver',
   'CarveTheMoonWeaveTheClouds',
@@ -16,6 +18,7 @@ export const allLightConeKeys = [
   'ConcertForTwo',
   'Cornucopia',
   'CruisingInTheStellarSea',
+  'DanceAtSunset',
   'DanceDanceDance',
   'DartingArrow',
   'DataBank',
@@ -30,6 +33,7 @@ export const allLightConeKeys = [
   'FinalVictor',
   'FineFruit',
   'FlamesAfar',
+  'FlowingNightglow',
   'GeniusesRepose',
   'GoodNightAndSleepWell',
   'HeyOverHere',
@@ -62,6 +66,7 @@ export const allLightConeKeys = [
   'PerfectTiming',
   'Pioneering',
   'PlanetaryRendezvous',
+  'PoisedToBloom',
   'PostOpConversation',
   'QuidProQuo',
   'ReforgedRemembrance',
@@ -69,6 +74,7 @@ export const allLightConeKeys = [
   'ReturnToDarkness',
   'RiverFlowsInSpring',
   'Sagacity',
+  'SailingTowardsASecondLife',
   'SharedFeeling',
   'ShatteredHome',
   'SheAlreadyShutHerEyes',
@@ -93,8 +99,10 @@ export const allLightConeKeys = [
   'WeAreWildfire',
   'WeWillMeetAgain',
   'WhatIsReal',
+  'WhereaboutsShouldDreamsRest',
   'WoofWalkTime',
   'WorrisomeBlissful',
+  'YetHopeIsPriceless',
 ] as const
 
 export type LightConeKey = (typeof allLightConeKeys)[number]

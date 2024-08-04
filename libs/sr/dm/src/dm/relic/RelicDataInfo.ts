@@ -1,7 +1,6 @@
-import type { RelicSetId, RelicSlotDMKey } from '../../mapping/relic'
+import { objKeyValMap } from '@genshin-optimizer/common/util'
+import type { RelicSlotDMKey } from '../../mapping/relic'
 import { readDMJSON } from '../../util'
-
-export type RelicDataInfoSrc = Partial<Record<RelicSlotDMKey, RelicDataInfo>>
 
 export type RelicDataInfo = {
   SetID: number
@@ -14,6 +13,11 @@ export type RelicDataInfo = {
   BGStoryContent: string
 }
 
-export const relicDataInfo = JSON.parse(
+const relicDataInfoSrc = JSON.parse(
   readDMJSON('ExcelOutput/RelicDataInfo.json')
-) as Record<RelicSetId, RelicDataInfoSrc>
+) as RelicDataInfo[]
+
+export const relicDataInfo = objKeyValMap(relicDataInfoSrc, (dataInfo) => [
+  dataInfo.SetID,
+  dataInfo,
+])

@@ -1,5 +1,5 @@
 import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
-import { objFilterKeys } from '@genshin-optimizer/common/util'
+import { objFilterKeys, objKeyValMap } from '@genshin-optimizer/common/util'
 import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { RelicSetId } from '../../mapping/relic'
@@ -19,26 +19,22 @@ export type RelicSetConfig = {
 
 const relicSetConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/RelicSetConfig.json')
-) as Record<string, RelicSetConfig>
+) as RelicSetConfig[]
 
 const prePath = `${PROJROOT_PATH}/src/dm/relic/RelicSetConfig`
 
 dumpFile(
   `${prePath}_idmap_gen.json`,
-  Object.fromEntries(
-    Object.entries(relicSetConfigSrc).map(([setId, data]) => [
-      setId,
-      nameToKey(TextMapEN[data.SetName.Hash]),
-    ])
-  )
+  objKeyValMap(relicSetConfigSrc, (config) => [
+    config.SetID,
+    nameToKey(TextMapEN[config.SetName.Hash]),
+  ])
 )
 dumpFile(
   `${prePath}_keys_gen.json`,
   [
     ...new Set(
-      Object.values(relicSetConfigSrc).map((data) =>
-        nameToKey(TextMapEN[data.SetName.Hash])
-      )
+      relicSetConfigSrc.map((data) => nameToKey(TextMapEN[data.SetName.Hash]))
     ),
   ]
     .filter((s) => s)
@@ -49,7 +45,7 @@ dumpFile(
   `${prePath}_keys_planar_gen.json`,
   [
     ...new Set(
-      Object.values(relicSetConfigSrc)
+      relicSetConfigSrc
         .filter((d) => d.IsPlanarSuit)
         .map((data) => nameToKey(TextMapEN[data.SetName.Hash]))
     ),
@@ -62,7 +58,7 @@ dumpFile(
   `${prePath}_keys_cavern_gen.json`,
   [
     ...new Set(
-      Object.values(relicSetConfigSrc)
+      relicSetConfigSrc
         .filter((d) => !d.IsPlanarSuit)
         .map((data) => nameToKey(TextMapEN[data.SetName.Hash]))
     ),
@@ -72,6 +68,6 @@ dumpFile(
 )
 
 export const relicSetConfig = objFilterKeys(
-  relicSetConfigSrc,
+  objKeyValMap(relicSetConfigSrc, (config) => [config.SetID, config]),
   Object.keys(relicSetIdMap) as RelicSetId[]
 ) as Record<RelicSetId, RelicSetConfig>

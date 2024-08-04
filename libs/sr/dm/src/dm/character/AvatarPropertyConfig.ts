@@ -21,10 +21,10 @@ export type AvatarPropertyConfig = {
 
 const AvatarPropertyConfig = JSON.parse(
   readDMJSON('ExcelOutput/AvatarPropertyConfig.json')
-) as Record<string, AvatarPropertyConfig>
+) as AvatarPropertyConfig[]
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarPropertyConfig_list_gen.json`,
-  Object.keys(AvatarPropertyConfig)
+  AvatarPropertyConfig.map((config) => config.PropertyType)
 )
 export { AvatarPropertyConfig }

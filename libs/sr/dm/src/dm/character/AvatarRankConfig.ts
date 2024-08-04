@@ -1,4 +1,5 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { objKeyValMap } from '@genshin-optimizer/common/util'
 import { PROJROOT_PATH } from '../../consts'
 import { readDMJSON } from '../../util'
 import type { HashId, MaterialValue, Value } from '../common'
@@ -24,7 +25,11 @@ type SkillAddLevelList = Partial<Record<string, number>>
 
 const avatarRankConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/AvatarRankConfig.json')
-) as Record<string, AvatarRankConfig>
+) as AvatarRankConfig[]
+const avatarRankConfigMap = objKeyValMap(avatarRankConfigSrc, (config) => [
+  config.RankID,
+  config,
+])
 
 // Convert to { charId: { eidolon#: config } } mapping
 const avatarRankConfig = Object.fromEntries(
@@ -33,8 +38,8 @@ const avatarRankConfig = Object.fromEntries(
     // to { eidolon#: config }
     Object.fromEntries(
       avatarConfig.RankIDList.map((rankId) => [
-        avatarRankConfigSrc[rankId].Rank, // Map Eidolon #1-6
-        avatarRankConfigSrc[rankId], // to Config
+        avatarRankConfigMap[rankId].Rank, // Map Eidolon #1-6
+        avatarRankConfigMap[rankId], // to Config
       ])
     ),
   ])

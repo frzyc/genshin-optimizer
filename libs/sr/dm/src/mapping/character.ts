@@ -45,6 +45,8 @@ export const characterIdMap: Record<string, CharacterDataKey> = {
   1214: 'Xueyi',
   1215: 'Hanya',
   1217: 'Huohuo',
+  1221: 'Yunli',
+  1224: 'March7thTheHunt',
   1301: 'Gallagher',
   1302: 'Argenti',
   1303: 'RuanMei',
@@ -53,11 +55,17 @@ export const characterIdMap: Record<string, CharacterDataKey> = {
   1306: 'Sparkle',
   1307: 'BlackSwan',
   1308: 'Acheron',
+  1309: 'Robin',
+  1310: 'Firefly',
   1312: 'Misha',
+  1314: 'Jade',
+  1315: 'Boothill',
   8001: 'TrailblazerPhysicalM',
   8002: 'TrailblazerPhysicalF',
   8003: 'TrailblazerFireM',
   8004: 'TrailblazerFireF',
+  8005: 'TrailblazerImaginaryM',
+  8006: 'TrailblazerImaginaryF',
 } as const
 export type AvatarId = keyof typeof characterIdMap
 

@@ -1,5 +1,5 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
-import { objFilterKeys, objMap } from '@genshin-optimizer/common/util'
+import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
 import type { SuperimposeKey } from '@genshin-optimizer/sr/consts'
 import { PROJROOT_PATH } from '../../consts'
 import type { StatDMKey } from '../../mapping'
@@ -7,6 +7,7 @@ import type { LightConeId } from '../../mapping/lightCone'
 import { lightConeIdMap } from '../../mapping/lightCone'
 import { readDMJSON } from '../../util'
 import type { HashId, Value } from '../common'
+import { equipmentConfig } from './EquipmentConfig'
 
 export type EquipmentSkillConfig = {
   SkillID: number
@@ -34,20 +35,26 @@ type EquipmentSkillConfig_bySuperimpose = {
 
 const equipmentSkillConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/EquipmentSkillConfig.json')
-) as Record<string, Record<string, EquipmentSkillConfig>>
+) as EquipmentSkillConfig[]
 
-const filteredEquipmentSkillConfigSrc = objFilterKeys(
-  equipmentSkillConfigSrc,
-  Object.keys(lightConeIdMap) as LightConeId[]
+const skillIdToLightConeIdMap = objKeyValMap(
+  Object.values(equipmentConfig),
+  (config) => [config.SkillID, config.EquipmentID]
 )
 
-const srcToFlatConfig = (v: Record<string, EquipmentSkillConfig>) =>
-  Object.values(v)
+export const equipmentSkillConfig = equipmentSkillConfigSrc.reduce(
+  (fullConfig, config) => {
+    const { SkillID } = config
+    const lightConeId = skillIdToLightConeIdMap[SkillID]
+    if (!lightConeIdMap[lightConeId]) return fullConfig
 
-export const equipmentSkillConfig = objMap(
-  filteredEquipmentSkillConfigSrc,
-  srcToFlatConfig
-) as Record<LightConeId, EquipmentSkillConfig[]>
+    if (!fullConfig[lightConeId])
+      fullConfig[lightConeId] = [] as EquipmentSkillConfig[]
+    fullConfig[lightConeId].push(config)
+    return fullConfig
+  },
+  {} as Record<LightConeId, EquipmentSkillConfig[]>
+)
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/equipmentSkillConfig_gen.json`,

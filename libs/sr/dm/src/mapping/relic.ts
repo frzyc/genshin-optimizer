@@ -19,6 +19,8 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
   116: 'PrisonerInDeepConfinement',
   117: 'PioneerDiverOfDeadWaters',
   118: 'WatchmakerMasterOfDreamMachinations',
+  119: 'IronCavalryAgainstTheScourge',
+  120: 'TheWindSouringValorous',
 
   301: 'SpaceSealingStation',
   302: 'FleetOfTheAgeless',
@@ -34,6 +36,8 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
   312: 'PenaconyLandOfTheDreams',
   313: 'SigoniaTheUnclaimedDesolation',
   314: 'IzumoGenseiAndTakamaDivineRealm',
+  315: 'DuranDynastyOfRunningWolves',
+  316: 'ForgeOfTheKalpagniLantern',
 }
 export type RelicSetId = keyof typeof relicSetIdMap
 
