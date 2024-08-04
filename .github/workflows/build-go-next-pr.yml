@@ -18,7 +18,7 @@ on:
     types: [opened, reopened, synchronize, labeled]
 
 jobs:
-  call-build-gi-frontend:
+  call-build:
     uses: ./.github/workflows/build-frontend.yml
     with:
       frontend_name: 'gi-frontend'

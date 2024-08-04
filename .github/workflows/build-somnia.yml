@@ -46,7 +46,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    name: 'build'
+    name: 'call-build / build'
     steps:
       - uses: actions/checkout@v4
       - name: Get Cache Key

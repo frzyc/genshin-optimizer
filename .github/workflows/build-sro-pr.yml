@@ -15,7 +15,7 @@ on:
     types: [opened, reopened, synchronize, labeled]
 
 jobs:
-  call-build-sr-frontend:
+  call-build:
     uses: ./.github/workflows/build-frontend.yml
     with:
       frontend_name: 'sr-frontend'
