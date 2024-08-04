@@ -7,7 +7,13 @@ import {
   REST,
   Routes,
 } from 'discord.js'
-import { clientid, token } from './config.json'
+import { readFileSync } from 'fs'
+import * as http from 'http'
+
+// So we can modify config.json after building, thereby not exposing credentials in our build drop
+const { clientid, token } = JSON.parse(
+  readFileSync('./apps/somnia/src/config.json').toString()
+)
 
 const client = new Client({
   intents: [
@@ -37,14 +43,15 @@ client.on(Events.MessageReactionAdd, (...args) =>
 //collect commands
 import * as archive from './commands/archive'
 import * as button from './commands/button'
-import * as databank from './commands/databank'
+// TODO: Enable after i18n of databank
+// import * as databank from './commands/databank'
 export const Commands: Collection<string, any> = new Collection()
 Commands.set(archive.slashcommand.name, archive)
-Commands.set(databank.slashcommand.name, databank)
+// Commands.set(databank.slashcommand.name, databank)
 Commands.set(button.slashcommand.name, button)
 const setcommands = [
   archive.slashcommand.toJSON(),
-  databank.slashcommand.toJSON(),
+  // databank.slashcommand.toJSON(),
   button.slashcommand.toJSON(),
 ]
 
@@ -56,3 +63,12 @@ rest
   .catch((e: any) => console.log(e))
 
 client.login(token)
+
+// Listen on port 8080 for Azure Web App alive check
+http
+  .createServer(function (_req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/plain' })
+    res.write('Alive')
+    res.end()
+  })
+  .listen(8080)

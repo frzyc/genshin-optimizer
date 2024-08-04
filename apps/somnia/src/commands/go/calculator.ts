@@ -11,15 +11,11 @@ import {
   convert,
   genshinCalculatorWithEntries,
   selfTag,
+  tagToStat,
   teamData,
   weaponData,
   withMember,
 } from '@genshin-optimizer/gi/formula'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
-
-export function getAscensionStat(id: CharacterKey) {
-  return Object.keys(getCharStat(id).ascensionBonus)[3]
-}
 
 export function getFixed(key: StatKey) {
   return key.endsWith('_') ? 1 : 0
@@ -54,9 +50,8 @@ export function baseCharStats(
     atk: calc.compute(member0.base.atk).val,
     def: calc.compute(member0.base.def).val,
   }
-  stats[getAscensionStat(id)] = calc.compute(
-    calc.listFormulas(member0.listing.specialized)[0]
-  ).val
+  const specialized = calc.compute(member0.char.specialized)
+  stats[tagToStat(specialized.meta.tag!)] = specialized.val
   return stats
 }
 

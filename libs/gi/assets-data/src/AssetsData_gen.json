@@ -1,0 +1,2573 @@
+{
+  "weapons": {
+    "DullBlade": {
+      "icon": "UI_EquipIcon_Sword_Blunt",
+      "awakenIcon": "UI_EquipIcon_Sword_Blunt_Awaken"
+    },
+    "SilverSword": {
+      "icon": "UI_EquipIcon_Sword_Silver",
+      "awakenIcon": "UI_EquipIcon_Sword_Silver_Awaken"
+    },
+    "CoolSteel": {
+      "icon": "UI_EquipIcon_Sword_Steel",
+      "awakenIcon": "UI_EquipIcon_Sword_Steel_Awaken"
+    },
+    "HarbingerOfDawn": {
+      "icon": "UI_EquipIcon_Sword_Dawn",
+      "awakenIcon": "UI_EquipIcon_Sword_Dawn_Awaken"
+    },
+    "TravelersHandySword": {
+      "icon": "UI_EquipIcon_Sword_Traveler",
+      "awakenIcon": "UI_EquipIcon_Sword_Traveler_Awaken"
+    },
+    "DarkIronSword": {
+      "icon": "UI_EquipIcon_Sword_Darker",
+      "awakenIcon": "UI_EquipIcon_Sword_Darker_Awaken"
+    },
+    "FilletBlade": {
+      "icon": "UI_EquipIcon_Sword_Sashimi",
+      "awakenIcon": "UI_EquipIcon_Sword_Sashimi_Awaken"
+    },
+    "SkyriderSword": {
+      "icon": "UI_EquipIcon_Sword_Mitsurugi",
+      "awakenIcon": "UI_EquipIcon_Sword_Mitsurugi_Awaken"
+    },
+    "FavoniusSword": {
+      "icon": "UI_EquipIcon_Sword_Zephyrus",
+      "awakenIcon": "UI_EquipIcon_Sword_Zephyrus_Awaken"
+    },
+    "TheFlute": {
+      "icon": "UI_EquipIcon_Sword_Troupe",
+      "awakenIcon": "UI_EquipIcon_Sword_Troupe_Awaken"
+    },
+    "SacrificialSword": {
+      "icon": "UI_EquipIcon_Sword_Fossil",
+      "awakenIcon": "UI_EquipIcon_Sword_Fossil_Awaken"
+    },
+    "RoyalLongsword": {
+      "icon": "UI_EquipIcon_Sword_Theocrat",
+      "awakenIcon": "UI_EquipIcon_Sword_Theocrat_Awaken"
+    },
+    "LionsRoar": {
+      "icon": "UI_EquipIcon_Sword_Rockkiller",
+      "awakenIcon": "UI_EquipIcon_Sword_Rockkiller_Awaken"
+    },
+    "PrototypeRancour": {
+      "icon": "UI_EquipIcon_Sword_Proto",
+      "awakenIcon": "UI_EquipIcon_Sword_Proto_Awaken"
+    },
+    "IronSting": {
+      "icon": "UI_EquipIcon_Sword_Exotic",
+      "awakenIcon": "UI_EquipIcon_Sword_Exotic_Awaken"
+    },
+    "BlackcliffLongsword": {
+      "icon": "UI_EquipIcon_Sword_Blackrock",
+      "awakenIcon": "UI_EquipIcon_Sword_Blackrock_Awaken"
+    },
+    "TheBlackSword": {
+      "icon": "UI_EquipIcon_Sword_Bloodstained",
+      "awakenIcon": "UI_EquipIcon_Sword_Bloodstained_Awaken"
+    },
+    "TheAlleyFlash": {
+      "icon": "UI_EquipIcon_Sword_Outlaw",
+      "awakenIcon": "UI_EquipIcon_Sword_Outlaw_Awaken"
+    },
+    "SwordOfDescension": {
+      "icon": "UI_EquipIcon_Sword_Psalmus",
+      "awakenIcon": "UI_EquipIcon_Sword_Psalmus_Awaken"
+    },
+    "FesteringDesire": {
+      "icon": "UI_EquipIcon_Sword_Magnum",
+      "awakenIcon": "UI_EquipIcon_Sword_Magnum_Awaken"
+    },
+    "AmenomaKageuchi": {
+      "icon": "UI_EquipIcon_Sword_Bakufu",
+      "awakenIcon": "UI_EquipIcon_Sword_Bakufu_Awaken"
+    },
+    "CinnabarSpindle": {
+      "icon": "UI_EquipIcon_Sword_Opus",
+      "awakenIcon": "UI_EquipIcon_Sword_Opus_Awaken"
+    },
+    "KagotsurubeIsshin": {
+      "icon": "UI_EquipIcon_Sword_Youtou",
+      "awakenIcon": "UI_EquipIcon_Sword_Youtou_Awaken"
+    },
+    "SapwoodBlade": {
+      "icon": "UI_EquipIcon_Sword_Arakalari",
+      "awakenIcon": "UI_EquipIcon_Sword_Arakalari_Awaken"
+    },
+    "XiphosMoonlight": {
+      "icon": "UI_EquipIcon_Sword_Pleroma",
+      "awakenIcon": "UI_EquipIcon_Sword_Pleroma_Awaken"
+    },
+    "ToukabouShigure": {
+      "icon": "UI_EquipIcon_Sword_Kasabouzu",
+      "awakenIcon": "UI_EquipIcon_Sword_Kasabouzu_Awaken"
+    },
+    "WolfFang": {
+      "icon": "UI_EquipIcon_Sword_Boreas",
+      "awakenIcon": "UI_EquipIcon_Sword_Boreas_Awaken"
+    },
+    "FinaleOfTheDeep": {
+      "icon": "UI_EquipIcon_Sword_Vorpal",
+      "awakenIcon": "UI_EquipIcon_Sword_Vorpal_Awaken"
+    },
+    "FleuveCendreFerryman": {
+      "icon": "UI_EquipIcon_Sword_Machination",
+      "awakenIcon": "UI_EquipIcon_Sword_Machination_Awaken"
+    },
+    "TheDockhandsAssistant": {
+      "icon": "UI_EquipIcon_Sword_Mechanic",
+      "awakenIcon": "UI_EquipIcon_Sword_Mechanic_Awaken"
+    },
+    "SwordOfNarzissenkreuz": {
+      "icon": "UI_EquipIcon_Sword_Purewill",
+      "awakenIcon": "UI_EquipIcon_Sword_Purewill"
+    },
+    "AquilaFavonia": {
+      "icon": "UI_EquipIcon_Sword_Falcon",
+      "awakenIcon": "UI_EquipIcon_Sword_Falcon_Awaken"
+    },
+    "SkywardBlade": {
+      "icon": "UI_EquipIcon_Sword_Dvalin",
+      "awakenIcon": "UI_EquipIcon_Sword_Dvalin_Awaken"
+    },
+    "FreedomSworn": {
+      "icon": "UI_EquipIcon_Sword_Widsith",
+      "awakenIcon": "UI_EquipIcon_Sword_Widsith_Awaken"
+    },
+    "SummitShaper": {
+      "icon": "UI_EquipIcon_Sword_Kunwu",
+      "awakenIcon": "UI_EquipIcon_Sword_Kunwu_Awaken"
+    },
+    "PrimordialJadeCutter": {
+      "icon": "UI_EquipIcon_Sword_Morax",
+      "awakenIcon": "UI_EquipIcon_Sword_Morax_Awaken"
+    },
+    "MistsplitterReforged": {
+      "icon": "UI_EquipIcon_Sword_Narukami",
+      "awakenIcon": "UI_EquipIcon_Sword_Narukami_Awaken"
+    },
+    "HaranGeppakuFutsu": {
+      "icon": "UI_EquipIcon_Sword_Amenoma",
+      "awakenIcon": "UI_EquipIcon_Sword_Amenoma_Awaken"
+    },
+    "KeyOfKhajNisut": {
+      "icon": "UI_EquipIcon_Sword_Deshret",
+      "awakenIcon": "UI_EquipIcon_Sword_Deshret_Awaken"
+    },
+    "LightOfFoliarIncision": {
+      "icon": "UI_EquipIcon_Sword_Ayus",
+      "awakenIcon": "UI_EquipIcon_Sword_Ayus_Awaken"
+    },
+    "SplendorOfTranquilWaters": {
+      "icon": "UI_EquipIcon_Sword_Regalis",
+      "awakenIcon": "UI_EquipIcon_Sword_Regalis_Awaken"
+    },
+    "UrakuMisugiri": {
+      "icon": "UI_EquipIcon_Sword_Needle",
+      "awakenIcon": "UI_EquipIcon_Sword_Needle_Awaken"
+    },
+    "Absolution": {
+      "icon": "UI_EquipIcon_Sword_Estoc",
+      "awakenIcon": "UI_EquipIcon_Sword_Estoc_Awaken"
+    },
+    "WasterGreatsword": {
+      "icon": "UI_EquipIcon_Claymore_Aniki",
+      "awakenIcon": "UI_EquipIcon_Claymore_Aniki_Awaken"
+    },
+    "OldMercsPal": {
+      "icon": "UI_EquipIcon_Claymore_Oyaji",
+      "awakenIcon": "UI_EquipIcon_Claymore_Oyaji_Awaken"
+    },
+    "FerrousShadow": {
+      "icon": "UI_EquipIcon_Claymore_Glaive",
+      "awakenIcon": "UI_EquipIcon_Claymore_Glaive_Awaken"
+    },
+    "BloodtaintedGreatsword": {
+      "icon": "UI_EquipIcon_Claymore_Siegfry",
+      "awakenIcon": "UI_EquipIcon_Claymore_Siegfry_Awaken"
+    },
+    "WhiteIronGreatsword": {
+      "icon": "UI_EquipIcon_Claymore_Tin",
+      "awakenIcon": "UI_EquipIcon_Claymore_Tin_Awaken"
+    },
+    "DebateClub": {
+      "icon": "UI_EquipIcon_Claymore_Reasoning",
+      "awakenIcon": "UI_EquipIcon_Claymore_Reasoning_Awaken"
+    },
+    "SkyriderGreatsword": {
+      "icon": "UI_EquipIcon_Claymore_Mitsurugi",
+      "awakenIcon": "UI_EquipIcon_Claymore_Mitsurugi_Awaken"
+    },
+    "FavoniusGreatsword": {
+      "icon": "UI_EquipIcon_Claymore_Zephyrus",
+      "awakenIcon": "UI_EquipIcon_Claymore_Zephyrus_Awaken"
+    },
+    "TheBell": {
+      "icon": "UI_EquipIcon_Claymore_Troupe",
+      "awakenIcon": "UI_EquipIcon_Claymore_Troupe_Awaken"
+    },
+    "SacrificialGreatsword": {
+      "icon": "UI_EquipIcon_Claymore_Fossil",
+      "awakenIcon": "UI_EquipIcon_Claymore_Fossil_Awaken"
+    },
+    "RoyalGreatsword": {
+      "icon": "UI_EquipIcon_Claymore_Theocrat",
+      "awakenIcon": "UI_EquipIcon_Claymore_Theocrat_Awaken"
+    },
+    "Rainslasher": {
+      "icon": "UI_EquipIcon_Claymore_Perdue",
+      "awakenIcon": "UI_EquipIcon_Claymore_Perdue_Awaken"
+    },
+    "PrototypeArchaic": {
+      "icon": "UI_EquipIcon_Claymore_Proto",
+      "awakenIcon": "UI_EquipIcon_Claymore_Proto_Awaken"
+    },
+    "Whiteblind": {
+      "icon": "UI_EquipIcon_Claymore_Exotic",
+      "awakenIcon": "UI_EquipIcon_Claymore_Exotic_Awaken"
+    },
+    "BlackcliffSlasher": {
+      "icon": "UI_EquipIcon_Claymore_Blackrock",
+      "awakenIcon": "UI_EquipIcon_Claymore_Blackrock_Awaken"
+    },
+    "SerpentSpine": {
+      "icon": "UI_EquipIcon_Claymore_Kione",
+      "awakenIcon": "UI_EquipIcon_Claymore_Kione_Awaken"
+    },
+    "LithicBlade": {
+      "icon": "UI_EquipIcon_Claymore_Lapis",
+      "awakenIcon": "UI_EquipIcon_Claymore_Lapis_Awaken"
+    },
+    "SnowTombedStarsilver": {
+      "icon": "UI_EquipIcon_Claymore_Dragonfell",
+      "awakenIcon": "UI_EquipIcon_Claymore_Dragonfell_Awaken"
+    },
+    "LuxuriousSeaLord": {
+      "icon": "UI_EquipIcon_Claymore_MillenniaTuna",
+      "awakenIcon": "UI_EquipIcon_Claymore_MillenniaTuna_Awaken"
+    },
+    "KatsuragikiriNagamasa": {
+      "icon": "UI_EquipIcon_Claymore_Bakufu",
+      "awakenIcon": "UI_EquipIcon_Claymore_Bakufu_Awaken"
+    },
+    "MakhairaAquamarine": {
+      "icon": "UI_EquipIcon_Claymore_Pleroma",
+      "awakenIcon": "UI_EquipIcon_Claymore_Pleroma_Awaken"
+    },
+    "Akuoumaru": {
+      "icon": "UI_EquipIcon_Claymore_Maria",
+      "awakenIcon": "UI_EquipIcon_Claymore_Maria_Awaken"
+    },
+    "ForestRegalia": {
+      "icon": "UI_EquipIcon_Claymore_Arakalari",
+      "awakenIcon": "UI_EquipIcon_Claymore_Arakalari_Awaken"
+    },
+    "MailedFlower": {
+      "icon": "UI_EquipIcon_Claymore_Fleurfair",
+      "awakenIcon": "UI_EquipIcon_Claymore_Fleurfair_Awaken"
+    },
+    "TalkingStick": {
+      "icon": "UI_EquipIcon_Claymore_BeastTamer",
+      "awakenIcon": "UI_EquipIcon_Claymore_BeastTamer_Awaken"
+    },
+    "TidalShadow": {
+      "icon": "UI_EquipIcon_Claymore_Vorpal",
+      "awakenIcon": "UI_EquipIcon_Claymore_Vorpal_Awaken"
+    },
+    "UltimateOverlordsMegaMagicSword": {
+      "icon": "UI_EquipIcon_Claymore_Champion",
+      "awakenIcon": "UI_EquipIcon_Claymore_Champion_Awaken"
+    },
+    "PortablePowerSaw": {
+      "icon": "UI_EquipIcon_Claymore_Mechanic",
+      "awakenIcon": "UI_EquipIcon_Claymore_Mechanic_Awaken"
+    },
+    "SkywardPride": {
+      "icon": "UI_EquipIcon_Claymore_Dvalin",
+      "awakenIcon": "UI_EquipIcon_Claymore_Dvalin_Awaken"
+    },
+    "WolfsGravestone": {
+      "icon": "UI_EquipIcon_Claymore_Wolfmound",
+      "awakenIcon": "UI_EquipIcon_Claymore_Wolfmound_Awaken"
+    },
+    "SongOfBrokenPines": {
+      "icon": "UI_EquipIcon_Claymore_Widsith",
+      "awakenIcon": "UI_EquipIcon_Claymore_Widsith_Awaken"
+    },
+    "TheUnforged": {
+      "icon": "UI_EquipIcon_Claymore_Kunwu",
+      "awakenIcon": "UI_EquipIcon_Claymore_Kunwu_Awaken"
+    },
+    "RedhornStonethresher": {
+      "icon": "UI_EquipIcon_Claymore_Itadorimaru",
+      "awakenIcon": "UI_EquipIcon_Claymore_Itadorimaru_Awaken"
+    },
+    "BeaconOfTheReedSea": {
+      "icon": "UI_EquipIcon_Claymore_Deshret",
+      "awakenIcon": "UI_EquipIcon_Claymore_Deshret_Awaken"
+    },
+    "Verdict": {
+      "icon": "UI_EquipIcon_Claymore_GoldenVerdict",
+      "awakenIcon": "UI_EquipIcon_Claymore_GoldenVerdict_Awaken"
+    },
+    "BeginnersProtector": {
+      "icon": "UI_EquipIcon_Pole_Gewalt",
+      "awakenIcon": "UI_EquipIcon_Pole_Gewalt_Awaken"
+    },
+    "IronPoint": {
+      "icon": "UI_EquipIcon_Pole_Rod",
+      "awakenIcon": "UI_EquipIcon_Pole_Rod_Awaken"
+    },
+    "WhiteTassel": {
+      "icon": "UI_EquipIcon_Pole_Ruby",
+      "awakenIcon": "UI_EquipIcon_Pole_Ruby_Awaken"
+    },
+    "Halberd": {
+      "icon": "UI_EquipIcon_Pole_Halberd",
+      "awakenIcon": "UI_EquipIcon_Pole_Halberd_Awaken"
+    },
+    "BlackTassel": {
+      "icon": "UI_EquipIcon_Pole_Noire",
+      "awakenIcon": "UI_EquipIcon_Pole_Noire_Awaken"
+    },
+    "DragonsBane": {
+      "icon": "UI_EquipIcon_Pole_Stardust",
+      "awakenIcon": "UI_EquipIcon_Pole_Stardust_Awaken"
+    },
+    "PrototypeStarglitter": {
+      "icon": "UI_EquipIcon_Pole_Proto",
+      "awakenIcon": "UI_EquipIcon_Pole_Proto_Awaken"
+    },
+    "CrescentPike": {
+      "icon": "UI_EquipIcon_Pole_Exotic",
+      "awakenIcon": "UI_EquipIcon_Pole_Exotic_Awaken"
+    },
+    "BlackcliffPole": {
+      "icon": "UI_EquipIcon_Pole_Blackrock",
+      "awakenIcon": "UI_EquipIcon_Pole_Blackrock_Awaken"
+    },
+    "Deathmatch": {
+      "icon": "UI_EquipIcon_Pole_Gladiator",
+      "awakenIcon": "UI_EquipIcon_Pole_Gladiator_Awaken"
+    },
+    "LithicSpear": {
+      "icon": "UI_EquipIcon_Pole_Lapis",
+      "awakenIcon": "UI_EquipIcon_Pole_Lapis_Awaken"
+    },
+    "FavoniusLance": {
+      "icon": "UI_EquipIcon_Pole_Zephyrus",
+      "awakenIcon": "UI_EquipIcon_Pole_Zephyrus_Awaken"
+    },
+    "RoyalSpear": {
+      "icon": "UI_EquipIcon_Pole_Theocrat",
+      "awakenIcon": "UI_EquipIcon_Pole_Theocrat_Awaken"
+    },
+    "DragonspineSpear": {
+      "icon": "UI_EquipIcon_Pole_Everfrost",
+      "awakenIcon": "UI_EquipIcon_Pole_Everfrost_Awaken"
+    },
+    "KitainCrossSpear": {
+      "icon": "UI_EquipIcon_Pole_Bakufu",
+      "awakenIcon": "UI_EquipIcon_Pole_Bakufu_Awaken"
+    },
+    "TheCatch": {
+      "icon": "UI_EquipIcon_Pole_Mori",
+      "awakenIcon": "UI_EquipIcon_Pole_Mori_Awaken"
+    },
+    "WavebreakersFin": {
+      "icon": "UI_EquipIcon_Pole_Maria",
+      "awakenIcon": "UI_EquipIcon_Pole_Maria_Awaken"
+    },
+    "Moonpiercer": {
+      "icon": "UI_EquipIcon_Pole_Arakalari",
+      "awakenIcon": "UI_EquipIcon_Pole_Arakalari_Awaken"
+    },
+    "MissiveWindspear": {
+      "icon": "UI_EquipIcon_Pole_Windvane",
+      "awakenIcon": "UI_EquipIcon_Pole_Windvane_Awaken"
+    },
+    "BalladOfTheFjords": {
+      "icon": "UI_EquipIcon_Pole_Shanty",
+      "awakenIcon": "UI_EquipIcon_Pole_Shanty_Awaken"
+    },
+    "RightfulReward": {
+      "icon": "UI_EquipIcon_Pole_Vorpal",
+      "awakenIcon": "UI_EquipIcon_Pole_Vorpal_Awaken"
+    },
+    "DialoguesOfTheDesertSages": {
+      "icon": "UI_EquipIcon_Pole_Caduceus",
+      "awakenIcon": "UI_EquipIcon_Pole_Caduceus_Awaken"
+    },
+    "ProspectorsDrill": {
+      "icon": "UI_EquipIcon_Pole_Mechanic",
+      "awakenIcon": "UI_EquipIcon_Pole_Mechanic_Awaken"
+    },
+    "StaffOfHoma": {
+      "icon": "UI_EquipIcon_Pole_Homa",
+      "awakenIcon": "UI_EquipIcon_Pole_Homa_Awaken"
+    },
+    "SkywardSpine": {
+      "icon": "UI_EquipIcon_Pole_Dvalin",
+      "awakenIcon": "UI_EquipIcon_Pole_Dvalin_Awaken"
+    },
+    "VortexVanquisher": {
+      "icon": "UI_EquipIcon_Pole_Kunwu",
+      "awakenIcon": "UI_EquipIcon_Pole_Kunwu_Awaken"
+    },
+    "PrimordialJadeWingedSpear": {
+      "icon": "UI_EquipIcon_Pole_Morax",
+      "awakenIcon": "UI_EquipIcon_Pole_Morax_Awaken"
+    },
+    "CalamityQueller": {
+      "icon": "UI_EquipIcon_Pole_Santika",
+      "awakenIcon": "UI_EquipIcon_Pole_Santika_Awaken"
+    },
+    "EngulfingLightning": {
+      "icon": "UI_EquipIcon_Pole_Narukami",
+      "awakenIcon": "UI_EquipIcon_Pole_Narukami_Awaken"
+    },
+    "StaffOfTheScarletSands": {
+      "icon": "UI_EquipIcon_Pole_Deshret",
+      "awakenIcon": "UI_EquipIcon_Pole_Deshret_Awaken"
+    },
+    "CrimsonMoonsSemblance": {
+      "icon": "UI_EquipIcon_Pole_BloodMoon",
+      "awakenIcon": "UI_EquipIcon_Pole_BloodMoon_Awaken"
+    },
+    "ApprenticesNotes": {
+      "icon": "UI_EquipIcon_Catalyst_Apprentice",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Apprentice_Awaken"
+    },
+    "PocketGrimoire": {
+      "icon": "UI_EquipIcon_Catalyst_Pocket",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Pocket_Awaken"
+    },
+    "MagicGuide": {
+      "icon": "UI_EquipIcon_Catalyst_Intro",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Intro_Awaken"
+    },
+    "ThrillingTalesOfDragonSlayers": {
+      "icon": "UI_EquipIcon_Catalyst_Pulpfic",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Pulpfic_Awaken"
+    },
+    "OtherworldlyStory": {
+      "icon": "UI_EquipIcon_Catalyst_Lightnov",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Lightnov_Awaken"
+    },
+    "EmeraldOrb": {
+      "icon": "UI_EquipIcon_Catalyst_Jade",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Jade_Awaken"
+    },
+    "TwinNephrite": {
+      "icon": "UI_EquipIcon_Catalyst_Phoney",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Phoney_Awaken"
+    },
+    "FavoniusCodex": {
+      "icon": "UI_EquipIcon_Catalyst_Zephyrus",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Zephyrus_Awaken"
+    },
+    "TheWidsith": {
+      "icon": "UI_EquipIcon_Catalyst_Troupe",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Troupe_Awaken"
+    },
+    "SacrificialFragments": {
+      "icon": "UI_EquipIcon_Catalyst_Fossil",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Fossil_Awaken"
+    },
+    "RoyalGrimoire": {
+      "icon": "UI_EquipIcon_Catalyst_Theocrat",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Theocrat_Awaken"
+    },
+    "SolarPearl": {
+      "icon": "UI_EquipIcon_Catalyst_Resurrection",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Resurrection_Awaken"
+    },
+    "PrototypeAmber": {
+      "icon": "UI_EquipIcon_Catalyst_Proto",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Proto_Awaken"
+    },
+    "MappaMare": {
+      "icon": "UI_EquipIcon_Catalyst_Exotic",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Exotic_Awaken"
+    },
+    "BlackcliffAgate": {
+      "icon": "UI_EquipIcon_Catalyst_Blackrock",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Blackrock_Awaken"
+    },
+    "EyeOfPerception": {
+      "icon": "UI_EquipIcon_Catalyst_Truelens",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Truelens_Awaken"
+    },
+    "WineAndSong": {
+      "icon": "UI_EquipIcon_Catalyst_Outlaw",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Outlaw_Awaken"
+    },
+    "Frostbearer": {
+      "icon": "UI_EquipIcon_Catalyst_Everfrost",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Everfrost_Awaken"
+    },
+    "DodocoTales": {
+      "icon": "UI_EquipIcon_Catalyst_Ludiharpastum",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Ludiharpastum_Awaken"
+    },
+    "HakushinRing": {
+      "icon": "UI_EquipIcon_Catalyst_Bakufu",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Bakufu_Awaken"
+    },
+    "OathswornEye": {
+      "icon": "UI_EquipIcon_Catalyst_Jyanome",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Jyanome_Awaken"
+    },
+    "WanderingEvenstar": {
+      "icon": "UI_EquipIcon_Catalyst_Pleroma",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Pleroma_Awaken"
+    },
+    "FruitOfFulfillment": {
+      "icon": "UI_EquipIcon_Catalyst_Arakalari",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Arakalari_Awaken"
+    },
+    "SacrificialJade": {
+      "icon": "UI_EquipIcon_Catalyst_Yue",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Yue_Awaken"
+    },
+    "FlowingPurity": {
+      "icon": "UI_EquipIcon_Catalyst_Vorpal",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Vorpal_Awaken"
+    },
+    "BalladOfTheBoundlessBlue": {
+      "icon": "UI_EquipIcon_Catalyst_DandelionPoem",
+      "awakenIcon": "UI_EquipIcon_Catalyst_DandelionPoem_Awaken"
+    },
+    "SkywardAtlas": {
+      "icon": "UI_EquipIcon_Catalyst_Dvalin",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Dvalin_Awaken"
+    },
+    "LostPrayerToTheSacredWinds": {
+      "icon": "UI_EquipIcon_Catalyst_Fourwinds",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Fourwinds_Awaken"
+    },
+    "MemoryOfDust": {
+      "icon": "UI_EquipIcon_Catalyst_Kunwu",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Kunwu_Awaken"
+    },
+    "JadefallsSplendor": {
+      "icon": "UI_EquipIcon_Catalyst_Morax",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Morax_Awaken"
+    },
+    "EverlastingMoonglow": {
+      "icon": "UI_EquipIcon_Catalyst_Kaleido",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Kaleido_Awaken"
+    },
+    "KagurasVerity": {
+      "icon": "UI_EquipIcon_Catalyst_Narukami",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Narukami_Awaken"
+    },
+    "AThousandFloatingDreams": {
+      "icon": "UI_EquipIcon_Catalyst_Ayus",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Ayus_Awaken"
+    },
+    "TulaytullahsRemembrance": {
+      "icon": "UI_EquipIcon_Catalyst_Alaya",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Alaya_Awaken"
+    },
+    "CashflowSupervision": {
+      "icon": "UI_EquipIcon_Catalyst_Wheatley",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Wheatley_Awaken"
+    },
+    "TomeOfTheEternalFlow": {
+      "icon": "UI_EquipIcon_Catalyst_Iudex",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Iudex_Awaken"
+    },
+    "CranesEchoingCall": {
+      "icon": "UI_EquipIcon_Catalyst_MountainGale",
+      "awakenIcon": "UI_EquipIcon_Catalyst_MountainGale_Awaken"
+    },
+    "HuntersBow": {
+      "icon": "UI_EquipIcon_Bow_Hunters",
+      "awakenIcon": "UI_EquipIcon_Bow_Hunters_Awaken"
+    },
+    "SeasonedHuntersBow": {
+      "icon": "UI_EquipIcon_Bow_Old",
+      "awakenIcon": "UI_EquipIcon_Bow_Old_Awaken"
+    },
+    "RavenBow": {
+      "icon": "UI_EquipIcon_Bow_Crowfeather",
+      "awakenIcon": "UI_EquipIcon_Bow_Crowfeather_Awaken"
+    },
+    "SharpshootersOath": {
+      "icon": "UI_EquipIcon_Bow_Arjuna",
+      "awakenIcon": "UI_EquipIcon_Bow_Arjuna_Awaken"
+    },
+    "RecurveBow": {
+      "icon": "UI_EquipIcon_Bow_Curve",
+      "awakenIcon": "UI_EquipIcon_Bow_Curve_Awaken"
+    },
+    "Slingshot": {
+      "icon": "UI_EquipIcon_Bow_Sling",
+      "awakenIcon": "UI_EquipIcon_Bow_Sling_Awaken"
+    },
+    "Messenger": {
+      "icon": "UI_EquipIcon_Bow_Msg",
+      "awakenIcon": "UI_EquipIcon_Bow_Msg_Awaken"
+    },
+    "FavoniusWarbow": {
+      "icon": "UI_EquipIcon_Bow_Zephyrus",
+      "awakenIcon": "UI_EquipIcon_Bow_Zephyrus_Awaken"
+    },
+    "TheStringless": {
+      "icon": "UI_EquipIcon_Bow_Troupe",
+      "awakenIcon": "UI_EquipIcon_Bow_Troupe_Awaken"
+    },
+    "SacrificialBow": {
+      "icon": "UI_EquipIcon_Bow_Fossil",
+      "awakenIcon": "UI_EquipIcon_Bow_Fossil_Awaken"
+    },
+    "RoyalBow": {
+      "icon": "UI_EquipIcon_Bow_Theocrat",
+      "awakenIcon": "UI_EquipIcon_Bow_Theocrat_Awaken"
+    },
+    "Rust": {
+      "icon": "UI_EquipIcon_Bow_Recluse",
+      "awakenIcon": "UI_EquipIcon_Bow_Recluse_Awaken"
+    },
+    "PrototypeCrescent": {
+      "icon": "UI_EquipIcon_Bow_Proto",
+      "awakenIcon": "UI_EquipIcon_Bow_Proto_Awaken"
+    },
+    "CompoundBow": {
+      "icon": "UI_EquipIcon_Bow_Exotic",
+      "awakenIcon": "UI_EquipIcon_Bow_Exotic_Awaken"
+    },
+    "BlackcliffWarbow": {
+      "icon": "UI_EquipIcon_Bow_Blackrock",
+      "awakenIcon": "UI_EquipIcon_Bow_Blackrock_Awaken"
+    },
+    "TheViridescentHunt": {
+      "icon": "UI_EquipIcon_Bow_Viridescent",
+      "awakenIcon": "UI_EquipIcon_Bow_Viridescent_Awaken"
+    },
+    "AlleyHunter": {
+      "icon": "UI_EquipIcon_Bow_Outlaw",
+      "awakenIcon": "UI_EquipIcon_Bow_Outlaw_Awaken"
+    },
+    "FadingTwilight": {
+      "icon": "UI_EquipIcon_Bow_Fallensun",
+      "awakenIcon": "UI_EquipIcon_Bow_Fallensun_Awaken"
+    },
+    "MitternachtsWaltz": {
+      "icon": "UI_EquipIcon_Bow_Nachtblind",
+      "awakenIcon": "UI_EquipIcon_Bow_Nachtblind_Awaken"
+    },
+    "WindblumeOde": {
+      "icon": "UI_EquipIcon_Bow_Fleurfair",
+      "awakenIcon": "UI_EquipIcon_Bow_Fleurfair_Awaken"
+    },
+    "Hamayumi": {
+      "icon": "UI_EquipIcon_Bow_Bakufu",
+      "awakenIcon": "UI_EquipIcon_Bow_Bakufu_Awaken"
+    },
+    "Predator": {
+      "icon": "UI_EquipIcon_Bow_Predator",
+      "awakenIcon": "UI_EquipIcon_Bow_Predator_Awaken"
+    },
+    "MouunsMoon": {
+      "icon": "UI_EquipIcon_Bow_Maria",
+      "awakenIcon": "UI_EquipIcon_Bow_Maria_Awaken"
+    },
+    "KingsSquire": {
+      "icon": "UI_EquipIcon_Bow_Arakalari",
+      "awakenIcon": "UI_EquipIcon_Bow_Arakalari_Awaken"
+    },
+    "EndOfTheLine": {
+      "icon": "UI_EquipIcon_Bow_Fin",
+      "awakenIcon": "UI_EquipIcon_Bow_Fin_Awaken"
+    },
+    "IbisPiercer": {
+      "icon": "UI_EquipIcon_Bow_Ibis",
+      "awakenIcon": "UI_EquipIcon_Bow_Ibis_Awaken"
+    },
+    "ScionOfTheBlazingSun": {
+      "icon": "UI_EquipIcon_Bow_Gurabad",
+      "awakenIcon": "UI_EquipIcon_Bow_Gurabad_Awaken"
+    },
+    "SongOfStillness": {
+      "icon": "UI_EquipIcon_Bow_Vorpal",
+      "awakenIcon": "UI_EquipIcon_Bow_Vorpal_Awaken"
+    },
+    "Cloudforged": {
+      "icon": "UI_EquipIcon_Bow_Ultimatum",
+      "awakenIcon": "UI_EquipIcon_Bow_Ultimatum_Awaken"
+    },
+    "RangeGauge": {
+      "icon": "UI_EquipIcon_Bow_Mechanic",
+      "awakenIcon": "UI_EquipIcon_Bow_Mechanic_Awaken"
+    },
+    "SkywardHarp": {
+      "icon": "UI_EquipIcon_Bow_Dvalin",
+      "awakenIcon": "UI_EquipIcon_Bow_Dvalin_Awaken"
+    },
+    "AmosBow": {
+      "icon": "UI_EquipIcon_Bow_Amos",
+      "awakenIcon": "UI_EquipIcon_Bow_Amos_Awaken"
+    },
+    "ElegyForTheEnd": {
+      "icon": "UI_EquipIcon_Bow_Widsith",
+      "awakenIcon": "UI_EquipIcon_Bow_Widsith_Awaken"
+    },
+    "PolarStar": {
+      "icon": "UI_EquipIcon_Bow_Worldbane",
+      "awakenIcon": "UI_EquipIcon_Bow_Worldbane_Awaken"
+    },
+    "AquaSimulacra": {
+      "icon": "UI_EquipIcon_Bow_Kirin",
+      "awakenIcon": "UI_EquipIcon_Bow_Kirin_Awaken"
+    },
+    "ThunderingPulse": {
+      "icon": "UI_EquipIcon_Bow_Narukami",
+      "awakenIcon": "UI_EquipIcon_Bow_Narukami_Awaken"
+    },
+    "HuntersPath": {
+      "icon": "UI_EquipIcon_Bow_Ayus",
+      "awakenIcon": "UI_EquipIcon_Bow_Ayus_Awaken"
+    },
+    "TheFirstGreatMagic": {
+      "icon": "UI_EquipIcon_Bow_Pledge",
+      "awakenIcon": "UI_EquipIcon_Bow_Pledge_Awaken"
+    },
+    "SilvershowerHeartstrings": {
+      "icon": "UI_EquipIcon_Bow_Arcdange",
+      "awakenIcon": "UI_EquipIcon_Bow_Arcdange_Awaken"
+    },
+    "QuantumCatalyst": {}
+  },
+  "artifacts": {
+    "ResolutionOfSojourner": {
+      "flower": "UI_RelicIcon_10001_4",
+      "plume": "UI_RelicIcon_10001_2",
+      "sands": "UI_RelicIcon_10001_5",
+      "goblet": "UI_RelicIcon_10001_1",
+      "circlet": "UI_RelicIcon_10001_3"
+    },
+    "BraveHeart": {
+      "flower": "UI_RelicIcon_10002_4",
+      "plume": "UI_RelicIcon_10002_2",
+      "sands": "UI_RelicIcon_10002_5",
+      "goblet": "UI_RelicIcon_10002_1",
+      "circlet": "UI_RelicIcon_10002_3"
+    },
+    "DefendersWill": {
+      "flower": "UI_RelicIcon_10003_4",
+      "plume": "UI_RelicIcon_10003_2",
+      "sands": "UI_RelicIcon_10003_5",
+      "goblet": "UI_RelicIcon_10003_1",
+      "circlet": "UI_RelicIcon_10003_3"
+    },
+    "TinyMiracle": {
+      "flower": "UI_RelicIcon_10004_4",
+      "plume": "UI_RelicIcon_10004_2",
+      "sands": "UI_RelicIcon_10004_5",
+      "goblet": "UI_RelicIcon_10004_1",
+      "circlet": "UI_RelicIcon_10004_3"
+    },
+    "Berserker": {
+      "flower": "UI_RelicIcon_10005_4",
+      "plume": "UI_RelicIcon_10005_2",
+      "sands": "UI_RelicIcon_10005_5",
+      "goblet": "UI_RelicIcon_10005_1",
+      "circlet": "UI_RelicIcon_10005_3"
+    },
+    "MartialArtist": {
+      "flower": "UI_RelicIcon_10006_4",
+      "plume": "UI_RelicIcon_10006_2",
+      "sands": "UI_RelicIcon_10006_5",
+      "goblet": "UI_RelicIcon_10006_1",
+      "circlet": "UI_RelicIcon_10006_3"
+    },
+    "Instructor": {
+      "flower": "UI_RelicIcon_10007_4",
+      "plume": "UI_RelicIcon_10007_2",
+      "sands": "UI_RelicIcon_10007_5",
+      "goblet": "UI_RelicIcon_10007_1",
+      "circlet": "UI_RelicIcon_10007_3"
+    },
+    "Gambler": {
+      "flower": "UI_RelicIcon_10008_4",
+      "plume": "UI_RelicIcon_10008_2",
+      "sands": "UI_RelicIcon_10008_5",
+      "goblet": "UI_RelicIcon_10008_1",
+      "circlet": "UI_RelicIcon_10008_3"
+    },
+    "TheExile": {
+      "flower": "UI_RelicIcon_10009_4",
+      "plume": "UI_RelicIcon_10009_2",
+      "sands": "UI_RelicIcon_10009_5",
+      "goblet": "UI_RelicIcon_10009_1",
+      "circlet": "UI_RelicIcon_10009_3"
+    },
+    "Adventurer": {
+      "flower": "UI_RelicIcon_10010_4",
+      "plume": "UI_RelicIcon_10010_2",
+      "sands": "UI_RelicIcon_10010_5",
+      "goblet": "UI_RelicIcon_10010_1",
+      "circlet": "UI_RelicIcon_10010_3"
+    },
+    "LuckyDog": {
+      "flower": "UI_RelicIcon_10011_4",
+      "plume": "UI_RelicIcon_10011_2",
+      "sands": "UI_RelicIcon_10011_5",
+      "goblet": "UI_RelicIcon_10011_1",
+      "circlet": "UI_RelicIcon_10011_3"
+    },
+    "Scholar": {
+      "flower": "UI_RelicIcon_10012_4",
+      "plume": "UI_RelicIcon_10012_2",
+      "sands": "UI_RelicIcon_10012_5",
+      "goblet": "UI_RelicIcon_10012_1",
+      "circlet": "UI_RelicIcon_10012_3"
+    },
+    "TravelingDoctor": {
+      "flower": "UI_RelicIcon_10013_4",
+      "plume": "UI_RelicIcon_10013_2",
+      "sands": "UI_RelicIcon_10013_5",
+      "goblet": "UI_RelicIcon_10013_1",
+      "circlet": "UI_RelicIcon_10013_3"
+    },
+    "BlizzardStrayer": {
+      "flower": "UI_RelicIcon_14001_4",
+      "plume": "UI_RelicIcon_14001_2",
+      "sands": "UI_RelicIcon_14001_5",
+      "goblet": "UI_RelicIcon_14001_1",
+      "circlet": "UI_RelicIcon_14001_3"
+    },
+    "Thundersoother": {
+      "flower": "UI_RelicIcon_14002_4",
+      "plume": "UI_RelicIcon_14002_2",
+      "sands": "UI_RelicIcon_14002_5",
+      "goblet": "UI_RelicIcon_14002_1",
+      "circlet": "UI_RelicIcon_14002_3"
+    },
+    "Lavawalker": {
+      "flower": "UI_RelicIcon_14003_4",
+      "plume": "UI_RelicIcon_14003_2",
+      "sands": "UI_RelicIcon_14003_5",
+      "goblet": "UI_RelicIcon_14003_1",
+      "circlet": "UI_RelicIcon_14003_3"
+    },
+    "MaidenBeloved": {
+      "flower": "UI_RelicIcon_14004_4",
+      "plume": "UI_RelicIcon_14004_2",
+      "sands": "UI_RelicIcon_14004_5",
+      "goblet": "UI_RelicIcon_14004_1",
+      "circlet": "UI_RelicIcon_14004_3"
+    },
+    "GladiatorsFinale": {
+      "flower": "UI_RelicIcon_15001_4",
+      "plume": "UI_RelicIcon_15001_2",
+      "sands": "UI_RelicIcon_15001_5",
+      "goblet": "UI_RelicIcon_15001_1",
+      "circlet": "UI_RelicIcon_15001_3"
+    },
+    "ViridescentVenerer": {
+      "flower": "UI_RelicIcon_15002_4",
+      "plume": "UI_RelicIcon_15002_2",
+      "sands": "UI_RelicIcon_15002_5",
+      "goblet": "UI_RelicIcon_15002_1",
+      "circlet": "UI_RelicIcon_15002_3"
+    },
+    "WanderersTroupe": {
+      "flower": "UI_RelicIcon_15003_4",
+      "plume": "UI_RelicIcon_15003_2",
+      "sands": "UI_RelicIcon_15003_5",
+      "goblet": "UI_RelicIcon_15003_1",
+      "circlet": "UI_RelicIcon_15003_3"
+    },
+    "ThunderingFury": {
+      "flower": "UI_RelicIcon_15005_4",
+      "plume": "UI_RelicIcon_15005_2",
+      "sands": "UI_RelicIcon_15005_5",
+      "goblet": "UI_RelicIcon_15005_1",
+      "circlet": "UI_RelicIcon_15005_3"
+    },
+    "CrimsonWitchOfFlames": {
+      "flower": "UI_RelicIcon_15006_4",
+      "plume": "UI_RelicIcon_15006_2",
+      "sands": "UI_RelicIcon_15006_5",
+      "goblet": "UI_RelicIcon_15006_1",
+      "circlet": "UI_RelicIcon_15006_3"
+    },
+    "NoblesseOblige": {
+      "flower": "UI_RelicIcon_15007_4",
+      "plume": "UI_RelicIcon_15007_2",
+      "sands": "UI_RelicIcon_15007_5",
+      "goblet": "UI_RelicIcon_15007_1",
+      "circlet": "UI_RelicIcon_15007_3"
+    },
+    "BloodstainedChivalry": {
+      "flower": "UI_RelicIcon_15008_4",
+      "plume": "UI_RelicIcon_15008_2",
+      "sands": "UI_RelicIcon_15008_5",
+      "goblet": "UI_RelicIcon_15008_1",
+      "circlet": "UI_RelicIcon_15008_3"
+    },
+    "PrayersForIllumination": {
+      "circlet": "UI_RelicIcon_15009_3"
+    },
+    "PrayersForDestiny": {
+      "circlet": "UI_RelicIcon_15010_3"
+    },
+    "PrayersForWisdom": {
+      "circlet": "UI_RelicIcon_15011_3"
+    },
+    "PrayersToSpringtime": {
+      "circlet": "UI_RelicIcon_15013_3"
+    },
+    "ArchaicPetra": {
+      "flower": "UI_RelicIcon_15014_4",
+      "plume": "UI_RelicIcon_15014_2",
+      "sands": "UI_RelicIcon_15014_5",
+      "goblet": "UI_RelicIcon_15014_1",
+      "circlet": "UI_RelicIcon_15014_3"
+    },
+    "RetracingBolide": {
+      "flower": "UI_RelicIcon_15015_4",
+      "plume": "UI_RelicIcon_15015_2",
+      "sands": "UI_RelicIcon_15015_5",
+      "goblet": "UI_RelicIcon_15015_1",
+      "circlet": "UI_RelicIcon_15015_3"
+    },
+    "HeartOfDepth": {
+      "flower": "UI_RelicIcon_15016_4",
+      "plume": "UI_RelicIcon_15016_2",
+      "sands": "UI_RelicIcon_15016_5",
+      "goblet": "UI_RelicIcon_15016_1",
+      "circlet": "UI_RelicIcon_15016_3"
+    },
+    "TenacityOfTheMillelith": {
+      "flower": "UI_RelicIcon_15017_4",
+      "plume": "UI_RelicIcon_15017_2",
+      "sands": "UI_RelicIcon_15017_5",
+      "goblet": "UI_RelicIcon_15017_1",
+      "circlet": "UI_RelicIcon_15017_3"
+    },
+    "PaleFlame": {
+      "flower": "UI_RelicIcon_15018_4",
+      "plume": "UI_RelicIcon_15018_2",
+      "sands": "UI_RelicIcon_15018_5",
+      "goblet": "UI_RelicIcon_15018_1",
+      "circlet": "UI_RelicIcon_15018_3"
+    },
+    "ShimenawasReminiscence": {
+      "flower": "UI_RelicIcon_15019_4",
+      "plume": "UI_RelicIcon_15019_2",
+      "sands": "UI_RelicIcon_15019_5",
+      "goblet": "UI_RelicIcon_15019_1",
+      "circlet": "UI_RelicIcon_15019_3"
+    },
+    "EmblemOfSeveredFate": {
+      "flower": "UI_RelicIcon_15020_4",
+      "plume": "UI_RelicIcon_15020_2",
+      "sands": "UI_RelicIcon_15020_5",
+      "goblet": "UI_RelicIcon_15020_1",
+      "circlet": "UI_RelicIcon_15020_3"
+    },
+    "HuskOfOpulentDreams": {
+      "flower": "UI_RelicIcon_15021_4",
+      "plume": "UI_RelicIcon_15021_2",
+      "sands": "UI_RelicIcon_15021_5",
+      "goblet": "UI_RelicIcon_15021_1",
+      "circlet": "UI_RelicIcon_15021_3"
+    },
+    "OceanHuedClam": {
+      "flower": "UI_RelicIcon_15022_4",
+      "plume": "UI_RelicIcon_15022_2",
+      "sands": "UI_RelicIcon_15022_5",
+      "goblet": "UI_RelicIcon_15022_1",
+      "circlet": "UI_RelicIcon_15022_3"
+    },
+    "VermillionHereafter": {
+      "flower": "UI_RelicIcon_15023_4",
+      "plume": "UI_RelicIcon_15023_2",
+      "sands": "UI_RelicIcon_15023_5",
+      "goblet": "UI_RelicIcon_15023_1",
+      "circlet": "UI_RelicIcon_15023_3"
+    },
+    "EchoesOfAnOffering": {
+      "flower": "UI_RelicIcon_15024_4",
+      "plume": "UI_RelicIcon_15024_2",
+      "sands": "UI_RelicIcon_15024_5",
+      "goblet": "UI_RelicIcon_15024_1",
+      "circlet": "UI_RelicIcon_15024_3"
+    },
+    "DeepwoodMemories": {
+      "flower": "UI_RelicIcon_15025_4",
+      "plume": "UI_RelicIcon_15025_2",
+      "sands": "UI_RelicIcon_15025_5",
+      "goblet": "UI_RelicIcon_15025_1",
+      "circlet": "UI_RelicIcon_15025_3"
+    },
+    "GildedDreams": {
+      "flower": "UI_RelicIcon_15026_4",
+      "plume": "UI_RelicIcon_15026_2",
+      "sands": "UI_RelicIcon_15026_5",
+      "goblet": "UI_RelicIcon_15026_1",
+      "circlet": "UI_RelicIcon_15026_3"
+    },
+    "DesertPavilionChronicle": {
+      "flower": "UI_RelicIcon_15027_4",
+      "plume": "UI_RelicIcon_15027_2",
+      "sands": "UI_RelicIcon_15027_5",
+      "goblet": "UI_RelicIcon_15027_1",
+      "circlet": "UI_RelicIcon_15027_3"
+    },
+    "FlowerOfParadiseLost": {
+      "flower": "UI_RelicIcon_15028_4",
+      "plume": "UI_RelicIcon_15028_2",
+      "sands": "UI_RelicIcon_15028_5",
+      "goblet": "UI_RelicIcon_15028_1",
+      "circlet": "UI_RelicIcon_15028_3"
+    },
+    "NymphsDream": {
+      "flower": "UI_RelicIcon_15029_4",
+      "plume": "UI_RelicIcon_15029_2",
+      "sands": "UI_RelicIcon_15029_5",
+      "goblet": "UI_RelicIcon_15029_1",
+      "circlet": "UI_RelicIcon_15029_3"
+    },
+    "VourukashasGlow": {
+      "flower": "UI_RelicIcon_15030_4",
+      "plume": "UI_RelicIcon_15030_2",
+      "sands": "UI_RelicIcon_15030_5",
+      "goblet": "UI_RelicIcon_15030_1",
+      "circlet": "UI_RelicIcon_15030_3"
+    },
+    "MarechausseeHunter": {
+      "flower": "UI_RelicIcon_15031_4",
+      "plume": "UI_RelicIcon_15031_2",
+      "sands": "UI_RelicIcon_15031_5",
+      "goblet": "UI_RelicIcon_15031_1",
+      "circlet": "UI_RelicIcon_15031_3"
+    },
+    "GoldenTroupe": {
+      "flower": "UI_RelicIcon_15032_4",
+      "plume": "UI_RelicIcon_15032_2",
+      "sands": "UI_RelicIcon_15032_5",
+      "goblet": "UI_RelicIcon_15032_1",
+      "circlet": "UI_RelicIcon_15032_3"
+    },
+    "SongOfDaysPast": {
+      "flower": "UI_RelicIcon_15033_4",
+      "plume": "UI_RelicIcon_15033_2",
+      "sands": "UI_RelicIcon_15033_5",
+      "goblet": "UI_RelicIcon_15033_1",
+      "circlet": "UI_RelicIcon_15033_3"
+    },
+    "NighttimeWhispersInTheEchoingWoods": {
+      "flower": "UI_RelicIcon_15034_4",
+      "plume": "UI_RelicIcon_15034_2",
+      "sands": "UI_RelicIcon_15034_5",
+      "goblet": "UI_RelicIcon_15034_1",
+      "circlet": "UI_RelicIcon_15034_3"
+    },
+    "FragmentOfHarmonicWhimsy": {
+      "flower": "UI_RelicIcon_15035_4",
+      "plume": "UI_RelicIcon_15035_2",
+      "sands": "UI_RelicIcon_15035_5",
+      "goblet": "UI_RelicIcon_15035_1",
+      "circlet": "UI_RelicIcon_15035_3"
+    },
+    "UnfinishedReverie": {
+      "flower": "UI_RelicIcon_15036_4",
+      "plume": "UI_RelicIcon_15036_2",
+      "sands": "UI_RelicIcon_15036_5",
+      "goblet": "UI_RelicIcon_15036_1",
+      "circlet": "UI_RelicIcon_15036_3"
+    }
+  },
+  "chars": {
+    "KamisatoAyaka": {
+      "icon": "UI_AvatarIcon_Ayaka",
+      "iconSide": "UI_AvatarIcon_Side_Ayaka",
+      "banner": "UI_NameCardPic_Ayaka_P",
+      "bar": "UI_NameCardPic_Ayaka_Alpha",
+      "skill": "Skill_S_Ayaka_01",
+      "burst": "Skill_E_Ayaka_HD",
+      "sprint": "Skill_S_Ayaka_02",
+      "passive1": "UI_Talent_S_Ayaka_05",
+      "passive2": "UI_Talent_S_Ayaka_06",
+      "passive3": "UI_Talent_Combine_Weapon_Double",
+      "constellation1": "UI_Talent_S_Ayaka_01",
+      "constellation2": "UI_Talent_S_Ayaka_02",
+      "constellation3": "UI_Talent_U_Ayaka_02",
+      "constellation4": "UI_Talent_S_Ayaka_03",
+      "constellation5": "UI_Talent_U_Ayaka_01",
+      "constellation6": "UI_Talent_S_Ayaka_04"
+    },
+    "Jean": {
+      "icon": "UI_AvatarIcon_Qin",
+      "iconSide": "UI_AvatarIcon_Side_Qin",
+      "banner": "UI_NameCardPic_Qin_P",
+      "bar": "UI_NameCardPic_Qin_Alpha",
+      "skill": "Skill_S_Qin_02",
+      "burst": "Skill_E_Qin_01_HD",
+      "passive1": "UI_Talent_S_Qin_05",
+      "passive2": "UI_Talent_S_Qin_06",
+      "passive3": "UI_Talent_Cook_Heal",
+      "constellation1": "UI_Talent_S_Qin_01",
+      "constellation2": "UI_Talent_S_Qin_02",
+      "constellation3": "UI_Talent_U_Qin_02",
+      "constellation4": "UI_Talent_S_Qin_03",
+      "constellation5": "UI_Talent_U_Qin_01",
+      "constellation6": "UI_Talent_S_Qin_04"
+    },
+    "TravelerM": {
+      "icon": "UI_AvatarIcon_PlayerBoy",
+      "iconSide": "UI_AvatarIcon_Side_PlayerBoy"
+    },
+    "Lisa": {
+      "icon": "UI_AvatarIcon_Lisa",
+      "iconSide": "UI_AvatarIcon_Side_Lisa",
+      "banner": "UI_NameCardPic_Lisa_P",
+      "bar": "UI_NameCardPic_Lisa_Alpha",
+      "skill": "Skill_S_Lisa_01",
+      "burst": "Skill_E_Lisa_01_HD",
+      "passive1": "UI_Talent_S_Lisa_05",
+      "passive2": "UI_Talent_S_Lisa_06",
+      "passive3": "UI_Talent_Combine_Potion",
+      "constellation1": "UI_Talent_S_Lisa_01",
+      "constellation2": "UI_Talent_S_Lisa_02",
+      "constellation3": "UI_Talent_U_Lisa_02",
+      "constellation4": "UI_Talent_S_Lisa_03",
+      "constellation5": "UI_Talent_U_Lisa_01",
+      "constellation6": "UI_Talent_S_Lisa_04"
+    },
+    "TravelerF": {
+      "icon": "UI_AvatarIcon_PlayerGirl",
+      "iconSide": "UI_AvatarIcon_Side_PlayerGirl"
+    },
+    "Barbara": {
+      "icon": "UI_AvatarIcon_Barbara",
+      "iconSide": "UI_AvatarIcon_Side_Barbara",
+      "banner": "UI_NameCardPic_Barbara_P",
+      "bar": "UI_NameCardPic_Barbara_Alpha",
+      "skill": "Skill_S_Barbara_01",
+      "burst": "Skill_E_Barbara_01_HD",
+      "passive1": "UI_Talent_S_Barbara_05",
+      "passive2": "UI_Talent_S_Barbara_06",
+      "passive3": "UI_Talent_Cook_Heal",
+      "constellation1": "UI_Talent_S_Barbara_01",
+      "constellation2": "UI_Talent_S_Barbara_02",
+      "constellation3": "UI_Talent_U_Barbara_02",
+      "constellation4": "UI_Talent_S_Barbara_03",
+      "constellation5": "UI_Talent_U_Barbara_01",
+      "constellation6": "UI_Talent_S_Barbara_04"
+    },
+    "Kaeya": {
+      "icon": "UI_AvatarIcon_Kaeya",
+      "iconSide": "UI_AvatarIcon_Side_Kaeya",
+      "banner": "UI_NameCardPic_Kaeya_P",
+      "bar": "UI_NameCardPic_Kaeya_Alpha",
+      "skill": "Skill_S_Kaeya_01",
+      "burst": "Skill_E_Kaeya_01_HD",
+      "passive1": "UI_Talent_S_Kaeya_05",
+      "passive2": "UI_Talent_S_Kaeya_06",
+      "passive3": "UI_Talent_Explosion_Sprint",
+      "constellation1": "UI_Talent_S_Kaeya_01",
+      "constellation2": "UI_Talent_S_Kaeya_02",
+      "constellation3": "UI_Talent_U_Kaeya_01",
+      "constellation4": "UI_Talent_S_Kaeya_03",
+      "constellation5": "UI_Talent_U_Kaeya_02",
+      "constellation6": "UI_Talent_S_Kaeya_04"
+    },
+    "Diluc": {
+      "icon": "UI_AvatarIcon_Diluc",
+      "iconSide": "UI_AvatarIcon_Side_Diluc",
+      "banner": "UI_NameCardPic_Diluc_P",
+      "bar": "UI_NameCardPic_Diluc_Alpha",
+      "skill": "Skill_S_Diluc_01_01",
+      "burst": "Skill_E_Diluc_01_HD",
+      "passive1": "UI_Talent_S_Diluc_05",
+      "passive2": "UI_Talent_S_Diluc_06",
+      "passive3": "UI_Talent_Forge_Claymore",
+      "constellation1": "UI_Talent_S_Diluc_01",
+      "constellation2": "UI_Talent_S_Diluc_02",
+      "constellation3": "UI_Talent_U_Diluc_01",
+      "constellation4": "UI_Talent_S_Diluc_03",
+      "constellation5": "UI_Talent_U_Diluc_02",
+      "constellation6": "UI_Talent_S_Diluc_04"
+    },
+    "Razor": {
+      "icon": "UI_AvatarIcon_Razor",
+      "iconSide": "UI_AvatarIcon_Side_Razor",
+      "banner": "UI_NameCardPic_Razor_P",
+      "bar": "UI_NameCardPic_Razor_Alpha",
+      "skill": "Skill_S_Razor_01",
+      "burst": "Skill_E_Razor_01_HD",
+      "passive1": "UI_Talent_S_Razor_05",
+      "passive2": "UI_Talent_S_Razor_06",
+      "passive3": "UI_Talent_Explosion_Sprint",
+      "constellation1": "UI_Talent_S_Razor_01",
+      "constellation2": "UI_Talent_S_Razor_02",
+      "constellation3": "UI_Talent_U_Razor_02",
+      "constellation4": "UI_Talent_S_Razor_03",
+      "constellation5": "UI_Talent_U_Razor_01",
+      "constellation6": "UI_Talent_S_Razor_04"
+    },
+    "Amber": {
+      "icon": "UI_AvatarIcon_Ambor",
+      "iconSide": "UI_AvatarIcon_Side_Ambor",
+      "banner": "UI_NameCardPic_Ambor_P",
+      "bar": "UI_NameCardPic_Ambor_Alpha",
+      "skill": "Skill_S_Ambor_01",
+      "burst": "Skill_E_Ambor_HD",
+      "passive1": "UI_Talent_S_Ambor_05",
+      "passive2": "UI_Talent_S_Ambor_06",
+      "passive3": "UI_Talent_Explosion_Glide",
+      "constellation1": "UI_Talent_S_Ambor_01",
+      "constellation2": "UI_Talent_S_Ambor_02",
+      "constellation3": "UI_Talent_U_Ambor_02",
+      "constellation4": "UI_Talent_S_Ambor_03",
+      "constellation5": "UI_Talent_U_Ambor_01",
+      "constellation6": "UI_Talent_S_Ambor_04"
+    },
+    "Venti": {
+      "icon": "UI_AvatarIcon_Venti",
+      "iconSide": "UI_AvatarIcon_Side_Venti",
+      "banner": "UI_NameCardPic_Venti_P",
+      "bar": "UI_NameCardPic_Venti_Alpha",
+      "skill": "Skill_S_Venti_01",
+      "burst": "Skill_E_Venti_01_HD",
+      "passive1": "UI_Talent_S_Venti_05",
+      "passive2": "UI_Talent_S_Venti_06",
+      "passive3": "UI_Talent_Explosion_Glide",
+      "constellation1": "UI_Talent_S_Venti_01",
+      "constellation2": "UI_Talent_S_Venti_02",
+      "constellation3": "UI_Talent_U_Venti_02",
+      "constellation4": "UI_Talent_S_Venti_03",
+      "constellation5": "UI_Talent_U_Venti_01",
+      "constellation6": "UI_Talent_S_Venti_04"
+    },
+    "Xiangling": {
+      "icon": "UI_AvatarIcon_Xiangling",
+      "iconSide": "UI_AvatarIcon_Side_Xiangling",
+      "banner": "UI_NameCardPic_Xiangling_P",
+      "bar": "UI_NameCardPic_Xiangling_Alpha",
+      "skill": "Skill_S_Xiangling_01",
+      "burst": "Skill_E_Xiangling_01_HD",
+      "passive1": "UI_Talent_S_Xiangling_05",
+      "passive2": "UI_Talent_S_Xiangling_06",
+      "passive3": "UI_Talent_Cook_Attack",
+      "constellation1": "UI_Talent_S_Xiangling_01",
+      "constellation2": "UI_Talent_S_Xiangling_02",
+      "constellation3": "UI_Talent_U_Xiangling_02",
+      "constellation4": "UI_Talent_S_Xiangling_03",
+      "constellation5": "UI_Talent_U_Xiangling_01",
+      "constellation6": "UI_Talent_S_Xiangling_04"
+    },
+    "Beidou": {
+      "icon": "UI_AvatarIcon_Beidou",
+      "iconSide": "UI_AvatarIcon_Side_Beidou",
+      "banner": "UI_NameCardPic_Beidou_P",
+      "bar": "UI_NameCardPic_Beidou_Alpha",
+      "skill": "Skill_S_Beidou_01",
+      "burst": "Skill_E_Beidou_01_HD",
+      "passive1": "UI_Talent_S_Beidou_05",
+      "passive2": "UI_Talent_S_Beidou_06",
+      "passive3": "UI_Talent_Explosion_Swim",
+      "constellation1": "UI_Talent_S_Beidou_02",
+      "constellation2": "UI_Talent_S_Beidou_01",
+      "constellation3": "UI_Talent_U_Beidou_01",
+      "constellation4": "UI_Talent_S_Beidou_03",
+      "constellation5": "UI_Talent_U_Beidou_02",
+      "constellation6": "UI_Talent_S_Beidou_04"
+    },
+    "Xingqiu": {
+      "icon": "UI_AvatarIcon_Xingqiu",
+      "iconSide": "UI_AvatarIcon_Side_Xingqiu",
+      "banner": "UI_NameCardPic_Xingqiu_P",
+      "bar": "UI_NameCardPic_Xingqiu_Alpha",
+      "skill": "Skill_S_Xingqiu_01",
+      "burst": "Skill_E_Xingqiu_01_HD",
+      "passive1": "UI_Talent_S_Xingqiu_05",
+      "passive2": "UI_Talent_S_Xingqiu_06",
+      "passive3": "UI_Talent_Combine_Talent",
+      "constellation1": "UI_Talent_S_Xingqiu_01",
+      "constellation2": "UI_Talent_S_Xingqiu_02",
+      "constellation3": "UI_Talent_U_Xingqiu_01",
+      "constellation4": "UI_Talent_S_Xingqiu_03",
+      "constellation5": "UI_Talent_U_Xingqiu_02",
+      "constellation6": "UI_Talent_S_Xingqiu_04"
+    },
+    "Xiao": {
+      "icon": "UI_AvatarIcon_Xiao",
+      "iconSide": "UI_AvatarIcon_Side_Xiao",
+      "banner": "UI_NameCardPic_Xiao_P",
+      "bar": "UI_NameCardPic_Xiao_Alpha",
+      "skill": "Skill_S_Xiao_01",
+      "burst": "Skill_E_Xiao_01_HD",
+      "passive1": "UI_Talent_S_Xiao_05",
+      "passive2": "UI_Talent_S_Xiao_06",
+      "passive3": "UI_Talent_Explosion_Climb",
+      "constellation1": "UI_Talent_S_Xiao_01",
+      "constellation2": "UI_Talent_S_Xiao_02",
+      "constellation3": "UI_Talent_U_Xiao_01",
+      "constellation4": "UI_Talent_S_Xiao_03",
+      "constellation5": "UI_Talent_U_Xiao_02",
+      "constellation6": "UI_Talent_S_Xiao_04"
+    },
+    "Ningguang": {
+      "icon": "UI_AvatarIcon_Ningguang",
+      "iconSide": "UI_AvatarIcon_Side_Ningguang",
+      "banner": "UI_NameCardPic_Ningguang_P",
+      "bar": "UI_NameCardPic_Ningguang_Alpha",
+      "skill": "Skill_S_Ningguang_01",
+      "burst": "Skill_E_Ningguang_01_HD",
+      "passive1": "UI_Talent_S_Ningguang_02",
+      "passive2": "UI_Talent_S_Ningguang_06",
+      "passive3": "UI_Talent_Collect_Ore",
+      "constellation1": "UI_Talent_S_Ningguang_01",
+      "constellation2": "UI_Talent_S_Ningguang_05",
+      "constellation3": "UI_Talent_U_Ningguang_02",
+      "constellation4": "UI_Talent_S_Ningguang_03",
+      "constellation5": "UI_Talent_U_Ningguang_01",
+      "constellation6": "UI_Talent_S_Ningguang_04"
+    },
+    "Klee": {
+      "icon": "UI_AvatarIcon_Klee",
+      "iconSide": "UI_AvatarIcon_Side_Klee",
+      "banner": "UI_NameCardPic_Klee_P",
+      "bar": "UI_NameCardPic_Klee_Alpha",
+      "skill": "Skill_S_Klee_01",
+      "burst": "Skill_E_Klee_01_HD",
+      "passive1": "UI_Talent_S_Klee_05",
+      "passive2": "UI_Talent_S_Klee_06",
+      "passive3": "UI_Talent_Collect_Local_Mengde",
+      "constellation1": "UI_Talent_S_Klee_01",
+      "constellation2": "UI_Talent_S_Klee_02",
+      "constellation3": "UI_Talent_U_Klee_01",
+      "constellation4": "UI_Talent_S_Klee_03",
+      "constellation5": "UI_Talent_U_Klee_02",
+      "constellation6": "UI_Talent_S_Klee_04"
+    },
+    "Zhongli": {
+      "icon": "UI_AvatarIcon_Zhongli",
+      "iconSide": "UI_AvatarIcon_Side_Zhongli",
+      "banner": "UI_NameCardPic_Zhongli_P",
+      "bar": "UI_NameCardPic_Zhongli_Alpha",
+      "skill": "Skill_S_Zhongli_01",
+      "burst": "Skill_E_Zhongli_01_HD",
+      "passive1": "UI_Talent_S_Zhongli_05",
+      "passive2": "UI_Talent_S_Zhongli_06",
+      "passive3": "UI_Talent_Forge_Pole",
+      "constellation1": "UI_Talent_S_Zhongli_01",
+      "constellation2": "UI_Talent_S_Zhongli_02",
+      "constellation3": "UI_Talent_U_Zhongli_01",
+      "constellation4": "UI_Talent_S_Zhongli_03",
+      "constellation5": "UI_Talent_U_Zhongli_02",
+      "constellation6": "UI_Talent_S_Zhongli_04"
+    },
+    "Fischl": {
+      "icon": "UI_AvatarIcon_Fischl",
+      "iconSide": "UI_AvatarIcon_Side_Fischl",
+      "banner": "UI_NameCardPic_Fischl_P",
+      "bar": "UI_NameCardPic_Fischl_Alpha",
+      "skill": "Skill_S_Fischl_01",
+      "burst": "Skill_E_Fischl_01_HD",
+      "passive1": "UI_Talent_S_Fischl_05",
+      "passive2": "UI_Talent_S_Fischl_06",
+      "passive3": "UI_Talent_Expedition_Mengde",
+      "constellation1": "UI_Talent_S_Fischl_01",
+      "constellation2": "UI_Talent_S_Fischl_02",
+      "constellation3": "UI_Talent_U_Fischl_01",
+      "constellation4": "UI_Talent_S_Fischl_03",
+      "constellation5": "UI_Talent_U_Fischl_02",
+      "constellation6": "UI_Talent_S_Fischl_04"
+    },
+    "Bennett": {
+      "icon": "UI_AvatarIcon_Bennett",
+      "iconSide": "UI_AvatarIcon_Side_Bennett",
+      "banner": "UI_NameCardPic_Bennett_P",
+      "bar": "UI_NameCardPic_Bennett_Alpha",
+      "skill": "Skill_S_Bennett_01",
+      "burst": "Skill_E_Bennett_01_HD",
+      "passive1": "UI_Talent_S_Bennett_05",
+      "passive2": "UI_Talent_S_Bennett_06",
+      "passive3": "UI_Talent_Expedition_Mengde",
+      "constellation1": "UI_Talent_S_Bennett_01",
+      "constellation2": "UI_Talent_S_Bennett_02",
+      "constellation3": "UI_Talent_U_Bennett_01",
+      "constellation4": "UI_Talent_S_Bennett_03",
+      "constellation5": "UI_Talent_U_Bennett_02",
+      "constellation6": "UI_Talent_S_Bennett_04"
+    },
+    "Tartaglia": {
+      "icon": "UI_AvatarIcon_Tartaglia",
+      "iconSide": "UI_AvatarIcon_Side_Tartaglia",
+      "banner": "UI_NameCardPic_Tartaglia_P",
+      "bar": "UI_NameCardPic_Tartaglia_Alpha",
+      "skill": "Skill_S_Tartaglia_01",
+      "burst": "Skill_E_Tartaglia_01_HD",
+      "passive1": "UI_Talent_S_Tartaglia_03",
+      "passive2": "UI_Talent_S_Tartaglia_06",
+      "passive3": "UI_Talent_S_Tartaglia_07",
+      "constellation1": "UI_Talent_S_Tartaglia_01",
+      "constellation2": "UI_Talent_S_Tartaglia_02",
+      "constellation3": "UI_Talent_U_Tartaglia_01",
+      "constellation4": "UI_Talent_S_Tartaglia_05",
+      "constellation5": "UI_Talent_U_Tartaglia_02",
+      "constellation6": "UI_Talent_S_Tartaglia_04"
+    },
+    "Noelle": {
+      "icon": "UI_AvatarIcon_Noel",
+      "iconSide": "UI_AvatarIcon_Side_Noel",
+      "banner": "UI_NameCardPic_Noel_P",
+      "bar": "UI_NameCardPic_Noel_Alpha",
+      "skill": "Skill_S_Noel_01",
+      "burst": "Skill_E_Noel_01_HD",
+      "passive1": "UI_Talent_S_Noel_05",
+      "passive2": "UI_Talent_S_Noel_06",
+      "passive3": "UI_Talent_Cook_Defense",
+      "constellation1": "UI_Talent_S_Noel_01",
+      "constellation2": "UI_Talent_S_Noel_02",
+      "constellation3": "UI_Talent_U_Noel_01",
+      "constellation4": "UI_Talent_S_Noel_03",
+      "constellation5": "UI_Talent_U_Noel_02",
+      "constellation6": "UI_Talent_S_Noel_04"
+    },
+    "Qiqi": {
+      "icon": "UI_AvatarIcon_Qiqi",
+      "iconSide": "UI_AvatarIcon_Side_Qiqi",
+      "banner": "UI_NameCardPic_Qiqi_P",
+      "bar": "UI_NameCardPic_Qiqi_Alpha",
+      "skill": "Skill_S_Qiqi_01",
+      "burst": "Skill_E_Qiqi_01_HD",
+      "passive1": "UI_Talent_S_Qiqi_05",
+      "passive2": "UI_Talent_S_Qiqi_06",
+      "passive3": "UI_Talent_Collect_Local_Liyue",
+      "constellation1": "UI_Talent_S_Qiqi_01",
+      "constellation2": "UI_Talent_S_Qiqi_02",
+      "constellation3": "UI_Talent_U_Qiqi_01",
+      "constellation4": "UI_Talent_S_Qiqi_03",
+      "constellation5": "UI_Talent_U_Qiqi_02",
+      "constellation6": "UI_Talent_S_Qiqi_04"
+    },
+    "Chongyun": {
+      "icon": "UI_AvatarIcon_Chongyun",
+      "iconSide": "UI_AvatarIcon_Side_Chongyun",
+      "banner": "UI_NameCardPic_Chongyun_P",
+      "bar": "UI_NameCardPic_Chongyun_Alpha",
+      "skill": "Skill_S_Chongyun_01",
+      "burst": "Skill_E_Chongyun_01_HD",
+      "passive1": "UI_Talent_S_Chongyun_05",
+      "passive2": "UI_Talent_S_Chongyun_06",
+      "passive3": "UI_Talent_Expedition_Liyue",
+      "constellation1": "UI_Talent_S_Chongyun_01",
+      "constellation2": "UI_Talent_S_Chongyun_02",
+      "constellation3": "UI_Talent_U_Chongyun_01",
+      "constellation4": "UI_Talent_S_Chongyun_03",
+      "constellation5": "UI_Talent_U_Chongyun_02",
+      "constellation6": "UI_Talent_S_Chongyun_04"
+    },
+    "Ganyu": {
+      "icon": "UI_AvatarIcon_Ganyu",
+      "iconSide": "UI_AvatarIcon_Side_Ganyu",
+      "banner": "UI_NameCardPic_Ganyu_P",
+      "bar": "UI_NameCardPic_Ganyu_Alpha",
+      "skill": "Skill_S_Ganyu_01",
+      "burst": "Skill_E_Ganyu_01_HD",
+      "passive1": "UI_Talent_S_Ganyu_05",
+      "passive2": "UI_Talent_S_Ganyu_06",
+      "passive3": "UI_Talent_Forge_Bow",
+      "constellation1": "UI_Talent_S_Ganyu_01",
+      "constellation2": "UI_Talent_S_Ganyu_02",
+      "constellation3": "UI_Talent_U_Ganyu_01",
+      "constellation4": "UI_Talent_S_Ganyu_03",
+      "constellation5": "UI_Talent_U_Ganyu_02",
+      "constellation6": "UI_Talent_S_Ganyu_04"
+    },
+    "Albedo": {
+      "icon": "UI_AvatarIcon_Albedo",
+      "iconSide": "UI_AvatarIcon_Side_Albedo",
+      "banner": "UI_NameCardPic_Albedo_P",
+      "bar": "UI_NameCardPic_Albedo_Alpha",
+      "skill": "Skill_S_Albedo_01",
+      "burst": "Skill_E_Albedo_01_HD",
+      "passive1": "UI_Talent_S_Albedo_05",
+      "passive2": "UI_Talent_S_Albedo_06",
+      "passive3": "UI_Talent_Combine_Weapon_Double",
+      "constellation1": "UI_Talent_S_Albedo_01",
+      "constellation2": "UI_Talent_S_Albedo_02",
+      "constellation3": "UI_Talent_U_Albedo_01",
+      "constellation4": "UI_Talent_S_Albedo_03",
+      "constellation5": "UI_Talent_U_Albedo_02",
+      "constellation6": "UI_Talent_S_Albedo_04"
+    },
+    "Diona": {
+      "icon": "UI_AvatarIcon_Diona",
+      "iconSide": "UI_AvatarIcon_Side_Diona",
+      "banner": "UI_NameCardPic_Diona_P",
+      "bar": "UI_NameCardPic_Diona_Alpha",
+      "skill": "Skill_S_Diona_01",
+      "burst": "Skill_E_Diona_01_HD",
+      "passive1": "UI_Talent_S_Diona_05",
+      "passive2": "UI_Talent_S_Diona_06",
+      "passive3": "UI_Talent_Cook_Heal",
+      "constellation1": "UI_Talent_S_Diona_01",
+      "constellation2": "UI_Talent_S_Diona_02",
+      "constellation3": "UI_Talent_U_Diona_01",
+      "constellation4": "UI_Talent_S_Diona_03",
+      "constellation5": "UI_Talent_U_Diona_02",
+      "constellation6": "UI_Talent_S_Diona_04"
+    },
+    "Mona": {
+      "icon": "UI_AvatarIcon_Mona",
+      "iconSide": "UI_AvatarIcon_Side_Mona",
+      "banner": "UI_NameCardPic_Mona_P",
+      "bar": "UI_NameCardPic_Mona_Alpha",
+      "skill": "Skill_S_Mona_01",
+      "burst": "Skill_E_Mona_01_HD",
+      "sprint": "Skill_S_Mona_02",
+      "passive1": "UI_Talent_S_Mona_05",
+      "passive2": "UI_Talent_S_Mona_06",
+      "passive3": "UI_Talent_Combine_Weapon",
+      "constellation1": "UI_Talent_S_Mona_01",
+      "constellation2": "UI_Talent_S_Mona_02",
+      "constellation3": "UI_Talent_U_Mona_01",
+      "constellation4": "UI_Talent_S_Mona_03",
+      "constellation5": "UI_Talent_U_Mona_02",
+      "constellation6": "UI_Talent_S_Mona_04"
+    },
+    "Keqing": {
+      "icon": "UI_AvatarIcon_Keqing",
+      "iconSide": "UI_AvatarIcon_Side_Keqing",
+      "banner": "UI_NameCardPic_Keqing_P",
+      "bar": "UI_NameCardPic_Keqing_Alpha",
+      "skill": "Skill_S_Keqing_01",
+      "burst": "Skill_E_Keqing_01_HD",
+      "passive1": "UI_Talent_S_Keqing_05",
+      "passive2": "UI_Talent_S_Keqing_06",
+      "passive3": "UI_Talent_Expedition_Liyue",
+      "constellation1": "UI_Talent_S_Keqing_01",
+      "constellation2": "UI_Talent_S_Keqing_02",
+      "constellation3": "UI_Talent_U_Keqing_01",
+      "constellation4": "UI_Talent_S_Keqing_03",
+      "constellation5": "UI_Talent_U_Keqing_02",
+      "constellation6": "UI_Talent_S_Keqing_04"
+    },
+    "Sucrose": {
+      "icon": "UI_AvatarIcon_Sucrose",
+      "iconSide": "UI_AvatarIcon_Side_Sucrose",
+      "banner": "UI_NameCardPic_Sucrose_P",
+      "bar": "UI_NameCardPic_Sucrose_Alpha",
+      "skill": "Skill_S_Sucrose_01",
+      "burst": "Skill_E_Sucrose_01_HD",
+      "passive1": "UI_Talent_S_Sucrose_05",
+      "passive2": "UI_Talent_S_Sucrose_06",
+      "passive3": "UI_Talent_Combine_Material",
+      "constellation1": "UI_Talent_S_Sucrose_01",
+      "constellation2": "UI_Talent_S_Sucrose_02",
+      "constellation3": "UI_Talent_U_Sucrose_01",
+      "constellation4": "UI_Talent_S_Sucrose_03",
+      "constellation5": "UI_Talent_U_Sucrose_02",
+      "constellation6": "UI_Talent_S_Sucrose_04"
+    },
+    "Xinyan": {
+      "icon": "UI_AvatarIcon_Xinyan",
+      "iconSide": "UI_AvatarIcon_Side_Xinyan",
+      "banner": "UI_NameCardPic_Xinyan_P",
+      "bar": "UI_NameCardPic_Xinyan_Alpha",
+      "skill": "Skill_S_Xinyan_01",
+      "burst": "Skill_E_Xinyan_01_HD",
+      "passive1": "UI_Talent_S_Xinyan_05",
+      "passive2": "UI_Talent_S_Xinyan_06",
+      "passive3": "UI_Talent_Cook_Defense",
+      "constellation1": "UI_Talent_S_Xinyan_01",
+      "constellation2": "UI_Talent_S_Xinyan_02",
+      "constellation3": "UI_Talent_U_Xinyan_01",
+      "constellation4": "UI_Talent_S_Xinyan_03",
+      "constellation5": "UI_Talent_U_Xinyan_02",
+      "constellation6": "UI_Talent_S_Xinyan_04"
+    },
+    "Rosaria": {
+      "icon": "UI_AvatarIcon_Rosaria",
+      "iconSide": "UI_AvatarIcon_Side_Rosaria",
+      "banner": "UI_NameCardPic_Rosaria_P",
+      "bar": "UI_NameCardPic_Rosaria_Alpha",
+      "skill": "Skill_S_Rosaria_01",
+      "burst": "Skill_E_Rosaria_01_HD",
+      "passive1": "UI_Talent_S_Rosaria_05",
+      "passive2": "UI_Talent_S_Rosaria_06",
+      "passive3": "UI_Talent_Rosaria_NightRunner",
+      "constellation1": "UI_Talent_S_Rosaria_01",
+      "constellation2": "UI_Talent_S_Rosaria_02",
+      "constellation3": "UI_Talent_U_Rosaria_01",
+      "constellation4": "UI_Talent_S_Rosaria_03",
+      "constellation5": "UI_Talent_U_Rosaria_02",
+      "constellation6": "UI_Talent_S_Rosaria_04"
+    },
+    "HuTao": {
+      "icon": "UI_AvatarIcon_Hutao",
+      "iconSide": "UI_AvatarIcon_Side_Hutao",
+      "banner": "UI_NameCardPic_Hutao_P",
+      "bar": "UI_NameCardPic_Hutao_Alpha",
+      "skill": "Skill_S_Hutao_01",
+      "burst": "Skill_E_Hutao_01_HD",
+      "passive1": "UI_Talent_S_Hutao_05",
+      "passive2": "UI_Talent_S_Hutao_06",
+      "passive3": "UI_Talent_Cook_ExtraFailedItem",
+      "constellation1": "UI_Talent_S_Hutao_03",
+      "constellation2": "UI_Talent_S_Hutao_01",
+      "constellation3": "UI_Talent_U_Hutao_01",
+      "constellation4": "UI_Talent_S_Hutao_02",
+      "constellation5": "UI_Talent_U_Hutao_02",
+      "constellation6": "UI_Talent_S_Hutao_04"
+    },
+    "KaedeharaKazuha": {
+      "icon": "UI_AvatarIcon_Kazuha",
+      "iconSide": "UI_AvatarIcon_Side_Kazuha",
+      "banner": "UI_NameCardPic_Kazuha_P",
+      "bar": "UI_NameCardPic_Kazuha_Alpha",
+      "skill": "Skill_S_Kazuha_01",
+      "burst": "Skill_E_Kazuha_01_HD",
+      "passive1": "UI_Talent_S_Kazuha_05",
+      "passive2": "UI_Talent_S_Kazuha_06",
+      "passive3": "UI_Talent_Explosion_Sprint",
+      "constellation1": "UI_Talent_S_Kazuha_01",
+      "constellation2": "UI_Talent_S_Kazuha_02",
+      "constellation3": "UI_Talent_U_Kazuha_01",
+      "constellation4": "UI_Talent_S_Kazuha_03",
+      "constellation5": "UI_Talent_U_Kazuha_02",
+      "constellation6": "UI_Talent_S_Kazuha_04"
+    },
+    "Yanfei": {
+      "icon": "UI_AvatarIcon_Feiyan",
+      "iconSide": "UI_AvatarIcon_Side_Feiyan",
+      "banner": "UI_NameCardPic_Feiyan_P",
+      "bar": "UI_NameCardPic_Feiyan_Alpha",
+      "skill": "Skill_S_Feiyan_01",
+      "burst": "Skill_E_Feiyan_01_HD",
+      "passive1": "UI_Talent_S_Feiyan_05",
+      "passive2": "UI_Talent_S_Feiyan_06",
+      "passive3": "UI_Talent_Collect_Local_Liyue",
+      "constellation1": "UI_Talent_S_Feiyan_01",
+      "constellation2": "UI_Talent_S_Feiyan_02",
+      "constellation3": "UI_Talent_U_Feiyan_01",
+      "constellation4": "UI_Talent_S_Feiyan_03",
+      "constellation5": "UI_Talent_U_Feiyan_02",
+      "constellation6": "UI_Talent_S_Feiyan_04"
+    },
+    "Yoimiya": {
+      "icon": "UI_AvatarIcon_Yoimiya",
+      "iconSide": "UI_AvatarIcon_Side_Yoimiya",
+      "banner": "UI_NameCardPic_Yoimiya_P",
+      "bar": "UI_NameCardPic_Yoimiya_Alpha",
+      "skill": "Skill_S_Yoimiya_01",
+      "burst": "Skill_E_Yoimiya_01_HD",
+      "passive1": "UI_Talent_S_Yoimiya_05",
+      "passive2": "UI_Talent_S_Yoimiya_06",
+      "passive3": "UI_Talent_S_Yoimiya_07",
+      "constellation1": "UI_Talent_S_Yoimiya_01",
+      "constellation2": "UI_Talent_S_Yoimiya_02",
+      "constellation3": "UI_Talent_U_Yoimiya_01",
+      "constellation4": "UI_Talent_S_Yoimiya_03",
+      "constellation5": "UI_Talent_U_Yoimiya_02",
+      "constellation6": "UI_Talent_S_Yoimiya_04"
+    },
+    "Thoma": {
+      "icon": "UI_AvatarIcon_Tohma",
+      "iconSide": "UI_AvatarIcon_Side_Tohma",
+      "banner": "UI_NameCardPic_Tohma_P",
+      "bar": "UI_NameCardPic_Tohma_Alpha",
+      "skill": "Skill_S_Tohma_01",
+      "burst": "Skill_E_Tohma_01_HD",
+      "passive1": "UI_Talent_S_Tohma_05",
+      "passive2": "UI_Talent_S_Tohma_06",
+      "passive3": "UI_Talent_S_Tohma_07",
+      "constellation1": "UI_Talent_S_Tohma_01",
+      "constellation2": "UI_Talent_S_Tohma_02",
+      "constellation3": "UI_Talent_U_Tohma_01",
+      "constellation4": "UI_Talent_S_Tohma_03",
+      "constellation5": "UI_Talent_U_Tohma_02",
+      "constellation6": "UI_Talent_S_Tohma_04"
+    },
+    "Eula": {
+      "icon": "UI_AvatarIcon_Eula",
+      "iconSide": "UI_AvatarIcon_Side_Eula",
+      "banner": "UI_NameCardPic_Eula_P",
+      "bar": "UI_NameCardPic_Eula_Alpha",
+      "skill": "Skill_S_Eula_01",
+      "burst": "Skill_E_Eula_01_HD",
+      "passive1": "UI_Talent_S_Eula_05",
+      "passive2": "UI_Talent_S_Eula_06",
+      "passive3": "UI_Talent_Eula_Combine",
+      "constellation1": "UI_Talent_S_Eula_02",
+      "constellation2": "UI_Talent_S_Eula_01",
+      "constellation3": "UI_Talent_U_Eula_01",
+      "constellation4": "UI_Talent_S_Eula_03",
+      "constellation5": "UI_Talent_U_Eula_02",
+      "constellation6": "UI_Talent_S_Eula_04"
+    },
+    "RaidenShogun": {
+      "icon": "UI_AvatarIcon_Shougun",
+      "iconSide": "UI_AvatarIcon_Side_Shougun",
+      "banner": "UI_NameCardPic_Shougun_P",
+      "bar": "UI_NameCardPic_Shougun_Alpha",
+      "skill": "Skill_S_Shougun_01",
+      "burst": "Skill_E_Shougun_01_HD",
+      "passive1": "UI_Talent_S_Shougun_05",
+      "passive2": "UI_Talent_S_Shougun_06",
+      "passive3": "UI_Talent_S_Shougun_07",
+      "constellation1": "UI_Talent_S_Shougun_01",
+      "constellation2": "UI_Talent_S_Shougun_03",
+      "constellation3": "UI_Talent_U_Shougun_02",
+      "constellation4": "UI_Talent_S_Shougun_02",
+      "constellation5": "UI_Talent_U_Shougun_01",
+      "constellation6": "UI_Talent_S_Shougun_04"
+    },
+    "Sayu": {
+      "icon": "UI_AvatarIcon_Sayu",
+      "iconSide": "UI_AvatarIcon_Side_Sayu",
+      "banner": "UI_NameCardPic_Sayu_P",
+      "bar": "UI_NameCardPic_Sayu_Alpha",
+      "skill": "Skill_S_Sayu_01",
+      "burst": "Skill_E_Sayu_01_HD",
+      "passive1": "UI_Talent_S_Sayu_05",
+      "passive2": "UI_Talent_S_Sayu_06",
+      "passive3": "UI_Talent_S_Sayu_07",
+      "constellation1": "UI_Talent_S_Sayu_01",
+      "constellation2": "UI_Talent_S_Sayu_02",
+      "constellation3": "UI_Talent_U_Sayu_02",
+      "constellation4": "UI_Talent_S_Sayu_03",
+      "constellation5": "UI_Talent_U_Sayu_01",
+      "constellation6": "UI_Talent_S_Sayu_04"
+    },
+    "SangonomiyaKokomi": {
+      "icon": "UI_AvatarIcon_Kokomi",
+      "iconSide": "UI_AvatarIcon_Side_Kokomi",
+      "banner": "UI_NameCardPic_Kokomi_P",
+      "bar": "UI_NameCardPic_Kokomi_Alpha",
+      "skill": "Skill_S_Kokomi_01",
+      "burst": "Skill_E_Kokomi_01_HD",
+      "passive1": "UI_Talent_S_Kokomi_05",
+      "passive2": "UI_Talent_S_Kokomi_06",
+      "passive3": "UI_Talent_Explosion_Swim",
+      "passive": "UI_Talent_S_Kokomi_07",
+      "constellation1": "UI_Talent_S_Kokomi_01",
+      "constellation2": "UI_Talent_S_Kokomi_02",
+      "constellation3": "UI_Talent_U_Kokomi_02",
+      "constellation4": "UI_Talent_S_Kokomi_03",
+      "constellation5": "UI_Talent_U_Kokomi_01",
+      "constellation6": "UI_Talent_S_Kokomi_04"
+    },
+    "Gorou": {
+      "icon": "UI_AvatarIcon_Gorou",
+      "iconSide": "UI_AvatarIcon_Side_Gorou",
+      "banner": "UI_NameCardPic_Gorou_P",
+      "bar": "UI_NameCardPic_Gorou_Alpha",
+      "skill": "Skill_S_Gorou_01",
+      "burst": "Skill_E_Gorou_01_HD",
+      "passive1": "UI_Talent_S_Gorou_05",
+      "passive2": "UI_Talent_S_Gorou_06",
+      "passive3": "UI_Talent_S_Gorou_07",
+      "constellation1": "UI_Talent_S_Gorou_01",
+      "constellation2": "UI_Talent_S_Gorou_02",
+      "constellation3": "UI_Talent_U_Gorou_01",
+      "constellation4": "UI_Talent_S_Gorou_03",
+      "constellation5": "UI_Talent_U_Gorou_02",
+      "constellation6": "UI_Talent_S_Gorou_04"
+    },
+    "KujouSara": {
+      "icon": "UI_AvatarIcon_Sara",
+      "iconSide": "UI_AvatarIcon_Side_Sara",
+      "banner": "UI_NameCardPic_Sara_P",
+      "bar": "UI_NameCardPic_Sara_Alpha",
+      "skill": "Skill_S_Sara_01",
+      "burst": "Skill_E_Sara_01_HD",
+      "passive1": "UI_Talent_S_Sara_01",
+      "passive2": "UI_Talent_S_Sara_06",
+      "passive3": "UI_Talent_S_Sara_07",
+      "constellation1": "UI_Talent_S_Sara_05",
+      "constellation2": "UI_Talent_S_Sara_02",
+      "constellation3": "UI_Talent_U_Sara_02",
+      "constellation4": "UI_Talent_S_Sara_03",
+      "constellation5": "UI_Talent_U_Sara_01",
+      "constellation6": "UI_Talent_S_Sara_04"
+    },
+    "AratakiItto": {
+      "icon": "UI_AvatarIcon_Itto",
+      "iconSide": "UI_AvatarIcon_Side_Itto",
+      "banner": "UI_NameCardPic_Itto_P",
+      "bar": "UI_NameCardPic_Itto_Alpha",
+      "skill": "Skill_S_Itto_01",
+      "burst": "Skill_E_Itto_01_HD",
+      "passive1": "UI_Talent_S_Itto_05",
+      "passive2": "UI_Talent_S_Itto_06",
+      "passive3": "UI_Talent_S_Itto_07",
+      "constellation1": "UI_Talent_S_Itto_01",
+      "constellation2": "UI_Talent_S_Itto_02",
+      "constellation3": "UI_Talent_U_Itto_01",
+      "constellation4": "UI_Talent_S_Itto_03",
+      "constellation5": "UI_Talent_U_Itto_02",
+      "constellation6": "UI_Talent_S_Itto_04"
+    },
+    "YaeMiko": {
+      "icon": "UI_AvatarIcon_Yae",
+      "iconSide": "UI_AvatarIcon_Side_Yae",
+      "banner": "UI_NameCardPic_Yae1_P",
+      "bar": "UI_NameCardPic_Yae1_Alpha",
+      "skill": "Skill_S_Yae_01",
+      "burst": "Skill_E_Yae_01_HD",
+      "passive1": "UI_Talent_S_Yae_05",
+      "passive2": "UI_Talent_S_Yae_06",
+      "passive3": "UI_Talent_S_Yae_07",
+      "constellation1": "UI_Talent_S_Yae_01",
+      "constellation2": "UI_Talent_S_Yae_02",
+      "constellation3": "UI_Talent_U_Yae_01",
+      "constellation4": "UI_Talent_S_Yae_03",
+      "constellation5": "UI_Talent_U_Yae_02",
+      "constellation6": "UI_Talent_S_Yae_04"
+    },
+    "ShikanoinHeizou": {
+      "icon": "UI_AvatarIcon_Heizo",
+      "iconSide": "UI_AvatarIcon_Side_Heizo",
+      "banner": "UI_NameCardPic_Heizo_P",
+      "bar": "UI_NameCardPic_Heizo_Alpha",
+      "skill": "Skill_S_Heizo_01",
+      "burst": "Skill_E_Heizo_01_HD",
+      "passive1": "UI_Talent_S_Heizo_05",
+      "passive2": "UI_Talent_S_Heizo_06",
+      "passive3": "UI_Talent_Explosion_Sprint",
+      "constellation1": "UI_Talent_S_Heizo_01",
+      "constellation2": "UI_Talent_S_Heizo_02",
+      "constellation3": "UI_Talent_U_Heizo_01",
+      "constellation4": "UI_Talent_S_Heizo_03",
+      "constellation5": "UI_Talent_U_Heizo_02",
+      "constellation6": "UI_Talent_S_Heizo_04"
+    },
+    "Yelan": {
+      "icon": "UI_AvatarIcon_Yelan",
+      "iconSide": "UI_AvatarIcon_Side_Yelan",
+      "banner": "UI_NameCardPic_Yelan_P",
+      "bar": "UI_NameCardPic_Yelan_Alpha",
+      "skill": "Skill_S_Yelan_01",
+      "burst": "Skill_E_Yelan_01_HD",
+      "passive1": "UI_Talent_S_Yelan_05",
+      "passive2": "UI_Talent_S_Yelan_06",
+      "passive3": "UI_Talent_Expedition_Liyue",
+      "constellation1": "UI_Talent_S_Yelan_01",
+      "constellation2": "UI_Talent_S_Yelan_02",
+      "constellation3": "UI_Talent_U_Yelan_01",
+      "constellation4": "UI_Talent_S_Yelan_03",
+      "constellation5": "UI_Talent_U_Yelan_02",
+      "constellation6": "UI_Talent_S_Yelan_04"
+    },
+    "Kirara": {
+      "icon": "UI_AvatarIcon_Momoka",
+      "iconSide": "UI_AvatarIcon_Side_Momoka",
+      "banner": "UI_NameCardPic_Kirara_P",
+      "bar": "UI_NameCardPic_Kirara_Alpha",
+      "skill": "Skill_S_Momoka_01",
+      "burst": "Skill_E_Momoka_01_HD",
+      "passive1": "UI_Talent_S_Momoka_05",
+      "passive2": "UI_Talent_S_Momoka_06",
+      "passive3": "UI_Talent_S_Aloy_07",
+      "constellation1": "UI_Talent_S_Momoka_01",
+      "constellation2": "UI_Talent_S_Momoka_02",
+      "constellation3": "UI_Talent_U_Momoka_01",
+      "constellation4": "UI_Talent_S_Momoka_04",
+      "constellation5": "UI_Talent_U_Momoka_02",
+      "constellation6": "UI_Talent_S_Momoka_03"
+    },
+    "Aloy": {
+      "icon": "UI_AvatarIcon_Aloy",
+      "iconSide": "UI_AvatarIcon_Side_Aloy",
+      "banner": "UI_NameCardPic_Aloy_P",
+      "bar": "UI_NameCardPic_Aloy_Alpha",
+      "skill": "Skill_S_Aloy_01",
+      "burst": "Skill_E_Aloy_01_HD",
+      "passive1": "UI_Talent_S_Aloy_05",
+      "passive2": "UI_Talent_S_Aloy_06",
+      "passive3": "UI_Talent_S_Aloy_07",
+      "constellation1": "UI_Talent_S_Aloy_Lock",
+      "constellation2": "UI_Talent_S_Aloy_Lock",
+      "constellation3": "UI_Talent_S_Aloy_Lock",
+      "constellation4": "UI_Talent_S_Aloy_Lock",
+      "constellation5": "UI_Talent_S_Aloy_Lock",
+      "constellation6": "UI_Talent_S_Aloy_Lock"
+    },
+    "Shenhe": {
+      "icon": "UI_AvatarIcon_Shenhe",
+      "iconSide": "UI_AvatarIcon_Side_Shenhe",
+      "banner": "UI_NameCardPic_Shenhe_P",
+      "bar": "UI_NameCardPic_Shenhe_Alpha",
+      "skill": "Skill_S_Shenhe_01",
+      "burst": "Skill_E_Shenhe_01_HD",
+      "passive1": "UI_Talent_S_Shenhe_05",
+      "passive2": "UI_Talent_S_Shenhe_06",
+      "passive3": "UI_Talent_Expedition_Liyue",
+      "constellation1": "UI_Talent_S_Shenhe_02",
+      "constellation2": "UI_Talent_S_Shenhe_01",
+      "constellation3": "UI_Talent_U_Shenhe_01",
+      "constellation4": "UI_Talent_S_Shenhe_03",
+      "constellation5": "UI_Talent_U_Shenhe_02",
+      "constellation6": "UI_Talent_S_Shenhe_04"
+    },
+    "YunJin": {
+      "icon": "UI_AvatarIcon_Yunjin",
+      "iconSide": "UI_AvatarIcon_Side_Yunjin",
+      "banner": "UI_NameCardPic_Yunjin_P",
+      "bar": "UI_NameCardPic_Yunjin_Alpha",
+      "skill": "Skill_S_Yunjin_01",
+      "burst": "Skill_E_Yunjin_01_HD",
+      "passive1": "UI_Talent_S_Yunjin_05",
+      "passive2": "UI_Talent_S_Yunjin_06",
+      "passive3": "UI_Talent_S_Yunjin_07",
+      "constellation1": "UI_Talent_S_Yunjin_01",
+      "constellation2": "UI_Talent_S_Yunjin_02",
+      "constellation3": "UI_Talent_U_Yunjin_01",
+      "constellation4": "UI_Talent_S_Yunjin_03",
+      "constellation5": "UI_Talent_U_Yunjin_02",
+      "constellation6": "UI_Talent_S_Yunjin_04"
+    },
+    "KukiShinobu": {
+      "icon": "UI_AvatarIcon_Shinobu",
+      "iconSide": "UI_AvatarIcon_Side_Shinobu",
+      "banner": "UI_NameCardPic_Shinobu_P",
+      "bar": "UI_NameCardPic_Shinobu_Alpha",
+      "skill": "Skill_S_Shinobu_01",
+      "burst": "Skill_E_Shinobu_01_HD",
+      "passive1": "UI_Talent_S_Shinobu_05",
+      "passive2": "UI_Talent_S_Shinobu_06",
+      "passive3": "UI_Talent_S_Shinobu_07",
+      "constellation1": "UI_Talent_S_Shinobu_01",
+      "constellation2": "UI_Talent_S_Shinobu_02",
+      "constellation3": "UI_Talent_U_Shinobu_01",
+      "constellation4": "UI_Talent_S_Shinobu_03",
+      "constellation5": "UI_Talent_U_Shinobu_02",
+      "constellation6": "UI_Talent_S_Shinobu_04"
+    },
+    "KamisatoAyato": {
+      "icon": "UI_AvatarIcon_Ayato",
+      "iconSide": "UI_AvatarIcon_Side_Ayato",
+      "banner": "UI_NameCardPic_Ayato_P",
+      "bar": "UI_NameCardPic_Ayato_Alpha",
+      "skill": "Skill_S_Ayato_01",
+      "burst": "Skill_E_Ayato_01_HD",
+      "passive1": "UI_Talent_S_Ayato_05",
+      "passive2": "UI_Talent_S_Ayato_06",
+      "passive3": "UI_Talent_S_Ayato_07",
+      "constellation1": "UI_Talent_S_Ayato_01",
+      "constellation2": "UI_Talent_S_Ayato_02",
+      "constellation3": "UI_Talent_U_Ayato_02",
+      "constellation4": "UI_Talent_S_Ayato_03",
+      "constellation5": "UI_Talent_U_Ayato_01",
+      "constellation6": "UI_Talent_S_Ayato_04"
+    },
+    "Collei": {
+      "icon": "UI_AvatarIcon_Collei",
+      "iconSide": "UI_AvatarIcon_Side_Collei",
+      "banner": "UI_NameCardPic_Collei_P",
+      "bar": "UI_NameCardPic_Collei_Alpha",
+      "skill": "Skill_S_Collei_01",
+      "burst": "Skill_E_Collei_01_HD",
+      "passive1": "UI_Talent_S_Collei_05",
+      "passive2": "UI_Talent_S_Collei_06",
+      "passive3": "UI_Talent_Explosion_Glide",
+      "constellation1": "UI_Talent_S_Collei_01",
+      "constellation2": "UI_Talent_S_Collei_02",
+      "constellation3": "UI_Talent_U_Collei_02",
+      "constellation4": "UI_Talent_S_Collei_03",
+      "constellation5": "UI_Talent_U_Collei_01",
+      "constellation6": "UI_Talent_S_Collei_04"
+    },
+    "Dori": {
+      "icon": "UI_AvatarIcon_Dori",
+      "iconSide": "UI_AvatarIcon_Side_Dori",
+      "banner": "UI_NameCardPic_Dori_P",
+      "bar": "UI_NameCardPic_Dori_Alpha",
+      "skill": "Skill_S_Dori_01",
+      "burst": "Skill_E_Dori_01_HD",
+      "passive1": "UI_Talent_S_Dori_05",
+      "passive2": "UI_Talent_S_Dori_06",
+      "passive3": "UI_Talent_S_Dori_07",
+      "constellation1": "UI_Talent_S_Dori_01",
+      "constellation2": "UI_Talent_S_Dori_02",
+      "constellation3": "UI_Talent_U_Dori_02",
+      "constellation4": "UI_Talent_S_Dori_03",
+      "constellation5": "UI_Talent_U_Dori_01",
+      "constellation6": "UI_Talent_S_Dori_04"
+    },
+    "Tighnari": {
+      "icon": "UI_AvatarIcon_Tighnari",
+      "iconSide": "UI_AvatarIcon_Side_Tighnari",
+      "banner": "UI_NameCardPic_Tighnari_P",
+      "bar": "UI_NameCardPic_Tighnari_Alpha",
+      "skill": "Skill_S_Tighnari_01",
+      "burst": "Skill_E_Tighnari_01_HD",
+      "passive1": "UI_Talent_S_Tighnari_05",
+      "passive2": "UI_Talent_S_Tighnari_06",
+      "passive3": "UI_Talent_S_Tighnari_07",
+      "constellation1": "UI_Talent_S_Tighnari_01",
+      "constellation2": "UI_Talent_S_Tighnari_02",
+      "constellation3": "UI_Talent_U_Tighnari_01",
+      "constellation4": "UI_Talent_S_Tighnari_03",
+      "constellation5": "UI_Talent_U_Tighnari_02",
+      "constellation6": "UI_Talent_S_Tighnari_04"
+    },
+    "Nilou": {
+      "icon": "UI_AvatarIcon_Nilou",
+      "iconSide": "UI_AvatarIcon_Side_Nilou",
+      "banner": "UI_NameCardPic_Nilou_P",
+      "bar": "UI_NameCardPic_Nilou_Alpha",
+      "skill": "Skill_S_Nilou_01",
+      "burst": "Skill_E_Nilou_01_HD",
+      "passive1": "UI_Talent_S_Nilou_05",
+      "passive2": "UI_Talent_S_Nilou_06",
+      "passive3": "UI_Talent_S_Yunjin_07",
+      "constellation1": "UI_Talent_S_Nilou_01",
+      "constellation2": "UI_Talent_S_Nilou_02",
+      "constellation3": "UI_Talent_U_Nilou_01",
+      "constellation4": "UI_Talent_S_Nilou_03",
+      "constellation5": "UI_Talent_U_Nilou_02",
+      "constellation6": "UI_Talent_S_Nilou_04"
+    },
+    "Cyno": {
+      "icon": "UI_AvatarIcon_Cyno",
+      "iconSide": "UI_AvatarIcon_Side_Cyno",
+      "banner": "UI_NameCardPic_Cyno_P",
+      "bar": "UI_NameCardPic_Cyno_Alpha",
+      "skill": "Skill_S_Cyno_01",
+      "burst": "Skill_E_Cyno_01_HD",
+      "passive1": "UI_Talent_S_Cyno_05",
+      "passive2": "UI_Talent_S_Cyno_06",
+      "passive3": "UI_Talent_S_Cyno_07",
+      "constellation1": "UI_Talent_S_Cyno_01",
+      "constellation2": "UI_Talent_S_Cyno_02",
+      "constellation3": "UI_Talent_U_Cyno_01",
+      "constellation4": "UI_Talent_S_Cyno_03",
+      "constellation5": "UI_Talent_U_Cyno_02",
+      "constellation6": "UI_Talent_S_Cyno_04"
+    },
+    "Candace": {
+      "icon": "UI_AvatarIcon_Candace",
+      "iconSide": "UI_AvatarIcon_Side_Candace",
+      "banner": "UI_NameCardPic_Candace_P",
+      "bar": "UI_NameCardPic_Candace_Alpha",
+      "skill": "Skill_S_Candace_01",
+      "burst": "Skill_E_Candace_01_HD",
+      "passive1": "UI_Talent_S_Candace_05",
+      "passive2": "UI_Talent_S_Candace_06",
+      "passive3": "UI_Talent_Explosion_Climb",
+      "constellation1": "UI_Talent_S_Candace_01",
+      "constellation2": "UI_Talent_S_Candace_02",
+      "constellation3": "UI_Talent_U_Candace_01",
+      "constellation4": "UI_Talent_S_Candace_03",
+      "constellation5": "UI_Talent_U_Candace_02",
+      "constellation6": "UI_Talent_S_Candace_04"
+    },
+    "Nahida": {
+      "icon": "UI_AvatarIcon_Nahida",
+      "iconSide": "UI_AvatarIcon_Side_Nahida",
+      "banner": "UI_NameCardPic_Nahida_P",
+      "bar": "UI_NameCardPic_Nahida_Alpha",
+      "skill": "Skill_S_Nahida_01",
+      "burst": "Skill_E_Nahida_01_HD",
+      "passive1": "UI_Talent_S_Nahida_05",
+      "passive2": "UI_Talent_S_Nahida_06",
+      "passive3": "UI_Talent_S_Nahida_07",
+      "constellation1": "UI_Talent_S_Nahida_01",
+      "constellation2": "UI_Talent_S_Nahida_02",
+      "constellation3": "UI_Talent_U_Nahida_01",
+      "constellation4": "UI_Talent_S_Nahida_03",
+      "constellation5": "UI_Talent_U_Nahida_02",
+      "constellation6": "UI_Talent_S_Nahida_04"
+    },
+    "Layla": {
+      "icon": "UI_AvatarIcon_Layla",
+      "iconSide": "UI_AvatarIcon_Side_Layla",
+      "banner": "UI_NameCardPic_Layla_P",
+      "bar": "UI_NameCardPic_Layla_Alpha",
+      "skill": "Skill_S_Layla_01",
+      "burst": "Skill_E_Layla_01_HD",
+      "passive1": "UI_Talent_S_Layla_05",
+      "passive2": "UI_Talent_S_Layla_06",
+      "passive3": "UI_Talent_Eula_Combine",
+      "constellation1": "UI_Talent_S_Layla_01",
+      "constellation2": "UI_Talent_S_Layla_02",
+      "constellation3": "UI_Talent_U_Layla_01",
+      "constellation4": "UI_Talent_S_Layla_03",
+      "constellation5": "UI_Talent_U_Layla_02",
+      "constellation6": "UI_Talent_S_Layla_04"
+    },
+    "Wanderer": {
+      "icon": "UI_AvatarIcon_Wanderer",
+      "iconSide": "UI_AvatarIcon_Side_Wanderer",
+      "banner": "UI_NameCardPic_Wanderer_P",
+      "bar": "UI_NameCardPic_Wanderer_Alpha",
+      "skill": "Skill_S_Wanderer_01",
+      "burst": "Skill_E_Wanderer_01_HD",
+      "passive1": "UI_Talent_S_Wanderer_05",
+      "passive2": "UI_Talent_S_Wanderer_06",
+      "passive3": "UI_Talent_S_Wanderer_07",
+      "constellation1": "UI_Talent_S_Wanderer_01",
+      "constellation2": "UI_Talent_S_Wanderer_02",
+      "constellation3": "UI_Talent_U_Wanderer_02",
+      "constellation4": "UI_Talent_S_Wanderer_03",
+      "constellation5": "UI_Talent_U_Wanderer_01",
+      "constellation6": "UI_Talent_S_Wanderer_04"
+    },
+    "Faruzan": {
+      "icon": "UI_AvatarIcon_Faruzan",
+      "iconSide": "UI_AvatarIcon_Side_Faruzan",
+      "banner": "UI_NameCardPic_Faruzan_P",
+      "bar": "UI_NameCardPic_Faruzan_Alpha",
+      "skill": "Skill_S_Faruzan_01",
+      "burst": "Skill_E_Faruzan_01_HD",
+      "passive1": "UI_Talent_S_Faruzan_05",
+      "passive2": "UI_Talent_S_Faruzan_06",
+      "passive3": "UI_Talent_S_Cyno_07",
+      "constellation1": "UI_Talent_S_Faruzan_01",
+      "constellation2": "UI_Talent_S_Faruzan_02",
+      "constellation3": "UI_Talent_U_Faruzan_01",
+      "constellation4": "UI_Talent_S_Faruzan_03",
+      "constellation5": "UI_Talent_U_Faruzan_02",
+      "constellation6": "UI_Talent_S_Faruzan_04"
+    },
+    "Yaoyao": {
+      "icon": "UI_AvatarIcon_Yaoyao",
+      "iconSide": "UI_AvatarIcon_Side_Yaoyao",
+      "banner": "UI_NameCardPic_Yaoyao_P",
+      "bar": "UI_NameCardPic_Yaoyao_Alpha",
+      "skill": "Skill_S_Yaoyao_01",
+      "burst": "Skill_E_Yaoyao_01_HD",
+      "passive1": "UI_Talent_S_Yaoyao_05",
+      "passive2": "UI_Talent_S_Yaoyao_06",
+      "passive3": "UI_Talent_S_Yaoyao_07",
+      "constellation1": "UI_Talent_S_Yaoyao_01",
+      "constellation2": "UI_Talent_S_Yaoyao_02",
+      "constellation3": "UI_Talent_U_Yaoyao_01",
+      "constellation4": "UI_Talent_S_Yaoyao_03",
+      "constellation5": "UI_Talent_U_Yaoyao_02",
+      "constellation6": "UI_Talent_S_Yaoyao_04"
+    },
+    "Alhaitham": {
+      "icon": "UI_AvatarIcon_Alhatham",
+      "iconSide": "UI_AvatarIcon_Side_Alhatham",
+      "banner": "UI_NameCardPic_Alhatham_P",
+      "bar": "UI_NameCardPic_Alhatham_Alpha",
+      "skill": "Skill_S_Alhatham_01",
+      "burst": "Skill_E_Alhatham_01_HD",
+      "passive1": "UI_Talent_S_Alhatham_05",
+      "passive2": "UI_Talent_S_Alhatham_06",
+      "passive3": "UI_Talent_S_Alhatham_07",
+      "constellation1": "UI_Talent_S_Alhatham_02",
+      "constellation2": "UI_Talent_S_Alhatham_01",
+      "constellation3": "UI_Talent_U_Alhatham_01",
+      "constellation4": "UI_Talent_S_Alhatham_03",
+      "constellation5": "UI_Talent_U_Alhatham_02",
+      "constellation6": "UI_Talent_S_Alhatham_04"
+    },
+    "Dehya": {
+      "icon": "UI_AvatarIcon_Dehya",
+      "iconSide": "UI_AvatarIcon_Side_Dehya",
+      "banner": "UI_NameCardPic_Dehya_P",
+      "bar": "UI_NameCardPic_Dehya_Alpha",
+      "skill": "Skill_S_Dehya_01",
+      "burst": "Skill_E_Dehya_01_HD",
+      "passive1": "UI_Talent_S_Dehya_05",
+      "passive2": "UI_Talent_S_Dehya_06",
+      "passive3": "UI_Talent_S_Dehya_07",
+      "constellation1": "UI_Talent_S_Dehya_01",
+      "constellation2": "UI_Talent_S_Dehya_02",
+      "constellation3": "UI_Talent_U_Dehya_01",
+      "constellation4": "UI_Talent_S_Dehya_03",
+      "constellation5": "UI_Talent_U_Dehya_02",
+      "constellation6": "UI_Talent_S_Dehya_04"
+    },
+    "Mika": {
+      "icon": "UI_AvatarIcon_Mika",
+      "iconSide": "UI_AvatarIcon_Side_Mika",
+      "banner": "UI_NameCardPic_Mika_P",
+      "bar": "UI_NameCardPic_Mika_Alpha",
+      "skill": "Skill_S_Mika_01",
+      "burst": "Skill_E_Mika_01_HD",
+      "passive1": "UI_Talent_S_Mika_05",
+      "passive2": "UI_Talent_S_Mika_06",
+      "passive3": "UI_Talent_Collect_Local_Mengde",
+      "constellation1": "UI_Talent_S_Mika_01",
+      "constellation2": "UI_Talent_S_Mika_02",
+      "constellation3": "UI_Talent_U_Mika_01",
+      "constellation4": "UI_Talent_S_Mika_03",
+      "constellation5": "UI_Talent_U_Mika_02",
+      "constellation6": "UI_Talent_S_Mika_04"
+    },
+    "Kaveh": {
+      "icon": "UI_AvatarIcon_Kaveh",
+      "iconSide": "UI_AvatarIcon_Side_Kaveh",
+      "banner": "UI_NameCardPic_Kaveh_P",
+      "bar": "UI_NameCardPic_Kaveh_Alpha",
+      "skill": "Skill_S_Kaveh_01",
+      "burst": "Skill_E_Kaveh_01_HD",
+      "passive1": "UI_Talent_S_Kaveh_05",
+      "passive2": "UI_Talent_S_Kaveh_06",
+      "passive3": "UI_Talent_S_Yoimiya_07",
+      "constellation1": "UI_Talent_S_Kaveh_01",
+      "constellation2": "UI_Talent_S_Kaveh_02",
+      "constellation3": "UI_Talent_U_Kaveh_02",
+      "constellation4": "UI_Talent_S_Kaveh_03",
+      "constellation5": "UI_Talent_U_Kaveh_01",
+      "constellation6": "UI_Talent_S_Kaveh_04"
+    },
+    "Baizhu": {
+      "icon": "UI_AvatarIcon_Baizhuer",
+      "iconSide": "UI_AvatarIcon_Side_Baizhuer",
+      "banner": "UI_NameCardPic_Baizhuer_P",
+      "bar": "UI_NameCardPic_Baizhuer_Alpha",
+      "skill": "Skill_S_Baizhuer_01",
+      "burst": "Skill_E_Baizhuer_01_HD",
+      "passive1": "UI_Talent_S_Baizhuer_05",
+      "passive2": "UI_Talent_S_Baizhuer_06",
+      "passive3": "UI_Talent_S_Baizhuer_07",
+      "constellation1": "UI_Talent_S_Baizhuer_01",
+      "constellation2": "UI_Talent_S_Baizhuer_02",
+      "constellation3": "UI_Talent_U_Baizhuer_01",
+      "constellation4": "UI_Talent_S_Baizhuer_03",
+      "constellation5": "UI_Talent_U_Baizhuer_02",
+      "constellation6": "UI_Talent_S_Baizhuer_04"
+    },
+    "Lynette": {
+      "icon": "UI_AvatarIcon_Linette",
+      "iconSide": "UI_AvatarIcon_Side_Linette",
+      "banner": "UI_NameCardPic_Linette_P",
+      "bar": "UI_NameCardPic_Linette_Alpha",
+      "skill": "Skill_S_Linette_01",
+      "burst": "Skill_E_Linette_01_HD",
+      "passive1": "UI_Talent_S_Linette_05",
+      "passive2": "UI_Talent_S_Linette_06",
+      "passive3": "UI_Talent_S_Linette_07",
+      "constellation1": "UI_Talent_S_Linette_01",
+      "constellation2": "UI_Talent_S_Linette_02",
+      "constellation3": "UI_Talent_U_Linette_01",
+      "constellation4": "UI_Talent_S_Linette_03",
+      "constellation5": "UI_Talent_U_Linette_02",
+      "constellation6": "UI_Talent_S_Linette_04"
+    },
+    "Lyney": {
+      "icon": "UI_AvatarIcon_Liney",
+      "iconSide": "UI_AvatarIcon_Side_Liney",
+      "banner": "UI_NameCardPic_Liney_P",
+      "bar": "UI_NameCardPic_Liney_Alpha",
+      "skill": "Skill_S_Liney_01",
+      "burst": "Skill_E_Liney_01_HD",
+      "passive1": "UI_Talent_S_Liney_05",
+      "passive2": "UI_Talent_S_Liney_06",
+      "passive3": "UI_Talent_S_Liney_07",
+      "constellation1": "UI_Talent_S_Liney_01",
+      "constellation2": "UI_Talent_S_Liney_03",
+      "constellation3": "UI_Talent_U_Liney_01",
+      "constellation4": "UI_Talent_S_Liney_02",
+      "constellation5": "UI_Talent_U_Liney_02",
+      "constellation6": "UI_Talent_S_Liney_04"
+    },
+    "Freminet": {
+      "icon": "UI_AvatarIcon_Freminet",
+      "iconSide": "UI_AvatarIcon_Side_Freminet",
+      "banner": "UI_NameCardPic_Freminet_P",
+      "bar": "UI_NameCardPic_Freminet_Alpha",
+      "skill": "Skill_S_Freminet_01",
+      "burst": "Skill_E_Freminet_01_HD",
+      "passive1": "UI_Talent_S_Freminet_05",
+      "passive2": "UI_Talent_S_Freminet_06",
+      "passive3": "UI_Talent_S_Freminet_07",
+      "constellation1": "UI_Talent_S_Freminet_01",
+      "constellation2": "UI_Talent_S_Freminet_02",
+      "constellation3": "UI_Talent_U_Freminet_01",
+      "constellation4": "UI_Talent_S_Freminet_03",
+      "constellation5": "UI_Talent_U_Freminet_02",
+      "constellation6": "UI_Talent_S_Freminet_04"
+    },
+    "Wriothesley": {
+      "icon": "UI_AvatarIcon_Wriothesley",
+      "iconSide": "UI_AvatarIcon_Side_Wriothesley",
+      "banner": "UI_NameCardPic_Wriothesley_P",
+      "bar": "UI_NameCardPic_Wriothesley_Alpha",
+      "skill": "Skill_S_Wriothesley_01",
+      "burst": "Skill_E_Wriothesley_01_HD",
+      "passive1": "UI_Talent_S_Wriothesley_05",
+      "passive2": "UI_Talent_S_Wriothesley_06",
+      "passive3": "UI_Talent_Combine_Weapon_Double",
+      "constellation1": "UI_Talent_S_Wriothesley_01",
+      "constellation2": "UI_Talent_S_Wriothesley_02",
+      "constellation3": "UI_Talent_U_Wriothesley_01",
+      "constellation4": "UI_Talent_S_Wriothesley_03",
+      "constellation5": "UI_Talent_U_Wriothesley_02",
+      "constellation6": "UI_Talent_S_Wriothesley_04"
+    },
+    "Neuvillette": {
+      "icon": "UI_AvatarIcon_Neuvillette",
+      "iconSide": "UI_AvatarIcon_Side_Neuvillette",
+      "banner": "UI_NameCardPic_Neuvillette_P",
+      "bar": "UI_NameCardPic_Neuvillette_Alpha",
+      "skill": "Skill_S_Neuvillette_01",
+      "burst": "Skill_E_Neuvillette_01_HD",
+      "passive1": "UI_Talent_S_Neuvillette_05",
+      "passive2": "UI_Talent_S_Neuvillette_06",
+      "passive3": "UI_Talent_S_Neuvillette_07",
+      "constellation1": "UI_Talent_S_Neuvillette_01",
+      "constellation2": "UI_Talent_S_Neuvillette_02",
+      "constellation3": "UI_Talent_U_Neuvillette_01",
+      "constellation4": "UI_Talent_S_Neuvillette_03",
+      "constellation5": "UI_Talent_U_Neuvillette_02",
+      "constellation6": "UI_Talent_S_Neuvillette_04"
+    },
+    "Charlotte": {
+      "icon": "UI_AvatarIcon_Charlotte",
+      "iconSide": "UI_AvatarIcon_Side_Charlotte",
+      "banner": "UI_NameCardPic_Charlotte_P",
+      "bar": "UI_NameCardPic_Charlotte_Alpha",
+      "skill": "Skill_S_Charlotte_01",
+      "burst": "Skill_E_Charlotte_01_HD",
+      "passive1": "UI_Talent_S_Charlotte_05",
+      "passive2": "UI_Talent_S_Charlotte_06",
+      "passive3": "UI_Talent_S_Charlotte_07",
+      "constellation1": "UI_Talent_S_Charlotte_01",
+      "constellation2": "UI_Talent_S_Charlotte_02",
+      "constellation3": "UI_Talent_U_Charlotte_01",
+      "constellation4": "UI_Talent_S_Charlotte_03",
+      "constellation5": "UI_Talent_U_Charlotte_02",
+      "constellation6": "UI_Talent_S_Charlotte_04"
+    },
+    "Furina": {
+      "icon": "UI_AvatarIcon_Furina",
+      "iconSide": "UI_AvatarIcon_Side_Furina",
+      "banner": "UI_NameCardPic_Furina_P",
+      "bar": "UI_NameCardPic_Furina_Alpha",
+      "skill": "Skill_S_Furina_01",
+      "burst": "Skill_E_Furina_01_HD",
+      "passive1": "UI_Talent_S_Furina_05",
+      "passive2": "UI_Talent_S_Furina_06",
+      "passive3": "UI_Talent_S_Furina_07",
+      "constellation1": "UI_Talent_S_Furina_01",
+      "constellation2": "UI_Talent_S_Furina_04",
+      "constellation3": "UI_Talent_U_Furina_02",
+      "constellation4": "UI_Talent_S_Furina_03",
+      "constellation5": "UI_Talent_U_Furina_01",
+      "constellation6": "UI_Talent_S_Furina_02"
+    },
+    "Chevreuse": {
+      "icon": "UI_AvatarIcon_Chevreuse",
+      "iconSide": "UI_AvatarIcon_Side_Chevreuse",
+      "banner": "UI_NameCardPic_Chevreuse_P",
+      "bar": "UI_NameCardPic_Chevreuse_Alpha",
+      "skill": "Skill_S_Chevreuse_01",
+      "burst": "Skill_E_Chevreuse_01_HD",
+      "passive1": "UI_Talent_S_Chevreuse_05",
+      "passive2": "UI_Talent_S_Chevreuse_06",
+      "passive3": "UI_Talent_Explosion_Sprint",
+      "constellation1": "UI_Talent_S_Chevreuse_01",
+      "constellation2": "UI_Talent_S_Chevreuse_02",
+      "constellation3": "UI_Talent_U_Chevreuse_01",
+      "constellation4": "UI_Talent_S_Chevreuse_03",
+      "constellation5": "UI_Talent_U_Chevreuse_02",
+      "constellation6": "UI_Talent_S_Chevreuse_04"
+    },
+    "Navia": {
+      "icon": "UI_AvatarIcon_Navia",
+      "iconSide": "UI_AvatarIcon_Side_Navia",
+      "banner": "UI_NameCardPic_Navia_P",
+      "bar": "UI_NameCardPic_Navia_Alpha",
+      "skill": "Skill_S_Navia_01",
+      "burst": "Skill_E_Navia_01_HD",
+      "passive1": "UI_Talent_S_Navia_05",
+      "passive2": "UI_Talent_S_Navia_06",
+      "passive3": "UI_Talent_S_Navia_07",
+      "constellation1": "UI_Talent_S_Navia_01",
+      "constellation2": "UI_Talent_S_Navia_02",
+      "constellation3": "UI_Talent_U_Navia_01",
+      "constellation4": "UI_Talent_S_Navia_03",
+      "constellation5": "UI_Talent_U_Navia_02",
+      "constellation6": "UI_Talent_S_Navia_04"
+    },
+    "Gaming": {
+      "icon": "UI_AvatarIcon_Gaming",
+      "iconSide": "UI_AvatarIcon_Side_Gaming",
+      "banner": "UI_NameCardPic_Gaming_P",
+      "bar": "UI_NameCardPic_Gaming_Alpha",
+      "skill": "Skill_S_Gaming_01",
+      "burst": "Skill_E_Gaming_01_HD",
+      "passive1": "UI_Talent_S_Gaming_05",
+      "passive2": "UI_Talent_S_Gaming_06",
+      "passive3": "UI_Talent_S_Dehya_07",
+      "constellation1": "UI_Talent_S_Gaming_01",
+      "constellation2": "UI_Talent_S_Gaming_02",
+      "constellation3": "UI_Talent_U_Gaming_01",
+      "constellation4": "UI_Talent_S_Gaming_03",
+      "constellation5": "UI_Talent_U_Gaming_02",
+      "constellation6": "UI_Talent_S_Gaming_04"
+    },
+    "Xianyun": {
+      "icon": "UI_AvatarIcon_Liuyun",
+      "iconSide": "UI_AvatarIcon_Side_Liuyun",
+      "banner": "UI_NameCardPic_Liuyun_P",
+      "bar": "UI_NameCardPic_Liuyun_Alpha",
+      "skill": "Skill_S_Liuyun_01",
+      "burst": "Skill_E_Liuyun_01_HD",
+      "passive1": "UI_Talent_S_Liuyun_05",
+      "passive2": "UI_Talent_S_Liuyun_06",
+      "passive3": "UI_Talent_S_Liuyun_07",
+      "constellation1": "UI_Talent_S_Liuyun_01",
+      "constellation2": "UI_Talent_S_Liuyun_02",
+      "constellation3": "UI_Talent_U_Liuyun_02",
+      "constellation4": "UI_Talent_S_Liuyun_03",
+      "constellation5": "UI_Talent_U_Liuyun_01",
+      "constellation6": "UI_Talent_S_Liuyun_04"
+    },
+    "Chiori": {
+      "icon": "UI_AvatarIcon_Chiori",
+      "iconSide": "UI_AvatarIcon_Side_Chiori",
+      "banner": "UI_NameCardPic_Chiori_P",
+      "bar": "UI_NameCardPic_Chiori_Alpha",
+      "skill": "Skill_S_Chiori_01",
+      "burst": "Skill_E_Chiori_01_HD",
+      "passive1": "UI_Talent_S_Chiori_05",
+      "passive2": "UI_Talent_S_Chiori_06",
+      "passive3": "UI_Talent_S_Chiori_07",
+      "constellation1": "UI_Talent_S_Chiori_01",
+      "constellation2": "UI_Talent_S_Chiori_03",
+      "constellation3": "UI_Talent_U_Chiori_01",
+      "constellation4": "UI_Talent_S_Chiori_02",
+      "constellation5": "UI_Talent_U_Chiori_02",
+      "constellation6": "UI_Talent_S_Chiori_04"
+    },
+    "Sigewinne": {
+      "icon": "UI_AvatarIcon_Sigewinne",
+      "iconSide": "UI_AvatarIcon_Side_Sigewinne",
+      "banner": "UI_NameCardPic_Sigewinne_P",
+      "bar": "UI_NameCardPic_Sigewinne_Alpha",
+      "skill": "Skill_S_Sigewinne_01",
+      "burst": "Skill_E_Sigewinne_01_HD",
+      "passive1": "UI_Talent_S_Sigewinne_05",
+      "passive2": "UI_Talent_S_Sigewinne_06",
+      "passive3": "UI_Talent_S_Sigewinne_07",
+      "constellation1": "UI_Talent_S_Sigewinne_01",
+      "constellation2": "UI_Talent_S_Sigewinne_02",
+      "constellation3": "UI_Talent_U_Sigewinne_01",
+      "constellation4": "UI_Talent_S_Sigewinne_03",
+      "constellation5": "UI_Talent_U_Sigewinne_02",
+      "constellation6": "UI_Talent_S_Sigewinne_04"
+    },
+    "Arlecchino": {
+      "icon": "UI_AvatarIcon_Arlecchino",
+      "iconSide": "UI_AvatarIcon_Side_Arlecchino",
+      "banner": "UI_NameCardPic_Arlecchino_P",
+      "bar": "UI_NameCardPic_Arlecchino_Alpha",
+      "skill": "Skill_S_Arlecchino_01",
+      "burst": "Skill_E_Arlecchino_01_HD",
+      "passive1": "UI_Talent_S_Arlecchino_05",
+      "passive2": "UI_Talent_S_Arlecchino_06",
+      "passive3": "UI_Talent_S_Arlecchino_07",
+      "constellation1": "UI_Talent_S_Arlecchino_01",
+      "constellation2": "UI_Talent_S_Arlecchino_02",
+      "constellation3": "UI_Talent_U_Arlecchino_01",
+      "constellation4": "UI_Talent_S_Arlecchino_03",
+      "constellation5": "UI_Talent_U_Arlecchino_02",
+      "constellation6": "UI_Talent_S_Arlecchino_04"
+    },
+    "Sethos": {
+      "icon": "UI_AvatarIcon_Sethos",
+      "iconSide": "UI_AvatarIcon_Side_Sethos",
+      "banner": "UI_NameCardPic_Sethos_P",
+      "bar": "UI_NameCardPic_Sethos_Alpha",
+      "skill": "Skill_S_Sethos_01",
+      "burst": "Skill_E_Sethos_01_HD",
+      "passive1": "UI_Talent_S_Sethos_05",
+      "passive2": "UI_Talent_S_Sethos_06",
+      "passive3": "UI_Talent_S_Tighnari_07",
+      "constellation1": "UI_Talent_S_Sethos_01",
+      "constellation2": "UI_Talent_S_Sethos_02",
+      "constellation3": "UI_Talent_U_Sethos_01",
+      "constellation4": "UI_Talent_S_Sethos_03",
+      "constellation5": "UI_Talent_U_Sethos_02",
+      "constellation6": "UI_Talent_S_Sethos_04"
+    },
+    "Clorinde": {
+      "icon": "UI_AvatarIcon_Clorinde",
+      "iconSide": "UI_AvatarIcon_Side_Clorinde",
+      "banner": "UI_NameCardPic_Clorinde_P",
+      "bar": "UI_NameCardPic_Clorinde_Alpha",
+      "skill": "Skill_S_Clorinde_01",
+      "burst": "Skill_E_Clorinde_01_HD",
+      "passive1": "UI_Talent_S_Clorinde_05",
+      "passive2": "UI_Talent_S_Clorinde_06",
+      "passive3": "UI_Talent_S_Liney_07",
+      "constellation1": "UI_Talent_S_Clorinde_01",
+      "constellation2": "UI_Talent_S_Clorinde_02",
+      "constellation3": "UI_Talent_U_Clorinde_02",
+      "constellation4": "UI_Talent_S_Clorinde_03",
+      "constellation5": "UI_Talent_U_Clorinde_01",
+      "constellation6": "UI_Talent_S_Clorinde_04"
+    },
+    "TravelerAnemo": {
+      "skill": "Skill_S_PlayerWind_01",
+      "burst": "Skill_E_PlayerWind_01_HD",
+      "passive1": "UI_Talent_S_PlayerWind_05",
+      "passive2": "UI_Talent_S_PlayerWind_06",
+      "constellation1": "UI_Talent_S_PlayerWind_01",
+      "constellation2": "UI_Talent_S_PlayerWind_02",
+      "constellation3": "UI_Talent_U_PlayerWind_02",
+      "constellation4": "UI_Talent_S_PlayerWind_03",
+      "constellation5": "UI_Talent_U_PlayerWind_01",
+      "constellation6": "UI_Talent_S_PlayerWind_04"
+    },
+    "TravelerGeo": {
+      "skill": "Skill_S_PlayerRock_01",
+      "burst": "Skill_E_PlayerRock_01_HD",
+      "passive1": "UI_Talent_S_PlayerRock_05",
+      "passive2": "UI_Talent_S_PlayerRock_06",
+      "constellation1": "UI_Talent_S_PlayerRock_01",
+      "constellation2": "UI_Talent_S_PlayerRock_02",
+      "constellation3": "UI_Talent_U_PlayerRock_02",
+      "constellation4": "UI_Talent_S_PlayerRock_03",
+      "constellation5": "UI_Talent_U_PlayerRock_01",
+      "constellation6": "UI_Talent_S_PlayerRock_04"
+    },
+    "TravelerElectro": {
+      "skill": "Skill_S_PlayerElectric_01",
+      "burst": "Skill_E_PlayerElectric_01_HD",
+      "passive1": "UI_Talent_S_PlayerElectric_05",
+      "passive2": "UI_Talent_S_PlayerElectric_06",
+      "constellation1": "UI_Talent_S_PlayerElectric_01",
+      "constellation2": "UI_Talent_S_PlayerElectric_02",
+      "constellation3": "UI_Talent_U_PlayerElectric_01",
+      "constellation4": "UI_Talent_S_PlayerElectric_03",
+      "constellation5": "UI_Talent_U_PlayerElectric_02",
+      "constellation6": "UI_Talent_S_PlayerElectric_04"
+    },
+    "TravelerDendro": {
+      "skill": "Skill_E_PlayerGrass_01",
+      "burst": "Skill_S_PlayerGrass_01_HD",
+      "passive1": "UI_Talent_U_PlayerGrass_01",
+      "passive2": "UI_Talent_U_PlayerGrass_02",
+      "constellation1": "UI_Talent_S_PlayerGrass_01",
+      "constellation2": "UI_Talent_S_PlayerGrass_02",
+      "constellation3": "UI_Talent_S_PlayerGrass_03",
+      "constellation4": "UI_Talent_S_PlayerGrass_04",
+      "constellation5": "UI_Talent_S_PlayerGrass_05",
+      "constellation6": "UI_Talent_S_PlayerGrass_06"
+    },
+    "TravelerHydro": {
+      "skill": "Skill_S_PlayerWater_01",
+      "burst": "Skill_E_PlayerWater_01_HD",
+      "passive1": "UI_Talent_S_PlayerWater_05",
+      "passive2": "UI_Talent_S_PlayerWater_06",
+      "constellation1": "UI_Talent_S_PlayerWater_01",
+      "constellation2": "UI_Talent_S_PlayerWater_02",
+      "constellation3": "UI_Talent_U_PlayerWater_01",
+      "constellation4": "UI_Talent_S_PlayerWater_03",
+      "constellation5": "UI_Talent_U_PlayerWater_02",
+      "constellation6": "UI_Talent_S_PlayerWater_04"
+    },
+    "Somnia": {}
+  }
+}
