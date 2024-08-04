@@ -1,5 +1,4 @@
-import { objKeyValMap } from '@genshin-optimizer/common/util'
-import type { RelicSlotDMKey } from '../../mapping/relic'
+import type { RelicSetId, RelicSlotDMKey } from '../../mapping/relic'
 import { readDMJSON } from '../../util'
 
 export type RelicDataInfo = {
@@ -17,7 +16,10 @@ const relicDataInfoSrc = JSON.parse(
   readDMJSON('ExcelOutput/RelicDataInfo.json')
 ) as RelicDataInfo[]
 
-export const relicDataInfo = objKeyValMap(relicDataInfoSrc, (dataInfo) => [
-  dataInfo.SetID,
-  dataInfo,
-])
+export const relicDataInfo = relicDataInfoSrc.reduce((fullInfo, info) => {
+  const { SetID, Type } = info
+  if (!fullInfo[SetID])
+    fullInfo[SetID] = {} as Partial<Record<RelicSlotDMKey, RelicDataInfo>>
+  fullInfo[SetID][Type] = info
+  return fullInfo
+}, {} as Record<RelicSetId, Partial<Record<RelicSlotDMKey, RelicDataInfo>>>)
