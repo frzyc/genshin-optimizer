@@ -1,0 +1,76 @@
+{
+  "name": "Firefly",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Order: Flare Propulsion",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK SAM pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh."
+      },
+      "1": {
+        "name": "Fyrefly Type-IV: Pyrogenic Decimation",
+        "fullDesc": "Memulihkan HP sebesar {{2}}% Max HP SAM. Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK SAM pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Memulihkan sebagian HP diri sendiri dan mengakibatkan Fire DMG pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Order: Aerial Bombardment",
+        "fullDesc": "Mengonsumsi HP sebesar {{2}}% Max HP SAM dan memulihkan Energy dalam jumlah tetap sebesar <orangeStrong>{{3}}%</orangeStrong> dari Max Energy SAM, serta mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK SAM pada 1 musuh yang ditargetkan. Jika HP saat ini tidak cukup, maka HP SAM saat ini akan berkurang hingga 1 saat melancarkan Skill ini. Membuat aksi SAM yang berikutnya <u>didahulukan</u> sebesar {{4}}%.",
+        "shortDesc": "Mengonsumsi sebagian HP diri sendiri dan memulihkan Energy, serta mengakibatkan Fire DMG pada 1 musuh. Membuat aksi dirinya yang berikutnya <u>didahulukan</u>."
+      },
+      "1": {
+        "name": "Fyrefly Type-IV: Deathstar Overload",
+        "fullDesc": "Memulihkan HP sebesar {{3}}% Max HP SAM. Menambahkan Fire Weakness pada 1 musuh yang ditargetkan, berlangsung selama {{4}} giliran. Mengakibatkan Fire DMG sebesar ({{5}} × Break Effect + <orangeStrong>{{1}}%</orangeStrong>) ATK SAM pada target tersebut, dan di saat bersamaan mengakibatkan Fire DMG sebesar ({{6}} × Break Effect + <orangeStrong>{{2}}%</orangeStrong>) ATK SAM pada musuh di sekitar target. Maksimal menghitung hingga {{7}}% Break Effect.",
+        "shortDesc": "Memulihkan sebagian HP diri sendiri, <orangeStrong>menambahkan Fire Weakness</orangeStrong> pada 1 musuh, serta mengakibatkan Fire DMG dalam jumlah besar padanya dan mengakibatkan Fire DMG pada target di sekitarnya."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Fyrefly Type-IV: Complete Combustion",
+        "fullDesc": "Memasuki status \"Complete Combustion\", mendahulukan aksi diri sendiri sebesar 100%, serta memperoleh Enhanced Basic Attack dan Enhanced Skill. Saat dalam status \"Complete Combustion\", SPD meningkat <orangeStrong>{{3}}</orangeStrong>. Selain itu, saat melancarkan Enhanced Basic Attack atau Enhanced Skill, Weakness Break Efficiency dirinya meningkat {{2}}%, dan Break DMG yang diterima target musuh (yang diakibatkan SAM) meningkat <orangeStrong>{{1}}%</orangeStrong>, berlangsung hingga serangan kali ini berakhir.\\nHitung mundur \"Complete Combustion\" akan muncul di Susunan Aksi, dan status \"Complete Combustion\" SAM akan dihapus saat giliran hitung mundur dimulai. Hitung mundur memiliki SPD tetap sebesar {{4}}.\\nSAM yang berstatus \"Complete Combustion\" tidak dapat melancarkan Ultimate.",
+        "shortDesc": "Memasuki status \"Complete Combustion\", <orangeStrong>mendahulukan aksi diri sendiri sebesar <unbreak>100%</orangeStrong></color>, memperoleh <orangeStrong>Enhanced Basic Attack</orangeStrong> dan <orangeStrong>Enhanced Skill</orangeStrong>, serta meningkatkan <orangeStrong>SPD dirinya, Weakness Break Efficiency dirinya, dan Break DMG yang diterima target musuh</orangeStrong>, berlangsung hingga hitung mundur berakhir."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Δ Order: Meteoric Incineration",
+        "fullDesc": "Melompat ke udara dan bergerak dengan bebas selama {{1}} detik. Melancarkan Plunging Attack selama periode tersebut dapat mengakhiri waktu gerak bebas lebih awal. Setelah waktu gerak bebas berakhir, SAM akan turun dan segera menyerang semua musuh dalam jangkauan tertentu. Saat setiap gelombang pertempuran dimulai, akan menambahkan Fire Weakness pada seluruh musuh, berlangsung selama {{3}} giliran. Setelahnya, akan mengakibatkan Fire DMG sebesar {{2}}% ATK SAM pada seluruh musuh.",
+        "shortDesc": "Melompat ke udara dan bergerak dengan bebas. Setelah bergerak bebas selama beberapa detik, akan turun dan menyerang semua musuh dalam jangkauan. Saat <orangeStrong>setiap gelombang pertempuran</orangeStrong> dimulai, <orangeStrong>menambahkan Fire Weakness</orangeStrong> pada seluruh musuh dan mengakibatkan Fire DMG pada seluruh musuh."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "In Reddened Chrysalis, I Once Rest",
+      "desc": "Saat melancarkan Enhanced Skill, akan mengabaikan {{1}}% DEF target, dan Enhanced Skill tidak mengonsumsi Poin Skill."
+    },
+    "2": {
+      "name": "From Shattered Sky, I Free Fall",
+      "desc": "Saat berstatus \"Complete Combustion\", jika Enhanced Basic Attack atau Enhanced Skill yang dilancarkan mengalahkan target musuh atau membuat target musuh memasuki status Weakness Break, maka SAM akan segera memperoleh 1 giliran tambahan. Efek ini dapat dipicu lagi setelah {{2}} giliran."
+    },
+    "3": {
+      "name": "Amidst Silenced Stars, I Deep Sleep",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Upon Lighted Fyrefly, I Soon Gaze",
+      "desc": "Saat berstatus \"Complete Combustion\", Effect RES milik SAM meningkat {{1}}%."
+    },
+    "5": {
+      "name": "From Undreamt Night, I Thence Shine",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "In Finalized Morrow, I Full Bloom",
+      "desc": "Fire RES PEN milik SAM saat berstatus \"Complete Combustion\" meningkat {{1}}%. Saat melancarkan Enhanced Basic Attack atau Enhanced Skill, Weakness Break Efficiency meningkat {{2}}%."
+    }
+  }
+}

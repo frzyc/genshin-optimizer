@@ -1,0 +1,66 @@
+{
+  "name": "Trazacaminos (Imaginario • Armonía)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Etiqueta al bailar el swing",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Imaginario a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Aguacero en el intermedio",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Imaginario a un enemigo y después inflige daño 4 veces más. Cada golpe inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Imaginario a un enemigo al azar.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo. Se dispara 5 veces en total."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Desfile clamoroso de luces",
+        "fullDesc": "Aplica a todos los aliados el efecto Bailarín de apoyo durante {{1}} turnos. La duración del efecto se reduce en 1 cada vez que comience el turno {F#de la}{M#del} Trazacaminos. El efecto de Ruptura de los aliados bajo el efecto de Bailarín de apoyo aumenta en un <orangeStrong>{{3}}%</orangeStrong>. Cuando atacan a enemigos con <u>Ruptura de Debilidad</u>, convierten la Reducción de Firmeza de este ataque en <u>Daño de Ultrarruptura</u> 1 vez.",
+        "shortDesc": "Aplica el efecto Bailarín de apoyo a todos los aliados. Los aliados bajo el efecto de Bailarín de apoyo tienen <orangeStrong>mayor efecto de Ruptura</orangeStrong> e infligen adicionalmente 1 vez <orangeStrong><u>Daño de Ultrarruptura</u></orangeStrong> cuando atacan a enemigos con <u>Ruptura de Debilidad</u>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "¡Que entren los solistas!",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el efecto de Ruptura de todos los aliados aumenta en un {{1}}% durante {{2}} turnos.",
+        "shortDesc": "Aumenta el efecto de Ruptura de todos los aliados en la siguiente batalla."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "El mejor asiento del local",
+      "desc": "Regenera {{1}} pt. de habilidad básica tras usar la habilidad por primera vez en una batalla."
+    },
+    "2": {
+      "name": "Arcoíris fugaprisiones",
+      "desc": "Al comenzar la batalla, la recuperación de energía {F#de la}{M#del} Trazacaminos aumenta en un <orangeStrong>{{1}}%</orangeStrong> durante {{2}} turnos."
+    },
+    "3": {
+      "name": "Sanatorio del silencio de redonda",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Paloma en la chistera",
+      "desc": "Mientras {F#la}{M#el} Trazacaminos está en el campo de batalla, el efecto de Ruptura de todos los aliados excepto {F#ella}{M#él} aumenta en una cantidad equivalente al {{1}}% del efecto de Ruptura {F#de la}{M#del} Trazacaminos."
+    },
+    "5": {
+      "name": "Poema de viejos ritmos",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Mañana descansaremos bajo los focos",
+      "desc": "Aumenta el daño extra de la habilidad básica {{1}} veces."
+    }
+  }
+}

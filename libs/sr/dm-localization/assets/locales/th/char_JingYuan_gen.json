@@ -24,7 +24,7 @@
     },
     "technique": {
       "0": {
-        "name": "Spirit Invocation",
+        "name": "Spiritus Invocation",
         "fullDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป จำนวนการโจมตีของ \"Lightning-Lord\" ในเทิร์นที่ 1 จะเพิ่มขึ้น {{1}} ครั้ง",
         "shortDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเข้าสู่การต่อสู้ครั้งถัดไป <orangeStrong>จะเพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</orangeStrong>"
       }

@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "É Uma Promessa, Não Uma Ordem",
-        "fullDesc": "Após Clara usar sua Perícia Suprema, o Dano causado a ela é reduzido em <orangeStrong>{{4}}%</orangeStrong> extra, e ela terá muito mais chances de ser atacada por inimigos por {{3}} rodada(s).\\nAlém disso, o <u>Contra-Ataque</u> de Svarog é aprimorado. Quando um aliado é atacado, Svarog usa um <u>Contra-Ataque</u> imediatamente, e seu multiplicador de Dano contra o inimigo aumenta em <orangeStrong>{{2}}%</orangeStrong>. Inimigos adjacentes a ele sofrem 50% do Dano causado ao inimigo-alvo. <u>Contra-Ataque(s)</u> aprimorado(s) podem entrar em vigor {{5}} vez(es).",
+        "fullDesc": "Após Clara usar sua Perícia Suprema, o Dano causado a ela é reduzido em <orangeStrong>{{4}}%</orangeStrong> extra, e ela terá muito mais chances de ser atacada por inimigos por {{3}} rodada(s).\\nAlém disso, o <u>Contra-Ataque</u> de Svarog é aprimorado. Quando um aliado é atacado, Svarog usa um <u>Contra-Ataque</u> imediatamente, e seu multiplicador de Dano contra o inimigo aumenta em <orangeStrong>{{2}}%</orangeStrong>. Inimigos adjacentes a ele sofrem 50% do Dano causado ao inimigo-alvo principal. <u>Contra-Ataque(s)</u> aprimorado(s) podem entrar em vigor {{5}} vez(es).",
         "shortDesc": "<orangeStrong>Reduz o Dano recebido</orangeStrong>, aumenta as chances de receber ataques de inimigos, e aprimora <u>Contra-Ataques</u>."
       }
     },

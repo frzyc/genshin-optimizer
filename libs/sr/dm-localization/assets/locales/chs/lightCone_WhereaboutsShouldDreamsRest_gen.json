@@ -1,0 +1,7 @@
+{
+  "name": "梦应归于何处",
+  "passive": {
+    "name": "蜕变",
+    "description": "使装备者的击破特攻提高<orangeStrong>{{1}}%</orangeStrong>。当装备者对敌方目标造成击破伤害时，使敌方陷入【溃败】状态，持续{{4}}回合。【溃败】状态下目标受到装备者造成的击破伤害提高<orangeStrong>{{2}}%</orangeStrong>，速度降低{{3}}%，同类效果无法叠加。"
+  }
+}

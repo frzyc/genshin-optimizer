@@ -18,23 +18,23 @@
     "ult": {
       "0": {
         "name": "Rêve flétri écarlate",
-        "fullDesc": "Déclenche Lame de pluie 3 fois de suite et Vengeance du Styx 1 fois, infligeant des DGT de foudre équivalents à <orangeStrong>{{6}}%</orangeStrong> de l'ATQ d'Achéron à une cible ennemie unique, et des DGT de foudre équivalents à <orangeStrong>{{7}}%</orangeStrong> de l'ATQ d'Achéron aux autres ennemis.\\n\\nLame de pluie : Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Achéron à une cible ennemie unique et supprime jusqu'à 3 cumuls d'Étreinte écarlate à la cible. Lorsque l'effet Étreinte écarlate est supprimé, inflige immédiatement des DGT de foudre équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ d'Achéron à tous les ennemis. Le multiplicateur de cette instance de DGT augmente pour chaque cumul d'Étreinte écarlate supprimé, jusqu'à un maximum de <orangeStrong>{{5}}%</orangeStrong>.\\n\\nVengeance du Styx : Inflige des DGT de foudre équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ d'Achéron à tous les ennemis et supprime tous les effets d'Étreinte écarlate.\\nL'effet Étreinte écarlate ne peut pas être appliqué aux ennemis pendant l'ultime.",
+        "fullDesc": "Déclenche Lame de pluie 3 fois de suite et Vengeance du Styx 1 fois, infligeant des DGT de foudre équivalents à <orangeStrong>{{6}}%</orangeStrong> de l'ATQ d'Achéron à une cible ennemie unique, et des DGT de foudre équivalents à <orangeStrong>{{7}}%</orangeStrong> de l'ATQ d'Achéron aux autres cibles.\\n\\nLame de pluie : Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Achéron à une cible ennemie unique et supprime jusqu'à 3 cumuls d'Étreinte écarlate de la cible. Lorsque l'effet Étreinte écarlate est supprimé, inflige immédiatement des DGT de foudre équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ d'Achéron à tous les ennemis. Le multiplicateur de cette instance de DGT augmente pour chaque cumul d'Étreinte écarlate supprimé, jusqu'à un maximum de <orangeStrong>{{5}}%</orangeStrong>.\\n\\nVengeance du Styx : Inflige des DGT de foudre équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ d'Achéron à tous les ennemis et supprime tous les effets d'Étreinte écarlate.\\n\\nL'effet Étreinte écarlate ne peut pas être appliqué à des ennemis pendant l'ultime.",
         "shortDesc": "Inflige des DGT de foudre mineurs 3 fois à un ennemi unique. Inflige des DGT de foudre mineurs à tous les ennemis si la cible perd l'effet Étreinte écarlate. Puis, inflige des DGT de foudre 1 fois à tous les ennemis et supprime tous les cumuls d'Étreinte écarlate."
       },
       "1": {
         "name": "Lame de pluie",
         "fullDesc": "",
-        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique, et supprime jusqu'à 3 cumuls d'Étreinte écarlate à la cible. Inflige 1 fois des DGT de foudre mineurs à tous les ennemis lorsque l'effet Étreinte écarlate est supprimé. Le multiplicateur de cette instance de DGT augmente pour chaque cumul d'Étreinte écarlate supprimé."
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique, et supprime jusqu'à 3 cumuls d'Étreinte écarlate de la cible. Inflige 1 fois des DGT de foudre mineurs à tous les ennemis lorsque l'effet Étreinte écarlate est supprimé. Le multiplicateur de cette instance de DGT augmente pour chaque cumul d'Étreinte écarlate supprimé."
       },
       "2": {
         "name": "Lame de pluie",
         "fullDesc": "",
-        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique, et supprime jusqu'à 3 cumuls d'Étreinte écarlate à la cible. Inflige 1 fois des DGT de foudre mineurs à tous les ennemis lorsque l'effet Étreinte écarlate est supprimé. Le multiplicateur de cette instance de DGT augmente pour chaque cumul d'Étreinte écarlate supprimé."
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique, et supprime jusqu'à 3 cumuls d'Étreinte écarlate de la cible. Inflige 1 fois des DGT de foudre mineurs à tous les ennemis lorsque l'effet Étreinte écarlate est supprimé. Le multiplicateur de cette instance de DGT augmente pour chaque cumul d'Étreinte écarlate supprimé."
       },
       "3": {
         "name": "Lame de pluie",
         "fullDesc": "",
-        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique, et supprime jusqu'à 3 cumuls d'Étreinte écarlate à la cible. Inflige 1 fois des DGT de foudre mineurs à tous les ennemis lorsque l'effet Étreinte écarlate est supprimé. Le multiplicateur de cette instance de DGT augmente pour chaque cumul d'Étreinte écarlate supprimé."
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique, et supprime jusqu'à 3 cumuls d'Étreinte écarlate de la cible. Inflige 1 fois des DGT de foudre mineurs à tous les ennemis lorsque l'effet Étreinte écarlate est supprimé. Le multiplicateur de cette instance de DGT augmente pour chaque cumul d'Étreinte écarlate supprimé."
       },
       "4": {
         "name": "Vengeance du Styx",
@@ -60,7 +60,7 @@
   "ranks": {
     "1": {
       "name": "Révélation des sommets silencieux",
-      "desc": "Augmente de {{1}}% les chances de coup critique lorsque le personnage inflige des DGT aux ennemis qui subissent des malus. Lorsque Rêve flétri atteint la limite, chaque point de Rêve flétri au-dessus de la limite accorde un cumul de Chemin de la réalisation, cumulable jusqu'à {{2}} fois."
+      "desc": "Augmente les chances de coup critique du personnage contre les ennemis avec des malus de {{1}}%."
     },
     "2": {
       "name": "Calme après la tempête",
@@ -80,7 +80,7 @@
     },
     "6": {
       "name": "Catalysatrice de l'apocalypse",
-      "desc": "Augmente de {{1}}% la PÉN de RÉS à tous les types des DGT d'ultime infligés par Achéron. Les DGT infligés par l'ATQ normale et la compétence sont également considérés comme des DGT d'ultime et peuvent réduire la robustesse de l'ennemi, quels que soient ses types de faiblesse. En cas de Rupture de faiblesse, c'est l'effet de Rupture de faiblesse de foudre qui est déclenché."
+      "desc": "Augmente la PÉN de RÉS à tous les types des DGT d'ultime d'Achéron de {{1}}%. Les DGT infligés par l'ATQ normale et la compétence sont également considérés comme des DGT d'ultime et peuvent réduire la robustesse de l'ennemi, quels que soient ses types de faiblesse. En cas de Rupture de faiblesse, c'est l'effet de Rupture de faiblesse de foudre qui est déclenché."
     }
   }
 }

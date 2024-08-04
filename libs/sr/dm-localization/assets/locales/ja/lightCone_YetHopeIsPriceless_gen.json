@@ -1,0 +1,7 @@
+{
+  "name": "されど{RUBY_B#きぼう}希望{RUBY_E#}の{RUBY_B#めい}銘{RUBY_E#}は{RUBY_B#むか}無価{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#しょうだく}承諾{RUBY_E#}",
+    "description": "装備キャラの会心率+<orangeStrong>{{1}}%</orangeStrong>。戦闘中、装備キャラの会心ダメージが{{2}}%を超えた時、超過した会心ダメージ{{3}}%につき、追加攻撃ダメージ+<orangeStrong>{{4}}%</orangeStrong>。この効果は最大で{{5}}層累積できる。戦闘開始時および装備キャラが通常攻撃を行った後、追加攻撃ダメージと必殺技によるダメージがターゲットの防御力を<orangeStrong>{{6}}%</orangeStrong>無視する、{{7}}ターン継続。"
+  }
+}

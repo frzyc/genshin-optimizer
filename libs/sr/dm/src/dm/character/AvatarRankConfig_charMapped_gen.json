@@ -8,7 +8,7 @@
       },
       "Name": "AvatarRankName_100101",
       "Desc": "AvatarRankDesc_100101",
-      "IconPath": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -31,7 +31,7 @@
       },
       "Name": "AvatarRankName_100102",
       "Desc": "AvatarRankDesc_100102",
-      "IconPath": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_March7th_Rank02"
@@ -62,7 +62,7 @@
       },
       "Name": "AvatarRankName_100103",
       "Desc": "AvatarRankDesc_100103",
-      "IconPath": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Ultra.png",
       "SkillAddLevelList": {
         "100101": 1,
         "100103": 2
@@ -84,7 +84,7 @@
       },
       "Name": "AvatarRankName_100104",
       "Desc": "AvatarRankDesc_100104",
-      "IconPath": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -107,7 +107,7 @@
       },
       "Name": "AvatarRankName_100105",
       "Desc": "AvatarRankDesc_100105",
-      "IconPath": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_BP.png",
       "SkillAddLevelList": {
         "100102": 2,
         "100104": 2
@@ -129,7 +129,7 @@
       },
       "Name": "AvatarRankName_100106",
       "Desc": "AvatarRankDesc_100106",
-      "IconPath": "SpriteOutput/SkillIcons/1001/SkillIcon_1001_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -157,7 +157,7 @@
       },
       "Name": "AvatarRankName_100201",
       "Desc": "AvatarRankDesc_100201",
-      "IconPath": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_DanHeng_Rank01"
@@ -185,7 +185,7 @@
       },
       "Name": "AvatarRankName_100202",
       "Desc": "AvatarRankDesc_100202",
-      "IconPath": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -204,7 +204,7 @@
       },
       "Name": "AvatarRankName_100203",
       "Desc": "AvatarRankDesc_100203",
-      "IconPath": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_BP.png",
       "SkillAddLevelList": {
         "100201": 1,
         "100202": 2
@@ -226,7 +226,7 @@
       },
       "Name": "AvatarRankName_100204",
       "Desc": "AvatarRankDesc_100204",
-      "IconPath": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -245,7 +245,7 @@
       },
       "Name": "AvatarRankName_100205",
       "Desc": "AvatarRankDesc_100205",
-      "IconPath": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Ultra.png",
       "SkillAddLevelList": {
         "100203": 2,
         "100204": 2
@@ -267,7 +267,7 @@
       },
       "Name": "AvatarRankName_100206",
       "Desc": "AvatarRankDesc_100206",
-      "IconPath": "SpriteOutput/SkillIcons/1002/SkillIcon_1002_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -292,7 +292,7 @@
       },
       "Name": "AvatarRankName_100301",
       "Desc": "AvatarRankDesc_100301",
-      "IconPath": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -318,7 +318,7 @@
       },
       "Name": "AvatarRankName_100302",
       "Desc": "AvatarRankDesc_100302",
-      "IconPath": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Himeko_Rank02"
@@ -346,7 +346,7 @@
       },
       "Name": "AvatarRankName_100303",
       "Desc": "AvatarRankDesc_100303",
-      "IconPath": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_BP.png",
       "SkillAddLevelList": {
         "100301": 1,
         "100302": 2
@@ -368,7 +368,7 @@
       },
       "Name": "AvatarRankName_100304",
       "Desc": "AvatarRankDesc_100304",
-      "IconPath": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -391,7 +391,7 @@
       },
       "Name": "AvatarRankName_100305",
       "Desc": "AvatarRankDesc_100305",
-      "IconPath": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Ultra.png",
       "SkillAddLevelList": {
         "100303": 2,
         "100304": 2
@@ -413,7 +413,7 @@
       },
       "Name": "AvatarRankName_100306",
       "Desc": "AvatarRankDesc_100306",
-      "IconPath": "SpriteOutput/SkillIcons/1003/SkillIcon_1003_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -438,7 +438,7 @@
       },
       "Name": "AvatarRankName_100401",
       "Desc": "AvatarRankDesc_100401",
-      "IconPath": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -467,7 +467,7 @@
       },
       "Name": "AvatarRankName_100402",
       "Desc": "AvatarRankDesc_100402",
-      "IconPath": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -490,7 +490,7 @@
       },
       "Name": "AvatarRankName_100403",
       "Desc": "AvatarRankDesc_100403",
-      "IconPath": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_BP.png",
       "SkillAddLevelList": {
         "100401": 1,
         "100402": 2
@@ -512,7 +512,7 @@
       },
       "Name": "AvatarRankName_100404",
       "Desc": "AvatarRankDesc_100404",
-      "IconPath": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -535,7 +535,7 @@
       },
       "Name": "AvatarRankName_100405",
       "Desc": "AvatarRankDesc_100405",
-      "IconPath": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Ultra.png",
       "SkillAddLevelList": {
         "100403": 2,
         "100404": 2
@@ -557,7 +557,7 @@
       },
       "Name": "AvatarRankName_100406",
       "Desc": "AvatarRankDesc_100406",
-      "IconPath": "SpriteOutput/SkillIcons/1004/SkillIcon_1004_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -578,7 +578,7 @@
       },
       "Name": "AvatarRankName_100501",
       "Desc": "AvatarRankDesc_100501",
-      "IconPath": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -607,7 +607,7 @@
       },
       "Name": "AvatarRankName_100502",
       "Desc": "AvatarRankDesc_100502",
-      "IconPath": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Kafka_Rank02"
@@ -632,7 +632,7 @@
       },
       "Name": "AvatarRankName_100503",
       "Desc": "AvatarRankDesc_100503",
-      "IconPath": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_BP.png",
       "SkillAddLevelList": {
         "100501": 1,
         "100502": 2
@@ -654,7 +654,7 @@
       },
       "Name": "AvatarRankName_100504",
       "Desc": "AvatarRankDesc_100504",
-      "IconPath": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -677,7 +677,7 @@
       },
       "Name": "AvatarRankName_100505",
       "Desc": "AvatarRankDesc_100505",
-      "IconPath": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Ultra.png",
       "SkillAddLevelList": {
         "100503": 2,
         "100504": 2
@@ -699,7 +699,7 @@
       },
       "Name": "AvatarRankName_100506",
       "Desc": "AvatarRankDesc_100506",
-      "IconPath": "SpriteOutput/SkillIcons/1005/SkillIcon_1005_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -727,7 +727,7 @@
       },
       "Name": "AvatarRankName_100601",
       "Desc": "AvatarRankDesc_100601",
-      "IconPath": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -753,7 +753,7 @@
       },
       "Name": "AvatarRankName_100602",
       "Desc": "AvatarRankDesc_100602",
-      "IconPath": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Silwolf_Rank02"
@@ -778,7 +778,7 @@
       },
       "Name": "AvatarRankName_100603",
       "Desc": "AvatarRankDesc_100603",
-      "IconPath": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_BP.png",
       "SkillAddLevelList": {
         "100602": 2,
         "100604": 2
@@ -800,7 +800,7 @@
       },
       "Name": "AvatarRankName_100604",
       "Desc": "AvatarRankDesc_100604",
-      "IconPath": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -826,7 +826,7 @@
       },
       "Name": "AvatarRankName_100605",
       "Desc": "AvatarRankDesc_100605",
-      "IconPath": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Ultra.png",
       "SkillAddLevelList": {
         "100601": 1,
         "100603": 2
@@ -848,7 +848,7 @@
       },
       "Name": "AvatarRankName_100606",
       "Desc": "AvatarRankDesc_100606",
-      "IconPath": "SpriteOutput/SkillIcons/1006/SkillIcon_1006_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Silwolf_Rank06"
@@ -878,7 +878,7 @@
       },
       "Name": "AvatarRankName_100801",
       "Desc": "AvatarRankDesc_100801",
-      "IconPath": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -901,7 +901,7 @@
       },
       "Name": "AvatarRankName_100802",
       "Desc": "AvatarRankDesc_100802",
-      "IconPath": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -920,7 +920,7 @@
       },
       "Name": "AvatarRankName_100803",
       "Desc": "AvatarRankDesc_100803",
-      "IconPath": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_BP.png",
       "SkillAddLevelList": {
         "100801": 1,
         "100802": 2
@@ -942,7 +942,7 @@
       },
       "Name": "AvatarRankName_100804",
       "Desc": "AvatarRankDesc_100804",
-      "IconPath": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -968,7 +968,7 @@
       },
       "Name": "AvatarRankName_100805",
       "Desc": "AvatarRankDesc_100805",
-      "IconPath": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Ultra.png",
       "SkillAddLevelList": {
         "100803": 2,
         "100804": 2
@@ -990,7 +990,7 @@
       },
       "Name": "AvatarRankName_100806",
       "Desc": "AvatarRankDesc_100806",
-      "IconPath": "SpriteOutput/SkillIcons/1008/SkillIcon_1008_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1015,7 +1015,7 @@
       },
       "Name": "AvatarRankName_100901",
       "Desc": "AvatarRankDesc_100901",
-      "IconPath": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1034,7 +1034,7 @@
       },
       "Name": "AvatarRankName_100902",
       "Desc": "AvatarRankDesc_100902",
-      "IconPath": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1057,7 +1057,7 @@
       },
       "Name": "AvatarRankName_100903",
       "Desc": "AvatarRankDesc_100903",
-      "IconPath": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_BP.png",
       "SkillAddLevelList": {
         "100902": 2,
         "100904": 2
@@ -1079,7 +1079,7 @@
       },
       "Name": "AvatarRankName_100904",
       "Desc": "AvatarRankDesc_100904",
-      "IconPath": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1105,7 +1105,7 @@
       },
       "Name": "AvatarRankName_100905",
       "Desc": "AvatarRankDesc_100905",
-      "IconPath": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Ultra.png",
       "SkillAddLevelList": {
         "100901": 1,
         "100903": 2
@@ -1127,7 +1127,7 @@
       },
       "Name": "AvatarRankName_100906",
       "Desc": "AvatarRankDesc_100906",
-      "IconPath": "SpriteOutput/SkillIcons/1009/SkillIcon_1009_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1152,7 +1152,7 @@
       },
       "Name": "AvatarRankName_101301",
       "Desc": "AvatarRankDesc_101301",
-      "IconPath": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1178,7 +1178,7 @@
       },
       "Name": "AvatarRankName_101302",
       "Desc": "AvatarRankDesc_101302",
-      "IconPath": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1204,7 +1204,7 @@
       },
       "Name": "AvatarRankName_101303",
       "Desc": "AvatarRankDesc_101303",
-      "IconPath": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_BP.png",
       "SkillAddLevelList": {
         "101301": 1,
         "101302": 2
@@ -1226,7 +1226,7 @@
       },
       "Name": "AvatarRankName_101304",
       "Desc": "AvatarRankDesc_101304",
-      "IconPath": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1249,7 +1249,7 @@
       },
       "Name": "AvatarRankName_101305",
       "Desc": "AvatarRankDesc_101305",
-      "IconPath": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Ultra.png",
       "SkillAddLevelList": {
         "101303": 2,
         "101304": 2
@@ -1271,7 +1271,7 @@
       },
       "Name": "AvatarRankName_101306",
       "Desc": "AvatarRankDesc_101306",
-      "IconPath": "SpriteOutput/SkillIcons/1013/SkillIcon_1013_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1299,7 +1299,7 @@
       },
       "Name": "AvatarRankName_110101",
       "Desc": "AvatarRankDesc_110101",
-      "IconPath": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Bronya_00_Rank01"
@@ -1324,7 +1324,7 @@
       },
       "Name": "AvatarRankName_110102",
       "Desc": "AvatarRankDesc_110102",
-      "IconPath": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1347,7 +1347,7 @@
       },
       "Name": "AvatarRankName_110103",
       "Desc": "AvatarRankDesc_110103",
-      "IconPath": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Ultra.png",
       "SkillAddLevelList": {
         "110103": 2,
         "110104": 2
@@ -1369,7 +1369,7 @@
       },
       "Name": "AvatarRankName_110104",
       "Desc": "AvatarRankDesc_110104",
-      "IconPath": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Bronya_00_Rank04"
@@ -1394,7 +1394,7 @@
       },
       "Name": "AvatarRankName_110105",
       "Desc": "AvatarRankDesc_110105",
-      "IconPath": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_BP.png",
       "SkillAddLevelList": {
         "110101": 1,
         "110102": 2
@@ -1416,7 +1416,7 @@
       },
       "Name": "AvatarRankName_110106",
       "Desc": "AvatarRankDesc_110106",
-      "IconPath": "SpriteOutput/SkillIcons/1101/SkillIcon_1101_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1441,7 +1441,7 @@
       },
       "Name": "AvatarRankName_110201",
       "Desc": "AvatarRankDesc_110201",
-      "IconPath": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Seele_Rank01"
@@ -1469,7 +1469,7 @@
       },
       "Name": "AvatarRankName_110202",
       "Desc": "AvatarRankDesc_110202",
-      "IconPath": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1492,7 +1492,7 @@
       },
       "Name": "AvatarRankName_110203",
       "Desc": "AvatarRankDesc_110203",
-      "IconPath": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_BP.png",
       "SkillAddLevelList": {
         "110202": 2,
         "110204": 2
@@ -1514,7 +1514,7 @@
       },
       "Name": "AvatarRankName_110204",
       "Desc": "AvatarRankDesc_110204",
-      "IconPath": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Seele_Rank04"
@@ -1539,7 +1539,7 @@
       },
       "Name": "AvatarRankName_110205",
       "Desc": "AvatarRankDesc_110205",
-      "IconPath": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Ultra.png",
       "SkillAddLevelList": {
         "110201": 1,
         "110203": 2
@@ -1561,7 +1561,7 @@
       },
       "Name": "AvatarRankName_110206",
       "Desc": "AvatarRankDesc_110206",
-      "IconPath": "SpriteOutput/SkillIcons/1102/SkillIcon_1102_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Seele_Rank06"
@@ -1591,7 +1591,7 @@
       },
       "Name": "AvatarRankName_110301",
       "Desc": "AvatarRankDesc_110301",
-      "IconPath": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1614,7 +1614,7 @@
       },
       "Name": "AvatarRankName_110302",
       "Desc": "AvatarRankDesc_110302",
-      "IconPath": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1637,7 +1637,7 @@
       },
       "Name": "AvatarRankName_110303",
       "Desc": "AvatarRankDesc_110303",
-      "IconPath": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_BP.png",
       "SkillAddLevelList": {
         "110301": 1,
         "110302": 2
@@ -1659,7 +1659,7 @@
       },
       "Name": "AvatarRankName_110304",
       "Desc": "AvatarRankDesc_110304",
-      "IconPath": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1682,7 +1682,7 @@
       },
       "Name": "AvatarRankName_110305",
       "Desc": "AvatarRankDesc_110305",
-      "IconPath": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Ultra.png",
       "SkillAddLevelList": {
         "110303": 2,
         "110304": 2
@@ -1704,7 +1704,7 @@
       },
       "Name": "AvatarRankName_110306",
       "Desc": "AvatarRankDesc_110306",
-      "IconPath": "SpriteOutput/SkillIcons/1103/SkillIcon_1103_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Serval_00_Rank06"
@@ -1731,7 +1731,7 @@
       },
       "Name": "AvatarRankName_110401",
       "Desc": "AvatarRankDesc_110401",
-      "IconPath": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1754,7 +1754,7 @@
       },
       "Name": "AvatarRankName_110402",
       "Desc": "AvatarRankDesc_110402",
-      "IconPath": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1780,7 +1780,7 @@
       },
       "Name": "AvatarRankName_110403",
       "Desc": "AvatarRankDesc_110403",
-      "IconPath": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Ultra.png",
       "SkillAddLevelList": {
         "110403": 2,
         "110404": 2
@@ -1802,7 +1802,7 @@
       },
       "Name": "AvatarRankName_110404",
       "Desc": "AvatarRankDesc_110404",
-      "IconPath": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1825,7 +1825,7 @@
       },
       "Name": "AvatarRankName_110405",
       "Desc": "AvatarRankDesc_110405",
-      "IconPath": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_BP.png",
       "SkillAddLevelList": {
         "110401": 1,
         "110402": 2
@@ -1847,7 +1847,7 @@
       },
       "Name": "AvatarRankName_110406",
       "Desc": "AvatarRankDesc_110406",
-      "IconPath": "SpriteOutput/SkillIcons/1104/SkillIcon_1104_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1872,7 +1872,7 @@
       },
       "Name": "AvatarRankName_110501",
       "Desc": "AvatarRankDesc_110501",
-      "IconPath": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Natasha_00_Rank01"
@@ -1903,7 +1903,7 @@
       },
       "Name": "AvatarRankName_110502",
       "Desc": "AvatarRankDesc_110502",
-      "IconPath": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -1935,7 +1935,7 @@
       },
       "Name": "AvatarRankName_110503",
       "Desc": "AvatarRankDesc_110503",
-      "IconPath": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_BP.png",
       "SkillAddLevelList": {
         "110501": 1,
         "110502": 2
@@ -1957,7 +1957,7 @@
       },
       "Name": "AvatarRankName_110504",
       "Desc": "AvatarRankDesc_110504",
-      "IconPath": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Natasha_00_Rank04"
@@ -1982,7 +1982,7 @@
       },
       "Name": "AvatarRankName_110505",
       "Desc": "AvatarRankDesc_110505",
-      "IconPath": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Ultra.png",
       "SkillAddLevelList": {
         "110503": 2,
         "110504": 2
@@ -2004,7 +2004,7 @@
       },
       "Name": "AvatarRankName_110506",
       "Desc": "AvatarRankDesc_110506",
-      "IconPath": "SpriteOutput/SkillIcons/1105/SkillIcon_1105_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2029,7 +2029,7 @@
       },
       "Name": "AvatarRankName_110601",
       "Desc": "AvatarRankDesc_110601",
-      "IconPath": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2052,7 +2052,7 @@
       },
       "Name": "AvatarRankName_110602",
       "Desc": "AvatarRankDesc_110602",
-      "IconPath": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2081,7 +2081,7 @@
       },
       "Name": "AvatarRankName_110603",
       "Desc": "AvatarRankDesc_110603",
-      "IconPath": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_BP.png",
       "SkillAddLevelList": {
         "110601": 1,
         "110602": 2
@@ -2103,7 +2103,7 @@
       },
       "Name": "AvatarRankName_110604",
       "Desc": "AvatarRankDesc_110604",
-      "IconPath": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2132,7 +2132,7 @@
       },
       "Name": "AvatarRankName_110605",
       "Desc": "AvatarRankDesc_110605",
-      "IconPath": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Ultra.png",
       "SkillAddLevelList": {
         "110603": 2,
         "110604": 2
@@ -2154,7 +2154,7 @@
       },
       "Name": "AvatarRankName_110606",
       "Desc": "AvatarRankDesc_110606",
-      "IconPath": "SpriteOutput/SkillIcons/1106/SkillIcon_1106_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2179,7 +2179,7 @@
       },
       "Name": "AvatarRankName_110701",
       "Desc": "AvatarRankDesc_110701",
-      "IconPath": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2198,7 +2198,7 @@
       },
       "Name": "AvatarRankName_110702",
       "Desc": "AvatarRankDesc_110702",
-      "IconPath": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2224,7 +2224,7 @@
       },
       "Name": "AvatarRankName_110703",
       "Desc": "AvatarRankDesc_110703",
-      "IconPath": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_BP.png",
       "SkillAddLevelList": {
         "110701": 1,
         "110702": 2
@@ -2246,7 +2246,7 @@
       },
       "Name": "AvatarRankName_110704",
       "Desc": "AvatarRankDesc_110704",
-      "IconPath": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Klara_Rank04"
@@ -2271,7 +2271,7 @@
       },
       "Name": "AvatarRankName_110705",
       "Desc": "AvatarRankDesc_110705",
-      "IconPath": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Ultra.png",
       "SkillAddLevelList": {
         "110703": 2,
         "110704": 2
@@ -2293,7 +2293,7 @@
       },
       "Name": "AvatarRankName_110706",
       "Desc": "AvatarRankDesc_110706",
-      "IconPath": "SpriteOutput/SkillIcons/1107/SkillIcon_1107_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Klara_Rank06"
@@ -2323,7 +2323,7 @@
       },
       "Name": "AvatarRankName_110801",
       "Desc": "AvatarRankDesc_110801",
-      "IconPath": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2346,7 +2346,7 @@
       },
       "Name": "AvatarRankName_110802",
       "Desc": "AvatarRankDesc_110802",
-      "IconPath": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Sampo_Rank02"
@@ -2374,7 +2374,7 @@
       },
       "Name": "AvatarRankName_110803",
       "Desc": "AvatarRankDesc_110803",
-      "IconPath": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_BP.png",
       "SkillAddLevelList": {
         "110801": 1,
         "110802": 2
@@ -2396,7 +2396,7 @@
       },
       "Name": "AvatarRankName_110804",
       "Desc": "AvatarRankDesc_110804",
-      "IconPath": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2422,7 +2422,7 @@
       },
       "Name": "AvatarRankName_110805",
       "Desc": "AvatarRankDesc_110805",
-      "IconPath": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Ultra.png",
       "SkillAddLevelList": {
         "110803": 2,
         "110804": 2
@@ -2444,7 +2444,7 @@
       },
       "Name": "AvatarRankName_110806",
       "Desc": "AvatarRankDesc_110806",
-      "IconPath": "SpriteOutput/SkillIcons/1108/SkillIcon_1108_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2469,7 +2469,7 @@
       },
       "Name": "AvatarRankName_110901",
       "Desc": "AvatarRankDesc_110901",
-      "IconPath": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2492,7 +2492,7 @@
       },
       "Name": "AvatarRankName_110902",
       "Desc": "AvatarRankDesc_110902",
-      "IconPath": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2515,7 +2515,7 @@
       },
       "Name": "AvatarRankName_110903",
       "Desc": "AvatarRankDesc_110903",
-      "IconPath": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_BP.png",
       "SkillAddLevelList": {
         "110901": 1,
         "110902": 2,
@@ -2538,7 +2538,7 @@
       },
       "Name": "AvatarRankName_110904",
       "Desc": "AvatarRankDesc_110904",
-      "IconPath": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2561,7 +2561,7 @@
       },
       "Name": "AvatarRankName_110905",
       "Desc": "AvatarRankDesc_110905",
-      "IconPath": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Ultra.png",
       "SkillAddLevelList": {
         "110903": 2,
         "110904": 2
@@ -2583,7 +2583,7 @@
       },
       "Name": "AvatarRankName_110906",
       "Desc": "AvatarRankDesc_110906",
-      "IconPath": "SpriteOutput/SkillIcons/1109/SkillIcon_1109_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Hook_Rank06"
@@ -2610,7 +2610,7 @@
       },
       "Name": "AvatarRankName_111001",
       "Desc": "AvatarRankDesc_111001",
-      "IconPath": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2636,7 +2636,7 @@
       },
       "Name": "AvatarRankName_111002",
       "Desc": "AvatarRankDesc_111002",
-      "IconPath": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2659,7 +2659,7 @@
       },
       "Name": "AvatarRankName_111003",
       "Desc": "AvatarRankDesc_111003",
-      "IconPath": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_BP.png",
       "SkillAddLevelList": {
         "111001": 1,
         "111002": 2
@@ -2681,7 +2681,7 @@
       },
       "Name": "AvatarRankName_111004",
       "Desc": "AvatarRankDesc_111004",
-      "IconPath": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2707,7 +2707,7 @@
       },
       "Name": "AvatarRankName_111005",
       "Desc": "AvatarRankDesc_111005",
-      "IconPath": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Ultra.png",
       "SkillAddLevelList": {
         "111003": 2,
         "111004": 2
@@ -2729,7 +2729,7 @@
       },
       "Name": "AvatarRankName_111006",
       "Desc": "AvatarRankDesc_111006",
-      "IconPath": "SpriteOutput/SkillIcons/1110/SkillIcon_1110_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2757,7 +2757,7 @@
       },
       "Name": "AvatarRankName_111101",
       "Desc": "AvatarRankDesc_111101",
-      "IconPath": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2783,7 +2783,7 @@
       },
       "Name": "AvatarRankName_111102",
       "Desc": "AvatarRankDesc_111102",
-      "IconPath": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2806,7 +2806,7 @@
       },
       "Name": "AvatarRankName_111103",
       "Desc": "AvatarRankDesc_111103",
-      "IconPath": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_BP.png",
       "SkillAddLevelList": {
         "111102": 2,
         "111104": 2
@@ -2828,7 +2828,7 @@
       },
       "Name": "AvatarRankName_111104",
       "Desc": "AvatarRankDesc_111104",
-      "IconPath": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2854,7 +2854,7 @@
       },
       "Name": "AvatarRankName_111105",
       "Desc": "AvatarRankDesc_111105",
-      "IconPath": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Ultra.png",
       "SkillAddLevelList": {
         "111101": 1,
         "111103": 2,
@@ -2877,7 +2877,7 @@
       },
       "Name": "AvatarRankName_111106",
       "Desc": "AvatarRankDesc_111106",
-      "IconPath": "SpriteOutput/SkillIcons/1111/SkillIcon_1111_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2902,7 +2902,7 @@
       },
       "Name": "AvatarRankName_111201",
       "Desc": "AvatarRankDesc_111201",
-      "IconPath": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2928,7 +2928,7 @@
       },
       "Name": "AvatarRankName_111202",
       "Desc": "AvatarRankDesc_111202",
-      "IconPath": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2951,7 +2951,7 @@
       },
       "Name": "AvatarRankName_111203",
       "Desc": "AvatarRankDesc_111203",
-      "IconPath": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_BP.png",
       "SkillAddLevelList": {
         "111201": 1,
         "111202": 2
@@ -2973,7 +2973,7 @@
       },
       "Name": "AvatarRankName_111204",
       "Desc": "AvatarRankDesc_111204",
-      "IconPath": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -2996,7 +2996,7 @@
       },
       "Name": "AvatarRankName_111205",
       "Desc": "AvatarRankDesc_111205",
-      "IconPath": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Ultra.png",
       "SkillAddLevelList": {
         "111203": 2,
         "111204": 2
@@ -3018,7 +3018,7 @@
       },
       "Name": "AvatarRankName_111206",
       "Desc": "AvatarRankDesc_111206",
-      "IconPath": "SpriteOutput/SkillIcons/1112/SkillIcon_1112_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3046,7 +3046,7 @@
       },
       "Name": "AvatarRankName_120101",
       "Desc": "AvatarRankDesc_120101",
-      "IconPath": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3069,7 +3069,7 @@
       },
       "Name": "AvatarRankName_120102",
       "Desc": "AvatarRankDesc_120102",
-      "IconPath": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3092,7 +3092,7 @@
       },
       "Name": "AvatarRankName_120103",
       "Desc": "AvatarRankDesc_120103",
-      "IconPath": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Ultra.png",
       "SkillAddLevelList": {
         "120103": 2,
         "120104": 2
@@ -3114,7 +3114,7 @@
       },
       "Name": "AvatarRankName_120104",
       "Desc": "AvatarRankDesc_120104",
-      "IconPath": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3137,7 +3137,7 @@
       },
       "Name": "AvatarRankName_120105",
       "Desc": "AvatarRankDesc_120105",
-      "IconPath": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_BP.png",
       "SkillAddLevelList": {
         "120101": 1,
         "120102": 2,
@@ -3160,7 +3160,7 @@
       },
       "Name": "AvatarRankName_120106",
       "Desc": "AvatarRankDesc_120106",
-      "IconPath": "SpriteOutput/SkillIcons/1201/SkillIcon_1201_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3181,7 +3181,7 @@
       },
       "Name": "AvatarRankName_120201",
       "Desc": "AvatarRankDesc_120201",
-      "IconPath": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3204,7 +3204,7 @@
       },
       "Name": "AvatarRankName_120202",
       "Desc": "AvatarRankDesc_120202",
-      "IconPath": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3227,7 +3227,7 @@
       },
       "Name": "AvatarRankName_120203",
       "Desc": "AvatarRankDesc_120203",
-      "IconPath": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Ultra.png",
       "SkillAddLevelList": {
         "120201": 1,
         "120203": 2
@@ -3249,7 +3249,7 @@
       },
       "Name": "AvatarRankName_120204",
       "Desc": "AvatarRankDesc_120204",
-      "IconPath": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3272,7 +3272,7 @@
       },
       "Name": "AvatarRankName_120205",
       "Desc": "AvatarRankDesc_120205",
-      "IconPath": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_BP.png",
       "SkillAddLevelList": {
         "120202": 2,
         "120204": 2
@@ -3294,7 +3294,7 @@
       },
       "Name": "AvatarRankName_120206",
       "Desc": "AvatarRankDesc_120206",
-      "IconPath": "SpriteOutput/SkillIcons/1202/SkillIcon_1202_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3319,7 +3319,7 @@
       },
       "Name": "AvatarRankName_120301",
       "Desc": "AvatarRankDesc_120301",
-      "IconPath": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3342,7 +3342,7 @@
       },
       "Name": "AvatarRankName_120302",
       "Desc": "AvatarRankDesc_120302",
-      "IconPath": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3374,7 +3374,7 @@
       },
       "Name": "AvatarRankName_120303",
       "Desc": "AvatarRankDesc_120303",
-      "IconPath": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_BP.png",
       "SkillAddLevelList": {
         "120301": 1,
         "120302": 2
@@ -3396,7 +3396,7 @@
       },
       "Name": "AvatarRankName_120304",
       "Desc": "AvatarRankDesc_120304",
-      "IconPath": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3419,7 +3419,7 @@
       },
       "Name": "AvatarRankName_120305",
       "Desc": "AvatarRankDesc_120305",
-      "IconPath": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Ultra.png",
       "SkillAddLevelList": {
         "120303": 2,
         "120304": 2
@@ -3441,7 +3441,7 @@
       },
       "Name": "AvatarRankName_120306",
       "Desc": "AvatarRankDesc_120306",
-      "IconPath": "SpriteOutput/SkillIcons/1203/SkillIcon_1203_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3472,7 +3472,7 @@
       },
       "Name": "AvatarRankName_120401",
       "Desc": "AvatarRankDesc_120401",
-      "IconPath": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3495,7 +3495,7 @@
       },
       "Name": "AvatarRankName_120402",
       "Desc": "AvatarRankDesc_120402",
-      "IconPath": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3521,7 +3521,7 @@
       },
       "Name": "AvatarRankName_120403",
       "Desc": "AvatarRankDesc_120403",
-      "IconPath": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Ultra.png",
       "SkillAddLevelList": {
         "120401": 1,
         "120403": 2
@@ -3543,7 +3543,7 @@
       },
       "Name": "AvatarRankName_120404",
       "Desc": "AvatarRankDesc_120404",
-      "IconPath": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3566,7 +3566,7 @@
       },
       "Name": "AvatarRankName_120405",
       "Desc": "AvatarRankDesc_120405",
-      "IconPath": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_BP.png",
       "SkillAddLevelList": {
         "120402": 2,
         "120404": 2
@@ -3588,7 +3588,7 @@
       },
       "Name": "AvatarRankName_120406",
       "Desc": "AvatarRankDesc_120406",
-      "IconPath": "SpriteOutput/SkillIcons/1204/SkillIcon_1204_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3616,7 +3616,7 @@
       },
       "Name": "AvatarRankName_120501",
       "Desc": "AvatarRankDesc_120501",
-      "IconPath": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3642,7 +3642,7 @@
       },
       "Name": "AvatarRankName_120502",
       "Desc": "AvatarRankDesc_120502",
-      "IconPath": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3665,7 +3665,7 @@
       },
       "Name": "AvatarRankName_120503",
       "Desc": "AvatarRankDesc_120503",
-      "IconPath": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Ultra.png",
       "SkillAddLevelList": {
         "120503": 2,
         "120504": 2
@@ -3687,7 +3687,7 @@
       },
       "Name": "AvatarRankName_120504",
       "Desc": "AvatarRankDesc_120504",
-      "IconPath": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3713,7 +3713,7 @@
       },
       "Name": "AvatarRankName_120505",
       "Desc": "AvatarRankDesc_120505",
-      "IconPath": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_BP.png",
       "SkillAddLevelList": {
         "120501": 1,
         "120502": 2,
@@ -3736,7 +3736,7 @@
       },
       "Name": "AvatarRankName_120506",
       "Desc": "AvatarRankDesc_120506",
-      "IconPath": "SpriteOutput/SkillIcons/1205/SkillIcon_1205_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Ren_Rank06"
@@ -3763,7 +3763,7 @@
       },
       "Name": "AvatarRankName_120601",
       "Desc": "AvatarRankDesc_120601",
-      "IconPath": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3782,7 +3782,7 @@
       },
       "Name": "AvatarRankName_120602",
       "Desc": "AvatarRankDesc_120602",
-      "IconPath": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3805,7 +3805,7 @@
       },
       "Name": "AvatarRankName_120603",
       "Desc": "AvatarRankDesc_120603",
-      "IconPath": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Ultra.png",
       "SkillAddLevelList": {
         "120603": 2,
         "120604": 2
@@ -3827,7 +3827,7 @@
       },
       "Name": "AvatarRankName_120604",
       "Desc": "AvatarRankDesc_120604",
-      "IconPath": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3850,7 +3850,7 @@
       },
       "Name": "AvatarRankName_120605",
       "Desc": "AvatarRankDesc_120605",
-      "IconPath": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_BP.png",
       "SkillAddLevelList": {
         "120601": 1,
         "120602": 2
@@ -3872,7 +3872,7 @@
       },
       "Name": "AvatarRankName_120606",
       "Desc": "AvatarRankDesc_120606",
-      "IconPath": "SpriteOutput/SkillIcons/1206/SkillIcon_1206_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3893,7 +3893,7 @@
       },
       "Name": "AvatarRankName_120701",
       "Desc": "AvatarRankDesc_120701",
-      "IconPath": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Yukong_Rank01"
@@ -3921,7 +3921,7 @@
       },
       "Name": "AvatarRankName_120702",
       "Desc": "AvatarRankDesc_120702",
-      "IconPath": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Yukong_Rank02"
@@ -3946,7 +3946,7 @@
       },
       "Name": "AvatarRankName_120703",
       "Desc": "AvatarRankDesc_120703",
-      "IconPath": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_BP.png",
       "SkillAddLevelList": {
         "120701": 1,
         "120702": 2
@@ -3968,7 +3968,7 @@
       },
       "Name": "AvatarRankName_120704",
       "Desc": "AvatarRankDesc_120704",
-      "IconPath": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -3991,7 +3991,7 @@
       },
       "Name": "AvatarRankName_120705",
       "Desc": "AvatarRankDesc_120705",
-      "IconPath": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Ultra.png",
       "SkillAddLevelList": {
         "120703": 2,
         "120704": 2
@@ -4013,7 +4013,7 @@
       },
       "Name": "AvatarRankName_120706",
       "Desc": "AvatarRankDesc_120706",
-      "IconPath": "SpriteOutput/SkillIcons/1207/SkillIcon_1207_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4038,7 +4038,7 @@
       },
       "Name": "AvatarRankName_120801",
       "Desc": "AvatarRankDesc_120801",
-      "IconPath": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4061,7 +4061,7 @@
       },
       "Name": "AvatarRankName_120802",
       "Desc": "AvatarRankDesc_120802",
-      "IconPath": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4084,7 +4084,7 @@
       },
       "Name": "AvatarRankName_120803",
       "Desc": "AvatarRankDesc_120803",
-      "IconPath": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_BP.png",
       "SkillAddLevelList": {
         "120802": 2,
         "120804": 2
@@ -4106,7 +4106,7 @@
       },
       "Name": "AvatarRankName_120804",
       "Desc": "AvatarRankDesc_120804",
-      "IconPath": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4129,7 +4129,7 @@
       },
       "Name": "AvatarRankName_120805",
       "Desc": "AvatarRankDesc_120805",
-      "IconPath": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Ultra.png",
       "SkillAddLevelList": {
         "120801": 1,
         "120803": 2
@@ -4151,7 +4151,7 @@
       },
       "Name": "AvatarRankName_120806",
       "Desc": "AvatarRankDesc_120806",
-      "IconPath": "SpriteOutput/SkillIcons/1208/SkillIcon_1208_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4179,7 +4179,7 @@
       },
       "Name": "AvatarRankName_120901",
       "Desc": "AvatarRankDesc_120901",
-      "IconPath": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Yanqing_Rank01"
@@ -4204,7 +4204,7 @@
       },
       "Name": "AvatarRankName_120902",
       "Desc": "AvatarRankDesc_120902",
-      "IconPath": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4227,7 +4227,7 @@
       },
       "Name": "AvatarRankName_120903",
       "Desc": "AvatarRankDesc_120903",
-      "IconPath": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_BP.png",
       "SkillAddLevelList": {
         "120901": 1,
         "120902": 2
@@ -4249,7 +4249,7 @@
       },
       "Name": "AvatarRankName_120904",
       "Desc": "AvatarRankDesc_120904",
-      "IconPath": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Yanqing_Rank04"
@@ -4277,7 +4277,7 @@
       },
       "Name": "AvatarRankName_120905",
       "Desc": "AvatarRankDesc_120905",
-      "IconPath": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Ultra.png",
       "SkillAddLevelList": {
         "120903": 2,
         "120904": 2
@@ -4299,7 +4299,7 @@
       },
       "Name": "AvatarRankName_120906",
       "Desc": "AvatarRankDesc_120906",
-      "IconPath": "SpriteOutput/SkillIcons/1209/SkillIcon_1209_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4320,7 +4320,7 @@
       },
       "Name": "AvatarRankName_121001",
       "Desc": "AvatarRankDesc_121001",
-      "IconPath": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4349,7 +4349,7 @@
       },
       "Name": "AvatarRankName_121002",
       "Desc": "AvatarRankDesc_121002",
-      "IconPath": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4372,7 +4372,7 @@
       },
       "Name": "AvatarRankName_121003",
       "Desc": "AvatarRankDesc_121003",
-      "IconPath": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_BP.png",
       "SkillAddLevelList": {
         "121001": 1,
         "121002": 2
@@ -4394,7 +4394,7 @@
       },
       "Name": "AvatarRankName_121004",
       "Desc": "AvatarRankDesc_121004",
-      "IconPath": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4417,7 +4417,7 @@
       },
       "Name": "AvatarRankName_121005",
       "Desc": "AvatarRankDesc_121005",
-      "IconPath": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Ultra.png",
       "SkillAddLevelList": {
         "121003": 2,
         "121004": 2
@@ -4439,7 +4439,7 @@
       },
       "Name": "AvatarRankName_121006",
       "Desc": "AvatarRankDesc_121006",
-      "IconPath": "SpriteOutput/SkillIcons/1210/SkillIcon_1210_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4464,7 +4464,7 @@
       },
       "Name": "AvatarRankName_121101",
       "Desc": "AvatarRankDesc_121101",
-      "IconPath": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4487,7 +4487,7 @@
       },
       "Name": "AvatarRankName_121102",
       "Desc": "AvatarRankDesc_121102",
-      "IconPath": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4513,7 +4513,7 @@
       },
       "Name": "AvatarRankName_121103",
       "Desc": "AvatarRankDesc_121103",
-      "IconPath": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_BP.png",
       "SkillAddLevelList": {
         "121102": 2,
         "121104": 2
@@ -4535,7 +4535,7 @@
       },
       "Name": "AvatarRankName_121104",
       "Desc": "AvatarRankDesc_121104",
-      "IconPath": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4564,7 +4564,7 @@
       },
       "Name": "AvatarRankName_121105",
       "Desc": "AvatarRankDesc_121105",
-      "IconPath": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Ultra.png",
       "SkillAddLevelList": {
         "121101": 1,
         "121103": 2
@@ -4586,7 +4586,7 @@
       },
       "Name": "AvatarRankName_121106",
       "Desc": "AvatarRankDesc_121106",
-      "IconPath": "SpriteOutput/SkillIcons/1211/SkillIcon_1211_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4611,7 +4611,7 @@
       },
       "Name": "AvatarRankName_121201",
       "Desc": "AvatarRankDesc_121201",
-      "IconPath": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4640,7 +4640,7 @@
       },
       "Name": "AvatarRankName_121202",
       "Desc": "AvatarRankDesc_121202",
-      "IconPath": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4663,7 +4663,7 @@
       },
       "Name": "AvatarRankName_121203",
       "Desc": "AvatarRankDesc_121203",
-      "IconPath": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Ultra.png",
       "SkillAddLevelList": {
         "121203": 2,
         "121204": 2
@@ -4685,7 +4685,7 @@
       },
       "Name": "AvatarRankName_121204",
       "Desc": "AvatarRankDesc_121204",
-      "IconPath": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4711,7 +4711,7 @@
       },
       "Name": "AvatarRankName_121205",
       "Desc": "AvatarRankDesc_121205",
-      "IconPath": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_BP.png",
       "SkillAddLevelList": {
         "121201": 1,
         "121202": 2,
@@ -4734,7 +4734,7 @@
       },
       "Name": "AvatarRankName_121206",
       "Desc": "AvatarRankDesc_121206",
-      "IconPath": "SpriteOutput/SkillIcons/1212/SkillIcon_1212_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4762,7 +4762,7 @@
       },
       "Name": "AvatarRankName_121301",
       "Desc": "AvatarRankDesc_121301",
-      "IconPath": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4785,7 +4785,7 @@
       },
       "Name": "AvatarRankName_121302",
       "Desc": "AvatarRankDesc_121302",
-      "IconPath": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4804,7 +4804,7 @@
       },
       "Name": "AvatarRankName_121303",
       "Desc": "AvatarRankDesc_121303",
-      "IconPath": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_BP.png",
       "SkillAddLevelList": {
         "121301": 1,
         "121302": 2,
@@ -4829,7 +4829,7 @@
       },
       "Name": "AvatarRankName_121304",
       "Desc": "AvatarRankDesc_121304",
-      "IconPath": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4848,7 +4848,7 @@
       },
       "Name": "AvatarRankName_121305",
       "Desc": "AvatarRankDesc_121305",
-      "IconPath": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Ultra.png",
       "SkillAddLevelList": {
         "121303": 2,
         "121304": 2
@@ -4870,7 +4870,7 @@
       },
       "Name": "AvatarRankName_121306",
       "Desc": "AvatarRankDesc_121306",
-      "IconPath": "SpriteOutput/SkillIcons/1213/SkillIcon_1213_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4898,7 +4898,7 @@
       },
       "Name": "AvatarRankName_121401",
       "Desc": "AvatarRankDesc_121401",
-      "IconPath": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4921,7 +4921,7 @@
       },
       "Name": "AvatarRankName_121402",
       "Desc": "AvatarRankDesc_121402",
-      "IconPath": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4944,7 +4944,7 @@
       },
       "Name": "AvatarRankName_121403",
       "Desc": "AvatarRankDesc_121403",
-      "IconPath": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_BP.png",
       "SkillAddLevelList": {
         "121401": 1,
         "121402": 2
@@ -4966,7 +4966,7 @@
       },
       "Name": "AvatarRankName_121404",
       "Desc": "AvatarRankDesc_121404",
-      "IconPath": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -4992,7 +4992,7 @@
       },
       "Name": "AvatarRankName_121405",
       "Desc": "AvatarRankDesc_121405",
-      "IconPath": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Ultra.png",
       "SkillAddLevelList": {
         "121403": 2,
         "121404": 2
@@ -5014,7 +5014,7 @@
       },
       "Name": "AvatarRankName_121406",
       "Desc": "AvatarRankDesc_121406",
-      "IconPath": "SpriteOutput/SkillIcons/1214/SkillIcon_1214_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5039,7 +5039,7 @@
       },
       "Name": "AvatarRankName_121501",
       "Desc": "AvatarRankDesc_121501",
-      "IconPath": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5065,7 +5065,7 @@
       },
       "Name": "AvatarRankName_121502",
       "Desc": "AvatarRankDesc_121502",
-      "IconPath": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5091,7 +5091,7 @@
       },
       "Name": "AvatarRankName_121503",
       "Desc": "AvatarRankDesc_121503",
-      "IconPath": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_BP.png",
       "SkillAddLevelList": {
         "121501": 1,
         "121502": 2
@@ -5113,7 +5113,7 @@
       },
       "Name": "AvatarRankName_121504",
       "Desc": "AvatarRankDesc_121504",
-      "IconPath": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5136,7 +5136,7 @@
       },
       "Name": "AvatarRankName_121505",
       "Desc": "AvatarRankDesc_121505",
-      "IconPath": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Ultra.png",
       "SkillAddLevelList": {
         "121503": 2,
         "121504": 2
@@ -5158,7 +5158,7 @@
       },
       "Name": "AvatarRankName_121506",
       "Desc": "AvatarRankDesc_121506",
-      "IconPath": "SpriteOutput/SkillIcons/1215/SkillIcon_1215_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5183,7 +5183,7 @@
       },
       "Name": "AvatarRankName_121701",
       "Desc": "AvatarRankDesc_121701",
-      "IconPath": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5209,7 +5209,7 @@
       },
       "Name": "AvatarRankName_121702",
       "Desc": "AvatarRankDesc_121702",
-      "IconPath": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5235,7 +5235,7 @@
       },
       "Name": "AvatarRankName_121703",
       "Desc": "AvatarRankDesc_121703",
-      "IconPath": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Ultra.png",
       "SkillAddLevelList": {
         "121703": 2,
         "121704": 2
@@ -5257,7 +5257,7 @@
       },
       "Name": "AvatarRankName_121704",
       "Desc": "AvatarRankDesc_121704",
-      "IconPath": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5280,7 +5280,7 @@
       },
       "Name": "AvatarRankName_121705",
       "Desc": "AvatarRankDesc_121705",
-      "IconPath": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_BP.png",
       "SkillAddLevelList": {
         "121701": 1,
         "121702": 2
@@ -5302,7 +5302,7 @@
       },
       "Name": "AvatarRankName_121706",
       "Desc": "AvatarRankDesc_121706",
-      "IconPath": "SpriteOutput/SkillIcons/1217/SkillIcon_1217_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5321,6 +5321,305 @@
       ]
     }
   },
+  "1221": {
+    "1": {
+      "RankID": 122101,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_122101",
+      "Desc": "AvatarRankDesc_122101",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11221,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 3
+        }
+      ]
+    },
+    "2": {
+      "RankID": 122102,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_122102",
+      "Desc": "AvatarRankDesc_122102",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11221,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.2
+        }
+      ]
+    },
+    "3": {
+      "RankID": 122103,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_122103",
+      "Desc": "AvatarRankDesc_122103",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Ultra.png",
+      "SkillAddLevelList": {
+        "122101": 1,
+        "122103": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11221,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 122104,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_122104",
+      "Desc": "AvatarRankDesc_122104",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11221,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.5
+        },
+        {
+          "Value": 1
+        }
+      ]
+    },
+    "5": {
+      "RankID": 122105,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_122105",
+      "Desc": "AvatarRankDesc_122105",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_BP.png",
+      "SkillAddLevelList": {
+        "122102": 2,
+        "122104": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11221,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 122106,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_122106",
+      "Desc": "AvatarRankDesc_122106",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11221,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.15
+        },
+        {
+          "Value": 0.2
+        }
+      ]
+    }
+  },
+  "1224": {
+    "1": {
+      "RankID": 122401,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_122401",
+      "Desc": "AvatarRankDesc_122401",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11224,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.1
+        }
+      ]
+    },
+    "2": {
+      "RankID": 122402,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_122402",
+      "Desc": "AvatarRankDesc_122402",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [
+        "Avatar_Mar_7th_10_Rank02"
+      ],
+      "UnlockCost": [
+        {
+          "ItemID": 11224,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.6
+        },
+        {
+          "Value": 5
+        },
+        {
+          "Value": 1
+        },
+        {
+          "Value": 15
+        }
+      ]
+    },
+    "3": {
+      "RankID": 122403,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_122403",
+      "Desc": "AvatarRankDesc_122403",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_BP.png",
+      "SkillAddLevelList": {
+        "122401": 1,
+        "122402": 2,
+        "122408": 1
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11224,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 122404,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_122404",
+      "Desc": "AvatarRankDesc_122404",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [
+        "Avatar_Mar_7th_10_Rank04"
+      ],
+      "UnlockCost": [
+        {
+          "ItemID": 11224,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 5
+        }
+      ]
+    },
+    "5": {
+      "RankID": 122405,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_122405",
+      "Desc": "AvatarRankDesc_122405",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Ultra.png",
+      "SkillAddLevelList": {
+        "122403": 2,
+        "122404": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11224,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 122406,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_122406",
+      "Desc": "AvatarRankDesc_122406",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11224,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.5
+        }
+      ]
+    }
+  },
   "1301": {
     "1": {
       "RankID": 130101,
@@ -5330,7 +5629,7 @@
       },
       "Name": "AvatarRankName_130101",
       "Desc": "AvatarRankDesc_130101",
-      "IconPath": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5356,7 +5655,7 @@
       },
       "Name": "AvatarRankName_130102",
       "Desc": "AvatarRankDesc_130102",
-      "IconPath": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5385,7 +5684,7 @@
       },
       "Name": "AvatarRankName_130103",
       "Desc": "AvatarRankDesc_130103",
-      "IconPath": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_BP.png",
       "SkillAddLevelList": {
         "130101": 1,
         "130102": 2,
@@ -5408,7 +5707,7 @@
       },
       "Name": "AvatarRankName_130104",
       "Desc": "AvatarRankDesc_130104",
-      "IconPath": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5431,7 +5730,7 @@
       },
       "Name": "AvatarRankName_130105",
       "Desc": "AvatarRankDesc_130105",
-      "IconPath": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Ultra.png",
       "SkillAddLevelList": {
         "130103": 2,
         "130104": 2
@@ -5453,7 +5752,7 @@
       },
       "Name": "AvatarRankName_130106",
       "Desc": "AvatarRankDesc_130106",
-      "IconPath": "SpriteOutput/SkillIcons/1301/SkillIcon_1301_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5481,7 +5780,7 @@
       },
       "Name": "AvatarRankName_130201",
       "Desc": "AvatarRankDesc_130201",
-      "IconPath": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5504,7 +5803,7 @@
       },
       "Name": "AvatarRankName_130202",
       "Desc": "AvatarRankDesc_130202",
-      "IconPath": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5533,7 +5832,7 @@
       },
       "Name": "AvatarRankName_130203",
       "Desc": "AvatarRankDesc_130203",
-      "IconPath": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_BP.png",
       "SkillAddLevelList": {
         "130202": 2,
         "130204": 2
@@ -5555,7 +5854,7 @@
       },
       "Name": "AvatarRankName_130204",
       "Desc": "AvatarRankDesc_130204",
-      "IconPath": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5581,7 +5880,7 @@
       },
       "Name": "AvatarRankName_130205",
       "Desc": "AvatarRankDesc_130205",
-      "IconPath": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Ultra.png",
       "SkillAddLevelList": {
         "130201": 1,
         "130203": 2,
@@ -5604,7 +5903,7 @@
       },
       "Name": "AvatarRankName_130206",
       "Desc": "AvatarRankDesc_130206",
-      "IconPath": "SpriteOutput/SkillIcons/1302/SkillIcon_1302_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5629,7 +5928,7 @@
       },
       "Name": "AvatarRankName_130301",
       "Desc": "AvatarRankDesc_130301",
-      "IconPath": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5652,7 +5951,7 @@
       },
       "Name": "AvatarRankName_130302",
       "Desc": "AvatarRankDesc_130302",
-      "IconPath": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5675,7 +5974,7 @@
       },
       "Name": "AvatarRankName_130303",
       "Desc": "AvatarRankDesc_130303",
-      "IconPath": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Ultra.png",
       "SkillAddLevelList": {
         "130303": 2,
         "130304": 2
@@ -5697,7 +5996,7 @@
       },
       "Name": "AvatarRankName_130304",
       "Desc": "AvatarRankDesc_130304",
-      "IconPath": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5723,7 +6022,7 @@
       },
       "Name": "AvatarRankName_130305",
       "Desc": "AvatarRankDesc_130305",
-      "IconPath": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_BP.png",
       "SkillAddLevelList": {
         "130301": 1,
         "130302": 2
@@ -5745,7 +6044,7 @@
       },
       "Name": "AvatarRankName_130306",
       "Desc": "AvatarRankDesc_130306",
-      "IconPath": "SpriteOutput/SkillIcons/1303/SkillIcon_1303_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5773,7 +6072,7 @@
       },
       "Name": "AvatarRankName_130401",
       "Desc": "AvatarRankDesc_130401",
-      "IconPath": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5802,7 +6101,7 @@
       },
       "Name": "AvatarRankName_130402",
       "Desc": "AvatarRankDesc_130402",
-      "IconPath": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5831,7 +6130,7 @@
       },
       "Name": "AvatarRankName_130403",
       "Desc": "AvatarRankDesc_130403",
-      "IconPath": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Ultra.png",
       "SkillAddLevelList": {
         "130401": 1,
         "130403": 2
@@ -5853,7 +6152,7 @@
       },
       "Name": "AvatarRankName_130404",
       "Desc": "AvatarRankDesc_130404",
-      "IconPath": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5882,7 +6181,7 @@
       },
       "Name": "AvatarRankName_130405",
       "Desc": "AvatarRankDesc_130405",
-      "IconPath": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_BP.png",
       "SkillAddLevelList": {
         "130402": 2,
         "130404": 2
@@ -5904,7 +6203,7 @@
       },
       "Name": "AvatarRankName_130406",
       "Desc": "AvatarRankDesc_130406",
-      "IconPath": "SpriteOutput/SkillIcons/1304/SkillIcon_1304_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5932,7 +6231,7 @@
       },
       "Name": "AvatarRankName_130501",
       "Desc": "AvatarRankDesc_130501",
-      "IconPath": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5958,7 +6257,7 @@
       },
       "Name": "AvatarRankName_130502",
       "Desc": "AvatarRankDesc_130502",
-      "IconPath": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -5984,7 +6283,7 @@
       },
       "Name": "AvatarRankName_130503",
       "Desc": "AvatarRankDesc_130503",
-      "IconPath": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Ultra.png",
       "SkillAddLevelList": {
         "130501": 1,
         "130503": 2
@@ -6006,7 +6305,7 @@
       },
       "Name": "AvatarRankName_130504",
       "Desc": "AvatarRankDesc_130504",
-      "IconPath": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6029,7 +6328,7 @@
       },
       "Name": "AvatarRankName_130505",
       "Desc": "AvatarRankDesc_130505",
-      "IconPath": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_BP.png",
       "SkillAddLevelList": {
         "130502": 2,
         "130504": 2
@@ -6051,7 +6350,7 @@
       },
       "Name": "AvatarRankName_130506",
       "Desc": "AvatarRankDesc_130506",
-      "IconPath": "SpriteOutput/SkillIcons/1305/SkillIcon_1305_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6079,7 +6378,7 @@
       },
       "Name": "AvatarRankName_130601",
       "Desc": "AvatarRankDesc_130601",
-      "IconPath": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6102,7 +6401,7 @@
       },
       "Name": "AvatarRankName_130602",
       "Desc": "AvatarRankDesc_130602",
-      "IconPath": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6125,7 +6424,7 @@
       },
       "Name": "AvatarRankName_130603",
       "Desc": "AvatarRankDesc_130603",
-      "IconPath": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_BP.png",
       "SkillAddLevelList": {
         "130601": 1,
         "130602": 2
@@ -6147,7 +6446,7 @@
       },
       "Name": "AvatarRankName_130604",
       "Desc": "AvatarRankDesc_130604",
-      "IconPath": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6166,7 +6465,7 @@
       },
       "Name": "AvatarRankName_130605",
       "Desc": "AvatarRankDesc_130605",
-      "IconPath": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Ultra.png",
       "SkillAddLevelList": {
         "130603": 2,
         "130604": 2
@@ -6188,7 +6487,7 @@
       },
       "Name": "AvatarRankName_130606",
       "Desc": "AvatarRankDesc_130606",
-      "IconPath": "SpriteOutput/SkillIcons/1306/SkillIcon_1306_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6213,7 +6512,7 @@
       },
       "Name": "AvatarRankName_130701",
       "Desc": "AvatarRankDesc_130701",
-      "IconPath": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_BlackSwan_00_Rank01"
@@ -6238,7 +6537,7 @@
       },
       "Name": "AvatarRankName_130702",
       "Desc": "AvatarRankDesc_130702",
-      "IconPath": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_BlackSwan_00_Rank02"
@@ -6266,7 +6565,7 @@
       },
       "Name": "AvatarRankName_130703",
       "Desc": "AvatarRankDesc_130703",
-      "IconPath": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_BP.png",
       "SkillAddLevelList": {
         "130702": 2,
         "130704": 2
@@ -6288,7 +6587,7 @@
       },
       "Name": "AvatarRankName_130704",
       "Desc": "AvatarRankDesc_130704",
-      "IconPath": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6314,7 +6613,7 @@
       },
       "Name": "AvatarRankName_130705",
       "Desc": "AvatarRankDesc_130705",
-      "IconPath": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Ultra.png",
       "SkillAddLevelList": {
         "130701": 1,
         "130703": 2
@@ -6336,7 +6635,7 @@
       },
       "Name": "AvatarRankName_130706",
       "Desc": "AvatarRankDesc_130706",
-      "IconPath": "SpriteOutput/SkillIcons/1307/SkillIcon_1307_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_BlackSwan_00_Rank06"
@@ -6369,7 +6668,7 @@
       },
       "Name": "AvatarRankName_130801",
       "Desc": "AvatarRankDesc_130801",
-      "IconPath": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6392,7 +6691,7 @@
       },
       "Name": "AvatarRankName_130802",
       "Desc": "AvatarRankDesc_130802",
-      "IconPath": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6411,7 +6710,7 @@
       },
       "Name": "AvatarRankName_130803",
       "Desc": "AvatarRankDesc_130803",
-      "IconPath": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Ultra.png",
       "SkillAddLevelList": {
         "130801": 1,
         "130803": 2,
@@ -6437,7 +6736,7 @@
       },
       "Name": "AvatarRankName_130804",
       "Desc": "AvatarRankDesc_130804",
-      "IconPath": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6460,7 +6759,7 @@
       },
       "Name": "AvatarRankName_130805",
       "Desc": "AvatarRankDesc_130805",
-      "IconPath": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_BP.png",
       "SkillAddLevelList": {
         "130802": 2,
         "130804": 2
@@ -6482,7 +6781,7 @@
       },
       "Name": "AvatarRankName_130806",
       "Desc": "AvatarRankDesc_130806",
-      "IconPath": "SpriteOutput/SkillIcons/1308/SkillIcon_1308_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6498,6 +6797,304 @@
       ]
     }
   },
+  "1309": {
+    "1": {
+      "RankID": 130901,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_130901",
+      "Desc": "AvatarRankDesc_130901",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11309,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.24
+        }
+      ]
+    },
+    "2": {
+      "RankID": 130902,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_130902",
+      "Desc": "AvatarRankDesc_130902",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11309,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.16
+        },
+        {
+          "Value": 1
+        }
+      ]
+    },
+    "3": {
+      "RankID": 130903,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_130903",
+      "Desc": "AvatarRankDesc_130903",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_BP.png",
+      "SkillAddLevelList": {
+        "130902": 2,
+        "130903": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11309,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 130904,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_130904",
+      "Desc": "AvatarRankDesc_130904",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11309,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.5
+        }
+      ]
+    },
+    "5": {
+      "RankID": 130905,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_130905",
+      "Desc": "AvatarRankDesc_130905",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Normal.png",
+      "SkillAddLevelList": {
+        "130901": 1,
+        "130904": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11309,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 130906,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_130906",
+      "Desc": "AvatarRankDesc_130906",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11309,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 8
+        },
+        {
+          "Value": 4.5
+        }
+      ]
+    }
+  },
+  "1310": {
+    "1": {
+      "RankID": 131001,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_131001",
+      "Desc": "AvatarRankDesc_131001",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [
+        "Avatar_Sam_00_Rank01"
+      ],
+      "UnlockCost": [
+        {
+          "ItemID": 11310,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.15
+        }
+      ]
+    },
+    "2": {
+      "RankID": 131002,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_131002",
+      "Desc": "AvatarRankDesc_131002",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [
+        "Avatar_Sam_00_Rank02"
+      ],
+      "UnlockCost": [
+        {
+          "ItemID": 11310,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 1
+        },
+        {
+          "Value": 1
+        }
+      ]
+    },
+    "3": {
+      "RankID": 131003,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_131003",
+      "Desc": "AvatarRankDesc_131003",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_BP.png",
+      "SkillAddLevelList": {
+        "131001": 1,
+        "131002": 2,
+        "131008": 1,
+        "131009": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11310,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 131004,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_131004",
+      "Desc": "AvatarRankDesc_131004",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [
+        "Avatar_Sam_00_Rank04"
+      ],
+      "UnlockCost": [
+        {
+          "ItemID": 11310,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.5
+        }
+      ]
+    },
+    "5": {
+      "RankID": 131005,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_131005",
+      "Desc": "AvatarRankDesc_131005",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Ultra.png",
+      "SkillAddLevelList": {
+        "131003": 2,
+        "131004": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11310,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 131006,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_131006",
+      "Desc": "AvatarRankDesc_131006",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [
+        "Avatar_Sam_00_Rank06"
+      ],
+      "UnlockCost": [
+        {
+          "ItemID": 11310,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 0.5
+        }
+      ]
+    }
+  },
   "1312": {
     "1": {
       "RankID": 131201,
@@ -6507,7 +7104,7 @@
       },
       "Name": "AvatarRankName_131201",
       "Desc": "AvatarRankDesc_131201",
-      "IconPath": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6533,7 +7130,7 @@
       },
       "Name": "AvatarRankName_131202",
       "Desc": "AvatarRankDesc_131202",
-      "IconPath": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Misha_00_Rank02"
@@ -6564,7 +7161,7 @@
       },
       "Name": "AvatarRankName_131203",
       "Desc": "AvatarRankDesc_131203",
-      "IconPath": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Ultra.png",
       "SkillAddLevelList": {
         "131201": 1,
         "131203": 2
@@ -6586,7 +7183,7 @@
       },
       "Name": "AvatarRankName_131204",
       "Desc": "AvatarRankDesc_131204",
-      "IconPath": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6609,7 +7206,7 @@
       },
       "Name": "AvatarRankName_131205",
       "Desc": "AvatarRankDesc_131205",
-      "IconPath": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_BP.png",
       "SkillAddLevelList": {
         "131202": 2,
         "131204": 2
@@ -6631,7 +7228,7 @@
       },
       "Name": "AvatarRankName_131206",
       "Desc": "AvatarRankDesc_131206",
-      "IconPath": "SpriteOutput/SkillIcons/1312/SkillIcon_1312_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_Misha_00_Rank06"
@@ -6652,6 +7249,309 @@
       ]
     }
   },
+  "1314": {
+    "1": {
+      "RankID": 131401,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_131401",
+      "Desc": "AvatarRankDesc_131401",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11314,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.32
+        },
+        {
+          "Value": 1
+        },
+        {
+          "Value": 2
+        }
+      ]
+    },
+    "2": {
+      "RankID": 131402,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_131402",
+      "Desc": "AvatarRankDesc_131402",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11314,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 15
+        },
+        {
+          "Value": 0.18
+        }
+      ]
+    },
+    "3": {
+      "RankID": 131403,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_131403",
+      "Desc": "AvatarRankDesc_131403",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_BP.png",
+      "SkillAddLevelList": {
+        "131402": 2,
+        "131404": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11314,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 131404,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_131404",
+      "Desc": "AvatarRankDesc_131404",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11314,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 3
+        }
+      ]
+    },
+    "5": {
+      "RankID": 131405,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_131405",
+      "Desc": "AvatarRankDesc_131405",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Ultra.png",
+      "SkillAddLevelList": {
+        "131401": 1,
+        "131403": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11314,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 131406,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_131406",
+      "Desc": "AvatarRankDesc_131406",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11314,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.2
+        }
+      ]
+    }
+  },
+  "1315": {
+    "1": {
+      "RankID": 131501,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_131501",
+      "Desc": "AvatarRankDesc_131501",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [
+        "Avatar_Boothill_00_Rank01"
+      ],
+      "UnlockCost": [
+        {
+          "ItemID": 11315,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.16
+        }
+      ]
+    },
+    "2": {
+      "RankID": 131502,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_131502",
+      "Desc": "AvatarRankDesc_131502",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11315,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 1
+        },
+        {
+          "Value": 0.3
+        },
+        {
+          "Value": 2
+        }
+      ]
+    },
+    "3": {
+      "RankID": 131503,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_131503",
+      "Desc": "AvatarRankDesc_131503",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Ultra.png",
+      "SkillAddLevelList": {
+        "131501": 1,
+        "131503": 2,
+        "131508": 1
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11315,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 131504,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_131504",
+      "Desc": "AvatarRankDesc_131504",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11315,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 0.12
+        }
+      ]
+    },
+    "5": {
+      "RankID": 131505,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_131505",
+      "Desc": "AvatarRankDesc_131505",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_BP.png",
+      "SkillAddLevelList": {
+        "131502": 2,
+        "131504": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11315,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 131506,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_131506",
+      "Desc": "AvatarRankDesc_131506",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11315,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.4
+        },
+        {
+          "Value": 0.7
+        }
+      ]
+    }
+  },
   "8001": {
     "1": {
       "RankID": 800101,
@@ -6661,7 +7561,7 @@
       },
       "Name": "AvatarRankName_800101",
       "Desc": "AvatarRankDesc_800101",
-      "IconPath": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6684,7 +7584,7 @@
       },
       "Name": "AvatarRankName_800102",
       "Desc": "AvatarRankDesc_800102",
-      "IconPath": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6707,7 +7607,7 @@
       },
       "Name": "AvatarRankName_800103",
       "Desc": "AvatarRankDesc_800103",
-      "IconPath": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_BP.png",
       "SkillAddLevelList": {
         "800102": 2,
         "800104": 2
@@ -6729,7 +7629,7 @@
       },
       "Name": "AvatarRankName_800104",
       "Desc": "AvatarRankDesc_800104",
-      "IconPath": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6752,7 +7652,7 @@
       },
       "Name": "AvatarRankName_800105",
       "Desc": "AvatarRankDesc_800105",
-      "IconPath": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Ultra.png",
       "SkillAddLevelList": {
         "800101": 1,
         "800103": 2,
@@ -6776,7 +7676,7 @@
       },
       "Name": "AvatarRankName_800106",
       "Desc": "AvatarRankDesc_800106",
-      "IconPath": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_PlayerBoy_00_Rank06"
@@ -6803,7 +7703,7 @@
       },
       "Name": "AvatarRankName_800201",
       "Desc": "AvatarRankDesc_800201",
-      "IconPath": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6826,7 +7726,7 @@
       },
       "Name": "AvatarRankName_800202",
       "Desc": "AvatarRankDesc_800202",
-      "IconPath": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6849,7 +7749,7 @@
       },
       "Name": "AvatarRankName_800203",
       "Desc": "AvatarRankDesc_800203",
-      "IconPath": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_BP.png",
       "SkillAddLevelList": {
         "800202": 2,
         "800204": 2
@@ -6871,7 +7771,7 @@
       },
       "Name": "AvatarRankName_800204",
       "Desc": "AvatarRankDesc_800204",
-      "IconPath": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6894,7 +7794,7 @@
       },
       "Name": "AvatarRankName_800205",
       "Desc": "AvatarRankDesc_800205",
-      "IconPath": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Ultra.png",
       "SkillAddLevelList": {
         "800201": 1,
         "800203": 2,
@@ -6918,7 +7818,7 @@
       },
       "Name": "AvatarRankName_800206",
       "Desc": "AvatarRankDesc_800206",
-      "IconPath": "SpriteOutput/SkillIcons/8001/SkillIcon_8001_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [
         "Avatar_PlayerGirl_00_Rank06"
@@ -6945,7 +7845,7 @@
       },
       "Name": "AvatarRankName_800301",
       "Desc": "AvatarRankDesc_800301",
-      "IconPath": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6971,7 +7871,7 @@
       },
       "Name": "AvatarRankName_800302",
       "Desc": "AvatarRankDesc_800302",
-      "IconPath": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -6997,7 +7897,7 @@
       },
       "Name": "AvatarRankName_800303",
       "Desc": "AvatarRankDesc_800303",
-      "IconPath": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_BP.png",
       "SkillAddLevelList": {
         "800302": 2,
         "800304": 2
@@ -7019,7 +7919,7 @@
       },
       "Name": "AvatarRankName_800304",
       "Desc": "AvatarRankDesc_800304",
-      "IconPath": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -7042,7 +7942,7 @@
       },
       "Name": "AvatarRankName_800305",
       "Desc": "AvatarRankDesc_800305",
-      "IconPath": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Ultra.png",
       "SkillAddLevelList": {
         "800301": 1,
         "800303": 2,
@@ -7065,7 +7965,7 @@
       },
       "Name": "AvatarRankName_800306",
       "Desc": "AvatarRankDesc_800306",
-      "IconPath": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -7093,7 +7993,7 @@
       },
       "Name": "AvatarRankName_800401",
       "Desc": "AvatarRankDesc_800401",
-      "IconPath": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank1.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Rank1.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -7119,7 +8019,7 @@
       },
       "Name": "AvatarRankName_800402",
       "Desc": "AvatarRankDesc_800402",
-      "IconPath": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank2.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Rank2.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -7145,7 +8045,7 @@
       },
       "Name": "AvatarRankName_800403",
       "Desc": "AvatarRankDesc_800403",
-      "IconPath": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_BP.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_BP.png",
       "SkillAddLevelList": {
         "800402": 2,
         "800404": 2
@@ -7167,7 +8067,7 @@
       },
       "Name": "AvatarRankName_800404",
       "Desc": "AvatarRankDesc_800404",
-      "IconPath": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank4.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Rank4.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -7190,7 +8090,7 @@
       },
       "Name": "AvatarRankName_800405",
       "Desc": "AvatarRankDesc_800405",
-      "IconPath": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Ultra.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Ultra.png",
       "SkillAddLevelList": {
         "800401": 1,
         "800403": 2,
@@ -7213,7 +8113,7 @@
       },
       "Name": "AvatarRankName_800406",
       "Desc": "AvatarRankDesc_800406",
-      "IconPath": "SpriteOutput/SkillIcons/8003/SkillIcon_8003_Rank6.png",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Rank6.png",
       "SkillAddLevelList": {},
       "RankAbility": [],
       "UnlockCost": [
@@ -7228,6 +8128,288 @@
         },
         {
           "Value": 3
+        }
+      ]
+    }
+  },
+  "8005": {
+    "1": {
+      "RankID": 800501,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_800501",
+      "Desc": "AvatarRankDesc_800501",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18005,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 1
+        }
+      ]
+    },
+    "2": {
+      "RankID": 800502,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_800502",
+      "Desc": "AvatarRankDesc_800502",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18005,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.25
+        },
+        {
+          "Value": 3
+        }
+      ]
+    },
+    "3": {
+      "RankID": 800503,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_800503",
+      "Desc": "AvatarRankDesc_800503",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_BP.png",
+      "SkillAddLevelList": {
+        "800502": 2,
+        "800504": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18005,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 800504,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_800504",
+      "Desc": "AvatarRankDesc_800504",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18005,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.15
+        }
+      ]
+    },
+    "5": {
+      "RankID": 800505,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_800505",
+      "Desc": "AvatarRankDesc_800505",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Ultra.png",
+      "SkillAddLevelList": {
+        "800501": 1,
+        "800503": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18005,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 800506,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_800506",
+      "Desc": "AvatarRankDesc_800506",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18005,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 2
+        }
+      ]
+    }
+  },
+  "8006": {
+    "1": {
+      "RankID": 800601,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_800601",
+      "Desc": "AvatarRankDesc_800601",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18005,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 1
+        }
+      ]
+    },
+    "2": {
+      "RankID": 800602,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_800602",
+      "Desc": "AvatarRankDesc_800602",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18005,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.25
+        },
+        {
+          "Value": 3
+        }
+      ]
+    },
+    "3": {
+      "RankID": 800603,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_800603",
+      "Desc": "AvatarRankDesc_800603",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_BP.png",
+      "SkillAddLevelList": {
+        "800602": 2,
+        "800604": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18005,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 800604,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_800604",
+      "Desc": "AvatarRankDesc_800604",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18005,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.15
+        }
+      ]
+    },
+    "5": {
+      "RankID": 800605,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_800605",
+      "Desc": "AvatarRankDesc_800605",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Ultra.png",
+      "SkillAddLevelList": {
+        "800601": 1,
+        "800603": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18005,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 800606,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_800606",
+      "Desc": "AvatarRankDesc_800606",
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18005,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 2
         }
       ]
     }

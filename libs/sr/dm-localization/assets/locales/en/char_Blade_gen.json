@@ -65,7 +65,7 @@
     },
     "6": {
       "name": "Reborn Into an Empty Husk",
-      "desc": "The maximum number of Charge stacks is reduced to 4. The DMG of the follow-up attack triggered by Blade's Talent additionally increases by {{1}}% of his Max HP."
+      "desc": "The maximum number of Charge stacks is reduced to 4. The follow-up attack triggered by Talent deals additionally increased DMG, equal to {{1}}% of Blade's Max HP."
     }
   }
 }

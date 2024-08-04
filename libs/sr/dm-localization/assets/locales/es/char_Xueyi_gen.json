@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Aniquilación del mal",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Xueyi como Daño Cuántico a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Xueyi como Daño Cuántico a los enemigos adyacentes.",
+        "fullDesc": "Xueyi inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Cuántico a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño Cuántico a los enemigos adyacentes.",
         "shortDesc": "Inflige Daño Cuántico a un enemigo y una pequeña cantidad de Daño Cuántico a los enemigos adyacentes."
       }
     },
@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Inhibición del dvesha",
-      "desc": "El daño del ataque adicional del talento aumenta en un {{1}}%."
+      "desc": "El daño que inflige el ataque adicional del talento aumenta en un {{1}}%."
     },
     "2": {
       "name": "Fisura del klesha",

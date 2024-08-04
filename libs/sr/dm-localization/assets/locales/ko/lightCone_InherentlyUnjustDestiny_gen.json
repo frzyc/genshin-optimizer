@@ -2,6 +2,6 @@
   "name": "언제나 불공평한 운명",
   "passive": {
     "name": "올인",
-    "description": "장착한 캐릭터의 방어력이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 아군에게 실드 제공 시 장착한 캐릭터의 치명타 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가한다. 지속 시간: {{3}}턴. 장착한 캐릭터가 추가 공격을 발동해 적을 명중하면 <orangeStrong>{{4}}%</orangeStrong>의 기본 확률로 피격된 적이 받는 피해가 <orangeStrong>{{5}}%</orangeStrong> 증가한다. 지속 시간: {{6}}턴"
+    "description": "장착한 캐릭터의 방어력이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 아군에게 실드 제공 시, 장착한 캐릭터의 치명타 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가한다. 지속 시간: {{3}}턴. 장착한 캐릭터가 추가 공격을 발동해 적을 명중하면, <orangeStrong>{{4}}%</orangeStrong>의 기본 확률로 피격된 적이 받는 피해가 <orangeStrong>{{5}}%</orangeStrong> 증가한다. 지속 시간: {{6}}턴"
   }
 }

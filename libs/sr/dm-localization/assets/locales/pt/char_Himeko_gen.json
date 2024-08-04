@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Combustão Incompleta",
-        "fullDesc": "Após usar a Técnica, cria uma dimensão que dura {{4}}s. Depois de entrar em batalha com inimigos na dimensão, há {{1}}% de <u>chance-base</u> de aumentar o Dano de Fogo que os inimigos recebem em {{2}}% por {{3}} rodada(s). Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
-        "shortDesc": "Cria uma dimensão. Depois de entrar em combate com inimigos na dimensão, existe uma alta chance de <orangeStrong>aumentar o Dano de Fogo recebido pelos inimigos</orangeStrong>."
+        "fullDesc": "Após usar a Técnica, cria uma dimensão especial que dura {{4}}s. Depois de entrar em batalha com inimigos na dimensão especial, há {{1}}% de <u>chance-base</u> de aumentar o Dano de Fogo que os inimigos recebem em {{2}}% por {{3}} rodada(s). Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão especial. Depois de entrar em combate com inimigos na dimensão, existe uma alta chance de <orangeStrong>aumentar o Dano de Fogo recebido pelos inimigos</orangeStrong>."
       }
     },
     "overworld": {

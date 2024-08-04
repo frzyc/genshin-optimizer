@@ -1,0 +1,7 @@
+{
+  "setName": "The Wind-Soaring Valorous",
+  "setEffects": {
+    "2": "ATK +{{1}}%.",
+    "4": "Meningkatkan {{1}}% CRIT Rate pengguna. Saat pengguna melancarkan Serangan Lanjutan, DMG yang diakibatkan Ultimate meningkat {{2}}%, berlangsung selama {{3}} giliran."
+  }
+}

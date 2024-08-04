@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Lágrimas Vermelhas do Sonho Retalhado",
-        "fullDesc": "Utiliza sequencialmente Lâmina Pluvial 3 vezes e Ressurreição Estígia 1 vez, causando Dano de Raio até <orangeStrong>{{6}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo, e causa Dano de Raio até de <orangeStrong>{{7}}%</orangeStrong> do ATQ de Acheron a todos os outros inimigos.\\nLâmina Pluvial: Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo e remove até 3 acúmulos de Nó Rubro do alvo. Quando o Nó Rubro é removido, imediatamente causa Dano de Raio igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Acheron a todos os inimigos. Para cada acúmulo de Nó Rubro removido, o Multiplicador de Dano desta aplicação de Dano é adicionalmente aumentado, até um aumento de <orangeStrong>{{5}}%</orangeStrong>.\\nRessurreição Estígia: Causa Dano de Raio igual a <orangeStrong>{{3}}%</orangeStrong> do ATQ de Acheron a todos os inimigos e remove todos os Nós Rubros.\\nNós Rubros não podem ser aplicados a inimigos durante a Perícia Suprema.",
+        "fullDesc": "Utiliza sequencialmente Lâmina Pluvial 3 vezes e Ressurreição Estígia 1 vez, causando Dano de Raio até <orangeStrong>{{6}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo, e causa Dano de Raio até de <orangeStrong>{{7}}%</orangeStrong> do ATQ de Acheron a todos os outros inimigos.\\nLâmina Pluvial: Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo e remove até 3 acúmulos de Nó Rubro do alvo. Quando o Nó Rubro é removido, imediatamente causa Dano de Raio igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Acheron a todos os inimigos. Para cada acúmulo de Nó Rubro removido, o Multiplicador de Dano desta aplicação de Dano é adicionalmente aumentado, até um aumento de <orangeStrong>{{5}}%</orangeStrong>.\\nRessurreição Estígia: Causa Dano de Raio igual a <orangeStrong>{{3}}%</orangeStrong> do ATQ de Acheron a todos os inimigos e remove todos os Nós Rubros.\\n\\nNós Rubros não podem ser aplicados a inimigos durante a Perícia Suprema.",
         "shortDesc": "Causa 3 golpes de Dano de Raio Leve a um único inimigo. Se Nó Rubro for removido do alvo, então causa Dano de Raio leve a todos os inimigos. Finalmente, causa 1 golpe de Dano de Raio a todos os inimigos e remove Nó Rubro."
       },
       "1": {
@@ -60,7 +60,7 @@
   "ranks": {
     "1": {
       "name": "Verdadeiras Palavras do Céu",
-      "desc": "Aumenta a Chance de CRIT em {{1}}% ao causar Dano a inimigos penalizados."
+      "desc": "Ao causar Dano a inimigos com penalidade, aumenta a Chance de CRIT em {{1}}%."
     },
     "2": {
       "name": "Trovões Mudos na Tempestade Amainada",
@@ -80,7 +80,7 @@
     },
     "6": {
       "name": "Apocalipse, o Emancipador",
-      "desc": "Aumenta a PEN de RES a Todos os Tipos do Dano de Perícia Suprema causado por Acheron em {{1}}%. O Dano causado pelo ATQ Básico e a Perícia também será considerado Dano de Perícia Suprema e não pode reduzir a Tenacidade do inimigo independentemente dos Tipos de Fraqueza. Quando a Fraqueza é Quebrada, aciona o efeito de Quebra de Fraqueza de Raio."
+      "desc": "Aumenta a PEN de RES a Todos os Tipos do Dano de Perícia Suprema causado por Acheron em {{1}}%. O Dano causado pelo ATQ Básico e a Perícia também será considerado Dano de Perícia Suprema e pode reduzir a Tenacidade do inimigo independentemente dos Tipos de Fraqueza. Quando as Fraquezas são Quebradas, aciona o efeito de Quebra de Fraqueza contra Raio."
     }
   }
 }

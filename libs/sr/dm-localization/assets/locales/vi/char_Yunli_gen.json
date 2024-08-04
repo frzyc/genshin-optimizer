@@ -1,0 +1,66 @@
+{
+  "name": "Yunli",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Đảo Gió Xoay Trời",
+        "fullDesc": "Gây Sát Thương Vật Lý bằng <orangeStrong>{{1}}%</orangeStrong> tấn công của Yunli cho 1 kẻ địch chỉ định.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Chấn Động Lẫy Lừng",
+        "fullDesc": "Hồi HP bằng <orangeStrong>{{3}}%</orangeStrong> Tấn Công của Yunli +<orangeStrong>{{4}}</orangeStrong>, đồng thời gây Sát Thương Vật Lý bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Yunli cho 1 kẻ địch chỉ định, và gây Sát Thương Vật Lý bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Yunli cho mục tiêu lân cận kẻ địch đó.",
+        "shortDesc": "Hồi HP cho bản thân, đồng thời gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch và mục tiêu lân cận kẻ đó."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Kiếm Vi Địa Kỷ, Nhẫn Kinh Thiên Tông",
+        "fullDesc": "Tiêu hao {{8}} điểm Năng Lượng, Yunli nhận Chống Đỡ và khiến toàn bộ kẻ địch rơi vào trạng thái Khiêu Khích, duy trì đến khi kết thúc hiệp tiếp theo của phe ta hoặc phe địch. Đồng thời khiến sát thương Bạo Kích Yunli gây ra ở lần Phản Kích kế tiếp tăng <orangeStrong>{{2}}%</orangeStrong>. Khi kích hoạt hiệu ứng Phản Kích của Thiên Phú, sẽ thay thế thành phát động <u>Phản Kích</u> Nhìn Thấu - Diệt, đồng thời xóa bỏ hiệu ứng Chống Đỡ. Nếu trong thời gian trạng thái Chống Đỡ không kích hoạt Phản Kích, thì khi kết thúc trạng thái, Yunli sẽ lập tức phát động <u>Phản Kích</u> Nhìn Thấu - Chém lên kẻ địch ngẫu nhiên.\\nNhìn Thấu - Chém: Gây cho mục tiêu Sát Thương Vật Lý bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Yunli, gây cho mục tiêu lân cận kẻ đó Sát Thương Vật Lý bằng <orangeStrong>{{6}}%</orangeStrong> Tấn Công của Yunli.\\nNhìn Thấu - Diệt: Gây cho mục tiêu Sát Thương Vật Lý bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Yunli, gây cho mục tiêu lân cận kẻ đó Sát Thương Vật Lý bằng <orangeStrong>{{6}}%</orangeStrong> Tấn Công của Yunli, sau đó gây thêm {{4}} lần sát thương, mỗi lần sát thương sẽ gây cho 1 kẻ địch ngẫu nhiên Sát Thương Vật Lý bằng <orangeStrong>{{7}}%</orangeStrong> Tấn Công của Yunli.\\nKhi Yunli gây sát thương thông qua kỹ năng này sẽ được xem là gây sát thương Tuyệt Kỹ.",
+        "shortDesc": "Vào Chống Đỡ và khiêu khích toàn bộ kẻ địch, trong thời gian này, sau khi bị tấn công sẽ kích hoạt <orangeStrong><u>Phản Kích</u> mạnh mẽ</orangeStrong>, gây <orangeStrong>Sát Thương Vật Lý</orangeStrong> cho người tấn công và mục tiêu lân cận người đó, sau đó gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch, tổng cộng Nảy Bật 6 lần. Nếu trong thời gian trạng thái Chống Đỡ không kích hoạt Phản Kích, thì khi kết thúc trạng thái sẽ gây Sát Thương Vật Lý cho kẻ địch ngẫu nhiên và mục tiêu lân cận kẻ đó."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Đi Sau Về Trước",
+        "fullDesc": "Khiến bản thân nhận hiệu ứng Ứng Phó, duy trì {{2}} giây, trong thời gian này tấn công kẻ địch hoặc bị tấn công và vào chiến đấu, sẽ lập tức thi triển Nhìn Thấu - Diệt cho 1 kẻ địch ngẫu nhiên, đồng thời khiến sát thương gây ra trong lần tấn công này tăng {{1}}%.",
+        "shortDesc": "Khiến bản thân nhận hiệu ứng Ứng Phó, duy trì 20 giây, trong thời gian này tấn công kẻ địch hoặc bị tấn công và vào chiến đấu, sẽ lập tức thi triển Nhìn Thấu - Diệt cho 1 kẻ địch ngẫu nhiên."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm suy yếu Sức Bền thuộc tính tương ứng của kẻ địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Không Vướng Bụi Trần",
+      "desc": "Sát thương Nhìn Thấu - Chém và Nhìn Thấu - Diệt gây ra tăng {{1}}%, số lần sát thương thêm của Nhìn Thấu - Diệt tăng {{2}}."
+    },
+    "2": {
+      "name": "Mầm Sống Nảy Nở",
+      "desc": "Khi phát động Phản Kích gây sát thương, sẽ bỏ qua {{1}}% Phòng Thủ của kẻ địch."
+    },
+    "3": {
+      "name": "Cửu Xích Vận Cân",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Thợ Giỏi Rèn Kiếm Sắc",
+      "desc": "Sau khi phát động Nhìn Thấu - Chém hoặc Nhìn Thấu - Diệt sẽ khiến Kháng Hiệu Ứng của bản thân tăng {{1}}%, duy trì {{2}} hiệp."
+    },
+    "5": {
+      "name": "Binh Khí Vĩnh Hằng, Lòng Dạ Kiên Định",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Đánh Đàn Múa Kiếm, Can Đảm Uyển Chuyển",
+      "desc": "Trong thời gian Chống Đỡ, khi phe địch chủ động thi triển kỹ năng, cho dù có tấn công Yunli hay không đều sẽ kích hoạt Nhìn Thấu - Diệt đồng thời xóa hiệu ứng Chống Đỡ, khi phát động Nhìn Thấu - Chém hoặc Nhìn Thấu - Diệt gây sát thương, Tỷ Lệ Bạo Kích sẽ tăng {{1}}%, Xuyên Kháng Vật Lý tăng {{2}}%."
+    }
+  }
+}

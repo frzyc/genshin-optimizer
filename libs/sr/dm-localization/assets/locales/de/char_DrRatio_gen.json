@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Ewige Wahrheit",
-      "desc": "Erhöht die Auslösungsanzahl für „Torheit der Weisen“ um {{1}}. Der SCH durch den Folgeangriff des Talents wird um {{2}}% erhöht."
+      "desc": "Erhöht die Auslösungsanzahl für „Torheit der Weisen“ um {{1}}. Der durch Folgeangriffe verursachte SCH des Talents wird um {{2}}% erhöht."
     }
   }
 }

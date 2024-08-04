@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Promise, Not Command",
-        "fullDesc": "After Clara uses Ultimate, DMG dealt to her is reduced by an extra <orangeStrong>{{4}}%</orangeStrong>, and she has greatly increased chances of being attacked by enemies for {{3}} turn(s).\\nIn addition, Svarog's <u>Counter</u> is enhanced. When an ally is attacked, Svarog immediately launches a <u>Counter</u>, and its DMG multiplier against the enemy increases by <orangeStrong>{{2}}%</orangeStrong>. Enemies adjacent to it take 50% of the DMG dealt to the target enemy. Enhanced <u>Counter(s)</u> can take effect {{5}} time(s).",
+        "fullDesc": "After Clara uses Ultimate, DMG dealt to her is reduced by an extra <orangeStrong>{{4}}%</orangeStrong>, and she has greatly increased chances of being attacked by enemies for {{3}} turn(s).\\nIn addition, Svarog's <u>Counter</u> is enhanced. When an ally is attacked, Svarog immediately launches a <u>Counter</u>, and its DMG multiplier against the enemy increases by <orangeStrong>{{2}}%</orangeStrong>. Enemies adjacent to it take 50% of the DMG dealt to the primary target enemy. Enhanced <u>Counter(s)</u> can take effect {{5}} time(s).",
         "shortDesc": "<orangeStrong>Reduces DMG received</orangeStrong>, increases chance to be attacked by enemies, and enhances <u>Counters</u>."
       }
     },

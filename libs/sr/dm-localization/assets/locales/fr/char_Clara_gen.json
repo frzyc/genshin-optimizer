@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "C'est une promesse, pas un ordre",
-        "fullDesc": "Après utilisation de l'ultime de Clara, les DGT qu'elle subit sont réduits de <orangeStrong>{{4}}%</orangeStrong> supplémentaires et ses chances d'être attaquée par les ennemis sont considérablement augmentées pendant {{3}} tours.\\nD'autre part, le <u>contre</u> de Svarog est renforcé. Lorsqu'un allié est attaqué, Svarog lance immédiatement un <u>contre</u> et son multiplicateur de DGT contre l'ennemi augmente de <orangeStrong>{{2}}%</orangeStrong>. Les ennemis adjacents subissent 50 % des DGT infligés à la cible ennemie. Le <u>contre</u> renforcé peut prendre effet {{5}} fois.",
+        "fullDesc": "Après utilisation de l'ultime de Clara, les DGT qu'elle subit sont réduits de <orangeStrong>{{4}}%</orangeStrong> supplémentaires et ses chances d'être attaquée par les ennemis sont considérablement augmentées pendant {{3}} tours.\\nD'autre part, le <u>contre</u> de Svarog est renforcé. Lorsqu'un allié est attaqué, Svarog lance immédiatement un <u>contre</u> et son multiplicateur de DGT contre l'ennemi augmente de <orangeStrong>{{2}}%</orangeStrong>. Les ennemis adjacents subissent 50 % des DGT infligés à la cible ennemie principale. Le <u>contre</u> renforcé peut prendre effet {{5}} fois.",
         "shortDesc": "<orangeStrong>Réduit les DGT subis</orangeStrong>, augmente les chances d'être attaqué par les ennemis et renforce les <u>contres</u>."
       }
     },

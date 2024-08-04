@@ -65,7 +65,7 @@
     },
     "6": {
       "name": "Reborn Into an Empty Husk",
-      "desc": "Jumlah maksimum lapisan Charge berkurang menjadi 4 lapis. DMG dari Serangan Lanjutan yang dipicu Talent meningkat sebesar {{1}}% Max HP Blade."
+      "desc": "Jumlah maksimum lapisan Charge berkurang menjadi 4 lapis. DMG yang diakibatkan Serangan Lanjutan yang dipicu Talent meningkat sebesar {{1}}% Max HP Blade."
     }
   }
 }

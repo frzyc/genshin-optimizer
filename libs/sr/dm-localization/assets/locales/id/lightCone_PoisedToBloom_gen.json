@@ -1,0 +1,7 @@
+{
+  "name": "Poised to Bloom",
+  "passive": {
+    "name": "Lose Not, Forget Not",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK pengguna. Saat memasuki pertempuran, jika di dalam tim terdapat 2 atau lebih karakter yang berjalan di Path yang sama, maka akan meningkatkan CRIT DMG karakter-karakter tersebut sebesar <orangeStrong>{{2}}%</orangeStrong>. Efek dari kemampuan yang sama tidak dapat ditumpuk."
+  }
+}

@@ -2,6 +2,6 @@
   "name": "La chute d'un Aiôn",
   "passive": {
     "name": "Comme un aimant",
-    "description": "Pendant un même combat, chaque fois que le porteur attaque, son ATQ augmente de <orangeStrong>{{1}}%</orangeStrong>, cumulable jusqu'à {{2}} fois. Lorsque le porteur inflige une Rupture de faiblesse à un ennemi, ses DGT augmentent de <orangeStrong>{{3}}%</orangeStrong> pendant {{4}} tours."
+    "description": "Pendant ce combat, chaque fois que le porteur attaque, son ATQ augmente de <orangeStrong>{{1}}%</orangeStrong>, cumulable jusqu'à {{2}} fois. Après que le porteur a infligé une Rupture de faiblesse à un ennemi, ses DGT augmentent de <orangeStrong>{{3}}%</orangeStrong> pendant {{4}} tours."
   }
 }

@@ -1,0 +1,66 @@
+{
+  "name": "Trailblazer (Imaginary • Harmony)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Swing Dance Etiquette",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.",
+        "shortDesc": "Deals minor Imaginary DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Halftime to Make It Rain",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a single target enemy and additionally deals DMG for 4 times, with each time dealing Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a random enemy.",
+        "shortDesc": "Deals minor Imaginary DMG to single enemy targets with 5 Bounces in total."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "All-Out Footlight Parade",
+        "fullDesc": "Grants all allies the Backup Dancer effect, lasting for {{1}} turn(s). This duration decreases by 1 at the start of Trailblazer's every turn. Allies with the Backup Dancer effect have their Break Effect increased by <orangeStrong>{{3}}%</orangeStrong>. And when they attack enemy targets that are in the <u>Weakness Broken state</u>, the Toughness Reduction of the attack will be converted into 1 instance of <u>Super Break DMG</u>.",
+        "shortDesc": "Grants all allies the Backup Dancer effect. Allies with Backup Dancer have their <orangeStrong>Break Effect increased</orangeStrong> and additionally deals <orangeStrong><u>Super Break DMG</u></orangeStrong> 1 time when they attack enemy targets that are <u>Weakness Broken</u>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Now! I'm the Band!",
+        "fullDesc": "After the Technique is used, at the start of the next battle, all allies' Break Effect increases by {{1}}%, lasting for {{2}} turn(s).",
+        "shortDesc": "At the start of the next battle, increases all allies' Break Effect."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Best Seat in the House",
+      "desc": "After using Skill for the first time, immediately recovers {{1}} Skill Point(s)."
+    },
+    "2": {
+      "name": "Jailbreaking Rainbowwalk",
+      "desc": "When the battle starts, the Trailblazer's Energy Regeneration Rate increases by {{1}}%, lasting for {{2}} turn(s)."
+    },
+    "3": {
+      "name": "Sanatorium for Rest Notes",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Dove in Tophat",
+      "desc": "While the Trailblazer is on the field, increases the Break Effect of all teammates (excluding the Trailblazer), by an amount equal to {{1}}% of the Trailblazer's Break Effect."
+    },
+    "5": {
+      "name": "Poem Favors Rhythms of Old",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "Tomorrow, Rest in Spotlight",
+      "desc": "The number of additional DMG applications by the Skill increases by {{1}}."
+    }
+  }
+}

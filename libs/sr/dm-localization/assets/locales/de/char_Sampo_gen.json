@@ -12,7 +12,7 @@
       "0": {
         "name": "Zurückprallende Liebe",
         "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Sampos ANG zu und verursacht zusätzlich {{1}}-mal SCH. Jeder Treffer fügt einem zufälligen Gegner Wind-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Sampos ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu und führt gesamt 5 Abpralle aus."
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu und prallt insgesamt 5-mal ab."
       }
     },
     "ult": {

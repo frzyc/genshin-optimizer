@@ -1,0 +1,7 @@
+{
+  "setName": "Intrépida cabalgavientos",
+  "setEffects": {
+    "2": "ATQ +{{1}}%.",
+    "4": "La Prob. CRIT del portador aumenta en un {{1}}%. Cuando el portador lanza un ataque adicional, el daño que inflige la habilidad definitiva aumenta en un {{2}}% durante {{3}} turno."
+  }
+}

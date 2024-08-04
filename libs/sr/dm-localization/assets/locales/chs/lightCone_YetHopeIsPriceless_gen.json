@@ -1,0 +1,7 @@
+{
+  "name": "偏偏希望无价",
+  "passive": {
+    "name": "承诺",
+    "description": "使装备者的暴击率提高<orangeStrong>{{1}}%</orangeStrong>。当装备者在战斗中暴击伤害大于{{2}}%时，每超过{{3}}%，追加攻击造成的伤害提高<orangeStrong>{{4}}%</orangeStrong>，该效果可叠加{{5}}层。战斗开始时和装备者施放普攻后，使终结技或追加攻击造成的伤害无视目标<orangeStrong>{{6}}%</orangeStrong>的防御，持续{{7}}回合。"
+  }
+}

@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "{RUBY_B#しょうおんわいん}祥音和韻{RUBY_E#}",
-        "fullDesc": "指定した味方単体に「賜福」を付与し、その味方の攻撃力+<orangeStrong>{{2}}%</orangeStrong>、攻撃力アップ量は停雲の現在の攻撃力の<orangeStrong>{{4}}%</orangeStrong>を超えない。\\n「賜福」を付与された味方が攻撃を行った後、敵にその味方の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性<u>付加ダメージ</u>を1回与える。\\n「賜福」は{{3}}ターン継続し、停雲の戦闘スキルの最後のターゲットにのみ効果を発揮する。",
+        "fullDesc": "指定した味方単体に「賜福」を付与し、その味方の攻撃力+<orangeStrong>{{2}}%</orangeStrong>、攻撃力アップ量は停雲の現在の攻撃力の<orangeStrong>{{4}}%</orangeStrong>を超えない。\\n「賜福」を付与された味方が攻撃を行った後、敵にその味方の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性<u>付加ダメージ</u>を1回与える。\\n「賜福」は{{3}}ターン継続し、停雲の戦闘スキルで最後に指定したターゲットにのみ効果を発揮する。",
         "shortDesc": "味方単体の<orangeStrong>攻撃力をアップ</orangeStrong>させ、「賜福」を与える。「賜福」がある味方は攻撃を行った時に少量の<orangeStrong>雷属性<u>付加ダメージ</u></orangeStrong>を与える。"
       }
     },

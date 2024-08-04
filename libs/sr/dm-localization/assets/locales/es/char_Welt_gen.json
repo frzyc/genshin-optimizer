@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Legado de honor",
-      "desc": "Tras usar su habilidad definitiva, Welt obtiene una potenciación: las {{3}} siguientes veces que ataque usando el ATQ básico o la habilidad básica, inflige daño adicional a los objetivos 1 vez. El daño adicional del ATQ básico es un {{1}}% del multiplicador de daño de su ATQ básico, y el daño adicional de la habilidad básica es un {{2}}% del multiplicador de daño de su habilidad básica."
+      "desc": "Tras usar su habilidad definitiva, Welt obtiene una potenciación: las {{3}} siguientes veces que ataque usando el ATQ básico o la habilidad básica, inflige daño adicional a los objetivos 1 vez. El daño adicional que inflige el ATQ básico es igual al {{1}}% del multiplicador del daño de ATQ básico, y el daño adicional que inflige la habilidad básica es igual al {{2}}% del multiplicador del daño de habilidad básica."
     },
     "2": {
       "name": "Fusión de estrellas",

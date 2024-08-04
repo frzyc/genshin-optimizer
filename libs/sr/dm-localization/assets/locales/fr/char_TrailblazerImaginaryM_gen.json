@@ -1,0 +1,66 @@
+{
+  "name": "{M#Pionnier}{F#Pionnière} (Imaginaire • L'Harmonie)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Coup de chapeau",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Pluie d'applaudissements",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à une cible ennemie unique et inflige des DGT 4 fois supplémentaires, infligeant à chaque fois des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi aléatoire.",
+        "shortDesc": "Inflige des DGT imaginaires mineurs à des cibles ennemies uniques pour un total de 5 rebonds."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Performance sur scène",
+        "fullDesc": "Applique l'effet Soutien sur scène à tous les alliés, pour une durée de {{1}} tours. Cette durée diminue de 1 tour au début de chaque tour {M#du pionnier}{F#de la pionnière}. L'effet de Rupture des alliés qui bénéficient de Soutien sur scène augmente de <orangeStrong>{{3}}%</orangeStrong>. Lorsqu'ils attaquent des cibles ennemies qui sont en <u>état de Rupture de faiblesse</u>, la réduction de robustesse de cette attaque est convertie 1 fois en une instance de <u>DGT de rupture extrême</u>.",
+        "shortDesc": "Applique l'effet Soutien sur scène à tous les alliés. Les alliés qui bénéficient de l'effet Soutien sur scène voient leur <orangeStrong>effet de Rupture</orangeStrong> augmenté et infligent des <orangeStrong><u>DGT de rupture extrême</u></orangeStrong> 1 fois lorsqu'ils attaquent des cibles ennemies qui subissent une <u>Rupture de faiblesse</u>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Entrée fracassante",
+        "fullDesc": "L'effet de Rupture de tous les alliés augmente de {{1}}% pendant {{2}} tours au début du prochain combat après avoir utilisé la technique.",
+        "shortDesc": "Augmente l'effet de Rupture de tous les alliés au début du prochain combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Premières loges",
+      "desc": "Récupère {{1}} point de compétence après la première utilisation de la compétence."
+    },
+    "2": {
+      "name": "Charleston endiablé",
+      "desc": "Le taux de régénération d'énergie {M#du pionnier}{F#de la pionnière} augmente de {{1}}% pour une durée de {{2}} tours en début de combat."
+    },
+    "3": {
+      "name": "Note finale",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Chapeau l'artiste",
+      "desc": "Lorsque {M#le pionnier}{F#la pionnière} est sur le champ de bataille, augmente l'effet de Rupture de tous les alliés à l'exception {M#du pionnier}{F#de la pionnière}. L'augmentation est équivalente à {{1}}% de l'effet de Rupture {M#du pionnier}{F#de la pionnière}."
+    },
+    "5": {
+      "name": "Rythmes anciens",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Sous les feux de la rampe",
+      "desc": "Augmente les DGT supplémentaires de la compétence de {{1}} frappes."
+    }
+  }
+}

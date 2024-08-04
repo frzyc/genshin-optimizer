@@ -57,7 +57,7 @@
     },
     "4": {
       "name": "Right on the Tiles",
-      "desc": "Setelah melancarkan Skill, memiliki {{1}}% peluang tetap untuk memperoleh status \"Autarky\" hingga akhir giliran saat ini.\\nSetelah melancarkan Basic Attack atau Enhanced Basic Attack dalam status \"Autarky\", Qingque akan langsung melancarkan 1 Serangan Lanjutan yang mengakibatkan Quantum DMG pada target sebesar 100% dari Basic Attack DMG atau Enhanced Basic Attack DMG."
+      "desc": "Setelah melancarkan Skill, memiliki {{1}}% peluang tetap untuk memperoleh status \"Self-Sufficer\" hingga akhir giliran saat ini.\\nSetelah melancarkan Basic Attack atau Enhanced Basic Attack dalam status \"Self-Sufficer\", Qingque akan langsung melancarkan 1 Serangan Lanjutan yang mengakibatkan Quantum DMG pada target sebesar 100% dari Basic Attack DMG atau Enhanced Basic Attack DMG."
     },
     "5": {
       "name": "Gambit for the Tiles",

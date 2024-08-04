@@ -1,0 +1,7 @@
+{
+  "name": "Portrait de la jeune fille en fleurs",
+  "passive": {
+    "name": "Souvenir et dévouement",
+    "description": "Augmente l'ATQ du porteur de <orangeStrong>{{1}}%</orangeStrong>. Si au moins deux personnages suivent la même Voie lors de l'entrée en combat, les DGT critiques de ces alliés augmentent de <orangeStrong>{{2}}%</orangeStrong>. Les effets du même type ne peuvent pas se cumuler."
+  }
+}

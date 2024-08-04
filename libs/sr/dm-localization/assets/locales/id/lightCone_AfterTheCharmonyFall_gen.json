@@ -1,0 +1,7 @@
+{
+  "name": "After the Charmony Fall",
+  "passive": {
+    "name": "Quiescence",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Break Effect pengguna. Setelah pengguna melancarkan Ultimate, SPD akan meningkat <orangeStrong>{{2}}%</orangeStrong>, berlangsung selama {{3}} giliran."
+  }
+}

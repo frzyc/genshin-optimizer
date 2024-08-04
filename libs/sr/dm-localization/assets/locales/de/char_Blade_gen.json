@@ -65,7 +65,7 @@
     },
     "6": {
       "name": "Wie Körper, so Seele",
-      "desc": "Die maximale Aufladungsanzahl wird auf 4 reduziert. Der SCH des Folgeangriffs, der durch Blades Talent ausgelöst wird, wird zusätzlich um {{1}}% seiner max. LP erhöht."
+      "desc": "Die maximale Aufladungsanzahl wird auf 4 reduziert. Der durch Folgeangriffe verursachte SCH von Blades Talent wird zusätzlich um {{1}}% seiner max. LP erhöht."
     }
   }
 }

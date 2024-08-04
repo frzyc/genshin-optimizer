@@ -1,0 +1,7 @@
+{
+  "name": "A donde regresan los sueños",
+  "passive": {
+    "name": "Metamorfosis",
+    "description": "El efecto de Ruptura del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando el portador inflige Daño de Ruptura a un enemigo, este entra en el estado de Vencido durante {{4}} turnos. Los objetivos afectados con Vencido reciben un <orangeStrong>{{2}}%</orangeStrong> más de Daño de Ruptura del portador y su VEL se reduce en un {{3}}%. Los efectos del mismo tipo no se pueden acumular."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Yet Hope Is Priceless",
+  "passive": {
+    "name": "Promise",
+    "description": "Increases the wearer's CRIT Rate by <orangeStrong>{{1}}%</orangeStrong>. While the wearer is in battle, for every {{3}}% CRIT DMG that exceeds {{2}}%, the DMG dealt by follow-up attack increases by <orangeStrong>{{4}}%</orangeStrong>. This effect can stack up to {{5}} time(s). When the battle starts or after the wearer uses their Basic ATK, enables the DMG dealt by Ultimate or follow-up attack to ignore <orangeStrong>{{6}}%</orangeStrong> of the target's DEF, lasting for {{7}} turn(s)."
+  }
+}

@@ -4,32 +4,32 @@
     "basic": {
       "0": {
         "name": "サヨナラ{RUBY_B#あんだ}安打{RUBY_E#}",
-        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理ダメージを与える。",
-        "shortDesc": "敵単体に少量の物理ダメージを与える。"
+        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の物理属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#あんそく}安息{RUBY_E#}ホームラン",
-        "fullDesc": "指定した敵単体および隣接する敵に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理ダメージを与える。",
-        "shortDesc": "敵単体および隣接する敵に物理ダメージを与える。"
+        "fullDesc": "指定した敵単体および隣接する敵に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与える。",
+        "shortDesc": "敵単体および隣接する敵に物理属性ダメージを与える。"
       }
     },
     "ult": {
       "0": {
         "name": "スターダストエース",
-        "fullDesc": "2つの攻撃モードの内の1つを選択し全力のバッティングをお見舞いする。\\n「全勝・サヨナラ安打」：指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理ダメージを与える。\\n「全勝・安息ホームラン」：指定した敵単体に開拓者の攻撃力<orangeStrong>{{2}}%</orangeStrong>分の物理ダメージを与え、隣接する敵に開拓者の攻撃力<orangeStrong>{{3}}%</orangeStrong>分の物理ダメージを与える。",
+        "fullDesc": "2つの攻撃モードの内の1つを選択し全力のバッティングをお見舞いする。\\n「全勝・サヨナラ安打」：指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与える。\\n「全勝・安息ホームラン」：指定した敵単体に開拓者の攻撃力<orangeStrong>{{2}}%</orangeStrong>分の物理属性ダメージを与え、隣接する敵に開拓者の攻撃力<orangeStrong>{{3}}%</orangeStrong>分の物理属性ダメージを与える。",
         "shortDesc": "単体攻撃または拡散攻撃を選択し、全力のバッティングを振り出す。"
       },
       "1": {
         "name": "{RUBY_B#ぜんしょう}全勝{RUBY_E#}・サヨナラ{RUBY_B#あんだ}安打{RUBY_E#}",
-        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理ダメージを与える。",
-        "shortDesc": "敵単体に大量の物理ダメージを与える。"
+        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与える。",
+        "shortDesc": "敵単体に大量の物理属性ダメージを与える。"
       },
       "2": {
         "name": "{RUBY_B#ぜんしょう}全勝{RUBY_E#}・{RUBY_B#あんそく}安息{RUBY_E#}ホームラン",
-        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理ダメージを与え、隣接する敵に開拓者の攻撃力<orangeStrong>{{2}}%</orangeStrong>分の物理ダメージを与える。",
-        "shortDesc": "敵単体および隣接する敵に物理ダメージを与える。"
+        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与え、隣接する敵に開拓者の攻撃力<orangeStrong>{{2}}%</orangeStrong>分の物理属性ダメージを与える。",
+        "shortDesc": "敵単体および隣接する敵に物理属性ダメージを与える。"
       }
     },
     "technique": {
@@ -54,7 +54,7 @@
     },
     "2": {
       "name": "{RUBY_B#えん}縁{RUBY_E#}の{RUBY_B#もと}下{RUBY_E#}{RUBY_B#かごう}假合{RUBY_E#}した{RUBY_B#じんしん}人身{RUBY_E#}",
-      "desc": "攻撃を行った後、攻撃が命中した敵の弱点が物理の場合、開拓者の攻撃力{{1}}%分のHPを回復する。"
+      "desc": "攻撃を行った後、攻撃が命中した敵の弱点が物理属性の場合、開拓者の攻撃力{{1}}%分のHPを回復する。"
     },
     "3": {
       "name": "{RUBY_B#ぜんろ}前路{RUBY_E#}を{RUBY_B#しめ}示{RUBY_E#}す{RUBY_B#ことだま}言霊{RUBY_E#}",

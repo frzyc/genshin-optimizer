@@ -1,0 +1,7 @@
+{
+  "name": "夢應歸於何處",
+  "passive": {
+    "name": "蛻變",
+    "description": "使裝備者的擊破特攻提高<orangeStrong>{{1}}%</orangeStrong>。當裝備者對敵方目標造成擊破傷害時，使敵方陷入【潰敗】狀態，持續{{4}}回合。【潰敗】狀態下目標受到裝備者造成的擊破傷害提高<orangeStrong>{{2}}%</orangeStrong>，速度降低{{3}}%，同類效果無法疊加。"
+  }
+}

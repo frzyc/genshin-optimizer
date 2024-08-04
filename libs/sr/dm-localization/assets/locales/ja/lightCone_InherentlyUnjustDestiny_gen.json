@@ -2,6 +2,6 @@
   "name": "{RUBY_B#うんめい}運命{RUBY_E#}は{RUBY_B#つね}常{RUBY_E#}に{RUBY_B#ふこうへい}不公平{RUBY_E#}",
   "passive": {
     "name": "オールイン",
-    "description": "装備キャラの防御力+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが味方にバリアを付与する時、装備キャラの会心ダメージ+<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。装備キャラが追加攻撃を行う時、<orangeStrong>{{4}}%</orangeStrong>の基礎確率で攻撃を受けた敵の被ダメージを<orangeStrong>{{5}}%</orangeStrong>アップさせる、{{6}}ターン継続。"
+    "description": "装備キャラの防御力+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが味方にバリアを付与する時、装備キャラの会心ダメージ+<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。装備キャラの追加攻撃が敵に命中する時、<orangeStrong>{{4}}%</orangeStrong>の基礎確率で攻撃を受ける敵の受けるダメージ+<orangeStrong>{{5}}%</orangeStrong>、{{6}}ターン継続。"
   }
 }

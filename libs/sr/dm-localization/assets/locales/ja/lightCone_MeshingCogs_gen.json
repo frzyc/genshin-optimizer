@@ -2,6 +2,6 @@
   "name": "{RUBY_B#りんけい}輪契{RUBY_E#}",
   "passive": {
     "name": "{RUBY_B#そっけつ}速決{RUBY_E#}",
-    "description": "装備キャラが攻撃を行った後、または攻撃を受けた後、さらにEPを<orangeStrong>{{1}}</orangeStrong>回復する、この効果は1ターンに1回まで発動できる。"
+    "description": "装備キャラが攻撃を行った後、または攻撃を受けた後、さらにEPを<orangeStrong>{{1}}</orangeStrong>回復する、この効果は毎ターンに1回まで発動できる。"
   }
 }

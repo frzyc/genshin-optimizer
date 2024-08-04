@@ -1,0 +1,76 @@
+{
+  "name": "Vaga-lume",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ordem: Propulsão de Chamas",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de SAM a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano de Fogo leve a um único inimigo."
+      },
+      "1": {
+        "name": "Vaga-lume Tipo-IV: Dizimação Pirogênica",
+        "fullDesc": "Restaura PV em uma quantidade igual a {{2}}% dos PV máximos desta unidade. Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de SAM a um único inimigo-alvo.",
+        "shortDesc": "Restaura uma porção dos PV dessa unidade e causa Dano de Fogo a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Ordem: Bombardeio Aéreo",
+        "fullDesc": "Consome PV igual a {{2}}% dos PV máximos desta unidade e regenera uma quantidade fixa de Energia igual a <orangeStrong>{{3}}%</orangeStrong> da Energia máxima desta unidade. Causa Dano de Fogo equivalente a <orangeStrong>{{1}}%</orangeStrong> do ATQ de SAM a um único inimigo-alvo. Se os PV atuais não forem suficientes, os PV de SAM serão reduzidos a 1 ao usar esta Perícia. A próxima ação desta unidade é <u>Avançada Adiante</u> em {{4}}%.",
+        "shortDesc": "Consome uma parte dos PV desta unidade para regenerar Energia. Causa Dano de Fogo a um único inimigo. Faz com que a próxima ação do personagem seja <u>Avançada Adiante</u>."
+      },
+      "1": {
+        "name": "Vaga-lume Tipo-IV: Sobrecarga da Estrela da Morte",
+        "fullDesc": "Restaura os PV em {{3}}% dos PV máximos desta unidade. Aplica Fraqueza contra Fogo a um único inimigo, durando por {{4}} rodada(s). Causa Dano de Fogo igual a ({{5}} x Efeito de Quebra + <orangeStrong>{{1}}%</orangeStrong>) do ATQ de SAM a este alvo. Ao mesmo tempo, causa Dano de Fogo igual a ({{6}} x Efeito de Quebra + <orangeStrong>{{2}}%</orangeStrong>) do ATQ de SAM aos alvos adjacentes. O Efeito de Quebra considerado no cálculo é limitado a {{7}}%.",
+        "shortDesc": "Restaura uma parte dos PV desta unidade. <orangeStrong>Aplica Fraqueza contra Fogo</orangeStrong> a um único inimigo-alvo, causando Dano de Fogo massivo a este alvo e Dano de Fogo aos alvos adjacentes."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Vaga-lume Tipo-IV: Combustão Completa",
+        "fullDesc": "Entra no estado de Combustão Completa, a ação desta unidade é Avançada Adiante em 100% e ganha ATQ Básico Aprimorado e Perícia Aprimorada. Enquanto em Combustão Completa, aumenta a VEL de SAM em <orangeStrong>{{3}}</orangeStrong>, e ao usar o ATQ Básico Aprimorado ou a Perícia Aprimorada, aumenta a eficiência de Quebra de Fraqueza desta unidade em {{2}}%, e aumenta o Dano de Quebra causado por SAM aos inimigos-alvo em <orangeStrong>{{1}}%</orangeStrong>, durando até o fim do ataque atual.\\nUm contador de tempo para o estado de Combustão Completa aparece na Ordem de Ação. Quando a rodada do contador começa, SAM sai do estado de Combustão Completa. O contador tem uma VEL fixa de {{4}}.\\nSAM não pode usar a Perícia Suprema enquanto estiver em Combustão Completa.",
+        "shortDesc": "Entra no estado de Combustão Completa. A Ação de SAM é <orangeStrong>Avançada Adiante em <unbreak>100%</orangeStrong></color>, ganha <orangeStrong>ATQ Básico Aprimorado</orangeStrong> e <orangeStrong>Perícia Aprimorada</orangeStrong>. Aumenta a <orangeStrong>VEL e Eficiência de Quebra de Fraqueza</orangeStrong> desta unidade, e aumenta o Dano de Quebra recebido pelos inimigos-alvo, durando até o fim da contagem regressiva."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ordem Δ: Incineração Meteórica",
+        "fullDesc": "Salta no ar e se move livremente por {{1}} segundos, podendo finalizar esse movimento mais cedo com um ataque de mergulho. Quando esta duração termina, SAM mergulha e ataca imediatamente todos os inimigos dentro de uma área definida. No início de cada onda, aplica Fraqueza contra Fogo a todos os inimigos, durando por {{3}} rodada(s). Em seguida, causa Dano de Fogo igual a {{2}}% do ATQ de SAM a todos os inimigos.",
+        "shortDesc": "Salta no ar e se move livremente. Após alguns segundos de movimento, mergulha e ataca todos os inimigos dentro do alcance. No início de <orangeStrong>cada onda</orangeStrong>, <orangeStrong>aplica Fraqueza contra Fogo</orangeStrong> a todos os inimigos e causa Dano de Fogo a eles."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Em Crisálidas Avermelhadas, Já Tive Meu Descanso",
+      "desc": "Ao usar a Perícia Aprimorada, ignora {{1}}% da DEF do alvo. A Perícia Aprimorada não consome Pontos de Perícia."
+    },
+    "2": {
+      "name": "Em Queda Livre no Céu Estilhaçado",
+      "desc": "Enquanto está em Combustão Completa, usar o ATQ Básico Aprimorado ou a Perícia Aprimorada para derrotar um inimigo-alvo ou aplicar Quebra de Fraqueza a ele faz com que SAM ganhe imediatamente 1 rodada extra. Esse efeito pode ser ativado novamente após {{2}} rodada(s)."
+    },
+    "3": {
+      "name": "Sono Profundo Entre os Astros",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Sobre os Vaga-lumes Iluminados, Eu Logo Olho",
+      "desc": "Enquanto está no estado de Combustão Completa, aumenta a RES de Efeito de SAM em {{1}}%."
+    },
+    "5": {
+      "name": "Das Noites Sem Sonhos, Eu Então Brilho",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "No Amanhã Findado, Eu Floresço",
+      "desc": "Enquanto estiver em Combustão Completa, aumenta a PEN de RES a Fogo em {{1}}%. Ao usar o ATQ Básico Aprimorado ou a Perícia Aprimorada, aumenta a eficiência da Quebra de Fraqueza em {{2}}%."
+    }
+  }
+}

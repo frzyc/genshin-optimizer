@@ -1,0 +1,6 @@
+{
+  "setName": "Cung Điện Rèn Đúc Kiếp Hỏa Liên Đăng",
+  "setEffects": {
+    "2": "Tăng {{1}}% Tốc Độ của người trang bị. Khi người trang bị đánh trúng kẻ địch có Điểm Yếu Hỏa, Tấn Công Kích Phá tăng {{2}}%, duy trì {{3}} hiệp."
+  }
+}

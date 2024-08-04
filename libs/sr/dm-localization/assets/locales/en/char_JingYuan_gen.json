@@ -24,7 +24,7 @@
     },
     "technique": {
       "0": {
-        "name": "Spirit Invocation",
+        "name": "Spiritus Invocation",
         "fullDesc": "After the Technique is used, the Lightning-Lord's Hits Per Action in the first turn increases by {{1}} at the start of the next battle.",
         "shortDesc": "After using Technique, for the next battle, <orangeStrong>increases Lightning-Lord's Hits Per Action</orangeStrong>."
       }
@@ -40,11 +40,11 @@
   "ranks": {
     "1": {
       "name": "Slash, Seas Split",
-      "desc": "When Lightning-Lord attacks, the DMG multiplier on enemies adjacent to the target enemy increases by an extra amount equal to {{1}}% of the DMG multiplier against the target enemy."
+      "desc": "When Lightning-Lord attacks, the DMG multiplier on enemies adjacent to the target enemy increases by an extra amount equal to {{1}}% of the DMG multiplier against the primary target enemy."
     },
     "2": {
       "name": "Swing, Skies Squashed",
-      "desc": "After Lightning-Lord takes action, DMG caused by Jing Yuan's Basic ATK, Skill, and Ultimate increases by {{1}}% for {{2}} turn(s)."
+      "desc": "After Lightning-Lord takes action, DMG dealt by Jing Yuan's Basic ATK, Skill, and Ultimate increases by {{1}}%, lasting for {{2}} turn(s)."
     },
     "3": {
       "name": "Strike, Suns Subdued",

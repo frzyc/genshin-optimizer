@@ -1,0 +1,7 @@
+{
+  "name": "Yet Hope Is Priceless",
+  "passive": {
+    "name": "Promise",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT Rate pengguna. Saat CRIT DMG pengguna di dalam pertempuran lebih dari {{2}}%, maka untuk setiap {{3}}% CRIT DMG yang berlebih, akan meningkatkan <orangeStrong>{{4}}%</orangeStrong> DMG yang diakibatkan Serangan Lanjutan, efek ini dapat ditumpuk hingga {{5}} lapis. Saat pertempuran dimulai atau saat setelah pengguna melancarkan Basic Attack, akan membuat DMG yang diakibatkan Ultimate atau Serangan Lanjutan mengabaikan <orangeStrong>{{6}}%</orangeStrong> DEF target, berlangsung selama {{7}} giliran."
+  }
+}

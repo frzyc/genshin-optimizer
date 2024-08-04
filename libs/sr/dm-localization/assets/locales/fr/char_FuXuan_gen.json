@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Omnia Vita",
-      "desc": "Lorsque Matrice de prémonition est activée, le total des PV perdus par tous les membres de l'équipe est enregistré au cours du combat. Les DGT de l'ultime de Fu Xuan augmentent d'un montant équivalent à {{1}}% de ce total.\\nCe total est plafonné à {{2}}% des PV max de Fu Xuan et sa valeur est réinitialisée et recommence à s'accumuler après utilisation de l'ultime de Fu Xuan."
+      "desc": "Lorsque Matrice de prémonition est activée, le total des PV perdus par tous les membres de l'équipe est enregistré au cours du combat. Les DGT infligés par l'ultime de Fu Xuan augmentent d'un montant équivalent à {{1}}% de ce total.\\nCe total est plafonné à {{2}}% des PV max de Fu Xuan et sa valeur est réinitialisée et recommence à s'accumuler après utilisation de l'ultime de Fu Xuan."
     }
   }
 }

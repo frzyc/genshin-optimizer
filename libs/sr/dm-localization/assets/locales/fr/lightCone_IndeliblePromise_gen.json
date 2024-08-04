@@ -2,6 +2,6 @@
   "name": "Promesse indélébile",
   "passive": {
     "name": "Héritage",
-    "description": "Augmente de <orangeStrong>{{1}}%</orangeStrong> l'effet de Rupture du porteur. Lorsque le porteur utilise son ultime, augmente de <orangeStrong>{{2}}%</orangeStrong> ses chances de coup critique pendant {{3}} tours."
+    "description": "Augmente l'effet de Rupture du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur utilise son ultime, ses chances de coup critique augmentent de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tours."
   }
 }

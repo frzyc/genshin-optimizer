@@ -30,8 +30,8 @@
     "technique": {
       "0": {
         "name": "Éclat de la vérité",
-        "fullDesc": "Crée une dimension autour de Jingliu qui dure {{3}} secondes. Tous les ennemis dans cette dimension sont gelés. Jingliu génère immédiatement {{6}} points d'énergie et obtient {{1}} cumul de Syzygie, avec {{2}}% de <u>chances de base</u> de geler les cibles ennemies pendant {{4}} tours lorsque le combat est engagé avec des ennemis de la dimension. Les cibles ennemies gelées ne peuvent pas agir et subissent des <u>DGT de glace additionnels</u> équivalents à {{5}}% de l'ATQ de Jingliu au début de chaque tour. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
-        "shortDesc": "Crée une dimension autour du personnage. Les ennemis qui s'y trouvent sont <orangeStrong>gelés</orangeStrong>. Le personnage génère de l'énergie et obtient 1 cumul de Syzygie avec de fortes chances d'appliquer <orangeStrong>Gelé</orangeStrong> aux ennemis lorsque le combat est engagé avec des ennemis de la dimension."
+        "fullDesc": "Crée une dimension spéciale autour de Jingliu qui dure {{3}} secondes. Tous les ennemis dans cette dimension spéciale sont gelés. Jingliu génère immédiatement {{6}} points d'énergie et obtient {{1}} cumul de Syzygie, avec {{2}}% de <u>chances de base</u> de geler les cibles ennemies pendant {{4}} tours lorsque le combat est engagé avec des ennemis de la dimension spéciale. Les cibles ennemies gelées ne peuvent pas agir et subissent des <u>DGT de glace additionnels</u> équivalents à {{5}}% de l'ATQ de Jingliu au début de chaque tour. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "shortDesc": "Crée une dimension spéciale autour du personnage. Les ennemis qui s'y trouvent sont <orangeStrong>gelés</orangeStrong>. Le personnage génère de l'énergie et obtient 1 cumul de Syzygie avec de fortes chances d'appliquer <orangeStrong>Gelé</orangeStrong> aux ennemis lorsque le combat est engagé avec des ennemis de la dimension."
       }
     },
     "overworld": {
@@ -49,7 +49,7 @@
     },
     "2": {
       "name": "Ombre du croissant",
-      "desc": "Augmente les DGT de la prochaine compétence renforcée de {{1}}% après avoir utilisé l'ultime."
+      "desc": "Augmente de {{1}}% les DGT de la prochaine compétence renforcée après avoir utilisé l'ultime."
     },
     "3": {
       "name": "Demi-lune dans la brume",

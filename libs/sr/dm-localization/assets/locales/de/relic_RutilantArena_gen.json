@@ -1,6 +1,6 @@
 {
   "setName": "Sternenarena",
   "setEffects": {
-    "2": "Erhöht die KRIT-Rate des Trägers um {{1}}%. Wenn die aktuelle KRIT-Rate des Trägers einen Wert von {{2}}% oder höher erreicht, wird der SCH durch Standardangriff und Fertigkeit um {{3}}% erhöht."
+    "2": "Erhöht die KRIT-Rate des Trägers um {{1}}%. Wenn die aktuelle KRIT-Rate des Trägers einen Wert von {{2}}% oder höher erreicht, wird der durch Standardangriffe und Fertigkeiten verursachte SCH um {{3}}% erhöht."
   }
 }

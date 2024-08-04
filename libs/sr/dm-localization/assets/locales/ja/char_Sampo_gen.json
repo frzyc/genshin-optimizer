@@ -18,8 +18,8 @@
     "ult": {
       "0": {
         "name": "サプライズボックス",
-        "fullDesc": "敵全体にサンポの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与え、{{4}}%の<u>基礎確率</u>で攻撃を受けた敵の持続被ダメージ+<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。",
-        "shortDesc": "敵全体に風属性ダメージを与え、高確率で敵の<orangeStrong>持続被ダメージをアップ</orangeStrong>する。"
+        "fullDesc": "敵全体にサンポの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与え、{{4}}%の<u>基礎確率</u>で攻撃を受けた敵の受ける持続ダメージ+<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。",
+        "shortDesc": "敵全体に風属性ダメージを与え、高確率で敵の<orangeStrong>受ける持続ダメージをアップ</orangeStrong>する。"
       }
     },
     "technique": {

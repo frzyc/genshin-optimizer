@@ -2,6 +2,6 @@
   "name": "Sleep Like the Dead",
   "passive": {
     "name": "Sweet Dreams",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT DMG pengguna. Jika Skill atau Basic Attack pengguna tidak mengakibatkan CRIT Hit, maka CRIT Rate pengguna akan meningkat <orangeStrong>{{2}}%</orangeStrong> selama {{3}} giliran. Efek ini dapat dipicu sekali setiap {{4}} giliran."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT DMG pengguna. Jika Skill DMG atau Basic Attack DMG pengguna tidak mengakibatkan CRIT Hit, maka CRIT Rate pengguna akan meningkat <orangeStrong>{{2}}%</orangeStrong> selama {{3}} giliran. Efek ini dapat dipicu sekali setiap {{4}} giliran."
   }
 }

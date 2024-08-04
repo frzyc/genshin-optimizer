@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Combustion incomplète",
-        "fullDesc": "Crée une dimension qui dure {{4}} secondes. Il y a {{1}}% de <u>chances de base</u> d'augmenter les DGT de feu subis par les ennemis de {{2}}% pendant {{3}} tours après être entré en combat avec des ennemis dans la dimension. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
-        "shortDesc": "Crée une dimension. Il y a de fortes chances d'<orangeStrong>augmenter les DGT de feu subis par les ennemis</orangeStrong> en engageant le combat avec des ennemis à l'intérieur de la dimension."
+        "fullDesc": "Crée une dimension spéciale qui dure {{4}} secondes. Il y a {{1}}% de <u>chances de base</u> d'augmenter les DGT de feu subis par les ennemis de {{2}}% pendant {{3}} tours après être entré en combat avec des ennemis dans la dimension spéciale. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "shortDesc": "Crée une dimension spéciale. Il y a de fortes chances d'<orangeStrong>augmenter les DGT de feu subis par les ennemis</orangeStrong> lorsque le combat est engagé avec des ennemis de la dimension."
       }
     },
     "overworld": {

@@ -1,0 +1,7 @@
+{
+  "name": "Tuổi Hoa Chờ Nở Rộ",
+  "passive": {
+    "name": "Không Thua, Không Quên",
+    "description": "Khiến Tấn Công của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Khi vào chiến đấu, nếu có từ 2 nhân vật phe ta trở lên có cùng vận mệnh bất kỳ, sẽ khiến Sát Thương Bạo Kích của những nhân vật này tăng <orangeStrong>{{2}}%</orangeStrong>. Kỹ năng cùng loại không thể cộng dồn hiệu quả."
+  }
+}

@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Écho",
-      "desc": "L'ATQ normale inflige des DGT de foudre équivalents à {{1}}% des DGT de l'ATQ normale à un ennemi aléatoire adjacent à la cible."
+      "desc": "L'ATQ normale inflige des DGT de foudre équivalents à {{1}}% des DGT d'ATQ normale à un ennemi aléatoire adjacent à la cible."
     },
     "2": {
       "name": "Encore !",

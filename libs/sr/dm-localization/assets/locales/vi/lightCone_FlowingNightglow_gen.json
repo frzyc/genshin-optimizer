@@ -1,0 +1,7 @@
+{
+  "name": "Sắc Đêm Rực Sáng",
+  "passive": {
+    "name": "An Ủi",
+    "description": "Mỗi khi nhân vật phe ta tấn công, sẽ khiến người trang bị nhận 1 tầng Ca Tụng, mỗi tầng Ca Tụng sẽ tăng <orangeStrong>{{1}}%</orangeStrong> hiệu suất hồi Năng Lượng của người trang bị, tối đa cộng dồn {{2}} tầng. Khi người trang bị thi triển Tuyệt Kỹ, sẽ xóa bỏ Ca Tụng và nhận Độc Tấu Tự Do, Độc Tấu Tự Do khiến Tấn Công của người trang bị tăng <orangeStrong>{{4}}%</orangeStrong>, khiến sát thương của toàn phe ta gây ra tăng <orangeStrong>{{3}}%</orangeStrong>, duy trì {{5}} hiệp."
+  }
+}

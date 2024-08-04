@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Pas si vite !",
-        "fullDesc": "Crée une dimension qui dure {{1}} secondes après avoir utilisé la technique. Les ennemis pris dans la dimension sont affectés par Prison onirique et arrêtent toutes leurs actions. Le nombre de frappes par action du prochain ultime de Micha augmente de {{2}} lorsqu'il entre en combat contre des ennemis affectés par Prison onirique. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
-        "shortDesc": "Crée une dimension qui arrête tous les ennemis qui s'y trouvent. Le <orangeStrong>prochain ultime de Micha inflige plus de frappes par action</orangeStrong> après être entré en combat contre des ennemis à l'intérieur de la dimension."
+        "fullDesc": "Crée une dimension spéciale qui dure {{1}} secondes après avoir utilisé la technique. Les ennemis pris dans la dimension sont affectés par Prison onirique et arrêtent toutes leurs actions. Le nombre de frappes par action du prochain ultime de Micha augmente de {{2}} lorsqu'il entre en combat contre des ennemis affectés par Prison onirique. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "shortDesc": "Crée une dimension spéciale qui arrête tous les ennemis qui s'y trouvent. Le <orangeStrong>prochain ultime de Micha inflige plus de frappes par action</orangeStrong> après être entré en combat contre des ennemis à l'intérieur de la dimension."
       }
     },
     "overworld": {
@@ -52,7 +52,7 @@
     },
     "4": {
       "name": "Présence bienveillante",
-      "desc": "Augmente de {{1}}% le multiplicateur de DGT de chaque frappe de l'ultime."
+      "desc": "Augmente le multiplicateur de DGT de chaque frappe de l'ultime de {{1}}%."
     },
     "5": {
       "name": "Genèse du premier amour",
@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Distanciation du rêve",
-      "desc": "Augmente de {{2}}% les DGT du personnage jusqu'à la fin du tour lorsqu'il utilise son ultime. D'autre part, régénère {{1}} point de compétence pour l'équipe lors de la prochaine utilisation de la compétence."
+      "desc": "Augmente les DGT du personnage jusqu'à la fin du tour lorsqu'il utilise son ultime de {{2}}%. D'autre part, régénère {{1}} point de compétence pour l'équipe lors de la prochaine utilisation de la compétence."
     }
   }
 }

@@ -1,0 +1,7 @@
+{
+  "name": "無邊曼舞",
+  "passive": {
+    "name": "試探",
+    "description": "使裝備者的暴擊率提高<orangeStrong>{{1}}%</orangeStrong>。裝備者對處於防禦降低或減速狀態下的敵人造成的暴擊傷害提高<orangeStrong>{{2}}%</orangeStrong>。"
+  }
+}

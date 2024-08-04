@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Caos destructivo",
-      "desc": "Tras usar la habilidad definitiva de Seele, el objetivo entra en el estado de Mariposa desbocada durante {{2}} turno. Cuando un enemigo afectado por Mariposa desbocada es atacado, recibe un Daño Cuántico adicional equivalente al {{1}}% del daño de la habilidad definitiva de Seele. Si el enemigo es eliminado por el daño adicional de Mariposa desbocada activado por el ataque de otro aliado, no se activará el talento de Seele.\\nCuando Seele sea derrotada, se disipará el estado de Mariposa desbocada infligido a los enemigos."
+      "desc": "Tras usar la habilidad definitiva de Seele, el objetivo entra en el estado de Mariposa desbocada durante {{2}} turno. Cuando un enemigo afectado por Mariposa desbocada es atacado, recibe un Daño Cuántico adicional equivalente al {{1}}% del daño de habilidad definitiva de Seele. Si el enemigo es eliminado por el daño adicional de Mariposa desbocada activado por el ataque de otro aliado, no se activará el talento de Seele.\\nCuando Seele sea derrotada, se disipará el estado de Mariposa desbocada infligido a los enemigos."
     }
   }
 }

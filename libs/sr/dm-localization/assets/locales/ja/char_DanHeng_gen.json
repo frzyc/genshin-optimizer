@@ -11,14 +11,14 @@
     "skill": {
       "0": {
         "name": "{RUBY_B#うんきそうじゅつ}雲騎槍術{RUBY_E#}・{RUBY_B#しつう}疾雨{RUBY_E#}",
-        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。\\n戦闘スキルで会心が発生した時、{{4}}%の<u>基礎確率</u>で攻撃を受けた敵の速度-{{2}}%、{{3}}ターン継続。",
+        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。\\n戦闘スキルによるダメージで会心が発生した時、{{4}}%の<u>基礎確率</u>で攻撃を受けた敵の速度-{{2}}%、{{3}}ターン継続。",
         "shortDesc": "敵単体に風属性ダメージを与え、会心時に高確率で減速状態を付与。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#どうてん}洞天{RUBY_E#}{RUBY_B#げんげ}幻化{RUBY_E#}、{RUBY_B#ちょうむ}長夢{RUBY_E#}{RUBY_B#いっかく}一覚{RUBY_E#}",
-        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。攻撃を受けた敵が減速状態の場合、必殺技のダメージ倍率+<orangeStrong>{{2}}%</orangeStrong>。",
+        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。攻撃を受けた敵が減速状態の場合、必殺技によるダメージのダメージ倍率+<orangeStrong>{{2}}%</orangeStrong>。",
         "shortDesc": "敵単体に大量の風属性ダメージを与える、減速状態の敵に対してダメージ倍率アップ。"
       }
     },

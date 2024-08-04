@@ -1,0 +1,7 @@
+{
+  "name": "Dance at Sunset",
+  "passive": {
+    "name": "Deeply Engrossed",
+    "description": "Greatly increases the wearer's chance of getting attacked and increases CRIT DMG by <orangeStrong>{{1}}%</orangeStrong>. After the wearer uses Ultimate, receives 1 stack of Firedance, lasting for 2 turns and stacking up to {{2}} time(s). Each stack of Firedance increases the DMG dealt by the wearer's follow-up attack by <orangeStrong>{{3}}%</orangeStrong>."
+  }
+}

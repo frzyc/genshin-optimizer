@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Câmara do Eco",
-      "desc": "O ATQ Básico causa {{1}}% de seu Dano de ATQ Básico como Dano de Raio a um inimigo aleatório adjacente ao alvo."
+      "desc": "O ATQ Básico causa Dano de Raio igual a {{1}}% do Dano do ATQ Básico a um inimigo-alvo aleatório adjacente ao inimigo-alvo."
     },
     "2": {
       "name": "Bis!",

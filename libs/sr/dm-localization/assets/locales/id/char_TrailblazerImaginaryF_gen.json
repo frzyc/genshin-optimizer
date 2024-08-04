@@ -1,0 +1,66 @@
+{
+  "name": "Trailblazer (Imaginary • Harmony)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Swing Dance Etiquette",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Trailblazer pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Halftime to Make It Rain",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Trailblazer pada 1 musuh yang ditargetkan, serta mengakibatkan 4 kali DMG tambahan, yang setiap DMG-nya akan mengakibatkan Imaginary DMG pada musuh secara acak sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Trailblazer.",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh, total Bounce 5 kali."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "All-Out Footlight Parade",
+        "fullDesc": "Menambahkan efek \"Backup Dancer\" pada seluruh rekan tim, berlangsung selama {{1}} giliran. Durasi giliran akan berkurang 1 setiap kali giliran Trailblazer dimulai. Break Effect rekan tim berstatus \"Backup Dancer\" akan meningkat <orangeStrong>{{3}}%</orangeStrong>, dan setelah menyerang target musuh <u>berstatus Weakness Break</u>, akan mengubah pengurangan nilai Toughness dari serangan kali ini menjadi 1 kali <u>Super Break DMG</u>.",
+        "shortDesc": "Menambahkan efek \"Backup Dancer\" pada seluruh rekan tim. <orangeStrong>Break Effect</orangeStrong> rekan tim yang memiliki \"Backup Dancer\" akan meningkat, dan setelah menyerang target musuh berstatus <u>Weakness Break</u>, akan mengakibatkan 1 kali <orangeStrong><u>Super Break DMG</u></orangeStrong> tambahan."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Now! I'm the Band!",
+        "fullDesc": "Setelah melancarkan Technique, saat pertempuran berikutnya dimulai, Break Effect seluruh rekan tim akan meningkat {{1}}% selama {{2}} giliran.",
+        "shortDesc": "Meningkatkan Break Effect seluruh rekan tim saat pertempuran berikutnya dimulai."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Best Seat in the House",
+      "desc": "Memulihkan {{1}} Poin Skill setelah melancarkan Skill untuk pertama kalinya dalam pertempuran."
+    },
+    "2": {
+      "name": "Jailbreaking Rainbowwalk",
+      "desc": "Saat pertempuran dimulai, Energy Regeneration Rate Trailblazer akan meningkat {{1}}%, berlangsung selama {{2}} giliran."
+    },
+    "3": {
+      "name": "Sanatorium for Rest Notes",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Dove in Tophat",
+      "desc": "Saat Trailblazer berada di medan pertempuran, meningkatkan Break Effect seluruh rekan tim selain Trailblazer, peningkatannya sebesar {{1}}% dari Break Effect Trailblazer."
+    },
+    "5": {
+      "name": "Poem Favors Rhythms of Old",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Tomorrow, Rest in Spotlight",
+      "desc": "DMG Tambahan dari Skill bertambah {{1}} kali."
+    }
+  }
+}

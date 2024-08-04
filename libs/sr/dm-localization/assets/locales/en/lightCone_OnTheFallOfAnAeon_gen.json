@@ -2,6 +2,6 @@
   "name": "On the Fall of an Aeon",
   "passive": {
     "name": "Moth to Flames",
-    "description": "Whenever the wearer attacks, their ATK is increased by <orangeStrong>{{1}}%</orangeStrong> in this battle. This effect can stack up to {{2}} time(s). After a character inflicts Weakness Break on an enemy, the wearer's DMG increases by <orangeStrong>{{3}}%</orangeStrong> for {{4}} turn(s)."
+    "description": "When the wearer attacks, increases their ATK by <orangeStrong>{{1}}%</orangeStrong> in this battle. This effect can stack up to {{2}} time(s). After the wearer breaks an enemy's Weakness, increases DMG dealt by <orangeStrong>{{3}}%</orangeStrong>, lasting for {{4}} turn(s)."
   }
 }

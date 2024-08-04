@@ -1,0 +1,66 @@
+{
+  "name": "Robin",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Âm Thanh Trắng Vỗ Cánh",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Robin.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Khúc Hát Ngân Nga Của Đôi Cánh",
+        "fullDesc": "Tăng <orangeStrong>{{1}}%</orangeStrong> sát thương do toàn phe ta gây ra, duy trì {{2}} hiệp, mỗi khi bắt đầu hiệp của Robin, số hiệp duy trì giảm 1.",
+        "shortDesc": "<orangeStrong>Tăng sát thương</orangeStrong> do toàn phe ta gây ra."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ngàn Âm Hợp Xướng, Tẩu Pháp Vạn Vì Sao",
+        "fullDesc": "Khi Robin vào trạng thái Hợp Tấu, sẽ khiến đồng đội (ngoại trừ bản thân) lập tức hành động.\\nKhi trong trạng thái Hợp Tấu, tấn công của toàn thể phe ta tăng, giá trị tăng bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Robin +<orangeStrong>{{3}}</orangeStrong>. Sau mỗi lần mục tiêu phe ta tấn công, Robin sẽ gây thêm 1 lần <u>Sát Thương Vật Lý kèm theo</u> bằng <orangeStrong>{{4}}%</orangeStrong> Tấn Công của bản thân, tỷ lệ Bạo Kích của sát thương này cố định là {{5}}%, sát thương Bạo Kích cố định là {{6}}%.\\nKhi trong trạng thái Hợp Tấu, Robin miễn dịch <u>Hiệu Ứng Xấu loại Khống Chế</u>, trước khi kết thúc trạng thái Hợp Tấu sẽ không vào hiệp của bản thân và không thể hành động.\\nKhi trên vị trí thứ tự hành động xuất hiện đếm ngược Hợp Tấu, thì lúc bắt đầu hiệp đếm ngược, Robin sẽ thoát khỏi trạng thái Hợp Tấu và lập tức hành động, thời gian đếm ngược cố định có {{2}} điểm Tốc Độ.",
+        "shortDesc": "Vào trạng thái Hợp Tấu, khiến toàn phe ta <orangeStrong>tăng Tấn Công</orangeStrong>, và khiến đồng đội lập tức hành động, sau khi tấn công Robin gây thêm <orangeStrong>Sát Thương Vật Lý kèm theo<u></u></orangeStrong>. Trong thời gian trạng thái Hợp Tấu, miễn dịch <u>Hiệu Ứng Xấu loại Khống Chế</u>, trước khi kết thúc trạng thái sẽ không vào hiệp của bản thân và không thể hành động cho đến khi kết thúc đếm ngược."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Khúc Dạo Đầu Say Men",
+        "fullDesc": "Sau khi thi triển Bí Kỹ, sẽ tạo ra một vùng đặc biệt quanh bản thân duy trì {{1}} giây. Kẻ địch trong vùng này sẽ không tấn công Robin, đồng thời sẽ đi theo Robin trong thời gian vùng này được kích hoạt. Sau khi vào chiến đấu trong thời gian vùng đặc biệt được kích hoạt, khi bắt đầu mỗi đợt, Robin sẽ hồi {{2}} Năng Lượng. Cùng một lúc tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
+        "shortDesc": "Tạo một vùng đặc biệt xung quanh bản thân. Kẻ địch trong vùng này sẽ không tấn công Robin. Sau khi vào chiến đấu trong lúc vùng đặc biệt được kích hoạt, khi bắt đầu mỗi đợt, Robin sẽ hồi thêm <orangeStrong>{{2}}</orangeStrong> Năng Lượng."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Đất Nước Của Nụ Cười",
+      "desc": "Khi ở trạng thái Hợp Tấu, Xuyên Kháng Toàn Thuộc Tính của toàn phe ta tăng {{1}}%."
+    },
+    "2": {
+      "name": "Buổi Trà Chiều Của Hai Người",
+      "desc": "Khi ở trạng thái Hợp Tấu, Tốc Độ của toàn phe ta tăng {{1}}%. Hiệu ứng hồi Năng Lượng của Thiên Phú tăng thêm {{2}} điểm."
+    },
+    "3": {
+      "name": "Huyền Cung Treo Ngược",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Chìa Khóa Giọt Mưa",
+      "desc": "Khi thi triển Tuyệt Kỹ sẽ giải trừ Hiệu Ứng Xấu loại Khống Chế cho toàn thể phe ta, khiến toàn thể phe ta trong thời gian Robin có trạng thái Hợp Tấu tăng {{1}}% Kháng Hiệu Ứng."
+    },
+    "5": {
+      "name": "Giọt Nước Mắt Của Ngôi Sao Cô Đơn",
+      "desc": "Cấp Tấn Công Thường +1, tối đa không quá cấp 10; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Đêm Trăng Vắng Bóng",
+      "desc": "Khi ở trạng thái Hợp Tấu, sát thương bạo kích của Sát Thương Vật Lý Kèm Theo mà Tuyệt Kỹ gây ra tăng thêm {{2}}%. Hiệu quả Đêm Trăng Vắng Bóng tối đa kích hoạt {{1}} lần, mỗi lần thi triển Tuyệt Kỹ sẽ làm mới số lần kích hoạt."
+    }
+  }
+}

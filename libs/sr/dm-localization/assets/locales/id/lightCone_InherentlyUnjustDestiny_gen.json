@@ -2,6 +2,6 @@
   "name": "Inherently Unjust Destiny",
   "passive": {
     "name": "All-In",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DEF pengguna. Saat pengguna memberikan Shield untuk rekan tim, akan meningkatkan <orangeStrong>{{2}}%</orangeStrong> CRIT DMG pengguna selama {{3}} giliran. Saat Serangan Lanjutan yang dilancarkan pengguna mengenai target musuh, memiliki <orangeStrong>{{4}}%</orangeStrong> peluang dasar untuk meningkatkan <orangeStrong>{{5}}%</orangeStrong> DMG yang diterima target musuh yang terserang selama {{6}} giliran."
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DEF pengguna. Saat pengguna memberikan Shield untuk rekan tim, akan meningkatkan <orangeStrong>{{2}}%</orangeStrong> CRIT DMG pengguna selama {{3}} giliran. Saat Serangan Lanjutan yang dilancarkan pengguna mengenai target musuh, memiliki <orangeStrong>{{4}}%</orangeStrong> peluang dasar untuk meningkatkan <orangeStrong>{{5}}%</orangeStrong> DMG yang diterima target musuh yang terkena serangan selama {{6}} giliran."
   }
 }

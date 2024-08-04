@@ -1,0 +1,66 @@
+{
+  "name": "Desbrava{M#dor}{F#dora} (Imaginário • A Harmonia)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Etiqueta da Dança de Swing",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano Imaginário leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Temporal no Intervalo",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e causa Dano mais 4 vezes, causando Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um inimigo aleatório cada vez.",
+        "shortDesc": "Causa Dano Imaginário leve a inimigos-alvo únicos e é Rebatido 5 vezes."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Desfile Clamoroso das Luzes",
+        "fullDesc": "Concede a todos os aliados o efeito de Dançarino de Apoio, com duração de {{1}} rodada(s). A duração diminui em 1 a cada início de rodada {M#do Desbravador}{F#da Desbravadora}. Aliados com o efeito Dançarino de Apoio têm seu Efeito de Quebra aumentado em <orangeStrong>{{3}}%</orangeStrong>. Quando atacam alvos que estão no estado de <u>Quebra de Fraqueza</u>, a Redução de Tenacidade desse ataque será convertida em uma instância de <u>Super Dano de Quebra</u>.",
+        "shortDesc": "Concede a todos os aliados o efeito de Dançarino de Apoio. Aliados com Dançarino de Apoio têm seus <orangeStrong>Efeitos de Quebra</orangeStrong> aumentados e causam adicionalmente <orangeStrong><u>Super Dano de Quebra</u></orangeStrong> 1 vez quando atacam inimigos-alvo que estão com <u>Quebra de Fraqueza</u>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Agora! Eu sou a Banda!",
+        "fullDesc": "Após usar a Técnica, no início da próxima batalha, o Efeito de Quebra de todos os aliados aumenta em {{1}}% por {{2}} rodada(s).",
+        "shortDesc": "No início da próxima batalha, aumenta o Efeito de Quebra de todos os aliados."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e quando a batalha começa, reduz a Tenacidade dele do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Melhor Assento da Casa",
+      "desc": "Recupera {{1}} Ponto(s) de Perícia depois de usar a Perícia pela primeira vez."
+    },
+    "2": {
+      "name": "Marcha Arco-Íris da Libertação",
+      "desc": "No início da batalha, aumenta em <orangeStrong>{{1}}%</orangeStrong> a Taxa de Regeneração de Energia {F#da Desbravadora}{M#do Desbravador} por {{2}} rodada(s)."
+    },
+    "3": {
+      "name": "Sanatório do Descanso",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Pomba na Cartola",
+      "desc": "Enquanto {F#a Desbravadora}{M#o Desbravador} está em campo, aumenta o Efeito de Quebra de todos os aliados exceto o {F#da Desbravadora}{M#do Desbravador}. O aumento é igual a {{1}}% do Efeito de Quebra {F#da Desbravadora}{M#do Desbravador}."
+    },
+    "5": {
+      "name": "Os Poemas Favorecem os Ritmos do Passado",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Amanhã, Descanse no Holofote",
+      "desc": "O número de aplicações adicionais de Dano pela Perícia aumenta em {{1}}."
+    }
+  }
+}

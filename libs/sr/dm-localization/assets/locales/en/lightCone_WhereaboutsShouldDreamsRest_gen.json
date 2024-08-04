@@ -1,0 +1,7 @@
+{
+  "name": "Whereabouts Should Dreams Rest",
+  "passive": {
+    "name": "Metamorphosis",
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1}}%</orangeStrong>. When the wearer deals Break DMG to an enemy target, inflicts Routed on the enemy, lasting for {{4}} turn(s). Targets afflicted with Routed receive <orangeStrong>{{2}}%</orangeStrong> increased Break DMG from the wearer, and their SPD is lowered by {{3}}%. Effects of the same type cannot be stacked."
+  }
+}

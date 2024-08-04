@@ -1,0 +1,7 @@
+{
+  "setName": "Thiết Kỵ Diệt Trừ Tai Họa",
+  "setEffects": {
+    "2": "Tấn Công Kích Phá tăng {{1}}%.",
+    "4": "Khi Tấn Công Kích Phá của người trang bị lớn hơn hoặc bằng {{1}}%, Sát Thương Phá Vỡ gây ra cho kẻ địch sẽ bỏ qua {{3}}% Phòng Thủ của kẻ đó. Khi Tấn Công Kích Phá của người trang bị lớn hơn hoặc bằng {{2}}%, Siêu Sát Thương Phá Vỡ gây ra cho kẻ địch sẽ bỏ qua thêm {{4}}% Phòng Thủ của kẻ đó."
+  }
+}

@@ -2,6 +2,6 @@
   "name": "Reflet du passé",
   "passive": {
     "name": "La fragrance prune de mes os",
-    "description": "Augmente l'effet de Rupture du porteur de <orangeStrong>{{1}}%</orangeStrong>. Augmente les DGT de tous les alliés de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tours lorsque le porteur utilise son ultime. Si l'effet de Rupture du porteur est supérieur ou égal à {{4}}%, il récupère 1 point de compétence.\\nTous les alliés régénèrent immédiatement <orangeStrong>{{5}}</orangeStrong> points d'énergie au début de chaque vague. Les effets du même type ne peuvent pas être cumulés."
+    "description": "Augmente l'effet de Rupture du porteur de <orangeStrong>{{1}}%</orangeStrong>. Augmente les DGT de tous les alliés de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tours lorsque le porteur utilise son ultime. Si l'effet de Rupture du porteur est supérieur ou égal à {{4}}%, il récupère 1 point de compétence.\\nTous les alliés régénèrent immédiatement <orangeStrong>{{5}}</orangeStrong> points d'énergie au début de chaque vague. Les capacités du même type ne peuvent pas être cumulés."
   }
 }

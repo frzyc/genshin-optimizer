@@ -19,7 +19,7 @@
       "0": {
         "name": "Lord Roulette",
         "fullDesc": "Erhält zufällig 1 bis {{1}} Pkt. „Blinde Wette“ und verursacht dann bei einem anvisierten Gegner für {{4}} Rd. „Panik“. Außerdem wird dem anvisierten Gegner imaginärer SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Aventurins VTD zugefügt. Wenn Verbündete panische Gegner angreifen, wird der verursachte KRIT-SCH um <orangeStrong>{{3}}%</orangeStrong> erhöht.",
-        "shortDesc": "Erhält zufällig „Blinde Wette“. Dadurch tritt ein Gegner in den Status „Panik“ ein und ihm wird imaginärer SCH zugefügt. Wenn ein Verbündeter einen Gegner im Status Panik angreift, wird der verursachte <orangeStrong>KRIT-SCH</orangeStrong> erhöht."
+        "shortDesc": "Erhält zufällig „Blinde Wette“. Verursacht bei einem Gegner „Panik“ und fügt ihm imaginären SCH zu. Wenn ein Verbündeter einen Gegner im Status Panik angreift, wird der verursachte <orangeStrong>KRIT-SCH</orangeStrong> erhöht."
       }
     },
     "technique": {
@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Spiel der Gefangenen",
-      "desc": "Erhöht den KRIT-SCH von Verbündeten mit „Verstärkter Einsatz“ um {{1}}%. Gewährt nach dem Einsatz des Ultimates für {{3}} Rd. den Schild Verstärkter Einsatz für alle Verbündeten. Die Schildmenge entspricht {{2}}% der durch die Fertigkeit gewährte Schildmenge."
+      "desc": "Erhöht den KRIT-SCH von Verbündeten mit „Verstärkter Einsatz“ um {{1}}%. Gewährt nach dem Einsatz des Ultimates für {{3}} Rd. den Schild Verstärkter Einsatz für alle Verbündeten. Die Schildmenge entspricht {{2}}% der durch die Fertigkeit gewährten Schildmenge."
     },
     "2": {
       "name": "Begrenzte Rationalität",

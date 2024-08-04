@@ -45,7 +45,7 @@
   "ranks": {
     "1": {
       "name": "Avènement des tuiles",
-      "desc": "Les DGT de l'ultime augmentent de {{1}}%."
+      "desc": "Les DGT infligés par l'ultime augmentent de {{1}}%."
     },
     "2": {
       "name": "Repos sur l'échiquier",
@@ -57,7 +57,7 @@
     },
     "4": {
       "name": "Mets de la tuile",
-      "desc": "Après avoir utilisé la compétence, il y a {{1}}% de chances fixes d'obtenir Autonome, qui dure jusqu'à la fin du tour en cours.\\nLorsque l'état Autonome est actif, utiliser l'ATQ normale ou l'ATQ normale renforcée lance immédiatement 1 attaque de suivi sur le ou les mêmes cibles, infligeant des DGT quantiques équivalents à 100 % des DGT de l'ATQ normale (ou ATQ normale renforcée) précédente."
+      "desc": "Après avoir utilisé la compétence, il y a {{1}}% de chances fixes d'obtenir Autonome, qui dure jusqu'à la fin du tour en cours.\\nLorsque l'état Autonome est actif, utiliser l'ATQ normale ou l'ATQ normale renforcée lance immédiatement 1 attaque de suivi sur le ou les mêmes cibles, infligeant des DGT quantiques équivalents à 100 % des DGT d'ATQ normale (ou d'ATQ normale renforcée)."
     },
     "5": {
       "name": "Tuiles piochées, la chance a tourné",

@@ -1,0 +1,66 @@
+{
+  "name": "Yunli",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Tornasol vuelvevientos",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Yunli como Daño Físico a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Mandoble sísmico",
+        "fullDesc": "Yunli regenera una cantidad de PV equivalente al <orangeStrong>{{3}}%</orangeStrong> de su ATQ + <orangeStrong>{{4}}</orangeStrong> e inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño Físico a los enemigos adyacentes.",
+        "shortDesc": "Regenera sus propios PV e inflige una pequeña cantidad de Daño Físico a un enemigo y a los enemigos adyacentes."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ceñidora del mundo, rompedora del cielo",
+        "fullDesc": "Consume {{8}} pts. de energía. Yunli obtiene Bloqueo y todos los enemigos son afectados con Provocación hasta que termine el próximo turno de un aliado o un enemigo. Además, el Daño CRIT infligido por el siguiente contraataque de Yunli aumenta en un <orangeStrong>{{2}}%</orangeStrong>. Cuando se activa el efecto de contraataque del talento mientras dura el estado de Bloqueo, se reemplaza por el <u>contraataque</u> Capción: Exterminio y se disipa el estado de Bloqueo. Si no activa ningún contraataque mientras dura el estado de Bloqueo, Yunli lanza inmediatamente al terminar este estado el <u>contraataque</u> Capción: Sajadura a un enemigo al azar.\\nCapción: Sajadura: Yunli inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y un <orangeStrong>{{6}}%</orangeStrong> de su ATQ como Daño Físico a los enemigos adyacentes.\\nCapción: Exterminio: Yunli inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y un <orangeStrong>{{6}}%</orangeStrong> de su ATQ como Daño Físico a los enemigos adyacentes, y a continuación inflige daño {{4}} veces más. Cada vez, inflige un <orangeStrong>{{7}}%</orangeStrong> del ATQ de Yunli como Daño Físico a un enemigo al azar.\\nEl daño infligido por Yunli con esta habilidad se considera daño de habilidad definitiva.",
+        "shortDesc": "Entra en el estado de Bloqueo y todos los enemigos son afectados con Provocación. Tras recibir un ataque durante este periodo, lanza un poderoso <orangeStrong><u>contraataque</u></orangeStrong> e inflige <orangeStrong>Daño Físico</orangeStrong> al atacante y a los objetivos adyacentes. A continuación, inflige una pequeña cantidad de Daño Físico a un enemigo; se dispara 6 veces. Si durante el estado de Bloqueo no ha activado ningún contraataque, inflige Daño Físico a un enemigo al azar y a los objetivos adyacentes cuando termina el estado de Bloqueo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Atacar después y golpear primero",
+        "fullDesc": "Obtiene el efecto de Resistencia durante {{2}} s. Si en este tiempo entra en combate tras atacar a un enemigo o recibir un ataque, lanza inmediatamente Capción: Exterminio a un enemigo al azar y aumenta el daño que inflige este ataque en un {{1}}%.",
+        "shortDesc": "Obtiene el efecto de Resistencia durante 20 s. Si en este tiempo entra en combate tras atacar a un enemigo o recibir un ataque, lanza inmediatamente Capción: Exterminio a un enemigo al azar."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Espada curtida libre de mácula",
+      "desc": "El daño que infligen Capción: Sajadura y Capción: Exterminio aumenta en un {{1}}%, y las veces adicionales que Capción: Exterminio inflige daño aumentan en {{2}}."
+    },
+    "2": {
+      "name": "Primer lustre al romper el alba",
+      "desc": "Cuando inflige daño con un contraataque, ignora un {{1}}% de la DEF del objetivo."
+    },
+    "3": {
+      "name": "Diez palmos de maestría",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Tintineo del maestro herrero",
+      "desc": "Después de lanzar Capción: Sajadura o Capción: Exterminio, su RES a efecto aumenta en un {{1}}% durante {{2}} turno."
+    },
+    "5": {
+      "name": "Vieja amiga para siempre",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Temple de acero, corazón de coplero",
+      "desc": "Si el enemigo lanza una habilidad por iniciativa propia mientras dura el estado de Bloqueo, Capción: Exterminio se activa independientemente de si ataca a Yunli o no, y el efecto de Bloqueo se disipa. Cuando inflige daño al lanzar Capción: Exterminio o Capción: Sajadura, su Prob. CRIT aumenta en un {{1}}% y su PEN de la RES a Físico aumenta en un {{2}}%."
+    }
+  }
+}

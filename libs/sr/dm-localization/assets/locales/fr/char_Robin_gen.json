@@ -1,0 +1,66 @@
+{
+  "name": "Robin",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Battement d'aile silencieux",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Robin à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Aria de la plume",
+        "fullDesc": "Augmente les DGT infligés par tous les alliés de <orangeStrong>{{1}}%</orangeStrong>. Dure {{2}} tours. Cette durée diminue de 1 au début de chaque tour de Robin.",
+        "shortDesc": "<orangeStrong>Augmente les DGT infligés</orangeStrong> par tous les alliés."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Vox Harmonique, Opus Cosmique",
+        "fullDesc": "Robin entre dans l'état Concerto, et permet à tous les alliés d'attaquer immédiatement.\\nLorsque Robin est dans l'état Concerto, l'attaque de tous les alliés augmente à hauteur de <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Robin + <orangeStrong>{{3}}</orangeStrong>. D'autre part, après chaque attaque d'un allié, Robin inflige des <u>DGT physiques additionnels</u> équivalents à <orangeStrong>{{4}}%</orangeStrong> de son ATQ 1 fois, avec des chances de coup critique fixées à {{5}}% et des DGT critiques fixés à {{6}}%.\\nLorsque Robin est dans l'état Concerto, elle devient immunisée aux <u>malus de contrôle</u> et ne peut ni agir ni jouer son tour tant que l'état Concerto n'est pas terminé.\\nUn compte à rebours pour Concerto s'affiche dans la barre d'ordre d'action. Lorsque ce compte à rebours débute, Robin quitte l'état Concerto et agit immédiatement. Le compte à rebours a sa propre VIT fixe qui est de {{2}}.",
+        "shortDesc": "Entre dans l'état Concerto, ce qui <orangeStrong>augmente l'ATQ de tous les alliés</orangeStrong> et permet à tous les coéquipiers d'agir immédiatement. Robin inflige des <orangeStrong><u>DGT physiques additionnels</u></orangeStrong> après une attaque. Lorsque Robin est dans l'état Concerto, elle est immunisée aux <u>malus de contrôle</u>. Pendant toute la durée de cet état, Robin ne peut ni agir ni jouer son tour jusqu'à la fin du compte à rebours."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Prélude à l'ivresse",
+        "fullDesc": "Crée une dimension spéciale autour du personnage qui dure {{1}} secondes après avoir utilisé la technique. Les ennemis qui s'y trouvent n'attaquent pas Robin et la suivent tant que la dimension est active. Robin régénère {{2}} points d'énergie au début de chaque vague lorsque le combat est engagé alors que la dimension est active. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "shortDesc": "Crée une dimension spéciale autour du personnage. Les ennemis qui se trouvent dans cette dimension n'attaquent pas Robin. Robin régénère <orangeStrong>{{2}}</orangeStrong> points d'énergie supplémentaires au début de chaque vague lorsque le combat est engagé alors que la dimension est active."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Royaume du sourire",
+      "desc": "Lorsque l'état Concerto est actif, la PÉN de RÉS à tous les types de tous les alliés augmente de {{1}}%."
+    },
+    "2": {
+      "name": "Thé d'après-midi pour deux",
+      "desc": "Lorsque l'état Concerto est actif, la VIT de tous les alliés augmente de {{1}}%. L'effet de régénération d'énergie du talent augmente de {{2}} point supplémentaire."
+    },
+    "3": {
+      "name": "Accordage inversé",
+      "desc": "Niv. de la compétence +2, jusqu'au niv. 15 maximum.\\nNiv. de l'ultime +2, jusqu'au niv. 15 maximum."
+    },
+    "4": {
+      "name": "Clé de la goutte de pluie",
+      "desc": "Lorsque Robin utilise son ultime, elle dissipe les malus de contrôle infligés à tous les alliés. Lorsque Robin est dans l'état Concerto, la RÉS aux effets de tous les alliés augmente de {{1}}%."
+    },
+    "5": {
+      "name": "Lamentation de l'étoile solitaire",
+      "desc": "Niv. de l'ATQ normale +1, jusqu'au niv. 10 maximum.\\nNiv. du talent +2, jusqu'au niv. 15 maximum."
+    },
+    "6": {
+      "name": "Minuit sans lune",
+      "desc": "Lorsque l'état Concerto est actif, les DGT critiques des DGT physiques additionnels infligés par l'ultime augmentent de {{2}}%. L'effet Minuit sans lune peut être déclenché jusqu'à {{1}} fois. Le nombre de déclenchements est réinitialisé chaque fois que Robin utilise son ultime."
+    }
+  }
+}

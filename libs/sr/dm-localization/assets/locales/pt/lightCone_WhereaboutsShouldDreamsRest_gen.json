@@ -1,0 +1,7 @@
+{
+  "name": "Onde os Sonhos Deveriam Repousar",
+  "passive": {
+    "name": "Metamorfose",
+    "description": "Aumenta o Efeito de Quebra do usuário em <orangeStrong>{{1}}%</orangeStrong>. Quando o usuário causa Dano de Quebra a um inimigo-alvo, inflige Roteado no inimigo, durando por {{4}} rodada(s); Alvos afligidos com Roteado recebem <orangeStrong>{{2}}%</orangeStrong> a mais de Dano de Quebra do usuário, e sua VEL é reduzida em {{3}}%. Efeitos de tipo igual não podem ser acumulados."
+  }
+}

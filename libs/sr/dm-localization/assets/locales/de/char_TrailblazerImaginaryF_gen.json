@@ -1,0 +1,66 @@
+{
+  "name": "Trailblazer (Imaginär • Die Harmonie)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Swing-Etikette",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
+        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Regen im Intermezzo",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG {F#der Trailblazerin}{M#des Trailblazers} zu. Verursacht zusätzlich 4-mal SCH, der jedes Mal einem zufälligen Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG {F#der Trailblazerin}{M#des Trailblazers} zufügt.",
+        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu und prallt insgesamt 5-mal ab."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lärmende Laternenparade",
+        "fullDesc": "Verleiht allen Verbündeten für {{1}} Rd. den Effekt „Backup-Tänzer“. Zu Beginn jeder Runde {F#der Trailblazerin}{M#des Trailblazers} wird die Dauer dieses Effekts um 1 Rd. verringert. Der Brucheffekt von Verbündeten mit Backup-Tänzer wird um <orangeStrong>{{3}}%</orangeStrong> erhöht. Wenn sie Gegner im Status <u>Schwächebruch</u> angreifen, wandeln sie den WDS-Reduzierungswert dieses Angriffs 1-mal in <u>Super-Bruch-SCH</u> um.",
+        "shortDesc": "Verleiht allen Verbündeten den Effekt „Backup-Tänzer“. <orangeStrong>Erhöht den Brucheffekt</orangeStrong> von Verbündeten mit diesem Effekt. Wenn sie einen Gegner im Status <u>Schwächebruch</u> angreifen, wird 1-mal zusätzlich <orangeStrong><u>Super-Bruch-SCH</u></orangeStrong> verursacht."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Jetzt! Solo-Truppe!",
+        "fullDesc": "Erhöht nach dem Einsatz der Technik den Brucheffekt aller Verbündeten zu Beginn des nächsten Kampfs für {{2}} Rd. um {{1}}%.",
+        "shortDesc": "Erhöht zu Beginn des nächsten Kampfs den Brucheffekt aller Verbündeten."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Dein bester Sitzplatz",
+      "desc": "Stellt sofort {{1}} Fertigkeitspunkt wieder her, wenn die Fertigkeit zum ersten Mal eingesetzt wird."
+    },
+    "2": {
+      "name": "Gefängnisausbruch des Regenbogens",
+      "desc": "Erhöht zu Beginn des Kampfes die Energie-Wiederherstellungsrate {F#der Trailblazerin}{M#des Trailblazers} für {{2}} Rd. um {{1}}%."
+    },
+    "3": {
+      "name": "Sanatorium des Pausenzeichens",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Die weiße Taube schützende Krone",
+      "desc": "Wenn {F#die Trailblazerin}{M#der Trailblazer} auf dem Kampffeld ist, wird der Brucheffekt aller Verbündeten außer {F#ihr}{M#ihm} selbst um {{1}}% {F#ihres}{M#seines} Brucheffekts erhöht."
+    },
+    "5": {
+      "name": "Gedicht der alten Takte",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Morgen, Nisten unter dem Rampenlicht",
+      "desc": "Erhöht die Anzahl des zusätzlichen SCH der Fertigkeit um {{1}}."
+    }
+  }
+}

@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Shape of Taixu: Dawn Herald",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sushang's ATK to a single enemy target, and she immediately takes action again. In addition, Sushang's ATK increases by <orangeStrong>{{4}}%</orangeStrong> and using her Skill has 2 extra chances to trigger Sword Stance for {{2}} turn(s).\\nSword Stance triggered from the extra chances deals {{3}}% of the original DMG.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sushang's ATK to a single enemy target, and she immediately takes action. In addition, Sushang's ATK increases by <orangeStrong>{{4}}%</orangeStrong> and using her Skill has 2 extra chances to trigger Sword Stance for {{2}} turn(s).\\nSword Stance triggered from the extra chances deals {{3}}% of the original DMG.",
         "shortDesc": "Deals massive Physical DMG to a single enemy, enhances Sword Stance's effect, and <orangeStrong>takes action immediately</orangeStrong>."
       }
     },

@@ -1,0 +1,7 @@
+{
+  "name": "Doch Hoffnung ist unbezahlbar",
+  "passive": {
+    "name": "Versprechen",
+    "description": "Erhöht die KRIT-Rate des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Liegt der KRIT-SCH des Trägers im Kampf über {{2}}%, wird für je weitere {{3}}% der durch Folgeangriffe verursachte SCH des Trägers um <orangeStrong>{{4}}%</orangeStrong> erhöht. Dieser Effekt ist {{5}}-fach stapelbar. Zu Beginn des Kampfes und nachdem der Träger einen Standardangriff ausgeführt hat, ignoriert der durch Ultimates oder Folgeangriffe verursachte SCH für {{7}} Rd. <orangeStrong>{{6}}%</orangeStrong> der VTD des Ziels."
+  }
+}

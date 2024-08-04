@@ -1,0 +1,71 @@
+{
+  "name": "Boothill",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Schädelsplitter-Hufeisen",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Boothills ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
+      },
+      "1": {
+        "name": "Finger am Abzug",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Boothills ANG zu.\\nDer verstärkte Standardangriff stellt keine Fertigkeitspunkte wieder her und kann nur gegnerische Ziele im Status „Tödliche Konfrontation“ angreifen.",
+        "shortDesc": "Fügt einem Gegner physischen SCH zu. Kann nur das Ziel von „Tödliche Konfrontation“ angreifen."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Tango des Tänzers auf brennendem Kies",
+        "fullDesc": "Lässt einen anvisierten Gegner und Boothill in den Status „Tödliche Konfrontation“ eintreten. Boothill erhält für {{3}} Rd. einen verstärkten Standardangriff und kann seine Fertigkeit nicht einsetzen. Diese Dauer wird jeweils zu Beginn von Boothills Rd. um 1 verringert.\\nDas gegnerische Ziel mit Tödliche Konfrontation wird verspottet. Wenn das Ziel / Boothill voneinander angegriffen wird, erleiden sie jeweils <orangeStrong>{{1}}%</orangeStrong>/{{2}}% mehr SCH.\\nNachdem das Ziel besiegt wurde oder Schwächebruch erlitten hat, erhält Boothill 1 Stapelung „Trumpf in der Tasche“ und Tödliche Konfrontation wird dann aufgehoben.\\nDiese Fertigkeit stellt keine Energie wieder her. Nach dem Einsatz dieser Fertigkeit wird die aktuelle Runde nicht beendet.",
+        "shortDesc": "Aktiviert <orangeStrong>Tödliche Konfrontation</orangeStrong>. Nachdem das Ziel von Tödliche Konfrontation <orangeStrong>besiegt wurde oder Schwächebruch erlitten hat</orangeStrong>, erhält Boothill „Trumpf in der Tasche“ und Tödliche Konfrontation wird aufgehoben. Boothill <orangeStrong>erhält einen verstärkten Standardangriff</orangeStrong> und die aktuelle Runde wird nicht beendet."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Staubteufels Tanz bei Sonnenuntergang",
+        "fullDesc": "Fügt einem anvisierten Gegner für {{3}} Rd. eine physische Schwäche hinzu.\\nFügt dem Ziel physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Boothills ANG zu und <u>verzögert die Aktion</u> des Ziels um <orangeStrong>{{2}}%</orangeStrong>.",
+        "shortDesc": "Fügt einem Gegner eine <orangeStrong>physische Schwäche</orangeStrong> hinzu, verursacht beim Ziel massiven physischen SCH und verzögert dessen Aktion."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Drei-mal-Neun-Lächeln",
+        "fullDesc": "Nachdem die Technik verwendet wurde, wird beim ersten Einsatz der Fertigkeit im nächsten Kampf dem Ziel für {{1}} Rd. dieselbe physische Schwäche wie die des Ultimates hinzugefügt.",
+        "shortDesc": "Nach dem Einsatz der Technik wird im nächsten Kampf beim ersten Einsatz der Fertigkeit einem Gegner eine <orangeStrong>physische Schwäche hinzugefügt</orangeStrong>."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Einsamer Stern im Staub",
+      "desc": "Erhält zu Beginn des Kampfes 1 Stapelung „Trumpf in der Tasche“. Boothill verursacht SCH, der {{1}}% der VTD des gegnerischen Ziels ignoriert."
+    },
+    "2": {
+      "name": "Meilenstein-Händler",
+      "desc": "Stellt beim Erhalt von „Trumpf in der Tasche“ im Status „Tödliche Konfrontation“ {{1}} Fertigkeitspunkt wieder her und erhöht für {{3}} Rd. den Brucheffekt um {{2}}%. Dieser Effekt kann in einer einzelnen Runde nicht wiederholt ausgelöst werden. Er wird auch ausgelöst, wenn Stapelungen von Trumpf in der Tasche erhalten werden, die die max. Stapelzahl überschreiten."
+    },
+    "3": {
+      "name": "Wächter des marmornen Obstgartens",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Aufschnittskoch",
+      "desc": "Wenn Gegner mit „Tödliche Konfrontation“ von Boothill angegriffen werden, wird der erlittene SCH zusätzlich um {{1}}% erhöht. Wenn Boothill von Gegnern mit Tödliche Konfrontation angegriffen wird, wird der Effekt der erlittenen SCH-Erhöhung um {{2}}% reduziert."
+    },
+    "5": {
+      "name": "Baumstumpfredner",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Waschbär im Hotel Brecheisen",
+      "desc": "Wenn durch das Talent Bruch-SCH verursacht wird, wird dem Ziel zusätzlich Bruch-SCH in Höhe von {{1}}% des ursprünglichen SCH-Multiplikators und angrenzenden Einheiten zusätzlich Bruch-SCH in Höhe von {{2}}% des ursprünglichen SCH-Multiplikators zugefügt."
+    }
+  }
+}

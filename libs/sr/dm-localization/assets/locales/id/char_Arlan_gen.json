@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "To the Bitter End",
-      "desc": "Saat persentase HP saat ini kurang dari atau sama dengan 50%, Skill DMG meningkat {{1}}%."
+      "desc": "Saat persentase HP saat ini kurang dari atau sama dengan 50%, DMG yang diakibatkan Skill meningkat {{1}}%."
     },
     "2": {
       "name": "Breaking Free",
@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Self-Sacrifice",
-      "desc": "Saat persentase HP saat ini kurang dari atau sama dengan 50%, meningkatkan {{1}}% Ultimate DMG dan DMG Multiplier pada musuh sekitar target akan meningkat hingga sebesar DMG Multiplier pada target."
+      "desc": "Saat persentase HP saat ini kurang dari atau sama dengan 50%, meningkatkan {{1}}% DMG yang diakibatkan Ultimate dan DMG Multiplier pada musuh di sekitar target akan meningkat hingga sebesar DMG Multiplier pada target utama."
     }
   }
 }

@@ -19,14 +19,14 @@
       "0": {
         "name": "G—Gonna Be Late!",
         "fullDesc": "Has {{1}} Hits Per Action by default. First, uses 1 hit to deal Ice DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Misha's ATK to a single target enemy. Then, the rest of the hits each deals Ice DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Misha's ATK to a single random enemy. Just before each hit lands, there is a <orangeStrong>{{3}}%</orangeStrong> <u>base chance</u> to Freeze the target, lasting for 1 turn.\\nWhile Frozen, enemy targets cannot take any actions, and at the start of their turn, they receive <u>Additional Ice DMG</u> equal to <orangeStrong>{{4}}%</orangeStrong> of Misha's ATK.\\nThis Ultimate can possess up to {{5}} Hits Per Action. After the Ultimate is used, its Hits Per Action will be reset to the default level.",
-        "shortDesc": "Deals minor Ice DMG to single enemies. The attack bounces <orangeStrong>{{1}}</orangeStrong> times by default and up to a maximum of <orangeStrong>{{5}}</orangeStrong> times. Before each hits land, there is a minor chance to <orangeStrong>Freeze</orangeStrong> the target."
+        "shortDesc": "Deals minor Ice DMG to single enemies. The attack bounces <orangeStrong>{{1}}</orangeStrong> times by default and up to a maximum of <orangeStrong>{{5}}</orangeStrong> times. Before each hit lands, there is a minor chance to <orangeStrong>Freeze</orangeStrong> the target."
       }
     },
     "technique": {
       "0": {
         "name": "Wait, You Are So Beautiful!",
-        "fullDesc": "After using the Technique, creates a dimension that lasts for {{1}} seconds. Enemies caught in the dimension are inflicted with Dream Prison and stop all their actions. Upon entering battle against enemies afflicted with Dream Prison, increases the Hits Per Action for Misha's next Ultimate by {{2}} hit(s). Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a dimension that stops all enemies within. Upon entering battle against enemies within the dimension, Misha's <orangeStrong>next Ultimate deals more Hits Per Action</orangeStrong>."
+        "fullDesc": "After using the Technique, creates a special dimension that lasts for {{1}} seconds. Enemies caught in the special dimension are inflicted with Dream Prison and stop all their actions. Upon entering battle against enemies afflicted with Dream Prison, increases the Hits Per Action for Misha's next Ultimate by {{2}} hit(s). Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a special dimension that stops all enemies within. Upon entering battle against enemies within the dimension, Misha's <orangeStrong>next Ultimate deals more Hits Per Action</orangeStrong>."
       }
     },
     "overworld": {

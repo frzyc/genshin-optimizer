@@ -60,7 +60,7 @@
   "ranks": {
     "1": {
       "name": "Envoyé du ciel",
-      "desc": "Augmente de {{1}} le nombre de cumuls maximum de Cœur vertueux, et gagne 1 cumul supplémentaire pour chaque frappe lors d'une attaque."
+      "desc": "Augmente le nombre de cumuls maximum de Cœur vertueux de {{1}}, et gagne 1 cumul supplémentaire pour chaque frappe lors d'une attaque."
     },
     "2": {
       "name": "Célérité impériale",

@@ -11,14 +11,14 @@
     "skill": {
       "0": {
         "name": "Cloudlancer Art: Torrent",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng pada 1 target musuh.\\nSaat DMG yang diakibatkan memicu CRIT Hit, ada {{4}}% <u>peluang dasar</u> untuk mengurangi {{2}}% SPD target musuh selama {{3}} giliran.",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng pada 1 target musuh.\\nSaat DMG yang diakibatkan Skill memicu CRIT Hit, ada {{4}}% <u>peluang dasar</u> untuk mengurangi {{2}}% SPD target musuh selama {{3}} giliran.",
         "shortDesc": "Mengakibatkan Wind DMG pada 1 musuh. Berpeluang memberikan status Slow jika memicu CRIT Hit."
       }
     },
     "ult": {
       "0": {
         "name": "Ethereal Dream",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng pada 1 target musuh. Jika musuh tersebut sedang berstatus Slow, maka DMG Multiplier Ultimate milik Dan Heng akan meningkat <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng pada 1 target musuh. Jika musuh tersebut sedang berstatus Slow, maka DMG Multiplier dari DMG yang diakibatkan Ultimate Dan Heng akan meningkat <orangeStrong>{{2}}%</orangeStrong>.",
         "shortDesc": "Mengakibatkan Wind DMG dalam jumlah besar pada 1 musuh, meningkatkan DMG Multiplier jika musuh berstatus Slow."
       }
     },

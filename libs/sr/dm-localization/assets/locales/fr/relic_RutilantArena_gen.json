@@ -1,6 +1,6 @@
 {
   "setName": "Arène rutilante",
   "setEffects": {
-    "2": "Augmente les chances de coup critique du porteur de {{1}}%. Lorsque ses chances de coup critique atteignent {{2}}% ou plus, les DGT de son ATQ normale et de sa compétence augmentent de {{3}}%."
+    "2": "Augmente les chances de coup critique du porteur de {{1}}%. Lorsque ses chances de coup critique atteignent {{2}}% ou plus, les DGT infligés par son ATQ normale et sa compétence augmentent de {{3}}%."
   }
 }

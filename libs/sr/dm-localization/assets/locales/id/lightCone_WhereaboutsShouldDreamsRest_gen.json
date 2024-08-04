@@ -1,0 +1,7 @@
+{
+  "name": "Whereabouts Should Dreams Rest",
+  "passive": {
+    "name": "Metamorphosis",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Break Effect pengguna. Saat pengguna mengakibatkan Break DMG pada target musuh, akan membuat musuh memasuki status \"Routed\" selama {{4}} giliran. Break DMG yang diterima (yang diakibatkan pengguna) target berstatus \"Routed\" meningkat <orangeStrong>{{2}}%</orangeStrong>, dan SPD target berkurang {{3}}%. Efek dengan jenis yang sama tidak dapat ditumpuk."
+  }
+}

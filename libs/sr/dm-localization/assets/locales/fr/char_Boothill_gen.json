@@ -1,0 +1,71 @@
+{
+  "name": "Le Fossoyeur",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Coup de talon brise-crâne",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ du Fossoyeur à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
+      },
+      "1": {
+        "name": "Tir en rafale",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ du Fossoyeur à une cible ennemie unique.\\nL'ATQ normale renforcée ne permet pas de récupérer de points de compétence et ne peut cibler que l'ennemi qui est actuellement dans l'état Confrontation.",
+        "shortDesc": "Inflige des DGT physiques à un ennemi unique. Ne peut attaquer que la cible avec Confrontation."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Tango endiablé",
+        "fullDesc": "Force le Fossoyeur à entrer en état de Confrontation avec une cible ennemie unique. L'ATQ normale du Fossoyeur devient renforcée et il ne peut pas utiliser sa compétence pour une durée de {{3}} tours. Cette durée diminue de 1 au début de chaque tour du Fossoyeur.\\nLa cible ennemie qui est en état de Confrontation est provoquée. Lorsque la cible ennemie/le Fossoyeur subit une attaque de la part de l'autre partie, les DGT reçus augmentent de <orangeStrong>{{1}}%</orangeStrong>/{{2}}%.\\nLorsque la cible est éliminée ou qu'elle subit une Rupture de faiblesse, le Fossoyeur obtient 1 cumul d'Avantage en poche, et dissipe Confrontation.\\nCette compétence ne régénère pas d'énergie. Le tour ne se termine pas après l'utilisation de la compétence.",
+        "shortDesc": "Initie une <orangeStrong>Confrontation</orangeStrong>. Lorsque la cible de la Confrontation <orangeStrong>est éliminée ou subit une Rupture de faiblesse</orangeStrong>, le Fossoyeur bénéficie d'Avantage en poche et dissipe Confrontation. Le Fossoyeur utilise désormais son <orangeStrong>ATQ normale renforcée</orangeStrong> et le tour ne se termine pas."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Crépuscule des plaines du sud",
+        "fullDesc": "Applique une Faiblesse physique à une cible ennemie unique pour {{3}} tours.\\nInflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ du Fossoyeur à la cible et <u>retarde son action</u> de <orangeStrong>{{2}}%</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Applique une Faiblesse physique</orangeStrong> à un ennemi unique et lui inflige une quantité massive de DGT physiques, tout en retardant son action."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Sourire carnassier",
+        "fullDesc": "Après utilisation de la technique, lors de la première utilisation de la compétence au cours du prochain combat, applique une Faiblesse physique équivalente à celle appliquée par l'ultime à la cible pour {{1}} tours.",
+        "shortDesc": "Après utilisation de la technique, <orangeStrong>applique une Faiblesse physique</orangeStrong> à un ennemi unique lors de la première utilisation de la compétence au cours du prochain combat."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Réduit la robustesse de l'ennemi au type correspondant en entrant en combat après l'avoir attaqué.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Sillage de l'étoile solitaire",
+      "desc": "Obtient 1 cumul d'Avantage en poche en début de combat. Lorsque le Fossoyeur inflige des DGT, il ignore {{1}}% de la DÉF de la cible ennemie."
+    },
+    "2": {
+      "name": "Baroudeur",
+      "desc": "Lorsque le Fossoyeur gagne Avantage en poche dans l'état Confrontation, il récupère {{1}} point de compétence et son effet de Rupture augmente de {{2}}% pour une durée de {{3}} tours. Cet effet peut également se déclencher lors de l'obtention de cumuls d'Avantage en poche qui dépassent le maximum, mais ne peut pas se déclencher plusieurs fois dans un même tour."
+    },
+    "3": {
+      "name": "Gardien du verger de marbre",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Spécialiste de la viande froide",
+      "desc": "Lorsque la cible ennemie en état de Confrontation est attaquée par le Fossoyeur, l'augmentation des DGT subis est majorée de {{1}}%. Lorsque le Fossoyeur est attaqué par la cible ennemie en état de Confrontation, l'augmentation des DGT subis est réduite de {{2}}%."
+    },
+    "5": {
+      "name": "Discours de la souche",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Raton laveur du Motel Pied-de-biche",
+      "desc": "Lorsque le talent du Fossoyeur inflige des DGT de rupture, il inflige des DGT de rupture supplémentaires équivalents à {{1}}% du multiplicateur des DGT initiaux à la cible et des DGT de rupture supplémentaires équivalents à {{2}}% du multiplicateur des DGT initiaux aux cibles adjacentes."
+    }
+  }
+}

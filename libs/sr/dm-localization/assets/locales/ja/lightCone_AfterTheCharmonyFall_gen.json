@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#ちょうわ}調和{RUBY_E#}が{RUBY_B#ちんもく}沈黙{RUBY_E#}した{RUBY_B#あと}後{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#せいじゃく}静寂{RUBY_E#}",
+    "description": "装備キャラの撃破特効+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが必殺技を発動した後、速度+<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。"
+  }
+}

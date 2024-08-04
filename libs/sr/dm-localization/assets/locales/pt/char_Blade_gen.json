@@ -65,7 +65,7 @@
     },
     "6": {
       "name": "Renascido em uma Casca Vazia",
-      "desc": "O número máximo de acúmulos de Carga é reduzido para 4. O Dano de um Ataque Extra acionado pelo Talento de Blade é aumentado adicionalmente em {{1}}% de seus PV máximos."
+      "desc": "O número máximo de acúmulos de Carga é reduzido para 4. O Dano de um Ataque Extra acionado pelo Talento é aumentado adicionalmente em {{1}}% dos PV máximos de Blade."
     }
   }
 }

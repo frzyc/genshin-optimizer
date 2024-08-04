@@ -1,0 +1,6 @@
+{
+  "setName": "Duran, Dynasty of Running Wolves",
+  "setEffects": {
+    "2": "When an ally uses follow-up attack, the wearer gains 1 stack of Merit, stacking up to {{1}} time(s). Each stack of Merit increases the DMG dealt by the wearer's follow-up attacks by {{2}}%. When there are {{1}} stacks, additionally increases the wearer's CRIT DMG by {{3}}%."
+  }
+}

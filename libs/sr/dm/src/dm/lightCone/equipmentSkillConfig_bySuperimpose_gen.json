@@ -7854,6 +7854,444 @@
       ]
     ]
   },
+  "21044": {
+    "SkillID": [
+      21044,
+      21044,
+      21044,
+      21044,
+      21044
+    ],
+    "SkillName": [
+      {
+        "Hash": -2045265560
+      },
+      {
+        "Hash": 1846417209
+      },
+      {
+        "Hash": -882466146
+      },
+      {
+        "Hash": -1641981033
+      },
+      {
+        "Hash": -75897092
+      }
+    ],
+    "SkillDesc": [
+      {
+        "Hash": -191502346
+      },
+      {
+        "Hash": -191502346
+      },
+      {
+        "Hash": -191502346
+      },
+      {
+        "Hash": -191502346
+      },
+      {
+        "Hash": -191502346
+      }
+    ],
+    "Level": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "AbilityName": [
+      "Ability21044",
+      "Ability21044",
+      "Ability21044",
+      "Ability21044",
+      "Ability21044"
+    ],
+    "ParamList": [
+      [
+        {
+          "Value": 0.08
+        },
+        {
+          "Value": 0.24
+        }
+      ],
+      [
+        {
+          "Value": 0.1
+        },
+        {
+          "Value": 0.3
+        }
+      ],
+      [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 0.36
+        }
+      ],
+      [
+        {
+          "Value": 0.14
+        },
+        {
+          "Value": 0.42
+        }
+      ],
+      [
+        {
+          "Value": 0.16
+        },
+        {
+          "Value": 0.48
+        }
+      ]
+    ],
+    "AbilityProperty": [
+      [
+        {
+          "PropertyType": "CriticalChanceBase",
+          "Value": {
+            "Value": 0.08
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "CriticalChanceBase",
+          "Value": {
+            "Value": 0.1
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "CriticalChanceBase",
+          "Value": {
+            "Value": 0.12
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "CriticalChanceBase",
+          "Value": {
+            "Value": 0.14
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "CriticalChanceBase",
+          "Value": {
+            "Value": 0.16
+          }
+        }
+      ]
+    ]
+  },
+  "21045": {
+    "SkillID": [
+      21045,
+      21045,
+      21045,
+      21045,
+      21045
+    ],
+    "SkillName": [
+      {
+        "Hash": 703820771
+      },
+      {
+        "Hash": -862263170
+      },
+      {
+        "Hash": 1866620185
+      },
+      {
+        "Hash": -55694116
+      },
+      {
+        "Hash": -1621778057
+      }
+    ],
+    "SkillDesc": [
+      {
+        "Hash": 1374581595
+      },
+      {
+        "Hash": 1374581595
+      },
+      {
+        "Hash": 1374581595
+      },
+      {
+        "Hash": 1374581595
+      },
+      {
+        "Hash": 1374581595
+      }
+    ],
+    "Level": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "AbilityName": [
+      "Ability21045",
+      "Ability21045",
+      "Ability21045",
+      "Ability21045",
+      "Ability21045"
+    ],
+    "ParamList": [
+      [
+        {
+          "Value": 0.28
+        },
+        {
+          "Value": 0.08
+        },
+        {
+          "Value": 2
+        }
+      ],
+      [
+        {
+          "Value": 0.35
+        },
+        {
+          "Value": 0.1
+        },
+        {
+          "Value": 2
+        }
+      ],
+      [
+        {
+          "Value": 0.42
+        },
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 2
+        }
+      ],
+      [
+        {
+          "Value": 0.49
+        },
+        {
+          "Value": 0.14
+        },
+        {
+          "Value": 2
+        }
+      ],
+      [
+        {
+          "Value": 0.56
+        },
+        {
+          "Value": 0.16
+        },
+        {
+          "Value": 2
+        }
+      ]
+    ],
+    "AbilityProperty": [
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.28
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.35
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.42
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.49
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.56
+          }
+        }
+      ]
+    ]
+  },
+  "21046": {
+    "SkillID": [
+      21046,
+      21046,
+      21046,
+      21046,
+      21046
+    ],
+    "SkillName": [
+      {
+        "Hash": 1967376734
+      },
+      {
+        "Hash": -761506621
+      },
+      {
+        "Hash": 804577320
+      },
+      {
+        "Hash": -1924306035
+      },
+      {
+        "Hash": -358222094
+      }
+    ],
+    "SkillDesc": [
+      {
+        "Hash": -1354301760
+      },
+      {
+        "Hash": -1354301760
+      },
+      {
+        "Hash": -1354301760
+      },
+      {
+        "Hash": -1354301760
+      },
+      {
+        "Hash": -1354301760
+      }
+    ],
+    "Level": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "AbilityName": [
+      "Ability21046",
+      "Ability21046",
+      "Ability21046",
+      "Ability21046",
+      "Ability21046"
+    ],
+    "ParamList": [
+      [
+        {
+          "Value": 0.16
+        },
+        {
+          "Value": 0.16
+        }
+      ],
+      [
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 0.2
+        }
+      ],
+      [
+        {
+          "Value": 0.24
+        },
+        {
+          "Value": 0.24
+        }
+      ],
+      [
+        {
+          "Value": 0.28
+        },
+        {
+          "Value": 0.28
+        }
+      ],
+      [
+        {
+          "Value": 0.32
+        },
+        {
+          "Value": 0.32
+        }
+      ]
+    ],
+    "AbilityProperty": [
+      [
+        {
+          "PropertyType": "AttackAddedRatio",
+          "Value": {
+            "Value": 0.16
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "AttackAddedRatio",
+          "Value": {
+            "Value": 0.2
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "AttackAddedRatio",
+          "Value": {
+            "Value": 0.24
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "AttackAddedRatio",
+          "Value": {
+            "Value": 0.28
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "AttackAddedRatio",
+          "Value": {
+            "Value": 0.32
+          }
+        }
+      ]
+    ]
+  },
   "22000": {
     "SkillID": [
       22000,
@@ -12475,6 +12913,886 @@
         },
         {
           "Value": 0.4
+        }
+      ]
+    ],
+    "AbilityProperty": [
+      [
+        {
+          "PropertyType": "CriticalDamageBase",
+          "Value": {
+            "Value": 0.36
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "CriticalDamageBase",
+          "Value": {
+            "Value": 0.42
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "CriticalDamageBase",
+          "Value": {
+            "Value": 0.48
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "CriticalDamageBase",
+          "Value": {
+            "Value": 0.54
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "CriticalDamageBase",
+          "Value": {
+            "Value": 0.6
+          }
+        }
+      ]
+    ]
+  },
+  "23025": {
+    "SkillID": [
+      23025,
+      23025,
+      23025,
+      23025,
+      23025
+    ],
+    "SkillName": [
+      {
+        "Hash": 703818407
+      },
+      {
+        "Hash": -862265534
+      },
+      {
+        "Hash": 1866617821
+      },
+      {
+        "Hash": -55696480
+      },
+      {
+        "Hash": -1621780421
+      }
+    ],
+    "SkillDesc": [
+      {
+        "Hash": 1374581527
+      },
+      {
+        "Hash": 1374581527
+      },
+      {
+        "Hash": 1374581527
+      },
+      {
+        "Hash": 1374581527
+      },
+      {
+        "Hash": 1374581527
+      }
+    ],
+    "Level": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "AbilityName": [
+      "Ability23025",
+      "Ability23025",
+      "Ability23025",
+      "Ability23025",
+      "Ability23025"
+    ],
+    "ParamList": [
+      [
+        {
+          "Value": 0.6
+        },
+        {
+          "Value": 0.24
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 2
+        }
+      ],
+      [
+        {
+          "Value": 0.7
+        },
+        {
+          "Value": 0.28
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 2
+        }
+      ],
+      [
+        {
+          "Value": 0.8
+        },
+        {
+          "Value": 0.32
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 2
+        }
+      ],
+      [
+        {
+          "Value": 0.9
+        },
+        {
+          "Value": 0.36
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 2
+        }
+      ],
+      [
+        {
+          "Value": 1
+        },
+        {
+          "Value": 0.4
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 2
+        }
+      ]
+    ],
+    "AbilityProperty": [
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.6
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.7
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.8
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.9
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 1
+          }
+        }
+      ]
+    ]
+  },
+  "23026": {
+    "SkillID": [
+      23026,
+      23026,
+      23026,
+      23026,
+      23026
+    ],
+    "SkillName": [
+      {
+        "Hash": 1967374370
+      },
+      {
+        "Hash": -761508985
+      },
+      {
+        "Hash": 804574956
+      },
+      {
+        "Hash": -1924308399
+      },
+      {
+        "Hash": -358224458
+      }
+    ],
+    "SkillDesc": [
+      {
+        "Hash": -1354301828
+      },
+      {
+        "Hash": -1354301828
+      },
+      {
+        "Hash": -1354301828
+      },
+      {
+        "Hash": -1354301828
+      },
+      {
+        "Hash": -1354301828
+      }
+    ],
+    "Level": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "AbilityName": [
+      "Ability23026",
+      "Ability23026",
+      "Ability23026",
+      "Ability23026",
+      "Ability23026"
+    ],
+    "ParamList": [
+      [
+        {
+          "Value": 0.03
+        },
+        {
+          "Value": 5
+        },
+        {
+          "Value": 0.24
+        },
+        {
+          "Value": 0.48
+        },
+        {
+          "Value": 1
+        }
+      ],
+      [
+        {
+          "Value": 0.035
+        },
+        {
+          "Value": 5
+        },
+        {
+          "Value": 0.28
+        },
+        {
+          "Value": 0.6
+        },
+        {
+          "Value": 1
+        }
+      ],
+      [
+        {
+          "Value": 0.04
+        },
+        {
+          "Value": 5
+        },
+        {
+          "Value": 0.32
+        },
+        {
+          "Value": 0.72
+        },
+        {
+          "Value": 1
+        }
+      ],
+      [
+        {
+          "Value": 0.044999998
+        },
+        {
+          "Value": 5
+        },
+        {
+          "Value": 0.36
+        },
+        {
+          "Value": 0.84
+        },
+        {
+          "Value": 1
+        }
+      ],
+      [
+        {
+          "Value": 0.05
+        },
+        {
+          "Value": 5
+        },
+        {
+          "Value": 0.4
+        },
+        {
+          "Value": 0.96
+        },
+        {
+          "Value": 1
+        }
+      ]
+    ],
+    "AbilityProperty": [
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  "23027": {
+    "SkillID": [
+      23027,
+      23027,
+      23027,
+      23027,
+      23027
+    ],
+    "SkillName": [
+      {
+        "Hash": 421493405
+      },
+      {
+        "Hash": 824777932
+      },
+      {
+        "Hash": -741306009
+      },
+      {
+        "Hash": -338021482
+      },
+      {
+        "Hash": -1904105423
+      }
+    ],
+    "SkillDesc": [
+      {
+        "Hash": 211782113
+      },
+      {
+        "Hash": 211782113
+      },
+      {
+        "Hash": 211782113
+      },
+      {
+        "Hash": 211782113
+      },
+      {
+        "Hash": 211782113
+      }
+    ],
+    "Level": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "AbilityName": [
+      "Ability23027",
+      "Ability23027",
+      "Ability23027",
+      "Ability23027",
+      "Ability23027"
+    ],
+    "ParamList": [
+      [
+        {
+          "Value": 0.6
+        },
+        {
+          "Value": 1.5
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 0.12
+        }
+      ],
+      [
+        {
+          "Value": 0.7
+        },
+        {
+          "Value": 1.5
+        },
+        {
+          "Value": 0.23
+        },
+        {
+          "Value": 0.14
+        }
+      ],
+      [
+        {
+          "Value": 0.8
+        },
+        {
+          "Value": 1.5
+        },
+        {
+          "Value": 0.26
+        },
+        {
+          "Value": 0.16
+        }
+      ],
+      [
+        {
+          "Value": 0.9
+        },
+        {
+          "Value": 1.5
+        },
+        {
+          "Value": 0.29
+        },
+        {
+          "Value": 0.18
+        }
+      ],
+      [
+        {
+          "Value": 1
+        },
+        {
+          "Value": 1.5
+        },
+        {
+          "Value": 0.32
+        },
+        {
+          "Value": 0.2
+        }
+      ]
+    ],
+    "AbilityProperty": [
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.6
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.7
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.8
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 0.9
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "BreakDamageAddedRatioBase",
+          "Value": {
+            "Value": 1
+          }
+        }
+      ]
+    ]
+  },
+  "23028": {
+    "SkillID": [
+      23028,
+      23028,
+      23028,
+      23028,
+      23028
+    ],
+    "SkillName": [
+      {
+        "Hash": -351317912
+      },
+      {
+        "Hash": -754602439
+      },
+      {
+        "Hash": 811481502
+      },
+      {
+        "Hash": 408196975
+      },
+      {
+        "Hash": 1974280916
+      }
+    ],
+    "SkillDesc": [
+      {
+        "Hash": 2134096414
+      },
+      {
+        "Hash": 2134096414
+      },
+      {
+        "Hash": 2134096414
+      },
+      {
+        "Hash": 2134096414
+      },
+      {
+        "Hash": 2134096414
+      }
+    ],
+    "Level": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "AbilityName": [
+      "Ability23028",
+      "Ability23028",
+      "Ability23028",
+      "Ability23028",
+      "Ability23028"
+    ],
+    "ParamList": [
+      [
+        {
+          "Value": 0.16
+        },
+        {
+          "Value": 1.2
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 2
+        }
+      ],
+      [
+        {
+          "Value": 0.19
+        },
+        {
+          "Value": 1.2
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 0.14
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.24
+        },
+        {
+          "Value": 2
+        }
+      ],
+      [
+        {
+          "Value": 0.22
+        },
+        {
+          "Value": 1.2
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 0.16
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.28
+        },
+        {
+          "Value": 2
+        }
+      ],
+      [
+        {
+          "Value": 0.25
+        },
+        {
+          "Value": 1.2
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 0.18
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.32
+        },
+        {
+          "Value": 2
+        }
+      ],
+      [
+        {
+          "Value": 0.28
+        },
+        {
+          "Value": 1.2
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.36
+        },
+        {
+          "Value": 2
+        }
+      ]
+    ],
+    "AbilityProperty": [
+      [
+        {
+          "PropertyType": "CriticalChanceBase",
+          "Value": {
+            "Value": 0.16
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "CriticalChanceBase",
+          "Value": {
+            "Value": 0.19
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "CriticalChanceBase",
+          "Value": {
+            "Value": 0.22
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "CriticalChanceBase",
+          "Value": {
+            "Value": 0.25
+          }
+        }
+      ],
+      [
+        {
+          "PropertyType": "CriticalChanceBase",
+          "Value": {
+            "Value": 0.28
+          }
+        }
+      ]
+    ]
+  },
+  "23030": {
+    "SkillID": [
+      23030,
+      23030,
+      23030,
+      23030,
+      23030
+    ],
+    "SkillName": [
+      {
+        "Hash": -1480617761
+      },
+      {
+        "Hash": -1883902288
+      },
+      {
+        "Hash": -317818347
+      },
+      {
+        "Hash": -721102874
+      },
+      {
+        "Hash": 844981067
+      }
+    ],
+    "SkillDesc": [
+      {
+        "Hash": 1777866055
+      },
+      {
+        "Hash": 1777866055
+      },
+      {
+        "Hash": 1777866055
+      },
+      {
+        "Hash": 1777866055
+      },
+      {
+        "Hash": 1777866055
+      }
+    ],
+    "Level": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "AbilityName": [
+      "Ability23030",
+      "Ability23030",
+      "Ability23030",
+      "Ability23030",
+      "Ability23030"
+    ],
+    "ParamList": [
+      [
+        {
+          "Value": 0.36
+        },
+        {
+          "Value": 2
+        },
+        {
+          "Value": 0.36
+        },
+        {
+          "Value": 5
+        }
+      ],
+      [
+        {
+          "Value": 0.42
+        },
+        {
+          "Value": 2
+        },
+        {
+          "Value": 0.42
+        },
+        {
+          "Value": 5
+        }
+      ],
+      [
+        {
+          "Value": 0.48
+        },
+        {
+          "Value": 2
+        },
+        {
+          "Value": 0.48
+        },
+        {
+          "Value": 5
+        }
+      ],
+      [
+        {
+          "Value": 0.54
+        },
+        {
+          "Value": 2
+        },
+        {
+          "Value": 0.54
+        },
+        {
+          "Value": 5
+        }
+      ],
+      [
+        {
+          "Value": 0.6
+        },
+        {
+          "Value": 2
+        },
+        {
+          "Value": 0.6
+        },
+        {
+          "Value": 5
         }
       ]
     ],

@@ -11,14 +11,14 @@
     "skill": {
       "0": {
         "name": "Arte de Lanceiro das Nuvens: Enxurrada",
-        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng como Dano de Vento a um único inimigo.\\nAo realizar um Acerto CRIT, há {{4}}% de <u>chance-base</u> de reduzir a VEL do alvo em {{2}}% por {{3}} rodada(s).",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng a um único inimigo.\\nQuando o Dano causado pela Perícia ativa um Acerto CRIT, há uma <u>chance-base</u> de {{4}}% de reduzir a VEL do alvo em {{2}}%, durando por {{3}} rodada(s).",
         "shortDesc": "Causa Dano de Vento a um único inimigo. Ao realizar um Acerto CRIT, há altas chances de causar Lentidão no inimigo."
       }
     },
     "ult": {
       "0": {
         "name": "Sonho Etéreo",
-        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng como Dano de Vento a um único inimigo. Se o inimigo estiver sofrendo de Lentidão, o multiplicador de Dano da Perícia Suprema aumenta em <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng a um único inimigo-alvo. Se o inimigo atacado estiver com Lentidão, o multiplicador do Dano causado pela Perícia Suprema aumenta em <orangeStrong>{{2}}%</orangeStrong>.",
         "shortDesc": "Causa Dano de Vento massivo a um inimigo. Se o inimigo estiver sofrendo de Lentidão, o multiplicador de Dano causado será maior."
       }
     },

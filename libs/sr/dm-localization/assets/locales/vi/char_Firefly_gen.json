@@ -1,0 +1,76 @@
+{
+  "name": "Firefly",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Chỉ Lệnh: Lực Đẩy Bùng Phát",
+        "fullDesc": "Gây Sát Thương Hỏa bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Chiến Giáp SAM cho một kẻ địch chỉ định.",
+        "shortDesc": "Gây lượng ít Sát Thương Hỏa cho một kẻ địch."
+      },
+      "1": {
+        "name": "Đom Đóm IV - Nhát Chém Kích Nổ",
+        "fullDesc": "Hồi HP bằng {{2}}% Giới Hạn HP của bản thân. Gây Sát Thương Hỏa bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Chiến Giáp SAM cho một kẻ địch chỉ định.",
+        "shortDesc": "Hồi một phần HP cho bản thân, gây Sát Thương Hỏa cho một kẻ địch."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Chỉ Lệnh: Oanh Tạc Trên Không",
+        "fullDesc": "Tiêu hao HP bằng {{2}}% Giới Hạn HP của bản thân để hồi phục cố định một lượng năng lượng bằng <orangeStrong>{{3}}%</orangeStrong> Giới Hạn Năng Lượng của bản thân, gây Sát Thương Hỏa bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Chiến Giáp SAM cho một kẻ địch chỉ định. Nếu HP hiện tại không đủ, khi thi triển Chiến Kỹ thì HP hiện tại của Chiến Giáp SAM sẽ giảm còn 1 điểm. Khiến bản thân lần sau <u>Ưu Tiên Hành Động</u> {{4}}%.",
+        "shortDesc": "Tiêu hao một phần HP của bản thân để hồi năng lượng, gây Sát Thương Hỏa cho một kẻ địch. Khiến bản thân lần sau <u>Ưu Tiên Hành Động</u>."
+      },
+      "1": {
+        "name": "Đom Đóm IV - Sao Chết Quá Tải",
+        "fullDesc": "Hồi HP bằng {{3}}% Giới Hạn HP của bản thân. Thêm Điểm Yếu Hỏa cho 1 kẻ địch chỉ định, duy trì {{4}} hiệp. Gây Sát Thương Hỏa bằng ({{5}}*Tấn Công Kích Phá +<orangeStrong>{{1}}%</orangeStrong>) Tấn Công của Chiến Giáp SAM cho mục tiêu này. Đồng thời gây Sát Thương Hỏa bằng ({{6}}*Tấn Công Kích Phá +<orangeStrong>{{2}}%</orangeStrong>) Tấn Công của Chiến Giáp SAM cho các mục tiêu ở gần kẻ đó. Tối đa tính {{7}}% Tấn Công Kích Phá.",
+        "shortDesc": "Hồi một phần HP cho bản thân, <orangeStrong>thêm Điểm Yếu Hỏa</orangeStrong> cho một kẻ địch, đồng thời gây lượng lớn Sát Thương Hỏa cho kẻ đó, gây Sát Thương Hỏa cho các mục tiêu ở gần."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Đom Đóm IV: Thiêu Đốt Hoàn Toàn",
+        "fullDesc": "Bước vào trạng thái Thiêu Đốt Hoàn Toàn, bản thân ưu tiên hành động 100% đồng thời nhận được Tấn Công Thường Cường Hóa và Chiến Kỹ Cường Hóa. Ở trạng thái Thiêu Đốt Hoàn Toàn, Tốc Độ tăng <orangeStrong>{{3}}</orangeStrong> điểm, hơn nữa khi thi triển Tấn Công Thường Cường Hóa và Chiến Kỹ Cường Hóa, hiệu suất Phá Vỡ Điểm Yếu của bản thân tăng {{2}}%, khiến Sát Thương Phá Vỡ mà kẻ địch phải chịu do Chiến Giáp SAM gây ra tăng <orangeStrong>{{1}}%</orangeStrong>, duy trì đến khi kết thúc lần tấn công này.\\nKhi xuất hiện đếm ngược Thiêu Đốt Hoàn Toàn ở thứ tự hành động, thì khi hiệp đếm ngược bắt đầu, Chiến Giáp SAM sẽ giải trừ trạng thái Thiêu Đốt Hoàn Toàn, đếm ngược sở hữu cố định {{4}} Tốc Độ.\\nỞ trạng thái Thiêu Đốt Hoàn Toàn, Chiến Giáp SAM không thể thi triển Tuyệt Kỹ.",
+        "shortDesc": "Bước vào trạng thái Thiêu Đốt Hoàn Toàn, <orangeStrong>khiến bản thân ưu tiên hành động <unbreak>100%</orangeStrong></color>, nhận được <orangeStrong>Tấn Công Thường Cường Hóa</orangeStrong> và <orangeStrong>Chiến Kỹ Cường Hóa</orangeStrong>, đồng thời tăng <orangeStrong>tốc độ, Hiệu Suất Phá Vỡ Điểm Yếu của bản thân, và Sát Thương Phá Vỡ mà kẻ địch phải chịu</orangeStrong>, cho đến khi đếm ngược kết thúc."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Δ Chỉ Lệnh: Thiêu Đốt Sao Băng",
+        "fullDesc": "Nhảy lên không trung và thực hiện di chuyển tự do, duy trì {{1}} giây, lúc này dùng tấn công từ trên cao sẽ kết thúc sớm thời gian duy trì. Sau khi hết thời gian duy trì, sẽ đáp xuống và tấn công ngay tất cả kẻ địch trong phạm vi nhất định, khi bắt đầu mỗi đợt sẽ thêm Điểm Yếu Hỏa cho toàn phe địch, duy trì {{3}} hiệp, sau đó sẽ gây Sát Thương Hỏa bằng {{2}}% Tấn Công của Chiến Giáp SAM cho toàn phe địch.",
+        "shortDesc": "Nhảy lên không trung và di chuyển tự do, sau vài giây sẽ đáp xuống và tấn công tất cả kẻ địch trong phạm vi, khi bắt đầu <orangeStrong>mỗi đợt</orangeStrong> sẽ <orangeStrong>thêm Điểm Yếu Hỏa</orangeStrong> cho toàn phe địch, đồng thời gây Sát Thương Hỏa cho toàn phe địch."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, vào chiến đấu và làm suy yếu Sức Bền thuộc tính tương ứng của kẻ địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tôi Từng Ngủ Yên, Trong Chiếc Kén Đỏ",
+      "desc": "Khi thi triển Chiến Kỹ Cường Hóa sẽ bỏ qua {{1}}% phòng thủ của mục tiêu, Chiến Kỹ Cường Hóa không tiêu hao Điểm Chiến Kỹ."
+    },
+    "2": {
+      "name": "Rơi Xuống, Từ Bầu Trời Vỡ Vụn",
+      "desc": "Khi đang ở trong trạng thái Thiêu Đốt Hoàn Toàn, thi triển Tấn Công Thường Cường Hóa, Chiến Kỹ Cường Hóa tiêu diệt kẻ địch hoặc khiến mục tiêu rơi vào trạng thái Phá Vỡ Điểm Yếu, Chiến Giáp SAM sẽ nhận ngay 1 hiệp cộng thêm. Hiệu ứng này có thể kích hoạt lại sau {{2}} hiệp."
+    },
+    "3": {
+      "name": "Ngủ Say Trong Thiên Hà Lặng Thinh",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không vượt quá cấp 15; Cấp Tấn Công Thường +1, tối đa không vượt quá cấp 10."
+    },
+    "4": {
+      "name": "Tôi Sẽ Nhìn Thấy, Ngọn Lửa Đom Đóm",
+      "desc": "Ở trạng thái Thiêu Đốt Hoàn Toàn, Kháng Hiệu Ứng của Chiến Giáp SAM tăng {{1}}%."
+    },
+    "5": {
+      "name": "Sáng Lên Từ Đêm Không Mộng Mị",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không vượt quá cấp 15; Cấp Thiên Phú +2, tối đa không vượt quá cấp 15."
+    },
+    "6": {
+      "name": "Nở Rộ Ở Ngày Mai Vô Tận",
+      "desc": "Xuyên Kháng Hỏa của Chiến Giáp SAM ở trạng thái Thiêu Đốt Hoàn Toàn tăng {{1}}%. Khi thi triển Tấn Công Thường Cường Hóa, Chiến Kỹ Cường Hóa, Hiệu Suất Phá Vỡ Điểm Yếu sẽ tăng {{2}}%."
+    }
+  }
+}

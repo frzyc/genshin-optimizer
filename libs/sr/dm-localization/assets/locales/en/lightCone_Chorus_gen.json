@@ -2,6 +2,6 @@
   "name": "Chorus",
   "passive": {
     "name": "Concerted",
-    "description": "After entering battle, increases the ATK of all allies by <orangeStrong>{{1}}%</orangeStrong>. Effects of the same type cannot stack."
+    "description": "After entering battle, increases the ATK of all allies by <orangeStrong>{{1}}%</orangeStrong>. Abilities of the same type cannot stack."
   }
 }

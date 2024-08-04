@@ -1,0 +1,7 @@
+{
+  "name": "끝없는 춤",
+  "passive": {
+    "name": "탐색",
+    "description": "장착한 캐릭터의 치명타 확률이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 방어력 감소 혹은 감속 상태의 적에게 가하는 치명타 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가한다"
+  }
+}

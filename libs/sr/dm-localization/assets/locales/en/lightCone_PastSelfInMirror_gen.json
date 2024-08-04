@@ -2,6 +2,6 @@
   "name": "Past Self in Mirror",
   "passive": {
     "name": "The Plum Fragrance In My Bones",
-    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1}}%</orangeStrong>. When the wearer uses their Ultimate, increases all allies' DMG by <orangeStrong>{{2}}%</orangeStrong>, lasting for {{3}} turn(s). Should the wearer's Break Effect exceed or equal {{4}}%, 1 Skill Point will be recovered.\\nAt the start of each wave, all allies regenerate <orangeStrong>{{5}}</orangeStrong> Energy immediately. Effects of the same type cannot stack."
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1}}%</orangeStrong>. When the wearer uses their Ultimate, increases all allies' DMG by <orangeStrong>{{2}}%</orangeStrong>, lasting for {{3}} turn(s). Should the wearer's Break Effect exceed or equal {{4}}%, 1 Skill Point will be recovered.\\nAt the start of each wave, all allies regenerate <orangeStrong>{{5}}</orangeStrong> Energy immediately. Abilities of the same type cannot stack."
   }
 }

@@ -1,0 +1,6 @@
+{
+  "setName": "Forja da Lanterna Kalpagni",
+  "setEffects": {
+    "2": "Aumenta a VEL do usuário em {{1}}%. Quando o usuário atinge um inimigo-alvo com Fraqueza contra Fogo, o Efeito de Quebra do usuário aumenta em {{2}}%, durando por {{3}} rodada(s)."
+  }
+}

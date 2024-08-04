@@ -1,0 +1,7 @@
+{
+  "name": "Dance at Sunset",
+  "passive": {
+    "name": "Deeply Engrossed",
+    "description": "Membuat peluang pengguna terkena serangan meningkat pesat dan meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT DMG pengguna. Saat setelah pengguna melancarkan Ultimate, akan memperoleh 1 lapis \"Firedance\" selama 2 giliran, dapat ditumpuk hingga {{2}} lapis. Setiap lapis \"Firedance\" akan membuat DMG yang diakibatkan Serangan Lanjutan pengguna meningkat <orangeStrong>{{3}}%</orangeStrong>."
+  }
+}

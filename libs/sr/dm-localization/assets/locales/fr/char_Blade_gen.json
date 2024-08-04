@@ -65,7 +65,7 @@
     },
     "6": {
       "name": "Revenu dans une coquille vide",
-      "desc": "Le nombre de cumuls maximum de Charge est réduit à 4. Les DGT de l'attaque de suivi déclenchée par le talent de Blade augmentent d'un montant équivalent à {{1}}% de ses PV max."
+      "desc": "Le nombre de cumuls maximum de Charge est réduit à 4. Les DGT infligés par les attaques de suivi déclenchées par le talent de Blade augmentent d'un montant équivalent à {{1}}% de ses PV max."
     }
   }
 }

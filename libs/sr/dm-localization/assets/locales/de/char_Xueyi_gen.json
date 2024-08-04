@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Dvesha, gefesselt",
-      "desc": "Erhöht den SCH durch Folgeangriffe des Talents um {{1}}%."
+      "desc": "Erhöht den durch Folgeangriffe verursachten SCH des Talents um {{1}}%."
     },
     "2": {
       "name": "Klesha, durchbrochen",

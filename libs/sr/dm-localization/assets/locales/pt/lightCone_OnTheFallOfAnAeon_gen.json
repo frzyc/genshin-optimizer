@@ -2,6 +2,6 @@
   "name": "Na Queda de Um Aeon",
   "passive": {
     "name": "Mariposa às Chamas",
-    "description": "Sempre que o usuário atacar, o seu ATQ é aumentado em <orangeStrong>{{1}}%</orangeStrong> durante a batalha. Este efeito pode acumular até {{2}} vez(es). Após um personagem infligir Quebra de Fraqueza a um inimigo, aumenta em <orangeStrong>{{3}}%</orangeStrong> o Dano do usuário por {{4}} rodada(s)."
+    "description": "Quando o usuário ataca, aumenta seu ATQ em <orangeStrong>{{1}}%</orangeStrong> nesta batalha. Este efeito pode acumular até {{2}} vez(es). Depois que o usuário aplica Quebra de Fraqueza a um inimigo, aumenta o Dano causado em <orangeStrong>{{3}}%</orangeStrong>, durando por {{4}} rodada(s)."
   }
 }

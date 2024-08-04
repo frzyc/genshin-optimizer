@@ -16,7 +16,7 @@
     "skill": {
       "0": {
         "name": "Poing lacérateur",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Luka à une cible ennemie unique, avec {{2}}% de <u>chances de base</u> de lui infliger Saignement pendant {{5}} tours.\\nQuand un ennemi souffre de Saignement, il subit des dégâts sur la durée physiques équivalents à {{3}}% de ses PV max au début de chaque tour. Ces DGT ne peuvent pas excéder <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Luka.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Luka à une cible ennemie unique, avec {{2}}% de <u>chances de base</u> de lui infliger Saignement pendant {{5}} tours.\\nLes ennemis qui souffrent de Saignement subissent des dégâts physiques sur la durée équivalents à {{3}}% de leurs PV max au début de chaque tour. Ces DGT ne peuvent pas excéder <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Luka.",
         "shortDesc": "Inflige des DGT physiques à un ennemi unique, avec de fortes chances de provoquer <orangeStrong>Saignement</orangeStrong>."
       }
     },

@@ -4,7 +4,7 @@
     "basic": {
       "0": {
         "name": "Frigid Cold Arrow",
-        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK March 7th pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK March 7th pada 1 musuh yang ditargetkan.",
         "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
       }
     },
@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Glacial Cascade",
-        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK March 7th kepada seluruh musuh. Target musuh yang terkena serangan memiliki {{2}}% <u>peluang dasar</u> untuk memasuki status Frozen selama {{3}} giliran.\\nSaat dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice <u>DMG tambahan</u> sebesar <orangeStrong>{{4}}%</orangeStrong> ATK March 7th setiap kali gilirannya dimulai.",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK March 7th pada seluruh musuh. Target musuh yang terkena serangan memiliki {{2}}% <u>peluang dasar</u> untuk memasuki status Frozen selama {{3}} giliran.\\nSaat berstatus Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice <u>DMG Tambahan</u> sebesar <orangeStrong>{{4}}%</orangeStrong> ATK March 7th setiap saat gilirannya dimulai.",
         "shortDesc": "Mengakibatkan Ice DMG pada <orangeStrong>seluruh</orangeStrong> musuh, dan <orangeStrong>berpeluang untuk mengakibatkan status Frozen</orangeStrong>."
       }
     },

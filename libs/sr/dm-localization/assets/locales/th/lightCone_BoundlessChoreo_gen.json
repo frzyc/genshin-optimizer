@@ -1,0 +1,7 @@
+{
+  "name": "Boundless Choreo",
+  "passive": {
+    "name": "Scrutinize",
+    "description": "ทำให้อัตราคริติคอลของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> และผู้สวมใส่จะสร้าง DMG คริติคอล แก่ศัตรูที่ติดสถานะลด DEF หรือลดความเร็ว เพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong>"
+  }
+}

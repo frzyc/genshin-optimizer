@@ -1,0 +1,7 @@
+{
+  "name": "夜色流光溢彩",
+  "passive": {
+    "name": "抚慰",
+    "description": "我方角色每次攻击时，使装备者获得1层【歌咏】，每层【歌咏】使装备者的能量恢复效率提高<orangeStrong>{{1}}%</orangeStrong>，最多叠加{{2}}层。装备者施放终结技时，移除【歌咏】并获得【华彩】，【华彩】使装备者的攻击力提高<orangeStrong>{{4}}%</orangeStrong>，使我方全体造成的伤害提高<orangeStrong>{{3}}%</orangeStrong>，持续{{5}}回合。"
+  }
+}

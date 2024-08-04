@@ -30,8 +30,8 @@
     "technique": {
       "0": {
         "name": "Brilho da Verdade",
-        "fullDesc": "Após usar esta Técnica, cria uma dimensão ao redor de Jingliu que dura por {{3}} segundos, e todos os inimigos nesta dimensão sofrerão Congelamento. Após entrar em combate com os inimigos na dimensão, Jingliu recupera imediatamente {{6}} de Energia e obtém {{1}} acúmulo(s) de Sizígia, com uma <u>chance-base</u> de {{2}}% de causar Congelamento nos inimigos-alvo por {{4}} rodada(s). Enquanto estiverem com Congelamento, inimigos-alvo não podem agir, e recebem <u>Dano de Gelo Adicional</u> igual a {{5}}% do ATQ de Jingliu no início de cada rodada. Somente 1 dimensão criada por aliados pode existir ao mesmo tempo.",
-        "shortDesc": "Cria uma dimensão em volta do personagem. Inimigos dentro desta dimensão sofrerão <orangeStrong>Congelamento</orangeStrong>. Após entrar em combate com inimigos nesta dimensão, este personagem recupera Energia e obtém 1 acúmulo de Sizígia com altas chances de aplicar <orangeStrong>Congelamento</orangeStrong> nos inimigos."
+        "fullDesc": "Após usar esta Técnica, cria uma dimensão especial ao redor de Jingliu que dura por {{3}} segundos, e todos os inimigos nesta dimensão especial sofrerão Congelamento. Após entrar em combate com os inimigos na dimensão especial, Jingliu recupera imediatamente {{6}} de Energia e obtém {{1}} acúmulo(s) de Sizígia, com uma <u>chance-base</u> de {{2}}% de causar Congelamento nos inimigos-alvo por {{4}} rodada(s). Enquanto estiverem com Congelamento, inimigos-alvo não podem agir, e recebem <u>Dano de Gelo Adicional</u> igual a {{5}}% do ATQ de Jingliu no início de cada rodada. Somente 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão especial em volta do personagem. Inimigos dentro desta dimensão sofrerão <orangeStrong>Congelamento</orangeStrong>. Após entrar em combate com inimigos nesta dimensão, este personagem recupera Energia e obtém 1 acúmulo de Sizígia com altas chances de aplicar <orangeStrong>Congelamento</orangeStrong> nos inimigos."
       }
     },
     "overworld": {

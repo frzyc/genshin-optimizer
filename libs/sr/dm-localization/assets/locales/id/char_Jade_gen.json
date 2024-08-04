@@ -1,0 +1,66 @@
+{
+  "name": "Jade",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lash of Riches",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Jade pada 1 musuh yang ditargetkan, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Jade pada musuh di sekitar target.",
+        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh, dan Quantum DMG dalam jumlah kecil pada target di sekitarnya."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Acquisition Surety",
+        "fullDesc": "Membuat 1 rekan tim yang ditargetkan menjadi \"Debt Collector\" dan meningkatkan {{1}} SPD-nya selama {{4}} giliran.\\nSetelah \"Debt Collector\" melancarkan serangan, akan mengakibatkan 1 kali Quantum <u>DMG tambahan</u> sebesar <orangeStrong>{{3}}%</orangeStrong> ATK Jade pada setiap target musuh yang terkena serangan dan mengonsumsi HP \"Debt Collector\" sebesar {{2}}% Max HP \"Debt Collector\". Jika HP saat ini tidak mencukupi, maka HP saat ini akan berkurang hingga 1 poin.\\nJika yang berstatus \"Debt Collector\" adalah Jade, maka dia tidak akan memperoleh efek peningkatan SPD, dan HP-nya tidak akan terkonsumsi setelah menyerang.\\nSaat di medan pertempuran ada \"Debt Collector\", Jade tidak dapat melancarkan Skill-nya. Durasi giliran status \"Debt Collector\" akan berkurang 1 setiap saat giliran Jade dimulai.",
+        "shortDesc": "Membuat 1 rekan tim menjadi <orangeStrong>\"Debt Collector\"</orangeStrong> dan meningkatkan SPD-nya. Setelah <orangeStrong>\"Debt Collector\"</orangeStrong> melancarkan serangan, akan mengakibatkan Quantum <u>DMG tambahan</u> dalam jumlah kecil pada setiap target musuh yang terkena serangan dan mengonsumsi HP Debt Collector. Jika yang menjadi \"Debt Collector\" adalah Jade, dia tidak akan memperoleh efek peningkatan SPD, dan HP-nya tidak akan terkonsumsi setelah menyerang."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Vow of the Deep",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{3}}%</orangeStrong> ATK Jade pada seluruh musuh. Pada saat bersamaan, <u>Serangan Lanjutan</u> dari Talent Jade memperoleh penguatan, DMG Multiplier yang diakibatkan oleh Serangan Lanjutan meningkat <orangeStrong>{{1}}%</orangeStrong>. Efek penguatan berlaku sebanyak {{2}} kali.",
+        "shortDesc": "Mengakibatkan Quantum DMG pada seluruh musuh, dan membuat dirinya memperoleh peningkatan DMG Multiplier <orangeStrong><u>Serangan Lanjutan</u></orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Visionary Predation",
+        "fullDesc": "Setelah menggunakan Technique, akan membuat musuh di dalam jangkauan tertentu memasuki status \"Blind Fealty\" selama {{1}} detik. Musuh yang berstatus \"Blind Fealty\" tidak akan secara aktif menyerang rekan tim. Saat secara aktif menyerang musuh yang berstatus \"Blind Fealty\" untuk memasuki pertempuran, akan membuat semua musuh yang berstatus \"Blind Fealty\" memasuki pertempuran secara bersamaan. Setelah memasuki pertempuran, mengakibatkan Quantum DMG sebesar {{2}}% ATK Jade pada seluruh musuh, dan Jade akan segera memperoleh {{3}} lapis \"Pawned Asset\".",
+        "shortDesc": "Membuat musuh di dalam jangkauan tertentu memasuki status \"Blind Fealty\". Menyerang musuh yang berstatus \"Blind Fealty\" dapat membuat semua musuh yang berstatus \"Blind Fealty\" memasuki pertempuran secara bersamaan. Setelah memasuki pertempuran, mengakibatkan Quantum DMG dalam jumlah kecil pada seluruh musuh, dan Jade akan segera memperoleh <orangeStrong>{{3}}</orangeStrong> lapis \"Pawned Asset\"."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Altruism? Nevertheless Tradable",
+      "desc": "DMG Serangan Lanjutan dari Talent Jade meningkat {{1}}%. Setelah karakter yang berstatus \"Debt Collector\" melancarkan serangan, jika jumlah target musuh yang terkena serangan adalah 2/1, maka Jade akan memperoleh ekstra {{2}}/{{3}} poin Charge."
+    },
+    "2": {
+      "name": "Morality? Herein Authenticated",
+      "desc": "Saat \"Pawned Asset\" mencapai {{1}} lapis, CRIT Rate Jade akan meningkat {{2}}%."
+    },
+    "3": {
+      "name": "Honesty? Soon Mortgaged",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Sincerity? Put Option Only",
+      "desc": "Saat melancarkan Ultimate, membuat DMG yang diakibatkan Jade mengabaikan {{1}}% DEF target musuh, berlangsung selama {{2}} giliran."
+    },
+    "5": {
+      "name": "Hope? Hitherto Forfeited",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Equity? Pending Sponsorship",
+      "desc": "Saat di medan pertempuran terdapat karakter yang berstatus \"Debt Collector\", Quantum RES PEN Jade akan meningkat {{1}}%, dan Jade juga akan memperoleh status \"Debt Collector\"."
+    }
+  }
+}

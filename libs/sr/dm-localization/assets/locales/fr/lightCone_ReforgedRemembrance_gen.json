@@ -2,6 +2,6 @@
   "name": "Souvenirs refaçonnés",
   "passive": {
     "name": "Cristallisation",
-    "description": "Augmente de <orangeStrong>{{1}}%</orangeStrong> les chances d'appliquer des effets du porteur. Lorsque le porteur inflige des DGT à un ennemi affecté par Faille du vent, Saignement, Brûlure ou Stupéfaction, chaque effet lui accorde 1 cumul de Prophétie, cumulable jusqu'à {{4}} fois. Chaque type de dégâts sur la durée ne peut générer qu'1 seul cumul de Prophétie par combat. Chaque cumul de Prophétie augmente de <orangeStrong>{{2}}%</orangeStrong> l'ATQ du porteur et permet aux dégâts sur la durée infligés d'ignorer <orangeStrong>{{3}}%</orangeStrong> de la DÉF de la cible."
+    "description": "Augmente les chances d'appliquer des effets du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur inflige des DGT à un ennemi affecté par Faille du vent, Saignement, Brûlure ou Stupéfaction, chaque effet lui accorde 1 cumul de Prophétie, cumulable jusqu'à {{4}} fois. Chaque type de dégâts sur la durée ne peut générer qu'1 seul cumul de Prophétie par combat. Chaque cumul de Prophétie augmente de <orangeStrong>{{2}}%</orangeStrong> l'ATQ du porteur et permet aux dégâts sur la durée infligés d'ignorer <orangeStrong>{{3}}%</orangeStrong> de la DÉF de la cible."
   }
 }
