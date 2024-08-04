@@ -1,0 +1,6 @@
+{
+  "name": "@genshin-optimizer/sr/assets-data",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "executors": "./executors.json"
+}
