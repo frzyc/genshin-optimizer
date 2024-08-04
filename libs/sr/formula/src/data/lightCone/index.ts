@@ -1,6 +1,7 @@
 import type { TagMapNodeEntries } from '../util'
 import ASecretVow from './ASecretVow'
 import Adversarial from './Adversarial'
+import AfterTheCharmonyFall from './AfterTheCharmonyFall'
 import AlongThePassingShore from './AlongThePassingShore'
 import Amber from './Amber'
 import AnInstantBeforeAGaze from './AnInstantBeforeAGaze'
@@ -8,6 +9,7 @@ import Arrows from './Arrows'
 import BaptismOfPureThought from './BaptismOfPureThought'
 import BeforeDawn from './BeforeDawn'
 import BeforeTheTutorialMissionStarts from './BeforeTheTutorialMissionStarts'
+import BoundlessChoreo from './BoundlessChoreo'
 import BrighterThanTheSun from './BrighterThanTheSun'
 import ButTheBattleIsntOver from './ButTheBattleIsntOver'
 import CarveTheMoonWeaveTheClouds from './CarveTheMoonWeaveTheClouds'
@@ -16,6 +18,7 @@ import CollapsingSky from './CollapsingSky'
 import ConcertForTwo from './ConcertForTwo'
 import Cornucopia from './Cornucopia'
 import CruisingInTheStellarSea from './CruisingInTheStellarSea'
+import DanceAtSunset from './DanceAtSunset'
 import DanceDanceDance from './DanceDanceDance'
 import DartingArrow from './DartingArrow'
 import DataBank from './DataBank'
@@ -30,6 +33,7 @@ import Fermata from './Fermata'
 import FinalVictor from './FinalVictor'
 import FineFruit from './FineFruit'
 import FlamesAfar from './FlamesAfar'
+import FlowingNightglow from './FlowingNightglow'
 import GeniusesRepose from './GeniusesRepose'
 import GoodNightAndSleepWell from './GoodNightAndSleepWell'
 import HeyOverHere from './HeyOverHere'
@@ -62,6 +66,7 @@ import PatienceIsAllYouNeed from './PatienceIsAllYouNeed'
 import PerfectTiming from './PerfectTiming'
 import Pioneering from './Pioneering'
 import PlanetaryRendezvous from './PlanetaryRendezvous'
+import PoisedToBloom from './PoisedToBloom'
 import PostOpConversation from './PostOpConversation'
 import QuidProQuo from './QuidProQuo'
 import ReforgedRemembrance from './ReforgedRemembrance'
@@ -69,6 +74,7 @@ import ResolutionShinesAsPearlsOfSweat from './ResolutionShinesAsPearlsOfSweat'
 import ReturnToDarkness from './ReturnToDarkness'
 import RiverFlowsInSpring from './RiverFlowsInSpring'
 import Sagacity from './Sagacity'
+import SailingTowardsASecondLife from './SailingTowardsASecondLife'
 import SharedFeeling from './SharedFeeling'
 import ShatteredHome from './ShatteredHome'
 import SheAlreadyShutHerEyes from './SheAlreadyShutHerEyes'
@@ -93,12 +99,15 @@ import WarmthShortensColdNights from './WarmthShortensColdNights'
 import WeAreWildfire from './WeAreWildfire'
 import WeWillMeetAgain from './WeWillMeetAgain'
 import WhatIsReal from './WhatIsReal'
+import WhereaboutsShouldDreamsRest from './WhereaboutsShouldDreamsRest'
 import WoofWalkTime from './WoofWalkTime'
 import WorrisomeBlissful from './WorrisomeBlissful'
+import YetHopeIsPriceless from './YetHopeIsPriceless'
 
 const data: TagMapNodeEntries[] = [
   ASecretVow,
   Adversarial,
+  AfterTheCharmonyFall,
   AlongThePassingShore,
   Amber,
   AnInstantBeforeAGaze,
@@ -106,6 +115,7 @@ const data: TagMapNodeEntries[] = [
   BaptismOfPureThought,
   BeforeDawn,
   BeforeTheTutorialMissionStarts,
+  BoundlessChoreo,
   BrighterThanTheSun,
   ButTheBattleIsntOver,
   CarveTheMoonWeaveTheClouds,
@@ -114,6 +124,7 @@ const data: TagMapNodeEntries[] = [
   ConcertForTwo,
   Cornucopia,
   CruisingInTheStellarSea,
+  DanceAtSunset,
   DanceDanceDance,
   DartingArrow,
   DataBank,
@@ -128,6 +139,7 @@ const data: TagMapNodeEntries[] = [
   FinalVictor,
   FineFruit,
   FlamesAfar,
+  FlowingNightglow,
   GeniusesRepose,
   GoodNightAndSleepWell,
   HeyOverHere,
@@ -160,6 +172,7 @@ const data: TagMapNodeEntries[] = [
   PerfectTiming,
   Pioneering,
   PlanetaryRendezvous,
+  PoisedToBloom,
   PostOpConversation,
   QuidProQuo,
   ReforgedRemembrance,
@@ -167,6 +180,7 @@ const data: TagMapNodeEntries[] = [
   ReturnToDarkness,
   RiverFlowsInSpring,
   Sagacity,
+  SailingTowardsASecondLife,
   SharedFeeling,
   ShatteredHome,
   SheAlreadyShutHerEyes,
@@ -191,8 +205,10 @@ const data: TagMapNodeEntries[] = [
   WeAreWildfire,
   WeWillMeetAgain,
   WhatIsReal,
+  WhereaboutsShouldDreamsRest,
   WoofWalkTime,
   WorrisomeBlissful,
+  YetHopeIsPriceless,
 ]
 
 export default data.flat()
