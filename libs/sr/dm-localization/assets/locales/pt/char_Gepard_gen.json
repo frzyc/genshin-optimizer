@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Determinação Inabalável",
-      "desc": "Quando seu Talento for ativado, Gepard age de novo imediatamente e restaura {{1}}% de seus PV máximos como PV extras."
+      "desc": "Quando seu Talento for ativado, Gepard age imediatamente e restaura {{1}}% de seus PV máximos como PV extras."
     }
   }
 }

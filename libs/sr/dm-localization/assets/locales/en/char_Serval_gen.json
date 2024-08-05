@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Echo Chamber",
-      "desc": "Basic ATK deals Lightning DMG equal to {{1}}% of the Basic ATK's DMG to a random enemy adjacent to the target of the Basic ATK."
+      "desc": "Basic ATK deals Lightning DMG equal to {{1}}% of Basic ATK DMG to a random target adjacent to the target enemy."
     },
     "2": {
       "name": "Encore!",

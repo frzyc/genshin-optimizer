@@ -1,0 +1,6 @@
+{
+  "setName": "Duran, dinastía de lobos raudos",
+  "setEffects": {
+    "2": "Cuando un aliado lanza un ataque adicional, el portador obtiene una acumulación de Mérito, hasta un máximo de {{1}} acumulaciones. Por cada acumulación, el daño que infligen los ataques adicionales del portador aumenta en un {{2}}%. Cuando se alcanza el máximo de {{1}} acumulaciones, el Daño CRIT del portador aumenta en un {{3}}%."
+  }
+}

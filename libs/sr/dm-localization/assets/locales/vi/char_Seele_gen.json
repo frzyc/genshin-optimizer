@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Phân Ly",
-      "desc": "Sau khi thi triển Tuyệt Kỹ sẽ khiến 1 kẻ địch bị tấn công rơi vào trạng thái Loạn Điệp, duy trì {{2}} hiệp. Sau khi mục tiêu địch ở trạng thái Loạn Điệp bị tấn công, sẽ chịu thêm 1 lần Sát Thương Lượng Tử kèm theo bằng {{1}}% sát thương Tuyệt Kỹ của Seele. Nếu mục tiêu này bị tiêu diệt bởi sát thương kèm theo của trạng thái Loạn Điệp do mục tiêu khác trong phe ta kích hoạt, sẽ không kích hoạt Thiên Phú của Seele.\\nKhi Seele rơi vào trạng thái không thể chiến đấu, thì trạng thái Loạn Điệp của kẻ địch sẽ bị giải trừ."
+      "desc": "Sau khi thi triển Tuyệt Kỹ sẽ khiến 1 kẻ địch bị tấn công rơi vào trạng thái Loạn Điệp, duy trì {{2}} hiệp. Sau khi mục tiêu địch ở trạng thái Loạn Điệp bị tấn công, sẽ chịu thêm 1 lần Sát Thương Lượng Tử kèm theo bằng {{1}}% Sát Thương Tuyệt Kỹ của Seele. Nếu mục tiêu này bị tiêu diệt bởi sát thương kèm theo của trạng thái Loạn Điệp do mục tiêu khác trong phe ta kích hoạt, sẽ không kích hoạt Thiên Phú của Seele.\\nKhi Seele rơi vào trạng thái không thể chiến đấu, thì trạng thái Loạn Điệp của kẻ địch sẽ bị giải trừ."
     }
   }
 }

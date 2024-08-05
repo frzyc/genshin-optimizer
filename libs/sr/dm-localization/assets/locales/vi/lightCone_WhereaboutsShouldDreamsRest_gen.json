@@ -1,0 +1,7 @@
+{
+  "name": "Giấc Mộng Sẽ Đi Về Đâu",
+  "passive": {
+    "name": "Biến Đổi",
+    "description": "Khiến Tấn Công Kích Phá của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Khi người trang bị gây Sát Thương Phá Vỡ cho kẻ địch, sẽ khiến kẻ địch rơi vào trạng thái Thảm Bại, duy trì {{4}} hiệp. Ở trạng thái Thảm Bại, Sát Thương Phá Vỡ mục tiêu phải chịu do người trang bị gây ra tăng <orangeStrong>{{2}}%</orangeStrong>, Tốc Độ giảm {{3}}%, hiệu ứng cùng loại không thể cộng dồn."
+  }
+}

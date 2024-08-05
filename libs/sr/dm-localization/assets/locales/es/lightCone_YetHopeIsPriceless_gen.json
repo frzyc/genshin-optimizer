@@ -1,0 +1,7 @@
+{
+  "name": "La esperanza no tiene precio",
+  "passive": {
+    "name": "Promesa",
+    "description": "La Prob. CRIT del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando el Daño CRIT del portador es superior al {{2}}% en el combate, por cada {{3}}% en exceso, el daño que infligen los ataques adicionales aumenta en un <orangeStrong>{{4}}%</orangeStrong>. Este efecto se puede acumular hasta {{5}} veces. Al comenzar el combate y después de que el portador use el ATQ básico, el daño que infligen su habilidad definitiva o ataques adicionales ignora un <orangeStrong>{{6}}%</orangeStrong> de la DEF del objetivo durante {{7}} turnos."
+  }
+}

@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Wait, You Are So Beautiful!",
-        "fullDesc": "Setelah menggunakan Technique, Misha akan menciptakan sebuah Dimension selama {{1}} detik. Musuh dalam Dimension akan memasuki status \"Dream Prison\", dan aksinya akan terhenti. Setelah memasuki pertempuran melawan musuh berstatus \"Dream Prison\", jumlah Hits Per Action untuk Ultimate Misha yang berikutnya akan bertambah {{2}} Hit. Hanya boleh ada 1 efek Dimension ciptaan rekan tim dalam satu waktu.",
-        "shortDesc": "Menciptakan sebuah Dimension. Aksi musuh dalam Dimension akan terhenti. Setelah memasuki pertempuran melawan musuh dalam Dimension, akan menambah <orangeStrong>jumlah Hits Per Action untuk Ultimate</orangeStrong> Misha yang berikutnya."
+        "fullDesc": "Setelah menggunakan Technique, Misha akan menciptakan sebuah dimensi khusus selama {{1}} detik. Musuh dalam dimensi khusus akan memasuki status \"Dream Prison\", dan aksinya akan terhenti. Setelah memasuki pertempuran melawan musuh berstatus \"Dream Prison\", jumlah Hits Per Action untuk Ultimate Misha yang berikutnya akan bertambah {{2}} Hit. Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
+        "shortDesc": "Menciptakan sebuah dimensi khusus. Aksi musuh dalam dimensi khusus akan terhenti. Setelah memasuki pertempuran melawan musuh dalam dimensi khusus, akan menambah <orangeStrong>jumlah Hits Per Action untuk Ultimate</orangeStrong> Misha yang berikutnya."
       }
     },
     "overworld": {

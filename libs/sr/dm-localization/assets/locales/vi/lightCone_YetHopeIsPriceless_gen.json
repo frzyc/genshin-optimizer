@@ -1,0 +1,7 @@
+{
+  "name": "Hi Vọng Là Vô Giá",
+  "passive": {
+    "name": "Hứa Hẹn",
+    "description": "Khiến Tỷ Lệ Bạo Kích của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Khi Sát Thương Bạo Kích của người trang bị trong trận lớn hơn {{2}}%, mỗi {{3}}% vượt quá thì Sát Thương Đòn Đánh Theo Sau gây ra tăng <orangeStrong>{{4}}%</orangeStrong>, hiệu ứng này có thể cộng dồn {{5}} tầng. Khi bắt đầu chiến đấu hoặc sau khi người trang bị dùng Tấn Công Thường sẽ khiến Tuyệt Kỹ hoặc sát thương Đòn Đánh Theo Sau gây ra bỏ qua <orangeStrong>{{6}}%</orangeStrong> Phòng Thủ của mục tiêu, duy trì {{7}} hiệp."
+  }
+}

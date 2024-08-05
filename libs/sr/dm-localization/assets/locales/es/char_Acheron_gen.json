@@ -80,7 +80,7 @@
     },
     "6": {
       "name": "Calamidad rompecadenas",
-      "desc": "La PEN de la RES a todos los tipos que causa el daño de la habilidad definitiva de Acheron aumenta en un {{1}}%. El daño infligido por su ATQ básico o habilidad básica se considera daño de habilidad definitiva, y consume la Firmeza del enemigo ignorando sus tipos de Debilidad. Al romper la Debilidad de un enemigo, activa el efecto de Ruptura de Rayo."
+      "desc": "La PEN de la RES a todos los tipos del daño de habilidad definitiva infligido por Acheron aumenta en un {{1}}%. El daño infligido por su ATQ básico o habilidad básica se considera daño de habilidad definitiva, y consume la Firmeza del enemigo ignorando sus tipos de Debilidad. Al romper la Debilidad de un enemigo, activa el efecto de Ruptura de Rayo."
     }
   }
 }

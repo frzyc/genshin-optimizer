@@ -1,0 +1,7 @@
+{
+  "name": "Sau Sự Im Lặng Hài Hòa",
+  "passive": {
+    "name": "Tĩnh Mịch",
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Tấn Công Kích Phá của người trang bị. Sau khi người trang bị thi triển Tuyệt Kỹ, Tốc Độ tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp."
+  }
+}

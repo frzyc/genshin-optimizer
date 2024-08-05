@@ -1,0 +1,76 @@
+{
+  "name": "Firefly",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Order: Flare Propulsion",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of SAM's ATK to a single target enemy.",
+        "shortDesc": "Deals minor Fire DMG to a single enemy."
+      },
+      "1": {
+        "name": "Fyrefly Type-IV: Pyrogenic Decimation",
+        "fullDesc": "Restores HP by an amount equal to {{2}}% of this unit's Max HP. Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of SAM's ATK to a single target enemy.",
+        "shortDesc": "Restores a portion of this unit's own HP and deals Fire DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Order: Aerial Bombardment",
+        "fullDesc": "Consumes HP equal to {{2}}% of this unit's Max HP and regenerates a fixed amount of Energy equal to <orangeStrong>{{3}}%</orangeStrong> of this unit's Max Energy. Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of SAM's ATK to a single target enemy. If the current HP is not sufficient, reduces SAM's HP to 1 when using this Skill. <u>Advances</u> this unit's next Action by {{4}}%.",
+        "shortDesc": "Consumes a portion of this unit's own HP to regenerate Energy. Deals Fire DMG to a single enemy. <u>Advances</u> this unit's next Action."
+      },
+      "1": {
+        "name": "Fyrefly Type-IV: Deathstar Overload",
+        "fullDesc": "Restores HP by an amount equal to {{3}}% of this unit's Max HP. Applies Fire Weakness to a single target enemy, lasting for {{4}} turn(s). Deals Fire DMG equal to ({{5}} × Break Effect + <orangeStrong>{{1}}%</orangeStrong>) of SAM's ATK to this target. At the same time, deals Fire DMG equal to ({{6}} × Break Effect + <orangeStrong>{{2}}%</orangeStrong>) of SAM's ATK to adjacent targets. The Break Effect taken into the calculation is capped at {{7}}%.",
+        "shortDesc": "Restores a portion of this unit's own HP. <orangeStrong>Applies Fire Weakness</orangeStrong> to a single enemy target. Deals massive Fire DMG to this target and Fire DMG to adjacent targets."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Fyrefly Type-IV: Complete Combustion",
+        "fullDesc": "Enters the Complete Combustion state, advances this unit's Action by 100%, and gains Enhanced Basic ATK and Enhanced Skill. While in Complete Combustion, increases SPD by <orangeStrong>{{3}}</orangeStrong>, and when using the Enhanced Basic ATK or Enhanced Skill, increases this unit's Weakness Break efficiency by {{2}}% and the Break DMG dealt by SAM to the enemy targets by <orangeStrong>{{1}}%</orangeStrong>, lasting until this current attack ends.\\nA countdown timer for the Complete Combustion state appears on the Action Order. When the countdown timer's turn starts, SAM exits the Complete Combustion state. The countdown timer has a fixed SPD of {{4}}.\\nSAM cannot use Ultimate while in Complete Combustion.",
+        "shortDesc": "Enters the Complete Combustion state. <orangeStrong>Advances this unit's Action by <unbreak>100%</orangeStrong></color>. Gains <orangeStrong>Enhanced Basic ATK</orangeStrong> and <orangeStrong>Enhanced Skill</orangeStrong>. Increases this unit's <orangeStrong>SPD, Weakness Break efficiency, and the Break DMG received by the enemy targets</orangeStrong>, lasting until the countdown ends."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Δ Order: Meteoric Incineration",
+        "fullDesc": "Leaps into the air and moves about freely for {{1}} seconds, which can be ended early by launching a plunging attack. When the duration ends, plunges and immediately attacks all enemies within a set area. At the start of each wave, applies a Fire Weakness to all enemies, lasting for {{3}} turn(s). Then, deals Fire DMG equal to {{2}}% of SAM's ATK to all enemies.",
+        "shortDesc": "Leaps into the air and moves about freely. After a few seconds of movement, plunges and attacks all enemies within range. At the start of <orangeStrong>each wave</orangeStrong>, <orangeStrong>applies a Fire Weakness</orangeStrong> to all enemies and deals Fire DMG to them."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "In Reddened Chrysalis, I Once Rest",
+      "desc": "When using the Enhanced Skill, ignores {{1}}% of the target's DEF. The Enhanced Skill does not consume Skill Points."
+    },
+    "2": {
+      "name": "From Shattered Sky, I Free Fall",
+      "desc": "While in Complete Combustion, using the Enhanced Basic ATK or the Enhanced Skill to defeat an enemy target or to break their Weakness allows SAM to immediately gain 1 extra turn. This effect can trigger again after {{2}} turn(s)."
+    },
+    "3": {
+      "name": "Amidst Silenced Stars, I Deep Sleep",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Upon Lighted Fyrefly, I Soon Gaze",
+      "desc": "While in Complete Combustion, increases SAM's Effect RES by {{1}}%."
+    },
+    "5": {
+      "name": "From Undreamt Night, I Thence Shine",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "In Finalized Morrow, I Full Bloom",
+      "desc": "While in Complete Combustion, increases SAM's Fire RES PEN by {{1}}%. When using the Enhanced Basic ATK or Enhanced Skill, increases the Weakness Break efficiency by {{2}}%."
+    }
+  }
+}

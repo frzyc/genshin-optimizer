@@ -11,13 +11,13 @@
     "skill": {
       "0": {
         "name": "Alicerce de Luxo",
-        "fullDesc": "Fornece um Escudo de Aposta Fortificada que pode bloquear Dano igual a <orangeStrong>{{1}}%</orangeStrong> da DEF de Aventurine + <orangeStrong>{{2}}</orangeStrong> para todos os aliados por {{3}} rodada(s). Ao ganhar Aposta Fortificada repetidamente, o efeito de Escudo pode acumular até {{4}}% do Escudo fornecido pela Perícia atual.",
+        "fullDesc": "Fornece um Escudo de Aposta Fortificada que pode bloquear Dano igual a <orangeStrong>{{1}}%</orangeStrong> da DEF de Aventurine + <orangeStrong>{{2}}</orangeStrong> para todos os aliados por {{3}} rodada(s). Ao ganhar Aposta Fortificada repetidamente, o efeito de Escudo pode se acumular, até {{4}}% do efeito de Escudo atual fornecido pela Perícia.",
         "shortDesc": "Fornece um escudo de Aposta Fortificada para todos os aliados, <orangeStrong>cujo efeito de Escudo é acumulável</orangeStrong>."
       }
     },
     "ult": {
       "0": {
-        "name": "Lorde da Roleta",
+        "name": "Tubarão das Apostas",
         "fullDesc": "Recebe aleatoriamente de 1 a {{1}} pontos de Aposta Cega e inflige Perturbação a um único inimigo, durando por {{4}} rodada(s). Causa Dano Imaginário igual a <orangeStrong>{{2}}%</orangeStrong> da DEF de Aventurine a um único inimigo-alvo. Quando um aliado atinge um inimigo-alvo com Perturbação, o Dano CRIT causado aumenta em <orangeStrong>{{3}}%</orangeStrong>.",
         "shortDesc": "Ganha um número aleatório de pontos na Aposta Cega e inflige Perturbação em um único inimigo, causando Dano Imaginário. Quando um aliado golpeia um inimigo com Perturbação, aumenta o <orangeStrong>Dano CRIT causado</orangeStrong>."
       }
@@ -44,7 +44,7 @@
     },
     "2": {
       "name": "Racionalidade Limitada",
-      "desc": "Ao usar um ATQ Básico, reduz a RES a Todos os Tipos do alvo em {{2}}% por {{3}} rodada(s)."
+      "desc": "Ao usar o ATQ Básico, reduz a RES a Todos os Tipos do alvo em {{2}}% por {{3}} rodada(s)."
     },
     "3": {
       "name": "Taxa Máxima",

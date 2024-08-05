@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Forma de Taixu: Anúncio do Amanhecer",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sushang a um único inimigo-alvo e ela age de novo imediatamente. Além disso, o ATQ de Sushang aumenta em <orangeStrong>{{4}}%</orangeStrong> e usar sua Perícia concede 2 chances extras de ativar a Postura da Espada por {{2}} rodada(s).\\nQuando ativada graças às chances extras, a Postura da Espada causa {{3}}% do Dano original.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sushang a um único inimigo-alvo e ela age imediatamente. Além disso, o ATQ de Sushang aumenta em <orangeStrong>{{4}}%</orangeStrong> e usar sua Perícia concede 2 chances extras de ativar a Postura da Espada por {{2}} rodada(s).\\nQuando ativada graças às chances extras, a Postura da Espada causa {{3}}% do Dano original.",
         "shortDesc": "Causa Dano Físico massivo a um único inimigo, aprimora o efeito da Postura da Espada e <orangeStrong>realiza uma ação imediatamente</orangeStrong>."
       }
     },

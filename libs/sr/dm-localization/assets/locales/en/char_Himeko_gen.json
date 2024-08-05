@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Incomplete Combustion",
-        "fullDesc": "After using Technique, creates a dimension that lasts for {{4}} second(s). After entering battle with enemies in the dimension, there is a {{1}}% <u>base chance</u> to increase Fire DMG taken by enemies by {{2}}% for {{3}} turn(s). Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a dimension. After entering combat with enemies in the dimension, there is a high chance to <orangeStrong>increase Fire DMG taken by enemies</orangeStrong>."
+        "fullDesc": "After using Technique, creates a special dimension that lasts for {{4}} second(s). After entering battle with enemies in the special dimension, there is a {{1}}% <u>base chance</u> to increase Fire DMG taken by enemies by {{2}}% for {{3}} turn(s). Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a special dimension. After entering combat with enemies in the dimension, there is a high chance to <orangeStrong>increase Fire DMG taken by enemies</orangeStrong>."
       }
     },
     "overworld": {

@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Unyielding Resolve",
-      "desc": "When his Talent is triggered, Gepard immediately takes action again and restores extra HP equal to {{1}}% of his Max HP."
+      "desc": "When his Talent is triggered, Gepard immediately takes action and restores extra HP equal to {{1}}% of his Max HP."
     }
   }
 }

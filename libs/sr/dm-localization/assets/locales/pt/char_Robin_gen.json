@@ -1,0 +1,66 @@
+{
+  "name": "Robin",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Bater de Asas Silencioso",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Robin a um único inimigo.",
+        "shortDesc": "Causa Dano Físico leve a um único inimigo."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Ária das Penas",
+        "fullDesc": "Aumenta o Dano causado por todos os aliados em <orangeStrong>{{1}}%</orangeStrong>, durando por {{2}} rodada(s). Essa duração diminui em 1 no início de cada rodada de Robin.",
+        "shortDesc": "<orangeStrong>Aumenta o Dano causado</orangeStrong> por todos os aliados."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Vox Harmonique, Opus Cosmique",
+        "fullDesc": "Robin entra no estado de Concerto e faz com que todos os outros aliados ajam imediatamente.\\nEnquanto estiver no estado de Concerto, aumenta o ATQ de todos os aliados em <orangeStrong>{{1}}%</orangeStrong> do ATQ de Robin + <orangeStrong>{{3}}</orangeStrong>. Além disso, após cada ataque dos aliados, Robin causa <u>Dano Físico Adicional</u> igual a <orangeStrong>{{4}}%</orangeStrong> do seu ATQ uma vez. A Chance de CRIT para este dano é fixada em {{5}}% e o Dano CRIT é fixado em {{6}}%.\\nQuando no estado de Concerto, Robin é imune a <u>penalidades de Controle Negativo</u> e não pode entrar em sua rodada ou agir.\\nUma contagem regressiva de Concerto aparece na barra de Ordem de Ação. Quando a rodada da contagem regressiva começa, Robin sai do estado de Concerto e age imediatamente. A contagem regressiva tem sua própria VEL fixa de {{2}}.",
+        "shortDesc": "Entra no estado de Concerto, <orangeStrong>aumenta o ATQ de todos os aliados</orangeStrong> e faz com que todos os companheiros de equipe ajam imediatamente. Depois de um ataque, Robin causa <orangeStrong><u>Dano Físico Adicional</u></orangeStrong>. Enquanto Concerto dura, Robin é imune a <u>penalidades de Controle Negativo</u>. Antes de Concerto terminar, Robin não pode agir nem iniciar sua rodada até o final da contagem regressiva."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Prelúdio da Inebriação",
+        "fullDesc": "Depois de usar a Técnica, cria uma dimensão especial ao seu redor que dura por {{1}} segundos. Inimigos dentro dessa dimensão não atacarão Robin e a seguirão enquanto a dimensão estiver ativa. Depois de entrar em batalha enquanto a dimensão está ativa, Robin regenera {{2}} de Energia no início de cada onda. Apenas 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão especial ao seu redor. Inimigos dentro dessa dimensão não atacarão Robin. Depois de entrar em batalha enquanto a dimensão está ativa, Robin regenera adicionalmente <orangeStrong>{{2}}</orangeStrong> de Energia no início de cada onda."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Terra dos Sorrisos",
+      "desc": "Enquanto estiverem no estado de Concerto, a PEN de RES a Todos os Tipos de todos os aliados aumenta em {{1}}%."
+    },
+    "2": {
+      "name": "Chá da Tarde para Dois",
+      "desc": "Enquanto estiver no estado de Concerto, a VEL de todos os aliados aumenta em {{1}}%. O efeito de Regeneração de Energia do Talento aumenta adicionalmente em {{2}}."
+    },
+    "3": {
+      "name": "Afinação Inversa",
+      "desc": "Nv. de Perícia +2, até no máximo Nv. 15.\\nNv. de Perícia Suprema +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Chave da Chuva",
+      "desc": "Ao usar sua Perícia Suprema, remove penalidades de Controle Negativo de todos os aliados. Enquanto Robin estiver no estado de Concerto, aumenta a RES a Efeito de todos os aliados em {{1}}%."
+    },
+    "5": {
+      "name": "Lamento da Estrela Solitária",
+      "desc": "Nv. do ATQ Básico +1, até no máximo Nv. 10.\\nNv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Meia-Noite Sem Lua",
+      "desc": "Enquanto o estado de Concerto estiver ativo, o Dano CRIT do Dano Físico Adicional causado pela Perícia Suprema aumenta em {{2}}%. O efeito da Meia-Noite Sem Lua pode ser acionado até {{1}} vez(es). A contagem de ativação reinicia cada vez que a Perícia Suprema é usada."
+    }
+  }
+}

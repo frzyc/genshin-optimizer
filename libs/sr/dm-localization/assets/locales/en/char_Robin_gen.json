@@ -1,0 +1,66 @@
+{
+  "name": "Robin",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Wingflip White Noise",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Robin's ATK to a single target enemy.",
+        "shortDesc": "Deals minor Physical DMG to a single enemy."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Pinion's Aria",
+        "fullDesc": "Increase DMG dealt by all allies by <orangeStrong>{{1}}%</orangeStrong>, lasting for {{2}} turn(s). This duration decreases by 1 at the start of Robin's every turn.",
+        "shortDesc": "<orangeStrong>Increases DMG dealt</orangeStrong> by all allies."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Vox Harmonique, Opus Cosmique",
+        "fullDesc": "Robin enters the Concerto state and makes all other allies immediately take action.\\nWhile in the Concerto state, increases all allies' ATK by <orangeStrong>{{1}}%</orangeStrong> of Robin's ATK plus <orangeStrong>{{3}}</orangeStrong>. Moreover, after every attack by allies, Robin deals <u>Additional Physical DMG</u> equal to <orangeStrong>{{4}}%</orangeStrong> of her ATK for 1 time, with a fixed CRIT Rate for this damage set at {{5}}% and fixed CRIT DMG set at {{6}}%.\\nWhile in the Concerto state, Robin is immune to <u>Crowd Control debuffs</u> and cannot enter her turn or take action until the Concerto state ends.\\nA Concerto countdown appears on the Action Order bar. When the countdown's turn begins, Robin exits the Concerto state and immediately takes action. The countdown has its own fixed SPD of {{2}}.",
+        "shortDesc": "Enters the Concerto state, <orangeStrong>increases all allies' ATK</orangeStrong>, and causes all teammates to immediately take action. After an attack, Robin deals <orangeStrong><u>Additional Physical DMG</u></orangeStrong>. While Concerto lasts, Robin is immune to <u>Crowd Control debuffs</u>. Before Concerto ends, Robin won't take turn or action, lasting until the end of the countdown."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Overture of Inebriation",
+        "fullDesc": "After using Technique, creates a special dimension around the character that lasts for {{1}} seconds. Enemies within this dimension will not attack Robin and will follow Robin while the dimension is active. After entering battle while the dimension is active, Robin regenerates {{2}} Energy at the start of each wave. Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a special dimension around the character. Enemies within this dimension will not attack Robin. After entering battle while the dimension is active, Robin additionally regenerates <orangeStrong>{{2}}</orangeStrong> Energy at the start of each wave."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Land of Smiles",
+      "desc": "While the Concerto state is active, all allies' All-Type RES PEN increases by {{1}}%."
+    },
+    "2": {
+      "name": "Afternoon Tea For Two",
+      "desc": "While the Concerto state is active, all allies' SPD increases by {{1}}%. The Talent's Energy Regeneration effect additionally increases by {{2}}."
+    },
+    "3": {
+      "name": "Inverted Tuning",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nUltimate Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Raindrop Key",
+      "desc": "When using the Ultimate, dispels Crowd Control debuffs from all allies. While Robin is in the Concerto state, increases the Effect RES of all allies by {{1}}%."
+    },
+    "5": {
+      "name": "Lonestar's Lament",
+      "desc": "Basic ATK Lv. +1, up to a maximum of Lv. 10.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Moonless Midnight",
+      "desc": "While the Concerto state is active, the CRIT DMG for the Additional Physical DMG caused by the Ultimate increases by {{2}}%. The effect of Moonless Midnight can trigger up to {{1}} time(s). And the trigger count resets each time the Ultimate is used."
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "setName": "Vie présente d'Izumo et royaume divin de Takama",
   "setEffects": {
-    "2": "Augmente de {{1}}% l'ATQ du porteur. Si au moins un autre allié suit la même Voie que le porteur en entrant en combat, les chances de coup critique du porteur augmentent de {{2}}%."
+    "2": "Augmente l'ATQ du porteur de {{1}}%. Si au moins un autre allié suit la même Voie que le porteur en entrant en combat, les chances de coup critique du porteur augmentent de {{2}}%."
   }
 }

@@ -1,0 +1,7 @@
+{
+  "name": "Jugend in Erwartung der Entflammung",
+  "passive": {
+    "name": "Verliere nicht, vergiss nicht",
+    "description": "Erhöht den ANG des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Wenn nach Kampfeintritt zwei oder mehr Verbündete demselben Pfad folgen, wird der KRIT-SCH dieser Figuren um <orangeStrong>{{2}}%</orangeStrong> erhöht. Effekte desselben Typs sind nicht stapelbar."
+  }
+}

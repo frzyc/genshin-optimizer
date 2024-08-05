@@ -1,0 +1,6 @@
+{
+  "setName": "Duran - Vương Triều Sói Hoang",
+  "setEffects": {
+    "2": "Khi nhân vật phe ta thi triển Đòn Đánh Theo Sau, người trang bị sẽ nhận 1 tầng Công Huân, tối đa cộng dồn {{1}} tầng. Mỗi tầng Công Huân sẽ khiến sát thương Đòn Đánh Theo Sau của người trang bị gây ra tăng {{2}}%, khi cộng dồn đầy {{1}} tầng, tăng thêm {{3}}% Sát Thương Bạo Kích của người trang bị."
+  }
+}

@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Cámara de eco",
-      "desc": "El ATQ básico inflige un Daño de Rayo equivalente al {{1}}% del daño del ATQ básico a un enemigo aleatorio adyacente al objetivo."
+      "desc": "El ATQ básico inflige un Daño de Rayo equivalente al {{1}}% del daño de ATQ básico a un enemigo aleatorio adyacente al objetivo."
     },
     "2": {
       "name": "¡Otra, otra!",

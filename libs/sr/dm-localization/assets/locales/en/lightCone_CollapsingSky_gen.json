@@ -2,6 +2,6 @@
   "name": "Collapsing Sky",
   "passive": {
     "name": "Havoc",
-    "description": "Increases the wearer's Basic ATK and Skill DMG by <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "The wearer's Basic ATK and Skill deals <orangeStrong>{{1}}%</orangeStrong> more DMG."
   }
 }

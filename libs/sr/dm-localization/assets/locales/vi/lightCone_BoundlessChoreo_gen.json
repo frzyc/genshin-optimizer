@@ -1,0 +1,7 @@
+{
+  "name": "Vũ Điệu Vô Biên",
+  "passive": {
+    "name": "Thăm Dò",
+    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> tỷ lệ Bạo Kích của người trang bị. Sát Thương Bạo Kích mà người trang bị gây cho kẻ địch ở trạng thái Giảm Phòng Thủ hoặc Giảm Tốc tăng <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

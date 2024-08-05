@@ -16,7 +16,7 @@
     "skill": {
       "0": {
         "name": "Mezcla especial",
-        "fullDesc": "Regenera inmediatamente un <orangeStrong>{{1}}</orangeStrong> de los PV de un aliado.",
+        "fullDesc": "Regenera inmediatamente <orangeStrong>{{1}}</orangeStrong> PV de un aliado.",
         "shortDesc": "Regenera inmediatamente los PV de un aliado."
       }
     },

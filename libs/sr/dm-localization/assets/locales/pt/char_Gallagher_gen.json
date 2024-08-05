@@ -23,8 +23,8 @@
     "ult": {
       "0": {
         "name": "Etiqueta de Champanhe",
-        "fullDesc": "Inflige Inebriação a todos os inimigos, durando por {{2}} rodada(s). Ao mesmo tempo, causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Gallagher a todos os inimigos e aprimora o próximo ATQ Básico desta unidade para Blitz de Néctar.",
-        "shortDesc": "<orangeStrong>Inflige Inebriação</orangeStrong> a todos os inimigos e causa Dano de Fogo a eles ao mesmo tempo. Aprimora o próximo ATQ Básico desta unidade para Blitz de Néctar."
+        "fullDesc": "Inflige Inebriação a todos os inimigos, durando por {{2}} rodada(s). Ao mesmo tempo, causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Gallagher a todos os inimigos e aprimora o próximo ATQ Básico para Blitz de Néctar.",
+        "shortDesc": "<orangeStrong>Inflige Inebriação</orangeStrong> a todos os inimigos e causa Dano de Fogo a eles ao mesmo tempo. Aprimora o próximo ATQ Básico para Blitz de Néctar."
       }
     },
     "technique": {

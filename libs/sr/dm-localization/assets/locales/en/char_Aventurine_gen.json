@@ -11,14 +11,14 @@
     "skill": {
       "0": {
         "name": "Cornerstone Deluxe",
-        "fullDesc": "Provides all allies with a Fortified Wager shield that can block DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Aventurine's DEF plus <orangeStrong>{{2}}</orangeStrong>, lasting for {{3}} turn(s). When repeatedly gaining Fortified Wager, the Shield effect can stack, up to {{4}}% of the Shield provided by the current Skill.",
+        "fullDesc": "Provides all allies with a Fortified Wager shield that can block DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Aventurine's DEF plus <orangeStrong>{{2}}</orangeStrong>, lasting for {{3}} turn(s). When Fortified Wager is gained repeatedly, the Shield effect can stack, up to {{4}}% of the current Shield effect provided by the Skill.",
         "shortDesc": "Provides all allies with a Fortified Wager shield, <orangeStrong>whose Shield effect is stackable</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Roulette Shark",
-        "fullDesc": "Randomly gains 1 to {{1}} points of Blind Bet. Then inflicts Unnerved on a single target enemy, lasting for {{4}} turn(s). And deals Imaginary DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Aventurine's DEF to the single target enemy. When an ally hits an Unnerved enemy target, the CRIT DMG dealt increases by <orangeStrong>{{3}}%</orangeStrong>.",
+        "fullDesc": "Randomly gains 1 to {{1}} points of Blind Bet. Then, inflicts Unnerved on a single target enemy for {{4}} turn(s) and deals Imaginary DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Aventurine's DEF to the single target enemy. When an ally hits an Unnerved enemy target, the CRIT DMG dealt increases by <orangeStrong>{{3}}%</orangeStrong>.",
         "shortDesc": "Gains a random amount of Blind Bet points and inflicts Unnerved on a single enemy, dealing Imaginary DMG. When an ally hits an Unnerved enemy, <orangeStrong>the CRIT DMG dealt increases</orangeStrong>."
       }
     },
@@ -44,7 +44,7 @@
     },
     "2": {
       "name": "Bounded Rationality",
-      "desc": "When using Basic ATK, reduces the target's All-Type RES by {{2}}% for {{3}} turn(s)."
+      "desc": "When using the Basic ATK, reduces the target's All-Type RES by {{2}}% for {{3}} turn(s)."
     },
     "3": {
       "name": "Droprate Maxing",
@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Stag Hunt Game",
-      "desc": "For every ally with a Shield, the DMG dealt by Aventurine increases by {{1}}%, up to a maximum of {{2}}%."
+      "desc": "For every ally that holds a Shield, the DMG dealt by Aventurine increases by {{1}}%, up to a maximum of {{2}}%."
     }
   }
 }

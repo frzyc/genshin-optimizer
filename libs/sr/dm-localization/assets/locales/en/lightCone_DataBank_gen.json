@@ -2,6 +2,6 @@
   "name": "Data Bank",
   "passive": {
     "name": "Learned",
-    "description": "Increases the wearer's Ultimate DMG by <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "Increases DMG dealt by the wearer's Ultimate by <orangeStrong>{{1}}%</orangeStrong>."
   }
 }

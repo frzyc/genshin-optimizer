@@ -57,7 +57,7 @@
     },
     "4": {
       "name": "Right on the Tiles",
-      "desc": "After this character's Skill is used, there is a {{1}}% fixed chance to gain Autarky, which lasts until the end of the current turn. \\nWith Autarky, using Basic ATK or Enhanced Basic ATK immediately launches 1 follow-up attack on the same target, dealing Quantum DMG equal to 100% of the previous Basic ATK (or Enhanced Basic ATK)'s DMG."
+      "desc": "After using Skill, there is a {{1}}% fixed chance to gain Self-Sufficer, lasting until the end of the current turn. \\nWith Self-Sufficer, using Basic ATK or Enhanced Basic ATK immediately launches 1 follow-up attack on the same target, dealing Quantum DMG equal to 100% of Basic ATK DMG or Enhanced Basic ATK DMG."
     },
     "5": {
       "name": "Gambit for the Tiles",

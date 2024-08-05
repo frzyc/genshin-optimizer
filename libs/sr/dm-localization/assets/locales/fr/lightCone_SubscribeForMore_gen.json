@@ -2,6 +2,6 @@
   "name": "Abonnez-vous !",
   "passive": {
     "name": "Donnez-moi un like !",
-    "description": "Augmente les DGT de l'ATQ normale et de la compétence du porteur de <orangeStrong>{{1}}%</orangeStrong>. Cet effet augmente de <orangeStrong>{{2}}%</orangeStrong> supplémentaires lorsque l'énergie du porteur atteint son niveau maximal."
+    "description": "Augmente les DGT infligés par l'ATQ normale et la compétence du porteur de <orangeStrong>{{1}}%</orangeStrong>. Cet effet augmente de <orangeStrong>{{2}}%</orangeStrong> supplémentaires lorsque l'énergie du porteur atteint son niveau maximal."
   }
 }

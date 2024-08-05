@@ -1,0 +1,7 @@
+{
+  "name": "Sailing Towards a Second Life",
+  "passive": {
+    "name": "Rough Water",
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1}}%</orangeStrong>. The Break DMG dealt by the wearer ignores <orangeStrong>{{3}}%</orangeStrong> of the target's DEF. When the wearer's Break Effect in battle is at {{2}}% or greater, increases their SPD by <orangeStrong>{{4}}%</orangeStrong>."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Boothill",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Móng Sắt Nứt Sọ",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Boothill.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
+      },
+      "1": {
+        "name": "Nỏ Chùy Kích",
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Vật Lý bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Boothill.\\nTấn Công Thường Cường Hóa không thể hồi điểm Chiến Kỹ, và chỉ có thể lấy kẻ địch có Đối Đầu Tuyệt Mệnh làm mục tiêu.",
+        "shortDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch, chỉ có thể tấn công mục tiêu \"Đối Đầu Tuyệt Mệnh\"."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Điệu Tango Của Vũ Công Cháy Bỏng",
+        "fullDesc": "Khiến 1 kẻ địch chỉ định và bản thân vào trạng thái Đối Đầu Tuyệt Mệnh, Tấn Công Thường của Boothill được cường hóa và không thể thi triển Chiến Kỹ, duy trì {{3}} hiệp. Khi bắt đầu mỗi hiệp của Boothill, số hiệp duy trì giảm 1.\\nKẻ địch có Đối Đầu Tuyệt Mệnh sẽ rơi vào trạng thái Khiêu Khích. Khi mục tiêu này/Boothill bị đối phương tấn công, sát thương phải chịu tăng <orangeStrong>{{1}}%</orangeStrong>/{{2}}%.\\nSau khi mục tiêu này bị tiêu diệt hoặc Điểm Yếu bị phá vỡ, Boothill đều có thể nhận 1 tầng Cú Lừa Bỏ Túi, sau đó giải trừ \"Đối Đầu Tuyệt Mệnh\".\\nChiến Kỹ này không thể hồi Năng Lượng. Sau khi thi triển Chiến Kỹ này, hiệp này sẽ không kết thúc.",
+        "shortDesc": "Mở <orangeStrong>Đối Đầu Tuyệt Mệnh</orangeStrong>, mục tiêu trong trạng thái Đối Đầu Tuyệt Mệnh <orangeStrong>sau khi bị tiêu diệt hoặc Điểm Yếu bị phá vỡ</orangeStrong>, Boothill sẽ nhận được Cú Lừa Bỏ Túi và giải trừ Đối Đầu Tuyệt Mệnh. Boothill nhận được <orangeStrong>Tấn Công Thường Cường Hóa</orangeStrong> đồng thời hiệp này sẽ không kết thúc."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Buổi Tranh Tài Hoàng Hôn Của Vũ Công Quỷ Bụi",
+        "fullDesc": "Thêm Điểm Yếu Vật Lý cho 1 kẻ địch chỉ định, duy trì {{3}} hiệp.\\nGây sát thương Vật Lý cho mục tiêu này bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Boothill, và khiến mục tiêu <u>trì hoãn hành động</u> <orangeStrong>{{2}}%</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Thêm Điểm Yếu Vật Lý</orangeStrong> cho 1 kẻ địch, đồng thời gây lượng lớn Sát Thương Vật Lý cho kẻ đó, khiến mục tiêu trì hoãn hành động."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Nụ Cười Ba Nhân Chín",
+        "fullDesc": "Sau khi sử dụng Bí Kỹ, trong lần chiến đấu tiếp theo, lần đầu thi triển Chiến Kỹ, sẽ thêm cho mục tiêu Điểm Yếu Vật Lý giống với Tuyệt Kỹ, duy trì {{1}} hiệp.",
+        "shortDesc": "Sau khi dùng Bí Kỹ, lần tiếp theo vào trận, lần đầu thi triển Chiến Kỹ sẽ <orangeStrong>thêm Điểm Yếu Vật Lý</orangeStrong> cho 1 kẻ địch."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Vì Sao Đơn Độc Dặm Trường",
+      "desc": "Khi bắt đầu chiến đấu, nhận 1 tầng Cú Lừa Bỏ Túi. Khi Boothill gây sát thương sẽ bỏ qua {{1}}% Phòng Thủ của mục tiêu."
+    },
+    "2": {
+      "name": "Kẻ Săn Cột Mốc",
+      "desc": "Khi trong Đối Đầu Tuyệt Mệnh và nhận Cú Lừa Bỏ Túi, hồi {{1}} Điểm Chiến Kỹ, hơn nữa Tấn Công Kích Phá tăng {{2}}%, duy trì {{3}} hiệp. Hiệu ứng này không thể kích hoạt trùng lặp trong 1 hiệp, khi nhận Cú Lừa Bỏ Túi vượt mức cũng sẽ kích hoạt."
+    },
+    "3": {
+      "name": "Người Bảo Vệ Vườn Cẩm Thạch",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15, cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Đầu Bếp Thịt Nguội",
+      "desc": "Kẻ địch trong trạng thái Đối Đầu Tuyệt Mệnh bị Boothill tấn công, sát thương phải chịu sẽ tăng thêm {{1}}%. Khi Boothill bị kẻ địch trong trạng thái Đối Đầu Tuyệt Mệnh tấn công, hiệu ứng Tăng Sát Thương phải chịu sẽ giảm {{2}}%."
+    },
+    "5": {
+      "name": "Người Diễn Thuyết Tranh Cử",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Gấu Mèo Ở Khách Sạn Xà Beng",
+      "desc": "Khi kích hoạt Thiên Phú gây Sát Thương Phá Vỡ, sẽ gây thêm cho mục tiêu Sát Thương Phá Vỡ bằng {{1}}% bội số sát thương ban đầu, gây thêm cho mục tiêu lân cận Sát Thương Phá Vỡ bằng {{2}}% bội số sát thương ban đầu."
+    }
+  }
+}

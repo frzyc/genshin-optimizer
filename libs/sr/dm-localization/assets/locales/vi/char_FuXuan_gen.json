@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Chủng Lăng",
-      "desc": "Một khi kích hoạt \"Ma Trận Tiên Tri\", sẽ tích lũy HP đã tổn thất của toàn thể phe ta trong trận này. Tăng sát thương Tuyệt Kỹ của Fu Xuan bằng {{1}}% HP đã tổn thất tích lũy trong trận này.\\nHP đã tổn thất tích lũy trong trận này tối đa không quá {{2}}% Giới Hạn HP của Fu Xuan, sau khi thi triển Tuyệt Kỹ sẽ xóa và tích lũy lại từ đầu."
+      "desc": "Một khi kích hoạt \"Ma Trận Tiên Tri\", sẽ tích lũy HP đã tổn thất của toàn thể phe ta trong trận này. Tăng sát thương Tuyệt Kỹ gây ra của Fu Xuan bằng {{1}}% HP đã tổn thất tích lũy trong trận này.\\nHP đã tổn thất tích lũy trong trận này tối đa không quá {{2}}% Giới Hạn HP của Fu Xuan, sau khi thi triển Tuyệt Kỹ sẽ xóa và tích lũy lại từ đầu."
     }
   }
 }

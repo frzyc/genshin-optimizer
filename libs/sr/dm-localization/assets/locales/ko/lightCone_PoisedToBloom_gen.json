@@ -1,0 +1,7 @@
+{
+  "name": "피어나길 기다리는 꽃",
+  "passive": {
+    "name": "잃지도, 잊지도 않으리",
+    "description": "장착한 캐릭터의 공격력이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 전투 진입 시 운명의 길이 같은 아군 캐릭터가 2명 이상일 경우, 해당 캐릭터들의 치명타 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가한다. 같은 유형의 스킬 효과는 중복 적용되지 않는다"
+  }
+}

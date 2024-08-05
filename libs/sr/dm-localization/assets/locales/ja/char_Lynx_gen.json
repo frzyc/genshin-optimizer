@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "{RUBY_B#しおづ}塩漬{RUBY_E#}け{RUBY_B#やえいかんづめ}野営缶詰{RUBY_E#}",
-        "fullDesc": "指定した味方単体に「サバイバル反応」を付与し、最大HPをリンクスの最大HP<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>分アップさせる。その味方が「壊滅」または「存護」の運命にある場合、敵に攻撃される確率が大幅アップ。「サバイバル反応」は{{3}}ターン継続。\\n「サバイバル反応」を付与された味方は、HPをリンクスの最大HP<orangeStrong>{{4}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>回復する。",
+        "fullDesc": "指定した味方単体に「サバイバル反応」を付与し、最大HPをリンクスの最大HP<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>分アップさせる。その味方が「壊滅」または「存護」の運命にある場合、敵に攻撃される確率が大アップする。「サバイバル反応」は{{3}}ターン継続。\\n「サバイバル反応」を付与された味方は、HPをリンクスの最大HP<orangeStrong>{{4}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>回復する。",
         "shortDesc": "味方単体に「サバイバル反応」を与え、<orangeStrong>最大HPをアップ</orangeStrong>し、HPを回復する。"
       }
     },

@@ -24,7 +24,7 @@
     },
     "technique": {
       "0": {
-        "name": "Chasing the Wind",
+        "name": "Windchaser",
         "fullDesc": "After using her Technique, Yukong enters Sprint mode for {{1}} seconds. In Sprint mode, her Movement SPD increases by {{2}}%, and Yukong gains {{3}} stack(s) of \"Roaring Bowstrings\" when she enters battle by attacking enemies.",
         "shortDesc": "<orangeStrong>Increases Movement Speed</orangeStrong>. After attacking an enemy and entering battle, receive 2 stacks of Roaring Bowstrings."
       }

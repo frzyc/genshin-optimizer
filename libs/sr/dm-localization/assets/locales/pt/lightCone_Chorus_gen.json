@@ -2,6 +2,6 @@
   "name": "Refrão",
   "passive": {
     "name": "Sinergia",
-    "description": "Após entrar na batalha, aumenta o ATQ de todos os aliados em <orangeStrong>{{1}}%</orangeStrong>. Efeitos do mesmo tipo não se acumulam."
+    "description": "Após entrar na batalha, aumenta o ATQ de todos os aliados em <orangeStrong>{{1}}%</orangeStrong>. Habilidades do mesmo tipo não se acumulam."
   }
 }

@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Incomplete Combustion",
-        "fullDesc": "Setelah menggunakan Technique, Himeko akan menciptakan sebuah Dimension khusus selama {{4}} detik. Setelah memasuki pertempuran bersama musuh dalam Dimension, ada {{1}}% <u>peluang dasar</u> untuk meningkatkan {{2}}% Fire DMG yang diterima target musuh selama {{3}} giliran. Hanya boleh ada 1 efek Dimension ciptaan rekan tim dalam satu waktu.",
-        "shortDesc": "Menciptakan Dimension khusus. Setelah memasuki pertempuran dengan musuh dalam Dimension, berpeluang besar untuk <orangeStrong>meningkatkan Fire DMG yang diterima</orangeStrong> oleh target musuh."
+        "fullDesc": "Setelah menggunakan Technique, Himeko akan menciptakan sebuah dimensi khusus selama {{4}} detik. Setelah memasuki pertempuran bersama musuh dalam dimensi khusus, ada {{1}}% <u>peluang dasar</u> untuk meningkatkan {{2}}% Fire DMG yang diterima target musuh selama {{3}} giliran. Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
+        "shortDesc": "Menciptakan dimensi khusus. Setelah memasuki pertempuran dengan musuh dalam dimensi khusus, berpeluang besar untuk <orangeStrong>meningkatkan Fire DMG yang diterima</orangeStrong> oleh target musuh."
       }
     },
     "overworld": {

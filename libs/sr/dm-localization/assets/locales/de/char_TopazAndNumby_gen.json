@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Schwierigkeiten beim Bezahlen?",
-        "fullDesc": "Verursacht bei einem anvisierten Gegner „Schuldennachweis“ und erhöht den erlittenen SCH des Ziels aus <u>Folgeangriffen</u> um <orangeStrong>{{2}}%</orangeStrong>. Der „Schuldennachweis“ wirkt nur auf das letzte Ziel, auf das er angewendet wird. Wenn sich zu Beginn der Runde eines Verbündeten oder während der Aktion eines Verbündeten keine Gegner mit „Schuldennachweis“ auf dem Feld befinden, verursacht Topaz bei einem zufälligen Gegner „Schuldennachweis“.\\nKontie fügt diesem Ziel Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG von Topaz zu. Der Einsatz dieser Fertigkeit, um SCH zu verursachen, wird als ein <u>Folgeangriff</u> gewertet.",
-        "shortDesc": "Verursacht bei einem Gegner den Status „Schuldennachweis“ und lässt ihn <orangeStrong>bei Folgeangriffen mehr SCH erleiden</orangeStrong>. Kontie fügt dem Ziel Feuer-SCH zu."
+        "fullDesc": "Verursacht bei einem anvisierten Gegner „Schuldennachweis“ und erhöht den erlittenen <u>Folgeangriff-SCH</u> des Ziels um <orangeStrong>{{2}}%</orangeStrong>. Der „Schuldennachweis“ wirkt nur auf das letzte Ziel, auf das er angewendet wird. Wenn sich zu Beginn der Runde eines Verbündeten oder während der Aktion eines Verbündeten keine Gegner mit „Schuldennachweis“ auf dem Feld befinden, verursacht Topaz bei einem zufälligen Gegner „Schuldennachweis“.\\nKontie fügt diesem Ziel Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG von Topaz zu. Der Einsatz dieser Fertigkeit, um SCH zu verursachen, wird als ein <u>Folgeangriff</u> gewertet.",
+        "shortDesc": "Verursacht bei einem Gegner „Schuldennachweis“ und lässt ihn <orangeStrong>mehr Folgeangriff-SCH erleiden</orangeStrong>. Kontie fügt dem Ziel Feuer-SCH zu."
       }
     },
     "ult": {
@@ -25,7 +25,7 @@
     "technique": {
       "0": {
         "name": "Explizite Subvention",
-        "fullDesc": "Beschwört Kontie, wenn Topaz die Karte betritt. Kontie sucht automatisch nach gewöhnlichen Schätzen und Sparschweinen in einer bestimmten Reichweite.\\nNach dem aktiven Einsatz der Technik wird Topaz‘ Energie nach Konties erstem Angriff im nächsten Kampf um {{1}} Pkt. wiederhergestellt.\\nNach dem aktiven Einsatz der Technik und dem Besiegen von Gegnern auf der offenen Karte wird zusätzlich eine kleine Menge Credits erhalten, wenn Topaz noch im Team ist. Nur {{2}} zusätzliche Credits können pro Standardtag erhalten werden.\\nNach dem aktiven Einsatz der Technik und dem Besiegen von Gegnern in der Universum-Simulation wird zusätzlich eine kleine Menge an Kosmischen Fragmenten erhalten. Außerdem besteht eine geringe Chance, 1 zufällige Kuriosität zu erhalten.",
+        "fullDesc": "Beschwört Kontie, wenn Topaz die Karte betritt. Kontie sucht automatisch nach gewöhnlichen Schätzen und Sparschweinen in einer bestimmten Reichweite.\\nNach dem aktiven Einsatz der Technik wird Topaz‘ Energie nach Konties erstem Angriff im nächsten Kampf um {{1}} Pkt. wiederhergestellt.\\nNach dem aktiven Einsatz der Technik und dem Besiegen von Gegnern auf der offenen Karte wird zusätzlich eine kleine Menge Credits erhalten, wenn Topaz noch im Team ist. Nur {{2}} zusätzliche Credits können pro Standardtag erhalten werden.\\nNach dem aktiven Einsatz der Technik und dem Besiegen von Gegnern in Universum-Simulation oder Divergentes Universum wird zusätzlich eine kleine Menge an Kosmischen Fragmenten erhalten. Außerdem besteht eine geringe Chance, 1 zufällige Kuriosität zu erhalten.",
         "shortDesc": "<orangeStrong>Beschwört Kontie, sich in einem Labyrinth anzuschließen</orangeStrong>. Kontie wird automatisch <orangeStrong>nach gewöhnlichen Schätzen und Sparschweinen in der Nähe suchen</orangeStrong>. Beim Einsatz der Technik wird die Energie für Topaz nach Konties erstem Angriff im nächsten Kampf wiederhergestellt."
       }
     },

@@ -72,17 +72,18 @@ export type PropertyType =
 
 const avatarSkillTreeConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/AvatarSkillTreeConfig.json')
-) as Record<string, Record<string, AvatarSkillTreeConfig>>
+) as AvatarSkillTreeConfig[]
 
 const avatarSkillTreeConfig = objKeyMap(
   Object.keys(characterIdMap) as AvatarId[],
   (avatarId) => {
     const data = {} as Record<string, AvatarSkillTreeConfig[]>
-    for (const value of Object.values(avatarSkillTreeConfigSrc)) {
-      const skillArr = Object.values(value)
-      if (skillArr[0].AvatarID.toString() === avatarId)
-        data[skillArr[0].PointID] = skillArr
-    }
+    avatarSkillTreeConfigSrc.forEach((skill) => {
+      if (skill.AvatarID.toString() === avatarId) {
+        if (!data[skill.PointID]) data[skill.PointID] = []
+        data[skill.PointID].push(skill)
+      }
+    })
     return data
   }
 ) as Record<AvatarId, Record<string, AvatarSkillTreeConfig[]>>

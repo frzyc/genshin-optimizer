@@ -57,7 +57,7 @@
     },
     "4": {
       "name": "Combo oportuno, la última ficha espera",
-      "desc": "Tras usar su habilidad básica, Qingque tiene un {{1}}% de probabilidad fija de obtener Autosuficiencia hasta que termine el turno.\\nEn el estado de Autosuficiencia, al usar el ATQ básico o el ATQ básico potenciado, se lanza inmediatamente un ataque adicional que inflige al mismo objetivo u objetivos un Daño Cuántico equivalente al 100% del daño del ATQ básico o del ATQ básico potenciado."
+      "desc": "Tras usar su habilidad básica, Qingque tiene un {{1}}% de probabilidad fija de obtener Autosuficiencia hasta que termine el turno.\\nEn el estado de Autosuficiencia, al usar el ATQ básico o el ATQ básico potenciado, se lanza inmediatamente un ataque adicional que inflige al mismo objetivo u objetivos un Daño Cuántico equivalente al 100% del daño de ATQ básico o de ATQ básico potenciado."
     },
     "5": {
       "name": "Fichas sacadas, suerte acabada",

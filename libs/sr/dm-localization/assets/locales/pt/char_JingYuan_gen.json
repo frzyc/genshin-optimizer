@@ -24,7 +24,7 @@
     },
     "technique": {
       "0": {
-        "name": "Invocação de Espírito",
+        "name": "Invocação de Spiritus",
         "fullDesc": "Depois da que a Técnica é utilizada, os Golpes por Ação do Senhor dos Raios na primeira rodada aumentam em {{1}} no início da próxima batalha.",
         "shortDesc": "Após usar a Técnica, na próxima batalha, <orangeStrong>aumenta os Golpes por Ação do Senhor dos Raios</orangeStrong>."
       }
@@ -40,11 +40,11 @@
   "ranks": {
     "1": {
       "name": "Corte, Mares Partidos",
-      "desc": "Quando o Senhor dos Raios ataca, o multiplicador de Dano nos inimigos adjacentes ao inimigo-alvo aumenta em uma quantidade extra igual a {{1}}% do multiplicador de Dano contra o inimigo-alvo."
+      "desc": "Quando o Senhor dos Raios ataca, o multiplicador de Dano nos inimigos adjacentes ao inimigo-alvo aumenta em uma quantidade extra igual a {{1}}% do multiplicador de Dano contra o inimigo-alvo principal."
     },
     "2": {
       "name": "Golpe, Céus Esmagados",
-      "desc": "Depois que o Senhor dos Raios age, o Dano causado pelo ATQ Básico, a Perícia e a Perícia Suprema de Jing Yuan aumentam em {{1}}% por {{2}} rodada(s)."
+      "desc": "Depois que o Senhor dos Raios age, o Dano causado pelo ATQ Básico, pela Perícia e pela Perícia Suprema de Jing Yuan aumenta em {{1}}% por {{2}} rodada(s)."
     },
     "3": {
       "name": "Ataque, Sóis Subjulgados",

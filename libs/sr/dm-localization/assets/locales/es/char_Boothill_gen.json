@@ -1,0 +1,71 @@
+{
+  "name": "Boothill",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Espuelas rompetestas",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Boothill como Daño Físico a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
+      },
+      "1": {
+        "name": "Percutor de repetición",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Boothill como Daño Físico a un enemigo. \\nEl ATQ básico potenciado no recupera pts. de habilidad básica y solo puede tener como objetivo al enemigo que tenga Duelo a muerte.",
+        "shortDesc": "Inflige Daño Físico a un enemigo. Solo puede atacar al enemigo con Duelo a muerte."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Tango de las brasas ardientes",
+        "fullDesc": "Hace que Boothill y un enemigo entren en el estado de Duelo a muerte. El ATQ básico de Boothill se potencia y no puede usar la habilidad básica durante {{3}} turnos. Esta duración se reduce en 1 al comienzo del turno de Boothill.\\nEl objetivo enemigo con Duelo a muerte es afectado con Provocación. Cuando el enemigo/Boothill reciben un ataque uno del otro, el daño recibido aumenta en un <orangeStrong>{{1}}%</orangeStrong>/{{2}}%.\\nDespués de que este enemigo sea derrotado o se rompa su Debilidad, Boothill obtiene 1 acumulación de Ventaja en el bolsillo y luego disipa Duelo a muerte.\\nEsta habilidad básica no puede recuperar energía y el turno no termina.",
+        "shortDesc": "Inicia <orangeStrong>Duelo a muerte</orangeStrong>. Después de que el objetivo de Duelo a muerte <orangeStrong>sea derrotado o se rompa su Debilidad</orangeStrong>, Boothill obtiene Ventaja en el bolsillo y disipa Duelo a muerte. <orangeStrong>Potencia su ATQ básico</orangeStrong> y el turno no termina."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Rodeo vespertino del diablo de polvo",
+        "fullDesc": "Aplica Debilidad Física a un enemigo durante {{3}} turnos.\\nAdemás, inflige al enemigo un Daño Físico equivalente al <orangeStrong>{{1}}%</orangeStrong> del ATQ de Boothill y <u>retrasa su acción</u> en un <orangeStrong>{{2}}%</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Aplica Debilidad Física</orangeStrong> a un enemigo. Además, inflige gran cantidad de Daño Físico y retrasa la acción del enemigo."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Sonrisa 3×9",
+        "fullDesc": "La primera vez que use la habilidad básica en el siguiente combate después de usar la técnica, afecta al objetivo con una Debilidad Física equivalente a la de la habilidad definitiva durante {{1}} turnos.",
+        "shortDesc": "Tras usar la técnica, <orangeStrong>aplica Debilidad Física</orangeStrong> a un enemigo la primera vez que use la habilidad básica en el siguiente combate."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Estrella solitaria del sendero polvoriento",
+      "desc": "Al inicio de la batalla, obtiene 1 acumulación de Ventaja en el bolsillo. Cuando Boothill inflige daño, ignora un {{1}}% de la DEF del objetivo."
+    },
+    "2": {
+      "name": "Traficante de hitos",
+      "desc": "Cuando está en el estado de Duelo a muerte y obtiene Ventaja en el bolsillo, recupera {{1}} pt. de habilidad básica y aumenta su efecto de Ruptura en un {{2}}% durante {{3}} turnos. Este efecto no se puede activar repetidamente en el mismo turno, y también se puede activar al obtener acumulaciones de Ventaja en el bolsillo por encima del límite."
+    },
+    "3": {
+      "name": "Guardia del jardín de mármol",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Chef de fiambres",
+      "desc": "Cuando el enemigo con Duelo a muerte es atacado por Boothill, el daño recibido aumenta un {{1}}% adicional. Cuando Boothill es atacado por un enemigo con Duelo a muerte, el efecto de aumento de daño recibido disminuye en un {{2}}%."
+    },
+    "5": {
+      "name": "Discurso en el tocón",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Mapache del hotel Palanca",
+      "desc": "Cuando inflige Daño de Ruptura activado por el talento, inflige adicionalmente un {{1}}% del multiplicador de Daño de Ruptura al objetivo y un {{2}}% del multiplicador del Daño de Ruptura a los objetivos adyacentes."
+    }
+  }
+}

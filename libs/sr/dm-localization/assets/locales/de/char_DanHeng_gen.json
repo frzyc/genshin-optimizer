@@ -11,14 +11,14 @@
     "skill": {
       "0": {
         "name": "Ritter-Speertechnik: Sturzflut",
-        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dan Hengs ANG zu.\\nVerringert die GES des Ziels mit einer <u>Grundchance</u> von {{4}}% für {{3}} Rd. um {{2}}%, wenn ein kritischer Treffer ausgelöst wird.",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dan Hengs ANG zu.\\nVerringert die GES des Ziels mit einer <u>Grundchance</u> von {{4}}% für {{3}} Rd. um {{2}}%, wenn der durch Fertigkeiten verursachte SCH einen kritischen Treffer auslöst.",
         "shortDesc": "Fügt einem Gegner Wind-SCH zu. Nach einem KRIT wird das Ziel mit hoher Wahrscheinlichkeit verlangsamt."
       }
     },
     "ult": {
       "0": {
         "name": "Ätherischer Traum",
-        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dan Hengs ANG zu. Erhöht den durch Ultimate verursachten SCH-Multiplikator um <orangeStrong>{{2}}%</orangeStrong>, wenn der Gegner verlangsamt ist.",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dan Hengs ANG zu. Erhöht den durch Ultimates verursachten SCH-Multiplikator um <orangeStrong>{{2}}%</orangeStrong>, wenn der getroffene Gegner verlangsamt ist.",
         "shortDesc": "Fügt einem Gegner massiven Wind-SCH zu. Wenn der Gegner verlangsamt wird, steigt der verursachte SCH."
       }
     },

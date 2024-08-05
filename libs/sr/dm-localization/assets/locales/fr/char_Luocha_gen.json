@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Ablution de rapidité",
-      "desc": "Tant que le Champ est actif, l'ATQ de tous les alliés augmente de {{1}}%."
+      "desc": "Tant que la zone est active, l'ATQ de tous les alliés augmente de {{1}}%."
     },
     "2": {
       "name": "Cadeau de pureté",
@@ -52,7 +52,7 @@
     },
     "4": {
       "name": "Lourde est la couronne",
-      "desc": "Lorsque le Champ de Luocha est actif, les ennemis sont affaiblis et les DGT qu'ils infligent diminuent de {{1}}%."
+      "desc": "Lorsque la zone de Luocha est active, les ennemis sont affaiblis et les DGT qu'ils infligent diminuent de {{1}}%."
     },
     "5": {
       "name": "Stigmates du tourment",

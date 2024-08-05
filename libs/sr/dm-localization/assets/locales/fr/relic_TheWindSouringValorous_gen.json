@@ -1,0 +1,7 @@
+{
+  "setName": "Vaillance du guerrier du vent",
+  "setEffects": {
+    "2": "Augmente l'ATQ de {{1}}%.",
+    "4": "Augmente les chances de coup critique du porteur de {{1}}%. Après que le porteur a utilisé une attaque de suivi, augmente les DGT infligés par l'ultime de {{2}}%, durant {{3}} tour."
+  }
+}

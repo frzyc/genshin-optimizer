@@ -1,5 +1,9 @@
 import { generateIndexFromObj } from '@genshin-optimizer/common/pipeline'
-import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
+import {
+  crawlObject,
+  crawlObjectAsync,
+  layeredAssignment,
+} from '@genshin-optimizer/common/util'
 import { AssetData } from '@genshin-optimizer/sr/assets-data'
 import { DM2D_PATH } from '@genshin-optimizer/sr/dm'
 import { workspaceRoot } from '@nx/devkit'
@@ -46,24 +50,43 @@ export default async function runExecutor(
     )
   } else if (options.fetchAssets === 'yatta') {
     console.log('Fetching from yatta.top')
-    await crawlObject(
+    await crawlObjectAsync(
       AssetData,
       [],
       (s) => typeof s === 'string',
       async (filePath: string, keys) => {
         const fileName = keys.slice(-1)
-        const folderPath = keys.slice(0, -1).join('/')
-        const realFileName = filePath.split('/').at(-1) ?? ''
-        const yatta = `https://api.yatta.top/hsr/assets/UI/skill/${realFileName}`
-        const file = await fetch(yatta)
-        const dest = path.resolve(
-          `${DEST_PROJ_PATH}/gen/${folderPath}/${fileName}.png`
+        const subFolderPath = keys.slice(0, -1).join('/')
+        const yattaFileName = filePath.split('/').at(-1) ?? ''
+        const yatta = `https://api.yatta.top/hsr/assets/UI/skill/${yattaFileName}`
+        const destFolder = path.resolve(
+          `${DEST_PROJ_PATH}/gen/${subFolderPath}`
         )
-        const filestream = fs.createWriteStream(dest)
-        if (file.body !== null)
+        const destFile = path.resolve(`${destFolder}/${fileName}.png`)
+
+        if (!fs.existsSync(destFolder)) fs.mkdirSync(destFolder)
+
+        const filestream = fs.createWriteStream(destFile)
+
+        try {
+          const yattaImage = await fetch(yatta)
+          if (yattaImage.body === null) {
+            console.log(
+              `File body null for ${yatta} to be stored in ${destFile}`
+            )
+            return
+          }
           await finished(
-            Readable.fromWeb(file.body as ReadableStream<any>).pipe(filestream)
+            Readable.fromWeb(yattaImage.body as ReadableStream<any>).pipe(
+              filestream
+            )
           )
+        } catch (exception) {
+          console.log(
+            `Exception when fetching ${yatta} for ${destFile}: ${exception}`
+          )
+          throw exception
+        }
       }
     )
   } else {

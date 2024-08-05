@@ -11,14 +11,14 @@
     "skill": {
       "0": {
         "name": "Cloudlancer Art: Torrent",
-        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dan Heng's ATK to a single enemy.\\nOn a CRIT Hit, there is a {{4}}% <u>base chance</u> to reduce the target's SPD by {{2}}% for {{3}} turn(s).",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dan Heng's ATK to a single enemy.\\nWhen DMG dealt by Skill triggers CRIT Hit, there is a {{4}}% <u>base chance</u> to reduce the target's SPD by {{2}}%, lasting for {{3}} turn(s).",
         "shortDesc": "Deals Wind DMG to a single enemy. Upon a CRIT Hit, there is a high chance of Slowing the enemy."
       }
     },
     "ult": {
       "0": {
         "name": "Ethereal Dream",
-        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dan Heng's ATK to a single enemy. If the enemy is Slowed, the Ultimate's DMG multiplier increases by <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dan Heng's ATK to a single target enemy. If the attacked enemy is Slowed, the multiplier for the DMG dealt by Ultimate increases by <orangeStrong>{{2}}%</orangeStrong>.",
         "shortDesc": "Deals massive Wind DMG to a single enemy. If the enemy is Slowed, DMG multiplier dealt will be increased."
       }
     },

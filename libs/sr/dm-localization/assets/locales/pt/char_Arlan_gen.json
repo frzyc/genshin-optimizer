@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Autossacrifício",
-      "desc": "Quando os PV caem para 50% ou menos, a Perícia Suprema causa {{1}}% a mais de Dano. O multiplicador de Dano do Dano recebido pelo inimigo-alvo agora também é aplicado aos inimigos adjacentes."
+      "desc": "Quando os PV caem para 50% ou menos, a Perícia Suprema causa {{1}}% a mais de Dano. O multiplicador de Dano para alvos adjacentes é elevado ao mesmo nível que o do alvo principal."
     }
   }
 }

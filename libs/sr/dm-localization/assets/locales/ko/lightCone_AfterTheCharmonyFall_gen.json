@@ -1,0 +1,7 @@
+{
+  "name": "조화가 침묵한 후",
+  "passive": {
+    "name": "적막",
+    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 필살기 발동 후 속도가 <orangeStrong>{{2}}%</orangeStrong> 증가한다, 지속 시간: {{3}}턴"
+  }
+}

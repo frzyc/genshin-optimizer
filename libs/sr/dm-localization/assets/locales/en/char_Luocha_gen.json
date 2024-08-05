@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Ablution of the Quick",
-      "desc": "While the Field is active, ATK of all allies increases by {{1}}%."
+      "desc": "While the Zone is active, ATK of all allies increases by {{1}}%."
     },
     "2": {
       "name": "Bestowal From the Pure",
@@ -52,7 +52,7 @@
     },
     "4": {
       "name": "Heavy Lies the Crown",
-      "desc": "When Luocha's Field is active, enemies become Weakened and deal {{1}}% less DMG."
+      "desc": "When Luocha's Zone is active, enemies become Weakened and deal {{1}}% less DMG."
     },
     "5": {
       "name": "Cicatrix 'Neath the Pain",

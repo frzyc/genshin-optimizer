@@ -24,7 +24,7 @@
     },
     "technique": {
       "0": {
-        "name": "Seguindo o Vento",
+        "name": "Caçador de Ventos",
         "fullDesc": "Após usar sua Técnica, Yukong entra no modo Corrida por {{1}} segundos. Enquanto estiver no modo Corrida, a VEL de Movimento aumenta em {{2}}%, e Yukong recebe {{3}} acúmulo(s) do \"Arco Estrondoso\" ao entrar em batalha atacando inimigos.",
         "shortDesc": "<orangeStrong>Aumenta a VEL de Movimento</orangeStrong>. Após atacar um inimigo e entrar na batalha, recebe 2 acúmulos de \"Arco Estrondoso\"."
       }

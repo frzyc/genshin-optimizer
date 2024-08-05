@@ -1,0 +1,71 @@
+{
+  "name": "7. März",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Kristallschwert der Geisteraustreibung",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von 7. März’ ANG zu. Erhält dann {{2}} Pkt. Aufladung.",
+        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu. Erhält <orangeStrong>{{2}}</orangeStrong> Pkt. Aufladung."
+      },
+      "1": {
+        "name": "Zwischen die Augenbrauen und mitten ins Herz",
+        "fullDesc": "Anfänglich wird {{4}}-mal SCH verursacht. Jeder Treffer fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von 7. März’ ANG zu. Immer wenn der letzte Treffer zugefügt wird, besteht eine <u>feste Chance</u> von {{2}}%, noch 1 weiteren Treffer zu verursachen, bis zu {{3}} zusätzlichen Treffern. Die Energie, die der verstärkte Standardangriff wiederherstellt, wird nicht mit der Trefferzahl erhöht.\\nDer verstärkte Standardangriff kann keine Fertigkeitspunkte wiederherstellen.",
+        "shortDesc": "Fügt einem Gegner imaginären SCH zu. Anfänglich wird <orangeStrong>{{4}}</orangeStrong>-mal SCH verursacht. <orangeStrong>Es besteht eine Chance, zusätzlich bis zu <color=#f29e38ff>#3[i]</orangeStrong>-mal SCH zu verursachen.</color>"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Meister, trink etwas Tee!",
+        "fullDesc": "Lässt einen Verbündeten außer der Figur selbst zum „Meister“ werden. Seine GES wird um <orangeStrong>{{1}}%</orangeStrong> erhöht. Nur das letzte Ziel der Fertigkeit gilt als Meister von 7. März.\\nWenn der Meister mit bestimmten Pfaden auf dem Kampffeld ist, werden entsprechende Effekte beim Einsatz von Standardangriffen oder beim Verursachen von SCH durch verstärkte Standardangriffe mit 1 Treffer ausgelöst:\\nDie Gelehrsamkeit, Die Zerstörung, Die Jagd: Verursacht basierend auf dem Typ des Meisters <u>zusätzlichen SCH</u> in Höhe von <orangeStrong>{{2}}%</orangeStrong> von 7. März’ ANG.\\nDie Harmonie, Die Nichtigkeit, Die Bewahrung, Der Überfluss: Der WDS-Reduzierungswert des verursachten SCH wird um {{3}}% erhöht.",
+        "shortDesc": "Lässt einen Verbündeten zum „Meister“ werden. Wenn er seinen Standardangriff einsetzt oder SCH durch einen verstärkten Standardangriff verursacht, wird basierend auf dem <orangeStrong>Pfad des Meisters</orangeStrong> der entsprechende Effekt ausgelöst.\\nDie Gelehrsamkeit, Die Zerstörung, Die Jagd: Verursacht basierend auf dem Typ des Meisters <orangeStrong><u>zusätzlichen SCH</u></orangeStrong>.\\nDie Harmonie, Die Nichtigkeit, Die Bewahrung, Der Überfluss: Erhöht <orangeStrong>WDS-Reduzierungswert</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "7. März, Heldin der Welt",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von 7. März’ ANG zu.\\nErhöht die anfängliche Trefferzahl des nächsten verstärkten Standardangriffs um {{2}}. Erhöht die <u>feste Chance</u> für zusätzlichen SCH um {{3}}%.",
+        "shortDesc": "Fügt einem Gegner imaginären SCH zu und <orangeStrong>erhöht</orangeStrong> die Trefferzahl und die Chance auf SCH des <orangeStrong>nächsten verstärkten Standardangriffs</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Drei Mahlzeiten in einem Zug",
+        "fullDesc": "Wenn 7. März im Team ist, erhält sie zu Beginn des nächsten Kampfes 1 Pkt. Aufladung für jedes Teammitglied, das eine Technik eingesetzt hat, bis zu {{1}} Pkt.\\nNach Einsatz der Technik stellt 7. März zu Beginn des nächsten Kampfes {{2}} Pkt. Energie wieder her.",
+        "shortDesc": "Jedes Mal, wenn ein Teammitglied seine Technik einsetzt, erhält 7. März beim nächsten Kampfeintritt Aufladung. Nach Einsatz der Technik stellt sie beim nächsten Kampfeintritt Energie wieder her."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Mein Schwert rührt das Sternenlicht",
+      "desc": "Wenn sich der „Meister“ auf dem Kampffeld befindet, wird 7. März’ GES um {{1}}% erhöht."
+    },
+    "2": {
+      "name": "Klingentanz im Schnee",
+      "desc": "Jedes Mal, wenn der „Meister“ einen Standardangriff oder eine Fertigkeit gegen einen Gegner einsetzt, startet 7. März sofort einen Folgeangriff, der dem Hauptziel dieses Angriffs imaginären SCH in Höhe von {{1}}% von 7. März’ ANG zufügt und den entsprechenden Effekt basierend auf dem Pfad des Meisters auslöst. 7. März erhält danach {{3}} Pkt. Aufladung. Greift bei nicht vorhandenem Hauptziel einen zufälligen Gegner an. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden."
+    },
+    "3": {
+      "name": "Kluge Köpfe und starke Fähigkeiten",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Auch Drachen können süß sein",
+      "desc": "Stellt zu Beginn der Runde {{1}} Pkt. Energie wieder her."
+    },
+    "5": {
+      "name": "Mehr Kampfkunst, weniger Süßigkeiten",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Das beste Mädchen der Welt",
+      "desc": "Erhöht nach dem Einsatz des Ultimates den verursachten KRIT-SCH des nächsten verstärkten Standardangriffs um {{1}}%."
+    }
+  }
+}

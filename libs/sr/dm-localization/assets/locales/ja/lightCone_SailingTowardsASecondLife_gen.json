@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#にどめ}二度目{RUBY_E#}の{RUBY_B#せい}生{RUBY_E#}に{RUBY_B#む}向{RUBY_E#}かって",
+  "passive": {
+    "name": "{RUBY_B#くなん}苦難{RUBY_E#}の{RUBY_B#こうこう}航行{RUBY_E#}",
+    "description": "装備キャラの撃破特効+<orangeStrong>{{1}}%</orangeStrong>、与える弱点撃破ダメージが敵の防御力を<orangeStrong>{{3}}%</orangeStrong>無視する。戦闘中、装備キャラの撃破特効が{{2}}%以上の場合、速度<orangeStrong>+<unbreak>#4[i]%</orangeStrong></color>。"
+  }
+}

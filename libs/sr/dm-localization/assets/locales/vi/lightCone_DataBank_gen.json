@@ -2,6 +2,6 @@
   "name": "Kho Lưu Trữ",
   "passive": {
     "name": "Học Thức",
-    "description": "Khiến sát thương do Tuyệt Kỹ gây ra của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "Khiến sát thương Tuyệt Kỹ gây ra của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>."
   }
 }

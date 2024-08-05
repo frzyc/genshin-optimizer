@@ -30,7 +30,7 @@
     "technique": {
       "0": {
         "name": "Resplandor de la verdad",
-        "fullDesc": "Tras usar la técnica, crea una zona especial a su alrededor que dura {{3}} segundos. Los enemigos que estén en la zona especial son afectados con Congelación. Al entrar en combate con los enemigos dentro de la zona, recupera {{6}} pts. de energía, obtiene {{1}} acumulación de Sizigia y tiene una <u>probabilidad base</u> del {{2}}% de congelar a los enemigos durante {{4}} turno. Los enemigos congelados no se pueden mover y al principio de cada turno reciben un Daño de Hielo <u>adicional</u> equivalente al {{5}}% del ATQ de Jingliu. Solo puede haber una zona especial creada por los aliados a la vez.",
+        "fullDesc": "Tras usar la técnica, crea una zona especial a su alrededor que dura {{3}} segundos. Los enemigos que estén en la zona especial son afectados con Congelación. Al entrar en combate con los enemigos dentro de la zona, recupera {{6}} pts. de energía, obtiene {{1}} acumulación de Sizigia y tiene una <u>probabilidad base</u> del {{2}}% de congelar a los enemigos durante {{4}} turno. Los enemigos congelados no pueden actuar y al principio de cada turno reciben un Daño de Hielo <u>adicional</u> equivalente al {{5}}% del ATQ de Jingliu. Solo puede haber una zona especial creada por los aliados a la vez.",
         "shortDesc": "Crea una zona especial a su alrededor. Los enemigos que estén en la zona <orangeStrong>se congelan</orangeStrong>. Al entrar en combate con los enemigos dentro de la zona, recupera energía, obtiene 1 acumulación de Sizigia y tiene una gran probabilidad de <orangeStrong>congelar</orangeStrong> a los enemigos."
       }
     },

@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Slashed Dream Cries in Red",
-        "fullDesc": "Sequentially unleash Rainblade 3 times and Stygian Resurge 1 time, dealing Lightning DMG up to <orangeStrong>{{6}}%</orangeStrong> of Acheron's ATK to a single target enemy, as well as Lightning DMG up to <orangeStrong>{{7}}%</orangeStrong> of Acheron's ATK to other targets.\\n\\nRainblade: Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Acheron's ATK to a single target enemy and removes up to 3 stacks of Crimson Knot from the target. When Crimson Knot is removed, immediately deals Lightning DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Acheron's ATK to all enemies. For every stack of Crimson Knot removed, this DMG Multiplier is additionally increased, up to a maximum of <orangeStrong>{{5}}%</orangeStrong>.\\n\\nStygian Resurge: Deals Lightning DMG equal to <orangeStrong>{{3}}%</orangeStrong> of Acheron's ATK to all enemies and remove all Crimson Knots.\\nCrimson Knot cannot be applied to enemies during the Ultimate.",
+        "fullDesc": "Sequentially unleash Rainblade 3 times and Stygian Resurge 1 time, dealing Lightning DMG up to <orangeStrong>{{6}}%</orangeStrong> of Acheron's ATK to a single target enemy, as well as Lightning DMG up to <orangeStrong>{{7}}%</orangeStrong> of Acheron's ATK to other targets.\\n\\nRainblade: Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Acheron's ATK to a single target enemy and removes up to 3 stacks of Crimson Knot from the target. When Crimson Knot is removed, immediately deals Lightning DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Acheron's ATK to all enemies. For every stack of Crimson Knot removed, this DMG Multiplier is additionally increased, up to a maximum of <orangeStrong>{{5}}%</orangeStrong>.\\n\\nStygian Resurge: Deals Lightning DMG equal to <orangeStrong>{{3}}%</orangeStrong> of Acheron's ATK to all enemies and remove all Crimson Knots.\\n\\nCrimson Knot cannot be applied to enemies during the Ultimate.",
         "shortDesc": "Deals 3 hits of minor Lightning DMG to a single enemy. If Crimson Knot is removed from the target, then deals minor Lightning DMG to all enemies. Finally, deals 1 hit of Lightning DMG to all enemies and removes all Crimson Knots."
       },
       "1": {
@@ -45,7 +45,7 @@
     "technique": {
       "0": {
         "name": "Quadrivalent Ascendance",
-        "fullDesc": "Immediately attacks the enemy. At the start of each wave, gains Quadrivalent Ascendance, dealing Lightning DMG equal to {{1}}% of Acheron's ATK to all enemies and reducing Toughness of all enemies irrespective of Weakness Types. When Weakness is broken, triggers the Lightning Weakness Break effect.\\nQuadrivalent Ascendance: After using the Ultimate, Acheron gains {{2}} point(s) of Slashed Dream and inflicts {{2}} stack(s) of Crimson Knot on a single random enemy.\\nIf attacking a normal enemy, immediately defeats them without entering combat. When not hitting enemies, no Technique Points are consumed.",
+        "fullDesc": "Immediately attacks the enemy. At the start of each wave, gains Quadrivalent Ascendance, dealing Lightning DMG equal to {{1}}% of Acheron's ATK to all enemies and reducing Toughness of all enemies irrespective of Weakness Types. When breaking Weaknesses, triggers the Lightning Weakness Break effect.\\nQuadrivalent Ascendance: After using the Ultimate, Acheron gains {{2}} point(s) of Slashed Dream and inflicts {{2}} stack(s) of Crimson Knot on a single random enemy.\\nIf attacking a normal enemy, immediately defeats them without entering combat. When not hitting enemies, no Technique Points are consumed.",
         "shortDesc": "Attacks the enemy. At the start of each wave, gains Quadrivalent Ascendance, dealing Lightning DMG to all enemies and reducing Toughness <orangeStrong>regardless of Weakness Types</orangeStrong>.\\nIf attacking a normal enemy, <orangeStrong>immediately defeats them</orangeStrong> without entering combat. When not hitting enemies, no Technique Points are consumed."
       }
     },
@@ -60,7 +60,7 @@
   "ranks": {
     "1": {
       "name": "Silenced Sky Spake Sooth",
-      "desc": "CRIT Rate increases by {{1}}% when dealing DMG to debuffed enemies."
+      "desc": "When dealing DMG to debuffed enemies, increases the CRIT Rate by {{1}}%."
     },
     "2": {
       "name": "Mute Thunder in Still Tempest",
@@ -72,7 +72,7 @@
     },
     "4": {
       "name": "Shrined Fire for Mirrored Soul",
-      "desc": "When enemy targets enter combat, afflict them with the Ultimate DMG Vulnerable Vulnerability state, increasing the amount of Ultimate DMG they take by {{1}}%."
+      "desc": "When enemy targets enter combat, inflicts them with the Ultimate DMG Vulnerability, increasing the amount of Ultimate DMG they take by {{1}}%."
     },
     "5": {
       "name": "Strewn Souls on Erased Earths",
@@ -80,7 +80,7 @@
     },
     "6": {
       "name": "Apocalypse, the Emancipator",
-      "desc": "Increases the All-Type RES PEN for the Ultimate DMG dealt by Acheron by {{1}}%. The DMG dealt by Basic ATK and Skill will also be considered as Ultimate DMG and can reduce enemy toughness regardless of Weakness Types. When Weakness is broken, triggers the Lightning Weakness Break effect."
+      "desc": "Increases the All-Type RES PEN for the Ultimate DMG dealt by Acheron by {{1}}%. The DMG dealt by Basic ATK and Skill will also be considered as Ultimate DMG and can reduce enemy toughness regardless of Weakness Types. When breaking Weaknesses, triggers the Lightning Weakness Break effect."
     }
   }
 }

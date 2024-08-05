@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Fiend: Impeachment of Evil",
-        "fullDesc": "Huohuo meneror musuh di sekitarnya, membuat musuh memasuki Status \"Horror-Struck\". Musuh yang berstatus \"Horror-Struck\" akan lari menjauhi Huohuo selama {{4}} detik. Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", memiliki {{1}}% <u>peluang dasar</u> untuk mengurangi {{2}}% ATK setiap target selama {{3}} giliran.",
-        "shortDesc": "Membuat musuh di sekitarnya memasuki Status \"Horror-Struck\". Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", berpeluang besar <orangeStrong>mengurangi ATK</orangeStrong> target musuh."
+        "fullDesc": "Huohuo meneror musuh di sekitarnya, membuat musuh memasuki status \"Horror-Struck\". Musuh yang berstatus \"Horror-Struck\" akan lari menjauhi Huohuo selama {{4}} detik. Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", memiliki {{1}}% <u>peluang dasar</u> untuk mengurangi {{2}}% ATK setiap target selama {{3}} giliran.",
+        "shortDesc": "Membuat musuh di sekitarnya memasuki status \"Horror-Struck\". Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", berpeluang besar <orangeStrong>mengurangi ATK</orangeStrong> target musuh."
       }
     },
     "overworld": {

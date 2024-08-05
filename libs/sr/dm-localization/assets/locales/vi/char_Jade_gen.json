@@ -1,0 +1,66 @@
+{
+  "name": "Jade",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Cú Quất Tiền Tài",
+        "fullDesc": "Gây Sát Thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Jade cho một kẻ địch chỉ định, đồng thời gây Sát Thương Lượng Tử bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Jade cho các mục tiêu ở gần kẻ đó.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho một kẻ địch, gây lượng nhỏ Sát Thương Lượng Tử cho các mục tiêu ở gần."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Đảm Bảo Sáp Nhập",
+        "fullDesc": "Khiến một đồng đội chỉ định trở thành Người Thu Nợ, tăng {{1}} điểm Tốc Độ của đồng đội đó, duy trì {{4}} hiệp.\\nSau khi Người Thu Nợ tấn công, sẽ gây 1 lần <u>Sát Thương Lượng Tử Kèm Theo</u> lên mỗi kẻ địch bị đánh trúng bằng <orangeStrong>{{3}}%</orangeStrong> Tấn Công của Jade, đồng thời tiêu hao HP bằng {{2}}% Giới Hạn HP của Người Thu Nợ, nếu HP hiện tại không đủ, HP hiện tại sẽ giảm còn 1 điểm.\\nNếu Jade trở thành Người Thu Nợ, sẽ không thể nhận hiệu ứng tăng Tốc Độ và sau khi tấn công sẽ không tiêu hao HP.\\nKhi trong trận có Người Thu Nợ, Jade sẽ không thể thi triển Chiến Kỹ, khi bắt đầu mỗi hiệp của Jade, số hiệp duy trì trạng thái Người Thu Nợ giảm 1.",
+        "shortDesc": "Khiến 1 đồng đội trở thành <orangeStrong>Người Thu Nợ</orangeStrong>, tăng Tốc Độ của đồng đội đó. Sau khi <orangeStrong>Người Thu Nợ</orangeStrong> tấn công, sẽ gây lượng nhỏ <u>Sát Thương Lượng Tử Kèm Theo</u> lên mỗi kẻ địch bị đánh trúng, đồng thời tiêu hao HP của bản thân. Khi Jade trở thành Người Thu Nợ, sẽ không thể nhận hiệu ứng tăng Tốc Độ, đồng thời sau khi tấn công sẽ không tiêu hao HP."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Vực Thẳm Dục Vọng, Khế Ước Ngục Tù",
+        "fullDesc": "Gây Sát Thương Lượng Tử bằng <orangeStrong>{{3}}%</orangeStrong> Tấn Công của Jade cho toàn phe địch. Đồng thời khiến <u>Đòn Đánh Theo Sau</u> từ Thiên Phú của Jade được cường hóa, Bội Số Sát Thương của Đòn Đánh Theo Sau gây ra tăng <orangeStrong>{{1}}%</orangeStrong>. Hiệu Ứng Cường Hóa chỉ có hiệu lực {{2}} lần.",
+        "shortDesc": "Gây Sát Thương Lượng Tử cho toàn phe địch, khiến bản thân nhận tăng Bội Số Sát Thương <orangeStrong><u>Đòn Đánh Theo Sau</u></orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Tầm Nhìn Của Thợ Săn",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Trung Thành Mù Quáng {{1}} giây. Kẻ địch đang ở trong trạng thái Trung Thành Mù Quáng sẽ không chủ động tấn công mục tiêu phe ta. Khi chủ động tấn công kẻ địch đang ở trạng thái Trung Thành Mù Quáng và vào chiến đấu, sẽ khiến tất cả kẻ địch đang ở trạng thái Trung Thành Mù Quáng vào chiến đấu cùng lúc. Sau khi vào chiến đấu sẽ gây Sát Thương Lượng Tử bằng {{2}}% Tấn Công của Jade cho toàn phe địch, nhận ngay {{3}} tầng Vật Thế Chấp.",
+        "shortDesc": "Khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Trung Thành Mù Quáng. Tấn công kẻ địch đang ở trạng thái Trung Thành Mù Quáng, sẽ khiến tất cả kẻ địch đang ở trạng thái Trung Thành Mù Quáng vào chiến đấu cùng lúc, sau khi vào chiến đấu sẽ gây lượng ít Sát Thương Lượng Tử cho toàn phe địch, nhận ngay <orangeStrong>{{3}}</orangeStrong> tầng Vật Thế Chấp."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, vào chiến đấu và làm suy yếu Sức Bền thuộc tính tương ứng của kẻ địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Vị Tha? Cho Phép Giao Dịch",
+      "desc": "Sát thương Đòn Đánh Theo Sau đến từ Thiên Phú của Jade tăng {{1}}%, nhân vật mang trạng thái Người Thu Nợ sau khi tấn công, nếu số lượng địch đánh trúng bằng 2/1, thì Jade sẽ nhận thêm {{2}}/{{3}} điểm Nạp Năng Lượng."
+    },
+    "2": {
+      "name": "Đạo Đức? Đã Chứng Thực Cầm Cố",
+      "desc": "Khi Vật Thế Chấp cộng dồn đến {{1}} tầng, Tỷ Lệ Bạo Kích của Jade tăng {{2}}%."
+    },
+    "3": {
+      "name": "Bộc Trực? Chỉ Chờ Đem Cầm",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không vượt quá cấp 15; Cấp Thiên Phú +2, tối đa không vượt quá cấp 15."
+    },
+    "4": {
+      "name": "Chân Thành? Chỉ Có Quyền Chọn Bán",
+      "desc": "Khi thi triển Tuyệt Kỹ, khiến sát thương Jade gây ra bỏ qua {{1}}% Phòng Thủ của kẻ địch, duy trì {{2}} hiệp."
+    },
+    "5": {
+      "name": "Hy Vọng? Đã Bán Quyền Sở Hữu",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không vượt quá cấp 15; Cấp Tấn Công Thường +1, tối đa không vượt quá cấp 10."
+    },
+    "6": {
+      "name": "Công Bằng? Đang Chờ Tài Trợ",
+      "desc": "Khi trong trận có nhân vật đang ở trạng thái Người Thu Nợ, Xuyên Kháng Lượng Tử của Jade tăng {{1}}%, đồng thời Jade nhận được trạng thái Người Thu Nợ."
+    }
+  }
+}

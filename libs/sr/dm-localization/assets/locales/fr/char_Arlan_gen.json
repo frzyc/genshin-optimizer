@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Jusqu'au-boutiste",
-      "desc": "Lorsque les PV du personnage sont inférieurs ou égaux à 50 % de ses PV max, augmente les DGT de la compétence de {{1}}%."
+      "desc": "Lorsque les PV du personnage sont inférieurs ou égaux à 50 % de ses PV max, augmente les DGT infligés par la compétence de {{1}}%."
     },
     "2": {
       "name": "Libération",
@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Abnégation",
-      "desc": "Lorsque les PV du personnage sont inférieurs ou égaux à 50 % de ses PV max, l'ultime inflige {{1}}% de DGT supplémentaires. Le multiplicateur de DGT de l'ennemi ciblé s'applique désormais également aux ennemis adjacents."
+      "desc": "Lorsque les PV du personnage sont inférieurs ou égaux à 50 % de ses PV max, l'ultime inflige {{1}}% de DGT supplémentaires. Le multiplicateur de DGT de la cible principale s'applique également aux ennemis adjacents."
     }
   }
 }

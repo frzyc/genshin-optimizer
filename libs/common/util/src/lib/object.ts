@@ -1,17 +1,32 @@
 // crawl an object, calling a callback on every object that passes a validation function
-export async function crawlObject<T, O>(
+export function crawlObject<T, O>(
   obj: Record<string, T> | T,
   keys: string[] = [],
   validate: (o: unknown, keys: string[]) => boolean,
   cb: (o: O, keys: string[]) => void
 ) {
-  if (validate(obj as T, keys)) await cb(obj as O, keys) // In case of async cb
+  if (validate(obj as T, keys)) cb(obj as O, keys)
   else
     obj &&
       typeof obj === 'object' &&
       Object.entries(obj).forEach(([key, val]) =>
         crawlObject(val, [...keys, key], validate, cb)
       )
+}
+
+// crawl an object, calling a callback on every object that passes a validation function
+export async function crawlObjectAsync<T, O>(
+  obj: Record<string, T> | T,
+  keys: string[] = [],
+  validate: (o: unknown, keys: string[]) => boolean,
+  cb: (o: O, keys: string[]) => Promise<void>
+) {
+  if (validate(obj as T, keys)) await cb(obj as O, keys)
+  else if (obj && typeof obj === 'object') {
+    for (const [key, val] of Object.entries(obj)) {
+      crawlObjectAsync(val, [...keys, key], validate, cb)
+    }
+  }
 }
 
 // assign a value to a nested object, creating the path if it doesn't exist yet. obj.[keys...] = value

@@ -2,6 +2,6 @@
   "setName": "Musketeer of Wild Wheat",
   "setEffects": {
     "2": "ATK +{{1}}%.",
-    "4": "SPD pengguna +{{1}}%, Basic ATK DMG pengguna +{{2}}%."
+    "4": "SPD pengguna +{{1}}%, DMG yang diakibatkan Basic Attack pengguna +{{2}}%."
   }
 }

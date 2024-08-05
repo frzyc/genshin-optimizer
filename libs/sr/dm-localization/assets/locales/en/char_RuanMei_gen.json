@@ -11,22 +11,22 @@
     "skill": {
       "0": {
         "name": "String Sings Slow Swirls",
-        "fullDesc": "After using her Skill, Ruan Mei gains Overtone, lasting for {{3}} turn(s). This duration decreases by 1 at the start of Ruan Mei's turn. When Ruan Mei has Overtone, all allies' DMG increases by <orangeStrong>{{1}}%</orangeStrong> and Weakness Break Efficiency increases by {{2}}%.",
+        "fullDesc": "After using her Skill, Ruan Mei gains Overtone, lasting for {{3}} turn(s). This duration decreases by 1 at the start of Ruan Mei's every turn. When Ruan Mei has Overtone, all allies' DMG increases by <orangeStrong>{{1}}%</orangeStrong> and Weakness Break Efficiency increases by {{2}}%.",
         "shortDesc": "After using her Skill, Ruan Mei gains Overtone. When Ruan Mei has Overtone, increase all allies' <orangeStrong>DMG</orangeStrong> and <orangeStrong>Weakness Break efficiency</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Petals to Stream, Repose in Dream",
-        "fullDesc": "Ruan Mei deploys a field that lasts for {{2}} turns. The field's duration decreases by 1 at the start of her turn.\\nWhile inside the field, all allies' All-Type RES PEN increases by <orangeStrong>{{1}}%</orangeStrong> and their attacks apply Thanatoplum Rebloom to the enemies hit.\\nWhen these enemies attempt to recover from Weakness Break, Thanatoplum Rebloom is triggered, extending the duration of their Weakness Break, delaying their action by an amount equal to {{3}}% of Ruan Mei's Break Effect plus {{4}}%, and dealing Break DMG equal to <orangeStrong>{{5}}%</orangeStrong> of Ruan Mei's Ice Break DMG.\\nEnemy targets cannot have Thanatoplum Rebloom re-applied to them until they recover from Weakness Break.",
+        "fullDesc": "Ruan Mei deploys a Zone that lasts for {{2}} turns. The Zone's duration decreases by 1 at the start of her turn.\\nWhile inside the Zone, all allies' All-Type RES PEN increases by <orangeStrong>{{1}}%</orangeStrong> and their attacks apply Thanatoplum Rebloom to the enemies hit.\\nWhen these enemies attempt to recover from <u>Weakness Break</u>, Thanatoplum Rebloom is triggered, extending the duration of their <u>Weakness Break</u>, <u>delaying their action</u> by an amount equal to {{3}}% of Ruan Mei's Break Effect plus {{4}}%, and dealing Break DMG equal to <orangeStrong>{{5}}%</orangeStrong> of Ruan Mei's Ice <u>Break DMG</u>.\\nEnemy targets cannot have Thanatoplum Rebloom re-applied to them until they recover from <u>Weakness Break</u>.",
         "shortDesc": "Increases <orangeStrong>All-Type RES PEN</orangeStrong> for all allies, and their attacks apply Thanatoplum Rebloom to enemies hit."
       }
     },
     "technique": {
       "0": {
         "name": "Silken Serenade",
-        "fullDesc": "After using the Technique, gains Silken Serenade. At the start of the next battle, automatically triggers the Skill for {{1}} time(s) without consuming Skill Points.\\nIn Simulated Universe, when Ruan Mei has Silken Serenade, the team actively attacking enemies will always be regarded as attacking their Weakness to enter battle, and this attack can reduce all enemies' Toughness regardless of Weakness types. When breaking Weakness, triggers Weakness Break Effect corresponding to the attacker's Type. For every Blessing in possession (up to a maximum of {{4}} Blessings), additionally increases the Toughness-Reducing DMG of this attack by {{2}}%. After breaking an enemy target's Weakness, additionally deals to the enemy target Break DMG equal to {{3}}% of Ruan Mei's Ice Break DMG.",
-        "shortDesc": "The next time entering battle, automatically triggers the Skill for <orangeStrong>{{1}}</orangeStrong> time(s). After using the Technique, allies attacking enemies in Simulated Universe will always be regarded as attacking their Weakness to enter battle, and their Toughness is reduced <orangeStrong>regardless of Weakness types</orangeStrong>. For every Blessing in possession, increases Toughness-Reducing DMG and additionally deals Break DMG when breaking Weakness."
+        "fullDesc": "After using the Technique, gains Silken Serenade. At the start of the next battle, automatically triggers the Skill for {{1}} time(s) without consuming Skill Points.\\nIn Simulated Universe or Divergent Universe, when Ruan Mei has Silken Serenade, the team actively attacking enemies will always be regarded as attacking their Weakness to enter battle, and this attack can reduce all enemies' Toughness regardless of Weakness types. When breaking Weakness, triggers Weakness Break Effect corresponding to the attacker's Type. For every Blessing in possession (up to a max of {{4}} Blessings will be taken into account), additionally increases the Toughness Reduction of this attack by {{2}}%. After breaking an enemy target's Weakness, additionally deals to the enemy target Break DMG equal to {{3}}% of Ruan Mei's Ice Break DMG.",
+        "shortDesc": "The next time entering battle, automatically triggers the Skill for <orangeStrong>{{1}}</orangeStrong> time(s). After using the Technique, allies attacking enemies in Simulated Universe or Divergent Universe will always be regarded as attacking their Weakness to enter battle, and their Toughness is reduced <orangeStrong>regardless of Weakness types</orangeStrong>. For every Blessing in possession, increases Toughness Reduction and additionally deals Break DMG when breaking Weakness."
       }
     },
     "overworld": {
@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Neuronic Embroidery",
-      "desc": "While the Ultimate's field is deployed, the DMG dealt by all allies ignores {{1}}% of the target's DEF."
+      "desc": "While the Ultimate's Zone is deployed, the DMG dealt by all allies ignores {{1}}% of the target's DEF."
     },
     "2": {
       "name": "Reedside Promenade",
@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Sash Cascade",
-      "desc": "Extends the duration of the Ultimate's field by {{1}} turn(s). The Talent's Break DMG multiplier additionally increases by {{2}}%."
+      "desc": "Extends the duration of the Ultimate's Zone by {{1}} turn(s). The Talent's Break DMG multiplier additionally increases by {{2}}%."
     }
   }
 }

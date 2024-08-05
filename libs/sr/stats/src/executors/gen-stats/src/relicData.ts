@@ -11,7 +11,7 @@ import {
   type StatKey,
 } from '@genshin-optimizer/sr/consts'
 import {
-  relicMainAffixConfigFlat,
+  relicMainAffixConfig,
   relicSetIdMap,
   relicSetSkillConfig_bySet,
   relicSubAffixConfig,
@@ -72,7 +72,7 @@ export function RelicData(): RelicData {
     )
   )
 
-  const relicMainAffixConfigFlatInValidRange = relicMainAffixConfigFlat.filter(
+  const relicMainAffixConfigFlatInValidRange = relicMainAffixConfig.filter(
     ({ GroupID }) => GroupID < 100
   )
   const main = Object.fromEntries(
@@ -108,12 +108,12 @@ export function RelicData(): RelicData {
             passiveStats: Object.fromEntries(
               // Expand all damage bonus to individual elemental dmg bonus
               config.PropertyList.flatMap((property) =>
-                property.IMHNJLJDLLH === 'AllDamageTypeAddedRatio'
+                property.LFJEANLMLHE === 'AllDamageTypeAddedRatio'
                   ? allElementalDamageKeys.map((key) => ({ ...property, key }))
-                  : [{ ...property, key: statKeyMap[property.IMHNJLJDLLH] }]
+                  : [{ ...property, key: statKeyMap[property.LFJEANLMLHE] }]
               )
                 // Map to desired object shape
-                .map((property) => [property.key, property.IEDALJJJBCE.Value])
+                .map((property) => [property.key, property.DIBKEHHCPAP.Value])
             ),
             otherStats: config.AbilityParamList.map((param) => param.Value),
           })

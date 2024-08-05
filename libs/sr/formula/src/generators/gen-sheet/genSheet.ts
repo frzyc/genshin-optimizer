@@ -9,6 +9,7 @@ export default async function genSheet(
   options: GenSheetGeneratorSchema,
   verbose = false
 ) {
+  console.log(options)
   const { sheet_type } = options
   const file_location = `libs/sr/formula/src/data/${sheet_type}`
   const dest = path.join(tree.root, file_location, `${options.sheet}.ts`)

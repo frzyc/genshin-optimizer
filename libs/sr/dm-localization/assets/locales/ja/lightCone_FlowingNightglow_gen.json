@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#ひかり}光{RUBY_E#}あふれる{RUBY_B#よる}夜{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#なぐさ}慰{RUBY_E#}め",
+    "description": "味方が攻撃を行うたび、装備キャラは「朗唱」を1層獲得する。「朗唱」1層につき、装備キャラのEP回復効率+<orangeStrong>{{1}}%</orangeStrong>、最大で{{2}}層累積できる。装備キャラが必殺技を発動する時、「朗唱」を解除し「華彩」を獲得する。「華彩」がある時、装備キャラの攻撃力+<orangeStrong>{{4}}%</orangeStrong>、味方全体の与ダメージ+<orangeStrong>{{3}}%</orangeStrong>、{{5}}ターン継続。"
+  }
+}

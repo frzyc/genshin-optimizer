@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "¿Problemas con el pago?",
-        "fullDesc": "Hace que un enemigo entre en el estado Certificado de deuda y aumenta el daño que recibe de los <u>ataques adicionales</u> en un <orangeStrong>{{2}}%</orangeStrong>. Certificado de deuda solo tiene efecto en el último objetivo al que se le haya aplicado. Al inicio del turno de un aliado o durante la acción de los aliados, si en el campo de batalla no hay ningún enemigo con Certificado de deuda, Topaz se lo aplica a un enemigo al azar.\\nConti inflige a ese objetivo un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Topaz como Daño de Fuego. Lanzar esta habilidad básica e infligir daño se considera como lanzar un <u>ataque adicional</u>.",
-        "shortDesc": "Hace que un enemigo entre en el estado Certificado de deuda y <orangeStrong>reciba más daño de los ataques adicionales</orangeStrong>. Conti inflige Daño de Fuego al objetivo."
+        "fullDesc": "Hace que un enemigo entre en el estado Certificado de deuda y aumenta en un <orangeStrong>{{2}}%</orangeStrong> el daño de <u>ataque adicional</u> que recibe. Certificado de deuda solo tiene efecto en el último objetivo al que se le haya aplicado. Al inicio del turno de un aliado o durante la acción de los aliados, si en el campo de batalla no hay ningún enemigo con Certificado de deuda, Topaz se lo aplica a un enemigo al azar.\\nConti inflige a ese objetivo un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Topaz como Daño de Fuego. Lanzar esta habilidad básica e infligir daño se considera como lanzar un <u>ataque adicional</u>.",
+        "shortDesc": "Hace que un enemigo entre en el estado Certificado de deuda y <orangeStrong>reciba más daño de ataque adicional</orangeStrong>. Conti inflige Daño de Fuego al objetivo."
       }
     },
     "ult": {
@@ -25,7 +25,7 @@
     "technique": {
       "0": {
         "name": "Subsidio explícito",
-        "fullDesc": "Topaz invoca a Conti al entrar en el mapa. Conti busca automáticamente los tesoros normales y Chanchitos que haya en un área determinada.\\nUsar la técnica de forma proactiva hace que, después de que Conti lance su primer ataque en la siguiente batalla, Topaz recupere {{1}} pts. de energía.\\nTras usar la técnica de forma proactiva y ganar una batalla contra los monstruos del mapa, si Topaz sigue en el equipo, se obtiene una pequeña cantidad adicional de créditos al conseguir créditos. Solo se pueden obtener {{2}} créditos adicionales cada día natural.\\nTras usar la técnica de forma proactiva y ganar una batalla contra los enemigos en el Universo Simulado, se obtiene una pequeña cantidad de fragmentos cósmicos y hay una pequeña probabilidad de obtener 1 objeto raro al azar.",
+        "fullDesc": "Topaz invoca a Conti al entrar en el mapa. Conti busca automáticamente los tesoros normales y Chanchitos que haya en un área determinada.\\nUsar la técnica de forma proactiva hace que, después de que Conti lance su primer ataque en la siguiente batalla, Topaz recupere {{1}} pts. de energía.\\nTras usar la técnica de forma proactiva y ganar una batalla contra los enemigos del mapa, si Topaz sigue en el equipo, se obtiene una pequeña cantidad adicional de créditos al conseguir créditos. Solo se pueden obtener {{2}} créditos adicionales cada día natural.\\nTras usar la técnica de forma proactiva y ganar una batalla contra los enemigos en el Universo Simulado o el Universo Diferenciado, se obtiene una pequeña cantidad de fragmentos cósmicos y hay una pequeña probabilidad de obtener 1 objeto raro al azar.",
         "shortDesc": "<orangeStrong>Invoca a Conti</orangeStrong> en el mapa para que la siga. Conti <orangeStrong>busca automáticamente los tesoros normales y Chanchitos</orangeStrong> de los alrededores. Al usar la técnica, Topaz recupera energía después del primer ataque de Conti en la siguiente batalla."
       }
     },

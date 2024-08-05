@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Echo Chamber",
-      "desc": "Basic Attack mengakibatkan Lightning DMG sebesar {{1}}% DMG Basic ATK pada 1 musuh di sekitar target secara acak."
+      "desc": "Basic Attack mengakibatkan Lightning DMG sebesar {{1}}% dari Basic Attack DMG pada 1 musuh di sekitar target secara acak."
     },
     "2": {
       "name": "Encore!",

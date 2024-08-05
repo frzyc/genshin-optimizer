@@ -189,6 +189,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  Boothill: {
+    boolConditional: {
+      sheet: 'Boothill',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Boothill',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Boothill',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   Bronya: {
     boolConditional: { sheet: 'Bronya', name: 'boolConditional', type: 'bool' },
     listConditional: {
@@ -279,6 +300,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'DrRatio',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Firefly: {
+    boolConditional: {
+      sheet: 'Firefly',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Firefly',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Firefly',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -447,6 +489,23 @@ export const conditionals = {
       max: 2,
     },
   },
+  Jade: {
+    boolConditional: { sheet: 'Jade', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Jade',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Jade',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   JingYuan: {
     boolConditional: {
       sheet: 'JingYuan',
@@ -557,6 +616,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  March7thTheHunt: {
+    boolConditional: {
+      sheet: 'March7thTheHunt',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'March7thTheHunt',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'March7thTheHunt',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   Misha: {
     boolConditional: { sheet: 'Misha', name: 'boolConditional', type: 'bool' },
     listConditional: {
@@ -626,6 +706,23 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Qingque',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Robin: {
+    boolConditional: { sheet: 'Robin', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Robin',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Robin',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -882,6 +979,23 @@ export const conditionals = {
       max: 2,
     },
   },
+  Yunli: {
+    boolConditional: { sheet: 'Yunli', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Yunli',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Yunli',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   ASecretVow: {
     boolConditional: {
       sheet: 'ASecretVow',
@@ -917,6 +1031,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Adversarial',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  AfterTheCharmonyFall: {
+    boolConditional: {
+      sheet: 'AfterTheCharmonyFall',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'AfterTheCharmonyFall',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'AfterTheCharmonyFall',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1056,6 +1191,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'BeforeTheTutorialMissionStarts',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  BoundlessChoreo: {
+    boolConditional: {
+      sheet: 'BoundlessChoreo',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'BoundlessChoreo',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'BoundlessChoreo',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1220,6 +1376,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'CruisingInTheStellarSea',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  DanceAtSunset: {
+    boolConditional: {
+      sheet: 'DanceAtSunset',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'DanceAtSunset',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'DanceAtSunset',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1514,6 +1691,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'FlamesAfar',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  FlowingNightglow: {
+    boolConditional: {
+      sheet: 'FlowingNightglow',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'FlowingNightglow',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'FlowingNightglow',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2189,6 +2387,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  PoisedToBloom: {
+    boolConditional: {
+      sheet: 'PoisedToBloom',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'PoisedToBloom',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'PoisedToBloom',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   PostOpConversation: {
     boolConditional: {
       sheet: 'PostOpConversation',
@@ -2329,6 +2548,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Sagacity',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  SailingTowardsASecondLife: {
+    boolConditional: {
+      sheet: 'SailingTowardsASecondLife',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'SailingTowardsASecondLife',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'SailingTowardsASecondLife',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2825,6 +3065,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  WhereaboutsShouldDreamsRest: {
+    boolConditional: {
+      sheet: 'WhereaboutsShouldDreamsRest',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'WhereaboutsShouldDreamsRest',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'WhereaboutsShouldDreamsRest',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   WoofWalkTime: {
     boolConditional: {
       sheet: 'WoofWalkTime',
@@ -2860,6 +3121,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'WorrisomeBlissful',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  YetHopeIsPriceless: {
+    boolConditional: {
+      sheet: 'YetHopeIsPriceless',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'YetHopeIsPriceless',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'YetHopeIsPriceless',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2973,6 +3255,19 @@ export const formulas = {
       },
     },
   },
+  Boothill: {
+    basicDmg_0: {
+      sheet: 'Boothill',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Boothill',
+        name: 'basicDmg_0',
+      },
+    },
+  },
   Bronya: {
     basicDmg_0: {
       sheet: 'Bronya',
@@ -3034,6 +3329,19 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'DrRatio',
+        name: 'basicDmg_0',
+      },
+    },
+  },
+  Firefly: {
+    basicDmg_0: {
+      sheet: 'Firefly',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Firefly',
         name: 'basicDmg_0',
       },
     },
@@ -3151,6 +3459,19 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Huohuo',
+        name: 'basicDmg_0',
+      },
+    },
+  },
+  Jade: {
+    basicDmg_0: {
+      sheet: 'Jade',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Jade',
         name: 'basicDmg_0',
       },
     },
@@ -3356,6 +3677,19 @@ export const formulas = {
       },
     },
   },
+  March7thTheHunt: {
+    basicDmg_0: {
+      sheet: 'March7thTheHunt',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7thTheHunt',
+        name: 'basicDmg_0',
+      },
+    },
+  },
   Misha: {
     basicDmg_0: {
       sheet: 'Misha',
@@ -3404,6 +3738,19 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Qingque',
+        name: 'basicDmg_0',
+      },
+    },
+  },
+  Robin: {
+    basicDmg_0: {
+      sheet: 'Robin',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Robin',
         name: 'basicDmg_0',
       },
     },
@@ -3573,6 +3920,19 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Yukong',
+        name: 'basicDmg_0',
+      },
+    },
+  },
+  Yunli: {
+    basicDmg_0: {
+      sheet: 'Yunli',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Yunli',
         name: 'basicDmg_0',
       },
     },

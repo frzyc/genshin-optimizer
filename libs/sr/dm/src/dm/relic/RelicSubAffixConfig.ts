@@ -7,7 +7,7 @@ import { readDMJSON } from '../../util'
 import type { Value } from '../common'
 
 export type RelicSubAffixConfig = {
-  GroupID: number
+  GroupID: RelicRarityKey
   AffixID: number
   Property: RelicStatSubDMKey
   BaseValue: Value
@@ -15,16 +15,24 @@ export type RelicSubAffixConfig = {
   StepNum: number
 }
 
-export const relicSubAffixConfig = JSON.parse(
+const relicSubAffixConfigFlat = JSON.parse(
   readDMJSON('ExcelOutput/RelicSubAffixConfig.json')
-) as Record<RelicRarityKey, Record<string, RelicSubAffixConfig>>
+) as RelicSubAffixConfig[]
 
-const relicSubAffixConfigFlat = Object.values(relicSubAffixConfig).flatMap(
-  (o) => Object.values(o)
+export const relicSubAffixConfig = relicSubAffixConfigFlat.reduce(
+  (fullConfig, config) => {
+    const { GroupID, AffixID } = config
+    if (!fullConfig[GroupID])
+      fullConfig[GroupID] = {} as Record<string, RelicSubAffixConfig>
+    fullConfig[GroupID][`${AffixID}`] = config
+    return fullConfig
+  },
+  {} as Record<RelicRarityKey, Record<string, RelicSubAffixConfig>>
 )
+
 dumpFile(
   `${PROJROOT_PATH}/src/dm/relic/RelicSubAffixConfig_gen.json`,
-  relicSubAffixConfigFlat
+  relicSubAffixConfig
 )
 
 dumpFile(`${PROJROOT_PATH}/src/dm/relic/RelicSubAffixConfig_keys_gen.json`, [

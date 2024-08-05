@@ -24,7 +24,7 @@
     },
     "technique": {
       "0": {
-        "name": "Spirit Invocation",
+        "name": "Spiritus Invocation",
         "fullDesc": "Setelah menggunakan Technique, menambah Hits Per Action di giliran pertama Lightning-Lord sebanyak {{1}} saat pertempuran selanjutnya dimulai.",
         "shortDesc": "Setelah menggunakan Technique, akan menambah <orangeStrong>Hits Per Action dari Lightning-Lord</orangeStrong> saat memasuki pertempuran berikutnya."
       }

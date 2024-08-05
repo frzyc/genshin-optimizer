@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Espere, Você É Tão Linda!",
-        "fullDesc": "Usar a Técnica cria uma dimensão que dura por {{1}} segundos. Inimigos pegos na dimensão são afetados pela Prisão Onírica e todas as suas ações são interrompidas. Ao entrar em batalha contra inimigos afetados pela Prisão Onírica, a próxima Perícia Suprema de Misha causa {{2}} Golpe(s) por Ação a mais. Apenas uma dimensão criada por aliados pode existir ao mesmo tempo.",
-        "shortDesc": "Cria uma dimensão que para todos os inimigos que estiverem dentro dela. Ao entrar em batalha contra inimigos na dimensão, <orangeStrong>a próxima Perícia Suprema de Misha causa mais Golpes por Ação</orangeStrong>."
+        "fullDesc": "Usar a Técnica cria uma dimensão especial que dura por {{1}} segundos. Inimigos pegos na dimensão especial são afetados pela Prisão Onírica e todas as suas ações são interrompidas. Ao entrar em batalha contra inimigos afetados pela Prisão Onírica, a próxima Perícia Suprema de Misha causa {{2}} Golpe(s) por Ação a mais. Apenas uma dimensão criada por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão especial que para todos os inimigos que estiverem dentro dela. Ao entrar em batalha contra inimigos na dimensão, <orangeStrong>a próxima Perícia Suprema de Misha causa mais Golpes por Ação</orangeStrong>."
       }
     },
     "overworld": {

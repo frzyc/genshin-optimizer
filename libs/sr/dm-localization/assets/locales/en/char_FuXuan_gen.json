@@ -12,7 +12,7 @@
       "0": {
         "name": "Known by Stars, Shown by Hearts",
         "fullDesc": "Activates Matrix of Prescience, via which other team members will <u>Distribute</u> {{1}}% of the DMG they receive (before this DMG is mitigated by any Shields) to Fu Xuan for {{3}} turn(s).\\nWhile affected by Matrix of Prescience, all team members gain the Knowledge effect, which increases their respective Max HP by <orangeStrong>{{4}}%</orangeStrong> of Fu Xuan's Max HP, and increases CRIT Rate by <orangeStrong>{{5}}%</orangeStrong>.\\nWhen Fu Xuan is <u>knocked down</u>, the Matrix of Prescience will be dispelled.",
-        "shortDesc": "Activates Matrix of Prescience. <orangeStrong>DMG received by Fu Xuan's allies are <u>Distributed</u></orangeStrong> to her. Also <orangeStrong>increases CRIT Rate</orangeStrong> and Max HP of all allies."
+        "shortDesc": "Activates Matrix of Prescience. <orangeStrong>DMG received by Fu Xuan's allies is <u>Distributed</u></orangeStrong> to her. Also <orangeStrong>increases CRIT Rate</orangeStrong> and Max HP of all allies."
       }
     },
     "ult": {
@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Omnia Vita",
-      "desc": "Once Matrix of Prescience is activated, it will keep a tally of the total HP lost by all team members in the current battle. Fu Xuan's Ultimate DMG will increase by {{1}}% of this tally of HP loss.\\nThis tally is also capped at {{2}}% of Fu Xuan's Max HP and the tally value will reset and re-accumulate after Fu Xuan's Ultimate is used."
+      "desc": "Once Matrix of Prescience is activated, it will keep a tally of the total HP lost by all team members in the current battle. The DMG dealt by Fu Xuan's Ultimate will increase by {{1}}% of this tally of HP loss.\\nThis tally is also capped at {{2}}% of Fu Xuan's Max HP and the tally value will reset and re-accumulate after Fu Xuan's Ultimate is used."
     }
   }
 }

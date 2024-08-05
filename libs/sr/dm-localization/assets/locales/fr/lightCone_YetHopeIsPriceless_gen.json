@@ -1,0 +1,7 @@
+{
+  "name": "L'espoir n'a pas de prix",
+  "passive": {
+    "name": "Promesse",
+    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque les DGT critiques du porteur sont supérieurs à {{2}}% en combat, pour chaque tranche de {{3}}% de DGT critiques supérieurs, les DGT infligés par ses attaques de suivi augmentent de <orangeStrong>{{4}}%</orangeStrong>. Cet effet peut être cumulé jusqu'à {{5}} fois. En début de combat ou après que le porteur a utilisé son ATQ normale, les DGT infligés par l'ultime et l'attaque de suivi ignorent <orangeStrong>{{6}}%</orangeStrong> de la DÉF de la cible, pour une durée de {{7}} tours."
+  }
+}

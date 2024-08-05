@@ -1,0 +1,7 @@
+{
+  "setName": "Cavalaria de Ferro Contra a Praga",
+  "setEffects": {
+    "2": "Aumenta o Efeito de Quebra em {{1}}%.",
+    "4": "Se o Efeito de Quebra do usuário for {{1}}% ou maior, o Dano de Quebra causado ao inimigo ignora {{3}}% da sua DEF. Se o Efeito de Quebra do usuário for {{2}}% ou maior, o Super Dano de Quebra causado ao inimigo-alvo ignora adicionalmente {{4}}% de sua DEF."
+  }
+}

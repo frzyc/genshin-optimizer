@@ -1,0 +1,6 @@
+{
+  "setName": "Forge of the Kalpagni Lantern",
+  "setEffects": {
+    "2": "Meningkatkan {{1}}% SPD pengguna. Saat serangan pengguna mengenai target musuh dengan Fire Weakness, Break Effect akan meningkat {{2}}% selama {{3}} giliran."
+  }
+}

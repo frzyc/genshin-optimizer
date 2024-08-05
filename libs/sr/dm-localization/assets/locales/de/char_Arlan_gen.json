@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Bis zum bitteren Ende",
-      "desc": "Liegt Arlans LP-Prozentsatz bei 50 % oder weniger, wird der durch die Fertigkeit verursachte SCH um {{1}}% erhöht."
+      "desc": "Liegt der LP-Prozentsatz bei 50 % oder weniger, wird der durch die Fertigkeit verursachte SCH um {{1}}% erhöht."
     },
     "2": {
       "name": "Befreiung",

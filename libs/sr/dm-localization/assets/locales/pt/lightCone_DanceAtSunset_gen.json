@@ -1,0 +1,7 @@
+{
+  "name": "Dança ao Pôr do Sol",
+  "passive": {
+    "name": "Profundamente Absorvido",
+    "description": "Aumenta bastante a chance do usuário ser atacado e aumenta o Dano CRIT em <orangeStrong>{{1}}%</orangeStrong>. Após o usuário utilizar Perícia Suprema, ele recebe 1 acúmulo de Dança do Fogo, durando por 2 rodadas e atingindo até {{2}} acúmulos. Cada acúmulo de Dança do Fogo aumenta o Dano causado pelo Ataque Extra do usuário em <orangeStrong>{{3}}%</orangeStrong>."
+  }
+}

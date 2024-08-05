@@ -1,0 +1,7 @@
+{
+  "name": "Hacia una segunda vida",
+  "passive": {
+    "name": "Mar bravo",
+    "description": "El efecto de Ruptura del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong> y el Daño de Ruptura que inflige el portador ignora un <orangeStrong>{{3}}%</orangeStrong> de la DEF del objetivo. Cuando el efecto de Ruptura del portador sea igual o superior al {{2}}% durante la batalla, su VEL aumenta en un <orangeStrong>{{4}}%</orangeStrong>."
+  }
+}

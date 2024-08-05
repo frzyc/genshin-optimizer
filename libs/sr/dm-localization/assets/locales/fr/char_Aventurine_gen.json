@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Pierre angulaire de la prospérité",
-        "fullDesc": "Accorde à tous les alliés un bouclier de Mise renforcée qui peut bloquer des DGT équivalents à <orangeStrong>{{1}}%</orangeStrong> de la DÉF d'Aventurine + <orangeStrong>{{2}}</orangeStrong>pendant {{3}} tours. Lorsque l'effet Mise renforcée est obtenu à plusieurs reprises, la valeur de bouclier peut se cumuler jusqu'à {{4}}% du bouclier fourni par la compétence actuelle.",
+        "fullDesc": "Accorde à tous les alliés un bouclier de Mise renforcée qui peut bloquer des DGT équivalents à <orangeStrong>{{1}}%</orangeStrong> de la DÉF d'Aventurine + <orangeStrong>{{2}}</orangeStrong> pendant {{3}} tours. Lorsque l'effet Mise renforcée est obtenu à plusieurs reprises, la valeur de bouclier peut se cumuler jusqu'à {{4}}% du bouclier fourni par la compétence actuelle.",
         "shortDesc": "Accorde à tous les alliés un bouclier de Mise renforcée <orangeStrong>dont la valeur de bouclier est cumulable</orangeStrong>."
       }
     },
@@ -40,11 +40,11 @@
   "ranks": {
     "1": {
       "name": "Dilemme du prisonnier",
-      "desc": "Augmente de {{1}}% les DGT critiques des alliés qui bénéficient de Mise renforcée. Après avoir utilisé l'ultime, accorde à tous les alliés un bouclier de Mise renforcée dont la valeur de bouclier est équivalente à {{2}}% de celle accordée par la compétence. Dure {{3}} tours."
+      "desc": "Augmente les DGT critiques des alliés qui bénéficient de Mise renforcée de {{1}}%. Après avoir utilisé l'ultime, accorde à tous les alliés un bouclier de Mise renforcée dont la valeur de bouclier est équivalente à {{2}}% de celle accordée par la compétence. Dure {{3}} tours."
     },
     "2": {
       "name": "Rationalité limitée",
-      "desc": "Réduit de {{2}}% toutes les RÉS de type de la cible pendant {{3}} tours lors de l'utilisation de l'ATQ normale."
+      "desc": "Réduit toutes les RÉS de type de la cible de {{2}}% pendant {{3}} tours lors de l'utilisation de l'ATQ normale."
     },
     "3": {
       "name": "Rendement maximal",

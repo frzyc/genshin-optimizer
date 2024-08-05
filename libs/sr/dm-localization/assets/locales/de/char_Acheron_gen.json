@@ -45,7 +45,7 @@
     "technique": {
       "0": {
         "name": "Vier Phasen des Ich",
-        "fullDesc": "Greift den Gegner an. Erhält zu Beginn jeder Kampfwelle „Vier Phasen des Ich“, fügt allen Gegnern Blitz-SCH in Höhe von {{1}}% von Acherons ANG zu und reduziert ihr Widerstand ungeachtet des Schwächetyps. Beim Schwächebruch wird der Effekt „Schwächebruch: Blitz“ ausgelöst.\\nVier Phasen des Ich: Acheron erhält nach dem Einsatz des Ultimates {{2}} Pkt. „Zerbrochener Traum“ und belegt einen zufälligen Gegner mit {{2}} Stapelungen „Karminroter Knoten“.\\nWenn gewöhnliche Gegner angegriffen werden, werden sie sofort besiegt, ohne den Kampf zu betreten. Der Technikpunkt wird nicht verbraucht, wenn der Angriff keinen Gegner trifft.",
+        "fullDesc": "Greift den Gegner an. Erhält zu Beginn jeder Kampfwelle „Vier Phasen des Ich“, fügt allen Gegnern Blitz-SCH in Höhe von {{1}}% von Acherons ANG zu und reduziert ihr Widerstand ungeachtet des Schwächetyps. Beim Schwächebruch wird der Effekt „Schwächebruch: Blitz“ ausgelöst.\\nVier Phasen des Ich: Acheron erhält nach dem Einsatz des Ultimates {{2}} Pkt. „Zerbrochener Traum“ und belegt einen zufälligen Gegner mit {{2}} Stapelung „Karminroter Knoten“.\\nWenn gewöhnliche Gegner angegriffen werden, werden sie sofort besiegt, ohne den Kampf zu betreten. Der Technikpunkt wird nicht verbraucht, wenn der Angriff keinen Gegner trifft.",
         "shortDesc": "Greift den Gegner an. Erhält zu Beginn jeder Kampfwelle „Vier Phasen des Ich“ und fügt allen Gegnern Blitz-SCH zu, der <orangeStrong>Schwächetypen ignoriert</orangeStrong> und Widerstand reduziert.\\nWenn gewöhnliche Gegner angegriffen werden, werden sie <orangeStrong>sofort besiegt</orangeStrong>, ohne den Kampf zu betreten. Der Technikpunkt wird nicht verbraucht, wenn der Angriff keinen Gegner trifft."
       }
     },
@@ -80,7 +80,7 @@
     },
     "6": {
       "name": "Gespaltene Fesseln des Verhängnisses",
-      "desc": "Erhöht den WDS aller Typen für den von Acheron verursachten Ultimate-SCH um {{1}}%. Der durch Standardangriff und Fertigkeit verursachte SCH wird ebenfalls als Ultimate-SCH betrachtet und kann den WDS des Gegners unabhängig vom Schwächetyp reduzieren. Beim Schwächebruch wird der Effekt „Schwächebruch: Blitz“ ausgelöst."
+      "desc": "Erhöht die WDS-DUR aller Typen für den von Acheron verursachten Ultimate-SCH um {{1}}%. Der durch Standardangriff und Fertigkeit verursachte SCH wird ebenfalls als Ultimate-SCH betrachtet und kann den WDS des Gegners unabhängig vom Schwächetyp reduzieren. Beim Schwächebruch wird der Effekt „Schwächebruch: Blitz“ ausgelöst."
     }
   }
 }

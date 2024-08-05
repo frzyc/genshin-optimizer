@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Difficulty Paying?",
-        "fullDesc": "Inflicts a single target enemy with a Proof of Debt status, increasing the DMG it takes from <u>follow-up attacks</u> by <orangeStrong>{{2}}%</orangeStrong>. Proof of Debt only takes effect on the most recent target it is applied to. If there are no enemies inflicted with Proof of Debt on the field when an ally's turn starts or when an ally takes action, Topaz will inflict a random enemy with Proof of Debt.\\nNumby deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Topaz's ATK to this target. Using this Skill to deal DMG is considered as launching a <u>follow-up attack</u>.",
-        "shortDesc": "Inflicts a single enemy with a Proof of Debt status and causes it to <orangeStrong>receive increased DMG from follow-up attacks</orangeStrong>. Numby deals Fire DMG to the target."
+        "fullDesc": "Inflicts a single target enemy with a Proof of Debt status, increasing the <u>follow-up attack</u> DMG it receives by <orangeStrong>{{2}}%</orangeStrong>. Proof of Debt only takes effect on the most recent target it is applied to. If there are no enemies inflicted with Proof of Debt on the field when an ally's turn starts or when an ally takes action, Topaz will inflict a random enemy with Proof of Debt.\\nNumby deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Topaz's ATK to this target. Using this Skill to deal DMG is considered as launching a <u>follow-up attack</u>.",
+        "shortDesc": "Inflicts a single enemy with a Proof of Debt status and causes it to <orangeStrong>receive increased follow-up attack DMG</orangeStrong>. Numby deals Fire DMG to the target."
       }
     },
     "ult": {
@@ -25,7 +25,7 @@
     "technique": {
       "0": {
         "name": "Explicit Subsidy",
-        "fullDesc": "Summons Numby when Topaz enters the overworld. Numby will automatically search for Basic Treasures and Trotters within a set radius.\\nUsing her Technique will regenerate {{1}} Energy for Topaz after Numby's first attack in the next battle.\\nIf Topaz is still in the team after using her Technique and defeating overworld enemies, a small bonus amount of credits will be added to the earned credits. A maximum of {{2}} bonus credits can be received per calendar day.\\nAfter using her Technique and defeating enemies in Simulated Universe, additionally receive a small amount of Cosmic Fragments with a small chance to obtain 1 random Curio.",
+        "fullDesc": "Summons Numby when Topaz enters the overworld. Numby will automatically search for Basic Treasures and Trotters within a set radius.\\nUsing her Technique will regenerate {{1}} Energy for Topaz after Numby's first attack in the next battle.\\nIf Topaz is still in the team after using her Technique and defeating overworld enemies, a small bonus amount of credits will be added to the earned credits. A maximum of {{2}} bonus credits can be received per calendar day.\\nAfter using her Technique and defeating enemies in Simulated Universe or Divergent Universe, additionally receive a small amount of Cosmic Fragments with a small chance to obtain 1 random Curio.",
         "shortDesc": "<orangeStrong>Summons Numby to tag along</orangeStrong> in a Maze. Numby will automatically <orangeStrong>search for Basic Treasures and Trotters nearby</orangeStrong>. Using Technique will regenerate Energy for Topaz after Numby's first attack in the next battle."
       }
     },

@@ -52,7 +52,7 @@
     },
     "4": {
       "name": "Pegue de Surpresa",
-      "desc": "Após um aliado que não seja Bronya usar um ATQ Básico em um inimigo com Fraqueza de Vento, Bronya realiza um Ataque Extra no alvo imediatamente, causando Dano de Vento equivalente a {{1}}% do ATQ Básico de Bronya. Este efeito só pode ser ativado 1 vez por rodada."
+      "desc": "Após qualquer outro aliado usar um ATQ Básico em um inimigo-alvo com Fraqueza contra Vento, Bronya realiza 1 Ataque Extra imediatamente contra o alvo, causando Dano de Vento equivalente a {{1}}% do Dano ATQ Básico. Este efeito só pode ser ativado 1 vez por rodada."
     },
     "5": {
       "name": "Incontrolável",

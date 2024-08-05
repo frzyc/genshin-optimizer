@@ -1,0 +1,7 @@
+{
+  "name": "Poised to Bloom",
+  "passive": {
+    "name": "Lose Not, Forget Not",
+    "description": "Increases the wearer's ATK by <orangeStrong>{{1}}%</orangeStrong>. Upon entering battle, if two or more characters follow the same Path, then these characters' CRIT DMG increases by <orangeStrong>{{2}}%</orangeStrong>. Abilities of the same type cannot stack."
+  }
+}

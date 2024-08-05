@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "To the Bitter End",
-      "desc": "When HP is lower than or equal to 50% of Max HP, increases Skill's DMG by {{1}}%."
+      "desc": "When HP is lower than or equal to 50% of Max HP, increases DMG dealt by Skill by {{1}}%."
     },
     "2": {
       "name": "Breaking Free",
@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Self-Sacrifice",
-      "desc": "When HP drops to 50% or below, Ultimate deals {{1}}% more DMG. The DMG multiplier of DMG taken by the target enemy now applies to adjacent enemies as well."
+      "desc": "When HP drops to 50% or below, Ultimate deals {{1}}% more DMG. And the DMG multiplier for adjacent targets is raised to the same level as that for the primary target."
     }
   }
 }

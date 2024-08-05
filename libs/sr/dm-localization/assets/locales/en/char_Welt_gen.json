@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Gravitational Imprisonment",
-        "fullDesc": "After using Welt's Technique, create a dimension that lasts for {{4}} second(s). Enemies in this dimension have their Movement SPD reduced by {{5}}%. After entering battle with enemies in the dimension, there is a {{1}}% <u>base chance</u> to Imprison the enemies for 1 turn.\\nImprisoned enemies have their <u>actions delayed</u> by {{2}}% and SPD reduced by {{3}}%. Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a dimension. Enemies in this dimension have their Movement SPD reduced. After entering combat with enemies in the dimension, there is a <orangeStrong>high chance for the enemies to become Imprisoned</orangeStrong>."
+        "fullDesc": "After using Welt's Technique, create a special dimension that lasts for {{4}} second(s). Enemies in this special dimension have their Movement SPD reduced by {{5}}%. After entering battle with enemies in the special dimension, there is a {{1}}% <u>base chance</u> to Imprison the enemies for 1 turn.\\nImprisoned enemies have their <u>actions delayed</u> by {{2}}% and SPD reduced by {{3}}%. Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a special dimension. Enemies in this dimension have their Movement SPD reduced. After entering combat with enemies in the dimension, there is a <orangeStrong>high chance for the enemies to become Imprisoned</orangeStrong>."
       }
     },
     "overworld": {
@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Legacy of Honor",
-      "desc": "After Welt uses his Ultimate, his abilities are enhanced. The next {{3}} time(s) he uses his Basic ATK or Skill, deals Additional DMG to the target equal to {{1}}% of his Basic ATK's DMG multiplier or {{2}}% of his Skill's DMG multiplier respectively."
+      "desc": "After using Ultimate, Welt gets enhanced. Then, the next {{3}} time(s) he uses Basic ATK or Skill, deals 1 extra instance of Additional DMG to the target enemy. The Additional DMG dealt when using Basic ATK is equal to {{1}}% of Basic ATK DMG multiplier. The Additional DMG dealt when using Skill is equal to {{2}}% of Skill DMG multiplier."
     },
     "2": {
       "name": "Conflux of Stars",

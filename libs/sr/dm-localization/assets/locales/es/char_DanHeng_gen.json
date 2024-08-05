@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Sueño etéreo",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo. Cuando el objetivo está afectado por Ralentización, el multiplicador de daño de la habilidad definitiva de Dan Heng aumenta en un <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo. Cuando el objetivo está afectado por Ralentización, el multiplicador del daño que inflige la habilidad definitiva de Dan Heng aumenta en un <orangeStrong>{{2}}%</orangeStrong>.",
         "shortDesc": "Inflige una gran cantidad de Daño de Viento a un enemigo. Aumenta el multiplicador de daño contra los objetivos afectados por Ralentización."
       }
     },

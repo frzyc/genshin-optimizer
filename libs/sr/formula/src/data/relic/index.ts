@@ -4,14 +4,17 @@ import BelobogOfTheArchitects from './BelobogOfTheArchitects'
 import BrokenKeel from './BrokenKeel'
 import CelestialDifferentiator from './CelestialDifferentiator'
 import ChampionOfStreetwiseBoxing from './ChampionOfStreetwiseBoxing'
+import DuranDynastyOfRunningWolves from './DuranDynastyOfRunningWolves'
 import EagleOfTwilightLine from './EagleOfTwilightLine'
 import FiresmithOfLavaForging from './FiresmithOfLavaForging'
 import FirmamentFrontlineGlamoth from './FirmamentFrontlineGlamoth'
 import FleetOfTheAgeless from './FleetOfTheAgeless'
+import ForgeOfTheKalpagniLantern from './ForgeOfTheKalpagniLantern'
 import GeniusOfBrilliantStars from './GeniusOfBrilliantStars'
 import GuardOfWutheringSnow from './GuardOfWutheringSnow'
 import HunterOfGlacialForest from './HunterOfGlacialForest'
 import InertSalsotto from './InertSalsotto'
+import IronCavalryAgainstTheScourge from './IronCavalryAgainstTheScourge'
 import IzumoGenseiAndTakamaDivineRealm from './IzumoGenseiAndTakamaDivineRealm'
 import KnightOfPurityPalace from './KnightOfPurityPalace'
 import LongevousDisciple from './LongevousDisciple'
@@ -28,6 +31,7 @@ import SpaceSealingStation from './SpaceSealingStation'
 import SprightlyVonwacq from './SprightlyVonwacq'
 import TaliaKingdomOfBanditry from './TaliaKingdomOfBanditry'
 import TheAshblazingGrandDuke from './TheAshblazingGrandDuke'
+import TheWindSouringValorous from './TheWindSouringValorous'
 import ThiefOfShootingMeteor from './ThiefOfShootingMeteor'
 import WastelanderOfBanditryDesert from './WastelanderOfBanditryDesert'
 import WatchmakerMasterOfDreamMachinations from './WatchmakerMasterOfDreamMachinations'
@@ -40,6 +44,7 @@ const data: TagMapNodeEntries[] = [
   GeniusOfBrilliantStars,
   GuardOfWutheringSnow,
   HunterOfGlacialForest,
+  IronCavalryAgainstTheScourge,
   KnightOfPurityPalace,
   LongevousDisciple,
   MessengerTraversingHackerspace,
@@ -48,13 +53,16 @@ const data: TagMapNodeEntries[] = [
   PioneerDiverOfDeadWaters,
   PrisonerInDeepConfinement,
   TheAshblazingGrandDuke,
+  TheWindSouringValorous,
   ThiefOfShootingMeteor,
   WastelanderOfBanditryDesert,
   WatchmakerMasterOfDreamMachinations,
   BelobogOfTheArchitects,
   BrokenKeel,
   CelestialDifferentiator,
+  DuranDynastyOfRunningWolves,
   FirmamentFrontlineGlamoth,
+  ForgeOfTheKalpagniLantern,
   FleetOfTheAgeless,
   InertSalsotto,
   IzumoGenseiAndTakamaDivineRealm,

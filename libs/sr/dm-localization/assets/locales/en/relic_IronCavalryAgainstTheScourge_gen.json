@@ -1,0 +1,7 @@
+{
+  "setName": "Iron Cavalry Against the Scourge",
+  "setEffects": {
+    "2": "Increases Break Effect by {{1}}%.",
+    "4": "If the wearer's Break Effect is {{1}}% or higher, the Break DMG dealt to the enemy target ignores {{3}}% of their DEF. If the wearer's Break Effect is {{2}}% or higher, the Super Break DMG dealt to the enemy target additionally ignores {{4}}% of their DEF."
+  }
+}

@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Shattering Shambles",
-      "desc": "Setelah melancarkan Ultimate, musuh yang diserang akan memasuki status \"Butterfly Flurry\" selama {{2}} giliran. Target musuh yang berada dalam status \"Butterfly Flurry\" akan menerima Quantum DMG tambahan sebesar {{1}}% DMG Ultimate Seele setiap kali terkena serangan. Jika target musuh gugur akibat DMG \"Butterfly Flurry\" yang dipicu oleh rekan lain, maka Talent Seele tidak akan terpicu.\\nJika Seele gugur, maka status \"Butterfly Flurry\" yang ada pada musuh akan dihapus."
+      "desc": "Setelah melancarkan Ultimate, musuh yang diserang akan memasuki status \"Butterfly Flurry\" selama {{2}} giliran. Target musuh yang berada dalam status \"Butterfly Flurry\" akan menerima Quantum DMG tambahan sebesar {{1}}% dari Ultimate DMG Seele setiap kali terkena serangan. Jika target tersebut gugur akibat DMG Tambahan dari \"Butterfly Flurry\" yang dipicu oleh rekan lain, maka Talent Seele tidak akan terpicu.\\nJika Seele gugur, maka status \"Butterfly Flurry\" yang ada pada musuh akan dihapus."
     }
   }
 }

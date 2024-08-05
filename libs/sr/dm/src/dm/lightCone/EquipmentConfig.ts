@@ -1,5 +1,5 @@
 import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
-import { objFilterKeys } from '@genshin-optimizer/common/util'
+import { objFilterKeys, objKeyValMap } from '@genshin-optimizer/common/util'
 import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { LightConeId } from '../../mapping/lightCone'
@@ -45,16 +45,14 @@ type Rarity =
 
 const equipmentConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/EquipmentConfig.json')
-) as Record<string, EquipmentConfig>
+) as EquipmentConfig[]
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/EquipmentConfig_idmap_gen.json`,
-  Object.fromEntries(
-    Object.entries(equipmentConfigSrc).map(([avatarId, data]) => [
-      avatarId,
-      nameToKey(TextMapEN[data.EquipmentName.Hash]),
-    ])
-  )
+  objKeyValMap(equipmentConfigSrc, (config) => [
+    config.EquipmentID,
+    nameToKey(TextMapEN[config.EquipmentName.Hash]),
+  ])
 )
 dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/EquipmentConfig_keys_gen.json`,
@@ -70,7 +68,7 @@ dumpFile(
 )
 
 const equipmentConfig = objFilterKeys(
-  equipmentConfigSrc,
+  objKeyValMap(equipmentConfigSrc, (config) => [config.EquipmentID, config]),
   Object.keys(lightConeIdMap) as LightConeId[]
 ) as Record<LightConeId, EquipmentConfig>
 export { equipmentConfig }

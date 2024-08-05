@@ -60,7 +60,7 @@
     },
     "6": {
       "name": "Wiederaufleben",
-      "desc": "Sobald die „Matrix der Voraussicht“ aktiviert ist, werden die gesamten LP, die alle Verbündeten im aktuellen Kampf verloren haben, addiert. Der Ultimate-SCH von Fu Xuan erhöht sich um {{1}}% der gesamten LP, die alle Verbündeten im aktuellen Kampf verloren haben.\\nDie von allen Verbündeten im aktuellen Kampf verlorenen LP sind auf {{2}}% der max. LP von Fu Xuan begrenzt. Dieser Wert wird zurückgesetzt und neu angesammelt, nachdem Fu Xuans Ultimate eingesetzt wurde."
+      "desc": "Sobald die „Matrix der Voraussicht“ aktiviert ist, werden die gesamten LP, die alle Verbündeten im aktuellen Kampf verloren haben, addiert. Der durch Ultimate von Fu Xuan verursachte SCH erhöht sich um {{1}}% der gesamten LP, die alle Verbündeten im aktuellen Kampf verloren haben.\\nDie von allen Verbündeten im aktuellen Kampf verlorenen LP sind auf {{2}}% der max. LP von Fu Xuan begrenzt. Dieser Wert wird zurückgesetzt und neu angesammelt, nachdem Fu Xuans Ultimate eingesetzt wurde."
     }
   }
 }

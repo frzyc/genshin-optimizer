@@ -1,7 +1,7 @@
 {
   "setName": "The Ashblazing Grand Duke",
   "setEffects": {
-    "2": "Increases the DMG dealt by follow-up attacks by {{1}}%.",
+    "2": "Increases the DMG dealt by follow-up attack by {{1}}%.",
     "4": "When the wearer uses follow-up attacks, increases the wearer's ATK by {{1}}% for every time the follow-up attack deals DMG. This effect can stack up to {{2}} time(s) and lasts for {{3}} turn(s). This effect is removed the next time the wearer uses a follow-up attack."
   }
 }

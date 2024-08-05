@@ -2,6 +2,6 @@
   "name": "Today Is Another Peaceful Day",
   "passive": {
     "name": "A Storm Is Coming",
-    "description": "After entering battle, increases the wearer's DMG based on their Max Energy. DMG increases by <orangeStrong>{{1}}%</orangeStrong> per point of Energy, up to {{2}} Energy."
+    "description": "After entering battle, increases the wearer's DMG based on their Max Energy. Each point of Energy increases DMG by <orangeStrong>{{1}}%</orangeStrong>. A max of {{2}} Energy will be taken into account for this."
   }
 }

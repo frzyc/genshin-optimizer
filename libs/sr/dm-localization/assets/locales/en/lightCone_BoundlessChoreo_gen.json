@@ -1,0 +1,7 @@
+{
+  "name": "Boundless Choreo",
+  "passive": {
+    "name": "Scrutinize",
+    "description": "Increase the wearer's CRIT Rate by <orangeStrong>{{1}}%</orangeStrong>. The wearer deals <orangeStrong>{{2}}%</orangeStrong> more CRIT DMG to enemies that are currently Slowed or have reduced DEF."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Boothill",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Skullcrush Spurs",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Boothill pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
+      },
+      "1": {
+        "name": "Fanning the Hammer",
+        "fullDesc": "Mengakibatkan Physical DMG pada 1 musuh yang ditargetkan sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Boothill.\\nEnhanced Basic Attack ini tidak dapat memulihkan Poin Skill dan hanya bisa menargetkan target musuh berstatus \"Standoff\".",
+        "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh. Hanya dapat menyerang target berstatus \"Standoff\"."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Sizzlin' Tango",
+        "fullDesc": "Membuat 1 musuh yang ditargetkan dan Boothill memasuki status \"Standoff\". Basic Attack Boothill akan diperkuat, dan tidak dapat melancarkan Skill, berlangsung selama {{3}} giliran. Durasi giliran akan berkurang 1 setiap kali giliran Boothill dimulai.\\nMusuh yang berstatus \"Standoff\" akan memasuki status Taunt. Saat target musuh tersebut/Boothill terkena serangan dari satu sama lain, DMG yang diterima meningkat <orangeStrong>{{1}}%</orangeStrong>/{{2}}%.\\nSetelah target tersebut dikalahkan atau terkena Weakness Break, Boothill akan memperoleh 1 lapis \"Pocket Trickshot\", lalu menghapus \"Standoff\".\\nSkill ini tidak dapat memulihkan Energy. Giliran kali ini tidak akan berakhir setelah melancarkan Skill ini.",
+        "shortDesc": "Mengaktifkan <orangeStrong>\"Standoff\"</orangeStrong>. Setelah target berstatus \"Standoff\" <orangeStrong>dikalahkan atau terkena Weakness Break</orangeStrong>, Boothill akan memperoleh \"Pocket Trickshot\" dan menghapus \"Standoff\". Membuat Boothill <orangeStrong>memperoleh penguatan Basic Attack</orangeStrong> dan giliran kali ini tidak akan berakhir."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Dust Devil's Sunset Rodeo",
+        "fullDesc": "Menambahkan Physical Weakness pada 1 musuh yang ditargetkan, berlangsung selama {{3}} giliran.\\nMengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Boothill pada target tersebut dan <u>menunda aksinya</u> sebesar <orangeStrong>{{2}}%</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Menambahkan Physical Weakness</orangeStrong> pada 1 musuh dan mengakibatkan Physical DMG dalam jumlah besar pada musuh tersebut serta menunda aksinya."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "3-9× Smile",
+        "fullDesc": "Setelah menggunakan Technique, saat melancarkan Skill untuk pertama kalinya dalam pertempuran berikutnya, akan menambahkan Physical Weakness yang sama dengan Ultimate pada target, berlangsung selama {{1}} giliran.",
+        "shortDesc": "Setelah melancarkan Technique, akan <orangeStrong>menambahkan Physical Weakness</orangeStrong> pada 1 musuh setelah melancarkan Skill unit ini untuk pertama kalinya dalam pertempuran berikutnya."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Dusty Trail's Lone Star",
+      "desc": "Saat pertempuran dimulai, akan memperoleh 1 lapis \"Pocket Trickshot\". Saat Boothill mengakibatkan DMG, akan mengabaikan {{1}}% DEF target musuh."
+    },
+    "2": {
+      "name": "Milestonemonger",
+      "desc": "Saat memperoleh \"Pocket Trickshot\" ketika berada dalam status \"Standoff\", akan memulihkan {{1}} Poin Skill dan meningkatkan {{2}}% Break Effect, berlangsung selama {{3}} giliran. Efek ini tidak dapat terpicu berulang kali dalam satu giliran, dan tetap akan terpicu saat memperoleh \"Pocket Trickshot\" yang melebihi batas maksimal."
+    },
+    "3": {
+      "name": "Marble Orchard's Guard",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Cold Cuts Chef",
+      "desc": "Saat target musuh berstatus \"Standoff\" terkena serangan Boothill, DMG yang diterimanya akan meningkat ekstra {{1}}%. Saat Boothill terkena serangan target musuh berstatus \"Standoff\", efek peningkatan DMG yang diterimanya akan berkurang {{2}}%."
+    },
+    "5": {
+      "name": "Stump Speech",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Crowbar Hotel's Raccoon",
+      "desc": "Saat memicu Break DMG yang diakibatkan Talent, akan mengakibatkan Break DMG tambahan pada target sebesar {{1}}% dari DMG Multiplier awal, dan mengakibatkan Break DMG tambahan pada musuh di sekitar target sebesar {{2}}% dari DMG Multiplier awal."
+    }
+  }
+}

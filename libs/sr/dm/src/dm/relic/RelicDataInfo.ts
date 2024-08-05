@@ -1,8 +1,6 @@
 import type { RelicSetId, RelicSlotDMKey } from '../../mapping/relic'
 import { readDMJSON } from '../../util'
 
-export type RelicDataInfoSrc = Partial<Record<RelicSlotDMKey, RelicDataInfo>>
-
 export type RelicDataInfo = {
   SetID: number
   Type: RelicSlotDMKey
@@ -14,6 +12,14 @@ export type RelicDataInfo = {
   BGStoryContent: string
 }
 
-export const relicDataInfo = JSON.parse(
+const relicDataInfoSrc = JSON.parse(
   readDMJSON('ExcelOutput/RelicDataInfo.json')
-) as Record<RelicSetId, RelicDataInfoSrc>
+) as RelicDataInfo[]
+
+export const relicDataInfo = relicDataInfoSrc.reduce((fullInfo, info) => {
+  const { SetID, Type } = info
+  if (!fullInfo[SetID])
+    fullInfo[SetID] = {} as Partial<Record<RelicSlotDMKey, RelicDataInfo>>
+  fullInfo[SetID][Type] = info
+  return fullInfo
+}, {} as Record<RelicSetId, Partial<Record<RelicSlotDMKey, RelicDataInfo>>>)

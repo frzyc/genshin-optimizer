@@ -57,7 +57,7 @@
     },
     "4": {
       "name": "Bem nas Peças",
-      "desc": "Depois que a Perícia deste personagem é usada, tem {{1}}% de chance fixa de ganhar Autarquia, que dura até o fim da rodada.\\nCom Autarquia, usar o ATQ Básico ou o ATQ Básico Aprimorado ativa imediatamente um Ataque Extra no mesmo alvo, causando Dano Quântico igual a 100% do Dano do ATQ Básico anterior (ou ATQ Básico Aprimorado)."
+      "desc": "Depois que a Perícia deste personagem é usada, tem {{1}}% de chance fixa de ganhar Autarquia, que dura até o fim da rodada.\\nCom Autarquia, usar o ATQ Básico ou o ATQ Básico Aprimorado ativa imediatamente 1 Ataque Extra no mesmo alvo, causando Dano Quântico igual a 100% do Dano do ATQ Básico ou do ATQ Básico Aprimorado."
     },
     "5": {
       "name": "Estratégia para as Peças",

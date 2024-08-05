@@ -10,11 +10,11 @@
   "eff_res_": "効果抵抗",
   "enerRegen_": "EP回復効率",
   "heal_": "治癒量",
-  "physical_dmg_": "物理与ダメージ",
-  "fire_dmg_": "炎属性与ダメージ",
-  "ice_dmg_": "氷属性与ダメージ",
-  "wind_dmg_": "風属性与ダメージ",
-  "lightning_dmg_": "雷属性与ダメージ",
-  "quantum_dmg_": "量子属性与ダメージ",
-  "imaginary_dmg_": "虚数属性与ダメージ"
+  "physical_dmg_": "物理属性ダメージ",
+  "fire_dmg_": "炎属性ダメージ",
+  "ice_dmg_": "氷属性ダメージ",
+  "wind_dmg_": "風属性ダメージ",
+  "lightning_dmg_": "雷属性ダメージ",
+  "quantum_dmg_": "量子属性ダメージ",
+  "imaginary_dmg_": "虚数属性ダメージ"
 }

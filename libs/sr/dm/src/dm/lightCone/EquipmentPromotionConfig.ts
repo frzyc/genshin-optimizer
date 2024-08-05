@@ -1,5 +1,4 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
-import { objFilterKeys, objMap } from '@genshin-optimizer/common/util'
 import { PROJROOT_PATH } from '../../consts'
 import type { LightConeId } from '../../mapping/lightCone'
 import { lightConeIdMap } from '../../mapping/lightCone'
@@ -23,15 +22,19 @@ export type EquipmentPromotionConfig = {
 
 const equipmentPromotionConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/EquipmentPromotionConfig.json')
-) as Record<string, Record<string, EquipmentPromotionConfig>>
+) as EquipmentPromotionConfig[]
 
-export const equipmentPromotionConfig = objMap(
-  objFilterKeys(
-    equipmentPromotionConfigSrc,
-    Object.keys(lightConeIdMap) as LightConeId[]
-  ) as Record<LightConeId, Record<string, EquipmentPromotionConfig>>,
-  (v: Record<string, EquipmentPromotionConfig>) => Object.values(v)
-) as Record<LightConeId, EquipmentPromotionConfig[]>
+export const equipmentPromotionConfig = equipmentPromotionConfigSrc.reduce(
+  (fullConfig, config) => {
+    if (!lightConeIdMap[config.EquipmentID]) return fullConfig
+
+    if (!fullConfig[config.EquipmentID])
+      fullConfig[config.EquipmentID] = [] as EquipmentPromotionConfig[]
+    fullConfig[config.EquipmentID].push(config)
+    return fullConfig
+  },
+  {} as Record<LightConeId, EquipmentPromotionConfig[]>
+)
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/equipmentPromotionConfig_gen.json`,

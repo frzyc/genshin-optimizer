@@ -1,0 +1,7 @@
+{
+  "name": "Boundless Choreo",
+  "passive": {
+    "name": "Scrutinize",
+    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT Rate pengguna. CRIT DMG pengguna saat menyerang musuh yang mengalami pengurangan DEF atau berstatus Slow akan meningkat <orangeStrong>{{2}}%</orangeStrong>."
+  }
+}

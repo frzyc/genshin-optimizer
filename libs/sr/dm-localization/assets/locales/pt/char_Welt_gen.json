@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Aprisionamento Gravitacional",
-        "fullDesc": "Após Welt usar sua Técnica, cria uma dimensão que dura {{4}}s. Inimigos nessa dimensão têm a VEL de Movimento reduzida em {{5}}%. Depois de entrar em batalha com inimigos na dimensão, há {{1}}% de <u>chance-base</u> de Aprisionar os inimigos por 1 rodada.\\nInimigos aprisionados têm <u>ações atrasadas</u> em {{2}}% e a VEL reduzida em {{3}}%. Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
-        "shortDesc": "Cria uma dimensão. Inimigos nessa dimensão têm sua VEL de Movimento reduzida. Depois de entrar em combate com inimigos na dimensão, existe uma <orangeStrong>alta chance dos inimigos sofrerem de Aprisionamento.</orangeStrong>"
+        "fullDesc": "Após Welt usar sua Técnica, cria uma dimensão especial que dura {{4}}s. Inimigos nessa dimensão especial têm a VEL de Movimento reduzida em {{5}}%. Depois de entrar em batalha com inimigos na dimensão especial, há {{1}}% de <u>chance-base</u> de Aprisionar os inimigos por 1 rodada.\\nInimigos aprisionados têm <u>ações atrasadas</u> em {{2}}% e a VEL reduzida em {{3}}%. Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão especial. Inimigos nessa dimensão têm sua VEL de Movimento reduzida. Depois de entrar em combate com inimigos na dimensão, existe uma <orangeStrong>alta chance dos inimigos sofrerem de Aprisionamento.</orangeStrong>"
       }
     },
     "overworld": {
@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Legado de Honra",
-      "desc": "Após Welt usar sua Perícia Suprema, as habilidades dele são aprimoradas. Da(s) próxima(s) {{3}} vez(es) que usar seu ATQ Básico ou sua Perícia, causa Dano Adicional de {{1}}% do multiplicador de Dano do ATQ Básico ou {{2}}% do multiplicador de Dano da sua Perícia, respectivamente."
+      "desc": "Depois de usar sua Perícia Suprema, Welt é aprimorado. Então, a(s) próxima(s) {{3}} vez(es) que ele usar seu ATQ Básico ou Perícia, causa 1 instância extra de Dano Adicional ao inimigo-alvo. O Dano Adicional causado ao utilizar o ATQ Básico é igual a {{1}}% do Multiplicador de Dano do ATQ Básico. O Dano Adicional causado ao utilizar a Perícia é igual a {{2}}% do Multiplicador de Dano da Perícia."
     },
     "2": {
       "name": "Confluência Estelar",

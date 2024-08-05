@@ -11,14 +11,14 @@
     "skill": {
       "0": {
         "name": "Lance perce-nuages : Torrent",
-        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique.\\nEn cas de coup critique, il y a {{4}}% de <u>chances de base</u> de réduire la VIT de la cible de {{2}}% pendant {{3}} tours.",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique.\\nSi les DGT infligés par la compétence résultent en un coup critique, il y a {{4}}% de <u>chances de base</u> de réduire la VIT de la cible de {{2}}% pendant {{3}} tours.",
         "shortDesc": "Inflige des DGT de vent à un ennemi unique. En cas de coup critique, il y a de fortes chances de ralentir l'ennemi."
       }
     },
     "ult": {
       "0": {
         "name": "Rêve éthéré",
-        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique. Si l'ennemi est ralenti, le multiplicateur de DGT de l'ultime augmente de <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique. Si l'ennemi est ralenti, le multiplicateur des DGT infligés par l'ultime augmente de <orangeStrong>{{2}}%</orangeStrong>.",
         "shortDesc": "Inflige des DGT de vent massifs à un ennemi unique. Si l'ennemi est ralenti, le multiplicateur des dégâts infligés augmente."
       }
     },

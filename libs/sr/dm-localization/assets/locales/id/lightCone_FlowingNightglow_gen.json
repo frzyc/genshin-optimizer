@@ -1,0 +1,7 @@
+{
+  "name": "Flowing Nightglow",
+  "passive": {
+    "name": "Pacify",
+    "description": "Setiap kali saat rekan tim menyerang, pengguna akan memperoleh 1 lapis \"Cantillation\". Setiap lapis \"Cantillation\" meningkatkan <orangeStrong>{{1}}%</orangeStrong> Energy Regeneration Rate pengguna, dapat ditumpuk hingga {{2}} lapis. Saat pengguna melancarkan Ultimate, \"Cantillation\" akan dihapus dan memperoleh \"Cadenza\". \"Cadenza\" meningkatkan <orangeStrong>{{4}}%</orangeStrong> ATK pengguna, dan meningkatkan <orangeStrong>{{3}}%</orangeStrong> DMG yang diakibatkan seluruh rekan tim, berlangsung selama {{5}} giliran."
+  }
+}

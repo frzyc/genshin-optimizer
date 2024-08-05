@@ -4,29 +4,29 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#うんきけんきょう}雲騎剣経{RUBY_E#}・{RUBY_B#げっこう}月虹{RUBY_E#}",
-        "fullDesc": "指定した敵単体に素裳の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理ダメージを与える。",
-        "shortDesc": "敵単体に少量の物理ダメージを与える。"
+        "fullDesc": "指定した敵単体に素裳の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の物理属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#うんきけんきょう}雲騎剣経{RUBY_E#}・{RUBY_B#さんけい}山傾{RUBY_E#}",
-        "fullDesc": "指定した敵単体に素裳の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理ダメージを与える。最後の1ヒットの後に{{3}}%の確率で「剣勢」を発動し、敵に素裳の攻撃力<orangeStrong>{{2}}%</orangeStrong>分の物理<u>付加ダメージ</u>を与える。\\n敵が<u>弱点撃破状態</u>である場合、「剣勢」は必ず発動する。",
-        "shortDesc": "敵単体に物理ダメージを与え、<orangeStrong>低確率で「剣勢」を発動</orangeStrong>する。敵が<u>弱点撃破状態</u>なら<orangeStrong>「剣勢」は必ず発動</orangeStrong>する。"
+        "fullDesc": "指定した敵単体に素裳の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与える。最後の1ヒットの後に{{3}}%の確率で「剣勢」を発動し、敵に素裳の攻撃力<orangeStrong>{{2}}%</orangeStrong>分の物理属性<u>付加ダメージ</u>を与える。\\n敵が<u>弱点撃破状態</u>である場合、「剣勢」は必ず発動する。",
+        "shortDesc": "敵単体に物理属性ダメージを与え、<orangeStrong>低確率で「剣勢」を発動</orangeStrong>する。敵が<u>弱点撃破状態</u>なら<orangeStrong>「剣勢」は必ず発動</orangeStrong>する。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#たいきょけいうん}太虚形蘊{RUBY_E#}・{RUBY_B#しょくや}燭夜{RUBY_E#}",
-        "fullDesc": "指定した敵単体に素裳の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理ダメージを与え、素裳が即座に行動する。素裳の攻撃力+<orangeStrong>{{4}}%</orangeStrong>、戦闘スキルを発動した時に「剣勢」発動の判定回数+2、{{2}}ターン継続。\\n追加の判定で発動した「剣勢」のダメージは、本来のダメージの{{3}}%。",
-        "shortDesc": "敵単体に大量の物理ダメージを与え、「剣勢」の効果を強化して<orangeStrong>即座に行動</orangeStrong>する。"
+        "fullDesc": "指定した敵単体に素裳の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与え、素裳が即座に行動する。素裳の攻撃力+<orangeStrong>{{4}}%</orangeStrong>、戦闘スキルを発動した時に「剣勢」発動の判定回数+2、{{2}}ターン継続。\\n追加の判定で発動した「剣勢」のダメージは、本来のダメージの{{3}}%。",
+        "shortDesc": "敵単体に大量の物理属性ダメージを与え、「剣勢」の効果を強化して<orangeStrong>即座に行動</orangeStrong>する。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#うんきけんきょう}雲騎剣経{RUBY_E#}・{RUBY_B#こうじん}叩陣{RUBY_E#}",
-        "fullDesc": "敵を攻撃。戦闘に入った後、敵全体に素裳の攻撃力{{1}}%分の物理ダメージを与える。",
-        "shortDesc": "敵を攻撃。戦闘に入った後、敵全体に少量の物理ダメージを与える。"
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵全体に素裳の攻撃力{{1}}%分の物理属性ダメージを与える。",
+        "shortDesc": "敵を攻撃。戦闘に入った後、敵全体に少量の物理属性ダメージを与える。"
       }
     },
     "overworld": {

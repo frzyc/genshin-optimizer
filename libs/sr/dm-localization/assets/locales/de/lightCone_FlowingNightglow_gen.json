@@ -1,0 +1,7 @@
+{
+  "name": "Schillernde Nacht",
+  "passive": {
+    "name": "Trösten",
+    "description": "Jedes Mal, wenn ein Verbündeter angreift, erhält der Träger eine Stapelung „Gesang“. Jede Stapelung Gesang erhöht die Energie-Wiederherstellungsrate des Trägers um <orangeStrong>{{1}}%</orangeStrong>, bis zu {{2}} Stapelungen. Wenn der Träger den Ultimate einsetzt, wird Gesang entfernt und er erhält „Farbenpracht“. Farbenpracht erhöht für {{5}} Rd. den ANG des Trägers um <orangeStrong>{{4}}%</orangeStrong> und den verursachten SCH aller Verbündeten um <orangeStrong>{{3}}%</orangeStrong>."
+  }
+}

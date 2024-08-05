@@ -52,7 +52,7 @@
     },
     "4": {
       "name": "Take by Surprise",
-      "desc": "After an ally other than Bronya uses Basic ATK on an enemy with Wind Weakness, Bronya immediately launches a follow-up attack on the target, dealing Wind DMG equal to {{1}}% of Bronya's Basic ATK DMG. This effect can only be triggered 1 time per turn."
+      "desc": "After any other allied character uses Basic ATK on an enemy target that has Wind Weakness, Bronya immediately launches 1 instance of follow-up attack, dealing Wind DMG to this target by an amount equal to {{1}}% of Basic ATK DMG. This effect can only trigger once per turn."
     },
     "5": {
       "name": "Unstoppable",

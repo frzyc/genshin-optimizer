@@ -2,6 +2,6 @@
   "name": "Le jour de l'effondrement du cosmos",
   "passive": {
     "name": "Stratagème",
-    "description": "Augmente de <orangeStrong>{{1}}%</orangeStrong> l'ATQ du porteur. Lorsque le porteur utilise une attaque et qu'au moins 2 ennemis attaqués ont la Faiblesse correspondante, les DGT critiques du porteur augmentent de <orangeStrong>{{2}}%</orangeStrong>. Dure {{3}} tours."
+    "description": "Augmente l'ATQ du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur utilise une attaque et qu'au moins 2 ennemis attaqués ont la Faiblesse correspondante, les DGT critiques du porteur augmentent de <orangeStrong>{{2}}%</orangeStrong>. Dure {{3}} tours."
   }
 }

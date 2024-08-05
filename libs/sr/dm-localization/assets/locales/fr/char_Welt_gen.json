@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Emprisonnement gravitationnel",
-        "fullDesc": "Crée une dimension qui dure {{4}} secondes. Les ennemis dans cette dimension voient leur vitesse de déplacement réduite de {{5}}%. Il y a {{1}}% de <u>chances de base</u> d'emprisonner les ennemis pour 1 tour après être entré en combat avec des ennemis dans la dimension.\\nLes ennemis emprisonnés voient leur <u>action retardée</u> de {{2}}% et leur VIT réduite de {{3}}%. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
-        "shortDesc": "Crée une dimension. La vitesse de déplacement des ennemis à l'intérieur de la dimension est réduite. Il y a de <orangeStrong>fortes chances d'infliger Emprisonné aux ennemis</orangeStrong> en engageant le combat avec des ennemis à l'intérieur de la dimension."
+        "fullDesc": "Crée une dimension spéciale qui dure {{4}} secondes. Les ennemis dans cette dimension spéciale voient leur vitesse de déplacement réduite de {{5}}%. Il y a {{1}}% de <u>chances de base</u> d'emprisonner les ennemis pour 1 tour après être entré en combat avec des ennemis dans la dimension spéciale.\\nLes ennemis emprisonnés voient leur <u>action retardée</u> de {{2}}% et leur VIT réduite de {{3}}%. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "shortDesc": "Crée une dimension spéciale. La vitesse de déplacement des ennemis à l'intérieur de la dimension est réduite. Il y a de <orangeStrong>fortes chances d'infliger Emprisonné aux ennemis</orangeStrong> lorsque le combat est engagé avec des ennemis de la dimension."
       }
     },
     "overworld": {
@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Héritage d'honneur",
-      "desc": "Après utilisation de l'ultime de Welt, ses capacités sont renforcées. Lors des {{3}} prochaines fois où il utilise son ATQ normale ou sa compétence, il inflige des DGT additionnels à la cible équivalents respectivement à {{1}}% du multiplicateur de DGT de son ATQ normale et à {{2}}% du multiplicateur de DGT de sa compétence."
+      "desc": "Après utilisation de son ultime, Welt est renforcé. Puis, les {{3}} prochaines fois où il utilise l'ATQ normale ou la compétence, Welt inflige 1 instance supplémentaire de DGT additionnels à la cible ennemie. Les DGT additionnels infligés en utilisant l'ATQ normale sont équivalents à {{1}}% du multiplicateur de DGT de l'ATQ normale. Les DGT additionnels infligés en utilisant la compétence sont équivalents à {{2}}% du multiplicateur de DGT de la compétence."
     },
     "2": {
       "name": "Confluence des étoiles",

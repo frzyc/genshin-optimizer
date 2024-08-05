@@ -52,7 +52,7 @@
     },
     "4": {
       "name": "Por sorpresa",
-      "desc": "Cuando un aliado de Bronya usa su ATQ básico contra un enemigo que tiene Debilidad de Viento, Bronya lanza un ataque adicional que inflige un Daño de Viento equivalente al {{1}}% del daño de su ATQ básico. Este efecto solo se puede activar una vez por turno."
+      "desc": "Cuando un aliado de Bronya usa su ATQ básico contra un enemigo que tiene Debilidad de Viento, Bronya lanza un ataque adicional que inflige un Daño de Viento equivalente al {{1}}% del daño de ATQ básico. Este efecto solo se puede activar una vez por turno."
     },
     "5": {
       "name": "Imparable",

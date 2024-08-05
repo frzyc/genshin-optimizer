@@ -1,5 +1,4 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
-import { objMap } from '@genshin-optimizer/common/util'
 import type { AbilityKey } from '@genshin-optimizer/sr/consts'
 import { PROJROOT_PATH } from '../../consts'
 import { readDMJSON } from '../../util'
@@ -84,9 +83,13 @@ export type StanceDamageType =
 
 const avatarSkillConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/AvatarSkillConfig.json')
-) as Record<string, Record<string, AvatarSkillConfig>>
+) as AvatarSkillConfig[]
 
-const avatarSkillConfig = objMap(avatarSkillConfigSrc, (v) => Object.values(v))
+const avatarSkillConfig = {} as Record<string, AvatarSkillConfig[]>
+avatarSkillConfigSrc.forEach((config) => {
+  if (!avatarSkillConfig[config.SkillID]) avatarSkillConfig[config.SkillID] = []
+  avatarSkillConfig[config.SkillID].push(config)
+})
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/character/avatarSkillConfig_gen.json`,

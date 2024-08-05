@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Mold of Idolatry",
-        "fullDesc": "After using Technique, creates a dimension that Taunts nearby enemies, lasting for {{1}} second(s). After entering battle with enemies in this dimension, there is a {{2}}% <u>base chance</u> to reduce each single enemy target's SPD by {{3}}% for {{4}} turn(s). Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a dimension. Enemies within the dimension are Taunted. After entering battle with enemies in this dimension, there is a high chance to <orangeStrong>reduce SPD</orangeStrong> of enemy targets."
+        "fullDesc": "After using Technique, creates a special dimension that Taunts nearby enemies, lasting for {{1}} second(s). After entering battle with enemies in this special dimension, there is a {{2}}% <u>base chance</u> to reduce each single enemy target's SPD by {{3}}% for {{4}} turn(s). Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a special dimension. Enemies within the dimension are Taunted. After entering battle with enemies in this dimension, there is a high chance to <orangeStrong>reduce SPD</orangeStrong> of enemy targets."
       }
     },
     "overworld": {

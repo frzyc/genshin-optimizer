@@ -23,14 +23,14 @@
     "ult": {
       "0": {
         "name": "C'est ma tournée !",
-        "fullDesc": "Applique l'effet Ivresse à tous les ennemis pendant {{2}} tours. D'autre part, inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Gallagher à tous les ennemis et la prochaine ATQ normale de Gallagher est renforcée en Coup de fouet.",
-        "shortDesc": "<orangeStrong>Applique l'effet Ivresse</orangeStrong> à tous les ennemis tout en leur infligeant des DGT de feu. Renforce la prochaine ATQ normale de cette unité en Coup de fouet."
+        "fullDesc": "Applique l'effet Ivresse à tous les ennemis pendant {{2}} tours. D'autre part, inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Gallagher à tous les ennemis et renforce sa prochaine ATQ normale en Coup de fouet.",
+        "shortDesc": "<orangeStrong>Applique l'effet Ivresse</orangeStrong> à tous les ennemis tout en leur infligeant des DGT de feu. Renforce la prochaine ATQ normale en Coup de fouet."
       }
     },
     "technique": {
       "0": {
         "name": "Sans modération",
-        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige Ivresse à tous les ennemis pour une durée de {{1}} tours en entrant en combat. Et inflige des DGT de feu équivalents à {{2}}% de l'ATQ de Gallagher à tous les ennemis.",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige Ivresse à tous les ennemis pour une durée de {{1}} tours en entrant en combat et inflige des DGT de feu équivalents à {{2}}% de l'ATQ de Gallagher à tous les ennemis.",
         "shortDesc": "Engage le combat contre les ennemis. <orangeStrong>Inflige Ivresse</orangeStrong> ainsi que des DGT de feu mineurs à tous les ennemis après être entré en combat."
       }
     },
@@ -45,7 +45,7 @@
   "ranks": {
     "1": {
       "name": "B-52",
-      "desc": "Régénère {{1}} points d'énergie et augmente de {{2}}% sa RÉS aux effets lorsque Gallagher entre en combat."
+      "desc": "Lorsque Gallagher entre en combat, il régénère {{1}} points d'énergie et augmente sa RÉS aux effets de {{2}}%."
     },
     "2": {
       "name": "Souffle du dragon",
@@ -65,7 +65,7 @@
     },
     "6": {
       "name": "Sang et sable",
-      "desc": "Augmente de {{1}}% l'effet de Rupture de Gallagher et de {{2}}% son efficacité de Rupture de faiblesse."
+      "desc": "Augmente l'effet de Rupture de Gallagher de {{1}}% et son efficacité de Rupture de faiblesse de {{2}}%."
     }
   }
 }

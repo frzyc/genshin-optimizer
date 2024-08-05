@@ -25,8 +25,8 @@
     "technique": {
       "0": {
         "name": "Molde da Idolatria",
-        "fullDesc": "Após usar a Técnica, cria uma dimensão que causa Provocação nos inimigos próximos, durando por {{1}} segundo(s). Após entrar em combate com inimigos nesta dimensão, há uma <u>chance-base</u> de {{2}}% de reduzir a VEL de cada inimigo-alvo em {{3}}% por {{4}} rodada(s). Apenas 1 dimensão criada pelos aliados pode existir ao mesmo tempo.",
-        "shortDesc": "Cria uma dimensão. Inimigos dentro dessa dimensão sofrem Provocação. Após entrar em combate com inimigos nesta dimensão, há uma alta chance de reduzir a <orangeStrong>VEL</orangeStrong> dos inimigos-alvo."
+        "fullDesc": "Após usar a Técnica, cria uma dimensão especial que causa Provocação nos inimigos próximos, durando por {{1}} segundo(s). Após entrar em combate com inimigos nesta dimensão especial, há uma <u>chance-base</u> de {{2}}% de reduzir a VEL de cada inimigo-alvo em {{3}}% por {{4}} rodada(s). Apenas 1 dimensão criada pelos aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão especial. Inimigos dentro dessa dimensão sofrem Provocação. Após entrar em combate com inimigos nesta dimensão, há uma alta chance de reduzir a <orangeStrong>VEL</orangeStrong> dos inimigos-alvo."
       }
     },
     "overworld": {

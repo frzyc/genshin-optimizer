@@ -40,7 +40,7 @@
   "ranks": {
     "1": {
       "name": "Ablution of the Quick",
-      "desc": "Meningkatkan {{1}}% ATK seluruh rekan tim saat Field aktif."
+      "desc": "Meningkatkan {{1}}% ATK seluruh rekan tim saat area pembatas aktif."
     },
     "2": {
       "name": "Bestowal From the Pure",
@@ -52,7 +52,7 @@
     },
     "4": {
       "name": "Heavy Lies the Crown",
-      "desc": "Membuat target musuh memasuki status Weaken saat Field aktif, mengurangi {{1}}% DMG yang diakibatkannya."
+      "desc": "Membuat target musuh memasuki status Weaken saat area pembatas aktif, mengurangi {{1}}% DMG yang diakibatkannya."
     },
     "5": {
       "name": "Cicatrix 'Neath the Pain",

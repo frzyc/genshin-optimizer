@@ -1,7 +1,6 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { PROJROOT_PATH } from '../../consts'
 import type { AvatarId } from '../../mapping'
-import { characterIdMap } from '../../mapping'
 import { readDMJSON } from '../../util'
 
 export type AvatarPromotionConfig = {
@@ -34,13 +33,14 @@ export type PromotionCostList = {
 
 const avatarPromotionConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/AvatarPromotionConfig.json')
-) as Record<string, Record<number, AvatarPromotionConfig>>
+) as AvatarPromotionConfig[]
 
-const avatarPromotionConfig = Object.fromEntries(
-  Object.entries(avatarPromotionConfigSrc)
-    .filter(([avatarid]) => Object.keys(characterIdMap).includes(avatarid))
-    .map(([avatarid, promoObj]) => [avatarid, Object.values(promoObj)])
-) as Record<AvatarId, AvatarPromotionConfig[]>
+const avatarPromotionConfig = {} as Record<AvatarId, AvatarPromotionConfig[]>
+avatarPromotionConfigSrc.forEach((config) => {
+  if (!avatarPromotionConfig[config.AvatarID])
+    avatarPromotionConfig[config.AvatarID] = []
+  avatarPromotionConfig[config.AvatarID].push(config)
+})
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarPromotionConfig_arrayed_gen.json`,

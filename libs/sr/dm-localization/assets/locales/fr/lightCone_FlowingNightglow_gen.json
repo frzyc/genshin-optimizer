@@ -1,0 +1,7 @@
+{
+  "name": "Lumières nocturnes",
+  "passive": {
+    "name": "Apaisement",
+    "description": "Le porteur gagne 1 cumul de Cantique à chaque fois qu'un allié attaque. Chaque cumul de Cantique augmente de <orangeStrong>{{1}}%</orangeStrong> le taux de régénération d'énergie du porteur, jusqu'à {{2}} cumuls. Supprime l'effet Cantique et gagne Cadence à la place lorsque le porteur utilise son ultime. Cadence augmente l'ATQ du porteur de <orangeStrong>{{4}}%</orangeStrong> et les DGT infligés par l'équipe de <orangeStrong>{{3}}%</orangeStrong>. Dure {{5}} tour."
+  }
+}

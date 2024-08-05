@@ -1,0 +1,66 @@
+{
+  "name": "Yunli",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Frappe tourbillonnante",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yunli à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lame de choc",
+        "fullDesc": "Restaure des PV équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ de Yunli + <orangeStrong>{{4}}</orangeStrong>, et inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yunli à une cible ennemie unique et des DGT physiques équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Yunli aux cibles adjacentes.",
+        "shortDesc": "Restaure des PV au personnage et inflige des DGT physiques mineurs à un ennemi unique et aux cibles adjacentes."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Du ciel à la terre",
+        "fullDesc": "Consomme {{8}} points d'énergie. Yunli obtient l'effet Parade et provoque tous les ennemis. Dure jusqu'à la fin du prochain tour allié ou ennemi et augmente les DGT critiques infligés par le prochain contre de Yunli de <orangeStrong>{{2}}%</orangeStrong>. Lorsque l'effet de contre du talent se déclenche dans l'état Parade, il est converti en <u>contre</u> Sens de l'éradication et supprime l'état Parade. Si aucun contre n'est déclenché dans l'état Parade, Yunli lance immédiatement le <u>contre</u> Sens de l'entaille sur une cible ennemie aléatoire à la fin de l'état Parade.\\n\\nSens de l'entaille : Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yunli à la cible et des DGT physiques équivalents à <orangeStrong>{{6}}%</orangeStrong> de l'ATQ de Yunli aux cibles adjacentes.\\nSens de l'éradication : Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yunli à la cible et des DGT physiques équivalents à <orangeStrong>{{6}}%</orangeStrong> de l'ATQ de Yunli aux cibles adjacentes. Puis, inflige {{4}} instances de DGT supplémentaires, chacune infligeant des DGT physiques équivalents à <orangeStrong>{{7}}%</orangeStrong> de l'ATQ de Yunli à une cible ennemie unique aléatoire.\\n\\nLes DGT que Yunli inflige via cette capacité sont considérés comme des DGT d'ultime.",
+        "shortDesc": "Entre en état de Parade et provoque tous les ennemis, déclenchant un <orangeStrong>puissant <u>contre</u></orangeStrong> lorsqu'elle est attaquée pendant cette période. Le contre <orangeStrong>inflige des DGT physiques</orangeStrong> à l'assaillant et aux cibles adjacentes, puis inflige des DGT physiques mineurs à un ennemi unique qui rebondissent 6 fois. Si aucun contre n'est déclenché pendant l'état Parade, inflige des DGT physiques à une cible ennemie aléatoire et aux cibles adjacentes à la fin de l'état."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Riposte anticipée",
+        "fullDesc": "Bénéficie de l'effet Protection pendant {{2}} secondes. Durant cette période, si le combat est engagé en attaquant un ennemi ou en subissant une attaque, Yunli inflige immédiatement Sens de l'éradication à une cible ennemie aléatoire et augmente les DGT infligés par cette attaque de {{1}}%.",
+        "shortDesc": "Bénéficie de l'effet Protection pendant 20 secondes. Durant cette période, si le combat est engagé en attaquant un ennemi ou en subissant une attaque, Yunli inflige immédiatement Sens de l'éradication à une cible ennemie aléatoire."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Pureté de la lame forgée",
+      "desc": "Augmente les DGT de Sens de l'entaille et de Sens de l'éradication de {{1}}%, et augmente le nombre d'instances de DGT supplémentaires de Sens de l'éradication de {{2}}."
+    },
+    "2": {
+      "name": "Rupture de l'aube",
+      "desc": "Lorsque Yunli inflige des DGT via un contre, elle ignore {{1}}% de la DÉF de la cible."
+    },
+    "3": {
+      "name": "Domination du fer",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Chant de l'acier",
+      "desc": "Augmente de {{1}}% la RÉS aux effets du personnage pendant {{2}} tour après avoir lancé Sens de l'entaille ou Sens de l'éradication."
+    },
+    "5": {
+      "name": "Arme de toujours",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Courage à toute épreuve",
+      "desc": "Quand l'effet Parade est actif, lorsqu'un ennemi utilise activement une capacité, que ce soit pour attaquer Yunli ou non, Sens de l'éradication se déclenche et supprime l'effet Parade. Lorsque Yunli inflige des DGT via Sens de l'entaille ou Sens de l'éradication, ses chances de coup critique augmentent de {{1}}% et sa PÉN de RÉS physique augmente de {{2}}%."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Là où les rêves se reposent",
+  "passive": {
+    "name": "Métamorphose",
+    "description": "Augmente l'effet de Rupture du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur inflige des DGT de rupture à une cible ennemie, il lui applique l'effet Perdu pendant {{4}} tours. Les cibles affectées par l'effet Perdu subissent <orangeStrong>{{2}}%</orangeStrong> de DGT de rupture supplémentaires de la part du porteur et voient leur VIT réduite de {{3}}%. Les effets du même type ne se cumulent pas."
+  }
+}

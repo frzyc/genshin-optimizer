@@ -30,8 +30,8 @@
     "technique": {
       "0": {
         "name": "Shine of Truth",
-        "fullDesc": "After using this Technique, creates a dimension around Jingliu that lasts for {{3}} seconds, and all enemies in this dimension will become Frozen. After entering combat with enemies in the dimension, Jingliu immediately regenerates {{6}} Energy and obtains {{1}} stack(s) of Syzygy, with a {{2}}% <u>base chance</u> of Freezing enemy targets for {{4}} turn(s). While Frozen, enemy targets cannot take action, and receive Ice <u>Additional DMG</u> equal to {{5}}% of Jingliu's ATK at the start of every turn. Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a dimension around the character. Enemies within this dimension will become <orangeStrong>Frozen</orangeStrong>. After entering combat with enemies in the dimension, this character regenerates Energy and obtains 1 stack of Syzygy with a high chance to <orangeStrong>Freeze</orangeStrong> enemies."
+        "fullDesc": "After using this Technique, creates a special dimension around Jingliu that lasts for {{3}} seconds, and all enemies in this special dimension will become Frozen. After entering combat with enemies in the special dimension, Jingliu immediately regenerates {{6}} Energy and obtains {{1}} stack(s) of Syzygy, with a {{2}}% <u>base chance</u> of Freezing enemy targets for {{4}} turn(s). While Frozen, enemy targets cannot take action, and receive Ice <u>Additional DMG</u> equal to {{5}}% of Jingliu's ATK at the start of every turn. Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a special dimension around the character. Enemies within this dimension will become <orangeStrong>Frozen</orangeStrong>. After entering combat with enemies in the dimension, this character regenerates Energy and obtains 1 stack of Syzygy with a high chance to <orangeStrong>Freeze</orangeStrong> enemies."
       }
     },
     "overworld": {

@@ -1,0 +1,71 @@
+{
+  "name": "Siete de Marzo",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Espada dominademonios",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Siete de Marzo como Daño Imaginario a un enemigo y obtiene {{2}} pt. de carga.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo y obtiene <orangeStrong>{{2}}</orangeStrong> pt. de carga."
+      },
+      "1": {
+        "name": "Ceño desarrugado, corazón azorado",
+        "fullDesc": "Inicialmente, inflige daño {{4}} veces. Cada vez, inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Siete de Marzo como Daño Imaginario a un enemigo. Después de infligir daño la última vez, tiene una <u>probabilidad fija</u> del {{2}}% de infligir daño 1 vez adicional, hasta un máximo de {{3}} veces adicionales. La energía recuperada al usar el ATQ básico potenciado no aumenta en función de las veces adicionales que se inflija daño.\\nEl ATQ básico potenciado no puede recuperar pts. de habilidad básica.",
+        "shortDesc": "Inflige Daño Imaginario a un enemigo. Inicialmente, inflige daño <orangeStrong>{{4}}</orangeStrong> veces. <orangeStrong>Tiene una probabilidad de infligir daño hasta <color=#f29e38ff>#3[i]</orangeStrong> veces más</color>."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Maestro, ¡toma un poco de té!",
+        "fullDesc": "Hace que otro aliado distinto a sí misma se convierta en Maestro. La VEL del Maestro aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Solo el último aliado que haya sido objetivo de la habilidad básica de Siete de Marzo se considera su \"Maestro\".\\nCuando usa su ATQ básico o inflige daño 1 vez con su ATQ básico potenciado, se activa uno de los siguientes efectos en función de la Vía del Maestro que haya presente en el campo de batalla:\\nErudición, Destrucción o Cacería: inflige un <u>daño adicional</u> del mismo tipo que el Maestro equivalente al <orangeStrong>{{2}}%</orangeStrong> del ATQ de Siete de Marzo.\\nArmonía, Nihilidad, Conservación o Abundancia: la Reducción de Firmeza del daño infligido esta vez aumenta en un {{3}}%.",
+        "shortDesc": "Designa a un aliado como Maestro. Al infligir daño el ATQ básico o ATQ básico potenciado, activa uno de los siguientes efectos según sea la <orangeStrong>Vía del Maestro</orangeStrong>:\\nErudición, Destrucción o Cacería: inflige <orangeStrong><u>daño adicional</u></orangeStrong> extra del mismo tipo que el Maestro.\\nArmonía, Nihilidad, Conservación o Abundancia: aumenta la <orangeStrong>Reducción de Firmeza</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Siete de Marzo, heroína inigualable",
+        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Siete de Marzo como Daño Imaginario a un enemigo.\\nAumenta en {{2}} las veces que inflige daño inicialmente con su próximo ATQ básico potenciado y aumenta en un {{3}}% la <u>probabilidad fija</u> de que este inflija daño extra.",
+        "shortDesc": "Inflige Daño Imaginario a un enemigo y <orangeStrong>aumenta</orangeStrong> la probabilidad de infligir daño y el número de veces que inflige daño su <orangeStrong>próximo ATQ básico potenciado</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Festín de una sentada",
+        "fullDesc": "Si Siete de Marzo está en el equipo, cada vez que un aliado use la técnica 1 vez, Siete de Marzo obtiene 1 pt. de carga al entrar en el siguiente combate, hasta un máximo de {{1}} pts. \\nAl usar la técnica, Siete de Marzo recupera {{2}} pts. de energía al entrar en el siguiente combate.",
+        "shortDesc": "Cada vez que un aliado usa la técnica, Siete de Marzo obtiene carga al entrar en el siguiente combate. Al usar la técnica, recupera pts. de energía tras entrar en el siguiente combate."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Espada de lustre astral",
+      "desc": "Cuando el Maestro está en el campo de batalla, la VEL de Siete de Marzo aumenta en un {{1}}%."
+    },
+    "2": {
+      "name": "Ágil hoja del agitado oleaje",
+      "desc": "Después de que el Maestro use el ATQ básico o la habilidad básica para atacar al enemigo, Siete de Marzo lanza inmediatamente un ataque adicional e inflige un Daño Imaginario equivalente al {{1}}% de su ATQ al objetivo principal. Además, activa el efecto correspondiente según la Vía del Maestro, y obtiene {{3}} pt. de carga. Si no existe ningún objetivo principal que pueda ser atacado, el ataque adicional se dirige contra un enemigo al azar. Este efecto solo se puede activar una vez en cada turno."
+    },
+    "3": {
+      "name": "Agudeza y habilidad a la par",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Quien es divina no desatina",
+      "desc": "Recupera {{1}} pts. de energía al comienzo del turno."
+    },
+    "5": {
+      "name": "Más entreno y menos caramelos",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Una chica sin igual",
+      "desc": "Tras usar la habilidad definitiva, el Daño CRIT que inflige el siguiente ATQ básico potenciado aumenta en un {{1}}%."
+    }
+  }
+}

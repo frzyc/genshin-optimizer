@@ -1,0 +1,71 @@
+{
+  "name": "March 7th",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lưu Ly Kiếm Thanh Tẩy Yêu Tà",
+        "fullDesc": "Gây Sát Thương Số Ảo bằng <orangeStrong>{{1}}%</orangeStrong> tấn công của March 7th cho 1 kẻ địch chỉ định, sau đó nhận {{2}} điểm Nạp Năng Lượng.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch, nhận <orangeStrong>{{2}}</orangeStrong> điểm Nạp Năng Lượng."
+      },
+      "1": {
+        "name": "Trán Một Nhát, Tim Một Nhát",
+        "fullDesc": "Ban đầu gây {{4}} đòn sát thương, mỗi đòn gây Sát Thương Số Ảo bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của March 7th cho 1 kẻ địch chỉ định. Sau mỗi lần gây đòn sát thương cuối cùng, có {{2}}% <u>xác suất cố định</u> gây thêm 1 đòn sát thương, tối đa được gây thêm {{3}} đòn sát thương. Năng Lượng hồi phục khi thi triển Tấn Công Thường Cường Hóa sẽ không tăng lên theo số đòn.\\nTấn Công Thường Cường Hóa không thể hồi điểm Chiến Kỹ.",
+        "shortDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch, ban đầu gây <orangeStrong>{{4}}</orangeStrong> đòn sát thương, <orangeStrong>có xác suất gây thêm tối đa <color=#f29e38ff>#3[i]</orangeStrong> đòn sát thương</color>."
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Sư Phụ, Mời Uống Trà!",
+        "fullDesc": "Giúp 1 đồng đội phe ta (ngoại trừ bản thân) trở thành Sư Phụ, tốc độ của Sư Phụ tăng <orangeStrong>{{1}}%</orangeStrong>. Chỉ mục tiêu thi triển gần đây nhất của Chiến Kỹ được xem là Sư Phụ của March 7th.\\nMỗi khi Tấn Công Thường hoặc gây ra 1 đòn sát thương Tấn Công Thường Cường Hóa, nếu trong trận có Sư Phụ thuộc Vận Mệnh được chỉ định, thì sẽ kích hoạt hiệu ứng tương ứng:\\nTri Thức, Hủy Diệt, Săn Bắn: Gây thêm <u>Sát Thương Kèm Theo</u> tùy theo thuộc tính của Sư Phụ và bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của March 7th.\\nHòa Hợp, Hư Vô, Bảo Hộ, Trù Phú: Tăng {{3}}% điểm Giảm Sức Bền của lần sát thương này.",
+        "shortDesc": "Khiến 1 đồng đội phe ta trở thành Sư Phụ. Khi Tấn Công Thường hoặc gây sát thương Tấn Công Thường Cường Hóa, sẽ dựa vào <orangeStrong>vận mệnh Sư Phụ</orangeStrong> để kích hoạt hiệu ứng tương ứng:\\nTri Thức, Hủy Diệt, Săn Bắn: Gây thêm <orangeStrong><u>Sát Thương Kèm Theo</u></orangeStrong> dựa trên thuộc tính Sư Phụ.\\nHòa Hợp, Hư Vô, Bảo Hộ, Trù Phú: Tăng điểm <orangeStrong>Giảm Sức Bền</orangeStrong>."
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Nữ Hiệp Cái Thế March 7th",
+        "fullDesc": "Gây Sát Thương Số Ảo bằng <orangeStrong>{{1}}%</orangeStrong> tấn công của March 7th cho 1 kẻ địch chỉ định.\\nKhiến số đòn đánh trong một lượt ban đầu của lần Cường Hóa Tấn Công Thường tiếp theo tăng {{2}} đòn, tăng {{3}}% <u>xác suất cố định</u> gây thêm sát thương.",
+        "shortDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch, đồng thời <orangeStrong>tăng</orangeStrong> số đòn và xác suất gây sát thương của <orangeStrong>Tấn Công Thường Cường Hóa ở lần tiếp theo</orangeStrong>."
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Một Hơi Hết Ba Bữa",
+        "fullDesc": "Nếu March 7th có mặt trong đội, mỗi khi đồng đội thi triển 1 lần Bí Kỹ thì March 7th nhận 1 điểm Nạp Năng Lượng khi bắt đầu trận tiếp theo, tối đa nhận {{1}} điểm.\\nSau khi dùng Bí Kỹ, March 7th hồi {{2}} điểm Năng Lượng khi bắt đầu trận tiếp theo.",
+        "shortDesc": "Mỗi khi đồng đội thi triển Bí Kỹ, March 7th sẽ nhận Nạp Năng Lượng ở lần vào chiến đấu tiếp theo. Dùng Bí Kỹ sẽ hồi Năng Lượng sau khi bước vào lần chiến đấu tiếp theo."
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm suy yếu Sức Bền thuộc tính tương ứng của kẻ địch.",
+        "shortDesc": ""
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Kiếm Thuật Sáng Như Sao",
+      "desc": "Khi có mặt Sư Phụ trên sân, Tốc Độ của March 7th tăng {{1}}%."
+    },
+    "2": {
+      "name": "Kiếm Vũ Sóng Đào",
+      "desc": "Sau mỗi lần Sư Phụ thi triển Tấn Công Thường hoặc Chiến Kỹ tấn công mục tiêu địch, March 7th sẽ lập tức phát động Đòn Đánh Theo Sau, gây ra Sát Thương Số Ảo bằng {{1}}% Tấn Công của March 7th cho mục tiêu chính của lần tấn công này, và dựa theo Vận Mệnh của Sư Phụ để kích hoạt hiệu ứng tương ứng, sau đó nhận {{3}} điểm Nạp Năng Lượng. Nếu không có mục tiêu chính có thể tấn công, thì sẽ tấn công một mục tiêu ngẫu nhiên của phe địch. Hiệu quả này mỗi hiệp kích hoạt tối đa 1 lần."
+    },
+    "3": {
+      "name": "Nhanh Trí Đầy Bản Lĩnh",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Rồng Bay Phượng Múa Chẳng Ngán Ai",
+      "desc": "Khi bắt đầu hiệp, sẽ hồi phục {{1}} điểm Năng Lượng."
+    },
+    "5": {
+      "name": "Chăm Luyện Kiếm, Đừng Ăn Kẹo",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Chị Đây Thiên Hạ Đệ Nhất",
+      "desc": "Sau khi thi triển Tuyệt Kỹ, Sát Thương Bạo Kích gây ra ở lần Tấn Công Thường Cường Hóa tiếp theo sẽ tăng {{1}}%."
+    }
+  }
+}

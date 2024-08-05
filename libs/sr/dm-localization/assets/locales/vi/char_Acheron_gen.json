@@ -64,7 +64,7 @@
     },
     "2": {
       "name": "Sấm Thinh Lặng, Giông Tố Dừng",
-      "desc": "Giảm 1 nhân vật Vận Mệnh \"Hư Vô\" cần thiết để Vết Tích \"Vực sâu\" đạt được hiệu quả cao nhất. Khi hiệp của bản thân bắt đầu sẽ nhận 1 điểm Mộng Tàn, đồng thời kèm theo 1 tầng \"Nút Thắt Đỏ\" cho kẻ địch có nhiều \"Nút Thắt Đỏ\" nhất."
+      "desc": "Giảm 1 nhân vật Vận Mệnh \"Hư Vô\" cần thiết để Vết Tích \"Vực Sâu\" đạt được hiệu quả cao nhất. Khi hiệp của bản thân bắt đầu sẽ nhận 1 điểm Mộng Tàn, đồng thời kèm theo 1 tầng \"Nút Thắt Đỏ\" cho kẻ địch có nhiều \"Nút Thắt Đỏ\" nhất."
     },
     "3": {
       "name": "Lạnh Giá Vĩnh Hằng",
@@ -72,7 +72,7 @@
     },
     "4": {
       "name": "Hồn Gương Rực Lửa",
-      "desc": "Khi kẻ địch vào chiến đấu, sẽ khiến kẻ đó rơi vào trạng thái Trọng Thương Tuyệt Kỹ, sát thương Tuyệt Kỹ phải chịu tăng {{1}}%."
+      "desc": "Khi kẻ địch vào chiến đấu, sẽ khiến kẻ đó rơi vào trạng thái Trọng Thương Tuyệt Kỹ, Sát Thương Tuyệt Kỹ phải chịu tăng {{1}}%."
     },
     "5": {
       "name": "Núi Đá Phân Ly, Thiên Hồn Tiêu Tán",
@@ -80,7 +80,7 @@
     },
     "6": {
       "name": "Ngày Tận Thế, Người Giải Phóng",
-      "desc": "Tăng {{1}}% Xuyên Kháng Toàn Thuộc Tính mà sát thương Tuyệt Kỹ của Acheron gây ra, sát thương của tấn công thường và Chiến Kỹ gây ra cũng được xem là sát thương Tuyệt Kỹ, đồng thời bỏ qua thuộc tính Điểm Yếu và làm giảm Sức Bền của địch. Khi phá vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Lôi."
+      "desc": "Tăng {{1}}% Xuyên Kháng Toàn Thuộc Tính mà sát thương Tuyệt Kỹ của Acheron gây ra, sát thương của tấn công thường và Chiến Kỹ gây ra cũng được xem là Sát Thương Tuyệt Kỹ, đồng thời bỏ qua thuộc tính Điểm Yếu và làm giảm Sức Bền của địch. Khi phá vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Lôi."
     }
   }
 }

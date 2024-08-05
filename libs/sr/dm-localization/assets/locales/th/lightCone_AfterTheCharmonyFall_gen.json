@@ -1,0 +1,7 @@
+{
+  "name": "After the Charmony Fall",
+  "passive": {
+    "name": "Quiescence",
+    "description": "ทำให้เอฟเฟกต์ทำลายล้างของผู้สวมใส่ เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> หลังจากผู้สวมใส่ปล่อยท่าไม้ตาย ความเร็วจะเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น"
+  }
+}

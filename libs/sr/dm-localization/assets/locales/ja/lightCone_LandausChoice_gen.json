@@ -2,6 +2,6 @@
   "name": "ランドゥーの{RUBY_B#せんたく}選択{RUBY_E#}",
   "passive": {
     "name": "{RUBY_B#こういん}光陰{RUBY_E#}{RUBY_B#や}矢{RUBY_E#}の{RUBY_B#ごと}如{RUBY_E#}し",
-    "description": "装備キャラが敵の攻撃を受ける確率がアップする、被ダメージ-<orangeStrong>{{2}}%</orangeStrong>。"
+    "description": "装備キャラが敵の攻撃を受ける確率がアップする、受けるダメージ-<orangeStrong>{{2}}%</orangeStrong>。"
   }
 }

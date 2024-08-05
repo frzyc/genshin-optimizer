@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "{RUBY_B#かわい}可愛{RUBY_E#}いは{RUBY_B#せいぎ}正義{RUBY_E#}",
-        "fullDesc": "指定した味方単体に三月なのかの防御力<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>の耐久値を持つバリアを与える、{{2}}ターン継続。\\nその味方の残りHPが{{3}}%以上の場合、敵に攻撃される確率が大幅にアップする。",
+        "fullDesc": "指定した味方単体に三月なのかの防御力<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>の耐久値を持つバリアを与える、{{2}}ターン継続。\\nその味方の残りHPが{{3}}%以上の場合、敵に攻撃される確率が大アップする。",
         "shortDesc": "味方単体に<orangeStrong>バリアを付与</orangeStrong>。"
       }
     },

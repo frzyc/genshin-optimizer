@@ -1,0 +1,6 @@
+{
+  "setName": "Duran, Dinastia dos Lobos Errantes",
+  "setEffects": {
+    "2": "Quando um aliado utilizam um Ataque Extra, o usuário recebe 1 acúmulo de Mérito, acumulando até {{1}} vez(es). Cada acúmulo de Mérito aumenta o Dano causado pelos Ataques Extras do usuário em {{2}}%. Quando há {{1}} acúmulos, aumenta adicionalmente o Dano CRIT do usuário em {{3}}%."
+  }
+}

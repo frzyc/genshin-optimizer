@@ -1,0 +1,6 @@
+{
+  "setName": "Duran, Dynastie der rennenden Wölfe",
+  "setEffects": {
+    "2": "Wenn ein Verbündeter einen Folgeangriff ausführt, erhält der Träger 1 Stapelung „Verdienst“, bis zu {{1}} Stapelungen. Jede Stapelung Verdienst erhöht den durch Folgeangriffe verursachten SCH des Trägers um {{2}}%. Werden {{1}} Stapelungen erreicht, wird der KRIT-SCH des Trägers zusätzlich um {{3}}% erhöht."
+  }
+}
