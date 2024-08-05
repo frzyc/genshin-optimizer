@@ -200,7 +200,7 @@ function reaffine(
   const affine = [...topLevelAffine].filter((f) => f.operation !== 'const')
   const affineMap = new Map(
     affine.map((node) => [
-      node,
+      node as OptNode,
       !forceRename && node.operation === 'read' && node.path[0] === 'dyn'
         ? node
         : dynRead(nextDynKey()),
