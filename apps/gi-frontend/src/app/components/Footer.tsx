@@ -12,7 +12,6 @@ export default function Footer() {
 }
 function FooterContent() {
   const { t } = useTranslation('ui')
-  console.log(process.env)
   return (
     <AppBar
       component="footer"
