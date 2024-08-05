@@ -90,6 +90,7 @@
     "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "^5.16.6",
     "@mui/material-nextjs": "^5.16.6",
+    "@mui/system": "^5.16.6",
     "@supabase/ssr": "^0.3.0",
     "@swc/helpers": "0.5.11",
     "core-js": "^3.28.0",

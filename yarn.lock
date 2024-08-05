@@ -11962,6 +11962,7 @@ __metadata:
     "@mui/lab": ^5.0.0-alpha.170
     "@mui/material": ^5.16.6
     "@mui/material-nextjs": ^5.16.6
+    "@mui/system": ^5.16.6
     "@mui/types": ^7.2.14
     "@nx/cypress": 19.5.6
     "@nx/devkit": 19.5.6
