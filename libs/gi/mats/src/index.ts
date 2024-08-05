@@ -1,9 +1,7 @@
 import type { AscensionKey, CharacterKey } from '@genshin-optimizer/gi/consts'
 import * as allCharacterMats_gen from './allCharacterMats_gen.json'
-import type {
-  CharacterMatDatas,
-  UpgradeCost,
-} from './executors/gen-mats/executor'
+import type { UpgradeCost } from './executors/gen-mats/src'
+import type { CharacterMatDatas } from './executors/gen-mats/src/characterMatData'
 
 const allCharacterMats = allCharacterMats_gen as CharacterMatDatas
 
