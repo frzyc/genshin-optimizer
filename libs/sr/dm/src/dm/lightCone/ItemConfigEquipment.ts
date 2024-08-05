@@ -43,10 +43,10 @@ const ItemConfigEquipmentSrc = JSON.parse(
 dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/ItemConfigEquipment_idmap_gen.json`,
   objKeyValMap(ItemConfigEquipmentSrc, (config) => [
-      config.ID,
-      nameToKey(TextMapEN[config.ItemName.Hash]),
-    ])
-  )
+    config.ID,
+    nameToKey(TextMapEN[config.ItemName.Hash]),
+  ])
+)
 dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/ItemConfigEquipment_keys_gen.json`,
   [
@@ -61,7 +61,7 @@ dumpFile(
 )
 
 const ItemConfigEquipment = objFilterKeys(
-  objKeyValMap(ItemConfigEquipmentSrc, config => [config.ID, config]),
+  objKeyValMap(ItemConfigEquipmentSrc, (config) => [config.ID, config]),
   Object.keys(lightConeIdMap) as LightConeId[]
 ) as Record<LightConeId, ItemConfigEquipment>
 export { ItemConfigEquipment }

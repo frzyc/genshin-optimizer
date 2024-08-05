@@ -19,12 +19,16 @@ const relicSubAffixConfigFlat = JSON.parse(
   readDMJSON('ExcelOutput/RelicSubAffixConfig.json')
 ) as RelicSubAffixConfig[]
 
-export const relicSubAffixConfig = relicSubAffixConfigFlat.reduce((fullConfig, config) => {
-  const { GroupID, AffixID } = config
-  if (!fullConfig[GroupID]) fullConfig[GroupID] = {} as Record<string, RelicSubAffixConfig>
-  fullConfig[GroupID][`${AffixID}`] = config
-  return fullConfig
-}, {} as Record<RelicRarityKey, Record<string, RelicSubAffixConfig>>)
+export const relicSubAffixConfig = relicSubAffixConfigFlat.reduce(
+  (fullConfig, config) => {
+    const { GroupID, AffixID } = config
+    if (!fullConfig[GroupID])
+      fullConfig[GroupID] = {} as Record<string, RelicSubAffixConfig>
+    fullConfig[GroupID][`${AffixID}`] = config
+    return fullConfig
+  },
+  {} as Record<RelicRarityKey, Record<string, RelicSubAffixConfig>>
+)
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/relic/RelicSubAffixConfig_gen.json`,

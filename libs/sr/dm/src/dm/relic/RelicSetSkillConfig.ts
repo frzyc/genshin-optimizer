@@ -1,5 +1,5 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
-import { objFilterKeys, objKeyMap, objKeyValMap, objMap } from '@genshin-optimizer/common/util'
+import { objMap } from '@genshin-optimizer/common/util'
 import type { RelicSetCountKey } from '@genshin-optimizer/sr/consts'
 import { PROJROOT_PATH } from '../../consts'
 import type { StatDMKey } from '../../mapping'
@@ -26,14 +26,18 @@ const relicSetSkillConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/RelicSetSkillConfig.json')
 ) as RelicSetSkillConfig[]
 
-export const relicSetSkillConfig = relicSetSkillConfigSrc.reduce((configMap, config) => {
-  if (!relicSetIdMap[config.SetID]) return configMap
+export const relicSetSkillConfig = relicSetSkillConfigSrc.reduce(
+  (configMap, config) => {
+    if (!relicSetIdMap[config.SetID]) return configMap
 
-  const {SetID, RequireNum} = config
-  if(!configMap[SetID]) configMap[SetID] = {} as Record<RelicSetCountKey, RelicSetSkillConfig>
-  configMap[SetID][RequireNum] = config
-  return configMap
-}, {} as Record<RelicSetId, Record<RelicSetCountKey, RelicSetSkillConfig>>)
+    const { SetID, RequireNum } = config
+    if (!configMap[SetID])
+      configMap[SetID] = {} as Record<RelicSetCountKey, RelicSetSkillConfig>
+    configMap[SetID][RequireNum] = config
+    return configMap
+  },
+  {} as Record<RelicSetId, Record<RelicSetCountKey, RelicSetSkillConfig>>
+)
 
 const prePath = `${PROJROOT_PATH}/src/dm/relic/RelicSetSkillConfig`
 
