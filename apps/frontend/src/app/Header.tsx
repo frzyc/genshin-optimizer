@@ -3,16 +3,14 @@ import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext, shouldShowDevComponents } from '@genshin-optimizer/gi/ui'
-import {
-  Article,
-  Construction,
-  Menu as MenuIcon,
-  People,
-  Scanner,
-  Settings,
-} from '@mui/icons-material'
+import ArticleIcon from '@mui/icons-material/Article'
 import BookIcon from '@mui/icons-material/Book'
+import ConstructionIcon from '@mui/icons-material/Construction'
 import GroupsIcon from '@mui/icons-material/Groups'
+import MenuIcon from '@mui/icons-material/Menu'
+import PeopleIcon from '@mui/icons-material/People'
+import ScannerIcon from '@mui/icons-material/Scanner'
+import SettingsIcon from '@mui/icons-material/Settings'
 import {
   AppBar,
   Avatar,
@@ -65,7 +63,7 @@ const archive: ITab = {
 }
 const characters: ITab = {
   i18Key: 'tabs.characters',
-  icon: <People />,
+  icon: <PeopleIcon />,
   to: '/characters',
   value: 'characters',
   textSuffix: <CharacterChip key="charAdd" />,
@@ -79,25 +77,25 @@ const teams: ITab = {
 }
 const tools: ITab = {
   i18Key: 'tabs.tools',
-  icon: <Construction />,
+  icon: <ConstructionIcon />,
   to: '/tools',
   value: 'tools',
 }
 const scanner: ITab = {
   i18Key: 'tabs.scanner',
-  icon: <Scanner />,
+  icon: <ScannerIcon />,
   to: '/scanner',
   value: 'scanner',
 }
 const doc: ITab = {
   i18Key: 'tabs.doc',
-  icon: <Article />,
+  icon: <ArticleIcon />,
   to: '/doc',
   value: 'doc',
 }
 const setting: ITab = {
   i18Key: 'tabs.setting',
-  icon: <Settings />,
+  icon: <SettingsIcon />,
   to: '/setting',
   value: 'setting',
   textSuffix: <DBChip />,
@@ -188,11 +186,8 @@ const maincontent = [
 ] as const
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
-  const isXL = useMediaQuery(theme.breakpoints.up('xl'))
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
-  const { t } = useTranslation('ui')
-  const { silly } = useContext(SillyContext)
   const {
     params: { currentTab },
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
@@ -200,89 +195,100 @@ function HeaderContent({ anchor }: { anchor: string }) {
   }
   if (isMobile)
     return <MobileHeader anchor={anchor} currentTab={currentTab ?? ''} />
+  return <DesktopHeader anchor={anchor} currentTab={currentTab ?? ''} />
+}
+function DesktopHeader({
+  anchor,
+  currentTab,
+}: {
+  anchor: string
+  currentTab: string
+}) {
+  const theme = useTheme()
+  const isXL = useMediaQuery(theme.breakpoints.up('xl'))
+  const { t } = useTranslation('ui')
+  const { silly } = useContext(SillyContext)
   return (
-    <Box>
-      <AppBar
-        position="static"
-        sx={{ bgcolor: 'neutral900.main' }}
-        elevation={0}
-        id={anchor}
+    <AppBar
+      position="static"
+      sx={{ bgcolor: 'neutral900.main' }}
+      elevation={0}
+      id={anchor}
+    >
+      <Tabs
+        value={currentTab}
+        sx={(theme) => ({
+          '& .MuiTab-root': {
+            p: 1,
+            minWidth: 'auto',
+            minHeight: 'auto',
+          },
+          '& .MuiTab-root:hover': {
+            transition: 'background-color 0.5s ease',
+            backgroundColor: 'rgba(255,255,255,0.1)',
+          },
+          '& .Mui-selected': {
+            backgroundImage: `linear-gradient(to top, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
+            color: `${theme.palette.neutral100.main} !important`,
+            textShadow:
+              '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0',
+          },
+        })}
       >
-        <Tabs
-          value={currentTab}
-          sx={(theme) => ({
-            '& .MuiTab-root': {
-              p: 1,
-              minWidth: 'auto',
-              minHeight: 'auto',
-            },
-            '& .MuiTab-root:hover': {
-              transition: 'background-color 0.5s ease',
-              backgroundColor: 'rgba(255,255,255,0.1)',
-            },
-            '& .Mui-selected': {
-              backgroundImage: `linear-gradient(to top, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
-              color: `${theme.palette.neutral100.main} !important`,
-              textShadow:
-                '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0',
-            },
-          })}
-        >
-          <Tab
-            value=""
-            component={RouterLink}
-            to="/"
-            label={
-              <Box display="flex" alignItems="center">
-                <Avatar
-                  src={silly ? silly_icon : go_icon}
-                  variant="rounded"
-                  sx={(theme) => ({
-                    height: '24px',
-                    width: '24px',
-                    boxShadow: `0 0 10px 1px ${theme.palette.brandGO500.main}`,
-                  })}
-                />
-                <Typography variant="h6" sx={{ px: 1, fontWeight: 'Normal' }}>
-                  {t(silly ? 'sillyPageTitle' : 'pageTitle')}
-                </Typography>
-                {shouldShowDevComponents && (
-                  <Typography variant="body1">(Dev Mode)</Typography>
-                )}
-              </Box>
-            }
-          />
-          {maincontent.map(({ i18Key, value, to, icon, textSuffix }) => {
-            const tooltipIcon = isXL ? (
-              icon
-            ) : (
-              <Tooltip arrow title={t(i18Key)}>
-                {icon as JSX.Element}
-              </Tooltip>
-            )
-            return (
-              <Tab
-                key={value}
-                value={value}
-                component={RouterLink}
-                to={to}
-                icon={tooltipIcon as ReactElement}
-                iconPosition="start"
-                label={
-                  isXL || textSuffix ? (
-                    <Box display="flex" gap={0.5} alignItems="center">
-                      {isXL && <Typography>{t(i18Key)}</Typography>}
-                      {textSuffix}
-                    </Box>
-                  ) : undefined
-                }
-                sx={{ ml: value === 'setting' ? 'auto' : undefined }}
+        <Tab
+          value=""
+          component={RouterLink}
+          to="/"
+          label={
+            <Box display="flex" alignItems="center">
+              <Avatar
+                src={silly ? silly_icon : go_icon}
+                variant="rounded"
+                sx={(theme) => ({
+                  height: '24px',
+                  width: '24px',
+                  boxShadow: `0 0 10px 1px ${theme.palette.brandGO500.main}`,
+                })}
               />
-            )
-          })}
-        </Tabs>
-      </AppBar>
-    </Box>
+              <Typography variant="h6" sx={{ px: 1, fontWeight: 'Normal' }}>
+                {t(silly ? 'sillyPageTitle' : 'pageTitle')}
+              </Typography>
+              {shouldShowDevComponents && (
+                <Typography variant="body1">(Dev Mode)</Typography>
+              )}
+            </Box>
+          }
+        />
+        {maincontent.map(({ i18Key, value, to, icon, textSuffix }) => {
+          const tooltipIcon = isXL ? (
+            icon
+          ) : (
+            <Tooltip arrow title={t(i18Key)}>
+              {icon as JSX.Element}
+            </Tooltip>
+          )
+          return (
+            <Tab
+              key={value}
+              value={value}
+              component={RouterLink}
+              to={to}
+              icon={tooltipIcon as ReactElement}
+              iconPosition="start"
+              label={
+                isXL || textSuffix ? (
+                  <Box display="flex" gap={0.5} alignItems="center">
+                    {isXL && <Typography>{t(i18Key)}</Typography>}
+                    {textSuffix}
+                  </Box>
+                ) : undefined
+              }
+              sx={{ ml: value === 'setting' ? 'auto' : undefined }}
+            />
+          )
+        })}
+      </Tabs>
+    </AppBar>
   )
 }
 
