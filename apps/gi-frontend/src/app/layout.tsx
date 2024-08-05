@@ -4,7 +4,7 @@ import ThemeProvider from '@mui/material/styles/ThemeProvider'
 import type { Metadata, Viewport } from 'next'
 import theme from '../theme'
 import { getSupabase } from '../utils/supabase/server'
-import Header from './components/Header'
+import Content from './Content'
 import { UserProfileContextProvider } from './context/UserProfileContext'
 import './global.css'
 import getAccount from './util/getAccount'
@@ -52,13 +52,5 @@ export default async function RootLayout({
         </AppRouterCacheProvider>
       </body>
     </html>
-  )
-}
-function Content({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <Header />
-      {children}
-    </>
   )
 }
