@@ -150,6 +150,7 @@ export const characterIdMap: Record<
   10000096: 'Arlecchino',
   10000097: 'Sethos',
   10000098: 'Clorinde',
+  10000099: 'Emilie',
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",

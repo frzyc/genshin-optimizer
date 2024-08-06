@@ -21,6 +21,7 @@ import Dehya from './Character_Dehya_Card.jpg'
 import Diluc from './Character_Diluc_Card.jpg'
 import Diona from './Character_Diona_Card.png'
 import Dori from './Character_Dori_Card.jpg'
+import Emilie from './Character_Emilie_Card.jpg'
 import Eula from './Character_Eula_Card.png'
 import Faruzan from './Character_Faruzan_Card.jpg'
 import Fischl from './Character_Fischl_Card.jpg'
@@ -109,6 +110,7 @@ const charCards = {
   Diluc,
   Diona,
   Dori,
+  Emilie,
   Eula,
   Faruzan,
   Fischl,
