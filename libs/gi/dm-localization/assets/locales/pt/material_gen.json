@@ -197,6 +197,15 @@
   "AnalysisProgress": {
     "name": "Progresso de Análise"
   },
+  "ExcerptsOfBliss": {
+    "name": "Excertos de Alegria"
+  },
+  "KeyOfEchoes": {
+    "name": "Chave da Viagem"
+  },
+  "StarsailCoin": {
+    "name": "Moeda Estrela-Velejante"
+  },
   "Primogem": {
     "name": "Gema Essencial"
   },
@@ -542,6 +551,9 @@
   "Clorinde": {
     "name": "Clorinde"
   },
+  "Emilie": {
+    "name": "Emilie"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka"
   },
@@ -796,6 +808,9 @@
   },
   "ClorindesStellaFortuna": {
     "name": "Stella Fortuna de Clorinde"
+  },
+  "EmiliesStellaFortuna": {
+    "name": "Stella Fortuna de Emilie"
   },
   "GnosticHymnOldNotes": {
     "name": "Canção do Gnóstico - Anotações Antigas"
@@ -4958,6 +4973,9 @@
   "SpiritCarp": {
     "name": "Carpa Espiritual"
   },
+  "JubilantFeather": {
+    "name": "Penas Jubilantes"
+  },
   "Dish": {
     "name": "Prato"
   },
@@ -6983,6 +7001,39 @@
   "SuperDeeDuperDeliciousMeatRoll": {
     "name": "Rolinho de Carne Mega Gostoso"
   },
+  "SuspiciousFricasseeDePoulet": {
+    "name": "Fricassee de Poulet Estranho"
+  },
+  "FricasseeDePoulet": {
+    "name": "Fricassee de Poulet"
+  },
+  "DeliciousFricasseeDePoulet": {
+    "name": "Fricassee de Poulet Delicioso"
+  },
+  "AFragrantFeastOfFlavors": {
+    "name": "Banquete de Sabores"
+  },
+  "SuspiciousBlubbercream": {
+    "name": "Sorvete Rotundo Estranho"
+  },
+  "Blubbercream": {
+    "name": "Sorvete Rotundo"
+  },
+  "DeliciousBlubbercream": {
+    "name": "Sorvete Rotundo Delicioso"
+  },
+  "SuspiciousCrispCroissantCombo": {
+    "name": "Combo de Croissant Crocante Estranho"
+  },
+  "CrispCroissantCombo": {
+    "name": "Combo de Croissant Crocante"
+  },
+  "DeliciousCrispCroissantCombo": {
+    "name": "Combo de Croissant Crocante Delicioso"
+  },
+  "AMagicalMix": {
+    "name": "Uma Mistura Mágica"
+  },
   "RecipeItem": {
     "name": "Ingredientes"
   },
@@ -7564,6 +7615,15 @@
   },
   "RecipeBulleSauceDuckBreast": {
     "name": "Receita: Peito de Pato ao Molho Bulle"
+  },
+  "RecipeFricasseeDePoulet": {
+    "name": "Receita: Fricassee de Poulet"
+  },
+  "RecipeBlubbercream": {
+    "name": "Receita: Sorvete Rotundo"
+  },
+  "RecipeCrispCroissantCombo": {
+    "name": "Receita: Combo de Croissant Crocante"
   },
   "CraftedItems": {
     "name": "Produtos Combinados"
@@ -10283,6 +10343,12 @@
   "InvitationFromTheAratakiGang": {
     "name": "Convite da Gangue Arataki"
   },
+  "WitnessPact": {
+    "name": "Pacto de Testemunhas"
+  },
+  "GreatClockworkKey": {
+    "name": "Mecanismo Glorioso"
+  },
   "FelixFelicium": {
     "name": "Desejos de Boa Sorte"
   },
@@ -10334,11 +10400,23 @@
   "DamagedScore": {
     "name": "Partitura Danificada"
   },
+  "BrickstacksLongRangeLamp": {
+    "name": "Lanterna de Deja"
+  },
+  "AWeaponLikeDragonHorn": {
+    "name": "Um Chifre de Dragão como uma Arma"
+  },
+  "FellDragonsScale": {
+    "name": "Escama do Dragão Maligno"
+  },
   "CriminalsTestimony": {
     "name": "Testemunho do Criminoso"
   },
   "RawatsNotes": {
     "name": "Nota de Rawat"
+  },
+  "ScatteredStar": {
+    "name": "Estrela Dispersa"
   },
   "GroupPhotoFromAnUnknownTime": {
     "name": "Foto em Grupo de um Tempo Desconhecido"
@@ -10348,6 +10426,33 @@
   },
   "PagesFromALostScoreII": {
     "name": "Páginas de uma Partitura Perdida II"
+  },
+  "SpecialPickaxe": {
+    "name": "Picareta Especial"
+  },
+  "GoddesssManuscriptI": {
+    "name": "Manuscrito da Deusa I"
+  },
+  "GoddesssManuscriptII": {
+    "name": "Manuscrito da Deusa II"
+  },
+  "GoddesssManuscriptIII": {
+    "name": "Manuscrito da Deusa III"
+  },
+  "ShapeOfValor": {
+    "name": "Forma da Coragem"
+  },
+  "ShapeOfWisdom": {
+    "name": "Forma da Sabedoria"
+  },
+  "ShapeOfEmpathy": {
+    "name": "Forma da Empatia"
+  },
+  "SecretElixir": {
+    "name": "\"Elixir Secreto\""
+  },
+  "GuardsSpear": {
+    "name": "Lança de Guarda"
   },
   "TreasureMapWithTheVaultsLocation": {
     "name": "\"Mapa do Tesouro\" Com a Localização do Cofre"
@@ -10435,6 +10540,27 @@
   },
   "TheFelineFirmVIII": {
     "name": "Escritório de Gatos VIII"
+  },
+  "ASettingSunThatNeverSets": {
+    "name": "\"Um Pôr-do-Sol Que Jamais Se Põe\""
+  },
+  "ADragonThatCannotFly": {
+    "name": "\"Um Dragão Incapaz de Voar\""
+  },
+  "AMoonThatOnlyShinesAtNight": {
+    "name": "\"Uma Lua Que Brilha Apenas À Noite\""
+  },
+  "MagicTonic": {
+    "name": "Tônico Mágico"
+  },
+  "FellDragonsPicturebook": {
+    "name": "Livro Ilustrado do Dragão Maligno"
+  },
+  "DreamsOfTheAncientCapital": {
+    "name": "Sonhos Fantásticos da Cidade Antiga"
+  },
+  "AnIncompleteManuscript": {
+    "name": "Um Manuscrito Incompleto"
   },
   "TearsAmongTheStars": {
     "name": "Lágrima das Estrelas"
@@ -10678,6 +10804,9 @@
   },
   "WingsOfTransientDreams": {
     "name": "Asas dos Sonhos Passageiros"
+  },
+  "WingsOfDelicacies": {
+    "name": "Asas de Iguarias"
   },
   "RadiantSpincrystal1": {
     "name": "Cristal Rodopiante Radiante 1"
@@ -11939,6 +12068,30 @@
   "TravelNotesSimulnation": {
     "name": "Passe de Batalha: Teatro Caleidoscópico"
   },
+  "EmilieBaseNote": {
+    "name": "Emilie - Nota de Fundo"
+  },
+  "TravelNotesFancifulFabrication": {
+    "name": "Passe de Batalha: Simulação"
+  },
+  "CelebrationFeastII": {
+    "name": "Celebração - Banquete II"
+  },
+  "EchoDandelionKnight": {
+    "name": "Eco: Cavaleira de Dandelion"
+  },
+  "EchoIcyResurrection": {
+    "name": "Eco: Ressurreição Gélida"
+  },
+  "EchoEclipsingStar": {
+    "name": "Eco: Estrela em Eclipse"
+  },
+  "EchoCatUponTheEaves": {
+    "name": "Eco: Gatinha dos Beirais"
+  },
+  "EchoDarkSideOfDawn": {
+    "name": "Eco: O Lado Negro do Alvorecer"
+  },
   "AnemoculusResonanceStone": {
     "name": "Pedra de Ressonância de Anemoculus"
   },
@@ -12185,6 +12338,18 @@
   "Fateometer": {
     "name": "\"Destinador\""
   },
+  "JocundLetters": {
+    "name": "Carta Alegre"
+  },
+  "JoyousLetters": {
+    "name": "Carta Jocosa"
+  },
+  "Yelena": {
+    "name": "\"Yelena\""
+  },
+  "AsagirisDedicatedFontaineKamera": {
+    "name": "Aparelho Fotográfico Especial de Fontaine de Asagiri"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instruções: Pedra de Ressonância de Anemoculus"
   },
@@ -12386,6 +12551,12 @@
   "LeisureTime": {
     "name": "Tempo de Lazer"
   },
+  "CarefulNegotiations": {
+    "name": "Negociações Cuidadosas"
+  },
+  "FilledWithConfidence": {
+    "name": "Repleto de Confiança"
+  },
   "RhodeiaOfLoch": {
     "name": "Oceanids - Rhodeia"
   },
@@ -12454,6 +12625,9 @@
   },
   "GuardianOfApepsOasis": {
     "name": "Guardião do Oásis de Apep"
+  },
+  "FrostOperative": {
+    "name": "Fatui Oficial do Gelo"
   },
   "UndividedHeart": {
     "name": "Com Todo Coração"
@@ -12731,6 +12905,15 @@
   "AThousandYoung": {
     "name": "Crias Infinitas"
   },
+  "VanguardsCoordinatedTactics": {
+    "name": "Táticas de Combate Coordenado"
+  },
+  "UndisclosedDistributionChannels": {
+    "name": "Canal de Corrente Desconhecida"
+  },
+  "RimeflowRapier": {
+    "name": "Lâmina do Gelo"
+  },
   "MagicGuide": {
     "name": "Guia de Magia"
   },
@@ -12974,6 +13157,15 @@
   "FlowerOfParadiseLost": {
     "name": "Flor do Paraíso Perdido"
   },
+  "UltimateOverlordsMegaMagicSword": {
+    "name": "Mega Ultra Espada Mágica do Soberano"
+  },
+  "ProspectorsDrill": {
+    "name": "Broca do Prospector"
+  },
+  "GladiatorsTriumphus": {
+    "name": "Triunfo do Gladiador"
+  },
   "LiyueHarborWharf": {
     "name": "Porto de Liyue"
   },
@@ -13117,6 +13309,9 @@
   },
   "SirArthur": {
     "name": "Monsieur Arthur"
+  },
+  "Serene": {
+    "name": "Serene"
   },
   "ElementalResonanceWovenIce": {
     "name": "Ressonância Elemental: Entrelaçamento Cryo"
@@ -13295,6 +13490,12 @@
   "CountdownToTheShow3": {
     "name": "Contagem Regressiva até o Show: 3"
   },
+  "IdRatherLoseMoneyMyself": {
+    "name": "\"Aquele Garoto vai Fazer uma Fortuna...\""
+  },
+  "Tada": {
+    "name": "Tadá~!"
+  },
   "Origin": {
     "name": "Primordial"
   },
@@ -13339,6 +13540,9 @@
   },
   "TheChasmBlueCrystal": {
     "name": "Despenhadeiro - Cristal Índigo"
+  },
+  "TheChasmCrown": {
+    "name": "Despenhadeiro - Diadema"
   },
   "BeginnerPlayerBadge": {
     "name": "Emblema de Jogador Novato"
@@ -13405,6 +13609,12 @@
   },
   "BambooRain": {
     "name": "Bambu da Chuva"
+  },
+  "BreezeOfSabaa": {
+    "name": "Suspiro do Acrídio"
+  },
+  "PhantomInBoots": {
+    "name": "Beleza Errante"
   },
   "AdventurerCamp": {
     "name": "Acampamento Temporário do Aventureiro"
@@ -13843,6 +14053,9 @@
   },
   "MusicTownsStreetlampSafetyLighting": {
     "name": "Lanterna de Estrada Amigável: \"Luz Instantânea\""
+  },
+  "GlowingForestFruit": {
+    "name": "Frutos Reluzentes da Floresta"
   },
   "EfflorescentIllumination": {
     "name": "Luz Floral"
@@ -14984,6 +15197,24 @@
   "SiteOfArtfulAscension": {
     "name": "Local da Alquimia Engenhosa"
   },
+  "MetropoleFunhouseTrumpeter": {
+    "name": "Casa do Castelo Real: Sopra Trompetes"
+  },
+  "MetropoleFunhouseCymbalist": {
+    "name": "Casa do Castelo Real: Tamboreiro"
+  },
+  "MetropoleFunhouseConductor": {
+    "name": "Casa do Castelo Real: Maestro"
+  },
+  "BoomBoomUnit": {
+    "name": "Unidade Boom-Boom"
+  },
+  "DingDongUnit": {
+    "name": "Unidade Ding-Dong"
+  },
+  "MagicalForestHut": {
+    "name": "Cabana Mágica da Floresta"
+  },
   "RitualShrine": {
     "name": "Santuário do Ritual"
   },
@@ -15367,6 +15598,15 @@
   },
   "LargeShippingPallet": {
     "name": "Palete de Transporte Grande"
+  },
+  "WavesmasherLocomotive": {
+    "name": "Carroça do Vento Flamejante"
+  },
+  "SnoozyRestCar": {
+    "name": "Carruagem do Ronco"
+  },
+  "BrimmingFreightCar": {
+    "name": "Carroça de Mercadorias Lotada"
   },
   "AdeptusGate": {
     "name": "Portão do Adeptus"
@@ -15760,6 +16000,18 @@
   },
   "ImprovedCrococannon": {
     "name": "Canhão Crocodilo Explosivo Melhorado"
+  },
+  "OrigamiModelHopSkipAndAJump": {
+    "name": "Modelo Origami: Saltitante"
+  },
+  "OrigamiModelRoundRummyTum": {
+    "name": "Modelo Origami: Redondinho"
+  },
+  "OrigamiModelWhoooosh": {
+    "name": "Modelo Origami: Vuuuuush!"
+  },
+  "OrigamiModelHardAsCanBe": {
+    "name": "Modelo Origami: Mais Duro Possível"
   },
   "PottedPlantVerdantVastness": {
     "name": "Planta em Vaso: \"Vastidão Verdejante\""
@@ -16157,6 +16409,9 @@
   "MusicTownsBreezeBellsCheepingFinches": {
     "name": "Sinos da Brisa da Cidade da Música: \"Passarinhos Cantarolando\""
   },
+  "ConscientiousWindcatcherSentinel": {
+    "name": "Guarda Pontual"
+  },
   "BookshelfFreeReading": {
     "name": "Prateleira de Livros: Leitura Livre"
   },
@@ -16246,6 +16501,18 @@
   },
   "MallowWoodFenceTides": {
     "name": "Cerca de Madeira de Malva: \"Maré\""
+  },
+  "PrimordialForestBeauty": {
+    "name": "Beleza Originária da Floresta"
+  },
+  "WindowToProphecy": {
+    "name": "Janela da Profecia"
+  },
+  "GateOfStars": {
+    "name": "\"Portal do Céu Estrelado\""
+  },
+  "GardenStellarMusicalPillar": {
+    "name": "\"Pilar Estrelar do Jardim\""
   },
   "SmoothWoodenBench": {
     "name": "Banco de Madeira Liso"
@@ -16355,6 +16622,9 @@
   "MallowWoodRoundTableASharedDrink": {
     "name": "Mesa Redonda de Madeira de Malva: \"Bebidas Compartilhadas\""
   },
+  "JoyousForestParty": {
+    "name": "Encontro na Floresta"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Balcão de Loja de Vinhos: \"Para Alegrar Seu Coração\""
   },
@@ -16390,5 +16660,11 @@
   },
   "SwordBearingStatueAestheticsOfIncompleteness": {
     "name": "Estátua com Espada: \"Estética da Incompletude\""
+  },
+  "EasyBreezyShelterCanopy": {
+    "name": "Telhado Livre do Ponto"
+  },
+  "ScheduleAbidingTrainStationSign": {
+    "name": "Placa do Ponto Pontual"
   }
 }

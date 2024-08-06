@@ -1,0 +1,167 @@
+{
+  "name": "Emilie",
+  "title": "A Thousand Scents Traced",
+  "description": "Pembuat parfum dari Fontaine yang menyembunyikan rahasia di dalam botol parfumnya.",
+  "constellationName": "Pomum de Ambra",
+  "auto": {
+    "name": "Shadow-Hunting Spear (Custom)",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menebas ke atas."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Fragrance Extraction",
+    "description": {
+      "0": "Menciptakan Lumidouce Case dan mengakibatkan <dendro>Dendro DMG Area</dendro>.",
+      "1": "<br/>",
+      "2": "<strong>Lumidouce Case</strong>",
+      "3": [
+        "Menembakkan Puff of Puredew secara berkala terhadap musuh yang ada di dekatnya, mengakibatkan <dendro>Dendro DMG</dendro>.",
+        "Saat musuh yang ada di dekatnya berada dalam status Burning, akan menghasilkan Scent secara berkala. Scent yang bisa dihasilkan dengan cara ini adalah satu buah setiap 2 detik. Lumidouce Case akan mengumpulkan Scent yang ada di sekitarnya, setelah berhasil mengumpulkan dua buah, maka levelnya akan meningkat, dan saat menembakkan Puff of Puredew, akan menembakkan satu Puff of Puredew tambahan, dan akan meningkatkan DMG dan radius serangan yang disebutkan di atas.",
+        "Hanya bisa ada satu Lumidouce Case yang diciptakan Emilie sendiri dalam satu waktu. Saat diciptakan, level Lumidouce Case awal adalah level 1, dan akan bisa meningkat hingga level 2. Saat ada di medan pertempuran, jika dalam 8 detik berikutnya tidak berhasil mengumpulkan Scent, maka level Lumidouce Case akan kembali menjadi level 1."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Arkhe: Pneuma</strong>",
+      "6": "Setiap satu kurun waktu, setelah Emilie menggunakan cara ini untuk menciptakan Lumidouce Case, dia akan menjatuhkan Spiritbreath Thorn yang menembus musuh di hadapannya, dan mengakibatkan Pneuma-aligned <dendro>Dendro DMG</dendro>.",
+      "7": "<br/>",
+      "8": "<i>\"Pemandangan di dunia bagaikan perpaduan dari wewangian, keindahan, dan suara nyanyian yang tiada habisnya.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Serangan Lumidouce Case Level 1",
+      "2": "DMG Serangan Lumidouce Case Level 2",
+      "3": "Durasi Lumidouce Case",
+      "4": "DMG Spiritbreath Thorn",
+      "5": "Jeda Spiritbreath Thorn",
+      "6": "Cooldown Skill",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Aromatic Explication",
+    "description": {
+      "0": "Memandu wewangian yang dikumpulkan Lumidouce Case dan mengubahnya menjadi kekuatan Dendro murni, menciptakan Lumidouce Case level 3, dan menarik Lumidouce Case yang sudah ada.",
+      "1": "Selama Lumidouce Case level 3 ini ada di medan pertempuran, tidak akan mengumpulkan Scent yang ada di sekitar, sebagai gantinya, akan terus menjatuhkan Scented Dew, menyerang musuh yang ada di dalam radiusnya, dan mengakibatkan <dendro>Dendro DMG</dendro>. Selama berlangsung, akan menjatuhkan satu buah Scented Dew setiap 0,3 detik, dan setiap musuh hanya bisa terpilih menjadi target satu kali setiap 0,7 detik.",
+      "2": "Setelah durasinya berakhir, Lumidouce Case level 1 akan kembali tercipta; Jika saat melancarkan Aromatic Explication, ada Lumidouce Case yang berhasil tersimpan, maka Lumidouce Case yang disimpan tersebut akan dikerahkan dan durasinya akan di-reset.",
+      "3": "Selama <strong>Aromatic Explication</strong> berlangsung, Elemental Skill \"Fragrance Extraction\" tidak akan menciptakan Lumidouce Case lagi.",
+      "4": "<br/>",
+      "5": "<i>Apa pun parfumnya, semuanya akan berubah begitu berhubungan dengan udara, dan pada akhirnya akan menguap seiring dengan embusan angin, pepohonan, dan dedaunan. Sehingga, tidak ada dua orang yang sama yang akan bisa menikmati wewangian yang sama.",
+      "6": "Demikian juga dengan jalur seluruh manusia. Oleh sebab itu, kamu boleh mengibaratkan wewangian sebagai penjelasan dari kehidupan manusia.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Serangan Lumidouce Case Level 3",
+      "1": "Durasi Lumidouce Case Level 3",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Lingering Fragrance",
+    "description": {
+      "0": "Untuk setiap dua <strong>Scent</strong> yang dikumpulkan, Lumidouce Case level 2 akan mengonsumsi Scent dan mengeluarkan Cleardew Cologne, yang mengakibatkan <dendro>Dendro DMG Area</dendro> sebesar 600% ATK Emilie terhadap musuh. DMG ini tidak dianggap sebagai DMG Elemental Skill."
+    }
+  },
+  "passive2": {
+    "name": "Rectification",
+    "description": {
+      "0": "DMG yang disebabkan Emilie terhadap musuh dalam status Burning akan meningkat berdasarkan ATK Emilie: Untuk setiap 1.000 poin ATK, DMG meningkat 15%, maksimum peningkatan yang bisa diperoleh dengan cara ini adalah 36%."
+    }
+  },
+  "passive3": {
+    "name": "Headspace Capture",
+    "description": {
+      "0": "Saat ada Lumidouce Case yang diciptakan oleh Emilie sendiri di medan perang, maka <pyro>Pyro RES</pyro> seluruh anggota party yang ada di sekitar terhadap DMG Burning meningkat 85%."
+    }
+  },
+  "constellation1": {
+    "name": "Light Fragrance Leaching",
+    "description": {
+      "0": "DMG yang disebabkan <strong>Fragrance Extraction</strong> dan Cleardew Cologne dari Talenta Pasif \"Lingering Fragrance\" meningkat 20%. Peningkatan DMG untuk Talenta Pasif harus membuka Talenta Pasif \"Lingering Fragrance\" terlebih dulu.",
+      "1": "Selain itu, saat anggota party di sekitar memicu reaksi Burning terhadap musuh atau mengakibatkan <dendro>Dendro DMG</dendro> terhadap musuh yang berada dalam status Burning, akan menghasilkan 1 <strong>Scent</strong> tambahan. Efek ini dapat terpicu sekali setiap 2,9 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Lakelight Top Note",
+    "description": {
+      "0": "Saat <strong>Fragrance Extraction</strong>, <strong>Aromatic Explication</strong>, atau Cleardew Cologne dari Talenta Pasif \"Lingering Fragrance\" (harus membuka Talenta Pasif yang bersangkutan lebih dulu) mengenai musuh, <dendro>Dendro RES</dendro> musuh tersebut berkurang 30% selama 10 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Exquisite Essence",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Fragrance Extraction</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lumidouce Heart Note",
+    "description": {
+      "0": "Durasi <strong>Aromatic Explication</strong> diperpanjang 2 detik, dan jeda setiap musuh yang dijadikan target oleh Scented Dew berkurang 0,3 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Puredew Aroma",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Aromatic Explication</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Marcotte Sillage",
+    "description": {
+      "0": "Saat melancarkan <strong>Fragrance Extraction</strong> atau <strong>Aromatic Explication</strong>, Emilie akan mendapatkan Abiding Fragrance yang berlangsung 5 detik.",
+      "1": "Selama berlangsung, setelah Emilie melancarkan Normal Attack atau Charged Attack, akan menghasilkan 1 Scent, lalu Normal Attack dan Charged Attack Emilie akan dikonversi menjadi <dendro>Dendro DMG</dendro> yang tidak bisa ditimpa Elemental Infusion lainnya, DMG yang dihasilkan juga akan meningkat sebesar 300% ATK Emilie.",
+      "2": "<br/>",
+      "3": "Efek Abiding Fragrance akan dihapus setelah menghasilkan 4 Scent melalui cara ini atau setelah durasinya berakhir. Efek Abiding Fragrance dapat terpicu sekali setiap 12 detik."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Elegia Lumidouce",
+  "description": {
+    "0": "Uma lança magnífica adornada com cristal azul. Dizem que foi o tesouro de um certo lendário Duelista Representante — no entanto, nunca foi usada nem uma vez sequer."
+  },
+  "passiveName": "Prelúdio do Amanhecer",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o ATQ em <cryo>15%</cryo>. Quando o personagem que está com essa arma equipada desencadeia Queimadura ou causa Dano Dendro a oponentes com Queimaduras, aumenta o Dano causado em <cryo>18%</cryo>. Esse efeito dura 8s e pode ser acumulado até 2 vezes. Quando atingir 2 acúmulos ou a duração dos 2 acúmulos for redefinida, regenera <cryo>12</cryo> de Energia Elemental. É possível regenerar Energia Elemental dessa forma uma vez a cada 12s. Esses dois efeitos também são aplicáveis a personagens que não estão ativos no campo de batalha."
+    },
+    "1": {
+      "0": "Aumenta o ATQ em <cryo>19%</cryo>. Quando o personagem que está com essa arma equipada desencadeia Queimadura ou causa Dano Dendro a oponentes com Queimaduras, aumenta o Dano causado em <cryo>23%</cryo>. Esse efeito dura 8s e pode ser acumulado até 2 vezes. Quando atingir 2 acúmulos ou a duração dos 2 acúmulos for redefinida, regenera <cryo>13</cryo> de Energia Elemental. É possível regenerar Energia Elemental dessa forma uma vez a cada 12s. Esses dois efeitos também são aplicáveis a personagens que não estão ativos no campo de batalha."
+    },
+    "2": {
+      "0": "Aumenta o ATQ em <cryo>23%</cryo>. Quando o personagem que está com essa arma equipada desencadeia Queimadura ou causa Dano Dendro a oponentes com Queimaduras, aumenta o Dano causado em <cryo>28%</cryo>. Esse efeito dura 8s e pode ser acumulado até 2 vezes. Quando atingir 2 acúmulos ou a duração dos 2 acúmulos for redefinida, regenera <cryo>14</cryo> de Energia Elemental. É possível regenerar Energia Elemental dessa forma uma vez a cada 12s. Esses dois efeitos também são aplicáveis a personagens que não estão ativos no campo de batalha."
+    },
+    "3": {
+      "0": "Aumenta o ATQ em <cryo>27%</cryo>. Quando o personagem que está com essa arma equipada desencadeia Queimadura ou causa Dano Dendro a oponentes com Queimaduras, aumenta o Dano causado em <cryo>33%</cryo>. Esse efeito dura 8s e pode ser acumulado até 2 vezes. Quando atingir 2 acúmulos ou a duração dos 2 acúmulos for redefinida, regenera <cryo>15</cryo> de Energia Elemental. É possível regenerar Energia Elemental dessa forma uma vez a cada 12s. Esses dois efeitos também são aplicáveis a personagens que não estão ativos no campo de batalha."
+    },
+    "4": {
+      "0": "Aumenta o ATQ em <cryo>31%</cryo>. Quando o personagem que está com essa arma equipada desencadeia Queimadura ou causa Dano Dendro a oponentes com Queimaduras, aumenta o Dano causado em <cryo>38%</cryo>. Esse efeito dura 8s e pode ser acumulado até 2 vezes. Quando atingir 2 acúmulos ou a duração dos 2 acúmulos for redefinida, regenera <cryo>16</cryo> de Energia Elemental. É possível regenerar Energia Elemental dessa forma uma vez a cada 12s. Esses dois efeitos também são aplicáveis a personagens que não estão ativos no campo de batalha."
+    }
+  }
+}

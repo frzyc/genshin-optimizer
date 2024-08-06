@@ -115,7 +115,7 @@
   "passive2": {
     "name": "Aube d'une nuit d'été",
     "description": {
-      "0": "Lorsque Yoimiya libère <strong>Saxifrage Ryuukin</strong>, l'ATQ de tous les autres personnages de l'équipe (hormis Yoimiya) augmente de 10 % pendant 15 s. De plus, chaque cumul de l'aptitude passive « Tour de passe-passe » que Yoimiya possède lorsqu'elle exécute <strong>Saxifrage d'or</strong> augmente ce bonus d'ATQ de 1 %."
+      "0": "Lorsque Yoimiya libère <strong>Saxifrage Ryuukin</strong>, l'ATQ de tous les autres personnages de l'équipe (hormis Yoimiya) augmente de 10 % pendant 15 s. De plus, chaque cumul de l'aptitude passive « Tour de passe-passe » que Yoimiya possède lorsqu'elle exécute <strong>Saxifrage Ryuukin</strong> augmente ce bonus d'ATQ de 1 %."
     }
   },
   "passive3": {

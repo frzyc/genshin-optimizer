@@ -1,0 +1,24 @@
+{
+  "name": "Bi Ca Lumidouce",
+  "description": {
+    "0": "Ngọn thương hoa lệ được trang trí bằng pha lê xanh. Nghe nói từng là món vũ khí mà Đấu Sĩ Đại Diện huyền thoại cất giữ cả đời nhưng chưa từng sử dụng."
+  },
+  "passiveName": "Khúc Dạo Đầu Bình Minh",
+  "passiveDescription": {
+    "0": {
+      "0": "Tấn Công tăng <cryo>15%</cryo>; Người trang bị khi kích hoạt phản ứng Thiêu Đốt lên kẻ địch hoặc gây Sát Thương Nguyên Tố Thảo lên kẻ địch trong trạng thái Thiêu Đốt, sát thương gây ra sẽ tăng <cryo>18%</cryo>. Hiệu quả này duy trì 8s, tối đa cộng dồn 2 tầng; Khi cộng dồn đến tầng 2 hoặc thời gian duy trì của tầng 2 được làm mới thì sẽ hồi phục <cryo>12</cryo> Năng Lượng Nguyên Tố. Mỗi 12s tối đa hồi phục một lần Năng Lượng Nguyên Tố thông qua cách thức này. Nhân vật không ra trận cũng có thể kích hoạt 2 hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Tấn Công tăng <cryo>19%</cryo>; Người trang bị khi kích hoạt phản ứng Thiêu Đốt lên kẻ địch hoặc gây Sát Thương Nguyên Tố Thảo lên kẻ địch trong trạng thái Thiêu Đốt, sát thương gây ra sẽ tăng <cryo>23%</cryo>. Hiệu quả này duy trì 8s, tối đa cộng dồn 2 tầng; Khi cộng dồn đến tầng 2 hoặc thời gian duy trì của tầng 2 được làm mới thì sẽ hồi phục <cryo>13</cryo> Năng Lượng Nguyên Tố. Mỗi 12s tối đa hồi phục một lần Năng Lượng Nguyên Tố thông qua cách thức này. Nhân vật không ra trận cũng có thể kích hoạt 2 hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Tấn Công tăng <cryo>23%</cryo>; Người trang bị khi kích hoạt phản ứng Thiêu Đốt lên kẻ địch hoặc gây Sát Thương Nguyên Tố Thảo lên kẻ địch trong trạng thái Thiêu Đốt, sát thương gây ra sẽ tăng <cryo>28%</cryo>. Hiệu quả này duy trì 8s, tối đa cộng dồn 2 tầng; Khi cộng dồn đến tầng 2 hoặc thời gian duy trì của tầng 2 được làm mới thì sẽ hồi phục <cryo>14</cryo> Năng Lượng Nguyên Tố. Mỗi 12s tối đa hồi phục một lần Năng Lượng Nguyên Tố thông qua cách thức này. Nhân vật không ra trận cũng có thể kích hoạt 2 hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Tấn Công tăng <cryo>27%</cryo>; Người trang bị khi kích hoạt phản ứng Thiêu Đốt lên kẻ địch hoặc gây Sát Thương Nguyên Tố Thảo lên kẻ địch trong trạng thái Thiêu Đốt, sát thương gây ra sẽ tăng <cryo>33%</cryo>. Hiệu quả này duy trì 8s, tối đa cộng dồn 2 tầng; Khi cộng dồn đến tầng 2 hoặc thời gian duy trì của tầng 2 được làm mới thì sẽ hồi phục <cryo>15</cryo> Năng Lượng Nguyên Tố. Mỗi 12s tối đa hồi phục một lần Năng Lượng Nguyên Tố thông qua cách thức này. Nhân vật không ra trận cũng có thể kích hoạt 2 hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Tấn Công tăng <cryo>31%</cryo>; Người trang bị khi kích hoạt phản ứng Thiêu Đốt lên kẻ địch hoặc gây Sát Thương Nguyên Tố Thảo lên kẻ địch trong trạng thái Thiêu Đốt, sát thương gây ra sẽ tăng <cryo>38%</cryo>. Hiệu quả này duy trì 8s, tối đa cộng dồn 2 tầng; Khi cộng dồn đến tầng 2 hoặc thời gian duy trì của tầng 2 được làm mới thì sẽ hồi phục <cryo>16</cryo> Năng Lượng Nguyên Tố. Mỗi 12s tối đa hồi phục một lần Năng Lượng Nguyên Tố thông qua cách thức này. Nhân vật không ra trận cũng có thể kích hoạt 2 hiệu quả nêu trên."
+    }
+  }
+}

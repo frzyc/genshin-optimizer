@@ -197,6 +197,15 @@
   "AnalysisProgress": {
     "name": "Analiz İlerlemesi"
   },
+  "ExcerptsOfBliss": {
+    "name": "Mutluluk Sayfaları"
+  },
+  "KeyOfEchoes": {
+    "name": "Yankı Anahtarı"
+  },
+  "StarsailCoin": {
+    "name": "Yıldız Yelkeni Parası"
+  },
   "Primogem": {
     "name": "Köken Taşı"
   },
@@ -542,6 +551,9 @@
   "Clorinde": {
     "name": "Clorinde"
   },
+  "Emilie": {
+    "name": "Emilie"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka'nın Yaşam Yıldızı"
   },
@@ -796,6 +808,9 @@
   },
   "ClorindesStellaFortuna": {
     "name": "Clorinde'in Yaşam Yıldızı"
+  },
+  "EmiliesStellaFortuna": {
+    "name": "Emilie'nin Yaşam Yıldızı"
   },
   "GnosticHymnOldNotes": {
     "name": "Aydınlanma Şarkısı - Eski Notalar"
@@ -4958,6 +4973,9 @@
   "SpiritCarp": {
     "name": "Ruh Sazanı"
   },
+  "JubilantFeather": {
+    "name": "Coşku Tüyü"
+  },
   "Dish": {
     "name": "Yemek"
   },
@@ -6983,6 +7001,39 @@
   "SuperDeeDuperDeliciousMeatRoll": {
     "name": "Fevkaladenin Fevki Et Dürüm"
   },
+  "SuspiciousFricasseeDePoulet": {
+    "name": "Tavuk Frikase (Tuhaf)"
+  },
+  "FricasseeDePoulet": {
+    "name": "Tavuk Frikase"
+  },
+  "DeliciousFricasseeDePoulet": {
+    "name": "Tavuk Frikase (Lezzetli)"
+  },
+  "AFragrantFeastOfFlavors": {
+    "name": "Hoş Kokulu Bir Lezzet Şöleni"
+  },
+  "SuspiciousBlubbercream": {
+    "name": "Tomdurma (Tuhaf)"
+  },
+  "Blubbercream": {
+    "name": "Tomdurma"
+  },
+  "DeliciousBlubbercream": {
+    "name": "Tomdurma (Lezzetli)"
+  },
+  "SuspiciousCrispCroissantCombo": {
+    "name": "Kıtır Kruvasan Kombosu (Tuhaf)"
+  },
+  "CrispCroissantCombo": {
+    "name": "Kıtır Kruvasan Kombosu"
+  },
+  "DeliciousCrispCroissantCombo": {
+    "name": "Kıtır Kruvasan Kombosu (Lezzetli)"
+  },
+  "AMagicalMix": {
+    "name": "Büyülü Bir Karışım"
+  },
   "RecipeItem": {
     "name": "Yemek Malzemesi"
   },
@@ -7564,6 +7615,15 @@
   },
   "RecipeBulleSauceDuckBreast": {
     "name": "Tarif: Bulle Soslu Ördek Göğsü"
+  },
+  "RecipeFricasseeDePoulet": {
+    "name": "Tarif: Tavuk Frikase"
+  },
+  "RecipeBlubbercream": {
+    "name": "Tarif: Tomdurma"
+  },
+  "RecipeCrispCroissantCombo": {
+    "name": "Tarif: Kıtır Kruvasan Kombosu"
   },
   "CraftedItems": {
     "name": "Üretilen Malzemeler"
@@ -10283,6 +10343,12 @@
   "InvitationFromTheAratakiGang": {
     "name": "Arataki Çetesinden Davet"
   },
+  "WitnessPact": {
+    "name": "Tanık Sözleşmesi"
+  },
+  "GreatClockworkKey": {
+    "name": "Yüce Kurmalı Anahtarı"
+  },
   "FelixFelicium": {
     "name": "İyi Şanslar"
   },
@@ -10334,11 +10400,23 @@
   "DamagedScore": {
     "name": "Hasarlı Beste"
   },
+  "BrickstacksLongRangeLamp": {
+    "name": "Tuğlaköy Uzun Menzilli Lamba"
+  },
+  "AWeaponLikeDragonHorn": {
+    "name": "\"Silah Gibi\" Bir Ejder Boynuzu"
+  },
+  "FellDragonsScale": {
+    "name": "Uğursuz Ejderin Pulu"
+  },
   "CriminalsTestimony": {
     "name": "Suçluların İfadeleri"
   },
   "RawatsNotes": {
     "name": "Rawat'ın Notları"
+  },
+  "ScatteredStar": {
+    "name": "Saçılmış Yıldız"
   },
   "GroupPhotoFromAnUnknownTime": {
     "name": "Bilinmeyen Bir Zamandan Grup Fotoğrafı"
@@ -10348,6 +10426,33 @@
   },
   "PagesFromALostScoreII": {
     "name": "Kayıp Bestenin Sayfaları (II)"
+  },
+  "SpecialPickaxe": {
+    "name": "Özel Kazma"
+  },
+  "GoddesssManuscriptI": {
+    "name": "Tanrıçanın Taslak Metni (I)"
+  },
+  "GoddesssManuscriptII": {
+    "name": "Tanrıçanın Taslak Metni (II)"
+  },
+  "GoddesssManuscriptIII": {
+    "name": "Tanrıçanın Taslak Metni (III)"
+  },
+  "ShapeOfValor": {
+    "name": "Kahramanlık Arması"
+  },
+  "ShapeOfWisdom": {
+    "name": "Bilgelik Arması"
+  },
+  "ShapeOfEmpathy": {
+    "name": "Empati Arması"
+  },
+  "SecretElixir": {
+    "name": "\"Gizli İksir\""
+  },
+  "GuardsSpear": {
+    "name": "Muhafız Mızrağı"
   },
   "TreasureMapWithTheVaultsLocation": {
     "name": "Kasanın Yerini Gösteren \"Hazine Haritası\""
@@ -10435,6 +10540,27 @@
   },
   "TheFelineFirmVIII": {
     "name": "Kedi Ofisi (VIII)"
+  },
+  "ASettingSunThatNeverSets": {
+    "name": "\"Hiç Bitmeyen Bir Gün Batımı\""
+  },
+  "ADragonThatCannotFly": {
+    "name": "\"Kükremeyen Bir Aslan\""
+  },
+  "AMoonThatOnlyShinesAtNight": {
+    "name": "\"Yalnızca Geceleri Parıldayan Bir Ay\""
+  },
+  "MagicTonic": {
+    "name": "Sihirli Tonik"
+  },
+  "FellDragonsPicturebook": {
+    "name": "Uğursuz Ejderin Resimli Kitabı"
+  },
+  "DreamsOfTheAncientCapital": {
+    "name": "Kadim Başkentin Rüyaları"
+  },
+  "AnIncompleteManuscript": {
+    "name": "Yarım Kalmış Taslak Metin"
   },
   "TearsAmongTheStars": {
     "name": "Yıldızlar Arasındaki Gözyaşları"
@@ -10678,6 +10804,9 @@
   },
   "WingsOfTransientDreams": {
     "name": "Fani Rüyaların Kanatları"
+  },
+  "WingsOfDelicacies": {
+    "name": "Lezzet Kanatları"
   },
   "RadiantSpincrystal1": {
     "name": "Parlak Burgu Kristal 1"
@@ -11939,6 +12068,30 @@
   "TravelNotesSimulnation": {
     "name": "Gezi Notları: Sahne Tozu"
   },
+  "EmilieBaseNote": {
+    "name": "Emilie: Alt Nota"
+  },
+  "TravelNotesFancifulFabrication": {
+    "name": "Gezi Notları: Hayali Üretim"
+  },
+  "CelebrationFeastII": {
+    "name": "Kutlama: Ziyafet (II)"
+  },
+  "EchoDandelionKnight": {
+    "name": "Yankı: Karahindiba Şövalyesi"
+  },
+  "EchoIcyResurrection": {
+    "name": "Yankı: Buzul Diriliş"
+  },
+  "EchoEclipsingStar": {
+    "name": "Yankı: Örten Yıldız"
+  },
+  "EchoCatUponTheEaves": {
+    "name": "Yankı: Damdaki Kedi"
+  },
+  "EchoDarkSideOfDawn": {
+    "name": "Yankı: Şafağın Karanlık Yüzü"
+  },
   "AnemoculusResonanceStone": {
     "name": "Rüzgar Özü Rezonans Taşı"
   },
@@ -12185,6 +12338,18 @@
   "Fateometer": {
     "name": "\"Kaderölçer\""
   },
+  "JocundLetters": {
+    "name": "Neşeli Mektuplar"
+  },
+  "JoyousLetters": {
+    "name": "Coşkulu Mektuplar"
+  },
+  "Yelena": {
+    "name": "\"Yelena\""
+  },
+  "AsagirisDedicatedFontaineKamera": {
+    "name": "Asagiri'nin Fontaine'e Özel Kamerası"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Talimatlar: Rüzgar Özü Rezonans Taşı"
   },
@@ -12386,6 +12551,12 @@
   "LeisureTime": {
     "name": "Dinlenme Zamanı"
   },
+  "CarefulNegotiations": {
+    "name": "Dikkatli Müzakere"
+  },
+  "FilledWithConfidence": {
+    "name": "Özgüven Dolu"
+  },
   "RhodeiaOfLoch": {
     "name": "Lochlu Rhodeia"
   },
@@ -12454,6 +12625,9 @@
   },
   "GuardianOfApepsOasis": {
     "name": "Apep Vahası'nın Muhafızı"
+  },
+  "FrostOperative": {
+    "name": "Buz Ajanı"
   },
   "UndividedHeart": {
     "name": "Tek Yürek"
@@ -12731,6 +12905,15 @@
   "AThousandYoung": {
     "name": "Binbir Gençlik"
   },
+  "VanguardsCoordinatedTactics": {
+    "name": "Öncülerin Eş Güdümlü Taktikleri"
+  },
+  "UndisclosedDistributionChannels": {
+    "name": "Gizli Dağıtım Kanalları"
+  },
+  "RimeflowRapier": {
+    "name": "Kırağı Kılıcı"
+  },
   "MagicGuide": {
     "name": "Büyü Rehberi"
   },
@@ -12974,6 +13157,15 @@
   "FlowerOfParadiseLost": {
     "name": "Kayıp Cennet Çiçeği"
   },
+  "UltimateOverlordsMegaMagicSword": {
+    "name": "\"Yüce Lordun Devasa Büyü Kılıcı\""
+  },
+  "ProspectorsDrill": {
+    "name": "Madenci Kazması"
+  },
+  "GladiatorsTriumphus": {
+    "name": "Gladyatörün Zaferi"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Limanı Rıhtımı"
   },
@@ -13117,6 +13309,9 @@
   },
   "SirArthur": {
     "name": "Bay Arthur"
+  },
+  "Serene": {
+    "name": "Serene"
   },
   "ElementalResonanceWovenIce": {
     "name": "Element Rezonansı: Örülü Buzlar"
@@ -13295,6 +13490,12 @@
   "CountdownToTheShow3": {
     "name": "Gösteriye Geri Sayım: 3"
   },
+  "IdRatherLoseMoneyMyself": {
+    "name": "\"Para Kaybetmeyi Yeğlerim...\""
+  },
+  "Tada": {
+    "name": "Ta da!"
+  },
   "Origin": {
     "name": "Köken"
   },
@@ -13339,6 +13540,9 @@
   },
   "TheChasmBlueCrystal": {
     "name": "Kanyon: Mavi Kristal"
+  },
+  "TheChasmCrown": {
+    "name": "Kanyon: Taç"
   },
   "BeginnerPlayerBadge": {
     "name": "Acemi Oyuncu Rozeti"
@@ -13405,6 +13609,12 @@
   },
   "BambooRain": {
     "name": "Bambu Yağmuru"
+  },
+  "BreezeOfSabaa": {
+    "name": "Sabaa Esintisi"
+  },
+  "PhantomInBoots": {
+    "name": "Çizmeli Hayalet"
   },
   "AdventurerCamp": {
     "name": "Maceracı Kampı"
@@ -13843,6 +14053,9 @@
   },
   "MusicTownsStreetlampSafetyLighting": {
     "name": "Müzik Şehrinin Sokak Lambası: \"Güvenli Aydınlatma\""
+  },
+  "GlowingForestFruit": {
+    "name": "Parlayan Orman Meyvesi"
   },
   "EfflorescentIllumination": {
     "name": "Gelişen Aydınlatma"
@@ -14984,6 +15197,24 @@
   "SiteOfArtfulAscension": {
     "name": "\"Simya Ustalarının Çadırı\""
   },
+  "MetropoleFunhouseTrumpeter": {
+    "name": "Metropol Eğlence Evi: Trompetçi"
+  },
+  "MetropoleFunhouseCymbalist": {
+    "name": "Metropol Eğlence Evi: Zilci"
+  },
+  "MetropoleFunhouseConductor": {
+    "name": "Metropol Eğlence Evi: Orkestra Şefi"
+  },
+  "BoomBoomUnit": {
+    "name": "Güm Güm Ünitesi"
+  },
+  "DingDongUnit": {
+    "name": "Çın Çın Ünitesi"
+  },
+  "MagicalForestHut": {
+    "name": "Sihirli Orman Kulübesi"
+  },
   "RitualShrine": {
     "name": "Ayin Tapınağı"
   },
@@ -15367,6 +15598,15 @@
   },
   "LargeShippingPallet": {
     "name": "Büyük Palet"
+  },
+  "WavesmasherLocomotive": {
+    "name": "Dalga Kıran Lokomotif"
+  },
+  "SnoozyRestCar": {
+    "name": "Rahat Uyku Vagonu"
+  },
+  "BrimmingFreightCar": {
+    "name": "Dopdolu Yük Vagonu"
   },
   "AdeptusGate": {
     "name": "Adeptus Geçidi"
@@ -15760,6 +16000,18 @@
   },
   "ImprovedCrococannon": {
     "name": "Gelişmiş Timsah Topu"
+  },
+  "OrigamiModelHopSkipAndAJump": {
+    "name": "Origami Modeli: Zıpla, Hopla, Sıçra"
+  },
+  "OrigamiModelRoundRummyTum": {
+    "name": "Origami Modeli: Toparlak Göbek"
+  },
+  "OrigamiModelWhoooosh": {
+    "name": "Origami Modeli: Fiyuuuu!"
+  },
+  "OrigamiModelHardAsCanBe": {
+    "name": "Origami Modeli: Son Derece Sert"
   },
   "PottedPlantVerdantVastness": {
     "name": "Saksı Bitkisi: Sonsuz Yeşillik"
@@ -16157,6 +16409,9 @@
   "MusicTownsBreezeBellsCheepingFinches": {
     "name": "Müzik Şehrinin Rüzgar Çanları: \"Cıvıldayan Serçeler\""
   },
+  "ConscientiousWindcatcherSentinel": {
+    "name": "İtinalı Rüzgar Kapanı Nöbetçisi"
+  },
   "BookshelfFreeReading": {
     "name": "Kitaplık: Serbest Okuma"
   },
@@ -16246,6 +16501,18 @@
   },
   "MallowWoodFenceTides": {
     "name": "Çınar Çit: \"Metcezir\""
+  },
+  "PrimordialForestBeauty": {
+    "name": "Ezeli Orman Güzeli"
+  },
+  "WindowToProphecy": {
+    "name": "Kehanete Açılan Pencere"
+  },
+  "GateOfStars": {
+    "name": "Yıldızlar Kapısı"
+  },
+  "GardenStellarMusicalPillar": {
+    "name": "Yıldızlı Müzikli Bahçe Sütunu"
   },
   "SmoothWoodenBench": {
     "name": "Pürüzsüz Ahşap Bank"
@@ -16355,6 +16622,9 @@
   "MallowWoodRoundTableASharedDrink": {
     "name": "Çınar Yuvarlak Masa: \"Paylaşılan Bir İçecek\""
   },
+  "JoyousForestParty": {
+    "name": "Neşeli Orman Partisi"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Şarap Dükkanı Vitrini: Kalbinden Geçenler"
   },
@@ -16390,5 +16660,11 @@
   },
   "SwordBearingStatueAestheticsOfIncompleteness": {
     "name": "Kılıç Tutan Heykel: \"Tamamlanmamışlığın Güzelliği\""
+  },
+  "EasyBreezyShelterCanopy": {
+    "name": "Havadar Durak Çatısı"
+  },
+  "ScheduleAbidingTrainStationSign": {
+    "name": "Saatleri Aksatmayan Tren İstasyonu Tabelası"
   }
 }

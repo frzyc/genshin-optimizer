@@ -1,0 +1,24 @@
+{
+  "name": "Lumidouce Ağıdı",
+  "description": {
+    "0": "Koyu mavi kristallerle süslenmiş muhteşem bir mızrak. Efsanevi bir Düello Şampiyonunun hazinesi olduğu söylenir, fakat bugüne kadar bir kez dahi kullanılmamış."
+  },
+  "passiveName": "Işıltılı Şafak Şarkısı",
+  "passiveDescription": {
+    "0": {
+      "0": "Saldırı <cryo>%15</cryo> artar. Kuşanan karakter düşman üzerinde Yanma tepkimesi tetikledikten veya Yanma etkisindeki bir düşmana Doğa Hasarı verdikten sonra verilen Hasar <cryo>%18</cryo> artar. Bu etki 8sn sürer ve en fazla 2 kademe birikebilir. 2 kademeye ulaşıldığında ya da 2 kademedeyken süresi yenilendiğinde <cryo>12</cryo> Enerji kazanılır. Bu şekilde her 12 saniyede bir Enerji kazanılabilir. Yukarıdaki 2 etki, karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Saldırı <cryo>%19</cryo> artar. Kuşanan karakter düşman üzerinde Yanma tepkimesi tetikledikten veya Yanma etkisindeki bir düşmana Doğa Hasarı verdikten sonra verilen Hasar <cryo>%23</cryo> artar. Bu etki 8sn sürer ve en fazla 2 kademe birikebilir. 2 kademeye ulaşıldığında ya da 2 kademedeyken süresi yenilendiğinde <cryo>13</cryo> Enerji kazanılır. Bu şekilde her 12 saniyede bir Enerji kazanılabilir. Yukarıdaki 2 etki, karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Saldırı <cryo>%23</cryo> artar. Kuşanan karakter düşman üzerinde Yanma tepkimesi tetikledikten veya Yanma etkisindeki bir düşmana Doğa Hasarı verdikten sonra verilen Hasar <cryo>%28</cryo> artar. Bu etki 8sn sürer ve en fazla 2 kademe birikebilir. 2 kademeye ulaşıldığında ya da 2 kademedeyken süresi yenilendiğinde <cryo>14</cryo> Enerji kazanılır. Bu şekilde her 12 saniyede bir Enerji kazanılabilir. Yukarıdaki 2 etki, karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Saldırı <cryo>%27</cryo> artar. Kuşanan karakter düşman üzerinde Yanma tepkimesi tetikledikten veya Yanma etkisindeki bir düşmana Doğa Hasarı verdikten sonra verilen Hasar <cryo>%33</cryo> artar. Bu etki 8sn sürer ve en fazla 2 kademe birikebilir. 2 kademeye ulaşıldığında ya da 2 kademedeyken süresi yenilendiğinde <cryo>15</cryo> Enerji kazanılır. Bu şekilde her 12 saniyede bir Enerji kazanılabilir. Yukarıdaki 2 etki, karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Saldırı <cryo>%31</cryo> artar. Kuşanan karakter düşman üzerinde Yanma tepkimesi tetikledikten veya Yanma etkisindeki bir düşmana Doğa Hasarı verdikten sonra verilen Hasar <cryo>%38</cryo> artar. Bu etki 8sn sürer ve en fazla 2 kademe birikebilir. 2 kademeye ulaşıldığında ya da 2 kademedeyken süresi yenilendiğinde <cryo>16</cryo> Enerji kazanılır. Bu şekilde her 12 saniyede bir Enerji kazanılabilir. Yukarıdaki 2 etki, karakter savaş alanında olmasa da tetiklenebilir."
+    }
+  }
+}

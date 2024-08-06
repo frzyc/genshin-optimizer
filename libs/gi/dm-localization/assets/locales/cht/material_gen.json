@@ -197,6 +197,15 @@
   "AnalysisProgress": {
     "name": "分析進度"
   },
+  "ExcerptsOfBliss": {
+    "name": "悠樂片段"
+  },
+  "KeyOfEchoes": {
+    "name": "遊跡鑰匙"
+  },
+  "StarsailCoin": {
+    "name": "星遊幣"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -542,6 +551,9 @@
   "Clorinde": {
     "name": "克洛琳德"
   },
+  "Emilie": {
+    "name": "艾梅莉埃"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "神里綾華的命星"
   },
@@ -796,6 +808,9 @@
   },
   "ClorindesStellaFortuna": {
     "name": "克洛琳德的命星"
+  },
+  "EmiliesStellaFortuna": {
+    "name": "艾梅莉埃的命星"
   },
   "GnosticHymnOldNotes": {
     "name": "珍珠紀行·初稿"
@@ -4958,6 +4973,9 @@
   "SpiritCarp": {
     "name": "蒼靈鯉"
   },
+  "JubilantFeather": {
+    "name": "歡聲飛羽"
+  },
   "Dish": {
     "name": "料理"
   },
@@ -6983,6 +7001,39 @@
   "SuperDeeDuperDeliciousMeatRoll": {
     "name": "烤肉香香香捲"
   },
+  "SuspiciousFricasseeDePoulet": {
+    "name": "奇怪的鮮奶油燉雞"
+  },
+  "FricasseeDePoulet": {
+    "name": "鮮奶油燉雞"
+  },
+  "DeliciousFricasseeDePoulet": {
+    "name": "美味的鮮奶油燉雞"
+  },
+  "AFragrantFeastOfFlavors": {
+    "name": "香馥繁味"
+  },
+  "SuspiciousBlubbercream": {
+    "name": "奇怪的膨膨冰淇淋"
+  },
+  "Blubbercream": {
+    "name": "膨膨冰淇淋"
+  },
+  "DeliciousBlubbercream": {
+    "name": "美味的膨膨冰淇淋"
+  },
+  "SuspiciousCrispCroissantCombo": {
+    "name": "奇怪的酥酥羊角包"
+  },
+  "CrispCroissantCombo": {
+    "name": "酥酥羊角包"
+  },
+  "DeliciousCrispCroissantCombo": {
+    "name": "美味的酥酥羊角包"
+  },
+  "AMagicalMix": {
+    "name": "魔術特調"
+  },
   "RecipeItem": {
     "name": "食譜道具"
   },
@@ -7564,6 +7615,15 @@
   },
   "RecipeBulleSauceDuckBreast": {
     "name": "食譜：桔香鴨胸肉"
+  },
+  "RecipeFricasseeDePoulet": {
+    "name": "食譜：鮮奶油燉雞"
+  },
+  "RecipeBlubbercream": {
+    "name": "食譜：膨膨冰淇淋"
+  },
+  "RecipeCrispCroissantCombo": {
+    "name": "食譜：酥酥羊角包"
   },
   "CraftedItems": {
     "name": "合成產物"
@@ -10283,6 +10343,12 @@
   "InvitationFromTheAratakiGang": {
     "name": "荒瀧派的邀請函"
   },
+  "WitnessPact": {
+    "name": "見證人盟約"
+  },
+  "GreatClockworkKey": {
+    "name": "偉大發條"
+  },
   "FelixFelicium": {
     "name": "「幸運祝福」"
   },
@@ -10334,11 +10400,23 @@
   "DamagedScore": {
     "name": "破損的曲譜"
   },
+  "BrickstacksLongRangeLamp": {
+    "name": "疊架遠光燈"
+  },
+  "AWeaponLikeDragonHorn": {
+    "name": "如同「武具」般的龍角"
+  },
+  "FellDragonsScale": {
+    "name": "邪龍的邪鱗"
+  },
   "CriminalsTestimony": {
     "name": "犯人的口供"
   },
   "RawatsNotes": {
     "name": "拉瓦特的筆記"
+  },
+  "ScatteredStar": {
+    "name": "散落的星星"
   },
   "GroupPhotoFromAnUnknownTime": {
     "name": "不知何時留下的合影"
@@ -10348,6 +10426,33 @@
   },
   "PagesFromALostScoreII": {
     "name": "遺落的曲譜殘頁·其二"
+  },
+  "SpecialPickaxe": {
+    "name": "特殊礦鎬"
+  },
+  "GoddesssManuscriptI": {
+    "name": "女神的手稿·其一"
+  },
+  "GoddesssManuscriptII": {
+    "name": "女神的手稿·其二"
+  },
+  "GoddesssManuscriptIII": {
+    "name": "女神的手稿·其三"
+  },
+  "ShapeOfValor": {
+    "name": "勇敢之形"
+  },
+  "ShapeOfWisdom": {
+    "name": "智慧之形"
+  },
+  "ShapeOfEmpathy": {
+    "name": "同理心之形"
+  },
+  "SecretElixir": {
+    "name": "「秘藥」"
+  },
+  "GuardsSpear": {
+    "name": "衛兵長矛"
   },
   "TreasureMapWithTheVaultsLocation": {
     "name": "指出寶庫位置的「藏寶圖」"
@@ -10435,6 +10540,27 @@
   },
   "TheFelineFirmVIII": {
     "name": "貓咪事務所·卷八"
+  },
+  "ASettingSunThatNeverSets": {
+    "name": "「永遠高掛的落日」"
+  },
+  "ADragonThatCannotFly": {
+    "name": "「岸上游泳的魚兒」"
+  },
+  "AMoonThatOnlyShinesAtNight": {
+    "name": "「夜晚顯現的明月」"
+  },
+  "MagicTonic": {
+    "name": "「魔水」"
+  },
+  "FellDragonsPicturebook": {
+    "name": "「邪龍」繪卷"
+  },
+  "DreamsOfTheAncientCapital": {
+    "name": "《舊都夢夜奇譚》"
+  },
+  "AnIncompleteManuscript": {
+    "name": "「一篇未完成的手稿」"
   },
   "TearsAmongTheStars": {
     "name": "星間之淚"
@@ -10678,6 +10804,9 @@
   },
   "WingsOfTransientDreams": {
     "name": "夢生須臾之翼"
+  },
+  "WingsOfDelicacies": {
+    "name": "餚饌之翼"
   },
   "RadiantSpincrystal1": {
     "name": "旋曜玉帛·其一"
@@ -11931,13 +12060,37 @@
     "name": "希格雯·療法"
   },
   "SethosBaFragment": {
-    "name": "塞索斯·跋靈"
+    "name": "賽索斯·跋靈"
   },
   "AchievementPoeticPages": {
     "name": "成就·詩頁"
   },
   "TravelNotesSimulnation": {
     "name": "紀行·衍演"
+  },
+  "EmilieBaseNote": {
+    "name": "艾梅莉埃·後調"
+  },
+  "TravelNotesFancifulFabrication": {
+    "name": "紀行·擬像"
+  },
+  "CelebrationFeastII": {
+    "name": "慶典·盛宴·其二"
+  },
+  "EchoDandelionKnight": {
+    "name": "遊跡·蒲公英騎士"
+  },
+  "EchoIcyResurrection": {
+    "name": "遊跡·凍凍回魂夜"
+  },
+  "EchoEclipsingStar": {
+    "name": "遊跡·掩月天權"
+  },
+  "EchoCatUponTheEaves": {
+    "name": "遊跡·檐宇貓遊"
+  },
+  "EchoDarkSideOfDawn": {
+    "name": "遊跡·晨曦的暗面"
   },
   "AnemoculusResonanceStone": {
     "name": "風神瞳共鳴石"
@@ -12185,6 +12338,18 @@
   "Fateometer": {
     "name": "「命運示數器」"
   },
+  "JocundLetters": {
+    "name": "輕愉信箋"
+  },
+  "JoyousLetters": {
+    "name": "歡躍信箋"
+  },
+  "Yelena": {
+    "name": "「葉蓮娜」"
+  },
+  "AsagirisDedicatedFontaineKamera": {
+    "name": "朝霧的楓丹專用留影機"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "說明：風神瞳共鳴石"
   },
@@ -12386,6 +12551,12 @@
   "LeisureTime": {
     "name": "閒暇時光"
   },
+  "CarefulNegotiations": {
+    "name": "嚴謹交涉"
+  },
+  "FilledWithConfidence": {
+    "name": "自信滿滿"
+  },
   "RhodeiaOfLoch": {
     "name": "純水精靈·洛蒂婭"
   },
@@ -12454,6 +12625,9 @@
   },
   "GuardianOfApepsOasis": {
     "name": "阿佩普的綠洲守望者"
+  },
+  "FrostOperative": {
+    "name": "愚人眾·霜役人"
   },
   "UndividedHeart": {
     "name": "唯此一心"
@@ -12731,6 +12905,15 @@
   "AThousandYoung": {
     "name": "萬千子嗣"
   },
+  "VanguardsCoordinatedTactics": {
+    "name": "尖兵協同戰法"
+  },
+  "UndisclosedDistributionChannels": {
+    "name": "不明流通管道"
+  },
+  "RimeflowRapier": {
+    "name": "冰雅刺劍"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -12974,6 +13157,15 @@
   "FlowerOfParadiseLost": {
     "name": "樂園遺落之花"
   },
+  "UltimateOverlordsMegaMagicSword": {
+    "name": "「究極霸王超級魔劍」"
+  },
+  "ProspectorsDrill": {
+    "name": "勘探鑽機"
+  },
+  "GladiatorsTriumphus": {
+    "name": "角鬥士的凱旋"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -13117,6 +13309,9 @@
   },
   "SirArthur": {
     "name": "亞瑟先生"
+  },
+  "Serene": {
+    "name": "瑟琳"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交織之冰"
@@ -13295,6 +13490,12 @@
   "CountdownToTheShow3": {
     "name": "幻戲倒數：3"
   },
+  "IdRatherLoseMoneyMyself": {
+    "name": "「看到那小子掙錢…」"
+  },
+  "Tada": {
+    "name": "噔噔！"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -13339,6 +13540,9 @@
   },
   "TheChasmBlueCrystal": {
     "name": "層岩巨淵·靛晶"
+  },
+  "TheChasmCrown": {
+    "name": "層岩巨淵·冠冕"
   },
   "BeginnerPlayerBadge": {
     "name": "初級牌手徽章"
@@ -13405,6 +13609,12 @@
   },
   "BambooRain": {
     "name": "雨化竹身"
+  },
+  "BreezeOfSabaa": {
+    "name": "莎邦之息"
+  },
+  "PhantomInBoots": {
+    "name": "倩影遊俠"
   },
   "AdventurerCamp": {
     "name": "冒險家的臨時營地"
@@ -13843,6 +14053,9 @@
   },
   "MusicTownsStreetlampSafetyLighting": {
     "name": "樂鎮路燈-「安行明光」"
+  },
+  "GlowingForestFruit": {
+    "name": "「叢林的螢螢果實」"
   },
   "EfflorescentIllumination": {
     "name": "「花葉百相之光」"
@@ -14984,6 +15197,24 @@
   "SiteOfArtfulAscension": {
     "name": "「巧策升煉之所」"
   },
+  "MetropoleFunhouseTrumpeter": {
+    "name": "王城趣屋-「吹號手」"
+  },
+  "MetropoleFunhouseCymbalist": {
+    "name": "王城趣屋-「鼓鈸人」"
+  },
+  "MetropoleFunhouseConductor": {
+    "name": "王城趣屋-「指揮家」"
+  },
+  "BoomBoomUnit": {
+    "name": "「咚咚單元」"
+  },
+  "DingDongUnit": {
+    "name": "「叮叮單元」"
+  },
+  "MagicalForestHut": {
+    "name": "「叢林的魔法小屋」"
+  },
   "RitualShrine": {
     "name": "「恆誥之龕」"
   },
@@ -15367,6 +15598,15 @@
   },
   "LargeShippingPallet": {
     "name": "大型運輸貨盤"
+  },
+  "WavesmasherLocomotive": {
+    "name": "「風風火火破浪車頭」"
+  },
+  "SnoozyRestCar": {
+    "name": "「呼呼嚕嚕休憩車廂」"
+  },
+  "BrimmingFreightCar": {
+    "name": "「滿滿當當載貨車廂」"
   },
   "AdeptusGate": {
     "name": "三眼守仙牌"
@@ -15760,6 +16000,18 @@
   },
   "ImprovedCrococannon": {
     "name": "「改良版鱷鱷炮炮」"
+  },
+  "OrigamiModelHopSkipAndAJump": {
+    "name": "摺紙模型-「蹦蹦跳」"
+  },
+  "OrigamiModelRoundRummyTum": {
+    "name": "摺紙模型-「圓嘟嘟」"
+  },
+  "OrigamiModelWhoooosh": {
+    "name": "摺紙模型-「呼咻咻」"
+  },
+  "OrigamiModelHardAsCanBe": {
+    "name": "摺紙模型-「硬邦邦」"
   },
   "PottedPlantVerdantVastness": {
     "name": "綠植盆栽-「蒼翠寸泓中」"
@@ -16157,6 +16409,9 @@
   "MusicTownsBreezeBellsCheepingFinches": {
     "name": "樂鎮風鈴-「嚦嚦雀語」"
   },
+  "ConscientiousWindcatcherSentinel": {
+    "name": "「兢兢業業捕風衛兵」"
+  },
   "BookshelfFreeReading": {
     "name": "書報架-「自由取閱」"
   },
@@ -16246,6 +16501,18 @@
   },
   "MallowWoodFenceTides": {
     "name": "懸鈴木「海潮」欄杆"
+  },
+  "PrimordialForestBeauty": {
+    "name": "「叢林的原生之美」"
+  },
+  "WindowToProphecy": {
+    "name": "「預言之窗」"
+  },
+  "GateOfStars": {
+    "name": "「星空之門」"
+  },
+  "GardenStellarMusicalPillar": {
+    "name": "「庭園的星輝樂柱」"
   },
   "SmoothWoodenBench": {
     "name": "平整的木製長凳"
@@ -16355,6 +16622,9 @@
   "MallowWoodRoundTableASharedDrink": {
     "name": "懸鈴木「共飲」圓桌"
   },
+  "JoyousForestParty": {
+    "name": "「叢林的歡聚一堂」"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "酒肆貨櫃-「會須百杯飲」"
   },
@@ -16390,5 +16660,11 @@
   },
   "SwordBearingStatueAestheticsOfIncompleteness": {
     "name": "持劍石像-「殘缺美學」"
+  },
+  "EasyBreezyShelterCanopy": {
+    "name": "「輕便自由候車涼棚」"
+  },
+  "ScheduleAbidingTrainStationSign": {
+    "name": "「恪守時間候車站牌」"
   }
 }

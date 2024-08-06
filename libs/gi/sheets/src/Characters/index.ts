@@ -29,6 +29,7 @@ import Dehya from './Dehya'
 import Diluc from './Diluc'
 import Diona from './Diona'
 import Dori from './Dori'
+import Emilie from './Emilie'
 import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
@@ -125,6 +126,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Diluc,
   Diona,
   Dori,
+  Emilie,
   Eula,
   Faruzan,
   Fischl,

@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Mengonsumsi sejumlah Stamina, menggunakan pistolet untuk menembakkan Suppressing Shot dengan radius berbentuk kipas."
+        "1": "Mengonsumsi sejumlah Stamina, menggunakan pistolet-nya untuk menembakkan Suppressing Shot dengan radius berbentuk kipas."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -41,28 +41,28 @@
   "skill": {
     "name": "Hunter's Vigil",
     "description": {
-      "0": "Mempersiapkan pistoletnya dan memasuki status \"Night Vigil\" yang menggabungkan pedang dan pistolet untuk bertarung. Dalam status ini, Normal Attack Clorinde akan dikonversi menjadi tembakan pistolet \"Swift Hunt\", DMG dikonversi menjadi <electro>Electro DMG</electro> yang tidak bisa ditimpa Elemental Infusion lainnya, dia juga tidak akan bisa melancarkan Charged Attack; Jika Elemental Skill dilancarkan, akan dikonversi menjadi \"Impale the Night\": Menerjang dan menyerang, mengakibatkan <electro>Electro DMG</electro>. DMG yang diakibatkan dengan cara di atas akan dianggap sebagai DMG Normal Attack.",
+      "0": "Mempersiapkan pistoletnya dan memasuki status \"Night Vigil\" yang menggabungkan pedang dan pistolet untuk bertarung. Dalam status ini, Normal Attack Clorinde akan dikonversi menjadi tembakan pistolet \"Swift Hunt\" dan DMG-nya dikonversi menjadi <electro>Electro DMG</electro> yang tidak bisa ditimpa Elemental Infusion lainnya, dia juga tidak akan bisa melancarkan Charged Attack. Melancarkan Elemental Skill akan mengonversinya menjadi \"Impale the Night\": Melancarkan serangan terjangan yang mengakibatkan <electro>Electro DMG</electro>. DMG yang diakibatkan dengan cara di atas akan dianggap sebagai DMG Normal Attack.",
       "1": "<br/>",
       "2": "<strong>Swift Hunt</strong>",
       "3": [
-        "Saat Bond of Life lebih dari atau sama dengan 100% Max HP, melancarkan tembakan pistolet;",
-        "Saat Bond of Life lebih kecil dari 100% Max HP, saat menembakkan pistolet, akan memberikan Clorinde Bond of Life dalam tertentu yang didasarkan pada Max HP Clorinde, peluru yang ditembakkan akan bisa menembus musuh dan akan mengakibatkan DMG yang lebih tinggi terhadap musuh di sepanjang jalurnya."
+        "Saat Bond of Life milik Clorinde lebih dari atau sama dengan 100% Max HP, akan melancarkan tembakan pistolet.",
+        "Saat Bond of Life miliknya lebih kecil dari 100% Max HP, makan menembakkan pistolet akan memberikan Clorinde Bond of Life dalam jumlah tertentu yang didasarkan pada Max HP Clorinde. Peluru yang ditembakkan dapat menembus musuh dan akan mengakibatkan DMG yang lebih besar terhadap musuh di sepanjang jalurnya."
       ],
       "4": "<br/>",
       "5": "<strong>Impale the Night</strong>",
-      "6": "Menentukan efek Impale the Night berdasarkan persentase Bond of Life Clorinde saat ini:",
+      "6": "Efek Impale the Night akan ditentukan berdasarkan persentase Bond of Life milik Clorinde saat ini:",
       "7": [
-        "Bond of Life adalah 0%, akan melancarkan serangan terjangan;",
-        "Saat Bond of Life kurang dari 100% Max HP, akan memulihkan HP Clorinde berdasarkan nilai Bond of Life, dan meningkatkan radius serangan dan DMG serangan kali ini;",
-        "Saat Bond of Life lebih besar atau sama dengan 100% Max HP, melancarkan Impale the Night: Pact, memulihkan HP Clorinde dengan persentase yang lebih tinggi dan meningkatkan radius serangan dan DMG terjangan kali ini lebih lanjut."
+        "Jika Bond of Life miliknya adalah 0%, akan melancarkan serangan terjangan.",
+        "Jika Bond of Life miliknya kurang dari 100% Max HP, akan memulihkan HP Clorinde berdasarkan nilai Bond of Life-nya, serta meningkatkan radius serangan dan DMG serangan Impale the Night kali ini.",
+        "Saat Bond of Life lebih besar atau sama dengan 100% Max HP, Clorinde akan melancarkan Impale the Night: Pact yang memulihkan HP Clorinde dengan persentase lebih tinggi dan meningkatkan radius serangan dan DMG serangan Impale the Night kali ini lebih lanjut."
       ],
       "8": "<br/>",
-      "9": "Selain itu, Saat Clorinde berada dalam status Night Vigil, efek pemulihan selain dari Impale the Night tidak akan efektif dan akan dikonversi menjadi Bond of Life untuknya berdasarkan persentase pemulihan yang diterima.",
+      "9": "Selain itu, saat Clorinde berada dalam status Night Vigil, efek pemulihan HP selain dari Impale the Night tidak akan efektif dan dikonversi menjadi Bond of Life milik Clorinde berdasarkan sejumlah persentase pemulihan HP yang diterima.",
       "10": "<br/>",
       "11": "Status Night Vigil akan dihapus saat Clorinde meninggalkan medan pertempuran.",
       "12": "<br/>",
       "13": "<strong>Arkhe: Ousia</strong>",
-      "14": "Setiap satu kurun waktu tertentu, saat Swift Hunt Clorinde mengenai musuh, Surging Blade akan dijatuhkan ke posisi musuh terkena serangan dan mengakibatkan Ousia-aligned <electro>Electro DMG</electro>.",
+      "14": "Setiap beberapa saat, tembakan Swift Hunt Clorinde yang mengenai musuh akan menjatuhkan Surging Blade ke posisi musuh yang terkena serangan dan mengakibatkan Ousia-aligned <electro>Electro DMG</electro>.",
       "15": "<br/>",
       "16": "<i>Meski kejahatan yang bersembunyi dalam bayang malam telah dibasmi selama ribuan tahun, namun hati manusia dipenuhi dengan awan bayangan yang tak bisa dijangkau oleh cahaya.",
       "17": "Bahkan sekarang, peringatan yang ditinggalkan oleh Golden Hunter sudah diukir dalam ingatannya: Those of the Night Vigil, peganglah tinggi-tinggi lilin yang sudah dinyalakan untuk melawan kegelapan, teruslah bersikap waspada, dan jangan sampai rusak oleh kegelapan yang dingin.</i>"
@@ -89,7 +89,7 @@
   "burst": {
     "name": "Last Lightfall",
     "description": {
-      "0": "Memberikan Bond of Life berdasarkan Max HP sendiri, lalu mengelak dengan gesit dan menyerang dengan teknik serangan pedang dan pistolet, mengakibatkan <electro>Electro DMG Area</electro>.",
+      "0": "Memberikan Bond of Life berdasarkan Max HP Clorinde sendiri, lalu mengelak dengan gesit dan menyerang menggunakan pedang dan pistolet-nya, mengakibatkan <electro>Electro DMG Area</electro>.",
       "1": "<br/>",
       "2": "<i>Konon katanya, seni kuno untuk melawan makhluk selain manusia adalah dengan tubuh manusia fana, ini bisa ditelusuri kembali pada zaman Lochknight yang melawan Kerajaan Remuria.",
       "3": "Meski demikian, asalkan ada yang bisa menemukan cara untuk mengontrol level kekuatan yang digunakan, bukan berarti cara ini tidak akan bisa digunakan di dalam pertempuran dengan musuh biasa.</i>"
@@ -116,14 +116,14 @@
   "passive1": {
     "name": "Dark-Shattering Flame",
     "description": {
-      "0": "Setelah Karakter dalam party di sekitar memicu <electro>reaksi terkait Electro</electro> terhadap musuh, meningkatkan <electro>Electro DMG</electro> yang diakibatkan oleh Normal Attack Clorinde dan <strong>Last Lightfall</strong> Clorinde sebesar 20% ATK Clorinde. Efek ini berlangsung 15 detik dan dapat ditumpuk sampai 3 lapis, durasi setiap lapisnya dihitung terpisah. Maksimum peningkatan DMG yang bisa diperoleh Clorinde melalui cara ini adalah sebesar 1.800."
+      "0": "Setelah Karakter dalam party di sekitar memicu <electro>reaksi terkait Electro</electro> terhadap musuh, meningkatkan <electro>Electro DMG</electro> yang diakibatkan oleh Normal Attack Clorinde dan <strong>Last Lightfall</strong> Clorinde sebesar 20% ATK Clorinde. Efek ini berlangsung 15 detik dan dapat ditumpuk sampai 3 lapis, durasi setiap lapisnya dihitung terpisah. Peningkatan DMG maksimum untuk serangan di atas yang bisa diperoleh Clorinde melalui cara ini adalah 1.800."
     }
   },
   "passive2": {
     "name": "Lawful Remuneration",
     "description": {
-      "0": "Jika Bond of Life Clorinde lebih besar atau sama dengan 100% Max HP, saat nilai Bond of Life bertambah atau berkurang, CRIT Rate Clorinde meningkat 10%. Efek ini berlangsung 15 detik, dapat ditumpuk sampai 2 lapis, durasi setiap lapisnya dihitung terpisah.",
-      "1": "Selain itu, status Night Vigil dari <strong>Hunter's Vigil</strong> akan diperkuat: Selama status ini aktif, rasio konversi jumlah pemulihan menjadi Bond of Life meningkat 100%."
+      "0": "Jika Bond of Life Clorinde lebih besar atau sama dengan 100% Max HP-nya, maka CRIT Rate Clorinde akan meningkat 10% saat nilai Bond of Life miliknya bertambah atau berkurang. Efek ini berlangsung 15 detik, dapat ditumpuk sampai 2 lapis, dan durasi setiap lapisnya dihitung terpisah.",
+      "1": "Selain itu, status Night Vigil dari <strong>Hunter's Vigil</strong> akan diperkuat: Selama status ini aktif, rasio konversi jumlah pemulihan HP ke Bond of Life meningkat menjadi 100%."
     }
   },
   "passive3": {
@@ -135,14 +135,14 @@
   "constellation1": {
     "name": "\"From This Day, I Pass the Candle's Shadow-Veil\"",
     "description": {
-      "0": "Sewaktu status Night Vigil dari <strong>Hunter's Vigil</strong> berlangsung, saat <electro>Electro DMG</electro> Normal Attack Clorinde mengenai musuh, akan memanggil Nightvigil Shade di sekitar musuh untuk melancarkan 2 kali serangan terkoordinasi, masing-masingnya mengakibatkan <electro>Electro DMG</electro> sebesar 30% ATK Clorinde.",
+      "0": "Sewaktu status Night Vigil dari <strong>Hunter's Vigil</strong> berlangsung, saat <electro>Electro DMG</electro> Normal Attack Clorinde mengenai musuh, akan memanggil Nightvigil Shade di sekitar musuh untuk melancarkan 2 kali serangan terkoordinasi yang masing-masingnya mengakibatkan <electro>Electro DMG</electro> sebesar 30% ATK Clorinde.",
       "1": "Efek ini dapat terpicu maksimum 1,2 detik sekali, dan DMG yang diakibatkan dengan cara ini dianggap sebagai DMG Normal Attack."
     }
   },
   "constellation2": {
     "name": "\"Now, As We Face the Perils of the Long Night\"",
     "description": {
-      "0": "Efek Talenta Pasif \"Dark-Shattering Flame\" diperkuat: Saat Karakter anggota party di sekitar memicu <electro>reaksi terkait Electro</electro> terhadap musuh, akan meningkatkan <electro>Electro DMG</electro> yang diakibatkan Normal Attack dan <strong>Last Lightfall</strong> Clorinde sebesar 30% ATK Clorinde. Efek ini berlangsung 15 detik, dapat ditumpuk sampai 3 lapis, durasi setiap lapisnya dihitung terpisah. Saat statusnya mencapai 3 lapis, ketahanan Clorinde terhadap interupsi juga akan meningkat. Peningkatan DMG Clorinde yang bisa diperoleh dengan cara di atas adalah maksimum 2.700.",
+      "0": "Efek Talenta Pasif \"Dark-Shattering Flame\" diperkuat: Saat anggota party di sekitar memicu <electro>reaksi terkait Electro</electro> terhadap musuh, akan meningkatkan <electro>Electro DMG</electro> yang diakibatkan Normal Attack dan <strong>Last Lightfall</strong> Clorinde sebesar 30% ATK Clorinde. Efek ini berlangsung 15 detik, dapat ditumpuk sampai 3 lapis, dan durasi setiap lapisnya dihitung terpisah. Saat memiliki 3 lapis, ketahanan Clorinde terhadap interupsi juga akan meningkat. Peningkatan DMG Clorinde yang bisa diperoleh dengan cara di atas adalah maksimum 2.700.",
       "1": "Harus membuka Talenta Pasif \"Dark-Shattering Flame\" terlebih dahulu."
     }
   },
@@ -156,7 +156,7 @@
   "constellation4": {
     "name": "\"To Enshrine Tears, Life, and Love\"",
     "description": {
-      "0": "Saat <strong>Last Lightfall</strong> mengakibatkan DMG terhadap musuh, akan meningkatkan DMG <strong>Last Lightfall</strong> kali ini berdasarkan persentase Bond of Life Clorinde saat ini, peningkatannya adalah sebesar 2% untuk setiap 1% Bond of Life yang dimiliki Clorinde. Maksimum peningkatan DMG <strong>Last Lightfall</strong> yang bisa diperoleh dengan cara ini adalah 200%."
+      "0": "Saat <strong>Last Lightfall</strong> mengakibatkan DMG terhadap musuh, DMG <strong>Last Lightfall</strong> kali ini akan meningkat berdasarkan persentase Bond of Life Clorinde saat ini. DMG-nya akan meningkat sebesar 2% untuk setiap 1% Bond of Life yang dimiliki Clorinde. Maksimum peningkatan DMG <strong>Last Lightfall</strong> yang bisa diperoleh dengan cara ini adalah 200%."
     }
   },
   "constellation5": {
@@ -169,15 +169,15 @@
   "constellation6": {
     "name": "\"And So Shall I Never Despair\"",
     "description": {
-      "0": "Selama 12 detik setelah melancarkan <strong>Hunter's Vigil</strong>, CRIT Rate Clorinde meningkat 10% dan CRIT DMG meningkat 70%.",
-      "1": "Selain itu selama Night Vigil berlangsung, Glimbright Shade akan muncul dalam kondisi tertentu dan melakukan serangan yang mengakibatkan <electro>Electro DMG</electro> sebesar 200% ATK Clorinde, DMG yang diakibatkan dengan cara ini dianggap sebagai DMG Normal Attack.",
+      "0": "Selama 12 detik setelah melancarkan <strong>Hunter's Vigil</strong>, CRIT Rate Clorinde meningkat 10% dan CRIT DMG-nya meningkat 70%.",
+      "1": "Selain itu selama Night Vigil berlangsung, Glimbright Shade akan muncul dalam kondisi tertentu dan melancarkan serangan yang mengakibatkan <electro>Electro DMG</electro> sebesar 200% ATK Clorinde, DMG yang diakibatkan dengan cara ini dianggap sebagai DMG Normal Attack.",
       "2": "Glimbright Shade akan muncul dalam kondisi berikut:",
       "3": [
-        "Saat Clorinde akan terkena serangan;",
+        "Saat Clorinde akan terkena serangan.",
         "Saat Clorinde melancarkan Impale the Night: Pact."
       ],
-      "4": "Maksimum 1 Glimbright Shade yang bisa dipanggil setiap 1 detik. Maksimum bisa memanggil hingga 6 Glimbright Shade selama satu kali durasi Night Vigil, ",
-      "5": "Selain itu, selama status Night Vigil aktif, DMG yang diterima Clorinde berkurang 80% dan ketahanannya terhadap interupsi juga akan meningkat. Efek ini akan hilang setelah status Night Vigil berakhir atau 1 detik setelah memanggil 6 Glimbright Shade."
+      "4": "Maksimum bisa memanggil 1 Glimbright Shade setiap 1 detik dengan cara di atas. Maksimum bisa memanggil hingga 6 Glimbright Shade dalam satu durasi Night Vigil.",
+      "5": "Selain itu, selama status Night Vigil aktif, DMG yang diterima Clorinde berkurang 80% dan ketahanannya terhadap interupsi juga akan meningkat. Efek ini akan hilang setelah status Night Vigil berakhir atau 1 detik setelah Clorinde memanggil 6 Glimbright Shade."
     }
   }
 }

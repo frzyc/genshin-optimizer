@@ -1,0 +1,24 @@
+{
+  "name": "Elegía Lumidulce",
+  "description": {
+    "0": "Una magnífica lanza decorada con cristales azulados. Dicen que era el arma más preciada de cierta verduga del justiciazgo legendaria, aunque ella nunca llegó a usarla."
+  },
+  "passiveName": "Obertura del alba",
+  "passiveDescription": {
+    "0": {
+      "0": "El ATQ aumenta en un <cryo>15%</cryo>. Cuando el portador de esta arma causa una reacción de Quemadura contra un enemigo o tras infligir Daño Dendro a un enemigo quemado, el daño infligido aumenta en un <cryo>18%</cryo>. Este efecto dura 8 s y puede acumularse hasta 2 veces. Al alcanzar 2 acumulaciones o cuando la duración de estas se reinicia, restaura <cryo>12</cryo> pts. de Energía Elemental. Solo se puede restaurar Energía Elemental una vez cada 12 s de esta manera. Estos dos efectos se pueden activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "El ATQ aumenta en un <cryo>19%</cryo>. Cuando el portador de esta arma causa una reacción de Quemadura contra un enemigo o tras infligir Daño Dendro a un enemigo quemado, el daño infligido aumenta en un <cryo>23%</cryo>. Este efecto dura 8 s y puede acumularse hasta 2 veces. Al alcanzar 2 acumulaciones o cuando la duración de estas se reinicia, restaura <cryo>13</cryo> pts. de Energía Elemental. Solo se puede restaurar Energía Elemental una vez cada 12 s de esta manera. Estos dos efectos se pueden activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "El ATQ aumenta en un <cryo>23%</cryo>. Cuando el portador de esta arma causa una reacción de Quemadura contra un enemigo o tras infligir Daño Dendro a un enemigo quemado, el daño infligido aumenta en un <cryo>28%</cryo>. Este efecto dura 8 s y puede acumularse hasta 2 veces. Al alcanzar 2 acumulaciones o cuando la duración de estas se reinicia, restaura <cryo>14</cryo> pts. de Energía Elemental. Solo se puede restaurar Energía Elemental una vez cada 12 s de esta manera. Estos dos efectos se pueden activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "El ATQ aumenta en un <cryo>27%</cryo>. Cuando el portador de esta arma causa una reacción de Quemadura contra un enemigo o tras infligir Daño Dendro a un enemigo quemado, el daño infligido aumenta en un <cryo>33%</cryo>. Este efecto dura 8 s y puede acumularse hasta 2 veces. Al alcanzar 2 acumulaciones o cuando la duración de estas se reinicia, restaura <cryo>15</cryo> pts. de Energía Elemental. Solo se puede restaurar Energía Elemental una vez cada 12 s de esta manera. Estos dos efectos se pueden activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "El ATQ aumenta en un <cryo>31%</cryo>. Cuando el portador de esta arma causa una reacción de Quemadura contra un enemigo o tras infligir Daño Dendro a un enemigo quemado, el daño infligido aumenta en un <cryo>38%</cryo>. Este efecto dura 8 s y puede acumularse hasta 2 veces. Al alcanzar 2 acumulaciones o cuando la duración de estas se reinicia, restaura <cryo>16</cryo> pts. de Energía Elemental. Solo se puede restaurar Energía Elemental una vez cada 12 s de esta manera. Estos dos efectos se pueden activar incluso cuando el personaje está en tu equipo pero no en uso."
+    }
+  }
+}

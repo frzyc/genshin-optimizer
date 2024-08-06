@@ -197,6 +197,15 @@
   "AnalysisProgress": {
     "name": "Analysis Progress"
   },
+  "ExcerptsOfBliss": {
+    "name": "Excerpts of Bliss"
+  },
+  "KeyOfEchoes": {
+    "name": "Key of Echoes"
+  },
+  "StarsailCoin": {
+    "name": "Starsail Coin"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -542,6 +551,9 @@
   "Clorinde": {
     "name": "Clorinde"
   },
+  "Emilie": {
+    "name": "Emilie"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna"
   },
@@ -796,6 +808,9 @@
   },
   "ClorindesStellaFortuna": {
     "name": "Clorinde's Stella Fortuna"
+  },
+  "EmiliesStellaFortuna": {
+    "name": "Emilie's Stella Fortuna"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostic Hymn - Old Notes"
@@ -4958,6 +4973,9 @@
   "SpiritCarp": {
     "name": "Spirit Carp"
   },
+  "JubilantFeather": {
+    "name": "Jubilant Feather"
+  },
   "Dish": {
     "name": "Dish"
   },
@@ -6983,6 +7001,39 @@
   "SuperDeeDuperDeliciousMeatRoll": {
     "name": "Super-Dee-Duper Delicious Meat Roll"
   },
+  "SuspiciousFricasseeDePoulet": {
+    "name": "Suspicious Fricassee de Poulet"
+  },
+  "FricasseeDePoulet": {
+    "name": "Fricassee de Poulet"
+  },
+  "DeliciousFricasseeDePoulet": {
+    "name": "Delicious Fricassee de Poulet"
+  },
+  "AFragrantFeastOfFlavors": {
+    "name": "A Fragrant Feast of Flavors"
+  },
+  "SuspiciousBlubbercream": {
+    "name": "Suspicious Blubbercream"
+  },
+  "Blubbercream": {
+    "name": "Blubbercream"
+  },
+  "DeliciousBlubbercream": {
+    "name": "Delicious Blubbercream"
+  },
+  "SuspiciousCrispCroissantCombo": {
+    "name": "Suspicious Crisp Croissant Combo"
+  },
+  "CrispCroissantCombo": {
+    "name": "Crisp Croissant Combo"
+  },
+  "DeliciousCrispCroissantCombo": {
+    "name": "Delicious Crisp Croissant Combo"
+  },
+  "AMagicalMix": {
+    "name": "A Magical Mix"
+  },
   "RecipeItem": {
     "name": "Recipe Item"
   },
@@ -7564,6 +7615,15 @@
   },
   "RecipeBulleSauceDuckBreast": {
     "name": "Recipe: Bulle Sauce Duck Breast"
+  },
+  "RecipeFricasseeDePoulet": {
+    "name": "Recipe: Fricassee de Poulet"
+  },
+  "RecipeBlubbercream": {
+    "name": "Recipe: Blubbercream"
+  },
+  "RecipeCrispCroissantCombo": {
+    "name": "Recipe: Crisp Croissant Combo"
   },
   "CraftedItems": {
     "name": "Crafted Items"
@@ -10283,6 +10343,12 @@
   "InvitationFromTheAratakiGang": {
     "name": "Invitation From the Arataki Gang"
   },
+  "WitnessPact": {
+    "name": "Witness Pact"
+  },
+  "GreatClockworkKey": {
+    "name": "Great Clockwork Key"
+  },
   "FelixFelicium": {
     "name": "Felix Felicium"
   },
@@ -10334,11 +10400,23 @@
   "DamagedScore": {
     "name": "Damaged Score"
   },
+  "BrickstacksLongRangeLamp": {
+    "name": "Brickstacks Long-Range Lamp"
+  },
+  "AWeaponLikeDragonHorn": {
+    "name": "A \"Weapon-Like\" Dragon Horn"
+  },
+  "FellDragonsScale": {
+    "name": "Fell Dragon's Scale"
+  },
   "CriminalsTestimony": {
     "name": "Criminal's Testimony"
   },
   "RawatsNotes": {
     "name": "Rawat's Notes"
+  },
+  "ScatteredStar": {
+    "name": "Scattered Star"
   },
   "GroupPhotoFromAnUnknownTime": {
     "name": "Group Photo From an Unknown Time"
@@ -10348,6 +10426,33 @@
   },
   "PagesFromALostScoreII": {
     "name": "Pages From a Lost Score (II)"
+  },
+  "SpecialPickaxe": {
+    "name": "Special Pickaxe"
+  },
+  "GoddesssManuscriptI": {
+    "name": "Goddess's Manuscript (I)"
+  },
+  "GoddesssManuscriptII": {
+    "name": "Goddess's Manuscript (II)"
+  },
+  "GoddesssManuscriptIII": {
+    "name": "Goddess's Manuscript (III)"
+  },
+  "ShapeOfValor": {
+    "name": "Shape of Valor"
+  },
+  "ShapeOfWisdom": {
+    "name": "Shape of Wisdom"
+  },
+  "ShapeOfEmpathy": {
+    "name": "Shape of Empathy"
+  },
+  "SecretElixir": {
+    "name": "\"Secret Elixir\""
+  },
+  "GuardsSpear": {
+    "name": "Guard's Spear"
   },
   "TreasureMapWithTheVaultsLocation": {
     "name": "\"Treasure Map\" With the Vault's Location"
@@ -10435,6 +10540,27 @@
   },
   "TheFelineFirmVIII": {
     "name": "The Feline Firm (VIII)"
+  },
+  "ASettingSunThatNeverSets": {
+    "name": "\"A Setting Sun That Never Sets\""
+  },
+  "ADragonThatCannotFly": {
+    "name": "\"A Dragon That Cannot Fly\""
+  },
+  "AMoonThatOnlyShinesAtNight": {
+    "name": "\"A Moon That Only Shines At Night\""
+  },
+  "MagicTonic": {
+    "name": "Magic Tonic"
+  },
+  "FellDragonsPicturebook": {
+    "name": "Fell Dragon's Picturebook"
+  },
+  "DreamsOfTheAncientCapital": {
+    "name": "Dreams of the Ancient Capital"
+  },
+  "AnIncompleteManuscript": {
+    "name": "An Incomplete Manuscript"
   },
   "TearsAmongTheStars": {
     "name": "Tears Among the Stars"
@@ -10678,6 +10804,9 @@
   },
   "WingsOfTransientDreams": {
     "name": "Wings of Transient Dreams"
+  },
+  "WingsOfDelicacies": {
+    "name": "Wings of Delicacies"
   },
   "RadiantSpincrystal1": {
     "name": "Radiant Spincrystal 1"
@@ -11939,6 +12068,30 @@
   "TravelNotesSimulnation": {
     "name": "Travel Notes: Simulnation"
   },
+  "EmilieBaseNote": {
+    "name": "Emilie: Base Note"
+  },
+  "TravelNotesFancifulFabrication": {
+    "name": "Travel Notes: Fanciful Fabrication"
+  },
+  "CelebrationFeastII": {
+    "name": "Celebration: Feast (II)"
+  },
+  "EchoDandelionKnight": {
+    "name": "Echo: Dandelion Knight"
+  },
+  "EchoIcyResurrection": {
+    "name": "Echo: Icy Resurrection"
+  },
+  "EchoEclipsingStar": {
+    "name": "Echo: Eclipsing Star"
+  },
+  "EchoCatUponTheEaves": {
+    "name": "Echo: Cat Upon the Eaves"
+  },
+  "EchoDarkSideOfDawn": {
+    "name": "Echo: Dark Side of Dawn"
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone"
   },
@@ -12185,6 +12338,18 @@
   "Fateometer": {
     "name": "\"Fateometer\""
   },
+  "JocundLetters": {
+    "name": "Jocund Letters"
+  },
+  "JoyousLetters": {
+    "name": "Joyous Letters"
+  },
+  "Yelena": {
+    "name": "\"Yelena\""
+  },
+  "AsagirisDedicatedFontaineKamera": {
+    "name": "Asagiri's Dedicated Fontaine Kamera"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instructions: Anemoculus Resonance Stone"
   },
@@ -12386,6 +12551,12 @@
   "LeisureTime": {
     "name": "Leisure Time"
   },
+  "CarefulNegotiations": {
+    "name": "Careful Negotiations"
+  },
+  "FilledWithConfidence": {
+    "name": "Filled With Confidence"
+  },
   "RhodeiaOfLoch": {
     "name": "Rhodeia of Loch"
   },
@@ -12454,6 +12625,9 @@
   },
   "GuardianOfApepsOasis": {
     "name": "Guardian of Apep's Oasis"
+  },
+  "FrostOperative": {
+    "name": "Frost Operative"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -12731,6 +12905,15 @@
   "AThousandYoung": {
     "name": "A Thousand Young"
   },
+  "VanguardsCoordinatedTactics": {
+    "name": "Vanguard's Coordinated Tactics"
+  },
+  "UndisclosedDistributionChannels": {
+    "name": "Undisclosed Distribution Channels"
+  },
+  "RimeflowRapier": {
+    "name": "Rimeflow Rapier"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -12974,6 +13157,15 @@
   "FlowerOfParadiseLost": {
     "name": "Flower of Paradise Lost"
   },
+  "UltimateOverlordsMegaMagicSword": {
+    "name": "\"Ultimate Overlord's Mega Magic Sword\""
+  },
+  "ProspectorsDrill": {
+    "name": "Prospector's Drill"
+  },
+  "GladiatorsTriumphus": {
+    "name": "Gladiator's Triumphus"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -13117,6 +13309,9 @@
   },
   "SirArthur": {
     "name": "Sir Arthur"
+  },
+  "Serene": {
+    "name": "Serene"
   },
   "ElementalResonanceWovenIce": {
     "name": "Elemental Resonance: Woven Ice"
@@ -13295,6 +13490,12 @@
   "CountdownToTheShow3": {
     "name": "Countdown to the Show: 3"
   },
+  "IdRatherLoseMoneyMyself": {
+    "name": "\"I'd Rather Lose Money Myself...\""
+  },
+  "Tada": {
+    "name": "Tada!"
+  },
   "Origin": {
     "name": "Origin"
   },
@@ -13339,6 +13540,9 @@
   },
   "TheChasmBlueCrystal": {
     "name": "The Chasm: Blue Crystal"
+  },
+  "TheChasmCrown": {
+    "name": "The Chasm: Crown"
   },
   "BeginnerPlayerBadge": {
     "name": "Beginner Player Badge"
@@ -13405,6 +13609,12 @@
   },
   "BambooRain": {
     "name": "Bamboo Rain"
+  },
+  "BreezeOfSabaa": {
+    "name": "Breeze of Sabaa"
+  },
+  "PhantomInBoots": {
+    "name": "Phantom in Boots"
   },
   "AdventurerCamp": {
     "name": "Adventurer Camp"
@@ -13843,6 +14053,9 @@
   },
   "MusicTownsStreetlampSafetyLighting": {
     "name": "Music Town's Streetlamp: \"Safety Lighting\""
+  },
+  "GlowingForestFruit": {
+    "name": "Glowing Forest Fruit"
   },
   "EfflorescentIllumination": {
     "name": "Efflorescent Illumination"
@@ -14984,6 +15197,24 @@
   "SiteOfArtfulAscension": {
     "name": "\"Site of Artful Ascension\""
   },
+  "MetropoleFunhouseTrumpeter": {
+    "name": "Metropole Funhouse: Trumpeter"
+  },
+  "MetropoleFunhouseCymbalist": {
+    "name": "Metropole Funhouse: Cymbalist"
+  },
+  "MetropoleFunhouseConductor": {
+    "name": "Metropole Funhouse: Conductor"
+  },
+  "BoomBoomUnit": {
+    "name": "Boom-Boom Unit"
+  },
+  "DingDongUnit": {
+    "name": "Ding-Dong Unit"
+  },
+  "MagicalForestHut": {
+    "name": "Magical Forest Hut"
+  },
   "RitualShrine": {
     "name": "Ritual Shrine"
   },
@@ -15367,6 +15598,15 @@
   },
   "LargeShippingPallet": {
     "name": "Large Shipping Pallet"
+  },
+  "WavesmasherLocomotive": {
+    "name": "Wavesmasher Locomotive"
+  },
+  "SnoozyRestCar": {
+    "name": "Snoozy Rest Car"
+  },
+  "BrimmingFreightCar": {
+    "name": "Brimming Freight Car"
   },
   "AdeptusGate": {
     "name": "Adeptus Gate"
@@ -15760,6 +16000,18 @@
   },
   "ImprovedCrococannon": {
     "name": "Improved Crococannon"
+  },
+  "OrigamiModelHopSkipAndAJump": {
+    "name": "Origami Model: Hop, Skip, and a Jump"
+  },
+  "OrigamiModelRoundRummyTum": {
+    "name": "Origami Model: Round Rummy Tum"
+  },
+  "OrigamiModelWhoooosh": {
+    "name": "Origami Model: Whoooosh!"
+  },
+  "OrigamiModelHardAsCanBe": {
+    "name": "Origami Model: Hard As Can Be"
   },
   "PottedPlantVerdantVastness": {
     "name": "Potted Plant: Verdant Vastness"
@@ -16157,6 +16409,9 @@
   "MusicTownsBreezeBellsCheepingFinches": {
     "name": "Music Town's Breeze Bells: \"Cheeping Finches\""
   },
+  "ConscientiousWindcatcherSentinel": {
+    "name": "Conscientious Windcatcher Sentinel"
+  },
   "BookshelfFreeReading": {
     "name": "Bookshelf: Free Reading"
   },
@@ -16246,6 +16501,18 @@
   },
   "MallowWoodFenceTides": {
     "name": "Mallow Wood Fence: \"Tides\""
+  },
+  "PrimordialForestBeauty": {
+    "name": "Primordial Forest Beauty"
+  },
+  "WindowToProphecy": {
+    "name": "Window to Prophecy"
+  },
+  "GateOfStars": {
+    "name": "Gate of Stars"
+  },
+  "GardenStellarMusicalPillar": {
+    "name": "Garden Stellar Musical Pillar"
   },
   "SmoothWoodenBench": {
     "name": "Smooth Wooden Bench"
@@ -16355,6 +16622,9 @@
   "MallowWoodRoundTableASharedDrink": {
     "name": "Mallow Wood Round Table: \"A Shared Drink\""
   },
+  "JoyousForestParty": {
+    "name": "Joyous Forest Party"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Wine Shop Display Counter: To Your Heart's Content"
   },
@@ -16390,5 +16660,11 @@
   },
   "SwordBearingStatueAestheticsOfIncompleteness": {
     "name": "Sword-Bearing Statue: \"Aesthetics of Incompleteness\""
+  },
+  "EasyBreezyShelterCanopy": {
+    "name": "Easy Breezy Shelter Canopy"
+  },
+  "ScheduleAbidingTrainStationSign": {
+    "name": "Schedule-Abiding Train Station Sign"
   }
 }

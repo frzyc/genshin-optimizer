@@ -1,0 +1,24 @@
+{
+  "name": "Elegia di Lumidouce",
+  "description": {
+    "0": "Una splendida arma ad asta decorata con cristalli azzurri. Si dice che fosse il tesoro di una leggendaria campionessa duellante, tuttavia nessuno l'ha mai impugnata."
+  },
+  "passiveName": "Preludio dell'alba lucente",
+  "passiveDescription": {
+    "0": {
+      "0": "L'ATT aumenta di un <cryo>15%</cryo>. Quando il personaggio che equipaggia l'arma innesca Ustione su un avversario o infligge DAN da Dendro ad avversari affetti da Ustione, i DAN inflitti aumentano di un <cryo>18%</cryo>. L'effetto dura 8 s, ed è cumulabile fino a 2 volte. Quando si ottengono 2 accumuli, o quando la durata dell'effetto si ripristina all'ottenimento del secondo accumulo, l'energia si ricarica di <cryo>12</cryo>. Questa forma di ripristino dell'energia può verificarsi solo una volta ogni 12 s. I 2 suddetti effetti possono attivarsi anche se il personaggio non è in campo."
+    },
+    "1": {
+      "0": "L'ATT aumenta di un <cryo>19%</cryo>. Quando il personaggio che equipaggia l'arma innesca Ustione su un avversario o infligge DAN da Dendro ad avversari affetti da Ustione, i DAN inflitti aumentano di un <cryo>23%</cryo>. L'effetto dura 8 s, ed è cumulabile fino a 2 volte. Quando si ottengono 2 accumuli, o quando la durata dell'effetto si ripristina all'ottenimento del secondo accumulo, l'energia si ricarica di <cryo>13</cryo>. Questa forma di ripristino dell'energia può verificarsi solo una volta ogni 12 s. I 2 suddetti effetti possono attivarsi anche se il personaggio non è in campo."
+    },
+    "2": {
+      "0": "L'ATT aumenta di un <cryo>23%</cryo>. Quando il personaggio che equipaggia l'arma innesca Ustione su un avversario o infligge DAN da Dendro ad avversari affetti da Ustione, i DAN inflitti aumentano di un <cryo>28%</cryo>. L'effetto dura 8 s, ed è cumulabile fino a 2 volte. Quando si ottengono 2 accumuli, o quando la durata dell'effetto si ripristina all'ottenimento del secondo accumulo, l'energia si ricarica di <cryo>14</cryo>. Questa forma di ripristino dell'energia può verificarsi solo una volta ogni 12 s. I 2 suddetti effetti possono attivarsi anche se il personaggio non è in campo."
+    },
+    "3": {
+      "0": "L'ATT aumenta di un <cryo>27%</cryo>. Quando il personaggio che equipaggia l'arma innesca Ustione su un avversario o infligge DAN da Dendro ad avversari affetti da Ustione, i DAN inflitti aumentano di un <cryo>33%</cryo>. L'effetto dura 8 s, ed è cumulabile fino a 2 volte. Quando si ottengono 2 accumuli, o quando la durata dell'effetto si ripristina all'ottenimento del secondo accumulo, l'energia si ricarica di <cryo>15</cryo>. Questa forma di ripristino dell'energia può verificarsi solo una volta ogni 12 s. I 2 suddetti effetti possono attivarsi anche se il personaggio non è in campo."
+    },
+    "4": {
+      "0": "L'ATT aumenta di un <cryo>31%</cryo>. Quando il personaggio che equipaggia l'arma innesca Ustione su un avversario o infligge DAN da Dendro ad avversari affetti da Ustione, i DAN inflitti aumentano di un <cryo>38%</cryo>. L'effetto dura 8 s, ed è cumulabile fino a 2 volte. Quando si ottengono 2 accumuli, o quando la durata dell'effetto si ripristina all'ottenimento del secondo accumulo, l'energia si ricarica di <cryo>16</cryo>. Questa forma di ripristino dell'energia può verificarsi solo una volta ogni 12 s. I 2 suddetti effetti possono attivarsi anche se il personaggio non è in campo."
+    }
+  }
+}

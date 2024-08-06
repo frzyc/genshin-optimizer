@@ -1,7 +1,7 @@
 {
   "name": "Sigewinne",
   "title": "Wondrous Dragonheir",
-  "description": "Seorang Melusine sekaligus suster kepala di Benteng Meropide. Dia memerhatikan setiap tahanan di penjara bawah air dengan adil.",
+  "description": "Seorang Melusine sekaligus suster kepala di Benteng Meropide. Dia memperlakukan setiap tahanan di penjara bawah air dengan adil.",
   "constellationName": "Nereides",
   "auto": {
     "name": "Targeted Treatment",
@@ -42,19 +42,19 @@
   "skill": {
     "name": "Rebound Hydrotherapy",
     "description": {
-      "0": "Menggunakan senapan gelembung yang khusus dibuat oleh Benteng Meropide untuk mengembuskan <strong>Bolstering Bubblebalm</strong> yang bisa merangsang peredaran darah dan membuat pasien tertidur pulas.",
-      "1": "Bolstering Bubblebalm akan melambung saat berada di sekitar musuh. Saat mengenai musuh, akan mengakibatkan <hydro>Hydro DMG</hydro> yang didasarkan pada Max HP Sigewinne; Saat melambung, akan memulihkan HP seluruh anggota party di sekitar (selain Sigewinne) yang didasarkan pada Max HP Sigewinne. ",
+      "0": "Sigewinne menggunakan senapan gelembung yang dibuat khusus di Benteng Meropide untuk mengembuskan <strong>Bolstering Bubblebalm</strong> yang bisa merangsang peredaran darah dan membuat pasien tertidur pulas.",
+      "1": "Bolstering Bubblebalm akan melambung di antara musuh-musuh sekitar. Saat mengenai musuh, akan mengakibatkan <hydro>Hydro DMG</hydro> yang didasarkan pada Max HP Sigewinne. Saat melambung, akan memulihkan HP seluruh anggota party di sekitar (selain Sigewinne sendiri) yang jumlah pemulihannya didasarkan pada Max HP Sigewinne. ",
       "2": "Setelah melambung 5 kali, Bolstering Bubblebalm akan hilang dan akan memulihkan HP Sigewinne berdasarkan Max HP-nya.",
-      "3": "Saat tidak ada musuh, Bolstering Bubblebalm akan melambung di sekitar. Maksimum ada satu Bolstering Bubblebalm yang bisa diciptakan oleh Sigewinne sendiri pada waktu yang bersamaan.",
-      "4": "Saat ditahan, akan melakukan Charge dan melancarkan Bolstering Bubblebalm.",
+      "3": "Saat tidak ada musuh, Bolstering Bubblebalm akan melambung di area sekitar. Maksimum hanya satu Bolstering Bubblebalm yang bisa diciptakan oleh Sigewinne sendiri pada waktu yang bersamaan.",
+      "4": "Jika tombol Skill ditahan, Sigewinne akan melakukan Charge sebelum melancarkan Bolstering Bubblebalm.",
       "5": "<br/>",
       "6": "<strong>Mode Tahan</strong>",
       "7": "Memasuki Mode Membidik dan melakukan Charge, lalu mengembuskan Bolstering Bubblebalm yang lebih besar dan lebih kuat!",
-      "8": "Bolstering Bubblebalm akan menjadi semakin besar seiring durasi tombol Skill ditahan, hingga membesar dua level. Untuk setiap peningkatan level, DMG saat mengenai musuh meningkat 5%, jumlah pemulihan HP meningkat 5%; Setelah melambung, akan mengecil 1 level, demikian seterusnya sampai menjadi Bolstering Bubblebalm biasa.",
-      "9": "Setelah musuh yang relatif lemah terkena Bolstering Bubblebalm yang relatif besar, musuh tersebut akan terperangkap dan tidak bisa bergerak.",
+      "8": "Bolstering Bubblebalm akan menjadi semakin besar seiring durasi tombol Skill ditahan, dapat membesar hingga dua level. Untuk setiap peningkatan level, DMG saat mengenai musuh akan meningkat 5% dan jumlah pemulihan HP-nya meningkat 5%. Setiap kali melambung, Bolstering Bubblebalm besar ini akan mengecil 1 level sampai menjadi Bolstering Bubblebalm biasa.",
+      "9": "Jika musuh yang relatif lemah terkena Bolstering Bubblebalm besar, musuh tersebut akan terperangkap dan tidak bisa bergerak.",
       "10": "<br/>",
-      "11": "Selain itu, saat dilancarkan, akan menghasilkan 2 Sourcewater Droplet di sekitar Sigewinne. Untuk setiap satu Sourcewater Droplet yang diserap, akan memberikan Bond of Life kepada Sigewinne sebesar 10% Max HP-nya.",
-      "12": "Saat Bond of Life Sigewinne dihapus, untuk setiap 2.000 poin Bond of Life yang dihapus, akan memulihkan 1 poin Energy untuknya. Pemulihan Energy yang bisa diperoleh Sigewinne dengan cara ini adalah maksimum 5 poin Energy.",
+      "11": "Selain itu saat Skill ini dilancarkan, akan tercipta 2 Sourcewater Droplet di sekitar Sigewinne. Untuk setiap satu Sourcewater Droplet yang diserap, akan memberikan Bond of Life kepada Sigewinne sebesar 10% Max HP-nya.",
+      "12": "Saat Bond of Life milik Sigewinne dihapus, setiap 2.000 poin Bond of Life yang dihapus akan memulihkan 1 poin Energy untuknya. Pemulihan Energy yang bisa diperoleh Sigewinne dengan cara ini adalah maksimum 5 poin Energy.",
       "13": "<br/>",
       "14": "<strong>Arkhe: Ousia</strong>",
       "15": "Setiap satu kurun waktu tertentu, Bolstering Bubblebalm akan menjatuhkan Surging Blade di posisi target dan menyebabkan Ousia-aligned <hydro>Hydro DMG</hydro> yang didasarkan pada Max HP Sigewinne",
@@ -83,8 +83,8 @@
   "burst": {
     "name": "Super Saturated Syringing",
     "description": {
-      "0": "Menarik alat suntik yang khusus dibuat oleh Benteng Meropide, menerjang ke area depan dengan kebaikan dan obat-obatan, terus-menerus mengakibatkan <hydro>Hydro DMG Area</hydro> yang didasarkan pada Max HP Sigewinne.",
-      "1": "Selain itu, saat dilancarkan, Sigewinne akan menyerap maksimum 2 Sourcewater Droplet yang berada dalam radius tertentu di sekitar.",
+      "0": "Sigewinne mengeluarkan alat suntik yang khusus dibuat di Benteng Meropide kemudian menerjang ke depan dengan kekuatan kebaikan dan obat-obatan. Sigewinne akan terus-menerus mengakibatkan <hydro>Hydro DMG Area</hydro> yang didasarkan pada Max HP Sigewinne.",
+      "1": "Selain itu, saat dilancarkan, Sigewinne akan menyerap maksimum 2 Sourcewater Droplet yang berada dalam radius tertentu di sekitarnya.",
       "2": "<br/>",
       "3": "<i>\"Hei, overdosis obat itu sama saja dengan overdosis racun ya! Bahaya loh itu! Tapi pasien kan butuh perawatan dan perhatian. Kalau itu sih tidak bakal bisa overdosis!\"</i>"
     },
@@ -116,20 +116,20 @@
   "passive2": {
     "name": "Detailed Diagnosis, Thorough Treatment",
     "description": {
-      "0": "Saat Sigewinne memberikan pemulihan, akan meningkatkan jumlah pemulihan kali ini berdasarkan total dari Bond of Life yang dimiliki seluruh anggota party saat ini: Untuk setiap 1.000 poin Bond of Life, akan meningkatkan 3% jumlah pemulihan, hingga maksimum 30% peningkatan yang bisa diperoleh dengan cara ini."
+      "0": "Saat Sigewinne memberikan pemulihan HP, akan meningkatkan jumlah pemulihan HP kali ini berdasarkan total Bond of Life yang dimiliki seluruh anggota party saat ini: Untuk setiap 1.000 poin Bond of Life, akan meningkatkan 3% jumlah pemulihan HP-nya. Peningkatan pemulihan HP yang bisa diperoleh dengan cara ini maksimum 30%."
     }
   },
   "passive3": {
     "name": "Emergency Dose",
     "description": {
-      "0": "Saat berada di dalam air, jika HP Karakter diri sendiri yang aktif berada di bawah 50%, maka akan memulihkan HP-nya setiap 2,5 detik, dengan total pemulihan sama dengan 50% Max HP-nya, dan dalam 10 detik berikutnya, akan mengurangi 10% Elemental RES dan Physical RES dari semua elemen. Efek ini dapat terpicu sekali setiap 20 detik."
+      "0": "Saat berada di dalam air, jika HP Karakter aktif diri sendiri berada di bawah 50%, maka akan memulihkan HP-nya setiap 2,5 detik. Total HP yang dipulihkan sama dengan 50% Max HP-nya, tetapi selama 10 detik berikutnya, Elemental RES dari semua elemen dan Physical RES Karakter akan berkurang 10%. Efek ini dapat terpicu sekali setiap 20 detik."
     }
   },
   "constellation1": {
     "name": "\"Can the Happiest of Spirits Understand Anxiety?\"",
     "description": {
-      "0": "Bolstering Bubblebalm dari <strong>Rebound Hydrotherapy</strong> bisa melambung 3 kali lagi. Tiga lambungan pertama tidak akan membuat Bubblebalm yang besar menjadi mengecil.",
-      "1": "Selain itu, efek Talenta Pasif \"Requires Appropriate Rest\" diperkuat: Saat Bolstering Bubblebalm melambung, akan memberikan 1 lapis Convalescence untuk Sigewwine, dan mengubah efek Convalescence menjadi: Untuk setiap 1.000 poin HP Sigewinne yang melebihi 30.000, DMG meningkat 100 poin. Maksimum peningkatan DMG Elemental Skill yang bisa diperoleh dengan cara ini adalah 3.500 poin. Harus membuka Talenta Pasif \"Requires Appropriate Rest\" terlebih dahulu."
+      "0": "Bolstering Bubblebalm dari <strong>Rebound Hydrotherapy</strong> bisa melambung 3 kali lebih banyak. Tiga lambungan pertama tidak akan membuat Bubblebalm besarnya mengecil.",
+      "1": "Selain itu, efek Talenta Pasif \"Requires Appropriate Rest\" diperkuat: Setiap Bolstering Bubblebalm melambung, akan memberikan 1 lapis Convalescence untuk Sigewinne, dan mengubah efek Convalescence menjadi: Untuk setiap 1.000 poin HP Sigewinne yang melebihi 30.000, DMG meningkat 100 poin. Maksimum peningkatan DMG Elemental Skill yang bisa diperoleh dengan cara ini adalah 3.500 poin. Harus membuka Talenta Pasif \"Requires Appropriate Rest\" terlebih dahulu."
     }
   },
   "constellation2": {
@@ -162,7 +162,7 @@
   "constellation6": {
     "name": "\"Can the Most Radiant of Spirits Pray For Me?\"",
     "description": {
-      "0": "Saat Sigewinne memberikan pemulihan, akan meningkatkan CRIT Rate dan CRIT DMG <strong>Super Saturated Syringing</strong> berdasarkan Max HP-nya: Untuk setiap 1.000 poin Max HP, akan meningkatkan 0,4% CRIT Rate dan 2,2% CRIT DMG selama 15 detik. Maksimum peningkatan yang bisa diperoleh dengan cara ini adalah 20% CRIT Rate dan 110% CRIT DMG."
+      "0": "Saat Sigewinne memberikan pemulihan HP, akan meningkatkan CRIT Rate dan CRIT DMG dari <strong>Super Saturated Syringing</strong> berdasarkan Max HP-nya: Untuk setiap 1.000 poin Max HP, akan meningkatkan 0,4% CRIT Rate dan 2,2% CRIT DMG selama 15 detik. Maksimum peningkatan yang bisa diperoleh dengan cara ini adalah 20% CRIT Rate dan 110% CRIT DMG."
     }
   }
 }

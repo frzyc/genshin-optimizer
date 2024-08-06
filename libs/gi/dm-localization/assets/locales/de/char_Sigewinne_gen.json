@@ -42,7 +42,7 @@
   "skill": {
     "name": "Hüpfende Hydrotherapie",
     "description": {
-      "0": "Verwendet eine spezielle Ballonpistole aus dem Fort Méropide, die einen <strong>heilenden Wasserballon</strong> verschießt, der sowohl die Blutzirkulation anregen, als auch den Patienten in Schlaf versetzen kann.",
+      "0": "Verwendet eine spezielle Blasenpistole aus dem Fort Méropide, die einen <strong>heilenden Wasserballon</strong> verschießt, der sowohl die Blutzirkulation anregen, als auch den Patienten in Schlaf versetzen kann.",
       "1": "Der Wasserballon hüpft zwischen Gegnern in der Nähe hin und her und fügt diesen, wenn er sie trifft, <hydro>Hydro-Schaden</hydro> basierend auf Sigewinnes max. LP zu. Stellt beim Hüpfen die LP aller Truppenmitglieder in der Nähe außer Sigewinne selbst basierend auf Sigewinnes eigenen max. LP wieder her.",
       "2": "Nach 5 Hüpfern verschwindet der heilende Wasserballon und stellt Sigewinne dabei LP basierend auf ihren max. LP wieder her.",
       "3": "Sollten keine Gegner in der Nähe sein, wird der heilende Wasserballon in der Gegend herumhüpfen. Es kann nur ein von Sigewinne selbst erschaffener Wasserballon zur gleichen Zeit existieren.",
