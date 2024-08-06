@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "gen-mats": {
+      "implementation": "./src/executors/gen-mats/executor",
+      "schema": "./src/executors/gen-mats/schema.json",
+      "description": "gen-mats executor"
+    }
+  }
+}

@@ -1,5 +1,10 @@
 import { readDMJSON } from '../../util'
 
+type CostItem = {
+  id: number
+  count: number
+}
+
 export type ProudSkillExcelConfigData = {
   proudSkillId: number //342101,
   proudSkillGroupId: number //3421,
@@ -9,13 +14,14 @@ export type ProudSkillExcelConfigData = {
   descTextMapHash: number //59436107,
   unlockDescTextMapHash: number //4234322242,
   icon: string //"UI_Talent_S_Noel_05",
-  costItems: object[]
+  costItems: CostItem[]
   // [
   //   {},
   //   {},
   //   {},
   //   {}
   // ],
+  coinCost?: number
   filterConds: string[]
   // [
   //   "TALENT_FILTER_NONE",

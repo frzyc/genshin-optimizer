@@ -71,6 +71,7 @@
       "@genshin-optimizer/gi/localization": [
         "libs/gi/localization/src/index.ts"
       ],
+      "@genshin-optimizer/gi/mats": ["libs/gi/mats/src/index.ts"],
       "@genshin-optimizer/gi/page-archive": [
         "libs/gi/page-archive/src/index.tsx"
       ],

@@ -1,0 +1,621 @@
+{
+  "talents": {
+    "normal": {
+      "1": {
+        "items": [],
+        "cost": 0
+      },
+      "2": {
+        "items": [
+          {
+            "item": "TeachingsOfIngenuity",
+            "amount": 3
+          },
+          {
+            "item": "MeshingGear",
+            "amount": 6
+          }
+        ],
+        "cost": 12500
+      },
+      "3": {
+        "items": [
+          {
+            "item": "GuideToIngenuity",
+            "amount": 2
+          },
+          {
+            "item": "MechanicalSpurGear",
+            "amount": 3
+          }
+        ],
+        "cost": 17500
+      },
+      "4": {
+        "items": [
+          {
+            "item": "GuideToIngenuity",
+            "amount": 4
+          },
+          {
+            "item": "MechanicalSpurGear",
+            "amount": 4
+          }
+        ],
+        "cost": 25000
+      },
+      "5": {
+        "items": [
+          {
+            "item": "GuideToIngenuity",
+            "amount": 6
+          },
+          {
+            "item": "MechanicalSpurGear",
+            "amount": 6
+          }
+        ],
+        "cost": 30000
+      },
+      "6": {
+        "items": [
+          {
+            "item": "GuideToIngenuity",
+            "amount": 9
+          },
+          {
+            "item": "MechanicalSpurGear",
+            "amount": 9
+          }
+        ],
+        "cost": 37500
+      },
+      "7": {
+        "items": [
+          {
+            "item": "PhilosophiesOfIngenuity",
+            "amount": 4
+          },
+          {
+            "item": "ArtificedDynamicGear",
+            "amount": 4
+          },
+          {
+            "item": "DakasBell",
+            "amount": 1
+          }
+        ],
+        "cost": 120000
+      },
+      "8": {
+        "items": [
+          {
+            "item": "PhilosophiesOfIngenuity",
+            "amount": 6
+          },
+          {
+            "item": "ArtificedDynamicGear",
+            "amount": 6
+          },
+          {
+            "item": "DakasBell",
+            "amount": 1
+          }
+        ],
+        "cost": 260000
+      },
+      "9": {
+        "items": [
+          {
+            "item": "PhilosophiesOfIngenuity",
+            "amount": 12
+          },
+          {
+            "item": "ArtificedDynamicGear",
+            "amount": 9
+          },
+          {
+            "item": "DakasBell",
+            "amount": 2
+          }
+        ],
+        "cost": 450000
+      },
+      "10": {
+        "items": [
+          {
+            "item": "PhilosophiesOfIngenuity",
+            "amount": 16
+          },
+          {
+            "item": "ArtificedDynamicGear",
+            "amount": 12
+          },
+          {
+            "item": "DakasBell",
+            "amount": 2
+          },
+          {
+            "item": "CrownOfInsight",
+            "amount": 1
+          }
+        ],
+        "cost": 700000
+      },
+      "11": {
+        "items": [],
+        "cost": 0
+      },
+      "12": {
+        "items": [],
+        "cost": 0
+      },
+      "13": {
+        "items": [],
+        "cost": 0
+      },
+      "14": {
+        "items": [],
+        "cost": 0
+      },
+      "15": {
+        "items": [],
+        "cost": 0
+      }
+    },
+    "skill": {
+      "1": {
+        "items": [],
+        "cost": 0
+      },
+      "2": {
+        "items": [
+          {
+            "item": "TeachingsOfIngenuity",
+            "amount": 3
+          },
+          {
+            "item": "MeshingGear",
+            "amount": 6
+          }
+        ],
+        "cost": 12500
+      },
+      "3": {
+        "items": [
+          {
+            "item": "GuideToIngenuity",
+            "amount": 2
+          },
+          {
+            "item": "MechanicalSpurGear",
+            "amount": 3
+          }
+        ],
+        "cost": 17500
+      },
+      "4": {
+        "items": [
+          {
+            "item": "GuideToIngenuity",
+            "amount": 4
+          },
+          {
+            "item": "MechanicalSpurGear",
+            "amount": 4
+          }
+        ],
+        "cost": 25000
+      },
+      "5": {
+        "items": [
+          {
+            "item": "GuideToIngenuity",
+            "amount": 6
+          },
+          {
+            "item": "MechanicalSpurGear",
+            "amount": 6
+          }
+        ],
+        "cost": 30000
+      },
+      "6": {
+        "items": [
+          {
+            "item": "GuideToIngenuity",
+            "amount": 9
+          },
+          {
+            "item": "MechanicalSpurGear",
+            "amount": 9
+          }
+        ],
+        "cost": 37500
+      },
+      "7": {
+        "items": [
+          {
+            "item": "PhilosophiesOfIngenuity",
+            "amount": 4
+          },
+          {
+            "item": "ArtificedDynamicGear",
+            "amount": 4
+          },
+          {
+            "item": "DakasBell",
+            "amount": 1
+          }
+        ],
+        "cost": 120000
+      },
+      "8": {
+        "items": [
+          {
+            "item": "PhilosophiesOfIngenuity",
+            "amount": 6
+          },
+          {
+            "item": "ArtificedDynamicGear",
+            "amount": 6
+          },
+          {
+            "item": "DakasBell",
+            "amount": 1
+          }
+        ],
+        "cost": 260000
+      },
+      "9": {
+        "items": [
+          {
+            "item": "PhilosophiesOfIngenuity",
+            "amount": 12
+          },
+          {
+            "item": "ArtificedDynamicGear",
+            "amount": 9
+          },
+          {
+            "item": "DakasBell",
+            "amount": 2
+          }
+        ],
+        "cost": 450000
+      },
+      "10": {
+        "items": [
+          {
+            "item": "PhilosophiesOfIngenuity",
+            "amount": 16
+          },
+          {
+            "item": "ArtificedDynamicGear",
+            "amount": 12
+          },
+          {
+            "item": "DakasBell",
+            "amount": 2
+          },
+          {
+            "item": "CrownOfInsight",
+            "amount": 1
+          }
+        ],
+        "cost": 700000
+      },
+      "11": {
+        "items": [],
+        "cost": 0
+      },
+      "12": {
+        "items": [],
+        "cost": 0
+      },
+      "13": {
+        "items": [],
+        "cost": 0
+      },
+      "14": {
+        "items": [],
+        "cost": 0
+      },
+      "15": {
+        "items": [],
+        "cost": 0
+      }
+    },
+    "burst": {
+      "1": {
+        "items": [],
+        "cost": 0
+      },
+      "2": {
+        "items": [
+          {
+            "item": "TeachingsOfIngenuity",
+            "amount": 3
+          },
+          {
+            "item": "MeshingGear",
+            "amount": 6
+          }
+        ],
+        "cost": 12500
+      },
+      "3": {
+        "items": [
+          {
+            "item": "GuideToIngenuity",
+            "amount": 2
+          },
+          {
+            "item": "MechanicalSpurGear",
+            "amount": 3
+          }
+        ],
+        "cost": 17500
+      },
+      "4": {
+        "items": [
+          {
+            "item": "GuideToIngenuity",
+            "amount": 4
+          },
+          {
+            "item": "MechanicalSpurGear",
+            "amount": 4
+          }
+        ],
+        "cost": 25000
+      },
+      "5": {
+        "items": [
+          {
+            "item": "GuideToIngenuity",
+            "amount": 6
+          },
+          {
+            "item": "MechanicalSpurGear",
+            "amount": 6
+          }
+        ],
+        "cost": 30000
+      },
+      "6": {
+        "items": [
+          {
+            "item": "GuideToIngenuity",
+            "amount": 9
+          },
+          {
+            "item": "MechanicalSpurGear",
+            "amount": 9
+          }
+        ],
+        "cost": 37500
+      },
+      "7": {
+        "items": [
+          {
+            "item": "PhilosophiesOfIngenuity",
+            "amount": 4
+          },
+          {
+            "item": "ArtificedDynamicGear",
+            "amount": 4
+          },
+          {
+            "item": "DakasBell",
+            "amount": 1
+          }
+        ],
+        "cost": 120000
+      },
+      "8": {
+        "items": [
+          {
+            "item": "PhilosophiesOfIngenuity",
+            "amount": 6
+          },
+          {
+            "item": "ArtificedDynamicGear",
+            "amount": 6
+          },
+          {
+            "item": "DakasBell",
+            "amount": 1
+          }
+        ],
+        "cost": 260000
+      },
+      "9": {
+        "items": [
+          {
+            "item": "PhilosophiesOfIngenuity",
+            "amount": 12
+          },
+          {
+            "item": "ArtificedDynamicGear",
+            "amount": 9
+          },
+          {
+            "item": "DakasBell",
+            "amount": 2
+          }
+        ],
+        "cost": 450000
+      },
+      "10": {
+        "items": [
+          {
+            "item": "PhilosophiesOfIngenuity",
+            "amount": 16
+          },
+          {
+            "item": "ArtificedDynamicGear",
+            "amount": 12
+          },
+          {
+            "item": "DakasBell",
+            "amount": 2
+          },
+          {
+            "item": "CrownOfInsight",
+            "amount": 1
+          }
+        ],
+        "cost": 700000
+      },
+      "11": {
+        "items": [],
+        "cost": 0
+      },
+      "12": {
+        "items": [],
+        "cost": 0
+      },
+      "13": {
+        "items": [],
+        "cost": 0
+      },
+      "14": {
+        "items": [],
+        "cost": 0
+      },
+      "15": {
+        "items": [],
+        "cost": 0
+      }
+    }
+  },
+  "ascension": {
+    "0": {
+      "cost": 0,
+      "items": []
+    },
+    "1": {
+      "cost": 20000,
+      "items": [
+        {
+          "item": "VajradaAmethystSliver",
+          "amount": 1
+        },
+        {
+          "item": "SubdetectionUnit",
+          "amount": 3
+        },
+        {
+          "item": "MeshingGear",
+          "amount": 3
+        }
+      ]
+    },
+    "2": {
+      "cost": 40000,
+      "items": [
+        {
+          "item": "VajradaAmethystFragment",
+          "amount": 3
+        },
+        {
+          "item": "LightGuidingTetrahedron",
+          "amount": 2
+        },
+        {
+          "item": "SubdetectionUnit",
+          "amount": 10
+        },
+        {
+          "item": "MeshingGear",
+          "amount": 15
+        }
+      ]
+    },
+    "3": {
+      "cost": 60000,
+      "items": [
+        {
+          "item": "VajradaAmethystFragment",
+          "amount": 6
+        },
+        {
+          "item": "LightGuidingTetrahedron",
+          "amount": 4
+        },
+        {
+          "item": "SubdetectionUnit",
+          "amount": 20
+        },
+        {
+          "item": "MechanicalSpurGear",
+          "amount": 12
+        }
+      ]
+    },
+    "4": {
+      "cost": 80000,
+      "items": [
+        {
+          "item": "VajradaAmethystChunk",
+          "amount": 3
+        },
+        {
+          "item": "LightGuidingTetrahedron",
+          "amount": 8
+        },
+        {
+          "item": "SubdetectionUnit",
+          "amount": 30
+        },
+        {
+          "item": "MechanicalSpurGear",
+          "amount": 18
+        }
+      ]
+    },
+    "5": {
+      "cost": 100000,
+      "items": [
+        {
+          "item": "VajradaAmethystChunk",
+          "amount": 6
+        },
+        {
+          "item": "LightGuidingTetrahedron",
+          "amount": 12
+        },
+        {
+          "item": "SubdetectionUnit",
+          "amount": 45
+        },
+        {
+          "item": "ArtificedDynamicGear",
+          "amount": 12
+        }
+      ]
+    },
+    "6": {
+      "cost": 120000,
+      "items": [
+        {
+          "item": "VajradaAmethystGemstone",
+          "amount": 6
+        },
+        {
+          "item": "LightGuidingTetrahedron",
+          "amount": 20
+        },
+        {
+          "item": "SubdetectionUnit",
+          "amount": 60
+        },
+        {
+          "item": "ArtificedDynamicGear",
+          "amount": 24
+        }
+      ]
+    }
+  }
+}
