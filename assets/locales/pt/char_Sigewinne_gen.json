@@ -135,7 +135,7 @@
   "constellation2": {
     "name": "\"Pode o Mais Misericordioso Espírito Derrotar seus Inimigos?\"",
     "description": {
-      "0": "Ao usar <strong>Terapia de Água Saltitante</strong>e <strong>Injeção Super Saturada</strong>, Sigewinne pode criar um Escudo de Bolhas equivalente a 30% de sua Vida Máxima e que absorve <hydro>Dano Hydro</hydro> com 250% de eficiência.",
+      "0": "Ao usar <strong>Terapia de Água Saltitante</strong>e <strong>Injeção Super Saturada</strong>, Sigewinne pode criar um Escudo de Bolhas equivalente a 30% de sua Vida Máxima e que absorve <hydro>Dano Hydro</hydro> com 250% de eficiência, que dura até a conclusão do uso.",
       "1": "Além disso, após as Bolhas Revigorantes de Terapia de Água Saltitante ou de Injeção Super Saturada atingirem oponentes, a <hydro>RES Hydro</hydro> desse oponente será reduzida em 35% por 8s."
     }
   },

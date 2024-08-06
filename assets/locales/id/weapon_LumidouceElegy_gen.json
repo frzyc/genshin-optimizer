@@ -1,0 +1,24 @@
+{
+  "name": "Lumidouce Elegy",
+  "description": {
+    "0": "Tombak indah yang dihiasi dengan kristal berwarna biru. Konon katanya senjata ini pernah menjadi koleksi seumur hidup seorang Petarung Juara legendaris, namun tidak pernah digunakan olehnya."
+  },
+  "passiveName": "Bright Dawn Overture",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK meningkat <cryo>15%</cryo>; Setelah Karakter yang mengenakan memicu efek Burning terhadap musuh atau setelah mengakibatkan Dendro DMG terhadap musuh yang berada dalam status Burning, DMG yang diakibatkan meningkat <cryo>18%</cryo>. Efek ini berlangsung 8 detik, dapat ditumpuk sampai 2 lapis; Saat ditumpuk sampai 2 lapis atau saat durasi 2 lapis diperbarui, memulihkan <cryo>12</cryo> poin Energy, pemulihan Energy yang bisa diperoleh dengan cara ini adalah sekali setiap 12 detik. Kedua efek yang disebutkan di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "ATK meningkat <cryo>19%</cryo>; Setelah Karakter yang mengenakan memicu efek Burning terhadap musuh atau setelah mengakibatkan Dendro DMG terhadap musuh yang berada dalam status Burning, DMG yang diakibatkan meningkat <cryo>23%</cryo>. Efek ini berlangsung 8 detik, dapat ditumpuk sampai 2 lapis; Saat ditumpuk sampai 2 lapis atau saat durasi 2 lapis diperbarui, memulihkan <cryo>13</cryo> poin Energy, pemulihan Energy yang bisa diperoleh dengan cara ini adalah sekali setiap 12 detik. Kedua efek yang disebutkan di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "ATK meningkat <cryo>23%</cryo>; Setelah Karakter yang mengenakan memicu efek Burning terhadap musuh atau setelah mengakibatkan Dendro DMG terhadap musuh yang berada dalam status Burning, DMG yang diakibatkan meningkat <cryo>28%</cryo>. Efek ini berlangsung 8 detik, dapat ditumpuk sampai 2 lapis; Saat ditumpuk sampai 2 lapis atau saat durasi 2 lapis diperbarui, memulihkan <cryo>14</cryo> poin Energy, pemulihan Energy yang bisa diperoleh dengan cara ini adalah sekali setiap 12 detik. Kedua efek yang disebutkan di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "ATK meningkat <cryo>27%</cryo>; Setelah Karakter yang mengenakan memicu efek Burning terhadap musuh atau setelah mengakibatkan Dendro DMG terhadap musuh yang berada dalam status Burning, DMG yang diakibatkan meningkat <cryo>33%</cryo>. Efek ini berlangsung 8 detik, dapat ditumpuk sampai 2 lapis; Saat ditumpuk sampai 2 lapis atau saat durasi 2 lapis diperbarui, memulihkan <cryo>15</cryo> poin Energy, pemulihan Energy yang bisa diperoleh dengan cara ini adalah sekali setiap 12 detik. Kedua efek yang disebutkan di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "ATK meningkat <cryo>31%</cryo>; Setelah Karakter yang mengenakan memicu efek Burning terhadap musuh atau setelah mengakibatkan Dendro DMG terhadap musuh yang berada dalam status Burning, DMG yang diakibatkan meningkat <cryo>38%</cryo>. Efek ini berlangsung 8 detik, dapat ditumpuk sampai 2 lapis; Saat ditumpuk sampai 2 lapis atau saat durasi 2 lapis diperbarui, memulihkan <cryo>16</cryo> poin Energy, pemulihan Energy yang bisa diperoleh dengan cara ini adalah sekali setiap 12 detik. Kedua efek yang disebutkan di atas tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

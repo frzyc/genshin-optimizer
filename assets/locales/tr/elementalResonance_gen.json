@@ -1,7 +1,7 @@
 {
   "ProtectiveCanopy": {
     "name": "Koruyucu Kubbe",
-    "desc": "Tüm Element Direnci +%15, Fiziksel Direnç +%15."
+    "desc": "Tüm Element Direncini %15 artırır, Fiziksel Direnci %15 artırır."
   },
   "FerventFlames": {
     "name": "Tutkulu Alevler",
@@ -21,7 +21,7 @@
   },
   "ImpetuousWinds": {
     "name": "Coşkun Rüzgarlar",
-    "desc": "Dayanıklılık Tüketimini %15 azaltır. Hareket Hızını %10 artırır. Beceri BS %5 kısaltır."
+    "desc": "Dayanıklılık Tüketimini %15 azaltır. Hareket Hızını %10 artırır. Beceri Bekleme Süresini %5 kısaltır."
   },
   "EnduringRock": {
     "name": "Sağlam Kaya",

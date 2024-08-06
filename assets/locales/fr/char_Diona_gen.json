@@ -116,7 +116,7 @@
   "passive2": {
     "name": "Joyeuse ébriété",
     "description": {
-      "0": "Les ennemis entrant dans le champ de vapeur d'alcool de <strong>Cuvée Spéciale</strong> voient leur ATQ baisser de 10 % pendant 15 s."
+      "0": "Les ennemis entrant dans le champ de vapeur d'alcool de <strong>Cuvée spéciale</strong> voient leur ATQ baisser de 10 % pendant 15 s."
     }
   },
   "passive3": {

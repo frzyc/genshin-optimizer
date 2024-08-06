@@ -197,6 +197,15 @@
   "AnalysisProgress": {
     "name": "Прогресс анализа"
   },
+  "ExcerptsOfBliss": {
+    "name": "Отрывки радости"
+  },
+  "KeyOfEchoes": {
+    "name": "Ключ эха"
+  },
+  "StarsailCoin": {
+    "name": "Астромонета"
+  },
   "Primogem": {
     "name": "Камень Истока"
   },
@@ -542,6 +551,9 @@
   "Clorinde": {
     "name": "Клоринда"
   },
+  "Emilie": {
+    "name": "Эмилия"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Удача Камисато Аяки"
   },
@@ -796,6 +808,9 @@
   },
   "ClorindesStellaFortuna": {
     "name": "Удача Клоринды"
+  },
+  "EmiliesStellaFortuna": {
+    "name": "Удача Эмилии"
   },
   "GnosticHymnOldNotes": {
     "name": "Жемчужный гимн - Черновик"
@@ -4958,6 +4973,9 @@
   "SpiritCarp": {
     "name": "Духовный карп"
   },
+  "JubilantFeather": {
+    "name": "Перо веселья"
+  },
   "Dish": {
     "name": "Еда"
   },
@@ -6983,6 +7001,39 @@
   "SuperDeeDuperDeliciousMeatRoll": {
     "name": "Ароматный мясной рулетик"
   },
+  "SuspiciousFricasseeDePoulet": {
+    "name": "Странное фрикасе из цыплёнка"
+  },
+  "FricasseeDePoulet": {
+    "name": "фрикасе из цыплёнка"
+  },
+  "DeliciousFricasseeDePoulet": {
+    "name": "Вкусное фрикасе из цыплёнка"
+  },
+  "AFragrantFeastOfFlavors": {
+    "name": "Ароматный пир вкусов"
+  },
+  "SuspiciousBlubbercream": {
+    "name": "Странное пухленевое мороженое"
+  },
+  "Blubbercream": {
+    "name": "Пухленевое мороженое"
+  },
+  "DeliciousBlubbercream": {
+    "name": "Вкусное пухленевое мороженое"
+  },
+  "SuspiciousCrispCroissantCombo": {
+    "name": "Странное комбо с хрустящим круассаном"
+  },
+  "CrispCroissantCombo": {
+    "name": "Комбо с хрустящим круассаном"
+  },
+  "DeliciousCrispCroissantCombo": {
+    "name": "Вкусное комбо с хрустящим круассаном"
+  },
+  "AMagicalMix": {
+    "name": "Магическая смесь"
+  },
   "RecipeItem": {
     "name": "Ингредиенты"
   },
@@ -7564,6 +7615,15 @@
   },
   "RecipeBulleSauceDuckBreast": {
     "name": "Рецепт: Утиная грудка под соусом из пузырина"
+  },
+  "RecipeFricasseeDePoulet": {
+    "name": "Рецепт: Фрикасе из цыплёнка"
+  },
+  "RecipeBlubbercream": {
+    "name": "Рецепт: Пухленевое мороженое"
+  },
+  "RecipeCrispCroissantCombo": {
+    "name": "Рецепт: Комбо с хрустящим круассаном"
   },
   "CraftedItems": {
     "name": "Созданные Предметы"
@@ -10283,6 +10343,12 @@
   "InvitationFromTheAratakiGang": {
     "name": "Приглашение от банды Аратаки"
   },
+  "WitnessPact": {
+    "name": "Союз свидетелей"
+  },
+  "GreatClockworkKey": {
+    "name": "Великий механический ключ"
+  },
   "FelixFelicium": {
     "name": "Пожелание удачи"
   },
@@ -10334,11 +10400,23 @@
   "DamagedScore": {
     "name": "Повреждённая партитура"
   },
+  "BrickstacksLongRangeLamp": {
+    "name": "Лампа дальнего света деревни Штабеля"
+  },
+  "AWeaponLikeDragonHorn": {
+    "name": "Рог дракона, похожий на оружие"
+  },
+  "FellDragonsScale": {
+    "name": "Чешуя падшего дракона"
+  },
   "CriminalsTestimony": {
     "name": "Показания преступника"
   },
   "RawatsNotes": {
     "name": "Записи Равата"
+  },
+  "ScatteredStar": {
+    "name": "Сброшенная звезда"
   },
   "GroupPhotoFromAnUnknownTime": {
     "name": "Групповое фото из неизвестного времени"
@@ -10348,6 +10426,33 @@
   },
   "PagesFromALostScoreII": {
     "name": "Фрагмент потерянной партитуры II"
+  },
+  "SpecialPickaxe": {
+    "name": "Особая кирка"
+  },
+  "GoddesssManuscriptI": {
+    "name": "Рукопись богини I"
+  },
+  "GoddesssManuscriptII": {
+    "name": "Рукопись богини II"
+  },
+  "GoddesssManuscriptIII": {
+    "name": "Рукопись богини III"
+  },
+  "ShapeOfValor": {
+    "name": "Форма храбрости"
+  },
+  "ShapeOfWisdom": {
+    "name": "Форма мудрости"
+  },
+  "ShapeOfEmpathy": {
+    "name": "Форма эмпатии"
+  },
+  "SecretElixir": {
+    "name": "«Секретное снадобье»"
+  },
+  "GuardsSpear": {
+    "name": "Копьё стражника"
   },
   "TreasureMapWithTheVaultsLocation": {
     "name": "Карта сокровищ с местоположением клада"
@@ -10435,6 +10540,27 @@
   },
   "TheFelineFirmVIII": {
     "name": "Кошачья канцелярия. Том VIII"
+  },
+  "ASettingSunThatNeverSets": {
+    "name": "«Заходящее солнце, которое никогда не заходит»"
+  },
+  "ADragonThatCannotFly": {
+    "name": "«Лев, который всегда зевает»"
+  },
+  "AMoonThatOnlyShinesAtNight": {
+    "name": "«Луна, которая светит только ночью»"
+  },
+  "MagicTonic": {
+    "name": "«Волшебный эликсир»"
+  },
+  "FellDragonsPicturebook": {
+    "name": "Свиток злого дракона"
+  },
+  "DreamsOfTheAncientCapital": {
+    "name": "Сновидения древней столицы"
+  },
+  "AnIncompleteManuscript": {
+    "name": "Незавершённая рукопись"
   },
   "TearsAmongTheStars": {
     "name": "Слёзы средь звёзд"
@@ -10678,6 +10804,9 @@
   },
   "WingsOfTransientDreams": {
     "name": "Крылья мимолётной мечты"
+  },
+  "WingsOfDelicacies": {
+    "name": "Крылья пиршества"
   },
   "RadiantSpincrystal1": {
     "name": "Лучистый кристалл 1"
@@ -11939,6 +12068,30 @@
   "TravelNotesSimulnation": {
     "name": "Симуляция"
   },
+  "EmilieBaseNote": {
+    "name": "Конечная нота"
+  },
+  "TravelNotesFancifulFabrication": {
+    "name": "Чудесные творения"
+  },
+  "CelebrationFeastII": {
+    "name": "Великое пиршество II"
+  },
+  "EchoDandelionKnight": {
+    "name": "Эхо: Рыцарь Одуванчик"
+  },
+  "EchoIcyResurrection": {
+    "name": "Эхо: Ледяное воскрешение"
+  },
+  "EchoEclipsingStar": {
+    "name": "Эхо: Лунное затмение"
+  },
+  "EchoCatUponTheEaves": {
+    "name": "Эхо: Кошка на гребне крыши"
+  },
+  "EchoDarkSideOfDawn": {
+    "name": "Эхо: Тёмный рассвет"
+  },
   "AnemoculusResonanceStone": {
     "name": "Камень эха анемокула"
   },
@@ -12185,6 +12338,18 @@
   "Fateometer": {
     "name": "«Судьбометр»"
   },
+  "JocundLetters": {
+    "name": "Письмо забавы"
+  },
+  "JoyousLetters": {
+    "name": "Письмо ликования"
+  },
+  "Yelena": {
+    "name": "Елена"
+  },
+  "AsagirisDedicatedFontaineKamera": {
+    "name": "Специальная фонтейнская фотокамера Асагири"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Инструкции: Камень эха анемокула"
   },
@@ -12386,6 +12551,12 @@
   "LeisureTime": {
     "name": "Время отдыха"
   },
+  "CarefulNegotiations": {
+    "name": "Осторожные переговоры"
+  },
+  "FilledWithConfidence": {
+    "name": "Вселяет уверенность"
+  },
   "RhodeiaOfLoch": {
     "name": "Родия"
   },
@@ -12454,6 +12625,9 @@
   },
   "GuardianOfApepsOasis": {
     "name": "Страж оазиса Апеп"
+  },
+  "FrostOperative": {
+    "name": "Фатуи: Оперативник мороза"
   },
   "UndividedHeart": {
     "name": "Неразделённое сердце"
@@ -12731,6 +12905,15 @@
   "AThousandYoung": {
     "name": "Тысячи преемников"
   },
+  "VanguardsCoordinatedTactics": {
+    "name": "Согласованная тактика авангарда"
+  },
+  "UndisclosedDistributionChannels": {
+    "name": "Неизвестные каналы обращения"
+  },
+  "RimeflowRapier": {
+    "name": "Рапира ледяного потока"
+  },
   "MagicGuide": {
     "name": "Руководство по магии"
   },
@@ -12974,6 +13157,15 @@
   "FlowerOfParadiseLost": {
     "name": "Цветок потерянного рая"
   },
+  "UltimateOverlordsMegaMagicSword": {
+    "name": "«Магический супермеч высшего владыки»"
+  },
+  "ProspectorsDrill": {
+    "name": "Бур рудоискателя"
+  },
+  "GladiatorsTriumphus": {
+    "name": "Триумф гладиатора"
+  },
   "LiyueHarborWharf": {
     "name": "Гавань Ли Юэ"
   },
@@ -13117,6 +13309,9 @@
   },
   "SirArthur": {
     "name": "Месье Артур"
+  },
+  "Serene": {
+    "name": "Серин"
   },
   "ElementalResonanceWovenIce": {
     "name": "Элементальный резонанс: Переплетение Крио"
@@ -13295,6 +13490,12 @@
   "CountdownToTheShow3": {
     "name": "Отсчёт до представления: 3"
   },
+  "IdRatherLoseMoneyMyself": {
+    "name": "«Я предпочту потерять деньги...»"
+  },
+  "Tada": {
+    "name": "Та-дам!"
+  },
   "Origin": {
     "name": "Изначальный"
   },
@@ -13339,6 +13540,9 @@
   },
   "TheChasmBlueCrystal": {
     "name": "Разлом: Топаз"
+  },
+  "TheChasmCrown": {
+    "name": "Разлом: Венец"
   },
   "BeginnerPlayerBadge": {
     "name": "Значок Новичка"
@@ -13405,6 +13609,12 @@
   },
   "BambooRain": {
     "name": "Бамбуковый дождь"
+  },
+  "BreezeOfSabaa": {
+    "name": "Дыхание Сабаа"
+  },
+  "PhantomInBoots": {
+    "name": "Призрак в сапогах"
   },
   "AdventurerCamp": {
     "name": "Лагерь искателей приключений"
@@ -13843,6 +14053,9 @@
   },
   "MusicTownsStreetlampSafetyLighting": {
     "name": "Фонарь Музыкального города: Пешеходная подсветка"
+  },
+  "GlowingForestFruit": {
+    "name": "Светящийся лесной плод"
   },
   "EfflorescentIllumination": {
     "name": "Флуоресцентное освещение"
@@ -14984,6 +15197,24 @@
   "SiteOfArtfulAscension": {
     "name": "«Место искусного вознесения»"
   },
+  "MetropoleFunhouseTrumpeter": {
+    "name": "Интересный дом столицы: Трубач"
+  },
+  "MetropoleFunhouseCymbalist": {
+    "name": "Интересный дом столицы: Цимбалист"
+  },
+  "MetropoleFunhouseConductor": {
+    "name": "Интересный дом столицы: Дирижёр"
+  },
+  "BoomBoomUnit": {
+    "name": "Блок Бам-бам"
+  },
+  "DingDongUnit": {
+    "name": "Блок Динь-дон"
+  },
+  "MagicalForestHut": {
+    "name": "Волшебная лесная хижина"
+  },
   "RitualShrine": {
     "name": "Церемониальный алтарь"
   },
@@ -15367,6 +15598,15 @@
   },
   "LargeShippingPallet": {
     "name": "Большой транспортный поддон"
+  },
+  "WavesmasherLocomotive": {
+    "name": "Локомотив «Разбиватель волн»"
+  },
+  "SnoozyRestCar": {
+    "name": "Дремлющий вагончик"
+  },
+  "BrimmingFreightCar": {
+    "name": "Переполненный грузовой вагон"
   },
   "AdeptusGate": {
     "name": "Врата Адепта"
@@ -15760,6 +16000,18 @@
   },
   "ImprovedCrococannon": {
     "name": "Улучшенная Крокодиловая пушка"
+  },
+  "OrigamiModelHopSkipAndAJump": {
+    "name": "Бумажная модель: Прыг-скок"
+  },
+  "OrigamiModelRoundRummyTum": {
+    "name": "Бумажная модель: Кругленький пузатик"
+  },
+  "OrigamiModelWhoooosh": {
+    "name": "Бумажная модель: Вжух!"
+  },
+  "OrigamiModelHardAsCanBe": {
+    "name": "Бумажная модель: Крепыш"
   },
   "PottedPlantVerdantVastness": {
     "name": "Горшочное растение: Зелёные просторы"
@@ -16157,6 +16409,9 @@
   "MusicTownsBreezeBellsCheepingFinches": {
     "name": "Ветряные колокольчики Музыкального города: Щебечущие зяблики"
   },
+  "ConscientiousWindcatcherSentinel": {
+    "name": "Добросовестный страж ветра"
+  },
   "BookshelfFreeReading": {
     "name": "Книжная полка: Свободное чтение"
   },
@@ -16246,6 +16501,18 @@
   },
   "MallowWoodFenceTides": {
     "name": "Забор из древесины мальвы: Приливы"
+  },
+  "PrimordialForestBeauty": {
+    "name": "Первозданная красота леса"
+  },
+  "WindowToProphecy": {
+    "name": "Окно пророчеств"
+  },
+  "GateOfStars": {
+    "name": "Звёздные врата"
+  },
+  "GardenStellarMusicalPillar": {
+    "name": "Звёздная музыкальная колонна в саду"
   },
   "SmoothWoodenBench": {
     "name": "Гладкая деревянная скамейка"
@@ -16355,6 +16622,9 @@
   "MallowWoodRoundTableASharedDrink": {
     "name": "Круглый стол из древесины мальвы: Застолье"
   },
+  "JoyousForestParty": {
+    "name": "Весёлая вечеринка в джунглях"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Витрина для вина: Сколько душе угодно"
   },
@@ -16390,5 +16660,11 @@
   },
   "SwordBearingStatueAestheticsOfIncompleteness": {
     "name": "Статуя с мечом: Эстетика несовершенства"
+  },
+  "EasyBreezyShelterCanopy": {
+    "name": "Уютный открытый навес"
+  },
+  "ScheduleAbidingTrainStationSign": {
+    "name": "Табличка «Расписание поездов»"
   }
 }

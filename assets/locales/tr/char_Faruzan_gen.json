@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Yedi Mağaranın Kayıp Bilgeliği",
     "description": {
-      "0": "<strong>Rüzgarın Gizli Yollarının</strong> Keşiş Rüzgarının Lütfundan etkilenen karakterler, düşmanlara Normal, Yüklü, Havadan Saldırılar, Element Becerisi veya Element Patlaması ile <anemo>Rüzgar Hasarı</anemo> verdiklerinde Kasırga Koruması etkisi kazanırlar. Bu Hasar, Faruzan'ın Temel Saldırısının %32'sine bağlı olarak artar. Her 0,8 saniyede 1 defa Kasırga Koruması tetiklenebilir. Bu hasar Bonusu, Keşiş Rüzgarının Lütfu sona erdiğinde veya etki bir defa tetiklendiğinde kaybolur."
+      "0": "<strong>Rüzgarın Gizli Yollarının</strong> Keşiş Rüzgarının Lütfundan etkilenen karakterler, düşmanlara Normal, Yüklü, Havadan Saldırılar, Element Becerisi veya Element Patlaması ile <anemo>Rüzgar Hasarı</anemo> verdiklerinde Kasırga Koruması etkisi kazanırlar. Bu Hasar, Faruzan'ın Temel Saldırısının %32'sine bağlı olarak artar. Her 0,8 saniyede 1 defa Kasırga Koruması tetiklenebilir. Bu Hasar Bonusu, Keşiş Rüzgarının Lütfu sona erdiğinde veya etki bir defa tetiklendiğinde kaybolur."
     }
   },
   "passive3": {

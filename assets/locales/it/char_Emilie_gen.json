@@ -1,0 +1,167 @@
+{
+  "name": "Émilie",
+  "title": "Scie di mille profumi",
+  "description": "Una profumiera di Fontaine, che in ogni boccetta racchiude fragranze e segreti.",
+  "constellationName": "Pomum de Ambra",
+  "auto": {
+    "name": "Lancia scacciaombre (modificata)",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi di lancia consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per eseguire un fendente verso l'alto."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore attacco caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Estratto fragrante",
+    "description": {
+      "0": "Crea una Teca di Lumidouce che infligge <dendro>DAN da Dendro ad area</dendro>.",
+      "1": "<br/>",
+      "2": "<strong>Teca di Lumidouce</strong>",
+      "3": [
+        " Attacca spargendo Sbuffi di Limpirugiada a intervalli regolari contro gli avversari circostanti, infliggendo <dendro>DAN da Dendro</dendro>.",
+        " Quando gli avversari nelle vicinanze sono affetti da Ustione, questi emanano fino a 1 Aroma ogni 2 s a intervalli regolari. La Teca di Lumidouce accumula tutti gli Aromi circostanti e, dopo averne accumulati 2, il suo livello sale. L'aumento di livello permette alla Teca di spargere 1 Sbuffo di Limpirugiada in più ogni volta che attacca, aumentando al contempo i DAN inflitti e l'area d'effetto del suddetto attacco.",
+        " La Teca di Lumidouce inizia dal livello 1 e può salire fino al livello 2, e non può esisterne più di 1 contemporaneamente. Se non accumula alcun Aroma per più di 8 s mentre è in campo, la Teca torna al livello 1."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Archè: Pneuma</strong>",
+      "6": "A intervalli regolari, quando Émilie crea una Teca di Lumidouce in questo modo, evoca un Aculeo spettrale di fronte a lei che trafigge il suo avversario, infliggendo <dendro>DAN da Dendro</dendro> di polarità Pneuma.",
+      "7": "<br/>",
+      "8": "<i>\"Il mondo è un'armonia di aromi, colori e canzoni senza fine.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da ATT Teca di Lumidouce livello 1",
+      "2": "DAN da ATT Teca di Lumidouce livello 2",
+      "3": "Durata Teca di Lumidouce",
+      "4": "DAN da Aculeo spettrale",
+      "5": "Intervallo Aculeo spettrale",
+      "6": "TdR abilità",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rappresentazione aromatica",
+    "description": {
+      "0": "Émilie converte le fragranze accumulate nella Teca in pura energia di Dendro, creando una Teca di Lumidouce di livello 3 e riponendo tutte le altre Teche già esistenti.",
+      "1": "Mentre è presente, la Teca di Lumidouce di livello 3 non accumula Aromi, ma crea delle gocce di Rugiada odorosa che precipitano e attaccano gli avversari nel proprio raggio d'azione, infliggendo <dendro>DAN da Dendro</dendro>. 1 goccia di Rugiada odorosa precipita ogni 0,3 s, e ciascun avversario può essere designato come bersaglio ogni 0,7 s.",
+      "2": "Quando la durata si esaurisce, viene ricreata una Teca di Lumidouce di livello 1. Se una Teca di Lumidouce era stata riposta al momento dell'utilizzo di Rappresentazione aromatica, la stessa Teca viene schierata di nuovo, e la sua durata originale viene ripristinata.",
+      "3": "Mentre <strong>Rappresentazione aromatica</strong> è attiva, l'abilità elementale Estratto fragrante non crea altre Teche di Lumidouce.",
+      "4": "<br/>",
+      "5": "<i>Al diretto contatto con l'aria, ogni profumo inizia a cambiare, per poi dissiparsi nel vento, tra gli alberi e tra i fili d'erba. Ciò significa che nessuno avvertirà mai la medesima fragranza.",
+      "6": "Lo stesso vale per il cammino che ognuno di noi sceglie di vivere. In questo senso, potremmo considerare i profumi come un'interpretazione della vita umana.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da ATT Teca di Lumidouce livello 3",
+      "1": "Durata Teca di Lumidouce livello 3",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Profumo persistente",
+    "description": {
+      "0": "Ogni volta che accumula 2 <strong>Aromi</strong>, la Teca di Lumidouce di livello 2 li consuma per effondere della Colonia di Chiarugiada che infligge <dendro>DAN da Dendro ad area</dendro> agli avversari pari a un 600% dell'ATT di Émilie. Questi DAN non sono considerati DAN da abilità elementale."
+    }
+  },
+  "passive2": {
+    "name": "Rettifica",
+    "description": {
+      "0": "Émilie infligge DAN bonus agli avversari sotto l'effetto di Ustione in base al suo ATT, aumentando di un 15% i DAN inflitti per ogni 1.000 di ATT. È possibile ottenere in questo modo fino a un 36% di bonus DAN massimo."
+    }
+  },
+  "passive3": {
+    "name": "Spazio di testa",
+    "description": {
+      "0": "Quando la Teca di Lumidouce creata da Émilie è in campo, tutti i membri del gruppo ottengono un 85% di <pyro>RES a Pyro</pyro> contro i DAN da Ustione."
+    }
+  },
+  "constellation1": {
+    "name": "Estrazione di fragranza leggera",
+    "description": {
+      "0": "Aumenta di un 20% i DAN inflitti da <strong>Estratto fragrante</strong> e dalla Colonia di Chiarugiada del talento passivo Profumo persistente, se già sbloccato.",
+      "1": "In più, quando i membri del gruppo vicini innescano una reazione di Ustione sugli avversari o infliggono <dendro>DAN da Dendro</dendro> ad avversari affetti da Ustione, viene generato 1 <strong>Aroma</strong> aggiuntivo. Quest'effetto può attivarsi una volta ogni 2,9 s."
+    }
+  },
+  "constellation2": {
+    "name": "Nota di testa del Lagoluce",
+    "description": {
+      "0": "Quando <strong>Estratto fragrante</strong>, <strong>Rappresentazione aromatica</strong> o la Colonia di Chiarugiada del talento passivo Profumo persistente (se già sbloccato) colpiscono gli avversari, la <dendro>RES a Dendro</dendro> di questi ultimi si riduce di un 30% per 10 s."
+    }
+  },
+  "constellation3": {
+    "name": "Essenza sopraffina",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Estratto fragrante</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Nota di cuore di Lumidouce",
+    "description": {
+      "0": "La durata di <strong>Rappresentazione aromatica</strong> aumenta di 2 s. L'intervallo di designazione del bersaglio della Rugiada odorosa si riduce di 0,3 s."
+    }
+  },
+  "constellation5": {
+    "name": "Aroma della Limpirugiada",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Rappresentazione aromatica</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sillage di Marcotte",
+    "description": {
+      "0": "Usando <strong>Estratto fragrante</strong> o <strong>Rappresentazione aromatica</strong>, Émilie ottiene l'effetto Fragranza durevole per 5 s.",
+      "1": "Quando Fragranza durevole è attivo, ogni attacco normale o caricato di Émilie genera 1 Aroma. Inoltre, i DAN inflitti da questi tipi di attacchi vengono convertiti in <dendro>DAN da Dendro</dendro> non influenzabili da altre infusioni elementali, e aumentano di un 300% dell'ATT di Émilie.",
+      "2": "<br/>",
+      "3": "Fragranza durevole viene rimosso dopo aver generato 4 Aromi nei modi sopra descritti o al termine della sua durata effettiva. È possibile ottenere Fragranza durevole una volta ogni 12 s."
+    }
+  }
+}

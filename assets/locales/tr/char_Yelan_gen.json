@@ -121,7 +121,7 @@
   "passive2": {
     "name": "Rahat Uyum",
     "description": {
-      "0": "<strong>Seçkin Zar</strong> oyunda olduğu sürece kendi aktif karakterin %1 daha fazla Hasar verir. Bu hasar her saniye %3,5 artarak maksimum %50 seviyesine gelir.",
+      "0": "<strong>Seçkin Zar</strong> oyunda olduğu sürece kendi aktif karakterin %1 daha fazla Hasar verir. Bu Hasar her saniye %3,5 artarak maksimum %50 seviyesine gelir.",
       "1": "Süre boyunca Berrak Zar becerisi tekrar kullanılırsa önceden var olan etki kaybolur."
     }
   },

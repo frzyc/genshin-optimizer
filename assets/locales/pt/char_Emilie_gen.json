@@ -1,0 +1,166 @@
+{
+  "name": "Emilie",
+  "title": "Vislumbres de Mil Aromas",
+  "description": "Uma perfumista de Fontaine que engarrafa segredos.",
+  "constellationName": "Pomum de Ambra",
+  "auto": {
+    "name": "Lança do Marechalato (Modificado)",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes rápidos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para desferir um golpe com salto para cima."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Extração de Fragrância",
+    "description": {
+      "0": "Cria uma Caixa Lumidouce que causa <dendro>Dano Dendro em AdE</dendro>.",
+      "1": "<br/>",
+      "2": "<strong>Caixa Lumidouce</strong>",
+      "3": [
+        " Periodicamente dispara \"Suspiro de Orvalho Puro\" contra os inimigos próximos, causando <dendro>Dano Dendro</dendro>.",
+        " Quando há um inimigo perto que está Queimando, periodicamente gera \"Aroma\"... É possível gerar até um Aroma dessa forma a cada 2s. A Caixa Lumidouce coleta os Aromas próximos, e depois de coletar dois, aumenta seu nível, fazendo com que ao disparar um Suspiro do Orvalho Puro, dispare um a mais, e aumente o Dano causado e a AdE.",
+        " Só é possível existir uma Caixa Lumidouce criada por Emilie simultaneamente. Quando a Caixa Lumidouce for criada, seu nível inicial será 1 e pode ser elevado até 2. Quando estiver em campo, se não coletar nenhum Aroma dentro de 8s, a Caixa Lumidouce retornará para o nível 1."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Arkhe: Pneuma</strong>",
+      "6": "Periodicamente, depois de Emilie criar uma Caixa Lumidouce dessa forma, fará cair um Espinho Espiritual em frente que perfura os inimigos, causando <dendro>Dano Dendro</dendro> com Pneuma.",
+      "7": "<i>\"O mundo é uma harmonia infinita de fragrâncias, cores e canções.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano de Ataque da Caixa Lumidouce Nv.1",
+      "2": "Dano de Ataque da Caixa Lumidouce Nv.2",
+      "3": "Duração da Caixa Lumidouce",
+      "4": "Dano do Espinho Espiritual",
+      "5": "Intervalo do Espinho Espiritual",
+      "6": "Tempo de Recarga da Habilidade",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Apresentação Aromática",
+    "description": {
+      "0": "Guiando as fragrâncias reunidas dentro da Caixa, Emilie as converte em energia Dendro pura, criando uma Caixa Lumidouce de nível 3 e absorvendo a Caixa Lumidouce que possui.",
+      "1": "Na duração, a Caixa Lumidouce de nível 3 coletará o Aroma próximo e continuamente fará cair Chuva Aromática, atacando os inimigos dentro de uma AdE e causando <dendro>Dano Dendro</dendro>. Na duração, uma Chuva Aromática cairá a cada 0.3s e cada inimigo será escolhido como um alvo a cada 0.7s.",
+      "2": "Quando a duração acabar, criará novamente uma Caixa Lumidouce de nível 1. Se ao lançar Apresentação Aromática absorver a Caixa Lumidouce, a Caixa Lumidouce que foi absorvida será colocada, e sua duração será redefinida.",
+      "3": "Na duração de <strong>Apresentação Aromática</strong>, lançar a Habilidade Elemental \"Extração de Fragrância\" não gerará uma Caixa Lumidouce.",
+      "4": "<br/>",
+      "5": "<i>Não importa qual o perfume, ele começa a mudar assim que entra em contato com ar até se dissipar com os suspiros do vento, árvores e grama. Nesse sentido, nenhuma pessoa apreciará a mesma fragrância.",
+      "6": "Assim é o caminho tomado por todos na vida. É por isso que se pode considerar perfumes uma explicação para a vida humana.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Ataque da Caixa Lumidouce Nv.3",
+      "1": "Duração da Caixa Lumidouce Nv.3",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Fragrância Residual",
+    "description": {
+      "0": "A cada 2 <strong>Aromas</strong> coletados, a Caixa Lumidouce nível 2 consumirá os Aromas e lançará Colônia do Orvalho que causa 600% do ATQ de Emilie como <dendro>Dano Dendro em AdE</dendro>. Esse Dano não é considerado de Habilidade Elemental."
+    }
+  },
+  "passive2": {
+    "name": "Retificação",
+    "description": {
+      "0": "Emilie causa Dano aumentado a oponentes com o efeito de \"Queimaduras\" baseado em seu ATQ, aumentando o Dano em 15% para cada 1.000 de ATQ. O bônus máximo de dano que pode ser obtido dessa forma é de 36%."
+    }
+  },
+  "passive3": {
+    "name": "Captura do Espaço",
+    "description": {
+      "0": "Quando uma Caixa Lumidouce criada por Emilie está no campo, todos os membros da equipe ganham 85% de <pyro>RES Pyro</pyro> contra dano de Queimaduras."
+    }
+  },
+  "constellation1": {
+    "name": "Análise de Fragrância Leve",
+    "description": {
+      "0": "Aumenta o Dano causado por <strong>Extração de Fragrância</strong> e por Colônia do Orvalho do Talento Passivo \"Fragrância Residual\" em 20%. Para o segundo, é necessário primeiro desbloquear o Talento Passivo.",
+      "1": "Além disso, quando um personagem próximo da equipe desencadeia Queimadura no inimigo, ou quando causa <dendro>Dano Dendro</dendro> contra um inimigo que está Queimando, gera um <strong>Aroma</strong> adicional. Esse efeito pode ser desencadeado uma vez a cada 2.9s."
+    }
+  },
+  "constellation2": {
+    "name": "Harmonia de Luzes",
+    "description": {
+      "0": "Quando <strong>Extração de Fragrância</strong>, <strong>Apresentação Aromática</strong> ou Colônia do Orvalho produzidos pelo Talento Passivo \"Fragrância Residual\" (é necessário ter desbloqueado esse Talento Passivo) atingir um inimigo, a <dendro>RES Dendro</dendro> desse inimigo é reduzida em 30% por 10s."
+    }
+  },
+  "constellation3": {
+    "name": "Fragrâncias Reunidas",
+    "description": {
+      "0": "Aumenta o nível do <strong>Extração de Fragrância</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Aroma Lumidouce",
+    "description": {
+      "0": "Aumenta a duração de <strong>Apresentação Aromática</strong> em 2s, e o tempo para cada inimigo ser escolhido para ser atingido pela Chuva Aromática será reduzido em 0.3s."
+    }
+  },
+  "constellation5": {
+    "name": "Aroma do Orvalho Puro",
+    "description": {
+      "0": "Aumenta o nível de <strong>Apresentação Aromática</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fragrância da Marcotte",
+    "description": {
+      "0": "Ao lançar <strong>Extração de Fragrância</strong> ou <strong>Apresentação Aromática</strong>, Emilie obtém \"Aroma Remanescente\" por 5s.",
+      "1": "Na duração, depois de fazer um Ataque Normal ou Carregado, gera um Aroma e os Ataques Normais e Carregados de Emilie serão convertidos em <dendro>Dano Dendro</dendro> que não pode ser substituído, e aumenta o Dano causado. O valor do aumento é equivalente a 300% do ATQ de Emilie.",
+      "2": "<br/>",
+      "3": "O efeito Aroma Remanescente será removido depois de gerar 4 Aromas dessa forma ou quando sua duração acabar. É possível obter o efeito Aroma Remanescente uma vez a cada 12s."
+    }
+  }
+}

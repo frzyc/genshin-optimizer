@@ -135,7 +135,7 @@
   "constellation2": {
     "name": "« Le plus miséricordieux des esprits peut-il vaincre les ennemis ? »",
     "description": {
-      "0": "Pendant la durée d'<strong>Hydrothérapie rebondissante</strong> et d'<strong>Injection sur-saturée</strong>, Sigewinne génère un bouclier bulleux pouvant absorber des DGT équivalant à 30 % de ses PV max et efficace à 250 % contre les <hydro>DGT Hydro</hydro>.",
+      "0": "Pendant la durée d'<strong>Hydrothérapie rebondissante</strong> et d'<strong>Injection sur-saturée</strong>, Sigewinne génère un bouclier bulleux pouvant absorber des DGT équivalant à 30 % de ses PV max et efficace à 250 % contre les <hydro>DGT Hydro</hydro>, ce bouclier durant jusqu'à la fin de l'utilisation des capacités correspondantes.",
       "1": "De plus, lorsqu'une bulle d'eau curative d'Hydrothérapie rebondissante ou Injection sur-saturée a touché un ennemi, la <hydro>RÉS Hydro</hydro> de ce dernier diminue de 35 % pendant 8 s."
     }
   },
