@@ -158,7 +158,7 @@
   "constellation6": {
     "name": "Ruhun Parlayan Ateşi",
     "description": {
-      "0": "<strong>Odaklanma Gecesi</strong> becerisindeki Kayan Yıldızların verdiği hasar %40 artar ve <strong>Dağılan Yıldız Akışı Rüyası</strong> becerisindeki Yıldız Işınının verdiği Hasar da %40 artar.",
+      "0": "<strong>Odaklanma Gecesi</strong> becerisindeki Kayan Yıldızların verdiği Hasar %40 artar ve <strong>Dağılan Yıldız Akışı Rüyası</strong> becerisindeki Yıldız Işınının verdiği Hasar da %40 artar.",
       "1": "Ayrıca, Odaklanma Gecesi becerisinde toplanan Gece Yıldızlarının oluşturulma süresi %20 azalır."
     }
   }

@@ -84,7 +84,7 @@
     "name": "Aşırı Doygun Şırınga",
     "description": {
       "0": "Meropide Kalesi'nde üretilen özel bir şırınga çıkararak önündeki alana saldırır ve Sigewinne'in Maks. Canına göre <hydro>Su Alan Hasarı</hydro> veren iyilik ve ilaç dolu dalgalar gönderir.",
-      "1": "Ayrıca Sigewinne beceriyi kullanmadan hemen önce belirli bir mesafede bulunan en fazla 2 Kaynak Suyu Damlacığını emer.",
+      "1": "Ayrıca Sigewinne beceriyi kullandığında belirli bir mesafede bulunan en fazla 2 Kaynak Suyu Damlacığını emer.",
       "2": "<br/>",
       "3": "<i>\"Aşırı ilaç almanın zehir içmekten bir farkı yoktur ve bu gerçekten çok tehlikelidir! Öte yandan hastalara aşırı ilgi ve alaka göstermeninse hiçbir tehlikesi yoktur!\"</i>"
     },

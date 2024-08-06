@@ -6,19 +6,19 @@
   "passiveName": "Derinliğin İhtişamı",
   "passiveDescription": {
     "0": {
-      "0": "Parıltı, Gün Batımı ve Şafak Işığı olarak üç aşamadan oluşur ve verilen hasarı sırasıyla <cryo>%6/%10/%14</cryo> artırır. Yapılan saldırılar düşmana isabet ederse silah bir sonraki evreye geçer. Bu silah her 7 saniyede bir evre değiştirebilir. Bu silahı kullanan karakter savaş alanında olmasa bile evre geçişi tetiklenebilir."
+      "0": "Parıltı, Gün Batımı ve Şafak Işığı olarak üç aşamadan oluşur ve verilen Hasarı sırasıyla <cryo>%6/%10/%14</cryo> artırır. Yapılan saldırılar düşmana isabet ederse silah bir sonraki evreye geçer. Bu silah her 7 saniyede bir evre değiştirebilir. Bu silahı kullanan karakter savaş alanında olmasa bile evre geçişi tetiklenebilir."
     },
     "1": {
-      "0": "Parıltı, Gün Batımı ve Şafak Işığı olarak üç aşamadan oluşur ve verilen hasarı sırasıyla <cryo>%7,5/%12,5/%17,5</cryo> artırır. Yapılan saldırılar düşmana isabet ederse silah bir sonraki evreye geçer. Bu silah her 7 saniyede bir evre değiştirebilir. Bu silahı kullanan karakter savaş alanında olmasa bile evre geçişi tetiklenebilir."
+      "0": "Parıltı, Gün Batımı ve Şafak Işığı olarak üç aşamadan oluşur ve verilen Hasarı sırasıyla <cryo>%7,5/%12,5/%17,5</cryo> artırır. Yapılan saldırılar düşmana isabet ederse silah bir sonraki evreye geçer. Bu silah her 7 saniyede bir evre değiştirebilir. Bu silahı kullanan karakter savaş alanında olmasa bile evre geçişi tetiklenebilir."
     },
     "2": {
-      "0": "Parıltı, Gün Batımı ve Şafak Işığı olarak üç aşamadan oluşur ve verilen hasarı sırasıyla <cryo>%9/%15/%21</cryo> artırır. Yapılan saldırılar düşmana isabet ederse silah bir sonraki evreye geçer. Bu silah her 7 saniyede bir evre değiştirebilir. Bu silahı kullanan karakter savaş alanında olmasa bile evre geçişi tetiklenebilir."
+      "0": "Parıltı, Gün Batımı ve Şafak Işığı olarak üç aşamadan oluşur ve verilen Hasarı sırasıyla <cryo>%9/%15/%21</cryo> artırır. Yapılan saldırılar düşmana isabet ederse silah bir sonraki evreye geçer. Bu silah her 7 saniyede bir evre değiştirebilir. Bu silahı kullanan karakter savaş alanında olmasa bile evre geçişi tetiklenebilir."
     },
     "3": {
-      "0": "Parıltı, Gün Batımı ve Şafak Işığı olarak üç aşamadan oluşur ve verilen hasarı sırasıyla <cryo>%10,5/%17,5/%24,5</cryo> artırır. Yapılan saldırılar düşmana isabet ederse silah bir sonraki evreye geçer. Bu silah her 7 saniyede bir evre değiştirebilir. Bu silahı kullanan karakter savaş alanında olmasa bile evre geçişi tetiklenebilir."
+      "0": "Parıltı, Gün Batımı ve Şafak Işığı olarak üç aşamadan oluşur ve verilen Hasarı sırasıyla <cryo>%10,5/%17,5/%24,5</cryo> artırır. Yapılan saldırılar düşmana isabet ederse silah bir sonraki evreye geçer. Bu silah her 7 saniyede bir evre değiştirebilir. Bu silahı kullanan karakter savaş alanında olmasa bile evre geçişi tetiklenebilir."
     },
     "4": {
-      "0": "Parıltı, Gün Batımı ve Şafak Işığı olarak üç aşamadan oluşur ve verilen hasarı sırasıyla <cryo>%12/%20/%28</cryo> artırır. Yapılan saldırılar düşmana isabet ederse silah bir sonraki evreye geçer. Bu silah her 7 saniyede bir evre değiştirebilir. Bu silahı kullanan karakter savaş alanında olmasa bile evre geçişi tetiklenebilir."
+      "0": "Parıltı, Gün Batımı ve Şafak Işığı olarak üç aşamadan oluşur ve verilen Hasarı sırasıyla <cryo>%12/%20/%28</cryo> artırır. Yapılan saldırılar düşmana isabet ederse silah bir sonraki evreye geçer. Bu silah her 7 saniyede bir evre değiştirebilir. Bu silahı kullanan karakter savaş alanında olmasa bile evre geçişi tetiklenebilir."
     }
   }
 }

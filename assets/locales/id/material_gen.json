@@ -197,6 +197,15 @@
   "AnalysisProgress": {
     "name": "Kemajuan Analisis"
   },
+  "ExcerptsOfBliss": {
+    "name": "Excerpts of Bliss"
+  },
+  "KeyOfEchoes": {
+    "name": "Kunci Echo"
+  },
+  "StarsailCoin": {
+    "name": "Starsail Coin"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -542,6 +551,9 @@
   "Clorinde": {
     "name": "Clorinde"
   },
+  "Emilie": {
+    "name": "Emilie"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna"
   },
@@ -796,6 +808,9 @@
   },
   "ClorindesStellaFortuna": {
     "name": "Clorinde's Stella Fortuna"
+  },
+  "EmiliesStellaFortuna": {
+    "name": "Emilie's Stella Fortuna"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostic Hymn - Old Notes"
@@ -4958,6 +4973,9 @@
   "SpiritCarp": {
     "name": "Spirit Carp"
   },
+  "JubilantFeather": {
+    "name": "Jubilant Feather"
+  },
   "Dish": {
     "name": "Masakan"
   },
@@ -6983,6 +7001,39 @@
   "SuperDeeDuperDeliciousMeatRoll": {
     "name": "Super-Dee-Duper Delicious Meat Roll"
   },
+  "SuspiciousFricasseeDePoulet": {
+    "name": "Suspicious Fricassee de Poulet"
+  },
+  "FricasseeDePoulet": {
+    "name": "Fricassee de Poulet"
+  },
+  "DeliciousFricasseeDePoulet": {
+    "name": "Delicious Fricassee de Poulet"
+  },
+  "AFragrantFeastOfFlavors": {
+    "name": "A Fragrant Feast of Flavors"
+  },
+  "SuspiciousBlubbercream": {
+    "name": "Suspicious Blubbercream"
+  },
+  "Blubbercream": {
+    "name": "Blubbercream"
+  },
+  "DeliciousBlubbercream": {
+    "name": "Delicious Blubbercream"
+  },
+  "SuspiciousCrispCroissantCombo": {
+    "name": "Suspicious Crisp Croissant Combo"
+  },
+  "CrispCroissantCombo": {
+    "name": "Crisp Croissant Combo"
+  },
+  "DeliciousCrispCroissantCombo": {
+    "name": "Delicious Crisp Croissant Combo"
+  },
+  "AMagicalMix": {
+    "name": "A Magical Mix"
+  },
   "RecipeItem": {
     "name": "Bahan Resep"
   },
@@ -7564,6 +7615,15 @@
   },
   "RecipeBulleSauceDuckBreast": {
     "name": "Resep: Bulle Sauce Duck Breast"
+  },
+  "RecipeFricasseeDePoulet": {
+    "name": "Resep: Fricassee de Poulet"
+  },
+  "RecipeBlubbercream": {
+    "name": "Resep: Blubbercream"
+  },
+  "RecipeCrispCroissantCombo": {
+    "name": "Resep: Crisp Croissant Combo"
   },
   "CraftedItems": {
     "name": "Hasil Craft"
@@ -10283,6 +10343,12 @@
   "InvitationFromTheAratakiGang": {
     "name": "Undangan dari Geng Arataki"
   },
+  "WitnessPact": {
+    "name": "Sumpah Saksi"
+  },
+  "GreatClockworkKey": {
+    "name": "Kunci Roda Gigi Agung"
+  },
   "FelixFelicium": {
     "name": "Felix Felicium"
   },
@@ -10334,11 +10400,23 @@
   "DamagedScore": {
     "name": "Partitur yang Rusak"
   },
+  "BrickstacksLongRangeLamp": {
+    "name": "Lampu Jarak Jauh Brickstacks"
+  },
+  "AWeaponLikeDragonHorn": {
+    "name": "Tanduk Naga yang \"Seperti Senjata\""
+  },
+  "FellDragonsScale": {
+    "name": "Sisik Naga Jahat"
+  },
   "CriminalsTestimony": {
     "name": "Kesaksian Penjahat"
   },
   "RawatsNotes": {
     "name": "Catatan Rawat"
+  },
+  "ScatteredStar": {
+    "name": "Bintang yang Berserakan"
   },
   "GroupPhotoFromAnUnknownTime": {
     "name": "Foto Grup dari Waktu yang Tidak Diketahui"
@@ -10348,6 +10426,33 @@
   },
   "PagesFromALostScoreII": {
     "name": "Halaman dari Partitur yang Hilang: II"
+  },
+  "SpecialPickaxe": {
+    "name": "Kapak Spesial"
+  },
+  "GoddesssManuscriptI": {
+    "name": "Manuskrip Seorang Dewi (I)"
+  },
+  "GoddesssManuscriptII": {
+    "name": "Manuskrip Seorang Dewi (II)"
+  },
+  "GoddesssManuscriptIII": {
+    "name": "Manuskrip Seorang Dewi (III)"
+  },
+  "ShapeOfValor": {
+    "name": "Wujud Keberanian"
+  },
+  "ShapeOfWisdom": {
+    "name": "Wujud Pengetahuan"
+  },
+  "ShapeOfEmpathy": {
+    "name": "Wujud Empati"
+  },
+  "SecretElixir": {
+    "name": "\"Obat Rahasia\""
+  },
+  "GuardsSpear": {
+    "name": "Tombak Pengawal"
   },
   "TreasureMapWithTheVaultsLocation": {
     "name": "\"Peta Harta Karun\" dengan Lokasi Gudang Harta"
@@ -10435,6 +10540,27 @@
   },
   "TheFelineFirmVIII": {
     "name": "Kantor Meong (VIII)"
+  },
+  "ASettingSunThatNeverSets": {
+    "name": "\"Matahari Terbenam yang Abadi\""
+  },
+  "ADragonThatCannotFly": {
+    "name": "\"Naga yang Tidak Bisa Terbang\""
+  },
+  "AMoonThatOnlyShinesAtNight": {
+    "name": "\"Bulan yang Hanya Bersinar di Malam Hari\""
+  },
+  "MagicTonic": {
+    "name": "\"Air Ajaib\""
+  },
+  "FellDragonsPicturebook": {
+    "name": "Buku Gambar \"Si Naga Jahat\""
+  },
+  "DreamsOfTheAncientCapital": {
+    "name": "Mimpi Ibu Kota Kuno"
+  },
+  "AnIncompleteManuscript": {
+    "name": "Naskah yang Belum Selesai"
   },
   "TearsAmongTheStars": {
     "name": "Air Mata di Lautan Bintang"
@@ -10678,6 +10804,9 @@
   },
   "WingsOfTransientDreams": {
     "name": "Wings of Transient Dreams"
+  },
+  "WingsOfDelicacies": {
+    "name": "Wings of Delicacies"
   },
   "RadiantSpincrystal1": {
     "name": "Radiant Spincrystal 1"
@@ -11820,13 +11949,13 @@
     "name": "Catatan Perjalanan: Warna-Warni Pencahayaan"
   },
   "LyneyPretense": {
-    "name": "Lyney: Dari Semu"
+    "name": "Lyney: Pretense"
   },
   "LynetteEarnestness": {
-    "name": "Lynette: Menjadi Nyata"
+    "name": "Lynette: Earnestness"
   },
   "FreminetProgress": {
-    "name": "Freminet: Melangkah Maju"
+    "name": "Freminet: Progress"
   },
   "FontaineJudgment": {
     "name": "Fontaine: Penghakiman"
@@ -11938,6 +12067,30 @@
   },
   "TravelNotesSimulnation": {
     "name": "Catatan Perjalanan: Teater Kaleidoskop"
+  },
+  "EmilieBaseNote": {
+    "name": "Emilie: Base Note"
+  },
+  "TravelNotesFancifulFabrication": {
+    "name": "Catatan Perjalanan: Siluet Rekayasa"
+  },
+  "CelebrationFeastII": {
+    "name": "Perayaan: Feast (II)"
+  },
+  "EchoDandelionKnight": {
+    "name": "Echo: Dandelion Knight"
+  },
+  "EchoIcyResurrection": {
+    "name": "Echo: Icy Resurrection"
+  },
+  "EchoEclipsingStar": {
+    "name": "Echo: Eclipsing Star"
+  },
+  "EchoCatUponTheEaves": {
+    "name": "Echo: Cat Upon the Eaves"
+  },
+  "EchoDarkSideOfDawn": {
+    "name": "Echo: Dark Side of Dawn"
   },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone"
@@ -12185,6 +12338,18 @@
   "Fateometer": {
     "name": "Fateometer"
   },
+  "JocundLetters": {
+    "name": "Jocund Letters"
+  },
+  "JoyousLetters": {
+    "name": "Joyous Letters"
+  },
+  "Yelena": {
+    "name": "\"Yelena\""
+  },
+  "AsagirisDedicatedFontaineKamera": {
+    "name": "Asagiri's Dedicated Fontaine Kamera"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Panduan: Anemoculus Resonance Stone"
   },
@@ -12386,6 +12551,12 @@
   "LeisureTime": {
     "name": "Waktu Santai"
   },
+  "CarefulNegotiations": {
+    "name": "Negosiasi Ketat"
+  },
+  "FilledWithConfidence": {
+    "name": "Penuh Percaya Diri"
+  },
   "RhodeiaOfLoch": {
     "name": "Rhodeia of Loch"
   },
@@ -12454,6 +12625,9 @@
   },
   "GuardianOfApepsOasis": {
     "name": "Guardian of Apep's Oasis"
+  },
+  "FrostOperative": {
+    "name": "Frost Operative"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -12731,6 +12905,15 @@
   "AThousandYoung": {
     "name": "A Thousand Young"
   },
+  "VanguardsCoordinatedTactics": {
+    "name": "Vanguard's Coordinated Tactics"
+  },
+  "UndisclosedDistributionChannels": {
+    "name": "Undisclosed Distribution Channels"
+  },
+  "RimeflowRapier": {
+    "name": "Rimeflow Rapier"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -12974,6 +13157,15 @@
   "FlowerOfParadiseLost": {
     "name": "Flower of Paradise Lost"
   },
+  "UltimateOverlordsMegaMagicSword": {
+    "name": "\"Ultimate Overlord's Mega Magic Sword\""
+  },
+  "ProspectorsDrill": {
+    "name": "Prospector's Drill"
+  },
+  "GladiatorsTriumphus": {
+    "name": "Gladiator's Triumphus"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -13117,6 +13309,9 @@
   },
   "SirArthur": {
     "name": "Sir Arthur"
+  },
+  "Serene": {
+    "name": "Serene"
   },
   "ElementalResonanceWovenIce": {
     "name": "Resonansi Elemental: Woven Ice"
@@ -13295,6 +13490,12 @@
   "CountdownToTheShow3": {
     "name": "Countdown to the Show: 3"
   },
+  "IdRatherLoseMoneyMyself": {
+    "name": "\"I'd Rather Lose Money Myself...\""
+  },
+  "Tada": {
+    "name": "Tada!"
+  },
   "Origin": {
     "name": "Origin"
   },
@@ -13339,6 +13540,9 @@
   },
   "TheChasmBlueCrystal": {
     "name": "The Chasm: Blue Crystal"
+  },
+  "TheChasmCrown": {
+    "name": "The Chasm: Crown"
   },
   "BeginnerPlayerBadge": {
     "name": "Lencana Pemain Pemula"
@@ -13405,6 +13609,12 @@
   },
   "BambooRain": {
     "name": "Bamboo Rain"
+  },
+  "BreezeOfSabaa": {
+    "name": "Breeze of Sabaa"
+  },
+  "PhantomInBoots": {
+    "name": "Phantom in Boots"
   },
   "AdventurerCamp": {
     "name": "Kemah Petualang"
@@ -13843,6 +14053,9 @@
   },
   "MusicTownsStreetlampSafetyLighting": {
     "name": "Lampu Jalan Kota Musik: Cahaya Keamanan"
+  },
+  "GlowingForestFruit": {
+    "name": "Buah Hutan Bersinar"
   },
   "EfflorescentIllumination": {
     "name": "Iluminasi Berbunga"
@@ -14984,6 +15197,24 @@
   "SiteOfArtfulAscension": {
     "name": "\"Situs Peningkatan Strategi\""
   },
+  "MetropoleFunhouseTrumpeter": {
+    "name": "Rumah Seru Metropole: Pemain Trompet"
+  },
+  "MetropoleFunhouseCymbalist": {
+    "name": "Rumah Seru Metropole: Pemain Simbal"
+  },
+  "MetropoleFunhouseConductor": {
+    "name": "Rumah Seru Metropole: Konduktor"
+  },
+  "BoomBoomUnit": {
+    "name": "Unit Bum-Bum"
+  },
+  "DingDongUnit": {
+    "name": "Unit Ding-Dong"
+  },
+  "MagicalForestHut": {
+    "name": "Gubuk Hutan Ajaib"
+  },
   "RitualShrine": {
     "name": "Kuil Ritual"
   },
@@ -15367,6 +15598,15 @@
   },
   "LargeShippingPallet": {
     "name": "Palet Pengiriman Besar"
+  },
+  "WavesmasherLocomotive": {
+    "name": "Lokomotif Penghancur Ombak"
+  },
+  "SnoozyRestCar": {
+    "name": "Mobil Rehat Zzz"
+  },
+  "BrimmingFreightCar": {
+    "name": "Mobil Kargo Penuh Barang"
   },
   "AdeptusGate": {
     "name": "Gerbang Adeptus"
@@ -15760,6 +16000,18 @@
   },
   "ImprovedCrococannon": {
     "name": "Meriam Bubu yang Ditingkatkan"
+  },
+  "OrigamiModelHopSkipAndAJump": {
+    "name": "Model Origami: Lompat-Lompatan"
+  },
+  "OrigamiModelRoundRummyTum": {
+    "name": "Model Origami: Si Tambun"
+  },
+  "OrigamiModelWhoooosh": {
+    "name": "Model Origami: Wuuuuush!"
+  },
+  "OrigamiModelHardAsCanBe": {
+    "name": "Model Origami: Si Keras"
   },
   "PottedPlantVerdantVastness": {
     "name": "Pot Tanaman: Hamparan Hijau"
@@ -16157,6 +16409,9 @@
   "MusicTownsBreezeBellsCheepingFinches": {
     "name": "Lonceng Angin Kota Musik: Bisikan Ketilang"
   },
+  "ConscientiousWindcatcherSentinel": {
+    "name": "Penjaga Penangkap Angin yang Rajin"
+  },
   "BookshelfFreeReading": {
     "name": "Rak Buku: Baca dengan Bebas"
   },
@@ -16247,6 +16502,18 @@
   "MallowWoodFenceTides": {
     "name": "Pagar Kayu Mallow: Gelombang Pasang"
   },
+  "PrimordialForestBeauty": {
+    "name": "Keindahan Hutan Purba"
+  },
+  "WindowToProphecy": {
+    "name": "Jendela Nubuat"
+  },
+  "GateOfStars": {
+    "name": "Gerbang Bintang"
+  },
+  "GardenStellarMusicalPillar": {
+    "name": "Pilar Musik Taman Galaksi"
+  },
   "SmoothWoodenBench": {
     "name": "Bangku Kayu Panjang yang Mulus"
   },
@@ -16329,7 +16596,7 @@
     "name": "Kursi Kebun Pir: Wewangian Teh di Tengah Alunan Melodi"
   },
   "PearOrchardAccessoryAttendAndListen": {
-    "name": "Aksesoris Kebun Pir - Hadir dan Dengarkan"
+    "name": "Aksesori Kebun Pir - Hadir dan Dengarkan"
   },
   "KarmaphalaDisplayTable": {
     "name": "Meja Pajangan Karmaphala"
@@ -16354,6 +16621,9 @@
   },
   "MallowWoodRoundTableASharedDrink": {
     "name": "Meja Bundar Kayu Mallow: Minum Bersama"
+  },
+  "JoyousForestParty": {
+    "name": "Pesta Pora Hutan"
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Rak Toko Anggur: Sepuas Hati"
@@ -16390,5 +16660,11 @@
   },
   "SwordBearingStatueAestheticsOfIncompleteness": {
     "name": "Patung Berpedang: Estetika Ketidakutuhan"
+  },
+  "EasyBreezyShelterCanopy": {
+    "name": "Kanopi Penampungan Semilir Sepoi-Sepoi"
+  },
+  "ScheduleAbidingTrainStationSign": {
+    "name": "Tanda Stasiun Kereta Api Sesuai Jadwal"
   }
 }

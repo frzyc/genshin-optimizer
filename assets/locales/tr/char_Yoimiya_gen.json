@@ -161,7 +161,7 @@
   "constellation6": {
     "name": "Naganohara Meteor Yağmuru",
     "description": {
-      "0": "<strong>Niwabi Ateş Dansı</strong> sırasında Yoimiya'nın Normal Saldırıları %50 ihtimalle fazladan bir tane Alevlenmiş Ok atar ve asıl ok Hasarının %60'ına denk hasar verir. Bu hasar, Normal Saldırı Hasarı sayılır."
+      "0": "<strong>Niwabi Ateş Dansı</strong> sırasında Yoimiya'nın Normal Saldırıları %50 ihtimalle fazladan bir tane Alevlenmiş Ok atar ve asıl ok Hasarının %60'ına denk Hasar verir. Bu Hasar, Normal Saldırı Hasarı sayılır."
     }
   }
 }

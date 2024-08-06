@@ -164,7 +164,7 @@
   "constellation6": {
     "name": "Frostbreaker's Melody",
     "description": {
-      "0": "Untuk setiap 1.000 poin Max HP, akan meningkakan CRIT Rate dan CRIT DMG Nilou masing-masing sebesar 0,6% dan 1,2%.",
+      "0": "Untuk setiap 1.000 poin Max HP, akan meningkatkan CRIT Rate dan CRIT DMG Nilou masing-masing sebesar 0,6% dan 1,2%.",
       "1": "Kenaikan maksimum CRIT Rate dan CRIT DMG masing-masing adalah 30% dan 60%."
     }
   }

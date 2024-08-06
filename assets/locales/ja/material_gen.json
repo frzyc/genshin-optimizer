@@ -197,6 +197,15 @@
   "AnalysisProgress": {
     "name": "分析進捗"
   },
+  "ExcerptsOfBliss": {
+    "name": "悠楽の断章"
+  },
+  "KeyOfEchoes": {
+    "name": "軌跡の鍵"
+  },
+  "StarsailCoin": {
+    "name": "星旅コイン"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -542,6 +551,9 @@
   "Clorinde": {
     "name": "クロリンデ"
   },
+  "Emilie": {
+    "name": "エミリエ"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "神里綾華の星屑"
   },
@@ -796,6 +808,9 @@
   },
   "ClorindesStellaFortuna": {
     "name": "クロリンデの星屑"
+  },
+  "EmiliesStellaFortuna": {
+    "name": "エミリエの星屑"
   },
   "GnosticHymnOldNotes": {
     "name": "天空紀行·原稿"
@@ -4958,6 +4973,9 @@
   "SpiritCarp": {
     "name": "蒼霊の鯉"
   },
+  "JubilantFeather": {
+    "name": "歓声の羽"
+  },
   "Dish": {
     "name": "料理"
   },
@@ -6983,6 +7001,39 @@
   "SuperDeeDuperDeliciousMeatRoll": {
     "name": "ウマウマシャワルマサンド"
   },
+  "SuspiciousFricasseeDePoulet": {
+    "name": "微妙なフリカッセ·ドゥ·プーレ"
+  },
+  "FricasseeDePoulet": {
+    "name": "フリカッセ·ドゥ·プーレ"
+  },
+  "DeliciousFricasseeDePoulet": {
+    "name": "美味しそうなフリカッセ·ドゥ·プーレ"
+  },
+  "AFragrantFeastOfFlavors": {
+    "name": "香り交じり合う風味"
+  },
+  "SuspiciousBlubbercream": {
+    "name": "微妙なプクプクアイスクリーム"
+  },
+  "Blubbercream": {
+    "name": "プクプクアイスクリーム"
+  },
+  "DeliciousBlubbercream": {
+    "name": "美味しそうなプクプクアイスクリーム"
+  },
+  "SuspiciousCrispCroissantCombo": {
+    "name": "微妙なカリカリクロワッサン"
+  },
+  "CrispCroissantCombo": {
+    "name": "カリカリクロワッサン"
+  },
+  "DeliciousCrispCroissantCombo": {
+    "name": "美味しそうなカリカリクロワッサン"
+  },
+  "AMagicalMix": {
+    "name": "マジックスペシャル"
+  },
   "RecipeItem": {
     "name": "レシピアイテム"
   },
@@ -7564,6 +7615,15 @@
   },
   "RecipeBulleSauceDuckBreast": {
     "name": "レシピ：鴨胸肉のオレンジソースソテー"
+  },
+  "RecipeFricasseeDePoulet": {
+    "name": "レシピ：フリカッセ·ドゥ·プーレ"
+  },
+  "RecipeBlubbercream": {
+    "name": "レシピ：プクプクアイスクリーム"
+  },
+  "RecipeCrispCroissantCombo": {
+    "name": "レシピ：カリカリクロワッサン"
   },
   "CraftedItems": {
     "name": "合成産物"
@@ -10283,6 +10343,12 @@
   "InvitationFromTheAratakiGang": {
     "name": "荒瀧派の招待状"
   },
+  "WitnessPact": {
+    "name": "見届ける者の盟約"
+  },
+  "GreatClockworkKey": {
+    "name": "偉大なるゼンマイ"
+  },
   "FelixFelicium": {
     "name": "「幸運の祝福」"
   },
@@ -10334,11 +10400,23 @@
   "DamagedScore": {
     "name": "破損した楽譜"
   },
+  "BrickstacksLongRangeLamp": {
+    "name": "ブロックサーチライト"
+  },
+  "AWeaponLikeDragonHorn": {
+    "name": "「武器」のような龍の角"
+  },
+  "FellDragonsScale": {
+    "name": "悪龍の悪鱗"
+  },
   "CriminalsTestimony": {
     "name": "犯罪者の供述"
   },
   "RawatsNotes": {
     "name": "ラワットのノート"
+  },
+  "ScatteredStar": {
+    "name": "散らばった星"
   },
   "GroupPhotoFromAnUnknownTime": {
     "name": "いつの間にか撮られていた集合写真"
@@ -10348,6 +10426,33 @@
   },
   "PagesFromALostScoreII": {
     "name": "失われた譜面の断片·2"
+  },
+  "SpecialPickaxe": {
+    "name": "特別なツルハシ"
+  },
+  "GoddesssManuscriptI": {
+    "name": "女神の手稿·1"
+  },
+  "GoddesssManuscriptII": {
+    "name": "女神の手稿·2"
+  },
+  "GoddesssManuscriptIII": {
+    "name": "女神の手稿·3"
+  },
+  "ShapeOfValor": {
+    "name": "勇敢の形"
+  },
+  "ShapeOfWisdom": {
+    "name": "知恵の形"
+  },
+  "ShapeOfEmpathy": {
+    "name": "共感の形"
+  },
+  "SecretElixir": {
+    "name": "「秘薬」"
+  },
+  "GuardsSpear": {
+    "name": "衛兵の槍"
   },
   "TreasureMapWithTheVaultsLocation": {
     "name": "宝物の在処を示す「宝の地図」"
@@ -10435,6 +10540,27 @@
   },
   "TheFelineFirmVIII": {
     "name": "ニャンコ事務所·8"
+  },
+  "ASettingSunThatNeverSets": {
+    "name": "「永遠に沈まぬ夕日」"
+  },
+  "ADragonThatCannotFly": {
+    "name": "「陸を泳ぐ金魚」"
+  },
+  "AMoonThatOnlyShinesAtNight": {
+    "name": "「夜にしか咲かない月」"
+  },
+  "MagicTonic": {
+    "name": "「魔水」"
+  },
+  "FellDragonsPicturebook": {
+    "name": "「悪龍」の絵本"
+  },
+  "DreamsOfTheAncientCapital": {
+    "name": "『旧都夢夜奇譚』"
+  },
+  "AnIncompleteManuscript": {
+    "name": "「未完成の手稿」"
   },
   "TearsAmongTheStars": {
     "name": "星間の涙"
@@ -10678,6 +10804,9 @@
   },
   "WingsOfTransientDreams": {
     "name": "須臾の夢の翼"
+  },
+  "WingsOfDelicacies": {
+    "name": "饗宴の翼"
   },
   "RadiantSpincrystal1": {
     "name": "旋曜玉帛·1"
@@ -11939,6 +12068,30 @@
   "TravelNotesSimulnation": {
     "name": "紀行·演習"
   },
+  "EmilieBaseNote": {
+    "name": "エミリエ·ラストノート"
+  },
+  "TravelNotesFancifulFabrication": {
+    "name": "紀行·彫刻"
+  },
+  "CelebrationFeastII": {
+    "name": "祭典·宴会·2"
+  },
+  "EchoDandelionKnight": {
+    "name": "軌跡·蒲公英騎士"
+  },
+  "EchoIcyResurrection": {
+    "name": "軌跡·冷たき黄泉帰り"
+  },
+  "EchoEclipsingStar": {
+    "name": "軌跡·月を覆う天権"
+  },
+  "EchoCatUponTheEaves": {
+    "name": "軌跡·檐宇遊猫"
+  },
+  "EchoDarkSideOfDawn": {
+    "name": "軌跡·アカツキの裏面"
+  },
   "AnemoculusResonanceStone": {
     "name": "風神の瞳の共鳴石"
   },
@@ -12185,6 +12338,18 @@
   "Fateometer": {
     "name": "「運命指示器」"
   },
+  "JocundLetters": {
+    "name": "軽快な手紙"
+  },
+  "JoyousLetters": {
+    "name": "歓躍の手紙"
+  },
+  "Yelena": {
+    "name": "「イェレーナ」"
+  },
+  "AsagirisDedicatedFontaineKamera": {
+    "name": "朝霧のフォンテーヌ専用写真機"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "説明：風神の瞳の共鳴石"
   },
@@ -12386,6 +12551,12 @@
   "LeisureTime": {
     "name": "穏やかな時間"
   },
+  "CarefulNegotiations": {
+    "name": "真剣な交渉"
+  },
+  "FilledWithConfidence": {
+    "name": "自信満々"
+  },
   "RhodeiaOfLoch": {
     "name": "純水精霊·ローデシア"
   },
@@ -12454,6 +12625,9 @@
   },
   "GuardianOfApepsOasis": {
     "name": "アペプのオアシス守護者"
+  },
+  "FrostOperative": {
+    "name": "ファデュイ·氷霜の従者"
   },
   "UndividedHeart": {
     "name": "唯一の心"
@@ -12731,6 +12905,15 @@
   "AThousandYoung": {
     "name": "幾千万の子孫"
   },
+  "VanguardsCoordinatedTactics": {
+    "name": "尖兵協同戦術"
+  },
+  "UndisclosedDistributionChannels": {
+    "name": "未知の流通ルート"
+  },
+  "RimeflowRapier": {
+    "name": "優雅な氷剣"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -12974,6 +13157,15 @@
   "FlowerOfParadiseLost": {
     "name": "楽園の絶花"
   },
+  "UltimateOverlordsMegaMagicSword": {
+    "name": "「スーパーアルティメット覇王魔剣」"
+  },
+  "ProspectorsDrill": {
+    "name": "プロスペクタードリル"
+  },
+  "GladiatorsTriumphus": {
+    "name": "剣闘士の凱旋"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -13117,6 +13309,9 @@
   },
   "SirArthur": {
     "name": "サー·アーサー"
+  },
+  "Serene": {
+    "name": "セレーネ"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交錯の氷"
@@ -13295,6 +13490,12 @@
   "CountdownToTheShow3": {
     "name": "トリックカウントダウン：3"
   },
+  "IdRatherLoseMoneyMyself": {
+    "name": "「あいつらが金を稼ぐことは…」"
+  },
+  "Tada": {
+    "name": "ジャジャ～ン！"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -13339,6 +13540,9 @@
   },
   "TheChasmBlueCrystal": {
     "name": "層岩巨淵·藍晶"
+  },
+  "TheChasmCrown": {
+    "name": "層岩巨淵·冠"
   },
   "BeginnerPlayerBadge": {
     "name": "初心者プレイヤーメダル"
@@ -13405,6 +13609,12 @@
   },
   "BambooRain": {
     "name": "竹身雨化"
+  },
+  "BreezeOfSabaa": {
+    "name": "東風はこぶ花の吐息"
+  },
+  "PhantomInBoots": {
+    "name": "麗しき怪傑"
   },
   "AdventurerCamp": {
     "name": "冒険者の臨時拠点"
@@ -13843,6 +14053,9 @@
   },
   "MusicTownsStreetlampSafetyLighting": {
     "name": "音楽の町の街灯-「夜道照らす安心の光」"
+  },
+  "GlowingForestFruit": {
+    "name": "「森を照らすたわわな実」"
   },
   "EfflorescentIllumination": {
     "name": "「花葉百相の光」"
@@ -14984,6 +15197,24 @@
   "SiteOfArtfulAscension": {
     "name": "「すばらしい錬金場」"
   },
+  "MetropoleFunhouseTrumpeter": {
+    "name": "王都のユニークな家-「トランペット奏者」"
+  },
+  "MetropoleFunhouseCymbalist": {
+    "name": "王都のユニークな家-「シンバル奏者」"
+  },
+  "MetropoleFunhouseConductor": {
+    "name": "王都のユニークな家-「指揮者」"
+  },
+  "BoomBoomUnit": {
+    "name": "「トントンユニット」"
+  },
+  "DingDongUnit": {
+    "name": "「ディンドンユニット」"
+  },
+  "MagicalForestHut": {
+    "name": "「森の魔法の小屋」"
+  },
   "RitualShrine": {
     "name": "「戒めの祠」"
   },
@@ -15367,6 +15598,15 @@
   },
   "LargeShippingPallet": {
     "name": "大型輸送パレット"
+  },
+  "WavesmasherLocomotive": {
+    "name": "「波を切って疾走する機関車」"
+  },
+  "SnoozyRestCar": {
+    "name": "「寝心地のいい車両」"
+  },
+  "BrimmingFreightCar": {
+    "name": "「大容量貨物車」"
   },
   "AdeptusGate": {
     "name": "三眼の仙牌"
@@ -15760,6 +16000,18 @@
   },
   "ImprovedCrococannon": {
     "name": "「改良版ワニワニバンバンキャノン」"
+  },
+  "OrigamiModelHopSkipAndAJump": {
+    "name": "折り紙の模型-「ぴょんぴょんくん」"
+  },
+  "OrigamiModelRoundRummyTum": {
+    "name": "折り紙の模型-「丸ぽちゃ」"
+  },
+  "OrigamiModelWhoooosh": {
+    "name": "折り紙の模型-「ヒュウッ！」"
+  },
+  "OrigamiModelHardAsCanBe": {
+    "name": "折り紙の模型-「かちかち」"
   },
   "PottedPlantVerdantVastness": {
     "name": "盆栽-「翠色の縮図」"
@@ -16157,6 +16409,9 @@
   "MusicTownsBreezeBellsCheepingFinches": {
     "name": "音楽の町の風鈴-「さえずり」"
   },
+  "ConscientiousWindcatcherSentinel": {
+    "name": "「責任を全うする『風を捕まえる衛兵』」"
+  },
   "BookshelfFreeReading": {
     "name": "ブックラック-「ご自由にお読みください」"
   },
@@ -16246,6 +16501,18 @@
   },
   "MallowWoodFenceTides": {
     "name": "マロウ材の欄干「海の潮」"
+  },
+  "PrimordialForestBeauty": {
+    "name": "「森に光る自然の美」"
+  },
+  "WindowToProphecy": {
+    "name": "「預言の窓」"
+  },
+  "GateOfStars": {
+    "name": "「星空の門」"
+  },
+  "GardenStellarMusicalPillar": {
+    "name": "「星の輝くメロディーの柱」"
   },
   "SmoothWoodenBench": {
     "name": "平らな木製ベンチ"
@@ -16355,6 +16622,9 @@
   "MallowWoodRoundTableASharedDrink": {
     "name": "マロウ材の丸テーブル「一緒に呑もう」"
   },
+  "JoyousForestParty": {
+    "name": "「森の中の集い」"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "酒屋の商品棚-「百杯飲み」"
   },
@@ -16390,5 +16660,11 @@
   },
   "SwordBearingStatueAestheticsOfIncompleteness": {
     "name": "剣を持つ石像-「不完全の美学」"
+  },
+  "EasyBreezyShelterCanopy": {
+    "name": "「手軽で気軽な待合所」"
+  },
+  "ScheduleAbidingTrainStationSign": {
+    "name": "「定時運行を目指す標識柱」"
   }
 }

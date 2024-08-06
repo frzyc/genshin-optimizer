@@ -190,6 +190,9 @@
     "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>",
     "pyro": "Enemy is affected by <pyro>Pyro</pyro>"
   },
+  "enemyState": {
+    "burning": "Enemy in the <pyro>Burning</pyro> state"
+  },
   "getElementalOrbParticle": "After picking up an Elemental Orb or Particle",
   "hpChange": "After HP changes",
   "otherHpChange": "After a teammate's HP changes",

@@ -1,0 +1,167 @@
+{
+  "name": "Émilie",
+  "title": "Spur der tausend Düfte",
+  "description": "Eine Parfümeurin aus Fontaine, die gerne Geheimnisse in Fläschchen abfüllt.",
+  "constellationName": "Pomum de Ambra",
+  "auto": {
+    "name": "Schattenjagd-Speer – Modifiziert",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen Angriff nach oben aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Essenzsammlung und Duftmischung",
+    "description": {
+      "0": "Erschafft eine Laterne des sanften Lichts und verursacht dabei <dendro>Dendro-Flächenschaden</dendro>.",
+      "1": "<br/>",
+      "2": "<strong>Laterne des sanften Lichts</strong>",
+      "3": [
+        " Schießt in regelmäßigen Abständen „Tautropfen des Wohlgeruchs“ auf Gegner in der Nähe ab und verursacht <dendro>Dendro-Schaden</dendro>.",
+        " Die Gegner in der Nähe erzeugen in regelmäßigen Abständen „Essenz“, wenn sie sich im Zustand „In Flammen“ befinden. Auf diese Weise kann alle 2 s bis zu eine „Essenz“ erzeugt werden. Die Laterne des sanften Lichts sammelt die Essenzen aus der Nähe ein. Nachdem die Laterne des sanften Lichts zwei Essenzen gesammelt hat, wird ihre Stufe erhöht, wodurch beim Abfeuern ein zusätzlicher Tautropfen des Wohlgeruchs abgefeuert wird und der mit den oben genannten Angriffen verursachte Schaden sowie ihre Reichweite erhöht werden.",
+        " Es kann gleichzeitig nur eine von Émilie selbst erschaffene Laterne des sanften Lichts existieren. Die anfängliche Stufe der Laterne des sanften Lichts beim Erschaffen beträgt 1, die Höchststufe 2. Sollte keine „Essenz“ innerhalb von 8 s gesammelt werden, während die Laterne des sanften Lichts auf dem Feld ist, wird deren Stufe wieder auf Stufe 1 zurückgesetzt."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Arkhe: Pneuma</strong>",
+      "6": "Erzeugt nach Erschaffen der Laterne des sanften Lichts von Émilie auf die oben genannte Weise in gewissen Zeitabständen einen Geisterstachel, der auf Gegner herabfällt, diese durchbohrt und mit Pneuma versehenen <dendro>Dendro-Schaden</dendro> verursacht.",
+      "7": "<br/>",
+      "8": "<i>„Der Anblick unserer irdischen Welt ist wie ein harmonisches Bild, das aus unzähligen Düften, Farben und Gesängen besteht.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Angriffs-SCH Laterne des sanften Lichts – Phase 1",
+      "2": "Angriffs-SCH Laterne des sanften Lichts – Phase 2",
+      "3": "Dauer der Laterne des sanften Lichts",
+      "4": "Geisterstachel-SCH",
+      "5": "Geisterstachel-Intervall",
+      "6": "Abklingzeit",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Manifestation der driftenden Essenzen",
+    "description": {
+      "0": "Wandelt die Düfte, die sich in der Laterne des sanften Lichts sammeln, in reine Dendro-Kraft um, lagert dabei die vorhandene Laterne des sanften Lichts ein und erschafft eine Laterne des sanften Lichts – Stufe 3.",
+      "1": "Während der Wirkungsdauer sammelt die Laterne des sanften Lichts – Stufe 3 keine Essenzen in der Nähe. Stattdessen wird fortlaufend Dufttau herabfallen, der Gegner in Reichweite angreift und <dendro>Dendro-Schaden</dendro> verursacht. Lässt während der Wirkungsdauer alle 0,3 s einen Dufttau fallen. Jeder Gegner kann alle 0,7 s nur einmal als Ziel gewählt werden.",
+      "2": "Erschafft am Ende der Wirkungsdauer eine Laterne des sanften Lichts – Stufe 1. Wenn eine Laterne des sanften Lichts beim Auslösen der Fähigkeit „Manifestation der driftenden Essenzen“ eingelagert wurde, wird diese erneut platziert und deren Dauer zurückgesetzt.",
+      "3": "Während der Wirkungsdauer von <strong>„Manifestation der driftenden Essenzen“</strong> erzeugt die Elementarfähigkeit „Essenzsammlung und Duftmischung“ keine Laterne des sanften Lichts.",
+      "4": "<br/>",
+      "5": "<i>Unabhängig von der Art des Parfüms verändert sich der Duft im Laufe der Zeit, sobald er mit Luft in Kontakt kommt, und löst sich schließlich im Wind und dem Rauschen des Grases auf. In gewissem Sinne trägt niemand jemals das gleiche Parfüm mehrmals.",
+      "6": "Das gilt auch für den Lebensweg aller Wesen. Daher kann man vielleicht sagen, dass Parfüm die Interpretation des Lebens selbst ist.</i>"
+    },
+    "skillParams": {
+      "0": "Angriffs-SCH Laterne des sanften Lichts – Phase 3",
+      "1": "Dauer der Laterne des sanften Lichts – Phase 3",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Nachklingender Wohlgeruch",
+    "description": {
+      "0": "Für je zwei <strong>Essenzen</strong>, die gesammelt wurden, wird die Laterne des sanften Lichts – Stufe 2 diese verbrauchen und einen Duft des klaren Taus abscheiden, der Gegnern <dendro>Dendro-Flächenschaden</dendro> in Höhe von 600 % von Émilies ANG zufügt. Dieser Schaden gilt nicht als Schaden der Elementarfähigkeit."
+    }
+  },
+  "passive2": {
+    "name": "Rektifizieren",
+    "description": {
+      "0": "Erhöht den von Émilie an Gegnern im Zustand „In Flammen“ verursachten Schaden für je 1.000 Punkte ANG um 15 %. Auf diese Weise kann der Schaden um bis zu 36 % erhöht werden."
+    }
+  },
+  "passive3": {
+    "name": "Extraktion der Düfte",
+    "description": {
+      "0": "Erhöht den <pyro>Pyro-WDS</pyro> gegen den durch die Reaktion „In Flammen“ verursachten Schaden aller Truppenmitglieder in der Nähe um 85 %, wenn eine von Émilie selbst erschaffene Laterne des sanften Lichts auf dem Feld ist."
+    }
+  },
+  "constellation1": {
+    "name": "Auslaugung leichter Düfte",
+    "description": {
+      "0": "Erhöht den durch die Fähigkeit <strong>„Essenzsammlung und Duftmischung“</strong> und den Duft des klaren Taus des passiven Talents „Nachklingender Wohlgeruch“ verursachten Schaden um 20 %. Das passive Talent „Nachklingender Wohlgeruch“ muss für das Letztere zuerst freigeschaltet werden.",
+      "1": "Wenn Truppenmitglieder in der Nähe an Gegnern die Reaktion „In Flammen“ auslösen oder den im Zustand „In Flammen“ befindlichen Gegnern <dendro>Dendro-Schaden</dendro> zufügen, wird außerdem eine zusätzliche <strong>Essenz</strong> erschaffen, 2,9 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Angeruch der Seebrise",
+    "description": {
+      "0": "Verringert den <dendro>Dendro-WDS</dendro> des Gegners 10 s lang um 30 %, wenn dieser von <strong>„Essenzsammlung und Duftmischung“</strong>, <strong>„Manifestation der driftenden Essenzen“</strong> oder Duft des klaren Taus des passiven Talents „Nachklingender Wohlgeruch“ (muss zuerst freigeschaltet werden) getroffen wird."
+    }
+  },
+  "constellation3": {
+    "name": "Exquisite Essenz",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Essenzsammlung und Duftmischung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lumidouce-Herz",
+    "description": {
+      "0": "Verlängert die Dauer von <strong>„Manifestation der driftenden Essenzen“</strong> um 2 s. Das Intervall zwischen der Auswahl eines Gegners als Ziel für Dufttau wird um 0,3 s verringert."
+    }
+  },
+  "constellation5": {
+    "name": "Reintau-Duft",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Manifestation der driftenden Essenzen</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Marcotte-Spur",
+    "description": {
+      "0": "Beim Auslösen von <strong>Essenzsammlung und Duftmischung</strong> oder <strong>Manifestation der driftenden Essenzen</strong> erhält Émilie 5 s lang den Effekt „Verweilender Duft“.",
+      "1": "Wandelt während der Wirkungsdauer den mit Émilies Standardangriffen und heftigen Schlägen verursachten Schaden zu <dendro>Dendro-Schaden</dendro>, der nicht von anderen Elementen überdeckt werden kann, und erhöht den damit verursachten Schaden um 300 % von Émilies ANG. Erschafft außerdem nach dem Ausführen der Standardangriffe oder heftigen Schläge eine Essenz.",
+      "2": "<br/>",
+      "3": "Der Effekt „Verweilender Duft“ wird aufgehoben, nachdem 4 Essenzen auf diese Weise erzeugt worden sind oder die Wirkungsdauer abgelaufen ist. 12 s Abklingzeit für das Erhalten des Effektes „Verweilender Duft“."
+    }
+  }
+}
