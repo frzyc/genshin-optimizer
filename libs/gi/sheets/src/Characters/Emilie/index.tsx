@@ -1,6 +1,7 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
 import { type CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import type { UIData } from '@genshin-optimizer/gi/uidata'
 import {
   constant,
   equal,
@@ -302,7 +303,12 @@ const sheet: TalentSheet = {
         },
         {
           text: ct.chg('burst.skillParams.1'),
-          value: dm.burst.duration,
+          value: (data: UIData) =>
+            data.get(input.constellation).value >= 4
+              ? `${dm.burst.duration}s + ${dm.constellation4.durationInc}s = ${
+                  dm.burst.duration + dm.constellation4.durationInc
+                }`
+              : dm.burst.duration,
           unit: 's',
           fixed: 1,
         },
