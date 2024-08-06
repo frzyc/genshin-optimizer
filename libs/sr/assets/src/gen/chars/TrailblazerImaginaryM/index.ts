@@ -10,7 +10,6 @@ import eidolon4 from './eidolon4.png'
 import eidolon5 from './eidolon5.png'
 import eidolon6 from './eidolon6.png'
 import icon from './icon.png'
-import overworld from './overworld.png'
 import skill from './skill.png'
 import talent from './talent.png'
 import technique from './technique.png'
@@ -28,7 +27,6 @@ const data = {
   eidolon5,
   eidolon6,
   icon,
-  overworld,
   skill,
   talent,
   technique,
